@@ -1,0 +1,3955 @@
+[
+  {
+    "canonicalId": "782f53e2190f4a8a8d0dc0a33cd6fbb3",
+    "exchangeId": "id-b415475f474d5b3785b517c5935e72d6",
+    "nativeType": "Driver",
+    "before": [
+      "Motivation",
+      "24/7 Availability"
+    ],
+    "after": [
+      "Motivation",
+      "I Motivation",
+      "I.1 Drivers",
+      "I.1.1 24/7 Availability",
+      "24/7 Availability"
+    ]
+  },
+  {
+    "canonicalId": "499313a0a5d84520a3061120ae9b6dac",
+    "exchangeId": "id-288a2b5d4cf95c40baa8452433d1b27b",
+    "nativeType": "Driver",
+    "before": [
+      "Motivation",
+      "Audit & PHI Privacy"
+    ],
+    "after": [
+      "Motivation",
+      "I Motivation",
+      "I.1 Drivers",
+      "I.1.2 Audit & PHI Privacy",
+      "Audit & PHI Privacy"
+    ]
+  },
+  {
+    "canonicalId": "babb9f5d63d8435890c1db3579ec78d9",
+    "exchangeId": "id-1d069e9791355eae9e57aad08fb8c4f5",
+    "nativeType": "Driver",
+    "before": [
+      "Motivation",
+      "Clinical Interoperability"
+    ],
+    "after": [
+      "Motivation",
+      "I Motivation",
+      "I.1 Drivers",
+      "I.1.3 Clinical Interoperability",
+      "Clinical Interoperability"
+    ]
+  },
+  {
+    "canonicalId": "5187c3db390e444db3eb809c02a2f1c1",
+    "exchangeId": "id-6d2882efaa7756e886bb64a9ca045885",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Coordinated Activity & Interaction"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.1 Enterprise Capabilities",
+      "II.1.1.1 [CT1] Coordinated Activity & Interaction",
+      "[CT1] Coordinated Activity & Interaction"
+    ]
+  },
+  {
+    "canonicalId": "e5ff80e655084524a8dcee8e4ded788a",
+    "exchangeId": "id-49d4f69ebeeb5ea782a52172fb3e8a7b",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Activity & Execution"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.1 Enterprise Capabilities",
+      "II.1.1.1 [CT1] Coordinated Activity & Interaction",
+      "II.1.1.1.1 [CT2] Activity & Execution",
+      "[CT2] Activity & Execution"
+    ]
+  },
+  {
+    "canonicalId": "15e57021490c4e738aee9009ff84a7c3",
+    "exchangeId": "id-a0eebbba1ce35b2ea9bf499d3ea6b4c2",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Governed Information Operations"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.1 Enterprise Capabilities",
+      "II.1.1.2 [CT1] Governed Information Operations",
+      "[CT1] Governed Information Operations"
+    ]
+  },
+  {
+    "canonicalId": "43051efd406b4040bff8e794b7a631e0",
+    "exchangeId": "id-9e79bc474aed516c8c6752ab81b63d6b",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Information Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.1 Enterprise Capabilities",
+      "II.1.1.2 [CT1] Governed Information Operations",
+      "II.1.1.2.2 [CT2] Information Management",
+      "[CT2] Information Management"
+    ]
+  },
+  {
+    "canonicalId": "321de197612f49089d8b4a4cc1a2e003",
+    "exchangeId": "id-9c7d1cf0966a5d1bb0c17707051a793e",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Trust, Accountability & Assurance"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.1 Enterprise Capabilities",
+      "II.1.1.3 [CT1] Trust, Accountability & Assurance",
+      "[CT1] Trust, Accountability & Assurance"
+    ]
+  },
+  {
+    "canonicalId": "0c5d986cc948421a8bebcab3b74d108f",
+    "exchangeId": "id-a6f6d30d8fce5ac78f60f7aefa71b28e",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Policy & Control"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.1 Enterprise Capabilities",
+      "II.1.1.3 [CT1] Trust, Accountability & Assurance",
+      "II.1.1.3.3 [CT2] Policy & Control",
+      "[CT2] Policy & Control"
+    ]
+  },
+  {
+    "canonicalId": "68a0755aa4e14a509ac5e6c0bbcff3e7",
+    "exchangeId": "id-d71457435a085e749ffb1e1a3b551228",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Provenance & Traceability"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.1 Enterprise Capabilities",
+      "II.1.1.3 [CT1] Trust, Accountability & Assurance",
+      "II.1.1.3.4 [CT2] Provenance & Traceability",
+      "[CT2] Provenance & Traceability"
+    ]
+  },
+  {
+    "canonicalId": "ed342cb8656b4f80b55ad519ecbd2d3a",
+    "exchangeId": "id-e978dad02c4156938c03ac4b2d34e0c0",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Care Access & Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.1 [CT1] Care Access & Coordination",
+      "[CT1] Care Access & Coordination"
+    ]
+  },
+  {
+    "canonicalId": "acbcad8330e64b59be5e3ec4a100a544",
+    "exchangeId": "id-3ffe8db4705855b587349b8bf949f469",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Care Access Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.1 [CT1] Care Access & Coordination",
+      "II.1.2.1.1 [CT2] Care Access Management",
+      "[CT2] Care Access Management"
+    ]
+  },
+  {
+    "canonicalId": "174a9b93d19c44828f20360e9d543925",
+    "exchangeId": "id-76f2314e316c589083817b8d38b9f3ea",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Care Coordination & Transition"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.1 [CT1] Care Access & Coordination",
+      "II.1.2.1.2 [CT2] Care Coordination & Transition",
+      "[CT2] Care Coordination & Transition"
+    ]
+  },
+  {
+    "canonicalId": "61dd4b247df14546bf012587164bfe91",
+    "exchangeId": "id-d7535b3161b65b9090c0af102f90b0d5",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Care Scheduling & Capacity Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.1 [CT1] Care Access & Coordination",
+      "II.1.2.1.3 [CT2] Care Scheduling & Capacity Management",
+      "[CT2] Care Scheduling & Capacity Management"
+    ]
+  },
+  {
+    "canonicalId": "92be036674254f719cf4bb613120128a",
+    "exchangeId": "id-645223e49d535a3ab69d95f865826bf7",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Care Support Logistics Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.1 [CT1] Care Access & Coordination",
+      "II.1.2.1.4 [CT2] Care Support Logistics Management",
+      "[CT2] Care Support Logistics Management"
+    ]
+  },
+  {
+    "canonicalId": "9665d894c4c9438999d8cc10afae695d",
+    "exchangeId": "id-5abfc42605a55d9da4808dc3b3688708",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Service Delivery Preparedness Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.1 [CT1] Care Access & Coordination",
+      "II.1.2.1.5 [CT2] Service Delivery Preparedness Management",
+      "[CT2] Service Delivery Preparedness Management"
+    ]
+  },
+  {
+    "canonicalId": "63837bf848774572a06b935af95581a2",
+    "exchangeId": "id-1966794a16a75e03a984971281f020e8",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Clinical Quality, Safety & Improvement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.2 [CT1] Clinical Quality, Safety & Improvement",
+      "[CT1] Clinical Quality, Safety & Improvement"
+    ]
+  },
+  {
+    "canonicalId": "89761f2d38f846c39df1df0975964288",
+    "exchangeId": "id-cf5dcdc3ef505f91906dbc1eb61a469c",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Quality Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.2 [CT1] Clinical Quality, Safety & Improvement",
+      "II.1.2.2.1 [CT2] Clinical Quality Management",
+      "[CT2] Clinical Quality Management"
+    ]
+  },
+  {
+    "canonicalId": "28d1bf3e514e4c29837ebedaf9e4917b",
+    "exchangeId": "id-354b3f173afe530c8ff123c2a01b51fb",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Safety Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.2 [CT1] Clinical Quality, Safety & Improvement",
+      "II.1.2.2.2 [CT2] Clinical Safety Management",
+      "[CT2] Clinical Safety Management"
+    ]
+  },
+  {
+    "canonicalId": "b326b4aaf02a41a986ed22d184cbc152",
+    "exchangeId": "id-2456cb6acb345c4c9f2ce404c69e8a2e",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Community Health & Wellbeing"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.3 [CT1] Community Health & Wellbeing",
+      "[CT1] Community Health & Wellbeing"
+    ]
+  },
+  {
+    "canonicalId": "81be04a2d58548a4aea94f9aae90feb6",
+    "exchangeId": "id-f383763eeeb6577bb01125fad97c5075",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Preventative Health"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.3 [CT1] Community Health & Wellbeing",
+      "II.1.2.3.1 [CT2] Preventative Health",
+      "[CT2] Preventative Health"
+    ]
+  },
+  {
+    "canonicalId": "3ef397463e584737b367e93f0bf1d85d",
+    "exchangeId": "id-72ef59102ac75c2dad5ed5631107f6cd",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Connected Health Services"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.4 [CT1] Connected Health Services",
+      "[CT1] Connected Health Services"
+    ]
+  },
+  {
+    "canonicalId": "baad6b6117084311acbf5fc4044dfabf",
+    "exchangeId": "id-2134969d36665649a7d61fcea20bc15f",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Information Exchange"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.4 [CT1] Connected Health Services",
+      "II.1.2.4.2 [CT2] Health Information Exchange",
+      "[CT2] Health Information Exchange"
+    ]
+  },
+  {
+    "canonicalId": "b79628f156e14a8cbb82a0dea2fc57ff",
+    "exchangeId": "id-ef8e56b261f959e6a7c3b299d43797d3",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Corporate Resources & Enterprise Services"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.5 [CT1] Corporate Resources & Enterprise Services",
+      "[CT1] Corporate Resources & Enterprise Services"
+    ]
+  },
+  {
+    "canonicalId": "c8777bccbe304e36b7d9fbd955d67579",
+    "exchangeId": "id-e7bf675c1f9f55e6a0c289210e0c2e81",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Corporate Support Services"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.5 [CT1] Corporate Resources & Enterprise Services",
+      "II.1.2.5.1 [CT2] Corporate Support Services",
+      "[CT2] Corporate Support Services"
+    ]
+  },
+  {
+    "canonicalId": "290b574a02634f559b35a28daad0dea8",
+    "exchangeId": "id-d8bd52f72b215fa795b82e4319a9b5bb",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Financial & Commercial Services"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.5 [CT1] Corporate Resources & Enterprise Services",
+      "II.1.2.5.2 [CT2] Financial & Commercial Services",
+      "[CT2] Financial & Commercial Services"
+    ]
+  },
+  {
+    "canonicalId": "4d98c3503a9f4890a677f09b0c3b6f82",
+    "exchangeId": "id-ccc1bb332db751828feb9f8b4a4ee49b",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Diagnostic, Therapeutic & Clinical Support Services"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.6 [CT1] Diagnostic, Therapeutic & Clinical Support Services",
+      "[CT1] Diagnostic, Therapeutic & Clinical Support Services"
+    ]
+  },
+  {
+    "canonicalId": "827910cf74ae4061afbda52dde3da106",
+    "exchangeId": "id-57698404473a5412bc6bb5f1e7f0230d",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Diagnostic Support Provision"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.6 [CT1] Diagnostic, Therapeutic & Clinical Support Services",
+      "II.1.2.6.1 [CT2] Diagnostic Support Provision",
+      "[CT2] Diagnostic Support Provision"
+    ]
+  },
+  {
+    "canonicalId": "ab2a4e6a7acc4868bc4e7b6c0d292cb4",
+    "exchangeId": "id-231038e9a4565b83b18bb6e0f39e8d98",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Medication & Pharmacy Services"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.6 [CT1] Diagnostic, Therapeutic & Clinical Support Services",
+      "II.1.2.6.2 [CT2] Medication & Pharmacy Services",
+      "[CT2] Medication & Pharmacy Services"
+    ]
+  },
+  {
+    "canonicalId": "cca5d5abec204b339eb5b9bd924ed64e",
+    "exchangeId": "id-593d0a2ec7f6521383b23ef03ca092ef",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Health Information & Knowledge Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.7 [CT1] Health Information & Knowledge Management",
+      "[CT1] Health Information & Knowledge Management"
+    ]
+  },
+  {
+    "canonicalId": "76b375248aee49aeb5a5044176a688d8",
+    "exchangeId": "id-146ce7bf9faa57199f6b2f05c6a2e63d",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Knowledge Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.7 [CT1] Health Information & Knowledge Management",
+      "II.1.2.7.1 [CT2] Clinical Knowledge Management",
+      "[CT2] Clinical Knowledge Management"
+    ]
+  },
+  {
+    "canonicalId": "eb2984f0ca79420e83012f9e06a005fb",
+    "exchangeId": "id-5fc96b9106c85899953f0b0471689e42",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Information Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.7 [CT1] Health Information & Knowledge Management",
+      "II.1.2.7.2 [CT2] Health Information Management",
+      "[CT2] Health Information Management"
+    ]
+  },
+  {
+    "canonicalId": "54388e3202c2403089b5c476c78c4567",
+    "exchangeId": "id-06479aa74b3554608b6305af19064390",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Health Products & Clinical Technology"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.8 [CT1] Health Products & Clinical Technology",
+      "[CT1] Health Products & Clinical Technology"
+    ]
+  },
+  {
+    "canonicalId": "6c91476a45eb4432b1f90b47a4c2ad35",
+    "exchangeId": "id-63b57eb4fcb458f6a7e0a8394bdfb606",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Technology Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.8 [CT1] Health Products & Clinical Technology",
+      "II.1.2.8.1 [CT2] Clinical Technology Management",
+      "[CT2] Clinical Technology Management"
+    ]
+  },
+  {
+    "canonicalId": "582bf62145fd42118e5d57bb714841e8",
+    "exchangeId": "id-aae6d53e02cf5c689376034a9078b6f9",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Health Research & Innovation"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.9 [CT1] Health Research & Innovation",
+      "[CT1] Health Research & Innovation"
+    ]
+  },
+  {
+    "canonicalId": "f263989e25c9469cac1bbad6491432f0",
+    "exchangeId": "id-3a606ade585a5938971ee858eec584a2",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Innovation"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.9 [CT1] Health Research & Innovation",
+      "II.1.2.9.1 [CT2] Health Innovation",
+      "[CT2] Health Innovation"
+    ]
+  },
+  {
+    "canonicalId": "ef18f999eef3488ba584d263a551732b",
+    "exchangeId": "id-50b36409f6b55504a198330f760ef888",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Research Information Support"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.9 [CT1] Health Research & Innovation",
+      "II.1.2.9.2 [CT2] Research Information Support",
+      "[CT2] Research Information Support"
+    ]
+  },
+  {
+    "canonicalId": "14860102964c441681d41ec3da423fe0",
+    "exchangeId": "id-e96366b568cc5e83a427548b52fa57e7",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Health Service Assurance"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.11 [CT1] Health Service Assurance",
+      "[CT1] Health Service Assurance"
+    ]
+  },
+  {
+    "canonicalId": "d1b20e0fb91e4bd1950ad57b84e2cafd",
+    "exchangeId": "id-86f3196b695d595a9ce1480605378088",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Assurance Evaluation"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.11 [CT1] Health Service Assurance",
+      "II.1.2.11.1 [CT2] Assurance Evaluation",
+      "[CT2] Assurance Evaluation"
+    ]
+  },
+  {
+    "canonicalId": "ec5c4d1219464433b2cee5c5a988fef7",
+    "exchangeId": "id-fe48e4fa8a025194ad49cc197a83d502",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Service Assurance Specification"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.11 [CT1] Health Service Assurance",
+      "II.1.2.11.2 [CT2] Health Service Assurance Specification",
+      "[CT2] Health Service Assurance Specification"
+    ]
+  },
+  {
+    "canonicalId": "d51e7125bf9c4d2c9c59b60346b4d86f",
+    "exchangeId": "id-e6f4c5945b5b560599bdc95bb2589fb1",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Health Service Direction & Stewardship"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.12 [CT1] Health Service Direction & Stewardship",
+      "[CT1] Health Service Direction & Stewardship"
+    ]
+  },
+  {
+    "canonicalId": "d4fc5367352741a99bd334f7e8bf5856",
+    "exchangeId": "id-a72e1eab6d6551e0b387e09c0ce9897e",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Service Alignment"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.12 [CT1] Health Service Direction & Stewardship",
+      "II.1.2.12.1 [CT2] Health Service Alignment",
+      "[CT2] Health Service Alignment"
+    ]
+  },
+  {
+    "canonicalId": "9a3e90db97b94d1888a2a5c5effb8999",
+    "exchangeId": "id-51689808d64b561a8041fe1b48bf3b01",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Service Modelling"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.12 [CT1] Health Service Direction & Stewardship",
+      "II.1.2.12.2 [CT2] Health Service Modelling",
+      "[CT2] Health Service Modelling"
+    ]
+  },
+  {
+    "canonicalId": "209aada781e844e28202a2535a264c21",
+    "exchangeId": "id-74e288077f4356d281d9b4412c793e73",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Health Service Governance"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.13 [CT1] Health Service Governance",
+      "[CT1] Health Service Governance"
+    ]
+  },
+  {
+    "canonicalId": "02a52157967f4b498807cac70e3410e9",
+    "exchangeId": "id-31c38c7c37fd5b19bf446b9937406be5",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Compliance Governance"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.13 [CT1] Health Service Governance",
+      "II.1.2.13.1 [CT2] Compliance Governance",
+      "[CT2] Compliance Governance"
+    ]
+  },
+  {
+    "canonicalId": "b39f53b3ffb441f388a89b45cc517deb",
+    "exchangeId": "id-cb87b0ba8417587ebc94321210dbc9cf",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Governance Framework Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.13 [CT1] Health Service Governance",
+      "II.1.2.13.2 [CT2] Governance Framework Management",
+      "[CT2] Governance Framework Management"
+    ]
+  },
+  {
+    "canonicalId": "b964a11cde594318aa14ff935414158a",
+    "exchangeId": "id-2b13c6665f7b530fb21b07fd3e80e4ce",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Individual Care Delivery"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.14 [CT1] Individual Care Delivery",
+      "[CT1] Individual Care Delivery"
+    ]
+  },
+  {
+    "canonicalId": "39219464b6304b59bd7c3de4e237066e",
+    "exchangeId": "id-e028d7e513fc5729b370465da8bc4ae8",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Determination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.14 [CT1] Individual Care Delivery",
+      "II.1.2.14.1 [CT2] Clinical Determination",
+      "[CT2] Clinical Determination"
+    ]
+  },
+  {
+    "canonicalId": "f036a9866459429a8fb5f5e10727b5e8",
+    "exchangeId": "id-e24ae17857c6529cb63c0c8d736ca5e7",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Individual Care Planning"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.14 [CT1] Individual Care Delivery",
+      "II.1.2.14.3 [CT2] Individual Care Planning",
+      "[CT2] Individual Care Planning"
+    ]
+  },
+  {
+    "canonicalId": "625a93f132f242f5a8e2ae1dc19979fb",
+    "exchangeId": "id-1e0db913564c55f59efd137db390e34f",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Individual Care Review"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.14 [CT1] Individual Care Delivery",
+      "II.1.2.14.4 [CT2] Individual Care Review",
+      "[CT2] Individual Care Review"
+    ]
+  },
+  {
+    "canonicalId": "045f819bb3694d3c9db7f20886e2993f",
+    "exchangeId": "id-c205b4ba14735b29b4f23bd7531d8750",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Individual Health Assessment"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.14 [CT1] Individual Care Delivery",
+      "II.1.2.14.5 [CT2] Individual Health Assessment",
+      "[CT2] Individual Health Assessment"
+    ]
+  },
+  {
+    "canonicalId": "c7d0e498e1ad44138df940af2f91cd2d",
+    "exchangeId": "id-30d731a19ab6526386b64c335fe3f7fd",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Individual Health Monitoring"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.14 [CT1] Individual Care Delivery",
+      "II.1.2.14.6 [CT2] Individual Health Monitoring",
+      "[CT2] Individual Health Monitoring"
+    ]
+  },
+  {
+    "canonicalId": "c63b38b37e9b4e9b97dc87ed54604def",
+    "exchangeId": "id-3dc006e536ce50b3acdc8f625eccb36d",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Population Health & Health-System Planning"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.15 [CT1] Population Health & Health-System Planning",
+      "[CT1] Population Health & Health-System Planning"
+    ]
+  },
+  {
+    "canonicalId": "9ca4df07eceb4150a0190cc488270ce2",
+    "exchangeId": "id-b77562f343435bef95c6cadcd10e216c",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health-System Planning"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.15 [CT1] Population Health & Health-System Planning",
+      "II.1.2.15.1 [CT2] Health-System Planning",
+      "[CT2] Health-System Planning"
+    ]
+  },
+  {
+    "canonicalId": "83e568fa8af14d7791a7253765ea390f",
+    "exchangeId": "id-e30b9d5e5fa9522681e1b22c1d6ebcab",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Population Health Surveillance"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.15 [CT1] Population Health & Health-System Planning",
+      "II.1.2.15.2 [CT2] Population Health Surveillance",
+      "[CT2] Population Health Surveillance"
+    ]
+  },
+  {
+    "canonicalId": "71f0431fdfcd4f779e16d9e5ea609833",
+    "exchangeId": "id-c0d03ba4c03c57d9bd03b36ec9a15f61",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Security, Privacy & Digital Trust"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.16 [CT1] Security, Privacy & Digital Trust",
+      "[CT1] Security, Privacy & Digital Trust"
+    ]
+  },
+  {
+    "canonicalId": "9a600233ae1f4f3289c09a0b08ce029d",
+    "exchangeId": "id-53b97ecf9a185c309bf2f6fadd74e527",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Digital Accountability & Trust"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.16 [CT1] Security, Privacy & Digital Trust",
+      "II.1.2.16.1 [CT2] Digital Accountability & Trust",
+      "[CT2] Digital Accountability & Trust"
+    ]
+  },
+  {
+    "canonicalId": "b9cb3666f9134ba29eb896e67eba7250",
+    "exchangeId": "id-3f3f1816206a57ceaccc2a3b8e6d126b",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Digital Identity & Access Governance"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.16 [CT1] Security, Privacy & Digital Trust",
+      "II.1.2.16.2 [CT2] Digital Identity & Access Governance",
+      "[CT2] Digital Identity & Access Governance"
+    ]
+  },
+  {
+    "canonicalId": "4ae0de8fa16840d09ab2ef3f5545a5e7",
+    "exchangeId": "id-c9d1ebe2bd675841a70e6e3c1bb5a1d7",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Information Protection"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.16 [CT1] Security, Privacy & Digital Trust",
+      "II.1.2.16.3 [CT2] Health Information Protection",
+      "[CT2] Health Information Protection"
+    ]
+  },
+  {
+    "canonicalId": "5ffeb7401d314f06b05d79c3aff98242",
+    "exchangeId": "id-fda046325ae0544ea6b6f2ecc18643eb",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Standards, Semantics & Reference Governance"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.17 [CT1] Standards, Semantics & Reference Governance",
+      "[CT1] Standards, Semantics & Reference Governance"
+    ]
+  },
+  {
+    "canonicalId": "5cc8319e1dde4c818cc248a47233b67b",
+    "exchangeId": "id-df9ca2c4f85051b982eb433a6dae6f4b",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Semantics Governance"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.17 [CT1] Standards, Semantics & Reference Governance",
+      "II.1.2.17.1 [CT2] Clinical Semantics Governance",
+      "[CT2] Clinical Semantics Governance"
+    ]
+  },
+  {
+    "canonicalId": "b228039d8e764f9b98cb810b68af329d",
+    "exchangeId": "id-1063c969a10f5c0fa332b192aae77a77",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Information Standards Governance"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.17 [CT1] Standards, Semantics & Reference Governance",
+      "II.1.2.17.2 [CT2] Health Information Standards Governance",
+      "[CT2] Health Information Standards Governance"
+    ]
+  },
+  {
+    "canonicalId": "631b43664bfb4c50ac8cf4958b2c347d",
+    "exchangeId": "id-a689bff5b2065570ba3d6a9d18f2aaf5",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Workforce & Organisational Capability"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.18 [CT1] Workforce & Organisational Capability",
+      "[CT1] Workforce & Organisational Capability"
+    ]
+  },
+  {
+    "canonicalId": "7ec329cdc070472eb68966345d82031a",
+    "exchangeId": "id-1e1cfa1c48e35db38def767e986ea56e",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Workforce Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.18 [CT1] Workforce & Organisational Capability",
+      "II.1.2.18.1 [CT2] Health Workforce Management",
+      "[CT2] Health Workforce Management"
+    ]
+  },
+  {
+    "canonicalId": "de8c1b408c774e59899662495f4d6ced",
+    "exchangeId": "id-3f8f2e7a1e035b48b5d384db99054cce",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Healthcare Organisation & Service Structure Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.2 Business Capabilities",
+      "II.1.2.18 [CT1] Workforce & Organisational Capability",
+      "II.1.2.18.2 [CT2] Healthcare Organisation & Service Structure Management",
+      "[CT2] Healthcare Organisation & Service Structure Management"
+    ]
+  },
+  {
+    "canonicalId": "28df27d55c514a37995145ab46945f78",
+    "exchangeId": "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Care Administration Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "[CT1] Care Administration Enablement"
+    ]
+  },
+  {
+    "canonicalId": "cf06eec5699f406fa30a00d2f76e3098",
+    "exchangeId": "id-8c082e2d6c605903834291c424722f75",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Care Plan Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.5 [CT2] Care Plan Administration",
+      "[CT2] Care Plan Administration"
+    ]
+  },
+  {
+    "canonicalId": "4cb7db65392f4fab801d7794af4d4b29",
+    "exchangeId": "id-ab0baa5289245368afb3d9943f0dee5c",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Care Plan Lifecycle & Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.5 [CT2] Care Plan Administration",
+      "II.1.3.1.5.1 [CT3] Care Plan Lifecycle & Coordination",
+      "[CT3] Care Plan Lifecycle & Coordination"
+    ]
+  },
+  {
+    "canonicalId": "8c8c6266d9ed43e09dbe44fcdd669132",
+    "exchangeId": "id-d835f657a75459268088115e97986dd1",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Community Care Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.5 [CT2] Care Plan Administration",
+      "II.1.3.1.5.2 [CT3] Community Care Coordination",
+      "[CT3] Community Care Coordination"
+    ]
+  },
+  {
+    "canonicalId": "8526d971b07f40de84ef05b0d192089c",
+    "exchangeId": "id-c5461090ddce50daa204e0c031c184aa",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Outreach Care Continuity"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.5 [CT2] Care Plan Administration",
+      "II.1.3.1.5.3 [CT3] Outreach Care Continuity",
+      "[CT3] Outreach Care Continuity"
+    ]
+  },
+  {
+    "canonicalId": "8752b7a937754b2faa296300c6a48911",
+    "exchangeId": "id-4759e7e551b45a3ab1b24088b8421b9f",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Client-Centred Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.6 [CT2] Client-Centred Administration",
+      "[CT2] Client-Centred Administration"
+    ]
+  },
+  {
+    "canonicalId": "f51f8d6b7556424987c76d9a7465c67c",
+    "exchangeId": "id-714b37e59d095316bb94389ebbc14e33",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Client Intake & Demographic Update"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.6 [CT2] Client-Centred Administration",
+      "II.1.3.1.6.1 [CT3] Client Intake & Demographic Update",
+      "[CT3] Client Intake & Demographic Update"
+    ]
+  },
+  {
+    "canonicalId": "3e9016eaebae4ed0b67a5cacba2652f5",
+    "exchangeId": "id-2a555773d20b5eaaac720432d7e6f4ec",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Screening and Immunisation Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.6 [CT2] Client-Centred Administration",
+      "II.1.3.1.6.2 [CT3] Screening and Immunisation Enablement",
+      "[CT3] Screening and Immunisation Enablement"
+    ]
+  },
+  {
+    "canonicalId": "b38f2c2811724734b5887b6dbaaabbfc",
+    "exchangeId": "id-69fe602fea3e5afc95441b03dd7c198a",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Communication Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.8 [CT2] Clinical Communication Administration",
+      "[CT2] Clinical Communication Administration"
+    ]
+  },
+  {
+    "canonicalId": "eddb86c7922145439b9dcf0259f4aed5",
+    "exchangeId": "id-b87005ff372252e1893fbd216a77d525",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Secure Clinical Communication"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.8 [CT2] Clinical Communication Administration",
+      "II.1.3.1.8.1 [CT3] Secure Clinical Communication",
+      "[CT3] Secure Clinical Communication"
+    ]
+  },
+  {
+    "canonicalId": "ce9e7e7b22054cefb707a650d5be7219",
+    "exchangeId": "id-839d37ad5fcd510d924a18389bada633",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Record Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.9 [CT2] Clinical Record Administration",
+      "[CT2] Clinical Record Administration"
+    ]
+  },
+  {
+    "canonicalId": "df683100067b47e785037c27cfd17a3c",
+    "exchangeId": "id-31701b65e27a544297e8b3807896433e",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Clinical Documentation Lifecycle Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.9 [CT2] Clinical Record Administration",
+      "II.1.3.1.9.1 [CT3] Clinical Documentation Lifecycle Administration",
+      "[CT3] Clinical Documentation Lifecycle Administration"
+    ]
+  },
+  {
+    "canonicalId": "3cc720ba2e8b4d7a94bb349391d61895",
+    "exchangeId": "id-77908c3422545c70ba9ce082db020c0f",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Diagnostic Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.10 [CT2] Diagnostic Administration",
+      "[CT2] Diagnostic Administration"
+    ]
+  },
+  {
+    "canonicalId": "9ded2f3a28d24017bb921a0cdcf65a2b",
+    "exchangeId": "id-8ad249d9cc7f5e85a84f1dbf5b7ccaaf",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Diagnostic Service Integration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.10 [CT2] Diagnostic Administration",
+      "II.1.3.1.10.1 [CT3] Diagnostic Service Integration",
+      "[CT3] Diagnostic Service Integration"
+    ]
+  },
+  {
+    "canonicalId": "270ed0e32b294458aa52cf57df7e55db",
+    "exchangeId": "id-a0b4e1a965765006a8dc7b598f517bb3",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Diagnostic Workflow Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.10 [CT2] Diagnostic Administration",
+      "II.1.3.1.10.2 [CT3] Diagnostic Workflow Management",
+      "[CT3] Diagnostic Workflow Management"
+    ]
+  },
+  {
+    "canonicalId": "61d7067aee0540259b3daca4287d66d2",
+    "exchangeId": "id-198c918e6b225485b2065dc763be8ce1",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Episode & Encounter Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.11 [CT2] Episode & Encounter Administration",
+      "[CT2] Episode & Encounter Administration"
+    ]
+  },
+  {
+    "canonicalId": "ee17b26b8c874cc3af50d07a787ce488",
+    "exchangeId": "id-8c9e5a5c2384558db1e86af56d2c942b",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Acute Care Monitoring & Event Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.11 [CT2] Episode & Encounter Administration",
+      "II.1.3.1.11.1 [CT3] Acute Care Monitoring & Event Coordination",
+      "[CT3] Acute Care Monitoring & Event Coordination"
+    ]
+  },
+  {
+    "canonicalId": "2ebf1bb20ab34755b41567c156cc5928",
+    "exchangeId": "id-db254db117db5f77926aa5add9ddb6bc",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Encounter Lifecycle Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.11 [CT2] Episode & Encounter Administration",
+      "II.1.3.1.11.2 [CT3] Encounter Lifecycle Management",
+      "[CT3] Encounter Lifecycle Management"
+    ]
+  },
+  {
+    "canonicalId": "c907e2a95629435b9951941ad4e2ebe9",
+    "exchangeId": "id-b977d4fbbfbc5943bf2b03b300408b3a",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Medication Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.13 [CT2] Medication Administration",
+      "[CT2] Medication Administration"
+    ]
+  },
+  {
+    "canonicalId": "9874098228764b62b1f640ea749b742d",
+    "exchangeId": "id-ea9da64cb51253f1aabacc59253b8db8",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Medication Order & Dispense Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.13 [CT2] Medication Administration",
+      "II.1.3.1.13.1 [CT3] Medication Order & Dispense Management",
+      "[CT3] Medication Order & Dispense Management"
+    ]
+  },
+  {
+    "canonicalId": "d1821b4f6d5746f9a697dfe3b792a186",
+    "exchangeId": "id-f6b618c033b55400a9e26a6c1c5d9c16",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Medication Therapy Provision and Monitoring"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.13 [CT2] Medication Administration",
+      "II.1.3.1.13.2 [CT3] Medication Therapy Provision and Monitoring",
+      "[CT3] Medication Therapy Provision and Monitoring"
+    ]
+  },
+  {
+    "canonicalId": "c3c5abd7987f4433a46cbfed8167914c",
+    "exchangeId": "id-35b56e00f8885f5f97147eca279b8ef6",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Order Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.14 [CT2] Order Administration",
+      "[CT2] Order Administration"
+    ]
+  },
+  {
+    "canonicalId": "2f79ebd7392c46ef92def6f25bc9c7ce",
+    "exchangeId": "id-5f410811dfd950f0a195ba1f600b15f0",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Closed-Loop Order Progression"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.14 [CT2] Order Administration",
+      "II.1.3.1.14.1 [CT3] Closed-Loop Order Progression",
+      "[CT3] Closed-Loop Order Progression"
+    ]
+  },
+  {
+    "canonicalId": "649dd7cc26094e539386a050086dfb91",
+    "exchangeId": "id-4aa8850ccaab516b9d3854b9e82971eb",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Procedure Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.15 [CT2] Procedure Administration",
+      "[CT2] Procedure Administration"
+    ]
+  },
+  {
+    "canonicalId": "3c4a53dd8c8f468f83ca5d92397dd7e8",
+    "exchangeId": "id-afd1a07848325b678cdee592358efbb4",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Procedure & Surgical Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.15 [CT2] Procedure Administration",
+      "II.1.3.1.15.1 [CT3] Procedure & Surgical Administration",
+      "[CT3] Procedure & Surgical Administration"
+    ]
+  },
+  {
+    "canonicalId": "ae0de25600ee416aa24d2a167b64f230",
+    "exchangeId": "id-5beae734749a57468bf09956473d2f40",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Referral Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.16 [CT2] Referral Administration",
+      "[CT2] Referral Administration"
+    ]
+  },
+  {
+    "canonicalId": "d11bdb9464b2476894aa372ab9b929a7",
+    "exchangeId": "id-f7fc7616aa89520a84e2235872dc93ed",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Referral Intake & Progression"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.16 [CT2] Referral Administration",
+      "II.1.3.1.16.1 [CT3] Referral Intake & Progression",
+      "[CT3] Referral Intake & Progression"
+    ]
+  },
+  {
+    "canonicalId": "35fb3744c900470f9895056246a13fb1",
+    "exchangeId": "id-fa4797b3d84052ecbea381b52dfa8b3f",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Scheduling Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.17 [CT2] Scheduling Administration",
+      "[CT2] Scheduling Administration"
+    ]
+  },
+  {
+    "canonicalId": "7b3ba9bcac564dd4a7a08631581db2ca",
+    "exchangeId": "id-75679799ab975e8088f69be6f0f414f0",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Appointment & Booking Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.1 [CT1] Care Administration Enablement",
+      "II.1.3.1.17 [CT2] Scheduling Administration",
+      "II.1.3.1.17.1 [CT3] Appointment & Booking Administration",
+      "[CT3] Appointment & Booking Administration"
+    ]
+  },
+  {
+    "canonicalId": "a84a7e96e7874a4b87d18c53b1b5cf29",
+    "exchangeId": "id-994a0770b7fd5726a603f696f3dc4d1c",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Care Context Integration Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.2 [CT1] Care Context Integration Enablement [superseded]",
+      "[CT1] Care Context Integration Enablement"
+    ]
+  },
+  {
+    "canonicalId": "232db9b8b47c450cb0aa9acaf539c09d",
+    "exchangeId": "id-7afbcec0122951079c2bb647251be323",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Clinical Service Dependency Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.3 [CT1] Clinical Service Dependency Management",
+      "[CT1] Clinical Service Dependency Management"
+    ]
+  },
+  {
+    "canonicalId": "b5a92874f8ac4509a30af5253590edc1",
+    "exchangeId": "id-4726f9b8f6015e019238b5a8cc596c7c",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Entity Information Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "[CT1] Entity Information Enablement"
+    ]
+  },
+  {
+    "canonicalId": "f0885472cced4bccbcce1568bf0360dc",
+    "exchangeId": "id-c67b67dba5cc512d94eac01eb1524775",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Client Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.1 [CT2] Client Administration",
+      "[CT2] Client Administration"
+    ]
+  },
+  {
+    "canonicalId": "7577a6e1815243648dd5356c21cca151",
+    "exchangeId": "id-12123907605b5a30a078af04daf3c730",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Client Privacy Guardrail Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.1 [CT2] Client Administration",
+      "II.1.3.4.1.1 [CT3] Client Privacy Guardrail Management",
+      "[CT3] Client Privacy Guardrail Management"
+    ]
+  },
+  {
+    "canonicalId": "d682c11d3eb04770b1f20be478fd475e",
+    "exchangeId": "id-db94873a0aac5928aed7bf23ed0bcbea",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Client Relationship Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.1 [CT2] Client Administration",
+      "II.1.3.4.1.2 [CT3] Client Relationship Administration",
+      "[CT3] Client Relationship Administration"
+    ]
+  },
+  {
+    "canonicalId": "df214b5499694b768eb4a7a175a9d471",
+    "exchangeId": "id-e4ada895b3705f13829792ac8ab2e274",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Healthcare Subject Profile Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.1 [CT2] Client Administration",
+      "II.1.3.4.1.3 [CT3] Healthcare Subject Profile Administration",
+      "[CT3] Healthcare Subject Profile Administration"
+    ]
+  },
+  {
+    "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+    "exchangeId": "id-29e0bf94882559a7b6ed9d092303a560",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Person Identity Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.1 [CT2] Client Administration",
+      "II.1.3.4.1.4 [CT3] Person Identity Administration",
+      "[CT3] Person Identity Administration"
+    ]
+  },
+  {
+    "canonicalId": "31bcd6fda0d14cc8b992cdca39a3cbed",
+    "exchangeId": "id-a6aaf19f1f225b67b1e3a19740d5f457",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Device Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.2 [CT2] Clinical Device Administration",
+      "[CT2] Clinical Device Administration"
+    ]
+  },
+  {
+    "canonicalId": "d0a1ba80c790476ea6042290eb7ea09e",
+    "exchangeId": "id-66b395be368b5464932a1d028bac18a4",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Clinical Device Profile Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.2 [CT2] Clinical Device Administration",
+      "II.1.3.4.2.1 [CT3] Clinical Device Profile Administration",
+      "[CT3] Clinical Device Profile Administration"
+    ]
+  },
+  {
+    "canonicalId": "659bb194a7ef42ab9ba8a938adb5c179",
+    "exchangeId": "id-c7a85b3afdcf5eca8beba6058ebd91e7",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Device OA&M Metadata Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.2 [CT2] Clinical Device Administration",
+      "II.1.3.4.2.6 [CT3] Device OA&M Metadata Management",
+      "[CT3] Device OA&M Metadata Management"
+    ]
+  },
+  {
+    "canonicalId": "1a3732b5911c45b3aece38b2db2d0f15",
+    "exchangeId": "id-09b56d7aca615938baee8103ee9ffb15",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Device Utilisation Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.2 [CT2] Clinical Device Administration",
+      "II.1.3.4.2.7 [CT3] Device Utilisation Administration",
+      "[CT3] Device Utilisation Administration"
+    ]
+  },
+  {
+    "canonicalId": "e7081070a9f8444f81c1d8fce37ef664",
+    "exchangeId": "id-c480beb83dfe55e599ff5dc56b4249bb",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Materiel Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.3 [CT2] Health Materiel Administration",
+      "[CT2] Health Materiel Administration"
+    ]
+  },
+  {
+    "canonicalId": "ba68a52913a0499d8377553bddfa74a4",
+    "exchangeId": "id-19d0a7d9080e5758915878db238ec2d8",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Service Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.4 [CT2] Health Service Administration",
+      "[CT2] Health Service Administration"
+    ]
+  },
+  {
+    "canonicalId": "e75d5eb30936476ea7a9cbadfa43d5ef",
+    "exchangeId": "id-9c7e5f6635095618a9fb1650dc184c64",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Healthcare Service Profile Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.4 [CT2] Health Service Administration",
+      "II.1.3.4.4.1 [CT3] Healthcare Service Profile Administration",
+      "[CT3] Healthcare Service Profile Administration"
+    ]
+  },
+  {
+    "canonicalId": "c410005667444f99a221483bf577fad2",
+    "exchangeId": "id-243b002011da54d5ac721e2a99d456ea",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Location Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.5 [CT2] Location Administration",
+      "[CT2] Location Administration"
+    ]
+  },
+  {
+    "canonicalId": "629b493c7d9844baa25c029a87ed04f6",
+    "exchangeId": "id-6406fe2dfdf65a79980a8fbd6881f251",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Care-Place Definition Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.5 [CT2] Location Administration",
+      "II.1.3.4.5.1 [CT3] Care-Place Definition Administration",
+      "[CT3] Care-Place Definition Administration"
+    ]
+  },
+  {
+    "canonicalId": "e579e54a08bb4f899a504aa998ba246b",
+    "exchangeId": "id-bc2bc98a7a495b47bf11db08e9c29bae",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Healthcare Location Profile Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.5 [CT2] Location Administration",
+      "II.1.3.4.5.2 [CT3] Healthcare Location Profile Administration",
+      "[CT3] Healthcare Location Profile Administration"
+    ]
+  },
+  {
+    "canonicalId": "14fbdc5ce3dd4c2092c5397dab3ed743",
+    "exchangeId": "id-97a226da4bae53e9bb0cb071c6dbf5c2",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Organisation Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.6 [CT2] Organisation Administration",
+      "[CT2] Organisation Administration"
+    ]
+  },
+  {
+    "canonicalId": "f2de9e9394b849f2943355c7a2882a15",
+    "exchangeId": "id-4bd6510c5dc5510291b60560f6e68b71",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Healthcare Organisation Profile Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.6 [CT2] Organisation Administration",
+      "II.1.3.4.6.1 [CT3] Healthcare Organisation Profile Administration",
+      "[CT3] Healthcare Organisation Profile Administration"
+    ]
+  },
+  {
+    "canonicalId": "d6312f85968a4209bafff5ed009297a6",
+    "exchangeId": "id-7b438cff4f2d5b6d928cd7ea538f67a4",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Provider Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.7 [CT2] Provider Administration",
+      "[CT2] Provider Administration"
+    ]
+  },
+  {
+    "canonicalId": "40759a835f7b456e9257c38b67b0a380",
+    "exchangeId": "id-4c6e206c1684595b84981d627a110e53",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Practitioner Profile Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.7 [CT2] Provider Administration",
+      "II.1.3.4.7.1 [CT3] Practitioner Profile Administration",
+      "[CT3] Practitioner Profile Administration"
+    ]
+  },
+  {
+    "canonicalId": "6651471e67ae46fb8d1c1241c8590be9",
+    "exchangeId": "id-394620b518475a49b9810a7f556b3313",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Practitioner Role Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.4 [CT1] Entity Information Enablement",
+      "II.1.3.4.7 [CT2] Provider Administration",
+      "II.1.3.4.7.2 [CT3] Practitioner Role Administration",
+      "[CT3] Practitioner Role Administration"
+    ]
+  },
+  {
+    "canonicalId": "a790b5f2c5a1497fa6ec09d7824da32e",
+    "exchangeId": "id-dc7f84d80543529cab8e2ccc86a0428c",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Health Informatics Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.5 [CT1] Health Informatics Management",
+      "[CT1] Health Informatics Management"
+    ]
+  },
+  {
+    "canonicalId": "b13ee2c5a4ef4fd6be8a44795696dfc2",
+    "exchangeId": "id-7d2f4319495b59248bd13f7b256a1c32",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Health Service Operations Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "[CT1] Health Service Operations Enablement"
+    ]
+  },
+  {
+    "canonicalId": "f117ccec0bfa4f738e6ddb646b3534a2",
+    "exchangeId": "id-99e98c1485575f90883330359d72b921",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Bed & Care-Place Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.1 [CT2] Bed & Care-Place Management",
+      "[CT2] Bed & Care-Place Management"
+    ]
+  },
+  {
+    "canonicalId": "26a9383d7bb146a19141558d232843de",
+    "exchangeId": "id-315b46c620d151868c9f84a0ed45ccd2",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Bed & Care-Place State Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.1 [CT2] Bed & Care-Place Management",
+      "II.1.3.6.1.1 [CT3] Bed & Care-Place State Administration",
+      "[CT3] Bed & Care-Place State Administration"
+    ]
+  },
+  {
+    "canonicalId": "3c9464f9eae1415d8fa041bd1f3da4f2",
+    "exchangeId": "id-f498770b9a45551990afc0c14336212f",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Bed & Care-Place Turnover Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.1 [CT2] Bed & Care-Place Management",
+      "II.1.3.6.1.2 [CT3] Bed & Care-Place Turnover Coordination",
+      "[CT3] Bed & Care-Place Turnover Coordination"
+    ]
+  },
+  {
+    "canonicalId": "96f71cb8fa6844d7aa7e9f16759a3a62",
+    "exchangeId": "id-2f2df4a3cea854849a3a985fa2b47996",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Care Resource & Capacity Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.3 [CT2] Care Resource & Capacity Coordination [superseded]",
+      "[CT2] Care Resource & Capacity Coordination"
+    ]
+  },
+  {
+    "canonicalId": "0caecaba5d3e4781b8671b12c13ee283",
+    "exchangeId": "id-f4b94cd1b3af514eb9e99ddfd82245ba",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Service Offering Readiness Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.3 [CT2] Care Resource & Capacity Coordination [superseded]",
+      "II.1.3.6.3.2 [CT3] Service Offering Readiness Coordination",
+      "[CT3] Service Offering Readiness Coordination"
+    ]
+  },
+  {
+    "canonicalId": "3dffe63e03124efab255204ee4e9a5d9",
+    "exchangeId": "id-c907d86a7e995d0f99f48365418f41f8",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinic & Practice Operations"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.5 [CT2] Clinic & Practice Operations",
+      "[CT2] Clinic & Practice Operations"
+    ]
+  },
+  {
+    "canonicalId": "22981a95ca6e466582363706fde8fceb",
+    "exchangeId": "id-5c2d8bf1b2ec5762b2be0bc402aa7ca1",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Session & Queue Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.5 [CT2] Clinic & Practice Operations",
+      "II.1.3.6.5.1 [CT3] Session & Queue Coordination",
+      "[CT3] Session & Queue Coordination"
+    ]
+  },
+  {
+    "canonicalId": "0c27be11b4a44cb19e992309b8146a17",
+    "exchangeId": "id-143b994de5cd593897012a96963e43ca",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Logistics Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.7 [CT2] Clinical Logistics Coordination",
+      "[CT2] Clinical Logistics Coordination"
+    ]
+  },
+  {
+    "canonicalId": "bfa2e9a84ddd4287897573dc0d917a00",
+    "exchangeId": "id-8c4d5090fb7150469d8e4b10a7551dab",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Specimen Movement Traceability"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.7 [CT2] Clinical Logistics Coordination",
+      "II.1.3.6.7.2 [CT3] Specimen Movement Traceability",
+      "[CT3] Specimen Movement Traceability"
+    ]
+  },
+  {
+    "canonicalId": "0511a705d74a4f48a0ce92590ae764fa",
+    "exchangeId": "id-c1ec3269b7655d079fee5f5b92fbd5e6",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Qualification Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.8 [CT2] Clinical Qualification Administration",
+      "[CT2] Clinical Qualification Administration"
+    ]
+  },
+  {
+    "canonicalId": "8fd5c78eba3046fa9153fb4efb44e9c8",
+    "exchangeId": "id-7b77530f0c8a569498954dc0a5fcf798",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Provider Clinical Qualification Tracking"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.8 [CT2] Clinical Qualification Administration",
+      "II.1.3.6.8.2 [CT3] Provider Clinical Qualification Tracking",
+      "[CT3] Provider Clinical Qualification Tracking"
+    ]
+  },
+  {
+    "canonicalId": "192ca88a289544dcbf6adaf643f39969",
+    "exchangeId": "id-cbe0d80e3f8c501781eb087d3f932b11",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Rostering"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.9 [CT2] Clinical Rostering",
+      "[CT2] Clinical Rostering"
+    ]
+  },
+  {
+    "canonicalId": "f697b1ac79b544749315f31819b17969",
+    "exchangeId": "id-57136cee07f65bf98b7bfe63fba60fa4",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Supervision"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.10 [CT2] Clinical Supervision",
+      "[CT2] Clinical Supervision"
+    ]
+  },
+  {
+    "canonicalId": "21eed4fc8c924496b16c6ddaa32f3d01",
+    "exchangeId": "id-ecc5bfe7e27b54dfb59023a05879f1b0",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Credential Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.13 [CT2] Credential Management",
+      "[CT2] Credential Management"
+    ]
+  },
+  {
+    "canonicalId": "ec5e8d6732764aa489c2dd7630fc8fef",
+    "exchangeId": "id-481836991b9257c69af3d3dceb781a72",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Discharge Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.14 [CT2] Discharge Management",
+      "[CT2] Discharge Management"
+    ]
+  },
+  {
+    "canonicalId": "d6048993146b45639bab27860f94f34f",
+    "exchangeId": "id-a99640e4d2c05ac3be8b58e113e550dc",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Discharge Progression & Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.14 [CT2] Discharge Management",
+      "II.1.3.6.14.1 [CT3] Discharge Progression & Coordination",
+      "[CT3] Discharge Progression & Coordination"
+    ]
+  },
+  {
+    "canonicalId": "24a4b5815faa4d369bc756a6e97d3e9e",
+    "exchangeId": "id-60e2aa8fae4d51b993b4022f9ed688ff",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Emergency Department Operations"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.15 [CT2] Emergency Department Operations",
+      "[CT2] Emergency Department Operations"
+    ]
+  },
+  {
+    "canonicalId": "7125e459a48946d0ba075b5ecc3571b4",
+    "exchangeId": "id-036bd5a9fa1b5fca9c3245abf3016f44",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Emergency Care Progression"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.15 [CT2] Emergency Department Operations",
+      "II.1.3.6.15.1 [CT3] Emergency Care Progression",
+      "[CT3] Emergency Care Progression"
+    ]
+  },
+  {
+    "canonicalId": "8f0b0f3d9e8d44a7827b0835870b4a4f",
+    "exchangeId": "id-1b8e6ac4079f5e8dad95cae8bbb52aaf",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Emergency Department Operational Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.15 [CT2] Emergency Department Operations",
+      "II.1.3.6.15.2 [CT3] Emergency Department Operational Coordination",
+      "[CT3] Emergency Department Operational Coordination"
+    ]
+  },
+  {
+    "canonicalId": "79a4a48fddf74c69acf7e16404d06ea5",
+    "exchangeId": "id-bfbdb4730780550e884dabf485f6cc6f",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Mobile Staff Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.16 [CT2] Mobile Staff Management",
+      "[CT2] Mobile Staff Management"
+    ]
+  },
+  {
+    "canonicalId": "d72164668dfe448bbebe74e9e1a75233",
+    "exchangeId": "id-3fd840ab23015c128060f2b3dd4359b4",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Mobile Worker Dispatch & Safety Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.16 [CT2] Mobile Staff Management",
+      "II.1.3.6.16.1 [CT3] Mobile Worker Dispatch & Safety Coordination",
+      "[CT3] Mobile Worker Dispatch & Safety Coordination"
+    ]
+  },
+  {
+    "canonicalId": "b16cef8f2bfd4b92948ec75cbcfa7b9a",
+    "exchangeId": "id-d398ed8aeb1c5dc49a55367f1421d42c",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] On-Call Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.17 [CT2] On-Call Management",
+      "[CT2] On-Call Management"
+    ]
+  },
+  {
+    "canonicalId": "677a816c42414ea694791b4ee5a14285",
+    "exchangeId": "id-c3f38627d9395f77bf64711330c8f290",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] On-Call Availability & Contact Resolution"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.17 [CT2] On-Call Management",
+      "II.1.3.6.17.1 [CT3] On-Call Availability & Contact Resolution",
+      "[CT3] On-Call Availability & Contact Resolution"
+    ]
+  },
+  {
+    "canonicalId": "21399d52b9624ddfbeb786f1d72e40c3",
+    "exchangeId": "id-f8932fe58ea154028a1a5dfa4887f491",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Outpatient Operations"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.19 [CT2] Outpatient Operations",
+      "[CT2] Outpatient Operations"
+    ]
+  },
+  {
+    "canonicalId": "799ea278af014168b9b534e5fdadc6d1",
+    "exchangeId": "id-4595d9da485357d4b4d5ab830b5ad0a1",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Outpatient Flow Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.19 [CT2] Outpatient Operations",
+      "II.1.3.6.19.1 [CT3] Outpatient Flow Coordination",
+      "[CT3] Outpatient Flow Coordination"
+    ]
+  },
+  {
+    "canonicalId": "6041d7c0cc5d4519aaea584bb4e6d365",
+    "exchangeId": "id-97b7e74f9a4d5e95a1f89de6b3cfc393",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Patient Transport"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.20 [CT2] Patient Transport",
+      "[CT2] Patient Transport"
+    ]
+  },
+  {
+    "canonicalId": "c7c7aa8e34df4568ae4b91cdde380a11",
+    "exchangeId": "id-c67d028a12d457b1bff85ea82df63718",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Patient Transfer Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.20 [CT2] Patient Transport",
+      "II.1.3.6.20.1 [CT3] Patient Transfer Coordination",
+      "[CT3] Patient Transfer Coordination"
+    ]
+  },
+  {
+    "canonicalId": "d86105bf9c86445394088f65c895d37f",
+    "exchangeId": "id-2de1ef69d9675c59baa5c66e541e1df5",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Service Capacity Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.21 [CT2] Service Capacity Management",
+      "[CT2] Service Capacity Management"
+    ]
+  },
+  {
+    "canonicalId": "93b5548ce8d04fcd999b97536c1eebf9",
+    "exchangeId": "id-4125661f05bc5551a63787e0afe15491",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Service Demand & Capacity Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.21 [CT2] Service Capacity Management",
+      "II.1.3.6.21.1 [CT3] Service Demand & Capacity Coordination",
+      "[CT3] Service Demand & Capacity Coordination"
+    ]
+  },
+  {
+    "canonicalId": "4bf7a8260e1444fdac44e97c3557b533",
+    "exchangeId": "id-ee472a7091b85442911ccf12aac63a4d",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Theatre Operations"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.23 [CT2] Theatre Operations",
+      "[CT2] Theatre Operations"
+    ]
+  },
+  {
+    "canonicalId": "6b7c08b60b5b48519bfe4b6f993dd6fb",
+    "exchangeId": "id-0df9d488a0865c958bf5b6c3557b8976",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Perioperative Logistics Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.23 [CT2] Theatre Operations",
+      "II.1.3.6.23.1 [CT3] Perioperative Logistics Coordination",
+      "[CT3] Perioperative Logistics Coordination"
+    ]
+  },
+  {
+    "canonicalId": "f996ecca728f4942a88b034aca818a99",
+    "exchangeId": "id-014da71d575756afa0db8502a0d1c904",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Ward Operations"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.24 [CT2] Ward Operations",
+      "[CT2] Ward Operations"
+    ]
+  },
+  {
+    "canonicalId": "c798e38e12e5428dbb8b3cabc977d430",
+    "exchangeId": "id-2fb39d490c105c5d985595cc71f06003",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Multidisciplinary Inpatient Care Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.24 [CT2] Ward Operations",
+      "II.1.3.6.24.1 [CT3] Multidisciplinary Inpatient Care Coordination",
+      "[CT3] Multidisciplinary Inpatient Care Coordination"
+    ]
+  },
+  {
+    "canonicalId": "3249647f7b9846c899f982ab339c81f9",
+    "exchangeId": "id-5d528e4fcb5e5092a26ac5fba62d8fe9",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Ward Logistics Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.24 [CT2] Ward Operations",
+      "II.1.3.6.24.2 [CT3] Ward Logistics Coordination",
+      "[CT3] Ward Logistics Coordination"
+    ]
+  },
+  {
+    "canonicalId": "152a5252952c405994e9b171234efcb0",
+    "exchangeId": "id-802e169720d253d1979cf0de2eb2004b",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Work Allocation & Dispatch"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.25 [CT2] Work Allocation & Dispatch",
+      "[CT2] Work Allocation & Dispatch"
+    ]
+  },
+  {
+    "canonicalId": "3b58935cfa974176989c3c75d76a00fe",
+    "exchangeId": "id-b4d502174176517d89e42e4cd48e1fff",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Operational Work Assignment & Dispatch Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.25 [CT2] Work Allocation & Dispatch",
+      "II.1.3.6.25.1 [CT3] Operational Work Assignment & Dispatch Coordination",
+      "[CT3] Operational Work Assignment & Dispatch Coordination"
+    ]
+  },
+  {
+    "canonicalId": "d24a1f4c4f674c45a95c317998ff4186",
+    "exchangeId": "id-0be98fb67d425ecab44e20c991d19a01",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Workforce Qualification & Development Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.6 [CT1] Health Service Operations Enablement",
+      "II.1.3.6.26 [CT2] Workforce Qualification & Development Enablement [superseded]",
+      "[CT2] Workforce Qualification & Development Enablement"
+    ]
+  },
+  {
+    "canonicalId": "c9347f73b21242c5b8cce41252b74da0",
+    "exchangeId": "id-0bac088d5c4358b99269265e43c4d89e",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Human Collaboration & Work Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.7 [CT1] Human Collaboration & Work Enablement [superseded]",
+      "[CT1] Human Collaboration & Work Enablement"
+    ]
+  },
+  {
+    "canonicalId": "ca96b2b2ff434854995711e403e95f6f",
+    "exchangeId": "id-4e4a405d0abf537089c1bcabb41669d2",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Operational Activity & Temporal Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.7 [CT1] Human Collaboration & Work Enablement [superseded]",
+      "II.1.3.7.2 [CT2] Operational Activity & Temporal Enablement [superseded]",
+      "[CT2] Operational Activity & Temporal Enablement"
+    ]
+  },
+  {
+    "canonicalId": "9f0c1429b64f4f88982fbbda6eaec233",
+    "exchangeId": "id-90f67ae80f4e599eb3a922a46aa46139",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Entity-Specific Operational Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.7 [CT1] Human Collaboration & Work Enablement [superseded]",
+      "II.1.3.7.2 [CT2] Operational Activity & Temporal Enablement [superseded]",
+      "II.1.3.7.2.1 [CT3] Entity-Specific Operational Coordination",
+      "[CT3] Entity-Specific Operational Coordination"
+    ]
+  },
+  {
+    "canonicalId": "3a96040821c14fe38830411dab4f8453",
+    "exchangeId": "id-e285e2523d1f5fe488af1b4735d4a49b",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Governed Operational Activity Design"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.7 [CT1] Human Collaboration & Work Enablement [superseded]",
+      "II.1.3.7.2 [CT2] Operational Activity & Temporal Enablement [superseded]",
+      "II.1.3.7.2.2 [CT3] Governed Operational Activity Design",
+      "[CT3] Governed Operational Activity Design"
+    ]
+  },
+  {
+    "canonicalId": "94c683c7588f475e973b58cb226345db",
+    "exchangeId": "id-fe75271f0234500982b272bc2ac9a9b9",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Workflow & Activity Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.7 [CT1] Human Collaboration & Work Enablement [superseded]",
+      "II.1.3.7.2 [CT2] Operational Activity & Temporal Enablement [superseded]",
+      "II.1.3.7.2.3 [CT3] Workflow & Activity Coordination",
+      "[CT3] Workflow & Activity Coordination"
+    ]
+  },
+  {
+    "canonicalId": "616682b612d244429e656b040e002d56",
+    "exchangeId": "id-7045e58c19235175b54f5d054232b883",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Independent Assurance Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.8 [CT1] Independent Assurance Enablement",
+      "[CT1] Independent Assurance Enablement"
+    ]
+  },
+  {
+    "canonicalId": "b1a791458d644d4794895e4fa42ec83c",
+    "exchangeId": "id-8a7d47abbe015a309139a0ee2c1250d4",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Assurance Service Review"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.8 [CT1] Independent Assurance Enablement",
+      "II.1.3.8.1 [CT2] Assurance Service Review",
+      "[CT2] Assurance Service Review"
+    ]
+  },
+  {
+    "canonicalId": "b81775d89d774cf8ba61731d13c67a54",
+    "exchangeId": "id-e18e1674a30c5c97a40ef75faea25663",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Assurance Specification"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.8 [CT1] Independent Assurance Enablement",
+      "II.1.3.8.2 [CT2] Assurance Specification",
+      "[CT2] Assurance Specification"
+    ]
+  },
+  {
+    "canonicalId": "1bfd71f24321428c8871b587d413f47e",
+    "exchangeId": "id-5b9c494f5afb5f348c6e67afc7e022d5",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Assurance Criteria Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.8 [CT1] Independent Assurance Enablement",
+      "II.1.3.8.2 [CT2] Assurance Specification",
+      "II.1.3.8.2.1 [CT3] Assurance Criteria Administration",
+      "[CT3] Assurance Criteria Administration"
+    ]
+  },
+  {
+    "canonicalId": "71c8a612b88f4ecba049e94d506bd0c2",
+    "exchangeId": "id-e5aa0bd0a82b5ee484397627845f3f1c",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Assurance Design"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.8 [CT1] Independent Assurance Enablement",
+      "II.1.3.8.2 [CT2] Assurance Specification",
+      "II.1.3.8.2.2 [CT3] Assurance Design",
+      "[CT3] Assurance Design"
+    ]
+  },
+  {
+    "canonicalId": "7fa5112efb724b90a17a03c7c19c516a",
+    "exchangeId": "id-fe7ae69ddcf154af96952f3194f71c33",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Independent Assurance Evaluation Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.8 [CT1] Independent Assurance Enablement",
+      "II.1.3.8.3 [CT2] Independent Assurance Evaluation Enablement",
+      "[CT2] Independent Assurance Evaluation Enablement"
+    ]
+  },
+  {
+    "canonicalId": "da1a983d4dcf4d5bb772b8f69bc08426",
+    "exchangeId": "id-14dccd7d85915b23b805d452c4bb35e2",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Governed Assurance"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.8 [CT1] Independent Assurance Enablement",
+      "II.1.3.8.3 [CT2] Independent Assurance Evaluation Enablement",
+      "II.1.3.8.3.1 [CT3] Governed Assurance",
+      "[CT3] Governed Assurance"
+    ]
+  },
+  {
+    "canonicalId": "0062fcacae1740988b6be2bda2aa1674",
+    "exchangeId": "id-a5127b36f8a25c748c68426668173fcd",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT1] Shared Information & Coordination Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "[CT1] Shared Information & Coordination Enablement"
+    ]
+  },
+  {
+    "canonicalId": "7669036f7e6749219412fc64df5f7064",
+    "exchangeId": "id-6b7034b5239c505d858d651b8ee78832",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Calendar Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.1 [CT2] Calendar Management",
+      "[CT2] Calendar Management"
+    ]
+  },
+  {
+    "canonicalId": "f6d8f1310ba543f69e8b57bf05603db3",
+    "exchangeId": "id-d975937d894d521eaf2465cf00b08aaf",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Operational & Clinical Calendar Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.1 [CT2] Calendar Management",
+      "II.1.3.9.1.1 [CT3] Operational & Clinical Calendar Coordination",
+      "[CT3] Operational & Clinical Calendar Coordination"
+    ]
+  },
+  {
+    "canonicalId": "e6429225463a44d39f82e490e254e5d4",
+    "exchangeId": "id-0770a7338b0a53adb14971ace57fea7f",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Collaboration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.2 [CT2] Clinical Collaboration",
+      "[CT2] Clinical Collaboration"
+    ]
+  },
+  {
+    "canonicalId": "f11617eed6ff4d6fa237644ec95b28b2",
+    "exchangeId": "id-97b0afca9c9e513d8205eb624be06169",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Clinical Context Collaboration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.2 [CT2] Clinical Collaboration",
+      "II.1.3.9.2.1 [CT3] Clinical Context Collaboration",
+      "[CT3] Clinical Context Collaboration"
+    ]
+  },
+  {
+    "canonicalId": "3811c758ff2140c39a801bf89f75098a",
+    "exchangeId": "id-1b407e2fabba5fd2a45c73692a95d79b",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Information Stewardship Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.3 [CT2] Clinical Information Stewardship Enablement [superseded]",
+      "[CT2] Clinical Information Stewardship Enablement"
+    ]
+  },
+  {
+    "canonicalId": "8c850faafb334f97a81a0b4cd8fdb65f",
+    "exchangeId": "id-b78f67bb04765785bb46be9e9c5427d3",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Information Authority Representation"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.3 [CT2] Clinical Information Stewardship Enablement [superseded]",
+      "II.1.3.9.3.1 [CT3] Information Authority Representation",
+      "[CT3] Information Authority Representation"
+    ]
+  },
+  {
+    "canonicalId": "bbd2bd21859f40e39963bdbe7a851686",
+    "exchangeId": "id-c7f56c1dcc525ca8805682bc1d92907d",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Clinical Knowledge Services"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.4 [CT2] Clinical Knowledge Services",
+      "[CT2] Clinical Knowledge Services"
+    ]
+  },
+  {
+    "canonicalId": "543c53483a2249d78044c6635b7b7c48",
+    "exchangeId": "id-59010f4f41df5e509a40226be95a123b",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Clinical Knowledge Request Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.4 [CT2] Clinical Knowledge Services",
+      "II.1.3.9.4.2 [CT3] Clinical Knowledge Request Administration",
+      "[CT3] Clinical Knowledge Request Administration"
+    ]
+  },
+  {
+    "canonicalId": "682b8684ad9e49d5a5c348a148081607",
+    "exchangeId": "id-cc4edaeee1d3519185ee94a683e4a5e0",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Governed Reference Dataset Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.4 [CT2] Clinical Knowledge Services",
+      "II.1.3.9.4.3 [CT3] Governed Reference Dataset Administration",
+      "[CT3] Governed Reference Dataset Administration"
+    ]
+  },
+  {
+    "canonicalId": "3bb740e6db284112b054905c0c6c80be",
+    "exchangeId": "id-220d1f41d46b57fba6377fcd533fb94a",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] General Collaboration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.5 [CT2] General Collaboration",
+      "[CT2] General Collaboration"
+    ]
+  },
+  {
+    "canonicalId": "631fdb8b47084008ac9b5de28b26972b",
+    "exchangeId": "id-7a89497d659f50629cd7dd7105c0e411",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Operational Collaboration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.5 [CT2] General Collaboration",
+      "II.1.3.9.5.1 [CT3] Operational Collaboration",
+      "[CT3] Operational Collaboration"
+    ]
+  },
+  {
+    "canonicalId": "cc253aea3c5f489da0502df74dde1669",
+    "exchangeId": "id-20ff65f6cd1d5932968574bc72bd7aa3",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Information Access"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.6 [CT2] Health Information Access",
+      "[CT2] Health Information Access"
+    ]
+  },
+  {
+    "canonicalId": "76e74e46ca4d44a1a7bb116b358f231c",
+    "exchangeId": "id-2b06d69a6fe75ab79dc8d11abe5c780a",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Governed Health Information Retrieval"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.6 [CT2] Health Information Access",
+      "II.1.3.9.6.1 [CT3] Governed Health Information Retrieval",
+      "[CT3] Governed Health Information Retrieval"
+    ]
+  },
+  {
+    "canonicalId": "7925605bf60f4b288e826020409a09d9",
+    "exchangeId": "id-5004f4019d1059108356b6ee7cfcaa8e",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Information Communication"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.7 [CT2] Health Information Communication",
+      "[CT2] Health Information Communication"
+    ]
+  },
+  {
+    "canonicalId": "6a1030483dfc4ae6af6998b587129d1c",
+    "exchangeId": "id-10a8917a66475db1b276741d0efd840f",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Information Connectivity Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.8 [CT2] Health Information Connectivity Enablement [superseded]",
+      "[CT2] Health Information Connectivity Enablement"
+    ]
+  },
+  {
+    "canonicalId": "9794b2aff43443b495a19aefe0efa67b",
+    "exchangeId": "id-09019f6c980e57d1a11691eb4bf9f8eb",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Health Information Communication"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.8 [CT2] Health Information Connectivity Enablement [superseded]",
+      "II.1.3.9.8.1 [CT3] Health Information Communication",
+      "[CT3] Health Information Communication"
+    ]
+  },
+  {
+    "canonicalId": "44cc0e17ad534675bf26dce6e46a68ff",
+    "exchangeId": "id-b9c636efc8a35c18bd0dce7db89caa88",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Information Control"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.9 [CT2] Health Information Control",
+      "[CT2] Health Information Control"
+    ]
+  },
+  {
+    "canonicalId": "262366990bda4ac4ace5429269cf6a98",
+    "exchangeId": "id-0c99a409fcad5e30b1c384f25976197f",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Patient Health Information Restriction Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.9 [CT2] Health Information Control",
+      "II.1.3.9.9.3 [CT3] Patient Health Information Restriction Management",
+      "[CT3] Patient Health Information Restriction Management"
+    ]
+  },
+  {
+    "canonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+    "exchangeId": "id-0712aaf441dc5100a5ac79c4b7848477",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Health Information Exchange Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.10 [CT2] Health Information Exchange Enablement",
+      "[CT2] Health Information Exchange Enablement"
+    ]
+  },
+  {
+    "canonicalId": "8ce29be373e04252b7aa881b6a72f375",
+    "exchangeId": "id-390fb11c89e7528e96684afcec04539a",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] HIE Implementation Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.10 [CT2] Health Information Exchange Enablement",
+      "II.1.3.9.10.2 [CT3] HIE Implementation Management",
+      "[CT3] HIE Implementation Management"
+    ]
+  },
+  {
+    "canonicalId": "5bac15316d8d4f4db6e7a253f1acfbe3",
+    "exchangeId": "id-0e93a43b398a503d804b87204f939a09",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Information Asset Stewardship Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.11 [CT2] Information Asset Stewardship Management",
+      "[CT2] Information Asset Stewardship Management"
+    ]
+  },
+  {
+    "canonicalId": "b81a1ab42af24c2e9896b8f3f78d291a",
+    "exchangeId": "id-f4e98809bf18585aac90aa1597b89bb0",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Information Content Maintainer Management"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.12 [CT2] Information Content Maintainer Management",
+      "[CT2] Information Content Maintainer Management"
+    ]
+  },
+  {
+    "canonicalId": "44a7937520a54945b06b5fd4a2bbd870",
+    "exchangeId": "id-72018038e84c518c8bb24cb76c3b418e",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Data Provenance Capture"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.12 [CT2] Information Content Maintainer Management",
+      "II.1.3.9.12.1 [CT3] Data Provenance Capture",
+      "[CT3] Data Provenance Capture"
+    ]
+  },
+  {
+    "canonicalId": "b5a6a31855834ea58870ebb6c51ed4b0",
+    "exchangeId": "id-ed9226f42cd853c08bb48e6ce86cfd4b",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Information Product Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.12 [CT2] Information Content Maintainer Management",
+      "II.1.3.9.12.3 [CT3] Information Product Administration",
+      "[CT3] Information Product Administration"
+    ]
+  },
+  {
+    "canonicalId": "f39ed9ebcc724857a4bf7a2b8e045c7a",
+    "exchangeId": "id-7f29effdff4f526fb023f7c3f8d2d82e",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Information Design Governance"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.13 [CT2] Information Design Governance",
+      "[CT2] Information Design Governance"
+    ]
+  },
+  {
+    "canonicalId": "90e9cd401ddf4c7690c978d8dd131413",
+    "exchangeId": "id-cd6d12693e255af7876c44caddfdbdb4",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Enterprise Canonical/Reusable Model Design"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.13 [CT2] Information Design Governance",
+      "II.1.3.9.13.1 [CT3] Enterprise Canonical/Reusable Model Design",
+      "[CT3] Enterprise Canonical/Reusable Model Design"
+    ]
+  },
+  {
+    "canonicalId": "5744cb9d86494064af87afb3cbf2cf97",
+    "exchangeId": "id-bb43c048f11e5d069f844bdb8c3a1ed9",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Enterprise Canonical/Reusable Model Utilisation Support"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.13 [CT2] Information Design Governance",
+      "II.1.3.9.13.3 [CT3] Enterprise Canonical/Reusable Model Utilisation Support",
+      "[CT3] Enterprise Canonical/Reusable Model Utilisation Support"
+    ]
+  },
+  {
+    "canonicalId": "e922cba7cf1d4ebeb9abf6472a3803ce",
+    "exchangeId": "id-c72a309296ec5da68e55dc8ba1f8fcb7",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Information Protection & Accountability Enablement"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.14 [CT2] Information Protection & Accountability Enablement [superseded]",
+      "[CT2] Information Protection & Accountability Enablement"
+    ]
+  },
+  {
+    "canonicalId": "7e780751d50e4ffe942f8443b7cb6567",
+    "exchangeId": "id-43399be21121568aa6b26f5b0c8414c4",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Governance Requirement Publication Support"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.14 [CT2] Information Protection & Accountability Enablement [superseded]",
+      "II.1.3.9.14.1 [CT3] Governance Requirement Publication Support",
+      "[CT3] Governance Requirement Publication Support"
+    ]
+  },
+  {
+    "canonicalId": "d903948169eb4785b0f03d916c842a8a",
+    "exchangeId": "id-24a125b569e45888bf313cd39d435fba",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Significant Activity Audit Capture"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.14 [CT2] Information Protection & Accountability Enablement [superseded]",
+      "II.1.3.9.14.2 [CT3] Significant Activity Audit Capture",
+      "[CT3] Significant Activity Audit Capture"
+    ]
+  },
+  {
+    "canonicalId": "5478878e0e6e4d34a8d5023ac6ac2d54",
+    "exchangeId": "id-974025114007505b922d37dc6ba0a04f",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Patient Clinical Record"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.15 [CT2] Patient Clinical Record",
+      "[CT2] Patient Clinical Record"
+    ]
+  },
+  {
+    "canonicalId": "5edb2a8b5ee54ddda8104d1fab323a94",
+    "exchangeId": "id-baf9aba95d5c539bab7fc75f6861f176",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Linked Information Curation"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.15 [CT2] Patient Clinical Record",
+      "II.1.3.9.15.1 [CT3] Linked Information Curation",
+      "[CT3] Linked Information Curation"
+    ]
+  },
+  {
+    "canonicalId": "14748dc6117f4b6ba7c0fc554b76bd89",
+    "exchangeId": "id-dbb8a6f722f756808d5022cbd06aec85",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Longitudinal Clinical Record Administration"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.15 [CT2] Patient Clinical Record",
+      "II.1.3.9.15.2 [CT3] Longitudinal Clinical Record Administration",
+      "[CT3] Longitudinal Clinical Record Administration"
+    ]
+  },
+  {
+    "canonicalId": "f80e73ee91624ce5baa11ae15480fd35",
+    "exchangeId": "id-b9ab7bb6c4865419928c0c1f13bf45b7",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Primary Care Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.15 [CT2] Patient Clinical Record",
+      "II.1.3.9.15.3 [CT3] Primary Care Coordination",
+      "[CT3] Primary Care Coordination"
+    ]
+  },
+  {
+    "canonicalId": "2d1addc7dd1d4821b71a11c692d35b27",
+    "exchangeId": "id-cb13e2de68e55d8c9204e770611aef37",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Remote Patient Monitoring"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.15 [CT2] Patient Clinical Record",
+      "II.1.3.9.15.4 [CT3] Remote Patient Monitoring",
+      "[CT3] Remote Patient Monitoring"
+    ]
+  },
+  {
+    "canonicalId": "e9b6ba1917ba44cca7466444d0836c98",
+    "exchangeId": "id-306525d358285c6cb525859aba8c7f7f",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Presentation Services"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.16 [CT2] Presentation Services",
+      "[CT2] Presentation Services"
+    ]
+  },
+  {
+    "canonicalId": "9f900c53ae56488cad69e53c2205e898",
+    "exchangeId": "id-dc26649d879b5c23813b59e7ada49e3d",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT3] Contextual Information Presentation"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.16 [CT2] Presentation Services",
+      "II.1.3.9.16.1 [CT3] Contextual Information Presentation",
+      "[CT3] Contextual Information Presentation"
+    ]
+  },
+  {
+    "canonicalId": "c724f3d38bfa4567983a11ad22095d61",
+    "exchangeId": "id-36d21ea7e98b5e1bbbddad25ba53cd4e",
+    "nativeType": "Capability",
+    "before": [
+      "Strategy",
+      "[CT2] Workflow & Activity Coordination"
+    ],
+    "after": [
+      "Strategy",
+      "II Strategy",
+      "II.1 Capabilities",
+      "II.1.3 Business Enabling Capabilities",
+      "II.1.3.9 [CT1] Shared Information & Coordination Enablement",
+      "II.1.3.9.18 [CT2] Workflow & Activity Coordination",
+      "[CT2] Workflow & Activity Coordination"
+    ]
+  },
+  {
+    "canonicalId": "f702d357183847dd8f0fd09545679ffd",
+    "exchangeId": "id-395f82a0d8664955b6f542d80de3f5b5",
+    "nativeType": "DataObject",
+    "before": [
+      "Application",
+      "[Topic] Care"
+    ],
+    "after": [
+      "Application",
+      "IV Application",
+      "IV.1 Information Architecture",
+      "IV.1.1 Topics",
+      "IV.1.1.1 [Topic] Care",
+      "[Topic] Care"
+    ]
+  },
+  {
+    "canonicalId": "882234c291ca4c6492ad6dfbe1e23fea",
+    "exchangeId": "id-68a83c289478490197dfb2920534da86",
+    "nativeType": "DataObject",
+    "before": [
+      "Application",
+      "[Topic] Coordination"
+    ],
+    "after": [
+      "Application",
+      "IV Application",
+      "IV.1 Information Architecture",
+      "IV.1.1 Topics",
+      "IV.1.1.2 [Topic] Coordination",
+      "[Topic] Coordination"
+    ]
+  },
+  {
+    "canonicalId": "5c5da6a06dac413aa2809a1397f8a3b9",
+    "exchangeId": "id-74f9c5df31f2430ca725c39e285cd9c3",
+    "nativeType": "DataObject",
+    "before": [
+      "Application",
+      "[Topic] Enterprise"
+    ],
+    "after": [
+      "Application",
+      "IV Application",
+      "IV.1 Information Architecture",
+      "IV.1.1 Topics",
+      "IV.1.1.3 [Topic] Enterprise",
+      "[Topic] Enterprise"
+    ]
+  },
+  {
+    "canonicalId": "8e658834311d41e68a8ecf71d8ccd5db",
+    "exchangeId": "id-40f54ad3867549dba20c6f197c0c43be",
+    "nativeType": "DataObject",
+    "before": [
+      "Application",
+      "[Topic] Equipment"
+    ],
+    "after": [
+      "Application",
+      "IV Application",
+      "IV.1 Information Architecture",
+      "IV.1.1 Topics",
+      "IV.1.1.4 [Topic] Equipment",
+      "[Topic] Equipment"
+    ]
+  },
+  {
+    "canonicalId": "4af969b8c23a4dcab7569dc51b263383",
+    "exchangeId": "id-bd2c303e65434409b69777c403116005",
+    "nativeType": "DataObject",
+    "before": [
+      "Application",
+      "[Topic] Individual"
+    ],
+    "after": [
+      "Application",
+      "IV Application",
+      "IV.1 Information Architecture",
+      "IV.1.1 Topics",
+      "IV.1.1.5 [Topic] Individual",
+      "[Topic] Individual"
+    ]
+  },
+  {
+    "canonicalId": "1c4e2d5ce4574856a7d3605838e8afcb",
+    "exchangeId": "id-939dda01afdc40eabc1bb723f9da5b7b",
+    "nativeType": "DataObject",
+    "before": [
+      "Application",
+      "[Topic] Ordering"
+    ],
+    "after": [
+      "Application",
+      "IV Application",
+      "IV.1 Information Architecture",
+      "IV.1.1 Topics",
+      "IV.1.1.6 [Topic] Ordering",
+      "[Topic] Ordering"
+    ]
+  },
+  {
+    "canonicalId": "36539e3eee7041e585aa3c5a06424bcc",
+    "exchangeId": "id-e7b6552e6cd748fcae781becea007f01",
+    "nativeType": "DataObject",
+    "before": [
+      "Application",
+      "[Topic] Place"
+    ],
+    "after": [
+      "Application",
+      "IV Application",
+      "IV.1 Information Architecture",
+      "IV.1.1 Topics",
+      "IV.1.1.7 [Topic] Place",
+      "[Topic] Place"
+    ]
+  },
+  {
+    "canonicalId": "1225bfab0a6c4312875091a027f24275",
+    "exchangeId": "id-294239d293f4437db7b9e5c9775e6be0",
+    "nativeType": "DataObject",
+    "before": [
+      "Application",
+      "[Topic] Scheduling"
+    ],
+    "after": [
+      "Application",
+      "IV Application",
+      "IV.1 Information Architecture",
+      "IV.1.1 Topics",
+      "IV.1.1.8 [Topic] Scheduling",
+      "[Topic] Scheduling"
+    ]
+  },
+  {
+    "canonicalId": "0b990e0c64684bb8a45643e48eb4470a",
+    "exchangeId": "id-d4e25394de4544b883fe10dd669e7155",
+    "nativeType": "DataObject",
+    "before": [
+      "Application",
+      "[Topic] Service"
+    ],
+    "after": [
+      "Application",
+      "IV Application",
+      "IV.1 Information Architecture",
+      "IV.1.1 Topics",
+      "IV.1.1.9 [Topic] Service",
+      "[Topic] Service"
+    ]
+  },
+  {
+    "canonicalId": "8a9351cd170940d0b36f8d56584f15ec",
+    "exchangeId": "id-ea066123b5304c67ba344bb021d14dca",
+    "nativeType": "DataObject",
+    "before": [
+      "Application",
+      "[Topic] TaskCompletion"
+    ],
+    "after": [
+      "Application",
+      "IV Application",
+      "IV.1 Information Architecture",
+      "IV.1.1 Topics",
+      "IV.1.1.10 [Topic] TaskCompletion",
+      "[Topic] TaskCompletion"
+    ]
+  },
+  {
+    "canonicalId": "9f689e261140436eb94295d63e2b3370",
+    "exchangeId": "id-b931a047f2d24e27ab550368f9f63283",
+    "nativeType": "DataObject",
+    "before": [
+      "Application",
+      "[Topic] Workforce"
+    ],
+    "after": [
+      "Application",
+      "IV Application",
+      "IV.1 Information Architecture",
+      "IV.1.1 Topics",
+      "IV.1.1.11 [Topic] Workforce",
+      "[Topic] Workforce"
+    ]
+  }
+]

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Diagnostic only — organisation-mechanics" id="diagnostic-organisation-mechanics" version="5.0.0">
+  <folder name="Strategy" id="id-dbec235937d6403dba0d5461ea80e2cf" type="strategy">
+    <folder name="Diagnostic cases" id="id-24c3de1eef01474ea200cd5e2697c0d8">
+      <folder name="1 Simple folder" id="id-b3c92b1816bd4e5b90fb7c1eedd78080">
+        <element xsi:type="archimate:Capability" name="Simple canonical leaf" id="simple"/>
+      </folder>
+      <folder name="2 Combined parent item" id="id-a249664dbecd4c37ab20528b5fce2ecc">
+        <folder name="Parent folder label" id="id-a02bd74ec29243ca8d4d4ccf1922137c">
+          <element xsi:type="archimate:Capability" name="Child leaf" id="child"/>
+        </folder>
+      </folder>
+      <folder name="3 Canonical primary location" id="id-e03668b3ad0e472db6d47d68d6f562a8">
+        <element xsi:type="archimate:Capability" name="Canonical contextual Capability" id="context-cap"/>
+      </folder>
+      <folder name="4 Nested Strategy" id="id-2b9418e905c84a47be1585460e8c09b0">
+        <folder name="CT1 parent" id="id-d0d468f704524962bc5e1260be5c52fe">
+          <folder name="CT2 parent" id="id-3f5687b8b2fd484a94025850410939f7">
+            <element xsi:type="archimate:Capability" name="[CT3] Diagnostic leaf" id="ct3"/>
+          </folder>
+        </folder>
+      </folder>
+      <folder name="6 Candidate A Strategy" id="id-44a47a3daeda462ab72fd8dff16cfc0b">
+        <folder name="CT1 folder" id="id-b941c6af11fc473caf8297e5e27f23b4">
+          <folder name="CT2 folder" id="id-80705d5a542a453b9e7d70d7d10fc7f2">
+            <element xsi:type="archimate:Capability" name="[CT2] Folder-plus-element child" id="a-ct2"/>
+            <element xsi:type="archimate:Capability" name="[CT3] Folder-plus-element leaf" id="a-ct3"/>
+          </folder>
+          <element xsi:type="archimate:Capability" name="[CT1] Folder-plus-element parent" id="a-ct1"/>
+        </folder>
+      </folder>
+      <folder name="7 Logical Business mixed types" id="id-f1b712a1933147a785a50f40539db609">
+        <element xsi:type="archimate:ValueStream" name="Diagnostic Value Stream" id="stream"/>
+      </folder>
+    </folder>
+    <element xsi:type="archimate:Capability" name="Parent with children" id="parent"/>
+    <element xsi:type="archimate:Capability" name="[CT1] Diagnostic parent" id="ct1"/>
+    <element xsi:type="archimate:Capability" name="[CT2] Diagnostic child" id="ct2"/>
+  </folder>
+  <folder name="Business" id="id-cb44ea0fccc34243b0bc2e96810c20d0" type="business">
+    <folder name="Diagnostic cases" id="id-a5b37a53b0e945669bb0ba55503dbd32">
+      <folder name="3 Business context" id="id-f8087f8df65d4b148ff583cb1e8a6db1">
+        <folder name="CT1 context" id="id-63f0fe78b6ed4193a280a845894d8b28">
+          <folder name="CT2 context" id="id-696acdcc27294448bbab2abcd02314c2">
+            <element xsi:type="archimate:BusinessFunction" name="Contextual behaviour" id="context-function"/>
+          </folder>
+          <documentation>Reference to context-cap; not identifierRef</documentation>
+        </folder>
+      </folder>
+      <folder name="7 Logical Business mixed types" id="id-40c34a2e84ad4cb09a2e9f2b75e83515">
+        <element xsi:type="archimate:Product" name="Diagnostic Product" id="product"/>
+      </folder>
+    </folder>
+  </folder>
+  <folder name="Application" id="id-b699a2fae47a4137be2199361a3d79b7" type="application">
+    <folder name="Diagnostic cases" id="id-94a3e31f4f6748e8842baa116b74781e">
+      <folder name="5 Nested Application" id="id-9bdea007458444fca98542ad183c9480">
+        <folder name="Care parent" id="id-6d3f28065bf840e1aed9ab4309dd84fd">
+          <element xsi:type="archimate:DataObject" name="[Topic] Diagnostic Encounter" id="encounter"/>
+        </folder>
+      </folder>
+      <folder name="6 Candidate A Application" id="id-6b49c825e7e940efb6475988c91b40e8">
+        <folder name="Care folder" id="id-8db906f8eb734977ada2d9831197f9fa">
+          <element xsi:type="archimate:DataObject" name="[Topic] Folder-plus-element Care" id="a-care"/>
+          <element xsi:type="archimate:DataObject" name="[Topic] Folder-plus-element Encounter" id="a-encounter"/>
+        </folder>
+      </folder>
+    </folder>
+    <element xsi:type="archimate:DataObject" name="[Topic] Diagnostic Care" id="care"/>
+  </folder>
+  <folder name="Technology &amp; Physical" id="id-9f7c8bab62914dab8a07e6342710e3e4" type="technology"/>
+  <folder name="Motivation" id="id-949c2223368447a5a2df55b4b5a5b474" type="motivation">
+    <element xsi:type="archimate:Driver" name="Driver with reference-only children" id="driver"/>
+  </folder>
+  <folder name="Implementation &amp; Migration" id="id-e6660493567b468e9fe6dfa0cad9cde1" type="implementation_migration"/>
+  <folder name="Other" id="id-9810f34e820548dcac3a42661cf1104c" type="other"/>
+  <folder name="Relations" id="id-10fd365adcc140b99988bf923cd24298" type="relations"/>
+  <folder name="Views" id="id-8437e496f0114cf49008b7981036692d" type="diagrams"/>
+</archimate:model>

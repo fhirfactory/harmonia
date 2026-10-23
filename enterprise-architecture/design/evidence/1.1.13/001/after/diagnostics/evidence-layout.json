@@ -1,0 +1,15 @@
+{
+  "outcome": "UNRESOLVED",
+  "records": [
+    "enterprise-architecture/design/evidence/1.1.13/001/before/ai-agent-tasks/unresolved-archi-workbench-organisation-diagnostic.md",
+    "enterprise-architecture/design/evidence/1.1.13/001/after/ai-agent-reports/20261023T044454Z-archi-workbench-organisation-diagnostic.md"
+  ],
+  "eventFormatErrors": [],
+  "unresolved": [
+    "enterprise-architecture/design/evidence/1.1.13/001/before/ai-agent-tasks/unresolved-archi-workbench-organisation-diagnostic.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+    "Continuation Task instruction-entry event and filename prefix also unavailable."
+  ],
+  "fullIterationCheck": "Not applicable to an accepted transition: no corresponding 1.1.13-001 HCRL exists; none is created by diagnostic authority.",
+  "reportEmission": "2026-10-23T04:44:54.343048Z",
+  "limits": "Direct record event/prefix validation only; no HCRL acceptance, issuance authenticity or human inspection claim."
+}

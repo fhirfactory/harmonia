@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "javaVersion": 21,
+  "offlineMaven": true,
+  "classes": [
+    {
+      "class": "net.fhirfactory.harmonia.paradeigma.test.arch.PylaiPublicationBoundaryArchitectureTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "net.fhirfactory.harmonia.paradeigma.test.arch.PetasosApiIsolationArchitectureTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "net.fhirfactory.harmonia.paradeigma.test.arch.AgoraIsolationArchitectureTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "net.fhirfactory.harmonia.paradeigma.test.arch.PackageLayeringArchitectureTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "net.fhirfactory.harmonia.paradeigma.test.arch.SecurityEnforcementArchitectureTest",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "net.fhirfactory.harmonia.paradeigma.test.arch.MnemosyneAuthoritativePersistenceArchitectureTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteCompositionArchitectureTest",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "net.fhirfactory.harmonia.paradeigma.test.arch.ProviderRegistryArchitectureTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteContractArchitectureTest",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "net.fhirfactory.harmonia.paradeigma.test.arch.ParadeigmaIsolationArchitectureTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "net.fhirfactory.harmonia.paradeigma.test.arch.IrisDecouplingArchitectureTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "totals": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

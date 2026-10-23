@@ -1,0 +1,10 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+[XML Exchange] Validating...
+[XML Exchange] Validated!
+[XML Exchange] Importing XML from /tmp/harmonia-1113-workbench/anchored-reference-folders-returned.xml
+[XML Exchange] XML Imported!
+[XML Exchange] Exporting from 'Diagnostic only — anchored-reference-folders' to /tmp/harmonia-1113-workbench/anchored-reference-folders-second.xml
+[XML Exchange] XML Exported!
+[XML Exchange] Validating...
+[XML Exchange] Validated!
+[Core] Saved model to '/tmp/harmonia-1113-workbench/anchored-reference-folders-second.archimate'

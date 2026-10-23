@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Diagnostic only — category-markers" id="diagnostic-category-markers" version="5.0.0">
+  <folder name="Strategy" id="id-ac6a2d4cce6549068a8f7189d556aa8e" type="strategy">
+    <folder name="Within marker" id="id-09b439e37e5c4acaa5123791fcd68164">
+      <element xsi:type="archimate:Capability" name="Marker Capability" id="marker-cap"/>
+    </folder>
+    <folder name="Mixed marker" id="id-940fb552ddb4497c94c445e9bacd046a"/>
+  </folder>
+  <folder name="Business" id="id-72511e848cdd4fb691173e5cdaa431d1" type="business">
+    <folder name="Mixed marker" id="id-9425418c4f7844278d96d5966547e905">
+      <element xsi:type="archimate:BusinessFunction" name="Marker Business Function" id="marker-fun"/>
+    </folder>
+  </folder>
+  <folder name="Application" id="id-bf954db2fb0d4089acf0986d0af5d1b9" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-a6c3ce9ad4d54210ac1ab1e02bb99cb3" type="technology"/>
+  <folder name="Motivation" id="id-dc5ab6d870a540a6ad8d67bfd56e96ae" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-a40e5e0509e140ffad7667916f471a91" type="implementation_migration"/>
+  <folder name="Other" id="id-302cf7bf66d040b5a574bda90f13057a" type="other"/>
+  <folder name="Relations" id="id-9dfff81f50f04775b5281dfe72e81318" type="relations"/>
+  <folder name="Views" id="id-eb8495fcc0894354a5737205c6cf84e0" type="diagrams"/>
+</archimate:model>

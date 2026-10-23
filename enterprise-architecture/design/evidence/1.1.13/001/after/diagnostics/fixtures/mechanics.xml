@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="diagnostic-organisation-mechanics">
+  <name>Diagnostic only — organisation-mechanics</name>
+  <elements>
+    <element identifier="simple" xsi:type="Capability">
+      <name>Simple canonical leaf</name>
+    </element>
+    <element identifier="parent" xsi:type="Capability">
+      <name>Parent with children</name>
+    </element>
+    <element identifier="child" xsi:type="Capability">
+      <name>Child leaf</name>
+    </element>
+    <element identifier="context-cap" xsi:type="Capability">
+      <name>Canonical contextual Capability</name>
+    </element>
+    <element identifier="context-function" xsi:type="BusinessFunction">
+      <name>Contextual behaviour</name>
+    </element>
+    <element identifier="ct1" xsi:type="Capability">
+      <name>[CT1] Diagnostic parent</name>
+    </element>
+    <element identifier="ct2" xsi:type="Capability">
+      <name>[CT2] Diagnostic child</name>
+    </element>
+    <element identifier="ct3" xsi:type="Capability">
+      <name>[CT3] Diagnostic leaf</name>
+    </element>
+    <element identifier="care" xsi:type="DataObject">
+      <name>[Topic] Diagnostic Care</name>
+    </element>
+    <element identifier="encounter" xsi:type="DataObject">
+      <name>[Topic] Diagnostic Encounter</name>
+    </element>
+    <element identifier="a-ct1" xsi:type="Capability">
+      <name>[CT1] Folder-plus-element parent</name>
+    </element>
+    <element identifier="a-ct2" xsi:type="Capability">
+      <name>[CT2] Folder-plus-element child</name>
+    </element>
+    <element identifier="a-ct3" xsi:type="Capability">
+      <name>[CT3] Folder-plus-element leaf</name>
+    </element>
+    <element identifier="a-care" xsi:type="DataObject">
+      <name>[Topic] Folder-plus-element Care</name>
+    </element>
+    <element identifier="a-encounter" xsi:type="DataObject">
+      <name>[Topic] Folder-plus-element Encounter</name>
+    </element>
+    <element identifier="product" xsi:type="Product">
+      <name>Diagnostic Product</name>
+    </element>
+    <element identifier="stream" xsi:type="ValueStream">
+      <name>Diagnostic Value Stream</name>
+    </element>
+    <element identifier="driver" xsi:type="Driver">
+      <name>Driver with reference-only children</name>
+    </element>
+  </elements>
+  <organizations>
+    <item>
+      <label>Diagnostic cases</label>
+      <item>
+        <label>1 Simple folder</label>
+        <item identifierRef="simple" />
+      </item>
+      <item>
+        <label>2 Combined parent item</label>
+        <item identifierRef="parent">
+          <label>Parent folder label</label>
+          <item identifierRef="child" />
+        </item>
+      </item>
+      <item>
+        <label>3 Canonical primary location</label>
+        <item identifierRef="context-cap" />
+      </item>
+      <item>
+        <label>3 Business context</label>
+        <item>
+          <label>CT1 context</label>
+          <documentation>Reference to context-cap; not identifierRef</documentation>
+          <item>
+            <label>CT2 context</label>
+            <item identifierRef="context-function" />
+          </item>
+        </item>
+      </item>
+      <item>
+        <label>4 Nested Strategy</label>
+        <item identifierRef="ct1">
+          <label>CT1 parent</label>
+          <item identifierRef="ct2">
+            <label>CT2 parent</label>
+            <item identifierRef="ct3" />
+          </item>
+        </item>
+      </item>
+      <item>
+        <label>5 Nested Application</label>
+        <item identifierRef="care">
+          <label>Care parent</label>
+          <item identifierRef="encounter" />
+        </item>
+      </item>
+      <item>
+        <label>6 Candidate A Strategy</label>
+        <item>
+          <label>CT1 folder</label>
+          <item identifierRef="a-ct1" />
+          <item>
+            <label>CT2 folder</label>
+            <item identifierRef="a-ct2" />
+            <item identifierRef="a-ct3" />
+          </item>
+        </item>
+      </item>
+      <item>
+        <label>6 Candidate A Application</label>
+        <item>
+          <label>Care folder</label>
+          <item identifierRef="a-care" />
+          <item identifierRef="a-encounter" />
+        </item>
+      </item>
+      <item>
+        <label>7 Logical Business mixed types</label>
+        <item identifierRef="product" />
+        <item identifierRef="stream" />
+      </item>
+      <item>
+        <label>8 Source-only reference</label>
+        <documentation>No referenced model object</documentation>
+      </item>
+      <item>
+        <label>9 Motivation</label>
+        <item identifierRef="driver">
+          <label>Driver navigation</label>
+          <item>
+            <label>Stakeholder reference context</label>
+            <documentation>Reference only; no model object</documentation>
+          </item>
+        </item>
+      </item>
+    </item>
+  </organizations>
+</model>

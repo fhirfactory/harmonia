@@ -387,7 +387,7 @@ def project(root=ROOT):
             prop.find('a:value', N).text = str(CONTINUUM)
     # Canonical organisation replaces architecture folders. Authored Views,
     # their geometry, identifiers and View-folder navigation remain intact.
-    navigation.project(model, hierarchy, elements)
+    navigation.project(model, hierarchy, elements, catalogue)
     content = ET.tostring(model, encoding='UTF-8', xml_declaration=True, pretty_print=True)
     # Preserve literal source-text padding in parsed documentation without
     # emitting trailing whitespace in the generated XML's physical lines.

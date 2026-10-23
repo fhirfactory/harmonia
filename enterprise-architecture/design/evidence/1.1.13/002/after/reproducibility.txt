@@ -1,0 +1,32 @@
+PASS — independent maintained-source reproduction
+Command: timeout --signal=TERM --kill-after=5s 600s python3 -B enterprise-architecture/tooling/verify_continuum_reproducibility.py --report <report.json>
+
+Running: enterprise-architecture/tooling/architecture_continuum.py validate
+PASS: enterprise-architecture/tooling/architecture_continuum.py
+Running: enterprise-architecture/tooling/continuum_manifest.py
+PASS: enterprise-architecture/tooling/continuum_manifest.py
+Running: enterprise-architecture/tooling/architecture_continuum.py project --output enterprise-architecture/documentation/continuum-manifest/published/1.1.13/Harmonia-Architecture.xml --publish
+PASS: enterprise-architecture/tooling/architecture_continuum.py
+Running: enterprise-architecture/tooling/publish_continuum.py --output enterprise-architecture/documentation/continuum-manifest/published/1.1.13
+PASS: enterprise-architecture/tooling/publish_continuum.py
+Running: enterprise-architecture/tooling/publish_continuum_rad.py --output enterprise-architecture/documentation/continuum-rad/published/1.1.13
+PASS: enterprise-architecture/tooling/publish_continuum_rad.py
+Running: enterprise-architecture/tooling/continuum_manifest.py --check
+PASS: enterprise-architecture/tooling/continuum_manifest.py
+Running: enterprise-architecture/tooling/architecture_continuum.py project --output enterprise-architecture/documentation/continuum-manifest/published/1.1.13/Harmonia-Architecture.xml --publish --check
+PASS: enterprise-architecture/tooling/architecture_continuum.py
+Running: enterprise-architecture/tooling/publish_continuum.py --output enterprise-architecture/documentation/continuum-manifest/published/1.1.13 --check
+PASS: enterprise-architecture/tooling/publish_continuum.py
+Running: enterprise-architecture/tooling/publish_continuum_rad.py --output enterprise-architecture/documentation/continuum-rad/published/1.1.13 --check
+PASS: enterprise-architecture/tooling/publish_continuum_rad.py
+Running: enterprise-architecture/tooling/verify_continuum_links.py --report links.json
+PASS: enterprise-architecture/tooling/verify_continuum_links.py
+Running: enterprise-architecture/tooling/continuum_workbench.py review --baseline enterprise-architecture/documentation/continuum-manifest/published/1.1.13/Harmonia-Architecture.xml --submitted enterprise-architecture/documentation/continuum-manifest/published/1.1.13/Harmonia-Architecture.xml --output review.json
+PASS: enterprise-architecture/tooling/continuum_workbench.py
+Running: enterprise-architecture/tooling/exchange_compare.py compare --baseline enterprise-architecture/documentation/continuum-manifest/published/1.1.13/Harmonia-Architecture.xml --submitted enterprise-architecture/documentation/continuum-manifest/published/1.1.13/Harmonia-Architecture.xml --report raw.json
+PASS: enterprise-architecture/tooling/exchange_compare.py
+Running: -m unittest discover -s enterprise-architecture/tooling/tests -v
+Ran 65 tests in 208.701s
+OK
+PASS: -m
+20 byte-identical derived artifacts across 13 bounded operations; 65 isolated EA tests pass.

@@ -1,0 +1,409 @@
+{
+  "status": "PASS",
+  "standing": "Diagnostic evidence only; no remediation or acceptance",
+  "baselineSha256": "e33ae52b3934cf4d9b9b0102ce65e09461fa554022f43d56f2637685d8c39caa",
+  "returnedSha256": "a61375509cfbd4c69dd8cee112ce72880c07122e9eec4dcc0c3dd9af1b60a8e6",
+  "canonicalElementRecordsExactIncludingAllPropertyValues": 1602,
+  "semanticSignatures": {
+    "relationship": {
+      "before": 1651,
+      "after": 1651,
+      "exactSignaturesEqual": true
+    },
+    "view": {
+      "before": 1209,
+      "after": 1209,
+      "exactSignaturesEqual": true
+    }
+  },
+  "publishedSecondPassObjectAndFolderPathsStable": true,
+  "publishedSourceAndReturnedElementRefsExactlyOnce": true,
+  "returnedHasNoElementReferencingParentItems": true,
+  "fixtureExpectedObjectPaths": {
+    "simple": [
+      "Strategy",
+      "Diagnostic cases",
+      "1 Simple folder",
+      "Simple canonical leaf"
+    ],
+    "parent": [
+      "Strategy",
+      "Parent with children"
+    ],
+    "child": [
+      "Strategy",
+      "Diagnostic cases",
+      "2 Combined parent item",
+      "Parent folder label",
+      "Child leaf"
+    ],
+    "context-cap": [
+      "Strategy",
+      "Diagnostic cases",
+      "3 Canonical primary location",
+      "Canonical contextual Capability"
+    ],
+    "context-function": [
+      "Business",
+      "Diagnostic cases",
+      "3 Business context",
+      "CT1 context",
+      "CT2 context",
+      "Contextual behaviour"
+    ],
+    "ct1": [
+      "Strategy",
+      "[CT1] Diagnostic parent"
+    ],
+    "ct2": [
+      "Strategy",
+      "[CT2] Diagnostic child"
+    ],
+    "ct3": [
+      "Strategy",
+      "Diagnostic cases",
+      "4 Nested Strategy",
+      "CT1 parent",
+      "CT2 parent",
+      "[CT3] Diagnostic leaf"
+    ],
+    "care": [
+      "Application",
+      "[Topic] Diagnostic Care"
+    ],
+    "encounter": [
+      "Application",
+      "Diagnostic cases",
+      "5 Nested Application",
+      "Care parent",
+      "[Topic] Diagnostic Encounter"
+    ],
+    "a-ct1": [
+      "Strategy",
+      "Diagnostic cases",
+      "6 Candidate A Strategy",
+      "CT1 folder",
+      "[CT1] Folder-plus-element parent"
+    ],
+    "a-ct2": [
+      "Strategy",
+      "Diagnostic cases",
+      "6 Candidate A Strategy",
+      "CT1 folder",
+      "CT2 folder",
+      "[CT2] Folder-plus-element child"
+    ],
+    "a-ct3": [
+      "Strategy",
+      "Diagnostic cases",
+      "6 Candidate A Strategy",
+      "CT1 folder",
+      "CT2 folder",
+      "[CT3] Folder-plus-element leaf"
+    ],
+    "a-care": [
+      "Application",
+      "Diagnostic cases",
+      "6 Candidate A Application",
+      "Care folder",
+      "[Topic] Folder-plus-element Care"
+    ],
+    "a-encounter": [
+      "Application",
+      "Diagnostic cases",
+      "6 Candidate A Application",
+      "Care folder",
+      "[Topic] Folder-plus-element Encounter"
+    ],
+    "product": [
+      "Business",
+      "Diagnostic cases",
+      "7 Logical Business mixed types",
+      "Diagnostic Product"
+    ],
+    "stream": [
+      "Strategy",
+      "Diagnostic cases",
+      "7 Logical Business mixed types",
+      "Diagnostic Value Stream"
+    ],
+    "driver": [
+      "Motivation",
+      "Driver with reference-only children"
+    ]
+  },
+  "mechanicsFixtureObjectAndFolderPathsStableOnSecondPass": true,
+  "repeatedReference": {
+    "objectCopies": 1,
+    "location": [
+      "Strategy",
+      "Second location",
+      "One Capability referenced twice"
+    ],
+    "firstFolderEmptyAfterFirstPass": true,
+    "emptyFolderRetainedOnSecondPass": true
+  },
+  "categoryMarkers": {
+    "exactTopNativeLabelsConsumed": true,
+    "objectTypeControlsNativeRoot": true,
+    "mixedTypeEmptyFolderRetainedOnSecondPass": true
+  },
+  "anchoredReferenceFolders": {
+    "referenceOnlyContextFolderPath": [
+      "Motivation",
+      "I Motivation",
+      "Driver navigation",
+      "Stakeholder references",
+      "Stakeholder context"
+    ],
+    "sourceOnlyOtherFolderSurvives": true,
+    "secondPassPathsStable": true,
+    "semanticElements": 2,
+    "semanticRelationships": 0,
+    "contextHasNoLiveIdentifierRef": true
+  },
+  "fixtureRuns": [
+    {
+      "case": "mechanics",
+      "exitCode": 0,
+      "seconds": 2.371,
+      "command": [
+        "/home/hunterm/Development/Tools/Archi/Archi",
+        "-nosplash",
+        "-consoleLog",
+        "-configuration",
+        "/tmp/harmonia-1113-workbench/fixture-config",
+        "-data",
+        "/tmp/harmonia-1113-workbench/fixture-workspace",
+        "-application",
+        "com.archimatetool.commandline.app",
+        "-a",
+        "--xmlexchange.import",
+        "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/mechanics.xml",
+        "--saveModel",
+        "/tmp/harmonia-1113-workbench/mechanics.archimate",
+        "--xmlexchange.export",
+        "/tmp/harmonia-1113-workbench/mechanics-returned.xml",
+        "--xmlexchange.exportFolders",
+        "--xmlexchange.exportLang",
+        "en"
+      ]
+    },
+    {
+      "case": "repeated-reference",
+      "exitCode": 0,
+      "seconds": 2.679,
+      "command": [
+        "/home/hunterm/Development/Tools/Archi/Archi",
+        "-nosplash",
+        "-consoleLog",
+        "-configuration",
+        "/tmp/harmonia-1113-workbench/fixture-config",
+        "-data",
+        "/tmp/harmonia-1113-workbench/fixture-workspace",
+        "-application",
+        "com.archimatetool.commandline.app",
+        "-a",
+        "--xmlexchange.import",
+        "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/repeated-reference.xml",
+        "--saveModel",
+        "/tmp/harmonia-1113-workbench/repeated-reference.archimate",
+        "--xmlexchange.export",
+        "/tmp/harmonia-1113-workbench/repeated-reference-returned.xml",
+        "--xmlexchange.exportFolders",
+        "--xmlexchange.exportLang",
+        "en"
+      ]
+    },
+    {
+      "case": "category-markers",
+      "exitCode": 0,
+      "seconds": 2.775,
+      "command": [
+        "/home/hunterm/Development/Tools/Archi/Archi",
+        "-nosplash",
+        "-consoleLog",
+        "-configuration",
+        "/tmp/harmonia-1113-workbench/fixture-config",
+        "-data",
+        "/tmp/harmonia-1113-workbench/fixture-workspace",
+        "-application",
+        "com.archimatetool.commandline.app",
+        "-a",
+        "--xmlexchange.import",
+        "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/category-markers.xml",
+        "--saveModel",
+        "/tmp/harmonia-1113-workbench/category-markers.archimate",
+        "--xmlexchange.export",
+        "/tmp/harmonia-1113-workbench/category-markers-returned.xml",
+        "--xmlexchange.exportFolders",
+        "--xmlexchange.exportLang",
+        "en"
+      ]
+    },
+    {
+      "case": "anchored-reference-folders",
+      "exitCode": 0,
+      "seconds": 1.818,
+      "command": [
+        "/home/hunterm/Development/Tools/Archi/Archi",
+        "-nosplash",
+        "-consoleLog",
+        "-configuration",
+        "/tmp/harmonia-1113-workbench/fixture-config",
+        "-data",
+        "/tmp/harmonia-1113-workbench/fixture-workspace",
+        "-application",
+        "com.archimatetool.commandline.app",
+        "-a",
+        "--xmlexchange.import",
+        "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/anchored-reference-folders.xml",
+        "--saveModel",
+        "/tmp/harmonia-1113-workbench/anchored-reference-folders.archimate",
+        "--xmlexchange.export",
+        "/tmp/harmonia-1113-workbench/anchored-reference-folders-returned.xml",
+        "--xmlexchange.exportFolders",
+        "--xmlexchange.exportLang",
+        "en"
+      ]
+    }
+  ],
+  "secondPassRuns": [
+    {
+      "case": "mechanics",
+      "exitCode": 0,
+      "seconds": 1.82,
+      "command": [
+        "/home/hunterm/Development/Tools/Archi/Archi",
+        "-nosplash",
+        "-consoleLog",
+        "-configuration",
+        "/tmp/harmonia-1113-workbench/second-config",
+        "-data",
+        "/tmp/harmonia-1113-workbench/second-workspace",
+        "-application",
+        "com.archimatetool.commandline.app",
+        "-a",
+        "--xmlexchange.import",
+        "/tmp/harmonia-1113-workbench/mechanics-returned.xml",
+        "--saveModel",
+        "/tmp/harmonia-1113-workbench/mechanics-second.archimate",
+        "--xmlexchange.export",
+        "/tmp/harmonia-1113-workbench/mechanics-second.xml",
+        "--xmlexchange.exportFolders",
+        "--xmlexchange.exportLang",
+        "en"
+      ]
+    },
+    {
+      "case": "repeated-reference",
+      "exitCode": 0,
+      "seconds": 1.817,
+      "command": [
+        "/home/hunterm/Development/Tools/Archi/Archi",
+        "-nosplash",
+        "-consoleLog",
+        "-configuration",
+        "/tmp/harmonia-1113-workbench/second-config",
+        "-data",
+        "/tmp/harmonia-1113-workbench/second-workspace",
+        "-application",
+        "com.archimatetool.commandline.app",
+        "-a",
+        "--xmlexchange.import",
+        "/tmp/harmonia-1113-workbench/repeated-reference-returned.xml",
+        "--saveModel",
+        "/tmp/harmonia-1113-workbench/repeated-reference-second.archimate",
+        "--xmlexchange.export",
+        "/tmp/harmonia-1113-workbench/repeated-reference-second.xml",
+        "--xmlexchange.exportFolders",
+        "--xmlexchange.exportLang",
+        "en"
+      ]
+    },
+    {
+      "case": "category-markers",
+      "exitCode": 0,
+      "seconds": 1.82,
+      "command": [
+        "/home/hunterm/Development/Tools/Archi/Archi",
+        "-nosplash",
+        "-consoleLog",
+        "-configuration",
+        "/tmp/harmonia-1113-workbench/second-config",
+        "-data",
+        "/tmp/harmonia-1113-workbench/second-workspace",
+        "-application",
+        "com.archimatetool.commandline.app",
+        "-a",
+        "--xmlexchange.import",
+        "/tmp/harmonia-1113-workbench/category-markers-returned.xml",
+        "--saveModel",
+        "/tmp/harmonia-1113-workbench/category-markers-second.archimate",
+        "--xmlexchange.export",
+        "/tmp/harmonia-1113-workbench/category-markers-second.xml",
+        "--xmlexchange.exportFolders",
+        "--xmlexchange.exportLang",
+        "en"
+      ]
+    },
+    {
+      "case": "published",
+      "exitCode": 0,
+      "seconds": 5.475,
+      "command": [
+        "/home/hunterm/Development/Tools/Archi/Archi",
+        "-nosplash",
+        "-consoleLog",
+        "-configuration",
+        "/tmp/harmonia-1113-workbench/second-config",
+        "-data",
+        "/tmp/harmonia-1113-workbench/second-workspace",
+        "-application",
+        "com.archimatetool.commandline.app",
+        "-a",
+        "--xmlexchange.import",
+        "/tmp/harmonia-1113-workbench/returned.xml",
+        "--saveModel",
+        "/tmp/harmonia-1113-workbench/published-second.archimate",
+        "--xmlexchange.export",
+        "/tmp/harmonia-1113-workbench/published-second.xml",
+        "--xmlexchange.exportFolders",
+        "--xmlexchange.exportLang",
+        "en"
+      ]
+    },
+    {
+      "case": "anchored-reference-folders",
+      "exitCode": 0,
+      "seconds": 1.817,
+      "command": [
+        "/home/hunterm/Development/Tools/Archi/Archi",
+        "-nosplash",
+        "-consoleLog",
+        "-configuration",
+        "/tmp/harmonia-1113-workbench/second-config",
+        "-data",
+        "/tmp/harmonia-1113-workbench/second-workspace",
+        "-application",
+        "com.archimatetool.commandline.app",
+        "-a",
+        "--xmlexchange.import",
+        "/tmp/harmonia-1113-workbench/anchored-reference-folders-returned.xml",
+        "--saveModel",
+        "/tmp/harmonia-1113-workbench/anchored-reference-folders-second.archimate",
+        "--xmlexchange.export",
+        "/tmp/harmonia-1113-workbench/anchored-reference-folders-second.xml",
+        "--xmlexchange.exportFolders",
+        "--xmlexchange.exportLang",
+        "en"
+      ]
+    }
+  ],
+  "limits": [
+    "Path equality is separate from XML byte equality and generated folder identity.",
+    "No interactive Solution Architect inspection/acceptance is asserted.",
+    "Synthetic candidate A is not applied to the Harmonia publication.",
+    "Current-projection review helper failed its historical-baseline gate as expected; not an ingest review."
+  ]
+}

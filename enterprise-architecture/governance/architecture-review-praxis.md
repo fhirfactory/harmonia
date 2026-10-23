@@ -179,6 +179,16 @@ under AX-15 and missing architectural authority under AX-17.
 
 ## 5. Report and verify the incorporated result
 
+Where an Open Exchange publication materially changes Archi organisation, the
+generated model SHALL be imported into the supported Archi version and its actual
+workbench tree structurally reviewed by the Solution Architect before HCRL
+acceptance. Retain representative inspectable evidence for the exact publication
+and imported native model. This complements Open Exchange validity, identity,
+relationship and View preservation, deterministic generation and no-edit
+round-trip verification; automated success and agent inspection do not supply
+Solution Architect acceptance. This bounded safeguard applies the
+[1.1.13 iteration 002 Task](../design/evidence/1.1.13/002/before/ai-agent-tasks/unresolved-archi-workbench-remediation.md#future-verification-safeguard).
+
 A generated reader-facing architecture/navigation publication SHALL receive
 Solution Architect structural review before HCRL acceptance when a change
 materially alters architectural navigation or publication structure. Inspect

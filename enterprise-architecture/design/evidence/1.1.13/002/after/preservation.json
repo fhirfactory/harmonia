@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "entryHead": "ae94a7ed067c436da49443d72d2eb72ad30fc5ff",
+  "protectedFiles": 1973,
+  "unchangedFiles": 1972,
+  "historicalPublicationsEvidenceAndCompletedHcrlsUnchanged": true,
+  "iteration001Unchanged": true,
+  "canonicalElementFilesAndNavigationUnchanged": true,
+  "acceptedRadAndManifestOrganisationUnchanged": true,
+  "onlyProtectedDifference": {
+    "path": "enterprise-architecture/continuum/MANIFEST.md",
+    "meaning": "Generated Manifest root release label only: RAD 1.1.11 \u2192 RAD 1.1.13; remaining bytes identical"
+  },
+  "note": "Entry inventory is retained in before/protected-before.json.gz; it includes pre-existing untracked diagnostic evidence so no Git-recovery claim is made for those files."
+}

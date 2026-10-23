@@ -1,0 +1,37 @@
+{
+  "archiVersion": "5.10.0",
+  "plugin": "/home/hunterm/Development/Tools/Archi/plugins/org.opengroup.archimate.xmlexchange_5.10.0.202607081558.jar",
+  "pluginSha256": "7442b0a8ee987b26ea53c98ce040890cb7c18945771a5f364f470f03de295e1a",
+  "inspection": "javap -p -c org.opengroup.archimate.xmlexchange.XMLModelImporter; bounded organisation methods retained",
+  "nativeSaveSha256": "adf5d7d3dd8cb0c65fefab8518c0ad45623fd4d23e4d6df262289b13accb03e7",
+  "nativeSecondSaveSha256": "b9ec3dcef140f4481d8037de90bf42ad1974ae8692a3e6b5580054c7addd9c74",
+  "noEditReturnSha256": "a61375509cfbd4c69dd8cee112ce72880c07122e9eec4dcc0c3dd9af1b60a8e6",
+  "noEditReturnExactExistingEvidence": "enterprise-architecture/design/evidence/1.1.12/001/after/archi-transport/returned-model.xml.gz",
+  "noEditReturnExactExistingEvidenceMatch": true,
+  "secondPassReturnedSha256": "a61375509cfbd4c69dd8cee112ce72880c07122e9eec4dcc0c3dd9af1b60a8e6",
+  "invocation": [
+    "Archi",
+    "-nosplash",
+    "-consoleLog",
+    "-configuration",
+    "<isolated temporary config>",
+    "-data",
+    "<isolated temporary workspace>",
+    "-application",
+    "com.archimatetool.commandline.app",
+    "-a",
+    "--xmlexchange.import",
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/archimate/published/1.1.11/Harmonia-Architecture.xml",
+    "--saveModel",
+    "<temporary native model>",
+    "--xmlexchange.export",
+    "<temporary returned XML>",
+    "--xmlexchange.exportFolders",
+    "--xmlexchange.exportLang",
+    "en"
+  ],
+  "limits": [
+    "Native folder IDs are generated representations, not canonical identity.",
+    "Native model/tree inspection is programmatic; no new interactive human visual acceptance is claimed."
+  ]
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Diagnostic only — category-markers" id="diagnostic-category-markers" version="5.0.0">
+  <folder name="Strategy" id="id-193e34db03e74dc3b6dc53f2472a6d0c" type="strategy">
+    <folder name="Within marker" id="id-c0fb789cf28d41f0b17de9dc54ef89c0">
+      <element xsi:type="archimate:Capability" name="Marker Capability" id="marker-cap"/>
+    </folder>
+    <folder name="Mixed marker" id="id-ce9c188767a741f9814321a8529c9466"/>
+  </folder>
+  <folder name="Business" id="id-72624f9f3a574126b60adad851bf4a5c" type="business">
+    <folder name="Mixed marker" id="id-71e84a32ebdc42ffb99bf92deb09348a">
+      <element xsi:type="archimate:BusinessFunction" name="Marker Business Function" id="marker-fun"/>
+    </folder>
+  </folder>
+  <folder name="Application" id="id-d190592fb3b641f0888bbfbb8b9be6a4" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-2b09c8b9bcf04435a5deb3e8dc3952f9" type="technology">
+    <documentation>Explicit empty native marker</documentation>
+  </folder>
+  <folder name="Motivation" id="id-94cdaed630ee469b8bd588a8715b7672" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-a3dddb27741b47eeb704a8c759cc35a8" type="implementation_migration"/>
+  <folder name="Other" id="id-113a2d713b234690a3c89919589dee6e" type="other"/>
+  <folder name="Relations" id="id-17d9832e50ef4624b7a5a5a86868ef3d" type="relations"/>
+  <folder name="Views" id="id-cba6e7eec42c44ba94dc4001209c4b8a" type="diagrams"/>
+</archimate:model>

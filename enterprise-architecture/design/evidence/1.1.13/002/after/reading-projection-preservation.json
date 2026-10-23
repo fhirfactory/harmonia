@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "manifestResolvedNavigationByteIdentical": true,
+  "radHeadingsAndArchitecturalMeaningUnchanged": 1968,
+  "radElementCorrespondenceMeaningUnchanged": 1602,
+  "radStructureDifferenceExclusions": [
+    "release label",
+    "modelSha256",
+    "physical Exchange locator/modelLocator correspondence"
+  ],
+  "radPartsByteEquality": {
+    "business.tex": true,
+    "architecture-governance.tex": true,
+    "application.tex": false,
+    "cross-cutting-references.tex": true,
+    "implementation-and-migration.tex": true,
+    "strategy.tex": true,
+    "technology.tex": true,
+    "motivation.tex": true
+  },
+  "applicationPartDifference": "Existing maintained renderer renders two formerly literal Markdown bold spans as LaTeX bold; text and organisation unchanged. No renderer change was made for this remediation.",
+  "historicalPublications": "unchanged; comparisons use new 1.1.13 outputs"
+}

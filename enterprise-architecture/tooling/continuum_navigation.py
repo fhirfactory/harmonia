@@ -260,10 +260,57 @@ def transport_id(node):
     return 'navigation-' + node['number'].replace('.', '-')
 
 
-def project(model, roots, elements):
-    """Replace architecture folders; preserve authored diagrams and View folders."""
+def workbench_hierarchy_members(roots, elements, model):
+    """Members of the existing governed hierarchies, including their leaves.
+
+    The accepted Continuum organisation retains Capability parent/owner ancestry
+    in the three Strategy capability scopes and logical Topic decomposition in
+    Application Information Architecture. Consume those established scopes; do
+    not reinterpret arbitrary navigation, native relationships, contextual
+    allocations or historical indexes as containment. Additionally consume the
+    existing governed model containment resolver for explicitly represented
+    Home/type-selected Composition participation, retaining its state selection.
+    This never changes the accepted navigation home or substitutes a new
+    universal containment rule for the applicable area-specific architecture.
+    """
+    result = set()
+    for node in walk(roots):
+        cid = node.get('canonicalId')
+        if not cid or node['occurrence'] != 'architectural':
+            continue
+        element = elements[cid][0]
+        capability = (element['archimateType'] == 'Capability'
+                      and node['path'][:2] == ['Strategy', 'Capabilities']
+                      and node['path'][2] in ('Enterprise Capabilities', 'Business Capabilities',
+                                             'Business Enabling Capabilities'))
+        topic = (element.get('specialization') == 'Topic'
+                 and node['path'][:3] == ['Application', 'Information Architecture', 'Topics'])
+        if capability or topic:
+            result.add(cid)
+    import containment
+    locations = by_element(roots)
+    by_rep = {m['exchange']['identifier']: cid for cid, (m, _, _) in elements.items()}
+    for link in containment.resolve(model).selected.values():
+        members = [by_rep[link[key]] for key in ('parent', 'child')]
+        # Historical/index occurrences retain reference navigation, even when
+        # their retained source relationships describe an earlier hierarchy.
+        if all(locations[cid]['occurrence'] == 'architectural' for cid in members):
+            result.update(members)
+    return result
+
+
+def project(model, roots, elements, catalogue):
+    """Derive Archi physical organisation from shared navigation semantics.
+
+    Native category markers anchor even source-only/context-only folders. A
+    governed hierarchy member has a directory plus one canonical leaf placement,
+    including leaves. Other navigation parents also need folders for Archi's
+    mechanics, without implying containment. Cross-layer subjects have one native
+    placement and a reference-only folder in their logical context.
+    """
     org = model.find('a:organizations', c.N)
     views = {v.get('identifier') for v in model.findall('a:views/a:diagrams/a:view', c.N)}
+    hierarchy_members = workbench_hierarchy_members(roots, elements, model)
 
     def only_views(node):
         for child in list(node.findall('a:item', c.N)):
@@ -278,12 +325,31 @@ def project(model, roots, elements):
     for child in retained:
         org.remove(child)
 
-    def add(parent, node):
-        attrs = {'identifier': transport_id(node)}
-        if node.get('canonicalId'):
-            attrs['identifierRef'] = elements[node['canonicalId']][0]['exchange']['identifier']
-        item = c.ET.SubElement(parent, c.tag('item'), **attrs)
-        c.ET.SubElement(item, c.tag('label'), {c.LANG: 'en'}).text = title(node)
+    native_labels = {'motivation': 'Motivation', 'strategy': 'Strategy',
+                     'business': 'Business', 'application': 'Application',
+                     'technology': 'Technology & Physical', 'physical': 'Technology & Physical',
+                     'implementation-migration': 'Implementation & Migration',
+                     'implementation-and-migration': 'Implementation & Migration',
+                     'other': 'Other', 'generic': 'Other'}
+    domain_layers = {'G': 'Other', 'I': 'Motivation', 'II': 'Strategy',
+                     'III': 'Business', 'IV': 'Application', 'V': 'Technology & Physical',
+                     'VI': 'Implementation & Migration'}
+    anchors = {}
+
+    def anchor(layer):
+        if layer not in anchors:
+            item = c.ET.SubElement(org, c.tag('item'), identifier='archi-native-' + layer.split()[0].lower())
+            c.ET.SubElement(item, c.tag('label'), {c.LANG: 'en'}).text = layer
+            anchors[layer] = item
+        return anchors[layer]
+
+    def native_layer(cid):
+        native = elements[cid][0]['archimateType']
+        domain = Path(catalogue['types'][native]['directory']).parts[0]
+        c.require(domain in native_labels, 'Unsupported Archi native domain: ' + domain)
+        return native_labels[domain]
+
+    def notes(node):
         notes = ['Continuum navigation coordinate: ' + node['number'] + '. Navigation asserts no semantic containment.']
         if node.get('source'):
             notes.append('Source: ' + node['source'])
@@ -296,14 +362,86 @@ def project(model, roots, elements):
                          + '; Exchange identifier=' + elements[reference['canonicalId']][0]['exchange']['identifier'])
         if node.get('relationshipIds'):
             notes.append('Existing canonical associations: ' + ', '.join(node['relationshipIds']))
-        # Keep contexts as navigation-only items: no semantic edge and no second
-        # canonical occurrence. Archi can discard these folders; documentation
-        # on the behaviour below also carries the full contextual path.
-        c.ET.SubElement(item, c.tag('documentation'), {c.LANG: 'en'}).text = '\n\n'.join(notes)
+        for cid in node.get('relatedCanonicalIds', []):
+            notes.append('Related canonical subject: canonicalId=' + cid + '; Exchange identifier='
+                         + elements[cid][0]['exchange']['identifier'])
+        return notes
+
+    def add(parent, node, layer, *, suffix=''):
+        cid = node.get('canonicalId')
+        foreign = cid and native_layer(cid) != layer
+        item = c.ET.SubElement(parent, c.tag('item'), identifier=transport_id(node) + suffix)
+        c.ET.SubElement(item, c.tag('label'), {c.LANG: 'en'}).text = title(node)
+        doc = notes(node)
+        documentation = c.ET.SubElement(item, c.tag('documentation'), {c.LANG: 'en'})
+        if foreign:
+            doc.append('Reference only: canonicalId=' + cid + '; Exchange identifier='
+                       + elements[cid][0]['exchange']['identifier'] + '; native placement: ' + native_layer(cid)
+                       + '. This folder does not place or duplicate the canonical element.')
+            # Visible qualification survives even when folder documentation is
+            # not exposed by a downstream workbench.
+            item.find('a:label', c.N).text += ' — reference; canonical element in ' + native_layer(cid)
+        elif cid:
+            target = item
+            if cid in hierarchy_members or node.get('children'):
+                doc.append('Canonical element directory: canonicalId=' + cid
+                           + '; Exchange identifier=' + elements[cid][0]['exchange']['identifier']
+                           + ('. Existing governed hierarchy member; directory retained for leaves.'
+                              if cid in hierarchy_members else '. Navigation context; no containment inferred.'))
+                target = c.ET.SubElement(item, c.tag('item'), identifier=transport_id(node) + '-element')
+                c.ET.SubElement(target, c.tag('label'), {c.LANG: 'en'}).text = node['title']
+            target.set('identifierRef', elements[cid][0]['exchange']['identifier'])
+        documentation.text = '\n\n'.join(doc)
         for child in node.get('children', []):
-            add(item, child)
+            add(item, child, layer, suffix=suffix)
+        return item
+
+    indexes = {}
     for node in roots:
-        add(org, node)
+        namespace = node['namespace']
+        if namespace == 'R':
+            # R is a cross-cutting index, not a native layer or decomposition.
+            # Partition its primary index populations by native type, retaining
+            # their shared R coordinates and historical/currentness qualifiers.
+            for section in node.get('children', []):
+                layers = {native_layer(cid) for cid in descendants(section)}
+                c.require(len(layers) == 1, 'Cross-cutting index requires an explicit native-layer allocation')
+                layer = layers.pop()
+                root_item = indexes.get(layer)
+                if root_item is None:
+                    root_item = c.ET.SubElement(anchor(layer), c.tag('item'), identifier='navigation-R-' + layer.lower())
+                    c.ET.SubElement(root_item, c.tag('label'), {c.LANG: 'en'}).text = title(node) + ' — ' + layer + ' index; not decomposition'
+                    c.ET.SubElement(root_item, c.tag('documentation'), {c.LANG: 'en'}).text = '\n\n'.join(notes(node))
+                    indexes[layer] = root_item
+                add(root_item, section, layer)
+        else:
+            layer = domain_layers[namespace]
+            add(anchor(layer), node, layer)
+
+    # Currently the only architectural/native-layer exception is ValueStream:
+    # Business reading context, native Strategy representation. Export its
+    # nearest shared navigation section directly as an explicit reference
+    # context, never reproduce the foreign domain root under Strategy.
+    def exceptions(node, layer, parent=None):
+        cid = node.get('canonicalId')
+        if cid and native_layer(cid) != layer:
+            c.require(elements[cid][0]['archimateType'] == 'ValueStream'
+                      and layer == 'Business' and parent is not None,
+                      'New cross-layer navigation needs explicit projection disposition: ' + cid)
+            native = native_layer(cid)
+            key = transport_id(parent) + '-native-' + native.lower()
+            target = next((i for i in anchor(native).findall('a:item', c.N) if i.get('identifier') == key), None)
+            if target is None:
+                target = c.ET.SubElement(anchor(native), c.tag('item'), identifier=key)
+                c.ET.SubElement(target, c.tag('label'), {c.LANG: 'en'}).text = title(parent) + ' — Business navigation reference; native ' + native
+                c.ET.SubElement(target, c.tag('documentation'), {c.LANG: 'en'}).text = '\n\n'.join(notes(parent) + [
+                    'Canonical navigation path: ' + ' / '.join(parent['path']) + '. Native placement does not change architectural domain.'])
+            add(target, node, native, suffix='-native-' + native.lower())
+        for child in node.get('children', []):
+            exceptions(child, layer, node)
+    for node in roots:
+        if node['namespace'] in domain_layers:
+            exceptions(node, domain_layers[node['namespace']])
     for child in retained:
         org.append(child)
 

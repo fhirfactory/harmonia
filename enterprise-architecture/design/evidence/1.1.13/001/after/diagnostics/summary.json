@@ -1,0 +1,536 @@
+{
+  "publishedSha256": "e33ae52b3934cf4d9b9b0102ce65e09461fa554022f43d56f2637685d8c39caa",
+  "elementCount": 1602,
+  "viewCount": 1209,
+  "semanticRelationshipCount": 1651,
+  "sourceNavigationItems": 1968,
+  "sourceElementReferenceMultiplicity": {
+    "1": 1602
+  },
+  "returnedElementReferenceMultiplicity": {
+    "1": 1602
+  },
+  "parentReferenceCount": 218,
+  "parentTypes": {
+    "Capability": 204,
+    "DataObject": 11,
+    "Driver": 3
+  },
+  "allParentsRemainAtNativeRoot": true,
+  "rootElementsWithoutParentItems": [],
+  "viewOrganisationExactAcrossTemplatePublishedNativeReturned": true,
+  "viewFolderCount": 1032,
+  "viewTopBranches": {
+    "0-Motivation": 25,
+    "1-Strategy": 772,
+    "2-BusinessLayer": 397,
+    "3-ApplicationLayer": 15
+  },
+  "layers": {
+    "Strategy": {
+      "elements": 856,
+      "directRootElements": 204,
+      "foldersIncludingRoot": 218
+    },
+    "Business": {
+      "elements": 450,
+      "directRootElements": 0,
+      "foldersIncludingRoot": 252
+    },
+    "Application": {
+      "elements": 115,
+      "directRootElements": 11,
+      "foldersIncludingRoot": 68
+    },
+    "Technology & Physical": {
+      "elements": 0,
+      "directRootElements": 0,
+      "foldersIncludingRoot": 1
+    },
+    "Motivation": {
+      "elements": 181,
+      "directRootElements": 3,
+      "foldersIncludingRoot": 12
+    },
+    "Implementation & Migration": {
+      "elements": 0,
+      "directRootElements": 0,
+      "foldersIncludingRoot": 1
+    },
+    "Other": {
+      "elements": 0,
+      "directRootElements": 0,
+      "foldersIncludingRoot": 1
+    },
+    "Relations": {
+      "elements": 0,
+      "directRootElements": 0,
+      "foldersIncludingRoot": 1
+    },
+    "Views": {
+      "elements": 0,
+      "directRootElements": 0,
+      "foldersIncludingRoot": 1032
+    }
+  },
+  "navigationOnlyItemsNotRetainedAsExactFolderPath": [
+    {
+      "identifier": "navigation-G",
+      "ref": null,
+      "label": "G Architecture Governance",
+      "path": [
+        "G Architecture Governance"
+      ],
+      "children": 7,
+      "documentation": "Continuum navigation coordinate: G. Navigation asserts no semantic containment.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-1",
+      "ref": null,
+      "label": "G.1 Governance Model",
+      "path": [
+        "G Architecture Governance",
+        "G.1 Governance Model"
+      ],
+      "children": 3,
+      "documentation": "Continuum navigation coordinate: G.1. Navigation asserts no semantic containment.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-1-1",
+      "ref": null,
+      "label": "G.1.1 Architecture Authority",
+      "path": [
+        "G Architecture Governance",
+        "G.1 Governance Model",
+        "G.1.1 Architecture Authority"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.1.1. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/governance/architecture-governance.md#authority-and-adoption\n\nThe Architecture Continuum supplies canonical architectural authority. Its canonical Principle elements solely define the Architectural Axioms. Governance contracts and accepted decisions retain their defined roles; publications and projections supply no independent architectural authority.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-1-2",
+      "ref": null,
+      "label": "G.1.2 Decision Rights",
+      "path": [
+        "G Architecture Governance",
+        "G.1 Governance Model",
+        "G.1.2 Decision Rights"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.1.2. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/governance/architecture-governance.md#architectural-decision-authority\n\nMark Hunter, Solution Architect, holds final architectural decision and acceptance authority. The Architecture Review Board is the collaborative review and adjudication forum. Agents may analyse and implement authorised work; they cannot approve architecture or confirm their own architectural closure.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-1-3",
+      "ref": null,
+      "label": "G.1.3 Roles and Responsibilities",
+      "path": [
+        "G Architecture Governance",
+        "G.1 Governance Model",
+        "G.1.3 Roles and Responsibilities"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.1.3. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/governance/architecture-governance.md#architectural-decision-authority\n\nThe Solution Architect adjudicates and confirms the incorporated result. Architecture peers and the ARB may challenge and recommend. Executing agents preserve operative instructions, actual application, evidence and uncertainty within the authorised scope.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-2",
+      "ref": null,
+      "label": "G.2 Architecture Evidence",
+      "path": [
+        "G Architecture Governance",
+        "G.2 Architecture Evidence"
+      ],
+      "children": 2,
+      "documentation": "Continuum navigation coordinate: G.2. Navigation asserts no semantic containment.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-2-1",
+      "ref": null,
+      "label": "G.2.1 Evidence before change",
+      "path": [
+        "G Architecture Governance",
+        "G.2 Architecture Evidence",
+        "G.2.1 Evidence before change"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.2.1. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/design/evidence\n\nThe existing iteration-scoped before/ locations hold activity inputs and input provenance.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-2-2",
+      "ref": null,
+      "label": "G.2.2 Evidence after change",
+      "path": [
+        "G Architecture Governance",
+        "G.2 Architecture Evidence",
+        "G.2.2 Evidence after change"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.2.2. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/design/evidence\n\nThe existing iteration-scoped after/ locations hold outputs and output provenance.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-3",
+      "ref": null,
+      "label": "G.3 Architecture Review",
+      "path": [
+        "G Architecture Governance",
+        "G.3 Architecture Review"
+      ],
+      "children": 2,
+      "documentation": "Continuum navigation coordinate: G.3. Navigation asserts no semantic containment.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-3-1",
+      "ref": null,
+      "label": "G.3.1 Review records",
+      "path": [
+        "G Architecture Governance",
+        "G.3 Architecture Review",
+        "G.3.1 Review records"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.3.1. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/design/review\n\nPending HCRLs preserve material proposals, attributable dispositions, conditions and actual application facts for the governed transition. The review repository supplies no acceptance merely through location.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-3-2",
+      "ref": null,
+      "label": "G.3.2 Pending architectural decisions/dispositions",
+      "path": [
+        "G Architecture Governance",
+        "G.3 Architecture Review",
+        "G.3.2 Pending architectural decisions/dispositions"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.3.2. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/design/review\n\nUnresolved architectural decisions and dispositions remain explicit in review records and qualified canonical elements. The accepted 1.1.10 transition defers 76 contextual classification questions; their meanings and standing remain unchanged. The completed 1.1.10 register records the accepted transition and its limits.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-4",
+      "ref": null,
+      "label": "G.4 Architecture Register",
+      "path": [
+        "G Architecture Governance",
+        "G.4 Architecture Register"
+      ],
+      "children": 1,
+      "documentation": "Continuum navigation coordinate: G.4. Navigation asserts no semantic containment.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-4-1",
+      "ref": null,
+      "label": "G.4.1 Accepted/completed governance records",
+      "path": [
+        "G Architecture Governance",
+        "G.4 Architecture Register",
+        "G.4.1 Accepted/completed governance records"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.4.1. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/design/register\n\nThe existing register retains completed HCRLs after Solution Architect confirmation of the authorised change and actual incorporated result. Completed records are immutable under common governance.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-5",
+      "ref": null,
+      "label": "G.5 Architecture Governance Processes",
+      "path": [
+        "G Architecture Governance",
+        "G.5 Architecture Governance Processes"
+      ],
+      "children": 1,
+      "documentation": "Continuum navigation coordinate: G.5. Navigation asserts no semantic containment.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-5-1",
+      "ref": null,
+      "label": "G.5.1 Governed architecture Praxes",
+      "path": [
+        "G Architecture Governance",
+        "G.5 Architecture Governance Processes",
+        "G.5.1 Governed architecture Praxes"
+      ],
+      "children": 4,
+      "documentation": "Continuum navigation coordinate: G.5.1. Navigation asserts no semantic containment.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-5-1-1",
+      "ref": null,
+      "label": "G.5.1.1 Architecture Review Praxis",
+      "path": [
+        "G Architecture Governance",
+        "G.5 Architecture Governance Processes",
+        "G.5.1 Governed architecture Praxes",
+        "G.5.1.1 Architecture Review Praxis"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.5.1.1. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/governance/architecture-review-praxis.md\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-5-1-2",
+      "ref": null,
+      "label": "G.5.1.2 Architecture Authoring Praxis",
+      "path": [
+        "G Architecture Governance",
+        "G.5 Architecture Governance Processes",
+        "G.5.1 Governed architecture Praxes",
+        "G.5.1.2 Architecture Authoring Praxis"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.5.1.2. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/governance/architecture-authoring-praxis.md\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-5-1-3",
+      "ref": null,
+      "label": "G.5.1.3 Architectural Element Incorporation Praxis",
+      "path": [
+        "G Architecture Governance",
+        "G.5 Architecture Governance Processes",
+        "G.5.1 Governed architecture Praxes",
+        "G.5.1.3 Architectural Element Incorporation Praxis"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.5.1.3. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/governance/continuum-incorporation-praxis.md\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-5-1-4",
+      "ref": null,
+      "label": "G.5.1.4 ArchiMate Round-Trip Engineering Praxis",
+      "path": [
+        "G Architecture Governance",
+        "G.5 Architecture Governance Processes",
+        "G.5.1 Governed architecture Praxes",
+        "G.5.1.4 ArchiMate Round-Trip Engineering Praxis"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.5.1.4. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/governance/archimate-round-trip-engineering-praxis.md\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-6",
+      "ref": null,
+      "label": "G.6 Architecture Principles and Compliance",
+      "path": [
+        "G Architecture Governance",
+        "G.6 Architecture Principles and Compliance"
+      ],
+      "children": 2,
+      "documentation": "Continuum navigation coordinate: G.6. Navigation asserts no semantic containment.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-6-1",
+      "ref": null,
+      "label": "G.6.1 Application of canonical Architecture Principles",
+      "path": [
+        "G Architecture Governance",
+        "G.6 Architecture Principles and Compliance",
+        "G.6.1 Application of canonical Architecture Principles"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.6.1. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/governance/architectural-axioms.md\n\nCanonical Continuum Principle elements are the sole normative axiom definitions; this source supplies application context and links.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-6-2",
+      "ref": null,
+      "label": "G.6.2 Compliance/conformance",
+      "path": [
+        "G Architecture Governance",
+        "G.6 Architecture Principles and Compliance",
+        "G.6.2 Compliance/conformance"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.6.2. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/tooling/README.md\n\nCurrent validation and reproducibility mechanisms provide bounded evidence; they do not establish architectural acceptance.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-7",
+      "ref": null,
+      "label": "G.7 Architecture Repository and Authority",
+      "path": [
+        "G Architecture Governance",
+        "G.7 Architecture Repository and Authority"
+      ],
+      "children": 5,
+      "documentation": "Continuum navigation coordinate: G.7. Navigation asserts no semantic containment.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-7-1",
+      "ref": null,
+      "label": "G.7.1 Architecture Continuum",
+      "path": [
+        "G Architecture Governance",
+        "G.7 Architecture Repository and Authority",
+        "G.7.1 Architecture Continuum"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.7.1. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/governance/continuum-representation.md\n\nIndividually identified canonical Markdown elements own architectural meaning. The ordered canonical navigation describes architectural organisation; native types and relationships retain semantic meaning independently of that organisation.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-7-2",
+      "ref": null,
+      "label": "G.7.2 Architecture publications and projections",
+      "path": [
+        "G Architecture Governance",
+        "G.7 Architecture Repository and Authority",
+        "G.7.2 Architecture publications and projections"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.7.2. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/documentation/README.md\n\nThe Continuum Manifest is the structural catalogue and the Continuum RAD is the human-readable narrative. Archi/Open Exchange is the projection, workbench and interchange representation. All derive from canonical Continuum architecture and navigation.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-7-3",
+      "ref": null,
+      "label": "G.7.3 Evidence",
+      "path": [
+        "G Architecture Governance",
+        "G.7 Architecture Repository and Authority",
+        "G.7.3 Evidence"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.7.3. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/design/evidence\n\nThe existing iteration-scoped evidence repository retains required Tasks, Reports and purpose-selected supporting material under the Architecture Change Provenance contract.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-7-4",
+      "ref": null,
+      "label": "G.7.4 Review",
+      "path": [
+        "G Architecture Governance",
+        "G.7 Architecture Repository and Authority",
+        "G.7.4 Review"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.7.4. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/design/review\n\nThe existing review repository retains pending architectural proposals, adjudication and result-confirmation material with its recorded standing.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-G-7-5",
+      "ref": null,
+      "label": "G.7.5 Register",
+      "path": [
+        "G Architecture Governance",
+        "G.7 Architecture Repository and Authority",
+        "G.7.5 Register"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: G.7.5. Navigation asserts no semantic containment.\n\nSource: enterprise-architecture/design/register\n\nThe existing register retains accepted/completed governance records; directory placement never manufactures the required Solution Architect decision.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-I-1-1-1",
+      "ref": null,
+      "label": "I.1.1.1 Stakeholder references — Reference navigation",
+      "path": [
+        "I Motivation",
+        "I.1 Drivers",
+        "I.1.1 24/7 Availability",
+        "I.1.1.1 Stakeholder references — Reference navigation"
+      ],
+      "children": 1,
+      "documentation": "Continuum navigation coordinate: I.1.1.1. Navigation asserts no semantic containment.\n\nContext from existing canonical Association relationships only; these references do not allocate Stakeholders.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-I-1-1-1-1",
+      "ref": null,
+      "label": "I.1.1.1.1 Healthcare Provider — Stakeholder reference [historical_reference]",
+      "path": [
+        "I Motivation",
+        "I.1 Drivers",
+        "I.1.1 24/7 Availability",
+        "I.1.1.1 Stakeholder references — Reference navigation",
+        "I.1.1.1.1 Healthcare Provider — Stakeholder reference [historical_reference]"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: I.1.1.1.1. Navigation asserts no semantic containment.\n\nOccurrence: contextual; no additional architectural instance or semantic relationship.\n\nCanonical Stakeholder: R.1.6 Healthcare Provider; canonicalId=2018200a493d458096b72031cc2ae779; Exchange identifier=id-a1c118892a525256a69f93d8488059b8\n\nExisting canonical associations: id-78a34270ced656e7901d367bfd405999"
+    },
+    {
+      "identifier": "navigation-I-1-2-1",
+      "ref": null,
+      "label": "I.1.2.1 Stakeholder references — Reference navigation",
+      "path": [
+        "I Motivation",
+        "I.1 Drivers",
+        "I.1.2 Audit & PHI Privacy",
+        "I.1.2.1 Stakeholder references — Reference navigation"
+      ],
+      "children": 1,
+      "documentation": "Continuum navigation coordinate: I.1.2.1. Navigation asserts no semantic containment.\n\nContext from existing canonical Association relationships only; these references do not allocate Stakeholders.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-I-1-2-1-1",
+      "ref": null,
+      "label": "I.1.2.1.1 Patient — Stakeholder reference [historical_reference]",
+      "path": [
+        "I Motivation",
+        "I.1 Drivers",
+        "I.1.2 Audit & PHI Privacy",
+        "I.1.2.1 Stakeholder references — Reference navigation",
+        "I.1.2.1.1 Patient — Stakeholder reference [historical_reference]"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: I.1.2.1.1. Navigation asserts no semantic containment.\n\nOccurrence: contextual; no additional architectural instance or semantic relationship.\n\nCanonical Stakeholder: R.1.7 Patient; canonicalId=5f6d333e94634420b8a8bbf8b9cb6e2a; Exchange identifier=id-68708d76e8105d48a69bf1e03c888b27\n\nExisting canonical associations: id-daee593684c55e55bf1ce04c223cf585"
+    },
+    {
+      "identifier": "navigation-I-1-3-1",
+      "ref": null,
+      "label": "I.1.3.1 Stakeholder references — Reference navigation",
+      "path": [
+        "I Motivation",
+        "I.1 Drivers",
+        "I.1.3 Clinical Interoperability",
+        "I.1.3.1 Stakeholder references — Reference navigation"
+      ],
+      "children": 2,
+      "documentation": "Continuum navigation coordinate: I.1.3.1. Navigation asserts no semantic containment.\n\nContext from existing canonical Association relationships only; these references do not allocate Stakeholders.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-I-1-3-1-1",
+      "ref": null,
+      "label": "I.1.3.1.1 Health Network — Stakeholder reference [historical_reference]",
+      "path": [
+        "I Motivation",
+        "I.1 Drivers",
+        "I.1.3 Clinical Interoperability",
+        "I.1.3.1 Stakeholder references — Reference navigation",
+        "I.1.3.1.1 Health Network — Stakeholder reference [historical_reference]"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: I.1.3.1.1. Navigation asserts no semantic containment.\n\nOccurrence: contextual; no additional architectural instance or semantic relationship.\n\nCanonical Stakeholder: R.1.3 Health Network; canonicalId=55e57c01dfe146a2a225228b31196862; Exchange identifier=id-c7286399b1ac50a9be4d0dfe7a3dadfa\n\nExisting canonical associations: id-d5fa8c64975852f88132df579c806836"
+    },
+    {
+      "identifier": "navigation-I-1-3-1-2",
+      "ref": null,
+      "label": "I.1.3.1.2 Care Team — Stakeholder reference [historical_reference]",
+      "path": [
+        "I Motivation",
+        "I.1 Drivers",
+        "I.1.3 Clinical Interoperability",
+        "I.1.3.1 Stakeholder references — Reference navigation",
+        "I.1.3.1.2 Care Team — Stakeholder reference [historical_reference]"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: I.1.3.1.2. Navigation asserts no semantic containment.\n\nOccurrence: contextual; no additional architectural instance or semantic relationship.\n\nCanonical Stakeholder: R.1.1 Care Team; canonicalId=6f5a203d81e24a81b384a80781987daa; Exchange identifier=id-3b746d99eb9f53d9b33430676fbf3e74\n\nExisting canonical associations: id-457a3dd70bb358ff8989bc3c9c725c70"
+    },
+    {
+      "identifier": "navigation-IV-2-1",
+      "ref": null,
+      "label": "IV.2.1 System Map",
+      "path": [
+        "IV Application",
+        "IV.2 System-of-Systems Architecture",
+        "IV.2.1 System Map"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: IV.2.1. Navigation asserts no semantic containment.\n\nThe existing application responsibilities form the system map. These links identify independently defined systems and components; no new enclosing system or relationship is asserted.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-V",
+      "ref": null,
+      "label": "V Technology",
+      "path": [
+        "V Technology"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: V. Navigation asserts no semantic containment.\n\nNo individually represented Technology architecture is present in the current Continuum. No data, platform or infrastructure subsections are inferred.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    },
+    {
+      "identifier": "navigation-VI",
+      "ref": null,
+      "label": "VI Implementation & Migration",
+      "path": [
+        "VI Implementation & Migration"
+      ],
+      "children": 0,
+      "documentation": "Continuum navigation coordinate: VI. Navigation asserts no semantic containment.\n\nNo individually represented architectural release-family transition is present in the current Continuum. Governance records and execution tasks remain in their existing governance repository.\n\nOccurrence: navigation; no additional architectural instance or semantic relationship."
+    }
+  ]
+}

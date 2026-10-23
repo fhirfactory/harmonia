@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "originatingCommit": "ae94a7ed067c436da49443d72d2eb72ad30fc5ff",
+  "protectedPriorFiles": 1994,
+  "changedProtectedPaths": [],
+  "trackedPathsChanged": [],
+  "rootReleaseUnchanged": {
+    "version": "1.1.12",
+    "previous_version": "1.1.11"
+  },
+  "publishedXmlSha256": "e33ae52b3934cf4d9b9b0102ce65e09461fa554022f43d56f2637685d8c39caa",
+  "addedScope": "enterprise-architecture/design/evidence/1.1.13/001 only",
+  "limits": [
+    "Target/build outputs from required Java tests are not architectural changes.",
+    "Evidence is diagnostic/advisory; no release increment or HCRL acceptance is performed."
+  ]
+}

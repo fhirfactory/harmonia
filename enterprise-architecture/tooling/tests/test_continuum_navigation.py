@@ -161,7 +161,15 @@ class ContinuumNavigationTests(unittest.TestCase):
         rows = {n.get('identifier'): n for n in model.findall('a:elements/a:element', c.N)}
         org = {n.get('identifier'): n for n in model.findall('.//a:organizations//a:item', c.N)}
         for node in nav.walk(self.tree):
-            self.assertEqual(org[nav.transport_id(node)].findtext('a:label', namespaces=c.N), nav.title(node))
+            if node['number'] == 'R':
+                for layer in ('motivation', 'strategy'):
+                    self.assertTrue(org['navigation-R-' + layer].findtext('a:label', namespaces=c.N).startswith(nav.title(node)))
+                continue
+            label = org[nav.transport_id(node)].findtext('a:label', namespaces=c.N)
+            if node.get('canonicalId') and self.elements[node['canonicalId']][0]['archimateType'] == 'ValueStream':
+                self.assertEqual(label, nav.title(node) + ' — reference; canonical element in Strategy')
+            else:
+                self.assertEqual(label, nav.title(node))
             for role, reference in nav.references(node):
                 doc = org[nav.transport_id(node)].findtext('a:documentation', namespaces=c.N)
                 self.assertIn(reference['number'], doc)
@@ -188,6 +196,111 @@ class ContinuumNavigationTests(unittest.TestCase):
         self.assertEqual({r['id']: r['number'] for r in exposed}, {cid: n['number'] for cid, n in self.locations.items()})
         self.assertEqual(doc.xpath('//nav[@id="hierarchy"]//li/@data-number'), [n['number'] for n in nav.walk(self.tree)])
         self.assertEqual(json.loads(artifacts['navigation.json'])['roots'], self.tree)
+
+    def test_archi_hierarchy_directories_include_leaves_and_keep_contexts_distinct(self):
+        from collections import Counter
+        model = c.ET.fromstring(c.project(self.root)[0])
+        org = model.find('a:organizations', c.N)
+        placements = org.findall('.//a:item[@identifierRef]', c.N)
+        self.assertTrue(all(not p.findall('a:item', c.N) for p in placements))
+        expected = [m['exchange']['identifier'] for m, _, _ in self.elements.values()]
+        actual = [p.get('identifierRef') for p in placements if p.get('identifierRef') in expected]
+        self.assertEqual(Counter(actual), Counter(expected))
+        parents = [n for n in nav.walk(self.tree) if n.get('canonicalId') and n.get('children')]
+        self.assertEqual(Counter(self.elements[n['canonicalId']][0]['archimateType'] for n in parents),
+                         Counter(Capability=204, DataObject=11, Driver=3))
+        for node in parents:
+            folder = org.find('.//a:item[@identifier="' + nav.transport_id(node) + '"]', c.N)
+            self.assertIsNone(folder.get('identifierRef'))
+            self.assertEqual(folder[2].get('identifierRef'), self.elements[node['canonicalId']][0]['exchange']['identifier'])
+            self.assertEqual(folder[2].findtext('a:label', namespaces=c.N), node['title'])
+        hierarchy = nav.workbench_hierarchy_members(self.tree, self.elements, model)
+        self.assertEqual(len(hierarchy), 910)
+        self.assertEqual(sum(self.elements[cid][0].get('specialization') == 'Feature' for cid in hierarchy), 179)
+        self.assertEqual(sum(self.elements[cid][0].get('specialization') == 'Topic' for cid in hierarchy), 70)
+        self.assertEqual(Counter(self.elements[cid][0]['archimateType'] for cid in hierarchy),
+                         Counter(Capability=628, DataObject=70, BusinessService=99,
+                                 BusinessFunction=104, BusinessProcess=9))
+        # Every hierarchy member owns a directory, even without children.
+        # Non-hierarchical leaves and historical indexes retain their placement.
+        for node in nav.walk(self.tree):
+            item = org.find('.//a:item[@identifier="' + nav.transport_id(node) + '"]', c.N)
+            if node.get('canonicalId') in hierarchy:
+                self.assertIsNone(item.get('identifierRef'))
+                direct = item.findall('a:item[@identifierRef]', c.N)
+                self.assertEqual(len(direct), 1)
+                self.assertEqual(direct[0].get('identifierRef'), self.elements[node['canonicalId']][0]['exchange']['identifier'])
+                self.assertEqual(direct[0].findtext('a:label', namespaces=c.N), node['title'])
+            elif node.get('canonicalId') and not node.get('children') and not node['number'].startswith('III.2.2.'):
+                self.assertEqual(item.get('identifierRef'), self.elements[node['canonicalId']][0]['exchange']['identifier'])
+                self.assertEqual(item.findall('a:item', c.N), [])
+            if node.get('contextCanonicalId'):
+                self.assertIsNone(item.get('identifierRef'))
+                self.assertIn(node['contextCanonicalId'], item.findtext('a:documentation', namespaces=c.N))
+
+    def test_existing_leaf_directory_and_element_stay_stable_when_child_added_or_removed(self):
+        # Projection-only fixture: relocate an existing member beneath a leaf;
+        # this supplies no authority to change canonical navigation or semantics.
+        catalogue = c.read_json(self.root / c.CONFIG / 'type-catalogue.json')
+        for specialization, native in [(None, 'Capability'), ('Feature', 'Capability'), ('Topic', 'DataObject'),
+                                       (None, 'BusinessService')]:
+            tree = copy.deepcopy(self.tree)
+            model = c.ET.fromstring(c.project(self.root)[0])
+            hierarchy = nav.workbench_hierarchy_members(tree, self.elements, model)
+            candidates = [node for node in nav.walk(tree)
+                          if node.get('canonicalId') in hierarchy
+                          and not node.get('children')
+                          and self.elements[node['canonicalId']][0]['archimateType'] == native
+                          and self.elements[node['canonicalId']][0].get('specialization') == specialization]
+            parent, child = candidates[:2]
+            def placement():
+                folder = model.find('.//a:organizations//a:item[@identifier="' + nav.transport_id(parent) + '"]', c.N)
+                canonical = folder.find('a:item[@identifierRef]', c.N)
+                return dict(folder.attrib), c.ET.tostring(canonical)
+            before = placement()
+            original_parent = next(n for n in nav.walk(tree) if child in n.get('children', []))
+            original_parent['children'].remove(child)
+            parent['children'] = [child]
+            nav.project(model, tree, self.elements, catalogue)
+            self.assertEqual(before, placement())
+            parent['children'].clear()
+            original_parent['children'].append(child)
+            nav.project(model, tree, self.elements, catalogue)
+            self.assertEqual(before, placement())
+
+    def test_native_anchors_partition_references_without_foreign_domain_roots(self):
+        model = c.ET.fromstring(c.project(self.root)[0])
+        org = model.find('a:organizations', c.N)
+        anchors = {i.findtext('a:label', namespaces=c.N): i for i in org.findall('a:item', c.N)}
+        self.assertTrue({'Motivation', 'Strategy', 'Business', 'Application', 'Technology & Physical',
+                         'Implementation & Migration', 'Other'}.issubset(anchors))
+        strategy = anchors['Strategy']
+        self.assertFalse(any(i.findtext('a:label', namespaces=c.N) == 'III Business' for i in strategy.iter(c.tag('item'))))
+        values = strategy.find('a:item[@identifier="navigation-III-2-2-native-strategy"]', c.N)
+        self.assertIn('Business navigation reference', values.findtext('a:label', namespaces=c.N))
+        self.assertEqual(len(values.findall('a:item[@identifierRef]', c.N)), 4)
+        for item in values.findall('a:item', c.N):
+            self.assertIsNotNone(item.get('identifierRef'))
+        business = anchors['Business'].find('.//a:item[@identifier="navigation-III-2-2"]', c.N)
+        self.assertEqual(len(business.findall('a:item', c.N)), 4)
+        self.assertEqual(business.findall('.//a:item[@identifierRef]', c.N), [])
+        # Empty/source-only contexts are explicitly anchored rather than
+        # relying on the presence of live canonical descendants.
+        self.assertIsNotNone(anchors['Other'].find('.//a:item[@identifier="navigation-G-1-1"]', c.N))
+        self.assertIsNotNone(anchors['Application'].find('.//a:item[@identifier="navigation-IV-2-1"]', c.N))
+        for layer, coordinate, count in [('Motivation', 'R-1', 10), ('Strategy', 'R-2', 214)]:
+            index = anchors[layer].find('.//a:item[@identifier="navigation-' + coordinate + '"]', c.N)
+            self.assertEqual(len(index.findall('.//a:item[@identifierRef]', c.N)), count)
+
+    def test_workbench_view_signatures_detect_authored_view_changes(self):
+        import continuum_workbench as workbench
+        model = c.secure_xml(self.root / c.DESIGN / 'projection-template.xml')
+        before = workbench.signatures(model, 'views/diagrams', 'view')
+        self.assertEqual(len(before), 1209)
+        first = model.find('a:views/a:diagrams/a:view', c.N)
+        first.find('a:name', c.N).text += ' changed'
+        after = workbench.signatures(model, 'views/diagrams', 'view')
+        self.assertNotEqual(before[first.get('identifier')], after[first.get('identifier')])
 
     def test_relocation_changes_coordinates_without_changing_identity_names_or_semantics(self):
         path = self.root / nav.SOURCE

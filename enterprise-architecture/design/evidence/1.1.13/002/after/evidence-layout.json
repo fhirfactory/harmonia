@@ -1,0 +1,14 @@
+{
+  "outcome": "UNRESOLVED",
+  "version": "1.1.13",
+  "iteration": "002",
+  "records": [
+    "evidence/1.1.13/002/after/ai-agent-reports/20261023T050357Z-archi-workbench-remediation.md",
+    "evidence/1.1.13/002/before/ai-agent-tasks/unresolved-archi-workbench-remediation.md"
+  ],
+  "errors": [],
+  "unresolved": [
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.13/002/before/ai-agent-tasks/unresolved-archi-workbench-remediation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+  ],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}

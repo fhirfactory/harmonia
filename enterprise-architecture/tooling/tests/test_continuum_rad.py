@@ -51,8 +51,14 @@ class ContinuumRadTests(unittest.TestCase):
         headings = self.structure['headings']
         self.assertEqual([h['number'] for h in headings],[n['number'] for n in nodes])
         for heading,node in zip(headings,nodes):
-            projected, = model.xpath(heading['locator'])
-            self.assertEqual(projected.findtext('a:label',namespaces=c.N),nav.title(node))
+            projected = model.xpath(heading['locator'])
+            self.assertEqual(len(projected), 2 if node['number'] == 'R' else 1)
+            for item in projected:
+                label = item.findtext('a:label',namespaces=c.N)
+                if node['number'] == 'R' or node['number'].startswith('III.2.2.'):
+                    self.assertTrue(label.startswith(nav.title(node)))
+                else:
+                    self.assertEqual(label, nav.title(node))
             self.assertEqual(heading['title'],node['title'])
             self.assertEqual(heading['depth'],len(node['path'])-2)
             self.assertEqual(heading['origin'],'canonical Continuum navigation')

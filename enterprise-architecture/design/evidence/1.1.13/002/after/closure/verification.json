@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "release": "1.1.13",
+  "previousRelease": "1.1.12",
+  "protectedEntryFilesUnchanged": 1809,
+  "diagnosticAndRemediationEvidencePreserved": true,
+  "pendingReviewInputUnchanged": true,
+  "canonicalSourcesAndNavigationUnchanged": true,
+  "finalProjection": "enterprise-architecture/design/archimate/published/1.1.13/Harmonia-Architecture.xml",
+  "projectionSha256": "50f4407467b5372bbe32da04b764bddcbb47389f08cf5d4ac850b501a6740765",
+  "confirmedVerification": {
+    "canonicalElements": 1602,
+    "semanticRelationships": 1651,
+    "authoredViews": 1209,
+    "governedDirectories": 910,
+    "governedLeafDirectories": 695,
+    "stableIsolatedArchi510Passes": 2,
+    "maintainedEaTestsPassed": 66,
+    "javaArchitectureTestsPassed": 90
+  },
+  "humanAcceptance": "Solution Architect reports completed actual Archi 5.10 visual inspection and expressly accepts the workbench and directs closure; exact instruction retained in closure Task.",
+  "closureScope": "Completed HCRL, minimal operational acceptance/status references, formal closure provenance and Git delivery of accepted state; no further organisation/process changes.",
+  "stagedWhitespaceCheck": {
+    "maintainedSourceAndAuthoredClosure": "PASS",
+    "unchangedAcceptedInputNotices": {
+      "enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/archi-importer-organisation.javap.txt": 1,
+      "enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/anchored-reference-folders-returned.xml": 45,
+      "enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/anchored-reference-folders-second.xml": 45,
+      "enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/category-markers-returned.xml": 31,
+      "enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/category-markers-second.xml": 31,
+      "enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/mechanics-returned.xml": 159,
+      "enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/mechanics-second.xml": 159,
+      "enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/repeated-reference-returned.xml": 21,
+      "enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/repeated-reference-second.xml": 21,
+      "enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/import.log": 1,
+      "enterprise-architecture/documentation/continuum-rad/published/1.1.13/parts/application.tex": 4,
+      "enterprise-architecture/documentation/continuum-rad/published/1.1.13/parts/motivation.tex": 8
+    },
+    "treatment": "Preserve the accepted raw evidence and generated RAD publication bytes exactly; these notices are not source/closure defects."
+  }
+}

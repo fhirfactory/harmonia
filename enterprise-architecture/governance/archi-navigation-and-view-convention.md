@@ -15,6 +15,39 @@
 
 # Harmonia Archi Navigation & View Convention
 
+## Continuum-derived workbench projection — 1.1.13
+
+The Solution Architect's [iteration 002 Task](../design/evidence/1.1.13/002/before/ai-agent-tasks/unresolved-archi-workbench-remediation.md)
+authorises a physical Exchange/Archi adapter over the accepted Continuum
+navigation. Canonical navigation semantics are shared; physical representation
+may differ by projection. The [workbench contract](../design/archimate/README.md#physical-workbench-organisation--1113)
+describes native-layer anchors, directory-plus-canonical-element placement for
+every member of an established governed containment hierarchy (including leaves),
+contextual/reference folders, layer-qualified R indexes and explicit Business
+ValueStream context in native Strategy. The Solution Architect's
+[iteration 002 clarification](../design/evidence/1.1.13/002/before/ai-agent-tasks/unresolved-contained-element-directories.md)
+supersedes the original parent-only policy. Containment is determined by the
+applicable governed architecture and existing navigation/model semantics; this
+representation rule supplies no universal containment mechanism. The current
+hierarchies are the three Strategy Capability scopes, including recorded Feature
+parent/owner ancestry, logical Topic decomposition, and participation established
+by the existing governed model's state-selected Home/type-selected Composition
+semantics. In the current population, explicit directed Home assertions additionally
+cover 212 Business Behaviour elements, at unchanged canonical navigation homes.
+Contextual Capability folders remain contextual; they assert no new containment.
+Hierarchy leaves receive the
+same stable directory as parents, so adding/removing children does not restructure
+the parent's representation. Standalone subjects and contextual/reference scopes
+retain their treatment without invented containment. Earlier specialised
+Home/Composition rules below retain their original scope.
+Canonical sources, RAD/Manifest hierarchy, names, types, standing, identities,
+relationships and authored View organisation remain unchanged. The
+[Review Praxis](architecture-review-praxis.md#5-report-and-verify-the-incorporated-result)
+requires Solution Architect inspection of the actual imported workbench tree
+before HCRL acceptance. Candidate publication and agent inspection confer none.
+The Solution Architect completed actual Archi 5.10 visual inspection and accepted
+this representation in [completed HCRL 1.1.13-002](../design/register/1.1.13/hcrl-1.1.13-002.complete.md).
+
 ## Current round-trip projection — 2026-10-20
 
 The [Round-Trip Engineering Praxis](archimate-round-trip-engineering-praxis.md#common-interpretation-and-projection-rules)

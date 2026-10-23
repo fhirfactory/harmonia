@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "tests": 66,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 219.035,
+  "command": "make -C enterprise-architecture/tooling test",
+  "scope": "Final 910-member candidate"
+}

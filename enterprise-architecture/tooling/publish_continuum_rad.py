@@ -160,8 +160,8 @@ def diagram(node, elements, population):
 
 
 def outputs(root, output):
-    # Use the same canonical hierarchy as Exchange; never derive chapters from
-    # incidental workbench folders or infer architecture during publication.
+    # Use canonical navigation for chapters. Exchange's physical workbench
+    # representation may have more than one context for a shared location.
     model_bytes, _ = c.project(root)
     from lxml import etree as ET
     model = ET.fromstring(model_bytes)
@@ -171,8 +171,15 @@ def outputs(root, output):
     locations = nav.by_element(tree)
     model_nodes = {node.get('identifier'): node for node in model.findall('.//a:organizations//a:item', c.N)}
     for node in nav.walk(tree):
-        projected = model_nodes[nav.transport_id(node)]
-        node['modelLocator'] = model.getroottree().getpath(projected)
+        identifier = nav.transport_id(node)
+        if node['number'] == 'R':
+            projected = [model_nodes[identifier + '-' + layer] for layer in ('motivation', 'strategy')]
+        else:
+            projected = [model_nodes[identifier]] if identifier in model_nodes else []
+        c.require(projected, 'Missing Exchange navigation correspondence: ' + node['number'])
+        # XPath union records both native-layer index contexts without changing
+        # the single canonical R chapter or any RAD/Manifest navigation.
+        node['modelLocator'] = ' | '.join(model.getroottree().getpath(item) for item in projected)
     prose = Prose(root, output, elements)
     notes = c.read_json(root / SOURCE / 'reader-notes.json')
     # Reuse the existing source-qualified relationship population selector.

@@ -47,7 +47,8 @@ def signatures(root, group, item):
     from exchange_signatures import signature
     model=SimpleNamespace(keys={n.get('identifier'):n.findtext('a:name',namespaces=c.N)
         for n in root.findall('a:propertyDefinitions/a:propertyDefinition',c.N)})
-    return {n.get('identifier'): signature(n,model) for n in root.findall('a:'+group+'/a:'+item,c.N)}
+    path = '/'.join('a:' + part for part in group.split('/')) + '/a:' + item
+    return {n.get('identifier'): signature(n,model) for n in root.findall(path,c.N)}
 
 
 def review(baseline, submitted, root=c.ROOT):

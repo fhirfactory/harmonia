@@ -44,6 +44,14 @@ Stakeholder contexts cite existing Association IDs. Exchange item documentation
 and derived `Continuum / Navigation References` properties expose the same
 references and context paths; those properties preserve orientation when Archi
 cannot preserve navigation-only folders. None of these links asserts an edge.
+The 1.1.13 Exchange adapter uses native-layer markers to preserve those folders,
+gives every member of the established Capability/Feature and logical Topic
+hierarchies and explicit governed model containment a stable directory containing
+its canonical element, including leaves (212 Business Behaviour Home subjects
+retain their accepted Business contexts),
+retains other navigation-parent folders without inferring containment, and
+qualifies cross-layer and reference indexes explicitly. RAD/Manifest keep the
+same canonical hierarchy. See the [physical workbench policy](../design/archimate/README.md#physical-workbench-organisation--1113).
 Material navigation/publication changes require Solution Architect structural
 review under the existing Review Praxis before HCRL acceptance.
 The

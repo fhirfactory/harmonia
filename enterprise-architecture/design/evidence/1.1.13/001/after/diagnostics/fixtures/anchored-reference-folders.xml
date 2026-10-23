@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="diagnostic-anchored-reference-folders">
+  <name>Diagnostic only — anchored-reference-folders</name>
+  <elements>
+    <element identifier="anchored-driver" xsi:type="Driver">
+      <name>Anchored Driver</name>
+    </element>
+    <element identifier="anchored-stakeholder" xsi:type="Stakeholder">
+      <name>Indexed Stakeholder</name>
+    </element>
+  </elements>
+  <organizations>
+    <item>
+      <label>Motivation</label>
+      <item>
+        <label>I Motivation</label>
+        <item>
+          <label>Driver navigation</label>
+          <item identifierRef="anchored-driver" />
+          <item>
+            <label>Stakeholder references</label>
+            <item>
+              <label>Stakeholder context</label>
+              <documentation>Canonical target: anchored-stakeholder; reference only</documentation>
+            </item>
+          </item>
+        </item>
+      </item>
+      <item>
+        <label>R Stakeholder index</label>
+        <item identifierRef="anchored-stakeholder" />
+      </item>
+    </item>
+    <item>
+      <label>Other</label>
+      <item>
+        <label>G Governance reference</label>
+        <item>
+          <label>Source-only leaf</label>
+          <documentation>Diagnostic source locator only</documentation>
+        </item>
+      </item>
+    </item>
+  </organizations>
+</model>

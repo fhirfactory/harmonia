@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="diagnostic-category-markers">
+  <name>Diagnostic only — category-markers</name>
+  <elements>
+    <element identifier="marker-cap" xsi:type="Capability">
+      <name>Marker Capability</name>
+    </element>
+    <element identifier="marker-fun" xsi:type="BusinessFunction">
+      <name>Marker Business Function</name>
+    </element>
+  </elements>
+  <organizations>
+    <item>
+      <label>Strategy</label>
+      <item>
+        <label>Within marker</label>
+        <item identifierRef="marker-cap" />
+      </item>
+      <item>
+        <label>Mixed marker</label>
+        <item identifierRef="marker-fun" />
+      </item>
+    </item>
+    <item>
+      <label>Technology &amp; Physical</label>
+      <documentation>Explicit empty native marker</documentation>
+    </item>
+    <item>
+      <label>V Technology</label>
+      <documentation>Numbered empty navigation, no native marker</documentation>
+    </item>
+  </organizations>
+</model>
