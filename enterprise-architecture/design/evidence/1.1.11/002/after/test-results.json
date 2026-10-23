@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "eaMaintainedSuite": {
+    "command": "PYTHONPATH=<installed declared dependencies> python3 -B enterprise-architecture/tooling/verify_continuum_reproducibility.py --report <iteration>/after/reproducibility.json",
+    "tests": 60,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 203.17,
+    "scope": "All maintained EA tests in isolated maintained-input tree, with Legacy-RAD/docs/scripts/Git absent"
+  },
+  "finalNavigationRegression": {
+    "command": "python3 -B -m unittest discover -s enterprise-architecture/tooling/tests -p test_continuum_navigation.py -v",
+    "tests": 9,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 22.523,
+    "scope": "Final bounded Stakeholder creation-placement compatibility refinement and navigation regression suite; no generated-byte change"
+  },
+  "javaArchitectureSuite": {
+    "command": "JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:$PATH timeout --signal=TERM --kill-after=10s 300s mvn -o test -pl paradeigma/paradeigma-test -am -Dtest=*ArchitectureTest -Dsurefire.failIfNoSpecifiedTests=false",
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "mavenSeconds": 32.042,
+    "jdk": 21
+  },
+  "currentStalenessAndLinks": {
+    "command": "make -C enterprise-architecture/tooling check",
+    "status": "PASS"
+  },
+  "browser": {
+    "command": "make -C enterprise-architecture/tooling browser-test",
+    "status": "PASS",
+    "checks": [
+      "initial population",
+      "identity search",
+      "selection",
+      "Feature filter",
+      "combined currentness filter"
+    ],
+    "limits": "DOM contract, not browser pixel inspection"
+  },
+  "earlierAttempts": [
+    {
+      "outcome": "UNRESOLVED",
+      "activity": "Initial Java 25 Maven invocation",
+      "reason": "Intentionally interrupted; no completed semantic result asserted. ArchUnit emitted Unsupported class file major version 69; interrupted rather than treating parser warnings as a trustworthy architecture result. Retried successfully on Java 21."
+    },
+    {
+      "outcome": "FAIL",
+      "activity": "Initial Archi sandbox launch",
+      "exitCode": 13,
+      "reason": "gtk_init_check failed before import; isolated-workspace retry with desktop access succeeded."
+    },
+    {
+      "outcome": "FAIL",
+      "activity": "Initial make all post-test staleness check",
+      "reason": "The initial 60-test suite passed; a bounded standing-label scope refinement made already-generated Manifest bytes stale. Regenerated final outputs and all staleness/link checks passed."
+    },
+    {
+      "outcome": "UNRESOLVED",
+      "activity": "Preliminary isolated generation run",
+      "reason": "Intentionally interrupted; no completed semantic result asserted. Interrupted to validate the final publication scope refinement instead of retaining obsolete generation evidence."
+    }
+  ],
+  "limits": "Tests and transport evidence establish their bounded checks, not Solution Architect acceptance."
+}

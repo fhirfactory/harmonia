@@ -1,0 +1,44 @@
+{
+  "scope": "All existing non-ignored EA files, root release authority and AGENTS.md at closure entry; closure Task excluded from protected input groups.",
+  "digestRule": "SHA-256 of sorted UTF-8 relative-path + NUL + file-SHA256 + LF per group.",
+  "protectedFiles": 1963,
+  "groups": {
+    "canonical-continuum-and-navigation": {
+      "files": 1604,
+      "sha256": "fe41b4a5add393a523432357bd9c9b8aa8ce78a17fc403959d613162cd9fd2a4"
+    },
+    "current-tooling-tests-governance-templates": {
+      "files": 63,
+      "sha256": "e68a5d56d95e3599dec1d7f9938e40886c2acd17c12f958f463746fac81bfaa1"
+    },
+    "existing-design-evidence-and-governance-history": {
+      "files": 163,
+      "sha256": "1679ccd4c48f3aa6746bc4706afe044f0355ee7a7662262a7955f65bcf6482f6"
+    },
+    "other-existing-ea-and-root-authority": {
+      "files": 57,
+      "sha256": "9d4f2a370273893e3a091c9c7cba5b4c566739cff2200c84e8db9dd687e1b645"
+    },
+    "preceding-1.1.11-diagnostic": {
+      "files": 21,
+      "sha256": "0deb7f1b88403e1882a86f59226c7a052974faa3775f11378332929f1e493287"
+    },
+    "previous-remediation-evidence-and-report": {
+      "files": 35,
+      "sha256": "567323b1636b89a34ba5a7cb6264adc02b827fd687cef6c2cea3371c9b53ee61"
+    },
+    "reviewed-1.1.11-publications": {
+      "files": 19,
+      "sha256": "59acf9913b611697f1976954684c80ff6aa1585744bcfdf8d7f52ea5cf023755"
+    },
+    "reviewed-pending-hcrl": {
+      "files": 1,
+      "sha256": "6286240cc9b6f497706bbf4b7c20a342200317977efe078d64b380f62288936b"
+    }
+  },
+  "release": {
+    "version": "1.1.11",
+    "previous_version": "1.1.10"
+  },
+  "pendingHcrlSha256": "e69abba3511715f5bd9b06fc49e87b75d57c6451acef7df8a9710d3cec298174"
+}

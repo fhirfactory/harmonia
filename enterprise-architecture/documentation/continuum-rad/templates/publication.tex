@@ -145,19 +145,26 @@ subjects follow the canonical Continuum taxonomy. Unpopulated domains explicitly
 record absence; no missing architecture is supplied for publication.
 
 Each architectural node carries its Continuum navigation coordinate: G for
-Governance and I--VI for architectural Parts. Coordinates continue through every
+Governance and I--VI for architectural Parts; R denotes cross-cutting reference
+navigation outside architectural decomposition. Coordinates continue through every
 published descendant. They are locations that can change when architecture moves.
 Canonical IDs remain immutable identities, and names retain their architectural
 meaning. Native ArchiMate relationships preserve semantic assertions; navigation
 nesting asserts no additional containment or ownership.
 
 Strategy preserves the governed Enterprise, Business and Business Enabling
-capability decompositions. Business behaviour uses relevant capability context
-without repeating that entire hierarchy. Application separates logical Topics
+capability decompositions. Governed predecessor identities appear in the historical
+reference index and link to their successors; they are not peer current subjects.
+Business behaviour repeats the complete recorded ancestry needed to contextualise
+represented behaviour. Each contextual occurrence identifies its canonical Strategy
+Capability, Strategy coordinate and immutable ID. This is contextual navigation,
+not another Capability instance or a semantic relationship. Application separates logical Topics
 from scoped information structures and organises software by its existing
 application responsibilities. A native DataObject is never promoted to a Topic
-or Class for publication convenience. Stakeholders appear as cross-cutting
-Motivation profiles, with existing associations and no peer Stakeholders chapter.
+or Class for publication convenience. Stakeholders appear contextually against
+Motivation material only through existing canonical associations. All Stakeholders
+remain discoverable in R's Stakeholder Index; index placement asserts no association
+and creates no Motivation decomposition subject.
 
 The Architecture Continuum was accepted as the canonical baseline in RAD-1.1.7.
 Each element and assertion retains its independent standing. Currentness supplies

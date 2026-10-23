@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "firstSha256": "552120ecdcb79eaa58d301588352210f06e952dd325e70bd3120ea07ad106a9e",
+  "cleanBuildSha256": "552120ecdcb79eaa58d301588352210f06e952dd325e70bd3120ea07ad106a9e",
+  "identicalBytes": true,
+  "bytes": 1840719,
+  "sourceDateEpoch": 1792627200,
+  "command": "latexmk -C -outdir=build continuum-rad.tex; latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build continuum-rad.tex",
+  "limits": "Fixed-input clean build from the same publication-relative working/build paths; human acceptance is separate."
+}

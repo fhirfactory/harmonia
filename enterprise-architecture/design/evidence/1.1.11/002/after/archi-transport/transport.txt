@@ -1,0 +1,10 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+[XML Exchange] Validating...
+[XML Exchange] Validated!
+[XML Exchange] Importing XML from /home/mhunter/Development/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-manifest/published/1.1.11/Harmonia-Architecture.xml
+[XML Exchange] XML Imported!
+[XML Exchange] Exporting from 'Harmonia Architecture — Synchronised Markdown / ArchiMate Baseline' to /tmp/harmonia-1111-final-returned.xml
+[XML Exchange] XML Exported!
+[XML Exchange] Validating...
+[XML Exchange] Validated!
+[Core] Saved model to '/tmp/harmonia-1111.archimate'

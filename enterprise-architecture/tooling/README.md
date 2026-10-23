@@ -26,6 +26,16 @@ The canonical `continuum/navigation.json` supplies architectural organisation,
 while native-type Markdown paths remain storage locators. The shared
 `continuum_navigation.py` validates complete unique coverage and derives every
 hierarchical coordinate. All projections consume that same traversal. The
+1.1.11 reference area R holds the non-decompositional Stakeholder Index and
+historical Capability identities. Business Behaviour repeats only the complete
+recorded ancestry of populated contexts, with typed canonical Strategy links.
+Stakeholder contexts cite existing Association IDs. Exchange item documentation
+and derived `Continuum / Navigation References` properties expose the same
+references and context paths; those properties preserve orientation when Archi
+cannot preserve navigation-only folders. None of these links asserts an edge.
+Material navigation/publication changes require Solution Architect structural
+review under the existing Review Praxis before HCRL acceptance.
+The
 generated Manifest `navigation.json` exposes the fully numbered tree for inspection;
 it is not an editable architecture source. Creation specifications require an
 explicit `navigationParent` context; publication performs no classification.

@@ -65,7 +65,8 @@ class ContinuumRadTests(unittest.TestCase):
         self.assertNotIn(r'\appendix',master)
         self.assertIn('Architectural Name Index',master)
         expected={'parts/architecture-governance.tex','parts/motivation.tex','parts/strategy.tex',
-                  'parts/business.tex','parts/application.tex','parts/technology.tex','parts/implementation-and-migration.tex'}
+                  'parts/business.tex','parts/application.tex','parts/technology.tex','parts/implementation-and-migration.tex',
+                  'parts/cross-cutting-references.tex'}
         self.assertEqual({name for name in self.artifacts if name.startswith('parts/')},expected)
         for name in expected:
             self.assertIn(r'\input{'+name+'}',master)
@@ -75,6 +76,22 @@ class ContinuumRadTests(unittest.TestCase):
             self.assertNotIn(r'\chapter',text)
         metadata=json.loads(self.artifacts['publication.json'])
         self.assertEqual(set(metadata['sha256']),set(self.artifacts)-{'publication.json'})
+
+    def test_context_and_history_references_survive_body_and_outline_metadata(self):
+        tree = nav.load(self.root, self.elements)
+        headings = {h['number']: h for h in self.structure['headings']}
+        text = '\n'.join(data.decode() for name, data in self.artifacts.items() if name.startswith('parts/'))
+        for node in nav.walk(tree):
+            for role, reference in nav.references(node):
+                self.assertIn(rad.tex(role + ': ' + reference['number'] + ' '), text)
+                self.assertIn(rad.ref(reference['canonicalId'], self.elements), text)
+            if node.get('contextCanonicalId'):
+                self.assertEqual(headings[node['number']]['canonicalReference'], node['canonicalReference'])
+                self.assertIn(rad.tex(nav.title(node)), text)
+            if node.get('relationshipIds'):
+                for edge in node['relationshipIds']:
+                    self.assertIn(edge, self.artifacts['parts/motivation.tex'].decode())
+        self.assertIn('No canonical Motivation association is represented', self.artifacts['parts/cross-cutting-references.tex'].decode())
 
     def test_diagrams_retain_exact_existing_assertions_and_direction(self):
         edges = {r['identifier']: r for m, _, _ in self.elements.values() for r in m.get('relationships', [])}

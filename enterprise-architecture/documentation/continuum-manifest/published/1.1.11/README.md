@@ -1,0 +1,2496 @@
+<!-- Generated from canonical Continuum architecture and navigation. -->
+# Harmonia Architecture Continuum — RAD 1.1.11
+
+[Architecture browser](continuum.html) · [ArchiMate Exchange](Harmonia-Architecture.xml) · [Catalogue](continuum-catalogue.tex)
+
+Canonical ID is identity; name is meaning; number is location. Hierarchy asserts no semantic containment.
+
+- G Architecture Governance
+  - G.1 Governance Model
+    - [G.1.1 Architecture Authority](../../../../governance/architecture-governance.md#authority-and-adoption)
+    - [G.1.2 Decision Rights](../../../../governance/architecture-governance.md#architectural-decision-authority)
+    - [G.1.3 Roles and Responsibilities](../../../../governance/architecture-governance.md#architectural-decision-authority)
+  - G.2 Architecture Evidence
+    - [G.2.1 Evidence before change](../../../../design/evidence)
+    - [G.2.2 Evidence after change](../../../../design/evidence)
+  - G.3 Architecture Review
+    - [G.3.1 Review records](../../../../design/review)
+    - [G.3.2 Pending architectural decisions/dispositions](../../../../design/review)
+  - G.4 Architecture Register
+    - [G.4.1 Accepted/completed governance records](../../../../design/register)
+  - G.5 Architecture Governance Processes
+    - G.5.1 Governed architecture Praxes
+      - [G.5.1.1 Architecture Review Praxis](../../../../governance/architecture-review-praxis.md)
+      - [G.5.1.2 Architecture Authoring Praxis](../../../../governance/architecture-authoring-praxis.md)
+      - [G.5.1.3 Architectural Element Incorporation Praxis](../../../../governance/continuum-incorporation-praxis.md)
+      - [G.5.1.4 ArchiMate Round-Trip Engineering Praxis](../../../../governance/archimate-round-trip-engineering-praxis.md)
+  - G.6 Architecture Principles and Compliance
+    - [G.6.1 Application of canonical Architecture Principles](../../../../governance/architectural-axioms.md)
+    - [G.6.2 Compliance/conformance](../../../../tooling/README.md)
+  - G.7 Architecture Repository and Authority
+    - [G.7.1 Architecture Continuum](../../../../governance/continuum-representation.md)
+    - [G.7.2 Architecture publications and projections](../../../README.md)
+    - [G.7.3 Evidence](../../../../design/evidence)
+    - [G.7.4 Review](../../../../design/review)
+    - [G.7.5 Register](../../../../design/register)
+- I Motivation
+  - I.1 Drivers
+    - [I.1.1 24/7 Availability](../../../../continuum/motivation/driver/782f53e2190f4a8a8d0dc0a33cd6fbb3.md) <a id="782f53e2190f4a8a8d0dc0a33cd6fbb3"></a>
+      - I.1.1.1 Stakeholder references — Reference navigation
+        - I.1.1.1.1 Healthcare Provider — Stakeholder reference [historical_reference]
+          - Canonical Stakeholder: [R.1.6 Healthcare Provider](#2018200a493d458096b72031cc2ae779); canonicalId: `2018200a493d458096b72031cc2ae779`
+    - [I.1.2 Audit & PHI Privacy](../../../../continuum/motivation/driver/499313a0a5d84520a3061120ae9b6dac.md) <a id="499313a0a5d84520a3061120ae9b6dac"></a>
+      - I.1.2.1 Stakeholder references — Reference navigation
+        - I.1.2.1.1 Patient — Stakeholder reference [historical_reference]
+          - Canonical Stakeholder: [R.1.7 Patient](#5f6d333e94634420b8a8bbf8b9cb6e2a); canonicalId: `5f6d333e94634420b8a8bbf8b9cb6e2a`
+    - [I.1.3 Clinical Interoperability](../../../../continuum/motivation/driver/babb9f5d63d8435890c1db3579ec78d9.md) <a id="babb9f5d63d8435890c1db3579ec78d9"></a>
+      - I.1.3.1 Stakeholder references — Reference navigation
+        - I.1.3.1.1 Health Network — Stakeholder reference [historical_reference]
+          - Canonical Stakeholder: [R.1.3 Health Network](#55e57c01dfe146a2a225228b31196862); canonicalId: `55e57c01dfe146a2a225228b31196862`
+        - I.1.3.1.2 Care Team — Stakeholder reference [historical_reference]
+          - Canonical Stakeholder: [R.1.1 Care Team](#6f5a203d81e24a81b384a80781987daa); canonicalId: `6f5a203d81e24a81b384a80781987daa`
+    - [I.1.4 Clinical Interoperability Across Heterogeneous Standards](../../../../continuum/motivation/driver/921d7cf84d2b4abca0deb0d300fa75ea.md) <a id="921d7cf84d2b4abca0deb0d300fa75ea"></a>
+    - [I.1.5 Continuous Clinical Service Availability](../../../../continuum/motivation/driver/80e2d5f142da4dae8b7bb70e9ddcab06.md) <a id="80e2d5f142da4dae8b7bb70e9ddcab06"></a>
+    - [I.1.6 Coordinated Operational Activity and Entity State](../../../../continuum/motivation/driver/b3fb294d95024e4382b2c251c389fa66.md) <a id="b3fb294d95024e4382b2c251c389fa66"></a>
+    - [I.1.7 Durable Clinical Information Independence](../../../../continuum/motivation/driver/3d81912dd8c94603ba0e10c98b7a62d8.md) <a id="3d81912dd8c94603ba0e10c98b7a62d8"></a>
+    - [I.1.8 National Healthcare Directory / Endpoint Governance](../../../../continuum/motivation/driver/5ea7e57dcde04ef88c19a88ade9af6ca.md) <a id="5ea7e57dcde04ef88c19a88ade9af6ca"></a>
+    - [I.1.9 Patient Safety & Identity Integrity](../../../../continuum/motivation/driver/b835c7b1055e4dbc9e1cd3a0c545c1c8.md) <a id="b835c7b1055e4dbc9e1cd3a0c545c1c8"></a>
+    - [I.1.10 Statutory Health Information Privacy & Protection](../../../../continuum/motivation/driver/1dbf34b452b6497f914c704e037aec24.md) <a id="1dbf34b452b6497f914c704e037aec24"></a>
+  - I.2 Strategic Goals
+    - [I.2.1 Coordinated Progression of Operational Activities and Associated Entity State](../../../../continuum/motivation/goal/221eaf405d454c749112ece28ac595f1.md) <a id="221eaf405d454c749112ece28ac595f1"></a>
+    - [I.2.2 Durable Acceptance and Preservation of Clinical Events](../../../../continuum/motivation/goal/44daa77317aa44b7967b62b295d7288d.md) <a id="44daa77317aa44b7967b62b295d7288d"></a>
+    - [I.2.3 Real-Time Ingestion](../../../../continuum/motivation/goal/d43c345839e548589e2b6aa677022f8b.md) <a id="d43c345839e548589e2b6aa677022f8b"></a>
+    - [I.2.4 Reliable Subject Identity and Referential Integrity](../../../../continuum/motivation/goal/e2f8b62e2cbd486282d68b6009c06de6.md) <a id="e2f8b62e2cbd486282d68b6009c06de6"></a>
+    - [I.2.5 Responsive Access to Managed Information](../../../../continuum/motivation/goal/c7b8639a922f4d1cb2fcc68933cf7a90.md) <a id="c7b8639a922f4d1cb2fcc68933cf7a90"></a>
+    - [I.2.6 Sub-ms Cache Access](../../../../continuum/motivation/goal/f699096b8d0f4f5690eb57b25001b5e5.md) <a id="f699096b8d0f4f5690eb57b25001b5e5"></a>
+    - [I.2.7 Timely Availability of Clinical Information](../../../../continuum/motivation/goal/26e84fb0acfc49f1ac501b64a6e4bbf7.md) <a id="26e84fb0acfc49f1ac501b64a6e4bbf7"></a>
+    - [I.2.8 Vendor-Independent Longitudinal Clinical Information Coherence](../../../../continuum/motivation/goal/905aca03c85748d79c3c065f6f16fc0a.md) <a id="905aca03c85748d79c3c065f6f16fc0a"></a>
+    - [I.2.9 Zero Message Loss](../../../../continuum/motivation/goal/8f70dbb9c28f4dd9afe91c21243e5914.md) <a id="8f70dbb9c28f4dd9afe91c21243e5914"></a>
+  - I.3 Business Outcomes
+    - [I.3.1 Continuous and Resilient Regional Health Information Exchange (O2)](../../../../continuum/motivation/outcome/aed90b4a88f24b78adfeadbf0bca8980.md) <a id="aed90b4a88f24b78adfeadbf0bca8980"></a>
+    - [I.3.2 Demonstrable Protection and Accountable Handling of Health Information (O3)](../../../../continuum/motivation/outcome/75519ed8f7de4a619cc9065f525d703a.md) <a id="75519ed8f7de4a619cc9065f525d703a"></a>
+    - [I.3.3 Reduced Clinical Risk from Unavailable, Fragmented or Incorrectly Associated Information (O1)](../../../../continuum/motivation/outcome/0582153fb1f1402b83e5358b61fd60af.md) <a id="0582153fb1f1402b83e5358b61fd60af"></a>
+  - I.4 Assessments
+    - [I.4.1 Centralised Synchronous Persistence Can Constrain Concurrent Processing](../../../../continuum/motivation/assessment/4f7b18cecb08415bad2b4247068a511e.md) <a id="4f7b18cecb08415bad2b4247068a511e"></a>
+    - [I.4.2 Implicit Perimeter Trust](../../../../continuum/motivation/assessment/f1b3b73329ae46b9b5105fb8ff236be5.md) <a id="f1b3b73329ae46b9b5105fb8ff236be5"></a>
+    - [I.4.3 PHI Leakage through Operational Logging](../../../../continuum/motivation/assessment/6d8848b700df4f6eacc0347993ac541a.md) <a id="6d8848b700df4f6eacc0347993ac541a"></a>
+    - [I.4.4 Silent Data Loss via False Acceptance](../../../../continuum/motivation/assessment/9f185cd26a0f4118a0b28bb08134f472.md) <a id="9f185cd26a0f4118a0b28bb08134f472"></a>
+    - [I.4.5 Unmonitored Destination Failure / Fan-Out Divergence](../../../../continuum/motivation/assessment/3357fcd2f7ce457386e33a2f06ae2182.md) <a id="3357fcd2f7ce457386e33a2f06ae2182"></a>
+  - I.5 Requirements
+    - [I.5.1 AI Assurance Architecture Discovery Before Implementation](../../../../continuum/motivation/requirement/24a609117a4f40839f8b669ebf720cde.md) <a id="24a609117a4f40839f8b669ebf720cde"></a>
+    - [I.5.2 Artemis HA Failover](../../../../continuum/motivation/requirement/8c0f08d0d12f48b9ae6a001c19ede377.md) <a id="8c0f08d0d12f48b9ae6a001c19ede377"></a>
+    - [I.5.3 Audit Corrections Create New Linked Events](../../../../continuum/motivation/requirement/ddaa9bff2b684af7a6ad18fe4f2da8ad.md) <a id="ddaa9bff2b684af7a6ad18fe4f2da8ad"></a>
+    - [I.5.4 CLIN-001 — Vendor-Neutral Clinical Information Layer](../../../../continuum/motivation/requirement/44eec8cf17f44593824a1f723d949352.md) <a id="44eec8cf17f44593824a1f723d949352"></a>
+    - [I.5.5 CLIN-002 — FHIR-Based Longitudinal Clinical Representation](../../../../continuum/motivation/requirement/9ad88c6b7f934923800dd46c8522b9a1.md) <a id="9ad88c6b7f934923800dd46c8522b9a1"></a>
+    - [I.5.6 CLIN-003 — Medication as a First-Class Clinical Domain](../../../../continuum/motivation/requirement/f5a6dd8f23f047bb9f4c327bbd3e85f2.md) <a id="f5a6dd8f23f047bb9f4c327bbd3e85f2"></a>
+    - [I.5.7 CLIN-004 — Source-System Independence](../../../../continuum/motivation/requirement/a5a3d2ddb02d4ac4b3eabdfb2ecd22bb.md) <a id="a5a3d2ddb02d4ac4b3eabdfb2ecd22bb"></a>
+    - [I.5.8 CLIN-005 — Source Authority Preservation](../../../../continuum/motivation/requirement/5f399a338688438c922df969e724a24a.md) <a id="5f399a338688438c922df969e724a24a"></a>
+    - [I.5.9 CLIN-006 — Authority-Aware Clinical Reconciliation](../../../../continuum/motivation/requirement/3d7c709a435145e3821184b2c9b980fa.md) <a id="3d7c709a435145e3821184b2c9b980fa"></a>
+    - [I.5.10 CLIN-007 — Preservation of Conflicting Assertions](../../../../continuum/motivation/requirement/cd669acb9a76499db70b5d092917a56b.md) <a id="cd669acb9a76499db70b5d092917a56b"></a>
+    - [I.5.11 CLIN-008 — Clinical Source Context](../../../../continuum/motivation/requirement/591d9b8007504d2382ae7977a6589742.md) <a id="591d9b8007504d2382ae7977a6589742"></a>
+    - [I.5.12 CLIN-009 — Governed Patient Identity](../../../../continuum/motivation/requirement/4dded2374b9346e4b8d0e326e7d9c97c.md) <a id="4dded2374b9346e4b8d0e326e7d9c97c"></a>
+    - [I.5.13 CLIN-010 — Read-Oriented Initial LHR](../../../../continuum/motivation/requirement/96dad3bf0c764ca0849227eae64848aa.md) <a id="96dad3bf0c764ca0849227eae64848aa"></a>
+    - [I.5.14 CLIN-011 — Selective Clinical Authoring](../../../../continuum/motivation/requirement/bd593ed8f3b3465ca499151f18767585.md) <a id="bd593ed8f3b3465ca499151f18767585"></a>
+    - [I.5.15 CORE-001 — Information Authority Classification](../../../../continuum/motivation/requirement/6e76bb1db8f2464496355d47d2f981ef.md) <a id="6e76bb1db8f2464496355d47d2f981ef"></a>
+    - [I.5.16 CORE-002 — Separation of Architectural Concerns](../../../../continuum/motivation/requirement/a5c09af151984e989590b9198e2def70.md) <a id="a5c09af151984e989590b9198e2def70"></a>
+    - [I.5.17 CORE-003 — Governed Canonical Semantics](../../../../continuum/motivation/requirement/006383a5cce64780960fda32b6682d8d.md) <a id="006383a5cce64780960fda32b6682d8d"></a>
+    - [I.5.18 CORE-004 — Correlation and Causation](../../../../continuum/motivation/requirement/f2e504e7d6374e41a81303265adda6de.md) <a id="f2e504e7d6374e41a81303265adda6de"></a>
+    - [I.5.19 DATA-001 — Durable Governed State](../../../../continuum/motivation/requirement/15c71ccd5d714503891aece2a23445e1.md) <a id="15c71ccd5d714503891aece2a23445e1"></a>
+    - [I.5.20 DATA-002 — Authoritative Read Semantics](../../../../continuum/motivation/requirement/bc55838493c24617823410798c8d7598.md) <a id="bc55838493c24617823410798c8d7598"></a>
+    - [I.5.21 DATA-003 — Cache Transparency](../../../../continuum/motivation/requirement/ff04c3dab8a04359b9c4d62939839be7.md) <a id="ff04c3dab8a04359b9c4d62939839be7"></a>
+    - [I.5.22 DATA-004 — Search Scalability](../../../../continuum/motivation/requirement/f27e74b6cb13454aa4339932436971e3.md) <a id="f27e74b6cb13454aa4339932436971e3"></a>
+    - [I.5.23 DATA-005 — Concurrency and Version Integrity](../../../../continuum/motivation/requirement/7f40b2f4947845d287564b43f812b6c8.md) <a id="7f40b2f4947845d287564b43f812b6c8"></a>
+    - [I.5.24 DATA-006 — Referential Integrity](../../../../continuum/motivation/requirement/4a8a79f520394cfe863f473ec2a31b34.md) <a id="4a8a79f520394cfe863f473ec2a31b34"></a>
+    - [I.5.25 DATA-007 — Persistence Failure Safety](../../../../continuum/motivation/requirement/40ed2565d0d1467cbbfcf5706924de94.md) <a id="40ed2565d0d1467cbbfcf5706924de94"></a>
+    - [I.5.26 DATA-008 — Recovery Fidelity](../../../../continuum/motivation/requirement/7c7a33be31d042459adb83c71ae044fa.md) <a id="7c7a33be31d042459adb83c71ae044fa"></a>
+    - [I.5.27 Development Representations of Runtime Governed Datasets](../../../../continuum/motivation/requirement/0a4a5c73048c4e49a82d40e349e70a95.md) <a id="0a4a5c73048c4e49a82d40e349e70a95"></a>
+    - [I.5.28 DIR-001 — Standards-Based Provider Directory](../../../../continuum/motivation/requirement/c1b1d82f8a9b4c649a3216c5e09a22c6.md) <a id="c1b1d82f8a9b4c649a3216c5e09a22c6"></a>
+    - [I.5.29 DIR-002 — Provider Directory Discovery](../../../../continuum/motivation/requirement/27998c2a8f2e497a814b32e7a0bc5e03.md) <a id="27998c2a8f2e497a814b32e7a0bc5e03"></a>
+    - [I.5.30 DIR-003 — Governed Directory Change](../../../../continuum/motivation/requirement/934462c11133409cb3aa59bf2502fa81.md) <a id="934462c11133409cb3aa59bf2502fa81"></a>
+    - [I.5.31 DIR-004 — Directory Referential Integrity](../../../../continuum/motivation/requirement/f866ae5adb08499794331bc600db827c.md) <a id="f866ae5adb08499794331bc600db827c"></a>
+    - [I.5.32 DIR-005 — Healthcare Identifier Governance](../../../../continuum/motivation/requirement/097368b4b0b4468dbf1c57c11d9ed86c.md) <a id="097368b4b0b4468dbf1c57c11d9ed86c"></a>
+    - [I.5.33 DIR-006 — Provider Self-Service Governance](../../../../continuum/motivation/requirement/4230f93461a4470383fb99fddc35f8bf.md) <a id="4230f93461a4470383fb99fddc35f8bf"></a>
+    - [I.5.34 Efficient Materialisation of Anticipated Context Resources](../../../../continuum/motivation/requirement/1f3431ca25284783ac69f8f6affcd103.md) <a id="1f3431ca25284783ac69f8f6affcd103"></a>
+    - [I.5.35 Establish Effective Security Attributes through Governed Rules](../../../../continuum/motivation/requirement/d14061c03b9042948ba33cae91e02efb.md) <a id="d14061c03b9042948ba33cae91e02efb"></a>
+    - [I.5.36 Explain Effective PEP Criteria Derivation](../../../../continuum/motivation/requirement/f027de050273400eaac0de083b820238.md) <a id="f027de050273400eaac0de083b820238"></a>
+    - [I.5.37 FHIR R5 Schemas](../../../../continuum/motivation/requirement/8d8c62b8cb7b40b0be2ce23f7f41f154.md) <a id="8d8c62b8cb7b40b0be2ce23f7f41f154"></a>
+    - [I.5.38 INT-001 — Standards-Based Healthcare Interoperability](../../../../continuum/motivation/requirement/44dba056ada04f6583b77859aac9ac68.md) <a id="44dba056ada04f6583b77859aac9ac68"></a>
+    - [I.5.39 INT-002 — Reliable Messaging](../../../../continuum/motivation/requirement/aac9b66911e849cb9792c3a2b7eacb88.md) <a id="aac9b66911e849cb9792c3a2b7eacb88"></a>
+    - [I.5.40 INT-003 — Messaging Recovery](../../../../continuum/motivation/requirement/6e72cf09e7cc4acf9466dd39e1a15ae6.md) <a id="6e72cf09e7cc4acf9466dd39e1a15ae6"></a>
+    - [I.5.41 INT-004 — FHIR R5 Boundary](../../../../continuum/motivation/requirement/927b0cf4710e424391120b124067051e.md) <a id="927b0cf4710e424391120b124067051e"></a>
+    - [I.5.42 INT-005 — Opaque Resource Identity](../../../../continuum/motivation/requirement/91bd7a8732b3468b84be2493103433e7.md) <a id="91bd7a8732b3468b84be2493103433e7"></a>
+    - [I.5.43 INT-006 — Governed Validation](../../../../continuum/motivation/requirement/6c14251b5d4e4eff96d2fd812834d124.md) <a id="6c14251b5d4e4eff96d2fd812834d124"></a>
+    - [I.5.44 INT-007 — Terminology Abstraction](../../../../continuum/motivation/requirement/6fe86be142044e5aa7720e2e6493a72a.md) <a id="6fe86be142044e5aa7720e2e6493a72a"></a>
+    - [I.5.45 Normal Reporting Does Not Require Raw PubSub Topology Interpretation](../../../../continuum/motivation/requirement/aa569bb1448648f685bb73cf9c6563e3.md) <a id="aa569bb1448648f685bb73cf9c6563e3"></a>
+    - [I.5.46 Operations and Assurance Supports Semantic Preserving Partitioning](../../../../continuum/motivation/requirement/3238d37e27a7421e905b705c5f30fc85.md) <a id="3238d37e27a7421e905b705c5f30fc85"></a>
+    - [I.5.47 OPS-001 — Reproducible Deployment](../../../../continuum/motivation/requirement/c4373b1fd8444f10b502a5c3216152d7.md) <a id="c4373b1fd8444f10b502a5c3216152d7"></a>
+    - [I.5.48 OPS-002 — Durable Infrastructure State](../../../../continuum/motivation/requirement/d5d6a9ea450047b1bd62b13177e8fca6.md) <a id="d5d6a9ea450047b1bd62b13177e8fca6"></a>
+    - [I.5.49 OPS-003 — Meaningful Health and Readiness](../../../../continuum/motivation/requirement/4c02fec3af264b878ee3e0cfaecbf55f.md) <a id="4c02fec3af264b878ee3e0cfaecbf55f"></a>
+    - [I.5.50 OPS-004 — Operational Observability](../../../../continuum/motivation/requirement/b5d3447a05b249a8af154136fc36c4d9.md) <a id="b5d3447a05b249a8af154136fc36c4d9"></a>
+    - [I.5.51 OPS-005 — Production Resilience](../../../../continuum/motivation/requirement/01e7d6168d554048a424ef75a6556040.md) <a id="01e7d6168d554048a424ef75a6556040"></a>
+    - [I.5.52 OPS-006 — Architecture Conformance](../../../../continuum/motivation/requirement/dee1792d83bf413f974fc24802084872.md) <a id="dee1792d83bf413f974fc24802084872"></a>
+    - [I.5.53 Preserve Necessary Evidence When Historical Resolution Is Unavailable](../../../../continuum/motivation/requirement/81ce6a25725e41bb8e92c945f53c8b4c.md) <a id="81ce6a25725e41bb8e92c945f53c8b4c"></a>
+    - [I.5.54 PROV-001 — End-to-End Provenance](../../../../continuum/motivation/requirement/3e45e60affb44bf384d54de26d3add6a.md) <a id="3e45e60affb44bf384d54de26d3add6a"></a>
+    - [I.5.55 PROV-002 — Source Context](../../../../continuum/motivation/requirement/929ed42779a843dd84b683e3dcc35eb3.md) <a id="929ed42779a843dd84b683e3dcc35eb3"></a>
+    - [I.5.56 PROV-003 — Dual-Actor Provenance](../../../../continuum/motivation/requirement/c016286faa3d4dfbbad133f73e855f1c.md) <a id="c016286faa3d4dfbbad133f73e855f1c"></a>
+    - [I.5.57 PROV-004 — Provenance and Authority Independence](../../../../continuum/motivation/requirement/3fb9a89d345a4cb6a56d62823316664e.md) <a id="3fb9a89d345a4cb6a56d62823316664e"></a>
+    - [I.5.58 PROV-005 — Immutable Audit](../../../../continuum/motivation/requirement/0f7b23cfd94e450c8a2772879bc9bb1e.md) <a id="0f7b23cfd94e450c8a2772879bc9bb1e"></a>
+    - [I.5.59 PROV-006 — Audit Discoverability](../../../../continuum/motivation/requirement/927c65d2d665451396782b4c1d7c8c86.md) <a id="927c65d2d665451396782b4c1d7c8c86"></a>
+    - [I.5.60 REQ-FND-001: Durable Ingress Acceptance Boundary](../../../../continuum/motivation/requirement/01c834537a1e41dfb523d48f287d93e9.md) <a id="01c834537a1e41dfb523d48f287d93e9"></a>
+    - [I.5.61 REQ-FND-002: Operational Activity Progression State](../../../../continuum/motivation/requirement/eaabcdb96aad4f32a050c94f9ecec049.md) <a id="eaabcdb96aad4f32a050c94f9ecec049"></a>
+    - [I.5.62 REQ-FND-003: Subject Referential Integrity](../../../../continuum/motivation/requirement/43ecbfe8f9b14fcbbc59ee0c03c8774b.md) <a id="43ecbfe8f9b14fcbbc59ee0c03c8774b"></a>
+    - [I.5.63 REQ-FND-004: Explicit Indeterminate Outcome](../../../../continuum/motivation/requirement/fc732b64fc564127b73174e28d9ccce8.md) <a id="fc732b64fc564127b73174e28d9ccce8"></a>
+    - [I.5.64 REQ-FND-005: Independent Assurance of Governed Activity](../../../../continuum/motivation/requirement/bbb7438e78604308abba93afc14f4e2e.md) <a id="bbb7438e78604308abba93afc14f4e2e"></a>
+    - [I.5.65 SEC-001 — Trusted Authentication](../../../../continuum/motivation/requirement/e4998b0a132c41afbe610b11869c3297.md) <a id="e4998b0a132c41afbe610b11869c3297"></a>
+    - [I.5.66 SEC-002 — Default-Deny Authorisation](../../../../continuum/motivation/requirement/3bdecb66e3f34110aa0871ba34091bfd.md) <a id="3bdecb66e3f34110aa0871ba34091bfd"></a>
+    - [I.5.67 SEC-003 — Authentication and Authorisation Separation](../../../../continuum/motivation/requirement/88f2ace9a07d4ed7b5a54a4af93af3c9.md) <a id="88f2ace9a07d4ed7b5a54a4af93af3c9"></a>
+    - [I.5.68 SEC-004 — Contextual Resource Authorisation](../../../../continuum/motivation/requirement/1f6822aef4bc44548c6708fcc018e4ba.md) <a id="1f6822aef4bc44548c6708fcc018e4ba"></a>
+    - [I.5.69 SEC-005 — End-to-End Security Context](../../../../continuum/motivation/requirement/d70e0a51440640b1bd17562b6ea4ff98.md) <a id="d70e0a51440640b1bd17562b6ea4ff98"></a>
+    - [I.5.70 SEC-006 — Initiating and Executing Identity](../../../../continuum/motivation/requirement/5eaac47ebef94bbb818e4ba751601ab1.md) <a id="5eaac47ebef94bbb818e4ba751601ab1"></a>
+    - [I.5.71 SEC-007 — Anti-Spoofing](../../../../continuum/motivation/requirement/8996bdd1790e4efeb78bedb85269c916.md) <a id="8996bdd1790e4efeb78bedb85269c916"></a>
+    - [I.5.72 SEC-008 — Security Metadata Preservation](../../../../continuum/motivation/requirement/c037846f015645728b4afe4d011ae0cd.md) <a id="c037846f015645728b4afe4d011ae0cd"></a>
+    - [I.5.73 SEC-009 — Least Privilege](../../../../continuum/motivation/requirement/f760e0cc08354fc88c8da049958b45ed.md) <a id="f760e0cc08354fc88c8da049958b45ed"></a>
+    - [I.5.74 SEC-010 — PHI-Safe Operational Logging](../../../../continuum/motivation/requirement/4a078bd44e874a48abc650f87d64f16f.md) <a id="4a078bd44e874a48abc650f87d64f16f"></a>
+    - [I.5.75 UX-001 — Consistent Iris Experience](../../../../continuum/motivation/requirement/6bea2694012442a39034a6cbfcc79e90.md) <a id="6bea2694012442a39034a6cbfcc79e90"></a>
+    - [I.5.76 UX-002 — Information-Dense Operational Design](../../../../continuum/motivation/requirement/73354d29efa74895afebec8437c875e8.md) <a id="73354d29efa74895afebec8437c875e8"></a>
+    - [I.5.77 UX-003 — Honest System State](../../../../continuum/motivation/requirement/752452c7367d4d4dbc1cb9ffe0bfd78f.md) <a id="752452c7367d4d4dbc1cb9ffe0bfd78f"></a>
+    - [I.5.78 UX-004 — Explicit Availability States](../../../../continuum/motivation/requirement/0e4b5219260e419d987195c9832a0bbe.md) <a id="0e4b5219260e419d987195c9832a0bbe"></a>
+    - [I.5.79 UX-005 — Patient Search and Workspace](../../../../continuum/motivation/requirement/32c55c722ae147329784976793abd458.md) <a id="32c55c722ae147329784976793abd458"></a>
+    - [I.5.80 UX-006 — Longitudinal Clinical Navigation](../../../../continuum/motivation/requirement/09318a29f8b747c8ac6b0e276e2febb4.md) <a id="09318a29f8b747c8ac6b0e276e2febb4"></a>
+    - [I.5.81 UX-007 — Persistent Patient Context](../../../../continuum/motivation/requirement/873b8b2c9a514ab387833beb5552feda.md) <a id="873b8b2c9a514ab387833beb5552feda"></a>
+    - [I.5.82 UX-008 — Provenance-Aware Clinical Presentation](../../../../continuum/motivation/requirement/bb298bafe5894d9b9c057b896f669c06.md) <a id="bb298bafe5894d9b9c057b896f669c06"></a>
+    - [I.5.83 UX-009 — Initial Clinical Scope](../../../../continuum/motivation/requirement/807861850fa54d6c849e3e26d7172b9c.md) <a id="807861850fa54d6c849e3e26d7172b9c"></a>
+  - I.6 Constraints
+    - [I.6.1 AuthorisationRole Criteria Are Additive](../../../../continuum/motivation/constraint/d5cfaf6f8c224d1b9769b1edd7c27591.md) <a id="d5cfaf6f8c224d1b9769b1edd7c27591"></a>
+    - [I.6.2 Authoritative AuditEvents Are Immutable](../../../../continuum/motivation/constraint/21eb20cdc600411cb71fbfe2abce4dbe.md) <a id="21eb20cdc600411cb71fbfe2abce4dbe"></a>
+    - [I.6.3 Authority Forwarding Requires FORWARD Authorisation](../../../../continuum/motivation/constraint/5aed12f6540445ed85c1866adbef93af.md) <a id="5aed12f6540445ed85c1866adbef93af"></a>
+    - [I.6.4 Configuration and Governance Has Coherent Authority](../../../../continuum/motivation/constraint/7cdbc752ca2e4ebf9ee5acff84fd7400.md) <a id="7cdbc752ca2e4ebf9ee5acff84fd7400"></a>
+    - [I.6.5 CST-EXT-001: Applicable Health-Information Privacy and Data-Protection Obligations](../../../../continuum/motivation/constraint/0ed6fb9fcc9547659ce76b917881274e.md) <a id="0ed6fb9fcc9547659ce76b917881274e"></a>
+    - [I.6.6 CST-EXT-002: Applicable National / Jurisdictional Healthcare Identifier Obligations](../../../../continuum/motivation/constraint/edb1db6b18d84487ab48b9416f26e980.md) <a id="edb1db6b18d84487ab48b9416f26e980"></a>
+    - [I.6.7 CST-EXT-003: Mandated External Interoperability Contracts](../../../../continuum/motivation/constraint/cad6d41364ef4bb1ae0a2a519db11da4.md) <a id="cad6d41364ef4bb1ae0a2a519db11da4"></a>
+    - [I.6.8 Dataset Access Has No Runtime Bootstrap Cycle](../../../../continuum/motivation/constraint/c8c479dc9aad450ea58d07dec9aea1a6.md) <a id="c8c479dc9aad450ea58d07dec9aea1a6"></a>
+    - [I.6.9 Dokimasia Evidence Replaces a Separate Self AuditEvent](../../../../continuum/motivation/constraint/e1ce978457e543d5894de24e9be9ac2c.md) <a id="e1ce978457e543d5894de24e9be9ac2c"></a>
+    - [I.6.10 Dokimasia Has a Finite Assurance Boundary](../../../../continuum/motivation/constraint/3ba73277abf146728ca8c1f5846227d7.md) <a id="3ba73277abf146728ca8c1f5846227d7"></a>
+    - [I.6.11 Every Petasos Queue Has a Defined Functional Purpose](../../../../continuum/motivation/constraint/6fa0f390bfa140aa8bb6acc56f1a5ec6.md) <a id="6fa0f390bfa140aa8bb6acc56f1a5ec6"></a>
+    - [I.6.12 Harmonisation Does Not Resume the Originating Ergon](../../../../continuum/motivation/constraint/1739ad181a754d01ae07f94de49cd65e.md) <a id="1739ad181a754d01ae07f94de49cd65e"></a>
+    - [I.6.13 Harmonisation Reuses the Common Execution Framework](../../../../continuum/motivation/constraint/59e1a236500240609a78b6529fe8e358.md) <a id="59e1a236500240609a78b6529fe8e358"></a>
+    - [I.6.14 Host Components Do Not Reinterpret Themis Policy](../../../../continuum/motivation/constraint/80e5d019948b4c16acb510547d7a3ac6.md) <a id="80e5d019948b4c16acb510547d7a3ac6"></a>
+    - [I.6.15 Independent Audit Targets Are Not Assumed Replicas](../../../../continuum/motivation/constraint/e84fc7e020474eda99a0e32def0a6371.md) <a id="e84fc7e020474eda99a0e32def0a6371"></a>
+    - [I.6.16 Information Topic and Messaging Destination Remain Distinct](../../../../continuum/motivation/constraint/ba909d70784349cd94b8adb4d6a9ab69.md) <a id="ba909d70784349cd94b8adb4d6a9ab69"></a>
+    - [I.6.17 Ingress Context Loading Does Not Interpret Raw Payload Semantics](../../../../continuum/motivation/constraint/f5af90e09e9a422d9b1c9a7f3c44090f.md) <a id="f5af90e09e9a422d9b1c9a7f3c44090f"></a>
+    - [I.6.18 Internal Mneme Responsibilities Are Not Automatically Exposed Services](../../../../continuum/motivation/constraint/f0a85fcf515946e2b7c88543061ebac1.md) <a id="f0a85fcf515946e2b7c88543061ebac1"></a>
+    - [I.6.19 Journey Observations Remain Distinct from Assurance Inference](../../../../continuum/motivation/constraint/ae2fa71039034290b019eb1cc6eb1996.md) <a id="ae2fa71039034290b019eb1cc6eb1996"></a>
+    - [I.6.20 Kleio Constructs AuditEvent Representations for Clients](../../../../continuum/motivation/constraint/1aa42a9aa5a644bc9072522e0a123352.md) <a id="1aa42a9aa5a644bc9072522e0a123352"></a>
+    - [I.6.21 Local PEP Enforcement Is Constrained and Deterministic](../../../../continuum/motivation/constraint/8c9ef077cb5d4cc9aacb55d743b1af92.md) <a id="8c9ef077cb5d4cc9aacb55d743b1af92"></a>
+    - [I.6.22 Mneme Is Insulated from Ponos Implementation Internals](../../../../continuum/motivation/constraint/c30ae90fc19b465982b28d61ac1edca5.md) <a id="c30ae90fc19b465982b28d61ac1edca5"></a>
+    - [I.6.23 Negative Criteria Require a Demonstrated Business Requirement](../../../../continuum/motivation/constraint/820e647c43614052aa25e385d6fe1dac.md) <a id="820e647c43614052aa25e385d6fe1dac"></a>
+    - [I.6.24 New Policy Context Requires Authoritative PDP Processing](../../../../continuum/motivation/constraint/80629d4c229e4b7095d011bf77d704aa.md) <a id="80629d4c229e4b7095d011bf77d704aa"></a>
+    - [I.6.25 PDP Unavailability Is Not Policy Denial](../../../../continuum/motivation/constraint/8d0e87312d1f4d6f9298843ce840e654.md) <a id="8d0e87312d1f4d6f9298843ce840e654"></a>
+    - [I.6.26 Persistence Preserves Applicable Compartments](../../../../continuum/motivation/constraint/6e963678cf6f4c3488c798d6afc3b910.md) <a id="6e963678cf6f4c3488c798d6afc3b910"></a>
+    - [I.6.27 PetasosParcel Is Transported by Value](../../../../continuum/motivation/constraint/b599ebffaf2f4e9e8deaec2ed98f2cd7.md) <a id="b599ebffaf2f4e9e8deaec2ed98f2cd7"></a>
+    - [I.6.28 R1 and R2 Observation Does Not Authorise Autonomous Adaptation](../../../../continuum/motivation/constraint/7ca8481aa04a4dfdb34766511e002a5b.md) <a id="7ca8481aa04a4dfdb34766511e002a5b"></a>
+    - [I.6.29 Revocation Is Distinct from Temporal Expiry](../../../../continuum/motivation/constraint/462d94a9a14d4eb8a74710fff4b12402.md) <a id="462d94a9a14d4eb8a74710fff4b12402"></a>
+    - [I.6.30 Runtime Vocabulary Membership Is Authoritative](../../../../continuum/motivation/constraint/872a5f1aa5a44fd4ba68d793c022adf2.md) <a id="872a5f1aa5a44fd4ba68d793c022adf2"></a>
+    - [I.6.31 Semantic Persistence Domains Do Not Prescribe Physical Topology](../../../../continuum/motivation/constraint/eca9a99c2ad44a1ea7833d2b0c5a3e93.md) <a id="eca9a99c2ad44a1ea7833d2b0c5a3e93"></a>
+    - [I.6.32 Separate Models and DataSets Lifecycles](../../../../continuum/motivation/constraint/5c15fa0761da496b8194f3a6f742ecb5.md) <a id="5c15fa0761da496b8194f3a6f742ecb5"></a>
+    - [I.6.33 Specialised Execution Reuses Common Platform Capabilities](../../../../continuum/motivation/constraint/968e208d336c48b781a4eabd76e6337b.md) <a id="968e208d336c48b781a4eabd76e6337b"></a>
+    - [I.6.34 Unavailable Authoritative Audit Capture Fails Closed](../../../../continuum/motivation/constraint/6c5d5f1d872642f2b7770248d4e1e1f4.md) <a id="6c5d5f1d872642f2b7770248d4e1e1f4"></a>
+    - [I.6.35 Unknown Required Security Attributes Fail Closed](../../../../continuum/motivation/constraint/7ea0d91ed25848f4add672ddf08f42a2.md) <a id="7ea0d91ed25848f4add672ddf08f42a2"></a>
+    - [I.6.36 Valid Context Permits Enforcement During PDP Unavailability](../../../../continuum/motivation/constraint/5a6285eb1a1646e1badd693b8c175f01.md) <a id="5a6285eb1a1646e1badd693b8c175f01"></a>
+  - I.7 Architecture Axioms
+    - [I.7.1 AX-01 Harmonia Is Health-Information Centric](../../../../continuum/motivation/principle/e9bd61acaaea4577bc4086a5639e52c3.md) <a id="e9bd61acaaea4577bc4086a5639e52c3"></a>
+    - [I.7.2 AX-02 Standards at the Boundary; Harmonia Within the Boundary](../../../../continuum/motivation/principle/eee8c3783d964d18a7f9dcea85fcd4cf.md) <a id="eee8c3783d964d18a7f9dcea85fcd4cf"></a>
+    - [I.7.3 AX-03 Native Standards Models Remain Native](../../../../continuum/motivation/principle/e99a4e2bf99f476d876394300d6b9c3d.md) <a id="e99a4e2bf99f476d876394300d6b9c3d"></a>
+    - [I.7.4 AX-04 Harmonia Owns the Semantics; Engines Provide the Machinery](../../../../continuum/motivation/principle/54508cda80484a6caf95b901780eaf7d.md) <a id="54508cda80484a6caf95b901780eaf7d"></a>
+    - [I.7.5 AX-05 Active State and Authoritative Durable State Are Distinct](../../../../continuum/motivation/principle/0412a2084f0145babc4f022c71fea65f.md) <a id="0412a2084f0145babc4f022c71fea65f"></a>
+    - [I.7.6 AX-06 Information Authority Is Explicit](../../../../continuum/motivation/principle/952c3b6148ce4fce94b69f99a0c2fec7.md) <a id="952c3b6148ce4fce94b69f99a0c2fec7"></a>
+    - [I.7.7 AX-07 Security Is Intrinsic to Managed Operations](../../../../continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md) <a id="5de2ae2c3b794c2d9f3a14efd51d564f"></a>
+    - [I.7.8 AX-08 Evidence Records Meaning, Not Machinery](../../../../continuum/motivation/principle/21d6864657964ba5b03e3f6b5eb29cd5.md) <a id="21d6864657964ba5b03e3f6b5eb29cd5"></a>
+    - [I.7.9 AX-09 Transient Operational State Is Ephemeral by Default](../../../../continuum/motivation/principle/9a5cb9e8876844e58e660f909f7df9fc.md) <a id="9a5cb9e8876844e58e660f909f7df9fc"></a>
+    - [I.7.10 AX-10 Distribution, Load and Failure Are Normal Operating Conditions](../../../../continuum/motivation/principle/0d9673833eb840eab03804aa076c1b0c.md) <a id="0d9673833eb840eab03804aa076c1b0c"></a>
+    - [I.7.11 AX-11 Managed Information Access Is Highly Available and Responsive](../../../../continuum/motivation/principle/8a1e995f16954484a78ae1c5c114d546.md) <a id="8a1e995f16954484a78ae1c5c114d546"></a>
+    - [I.7.12 AX-12 Hide Plumbing, Not Information](../../../../continuum/motivation/principle/ce85889bd9b34f79a53d4c907ceb19d4.md) <a id="ce85889bd9b34f79a53d4c907ceb19d4"></a>
+    - [I.7.13 AX-13 Harmonia Management Has an Explicit Boundary](../../../../continuum/motivation/principle/b6a55decfeec4f1bb3d7f18534a2ffea.md) <a id="b6a55decfeec4f1bb3d7f18534a2ffea"></a>
+    - [I.7.14 AX-14 Semantic Distinctions Are Preserved](../../../../continuum/motivation/principle/d3fc6025dc7646d1b2020b51f7a44bfa.md) <a id="d3fc6025dc7646d1b2020b51f7a44bfa"></a>
+    - [I.7.15 AX-15 Uncertainty Is Preserved Until Resolved](../../../../continuum/motivation/principle/ef8abbaec37e4890ad78b9f263e67906.md) <a id="ef8abbaec37e4890ad78b9f263e67906"></a>
+    - [I.7.16 AX-16 Operational Activity & Entity State Progress Together](../../../../continuum/motivation/principle/de7e90f46127455a9ec9ad3b9b48ba54.md) <a id="de7e90f46127455a9ec9ad3b9b48ba54"></a>
+    - [I.7.17 AX-17 Architectural Authority and Explicit Uncertainty](../../../../continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md) <a id="8882573df7ce43c6bc0f66da0a676139"></a>
+    - [I.7.18 AX-18 Integration and Coordination Do Not Confer Domain Authority](../../../../continuum/motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md) <a id="b8cafe3cf5904d2bb9a9767260fddf78"></a>
+  - I.8 Unclassified Motivation
+    - [I.8.1 At-Least-Once](../../../../continuum/motivation/principle/bd4c8726125648e68d5746bab3c765cd.md) <a id="bd4c8726125648e68d5746bab3c765cd"></a>
+    - [I.8.2 Canonical Modeling with Standardized FHIR R5 Boundaries](../../../../continuum/motivation/principle/5d97974406c546078b1d64e5ff85bb13.md) <a id="5d97974406c546078b1d64e5ff85bb13"></a>
+    - [I.8.3 Governed Asynchronous Change Management for Directory Entities](../../../../continuum/motivation/principle/11001a6ea3df45689a27216df641dac2.md) <a id="11001a6ea3df45689a27216df641dac2"></a>
+    - [I.8.4 Governed PHI Logging & Dual-Logger Privacy Controls](../../../../continuum/motivation/principle/96ed278624c34ba4bfade0df08d45d74.md) <a id="96ed278624c34ba4bfade0df08d45d74"></a>
+    - [I.8.5 Provenance and Information Authority](../../../../continuum/motivation/principle/638c501ba4df4c67aee92d1f328aad84.md) <a id="638c501ba4df4c67aee92d1f328aad84"></a>
+    - [I.8.6 Separation of Transport from Business Logic](../../../../continuum/motivation/principle/5ae28648334e4f6184044af0462eb9a8.md) <a id="5ae28648334e4f6184044af0462eb9a8"></a>
+    - [I.8.7 Write-Behind](../../../../continuum/motivation/principle/a5dffc0325d44915971eea600bba48f1.md) <a id="a5dffc0325d44915971eea600bba48f1"></a>
+- II Strategy
+  - II.1 Capabilities
+    - II.1.1 Enterprise Capabilities
+      - [II.1.1.1 [CT1] Coordinated Activity & Interaction](../../../../continuum/strategy/capability/5187c3db390e444db3eb809c02a2f1c1.md) <a id="5187c3db390e444db3eb809c02a2f1c1"></a>
+        - [II.1.1.1.1 [CT2] Activity & Execution](../../../../continuum/strategy/capability/e5ff80e655084524a8dcee8e4ded788a.md) <a id="e5ff80e655084524a8dcee8e4ded788a"></a>
+          - [II.1.1.1.1.1 [CT3] Entity-Relative Operational Progression](../../../../continuum/strategy/capability/69c82474fb534152b151c92f706197d0.md) <a id="69c82474fb534152b151c92f706197d0"></a>
+          - [II.1.1.1.1.2 [CT3] Governed Activity Execution Control](../../../../continuum/strategy/capability/1e351cdfdc1045e384c3bd768eed8e80.md) <a id="1e351cdfdc1045e384c3bd768eed8e80"></a>
+          - [II.1.1.1.1.3 [CT3] Operational Fulfilment Definition](../../../../continuum/strategy/capability/2b52c0de17b146da962f303e99f90a4a.md) <a id="2b52c0de17b146da962f303e99f90a4a"></a>
+        - [II.1.1.1.2 [CT2] Event & Subscription](../../../../continuum/strategy/capability/b768b129971e4bf5bccc03d33d2fcb4e.md) <a id="b768b129971e4bf5bccc03d33d2fcb4e"></a>
+        - [II.1.1.1.3 [CT2] Interaction & Experience](../../../../continuum/strategy/capability/4ec9757b1c6947b4b70b0f1159b760d3.md) <a id="4ec9757b1c6947b4b70b0f1159b760d3"></a>
+        - [II.1.1.1.4 [CT2] Interoperability & Exchange](../../../../continuum/strategy/capability/0f2e5222874949d8b0cce234941ecb20.md) <a id="0f2e5222874949d8b0cce234941ecb20"></a>
+      - [II.1.1.2 [CT1] Governed Information Operations](../../../../continuum/strategy/capability/15e57021490c4e738aee9009ff84a7c3.md) <a id="15e57021490c4e738aee9009ff84a7c3"></a>
+        - [II.1.1.2.1 [CT2] Context Management](../../../../continuum/strategy/capability/3cfd3e56c23a4943bd1b476ec248ac49.md) <a id="3cfd3e56c23a4943bd1b476ec248ac49"></a>
+        - [II.1.1.2.2 [CT2] Information Management](../../../../continuum/strategy/capability/43051efd406b4040bff8e794b7a631e0.md) <a id="43051efd406b4040bff8e794b7a631e0"></a>
+          - [II.1.1.2.2.1 [CT3] Active Information Availability](../../../../continuum/strategy/capability/bb711f4d8fb74af2917869b9b05f7f84.md) <a id="bb711f4d8fb74af2917869b9b05f7f84"></a>
+          - [II.1.1.2.2.2 [CT3] Authoritative Durable State Establishment](../../../../continuum/strategy/capability/0d5bd68ff50f410aaceed05377e1a4df.md) <a id="0d5bd68ff50f410aaceed05377e1a4df"></a>
+          - [II.1.1.2.2.3 [CT3] Binary Content Association & Resolution](../../../../continuum/strategy/capability/5314959509dc4b558711ec169ddee5a0.md) <a id="5314959509dc4b558711ec169ddee5a0"></a>
+        - [II.1.1.2.3 [CT2] Managed Entity & Relationship](../../../../continuum/strategy/capability/910634fb1621416c818a022ab0b5d3a1.md) <a id="910634fb1621416c818a022ab0b5d3a1"></a>
+        - [II.1.1.2.4 [CT2] Managed State & Lifecycle](../../../../continuum/strategy/capability/6296abeee5074b9e80f21aea3a297e42.md) <a id="6296abeee5074b9e80f21aea3a297e42"></a>
+        - [II.1.1.2.5 [CT2] Search & Discovery](../../../../continuum/strategy/capability/6a45701634f04b43919d9152a61e5f2e.md) <a id="6a45701634f04b43919d9152a61e5f2e"></a>
+        - [II.1.1.2.6 [CT2] Semantic Governance & Conformance](../../../../continuum/strategy/capability/9ee41437bd4c4bd18389f05c12108f97.md) <a id="9ee41437bd4c4bd18389f05c12108f97"></a>
+      - [II.1.1.3 [CT1] Trust, Accountability & Assurance](../../../../continuum/strategy/capability/321de197612f49089d8b4a4cc1a2e003.md) <a id="321de197612f49089d8b4a4cc1a2e003"></a>
+        - [II.1.1.3.1 [CT2] Information Authority Qualification](../../../../continuum/strategy/capability/cbba9984dd404deabed41fdcc96088b1.md) <a id="cbba9984dd404deabed41fdcc96088b1"></a>
+        - [II.1.1.3.2 [CT2] Operational Assurance](../../../../continuum/strategy/capability/938cd44380ab431fa8dae13c702d83c1.md) <a id="938cd44380ab431fa8dae13c702d83c1"></a>
+        - [II.1.1.3.3 [CT2] Policy & Control](../../../../continuum/strategy/capability/0c5d986cc948421a8bebcab3b74d108f.md) <a id="0c5d986cc948421a8bebcab3b74d108f"></a>
+          - [II.1.1.3.3.1 [CT3] Operation Policy Resolution](../../../../continuum/strategy/capability/7eca9fc4d2244b0facc83376e57ebbc4.md) <a id="7eca9fc4d2244b0facc83376e57ebbc4"></a>
+          - [II.1.1.3.3.2 [CT3] Operation-Bound Policy Enforcement](../../../../continuum/strategy/capability/cb32b32c657445b3b9b27bebc069ace9.md) <a id="cb32b32c657445b3b9b27bebc069ace9"></a>
+        - [II.1.1.3.4 [CT2] Provenance & Traceability](../../../../continuum/strategy/capability/68a0755aa4e14a509ac5e6c0bbcff3e7.md) <a id="68a0755aa4e14a509ac5e6c0bbcff3e7"></a>
+          - [II.1.1.3.4.1 [CT3] Governed Activity Audit Evidence](../../../../continuum/strategy/capability/c8d93ddc5aa84960964b78345fff1b29.md) <a id="c8d93ddc5aa84960964b78345fff1b29"></a>
+          - [II.1.1.3.4.2 [CT3] Information Attribution & Lineage](../../../../continuum/strategy/capability/8bc66c9bc1024a68a1bfd010b4dd1b79.md) <a id="8bc66c9bc1024a68a1bfd010b4dd1b79"></a>
+        - [II.1.1.3.5 [CT2] Service Guardian](../../../../continuum/strategy/capability/d767f12f9b1c495883216ace464ee1c2.md) <a id="d767f12f9b1c495883216ace464ee1c2"></a>
+    - II.1.2 Business Capabilities
+      - [II.1.2.1 [CT1] Care Access & Coordination](../../../../continuum/strategy/capability/ed342cb8656b4f80b55ad519ecbd2d3a.md) <a id="ed342cb8656b4f80b55ad519ecbd2d3a"></a>
+        - Historical predecessor: [R.2.1 [CT1] Care Access & Coordination](#0dec07b6ddbe48bda93a2295dd3e2d7d); canonicalId: `0dec07b6ddbe48bda93a2295dd3e2d7d`
+        - [II.1.2.1.1 [CT2] Care Access Management](../../../../continuum/strategy/capability/acbcad8330e64b59be5e3ec4a100a544.md) <a id="acbcad8330e64b59be5e3ec4a100a544"></a>
+          - [II.1.2.1.1.1 [CT3] Care Eligibility Determination](../../../../continuum/strategy/capability/0922a1141f82416ca9de12054c28a69a.md) <a id="0922a1141f82416ca9de12054c28a69a"></a>
+          - [II.1.2.1.1.2 [CT3] Care Intake Management](../../../../continuum/strategy/capability/1582467fff3b4dafa348aa100e9ca2de.md) <a id="1582467fff3b4dafa348aa100e9ca2de"></a>
+          - [II.1.2.1.1.3 [CT3] Care Referral Management](../../../../continuum/strategy/capability/ebdaa781bba542f8b744ef34a836a269.md) <a id="ebdaa781bba542f8b744ef34a836a269"></a>
+        - [II.1.2.1.2 [CT2] Care Coordination & Transition](../../../../continuum/strategy/capability/174a9b93d19c44828f20360e9d543925.md) <a id="174a9b93d19c44828f20360e9d543925"></a>
+          - [II.1.2.1.2.1 [CT3] Care Discharge Coordination](../../../../continuum/strategy/capability/62e436db8ce44a98ba855de68ac6b876.md) <a id="62e436db8ce44a98ba855de68ac6b876"></a>
+          - [II.1.2.1.2.2 [CT3] Care Responsibility Transition](../../../../continuum/strategy/capability/f8c9f7e2dcf14ceb9f228daaf9fed45e.md) <a id="f8c9f7e2dcf14ceb9f228daaf9fed45e"></a>
+          - [II.1.2.1.2.3 [CT3] Care-Team Coordination](../../../../continuum/strategy/capability/bbd138aab70d4b06b43662fb3f5373db.md) <a id="bbd138aab70d4b06b43662fb3f5373db"></a>
+        - [II.1.2.1.3 [CT2] Care Scheduling & Capacity Management](../../../../continuum/strategy/capability/61dd4b247df14546bf012587164bfe91.md) <a id="61dd4b247df14546bf012587164bfe91"></a>
+          - [II.1.2.1.3.1 [CT3] Care Appointment Management](../../../../continuum/strategy/capability/14dc21b28938425498ff7b04e49efd30.md) <a id="14dc21b28938425498ff7b04e49efd30"></a>
+          - [II.1.2.1.3.2 [CT3] Care Resource Deployment](../../../../continuum/strategy/capability/7854224c3b064116b0d48f01ce5537d8.md) <a id="7854224c3b064116b0d48f01ce5537d8"></a>
+          - [II.1.2.1.3.3 [CT3] Care-Place Allocation](../../../../continuum/strategy/capability/f8a4df47bea742a0869802472136d55f.md) <a id="f8a4df47bea742a0869802472136d55f"></a>
+          - [II.1.2.1.3.4 [CT3] Care-Place Readiness Management](../../../../continuum/strategy/capability/4dd0f1b9f9334c5c80066a8974fdfb7a.md) <a id="4dd0f1b9f9334c5c80066a8974fdfb7a"></a>
+          - [II.1.2.1.3.5 [CT3] Operational Care Capacity Management](../../../../continuum/strategy/capability/3040519e1fec43699c14a3cafb2d945d.md) <a id="3040519e1fec43699c14a3cafb2d945d"></a>
+          - [II.1.2.1.3.6 [CT3] Operational Care Flow Coordination](../../../../continuum/strategy/capability/d1dedb10ea694af5b88dbe1b6192f3ac.md) <a id="d1dedb10ea694af5b88dbe1b6192f3ac"></a>
+        - [II.1.2.1.4 [CT2] Care Support Logistics Management](../../../../continuum/strategy/capability/92be036674254f719cf4bb613120128a.md) <a id="92be036674254f719cf4bb613120128a"></a>
+          - [II.1.2.1.4.1 [CT3] Care Support Work Coordination](../../../../continuum/strategy/capability/f9f5c69b0f0b472287cd4ac56ccff6f3.md) <a id="f9f5c69b0f0b472287cd4ac56ccff6f3"></a>
+          - [II.1.2.1.4.2 [CT3] Clinical Material Logistics Coordination](../../../../continuum/strategy/capability/4b66444de58a48a9a9433568bf3a60d3.md) <a id="4b66444de58a48a9a9433568bf3a60d3"></a>
+          - [II.1.2.1.4.3 [CT3] Patient Movement Coordination](../../../../continuum/strategy/capability/f404b6647fe04a3390e57022bdef0843.md) <a id="f404b6647fe04a3390e57022bdef0843"></a>
+        - [II.1.2.1.5 [CT2] Service Delivery Preparedness Management](../../../../continuum/strategy/capability/9665d894c4c9438999d8cc10afae695d.md) <a id="9665d894c4c9438999d8cc10afae695d"></a>
+          - [II.1.2.1.5.1 [CT3] Health Service Operational Readiness](../../../../continuum/strategy/capability/cc91eb4017034939ab82b152bddf7b1c.md) <a id="cc91eb4017034939ab82b152bddf7b1c"></a>
+      - [II.1.2.2 [CT1] Clinical Quality, Safety & Improvement](../../../../continuum/strategy/capability/63837bf848774572a06b935af95581a2.md) <a id="63837bf848774572a06b935af95581a2"></a>
+        - Historical predecessor: [R.2.11 [CT1] Clinical Quality, Safety & Improvement](#b967c383dbcd4c24abe6a83ea5e79e00); canonicalId: `b967c383dbcd4c24abe6a83ea5e79e00`
+        - [II.1.2.2.1 [CT2] Clinical Quality Management](../../../../continuum/strategy/capability/89761f2d38f846c39df1df0975964288.md) <a id="89761f2d38f846c39df1df0975964288"></a>
+          - Historical predecessor: [R.2.6 [CT2] Clinical Quality Management](#dc1bece79eb7452e951d03a2ee6dfaa6); canonicalId: `dc1bece79eb7452e951d03a2ee6dfaa6`
+          - [II.1.2.2.1.1 [CT3] Clinical Quality Criteria Management](../../../../continuum/strategy/capability/1f48527a9a7c4382a7f8a660ccb9f29f.md) <a id="1f48527a9a7c4382a7f8a660ccb9f29f"></a>
+            - Historical predecessor: [R.2.2 [CT3] Clinical Quality Criteria Management](#7a51321b00464016920976b269981edd); canonicalId: `7a51321b00464016920976b269981edd`
+          - [II.1.2.2.1.2 [CT3] Clinical Quality Evidence Management](../../../../continuum/strategy/capability/1b0a1c6945ed4fadba045ff4753c104c.md) <a id="1b0a1c6945ed4fadba045ff4753c104c"></a>
+            - Historical predecessor: [R.2.3 [CT3] Clinical Quality Evidence Management](#f31902d474894670aeef3e0abbedccf0); canonicalId: `f31902d474894670aeef3e0abbedccf0`
+          - [II.1.2.2.1.3 [CT3] Clinical Quality Reporting](../../../../continuum/strategy/capability/70f34839c23042d59469e6ef96944057.md) <a id="70f34839c23042d59469e6ef96944057"></a>
+            - Historical predecessor: [R.2.4 [CT3] Clinical Quality Reporting](#e5812fcdf3f5465b9b1d8ba536075c5f); canonicalId: `e5812fcdf3f5465b9b1d8ba536075c5f`
+          - [II.1.2.2.1.4 [CT3] Clinical Quality Review & Assessment Management](../../../../continuum/strategy/capability/8318c35b302b4dcaa0e795fbfdc93e3b.md) <a id="8318c35b302b4dcaa0e795fbfdc93e3b"></a>
+            - Historical predecessor: [R.2.5 [CT3] Clinical Quality Review & Assessment Management](#4b17ec92f0af4c4b9556912dbdd0f29f); canonicalId: `4b17ec92f0af4c4b9556912dbdd0f29f`
+        - [II.1.2.2.2 [CT2] Clinical Safety Management](../../../../continuum/strategy/capability/28d1bf3e514e4c29837ebedaf9e4917b.md) <a id="28d1bf3e514e4c29837ebedaf9e4917b"></a>
+          - Historical predecessor: [R.2.10 [CT2] Clinical Safety Management](#650ccec030fa46cc8c9d6b508a841778); canonicalId: `650ccec030fa46cc8c9d6b508a841778`
+          - [II.1.2.2.2.1 [CT3] Clinical Risk Identification](../../../../continuum/strategy/capability/d54c19c6efaf42af82ad71a4142149d4.md) <a id="d54c19c6efaf42af82ad71a4142149d4"></a>
+            - Historical predecessor: [R.2.7 [CT3] Clinical Risk Identification](#690da55f1f5b4c44ba58cf67a717a564); canonicalId: `690da55f1f5b4c44ba58cf67a717a564`
+          - [II.1.2.2.2.2 [CT3] Clinical Risk Mitigation Management](../../../../continuum/strategy/capability/2c232ade21ec45619c3ee4e928bd97ee.md) <a id="2c232ade21ec45619c3ee4e928bd97ee"></a>
+            - Historical predecessor: [R.2.8 [CT3] Clinical Risk Mitigation Management](#0bd3311d89af45bb935fde20e719369c); canonicalId: `0bd3311d89af45bb935fde20e719369c`
+          - [II.1.2.2.2.3 [CT3] Clinical Risk Response Management](../../../../continuum/strategy/capability/5e36cb137e4e4782b2ddbf78cdf0da7b.md) <a id="5e36cb137e4e4782b2ddbf78cdf0da7b"></a>
+            - Historical predecessor: [R.2.9 [CT3] Clinical Risk Response Management](#20f719ab4b6741b393ef570b4d1b05df); canonicalId: `20f719ab4b6741b393ef570b4d1b05df`
+      - [II.1.2.3 [CT1] Community Health & Wellbeing](../../../../continuum/strategy/capability/b326b4aaf02a41a986ed22d184cbc152.md) <a id="b326b4aaf02a41a986ed22d184cbc152"></a>
+        - Historical predecessor: [R.2.19 [CT1] Community Health & Wellbeing](#175174c5cce549d2b154a4f6704721dc); canonicalId: `175174c5cce549d2b154a4f6704721dc`
+        - [II.1.2.3.1 [CT2] Preventative Health](../../../../continuum/strategy/capability/81be04a2d58548a4aea94f9aae90feb6.md) <a id="81be04a2d58548a4aea94f9aae90feb6"></a>
+          - Historical predecessor: [R.2.18 [CT2] Preventative Health](#80affa7bcd284ecbbcbc5092f8497ddf); canonicalId: `80affa7bcd284ecbbcbc5092f8497ddf`
+          - [II.1.2.3.1.1 [CT3] Preventative Health Cohort Management](../../../../continuum/strategy/capability/97625bb28e5745d5994e1bffd4037188.md) <a id="97625bb28e5745d5994e1bffd4037188"></a>
+            - Historical predecessor: [R.2.12 [CT3] Preventative Health Cohort Management](#fef479f0fd5048b19b2aec770f0233fe); canonicalId: `fef479f0fd5048b19b2aec770f0233fe`
+          - [II.1.2.3.1.2 [CT3] Preventative Health Education Services](../../../../continuum/strategy/capability/7541d9b3b65d47d286dabdc093cb0eed.md) <a id="7541d9b3b65d47d286dabdc093cb0eed"></a>
+            - Historical predecessor: [R.2.13 [CT3] Preventative Health Education Services](#dbe10959237f405caeadef2a5748303a); canonicalId: `dbe10959237f405caeadef2a5748303a`
+          - [II.1.2.3.1.3 [CT3] Preventative Health Problem Identification](../../../../continuum/strategy/capability/c1567022671f433fa1eeb37a9d156d92.md) <a id="c1567022671f433fa1eeb37a9d156d92"></a>
+            - Historical predecessor: [R.2.14 [CT3] Preventative Health Problem Identification](#b35d3521141c419fb676a79b2ede40bd); canonicalId: `b35d3521141c419fb676a79b2ede40bd`
+          - [II.1.2.3.1.4 [CT3] Preventative Health Programme Management](../../../../continuum/strategy/capability/563d36b179d34cb6913253d06e8d77f6.md) <a id="563d36b179d34cb6913253d06e8d77f6"></a>
+            - Historical predecessor: [R.2.15 [CT3] Preventative Health Programme Management](#d71def9e76a544ff9761c672bb24f3be); canonicalId: `d71def9e76a544ff9761c672bb24f3be`
+          - [II.1.2.3.1.5 [CT3] Preventative Health Programme Monitoring](../../../../continuum/strategy/capability/945b40ced8004e1cbf7c98c731d17daf.md) <a id="945b40ced8004e1cbf7c98c731d17daf"></a>
+            - Historical predecessor: [R.2.16 [CT3] Preventative Health Programme Monitoring](#e05f6310f6d544efaca5568604f27dd8); canonicalId: `e05f6310f6d544efaca5568604f27dd8`
+          - [II.1.2.3.1.6 [CT3] Preventative Health Reporting](../../../../continuum/strategy/capability/d2ef01c4cab348df822e802ab084faae.md) <a id="d2ef01c4cab348df822e802ab084faae"></a>
+            - Historical predecessor: [R.2.17 [CT3] Preventative Health Reporting](#4faef45b4ebe4fa69e57c3d81bfea05f); canonicalId: `4faef45b4ebe4fa69e57c3d81bfea05f`
+      - [II.1.2.4 [CT1] Connected Health Services](../../../../continuum/strategy/capability/3ef397463e584737b367e93f0bf1d85d.md) <a id="3ef397463e584737b367e93f0bf1d85d"></a>
+        - Historical predecessor: [R.2.20 [CT1] Connected Health Services](#48f01ef8b0e6431c85cf4f40cf8f94c3); canonicalId: `48f01ef8b0e6431c85cf4f40cf8f94c3`
+        - [II.1.2.4.1 [CT2] Digital Communication Channel](../../../../continuum/strategy/capability/f5defe141228490598115fe41db89bd7.md) <a id="f5defe141228490598115fe41db89bd7"></a>
+        - [II.1.2.4.2 [CT2] Health Information Exchange](../../../../continuum/strategy/capability/baad6b6117084311acbf5fc4044dfabf.md) <a id="baad6b6117084311acbf5fc4044dfabf"></a>
+          - [II.1.2.4.2.1 [CT3] Health Information Sharing Programme Management](../../../../continuum/strategy/capability/6c5c2cb625414b149ac7f2ccb4b8a897.md) <a id="6c5c2cb625414b149ac7f2ccb4b8a897"></a>
+      - [II.1.2.5 [CT1] Corporate Resources & Enterprise Services](../../../../continuum/strategy/capability/b79628f156e14a8cbb82a0dea2fc57ff.md) <a id="b79628f156e14a8cbb82a0dea2fc57ff"></a>
+        - Historical predecessor: [R.2.21 [CT1] Corporate Resources & Enterprise Services](#a2dbd74847a44f4c879983229f5c9d08); canonicalId: `a2dbd74847a44f4c879983229f5c9d08`
+        - [II.1.2.5.1 [CT2] Corporate Support Services](../../../../continuum/strategy/capability/c8777bccbe304e36b7d9fbd955d67579.md) <a id="c8777bccbe304e36b7d9fbd955d67579"></a>
+          - [II.1.2.5.1.1 [CT3] Back-Office Services](../../../../continuum/strategy/capability/9f4d3705403647f4a1e25bc3dece035f.md) <a id="9f4d3705403647f4a1e25bc3dece035f"></a>
+          - [II.1.2.5.1.2 [CT3] Communications & Publicity](../../../../continuum/strategy/capability/1fec53fb12444abcac41094dace1d3c2.md) <a id="1fec53fb12444abcac41094dace1d3c2"></a>
+          - [II.1.2.5.1.3 [CT3] Facilities Management](../../../../continuum/strategy/capability/9c82e623bd174409b90d24af6b58ebf0.md) <a id="9c82e623bd174409b90d24af6b58ebf0"></a>
+          - [II.1.2.5.1.4 [CT3] IT Infrastructure Management](../../../../continuum/strategy/capability/9a37413582314e0dbac006f82900858b.md) <a id="9a37413582314e0dbac006f82900858b"></a>
+          - [II.1.2.5.1.5 [CT3] Operational Oversight](../../../../continuum/strategy/capability/d6f39d94cd2e4bf2ab91ff58ba604ab0.md) <a id="d6f39d94cd2e4bf2ab91ff58ba604ab0"></a>
+          - [II.1.2.5.1.6 [CT3] People Management](../../../../continuum/strategy/capability/df8b9d309b354efcb15991b3d75ed852.md) <a id="df8b9d309b354efcb15991b3d75ed852"></a>
+        - [II.1.2.5.2 [CT2] Financial & Commercial Services](../../../../continuum/strategy/capability/290b574a02634f559b35a28daad0dea8.md) <a id="290b574a02634f559b35a28daad0dea8"></a>
+          - [II.1.2.5.2.1 [CT3] Clinical Activity Charging Information Provision](../../../../continuum/strategy/capability/ce9655c00f044ca996c9d4a1222785f5.md) <a id="ce9655c00f044ca996c9d4a1222785f5"></a>
+      - [II.1.2.6 [CT1] Diagnostic, Therapeutic & Clinical Support Services](../../../../continuum/strategy/capability/4d98c3503a9f4890a677f09b0c3b6f82.md) <a id="4d98c3503a9f4890a677f09b0c3b6f82"></a>
+        - Historical predecessor: [R.2.22 [CT1] Diagnostic, Therapeutic & Clinical Support Services](#e003b9cd0730459a84775d2837d1d173); canonicalId: `e003b9cd0730459a84775d2837d1d173`
+        - [II.1.2.6.1 [CT2] Diagnostic Support Provision](../../../../continuum/strategy/capability/827910cf74ae4061afbda52dde3da106.md) <a id="827910cf74ae4061afbda52dde3da106"></a>
+          - [II.1.2.6.1.1 [CT3] Diagnostic Data Management](../../../../continuum/strategy/capability/aeb8e6d2225a4df38e61ae116850b32c.md) <a id="aeb8e6d2225a4df38e61ae116850b32c"></a>
+          - [II.1.2.6.1.2 [CT3] Diagnostic Interpretation](../../../../continuum/strategy/capability/82ad867109f1438eb1b0916ed9cd820f.md) <a id="82ad867109f1438eb1b0916ed9cd820f"></a>
+          - [II.1.2.6.1.3 [CT3] Diagnostic Report Distribution](../../../../continuum/strategy/capability/c8fdba3d18e143acb2bd77ae828afd4b.md) <a id="c8fdba3d18e143acb2bd77ae828afd4b"></a>
+          - [II.1.2.6.1.4 [CT3] Diagnostic Report Management](../../../../continuum/strategy/capability/977ed170c34445ddb5095945f54f6907.md) <a id="977ed170c34445ddb5095945f54f6907"></a>
+          - [II.1.2.6.1.5 [CT3] Diagnostic Service Appointment Management](../../../../continuum/strategy/capability/5410a0275dfa4460ad49100fa5a2f2ec.md) <a id="5410a0275dfa4460ad49100fa5a2f2ec"></a>
+          - [II.1.2.6.1.6 [CT3] Diagnostic Service Delivery](../../../../continuum/strategy/capability/7a1ae953164d456c93637f8e35b4940e.md) <a id="7a1ae953164d456c93637f8e35b4940e"></a>
+          - [II.1.2.6.1.7 [CT3] Diagnostic Specimen Management](../../../../continuum/strategy/capability/93ab99a055314129984a18ea85db5cc2.md) <a id="93ab99a055314129984a18ea85db5cc2"></a>
+        - [II.1.2.6.2 [CT2] Medication & Pharmacy Services](../../../../continuum/strategy/capability/ab2a4e6a7acc4868bc4e7b6c0d292cb4.md) <a id="ab2a4e6a7acc4868bc4e7b6c0d292cb4"></a>
+          - [II.1.2.6.2.1 [CT3] Medication Advice](../../../../continuum/strategy/capability/b867a2fde009437196a5fed682abf073.md) <a id="b867a2fde009437196a5fed682abf073"></a>
+          - [II.1.2.6.2.2 [CT3] Medication Compounding & Preparation](../../../../continuum/strategy/capability/07380933da66427c865ca8e64d414e59.md) <a id="07380933da66427c865ca8e64d414e59"></a>
+          - [II.1.2.6.2.3 [CT3] Medication Dose Administration Aid Provision](../../../../continuum/strategy/capability/bd597608766b4d709703977c02cc5f07.md) <a id="bd597608766b4d709703977c02cc5f07"></a>
+          - [II.1.2.6.2.4 [CT3] Non-Prescription Medication Provision](../../../../continuum/strategy/capability/7bbe4810fb974a8ab6d47b30d6475df3.md) <a id="7bbe4810fb974a8ab6d47b30d6475df3"></a>
+          - [II.1.2.6.2.5 [CT3] Prescription Medication Dispensing](../../../../continuum/strategy/capability/fef5b79eea77438d9d453a7daef744fc.md) <a id="fef5b79eea77438d9d453a7daef744fc"></a>
+      - [II.1.2.7 [CT1] Health Information & Knowledge Management](../../../../continuum/strategy/capability/cca5d5abec204b339eb5b9bd924ed64e.md) <a id="cca5d5abec204b339eb5b9bd924ed64e"></a>
+        - Historical predecessor: [R.2.23 [CT1] Health Information & Knowledge Management](#a1c557bd263047d0b3ff566cf50b98c1); canonicalId: `a1c557bd263047d0b3ff566cf50b98c1`
+        - [II.1.2.7.1 [CT2] Clinical Knowledge Management](../../../../continuum/strategy/capability/76b375248aee49aeb5a5044176a688d8.md) <a id="76b375248aee49aeb5a5044176a688d8"></a>
+          - [II.1.2.7.1.1 [CT3] Clinical Knowledge Concept Association](../../../../continuum/strategy/capability/3666bf40ec894f5aac3714dc76df392a.md) <a id="3666bf40ec894f5aac3714dc76df392a"></a>
+          - [II.1.2.7.1.2 [CT3] Clinical Knowledge Context Extraction](../../../../continuum/strategy/capability/0911997eb4584172afd10b1d37946061.md) <a id="0911997eb4584172afd10b1d37946061"></a>
+          - [II.1.2.7.1.3 [CT3] Clinical Knowledge Context Identification](../../../../continuum/strategy/capability/a0facf9015514223a928e39fcbbb6bee.md) <a id="a0facf9015514223a928e39fcbbb6bee"></a>
+          - [II.1.2.7.1.4 [CT3] Clinical Knowledge Information Formulation](../../../../continuum/strategy/capability/05421be130ff4020b119c314aca46573.md) <a id="05421be130ff4020b119c314aca46573"></a>
+          - [II.1.2.7.1.5 [CT3] Clinical Knowledge Publication & Sharing](../../../../continuum/strategy/capability/962a5e3048424ff7b2413e21a8e51f53.md) <a id="962a5e3048424ff7b2413e21a8e51f53"></a>
+          - [II.1.2.7.1.6 [CT3] Clinical Knowledge Review & Approval Management](../../../../continuum/strategy/capability/ee04d00077d548a7a0a2dffd424c3d78.md) <a id="ee04d00077d548a7a0a2dffd424c3d78"></a>
+        - [II.1.2.7.2 [CT2] Health Information Management](../../../../continuum/strategy/capability/eb2984f0ca79420e83012f9e06a005fb.md) <a id="eb2984f0ca79420e83012f9e06a005fb"></a>
+          - [II.1.2.7.2.1 [CT3] Health Information Catalogue and Index Management](../../../../continuum/strategy/capability/4c834101307546d39a0ac36b07358faf.md) <a id="4c834101307546d39a0ac36b07358faf"></a>
+          - [II.1.2.7.2.2 [CT3] Health Information Compartmentalisation](../../../../continuum/strategy/capability/660d78d6a34041939d1c290266d47f03.md) <a id="660d78d6a34041939d1c290266d47f03"></a>
+          - [II.1.2.7.2.3 [CT3] Health Information Data Correlation](../../../../continuum/strategy/capability/6c41e90a8cf24ed689d9d6a363c8d3fe.md) <a id="6c41e90a8cf24ed689d9d6a363c8d3fe"></a>
+          - [II.1.2.7.2.4 [CT3] Health Information Data Management](../../../../continuum/strategy/capability/9565887a92164432933ea97e95af2368.md) <a id="9565887a92164432933ea97e95af2368"></a>
+          - [II.1.2.7.2.5 [CT3] Health Information Data Retrieval](../../../../continuum/strategy/capability/082760fc4804489a81eaed3e4fd9daa9.md) <a id="082760fc4804489a81eaed3e4fd9daa9"></a>
+          - [II.1.2.7.2.6 [CT3] Health Information Lifecycle Management](../../../../continuum/strategy/capability/874cd3b294184f928dbb7f656abd97f0.md) <a id="874cd3b294184f928dbb7f656abd97f0"></a>
+          - [II.1.2.7.2.7 [CT3] Health Information Structure Management](../../../../continuum/strategy/capability/c3b3e39dd141448e96b7dd7b4c4516f2.md) <a id="c3b3e39dd141448e96b7dd7b4c4516f2"></a>
+      - [II.1.2.8 [CT1] Health Products & Clinical Technology](../../../../continuum/strategy/capability/54388e3202c2403089b5c476c78c4567.md) <a id="54388e3202c2403089b5c476c78c4567"></a>
+        - Historical predecessor: [R.2.24 [CT1] Health Products & Clinical Technology](#a631a8600b8b49df9ef452c48c91349a); canonicalId: `a631a8600b8b49df9ef452c48c91349a`
+        - [II.1.2.8.1 [CT2] Clinical Technology Management](../../../../continuum/strategy/capability/6c91476a45eb4432b1f90b47a4c2ad35.md) <a id="6c91476a45eb4432b1f90b47a4c2ad35"></a>
+          - [II.1.2.8.1.1 [CT3] Clinical Device Data Integration](../../../../continuum/strategy/capability/382a6fe3546f491f940cba1c1e5df5ef.md) <a id="382a6fe3546f491f940cba1c1e5df5ef"></a>
+          - [II.1.2.8.1.2 [CT3] Clinical Device Feature & Release Management](../../../../continuum/strategy/capability/23d87ead4cdc40b785b006ca80f6d7b1.md) <a id="23d87ead4cdc40b785b006ca80f6d7b1"></a>
+          - [II.1.2.8.1.3 [CT3] Clinical Device Integration Provision](../../../../continuum/strategy/capability/7abab1d7d68f48cea565df752fad34c4.md) <a id="7abab1d7d68f48cea565df752fad34c4"></a>
+          - [II.1.2.8.1.4 [CT3] Clinical Device Inventory Management](../../../../continuum/strategy/capability/f8205d4cf8144f34b2da1139ff45c868.md) <a id="f8205d4cf8144f34b2da1139ff45c868"></a>
+          - [II.1.2.8.1.5 [CT3] Clinical Device Lifecycle Management](../../../../continuum/strategy/capability/186667f5a3844d10a236af73bc91a0de.md) <a id="186667f5a3844d10a236af73bc91a0de"></a>
+          - [II.1.2.8.1.6 [CT3] Clinical Device Loan & Deployment Management](../../../../continuum/strategy/capability/5ac802cf322d408f82c4a28cd24cb43b.md) <a id="5ac802cf322d408f82c4a28cd24cb43b"></a>
+          - [II.1.2.8.1.7 [CT3] Clinical Device Maintenance Management](../../../../continuum/strategy/capability/731ea36d36d8466d84196ccda2e61cf9.md) <a id="731ea36d36d8466d84196ccda2e61cf9"></a>
+          - [II.1.2.8.1.8 [CT3] Clinical Device Utilisation Support](../../../../continuum/strategy/capability/0100cdb80a0c41c5930b1ca66248adf9.md) <a id="0100cdb80a0c41c5930b1ca66248adf9"></a>
+      - [II.1.2.9 [CT1] Health Research & Innovation](../../../../continuum/strategy/capability/582bf62145fd42118e5d57bb714841e8.md) <a id="582bf62145fd42118e5d57bb714841e8"></a>
+        - Historical predecessor: [R.2.25 [CT1] Health Research & Innovation](#2cc31384c8864c73989025cbe96dcfa7); canonicalId: `2cc31384c8864c73989025cbe96dcfa7`
+        - [II.1.2.9.1 [CT2] Health Innovation](../../../../continuum/strategy/capability/f263989e25c9469cac1bbad6491432f0.md) <a id="f263989e25c9469cac1bbad6491432f0"></a>
+          - [II.1.2.9.1.1 [CT3] Health Innovation Evaluation](../../../../continuum/strategy/capability/adc555bcb54e4de290869c7deebd128c.md) <a id="adc555bcb54e4de290869c7deebd128c"></a>
+        - [II.1.2.9.2 [CT2] Research Information Support](../../../../continuum/strategy/capability/ef18f999eef3488ba584d263a551732b.md) <a id="ef18f999eef3488ba584d263a551732b"></a>
+          - [II.1.2.9.2.1 [CT3] Governed Research Information Provision](../../../../continuum/strategy/capability/6907401e6786470083c1d34a65aa225b.md) <a id="6907401e6786470083c1d34a65aa225b"></a>
+      - [II.1.2.10 [CT1] Health Rights, Advocacy & Participation](../../../../continuum/strategy/capability/7ab5c82a500b45f39267883a6e78c482.md) <a id="7ab5c82a500b45f39267883a6e78c482"></a>
+        - Historical predecessor: [R.2.26 [CT1] Health Rights, Advocacy & Participation](#58376e5c53bf4af0a54f99f21ac52666); canonicalId: `58376e5c53bf4af0a54f99f21ac52666`
+      - [II.1.2.11 [CT1] Health Service Assurance](../../../../continuum/strategy/capability/14860102964c441681d41ec3da423fe0.md) <a id="14860102964c441681d41ec3da423fe0"></a>
+        - Historical predecessor: [R.2.27 [CT1] Health Service Assurance](#6a82dc1423374e809dbf542eeaa69482); canonicalId: `6a82dc1423374e809dbf542eeaa69482`
+        - [II.1.2.11.1 [CT2] Assurance Evaluation](../../../../continuum/strategy/capability/d1b20e0fb91e4bd1950ad57b84e2cafd.md) <a id="d1b20e0fb91e4bd1950ad57b84e2cafd"></a>
+          - [II.1.2.11.1.1 [CT3] Assurance Conclusion Determination](../../../../continuum/strategy/capability/10f538feae4042829fafeae472882128.md) <a id="10f538feae4042829fafeae472882128"></a>
+          - [II.1.2.11.1.2 [CT3] Assurance Evidence Assessment](../../../../continuum/strategy/capability/1b295763b37f4622bd1bb80c6ea3741c.md) <a id="1b295763b37f4622bd1bb80c6ea3741c"></a>
+        - [II.1.2.11.2 [CT2] Health Service Assurance Specification](../../../../continuum/strategy/capability/ec5c4d1219464433b2cee5c5a988fef7.md) <a id="ec5c4d1219464433b2cee5c5a988fef7"></a>
+          - [II.1.2.11.2.1 [CT3] Assurance Approach Definition](../../../../continuum/strategy/capability/d672f8831df54f2099927f820d0025f5.md) <a id="d672f8831df54f2099927f820d0025f5"></a>
+          - [II.1.2.11.2.2 [CT3] Assurance Evaluation Criteria Governance](../../../../continuum/strategy/capability/f3e32f2a2c9d47a89eaf124647161522.md) <a id="f3e32f2a2c9d47a89eaf124647161522"></a>
+      - [II.1.2.12 [CT1] Health Service Direction & Stewardship](../../../../continuum/strategy/capability/d51e7125bf9c4d2c9c59b60346b4d86f.md) <a id="d51e7125bf9c4d2c9c59b60346b4d86f"></a>
+        - Historical predecessor: [R.2.28 [CT1] Health Service Direction & Stewardship](#360bf50f92484448a01cc57f2dbce23c); canonicalId: `360bf50f92484448a01cc57f2dbce23c`
+        - [II.1.2.12.1 [CT2] Health Service Alignment](../../../../continuum/strategy/capability/d4fc5367352741a99bd334f7e8bf5856.md) <a id="d4fc5367352741a99bd334f7e8bf5856"></a>
+          - [II.1.2.12.1.1 [CT3] Health Service Co-Dependency Management](../../../../continuum/strategy/capability/f031ee3ddc5e47c48d4308d4077b3967.md) <a id="f031ee3ddc5e47c48d4308d4077b3967"></a>
+          - [II.1.2.12.1.2 [CT3] Health Service Financial Management](../../../../continuum/strategy/capability/2fbf31e974574f288f087179e4023dc2.md) <a id="2fbf31e974574f288f087179e4023dc2"></a>
+          - [II.1.2.12.1.3 [CT3] Health Service Implementation Planning](../../../../continuum/strategy/capability/67bd795d91ce4dd49fdd481a3c451366.md) <a id="67bd795d91ce4dd49fdd481a3c451366"></a>
+          - [II.1.2.12.1.4 [CT3] Health Service Resource Identification](../../../../continuum/strategy/capability/7d46575486c847cd8fdbb665b3ed1090.md) <a id="7d46575486c847cd8fdbb665b3ed1090"></a>
+        - [II.1.2.12.2 [CT2] Health Service Modelling](../../../../continuum/strategy/capability/9a3e90db97b94d1888a2a5c5effb8999.md) <a id="9a3e90db97b94d1888a2a5c5effb8999"></a>
+          - [II.1.2.12.2.1 [CT3] Health Service Capability Identification](../../../../continuum/strategy/capability/53f64a402905438aa87f9d16eff876da.md) <a id="53f64a402905438aa87f9d16eff876da"></a>
+          - [II.1.2.12.2.2 [CT3] Health Service Continuous Improvement](../../../../continuum/strategy/capability/b2b2b91b1a094ef1b13ce6870ff9716f.md) <a id="b2b2b91b1a094ef1b13ce6870ff9716f"></a>
+          - [II.1.2.12.2.3 [CT3] Health Service Implementation Support](../../../../continuum/strategy/capability/f74f5944573b408d94fe8c88e33e128a.md) <a id="f74f5944573b408d94fe8c88e33e128a"></a>
+          - [II.1.2.12.2.4 [CT3] Health Service Need Identification](../../../../continuum/strategy/capability/976c90e05d0e44b1b24c89bf61eac005.md) <a id="976c90e05d0e44b1b24c89bf61eac005"></a>
+      - [II.1.2.13 [CT1] Health Service Governance](../../../../continuum/strategy/capability/209aada781e844e28202a2535a264c21.md) <a id="209aada781e844e28202a2535a264c21"></a>
+        - Historical predecessor: [R.2.29 [CT1] Health Service Governance](#24f3dd30223142efa35a5826552d53ab); canonicalId: `24f3dd30223142efa35a5826552d53ab`
+        - [II.1.2.13.1 [CT2] Compliance Governance](../../../../continuum/strategy/capability/02a52157967f4b498807cac70e3410e9.md) <a id="02a52157967f4b498807cac70e3410e9"></a>
+          - [II.1.2.13.1.1 [CT3] Compliance Assessment Definition](../../../../continuum/strategy/capability/8a6db4bd0ed845dda125896c4e3ad3d0.md) <a id="8a6db4bd0ed845dda125896c4e3ad3d0"></a>
+          - [II.1.2.13.1.2 [CT3] Governance Reporting & Checkpoint Definition](../../../../continuum/strategy/capability/0ff9f332acdc435e98f4f527c74f60c9.md) <a id="0ff9f332acdc435e98f4f527c74f60c9"></a>
+        - [II.1.2.13.2 [CT2] Governance Framework Management](../../../../continuum/strategy/capability/b39f53b3ffb441f388a89b45cc517deb.md) <a id="b39f53b3ffb441f388a89b45cc517deb"></a>
+          - [II.1.2.13.2.1 [CT3] Authority & Constraint Governance](../../../../continuum/strategy/capability/ad7f41dc48a046b185f044f0a24517ca.md) <a id="ad7f41dc48a046b185f044f0a24517ca"></a>
+          - [II.1.2.13.2.2 [CT3] Policy / Obligation Governance](../../../../continuum/strategy/capability/73c6e5b36bdf4bf0ad2b8b50c9b9a00b.md) <a id="73c6e5b36bdf4bf0ad2b8b50c9b9a00b"></a>
+      - [II.1.2.14 [CT1] Individual Care Delivery](../../../../continuum/strategy/capability/b964a11cde594318aa14ff935414158a.md) <a id="b964a11cde594318aa14ff935414158a"></a>
+        - Historical predecessor: [R.2.48 [CT1] Individual Care Delivery](#162deb7e292042f78f677a14476a3a1d); canonicalId: `162deb7e292042f78f677a14476a3a1d`
+        - [II.1.2.14.1 [CT2] Clinical Determination](../../../../continuum/strategy/capability/39219464b6304b59bd7c3de4e237066e.md) <a id="39219464b6304b59bd7c3de4e237066e"></a>
+          - Historical predecessor: [R.2.33 [CT2] Clinical Determination](#018ccd818ec142fba1ffb086d900acc6); canonicalId: `018ccd818ec142fba1ffb086d900acc6`
+          - [II.1.2.14.1.1 [CT3] Clinical Finding Interpretation](../../../../continuum/strategy/capability/deb78ba3b1514074a8ca5bc5da0673f5.md) <a id="deb78ba3b1514074a8ca5bc5da0673f5"></a>
+            - Historical predecessor: [R.2.30 [CT3] Clinical Finding Interpretation](#cf8ddfca7a8e4ed893ec39b795200d77); canonicalId: `cf8ddfca7a8e4ed893ec39b795200d77`
+          - [II.1.2.14.1.2 [CT3] Diagnosis & Problem Determination](../../../../continuum/strategy/capability/d965032637e64275b7a61c0413834590.md) <a id="d965032637e64275b7a61c0413834590"></a>
+            - Historical predecessor: [R.2.31 [CT3] Diagnosis & Problem Determination](#e575c583783546ef85cf898523d18797); canonicalId: `e575c583783546ef85cf898523d18797`
+          - [II.1.2.14.1.3 [CT3] Health Risk & Prognostic Determination](../../../../continuum/strategy/capability/5bba0ea969814b5fa7ad11b67ab40a0c.md) <a id="5bba0ea969814b5fa7ad11b67ab40a0c"></a>
+            - Historical predecessor: [R.2.32 [CT3] Health Risk & Prognostic Determination](#3215f0b0e1ce45e8ab16dae272ea6fe7); canonicalId: `3215f0b0e1ce45e8ab16dae272ea6fe7`
+        - [II.1.2.14.2 [CT2] Clinical Intervention](../../../../continuum/strategy/capability/5359d1b0ff814a0e871384469f5ebcd7.md) <a id="5359d1b0ff814a0e871384469f5ebcd7"></a>
+          - Historical predecessor: [R.2.34 [CT2] Clinical Intervention](#958345ee65f446d3b1259b8895ab100f); canonicalId: `958345ee65f446d3b1259b8895ab100f`
+        - [II.1.2.14.3 [CT2] Individual Care Planning](../../../../continuum/strategy/capability/f036a9866459429a8fb5f5e10727b5e8.md) <a id="f036a9866459429a8fb5f5e10727b5e8"></a>
+          - Historical predecessor: [R.2.37 [CT2] Individual Care Planning](#574e61e230e643f78c58649adb4db313); canonicalId: `574e61e230e643f78c58649adb4db313`
+          - [II.1.2.14.3.1 [CT3] Care Goal Definition](../../../../continuum/strategy/capability/609e1bef516b44bb976b5dbebe7f684b.md) <a id="609e1bef516b44bb976b5dbebe7f684b"></a>
+            - Historical predecessor: [R.2.35 [CT3] Care Goal Definition](#8bfbcc0a455d423c90ae2f1cfb732ca8); canonicalId: `8bfbcc0a455d423c90ae2f1cfb732ca8`
+          - [II.1.2.14.3.2 [CT3] Care Response Planning](../../../../continuum/strategy/capability/2636e43903e44a97ad5b8db32692ce8b.md) <a id="2636e43903e44a97ad5b8db32692ce8b"></a>
+            - Historical predecessor: [R.2.36 [CT3] Care Response Planning](#d64569acaf2c44f3b2a5332f74fff7c7); canonicalId: `d64569acaf2c44f3b2a5332f74fff7c7`
+        - [II.1.2.14.4 [CT2] Individual Care Review](../../../../continuum/strategy/capability/625a93f132f242f5a8e2ae1dc19979fb.md) <a id="625a93f132f242f5a8e2ae1dc19979fb"></a>
+          - Historical predecessor: [R.2.40 [CT2] Individual Care Review](#e1048f6c635d4e16b5384cc2cb45a71b); canonicalId: `e1048f6c635d4e16b5384cc2cb45a71b`
+          - [II.1.2.14.4.1 [CT3] Care Appropriateness Review](../../../../continuum/strategy/capability/5eac5fb73e31416288d8c992805b33cb.md) <a id="5eac5fb73e31416288d8c992805b33cb"></a>
+            - Historical predecessor: [R.2.39 [CT3] Care Intent Appropriateness Review](#905eb2de1ac341ac96331e3d7f76079b); canonicalId: `905eb2de1ac341ac96331e3d7f76079b`
+          - [II.1.2.14.4.2 [CT3] Care Effectiveness Review](../../../../continuum/strategy/capability/79cfeaefeb174a54ba43343d37f035c1.md) <a id="79cfeaefeb174a54ba43343d37f035c1"></a>
+            - Historical predecessor: [R.2.38 [CT3] Care Effectiveness Review](#31f49cdea9f44f188459503580c2b86e); canonicalId: `31f49cdea9f44f188459503580c2b86e`
+        - [II.1.2.14.5 [CT2] Individual Health Assessment](../../../../continuum/strategy/capability/045f819bb3694d3c9db7f20886e2993f.md) <a id="045f819bb3694d3c9db7f20886e2993f"></a>
+          - Historical predecessor: [R.2.44 [CT2] Individual Health Assessment](#9111446aa2d045bd9acd98542b0eef1f); canonicalId: `9111446aa2d045bd9acd98542b0eef1f`
+          - [II.1.2.14.5.1 [CT3] Clinical Examination](../../../../continuum/strategy/capability/8855d4d9e2954e0ab66ab65a556fc61a.md) <a id="8855d4d9e2954e0ab66ab65a556fc61a"></a>
+            - Historical predecessor: [R.2.41 [CT3] Clinical Examination](#8bc15e2b8f114deebcbbe3f2013a8147); canonicalId: `8bc15e2b8f114deebcbbe3f2013a8147`
+          - [II.1.2.14.5.2 [CT3] Health History Assessment](../../../../continuum/strategy/capability/7ea7e3f74e2940a7934b588a1a038834.md) <a id="7ea7e3f74e2940a7934b588a1a038834"></a>
+            - Historical predecessor: [R.2.42 [CT3] Health History Assessment](#bcaacf446f45443eafd8e21a1fd74ee1); canonicalId: `bcaacf446f45443eafd8e21a1fd74ee1`
+          - [II.1.2.14.5.3 [CT3] Health Status Measurement](../../../../continuum/strategy/capability/a796bfb3335d44f6aeb9970628ed8554.md) <a id="a796bfb3335d44f6aeb9970628ed8554"></a>
+            - Historical predecessor: [R.2.43 [CT3] Health Status Measurement](#3717906f7f8840d3a8a3e3877543dd18); canonicalId: `3717906f7f8840d3a8a3e3877543dd18`
+        - [II.1.2.14.6 [CT2] Individual Health Monitoring](../../../../continuum/strategy/capability/c7d0e498e1ad44138df940af2f91cd2d.md) <a id="c7d0e498e1ad44138df940af2f91cd2d"></a>
+          - Historical predecessor: [R.2.47 [CT2] Individual Health Monitoring](#31e7c27556314cafb74d040441d2dac6); canonicalId: `31e7c27556314cafb74d040441d2dac6`
+          - [II.1.2.14.6.1 [CT3] Care Response Monitoring](../../../../continuum/strategy/capability/d6951c9357fa40a4943cde581d95d5b1.md) <a id="d6951c9357fa40a4943cde581d95d5b1"></a>
+            - Historical predecessor: [R.2.45 [CT3] Care Response Monitoring](#615f93d05fbb4a8481f07778bd4f4803); canonicalId: `615f93d05fbb4a8481f07778bd4f4803`
+          - [II.1.2.14.6.2 [CT3] Health State Monitoring](../../../../continuum/strategy/capability/d77f22909f8b47dba4cbd95982e576df.md) <a id="d77f22909f8b47dba4cbd95982e576df"></a>
+            - Historical predecessor: [R.2.46 [CT3] Health State Monitoring](#346f024f74b447a8b6056b9d521837ff); canonicalId: `346f024f74b447a8b6056b9d521837ff`
+      - [II.1.2.15 [CT1] Population Health & Health-System Planning](../../../../continuum/strategy/capability/c63b38b37e9b4e9b97dc87ed54604def.md) <a id="c63b38b37e9b4e9b97dc87ed54604def"></a>
+        - Historical predecessor: [R.2.49 [CT1] Population Health & Health-System Planning](#a5003436a7f348b1bff60ba593adfa27); canonicalId: `a5003436a7f348b1bff60ba593adfa27`
+        - [II.1.2.15.1 [CT2] Health-System Planning](../../../../continuum/strategy/capability/9ca4df07eceb4150a0190cc488270ce2.md) <a id="9ca4df07eceb4150a0190cc488270ce2"></a>
+          - [II.1.2.15.1.1 [CT3] Health Service Capacity Planning](../../../../continuum/strategy/capability/c1d1db0e2c854077a41721615e86119d.md) <a id="c1d1db0e2c854077a41721615e86119d"></a>
+          - [II.1.2.15.1.2 [CT3] Health Service Demand Assessment](../../../../continuum/strategy/capability/e56d354eafd94ff7a495fc2ca2b8a593.md) <a id="e56d354eafd94ff7a495fc2ca2b8a593"></a>
+          - [II.1.2.15.1.3 [CT3] Health Service Distribution Planning](../../../../continuum/strategy/capability/4fc525fccbe142a58ee43dcc58b11c92.md) <a id="4fc525fccbe142a58ee43dcc58b11c92"></a>
+        - [II.1.2.15.2 [CT2] Population Health Surveillance](../../../../continuum/strategy/capability/83e568fa8af14d7791a7253765ea390f.md) <a id="83e568fa8af14d7791a7253765ea390f"></a>
+          - [II.1.2.15.2.1 [CT3] Notifiable Health Event Management](../../../../continuum/strategy/capability/e605436254ed4dad819f452448e054a1.md) <a id="e605436254ed4dad819f452448e054a1"></a>
+          - [II.1.2.15.2.2 [CT3] Population Health Event Identification](../../../../continuum/strategy/capability/e084ba370bb545d0a4c28c37e2e8e850.md) <a id="e084ba370bb545d0a4c28c37e2e8e850"></a>
+          - [II.1.2.15.2.3 [CT3] Population Health Longitudinal Assessment](../../../../continuum/strategy/capability/4d52b8acda504329a595be27a736e63c.md) <a id="4d52b8acda504329a595be27a736e63c"></a>
+          - [II.1.2.15.2.4 [CT3] Population Health Reporting](../../../../continuum/strategy/capability/50b8b0884f8444c4b11d9e0f7a7754a3.md) <a id="50b8b0884f8444c4b11d9e0f7a7754a3"></a>
+          - [II.1.2.15.2.5 [CT3] Population Health Surveillance Management](../../../../continuum/strategy/capability/f0791768ef494e619006ee0d89d0d9d8.md) <a id="f0791768ef494e619006ee0d89d0d9d8"></a>
+      - [II.1.2.16 [CT1] Security, Privacy & Digital Trust](../../../../continuum/strategy/capability/71f0431fdfcd4f779e16d9e5ea609833.md) <a id="71f0431fdfcd4f779e16d9e5ea609833"></a>
+        - Historical predecessor: [R.2.50 [CT1] Security, Privacy & Digital Trust](#b01441b2f5584fc2b9c3988643a7c93b); canonicalId: `b01441b2f5584fc2b9c3988643a7c93b`
+        - [II.1.2.16.1 [CT2] Digital Accountability & Trust](../../../../continuum/strategy/capability/9a600233ae1f4f3289c09a0b08ce029d.md) <a id="9a600233ae1f4f3289c09a0b08ce029d"></a>
+          - [II.1.2.16.1.1 [CT3] Governed Activity Attribution](../../../../continuum/strategy/capability/646b3fd80a8b4f269691db7942e0f809.md) <a id="646b3fd80a8b4f269691db7942e0f809"></a>
+          - [II.1.2.16.1.2 [CT3] Security & Information-Use Accountability](../../../../continuum/strategy/capability/a33d0cc14c384bd48012def4ded54a67.md) <a id="a33d0cc14c384bd48012def4ded54a67"></a>
+        - [II.1.2.16.2 [CT2] Digital Identity & Access Governance](../../../../continuum/strategy/capability/b9cb3666f9134ba29eb896e67eba7250.md) <a id="b9cb3666f9134ba29eb896e67eba7250"></a>
+          - [II.1.2.16.2.1 [CT3] Access Control Assurance & Reporting](../../../../continuum/strategy/capability/ba0bf23c2b5b4de1bdfbc5df90f57a2f.md) <a id="ba0bf23c2b5b4de1bdfbc5df90f57a2f"></a>
+          - [II.1.2.16.2.2 [CT3] Access Control Collaboration](../../../../continuum/strategy/capability/c1a39b83d27a4a148f997c0a709e82ac.md) <a id="c1a39b83d27a4a148f997c0a709e82ac"></a>
+          - [II.1.2.16.2.3 [CT3] Access Control Context Management](../../../../continuum/strategy/capability/a51f7a8045d24d0f982320025ba3a6ae.md) <a id="a51f7a8045d24d0f982320025ba3a6ae"></a>
+          - [II.1.2.16.2.4 [CT3] Access Control Enforcement](../../../../continuum/strategy/capability/b72a7b3fb7384870a9790b04d3c9e94a.md) <a id="b72a7b3fb7384870a9790b04d3c9e94a"></a>
+          - [II.1.2.16.2.5 [CT3] Identity Assurance](../../../../continuum/strategy/capability/56ccd6d3bf5b4ec980a333dfadf8d9fa.md) <a id="56ccd6d3bf5b4ec980a333dfadf8d9fa"></a>
+          - [II.1.2.16.2.6 [CT3] Identity Identification & Authentication](../../../../continuum/strategy/capability/ba4ad62548984d63ad75da3561566431.md) <a id="ba4ad62548984d63ad75da3561566431"></a>
+          - [II.1.2.16.2.7 [CT3] Identity Modelling & Interoperability](../../../../continuum/strategy/capability/c40a00b0fe56405d99b6bb6ede72e18e.md) <a id="c40a00b0fe56405d99b6bb6ede72e18e"></a>
+          - [II.1.2.16.2.8 [CT3] Identity Qualification Control](../../../../continuum/strategy/capability/3d53064f2fb7475b8f49fb58ec8ad4a5.md) <a id="3d53064f2fb7475b8f49fb58ec8ad4a5"></a>
+        - [II.1.2.16.3 [CT2] Health Information Protection](../../../../continuum/strategy/capability/4ae0de8fa16840d09ab2ef3f5545a5e7.md) <a id="4ae0de8fa16840d09ab2ef3f5545a5e7"></a>
+          - [II.1.2.16.3.1 [CT3] Health Information Access Monitoring](../../../../continuum/strategy/capability/01854c7311404bbf9f698fce4656b54d.md) <a id="01854c7311404bbf9f698fce4656b54d"></a>
+          - [II.1.2.16.3.2 [CT3] Health Information Classification Assurance](../../../../continuum/strategy/capability/4a4a871081bf45829eab2a93c9d1c21f.md) <a id="4a4a871081bf45829eab2a93c9d1c21f"></a>
+          - [II.1.2.16.3.3 [CT3] Health Information Compartment Assurance](../../../../continuum/strategy/capability/be47d201de1a45a88f48234d69deb2eb.md) <a id="be47d201de1a45a88f48234d69deb2eb"></a>
+          - [II.1.2.16.3.4 [CT3] Health Information Safeguarding](../../../../continuum/strategy/capability/6e89db75de5b4c4c9274f78c8d9e665a.md) <a id="6e89db75de5b4c4c9274f78c8d9e665a"></a>
+          - [II.1.2.16.3.5 [CT3] Health Privacy Safeguard Management](../../../../continuum/strategy/capability/089cd8744ed6410388daeff463507fc1.md) <a id="089cd8744ed6410388daeff463507fc1"></a>
+      - [II.1.2.17 [CT1] Standards, Semantics & Reference Governance](../../../../continuum/strategy/capability/5ffeb7401d314f06b05d79c3aff98242.md) <a id="5ffeb7401d314f06b05d79c3aff98242"></a>
+        - Historical predecessor: [R.2.51 [CT1] Standards, Semantics & Reference Governance](#3b65a3d007f54aa9b875e655475e1786); canonicalId: `3b65a3d007f54aa9b875e655475e1786`
+        - [II.1.2.17.1 [CT2] Clinical Semantics Governance](../../../../continuum/strategy/capability/5cc8319e1dde4c818cc248a47233b67b.md) <a id="5cc8319e1dde4c818cc248a47233b67b"></a>
+          - [II.1.2.17.1.1 [CT3] Classification Governance](../../../../continuum/strategy/capability/4520ce37454e4de68580d75fdb08efe6.md) <a id="4520ce37454e4de68580d75fdb08efe6"></a>
+          - [II.1.2.17.1.2 [CT3] Classification Utilisation Oversight](../../../../continuum/strategy/capability/1d7c50aa80464613864dd6efb3fb56cc.md) <a id="1d7c50aa80464613864dd6efb3fb56cc"></a>
+          - [II.1.2.17.1.3 [CT3] Semantic Mapping Governance](../../../../continuum/strategy/capability/17dc6ab9f4394049a5327415d19628f2.md) <a id="17dc6ab9f4394049a5327415d19628f2"></a>
+          - [II.1.2.17.1.4 [CT3] Terminology Governance](../../../../continuum/strategy/capability/e926a47881fa482088859f59fa6fe7e4.md) <a id="e926a47881fa482088859f59fa6fe7e4"></a>
+          - [II.1.2.17.1.5 [CT3] Terminology Localisation](../../../../continuum/strategy/capability/3aa80e1d84ea4e009b149c4f9a23f0f8.md) <a id="3aa80e1d84ea4e009b149c4f9a23f0f8"></a>
+          - [II.1.2.17.1.6 [CT3] Terminology Utilisation Oversight](../../../../continuum/strategy/capability/4ca436cd90b745daa290b067c57a0450.md) <a id="4ca436cd90b745daa290b067c57a0450"></a>
+        - [II.1.2.17.2 [CT2] Health Information Standards Governance](../../../../continuum/strategy/capability/b228039d8e764f9b98cb810b68af329d.md) <a id="b228039d8e764f9b98cb810b68af329d"></a>
+          - [II.1.2.17.2.1 [CT3] Information Model Adoption](../../../../continuum/strategy/capability/0c3ce0778d6342b6b100e1e30e777fbe.md) <a id="0c3ce0778d6342b6b100e1e30e777fbe"></a>
+          - [II.1.2.17.2.2 [CT3] Information Model Compliance](../../../../continuum/strategy/capability/160db14dbe5149db91223a93f6ee9102.md) <a id="160db14dbe5149db91223a93f6ee9102"></a>
+          - [II.1.2.17.2.3 [CT3] Information Model Discovery](../../../../continuum/strategy/capability/f33dc5b8ba9643329bb7b9431e1f9a6f.md) <a id="f33dc5b8ba9643329bb7b9431e1f9a6f"></a>
+          - [II.1.2.17.2.4 [CT3] Information Model Education](../../../../continuum/strategy/capability/7dcb6427f9134fb7a4a63a5ec1d5c85b.md) <a id="7dcb6427f9134fb7a4a63a5ec1d5c85b"></a>
+          - [II.1.2.17.2.5 [CT3] Information Model Governance Oversight](../../../../continuum/strategy/capability/1e71b707beab450f9cbfaf0bf88b6ec4.md) <a id="1e71b707beab450f9cbfaf0bf88b6ec4"></a>
+          - [II.1.2.17.2.6 [CT3] Standards Adoption](../../../../continuum/strategy/capability/0d59f956f5714d3985398f09aeb7c541.md) <a id="0d59f956f5714d3985398f09aeb7c541"></a>
+          - [II.1.2.17.2.7 [CT3] Standards Impact Identification](../../../../continuum/strategy/capability/6b9c96c7d9174e7fbfd11267673d42f3.md) <a id="6b9c96c7d9174e7fbfd11267673d42f3"></a>
+      - [II.1.2.18 [CT1] Workforce & Organisational Capability](../../../../continuum/strategy/capability/631b43664bfb4c50ac8cf4958b2c347d.md) <a id="631b43664bfb4c50ac8cf4958b2c347d"></a>
+        - Historical predecessor: [R.2.52 [CT1] Workforce & Organisational Capability](#b1161fe1a315420fbc7d048a1ea58126); canonicalId: `b1161fe1a315420fbc7d048a1ea58126`
+        - [II.1.2.18.1 [CT2] Health Workforce Management](../../../../continuum/strategy/capability/7ec329cdc070472eb68966345d82031a.md) <a id="7ec329cdc070472eb68966345d82031a"></a>
+          - [II.1.2.18.1.1 [CT3] Practitioner Engagement & Privilege Management](../../../../continuum/strategy/capability/36d5bf4c19d34172b72f4b77099ff235.md) <a id="36d5bf4c19d34172b72f4b77099ff235"></a>
+          - [II.1.2.18.1.2 [CT3] Practitioner Qualification Management](../../../../continuum/strategy/capability/279bab5de1b74c17a5ee2db5cae8d385.md) <a id="279bab5de1b74c17a5ee2db5cae8d385"></a>
+          - [II.1.2.18.1.3 [CT3] Workforce Service Coverage Management](../../../../continuum/strategy/capability/cfb04e13895745619171a3e8f15d349c.md) <a id="cfb04e13895745619171a3e8f15d349c"></a>
+        - [II.1.2.18.2 [CT2] Healthcare Organisation & Service Structure Management](../../../../continuum/strategy/capability/de8c1b408c774e59899662495f4d6ced.md) <a id="de8c1b408c774e59899662495f4d6ced"></a>
+          - [II.1.2.18.2.1 [CT3] Healthcare Location Definition Management](../../../../continuum/strategy/capability/d77a5c8f1818465c98125acc4bc2ac81.md) <a id="d77a5c8f1818465c98125acc4bc2ac81"></a>
+          - [II.1.2.18.2.2 [CT3] Healthcare Organisation Identity & Structure Management](../../../../continuum/strategy/capability/4684348b4d144e61aa7dd203facfebdd.md) <a id="4684348b4d144e61aa7dd203facfebdd"></a>
+          - [II.1.2.18.2.3 [CT3] Healthcare Service Offering Management](../../../../continuum/strategy/capability/9fe177e4422b4853acb1dd0d0b74c4ba.md) <a id="9fe177e4422b4853acb1dd0d0b74c4ba"></a>
+    - II.1.3 Business Enabling Capabilities
+      - [II.1.3.1 [CT1] Care Administration Enablement](../../../../continuum/strategy/capability/28df27d55c514a37995145ab46945f78.md) <a id="28df27d55c514a37995145ab46945f78"></a>
+        - Historical predecessor: [R.2.71 [CT1] Care Administration Enablement](#b611a1fcfadb4b30af9ba74a4c993d8a); canonicalId: `b611a1fcfadb4b30af9ba74a4c993d8a`
+        - [II.1.3.1.1 [CT2] Care Access Transaction Enablement [superseded]](../../../../continuum/strategy/capability/b65973b576154d3a96cf458bf33df53a.md) <a id="b65973b576154d3a96cf458bf33df53a"></a>
+        - [II.1.3.1.2 [CT2] Care Documentation & Communication Enablement [superseded]](../../../../continuum/strategy/capability/5ad2e381ec484d1d9062a65eee842fa7.md) <a id="5ad2e381ec484d1d9062a65eee842fa7"></a>
+        - [II.1.3.1.3 [CT2] Care Financial Information Enablement [superseded]](../../../../continuum/strategy/capability/59a756b89c604e3e97ee5dede2d6ed89.md) <a id="59a756b89c604e3e97ee5dede2d6ed89"></a>
+        - [II.1.3.1.4 [CT2] Care Fulfilment Administration Enablement [superseded]](../../../../continuum/strategy/capability/9f0f4379c1954524ba5e691d0c7d95ab.md) <a id="9f0f4379c1954524ba5e691d0c7d95ab"></a>
+        - [II.1.3.1.5 [CT2] Care Plan Administration](../../../../continuum/strategy/capability/cf06eec5699f406fa30a00d2f76e3098.md) <a id="cf06eec5699f406fa30a00d2f76e3098"></a>
+          - Historical predecessor: [R.2.54 [CT2] Care Plan Administration](#e31407cea7624632a8ed2dc53b09d726); canonicalId: `e31407cea7624632a8ed2dc53b09d726`
+          - [II.1.3.1.5.1 [CT3] Care Plan Lifecycle & Coordination](../../../../continuum/strategy/capability/4cb7db65392f4fab801d7794af4d4b29.md) <a id="4cb7db65392f4fab801d7794af4d4b29"></a>
+            - Historical predecessor: [R.2.53 [CT3] Care Plan Lifecycle & Coordination](#689bb3f8a24249b79f787e1f48eb268d); canonicalId: `689bb3f8a24249b79f787e1f48eb268d`
+            - [II.1.3.1.5.1.1 [Feature] Care Goal & Plan Progression Representation](../../../../continuum/strategy/capability/feature/7332de92e6c14bc8b071cf18f78f9525.md) <a id="7332de92e6c14bc8b071cf18f78f9525"></a>
+            - [II.1.3.1.5.1.2 [Feature] Care Plan Ingestion & Distribution](../../../../continuum/strategy/capability/feature/6d4b374a6bca4b58a86c912a94bbd6b1.md) <a id="6d4b374a6bca4b58a86c912a94bbd6b1"></a>
+          - [II.1.3.1.5.2 [CT3] Community Care Coordination](../../../../continuum/strategy/capability/8c8c6266d9ed43e09dbe44fcdd669132.md) <a id="8c8c6266d9ed43e09dbe44fcdd669132"></a>
+            - [II.1.3.1.5.2.1 [Feature] Community Care Plan Synchronization](../../../../continuum/strategy/capability/feature/30a0a2a6f1044d9ca9337b655f303e24.md) <a id="30a0a2a6f1044d9ca9337b655f303e24"></a>
+            - [II.1.3.1.5.2.2 [Feature] Community Encounter Ingestion](../../../../continuum/strategy/capability/feature/7afe8ae69ed7491192d884576ca0dc15.md) <a id="7afe8ae69ed7491192d884576ca0dc15"></a>
+          - [II.1.3.1.5.3 [CT3] Outreach Care Continuity](../../../../continuum/strategy/capability/8526d971b07f40de84ef05b0d192089c.md) <a id="8526d971b07f40de84ef05b0d192089c"></a>
+            - [II.1.3.1.5.3.1 [Feature] Outreach Encounter Outcome Ingestion](../../../../continuum/strategy/capability/feature/464ee3ad8d3648d992c6e51e3632d593.md) <a id="464ee3ad8d3648d992c6e51e3632d593"></a>
+            - [II.1.3.1.5.3.2 [Feature] Outreach Visit Context Provision](../../../../continuum/strategy/capability/feature/44049d029a41437685272dfe94db4a2a.md) <a id="44049d029a41437685272dfe94db4a2a"></a>
+        - [II.1.3.1.6 [CT2] Client-Centred Administration](../../../../continuum/strategy/capability/8752b7a937754b2faa296300c6a48911.md) <a id="8752b7a937754b2faa296300c6a48911"></a>
+          - Historical predecessor: [R.2.55 [CT2] Client-Centred Administration](#232b3fb2ff204c9b9ff7a60ff6a7a32d); canonicalId: `232b3fb2ff204c9b9ff7a60ff6a7a32d`
+          - [II.1.3.1.6.1 [CT3] Client Intake & Demographic Update](../../../../continuum/strategy/capability/f51f8d6b7556424987c76d9a7465c67c.md) <a id="f51f8d6b7556424987c76d9a7465c67c"></a>
+            - [II.1.3.1.6.1.1 [Feature] Demographic Change Distribution](../../../../continuum/strategy/capability/feature/bfd2ce654a79404dbef2694d30fb39fc.md) <a id="bfd2ce654a79404dbef2694d30fb39fc"></a>
+            - [II.1.3.1.6.1.2 [Feature] Demographic Update Ingestion](../../../../continuum/strategy/capability/feature/594ccbd95f5841e4b874fd1bade34a5d.md) <a id="594ccbd95f5841e4b874fd1bade34a5d"></a>
+          - [II.1.3.1.6.2 [CT3] Screening and Immunisation Enablement](../../../../continuum/strategy/capability/3e9016eaebae4ed0b67a5cacba2652f5.md) <a id="3e9016eaebae4ed0b67a5cacba2652f5"></a>
+            - [II.1.3.1.6.2.1 [Feature] Immunisation Event Submission](../../../../continuum/strategy/capability/feature/47bab2681bf943899e83fab8c9941676.md) <a id="47bab2681bf943899e83fab8c9941676"></a>
+            - [II.1.3.1.6.2.2 [Feature] Screening Recall Notification Distribution](../../../../continuum/strategy/capability/feature/7ec85487625349a7b3292585fadb20c7.md) <a id="7ec85487625349a7b3292585fadb20c7"></a>
+        - [II.1.3.1.7 [CT2] Clinical Charging & Claims Administration](../../../../continuum/strategy/capability/af78ab7c89454a608cd4d34ec7703331.md) <a id="af78ab7c89454a608cd4d34ec7703331"></a>
+          - Historical predecessor: [R.2.56 [CT2] Clinical Charging & Claims Administration](#44433108cc8f4f5f9d7581f9e5b29eb5); canonicalId: `44433108cc8f4f5f9d7581f9e5b29eb5`
+        - [II.1.3.1.8 [CT2] Clinical Communication Administration](../../../../continuum/strategy/capability/b38f2c2811724734b5887b6dbaaabbfc.md) <a id="b38f2c2811724734b5887b6dbaaabbfc"></a>
+          - Historical predecessor: [R.2.57 [CT2] Clinical Communication Administration](#bd4d6f4a7f03402ba7857383c7be7a4c); canonicalId: `bd4d6f4a7f03402ba7857383c7be7a4c`
+          - [II.1.3.1.8.1 [CT3] Secure Clinical Communication](../../../../continuum/strategy/capability/eddb86c7922145439b9dcf0259f4aed5.md) <a id="eddb86c7922145439b9dcf0259f4aed5"></a>
+            - [II.1.3.1.8.1.1 [Feature] Clinical Communication Distribution](../../../../continuum/strategy/capability/feature/8527f36d5d5a460b92403f9d84f36490.md) <a id="8527f36d5d5a460b92403f9d84f36490"></a>
+            - [II.1.3.1.8.1.2 [Feature] Communication Audit Logging](../../../../continuum/strategy/capability/feature/b9df49b2f221486392f5cc393369d888.md) <a id="b9df49b2f221486392f5cc393369d888"></a>
+            - [II.1.3.1.8.1.3 [Feature] Delivery Acknowledgement Tracking](../../../../continuum/strategy/capability/feature/6884eb06bb794c5b8513b9b63d69af7e.md) <a id="6884eb06bb794c5b8513b9b63d69af7e"></a>
+        - [II.1.3.1.9 [CT2] Clinical Record Administration](../../../../continuum/strategy/capability/ce9e7e7b22054cefb707a650d5be7219.md) <a id="ce9e7e7b22054cefb707a650d5be7219"></a>
+          - Historical predecessor: [R.2.59 [CT2] Clinical Record Administration](#be3f2e695eda403fbce8118daf83d386); canonicalId: `be3f2e695eda403fbce8118daf83d386`
+          - [II.1.3.1.9.1 [CT3] Clinical Documentation Lifecycle Administration](../../../../continuum/strategy/capability/df683100067b47e785037c27cfd17a3c.md) <a id="df683100067b47e785037c27cfd17a3c"></a>
+            - Historical predecessor: [R.2.58 [CT3] Clinical Documentation Lifecycle Administration](#5b1636373a8d4e788b3ddbc1659a47ef); canonicalId: `5b1636373a8d4e788b3ddbc1659a47ef`
+            - [II.1.3.1.9.1.1 [Feature] Clinical Document Ingestion](../../../../continuum/strategy/capability/feature/54c79edadc7a478fb594ff4eb47f8368.md) <a id="54c79edadc7a478fb594ff4eb47f8368"></a>
+            - [II.1.3.1.9.1.2 [Feature] Document Metadata Indexing](../../../../continuum/strategy/capability/feature/0c85a269e90a4329b83d934f9061cd49.md) <a id="0c85a269e90a4329b83d934f9061cd49"></a>
+            - [II.1.3.1.9.1.3 [Feature] Document Versioning & Supersession](../../../../continuum/strategy/capability/feature/c8e2e623dd4e4c3b8de6c3bfb8c2a3ee.md) <a id="c8e2e623dd4e4c3b8de6c3bfb8c2a3ee"></a>
+        - [II.1.3.1.10 [CT2] Diagnostic Administration](../../../../continuum/strategy/capability/3cc720ba2e8b4d7a94bb349391d61895.md) <a id="3cc720ba2e8b4d7a94bb349391d61895"></a>
+          - Historical predecessor: [R.2.60 [CT2] Diagnostic Administration](#2b1a27d5d9944e05b4cf0fcaad4ca433); canonicalId: `2b1a27d5d9944e05b4cf0fcaad4ca433`
+          - [II.1.3.1.10.1 [CT3] Diagnostic Service Integration](../../../../continuum/strategy/capability/9ded2f3a28d24017bb921a0cdcf65a2b.md) <a id="9ded2f3a28d24017bb921a0cdcf65a2b"></a>
+            - [II.1.3.1.10.1.1 [Feature] Diagnostic History Consolidation](../../../../continuum/strategy/capability/feature/0b3fa0b7374842ff8ce199191a3479bd.md) <a id="0b3fa0b7374842ff8ce199191a3479bd"></a>
+            - [II.1.3.1.10.1.2 [Feature] Laboratory & Imaging Result Distribution](../../../../continuum/strategy/capability/feature/93d42becda8f4850b73ff2c93bb7e8f3.md) <a id="93d42becda8f4850b73ff2c93bb7e8f3"></a>
+          - [II.1.3.1.10.2 [CT3] Diagnostic Workflow Management](../../../../continuum/strategy/capability/270ed0e32b294458aa52cf57df7e55db.md) <a id="270ed0e32b294458aa52cf57df7e55db"></a>
+            - [II.1.3.1.10.2.1 [Feature] Diagnostic Preliminary & Corrected Report Handling](../../../../continuum/strategy/capability/feature/7449ee4dada7424ea6d39785258b4981.md) <a id="7449ee4dada7424ea6d39785258b4981"></a>
+            - [II.1.3.1.10.2.2 [Feature] Diagnostic Report Distribution](../../../../continuum/strategy/capability/feature/3813b3b5175e461ba74805d8fa2aa648.md) <a id="3813b3b5175e461ba74805d8fa2aa648"></a>
+            - [II.1.3.1.10.2.3 [Feature] Diagnostic Report Ingestion & Binding](../../../../continuum/strategy/capability/feature/a00823445a8a44c1a00f3ec93a7e0e6f.md) <a id="a00823445a8a44c1a00f3ec93a7e0e6f"></a>
+            - [II.1.3.1.10.2.4 [Feature] Diagnostic Request Correlation](../../../../continuum/strategy/capability/feature/30cd73b8d7d941648affbb379196f532.md) <a id="30cd73b8d7d941648affbb379196f532"></a>
+        - [II.1.3.1.11 [CT2] Episode & Encounter Administration](../../../../continuum/strategy/capability/61d7067aee0540259b3daca4287d66d2.md) <a id="61d7067aee0540259b3daca4287d66d2"></a>
+          - Historical predecessor: [R.2.61 [CT2] Episode & Encounter Administration](#2778f988e8d44e3091749542c39d38a4); canonicalId: `2778f988e8d44e3091749542c39d38a4`
+          - [II.1.3.1.11.1 [CT3] Acute Care Monitoring & Event Coordination](../../../../continuum/strategy/capability/ee17b26b8c874cc3af50d07a787ce488.md) <a id="ee17b26b8c874cc3af50d07a787ce488"></a>
+            - [II.1.3.1.11.1.1 [Feature] Acute Care Clinical Context Provision](../../../../continuum/strategy/capability/feature/90de621f7ac1410eb6fc770cb07a9e03.md) <a id="90de621f7ac1410eb6fc770cb07a9e03"></a>
+            - [II.1.3.1.11.1.2 [Feature] Acute Clinical State Event Capture](../../../../continuum/strategy/capability/feature/566f6934c9b04627b0876f91bedd8f30.md) <a id="566f6934c9b04627b0876f91bedd8f30"></a>
+          - [II.1.3.1.11.2 [CT3] Encounter Lifecycle Management](../../../../continuum/strategy/capability/2ebf1bb20ab34755b41567c156cc5928.md) <a id="2ebf1bb20ab34755b41567c156cc5928"></a>
+            - [II.1.3.1.11.2.1 [Feature] Encounter Bed/Location Association](../../../../continuum/strategy/capability/feature/47f0fca36aa4454eae95f4b151c7076f.md) <a id="47f0fca36aa4454eae95f4b151c7076f"></a>
+            - [II.1.3.1.11.2.2 [Feature] Encounter Context Creation](../../../../continuum/strategy/capability/feature/817f1046d7e84699a2e2050b84285f95.md) <a id="817f1046d7e84699a2e2050b84285f95"></a>
+            - [II.1.3.1.11.2.3 [Feature] Encounter History Retrieval](../../../../continuum/strategy/capability/feature/4088e1408f554143a0f1469efd1b43a7.md) <a id="4088e1408f554143a0f1469efd1b43a7"></a>
+            - [II.1.3.1.11.2.4 [Feature] Encounter State Progression](../../../../continuum/strategy/capability/feature/c049039bf57e4e4aa97aab5967196383.md) <a id="c049039bf57e4e4aa97aab5967196383"></a>
+        - [II.1.3.1.12 [CT2] Funding & Coverage Administration](../../../../continuum/strategy/capability/640432d413cf47928ea2b3d221f92313.md) <a id="640432d413cf47928ea2b3d221f92313"></a>
+          - Historical predecessor: [R.2.62 [CT2] Funding & Coverage Administration](#58beafcbcd084331be710eb00d27f6cf); canonicalId: `58beafcbcd084331be710eb00d27f6cf`
+        - [II.1.3.1.13 [CT2] Medication Administration](../../../../continuum/strategy/capability/c907e2a95629435b9951941ad4e2ebe9.md) <a id="c907e2a95629435b9951941ad4e2ebe9"></a>
+          - Historical predecessor: [R.2.63 [CT2] Medication Administration](#5a38bf2527a8404bac714121f2dc76a9); canonicalId: `5a38bf2527a8404bac714121f2dc76a9`
+          - [II.1.3.1.13.1 [CT3] Medication Order & Dispense Management](../../../../continuum/strategy/capability/9874098228764b62b1f640ea749b742d.md) <a id="9874098228764b62b1f640ea749b742d"></a>
+            - [II.1.3.1.13.1.1 [Feature] Dispense Event Tracking](../../../../continuum/strategy/capability/feature/430bf990d4194255b7ae09c2fe27367e.md) <a id="430bf990d4194255b7ae09c2fe27367e"></a>
+            - [II.1.3.1.13.1.2 [Feature] Medication Administration Record (MAR) Ingestion](../../../../continuum/strategy/capability/feature/779d9cb66bc84585a8dd1f456b0ee37c.md) <a id="779d9cb66bc84585a8dd1f456b0ee37c"></a>
+            - [II.1.3.1.13.1.3 [Feature] Medication Order Ingestion](../../../../continuum/strategy/capability/feature/5247b47f181243bb975ae2cd70db65ba.md) <a id="5247b47f181243bb975ae2cd70db65ba"></a>
+          - [II.1.3.1.13.2 [CT3] Medication Therapy Provision and Monitoring](../../../../continuum/strategy/capability/d1821b4f6d5746f9a697dfe3b792a186.md) <a id="d1821b4f6d5746f9a697dfe3b792a186"></a>
+            - [II.1.3.1.13.2.1 [Feature] Medication Administration Tracking](../../../../continuum/strategy/capability/feature/6e01c72ef9c149e2ac231463810c2265.md) <a id="6e01c72ef9c149e2ac231463810c2265"></a>
+            - [II.1.3.1.13.2.2 [Feature] Medication History Reconciliation Ingestion](../../../../continuum/strategy/capability/feature/561e1ef130e04f38b854665bb8fb9c77.md) <a id="561e1ef130e04f38b854665bb8fb9c77"></a>
+        - [II.1.3.1.14 [CT2] Order Administration](../../../../continuum/strategy/capability/c3c5abd7987f4433a46cbfed8167914c.md) <a id="c3c5abd7987f4433a46cbfed8167914c"></a>
+          - Historical predecessor: [R.2.65 [CT2] Order Administration](#ebb735a2915744819d4001d9b8425cc6); canonicalId: `ebb735a2915744819d4001d9b8425cc6`
+          - [II.1.3.1.14.1 [CT3] Closed-Loop Order Progression](../../../../continuum/strategy/capability/2f79ebd7392c46ef92def6f25bc9c7ce.md) <a id="2f79ebd7392c46ef92def6f25bc9c7ce"></a>
+            - Historical predecessor: [R.2.64 [CT3] Closed-Loop Order Progression](#2ad29cebc1e94053a300d869e7797232); canonicalId: `2ad29cebc1e94053a300d869e7797232`
+            - [II.1.3.1.14.1.1 [Feature] Order Cancellation & Modification Coordination](../../../../continuum/strategy/capability/feature/6d12d9ddf4f8425ca60b289f3356f683.md) <a id="6d12d9ddf4f8425ca60b289f3356f683"></a>
+            - [II.1.3.1.14.1.2 [Feature] Order Closed-Loop Progression Tracking](../../../../continuum/strategy/capability/feature/9e63463942b94a6ba3bc045a04d3580b.md) <a id="9e63463942b94a6ba3bc045a04d3580b"></a>
+            - [II.1.3.1.14.1.3 [Feature] Order Destination Resolution & Routing](../../../../continuum/strategy/capability/feature/9f8f1542efc64e89ad226689291f2635.md) <a id="9f8f1542efc64e89ad226689291f2635"></a>
+            - [II.1.3.1.14.1.4 [Feature] Order Outcome Association](../../../../continuum/strategy/capability/feature/4ad2e11162f34775adfea01b949d2803.md) <a id="4ad2e11162f34775adfea01b949d2803"></a>
+            - [II.1.3.1.14.1.5 [Feature] Order Request Ingestion](../../../../continuum/strategy/capability/feature/fc1f8168fd6949beb810e4ff57a2368e.md) <a id="fc1f8168fd6949beb810e4ff57a2368e"></a>
+        - [II.1.3.1.15 [CT2] Procedure Administration](../../../../continuum/strategy/capability/649dd7cc26094e539386a050086dfb91.md) <a id="649dd7cc26094e539386a050086dfb91"></a>
+          - Historical predecessor: [R.2.66 [CT2] Procedure Administration](#466a4057001846bb8ae0481453d3e410); canonicalId: `466a4057001846bb8ae0481453d3e410`
+          - [II.1.3.1.15.1 [CT3] Procedure & Surgical Administration](../../../../continuum/strategy/capability/3c4a53dd8c8f468f83ca5d92397dd7e8.md) <a id="3c4a53dd8c8f468f83ca5d92397dd7e8"></a>
+            - [II.1.3.1.15.1.1 [Feature] Procedural Documentation Ingestion](../../../../continuum/strategy/capability/feature/324aefc4578f4cae934101ae5ad74ff8.md) <a id="324aefc4578f4cae934101ae5ad74ff8"></a>
+            - [II.1.3.1.15.1.2 [Feature] Procedure Booking Ingestion](../../../../continuum/strategy/capability/feature/12e0f64cff2043339be17fb38708247a.md) <a id="12e0f64cff2043339be17fb38708247a"></a>
+        - [II.1.3.1.16 [CT2] Referral Administration](../../../../continuum/strategy/capability/ae0de25600ee416aa24d2a167b64f230.md) <a id="ae0de25600ee416aa24d2a167b64f230"></a>
+          - Historical predecessor: [R.2.68 [CT2] Referral Administration](#5b0ccf4b30054145952c298b348ed266); canonicalId: `5b0ccf4b30054145952c298b348ed266`
+          - [II.1.3.1.16.1 [CT3] Referral Intake & Progression](../../../../continuum/strategy/capability/d11bdb9464b2476894aa372ab9b929a7.md) <a id="d11bdb9464b2476894aa372ab9b929a7"></a>
+            - Historical predecessor: [R.2.67 [CT3] Referral Intake & Progression](#7180f6265d5c4687a001220c6126e301); canonicalId: `7180f6265d5c4687a001220c6126e301`
+            - [II.1.3.1.16.1.1 [Feature] Referral Destination Coordination](../../../../continuum/strategy/capability/feature/7d7ddffcda9d4854a02be5c3265ad775.md) <a id="7d7ddffcda9d4854a02be5c3265ad775"></a>
+            - [II.1.3.1.16.1.2 [Feature] Referral Document Ingestion](../../../../continuum/strategy/capability/feature/1d1c5f8e8ca1498fb68dba601a7079dc.md) <a id="1d1c5f8e8ca1498fb68dba601a7079dc"></a>
+            - [II.1.3.1.16.1.3 [Feature] Referral Status & Outcome Tracking](../../../../continuum/strategy/capability/feature/836fa704f7b24bfc8f7eeb72a36bb897.md) <a id="836fa704f7b24bfc8f7eeb72a36bb897"></a>
+            - [II.1.3.1.16.1.4 [Feature] Referral Supporting Information](../../../../continuum/strategy/capability/feature/c8a50c0e932847d7b7d0289101aacd98.md) <a id="c8a50c0e932847d7b7d0289101aacd98"></a>
+        - [II.1.3.1.17 [CT2] Scheduling Administration](../../../../continuum/strategy/capability/35fb3744c900470f9895056246a13fb1.md) <a id="35fb3744c900470f9895056246a13fb1"></a>
+          - Historical predecessor: [R.2.70 [CT2] Scheduling Administration](#1a6630940ffb44fcad4543b93a367b67); canonicalId: `1a6630940ffb44fcad4543b93a367b67`
+          - [II.1.3.1.17.1 [CT3] Appointment & Booking Administration](../../../../continuum/strategy/capability/7b3ba9bcac564dd4a7a08631581db2ca.md) <a id="7b3ba9bcac564dd4a7a08631581db2ca"></a>
+            - Historical predecessor: [R.2.69 [CT3] Appointment & Booking Administration](#cdc16dd0f84049f8af3f1ec76f1e1428); canonicalId: `cdc16dd0f84049f8af3f1ec76f1e1428`
+            - [II.1.3.1.17.1.1 [Feature] Appointment Notification Ingestion](../../../../continuum/strategy/capability/feature/1d5bc2b1742544728357fbea42a55ec4.md) <a id="1d5bc2b1742544728357fbea42a55ec4"></a>
+            - [II.1.3.1.17.1.2 [Feature] Appointment Status Synchronization](../../../../continuum/strategy/capability/feature/a7a9932600d84434a1a37005f726747d.md) <a id="a7a9932600d84434a1a37005f726747d"></a>
+      - [II.1.3.2 [CT1] Care Context Integration Enablement [superseded]](../../../../continuum/strategy/capability/a84a7e96e7874a4b87d18c53b1b5cf29.md) <a id="a84a7e96e7874a4b87d18c53b1b5cf29"></a>
+        - [II.1.3.2.1 [CT2] Facility & Episodic Care Integration [superseded]](../../../../continuum/strategy/capability/c1eb24ed7e36417cb426288ff57512c0.md) <a id="c1eb24ed7e36417cb426288ff57512c0"></a>
+        - [II.1.3.2.2 [CT2] Longitudinal & Community Care Integration [superseded]](../../../../continuum/strategy/capability/8430d50adc504ecc959f15b7cbbcd095.md) <a id="8430d50adc504ecc959f15b7cbbcd095"></a>
+        - [II.1.3.2.3 [CT2] Specialist Clinical Context Integration [superseded]](../../../../continuum/strategy/capability/062802a425d14530b0ce9434c5980d85.md) <a id="062802a425d14530b0ce9434c5980d85"></a>
+      - [II.1.3.3 [CT1] Clinical Service Dependency Management](../../../../continuum/strategy/capability/232db9b8b47c450cb0aa9acaf539c09d.md) <a id="232db9b8b47c450cb0aa9acaf539c09d"></a>
+        - Historical predecessor: [R.2.88 [CT1] Clinical Service Dependency Management](#984ee17123eb4f92b3e55e55d24459b8); canonicalId: `984ee17123eb4f92b3e55e55d24459b8`
+        - [II.1.3.3.1 [CT2] Acute Care](../../../../continuum/strategy/capability/9bb988c526404522b83aeed5069e0eb5.md) <a id="9bb988c526404522b83aeed5069e0eb5"></a>
+          - Historical predecessor: [R.2.72 [CT2] Acute Care](#7b591957f7424424abc80f699e9f1960); canonicalId: `7b591957f7424424abc80f699e9f1960`
+        - [II.1.3.3.2 [CT2] Allied Health](../../../../continuum/strategy/capability/63cd714a3e2a4354aa5383b189fea566.md) <a id="63cd714a3e2a4354aa5383b189fea566"></a>
+          - Historical predecessor: [R.2.73 [CT2] Allied Health](#6cd45c27d0c344b9807174dbd812d572); canonicalId: `6cd45c27d0c344b9807174dbd812d572`
+        - [II.1.3.3.3 [CT2] Ambulatory Care](../../../../continuum/strategy/capability/f74d7c3a39c540c4b462576e8f09fc58.md) <a id="f74d7c3a39c540c4b462576e8f09fc58"></a>
+          - Historical predecessor: [R.2.74 [CT2] Ambulatory Care](#e996b61b6e7b4619913f427aed2b55b1); canonicalId: `e996b61b6e7b4619913f427aed2b55b1`
+        - [II.1.3.3.4 [CT2] Clinical Assessment](../../../../continuum/strategy/capability/a7d84c95e48c453797419813ca80a66c.md) <a id="a7d84c95e48c453797419813ca80a66c"></a>
+          - Historical predecessor: [R.2.75 [CT2] Clinical Assessment](#1c3b553c87704e27ba211fbbd02d95cb); canonicalId: `1c3b553c87704e27ba211fbbd02d95cb`
+        - [II.1.3.3.5 [CT2] Community Care](../../../../continuum/strategy/capability/942aa78cad004ef99de6b3aae8ddd014.md) <a id="942aa78cad004ef99de6b3aae8ddd014"></a>
+          - Historical predecessor: [R.2.76 [CT2] Community Care](#4b7177f3f40449518fba381acae6ba1e); canonicalId: `4b7177f3f40449518fba381acae6ba1e`
+        - [II.1.3.3.6 [CT2] Diagnostic Services](../../../../continuum/strategy/capability/b825ebab42f444d8b738b4c1f489f785.md) <a id="b825ebab42f444d8b738b4c1f489f785"></a>
+          - Historical predecessor: [R.2.77 [CT2] Diagnostic Services](#03a57e0c9ea34f7fb7b78e5f5c85379f); canonicalId: `03a57e0c9ea34f7fb7b78e5f5c85379f`
+        - [II.1.3.3.7 [CT2] Emergency Care](../../../../continuum/strategy/capability/aa088f0647ad4b78966fe28fa80af674.md) <a id="aa088f0647ad4b78966fe28fa80af674"></a>
+          - Historical predecessor: [R.2.78 [CT2] Emergency Care](#e5edbb54258c490aaba0816d980dc624); canonicalId: `e5edbb54258c490aaba0816d980dc624`
+        - [II.1.3.3.8 [CT2] Inpatient Care](../../../../continuum/strategy/capability/b39fb49c01b545a5b51d3313531efb1b.md) <a id="b39fb49c01b545a5b51d3313531efb1b"></a>
+          - Historical predecessor: [R.2.79 [CT2] Inpatient Care](#bcc40a14465e48aca42c9505a6853081); canonicalId: `bcc40a14465e48aca42c9505a6853081`
+        - [II.1.3.3.9 [CT2] Medication Therapy](../../../../continuum/strategy/capability/bb04996164c94e0c827a020432f4e498.md) <a id="bb04996164c94e0c827a020432f4e498"></a>
+          - Historical predecessor: [R.2.80 [CT2] Medication Therapy](#db064e0cd4794479be1374e97a3d7e63); canonicalId: `db064e0cd4794479be1374e97a3d7e63`
+        - [II.1.3.3.10 [CT2] Outreach Care](../../../../continuum/strategy/capability/b9ddbe2dd6a7485ba9cd3482215ea09e.md) <a id="b9ddbe2dd6a7485ba9cd3482215ea09e"></a>
+          - Historical predecessor: [R.2.81 [CT2] Outreach Care](#75f8b32a3d5048ccbdfb30d61ae73dad); canonicalId: `75f8b32a3d5048ccbdfb30d61ae73dad`
+        - [II.1.3.3.11 [CT2] Preventive Care](../../../../continuum/strategy/capability/dfdc4f0273ba4910848b3b65c9ef6ab2.md) <a id="dfdc4f0273ba4910848b3b65c9ef6ab2"></a>
+          - Historical predecessor: [R.2.82 [CT2] Preventive Care](#97f0d1acc37b4ca994c6c1ca006f2daa); canonicalId: `97f0d1acc37b4ca994c6c1ca006f2daa`
+        - [II.1.3.3.12 [CT2] Primary Care](../../../../continuum/strategy/capability/d118673d77d74c8cb8cec24f03adddd8.md) <a id="d118673d77d74c8cb8cec24f03adddd8"></a>
+          - Historical predecessor: [R.2.83 [CT2] Primary Care](#fe9d58b5cfe14e8cb7a83a1ac6686d65); canonicalId: `fe9d58b5cfe14e8cb7a83a1ac6686d65`
+        - [II.1.3.3.13 [CT2] Rehabilitation](../../../../continuum/strategy/capability/99ed51abcc5e4e8ba3b3d0161b17544a.md) <a id="99ed51abcc5e4e8ba3b3d0161b17544a"></a>
+          - Historical predecessor: [R.2.84 [CT2] Rehabilitation](#28ec21d5918a49aaac12740c69f42d77); canonicalId: `28ec21d5918a49aaac12740c69f42d77`
+        - [II.1.3.3.14 [CT2] Remote & Virtual Care](../../../../continuum/strategy/capability/30dff22d40b64da29ede7c41673db085.md) <a id="30dff22d40b64da29ede7c41673db085"></a>
+          - Historical predecessor: [R.2.85 [CT2] Remote & Virtual Care](#75e2b447659c4fdf94107d94758337ed); canonicalId: `75e2b447659c4fdf94107d94758337ed`
+        - [II.1.3.3.15 [CT2] Surgical & Procedural Care](../../../../continuum/strategy/capability/c9a26d1aa1014545b9ae759b663c807b.md) <a id="c9a26d1aa1014545b9ae759b663c807b"></a>
+          - Historical predecessor: [R.2.86 [CT2] Surgical & Procedural Care](#8bc2a106165a4702b5f72fe46a206b69); canonicalId: `8bc2a106165a4702b5f72fe46a206b69`
+        - [II.1.3.3.16 [CT2] Therapeutic Services](../../../../continuum/strategy/capability/b512b6d326004cb7b91a627fe6dbd8be.md) <a id="b512b6d326004cb7b91a627fe6dbd8be"></a>
+          - Historical predecessor: [R.2.87 [CT2] Therapeutic Services](#54032b52ee444bfe8b611fb9e8e2ba10); canonicalId: `54032b52ee444bfe8b611fb9e8e2ba10`
+      - [II.1.3.4 [CT1] Entity Information Enablement](../../../../continuum/strategy/capability/b5a92874f8ac4509a30af5253590edc1.md) <a id="b5a92874f8ac4509a30af5253590edc1"></a>
+        - Historical predecessor: [R.2.114 [CT1] Entity Information Enablement](#e4d959d6c71d498c9ce00d2be4c048e3); canonicalId: `e4d959d6c71d498c9ce00d2be4c048e3`
+        - [II.1.3.4.1 [CT2] Client Administration](../../../../continuum/strategy/capability/f0885472cced4bccbcce1568bf0360dc.md) <a id="f0885472cced4bccbcce1568bf0360dc"></a>
+          - Historical predecessor: [R.2.93 [CT2] Client Administration](#70d2a44a0442441f8b306b82b297bb8a); canonicalId: `70d2a44a0442441f8b306b82b297bb8a`
+          - [II.1.3.4.1.1 [CT3] Client Privacy Guardrail Management](../../../../continuum/strategy/capability/7577a6e1815243648dd5356c21cca151.md) <a id="7577a6e1815243648dd5356c21cca151"></a>
+            - Historical predecessor: [R.2.89 [CT3] Client Privacy Guardrail Management](#d2e6078b5db041cb904e0cadcebce6eb); canonicalId: `d2e6078b5db041cb904e0cadcebce6eb`
+            - [II.1.3.4.1.1.1 [Feature] Confidentiality Flag Enforcement](../../../../continuum/strategy/capability/feature/1c18e7c2ccf640c9afc2525503b505a6.md) <a id="1c18e7c2ccf640c9afc2525503b505a6"></a>
+            - [II.1.3.4.1.1.2 [Feature] Consent Directive Evaluation](../../../../continuum/strategy/capability/feature/baf6dc6ef38a4256a9a67a65fd3f31ba.md) <a id="baf6dc6ef38a4256a9a67a65fd3f31ba"></a>
+          - [II.1.3.4.1.2 [CT3] Client Relationship Administration](../../../../continuum/strategy/capability/d682c11d3eb04770b1f20be478fd475e.md) <a id="d682c11d3eb04770b1f20be478fd475e"></a>
+            - Historical predecessor: [R.2.90 [CT3] Client Relationship Administration](#2c799ec0c4c74c97a75c12e949887b95); canonicalId: `2c799ec0c4c74c97a75c12e949887b95`
+            - [II.1.3.4.1.2.1 [Feature] Next-of-Kin & Guardian Association](../../../../continuum/strategy/capability/feature/05de74a8a7dc4334ba60543a228e73cb.md) <a id="05de74a8a7dc4334ba60543a228e73cb"></a>
+            - [II.1.3.4.1.2.2 [Feature] Relationship Validity Tracking](../../../../continuum/strategy/capability/feature/309603a8330545abb5db5f9889aa60d9.md) <a id="309603a8330545abb5db5f9889aa60d9"></a>
+          - [II.1.3.4.1.3 [CT3] Healthcare Subject Profile Administration](../../../../continuum/strategy/capability/df214b5499694b768eb4a7a175a9d471.md) <a id="df214b5499694b768eb4a7a175a9d471"></a>
+            - Historical predecessor: [R.2.91 [CT3] Healthcare Subject Profile Administration](#d653c3247ddd49479f985f6b435933a0); canonicalId: `d653c3247ddd49479f985f6b435933a0`
+            - [II.1.3.4.1.3.1 [Feature] Demographic Context Governance](../../../../continuum/strategy/capability/feature/3d0377451a1b44d0bb41404207cdd867.md) <a id="3d0377451a1b44d0bb41404207cdd867"></a>
+            - [II.1.3.4.1.3.2 [Feature] Subject Context Binding](../../../../continuum/strategy/capability/feature/5d956689bc714e2d8be4fff7766c0b2d.md) <a id="5d956689bc714e2d8be4fff7766c0b2d"></a>
+          - [II.1.3.4.1.4 [CT3] Person Identity Administration](../../../../continuum/strategy/capability/6c3de7750ef1436cad6a9533731782b6.md) <a id="6c3de7750ef1436cad6a9533731782b6"></a>
+            - Historical predecessor: [R.2.92 [CT3] Person Identity Administration](#7550fd5b17e643118fa76d2616e1ba20); canonicalId: `7550fd5b17e643118fa76d2616e1ba20`
+            - [II.1.3.4.1.4.1 [Feature] Cross-Authority Identifier Correlation](../../../../continuum/strategy/capability/feature/6d74d143c7454fa0bf30743ddf7ba094.md) <a id="6d74d143c7454fa0bf30743ddf7ba094"></a>
+            - [II.1.3.4.1.4.2 [Feature] Governed Identity Correction](../../../../continuum/strategy/capability/feature/f7ab7a24e8234129b2ab02e9abd4fba2.md) <a id="f7ab7a24e8234129b2ab02e9abd4fba2"></a>
+            - [II.1.3.4.1.4.3 [Feature] Identifier Capture](../../../../continuum/strategy/capability/feature/3cae3c4810974c5f8ee5a4c942f38b07.md) <a id="3cae3c4810974c5f8ee5a4c942f38b07"></a>
+            - [II.1.3.4.1.4.4 [Feature] Identifier Resolution](../../../../continuum/strategy/capability/feature/ae034169e1394ccdb3a2ce9651eaf305.md) <a id="ae034169e1394ccdb3a2ce9651eaf305"></a>
+            - [II.1.3.4.1.4.5 [Feature] Identity Alias Association](../../../../continuum/strategy/capability/feature/97721dbd017e4c2daa73e1e87a8499b9.md) <a id="97721dbd017e4c2daa73e1e87a8499b9"></a>
+            - [II.1.3.4.1.4.6 [Feature] Identity Source & Correction Lineage](../../../../continuum/strategy/capability/feature/d72134e75001449a9e7ffae53f61458f.md) <a id="d72134e75001449a9e7ffae53f61458f"></a>
+        - [II.1.3.4.2 [CT2] Clinical Device Administration](../../../../continuum/strategy/capability/31bcd6fda0d14cc8b992cdca39a3cbed.md) <a id="31bcd6fda0d14cc8b992cdca39a3cbed"></a>
+          - Historical predecessor: [R.2.98 [CT2] Clinical Device Administration](#3792be10541e4d68b3f740b1ba964966); canonicalId: `3792be10541e4d68b3f740b1ba964966`
+          - [II.1.3.4.2.1 [CT3] Clinical Device Profile Administration](../../../../continuum/strategy/capability/d0a1ba80c790476ea6042290eb7ea09e.md) <a id="d0a1ba80c790476ea6042290eb7ea09e"></a>
+            - Historical predecessor: [R.2.94 [CT3] Clinical Device Profile Administration](#e8c72952da144d6883caba7fd2afb88d); canonicalId: `e8c72952da144d6883caba7fd2afb88d`
+            - [II.1.3.4.2.1.1 [Feature] Device Serial Tracking](../../../../continuum/strategy/capability/feature/df3dae0cf3044059875dbb888ea6a9ba.md) <a id="df3dae0cf3044059875dbb888ea6a9ba"></a>
+            - [II.1.3.4.2.1.2 [Feature] Device Type Specification](../../../../continuum/strategy/capability/feature/ca6d91b03b56415790810846649a3dca.md) <a id="ca6d91b03b56415790810846649a3dca"></a>
+          - [II.1.3.4.2.2 [CT3] Device Association [superseded]](../../../../continuum/strategy/capability/902daf2ce9714876bbfee52eef1a7ab0.md) <a id="902daf2ce9714876bbfee52eef1a7ab0"></a>
+          - [II.1.3.4.2.3 [CT3] Device Connectivity [superseded]](../../../../continuum/strategy/capability/658d4b6770a943bcb5801fb7ca9b47be.md) <a id="658d4b6770a943bcb5801fb7ca9b47be"></a>
+          - [II.1.3.4.2.4 [CT3] Device Connectivity Compliance Management](../../../../continuum/strategy/capability/b16ab359030a4583868f3aac2221074e.md) <a id="b16ab359030a4583868f3aac2221074e"></a>
+            - Historical predecessor: [R.2.95 [CT3] Device Connectivity Compliance Management](#9225f083d3474715a75af2a827a4016d); canonicalId: `9225f083d3474715a75af2a827a4016d`
+          - [II.1.3.4.2.5 [CT3] Device Instance [superseded]](../../../../continuum/strategy/capability/dd860926038f41e082c56e38cbb5ab95.md) <a id="dd860926038f41e082c56e38cbb5ab95"></a>
+          - [II.1.3.4.2.6 [CT3] Device OA&M Metadata Management](../../../../continuum/strategy/capability/659bb194a7ef42ab9ba8a938adb5c179.md) <a id="659bb194a7ef42ab9ba8a938adb5c179"></a>
+            - Historical predecessor: [R.2.96 [CT3] Device OA&M Metadata Management](#a398c72bef094dee96c96d97994449fb); canonicalId: `a398c72bef094dee96c96d97994449fb`
+            - [II.1.3.4.2.6.1 [Feature] Device Endpoint Registration](../../../../continuum/strategy/capability/feature/d32c856559c54b41941fc51fbd019195.md) <a id="d32c856559c54b41941fc51fbd019195"></a>
+          - [II.1.3.4.2.7 [CT3] Device Utilisation Administration](../../../../continuum/strategy/capability/1a3732b5911c45b3aece38b2db2d0f15.md) <a id="1a3732b5911c45b3aece38b2db2d0f15"></a>
+            - Historical predecessor: [R.2.97 [CT3] Device Utilisation Administration](#a0af0a86667d48f4ab95ed2920e878cb); canonicalId: `a0af0a86667d48f4ab95ed2920e878cb`
+            - [II.1.3.4.2.7.1 [Feature] Device Association Lineage](../../../../continuum/strategy/capability/feature/849889c1a9e4495c86a6b32e49c449e3.md) <a id="849889c1a9e4495c86a6b32e49c449e3"></a>
+            - [II.1.3.4.2.7.2 [Feature] Device-Patient/Location Assignment](../../../../continuum/strategy/capability/feature/891ed75bdd3c490296e5f0b7cacf6c87.md) <a id="891ed75bdd3c490296e5f0b7cacf6c87"></a>
+            - [II.1.3.4.2.7.3 [Feature] Mobile Clinical Equipment Tracking](../../../../continuum/strategy/capability/feature/a013a8f41ce245f48aed8d9fe33615c5.md) <a id="a013a8f41ce245f48aed8d9fe33615c5"></a>
+        - [II.1.3.4.3 [CT2] Health Materiel Administration](../../../../continuum/strategy/capability/e7081070a9f8444f81c1d8fce37ef664.md) <a id="e7081070a9f8444f81c1d8fce37ef664"></a>
+          - Historical predecessor: [R.2.102 [CT2] Health Materiel Administration](#4952f86078c54a8d898ac992e6f4f577); canonicalId: `4952f86078c54a8d898ac992e6f4f577`
+          - [II.1.3.4.3.1 [CT3] Health Materiel Catalogue & Formulary Administration](../../../../continuum/strategy/capability/28b327760af94b8b986357469524d793.md) <a id="28b327760af94b8b986357469524d793"></a>
+            - Historical predecessor: [R.2.99 [CT3] Health Materiel Catalogue & Formulary Administration](#5c691959e2cc4a289fc25b9f3497eed9); canonicalId: `5c691959e2cc4a289fc25b9f3497eed9`
+          - [II.1.3.4.3.2 [CT3] Health Materiel Profile Administration](../../../../continuum/strategy/capability/9626edae517d40d2bfae619860f18e20.md) <a id="9626edae517d40d2bfae619860f18e20"></a>
+            - Historical predecessor: [R.2.100 [CT3] Health Materiel Profile Administration](#9216f9cc905e4526b1d98cd4ab382cbf); canonicalId: `9216f9cc905e4526b1d98cd4ab382cbf`
+          - [II.1.3.4.3.3 [CT3] Health Materiel Traceability Administration](../../../../continuum/strategy/capability/2d41ed0f00a94a4b90ffe87d6fd4e9fe.md) <a id="2d41ed0f00a94a4b90ffe87d6fd4e9fe"></a>
+            - Historical predecessor: [R.2.101 [CT3] Health Materiel Traceability Administration](#f1b888e8d50c4019ac1afe162d6223f3); canonicalId: `f1b888e8d50c4019ac1afe162d6223f3`
+        - [II.1.3.4.4 [CT2] Health Service Administration](../../../../continuum/strategy/capability/ba68a52913a0499d8377553bddfa74a4.md) <a id="ba68a52913a0499d8377553bddfa74a4"></a>
+          - Historical predecessor: [R.2.104 [CT2] Health Service Administration](#f1ab1258cf2944efb50105e7885f8027); canonicalId: `f1ab1258cf2944efb50105e7885f8027`
+          - [II.1.3.4.4.1 [CT3] Healthcare Service Profile Administration](../../../../continuum/strategy/capability/e75d5eb30936476ea7a9cbadfa43d5ef.md) <a id="e75d5eb30936476ea7a9cbadfa43d5ef"></a>
+            - Historical predecessor: [R.2.103 [CT3] Healthcare Service Profile Administration](#7780ca2fed2346439d5f559d00cc4ee4); canonicalId: `7780ca2fed2346439d5f559d00cc4ee4`
+            - [II.1.3.4.4.1.1 [Feature] Eligibility & Catchment Specification](../../../../continuum/strategy/capability/feature/c65feabade3d47c39e7d7af9bc16ebdc.md) <a id="c65feabade3d47c39e7d7af9bc16ebdc"></a>
+            - [II.1.3.4.4.1.2 [Feature] Operating Schedule Specification](../../../../continuum/strategy/capability/feature/4753953665d343c5a97bc4965be3f615.md) <a id="4753953665d343c5a97bc4965be3f615"></a>
+            - [II.1.3.4.4.1.3 [Feature] Service Catalogue Publishing](../../../../continuum/strategy/capability/feature/d397e670ae524f399e91176c64390fa7.md) <a id="d397e670ae524f399e91176c64390fa7"></a>
+            - [II.1.3.4.4.1.4 [Feature] Service-Location-Provider Binding](../../../../continuum/strategy/capability/feature/37188bb916244f41b1b7d988ad52a2eb.md) <a id="37188bb916244f41b1b7d988ad52a2eb"></a>
+          - [II.1.3.4.4.2 [CT3] Service Availability Definition [superseded]](../../../../continuum/strategy/capability/9e5329a42f964199b4b0a87ab1cacc2e.md) <a id="9e5329a42f964199b4b0a87ab1cacc2e"></a>
+          - [II.1.3.4.4.3 [CT3] Service Eligibility Definition [superseded]](../../../../continuum/strategy/capability/8a3f29e5948141e2a3d0c72539759daf.md) <a id="8a3f29e5948141e2a3d0c72539759daf"></a>
+          - [II.1.3.4.4.4 [CT3] Service Provision Relationship [superseded]](../../../../continuum/strategy/capability/718ebe1fa8d44ad9a6632a5932277a8e.md) <a id="718ebe1fa8d44ad9a6632a5932277a8e"></a>
+        - [II.1.3.4.5 [CT2] Location Administration](../../../../continuum/strategy/capability/c410005667444f99a221483bf577fad2.md) <a id="c410005667444f99a221483bf577fad2"></a>
+          - Historical predecessor: [R.2.107 [CT2] Location Administration](#d412aff3a5c64e6aaba910d4c2c9356d); canonicalId: `d412aff3a5c64e6aaba910d4c2c9356d`
+          - [II.1.3.4.5.1 [CT3] Care-Place Definition Administration](../../../../continuum/strategy/capability/629b493c7d9844baa25c029a87ed04f6.md) <a id="629b493c7d9844baa25c029a87ed04f6"></a>
+            - Historical predecessor: [R.2.105 [CT3] Care-Place Definition Administration](#a3464bd9c0dc4a01b50803acc7705b4e); canonicalId: `a3464bd9c0dc4a01b50803acc7705b4e`
+            - [II.1.3.4.5.1.1 [Feature] Atomic Care-Place Modeling](../../../../continuum/strategy/capability/feature/ddf34f0844114798a4bd84ee72bbe497.md) <a id="ddf34f0844114798a4bd84ee72bbe497"></a>
+          - [II.1.3.4.5.2 [CT3] Healthcare Location Profile Administration](../../../../continuum/strategy/capability/e579e54a08bb4f899a504aa998ba246b.md) <a id="e579e54a08bb4f899a504aa998ba246b"></a>
+            - Historical predecessor: [R.2.106 [CT3] Healthcare Location Profile Administration](#8a04d1f16d0849e786d2aaec33e0ba87); canonicalId: `8a04d1f16d0849e786d2aaec33e0ba87`
+            - [II.1.3.4.5.2.1 [Feature] Location Geospatial & Address Resolution](../../../../continuum/strategy/capability/feature/a27d1f97313f4ba5907c7cf7e2ec8858.md) <a id="a27d1f97313f4ba5907c7cf7e2ec8858"></a>
+            - [II.1.3.4.5.2.2 [Feature] Physical Hierarchy Modeling](../../../../continuum/strategy/capability/feature/6166149dbd7b431985063d92e78ecdb7.md) <a id="6166149dbd7b431985063d92e78ecdb7"></a>
+          - [II.1.3.4.5.3 [CT3] Location Structure [superseded]](../../../../continuum/strategy/capability/2436c87195334daf85ed4e2de4ec4bd5.md) <a id="2436c87195334daf85ed4e2de4ec4bd5"></a>
+        - [II.1.3.4.6 [CT2] Organisation Administration](../../../../continuum/strategy/capability/14fbdc5ce3dd4c2092c5397dab3ed743.md) <a id="14fbdc5ce3dd4c2092c5397dab3ed743"></a>
+          - Historical predecessor: [R.2.109 [CT2] Organisation Administration](#1b0eacfbb27d4631a24f9279dab6681d); canonicalId: `1b0eacfbb27d4631a24f9279dab6681d`
+          - [II.1.3.4.6.1 [CT3] Healthcare Organisation Profile Administration](../../../../continuum/strategy/capability/f2de9e9394b849f2943355c7a2882a15.md) <a id="f2de9e9394b849f2943355c7a2882a15"></a>
+            - Historical predecessor: [R.2.108 [CT3] Healthcare Organisation Profile Administration](#e485424b799c42aca7399d341ca02d0b); canonicalId: `e485424b799c42aca7399d341ca02d0b`
+            - [II.1.3.4.6.1.1 [Feature] Directory Contact Management](../../../../continuum/strategy/capability/feature/1cdac17b7547448daa20b74ed45ec366.md) <a id="1cdac17b7547448daa20b74ed45ec366"></a>
+            - [II.1.3.4.6.1.2 [Feature] Hierarchical Structure Navigation](../../../../continuum/strategy/capability/feature/7ded6f7865294fb2a696a58160d577f7.md) <a id="7ded6f7865294fb2a696a58160d577f7"></a>
+            - [II.1.3.4.6.1.3 [Feature] National Organisation Verification](../../../../continuum/strategy/capability/feature/0f17fe5439fe45dc8f4edbff3cca0776.md) <a id="0f17fe5439fe45dc8f4edbff3cca0776"></a>
+            - [II.1.3.4.6.1.4 [Feature] Organisation Profile Management](../../../../continuum/strategy/capability/feature/6a4c44cfb1414f3bae5ba0fce1e58970.md) <a id="6a4c44cfb1414f3bae5ba0fce1e58970"></a>
+          - [II.1.3.4.6.2 [CT3] Organisation Contact [superseded]](../../../../continuum/strategy/capability/b7f5108880eb429bb407c87a37b0e23f.md) <a id="b7f5108880eb429bb407c87a37b0e23f"></a>
+          - [II.1.3.4.6.3 [CT3] Organisational Structure [superseded]](../../../../continuum/strategy/capability/19d211cf601c49e5a65665330d0c5c3d.md) <a id="19d211cf601c49e5a65665330d0c5c3d"></a>
+        - [II.1.3.4.7 [CT2] Provider Administration](../../../../continuum/strategy/capability/d6312f85968a4209bafff5ed009297a6.md) <a id="d6312f85968a4209bafff5ed009297a6"></a>
+          - Historical predecessor: [R.2.113 [CT2] Provider Administration](#a352fd50419d451887c85fcb98566cd5); canonicalId: `a352fd50419d451887c85fcb98566cd5`
+          - [II.1.3.4.7.1 [CT3] Practitioner Profile Administration](../../../../continuum/strategy/capability/40759a835f7b456e9257c38b67b0a380.md) <a id="40759a835f7b456e9257c38b67b0a380"></a>
+            - Historical predecessor: [R.2.110 [CT3] Practitioner Profile Administration](#2415ddcbc73c47e1a63be310bd4342ee); canonicalId: `2415ddcbc73c47e1a63be310bd4342ee`
+            - [II.1.3.4.7.1.1 [Feature] National Practitioner Verification](../../../../continuum/strategy/capability/feature/12c5a17dcc564619a6a9222dd2e15528.md) <a id="12c5a17dcc564619a6a9222dd2e15528"></a>
+            - [II.1.3.4.7.1.2 [Feature] Practitioner Profile Governance](../../../../continuum/strategy/capability/feature/d23be319c6114c28bcb9e24e1258a0fc.md) <a id="d23be319c6114c28bcb9e24e1258a0fc"></a>
+            - [II.1.3.4.7.1.3 [Feature] Provider Directory Discovery & Resolution](../../../../continuum/strategy/capability/feature/cd3bd35f7f9e4852bbbce299bb795d8a.md) <a id="cd3bd35f7f9e4852bbbce299bb795d8a"></a>
+          - [II.1.3.4.7.2 [CT3] Practitioner Role Administration](../../../../continuum/strategy/capability/6651471e67ae46fb8d1c1241c8590be9.md) <a id="6651471e67ae46fb8d1c1241c8590be9"></a>
+            - Historical predecessor: [R.2.111 [CT3] Practitioner Role Administration](#6b777f1201db474eb22dd89f2b1f68c6); canonicalId: `6b777f1201db474eb22dd89f2b1f68c6`
+            - [II.1.3.4.7.2.1 [Feature] Electronic Endpoint Binding](../../../../continuum/strategy/capability/feature/5dc3a424e68d47aea64ec573dc4b1225.md) <a id="5dc3a424e68d47aea64ec573dc4b1225"></a>
+            - [II.1.3.4.7.2.2 [Feature] Practitioner-Organisation Affiliation](../../../../continuum/strategy/capability/feature/9501e88ea4b7474a8aa63191687db51e.md) <a id="9501e88ea4b7474a8aa63191687db51e"></a>
+            - [II.1.3.4.7.2.3 [Feature] Role & Specialty Modeling](../../../../continuum/strategy/capability/feature/ef859d4934514f4eb601c6abf9708760.md) <a id="ef859d4934514f4eb601c6abf9708760"></a>
+          - [II.1.3.4.7.3 [CT3] Provider Engagement [superseded]](../../../../continuum/strategy/capability/a0777dbd9b0c4528817e99a7f34aa444.md) <a id="a0777dbd9b0c4528817e99a7f34aa444"></a>
+          - [II.1.3.4.7.4 [CT3] Provider Relationship [superseded]](../../../../continuum/strategy/capability/3bb8a3d5b62a4b779442290fe8d5106c.md) <a id="3bb8a3d5b62a4b779442290fe8d5106c"></a>
+          - [II.1.3.4.7.5 [CT3] Vendor Liaison](../../../../continuum/strategy/capability/66358bd6698e4050b12342522fbbb923.md) <a id="66358bd6698e4050b12342522fbbb923"></a>
+            - Historical predecessor: [R.2.112 [CT3] Vendor Liaison](#29076cbb9fc5442fb25faf43947574f7); canonicalId: `29076cbb9fc5442fb25faf43947574f7`
+      - [II.1.3.5 [CT1] Health Informatics Management](../../../../continuum/strategy/capability/a790b5f2c5a1497fa6ec09d7824da32e.md) <a id="a790b5f2c5a1497fa6ec09d7824da32e"></a>
+        - Historical predecessor: [R.2.118 [CT1] Health Informatics Management](#50c56bac0dc540a2b392fc2376efc129); canonicalId: `50c56bac0dc540a2b392fc2376efc129`
+        - [II.1.3.5.1 [CT2] Population Health Information Reporting](../../../../continuum/strategy/capability/2135b45eab034370b0063b20e821985d.md) <a id="2135b45eab034370b0063b20e821985d"></a>
+          - Historical predecessor: [R.2.115 [CT2] Population Health Information Reporting](#ced472b2d1a54016878ee541de969d9b); canonicalId: `ced472b2d1a54016878ee541de969d9b`
+        - [II.1.3.5.2 [CT2] Research Information Curation](../../../../continuum/strategy/capability/4f5b8cec90324c2989cdc30e80bc8cb9.md) <a id="4f5b8cec90324c2989cdc30e80bc8cb9"></a>
+          - Historical predecessor: [R.2.116 [CT2] Research Information Curation](#11203b9c80964a9b96883eeab07f41d5); canonicalId: `11203b9c80964a9b96883eeab07f41d5`
+        - [II.1.3.5.3 [CT2] Service Planning Data Management](../../../../continuum/strategy/capability/4873cd4b960d45d8b93560d5c8b98500.md) <a id="4873cd4b960d45d8b93560d5c8b98500"></a>
+          - Historical predecessor: [R.2.117 [CT2] Service Planning Data Management](#19263e0802cc4b88af7a345f1410cffd); canonicalId: `19263e0802cc4b88af7a345f1410cffd`
+      - [II.1.3.6 [CT1] Health Service Operations Enablement](../../../../continuum/strategy/capability/b13ee2c5a4ef4fd6be8a44795696dfc2.md) <a id="b13ee2c5a4ef4fd6be8a44795696dfc2"></a>
+        - Historical predecessor: [R.2.160 [CT1] Health Service Operations Enablement](#a98424298dac46d8b2ddd109d928270a); canonicalId: `a98424298dac46d8b2ddd109d928270a`
+        - [II.1.3.6.1 [CT2] Bed & Care-Place Management](../../../../continuum/strategy/capability/f117ccec0bfa4f738e6ddb646b3534a2.md) <a id="f117ccec0bfa4f738e6ddb646b3534a2"></a>
+          - Historical predecessor: [R.2.121 [CT2] Bed & Care-Place Management](#c94d29b7d1c045dabc7814ceea795484); canonicalId: `c94d29b7d1c045dabc7814ceea795484`
+          - [II.1.3.6.1.1 [CT3] Bed & Care-Place State Administration](../../../../continuum/strategy/capability/26a9383d7bb146a19141558d232843de.md) <a id="26a9383d7bb146a19141558d232843de"></a>
+            - Historical predecessor: [R.2.119 [CT3] Bed & Care-Place State Administration](#dd2e2ee1a68845c087ba93610752181b); canonicalId: `dd2e2ee1a68845c087ba93610752181b`
+            - [II.1.3.6.1.1.1 [Feature] Bed Availability Tracking](../../../../continuum/strategy/capability/feature/7c61f21e558c44ab92c267a781116d1d.md) <a id="7c61f21e558c44ab92c267a781116d1d"></a>
+          - [II.1.3.6.1.2 [CT3] Bed & Care-Place Turnover Coordination](../../../../continuum/strategy/capability/3c9464f9eae1415d8fa041bd1f3da4f2.md) <a id="3c9464f9eae1415d8fa041bd1f3da4f2"></a>
+            - Historical predecessor: [R.2.120 [CT3] Bed & Care-Place Turnover Coordination](#a50662edda954bc58c44184d84591d5b); canonicalId: `a50662edda954bc58c44184d84591d5b`
+            - [II.1.3.6.1.2.1 [Feature] Bed Readiness Notification](../../../../continuum/strategy/capability/feature/6a9cf80d6f82425cb2aaae27f4c5c349.md) <a id="6a9cf80d6f82425cb2aaae27f4c5c349"></a>
+            - [II.1.3.6.1.2.2 [Feature] Bed State Progression](../../../../continuum/strategy/capability/feature/c903b83181bb456a89dc9d450063eff6.md) <a id="c903b83181bb456a89dc9d450063eff6"></a>
+        - [II.1.3.6.2 [CT2] Care Movement & Transition Coordination [superseded]](../../../../continuum/strategy/capability/59b9331fa3c04ef09bf963ad8a5d0d71.md) <a id="59b9331fa3c04ef09bf963ad8a5d0d71"></a>
+        - [II.1.3.6.3 [CT2] Care Resource & Capacity Coordination [superseded]](../../../../continuum/strategy/capability/96f71cb8fa6844d7aa7e9f16759a3a62.md) <a id="96f71cb8fa6844d7aa7e9f16759a3a62"></a>
+          - [II.1.3.6.3.1 [CT3] Clinical Resource Management [superseded]](../../../../continuum/strategy/capability/a5faedcd97064c28b9e7e551e9106ea1.md) <a id="a5faedcd97064c28b9e7e551e9106ea1"></a>
+          - [II.1.3.6.3.2 [CT3] Service Offering Readiness Coordination](../../../../continuum/strategy/capability/0caecaba5d3e4781b8671b12c13ee283.md) <a id="0caecaba5d3e4781b8671b12c13ee283"></a>
+            - [II.1.3.6.3.2.1 [Feature] Service Readiness Dependency Assessment](../../../../continuum/strategy/capability/feature/4d917929d5cf43218049a84cf46662b0.md) <a id="4d917929d5cf43218049a84cf46662b0"></a>
+        - [II.1.3.6.4 [CT2] Care Setting Operations Enablement [superseded]](../../../../continuum/strategy/capability/a03741e6e98642bea44680d23fdcb434.md) <a id="a03741e6e98642bea44680d23fdcb434"></a>
+        - [II.1.3.6.5 [CT2] Clinic & Practice Operations](../../../../continuum/strategy/capability/3dffe63e03124efab255204ee4e9a5d9.md) <a id="3dffe63e03124efab255204ee4e9a5d9"></a>
+          - Historical predecessor: [R.2.123 [CT2] Clinic & Practice Operations](#0856d2daf2ba4b92b5390b38b98efb54); canonicalId: `0856d2daf2ba4b92b5390b38b98efb54`
+          - [II.1.3.6.5.1 [CT3] Session & Queue Coordination](../../../../continuum/strategy/capability/22981a95ca6e466582363706fde8fceb.md) <a id="22981a95ca6e466582363706fde8fceb"></a>
+            - Historical predecessor: [R.2.122 [CT3] Session & Queue Coordination](#5298c6170cef4f05a6d956da716071bd); canonicalId: `5298c6170cef4f05a6d956da716071bd`
+            - [II.1.3.6.5.1.1 [Feature] Clinic Session Capacity Management](../../../../continuum/strategy/capability/feature/02bdd6a6f22e47f5a29d722ab57f9915.md) <a id="02bdd6a6f22e47f5a29d722ab57f9915"></a>
+            - [II.1.3.6.5.1.2 [Feature] Clinic Session Tracking](../../../../continuum/strategy/capability/feature/03e185a6e0d145c3975b3f4715c94207.md) <a id="03e185a6e0d145c3975b3f4715c94207"></a>
+            - [II.1.3.6.5.1.3 [Feature] Operational Queue Progression](../../../../continuum/strategy/capability/feature/5852c7d4c9ac4bbf99e7df008d0ed770.md) <a id="5852c7d4c9ac4bbf99e7df008d0ed770"></a>
+        - [II.1.3.6.6 [CT2] Clinical Competency Administration](../../../../continuum/strategy/capability/8a99f4a6e5054d6c997bacec04805c01.md) <a id="8a99f4a6e5054d6c997bacec04805c01"></a>
+          - Historical predecessor: [R.2.124 [CT2] Clinical Competency Administration](#8a4b918e1c9d47bb99daf2b42008ab39); canonicalId: `8a4b918e1c9d47bb99daf2b42008ab39`
+        - [II.1.3.6.7 [CT2] Clinical Logistics Coordination](../../../../continuum/strategy/capability/0c27be11b4a44cb19e992309b8146a17.md) <a id="0c27be11b4a44cb19e992309b8146a17"></a>
+          - Historical predecessor: [R.2.127 [CT2] Clinical Logistics Coordination](#90a782ff2d004fa984ae0465528b2253); canonicalId: `90a782ff2d004fa984ae0465528b2253`
+          - [II.1.3.6.7.1 [CT3] Specimen Metadata Management](../../../../continuum/strategy/capability/738736425b7446fdae47b06c91c4f69c.md) <a id="738736425b7446fdae47b06c91c4f69c"></a>
+            - Historical predecessor: [R.2.125 [CT3] Specimen Metadata Management](#3b000d3712534d16a48470f79df8e33a); canonicalId: `3b000d3712534d16a48470f79df8e33a`
+          - [II.1.3.6.7.2 [CT3] Specimen Movement Traceability](../../../../continuum/strategy/capability/bfa2e9a84ddd4287897573dc0d917a00.md) <a id="bfa2e9a84ddd4287897573dc0d917a00"></a>
+            - Historical predecessor: [R.2.126 [CT3] Specimen Movement Traceability](#129119d7b2744ffd805c58f25557fa27); canonicalId: `129119d7b2744ffd805c58f25557fa27`
+            - [II.1.3.6.7.2.1 [Feature] Pathology Specimen Transport Tracking](../../../../continuum/strategy/capability/feature/34f182cfc6b945d090a880943bbb4959.md) <a id="34f182cfc6b945d090a880943bbb4959"></a>
+        - [II.1.3.6.8 [CT2] Clinical Qualification Administration](../../../../continuum/strategy/capability/0511a705d74a4f48a0ce92590ae764fa.md) <a id="0511a705d74a4f48a0ce92590ae764fa"></a>
+          - Historical predecessor: [R.2.130 [CT2] Clinical Qualification Administration](#5fea7aaac4384245b1f08a3d8a076bd9); canonicalId: `5fea7aaac4384245b1f08a3d8a076bd9`
+          - [II.1.3.6.8.1 [CT3] Organisation Clinical Certification & Compliance Support](../../../../continuum/strategy/capability/4de624e7bf49472f91e3e5c734ee8725.md) <a id="4de624e7bf49472f91e3e5c734ee8725"></a>
+            - Historical predecessor: [R.2.128 [CT3] Organisation Clinical Certification & Compliance Support](#cee76a930a4e4e7d9c49357ba290c8bf); canonicalId: `cee76a930a4e4e7d9c49357ba290c8bf`
+          - [II.1.3.6.8.2 [CT3] Provider Clinical Qualification Tracking](../../../../continuum/strategy/capability/8fd5c78eba3046fa9153fb4efb44e9c8.md) <a id="8fd5c78eba3046fa9153fb4efb44e9c8"></a>
+            - Historical predecessor: [R.2.129 [CT3] Provider Clinical Qualification Tracking](#ab0415e2ea0a4da4ad3dc46997d48bc3); canonicalId: `ab0415e2ea0a4da4ad3dc46997d48bc3`
+            - [II.1.3.6.8.2.1 [Feature] Clinical Privileging Record](../../../../continuum/strategy/capability/feature/5073df3c6bb94c218ca19b74550b19fa.md) <a id="5073df3c6bb94c218ca19b74550b19fa"></a>
+            - [II.1.3.6.8.2.2 [Feature] Operational Credential Check](../../../../continuum/strategy/capability/feature/1a76831985fa461c891a3428e5dea86d.md) <a id="1a76831985fa461c891a3428e5dea86d"></a>
+        - [II.1.3.6.9 [CT2] Clinical Rostering](../../../../continuum/strategy/capability/192ca88a289544dcbf6adaf643f39969.md) <a id="192ca88a289544dcbf6adaf643f39969"></a>
+          - Historical predecessor: [R.2.132 [CT2] Clinical Rostering](#b6527516a69c499d8cc9c8fe881169fe); canonicalId: `b6527516a69c499d8cc9c8fe881169fe`
+          - [II.1.3.6.9.1 [CT3] Clinical Roster Capture & Communication](../../../../continuum/strategy/capability/8243cba81fb6449781d10823ae194237.md) <a id="8243cba81fb6449781d10823ae194237"></a>
+            - Historical predecessor: [R.2.131 [CT3] Clinical Roster Capture & Communication](#2054d57bb33a4361b3ef0824545a1784); canonicalId: `2054d57bb33a4361b3ef0824545a1784`
+        - [II.1.3.6.10 [CT2] Clinical Supervision](../../../../continuum/strategy/capability/f697b1ac79b544749315f31819b17969.md) <a id="f697b1ac79b544749315f31819b17969"></a>
+          - Historical predecessor: [R.2.134 [CT2] Clinical Supervision](#50c838981f3946d78e8f78d18e31c70c); canonicalId: `50c838981f3946d78e8f78d18e31c70c`
+          - [II.1.3.6.10.1 [CT3] Clinical Escalation Path Management](../../../../continuum/strategy/capability/cca86a32ba8c4dda84caeaa248e9f444.md) <a id="cca86a32ba8c4dda84caeaa248e9f444"></a>
+            - Historical predecessor: [R.2.133 [CT3] Clinical Escalation Path Management](#759a2e52172345e8ad1bc96d7e5ddad3); canonicalId: `759a2e52172345e8ad1bc96d7e5ddad3`
+        - [II.1.3.6.11 [CT2] Clinical Training & Education](../../../../continuum/strategy/capability/d016f35ffbc345d99d7281e968c14ddb.md) <a id="d016f35ffbc345d99d7281e968c14ddb"></a>
+          - Historical predecessor: [R.2.135 [CT2] Clinical Training & Education](#df8bff7df9c1469da16cac6a5eb2bf76); canonicalId: `df8bff7df9c1469da16cac6a5eb2bf76`
+        - [II.1.3.6.12 [CT2] Clinical Workforce Capability Monitoring](../../../../continuum/strategy/capability/367b3e5643f44fa785f093db8bb9a6e8.md) <a id="367b3e5643f44fa785f093db8bb9a6e8"></a>
+          - Historical predecessor: [R.2.136 [CT2] Clinical Workforce Capability Monitoring](#24c015676c254e2e82e8e4287c295179); canonicalId: `24c015676c254e2e82e8e4287c295179`
+        - [II.1.3.6.13 [CT2] Credential Management](../../../../continuum/strategy/capability/21eed4fc8c924496b16c6ddaa32f3d01.md) <a id="21eed4fc8c924496b16c6ddaa32f3d01"></a>
+          - Historical predecessor: [R.2.138 [CT2] Credential Management](#bab3d0ab6eb748978b962ea20fb31640); canonicalId: `bab3d0ab6eb748978b962ea20fb31640`
+          - [II.1.3.6.13.1 [CT3] Clinical Service Credential Definition Management](../../../../continuum/strategy/capability/2e5c97f51e7e48d1b865ac416dd8099d.md) <a id="2e5c97f51e7e48d1b865ac416dd8099d"></a>
+            - Historical predecessor: [R.2.137 [CT3] Clinical Service Credential Definition Management](#0115ed50867d468a95c0fafa1c5d79e2); canonicalId: `0115ed50867d468a95c0fafa1c5d79e2`
+        - [II.1.3.6.14 [CT2] Discharge Management](../../../../continuum/strategy/capability/ec5e8d6732764aa489c2dd7630fc8fef.md) <a id="ec5e8d6732764aa489c2dd7630fc8fef"></a>
+          - Historical predecessor: [R.2.140 [CT2] Discharge Management](#c57c0721ab0040ccb24e88e5e92e8cf8); canonicalId: `c57c0721ab0040ccb24e88e5e92e8cf8`
+          - [II.1.3.6.14.1 [CT3] Discharge Progression & Coordination](../../../../continuum/strategy/capability/d6048993146b45639bab27860f94f34f.md) <a id="d6048993146b45639bab27860f94f34f"></a>
+            - Historical predecessor: [R.2.139 [CT3] Discharge Progression & Coordination](#68344272ca6049648a3ddae20c150f37); canonicalId: `68344272ca6049648a3ddae20c150f37`
+            - [II.1.3.6.14.1.1 [Feature] Discharge Milestone Tracking](../../../../continuum/strategy/capability/feature/887eec1336934b13a3f21a8e3eb5f131.md) <a id="887eec1336934b13a3f21a8e3eb5f131"></a>
+            - [II.1.3.6.14.1.2 [Feature] Discharge Notification Dispatch](../../../../continuum/strategy/capability/feature/5476307ca5a34590aa7025ab59ca0c10.md) <a id="5476307ca5a34590aa7025ab59ca0c10"></a>
+            - [II.1.3.6.14.1.3 [Feature] Discharge Readiness & Coordination Oversight](../../../../continuum/strategy/capability/feature/5499422ed3644e0bbf7645f9ae3f20cb.md) <a id="5499422ed3644e0bbf7645f9ae3f20cb"></a>
+        - [II.1.3.6.15 [CT2] Emergency Department Operations](../../../../continuum/strategy/capability/24a4b5815faa4d369bc756a6e97d3e9e.md) <a id="24a4b5815faa4d369bc756a6e97d3e9e"></a>
+          - Historical predecessor: [R.2.142 [CT2] Emergency Department Operations](#8963b571e9cc40e49c5d738e31d2f97e); canonicalId: `8963b571e9cc40e49c5d738e31d2f97e`
+          - [II.1.3.6.15.1 [CT3] Emergency Care Progression](../../../../continuum/strategy/capability/7125e459a48946d0ba075b5ecc3571b4.md) <a id="7125e459a48946d0ba075b5ecc3571b4"></a>
+            - [II.1.3.6.15.1.1 [Feature] Emergency Care Cross-Facility Correlation](../../../../continuum/strategy/capability/feature/6140586e2b18424d845a1f07018e6b49.md) <a id="6140586e2b18424d845a1f07018e6b49"></a>
+            - [II.1.3.6.15.1.2 [Feature] Emergency Department Arrival & Triage Ingestion](../../../../continuum/strategy/capability/feature/1eb4053512164f6f976a9767da9ba7a7.md) <a id="1eb4053512164f6f976a9767da9ba7a7"></a>
+          - [II.1.3.6.15.2 [CT3] Emergency Department Operational Coordination](../../../../continuum/strategy/capability/8f0b0f3d9e8d44a7827b0835870b4a4f.md) <a id="8f0b0f3d9e8d44a7827b0835870b4a4f"></a>
+            - Historical predecessor: [R.2.141 [CT3] Emergency Department Operational Coordination](#15b6d2518e60444098b7c546ca31c49b); canonicalId: `15b6d2518e60444098b7c546ca31c49b`
+            - [II.1.3.6.15.2.1 [Feature] ED Bed & Bay Tracking](../../../../continuum/strategy/capability/feature/7c0251128fc942d88bf25141421fd909.md) <a id="7c0251128fc942d88bf25141421fd909"></a>
+            - [II.1.3.6.15.2.2 [Feature] ED Length of Stay Tracking](../../../../continuum/strategy/capability/feature/e544f3d76db84dfaad57880d13a873c4.md) <a id="e544f3d76db84dfaad57880d13a873c4"></a>
+            - [II.1.3.6.15.2.3 [Feature] Emergency Treatment Capacity Management](../../../../continuum/strategy/capability/feature/502876430cf747f4b3bb102fb69557a5.md) <a id="502876430cf747f4b3bb102fb69557a5"></a>
+        - [II.1.3.6.16 [CT2] Mobile Staff Management](../../../../continuum/strategy/capability/79a4a48fddf74c69acf7e16404d06ea5.md) <a id="79a4a48fddf74c69acf7e16404d06ea5"></a>
+          - Historical predecessor: [R.2.144 [CT2] Mobile Staff Management](#32118856636f400a95fc28daacea61c8); canonicalId: `32118856636f400a95fc28daacea61c8`
+          - [II.1.3.6.16.1 [CT3] Mobile Worker Dispatch & Safety Coordination](../../../../continuum/strategy/capability/d72164668dfe448bbebe74e9e1a75233.md) <a id="d72164668dfe448bbebe74e9e1a75233"></a>
+            - Historical predecessor: [R.2.143 [CT3] Mobile Worker Dispatch & Safety Coordination](#5aafd1f4bff046b2b532c20dfb191473); canonicalId: `5aafd1f4bff046b2b532c20dfb191473`
+            - [II.1.3.6.16.1.1 [Feature] Mobile Service Capacity Management](../../../../continuum/strategy/capability/feature/abdcb95b3725405f878f199b07779d19.md) <a id="abdcb95b3725405f878f199b07779d19"></a>
+            - [II.1.3.6.16.1.2 [Feature] Mobile Visit Status Tracking](../../../../continuum/strategy/capability/feature/3cd49cb00159437ea25048c1158172c1.md) <a id="3cd49cb00159437ea25048c1158172c1"></a>
+            - [II.1.3.6.16.1.3 [Feature] Mobile Worker Task Dispatch](../../../../continuum/strategy/capability/feature/426363f2f02a4625a4feab89a2adc755.md) <a id="426363f2f02a4625a4feab89a2adc755"></a>
+        - [II.1.3.6.17 [CT2] On-Call Management](../../../../continuum/strategy/capability/b16cef8f2bfd4b92948ec75cbcfa7b9a.md) <a id="b16cef8f2bfd4b92948ec75cbcfa7b9a"></a>
+          - Historical predecessor: [R.2.146 [CT2] On-Call Management](#c8e6e66e8718493c9093f37d129f9ff2); canonicalId: `c8e6e66e8718493c9093f37d129f9ff2`
+          - [II.1.3.6.17.1 [CT3] On-Call Availability & Contact Resolution](../../../../continuum/strategy/capability/677a816c42414ea694791b4ee5a14285.md) <a id="677a816c42414ea694791b4ee5a14285"></a>
+            - Historical predecessor: [R.2.145 [CT3] On-Call Availability & Contact Resolution](#a03075a46f75497f8c6ba95d9c9e27c4); canonicalId: `a03075a46f75497f8c6ba95d9c9e27c4`
+            - [II.1.3.6.17.1.1 [Feature] Active On-Call Provider Resolution](../../../../continuum/strategy/capability/feature/b588f3cc869d460a9561657352fb189a.md) <a id="b588f3cc869d460a9561657352fb189a"></a>
+        - [II.1.3.6.18 [CT2] Operational Workforce Coordination [superseded]](../../../../continuum/strategy/capability/66e72222f2064a23adbdb0311092918b.md) <a id="66e72222f2064a23adbdb0311092918b"></a>
+        - [II.1.3.6.19 [CT2] Outpatient Operations](../../../../continuum/strategy/capability/21399d52b9624ddfbeb786f1d72e40c3.md) <a id="21399d52b9624ddfbeb786f1d72e40c3"></a>
+          - Historical predecessor: [R.2.148 [CT2] Outpatient Operations](#3db41bc06ade4f9088eec7b8aedd7448); canonicalId: `3db41bc06ade4f9088eec7b8aedd7448`
+          - [II.1.3.6.19.1 [CT3] Outpatient Flow Coordination](../../../../continuum/strategy/capability/799ea278af014168b9b534e5fdadc6d1.md) <a id="799ea278af014168b9b534e5fdadc6d1"></a>
+            - Historical predecessor: [R.2.147 [CT3] Outpatient Flow Coordination](#e6c59c7b72fe44169a5fdfd08a5e91c4); canonicalId: `e6c59c7b72fe44169a5fdfd08a5e91c4`
+            - [II.1.3.6.19.1.1 [Feature] Outpatient Appointment Capacity Management](../../../../continuum/strategy/capability/feature/3c4f8b0fc23044cbbac32602e1272680.md) <a id="3c4f8b0fc23044cbbac32602e1272680"></a>
+            - [II.1.3.6.19.1.2 [Feature] Outpatient Arrival Registration](../../../../continuum/strategy/capability/feature/4ea71fb4950848cfb4f6d916190edad0.md) <a id="4ea71fb4950848cfb4f6d916190edad0"></a>
+            - [II.1.3.6.19.1.3 [Feature] Post-Clinic Order Coordination](../../../../continuum/strategy/capability/feature/439b3530b7c9443ab3e48d2cc50a3b0c.md) <a id="439b3530b7c9443ab3e48d2cc50a3b0c"></a>
+        - [II.1.3.6.20 [CT2] Patient Transport](../../../../continuum/strategy/capability/6041d7c0cc5d4519aaea584bb4e6d365.md) <a id="6041d7c0cc5d4519aaea584bb4e6d365"></a>
+          - Historical predecessor: [R.2.150 [CT2] Patient Transport](#e9c1a897884f4d758f5654b824364030); canonicalId: `e9c1a897884f4d758f5654b824364030`
+          - [II.1.3.6.20.1 [CT3] Patient Transfer Coordination](../../../../continuum/strategy/capability/c7c7aa8e34df4568ae4b91cdde380a11.md) <a id="c7c7aa8e34df4568ae4b91cdde380a11"></a>
+            - Historical predecessor: [R.2.149 [CT3] Patient Transfer Coordination](#b5a76d4877424b2ea9b01fb5fa22772c); canonicalId: `b5a76d4877424b2ea9b01fb5fa22772c`
+            - [II.1.3.6.20.1.1 [Feature] Transport Dispatch & Progress Tracking](../../../../continuum/strategy/capability/feature/d8ef9994298f466bafce919c5e6cb701.md) <a id="d8ef9994298f466bafce919c5e6cb701"></a>
+            - [II.1.3.6.20.1.2 [Feature] Transport Request Ingestion](../../../../continuum/strategy/capability/feature/7104472d065840eb91ae4cb7a3a0cb43.md) <a id="7104472d065840eb91ae4cb7a3a0cb43"></a>
+        - [II.1.3.6.21 [CT2] Service Capacity Management](../../../../continuum/strategy/capability/d86105bf9c86445394088f65c895d37f.md) <a id="d86105bf9c86445394088f65c895d37f"></a>
+          - Historical predecessor: [R.2.152 [CT2] Service Capacity Management](#ac205f374c9d41c3b6d18a6b7c356152); canonicalId: `ac205f374c9d41c3b6d18a6b7c356152`
+          - [II.1.3.6.21.1 [CT3] Service Demand & Capacity Coordination](../../../../continuum/strategy/capability/93b5548ce8d04fcd999b97536c1eebf9.md) <a id="93b5548ce8d04fcd999b97536c1eebf9"></a>
+            - Historical predecessor: [R.2.151 [CT3] Service Demand & Capacity Coordination](#b57081e650f74ad488549fdaa5305bcb); canonicalId: `b57081e650f74ad488549fdaa5305bcb`
+            - [II.1.3.6.21.1.1 [Feature] Operational Capacity Metric Aggregation](../../../../continuum/strategy/capability/feature/1fe9199a49744eeaa5d063d7a84544ea.md) <a id="1fe9199a49744eeaa5d063d7a84544ea"></a>
+        - [II.1.3.6.22 [CT2] Service Establishment Support](../../../../continuum/strategy/capability/20e67a41e7f44398b0f0cf3d379d8b9c.md) <a id="20e67a41e7f44398b0f0cf3d379d8b9c"></a>
+          - Historical predecessor: [R.2.153 [CT2] Service Establishment Support](#8a63b08f34fa42c5bda2a3e12b9ecd55); canonicalId: `8a63b08f34fa42c5bda2a3e12b9ecd55`
+        - [II.1.3.6.23 [CT2] Theatre Operations](../../../../continuum/strategy/capability/4bf7a8260e1444fdac44e97c3557b533.md) <a id="4bf7a8260e1444fdac44e97c3557b533"></a>
+          - Historical predecessor: [R.2.155 [CT2] Theatre Operations](#9ac72fea821c45e2b18632ae9a9867dd); canonicalId: `9ac72fea821c45e2b18632ae9a9867dd`
+          - [II.1.3.6.23.1 [CT3] Perioperative Logistics Coordination](../../../../continuum/strategy/capability/6b7c08b60b5b48519bfe4b6f993dd6fb.md) <a id="6b7c08b60b5b48519bfe4b6f993dd6fb"></a>
+            - Historical predecessor: [R.2.154 [CT3] Perioperative Logistics Coordination](#e7813a06b9df462fa135c299261f192e); canonicalId: `e7813a06b9df462fa135c299261f192e`
+            - [II.1.3.6.23.1.1 [Feature] Operating Theatre Case Progression](../../../../continuum/strategy/capability/feature/2fd65f09f7384f0486280e56ec5a9e84.md) <a id="2fd65f09f7384f0486280e56ec5a9e84"></a>
+            - [II.1.3.6.23.1.2 [Feature] Perioperative Resource Notification](../../../../continuum/strategy/capability/feature/1f2446ccc59348a6bc54d8268ef4e6e1.md) <a id="1f2446ccc59348a6bc54d8268ef4e6e1"></a>
+            - [II.1.3.6.23.1.3 [Feature] Theatre Session Capacity Management](../../../../continuum/strategy/capability/feature/258c27077caf4bf88e562e8dd607bdfd.md) <a id="258c27077caf4bf88e562e8dd607bdfd"></a>
+        - [II.1.3.6.24 [CT2] Ward Operations](../../../../continuum/strategy/capability/f996ecca728f4942a88b034aca818a99.md) <a id="f996ecca728f4942a88b034aca818a99"></a>
+          - Historical predecessor: [R.2.157 [CT2] Ward Operations](#bf3d2e3581f24beda20a6a3a3348460e); canonicalId: `bf3d2e3581f24beda20a6a3a3348460e`
+          - [II.1.3.6.24.1 [CT3] Multidisciplinary Inpatient Care Coordination](../../../../continuum/strategy/capability/c798e38e12e5428dbb8b3cabc977d430.md) <a id="c798e38e12e5428dbb8b3cabc977d430"></a>
+            - [II.1.3.6.24.1.1 [Feature] Inpatient Clinical Progression Tracking](../../../../continuum/strategy/capability/feature/863265027ecb432595b9c6d45adf1190.md) <a id="863265027ecb432595b9c6d45adf1190"></a>
+            - [II.1.3.6.24.1.2 [Feature] Inpatient Rounding Context Provision](../../../../continuum/strategy/capability/feature/c0dfa2ef22354340a4f1488790359bbd.md) <a id="c0dfa2ef22354340a4f1488790359bbd"></a>
+          - [II.1.3.6.24.2 [CT3] Ward Logistics Coordination](../../../../continuum/strategy/capability/3249647f7b9846c899f982ab339c81f9.md) <a id="3249647f7b9846c899f982ab339c81f9"></a>
+            - Historical predecessor: [R.2.156 [CT3] Ward Logistics Coordination](#8a9dcc3b5f0143458ec71bc188a56020); canonicalId: `8a9dcc3b5f0143458ec71bc188a56020`
+            - [II.1.3.6.24.2.1 [Feature] Clinical Handover Context Assembly](../../../../continuum/strategy/capability/feature/f8c748aa08444723b784887174831d51.md) <a id="f8c748aa08444723b784887174831d51"></a>
+            - [II.1.3.6.24.2.2 [Feature] Ward Care Capacity Management](../../../../continuum/strategy/capability/feature/0d45b0afc0584afba4bd0414f5f10e37.md) <a id="0d45b0afc0584afba4bd0414f5f10e37"></a>
+            - [II.1.3.6.24.2.3 [Feature] Ward Patient Flow Coordination](../../../../continuum/strategy/capability/feature/011d8c6481264ff58b7866a2c74a235b.md) <a id="011d8c6481264ff58b7866a2c74a235b"></a>
+        - [II.1.3.6.25 [CT2] Work Allocation & Dispatch](../../../../continuum/strategy/capability/152a5252952c405994e9b171234efcb0.md) <a id="152a5252952c405994e9b171234efcb0"></a>
+          - Historical predecessor: [R.2.159 [CT2] Work Allocation & Dispatch](#f8c13b6f74b840cc96fbeada5865455a); canonicalId: `f8c13b6f74b840cc96fbeada5865455a`
+          - [II.1.3.6.25.1 [CT3] Operational Work Assignment & Dispatch Coordination](../../../../continuum/strategy/capability/3b58935cfa974176989c3c75d76a00fe.md) <a id="3b58935cfa974176989c3c75d76a00fe"></a>
+            - Historical predecessor: [R.2.158 [CT3] Operational Work Assignment & Dispatch Coordination](#b42afda9e876463ba56fa8f73fe7a32a); canonicalId: `b42afda9e876463ba56fa8f73fe7a32a`
+            - [II.1.3.6.25.1.1 [Feature] Work Dispatch Delivery](../../../../continuum/strategy/capability/feature/095826f788b64784af38af31bbe77105.md) <a id="095826f788b64784af38af31bbe77105"></a>
+            - [II.1.3.6.25.1.2 [Feature] Work Item Instantiation](../../../../continuum/strategy/capability/feature/321fa656c71f4019842b5b991dbc9ff4.md) <a id="321fa656c71f4019842b5b991dbc9ff4"></a>
+            - [II.1.3.6.25.1.3 [Feature] Work Progress Oversight & Escalation](../../../../continuum/strategy/capability/feature/abc12faeffd24917aad6748b0f0ca8d7.md) <a id="abc12faeffd24917aad6748b0f0ca8d7"></a>
+            - [II.1.3.6.25.1.4 [Feature] Worker Matching & Allocation](../../../../continuum/strategy/capability/feature/caac8a83dc974cdb9c9bc1b778b9cee7.md) <a id="caac8a83dc974cdb9c9bc1b778b9cee7"></a>
+        - [II.1.3.6.26 [CT2] Workforce Qualification & Development Enablement [superseded]](../../../../continuum/strategy/capability/d24a1f4c4f674c45a95c317998ff4186.md) <a id="d24a1f4c4f674c45a95c317998ff4186"></a>
+          - [II.1.3.6.26.1 [CT3] Credential Management](../../../../continuum/strategy/capability/3a7a4d2d0ce8446b8a6293284fb16b83.md) <a id="3a7a4d2d0ce8446b8a6293284fb16b83"></a>
+      - [II.1.3.7 [CT1] Human Collaboration & Work Enablement [superseded]](../../../../continuum/strategy/capability/c9347f73b21242c5b8cce41252b74da0.md) <a id="c9347f73b21242c5b8cce41252b74da0"></a>
+        - [II.1.3.7.1 [CT2] Collaborative Interaction Enablement [superseded]](../../../../continuum/strategy/capability/6140b21c874241d092708e2411caceed.md) <a id="6140b21c874241d092708e2411caceed"></a>
+        - [II.1.3.7.2 [CT2] Operational Activity & Temporal Enablement [superseded]](../../../../continuum/strategy/capability/ca96b2b2ff434854995711e403e95f6f.md) <a id="ca96b2b2ff434854995711e403e95f6f"></a>
+          - [II.1.3.7.2.1 [CT3] Entity-Specific Operational Coordination](../../../../continuum/strategy/capability/9f0c1429b64f4f88982fbbda6eaec233.md) <a id="9f0c1429b64f4f88982fbbda6eaec233"></a>
+            - [II.1.3.7.2.1.1 [Feature] Entity Behaviour Failure & Recovery Governance](../../../../continuum/strategy/capability/feature/bdfaeebab74e4d4d96a5e3799a3aa07b.md) <a id="bdfaeebab74e4d4d96a5e3799a3aa07b"></a>
+            - [II.1.3.7.2.1.2 [Feature] Entity-Relative Activity Coordination](../../../../continuum/strategy/capability/feature/b9960d7de097464ea6de94929ca48c89.md) <a id="b9960d7de097464ea6de94929ca48c89"></a>
+          - [II.1.3.7.2.2 [CT3] Governed Operational Activity Design](../../../../continuum/strategy/capability/3a96040821c14fe38830411dab4f8453.md) <a id="3a96040821c14fe38830411dab4f8453"></a>
+            - [II.1.3.7.2.2.1 [Feature] Activity Outcome & Continuation Rules](../../../../continuum/strategy/capability/feature/34c8309244c142ec8772dcbb11ecc4ef.md) <a id="34c8309244c142ec8772dcbb11ecc4ef"></a>
+            - [II.1.3.7.2.2.2 [Feature] Operational Activity Context Definition](../../../../continuum/strategy/capability/feature/58dcd59389664b7d83d14b536d7d03d0.md) <a id="58dcd59389664b7d83d14b536d7d03d0"></a>
+          - [II.1.3.7.2.3 [CT3] Workflow & Activity Coordination](../../../../continuum/strategy/capability/94c683c7588f475e973b58cb226345db.md) <a id="94c683c7588f475e973b58cb226345db"></a>
+            - [II.1.3.7.2.3.1 [Feature] Controlled Administrative Recovery](../../../../continuum/strategy/capability/feature/21d0601a852043a4b0b1d4fe841108d2.md) <a id="21d0601a852043a4b0b1d4fe841108d2"></a>
+            - [II.1.3.7.2.3.2 [Feature] Synthetic Task Orchestration](../../../../continuum/strategy/capability/feature/7cf9dd3aeeb84a83b2445f897db9bd4e.md) <a id="7cf9dd3aeeb84a83b2445f897db9bd4e"></a>
+            - [II.1.3.7.2.3.3 [Feature] To Do Decision & Approval Coordination](../../../../continuum/strategy/capability/feature/377a40e8f2d64840a10dd55f87a9d005.md) <a id="377a40e8f2d64840a10dd55f87a9d005"></a>
+            - [II.1.3.7.2.3.4 [Feature] Uncertain Activity Outcome Reconciliation](../../../../continuum/strategy/capability/feature/eb06ecc956404d0397701ceafb5fbd46.md) <a id="eb06ecc956404d0397701ceafb5fbd46"></a>
+            - [II.1.3.7.2.3.5 [Feature] Work Order Progression](../../../../continuum/strategy/capability/feature/5ca494e85869419c867618fd9648d03a.md) <a id="5ca494e85869419c867618fd9648d03a"></a>
+            - [II.1.3.7.2.3.6 [Feature] Workflow Timeout & Escalation Oversight](../../../../continuum/strategy/capability/feature/ec55d06e393e4988a84c6157b719bd40.md) <a id="ec55d06e393e4988a84c6157b719bd40"></a>
+      - [II.1.3.8 [CT1] Independent Assurance Enablement](../../../../continuum/strategy/capability/616682b612d244429e656b040e002d56.md) <a id="616682b612d244429e656b040e002d56"></a>
+        - Historical predecessor: [R.2.166 [CT1] Independent Assurance Enablement](#88bf57b7a92c4c1da1b5f0a67d3ebd82); canonicalId: `88bf57b7a92c4c1da1b5f0a67d3ebd82`
+        - [II.1.3.8.1 [CT2] Assurance Service Review](../../../../continuum/strategy/capability/b1a791458d644d4794895e4fa42ec83c.md) <a id="b1a791458d644d4794895e4fa42ec83c"></a>
+          - Historical predecessor: [R.2.162 [CT2] Assurance Service Review](#b345cb12b45746409302899514126170); canonicalId: `b345cb12b45746409302899514126170`
+          - [II.1.3.8.1.1 [CT3] Assurance Service Evaluation](../../../../continuum/strategy/capability/039343518db542d48cde6afab84a3e1e.md) <a id="039343518db542d48cde6afab84a3e1e"></a>
+            - Historical predecessor: [R.2.161 [CT3] Assurance Service Evaluation](#be34b54314c6444f8418d645f6c83b6d); canonicalId: `be34b54314c6444f8418d645f6c83b6d`
+        - [II.1.3.8.2 [CT2] Assurance Specification](../../../../continuum/strategy/capability/b81775d89d774cf8ba61731d13c67a54.md) <a id="b81775d89d774cf8ba61731d13c67a54"></a>
+          - Historical predecessor: [R.2.165 [CT2] Assurance Specification](#8006ee0dd95f4d7fb1f408fa09b6ce19); canonicalId: `8006ee0dd95f4d7fb1f408fa09b6ce19`
+          - [II.1.3.8.2.1 [CT3] Assurance Criteria Administration](../../../../continuum/strategy/capability/1bfd71f24321428c8871b587d413f47e.md) <a id="1bfd71f24321428c8871b587d413f47e"></a>
+            - Historical predecessor: [R.2.163 [CT3] Assurance Criteria Administration](#6dab08ab1e3249d7b314843ca9ed0149); canonicalId: `6dab08ab1e3249d7b314843ca9ed0149`
+            - [II.1.3.8.2.1.1 [Feature] Temporal Assurance Criteria Stewardship](../../../../continuum/strategy/capability/feature/e345a4b1eef846a7b77568f519e2c75c.md) <a id="e345a4b1eef846a7b77568f519e2c75c"></a>
+          - [II.1.3.8.2.2 [CT3] Assurance Design](../../../../continuum/strategy/capability/71c8a612b88f4ecba049e94d506bd0c2.md) <a id="71c8a612b88f4ecba049e94d506bd0c2"></a>
+            - Historical predecessor: [R.2.164 [CT3] Assurance Design](#e1b8db7c95fa4e7ea296351a03532e24); canonicalId: `e1b8db7c95fa4e7ea296351a03532e24`
+            - [II.1.3.8.2.2.1 [Feature] Assurance Disposition & Design Modelling](../../../../continuum/strategy/capability/feature/c36180ebffe44b8db587a00e78b4b358.md) <a id="c36180ebffe44b8db587a00e78b4b358"></a>
+        - [II.1.3.8.3 [CT2] Independent Assurance Evaluation Enablement](../../../../continuum/strategy/capability/7fa5112efb724b90a17a03c7c19c516a.md) <a id="7fa5112efb724b90a17a03c7c19c516a"></a>
+          - [II.1.3.8.3.1 [CT3] Governed Assurance](../../../../continuum/strategy/capability/da1a983d4dcf4d5bb772b8f69bc08426.md) <a id="da1a983d4dcf4d5bb772b8f69bc08426"></a>
+            - [II.1.3.8.3.1.1 [Feature] Independent Evidence Assessment & Adjudication](../../../../continuum/strategy/capability/feature/3aedee8f78484b81955866bcf16b8a6d.md) <a id="3aedee8f78484b81955866bcf16b8a6d"></a>
+      - [II.1.3.9 [CT1] Shared Information & Coordination Enablement](../../../../continuum/strategy/capability/0062fcacae1740988b6be2bda2aa1674.md) <a id="0062fcacae1740988b6be2bda2aa1674"></a>
+        - Historical predecessor: [R.2.214 [CT1] Shared Information & Coordination Enablement](#eeabb9c3c526404cbe4302906560fa7e); canonicalId: `eeabb9c3c526404cbe4302906560fa7e`
+        - [II.1.3.9.1 [CT2] Calendar Management](../../../../continuum/strategy/capability/7669036f7e6749219412fc64df5f7064.md) <a id="7669036f7e6749219412fc64df5f7064"></a>
+          - Historical predecessor: [R.2.168 [CT2] Calendar Management](#8b42aac6083441caa78b59f5e62eebd9); canonicalId: `8b42aac6083441caa78b59f5e62eebd9`
+          - [II.1.3.9.1.1 [CT3] Operational & Clinical Calendar Coordination](../../../../continuum/strategy/capability/f6d8f1310ba543f69e8b57bf05603db3.md) <a id="f6d8f1310ba543f69e8b57bf05603db3"></a>
+            - Historical predecessor: [R.2.167 [CT3] Operational & Clinical Calendar Coordination](#c0f6e5f7f5a94d1580fa6e0e8b82c93a); canonicalId: `c0f6e5f7f5a94d1580fa6e0e8b82c93a`
+            - [II.1.3.9.1.1.1 [Feature] Schedule Projection Integration](../../../../continuum/strategy/capability/feature/883a68ab282b462988d5ae7a6ea2e980.md) <a id="883a68ab282b462988d5ae7a6ea2e980"></a>
+            - [II.1.3.9.1.1.2 [Feature] Temporal Event Correlation](../../../../continuum/strategy/capability/feature/05e1c23baf1c47fbac8457f991efa2be.md) <a id="05e1c23baf1c47fbac8457f991efa2be"></a>
+        - [II.1.3.9.2 [CT2] Clinical Collaboration](../../../../continuum/strategy/capability/e6429225463a44d39f82e490e254e5d4.md) <a id="e6429225463a44d39f82e490e254e5d4"></a>
+          - Historical predecessor: [R.2.170 [CT2] Clinical Collaboration](#c5adc1955b6046d8b920b0176cebc9de); canonicalId: `c5adc1955b6046d8b920b0176cebc9de`
+          - [II.1.3.9.2.1 [CT3] Clinical Context Collaboration](../../../../continuum/strategy/capability/f11617eed6ff4d6fa237644ec95b28b2.md) <a id="f11617eed6ff4d6fa237644ec95b28b2"></a>
+            - Historical predecessor: [R.2.169 [CT3] Clinical Context Collaboration](#750ef0d8e1504a8e9a1fde9bf13a6d0c); canonicalId: `750ef0d8e1504a8e9a1fde9bf13a6d0c`
+            - [II.1.3.9.2.1.1 [Feature] Care-Team Clinical Collaboration Coordination](../../../../continuum/strategy/capability/feature/b0860d6b68f34b8cb2f93b25cdf2aa97.md) <a id="b0860d6b68f34b8cb2f93b25cdf2aa97"></a>
+            - [II.1.3.9.2.1.2 [Feature] Collaboration Interaction Capture Qualification](../../../../continuum/strategy/capability/feature/8e2a760f15bd454c8aba1526ee69740c.md) <a id="8e2a760f15bd454c8aba1526ee69740c"></a>
+            - [II.1.3.9.2.1.3 [Feature] In-Conversation LHR Query Resolution](../../../../continuum/strategy/capability/feature/d4437b477aab42c79b5f45150c5d7f3f.md) <a id="d4437b477aab42c79b5f45150c5d7f3f"></a>
+            - [II.1.3.9.2.1.4 [Feature] Zero-PHI Collaboration Metadata Governance](../../../../continuum/strategy/capability/feature/87e9246c944a40d9af5c4d0a3a7d4e9a.md) <a id="87e9246c944a40d9af5c4d0a3a7d4e9a"></a>
+        - [II.1.3.9.3 [CT2] Clinical Information Stewardship Enablement [superseded]](../../../../continuum/strategy/capability/3811c758ff2140c39a801bf89f75098a.md) <a id="3811c758ff2140c39a801bf89f75098a"></a>
+          - [II.1.3.9.3.1 [CT3] Information Authority Representation](../../../../continuum/strategy/capability/8c850faafb334f97a81a0b4cd8fdb65f.md) <a id="8c850faafb334f97a81a0b4cd8fdb65f"></a>
+            - [II.1.3.9.3.1.1 [Feature] Information Authority & Source Standing Representation](../../../../continuum/strategy/capability/feature/70a444156cd246cb97608a782e4bdea8.md) <a id="70a444156cd246cb97608a782e4bdea8"></a>
+        - [II.1.3.9.4 [CT2] Clinical Knowledge Services](../../../../continuum/strategy/capability/bbd2bd21859f40e39963bdbe7a851686.md) <a id="bbd2bd21859f40e39963bdbe7a851686"></a>
+          - Historical predecessor: [R.2.174 [CT2] Clinical Knowledge Services](#5b8478b08c3f42c0a3480edb8f0b9ea7); canonicalId: `5b8478b08c3f42c0a3480edb8f0b9ea7`
+          - [II.1.3.9.4.1 [CT3] Clinical Knowledge Artefact Distribution Management](../../../../continuum/strategy/capability/cd29a9eb798949bc8bc81bb5d434cabf.md) <a id="cd29a9eb798949bc8bc81bb5d434cabf"></a>
+            - Historical predecessor: [R.2.171 [CT3] Clinical Knowledge Artefact Distribution Management](#d81e0d6d76014066a682e3d9e03e5f8a); canonicalId: `d81e0d6d76014066a682e3d9e03e5f8a`
+          - [II.1.3.9.4.2 [CT3] Clinical Knowledge Request Administration](../../../../continuum/strategy/capability/543c53483a2249d78044c6635b7b7c48.md) <a id="543c53483a2249d78044c6635b7b7c48"></a>
+            - Historical predecessor: [R.2.172 [CT3] Clinical Knowledge Request Administration](#eb370c01fbdb4d22956d97e9ecd74b57); canonicalId: `eb370c01fbdb4d22956d97e9ecd74b57`
+            - [II.1.3.9.4.2.1 [Feature] Bidirectional Terminology Mapping](../../../../continuum/strategy/capability/feature/6134dc91af8d45e8b81cc28d18a5251f.md) <a id="6134dc91af8d45e8b81cc28d18a5251f"></a>
+            - [II.1.3.9.4.2.2 [Feature] Clinical Concept Resolution](../../../../continuum/strategy/capability/feature/30cdb9b2a810467c9b56e9870de4367e.md) <a id="30cdb9b2a810467c9b56e9870de4367e"></a>
+          - [II.1.3.9.4.3 [CT3] Governed Reference Dataset Administration](../../../../continuum/strategy/capability/682b8684ad9e49d5a5c348a148081607.md) <a id="682b8684ad9e49d5a5c348a148081607"></a>
+            - Historical predecessor: [R.2.173 [CT3] Governed Reference Dataset Administration](#15d972931ed6447797c30a5ddb71737e); canonicalId: `15d972931ed6447797c30a5ddb71737e`
+            - [II.1.3.9.4.3.1 [Feature] Governed Dataset Content Revision](../../../../continuum/strategy/capability/feature/89123c868b8a46c38800916110cd918d.md) <a id="89123c868b8a46c38800916110cd918d"></a>
+        - [II.1.3.9.5 [CT2] General Collaboration](../../../../continuum/strategy/capability/3bb740e6db284112b054905c0c6c80be.md) <a id="3bb740e6db284112b054905c0c6c80be"></a>
+          - Historical predecessor: [R.2.176 [CT2] General Collaboration](#4f58c82aca7a4b54aeb6e2920ce5c12a); canonicalId: `4f58c82aca7a4b54aeb6e2920ce5c12a`
+          - [II.1.3.9.5.1 [CT3] Operational Collaboration](../../../../continuum/strategy/capability/631fdb8b47084008ac9b5de28b26972b.md) <a id="631fdb8b47084008ac9b5de28b26972b"></a>
+            - Historical predecessor: [R.2.175 [CT3] Operational Collaboration](#99e9d9763ec94140b7d7642f4b5966f6); canonicalId: `99e9d9763ec94140b7d7642f4b5966f6`
+            - [II.1.3.9.5.1.1 [Feature] Operational Team Chat Enablement](../../../../continuum/strategy/capability/feature/367a390e7a464003beba189428c5faca.md) <a id="367a390e7a464003beba189428c5faca"></a>
+        - [II.1.3.9.6 [CT2] Health Information Access](../../../../continuum/strategy/capability/cc253aea3c5f489da0502df74dde1669.md) <a id="cc253aea3c5f489da0502df74dde1669"></a>
+          - Historical predecessor: [R.2.178 [CT2] Health Information Access](#5019ae9f2cdc45a1b2de97bc0f5a313d); canonicalId: `5019ae9f2cdc45a1b2de97bc0f5a313d`
+          - [II.1.3.9.6.1 [CT3] Governed Health Information Retrieval](../../../../continuum/strategy/capability/76e74e46ca4d44a1a7bb116b358f231c.md) <a id="76e74e46ca4d44a1a7bb116b358f231c"></a>
+            - Historical predecessor: [R.2.177 [CT3] Governed Health Information Retrieval](#90b838d703dd472b8b6d74961f3a748c); canonicalId: `90b838d703dd472b8b6d74961f3a748c`
+            - [II.1.3.9.6.1.1 [Feature] Access-Controlled Information Filtering](../../../../continuum/strategy/capability/feature/a9f1d2100faa44beb69add62bb4f4b3f.md) <a id="a9f1d2100faa44beb69add62bb4f4b3f"></a>
+            - [II.1.3.9.6.1.2 [Feature] Federated Clinical Query](../../../../continuum/strategy/capability/feature/cfcc4d64af434418a567ccf46d8052dd.md) <a id="cfcc4d64af434418a567ccf46d8052dd"></a>
+        - [II.1.3.9.7 [CT2] Health Information Communication](../../../../continuum/strategy/capability/7925605bf60f4b288e826020409a09d9.md) <a id="7925605bf60f4b288e826020409a09d9"></a>
+          - Historical predecessor: [R.2.183 [CT2] Health Information Communication](#bcefb378424842fcb6d703208c3f8773); canonicalId: `bcefb378424842fcb6d703208c3f8773`
+          - [II.1.3.9.7.1 [CT3] Patient Health Library Access](../../../../continuum/strategy/capability/808e5a3c3f6b496fa329962088f0bee0.md) <a id="808e5a3c3f6b496fa329962088f0bee0"></a>
+            - Historical predecessor: [R.2.179 [CT3] Patient Health Library Access](#b132224cfa6f435f8f2a66a3878d6df6); canonicalId: `b132224cfa6f435f8f2a66a3878d6df6`
+          - [II.1.3.9.7.2 [CT3] Patient Notification Services](../../../../continuum/strategy/capability/9d172cd511b742499c4e7c23f6630a35.md) <a id="9d172cd511b742499c4e7c23f6630a35"></a>
+            - Historical predecessor: [R.2.180 [CT3] Patient Notification Services](#35c5be472bf2433fbbde9646d87aefb3); canonicalId: `35c5be472bf2433fbbde9646d87aefb3`
+          - [II.1.3.9.7.3 [CT3] Patient Self-Service](../../../../continuum/strategy/capability/d4956cab8b2b46c396899949c9486a1c.md) <a id="d4956cab8b2b46c396899949c9486a1c"></a>
+            - Historical predecessor: [R.2.181 [CT3] Patient Self-Service](#60f427e6b5764757b909624085a2af89); canonicalId: `60f427e6b5764757b909624085a2af89`
+          - [II.1.3.9.7.4 [CT3] Patient Task Communication Services](../../../../continuum/strategy/capability/ba8ce1d54ace4bc9aa3521dd954f36cb.md) <a id="ba8ce1d54ace4bc9aa3521dd954f36cb"></a>
+            - Historical predecessor: [R.2.182 [CT3] Patient Task Communication Services](#0914f2bb267449e282e9ae0f7407d9fe); canonicalId: `0914f2bb267449e282e9ae0f7407d9fe`
+        - [II.1.3.9.8 [CT2] Health Information Connectivity Enablement [superseded]](../../../../continuum/strategy/capability/6a1030483dfc4ae6af6998b587129d1c.md) <a id="6a1030483dfc4ae6af6998b587129d1c"></a>
+          - [II.1.3.9.8.1 [CT3] Health Information Communication](../../../../continuum/strategy/capability/9794b2aff43443b495a19aefe0efa67b.md) <a id="9794b2aff43443b495a19aefe0efa67b"></a>
+            - [II.1.3.9.8.1.1 [Feature] Standards-Based Boundary Exchange](../../../../continuum/strategy/capability/feature/3192ba1541ff41458d176184119c30bc.md) <a id="3192ba1541ff41458d176184119c30bc"></a>
+        - [II.1.3.9.9 [CT2] Health Information Control](../../../../continuum/strategy/capability/44cc0e17ad534675bf26dce6e46a68ff.md) <a id="44cc0e17ad534675bf26dce6e46a68ff"></a>
+          - Historical predecessor: [R.2.187 [CT2] Health Information Control](#a3196aef21d443519de874c24f64a185); canonicalId: `a3196aef21d443519de874c24f64a185`
+          - [II.1.3.9.9.1 [CT3] Patient Health Information Disclosure Management](../../../../continuum/strategy/capability/7f918639e23842e78fa92f1bf47c5a7b.md) <a id="7f918639e23842e78fa92f1bf47c5a7b"></a>
+            - Historical predecessor: [R.2.184 [CT3] Patient Health Information Disclosure Management](#07cf507f183d4905a7ad2adbb8555df5); canonicalId: `07cf507f183d4905a7ad2adbb8555df5`
+          - [II.1.3.9.9.2 [CT3] Patient Health Information Filter Management](../../../../continuum/strategy/capability/62f673613c76494eba972cad3e4e8d0b.md) <a id="62f673613c76494eba972cad3e4e8d0b"></a>
+            - Historical predecessor: [R.2.185 [CT3] Patient Health Information Filter Management](#589f192797454d9e8960fb63774e5e9c); canonicalId: `589f192797454d9e8960fb63774e5e9c`
+          - [II.1.3.9.9.3 [CT3] Patient Health Information Restriction Management](../../../../continuum/strategy/capability/262366990bda4ac4ace5429269cf6a98.md) <a id="262366990bda4ac4ace5429269cf6a98"></a>
+            - Historical predecessor: [R.2.186 [CT3] Patient Health Information Restriction Management](#5ad91d045474435a96b560e66ff7de05); canonicalId: `5ad91d045474435a96b560e66ff7de05`
+            - [II.1.3.9.9.3.1 [Feature] Health Information Access & Consent Control](../../../../continuum/strategy/capability/feature/e2643fa59303401abb1b778f3295e536.md) <a id="e2643fa59303401abb1b778f3295e536"></a>
+          - [II.1.3.9.9.4 [Feature] Governed Policy Assignment & Revocation](../../../../continuum/strategy/capability/feature/d6c271ae95ea44449c5e22665d1d9bc2.md) <a id="d6c271ae95ea44449c5e22665d1d9bc2"></a>
+          - [II.1.3.9.9.5 [Feature] Non-PHI Compliance Auditing](../../../../continuum/strategy/capability/feature/08e37326908a49988dfb787f68df840a.md) <a id="08e37326908a49988dfb787f68df840a"></a>
+          - [II.1.3.9.9.6 [Feature] Operation-Bound Authorisation Enforcement](../../../../continuum/strategy/capability/feature/3b7dcee7d58d4d1c960dc92abd58b4c3.md) <a id="3b7dcee7d58d4d1c960dc92abd58b4c3"></a>
+          - [II.1.3.9.9.7 [Feature] Security Context Propagation](../../../../continuum/strategy/capability/feature/2b071c4fb10c4f61afecd18d09387214.md) <a id="2b071c4fb10c4f61afecd18d09387214"></a>
+          - [II.1.3.9.9.8 [Feature] Trusted Identity Context Intake](../../../../continuum/strategy/capability/feature/2ef8f67907c34cb5a6a37fe7181434e2.md) <a id="2ef8f67907c34cb5a6a37fe7181434e2"></a>
+        - [II.1.3.9.10 [CT2] Health Information Exchange Enablement](../../../../continuum/strategy/capability/a61a15908ed544e6acf3e9cab63a0267.md) <a id="a61a15908ed544e6acf3e9cab63a0267"></a>
+          - Historical predecessor: [R.2.191 [CT2] Health Information Exchange](#330d1c43856a4322a2e9f331b1a5ed20); canonicalId: `330d1c43856a4322a2e9f331b1a5ed20`
+          - [II.1.3.9.10.1 [CT3] HIE Endpoint State Management](../../../../continuum/strategy/capability/1bec951a1c98450b8d4672c5c424f9bd.md) <a id="1bec951a1c98450b8d4672c5c424f9bd"></a>
+            - Historical predecessor: [R.2.188 [CT3] HIE Endpoint State Management](#697de08ac49a4b7f8df7a1ed6f04210e); canonicalId: `697de08ac49a4b7f8df7a1ed6f04210e`
+          - [II.1.3.9.10.2 [CT3] HIE Implementation Management](../../../../continuum/strategy/capability/8ce29be373e04252b7aa881b6a72f375.md) <a id="8ce29be373e04252b7aa881b6a72f375"></a>
+            - Historical predecessor: [R.2.189 [CT3] HIE Implementation Management](#a99b4119339545a89dc54ebb216ddb85); canonicalId: `a99b4119339545a89dc54ebb216ddb85`
+            - [II.1.3.9.10.2.1 [Feature] Addressed Clinical Distribution](../../../../continuum/strategy/capability/feature/b476c86edab644c394da33d3de7bd0bd.md) <a id="b476c86edab644c394da33d3de7bd0bd"></a>
+            - [II.1.3.9.10.2.2 [Feature] Clinical Record Retrieval Mediation](../../../../continuum/strategy/capability/feature/6f4a9c8f7916488bb0dd838ccccb1df4.md) <a id="6f4a9c8f7916488bb0dd838ccccb1df4"></a>
+            - [II.1.3.9.10.2.3 [Feature] Direct Submission Ingestion & Delivery](../../../../continuum/strategy/capability/feature/e8bfad88315c4833b6772ef580ca55a5.md) <a id="e8bfad88315c4833b6772ef580ca55a5"></a>
+            - [II.1.3.9.10.2.4 [Feature] Event-Driven Syndication](../../../../continuum/strategy/capability/feature/30bb720ed4e64a47a1fcf3be811c1931.md) <a id="30bb720ed4e64a47a1fcf3be811c1931"></a>
+          - [II.1.3.9.10.3 [CT3] HIE Requirement Management](../../../../continuum/strategy/capability/1c852a1799984feba50011172983c865.md) <a id="1c852a1799984feba50011172983c865"></a>
+            - Historical predecessor: [R.2.190 [CT3] HIE Requirement Management](#a32c8bff0c284f5c9d6ab1f46991c232); canonicalId: `a32c8bff0c284f5c9d6ab1f46991c232`
+        - [II.1.3.9.11 [CT2] Information Asset Stewardship Management](../../../../continuum/strategy/capability/5bac15316d8d4f4db6e7a253f1acfbe3.md) <a id="5bac15316d8d4f4db6e7a253f1acfbe3"></a>
+          - Historical predecessor: [R.2.194 [CT2] Information Asset Stewardship Management](#cee085c690314802851de71f4741d8db); canonicalId: `cee085c690314802851de71f4741d8db`
+          - [II.1.3.9.11.1 [CT3] Information Asset Definition](../../../../continuum/strategy/capability/05c58b2ccfcc45e9a6c70d9a569c4f61.md) <a id="05c58b2ccfcc45e9a6c70d9a569c4f61"></a>
+            - Historical predecessor: [R.2.192 [CT3] Information Asset Definition](#166a22463d2c4534bda7ae31273398b6); canonicalId: `166a22463d2c4534bda7ae31273398b6`
+          - [II.1.3.9.11.2 [CT3] Information Asset Tag Management](../../../../continuum/strategy/capability/df27c3ba6e164e56af7bff4e1eb1954a.md) <a id="df27c3ba6e164e56af7bff4e1eb1954a"></a>
+            - Historical predecessor: [R.2.193 [CT3] Information Asset Tag Management](#ae44a4ee78414d1098814315793bd751); canonicalId: `ae44a4ee78414d1098814315793bd751`
+        - [II.1.3.9.12 [CT2] Information Content Maintainer Management](../../../../continuum/strategy/capability/b81a1ab42af24c2e9896b8f3f78d291a.md) <a id="b81a1ab42af24c2e9896b8f3f78d291a"></a>
+          - Historical predecessor: [R.2.198 [CT2] Information Content Maintainer Management](#acb977e879204f1491293e5452e0ddf0); canonicalId: `acb977e879204f1491293e5452e0ddf0`
+          - [II.1.3.9.12.1 [CT3] Data Provenance Capture](../../../../continuum/strategy/capability/44a7937520a54945b06b5fd4a2bbd870.md) <a id="44a7937520a54945b06b5fd4a2bbd870"></a>
+            - Historical predecessor: [R.2.195 [CT3] Data Provenance Capture](#61258c7fe41f4541871a67ec9d7185cf); canonicalId: `61258c7fe41f4541871a67ec9d7185cf`
+            - [II.1.3.9.12.1.1 [Feature] Information Transformation Lineage](../../../../continuum/strategy/capability/feature/cc47f49b85a34e87bafc49de7f0426e2.md) <a id="cc47f49b85a34e87bafc49de7f0426e2"></a>
+          - [II.1.3.9.12.2 [CT3] Data Scientist Administration](../../../../continuum/strategy/capability/3bb1a11fba234717bf40c9e6452f401a.md) <a id="3bb1a11fba234717bf40c9e6452f401a"></a>
+            - Historical predecessor: [R.2.196 [CT3] Data Scientist Administration](#1cb497aec93c4b82ba7f5b622813e54e); canonicalId: `1cb497aec93c4b82ba7f5b622813e54e`
+          - [II.1.3.9.12.3 [CT3] Information Product Administration](../../../../continuum/strategy/capability/b5a6a31855834ea58870ebb6c51ed4b0.md) <a id="b5a6a31855834ea58870ebb6c51ed4b0"></a>
+            - Historical predecessor: [R.2.197 [CT3] Information Product Administration](#5d9b7f8d2d7b41759b6d4931c1d2aaa2); canonicalId: `5d9b7f8d2d7b41759b6d4931c1d2aaa2`
+            - [II.1.3.9.12.3.1 [Feature] Authorised Research Release Assembly](../../../../continuum/strategy/capability/feature/dcebc2f2b5b7494a8e80a02402664078.md) <a id="dcebc2f2b5b7494a8e80a02402664078"></a>
+            - [II.1.3.9.12.3.2 [Feature] Demand & Capacity Planning Projection](../../../../continuum/strategy/capability/feature/4f97baa3aed24b8385bf3ecda4eab622.md) <a id="4f97baa3aed24b8385bf3ecda4eab622"></a>
+            - [II.1.3.9.12.3.3 [Feature] Population Notification Obligation Tracking](../../../../continuum/strategy/capability/feature/62f6a91a10684876b7d08b536700f12f.md) <a id="62f6a91a10684876b7d08b536700f12f"></a>
+        - [II.1.3.9.13 [CT2] Information Design Governance](../../../../continuum/strategy/capability/f39ed9ebcc724857a4bf7a2b8e045c7a.md) <a id="f39ed9ebcc724857a4bf7a2b8e045c7a"></a>
+          - Historical predecessor: [R.2.203 [CT2] Information Design Governance](#0bdd7f8c0cd74d9fabc49801af037fc2); canonicalId: `0bdd7f8c0cd74d9fabc49801af037fc2`
+          - [II.1.3.9.13.1 [CT3] Enterprise Canonical/Reusable Model Design](../../../../continuum/strategy/capability/90e9cd401ddf4c7690c978d8dd131413.md) <a id="90e9cd401ddf4c7690c978d8dd131413"></a>
+            - Historical predecessor: [R.2.199 [CT3] Enterprise Canonical/Reusable Model Design](#dbc37445ad944a85a7c4f26f410967b2); canonicalId: `dbc37445ad944a85a7c4f26f410967b2`
+            - [II.1.3.9.13.1.1 [Feature] Exchange Profile Governance](../../../../continuum/strategy/capability/feature/5e59d8f2e23e4fb5b59a5bd1dd3f31fa.md) <a id="5e59d8f2e23e4fb5b59a5bd1dd3f31fa"></a>
+            - [II.1.3.9.13.1.2 [Feature] Information Definition & Schema Governance](../../../../continuum/strategy/capability/feature/3317bbb7e2db4384abf44a50bf67422c.md) <a id="3317bbb7e2db4384abf44a50bf67422c"></a>
+            - [II.1.3.9.13.1.3 [Feature] Information Standards & Semantic Governance](../../../../continuum/strategy/capability/feature/af5d5249302f47ebb393c91afcc60392.md) <a id="af5d5249302f47ebb393c91afcc60392"></a>
+            - [II.1.3.9.13.1.4 [Feature] Terminology Binding Governance](../../../../continuum/strategy/capability/feature/b999df692ca64010b4adeedbcb0d3a5a.md) <a id="b999df692ca64010b4adeedbcb0d3a5a"></a>
+          - [II.1.3.9.13.2 [CT3] Enterprise Canonical/Reusable Model Library Management](../../../../continuum/strategy/capability/76943b4b68644c4dac1368fce8bb20d9.md) <a id="76943b4b68644c4dac1368fce8bb20d9"></a>
+            - Historical predecessor: [R.2.200 [CT3] Enterprise Canonical/Reusable Model Library Management](#f5eccd4f65df49bba98104e5abfa5e19); canonicalId: `f5eccd4f65df49bba98104e5abfa5e19`
+          - [II.1.3.9.13.3 [CT3] Enterprise Canonical/Reusable Model Utilisation Support](../../../../continuum/strategy/capability/5744cb9d86494064af87afb3cbf2cf97.md) <a id="5744cb9d86494064af87afb3cbf2cf97"></a>
+            - Historical predecessor: [R.2.201 [CT3] Enterprise Canonical/Reusable Model Utilisation Support](#7ae95677a00346f18a0ba01522a20153); canonicalId: `7ae95677a00346f18a0ba01522a20153`
+            - [II.1.3.9.13.3.1 [Feature] Semantic Conformance Verification](../../../../continuum/strategy/capability/feature/d170a68efcae4aa59350f565ca69443a.md) <a id="d170a68efcae4aa59350f565ca69443a"></a>
+          - [II.1.3.9.13.4 [CT3] Enterprise Reference Data Stewardship](../../../../continuum/strategy/capability/971d4b079ad24e89b70a8ed8dec0c8bf.md) <a id="971d4b079ad24e89b70a8ed8dec0c8bf"></a>
+            - Historical predecessor: [R.2.202 [CT3] Enterprise Reference Data Stewardship](#fd9f3239fdb64ea687825b66bb4d1f17); canonicalId: `fd9f3239fdb64ea687825b66bb4d1f17`
+        - [II.1.3.9.14 [CT2] Information Protection & Accountability Enablement [superseded]](../../../../continuum/strategy/capability/e922cba7cf1d4ebeb9abf6472a3803ce.md) <a id="e922cba7cf1d4ebeb9abf6472a3803ce"></a>
+          - [II.1.3.9.14.1 [CT3] Governance Requirement Publication Support](../../../../continuum/strategy/capability/7e780751d50e4ffe942f8443b7cb6567.md) <a id="7e780751d50e4ffe942f8443b7cb6567"></a>
+            - [II.1.3.9.14.1.1 [Feature] Governance Requirement Version Publication](../../../../continuum/strategy/capability/feature/001a067a4b3b46bebfe945f1bef541ce.md) <a id="001a067a4b3b46bebfe945f1bef541ce"></a>
+          - [II.1.3.9.14.2 [CT3] Significant Activity Audit Capture](../../../../continuum/strategy/capability/d903948169eb4785b0f03d916c842a8a.md) <a id="d903948169eb4785b0f03d916c842a8a"></a>
+            - [II.1.3.9.14.2.1 [Feature] Mandatory Significant Activity Audit Capture](../../../../continuum/strategy/capability/feature/b69936757c4446a7a1b57a455aae7a5f.md) <a id="b69936757c4446a7a1b57a455aae7a5f"></a>
+        - [II.1.3.9.15 [CT2] Patient Clinical Record](../../../../continuum/strategy/capability/5478878e0e6e4d34a8d5023ac6ac2d54.md) <a id="5478878e0e6e4d34a8d5023ac6ac2d54"></a>
+          - Historical predecessor: [R.2.206 [CT2] Patient Clinical Record](#2e4de521bda24ad7b0ea64ae535b7f84); canonicalId: `2e4de521bda24ad7b0ea64ae535b7f84`
+          - [II.1.3.9.15.1 [CT3] Linked Information Curation](../../../../continuum/strategy/capability/5edb2a8b5ee54ddda8104d1fab323a94.md) <a id="5edb2a8b5ee54ddda8104d1fab323a94"></a>
+            - Historical predecessor: [R.2.204 [CT3] Linked Information Curation](#9d0925bb39664a5985cacf3cea7442d1); canonicalId: `9d0925bb39664a5985cacf3cea7442d1`
+            - [II.1.3.9.15.1.1 [Feature] Binary Content Resolution & Assembly](../../../../continuum/strategy/capability/feature/8fb4036f7a9c47c3883b2507528fab5e.md) <a id="8fb4036f7a9c47c3883b2507528fab5e"></a>
+          - [II.1.3.9.15.2 [CT3] Longitudinal Clinical Record Administration](../../../../continuum/strategy/capability/14748dc6117f4b6ba7c0fc554b76bd89.md) <a id="14748dc6117f4b6ba7c0fc554b76bd89"></a>
+            - Historical predecessor: [R.2.205 [CT3] Longitudinal Clinical Record Administration](#bd91d848cf424c42bec7c80cd32edd28); canonicalId: `bd91d848cf424c42bec7c80cd32edd28`
+            - [II.1.3.9.15.2.1 [Feature] Active Clinical Record Access](../../../../continuum/strategy/capability/feature/76b35ecac42b4781bfd7911c9931f5f1.md) <a id="76b35ecac42b4781bfd7911c9931f5f1"></a>
+            - [II.1.3.9.15.2.2 [Feature] Clinical Information Historical Reconstruction](../../../../continuum/strategy/capability/feature/838728ef4fd04b4da0c28dc4fce0cfe9.md) <a id="838728ef4fd04b4da0c28dc4fce0cfe9"></a>
+            - [II.1.3.9.15.2.3 [Feature] Durable Clinical Record Preservation](../../../../continuum/strategy/capability/feature/aba48dbf729d477aa87e112725dc1511.md) <a id="aba48dbf729d477aa87e112725dc1511"></a>
+            - [II.1.3.9.15.2.4 [Feature] Longitudinal Health Record (LHR) Assembly](../../../../continuum/strategy/capability/feature/c9c1c7a58cb5470db0141329ecc349f4.md) <a id="c9c1c7a58cb5470db0141329ecc349f4"></a>
+          - [II.1.3.9.15.3 [CT3] Primary Care Coordination](../../../../continuum/strategy/capability/f80e73ee91624ce5baa11ae15480fd35.md) <a id="f80e73ee91624ce5baa11ae15480fd35"></a>
+            - [II.1.3.9.15.3.1 [Feature] General Practice Shared Record Ingestion](../../../../continuum/strategy/capability/feature/869b77462ece488788c5a20598e7d587.md) <a id="869b77462ece488788c5a20598e7d587"></a>
+            - [II.1.3.9.15.3.2 [Feature] Primary Care Notification Dispatch](../../../../continuum/strategy/capability/feature/56739765fcfd4084b38d4550593ee74d.md) <a id="56739765fcfd4084b38d4550593ee74d"></a>
+          - [II.1.3.9.15.4 [CT3] Remote Patient Monitoring](../../../../continuum/strategy/capability/2d1addc7dd1d4821b71a11c692d35b27.md) <a id="2d1addc7dd1d4821b71a11c692d35b27"></a>
+            - [II.1.3.9.15.4.1 [Feature] Remote Telemetry Ingestion](../../../../continuum/strategy/capability/feature/969dde193fab4c5d82d7dc210c7f5a71.md) <a id="969dde193fab4c5d82d7dc210c7f5a71"></a>
+            - [II.1.3.9.15.4.2 [Feature] Virtual Care Session Context Binding](../../../../continuum/strategy/capability/feature/c25d66fd6aff4299857eadc7c0243544.md) <a id="c25d66fd6aff4299857eadc7c0243544"></a>
+        - [II.1.3.9.16 [CT2] Presentation Services](../../../../continuum/strategy/capability/e9b6ba1917ba44cca7466444d0836c98.md) <a id="e9b6ba1917ba44cca7466444d0836c98"></a>
+          - Historical predecessor: [R.2.208 [CT2] Presentation Services](#c89e7c8b277247d9965fdb534aad2d1f); canonicalId: `c89e7c8b277247d9965fdb534aad2d1f`
+          - [II.1.3.9.16.1 [CT3] Contextual Information Presentation](../../../../continuum/strategy/capability/9f900c53ae56488cad69e53c2205e898.md) <a id="9f900c53ae56488cad69e53c2205e898"></a>
+            - Historical predecessor: [R.2.207 [CT3] Contextual Information Presentation](#e349d5f6a8774bbe8d150f9c51af770c); canonicalId: `e349d5f6a8774bbe8d150f9c51af770c`
+            - [II.1.3.9.16.1.1 [Feature] Longitudinal Clinical & Operational Presentation](../../../../continuum/strategy/capability/feature/e82eaafa2e4046f48d4c86e15f282a0b.md) <a id="e82eaafa2e4046f48d4c86e15f282a0b"></a>
+        - [II.1.3.9.17 [CT2] Semantic & Reference Knowledge Enablement [superseded]](../../../../continuum/strategy/capability/92a71292710c41b29775d19b98c197d6.md) <a id="92a71292710c41b29775d19b98c197d6"></a>
+        - [II.1.3.9.18 [CT2] Workflow & Activity Coordination](../../../../continuum/strategy/capability/c724f3d38bfa4567983a11ad22095d61.md) <a id="c724f3d38bfa4567983a11ad22095d61"></a>
+          - Historical predecessor: [R.2.213 [CT2] Workflow & Activity Coordination](#4422d865978c4353ad575759c6026d27); canonicalId: `4422d865978c4353ad575759c6026d27`
+          - [II.1.3.9.18.1 [CT3] Activity Routing Management](../../../../continuum/strategy/capability/27411c143e6e41ffba1af139fbbcd7e2.md) <a id="27411c143e6e41ffba1af139fbbcd7e2"></a>
+            - Historical predecessor: [R.2.209 [CT3] Activity Routing Management](#243ea93e7b7448fe97dc74f90bfc8946); canonicalId: `243ea93e7b7448fe97dc74f90bfc8946`
+          - [II.1.3.9.18.2 [CT3] External Task Coordination](../../../../continuum/strategy/capability/ff3447c929724245a13ee864874b5561.md) <a id="ff3447c929724245a13ee864874b5561"></a>
+            - Historical predecessor: [R.2.210 [CT3] External Task Coordination](#32be309d65594592bac4d7b068def0d2); canonicalId: `32be309d65594592bac4d7b068def0d2`
+          - [II.1.3.9.18.3 [CT3] External Task Status & Traceability Management](../../../../continuum/strategy/capability/b25bb04a8aa94dcfac105a646878ccfc.md) <a id="b25bb04a8aa94dcfac105a646878ccfc"></a>
+            - Historical predecessor: [R.2.211 [CT3] External Task Status & Traceability Management](#95985d244a234571892a9e9b4024f594); canonicalId: `95985d244a234571892a9e9b4024f594`
+          - [II.1.3.9.18.4 [CT3] Work Boundary Governance](../../../../continuum/strategy/capability/35b66a0b38db4568849ecb842ffdcbf3.md) <a id="35b66a0b38db4568849ecb842ffdcbf3"></a>
+            - Historical predecessor: [R.2.212 [CT3] Work Boundary Governance](#b4d14abf930a4230a7f5b93e9ce3df91); canonicalId: `b4d14abf930a4230a7f5b93e9ce3df91`
+  - II.2 Courses of Action
+    - [II.2.1 Boundary Membrane Sovereignty](../../../../continuum/strategy/course-of-action/25d8509146fd4f2794a17f4a5253b7a3.md) <a id="25d8509146fd4f2794a17f4a5253b7a3"></a>
+    - [II.2.2 Collaborative Reusable Capability Realisation](../../../../continuum/strategy/course-of-action/503939e1fa464b78b1d980ddedfeb3cf.md) <a id="503939e1fa464b78b1d980ddedfeb3cf"></a>
+    - [II.2.3 Distinct Management and Durable Preservation of Information and State](../../../../continuum/strategy/course-of-action/4c71b89477b34733b31e478485e89b1a.md) <a id="4c71b89477b34733b31e478485e89b1a"></a>
+    - [II.2.4 Entity-Centred Operational Coordination](../../../../continuum/strategy/course-of-action/f601fe1f39a3447f8e9fb2cc4ffe9dee.md) <a id="f601fe1f39a3447f8e9fb2cc4ffe9dee"></a>
+    - [II.2.5 Governed Asynchronous Activity Progression](../../../../continuum/strategy/course-of-action/a8ab09ee29454376bd45ba90b320d6ec.md) <a id="a8ab09ee29454376bd45ba90b320d6ec"></a>
+    - [II.2.6 Meaning-Centric Provenance and Traceability](../../../../continuum/strategy/course-of-action/fd00bdbdc2234a208c5045aa69279db8.md) <a id="fd00bdbdc2234a208c5045aa69279db8"></a>
+    - II.2.7 Implementation Guardrails
+      - [II.2.7.1 [ImplementationGuideline] Default Development Test and POC Identity Provider](../../../../continuum/strategy/course-of-action/implementation-guideline/f8874dd3bc5c4b68b1ece4eb2859d1d9.md) <a id="f8874dd3bc5c4b68b1ece4eb2859d1d9"></a>
+  - II.3 Resources
+    - [II.3.1 Australian National Healthcare Directory & Identifier Specifications](../../../../continuum/strategy/resource/eac71c56624d43bda2b9d3648f14603a.md) <a id="eac71c56624d43bda2b9d3648f14603a"></a>
+    - [II.3.2 Healthcare Interoperability Standards and Specifications](../../../../continuum/strategy/resource/4d725c804fb34dfa90486b21118bab8e.md) <a id="4d725c804fb34dfa90486b21118bab8e"></a>
+    - [II.3.3 National Clinical Terminology Assets (SNOMED CT-AU / AMT)](../../../../continuum/strategy/resource/430f641e40aa4bd4a8e85a5cbc1f93be.md) <a id="430f641e40aa4bd4a8e85a5cbc1f93be"></a>
+- III Business
+  - III.1 Business Information Architecture
+    - [III.1.1 [BusinessObject] Availability Schedule](../../../../continuum/business/business-object/96638431fc39486d879d080768a68fe9.md) <a id="96638431fc39486d879d080768a68fe9"></a>
+    - [III.1.2 [BusinessObject] Carer Relationship](../../../../continuum/business/business-object/e95d07cf27c041de955665e7b2af8f52.md) <a id="e95d07cf27c041de955665e7b2af8f52"></a>
+    - [III.1.3 [BusinessObject] Eligibility Rule Set](../../../../continuum/business/business-object/cdb296a83e7e4a17b5e80a9c910c114f.md) <a id="cdb296a83e7e4a17b5e80a9c910c114f"></a>
+    - [III.1.4 [BusinessObject] Family Relationship](../../../../continuum/business/business-object/8adbce49ffdd46a19e95cf40f2aa36fd.md) <a id="8adbce49ffdd46a19e95cf40f2aa36fd"></a>
+    - [III.1.5 [BusinessObject] Identifier](../../../../continuum/business/business-object/b3141f382ca04bf4bb214c12300ebbfb.md) <a id="b3141f382ca04bf4bb214c12300ebbfb"></a>
+    - [III.1.6 [BusinessObject] Identity Alias](../../../../continuum/business/business-object/b444496792a24c33b439f9cb59a12d98.md) <a id="b444496792a24c33b439f9cb59a12d98"></a>
+    - [III.1.7 [BusinessObject] Identity Correction](../../../../continuum/business/business-object/7c74034576cf4972bbb6e86e0f0e1e58.md) <a id="7c74034576cf4972bbb6e86e0f0e1e58"></a>
+    - [III.1.8 [BusinessObject] Identity Correlation Graph](../../../../continuum/business/business-object/8d0a2577d3364dbda96798afe0800200.md) <a id="8d0a2577d3364dbda96798afe0800200"></a>
+    - [III.1.9 [BusinessObject] Information Assertion](../../../../continuum/business/business-object/f3bd4181bb394db8a505705b03972cea.md) <a id="f3bd4181bb394db8a505705b03972cea"></a>
+    - [III.1.10 [BusinessObject] Information Unit](../../../../continuum/business/business-object/10284034c8534b639284386b064f2c54.md) <a id="10284034c8534b639284386b064f2c54"></a>
+    - [III.1.11 [BusinessObject] Legal Representation](../../../../continuum/business/business-object/33ddad9f1ce1424bbe0fb9a25efadb9f.md) <a id="33ddad9f1ce1424bbe0fb9a25efadb9f"></a>
+    - [III.1.12 [BusinessObject] Metabolē](../../../../continuum/business/business-object/c34b4929f71946708d37dbe6c1da920a.md) <a id="c34b4929f71946708d37dbe6c1da920a"></a>
+    - [III.1.13 [BusinessObject] Search Result Set](../../../../continuum/business/business-object/b683ae87c72a4c16aba948a4b8cb0998.md) <a id="b683ae87c72a4c16aba948a4b8cb0998"></a>
+  - III.2 Products and Value Streams
+    - III.2.1 Products
+      - [III.2.1.1 [Product] Health Information Exchange Service](../../../../continuum/business/product/59fb1f7c79eb4e5387fb0652649c2b9c.md) <a id="59fb1f7c79eb4e5387fb0652649c2b9c"></a>
+      - [III.2.1.2 [Product] Practitioner Collaboration Service](../../../../continuum/business/product/09a928910d3d458da3aebfb93d114654.md) <a id="09a928910d3d458da3aebfb93d114654"></a>
+      - [III.2.1.3 [Product] Provider Registry - Central](../../../../continuum/business/product/407f93e81fd740e6b10728941a5a5172.md) <a id="407f93e81fd740e6b10728941a5a5172"></a>
+      - [III.2.1.4 [Product] Provider Registry - Satellite](../../../../continuum/business/product/1846c512d8f5405aaa4f4e33b5177098.md) <a id="1846c512d8f5405aaa4f4e33b5177098"></a>
+    - III.2.2 Value Streams
+      - [III.2.2.1 Distributed Clinical Knowledge → Informed Clinical Collaboration](../../../../continuum/strategy/value-stream/3ba98c0c1170458f8c02fa76694fee67.md) <a id="3ba98c0c1170458f8c02fa76694fee67"></a>
+      - [III.2.2.2 Multi-Source Clinical Information → Coherent Clinical Picture](../../../../continuum/strategy/value-stream/01f655eae3d8485699449c3dcf4f9b56.md) <a id="01f655eae3d8485699449c3dcf4f9b56"></a>
+      - [III.2.2.3 Operational Need → Coordinated Activity → Resolved Outcome](../../../../continuum/strategy/value-stream/beea615ca7b34bbcbd0ad3a2a6ab2cff.md) <a id="beea615ca7b34bbcbd0ad3a2a6ab2cff"></a>
+      - [III.2.2.4 Unqualified Information → Governed, Consumable Information](../../../../continuum/strategy/value-stream/02e036f18bab400bac261007e39457ee.md) <a id="02e036f18bab400bac261007e39457ee"></a>
+  - III.3 Organisation Architecture
+    - III.3.1 Roles
+      - [III.3.1.1 Advocate](../../../../continuum/business/business-role/8845af697832409b90c51a65d7b06669.md) <a id="8845af697832409b90c51a65d7b06669"></a>
+      - [III.3.1.2 Bed Manager](../../../../continuum/business/business-role/4f44e0f4c2ae4774a652c44874449487.md) <a id="4f44e0f4c2ae4774a652c44874449487"></a>
+      - [III.3.1.3 Care Coordinator](../../../../continuum/business/business-role/84cf0b0868b94a1ea5ce5791fcfa66f9.md) <a id="84cf0b0868b94a1ea5ce5791fcfa66f9"></a>
+      - [III.3.1.4 Carer](../../../../continuum/business/business-role/3c2784f8f3404e978c618311148e3422.md) <a id="3c2784f8f3404e978c618311148e3422"></a>
+      - [III.3.1.5 Client](../../../../continuum/business/business-role/3b90ebcc858e4b0685c7950ceeb8f3fd.md) <a id="3b90ebcc858e4b0685c7950ceeb8f3fd"></a>
+      - [III.3.1.6 Clinician](../../../../continuum/business/business-role/94fbd35dadc543dd8c5efaca1951e005.md) <a id="94fbd35dadc543dd8c5efaca1951e005"></a>
+      - [III.3.1.7 Delegate / Proxy](../../../../continuum/business/business-role/da5d23f9d93a49f8ad11232c12a23e3f.md) <a id="da5d23f9d93a49f8ad11232c12a23e3f"></a>
+      - [III.3.1.8 Guardian](../../../../continuum/business/business-role/81942689c7b74960a23ce0d6da94859c.md) <a id="81942689c7b74960a23ce0d6da94859c"></a>
+      - [III.3.1.9 Information Client](../../../../continuum/business/business-role/3ac6ca6e8c9a42b8a3b48e9631073235.md) <a id="3ac6ca6e8c9a42b8a3b48e9631073235"></a>
+      - [III.3.1.10 Information Custodian](../../../../continuum/business/business-role/603a0fada51746ef9d26dd6fe20b2e78.md) <a id="603a0fada51746ef9d26dd6fe20b2e78"></a>
+      - [III.3.1.11 Information Steward](../../../../continuum/business/business-role/4110a988149e4049844d4b683ff5d8d4.md) <a id="4110a988149e4049844d4b683ff5d8d4"></a>
+      - [III.3.1.12 Information Supplier](../../../../continuum/business/business-role/545713793b154ed189f4229256933053.md) <a id="545713793b154ed189f4229256933053"></a>
+      - [III.3.1.13 Patient](../../../../continuum/business/business-role/0d4ad18a7472447ebcd30619b37dce39.md) <a id="0d4ad18a7472447ebcd30619b37dce39"></a>
+      - [III.3.1.14 Patient Flow Coordinator](../../../../continuum/business/business-role/e8f5b7caaee84a67afda4844b1580cee.md) <a id="e8f5b7caaee84a67afda4844b1580cee"></a>
+      - [III.3.1.15 Performer](../../../../continuum/business/business-role/c87e99ff36224b9da5a05bbd3002da34.md) <a id="c87e99ff36224b9da5a05bbd3002da34"></a>
+      - [III.3.1.16 Policy Authority](../../../../continuum/business/business-role/e0ff9ce2cf4448568d1caf7a44023f48.md) <a id="e0ff9ce2cf4448568d1caf7a44023f48"></a>
+      - [III.3.1.17 Practitioner](../../../../continuum/business/business-role/0b5544e3d9d741b39607a5e61d79049f.md) <a id="0b5544e3d9d741b39607a5e61d79049f"></a>
+      - [III.3.1.18 Prescriber](../../../../continuum/business/business-role/4a6e12d4f48d426a98136ea50ad91ef9.md) <a id="4a6e12d4f48d426a98136ea50ad91ef9"></a>
+      - [III.3.1.19 Referrer](../../../../continuum/business/business-role/197b811fc8594cc3a68a372b74008ba0.md) <a id="197b811fc8594cc3a68a372b74008ba0"></a>
+      - [III.3.1.20 Regulator](../../../../continuum/business/business-role/1160219638ef42b292a5612e5ac7c539.md) <a id="1160219638ef42b292a5612e5ac7c539"></a>
+      - [III.3.1.21 Representative](../../../../continuum/business/business-role/ca4ae4c178eb488d98118db7773b2127.md) <a id="ca4ae4c178eb488d98118db7773b2127"></a>
+      - [III.3.1.22 Requester](../../../../continuum/business/business-role/dd262c6bed9a44829e7a4f6796c13b3b.md) <a id="dd262c6bed9a44829e7a4f6796c13b3b"></a>
+      - [III.3.1.23 Service Assurance Modeller](../../../../continuum/business/business-role/962735ea17a840e5a772f813d3ad7d45.md) <a id="962735ea17a840e5a772f813d3ad7d45"></a>
+      - [III.3.1.24 Service Coordinator](../../../../continuum/business/business-role/0dbbce90dc3e48b190890c832f52cb6f.md) <a id="0dbbce90dc3e48b190890c832f52cb6f"></a>
+      - [III.3.1.25 Service Guardian](../../../../continuum/business/business-role/3ed945eeff23404d8dae43382ea746d1.md) <a id="3ed945eeff23404d8dae43382ea746d1"></a>
+      - [III.3.1.26 Service Provider](../../../../continuum/business/business-role/7e85b6b2c65a4e038e11711a4c7f7c60.md) <a id="7e85b6b2c65a4e038e11711a4c7f7c60"></a>
+      - [III.3.1.27 Subject of Care](../../../../continuum/business/business-role/ada564bbff80416aa661a1d2cde705f4.md) <a id="ada564bbff80416aa661a1d2cde705f4"></a>
+      - [III.3.1.28 Substitute Decision-Maker](../../../../continuum/business/business-role/c30a4e1e36b44fd3a953395740d946ef.md) <a id="c30a4e1e36b44fd3a953395740d946ef"></a>
+      - [III.3.1.29 Support Person](../../../../continuum/business/business-role/c2334e0e5c3b40789c672471ea82c465.md) <a id="c2334e0e5c3b40789c672471ea82c465"></a>
+      - [III.3.1.30 System Steward](../../../../continuum/business/business-role/27d2797d2f9e4a9f9131300467d212bc.md) <a id="27d2797d2f9e4a9f9131300467d212bc"></a>
+      - [III.3.1.31 Terminology Steward](../../../../continuum/business/business-role/c3cdd7a91a584942abac167af15f642c.md) <a id="c3cdd7a91a584942abac167af15f642c"></a>
+      - [III.3.1.32 Ward Coordinator](../../../../continuum/business/business-role/9b4ea5f137c9474db1c9dc5ac57a1207.md) <a id="9b4ea5f137c9474db1c9dc5ac57a1207"></a>
+      - [III.3.1.33 Wardsperson](../../../../continuum/business/business-role/ebc0fbc6ad7645439a32e1f1a7944209.md) <a id="ebc0fbc6ad7645439a32e1f1a7944209"></a>
+      - [III.3.1.34 Work Coordinator](../../../../continuum/business/business-role/5c52eb31e8ba45a7a4eea4fa8d66d0c5.md) <a id="5c52eb31e8ba45a7a4eea4fa8d66d0c5"></a>
+    - III.3.2 Organisational Structures
+      - [III.3.2.1 Care-Team Collaboration](../../../../continuum/business/business-collaboration/f748b6d3b83c4591a721f773a3f372be.md) <a id="f748b6d3b83c4591a721f773a3f372be"></a>
+      - [III.3.2.2 Information-Sharing Collaboration](../../../../continuum/business/business-collaboration/232a2bc1e9604266b042ebf448e2297c.md) <a id="232a2bc1e9604266b042ebf448e2297c"></a>
+      - [III.3.2.3 Operational Collaboration](../../../../continuum/business/business-collaboration/20f31ce141f947af8700fe7f41d695f6.md) <a id="20f31ce141f947af8700fe7f41d695f6"></a>
+      - [III.3.2.4 Patient Collaboration](../../../../continuum/business/business-collaboration/05cb06fbfc3d4b119f067f5699f67efa.md) <a id="05cb06fbfc3d4b119f067f5699f67efa"></a>
+      - [III.3.2.5 Practitioner Collaboration](../../../../continuum/business/business-collaboration/aeca28004a834fb1acbbf6946ab84a33.md) <a id="aeca28004a834fb1acbbf6946ab84a33"></a>
+      - [III.3.2.6 Service Provider Collaboration](../../../../continuum/business/business-collaboration/f558b3e0948a409a87b26989156063dc.md) <a id="f558b3e0948a409a87b26989156063dc"></a>
+      - [III.3.2.7 Service-Delivery Collaboration](../../../../continuum/business/business-collaboration/db39b636a6904a50a9225c98b30bc5a9.md) <a id="db39b636a6904a50a9225c98b30bc5a9"></a>
+  - III.4 Business Behaviour
+    - III.4.1 [CT1] Care Administration Enablement — Capability context
+      - Canonical Strategy Capability: [II.1.3.1 [CT1] Care Administration Enablement](#28df27d55c514a37995145ab46945f78); canonicalId: `28df27d55c514a37995145ab46945f78`
+      - III.4.1.1 [CT2] Care Plan Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.1.5 [CT2] Care Plan Administration](#cf06eec5699f406fa30a00d2f76e3098); canonicalId: `cf06eec5699f406fa30a00d2f76e3098`
+        - III.4.1.1.1 [CT3] Community Care Coordination — Capability context
+          - Canonical Strategy Capability: [II.1.3.1.5.2 [CT3] Community Care Coordination](#8c8c6266d9ed43e09dbe44fcdd669132); canonicalId: `8c8c6266d9ed43e09dbe44fcdd669132`
+          - III.4.1.1.1.1 Business Services
+            - [III.4.1.1.1.1.1 Community Care Encounter Ingress](../../../../continuum/business/business-service/5806fe40300044b280a25fb86667e789.md) <a id="5806fe40300044b280a25fb86667e789"></a>
+            - [III.4.1.1.1.1.2 Community Care Team Query](../../../../continuum/business/business-service/5292120098cc4b7e8280b22f46b60b95.md) <a id="5292120098cc4b7e8280b22f46b60b95"></a>
+          - III.4.1.1.1.2 Business Functions
+            - [III.4.1.1.1.2.1 Bind Community Support Network Context](../../../../continuum/business/business-function/321fdf544ef044b8be100b656e16d7dc.md) <a id="321fdf544ef044b8be100b656e16d7dc"></a>
+            - [III.4.1.1.1.2.2 Synchronize Community Visit Record](../../../../continuum/business/business-function/cbd4817eb757449a8f0a0e8ce02c5f07.md) <a id="cbd4817eb757449a8f0a0e8ce02c5f07"></a>
+        - III.4.1.1.2 [CT3] Outreach Care Continuity — Capability context
+          - Canonical Strategy Capability: [II.1.3.1.5.3 [CT3] Outreach Care Continuity](#8526d971b07f40de84ef05b0d192089c); canonicalId: `8526d971b07f40de84ef05b0d192089c`
+          - III.4.1.1.2.1 Business Services
+            - [III.4.1.1.2.1.1 Outreach Batch Reconciliation Service](../../../../continuum/business/business-service/9488822da1764a1898303a9c656a6062.md) <a id="9488822da1764a1898303a9c656a6062"></a>
+          - III.4.1.1.2.2 Business Functions
+            - [III.4.1.1.2.2.1 Provide Outreach Visit Context](../../../../continuum/business/business-function/4984d2f87f5a46869400c60cd5c5e0ab.md) <a id="4984d2f87f5a46869400c60cd5c5e0ab"></a>
+            - [III.4.1.1.2.2.2 Reconcile Outreach Clinical Batch](../../../../continuum/business/business-function/53a7392c0ceb413ba8a00505b29f0f28.md) <a id="53a7392c0ceb413ba8a00505b29f0f28"></a>
+        - III.4.1.1.3 Business Services
+          - [III.4.1.1.3.1 Care Plan Change Notification](../../../../continuum/business/business-service/08a8309372734287b2c22a06b95080a4.md) <a id="08a8309372734287b2c22a06b95080a4"></a>
+          - [III.4.1.1.3.2 Care Plan Context Query](../../../../continuum/business/business-service/0bb4cceb0f1b4311930635d8b4c320e0.md) <a id="0bb4cceb0f1b4311930635d8b4c320e0"></a>
+          - [III.4.1.1.3.3 Care Plan Ingress](../../../../continuum/business/business-service/180d3f29c2324905ab19337a4dcbce7b.md) <a id="180d3f29c2324905ab19337a4dcbce7b"></a>
+        - III.4.1.1.4 Business Functions
+          - [III.4.1.1.4.1 Associate Care Plan Context](../../../../continuum/business/business-function/98cd313fdaa74634a8e1ae56a5bb06dc.md) <a id="98cd313fdaa74634a8e1ae56a5bb06dc"></a>
+          - [III.4.1.1.4.2 Distribute Care Plan Change](../../../../continuum/business/business-function/cbfa51308103418a9dffe23a2d8cfd87.md) <a id="cbfa51308103418a9dffe23a2d8cfd87"></a>
+          - [III.4.1.1.4.3 Receive Care Plan](../../../../continuum/business/business-function/abb5a2ac72424923ae2da671b94b3b48.md) <a id="abb5a2ac72424923ae2da671b94b3b48"></a>
+      - III.4.1.2 [CT2] Client-Centred Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.1.6 [CT2] Client-Centred Administration](#8752b7a937754b2faa296300c6a48911); canonicalId: `8752b7a937754b2faa296300c6a48911`
+        - III.4.1.2.1 [CT3] Screening and Immunisation Enablement — Capability context
+          - Canonical Strategy Capability: [II.1.3.1.6.2 [CT3] Screening and Immunisation Enablement](#3e9016eaebae4ed0b67a5cacba2652f5); canonicalId: `3e9016eaebae4ed0b67a5cacba2652f5`
+          - III.4.1.2.1.1 Business Services
+            - [III.4.1.2.1.1.1 Immunisation History Query](../../../../continuum/business/business-service/f2a0107d73664aa0be9d6695fc455d74.md) <a id="f2a0107d73664aa0be9d6695fc455d74"></a>
+            - [III.4.1.2.1.1.2 Preventive Screening Status Query](../../../../continuum/business/business-service/bc679a6f23de44b79a452fb5ef10c5ee.md) <a id="bc679a6f23de44b79a452fb5ef10c5ee"></a>
+          - III.4.1.2.1.2 Business Functions
+            - [III.4.1.2.1.2.1 Project Screening Eligibility Timeline](../../../../continuum/business/business-function/afb08bdb99cd41d3a86ef7bf7ad5e92d.md) <a id="afb08bdb99cd41d3a86ef7bf7ad5e92d"></a>
+            - [III.4.1.2.1.2.2 Syndicate Immunisation Record](../../../../continuum/business/business-function/5a2c53df2e92444ab9b5018b224d98f9.md) <a id="5a2c53df2e92444ab9b5018b224d98f9"></a>
+        - III.4.1.2.2 Business Services
+          - [III.4.1.2.2.1 Demographic Intake Service](../../../../continuum/business/business-service/b6d8aab087944a6e8cc246b85d32843e.md) <a id="b6d8aab087944a6e8cc246b85d32843e"></a>
+          - [III.4.1.2.2.2 Demographic Update Notification](../../../../continuum/business/business-service/10b54e9ef0ed47e491d18731c58247f5.md) <a id="10b54e9ef0ed47e491d18731c58247f5"></a>
+        - III.4.1.2.3 Business Functions
+          - [III.4.1.2.3.1 Distribute Governed Demographic Change](../../../../continuum/business/business-function/61a4ae56602c4e2d9428169188e458d8.md) <a id="61a4ae56602c4e2d9428169188e458d8"></a>
+          - [III.4.1.2.3.2 Receive Client Demographic Change](../../../../continuum/business/business-function/459db1af34724863a57961ed921763d6.md) <a id="459db1af34724863a57961ed921763d6"></a>
+      - III.4.1.3 [CT2] Clinical Communication Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.1.8 [CT2] Clinical Communication Administration](#b38f2c2811724734b5887b6dbaaabbfc); canonicalId: `b38f2c2811724734b5887b6dbaaabbfc`
+        - III.4.1.3.1 Business Services
+          - [III.4.1.3.1.1 Communication Audit Query](../../../../continuum/business/business-service/7c871898fd634a16902048da75586fd9.md) <a id="7c871898fd634a16902048da75586fd9"></a>
+          - [III.4.1.3.1.2 Communication Delivery Status Query](../../../../continuum/business/business-service/1b3447db9891406b951f6a6ccf20763e.md) <a id="1b3447db9891406b951f6a6ccf20763e"></a>
+          - [III.4.1.3.1.3 Secure Clinical Message Dispatch](../../../../continuum/business/business-service/d28fb3b4123b4e569a95a823fd83f837.md) <a id="d28fb3b4123b4e569a95a823fd83f837"></a>
+        - III.4.1.3.2 Business Functions
+          - [III.4.1.3.2.1 Distribute Clinical Communication](../../../../continuum/business/business-function/5b8d4d4a3f7147fc9ee5f114155c2db8.md) <a id="5b8d4d4a3f7147fc9ee5f114155c2db8"></a>
+          - [III.4.1.3.2.2 Record Communication Transaction](../../../../continuum/business/business-function/d64ced698052400fa7892e4d768b3f8f.md) <a id="d64ced698052400fa7892e4d768b3f8f"></a>
+          - [III.4.1.3.2.3 Track Business Delivery Acknowledgement](../../../../continuum/business/business-function/75fb22db4c2346b99fd7c788264abb5d.md) <a id="75fb22db4c2346b99fd7c788264abb5d"></a>
+      - III.4.1.4 [CT2] Clinical Record Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.1.9 [CT2] Clinical Record Administration](#ce9e7e7b22054cefb707a650d5be7219); canonicalId: `ce9e7e7b22054cefb707a650d5be7219`
+        - III.4.1.4.1 Business Services
+          - [III.4.1.4.1.1 Clinical Document Ingress](../../../../continuum/business/business-service/2a69a33c93954a868249270d919dabfd.md) <a id="2a69a33c93954a868249270d919dabfd"></a>
+          - [III.4.1.4.1.2 Clinical Document Lifecycle Service](../../../../continuum/business/business-service/fbeffe86f67347e3b39ad4544b13cbe7.md) <a id="fbeffe86f67347e3b39ad4544b13cbe7"></a>
+          - [III.4.1.4.1.3 Document Metadata Registry Query](../../../../continuum/business/business-service/63254ecfe5554eeeb63d0c9f1720388b.md) <a id="63254ecfe5554eeeb63d0c9f1720388b"></a>
+        - III.4.1.4.2 Business Functions
+          - [III.4.1.4.2.1 Govern Clinical Document Lifecycle](../../../../continuum/business/business-function/e6d00e00eba64ef4bc41d2af8bc3b944.md) <a id="e6d00e00eba64ef4bc41d2af8bc3b944"></a>
+          - [III.4.1.4.2.2 Index Clinical Document Metadata](../../../../continuum/business/business-function/0ee35bd069924319a7a9fe115d3c52b9.md) <a id="0ee35bd069924319a7a9fe115d3c52b9"></a>
+          - [III.4.1.4.2.3 Receive Clinical Document](../../../../continuum/business/business-function/d8f80ba3a5a9401b84e6476cbec8cace.md) <a id="d8f80ba3a5a9401b84e6476cbec8cace"></a>
+        - III.4.1.4.3 Business Processes
+          - [III.4.1.4.3.1 Clinical Document Lifecycle Process](../../../../continuum/business/business-process/eacdec16b96844b4963b8a960d1a8666.md) <a id="eacdec16b96844b4963b8a960d1a8666"></a>
+      - III.4.1.5 [CT2] Diagnostic Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.1.10 [CT2] Diagnostic Administration](#3cc720ba2e8b4d7a94bb349391d61895); canonicalId: `3cc720ba2e8b4d7a94bb349391d61895`
+        - III.4.1.5.1 [CT3] Diagnostic Service Integration — Capability context
+          - Canonical Strategy Capability: [II.1.3.1.10.1 [CT3] Diagnostic Service Integration](#9ded2f3a28d24017bb921a0cdcf65a2b); canonicalId: `9ded2f3a28d24017bb921a0cdcf65a2b`
+          - III.4.1.5.1.1 Business Services
+            - [III.4.1.5.1.1.1 Diagnostic Publication Service](../../../../continuum/business/business-service/600ca5384b4643b0b35579a02c307dcf.md) <a id="600ca5384b4643b0b35579a02c307dcf"></a>
+            - [III.4.1.5.1.1.2 Modality Worklist Distribution](../../../../continuum/business/business-service/e254b6a140c94b33a206e74db1aecfbb.md) <a id="e254b6a140c94b33a206e74db1aecfbb"></a>
+          - III.4.1.5.1.2 Business Functions
+            - [III.4.1.5.1.2.1 Publish Governed Diagnostic Report](../../../../continuum/business/business-function/f9fcdc3162044865ac6f26015fdd5b17.md) <a id="f9fcdc3162044865ac6f26015fdd5b17"></a>
+            - [III.4.1.5.1.2.2 Receive Diagnostic Requisition Feed](../../../../continuum/business/business-function/af3d47ada486425abc5ab5d054db7004.md) <a id="af3d47ada486425abc5ab5d054db7004"></a>
+        - III.4.1.5.2 Business Services
+          - [III.4.1.5.2.1 Diagnostic Correlation Resolution](../../../../continuum/business/business-service/15f3582e02ae47e1b7f9117573a8ddf7.md) <a id="15f3582e02ae47e1b7f9117573a8ddf7"></a>
+          - [III.4.1.5.2.2 Diagnostic Report Ingress](../../../../continuum/business/business-service/b151ad42b9194d9e84b1dd9beecdf6dd.md) <a id="b151ad42b9194d9e84b1dd9beecdf6dd"></a>
+          - [III.4.1.5.2.3 Diagnostic Result Delivery Service](../../../../continuum/business/business-service/86a9d1868c8c45788791a9436794531c.md) <a id="86a9d1868c8c45788791a9436794531c"></a>
+        - III.4.1.5.3 Business Functions
+          - [III.4.1.5.3.1 Bind Diagnostic Report](../../../../continuum/business/business-function/ee4bd6218f3a4029815bfc16912b88af.md) <a id="ee4bd6218f3a4029815bfc16912b88af"></a>
+          - [III.4.1.5.3.2 Correlate Diagnostic Request](../../../../continuum/business/business-function/6797819b02e0405c8169fa57544d9606.md) <a id="6797819b02e0405c8169fa57544d9606"></a>
+          - [III.4.1.5.3.3 Distribute Diagnostic Report](../../../../continuum/business/business-function/ab6d94a9e06742aabe087f11d93f4334.md) <a id="ab6d94a9e06742aabe087f11d93f4334"></a>
+      - III.4.1.6 [CT2] Episode & Encounter Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.1.11 [CT2] Episode & Encounter Administration](#61d7067aee0540259b3daca4287d66d2); canonicalId: `61d7067aee0540259b3daca4287d66d2`
+        - III.4.1.6.1 [CT3] Acute Care Monitoring & Event Coordination — Capability context
+          - Canonical Strategy Capability: [II.1.3.1.11.1 [CT3] Acute Care Monitoring & Event Coordination](#ee17b26b8c874cc3af50d07a787ce488); canonicalId: `ee17b26b8c874cc3af50d07a787ce488`
+          - III.4.1.6.1.1 Business Services
+            - [III.4.1.6.1.1.1 Acute Admission Dossier Query](../../../../continuum/business/business-service/7276d5e4d484440f9466ec24c183bdab.md) <a id="7276d5e4d484440f9466ec24c183bdab"></a>
+            - [III.4.1.6.1.1.2 Acute Clinical Alert Dispatch](../../../../continuum/business/business-service/34d7f0bfff8f470bb97c00582f5e8a1d.md) <a id="34d7f0bfff8f470bb97c00582f5e8a1d"></a>
+          - III.4.1.6.1.2 Business Functions
+            - [III.4.1.6.1.2.1 Assemble Acute Clinical Baseline](../../../../continuum/business/business-function/be64da1302bf4c4bae357295612e8e6e.md) <a id="be64da1302bf4c4bae357295612e8e6e"></a>
+            - [III.4.1.6.1.2.2 Route Acute Critical Result Alert](../../../../continuum/business/business-function/66d0295d5a6c4eedba6406d6f672906c.md) <a id="66d0295d5a6c4eedba6406d6f672906c"></a>
+        - III.4.1.6.2 Business Services
+          - [III.4.1.6.2.1 Encounter Context Resolution](../../../../continuum/business/business-service/ca22b0a4e51b4f5eb6b528bc36fa5d9c.md) <a id="ca22b0a4e51b4f5eb6b528bc36fa5d9c"></a>
+          - [III.4.1.6.2.2 Encounter Lifecycle Event Notification](../../../../continuum/business/business-service/e9c6b81172984785a47d222ac0c28d45.md) <a id="e9c6b81172984785a47d222ac0c28d45"></a>
+          - [III.4.1.6.2.3 Encounter Location History Query](../../../../continuum/business/business-service/5f0f9fec1d16458aaf914b0957793953.md) <a id="5f0f9fec1d16458aaf914b0957793953"></a>
+        - III.4.1.6.3 Business Functions
+          - [III.4.1.6.3.1 Establish Encounter Context](../../../../continuum/business/business-function/df00c187d509483a8408304a066abec4.md) <a id="df00c187d509483a8408304a066abec4"></a>
+          - [III.4.1.6.3.2 Maintain Encounter Care-Place Association](../../../../continuum/business/business-function/3ff076243fe141759e7d4401389b3527.md) <a id="3ff076243fe141759e7d4401389b3527"></a>
+          - [III.4.1.6.3.3 Progress Encounter State](../../../../continuum/business/business-function/223b1140628b444482bfb0a2c870d751.md) <a id="223b1140628b444482bfb0a2c870d751"></a>
+        - III.4.1.6.4 Business Processes
+          - [III.4.1.6.4.1 Encounter Lifecycle Process](../../../../continuum/business/business-process/df49e2e8bb3748f3abbdd1c28ae1be8f.md) <a id="df49e2e8bb3748f3abbdd1c28ae1be8f"></a>
+      - III.4.1.7 [CT2] Medication Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.1.13 [CT2] Medication Administration](#c907e2a95629435b9951941ad4e2ebe9); canonicalId: `c907e2a95629435b9951941ad4e2ebe9`
+        - III.4.1.7.1 [CT3] Medication Therapy Provision and Monitoring — Capability context
+          - Canonical Strategy Capability: [II.1.3.1.13.2 [CT3] Medication Therapy Provision and Monitoring](#d1821b4f6d5746f9a697dfe3b792a186); canonicalId: `d1821b4f6d5746f9a697dfe3b792a186`
+          - III.4.1.7.1.1 Business Services
+            - [III.4.1.7.1.1.1 Allergy & Adverse Reaction Query](../../../../continuum/business/business-service/7820fc4fb98c452aba29f35d8c7e74fb.md) <a id="7820fc4fb98c452aba29f35d8c7e74fb"></a>
+            - [III.4.1.7.1.1.2 Longitudinal Medication History Query](../../../../continuum/business/business-service/6a42771bbe5449ab87e8ece94519d03d.md) <a id="6a42771bbe5449ab87e8ece94519d03d"></a>
+          - III.4.1.7.1.2 Business Functions
+            - [III.4.1.7.1.2.1 Correlate Adverse Reaction & Allergy Profile](../../../../continuum/business/business-function/834d18fe21f14af7ad0c9773d2aaad1e.md) <a id="834d18fe21f14af7ad0c9773d2aaad1e"></a>
+            - [III.4.1.7.1.2.2 Project Longitudinal Medication History](../../../../continuum/business/business-function/494f529ada064f77836d40cfe9c7ab48.md) <a id="494f529ada064f77836d40cfe9c7ab48"></a>
+        - III.4.1.7.2 Business Services
+          - [III.4.1.7.2.1 Dispense Event Ingress](../../../../continuum/business/business-service/b81512ca8e36434e9fa29493e645d31d.md) <a id="b81512ca8e36434e9fa29493e645d31d"></a>
+          - [III.4.1.7.2.2 Medication Administration Ingress](../../../../continuum/business/business-service/8d224a68f01648d39096d39ebac893df.md) <a id="8d224a68f01648d39096d39ebac893df"></a>
+          - [III.4.1.7.2.3 Medication Order Ingress](../../../../continuum/business/business-service/3bcfd2c922aa429ba77618ac94982a56.md) <a id="3bcfd2c922aa429ba77618ac94982a56"></a>
+        - III.4.1.7.3 Business Functions
+          - [III.4.1.7.3.1 Receive Medication Administration Event](../../../../continuum/business/business-function/7437a97ccc3947b38f70d7da47bd0714.md) <a id="7437a97ccc3947b38f70d7da47bd0714"></a>
+          - [III.4.1.7.3.2 Receive Medication Order](../../../../continuum/business/business-function/96e2ae3ccb684635acf78037e75a1322.md) <a id="96e2ae3ccb684635acf78037e75a1322"></a>
+          - [III.4.1.7.3.3 Track Dispense Event](../../../../continuum/business/business-function/e4c3b7e257b3448aa79d66992e9e9bbc.md) <a id="e4c3b7e257b3448aa79d66992e9e9bbc"></a>
+      - III.4.1.8 [CT2] Order Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.1.14 [CT2] Order Administration](#c3c5abd7987f4433a46cbfed8167914c); canonicalId: `c3c5abd7987f4433a46cbfed8167914c`
+        - III.4.1.8.1 Business Services
+          - [III.4.1.8.1.1 Order Cancellation Service](../../../../continuum/business/business-service/1c8467ef0b6047329bdb899a52c23efc.md) <a id="1c8467ef0b6047329bdb899a52c23efc"></a>
+          - [III.4.1.8.1.2 Order Dispatch Service](../../../../continuum/business/business-service/a8b0f7284a854fdfb43a9af446aa1270.md) <a id="a8b0f7284a854fdfb43a9af446aa1270"></a>
+          - [III.4.1.8.1.3 Order Outcome Notification](../../../../continuum/business/business-service/1d961373ab484e5f887ecf4c7b166130.md) <a id="1d961373ab484e5f887ecf4c7b166130"></a>
+          - [III.4.1.8.1.4 Order Requisition Ingress](../../../../continuum/business/business-service/ba824a1ec2c64d9598c409803bcf9d86.md) <a id="ba824a1ec2c64d9598c409803bcf9d86"></a>
+          - [III.4.1.8.1.5 Order Status & Tracking Query](../../../../continuum/business/business-service/a4c049391dd64cd7af83bb5b4c7af0c5.md) <a id="a4c049391dd64cd7af83bb5b4c7af0c5"></a>
+        - III.4.1.8.2 Business Functions
+          - [III.4.1.8.2.1 Associate Order Outcome](../../../../continuum/business/business-function/8bc2b528ca354c8ba95ddb44facdcd05.md) <a id="8bc2b528ca354c8ba95ddb44facdcd05"></a>
+          - [III.4.1.8.2.2 Coordinate Order Modification / Cancellation](../../../../continuum/business/business-function/6e445f8bc64e427fbe76b6dda20ed80f.md) <a id="6e445f8bc64e427fbe76b6dda20ed80f"></a>
+          - [III.4.1.8.2.3 Manage Order Progression](../../../../continuum/business/business-function/52f4b2dfb0c64e5aa4b378a9e63e0867.md) <a id="52f4b2dfb0c64e5aa4b378a9e63e0867"></a>
+          - [III.4.1.8.2.4 Receive Order Request](../../../../continuum/business/business-function/e5387fca59324407b8ed5d6db66ef93b.md) <a id="e5387fca59324407b8ed5d6db66ef93b"></a>
+          - [III.4.1.8.2.5 Resolve Order Destination](../../../../continuum/business/business-function/5e21ed48205446a9b05bc8017d1eccfc.md) <a id="5e21ed48205446a9b05bc8017d1eccfc"></a>
+        - III.4.1.8.3 Business Processes
+          - [III.4.1.8.3.1 Closed-Loop Order Progression Process](../../../../continuum/business/business-process/e19a7c9594a4401e92450e4c31598982.md) <a id="e19a7c9594a4401e92450e4c31598982"></a>
+      - III.4.1.9 [CT2] Procedure Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.1.15 [CT2] Procedure Administration](#649dd7cc26094e539386a050086dfb91); canonicalId: `649dd7cc26094e539386a050086dfb91`
+        - III.4.1.9.1 Business Services
+          - [III.4.1.9.1.1 Procedural Documentation Ingress](../../../../continuum/business/business-service/b58405366b7a43dc909ca3074503e11a.md) <a id="b58405366b7a43dc909ca3074503e11a"></a>
+          - [III.4.1.9.1.2 Procedure Booking Ingress](../../../../continuum/business/business-service/64c52e8e6f304dee8d86a5da96f927e3.md) <a id="64c52e8e6f304dee8d86a5da96f927e3"></a>
+        - III.4.1.9.2 Business Functions
+          - [III.4.1.9.2.1 Receive Procedural Documentation](../../../../continuum/business/business-function/62a47d22a07e4fcc8b3f99ccdffff390.md) <a id="62a47d22a07e4fcc8b3f99ccdffff390"></a>
+          - [III.4.1.9.2.2 Receive Procedure Booking / Request](../../../../continuum/business/business-function/6d29d7e7422443b4acf3cbe85c4074e2.md) <a id="6d29d7e7422443b4acf3cbe85c4074e2"></a>
+      - III.4.1.10 [CT2] Referral Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.1.16 [CT2] Referral Administration](#ae0de25600ee416aa24d2a167b64f230); canonicalId: `ae0de25600ee416aa24d2a167b64f230`
+        - III.4.1.10.1 Business Services
+          - [III.4.1.10.1.1 Referral Context Query](../../../../continuum/business/business-service/d688ee73f68a4dda9380404e22b3539b.md) <a id="d688ee73f68a4dda9380404e22b3539b"></a>
+          - [III.4.1.10.1.2 Referral Status & Outcome Service](../../../../continuum/business/business-service/dfd0481be6124da0a791db41a5e9c238.md) <a id="dfd0481be6124da0a791db41a5e9c238"></a>
+          - [III.4.1.10.1.3 Referral Submission Service](../../../../continuum/business/business-service/42b4e9da22764480a0bea7019927860c.md) <a id="42b4e9da22764480a0bea7019927860c"></a>
+        - III.4.1.10.2 Business Functions
+          - [III.4.1.10.2.1 Assemble Referral Context](../../../../continuum/business/business-function/b4a05bf97e844c24b04d27a6b325627a.md) <a id="b4a05bf97e844c24b04d27a6b325627a"></a>
+          - [III.4.1.10.2.2 Manage Referral Progression](../../../../continuum/business/business-function/7f9f01be4fd14facb943de5f63f1d8fd.md) <a id="7f9f01be4fd14facb943de5f63f1d8fd"></a>
+          - [III.4.1.10.2.3 Receive Referral](../../../../continuum/business/business-function/28775f5af15646369539a4fc0a7ff8a9.md) <a id="28775f5af15646369539a4fc0a7ff8a9"></a>
+        - III.4.1.10.3 Business Processes
+          - [III.4.1.10.3.1 Referral Progression Process](../../../../continuum/business/business-process/cfb714e9320647ffa1dffc80dddd01d9.md) <a id="cfb714e9320647ffa1dffc80dddd01d9"></a>
+      - III.4.1.11 [CT2] Scheduling Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.1.17 [CT2] Scheduling Administration](#35fb3744c900470f9895056246a13fb1); canonicalId: `35fb3744c900470f9895056246a13fb1`
+        - III.4.1.11.1 Business Services
+          - [III.4.1.11.1.1 Appointment Notification Ingress](../../../../continuum/business/business-service/67045c71e2194f6ba19002edcea94ee0.md) <a id="67045c71e2194f6ba19002edcea94ee0"></a>
+          - [III.4.1.11.1.2 Appointment Schedule Query](../../../../continuum/business/business-service/2a7eb5b22dc04256aa049c2fcf84e62c.md) <a id="2a7eb5b22dc04256aa049c2fcf84e62c"></a>
+        - III.4.1.11.2 Business Functions
+          - [III.4.1.11.2.1 Receive Appointment Notification](../../../../continuum/business/business-function/8aa2e7b197ae4a0c99b654b9f1a312e8.md) <a id="8aa2e7b197ae4a0c99b654b9f1a312e8"></a>
+          - [III.4.1.11.2.2 Synchronise Appointment Status](../../../../continuum/business/business-function/c60fc8ce05104185b5240a910bfd5f67.md) <a id="c60fc8ce05104185b5240a910bfd5f67"></a>
+    - III.4.2 [CT1] Entity Information Enablement — Capability context
+      - Canonical Strategy Capability: [II.1.3.4 [CT1] Entity Information Enablement](#b5a92874f8ac4509a30af5253590edc1); canonicalId: `b5a92874f8ac4509a30af5253590edc1`
+      - III.4.2.1 [CT2] Client Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.4.1 [CT2] Client Administration](#f0885472cced4bccbcce1568bf0360dc); canonicalId: `f0885472cced4bccbcce1568bf0360dc`
+        - III.4.2.1.1 [CT3] Client Privacy Guardrail Management — Capability context
+          - Canonical Strategy Capability: [II.1.3.4.1.1 [CT3] Client Privacy Guardrail Management](#7577a6e1815243648dd5356c21cca151); canonicalId: `7577a6e1815243648dd5356c21cca151`
+          - III.4.2.1.1.1 Business Services
+            - [III.4.2.1.1.1.1 Confidentiality Restriction Evaluation](../../../../continuum/business/business-service/87cfcfb20b7a4570b502b4a9a53803ad.md) <a id="87cfcfb20b7a4570b502b4a9a53803ad"></a>
+            - [III.4.2.1.1.1.2 Consent Decision Service](../../../../continuum/business/business-service/e1bebefbdbef4a1981ec31341eb71dfd.md) <a id="e1bebefbdbef4a1981ec31341eb71dfd"></a>
+          - III.4.2.1.1.2 Business Functions
+            - [III.4.2.1.1.2.1 Evaluate Client Confidentiality Restrictions](../../../../continuum/business/business-function/a61324c3ef734910af5886f048cd3bf5.md) <a id="a61324c3ef734910af5886f048cd3bf5"></a>
+            - [III.4.2.1.1.2.2 Evaluate Client Consent](../../../../continuum/business/business-function/b9e978a651cf4ff3bb690af50b8528cd.md) <a id="b9e978a651cf4ff3bb690af50b8528cd"></a>
+        - III.4.2.1.2 [CT3] Client Relationship Administration — Capability context
+          - Canonical Strategy Capability: [II.1.3.4.1.2 [CT3] Client Relationship Administration](#d682c11d3eb04770b1f20be478fd475e); canonicalId: `d682c11d3eb04770b1f20be478fd475e`
+          - III.4.2.1.2.1 Business Services
+            - [III.4.2.1.2.1.1 Client Relationship Query](../../../../continuum/business/business-service/7b3eb2e91baa4e9c887927433979a8f6.md) <a id="7b3eb2e91baa4e9c887927433979a8f6"></a>
+            - [III.4.2.1.2.1.2 Representative Authority Verification](../../../../continuum/business/business-service/2d3205c785ba4db5af5868ebb6ab1495.md) <a id="2d3205c785ba4db5af5868ebb6ab1495"></a>
+          - III.4.2.1.2.2 Business Functions
+            - [III.4.2.1.2.2.1 Govern Client Relationship Validity](../../../../continuum/business/business-function/dc87537df6254fc5bdeeca0ccc011679.md) <a id="dc87537df6254fc5bdeeca0ccc011679"></a>
+            - [III.4.2.1.2.2.2 Maintain Client Relationships](../../../../continuum/business/business-function/1b2ce4a240384672b78976904b83a011.md) <a id="1b2ce4a240384672b78976904b83a011"></a>
+        - III.4.2.1.3 [CT3] Healthcare Subject Profile Administration — Capability context
+          - Canonical Strategy Capability: [II.1.3.4.1.3 [CT3] Healthcare Subject Profile Administration](#df214b5499694b768eb4a7a175a9d471); canonicalId: `df214b5499694b768eb4a7a175a9d471`
+          - III.4.2.1.3.1 Business Services
+            - [III.4.2.1.3.1.1 Demographic Change Distribution](../../../../continuum/business/business-service/2c4a8c1251294885922f8ccdc3d7b069.md) <a id="2c4a8c1251294885922f8ccdc3d7b069"></a>
+            - [III.4.2.1.3.1.2 Healthcare Subject Context Resolution](../../../../continuum/business/business-service/99a739efc7be4d7b92d90181ecd69d15.md) <a id="99a739efc7be4d7b92d90181ecd69d15"></a>
+          - III.4.2.1.3.2 Business Functions
+            - [III.4.2.1.3.2.1 Establish Healthcare Subject Context](../../../../continuum/business/business-function/f445f86f9de24461aabee527e5b41287.md) <a id="f445f86f9de24461aabee527e5b41287"></a>
+            - [III.4.2.1.3.2.2 Govern Subject Demographic Context](../../../../continuum/business/business-function/76288dacb9034e0bbf75b43d8afe59d2.md) <a id="76288dacb9034e0bbf75b43d8afe59d2"></a>
+        - III.4.2.1.4 [CT3] Person Identity Administration — Capability context
+          - Canonical Strategy Capability: [II.1.3.4.1.4 [CT3] Person Identity Administration](#6c3de7750ef1436cad6a9533731782b6); canonicalId: `6c3de7750ef1436cad6a9533731782b6`
+          - III.4.2.1.4.1 [Feature] Identifier Capture — Capability context
+            - Canonical Strategy Capability: [II.1.3.4.1.4.3 [Feature] Identifier Capture](#3cae3c4810974c5f8ee5a4c942f38b07); canonicalId: `3cae3c4810974c5f8ee5a4c942f38b07`
+            - III.4.2.1.4.1.1 Business Services
+              - [III.4.2.1.4.1.1.1 [Business Service] Identifier Create](../../../../continuum/business/business-service/063b7a6b4ad549428a7566a4ce2c5de5.md) <a id="063b7a6b4ad549428a7566a4ce2c5de5"></a>
+              - [III.4.2.1.4.1.1.2 [Business Service] Identifier Update](../../../../continuum/business/business-service/281155a0820942b884a13fa08d2e0b04.md) <a id="281155a0820942b884a13fa08d2e0b04"></a>
+            - III.4.2.1.4.1.2 Business Processes
+              - [III.4.2.1.4.1.2.1 [Business Process] Identifier Verification](../../../../continuum/business/business-process/6ea7f8afe17d4319ab6fa9691db4328d.md) <a id="6ea7f8afe17d4319ab6fa9691db4328d"></a>
+          - III.4.2.1.4.2 [Feature] Identity Source & Correction Lineage — Capability context
+            - Canonical Strategy Capability: [II.1.3.4.1.4.6 [Feature] Identity Source & Correction Lineage](#d72134e75001449a9e7ffae53f61458f); canonicalId: `d72134e75001449a9e7ffae53f61458f`
+            - III.4.2.1.4.2.1 Business Services
+              - [III.4.2.1.4.2.1.1 [Business Service] Verify Identity Source](../../../../continuum/business/business-service/b95f652107f4420b86cc10fb893c9b01.md) <a id="b95f652107f4420b86cc10fb893c9b01"></a>
+          - III.4.2.1.4.3 Business Services
+            - [III.4.2.1.4.3.1 Person Identifier Correlation](../../../../continuum/business/business-service/71220901361e42f686faf7d852f57e45.md) <a id="71220901361e42f686faf7d852f57e45"></a>
+            - [III.4.2.1.4.3.2 Person Identifier Resolution](../../../../continuum/business/business-service/a533cf0d23364f398f2a71843cce98c4.md) <a id="a533cf0d23364f398f2a71843cce98c4"></a>
+            - [III.4.2.1.4.3.3 Person Identity Correction](../../../../continuum/business/business-service/dd5ed5ba58f94ecbbdac913c88d2b7b6.md) <a id="dd5ed5ba58f94ecbbdac913c88d2b7b6"></a>
+          - III.4.2.1.4.4 Business Functions
+            - [III.4.2.1.4.4.1 Apply Governed Person Identity Correction](../../../../continuum/business/business-function/844b9abe470d4f4684f35adddf1b880d.md) <a id="844b9abe470d4f4684f35adddf1b880d"></a>
+            - [III.4.2.1.4.4.2 Correlate Person Identifiers](../../../../continuum/business/business-function/3050366e2e1d47eeaa4cfd6db92c0a56.md) <a id="3050366e2e1d47eeaa4cfd6db92c0a56"></a>
+            - [III.4.2.1.4.4.3 Maintain Person Identity Aliases](../../../../continuum/business/business-function/9db2528e180a418eacbad3acf86b3956.md) <a id="9db2528e180a418eacbad3acf86b3956"></a>
+            - [III.4.2.1.4.4.4 Resolve Person Identifier](../../../../continuum/business/business-function/2f128e1d8de642478c18b7a0ccb8e083.md) <a id="2f128e1d8de642478c18b7a0ccb8e083"></a>
+          - III.4.2.1.4.5 Business Processes
+            - [III.4.2.1.4.5.1 Governed Person Identity Correction Process](../../../../continuum/business/business-process/72f3c63da45d44868579a3bb15d1568c.md) <a id="72f3c63da45d44868579a3bb15d1568c"></a>
+      - III.4.2.2 [CT2] Clinical Device Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.4.2 [CT2] Clinical Device Administration](#31bcd6fda0d14cc8b992cdca39a3cbed); canonicalId: `31bcd6fda0d14cc8b992cdca39a3cbed`
+        - III.4.2.2.1 [CT3] Device Utilisation Administration — Capability context
+          - Canonical Strategy Capability: [II.1.3.4.2.7 [CT3] Device Utilisation Administration](#1a3732b5911c45b3aece38b2db2d0f15); canonicalId: `1a3732b5911c45b3aece38b2db2d0f15`
+          - III.4.2.2.1.1 Business Services
+            - [III.4.2.2.1.1.1 Clinical Resource Availability Query](../../../../continuum/business/business-service/0e5ed162a288425aad2833ed5e07ed64.md) <a id="0e5ed162a288425aad2833ed5e07ed64"></a>
+          - III.4.2.2.1.2 Business Functions
+            - [III.4.2.2.1.2.1 Track Mobile Clinical Asset Operational State](../../../../continuum/business/business-function/0a31e03a6c7847c0b7c04310ca0c29e9.md) <a id="0a31e03a6c7847c0b7c04310ca0c29e9"></a>
+        - III.4.2.2.2 Business Services
+          - [III.4.2.2.2.1 Device Association Query](../../../../continuum/business/business-service/01637c40914945d68d261c2094b86904.md) <a id="01637c40914945d68d261c2094b86904"></a>
+          - [III.4.2.2.2.2 Device Definition Query](../../../../continuum/business/business-service/49325c789401465aa565fd7fa7109070.md) <a id="49325c789401465aa565fd7fa7109070"></a>
+          - [III.4.2.2.2.3 Device Endpoint Resolution](../../../../continuum/business/business-service/5806d6e030b543d0867a862d5b6d8fad.md) <a id="5806d6e030b543d0867a862d5b6d8fad"></a>
+          - [III.4.2.2.2.4 Device Instance Resolution](../../../../continuum/business/business-service/14fb1e3f17dd40d88087a00c9707578d.md) <a id="14fb1e3f17dd40d88087a00c9707578d"></a>
+        - III.4.2.2.3 Business Functions
+          - [III.4.2.2.3.1 Maintain Device Association](../../../../continuum/business/business-function/fc0f4d9c781241359d783d26f038b7ff.md) <a id="fc0f4d9c781241359d783d26f038b7ff"></a>
+          - [III.4.2.2.3.2 Maintain Device Communication Endpoints](../../../../continuum/business/business-function/ab5a7538fbd449ae8214d584b7d53a43.md) <a id="ab5a7538fbd449ae8214d584b7d53a43"></a>
+          - [III.4.2.2.3.3 Maintain Device Definition](../../../../continuum/business/business-function/d44083e67fb540579737337cabf2c227.md) <a id="d44083e67fb540579737337cabf2c227"></a>
+          - [III.4.2.2.3.4 Maintain Device Instance Identity](../../../../continuum/business/business-function/927796d77f5e4f61835bd2a7bcceb681.md) <a id="927796d77f5e4f61835bd2a7bcceb681"></a>
+      - III.4.2.3 [CT2] Health Service Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.4.4 [CT2] Health Service Administration](#ba68a52913a0499d8377553bddfa74a4); canonicalId: `ba68a52913a0499d8377553bddfa74a4`
+        - III.4.2.3.1 Business Services
+          - [III.4.2.3.1.1 Healthcare Service Directory Query](../../../../continuum/business/business-service/c7bf105e1217441a9423706b1481d153.md) <a id="c7bf105e1217441a9423706b1481d153"></a>
+          - [III.4.2.3.1.2 Service Availability Query](../../../../continuum/business/business-service/a3846cb2960a4000a5db9ef18942ee20.md) <a id="a3846cb2960a4000a5db9ef18942ee20"></a>
+          - [III.4.2.3.1.3 Service Eligibility Evaluation](../../../../continuum/business/business-service/7e005ce374f347088ae854442fc3edef.md) <a id="7e005ce374f347088ae854442fc3edef"></a>
+          - [III.4.2.3.1.4 Service Provision Resolution](../../../../continuum/business/business-service/e54866d88b1e442f8ea170f06f98028b.md) <a id="e54866d88b1e442f8ea170f06f98028b"></a>
+        - III.4.2.3.2 Business Functions
+          - [III.4.2.3.2.1 Maintain Healthcare Service Definition](../../../../continuum/business/business-function/833a98c58dae416da783ef6e77290576.md) <a id="833a98c58dae416da783ef6e77290576"></a>
+          - [III.4.2.3.2.2 Maintain Service / Location / Provider Map](../../../../continuum/business/business-function/ea06c77ea3c841cc94cb1686295322b4.md) <a id="ea06c77ea3c841cc94cb1686295322b4"></a>
+          - [III.4.2.3.2.3 Maintain Service Availability](../../../../continuum/business/business-function/38321dd2581b46a182dcdf52865d44be.md) <a id="38321dd2581b46a182dcdf52865d44be"></a>
+          - [III.4.2.3.2.4 Maintain Service Eligibility Rules](../../../../continuum/business/business-function/e1e1cf2aa30840368d107ab9dfd0257f.md) <a id="e1e1cf2aa30840368d107ab9dfd0257f"></a>
+      - III.4.2.4 [CT2] Location Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.4.5 [CT2] Location Administration](#c410005667444f99a221483bf577fad2); canonicalId: `c410005667444f99a221483bf577fad2`
+        - III.4.2.4.1 Business Services
+          - [III.4.2.4.1.1 Care-Place Specification Lookup](../../../../continuum/business/business-service/43b011b0c233408eaf6e555ecbf05d9e.md) <a id="43b011b0c233408eaf6e555ecbf05d9e"></a>
+          - [III.4.2.4.1.2 Location Directory Query](../../../../continuum/business/business-service/5ef66362eb674794b335c435227b0c95.md) <a id="5ef66362eb674794b335c435227b0c95"></a>
+          - [III.4.2.4.1.3 Location Hierarchy Resolution](../../../../continuum/business/business-service/389af7aaa9d74ab8b42e55f0fa72ef99.md) <a id="389af7aaa9d74ab8b42e55f0fa72ef99"></a>
+        - III.4.2.4.2 Business Functions
+          - [III.4.2.4.2.1 Maintain Care-Place Definition](../../../../continuum/business/business-function/ad9aa4eeecf84eb08460234ed0dc4ecc.md) <a id="ad9aa4eeecf84eb08460234ed0dc4ecc"></a>
+          - [III.4.2.4.2.2 Maintain Healthcare Location](../../../../continuum/business/business-function/448f1c9317914498ab246f74d4ce2bd6.md) <a id="448f1c9317914498ab246f74d4ce2bd6"></a>
+          - [III.4.2.4.2.3 Maintain Physical Location Hierarchy](../../../../continuum/business/business-function/d217a5cd3a3d40e9a89068d1680ec45f.md) <a id="d217a5cd3a3d40e9a89068d1680ec45f"></a>
+      - III.4.2.5 [CT2] Organisation Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.4.6 [CT2] Organisation Administration](#14fbdc5ce3dd4c2092c5397dab3ed743); canonicalId: `14fbdc5ce3dd4c2092c5397dab3ed743`
+        - III.4.2.5.1 Business Services
+          - [III.4.2.5.1.1 Organisation Contact Lookup](../../../../continuum/business/business-service/551f1e73fb73449a83f3155cb8158f30.md) <a id="551f1e73fb73449a83f3155cb8158f30"></a>
+          - [III.4.2.5.1.2 Organisation Directory Query](../../../../continuum/business/business-service/c5acf1dc97874d0a8264f9a5c1b735fa.md) <a id="c5acf1dc97874d0a8264f9a5c1b735fa"></a>
+          - [III.4.2.5.1.3 Organisation Verification Service](../../../../continuum/business/business-service/223b2cbe762b40efb9f05bb5cdd66bcb.md) <a id="223b2cbe762b40efb9f05bb5cdd66bcb"></a>
+          - [III.4.2.5.1.4 Organisational Hierarchy Resolution](../../../../continuum/business/business-service/c9187704dd7f49f69f9e674c16e9181b.md) <a id="c9187704dd7f49f69f9e674c16e9181b"></a>
+        - III.4.2.5.2 Business Functions
+          - [III.4.2.5.2.1 Govern Organisation Profile](../../../../continuum/business/business-function/08990a2aa346403f8dd7d716acf188bf.md) <a id="08990a2aa346403f8dd7d716acf188bf"></a>
+          - [III.4.2.5.2.2 Maintain Organisation Contacts](../../../../continuum/business/business-function/4584f74d08834bc2bc595463ad51bd37.md) <a id="4584f74d08834bc2bc595463ad51bd37"></a>
+          - [III.4.2.5.2.3 Maintain Organisational Structure](../../../../continuum/business/business-function/5ae4edf0813f4a738fdb3160f3e77b0d.md) <a id="5ae4edf0813f4a738fdb3160f3e77b0d"></a>
+          - [III.4.2.5.2.4 Verify Healthcare Organisation](../../../../continuum/business/business-function/c39236ca89864f089684242df5647c9d.md) <a id="c39236ca89864f089684242df5647c9d"></a>
+      - III.4.2.6 [CT2] Provider Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.4.7 [CT2] Provider Administration](#d6312f85968a4209bafff5ed009297a6); canonicalId: `d6312f85968a4209bafff5ed009297a6`
+        - III.4.2.6.1 Business Services
+          - [III.4.2.6.1.1 Clinical Privilege Verification](../../../../continuum/business/business-service/f6599b4283194577a977bfc86ea854c2.md) <a id="f6599b4283194577a977bfc86ea854c2"></a>
+          - [III.4.2.6.1.2 Practitioner Affiliation Resolution](../../../../continuum/business/business-service/65baca2a21f040d49be74fab1727f96d.md) <a id="65baca2a21f040d49be74fab1727f96d"></a>
+          - [III.4.2.6.1.3 Practitioner Directory Query](../../../../continuum/business/business-service/ed8e6a3d891340fe92fc3201abd15c46.md) <a id="ed8e6a3d891340fe92fc3201abd15c46"></a>
+          - [III.4.2.6.1.4 Practitioner Endpoint Lookup](../../../../continuum/business/business-service/2efb21629acf41e9b4f5c59db00721d0.md) <a id="2efb21629acf41e9b4f5c59db00721d0"></a>
+          - [III.4.2.6.1.5 Practitioner Role Resolution](../../../../continuum/business/business-service/c3e5c04e2a194b4a8d49b8776fce2c51.md) <a id="c3e5c04e2a194b4a8d49b8776fce2c51"></a>
+          - [III.4.2.6.1.6 Practitioner Verification Service](../../../../continuum/business/business-service/adf039a87e9243a1b82612a4919f6f14.md) <a id="adf039a87e9243a1b82612a4919f6f14"></a>
+        - III.4.2.6.2 Business Functions
+          - [III.4.2.6.2.1 Bind Practitioner Electronic Endpoints](../../../../continuum/business/business-function/11962189d1734cca840842209613c8d1.md) <a id="11962189d1734cca840842209613c8d1"></a>
+          - [III.4.2.6.2.2 Govern Practitioner Profile](../../../../continuum/business/business-function/a9a1a2c5ab544c029ba0c362a305eaa5.md) <a id="a9a1a2c5ab544c029ba0c362a305eaa5"></a>
+          - [III.4.2.6.2.3 Maintain Clinical Privileges](../../../../continuum/business/business-function/4965ae4538cc42cd8af1bd9a1905b108.md) <a id="4965ae4538cc42cd8af1bd9a1905b108"></a>
+          - [III.4.2.6.2.4 Maintain Practitioner Affiliations](../../../../continuum/business/business-function/7dc829546e99424dbbf8f19b4565d3fc.md) <a id="7dc829546e99424dbbf8f19b4565d3fc"></a>
+          - [III.4.2.6.2.5 Maintain Practitioner Roles](../../../../continuum/business/business-function/08a269d84dad46a58d6b9181b465ddc4.md) <a id="08a269d84dad46a58d6b9181b465ddc4"></a>
+          - [III.4.2.6.2.6 Verify Practitioner Registration](../../../../continuum/business/business-function/a9f4fe6090bf4a4b946ae7064213945c.md) <a id="a9f4fe6090bf4a4b946ae7064213945c"></a>
+        - III.4.2.6.3 Business Processes
+          - [III.4.2.6.3.1 Practitioner Verification Process](../../../../continuum/business/business-process/32a3e1f948474d3aa77ca71bfa515f58.md) <a id="32a3e1f948474d3aa77ca71bfa515f58"></a>
+    - III.4.3 [CT1] Health Informatics Management — Capability context
+      - Canonical Strategy Capability: [II.1.3.5 [CT1] Health Informatics Management](#a790b5f2c5a1497fa6ec09d7824da32e); canonicalId: `a790b5f2c5a1497fa6ec09d7824da32e`
+      - III.4.3.1 [CT2] Research Information Curation — Capability context
+        - Canonical Strategy Capability: [II.1.3.5.2 [CT2] Research Information Curation](#4f5b8cec90324c2989cdc30e80bc8cb9); canonicalId: `4f5b8cec90324c2989cdc30e80bc8cb9`
+        - III.4.3.1.1 Business Services
+          - [III.4.3.1.1.1 Authorised Research Information Export](../../../../continuum/business/business-service/134e1ff0331040b3a8069c9dc5e331d4.md) <a id="134e1ff0331040b3a8069c9dc5e331d4"></a>
+        - III.4.3.1.2 Business Functions
+          - [III.4.3.1.2.1 Assemble Purpose-Qualified Research Release](../../../../continuum/business/business-function/bf4354a421174a9ba56c281f4dcd11f6.md) <a id="bf4354a421174a9ba56c281f4dcd11f6"></a>
+    - III.4.4 [CT1] Health Service Operations Enablement — Capability context
+      - Canonical Strategy Capability: [II.1.3.6 [CT1] Health Service Operations Enablement](#b13ee2c5a4ef4fd6be8a44795696dfc2); canonicalId: `b13ee2c5a4ef4fd6be8a44795696dfc2`
+      - III.4.4.1 [CT2] Bed & Care-Place Management — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.1 [CT2] Bed & Care-Place Management](#f117ccec0bfa4f738e6ddb646b3534a2); canonicalId: `f117ccec0bfa4f738e6ddb646b3534a2`
+        - III.4.4.1.1 Business Services
+          - [III.4.4.1.1.1 Bed Availability Query](../../../../continuum/business/business-service/c51894eccd7b45019c2f084993f4cfc6.md) <a id="c51894eccd7b45019c2f084993f4cfc6"></a>
+          - [III.4.4.1.1.2 Bed Turnover Lifecycle Service](../../../../continuum/business/business-service/f0ab3847b1bf41869a85b1a5ef217429.md) <a id="f0ab3847b1bf41869a85b1a5ef217429"></a>
+        - III.4.4.1.2 Business Functions
+          - [III.4.4.1.2.1 Maintain Operational Bed State](../../../../continuum/business/business-function/22f3016539cf4c2db68baa9921acf31b.md) <a id="22f3016539cf4c2db68baa9921acf31b"></a>
+          - [III.4.4.1.2.2 Manage Bed Turnover Progression](../../../../continuum/business/business-function/7637b9bcb38d4e3abbe01a59dc23f485.md) <a id="7637b9bcb38d4e3abbe01a59dc23f485"></a>
+        - III.4.4.1.3 Business Processes
+          - [III.4.4.1.3.1 Bed Turnover Process](../../../../continuum/business/business-process/69f74289926942f4baed4acf4c654a3b.md) <a id="69f74289926942f4baed4acf4c654a3b"></a>
+      - III.4.4.2 [CT2] Care Resource & Capacity Coordination — Capability context [superseded]
+        - Canonical Strategy Capability: [II.1.3.6.3 [CT2] Care Resource & Capacity Coordination](#96f71cb8fa6844d7aa7e9f16759a3a62); canonicalId: `96f71cb8fa6844d7aa7e9f16759a3a62`
+        - III.4.4.2.1 [CT3] Service Offering Readiness Coordination — Capability context
+          - Canonical Strategy Capability: [II.1.3.6.3.2 [CT3] Service Offering Readiness Coordination](#0caecaba5d3e4781b8671b12c13ee283); canonicalId: `0caecaba5d3e4781b8671b12c13ee283`
+          - III.4.4.2.1.1 Business Services
+            - [III.4.4.2.1.1.1 Service Offering Readiness Query](../../../../continuum/business/business-service/3b0bdc7bc18940208511f39e43d5357a.md) <a id="3b0bdc7bc18940208511f39e43d5357a"></a>
+          - III.4.4.2.1.2 Business Functions
+            - [III.4.4.2.1.2.1 Assess Service Offering Readiness](../../../../continuum/business/business-function/a7eb76c1ff5b450b9835ac19662c8148.md) <a id="a7eb76c1ff5b450b9835ac19662c8148"></a>
+      - III.4.4.3 [CT2] Clinic & Practice Operations — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.5 [CT2] Clinic & Practice Operations](#3dffe63e03124efab255204ee4e9a5d9); canonicalId: `3dffe63e03124efab255204ee4e9a5d9`
+        - III.4.4.3.1 Business Services
+          - [III.4.4.3.1.1 Clinic Queue Telemetry Service](../../../../continuum/business/business-service/c720457349e644179c98d13be59bd581.md) <a id="c720457349e644179c98d13be59bd581"></a>
+        - III.4.4.3.2 Business Functions
+          - [III.4.4.3.2.1 Manage Clinic & Practice Capacity](../../../../continuum/business/business-function/389fb97b2bcd4527959a61f2a288bc39.md) <a id="389fb97b2bcd4527959a61f2a288bc39"></a>
+          - [III.4.4.3.2.2 Manage Clinic Queue Progression](../../../../continuum/business/business-function/cb3f8c48623b4479988c45de86d5a59f.md) <a id="cb3f8c48623b4479988c45de86d5a59f"></a>
+          - [III.4.4.3.2.3 Track Clinic Operating Session](../../../../continuum/business/business-function/83a85a08803c4c00b8de4a38e8c9d77e.md) <a id="83a85a08803c4c00b8de4a38e8c9d77e"></a>
+        - III.4.4.3.3 Business Processes
+          - [III.4.4.3.3.1 Clinic / Operational Queue Progression Process](../../../../continuum/business/business-process/319d6956276a4cdeb43e350e1b01d078.md) <a id="319d6956276a4cdeb43e350e1b01d078"></a>
+      - III.4.4.4 [CT2] Clinical Logistics Coordination — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.7 [CT2] Clinical Logistics Coordination](#0c27be11b4a44cb19e992309b8146a17); canonicalId: `0c27be11b4a44cb19e992309b8146a17`
+        - III.4.4.4.1 Business Services
+          - [III.4.4.4.1.1 Specimen Transit Tracking Service](../../../../continuum/business/business-service/100e740770bc4ab28cfe3c9af4b541cd.md) <a id="100e740770bc4ab28cfe3c9af4b541cd"></a>
+        - III.4.4.4.2 Business Functions
+          - [III.4.4.4.2.1 Manage Specimen Transport Progression](../../../../continuum/business/business-function/4c9d50efc9e640fcb3abb02b8dd05486.md) <a id="4c9d50efc9e640fcb3abb02b8dd05486"></a>
+        - III.4.4.4.3 Business Processes
+          - [III.4.4.4.3.1 Specimen Transport Process](../../../../continuum/business/business-process/11bb000294fc44a8af295f4682e2fe6c.md) <a id="11bb000294fc44a8af295f4682e2fe6c"></a>
+      - III.4.4.5 [CT2] Clinical Qualification Administration — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.8 [CT2] Clinical Qualification Administration](#0511a705d74a4f48a0ce92590ae764fa); canonicalId: `0511a705d74a4f48a0ce92590ae764fa`
+        - III.4.4.5.1 Business Functions
+          - [III.4.4.5.1.1 Verify Clinical Qualification for Work Dispatch](../../../../continuum/business/business-function/1dfebc3aa5f949e5a20faa504eadbee1.md) <a id="1dfebc3aa5f949e5a20faa504eadbee1"></a>
+      - III.4.4.6 [CT2] Discharge Management — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.14 [CT2] Discharge Management](#ec5e8d6732764aa489c2dd7630fc8fef); canonicalId: `ec5e8d6732764aa489c2dd7630fc8fef`
+        - III.4.4.6.1 Business Services
+          - [III.4.4.6.1.1 Discharge Readiness Telemetry](../../../../continuum/business/business-service/03d01a9b024c4497badf3fe011a8dd20.md) <a id="03d01a9b024c4497badf3fe011a8dd20"></a>
+        - III.4.4.6.2 Business Functions
+          - [III.4.4.6.2.1 Manage Discharge Coordination Progression](../../../../continuum/business/business-function/ecda6d08166d4df78c15c87387fbe108.md) <a id="ecda6d08166d4df78c15c87387fbe108"></a>
+        - III.4.4.6.3 Business Processes
+          - [III.4.4.6.3.1 Discharge Progression Process](../../../../continuum/business/business-process/7165955d9c454175a04b9ad00293f011.md) <a id="7165955d9c454175a04b9ad00293f011"></a>
+      - III.4.4.7 [CT2] Emergency Department Operations — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.15 [CT2] Emergency Department Operations](#24a4b5815faa4d369bc756a6e97d3e9e); canonicalId: `24a4b5815faa4d369bc756a6e97d3e9e`
+        - III.4.4.7.1 [CT3] Emergency Care Progression — Capability context
+          - Canonical Strategy Capability: [II.1.3.6.15.1 [CT3] Emergency Care Progression](#7125e459a48946d0ba075b5ecc3571b4); canonicalId: `7125e459a48946d0ba075b5ecc3571b4`
+          - III.4.4.7.1.1 Business Services
+            - [III.4.4.7.1.1.1 ED Triage Stream Ingress](../../../../continuum/business/business-service/677947e357b541f58f36e9b4e36157e8.md) <a id="677947e357b541f58f36e9b4e36157e8"></a>
+            - [III.4.4.7.1.1.2 Emergency Fast-Path LHR Query](../../../../continuum/business/business-service/0588ef78691143cdb2d884960811db1e.md) <a id="0588ef78691143cdb2d884960811db1e"></a>
+          - III.4.4.7.1.2 Business Functions
+            - [III.4.4.7.1.2.1 Bind ED Triage Assessment](../../../../continuum/business/business-function/fa51fad9b9344546953ff8ec5b5f39ca.md) <a id="fa51fad9b9344546953ff8ec5b5f39ca"></a>
+            - [III.4.4.7.1.2.2 Provide Emergency LHR Summary](../../../../continuum/business/business-function/a7235e8b249a4914b951e0d795132316.md) <a id="a7235e8b249a4914b951e0d795132316"></a>
+        - III.4.4.7.2 Business Services
+          - [III.4.4.7.2.1 ED Operational Status Query](../../../../continuum/business/business-service/f07828653c06425f9effd92b1d9886c9.md) <a id="f07828653c06425f9effd92b1d9886c9"></a>
+        - III.4.4.7.3 Business Functions
+          - [III.4.4.7.3.1 Coordinate ED Departmental Capacity](../../../../continuum/business/business-function/a1559e7ed12c4f249128fba2ff74d536.md) <a id="a1559e7ed12c4f249128fba2ff74d536"></a>
+      - III.4.4.8 [CT2] Mobile Staff Management — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.16 [CT2] Mobile Staff Management](#79a4a48fddf74c69acf7e16404d06ea5); canonicalId: `79a4a48fddf74c69acf7e16404d06ea5`
+        - III.4.4.8.1 Business Services
+          - [III.4.4.8.1.1 Staff Presence Telemetry Query](../../../../continuum/business/business-service/b3cd0d8e40f44b9fa2b64367237345fa.md) <a id="b3cd0d8e40f44b9fa2b64367237345fa"></a>
+        - III.4.4.8.2 Business Functions
+          - [III.4.4.8.2.1 Integrate Mobile Work Management](../../../../continuum/business/business-function/81f97ad819da48f09f26029066550e08.md) <a id="81f97ad819da48f09f26029066550e08"></a>
+          - [III.4.4.8.2.2 Manage Mobile Service Capacity](../../../../continuum/business/business-function/ad5cb5451ef645acb55ceb0c942ea013.md) <a id="ad5cb5451ef645acb55ceb0c942ea013"></a>
+          - [III.4.4.8.2.3 Receive Mobile Visit Progression](../../../../continuum/business/business-function/71700f211ef4403f98a2b9b11d8d7848.md) <a id="71700f211ef4403f98a2b9b11d8d7848"></a>
+          - [III.4.4.8.2.4 Track Operational Staff Presence](../../../../continuum/business/business-function/9ccdb235a69946e0ad5a99001a1d16e0.md) <a id="9ccdb235a69946e0ad5a99001a1d16e0"></a>
+      - III.4.4.9 [CT2] On-Call Management — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.17 [CT2] On-Call Management](#b16cef8f2bfd4b92948ec75cbcfa7b9a); canonicalId: `b16cef8f2bfd4b92948ec75cbcfa7b9a`
+        - III.4.4.9.1 Business Services
+          - [III.4.4.9.1.1 On-Call Specialist Lookup](../../../../continuum/business/business-service/e0ba307dc51e47a395c1eac9fe728a98.md) <a id="e0ba307dc51e47a395c1eac9fe728a98"></a>
+        - III.4.4.9.2 Business Functions
+          - [III.4.4.9.2.1 Resolve Active On-Call Coverage](../../../../continuum/business/business-function/a88d3779091140c6b90f98d550b5387f.md) <a id="a88d3779091140c6b90f98d550b5387f"></a>
+      - III.4.4.10 [CT2] Outpatient Operations — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.19 [CT2] Outpatient Operations](#21399d52b9624ddfbeb786f1d72e40c3); canonicalId: `21399d52b9624ddfbeb786f1d72e40c3`
+        - III.4.4.10.1 Business Services
+          - [III.4.4.10.1.1 Ambulatory Session Status Query](../../../../continuum/business/business-service/a790a785f2e148d7a1c99655d53db4e9.md) <a id="a790a785f2e148d7a1c99655d53db4e9"></a>
+        - III.4.4.10.2 Business Functions
+          - [III.4.4.10.2.1 Capture Post-Clinic Follow-up Requirements](../../../../continuum/business/business-function/9136f75069bf4770bcc8dc395204d475.md) <a id="9136f75069bf4770bcc8dc395204d475"></a>
+          - [III.4.4.10.2.2 Manage Outpatient Capacity](../../../../continuum/business/business-function/45fd6190b7334f838575881725f6a66b.md) <a id="45fd6190b7334f838575881725f6a66b"></a>
+      - III.4.4.11 [CT2] Patient Transport — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.20 [CT2] Patient Transport](#6041d7c0cc5d4519aaea584bb4e6d365); canonicalId: `6041d7c0cc5d4519aaea584bb4e6d365`
+        - III.4.4.11.1 Business Services
+          - [III.4.4.11.1.1 Patient Transport Tracking Service](../../../../continuum/business/business-service/8d71168ac7da48e990757b2a0ae3670f.md) <a id="8d71168ac7da48e990757b2a0ae3670f"></a>
+        - III.4.4.11.2 Business Functions
+          - [III.4.4.11.2.1 Manage Patient Transport Progression](../../../../continuum/business/business-function/8a2136544646458fb60413afed2b66e1.md) <a id="8a2136544646458fb60413afed2b66e1"></a>
+        - III.4.4.11.3 Business Processes
+          - [III.4.4.11.3.1 Patient Transport Process](../../../../continuum/business/business-process/f2e58fd18cd94b0faaa364d3890a7c9e.md) <a id="f2e58fd18cd94b0faaa364d3890a7c9e"></a>
+      - III.4.4.12 [CT2] Service Capacity Management — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.21 [CT2] Service Capacity Management](#d86105bf9c86445394088f65c895d37f); canonicalId: `d86105bf9c86445394088f65c895d37f`
+        - III.4.4.12.1 Business Services
+          - [III.4.4.12.1.1 Regional Health System Capacity Query](../../../../continuum/business/business-service/ecbb1944572d44dbba55aaf565559d13.md) <a id="ecbb1944572d44dbba55aaf565559d13"></a>
+        - III.4.4.12.2 Business Functions
+          - [III.4.4.12.2.1 Aggregate Service Capacity Telemetry](../../../../continuum/business/business-function/ac08378c955048ef81ed5d9ff9c5cc7e.md) <a id="ac08378c955048ef81ed5d9ff9c5cc7e"></a>
+      - III.4.4.13 [CT2] Theatre Operations — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.23 [CT2] Theatre Operations](#4bf7a8260e1444fdac44e97c3557b533); canonicalId: `4bf7a8260e1444fdac44e97c3557b533`
+        - III.4.4.13.1 Business Services
+          - [III.4.4.13.1.1 Theatre Case Progression Telemetry](../../../../continuum/business/business-service/15fca4d52810448785ca3c70b899a294.md) <a id="15fca4d52810448785ca3c70b899a294"></a>
+        - III.4.4.13.2 Business Functions
+          - [III.4.4.13.2.1 Manage Theatre Capacity](../../../../continuum/business/business-function/3566d549770f490dba823fe3b0421446.md) <a id="3566d549770f490dba823fe3b0421446"></a>
+          - [III.4.4.13.2.2 Manage Theatre Case Progression](../../../../continuum/business/business-function/88d2d17cccfb4a578b835be588043bab.md) <a id="88d2d17cccfb4a578b835be588043bab"></a>
+        - III.4.4.13.3 Business Processes
+          - [III.4.4.13.3.1 Theatre Case Progression Process](../../../../continuum/business/business-process/8ad97120b5b54a31a64a4522e6bc9fd1.md) <a id="8ad97120b5b54a31a64a4522e6bc9fd1"></a>
+      - III.4.4.14 [CT2] Ward Operations — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.24 [CT2] Ward Operations](#f996ecca728f4942a88b034aca818a99); canonicalId: `f996ecca728f4942a88b034aca818a99`
+        - III.4.4.14.1 [CT3] Multidisciplinary Inpatient Care Coordination — Capability context
+          - Canonical Strategy Capability: [II.1.3.6.24.1 [CT3] Multidisciplinary Inpatient Care Coordination](#c798e38e12e5428dbb8b3cabc977d430); canonicalId: `c798e38e12e5428dbb8b3cabc977d430`
+          - III.4.4.14.1.1 Business Services
+            - [III.4.4.14.1.1.1 Discharge Dossier Packaging Service](../../../../continuum/business/business-service/02a17f4f9b0a425299141261130a1768.md) <a id="02a17f4f9b0a425299141261130a1768"></a>
+            - [III.4.4.14.1.1.2 Ward Round Clinical Briefing Query](../../../../continuum/business/business-service/2b0f17a8a2da4c0f92a5ad4a17ee526b.md) <a id="2b0f17a8a2da4c0f92a5ad4a17ee526b"></a>
+          - III.4.4.14.1.2 Business Functions
+            - [III.4.4.14.1.2.1 Assemble Inpatient Discharge Dossier](../../../../continuum/business/business-function/eeefe77a935a46aface61aca4e2bcfb6.md) <a id="eeefe77a935a46aface61aca4e2bcfb6"></a>
+            - [III.4.4.14.1.2.2 Consolidate Inpatient Clinical Round Feed](../../../../continuum/business/business-function/76eb51b9cc6a4417bbc8491830e43ad1.md) <a id="76eb51b9cc6a4417bbc8491830e43ad1"></a>
+        - III.4.4.14.2 Business Services
+          - [III.4.4.14.2.1 Ward Operational Summary Query](../../../../continuum/business/business-service/55a7f84dfb4142e2aa96c5253b4b6394.md) <a id="55a7f84dfb4142e2aa96c5253b4b6394"></a>
+        - III.4.4.14.3 Business Functions
+          - [III.4.4.14.3.1 Assemble Ward Handover Context](../../../../continuum/business/business-function/6006d70ed3794c57ab2bc57119292e4b.md) <a id="6006d70ed3794c57ab2bc57119292e4b"></a>
+          - [III.4.4.14.3.2 Manage Ward Capacity](../../../../continuum/business/business-function/eca5f4fbf92743f987a01930dc4ee763.md) <a id="eca5f4fbf92743f987a01930dc4ee763"></a>
+      - III.4.4.15 [CT2] Work Allocation & Dispatch — Capability context
+        - Canonical Strategy Capability: [II.1.3.6.25 [CT2] Work Allocation & Dispatch](#152a5252952c405994e9b171234efcb0); canonicalId: `152a5252952c405994e9b171234efcb0`
+        - III.4.4.15.1 Business Services
+          - [III.4.4.15.1.1 Operational Work Status Query](../../../../continuum/business/business-service/8659408923e641b99727ef218e2b8dfc.md) <a id="8659408923e641b99727ef218e2b8dfc"></a>
+          - [III.4.4.15.1.2 Work Dispatch Service](../../../../continuum/business/business-service/7410926f15d3480eaa856d998d67d83f.md) <a id="7410926f15d3480eaa856d998d67d83f"></a>
+        - III.4.4.15.2 Business Functions
+          - [III.4.4.15.2.1 Dispatch Operational Work Order](../../../../continuum/business/business-function/05a14489d3e943499581620356130007.md) <a id="05a14489d3e943499581620356130007"></a>
+          - [III.4.4.15.2.2 Manage Operational Work Progression](../../../../continuum/business/business-function/ebc35951617a4f92863922b74dd1c1f4.md) <a id="ebc35951617a4f92863922b74dd1c1f4"></a>
+        - III.4.4.15.3 Business Processes
+          - [III.4.4.15.3.1 Operational Work Progression Process](../../../../continuum/business/business-process/5ebba522194b4de5a5b3963e855d712d.md) <a id="5ebba522194b4de5a5b3963e855d712d"></a>
+      - III.4.4.16 [CT2] Workforce Qualification & Development Enablement — Capability context [superseded]
+        - Canonical Strategy Capability: [II.1.3.6.26 [CT2] Workforce Qualification & Development Enablement](#d24a1f4c4f674c45a95c317998ff4186); canonicalId: `d24a1f4c4f674c45a95c317998ff4186`
+        - III.4.4.16.1 [CT3] Credential Management — Capability context
+          - Canonical Strategy Capability: [II.1.3.6.26.1 [CT3] Credential Management](#3a7a4d2d0ce8446b8a6293284fb16b83); canonicalId: `3a7a4d2d0ce8446b8a6293284fb16b83`
+          - III.4.4.16.1.1 Business Services
+            - [III.4.4.16.1.1.1 Operational Credential Checkpoint Service](../../../../continuum/business/business-service/7ecc60e34e07491588b106b9075ab09a.md) <a id="7ecc60e34e07491588b106b9075ab09a"></a>
+          - III.4.4.16.1.2 Business Functions
+            - [III.4.4.16.1.2.1 Verify Operational Access Credential](../../../../continuum/business/business-function/a0eb34a7cb7046fd880248e799632810.md) <a id="a0eb34a7cb7046fd880248e799632810"></a>
+    - III.4.5 [CT1] Human Collaboration & Work Enablement — Capability context [superseded]
+      - Canonical Strategy Capability: [II.1.3.7 [CT1] Human Collaboration & Work Enablement](#c9347f73b21242c5b8cce41252b74da0); canonicalId: `c9347f73b21242c5b8cce41252b74da0`
+      - III.4.5.1 [CT2] Operational Activity & Temporal Enablement — Capability context [superseded]
+        - Canonical Strategy Capability: [II.1.3.7.2 [CT2] Operational Activity & Temporal Enablement](#ca96b2b2ff434854995711e403e95f6f); canonicalId: `ca96b2b2ff434854995711e403e95f6f`
+        - III.4.5.1.1 [CT3] Entity-Specific Operational Coordination — Capability context
+          - Canonical Strategy Capability: [II.1.3.7.2.1 [CT3] Entity-Specific Operational Coordination](#9f0c1429b64f4f88982fbbda6eaec233); canonicalId: `9f0c1429b64f4f88982fbbda6eaec233`
+          - III.4.5.1.1.1 Business Services
+            - [III.4.5.1.1.1.1 Entity Operational Input Submission](../../../../continuum/business/business-service/6a27b36b624444d4b09e68f286045d46.md) <a id="6a27b36b624444d4b09e68f286045d46"></a>
+          - III.4.5.1.1.2 Business Functions
+            - [III.4.5.1.1.2.1 Coordinate Entity-Relative Input](../../../../continuum/business/business-function/78417d5c46cc406f95e6a41d22e3f143.md) <a id="78417d5c46cc406f95e6a41d22e3f143"></a>
+        - III.4.5.1.2 [CT3] Governed Operational Activity Design — Capability context
+          - Canonical Strategy Capability: [II.1.3.7.2.2 [CT3] Governed Operational Activity Design](#3a96040821c14fe38830411dab4f8453); canonicalId: `3a96040821c14fe38830411dab4f8453`
+          - III.4.5.1.2.1 Business Functions
+            - [III.4.5.1.2.1.1 Maintain Operational Fulfilment Definition](../../../../continuum/business/business-function/9f7085926221436bb672e52e59bca512.md) <a id="9f7085926221436bb672e52e59bca512"></a>
+        - III.4.5.1.3 [CT3] Workflow & Activity Coordination — Capability context
+          - Canonical Strategy Capability: [II.1.3.7.2.3 [CT3] Workflow & Activity Coordination](#94c683c7588f475e973b58cb226345db); canonicalId: `94c683c7588f475e973b58cb226345db`
+          - III.4.5.1.3.1 Business Services
+            - [III.4.5.1.3.1.1 Activity Escalation Telemetry](../../../../continuum/business/business-service/f6c353c9349d47daadd59e57821ad03b.md) <a id="f6c353c9349d47daadd59e57821ad03b"></a>
+            - [III.4.5.1.3.1.2 Synthetic Task Execution Service](../../../../continuum/business/business-service/57317da133ba4e29bde3997921f92e2e.md) <a id="57317da133ba4e29bde3997921f92e2e"></a>
+            - [III.4.5.1.3.1.3 To Do Management Service](../../../../continuum/business/business-service/6bc69c5517024c43b1ab701aac5e39b7.md) <a id="6bc69c5517024c43b1ab701aac5e39b7"></a>
+            - [III.4.5.1.3.1.4 Work Order Coordination Service](../../../../continuum/business/business-service/8a1987ed11d44598b325359287e503f0.md) <a id="8a1987ed11d44598b325359287e503f0"></a>
+          - III.4.5.1.3.2 Business Functions
+            - [III.4.5.1.3.2.1 Coordinate Synthetic Task](../../../../continuum/business/business-function/6cb88c7e689648b1bd0a4d1e26b12f9b.md) <a id="6cb88c7e689648b1bd0a4d1e26b12f9b"></a>
+            - [III.4.5.1.3.2.2 Coordinate To Do](../../../../continuum/business/business-function/a4c9a281578d493eb876eda9fb73cac1.md) <a id="a4c9a281578d493eb876eda9fb73cac1"></a>
+            - [III.4.5.1.3.2.3 Coordinate Work Order](../../../../continuum/business/business-function/0161308bad6945b5bcfdeea5519341cd.md) <a id="0161308bad6945b5bcfdeea5519341cd"></a>
+            - [III.4.5.1.3.2.4 Determine Reconciled Activity Continuation](../../../../continuum/business/business-function/2e326eb5a06641048ad8a919723c4c51.md) <a id="2e326eb5a06641048ad8a919723c4c51"></a>
+            - [III.4.5.1.3.2.5 Establish Activity Effect Observation Basis](../../../../continuum/business/business-function/4038dd6a1baa4856afc76d7adfa6a457.md) <a id="4038dd6a1baa4856afc76d7adfa6a457"></a>
+            - [III.4.5.1.3.2.6 Reconcile Indeterminate Activity Effects](../../../../continuum/business/business-function/eace49fe7b304ad786d460ccef622378.md) <a id="eace49fe7b304ad786d460ccef622378"></a>
+            - [III.4.5.1.3.2.7 Supervise Activity Timeout / Escalation](../../../../continuum/business/business-function/cbf6bfd71d5d4ea9923f10f288ff24dd.md) <a id="cbf6bfd71d5d4ea9923f10f288ff24dd"></a>
+          - III.4.5.1.3.3 Business Processes
+            - [III.4.5.1.3.3.1 Indeterminate Activity Outcome Reconciliation Process](../../../../continuum/business/business-process/96baf3721ce94397a11486184d3df7cf.md) <a id="96baf3721ce94397a11486184d3df7cf"></a>
+            - [III.4.5.1.3.3.2 Synthetic Task Progression Process](../../../../continuum/business/business-process/618acdb38fc74952ab360fdde4f7d865.md) <a id="618acdb38fc74952ab360fdde4f7d865"></a>
+            - [III.4.5.1.3.3.3 To Do Progression Process](../../../../continuum/business/business-process/c5e4c3076b094c98a628179b91ae03d0.md) <a id="c5e4c3076b094c98a628179b91ae03d0"></a>
+            - [III.4.5.1.3.3.4 Work Order Progression Process](../../../../continuum/business/business-process/73fbbe4e027b4805809fad430e791eba.md) <a id="73fbbe4e027b4805809fad430e791eba"></a>
+    - III.4.6 [CT1] Independent Assurance Enablement — Capability context
+      - Canonical Strategy Capability: [II.1.3.8 [CT1] Independent Assurance Enablement](#616682b612d244429e656b040e002d56); canonicalId: `616682b612d244429e656b040e002d56`
+      - III.4.6.1 [CT2] Assurance Specification — Capability context
+        - Canonical Strategy Capability: [II.1.3.8.2 [CT2] Assurance Specification](#b81775d89d774cf8ba61731d13c67a54); canonicalId: `b81775d89d774cf8ba61731d13c67a54`
+        - III.4.6.1.1 [CT3] Assurance Criteria Administration — Capability context
+          - Canonical Strategy Capability: [II.1.3.8.2.1 [CT3] Assurance Criteria Administration](#1bfd71f24321428c8871b587d413f47e); canonicalId: `1bfd71f24321428c8871b587d413f47e`
+          - III.4.6.1.1.1 Business Functions
+            - [III.4.6.1.1.1.1 Manage Assurance Criteria](../../../../continuum/business/business-function/d7e9ba5addd94db2bce164c7c9809e4e.md) <a id="d7e9ba5addd94db2bce164c7c9809e4e"></a>
+        - III.4.6.1.2 [CT3] Assurance Design — Capability context
+          - Canonical Strategy Capability: [II.1.3.8.2.2 [CT3] Assurance Design](#71c8a612b88f4ecba049e94d506bd0c2); canonicalId: `71c8a612b88f4ecba049e94d506bd0c2`
+          - III.4.6.1.2.1 Business Functions
+            - [III.4.6.1.2.1.1 Design Service Assurance](../../../../continuum/business/business-function/6668aa8daf964fec93fce42d48b37ad1.md) <a id="6668aa8daf964fec93fce42d48b37ad1"></a>
+          - III.4.6.1.2.2 Business Processes
+            - [III.4.6.1.2.2.1 Assurance Process Design](../../../../continuum/business/business-process/aec3177dcdd84961814f2ba4f688ad33.md) <a id="aec3177dcdd84961814f2ba4f688ad33"></a>
+      - III.4.6.2 [CT2] Independent Assurance Evaluation Enablement — Capability context
+        - Canonical Strategy Capability: [II.1.3.8.3 [CT2] Independent Assurance Evaluation Enablement](#7fa5112efb724b90a17a03c7c19c516a); canonicalId: `7fa5112efb724b90a17a03c7c19c516a`
+        - III.4.6.2.1 [CT3] Governed Assurance — Capability context
+          - Canonical Strategy Capability: [II.1.3.8.3.1 [CT3] Governed Assurance](#da1a983d4dcf4d5bb772b8f69bc08426); canonicalId: `da1a983d4dcf4d5bb772b8f69bc08426`
+          - III.4.6.2.1.1 Business Services
+            - [III.4.6.2.1.1.1 Communicate Service Assurance Outcome](../../../../continuum/business/business-service/371b04d6bbf84b53a3c5667ae6df2809.md) <a id="371b04d6bbf84b53a3c5667ae6df2809"></a>
+            - [III.4.6.2.1.1.2 Request Service Assurance](../../../../continuum/business/business-service/a76c0be369744fcfb5eb91b90c9b59e7.md) <a id="a76c0be369744fcfb5eb91b90c9b59e7"></a>
+            - [III.4.6.2.1.1.3 Request Service Assurance Status](../../../../continuum/business/business-service/60f8cbc814614f669f31d4e78734c6d6.md) <a id="60f8cbc814614f669f31d4e78734c6d6"></a>
+          - III.4.6.2.1.2 Business Functions
+            - [III.4.6.2.1.2.1 Adjudicate Assurance Assessment](../../../../continuum/business/business-function/7d7cd216415d4b839ea3edfbf1538110.md) <a id="7d7cd216415d4b839ea3edfbf1538110"></a>
+            - [III.4.6.2.1.2.2 Assess Assurance Evidence](../../../../continuum/business/business-function/e1f6402d47c0455b95b45a1a4d393484.md) <a id="e1f6402d47c0455b95b45a1a4d393484"></a>
+            - [III.4.6.2.1.2.3 Establish Assurance Context](../../../../continuum/business/business-function/ffffe352e28c4e878d986b0e15ddff15.md) <a id="ffffe352e28c4e878d986b0e15ddff15"></a>
+          - III.4.6.2.1.3 Business Processes
+            - [III.4.6.2.1.3.1 Assurance Process Execution](../../../../continuum/business/business-process/3c67e57403b041bb8ccdaf3980b6ff94.md) <a id="3c67e57403b041bb8ccdaf3980b6ff94"></a>
+            - [III.4.6.2.1.3.2 Assurance Process Reporting / Communication](../../../../continuum/business/business-process/2fc0b626577b43feb050bcd91ac2b0a9.md) <a id="2fc0b626577b43feb050bcd91ac2b0a9"></a>
+    - III.4.7 [CT1] Shared Information & Coordination Enablement — Capability context
+      - Canonical Strategy Capability: [II.1.3.9 [CT1] Shared Information & Coordination Enablement](#0062fcacae1740988b6be2bda2aa1674); canonicalId: `0062fcacae1740988b6be2bda2aa1674`
+      - III.4.7.1 [CT2] Calendar Management — Capability context
+        - Canonical Strategy Capability: [II.1.3.9.1 [CT2] Calendar Management](#7669036f7e6749219412fc64df5f7064); canonicalId: `7669036f7e6749219412fc64df5f7064`
+        - III.4.7.1.1 Business Services
+          - [III.4.7.1.1.1 Temporal Context Resolution](../../../../continuum/business/business-service/47f6491361794c2393cd3b64caec2d1a.md) <a id="47f6491361794c2393cd3b64caec2d1a"></a>
+          - [III.4.7.1.1.2 Unified Calendar Projection Query](../../../../continuum/business/business-service/c78bdb7ffc7d42fda450c024ca252322.md) <a id="c78bdb7ffc7d42fda450c024ca252322"></a>
+        - III.4.7.1.2 Business Functions
+          - [III.4.7.1.2.1 Correlate Activity with Temporal Context](../../../../continuum/business/business-function/b45fa964568843398661cc119b4fc693.md) <a id="b45fa964568843398661cc119b4fc693"></a>
+          - [III.4.7.1.2.2 Project Operational Schedule](../../../../continuum/business/business-function/3ca2e6a5ca614df991a2e1a060f0f1d8.md) <a id="3ca2e6a5ca614df991a2e1a060f0f1d8"></a>
+      - III.4.7.2 [CT2] Clinical Collaboration — Capability context
+        - Canonical Strategy Capability: [II.1.3.9.2 [CT2] Clinical Collaboration](#e6429225463a44d39f82e490e254e5d4); canonicalId: `e6429225463a44d39f82e490e254e5d4`
+        - III.4.7.2.1 Business Services
+          - [III.4.7.2.1.1 Clinical Collaboration Space Service](../../../../continuum/business/business-service/17579c34d3014825a878a9ff121e30a2.md) <a id="17579c34d3014825a878a9ff121e30a2"></a>
+          - [III.4.7.2.1.2 Collaboration Clinical Summary Resolution](../../../../continuum/business/business-service/6a25de08f1b5461b86bd410ea21b80a6.md) <a id="6a25de08f1b5461b86bd410ea21b80a6"></a>
+          - [III.4.7.2.1.3 Collaboration Space Governance Service](../../../../continuum/business/business-service/f94eef008b214ed88ff92bc64640ccb0.md) <a id="f94eef008b214ed88ff92bc64640ccb0"></a>
+        - III.4.7.2.2 Business Functions
+          - [III.4.7.2.2.1 Coordinate Care-Team Collaboration](../../../../continuum/business/business-function/5443b253f0e4425f984702d396e77a3d.md) <a id="5443b253f0e4425f984702d396e77a3d"></a>
+          - [III.4.7.2.2.2 Govern Collaboration Metadata](../../../../continuum/business/business-function/94a92326ef2141efb414c4602d878caa.md) <a id="94a92326ef2141efb414c4602d878caa"></a>
+          - [III.4.7.2.2.3 Resolve LHR Query within Collaboration](../../../../continuum/business/business-function/1d4ac561d963484480e6b06a09416616.md) <a id="1d4ac561d963484480e6b06a09416616"></a>
+      - III.4.7.3 [CT2] Clinical Information Stewardship Enablement — Capability context [superseded]
+        - Canonical Strategy Capability: [II.1.3.9.3 [CT2] Clinical Information Stewardship Enablement](#3811c758ff2140c39a801bf89f75098a); canonicalId: `3811c758ff2140c39a801bf89f75098a`
+        - III.4.7.3.1 [CT3] Information Authority Representation — Capability context
+          - Canonical Strategy Capability: [II.1.3.9.3.1 [CT3] Information Authority Representation](#8c850faafb334f97a81a0b4cd8fdb65f); canonicalId: `8c850faafb334f97a81a0b4cd8fdb65f`
+          - III.4.7.3.1.1 Business Functions
+            - [III.4.7.3.1.1.1 Qualify Information Authority Standing](../../../../continuum/business/business-function/f5b57bbba47a4e86bd2f79f700d6977a.md) <a id="f5b57bbba47a4e86bd2f79f700d6977a"></a>
+      - III.4.7.4 [CT2] Clinical Knowledge Services — Capability context
+        - Canonical Strategy Capability: [II.1.3.9.4 [CT2] Clinical Knowledge Services](#bbd2bd21859f40e39963bdbe7a851686); canonicalId: `bbd2bd21859f40e39963bdbe7a851686`
+        - III.4.7.4.1 [CT3] Governed Reference Dataset Administration — Capability context
+          - Canonical Strategy Capability: [II.1.3.9.4.3 [CT3] Governed Reference Dataset Administration](#682b8684ad9e49d5a5c348a148081607); canonicalId: `682b8684ad9e49d5a5c348a148081607`
+          - III.4.7.4.1.1 Business Services
+            - [III.4.7.4.1.1.1 Governed Reference Dataset Content Query](../../../../continuum/business/business-service/625ef1036a7442b2b8aed06f72b8afff.md) <a id="625ef1036a7442b2b8aed06f72b8afff"></a>
+          - III.4.7.4.1.2 Business Functions
+            - [III.4.7.4.1.2.1 Accept Governed Dataset Revision](../../../../continuum/business/business-function/96c1c089e7f2443dbd3ad5beab6a3011.md) <a id="96c1c089e7f2443dbd3ad5beab6a3011"></a>
+        - III.4.7.4.2 Business Services
+          - [III.4.7.4.2.1 Terminology Concept Resolution Service](../../../../continuum/business/business-service/3be22abcc49045c7a609bdf6428fe15a.md) <a id="3be22abcc49045c7a609bdf6428fe15a"></a>
+          - [III.4.7.4.2.2 Terminology Mapping Service](../../../../continuum/business/business-service/27dfb51817344e17ab78aa6f33f959ba.md) <a id="27dfb51817344e17ab78aa6f33f959ba"></a>
+        - III.4.7.4.3 Business Functions
+          - [III.4.7.4.3.1 Map Clinical Concept](../../../../continuum/business/business-function/9549208d56cd47d8a9ba4e586323ef3b.md) <a id="9549208d56cd47d8a9ba4e586323ef3b"></a>
+          - [III.4.7.4.3.2 Resolve Clinical Concept](../../../../continuum/business/business-function/8f89eacbc53b4697b5a747db2e143510.md) <a id="8f89eacbc53b4697b5a747db2e143510"></a>
+      - III.4.7.5 [CT2] General Collaboration — Capability context
+        - Canonical Strategy Capability: [II.1.3.9.5 [CT2] General Collaboration](#3bb740e6db284112b054905c0c6c80be); canonicalId: `3bb740e6db284112b054905c0c6c80be`
+        - III.4.7.5.1 Business Services
+          - [III.4.7.5.1.1 Operational Collaboration Service](../../../../continuum/business/business-service/4096602ad3084bc2a9ad9a06276cbcdc.md) <a id="4096602ad3084bc2a9ad9a06276cbcdc"></a>
+        - III.4.7.5.2 Business Functions
+          - [III.4.7.5.2.1 Coordinate Operational Collaboration](../../../../continuum/business/business-function/3b5604d966504661af2cb6654ae0de5c.md) <a id="3b5604d966504661af2cb6654ae0de5c"></a>
+      - III.4.7.6 [CT2] Health Information Access — Capability context
+        - Canonical Strategy Capability: [II.1.3.9.6 [CT2] Health Information Access](#cc253aea3c5f489da0502df74dde1669); canonicalId: `cc253aea3c5f489da0502df74dde1669`
+        - III.4.7.6.1 Business Services
+          - [III.4.7.6.1.1 Clinical Information Search Service](../../../../continuum/business/business-service/ef87ad2b419443a9989849bf18dfb385.md) <a id="ef87ad2b419443a9989849bf18dfb385"></a>
+          - [III.4.7.6.1.2 Clinical Resource Retrieval Service](../../../../continuum/business/business-service/3cdde3bb6a204c46b08468e080f2545a.md) <a id="3cdde3bb6a204c46b08468e080f2545a"></a>
+        - III.4.7.6.2 Business Functions
+          - [III.4.7.6.2.1 Apply Access-Qualified Result Filtering](../../../../continuum/business/business-function/598e46ab52644e70809b3039b7a4c21e.md) <a id="598e46ab52644e70809b3039b7a4c21e"></a>
+          - [III.4.7.6.2.2 Retrieve Health Information](../../../../continuum/business/business-function/0afb265973744f6f9e95ee54e6ea5b77.md) <a id="0afb265973744f6f9e95ee54e6ea5b77"></a>
+          - [III.4.7.6.2.3 Search Health Information](../../../../continuum/business/business-function/2e75f678b9814305b1cb2e810f4f0e9e.md) <a id="2e75f678b9814305b1cb2e810f4f0e9e"></a>
+      - III.4.7.7 [CT2] Health Information Connectivity Enablement — Capability context [superseded]
+        - Canonical Strategy Capability: [II.1.3.9.8 [CT2] Health Information Connectivity Enablement](#6a1030483dfc4ae6af6998b587129d1c); canonicalId: `6a1030483dfc4ae6af6998b587129d1c`
+        - III.4.7.7.1 [CT3] Health Information Communication — Capability context
+          - Canonical Strategy Capability: [II.1.3.9.8.1 [CT3] Health Information Communication](#9794b2aff43443b495a19aefe0efa67b); canonicalId: `9794b2aff43443b495a19aefe0efa67b`
+          - III.4.7.7.1.1 Business Services
+            - [III.4.7.7.1.1.1 Standards Communication Gateway Service](../../../../continuum/business/business-service/80e239faf1bd476e973eb602b3730380.md) <a id="80e239faf1bd476e973eb602b3730380"></a>
+          - III.4.7.7.1.2 Business Functions
+            - [III.4.7.7.1.2.1 Mediate Standards-Based Health Information Communication](../../../../continuum/business/business-function/6c14589215f744a2b76605a2023b04fb.md) <a id="6c14589215f744a2b76605a2023b04fb"></a>
+      - III.4.7.8 [CT2] Health Information Control — Capability context
+        - Canonical Strategy Capability: [II.1.3.9.9 [CT2] Health Information Control](#44cc0e17ad534675bf26dce6e46a68ff); canonicalId: `44cc0e17ad534675bf26dce6e46a68ff`
+        - III.4.7.8.1 Business Services
+          - [III.4.7.8.1.1 Consent Enforcement Service](../../../../continuum/business/business-service/67bf392d2dd6464292619e259cc37f8e.md) <a id="67bf392d2dd6464292619e259cc37f8e"></a>
+          - [III.4.7.8.1.2 Policy Evaluation & Authorisation Service](../../../../continuum/business/business-service/a025ac002b6a461abaac07fcb87f411f.md) <a id="a025ac002b6a461abaac07fcb87f411f"></a>
+          - [III.4.7.8.1.3 Security Audit Ingress](../../../../continuum/business/business-service/43c4a2aa7b4548ec8fdc2844e3d666b6.md) <a id="43c4a2aa7b4548ec8fdc2844e3d666b6"></a>
+          - [III.4.7.8.1.4 Security Context Validation Service](../../../../continuum/business/business-service/f1ff9e6542004a7584a385062cb0ed21.md) <a id="f1ff9e6542004a7584a385062cb0ed21"></a>
+        - III.4.7.8.2 Business Functions
+          - [III.4.7.8.2.1 Evaluate Consent Constraint](../../../../continuum/business/business-function/4a881488296d43d09112cb046fa836d3.md) <a id="4a881488296d43d09112cb046fa836d3"></a>
+          - [III.4.7.8.2.2 Evaluate Information Access Authority](../../../../continuum/business/business-function/4707b7fc77254ea68c30fc89f5119a77.md) <a id="4707b7fc77254ea68c30fc89f5119a77"></a>
+          - [III.4.7.8.2.3 Propagate Security Context](../../../../continuum/business/business-function/ee79679c6b5041659a2efca15190454f.md) <a id="ee79679c6b5041659a2efca15190454f"></a>
+          - [III.4.7.8.2.4 Record Security-Significant Activity](../../../../continuum/business/business-function/6177ed0d53e5407ab1bc4b721619ed44.md) <a id="6177ed0d53e5407ab1bc4b721619ed44"></a>
+      - III.4.7.9 [CT2] Health Information Exchange Enablement — Capability context
+        - Canonical Strategy Capability: [II.1.3.9.10 [CT2] Health Information Exchange Enablement](#a61a15908ed544e6acf3e9cab63a0267); canonicalId: `a61a15908ed544e6acf3e9cab63a0267`
+        - III.4.7.9.1 Business Services
+          - [III.4.7.9.1.1 Addressed Document Delivery Service](../../../../continuum/business/business-service/97080460bacf40ef8b6db2091cc3bb6e.md) <a id="97080460bacf40ef8b6db2091cc3bb6e"></a>
+          - [III.4.7.9.1.2 Clinical Event Syndication Stream](../../../../continuum/business/business-service/337f39bb62d9491bb6e41c4af32b220c.md) <a id="337f39bb62d9491bb6e41c4af32b220c"></a>
+          - [III.4.7.9.1.3 Federated Health Information Query](../../../../continuum/business/business-service/b4db5850f7114c968901966b4f6e36f5.md) <a id="b4db5850f7114c968901966b4f6e36f5"></a>
+          - [III.4.7.9.1.4 HIE Submission Gateway Service](../../../../continuum/business/business-service/816c1013b609440fb772060396fd2dac.md) <a id="816c1013b609440fb772060396fd2dac"></a>
+        - III.4.7.9.2 Business Functions
+          - [III.4.7.9.2.1 Distribute Addressed Information](../../../../continuum/business/business-function/6c9090a3d0a74a968475e05eb617e84f.md) <a id="6c9090a3d0a74a968475e05eb617e84f"></a>
+          - [III.4.7.9.2.2 Mediate Information Retrieval](../../../../continuum/business/business-function/7667abb329724b7d894fca020acb8014.md) <a id="7667abb329724b7d894fca020acb8014"></a>
+          - [III.4.7.9.2.3 Receive Information Submission](../../../../continuum/business/business-function/26abb23ed9f54dcf9002eb894f1d02ec.md) <a id="26abb23ed9f54dcf9002eb894f1d02ec"></a>
+          - [III.4.7.9.2.4 Syndicate Information Change](../../../../continuum/business/business-function/86241540124a40458f7d1dc2f5df84ca.md) <a id="86241540124a40458f7d1dc2f5df84ca"></a>
+      - III.4.7.10 [CT2] Information Content Maintainer Management — Capability context
+        - Canonical Strategy Capability: [II.1.3.9.12 [CT2] Information Content Maintainer Management](#b81a1ab42af24c2e9896b8f3f78d291a); canonicalId: `b81a1ab42af24c2e9896b8f3f78d291a`
+        - III.4.7.10.1 [CT3] Data Provenance Capture — Capability context
+          - Canonical Strategy Capability: [II.1.3.9.12.1 [CT3] Data Provenance Capture](#44a7937520a54945b06b5fd4a2bbd870); canonicalId: `44a7937520a54945b06b5fd4a2bbd870`
+          - III.4.7.10.1.1 Business Functions
+            - [III.4.7.10.1.1.1 Record Significant Information Lineage](../../../../continuum/business/business-function/afdb0358393f4560b926330a14c1aedd.md) <a id="afdb0358393f4560b926330a14c1aedd"></a>
+      - III.4.7.11 [CT2] Information Design Governance — Capability context
+        - Canonical Strategy Capability: [II.1.3.9.13 [CT2] Information Design Governance](#f39ed9ebcc724857a4bf7a2b8e045c7a); canonicalId: `f39ed9ebcc724857a4bf7a2b8e045c7a`
+        - III.4.7.11.1 Business Services
+          - [III.4.7.11.1.1 Exchange Profile Specification Query](../../../../continuum/business/business-service/98bc4e8f57f5493ebeb88f8bfc8104a8.md) <a id="98bc4e8f57f5493ebeb88f8bfc8104a8"></a>
+          - [III.4.7.11.1.2 Information Dictionary Query](../../../../continuum/business/business-service/ea491740e6cd40c69f65ad7d9d4f81fe.md) <a id="ea491740e6cd40c69f65ad7d9d4f81fe"></a>
+          - [III.4.7.11.1.3 Semantic Conformance Verification Service](../../../../continuum/business/business-service/3d492f97eb3f4d50a1c448477c61bf2b.md) <a id="3d492f97eb3f4d50a1c448477c61bf2b"></a>
+          - [III.4.7.11.1.4 Semantic Model Definition Service](../../../../continuum/business/business-service/0f6b41152f294a87b84970c74ab5a014.md) <a id="0f6b41152f294a87b84970c74ab5a014"></a>
+          - [III.4.7.11.1.5 Terminology Binding Specification Lookup](../../../../continuum/business/business-service/1b9e7c961a054a6bbdb7876d08a82ef3.md) <a id="1b9e7c961a054a6bbdb7876d08a82ef3"></a>
+        - III.4.7.11.2 Business Functions
+          - [III.4.7.11.2.1 Govern Exchange Profile](../../../../continuum/business/business-function/935f9a62438944599b913f2614c9e595.md) <a id="935f9a62438944599b913f2614c9e595"></a>
+          - [III.4.7.11.2.2 Govern Information Definition](../../../../continuum/business/business-function/820b4d41490a4389bb864f1c4a04e881.md) <a id="820b4d41490a4389bb864f1c4a04e881"></a>
+          - [III.4.7.11.2.3 Govern Information Semantics](../../../../continuum/business/business-function/39a297b6c40c44ecba64857f6c3f3e0f.md) <a id="39a297b6c40c44ecba64857f6c3f3e0f"></a>
+          - [III.4.7.11.2.4 Govern Terminology Binding](../../../../continuum/business/business-function/9e96ce12b7494594a6129f79f7491223.md) <a id="9e96ce12b7494594a6129f79f7491223"></a>
+          - [III.4.7.11.2.5 Verify Semantic Conformance](../../../../continuum/business/business-function/5445184252c94c05874c52350ff13d2b.md) <a id="5445184252c94c05874c52350ff13d2b"></a>
+      - III.4.7.12 [CT2] Information Protection & Accountability Enablement — Capability context [superseded]
+        - Canonical Strategy Capability: [II.1.3.9.14 [CT2] Information Protection & Accountability Enablement](#e922cba7cf1d4ebeb9abf6472a3803ce); canonicalId: `e922cba7cf1d4ebeb9abf6472a3803ce`
+        - III.4.7.12.1 [CT3] Significant Activity Audit Capture — Capability context
+          - Canonical Strategy Capability: [II.1.3.9.14.2 [CT3] Significant Activity Audit Capture](#d903948169eb4785b0f03d916c842a8a); canonicalId: `d903948169eb4785b0f03d916c842a8a`
+          - III.4.7.12.1.1 Business Services
+            - [III.4.7.12.1.1.1 Mandatory Audit Evidence Capture](../../../../continuum/business/business-service/6ab3f8628ba14f17bddbf6092cf56ba7.md) <a id="6ab3f8628ba14f17bddbf6092cf56ba7"></a>
+          - III.4.7.12.1.2 Business Functions
+            - [III.4.7.12.1.2.1 Capture Required Significant Audit Evidence](../../../../continuum/business/business-function/c8e614257cf14bd1878df894455f21fb.md) <a id="c8e614257cf14bd1878df894455f21fb"></a>
+      - III.4.7.13 [CT2] Patient Clinical Record — Capability context
+        - Canonical Strategy Capability: [II.1.3.9.15 [CT2] Patient Clinical Record](#5478878e0e6e4d34a8d5023ac6ac2d54); canonicalId: `5478878e0e6e4d34a8d5023ac6ac2d54`
+        - III.4.7.13.1 [CT3] Linked Information Curation — Capability context
+          - Canonical Strategy Capability: [II.1.3.9.15.1 [CT3] Linked Information Curation](#5edb2a8b5ee54ddda8104d1fab323a94); canonicalId: `5edb2a8b5ee54ddda8104d1fab323a94`
+          - III.4.7.13.1.1 Business Services
+            - [III.4.7.13.1.1.1 Associated Binary Content Retrieval](../../../../continuum/business/business-service/f0e0c03e407e4534b9e422df103fc35f.md) <a id="f0e0c03e407e4534b9e422df103fc35f"></a>
+          - III.4.7.13.1.2 Business Functions
+            - [III.4.7.13.1.2.1 Assemble Associated Binary Content](../../../../continuum/business/business-function/0a0a5f3e40d241e38a5b155ca66eadd5.md) <a id="0a0a5f3e40d241e38a5b155ca66eadd5"></a>
+            - [III.4.7.13.1.2.2 Resolve Associated Binary Content](../../../../continuum/business/business-function/118867dc136f4f689265b173abdf626b.md) <a id="118867dc136f4f689265b173abdf626b"></a>
+        - III.4.7.13.2 [CT3] Primary Care Coordination — Capability context
+          - Canonical Strategy Capability: [II.1.3.9.15.3 [CT3] Primary Care Coordination](#f80e73ee91624ce5baa11ae15480fd35); canonicalId: `f80e73ee91624ce5baa11ae15480fd35`
+          - III.4.7.13.2.1 Business Services
+            - [III.4.7.13.2.1.1 Chronic Care Timeline Query](../../../../continuum/business/business-service/88243738a3c941efb369f5dd6da6252b.md) <a id="88243738a3c941efb369f5dd6da6252b"></a>
+            - [III.4.7.13.2.1.2 Primary Care Summary Ingress](../../../../continuum/business/business-service/7f4ca66b911e48bc8bf859e239f5ba00.md) <a id="7f4ca66b911e48bc8bf859e239f5ba00"></a>
+          - III.4.7.13.2.2 Business Functions
+            - [III.4.7.13.2.2.1 Coordinate Multi-Agency Chronic Care Plan](../../../../continuum/business/business-function/fc49b716c2a845408198591e9a4dc515.md) <a id="fc49b716c2a845408198591e9a4dc515"></a>
+            - [III.4.7.13.2.2.2 Correlate Primary Care Consultation Context](../../../../continuum/business/business-function/e6c9088f502742afb538ee654ac0f962.md) <a id="e6c9088f502742afb538ee654ac0f962"></a>
+        - III.4.7.13.3 [CT3] Remote Patient Monitoring — Capability context
+          - Canonical Strategy Capability: [II.1.3.9.15.4 [CT3] Remote Patient Monitoring](#2d1addc7dd1d4821b71a11c692d35b27); canonicalId: `2d1addc7dd1d4821b71a11c692d35b27`
+          - III.4.7.13.3.1 Business Services
+            - [III.4.7.13.3.1.1 Remote Telemetry Ingress](../../../../continuum/business/business-service/89014429b6454ced82c26cbe777fa33a.md) <a id="89014429b6454ced82c26cbe777fa33a"></a>
+            - [III.4.7.13.3.1.2 Virtual Encounter Context Resolution](../../../../continuum/business/business-service/db1dfa6db11342128e82df186877c477.md) <a id="db1dfa6db11342128e82df186877c477"></a>
+          - III.4.7.13.3.2 Business Functions
+            - [III.4.7.13.3.2.1 Correlate Virtual Care Consultation Context](../../../../continuum/business/business-function/d315a7eab4d9453f83ecd44ed8b57b56.md) <a id="d315a7eab4d9453f83ecd44ed8b57b56"></a>
+            - [III.4.7.13.3.2.2 Ingest Remote Patient Telemetry](../../../../continuum/business/business-function/cb03c3040e1c4a4a9fdadb2502113014.md) <a id="cb03c3040e1c4a4a9fdadb2502113014"></a>
+        - III.4.7.13.4 Business Services
+          - [III.4.7.13.4.1 Active Problem & Allergy Summary Query](../../../../continuum/business/business-service/a382bc84c1d043849b8cd8ebe8a482c1.md) <a id="a382bc84c1d043849b8cd8ebe8a482c1"></a>
+          - [III.4.7.13.4.2 Historical Clinical Record Access](../../../../continuum/business/business-service/be4938981b43403282694631b40f0bb2.md) <a id="be4938981b43403282694631b40f0bb2"></a>
+          - [III.4.7.13.4.3 Longitudinal Clinical Record Query](../../../../continuum/business/business-service/df10431b93bf47dfae2b8ec7b3e6552b.md) <a id="df10431b93bf47dfae2b8ec7b3e6552b"></a>
+        - III.4.7.13.5 Business Functions
+          - [III.4.7.13.5.1 Assemble Longitudinal Clinical Record](../../../../continuum/business/business-function/65ea2d2427dd474d84f153671de79d63.md) <a id="65ea2d2427dd474d84f153671de79d63"></a>
+          - [III.4.7.13.5.2 Maintain Active Clinical Record](../../../../continuum/business/business-function/dbccf500cf4a44e0987f972311bab03a.md) <a id="dbccf500cf4a44e0987f972311bab03a"></a>
+          - [III.4.7.13.5.3 Preserve Durable Clinical Record](../../../../continuum/business/business-function/ace0f4afad104482b7970534a45d74d7.md) <a id="ace0f4afad104482b7970534a45d74d7"></a>
+      - III.4.7.14 [CT2] Presentation Services — Capability context
+        - Canonical Strategy Capability: [II.1.3.9.16 [CT2] Presentation Services](#e9b6ba1917ba44cca7466444d0836c98); canonicalId: `e9b6ba1917ba44cca7466444d0836c98`
+        - III.4.7.14.1 Business Services
+          - [III.4.7.14.1.1 Contextual Presentation Service](../../../../continuum/business/business-service/905d44b44f434fa4974e09dcafac016a.md) <a id="905d44b44f434fa4974e09dcafac016a"></a>
+        - III.4.7.14.2 Business Functions
+          - [III.4.7.14.2.1 Present Contextual Health and Operational Information](../../../../continuum/business/business-function/28ad1d4dc0444c7e8f98906a70e9319e.md) <a id="28ad1d4dc0444c7e8f98906a70e9319e"></a>
+  - III.5 Unclassified Business
+    - [III.5.1 Authorisation — Consent](../../../../continuum/business/business-interaction/8c8a371f6a324d908656c3c935c7656f.md) <a id="8c8a371f6a324d908656c3c935c7656f"></a>
+    - [III.5.2 Authorisation — Governance](../../../../continuum/business/business-interaction/a1a6a8eeb4d54fa9ac184198a506d318.md) <a id="a1a6a8eeb4d54fa9ac184198a506d318"></a>
+    - [III.5.3 Clinical Alert](../../../../continuum/business/business-interaction/8666d4168fe545fd9ce222217887bd61.md) <a id="8666d4168fe545fd9ce222217887bd61"></a>
+    - [III.5.4 Clinical Collaboration](../../../../continuum/business/business-interaction/f54492b30639431e80cd0723217d6be8.md) <a id="f54492b30639431e80cd0723217d6be8"></a>
+    - [III.5.5 Clinical Event Notification](../../../../continuum/business/business-interaction/d2153d1057d740fea1665d71ff66dd1c.md) <a id="d2153d1057d740fea1665d71ff66dd1c"></a>
+    - [III.5.6 Clinical Information Notification](../../../../continuum/business/business-interaction/31e03beac32946a09985ad52e0f9cce4.md) <a id="31e03beac32946a09985ad52e0f9cce4"></a>
+    - [III.5.7 Clinical Information Provision](../../../../continuum/business/business-interaction/4d34b3705cb0405a910ddcacfdd6b6d3.md) <a id="4d34b3705cb0405a910ddcacfdd6b6d3"></a>
+    - [III.5.8 Clinical Information Query](../../../../continuum/business/business-interaction/8aabfdf9c83c4de486cf5f50c41c0d5e.md) <a id="8aabfdf9c83c4de486cf5f50c41c0d5e"></a>
+    - [III.5.9 Clinical Information Review](../../../../continuum/business/business-interaction/06dbfdb6b8a84bd29f67ca955ba23006.md) <a id="06dbfdb6b8a84bd29f67ca955ba23006"></a>
+    - [III.5.10 Clinical Information Supply](../../../../continuum/business/business-interaction/a6e2525ea3294ee3ab9a4ec3dd4dfe9f.md) <a id="a6e2525ea3294ee3ab9a4ec3dd4dfe9f"></a>
+    - [III.5.11 Complaint](../../../../continuum/business/business-interaction/29f2a74c8234411c9ac15458e66ca4bc.md) <a id="29f2a74c8234411c9ac15458e66ca4bc"></a>
+    - [III.5.12 Coordination Outcome](../../../../continuum/business/business-interaction/abb4947b64944790b20fd52524f0babc.md) <a id="abb4947b64944790b20fd52524f0babc"></a>
+    - [III.5.13 FOI Request](../../../../continuum/business/business-interaction/2c7ca48559fb4a72b4d9c250df4015ce.md) <a id="2c7ca48559fb4a72b4d9c250df4015ce"></a>
+    - [III.5.14 FOI Response](../../../../continuum/business/business-interaction/909faede10b5452cbee2d7d052635f47.md) <a id="909faede10b5452cbee2d7d052635f47"></a>
+    - [III.5.15 Identity Assertion](../../../../continuum/business/business-interaction/47b9abea0964451eb0fa419b464b4505.md) <a id="47b9abea0964451eb0fa419b464b4505"></a>
+    - [III.5.16 Identity Establishment](../../../../continuum/business/business-interaction/3d3459edfa884ef0abdcfd3772b538e4.md) <a id="3d3459edfa884ef0abdcfd3772b538e4"></a>
+    - [III.5.17 Identity Query](../../../../continuum/business/business-interaction/d119aa62e95f4d7aa01822401ca4203c.md) <a id="d119aa62e95f4d7aa01822401ca4203c"></a>
+    - [III.5.18 Identity Reconciliation](../../../../continuum/business/business-interaction/332cdc30ae0346c6b86233db71caf683.md) <a id="332cdc30ae0346c6b86233db71caf683"></a>
+    - [III.5.19 Identity Verification](../../../../continuum/business/business-interaction/1a56f778873a4094b5a0f84cae842d35.md) <a id="1a56f778873a4094b5a0f84cae842d35"></a>
+    - [III.5.20 Incident Registration](../../../../continuum/business/business-interaction/126276873bde4105a08e21bb3187f5b3.md) <a id="126276873bde4105a08e21bb3187f5b3"></a>
+    - [III.5.21 Incident Report](../../../../continuum/business/business-interaction/7cb1eb055be44eefb7092356510acc77.md) <a id="7cb1eb055be44eefb7092356510acc77"></a>
+    - [III.5.22 Information Access](../../../../continuum/business/business-interaction/b2624626d06044fb9767a96045cd0302.md) <a id="b2624626d06044fb9767a96045cd0302"></a>
+    - [III.5.23 Information Challenge](../../../../continuum/business/business-interaction/44d71c390a8f435cbb596601e627bdfa.md) <a id="44d71c390a8f435cbb596601e627bdfa"></a>
+    - [III.5.24 Information Control](../../../../continuum/business/business-interaction/773133f23f7540eb9b90d39ca872aebd.md) <a id="773133f23f7540eb9b90d39ca872aebd"></a>
+    - [III.5.25 Information Correction](../../../../continuum/business/business-interaction/3f1db661c97b4fa692e3d70278a40226.md) <a id="3f1db661c97b4fa692e3d70278a40226"></a>
+    - [III.5.26 Information Disclosure](../../../../continuum/business/business-interaction/47536a5d81aa4d8eb2d13054b864d1bf.md) <a id="47536a5d81aa4d8eb2d13054b864d1bf"></a>
+    - [III.5.27 Information Publishing](../../../../continuum/business/business-interaction/6fb6f66531874c2d983071a04b5934c2.md) <a id="6fb6f66531874c2d983071a04b5934c2"></a>
+    - [III.5.28 Information Qualification](../../../../continuum/business/business-interaction/6b606df4675f48b3baba03f4b2ca7602.md) <a id="6b606df4675f48b3baba03f4b2ca7602"></a>
+    - [III.5.29 Information Submission](../../../../continuum/business/business-interaction/d3186ad3c8a74e92a80cb4c1f8f32fb6.md) <a id="d3186ad3c8a74e92a80cb4c1f8f32fb6"></a>
+    - [III.5.30 Operational Alert](../../../../continuum/business/business-interaction/3697066c0d634076be5a8d745e3fdd91.md) <a id="3697066c0d634076be5a8d745e3fdd91"></a>
+    - [III.5.31 Operational Coordination](../../../../continuum/business/business-interaction/cdb5d645d3984eaa8ad5e56a81023c59.md) <a id="cdb5d645d3984eaa8ad5e56a81023c59"></a>
+    - [III.5.32 Operational Coordination Outcome](../../../../continuum/business/business-interaction/d40c5ee0dbaa450dab073103f25ded6d.md) <a id="d40c5ee0dbaa450dab073103f25ded6d"></a>
+    - [III.5.33 Operational Event Notification](../../../../continuum/business/business-interaction/7a2b6e8802e24e018af89f265271f5ca.md) <a id="7a2b6e8802e24e018af89f265271f5ca"></a>
+    - [III.5.34 Participation Query](../../../../continuum/business/business-interaction/1ce0ba25408c47f9bd82953fba605c40.md) <a id="1ce0ba25408c47f9bd82953fba605c40"></a>
+    - [III.5.35 Participation Registration](../../../../continuum/business/business-interaction/906c61eb392f4b538f6d0a79917d21cc.md) <a id="906c61eb392f4b538f6d0a79917d21cc"></a>
+    - [III.5.36 Participation Withdrawal](../../../../continuum/business/business-interaction/ce1901f036364b7291451bfbd4f25c00.md) <a id="ce1901f036364b7291451bfbd4f25c00"></a>
+    - [III.5.37 Policy Direction](../../../../continuum/business/business-interaction/b2c573b855ad4c7abc4f02b2ae484a65.md) <a id="b2c573b855ad4c7abc4f02b2ae484a65"></a>
+    - [III.5.38 Reassignment](../../../../continuum/business/business-interaction/d4fb961b6148436686632668c98a6139.md) <a id="d4fb961b6148436686632668c98a6139"></a>
+    - [III.5.39 Regulatory Direction](../../../../continuum/business/business-interaction/baf4be48ac11472aa130c71e6474d9a4.md) <a id="baf4be48ac11472aa130c71e6474d9a4"></a>
+    - [III.5.40 Relationship Assertion](../../../../continuum/business/business-interaction/9a53f10eac7748a2b4a9d88da75f8814.md) <a id="9a53f10eac7748a2b4a9d88da75f8814"></a>
+    - [III.5.41 Relationship Establishment](../../../../continuum/business/business-interaction/f451d56104944498909549ab7f864003.md) <a id="f451d56104944498909549ab7f864003"></a>
+    - [III.5.42 Relationship Query](../../../../continuum/business/business-interaction/b30441d9b44a4bc29771e8f6e94f6b5a.md) <a id="b30441d9b44a4bc29771e8f6e94f6b5a"></a>
+    - [III.5.43 Relationship Termination](../../../../continuum/business/business-interaction/e536ab3a1bbe4a36a99635458ba208f6.md) <a id="e536ab3a1bbe4a36a99635458ba208f6"></a>
+    - [III.5.44 Relationship Verification](../../../../continuum/business/business-interaction/c71453e1b0ff46a7b91e27a1745d842b.md) <a id="c71453e1b0ff46a7b91e27a1745d842b"></a>
+    - [III.5.45 Resource Allocation](../../../../continuum/business/business-interaction/8479c1d4b2304d9dabc3716c6cb20e83.md) <a id="8479c1d4b2304d9dabc3716c6cb20e83"></a>
+    - [III.5.46 Resource Reporting](../../../../continuum/business/business-interaction/05bf8e557ce14f0eb1c869d07c5a93ca.md) <a id="05bf8e557ce14f0eb1c869d07c5a93ca"></a>
+    - [III.5.47 Review Outcome](../../../../continuum/business/business-interaction/45bf28eb44e64554b568db48a30ac43c.md) <a id="45bf28eb44e64554b568db48a30ac43c"></a>
+    - [III.5.48 Review Request](../../../../continuum/business/business-interaction/480556d544ad4dc18f6945f213044e9b.md) <a id="480556d544ad4dc18f6945f213044e9b"></a>
+    - [III.5.49 Sanction](../../../../continuum/business/business-interaction/f4dc8ed1c034473784a5c8ec4227c7d6.md) <a id="f4dc8ed1c034473784a5c8ec4227c7d6"></a>
+    - [III.5.50 Service Assurance Outcome Communication](../../../../continuum/business/business-interaction/73b6d1ab8ecc48c4bdea98f013288c9c.md) <a id="73b6d1ab8ecc48c4bdea98f013288c9c"></a>
+    - [III.5.51 Service Assurance Request](../../../../continuum/business/business-interaction/dd80af764f88480ea8b8b5898bb15ce7.md) <a id="dd80af764f88480ea8b8b5898bb15ce7"></a>
+    - [III.5.52 Service Assurance Status](../../../../continuum/business/business-interaction/6bad04918445465cb350c3252af73377.md) <a id="6bad04918445465cb350c3252af73377"></a>
+    - [III.5.53 Service Coordination](../../../../continuum/business/business-interaction/c00bba65740947fea75542c13563553c.md) <a id="c00bba65740947fea75542c13563553c"></a>
+    - [III.5.54 Service Outcome](../../../../continuum/business/business-interaction/e52b7159e28441769fcf3214cc6be6a6.md) <a id="e52b7159e28441769fcf3214cc6be6a6"></a>
+    - [III.5.55 Service Referral](../../../../continuum/business/business-interaction/b7ea2864b6c044c1a9b7763ee6428d7c.md) <a id="b7ea2864b6c044c1a9b7763ee6428d7c"></a>
+    - [III.5.56 Service Request](../../../../continuum/business/business-interaction/be3915edc56d4020969b7e1f4837f112.md) <a id="be3915edc56d4020969b7e1f4837f112"></a>
+    - [III.5.57 Service Response](../../../../continuum/business/business-interaction/6bc0e6df5ba3405a9037e34f9810aefc.md) <a id="6bc0e6df5ba3405a9037e34f9810aefc"></a>
+    - [III.5.58 ServiceCatalogue Publish](../../../../continuum/business/business-interaction/397a4200bb894479a54a03dc84451efb.md) <a id="397a4200bb894479a54a03dc84451efb"></a>
+    - [III.5.59 ServiceCatalogue Request](../../../../continuum/business/business-interaction/d6c56d2bb1274fc68cb0ed6c3b8a84b9.md) <a id="d6c56d2bb1274fc68cb0ed6c3b8a84b9"></a>
+    - [III.5.60 ServiceCatalogue Update](../../../../continuum/business/business-interaction/c15051a06c1a46b1acb75d18a5e728dd.md) <a id="c15051a06c1a46b1acb75d18a5e728dd"></a>
+    - [III.5.61 ServiceEligibility Assessment Report](../../../../continuum/business/business-interaction/db44999c87d545618969319d3f63725a.md) <a id="db44999c87d545618969319d3f63725a"></a>
+    - [III.5.62 ServiceEligibility Assessment Request](../../../../continuum/business/business-interaction/1508d1e33b264534bbcde367eb3dc6a3.md) <a id="1508d1e33b264534bbcde367eb3dc6a3"></a>
+    - [III.5.63 ServiceOffering Query](../../../../continuum/business/business-interaction/40105b22c930413692cc64826d3ad32f.md) <a id="40105b22c930413692cc64826d3ad32f"></a>
+    - [III.5.64 ServiceOffering Selection](../../../../continuum/business/business-interaction/dbb4668e39994da6bd7ec0251210d4bc.md) <a id="dbb4668e39994da6bd7ec0251210d4bc"></a>
+    - [III.5.65 Transfer of Care](../../../../continuum/business/business-interaction/8bb02a34807f4bb183bb42a722f4509b.md) <a id="8bb02a34807f4bb183bb42a722f4509b"></a>
+    - [III.5.66 Work Acceptance](../../../../continuum/business/business-interaction/64d7dfac2f5f4b61998df127b44c0521.md) <a id="64d7dfac2f5f4b61998df127b44c0521"></a>
+    - [III.5.67 Work Assignment](../../../../continuum/business/business-interaction/c5611769a52d44aebeef55bd48e1f433.md) <a id="c5611769a52d44aebeef55bd48e1f433"></a>
+    - [III.5.68 Work Outcome](../../../../continuum/business/business-interaction/a950de4051d04cfa8bb180f8193f7495.md) <a id="a950de4051d04cfa8bb180f8193f7495"></a>
+    - [III.5.69 Work Progress](../../../../continuum/business/business-interaction/a687efed1f7e456bba53e356b157f0d8.md) <a id="a687efed1f7e456bba53e356b157f0d8"></a>
+- IV Application
+  - IV.1 Information Architecture
+    - IV.1.1 Topics
+      - [IV.1.1.1 [Topic] Care](../../../../continuum/application/data-object/topic/f702d357183847dd8f0fd09545679ffd.md) <a id="f702d357183847dd8f0fd09545679ffd"></a>
+        - [IV.1.1.1.1 [Topic] CareLocation](../../../../continuum/application/data-object/topic/cfc241a7b6904bd19ccc1b9adbac0393.md) <a id="cfc241a7b6904bd19ccc1b9adbac0393"></a>
+        - [IV.1.1.1.2 [Topic] Encounter](../../../../continuum/application/data-object/topic/fb464349f13b41c4ae9920a743fc6c12.md) <a id="fb464349f13b41c4ae9920a743fc6c12"></a>
+        - [IV.1.1.1.3 [Topic] EncounterContext](../../../../continuum/application/data-object/topic/a8be2b6474cd43cd9845b93258bd2fe3.md) <a id="a8be2b6474cd43cd9845b93258bd2fe3"></a>
+        - [IV.1.1.1.4 [Topic] EncounterProgression](../../../../continuum/application/data-object/topic/a3badcf73eaa4331b75d7b3eb6e67fc8.md) <a id="a3badcf73eaa4331b75d7b3eb6e67fc8"></a>
+        - [IV.1.1.1.5 [Topic] Episode](../../../../continuum/application/data-object/topic/3927d161556d48f4b2cc57bd46ab785d.md) <a id="3927d161556d48f4b2cc57bd46ab785d"></a>
+      - [IV.1.1.2 [Topic] Coordination](../../../../continuum/application/data-object/topic/882234c291ca4c6492ad6dfbe1e23fea.md) <a id="882234c291ca4c6492ad6dfbe1e23fea"></a>
+        - [IV.1.1.2.1 [Topic] Referral](../../../../continuum/application/data-object/topic/d79d14c20bf14ecdab0434d4aa7db9b8.md) <a id="d79d14c20bf14ecdab0434d4aa7db9b8"></a>
+        - [IV.1.1.2.2 [Topic] ReferralContext](../../../../continuum/application/data-object/topic/9eb5906e93ca4625bdb675a3397c4c8d.md) <a id="9eb5906e93ca4625bdb675a3397c4c8d"></a>
+        - [IV.1.1.2.3 [Topic] ReferralOutcome](../../../../continuum/application/data-object/topic/18ad2e58913b4a938e172df7b03f366a.md) <a id="18ad2e58913b4a938e172df7b03f366a"></a>
+        - [IV.1.1.2.4 [Topic] ReferralProgression](../../../../continuum/application/data-object/topic/bc70a1055ca34eed8143856816587f67.md) <a id="bc70a1055ca34eed8143856816587f67"></a>
+      - [IV.1.1.3 [Topic] Enterprise](../../../../continuum/application/data-object/topic/5c5da6a06dac413aa2809a1397f8a3b9.md) <a id="5c5da6a06dac413aa2809a1397f8a3b9"></a>
+        - [IV.1.1.3.1 [Topic] Organisation](../../../../continuum/application/data-object/topic/dd3ba70128874caeb2d5da419d006c49.md) <a id="dd3ba70128874caeb2d5da419d006c49"></a>
+        - [IV.1.1.3.2 [Topic] OrganisationalUnit](../../../../continuum/application/data-object/topic/2c884cdd6a4b41a184818e3a7e540897.md) <a id="2c884cdd6a4b41a184818e3a7e540897"></a>
+        - [IV.1.1.3.3 [Topic] OrganisationClassification](../../../../continuum/application/data-object/topic/227974cf26054bdea17038ecd6c0aa3a.md) <a id="227974cf26054bdea17038ecd6c0aa3a"></a>
+        - [IV.1.1.3.4 [Topic] OrganisationContact](../../../../continuum/application/data-object/topic/cad820b906fa40f28824278fb18b7497.md) <a id="cad820b906fa40f28824278fb18b7497"></a>
+        - [IV.1.1.3.5 [Topic] OrganisationIdentity](../../../../continuum/application/data-object/topic/c240be16de76415682237a238b3d3fc8.md) <a id="c240be16de76415682237a238b3d3fc8"></a>
+        - [IV.1.1.3.6 [Topic] OrganisationProfile](../../../../continuum/application/data-object/topic/04adbfc449bb4b9e9ae6e7fdf8a66bf9.md) <a id="04adbfc449bb4b9e9ae6e7fdf8a66bf9"></a>
+      - [IV.1.1.4 [Topic] Equipment](../../../../continuum/application/data-object/topic/8e658834311d41e68a8ecf71d8ccd5db.md) <a id="8e658834311d41e68a8ecf71d8ccd5db"></a>
+        - [IV.1.1.4.1 [Topic] Device](../../../../continuum/application/data-object/topic/25c1b751956446cea17065b6254419d5.md) <a id="25c1b751956446cea17065b6254419d5"></a>
+        - [IV.1.1.4.2 [Topic] DeviceAssociation](../../../../continuum/application/data-object/topic/303f8586953d450d8d82d3d5f76e488a.md) <a id="303f8586953d450d8d82d3d5f76e488a"></a>
+        - [IV.1.1.4.3 [Topic] DeviceDefinition](../../../../continuum/application/data-object/topic/2a879d06b17143be8bbfc35cdaab8bdf.md) <a id="2a879d06b17143be8bbfc35cdaab8bdf"></a>
+      - [IV.1.1.5 [Topic] Individual](../../../../continuum/application/data-object/topic/4af969b8c23a4dcab7569dc51b263383.md) <a id="4af969b8c23a4dcab7569dc51b263383"></a>
+        - [IV.1.1.5.1 [Topic] Authority](../../../../continuum/application/data-object/topic/99dc695355384ea29ac3515b9178dfd0.md) <a id="99dc695355384ea29ac3515b9178dfd0"></a>
+        - [IV.1.1.5.2 [Topic] Contact](../../../../continuum/application/data-object/topic/5c33b01e23964ef5935be79364e7c0f9.md) <a id="5c33b01e23964ef5935be79364e7c0f9"></a>
+        - [IV.1.1.5.3 [Topic] Demographics](../../../../continuum/application/data-object/topic/95a13e957f5c471797869b901085266c.md) <a id="95a13e957f5c471797869b901085266c"></a>
+        - [IV.1.1.5.4 [Topic] Identity](../../../../continuum/application/data-object/topic/3b72456b5686449f95ad26bfbbae07f3.md) <a id="3b72456b5686449f95ad26bfbbae07f3"></a>
+        - [IV.1.1.5.5 [Topic] Patient](../../../../continuum/application/data-object/topic/e92ea15616ea43c9a1d698e34ed1376b.md) <a id="e92ea15616ea43c9a1d698e34ed1376b"></a>
+        - [IV.1.1.5.6 [Topic] Person](../../../../continuum/application/data-object/topic/1163ffac87814f319578ef5cb95dcd4d.md) <a id="1163ffac87814f319578ef5cb95dcd4d"></a>
+        - [IV.1.1.5.7 [Topic] Relationship](../../../../continuum/application/data-object/topic/c0ec3c75d9c54b3097e12c240ee816fe.md) <a id="c0ec3c75d9c54b3097e12c240ee816fe"></a>
+      - [IV.1.1.6 [Topic] Ordering](../../../../continuum/application/data-object/topic/1c4e2d5ce4574856a7d3605838e8afcb.md) <a id="1c4e2d5ce4574856a7d3605838e8afcb"></a>
+        - [IV.1.1.6.1 [Topic] Order](../../../../continuum/application/data-object/topic/2a791e0e1f6b45c0a57fb8233f73faa5.md) <a id="2a791e0e1f6b45c0a57fb8233f73faa5"></a>
+        - [IV.1.1.6.2 [Topic] OrderChange](../../../../continuum/application/data-object/topic/73abd9430cfa4395ac38b41acfb169ec.md) <a id="73abd9430cfa4395ac38b41acfb169ec"></a>
+        - [IV.1.1.6.3 [Topic] OrderContext](../../../../continuum/application/data-object/topic/614c48fd853643578788b738f8017b53.md) <a id="614c48fd853643578788b738f8017b53"></a>
+        - [IV.1.1.6.4 [Topic] OrderProgressionEvent](../../../../continuum/application/data-object/topic/8fb3a767d7a04d638ef76f98d61496b1.md) <a id="8fb3a767d7a04d638ef76f98d61496b1"></a>
+        - [IV.1.1.6.5 [Topic] OrderResult](../../../../continuum/application/data-object/topic/24187967f53446479c87d7676c66ba12.md) <a id="24187967f53446479c87d7676c66ba12"></a>
+        - [IV.1.1.6.6 [Topic] OrderRouting](../../../../continuum/application/data-object/topic/06bde79727884b27b3599e373b3cee5f.md) <a id="06bde79727884b27b3599e373b3cee5f"></a>
+      - [IV.1.1.7 [Topic] Place](../../../../continuum/application/data-object/topic/36539e3eee7041e585aa3c5a06424bcc.md) <a id="36539e3eee7041e585aa3c5a06424bcc"></a>
+        - [IV.1.1.7.1 [Topic] CarePlace](../../../../continuum/application/data-object/topic/779f2295b0b648dda9dbd21c4ade3ba0.md) <a id="779f2295b0b648dda9dbd21c4ade3ba0"></a>
+        - [IV.1.1.7.2 [Topic] Geolocation](../../../../continuum/application/data-object/topic/771b2e814946401bbe6dd6b4fdd3fb42.md) <a id="771b2e814946401bbe6dd6b4fdd3fb42"></a>
+        - [IV.1.1.7.3 [Topic] Location](../../../../continuum/application/data-object/topic/9ee4df4d76864bb1ac90fe1077c56c6f.md) <a id="9ee4df4d76864bb1ac90fe1077c56c6f"></a>
+        - [IV.1.1.7.4 [Topic] LocationClassification](../../../../continuum/application/data-object/topic/3896c910c28646098f0707efe88169ee.md) <a id="3896c910c28646098f0707efe88169ee"></a>
+        - [IV.1.1.7.5 [Topic] LocationIdentity](../../../../continuum/application/data-object/topic/5f8299e31ee5410583007473c75d578f.md) <a id="5f8299e31ee5410583007473c75d578f"></a>
+      - [IV.1.1.8 [Topic] Scheduling](../../../../continuum/application/data-object/topic/1225bfab0a6c4312875091a027f24275.md) <a id="1225bfab0a6c4312875091a027f24275"></a>
+        - [IV.1.1.8.1 [Topic] Appointment](../../../../continuum/application/data-object/topic/9badf0d360b64215bc60e74eec954018.md) <a id="9badf0d360b64215bc60e74eec954018"></a>
+        - [IV.1.1.8.2 [Topic] PatientSchedule](../../../../continuum/application/data-object/topic/c109f726f6ae4ee1b7fde1c012cfae74.md) <a id="c109f726f6ae4ee1b7fde1c012cfae74"></a>
+        - [IV.1.1.8.3 [Topic] ScheduleChange](../../../../continuum/application/data-object/topic/0e98b52f18274a81ad3e3b9ff9cca747.md) <a id="0e98b52f18274a81ad3e3b9ff9cca747"></a>
+        - [IV.1.1.8.4 [Topic] ScheduleState](../../../../continuum/application/data-object/topic/6c4e9a91baf7460387d298366c5c6d0a.md) <a id="6c4e9a91baf7460387d298366c5c6d0a"></a>
+      - [IV.1.1.9 [Topic] Service](../../../../continuum/application/data-object/topic/0b990e0c64684bb8a45643e48eb4470a.md) <a id="0b990e0c64684bb8a45643e48eb4470a"></a>
+        - [IV.1.1.9.1 [Topic] ServiceAssurance](../../../../continuum/application/data-object/topic/07a1f83c9b4e462eaef1595c2a50d560.md) <a id="07a1f83c9b4e462eaef1595c2a50d560"></a>
+        - [IV.1.1.9.2 [Topic] ServiceDelivery](../../../../continuum/application/data-object/topic/4627ee33845744f2ae2e10c84e313755.md) <a id="4627ee33845744f2ae2e10c84e313755"></a>
+        - [IV.1.1.9.3 [Topic] ServiceOffering](../../../../continuum/application/data-object/topic/441b0891822f4add834ea930c3fe58b7.md) <a id="441b0891822f4add834ea930c3fe58b7"></a>
+        - [IV.1.1.9.4 [Topic] ServiceOutcome](../../../../continuum/application/data-object/topic/4fb589629e7f405db44d6a87a2b5e36b.md) <a id="4fb589629e7f405db44d6a87a2b5e36b"></a>
+        - [IV.1.1.9.5 [Topic] ServiceProvision](../../../../continuum/application/data-object/topic/8d41e9fb6a164deb93afb5fc4c671e10.md) <a id="8d41e9fb6a164deb93afb5fc4c671e10"></a>
+      - [IV.1.1.10 [Topic] TaskCompletion](../../../../continuum/application/data-object/topic/8a9351cd170940d0b36f8d56584f15ec.md) <a id="8a9351cd170940d0b36f8d56584f15ec"></a>
+        - [IV.1.1.10.1 [Topic] ExecutionConcurrency](../../../../continuum/application/data-object/topic/0781dd44748d42338c18bf01993af656.md) <a id="0781dd44748d42338c18bf01993af656"></a>
+        - [IV.1.1.10.2 [Topic] OutcomeConcurrency](../../../../continuum/application/data-object/topic/72c505782347448d8f89d74ef76359af.md) <a id="72c505782347448d8f89d74ef76359af"></a>
+        - [IV.1.1.10.3 [Topic] OutputRules](../../../../continuum/application/data-object/topic/a035fe1913db4d2589a2e4edde8db737.md) <a id="a035fe1913db4d2589a2e4edde8db737"></a>
+        - [IV.1.1.10.4 [Topic] Task](../../../../continuum/application/data-object/topic/c43139289cb649b4836521a96a51604c.md) <a id="c43139289cb649b4836521a96a51604c"></a>
+        - [IV.1.1.10.5 [Topic] TaskDefinition](../../../../continuum/application/data-object/topic/1d6d4c3a2df440be94262855fa6564eb.md) <a id="1d6d4c3a2df440be94262855fa6564eb"></a>
+        - [IV.1.1.10.6 [Topic] TaskFulfillment](../../../../continuum/application/data-object/topic/30f4deffcd694f07bf54b2b192695d4f.md) <a id="30f4deffcd694f07bf54b2b192695d4f"></a>
+        - [IV.1.1.10.7 [Topic] TaskOutcome](../../../../continuum/application/data-object/topic/08d8ee19a30f418f9d5bc497ced0d1ef.md) <a id="08d8ee19a30f418f9d5bc497ced0d1ef"></a>
+      - [IV.1.1.11 [Topic] Workforce](../../../../continuum/application/data-object/topic/9f689e261140436eb94295d63e2b3370.md) <a id="9f689e261140436eb94295d63e2b3370"></a>
+        - [IV.1.1.11.1 [Topic] CommunicationAddress](../../../../continuum/application/data-object/topic/410be08eea0b4653a88f4e4235354cea.md) <a id="410be08eea0b4653a88f4e4235354cea"></a>
+        - [IV.1.1.11.2 [Topic] Practitioner](../../../../continuum/application/data-object/topic/4e8f2bd581a5418889813cf7ee414750.md) <a id="4e8f2bd581a5418889813cf7ee414750"></a>
+        - [IV.1.1.11.3 [Topic] PractitionerRole](../../../../continuum/application/data-object/topic/cb7ac98f62aa4599ba57263338cb8b3c.md) <a id="cb7ac98f62aa4599ba57263338cb8b3c"></a>
+        - [IV.1.1.11.4 [Topic] Privilege](../../../../continuum/application/data-object/topic/75e194f6168945588ed30cc6c78d04cc.md) <a id="75e194f6168945588ed30cc6c78d04cc"></a>
+        - [IV.1.1.11.5 [Topic] ProfessionalIdentity](../../../../continuum/application/data-object/topic/2f2868f077fc47afbb541925a9801b2c.md) <a id="2f2868f077fc47afbb541925a9801b2c"></a>
+        - [IV.1.1.11.6 [Topic] ProfessionalProfile](../../../../continuum/application/data-object/topic/703bb80c062743eeb7ed8dea3ffeaaa0.md) <a id="703bb80c062743eeb7ed8dea3ffeaaa0"></a>
+        - [IV.1.1.11.7 [Topic] Registration](../../../../continuum/application/data-object/topic/26c72794993044af98b5329b8b14ae89.md) <a id="26c72794993044af98b5329b8b14ae89"></a>
+    - IV.1.2 Reusable Information Concepts
+      - [IV.1.2.1 PractitionerCapacity](../../../../continuum/application/data-object/008f622bf9ce4d40b8a85024748bd485.md) <a id="008f622bf9ce4d40b8a85024748bd485"></a>
+  - IV.2 System-of-Systems Architecture
+    - IV.2.1 System Map
+    - IV.2.2 System Responsibility Map
+      - [IV.2.2.1 Provider Registry solution collaboration](../../../../continuum/application/application-collaboration/9305dc8d55b34b70950190e28b5464cf.md) <a id="9305dc8d55b34b70950190e28b5464cf"></a>
+    - IV.2.3 Middleware Architecture
+      - IV.2.3.1 Petasos
+        - IV.2.3.1.1 Component Architecture
+          - [IV.2.3.1.1.1 Petasos](../../../../continuum/application/application-component/195e5f10db8e419391354197b5d7a8cc.md) <a id="195e5f10db8e419391354197b5d7a8cc"></a>
+        - IV.2.3.1.2 Information Architecture
+          - [IV.2.3.1.2.1 PetasosParcel Topic](../../../../continuum/application/data-object/f0a88f05a0cb438cb42572ec07fb8513.md) <a id="f0a88f05a0cb438cb42572ec07fb8513"></a>
+  - IV.3 Applications
+    - IV.3.1 Agora
+      - IV.3.1.1 Application Overview
+        - [IV.3.1.1.1 Agora](../../../../continuum/application/application-component/d1c4053e68384080b8eb79d2008632ba.md) <a id="d1c4053e68384080b8eb79d2008632ba"></a>
+    - IV.3.2 Calliope
+      - IV.3.2.1 Application Overview
+        - [IV.3.2.1.1 Calliope](../../../../continuum/application/application-component/466ad8f75a954c0581b5bba090443849.md) <a id="466ad8f75a954c0581b5bba090443849"></a>
+      - IV.3.2.2 Component Architecture
+        - [IV.3.2.2.1 Calliope-Models](../../../../continuum/application/application-component/307b3440a507403f8bc214d290bffb6a.md) <a id="307b3440a507403f8bc214d290bffb6a"></a>
+        - [IV.3.2.2.2 Calliope-DataSets](../../../../continuum/application/application-component/53bf6815c7a54ed0abde9b1aad311843.md) <a id="53bf6815c7a54ed0abde9b1aad311843"></a>
+    - IV.3.3 DigitalTwin
+      - IV.3.3.1 Application Overview
+        - [IV.3.3.1.1 DigitalTwin](../../../../continuum/application/application-component/3f64d339648246e99e8866c8089f8960.md) <a id="3f64d339648246e99e8866c8089f8960"></a>
+      - IV.3.3.2 Component Architecture
+        - [IV.3.3.2.1 Behaviour](../../../../continuum/application/application-component/a26f06d66bec4981b266e202c46a9afb.md) <a id="a26f06d66bec4981b266e202c46a9afb"></a>
+    - IV.3.4 Dokimasia
+      - IV.3.4.1 Application Overview
+        - [IV.3.4.1.1 Dokimasia](../../../../continuum/application/application-component/d739c75dffe2453081735710b285f03b.md) <a id="d739c75dffe2453081735710b285f03b"></a>
+      - IV.3.4.2 Component Architecture
+        - [IV.3.4.2.1 Dokimasia Ergon](../../../../continuum/application/application-component/34d7c844da3344a09e96ad821ff9fcea.md) <a id="34d7c844da3344a09e96ad821ff9fcea"></a>
+        - [IV.3.4.2.2 AI Assurance Ergon](../../../../continuum/application/application-component/8fe50975372b4d399a4bcb9f3d9348f7.md) <a id="8fe50975372b4d399a4bcb9f3d9348f7"></a>
+    - IV.3.5 Energeia
+      - IV.3.5.1 Application Overview
+        - [IV.3.5.1.1 Energeia](../../../../continuum/application/application-component/fb3f37a6ac614415ac486a6de9d35994.md) <a id="fb3f37a6ac614415ac486a6de9d35994"></a>
+      - IV.3.5.2 Information Architecture
+        - [IV.3.5.2.1 Praxis](../../../../continuum/application/data-object/0f961462340348b290fd844357d54d67.md) <a id="0f961462340348b290fd844357d54d67"></a>
+        - [IV.3.5.2.2 Journey](../../../../continuum/application/data-object/359b901df27f4b43b5a2ff14a8484e34.md) <a id="359b901df27f4b43b5a2ff14a8484e34"></a>
+    - IV.3.6 Harmonia.Omilia.Client
+      - IV.3.6.1 Application Overview
+        - [IV.3.6.1.1 Harmonia.Omilia.Client](../../../../continuum/application/application-component/33b8421ffc444b78b2d059201a58a688.md) <a id="33b8421ffc444b78b2d059201a58a688"></a>
+    - IV.3.7 Harmonia.Omilia.Server
+      - IV.3.7.1 Application Overview
+        - [IV.3.7.1.1 Harmonia.Omilia.Server](../../../../continuum/application/application-component/369907025d06492bb414a72cea834a77.md) <a id="369907025d06492bb414a72cea834a77"></a>
+      - IV.3.7.2 Interfaces
+        - [IV.3.7.2.1 Omilia Application Services API](../../../../continuum/application/application-interface/49c52c0466bc4760a11e0ca6fe8142c0.md) <a id="49c52c0466bc4760a11e0ca6fe8142c0"></a>
+    - IV.3.8 Harmonia.Sylloge
+      - IV.3.8.1 Application Overview
+        - [IV.3.8.1.1 Harmonia.Sylloge](../../../../continuum/application/application-component/feea742463b84021b66853d287d8916f.md) <a id="feea742463b84021b66853d287d8916f"></a>
+    - IV.3.9 Iris
+      - IV.3.9.1 Application Overview
+        - [IV.3.9.1.1 Iris](../../../../continuum/application/application-component/e927c1af96c64fcd979be659bee2cbe3.md) <a id="e927c1af96c64fcd979be659bee2cbe3"></a>
+      - IV.3.9.2 Component Architecture
+        - [IV.3.9.2.1 Iris backend-for-frontend mediation](../../../../continuum/application/application-component/37b82d161c5640298e951acc361b338a.md) <a id="37b82d161c5640298e951acc361b338a"></a>
+    - IV.3.10 Kleio
+      - IV.3.10.1 Application Overview
+        - [IV.3.10.1.1 Kleio](../../../../continuum/application/application-component/fefda110e2274884ad58906733606efd.md) <a id="fefda110e2274884ad58906733606efd"></a>
+    - IV.3.11 Mneme
+      - IV.3.11.1 Application Overview
+        - [IV.3.11.1.1 Mneme](../../../../continuum/application/application-component/1af8a56358f7429fabfb57be66542a99.md) <a id="1af8a56358f7429fabfb57be66542a99"></a>
+      - IV.3.11.2 Component Architecture
+        - [IV.3.11.2.1 PragmaFactory](../../../../continuum/application/application-component/75e77d8dfd1d4870aa6151485d28d1dd.md) <a id="75e77d8dfd1d4870aa6151485d28d1dd"></a>
+      - IV.3.11.3 Information Architecture
+        - [IV.3.11.3.1 Pragma Topic](../../../../continuum/application/data-object/27ad143e7c784e378556af8a57c438f7.md) <a id="27ad143e7c784e378556af8a57c438f7"></a>
+        - [IV.3.11.3.2 Context Topic](../../../../continuum/application/data-object/76ded4866bf443dabc0849d68b215690.md) <a id="76ded4866bf443dabc0849d68b215690"></a>
+      - IV.3.11.4 Services
+        - [IV.3.11.4.1 Context Load](../../../../continuum/application/application-service/1ccfe420541945bb9c0756a949799d95.md) <a id="1ccfe420541945bb9c0756a949799d95"></a>
+        - [IV.3.11.4.2 Context Save](../../../../continuum/application/application-service/24d4fc42d9524d53a747f0550833f1a4.md) <a id="24d4fc42d9524d53a747f0550833f1a4"></a>
+        - [IV.3.11.4.3 Adhoc Resource Access](../../../../continuum/application/application-service/410f2f55bbda481b973c6c67b924f0be.md) <a id="410f2f55bbda481b973c6c67b924f0be"></a>
+        - [IV.3.11.4.4 Adhoc Search](../../../../continuum/application/application-service/02bf54d699b44ed0b26fa5b8125f0f01.md) <a id="02bf54d699b44ed0b26fa5b8125f0f01"></a>
+      - IV.3.11.5 Internal Functions
+        - [IV.3.11.5.1 Pragma Management](../../../../continuum/application/application-function/ab0cdaa7ed4149ee856216efa5a265c4.md) <a id="ab0cdaa7ed4149ee856216efa5a265c4"></a>
+        - [IV.3.11.5.2 Resource Harmonisation Manager](../../../../continuum/application/application-function/a6580e0b9f0f40c9a33d731d20110057.md) <a id="a6580e0b9f0f40c9a33d731d20110057"></a>
+    - IV.3.12 Mnemosyne
+      - IV.3.12.1 Application Overview
+        - [IV.3.12.1.1 Mnemosyne](../../../../continuum/application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md) <a id="7985e647bf9e4ca3ba70faf9e3e4ae02"></a>
+    - IV.3.13 Ponos
+      - IV.3.13.1 Application Overview
+        - [IV.3.13.1.1 Ponos](../../../../continuum/application/application-component/b521762c1ea444b48cd5f66be3752d30.md) <a id="b521762c1ea444b48cd5f66be3752d30"></a>
+      - IV.3.13.2 Component Architecture
+        - [IV.3.13.2.1 Ergon](../../../../continuum/application/application-component/49c9eb2bef0c47b8b5328621d5fc5479.md) <a id="49c9eb2bef0c47b8b5328621d5fc5479"></a>
+      - IV.3.13.3 Interfaces
+        - [IV.3.13.3.1 PathwayEndpoint](../../../../continuum/application/application-interface/800789f54ba24f53a354600d5cd43f6f.md) <a id="800789f54ba24f53a354600d5cd43f6f"></a>
+    - IV.3.14 Pylai
+      - IV.3.14.1 Application Overview
+        - [IV.3.14.1.1 Pylai](../../../../continuum/application/application-component/e3e4147fea3640198dc251ed41ee854d.md) <a id="e3e4147fea3640198dc251ed41ee854d"></a>
+      - IV.3.14.2 Information Architecture
+        - [IV.3.14.2.1 Pylai.Diadromí Topic](../../../../continuum/application/data-object/978f5c2bd2d343ffaf3a13dff700c258.md) <a id="978f5c2bd2d343ffaf3a13dff700c258"></a>
+      - IV.3.14.3 Services
+        - [IV.3.14.3.1 External Interoperability Service](../../../../continuum/application/application-service/43b79574792443faa57daa76b9a47a19.md) <a id="43b79574792443faa57daa76b9a47a19"></a>
+    - IV.3.15 Themis
+      - IV.3.15.1 Application Overview
+        - [IV.3.15.1.1 Themis](../../../../continuum/application/application-component/899d34ec491948b68aad09e507dea6d1.md) <a id="899d34ec491948b68aad09e507dea6d1"></a>
+      - IV.3.15.2 Information Architecture
+        - [IV.3.15.2.1 PEP-Context](../../../../continuum/application/data-object/90c3f7e03448452baec5c425c34fd77a.md) <a id="90c3f7e03448452baec5c425c34fd77a"></a>
+        - [IV.3.15.2.2 PEP-Criteria](../../../../continuum/application/data-object/7e10287b7e634bce8aa2481eb481bb76.md) <a id="7e10287b7e634bce8aa2481eb481bb76"></a>
+        - [IV.3.15.2.3 Criterion](../../../../continuum/application/data-object/b5be4886ec77466e860209443a03771b.md) <a id="b5be4886ec77466e860209443a03771b"></a>
+        - [IV.3.15.2.4 AuthorisationRole](../../../../continuum/application/data-object/bad6431f87bd4bf59645c0962cc219a7.md) <a id="bad6431f87bd4bf59645c0962cc219a7"></a>
+- V Technology
+- VI Implementation & Migration
+- R Cross-Cutting References — Reference navigation
+  - R.1 Stakeholder Index — Reference navigation
+    - [R.1.1 Care Team — Stakeholder index entry [historical_reference]](../../../../continuum/motivation/stakeholder/6f5a203d81e24a81b384a80781987daa.md) <a id="6f5a203d81e24a81b384a80781987daa"></a>
+    - [R.1.2 Clinicians & Care Teams — Stakeholder index entry](../../../../continuum/motivation/stakeholder/37264af5adb64b37b7537e3d48b6747b.md) <a id="37264af5adb64b37b7537e3d48b6747b"></a>
+    - [R.1.3 Health Network — Stakeholder index entry [historical_reference]](../../../../continuum/motivation/stakeholder/55e57c01dfe146a2a225228b31196862.md) <a id="55e57c01dfe146a2a225228b31196862"></a>
+    - [R.1.4 Healthcare Delivery Organizations — Stakeholder index entry](../../../../continuum/motivation/stakeholder/31a8e1054c02483a9d5e314a91a91364.md) <a id="31a8e1054c02483a9d5e314a91a91364"></a>
+    - [R.1.5 Healthcare Directory Stewards & Registrars — Stakeholder index entry](../../../../continuum/motivation/stakeholder/1c8e2c898a28436693cf2ae69776e125.md) <a id="1c8e2c898a28436693cf2ae69776e125"></a>
+    - [R.1.6 Healthcare Provider — Stakeholder index entry [historical_reference]](../../../../continuum/motivation/stakeholder/2018200a493d458096b72031cc2ae779.md) <a id="2018200a493d458096b72031cc2ae779"></a>
+    - [R.1.7 Patient — Stakeholder index entry [historical_reference]](../../../../continuum/motivation/stakeholder/5f6d333e94634420b8a8bbf8b9cb6e2a.md) <a id="5f6d333e94634420b8a8bbf8b9cb6e2a"></a>
+    - [R.1.8 Patients & Care Recipients — Stakeholder index entry](../../../../continuum/motivation/stakeholder/ea5a315450ce4cfb87417263560c2b6d.md) <a id="ea5a315450ce4cfb87417263560c2b6d"></a>
+    - [R.1.9 Platform Operations & Integration Engineers — Stakeholder index entry](../../../../continuum/motivation/stakeholder/c20aa17ce4aa4a58be5eb3cff2ecdd1d.md) <a id="c20aa17ce4aa4a58be5eb3cff2ecdd1d"></a>
+    - [R.1.10 Regional Health Network Operator — Stakeholder index entry](../../../../continuum/motivation/stakeholder/e76216c494fa4500bb80eda6f83513c1.md) <a id="e76216c494fa4500bb80eda6f83513c1"></a>
+  - R.2 Historical Capability Identities — Reference navigation
+    - [R.2.1 [CT1] Care Access & Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/0dec07b6ddbe48bda93a2295dd3e2d7d.md) <a id="0dec07b6ddbe48bda93a2295dd3e2d7d"></a>
+      - Governed successor (direct correspondence): [II.1.2.1 [CT1] Care Access & Coordination](#ed342cb8656b4f80b55ad519ecbd2d3a); canonicalId: `ed342cb8656b4f80b55ad519ecbd2d3a`
+    - [R.2.2 [CT3] Clinical Quality Criteria Management — Historical identity [superseded]](../../../../continuum/strategy/capability/7a51321b00464016920976b269981edd.md) <a id="7a51321b00464016920976b269981edd"></a>
+      - Governed successor (direct correspondence): [II.1.2.2.1.1 [CT3] Clinical Quality Criteria Management](#1f48527a9a7c4382a7f8a660ccb9f29f); canonicalId: `1f48527a9a7c4382a7f8a660ccb9f29f`
+    - [R.2.3 [CT3] Clinical Quality Evidence Management — Historical identity [superseded]](../../../../continuum/strategy/capability/f31902d474894670aeef3e0abbedccf0.md) <a id="f31902d474894670aeef3e0abbedccf0"></a>
+      - Governed successor (direct correspondence): [II.1.2.2.1.2 [CT3] Clinical Quality Evidence Management](#1b0a1c6945ed4fadba045ff4753c104c); canonicalId: `1b0a1c6945ed4fadba045ff4753c104c`
+    - [R.2.4 [CT3] Clinical Quality Reporting — Historical identity [superseded]](../../../../continuum/strategy/capability/e5812fcdf3f5465b9b1d8ba536075c5f.md) <a id="e5812fcdf3f5465b9b1d8ba536075c5f"></a>
+      - Governed successor (direct correspondence): [II.1.2.2.1.3 [CT3] Clinical Quality Reporting](#70f34839c23042d59469e6ef96944057); canonicalId: `70f34839c23042d59469e6ef96944057`
+    - [R.2.5 [CT3] Clinical Quality Review & Assessment Management — Historical identity [superseded]](../../../../continuum/strategy/capability/4b17ec92f0af4c4b9556912dbdd0f29f.md) <a id="4b17ec92f0af4c4b9556912dbdd0f29f"></a>
+      - Governed successor (direct correspondence): [II.1.2.2.1.4 [CT3] Clinical Quality Review & Assessment Management](#8318c35b302b4dcaa0e795fbfdc93e3b); canonicalId: `8318c35b302b4dcaa0e795fbfdc93e3b`
+    - [R.2.6 [CT2] Clinical Quality Management — Historical identity [superseded]](../../../../continuum/strategy/capability/dc1bece79eb7452e951d03a2ee6dfaa6.md) <a id="dc1bece79eb7452e951d03a2ee6dfaa6"></a>
+      - Governed successor (direct correspondence): [II.1.2.2.1 [CT2] Clinical Quality Management](#89761f2d38f846c39df1df0975964288); canonicalId: `89761f2d38f846c39df1df0975964288`
+    - [R.2.7 [CT3] Clinical Risk Identification — Historical identity [superseded]](../../../../continuum/strategy/capability/690da55f1f5b4c44ba58cf67a717a564.md) <a id="690da55f1f5b4c44ba58cf67a717a564"></a>
+      - Governed successor (direct correspondence): [II.1.2.2.2.1 [CT3] Clinical Risk Identification](#d54c19c6efaf42af82ad71a4142149d4); canonicalId: `d54c19c6efaf42af82ad71a4142149d4`
+    - [R.2.8 [CT3] Clinical Risk Mitigation Management — Historical identity [superseded]](../../../../continuum/strategy/capability/0bd3311d89af45bb935fde20e719369c.md) <a id="0bd3311d89af45bb935fde20e719369c"></a>
+      - Governed successor (direct correspondence): [II.1.2.2.2.2 [CT3] Clinical Risk Mitigation Management](#2c232ade21ec45619c3ee4e928bd97ee); canonicalId: `2c232ade21ec45619c3ee4e928bd97ee`
+    - [R.2.9 [CT3] Clinical Risk Response Management — Historical identity [superseded]](../../../../continuum/strategy/capability/20f719ab4b6741b393ef570b4d1b05df.md) <a id="20f719ab4b6741b393ef570b4d1b05df"></a>
+      - Governed successor (direct correspondence): [II.1.2.2.2.3 [CT3] Clinical Risk Response Management](#5e36cb137e4e4782b2ddbf78cdf0da7b); canonicalId: `5e36cb137e4e4782b2ddbf78cdf0da7b`
+    - [R.2.10 [CT2] Clinical Safety Management — Historical identity [superseded]](../../../../continuum/strategy/capability/650ccec030fa46cc8c9d6b508a841778.md) <a id="650ccec030fa46cc8c9d6b508a841778"></a>
+      - Governed successor (direct correspondence): [II.1.2.2.2 [CT2] Clinical Safety Management](#28d1bf3e514e4c29837ebedaf9e4917b); canonicalId: `28d1bf3e514e4c29837ebedaf9e4917b`
+    - [R.2.11 [CT1] Clinical Quality, Safety & Improvement — Historical identity [superseded]](../../../../continuum/strategy/capability/b967c383dbcd4c24abe6a83ea5e79e00.md) <a id="b967c383dbcd4c24abe6a83ea5e79e00"></a>
+      - Governed successor (direct correspondence): [II.1.2.2 [CT1] Clinical Quality, Safety & Improvement](#63837bf848774572a06b935af95581a2); canonicalId: `63837bf848774572a06b935af95581a2`
+    - [R.2.12 [CT3] Preventative Health Cohort Management — Historical identity [superseded]](../../../../continuum/strategy/capability/fef479f0fd5048b19b2aec770f0233fe.md) <a id="fef479f0fd5048b19b2aec770f0233fe"></a>
+      - Governed successor (direct correspondence): [II.1.2.3.1.1 [CT3] Preventative Health Cohort Management](#97625bb28e5745d5994e1bffd4037188); canonicalId: `97625bb28e5745d5994e1bffd4037188`
+    - [R.2.13 [CT3] Preventative Health Education Services — Historical identity [superseded]](../../../../continuum/strategy/capability/dbe10959237f405caeadef2a5748303a.md) <a id="dbe10959237f405caeadef2a5748303a"></a>
+      - Governed successor (direct correspondence): [II.1.2.3.1.2 [CT3] Preventative Health Education Services](#7541d9b3b65d47d286dabdc093cb0eed); canonicalId: `7541d9b3b65d47d286dabdc093cb0eed`
+    - [R.2.14 [CT3] Preventative Health Problem Identification — Historical identity [superseded]](../../../../continuum/strategy/capability/b35d3521141c419fb676a79b2ede40bd.md) <a id="b35d3521141c419fb676a79b2ede40bd"></a>
+      - Governed successor (direct correspondence): [II.1.2.3.1.3 [CT3] Preventative Health Problem Identification](#c1567022671f433fa1eeb37a9d156d92); canonicalId: `c1567022671f433fa1eeb37a9d156d92`
+    - [R.2.15 [CT3] Preventative Health Programme Management — Historical identity [superseded]](../../../../continuum/strategy/capability/d71def9e76a544ff9761c672bb24f3be.md) <a id="d71def9e76a544ff9761c672bb24f3be"></a>
+      - Governed successor (direct correspondence): [II.1.2.3.1.4 [CT3] Preventative Health Programme Management](#563d36b179d34cb6913253d06e8d77f6); canonicalId: `563d36b179d34cb6913253d06e8d77f6`
+    - [R.2.16 [CT3] Preventative Health Programme Monitoring — Historical identity [superseded]](../../../../continuum/strategy/capability/e05f6310f6d544efaca5568604f27dd8.md) <a id="e05f6310f6d544efaca5568604f27dd8"></a>
+      - Governed successor (direct correspondence): [II.1.2.3.1.5 [CT3] Preventative Health Programme Monitoring](#945b40ced8004e1cbf7c98c731d17daf); canonicalId: `945b40ced8004e1cbf7c98c731d17daf`
+    - [R.2.17 [CT3] Preventative Health Reporting — Historical identity [superseded]](../../../../continuum/strategy/capability/4faef45b4ebe4fa69e57c3d81bfea05f.md) <a id="4faef45b4ebe4fa69e57c3d81bfea05f"></a>
+      - Governed successor (direct correspondence): [II.1.2.3.1.6 [CT3] Preventative Health Reporting](#d2ef01c4cab348df822e802ab084faae); canonicalId: `d2ef01c4cab348df822e802ab084faae`
+    - [R.2.18 [CT2] Preventative Health — Historical identity [superseded]](../../../../continuum/strategy/capability/80affa7bcd284ecbbcbc5092f8497ddf.md) <a id="80affa7bcd284ecbbcbc5092f8497ddf"></a>
+      - Governed successor (direct correspondence): [II.1.2.3.1 [CT2] Preventative Health](#81be04a2d58548a4aea94f9aae90feb6); canonicalId: `81be04a2d58548a4aea94f9aae90feb6`
+    - [R.2.19 [CT1] Community Health & Wellbeing — Historical identity [superseded]](../../../../continuum/strategy/capability/175174c5cce549d2b154a4f6704721dc.md) <a id="175174c5cce549d2b154a4f6704721dc"></a>
+      - Governed successor (direct correspondence): [II.1.2.3 [CT1] Community Health & Wellbeing](#b326b4aaf02a41a986ed22d184cbc152); canonicalId: `b326b4aaf02a41a986ed22d184cbc152`
+    - [R.2.20 [CT1] Connected Health Services — Historical identity [superseded]](../../../../continuum/strategy/capability/48f01ef8b0e6431c85cf4f40cf8f94c3.md) <a id="48f01ef8b0e6431c85cf4f40cf8f94c3"></a>
+      - Governed successor (direct correspondence): [II.1.2.4 [CT1] Connected Health Services](#3ef397463e584737b367e93f0bf1d85d); canonicalId: `3ef397463e584737b367e93f0bf1d85d`
+    - [R.2.21 [CT1] Corporate Resources & Enterprise Services — Historical identity [superseded]](../../../../continuum/strategy/capability/a2dbd74847a44f4c879983229f5c9d08.md) <a id="a2dbd74847a44f4c879983229f5c9d08"></a>
+      - Governed successor (direct correspondence): [II.1.2.5 [CT1] Corporate Resources & Enterprise Services](#b79628f156e14a8cbb82a0dea2fc57ff); canonicalId: `b79628f156e14a8cbb82a0dea2fc57ff`
+    - [R.2.22 [CT1] Diagnostic, Therapeutic & Clinical Support Services — Historical identity [superseded]](../../../../continuum/strategy/capability/e003b9cd0730459a84775d2837d1d173.md) <a id="e003b9cd0730459a84775d2837d1d173"></a>
+      - Governed successor (direct correspondence): [II.1.2.6 [CT1] Diagnostic, Therapeutic & Clinical Support Services](#4d98c3503a9f4890a677f09b0c3b6f82); canonicalId: `4d98c3503a9f4890a677f09b0c3b6f82`
+    - [R.2.23 [CT1] Health Information & Knowledge Management — Historical identity [superseded]](../../../../continuum/strategy/capability/a1c557bd263047d0b3ff566cf50b98c1.md) <a id="a1c557bd263047d0b3ff566cf50b98c1"></a>
+      - Governed successor (direct correspondence): [II.1.2.7 [CT1] Health Information & Knowledge Management](#cca5d5abec204b339eb5b9bd924ed64e); canonicalId: `cca5d5abec204b339eb5b9bd924ed64e`
+    - [R.2.24 [CT1] Health Products & Clinical Technology — Historical identity [superseded]](../../../../continuum/strategy/capability/a631a8600b8b49df9ef452c48c91349a.md) <a id="a631a8600b8b49df9ef452c48c91349a"></a>
+      - Governed successor (direct correspondence): [II.1.2.8 [CT1] Health Products & Clinical Technology](#54388e3202c2403089b5c476c78c4567); canonicalId: `54388e3202c2403089b5c476c78c4567`
+    - [R.2.25 [CT1] Health Research & Innovation — Historical identity [superseded]](../../../../continuum/strategy/capability/2cc31384c8864c73989025cbe96dcfa7.md) <a id="2cc31384c8864c73989025cbe96dcfa7"></a>
+      - Governed successor (direct correspondence): [II.1.2.9 [CT1] Health Research & Innovation](#582bf62145fd42118e5d57bb714841e8); canonicalId: `582bf62145fd42118e5d57bb714841e8`
+    - [R.2.26 [CT1] Health Rights, Advocacy & Participation — Historical identity [superseded]](../../../../continuum/strategy/capability/58376e5c53bf4af0a54f99f21ac52666.md) <a id="58376e5c53bf4af0a54f99f21ac52666"></a>
+      - Governed successor (direct correspondence): [II.1.2.10 [CT1] Health Rights, Advocacy & Participation](#7ab5c82a500b45f39267883a6e78c482); canonicalId: `7ab5c82a500b45f39267883a6e78c482`
+    - [R.2.27 [CT1] Health Service Assurance — Historical identity [superseded]](../../../../continuum/strategy/capability/6a82dc1423374e809dbf542eeaa69482.md) <a id="6a82dc1423374e809dbf542eeaa69482"></a>
+      - Governed successor (direct correspondence): [II.1.2.11 [CT1] Health Service Assurance](#14860102964c441681d41ec3da423fe0); canonicalId: `14860102964c441681d41ec3da423fe0`
+    - [R.2.28 [CT1] Health Service Direction & Stewardship — Historical identity [superseded]](../../../../continuum/strategy/capability/360bf50f92484448a01cc57f2dbce23c.md) <a id="360bf50f92484448a01cc57f2dbce23c"></a>
+      - Governed successor (direct correspondence): [II.1.2.12 [CT1] Health Service Direction & Stewardship](#d51e7125bf9c4d2c9c59b60346b4d86f); canonicalId: `d51e7125bf9c4d2c9c59b60346b4d86f`
+    - [R.2.29 [CT1] Health Service Governance — Historical identity [superseded]](../../../../continuum/strategy/capability/24f3dd30223142efa35a5826552d53ab.md) <a id="24f3dd30223142efa35a5826552d53ab"></a>
+      - Governed successor (direct correspondence): [II.1.2.13 [CT1] Health Service Governance](#209aada781e844e28202a2535a264c21); canonicalId: `209aada781e844e28202a2535a264c21`
+    - [R.2.30 [CT3] Clinical Finding Interpretation — Historical identity [superseded]](../../../../continuum/strategy/capability/cf8ddfca7a8e4ed893ec39b795200d77.md) <a id="cf8ddfca7a8e4ed893ec39b795200d77"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.1.1 [CT3] Clinical Finding Interpretation](#deb78ba3b1514074a8ca5bc5da0673f5); canonicalId: `deb78ba3b1514074a8ca5bc5da0673f5`
+    - [R.2.31 [CT3] Diagnosis & Problem Determination — Historical identity [superseded]](../../../../continuum/strategy/capability/e575c583783546ef85cf898523d18797.md) <a id="e575c583783546ef85cf898523d18797"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.1.2 [CT3] Diagnosis & Problem Determination](#d965032637e64275b7a61c0413834590); canonicalId: `d965032637e64275b7a61c0413834590`
+    - [R.2.32 [CT3] Health Risk & Prognostic Determination — Historical identity [superseded]](../../../../continuum/strategy/capability/3215f0b0e1ce45e8ab16dae272ea6fe7.md) <a id="3215f0b0e1ce45e8ab16dae272ea6fe7"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.1.3 [CT3] Health Risk & Prognostic Determination](#5bba0ea969814b5fa7ad11b67ab40a0c); canonicalId: `5bba0ea969814b5fa7ad11b67ab40a0c`
+    - [R.2.33 [CT2] Clinical Determination — Historical identity [superseded]](../../../../continuum/strategy/capability/018ccd818ec142fba1ffb086d900acc6.md) <a id="018ccd818ec142fba1ffb086d900acc6"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.1 [CT2] Clinical Determination](#39219464b6304b59bd7c3de4e237066e); canonicalId: `39219464b6304b59bd7c3de4e237066e`
+    - [R.2.34 [CT2] Clinical Intervention — Historical identity [superseded]](../../../../continuum/strategy/capability/958345ee65f446d3b1259b8895ab100f.md) <a id="958345ee65f446d3b1259b8895ab100f"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.2 [CT2] Clinical Intervention](#5359d1b0ff814a0e871384469f5ebcd7); canonicalId: `5359d1b0ff814a0e871384469f5ebcd7`
+    - [R.2.35 [CT3] Care Goal Definition — Historical identity [superseded]](../../../../continuum/strategy/capability/8bfbcc0a455d423c90ae2f1cfb732ca8.md) <a id="8bfbcc0a455d423c90ae2f1cfb732ca8"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.3.1 [CT3] Care Goal Definition](#609e1bef516b44bb976b5dbebe7f684b); canonicalId: `609e1bef516b44bb976b5dbebe7f684b`
+    - [R.2.36 [CT3] Care Response Planning — Historical identity [superseded]](../../../../continuum/strategy/capability/d64569acaf2c44f3b2a5332f74fff7c7.md) <a id="d64569acaf2c44f3b2a5332f74fff7c7"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.3.2 [CT3] Care Response Planning](#2636e43903e44a97ad5b8db32692ce8b); canonicalId: `2636e43903e44a97ad5b8db32692ce8b`
+    - [R.2.37 [CT2] Individual Care Planning — Historical identity [superseded]](../../../../continuum/strategy/capability/574e61e230e643f78c58649adb4db313.md) <a id="574e61e230e643f78c58649adb4db313"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.3 [CT2] Individual Care Planning](#f036a9866459429a8fb5f5e10727b5e8); canonicalId: `f036a9866459429a8fb5f5e10727b5e8`
+    - [R.2.38 [CT3] Care Effectiveness Review — Historical identity [superseded]](../../../../continuum/strategy/capability/31f49cdea9f44f188459503580c2b86e.md) <a id="31f49cdea9f44f188459503580c2b86e"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.4.2 [CT3] Care Effectiveness Review](#79cfeaefeb174a54ba43343d37f035c1); canonicalId: `79cfeaefeb174a54ba43343d37f035c1`
+    - [R.2.39 [CT3] Care Intent Appropriateness Review — Historical identity [superseded]](../../../../continuum/strategy/capability/905eb2de1ac341ac96331e3d7f76079b.md) <a id="905eb2de1ac341ac96331e3d7f76079b"></a>
+      - Governed successor (evolved correspondence): [II.1.2.14.4.1 [CT3] Care Appropriateness Review](#5eac5fb73e31416288d8c992805b33cb); canonicalId: `5eac5fb73e31416288d8c992805b33cb`
+    - [R.2.40 [CT2] Individual Care Review — Historical identity [superseded]](../../../../continuum/strategy/capability/e1048f6c635d4e16b5384cc2cb45a71b.md) <a id="e1048f6c635d4e16b5384cc2cb45a71b"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.4 [CT2] Individual Care Review](#625a93f132f242f5a8e2ae1dc19979fb); canonicalId: `625a93f132f242f5a8e2ae1dc19979fb`
+    - [R.2.41 [CT3] Clinical Examination — Historical identity [superseded]](../../../../continuum/strategy/capability/8bc15e2b8f114deebcbbe3f2013a8147.md) <a id="8bc15e2b8f114deebcbbe3f2013a8147"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.5.1 [CT3] Clinical Examination](#8855d4d9e2954e0ab66ab65a556fc61a); canonicalId: `8855d4d9e2954e0ab66ab65a556fc61a`
+    - [R.2.42 [CT3] Health History Assessment — Historical identity [superseded]](../../../../continuum/strategy/capability/bcaacf446f45443eafd8e21a1fd74ee1.md) <a id="bcaacf446f45443eafd8e21a1fd74ee1"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.5.2 [CT3] Health History Assessment](#7ea7e3f74e2940a7934b588a1a038834); canonicalId: `7ea7e3f74e2940a7934b588a1a038834`
+    - [R.2.43 [CT3] Health Status Measurement — Historical identity [superseded]](../../../../continuum/strategy/capability/3717906f7f8840d3a8a3e3877543dd18.md) <a id="3717906f7f8840d3a8a3e3877543dd18"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.5.3 [CT3] Health Status Measurement](#a796bfb3335d44f6aeb9970628ed8554); canonicalId: `a796bfb3335d44f6aeb9970628ed8554`
+    - [R.2.44 [CT2] Individual Health Assessment — Historical identity [superseded]](../../../../continuum/strategy/capability/9111446aa2d045bd9acd98542b0eef1f.md) <a id="9111446aa2d045bd9acd98542b0eef1f"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.5 [CT2] Individual Health Assessment](#045f819bb3694d3c9db7f20886e2993f); canonicalId: `045f819bb3694d3c9db7f20886e2993f`
+    - [R.2.45 [CT3] Care Response Monitoring — Historical identity [superseded]](../../../../continuum/strategy/capability/615f93d05fbb4a8481f07778bd4f4803.md) <a id="615f93d05fbb4a8481f07778bd4f4803"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.6.1 [CT3] Care Response Monitoring](#d6951c9357fa40a4943cde581d95d5b1); canonicalId: `d6951c9357fa40a4943cde581d95d5b1`
+    - [R.2.46 [CT3] Health State Monitoring — Historical identity [superseded]](../../../../continuum/strategy/capability/346f024f74b447a8b6056b9d521837ff.md) <a id="346f024f74b447a8b6056b9d521837ff"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.6.2 [CT3] Health State Monitoring](#d77f22909f8b47dba4cbd95982e576df); canonicalId: `d77f22909f8b47dba4cbd95982e576df`
+    - [R.2.47 [CT2] Individual Health Monitoring — Historical identity [superseded]](../../../../continuum/strategy/capability/31e7c27556314cafb74d040441d2dac6.md) <a id="31e7c27556314cafb74d040441d2dac6"></a>
+      - Governed successor (direct correspondence): [II.1.2.14.6 [CT2] Individual Health Monitoring](#c7d0e498e1ad44138df940af2f91cd2d); canonicalId: `c7d0e498e1ad44138df940af2f91cd2d`
+    - [R.2.48 [CT1] Individual Care Delivery — Historical identity [superseded]](../../../../continuum/strategy/capability/162deb7e292042f78f677a14476a3a1d.md) <a id="162deb7e292042f78f677a14476a3a1d"></a>
+      - Governed successor (direct correspondence): [II.1.2.14 [CT1] Individual Care Delivery](#b964a11cde594318aa14ff935414158a); canonicalId: `b964a11cde594318aa14ff935414158a`
+    - [R.2.49 [CT1] Population Health & Health-System Planning — Historical identity [superseded]](../../../../continuum/strategy/capability/a5003436a7f348b1bff60ba593adfa27.md) <a id="a5003436a7f348b1bff60ba593adfa27"></a>
+      - Governed successor (direct correspondence): [II.1.2.15 [CT1] Population Health & Health-System Planning](#c63b38b37e9b4e9b97dc87ed54604def); canonicalId: `c63b38b37e9b4e9b97dc87ed54604def`
+    - [R.2.50 [CT1] Security, Privacy & Digital Trust — Historical identity [superseded]](../../../../continuum/strategy/capability/b01441b2f5584fc2b9c3988643a7c93b.md) <a id="b01441b2f5584fc2b9c3988643a7c93b"></a>
+      - Governed successor (direct correspondence): [II.1.2.16 [CT1] Security, Privacy & Digital Trust](#71f0431fdfcd4f779e16d9e5ea609833); canonicalId: `71f0431fdfcd4f779e16d9e5ea609833`
+    - [R.2.51 [CT1] Standards, Semantics & Reference Governance — Historical identity [superseded]](../../../../continuum/strategy/capability/3b65a3d007f54aa9b875e655475e1786.md) <a id="3b65a3d007f54aa9b875e655475e1786"></a>
+      - Governed successor (direct correspondence): [II.1.2.17 [CT1] Standards, Semantics & Reference Governance](#5ffeb7401d314f06b05d79c3aff98242); canonicalId: `5ffeb7401d314f06b05d79c3aff98242`
+    - [R.2.52 [CT1] Workforce & Organisational Capability — Historical identity [superseded]](../../../../continuum/strategy/capability/b1161fe1a315420fbc7d048a1ea58126.md) <a id="b1161fe1a315420fbc7d048a1ea58126"></a>
+      - Governed successor (direct correspondence): [II.1.2.18 [CT1] Workforce & Organisational Capability](#631b43664bfb4c50ac8cf4958b2c347d); canonicalId: `631b43664bfb4c50ac8cf4958b2c347d`
+    - [R.2.53 [CT3] Care Plan Lifecycle & Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/689bb3f8a24249b79f787e1f48eb268d.md) <a id="689bb3f8a24249b79f787e1f48eb268d"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.5.1 [CT3] Care Plan Lifecycle & Coordination](#4cb7db65392f4fab801d7794af4d4b29); canonicalId: `4cb7db65392f4fab801d7794af4d4b29`
+    - [R.2.54 [CT2] Care Plan Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/e31407cea7624632a8ed2dc53b09d726.md) <a id="e31407cea7624632a8ed2dc53b09d726"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.5 [CT2] Care Plan Administration](#cf06eec5699f406fa30a00d2f76e3098); canonicalId: `cf06eec5699f406fa30a00d2f76e3098`
+    - [R.2.55 [CT2] Client-Centred Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/232b3fb2ff204c9b9ff7a60ff6a7a32d.md) <a id="232b3fb2ff204c9b9ff7a60ff6a7a32d"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.6 [CT2] Client-Centred Administration](#8752b7a937754b2faa296300c6a48911); canonicalId: `8752b7a937754b2faa296300c6a48911`
+    - [R.2.56 [CT2] Clinical Charging & Claims Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/44433108cc8f4f5f9d7581f9e5b29eb5.md) <a id="44433108cc8f4f5f9d7581f9e5b29eb5"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.7 [CT2] Clinical Charging & Claims Administration](#af78ab7c89454a608cd4d34ec7703331); canonicalId: `af78ab7c89454a608cd4d34ec7703331`
+    - [R.2.57 [CT2] Clinical Communication Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/bd4d6f4a7f03402ba7857383c7be7a4c.md) <a id="bd4d6f4a7f03402ba7857383c7be7a4c"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.8 [CT2] Clinical Communication Administration](#b38f2c2811724734b5887b6dbaaabbfc); canonicalId: `b38f2c2811724734b5887b6dbaaabbfc`
+    - [R.2.58 [CT3] Clinical Documentation Lifecycle Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/5b1636373a8d4e788b3ddbc1659a47ef.md) <a id="5b1636373a8d4e788b3ddbc1659a47ef"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.9.1 [CT3] Clinical Documentation Lifecycle Administration](#df683100067b47e785037c27cfd17a3c); canonicalId: `df683100067b47e785037c27cfd17a3c`
+    - [R.2.59 [CT2] Clinical Record Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/be3f2e695eda403fbce8118daf83d386.md) <a id="be3f2e695eda403fbce8118daf83d386"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.9 [CT2] Clinical Record Administration](#ce9e7e7b22054cefb707a650d5be7219); canonicalId: `ce9e7e7b22054cefb707a650d5be7219`
+    - [R.2.60 [CT2] Diagnostic Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/2b1a27d5d9944e05b4cf0fcaad4ca433.md) <a id="2b1a27d5d9944e05b4cf0fcaad4ca433"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.10 [CT2] Diagnostic Administration](#3cc720ba2e8b4d7a94bb349391d61895); canonicalId: `3cc720ba2e8b4d7a94bb349391d61895`
+    - [R.2.61 [CT2] Episode & Encounter Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/2778f988e8d44e3091749542c39d38a4.md) <a id="2778f988e8d44e3091749542c39d38a4"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.11 [CT2] Episode & Encounter Administration](#61d7067aee0540259b3daca4287d66d2); canonicalId: `61d7067aee0540259b3daca4287d66d2`
+    - [R.2.62 [CT2] Funding & Coverage Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/58beafcbcd084331be710eb00d27f6cf.md) <a id="58beafcbcd084331be710eb00d27f6cf"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.12 [CT2] Funding & Coverage Administration](#640432d413cf47928ea2b3d221f92313); canonicalId: `640432d413cf47928ea2b3d221f92313`
+    - [R.2.63 [CT2] Medication Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/5a38bf2527a8404bac714121f2dc76a9.md) <a id="5a38bf2527a8404bac714121f2dc76a9"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.13 [CT2] Medication Administration](#c907e2a95629435b9951941ad4e2ebe9); canonicalId: `c907e2a95629435b9951941ad4e2ebe9`
+    - [R.2.64 [CT3] Closed-Loop Order Progression — Historical identity [superseded]](../../../../continuum/strategy/capability/2ad29cebc1e94053a300d869e7797232.md) <a id="2ad29cebc1e94053a300d869e7797232"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.14.1 [CT3] Closed-Loop Order Progression](#2f79ebd7392c46ef92def6f25bc9c7ce); canonicalId: `2f79ebd7392c46ef92def6f25bc9c7ce`
+    - [R.2.65 [CT2] Order Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/ebb735a2915744819d4001d9b8425cc6.md) <a id="ebb735a2915744819d4001d9b8425cc6"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.14 [CT2] Order Administration](#c3c5abd7987f4433a46cbfed8167914c); canonicalId: `c3c5abd7987f4433a46cbfed8167914c`
+    - [R.2.66 [CT2] Procedure Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/466a4057001846bb8ae0481453d3e410.md) <a id="466a4057001846bb8ae0481453d3e410"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.15 [CT2] Procedure Administration](#649dd7cc26094e539386a050086dfb91); canonicalId: `649dd7cc26094e539386a050086dfb91`
+    - [R.2.67 [CT3] Referral Intake & Progression — Historical identity [superseded]](../../../../continuum/strategy/capability/7180f6265d5c4687a001220c6126e301.md) <a id="7180f6265d5c4687a001220c6126e301"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.16.1 [CT3] Referral Intake & Progression](#d11bdb9464b2476894aa372ab9b929a7); canonicalId: `d11bdb9464b2476894aa372ab9b929a7`
+    - [R.2.68 [CT2] Referral Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/5b0ccf4b30054145952c298b348ed266.md) <a id="5b0ccf4b30054145952c298b348ed266"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.16 [CT2] Referral Administration](#ae0de25600ee416aa24d2a167b64f230); canonicalId: `ae0de25600ee416aa24d2a167b64f230`
+    - [R.2.69 [CT3] Appointment & Booking Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/cdc16dd0f84049f8af3f1ec76f1e1428.md) <a id="cdc16dd0f84049f8af3f1ec76f1e1428"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.17.1 [CT3] Appointment & Booking Administration](#7b3ba9bcac564dd4a7a08631581db2ca); canonicalId: `7b3ba9bcac564dd4a7a08631581db2ca`
+    - [R.2.70 [CT2] Scheduling Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/1a6630940ffb44fcad4543b93a367b67.md) <a id="1a6630940ffb44fcad4543b93a367b67"></a>
+      - Governed successor (direct correspondence): [II.1.3.1.17 [CT2] Scheduling Administration](#35fb3744c900470f9895056246a13fb1); canonicalId: `35fb3744c900470f9895056246a13fb1`
+    - [R.2.71 [CT1] Care Administration Enablement — Historical identity [superseded]](../../../../continuum/strategy/capability/b611a1fcfadb4b30af9ba74a4c993d8a.md) <a id="b611a1fcfadb4b30af9ba74a4c993d8a"></a>
+      - Governed successor (direct correspondence): [II.1.3.1 [CT1] Care Administration Enablement](#28df27d55c514a37995145ab46945f78); canonicalId: `28df27d55c514a37995145ab46945f78`
+    - [R.2.72 [CT2] Acute Care — Historical identity [superseded]](../../../../continuum/strategy/capability/7b591957f7424424abc80f699e9f1960.md) <a id="7b591957f7424424abc80f699e9f1960"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.1 [CT2] Acute Care](#9bb988c526404522b83aeed5069e0eb5); canonicalId: `9bb988c526404522b83aeed5069e0eb5`
+    - [R.2.73 [CT2] Allied Health — Historical identity [superseded]](../../../../continuum/strategy/capability/6cd45c27d0c344b9807174dbd812d572.md) <a id="6cd45c27d0c344b9807174dbd812d572"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.2 [CT2] Allied Health](#63cd714a3e2a4354aa5383b189fea566); canonicalId: `63cd714a3e2a4354aa5383b189fea566`
+    - [R.2.74 [CT2] Ambulatory Care — Historical identity [superseded]](../../../../continuum/strategy/capability/e996b61b6e7b4619913f427aed2b55b1.md) <a id="e996b61b6e7b4619913f427aed2b55b1"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.3 [CT2] Ambulatory Care](#f74d7c3a39c540c4b462576e8f09fc58); canonicalId: `f74d7c3a39c540c4b462576e8f09fc58`
+    - [R.2.75 [CT2] Clinical Assessment — Historical identity [superseded]](../../../../continuum/strategy/capability/1c3b553c87704e27ba211fbbd02d95cb.md) <a id="1c3b553c87704e27ba211fbbd02d95cb"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.4 [CT2] Clinical Assessment](#a7d84c95e48c453797419813ca80a66c); canonicalId: `a7d84c95e48c453797419813ca80a66c`
+    - [R.2.76 [CT2] Community Care — Historical identity [superseded]](../../../../continuum/strategy/capability/4b7177f3f40449518fba381acae6ba1e.md) <a id="4b7177f3f40449518fba381acae6ba1e"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.5 [CT2] Community Care](#942aa78cad004ef99de6b3aae8ddd014); canonicalId: `942aa78cad004ef99de6b3aae8ddd014`
+    - [R.2.77 [CT2] Diagnostic Services — Historical identity [superseded]](../../../../continuum/strategy/capability/03a57e0c9ea34f7fb7b78e5f5c85379f.md) <a id="03a57e0c9ea34f7fb7b78e5f5c85379f"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.6 [CT2] Diagnostic Services](#b825ebab42f444d8b738b4c1f489f785); canonicalId: `b825ebab42f444d8b738b4c1f489f785`
+    - [R.2.78 [CT2] Emergency Care — Historical identity [superseded]](../../../../continuum/strategy/capability/e5edbb54258c490aaba0816d980dc624.md) <a id="e5edbb54258c490aaba0816d980dc624"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.7 [CT2] Emergency Care](#aa088f0647ad4b78966fe28fa80af674); canonicalId: `aa088f0647ad4b78966fe28fa80af674`
+    - [R.2.79 [CT2] Inpatient Care — Historical identity [superseded]](../../../../continuum/strategy/capability/bcc40a14465e48aca42c9505a6853081.md) <a id="bcc40a14465e48aca42c9505a6853081"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.8 [CT2] Inpatient Care](#b39fb49c01b545a5b51d3313531efb1b); canonicalId: `b39fb49c01b545a5b51d3313531efb1b`
+    - [R.2.80 [CT2] Medication Therapy — Historical identity [superseded]](../../../../continuum/strategy/capability/db064e0cd4794479be1374e97a3d7e63.md) <a id="db064e0cd4794479be1374e97a3d7e63"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.9 [CT2] Medication Therapy](#bb04996164c94e0c827a020432f4e498); canonicalId: `bb04996164c94e0c827a020432f4e498`
+    - [R.2.81 [CT2] Outreach Care — Historical identity [superseded]](../../../../continuum/strategy/capability/75f8b32a3d5048ccbdfb30d61ae73dad.md) <a id="75f8b32a3d5048ccbdfb30d61ae73dad"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.10 [CT2] Outreach Care](#b9ddbe2dd6a7485ba9cd3482215ea09e); canonicalId: `b9ddbe2dd6a7485ba9cd3482215ea09e`
+    - [R.2.82 [CT2] Preventive Care — Historical identity [superseded]](../../../../continuum/strategy/capability/97f0d1acc37b4ca994c6c1ca006f2daa.md) <a id="97f0d1acc37b4ca994c6c1ca006f2daa"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.11 [CT2] Preventive Care](#dfdc4f0273ba4910848b3b65c9ef6ab2); canonicalId: `dfdc4f0273ba4910848b3b65c9ef6ab2`
+    - [R.2.83 [CT2] Primary Care — Historical identity [superseded]](../../../../continuum/strategy/capability/fe9d58b5cfe14e8cb7a83a1ac6686d65.md) <a id="fe9d58b5cfe14e8cb7a83a1ac6686d65"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.12 [CT2] Primary Care](#d118673d77d74c8cb8cec24f03adddd8); canonicalId: `d118673d77d74c8cb8cec24f03adddd8`
+    - [R.2.84 [CT2] Rehabilitation — Historical identity [superseded]](../../../../continuum/strategy/capability/28ec21d5918a49aaac12740c69f42d77.md) <a id="28ec21d5918a49aaac12740c69f42d77"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.13 [CT2] Rehabilitation](#99ed51abcc5e4e8ba3b3d0161b17544a); canonicalId: `99ed51abcc5e4e8ba3b3d0161b17544a`
+    - [R.2.85 [CT2] Remote & Virtual Care — Historical identity [superseded]](../../../../continuum/strategy/capability/75e2b447659c4fdf94107d94758337ed.md) <a id="75e2b447659c4fdf94107d94758337ed"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.14 [CT2] Remote & Virtual Care](#30dff22d40b64da29ede7c41673db085); canonicalId: `30dff22d40b64da29ede7c41673db085`
+    - [R.2.86 [CT2] Surgical & Procedural Care — Historical identity [superseded]](../../../../continuum/strategy/capability/8bc2a106165a4702b5f72fe46a206b69.md) <a id="8bc2a106165a4702b5f72fe46a206b69"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.15 [CT2] Surgical & Procedural Care](#c9a26d1aa1014545b9ae759b663c807b); canonicalId: `c9a26d1aa1014545b9ae759b663c807b`
+    - [R.2.87 [CT2] Therapeutic Services — Historical identity [superseded]](../../../../continuum/strategy/capability/54032b52ee444bfe8b611fb9e8e2ba10.md) <a id="54032b52ee444bfe8b611fb9e8e2ba10"></a>
+      - Governed successor (direct correspondence): [II.1.3.3.16 [CT2] Therapeutic Services](#b512b6d326004cb7b91a627fe6dbd8be); canonicalId: `b512b6d326004cb7b91a627fe6dbd8be`
+    - [R.2.88 [CT1] Clinical Service Dependency Management — Historical identity [superseded]](../../../../continuum/strategy/capability/984ee17123eb4f92b3e55e55d24459b8.md) <a id="984ee17123eb4f92b3e55e55d24459b8"></a>
+      - Governed successor (direct correspondence): [II.1.3.3 [CT1] Clinical Service Dependency Management](#232db9b8b47c450cb0aa9acaf539c09d); canonicalId: `232db9b8b47c450cb0aa9acaf539c09d`
+    - [R.2.89 [CT3] Client Privacy Guardrail Management — Historical identity [superseded]](../../../../continuum/strategy/capability/d2e6078b5db041cb904e0cadcebce6eb.md) <a id="d2e6078b5db041cb904e0cadcebce6eb"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.1.1 [CT3] Client Privacy Guardrail Management](#7577a6e1815243648dd5356c21cca151); canonicalId: `7577a6e1815243648dd5356c21cca151`
+    - [R.2.90 [CT3] Client Relationship Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/2c799ec0c4c74c97a75c12e949887b95.md) <a id="2c799ec0c4c74c97a75c12e949887b95"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.1.2 [CT3] Client Relationship Administration](#d682c11d3eb04770b1f20be478fd475e); canonicalId: `d682c11d3eb04770b1f20be478fd475e`
+    - [R.2.91 [CT3] Healthcare Subject Profile Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/d653c3247ddd49479f985f6b435933a0.md) <a id="d653c3247ddd49479f985f6b435933a0"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.1.3 [CT3] Healthcare Subject Profile Administration](#df214b5499694b768eb4a7a175a9d471); canonicalId: `df214b5499694b768eb4a7a175a9d471`
+    - [R.2.92 [CT3] Person Identity Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/7550fd5b17e643118fa76d2616e1ba20.md) <a id="7550fd5b17e643118fa76d2616e1ba20"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.1.4 [CT3] Person Identity Administration](#6c3de7750ef1436cad6a9533731782b6); canonicalId: `6c3de7750ef1436cad6a9533731782b6`
+    - [R.2.93 [CT2] Client Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/70d2a44a0442441f8b306b82b297bb8a.md) <a id="70d2a44a0442441f8b306b82b297bb8a"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.1 [CT2] Client Administration](#f0885472cced4bccbcce1568bf0360dc); canonicalId: `f0885472cced4bccbcce1568bf0360dc`
+    - [R.2.94 [CT3] Clinical Device Profile Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/e8c72952da144d6883caba7fd2afb88d.md) <a id="e8c72952da144d6883caba7fd2afb88d"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.2.1 [CT3] Clinical Device Profile Administration](#d0a1ba80c790476ea6042290eb7ea09e); canonicalId: `d0a1ba80c790476ea6042290eb7ea09e`
+    - [R.2.95 [CT3] Device Connectivity Compliance Management — Historical identity [superseded]](../../../../continuum/strategy/capability/9225f083d3474715a75af2a827a4016d.md) <a id="9225f083d3474715a75af2a827a4016d"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.2.4 [CT3] Device Connectivity Compliance Management](#b16ab359030a4583868f3aac2221074e); canonicalId: `b16ab359030a4583868f3aac2221074e`
+    - [R.2.96 [CT3] Device OA&M Metadata Management — Historical identity [superseded]](../../../../continuum/strategy/capability/a398c72bef094dee96c96d97994449fb.md) <a id="a398c72bef094dee96c96d97994449fb"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.2.6 [CT3] Device OA&M Metadata Management](#659bb194a7ef42ab9ba8a938adb5c179); canonicalId: `659bb194a7ef42ab9ba8a938adb5c179`
+    - [R.2.97 [CT3] Device Utilisation Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/a0af0a86667d48f4ab95ed2920e878cb.md) <a id="a0af0a86667d48f4ab95ed2920e878cb"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.2.7 [CT3] Device Utilisation Administration](#1a3732b5911c45b3aece38b2db2d0f15); canonicalId: `1a3732b5911c45b3aece38b2db2d0f15`
+    - [R.2.98 [CT2] Clinical Device Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/3792be10541e4d68b3f740b1ba964966.md) <a id="3792be10541e4d68b3f740b1ba964966"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.2 [CT2] Clinical Device Administration](#31bcd6fda0d14cc8b992cdca39a3cbed); canonicalId: `31bcd6fda0d14cc8b992cdca39a3cbed`
+    - [R.2.99 [CT3] Health Materiel Catalogue & Formulary Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/5c691959e2cc4a289fc25b9f3497eed9.md) <a id="5c691959e2cc4a289fc25b9f3497eed9"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.3.1 [CT3] Health Materiel Catalogue & Formulary Administration](#28b327760af94b8b986357469524d793); canonicalId: `28b327760af94b8b986357469524d793`
+    - [R.2.100 [CT3] Health Materiel Profile Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/9216f9cc905e4526b1d98cd4ab382cbf.md) <a id="9216f9cc905e4526b1d98cd4ab382cbf"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.3.2 [CT3] Health Materiel Profile Administration](#9626edae517d40d2bfae619860f18e20); canonicalId: `9626edae517d40d2bfae619860f18e20`
+    - [R.2.101 [CT3] Health Materiel Traceability Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/f1b888e8d50c4019ac1afe162d6223f3.md) <a id="f1b888e8d50c4019ac1afe162d6223f3"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.3.3 [CT3] Health Materiel Traceability Administration](#2d41ed0f00a94a4b90ffe87d6fd4e9fe); canonicalId: `2d41ed0f00a94a4b90ffe87d6fd4e9fe`
+    - [R.2.102 [CT2] Health Materiel Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/4952f86078c54a8d898ac992e6f4f577.md) <a id="4952f86078c54a8d898ac992e6f4f577"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.3 [CT2] Health Materiel Administration](#e7081070a9f8444f81c1d8fce37ef664); canonicalId: `e7081070a9f8444f81c1d8fce37ef664`
+    - [R.2.103 [CT3] Healthcare Service Profile Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/7780ca2fed2346439d5f559d00cc4ee4.md) <a id="7780ca2fed2346439d5f559d00cc4ee4"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.4.1 [CT3] Healthcare Service Profile Administration](#e75d5eb30936476ea7a9cbadfa43d5ef); canonicalId: `e75d5eb30936476ea7a9cbadfa43d5ef`
+    - [R.2.104 [CT2] Health Service Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/f1ab1258cf2944efb50105e7885f8027.md) <a id="f1ab1258cf2944efb50105e7885f8027"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.4 [CT2] Health Service Administration](#ba68a52913a0499d8377553bddfa74a4); canonicalId: `ba68a52913a0499d8377553bddfa74a4`
+    - [R.2.105 [CT3] Care-Place Definition Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/a3464bd9c0dc4a01b50803acc7705b4e.md) <a id="a3464bd9c0dc4a01b50803acc7705b4e"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.5.1 [CT3] Care-Place Definition Administration](#629b493c7d9844baa25c029a87ed04f6); canonicalId: `629b493c7d9844baa25c029a87ed04f6`
+    - [R.2.106 [CT3] Healthcare Location Profile Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/8a04d1f16d0849e786d2aaec33e0ba87.md) <a id="8a04d1f16d0849e786d2aaec33e0ba87"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.5.2 [CT3] Healthcare Location Profile Administration](#e579e54a08bb4f899a504aa998ba246b); canonicalId: `e579e54a08bb4f899a504aa998ba246b`
+    - [R.2.107 [CT2] Location Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/d412aff3a5c64e6aaba910d4c2c9356d.md) <a id="d412aff3a5c64e6aaba910d4c2c9356d"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.5 [CT2] Location Administration](#c410005667444f99a221483bf577fad2); canonicalId: `c410005667444f99a221483bf577fad2`
+    - [R.2.108 [CT3] Healthcare Organisation Profile Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/e485424b799c42aca7399d341ca02d0b.md) <a id="e485424b799c42aca7399d341ca02d0b"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.6.1 [CT3] Healthcare Organisation Profile Administration](#f2de9e9394b849f2943355c7a2882a15); canonicalId: `f2de9e9394b849f2943355c7a2882a15`
+    - [R.2.109 [CT2] Organisation Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/1b0eacfbb27d4631a24f9279dab6681d.md) <a id="1b0eacfbb27d4631a24f9279dab6681d"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.6 [CT2] Organisation Administration](#14fbdc5ce3dd4c2092c5397dab3ed743); canonicalId: `14fbdc5ce3dd4c2092c5397dab3ed743`
+    - [R.2.110 [CT3] Practitioner Profile Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/2415ddcbc73c47e1a63be310bd4342ee.md) <a id="2415ddcbc73c47e1a63be310bd4342ee"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.7.1 [CT3] Practitioner Profile Administration](#40759a835f7b456e9257c38b67b0a380); canonicalId: `40759a835f7b456e9257c38b67b0a380`
+    - [R.2.111 [CT3] Practitioner Role Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/6b777f1201db474eb22dd89f2b1f68c6.md) <a id="6b777f1201db474eb22dd89f2b1f68c6"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.7.2 [CT3] Practitioner Role Administration](#6651471e67ae46fb8d1c1241c8590be9); canonicalId: `6651471e67ae46fb8d1c1241c8590be9`
+    - [R.2.112 [CT3] Vendor Liaison — Historical identity [superseded]](../../../../continuum/strategy/capability/29076cbb9fc5442fb25faf43947574f7.md) <a id="29076cbb9fc5442fb25faf43947574f7"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.7.5 [CT3] Vendor Liaison](#66358bd6698e4050b12342522fbbb923); canonicalId: `66358bd6698e4050b12342522fbbb923`
+    - [R.2.113 [CT2] Provider Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/a352fd50419d451887c85fcb98566cd5.md) <a id="a352fd50419d451887c85fcb98566cd5"></a>
+      - Governed successor (direct correspondence): [II.1.3.4.7 [CT2] Provider Administration](#d6312f85968a4209bafff5ed009297a6); canonicalId: `d6312f85968a4209bafff5ed009297a6`
+    - [R.2.114 [CT1] Entity Information Enablement — Historical identity [superseded]](../../../../continuum/strategy/capability/e4d959d6c71d498c9ce00d2be4c048e3.md) <a id="e4d959d6c71d498c9ce00d2be4c048e3"></a>
+      - Governed successor (direct correspondence): [II.1.3.4 [CT1] Entity Information Enablement](#b5a92874f8ac4509a30af5253590edc1); canonicalId: `b5a92874f8ac4509a30af5253590edc1`
+    - [R.2.115 [CT2] Population Health Information Reporting — Historical identity [superseded]](../../../../continuum/strategy/capability/ced472b2d1a54016878ee541de969d9b.md) <a id="ced472b2d1a54016878ee541de969d9b"></a>
+      - Governed successor (direct correspondence): [II.1.3.5.1 [CT2] Population Health Information Reporting](#2135b45eab034370b0063b20e821985d); canonicalId: `2135b45eab034370b0063b20e821985d`
+    - [R.2.116 [CT2] Research Information Curation — Historical identity [superseded]](../../../../continuum/strategy/capability/11203b9c80964a9b96883eeab07f41d5.md) <a id="11203b9c80964a9b96883eeab07f41d5"></a>
+      - Governed successor (direct correspondence): [II.1.3.5.2 [CT2] Research Information Curation](#4f5b8cec90324c2989cdc30e80bc8cb9); canonicalId: `4f5b8cec90324c2989cdc30e80bc8cb9`
+    - [R.2.117 [CT2] Service Planning Data Management — Historical identity [superseded]](../../../../continuum/strategy/capability/19263e0802cc4b88af7a345f1410cffd.md) <a id="19263e0802cc4b88af7a345f1410cffd"></a>
+      - Governed successor (direct correspondence): [II.1.3.5.3 [CT2] Service Planning Data Management](#4873cd4b960d45d8b93560d5c8b98500); canonicalId: `4873cd4b960d45d8b93560d5c8b98500`
+    - [R.2.118 [CT1] Health Informatics Management — Historical identity [superseded]](../../../../continuum/strategy/capability/50c56bac0dc540a2b392fc2376efc129.md) <a id="50c56bac0dc540a2b392fc2376efc129"></a>
+      - Governed successor (direct correspondence): [II.1.3.5 [CT1] Health Informatics Management](#a790b5f2c5a1497fa6ec09d7824da32e); canonicalId: `a790b5f2c5a1497fa6ec09d7824da32e`
+    - [R.2.119 [CT3] Bed & Care-Place State Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/dd2e2ee1a68845c087ba93610752181b.md) <a id="dd2e2ee1a68845c087ba93610752181b"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.1.1 [CT3] Bed & Care-Place State Administration](#26a9383d7bb146a19141558d232843de); canonicalId: `26a9383d7bb146a19141558d232843de`
+    - [R.2.120 [CT3] Bed & Care-Place Turnover Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/a50662edda954bc58c44184d84591d5b.md) <a id="a50662edda954bc58c44184d84591d5b"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.1.2 [CT3] Bed & Care-Place Turnover Coordination](#3c9464f9eae1415d8fa041bd1f3da4f2); canonicalId: `3c9464f9eae1415d8fa041bd1f3da4f2`
+    - [R.2.121 [CT2] Bed & Care-Place Management — Historical identity [superseded]](../../../../continuum/strategy/capability/c94d29b7d1c045dabc7814ceea795484.md) <a id="c94d29b7d1c045dabc7814ceea795484"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.1 [CT2] Bed & Care-Place Management](#f117ccec0bfa4f738e6ddb646b3534a2); canonicalId: `f117ccec0bfa4f738e6ddb646b3534a2`
+    - [R.2.122 [CT3] Session & Queue Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/5298c6170cef4f05a6d956da716071bd.md) <a id="5298c6170cef4f05a6d956da716071bd"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.5.1 [CT3] Session & Queue Coordination](#22981a95ca6e466582363706fde8fceb); canonicalId: `22981a95ca6e466582363706fde8fceb`
+    - [R.2.123 [CT2] Clinic & Practice Operations — Historical identity [superseded]](../../../../continuum/strategy/capability/0856d2daf2ba4b92b5390b38b98efb54.md) <a id="0856d2daf2ba4b92b5390b38b98efb54"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.5 [CT2] Clinic & Practice Operations](#3dffe63e03124efab255204ee4e9a5d9); canonicalId: `3dffe63e03124efab255204ee4e9a5d9`
+    - [R.2.124 [CT2] Clinical Competency Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/8a4b918e1c9d47bb99daf2b42008ab39.md) <a id="8a4b918e1c9d47bb99daf2b42008ab39"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.6 [CT2] Clinical Competency Administration](#8a99f4a6e5054d6c997bacec04805c01); canonicalId: `8a99f4a6e5054d6c997bacec04805c01`
+    - [R.2.125 [CT3] Specimen Metadata Management — Historical identity [superseded]](../../../../continuum/strategy/capability/3b000d3712534d16a48470f79df8e33a.md) <a id="3b000d3712534d16a48470f79df8e33a"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.7.1 [CT3] Specimen Metadata Management](#738736425b7446fdae47b06c91c4f69c); canonicalId: `738736425b7446fdae47b06c91c4f69c`
+    - [R.2.126 [CT3] Specimen Movement Traceability — Historical identity [superseded]](../../../../continuum/strategy/capability/129119d7b2744ffd805c58f25557fa27.md) <a id="129119d7b2744ffd805c58f25557fa27"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.7.2 [CT3] Specimen Movement Traceability](#bfa2e9a84ddd4287897573dc0d917a00); canonicalId: `bfa2e9a84ddd4287897573dc0d917a00`
+    - [R.2.127 [CT2] Clinical Logistics Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/90a782ff2d004fa984ae0465528b2253.md) <a id="90a782ff2d004fa984ae0465528b2253"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.7 [CT2] Clinical Logistics Coordination](#0c27be11b4a44cb19e992309b8146a17); canonicalId: `0c27be11b4a44cb19e992309b8146a17`
+    - [R.2.128 [CT3] Organisation Clinical Certification & Compliance Support — Historical identity [superseded]](../../../../continuum/strategy/capability/cee76a930a4e4e7d9c49357ba290c8bf.md) <a id="cee76a930a4e4e7d9c49357ba290c8bf"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.8.1 [CT3] Organisation Clinical Certification & Compliance Support](#4de624e7bf49472f91e3e5c734ee8725); canonicalId: `4de624e7bf49472f91e3e5c734ee8725`
+    - [R.2.129 [CT3] Provider Clinical Qualification Tracking — Historical identity [superseded]](../../../../continuum/strategy/capability/ab0415e2ea0a4da4ad3dc46997d48bc3.md) <a id="ab0415e2ea0a4da4ad3dc46997d48bc3"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.8.2 [CT3] Provider Clinical Qualification Tracking](#8fd5c78eba3046fa9153fb4efb44e9c8); canonicalId: `8fd5c78eba3046fa9153fb4efb44e9c8`
+    - [R.2.130 [CT2] Clinical Qualification Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/5fea7aaac4384245b1f08a3d8a076bd9.md) <a id="5fea7aaac4384245b1f08a3d8a076bd9"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.8 [CT2] Clinical Qualification Administration](#0511a705d74a4f48a0ce92590ae764fa); canonicalId: `0511a705d74a4f48a0ce92590ae764fa`
+    - [R.2.131 [CT3] Clinical Roster Capture & Communication — Historical identity [superseded]](../../../../continuum/strategy/capability/2054d57bb33a4361b3ef0824545a1784.md) <a id="2054d57bb33a4361b3ef0824545a1784"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.9.1 [CT3] Clinical Roster Capture & Communication](#8243cba81fb6449781d10823ae194237); canonicalId: `8243cba81fb6449781d10823ae194237`
+    - [R.2.132 [CT2] Clinical Rostering — Historical identity [superseded]](../../../../continuum/strategy/capability/b6527516a69c499d8cc9c8fe881169fe.md) <a id="b6527516a69c499d8cc9c8fe881169fe"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.9 [CT2] Clinical Rostering](#192ca88a289544dcbf6adaf643f39969); canonicalId: `192ca88a289544dcbf6adaf643f39969`
+    - [R.2.133 [CT3] Clinical Escalation Path Management — Historical identity [superseded]](../../../../continuum/strategy/capability/759a2e52172345e8ad1bc96d7e5ddad3.md) <a id="759a2e52172345e8ad1bc96d7e5ddad3"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.10.1 [CT3] Clinical Escalation Path Management](#cca86a32ba8c4dda84caeaa248e9f444); canonicalId: `cca86a32ba8c4dda84caeaa248e9f444`
+    - [R.2.134 [CT2] Clinical Supervision — Historical identity [superseded]](../../../../continuum/strategy/capability/50c838981f3946d78e8f78d18e31c70c.md) <a id="50c838981f3946d78e8f78d18e31c70c"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.10 [CT2] Clinical Supervision](#f697b1ac79b544749315f31819b17969); canonicalId: `f697b1ac79b544749315f31819b17969`
+    - [R.2.135 [CT2] Clinical Training & Education — Historical identity [superseded]](../../../../continuum/strategy/capability/df8bff7df9c1469da16cac6a5eb2bf76.md) <a id="df8bff7df9c1469da16cac6a5eb2bf76"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.11 [CT2] Clinical Training & Education](#d016f35ffbc345d99d7281e968c14ddb); canonicalId: `d016f35ffbc345d99d7281e968c14ddb`
+    - [R.2.136 [CT2] Clinical Workforce Capability Monitoring — Historical identity [superseded]](../../../../continuum/strategy/capability/24c015676c254e2e82e8e4287c295179.md) <a id="24c015676c254e2e82e8e4287c295179"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.12 [CT2] Clinical Workforce Capability Monitoring](#367b3e5643f44fa785f093db8bb9a6e8); canonicalId: `367b3e5643f44fa785f093db8bb9a6e8`
+    - [R.2.137 [CT3] Clinical Service Credential Definition Management — Historical identity [superseded]](../../../../continuum/strategy/capability/0115ed50867d468a95c0fafa1c5d79e2.md) <a id="0115ed50867d468a95c0fafa1c5d79e2"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.13.1 [CT3] Clinical Service Credential Definition Management](#2e5c97f51e7e48d1b865ac416dd8099d); canonicalId: `2e5c97f51e7e48d1b865ac416dd8099d`
+    - [R.2.138 [CT2] Credential Management — Historical identity [superseded]](../../../../continuum/strategy/capability/bab3d0ab6eb748978b962ea20fb31640.md) <a id="bab3d0ab6eb748978b962ea20fb31640"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.13 [CT2] Credential Management](#21eed4fc8c924496b16c6ddaa32f3d01); canonicalId: `21eed4fc8c924496b16c6ddaa32f3d01`
+    - [R.2.139 [CT3] Discharge Progression & Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/68344272ca6049648a3ddae20c150f37.md) <a id="68344272ca6049648a3ddae20c150f37"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.14.1 [CT3] Discharge Progression & Coordination](#d6048993146b45639bab27860f94f34f); canonicalId: `d6048993146b45639bab27860f94f34f`
+    - [R.2.140 [CT2] Discharge Management — Historical identity [superseded]](../../../../continuum/strategy/capability/c57c0721ab0040ccb24e88e5e92e8cf8.md) <a id="c57c0721ab0040ccb24e88e5e92e8cf8"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.14 [CT2] Discharge Management](#ec5e8d6732764aa489c2dd7630fc8fef); canonicalId: `ec5e8d6732764aa489c2dd7630fc8fef`
+    - [R.2.141 [CT3] Emergency Department Operational Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/15b6d2518e60444098b7c546ca31c49b.md) <a id="15b6d2518e60444098b7c546ca31c49b"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.15.2 [CT3] Emergency Department Operational Coordination](#8f0b0f3d9e8d44a7827b0835870b4a4f); canonicalId: `8f0b0f3d9e8d44a7827b0835870b4a4f`
+    - [R.2.142 [CT2] Emergency Department Operations — Historical identity [superseded]](../../../../continuum/strategy/capability/8963b571e9cc40e49c5d738e31d2f97e.md) <a id="8963b571e9cc40e49c5d738e31d2f97e"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.15 [CT2] Emergency Department Operations](#24a4b5815faa4d369bc756a6e97d3e9e); canonicalId: `24a4b5815faa4d369bc756a6e97d3e9e`
+    - [R.2.143 [CT3] Mobile Worker Dispatch & Safety Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/5aafd1f4bff046b2b532c20dfb191473.md) <a id="5aafd1f4bff046b2b532c20dfb191473"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.16.1 [CT3] Mobile Worker Dispatch & Safety Coordination](#d72164668dfe448bbebe74e9e1a75233); canonicalId: `d72164668dfe448bbebe74e9e1a75233`
+    - [R.2.144 [CT2] Mobile Staff Management — Historical identity [superseded]](../../../../continuum/strategy/capability/32118856636f400a95fc28daacea61c8.md) <a id="32118856636f400a95fc28daacea61c8"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.16 [CT2] Mobile Staff Management](#79a4a48fddf74c69acf7e16404d06ea5); canonicalId: `79a4a48fddf74c69acf7e16404d06ea5`
+    - [R.2.145 [CT3] On-Call Availability & Contact Resolution — Historical identity [superseded]](../../../../continuum/strategy/capability/a03075a46f75497f8c6ba95d9c9e27c4.md) <a id="a03075a46f75497f8c6ba95d9c9e27c4"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.17.1 [CT3] On-Call Availability & Contact Resolution](#677a816c42414ea694791b4ee5a14285); canonicalId: `677a816c42414ea694791b4ee5a14285`
+    - [R.2.146 [CT2] On-Call Management — Historical identity [superseded]](../../../../continuum/strategy/capability/c8e6e66e8718493c9093f37d129f9ff2.md) <a id="c8e6e66e8718493c9093f37d129f9ff2"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.17 [CT2] On-Call Management](#b16cef8f2bfd4b92948ec75cbcfa7b9a); canonicalId: `b16cef8f2bfd4b92948ec75cbcfa7b9a`
+    - [R.2.147 [CT3] Outpatient Flow Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/e6c59c7b72fe44169a5fdfd08a5e91c4.md) <a id="e6c59c7b72fe44169a5fdfd08a5e91c4"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.19.1 [CT3] Outpatient Flow Coordination](#799ea278af014168b9b534e5fdadc6d1); canonicalId: `799ea278af014168b9b534e5fdadc6d1`
+    - [R.2.148 [CT2] Outpatient Operations — Historical identity [superseded]](../../../../continuum/strategy/capability/3db41bc06ade4f9088eec7b8aedd7448.md) <a id="3db41bc06ade4f9088eec7b8aedd7448"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.19 [CT2] Outpatient Operations](#21399d52b9624ddfbeb786f1d72e40c3); canonicalId: `21399d52b9624ddfbeb786f1d72e40c3`
+    - [R.2.149 [CT3] Patient Transfer Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/b5a76d4877424b2ea9b01fb5fa22772c.md) <a id="b5a76d4877424b2ea9b01fb5fa22772c"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.20.1 [CT3] Patient Transfer Coordination](#c7c7aa8e34df4568ae4b91cdde380a11); canonicalId: `c7c7aa8e34df4568ae4b91cdde380a11`
+    - [R.2.150 [CT2] Patient Transport — Historical identity [superseded]](../../../../continuum/strategy/capability/e9c1a897884f4d758f5654b824364030.md) <a id="e9c1a897884f4d758f5654b824364030"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.20 [CT2] Patient Transport](#6041d7c0cc5d4519aaea584bb4e6d365); canonicalId: `6041d7c0cc5d4519aaea584bb4e6d365`
+    - [R.2.151 [CT3] Service Demand & Capacity Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/b57081e650f74ad488549fdaa5305bcb.md) <a id="b57081e650f74ad488549fdaa5305bcb"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.21.1 [CT3] Service Demand & Capacity Coordination](#93b5548ce8d04fcd999b97536c1eebf9); canonicalId: `93b5548ce8d04fcd999b97536c1eebf9`
+    - [R.2.152 [CT2] Service Capacity Management — Historical identity [superseded]](../../../../continuum/strategy/capability/ac205f374c9d41c3b6d18a6b7c356152.md) <a id="ac205f374c9d41c3b6d18a6b7c356152"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.21 [CT2] Service Capacity Management](#d86105bf9c86445394088f65c895d37f); canonicalId: `d86105bf9c86445394088f65c895d37f`
+    - [R.2.153 [CT2] Service Establishment Support — Historical identity [superseded]](../../../../continuum/strategy/capability/8a63b08f34fa42c5bda2a3e12b9ecd55.md) <a id="8a63b08f34fa42c5bda2a3e12b9ecd55"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.22 [CT2] Service Establishment Support](#20e67a41e7f44398b0f0cf3d379d8b9c); canonicalId: `20e67a41e7f44398b0f0cf3d379d8b9c`
+    - [R.2.154 [CT3] Perioperative Logistics Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/e7813a06b9df462fa135c299261f192e.md) <a id="e7813a06b9df462fa135c299261f192e"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.23.1 [CT3] Perioperative Logistics Coordination](#6b7c08b60b5b48519bfe4b6f993dd6fb); canonicalId: `6b7c08b60b5b48519bfe4b6f993dd6fb`
+    - [R.2.155 [CT2] Theatre Operations — Historical identity [superseded]](../../../../continuum/strategy/capability/9ac72fea821c45e2b18632ae9a9867dd.md) <a id="9ac72fea821c45e2b18632ae9a9867dd"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.23 [CT2] Theatre Operations](#4bf7a8260e1444fdac44e97c3557b533); canonicalId: `4bf7a8260e1444fdac44e97c3557b533`
+    - [R.2.156 [CT3] Ward Logistics Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/8a9dcc3b5f0143458ec71bc188a56020.md) <a id="8a9dcc3b5f0143458ec71bc188a56020"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.24.2 [CT3] Ward Logistics Coordination](#3249647f7b9846c899f982ab339c81f9); canonicalId: `3249647f7b9846c899f982ab339c81f9`
+    - [R.2.157 [CT2] Ward Operations — Historical identity [superseded]](../../../../continuum/strategy/capability/bf3d2e3581f24beda20a6a3a3348460e.md) <a id="bf3d2e3581f24beda20a6a3a3348460e"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.24 [CT2] Ward Operations](#f996ecca728f4942a88b034aca818a99); canonicalId: `f996ecca728f4942a88b034aca818a99`
+    - [R.2.158 [CT3] Operational Work Assignment & Dispatch Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/b42afda9e876463ba56fa8f73fe7a32a.md) <a id="b42afda9e876463ba56fa8f73fe7a32a"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.25.1 [CT3] Operational Work Assignment & Dispatch Coordination](#3b58935cfa974176989c3c75d76a00fe); canonicalId: `3b58935cfa974176989c3c75d76a00fe`
+    - [R.2.159 [CT2] Work Allocation & Dispatch — Historical identity [superseded]](../../../../continuum/strategy/capability/f8c13b6f74b840cc96fbeada5865455a.md) <a id="f8c13b6f74b840cc96fbeada5865455a"></a>
+      - Governed successor (direct correspondence): [II.1.3.6.25 [CT2] Work Allocation & Dispatch](#152a5252952c405994e9b171234efcb0); canonicalId: `152a5252952c405994e9b171234efcb0`
+    - [R.2.160 [CT1] Health Service Operations Enablement — Historical identity [superseded]](../../../../continuum/strategy/capability/a98424298dac46d8b2ddd109d928270a.md) <a id="a98424298dac46d8b2ddd109d928270a"></a>
+      - Governed successor (direct correspondence): [II.1.3.6 [CT1] Health Service Operations Enablement](#b13ee2c5a4ef4fd6be8a44795696dfc2); canonicalId: `b13ee2c5a4ef4fd6be8a44795696dfc2`
+    - [R.2.161 [CT3] Assurance Service Evaluation — Historical identity [superseded]](../../../../continuum/strategy/capability/be34b54314c6444f8418d645f6c83b6d.md) <a id="be34b54314c6444f8418d645f6c83b6d"></a>
+      - Governed successor (direct correspondence): [II.1.3.8.1.1 [CT3] Assurance Service Evaluation](#039343518db542d48cde6afab84a3e1e); canonicalId: `039343518db542d48cde6afab84a3e1e`
+    - [R.2.162 [CT2] Assurance Service Review — Historical identity [superseded]](../../../../continuum/strategy/capability/b345cb12b45746409302899514126170.md) <a id="b345cb12b45746409302899514126170"></a>
+      - Governed successor (direct correspondence): [II.1.3.8.1 [CT2] Assurance Service Review](#b1a791458d644d4794895e4fa42ec83c); canonicalId: `b1a791458d644d4794895e4fa42ec83c`
+    - [R.2.163 [CT3] Assurance Criteria Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/6dab08ab1e3249d7b314843ca9ed0149.md) <a id="6dab08ab1e3249d7b314843ca9ed0149"></a>
+      - Governed successor (direct correspondence): [II.1.3.8.2.1 [CT3] Assurance Criteria Administration](#1bfd71f24321428c8871b587d413f47e); canonicalId: `1bfd71f24321428c8871b587d413f47e`
+    - [R.2.164 [CT3] Assurance Design — Historical identity [superseded]](../../../../continuum/strategy/capability/e1b8db7c95fa4e7ea296351a03532e24.md) <a id="e1b8db7c95fa4e7ea296351a03532e24"></a>
+      - Governed successor (direct correspondence): [II.1.3.8.2.2 [CT3] Assurance Design](#71c8a612b88f4ecba049e94d506bd0c2); canonicalId: `71c8a612b88f4ecba049e94d506bd0c2`
+    - [R.2.165 [CT2] Assurance Specification — Historical identity [superseded]](../../../../continuum/strategy/capability/8006ee0dd95f4d7fb1f408fa09b6ce19.md) <a id="8006ee0dd95f4d7fb1f408fa09b6ce19"></a>
+      - Governed successor (direct correspondence): [II.1.3.8.2 [CT2] Assurance Specification](#b81775d89d774cf8ba61731d13c67a54); canonicalId: `b81775d89d774cf8ba61731d13c67a54`
+    - [R.2.166 [CT1] Independent Assurance Enablement — Historical identity [superseded]](../../../../continuum/strategy/capability/88bf57b7a92c4c1da1b5f0a67d3ebd82.md) <a id="88bf57b7a92c4c1da1b5f0a67d3ebd82"></a>
+      - Governed successor (direct correspondence): [II.1.3.8 [CT1] Independent Assurance Enablement](#616682b612d244429e656b040e002d56); canonicalId: `616682b612d244429e656b040e002d56`
+    - [R.2.167 [CT3] Operational & Clinical Calendar Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/c0f6e5f7f5a94d1580fa6e0e8b82c93a.md) <a id="c0f6e5f7f5a94d1580fa6e0e8b82c93a"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.1.1 [CT3] Operational & Clinical Calendar Coordination](#f6d8f1310ba543f69e8b57bf05603db3); canonicalId: `f6d8f1310ba543f69e8b57bf05603db3`
+    - [R.2.168 [CT2] Calendar Management — Historical identity [superseded]](../../../../continuum/strategy/capability/8b42aac6083441caa78b59f5e62eebd9.md) <a id="8b42aac6083441caa78b59f5e62eebd9"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.1 [CT2] Calendar Management](#7669036f7e6749219412fc64df5f7064); canonicalId: `7669036f7e6749219412fc64df5f7064`
+    - [R.2.169 [CT3] Clinical Context Collaboration — Historical identity [superseded]](../../../../continuum/strategy/capability/750ef0d8e1504a8e9a1fde9bf13a6d0c.md) <a id="750ef0d8e1504a8e9a1fde9bf13a6d0c"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.2.1 [CT3] Clinical Context Collaboration](#f11617eed6ff4d6fa237644ec95b28b2); canonicalId: `f11617eed6ff4d6fa237644ec95b28b2`
+    - [R.2.170 [CT2] Clinical Collaboration — Historical identity [superseded]](../../../../continuum/strategy/capability/c5adc1955b6046d8b920b0176cebc9de.md) <a id="c5adc1955b6046d8b920b0176cebc9de"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.2 [CT2] Clinical Collaboration](#e6429225463a44d39f82e490e254e5d4); canonicalId: `e6429225463a44d39f82e490e254e5d4`
+    - [R.2.171 [CT3] Clinical Knowledge Artefact Distribution Management — Historical identity [superseded]](../../../../continuum/strategy/capability/d81e0d6d76014066a682e3d9e03e5f8a.md) <a id="d81e0d6d76014066a682e3d9e03e5f8a"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.4.1 [CT3] Clinical Knowledge Artefact Distribution Management](#cd29a9eb798949bc8bc81bb5d434cabf); canonicalId: `cd29a9eb798949bc8bc81bb5d434cabf`
+    - [R.2.172 [CT3] Clinical Knowledge Request Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/eb370c01fbdb4d22956d97e9ecd74b57.md) <a id="eb370c01fbdb4d22956d97e9ecd74b57"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.4.2 [CT3] Clinical Knowledge Request Administration](#543c53483a2249d78044c6635b7b7c48); canonicalId: `543c53483a2249d78044c6635b7b7c48`
+    - [R.2.173 [CT3] Governed Reference Dataset Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/15d972931ed6447797c30a5ddb71737e.md) <a id="15d972931ed6447797c30a5ddb71737e"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.4.3 [CT3] Governed Reference Dataset Administration](#682b8684ad9e49d5a5c348a148081607); canonicalId: `682b8684ad9e49d5a5c348a148081607`
+    - [R.2.174 [CT2] Clinical Knowledge Services — Historical identity [superseded]](../../../../continuum/strategy/capability/5b8478b08c3f42c0a3480edb8f0b9ea7.md) <a id="5b8478b08c3f42c0a3480edb8f0b9ea7"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.4 [CT2] Clinical Knowledge Services](#bbd2bd21859f40e39963bdbe7a851686); canonicalId: `bbd2bd21859f40e39963bdbe7a851686`
+    - [R.2.175 [CT3] Operational Collaboration — Historical identity [superseded]](../../../../continuum/strategy/capability/99e9d9763ec94140b7d7642f4b5966f6.md) <a id="99e9d9763ec94140b7d7642f4b5966f6"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.5.1 [CT3] Operational Collaboration](#631fdb8b47084008ac9b5de28b26972b); canonicalId: `631fdb8b47084008ac9b5de28b26972b`
+    - [R.2.176 [CT2] General Collaboration — Historical identity [superseded]](../../../../continuum/strategy/capability/4f58c82aca7a4b54aeb6e2920ce5c12a.md) <a id="4f58c82aca7a4b54aeb6e2920ce5c12a"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.5 [CT2] General Collaboration](#3bb740e6db284112b054905c0c6c80be); canonicalId: `3bb740e6db284112b054905c0c6c80be`
+    - [R.2.177 [CT3] Governed Health Information Retrieval — Historical identity [superseded]](../../../../continuum/strategy/capability/90b838d703dd472b8b6d74961f3a748c.md) <a id="90b838d703dd472b8b6d74961f3a748c"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.6.1 [CT3] Governed Health Information Retrieval](#76e74e46ca4d44a1a7bb116b358f231c); canonicalId: `76e74e46ca4d44a1a7bb116b358f231c`
+    - [R.2.178 [CT2] Health Information Access — Historical identity [superseded]](../../../../continuum/strategy/capability/5019ae9f2cdc45a1b2de97bc0f5a313d.md) <a id="5019ae9f2cdc45a1b2de97bc0f5a313d"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.6 [CT2] Health Information Access](#cc253aea3c5f489da0502df74dde1669); canonicalId: `cc253aea3c5f489da0502df74dde1669`
+    - [R.2.179 [CT3] Patient Health Library Access — Historical identity [superseded]](../../../../continuum/strategy/capability/b132224cfa6f435f8f2a66a3878d6df6.md) <a id="b132224cfa6f435f8f2a66a3878d6df6"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.7.1 [CT3] Patient Health Library Access](#808e5a3c3f6b496fa329962088f0bee0); canonicalId: `808e5a3c3f6b496fa329962088f0bee0`
+    - [R.2.180 [CT3] Patient Notification Services — Historical identity [superseded]](../../../../continuum/strategy/capability/35c5be472bf2433fbbde9646d87aefb3.md) <a id="35c5be472bf2433fbbde9646d87aefb3"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.7.2 [CT3] Patient Notification Services](#9d172cd511b742499c4e7c23f6630a35); canonicalId: `9d172cd511b742499c4e7c23f6630a35`
+    - [R.2.181 [CT3] Patient Self-Service — Historical identity [superseded]](../../../../continuum/strategy/capability/60f427e6b5764757b909624085a2af89.md) <a id="60f427e6b5764757b909624085a2af89"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.7.3 [CT3] Patient Self-Service](#d4956cab8b2b46c396899949c9486a1c); canonicalId: `d4956cab8b2b46c396899949c9486a1c`
+    - [R.2.182 [CT3] Patient Task Communication Services — Historical identity [superseded]](../../../../continuum/strategy/capability/0914f2bb267449e282e9ae0f7407d9fe.md) <a id="0914f2bb267449e282e9ae0f7407d9fe"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.7.4 [CT3] Patient Task Communication Services](#ba8ce1d54ace4bc9aa3521dd954f36cb); canonicalId: `ba8ce1d54ace4bc9aa3521dd954f36cb`
+    - [R.2.183 [CT2] Health Information Communication — Historical identity [superseded]](../../../../continuum/strategy/capability/bcefb378424842fcb6d703208c3f8773.md) <a id="bcefb378424842fcb6d703208c3f8773"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.7 [CT2] Health Information Communication](#7925605bf60f4b288e826020409a09d9); canonicalId: `7925605bf60f4b288e826020409a09d9`
+    - [R.2.184 [CT3] Patient Health Information Disclosure Management — Historical identity [superseded]](../../../../continuum/strategy/capability/07cf507f183d4905a7ad2adbb8555df5.md) <a id="07cf507f183d4905a7ad2adbb8555df5"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.9.1 [CT3] Patient Health Information Disclosure Management](#7f918639e23842e78fa92f1bf47c5a7b); canonicalId: `7f918639e23842e78fa92f1bf47c5a7b`
+    - [R.2.185 [CT3] Patient Health Information Filter Management — Historical identity [superseded]](../../../../continuum/strategy/capability/589f192797454d9e8960fb63774e5e9c.md) <a id="589f192797454d9e8960fb63774e5e9c"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.9.2 [CT3] Patient Health Information Filter Management](#62f673613c76494eba972cad3e4e8d0b); canonicalId: `62f673613c76494eba972cad3e4e8d0b`
+    - [R.2.186 [CT3] Patient Health Information Restriction Management — Historical identity [superseded]](../../../../continuum/strategy/capability/5ad91d045474435a96b560e66ff7de05.md) <a id="5ad91d045474435a96b560e66ff7de05"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.9.3 [CT3] Patient Health Information Restriction Management](#262366990bda4ac4ace5429269cf6a98); canonicalId: `262366990bda4ac4ace5429269cf6a98`
+    - [R.2.187 [CT2] Health Information Control — Historical identity [superseded]](../../../../continuum/strategy/capability/a3196aef21d443519de874c24f64a185.md) <a id="a3196aef21d443519de874c24f64a185"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.9 [CT2] Health Information Control](#44cc0e17ad534675bf26dce6e46a68ff); canonicalId: `44cc0e17ad534675bf26dce6e46a68ff`
+    - [R.2.188 [CT3] HIE Endpoint State Management — Historical identity [superseded]](../../../../continuum/strategy/capability/697de08ac49a4b7f8df7a1ed6f04210e.md) <a id="697de08ac49a4b7f8df7a1ed6f04210e"></a>
+      - Governed successor (evolved correspondence): [II.1.3.9.10.1 [CT3] HIE Endpoint State Management](#1bec951a1c98450b8d4672c5c424f9bd); canonicalId: `1bec951a1c98450b8d4672c5c424f9bd`
+    - [R.2.189 [CT3] HIE Implementation Management — Historical identity [superseded]](../../../../continuum/strategy/capability/a99b4119339545a89dc54ebb216ddb85.md) <a id="a99b4119339545a89dc54ebb216ddb85"></a>
+      - Governed successor (evolved correspondence): [II.1.3.9.10.2 [CT3] HIE Implementation Management](#8ce29be373e04252b7aa881b6a72f375); canonicalId: `8ce29be373e04252b7aa881b6a72f375`
+    - [R.2.190 [CT3] HIE Requirement Management — Historical identity [superseded]](../../../../continuum/strategy/capability/a32c8bff0c284f5c9d6ab1f46991c232.md) <a id="a32c8bff0c284f5c9d6ab1f46991c232"></a>
+      - Governed successor (evolved correspondence): [II.1.3.9.10.3 [CT3] HIE Requirement Management](#1c852a1799984feba50011172983c865); canonicalId: `1c852a1799984feba50011172983c865`
+    - [R.2.191 [CT2] Health Information Exchange — Historical identity [superseded]](../../../../continuum/strategy/capability/330d1c43856a4322a2e9f331b1a5ed20.md) <a id="330d1c43856a4322a2e9f331b1a5ed20"></a>
+      - Governed successor (evolved correspondence): [II.1.3.9.10 [CT2] Health Information Exchange Enablement](#a61a15908ed544e6acf3e9cab63a0267); canonicalId: `a61a15908ed544e6acf3e9cab63a0267`
+    - [R.2.192 [CT3] Information Asset Definition — Historical identity [superseded]](../../../../continuum/strategy/capability/166a22463d2c4534bda7ae31273398b6.md) <a id="166a22463d2c4534bda7ae31273398b6"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.11.1 [CT3] Information Asset Definition](#05c58b2ccfcc45e9a6c70d9a569c4f61); canonicalId: `05c58b2ccfcc45e9a6c70d9a569c4f61`
+    - [R.2.193 [CT3] Information Asset Tag Management — Historical identity [superseded]](../../../../continuum/strategy/capability/ae44a4ee78414d1098814315793bd751.md) <a id="ae44a4ee78414d1098814315793bd751"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.11.2 [CT3] Information Asset Tag Management](#df27c3ba6e164e56af7bff4e1eb1954a); canonicalId: `df27c3ba6e164e56af7bff4e1eb1954a`
+    - [R.2.194 [CT2] Information Asset Stewardship Management — Historical identity [superseded]](../../../../continuum/strategy/capability/cee085c690314802851de71f4741d8db.md) <a id="cee085c690314802851de71f4741d8db"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.11 [CT2] Information Asset Stewardship Management](#5bac15316d8d4f4db6e7a253f1acfbe3); canonicalId: `5bac15316d8d4f4db6e7a253f1acfbe3`
+    - [R.2.195 [CT3] Data Provenance Capture — Historical identity [superseded]](../../../../continuum/strategy/capability/61258c7fe41f4541871a67ec9d7185cf.md) <a id="61258c7fe41f4541871a67ec9d7185cf"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.12.1 [CT3] Data Provenance Capture](#44a7937520a54945b06b5fd4a2bbd870); canonicalId: `44a7937520a54945b06b5fd4a2bbd870`
+    - [R.2.196 [CT3] Data Scientist Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/1cb497aec93c4b82ba7f5b622813e54e.md) <a id="1cb497aec93c4b82ba7f5b622813e54e"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.12.2 [CT3] Data Scientist Administration](#3bb1a11fba234717bf40c9e6452f401a); canonicalId: `3bb1a11fba234717bf40c9e6452f401a`
+    - [R.2.197 [CT3] Information Product Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/5d9b7f8d2d7b41759b6d4931c1d2aaa2.md) <a id="5d9b7f8d2d7b41759b6d4931c1d2aaa2"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.12.3 [CT3] Information Product Administration](#b5a6a31855834ea58870ebb6c51ed4b0); canonicalId: `b5a6a31855834ea58870ebb6c51ed4b0`
+    - [R.2.198 [CT2] Information Content Maintainer Management — Historical identity [superseded]](../../../../continuum/strategy/capability/acb977e879204f1491293e5452e0ddf0.md) <a id="acb977e879204f1491293e5452e0ddf0"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.12 [CT2] Information Content Maintainer Management](#b81a1ab42af24c2e9896b8f3f78d291a); canonicalId: `b81a1ab42af24c2e9896b8f3f78d291a`
+    - [R.2.199 [CT3] Enterprise Canonical/Reusable Model Design — Historical identity [superseded]](../../../../continuum/strategy/capability/dbc37445ad944a85a7c4f26f410967b2.md) <a id="dbc37445ad944a85a7c4f26f410967b2"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.13.1 [CT3] Enterprise Canonical/Reusable Model Design](#90e9cd401ddf4c7690c978d8dd131413); canonicalId: `90e9cd401ddf4c7690c978d8dd131413`
+    - [R.2.200 [CT3] Enterprise Canonical/Reusable Model Library Management — Historical identity [superseded]](../../../../continuum/strategy/capability/f5eccd4f65df49bba98104e5abfa5e19.md) <a id="f5eccd4f65df49bba98104e5abfa5e19"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.13.2 [CT3] Enterprise Canonical/Reusable Model Library Management](#76943b4b68644c4dac1368fce8bb20d9); canonicalId: `76943b4b68644c4dac1368fce8bb20d9`
+    - [R.2.201 [CT3] Enterprise Canonical/Reusable Model Utilisation Support — Historical identity [superseded]](../../../../continuum/strategy/capability/7ae95677a00346f18a0ba01522a20153.md) <a id="7ae95677a00346f18a0ba01522a20153"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.13.3 [CT3] Enterprise Canonical/Reusable Model Utilisation Support](#5744cb9d86494064af87afb3cbf2cf97); canonicalId: `5744cb9d86494064af87afb3cbf2cf97`
+    - [R.2.202 [CT3] Enterprise Reference Data Stewardship — Historical identity [superseded]](../../../../continuum/strategy/capability/fd9f3239fdb64ea687825b66bb4d1f17.md) <a id="fd9f3239fdb64ea687825b66bb4d1f17"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.13.4 [CT3] Enterprise Reference Data Stewardship](#971d4b079ad24e89b70a8ed8dec0c8bf); canonicalId: `971d4b079ad24e89b70a8ed8dec0c8bf`
+    - [R.2.203 [CT2] Information Design Governance — Historical identity [superseded]](../../../../continuum/strategy/capability/0bdd7f8c0cd74d9fabc49801af037fc2.md) <a id="0bdd7f8c0cd74d9fabc49801af037fc2"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.13 [CT2] Information Design Governance](#f39ed9ebcc724857a4bf7a2b8e045c7a); canonicalId: `f39ed9ebcc724857a4bf7a2b8e045c7a`
+    - [R.2.204 [CT3] Linked Information Curation — Historical identity [superseded]](../../../../continuum/strategy/capability/9d0925bb39664a5985cacf3cea7442d1.md) <a id="9d0925bb39664a5985cacf3cea7442d1"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.15.1 [CT3] Linked Information Curation](#5edb2a8b5ee54ddda8104d1fab323a94); canonicalId: `5edb2a8b5ee54ddda8104d1fab323a94`
+    - [R.2.205 [CT3] Longitudinal Clinical Record Administration — Historical identity [superseded]](../../../../continuum/strategy/capability/bd91d848cf424c42bec7c80cd32edd28.md) <a id="bd91d848cf424c42bec7c80cd32edd28"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.15.2 [CT3] Longitudinal Clinical Record Administration](#14748dc6117f4b6ba7c0fc554b76bd89); canonicalId: `14748dc6117f4b6ba7c0fc554b76bd89`
+    - [R.2.206 [CT2] Patient Clinical Record — Historical identity [superseded]](../../../../continuum/strategy/capability/2e4de521bda24ad7b0ea64ae535b7f84.md) <a id="2e4de521bda24ad7b0ea64ae535b7f84"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.15 [CT2] Patient Clinical Record](#5478878e0e6e4d34a8d5023ac6ac2d54); canonicalId: `5478878e0e6e4d34a8d5023ac6ac2d54`
+    - [R.2.207 [CT3] Contextual Information Presentation — Historical identity [superseded]](../../../../continuum/strategy/capability/e349d5f6a8774bbe8d150f9c51af770c.md) <a id="e349d5f6a8774bbe8d150f9c51af770c"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.16.1 [CT3] Contextual Information Presentation](#9f900c53ae56488cad69e53c2205e898); canonicalId: `9f900c53ae56488cad69e53c2205e898`
+    - [R.2.208 [CT2] Presentation Services — Historical identity [superseded]](../../../../continuum/strategy/capability/c89e7c8b277247d9965fdb534aad2d1f.md) <a id="c89e7c8b277247d9965fdb534aad2d1f"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.16 [CT2] Presentation Services](#e9b6ba1917ba44cca7466444d0836c98); canonicalId: `e9b6ba1917ba44cca7466444d0836c98`
+    - [R.2.209 [CT3] Activity Routing Management — Historical identity [superseded]](../../../../continuum/strategy/capability/243ea93e7b7448fe97dc74f90bfc8946.md) <a id="243ea93e7b7448fe97dc74f90bfc8946"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.18.1 [CT3] Activity Routing Management](#27411c143e6e41ffba1af139fbbcd7e2); canonicalId: `27411c143e6e41ffba1af139fbbcd7e2`
+    - [R.2.210 [CT3] External Task Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/32be309d65594592bac4d7b068def0d2.md) <a id="32be309d65594592bac4d7b068def0d2"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.18.2 [CT3] External Task Coordination](#ff3447c929724245a13ee864874b5561); canonicalId: `ff3447c929724245a13ee864874b5561`
+    - [R.2.211 [CT3] External Task Status & Traceability Management — Historical identity [superseded]](../../../../continuum/strategy/capability/95985d244a234571892a9e9b4024f594.md) <a id="95985d244a234571892a9e9b4024f594"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.18.3 [CT3] External Task Status & Traceability Management](#b25bb04a8aa94dcfac105a646878ccfc); canonicalId: `b25bb04a8aa94dcfac105a646878ccfc`
+    - [R.2.212 [CT3] Work Boundary Governance — Historical identity [superseded]](../../../../continuum/strategy/capability/b4d14abf930a4230a7f5b93e9ce3df91.md) <a id="b4d14abf930a4230a7f5b93e9ce3df91"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.18.4 [CT3] Work Boundary Governance](#35b66a0b38db4568849ecb842ffdcbf3); canonicalId: `35b66a0b38db4568849ecb842ffdcbf3`
+    - [R.2.213 [CT2] Workflow & Activity Coordination — Historical identity [superseded]](../../../../continuum/strategy/capability/4422d865978c4353ad575759c6026d27.md) <a id="4422d865978c4353ad575759c6026d27"></a>
+      - Governed successor (direct correspondence): [II.1.3.9.18 [CT2] Workflow & Activity Coordination](#c724f3d38bfa4567983a11ad22095d61); canonicalId: `c724f3d38bfa4567983a11ad22095d61`
+    - [R.2.214 [CT1] Shared Information & Coordination Enablement — Historical identity [superseded]](../../../../continuum/strategy/capability/eeabb9c3c526404cbe4302906560fa7e.md) <a id="eeabb9c3c526404cbe4302906560fa7e"></a>
+      - Governed successor (direct correspondence): [II.1.3.9 [CT1] Shared Information & Coordination Enablement](#0062fcacae1740988b6be2bda2aa1674); canonicalId: `0062fcacae1740988b6be2bda2aa1674`

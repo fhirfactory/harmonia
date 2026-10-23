@@ -186,20 +186,15 @@ def outputs(root, output):
     population = relationship_state.exchange_population(SimpleNamespace(keys=keys, relationships=relationships))
     artifacts, headings, placements, diagrams = {}, [], [], []
 
-    def heading(node, depth, *, perspective=False):
+    def heading(node, depth):
         c.require(depth < len(HEADINGS), 'Continuum hierarchy exceeds declared LaTeX section depth')
         headings.append({'title': node['title'], 'number': node['number'], 'depth': depth,
                          'origin': 'canonical Continuum navigation', 'locator': node['modelLocator'],
                          'canonicalLocator': node['locator'], 'path': node['path'],
-                         'kind': node.get('kind', 'section')})
+                         'kind': node.get('kind', 'section'),
+                         **{key: node[key] for key in ('occurrence', 'contextCanonicalId', 'contextRole',
+                             'canonicalReference', 'relationshipIds', 'historicalReferences', 'successorReference') if key in node}})
         text = tex(nav.title(node))
-        if perspective:
-            # Cross-cutting profiles appear in the Motivation introduction, not
-            # as a type-bucket chapter. Every profile still has its coordinate,
-            # canonical link and outline entry.
-            return (r'\par\medskip\phantomsection\label{navigation:' + node['number'] + '}'
-                    + '\n' + r'\pdfbookmark[0]{' + text + '}{perspective-' + node['number'] + '}'
-                    + '\n' + r'\textbf{' + text + r'}\par' + '\n')
         command = HEADINGS[depth + (1 if node['number'].startswith('G.') else 0)]
         return ('\\' + command + '*{' + text + '}\n'
                 + r'\phantomsection' + '\n'
@@ -219,13 +214,21 @@ def outputs(root, output):
         index_name = tex(m['displayName']).replace('!', '"!').replace('@', '"@').replace('|', '"|')
         result = [r'\label{' + label(cid) + '}', r'\index{' + index_name + ' (' + node['number'] + ')}',
                   r'{\small ' + tex(m['archimateType'] + (' / ' + m['specialization'] if m.get('specialization') else '') + ' · ' + m['standing']['semantic'] + ' · ' + m['standing']['currentness']) + r'}\par']
+        if m['archimateType'] == 'Stakeholder':
+            concerns = [(concern, ids[cid]) for concern, ids in nav.stakeholder_associations(elements).items() if cid in ids]
+            if concerns:
+                result.append(r'{\small Existing associated Motivation material: ' + '; '.join(
+                    ref(concern, elements) + ' (' + locations[concern]['number'] + '); canonical associations: '
+                    + tex(', '.join(ids)) for concern, ids in concerns) + r'.}\par')
+            else:
+                result.append(r'No canonical Motivation association is represented. Index placement asserts none.\par')
         if m['standing']['currentness'] in HISTORICAL:
             result.append(r'\href{' + link + r'}{Historical canonical definition and provenance}.\par')
             return '\n'.join(result)
         # Definitions and boundaries remain source prose. Repeated source
         # contributions/history remain in the linked canonical record/Manifest.
         content = body.split('## Architectural content\n', 1)[1].split('\n## ', 1)[0].strip()
-        if node.get('kind') == 'perspective':
+        if m['archimateType'] == 'Stakeholder':
             paragraphs = [p for p in content.split('\n\n') if p and not p.startswith('#')]
             content = paragraphs[0] if paragraphs else content
         result.append(prose.render(content, source))
@@ -233,25 +236,22 @@ def outputs(root, output):
             result.append(r'{\small Recorded unresolved matters: ' + tex(', '.join(sorted(m.get('unresolvedProperties', {}))) or 'source-qualified matters') + r'; exact scope remains in the canonical record.}\par')
         if node.get('classificationIssue'):
             result.append(r'{\small Navigation classification: ' + tex(node['classificationIssue']) + r'}\par')
-        # Existing associations remain explicit cross-references. No association
-        # is manufactured from the cross-cutting presentation of Stakeholders.
-        if node.get('kind') == 'perspective':
-            rid = m['exchange']['identifier']
-            related = sorted({edge['target'] for mm, _, _ in elements.values() for edge in mm['relationships']
-                              if edge['source'] == rid and edge['archimateType'] == 'Association'})
-            by_rep = {mm['exchange']['identifier']: other for other, (mm, _, _) in elements.items()}
-            if related:
-                result.append(r'{\small Existing associated concerns: ' + '; '.join(ref(by_rep[r], elements) for r in related if r in by_rep) + r'.}\par')
         result.append(r'{\footnotesize \href{' + link + r'}{Canonical record: ' + cid + r'}; full qualifications and provenance.}\par')
         return '\n'.join(result)
 
     def render(node, depth):
-        out = [heading(node, depth, perspective=node.get('kind') == 'perspective')]
+        out = [heading(node, depth)]
         if node.get('description'):
             out.append(tex(node['description']) + r'\par')
+        for role, reference in nav.references(node):
+            cid = reference['canonicalId']
+            out.append(r'{\small ' + tex(role + ': ' + reference['number'] + ' ') + ref(cid, elements)
+                       + r'; Canonical ID: \texttt{\seqsplit{' + cid + '}}. '
+                       + tex(reference['standing']['semantic'] + ' · ' + reference['standing']['currentness']) + r'.}\par')
         if node.get('contextCanonicalId'):
-            cid = node['contextCanonicalId']
-            out.append(r'{\small Capability context: ' + ref(cid, elements) + ' (' + locations[cid]['number'] + r'). The Strategy hierarchy remains authoritative.}\par')
+            out.append(r'Contextual reference only; no additional architectural instance or semantic relationship.\par')
+        if node.get('relationshipIds'):
+            out.append(tex('Existing canonical associations: ' + ', '.join(node['relationshipIds'])) + r'\par')
         if node.get('relatedCanonicalIds'):
             out.append(r'\begin{longtable}{p{.22\linewidth}p{.73\linewidth}}')
             for cid in node['relatedCanonicalIds']:
@@ -280,7 +280,8 @@ def outputs(root, output):
                    'The existing governance contracts establish authority, decision rights, review and evidence. '
                    'These links expose that repository through the architectural navigation; they create no parallel governance records.']
         else:
-            part_title = 'Part ' + part['namespace'] + ' — ' + part['title']
+            part_title = ('Reference navigation — R ' + part['title'] if part['namespace'] == 'R'
+                          else 'Part ' + part['namespace'] + ' — ' + part['title'])
             out = [r'\part*{' + tex(part_title) + '}', r'\label{navigation:' + part['number'] + '}',
                    r'\addcontentsline{toc}{part}{' + tex(part_title) + '}']
         if part.get('description'):
@@ -293,11 +294,7 @@ def outputs(root, output):
             out.append(picture)
             diagrams.append({'domain': domain, 'selection': 'Largest explicit active Composition neighbourhood, at most six targets; stable name/identity ordering', 'edges': records})
         children = part.get('children', [])
-        perspective_started = False
         for child in children:
-            if child.get('kind') == 'perspective' and not perspective_started:
-                out.append(r'\clearpage\textbf{Cross-cutting Motivation perspectives}\par')
-                perspective_started = True
             out.append(render(child, 0))
         name = 'parts/' + domain.replace(' ', '-').replace('&', 'and') + '.tex'
         artifacts[name] = ('\n'.join(out) + '\n').encode()
@@ -309,7 +306,7 @@ def outputs(root, output):
     artifacts['continuum-rad.tex'] = master.encode()
     artifacts['structure.json'] = c.encoded({'release': release, 'hierarchySource': str(nav.SOURCE),
         'modelSha256': c.sha(model_bytes), 'domainClassificationSource': str(nav.SOURCE),
-        'domainPartition': 'Canonical taxonomy: Governance G, Parts I–VI. Every node has a derived coordinate. Stakeholders are cross-cutting profiles in the Motivation introduction; the chapter spine remains the authorised taxonomy. Unpopulated domains record absence without speculative subsections.',
+        'domainPartition': 'Canonical taxonomy: Governance G, Parts I–VI; R is cross-cutting reference navigation outside architectural decomposition. It holds the Stakeholder Index and historical Capability identities. Every node has a derived coordinate. Unpopulated domains record absence without speculative subsections.',
         'headings': headings, 'elements': placements, 'diagrams': diagrams,
         'limits': 'Hierarchy is navigation, not semantic containment or identity. Standing, native typing and relationships are unchanged. No architecture is invented for publication.'})
     artifacts['README.md'] = (f'# Harmonia Architecture Continuum RAD — {release["version"]}\n\n'

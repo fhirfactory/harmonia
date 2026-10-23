@@ -179,6 +179,18 @@ under AX-15 and missing architectural authority under AX-17.
 
 ## 5. Report and verify the incorporated result
 
+A generated reader-facing architecture/navigation publication SHALL receive
+Solution Architect structural review before HCRL acceptance when a change
+materially alters architectural navigation or publication structure. Inspect
+representative and structurally significant generated portions, including where
+applicable Motivation, the Strategy capability hierarchy, Business Behaviour
+contextual hierarchy, Application hierarchy, cross-cutting/reference material,
+historical/superseded presentation and deep navigation numbering. This is a human
+architectural checkpoint; automated checks and agent inspection provide evidence
+but do not replace it. Publication size alone does not require exhaustive
+page-by-page review. This bounded safeguard applies the Solution Architect's
+[1.1.11 disposition 5](../design/evidence/1.1.11/002/before/ai-agent-tasks/unresolved-continuum-navigation-remediation.md#solution-architect-disposition-5--reader-facing-review-safeguard).
+
 Retain formal Task Reports at the associated iteration's `after/ai-agent-reports/`,
 including completed investigation/review and corrective/verification activity.
 Preserve sufficient factual activity, outcome, verification, limitation and

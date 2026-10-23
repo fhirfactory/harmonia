@@ -331,11 +331,13 @@ def project(root=ROOT):
     import continuum_navigation as navigation
     hierarchy = navigation.load(root, elements)
     locations = navigation.by_element(hierarchy)
+    navigation_metadata = navigation.transport_metadata(hierarchy)
     # Projection-only properties expose location without altering native Name,
     # canonicalId, existing representation bindings or canonical metadata.
     propdefs = model.find('a:propertyDefinitions', N)
     for identifier, name in [('continuum-navigation-number', 'Continuum / Navigation Number'),
-                             ('continuum-navigation-path', 'Continuum / Navigation Path')]:
+                             ('continuum-navigation-path', 'Continuum / Navigation Path'),
+                             ('continuum-navigation-references', 'Continuum / Navigation References')]:
         require(identifier not in definitions and name not in definitions.values(), 'Duplicate navigation property definition')
         prop = ET.SubElement(propdefs, tag('propertyDefinition'), identifier=identifier, type='string')
         ET.SubElement(prop, tag('name')).text = name
@@ -365,6 +367,7 @@ def project(root=ROOT):
         set_property(rows, definitions, 'Continuum / Currentness', m['standing']['currentness'])
         set_property(rows, definitions, 'Continuum / Navigation Number', locations[cid]['number'])
         set_property(rows, definitions, 'Continuum / Navigation Path', ' / '.join(locations[cid]['path']))
+        set_property(rows, definitions, 'Continuum / Navigation References', json.dumps(navigation_metadata[cid], ensure_ascii=False, sort_keys=True))
         properties(node, rows)
         relationships.extend(m.get('relationships', []))
     for row in sorted(relationships, key=lambda row: row['identifier']):

@@ -74,9 +74,10 @@ class ContinuumNavigationTests(unittest.TestCase):
                     self.assertEqual(child['number'], node['number'] + '.' + str(i))
         self.assertFalse(self.tree[5].get('children'))
         self.assertFalse(self.tree[6].get('children'))
-        perspectives = [n for n in nav.walk(self.tree) if n.get('kind') == 'perspective']
+        perspectives = [n for n in nav.walk(self.tree) if n.get('kind') == 'index-entry']
         self.assertEqual(len(perspectives), 10)
-        self.assertTrue(all(n in self.tree[1]['children'] for n in perspectives))
+        self.assertTrue(all(n['number'].startswith('R.1.') for n in perspectives))
+        self.assertEqual(len(self.tree[1]['children']), 8)
         branches = {n['title']: nav.descendants(n) for n in nav.walk(self.tree) if n['title'].startswith('Unclassified ')}
         self.assertEqual({k: len(v) for k, v in branches.items()}, {'Unclassified Motivation': 7, 'Unclassified Business': 69})
 
@@ -92,11 +93,53 @@ class ContinuumNavigationTests(unittest.TestCase):
         for cid, data in snapshots.items():
             if self.elements[cid][0]['archimateType'] != 'Capability':
                 continue
+            if self.elements[cid][0]['identity'].get('correspondence'):
+                continue
             parent = data.get('parent_key') or data.get('owner_key')
             if parent:
                 self.assertEqual(parents[cid].get('canonicalId'), keys[parent], cid)
         # Business contexts refer to Strategy; no second capability population.
         self.assertFalse(any(self.elements[cid][0]['archimateType'] == 'Capability' for cid in nav.descendants(self.tree[3])))
+
+    def test_history_uses_governed_correspondence_and_preserves_distinct_exchange_responsibilities(self):
+        pairs = {cid: m['identity']['correspondence']['successorCanonicalId']
+                 for cid, (m, _, _) in self.elements.items() if m['identity'].get('correspondence')}
+        self.assertEqual(len(pairs), 214)
+        self.assertEqual(sum(self.elements[a][0]['displayName'] == self.elements[b][0]['displayName'] for a, b in pairs.items()), 212)
+        for old, successor in pairs.items():
+            self.assertEqual(self.locations[old]['kind'], 'historical')
+            self.assertTrue(self.locations[old]['number'].startswith('R.2.'))
+            self.assertEqual(self.locations[old]['successorReference']['canonicalId'], successor)
+            self.assertIn(old, [r['canonicalId'] for r in self.locations[successor]['historicalReferences']])
+        bc, old_bec, bec = ('baad6b6117084311acbf5fc4044dfabf', '330d1c43856a4322a2e9f331b1a5ed20', 'a61a15908ed544e6acf3e9cab63a0267')
+        self.assertEqual(pairs[old_bec], bec)
+        self.assertNotEqual(bc, bec)
+        self.assertIn('Business Capabilities', self.locations[bc]['path'])
+        self.assertIn('Business Enabling Capabilities', self.locations[bec]['path'])
+
+    def test_complete_relevant_contexts_and_existing_stakeholder_associations_are_guarded(self):
+        contexts = [n for n in nav.walk(self.tree) if n.get('contextRole') == 'capability']
+        self.assertEqual(len(contexts), 89)
+        self.assertEqual(sum(any(ch.get('title') in ('Business Services', 'Business Functions', 'Business Processes', 'Business Events')
+                                 for ch in n.get('children', [])) for n in contexts), 72)
+        for node in contexts:
+            self.assertEqual(node['occurrence'], 'contextual')
+            self.assertEqual(node['canonicalReference']['number'], self.locations[node['contextCanonicalId']]['number'])
+        with self.changed() as data:
+            behaviour = next(n for n in nav.walk(data['roots']) if n.get('title') == 'Business Behaviour')
+            ancestor = next(n for n in behaviour['children'] if any(ch.get('contextCanonicalId') for ch in n['children']))
+            child = next(n for n in ancestor['children'] if n.get('contextCanonicalId'))
+            behaviour['children'].append(child)
+            ancestor['children'].remove(child)
+        with self.changed() as data:
+            context = next(n for n in nav.walk(data['roots']) if n.get('contextRole') == 'stakeholder')
+            context['relationshipIds'] = ['invented-association']
+        with self.changed() as data:
+            group = next(n for n in nav.walk(data['roots']) if n.get('associatedCanonicalId'))
+            group['children'].pop()
+        stakeholders = [n for n in nav.walk(self.tree) if n.get('contextRole') == 'stakeholder']
+        self.assertEqual(len(stakeholders), 4)
+        self.assertEqual(sum(len(n['relationshipIds']) for n in stakeholders), 4)
 
     def test_topics_stay_logical_and_classes_are_not_invented(self):
         topics = next(n for n in nav.walk(self.tree) if n['path'] == ['Application', 'Information Architecture', 'Topics'])
@@ -119,12 +162,20 @@ class ContinuumNavigationTests(unittest.TestCase):
         org = {n.get('identifier'): n for n in model.findall('.//a:organizations//a:item', c.N)}
         for node in nav.walk(self.tree):
             self.assertEqual(org[nav.transport_id(node)].findtext('a:label', namespaces=c.N), nav.title(node))
+            for role, reference in nav.references(node):
+                doc = org[nav.transport_id(node)].findtext('a:documentation', namespaces=c.N)
+                self.assertIn(reference['number'], doc)
+                self.assertIn(reference['canonicalId'], doc)
+                self.assertIn(role, artifacts['continuum.html'].decode())
+                self.assertIn(reference['canonicalId'], artifacts['README.md'].decode())
         for cid, node in self.locations.items():
             m = self.elements[cid][0]
             element = rows[m['exchange']['identifier']]
             self.assertEqual(element.findtext('a:name', namespaces=c.N), m['displayName'])
             number = element.findtext('a:properties/a:property[@propertyDefinitionRef="continuum-navigation-number"]/a:value', namespaces=c.N)
             self.assertEqual(number, node['number'])
+            metadata = element.findtext('a:properties/a:property[@propertyDefinitionRef="continuum-navigation-references"]/a:value', namespaces=c.N)
+            self.assertEqual(json.loads(metadata), nav.transport_metadata(self.tree)[cid])
         expected = {r['identifier']: r for m, _, _ in self.elements.values() for r in m['relationships']}
         self.assertEqual({r.get('identifier') for r in model.findall('a:relationships/a:relationship', c.N)}, set(expected))
         for edge in model.findall('a:relationships/a:relationship', c.N):
@@ -167,3 +218,5 @@ class ContinuumNavigationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Missing/ambiguous'):
             nav.with_element(self.raw, '0' * 32, ['Application', 'Missing context'], self.elements)
         self.assertFalse(any(n.get('canonicalId') == '0' * 32 for n in nav.walk(self.raw['roots'])))
+        result = nav.with_element(self.raw, '0' * 32, ['Cross-Cutting References', 'Stakeholder Index'], self.elements)
+        self.assertEqual(result['roots'][-1]['children'][0]['children'][-1]['kind'], 'index-entry')

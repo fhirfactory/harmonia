@@ -75,14 +75,24 @@ def outputs(root, output):
     def render(node, depth=0):
         title = nav.title(node)
         link = source_link(node)
-        index.append('  ' * depth + '- ' + ('[' + title.replace('|', r'\|') + '](' + link + ')' if link else title))
+        index.append('  ' * depth + '- ' + ('[' + title.replace('|', r'\|') + '](' + link + ')' if link else title)
+                     + (' <a id="' + node['canonicalId'] + '"></a>' if node.get('canonicalId') else ''))
         command = 'section' if depth < 2 else 'subsection'
         body.append('\\' + command + '*{' + tex(title) + '}')
+        for role, reference in nav.references(node):
+            cid = reference['canonicalId']
+            text = reference['number'] + ' ' + reference['title']
+            index.append('  ' * (depth + 1) + '- ' + role + ': [' + text + '](#' + cid + '); canonicalId: `' + cid + '`')
+            body.append(tex(role + ': ') + r'\hyperref[element-' + cid + ']{' + tex(text) + '}'
+                        + r'; canonicalId: \texttt{' + cid + r'}\par')
+        if node.get('relationshipIds'):
+            body.append(tex('Existing canonical associations: ' + ', '.join(node['relationshipIds'])) + r'\par')
         if node.get('description'):
             body.append(tex(node['description']) + r'\par')
         cid = node.get('canonicalId')
         if cid:
             m, content, path = elements[cid]
+            body.append(r'\label{element-' + cid + '}')
             kind = m['archimateType'] + (' / ' + m['specialization'] if m.get('specialization') else '')
             fragment = lh.fragment_fromstring(markdown.markdown(content, extensions=['tables', 'fenced_code']), create_parent='div')
             for a in fragment.iter('a'):
@@ -98,7 +108,7 @@ def outputs(root, output):
                          'type': kind, 'standing': m['standing']['semantic'], 'currentness': m['standing']['currentness'],
                          'qualifications': m['standing'], 'classification': node.get('classificationIssue'),
                          'friendly': m['friendlyName'], 'canonical': m['canonicalName'], 'source': link,
-                         'html': lh.tostring(fragment, encoding='unicode'), 'plain': content,
+                         'html': reference_html(node) + lh.tostring(fragment, encoding='unicode'), 'plain': content,
                          'provenance': m['provenance'], 'unresolved': m.get('unresolvedProperties', {})})
             body.extend([r'{\small ' + tex(kind + ' | ' + m['standing']['semantic'] + ' | ' + m['standing']['currentness']) + r'}\par',
                          r'\texttt{' + cid + r'}\par', r'Canonical: \seqsplit{' + tex(m['canonicalName'] or 'Unresolved') + r'}\par'])
@@ -106,6 +116,16 @@ def outputs(root, output):
             body.append(r'{\footnotesize\url{' + link + r'}}\par')
         for child in node.get('children', []):
             render(child, depth + 1)
+    def reference_html(node):
+        result = ''.join('<p class="canonical-reference">' + html.escape(role) + ': <a href="#' + r['canonicalId']
+                         + '" data-element="' + r['canonicalId'] + '">' + html.escape(r['number'] + ' ' + r['title'])
+                         + '</a>; canonicalId: <code>' + r['canonicalId'] + '</code>; '
+                         + html.escape(r['standing']['semantic'] + ' · ' + r['standing']['currentness']) + '</p>'
+                         for role, r in nav.references(node))
+        if node.get('relationshipIds'):
+            result += '<p>Existing canonical associations: ' + html.escape(', '.join(node['relationshipIds'])) + '</p>'
+        return result
+
     for part in tree:
         render(part)
     body.append(r'\end{document}')
@@ -119,6 +139,7 @@ def outputs(root, output):
             label = '<a href="' + html.escape(source_link(node), quote=True) + '">' + label + '</a>'
         children = node.get('children', [])
         content = '<p>' + html.escape(node.get('description', '')) + '</p>' if node.get('description') else ''
+        content += reference_html(node)
         if node.get('relatedCanonicalIds'):
             content += '<p>' + '; '.join('<a href="#' + related + '">' + html.escape(nav.title(locations[related])) + '</a>' for related in node['relatedCanonicalIds']) + '</p>'
         if children or content:

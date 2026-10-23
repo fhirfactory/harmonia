@@ -1,0 +1,3031 @@
+{
+  "differentLevelNames": [
+    {
+      "localName": "credential management",
+      "classification": "Different CT/Feature contexts; name similarity alone supplies no identity or duplication adjudication.",
+      "elements": [
+        {
+          "canonicalId": "21eed4fc8c924496b16c6ddaa32f3d01",
+          "displayedName": "[CT2] Credential Management",
+          "displayName": "[CT2] Credential Management",
+          "friendlyName": "HealthServiceOperationsEnablement.CredentialManagement",
+          "canonicalName": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-CredentialManagement",
+          "nativeType": "Capability",
+          "specialization": null,
+          "coordinate": "II.1.3.11.13",
+          "path": [
+            "Strategy",
+            "Capabilities",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Credential Management"
+          ],
+          "scope": "Business Enabling Capabilities",
+          "ctLevel": "CT2",
+          "standing": {
+            "semantic": "Proposed",
+            "currentness": "current",
+            "placement_status": "Proposed",
+            "structural_id_status": "Proposed",
+            "name_status": "Proposed",
+            "ancestry_status": "proposed"
+          },
+          "currentness": "current",
+          "parentOwner": {
+            "key": "reviewed:bec-credential-management",
+            "parent_key": "proposal:bec-care-operations-coordination-enablement",
+            "owner_key": null,
+            "responsibility_owner_key": null,
+            "parent_identifier": "HCM-BEC-care-operations-coordination-enablement",
+            "owner_identifier": null
+          },
+          "snapshotPresent": true,
+          "navigationParentCoordinate": "II.1.3.11",
+          "navigationParentCanonicalId": "b13ee2c5a4ef4fd6be8a44795696dfc2",
+          "navigationParentLabel": "[CT1] Health Service Operations Enablement",
+          "originalOrganisation": [
+            [
+              "Strategy",
+              "Business Layer",
+              "Business Enabling Capabilities",
+              "Health Service Operations Enablement",
+              "Credential Management",
+              "[CT2] Credential Management"
+            ]
+          ],
+          "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/21eed4fc8c924496b16c6ddaa32f3d01.md",
+          "sourceBindings": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/897"
+            }
+          ],
+          "provenance": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/897",
+              "role": "governed source resource",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+              "sourceKey": "reviewed:bec-credential-management"
+            },
+            {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "selector": "element[@identifier=\"id-ecc5bfe7e27b54dfb59023a05879f1b0\"]",
+              "role": "accepted representation binding and presentation; not an additional architecture source",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+            }
+          ],
+          "identity": {
+            "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+            "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+            "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+            "predecessorCanonicalIds": [
+              "bab3d0ab6eb748978b962ea20fb31640"
+            ]
+          },
+          "relevantSemanticRelationships": [
+            {
+              "identifier": "id-7c988086a7ab55ba88ecd598cc989479",
+              "archimateType": "Composition",
+              "source": "id-ecc5bfe7e27b54dfb59023a05879f1b0",
+              "target": "id-69e67b8a2bb25dd99ec9fb966b9d5481",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-7c988086a7ab55ba88ecd598cc989479\"]"
+              },
+              "sourceCanonicalId": "21eed4fc8c924496b16c6ddaa32f3d01",
+              "targetCanonicalId": "2e5c97f51e7e48d1b865ac416dd8099d",
+              "sourceLabel": "[CT2] Credential Management",
+              "targetLabel": "[CT3] Clinical Service Credential Definition Management"
+            },
+            {
+              "identifier": "id-f5f81df65e5d539ca9b42b93e894fa35",
+              "archimateType": "Composition",
+              "source": "id-7d2f4319495b59248bd13f7b256a1c32",
+              "target": "id-ecc5bfe7e27b54dfb59023a05879f1b0",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-f5f81df65e5d539ca9b42b93e894fa35\"]"
+              },
+              "sourceCanonicalId": "b13ee2c5a4ef4fd6be8a44795696dfc2",
+              "targetCanonicalId": "21eed4fc8c924496b16c6ddaa32f3d01",
+              "sourceLabel": "[CT1] Health Service Operations Enablement",
+              "targetLabel": "[CT2] Credential Management"
+            }
+          ],
+          "classificationBasis": "Existing governed capability parent/owner metadata; all independent placement/ancestry qualifications retained",
+          "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+        },
+        {
+          "canonicalId": "3a7a4d2d0ce8446b8a6293284fb16b83",
+          "displayedName": "[CT3] Credential Management",
+          "displayName": "[CT3] Credential Management",
+          "friendlyName": "HealthServiceOperationsEnablement.WorkforceQualificationAndDevelopmentEnablement.CredentialManagement",
+          "canonicalName": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkforceQualificationAndDevelopmentEnablement.CT3-BEC-CredentialManagement",
+          "nativeType": "Capability",
+          "specialization": null,
+          "coordinate": "II.1.3.11.26.1",
+          "path": [
+            "Strategy",
+            "Capabilities",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Workforce Qualification & Development Enablement",
+            "[CT3] Credential Management"
+          ],
+          "scope": "Business Enabling Capabilities",
+          "ctLevel": "CT3",
+          "standing": {
+            "semantic": "Canonical",
+            "currentness": "pending_adjudication",
+            "placement_status": "Proposed",
+            "structural_id_status": "Proposed",
+            "name_status": "Canonical",
+            "ancestry_status": "proposed"
+          },
+          "currentness": "pending_adjudication",
+          "parentOwner": {
+            "key": "capability:credential-management",
+            "parent_key": "proposal:bec-workforce-qualification-development-enablement",
+            "owner_key": null,
+            "responsibility_owner_key": null,
+            "parent_identifier": "HCM-BEC-workforce-qualification-development-enablement",
+            "owner_identifier": null
+          },
+          "snapshotPresent": true,
+          "navigationParentCoordinate": "II.1.3.11.26",
+          "navigationParentCanonicalId": "d24a1f4c4f674c45a95c317998ff4186",
+          "navigationParentLabel": "[CT2] Workforce Qualification & Development Enablement",
+          "originalOrganisation": [
+            [
+              "Strategy",
+              "Business Layer",
+              "Business Enabling Capabilities",
+              "Pending Adjudication",
+              "[CT3] Credential Management"
+            ]
+          ],
+          "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/3a7a4d2d0ce8446b8a6293284fb16b83.md",
+          "sourceBindings": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/405"
+            }
+          ],
+          "provenance": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/405",
+              "role": "governed source resource",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+              "sourceKey": "capability:credential-management"
+            },
+            {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "selector": "element[@identifier=\"id-7a05f7ea632d5ed6b2f2ff63e590988f\"]",
+              "role": "accepted representation binding and presentation; not an additional architecture source",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+            },
+            {
+              "source": "docs/markdown/03-business-architecture/behaviours/04-health-service-operations.md",
+              "selector": "212-credential-management",
+              "role": "original source locator; recorded edition",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "captureSource": "docs/markdown/governance/baseline/architecture.json",
+              "recordedSourceSha256": "9de0e4725c772f96dc1a37ed9f668876cd7c3eca8aff56ae7f1865f39d54035d"
+            },
+            {
+              "source": "docs/markdown/03-business-architecture/behaviours/04-health-service-operations.md",
+              "selector": "entry lines 239-239",
+              "role": "Exact source-locator contribution; original qualifications retained",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0"
+            }
+          ],
+          "identity": {
+            "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+            "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+            "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+          },
+          "relevantSemanticRelationships": [
+            {
+              "identifier": "id-9fbc8554316051bfbe7dca17da6bf6a9",
+              "archimateType": "Composition",
+              "source": "id-0be98fb67d425ecab44e20c991d19a01",
+              "target": "id-7a05f7ea632d5ed6b2f2ff63e590988f",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "preserved historical assertion",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-9fbc8554316051bfbe7dca17da6bf6a9\"]"
+              },
+              "sourceCanonicalId": "d24a1f4c4f674c45a95c317998ff4186",
+              "targetCanonicalId": "3a7a4d2d0ce8446b8a6293284fb16b83",
+              "sourceLabel": "[CT2] Workforce Qualification & Development Enablement",
+              "targetLabel": "[CT3] Credential Management"
+            }
+          ],
+          "classificationBasis": "Existing governed capability parent/owner metadata; all independent placement/ancestry qualifications retained",
+          "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+        },
+        {
+          "canonicalId": "bab3d0ab6eb748978b962ea20fb31640",
+          "displayedName": "[CT2] Credential Management",
+          "displayName": "[CT2] Credential Management",
+          "friendlyName": "HealthServiceOperationsEnablement.CredentialManagement",
+          "canonicalName": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-CredentialManagement",
+          "nativeType": "Capability",
+          "specialization": null,
+          "coordinate": "II.1.3.10.10",
+          "path": [
+            "Strategy",
+            "Capabilities",
+            "Business Enabling Capabilities",
+            "[CT1] Health Service Operations Enablement",
+            "[CT2] Credential Management"
+          ],
+          "scope": "Business Enabling Capabilities",
+          "ctLevel": "CT2",
+          "standing": {
+            "semantic": "Superseded historical identity — direct correspondence",
+            "currentness": "superseded"
+          },
+          "currentness": "superseded",
+          "parentOwner": {
+            "key": null,
+            "parent_key": null,
+            "owner_key": null,
+            "responsibility_owner_key": null,
+            "parent_identifier": null,
+            "owner_identifier": null
+          },
+          "snapshotPresent": false,
+          "navigationParentCoordinate": "II.1.3.10",
+          "navigationParentCanonicalId": "a98424298dac46d8b2ddd109d928270a",
+          "navigationParentLabel": "[CT1] Health Service Operations Enablement",
+          "originalOrganisation": [
+            [
+              "Strategy",
+              "Unreconciled 1.0.4 Reference",
+              "Business Enabling Capabilities",
+              "Health Service Operations Enablement",
+              "Credential Management",
+              "[CT2] Credential Management"
+            ]
+          ],
+          "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/bab3d0ab6eb748978b962ea20fb31640.md",
+          "sourceBindings": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/historical_reference_elements/145"
+            }
+          ],
+          "provenance": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/historical_reference_elements/145",
+              "role": "governed source resource",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+              "sourceKey": "historical-reference:id-5652c0a06d095f17a63623a23b6a3e8a"
+            },
+            {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "selector": "element[@identifier=\"id-5652c0a06d095f17a63623a23b6a3e8a\"]",
+              "role": "accepted representation binding and presentation; not an additional architecture source",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+            }
+          ],
+          "identity": {
+            "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+            "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+            "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+            "correspondence": {
+              "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+              "disposition": "direct correspondence",
+              "successorCanonicalId": "21eed4fc8c924496b16c6ddaa32f3d01",
+              "previousStanding": {
+                "semantic": "Historical reference — RAD correspondence unresolved",
+                "currentness": "historical_reference"
+              },
+              "historicalIdentityReserved": true,
+              "reason": "Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter."
+            }
+          },
+          "relevantSemanticRelationships": [
+            {
+              "identifier": "id-e237b8d33a165a5bb923ef137c785929",
+              "archimateType": "Composition",
+              "source": "id-c63acb99ac005ecab94e0f8b31ce007f",
+              "target": "id-5652c0a06d095f17a63623a23b6a3e8a",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-e237b8d33a165a5bb923ef137c785929\"]"
+              },
+              "sourceCanonicalId": "a98424298dac46d8b2ddd109d928270a",
+              "targetCanonicalId": "bab3d0ab6eb748978b962ea20fb31640",
+              "sourceLabel": "[CT1] Health Service Operations Enablement",
+              "targetLabel": "[CT2] Credential Management"
+            },
+            {
+              "identifier": "id-446916ec15145138864bff035450ebdc",
+              "archimateType": "Composition",
+              "source": "id-5652c0a06d095f17a63623a23b6a3e8a",
+              "target": "id-816cf3f31494502287046e5fd304a2f1",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-446916ec15145138864bff035450ebdc\"]"
+              },
+              "sourceCanonicalId": "bab3d0ab6eb748978b962ea20fb31640",
+              "targetCanonicalId": "0115ed50867d468a95c0fafa1c5d79e2",
+              "sourceLabel": "[CT2] Credential Management",
+              "targetLabel": "[CT3] Clinical Service Credential Definition Management"
+            }
+          ],
+          "classificationBasis": "Existing historical folder/self-reference collapsed; original capability context retained",
+          "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+        }
+      ]
+    },
+    {
+      "localName": "diagnostic report distribution",
+      "classification": "Different CT/Feature contexts; name similarity alone supplies no identity or duplication adjudication.",
+      "elements": [
+        {
+          "canonicalId": "c8fdba3d18e143acb2bd77ae828afd4b",
+          "displayedName": "[CT3] Diagnostic Report Distribution",
+          "displayName": "[CT3] Diagnostic Report Distribution",
+          "friendlyName": "DiagnosticTherapeuticAndClinicalSupportServices.DiagnosticSupportProvision.DiagnosticReportDistribution",
+          "canonicalName": "CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-DiagnosticSupportProvision.CT3-DiagnosticReportDistribution",
+          "nativeType": "Capability",
+          "specialization": null,
+          "coordinate": "II.1.2.11.1.3",
+          "path": [
+            "Strategy",
+            "Capabilities",
+            "Business Capabilities",
+            "[CT1] Diagnostic, Therapeutic & Clinical Support Services",
+            "[CT2] Diagnostic Support Provision",
+            "[CT3] Diagnostic Report Distribution"
+          ],
+          "scope": "Business Capabilities",
+          "ctLevel": "CT3",
+          "standing": {
+            "semantic": "Canonical",
+            "currentness": "current",
+            "placement_status": "Established",
+            "structural_id_status": "Established",
+            "name_status": "Canonical",
+            "ancestry_status": "established"
+          },
+          "currentness": "current",
+          "parentOwner": {
+            "key": "business-capability:diagnostic-report-distribution",
+            "parent_key": "business-capability:diagnostic-support-provision",
+            "owner_key": null,
+            "responsibility_owner_key": null,
+            "parent_identifier": "HCM-BC-diagnostic-support-provision",
+            "owner_identifier": null
+          },
+          "snapshotPresent": true,
+          "navigationParentCoordinate": "II.1.2.11.1",
+          "navigationParentCanonicalId": "827910cf74ae4061afbda52dde3da106",
+          "navigationParentLabel": "[CT2] Diagnostic Support Provision",
+          "originalOrganisation": [
+            [
+              "Strategy",
+              "Business Layer",
+              "Business Capabilities",
+              "Diagnostic, Therapeutic & Clinical Support Services",
+              "Diagnostic Support Provision",
+              "Diagnostic Report Distribution",
+              "[CT3] Diagnostic Report Distribution"
+            ]
+          ],
+          "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/c8fdba3d18e143acb2bd77ae828afd4b.md",
+          "sourceBindings": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/57"
+            }
+          ],
+          "provenance": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/57",
+              "role": "governed source resource",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+              "sourceKey": "business-capability:diagnostic-report-distribution"
+            },
+            {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "selector": "element[@identifier=\"id-d5b1d7f0358b5ce095b5a56df9c07714\"]",
+              "role": "accepted representation binding and presentation; not an additional architecture source",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+            },
+            {
+              "source": "docs/markdown/02-strategy/capabilities/business-capabilities.md",
+              "selector": "ct2--diagnostic-support-provision",
+              "role": "original source locator; recorded edition",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "captureSource": "docs/markdown/governance/baseline/architecture.json",
+              "recordedSourceSha256": "27d86f8a5efe789083c464cf3f5026d6ddab86ad8d207d94dd57807fd9cdd2c0"
+            },
+            {
+              "source": "docs/markdown/02-strategy/capabilities/business-capabilities.md",
+              "selector": "ct2--diagnostic-support-provision",
+              "role": "original source locator; recorded edition",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "captureSource": "docs/markdown/governance/baseline/architecture.json",
+              "recordedSourceSha256": "27d86f8a5efe789083c464cf3f5026d6ddab86ad8d207d94dd57807fd9cdd2c0"
+            },
+            {
+              "source": "docs/markdown/02-strategy/capabilities/business-capabilities.md",
+              "selector": "ct2--diagnostic-support-provision",
+              "role": "original source locator; recorded edition",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "captureSource": "docs/markdown/governance/baseline/architecture.json",
+              "recordedSourceSha256": "27d86f8a5efe789083c464cf3f5026d6ddab86ad8d207d94dd57807fd9cdd2c0"
+            }
+          ],
+          "identity": {
+            "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+            "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+            "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+          },
+          "relevantSemanticRelationships": [
+            {
+              "identifier": "id-694e828bbd1e567c91bd707232ec1666",
+              "archimateType": "Composition",
+              "source": "id-57698404473a5412bc6bb5f1e7f0230d",
+              "target": "id-d5b1d7f0358b5ce095b5a56df9c07714",
+              "standing": {
+                "v0.2 / Assertion Status": "established",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-694e828bbd1e567c91bd707232ec1666\"]"
+              },
+              "sourceCanonicalId": "827910cf74ae4061afbda52dde3da106",
+              "targetCanonicalId": "c8fdba3d18e143acb2bd77ae828afd4b",
+              "sourceLabel": "[CT2] Diagnostic Support Provision",
+              "targetLabel": "[CT3] Diagnostic Report Distribution"
+            }
+          ],
+          "classificationBasis": "Existing governed capability parent/owner metadata; all independent placement/ancestry qualifications retained",
+          "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+        },
+        {
+          "canonicalId": "3813b3b5175e461ba74805d8fa2aa648",
+          "displayedName": "[Feature] Diagnostic Report Distribution",
+          "displayName": "[Feature] Diagnostic Report Distribution",
+          "friendlyName": "CareAdministrationEnablement.DiagnosticAdministration.DiagnosticWorkflowManagement.DiagnosticReportDistribution",
+          "canonicalName": "CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.CT3-BEC-DiagnosticWorkflowManagement.FEAT-DiagnosticReportDistribution",
+          "nativeType": "Capability",
+          "specialization": "Feature",
+          "coordinate": "II.1.3.1.10.2.2",
+          "path": [
+            "Strategy",
+            "Capabilities",
+            "Business Enabling Capabilities",
+            "[CT1] Care Administration Enablement",
+            "[CT2] Diagnostic Administration",
+            "[CT3] Diagnostic Workflow Management",
+            "[Feature] Diagnostic Report Distribution"
+          ],
+          "scope": "Business Enabling Capabilities",
+          "ctLevel": "Feature",
+          "standing": {
+            "semantic": "Canonical",
+            "currentness": "current",
+            "placement_status": "Proposed",
+            "structural_id_status": "Proposed",
+            "name_status": "Canonical",
+            "ancestry_status": "proposed"
+          },
+          "currentness": "current",
+          "parentOwner": {
+            "key": "feature:diagnostic-report-distribution",
+            "parent_key": null,
+            "owner_key": "reviewed:bec-diagnostic-workflow-management",
+            "responsibility_owner_key": "capability:diagnostic-administration",
+            "parent_identifier": null,
+            "owner_identifier": "HCM-BEC-reviewed-diagnostic-workflow-management"
+          },
+          "snapshotPresent": true,
+          "navigationParentCoordinate": "II.1.3.1.10.2",
+          "navigationParentCanonicalId": "270ed0e32b294458aa52cf57df7e55db",
+          "navigationParentLabel": "[CT3] Diagnostic Workflow Management",
+          "originalOrganisation": [
+            [
+              "Strategy",
+              "Business Layer",
+              "Business Enabling Capabilities",
+              "Unresolved Feature Ancestry",
+              "Diagnostic Report Distribution",
+              "[Feature] Diagnostic Report Distribution"
+            ]
+          ],
+          "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/feature/3813b3b5175e461ba74805d8fa2aa648.md",
+          "sourceBindings": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/264"
+            }
+          ],
+          "provenance": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/264",
+              "role": "governed source resource",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+              "sourceKey": "feature:diagnostic-report-distribution"
+            },
+            {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "selector": "element[@identifier=\"id-6ffaf46cf2715eb28cd85d28c24c7d0a\"]",
+              "role": "accepted representation binding and presentation; not an additional architecture source",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+            },
+            {
+              "source": "docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md",
+              "selector": "6-diagnostic-administration-harmonia-core",
+              "role": "original source locator; recorded edition",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "captureSource": "docs/markdown/governance/baseline/architecture.json",
+              "recordedSourceSha256": "8a7229be3343e027ab87c5421dec514d3803b80da254157be4e9d8c981010d49"
+            }
+          ],
+          "identity": {
+            "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+            "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+            "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+          },
+          "relevantSemanticRelationships": [
+            {
+              "identifier": "id-d0857ed19c165d6380498df32f97ad2b",
+              "archimateType": "Realization",
+              "source": "id-604fb85e248f5b05a72bbcdbb49c7df2",
+              "target": "id-6ffaf46cf2715eb28cd85d28c24c7d0a",
+              "standing": {
+                "v0.2 / Assertion Status": "established",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-d0857ed19c165d6380498df32f97ad2b\"]"
+              },
+              "sourceCanonicalId": "ab6d94a9e06742aabe087f11d93f4334",
+              "targetCanonicalId": "3813b3b5175e461ba74805d8fa2aa648",
+              "sourceLabel": "Distribute Diagnostic Report",
+              "targetLabel": "[Feature] Diagnostic Report Distribution"
+            },
+            {
+              "identifier": "id-f7d9eed828ec55f0a9a769cf06800faa",
+              "archimateType": "Association",
+              "specialization": "Home",
+              "source": "id-604fb85e248f5b05a72bbcdbb49c7df2",
+              "target": "id-6ffaf46cf2715eb28cd85d28c24c7d0a",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-f7d9eed828ec55f0a9a769cf06800faa\"]"
+              },
+              "sourceCanonicalId": "ab6d94a9e06742aabe087f11d93f4334",
+              "targetCanonicalId": "3813b3b5175e461ba74805d8fa2aa648",
+              "sourceLabel": "Distribute Diagnostic Report",
+              "targetLabel": "[Feature] Diagnostic Report Distribution"
+            },
+            {
+              "identifier": "id-f1f2a2ff52c85b3ba0d443dbcabdda33",
+              "archimateType": "Association",
+              "specialization": "Home",
+              "source": "id-b1e74bef5b305c99902a16b70734e083",
+              "target": "id-6ffaf46cf2715eb28cd85d28c24c7d0a",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-f1f2a2ff52c85b3ba0d443dbcabdda33\"]"
+              },
+              "sourceCanonicalId": "86a9d1868c8c45788791a9436794531c",
+              "targetCanonicalId": "3813b3b5175e461ba74805d8fa2aa648",
+              "sourceLabel": "Diagnostic Result Delivery Service",
+              "targetLabel": "[Feature] Diagnostic Report Distribution"
+            },
+            {
+              "identifier": "id-120350ef51b8598483ee2db71371893d",
+              "archimateType": "Association",
+              "source": "id-b1e74bef5b305c99902a16b70734e083",
+              "target": "id-6ffaf46cf2715eb28cd85d28c24c7d0a",
+              "standing": {
+                "semantic": "established",
+                "currentness": "current"
+              },
+              "provenance": {
+                "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+                "selector": "/relationships/100",
+                "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+                "qualifiedSourceCanonicalId": "86a9d1868c8c45788791a9436794531c",
+                "sourceAssertion": {
+                  "from": "service:diagnostic-result-delivery-service",
+                  "sources": [
+                    {
+                      "anchor": "7-diagnostic-administration",
+                      "line": 124,
+                      "source": "sa",
+                      "text": " - *Exposed Service*: `Diagnostic Result Delivery Service` — Emits secure result notifications."
+                    }
+                  ],
+                  "status": "established",
+                  "to": "feature:diagnostic-report-distribution",
+                  "type": "associated_feature"
+                }
+              },
+              "sourceCanonicalId": "86a9d1868c8c45788791a9436794531c",
+              "targetCanonicalId": "3813b3b5175e461ba74805d8fa2aa648",
+              "sourceLabel": "Diagnostic Result Delivery Service",
+              "targetLabel": "[Feature] Diagnostic Report Distribution"
+            }
+          ],
+          "classificationBasis": "Existing governed capability parent/owner metadata; all independent placement/ancestry qualifications retained",
+          "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+        }
+      ]
+    },
+    {
+      "localName": "health information communication",
+      "classification": "Different CT/Feature contexts; name similarity alone supplies no identity or duplication adjudication.",
+      "elements": [
+        {
+          "canonicalId": "7925605bf60f4b288e826020409a09d9",
+          "displayedName": "[CT2] Health Information Communication",
+          "displayName": "[CT2] Health Information Communication",
+          "friendlyName": "SharedInformationAndCoordinationEnablement.HealthInformationCommunication",
+          "canonicalName": "CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationCommunication",
+          "nativeType": "Capability",
+          "specialization": null,
+          "coordinate": "II.1.3.15.7",
+          "path": [
+            "Strategy",
+            "Capabilities",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Health Information Communication"
+          ],
+          "scope": "Business Enabling Capabilities",
+          "ctLevel": "CT2",
+          "standing": {
+            "semantic": "Proposed",
+            "currentness": "current",
+            "placement_status": "Proposed",
+            "structural_id_status": "Proposed",
+            "name_status": "Proposed",
+            "ancestry_status": "proposed"
+          },
+          "currentness": "current",
+          "parentOwner": {
+            "key": "reviewed:bec-health-information-communication",
+            "parent_key": "proposal:bec-governed-health-information-enablement",
+            "owner_key": null,
+            "responsibility_owner_key": null,
+            "parent_identifier": "HCM-BEC-governed-health-information-enablement",
+            "owner_identifier": null
+          },
+          "snapshotPresent": true,
+          "navigationParentCoordinate": "II.1.3.15",
+          "navigationParentCanonicalId": "0062fcacae1740988b6be2bda2aa1674",
+          "navigationParentLabel": "[CT1] Shared Information & Coordination Enablement",
+          "originalOrganisation": [
+            [
+              "Strategy",
+              "Business Layer",
+              "Business Enabling Capabilities",
+              "Shared Information & Coordination Enablement",
+              "Health Information Communication",
+              "[CT2] Health Information Communication"
+            ]
+          ],
+          "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/7925605bf60f4b288e826020409a09d9.md",
+          "sourceBindings": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/909"
+            }
+          ],
+          "provenance": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/909",
+              "role": "governed source resource",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+              "sourceKey": "reviewed:bec-health-information-communication"
+            },
+            {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "selector": "element[@identifier=\"id-5004f4019d1059108356b6ee7cfcaa8e\"]",
+              "role": "accepted representation binding and presentation; not an additional architecture source",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+            }
+          ],
+          "identity": {
+            "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+            "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+            "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+            "predecessorCanonicalIds": [
+              "bcefb378424842fcb6d703208c3f8773"
+            ]
+          },
+          "relevantSemanticRelationships": [
+            {
+              "identifier": "id-ed2061e01b1658c38afda6501b1ec374",
+              "archimateType": "Composition",
+              "source": "id-a5127b36f8a25c748c68426668173fcd",
+              "target": "id-5004f4019d1059108356b6ee7cfcaa8e",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-ed2061e01b1658c38afda6501b1ec374\"]"
+              },
+              "sourceCanonicalId": "0062fcacae1740988b6be2bda2aa1674",
+              "targetCanonicalId": "7925605bf60f4b288e826020409a09d9",
+              "sourceLabel": "[CT1] Shared Information & Coordination Enablement",
+              "targetLabel": "[CT2] Health Information Communication"
+            },
+            {
+              "identifier": "id-1d6da7e72fed5635a6829ac7ecf17067",
+              "archimateType": "Composition",
+              "source": "id-5004f4019d1059108356b6ee7cfcaa8e",
+              "target": "id-ac3af58b121552608850d847992c8afa",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-1d6da7e72fed5635a6829ac7ecf17067\"]"
+              },
+              "sourceCanonicalId": "7925605bf60f4b288e826020409a09d9",
+              "targetCanonicalId": "9d172cd511b742499c4e7c23f6630a35",
+              "sourceLabel": "[CT2] Health Information Communication",
+              "targetLabel": "[CT3] Patient Notification Services"
+            },
+            {
+              "identifier": "id-646c7d1460a75e23aae69f7da219969e",
+              "archimateType": "Composition",
+              "source": "id-5004f4019d1059108356b6ee7cfcaa8e",
+              "target": "id-6f0e40c416e15dfa8c70a216c1a2bb6f",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-646c7d1460a75e23aae69f7da219969e\"]"
+              },
+              "sourceCanonicalId": "7925605bf60f4b288e826020409a09d9",
+              "targetCanonicalId": "ba8ce1d54ace4bc9aa3521dd954f36cb",
+              "sourceLabel": "[CT2] Health Information Communication",
+              "targetLabel": "[CT3] Patient Task Communication Services"
+            },
+            {
+              "identifier": "id-33bb89d1ee40549da4e5a01d464b917f",
+              "archimateType": "Composition",
+              "source": "id-5004f4019d1059108356b6ee7cfcaa8e",
+              "target": "id-cb1d28c1e8135785a123e050fa77210a",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-33bb89d1ee40549da4e5a01d464b917f\"]"
+              },
+              "sourceCanonicalId": "7925605bf60f4b288e826020409a09d9",
+              "targetCanonicalId": "808e5a3c3f6b496fa329962088f0bee0",
+              "sourceLabel": "[CT2] Health Information Communication",
+              "targetLabel": "[CT3] Patient Health Library Access"
+            },
+            {
+              "identifier": "id-a017b9c0e673560ab71059a2f016d512",
+              "archimateType": "Composition",
+              "source": "id-5004f4019d1059108356b6ee7cfcaa8e",
+              "target": "id-446513b2b23f594f80789cda9185d637",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-a017b9c0e673560ab71059a2f016d512\"]"
+              },
+              "sourceCanonicalId": "7925605bf60f4b288e826020409a09d9",
+              "targetCanonicalId": "d4956cab8b2b46c396899949c9486a1c",
+              "sourceLabel": "[CT2] Health Information Communication",
+              "targetLabel": "[CT3] Patient Self-Service"
+            }
+          ],
+          "classificationBasis": "Existing governed capability parent/owner metadata; all independent placement/ancestry qualifications retained",
+          "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+        },
+        {
+          "canonicalId": "9794b2aff43443b495a19aefe0efa67b",
+          "displayedName": "[CT3] Health Information Communication",
+          "displayName": "[CT3] Health Information Communication",
+          "friendlyName": "SharedInformationAndCoordinationEnablement.HealthInformationConnectivityEnablement.HealthInformationCommunication",
+          "canonicalName": "CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationConnectivityEnablement.CT3-BEC-HealthInformationCommunication",
+          "nativeType": "Capability",
+          "specialization": null,
+          "coordinate": "II.1.3.15.8.1",
+          "path": [
+            "Strategy",
+            "Capabilities",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Health Information Connectivity Enablement",
+            "[CT3] Health Information Communication"
+          ],
+          "scope": "Business Enabling Capabilities",
+          "ctLevel": "CT3",
+          "standing": {
+            "semantic": "Canonical",
+            "currentness": "pending_adjudication",
+            "placement_status": "Proposed",
+            "structural_id_status": "Proposed",
+            "name_status": "Canonical",
+            "ancestry_status": "proposed"
+          },
+          "currentness": "pending_adjudication",
+          "parentOwner": {
+            "key": "capability:health-information-communication",
+            "parent_key": "proposal:bec-health-information-connectivity-enablement",
+            "owner_key": null,
+            "responsibility_owner_key": null,
+            "parent_identifier": "HCM-BEC-health-information-connectivity-enablement",
+            "owner_identifier": null
+          },
+          "snapshotPresent": true,
+          "navigationParentCoordinate": "II.1.3.15.8",
+          "navigationParentCanonicalId": "6a1030483dfc4ae6af6998b587129d1c",
+          "navigationParentLabel": "[CT2] Health Information Connectivity Enablement",
+          "originalOrganisation": [
+            [
+              "Strategy",
+              "Business Layer",
+              "Business Enabling Capabilities",
+              "Pending Adjudication",
+              "[CT3] Health Information Communication"
+            ]
+          ],
+          "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/9794b2aff43443b495a19aefe0efa67b.md",
+          "sourceBindings": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/365"
+            }
+          ],
+          "provenance": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/365",
+              "role": "governed source resource",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+              "sourceKey": "capability:health-information-communication"
+            },
+            {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "selector": "element[@identifier=\"id-09019f6c980e57d1a11691eb4bf9f8eb\"]",
+              "role": "accepted representation binding and presentation; not an additional architecture source",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+            },
+            {
+              "source": "docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md",
+              "selector": "view-5-intrinsic--shared-enablement",
+              "role": "original source locator; recorded edition",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "captureSource": "docs/markdown/governance/baseline/architecture.json",
+              "recordedSourceSha256": "8a7229be3343e027ab87c5421dec514d3803b80da254157be4e9d8c981010d49"
+            },
+            {
+              "source": "docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md",
+              "selector": "4-health-information-communication-harmonia-core",
+              "role": "original source locator; recorded edition",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "captureSource": "docs/markdown/governance/baseline/architecture.json",
+              "recordedSourceSha256": "8a7229be3343e027ab87c5421dec514d3803b80da254157be4e9d8c981010d49"
+            },
+            {
+              "source": "docs/markdown/03-business-architecture/behaviours/05-intrinsic-enablement.md",
+              "selector": "24-health-information-communication",
+              "role": "original source locator; recorded edition",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "captureSource": "docs/markdown/governance/baseline/architecture.json",
+              "recordedSourceSha256": "80c699f9a5903c280c8a05fc87062b24a1c6ea2dea8843a92c5b53281d37ac8a"
+            },
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "source-qualified relationship assertions whose from-key binds to canonicalId 9794b2aff43443b495a19aefe0efa67b",
+              "role": "Preserved non-native predicates, not new graph relationships",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0"
+            },
+            {
+              "source": "docs/markdown/03-business-architecture/behaviours/05-intrinsic-enablement.md",
+              "selector": "entry lines 92-92",
+              "role": "Exact source-locator contribution; original qualifications retained",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0"
+            }
+          ],
+          "identity": {
+            "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+            "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+            "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+          },
+          "relevantSemanticRelationships": [
+            {
+              "identifier": "id-31ab3b73069a580ca0ea05a8061ad04d",
+              "archimateType": "Serving",
+              "source": "id-dbd66e69788450649e184966aa724797",
+              "target": "id-09019f6c980e57d1a11691eb4bf9f8eb",
+              "standing": {
+                "semantic": "Proposed",
+                "currentness": "preserved historical assertion"
+              },
+              "provenance": {
+                "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+                "selector": "/relationships/792",
+                "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+                "qualifiedSourceCanonicalId": "9794b2aff43443b495a19aefe0efa67b",
+                "sourceAssertion": {
+                  "from": "capability:health-information-communication",
+                  "provenance": {
+                    "authority": "Proposed only; cited source standing is not inherited",
+                    "derivation": "Semantic responsibility analysis; no authority transfer",
+                    "evidence": [
+                      {
+                        "line": 10,
+                        "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                        "standing": "Current corpus evidence; does not promote the derived assertion",
+                        "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                      }
+                    ],
+                    "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                  },
+                  "rationale": "Addressed exchange, syndication and notifications require explicit contract/delivery standing and resilient observation rather than equating transport acknowledgement with outcome.",
+                  "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                  "sources": [],
+                  "status": "Proposed",
+                  "supporting_responsibility_elements": [
+                    "feature:standards-based-boundary-exchange",
+                    "function:mediate-standards-based-health-information-communication",
+                    "service:standards-communication-gateway-service"
+                  ],
+                  "to": "enterprise:ec-08",
+                  "type": "enterprise_enabled_by"
+                }
+              },
+              "sourceCanonicalId": "0f2e5222874949d8b0cce234941ecb20",
+              "targetCanonicalId": "9794b2aff43443b495a19aefe0efa67b",
+              "sourceLabel": "[CT2] Interoperability & Exchange",
+              "targetLabel": "[CT3] Health Information Communication"
+            },
+            {
+              "identifier": "id-c667fbe962995c15a8dfd15532099be2",
+              "archimateType": "Composition",
+              "source": "id-10a8917a66475db1b276741d0efd840f",
+              "target": "id-09019f6c980e57d1a11691eb4bf9f8eb",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "preserved historical assertion",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-c667fbe962995c15a8dfd15532099be2\"]"
+              },
+              "sourceCanonicalId": "6a1030483dfc4ae6af6998b587129d1c",
+              "targetCanonicalId": "9794b2aff43443b495a19aefe0efa67b",
+              "sourceLabel": "[CT2] Health Information Connectivity Enablement",
+              "targetLabel": "[CT3] Health Information Communication"
+            },
+            {
+              "identifier": "id-bae45f467c2557cf8135b62511dab9d0",
+              "archimateType": "Serving",
+              "source": "id-9bbd142f818e50d39a3d0429f74b72b4",
+              "target": "id-09019f6c980e57d1a11691eb4bf9f8eb",
+              "standing": {
+                "semantic": "Proposed",
+                "currentness": "preserved historical assertion"
+              },
+              "provenance": {
+                "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+                "selector": "/relationships/794",
+                "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+                "qualifiedSourceCanonicalId": "9794b2aff43443b495a19aefe0efa67b",
+                "sourceAssertion": {
+                  "from": "capability:health-information-communication",
+                  "provenance": {
+                    "authority": "Proposed only; cited source standing is not inherited",
+                    "derivation": "Semantic responsibility analysis; no authority transfer",
+                    "evidence": [
+                      {
+                        "line": 10,
+                        "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                        "standing": "Current corpus evidence; does not promote the derived assertion",
+                        "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                      }
+                    ],
+                    "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                  },
+                  "rationale": "Addressed exchange, syndication and notifications require explicit contract/delivery standing and resilient observation rather than equating transport acknowledgement with outcome.",
+                  "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                  "sources": [],
+                  "status": "Proposed",
+                  "supporting_responsibility_elements": [
+                    "feature:standards-based-boundary-exchange",
+                    "function:mediate-standards-based-health-information-communication",
+                    "service:standards-communication-gateway-service"
+                  ],
+                  "to": "enterprise:ec-12",
+                  "type": "enterprise_enabled_by"
+                }
+              },
+              "sourceCanonicalId": "938cd44380ab431fa8dae13c702d83c1",
+              "targetCanonicalId": "9794b2aff43443b495a19aefe0efa67b",
+              "sourceLabel": "[CT2] Operational Assurance",
+              "targetLabel": "[CT3] Health Information Communication"
+            },
+            {
+              "identifier": "id-b670883686b5586f80a64cbcce9361d8",
+              "archimateType": "Serving",
+              "source": "id-09019f6c980e57d1a11691eb4bf9f8eb",
+              "target": "id-2134969d36665649a7d61fcea20bc15f",
+              "standing": {
+                "semantic": "Proposed",
+                "currentness": "preserved historical assertion"
+              },
+              "provenance": {
+                "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+                "selector": "/relationships/694",
+                "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+                "qualifiedSourceCanonicalId": "baad6b6117084311acbf5fc4044dfabf",
+                "sourceAssertion": {
+                  "from": "business-capability:health-information-exchange",
+                  "provenance": {
+                    "authority": "Proposed only; cited source standing is not inherited",
+                    "derivation": "Semantic responsibility analysis; no authority transfer",
+                    "evidence": [
+                      {
+                        "line": 10,
+                        "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                        "standing": "Current corpus evidence; does not promote the derived assertion",
+                        "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                      }
+                    ],
+                    "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                  },
+                  "rationale": "Harmonia coordinates bounded information exchange under standards contracts; organisational sharing agreements and domain content retain their authority.",
+                  "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                  "sources": [],
+                  "status": "Proposed",
+                  "supporting_responsibility_elements": [
+                    "feature:standards-based-boundary-exchange",
+                    "function:mediate-standards-based-health-information-communication",
+                    "service:standards-communication-gateway-service"
+                  ],
+                  "to": "capability:health-information-communication",
+                  "type": "enabled_by"
+                }
+              },
+              "sourceCanonicalId": "9794b2aff43443b495a19aefe0efa67b",
+              "targetCanonicalId": "baad6b6117084311acbf5fc4044dfabf",
+              "sourceLabel": "[CT3] Health Information Communication",
+              "targetLabel": "[CT2] Health Information Exchange"
+            },
+            {
+              "identifier": "id-3c83efd41a1256f8bcd2bd39ef71ee31",
+              "archimateType": "Serving",
+              "source": "id-770ebb3e3bdc5f2bbe77b2bfd55bd74d",
+              "target": "id-09019f6c980e57d1a11691eb4bf9f8eb",
+              "standing": {
+                "semantic": "Proposed",
+                "currentness": "preserved historical assertion"
+              },
+              "provenance": {
+                "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+                "selector": "/relationships/793",
+                "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+                "qualifiedSourceCanonicalId": "9794b2aff43443b495a19aefe0efa67b",
+                "sourceAssertion": {
+                  "from": "capability:health-information-communication",
+                  "provenance": {
+                    "authority": "Proposed only; cited source standing is not inherited",
+                    "derivation": "Semantic responsibility analysis; no authority transfer",
+                    "evidence": [
+                      {
+                        "line": 10,
+                        "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                        "standing": "Current corpus evidence; does not promote the derived assertion",
+                        "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                      }
+                    ],
+                    "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                  },
+                  "rationale": "Addressed exchange, syndication and notifications require explicit contract/delivery standing and resilient observation rather than equating transport acknowledgement with outcome.",
+                  "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                  "sources": [],
+                  "status": "Proposed",
+                  "supporting_responsibility_elements": [
+                    "feature:standards-based-boundary-exchange",
+                    "function:mediate-standards-based-health-information-communication",
+                    "service:standards-communication-gateway-service"
+                  ],
+                  "to": "enterprise:ec-09",
+                  "type": "enterprise_enabled_by"
+                }
+              },
+              "sourceCanonicalId": "b768b129971e4bf5bccc03d33d2fcb4e",
+              "targetCanonicalId": "9794b2aff43443b495a19aefe0efa67b",
+              "sourceLabel": "[CT2] Event & Subscription",
+              "targetLabel": "[CT3] Health Information Communication"
+            }
+          ],
+          "classificationBasis": "Existing governed capability parent/owner metadata; all independent placement/ancestry qualifications retained",
+          "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+        },
+        {
+          "canonicalId": "bcefb378424842fcb6d703208c3f8773",
+          "displayedName": "[CT2] Health Information Communication",
+          "displayName": "[CT2] Health Information Communication",
+          "friendlyName": "SharedInformationAndCoordinationEnablement.HealthInformationCommunication",
+          "canonicalName": "CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationCommunication",
+          "nativeType": "Capability",
+          "specialization": null,
+          "coordinate": "II.1.3.16.6",
+          "path": [
+            "Strategy",
+            "Capabilities",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Health Information Communication"
+          ],
+          "scope": "Business Enabling Capabilities",
+          "ctLevel": "CT2",
+          "standing": {
+            "semantic": "Superseded historical identity — direct correspondence",
+            "currentness": "superseded"
+          },
+          "currentness": "superseded",
+          "parentOwner": {
+            "key": null,
+            "parent_key": null,
+            "owner_key": null,
+            "responsibility_owner_key": null,
+            "parent_identifier": null,
+            "owner_identifier": null
+          },
+          "snapshotPresent": false,
+          "navigationParentCoordinate": "II.1.3.16",
+          "navigationParentCanonicalId": "eeabb9c3c526404cbe4302906560fa7e",
+          "navigationParentLabel": "[CT1] Shared Information & Coordination Enablement",
+          "originalOrganisation": [
+            [
+              "Strategy",
+              "Unreconciled 1.0.4 Reference",
+              "Business Enabling Capabilities",
+              "Shared Information & Coordination Enablement",
+              "Health Information Communication",
+              "[CT2] Health Information Communication"
+            ]
+          ],
+          "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/bcefb378424842fcb6d703208c3f8773.md",
+          "sourceBindings": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/historical_reference_elements/166"
+            }
+          ],
+          "provenance": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/historical_reference_elements/166",
+              "role": "governed source resource",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+              "sourceKey": "historical-reference:id-bfa17ee995d254028c02831a58562c6f"
+            },
+            {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "selector": "element[@identifier=\"id-bfa17ee995d254028c02831a58562c6f\"]",
+              "role": "accepted representation binding and presentation; not an additional architecture source",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+            }
+          ],
+          "identity": {
+            "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+            "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+            "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+            "correspondence": {
+              "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+              "disposition": "direct correspondence",
+              "successorCanonicalId": "7925605bf60f4b288e826020409a09d9",
+              "previousStanding": {
+                "semantic": "Historical reference — RAD correspondence unresolved",
+                "currentness": "historical_reference"
+              },
+              "historicalIdentityReserved": true,
+              "reason": "Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter."
+            }
+          },
+          "relevantSemanticRelationships": [
+            {
+              "identifier": "id-35eaa0e77fc354eba8ebf40e8c3ee741",
+              "archimateType": "Composition",
+              "source": "id-bfa17ee995d254028c02831a58562c6f",
+              "target": "id-78160df0e80a58b4a003b6c508b71b1c",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-35eaa0e77fc354eba8ebf40e8c3ee741\"]"
+              },
+              "sourceCanonicalId": "bcefb378424842fcb6d703208c3f8773",
+              "targetCanonicalId": "60f427e6b5764757b909624085a2af89",
+              "sourceLabel": "[CT2] Health Information Communication",
+              "targetLabel": "[CT3] Patient Self-Service"
+            },
+            {
+              "identifier": "id-08d4855d160c5afa9d1d3b6dada6e91b",
+              "archimateType": "Composition",
+              "source": "id-bfa17ee995d254028c02831a58562c6f",
+              "target": "id-f381159ee8b85830a9e8683ddbe7e4bc",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-08d4855d160c5afa9d1d3b6dada6e91b\"]"
+              },
+              "sourceCanonicalId": "bcefb378424842fcb6d703208c3f8773",
+              "targetCanonicalId": "b132224cfa6f435f8f2a66a3878d6df6",
+              "sourceLabel": "[CT2] Health Information Communication",
+              "targetLabel": "[CT3] Patient Health Library Access"
+            },
+            {
+              "identifier": "id-a77d9f6109ab55c79f006feffc1bd3c4",
+              "archimateType": "Composition",
+              "source": "id-bfa17ee995d254028c02831a58562c6f",
+              "target": "id-c48eff1ae94a567286b9a42776d49b3e",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-a77d9f6109ab55c79f006feffc1bd3c4\"]"
+              },
+              "sourceCanonicalId": "bcefb378424842fcb6d703208c3f8773",
+              "targetCanonicalId": "0914f2bb267449e282e9ae0f7407d9fe",
+              "sourceLabel": "[CT2] Health Information Communication",
+              "targetLabel": "[CT3] Patient Task Communication Services"
+            },
+            {
+              "identifier": "id-ee4438db29385c71b56d22f46eb9d7fe",
+              "archimateType": "Composition",
+              "source": "id-bfa17ee995d254028c02831a58562c6f",
+              "target": "id-6d55717492415c51ba369e6577d479d2",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-ee4438db29385c71b56d22f46eb9d7fe\"]"
+              },
+              "sourceCanonicalId": "bcefb378424842fcb6d703208c3f8773",
+              "targetCanonicalId": "35c5be472bf2433fbbde9646d87aefb3",
+              "sourceLabel": "[CT2] Health Information Communication",
+              "targetLabel": "[CT3] Patient Notification Services"
+            },
+            {
+              "identifier": "id-22d2e112961a5e33a4b39b77006191a2",
+              "archimateType": "Composition",
+              "source": "id-f97db18cfd4854abbe14020229fac298",
+              "target": "id-bfa17ee995d254028c02831a58562c6f",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-22d2e112961a5e33a4b39b77006191a2\"]"
+              },
+              "sourceCanonicalId": "eeabb9c3c526404cbe4302906560fa7e",
+              "targetCanonicalId": "bcefb378424842fcb6d703208c3f8773",
+              "sourceLabel": "[CT1] Shared Information & Coordination Enablement",
+              "targetLabel": "[CT2] Health Information Communication"
+            }
+          ],
+          "classificationBasis": "Existing historical folder/self-reference collapsed; original capability context retained",
+          "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+        }
+      ]
+    },
+    {
+      "localName": "workflow & activity coordination",
+      "classification": "Different CT/Feature contexts; name similarity alone supplies no identity or duplication adjudication.",
+      "elements": [
+        {
+          "canonicalId": "4422d865978c4353ad575759c6026d27",
+          "displayedName": "[CT2] Workflow & Activity Coordination",
+          "displayName": "[CT2] Workflow & Activity Coordination",
+          "friendlyName": "SharedInformationAndCoordinationEnablement.WorkflowAndActivityCoordination",
+          "canonicalName": "CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-WorkflowAndActivityCoordination",
+          "nativeType": "Capability",
+          "specialization": null,
+          "coordinate": "II.1.3.16.14",
+          "path": [
+            "Strategy",
+            "Capabilities",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Workflow & Activity Coordination"
+          ],
+          "scope": "Business Enabling Capabilities",
+          "ctLevel": "CT2",
+          "standing": {
+            "semantic": "Superseded historical identity — direct correspondence",
+            "currentness": "superseded"
+          },
+          "currentness": "superseded",
+          "parentOwner": {
+            "key": null,
+            "parent_key": null,
+            "owner_key": null,
+            "responsibility_owner_key": null,
+            "parent_identifier": null,
+            "owner_identifier": null
+          },
+          "snapshotPresent": false,
+          "navigationParentCoordinate": "II.1.3.16",
+          "navigationParentCanonicalId": "eeabb9c3c526404cbe4302906560fa7e",
+          "navigationParentLabel": "[CT1] Shared Information & Coordination Enablement",
+          "originalOrganisation": [
+            [
+              "Strategy",
+              "Unreconciled 1.0.4 Reference",
+              "Business Enabling Capabilities",
+              "Shared Information & Coordination Enablement",
+              "Workflow & Activity Coordination",
+              "[CT2] Workflow & Activity Coordination"
+            ]
+          ],
+          "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/4422d865978c4353ad575759c6026d27.md",
+          "sourceBindings": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/historical_reference_elements/190"
+            }
+          ],
+          "provenance": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/historical_reference_elements/190",
+              "role": "governed source resource",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+              "sourceKey": "historical-reference:id-f32f886a9494596eacc820ad92af6056"
+            },
+            {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "selector": "element[@identifier=\"id-f32f886a9494596eacc820ad92af6056\"]",
+              "role": "accepted representation binding and presentation; not an additional architecture source",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+            }
+          ],
+          "identity": {
+            "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+            "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+            "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+            "correspondence": {
+              "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+              "disposition": "direct correspondence",
+              "successorCanonicalId": "c724f3d38bfa4567983a11ad22095d61",
+              "previousStanding": {
+                "semantic": "Historical reference — RAD correspondence unresolved",
+                "currentness": "historical_reference"
+              },
+              "historicalIdentityReserved": true,
+              "reason": "Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter."
+            }
+          },
+          "relevantSemanticRelationships": [
+            {
+              "identifier": "id-cc645796057b5ebea60b8ee6656e93a0",
+              "archimateType": "Composition",
+              "source": "id-f32f886a9494596eacc820ad92af6056",
+              "target": "id-72c554c466f95421a4f653686013794e",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-cc645796057b5ebea60b8ee6656e93a0\"]"
+              },
+              "sourceCanonicalId": "4422d865978c4353ad575759c6026d27",
+              "targetCanonicalId": "95985d244a234571892a9e9b4024f594",
+              "sourceLabel": "[CT2] Workflow & Activity Coordination",
+              "targetLabel": "[CT3] External Task Status & Traceability Management"
+            },
+            {
+              "identifier": "id-530bbcd88e165f29917a8ea15f0c2b04",
+              "archimateType": "Composition",
+              "source": "id-f32f886a9494596eacc820ad92af6056",
+              "target": "id-2c72d4bed06c54e68a70e97e880a44a6",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-530bbcd88e165f29917a8ea15f0c2b04\"]"
+              },
+              "sourceCanonicalId": "4422d865978c4353ad575759c6026d27",
+              "targetCanonicalId": "243ea93e7b7448fe97dc74f90bfc8946",
+              "sourceLabel": "[CT2] Workflow & Activity Coordination",
+              "targetLabel": "[CT3] Activity Routing Management"
+            },
+            {
+              "identifier": "id-67ba6724773a59a5ab423ada55b3d6f8",
+              "archimateType": "Composition",
+              "source": "id-f32f886a9494596eacc820ad92af6056",
+              "target": "id-ce3a63920278532ab5e4693638eda19f",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-67ba6724773a59a5ab423ada55b3d6f8\"]"
+              },
+              "sourceCanonicalId": "4422d865978c4353ad575759c6026d27",
+              "targetCanonicalId": "b4d14abf930a4230a7f5b93e9ce3df91",
+              "sourceLabel": "[CT2] Workflow & Activity Coordination",
+              "targetLabel": "[CT3] Work Boundary Governance"
+            },
+            {
+              "identifier": "id-15f6b49e398f505f98d1c476468276a6",
+              "archimateType": "Composition",
+              "source": "id-f32f886a9494596eacc820ad92af6056",
+              "target": "id-7fdefa4d9eb6509d8e0e286dcec9725c",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-15f6b49e398f505f98d1c476468276a6\"]"
+              },
+              "sourceCanonicalId": "4422d865978c4353ad575759c6026d27",
+              "targetCanonicalId": "32be309d65594592bac4d7b068def0d2",
+              "sourceLabel": "[CT2] Workflow & Activity Coordination",
+              "targetLabel": "[CT3] External Task Coordination"
+            },
+            {
+              "identifier": "id-deb1c398b4305b3a85b71cd3b6c119b7",
+              "archimateType": "Composition",
+              "source": "id-f97db18cfd4854abbe14020229fac298",
+              "target": "id-f32f886a9494596eacc820ad92af6056",
+              "standing": {
+                "source": "Retained accepted model assertion; original qualifications apply"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-deb1c398b4305b3a85b71cd3b6c119b7\"]"
+              },
+              "sourceCanonicalId": "eeabb9c3c526404cbe4302906560fa7e",
+              "targetCanonicalId": "4422d865978c4353ad575759c6026d27",
+              "sourceLabel": "[CT1] Shared Information & Coordination Enablement",
+              "targetLabel": "[CT2] Workflow & Activity Coordination"
+            }
+          ],
+          "classificationBasis": "Existing historical folder/self-reference collapsed; original capability context retained",
+          "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+        },
+        {
+          "canonicalId": "94c683c7588f475e973b58cb226345db",
+          "displayedName": "[CT3] Workflow & Activity Coordination",
+          "displayName": "[CT3] Workflow & Activity Coordination",
+          "friendlyName": "HumanCollaborationAndWorkEnablement.OperationalActivityAndTemporalEnablement.WorkflowAndActivityCoordination",
+          "canonicalName": "CT1-BEC-HumanCollaborationAndWorkEnablement.CT2-BEC-OperationalActivityAndTemporalEnablement.CT3-BEC-WorkflowAndActivityCoordination",
+          "nativeType": "Capability",
+          "specialization": null,
+          "coordinate": "II.1.3.12.2.3",
+          "path": [
+            "Strategy",
+            "Capabilities",
+            "Business Enabling Capabilities",
+            "[CT1] Human Collaboration & Work Enablement",
+            "[CT2] Operational Activity & Temporal Enablement",
+            "[CT3] Workflow & Activity Coordination"
+          ],
+          "scope": "Business Enabling Capabilities",
+          "ctLevel": "CT3",
+          "standing": {
+            "semantic": "Canonical",
+            "currentness": "pending_adjudication",
+            "placement_status": "Proposed",
+            "structural_id_status": "Proposed",
+            "name_status": "Canonical",
+            "ancestry_status": "proposed"
+          },
+          "currentness": "pending_adjudication",
+          "parentOwner": {
+            "key": "capability:workflow--activity-coordination",
+            "parent_key": "proposal:bec-operational-activity-temporal-enablement",
+            "owner_key": null,
+            "responsibility_owner_key": null,
+            "parent_identifier": "HCM-BEC-operational-activity-temporal-enablement",
+            "owner_identifier": null
+          },
+          "snapshotPresent": true,
+          "navigationParentCoordinate": "II.1.3.12.2",
+          "navigationParentCanonicalId": "ca96b2b2ff434854995711e403e95f6f",
+          "navigationParentLabel": "[CT2] Operational Activity & Temporal Enablement",
+          "originalOrganisation": [
+            [
+              "Strategy",
+              "Business Layer",
+              "Business Enabling Capabilities",
+              "Pending Adjudication",
+              "[CT3] Workflow & Activity Coordination"
+            ]
+          ],
+          "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/94c683c7588f475e973b58cb226345db.md",
+          "sourceBindings": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/370"
+            }
+          ],
+          "provenance": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/370",
+              "role": "governed source resource",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+              "sourceKey": "capability:workflow--activity-coordination"
+            },
+            {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "selector": "element[@identifier=\"id-fe75271f0234500982b272bc2ac9a9b9\"]",
+              "role": "accepted representation binding and presentation; not an additional architecture source",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+            },
+            {
+              "source": "docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md",
+              "selector": "view-5-intrinsic--shared-enablement",
+              "role": "original source locator; recorded edition",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "captureSource": "docs/markdown/governance/baseline/architecture.json",
+              "recordedSourceSha256": "8a7229be3343e027ab87c5421dec514d3803b80da254157be4e9d8c981010d49"
+            },
+            {
+              "source": "docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md",
+              "selector": "9-workflow--activity-coordination-harmonia-core",
+              "role": "original source locator; recorded edition",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "captureSource": "docs/markdown/governance/baseline/architecture.json",
+              "recordedSourceSha256": "8a7229be3343e027ab87c5421dec514d3803b80da254157be4e9d8c981010d49"
+            },
+            {
+              "source": "docs/markdown/03-business-architecture/behaviours/05-intrinsic-enablement.md",
+              "selector": "29-workflow--activity-coordination",
+              "role": "original source locator; recorded edition",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "captureSource": "docs/markdown/governance/baseline/architecture.json",
+              "recordedSourceSha256": "80c699f9a5903c280c8a05fc87062b24a1c6ea2dea8843a92c5b53281d37ac8a"
+            },
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "source-qualified relationship assertions whose from-key binds to canonicalId 94c683c7588f475e973b58cb226345db",
+              "role": "Preserved non-native predicates, not new graph relationships",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0"
+            },
+            {
+              "source": "docs/markdown/03-business-architecture/behaviours/05-intrinsic-enablement.md",
+              "selector": "entry lines 171-171",
+              "role": "Exact source-locator contribution; original qualifications retained",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0"
+            }
+          ],
+          "identity": {
+            "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+            "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+            "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+          },
+          "relevantSemanticRelationships": [
+            {
+              "identifier": "id-2bd57dc7cef75aea8b0af290eeb0a812",
+              "archimateType": "Serving",
+              "source": "id-dfb644fa99745553bf0ff980faf30c6d",
+              "target": "id-fe75271f0234500982b272bc2ac9a9b9",
+              "standing": {
+                "semantic": "Proposed",
+                "currentness": "preserved historical assertion"
+              },
+              "provenance": {
+                "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+                "selector": "/relationships/905",
+                "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+                "qualifiedSourceCanonicalId": "94c683c7588f475e973b58cb226345db",
+                "sourceAssertion": {
+                  "from": "capability:workflow--activity-coordination",
+                  "provenance": {
+                    "authority": "Proposed only; cited source standing is not inherited",
+                    "derivation": "Semantic responsibility analysis; no authority transfer",
+                    "evidence": [
+                      {
+                        "line": 10,
+                        "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                        "standing": "Current corpus evidence; does not promote the derived assertion",
+                        "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                      }
+                    ],
+                    "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                  },
+                  "rationale": "Defined fulfilment context and execution control recur in human work, human decisions and synthetic processing, while remaining different abilities.",
+                  "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                  "sources": [],
+                  "status": "Proposed",
+                  "supporting_responsibility_elements": [
+                    "feature:work-order-progression",
+                    "feature:to-do-decision--approval-coordination",
+                    "feature:synthetic-task-orchestration",
+                    "feature:workflow-timeout--escalation-oversight",
+                    "function:coordinate-work-order",
+                    "service:work-order-coordination-service"
+                  ],
+                  "to": "proposal:ec-governed-activity-execution-control",
+                  "type": "enterprise_enabled_by"
+                }
+              },
+              "sourceCanonicalId": "1e351cdfdc1045e384c3bd768eed8e80",
+              "targetCanonicalId": "94c683c7588f475e973b58cb226345db",
+              "sourceLabel": "[CT3] Governed Activity Execution Control",
+              "targetLabel": "[CT3] Workflow & Activity Coordination"
+            },
+            {
+              "identifier": "id-adc4b82cfeae5c33bcf699175831574d",
+              "archimateType": "Serving",
+              "source": "id-d066b2ac060b5d0fa4429dde7b2c73c2",
+              "target": "id-fe75271f0234500982b272bc2ac9a9b9",
+              "standing": {
+                "semantic": "Proposed",
+                "currentness": "preserved historical assertion"
+              },
+              "provenance": {
+                "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+                "selector": "/relationships/904",
+                "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+                "qualifiedSourceCanonicalId": "94c683c7588f475e973b58cb226345db",
+                "sourceAssertion": {
+                  "from": "capability:workflow--activity-coordination",
+                  "provenance": {
+                    "authority": "Proposed only; cited source standing is not inherited",
+                    "derivation": "Semantic responsibility analysis; no authority transfer",
+                    "evidence": [
+                      {
+                        "line": 10,
+                        "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                        "standing": "Current corpus evidence; does not promote the derived assertion",
+                        "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                      }
+                    ],
+                    "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                  },
+                  "rationale": "Defined fulfilment context and execution control recur in human work, human decisions and synthetic processing, while remaining different abilities.",
+                  "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                  "sources": [],
+                  "status": "Proposed",
+                  "supporting_responsibility_elements": [
+                    "feature:work-order-progression",
+                    "feature:to-do-decision--approval-coordination",
+                    "feature:synthetic-task-orchestration",
+                    "feature:workflow-timeout--escalation-oversight",
+                    "function:coordinate-work-order",
+                    "service:work-order-coordination-service"
+                  ],
+                  "to": "proposal:ec-operational-fulfilment-definition",
+                  "type": "enterprise_enabled_by"
+                }
+              },
+              "sourceCanonicalId": "2b52c0de17b146da962f303e99f90a4a",
+              "targetCanonicalId": "94c683c7588f475e973b58cb226345db",
+              "sourceLabel": "[CT3] Operational Fulfilment Definition",
+              "targetLabel": "[CT3] Workflow & Activity Coordination"
+            },
+            {
+              "identifier": "id-c447ff133b2d5e168e46814c3d86d847",
+              "archimateType": "Serving",
+              "source": "id-06e038737c5355edbc0591e08c594ab0",
+              "target": "id-fe75271f0234500982b272bc2ac9a9b9",
+              "standing": {
+                "semantic": "Proposed",
+                "currentness": "preserved historical assertion"
+              },
+              "provenance": {
+                "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+                "selector": "/relationships/864",
+                "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+                "qualifiedSourceCanonicalId": "94c683c7588f475e973b58cb226345db",
+                "sourceAssertion": {
+                  "from": "capability:workflow--activity-coordination",
+                  "provenance": {
+                    "authority": "Proposed only; cited source standing is not inherited",
+                    "derivation": "Semantic responsibility analysis; no authority transfer",
+                    "evidence": [
+                      {
+                        "line": 10,
+                        "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                        "standing": "Current corpus evidence; does not promote the derived assertion",
+                        "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                      }
+                    ],
+                    "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                  },
+                  "rationale": "Operational activity needs eligible progression, effect standing and recoverable execution under context; clinical work and source clearances retain their authority.",
+                  "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                  "sources": [],
+                  "status": "Proposed",
+                  "supporting_responsibility_elements": [
+                    "feature:work-order-progression",
+                    "feature:to-do-decision--approval-coordination",
+                    "feature:synthetic-task-orchestration",
+                    "feature:workflow-timeout--escalation-oversight",
+                    "function:coordinate-work-order",
+                    "service:work-order-coordination-service"
+                  ],
+                  "to": "enterprise:ec-02",
+                  "type": "enterprise_enabled_by"
+                }
+              },
+              "sourceCanonicalId": "3cfd3e56c23a4943bd1b476ec248ac49",
+              "targetCanonicalId": "94c683c7588f475e973b58cb226345db",
+              "sourceLabel": "[CT2] Context Management",
+              "targetLabel": "[CT3] Workflow & Activity Coordination"
+            },
+            {
+              "identifier": "id-a333c13bbf7b5387ab2a90206081b4f9",
+              "archimateType": "Serving",
+              "source": "id-9bbd142f818e50d39a3d0429f74b72b4",
+              "target": "id-fe75271f0234500982b272bc2ac9a9b9",
+              "standing": {
+                "semantic": "Proposed",
+                "currentness": "preserved historical assertion"
+              },
+              "provenance": {
+                "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+                "selector": "/relationships/866",
+                "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+                "qualifiedSourceCanonicalId": "94c683c7588f475e973b58cb226345db",
+                "sourceAssertion": {
+                  "from": "capability:workflow--activity-coordination",
+                  "provenance": {
+                    "authority": "Proposed only; cited source standing is not inherited",
+                    "derivation": "Semantic responsibility analysis; no authority transfer",
+                    "evidence": [
+                      {
+                        "line": 10,
+                        "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                        "standing": "Current corpus evidence; does not promote the derived assertion",
+                        "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                      }
+                    ],
+                    "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                  },
+                  "rationale": "Operational activity needs eligible progression, effect standing and recoverable execution under context; clinical work and source clearances retain their authority.",
+                  "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                  "sources": [],
+                  "status": "Proposed",
+                  "supporting_responsibility_elements": [
+                    "feature:work-order-progression",
+                    "feature:to-do-decision--approval-coordination",
+                    "feature:synthetic-task-orchestration",
+                    "feature:workflow-timeout--escalation-oversight",
+                    "function:coordinate-work-order",
+                    "service:work-order-coordination-service"
+                  ],
+                  "to": "enterprise:ec-12",
+                  "type": "enterprise_enabled_by"
+                }
+              },
+              "sourceCanonicalId": "938cd44380ab431fa8dae13c702d83c1",
+              "targetCanonicalId": "94c683c7588f475e973b58cb226345db",
+              "sourceLabel": "[CT2] Operational Assurance",
+              "targetLabel": "[CT3] Workflow & Activity Coordination"
+            },
+            {
+              "identifier": "id-2a8c1ca7c31151d4804e5e35f49f5586",
+              "archimateType": "Composition",
+              "source": "id-4e4a405d0abf537089c1bcabb41669d2",
+              "target": "id-fe75271f0234500982b272bc2ac9a9b9",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "preserved historical assertion",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-2a8c1ca7c31151d4804e5e35f49f5586\"]"
+              },
+              "sourceCanonicalId": "ca96b2b2ff434854995711e403e95f6f",
+              "targetCanonicalId": "94c683c7588f475e973b58cb226345db",
+              "sourceLabel": "[CT2] Operational Activity & Temporal Enablement",
+              "targetLabel": "[CT3] Workflow & Activity Coordination"
+            },
+            {
+              "identifier": "id-3f5994b70e15546e8d967969259d7aec",
+              "archimateType": "Serving",
+              "source": "id-49d4f69ebeeb5ea782a52172fb3e8a7b",
+              "target": "id-fe75271f0234500982b272bc2ac9a9b9",
+              "standing": {
+                "semantic": "Proposed",
+                "currentness": "preserved historical assertion"
+              },
+              "provenance": {
+                "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+                "selector": "/relationships/865",
+                "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+                "qualifiedSourceCanonicalId": "94c683c7588f475e973b58cb226345db",
+                "sourceAssertion": {
+                  "from": "capability:workflow--activity-coordination",
+                  "provenance": {
+                    "authority": "Proposed only; cited source standing is not inherited",
+                    "derivation": "Semantic responsibility analysis; no authority transfer",
+                    "evidence": [
+                      {
+                        "line": 10,
+                        "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                        "standing": "Current corpus evidence; does not promote the derived assertion",
+                        "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                      }
+                    ],
+                    "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                  },
+                  "rationale": "Operational activity needs eligible progression, effect standing and recoverable execution under context; clinical work and source clearances retain their authority.",
+                  "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                  "sources": [],
+                  "status": "Proposed",
+                  "supporting_responsibility_elements": [
+                    "feature:work-order-progression",
+                    "feature:to-do-decision--approval-coordination",
+                    "feature:synthetic-task-orchestration",
+                    "feature:workflow-timeout--escalation-oversight",
+                    "function:coordinate-work-order",
+                    "service:work-order-coordination-service"
+                  ],
+                  "to": "enterprise:ec-10",
+                  "type": "enterprise_enabled_by"
+                }
+              },
+              "sourceCanonicalId": "e5ff80e655084524a8dcee8e4ded788a",
+              "targetCanonicalId": "94c683c7588f475e973b58cb226345db",
+              "sourceLabel": "[CT2] Activity & Execution",
+              "targetLabel": "[CT3] Workflow & Activity Coordination"
+            }
+          ],
+          "classificationBasis": "Existing governed capability parent/owner metadata; all independent placement/ancestry qualifications retained",
+          "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+        },
+        {
+          "canonicalId": "c724f3d38bfa4567983a11ad22095d61",
+          "displayedName": "[CT2] Workflow & Activity Coordination",
+          "displayName": "[CT2] Workflow & Activity Coordination",
+          "friendlyName": "SharedInformationAndCoordinationEnablement.WorkflowAndActivityCoordination",
+          "canonicalName": "CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-WorkflowAndActivityCoordination",
+          "nativeType": "Capability",
+          "specialization": null,
+          "coordinate": "II.1.3.15.18",
+          "path": [
+            "Strategy",
+            "Capabilities",
+            "Business Enabling Capabilities",
+            "[CT1] Shared Information & Coordination Enablement",
+            "[CT2] Workflow & Activity Coordination"
+          ],
+          "scope": "Business Enabling Capabilities",
+          "ctLevel": "CT2",
+          "standing": {
+            "semantic": "Proposed",
+            "currentness": "current",
+            "placement_status": "Proposed",
+            "structural_id_status": "Proposed",
+            "name_status": "Proposed",
+            "ancestry_status": "proposed"
+          },
+          "currentness": "current",
+          "parentOwner": {
+            "key": "reviewed:bec-workflow-activity-coordination",
+            "parent_key": "proposal:bec-governed-health-information-enablement",
+            "owner_key": null,
+            "responsibility_owner_key": null,
+            "parent_identifier": "HCM-BEC-governed-health-information-enablement",
+            "owner_identifier": null
+          },
+          "snapshotPresent": true,
+          "navigationParentCoordinate": "II.1.3.15",
+          "navigationParentCanonicalId": "0062fcacae1740988b6be2bda2aa1674",
+          "navigationParentLabel": "[CT1] Shared Information & Coordination Enablement",
+          "originalOrganisation": [
+            [
+              "Strategy",
+              "Business Layer",
+              "Business Enabling Capabilities",
+              "Shared Information & Coordination Enablement",
+              "Workflow & Activity Coordination",
+              "[CT2] Workflow & Activity Coordination"
+            ]
+          ],
+          "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/c724f3d38bfa4567983a11ad22095d61.md",
+          "sourceBindings": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/927"
+            },
+            {
+              "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+              "selector": "information responsibility row 34"
+            }
+          ],
+          "provenance": [
+            {
+              "source": "docs/markdown/governance/baseline/architecture.json",
+              "selector": "/elements/927",
+              "role": "governed source resource",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+              "sourceKey": "reviewed:bec-workflow-activity-coordination"
+            },
+            {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "selector": "element[@identifier=\"id-36d21ea7e98b5e1bbbddad25ba53cd4e\"]",
+              "role": "accepted representation binding and presentation; not an additional architecture source",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+            },
+            {
+              "source": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+              "selector": "information responsibility row 34",
+              "revision": "798344f80eb7fd3998e17f4f040cf7dabe260388",
+              "role": "existing capability responsibility contribution; no new asset identity",
+              "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+              "standing": "Established Business responsibility only; formal information identity/lifecycle not inferred"
+            }
+          ],
+          "identity": {
+            "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+            "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+            "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+            "predecessorCanonicalIds": [
+              "4422d865978c4353ad575759c6026d27"
+            ]
+          },
+          "relevantSemanticRelationships": [
+            {
+              "identifier": "id-d5028176c1285bd199cbbf4f17d8707e",
+              "archimateType": "Association",
+              "source": "id-0b6d1d05c1b5502b96828b0500ee415e",
+              "target": "id-36d21ea7e98b5e1bbbddad25ba53cd4e",
+              "standing": {
+                "semantic": "Established Business Architecture dependency; source exclusions retained",
+                "currentness": "current"
+              },
+              "provenance": {
+                "source": "docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md",
+                "selector": "service consumption row 17",
+                "revision": "798344f80eb7fd3998e17f4f040cf7dabe260388",
+                "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation"
+              },
+              "sourceCanonicalId": "a025ac002b6a461abaac07fcb87f411f",
+              "targetCanonicalId": "c724f3d38bfa4567983a11ad22095d61",
+              "sourceLabel": "Policy Evaluation & Authorisation Service",
+              "targetLabel": "[CT2] Workflow & Activity Coordination"
+            },
+            {
+              "identifier": "id-609edc10eab4594a9628f22624cca4c0",
+              "archimateType": "Composition",
+              "source": "id-a5127b36f8a25c748c68426668173fcd",
+              "target": "id-36d21ea7e98b5e1bbbddad25ba53cd4e",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-609edc10eab4594a9628f22624cca4c0\"]"
+              },
+              "sourceCanonicalId": "0062fcacae1740988b6be2bda2aa1674",
+              "targetCanonicalId": "c724f3d38bfa4567983a11ad22095d61",
+              "sourceLabel": "[CT1] Shared Information & Coordination Enablement",
+              "targetLabel": "[CT2] Workflow & Activity Coordination"
+            },
+            {
+              "identifier": "id-e2434718dd765bb7a5070c30fe9d4f33",
+              "archimateType": "Composition",
+              "source": "id-36d21ea7e98b5e1bbbddad25ba53cd4e",
+              "target": "id-b42f6b68fe5a51959a491c7439d1b6c0",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-e2434718dd765bb7a5070c30fe9d4f33\"]"
+              },
+              "sourceCanonicalId": "c724f3d38bfa4567983a11ad22095d61",
+              "targetCanonicalId": "ff3447c929724245a13ee864874b5561",
+              "sourceLabel": "[CT2] Workflow & Activity Coordination",
+              "targetLabel": "[CT3] External Task Coordination"
+            },
+            {
+              "identifier": "id-77fb28cc16985dcfa83038441c331ed1",
+              "archimateType": "Composition",
+              "source": "id-36d21ea7e98b5e1bbbddad25ba53cd4e",
+              "target": "id-44334b55ed7857dc9bea3f43ffb1d874",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-77fb28cc16985dcfa83038441c331ed1\"]"
+              },
+              "sourceCanonicalId": "c724f3d38bfa4567983a11ad22095d61",
+              "targetCanonicalId": "b25bb04a8aa94dcfac105a646878ccfc",
+              "sourceLabel": "[CT2] Workflow & Activity Coordination",
+              "targetLabel": "[CT3] External Task Status & Traceability Management"
+            },
+            {
+              "identifier": "id-a3b5fe2bd6c856fc8a8923e7bd309bc7",
+              "archimateType": "Composition",
+              "source": "id-36d21ea7e98b5e1bbbddad25ba53cd4e",
+              "target": "id-eed78c1571b356ff9a9222054e7feeb4",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-a3b5fe2bd6c856fc8a8923e7bd309bc7\"]"
+              },
+              "sourceCanonicalId": "c724f3d38bfa4567983a11ad22095d61",
+              "targetCanonicalId": "35b66a0b38db4568849ecb842ffdcbf3",
+              "sourceLabel": "[CT2] Workflow & Activity Coordination",
+              "targetLabel": "[CT3] Work Boundary Governance"
+            },
+            {
+              "identifier": "id-2751e5d9f9fe54e899cf9acf1d14fe77",
+              "archimateType": "Composition",
+              "source": "id-36d21ea7e98b5e1bbbddad25ba53cd4e",
+              "target": "id-96e9160ac5bc532faed556f17a714f99",
+              "standing": {
+                "v0.2 / Assertion Status": "Proposed",
+                "v0.2 / Record State": "current",
+                "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+              },
+              "provenance": {
+                "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+                "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+                "selector": "relationship[@identifier=\"id-2751e5d9f9fe54e899cf9acf1d14fe77\"]"
+              },
+              "sourceCanonicalId": "c724f3d38bfa4567983a11ad22095d61",
+              "targetCanonicalId": "27411c143e6e41ffba1af139fbbcd7e2",
+              "sourceLabel": "[CT2] Workflow & Activity Coordination",
+              "targetLabel": "[CT3] Activity Routing Management"
+            }
+          ],
+          "classificationBasis": "Existing governed capability parent/owner metadata; all independent placement/ancestry qualifications retained",
+          "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+        }
+      ]
+    }
+  ],
+  "differentNameCorrespondence": [
+    {
+      "historical": {
+        "canonicalId": "330d1c43856a4322a2e9f331b1a5ed20",
+        "displayedName": "[CT2] Health Information Exchange",
+        "displayName": "[CT2] Health Information Exchange",
+        "friendlyName": "SharedInformationAndCoordinationEnablement.HealthInformationExchange",
+        "canonicalName": "CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchange",
+        "nativeType": "Capability",
+        "specialization": null,
+        "coordinate": "II.1.3.16.8",
+        "path": [
+          "Strategy",
+          "Capabilities",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Health Information Exchange"
+        ],
+        "scope": "Business Enabling Capabilities",
+        "ctLevel": "CT2",
+        "standing": {
+          "semantic": "Superseded historical identity — evolved correspondence",
+          "currentness": "superseded"
+        },
+        "currentness": "superseded",
+        "parentOwner": {
+          "key": null,
+          "parent_key": null,
+          "owner_key": null,
+          "responsibility_owner_key": null,
+          "parent_identifier": null,
+          "owner_identifier": null
+        },
+        "snapshotPresent": false,
+        "navigationParentCoordinate": "II.1.3.16",
+        "navigationParentCanonicalId": "eeabb9c3c526404cbe4302906560fa7e",
+        "navigationParentLabel": "[CT1] Shared Information & Coordination Enablement",
+        "originalOrganisation": [
+          [
+            "Strategy",
+            "Unreconciled 1.0.4 Reference",
+            "Business Enabling Capabilities",
+            "Shared Information & Coordination Enablement",
+            "Health Information Exchange",
+            "[CT2] Health Information Exchange"
+          ]
+        ],
+        "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/330d1c43856a4322a2e9f331b1a5ed20.md",
+        "sourceBindings": [
+          {
+            "source": "docs/markdown/governance/baseline/architecture.json",
+            "selector": "/historical_reference_elements/160"
+          }
+        ],
+        "provenance": [
+          {
+            "source": "docs/markdown/governance/baseline/architecture.json",
+            "selector": "/historical_reference_elements/160",
+            "role": "governed source resource",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+            "sourceKey": "historical-reference:id-b53ad897fec858d8a79678166d038341"
+          },
+          {
+            "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+            "selector": "element[@identifier=\"id-b53ad897fec858d8a79678166d038341\"]",
+            "role": "accepted representation binding and presentation; not an additional architecture source",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+          }
+        ],
+        "identity": {
+          "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+          "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+          "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+          "correspondence": {
+            "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+            "disposition": "evolved correspondence",
+            "successorCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+            "previousStanding": {
+              "semantic": "Historical reference — RAD correspondence unresolved",
+              "currentness": "historical_reference"
+            },
+            "historicalIdentityReserved": true,
+            "reason": "The BEC exchange-context responsibility continues under the explicit Enablement qualification and same BEC parent; current provenance retains the old name as an alias. The BC under Connected Health Services has a different responsibility and remains distinct."
+          }
+        },
+        "relevantSemanticRelationships": [
+          {
+            "identifier": "id-31df0300c61051298d50ca8957a6e9ba",
+            "archimateType": "Composition",
+            "source": "id-b53ad897fec858d8a79678166d038341",
+            "target": "id-7aaa8d8c77955de9966132c939773d57",
+            "standing": {
+              "source": "Retained accepted model assertion; original qualifications apply"
+            },
+            "provenance": {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "selector": "relationship[@identifier=\"id-31df0300c61051298d50ca8957a6e9ba\"]"
+            },
+            "sourceCanonicalId": "330d1c43856a4322a2e9f331b1a5ed20",
+            "targetCanonicalId": "a99b4119339545a89dc54ebb216ddb85",
+            "sourceLabel": "[CT2] Health Information Exchange",
+            "targetLabel": "[CT3] HIE Implementation Management"
+          },
+          {
+            "identifier": "id-58cae5f2d5645b91a70929b0f460d795",
+            "archimateType": "Composition",
+            "source": "id-b53ad897fec858d8a79678166d038341",
+            "target": "id-1ffb7d0e95b15e81a4fcd3b62dec6db9",
+            "standing": {
+              "source": "Retained accepted model assertion; original qualifications apply"
+            },
+            "provenance": {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "selector": "relationship[@identifier=\"id-58cae5f2d5645b91a70929b0f460d795\"]"
+            },
+            "sourceCanonicalId": "330d1c43856a4322a2e9f331b1a5ed20",
+            "targetCanonicalId": "a32c8bff0c284f5c9d6ab1f46991c232",
+            "sourceLabel": "[CT2] Health Information Exchange",
+            "targetLabel": "[CT3] HIE Requirement Management"
+          },
+          {
+            "identifier": "id-16d5f78d14b353298934e11f955cbe33",
+            "archimateType": "Composition",
+            "source": "id-b53ad897fec858d8a79678166d038341",
+            "target": "id-9fe0dded960259fe8b3ff544a7d80c40",
+            "standing": {
+              "source": "Retained accepted model assertion; original qualifications apply"
+            },
+            "provenance": {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "selector": "relationship[@identifier=\"id-16d5f78d14b353298934e11f955cbe33\"]"
+            },
+            "sourceCanonicalId": "330d1c43856a4322a2e9f331b1a5ed20",
+            "targetCanonicalId": "697de08ac49a4b7f8df7a1ed6f04210e",
+            "sourceLabel": "[CT2] Health Information Exchange",
+            "targetLabel": "[CT3] HIE Endpoint State Management"
+          },
+          {
+            "identifier": "id-e6ed26e23f875a65955cf23125513d08",
+            "archimateType": "Composition",
+            "source": "id-f97db18cfd4854abbe14020229fac298",
+            "target": "id-b53ad897fec858d8a79678166d038341",
+            "standing": {
+              "source": "Retained accepted model assertion; original qualifications apply"
+            },
+            "provenance": {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "selector": "relationship[@identifier=\"id-e6ed26e23f875a65955cf23125513d08\"]"
+            },
+            "sourceCanonicalId": "eeabb9c3c526404cbe4302906560fa7e",
+            "targetCanonicalId": "330d1c43856a4322a2e9f331b1a5ed20",
+            "sourceLabel": "[CT1] Shared Information & Coordination Enablement",
+            "targetLabel": "[CT2] Health Information Exchange"
+          }
+        ],
+        "classificationBasis": "Existing historical folder/self-reference collapsed; original capability context retained",
+        "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+      },
+      "successor": {
+        "canonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+        "displayedName": "[CT2] Health Information Exchange Enablement",
+        "displayName": "[CT2] Health Information Exchange Enablement",
+        "friendlyName": "SharedInformationAndCoordinationEnablement.HealthInformationExchangeEnablement",
+        "canonicalName": "CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationExchangeEnablement",
+        "nativeType": "Capability",
+        "specialization": null,
+        "coordinate": "II.1.3.15.10",
+        "path": [
+          "Strategy",
+          "Capabilities",
+          "Business Enabling Capabilities",
+          "[CT1] Shared Information & Coordination Enablement",
+          "[CT2] Health Information Exchange Enablement"
+        ],
+        "scope": "Business Enabling Capabilities",
+        "ctLevel": "CT2",
+        "standing": {
+          "semantic": "Canonical",
+          "currentness": "current",
+          "placement_status": "Proposed",
+          "structural_id_status": "Proposed",
+          "name_status": "Proposed",
+          "ancestry_status": "proposed"
+        },
+        "currentness": "current",
+        "parentOwner": {
+          "key": "capability:health-information-exchange",
+          "parent_key": "proposal:bec-governed-health-information-enablement",
+          "owner_key": null,
+          "responsibility_owner_key": null,
+          "parent_identifier": "HCM-BEC-governed-health-information-enablement",
+          "owner_identifier": null
+        },
+        "snapshotPresent": true,
+        "navigationParentCoordinate": "II.1.3.15",
+        "navigationParentCanonicalId": "0062fcacae1740988b6be2bda2aa1674",
+        "navigationParentLabel": "[CT1] Shared Information & Coordination Enablement",
+        "originalOrganisation": [
+          [
+            "Strategy",
+            "Business Layer",
+            "Business Enabling Capabilities",
+            "Shared Information & Coordination Enablement",
+            "Health Information Exchange Enablement",
+            "[CT2] Health Information Exchange Enablement"
+          ]
+        ],
+        "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/a61a15908ed544e6acf3e9cab63a0267.md",
+        "sourceBindings": [
+          {
+            "source": "docs/markdown/governance/baseline/architecture.json",
+            "selector": "/elements/363"
+          }
+        ],
+        "provenance": [
+          {
+            "source": "docs/markdown/governance/baseline/architecture.json",
+            "selector": "/elements/363",
+            "role": "governed source resource",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+            "sourceKey": "capability:health-information-exchange"
+          },
+          {
+            "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+            "selector": "element[@identifier=\"id-0712aaf441dc5100a5ac79c4b7848477\"]",
+            "role": "accepted representation binding and presentation; not an additional architecture source",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+          },
+          {
+            "source": "docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md",
+            "selector": "view-5-intrinsic--shared-enablement",
+            "role": "original source locator; recorded edition",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "captureSource": "docs/markdown/governance/baseline/architecture.json",
+            "recordedSourceSha256": "8a7229be3343e027ab87c5421dec514d3803b80da254157be4e9d8c981010d49"
+          },
+          {
+            "source": "docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md",
+            "selector": "2-health-information-exchange-harmonia-core",
+            "role": "original source locator; recorded edition",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "captureSource": "docs/markdown/governance/baseline/architecture.json",
+            "recordedSourceSha256": "8a7229be3343e027ab87c5421dec514d3803b80da254157be4e9d8c981010d49"
+          },
+          {
+            "source": "docs/markdown/03-business-architecture/behaviours/05-intrinsic-enablement.md",
+            "selector": "22-health-information-exchange-hie",
+            "role": "original source locator; recorded edition",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "captureSource": "docs/markdown/governance/baseline/architecture.json",
+            "recordedSourceSha256": "80c699f9a5903c280c8a05fc87062b24a1c6ea2dea8843a92c5b53281d37ac8a"
+          },
+          {
+            "source": "docs/markdown/02-strategy/capabilities/business-capabilities.md",
+            "selector": "other-preserved-uncertainties-and-canonical-conflicts",
+            "role": "original source locator; recorded edition",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "captureSource": "docs/markdown/governance/baseline/architecture.json",
+            "recordedSourceSha256": "27d86f8a5efe789083c464cf3f5026d6ddab86ad8d207d94dd57807fd9cdd2c0"
+          },
+          {
+            "source": "docs/markdown/governance/baseline/architecture.json",
+            "selector": "source-qualified relationship assertions whose from-key binds to canonicalId a61a15908ed544e6acf3e9cab63a0267",
+            "role": "Preserved non-native predicates, not new graph relationships",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0"
+          },
+          {
+            "source": "docs/markdown/03-business-architecture/behaviours/05-intrinsic-enablement.md",
+            "selector": "entry lines 52-52",
+            "role": "Exact source-locator contribution; original qualifications retained",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0"
+          }
+        ],
+        "identity": {
+          "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+          "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+          "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+          "predecessorCanonicalIds": [
+            "330d1c43856a4322a2e9f331b1a5ed20"
+          ]
+        },
+        "relevantSemanticRelationships": [
+          {
+            "identifier": "id-409ee31a8ed0538b8b3a3e155d906813",
+            "archimateType": "Composition",
+            "source": "id-a5127b36f8a25c748c68426668173fcd",
+            "target": "id-0712aaf441dc5100a5ac79c4b7848477",
+            "standing": {
+              "v0.2 / Assertion Status": "Proposed",
+              "v0.2 / Record State": "current",
+              "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+            },
+            "provenance": {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "selector": "relationship[@identifier=\"id-409ee31a8ed0538b8b3a3e155d906813\"]"
+            },
+            "sourceCanonicalId": "0062fcacae1740988b6be2bda2aa1674",
+            "targetCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+            "sourceLabel": "[CT1] Shared Information & Coordination Enablement",
+            "targetLabel": "[CT2] Health Information Exchange Enablement"
+          },
+          {
+            "identifier": "id-73af71f8418650f09b83dc3dd9d1e633",
+            "archimateType": "Serving",
+            "source": "id-dbd66e69788450649e184966aa724797",
+            "target": "id-0712aaf441dc5100a5ac79c4b7848477",
+            "standing": {
+              "semantic": "Proposed",
+              "currentness": "current"
+            },
+            "provenance": {
+              "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+              "selector": "/relationships/789",
+              "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+              "qualifiedSourceCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+              "sourceAssertion": {
+                "from": "capability:health-information-exchange",
+                "provenance": {
+                  "authority": "Proposed only; cited source standing is not inherited",
+                  "derivation": "Semantic responsibility analysis; no authority transfer",
+                  "evidence": [
+                    {
+                      "line": 10,
+                      "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                      "standing": "Current corpus evidence; does not promote the derived assertion",
+                      "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                    }
+                  ],
+                  "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                },
+                "rationale": "Addressed exchange, syndication and notifications require explicit contract/delivery standing and resilient observation rather than equating transport acknowledgement with outcome.",
+                "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                "sources": [],
+                "status": "Proposed",
+                "supporting_responsibility_elements": [
+                  "feature:direct-submission-ingestion--delivery",
+                  "feature:clinical-record-retrieval-mediation",
+                  "feature:addressed-clinical-distribution",
+                  "feature:event-driven-syndication",
+                  "function:receive-information-submission",
+                  "service:hie-submission-gateway-service"
+                ],
+                "to": "enterprise:ec-08",
+                "type": "enterprise_enabled_by"
+              }
+            },
+            "sourceCanonicalId": "0f2e5222874949d8b0cce234941ecb20",
+            "targetCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+            "sourceLabel": "[CT2] Interoperability & Exchange",
+            "targetLabel": "[CT2] Health Information Exchange Enablement"
+          },
+          {
+            "identifier": "id-19d09b2119a057299c1c11a7ac08703d",
+            "archimateType": "Composition",
+            "source": "id-10a8917a66475db1b276741d0efd840f",
+            "target": "id-0712aaf441dc5100a5ac79c4b7848477",
+            "standing": {
+              "v0.2 / Assertion Status": "Proposed",
+              "v0.2 / Record State": "preserved historical assertion",
+              "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+            },
+            "provenance": {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "selector": "relationship[@identifier=\"id-19d09b2119a057299c1c11a7ac08703d\"]"
+            },
+            "sourceCanonicalId": "6a1030483dfc4ae6af6998b587129d1c",
+            "targetCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+            "sourceLabel": "[CT2] Health Information Connectivity Enablement",
+            "targetLabel": "[CT2] Health Information Exchange Enablement"
+          },
+          {
+            "identifier": "id-7dda8f6705ee5de6a7aa1b6048493c58",
+            "archimateType": "Serving",
+            "source": "id-9bbd142f818e50d39a3d0429f74b72b4",
+            "target": "id-0712aaf441dc5100a5ac79c4b7848477",
+            "standing": {
+              "semantic": "Proposed",
+              "currentness": "current"
+            },
+            "provenance": {
+              "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+              "selector": "/relationships/791",
+              "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+              "qualifiedSourceCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+              "sourceAssertion": {
+                "from": "capability:health-information-exchange",
+                "provenance": {
+                  "authority": "Proposed only; cited source standing is not inherited",
+                  "derivation": "Semantic responsibility analysis; no authority transfer",
+                  "evidence": [
+                    {
+                      "line": 10,
+                      "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                      "standing": "Current corpus evidence; does not promote the derived assertion",
+                      "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                    }
+                  ],
+                  "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                },
+                "rationale": "Addressed exchange, syndication and notifications require explicit contract/delivery standing and resilient observation rather than equating transport acknowledgement with outcome.",
+                "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                "sources": [],
+                "status": "Proposed",
+                "supporting_responsibility_elements": [
+                  "feature:direct-submission-ingestion--delivery",
+                  "feature:clinical-record-retrieval-mediation",
+                  "feature:addressed-clinical-distribution",
+                  "feature:event-driven-syndication",
+                  "function:receive-information-submission",
+                  "service:hie-submission-gateway-service"
+                ],
+                "to": "enterprise:ec-12",
+                "type": "enterprise_enabled_by"
+              }
+            },
+            "sourceCanonicalId": "938cd44380ab431fa8dae13c702d83c1",
+            "targetCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+            "sourceLabel": "[CT2] Operational Assurance",
+            "targetLabel": "[CT2] Health Information Exchange Enablement"
+          },
+          {
+            "identifier": "id-b4b42bb7057f5da8953a52a1f079aa64",
+            "archimateType": "Composition",
+            "source": "id-0712aaf441dc5100a5ac79c4b7848477",
+            "target": "id-7c8885a8c55552888e8b3cda35c06693",
+            "standing": {
+              "v0.2 / Assertion Status": "Proposed",
+              "v0.2 / Record State": "current",
+              "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+            },
+            "provenance": {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "selector": "relationship[@identifier=\"id-b4b42bb7057f5da8953a52a1f079aa64\"]"
+            },
+            "sourceCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+            "targetCanonicalId": "1c852a1799984feba50011172983c865",
+            "sourceLabel": "[CT2] Health Information Exchange Enablement",
+            "targetLabel": "[CT3] HIE Requirement Management"
+          },
+          {
+            "identifier": "id-43c9c1c6c5665a55956129c7769830a0",
+            "archimateType": "Composition",
+            "source": "id-0712aaf441dc5100a5ac79c4b7848477",
+            "target": "id-6a1c86bc579e59e5854aafb3ace5c01f",
+            "standing": {
+              "v0.2 / Assertion Status": "Proposed",
+              "v0.2 / Record State": "current",
+              "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+            },
+            "provenance": {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "selector": "relationship[@identifier=\"id-43c9c1c6c5665a55956129c7769830a0\"]"
+            },
+            "sourceCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+            "targetCanonicalId": "1bec951a1c98450b8d4672c5c424f9bd",
+            "sourceLabel": "[CT2] Health Information Exchange Enablement",
+            "targetLabel": "[CT3] HIE Endpoint State Management"
+          },
+          {
+            "identifier": "id-2603b2ceb6bc5005bfdc1bb2eb376f28",
+            "archimateType": "Composition",
+            "source": "id-0712aaf441dc5100a5ac79c4b7848477",
+            "target": "id-390fb11c89e7528e96684afcec04539a",
+            "standing": {
+              "v0.2 / Assertion Status": "Proposed",
+              "v0.2 / Record State": "current",
+              "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+            },
+            "provenance": {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "selector": "relationship[@identifier=\"id-2603b2ceb6bc5005bfdc1bb2eb376f28\"]"
+            },
+            "sourceCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+            "targetCanonicalId": "8ce29be373e04252b7aa881b6a72f375",
+            "sourceLabel": "[CT2] Health Information Exchange Enablement",
+            "targetLabel": "[CT3] HIE Implementation Management"
+          },
+          {
+            "identifier": "id-511e98d7d881543989aafe162515d70f",
+            "archimateType": "Serving",
+            "source": "id-0712aaf441dc5100a5ac79c4b7848477",
+            "target": "id-2134969d36665649a7d61fcea20bc15f",
+            "standing": {
+              "semantic": "Proposed",
+              "currentness": "current"
+            },
+            "provenance": {
+              "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+              "selector": "/relationships/693",
+              "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+              "qualifiedSourceCanonicalId": "baad6b6117084311acbf5fc4044dfabf",
+              "sourceAssertion": {
+                "from": "business-capability:health-information-exchange",
+                "provenance": {
+                  "authority": "Proposed only; cited source standing is not inherited",
+                  "derivation": "Semantic responsibility analysis; no authority transfer",
+                  "evidence": [
+                    {
+                      "line": 10,
+                      "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                      "standing": "Current corpus evidence; does not promote the derived assertion",
+                      "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                    }
+                  ],
+                  "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                },
+                "rationale": "Harmonia coordinates bounded information exchange under standards contracts; organisational sharing agreements and domain content retain their authority.",
+                "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                "sources": [],
+                "status": "Proposed",
+                "supporting_responsibility_elements": [
+                  "feature:direct-submission-ingestion--delivery",
+                  "feature:clinical-record-retrieval-mediation",
+                  "feature:addressed-clinical-distribution",
+                  "feature:event-driven-syndication",
+                  "function:receive-information-submission",
+                  "service:hie-submission-gateway-service"
+                ],
+                "to": "capability:health-information-exchange",
+                "type": "enabled_by"
+              }
+            },
+            "sourceCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+            "targetCanonicalId": "baad6b6117084311acbf5fc4044dfabf",
+            "sourceLabel": "[CT2] Health Information Exchange Enablement",
+            "targetLabel": "[CT2] Health Information Exchange"
+          },
+          {
+            "identifier": "id-4abe400ba8e3575198893545a9679d33",
+            "archimateType": "Serving",
+            "source": "id-770ebb3e3bdc5f2bbe77b2bfd55bd74d",
+            "target": "id-0712aaf441dc5100a5ac79c4b7848477",
+            "standing": {
+              "semantic": "Proposed",
+              "currentness": "current"
+            },
+            "provenance": {
+              "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
+              "selector": "/relationships/790",
+              "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+              "qualifiedSourceCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+              "sourceAssertion": {
+                "from": "capability:health-information-exchange",
+                "provenance": {
+                  "authority": "Proposed only; cited source standing is not inherited",
+                  "derivation": "Semantic responsibility analysis; no authority transfer",
+                  "evidence": [
+                    {
+                      "line": 10,
+                      "path": "docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md",
+                      "standing": "Current corpus evidence; does not promote the derived assertion",
+                      "text": "### 1.2 Non-Transfer of Ownership Guardrail"
+                    }
+                  ],
+                  "method": "AI architectural synthesis under the explicitly authorised Step 2 task"
+                },
+                "rationale": "Addressed exchange, syndication and notifications require explicit contract/delivery standing and resilient observation rather than equating transport acknowledgement with outcome.",
+                "responsibility_boundary": "Enablement only; no decomposition, implementation equivalence, inherited descendant mapping, source-ownership transfer or domain-authority transfer.",
+                "sources": [],
+                "status": "Proposed",
+                "supporting_responsibility_elements": [
+                  "feature:direct-submission-ingestion--delivery",
+                  "feature:clinical-record-retrieval-mediation",
+                  "feature:addressed-clinical-distribution",
+                  "feature:event-driven-syndication",
+                  "function:receive-information-submission",
+                  "service:hie-submission-gateway-service"
+                ],
+                "to": "enterprise:ec-09",
+                "type": "enterprise_enabled_by"
+              }
+            },
+            "sourceCanonicalId": "b768b129971e4bf5bccc03d33d2fcb4e",
+            "targetCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+            "sourceLabel": "[CT2] Event & Subscription",
+            "targetLabel": "[CT2] Health Information Exchange Enablement"
+          }
+        ],
+        "classificationBasis": "Existing governed capability parent/owner metadata; all independent placement/ancestry qualifications retained",
+        "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+      }
+    },
+    {
+      "historical": {
+        "canonicalId": "905eb2de1ac341ac96331e3d7f76079b",
+        "displayedName": "[CT3] Care Intent Appropriateness Review",
+        "displayName": "[CT3] Care Intent Appropriateness Review",
+        "friendlyName": "IndividualCareDelivery.IndividualCareReview.CareIntentAppropriatenessReview",
+        "canonicalName": "CT1-IndividualCareDelivery.CT2-IndividualCareReview.CT3-CareIntentAppropriatenessReview",
+        "nativeType": "Capability",
+        "specialization": null,
+        "coordinate": "II.1.2.27.4.2",
+        "path": [
+          "Strategy",
+          "Capabilities",
+          "Business Capabilities",
+          "[CT1] Individual Care Delivery",
+          "[CT2] Individual Care Review",
+          "[CT3] Care Intent Appropriateness Review"
+        ],
+        "scope": "Business Capabilities",
+        "ctLevel": "CT3",
+        "standing": {
+          "semantic": "Superseded historical identity — evolved correspondence",
+          "currentness": "superseded"
+        },
+        "currentness": "superseded",
+        "parentOwner": {
+          "key": null,
+          "parent_key": null,
+          "owner_key": null,
+          "responsibility_owner_key": null,
+          "parent_identifier": null,
+          "owner_identifier": null
+        },
+        "snapshotPresent": false,
+        "navigationParentCoordinate": "II.1.2.27.4",
+        "navigationParentCanonicalId": "e1048f6c635d4e16b5384cc2cb45a71b",
+        "navigationParentLabel": "[CT2] Individual Care Review",
+        "originalOrganisation": [
+          [
+            "Strategy",
+            "Unreconciled 1.0.4 Reference",
+            "Business Capabilities",
+            "Individual Care Delivery",
+            "Individual Care Review",
+            "Care Intent Appropriateness Review",
+            "[CT3] Care Intent Appropriateness Review"
+          ]
+        ],
+        "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/905eb2de1ac341ac96331e3d7f76079b.md",
+        "sourceBindings": [
+          {
+            "source": "docs/markdown/governance/baseline/architecture.json",
+            "selector": "/historical_reference_elements/17"
+          }
+        ],
+        "provenance": [
+          {
+            "source": "docs/markdown/governance/baseline/architecture.json",
+            "selector": "/historical_reference_elements/17",
+            "role": "governed source resource",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+            "sourceKey": "historical-reference:id-3d3aae478cd35e3c87f246e6d5611452"
+          },
+          {
+            "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+            "selector": "element[@identifier=\"id-3d3aae478cd35e3c87f246e6d5611452\"]",
+            "role": "accepted representation binding and presentation; not an additional architecture source",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+          }
+        ],
+        "identity": {
+          "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+          "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+          "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+          "correspondence": {
+            "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+            "disposition": "evolved correspondence",
+            "successorCanonicalId": "5eac5fb73e31416288d8c992805b33cb",
+            "previousStanding": {
+              "semantic": "Historical reference — RAD correspondence unresolved",
+              "currentness": "historical_reference"
+            },
+            "historicalIdentityReserved": true,
+            "reason": "Current definition explicitly evaluates continuing suitability of the current care intent, distinct from effectiveness and revised planning; same CT3 and Individual Care Review parent. Care Intent Appropriateness Review evolves to Care Appropriateness Review without inventing absent historical definition text."
+          }
+        },
+        "relevantSemanticRelationships": [
+          {
+            "identifier": "id-1ea38a0130b35ace8c096b72f4aaea27",
+            "archimateType": "Composition",
+            "source": "id-6018c5b1f4ca53149a178ecfe6927ced",
+            "target": "id-3d3aae478cd35e3c87f246e6d5611452",
+            "standing": {
+              "source": "Retained accepted model assertion; original qualifications apply"
+            },
+            "provenance": {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "selector": "relationship[@identifier=\"id-1ea38a0130b35ace8c096b72f4aaea27\"]"
+            },
+            "sourceCanonicalId": "e1048f6c635d4e16b5384cc2cb45a71b",
+            "targetCanonicalId": "905eb2de1ac341ac96331e3d7f76079b",
+            "sourceLabel": "[CT2] Individual Care Review",
+            "targetLabel": "[CT3] Care Intent Appropriateness Review"
+          }
+        ],
+        "classificationBasis": "Existing historical folder/self-reference collapsed; original capability context retained",
+        "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+      },
+      "successor": {
+        "canonicalId": "5eac5fb73e31416288d8c992805b33cb",
+        "displayedName": "[CT3] Care Appropriateness Review",
+        "displayName": "[CT3] Care Appropriateness Review",
+        "friendlyName": "IndividualCareDelivery.IndividualCareReview.CareAppropriatenessReview",
+        "canonicalName": "CT1-IndividualCareDelivery.CT2-IndividualCareReview.CT3-CareAppropriatenessReview",
+        "nativeType": "Capability",
+        "specialization": null,
+        "coordinate": "II.1.2.28.4.1",
+        "path": [
+          "Strategy",
+          "Capabilities",
+          "Business Capabilities",
+          "[CT1] Individual Care Delivery",
+          "[CT2] Individual Care Review",
+          "[CT3] Care Appropriateness Review"
+        ],
+        "scope": "Business Capabilities",
+        "ctLevel": "CT3",
+        "standing": {
+          "semantic": "Canonical",
+          "currentness": "current",
+          "placement_status": "Established",
+          "structural_id_status": "Established",
+          "name_status": "Canonical",
+          "ancestry_status": "established"
+        },
+        "currentness": "current",
+        "parentOwner": {
+          "key": "business-capability:care-appropriateness-review",
+          "parent_key": "capability:individual-care-review",
+          "owner_key": null,
+          "responsibility_owner_key": null,
+          "parent_identifier": "HCM-BC-individual-care-review",
+          "owner_identifier": null
+        },
+        "snapshotPresent": true,
+        "navigationParentCoordinate": "II.1.2.28.4",
+        "navigationParentCanonicalId": "625a93f132f242f5a8e2ae1dc19979fb",
+        "navigationParentLabel": "[CT2] Individual Care Review",
+        "originalOrganisation": [
+          [
+            "Strategy",
+            "Business Layer",
+            "Business Capabilities",
+            "Individual Care Delivery",
+            "Individual Care Review",
+            "Care Appropriateness Review",
+            "[CT3] Care Appropriateness Review"
+          ]
+        ],
+        "originalNativeStorageLocator": "enterprise-architecture/continuum/strategy/capability/5eac5fb73e31416288d8c992805b33cb.md",
+        "sourceBindings": [
+          {
+            "source": "docs/markdown/governance/baseline/architecture.json",
+            "selector": "/elements/29"
+          }
+        ],
+        "provenance": [
+          {
+            "source": "docs/markdown/governance/baseline/architecture.json",
+            "selector": "/elements/29",
+            "role": "governed source resource",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+            "sourceKey": "business-capability:care-appropriateness-review"
+          },
+          {
+            "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+            "selector": "element[@identifier=\"id-dfa6322afd30598fb230e2d13f063d12\"]",
+            "role": "accepted representation binding and presentation; not an additional architecture source",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+          },
+          {
+            "source": "docs/markdown/02-strategy/capabilities/business-capabilities.md",
+            "selector": "ct2--individual-care-review",
+            "role": "original source locator; recorded edition",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "captureSource": "docs/markdown/governance/baseline/architecture.json",
+            "recordedSourceSha256": "27d86f8a5efe789083c464cf3f5026d6ddab86ad8d207d94dd57807fd9cdd2c0"
+          },
+          {
+            "source": "docs/markdown/02-strategy/capabilities/business-capabilities.md",
+            "selector": "ct2--individual-care-review",
+            "role": "original source locator; recorded edition",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "captureSource": "docs/markdown/governance/baseline/architecture.json",
+            "recordedSourceSha256": "27d86f8a5efe789083c464cf3f5026d6ddab86ad8d207d94dd57807fd9cdd2c0"
+          },
+          {
+            "source": "docs/markdown/02-strategy/capabilities/business-capabilities.md",
+            "selector": "ct2--individual-care-review",
+            "role": "original source locator; recorded edition",
+            "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+            "captureSource": "docs/markdown/governance/baseline/architecture.json",
+            "recordedSourceSha256": "27d86f8a5efe789083c464cf3f5026d6ddab86ad8d207d94dd57807fd9cdd2c0"
+          }
+        ],
+        "identity": {
+          "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+          "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+          "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+          "predecessorCanonicalIds": [
+            "905eb2de1ac341ac96331e3d7f76079b"
+          ]
+        },
+        "relevantSemanticRelationships": [
+          {
+            "identifier": "id-296f89401df555248fdb86c283a962c1",
+            "archimateType": "Composition",
+            "source": "id-1e0db913564c55f59efd137db390e34f",
+            "target": "id-dfa6322afd30598fb230e2d13f063d12",
+            "standing": {
+              "v0.2 / Assertion Status": "established",
+              "v0.2 / Record State": "current",
+              "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+            },
+            "provenance": {
+              "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+              "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+              "selector": "relationship[@identifier=\"id-296f89401df555248fdb86c283a962c1\"]"
+            },
+            "sourceCanonicalId": "625a93f132f242f5a8e2ae1dc19979fb",
+            "targetCanonicalId": "5eac5fb73e31416288d8c992805b33cb",
+            "sourceLabel": "[CT2] Individual Care Review",
+            "targetLabel": "[CT3] Care Appropriateness Review"
+          }
+        ],
+        "classificationBasis": "Existing governed capability parent/owner metadata; all independent placement/ancestry qualifications retained",
+        "originalOrganisationMeaning": "pre-1.1.10 projection-template paths, not semantic parentage"
+      }
+    }
+  ]
+}

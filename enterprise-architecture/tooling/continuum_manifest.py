@@ -57,7 +57,8 @@ def render(root=c.ROOT):
         'Canonical ID identifies an element; its name supplies meaning; its number is a mutable location.',
         'Hierarchy asserts no semantic containment. Native types, relationships and independent standing',
         'remain in the canonical records. Context references link to Strategy without duplicating capabilities.',
-        'Stakeholders are cross-cutting Motivation perspectives, not a peer chapter.', '',
+        'The R reference area holds the Stakeholder Index and historical Capability identities outside',
+        'the architectural decomposition. Contextual occurrences explicitly link to canonical identities.', '',
         '## Architectural navigation', '',
     ]
     def outline(node, depth):
@@ -70,8 +71,10 @@ def render(root=c.ROOT):
             target = os.path.relpath(root / source, root / c.CONTINUUM) + (marker + fragment if marker else '')
         else:
             target = '#nav-' + node['number'].replace('.', '-')
-        suffix = ' — cross-cutting perspective' if node.get('kind') == 'perspective' else ''
-        lines.append('  ' * depth + '- [' + text + '](' + target + ')' + suffix)
+        lines.append('  ' * depth + '- [' + text + '](' + target + ')')
+        for role, reference in nav.references(node):
+            lines.append('  ' * (depth + 1) + '- ' + role + ': [' + cell(reference['number'] + ' ' + reference['title'])
+                         + '](#element-' + reference['canonicalId'] + '); Canonical ID: ' + reference['canonicalId'])
         for child in node.get('children', []):
             outline(child, depth + 1)
     for part in tree:
@@ -89,6 +92,11 @@ def render(root=c.ROOT):
                       '**' + cell(nav.title(node)) + '**', '']
             if node.get('description'):
                 lines += [node['description'], '']
+            for role, reference in nav.references(node):
+                lines += [role + ': [' + cell(reference['number'] + ' ' + reference['title'])
+                          + '](#element-' + reference['canonicalId'] + '); Canonical ID: ' + reference['canonicalId'], '']
+            if node.get('relationshipIds'):
+                lines += ['Existing canonical associations: ' + ', '.join(node['relationshipIds']), '']
             if node.get('relatedCanonicalIds'):
                 lines += ['; '.join('[' + cell(locations[cid]['number'] + ' ' + elements[cid][0]['displayName']) + '](#element-' + cid + ')' for cid in node['relatedCanonicalIds']), '']
         ids = nav.descendants(part)
@@ -105,6 +113,8 @@ def render(root=c.ROOT):
                       '<a id="element-' + cid + '"></a>' + cell(cid), f'[{cell(relative)}]({relative})', qualifications(m)]
             if locations[cid].get('classificationIssue'):
                 values[-1] += '<br>Classification: ' + cell(locations[cid]['classificationIssue'])
+            for role, reference in nav.references(locations[cid]):
+                values[-1] += '<br>' + cell(role) + ': [' + cell(reference['number'] + ' ' + reference['title']) + '](#element-' + reference['canonicalId'] + ')'
             lines.append('| ' + ' | '.join(values) + ' |')
     return ('\n'.join(lines).rstrip() + '\n').encode('utf-8')
 

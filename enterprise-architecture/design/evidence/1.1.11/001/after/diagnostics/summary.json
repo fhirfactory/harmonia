@@ -1,0 +1,51 @@
+{
+  "acceptedRelease": "1.1.10",
+  "prospectiveEvidenceRelease": "1.1.11",
+  "iteration": "001",
+  "diagnosticOnly": true,
+  "elements": 1602,
+  "navigationNodes": 1941,
+  "relationships": 1651,
+  "authoredViews": 1209,
+  "duplicateCapabilityNameGroups": 213,
+  "duplicateCapabilityElements": 426,
+  "sameNameCorrespondencePairs": 212,
+  "sameNameDifferentScopeGroups": 1,
+  "duplicateGroupsByCT": {
+    "CT1": 25,
+    "CT2": 85,
+    "CT3": 103
+  },
+  "duplicatePairCorrespondence": {
+    "direct correspondence": 209,
+    "evolved correspondence": 4
+  },
+  "actualSameNamePairCorrespondence": {
+    "direct correspondence": 209,
+    "evolved correspondence": 3
+  },
+  "sameLabelSiblingGroups": 25,
+  "contexts": 72,
+  "contextsByCT": {
+    "CT2": 41,
+    "CT3": 29,
+    "Feature": 2
+  },
+  "businessBehaviour": {
+    "BusinessService": 142,
+    "BusinessFunction": 160,
+    "BusinessProcess": 21
+  },
+  "contextsWithCompleteAncestry": 0,
+  "emptyContexts": 0,
+  "radBodyExplicitContextReferences": 72,
+  "snapshotOwnerMatch": {
+    "True": 319,
+    "None": 4
+  },
+  "nonRetiredElementsBeneathSupersededAncestors": 24,
+  "supersededCapabilitySourceRecordsWithoutIdentityCorrespondence": 32,
+  "contextsWithSupersededAncestors": 8,
+  "nonCapabilitySameNameGroups": 0,
+  "pypdfVersion": "6.9.2"
+}

@@ -82,6 +82,43 @@ transport locators only. Archi may restructure its native folders; the location
 properties preserve the canonical coordinates independently of that limitation.
 Existing authored Views and their separate View-folder organisation are preserved.
 
+### Reader-facing navigation correction — RAD-1.1.11
+
+The Solution Architect's [remediation Task](../design/evidence/1.1.11/002/before/ai-agent-tasks/unresolved-continuum-navigation-remediation.md)
+authorises the following bounded refinements to the accepted 1.1.10 organisation.
+The canonical navigation serialization is version 2. G and Parts I–VI retain
+their domains; **R — Cross-Cutting References** is a separate reference area,
+outside architectural decomposition. Its Stakeholder Index exposes every canonical
+Stakeholder, including those without a represented Motivation association. Its
+Historical Capability Identities index preserves reserved predecessors identified
+by governed `identity.correspondence`, with links in both directions. Names never
+establish correspondence. Other superseded source hierarchies and unresolved
+descendants retain their existing allocation and visibly qualified standing.
+
+Every canonical ID still has exactly one canonical navigation location, including
+index/historical locations. `kind=context`, `contextRole` and `contextCanonicalId`
+identify a contextual occurrence without another element identity. Business
+Behaviour includes only represented behaviour and its complete recorded Strategy
+Capability ancestry, retaining direct CT2 and Feature allocations. Canonical
+Strategy locations, identities and standing are resolved at generation time for
+every context; coordinates are never copied into canonical source metadata.
+Stakeholder contextual occurrences under associated Motivation material cite
+exact existing Association IDs through `relationshipIds`; index discovery does
+not assert an association. No semantic relationship follows from either use.
+
+Resolved metadata distinguishes architectural, contextual, index, historical and
+navigation occurrences. Every projection exposes typed canonical references.
+Exchange navigation-only items carry reference documentation without semantic
+edges. The projection also carries `Continuum / Navigation References` on native
+elements: typed links, contextual occurrences, behaviour context paths and actual
+Stakeholder association references as applicable. These navigation properties
+preserve orientation through Archi's non-element folder limitations; they are
+derived presentation metadata, not architectural assertions. Authored Views,
+native names/types, canonical Markdown and semantic relationships are unchanged.
+The [common Review Praxis](architecture-review-praxis.md#5-report-and-verify-the-incorporated-result)
+requires Solution Architect structural review of materially changed generated
+navigation before HCRL acceptance. Agent inspection supplies evidence, not acceptance.
+
 ## Deterministic native storage and template selection
 
 [type-catalogue.json](continuum/type-catalogue.json) is the executable representation
