@@ -65,11 +65,11 @@ def verify(root=c.ROOT):
         rad_relative = c.RAD_PUBLICATION / version
         commands = [prefix + [code + '/architecture_continuum.py', 'validate'],
                     prefix + [code + '/continuum_manifest.py'],
-                    prefix + [code + '/architecture_continuum.py', 'project', '--output', str(relative / 'Harmonia-Architecture.xml')],
+                    prefix + [code + '/architecture_continuum.py', 'project', '--output', str(relative / 'Harmonia-Architecture.xml'), '--publish'],
                     prefix + [code + '/publish_continuum.py', '--output', str(relative)],
                     prefix + [code + '/publish_continuum_rad.py', '--output', str(rad_relative)],
                     prefix + [code + '/continuum_manifest.py', '--check'],
-                    prefix + [code + '/architecture_continuum.py', 'project', '--output', str(relative / 'Harmonia-Architecture.xml'), '--check'],
+                    prefix + [code + '/architecture_continuum.py', 'project', '--output', str(relative / 'Harmonia-Architecture.xml'), '--publish', '--check'],
                     prefix + [code + '/publish_continuum.py', '--output', str(relative), '--check'],
                     prefix + [code + '/publish_continuum_rad.py', '--output', str(rad_relative), '--check'],
                     prefix + [code + '/verify_continuum_links.py', '--report', 'links.json'],
@@ -90,6 +90,11 @@ def verify(root=c.ROOT):
             steps.append({'command': command[2:], 'status': 'PASS', 'summary': (stdout + stderr)[-400:]})
             print('PASS: ' + command[2], flush=True)
         hashes = {}
+        published = c.ARCHIMATE_PUBLICATION / version / 'Harmonia-Architecture.xml'
+        actual = (stage / published).read_bytes()
+        c.require(actual == (root / published).read_bytes(), 'Isolated ArchiMate publication differs')
+        c.require(actual == (stage / relative / 'Harmonia-Architecture.xml').read_bytes(), 'Published/Manifest Exchange drift')
+        hashes[str(published)] = c.sha(actual)
         for name in ('Harmonia-Architecture.xml', 'continuum.html', 'README.md', 'continuum-catalogue.tex', 'navigation.json', 'publication.json'):
             actual = (stage / relative / name).read_bytes()
             c.require(actual == (root / relative / name).read_bytes(), 'Isolated generation differs: ' + name)

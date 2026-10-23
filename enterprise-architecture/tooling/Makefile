@@ -17,7 +17,7 @@ validate:
 
 continuum: validate
 	$(BOUNDED) 90s $(PYTHON) -B $(TOOLING)/continuum_manifest.py
-	$(BOUNDED) 90s $(PYTHON) -B $(TOOLING)/architecture_continuum.py project --output $(CONTINUUM_OUTPUT)/Harmonia-Architecture.xml
+	$(BOUNDED) 90s $(PYTHON) -B $(TOOLING)/architecture_continuum.py project --output $(CONTINUUM_OUTPUT)/Harmonia-Architecture.xml --publish
 	$(BOUNDED) 90s $(PYTHON) -B $(TOOLING)/publish_continuum.py --output $(CONTINUUM_OUTPUT)
 
 continuum-rad: validate
@@ -30,7 +30,7 @@ rad-pdf: continuum-rad
 check continuum-check:
 	$(BOUNDED) 90s $(PYTHON) -B $(TOOLING)/architecture_release.py check
 	$(BOUNDED) 90s $(PYTHON) -B $(TOOLING)/continuum_manifest.py --check
-	$(BOUNDED) 90s $(PYTHON) -B $(TOOLING)/architecture_continuum.py project --output $(CONTINUUM_OUTPUT)/Harmonia-Architecture.xml --check
+	$(BOUNDED) 90s $(PYTHON) -B $(TOOLING)/architecture_continuum.py project --output $(CONTINUUM_OUTPUT)/Harmonia-Architecture.xml --publish --check
 	$(BOUNDED) 90s $(PYTHON) -B $(TOOLING)/publish_continuum.py --output $(CONTINUUM_OUTPUT) --check
 	$(BOUNDED) 90s $(PYTHON) -B $(TOOLING)/publish_continuum_rad.py --output $(RAD_OUTPUT) --check
 	$(BOUNDED) 90s $(PYTHON) -B $(TOOLING)/verify_continuum_links.py --report /tmp/harmonia-current-ea-links.json

@@ -1,0 +1,32 @@
+{
+  "outcome": "PASS",
+  "reviewedPendingHcrlSha256": "a28a3927b5aeb2fc47361c4be1cf745d8a37f6cc992ed755c36806e920469a87",
+  "closureInputInventorySha256": "301b486533d5f8402643219986d5af3d19af2bd1f30ba1a0c84b782c364732a8",
+  "preexistingFilesUnchanged": 1982,
+  "changedOrRemovedPreexistingFiles": [],
+  "completedHcrl": "enterprise-architecture/design/register/1.1.12/hcrl-1.1.12-001.complete.md",
+  "closureReport": "enterprise-architecture/design/evidence/1.1.12/001/after/ai-agent-reports/20261023T033719Z-1.1.12-hcrl-closure.md",
+  "solutionArchitectDispositions": {
+    "DR-1": "Accepted",
+    "DR-2": "Accepted"
+  },
+  "minutiaeAccepted": "Yes",
+  "completeAndClosed": true,
+  "releaseUnchanged": {
+    "version": "1.1.12",
+    "previous_version": "1.1.11"
+  },
+  "evidenceLayout": "UNRESOLVED",
+  "layoutErrors": [],
+  "limits": "Task instruction-entry times/prefixes remain unavailable; no timestamp recovery, new implementation tests, regenerated projection or agent-issued acceptance claimed.",
+  "additions": [
+    "enterprise-architecture/design/evidence/1.1.12/001/after/ai-agent-reports/20261023T033719Z-1.1.12-hcrl-closure.md",
+    "enterprise-architecture/design/evidence/1.1.12/001/after/closure-check.json",
+    "enterprise-architecture/design/evidence/1.1.12/001/after/closure-evidence-layout.json",
+    "enterprise-architecture/design/evidence/1.1.12/001/before/ai-agent-tasks/unresolved-1.1.12-hcrl-closure.md",
+    "enterprise-architecture/design/evidence/1.1.12/001/before/closure-input-state.json",
+    "enterprise-architecture/design/register/1.1.12/hcrl-1.1.12-001.complete.md"
+  ],
+  "localLinksAndDrAnchors": "PASS",
+  "whitespace": "PASS"
+}

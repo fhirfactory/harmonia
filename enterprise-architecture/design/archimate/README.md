@@ -14,11 +14,50 @@ location properties. It preserves native Name/displayName and identity. The
 separate View folders remain presentation navigation, outside architectural
 numbering. No semantic relationship follows from folder nesting.
 
-Import the [RAD-1.1.10 Exchange model](../../documentation/continuum-manifest/published/1.1.10/Harmonia-Architecture.xml)
-into Archi 5.10. A local native `.archimate` workspace is a human workbench;
-exported submissions are review inputs. Neither overwrites the canonical source
-or supplies acceptance. Preserve the exact baseline and submitted export under
-the originating iteration's evidence contract when they materially support review.
+The **Architecture Continuum is canonical architecture authority**. Open Exchange
+XML is its derived projection/interchange representation; **Archi is the architecture
+workbench**. Import the published
+[1.1.11 Open Exchange projection](published/1.1.11/Harmonia-Architecture.xml)
+into Archi 5.10 to begin work on that accepted release.
+
+`published/<release>/Harmonia-Architecture.xml` is the durable release artefact
+for loading that Continuum release into Archi. The filename follows the maintained
+projector's existing convention. The initial 1.1.11 artefact is generated from the
+accepted 1.1.11 Continuum and presentation template, with the same bytes as its
+accepted Manifest Exchange publication. That older publication remains unchanged.
+Adding this operational location does not change 1.1.11 architecture or navigation.
+
+A local native `.archimate` workspace is a human workbench. XML exported after
+architect changes is **proposed input** to a subsequent Architecture Archi-Roundtrip;
+it neither modifies nor supersedes the Continuum merely by existing. Retain the
+exact submitted export as appropriate `before` evidence of the activity reviewing
+it, with exact baseline correspondence under the existing provenance contract.
+Future input handling belongs to the existing Round-Trip Praxis; this publication
+structure establishes no permanent `ingest/` directory or automatic ingest mechanism.
+
+Copies under governed evidence demonstrate generation, testing, transport or
+transition activity. They are evidence, not the normal operational location for
+retrieving a released workbench projection. Archi-returned controls must never
+replace the generated release projection or its maintained presentation template.
+
+The existing `make -C enterprise-architecture/tooling continuum` publication
+command writes both the Manifest Exchange and this durable release projection
+from one validated generation. `check` verifies both against the canonical source.
+For just the durable XML, from the matching release source tree:
+
+```bash
+python3 enterprise-architecture/tooling/architecture_continuum.py project --publish
+python3 enterprise-architecture/tooling/architecture_continuum.py project --publish --check
+```
+
+The root release authority determines `<release>`; generation never increments
+it or supplies acceptance. Preparing a candidate is distinct from publishing an
+accepted release under the existing HCRL gates. Repeating identical publication
+is safe; differing existing published bytes are rejected to preserve release
+history. To reproduce a historical release, use its exact canonical sources,
+navigation, template, release authority and compatible maintained tooling in an
+isolated source tree (`--root <tree>` before `project`). Do not relabel today's
+Continuum with a historical version. No historical backfill beyond 1.1.11 is implied.
 
 ```bash
 python3 enterprise-architecture/tooling/continuum_workbench.py review \

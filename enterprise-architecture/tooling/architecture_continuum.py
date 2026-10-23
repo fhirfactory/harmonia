@@ -28,6 +28,7 @@ CONFIG = Path('enterprise-architecture/governance/continuum')
 TOOLING = Path('enterprise-architecture/tooling')
 SCHEMAS = TOOLING / 'schemas'
 DESIGN = Path('enterprise-architecture/design/archimate')
+ARCHIMATE_PUBLICATION = DESIGN / 'published'
 DOCUMENTATION = Path('enterprise-architecture/documentation')
 PUBLICATION = DOCUMENTATION / 'continuum-manifest/published'
 RAD_PUBLICATION = DOCUMENTATION / 'continuum-rad/published'
@@ -426,6 +427,38 @@ def project(root=ROOT):
     return content, validation
 
 
+def write_projection(root=ROOT, output=None, *, publish=False, check=False):
+    """Write/check one validated projection at explicit and/or release destinations.
+
+    The release destination follows this source tree's release authority. Historical
+    publication requires the corresponding source tree, not a version override.
+    """
+    require(output is not None or publish, 'Specify --output and/or --publish')
+    destinations = [output] if output is not None else []
+    published = None
+    if publish:
+        from architecture_release import load_release
+        version = load_release(root / 'architecture-release.json')['version']
+        published = root / ARCHIMATE_PUBLICATION / version / 'Harmonia-Architecture.xml'
+        destinations.append(published)
+    content, report = project(root)
+    # Check every destination before writing any. A released projection must not
+    # silently become a different model; repeated identical publication is safe.
+    for path in destinations:
+        if check:
+            require(path.exists() and path.read_bytes() == content, 'Projection is missing or stale: ' + str(path))
+        elif path == published and path.exists():
+            require(path.read_bytes() == content, 'Published projection differs; preserve release history: ' + str(path))
+    if not check:
+        for path in destinations:
+            if not path.exists() or path.read_bytes() != content:
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(content)
+    if published is not None:
+        report['publishedProjection'] = str(published.relative_to(root))
+    return report
+
+
 def semantic_id(cid):
     key = json.dumps(['HarmoniaArchitecture', cid], separators=(',', ':'))
     return 'id-' + uuid.uuid5(SEMANTIC_NAMESPACE, key).hex
@@ -489,7 +522,7 @@ def main():
     p.add_argument('--root', type=Path, default=ROOT)
     sub = p.add_subparsers(dest='command', required=True)
     v = sub.add_parser('validate'); v.add_argument('--report', type=Path)
-    g = sub.add_parser('project'); g.add_argument('--output', type=Path, required=True); g.add_argument('--report', type=Path); g.add_argument('--check', action='store_true')
+    g = sub.add_parser('project'); g.add_argument('--output', type=Path); g.add_argument('--publish', action='store_true', help='Also publish under design/archimate/published/<root-release>/'); g.add_argument('--report', type=Path); g.add_argument('--check', action='store_true')
     t = sub.add_parser('template'); t.add_argument('--type', required=True); t.add_argument('--specialization')
     c = sub.add_parser('create'); c.add_argument('--spec', type=Path, required=True)
     args = p.parse_args()
@@ -500,11 +533,7 @@ def main():
             print(create(read_json(args.spec), args.root))
         else:
             if args.command == 'project':
-                content, report = project(args.root)
-                if args.check:
-                    require(args.output.exists() and args.output.read_bytes() == content, 'Projection is missing or stale')
-                else:
-                    args.output.parent.mkdir(parents=True, exist_ok=True); args.output.write_bytes(content)
+                report = write_projection(args.root, args.output, publish=args.publish, check=args.check)
             else:
                 report = validate(args.root)
             if args.report:

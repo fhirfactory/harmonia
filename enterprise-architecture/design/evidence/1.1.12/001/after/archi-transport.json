@@ -1,0 +1,118 @@
+{
+  "actualArchiImportExport": "PASS",
+  "operator": "Codex, executing the Solution Architect-authorised 1.1.12 publication verification in Archi 5.10.0",
+  "baselineSha256": "e33ae52b3934cf4d9b9b0102ce65e09461fa554022f43d56f2637685d8c39caa",
+  "returnedXmlSha256": "a61375509cfbd4c69dd8cee112ce72880c07122e9eec4dcc0c3dd9af1b60a8e6",
+  "returnedModel": "archi-transport/returned-model.xml.gz",
+  "inputIssues": {
+    "published": [],
+    "incoming": []
+  },
+  "metrics": {
+    "published": {
+      "semantic_elements": 1602,
+      "relationships": 1651,
+      "views": 1209,
+      "visual_objects": 4005,
+      "visual_connections": 1804,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 26617294,
+      "xml_decimal_mb": 26.617294
+    },
+    "incoming": {
+      "semantic_elements": 1602,
+      "relationships": 1651,
+      "views": 1209,
+      "visual_objects": 4005,
+      "visual_connections": 1804,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 28073653,
+      "xml_decimal_mb": 28.073653
+    }
+  },
+  "preservedElementFieldCounts": {
+    "identifier": 1602,
+    "archimateType": 1602,
+    "specialization": 1602,
+    "name": 1602,
+    "documentation": 1602
+  },
+  "preservedPropertyValueAndOwnerCounts": {
+    "canonicalId": 1602,
+    "displayName": 1602,
+    "friendlyName": 1602,
+    "canonicalName": 1602
+  },
+  "relationships": {
+    "before": 1651,
+    "after": 1651,
+    "missing_ids": [],
+    "additional_ids": [],
+    "changed_records": []
+  },
+  "views": {
+    "before": 1209,
+    "after": 1209,
+    "missing_ids": [],
+    "additional_ids": [],
+    "changed_records": []
+  },
+  "rawComparatorStatus": "DIFFERENCES",
+  "rawClassifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 297,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 502,
+    "SEMANTIC DIFFERENCE": 17957,
+    "UNEXPLAINED DIFFERENCE": 2697
+  },
+  "rawReasons": {
+    "Uniquely keyed unordered collection": 252,
+    "Semantic record attribute changed": 17957,
+    "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation": 99,
+    "Attribute absent after transport": 153,
+    "Subtree absent after transport; raw input retained by hash": 349,
+    "Additional subtree with no established equivalence": 2427,
+    "Exact text compared; whitespace/language selection is not normalised": 138,
+    "No proven representational equivalence for this attribute": 33,
+    "Exact unique Property key resolves both definition IDs; all other definition content and owner values compared independently": 45
+  },
+  "canonicalWorkbenchReview": {
+    "elementChanges": 0,
+    "relationshipAndViewChanges": 0,
+    "unresolved": 0
+  },
+  "limits": [
+    "The operator/execution log attributes the actual transport; comparison alone cannot authenticate execution.",
+    "Not whole-model byte fidelity: Archi adds en language attributes and restructures organization navigation. Raw differences remain visible.",
+    "The maintained presentation template is not replaced by the no-edit return. Interactive visual inspection and architectural acceptance are not asserted."
+  ],
+  "invocation": "Archi -nosplash -consoleLog -configuration <temporary-config> -data <temporary-workspace> -application com.archimatetool.commandline.app -a --xmlexchange.import <published-XML> --saveModel <temporary-native-model> --xmlexchange.export <returned-XML> --xmlexchange.exportFolders --xmlexchange.exportLang en",
+  "executionLog": "archi-transport/transport.txt",
+  "environmentResolution": "Initial sandbox launch exited 13 at GTK initialization before import. Display-enabled retry with automatic sandbox approval succeeded using isolated temporary configuration and workspace. Published XML imported, native model saved, no-edit export validated. No interactive visual review or template replacement."
+}

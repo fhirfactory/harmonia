@@ -22,6 +22,17 @@ make -C enterprise-architecture/tooling browser-test
 `continuum` validates and generates the root navigation manifest, Open Exchange, HTML browser,
 Markdown index, LaTeX catalogue source and publication manifest for the root
 release under `documentation/continuum-manifest/published/<version>/`.
+The same validated Exchange bytes are also published at
+`design/archimate/published/<version>/Harmonia-Architecture.xml`, the durable
+starting file for importing that release into Archi. `project --publish` generates
+only that release destination; combining `--publish` with `--output` writes both
+destinations from one projection. `--check` verifies both without writing.
+The source tree's root release authority selects the version; generation does
+not allocate releases or supply architectural acceptance. Differing existing
+published XML is rejected rather than overwriting release history.
+The initial backfill is accepted 1.1.11; historical Manifest publications are
+preserved. See the [workbench procedure](../design/archimate/README.md) for canonical
+authority, architect-modified submissions and evidence distinctions.
 The canonical `continuum/navigation.json` supplies architectural organisation,
 while native-type Markdown paths remain storage locators. The shared
 `continuum_navigation.py` validates complete unique coverage and derives every
@@ -50,7 +61,7 @@ creation, mutation, identity, naming, containment, round-trip, publication, rele
 and evidence-layout tests. `verify-independent` repeats generation, checks and
 the current tests in an isolated tree with no `docs/`, `scripts/`, Git metadata,
 historical framework, historical location mapping or historical processors.
-It compares derived bytes for both products and confirms canonical source bytes
+It compares derived bytes for both products, including the durable ArchiMate XML, and confirms canonical source bytes
 are unchanged. The isolated run retains only the new RAD's template and cited
 reader notes as presentation inputs; it reads no superseded LaTeX RAD workspace.
 Override `PYTHON` for a Python environment containing the declared dependencies.

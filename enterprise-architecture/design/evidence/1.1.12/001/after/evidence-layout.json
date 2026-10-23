@@ -1,0 +1,14 @@
+{
+  "outcome": "UNRESOLVED",
+  "version": "1.1.12",
+  "iteration": "001",
+  "records": [
+    "evidence/1.1.12/001/after/ai-agent-reports/20261023T031505Z-published-archimate-projection.md",
+    "evidence/1.1.12/001/before/ai-agent-tasks/unresolved-published-archimate-projection.md"
+  ],
+  "errors": [],
+  "unresolved": [
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.12/001/before/ai-agent-tasks/unresolved-published-archimate-projection.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+  ],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}

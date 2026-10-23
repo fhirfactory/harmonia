@@ -176,6 +176,58 @@ class ContinuumTests(unittest.TestCase):
     def manifest_document(self):
         return html.fromstring(markdown.markdown(manifest.render(self.root).decode(), extensions=['tables']))
 
+    def test_published_projection_matches_source_and_checks_fail_without_writes(self):
+        version = c.read_json(self.root / 'architecture-release.json')['version']
+        published = self.root / c.ARCHIMATE_PUBLICATION / version / 'Harmonia-Architecture.xml'
+        explicit = self.root / 'publication-test.xml'
+        self.addCleanup(shutil.rmtree, self.root / c.ARCHIMATE_PUBLICATION)
+        self.addCleanup(explicit.unlink, missing_ok=True)
+        with self.assertRaisesRegex(ValueError, 'missing or stale'):
+            c.write_projection(self.root, publish=True, check=True)
+        self.assertFalse(published.exists())
+        with patch.object(c.uuid, 'uuid4', side_effect=AssertionError('Publication allocated identity')):
+            c.write_projection(self.root, explicit, publish=True)
+            self.assertEqual(self.baseline.read_bytes(), published.read_bytes())
+            self.assertEqual(explicit.read_bytes(), published.read_bytes())
+            c.write_projection(self.root, publish=True)
+            c.write_projection(self.root, publish=True, check=True)
+        # Corruption is observed, never silently repaired as a released model.
+        corrupt = published.read_bytes() + b'\nmanual alteration\n'
+        published.write_bytes(corrupt)
+        explicit.write_bytes(b'preserve explicit destination on failed preflight')
+        for check, message in [(True, 'missing or stale'), (False, 'preserve release history')]:
+            with self.subTest(check=check), self.assertRaisesRegex(ValueError, message):
+                c.write_projection(self.root, explicit, publish=True, check=check)
+            self.assertEqual(published.read_bytes(), corrupt)
+            self.assertEqual(explicit.read_bytes(), b'preserve explicit destination on failed preflight')
+
+    def test_next_release_publication_retains_predecessor_and_does_not_increment(self):
+        from architecture_release import bump_patch
+        authority = self.root / 'architecture-release.json'
+        original = authority.read_bytes()
+        self.addCleanup(authority.write_bytes, original)
+        self.addCleanup(shutil.rmtree, self.root / c.ARCHIMATE_PUBLICATION)
+        version = c.read_json(authority)['version']
+        c.write_projection(self.root, publish=True)
+        previous = self.root / c.ARCHIMATE_PUBLICATION / version / 'Harmonia-Architecture.xml'
+        before = previous.read_bytes()
+        self.assertEqual(authority.read_bytes(), original)
+        release = bump_patch(authority, version)
+        release_bytes = authority.read_bytes()
+        c.write_projection(self.root, publish=True)
+        current = self.root / c.ARCHIMATE_PUBLICATION / release['version'] / 'Harmonia-Architecture.xml'
+        self.assertEqual(previous.read_bytes(), before)
+        self.assertEqual(current.read_bytes(), c.project(self.root)[0])
+        self.assertNotEqual(current.read_bytes(), before)
+        self.assertEqual(authority.read_bytes(), release_bytes)
+        for path, expected in [(previous, version), (current, release['version'])]:
+            model = c.secure_xml(path)
+            defs = {p.get('identifier'): p.findtext('a:name', namespaces=c.N)
+                    for p in model.findall('a:propertyDefinitions/a:propertyDefinition', c.N)}
+            values = {defs[p.get('propertyDefinitionRef')]: p.findtext('a:value', namespaces=c.N)
+                      for p in model.findall('a:properties/a:property', c.N)}
+            self.assertEqual(values['Baseline / Architecture Release'], expected)
+
     def test_manifest_covers_each_element_once_in_canonical_navigation_with_source_values(self):
         doc=self.manifest_document()
         rows=doc.xpath('//tr[count(td)=9]')

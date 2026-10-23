@@ -61,6 +61,25 @@ Required transition evidence follows current provenance rather than a mandatory
 archive package. Common completion requires Solution Architect confirmation of
 the authorised and actually incorporated result.
 
+## Published projection and architect export
+
+The Architecture Continuum remains canonical architecture authority. The durable
+Open Exchange release projection is
+`enterprise-architecture/design/archimate/published/<release>/Harmonia-Architecture.xml`;
+use that file to load the corresponding accepted release into the Archi workbench.
+The [workbench documentation](../design/archimate/README.md) links the initial
+accepted 1.1.11 projection and the maintained deterministic publication command.
+
+An XML export from an architect-modified Archi model is proposed change input,
+not a published architecture release. Its existence does not modify or supersede
+the Continuum. Retain that exact input as appropriate `before` evidence of its
+subsequent round-trip review under Architecture Change Provenance. Evidence
+copies demonstrate generation, testing, transport or transition; they are not the
+normal operational location for retrieving a released projection. This clarifies
+publication location and artefact roles only; existing triggers, exact-input
+discovery, adjudication and application checkpoints remain in force. No permanent
+ingest directory, automatic ingest mechanism or new input-handling process follows.
+
 ## Actors and trigger vocabulary
 
 | Actor | Authority and responsibility |
