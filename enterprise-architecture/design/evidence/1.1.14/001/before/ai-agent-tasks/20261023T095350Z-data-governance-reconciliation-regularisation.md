@@ -6,7 +6,7 @@ Task-Issued-At: 2026-10-23T09:53:50.775Z
 Attributable Issuer: Solution Architect (Mark Hunter)
 Interaction Session: `session-261023-205129-62l6` (Prompt: `prompt-261023-205350-2q2f`)
 Boundary: RAD-1.1.14, HCRL iteration 001. Baseline: RAD-1.1.13, branch `Data-Governence-Services`.
-Corresponding Report: to be emitted in `enterprise-architecture/design/evidence/1.1.14/001/after/ai-agent-reports/` (filename prefix derived from its `Report-Produced-At` timestamp upon completion of Step 2).
+Corresponding Report: [`enterprise-architecture/design/evidence/1.1.14/001/after/ai-agent-reports/20261023T102853Z-data-governance-reconciliation-regularisation.md`](../../after/ai-agent-reports/20261023T102853Z-data-governance-reconciliation-regularisation.md)
 
 ## Interaction Context
 
