@@ -291,12 +291,16 @@ def validate(root=ROOT, *, previous=None, pending=None):
     if previous:
         for cid in previous:
             require(cid in elements, 'Lost previous identity/tombstone: ' + cid)
+    if not pending:
+        import continuum_navigation
+        navigation = continuum_navigation.load(root, elements)
     counts = Counter((m['archimateType'], m.get('specialization') or '', m['standing']['semantic'], m['standing']['currentness']) for m, _, _ in elements.values())
     return {'status': 'PASS', 'elements': len(elements), 'relationships': len(relationships),
             'qualifiedSourcePredicates': len(qualified),
             'canonicalIdentities': len(elements), 'representationIdentities': len(representations),
             'provenanceCoverage': len(elements), 'sourceBindings': len(bindings),
             'supportedNativeTypes': len(catalogue['types']),
+            'navigation': 'Prospective creation preflight' if pending else 'PASS',
             'counts': [{'type': key[0], 'specialization': key[1], 'standing': key[2], 'currentness': key[3], 'count': count} for key, count in sorted(counts.items())],
             'unresolvedProperties': unresolved, 'architecturalAcceptance': 'See governed HCRLs; validation supplies no acceptance'}
 
@@ -324,6 +328,18 @@ def project(root=ROOT):
     catalogue, elements = load(root)
     model = secure_xml(root / DESIGN / 'projection-template.xml')
     definitions = {p.get('identifier'): p.findtext('a:name', namespaces=N) for p in model.findall('a:propertyDefinitions/a:propertyDefinition', N)}
+    import continuum_navigation as navigation
+    hierarchy = navigation.load(root, elements)
+    locations = navigation.by_element(hierarchy)
+    # Projection-only properties expose location without altering native Name,
+    # canonicalId, existing representation bindings or canonical metadata.
+    propdefs = model.find('a:propertyDefinitions', N)
+    for identifier, name in [('continuum-navigation-number', 'Continuum / Navigation Number'),
+                             ('continuum-navigation-path', 'Continuum / Navigation Path')]:
+        require(identifier not in definitions and name not in definitions.values(), 'Duplicate navigation property definition')
+        prop = ET.SubElement(propdefs, tag('propertyDefinition'), identifier=identifier, type='string')
+        ET.SubElement(prop, tag('name')).text = name
+        definitions[identifier] = name
     es = model.find('a:elements', N)
     rs = model.find('a:relationships', N)
     require(es is not None and not len(es) and rs is not None and not len(rs), 'Projection template must not own semantic elements or relationships')
@@ -347,6 +363,8 @@ def project(root=ROOT):
         set_property(rows, definitions, 'Continuum / Canonical Source', str(element_path(m, catalogue)))
         set_property(rows, definitions, 'Continuum / Semantic Standing', m['standing']['semantic'])
         set_property(rows, definitions, 'Continuum / Currentness', m['standing']['currentness'])
+        set_property(rows, definitions, 'Continuum / Navigation Number', locations[cid]['number'])
+        set_property(rows, definitions, 'Continuum / Navigation Path', ' / '.join(locations[cid]['path']))
         properties(node, rows)
         relationships.extend(m.get('relationships', []))
     for row in sorted(relationships, key=lambda row: row['identifier']):
@@ -363,22 +381,9 @@ def project(root=ROOT):
             prop.find('a:value', N).text = release['version']
         if definitions[prop.get('propertyDefinitionRef')] == 'Baseline / Canonical Textual Projection':
             prop.find('a:value', N).text = str(CONTINUUM)
-    # Existing authored Views/navigation stay byte-structurally intact. Add only
-    # missing element navigation entries under their native classification.
-    org = model.find('a:organizations', N)
-    referenced = {x.get('identifierRef') for x in org.iter() if x.get('identifierRef')}
-    new = [(m, cid) for cid, (m, _, _) in elements.items() if m['exchange']['identifier'] not in referenced]
-    if new:
-        collection = ET.SubElement(org, tag('item'))
-        ET.SubElement(collection, tag('label'), {LANG: 'en'}).text = 'Continuum additions'
-        groups = {}
-        for m, cid in sorted(new, key=lambda pair: (pair[0]['archimateType'], pair[1])):
-            kind = m['archimateType']
-            if kind not in groups:
-                group = ET.SubElement(collection, tag('item'))
-                ET.SubElement(group, tag('label'), {LANG: 'en'}).text = kind
-                groups[kind] = group
-            ET.SubElement(groups[kind], tag('item'), identifierRef=m['exchange']['identifier'])
+    # Canonical organisation replaces architecture folders. Authored Views,
+    # their geometry, identifiers and View-folder navigation remain intact.
+    navigation.project(model, hierarchy, elements)
     content = ET.tostring(model, encoding='UTF-8', xml_declaration=True, pretty_print=True)
     # Preserve literal source-text padding in parsed documentation without
     # emitting trailing whitespace in the generated XML's physical lines.
@@ -426,6 +431,13 @@ def semantic_id(cid):
 def create(spec, root=ROOT):
     """Explicit authorised allocation; validation/publication never call this."""
     catalogue, existing = load(root)
+    import continuum_navigation as navigation
+    navigation.load(root, existing)
+    parent_path = spec.get('navigationParent')
+    require(isinstance(parent_path, list) and parent_path, 'Creation requires an explicit navigationParent path')
+    # Preflight placement without allocating an identity or changing live state.
+    nav_data = read_json(root / navigation.SOURCE)
+    navigation.with_element(nav_data, '0' * 32, parent_path, existing)
     m, body = copy.deepcopy(spec['metadata']), spec['body']
     require(m.get('identity', {}).get('authority') and m.get('provenance'), 'Creation needs attributable authority and provenance')
     require(not m.get('canonicalId'), 'Create allocates only new identities; edit the existing source to preserve an identity')
@@ -440,6 +452,8 @@ def create(spec, root=ROOT):
     preview['canonicalId'] = '0' * 32
     preview['exchange'] = {'identifier': semantic_id(preview['canonicalId']), 'properties': []}
     validate(root, pending=[(preview, body, root / element_path(preview, catalogue))])
+    prospective = {**existing, preview['canonicalId']: (preview, body, root / element_path(preview, catalogue))}
+    navigation.load(root, prospective, document=navigation.with_element(nav_data, preview['canonicalId'], parent_path, existing))
     m['canonicalId'] = uuid.uuid4().hex
     require(m['canonicalId'] not in existing, 'UUID collision; do not retry or reuse identity')
     m['identity']['allocation'] = 'UUIDv4 allocated once by explicit create'
@@ -450,6 +464,7 @@ def create(spec, root=ROOT):
     validate(root, pending=[(m, body, path)])
     with path.open('x') as output:
         output.write(encode(m, body))
+    (root / navigation.SOURCE).write_bytes(encoded(navigation.with_element(nav_data, m['canonicalId'], parent_path, existing)))
     return path
 
 
@@ -463,7 +478,7 @@ def template(native, specialization=None, root=ROOT):
          'naming': {'authority': 'enterprise-architecture/governance/canonical-identity-and-naming.md'},
          'provenance': [], 'sourceBindings': [], 'relationships': [], 'unresolvedProperties': {}}
     element_path({**m, 'canonicalId': '0' * 32}, catalogue)
-    return {'metadata': m, 'body': '# <governed name>\n\n## Architectural content\n\n<definition, responsibility, boundaries, source-qualified assertions and unresolved matters>\n'}
+    return {'metadata': m, 'navigationParent': ['<authorised domain>', '<authorised navigation context>'], 'body': '# <governed name>\n\n## Architectural content\n\n<definition, responsibility, boundaries, source-qualified assertions and unresolved matters>\n'}
 
 
 def main():

@@ -1,0 +1,118 @@
+{
+  "actualArchiImportExport": "PASS",
+  "operator": "Codex executing installed Archi 5.10 CLI against temporary workspace/model files",
+  "baselineSha256": "7ce67d66b972e2b9e0e3f0c956a1235a4286200890ae01852648ae3ea9d6d7fd",
+  "returnedXmlSha256": "028d273263e15f351aa366d8147175f1fd3619122ef870aee0fb325e70fb229a",
+  "returnedModel": "archi-transport/returned-model.xml.gz",
+  "inputIssues": {
+    "published": [],
+    "incoming": []
+  },
+  "metrics": {
+    "published": {
+      "semantic_elements": 1602,
+      "relationships": 1651,
+      "views": 1209,
+      "visual_objects": 4005,
+      "visual_connections": 1804,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 25511389,
+      "xml_decimal_mb": 25.511389
+    },
+    "incoming": {
+      "semantic_elements": 1602,
+      "relationships": 1651,
+      "views": 1209,
+      "visual_objects": 4005,
+      "visual_connections": 1804,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 27139980,
+      "xml_decimal_mb": 27.13998
+    }
+  },
+  "preservedElementFieldCounts": {
+    "identifier": 1602,
+    "archimateType": 1602,
+    "specialization": 1602,
+    "name": 1602,
+    "documentation": 1602
+  },
+  "preservedPropertyValueAndOwnerCounts": {
+    "canonicalId": 1602,
+    "displayName": 1602,
+    "friendlyName": 1602,
+    "canonicalName": 1602
+  },
+  "relationships": {
+    "before": 1651,
+    "after": 1651,
+    "missing_ids": [],
+    "additional_ids": [],
+    "changed_records": []
+  },
+  "views": {
+    "before": 1209,
+    "after": 1209,
+    "missing_ids": [],
+    "additional_ids": [],
+    "changed_records": []
+  },
+  "rawComparatorStatus": "DIFFERENCES",
+  "rawClassifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 296,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 537,
+    "SEMANTIC DIFFERENCE": 16355,
+    "UNEXPLAINED DIFFERENCE": 2634
+  },
+  "rawReasons": {
+    "Uniquely keyed unordered collection": 252,
+    "Semantic record attribute changed": 16355,
+    "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation": 113,
+    "Attribute absent after transport": 189,
+    "Subtree absent after transport; raw input retained by hash": 348,
+    "Additional subtree with no established equivalence": 2320,
+    "Exact text compared; whitespace/language selection is not normalised": 166,
+    "No proven representational equivalence for this attribute": 35,
+    "Exact unique Property key resolves both definition IDs; all other definition content and owner values compared independently": 44
+  },
+  "canonicalWorkbenchReview": {
+    "elementChanges": 0,
+    "relationshipAndViewChanges": 0,
+    "unresolved": 0
+  },
+  "limits": [
+    "The operator/execution log attributes the actual transport; comparison alone cannot authenticate execution.",
+    "Not whole-model byte fidelity: Archi adds en language attributes and restructures organization navigation. Raw differences remain visible.",
+    "The maintained presentation template is not replaced by the no-edit return. Interactive visual inspection and architectural acceptance are not asserted."
+  ],
+  "invocation": "Archi -nosplash -consoleLog -configuration <temporary-config> -data <temporary-workspace> -application com.archimatetool.commandline.app -a --xmlexchange.import <published-XML> --saveModel <temporary-native-model> --xmlexchange.export <returned-XML> --xmlexchange.exportFolders --xmlexchange.exportLang en",
+  "executionLog": "archi-transport/transport.txt",
+  "environmentResolution": "First invocation could not initialise GTK without display access. Retried with the inherited existing display socket outside the filesystem sandbox, retaining isolated /tmp configuration, workspace, home and outputs. No user model/workspace was modified."
+}

@@ -22,6 +22,13 @@ make -C enterprise-architecture/tooling browser-test
 `continuum` validates and generates the root navigation manifest, Open Exchange, HTML browser,
 Markdown index, LaTeX catalogue source and publication manifest for the root
 release under `documentation/continuum-manifest/published/<version>/`.
+The canonical `continuum/navigation.json` supplies architectural organisation,
+while native-type Markdown paths remain storage locators. The shared
+`continuum_navigation.py` validates complete unique coverage and derives every
+hierarchical coordinate. All projections consume that same traversal. The
+generated Manifest `navigation.json` exposes the fully numbered tree for inspection;
+it is not an editable architecture source. Creation specifications require an
+explicit `navigationParent` context; publication performs no classification.
 `continuum-rad` generates the narrative LaTeX publication and complete model/source
 correspondence under `documentation/continuum-rad/published/<version>/`.
 `all` includes both products. `rad-pdf` compiles the narrative PDF with XeLaTeX,

@@ -1,0 +1,12 @@
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[XML Exchange] Validating...
+[XML Exchange] Validated!
+[XML Exchange] Importing XML from /home/mhunter/Development/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-manifest/published/1.1.10/Harmonia-Architecture.xml
+[XML Exchange] XML Imported!
+[XML Exchange] Exporting from 'Harmonia Architecture — Synchronised Markdown / ArchiMate Baseline' to /tmp/harmonia-1.1.10-returned.xml
+[XML Exchange] XML Exported!
+[XML Exchange] Validating...
+[XML Exchange] Validated!
+[Core] Saved model to '/tmp/harmonia-1.1.10.archimate'

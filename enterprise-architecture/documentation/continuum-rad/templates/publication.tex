@@ -79,13 +79,14 @@
 \renewlist{enumerate}{enumerate}{8}
 \setlist[itemize]{label=\textbullet}
 \setlist[enumerate]{label=\arabic*.}
-% Architectural entries appear in the contents and outline at their actual depth.
-% Catalogue fields retain contextual numbering without thousands of outline rows.
+% Canonical navigation coordinates are explicit at every depth. LaTeX never
+% supplies a competing number scheme. The outline includes every entry; the
+% printed contents select chapters/sections for a readable document spine.
 \setcounter{tocdepth}{2}
 \hypersetup{bookmarksdepth=7}
 \bookmarksetup{open,openlevel=0}
 \RedeclareSectionCommands[runin=false,beforeskip=1.4ex,afterskip=.6ex]{paragraph,subparagraph}
-\setcounter{secnumdepth}{5}
+\setcounter{secnumdepth}{-2}
 \newcommand{\cataloguefield}[2]{%
   \begingroup
   \renewcommand{\addcontentsline}[3]{}%
@@ -137,43 +138,53 @@ Individual standing and unresolved matters remain as recorded in each source.
 \tableofcontents
 \chapter*{Reading the Architecture Continuum}
 \addcontentsline{toc}{chapter}{Reading the Architecture Continuum}
-Start with Motivation for architectural intent and axioms, then Strategy for
-capabilities and Business for operational responsibilities. Application describes
-software responsibilities and managed information. The chapters follow the
-complete governed model organisation; folder nesting is navigation, not an
-additional architectural relationship. The existing model's Continuum additions
-branches retain their labels, order and nesting within the applicable native EA
-domain Part. No fallback chapters or independent RAD hierarchy are introduced.
+Architecture Governance introduces the existing authority, review, evidence and
+repository arrangements. Parts I--VI then follow Motivation, Strategy, Business,
+Application, Technology, and Implementation \& Migration. Chapters and nested
+subjects follow the canonical Continuum taxonomy. Unpopulated domains explicitly
+record absence; no missing architecture is supplied for publication.
+
+Each architectural node carries its Continuum navigation coordinate: G for
+Governance and I--VI for architectural Parts. Coordinates continue through every
+published descendant. They are locations that can change when architecture moves.
+Canonical IDs remain immutable identities, and names retain their architectural
+meaning. Native ArchiMate relationships preserve semantic assertions; navigation
+nesting asserts no additional containment or ownership.
+
+Strategy preserves the governed Enterprise, Business and Business Enabling
+capability decompositions. Business behaviour uses relevant capability context
+without repeating that entire hierarchy. Application separates logical Topics
+from scoped information structures and organises software by its existing
+application responsibilities. A native DataObject is never promoted to a Topic
+or Class for publication convenience. Stakeholders appear as cross-cutting
+Motivation profiles, with existing associations and no peer Stakeholders chapter.
 
 The Architecture Continuum was accepted as the canonical baseline in RAD-1.1.7.
-This acceptance preserves the separate standing of each assertion. In particular,
-currentness does not mean approval. Candidate and Proposed descriptions remain
-qualified; source wording about pending detailed architecture is retained.
-Historical and superseded elements remain qualified within their existing model
-branches, with links to their canonical definitions. They are included in the
-complete correspondence record.
+Each element and assertion retains its independent standing. Currentness supplies
+no acceptance. Candidate, Proposed, historical and superseded material remains
+qualified within its architectural context. Unclassified branches preserve genuine
+classification gaps without manufacturing decisions. Historical definitions and
+full source contributions remain available in the linked canonical records.
 
-Use the linked architectural names and page index to move between responsibilities.
-Each entry identifies its standing and links to canonical Markdown. Chapter
-introductions offer source-cited reading guidance. Explanatory diagrams show
-selected, explicitly represented relationships, with their existing qualifications;
-layout and proximity assert nothing further. Detailed source contributions,
-provenance, independent naming/placement qualifications and recorded unresolved
-properties remain available through those links and the Continuum Manifest.
+Use the full PDF outline for navigation down to every entry, and the Architectural
+Name Index for names and their coordinates. Each narrative entry links to canonical
+Markdown. Source-cited reading notes and selected existing relationship diagrams
+explain represented architecture; their layout adds no semantic assertions.
+The \href{structure.json}{publication correspondence} records each source, its
+coordinate and preserved qualifications. The
+\href{../../../continuum-manifest/published/@VERSION@/continuum.html}{Continuum Manifest browser}
+exposes the same numbered hierarchy and the complete qualified catalogue.
+The \href{../../../../governance/architectural-axioms.md}{Architectural Axioms}
+remain solely defined by their linked canonical Continuum Principles.
+This document is a derived publication and supplies no independent authority.
+Neither generation nor successful checks establish architectural acceptance.
 
-The \href{../../../../design/register/1.1.7/hcrl-1.1.7-001.complete.md}{accepted baseline record}
-and \href{../../../../governance/architectural-axioms.md}{Architectural Axioms}
-retain their governed roles. The superseded LaTeX RAD supplies reused typesetting
-facilities only. Its model copies and semantic extracts are not publication inputs.
-The \href{../../../continuum-manifest/published/@VERSION@/continuum.html}{Continuum Manifest browser}
-provides the full structural catalogue. The machine-readable \href{structure.json}{publication correspondence}
-records every source's placement and preserved qualifications.
 \clearpage
 \pagenumbering{arabic}
 @CONTENT@
 \clearpage
 \phantomsection
-\addcontentsline{toc}{chapter}{Index of architectural names}
-\renewcommand{\indexname}{Index of architectural names}
+\addcontentsline{toc}{chapter}{Architectural Name Index}
+\renewcommand{\indexname}{Architectural Name Index}
 \printindex
 \end{document}

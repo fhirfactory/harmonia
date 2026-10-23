@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "pages": 522,
+  "pdfBytes": 1699289,
+  "pdfSha256": "2734677c1ca4ef3b8af2ce968927ed51cb13c4e10440caec0d84b288e2ac0ec5",
+  "latexSourceBytes": 2014039,
+  "numberedArchitecturalBookmarks": 1941,
+  "distinctArchitecturalBookmarkDestinations": 1941,
+  "pdfByteReproducibility": "PASS",
+  "sourceDateEpoch": 1792627200,
+  "forceSourceDate": 1,
+  "cleanCompilation": "Copied final master and parts only into a fresh /tmp directory; same relative outdir=build and command as maintained Make target. PDF bytes match retained publication.",
+  "buildPathQualification": "An exploratory compilation with a different absolute outdir produced identical content with different xdvipdfmx file IDs/font subset tags. Use the maintained relative build path and declared epoch/toolchain for byte reproduction.",
+  "structure": [
+    "Front matter",
+    "Architecture Governance",
+    "Part I — Motivation",
+    "Part II — Strategy",
+    "Part III — Business",
+    "Part IV — Application",
+    "Part V — Technology",
+    "Part VI — Implementation & Migration",
+    "Architectural Name Index"
+  ],
+  "inspection": "Rendered representative TOC, Governance, deep Strategy capability, Business capability-context, Mneme Application and Name Index pages. Reinspected final Governance. No clipping observed in selected pages; full page-by-page visual review is not claimed.",
+  "correction": "Initial individual bookmarks reused chapter destinations. Added a distinct phantom anchor before each numbered heading label/TOC entry; final compiled PDF exposes every architectural coordinate with a distinct destination.",
+  "layoutWarnings": {
+    "overfull": false,
+    "undefinedReferencesOrCitations": false
+  },
+  "limits": [
+    "Representative page inspection is not comprehensive editorial acceptance.",
+    "Byte reproducibility uses the same installed TeX/font toolchain and maintained relative output path; cross-toolchain or arbitrary-output-path byte identity is not asserted."
+  ]
+}

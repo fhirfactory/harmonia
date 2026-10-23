@@ -312,12 +312,17 @@ There is no general requirement for governance material to have a corresponding
 continuum entry or ArchiMate element.
 
 For knowledge genuinely part of Enterprise/Solution Architecture, ArchiMate
-together with governed Harmonia specialisations provides the taxonomy. The
+together with governed Harmonia specialisations supplies native semantic classification. The
 Enterprise Architecture Continuum SHALL align with the ArchiMate metamodel.
 Specialisations reside within their governing native concept's structure.
 Submitters propose applicable native-concept or governed-specialisation tags;
 ARB may accept, reclassify or reject them. Accepted classification determines
-continuum placement. Agents SHALL NOT invent architectural types or
+native storage placement. The Solution Architect's bounded 1.1.10 organisation
+Task authorises the Harmonia architectural navigation taxonomy described by the
+[Continuum Representation](continuum-representation.md#architectural-organisation-and-native-storage).
+The canonical Continuum owns that navigation; publications consume it. Navigation
+does not establish native semantic relationships or alter classification/standing.
+Agents SHALL NOT invent architectural types or
 specialisations to accommodate content; a new type/specialisation itself needs
 adjudication. The continuum and Archi model should provide corresponding
 navigation over that governed architecture.

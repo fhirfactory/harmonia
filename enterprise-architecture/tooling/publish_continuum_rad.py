@@ -20,6 +20,7 @@ import architecture_continuum as c
 import ea_references
 from publish_continuum import tex
 import relationship_state
+import continuum_navigation as nav
 
 SOURCE = c.DOCUMENTATION / 'continuum-rad'
 HISTORICAL = {'historical_reference', 'superseded'}
@@ -117,63 +118,8 @@ class Prose:
         return self.children(fragment, path)
 
 
-def hierarchy(model, catalogue, elements):
-    """Partition the complete existing model organisation by native EA domain.
-
-    Every chapter/section is an actual organisation node, including the existing
-    projector's Continuum additions branch. Classification selects the Part only;
-    it never creates a replacement chapter, ancestry or historical appendix.
-    """
-    by_rep = {m['exchange']['identifier']: cid for cid, (m, _, _) in elements.items()}
-    domain_for_type = {native: Path(profile['directory']).parts[0]
-                       for native, profile in catalogue['types'].items()}
-    organisations = model.find('a:organizations', c.N)
-    domain_nodes = {node.findtext('a:label', namespaces=c.N).casefold(): node
-                    for node in organisations.findall('a:item', c.N)
-                    if node.findtext('a:label', namespaces=c.N)}
-    order = list(dict.fromkeys(domain_for_type.values()))
-
-    def walk(node, domain, path):
-        text = node.findtext('a:label', namespaces=c.N)
-        cid = by_rep.get(node.get('identifierRef'))
-        if cid and domain_for_type[elements[cid][0]['archimateType']] != domain:
-            return None
-        title = text or (elements[cid][0]['displayName'] if cid else None)
-        result = {'title': title, 'origin': 'model element reference' if cid else 'model organisation',
-                  'locator': model.getroottree().getpath(node), 'modelIdentifier': node.get('identifier'),
-                  'path': path + ([title] if title else []), 'elements': [], 'children': []}
-        if cid:
-            result['elements'].append(cid)
-        for child in node.findall('a:item', c.N):
-            item = walk(child, domain, result['path'])
-            if item:
-                c.require(item['title'], 'Unlabelled model container needs explicit publication treatment: ' + item['locator'])
-                result['children'].append(item)
-        return result if result['elements'] or result['children'] else None
-
-    parts = []
-    for domain in order:
-        domain_node = domain_nodes.get(domain)
-        relevant = [cid for cid, (m, _, _) in elements.items() if domain_for_type[m['archimateType']] == domain]
-        if not relevant:
-            continue
-        c.require(domain_node is not None, 'Populated EA domain lacks an existing model organisation: ' + domain)
-        part = walk(domain_node, domain, [])
-        c.require(part is not None, 'Empty model domain organisation: ' + domain)
-        for node in organisations.findall('a:item', c.N):
-            title = node.findtext('a:label', namespaces=c.N)
-            if title and title.casefold() not in order:
-                branch = walk(node, domain, [])
-                if branch:
-                    part['children'].append(branch)
-        parts.append(part)
-    c.require(Counter(cid for part in parts for cid in descendants(part)) == Counter(elements.keys()),
-              'Existing model organisation must account for every canonical element exactly once')
-    return parts
-
-
 def descendants(node):
-    return node['elements'] + [cid for child in node['children'] for cid in descendants(child)]
+    return nav.descendants(node)
 
 
 def diagram(node, elements, population):
@@ -214,14 +160,19 @@ def diagram(node, elements, population):
 
 
 def outputs(root, output):
-    # Use the full governed projection, including its existing additions
-    # organisations. A presentation-template fragment is not the full hierarchy.
+    # Use the same canonical hierarchy as Exchange; never derive chapters from
+    # incidental workbench folders or infer architecture during publication.
     model_bytes, _ = c.project(root)
     from lxml import etree as ET
     model = ET.fromstring(model_bytes)
     catalogue, elements = c.load(root)
     release = c.read_json(root / 'architecture-release.json')
-    tree = hierarchy(model, catalogue, elements)
+    tree = nav.load(root, elements)
+    locations = nav.by_element(tree)
+    model_nodes = {node.get('identifier'): node for node in model.findall('.//a:organizations//a:item', c.N)}
+    for node in nav.walk(tree):
+        projected = model_nodes[nav.transport_id(node)]
+        node['modelLocator'] = model.getroottree().getpath(projected)
     prose = Prose(root, output, elements)
     notes = c.read_json(root / SOURCE / 'reader-notes.json')
     # Reuse the existing source-qualified relationship population selector.
@@ -235,57 +186,120 @@ def outputs(root, output):
     population = relationship_state.exchange_population(SimpleNamespace(keys=keys, relationships=relationships))
     artifacts, headings, placements, diagrams = {}, [], [], []
 
-    def heading(node, depth, path):
-        c.require(depth < len(HEADINGS), 'Model hierarchy exceeds declared LaTeX section depth')
-        headings.append({'title': node['title'], 'depth': depth, 'origin': node['origin'],
-                         'locator': node['locator'], 'modelIdentifier': node['modelIdentifier'], 'path': path})
-        return '\\' + HEADINGS[depth] + '{' + tex(node['title']) + '}\n'
+    def heading(node, depth, *, perspective=False):
+        c.require(depth < len(HEADINGS), 'Continuum hierarchy exceeds declared LaTeX section depth')
+        headings.append({'title': node['title'], 'number': node['number'], 'depth': depth,
+                         'origin': 'canonical Continuum navigation', 'locator': node['modelLocator'],
+                         'canonicalLocator': node['locator'], 'path': node['path'],
+                         'kind': node.get('kind', 'section')})
+        text = tex(nav.title(node))
+        if perspective:
+            # Cross-cutting profiles appear in the Motivation introduction, not
+            # as a type-bucket chapter. Every profile still has its coordinate,
+            # canonical link and outline entry.
+            return (r'\par\medskip\phantomsection\label{navigation:' + node['number'] + '}'
+                    + '\n' + r'\pdfbookmark[0]{' + text + '}{perspective-' + node['number'] + '}'
+                    + '\n' + r'\textbf{' + text + r'}\par' + '\n')
+        command = HEADINGS[depth + (1 if node['number'].startswith('G.') else 0)]
+        return ('\\' + command + '*{' + text + '}\n'
+                + r'\phantomsection' + '\n'
+                + r'\label{navigation:' + node['number'] + '}' + '\n'
+                + r'\addcontentsline{toc}{' + command + '}{' + text + '}\n')
 
-    def entry(cid, path, locator):
+    def entry(cid, node):
         m, body, source = elements[cid]
-        placements.append({'canonicalId': cid, 'path': path, 'modelLocator': locator, 'source': str(source.relative_to(root)), 'sourceSha256': c.sha(source.read_bytes()), 'standing': m['standing'], 'unresolvedProperties': m.get('unresolvedProperties', {}), 'sourceUnresolved': m.get('sourceUnresolved'), 'publication': 'model narrative'})
+        placements.append({'canonicalId': cid, 'number': node['number'], 'path': node['path'],
+                           'modelLocator': node['modelLocator'], 'source': str(source.relative_to(root)),
+                           'sourceSha256': c.sha(source.read_bytes()), 'standing': m['standing'],
+                           'unresolvedProperties': m.get('unresolvedProperties', {}),
+                           'sourceUnresolved': m.get('sourceUnresolved'),
+                           'classificationIssue': node.get('classificationIssue'),
+                           'publication': 'Continuum narrative'})
         link = os.path.relpath(source, output)
-        if m['standing']['currentness'] in HISTORICAL:
-            return (r'\par\label{' + label(cid) + '}' + '\n'
-                    + tex(m['standing']['semantic'] + ' / ' + m['standing']['currentness'])
-                    + r'. \href{' + link + r'}{Historical canonical record}.\par' + '\n')
-        result = [r'\label{' + label(cid) + '}',
-                  r'\index{' + tex(m['displayName']).replace('!', '"!').replace('@', '"@').replace('|', '"|') + '}',
+        index_name = tex(m['displayName']).replace('!', '"!').replace('@', '"@').replace('|', '"|')
+        result = [r'\label{' + label(cid) + '}', r'\index{' + index_name + ' (' + node['number'] + ')}',
                   r'{\small ' + tex(m['archimateType'] + (' / ' + m['specialization'] if m.get('specialization') else '') + ' · ' + m['standing']['semantic'] + ' · ' + m['standing']['currentness']) + r'}\par']
+        if m['standing']['currentness'] in HISTORICAL:
+            result.append(r'\href{' + link + r'}{Historical canonical definition and provenance}.\par')
+            return '\n'.join(result)
         # Definitions and boundaries remain source prose. Repeated source
-        # contributions/history stay in the linked canonical record and Manifest.
+        # contributions/history remain in the linked canonical record/Manifest.
         content = body.split('## Architectural content\n', 1)[1].split('\n## ', 1)[0].strip()
+        if node.get('kind') == 'perspective':
+            paragraphs = [p for p in content.split('\n\n') if p and not p.startswith('#')]
+            content = paragraphs[0] if paragraphs else content
         result.append(prose.render(content, source))
         if m.get('unresolvedProperties') or m.get('sourceUnresolved'):
-            result.append(r'{\small Recorded unresolved matters: ' + tex(', '.join(sorted(m.get('unresolvedProperties', {}))) or 'source-qualified matters') + r'; see the canonical record for their exact scope.}\par')
-        result.append(r'{\footnotesize \href{' + link + r'}{Canonical record: ' + cid + r'}; full qualifications, contributions and provenance.}\par')
+            result.append(r'{\small Recorded unresolved matters: ' + tex(', '.join(sorted(m.get('unresolvedProperties', {}))) or 'source-qualified matters') + r'; exact scope remains in the canonical record.}\par')
+        if node.get('classificationIssue'):
+            result.append(r'{\small Navigation classification: ' + tex(node['classificationIssue']) + r'}\par')
+        # Existing associations remain explicit cross-references. No association
+        # is manufactured from the cross-cutting presentation of Stakeholders.
+        if node.get('kind') == 'perspective':
+            rid = m['exchange']['identifier']
+            related = sorted({edge['target'] for mm, _, _ in elements.values() for edge in mm['relationships']
+                              if edge['source'] == rid and edge['archimateType'] == 'Association'})
+            by_rep = {mm['exchange']['identifier']: other for other, (mm, _, _) in elements.items()}
+            if related:
+                result.append(r'{\small Existing associated concerns: ' + '; '.join(ref(by_rep[r], elements) for r in related if r in by_rep) + r'.}\par')
+        result.append(r'{\footnotesize \href{' + link + r'}{Canonical record: ' + cid + r'}; full qualifications and provenance.}\par')
         return '\n'.join(result)
 
-    def render(node, depth, path):
-        path = path + [node['title']]
-        out = [heading(node, depth, path)]
-        out += [entry(cid, path, node['locator']) for cid in node['elements']]
-        for child in node['children']:
-            out.append(render(child, depth + 1, path))
+    def render(node, depth):
+        out = [heading(node, depth, perspective=node.get('kind') == 'perspective')]
+        if node.get('description'):
+            out.append(tex(node['description']) + r'\par')
+        if node.get('contextCanonicalId'):
+            cid = node['contextCanonicalId']
+            out.append(r'{\small Capability context: ' + ref(cid, elements) + ' (' + locations[cid]['number'] + r'). The Strategy hierarchy remains authoritative.}\par')
+        if node.get('relatedCanonicalIds'):
+            out.append(r'\begin{longtable}{p{.22\linewidth}p{.73\linewidth}}')
+            for cid in node['relatedCanonicalIds']:
+                out.append(tex(locations[cid]['number']) + ' & ' + ref(cid, elements) + r' \\')
+            out.append(r'\end{longtable}')
+        if node.get('source'):
+            target = os.path.relpath(root / node['source'].split('#')[0], output)
+            if '#' in node['source']:
+                target += '#' + node['source'].split('#', 1)[1]
+            out.append(r'\href{' + target + r'}{Governed source: ' + tex(node['title']) + r'}.\par')
+        if node.get('canonicalId'):
+            out.append(entry(node['canonicalId'], node))
+        for child in node.get('children', []):
+            out.append(render(child, depth + 1))
         return '\n'.join(out)
 
     includes = []
     for part in tree:
         domain = part['title'].casefold()
-        headings.append({'title': part['title'], 'depth': -1, 'origin': part['origin'], 'locator': part['locator'], 'modelIdentifier': part['modelIdentifier'], 'path': [part['title']]})
-        out = [r'\part{' + tex(part['title']) + '}']
+        headings.append({'title': part['title'], 'number': part['number'], 'depth': -1,
+                         'origin': 'canonical Continuum navigation', 'locator': part['modelLocator'],
+                         'canonicalLocator': part['locator'], 'path': part['path'], 'kind': 'domain'})
+        if part['namespace'] == 'G':
+            out = [r'\chapter*{G Architecture Governance}', r'\label{navigation:G}',
+                   r'\addcontentsline{toc}{chapter}{G Architecture Governance}',
+                   'The existing governance contracts establish authority, decision rights, review and evidence. '
+                   'These links expose that repository through the architectural navigation; they create no parallel governance records.']
+        else:
+            part_title = 'Part ' + part['namespace'] + ' — ' + part['title']
+            out = [r'\part*{' + tex(part_title) + '}', r'\label{navigation:' + part['number'] + '}',
+                   r'\addcontentsline{toc}{part}{' + tex(part_title) + '}']
+        if part.get('description'):
+            out.append(tex(part['description']) + r'\par')
         for note in notes.get(domain, []):
             c.require(note['sources'] and all(cid in elements for cid in note['sources']), 'Unresolved reader-note source')
             out.append(tex(note['text']) + '\n\n' + r'{\small Reading sources: ' + '; '.join(ref(cid, elements) for cid in note['sources']) + r'.}\par')
         picture, records = diagram(part, elements, population)
         if records:
-            out += [picture]
+            out.append(picture)
             diagrams.append({'domain': domain, 'selection': 'Largest explicit active Composition neighbourhood, at most six targets; stable name/identity ordering', 'edges': records})
-        for cid in part['elements']:
-            out.append(entry(cid, [part['title']], part['locator']))
-        for child in part['children']:
-            out.append(render(child, 0, [part['title']]))
-        name = 'parts/' + domain.replace(' ', '-') + '.tex'
+        children = part.get('children', [])
+        perspective_started = False
+        for child in children:
+            if child.get('kind') == 'perspective' and not perspective_started:
+                out.append(r'\clearpage\textbf{Cross-cutting Motivation perspectives}\par')
+                perspective_started = True
+            out.append(render(child, 0))
+        name = 'parts/' + domain.replace(' ', '-').replace('&', 'and') + '.tex'
         artifacts[name] = ('\n'.join(out) + '\n').encode()
         includes.append(r'\input{' + name + '}')
     c.require(Counter(item['canonicalId'] for item in placements) == Counter(elements.keys()), 'RAD must account for every canonical element exactly once')
@@ -293,13 +307,26 @@ def outputs(root, output):
     master = template.replace('@VERSION@', release['version']).replace('@PREVIOUS@', release['previous_version']).replace('@CONTENT@', '\n'.join(includes))
     c.require('@CONTENT@' not in master, 'Unexpanded publication template')
     artifacts['continuum-rad.tex'] = master.encode()
-    artifacts['structure.json'] = c.encoded({'release': release, 'hierarchySource': str(c.PUBLICATION / release['version'] / 'Harmonia-Architecture.xml'), 'modelSha256': c.sha(model_bytes), 'domainClassificationSource': str(c.CONFIG / 'type-catalogue.json'), 'domainPartition': 'EA domains supply Parts; within each Part, existing model organisation nodes retain labels, relative order and nesting. Existing cross-domain Continuum additions is filtered by native domain without creating chapter or section labels. Historical records remain in their model branches.', 'headings': headings, 'elements': placements, 'diagrams': diagrams, 'limits': 'Organisation is navigation, not inferred containment. No fallback chapters, independent narrative taxonomy, historical appendix or truncated section depth.'})
+    artifacts['structure.json'] = c.encoded({'release': release, 'hierarchySource': str(nav.SOURCE),
+        'modelSha256': c.sha(model_bytes), 'domainClassificationSource': str(nav.SOURCE),
+        'domainPartition': 'Canonical taxonomy: Governance G, Parts I–VI. Every node has a derived coordinate. Stakeholders are cross-cutting profiles in the Motivation introduction; the chapter spine remains the authorised taxonomy. Unpopulated domains record absence without speculative subsections.',
+        'headings': headings, 'elements': placements, 'diagrams': diagrams,
+        'limits': 'Hierarchy is navigation, not semantic containment or identity. Standing, native typing and relationships are unchanged. No architecture is invented for publication.'})
     artifacts['README.md'] = (f'# Harmonia Architecture Continuum RAD — {release["version"]}\n\n'
-        '[Read the PDF](continuum-rad.pdf) · [LaTeX source](continuum-rad.tex) · [Model correspondence](structure.json)\n\n'
-        'Narrative publication of canonical Continuum definitions, following the complete governed model hierarchy. '
-        'Each element retains independent standing and model placement, including historical branches. '
-        'The publication is derived and supplies no architectural acceptance.\n').encode()
-    artifacts['publication.json'] = c.encoded({'status': 'PASS', 'release': release, 'canonicalSources': len(elements), 'narrativeDescriptions': sum(p['standing']['currentness'] not in HISTORICAL for p in placements), 'historicalReferencesInModelHierarchy': sum(p['standing']['currentness'] in HISTORICAL for p in placements), 'architectureHeadings': len(headings), 'architectureHeadingOrigins': dict(Counter(h['origin'] for h in headings)), 'aiAssistance': 'Retained source-cited reader notes and deterministic presentation code; no model/API call during generation. Canonical descriptions are rendered without semantic rewriting. Diagrams select existing native assertions with their direction/state/standing.', 'sourceInputs': ['canonical Continuum Markdown', str(c.DESIGN / 'projection-template.xml'), str(c.CONFIG / 'type-catalogue.json'), str(SOURCE / 'reader-notes.json'), str(SOURCE / 'templates/publication.tex'), 'architecture-release.json'], 'allocatedIdentities': 0, 'legacyRadIngested': False, 'sha256': {name: c.sha(data) for name, data in sorted(artifacts.items())}})
+        '[Read the PDF](continuum-rad.pdf) · [LaTeX source](continuum-rad.tex) · [Continuum correspondence](structure.json)\n\n'
+        'Front matter; Architecture Governance; Parts I–VI; Architectural Name Index. '
+        'Chapters and coordinates follow the canonical Continuum navigation. '
+        'No Technology or Implementation & Migration subsections are invented where no elements are represented. '
+        'Every element retains identity, native type, independent standing and source correspondence. '
+        'Publication supplies no architectural acceptance.\n').encode()
+    artifacts['publication.json'] = c.encoded({'status': 'PASS', 'release': release, 'canonicalSources': len(elements),
+        'narrativeDescriptions': sum(p['standing']['currentness'] not in HISTORICAL for p in placements),
+        'historicalReferencesInModelHierarchy': sum(p['standing']['currentness'] in HISTORICAL for p in placements),
+        'architectureHeadings': len(headings), 'architectureHeadingOrigins': dict(Counter(h['origin'] for h in headings)),
+        'aiAssistance': 'Retained source-cited reader notes and deterministic presentation. Canonical descriptions are rendered without semantic rewriting. Diagrams select existing native assertions with direction/state/standing.',
+        'sourceInputs': ['canonical Continuum Markdown', str(nav.SOURCE), str(c.DESIGN / 'projection-template.xml'),
+                         str(SOURCE / 'reader-notes.json'), str(SOURCE / 'templates/publication.tex'), 'architecture-release.json'],
+        'allocatedIdentities': 0, 'legacyRadIngested': False, 'sha256': {name: c.sha(data) for name, data in sorted(artifacts.items())}})
     return artifacts
 
 

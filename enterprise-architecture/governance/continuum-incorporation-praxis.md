@@ -44,7 +44,13 @@ genuine design deferrals and the DesignNote itself as attributable capture/evide
 7. **Place.** Write to the profile-selected native/specialisation directory using
    the persisted canonicalId filename. Editing an existing element retains its
    identity. Retyping, semantic replacement, splits and merges require their actual
-   architectural authority and lineage; the tool cannot decide them.
+   architectural authority and lineage; the tool cannot decide them. Establish
+   its authorised context in the canonical `continuum/navigation.json` separately
+   from native storage. An explicit `create` specification supplies a
+   `navigationParent` array of existing organisational titles. This changes no
+   semantic edge. Where classification is unestablished, use an authorised
+   `Unclassified <Domain>` context with the specific uncertainty recorded rather
+   than manufacturing architecture or accepting a proposed placement.
 8. **Validate and exercise.** Run the continuum validator, meaningful mutation tests,
    projection schema/reference/identity checks and deterministic regeneration.
    Exercise the real changed elements and preserve affected Views. For a submitted

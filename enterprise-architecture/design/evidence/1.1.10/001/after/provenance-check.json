@@ -1,0 +1,14 @@
+{
+  "outcome": "UNRESOLVED",
+  "version": "1.1.10",
+  "iteration": "001",
+  "records": [
+    "evidence/1.1.10/001/after/ai-agent-reports/20261022T233519Z-continuum-taxonomy-remap.md",
+    "evidence/1.1.10/001/before/ai-agent-tasks/unresolved-continuum-taxonomy-remap.md"
+  ],
+  "errors": [],
+  "unresolved": [
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.10/001/before/ai-agent-tasks/unresolved-continuum-taxonomy-remap.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+  ],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}

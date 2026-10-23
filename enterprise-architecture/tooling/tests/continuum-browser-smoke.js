@@ -12,11 +12,14 @@ class Element {
   addEventListener(name, fn) { this.listeners[name] = fn; }
   querySelectorAll() { return []; }
 }
-const nodes = Object.fromEntries(['architecture','search','type','state','list','total','detail'].map(x => [x,new Element()]));
+const nodes = Object.fromEntries(['architecture','search','type','state','list','total','detail','hierarchy'].map(x => [x,new Element()]));
 nodes.architecture.textContent = data;
 const location = {hash:''}, window = {addEventListener() {}};
 vm.runInNewContext(code,{document:{getElementById:id=>nodes[id],createElement:()=>new Element()},location,window});
 assert.equal(nodes.list.children.length, rows.length);
+assert.equal(nodes.hierarchy.hidden, false);
+assert.equal(nodes.list.hidden, true);
+nodes.search.value=rows[0].number;nodes.search.listeners.input();assert(nodes.list.children.length>=1);assert.equal(nodes.hierarchy.hidden,true);
 nodes.search.value=rows[0].id;nodes.search.listeners.input();assert.equal(nodes.list.children.length,1);
 nodes.list.children[0].children[0].onclick();assert.equal(location.hash,rows[0].id);assert(nodes.detail.innerHTML.includes('Canonical Markdown'));
 nodes.search.value='';nodes.type.value='Capability / Feature';nodes.type.listeners.input();assert.equal(nodes.list.children.length,179);

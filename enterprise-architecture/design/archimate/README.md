@@ -4,12 +4,17 @@
 
 The maintained source is the [individual-element continuum](../../README.md).
 [projection-template.xml](projection-template.xml) owns existing model-level
-properties, property definitions, navigation and **1,209 Views**, including their
+properties, property definitions, View navigation and **1,209 Views**, including their
 geometry. Its element/relationship collections are empty. The current projector
-fills those collections from canonical Markdown, preserves the Views and adds
-navigation for newly represented elements.
+fills those collections from canonical Markdown and preserves the Views.
+From 1.1.10, canonical [Continuum navigation](../../continuum/navigation.json)
+owns architectural organisation. The projector replaces architecture folders
+from that tree and exposes every coordinate in organisation labels and element
+location properties. It preserves native Name/displayName and identity. The
+separate View folders remain presentation navigation, outside architectural
+numbering. No semantic relationship follows from folder nesting.
 
-Import the [RAD-1.1.5 Exchange model](../../documentation/continuum-manifest/published/1.1.5/Harmonia-Architecture.xml)
+Import the [RAD-1.1.10 Exchange model](../../documentation/continuum-manifest/published/1.1.10/Harmonia-Architecture.xml)
 into Archi 5.10. A local native `.archimate` workspace is a human workbench;
 exported submissions are review inputs. Neither overwrites the canonical source
 or supplies acceptance. Preserve the exact baseline and submitted export under

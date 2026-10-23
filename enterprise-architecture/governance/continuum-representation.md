@@ -38,7 +38,51 @@ The [canonical identity/naming contract](canonical-identity-and-naming.md),
 roles. An unresolved native classification stays in the originating review/source;
 its source is preserved and its decision belongs in the applicable HCRL DR.
 
-## Deterministic placement and template selection
+<a id="architectural-organisation-and-native-storage"></a>
+## Architectural organisation and native storage — RAD-1.1.10
+
+The Solution Architect's [1.1.10 Task](../design/evidence/1.1.10/001/before/ai-agent-tasks/unresolved-continuum-taxonomy-remap.md)
+authorises the bounded organisational remap accepted in the [completed HCRL 001](../design/register/1.1.10/hcrl-1.1.10-001.complete.md).
+The canonical [navigation.json](../continuum/navigation.json) supplies the ordered
+Harmonia architectural taxonomy. It is organisation metadata of this Continuum,
+not a separate element registry, architecture master index, ArchiMate type system
+or publication-owned architecture. Its references use existing canonical IDs.
+An element's name, definition, native type and independent standing remain owned
+by its canonical Markdown file. The native-type directories below remain stable
+storage locators; they no longer determine architectural reading order.
+
+Governance uses `G`; Motivation, Strategy, Business, Application, Technology and
+Implementation & Migration use `I`–`VI`. Every exposed descendant appends its
+one-based sibling position to its parent's coordinate. Numbering is derived by
+one shared traversal in `tooling/continuum_navigation.py`, never persisted as
+identity or prefixed onto canonical names. Reordering or moving navigation may
+change coordinates without changing IDs, names, native types or relationships.
+All elements occur once; context/cross-reference links do not create another
+canonical representation. Every structural node must have actual content,
+children or an existing governed source. The explicitly authorised domain roots
+may state absent population without inventing subsections.
+
+Taxonomy is architectural navigation, not native semantic containment. No edge
+is inferred from organisation. Standing is orthogonal: proposed, pending,
+historical and superseded elements remain qualified in their architectural
+contexts. `Unclassified <Domain>` preserves genuinely unestablished placement.
+Strategy retains existing capability decomposition and qualifications. Business
+uses populated capability contexts without duplicating the full Strategy tree.
+Stakeholders are cross-cutting Motivation profiles, not a peer type-bucket chapter.
+Application preserves logical Topic semantics and independently scoped information
+structures; a name containing “Topic” does not establish that specialisation, nor
+does a DataObject establish a Class. Middleware architecture belongs within the
+authorised Application/System-of-Systems context. Missing integration, class,
+Technology or release-family architecture is not invented to complete headings.
+
+Exchange organisation labels, element location properties, the Manifest/browser
+and narrative RAD consume this same tree and coordinate traversal. Native Name
+remains displayName. Number-bearing XML organisation identifiers are mutable
+transport locators only. Archi may restructure its native folders; the location
+properties preserve the canonical coordinates independently of that limitation.
+Existing authored Views and their separate View-folder organisation are preserved.
+
+## Deterministic native storage and template selection
 
 [type-catalogue.json](continuum/type-catalogue.json) is the executable representation
 profile. Its 60 concrete native element types are checked against the repository's
@@ -181,8 +225,9 @@ and declared schemas/presentation inputs. They must operate without historical
 processing workspaces, run-local code, local interaction logs or LaTeX model copies.
 
 ArchiMate remains the architecture workbench and projection. Existing Views retain
-their identities, contents, geometry and navigation. The maintained projection
-template owns model properties, property definitions and presentation; it owns no
+their identities, contents, geometry and View navigation. Canonical organisation
+comes from the navigation source above. The maintained projection
+template owns model properties, property definitions and View presentation; it owns no
 semantic elements or relationships. LaTeX publication consumes the continuum and
 never supplies duplicate source elements. Historical releases remain historical.
 
@@ -207,10 +252,11 @@ The manifest's presence or manual modification never alters projection
 inputs. Its separate byte-for-byte staleness check detects missing or changed output.
 
 `enterprise-architecture/tooling/continuum_manifest.py` validates canonical inputs before generating the
-manifest. Native layer/aspect groups and type order come from the governed type
-catalogue. Within a type, rows sort by case-folded displayName, exact displayName
-and canonicalId as the final tie-breaker; Feature/Topic remain under their native
-types. All elements appear once, including historical and qualified populations.
+manifest. From 1.1.10, the canonical navigation tree supplies its hierarchy,
+depth-first order and full coordinates; the previous native-layer/type catalogue
+layout no longer supplies architectural navigation. Native types/specialisations
+remain independently visible. All elements appear once, including historical and
+qualified populations within their architectural contexts.
 The manifest exposes independent semantic standing/currentness, canonical names
 (including unresolved values), identities, canonical paths, additional standing
 qualifications and recorded unresolved properties. Literal source text is escaped

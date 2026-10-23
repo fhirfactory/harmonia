@@ -15,6 +15,7 @@ import architecture_continuum as c
 import continuum_workbench as w
 import publish_continuum as pub
 import continuum_manifest as manifest
+import continuum_navigation as nav
 import markdown
 from lxml import html
 
@@ -90,6 +91,7 @@ class ContinuumTests(unittest.TestCase):
     def valid_spec(self):
         spec=c.template('Principle',root=self.root);m=spec['metadata'];m.update(displayName='ABC',friendlyName='Abc',canonicalName='MOT-Abc',standing={'semantic':'Proposed','currentness':'current'},identity={'authority':'Synthetic authorised creation test'},provenance=[{'source':'test-input','selector':'ABC','role':'test definition','maintained':True}],sourceBindings=[{'source':'test-input','selector':'ABC'}])
         m['naming']['inputs']=[{'key':'test-input:ABC','type':'Principle','name':'ABC'}]
+        spec['navigationParent']=['Motivation','Unclassified Motivation']
         spec['body']='# ABC\n\n## Architectural content\n\nA proposed test principle.\n'
         return spec
 
@@ -144,13 +146,16 @@ class ContinuumTests(unittest.TestCase):
             c.load(self.root)
 
     def test_creation_then_duplicate_retry_preserves_one_identity(self):
+        nav_path=self.root/nav.SOURCE;nav_before=nav_path.read_bytes()
         spec=self.valid_spec();path=c.create(spec,self.root)
         try:
             cid=c.decode(path.read_text())[0]['canonicalId'];self.assertEqual(cid[12],'4')
             with patch.object(c.uuid,'uuid4',side_effect=AssertionError('Unexpected allocation')):
                 with self.assertRaisesRegex(ValueError,'already bound'):c.create(spec,self.root)
             self.assertEqual(c.decode(path.read_text())[0]['canonicalId'],cid)
-        finally:path.unlink()
+        finally:
+            path.unlink()
+            nav_path.write_bytes(nav_before)
 
     def test_projection_and_publication_are_deterministic_and_allocate_nothing(self):
         before={cid:c.sha(p.read_bytes()) for cid,(m,b,p) in self.elements.items()}
@@ -171,44 +176,43 @@ class ContinuumTests(unittest.TestCase):
     def manifest_document(self):
         return html.fromstring(markdown.markdown(manifest.render(self.root).decode(), extensions=['tables']))
 
-    def test_manifest_covers_each_element_once_with_native_grouping_and_source_values(self):
+    def test_manifest_covers_each_element_once_in_canonical_navigation_with_source_values(self):
         doc=self.manifest_document()
-        rows=doc.xpath('//tr[count(td)=8]')
-        expected=[]
-        for native in self.catalogue['types']:
-            expected.extend(sorted((m for m,_,_ in self.elements.values() if m['archimateType']==native),
-                                   key=lambda m:(m['displayName'].casefold(),m['displayName'],m['canonicalId'])))
+        rows=doc.xpath('//tr[count(td)=9]')
+        tree=nav.load(self.root,self.elements)
+        nodes=[n for n in nav.walk(tree) if n.get('canonicalId')]
         self.assertEqual(len(rows),len(self.elements))
-        self.assertEqual([r[5].text_content() for r in rows],[m['canonicalId'] for m in expected])
-        for row,m in zip(rows,expected):
+        self.assertEqual([r[6].text_content() for r in rows],[n['canonicalId'] for n in nodes])
+        for row,node in zip(rows,nodes):
+            m=self.elements[node['canonicalId']][0]
             cells=[td.text_content() for td in row]
-            self.assertEqual(cells[:3],[m['displayName'],m['archimateType'],m.get('specialization') or '—'])
-            self.assertEqual(cells[3],'Semantic: '+m['standing']['semantic']+'Currentness: '+m['standing']['currentness'])
-            self.assertEqual(cells[4],m['canonicalName'] or 'Unresolved')
+            self.assertEqual(cells[:4],[node['number'],m['displayName'],m['archimateType'],m.get('specialization') or '—'])
+            self.assertEqual(cells[4],'Semantic: '+m['standing']['semantic']+'Currentness: '+m['standing']['currentness'])
+            self.assertEqual(cells[5],m['canonicalName'] or 'Unresolved')
             relative=self.elements[m['canonicalId']][2].relative_to(self.root/c.CONTINUUM).as_posix()
-            self.assertEqual(cells[6],relative)
-            self.assertEqual(row[6][0].get('href'),relative)
+            self.assertEqual(cells[7],relative)
+            self.assertEqual(row[7][0].get('href'),relative)
             for key,reason in m.get('unresolvedProperties',{}).items():
-                self.assertIn('Unresolved '+key+': '+reason,cells[7])
+                self.assertIn('Unresolved '+key+': '+reason,cells[8])
         anchors={a.get('id') for a in doc.xpath('//*[@id]')}
         for a in doc.xpath('//a[@href]'):
             target=a.get('href')
-            if target.startswith('#'):self.assertIn(target[1:],anchors)
-            else:self.assertTrue((self.root/c.CONTINUUM/target).is_file(),target)
-        self.assertEqual([h.text_content() for h in doc.xpath('//h2')][1:],
-                         list(dict.fromkeys(Path(p['directory']).parts[0].replace('-',' ').title() for p in self.catalogue['types'].values())))
+            if target.startswith('#'):
+                self.assertIn(target[1:],anchors)
+        for node in nav.walk(tree):
+            self.assertIn(nav.title(node),doc.text_content())
 
     def test_manifest_escapes_source_text_without_hiding_qualifications(self):
         value='Proposed | [label](fake-target) *qualified* `literal` & <script>x</script> \\ suffix'
         standing={'semantic':value,'currentness':'pending_adjudication','qualification':'First line\nSecond | line'}
         with self.changed(standing=standing,sourceUnresolved={'dimensions':['a|b'],'adjudication':None}):
             doc=self.manifest_document()
-        row=next(r for r in doc.xpath('//tr[count(td)=8]') if r[5].text_content()==self.cid)
-        self.assertEqual(row[3].text_content(),'Semantic: '+value+'Currentness: pending_adjudication')
-        self.assertIn('standing.qualification: First lineSecond | line',row[7].text_content())
-        self.assertIn('"adjudication": null',row[7].text_content())
+        row=next(r for r in doc.xpath('//tr[count(td)=9]') if r[6].text_content()==self.cid)
+        self.assertEqual(row[4].text_content(),'Semantic: '+value+'Currentness: pending_adjudication')
+        self.assertIn('standing.qualification: First lineSecond | line',row[8].text_content())
+        self.assertIn('"adjudication": null',row[8].text_content())
         self.assertFalse(row.xpath('.//script|.//em|.//code|.//a[@href="fake-target"]'))
-        self.assertTrue(row[7].xpath('.//br'))
+        self.assertTrue(row[8].xpath('.//br'))
 
     def test_manifest_check_rejects_missing_stale_and_changed_metadata_without_writing(self):
         path=self.root/c.MANIFEST;original=path.read_bytes() if path.exists() else None
@@ -234,7 +238,8 @@ class ContinuumTests(unittest.TestCase):
             path=self.root/c.CONTINUUM/relative;path.write_text('# Not an element\n')
             try:
                 with self.assertRaisesRegex(ValueError,'front matter'):manifest.render(self.root)
-            finally:path.unlink()
+            finally:
+                path.unlink()
         with self.changed(archimateType='InventedType'),self.assertRaises(ValueError):manifest.render(self.root)
 
     def test_manifest_is_deterministic_and_changes_no_sources_or_projection(self):

@@ -11,6 +11,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import architecture_continuum as c
 import publish_continuum_rad as rad
+import continuum_navigation as nav
 
 
 class ContinuumRadTests(unittest.TestCase):
@@ -42,42 +43,38 @@ class ContinuumRadTests(unittest.TestCase):
             self.assertEqual(path.read_bytes(), self.before[row['canonicalId']])
             self.assertEqual(row['standing'], m['standing'])
             self.assertEqual(row['unresolvedProperties'], m.get('unresolvedProperties', {}))
-            self.assertEqual(row['publication'], 'model narrative')
+            self.assertEqual(row['publication'], 'Continuum narrative')
 
-    def test_hierarchy_preserves_actual_model_nodes_order_and_depth(self):
+    def test_hierarchy_matches_canonical_coordinates_and_exchange_to_full_depth(self):
         model = c.ET.fromstring(c.project(self.root)[0])
-        by_rep = {m['exchange']['identifier']: cid for cid, (m, _, _) in self.elements.items()}
-        for heading in self.structure['headings']:
-            node, = model.xpath(heading['locator'])
-            title = node.findtext('a:label', namespaces=c.N)
-            if title is None:
-                title = self.elements[by_rep[node.get('identifierRef')]][0]['displayName']
-            self.assertEqual(heading['title'], title)
-            self.assertEqual(heading['depth'], len(heading['path']) - 2)
-            self.assertIn(heading['origin'], ('model organisation', 'model element reference'))
-        # Existing historical branches stay under their domain, not an invented
-        # appendix; existing additions retain their actual model grouping.
-        history = next(row for row in self.structure['elements'] if row['standing']['currentness'] == 'superseded')
-        self.assertIn(history['path'][0], ('Motivation', 'Strategy', 'Business', 'Application'))
-        self.assertTrue(any(h['path'] == ['Application', 'Continuum additions', 'ApplicationComponent'] for h in self.structure['headings']))
-        self.assertGreater(max(h['depth'] for h in self.structure['headings']), 5)
-        # Depth-first element order equals the domain-filtered model traversal.
-        original = [by_rep[n.get('identifierRef')] for n in model.findall('.//a:organizations//a:item', c.N) if n.get('identifierRef') in by_rep]
-        for domain in ('Motivation', 'Strategy', 'Business', 'Application'):
-            actual = [row['canonicalId'] for row in self.structure['elements'] if row['path'][0] == domain]
-            self.assertEqual(actual, [cid for cid in original if cid in set(actual)])
-        master = self.artifacts['continuum-rad.tex'].decode()
-        self.assertNotIn('Proposed Complete Architecture', master)
-        self.assertNotIn(r'\part{Technology}', master)
-        self.assertNotIn(r'\appendix', master)
-        expected_parts = {'parts/motivation.tex', 'parts/strategy.tex', 'parts/business.tex', 'parts/application.tex'}
-        self.assertEqual({p for p in self.artifacts if p.startswith('parts/')}, expected_parts)
-        self.assertFalse(any(p.startswith('chapters/') for p in self.artifacts))
-        self.assertNotIn(r'\input{chapters/', master)
-        for part in expected_parts:
-            self.assertIn(r'\input{' + part + '}', master)
-        metadata = json.loads(self.artifacts['publication.json'])
-        self.assertEqual(set(metadata['sha256']), set(self.artifacts) - {'publication.json'})
+        nodes = list(nav.walk(nav.load(self.root,self.elements)))
+        headings = self.structure['headings']
+        self.assertEqual([h['number'] for h in headings],[n['number'] for n in nodes])
+        for heading,node in zip(headings,nodes):
+            projected, = model.xpath(heading['locator'])
+            self.assertEqual(projected.findtext('a:label',namespaces=c.N),nav.title(node))
+            self.assertEqual(heading['title'],node['title'])
+            self.assertEqual(heading['depth'],len(node['path'])-2)
+            self.assertEqual(heading['origin'],'canonical Continuum navigation')
+        self.assertGreater(max(h['depth'] for h in headings),4)
+        self.assertEqual([p['canonicalId'] for p in self.structure['elements']],
+                         [n['canonicalId'] for n in nodes if n.get('canonicalId')])
+        forbidden={'Continuum additions','Unreconciled 1.0.4 Reference','BusinessObjectMap','InformationMap','Application Layer','Business Layer','Stakeholders'}
+        self.assertFalse(forbidden & {h['title'] for h in headings})
+        master=self.artifacts['continuum-rad.tex'].decode()
+        self.assertNotIn(r'\appendix',master)
+        self.assertIn('Architectural Name Index',master)
+        expected={'parts/architecture-governance.tex','parts/motivation.tex','parts/strategy.tex',
+                  'parts/business.tex','parts/application.tex','parts/technology.tex','parts/implementation-and-migration.tex'}
+        self.assertEqual({name for name in self.artifacts if name.startswith('parts/')},expected)
+        for name in expected:
+            self.assertIn(r'\input{'+name+'}',master)
+        for part in ['technology','implementation-and-migration']:
+            text=self.artifacts['parts/'+part+'.tex'].decode()
+            self.assertIn('No individually represented',text)
+            self.assertNotIn(r'\chapter',text)
+        metadata=json.loads(self.artifacts['publication.json'])
+        self.assertEqual(set(metadata['sha256']),set(self.artifacts)-{'publication.json'})
 
     def test_diagrams_retain_exact_existing_assertions_and_direction(self):
         edges = {r['identifier']: r for m, _, _ in self.elements.values() for r in m.get('relationships', [])}

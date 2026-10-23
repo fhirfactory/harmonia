@@ -13,6 +13,7 @@ import markdown
 from lxml import html
 import architecture_continuum as c
 import publish_continuum_rad as rad
+import continuum_navigation as nav
 
 
 def verify(root=c.ROOT):
@@ -26,6 +27,7 @@ def verify(root=c.ROOT):
             dest = stage / path.relative_to(root)
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(path, dest)
+        shutil.copyfile(root / nav.SOURCE, stage / nav.SOURCE)
         for rel in (Path('enterprise-architecture/governance'), c.TOOLING, c.DESIGN, rad.SOURCE):
             shutil.copytree(root / rel, stage / rel, ignore=shutil.ignore_patterns('__pycache__', '.venv', 'published'))
         shutil.copyfile(root / 'architecture-release.json', stage / 'architecture-release.json')
@@ -88,7 +90,7 @@ def verify(root=c.ROOT):
             steps.append({'command': command[2:], 'status': 'PASS', 'summary': (stdout + stderr)[-400:]})
             print('PASS: ' + command[2], flush=True)
         hashes = {}
-        for name in ('Harmonia-Architecture.xml', 'continuum.html', 'README.md', 'continuum-catalogue.tex', 'publication.json'):
+        for name in ('Harmonia-Architecture.xml', 'continuum.html', 'README.md', 'continuum-catalogue.tex', 'navigation.json', 'publication.json'):
             actual = (stage / relative / name).read_bytes()
             c.require(actual == (root / relative / name).read_bytes(), 'Isolated generation differs: ' + name)
             hashes[name] = c.sha(actual)

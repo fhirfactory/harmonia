@@ -15,20 +15,25 @@ The [Continuum Manifest](documentation/continuum-manifest/README.md) publishes t
 structural catalogue; the [Continuum RAD](documentation/continuum-rad/README.md)
 publishes the narrative architecture. Both derive from canonical Continuum state.
 
-Current governed release: **1.1.9**, predecessor **1.1.8**. The
-[completed 1.1.9 HCRL](design/register/1.1.9/hcrl-1.1.9-001.complete.md) records
-the Solution Architect's acceptance and confirmation of the bounded
-Principle-authority consolidation.
-The [axiom navigation page](governance/architectural-axioms.md) links to the
-Continuum Principles that solely define the architectural axioms.
+Current governed release: **1.1.10**, predecessor **1.1.9**. The
+[completed 1.1.10 HCRL](design/register/1.1.10/hcrl-1.1.10-001.complete.md) records the
+Solution Architect’s acceptance of the architectural organisation/navigation remap,
+explicit classification deferrals, projection limits and acknowledged provenance limitation. The
+[completed 1.1.9 HCRL](design/register/1.1.9/hcrl-1.1.9-001.complete.md) preserves
+its accepted Principle-authority consolidation. The
+[axiom navigation page](governance/architectural-axioms.md) links to the Continuum
+Principles that solely define the architectural axioms.
 
-Latest architecture publications (**1.1.8**): [narrative RAD PDF](documentation/continuum-rad/published/1.1.8/continuum-rad.pdf),
-[architecture browser](documentation/continuum-manifest/published/1.1.8/continuum.html),
-[element index](documentation/continuum-manifest/published/1.1.8/README.md),
-[ArchiMate Exchange](documentation/continuum-manifest/published/1.1.8/Harmonia-Architecture.xml)
-and [review/navigation manifest](continuum/MANIFEST.md).
-The [completed 1.1.8 HCRL](design/register/1.1.8/hcrl-1.1.8-001.complete.md)
-records the Solution Architect's acceptance and confirmation of this documentation change.
+Current architecture publications (**1.1.10**):
+[narrative RAD PDF](documentation/continuum-rad/published/1.1.10/continuum-rad.pdf),
+[architecture browser](documentation/continuum-manifest/published/1.1.10/continuum.html),
+[element index](documentation/continuum-manifest/published/1.1.10/README.md),
+[ArchiMate Exchange](documentation/continuum-manifest/published/1.1.10/Harmonia-Architecture.xml)
+and [numbered Continuum Manifest](continuum/MANIFEST.md).
+Canonical [navigation.json](continuum/navigation.json) supplies architectural
+organisation and every derived coordinate. Native-type directories remain storage
+locators. Canonical IDs, names, native types, semantic relationships and standing
+are unchanged. Historical publications and evidence remain historical.
 
 ## Historical RAD-1.1.5 review-package account
 
