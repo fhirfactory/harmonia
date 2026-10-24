@@ -211,7 +211,45 @@ Load and follow the common
 for every change. Review activity and evidence MUST be proportionate to scope,
 complexity, uncertainty and architectural materiality identified through review;
 an implementation, bug, patch or backlog label does not itself reduce or bypass
-the Praxis. For substantive AI-agent activity associated with an HCRL iteration,
+the Praxis.
+
+The governing principle of Harmonia architecture change provenance is:
+
+> **Provenance records describe the governed activity, not the mechanical production history of the provenance records themselves.**
+
+The governance lifecycle follows a finite progression:
+
+```text
+Authorised Task
+    ↓
+Substantive Activity
+    ↓
+Report
+    ↓
+Architecture Review required?
+    ├── No
+    │     ↓
+    │  TERMINAL
+    │
+    └── Yes
+          ↓
+      Architecture Review
+          ↓
+      Solution Architect Disposition
+          ↓
+      HCRL Completion
+          ↓
+      Resulting Git State
+          ↓
+      TERMINAL
+```
+
+Where mechanical Git state is established or checked for an activity terminating at Report, that verification remains provenance maintenance and does not extend the lifecycle. A commit is not required where the governed activity legitimately produces no repository change beyond its Report/evidence.
+Mechanical creation, completion, timestamp synchronization, formatting, or verification of governance artefacts required to document an already-authorised activity within an existing provenance boundary constitutes provenance maintenance and SHALL NOT recursively instantiate a new Task, Report, HCRL iteration, or release increment.
+Post-emission verification checks and mechanical synchronizations terminate at Git state without requiring recursive Report amendment passes.
+Any new material architectural issue or unintentional code change discovered during provenance maintenance cannot be dismissed as maintenance; it MUST immediately trigger fail-closed escalation under AX-17 and §1.5.
+
+For substantive AI-agent activity associated with an HCRL iteration,
 retain formal Task Details at
 `enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/before/ai-agent-tasks/`
 and corresponding Reports at that iteration's `after/ai-agent-reports/`,
@@ -266,6 +304,39 @@ Praxes, templates and machinery reference and implement it. Its adoption decisio
 reconciles former permanent processing-retention requirements while preserving
 active recovery and migration dependencies. Installation supplies no evidence
 migration or processing-disposal authority.
+
+### 1.5 Fail-closed governance enforcement
+
+Harmonia governance is fail-closed. Agents MUST comply with the
+[Governance enforcement and fail-closed authority](enterprise-architecture/governance/architecture-governance.md#governance-enforcement-and-fail-closed-authority)
+rule.
+
+If an instruction, request or task would omit, contradict, bypass or require
+departure from an applicable governed process, the agent MUST NOT interpret the
+instruction itself as authority for that departure.
+
+The agent MUST:
+
+1. STOP before performing the affected non-conformant or unauthorised activity;
+2. identify the applicable governance requirement and the conflict, missing
+   authority or proposed departure;
+3. request explicit Solution Architect disposition; and
+4. wait for that disposition before performing the affected activity.
+
+The agent MAY continue clearly authorised, non-conflicting work only where doing
+so cannot prejudge, obscure or circumvent the required disposition.
+
+Silence, omission, urgency, convenience, prior practice, successful tooling,
+task wording, remembered context, or the identity of the requester MUST NOT be
+treated as authority to bypass governance.
+
+Where the Solution Architect explicitly authorises a bounded departure, the
+agent MUST preserve the disposition, scope and conditions through the applicable
+Architecture Review, HCRL and provenance requirements.
+
+When uncertain whether an instruction conflicts with applicable governance, the
+agent MUST raise the uncertainty rather than silently choosing the less-governed
+interpretation.
 
 ## ArchiMate round-trip task entry
 

@@ -78,6 +78,35 @@ where useful. Consensus is desirable, not required. There is no voting, quorum
 or majority mechanism. Delegation of Solution Architect authority requires a
 separate explicit governance decision.
 
+## Governance enforcement and fail-closed authority
+
+Harmonia governance is fail-closed. An instruction, request or task that omits,
+contradicts, bypasses or would require departure from an applicable governed
+process does not itself authorise that departure.
+
+Anyone performing or directing Harmonia work, including ChatGPT, Codex, Junie
+and other agents, SHALL apply the governance, Praxis, architectural authority
+and decision requirements applicable to the activity. Where a requested activity
+conflicts with those requirements, or sufficient authority to proceed cannot be
+established, the affected activity SHALL stop before the conflicting or
+unauthorised action is performed.
+
+The conflict, missing authority or required departure SHALL be identified and
+presented for explicit Solution Architect disposition. Silence, omission,
+urgency, convenience, prior practice, successful tooling, task wording or the
+identity of the requester SHALL NOT be interpreted as authority to bypass or
+weaken an applicable governance requirement.
+
+An explicit Solution Architect disposition MAY authorise a bounded departure
+where appropriate. The departure, its scope, conditions and resulting activity
+SHALL remain subject to the applicable Architecture Review, HCRL and provenance
+requirements.
+
+This rule does not require work to stop merely because an uncertainty exists.
+Work MAY continue within clearly authorised and non-conflicting scope while the
+affected matter remains unresolved, provided doing so cannot prejudge, obscure
+or circumvent the required disposition.
+
 ## Review coverage and candidate judgement
 
 Every Harmonia change SHALL receive Architecture Review, including architecture,
@@ -89,6 +118,39 @@ scope, complexity, uncertainty and architectural materiality identified through
 review. Review does not imply material architectural effect.
 Submitters use architectural judgement to distinguish material matters from
 minutiae/non-material implementation change; ARB/SA adjudicates that assessment.
+
+The governance lifecycle for every change is finite and terminates cleanly:
+
+```text
+Authorised Task
+    ↓
+Substantive Activity
+    ↓
+Report
+    ↓
+Architecture Review required?
+    ├── No
+    │     ↓
+    │  TERMINAL
+    │
+    └── Yes
+          ↓
+      Architecture Review
+          ↓
+      Solution Architect Disposition
+          ↓
+      HCRL Completion
+          ↓
+      Resulting Git State
+          ↓
+      TERMINAL
+```
+
+Where mechanical Git state is established or checked for an activity terminating at Report, that verification remains provenance maintenance and does not extend the lifecycle. A commit is not required where the governed activity legitimately produces no repository change beyond its Report/evidence.
+
+Provenance records describe the governed activity, not the mechanical production history of the provenance records themselves.
+Mechanical creation, completion, cross-referencing, formatting, timestamp synchronization, or verification of Task, Report, HCRL, or associated governance records for an already-authorised activity within an existing provenance boundary constitutes provenance maintenance and SHALL NOT recursively instantiate a new Task, Report or HCRL iteration.
+If a new material architectural issue is discovered while completing provenance, execution SHALL halt on the affected matter and surface the finding for Solution Architect adjudication under fail-closed governance (AX-17).
 
 Submit useful candidates and state uncertainty rather than withhold a potentially
 material matter because classification or interpretation is incomplete. Explain

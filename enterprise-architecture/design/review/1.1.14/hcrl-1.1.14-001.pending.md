@@ -2,24 +2,29 @@
 
 | Decision Review | Subject | Solution Architect Disposition | Comment |
 | --- | --- | --- | --- |
-| [DR-1](#dr-1) | Data Governance Services architecture / code reconciliation & architectural conflict exposure | Not recorded | Reconciliation completed; advisory recommendations NOT adopted; Solution Architect disposition required. |
-| [DR-2](#dr-2) | Bounded supporting Minutiae, provenance limitations & repository entry state | Not recorded | Provenance limitations, auto-commit risk, and uncommitted governance entry state recorded for treatment before closure. |
+| [DR-1](#dr-1) | Data Governance Services architecture / code reconciliation & architectural conflict exposure | Not recorded | Reconciliation completed; DI-1 disposed; remaining findings unresolved and carried forward to iteration [002](hcrl-1.1.14-002.pending.md) for substantive architecture development; advisory recommendations NOT adopted. |
+| [DR-2](#dr-2) | Bounded supporting Minutiae, provenance limitations & repository entry state | Accept | Supporting minutiae accepted as an adequate and truthful record of the reconciliation and housekeeping provenance. This acceptance does not constitute acceptance or adjudication of any DR-1 architectural finding, disposition item, conforming path, or advisory recommendation. |
+| [DR-3](#dr-3) | Architecture Governance finite-provenance lifecycle & recursion elimination | Accept | Accepted finite-provenance governing principle, substantive activity vs provenance maintenance distinction, conditional review lifecycle, and non-recursive maintenance rules. |
 
 # HCRL — 1.1.13 → 1.1.14: Data Governance Services architecture / code reconciliation
 
-**Pending.** Mark Hunter, Solution Architect, issued the operative Data Governance
-Services architecture/code reconciliation task in session `session-261023-191640-1n0i`,
-retained in the [formal reconciliation Task][reconciliation-task]. The reconciliation
-activity examined the relationship between the canonical Architecture Continuum baseline
-RAD-1.1.13 and the substantial existing Java implementation across Mneme, Calliope,
-Mnemosyne, and Pylai, producing the [reconciliation Report][reconciliation-report].
-The subsequent governance housekeeping task in session `session-261023-205129-62l6`,
-retained in the [housekeeping Task][housekeeping-task], regularised this activity into the
-Harmonia Architecture Review lifecycle under RAD-1.1.14 iteration 001 and produced the
-[housekeeping Report][housekeeping-report]. This pending HCRL exposes the discovered
-architectural conflicts for Solution Architect adjudication. It does not infer
-acceptance, adopt advisory recommendations, or modify canonical architecture or
-production code.
+**Standing.** Completed review iteration **001** for **RAD-1.1.13 → RAD-1.1.14**. Mark Hunter, Solution Architect,
+issued the operative Data Governance Services architecture/code reconciliation task in session `session-261023-191640-1n0i`,
+retained in the [formal reconciliation Task][reconciliation-task]. The reconciliation activity examined the relationship
+between the canonical Architecture Continuum baseline RAD-1.1.13 and the substantial existing Java implementation
+across Mneme, Calliope, Mnemosyne, and Pylai, producing the [reconciliation Report][reconciliation-report].
+The subsequent governance housekeeping task in session `session-261023-205129-62l6`, retained in the
+[housekeeping Task][housekeeping-task], regularised this activity into the Harmonia Architecture Review lifecycle under
+RAD-1.1.14 iteration 001 and produced the [housekeeping Report][housekeeping-report].
+Mark Hunter, Solution Architect, rendered disposition on [DI-1](#di-1) ([Task][di-1-task] | [Report][di-1-report]),
+accepted [DR-2](#dr-2) (supporting minutiae and repository entry state), and accepted [DR-3](#dr-3)
+(finite-provenance governance framework repair, evidenced in the [governance-repair Report][governance-repair-report]).
+The remaining architectural reconciliation findings in DR-1 (DI-2 through DI-9) are intentionally not adjudicated in this
+iteration and are carried forward into iteration [002](hcrl-1.1.14-002.pending.md) for substantive architecture development
+and review through Design Review Proposals (beginning with the Information Unit Framework DRP). Iteration 001 is closed as
+the completed historical record for this initial review boundary; closing iteration 001 closes this review iteration,
+not the unresolved architectural matters in DR-1. Root release authority records `1.1.13` (`architecture-release.json`);
+this review iteration consumes no release allocation.
 
 **Review basis.** The immediate governed predecessor release is 1.1.13, whose
 [completed HCRL](../../register/1.1.13/hcrl-1.1.13-002.complete.md) establishes the
@@ -66,6 +71,20 @@ rather than confirmed invariant violations or adjudicated decisions:
    ("Programme status: CONVERGENCE COMPLETE"), claimed milestone completion (M2.3 / M2.4),
    and active sequence indications (M2.3 next), alongside references claiming ADR-021/022 are
    ACCEPTED while they are absent from the Decision Register.
+
+   **DI-1 — Solution Architect Disposition**
+
+   Disposition: Historical authority conflict; no current architectural conflict.
+
+   The Convergence Plan and associated historical implementation/design material are discovery evidence only and do not constitute current architectural authority.
+
+   Status statements, milestone completion claims, and ADR acceptance claims contained within that historical material do not establish current architectural standing. The governed Architecture Continuum and governed Decision Register remain authoritative.
+
+   No Architecture Continuum change is required as a consequence of DI-1.
+
+   Implementation derived from, or associated with, the historical material remains legitimate implementation evidence and may require separate reconciliation where that implementation behaviour is encountered.
+
+   *Attribution & Evidence*: Disposed by Mark Hunter, Solution Architect (Task-Issued-At: 2026-10-23T11:37:23.387Z, session `session-261023-223648-fp6j`); recorded and reported by Junie co-executor agent. Formal evidence: [Task][di-1-task] | [Report][di-1-report].
 2. *DI-2: Mnemosyne Persistence Adapter Dual-Implementation (Authority Gap & Candidate Gap)*:
    The report observes that production code uses `@Primary` `AuthoritativePersistenceService`
    (custom Spring Data repository) while `HapiJpaAuthoritativePersistenceAdapter` is marked
@@ -110,14 +129,15 @@ with governance guardrails:
 - Code Round-Trip cannot safely proceed by mechanically forcing implementation to match
   architecture, nor by promoting existing implementation behaviour into architecture.
 
-**Required Solution Architect Adjudication.** Explicit Solution Architect disposition
-is required to:
-1. Adjudicate each of the identified architectural conflicts between existing implementation
-   constructs and canonical Continuum definitions.
-2. Determine which legacy implementation concepts remain intended and which canonical
-   Continuum specifications govern future development.
-3. Authorise any required Architecture Continuum updates or code remediation increments
-   through subsequent formal HCRL iterations before implementation changes commence.
+**Required Solution Architect Adjudication & Iteration 001 Review Closure.**
+Mark Hunter, Solution Architect, rendered disposition on DI-1, while DR-2 and DR-3 were accepted within this boundary.
+The remaining architectural discrepancies and invariant observations (DI-2 through DI-9) remain intentionally unresolved
+in this iteration because their resolution requires substantive architecture development through Design Review Proposals
+(DRPs)—beginning with the Information Unit Framework DRP and subsequently the Authentication & Authorisation Framework,
+Audit Framework, and Mneme-to-Mnemosyne governed interaction.
+With this review boundary completed, those unresolved findings are carried forward into iteration [002](hcrl-1.1.14-002.pending.md)
+for adjudication under those respective DRPs without being treated as accepted, rejected, resolved, or discarded.
+Explicit Solution Architect disposition on those substantive matters will be rendered under the subsequent iterations.
 
 <a id="dr-2"></a>
 ## DR-2 — Bounded supporting Minutiae, provenance limitations & repository entry state
@@ -183,15 +203,76 @@ governance.
      review iterations consume no release allocation.
 
 ```text
-Minutiae-Accepted: [awaiting Solution Architect entry: Yes | No]
-Comment: [awaiting Solution Architect / ARB comment]
+Minutiae-Accepted: Yes
+Comment: Supporting minutiae accepted as an adequate and truthful record of the reconciliation and housekeeping provenance. This acceptance does not constitute acceptance or adjudication of any DR-1 architectural finding, disposition item, conforming path, or advisory recommendation.
 ```
 
 This control and DR-2's opening-table entry describe the same decision. Silence,
 agent classification, preparation of this pending HCRL, and successful tooling
 supply no acceptance.
 
+<a id="dr-3"></a>
+## DR-3 — Architecture Governance finite-provenance lifecycle & recursion elimination
+
+**Background & Governance Problem.** Operational experience during recent Architecture Review activity (most notably DI-1 disposition reporting) exposed an unintended recursive pathology in Harmonia's Architecture Governance provenance framework. Because producing, validating, correcting, or recording a Task, Report, HCRL entry, timestamp, or validation result was capable of being interpreted as a new governed change, agents were trapped in self-documenting amendment cycles that generated unbounded administrative overhead and paralyzed execution progress. Governance processes must terminate cleanly rather than recursively documenting their own mechanical documentation.
+
+**Governing Principle.** The fundamental governing principle formalized and adopted across Harmonia architecture contracts (`architecture-change-provenance.md`, `architecture-review-praxis.md`, `architecture-release-policy.md`, `architecture-governance.md`, and `AGENTS.md` §1.4) is:
+
+> **Provenance records describe the governed activity, not the mechanical production history of the provenance records themselves.**
+
+**Semantic Distinction: Substantive Governed Activity vs Provenance Maintenance.**
+The framework explicitly distinguishes:
+1. *Substantive Governed Activity*: Activity that analyses, changes, reconciles, proposes, or validates architectural or solution content in a manner requiring governed evidence under Architecture Review.
+2. *Provenance Maintenance*: Mechanical creation, completion, cross-referencing, formatting, timestamp synchronization, or verification of the Task, Report, HCRL, and related governance records required to document an already-authorised substantive activity within an established provenance boundary.
+
+**Finite Governance Progression & Conditional Architecture Review Lifecycle.**
+The governance lifecycle follows a finite, bounded progression that terminates cleanly without recursive loops:
+
+```text
+Authorised Task
+    ↓
+Substantive Activity
+    ↓
+Report
+    ↓
+Architecture Review required?
+    ├── No
+    │     ↓
+    │  TERMINAL
+    │
+    └── Yes
+          ↓
+      Architecture Review
+          ↓
+      Solution Architect Disposition
+          ↓
+      HCRL Completion
+          ↓
+      Resulting Git State
+          ↓
+      TERMINAL
+```
+
+Where mechanical Git state is established or checked for an activity terminating at Report, that verification remains provenance maintenance and does not extend the lifecycle. A Git commit is not required where the governed activity legitimately produces no repository change beyond its Report/evidence.
+
+**Provenance Maintenance Rules & Release Allocation.**
+- Provenance maintenance performed within an authorized provenance boundary SHALL NOT recursively instantiate a new Task, Report, HCRL iteration, or Architecture Release increment.
+- Post-emission verification checks, Git status inspections, and mechanical synchronizations terminate at Git state without requiring recursive Report amendment passes.
+- Pending review iterations and mechanical governance maintenance consume zero release allocation under Architecture Release Policy; release increments apply only to accepted substantive architectural and solution change sets.
+
+**Fail-Closed Governance Invariant (AX-17).**
+If a new material architectural issue, invariant conflict, or unintentional code modification is discovered during provenance maintenance, execution on the affected matter MUST halt immediately and surface the finding through HCRL for Solution Architect adjudication under fail-closed governance (AX-17 and `AGENTS.md` §1.5). Provenance maintenance cannot be used to bypass governance or conceal substantive architectural discoveries.
+
+**Solution Architect Disposition — Accept.**
+Mark Hunter, Solution Architect, explicitly accepts the finite-provenance governance-framework repair, the governing principle, the distinction between substantive activity and provenance maintenance, the conditional Architecture Review lifecycle, and the non-recursive maintenance rules as normative repository governance.
+
+*Attribution & Supporting Evidence*: Formally analysed and evidenced in the governance-repair [Activity Report][governance-repair-report] (`.junie/reports/2026-10-24-architecture-governance-provenance-simplification-report.md`). This HCRL update completes the accepted governance decision within the existing provenance boundary and does not instantiate a separate Task or Report.
+
 [reconciliation-task]: ../../evidence/1.1.14/001/before/ai-agent-tasks/20261023T081653Z-data-governance-reconciliation.md
 [reconciliation-report]: ../../evidence/1.1.14/001/after/ai-agent-reports/20261023T094001Z-data-governance-reconciliation.md
 [housekeeping-task]: ../../evidence/1.1.14/001/before/ai-agent-tasks/20261023T095350Z-data-governance-reconciliation-regularisation.md
 [housekeeping-report]: ../../evidence/1.1.14/001/after/ai-agent-reports/20261023T102853Z-data-governance-reconciliation-regularisation.md
+[di-1-task]: ../../evidence/1.1.14/001/before/ai-agent-tasks/20261023T113723Z-di-1-solution-architect-disposition.md
+[di-1-report]: ../../evidence/1.1.14/001/after/ai-agent-reports/20261023T115132Z-di-1-solution-architect-disposition.md
+[governance-repair-report]: ../../../../.junie/reports/2026-10-24-architecture-governance-provenance-simplification-report.md
+[iteration-002]: hcrl-1.1.14-002.pending.md

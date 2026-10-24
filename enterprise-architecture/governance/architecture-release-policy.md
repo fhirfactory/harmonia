@@ -36,6 +36,15 @@ receive another increment. The increment and all associated changes SHALL be
 committed together. Concurrent change sets SHALL recheck the accepted current
 release before acceptance and rebase their increment if necessary.
 
+Provenance maintenance within an existing authorized boundary (including mechanical
+creation, completion, timestamp synchronization, formatting, or consistency checks
+of Task, Report, HCRL, or associated governance documentation) SHALL NOT allocate
+an Architecture Release increment. Pending review iterations consume no release
+allocation. Release increments are reserved for accepted repository change sets
+containing substantive architectural or solution transitions. Governance
+documentation maintenance performed to record or regularise an already-allocated
+change set belongs to that same change set and consumes no additional release.
+
 Minor or major increments require an explicit architectural/governance decision;
 tools SHALL NOT infer them. Maven's `1.0.0-SNAPSHOT` software version, historical
 branch names, baseline Exchange filenames and R1/R2 architectural scope are

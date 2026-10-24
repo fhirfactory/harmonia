@@ -57,9 +57,50 @@ The Praxis SHALL distinguish the following, using the normative definitions in
 - **Evidence:** durable inputs, outputs or supporting material retained because
   they materially support, explain, reproduce or verify the governed activity
   associated with an HCRL iteration.
+- **Substantive governed activity:** activity that changes, analyses, reconciles,
+  proposes or validates architectural or solution content in a manner requiring
+  governed evidence.
+- **Provenance maintenance:** mechanical creation, completion, correction,
+  formatting, cross-referencing, timestamp synchronization or verification of the
+  governance artefacts required to document an already-authorised substantive
+  activity within an existing provenance boundary. Provenance maintenance SHALL NOT
+  recursively instantiate a new Task, Report or HCRL iteration.
 - **HCRL:** the authoritative semantic change/decision record for the governed RAD
   transition. It is not the Architecture Review working document or a substitute
   for detailed supporting evidence.
+
+The governing principle of the Praxis is that provenance records describe the
+governed activity, not the mechanical production history of the provenance records
+themselves.
+
+The finite lifecycle progression for governed activity is:
+
+```text
+Authorised Task
+    ↓
+Substantive Activity
+    ↓
+Report
+    ↓
+Architecture Review required?
+    ├── No
+    │     ↓
+    │  TERMINAL
+    │
+    └── Yes
+          ↓
+      Architecture Review
+          ↓
+      Solution Architect Disposition
+          ↓
+      HCRL Completion
+          ↓
+      Resulting Git State
+          ↓
+      TERMINAL
+```
+
+Where mechanical Git state is established or checked for an activity terminating at Report, that verification remains provenance maintenance and does not extend the lifecycle. A commit is not required where the governed activity legitimately produces no repository change beyond its Report/evidence.
 
 ```text
 Architecture Review activity
@@ -113,9 +154,11 @@ unestablished authority and unresolved effects explicitly.
 Identify the instruction's actual purpose, authority and associated HCRL iteration.
 For substantive AI-agent activity, retain the formal Task Detail at that
 iteration's `before/ai-agent-tasks/` location, whether the activity is investigation,
-review, corrective work, application or verification. Preserve operative issued
-wording, attributable context, material corrections/follow-ups and adequate
-source/review correspondence. Record the authoritative issuance timestamp in
+review, corrective work, application or verification. A new Task is required only
+when initiating new substantive governed activity; mechanical provenance maintenance
+within an existing authorized boundary SHALL NOT instantiate a new Task. Preserve
+operative issued wording, attributable context, material corrections/follow-ups and
+adequate source/review correspondence. Record the authoritative issuance timestamp in
 ISO 8601 with `Z` or an explicit offset and its source; begin the filename with
 a filesystem-safe sortable UTC timestamp derived from that event, followed by a
 descriptive name. The attributable system timestamp of the operative instruction
@@ -203,11 +246,18 @@ page-by-page review. This bounded safeguard applies the Solution Architect's
 
 Retain formal Task Reports at the associated iteration's `after/ai-agent-reports/`,
 including completed investigation/review and corrective/verification activity.
-Preserve sufficient factual activity, outcome, verification, limitation and
-correspondence information to establish what occurred. Identify the corresponding tasks, actual affected
-paths/source-state locators, departures and unresolved effects. Correspondence
-SHALL support reconstruction of the governed transition without imposing
-one-to-one Task/Report file pairing.
+The Report is a finite record: it SHALL preserve sufficient factual activity,
+outcome, verification, limitation, affected artefacts, unresolved matters, and
+resulting Git state to establish what occurred. Correspondence SHALL support
+reconstruction of the governed transition without imposing one-to-one
+Task/Report file pairing.
+
+Verification occurring as part of completing the authorised activity does not
+require recursive amendment cycles or self-documenting reporting passes. Final
+mechanical validation is evidenced by execution output, tooling return codes,
+and Git state rather than requiring the Report to describe its own post-write
+validation. Post-emission mechanical synchronisations, formatting, cross-reference
+alignment, or linking execute within the same boundary and terminate cleanly.
 
 Record when the Report is produced as an authoritative ISO 8601 timestamp with
 `Z` or an explicit offset, its event meaning and attributable source where needed.
@@ -217,8 +267,10 @@ model-generation time or other unobservable event. Begin its filename with the
 filesystem-safe sortable UTC timestamp derived from that same production time
 and a descriptive name. A Report's production is
 distinct from execution, validation, file metadata, later formalisation, review
-and acceptance. Preserve subsequent amendments as subsequent provenance without
-replacing the original Report production timestamp or its filename prefix.
+and acceptance. Where a subsequent, separately issued substantive task directs
+amendments to an already-produced Report across sessions or after review closure,
+those amendments preserve material follow-up correspondence and SHALL NOT replace
+the original production timestamp or the filename prefix derived from it.
 Recover existing original times only from established source evidence; preserve
 known precision and unresolved temporal provenance for
 Solution Architect treatment before closure. Never infer missing times or order
@@ -250,6 +302,13 @@ Architect confirmation. Complete the HCRL at
 only after that confirmation. Agents report facts and cannot self-confirm
 architectural closure. Preserve explicit deferrals/exclusions, attributable
 decisions, required retrievable Task/Report evidence and relevant correspondence.
+
+Mechanical completion, cross-referencing, and registration of the HCRL constitute
+provenance maintenance within the existing boundary; completion terminates cleanly
+at commit and resulting Git state without creating a new HCRL iteration or Task.
+If during completion a new material architectural issue is discovered, execution
+halts and the matter is surfaced for Solution Architect adjudication under
+fail-closed governance (AX-17).
 
 Completed HCRLs are immutable under common governance. Pending iterations remain
 working provenance while needed for active review/traceability; detailed erratum

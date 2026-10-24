@@ -62,6 +62,15 @@ Architectural evidence SHALL support understanding, verification and preservatio
 of the authorised incremental transition between identifiable governed states.
 It SHALL NOT accumulate execution history merely because machinery participated.
 
+The governing principle of Harmonia architecture change provenance is:
+
+> **Provenance records describe the governed activity, not the mechanical production history of the provenance records themselves.**
+
+Provenance frameworks capture meaningful, attributable governance boundaries rather
+than recursively documenting their own documentation. Detailed mechanical history of
+edits to governance artefacts is evidenced through Git history, execution sessions,
+and tooling outputs, not through recursive provenance records.
+
 The completed HCRL is the single authoritative semantic change/review record for
 the immediate governed predecessor → resulting governed RAD release. It records
 the authorised meaning, actual incorporated result, attributable decisions and
@@ -91,6 +100,26 @@ associated with an HCRL iteration. Investigation and review can produce evidence
 purpose-selected mappings, reference inventories, checks and similar substantive
 outputs SHALL be retained where they materially support that activity. Production
 by an agent or machinery alone does not require retention of an intermediate artefact.
+
+**Substantive governed activity** is activity that changes, analyses, reconciles,
+proposes or validates architectural or solution content in a manner requiring
+governed evidence. Substantive activity initiates or advances an authorized
+governance lifecycle and produces formal evidence.
+
+**Provenance maintenance** is the mechanical creation, completion, correction,
+formatting, cross-referencing, timestamp synchronization or verification of the
+Task, Report, HCRL and related governance artefacts required to document an
+already-authorised substantive activity within an existing provenance boundary.
+Provenance maintenance performed within an authorized provenance boundary SHALL NOT
+recursively create another Task, Report or HCRL iteration. A new provenance boundary
+is required only when new substantive governed activity is initiated.
+
+**Substantive discovery escalation (Fail-closed):** The provenance maintenance
+exemption is strictly bounded to mechanical operations on governance records. If an
+agent or practitioner discovers a new material architectural issue, invariant
+tension, or unintentional code change while completing provenance, that finding
+SHALL NOT be resolved or dismissed as provenance maintenance; it SHALL be surfaced
+through HCRL for Solution Architect adjudication under AX-17.
 
 **HCRL** is the authoritative semantic change/decision record for the governed
 RAD transition. Pending iterations preserve its review/adjudication lifecycle;
@@ -200,12 +229,19 @@ in the record. Filename ordering is navigational convenience, not the authoritat
 event record or proof of strict order where precision, ties or clock uncertainty
 prevent it. A separate receipt/capture or later recording time SHALL NOT replace
 the governed instruction-entry event. Report production is distinct from
-execution start/end, validation, file creation or
-modification, later formalisation, review and acceptance. Preserve material
-follow-up/revision correspondence and established event times; later recording
-does not replace the original event. A subsequent amendment to an already-produced
-Report SHALL be preserved as subsequent provenance and SHALL NOT replace its
-original production timestamp or the filename prefix derived from it.
+execution start/end, validation, file creation or modification, later
+formalisation, review and acceptance. The Report is a finite record of the
+substantive activity performed, outcome, validation, affected artefacts,
+unresolved matters and resulting Git state.
+
+Mechanical synchronisation, formatting, cross-reference alignment, and post-emission
+verification checks executed within the authorized boundary complete that same Report
+and SHALL NOT instantiate recursive amendment-logging cycles or require the Report
+to document its own post-write validation. Where a subsequent, separately issued
+substantive instruction directs amendments to an already-produced Report across
+sessions or after formal closure, those amendments preserve material follow-up
+correspondence and SHALL NOT replace the original production timestamp or the
+filename prefix derived from it.
 
 For existing records, recover event times from established source evidence where
 possible and identify that source. Do not guess event times from filesystem
@@ -299,6 +335,35 @@ An agent may report the facts, not self-issue that confirmation. Record explicit
 exclusion/deferral of residual matters rather than imply their resolution.
 Immutability, deferred non-semantic erratum mechanics and pragmatic
 pending-iteration retention follow the common governance contract.
+
+The finite lifecycle progression for governed activity is:
+
+```text
+Authorised Task
+    ↓
+Substantive Activity
+    ↓
+Report
+    ↓
+Architecture Review required?
+    ├── No
+    │     ↓
+    │  TERMINAL
+    │
+    └── Yes
+          ↓
+      Architecture Review
+          ↓
+      Solution Architect Disposition
+          ↓
+      HCRL Completion
+          ↓
+      Resulting Git State
+          ↓
+      TERMINAL
+```
+
+Where mechanical Git state is established or checked for an activity terminating at Report, that verification remains provenance maintenance and does not extend the lifecycle. A commit is not required where the governed activity legitimately produces no repository change beyond its Report/evidence. The governance lifecycle concludes cleanly at Git commit and the resulting repository state. Mechanical actions required to reach this state (including tooling executions, linter or check invocations, and git status inspections) terminate at that state and SHALL NOT instantiate recursive provenance loops.
 
 ## Processing material and historical boundaries
 
