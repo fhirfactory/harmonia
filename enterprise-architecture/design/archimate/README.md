@@ -17,9 +17,12 @@ numbering. No semantic relationship follows from folder nesting.
 The **Architecture Continuum is canonical architecture authority**. Open Exchange
 XML is its derived projection/interchange representation; **Archi is the architecture
 workbench**. Import the published
-[1.1.13 Open Exchange projection](published/1.1.13/Harmonia-Architecture.xml)
-into Archi 5.10 to begin work on that accepted release.
+[1.1.14 Open Exchange projection](published/1.1.14/Harmonia-Architecture.xml)
+into Archi 5.10 to begin work on that release baseline.
 
+The [1.1.14 projection](published/1.1.14/Harmonia-Architecture.xml)
+establishes the navigable architecture baseline for subsequent Design Review Proposal (DRP) development,
+accepted by the Solution Architect in [completed HCRL 002](../register/1.1.14/hcrl-1.1.14-002.complete.md).
 The [accepted 1.1.13 projection](published/1.1.13/Harmonia-Architecture.xml)
 implements the Solution Architect's workbench-remediation dispositions, accepted
 after actual Archi 5.10 visual inspection in [completed HCRL 002](../register/1.1.13/hcrl-1.1.13-002.complete.md).

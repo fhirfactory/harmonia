@@ -2,18 +2,18 @@
 
 | Decision Review | Subject | Solution Architect Disposition | Comment |
 | --- | --- | --- | --- |
-| [DR-1](#dr-1) | Data Governance Services architecture / code reconciliation & unresolved architectural findings | Not recorded | Carried forward from iteration [001](hcrl-1.1.14-001.pending.md#dr-1). DI-1 disposed in 001; findings DI-2 through DI-9 remain unresolved. Resolution requires substantive architecture development and review through DRPs (Information Unit, AuthN/AuthZ, Audit, Mneme↔Mnemosyne). |
+| [DR-1](#dr-1) | Data Governance Services architecture / code reconciliation & unresolved architectural findings | Rejected — Review approach no longer conforms to the adopted implementation strategy. Findings remain discovery evidence; resolving them individually against existing implementation would prematurely constrain solution design and invert the architecture-to-solution relationship. | Review approach rejected; findings DI-2 through DI-9 retained as discovery evidence without mechanical forward carriage into a new HCRL. Post-result confirmation of incorporated 1.1.14 release products pending Solution Architect review. |
 
 # HCRL — 1.1.13 → 1.1.14: Data Governance Services architecture development & reconciliation
 
-**Standing.** Pending iteration **002** for **RAD-1.1.13 → RAD-1.1.14**. This iteration establishes the active pending
-review boundary carrying forward the unresolved architectural reconciliation matters from [iteration 001](hcrl-1.1.14-001.pending.md).
+**Standing.** Pending iteration **002** for **RAD-1.1.13 → RAD-1.1.14**. This iteration records the Solution Architect's
+disposition on the carried-forward DR-1 review approach while retaining findings DI-2 through DI-9 as discovery evidence.
 Mark Hunter, Solution Architect, accepted [DR-2 (supporting minutiae)](hcrl-1.1.14-001.pending.md#dr-2) and
 [DR-3 (finite-provenance governance framework repair)](hcrl-1.1.14-001.pending.md#dr-3) in iteration 001, and rendered
 disposition on [DI-1 (Convergence Plan historical status)](hcrl-1.1.14-001.pending.md#di-1). Those accepted decisions remain
 preserved as completed history in iteration 001 and are referenced rather than re-adjudicated or duplicated here.
-No Solution Architect disposition is recorded for the carried-forward DR-1 findings in this iteration; carrying them forward
-supplies no architectural acceptance.
+Mark Hunter, Solution Architect, rejected the 1.1.14-002 review approach for DR-1. Post-result confirmation of the
+incorporated 1.1.14 release products remains pending final Solution Architect inspection before completion and registration.
 
 **Review basis & predecessor.** The immediate governed predecessor release is 1.1.13, whose
 [completed HCRL](../../register/1.1.13/hcrl-1.1.13-002.complete.md) establishes the accepted 1.1.13 canonical architecture
@@ -74,18 +74,17 @@ Formal originating evidence is preserved under iteration 001: [Reconciliation Ta
 9. *DI-9: Persistence Security Context & Default-Deny Authorization (Observed Invariant Violation — Invariant 6 / AX-07)*:
    `FhirStorageService` defaults a `null` security principal to `service:mnemosyne` with self-granted permissions on internal storage paths.
 
-**Non-Adoption Guardrail & Neutral Invariant Reporting.** In accordance with governance guardrails:
-- All 9 report Disposition Items, candidate conforming paths, and advisory recommendations are referenced strictly as
-  **supporting evidence** and are **NOT adopted** as approved architecture decisions.
-- Reported invariant observations are documented neutrally as findings of the historical reconciliation pass, avoiding
-  premature confirmation or implicit adjudication.
-- Code Round-Trip cannot safely proceed by mechanically forcing implementation to match architecture, nor by promoting
-  existing implementation behaviour into architecture.
+**Solution Architect Disposition (DR-1):**
 
-**Expected Resolution Path: Substantive Architecture Development via Design Review Proposals (DRPs).**
-The remaining architectural reconciliation matters (DI-2 through DI-9) cannot be resolved through mechanical code adjustments
-or documentation alignment alone. Their resolution requires substantive architecture development and formal Architecture
-Review through targeted Design Review Proposals (DRPs), to be undertaken in subsequent iterations:
+> **Rejected — Review approach no longer conforms to the adopted implementation strategy. Findings remain discovery evidence; resolving them individually against existing implementation would prematurely constrain solution design and invert the architecture-to-solution relationship.**
+
+**Interpretation and Discovery Evidence Retention:**
+- The Solution Architect's rejection applies strictly to the **review/resolution approach** (attempting to resolve the findings individually against existing implementation), not to the factual existence of the discoveries recorded as DI-2 through DI-9.
+- Findings **DI-2 through DI-9 remain retained as discovery evidence** within this review record. In accordance with the Solution Architect's directive, they **SHALL NOT** be mechanically carried forward as unresolved architectural obligations into a new HCRL.
+- Resolving discoveries individually against current implementation would prematurely constrain solution design and invert the governed architecture-to-solution relationship (AX-08, AX-14, AX-17). Existing implementation is not, by itself, evidence of architectural intent.
+
+**Adopted Forward Strategy: Architecture-Led Solution Development via DRPs:**
+The adopted forward direction is architecture-led solution development using Design Review Proposals (DRPs). Each DRP will identify the Feature or Features it realises and will develop the required Motivation, Strategy, Business, and Application architecture before implementation and reconciliation proceed:
 1. **Information Unit Framework DRP**: Addressing canonical resource representations, composite versus atomic point operations (DI-4),
    absent entity read contracts (DI-3), and persistence adapter alignment (DI-2).
 2. **Authentication & Authorisation Framework DRP**: Addressing security principal propagation, default-deny security evaluation,
@@ -94,15 +93,17 @@ Review through targeted Design Review Proposals (DRPs), to be undertaken in subs
 4. **Mneme-to-Mnemosyne Governed Interaction DRP**: Addressing active distributed state versus durable truth, write-through caching,
    soft-delete cascades (DI-7), direct persistence coupling (DI-8), and ingress/egress dual-write safety (DI-5, DI-6).
 
-These outstanding matters are carried forward into this iteration to provide clear architectural continuity and traceability
-without pre-judging the outcomes of those upcoming DRPs.
+The discovery evidence represented by DI-2 through DI-9 informs future solution architecture but does not constrain it merely because it was discovered in historical or current implementation.
 
-**Preserved Decisions from Iteration 001.**
-For full historical records and evidence, see:
-- [DR-1 DI-1 Disposition](hcrl-1.1.14-001.pending.md#di-1)
-- [DR-2 Supporting Minutiae & Entry State](hcrl-1.1.14-001.pending.md#dr-2)
-- [DR-3 Finite-Provenance Governance Lifecycle](hcrl-1.1.14-001.pending.md#dr-3)
+**Preserved Decisions from Iteration 001:**
+Iteration 001 constitutes a completed historical review boundary. For full historical records and evidence, see:
+- [DR-1 DI-1 Disposition](hcrl-1.1.14-001.pending.md#di-1): Historical authority conflict; no current architectural conflict; Convergence Plan is discovery evidence only.
+- [DR-2 Supporting Minutiae & Entry State](hcrl-1.1.14-001.pending.md#dr-2): Accepted by Solution Architect.
+- [DR-3 Finite-Provenance Governance Lifecycle](hcrl-1.1.14-001.pending.md#dr-3): Accepted by Solution Architect (governance framework repair establishing finite provenance lifecycle).
 - [Governance-Repair Activity Report][governance-repair-report]
+
+**Post-Result Confirmation Pending:**
+This iteration prepares and verifies the 1.1.14 architecture release baseline and its derived ArchiMate Open Exchange and documentation publications in the working tree. Final Solution Architect post-result confirmation of the incorporated release products remains pending human inspection before registration of `hcrl-1.1.14-002.complete.md`.
 
 [reconciliation-task-001]: ../../evidence/1.1.14/001/before/ai-agent-tasks/20261023T081653Z-data-governance-reconciliation.md
 [reconciliation-report-001]: ../../evidence/1.1.14/001/after/ai-agent-reports/20261023T094001Z-data-governance-reconciliation.md
@@ -110,5 +111,7 @@ For full historical records and evidence, see:
 [housekeeping-report-001]: ../../evidence/1.1.14/001/after/ai-agent-reports/20261023T102853Z-data-governance-reconciliation-regularisation.md
 [di-1-task-001]: ../../evidence/1.1.14/001/before/ai-agent-tasks/20261023T113723Z-di-1-solution-architect-disposition.md
 [di-1-report-001]: ../../evidence/1.1.14/001/after/ai-agent-reports/20261023T115132Z-di-1-solution-architect-disposition.md
+[closure-task-002]: ../../evidence/1.1.14/002/before/ai-agent-tasks/20261025T061846Z-close-1.1.14-002-and-publish-1.1.14.md
+[closure-report-002]: ../../evidence/1.1.14/002/after/ai-agent-reports/20261025T063900Z-close-1.1.14-002-and-publish-1.1.14.md
 [governance-repair-report]: ../../../../.junie/reports/2026-10-24-architecture-governance-provenance-simplification-report.md
 [iteration-001]: hcrl-1.1.14-001.pending.md
