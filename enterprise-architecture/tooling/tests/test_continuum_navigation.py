@@ -302,6 +302,34 @@ class ContinuumNavigationTests(unittest.TestCase):
         after = workbench.signatures(model, 'views/diagrams', 'view')
         self.assertNotEqual(before[first.get('identifier')], after[first.get('identifier')])
 
+    def test_non_view_navigation_regenerates_with_missing_or_misleading_input_preserving_empty_view_folders(self):
+        import exchange_xml as xml
+        catalogue = c.read_json(self.root / c.CONFIG / 'type-catalogue.json')
+        original = c.ET.fromstring(c.project(self.root)[0])
+        org = original.find('a:organizations', c.N)
+        views = next(n for n in org if n.findtext('a:label', namespaces=c.N) == 'Views')
+        empty = c.ET.SubElement(views, c.tag('item'), identifier='authored-empty-folder')
+        c.ET.SubElement(empty, c.tag('label'), {c.LANG: 'en'}).text = 'Authored empty folder'
+        c.ET.SubElement(empty, c.tag('documentation')).text = 'Preserve this authored View navigation.'
+        expected_views = xml.signature(views)
+        expected_semantics = [xml.signature(original.find('a:' + k, c.N)) for k in ('elements', 'relationships', 'views')]
+        outputs = []
+        for misleading in (False, True):
+            model = copy.deepcopy(original)
+            incoming = model.find('a:organizations', c.N)
+            for node in list(incoming):
+                if node.findtext('a:label', namespaces=c.N) != 'Views': incoming.remove(node)
+            if misleading:
+                wrong = c.ET.SubElement(incoming, c.tag('item'), identifier='misleading-derived')
+                c.ET.SubElement(wrong, c.tag('label')).text = 'Incorrect semantic ancestry'
+                c.ET.SubElement(wrong, c.tag('item'), identifierRef=next(iter(self.elements.values()))[0]['exchange']['identifier'])
+            nav.project(model, self.tree, self.elements, catalogue, preserve_view_hierarchy=True)
+            retained = next(n for n in incoming if n.findtext('a:label', namespaces=c.N) == 'Views')
+            self.assertEqual(xml.signature(retained), expected_views)
+            self.assertEqual([xml.signature(model.find('a:' + k, c.N)) for k in ('elements', 'relationships', 'views')], expected_semantics)
+            outputs.append(xml.signature(incoming))
+        self.assertEqual(outputs[0], outputs[1])
+
     def test_relocation_changes_coordinates_without_changing_identity_names_or_semantics(self):
         path = self.root / nav.SOURCE
         original = path.read_bytes()

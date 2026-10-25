@@ -299,7 +299,7 @@ def workbench_hierarchy_members(roots, elements, model):
     return result
 
 
-def project(model, roots, elements, catalogue):
+def project(model, roots, elements, catalogue, *, preserve_view_hierarchy=False):
     """Derive Archi physical organisation from shared navigation semantics.
 
     Native category markers anchor even source-only/context-only folders. A
@@ -312,9 +312,13 @@ def project(model, roots, elements, catalogue):
     views = {v.get('identifier') for v in model.findall('a:views/a:diagrams/a:view', c.N)}
     hierarchy_members = workbench_hierarchy_members(roots, elements, model)
 
-    def only_views(node):
+    def only_views(node, in_views=False):
+        in_views = in_views or node.findtext('a:label', namespaces=c.N) == 'Views'
+        if in_views and preserve_view_hierarchy:
+            # Authored View hierarchy includes empty folders and their metadata.
+            return True
         for child in list(node.findall('a:item', c.N)):
-            if not only_views(child):
+            if not only_views(child, in_views):
                 node.remove(child)
         return node.get('identifierRef') in views or bool(node.findall('a:item', c.N))
 

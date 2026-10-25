@@ -233,3 +233,68 @@ Current operation must become independent of historical processing under
 Architecture Change Provenance. Existing dependencies and recovery requirements
 remain until separately authorised migration and verification resolve them.
 Installing the contract neither demonstrates independence nor permits cleanup.
+
+<a id="proposed-bounded-preparation--1115-iteration-002-not-yet-operative"></a>
+## Bounded preparation — accepted in 1.1.15 iteration 002
+
+The Solution Architect's Accept dispositions in
+[HCRL 002](../design/review/1.1.15/hcrl-1.1.15-002.pending.md), DR-1–DR-4, and
+post-adjudication application instruction adopt the opt-in preparation behavior
+below. The existing stages and human checkpoints above remain in force. The
+default review and publication behavior remain unchanged as reviewed; use
+`review --normalised` for bounded preparation. Result confirmation and HCRL
+completion remain separate. The 001 architectural CRs are neither applied nor
+re-adjudicated by this machinery adoption.
+
+The `continuum_workbench.py review --normalised` path validates the
+explicit inputs and exact current projection, then produces
+`architectural-delta.json`. It discovers the entire submission even when newly
+authored elements lack canonical IDs. Ambiguous, duplicated or lost identity
+claims remain exceptions; discovery allocates no canonical identity.
+
+Only the demonstrated absent → `xml:lang="en"` difference on an unchanged,
+single projector-generated element Property value is normalised. The exact key
+allowlist is the six identity/name/type roles, `Specialization`, and the six
+`Continuum /` properties emitted by the current projector. Text, multiplicity,
+other attributes, other languages, authored properties and conflicting inherited
+language remain observable. Raw `exchange_compare.py compare` remains exact.
+
+Under the Solution Architect's remediation instruction, submitted non-View
+navigation is derived serialization and creates no architectural CR merely for
+identifiers, order or folders. Governed regeneration reuses the existing
+Continuum navigation/containment projector after incorporation; it never infers
+new containment or placement from submitted folders. The machinery separately
+compares View identities/content and their authored navigation, including folder
+metadata, empty folders, moves and common-sibling order. Its optional
+`continuum_navigation.project(..., preserve_view_hierarchy=True)` preserves the
+entire named Views branch during regeneration. DR-3 accepts this optional
+preservation behavior. The existing canonical publication default remains
+unchanged as reviewed; using the option for a material publication change still
+requires the normal publication validation and actual Archi inspection gates.
+
+The `architecture_review_evidence.py --prepare` path fills mechanical
+facts, links and Task/Report/HCRL locations using the existing evidence model. It
+does not overwrite existing reviews or human dispositions. Task events require
+attributable instruction-entry timestamps; unavailable times/prefixes remain
+UNRESOLVED. Automated Report emission captures its completed-write system event
+and synchronizes the event field/filename without recursive provenance.
+
+The generated Change Review and pending HCRL are **scaffolds requiring targeted
+architectural interpretation**, not a finished review or a decision. CR identity
+and independent decomposition are established by that interpretation under the
+existing Change Review contract. The agent receives the compact delta, bounded
+relevant Continuum sources and exceptions. Start from known concepts, vicinity
+search, bounded artefacts, then relationships/references. Consult a DRP only for
+a specifically relevant detected change. Ordinary review does not scan the DRP
+corpus or consume complete XML, raw comparisons or session histories.
+
+Unknown representation conditions, invalid inputs, ambiguous identity, stale
+baseline, conflicting output locations or a delta exceeding 128,000 encoded bytes
+stop dependent processing and produce an explicit condition for review. Do not
+start autonomous investigation or implementation/reviewer cycles. Once targeted
+interpretation completes, populate `change-review.md` and the applicable HCRL,
+then STOP for the Solution Architect. Adjudication, `decision.json`, application,
+validation, actual Archi proof, release allocation and final confirmation retain
+their existing governed roles. The five-minute routine target is an engineering
+objective, not a substitute for these controls or a guarantee for exceptional
+architectural changes.

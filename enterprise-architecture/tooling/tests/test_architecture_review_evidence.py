@@ -1,6 +1,8 @@
 # Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
 """Iteration boundaries and attributable-event filename correspondence."""
 import importlib.util
+import hashlib
+import json
 from pathlib import Path
 import sys
 import tempfile
@@ -118,3 +120,63 @@ class ArchitectureReviewEvidenceTests(unittest.TestCase):
             evidence.check_iteration(self.root, "9.8.7/other", "004")
         with self.assertRaises(ValueError):
             evidence.check_iteration(self.root, "9.8.7", "../004")
+
+    def test_emission_preserves_supplied_task_event_and_captures_report_write_event(self):
+        task = evidence.emit_record(self.root, '9.8.7', '004', 'ai-agent-tasks', 'explicit-task',
+            'Operative instruction', event='2026-10-21T17:43:22.583+11:00', source='Synthetic instruction event')
+        self.assertEqual(task.name, '20261021T064322Z-explicit-task.md')
+        report = evidence.emit_record(self.root, '9.8.7', '004', 'ai-agent-reports', 'explicit-report', 'Outcome facts')
+        self.assertIsNone(evidence.check_event(report, 'Report-Produced-At'))
+        self.assertIn('completed initial Report emission', report.read_text())
+        unresolved = evidence.emit_record(self.root, '9.8.7', '004', 'ai-agent-tasks', 'unknown-event', 'Instruction')
+        self.assertEqual(unresolved.name, 'unresolved-unknown-event.md')
+        self.assertIsNotNone(evidence.check_event(unresolved, 'Task-Issued-At'))
+        with self.assertRaises(FileExistsError):
+            evidence.emit_record(self.root, '9.8.7', '004', 'ai-agent-tasks', 'explicit-task',
+                'Changed instruction', event='2026-10-21T17:43:22.583+11:00', source='Synthetic instruction event')
+
+    def preparation_fixture(self):
+        task, _ = self.pair()
+        (self.design / 'review/9.8.7/hcrl-9.8.7-004.pending.md').unlink()
+        source = self.root / 'input.xml'; source.write_bytes(b'Pinned fixture input')
+        item = dict(path=str(source), bytes=source.stat().st_size, sha256=hashlib.sha256(source.read_bytes()).hexdigest())
+        group = dict(added=[], removed=[], changed=[])
+        delta = dict(schemaVersion=2, inputs=dict(baseline=item, submitted=item),
+                     exceptionalConditions=[], elements=group, relationships=group, views=group,
+                     viewNavigation=dict(changedViews=[]))
+        path = self.boundary / 'after/architectural-delta.json'
+        path.write_text(json.dumps(delta))
+        return task, path, source
+
+    def test_preparation_links_layout_event_and_human_checkpoint_without_overwrite(self):
+        task, delta, _ = self.preparation_fixture()
+        result = evidence.prepare_review(self.root, '9.8.7', '004', delta, task)
+        self.assertEqual(result['outcome'], 'PASS')
+        self.assertEqual(result['preparation'], 'TARGETED_INTERPRETATION_REQUIRED')
+        for key in ('review', 'hcrl', 'report'):
+            self.assertEqual(evidence.check_links(Path(result[key])), [])
+        self.assertIn('On-Hold', Path(result['review']).read_text())
+        self.assertIn('Minutiae-Accepted: [awaiting', Path(result['hcrl']).read_text())
+        before = Path(result['hcrl']).read_bytes()
+        with self.assertRaisesRegex(ValueError, 'no automatic overwrite'):
+            evidence.prepare_review(self.root, '9.8.7', '004', delta, task)
+        self.assertEqual(Path(result['hcrl']).read_bytes(), before)
+
+    def test_preparation_rejects_changed_input_and_wrong_evidence_boundary(self):
+        task, delta, source = self.preparation_fixture()
+        with self.assertRaisesRegex(ValueError, 'selected iteration'):
+            evidence.prepare_review(self.root, '9.8.7', '005', delta, task)
+        source.write_bytes(b'Tampered')
+        with self.assertRaisesRegex(ValueError, 'Pinned input changed'):
+            evidence.prepare_review(self.root, '9.8.7', '004', delta, task)
+        self.assertFalse((self.design / 'review/9.8.7/change-review.md').exists())
+
+    def test_preparation_preserves_exception_and_unresolved_timestamp(self):
+        task, delta, _ = self.preparation_fixture()
+        task.write_text('Task-Issued-At: UNRESOLVED\nOriginal event unavailable\n')
+        task = task.rename(task.with_name('unresolved-task.md'))
+        data = json.loads(delta.read_text()); data['exceptionalConditions'] = [dict(kind='IDENTITY', detail='Ambiguous')]
+        delta.write_text(json.dumps(data))
+        result = evidence.prepare_review(self.root, '9.8.7', '004', delta, task)
+        self.assertEqual(result['outcome'], 'UNRESOLVED')
+        self.assertTrue(any('IDENTITY' in x for x in result['validation']['unresolved']))

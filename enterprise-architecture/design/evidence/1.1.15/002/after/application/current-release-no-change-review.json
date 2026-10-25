@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 2,
+  "standing": "UNREVIEWED; no application authority",
+  "outcome": "REVIEW_READY",
+  "inputs": {
+    "baseline": {
+      "path": "enterprise-architecture/design/archimate/published/1.1.15/Harmonia-Architecture.xml",
+      "sha256": "61e7ebb958b321404c1c4694ae952119480f1fabd04dc2d319f35def84313dec",
+      "xmlSha256": "61e7ebb958b321404c1c4694ae952119480f1fabd04dc2d319f35def84313dec",
+      "bytes": 26919406
+    },
+    "submitted": {
+      "path": "enterprise-architecture/design/archimate/published/1.1.15/Harmonia-Architecture.xml",
+      "sha256": "61e7ebb958b321404c1c4694ae952119480f1fabd04dc2d319f35def84313dec",
+      "xmlSha256": "61e7ebb958b321404c1c4694ae952119480f1fabd04dc2d319f35def84313dec",
+      "bytes": 26919406
+    }
+  },
+  "elements": {
+    "before": 1602,
+    "submitted": 1602,
+    "retainedIds": 1602,
+    "added": [],
+    "removed": [],
+    "changed": []
+  },
+  "relationships": {
+    "before": 1651,
+    "submitted": 1651,
+    "retainedIds": 1651,
+    "added": [],
+    "removed": [],
+    "changed": []
+  },
+  "views": {
+    "before": 1209,
+    "submitted": 1209,
+    "retainedIds": 1209,
+    "added": [],
+    "removed": [],
+    "changed": []
+  },
+  "viewNavigation": {
+    "changedViews": [],
+    "folderChanges": [],
+    "orderChanges": [],
+    "addedViewPlacements": {},
+    "removedViewPlacements": {}
+  },
+  "classified": {
+    "normalisations": {},
+    "propertyDefinitionRebindings": [],
+    "nonViewNavigation": "DERIVED: regenerate with existing Continuum projector after governed incorporation; no architectural CR",
+    "organizationInventory": {
+      "baseline": {
+        "items": 5135,
+        "identifiers": 2894,
+        "references": 2811
+      },
+      "submitted": {
+        "items": 5135,
+        "identifiers": 2894,
+        "references": 2811
+      }
+    }
+  },
+  "identity": {
+    "newWithoutCanonicalId": [],
+    "allocation": "Deferred to governed incorporation after adjudication",
+    "rebindings": []
+  },
+  "representationAnomalies": [],
+  "exceptionalConditions": [],
+  "contextPolicy": "Known concept → vicinity search → bounded Continuum artefacts → references; DRP only for a specifically relevant detected change; no corpus scan",
+  "contextSeeds": [],
+  "canonicalIdsAllocated": 0,
+  "canonicalSourcesChanged": 0,
+  "nextAction": "Targeted architectural interpretation; change-review.md; pending HCRL; STOP for Solution Architect. No autonomous investigation/reviewer loop.",
+  "canonicalValidation": {
+    "status": "PASS",
+    "elements": 1602,
+    "relationships": 1651,
+    "qualifiedSourcePredicates": 462,
+    "canonicalIdentities": 1602,
+    "representationIdentities": 1602,
+    "provenanceCoverage": 1602,
+    "sourceBindings": 3421,
+    "supportedNativeTypes": 60,
+    "navigation": "PASS",
+    "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance",
+    "containment": "PASS",
+    "offlineXsd": "PASS",
+    "exchangeReferences": "PASS",
+    "outputSha256": "61e7ebb958b321404c1c4694ae952119480f1fabd04dc2d319f35def84313dec",
+    "publicationAllocatedIdentities": 0,
+    "actualArchiTransport": "NOT_PERFORMED",
+    "fullResultSha256": "9ad8d7703d1f040d99f9d59987eb8c6912ad645c156ffe91592b810696523844",
+    "baselineUnresolvedProperties": 388
+  },
+  "continuumContext": [],
+  "baselineSha256": "61e7ebb958b321404c1c4694ae952119480f1fabd04dc2d319f35def84313dec",
+  "submissionSha256": "61e7ebb958b321404c1c4694ae952119480f1fabd04dc2d319f35def84313dec",
+  "deterministicElapsedSeconds": 11.285388
+}

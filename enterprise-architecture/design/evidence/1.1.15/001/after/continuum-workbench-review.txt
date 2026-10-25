@@ -1,0 +1,2 @@
+FAIL: Missing/ambiguous canonicalId; creation requires reviewed identity allocation
+EXIT_CODE=1

@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "elements": 1602,
+  "relationships": 1651,
+  "qualifiedSourcePredicates": 462,
+  "canonicalIdentities": 1602,
+  "representationIdentities": 1602,
+  "provenanceCoverage": 1602,
+  "sourceBindings": 3421,
+  "supportedNativeTypes": 60,
+  "navigation": "PASS",
+  "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance",
+  "publication": "Continuum taxonomy browser and qualified catalogue",
+  "sha256": {
+    "continuum.html": "7dd14fcb30b1dfe4176c0358807a090995f3f078649d12398998a1c3ca2d4867",
+    "README.md": "b2dced15d0b900b83b9dfb61d041ce1d1f3fe1252cc3b366ad21312dc4494385",
+    "continuum-catalogue.tex": "0be3ad083443688c1617e07b8e92cff0ecb734e06323243899edb9025b9a86a6",
+    "navigation.json": "e0c28545ae6b7831850b7088d34370d7ce6c978aad28119c516dae6dd4251b95"
+  },
+  "sourceInputs": "Canonical Markdown, canonical navigation, maintained type/schema configuration and root release",
+  "latexIngested": false
+}

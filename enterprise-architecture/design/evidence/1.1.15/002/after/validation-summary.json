@@ -1,0 +1,55 @@
+{
+  "outcome": "PASS",
+  "protectedFiles": 1619,
+  "changedProtectedFiles": [],
+  "beforeAggregateSha256": "e9a52a485ed0963681155e20e709729faf8dfe89fc04875ed8e0601214cbc207",
+  "afterAggregateSha256": "e9a52a485ed0963681155e20e709729faf8dfe89fc04875ed8e0601214cbc207",
+  "scope": [
+    "canonical Continuum",
+    "accepted baseline XML",
+    "projection template",
+    "release file",
+    "all 001 evidence and review files",
+    "available Git HEAD/index/packed-refs bytes"
+  ],
+  "finalReplay": {
+    "outcome": "REVIEW_READY",
+    "elapsedSeconds": 11.257413,
+    "deltaMatchesRetainedBenchmarkExceptElapsed": true
+  },
+  "tests": {
+    "eaSuite": {
+      "tests": 79,
+      "seconds": 288.835,
+      "outcome": "PASS"
+    },
+    "finalNormalisedReview": {
+      "tests": 10,
+      "outcome": "PASS"
+    },
+    "finalEvidenceMechanics": {
+      "tests": 16,
+      "outcome": "PASS"
+    },
+    "javaArchitecture": {
+      "tests": 90,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 27.251,
+      "outcome": "PASS",
+      "mode": "offline Maven; initial online attempt could not write read-only resolver cache"
+    }
+  },
+  "readOnlyPublicationChecks": "PASS: release, Manifest, exact Exchange, browser, narrative RAD, canonical links",
+  "gitDiffCheck": "PASS",
+  "gitHead": "315e28ed275183e2b337c16c7fb550dd10dec754",
+  "gitMutationsPerformed": false,
+  "architecturalCrsApplied": false,
+  "releaseIncremented": false,
+  "limits": [
+    "No actual Archi import/export",
+    "Task instruction-entry timestamp unresolved",
+    "No measured autonomous AI latency or token consumption"
+  ]
+}

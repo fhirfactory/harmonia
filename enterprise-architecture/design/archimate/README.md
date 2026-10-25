@@ -96,6 +96,15 @@ actual workbench tree before acceptance of material organisation changes.
 
 ## Publication and round-trip use
 
+The [1.1.15 projection](published/1.1.15/Harmonia-Architecture.xml), prepared under
+[HCRL 1.1.15-002](../review/1.1.15/hcrl-1.1.15-002.pending.md), carries the
+machinery change's release metadata over the unchanged canonical architecture.
+Its elements, relationships, Views and navigation match 1.1.14. Incorporated-result
+confirmation remains with the Solution Architect. This projection applies none
+of the separate 001 CRs; the immutable 1.1.14 publication remains their original
+comparison baseline. Use the exact current projection for subsequent authoring
+after result confirmation, without relabelling historical inputs.
+
 `published/<release>/Harmonia-Architecture.xml` is the durable release artefact
 for loading that Continuum release into Archi. The filename follows the maintained
 projector's existing convention. The initial 1.1.11 artefact is generated from the
@@ -136,20 +145,26 @@ isolated source tree (`--root <tree>` before `project`). Do not relabel today's
 Continuum with a historical version. No historical backfill beyond 1.1.11 is implied.
 
 ```bash
-python3 enterprise-architecture/tooling/continuum_workbench.py review \
+python3 enterprise-architecture/tooling/continuum_workbench.py review --normalised \
   --baseline /path/to/exact-current-projection.xml \
   --submitted /path/to/complete-model-export.xml \
   --output /path/to/iteration/evidence/review.json
 python3 enterprise-architecture/tooling/continuum_workbench.py apply --decision /path/to/reviewed-decision.json
 ```
 
-Commands run from the repository root. Review correlates only valid canonicalId
-claims. It reports native fields, property values, relationships and Views without
-writing sources. The baseline must match the current projection byte for byte.
+Commands run from the repository root. The accepted `--normalised` path uses
+existing canonical identity where established and discovers new architect-authored
+elements without allocating missing canonical IDs. It reports a bounded semantic
+and View/navigation delta without writing sources. The default review without
+that flag remains the existing canonical-amendment intake. The baseline must
+match the current projection byte for byte.
 The [existing Round-Trip Praxis](../../governance/archimate-round-trip-engineering-praxis.md)
 and common HCRL process govern adjudication; the JSON adapter does not replace them.
 
-A decision names `authority` (repository-relative HCRL path and DR anchor), `review`
+The existing element-amendment adapter consumes its schema-1 review; it rejects
+the normalized review-only schema rather than inferring application authority.
+Use the applicable governed incorporation/amendment operation after adjudication.
+A decision for that existing adapter names `authority` (repository-relative HCRL path and DR anchor), `review`
 (repository-relative review JSON), its exact `reviewSha256`, a `dispositions` map,
 and `replacements`. Every reviewed element uses its canonicalId as disposition key;
 relationships/Views use `relationship:<identifier>` / `view:<identifier>`. Each

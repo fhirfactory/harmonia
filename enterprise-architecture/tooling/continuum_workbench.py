@@ -51,7 +51,9 @@ def signatures(root, group, item):
     return {n.get('identifier'): signature(n,model) for n in root.findall(path,c.N)}
 
 
-def review(baseline, submitted, root=c.ROOT):
+def review(baseline, submitted, root=c.ROOT, *, normalised=False):
+    if normalised:
+        return normalised_review(baseline, submitted, root)
     c.validate(root)
     _, elements = c.load(root)
     before, original = model(baseline); after, proposed = model(submitted)
@@ -84,6 +86,42 @@ def review(baseline, submitted, root=c.ROOT):
             'canonicalIdsAllocated':0,'canonicalSourcesChanged':0}
 
 
+def normalised_review(baseline, submitted, root=c.ROOT):
+    """Opt-in review path accepted under HCRL 1.1.15-002; never application."""
+    from time import perf_counter
+    from exchange_compare import Exchange, architectural_delta
+    start = perf_counter()
+    before, after = Exchange(baseline), Exchange(submitted)
+    result = architectural_delta(before, after)
+    try:
+        projected, validation = c.project(root)
+        c.require(baseline.read_bytes() == projected, 'Baseline is not the exact current canonical projection')
+        # Validation inventories are mechanical evidence, not reasoning context.
+        # Keep counts/gates and a digest rather than the complete canonical map.
+        result['canonicalValidation'] = {key: value for key, value in validation.items()
+                                         if isinstance(value, (str, int, float, bool)) or value is None}
+        result['canonicalValidation']['fullResultSha256'] = c.sha(c.encoded(validation))
+        result['canonicalValidation']['baselineUnresolvedProperties'] = len(validation.get('unresolvedProperties', []))
+        _, elements = c.load(root)
+        # Only locators for the detected delta and its direct existing endpoints.
+        requested = set(result['contextSeeds']) | {r['identifier'] for action in ('changed', 'removed')
+                                                  for r in result['elements'][action]}
+        result['continuumContext'] = [dict(identifier=m['exchange']['identifier'], canonicalId=cid,
+            source=str(path.relative_to(root)), sourceSha256=c.sha(path.read_bytes()),
+            name=m['displayName'], standing=m['standing'])
+            for cid, (m, _, path) in sorted(elements.items()) if m['exchange']['identifier'] in requested]
+    except (ValueError, OSError) as exc:
+        result['exceptionalConditions'].append(dict(kind='BASELINE_OR_CANONICAL_VALIDATION', detail=str(exc)))
+    result['baselineSha256'] = before.sha256
+    result['submissionSha256'] = after.sha256
+    if len(c.encoded(result)) > 128_000:
+        result['exceptionalConditions'].append(dict(kind='REVIEW_PAYLOAD_LIMIT',
+            detail='Delta exceeds 128000 bytes. Retain this evidence; request bounded scope before AI interpretation.'))
+    result['outcome'] = 'UNRESOLVED' if result['exceptionalConditions'] else 'REVIEW_READY'
+    result['deterministicElapsedSeconds'] = round(perf_counter() - start, 6)
+    return result
+
+
 def apply(decision, root=c.ROOT):
     c.require(decision.get('authority'), 'Missing attributable reviewed HCRL disposition')
     authority=root/decision['authority'].split('#')[0]
@@ -91,6 +129,8 @@ def apply(decision, root=c.ROOT):
     review_path=root/decision['review']
     c.require(c.sha(review_path.read_bytes()) == decision['reviewSha256'], 'Reviewed evidence changed')
     evidence=c.read_json(review_path)
+    c.require(evidence.get('schemaVersion') == 1,
+              'Normalised review is review-only evidence; use governed adjudication and an applicable application adapter')
     c.require(not evidence.get('unresolved'), 'Resolve affected added/deleted identities before apply')
     projected, _ = c.project(root)
     c.require(c.sha(projected) == evidence['baselineSha256'], 'Current projection has changed since review')
@@ -149,13 +189,23 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,default=c.ROOT)
     sub=p.add_subparsers(dest='command',required=True)
     r=sub.add_parser('review');r.add_argument('--baseline',type=Path,required=True);r.add_argument('--submitted',type=Path,required=True);r.add_argument('--output',type=Path,required=True)
+    r.add_argument('--normalised', action='store_true', help='Bounded review path; canonical changes require Solution Architect adjudication')
     a=sub.add_parser('apply');a.add_argument('--decision',type=Path,required=True)
     args=p.parse_args()
     try:
         if args.command=='review':
-            report=review(args.baseline,args.submitted,args.root);args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_bytes(c.encoded(report))
+            report=review(args.baseline,args.submitted,args.root,normalised=args.normalised);args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_bytes(c.encoded(report))
+            if args.normalised:
+                print(json.dumps({key: report[key] for key in ('outcome', 'deterministicElapsedSeconds', 'exceptionalConditions')}))
+                return 2 if report['outcome']=='UNRESOLVED' else 0
             print(json.dumps({'elementChanges':len(report['elementChanges']),'relationshipAndViewChanges':len(report['relationshipAndViewChanges']),'unresolved':len(report['unresolved'])}))
         else:print(json.dumps(apply(c.read_json(args.decision),args.root)))
         return 0
-    except (ValueError,KeyError,OSError) as e:print('FAIL: '+str(e),file=sys.stderr);return 1
+    except (ValueError,KeyError,OSError,c.ET.XMLSyntaxError,c.ET.DocumentInvalid) as e:
+        if args.command=='review' and args.normalised:
+            failure=dict(schemaVersion=2,outcome='FAIL',standing='No application authority',
+                exceptionalConditions=[dict(kind='INPUT_OR_PROCESSING',detail=str(e))],
+                nextAction='STOP; present this condition for review. No autonomous investigation.')
+            args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_bytes(c.encoded(failure))
+        print('FAIL: '+str(e),file=sys.stderr);return 1
 if __name__=='__main__':raise SystemExit(main())

@@ -1,0 +1,68 @@
+{
+  "outcome": "PASS",
+  "release": {
+    "version": "1.1.15",
+    "previous_version": "1.1.14"
+  },
+  "authority": {
+    "path": "enterprise-architecture/design/evidence/1.1.15/002/before/hcrl-1.1.15-002.reviewed.md",
+    "sha256": "5b0cc25e2d867ec72c28264680054c224a35a1a190db3ffbe4910b7eb87e6f0e",
+    "originalPath": "enterprise-architecture/design/review/1.1.15/hcrl-1.1.15-002.pending.md",
+    "relativeLinkBase": "Original source parent; the evidence copy preserves exact reviewed bytes and does not rebase embedded links"
+  },
+  "protectedFiles": 1727,
+  "changedProtectedFiles": [],
+  "beforeAggregateSha256": "a1b8a5a38191880e6802deb4cf1a4e232d13ed735dba24fe54fc7015a17fdea7",
+  "afterAggregateSha256": "a1b8a5a38191880e6802deb4cf1a4e232d13ed735dba24fe54fc7015a17fdea7",
+  "tests": {
+    "ea": {
+      "outcome": "PASS",
+      "tests": 81,
+      "seconds": 293.15
+    },
+    "javaArchitecture": {
+      "outcome": "PASS",
+      "tests": 90,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 25.814
+    },
+    "browser": "PASS"
+  },
+  "generationAndStalenessChecks": "PASS",
+  "activeLinks": "PASS",
+  "gitDiffCheck": "PASS",
+  "gitHead": "315e28ed275183e2b337c16c7fb550dd10dec754",
+  "gitStatus": " M architecture-release.json\n M enterprise-architecture/continuum/MANIFEST.md\n M enterprise-architecture/design/archimate/README.md\n M enterprise-architecture/governance/archimate-round-trip-engineering-praxis.md\n M enterprise-architecture/tooling/README.md\n M enterprise-architecture/tooling/architecture_review_evidence.py\n M enterprise-architecture/tooling/continuum_navigation.py\n M enterprise-architecture/tooling/continuum_workbench.py\n M enterprise-architecture/tooling/exchange_compare.py\n M enterprise-architecture/tooling/tests/test_architecture_review_evidence.py\n M enterprise-architecture/tooling/tests/test_continuum_navigation.py\n?? .junie/plans/archimate-model-update-1-1-15-001.md\n?? enterprise-architecture/design/archimate/published/1.1.15/\n?? enterprise-architecture/design/archimate/working/\n?? enterprise-architecture/design/evidence/1.1.15/\n?? enterprise-architecture/design/offline-design/.~lock.DRP-Information-Unit-Framework.draft.002.odt#\n?? enterprise-architecture/design/review/1.1.15/\n?? enterprise-architecture/documentation/continuum-manifest/published/1.1.15/\n?? enterprise-architecture/documentation/continuum-rad/published/1.1.15/\n?? enterprise-architecture/tooling/tests/test_normalised_review.py\n",
+  "generatedPublications": [
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/archimate/published/1.1.15/Harmonia-Architecture.xml",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-manifest/published/1.1.15/Harmonia-Architecture.xml",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-manifest/published/1.1.15/README.md",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-manifest/published/1.1.15/continuum-catalogue.tex",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-manifest/published/1.1.15/continuum.html",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-manifest/published/1.1.15/navigation.json",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-manifest/published/1.1.15/publication.json",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.15/README.md",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.15/continuum-rad.tex",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.15/parts/application.tex",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.15/parts/architecture-governance.tex",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.15/parts/business.tex",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.15/parts/cross-cutting-references.tex",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.15/parts/implementation-and-migration.tex",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.15/parts/motivation.tex",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.15/parts/strategy.tex",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.15/parts/technology.tex",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.15/publication.json",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.15/structure.json"
+  ],
+  "iteration001CrsAppliedOrModified": false,
+  "gitMutationsPerformed": false,
+  "modelComparison": "See publication-validation.json: only release-property XML change; complete organizations XML unchanged",
+  "regression": "See 001-regression-summary.json: original 1.1.14 baseline in isolated matching maintained-input fixture",
+  "nextCheckpoint": "Solution Architect incorporated-result confirmation under Review Praxis section 6; HCRL remains pending",
+  "limits": [
+    "Actual Archi transport not performed; no material organization change in this application",
+    "Unavailable Task event times/prefixes remain explicit; no false temporal-conformance claim"
+  ]
+}

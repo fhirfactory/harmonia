@@ -77,7 +77,7 @@ Override `PYTHON` for a Python environment containing the declared dependencies.
 ```bash
 python3 enterprise-architecture/tooling/architecture_continuum.py template --type Principle
 python3 enterprise-architecture/tooling/architecture_continuum.py create --spec /tmp/authorised-element.json
-python3 enterprise-architecture/tooling/continuum_workbench.py review --baseline /path/to/exact.xml --submitted /path/to/submission.xml --output /path/to/review.json
+python3 enterprise-architecture/tooling/continuum_workbench.py review --normalised --baseline /path/to/exact.xml --submitted /path/to/submission.xml --output /path/to/architectural-delta.json
 python3 enterprise-architecture/tooling/continuum_workbench.py apply --decision /path/to/reviewed-decision.json
 python3 enterprise-architecture/tooling/exchange_compare.py compare --baseline /path/to/exact.xml --submitted /path/to/returned.xml.gz --report /path/to/raw-comparison.json
 python3 enterprise-architecture/tooling/verify_continuum_transport.py --baseline /path/to/exact.xml --returned /path/to/returned.xml --execution-log /path/to/archi.txt --operator 'attributed operator' --report /path/to/transport.json
@@ -96,6 +96,40 @@ Review and apply use explicit locators; there is no newest-export discovery rule
 For an optional catalogue PDF, compile the generated `continuum-catalogue.tex` twice with
 XeLaTeX, a fixed `SOURCE_DATE_EPOCH` and temporary output directory. Inspect it
 before retaining it as a derived publication. Existing historical PDFs are unchanged.
+
+<a id="proposed-bounded-review-preparation-pending-1115-002"></a>
+## Bounded review preparation — accepted in 1.1.15-002
+
+The Solution Architect accepted this opt-in preparation behavior through
+[HCRL 002](../design/review/1.1.15/hcrl-1.1.15-002.pending.md), DR-1–DR-4, and
+issued the post-adjudication application instruction. Use `review --normalised`
+for bounded review preparation; the default review/application and publication
+behavior remain unchanged as reviewed. Acceptance of the machinery supplies no
+decision about a submitted model. Final confirmation of the incorporated
+tooling result remains the next Solution Architect checkpoint.
+
+```bash
+timeout 110 python3 enterprise-architecture/tooling/continuum_workbench.py review --normalised --baseline /path/to/exact.xml --submitted /path/to/submission.xml --output enterprise-architecture/design/evidence/VERSION/ITERATION/after/architectural-delta.json
+python3 enterprise-architecture/tooling/architecture_review_evidence.py --version VERSION --iteration ITERATION --record-role ai-agent-tasks --name model-update --content /path/to/operative-instruction.md --event ATTRIBUTABLE_INSTRUCTION_ENTRY_ISO8601 --event-source 'attributable system instruction-entry event'
+python3 enterprise-architecture/tooling/architecture_review_evidence.py --version VERSION --iteration ITERATION --prepare --delta enterprise-architecture/design/evidence/VERSION/ITERATION/after/architectural-delta.json --task /path/to/iteration/before/ai-agent-tasks/TIMESTAMP-model-update.md
+```
+
+Capture the Task before substantive activity. Omit `--event` only when the Task
+event is unavailable; the tool preserves UNRESOLVED rather than inventing one.
+Preparation verifies hash/size pins, recorded event/prefix correspondence,
+iteration layout and generated relative file links. It refuses to overwrite an
+existing Change Review/HCRL, preserving human dispositions for explicit bounded
+updates. The emitted Report records mechanical facts; it does not replace the
+substantive architectural interpretation Report. A scaffold has
+`TARGETED_INTERPRETATION_REQUIRED` standing and allocates no CR IDs.
+
+Use the delta and bounded Continuum vicinity/context for targeted interpretation,
+complete independent CR decomposition and material HCRL conclusions, then STOP
+for the Solution Architect. No automatic AI/reviewer loop or corpus-wide DRP
+retrieval is implemented. Exit 2 reports unresolved conditions, exit 1 reports
+failure, and exit 0 demonstrates only the stated mechanical checks. A normalised
+review is review-only evidence; the existing element-amendment `apply` adapter
+explicitly rejects that schema. Application remains a separately governed step.
 
 The offline schemas are byte-preserving promotions of Archi's Open Exchange
 schemas. `exchange_xml.py` supplies the secure parser/offline resolver;
