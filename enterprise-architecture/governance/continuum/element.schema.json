@@ -97,7 +97,10 @@
         null,
         "ImplementationGuideline",
         "Feature",
-        "Topic"
+        "Topic",
+        "Package",
+        "RequirementGroup",
+        "Class"
       ]
     },
     "displayName": {

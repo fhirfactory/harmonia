@@ -348,7 +348,15 @@ def project(model, roots, elements, catalogue, *, preserve_view_hierarchy=False)
         return anchors[layer]
 
     def native_layer(cid):
-        native = elements[cid][0]['archimateType']
+        elem = elements[cid][0]
+        native = elem['archimateType']
+        spec = elem.get('specialization')
+        if native == 'Grouping':
+            if spec == 'Package':
+                return 'Application'
+            if spec == 'RequirementGroup':
+                return 'Motivation'
+            return 'Other'
         domain = Path(catalogue['types'][native]['directory']).parts[0]
         c.require(domain in native_labels, 'Unsupported Archi native domain: ' + domain)
         return native_labels[domain]

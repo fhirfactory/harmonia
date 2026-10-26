@@ -33,12 +33,35 @@
           <item identifierRef="id-50fe76d4160d525181784de74a41cd93"/>
         </item>
         <item>
-          <label xml:lang="en">Requirement Co-governance</label>
-          <item identifierRef="id-2e771bce18cc5aca80e3c4ad72a01554"/>
-          <item identifierRef="id-4afe4ce42e6e56b0867aca68bb355877"/>
-          <item identifierRef="id-633aecdb63ab5281af2a383a2b11800d"/>
-          <item identifierRef="id-a6fd22d1736d5453bec5194f87b61b80"/>
-          <item identifierRef="id-5a0eb09317f250eb91bdd86ae38de5e1"/>
+          <label xml:lang="en">Requirements</label>
+          <item>
+            <label xml:lang="en">Non-Functional-Requirements</label>
+            <item>
+              <label xml:lang="en">Availability Requirements</label>
+              <item>
+                <label xml:lang="en">Information Availability Management</label>
+                <item identifierRef="id-e7190de0c6f64b5c99b74fa6be52eb05"/>
+              </item>
+              <item identifierRef="id-a313bbc71a524c139bb1018bb1960186"/>
+            </item>
+            <item identifierRef="id-8009ccd75bd44bb78dfa7a7b6c6fdd80"/>
+          </item>
+          <item>
+            <label xml:lang="en">Requirement Co-governance</label>
+            <item identifierRef="id-2e771bce18cc5aca80e3c4ad72a01554"/>
+            <item identifierRef="id-4afe4ce42e6e56b0867aca68bb355877"/>
+            <item identifierRef="id-633aecdb63ab5281af2a383a2b11800d"/>
+            <item identifierRef="id-a6fd22d1736d5453bec5194f87b61b80"/>
+            <item identifierRef="id-5a0eb09317f250eb91bdd86ae38de5e1"/>
+          </item>
+          <item>
+            <label xml:lang="en">Functional Requirements</label>
+            <item>
+              <label xml:lang="en">Information Management</label>
+              <item identifierRef="id-0abeb9dfc5bc441299712f3ee08e49de"/>
+            </item>
+            <item identifierRef="id-35ab31e1f4d14980b0d33929462bb7b3"/>
+          </item>
         </item>
         <item identifierRef="id-be6e7785da7b573aad18b9e05c2796c1"/>
         <item identifierRef="id-9b2c6385858f57dcbca54a46acfe77ba"/>
@@ -1046,34 +1069,16 @@
                 <label xml:lang="en">[CT2] Care Plan Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Care Plan Lifecycle &amp; Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Care Goal &amp; Plan Progression Representation</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Care Plan Ingestion &amp; Distribution</label>
-                  </item>
                   <item identifierRef="id-dc0cd9ba4c825597abcacbe4a5224f3b"/>
                   <item identifierRef="id-15ea40e98651596da8d5c49d6eda0296"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Community Care Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Community Care Plan Synchronization</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Community Encounter Ingestion</label>
-                  </item>
                   <item identifierRef="id-64c56cbc5fe052a9b29f6cad3840e09d"/>
                   <item identifierRef="id-4dcc16ab74e958be90aeec8dda52f85e"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Outreach Care Continuity</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Outreach Encounter Outcome Ingestion</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Outreach Visit Context Provision</label>
-                  </item>
                   <item identifierRef="id-662d0a6d433d5b179c94023beeaa652f"/>
                   <item identifierRef="id-8543f84fca635f2388e7feec5f7610c5"/>
                 </item>
@@ -1083,23 +1088,11 @@
                 <label xml:lang="en">[CT2] Client-Centred Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Client Intake &amp; Demographic Update</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Demographic Change Distribution</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Demographic Update Ingestion</label>
-                  </item>
                   <item identifierRef="id-bb8c1ee8cadf5874bafa87d18db0a3cd"/>
                   <item identifierRef="id-4fe96761d97356108c454fb6d1c0e297"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Screening and Immunisation Enablement</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Immunisation Event Submission</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Screening Recall Notification Distribution</label>
-                  </item>
                   <item identifierRef="id-d5c2503367a1537c873dd1f6a28d8b39"/>
                   <item identifierRef="id-11838aeeeeb75b3980ac432b5c9374d9"/>
                 </item>
@@ -1113,15 +1106,6 @@
                 <label xml:lang="en">[CT2] Clinical Communication Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Secure Clinical Communication</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Clinical Communication Distribution</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Communication Audit Logging</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Delivery Acknowledgement Tracking</label>
-                  </item>
                   <item identifierRef="id-ede9d5c26dad50aeb741848144f2a1e7"/>
                   <item identifierRef="id-918290e77c2158cc81d451ea2e6626ce"/>
                 </item>
@@ -1131,15 +1115,6 @@
                 <label xml:lang="en">[CT2] Clinical Record Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Clinical Documentation Lifecycle Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Clinical Document Ingestion</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Document Metadata Indexing</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Document Versioning &amp; Supersession</label>
-                  </item>
                   <item identifierRef="id-2130c33bdaf15e17bb4fee2b6e591160"/>
                   <item identifierRef="id-893e351e0f995d11a1014a17f14ffe2e"/>
                 </item>
@@ -1149,29 +1124,11 @@
                 <label xml:lang="en">[CT2] Diagnostic Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Diagnostic Service Integration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Diagnostic History Consolidation</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Laboratory &amp; Imaging Result Distribution</label>
-                  </item>
                   <item identifierRef="id-0cbd4ec862cd5b01bc12533a5d657424"/>
                   <item identifierRef="id-82eb384b772c56869df40fe957d72b1c"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Diagnostic Workflow Management</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Diagnostic Preliminary &amp; Corrected Report Handling</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Diagnostic Report Distribution</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Diagnostic Report Ingestion &amp; Binding</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Diagnostic Request Correlation</label>
-                  </item>
                   <item identifierRef="id-d93c3556406757ff8de587e2995d6fab"/>
                   <item identifierRef="id-4362120ba0135c879b3885b8509860ca"/>
                 </item>
@@ -1181,29 +1138,11 @@
                 <label xml:lang="en">[CT2] Episode &amp; Encounter Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Acute Care Monitoring &amp; Event Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Acute Care Clinical Context Provision</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Acute Clinical State Event Capture</label>
-                  </item>
                   <item identifierRef="id-0e6fd596e3c6574da3bc5ce0d497f444"/>
                   <item identifierRef="id-60ea71b0b3ef57858cdcd2979ef681b0"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Encounter Lifecycle Management</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Encounter Bed/Location Association</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Encounter Context Creation</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Encounter History Retrieval</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Encounter State Progression</label>
-                  </item>
                   <item identifierRef="id-191c41baaaa8507c9d0199eb4081a835"/>
                   <item identifierRef="id-465faf7f8aaf5b07ac9d9c22ede58ff4"/>
                 </item>
@@ -1217,26 +1156,11 @@
                 <label xml:lang="en">[CT2] Medication Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Medication Order &amp; Dispense Management</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Dispense Event Tracking</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Medication Administration Record (MAR) Ingestion</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Medication Order Ingestion</label>
-                  </item>
                   <item identifierRef="id-be8462296d52595b9a213646c7c91a9c"/>
                   <item identifierRef="id-b2f4e22b381d5d82a826880d47d83db9"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Medication Therapy Provision and Monitoring</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Medication Administration Tracking</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Medication History Reconciliation Ingestion</label>
-                  </item>
                   <item identifierRef="id-1ba8317196a656da95a43e69316f8273"/>
                   <item identifierRef="id-4111ceff6456544d906b5b1cb9e3bd3f"/>
                 </item>
@@ -1246,21 +1170,6 @@
                 <label xml:lang="en">[CT2] Order Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Closed-Loop Order Progression</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Order Cancellation &amp; Modification Coordination</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Order Closed-Loop Progression Tracking</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Order Destination Resolution &amp; Routing</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Order Outcome Association</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Order Request Ingestion</label>
-                  </item>
                   <item identifierRef="id-360cdd92c08e5740b8fadcac1f10a496"/>
                   <item identifierRef="id-9369916a54d1545eb0b0c233b4297355"/>
                 </item>
@@ -1270,12 +1179,6 @@
                 <label xml:lang="en">[CT2] Procedure Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Procedure &amp; Surgical Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Procedural Documentation Ingestion</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Procedure Booking Ingestion</label>
-                  </item>
                   <item identifierRef="id-98d9d92f1cf356dfbc56e85642a01dd0"/>
                   <item identifierRef="id-88b81a59e8af5a5bb3a7fa3ed4bfad8e"/>
                 </item>
@@ -1285,18 +1188,6 @@
                 <label xml:lang="en">[CT2] Referral Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Referral Intake &amp; Progression</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Referral Destination Coordination</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Referral Document Ingestion</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Referral Status &amp; Outcome Tracking</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Referral Supporting Information</label>
-                  </item>
                   <item identifierRef="id-1de54161e7575895894420f77ac9a6b0"/>
                   <item identifierRef="id-95713a5fa963595abea2fb16e92a9743"/>
                 </item>
@@ -1306,12 +1197,6 @@
                 <label xml:lang="en">[CT2] Scheduling Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Appointment &amp; Booking Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Appointment Notification Ingestion</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Appointment Status Synchronization</label>
-                  </item>
                   <item identifierRef="id-d8533b80f0815e949fe14ebe4c79bfbd"/>
                   <item identifierRef="id-8ddad55f73db543d9c7e08ff84522f16"/>
                 </item>
@@ -1393,54 +1278,21 @@
                 <label xml:lang="en">[CT2] Client Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Client Privacy Guardrail Management</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Confidentiality Flag Enforcement</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Consent Directive Evaluation</label>
-                  </item>
                   <item identifierRef="id-f9cc6e41de90503993d390b1bdd7e4ed"/>
                   <item identifierRef="id-c414f00150065ed4844f3d94f6019774"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Client Relationship Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Next-of-Kin &amp; Guardian Association</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Relationship Validity Tracking</label>
-                  </item>
                   <item identifierRef="id-bc852aef6ef255ada12c145665eb721f"/>
                   <item identifierRef="id-18a3e893a9cb551aa626ac2339bd940b"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Healthcare Subject Profile Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Demographic Context Governance</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Subject Context Binding</label>
-                  </item>
                   <item identifierRef="id-df770aafcda95c959772ca66a2a8b742"/>
                   <item identifierRef="id-71a2e775c17a5c9a9cd8d77e83b910cb"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Person Identity Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Cross-Authority Identifier Correlation</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Governed Identity Correction</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Identifier Resolution</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Identity Alias Association</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Identity Source &amp; Correction Lineage</label>
-                  </item>
                   <item identifierRef="id-c796d1c0d4c158d08f8bd86308f2f0a0"/>
                   <item identifierRef="id-81a7cc8d20a85a5fa8804fc9b99cc65f"/>
                 </item>
@@ -1450,12 +1302,6 @@
                 <label xml:lang="en">[CT2] Clinical Device Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Clinical Device Profile Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Device Serial Tracking</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Device Type Specification</label>
-                  </item>
                   <item identifierRef="id-2f05f7dd33ce561391d3c597f1416366"/>
                   <item identifierRef="id-7389dc7454c154659fc55a30f2e233ed"/>
                 </item>
@@ -1465,23 +1311,11 @@
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Device OA&amp;M Metadata Management</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Device Endpoint Registration</label>
-                  </item>
                   <item identifierRef="id-8f0c08271c1f562e8f7af3a4844c660b"/>
                   <item identifierRef="id-4d24b27d868759b988af9596dfda7765"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Device Utilisation Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Device Association Lineage</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Device-Patient/Location Assignment</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Mobile Clinical Equipment Tracking</label>
-                  </item>
                   <item identifierRef="id-08be7c4548765c1c9771b4ade518ae61"/>
                   <item identifierRef="id-13d8da42b3b25a82aecc07932a97ddd1"/>
                 </item>
@@ -1507,18 +1341,6 @@
                 <label xml:lang="en">[CT2] Health Service Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Healthcare Service Profile Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Eligibility &amp; Catchment Specification</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Operating Schedule Specification</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Service Catalogue Publishing</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Service-Location-Provider Binding</label>
-                  </item>
                   <item identifierRef="id-20f045ffc4b856d194bf59a3933da6f8"/>
                   <item identifierRef="id-bf29376c559f597199a66acdedf42470"/>
                 </item>
@@ -1528,20 +1350,11 @@
                 <label xml:lang="en">[CT2] Location Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Care-Place Definition Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Atomic Care-Place Modeling</label>
-                  </item>
                   <item identifierRef="id-5e0bbcda69ad5894b862547442d1186d"/>
                   <item identifierRef="id-eea6f5e7204f5a89838da3d3a4326c2b"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Healthcare Location Profile Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Location Geospatial &amp; Address Resolution</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Physical Hierarchy Modeling</label>
-                  </item>
                   <item identifierRef="id-e83293e83075587f81a1dc7a6c09ffc2"/>
                   <item identifierRef="id-7fc62fb1db535fd3bb8f00f8780cf10a"/>
                 </item>
@@ -1551,18 +1364,6 @@
                 <label xml:lang="en">[CT2] Organisation Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Healthcare Organisation Profile Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Directory Contact Management</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Hierarchical Structure Navigation</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] National Organisation Verification</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Organisation Profile Management</label>
-                  </item>
                   <item identifierRef="id-c6d8622f0eeb5fd0baddba74cb835e28"/>
                   <item identifierRef="id-2951718c0a9d5bc29f4dd86754ebd5d6"/>
                 </item>
@@ -1572,29 +1373,11 @@
                 <label xml:lang="en">[CT2] Provider Administration</label>
                 <item>
                   <label xml:lang="en">[CT3] Practitioner Profile Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] National Practitioner Verification</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Practitioner Profile Governance</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Provider Directory Discovery &amp; Resolution</label>
-                  </item>
                   <item identifierRef="id-150ed99864585a8f8b7fb0ae2e783729"/>
                   <item identifierRef="id-59b19a4112585bbab882683c83a98cf8"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Practitioner Role Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Electronic Endpoint Binding</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Practitioner-Organisation Affiliation</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Role &amp; Specialty Modeling</label>
-                  </item>
                   <item identifierRef="id-365c686ccf0f56ee9460b27f267d65cf"/>
                   <item identifierRef="id-a11e805c81a25e6994c808b4386fd1fa"/>
                 </item>
@@ -1628,20 +1411,11 @@
                 <label xml:lang="en">[CT2] Bed &amp; Care-Place Management</label>
                 <item>
                   <label xml:lang="en">[CT3] Bed &amp; Care-Place State Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Bed Availability Tracking</label>
-                  </item>
                   <item identifierRef="id-dbc11be3c98f5d808a76166df485843f"/>
                   <item identifierRef="id-2734eb6e49235b4fb5b8c958c90b55c4"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Bed &amp; Care-Place Turnover Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Bed Readiness Notification</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Bed State Progression</label>
-                  </item>
                   <item identifierRef="id-3c8b72d5135f5ef4b33e0cd2dcbfef43"/>
                   <item identifierRef="id-cec35eef1bf35036a8c96ca8a6e5ac08"/>
                 </item>
@@ -1651,15 +1425,6 @@
                 <label xml:lang="en">[CT2] Clinic &amp; Practice Operations</label>
                 <item>
                   <label xml:lang="en">[CT3] Session &amp; Queue Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Clinic Session Capacity Management</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Clinic Session Tracking</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Operational Queue Progression</label>
-                  </item>
                   <item identifierRef="id-0d4d39175dc95729824178e8789f419c"/>
                   <item identifierRef="id-ab44dd706aa556b99c297aa5100cf8bc"/>
                 </item>
@@ -1677,9 +1442,6 @@
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Specimen Movement Traceability</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Pathology Specimen Transport Tracking</label>
-                  </item>
                   <item identifierRef="id-e8025656fe6559a2b0fdde234f7f8e35"/>
                   <item identifierRef="id-6ee773e5ee095eb2b321bb3e68cc2967"/>
                 </item>
@@ -1693,12 +1455,6 @@
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Provider Clinical Qualification Tracking</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Clinical Privileging Record</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Operational Credential Check</label>
-                  </item>
                   <item identifierRef="id-4f829269535254a3b85e7d1d5de5f575"/>
                   <item identifierRef="id-fee57f22b737597b909a7716f068c7f2"/>
                 </item>
@@ -1740,15 +1496,6 @@
                 <label xml:lang="en">[CT2] Discharge Management</label>
                 <item>
                   <label xml:lang="en">[CT3] Discharge Progression &amp; Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Discharge Milestone Tracking</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Discharge Notification Dispatch</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Discharge Readiness &amp; Coordination Oversight</label>
-                  </item>
                   <item identifierRef="id-fb8ea27f53b05248b84a461190c6d23a"/>
                   <item identifierRef="id-68c5311e1f76521b87811b7ea499a77e"/>
                 </item>
@@ -1758,26 +1505,11 @@
                 <label xml:lang="en">[CT2] Emergency Department Operations</label>
                 <item>
                   <label xml:lang="en">[CT3] Emergency Care Progression</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Emergency Care Cross-Facility Correlation</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Emergency Department Arrival &amp; Triage Ingestion</label>
-                  </item>
                   <item identifierRef="id-c536885d22795676857469c8a6f6ef54"/>
                   <item identifierRef="id-b46cc76895115aa69da255c057105cc2"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Emergency Department Operational Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] ED Bed &amp; Bay Tracking</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] ED Length of Stay Tracking</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Emergency Treatment Capacity Management</label>
-                  </item>
                   <item identifierRef="id-de71d232d85d58a5a955e42625016fc1"/>
                   <item identifierRef="id-4f0a813a282c5dc89e6ee84e7f87ca93"/>
                 </item>
@@ -1787,15 +1519,6 @@
                 <label xml:lang="en">[CT2] Mobile Staff Management</label>
                 <item>
                   <label xml:lang="en">[CT3] Mobile Worker Dispatch &amp; Safety Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Mobile Service Capacity Management</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Mobile Visit Status Tracking</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Mobile Worker Task Dispatch</label>
-                  </item>
                   <item identifierRef="id-76af846c9ee75f038c3100222a9fe30d"/>
                   <item identifierRef="id-537fa398918f5931bb43a0926afaceb0"/>
                 </item>
@@ -1805,9 +1528,6 @@
                 <label xml:lang="en">[CT2] On-Call Management</label>
                 <item>
                   <label xml:lang="en">[CT3] On-Call Availability &amp; Contact Resolution</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Active On-Call Provider Resolution</label>
-                  </item>
                   <item identifierRef="id-a41b78d364b85132ad6f0a96bba6bf45"/>
                   <item identifierRef="id-b7b91d7cedae590f84d433f0d13be608"/>
                 </item>
@@ -1817,15 +1537,6 @@
                 <label xml:lang="en">[CT2] Outpatient Operations</label>
                 <item>
                   <label xml:lang="en">[CT3] Outpatient Flow Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Outpatient Appointment Capacity Management</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Outpatient Arrival Registration</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Post-Clinic Order Coordination</label>
-                  </item>
                   <item identifierRef="id-8a17d1856fa051919560f8d636b3392b"/>
                   <item identifierRef="id-1d1aae19f70b5266b016bd9f1bde0008"/>
                 </item>
@@ -1835,12 +1546,6 @@
                 <label xml:lang="en">[CT2] Patient Transport</label>
                 <item>
                   <label xml:lang="en">[CT3] Patient Transfer Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Transport Dispatch &amp; Progress Tracking</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Transport Request Ingestion</label>
-                  </item>
                   <item identifierRef="id-83a1d45ce6c85cca890988d17ddd6f86"/>
                   <item identifierRef="id-5262c57048405129b56572934191feac"/>
                 </item>
@@ -1850,9 +1555,6 @@
                 <label xml:lang="en">[CT2] Service Capacity Management</label>
                 <item>
                   <label xml:lang="en">[CT3] Service Demand &amp; Capacity Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Operational Capacity Metric Aggregation</label>
-                  </item>
                   <item identifierRef="id-c5af5432ca4256eb927ae8f864ec4866"/>
                   <item identifierRef="id-24a1bfde08a95514872d2ce04fec46c6"/>
                 </item>
@@ -1866,15 +1568,6 @@
                 <label xml:lang="en">[CT2] Theatre Operations</label>
                 <item>
                   <label xml:lang="en">[CT3] Perioperative Logistics Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Operating Theatre Case Progression</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Perioperative Resource Notification</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Theatre Session Capacity Management</label>
-                  </item>
                   <item identifierRef="id-919ab9f8aca95026839ca1689ab67664"/>
                   <item identifierRef="id-e928e60deb16534a98857e4e0c744fdf"/>
                 </item>
@@ -1884,26 +1577,11 @@
                 <label xml:lang="en">[CT2] Ward Operations</label>
                 <item>
                   <label xml:lang="en">[CT3] Multidisciplinary Inpatient Care Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Inpatient Clinical Progression Tracking</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Inpatient Rounding Context Provision</label>
-                  </item>
                   <item identifierRef="id-f27fdc59e0585b8dabdd04245cc758b7"/>
                   <item identifierRef="id-ba2fdcdf886f5526bb625ce03dceeb45"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Ward Logistics Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Clinical Handover Context Assembly</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Ward Care Capacity Management</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Ward Patient Flow Coordination</label>
-                  </item>
                   <item identifierRef="id-88ec0168a5475000915dc1f2e45166c9"/>
                   <item identifierRef="id-5765985dc0e55c349db4d871b2036307"/>
                 </item>
@@ -1913,18 +1591,6 @@
                 <label xml:lang="en">[CT2] Work Allocation &amp; Dispatch</label>
                 <item>
                   <label xml:lang="en">[CT3] Operational Work Assignment &amp; Dispatch Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Work Dispatch Delivery</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Work Item Instantiation</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Work Progress Oversight &amp; Escalation</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Worker Matching &amp; Allocation</label>
-                  </item>
                   <item identifierRef="id-0b0510a171ca5c1ab50f12864c326b74"/>
                   <item identifierRef="id-9715f79750bb5d018721ce8bdf56358a"/>
                 </item>
@@ -1946,17 +1612,11 @@
                 <label xml:lang="en">[CT2] Assurance Specification</label>
                 <item>
                   <label xml:lang="en">[CT3] Assurance Criteria Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Temporal Assurance Criteria Stewardship</label>
-                  </item>
                   <item identifierRef="id-370db4d8092e5ee893a669c410ec017c"/>
                   <item identifierRef="id-745d510e09fe5148887a1ae137b377c6"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Assurance Design</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Assurance Disposition &amp; Design Modelling</label>
-                  </item>
                   <item identifierRef="id-315753f774e853eebe82bbee008c5f5f"/>
                   <item identifierRef="id-1f0d037a88375a97a3f73597fe32e554"/>
                 </item>
@@ -1970,12 +1630,6 @@
                 <label xml:lang="en">[CT2] Calendar Management</label>
                 <item>
                   <label xml:lang="en">[CT3] Operational &amp; Clinical Calendar Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Schedule Projection Integration</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Temporal Event Correlation</label>
-                  </item>
                   <item identifierRef="id-70a33805b9c95e309edff996890580cf"/>
                   <item identifierRef="id-47f2d68cae9852549cbb34f16f7b476f"/>
                 </item>
@@ -1985,18 +1639,6 @@
                 <label xml:lang="en">[CT2] Clinical Collaboration</label>
                 <item>
                   <label xml:lang="en">[CT3] Clinical Context Collaboration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Care-Team Clinical Collaboration Coordination</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Collaboration Interaction Capture Qualification</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] In-Conversation LHR Query Resolution</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Zero-PHI Collaboration Metadata Governance</label>
-                  </item>
                   <item identifierRef="id-c165eb8ec88d5022aed3a2a2c6fde82e"/>
                   <item identifierRef="id-2429d788c0275d81975ea2b84d6f58d4"/>
                 </item>
@@ -2010,20 +1652,11 @@
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Clinical Knowledge Request Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Bidirectional Terminology Mapping</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Clinical Concept Resolution</label>
-                  </item>
                   <item identifierRef="id-d38c46869ef45762a7a5e894711b7b44"/>
                   <item identifierRef="id-4deebe31ebb85ee0a80bfd4dfeb7a74a"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Governed Reference Dataset Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Governed Dataset Content Revision</label>
-                  </item>
                   <item identifierRef="id-ec6d6f7d5a9c5bfb89d03a6b782a78e6"/>
                   <item identifierRef="id-51cc2d8d76eb50debd7ee2c04c0f869b"/>
                 </item>
@@ -2033,9 +1666,6 @@
                 <label xml:lang="en">[CT2] General Collaboration</label>
                 <item>
                   <label xml:lang="en">[CT3] Operational Collaboration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Operational Team Chat Enablement</label>
-                  </item>
                   <item identifierRef="id-893f44ba154455b6b0585100012372a1"/>
                   <item identifierRef="id-507afb9b17545499b6847984de913295"/>
                 </item>
@@ -2045,12 +1675,6 @@
                 <label xml:lang="en">[CT2] Health Information Access</label>
                 <item>
                   <label xml:lang="en">[CT3] Governed Health Information Retrieval</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Access-Controlled Information Filtering</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Federated Clinical Query</label>
-                  </item>
                   <item identifierRef="id-75748267390a53898ab4242a40c6475c"/>
                   <item identifierRef="id-52ab53f2b12753d3b5a6f777a78d507a"/>
                 </item>
@@ -2088,9 +1712,6 @@
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Patient Health Information Restriction Management</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Health Information Access &amp; Consent Control</label>
-                  </item>
                   <item identifierRef="id-310b340d10d25979abf529a1d4035113"/>
                   <item identifierRef="id-c454ea7ef69e5e6697a5e9a80a1220be"/>
                 </item>
@@ -2104,18 +1725,6 @@
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] HIE Implementation Management</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Addressed Clinical Distribution</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Clinical Record Retrieval Mediation</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Direct Submission Ingestion &amp; Delivery</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Event-Driven Syndication</label>
-                  </item>
                   <item identifierRef="id-659dfb8d646e5b449cd4ceaf2c920191"/>
                   <item identifierRef="id-12d0ab67f21358fdaa6b40d6f86b694c"/>
                 </item>
@@ -2141,9 +1750,6 @@
                 <label xml:lang="en">[CT2] Information Content Maintainer Management</label>
                 <item>
                   <label xml:lang="en">[CT3] Data Provenance Capture</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Information Transformation Lineage</label>
-                  </item>
                   <item identifierRef="id-213f504d3f455fdb9666eb7f3e3b55a6"/>
                   <item identifierRef="id-66c57fa3e1ba5bd89059145a3d469f1b"/>
                 </item>
@@ -2153,15 +1759,6 @@
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Information Product Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Authorised Research Release Assembly</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Demand &amp; Capacity Planning Projection</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Population Notification Obligation Tracking</label>
-                  </item>
                   <item identifierRef="id-dd837c3dcdfa5218b92c048dd133efd3"/>
                   <item identifierRef="id-afb60866506c5924aa948cf9969e7813"/>
                 </item>
@@ -2171,18 +1768,6 @@
                 <label xml:lang="en">[CT2] Information Design Governance</label>
                 <item>
                   <label xml:lang="en">[CT3] Enterprise Canonical/Reusable Model Design</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Exchange Profile Governance</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Information Definition &amp; Schema Governance</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Information Standards &amp; Semantic Governance</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Terminology Binding Governance</label>
-                  </item>
                   <item identifierRef="id-8fe42ff2e6fb5ee2b9a3c02f472a7b73"/>
                   <item identifierRef="id-e1babfc3653352908a0a831d555357b3"/>
                 </item>
@@ -2192,9 +1777,6 @@
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Enterprise Canonical/Reusable Model Utilisation Support</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Semantic Conformance Verification</label>
-                  </item>
                   <item identifierRef="id-ded0f843c4f158a9b1b94deaf7e3ecba"/>
                   <item identifierRef="id-25cfaae49d9d5807a3070eee972159e6"/>
                 </item>
@@ -2208,48 +1790,21 @@
                 <label xml:lang="en">[CT2] Patient Clinical Record</label>
                 <item>
                   <label xml:lang="en">[CT3] Linked Information Curation</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Binary Content Resolution &amp; Assembly</label>
-                  </item>
                   <item identifierRef="id-429daf224a525608b3b568830037b67b"/>
                   <item identifierRef="id-1150df5e12035e2f9a21faf4e664e0aa"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Longitudinal Clinical Record Administration</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Active Clinical Record Access</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Clinical Information Historical Reconstruction</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Durable Clinical Record Preservation</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Longitudinal Health Record (LHR) Assembly</label>
-                  </item>
                   <item identifierRef="id-4f0412aabcc65db9a1df4f1214804f36"/>
                   <item identifierRef="id-5f87a94cb2f858d5974909a16ae5407c"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Primary Care Coordination</label>
-                  <item>
-                    <label xml:lang="en">[Feature] General Practice Shared Record Ingestion</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Primary Care Notification Dispatch</label>
-                  </item>
                   <item identifierRef="id-84a3d9cf0f6254b38643893ecb129027"/>
                   <item identifierRef="id-482ee9c9057f5748a6e1f4b2014a328f"/>
                 </item>
                 <item>
                   <label xml:lang="en">[CT3] Remote Patient Monitoring</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Remote Telemetry Ingestion</label>
-                  </item>
-                  <item>
-                    <label xml:lang="en">[Feature] Virtual Care Session Context Binding</label>
-                  </item>
                   <item identifierRef="id-c68dc08d58795044959ebdfbbf6daca9"/>
                   <item identifierRef="id-b2e8a262e1c257ab9cb38502891dc838"/>
                 </item>
@@ -2259,9 +1814,6 @@
                 <label xml:lang="en">[CT2] Presentation Services</label>
                 <item>
                   <label xml:lang="en">[CT3] Contextual Information Presentation</label>
-                  <item>
-                    <label xml:lang="en">[Feature] Longitudinal Clinical &amp; Operational Presentation</label>
-                  </item>
                   <item identifierRef="id-89274b6ac7ce52acbff6a1d075b3a8b0"/>
                   <item identifierRef="id-288d669edff256b2ba2bba42ecbcc3cd"/>
                 </item>
@@ -3333,70 +2885,22 @@
             <label xml:lang="en">[CT1] Care Access &amp; Coordination</label>
             <item>
               <label xml:lang="en">[CT2] Care Access Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Care Eligibility Determination</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Care Intake Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Care Referral Management</label>
-              </item>
               <item identifierRef="id-dc13f9fb5fda51f5bfbf86afbff20d49"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Care Coordination &amp; Transition</label>
-              <item>
-                <label xml:lang="en">[CT3] Care Discharge Coordination</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Care Responsibility Transition</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Care-Team Coordination</label>
-              </item>
               <item identifierRef="id-0e62a174f45b576a91dd4a2d7fd687e0"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Care Scheduling &amp; Capacity Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Care Appointment Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Care Resource Deployment</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Care-Place Allocation</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Care-Place Readiness Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Operational Care Capacity Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Operational Care Flow Coordination</label>
-              </item>
               <item identifierRef="id-29d6080979805579a33bcc0cb8ce9e77"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Care Support Logistics Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Care Support Work Coordination</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Material Logistics Coordination</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Patient Movement Coordination</label>
-              </item>
               <item identifierRef="id-bbeb1af5484e5e58a86400345e65b91c"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Service Delivery Preparedness Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Health Service Operational Readiness</label>
-              </item>
               <item identifierRef="id-2cb5e984dcb75609a2a591af06386f9e"/>
             </item>
             <item identifierRef="id-9abf0bfac8e45ee88381796701cf6ffd"/>
@@ -3405,31 +2909,10 @@
             <label xml:lang="en">[CT1] Clinical Quality, Safety &amp; Improvement</label>
             <item>
               <label xml:lang="en">[CT2] Clinical Quality Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Quality Criteria Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Quality Evidence Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Quality Reporting</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Quality Review &amp; Assessment Management</label>
-              </item>
               <item identifierRef="id-9ad94dda1c9754acb644a09e69fd7e88"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Clinical Safety Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Risk Identification</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Risk Mitigation Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Risk Response Management</label>
-              </item>
               <item identifierRef="id-21ac487a2ee55f75a630d106c5f8bacb"/>
             </item>
             <item identifierRef="id-3d70857370865ba7ad927691cda2fd3d"/>
@@ -3438,24 +2921,6 @@
             <label xml:lang="en">[CT1] Community Health &amp; Wellbeing</label>
             <item>
               <label xml:lang="en">[CT2] Preventative Health</label>
-              <item>
-                <label xml:lang="en">[CT3] Preventative Health Cohort Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Preventative Health Education Services</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Preventative Health Problem Identification</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Preventative Health Programme Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Preventative Health Programme Monitoring</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Preventative Health Reporting</label>
-              </item>
               <item identifierRef="id-2f4837e8f04559939e5905b8f2386e15"/>
             </item>
             <item identifierRef="id-3ea7ddd8c3b3571c9864347b91cfa3f3"/>
@@ -3463,13 +2928,7 @@
           <item>
             <label xml:lang="en">[CT1] Connected Health Services</label>
             <item>
-              <label xml:lang="en">[CT2] Digital Communication Channel</label>
-            </item>
-            <item>
               <label xml:lang="en">[CT2] Health Information Exchange</label>
-              <item>
-                <label xml:lang="en">[CT3] Health Information Sharing Programme Management</label>
-              </item>
               <item identifierRef="id-9adc375de2bd5b1194b895c43f1a1eac"/>
             </item>
             <item identifierRef="id-0928cc0b526f528e91124cd0641c174f"/>
@@ -3478,31 +2937,10 @@
             <label xml:lang="en">[CT1] Corporate Resources &amp; Enterprise Services</label>
             <item>
               <label xml:lang="en">[CT2] Corporate Support Services</label>
-              <item>
-                <label xml:lang="en">[CT3] Back-Office Services</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Communications &amp; Publicity</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Facilities Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] IT Infrastructure Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Operational Oversight</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] People Management</label>
-              </item>
               <item identifierRef="id-f1714cfcaae752ecb6a285b3cda7f35e"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Financial &amp; Commercial Services</label>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Activity Charging Information Provision</label>
-              </item>
               <item identifierRef="id-64a32ea34f685ef4866a67bf0d72c0b0"/>
             </item>
             <item identifierRef="id-b1155306273c54f9b019334e65801f86"/>
@@ -3511,46 +2949,10 @@
             <label xml:lang="en">[CT1] Diagnostic, Therapeutic &amp; Clinical Support Services</label>
             <item>
               <label xml:lang="en">[CT2] Diagnostic Support Provision</label>
-              <item>
-                <label xml:lang="en">[CT3] Diagnostic Data Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Diagnostic Interpretation</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Diagnostic Report Distribution</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Diagnostic Report Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Diagnostic Service Appointment Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Diagnostic Service Delivery</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Diagnostic Specimen Management</label>
-              </item>
               <item identifierRef="id-6c320d7f06765b97b5ff7239e573378d"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Medication &amp; Pharmacy Services</label>
-              <item>
-                <label xml:lang="en">[CT3] Medication Advice</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Medication Compounding &amp; Preparation</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Medication Dose Administration Aid Provision</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Non-Prescription Medication Provision</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Prescription Medication Dispensing</label>
-              </item>
               <item identifierRef="id-23a6595b45495b6f8a7dbcfb0cddc6ef"/>
             </item>
             <item identifierRef="id-47230567db255adfb56f0d0c4671f8d0"/>
@@ -3559,49 +2961,10 @@
             <label xml:lang="en">[CT1] Health Information &amp; Knowledge Management</label>
             <item>
               <label xml:lang="en">[CT2] Clinical Knowledge Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Knowledge Concept Association</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Knowledge Context Extraction</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Knowledge Context Identification</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Knowledge Information Formulation</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Knowledge Publication &amp; Sharing</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Knowledge Review &amp; Approval Management</label>
-              </item>
               <item identifierRef="id-9f7298c0c7df5fe087fcb4b2f4302179"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Health Information Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Health Information Catalogue and Index Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Information Compartmentalisation</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Information Data Correlation</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Information Data Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Information Data Retrieval</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Information Lifecycle Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Information Structure Management</label>
-              </item>
               <item identifierRef="id-5fbcdf68bdde50f1971099ab24401e80"/>
             </item>
             <item identifierRef="id-e45ef782f528529f843b06c4bd7e3145"/>
@@ -3610,30 +2973,6 @@
             <label xml:lang="en">[CT1] Health Products &amp; Clinical Technology</label>
             <item>
               <label xml:lang="en">[CT2] Clinical Technology Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Device Data Integration</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Device Feature &amp; Release Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Device Integration Provision</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Device Inventory Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Device Lifecycle Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Device Loan &amp; Deployment Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Device Maintenance Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Device Utilisation Support</label>
-              </item>
               <item identifierRef="id-0b1dd65c9d3057368e28e13c44bf3c88"/>
             </item>
             <item identifierRef="id-9cc7069ba53c5241b6229f6d8c321933"/>
@@ -3642,43 +2981,22 @@
             <label xml:lang="en">[CT1] Health Research &amp; Innovation</label>
             <item>
               <label xml:lang="en">[CT2] Health Innovation</label>
-              <item>
-                <label xml:lang="en">[CT3] Health Innovation Evaluation</label>
-              </item>
               <item identifierRef="id-2f6da489978d549ba1c81bec98df6d59"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Research Information Support</label>
-              <item>
-                <label xml:lang="en">[CT3] Governed Research Information Provision</label>
-              </item>
               <item identifierRef="id-d5d9b4a2be9b575d889781088e3098d1"/>
             </item>
             <item identifierRef="id-323ea7a0b47a5f0bac21a75aef7b5ce8"/>
           </item>
           <item>
-            <label xml:lang="en">[CT1] Health Rights, Advocacy &amp; Participation</label>
-          </item>
-          <item>
             <label xml:lang="en">[CT1] Health Service Assurance</label>
             <item>
               <label xml:lang="en">[CT2] Assurance Evaluation</label>
-              <item>
-                <label xml:lang="en">[CT3] Assurance Conclusion Determination</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Assurance Evidence Assessment</label>
-              </item>
               <item identifierRef="id-d1787dc8b13f51d1b9fba8dc69a7e3ec"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Health Service Assurance Specification</label>
-              <item>
-                <label xml:lang="en">[CT3] Assurance Approach Definition</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Assurance Evaluation Criteria Governance</label>
-              </item>
               <item identifierRef="id-f55decb1854957d0931aa9df145627ad"/>
             </item>
             <item identifierRef="id-c45de87e61355dc09c28f890f6440aad"/>
@@ -3687,34 +3005,10 @@
             <label xml:lang="en">[CT1] Health Service Direction &amp; Stewardship</label>
             <item>
               <label xml:lang="en">[CT2] Health Service Alignment</label>
-              <item>
-                <label xml:lang="en">[CT3] Health Service Co-Dependency Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Service Financial Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Service Implementation Planning</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Service Resource Identification</label>
-              </item>
               <item identifierRef="id-d6c0218e150a52b795db7e1d3eb5caf8"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Health Service Modelling</label>
-              <item>
-                <label xml:lang="en">[CT3] Health Service Capability Identification</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Service Continuous Improvement</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Service Implementation Support</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Service Need Identification</label>
-              </item>
               <item identifierRef="id-bc5c088ccec85002bb3871e66b411a25"/>
             </item>
             <item identifierRef="id-cfec818cf722563db288bd71f787b794"/>
@@ -3723,22 +3017,10 @@
             <label xml:lang="en">[CT1] Health Service Governance</label>
             <item>
               <label xml:lang="en">[CT2] Compliance Governance</label>
-              <item>
-                <label xml:lang="en">[CT3] Compliance Assessment Definition</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Governance Reporting &amp; Checkpoint Definition</label>
-              </item>
               <item identifierRef="id-372762c3e33756798e011899c5e30388"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Governance Framework Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Authority &amp; Constraint Governance</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Policy / Obligation Governance</label>
-              </item>
               <item identifierRef="id-5ab895762ead5cc4b0dea839424bec47"/>
             </item>
             <item identifierRef="id-e13d6a97e3f65537ab486c261bf57915"/>
@@ -3747,61 +3029,22 @@
             <label xml:lang="en">[CT1] Individual Care Delivery</label>
             <item>
               <label xml:lang="en">[CT2] Clinical Determination</label>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Finding Interpretation</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Diagnosis &amp; Problem Determination</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Risk &amp; Prognostic Determination</label>
-              </item>
               <item identifierRef="id-888b570c44a45d7daa89c61be64e055e"/>
             </item>
             <item>
-              <label xml:lang="en">[CT2] Clinical Intervention</label>
-            </item>
-            <item>
               <label xml:lang="en">[CT2] Individual Care Planning</label>
-              <item>
-                <label xml:lang="en">[CT3] Care Goal Definition</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Care Response Planning</label>
-              </item>
               <item identifierRef="id-2e9f57ef887452ccb3585ab357964207"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Individual Care Review</label>
-              <item>
-                <label xml:lang="en">[CT3] Care Appropriateness Review</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Care Effectiveness Review</label>
-              </item>
               <item identifierRef="id-df3662d827c0531c9d9f39f6e6b39de8"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Individual Health Assessment</label>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Examination</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health History Assessment</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Status Measurement</label>
-              </item>
               <item identifierRef="id-8f0d3ae7e3a357cab860193b1059fe4d"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Individual Health Monitoring</label>
-              <item>
-                <label xml:lang="en">[CT3] Care Response Monitoring</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health State Monitoring</label>
-              </item>
               <item identifierRef="id-3e867579268e5f0287d91d19e187fd02"/>
             </item>
             <item identifierRef="id-cef762b028f6513fa7fc3fbcca0bd703"/>
@@ -3810,34 +3053,10 @@
             <label xml:lang="en">[CT1] Population Health &amp; Health-System Planning</label>
             <item>
               <label xml:lang="en">[CT2] Health-System Planning</label>
-              <item>
-                <label xml:lang="en">[CT3] Health Service Capacity Planning</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Service Demand Assessment</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Service Distribution Planning</label>
-              </item>
               <item identifierRef="id-7810657cdf1c5d91ba9147a2d783a988"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Population Health Surveillance</label>
-              <item>
-                <label xml:lang="en">[CT3] Notifiable Health Event Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Population Health Event Identification</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Population Health Longitudinal Assessment</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Population Health Reporting</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Population Health Surveillance Management</label>
-              </item>
               <item identifierRef="id-ccd8f3cbf0db5470b5a36ab3fe85532c"/>
             </item>
             <item identifierRef="id-95e3c11799c45b13a9eef860dc35d2e4"/>
@@ -3846,59 +3065,14 @@
             <label xml:lang="en">[CT1] Security, Privacy &amp; Digital Trust</label>
             <item>
               <label xml:lang="en">[CT2] Digital Accountability &amp; Trust</label>
-              <item>
-                <label xml:lang="en">[CT3] Governed Activity Attribution</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Security &amp; Information-Use Accountability</label>
-              </item>
               <item identifierRef="id-5ff848846d1a5eb9bcf9f7fd36bf42f5"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Digital Identity &amp; Access Governance</label>
-              <item>
-                <label xml:lang="en">[CT3] Access Control Assurance &amp; Reporting</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Access Control Collaboration</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Access Control Context Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Access Control Enforcement</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Identity Assurance</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Identity Identification &amp; Authentication</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Identity Modelling &amp; Interoperability</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Identity Qualification Control</label>
-              </item>
               <item identifierRef="id-59137c85487a523f9f82a25ed06bc103"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Health Information Protection</label>
-              <item>
-                <label xml:lang="en">[CT3] Health Information Access Monitoring</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Information Classification Assurance</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Information Compartment Assurance</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Information Safeguarding</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Privacy Safeguard Management</label>
-              </item>
               <item identifierRef="id-3b328daaaae95eff9497c8c8e707fe78"/>
             </item>
             <item identifierRef="id-2e2827825c525071874cbb973b75b26d"/>
@@ -3907,49 +3081,10 @@
             <label xml:lang="en">[CT1] Standards, Semantics &amp; Reference Governance</label>
             <item>
               <label xml:lang="en">[CT2] Clinical Semantics Governance</label>
-              <item>
-                <label xml:lang="en">[CT3] Classification Governance</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Classification Utilisation Oversight</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Semantic Mapping Governance</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Terminology Governance</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Terminology Localisation</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Terminology Utilisation Oversight</label>
-              </item>
               <item identifierRef="id-98fe330cacec5b1f8f90730f51fec362"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Health Information Standards Governance</label>
-              <item>
-                <label xml:lang="en">[CT3] Information Model Adoption</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Information Model Compliance</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Information Model Discovery</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Information Model Education</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Information Model Governance Oversight</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Standards Adoption</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Standards Impact Identification</label>
-              </item>
               <item identifierRef="id-45b05ce4af655d33b99f517c70c08408"/>
             </item>
             <item identifierRef="id-490e929554915d0e934bfd96b7d904d7"/>
@@ -3958,28 +3093,10 @@
             <label xml:lang="en">[CT1] Workforce &amp; Organisational Capability</label>
             <item>
               <label xml:lang="en">[CT2] Health Workforce Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Practitioner Engagement &amp; Privilege Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Practitioner Qualification Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Workforce Service Coverage Management</label>
-              </item>
               <item identifierRef="id-0298b6b0d1bd58e0874d0fa2dd9b2a03"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Healthcare Organisation &amp; Service Structure Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Healthcare Location Definition Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Healthcare Organisation Identity &amp; Structure Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Healthcare Service Offering Management</label>
-              </item>
               <item identifierRef="id-1904eedf32e358da811be6dcada08fed"/>
             </item>
             <item identifierRef="id-cdf0ba7052ea54639a140b7c04169817"/>
@@ -4054,9 +3171,6 @@
               <item>
                 <label xml:lang="en">[CT3] Care Plan Lifecycle &amp; Coordination</label>
                 <item>
-                  <label xml:lang="en">[Feature] Care Goal &amp; Plan Progression Representation</label>
-                </item>
-                <item>
                   <label xml:lang="en">[Feature] Care Plan Ingestion &amp; Distribution</label>
                   <item identifierRef="id-931222ba0b805a77b8631c20abfe5013"/>
                 </item>
@@ -4064,9 +3178,6 @@
               </item>
               <item>
                 <label xml:lang="en">[CT3] Community Care Coordination</label>
-                <item>
-                  <label xml:lang="en">[Feature] Community Care Plan Synchronization</label>
-                </item>
                 <item>
                   <label xml:lang="en">[Feature] Community Encounter Ingestion</label>
                   <item identifierRef="id-bf5f08ec1d4e5b0baef39f56b94b4507"/>
@@ -4110,17 +3221,11 @@
                   <label xml:lang="en">[Feature] Immunisation Event Submission</label>
                   <item identifierRef="id-486b29980f905204808db2060ed52e86"/>
                 </item>
-                <item>
-                  <label xml:lang="en">[Feature] Screening Recall Notification Distribution</label>
-                </item>
                 <item identifierRef="id-4a9586fe2006501486df3a18df8c02b2"/>
                 <item identifierRef="id-9374068d3d085ea4a475bcdd7ee499d9"/>
               </item>
               <item identifierRef="id-622ae51979fe5f25b1b5059f7923cae9"/>
               <item identifierRef="id-629ab37cd48a5ce4ac7fcfcfe0e0b095"/>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Clinical Charging &amp; Claims Administration</label>
             </item>
             <item>
               <label xml:lang="en">[CT2] Clinical Communication Administration</label>
@@ -4168,20 +3273,11 @@
               <label xml:lang="en">[CT2] Diagnostic Administration</label>
               <item>
                 <label xml:lang="en">[CT3] Diagnostic Service Integration</label>
-                <item>
-                  <label xml:lang="en">[Feature] Diagnostic History Consolidation</label>
-                </item>
-                <item>
-                  <label xml:lang="en">[Feature] Laboratory &amp; Imaging Result Distribution</label>
-                </item>
                 <item identifierRef="id-f7361523788b55cbb130f848ed3735d6"/>
                 <item identifierRef="id-747eb742d71758ebae7fc8c8aef2e9fe"/>
               </item>
               <item>
                 <label xml:lang="en">[CT3] Diagnostic Workflow Management</label>
-                <item>
-                  <label xml:lang="en">[Feature] Diagnostic Preliminary &amp; Corrected Report Handling</label>
-                </item>
                 <item>
                   <label xml:lang="en">[Feature] Diagnostic Report Distribution</label>
                   <item identifierRef="id-42c8930d95355cee8bdde77551101068"/>
@@ -4207,9 +3303,6 @@
                   <label xml:lang="en">[Feature] Acute Care Clinical Context Provision</label>
                   <item identifierRef="id-ea722de115135917890efef363fbd151"/>
                 </item>
-                <item>
-                  <label xml:lang="en">[Feature] Acute Clinical State Event Capture</label>
-                </item>
                 <item identifierRef="id-d33b9e6689bd5afe823a7494a7d151ab"/>
                 <item identifierRef="id-22a46a1a5b11558693d150c57f6207e8"/>
               </item>
@@ -4224,9 +3317,6 @@
                   <item identifierRef="id-3b39bfce10715f4b91261b6a6c6fe233"/>
                 </item>
                 <item>
-                  <label xml:lang="en">[Feature] Encounter History Retrieval</label>
-                </item>
-                <item>
                   <label xml:lang="en">[Feature] Encounter State Progression</label>
                   <item identifierRef="id-8b546e2d940e5c28b0a56aaa017f7605"/>
                 </item>
@@ -4234,9 +3324,6 @@
               </item>
               <item identifierRef="id-b9c56d70711152f69db28a944dd2745d"/>
               <item identifierRef="id-6bea9e04a3b955108a5feeddc3765ea5"/>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Funding &amp; Coverage Administration</label>
             </item>
             <item>
               <label xml:lang="en">[CT2] Medication Administration</label>
@@ -4258,9 +3345,6 @@
               </item>
               <item>
                 <label xml:lang="en">[CT3] Medication Therapy Provision and Monitoring</label>
-                <item>
-                  <label xml:lang="en">[Feature] Medication Administration Tracking</label>
-                </item>
                 <item>
                   <label xml:lang="en">[Feature] Medication History Reconciliation Ingestion</label>
                   <item identifierRef="id-98aa16217012536fb02c96ec66f36d79"/>
@@ -4322,9 +3406,6 @@
               <item>
                 <label xml:lang="en">[CT3] Referral Intake &amp; Progression</label>
                 <item>
-                  <label xml:lang="en">[Feature] Referral Destination Coordination</label>
-                </item>
-                <item>
                   <label xml:lang="en">[Feature] Referral Document Ingestion</label>
                   <item identifierRef="id-117345b4eb005cafa99fe8d2a4a8c06a"/>
                 </item>
@@ -4362,54 +3443,6 @@
           </item>
           <item>
             <label xml:lang="en">[CT1] Clinical Service Dependency Management</label>
-            <item>
-              <label xml:lang="en">[CT2] Acute Care</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Allied Health</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Ambulatory Care</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Clinical Assessment</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Community Care</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Diagnostic Services</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Emergency Care</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Inpatient Care</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Medication Therapy</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Outreach Care</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Preventive Care</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Primary Care</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Rehabilitation</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Remote &amp; Virtual Care</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Surgical &amp; Procedural Care</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Therapeutic Services</label>
-            </item>
             <item identifierRef="id-1622c398b739544782f13026ee4fe1b0"/>
           </item>
           <item>
@@ -4501,9 +3534,6 @@
                 <item identifierRef="id-a5fc98533b7352eb8f53400413c79289"/>
               </item>
               <item>
-                <label xml:lang="en">[CT3] Device Connectivity Compliance Management</label>
-              </item>
-              <item>
                 <label xml:lang="en">[CT3] Device OA&amp;M Metadata Management</label>
                 <item>
                   <label xml:lang="en">[Feature] Device Endpoint Registration</label>
@@ -4513,9 +3543,6 @@
               </item>
               <item>
                 <label xml:lang="en">[CT3] Device Utilisation Administration</label>
-                <item>
-                  <label xml:lang="en">[Feature] Device Association Lineage</label>
-                </item>
                 <item>
                   <label xml:lang="en">[Feature] Device-Patient/Location Assignment</label>
                   <item identifierRef="id-45875c653f11523fa10297cd7171e79b"/>
@@ -4532,15 +3559,6 @@
             </item>
             <item>
               <label xml:lang="en">[CT2] Health Materiel Administration</label>
-              <item>
-                <label xml:lang="en">[CT3] Health Materiel Catalogue &amp; Formulary Administration</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Materiel Profile Administration</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Health Materiel Traceability Administration</label>
-              </item>
               <item identifierRef="id-0db6cd38f7cf51f78f0fdc8f8d7bbcc4"/>
             </item>
             <item>
@@ -4630,9 +3648,6 @@
                   <label xml:lang="en">[Feature] Practitioner Profile Governance</label>
                   <item identifierRef="id-c5d3018d74155ef19b407478c566ae21"/>
                 </item>
-                <item>
-                  <label xml:lang="en">[Feature] Provider Directory Discovery &amp; Resolution</label>
-                </item>
                 <item identifierRef="id-edc278ad91e658c5a542ff3cab3eb6e3"/>
               </item>
               <item>
@@ -4651,9 +3666,6 @@
                 </item>
                 <item identifierRef="id-13ba322ce3aa58a68d3638da75cb8b28"/>
               </item>
-              <item>
-                <label xml:lang="en">[CT3] Vendor Liaison</label>
-              </item>
               <item identifierRef="id-9a836c3f7b1b5f6d9bf1ba3ba63405c3"/>
               <item identifierRef="id-5a07f634d9e2521595013593e691b81b"/>
             </item>
@@ -4662,14 +3674,8 @@
           <item>
             <label xml:lang="en">[CT1] Health Informatics Management</label>
             <item>
-              <label xml:lang="en">[CT2] Population Health Information Reporting</label>
-            </item>
-            <item>
               <label xml:lang="en">[CT2] Research Information Curation</label>
               <item identifierRef="id-5cf520b210f1547a93961bf193292a6b"/>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Service Planning Data Management</label>
             </item>
             <item identifierRef="id-1d54fa806b2d51fca51b6588f9aa6bcc"/>
           </item>
@@ -4722,13 +3728,7 @@
               <item identifierRef="id-7d63bb02e8c05423994896bf2700b686"/>
             </item>
             <item>
-              <label xml:lang="en">[CT2] Clinical Competency Administration</label>
-            </item>
-            <item>
               <label xml:lang="en">[CT2] Clinical Logistics Coordination</label>
-              <item>
-                <label xml:lang="en">[CT3] Specimen Metadata Management</label>
-              </item>
               <item>
                 <label xml:lang="en">[CT3] Specimen Movement Traceability</label>
                 <item>
@@ -4742,9 +3742,6 @@
             </item>
             <item>
               <label xml:lang="en">[CT2] Clinical Qualification Administration</label>
-              <item>
-                <label xml:lang="en">[CT3] Organisation Clinical Certification &amp; Compliance Support</label>
-              </item>
               <item>
                 <label xml:lang="en">[CT3] Provider Clinical Qualification Tracking</label>
                 <item>
@@ -4762,29 +3759,14 @@
             </item>
             <item>
               <label xml:lang="en">[CT2] Clinical Rostering</label>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Roster Capture &amp; Communication</label>
-              </item>
               <item identifierRef="id-8946e146535e596e83627380cf297dab"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Clinical Supervision</label>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Escalation Path Management</label>
-              </item>
               <item identifierRef="id-307ecf84a6865f1aa53c77d0a41b91b2"/>
             </item>
             <item>
-              <label xml:lang="en">[CT2] Clinical Training &amp; Education</label>
-            </item>
-            <item>
-              <label xml:lang="en">[CT2] Clinical Workforce Capability Monitoring</label>
-            </item>
-            <item>
               <label xml:lang="en">[CT2] Credential Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Service Credential Definition Management</label>
-              </item>
               <item identifierRef="id-eba517b63e195805aaf71bd8b293ef76"/>
             </item>
             <item>
@@ -4828,9 +3810,6 @@
                 <item>
                   <label xml:lang="en">[Feature] ED Bed &amp; Bay Tracking</label>
                   <item identifierRef="id-4ea5cc2779db5a24a2919f84f355d1ad"/>
-                </item>
-                <item>
-                  <label xml:lang="en">[Feature] ED Length of Stay Tracking</label>
                 </item>
                 <item>
                   <label xml:lang="en">[Feature] Emergency Treatment Capacity Management</label>
@@ -4927,9 +3906,6 @@
               <item identifierRef="id-ba4e751d897f58c6abf794eb6f673897"/>
             </item>
             <item>
-              <label xml:lang="en">[CT2] Service Establishment Support</label>
-            </item>
-            <item>
               <label xml:lang="en">[CT2] Theatre Operations</label>
               <item>
                 <label xml:lang="en">[CT3] Perioperative Logistics Coordination</label>
@@ -4955,9 +3931,6 @@
               <item>
                 <label xml:lang="en">[CT3] Multidisciplinary Inpatient Care Coordination</label>
                 <item>
-                  <label xml:lang="en">[Feature] Inpatient Clinical Progression Tracking</label>
-                </item>
-                <item>
                   <label xml:lang="en">[Feature] Inpatient Rounding Context Provision</label>
                   <item identifierRef="id-8fa02a4f9be053c9b3e9fbdffc3a1e51"/>
                 </item>
@@ -4973,9 +3946,6 @@
                 <item>
                   <label xml:lang="en">[Feature] Ward Care Capacity Management</label>
                   <item identifierRef="id-b2983e76206255f08cd70a6b3b3194ab"/>
-                </item>
-                <item>
-                  <label xml:lang="en">[Feature] Ward Patient Flow Coordination</label>
                 </item>
                 <item identifierRef="id-f6a163f226815a81b824c6f77ad94d7f"/>
               </item>
@@ -5013,9 +3983,6 @@
             <label xml:lang="en">[CT1] Independent Assurance Enablement</label>
             <item>
               <label xml:lang="en">[CT2] Assurance Service Review</label>
-              <item>
-                <label xml:lang="en">[CT3] Assurance Service Evaluation</label>
-              </item>
               <item identifierRef="id-9603985b1ff9589e8fef6a6f986487a5"/>
             </item>
             <item>
@@ -5070,9 +4037,6 @@
                   <item identifierRef="id-a2ea60c399005d4c930a862e4aad5ffd"/>
                 </item>
                 <item>
-                  <label xml:lang="en">[Feature] Collaboration Interaction Capture Qualification</label>
-                </item>
-                <item>
                   <label xml:lang="en">[Feature] In-Conversation LHR Query Resolution</label>
                   <item identifierRef="id-91cccff7efd75adaa43472b89ac656f2"/>
                 </item>
@@ -5087,9 +4051,6 @@
             </item>
             <item>
               <label xml:lang="en">[CT2] Clinical Knowledge Services</label>
-              <item>
-                <label xml:lang="en">[CT3] Clinical Knowledge Artefact Distribution Management</label>
-              </item>
               <item>
                 <label xml:lang="en">[CT3] Clinical Knowledge Request Administration</label>
                 <item>
@@ -5132,9 +4093,6 @@
               <item>
                 <label xml:lang="en">[CT3] Governed Health Information Retrieval</label>
                 <item>
-                  <label xml:lang="en">[Feature] Access-Controlled Information Filtering</label>
-                </item>
-                <item>
                   <label xml:lang="en">[Feature] Federated Clinical Query</label>
                   <item identifierRef="id-f0555350115050d7b9b671e5ccd8c859"/>
                 </item>
@@ -5145,28 +4103,10 @@
             </item>
             <item>
               <label xml:lang="en">[CT2] Health Information Communication</label>
-              <item>
-                <label xml:lang="en">[CT3] Patient Health Library Access</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Patient Notification Services</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Patient Self-Service</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Patient Task Communication Services</label>
-              </item>
               <item identifierRef="id-ac8f084c480f5504be2df660f85199bd"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Health Information Control</label>
-              <item>
-                <label xml:lang="en">[CT3] Patient Health Information Disclosure Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Patient Health Information Filter Management</label>
-              </item>
               <item>
                 <label xml:lang="en">[CT3] Patient Health Information Restriction Management</label>
                 <item>
@@ -5180,9 +4120,6 @@
             </item>
             <item>
               <label xml:lang="en">[CT2] Health Information Exchange Enablement</label>
-              <item>
-                <label xml:lang="en">[CT3] HIE Endpoint State Management</label>
-              </item>
               <item>
                 <label xml:lang="en">[CT3] HIE Implementation Management</label>
                 <item>
@@ -5203,20 +4140,11 @@
                 </item>
                 <item identifierRef="id-55ea30fdd5ad578e8a790ec80a3c5854"/>
               </item>
-              <item>
-                <label xml:lang="en">[CT3] HIE Requirement Management</label>
-              </item>
               <item identifierRef="id-fad41ce4f39e5febaaba2df1dcbafb4e"/>
               <item identifierRef="id-e5c678707141565f8de694419dd108d8"/>
             </item>
             <item>
               <label xml:lang="en">[CT2] Information Asset Stewardship Management</label>
-              <item>
-                <label xml:lang="en">[CT3] Information Asset Definition</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Information Asset Tag Management</label>
-              </item>
               <item identifierRef="id-342658293e795a91924e008423557626"/>
             </item>
             <item>
@@ -5231,19 +4159,10 @@
                 <item identifierRef="id-60103e700d665828953b33df43d67691"/>
               </item>
               <item>
-                <label xml:lang="en">[CT3] Data Scientist Administration</label>
-              </item>
-              <item>
                 <label xml:lang="en">[CT3] Information Product Administration</label>
                 <item>
                   <label xml:lang="en">[Feature] Authorised Research Release Assembly</label>
                   <item identifierRef="id-42976a731fb2596d9b31e324e6210c92"/>
-                </item>
-                <item>
-                  <label xml:lang="en">[Feature] Demand &amp; Capacity Planning Projection</label>
-                </item>
-                <item>
-                  <label xml:lang="en">[Feature] Population Notification Obligation Tracking</label>
                 </item>
                 <item identifierRef="id-5622f13b12a15fb992f90565ba672897"/>
               </item>
@@ -5272,18 +4191,12 @@
                 <item identifierRef="id-70a96809a1965686a6b964048d52e6a5"/>
               </item>
               <item>
-                <label xml:lang="en">[CT3] Enterprise Canonical/Reusable Model Library Management</label>
-              </item>
-              <item>
                 <label xml:lang="en">[CT3] Enterprise Canonical/Reusable Model Utilisation Support</label>
                 <item>
                   <label xml:lang="en">[Feature] Semantic Conformance Verification</label>
                   <item identifierRef="id-2c36e1ac7df55935a38589171e835dba"/>
                 </item>
                 <item identifierRef="id-822b5af0aaa05e74a2dedbd4e6a0313a"/>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Enterprise Reference Data Stewardship</label>
               </item>
               <item identifierRef="id-d4a33d9885b057ba865a4ff9ce3acbb3"/>
               <item identifierRef="id-74952585858152ee8d1cde85652b9cb7"/>
@@ -5307,9 +4220,6 @@
                   <item identifierRef="id-a1117c3bc2735de1a49c381901d85aa2"/>
                 </item>
                 <item>
-                  <label xml:lang="en">[Feature] Clinical Information Historical Reconstruction</label>
-                </item>
-                <item>
                   <label xml:lang="en">[Feature] Durable Clinical Record Preservation</label>
                   <item identifierRef="id-ff6415658c205bc9b1536bdbce2d2289"/>
                 </item>
@@ -5324,9 +4234,6 @@
                 <item>
                   <label xml:lang="en">[Feature] General Practice Shared Record Ingestion</label>
                   <item identifierRef="id-2983bb435e05535eb38d157f818c2263"/>
-                </item>
-                <item>
-                  <label xml:lang="en">[Feature] Primary Care Notification Dispatch</label>
                 </item>
                 <item identifierRef="id-03d050d3ca595ba998058c7c369b2db0"/>
                 <item identifierRef="id-47bece6aa1465202a21b2ae0c134d02e"/>
@@ -5362,26 +4269,11 @@
             </item>
             <item>
               <label xml:lang="en">[CT2] Workflow &amp; Activity Coordination</label>
-              <item>
-                <label xml:lang="en">[CT3] Activity Routing Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] External Task Coordination</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] External Task Status &amp; Traceability Management</label>
-              </item>
-              <item>
-                <label xml:lang="en">[CT3] Work Boundary Governance</label>
-              </item>
               <item identifierRef="id-c2bc29b25d7754f2aed716c5a85a61e5"/>
             </item>
             <item identifierRef="id-423c29208d88588593e47c660f97272b"/>
           </item>
           <item identifierRef="id-4a9e13d3e580502e80918f8ac666c2b7"/>
-        </item>
-        <item>
-          <label xml:lang="en">3-BusinessObjectMap</label>
         </item>
       </item>
       <item>
@@ -5389,50 +4281,67 @@
         <item>
           <label xml:lang="en">1-InformationMap</label>
           <item>
-            <label xml:lang="en">Individual</label>
-            <item identifierRef="id-5ba19156cb0042078a310cbe57ead042"/>
+            <label xml:lang="en">Topics</label>
+            <item>
+              <label xml:lang="en">Workforce</label>
+              <item identifierRef="id-80049507c9254357acb5b3a8ad40a8dd"/>
+            </item>
+            <item>
+              <label xml:lang="en">Care</label>
+              <item identifierRef="id-92781b38f5d946828f64a7916a7a18ad"/>
+            </item>
+            <item>
+              <label xml:lang="en">Coordination</label>
+              <item identifierRef="id-18e0217911394fec9c22da7620f497d2"/>
+            </item>
+            <item>
+              <label xml:lang="en">Enterprise</label>
+              <item identifierRef="id-37a27c14f07d45d0bb34399fb1ddd5b8"/>
+            </item>
+            <item>
+              <label xml:lang="en">Equipment</label>
+              <item identifierRef="id-d0c8d828b67e440c88cf1fa5c0fab1dc"/>
+            </item>
+            <item>
+              <label xml:lang="en">Individual</label>
+              <item identifierRef="id-5ba19156cb0042078a310cbe57ead042"/>
+            </item>
+            <item>
+              <label xml:lang="en">Ordering</label>
+              <item identifierRef="id-f149b52ad8cd4590b0d52597460ec64d"/>
+            </item>
+            <item>
+              <label xml:lang="en">Place</label>
+              <item identifierRef="id-efe1fe4f30854c45909458e496aced94"/>
+            </item>
+            <item>
+              <label xml:lang="en">Scheduling</label>
+              <item identifierRef="id-e386cab4c72748ff8b35ebb6a2e0fc02"/>
+            </item>
+            <item>
+              <label xml:lang="en">Service</label>
+              <item identifierRef="id-c36226e854dd4c2192d650bb3ecef384"/>
+            </item>
+            <item>
+              <label xml:lang="en">TaskCompletion</label>
+              <item identifierRef="id-f11523a5e2a449a9af538d768f977b0b"/>
+            </item>
+            <item identifierRef="id-f04466cd677051cc98098438b8a4f980"/>
           </item>
           <item>
-            <label xml:lang="en">Workforce</label>
-            <item identifierRef="id-80049507c9254357acb5b3a8ad40a8dd"/>
+            <label xml:lang="en">Classes</label>
+            <item>
+              <label xml:lang="en">model</label>
+              <item>
+                <label xml:lang="en">core</label>
+                <item>
+                  <label xml:lang="en">information</label>
+                  <item identifierRef="id-25cb1748ba154926a59a25e4539c9096"/>
+                </item>
+              </item>
+            </item>
+            <item identifierRef="id-4927667988ca4a52b620d3d8436077b7"/>
           </item>
-          <item>
-            <label xml:lang="en">Care</label>
-            <item identifierRef="id-92781b38f5d946828f64a7916a7a18ad"/>
-          </item>
-          <item>
-            <label xml:lang="en">Coordination</label>
-            <item identifierRef="id-18e0217911394fec9c22da7620f497d2"/>
-          </item>
-          <item>
-            <label xml:lang="en">Equipment</label>
-            <item identifierRef="id-d0c8d828b67e440c88cf1fa5c0fab1dc"/>
-          </item>
-          <item>
-            <label xml:lang="en">Ordering</label>
-            <item identifierRef="id-f149b52ad8cd4590b0d52597460ec64d"/>
-          </item>
-          <item>
-            <label xml:lang="en">Enterprise</label>
-            <item identifierRef="id-37a27c14f07d45d0bb34399fb1ddd5b8"/>
-          </item>
-          <item>
-            <label xml:lang="en">Place</label>
-            <item identifierRef="id-efe1fe4f30854c45909458e496aced94"/>
-          </item>
-          <item>
-            <label xml:lang="en">Scheduling</label>
-            <item identifierRef="id-e386cab4c72748ff8b35ebb6a2e0fc02"/>
-          </item>
-          <item>
-            <label xml:lang="en">Service</label>
-            <item identifierRef="id-c36226e854dd4c2192d650bb3ecef384"/>
-          </item>
-          <item>
-            <label xml:lang="en">TaskCompletion</label>
-            <item identifierRef="id-f11523a5e2a449a9af538d768f977b0b"/>
-          </item>
-          <item identifierRef="id-f04466cd677051cc98098438b8a4f980"/>
         </item>
         <item>
           <label xml:lang="en">2-EnterpriseCapabilities</label>
@@ -5446,15 +4355,6 @@
           <label xml:lang="en">4-MiddlewareMap</label>
           <item identifierRef="id-db3303750b445e80ab98bb3a0befe5f2"/>
         </item>
-      </item>
-      <item>
-        <label xml:lang="en">4-TechnologyLayer</label>
-        <item>
-          <label xml:lang="en">1-DataMap</label>
-        </item>
-      </item>
-      <item>
-        <label xml:lang="en">5-Implementation</label>
       </item>
     </item>
   </organizations>
@@ -137981,6 +136881,162 @@ The recovery has no native Application-layer objects or approved publication cro
           </style>
         </node>
       </view>
-    </diagrams>
+    <view identifier="id-e7190de0c6f64b5c99b74fa6be52eb05" xsi:type="Diagram">
+        <name xml:lang="en">information-availability-management-requirements-overview</name>
+      </view>
+      <view identifier="id-a313bbc71a524c139bb1018bb1960186" xsi:type="Diagram">
+        <name xml:lang="en">availability-requirements-overview</name>
+        <node identifier="id-e64b99b7f92e4a8db53f6f02e4eb1514" elementRef="id-a6e03ca37cb54e69b9052cd12d6642eb" xsi:type="Element" x="12" y="12" w="565" h="289">
+          <style>
+            <fillColor r="255" g="255" b="255" a="100"/>
+            <lineColor r="92" g="92" b="92" a="100"/>
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0"/>
+            </font>
+          </style>
+          <node identifier="id-300f53b6d9eb4fb4b57aeaecaee0347a" elementRef="id-e373852f1b5a4d9bbe4c646b2f6615ed" xsi:type="Element" x="24" y="36" w="400" h="25">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+        </node>
+      </view>
+      <view identifier="id-8009ccd75bd44bb78dfa7a7b6c6fdd80" xsi:type="Diagram">
+        <name xml:lang="en">non-functional-requirements-overview</name>
+        <node identifier="id-35d8aaeae1c54562b7ca33d13dc7a9fc" elementRef="id-812dcde922614fde87adbccc993d0294" xsi:type="Element" x="12" y="12" w="901" h="481">
+          <style>
+            <fillColor r="255" g="255" b="255" a="100"/>
+            <lineColor r="92" g="92" b="92" a="100"/>
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0"/>
+            </font>
+          </style>
+          <node identifier="id-4d976533e6064ea6888decd2ae2f93c9" elementRef="id-7a965baa4e6d46bd92a9b41433920d21" xsi:type="Element" x="24" y="48" w="205" h="85">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-8e8b571856fa49079fe20f1fb4299c0e" elementRef="id-a6e03ca37cb54e69b9052cd12d6642eb" xsi:type="Element" x="24" y="144" w="205" h="85">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-96d98d9b4ac34d6aae3aa435d7edebc7" elementRef="id-9384a733b3b04279ace34e4fdca25409" xsi:type="Element" x="240" y="48" w="205" h="85">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+        </node>
+      </view>
+      <view identifier="id-0abeb9dfc5bc441299712f3ee08e49de" xsi:type="Diagram">
+        <name xml:lang="en">information-management-requirements-overview</name>
+        <node identifier="id-fe6a67e7ee1d46548abbe80cf6a15098" elementRef="id-458ce11fb42643e48a71bfda600b0d08" xsi:type="Element" x="12" y="24" w="565" h="140">
+          <style>
+            <fillColor r="255" g="255" b="255" a="100"/>
+            <lineColor r="92" g="92" b="92" a="100"/>
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0"/>
+            </font>
+          </style>
+          <node identifier="id-91d8f696261b4910845d4bd8f5f7e91f" elementRef="id-1dc1ebeceba74dec8fde94f14eff5ce1" xsi:type="Element" x="24" y="48" w="493" h="25">
+            <style>
+              <fillColor r="204" g="204" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+        </node>
+      </view>
+      <view identifier="id-35ab31e1f4d14980b0d33929462bb7b3" xsi:type="Diagram">
+        <name xml:lang="en">functional-requirements-overview</name>
+        <node identifier="id-b162dba6aa494c4ab9ed61d3a5725b76" elementRef="id-2f1bdf2e08464b8084ead4f7ae315e4a" xsi:type="Element" x="12" y="12" w="625" h="349">
+          <style>
+            <fillColor r="255" g="255" b="255" a="100"/>
+            <lineColor r="92" g="92" b="92" a="100"/>
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0"/>
+            </font>
+          </style>
+          <node identifier="id-3c285757efdb485eadbd73152ed566d6" elementRef="id-458ce11fb42643e48a71bfda600b0d08" xsi:type="Element" x="24" y="48" w="193" h="25">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+        </node>
+      </view>
+      <view identifier="id-25cb1748ba154926a59a25e4539c9096" xsi:type="Diagram">
+        <name xml:lang="en">information-package-overview</name>
+        <node identifier="id-1018ed39120547a7b31f66db3bd75dff" elementRef="id-74614b2b4bdd4897852e3483d597bd01" xsi:type="Element" x="12" y="24" w="400" h="109">
+          <style>
+            <fillColor r="255" g="255" b="255" a="100"/>
+            <lineColor r="92" g="92" b="92" a="100"/>
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0"/>
+            </font>
+          </style>
+          <node identifier="id-132d57cc525545df83abd89ffb4d48c5" elementRef="id-f5c345ab6c47433da11ee12f5d84e557" xsi:type="Element" x="24" y="48" w="145" h="25">
+            <style>
+              <fillColor r="181" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+        </node>
+      </view>
+      <view identifier="id-4927667988ca4a52b620d3d8436077b7" xsi:type="Diagram">
+        <name xml:lang="en">class-packages-overview</name>
+        <node identifier="id-1e948ba1c5c34d55b5340a3eb34d97e1" elementRef="id-8a0f2c41d3264f988442781309550cc0" xsi:type="Element" x="12" y="12" w="481" h="217">
+          <style>
+            <fillColor r="255" g="255" b="255" a="100"/>
+            <lineColor r="92" g="92" b="92" a="100"/>
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0"/>
+            </font>
+          </style>
+          <node identifier="id-3c84ba17f6b64e63bd04d78442dec07d" elementRef="id-a8f6eefb1d7a44a09acf06a41b59ffab" xsi:type="Element" x="24" y="48" w="400" h="140">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+            <node identifier="id-3b8a315fc8b04fefbead4a14270b1a34" elementRef="id-74614b2b4bdd4897852e3483d597bd01" xsi:type="Element" x="36" y="72" w="253" h="25">
+              <style>
+                <fillColor r="255" g="255" b="255" a="100"/>
+                <lineColor r="92" g="92" b="92" a="100"/>
+                <font name="Sans" size="9">
+                  <color r="0" g="0" b="0"/>
+                </font>
+              </style>
+            </node>
+          </node>
+        </node>
+      </view>
+      </diagrams>
   </views>
 </model>

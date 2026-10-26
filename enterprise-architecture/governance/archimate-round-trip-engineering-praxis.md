@@ -129,18 +129,21 @@ Association: explicitly directed **contained element → home**, with an explici
 `Specialization=Home` Property resolved by definition name. Ordinary Association,
 its Name, Realization, folder placement or View nesting does not assert Home.
 
-The **contained element's native type** selects the exceptions:
+The **contained element's native type / specialisation** selects the exceptions:
 
-| Contained native type | Governing mechanism |
+| Contained native type / specialisation | Governing mechanism |
 | --- | --- |
 | Capability, including Feature | Composition, parent → child |
 | BusinessObject | Composition, parent → child |
-| DataObject, including Topic | Composition, parent → child |
+| DataObject, including Topic and Class | Composition, parent → child |
 | Artifact | Composition, parent → child |
+| Grouping with Specialization `Package` or `RequirementGroup` | Composition, parent → child |
+| Requirement contained beneath `RequirementGroup` | Composition, parent → child |
 | Other applicable native types | Home, contained element → home |
 
-Feature inherits Capability's rule. Topic is native DataObject with explicit
-Topic specialisation and inherits DataObject's rule. Derived `harmoniaType`, a
+Feature inherits Capability's rule. Topic and Class are native DataObjects and inherit DataObject's rule.
+Package and RequirementGroup are native Groupings where Composition parent → child expresses containment.
+A native Requirement nested beneath a RequirementGroup via Composition is likewise governed by Composition. Derived `harmoniaType`, a
 bracketed Name or a folder cannot override native type. This clarification narrows
 the earlier cross-layer Composition wording; it does not convert, delete or
 accept any relationship instance. Previously persisted names and source-qualified

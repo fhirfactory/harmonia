@@ -2,8 +2,8 @@
 
 | Decision Review | Subject | Solution Architect Disposition | Comment |
 | --- | --- | --- | --- |
-| [DR-1](#dr-1) | Calliope Information Unit model, requirement groupings & model-wide representation/navigation ingestion review | Not recorded | Phase 1 model delta decomposition completed; 9 Change Requests initialised with default Disposition On-Hold and Outcome Unresolved in change-review.md; candidate findings retained as discovery evidence awaiting Solution Architect adjudication at the mandatory human checkpoint. |
-| [DR-2](#dr-2) | Bounded supporting Minutiae, pinned model evidence & execution state | Not recorded | Pinned baseline (1.1.14) and candidate (1.1.15-001) hashes and file sizes; comparison evidence artifacts; task and report temporal provenance; release authority invariance; zero git mutations. |
+| [DR-1](#dr-1) | Calliope Information Unit model, requirement groupings & model-wide representation/navigation ingestion review | Accepted per Solution Architect adjudication | All nine Change Requests (CR-001 through CR-009) adjudicated and accepted/resolved by Solution Architect. Authorised for application as release 1.1.16 with predecessor 1.1.15; application and verification complete; confirmed and closed by Solution Architect in registered record [hcrl-1.1.15-001.complete.md](../../register/1.1.16/hcrl-1.1.15-001.complete.md). |
+| [DR-2](#dr-2) | Bounded supporting Minutiae, pinned model evidence & execution state | Accepted per Solution Architect confirmation | Pinned baseline (1.1.14), published predecessor baseline (1.1.15), and candidate (1.1.15-001) evidence; release 1.1.16 projection and verification hashes; task and report temporal provenance; release authority governance; zero git mutations. Minutiae-Accepted: Yes. Confirmed and closed in registered record [hcrl-1.1.15-001.complete.md](../../register/1.1.16/hcrl-1.1.15-001.complete.md). |
 
 # HCRL — 1.1.14 → 1.1.15: Calliope Information Unit model, requirement groupings & model-wide representation/navigation ingestion review
 
@@ -22,7 +22,7 @@ The Architecture Continuum remains canonical authority. Architectural Axioms AX-
 
 **Background & Activity Context.** The ArchiMate Round-Trip Engineering process was initiated upon the candidate export `harmonia-continuum-1.1.15-001.xml`. The export reflects additions drafted in `DRP-Information-Unit-Framework.draft.002.md`, seeking to establish foundational Information Unit structures under Calliope. In accordance with Praxis lines 116–122, raw comparator counts are decomposed into discrete, independently adjudicable Change Requests across architectural layers and concerns.
 
-**Change Review Summary & Decomposed Change Requests.** The governed review document is authored at [change-review.md](change-review.md) (Status: **UNREVIEWED; no application authority**). All nine Change Requests are initialised to Disposition **On-Hold** and Outcome **Unresolved**:
+**Change Review Summary & Decomposed Change Requests.** The governed review document is authored at [change-review.md](change-review.md) (Status: **CONFIRMED & COMPLETED for Release 1.1.16**). All nine Change Requests have been formally adjudicated and resolved by the Solution Architect:
 
 1. **[CR-001] Add Class Packages model, core, and information**:
    - *Added Elements (3)*: Groupings `[ClassPackage] model` (`id-8a0f2c41d3264f988442781309550cc0`), `[ClassPackage] core` (`id-a8f6eefb1d7a44a09acf06a41b59ffab`), `[ClassPackage] information` (`id-74614b2b4bdd4897852e3483d597bd01`).
@@ -95,12 +95,12 @@ The Architecture Continuum remains canonical authority. Architectural Axioms AX-
 
 **Solution Architect Disposition (DR-1).**
 
-> **Not recorded — Initial / default On-Hold.**
-> All Change Requests are initialised to Disposition On-Hold and Outcome Unresolved. Execution stops at the Change Review Checkpoint awaiting Solution Architect adjudication and directive issuance.
+> **Accepted per Solution Architect adjudication (CR-001 through CR-009).**
+> All nine Change Requests are adjudicated and resolved: CR-001 (Accept with amendment), CR-002 (Accept), CR-003 (Accept), CR-004 (Accept / Resolved), CR-005 (Accept / Resolved), CR-006 (Accept), CR-007 (Accept / Resolved), CR-008 (Accept / Resolved by governing decision), CR-009 (Accept / Resolved by governing decision). Authorised additions are to be incorporated into the Architecture Continuum and projection template under release 1.1.16 (with published release 1.1.15 as predecessor baseline). HCRL remains in Pending standing awaiting post-verification confirmation.
 
 **Reconciliation Instruction & Processing Record.**
-- Reconciliation Instruction: Not authorised while Disposition is On-Hold, including after resolution by a governing decision.
-- Processing Record: Not yet processed.
+- Reconciliation Instruction: Authorised to apply accepted additions directly to Architecture Continuum and projection template, project release 1.1.16, and perform multi-tier verification.
+- Processing Record: Application and multi-tier verification completed; confirmed and closed under Solution Architect confirmation for release 1.1.16. See completed record at [hcrl-1.1.15-001.complete.md](../../register/1.1.16/hcrl-1.1.15-001.complete.md).
 
 <a id="dr-2"></a>
 ## DR-2 — Bounded Minutiae, pinned model evidence & execution state
@@ -126,19 +126,29 @@ Disclosed supporting and minor matters for Solution Architect review:
    - Candidate model workbench export provenance remains unverified; no transport receipt or export log is present.
    - The Archi binary is absent from PATH; no-edit transport control verification is unavailable, preserving uncertainty under AX-15.
 
-5. **Release Authority & Repository Invariance**:
-   - Root `architecture-release.json` remains untouched at version `1.1.14`. Pending review iterations consume zero release allocation.
-   - Zero git commits, branches, merges, tags, or pushes executed. Working tree preserved for Solution Architect review.
+5. **Release Authority & Repository State**:
+   - Root `architecture-release.json` advanced to version `1.1.16` (`previous_version: 1.1.15`).
+   - Published release 1.1.15 baseline preserved byte-for-byte unchanged (`enterprise-architecture/design/archimate/published/1.1.15/Harmonia-Architecture.xml`, file size: 26,919,406 bytes [corrected from earlier estimate 26,920,447 bytes]; SHA-256: `61e7ebb958b321404c1c4694ae952119480f1fabd04dc2d319f35def84313dec`).
+   - Durable release 1.1.16 projection published at `enterprise-architecture/design/archimate/published/1.1.16/Harmonia-Architecture.xml` (file size: 26,959,573 bytes [corrected from earlier pre-publication estimate 26,940,323 bytes]; SHA-256: `44c0fc9190d43ce82773ec1df6839cdbc14a0bc1d11ff4edc7ce173cde4cafac`).
+   - Zero git commits, branches, merges, tags, or pushes executed. Git operations remain strictly read-only inspection.
 
-```text
-Minutiae-Accepted: [awaiting Solution Architect entry: Yes | No]
-Comment: [awaiting Solution Architect / ARB comment]
-```
+6. **Post-Adjudication Application & Verification Evidence**:
+   - `architecture_continuum.py validate`: PASS (1,614 elements, 1,660 relationships, 1,614 canonical identities, navigation PASS).
+   - Resulting-state delta verification against baseline 1.1.15: Exactly 12 elements added, 9 relationships added, 7 overview views added, 17 preexisting views relocated in organization hierarchy. Zero regressions or unexpected diffs.
+   - Offline XML Schema validation: PASS against `archimate3_Diagram.xsd`.
+   - Tooling validation: `make -C enterprise-architecture/tooling check` PASS; all 82 Python tooling unit tests PASS.
+   - Architecture tests: Maven ArchUnit suite (`mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest"`) PASS (90 tests run, 0 failures, 0 errors).
+   - Attributable temporal provenance: Task issuance `2026-10-25T22:57:53.954Z` ([Task][task-post]); Report production `2026-10-26T00:07:33.144Z` ([Report][report-post]).
+
+Minutiae-Accepted: Yes
+Comment: Mark Hunter, Solution Architect, confirmed the resulting architecture and application for release 1.1.16 (predecessor 1.1.15), accepted the delta of 12 added elements, 9 added relationships, 7 added Views, and 17 View relocations, accepted the validation results, and directed completion and closure of HCRL 1.1.15-001. The alternate execution timestamp entry (2026-10-25T10:19:20.839Z) is retained as an accepted factual limitation without fabrication. The discrepancy in prior Report §2.2's identity listing is formally disclosed; actual Continuum frontmatter identities govern. Registered in [hcrl-1.1.15-001.complete.md](../../register/1.1.16/hcrl-1.1.15-001.complete.md).
 
 This control and DR-2's opening-table entry describe the same bounded group decision. Silence, agent classification, preparation of this pending HCRL, and successful tooling supply no acceptance.
 
 [task]: ../../evidence/1.1.15/001/before/ai-agent-tasks/20261025T100246Z-model-update.md
 [report]: ../../evidence/1.1.15/001/after/ai-agent-reports/20261025T113534Z-model-update.md
+[task-post]: ../../evidence/1.1.15/001/before/ai-agent-tasks/20261025T225753Z-continue-post-adjudication.md
+[report-post]: ../../evidence/1.1.15/001/after/ai-agent-reports/20261026T000733Z-continue-post-adjudication.md
 [change-review]: change-review.md
 [cr-001]: change-review.md#cr-001--add-class-packages-model-core-and-information
 [cr-002]: change-review.md#cr-002--add-logical-model-class-informationunit

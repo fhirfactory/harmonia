@@ -325,6 +325,27 @@
       "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md#information-element-naming--machinery-validation-decision-2026-10-20",
       "displayPrefix": "[Topic]",
       "canonicalQualifier": "TOPIC"
+    },
+    "Package": {
+      "nativeType": "Grouping",
+      "directory": "grouping/package",
+      "authority": "enterprise-architecture/design/review/1.1.15/hcrl-1.1.15-001.pending.md#dr-1",
+      "displayPrefix": "[Package]",
+      "canonicalQualifier": "PKG"
+    },
+    "RequirementGroup": {
+      "nativeType": "Grouping",
+      "directory": "grouping/requirement-group",
+      "authority": "enterprise-architecture/design/review/1.1.15/hcrl-1.1.15-001.pending.md#dr-1",
+      "displayPrefix": "[RequirementGroup]",
+      "canonicalQualifier": null
+    },
+    "Class": {
+      "nativeType": "DataObject",
+      "directory": "application/data-object/class",
+      "authority": "enterprise-architecture/design/review/1.1.15/hcrl-1.1.15-001.pending.md#dr-1",
+      "displayPrefix": "[Class]",
+      "canonicalQualifier": "CLASS"
     }
   },
   "relationshipSpecializations": {

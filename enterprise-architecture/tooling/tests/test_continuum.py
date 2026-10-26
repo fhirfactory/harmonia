@@ -46,7 +46,7 @@ class ContinuumTests(unittest.TestCase):
 
     def test_population_and_provenance(self):
         r=c.validate(self.root)
-        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(1602,1651,462))
+        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(1614,1660,462))
         self.assertEqual(r['elements'],r['provenanceCoverage'])
 
     def test_identity_type_location_and_standing_fail_closed(self):
@@ -101,7 +101,7 @@ class ContinuumTests(unittest.TestCase):
         for spec in (invalid,empty):
             with patch.object(c.uuid,'uuid4',side_effect=AssertionError('Unexpected allocation')):
                 with self.assertRaises(ValueError):c.create(spec,self.root)
-        self.assertEqual(len(c.load(self.root)[1]),1602)
+        self.assertEqual(len(c.load(self.root)[1]),1614)
 
     def test_native_endpoints_reject_schema_valid_but_illegal_relationship(self):
         cid = next(cid for cid, (m, _, _) in self.elements.items()

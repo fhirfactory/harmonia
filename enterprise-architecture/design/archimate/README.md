@@ -4,7 +4,7 @@
 
 The maintained source is the [individual-element continuum](../../README.md).
 [projection-template.xml](projection-template.xml) owns existing model-level
-properties, property definitions, View navigation and **1,209 Views**, including their
+properties, property definitions, View navigation and **1,216 Views**, including their
 geometry. Its element/relationship collections are empty. The current projector
 fills those collections from canonical Markdown and preserves the Views.
 From 1.1.10, canonical [Continuum navigation](../../continuum/navigation.json)
@@ -17,12 +17,15 @@ numbering. No semantic relationship follows from folder nesting.
 The **Architecture Continuum is canonical architecture authority**. Open Exchange
 XML is its derived projection/interchange representation; **Archi is the architecture
 workbench**. Import the published
-[1.1.14 Open Exchange projection](published/1.1.14/Harmonia-Architecture.xml)
+[1.1.16 Open Exchange projection](published/1.1.16/Harmonia-Architecture.xml)
 into Archi 5.10 to begin work on that release baseline.
 
-The [1.1.14 projection](published/1.1.14/Harmonia-Architecture.xml)
-establishes the navigable architecture baseline for subsequent Design Review Proposal (DRP) development,
-accepted by the Solution Architect in [completed HCRL 002](../register/1.1.14/hcrl-1.1.14-002.complete.md).
+The [1.1.16 projection](published/1.1.16/Harmonia-Architecture.xml)
+establishes the navigable architecture baseline incorporating the Calliope Information Unit foundational model, requirement groupings, and overview views,
+accepted by the Solution Architect in [completed HCRL 1.1.15-001](../register/1.1.16/hcrl-1.1.15-001.complete.md).
+The [1.1.15 projection](published/1.1.15/Harmonia-Architecture.xml)
+remains the immutable predecessor baseline, and [1.1.14](published/1.1.14/Harmonia-Architecture.xml)
+remains the historical comparison baseline for the 001 candidate submission.
 The [accepted 1.1.13 projection](published/1.1.13/Harmonia-Architecture.xml)
 implements the Solution Architect's workbench-remediation dispositions, accepted
 after actual Archi 5.10 visual inspection in [completed HCRL 002](../register/1.1.13/hcrl-1.1.13-002.complete.md).
@@ -96,14 +99,17 @@ actual workbench tree before acceptance of material organisation changes.
 
 ## Publication and round-trip use
 
+The [1.1.16 projection](published/1.1.16/Harmonia-Architecture.xml), completed under
+[HCRL 1.1.15-001](../register/1.1.16/hcrl-1.1.15-001.complete.md), incorporates the
+accepted Calliope Information Unit foundational model (`model.core.information.InformationUnit`),
+requirement groupings, 7 overview Views, and 17 intentional preexisting View relocations.
 The [1.1.15 projection](published/1.1.15/Harmonia-Architecture.xml), prepared under
 [HCRL 1.1.15-002](../review/1.1.15/hcrl-1.1.15-002.pending.md), carries the
-machinery change's release metadata over the unchanged canonical architecture.
+machinery change's release metadata over the unchanged canonical architecture as the immutable predecessor baseline.
 Its elements, relationships, Views and navigation match 1.1.14. Incorporated-result
-confirmation remains with the Solution Architect. This projection applies none
-of the separate 001 CRs; the immutable 1.1.14 publication remains their original
-comparison baseline. Use the exact current projection for subsequent authoring
-after result confirmation, without relabelling historical inputs.
+confirmation for HCRL 1.1.15-002 remains pending with the Solution Architect. This projection applies none
+of the candidate changes from HCRL 1.1.15-001.
+The immutable 1.1.14 publication remains the historical comparison baseline for the 001 candidate submission.
 
 `published/<release>/Harmonia-Architecture.xml` is the durable release artefact
 for loading that Continuum release into Archi. The filename follows the maintained

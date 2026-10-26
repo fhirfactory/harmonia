@@ -77,7 +77,7 @@ class ContinuumNavigationTests(unittest.TestCase):
         perspectives = [n for n in nav.walk(self.tree) if n.get('kind') == 'index-entry']
         self.assertEqual(len(perspectives), 10)
         self.assertTrue(all(n['number'].startswith('R.1.') for n in perspectives))
-        self.assertEqual(len(self.tree[1]['children']), 8)
+        self.assertEqual(len(self.tree[1]['children']), 9)
         branches = {n['title']: nav.descendants(n) for n in nav.walk(self.tree) if n['title'].startswith('Unclassified ')}
         self.assertEqual({k: len(v) for k, v in branches.items()}, {'Unclassified Motivation': 7, 'Unclassified Business': 69})
 
@@ -208,19 +208,19 @@ class ContinuumNavigationTests(unittest.TestCase):
         self.assertEqual(Counter(actual), Counter(expected))
         parents = [n for n in nav.walk(self.tree) if n.get('canonicalId') and n.get('children')]
         self.assertEqual(Counter(self.elements[n['canonicalId']][0]['archimateType'] for n in parents),
-                         Counter(Capability=204, DataObject=11, Driver=3))
+                         Counter(Capability=204, DataObject=11, Grouping=7, Driver=3))
         for node in parents:
             folder = org.find('.//a:item[@identifier="' + nav.transport_id(node) + '"]', c.N)
             self.assertIsNone(folder.get('identifierRef'))
             self.assertEqual(folder[2].get('identifierRef'), self.elements[node['canonicalId']][0]['exchange']['identifier'])
             self.assertEqual(folder[2].findtext('a:label', namespaces=c.N), node['title'])
         hierarchy = nav.workbench_hierarchy_members(self.tree, self.elements, model)
-        self.assertEqual(len(hierarchy), 910)
+        self.assertEqual(len(hierarchy), 922)
         self.assertEqual(sum(self.elements[cid][0].get('specialization') == 'Feature' for cid in hierarchy), 179)
         self.assertEqual(sum(self.elements[cid][0].get('specialization') == 'Topic' for cid in hierarchy), 70)
         self.assertEqual(Counter(self.elements[cid][0]['archimateType'] for cid in hierarchy),
-                         Counter(Capability=628, DataObject=70, BusinessService=99,
-                                 BusinessFunction=104, BusinessProcess=9))
+                         Counter(Capability=628, BusinessFunction=104, BusinessService=99,
+                                 DataObject=71, Grouping=10, BusinessProcess=9, Requirement=1))
         # Every hierarchy member owns a directory, even without children.
         # Non-hierarchical leaves and historical indexes retain their placement.
         for node in nav.walk(self.tree):
@@ -296,7 +296,7 @@ class ContinuumNavigationTests(unittest.TestCase):
         import continuum_workbench as workbench
         model = c.secure_xml(self.root / c.DESIGN / 'projection-template.xml')
         before = workbench.signatures(model, 'views/diagrams', 'view')
-        self.assertEqual(len(before), 1209)
+        self.assertEqual(len(before), 1216)
         first = model.find('a:views/a:diagrams/a:view', c.N)
         first.find('a:name', c.N).text += ' changed'
         after = workbench.signatures(model, 'views/diagrams', 'view')

@@ -29,12 +29,17 @@ def descriptor(model, rid):
     label = names[0].text
     spec = review.specialization(model, node)
     g.require(not spec['claims'] or spec['single'] is not None, 'Ambiguous authored Specialization')
-    g.require(spec['single'] is None or (native == 'DataObject' and spec['single'] == 'Topic'),
+    g.require(spec['single'] is None or (native == 'DataObject' and spec['single'] in ('Topic', 'Class'))
+              or (native == 'Grouping' and spec['single'] == 'Package'),
               'Unestablished/incompatible authored Specialization')
     if native == 'DataObject':
-        g.require(spec['single'] == 'Topic', 'DataObject lacks explicit Topic Specialization')
-        result['specialization'] = 'Topic'
-        display_kind = 'Topic'
+        g.require(spec['single'] in ('Topic', 'Class'), 'DataObject lacks explicit Topic or Class Specialization')
+        result['specialization'] = spec['single']
+        display_kind = spec['single']
+    elif native == 'Grouping':
+        g.require(spec['single'] == 'Package', 'Grouping lacks explicit Package Specialization')
+        result['specialization'] = 'Package'
+        display_kind = 'Package'
     elif native in ('BusinessObject', 'Artifact'):
         display_kind = native
     else:
@@ -52,7 +57,7 @@ def descriptor(model, rid):
         g.require(not label.endswith(' BO'), 'Ambiguous repeated BO suffix')
     g.require(label and label == label.strip(), 'Empty or whitespace-ambiguous architectural name')
     result.update(name=label, displayName='[' + display_kind + '] ' + label,
-                  harmoniaType='Topic' if display_kind == 'Topic' else None)
+                  harmoniaType=display_kind if display_kind in ('Topic', 'Class') else None)
     return result
 
 
@@ -92,7 +97,7 @@ def propose(model, resolved=None):
         else:
             local = descriptors[rid]
             row['architectural_name'] = local['name']
-            row['classification'] = 'Topic' if native == 'DataObject' else native
+            row['classification'] = local.get('specialization') or native
             row['proposed'].update({key: local[key] for key in ('displayName', 'harmoniaType')})
             try:
                 path = resolved.ancestry(rid)

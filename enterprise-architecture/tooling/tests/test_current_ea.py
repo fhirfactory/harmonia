@@ -90,8 +90,41 @@ class CurrentEaTests(unittest.TestCase):
         self.assertEqual(naming.component('FHIR REST & DataObject'), 'FhirRestAndDataObject')
         result = naming.qualified_names([{'type': 'BusinessObject', 'name': 'Care', 'key': 'care'}, {'type': 'DataObject', 'specialization': 'Topic', 'name': 'Encounter', 'key': 'encounter'}])
         self.assertEqual(result, {'friendlyName': 'Care.Encounter', 'canonicalName': 'BO-Care.TOPIC-Encounter'})
+        pkg_result = naming.qualified_names([
+            {'type': 'Grouping', 'specialization': 'Package', 'name': 'model', 'key': 'model'},
+            {'type': 'Grouping', 'specialization': 'Package', 'name': 'core', 'key': 'core'},
+            {'type': 'Grouping', 'specialization': 'Package', 'name': 'information', 'key': 'information'},
+            {'type': 'DataObject', 'specialization': 'Class', 'name': 'InformationUnit', 'key': 'infounit'}
+        ])
+        self.assertEqual(pkg_result, {
+            'friendlyName': 'model.core.information.InformationUnit',
+            'canonicalName': 'PKG-Model.PKG-Core.PKG-Information.CLASS-InformationUnit'
+        })
         with self.assertRaises(ValueError):
             naming.qualified_names([{'type': 'DataObject', 'name': 'Unclassified', 'key': 'unclassified'}])
+
+    def test_package_and_requirement_group_containment_by_composition(self):
+        xml_text = '''<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="m">
+<name>Test</name><elements>
+<element identifier="pkg1" xsi:type="Grouping"><name>[Package] model</name><properties><property propertyDefinitionRef="spec"><value>Package</value></property></properties></element>
+<element identifier="pkg2" xsi:type="Grouping"><name>[Package] core</name><properties><property propertyDefinitionRef="spec"><value>Package</value></property></properties></element>
+<element identifier="rg1" xsi:type="Grouping"><name>[RequirementGroup] Functional Requirements</name><properties><property propertyDefinitionRef="spec"><value>RequirementGroup</value></property></properties></element>
+<element identifier="rg2" xsi:type="Grouping"><name>[RequirementGroup] Information Management</name><properties><property propertyDefinitionRef="spec"><value>RequirementGroup</value></property></properties></element>
+<element identifier="req1" xsi:type="Requirement"><name>[Requirement] Information Durability During Platform Failure</name></element>
+</elements>
+<relationships>
+<relationship identifier="rel1" source="pkg1" target="pkg2" xsi:type="Composition"/>
+<relationship identifier="rel2" source="rg1" target="rg2" xsi:type="Composition"/>
+<relationship identifier="rel3" source="rg2" target="req1" xsi:type="Composition"/>
+</relationships>
+<propertyDefinitions><propertyDefinition identifier="spec" type="string"><name>Specialization</name></propertyDefinition></propertyDefinitions></model>'''
+        p = Path(self.temp.name) / 'pkg_test.xml'
+        p.write_text(xml_text)
+        model = exchange.Exchange(p)
+        res = containment.resolve(model.root)
+        self.assertEqual(res.ancestry('pkg2'), ['pkg1', 'pkg2'])
+        self.assertEqual(res.ancestry('rg2'), ['rg1', 'rg2'])
+        self.assertEqual(res.ancestry('req1'), ['rg1', 'rg2', 'req1'])
 
     def test_authority_succession_is_explicit_and_archive_presence_is_unnecessary(self):
         root = Path(self.temp.name)

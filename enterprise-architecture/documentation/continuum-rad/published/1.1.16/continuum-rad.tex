@@ -1,0 +1,204 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% !TeX program = xelatex
+% Compile this master directly; latexmk -pdf also runs makeindex and reruns.
+\documentclass[10pt,a4paper,oneside,headings=small]{scrreprt}
+\usepackage[margin=22mm,headheight=15pt]{geometry}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{DejaVuSans}
+  \usepackage[scaled=0.87]{DejaVuSansMono}
+  \usepackage{textcomp,amssymb,accsupp}
+  % Preserve the source's Unicode symbols with conventional pdfLaTeX fonts.
+  \DeclareTextCommandDefault{\textleftrightarrow}{\ensuremath{\leftrightarrow}}
+  \DeclareTextCommandDefault{\textneq}{\BeginAccSupp{method=hex,unicode,ActualText=2260}\ensuremath{\neq}\EndAccSupp{}}
+  \DeclareTextCommandDefault{\textDOWNarrow}{\ensuremath{\blacktriangledown}}
+  \DeclareUnicodeCharacter{2192}{\textrightarrow}
+  \DeclareUnicodeCharacter{2193}{\textdownarrow}
+  \DeclareUnicodeCharacter{2194}{\textleftrightarrow}
+  \DeclareUnicodeCharacter{2260}{\textneq}
+  \DeclareUnicodeCharacter{25BC}{\textDOWNarrow}
+\else
+\usepackage{fontspec}
+\setmainfont{DejaVu Sans}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}[Scale=0.87]
+\fi
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[table]{xcolor}
+\definecolor{Ink}{HTML}{19384C}
+\definecolor{TableHead}{HTML}{E6EDF2}
+\definecolor{Link}{HTML}{155B83}
+\usepackage{array,longtable,tabularx,seqsplit,needspace,enumitem,fvextra}
+\ifPDFTeX
+  % seqsplit's byte scanner splits UTF-8 characters under pdfTeX. Map complete
+  % text characters instead, preserving Unicode in editable code/identifier text.
+  \newcommand{\HarmoniaSequenceHasUnicode}[1]{\pdfmatch{[^ -\string~]}{\detokenize{#1}}}
+  \ExplSyntaxOn
+  \cs_new_eq:NN \__harmonia_ascii_seqsplit:n \seqsplit
+  \bool_new:N \l__harmonia_split_started_bool
+  \RenewDocumentCommand{\seqsplit}{m}{
+    \int_compare:nNnTF {\HarmoniaSequenceHasUnicode{#1}} = {0}
+    {\__harmonia_ascii_seqsplit:n {#1}}
+    {
+    \group_begin:
+    \bool_set_false:N \l__harmonia_split_started_bool
+    \text_map_inline:nn {#1}{
+      \bool_if:NT \l__harmonia_split_started_bool {\seqinsert}
+      ##1
+      \bool_set_true:N \l__harmonia_split_started_bool
+    }
+    \group_end:
+    }
+  }
+  \ExplSyntaxOff
+\fi
+\usepackage{makeidx}
+\makeindex
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ihead{Harmonia Architecture Continuum RAD}
+\ohead{RAD 1.1.16}
+\ifoot{Architecture Continuum · RAD 1.1.16}
+\ofoot{\pagemark}
+\usepackage[unicode,colorlinks,linkcolor=Link,urlcolor=Link,hyperindex=true,
+  pdftitle={Harmonia Architecture Continuum RAD 1.1.16},
+  pdfauthor={Harmonia},bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em plus 0.15em minus 0.1em}
+\setlength{\tabcolsep}{4pt}
+\setlength{\LTpre}{0.35em}
+\setlength{\LTpost}{0.5em}
+\renewcommand{\arraystretch}{1.15}
+\newlength{\TableWidth}
+\setlist{nosep,leftmargin=1.4em,topsep=0.3em}
+\setlistdepth{8}
+\renewlist{itemize}{itemize}{8}
+\renewlist{enumerate}{enumerate}{8}
+\setlist[itemize]{label=\textbullet}
+\setlist[enumerate]{label=\arabic*.}
+% Canonical navigation coordinates are explicit at every depth. LaTeX never
+% supplies a competing number scheme. The outline includes every entry; the
+% printed contents select chapters/sections for a readable document spine.
+\setcounter{tocdepth}{2}
+\hypersetup{bookmarksdepth=7}
+\bookmarksetup{open,openlevel=0}
+\RedeclareSectionCommands[runin=false,beforeskip=1.4ex,afterskip=.6ex]{paragraph,subparagraph}
+\setcounter{secnumdepth}{-2}
+\newcommand{\cataloguefield}[2]{%
+  \begingroup
+  \renewcommand{\addcontentsline}[3]{}%
+  \csname #1\endcsname{#2}%
+  \endgroup
+}
+\DeclareTOCStyleEntries[pagenumberwidth=4em,dynnumwidth]{tocline}{chapter,section,subsection,subsubsection,paragraph,subparagraph}
+\DeclareTOCStyleEntries[dynindent]{tocline}{section,subsection,subsubsection,paragraph,subparagraph}
+\DeclareTOCStyleEntry[numwidth=2.6em]{tocline}{chapter}
+\DeclareTOCStyleEntry[numwidth=3.5em]{tocline}{section}
+\DeclareTOCStyleEntry[numwidth=4.5em]{tocline}{subsection}
+\DeclareTOCStyleEntry[numwidth=5.5em]{tocline}{subsubsection}
+\DeclareTOCStyleEntry[numwidth=6.5em]{tocline}{paragraph}
+\DeclareTOCStyleEntry[numwidth=7.5em]{tocline}{subparagraph}
+\DeclareTOCStyleEntry[pagenumberwidth=4em]{tocline}{part}
+% Preserve the deepest existing model folders and element-reference levels.
+% These are typesetting levels, not a publication taxonomy.
+\DeclareNewSectionCommand[style=section,level=6,indent=0pt,
+  beforeskip=1.4ex,afterskip=.6ex,font=\normalsize\bfseries,
+  counterwithin=subparagraph,tocstyle=tocline,tocindent=8em,tocnumwidth=9em]{subsubparagraph}
+\DeclareNewSectionCommand[style=section,level=7,indent=0pt,
+  beforeskip=1.4ex,afterskip=.6ex,font=\normalsize\bfseries,
+  counterwithin=subsubparagraph,tocstyle=tocline,tocindent=9em,tocnumwidth=10em]{subsubsubparagraph}
+\addtokomafont{disposition}{\color{Ink}}
+\tolerance=2000
+\emergencystretch=5em
+\raggedbottom
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{xurl}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\vspace*{24mm}
+{\Huge\bfseries\color{Ink} Harmonia\par}
+\vspace{8mm}
+{\LARGE Enterprise Architecture\par Architecture Continuum RAD\par}
+\vspace{12mm}
+{\Large Release 1.1.16\par Previous release 1.1.15\par}
+\vfill
+Narrative publication of the canonical Architecture Continuum\par
+\vspace{8mm}
+The Continuum supplies architectural authority. This document selects, organises
+and explains its existing content; publication confers no additional acceptance.
+Individual standing and unresolved matters remain as recorded in each source.
+\end{titlepage}
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\tableofcontents
+\chapter*{Reading the Architecture Continuum}
+\addcontentsline{toc}{chapter}{Reading the Architecture Continuum}
+Architecture Governance introduces the existing authority, review, evidence and
+repository arrangements. Parts I--VI then follow Motivation, Strategy, Business,
+Application, Technology, and Implementation \& Migration. Chapters and nested
+subjects follow the canonical Continuum taxonomy. Unpopulated domains explicitly
+record absence; no missing architecture is supplied for publication.
+
+Each architectural node carries its Continuum navigation coordinate: G for
+Governance and I--VI for architectural Parts; R denotes cross-cutting reference
+navigation outside architectural decomposition. Coordinates continue through every
+published descendant. They are locations that can change when architecture moves.
+Canonical IDs remain immutable identities, and names retain their architectural
+meaning. Native ArchiMate relationships preserve semantic assertions; navigation
+nesting asserts no additional containment or ownership.
+
+Strategy preserves the governed Enterprise, Business and Business Enabling
+capability decompositions. Governed predecessor identities appear in the historical
+reference index and link to their successors; they are not peer current subjects.
+Business behaviour repeats the complete recorded ancestry needed to contextualise
+represented behaviour. Each contextual occurrence identifies its canonical Strategy
+Capability, Strategy coordinate and immutable ID. This is contextual navigation,
+not another Capability instance or a semantic relationship. Application separates logical Topics
+from scoped information structures and organises software by its existing
+application responsibilities. A native DataObject is never promoted to a Topic
+or Class for publication convenience. Stakeholders appear contextually against
+Motivation material only through existing canonical associations. All Stakeholders
+remain discoverable in R's Stakeholder Index; index placement asserts no association
+and creates no Motivation decomposition subject.
+
+The Architecture Continuum was accepted as the canonical baseline in RAD-1.1.7.
+Each element and assertion retains its independent standing. Currentness supplies
+no acceptance. Candidate, Proposed, historical and superseded material remains
+qualified within its architectural context. Unclassified branches preserve genuine
+classification gaps without manufacturing decisions. Historical definitions and
+full source contributions remain available in the linked canonical records.
+
+Use the full PDF outline for navigation down to every entry, and the Architectural
+Name Index for names and their coordinates. Each narrative entry links to canonical
+Markdown. Source-cited reading notes and selected existing relationship diagrams
+explain represented architecture; their layout adds no semantic assertions.
+The \href{structure.json}{publication correspondence} records each source, its
+coordinate and preserved qualifications. The
+\href{../../../continuum-manifest/published/1.1.16/continuum.html}{Continuum Manifest browser}
+exposes the same numbered hierarchy and the complete qualified catalogue.
+The \href{../../../../governance/architectural-axioms.md}{Architectural Axioms}
+remain solely defined by their linked canonical Continuum Principles.
+This document is a derived publication and supplies no independent authority.
+Neither generation nor successful checks establish architectural acceptance.
+
+\clearpage
+\pagenumbering{arabic}
+\input{parts/architecture-governance.tex}
+\input{parts/motivation.tex}
+\input{parts/strategy.tex}
+\input{parts/business.tex}
+\input{parts/application.tex}
+\input{parts/technology.tex}
+\input{parts/implementation-and-migration.tex}
+\input{parts/cross-cutting-references.tex}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Architectural Name Index}
+\renewcommand{\indexname}{Architectural Name Index}
+\printindex
+\end{document}

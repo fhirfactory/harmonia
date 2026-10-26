@@ -202,7 +202,9 @@ The Solution Architect establishes these independent abstraction levels:
 | Abstraction | Native ArchiMate type and authored classification | Display convention | Canonical component qualifier |
 | --- | --- | --- | --- |
 | Business / Conceptual | `BusinessObject` | `[BusinessObject] ElementName` | `BO` |
-| Application / Logical | `DataObject` with one explicit `Specialization=Topic` (Exchange key `Specialization` or `specialization`) | `[Topic] ElementName` | `TOPIC` |
+| Application / Logical | `DataObject` with explicit `Specialization=Topic` (Exchange key `Specialization` or `specialization`) | `[Topic] ElementName` | `TOPIC` |
+| Application / Logical | `DataObject` with explicit `Specialization=Class` | `[Class] ElementName` | `CLASS` |
+| Logical Packaging | `Grouping` with explicit `Specialization=Package` | `[Package] ElementName` | `PKG` |
 | Technology / Physical | `Artifact` | `[Artifact] ElementName` | `ARTIFACT` |
 
 `[BusinessObject]` and `[Artifact]` repeat native types and establish no additional
@@ -226,11 +228,16 @@ Only explicit native Composition parent → child supplies contextual ancestry.
 Apply each ancestor's qualifier to its own canonicalName component; friendlyName
 uses the same components without qualifiers. For example, `[Topic] Pragma` →
 Composition → `[Topic] Payload` yields `Pragma.Payload` and
-`TOPIC-Pragma.TOPIC-Payload`. No ancestor gives a local candidate, explicitly
+`TOPIC-Pragma.TOPIC-Payload`. Package Groupings (`Specialization=Package`) supply
+naming ancestry via Composition to child Packages and logical Classes:
+`model` → `core` → `information` → `InformationUnit` yields
+`model.core.information.InformationUnit` and
+`PKG-Model.PKG-Core.PKG-Information.CLASS-InformationUnit`.
+No ancestor gives a local candidate, explicitly
 without asserting root completeness. Competing parents, duplicate assertions,
 cycles, missing endpoints or unestablished ancestor naming inputs stop dependent
 contextual properties; independent determinate properties may still be proposed.
-Aggregation, Specialization, Realization, Association, Grouping, folders and Views
+Aggregation, Specialization, Realization, Association, unspecialised Grouping, folders and Views
 supply no naming ancestry.
 
 No BusinessObject, Topic or Artifact requires counterparts at the other levels.

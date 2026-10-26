@@ -205,7 +205,7 @@
                   "title": "Stakeholder references",
                   "kind": "reference-section",
                   "associatedCanonicalId": "782f53e2190f4a8a8d0dc0a33cd6fbb3",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "description": "Context from existing canonical Association relationships only; these references do not allocate Stakeholders.",
                   "children": [
                     {
@@ -215,7 +215,7 @@
                       "relationshipIds": [
                         "id-78a34270ced656e7901d367bfd405999"
                       ],
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
                     }
                   ]
                 }
@@ -230,7 +230,7 @@
                   "title": "Stakeholder references",
                   "kind": "reference-section",
                   "associatedCanonicalId": "499313a0a5d84520a3061120ae9b6dac",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "description": "Context from existing canonical Association relationships only; these references do not allocate Stakeholders.",
                   "children": [
                     {
@@ -240,7 +240,7 @@
                       "relationshipIds": [
                         "id-daee593684c55e55bf1ce04c223cf585"
                       ],
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
                     }
                   ]
                 }
@@ -255,7 +255,7 @@
                   "title": "Stakeholder references",
                   "kind": "reference-section",
                   "associatedCanonicalId": "babb9f5d63d8435890c1db3579ec78d9",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "description": "Context from existing canonical Association relationships only; these references do not allocate Stakeholders.",
                   "children": [
                     {
@@ -265,7 +265,7 @@
                       "relationshipIds": [
                         "id-d5fa8c64975852f88132df579c806836"
                       ],
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
                     },
                     {
                       "contextCanonicalId": "6f5a203d81e24a81b384a80781987daa",
@@ -274,7 +274,7 @@
                       "relationshipIds": [
                         "id-457a3dd70bb358ff8989bc3c9c725c70"
                       ],
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
                     }
                   ]
                 }
@@ -1168,6 +1168,60 @@
               "kind": "element",
               "basis": "Existing canonical native classification",
               "classificationIssue": "Existing native Principle is not one of the canonical AX axioms. The target taxonomy has no agreed location for this broader or historical Principle; no axiom status is inferred."
+            }
+          ]
+        },
+        {
+          "title": "Requirement Groups",
+          "basis": "Authorised HCRL 1.1.15-001 DR-1",
+          "children": [
+            {
+              "canonicalId": "6acde68c43b14b6d8c7707779abdfd53",
+              "kind": "element",
+              "basis": "Authorised HCRL 1.1.15-001 DR-1",
+              "children": [
+                {
+                  "canonicalId": "c34c366824ff452eb575345c16db720b",
+                  "kind": "element",
+                  "basis": "Authorised HCRL 1.1.15-001 DR-1",
+                  "children": [
+                    {
+                      "canonicalId": "6a2a3de03beb47b884293797b92a91eb",
+                      "kind": "element",
+                      "basis": "Authorised HCRL 1.1.15-001 DR-1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "canonicalId": "f4a3060eba464f4ab89b50aec4628e5b",
+              "kind": "element",
+              "basis": "Authorised HCRL 1.1.15-001 DR-1",
+              "children": [
+                {
+                  "canonicalId": "dc3f2a927e284da88734df4f7e0f9311",
+                  "kind": "element",
+                  "basis": "Authorised HCRL 1.1.15-001 DR-1"
+                },
+                {
+                  "canonicalId": "cb090e968a25409fb8ceb0fcc9a11ee7",
+                  "kind": "element",
+                  "basis": "Authorised HCRL 1.1.15-001 DR-1"
+                },
+                {
+                  "canonicalId": "abf16578801a466b8f08d80ae292e644",
+                  "kind": "element",
+                  "basis": "Authorised HCRL 1.1.15-001 DR-1",
+                  "children": [
+                    {
+                      "canonicalId": "1862d183cf7d45c4972e6aa3411d1193",
+                      "kind": "element",
+                      "basis": "Authorised HCRL 1.1.15-001 DR-1"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -5184,19 +5238,19 @@
               "contextCanonicalId": "28df27d55c514a37995145ab46945f78",
               "kind": "context",
               "contextRole": "capability",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
               "children": [
                 {
                   "contextCanonicalId": "cf06eec5699f406fa30a00d2f76e3098",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "8c8c6266d9ed43e09dbe44fcdd669132",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -5236,7 +5290,7 @@
                       "contextCanonicalId": "8526d971b07f40de84ef05b0d192089c",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -5315,13 +5369,13 @@
                   "contextCanonicalId": "8752b7a937754b2faa296300c6a48911",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "3e9016eaebae4ed0b67a5cacba2652f5",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -5395,7 +5449,7 @@
                   "contextCanonicalId": "b38f2c2811724734b5887b6dbaaabbfc",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -5445,7 +5499,7 @@
                   "contextCanonicalId": "ce9e7e7b22054cefb707a650d5be7219",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -5506,13 +5560,13 @@
                   "contextCanonicalId": "3cc720ba2e8b4d7a94bb349391d61895",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "9ded2f3a28d24017bb921a0cdcf65a2b",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -5596,13 +5650,13 @@
                   "contextCanonicalId": "61d7067aee0540259b3daca4287d66d2",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "ee17b26b8c874cc3af50d07a787ce488",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -5697,13 +5751,13 @@
                   "contextCanonicalId": "c907e2a95629435b9951941ad4e2ebe9",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "d1821b4f6d5746f9a697dfe3b792a186",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -5787,7 +5841,7 @@
                   "contextCanonicalId": "c3c5abd7987f4433a46cbfed8167914c",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -5868,7 +5922,7 @@
                   "contextCanonicalId": "649dd7cc26094e539386a050086dfb91",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -5908,7 +5962,7 @@
                   "contextCanonicalId": "ae0de25600ee416aa24d2a167b64f230",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -5969,7 +6023,7 @@
                   "contextCanonicalId": "35fb3744c900470f9895056246a13fb1",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -6011,19 +6065,19 @@
               "contextCanonicalId": "b5a92874f8ac4509a30af5253590edc1",
               "kind": "context",
               "contextRole": "capability",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
               "children": [
                 {
                   "contextCanonicalId": "f0885472cced4bccbcce1568bf0360dc",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "7577a6e1815243648dd5356c21cca151",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -6063,7 +6117,7 @@
                       "contextCanonicalId": "d682c11d3eb04770b1f20be478fd475e",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -6103,7 +6157,7 @@
                       "contextCanonicalId": "df214b5499694b768eb4a7a175a9d471",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -6143,13 +6197,13 @@
                       "contextCanonicalId": "6c3de7750ef1436cad6a9533731782b6",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "contextCanonicalId": "3cae3c4810974c5f8ee5a4c942f38b07",
                           "kind": "context",
                           "contextRole": "capability",
-                          "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                          "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                           "children": [
                             {
                               "title": "Business Services",
@@ -6184,7 +6238,7 @@
                           "contextCanonicalId": "d72134e75001449a9e7ffae53f61458f",
                           "kind": "context",
                           "contextRole": "capability",
-                          "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                          "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                           "children": [
                             {
                               "title": "Business Services",
@@ -6265,13 +6319,13 @@
                   "contextCanonicalId": "31bcd6fda0d14cc8b992cdca39a3cbed",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "1a3732b5911c45b3aece38b2db2d0f15",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -6355,7 +6409,7 @@
                   "contextCanonicalId": "ba68a52913a0499d8377553bddfa74a4",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -6415,7 +6469,7 @@
                   "contextCanonicalId": "c410005667444f99a221483bf577fad2",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -6465,7 +6519,7 @@
                   "contextCanonicalId": "14fbdc5ce3dd4c2092c5397dab3ed743",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -6525,7 +6579,7 @@
                   "contextCanonicalId": "d6312f85968a4209bafff5ed009297a6",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -6618,13 +6672,13 @@
               "contextCanonicalId": "a790b5f2c5a1497fa6ec09d7824da32e",
               "kind": "context",
               "contextRole": "capability",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
               "children": [
                 {
                   "contextCanonicalId": "4f5b8cec90324c2989cdc30e80bc8cb9",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -6656,13 +6710,13 @@
               "contextCanonicalId": "b13ee2c5a4ef4fd6be8a44795696dfc2",
               "kind": "context",
               "contextRole": "capability",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
               "children": [
                 {
                   "contextCanonicalId": "f117ccec0bfa4f738e6ddb646b3534a2",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -6713,13 +6767,13 @@
                   "contextCanonicalId": "96f71cb8fa6844d7aa7e9f16759a3a62",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "0caecaba5d3e4781b8671b12c13ee283",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -6751,7 +6805,7 @@
                   "contextCanonicalId": "3dffe63e03124efab255204ee4e9a5d9",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -6802,7 +6856,7 @@
                   "contextCanonicalId": "0c27be11b4a44cb19e992309b8146a17",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -6843,7 +6897,7 @@
                   "contextCanonicalId": "0511a705d74a4f48a0ce92590ae764fa",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Functions",
@@ -6862,7 +6916,7 @@
                   "contextCanonicalId": "ec5e8d6732764aa489c2dd7630fc8fef",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -6903,13 +6957,13 @@
                   "contextCanonicalId": "24a4b5815faa4d369bc756a6e97d3e9e",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "7125e459a48946d0ba075b5ecc3571b4",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -6973,7 +7027,7 @@
                   "contextCanonicalId": "79a4a48fddf74c69acf7e16404d06ea5",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -7018,7 +7072,7 @@
                   "contextCanonicalId": "b16cef8f2bfd4b92948ec75cbcfa7b9a",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -7048,7 +7102,7 @@
                   "contextCanonicalId": "21399d52b9624ddfbeb786f1d72e40c3",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -7083,7 +7137,7 @@
                   "contextCanonicalId": "6041d7c0cc5d4519aaea584bb4e6d365",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -7124,7 +7178,7 @@
                   "contextCanonicalId": "d86105bf9c86445394088f65c895d37f",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -7154,7 +7208,7 @@
                   "contextCanonicalId": "4bf7a8260e1444fdac44e97c3557b533",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -7200,13 +7254,13 @@
                   "contextCanonicalId": "f996ecca728f4942a88b034aca818a99",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "c798e38e12e5428dbb8b3cabc977d430",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -7275,7 +7329,7 @@
                   "contextCanonicalId": "152a5252952c405994e9b171234efcb0",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -7326,13 +7380,13 @@
                   "contextCanonicalId": "d24a1f4c4f674c45a95c317998ff4186",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "3a7a4d2d0ce8446b8a6293284fb16b83",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -7366,19 +7420,19 @@
               "contextCanonicalId": "c9347f73b21242c5b8cce41252b74da0",
               "kind": "context",
               "contextRole": "capability",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
               "children": [
                 {
                   "contextCanonicalId": "ca96b2b2ff434854995711e403e95f6f",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "9f0c1429b64f4f88982fbbda6eaec233",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -7408,7 +7462,7 @@
                       "contextCanonicalId": "3a96040821c14fe38830411dab4f8453",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Functions",
@@ -7427,7 +7481,7 @@
                       "contextCanonicalId": "94c683c7588f475e973b58cb226345db",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -7532,19 +7586,19 @@
               "contextCanonicalId": "616682b612d244429e656b040e002d56",
               "kind": "context",
               "contextRole": "capability",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
               "children": [
                 {
                   "contextCanonicalId": "b81775d89d774cf8ba61731d13c67a54",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "1bfd71f24321428c8871b587d413f47e",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Functions",
@@ -7563,7 +7617,7 @@
                       "contextCanonicalId": "71c8a612b88f4ecba049e94d506bd0c2",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Functions",
@@ -7595,13 +7649,13 @@
                   "contextCanonicalId": "7fa5112efb724b90a17a03c7c19c516a",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "da1a983d4dcf4d5bb772b8f69bc08426",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -7671,13 +7725,13 @@
               "contextCanonicalId": "0062fcacae1740988b6be2bda2aa1674",
               "kind": "context",
               "contextRole": "capability",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
               "children": [
                 {
                   "contextCanonicalId": "7669036f7e6749219412fc64df5f7064",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -7717,7 +7771,7 @@
                   "contextCanonicalId": "e6429225463a44d39f82e490e254e5d4",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -7767,13 +7821,13 @@
                   "contextCanonicalId": "3811c758ff2140c39a801bf89f75098a",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "8c850faafb334f97a81a0b4cd8fdb65f",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Functions",
@@ -7794,13 +7848,13 @@
                   "contextCanonicalId": "bbd2bd21859f40e39963bdbe7a851686",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "682b8684ad9e49d5a5c348a148081607",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -7864,7 +7918,7 @@
                   "contextCanonicalId": "3bb740e6db284112b054905c0c6c80be",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -7894,7 +7948,7 @@
                   "contextCanonicalId": "cc253aea3c5f489da0502df74dde1669",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -7939,13 +7993,13 @@
                   "contextCanonicalId": "6a1030483dfc4ae6af6998b587129d1c",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "9794b2aff43443b495a19aefe0efa67b",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -7977,7 +8031,7 @@
                   "contextCanonicalId": "44cc0e17ad534675bf26dce6e46a68ff",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -8037,7 +8091,7 @@
                   "contextCanonicalId": "a61a15908ed544e6acf3e9cab63a0267",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -8097,13 +8151,13 @@
                   "contextCanonicalId": "b81a1ab42af24c2e9896b8f3f78d291a",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "44a7937520a54945b06b5fd4a2bbd870",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Functions",
@@ -8124,7 +8178,7 @@
                   "contextCanonicalId": "f39ed9ebcc724857a4bf7a2b8e045c7a",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -8194,13 +8248,13 @@
                   "contextCanonicalId": "e922cba7cf1d4ebeb9abf6472a3803ce",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "d903948169eb4785b0f03d916c842a8a",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -8232,13 +8286,13 @@
                   "contextCanonicalId": "5478878e0e6e4d34a8d5023ac6ac2d54",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "contextCanonicalId": "5edb2a8b5ee54ddda8104d1fab323a94",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -8273,7 +8327,7 @@
                       "contextCanonicalId": "f80e73ee91624ce5baa11ae15480fd35",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -8313,7 +8367,7 @@
                       "contextCanonicalId": "2d1addc7dd1d4821b71a11c692d35b27",
                       "kind": "context",
                       "contextRole": "capability",
-                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                       "children": [
                         {
                           "title": "Business Services",
@@ -8397,7 +8451,7 @@
                   "contextCanonicalId": "e9b6ba1917ba44cca7466444d0836c98",
                   "kind": "context",
                   "contextRole": "capability",
-                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+                  "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
                   "children": [
                     {
                       "title": "Business Services",
@@ -9246,6 +9300,38 @@
                   "basis": "Existing cross-application logical PractitionerCapacity concept; not retyped as a Topic or Class"
                 }
               ]
+            },
+            {
+              "title": "Logical Packages",
+              "basis": "Authorised HCRL 1.1.15-001 DR-1",
+              "children": [
+                {
+                  "canonicalId": "6bb218f2128e463482f505585e624889",
+                  "kind": "element",
+                  "basis": "Authorised HCRL 1.1.15-001 DR-1",
+                  "children": [
+                    {
+                      "canonicalId": "2d587cb7547e4e6a8c20aa64da0da78a",
+                      "kind": "element",
+                      "basis": "Authorised HCRL 1.1.15-001 DR-1",
+                      "children": [
+                        {
+                          "canonicalId": "13c028886fde4682812b45772e21522f",
+                          "kind": "element",
+                          "basis": "Authorised HCRL 1.1.15-001 DR-1",
+                          "children": [
+                            {
+                              "canonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+                              "kind": "element",
+                              "basis": "Authorised HCRL 1.1.15-001 DR-1"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -9823,1142 +9909,1142 @@
       "namespace": "R",
       "title": "Cross-Cutting References",
       "kind": "reference-section",
-      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
-      "description": "Navigation and discovery only, outside the architectural decomposition of Parts I–VI. Canonical relationships establish associations; index placement does not.",
+      "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
+      "description": "Navigation and discovery only, outside the architectural decomposition of Parts I\u2013VI. Canonical relationships establish associations; index placement does not.",
       "children": [
         {
           "title": "Stakeholder Index",
           "kind": "reference-section",
-          "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+          "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
           "description": "All canonical Stakeholders, including those without represented Motivation associations. This index is cross-cutting reference material, not a Motivation architectural subject.",
           "children": [
             {
               "canonicalId": "6f5a203d81e24a81b384a80781987daa",
               "kind": "index-entry",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "37264af5adb64b37b7537e3d48b6747b",
               "kind": "index-entry",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "55e57c01dfe146a2a225228b31196862",
               "kind": "index-entry",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "31a8e1054c02483a9d5e314a91a91364",
               "kind": "index-entry",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "1c8e2c898a28436693cf2ae69776e125",
               "kind": "index-entry",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "2018200a493d458096b72031cc2ae779",
               "kind": "index-entry",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "5f6d333e94634420b8a8bbf8b9cb6e2a",
               "kind": "index-entry",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "ea5a315450ce4cfb87417263560c2b6d",
               "kind": "index-entry",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "c20aa17ce4aa4a58be5eb3cff2ecdd1d",
               "kind": "index-entry",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e76216c494fa4500bb80eda6f83513c1",
               "kind": "index-entry",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             }
           ]
         },
         {
           "title": "Historical Capability Identities",
           "kind": "reference-section",
-          "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only",
+          "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only",
           "description": "Reserved historical identities with governed successor correspondence. These are architectural history and provenance, not additional current Capability subjects. Definitions, standing, relationships and authored Views remain preserved.",
           "children": [
             {
               "canonicalId": "0dec07b6ddbe48bda93a2295dd3e2d7d",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "7a51321b00464016920976b269981edd",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "f31902d474894670aeef3e0abbedccf0",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e5812fcdf3f5465b9b1d8ba536075c5f",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "4b17ec92f0af4c4b9556912dbdd0f29f",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "dc1bece79eb7452e951d03a2ee6dfaa6",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "690da55f1f5b4c44ba58cf67a717a564",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "0bd3311d89af45bb935fde20e719369c",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "20f719ab4b6741b393ef570b4d1b05df",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "650ccec030fa46cc8c9d6b508a841778",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "b967c383dbcd4c24abe6a83ea5e79e00",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "fef479f0fd5048b19b2aec770f0233fe",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "dbe10959237f405caeadef2a5748303a",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "b35d3521141c419fb676a79b2ede40bd",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "d71def9e76a544ff9761c672bb24f3be",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e05f6310f6d544efaca5568604f27dd8",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "4faef45b4ebe4fa69e57c3d81bfea05f",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "80affa7bcd284ecbbcbc5092f8497ddf",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "175174c5cce549d2b154a4f6704721dc",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "48f01ef8b0e6431c85cf4f40cf8f94c3",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a2dbd74847a44f4c879983229f5c9d08",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e003b9cd0730459a84775d2837d1d173",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a1c557bd263047d0b3ff566cf50b98c1",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a631a8600b8b49df9ef452c48c91349a",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "2cc31384c8864c73989025cbe96dcfa7",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "58376e5c53bf4af0a54f99f21ac52666",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "6a82dc1423374e809dbf542eeaa69482",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "360bf50f92484448a01cc57f2dbce23c",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "24f3dd30223142efa35a5826552d53ab",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "cf8ddfca7a8e4ed893ec39b795200d77",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e575c583783546ef85cf898523d18797",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "3215f0b0e1ce45e8ab16dae272ea6fe7",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "018ccd818ec142fba1ffb086d900acc6",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "958345ee65f446d3b1259b8895ab100f",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "8bfbcc0a455d423c90ae2f1cfb732ca8",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "d64569acaf2c44f3b2a5332f74fff7c7",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "574e61e230e643f78c58649adb4db313",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "31f49cdea9f44f188459503580c2b86e",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "905eb2de1ac341ac96331e3d7f76079b",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e1048f6c635d4e16b5384cc2cb45a71b",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "8bc15e2b8f114deebcbbe3f2013a8147",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "bcaacf446f45443eafd8e21a1fd74ee1",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "3717906f7f8840d3a8a3e3877543dd18",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "9111446aa2d045bd9acd98542b0eef1f",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "615f93d05fbb4a8481f07778bd4f4803",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "346f024f74b447a8b6056b9d521837ff",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "31e7c27556314cafb74d040441d2dac6",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "162deb7e292042f78f677a14476a3a1d",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a5003436a7f348b1bff60ba593adfa27",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "b01441b2f5584fc2b9c3988643a7c93b",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "3b65a3d007f54aa9b875e655475e1786",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "b1161fe1a315420fbc7d048a1ea58126",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "689bb3f8a24249b79f787e1f48eb268d",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e31407cea7624632a8ed2dc53b09d726",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "232b3fb2ff204c9b9ff7a60ff6a7a32d",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "44433108cc8f4f5f9d7581f9e5b29eb5",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "bd4d6f4a7f03402ba7857383c7be7a4c",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "5b1636373a8d4e788b3ddbc1659a47ef",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "be3f2e695eda403fbce8118daf83d386",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "2b1a27d5d9944e05b4cf0fcaad4ca433",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "2778f988e8d44e3091749542c39d38a4",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "58beafcbcd084331be710eb00d27f6cf",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "5a38bf2527a8404bac714121f2dc76a9",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "2ad29cebc1e94053a300d869e7797232",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "ebb735a2915744819d4001d9b8425cc6",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "466a4057001846bb8ae0481453d3e410",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "7180f6265d5c4687a001220c6126e301",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "5b0ccf4b30054145952c298b348ed266",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "cdc16dd0f84049f8af3f1ec76f1e1428",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "1a6630940ffb44fcad4543b93a367b67",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "b611a1fcfadb4b30af9ba74a4c993d8a",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "7b591957f7424424abc80f699e9f1960",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "6cd45c27d0c344b9807174dbd812d572",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e996b61b6e7b4619913f427aed2b55b1",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "1c3b553c87704e27ba211fbbd02d95cb",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "4b7177f3f40449518fba381acae6ba1e",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "03a57e0c9ea34f7fb7b78e5f5c85379f",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e5edbb54258c490aaba0816d980dc624",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "bcc40a14465e48aca42c9505a6853081",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "db064e0cd4794479be1374e97a3d7e63",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "75f8b32a3d5048ccbdfb30d61ae73dad",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "97f0d1acc37b4ca994c6c1ca006f2daa",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "fe9d58b5cfe14e8cb7a83a1ac6686d65",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "28ec21d5918a49aaac12740c69f42d77",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "75e2b447659c4fdf94107d94758337ed",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "8bc2a106165a4702b5f72fe46a206b69",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "54032b52ee444bfe8b611fb9e8e2ba10",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "984ee17123eb4f92b3e55e55d24459b8",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "d2e6078b5db041cb904e0cadcebce6eb",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "2c799ec0c4c74c97a75c12e949887b95",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "d653c3247ddd49479f985f6b435933a0",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "7550fd5b17e643118fa76d2616e1ba20",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "70d2a44a0442441f8b306b82b297bb8a",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e8c72952da144d6883caba7fd2afb88d",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "9225f083d3474715a75af2a827a4016d",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a398c72bef094dee96c96d97994449fb",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a0af0a86667d48f4ab95ed2920e878cb",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "3792be10541e4d68b3f740b1ba964966",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "5c691959e2cc4a289fc25b9f3497eed9",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "9216f9cc905e4526b1d98cd4ab382cbf",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "f1b888e8d50c4019ac1afe162d6223f3",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "4952f86078c54a8d898ac992e6f4f577",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "7780ca2fed2346439d5f559d00cc4ee4",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "f1ab1258cf2944efb50105e7885f8027",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a3464bd9c0dc4a01b50803acc7705b4e",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "8a04d1f16d0849e786d2aaec33e0ba87",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "d412aff3a5c64e6aaba910d4c2c9356d",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e485424b799c42aca7399d341ca02d0b",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "1b0eacfbb27d4631a24f9279dab6681d",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "2415ddcbc73c47e1a63be310bd4342ee",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "6b777f1201db474eb22dd89f2b1f68c6",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "29076cbb9fc5442fb25faf43947574f7",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a352fd50419d451887c85fcb98566cd5",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e4d959d6c71d498c9ce00d2be4c048e3",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "ced472b2d1a54016878ee541de969d9b",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "11203b9c80964a9b96883eeab07f41d5",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "19263e0802cc4b88af7a345f1410cffd",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "50c56bac0dc540a2b392fc2376efc129",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "dd2e2ee1a68845c087ba93610752181b",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a50662edda954bc58c44184d84591d5b",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "c94d29b7d1c045dabc7814ceea795484",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "5298c6170cef4f05a6d956da716071bd",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "0856d2daf2ba4b92b5390b38b98efb54",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "8a4b918e1c9d47bb99daf2b42008ab39",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "3b000d3712534d16a48470f79df8e33a",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "129119d7b2744ffd805c58f25557fa27",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "90a782ff2d004fa984ae0465528b2253",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "cee76a930a4e4e7d9c49357ba290c8bf",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "ab0415e2ea0a4da4ad3dc46997d48bc3",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "5fea7aaac4384245b1f08a3d8a076bd9",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "2054d57bb33a4361b3ef0824545a1784",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "b6527516a69c499d8cc9c8fe881169fe",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "759a2e52172345e8ad1bc96d7e5ddad3",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "50c838981f3946d78e8f78d18e31c70c",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "df8bff7df9c1469da16cac6a5eb2bf76",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "24c015676c254e2e82e8e4287c295179",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "0115ed50867d468a95c0fafa1c5d79e2",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "bab3d0ab6eb748978b962ea20fb31640",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "68344272ca6049648a3ddae20c150f37",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "c57c0721ab0040ccb24e88e5e92e8cf8",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "15b6d2518e60444098b7c546ca31c49b",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "8963b571e9cc40e49c5d738e31d2f97e",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "5aafd1f4bff046b2b532c20dfb191473",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "32118856636f400a95fc28daacea61c8",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a03075a46f75497f8c6ba95d9c9e27c4",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "c8e6e66e8718493c9093f37d129f9ff2",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e6c59c7b72fe44169a5fdfd08a5e91c4",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "3db41bc06ade4f9088eec7b8aedd7448",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "b5a76d4877424b2ea9b01fb5fa22772c",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e9c1a897884f4d758f5654b824364030",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "b57081e650f74ad488549fdaa5305bcb",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "ac205f374c9d41c3b6d18a6b7c356152",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "8a63b08f34fa42c5bda2a3e12b9ecd55",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e7813a06b9df462fa135c299261f192e",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "9ac72fea821c45e2b18632ae9a9867dd",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "8a9dcc3b5f0143458ec71bc188a56020",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "bf3d2e3581f24beda20a6a3a3348460e",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "b42afda9e876463ba56fa8f73fe7a32a",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "f8c13b6f74b840cc96fbeada5865455a",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a98424298dac46d8b2ddd109d928270a",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "be34b54314c6444f8418d645f6c83b6d",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "b345cb12b45746409302899514126170",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "6dab08ab1e3249d7b314843ca9ed0149",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e1b8db7c95fa4e7ea296351a03532e24",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "8006ee0dd95f4d7fb1f408fa09b6ce19",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "88bf57b7a92c4c1da1b5f0a67d3ebd82",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "c0f6e5f7f5a94d1580fa6e0e8b82c93a",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "8b42aac6083441caa78b59f5e62eebd9",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "750ef0d8e1504a8e9a1fde9bf13a6d0c",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "c5adc1955b6046d8b920b0176cebc9de",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "d81e0d6d76014066a682e3d9e03e5f8a",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "eb370c01fbdb4d22956d97e9ecd74b57",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "15d972931ed6447797c30a5ddb71737e",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "5b8478b08c3f42c0a3480edb8f0b9ea7",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "99e9d9763ec94140b7d7642f4b5966f6",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "4f58c82aca7a4b54aeb6e2920ce5c12a",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "90b838d703dd472b8b6d74961f3a748c",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "5019ae9f2cdc45a1b2de97bc0f5a313d",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "b132224cfa6f435f8f2a66a3878d6df6",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "35c5be472bf2433fbbde9646d87aefb3",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "60f427e6b5764757b909624085a2af89",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "0914f2bb267449e282e9ae0f7407d9fe",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "bcefb378424842fcb6d703208c3f8773",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "07cf507f183d4905a7ad2adbb8555df5",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "589f192797454d9e8960fb63774e5e9c",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "5ad91d045474435a96b560e66ff7de05",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a3196aef21d443519de874c24f64a185",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "697de08ac49a4b7f8df7a1ed6f04210e",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a99b4119339545a89dc54ebb216ddb85",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "a32c8bff0c284f5c9d6ab1f46991c232",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "330d1c43856a4322a2e9f331b1a5ed20",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "166a22463d2c4534bda7ae31273398b6",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "ae44a4ee78414d1098814315793bd751",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "cee085c690314802851de71f4741d8db",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "61258c7fe41f4541871a67ec9d7185cf",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "1cb497aec93c4b82ba7f5b622813e54e",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "5d9b7f8d2d7b41759b6d4931c1d2aaa2",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "acb977e879204f1491293e5452e0ddf0",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "dbc37445ad944a85a7c4f26f410967b2",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "f5eccd4f65df49bba98104e5abfa5e19",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "7ae95677a00346f18a0ba01522a20153",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "fd9f3239fdb64ea687825b66bb4d1f17",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "0bdd7f8c0cd74d9fabc49801af037fc2",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "9d0925bb39664a5985cacf3cea7442d1",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "bd91d848cf424c42bec7c80cd32edd28",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "2e4de521bda24ad7b0ea64ae535b7f84",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "e349d5f6a8774bbe8d150f9c51af770c",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "c89e7c8b277247d9965fdb534aad2d1f",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "243ea93e7b7448fe97dc74f90bfc8946",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "32be309d65594592bac4d7b068def0d2",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "95985d244a234571892a9e9b4024f594",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "b4d14abf930a4230a7f5b93e9ce3df91",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "4422d865978c4353ad575759c6026d27",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             },
             {
               "canonicalId": "eeabb9c3c526404cbe4302906560fa7e",
               "kind": "historical",
-              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1–3; navigation only"
+              "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
             }
           ]
         }

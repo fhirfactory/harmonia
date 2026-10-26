@@ -4,7 +4,8 @@ import re
 import exchange_xml as g
 
 FORMAL = {'feature': 'FEAT', 'function': 'FN', 'service': 'SV', 'process': 'PR',
-          'product': 'PRODUCT', 'BusinessObject': 'BO', 'Artifact': 'ARTIFACT'}
+          'product': 'PRODUCT', 'BusinessObject': 'BO', 'Artifact': 'ARTIFACT',
+          'Package': 'PKG', 'Class': 'CLASS'}
 
 def component(label):
     """PascalCase lexical spelling; punctuation separates words, '&' spells And.
@@ -26,9 +27,16 @@ def component(label):
 def formal_qualifier(record):
     """The governed naming vocabulary, independently of identity or ancestry."""
     if record['type'] == 'DataObject':
+        if record.get('specialization') == 'Class':
+            return 'CLASS'
         g.require(record.get('information_map') is True or record.get('specialization') == 'Topic',
                   'TOPIC requires established InformationMap capture or explicit Topic specialization')
         return 'TOPIC'
+    if record['type'] == 'Grouping':
+        if record.get('specialization') == 'Package':
+            return 'PKG'
+    if record['type'] in ('Package', 'Class'):
+        return FORMAL[record['type']]
     if record['type'] in FORMAL:
         return FORMAL[record['type']]
     tier = record.get('tier')
@@ -39,15 +47,23 @@ def formal_qualifier(record):
 
 def qualified_names(path):
     """Apply the same lexical and qualification rules to each governed component."""
-    labels = []
+    friendly_labels = []
+    canonical_labels = []
     for resource in path:
         if 'nameComponent' in resource:
             value = resource['nameComponent']
             g.require(isinstance(value, str) and re.fullmatch(r'[A-Z][A-Za-z0-9]*', value)
                       and resource.get('nameComponentAuthority'), 'Unqualified/unproven name component decision')
+            canonical_val = value
+            friendly_val = value
         else:
-            value = component(resource['name'])
-        labels.append(value)
-    return dict(friendlyName='.'.join(labels),
-                canonicalName='.'.join(formal_qualifier(e) + '-' + label for e, label in zip(path, labels)))
+            canonical_val = component(resource['name'])
+            if resource.get('specialization') == 'Package' or resource.get('type') == 'Package':
+                friendly_val = resource['name']
+            else:
+                friendly_val = canonical_val
+        friendly_labels.append(friendly_val)
+        canonical_labels.append(canonical_val)
+    return dict(friendlyName='.'.join(friendly_labels),
+                canonicalName='.'.join(formal_qualifier(e) + '-' + label for e, label in zip(path, canonical_labels)))
 

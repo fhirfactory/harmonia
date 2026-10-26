@@ -14,8 +14,33 @@ def native_type(node):
 
 
 
-def mechanism(node):
-    return 'Composition' if native_type(node) in COMPOSITION_TYPES else 'Home'
+def node_specialization(node, keys=None):
+    if node is None:
+        return None
+    for prop in node.findall('a:properties/a:property', g.N):
+        ref = prop.get('propertyDefinitionRef')
+        name = keys.get(ref) if keys else ref
+        if name in ('Specialization', 'specialization') or ref in ('Specialization', 'specialization'):
+            for v in prop.findall('a:value', g.N):
+                if v.text:
+                    return v.text.strip()
+    return None
+
+
+
+def mechanism(node, parent_node=None, keys=None):
+    nt = native_type(node)
+    if nt in COMPOSITION_TYPES:
+        return 'Composition'
+    if nt == 'Grouping':
+        spec = node_specialization(node, keys)
+        if spec in ('Package', 'RequirementGroup'):
+            return 'Composition'
+    if nt == 'Requirement':
+        parent_spec = node_specialization(parent_node, keys)
+        if parent_node is not None and native_type(parent_node) == 'Grouping' and parent_spec == 'RequirementGroup':
+            return 'Composition'
+    return 'Home'
 
 
 
@@ -94,7 +119,7 @@ class ResolvedContainment(Ancestry):
                 child, parent, kind = edge.get('source'), edge.get('target'), 'Home'
             else:
                 continue
-            if child in elements and mechanism(elements[child]) != kind:
+            if child in elements and mechanism(elements[child], parent_node=elements.get(parent), keys=model.keys) != kind:
                 self.ignored.append(identifier)
                 continue
             link = dict(identifier=identifier, parent=parent, child=child, mechanism=kind,

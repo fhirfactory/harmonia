@@ -2,19 +2,19 @@
 
 | ID | Brief Description | Disposition | Outcome |
 | --- | --- | --- | --- |
-| [CR-001](#cr-001--add-class-packages-model-core-and-information) | Add Class Packages model, core, and information | On-Hold | Unresolved |
-| [CR-002](#cr-002--add-logical-model-class-informationunit) | Add Logical Model Class InformationUnit | On-Hold | Unresolved |
-| [CR-003](#cr-003--add-non-functional-requirement-groups) | Add Non-Functional Requirement Groups | On-Hold | Unresolved |
-| [CR-004](#cr-004--add-functional-requirement-groups) | Add Functional Requirement Groups | On-Hold | Unresolved |
-| [CR-005](#cr-005--add-requirement-information-durability-during-platform-failure) | Add Requirement Information Durability During Platform Failure | On-Hold | Unresolved |
-| [CR-006](#cr-006--add-seven-architectural-overview-views) | Add Seven Architectural Overview Views | On-Hold | Unresolved |
-| [CR-007](#cr-007--relocate-17-preexisting-view-folder-navigation-paths) | Relocate 17 Preexisting View Folder Navigation Paths | On-Hold | Unresolved |
-| [CR-008](#cr-008--adjudicate-organization-identifier-loss-and-relational-flat-folder-nav) | Adjudicate Organization Identifier Loss and Relational Flat-Folder Nav | On-Hold | Unresolved |
-| [CR-009](#cr-009--adjudicate-value-language-representation-xml-lang-and-normalisations) | Adjudicate Value Language Representation (xml:lang) and Normalisations | On-Hold | Unresolved |
+| [CR-001](#cr-001--add-class-packages-model-core-and-information) | Add Class Packages model, core, and information | Accept with amendment | Accept the model → core → information Package hierarchy and its Composition relationships. Rename the Harmonia Grouping specialisation ClassPackage to Package. Apply Package consistently to model, core, and information, including correcting the missing specialisation on core. Update the applicable representation, naming and containment rules so that Package is a recognised Grouping specialisation, Package-to-Package Composition expresses containment, and Package ancestry contributes to the qualified architectural name. |
+| [CR-002](#cr-002--add-logical-model-class-informationunit) | Add Logical Model Class InformationUnit | Accept | Including recognition of Class as the Harmonia DataObject specialisation and the Package-derived qualified name. Foundational Topics from draft DRP are deferred. |
+| [CR-003](#cr-003--add-non-functional-requirement-groups) | Add Non-Functional Requirement Groups | Accept | With the candidate hierarchy retained and RequirementGroup recognised as the Harmonia Grouping specialisation. Composition provides RequirementGroup → RequirementGroup containment. |
+| [CR-004](#cr-004--add-functional-requirement-groups) | Add Functional Requirement Groups | Accept / Resolved | Accept the candidate Functional Requirement Group hierarchy: Functional Requirements → Information Management. Both specialise Grouping as RequirementGroup. Composition expresses RequirementGroup containment, consistent with CR-003. |
+| [CR-005](#cr-005--add-requirement-information-durability-during-platform-failure) | Add Requirement Information Durability During Platform Failure | Accept / Resolved | Accept Information Durability During Platform Failure as an intentionally incomplete Requirement (placeholder/thinking point). Absence of documentation/properties is accepted and does not prevent incorporation. Contained via Composition under [RequirementGroup] Information Management. No Realisation edge from InformationUnit; zero DRP inference. |
+| [CR-006](#cr-006--add-seven-architectural-overview-views) | Add Seven Architectural Overview Views | Accept | Preserve all seven Views exactly as architect-authored, including the empty View and the absence of visual relationship connections. No inferred connections, no automatic population, and no requirement to “complete” the empty View. |
+| [CR-007](#cr-007--relocate-17-preexisting-view-folder-navigation-paths) | Relocate 17 Preexisting View Folder Navigation Paths | Accept / Resolved | Accept all 17 detected relocations of preexisting Views as intentional architect-authored navigation changes. Preserve the candidate View locations rather than restoring their baseline locations. |
+| [CR-008](#cr-008--adjudicate-organization-identifier-loss-and-relational-flat-folder-nav) | Adjudicate Organization Identifier Loss and Relational Flat-Folder Nav | Accept / Resolved by governing decision. | The observed non-View organization identifier loss and relationship-folder differences are derived projection/serialization effects, not architectural changes. Non-View navigation is regenerated from governed Continuum containment. No candidate navigation structure is incorporated as independent architectural state. |
+| [CR-009](#cr-009--adjudicate-value-language-representation-xml-lang-and-normalisations) | Adjudicate Value Language Representation (xml:lang) and Normalisations | Accept / Resolved by governing decision. | The demonstrated xml:lang="en" additions, semantically equivalent property-definition rebindings, and ordering normalisations are representation/transport effects and do not constitute architectural change. The accepted round-trip machinery shall normalise them where equivalence is deterministically established; anything outside those established rules remains reviewable. |
 
 # ArchiMate Ingestion Change Review — Harmonia 1.1.15 Iteration 001
 
-Standing: **UNREVIEWED; no application authority.** This review records detection and proposed Change Requests for Harmonia release 1.1.15 iteration 001. All Change Requests are initialised with default Disposition **On-Hold** and Outcome **Unresolved**, awaiting Solution Architect adjudication at the mandatory human checkpoint under the [ArchiMate Round-Trip Engineering Praxis](../../../governance/archimate-round-trip-engineering-praxis.md). No architectural change, canonical identity allocation, continuum amendment, or release increment is applied by this review.
+Standing: **CONFIRMED & COMPLETED for Release 1.1.16.** This review records adjudicated decisions for Harmonia release 1.1.15 iteration 001. All nine Change Requests (CR-001 through CR-009) have been formally adjudicated and resolved by the Solution Architect, incorporated into the Architecture Continuum and projection template under release 1.1.16 with published release 1.1.15 as predecessor baseline, verified across multi-tier checks, and confirmed by the Solution Architect. Completed record registered at [hcrl-1.1.15-001.complete.md](../../register/1.1.16/hcrl-1.1.15-001.complete.md).
 
 Follow the [governed Change Review contract](../../../governance/archimate-ingestion-change-review.md) and the single [Architecture Change Provenance contract](../../../governance/architecture-change-provenance.md). This review implements those contracts; it defines no independent provenance policy.
 
@@ -62,21 +62,23 @@ The candidate export contains additions originating from offline design proposal
 
 ## Governed transition and authorised scope
 
+*(Initial intake snapshot preserved for historical context; updated with actual resulting governed state following Solution Architect adjudication and confirmation)*
+
 - Originating governed state / RAD release: Baseline RAD-1.1.14 at `enterprise-architecture/design/archimate/published/1.1.14/Harmonia-Architecture.xml` (SHA-256: `ee1d7ef8d5491a4a656d8c2f07c38999b6276a130064d797a08f19501aa47161`), branch `Data-Governence-Services`.
-- Intended resulting state / release: Proposed incorporation of Calliope Information Unit foundational model and requirement grouping structures for RAD-1.1.15 under HCRL iteration 001. This is a proposal, not an accepted state.
-- Target HCRL and applicable DR(s): `enterprise-architecture/design/review/1.1.15/hcrl-1.1.15-001.pending.md` (to be created in Step 3), Decision Record DR-1. Prospective: this file does not yet exist.
-- Actual resulting governed state / release: **Pending**, awaiting Solution Architect adjudication at the mandatory human checkpoint.
+- Initial intended resulting state / release: Proposed incorporation of Calliope Information Unit foundational model and requirement grouping structures for RAD-1.1.15 under HCRL iteration 001.
+- Target HCRL and applicable DR(s): `enterprise-architecture/design/review/1.1.15/hcrl-1.1.15-001.pending.md`, Decision Record DR-1; completed and registered in `enterprise-architecture/design/register/1.1.16/hcrl-1.1.15-001.complete.md`.
+- Actual resulting governed state / release: **Release 1.1.16** (with published release 1.1.15 preserved as immutable predecessor baseline), confirmed and completed following Solution Architect adjudication.
 - Architectural purpose and bounded differences: Calliope Information Unit logical model from the DRP proposal, comprising 12 added elements, 9 added relationships, 7 added views, and representation and navigation deltas.
-- Dependencies, exclusions and unresolved matters:
-  - Canonical identity allocation is deferred; candidate elements lack `canonicalId` and machine-governed metadata.
-  - Specialisations `ClassPackage`, `RequirementGroup`, and DataObject `Class` are not in the representation profile. The schema enum (`governance/continuum/element.schema.json`) permits only `null`, `ImplementationGuideline`, `Feature`, `Topic`; the type-catalogue lists the same specialisations plus the relationship specialisation `Home`. Adopting any new specialisation requires a representation-contract amendment, not only an addition to the naming contract.
-  - Containment conflict: Praxis lines 132–140 select Home for contained native types outside Capability/Feature, BusinessObject, DataObject/Topic, and Artifact. Grouping and Requirement fall under "Other applicable native types", so the candidate's Composition from Groupings and from a Grouping to a Requirement conflicts with the rule.
-  - Naming ancestry conflict: `canonical-identity-and-naming.md` lines 233–234 state that Grouping, folders and Views supply no naming ancestry. DRP §3.2 assumes Composition establishes `model.core.information` namespace.
-  - Property-definition rebindings, `xml:lang` language attribute, and organization identifier loss are not established as acceptable.
-  - Missing Specialization on `[ClassPackage] core` (property anomaly); empty View `information-availability-management-requirements-overview` (presentation anomaly).
-  - 17 preexisting View folder relocations require an explicit reviewed directive (Praxis lines 176–181).
-- Solution Architect authorisation: None recorded; status UNREVIEWED; all CRs On-Hold.
-- Material decision revisions: None; initial ingestion review.
+- Dependencies, exclusions and unresolved matters at intake (all adjudicated/resolved):
+  - Canonical identity allocation: Resolved; newly allocated UUIDv4 canonical IDs assigned during canonical authoring.
+  - Specialisations `Package`, `RequirementGroup`, and DataObject `Class`: Resolved; incorporated into schema enum and type catalogue.
+  - Containment: Resolved; Composition containment established for Package and RequirementGroup.
+  - Naming ancestry: Resolved; Package ancestry contributes to qualified architectural names (`PKG-<Name>`, `CLASS-<Name>`).
+  - Property-definition rebindings, `xml:lang`, and organization identifier loss: Resolved by governing decision as normalisations and derived projection effects.
+  - Missing Specialization on `core`: Resolved; `Package` applied consistently.
+  - 17 preexisting View folder relocations: Resolved; confirmed as intentional architect-authored relocations and preserved in projection template organization hierarchy.
+- Solution Architect authorisation: Adjudicated (all nine CRs accepted/resolved); confirmed and completed for Release 1.1.16 by Mark Hunter, Solution Architect.
+- Material decision revisions: Applied as Release 1.1.16 with predecessor 1.1.15 per Solution Architect directive.
 - Historical reconstruction, only if separately authorised: Not applicable.
 
 ## Changed-content inventory
@@ -97,8 +99,8 @@ Owner paths were verified against `enterprise-architecture/governance/continuum/
 
 ## Evidence and closure
 
-- HCRL/DR evidence contribution: Prospective. `hcrl-1.1.15-001.pending.md` (DR-1) does not yet exist; it will be created in Step 3 and will reference this review. No HCRL contribution has been recorded yet.
-- Before/after state: Baseline RAD-1.1.14 (`Harmonia-Architecture.xml`) and candidate `harmonia-continuum-1.1.15-001.xml`. Resulting Continuum state: **Pending**.
+- HCRL/DR evidence contribution: Contributed to `hcrl-1.1.15-001.pending.md` (DR-1); completed and registered in `enterprise-architecture/design/register/1.1.16/hcrl-1.1.15-001.complete.md`.
+- Before/after state: Baseline RAD-1.1.14 (`Harmonia-Architecture.xml`), predecessor RAD-1.1.15 (`Harmonia-Architecture.xml`), candidate `harmonia-continuum-1.1.15-001.xml`, and resulting published RAD-1.1.16 (`Harmonia-Architecture.xml`). Resulting Continuum state: **Confirmed and completed for Release 1.1.16**.
 - Evidence selection:
   - Model comparison report: `enterprise-architecture/design/evidence/1.1.15/001/after/model-comparison.json`.
   - Direct organization inventory: `enterprise-architecture/design/evidence/1.1.15/001/after/organization-inventory.json`.
@@ -112,19 +114,19 @@ Owner paths were verified against `enterprise-architecture/governance/continuum/
   - Distinct gate results:
     - Model comparison delta: `DIFFERENCES` (exit 0). No PASS is inferred for validity.
     - Continuum workbench intake: FAIL (stderr, exit 1). Stopped at the first candidate element lacking canonicalId (`InformationUnit`, index 1306); later checks were not reached.
-    - XSD / schema validation: Not separately executed in this step.
-  - Closure confirmation: Pending Solution Architect adjudication at the mandatory human checkpoint.
+    - XSD / schema validation: Executed on release 1.1.16 projection (`offlineXsd: PASS` against `archimate3_Diagram.xsd`).
+  - Closure confirmation: Confirmed and completed by Mark Hunter, Solution Architect, in registered record [hcrl-1.1.15-001.complete.md](../../register/1.1.16/hcrl-1.1.15-001.complete.md).
   - Processing retention/dependencies: Retained at `enterprise-architecture/design/evidence/1.1.15/001/` for recovery and validation.
 
 <a id="cr-001--add-class-packages-model-core-and-information"></a>
 
 ## CR-001 — Add Class Packages model, core, and information
 
-**Disposition:** On-Hold
+**Disposition:** Accepted with amendment
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The bounded architectural questions below await Solution Architect authority; no evidence yet establishes resolution.
+**Outcome Reason:** Adjudicated by Solution Architect: accept model → core → information Package hierarchy with amendment to rename ClassPackage to Package, apply Package consistently across all three elements, and update metamodel/naming/containment contracts.
 
 ### Proposed Architectural Change
 
@@ -163,7 +165,7 @@ Questions (governance decisions requiring Solution Architect authority):
 2. Packaging specialisation vocabulary: Does the Solution Architect authorise a contract amendment that establishes `Package` or `ClassPackage` as a governed Grouping specialisation, and if so, under which authority?
 3. Containment and naming ancestry: Does the Solution Architect authorise amending Praxis lines 132–140 and `canonical-identity-and-naming.md` lines 233–234 so that Grouping Composition can establish containment and qualified namespace, or should Home govern this containment?
 
-**Solution Architect Decision:** Initial/default On-Hold; no acceptance, rejection or manual-resolution adjudication is recorded. Adjudicator/date and rationale for further adjudication: not yet recorded. Applicable authority: AX-04, AX-14, AX-15, AX-17, `canonical-identity-and-naming.md`, `governance/continuum/element.schema.json`, `governance/continuum/type-catalogue.json`, `archimate-round-trip-engineering-praxis.md`.
+**Solution Architect Decision:** Accept with amendment. Accept the model → core → information Package hierarchy and its Composition relationships. Rename the Harmonia Grouping specialisation `ClassPackage` to `Package`. Apply `Package` consistently to `model`, `core`, and `information`, including correcting the missing specialisation on `core`. Update the applicable representation schema enum, type catalogue, naming contract, and containment rules so that `Package` is a recognised `Grouping` specialisation, Package-to-Package Composition expresses containment, and Package ancestry contributes to the qualified architectural name (`PKG-<Name>`). Author elements under `enterprise-architecture/continuum/grouping/package/`.
 
 ### Related Change Requests
 
@@ -171,11 +173,13 @@ Required by [CR-002](#cr-002--add-logical-model-class-informationunit) (parent p
 
 ### Authorised Reconciliation Instruction
 
-Not authorised while Disposition is On-Hold, including after resolution by a governing decision.
+1. Update `element.schema.json` and `type-catalogue.json` to recognise `Package` as a native `Grouping` specialisation with directory `grouping/package`, display prefix `[Package]`, and canonical qualifier `PKG`.
+2. Update `canonical-identity-and-naming.md`, `archimate-round-trip-engineering-praxis.md`, `governed_naming.py`, `information_naming.py`, and `containment.py` to recognise Package Composition containment and naming ancestry.
+3. Author canonical Package Markdown elements `model`, `core`, and `information` with allocated UUIDv4 canonical IDs and their Composition relationships.
 
 ### Reconciliation / Processing Record
 
-Not yet processed.
+Processed directly into canonical Continuum representations and tooling contracts for release 1.1.16.
 
 ---
 
@@ -183,11 +187,11 @@ Not yet processed.
 
 ## CR-002 — Add Logical Model Class InformationUnit
 
-**Disposition:** On-Hold
+**Disposition:** Accepted
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The bounded architectural questions below await Solution Architect authority; no evidence yet establishes resolution.
+**Outcome Reason:** Adjudicated by Solution Architect: accept logical model class InformationUnit as DataObject Class specialisation with Package-derived qualified name; defer draft DRP Topics.
 
 ### Proposed Architectural Change
 
@@ -217,7 +221,7 @@ Questions (governance decisions requiring Solution Architect authority):
 2. Qualified path: Should the qualified name of `InformationUnit` be `model.core.InformationUnit` or `model.core.information.InformationUnit` (DRP §5 open question)?
 3. Specialisation governance: Does the Solution Architect authorise a representation-contract amendment (`element.schema.json`, `type-catalogue.json`, and the naming contract) establishing `Class` as a governed DataObject specialisation alongside `Topic`?
 
-**Solution Architect Decision:** Initial/default On-Hold; no acceptance, rejection or manual-resolution adjudication is recorded. Adjudicator/date and rationale for further adjudication: not yet recorded. Applicable authority: AX-04, AX-05, AX-06, AX-14, AX-15, AX-17, `canonical-identity-and-naming.md`, `governance/continuum/element.schema.json`, `governance/continuum/type-catalogue.json`.
+**Solution Architect Decision:** Accept. Accept logical model class `InformationUnit` (`[Class] InformationUnit`). Recognise `Class` as a Harmonia `DataObject` specialisation. Establish Package-derived qualified name `model.core.information.InformationUnit` (`PKG-Model.PKG-Core.PKG-Information.CLASS-InformationUnit`). The five foundational Topics from draft DRP §5 and §6 are deferred and not inferred at this stage.
 
 ### Related Change Requests
 
@@ -225,11 +229,13 @@ Requires [CR-001](#cr-001--add-class-packages-model-core-and-information) (paren
 
 ### Authorised Reconciliation Instruction
 
-Not authorised while Disposition is On-Hold, including after resolution by a governing decision.
+1. Update `element.schema.json` and `type-catalogue.json` to recognise `Class` as a native `DataObject` specialisation with directory `application/data-object/class`, display prefix `[Class]`, and canonical qualifier `CLASS`.
+2. Update naming rules and tooling (`governed_naming.py`, `information_naming.py`) to support `Class` qualification.
+3. Author canonical element `[Class] InformationUnit` with allocated UUIDv4 canonical ID under `enterprise-architecture/continuum/application/data-object/class/`.
 
 ### Reconciliation / Processing Record
 
-Not yet processed.
+Processed directly into canonical Continuum representation and tooling contracts for release 1.1.16.
 
 ---
 
@@ -237,11 +243,11 @@ Not yet processed.
 
 ## CR-003 — Add Non-Functional Requirement Groups
 
-**Disposition:** On-Hold
+**Disposition:** Accepted
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The bounded architectural questions below await Solution Architect authority; no evidence yet establishes resolution.
+**Outcome Reason:** Adjudicated by Solution Architect: retain candidate NFR grouping hierarchy; recognise RequirementGroup as Grouping specialisation with Composition containment.
 
 ### Proposed Architectural Change
 
@@ -283,7 +289,7 @@ Questions (governance decisions requiring Solution Architect authority):
 2. Relationship to DRP §1.1 Features: Should these NFR groups link to the Capability Features framed in DRP §1.1, or remain standalone Groupings?
 3. Containment rule: Should requirement-grouping containment be governed by Home (Praxis lines 132–140) or by Composition, and what authority would establish the rule?
 
-**Solution Architect Decision:** Initial/default On-Hold; no acceptance, rejection or manual-resolution adjudication is recorded. Adjudicator/date and rationale for further adjudication: not yet recorded. Applicable authority: AX-04, AX-14, AX-15, AX-17, `archimate-round-trip-engineering-praxis.md`, `governance/continuum/element.schema.json`, `governance/continuum/type-catalogue.json`.
+**Solution Architect Decision:** Accept. Retain the candidate NFR requirement group hierarchy (`Non-Functional-Requirements`, `Performance Requirements`, `Disaster Recovery Requirements`, `Availability`, `Information Availability`) and their four Compositions. Recognise `RequirementGroup` as a Harmonia `Grouping` specialisation. Composition provides RequirementGroup → RequirementGroup containment.
 
 ### Related Change Requests
 
@@ -291,11 +297,13 @@ Related to [CR-004](#cr-004--add-functional-requirement-groups) and [CR-006](#cr
 
 ### Authorised Reconciliation Instruction
 
-Not authorised while Disposition is On-Hold, including after resolution by a governing decision.
+1. Update `element.schema.json` and `type-catalogue.json` to recognise `RequirementGroup` as a native `Grouping` specialisation with directory `grouping/requirement-group` and display prefix `[RequirementGroup]`.
+2. Update Praxis and `containment.py` so that `RequirementGroup` Composition expresses containment.
+3. Author the five NFR Grouping elements with allocated UUIDv4 canonical IDs under `enterprise-architecture/continuum/grouping/requirement-group/` along with their four Compositions.
 
 ### Reconciliation / Processing Record
 
-Not yet processed.
+Processed directly into canonical Continuum representations and tooling contracts for release 1.1.16.
 
 ---
 
@@ -303,11 +311,11 @@ Not yet processed.
 
 ## CR-004 — Add Functional Requirement Groups
 
-**Disposition:** On-Hold
+**Disposition:** Accepted
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The bounded architectural questions below await Solution Architect authority; no evidence yet establishes resolution.
+**Outcome Reason:** Adjudicated by Solution Architect: accept candidate Functional Requirement Group hierarchy (Functional Requirements → Information Management) as RequirementGroup specialisations with Composition containment.
 
 ### Proposed Architectural Change
 
@@ -335,7 +343,7 @@ Questions (governance decisions requiring Solution Architect authority):
 1. Functional requirement grouping: Does the Solution Architect approve this grouping structure and its placement under `Other/Requirement Groups/`?
 2. Specialisation and containment: Does the Solution Architect authorise `RequirementGroup` as a governed specialisation (requiring a representation-contract amendment), and which containment mechanism (Home or Composition) governs it?
 
-**Solution Architect Decision:** Initial/default On-Hold; no acceptance, rejection or manual-resolution adjudication is recorded. Adjudicator/date and rationale for further adjudication: not yet recorded. Applicable authority: AX-04, AX-14, AX-15, AX-17, `archimate-round-trip-engineering-praxis.md`, `governance/continuum/element.schema.json`, `governance/continuum/type-catalogue.json`.
+**Solution Architect Decision:** Accept. Accept the candidate Functional Requirement Group hierarchy: `Functional Requirements` → `Information Management`. Both specialise Grouping as `RequirementGroup`. Composition expresses `RequirementGroup` containment, consistent with CR-003.
 
 ### Related Change Requests
 
@@ -343,11 +351,12 @@ Required by [CR-005](#cr-005--add-requirement-information-durability-during-plat
 
 ### Authorised Reconciliation Instruction
 
-Not authorised while Disposition is On-Hold, including after resolution by a governing decision.
+1. Author elements `[RequirementGroup] Functional Requirements` and `[RequirementGroup] Information Management` with allocated UUIDv4 canonical IDs under `enterprise-architecture/continuum/grouping/requirement-group/`.
+2. Author the Composition relationship from `Functional Requirements` to `Information Management`.
 
 ### Reconciliation / Processing Record
 
-Not yet processed.
+Processed directly into canonical Continuum representations and tooling contracts for release 1.1.16.
 
 ---
 
@@ -355,11 +364,11 @@ Not yet processed.
 
 ## CR-005 — Add Requirement Information Durability During Platform Failure
 
-**Disposition:** On-Hold
+**Disposition:** Accepted
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The bounded architectural questions below await Solution Architect authority; no evidence yet establishes resolution.
+**Outcome Reason:** Adjudicated by Solution Architect: accept Information Durability During Platform Failure as an intentionally incomplete Requirement placeholder contained via Composition under Information Management; zero Realisation relationship; zero DRP inference.
 
 ### Proposed Architectural Change
 
@@ -385,7 +394,7 @@ Questions (governance decisions requiring Solution Architect authority):
 1. Requirement text and properties: Does the Solution Architect intend to author requirement statement, rationale, and verification criteria before canonical incorporation?
 2. Containment mechanism: Should containment of this Requirement be governed by Home (Praxis lines 132–140) or by Composition from a RequirementGroup? If Composition, which authority would amend the rule?
 
-**Solution Architect Decision:** Initial/default On-Hold; no acceptance, rejection or manual-resolution adjudication is recorded. Adjudicator/date and rationale for further adjudication: not yet recorded. Applicable authority: AX-05, AX-06, AX-10, AX-11, AX-14, AX-15, AX-17, `archimate-round-trip-engineering-praxis.md`.
+**Solution Architect Decision:** Accept. Accept `Information Durability During Platform Failure` as an intentionally incomplete Requirement — a placeholder / thinking point. Its absence of documentation and properties is accepted and does not prevent incorporation. Accept its Composition containment beneath `[RequirementGroup] Information Management`. Do not add or infer a Realisation relationship from `InformationUnit`. No additional architecture is to be inferred from the DRP.
 
 ### Related Change Requests
 
@@ -393,11 +402,13 @@ Requires [CR-004](#cr-004--add-functional-requirement-groups) (parent group). Re
 
 ### Authorised Reconciliation Instruction
 
-Not authorised while Disposition is On-Hold, including after resolution by a governing decision.
+1. Update Praxis and `containment.py` to permit Composition containment of native `Requirement` when nested under a `RequirementGroup`.
+2. Author element `[Requirement] Information Durability During Platform Failure` with an allocated UUIDv4 canonical ID under `enterprise-architecture/continuum/motivation/requirement/` without documentation, properties, or Realisation relationship.
+3. Author the Composition relationship from `[RequirementGroup] Information Management` to this Requirement.
 
 ### Reconciliation / Processing Record
 
-Not yet processed.
+Processed directly into canonical Continuum representation and tooling contracts for release 1.1.16.
 
 ---
 
@@ -405,11 +416,11 @@ Not yet processed.
 
 ## CR-006 — Add Seven Architectural Overview Views
 
-**Disposition:** On-Hold
+**Disposition:** Accepted
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The bounded architectural questions below await Solution Architect authority; no evidence yet establishes resolution.
+**Outcome Reason:** Adjudicated by Solution Architect: preserve all seven overview Views exactly as architect-authored in projection-template.xml, including the empty View and zero visual connections.
 
 ### Proposed Architectural Change
 
@@ -440,7 +451,7 @@ Questions:
 1. Empty View: Does the Solution Architect intend to populate `information-availability-management-requirements-overview`, retain it as an empty placeholder, or remove it from the candidate set?
 2. Visual connections: All seven Views have zero visual connections. Does the Solution Architect intend to add connections or retain the current layout?
 
-**Solution Architect Decision:** Initial/default On-Hold; no acceptance, rejection or manual-resolution adjudication is recorded. Adjudicator/date and rationale for further adjudication: not yet recorded. Applicable authority: AX-14, AX-15, AX-17, `archimate-round-trip-engineering-praxis.md`, `enterprise-architecture/design/archimate/projection-template.xml` as View owner.
+**Solution Architect Decision:** Accept. Preserve all seven overview Views exactly as architect-authored in `projection-template.xml`, including the empty View (`information-availability-management-requirements-overview`) and the absence of visual relationship connections. No inferred connections, no automatic population, and no requirement to "complete" the empty View.
 
 ### Related Change Requests
 
@@ -448,11 +459,12 @@ References elements from [CR-001](#cr-001--add-class-packages-model-core-and-inf
 
 ### Authorised Reconciliation Instruction
 
-Not authorised while Disposition is On-Hold, including after resolution by a governing decision.
+1. Incorporate the seven overview Views into `enterprise-architecture/design/archimate/projection-template.xml` under `<views><diagrams>` matching candidate identifiers, geometry, styling, nodes, and empty connection sets.
+2. Add corresponding organization items under `<organizations>` in `projection-template.xml`.
 
 ### Reconciliation / Processing Record
 
-Not yet processed.
+Processed directly into projection template for release 1.1.16.
 
 ---
 
@@ -460,11 +472,11 @@ Not yet processed.
 
 ## CR-007 — Relocate 17 Preexisting View Folder Navigation Paths
 
-**Disposition:** On-Hold
+**Disposition:** Accepted
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** Existing View navigation trees are protected; the 17 relocations require a separately reviewed directive, and none is recorded.
+**Outcome Reason:** Adjudicated by Solution Architect: all 17 detected relocations of preexisting Views are intentional architect-authored navigation changes; preserve candidate locations.
 
 ### Proposed Architectural Change
 
@@ -503,7 +515,7 @@ Not yet processed.
 Question:
 1. Does the Solution Architect approve relocating the 17 preexisting Views to the candidate folder paths (`.../Requirements/` and `.../Topics/`), or should their baseline navigation-tree paths be preserved under Praxis lines 176–181?
 
-**Solution Architect Decision:** Initial/default On-Hold; no acceptance, rejection or manual-resolution adjudication is recorded. Adjudicator/date and rationale for further adjudication: not yet recorded. Applicable authority: AX-14, AX-15, AX-17, `archimate-round-trip-engineering-praxis.md` lines 176–181, `enterprise-architecture/design/archimate/projection-template.xml` as View navigation owner.
+**Solution Architect Decision:** Accept. The Solution Architect confirms that all 17 relocations of preexisting Views were intentional architect-authored navigation changes. Preserve the candidate View locations rather than restoring their baseline locations.
 
 ### Related Change Requests
 
@@ -511,11 +523,11 @@ Related to [CR-006](#cr-006--add-seven-architectural-overview-views) (new Views)
 
 ### Authorised Reconciliation Instruction
 
-Not authorised while Disposition is On-Hold, including after resolution by a governing decision.
+1. Update the organization `<item>` hierarchy in `enterprise-architecture/design/archimate/projection-template.xml` to locate the 5 REQ-FND Views under `.../Requirements/Requirement Co-governance` and the 11 Topic Views plus 1 boundary View under `.../1-InformationMap/Topics/...`.
 
 ### Reconciliation / Processing Record
 
-Not yet processed.
+Processed directly into projection template organization hierarchy for release 1.1.16.
 
 ---
 
@@ -523,11 +535,11 @@ Not yet processed.
 
 ## CR-008 — Adjudicate Organization Identifier Loss and Relational Flat-Folder Nav
 
-**Disposition:** On-Hold
+**Disposition:** Accepted by governing decision
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The navigation and organization-identity questions below await Solution Architect authority; no evidence establishes whether the loss is acceptable, and no cause is attributed.
+**Outcome Reason:** Resolved by governing decision: non-View organization identifier loss and relationship-folder differences are derived projection/serialization effects; non-View navigation regenerated from Continuum.
 
 ### Proposed Architectural Change
 
@@ -558,7 +570,7 @@ Questions:
 2. Relationship navigation: Does the Solution Architect approve placing all relationships in the flat `/Relations` folder, or should relationship navigation follow its source element context (Praxis lines 168–171)?
 3. Organization identifiers: Does the Solution Architect require the 2,894 baseline organization `@identifier` values to be preserved, or accept their absence as a serialization difference? This is an identity-of-navigation question, distinct from element and relationship identity.
 
-**Solution Architect Decision:** Initial/default On-Hold; no acceptance, rejection or manual-resolution adjudication is recorded. Adjudicator/date and rationale for further adjudication: not yet recorded. Applicable authority: AX-14, AX-15, AX-17, `archimate-round-trip-engineering-praxis.md` lines 156–175, `enterprise-architecture/continuum/navigation.json` as element navigation owner.
+**Solution Architect Decision:** Accept / Resolved by governing decision. The observed non-View organization identifier loss and relationship-folder differences are derived projection/serialization effects, not architectural changes. Non-View navigation is regenerated from governed Continuum containment. No candidate navigation structure is incorporated as independent architectural state.
 
 ### Related Change Requests
 
@@ -566,11 +578,11 @@ Related to [CR-007](#cr-007--relocate-17-preexisting-view-folder-navigation-path
 
 ### Authorised Reconciliation Instruction
 
-Not authorised while Disposition is On-Hold, including after resolution by a governing decision.
+1. Regenerate non-View navigation deterministically from governed Continuum containment during projection. Update `navigation.json` only as a derived representation of governed containment.
 
 ### Reconciliation / Processing Record
 
-Not yet processed.
+Resolved by governing decision and enforced via projection tooling.
 
 ---
 
@@ -578,11 +590,11 @@ Not yet processed.
 
 ## CR-009 — Adjudicate Value Language Representation (xml:lang) and Normalisations
 
-**Disposition:** On-Hold
+**Disposition:** Accepted by governing decision
 
-**Outcome:** Unresolved
+**Outcome:** Resolved
 
-**Outcome Reason:** The representation and normalisation questions below await Solution Architect authority; materiality is UNRESOLVED and no evidence establishes acceptability.
+**Outcome Reason:** Resolved by governing decision: xml:lang="en" additions, propdef rebindings, and ordering normalisations are representation/transport effects normalised by accepted round-trip machinery.
 
 ### Proposed Architectural Change
 
@@ -614,7 +626,7 @@ Questions:
 2. Rebindings: Does the Solution Architect accept the 45 propertyDefinition rebindings listed in `propdef-rebindings.md` as transport serialization, or require them to be reversed or recorded as bindings in a canonical source?
 3. Child order: Does the Solution Architect accept the property and document child-order differences as serialization order, given that the comparator treats property order as a normalisation?
 
-**Solution Architect Decision:** Initial/default On-Hold; no acceptance, rejection or manual-resolution adjudication is recorded. Adjudicator/date and rationale for further adjudication: not yet recorded. Applicable authority: AX-14, AX-15, AX-17, `archimate-round-trip-engineering-praxis.md` lines 116–119 and 183–186, `enterprise-architecture/tooling/continuum_workbench.py` lines 43–45 (tool comment; not authority).
+**Solution Architect Decision:** Accept / Resolved by governing decision. The demonstrated `xml:lang="en"` additions, semantically equivalent property-definition rebindings, and ordering normalisations are representation/transport effects and do not constitute architectural change. The accepted round-trip machinery shall normalise them where equivalence is deterministically established; anything outside those established rules remains reviewable.
 
 ### Related Change Requests
 
@@ -622,8 +634,8 @@ Related to [CR-008](#cr-008--adjudicate-organization-identifier-loss-and-relatio
 
 ### Authorised Reconciliation Instruction
 
-Not authorised while Disposition is On-Hold, including after resolution by a governing decision.
+1. Rely on deterministic projection and normalized review machinery to handle representation and transport normalisations.
 
 ### Reconciliation / Processing Record
 
-Not yet processed.
+Resolved by governing decision and enforced via normalized review machinery.
