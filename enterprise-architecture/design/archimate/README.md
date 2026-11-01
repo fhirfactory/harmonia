@@ -7,18 +7,32 @@ The maintained source is the [individual-element continuum](../../README.md).
 properties, property definitions, View navigation and **1,216 Views**, including their
 geometry. Its element/relationship collections are empty. The current projector
 fills those collections from canonical Markdown and preserves the Views.
-From 1.1.10, canonical [Continuum navigation](../../continuum/navigation.json)
-owns architectural organisation. The projector replaces architecture folders
-from that tree through a native-layer-aware adapter and exposes every coordinate in organisation labels and element
-location properties. It preserves native Name/displayName and identity. The
-separate View folders remain presentation navigation, outside architectural
-numbering. No semantic relationship follows from folder nesting.
+From RAD-1.1.17 Iteration 002, the projector uses native-type element catalogues
+and explicit-source relationship catalogues, independently of Continuum reading
+navigation and architectural containment. Native Name and element entry labels
+equal governed displayName without generated numbering. View folders and labels
+remain separate architect-maintained presentation, preserved verbatim.
 
 The **Architecture Continuum is canonical architecture authority**. Open Exchange
 XML is its derived projection/interchange representation; **Archi is the architecture
-workbench**. Import the published
-[1.1.16 Open Exchange projection](published/1.1.16/Harmonia-Architecture.xml)
-into Archi 5.10 to begin work on that release baseline.
+workbench**. The accepted [1.1.17 Open Exchange projection](published/1.1.17/Harmonia-Architecture.xml)
+is the immutable starting architectural baseline for the next View-development release.
+
+The completed [Iteration 001](../register/1.1.17/hcrl-1.1.17-001.complete.md) and
+[Iteration 002 / final release record](../register/1.1.17/hcrl-1.1.17-002.complete.md)
+record NFR incorporation, catalogue organisation, display names and preservation
+of all 1,216 existing Views. The Solution Architect accepted the ArchiMate publication
+and both iterations' results. Reader-facing review of the Iteration 001 NFR hierarchy,
+allocations, native-layer separation and qualified reused contributions, and Iteration 002
+reader navigation/XML-folder correspondence, is explicitly deferred. Actual Archi 5.10
+transport and all documented raw qualifications remain retained; deferral supplies
+no additional visual-inspection claim or validation exemption.
+
+Release **1.1.18** is reserved for separately instructed one-off AI-assisted View
+organisation/development. Release **1.1.19** resumes substantive architectural design.
+Neither activity is commenced by release closure. A release-labelled 1.1.18 projection,
+when generated, inherits unchanged architecture and is a development baseline,
+not a separately accepted architectural transition.
 
 The [1.1.16 projection](published/1.1.16/Harmonia-Architecture.xml)
 establishes the navigable architecture baseline incorporating the Calliope Information Unit foundational model, requirement groupings, and overview views,
@@ -33,6 +47,18 @@ Its [actual imported tree evidence](../evidence/1.1.13/002/after/contained-eleme
 is a reader-facing inventory of the retained Archi 5.10 native save, with canonical
 IDs and folder documentation; it is not a substitute for inspecting Archi or an
 assertion of acceptance. The accepted 1.1.11 publication remains historical.
+
+## Current physical workbench organisation — 1.1.17 Iteration 002
+
+Use the [native catalogue contract](../../governance/continuum-representation.md#archi-catalogue-organisation--rad-1117-iteration-002).
+Elements appear once under their native category / Catalogue / native type;
+relationships appear once directly under Relations / Catalogue / source element.
+Source folder labels include the full canonicalId to keep equal names distinct.
+Specialisations remain properties. Existing Views and their organisation remain
+unchanged. The former 1.1.13 organisation account below is historical: its
+containment, Home, contextual and reference folder-generation rules are retired
+for current element/relationship catalogues. RAD/Manifest reading navigation and
+all semantic/naming rules retain their scope.
 
 <a id="physical-workbench-organisation--1113-candidate"></a>
 ## Physical workbench organisation — 1.1.13

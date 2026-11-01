@@ -7,11 +7,19 @@ here, relocated from `enterprise-architecture/continuum/documentation/` in 1.1.8
 The root Continuum `MANIFEST.md` remains its existing generated navigation
 projection; individually represented Markdown elements remain canonical.
 
+Accepted publication (**1.1.17**): [browser](published/1.1.17/continuum.html), [element index](published/1.1.17/README.md), [ArchiMate Exchange](published/1.1.17/Harmonia-Architecture.xml), [LaTeX catalogue](published/1.1.17/continuum-catalogue.tex), and [fully numbered hierarchy](published/1.1.17/navigation.json). The [completed release HCRL](../../design/register/1.1.17/hcrl-1.1.17-002.complete.md) preserves both bounded reader-facing review deferrals and all technical qualifications. Reader-facing visual review is not asserted. The root release authority selects the next development publication; accepted 1.1.17 paths remain immutable.
+
+------- Legacy Content - Superseded ------- Start ------
+Superseded by: the prepared 1.1.17 publication links above; the previous publication link block remains unchanged historical navigation.
+---------------------------------------------------------
+
 Current publication (**1.1.10**): [browser](published/1.1.10/continuum.html),
 [element index](published/1.1.10/README.md),
 [ArchiMate Exchange](published/1.1.10/Harmonia-Architecture.xml),
 [LaTeX catalogue](published/1.1.10/continuum-catalogue.tex), and
 [fully numbered hierarchy](published/1.1.10/navigation.json).
+
+------- Legacy Content - Superseded ------- Finish ----
 
 Canonical [navigation.json](../../continuum/navigation.json) supplies organisation.
 The Manifest, browser, index, catalogue, Exchange projection and narrative RAD

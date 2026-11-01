@@ -200839,6 +200839,6 @@ The recovery has no native Application-layer objects or approved publication cro
   <profile name="ImplementationGuideline" id="id-17758162f79a4143ba85f67264412b0c" conceptType="CourseOfAction"/>
   <profile name="Home" id="id-f19534a40cd64475826de7ac147124e0" conceptType="AssociationRelationship"/>
   <profile name="RequirementGroup" id="id-03bc0c8d0acd479bbe4ae1adfda6da75" conceptType="Grouping"/>
-  <profile name="ClassPackage" id="id-ba9adb03df86484a999be84a9aeeb349" conceptType="Grouping"/>
+  <profile name="Package" id="id-ba9adb03df86484a999be84a9aeeb349" conceptType="Grouping"/>
   <profile name="Class" id="id-f3cf785226aa445a9cb5e607df80e349" conceptType="DataObject"/>
 </archimate:model>

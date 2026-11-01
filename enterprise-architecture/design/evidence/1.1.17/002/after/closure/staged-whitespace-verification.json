@@ -1,0 +1,772 @@
+{
+  "outcome": "PASS_FOR_MAINTAINED_AND_CLOSURE_CHANGES_WITH_UNCHANGED_INPUT_NOTICES",
+  "wholeIndexCheckExitCode": 2,
+  "noticeCount": 189,
+  "originalInputFiles": {
+    "enterprise-architecture/design/evidence/1.1.17/002/after/java-architecture-tests.txt": [
+      {
+        "line": 4,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 41,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 46,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 51,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 56,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 59,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 62,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 65,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 68,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 70,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 75,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 78,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 81,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 84,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 87,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 89,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 94,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 97,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 100,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 103,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 106,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 108,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 113,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 118,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 121,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 124,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 127,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 130,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 133,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 138,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 141,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 144,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 147,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 150,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 152,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 157,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 160,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 163,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 166,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 169,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 171,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 176,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 179,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 182,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 185,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 188,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 190,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 195,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 200,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 203,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 206,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 209,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 212,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 214,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 219,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 222,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 225,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 228,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 231,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 233,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 238,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 241,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 244,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 247,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 250,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 252,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 257,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 262,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 265,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 268,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 271,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 274,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 276,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 281,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 286,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 289,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 292,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 295,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 298,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 300,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 305,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 308,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 311,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 314,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 317,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 319,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 324,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 329,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 332,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 335,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 338,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 341,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 343,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 348,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 351,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 354,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 357,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 360,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 362,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 367,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 370,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 373,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 376,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 379,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 381,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 386,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 391,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 394,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 397,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 400,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 403,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 405,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 410,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 413,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 416,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 419,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 422,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 424,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 429,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 432,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 435,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 438,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 441,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 443,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 448,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 451,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 454,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 457,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 460,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 462,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 467,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 472,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 475,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 478,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 481,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 484,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 486,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 491,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 494,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 497,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 500,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 503,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 505,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 510,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 513,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 516,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 519,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 522,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 524,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 529,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 532,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 535,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 538,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 541,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 543,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 548,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 551,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 554,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 557,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 560,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 562,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 567,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 570,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 573,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 576,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 579,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 581,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 586,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 589,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 592,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 595,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 598,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 601,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 628,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 630,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 632,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 635,
+        "notice": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.17/parts/application.tex": [
+      {
+        "line": 344,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 810,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 815,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 1486,
+        "notice": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.17/parts/motivation.tex": [
+      {
+        "line": 1907,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 1914,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 1969,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 1976,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 2033,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 2040,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 2097,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 2104,
+        "notice": "trailing whitespace."
+      }
+    ]
+  },
+  "allFlaggedFilesMatchClosureEntryHashes": true,
+  "maintainedAndNewClosureCheckExitCode": 0,
+  "treatment": "Preserved original raw execution evidence and accepted generated publication bytes unchanged, as authorised; no whitespace normalisation of historical input."
+}

@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-11-01T00:13:20.870Z",
+  "sourceLog": "/home/mhunter/.codex/sessions/2026/11/01/rollout-2026-11-01T11-13-18-01a19474-175a-7b71-aad1-6bcdfb811375.jsonl",
+  "line": 12,
+  "eventMeaning": "Operative instruction entering agent interaction",
+  "correspondingTask": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.17/002/before/ai-agent-tasks/20261101T001320Z-acceptance-and-release-closure.md",
+  "instructionSha256": "25a9e40c79b2b7c9b2c30806c37a3ada9bfb69accca78a88fdb0c7487425d7a4"
+}

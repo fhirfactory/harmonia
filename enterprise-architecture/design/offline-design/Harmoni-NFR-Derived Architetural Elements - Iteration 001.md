@@ -1,3 +1,13 @@
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [Canonical subject hierarchy](../../continuum/navigation.json), Cross-Cutting References / Architectural Subjects.
+- [Canonical element correspondence](../evidence/1.1.17/001/after/reconciliation.md), every active statement and subject group.
+- [Governed statement specialisations](../../governance/continuum-representation.md#iteration-001-architectural-statement-specialisations--rad-1117) and [type catalogue](../../governance/continuum/type-catalogue.json).
+- [Withdrawal/reservation accounting](../evidence/1.1.17/001/after/reconciliation.json).
+
+The original reviewed specification below is preserved unchanged as input evidence. Its full active architectural content is individually represented in the Continuum; final acceptance of the incorporated result remains pending in [HCRL 1.1.17-001](../review/1.1.17/hcrl-1.1.17-001.pending.md).
+---------------------------------------------------------
+
 # Harmonia — Requirements and Architectural Motivation Register
 
 ## Architectural element specialisations
@@ -324,3 +334,5 @@ The identifiers `NFR-116`, `NFR-120`, `NFR-128`, `NFR-134`, `NFR-140` and `NFR-1
 - Realisation does not establish logical home.
 - Conformance direction (`ArchitecturalAxiom`), conformance assurance strategy (`CourseOfAction`) and release conformance evidence (`AssuranceRequirement`) are distinct concepts.
 - Information and processing obligations retain their stated release scope, applicability qualifiers and unresolved thresholds.
+
+------- Legacy Content - Superseded ------- Finish ----

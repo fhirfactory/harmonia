@@ -75,8 +75,10 @@ does a DataObject establish a Class. Middleware architecture belongs within the
 authorised Application/System-of-Systems context. Missing integration, class,
 Technology or release-family architecture is not invented to complete headings.
 
-Exchange organisation labels, element location properties, the Manifest/browser
-and narrative RAD consume this same tree and coordinate traversal. Native Name
+Element location properties, the Manifest/browser and narrative RAD consume
+this same tree and coordinate traversal. From RAD-1.1.17 Iteration 002, Exchange
+Model Tree folders use the independent native catalogue convention below;
+reading coordinates remain properties, never native Name prefixes. Native Name
 remains displayName. Number-bearing XML organisation identifiers are mutable
 transport locators only. Archi may restructure its native folders; the location
 properties preserve the canonical coordinates independently of that limitation.
@@ -118,6 +120,68 @@ native names/types, canonical Markdown and semantic relationships are unchanged.
 The [common Review Praxis](architecture-review-praxis.md#5-report-and-verify-the-incorporated-result)
 requires Solution Architect structural review of materially changed generated
 navigation before HCRL acceptance. Agent inspection supplies evidence, not acceptance.
+
+<a id="archi-catalogue-organisation--rad-1117-iteration-002"></a>
+## Archi catalogue organisation — RAD-1.1.17 Iteration 002
+
+The Solution Architect's [authorised Task](../design/evidence/1.1.17/002/before/ai-agent-tasks/20261031T234829Z-archi-catalogue-and-display-names.md)
+replaces inferred Model Tree organisation with a deterministic catalogue. This
+changes projection and round-trip organisation only. The Continuum remains
+architectural authority; its reader-facing navigation, native storage, names,
+identities, classifications, standing, provenance and relationships are unchanged.
+The [Iteration 002 HCRL](../design/review/1.1.17/hcrl-1.1.17-002.pending.md)
+records implementation and outstanding result acceptance.
+
+Each element has exactly one placement: native Archi category / `Catalogue` /
+native ArchiMate type. Categories are Strategy, Business, Application, Technology
+& Physical, Motivation, Implementation & Migration, and Other. Only represented
+native types receive directories. ValueStream belongs to Strategy; Grouping and
+Location belong to Other, including specialised Groupings. Feature remains under
+Capability, Topic under DataObject and every Requirement specialisation under
+Requirement. Specialisations remain native-element properties.
+
+Each relationship has exactly one placement: `Relations/Catalogue/<Source Element>/`.
+Resolve its explicit source Exchange binding to the governed canonical element;
+never infer source from its storage owner, name, target or directory. Source
+folders exist only for elements with outgoing relationships. Their readable
+labels are `displayName [canonicalId]`, preventing collisions between equal names
+and remaining stable if another equal name is introduced. All outgoing edges sit
+directly in that folder, without relationship-type directories. Transport folder
+IDs derive deterministically from native type or established canonical identity;
+no architectural identity is allocated for a folder.
+
+Composition, Aggregation, Specialization, Realization, Association, Home and
+Grouping have no role in catalogue placement. Their explicit architectural
+meaning, identities, direction and properties remain governed independently.
+The projector retains containment/naming validation for semantic conformance;
+it does not use those results to generate folders. Earlier containment/Home/
+canonical-navigation folder-generation rules are retired for element and
+relationship catalogues; their underlying architectural and naming rules remain.
+
+Both native Name and element catalogue entry label equal governed `displayName`
+verbatim across all native types. Do not prefix positional coordinates and do not
+strip meaningful identifiers already present in a governed name. canonicalId,
+canonicalName, friendlyName, source/release identifiers and evidence references
+are unchanged. Reading coordinates may remain separate derived properties.
+
+Views and their organisation are architect-maintained presentation. Preserve
+identities, names, labels, properties, references, nested visual objects,
+connections, order, geometry and all supported presentation, including empty
+View directories and their metadata. Never generate or reorganise Views to
+implement the catalogue. Mixed View/semantic branches requiring destructive
+separation must stop for adjudication rather than discard presentation.
+
+On Archi export, reconcile element/relationship details by established identity
+and explicit endpoints through the existing review/application gates. Incoming
+element/relationship folders confer no authority and are regenerated as these
+catalogues. Detect View hierarchy changes separately, preserve the exact export,
+and incorporate only adjudicated presentation into the existing projection
+template before reprojection. The element-only apply adapter must reject applied
+View/folder changes rather than silently ignore them. The maintained template
+preserves presentation unsupported by transport; do not replace it with a lossy
+no-edit return. Record format limitations and retain the native model/exact export
+where required. A real supported-Archi transport and Solution Architect workbench
+structural review remain separate from automated XML validation and acceptance.
 
 ## Deterministic native storage and template selection
 
@@ -172,6 +236,51 @@ directed Association specialisation and is stored as an assertion, not an elemen
 
 ## Resource fields and Markdown content
 
+### Iteration 001 architectural statement specialisations — RAD-1.1.17
+
+The Solution Architect-reviewed [Iteration 001 specification](../design/offline-design/Harmoni-NFR-Derived%20Architetural%20Elements%20-%20Iteration%20001.md)
+and its [authorised ADD Task](../design/evidence/1.1.17/001/before/ai-agent-tasks/20261031T104506Z-nfr-derived-elements-add.md)
+establish these specialisations in the executable type catalogue:
+
+| Specialisation | Native base | Meaning |
+| --- | --- | --- |
+| Axiom | Principle | Prescriptive governing architectural rule; deviations require governance. |
+| ArchitecturalAxiom | Principle | Prescriptive governing architectural direction for architecture and implementations. |
+| ImplementationGuideline | CourseOfAction | Preferred implementation approach or strategy, not inherently a binding mandate. |
+| Mandate | Constraint | Binding architectural constraint or obligation, including positive obligations. |
+| FunctionalRequirement | Requirement | Required functionality or behaviour. |
+| NonFunctionalRequirement | Requirement | Required quality or operational characteristic. |
+| InformationRequirement | Requirement | Required information semantics, integrity, availability or lifecycle characteristics. |
+| TransitionRequirement | Requirement | Required conditions when moving between architecture or solution states. |
+| AssuranceRequirement | Requirement | Required demonstrable evidence or verification outcome. |
+
+Native Principle expresses aspirational architectural direction; native Goal expresses
+a desired outcome in this register. Axiom and ArchitecturalAxiom remain distinct;
+no relationship between those specialisations is asserted. DerivedRequirement
+denotes provenance, not another specialisation. Existing axiom definitions and their
+highest authority remain unchanged; a new specialisation supplies no promotion over
+those definitions. Source identifier prefixes supply no type information.
+
+The new specialisations use the established `[Specialisation] Name` display convention
+and native Motivation `MOT` naming qualifier. ImplementationGuideline retains its
+existing unresolved formal qualifier. Unqualified Grouping also retains unresolved
+formal naming; neither a token nor naming ancestry is inferred from subject organisation.
+The earlier field-list examples below remain examples; the type catalogue and schema
+contain the complete allowed specialisation population.
+
+Iteration 001 subject groups/subgroups use native Grouping. Their explicit Composition
+relationships represent containment within the register's subject classification,
+including each statement's primary subject subgroup. They confer no component ownership,
+implementation containment, logical Home or new naming ancestry. Groups live in
+Cross-Cutting References / Architectural Subjects; subgroup navigation links to each
+allocated statement's one canonical native-layer location. Existing RequirementGroup
+hierarchies retain their accepted scope and identities. The cross-subject Information
+Management grouping is distinct from the existing functional-requirements grouping.
+
+The [pending HCRL](../design/review/1.1.17/hcrl-1.1.17-001.pending.md)
+records application and remaining review checkpoints; incorporation supplies no final
+Solution Architect confirmation.
+
 A file starts with JSON front matter between `---` lines. JSON is used as a strict
 subset of YAML so ordinary Markdown consumers and standard-library machinery can
 handle the same representation. Duplicate keys are rejected. `schemaVersion`
@@ -183,7 +292,7 @@ Required fields are:
 | --- | --- |
 | `canonicalId` | Existing resource-owned UUID32, or one newly authorised UUIDv4 allocation. |
 | `archimateType` | Exact native type in the reference profile. |
-| `specialization` | `Feature`, `Topic`, or null; explicit classification evidence is required. |
+| `specialization` | An explicit governed specialisation from the type catalogue, or null; classification evidence is required. |
 | `displayName`, `friendlyName`, `canonicalName` | Governed names, independent of identity. A genuinely unresolved dependent property is null with an explicit reason. |
 | `standing` | Source semantic standing and currentness independently; placement, structural/name status and other qualifications where applicable. |
 | `identity` | Preservation/allocation authority, relevant continuity and migration decision. |

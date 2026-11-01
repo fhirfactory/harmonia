@@ -80,6 +80,11 @@ def review(baseline, submitted, root=c.ROOT, *, normalised=False):
         a,b=signatures(before,group,item),signatures(after,group,item)
         for key in sorted(set(a)|set(b)):
             if a.get(key)!=b.get(key):context.append({'kind':item,'identifier':key,'before':a.get(key),'submitted':b.get(key),'disposition':'UNREVIEWED'})
+    from exchange_compare import Exchange, navigation_delta
+    view_folders = navigation_delta(Exchange(baseline), Exchange(submitted))
+    if any(view_folders.values()):
+        context.append({'kind': 'view-navigation', 'identifier': 'views',
+                        'changes': view_folders, 'disposition': 'UNREVIEWED'})
     return {'schemaVersion':1,'standing':'UNREVIEWED; no application authority',
             'baselineSha256':c.sha(baseline.read_bytes()),'submissionSha256':c.sha(submitted.read_bytes()),
             'elementChanges':changes,'relationshipAndViewChanges':context,'unresolved':unresolved,

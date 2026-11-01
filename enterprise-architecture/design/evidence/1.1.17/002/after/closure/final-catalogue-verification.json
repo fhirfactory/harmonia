@@ -1,0 +1,70 @@
+{
+  "rawReasons": [
+    {
+      "classification": "INFORMATION LOSS",
+      "reason": "Attribute absent after transport",
+      "count": 724
+    },
+    {
+      "classification": "INFORMATION LOSS",
+      "reason": "Subtree absent after transport; raw input retained by hash",
+      "count": 3724
+    },
+    {
+      "classification": "SEMANTIC DIFFERENCE",
+      "reason": "Semantic record attribute changed",
+      "count": 21194
+    },
+    {
+      "classification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "reason": "Exact unique Property key resolves both definition IDs; all other definition content and owner values compared independently",
+      "count": 65
+    },
+    {
+      "classification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "reason": "Uniquely keyed unordered collection",
+      "count": 397
+    },
+    {
+      "classification": "UNEXPLAINED DIFFERENCE",
+      "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation",
+      "count": 3724
+    }
+  ],
+  "status": "PASS_WITH_DOCUMENTED_TRANSPORT_DIFFERENCES",
+  "baselineSha256": "a35583c227e8cac0bfb856708c97f600be406fe2acdff53361b326677e012e0a",
+  "candidateSha256": "b3c1bd71497497eb64e39e754dc69443d8012c762ffa00b9221116f12f3578a1",
+  "returnedSha256": "dd49f0c6496c9300b75db8f4431bf57a3ff91b61c907c7c1bed290756cbafca1",
+  "nativeSha256": "5759b90091dbe7cc29dd16003f55691822ae16d703e56aaa1aca953c2b833c45",
+  "preservedCanonicalSources": 1842,
+  "preservedPinnedInputs": 1862,
+  "unchangedSemanticCollections": [
+    "elements",
+    "relationships",
+    "views"
+  ],
+  "unchangedViewTree": true,
+  "unchangedOutsideOrganizations": true,
+  "deterministicRegeneration": "PASS",
+  "returnedCatalogueRegeneration": "PASS",
+  "actualArchi510ImportExport": "PASS",
+  "nativeTreeCatalogueVerification": "PASS",
+  "rawComparisonStatus": "DIFFERENCES",
+  "rawClassifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 462,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 4448,
+    "SEMANTIC DIFFERENCE": 21194,
+    "UNEXPLAINED DIFFERENCE": 3724
+  },
+  "semanticTransportFindings": 21194,
+  "normalisedRelationshipLanguageChanges": 222,
+  "transportLimitation": "Archi drops 3724 redundant reference-label subtrees and 724 generated folder identifiers, and introduces anonymous-folder ordering differences. Native folders, entry names and View hierarchy are verified separately and regenerate from maintained inputs. Archi adds en language attributes, including 222 Iteration 001 relationship names/documentation. Raw findings retained; no production comparator relaxed. No IDs, endpoint direction, text, property values, Views or View tree lost. Maintained canonical source/template and exact before/return/native retained.",
+  "humanStructuralReview": "PENDING Solution Architect",
+  "architecturalAcceptance": "NOT_ASSERTED",
+  "closureHarness": {
+    "semanticVerification": "PASS",
+    "postVerificationSummaryCopy": "FAILED: shared execution globals shadowed the wrapper source path; no source/evidence writes affected",
+    "recovery": "Completed summary recovered verbatim from captured stdout; no rerun or semantic result inference"
+  }
+}

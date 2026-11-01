@@ -46,7 +46,7 @@ class ContinuumTests(unittest.TestCase):
 
     def test_population_and_provenance(self):
         r=c.validate(self.root)
-        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(1614,1660,462))
+        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(1842,1882,462))
         self.assertEqual(r['elements'],r['provenanceCoverage'])
 
     def test_identity_type_location_and_standing_fail_closed(self):
@@ -101,7 +101,7 @@ class ContinuumTests(unittest.TestCase):
         for spec in (invalid,empty):
             with patch.object(c.uuid,'uuid4',side_effect=AssertionError('Unexpected allocation')):
                 with self.assertRaises(ValueError):c.create(spec,self.root)
-        self.assertEqual(len(c.load(self.root)[1]),1614)
+        self.assertEqual(len(c.load(self.root)[1]),len(self.elements))
 
     def test_native_endpoints_reject_schema_valid_but_illegal_relationship(self):
         cid = next(cid for cid, (m, _, _) in self.elements.items()
@@ -325,6 +325,25 @@ class ContinuumTests(unittest.TestCase):
             result=w.apply(decision,self.root);self.assertEqual(result['changed'],1)
             with self.assertRaisesRegex(ValueError,'changed since review'):w.apply(decision,self.root)
         finally:p.write_bytes(old)
+
+    def test_default_review_detects_view_folder_edits_and_refuses_element_only_apply(self):
+        tree = c.secure_xml(self.baseline)
+        folder = next(n for n in tree.findall('a:organizations/a:item', c.N)
+                      if n.findtext('a:label', namespaces=c.N) == 'Views')
+        empty = c.ET.SubElement(folder, c.tag('item'), identifier='new-empty-view-folder')
+        c.ET.SubElement(empty, c.tag('label')).text = 'Authored empty folder'
+        submitted = self.root / 'view-folders.xml'
+        submitted.write_bytes(c.ET.tostring(tree))
+        report = w.review(self.baseline, submitted, self.root)
+        self.assertFalse(report['elementChanges'])
+        self.assertEqual([r['kind'] for r in report['relationshipAndViewChanges']], ['view-navigation'])
+        evidence = self.root / 'view-folders-review.json'
+        evidence.write_bytes(c.encoded(report))
+        decision = dict(authority='review-authority.md', review=evidence.name,
+                        reviewSha256=c.sha(evidence.read_bytes()), replacements=[],
+                        dispositions={'view-navigation:views': dict(action='apply', reason='Synthetic fixture')})
+        with self.assertRaisesRegex(ValueError, 'element amendments only'):
+            w.apply(decision, self.root)
 
     def test_review_hash_must_match(self):
         evidence=self.root/'tampered.json';evidence.write_text('{}')

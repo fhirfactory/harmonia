@@ -17,6 +17,20 @@
 
 The [representation contract](continuum-representation.md) governs native element placement, persisted UUID32 identity, explicit specialisations and direct projection from canonical Markdown. The [identity/naming contract](canonical-identity-and-naming.md) and [Round-Trip Praxis](archimate-round-trip-engineering-praxis.md) retain their existing precedence. Offline native schemas and maintained endpoint applicability are under current EA tooling/governance. The following current assertion and relationship rules are promoted from the original profile; its RAD capture/adoption/publication subsystem is historical.
 
+## Current element and relationship catalogue projection — RAD-1.1.17 / 002
+
+The [Archi catalogue contract](continuum-representation.md#archi-catalogue-organisation--rad-1117-iteration-002) replaces earlier element/relationship Model Tree folder
+instructions in this document. Native category / Catalogue / native type places
+elements; Relations / Catalogue / explicit source element places relationships.
+Home, Composition, Grouping, specialisation and reading coordinates no longer
+supply folder ancestry. Governed names and meaningful identifiers are preserved;
+native Name and element entry labels equal displayName without generated numbering.
+Earlier naming/containment semantics and View-specific conventions remain in force.
+Existing Views and their separate folder organisation are preserved, including
+presentation labels; this change supplies no View development or reorganisation
+authority. Earlier release-specific folder examples remain historical context,
+not competing current folder-generation rules.
+
 ## 2. Source and assertion contract
 
 Publication must use reviewed assertions, not derive semantics from directory names, headings, ordinals, indentation, Mermaid arrow syntax, implementation classes or catalogue juxtaposition. A source document can contain approved definitions, candidates, examples, historical content and unresolved assertions together. Standing attaches to each assertion and relationship, not merely to the file.

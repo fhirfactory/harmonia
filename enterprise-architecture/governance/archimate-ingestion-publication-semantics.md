@@ -276,6 +276,20 @@ appearances, including in different Views, may refer to the same edge. Ambiguous
 reuse, changed endpoints or competing meanings require Change Review rather
 than a guessed merge.
 
+## Current element and relationship catalogue projection — RAD-1.1.17 / 002
+
+The [Archi catalogue contract](continuum-representation.md#archi-catalogue-organisation--rad-1117-iteration-002) replaces earlier element/relationship Model Tree folder
+instructions in this document. Native category / Catalogue / native type places
+elements; Relations / Catalogue / explicit source element places relationships.
+Home, Composition, Grouping, specialisation and reading coordinates no longer
+supply folder ancestry. Governed names and meaningful identifiers are preserved;
+native Name and element entry labels equal displayName without generated numbering.
+Earlier naming/containment semantics and View-specific conventions remain in force.
+Existing Views and their separate folder organisation are preserved, including
+presentation labels; this change supplies no View development or reorganisation
+authority. Earlier release-specific folder examples remain historical context,
+not competing current folder-generation rules.
+
 ## Relationship navigation and returned model organisation
 
 The existing [source-based relationship home](archi-navigation-and-view-convention.md#relationship-homes-follow-the-source)

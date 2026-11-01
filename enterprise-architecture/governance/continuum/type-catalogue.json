@@ -310,7 +310,9 @@
       "directory": "strategy/course-of-action/implementation-guideline",
       "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
       "displayPrefix": "[ImplementationGuideline]",
-      "canonicalQualifier": null
+      "canonicalQualifier": null,
+      "meaning": "Preferred implementation approach or strategy, not inherently a binding mandate.",
+      "additionalAuthority": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md#architectural-element-specialisations"
     },
     "Feature": {
       "nativeType": "Capability",
@@ -346,6 +348,70 @@
       "authority": "enterprise-architecture/design/review/1.1.15/hcrl-1.1.15-001.pending.md#dr-1",
       "displayPrefix": "[Class]",
       "canonicalQualifier": "CLASS"
+    },
+    "Axiom": {
+      "nativeType": "Principle",
+      "directory": "motivation/principle/axiom",
+      "authority": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md#architectural-element-specialisations",
+      "displayPrefix": "[Axiom]",
+      "canonicalQualifier": "MOT",
+      "meaning": "Prescriptive governing architectural rule; deviations require governance."
+    },
+    "ArchitecturalAxiom": {
+      "nativeType": "Principle",
+      "directory": "motivation/principle/architectural-axiom",
+      "authority": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md#architectural-element-specialisations",
+      "displayPrefix": "[ArchitecturalAxiom]",
+      "canonicalQualifier": "MOT",
+      "meaning": "Prescriptive governing architectural direction for architecture and implementations."
+    },
+    "Mandate": {
+      "nativeType": "Constraint",
+      "directory": "motivation/constraint/mandate",
+      "authority": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md#architectural-element-specialisations",
+      "displayPrefix": "[Mandate]",
+      "canonicalQualifier": "MOT",
+      "meaning": "Binding architectural constraint or obligation, including positive obligations."
+    },
+    "FunctionalRequirement": {
+      "nativeType": "Requirement",
+      "directory": "motivation/requirement/functional-requirement",
+      "authority": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md#architectural-element-specialisations",
+      "displayPrefix": "[FunctionalRequirement]",
+      "canonicalQualifier": "MOT",
+      "meaning": "Required functionality or behaviour."
+    },
+    "NonFunctionalRequirement": {
+      "nativeType": "Requirement",
+      "directory": "motivation/requirement/non-functional-requirement",
+      "authority": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md#architectural-element-specialisations",
+      "displayPrefix": "[NonFunctionalRequirement]",
+      "canonicalQualifier": "MOT",
+      "meaning": "Required quality or operational characteristic."
+    },
+    "InformationRequirement": {
+      "nativeType": "Requirement",
+      "directory": "motivation/requirement/information-requirement",
+      "authority": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md#architectural-element-specialisations",
+      "displayPrefix": "[InformationRequirement]",
+      "canonicalQualifier": "MOT",
+      "meaning": "Required information semantics, integrity, availability or lifecycle characteristics."
+    },
+    "TransitionRequirement": {
+      "nativeType": "Requirement",
+      "directory": "motivation/requirement/transition-requirement",
+      "authority": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md#architectural-element-specialisations",
+      "displayPrefix": "[TransitionRequirement]",
+      "canonicalQualifier": "MOT",
+      "meaning": "Required conditions when moving between architecture or solution states."
+    },
+    "AssuranceRequirement": {
+      "nativeType": "Requirement",
+      "directory": "motivation/requirement/assurance-requirement",
+      "authority": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md#architectural-element-specialisations",
+      "displayPrefix": "[AssuranceRequirement]",
+      "canonicalQualifier": "MOT",
+      "meaning": "Required demonstrable evidence or verification outcome."
     }
   },
   "relationshipSpecializations": {

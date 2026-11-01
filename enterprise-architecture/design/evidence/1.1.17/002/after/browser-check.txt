@@ -1,0 +1,4 @@
+make: Entering directory '/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/tooling'
+timeout --signal=TERM --kill-after=5s 30s node /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/tooling/tests/continuum-browser-smoke.js /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-manifest/published/1.1.17/continuum.html
+{"status":"PASS","elements":1842,"checks":["initial population","identity search","selection","Feature filter","combined currentness filter"],"limits":"DOM-contract smoke test; no pixel/visual browser claim"}
+make: Leaving directory '/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/tooling'

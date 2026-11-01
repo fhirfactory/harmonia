@@ -1,0 +1,9 @@
+{
+  "release": "1.1.17",
+  "predecessor": "1.1.16",
+  "iteration": "001",
+  "path": "enterprise-architecture/design/archimate/published/1.1.17/Harmonia-Architecture.xml",
+  "sha256": "a35583c227e8cac0bfb856708c97f600be406fe2acdff53361b326677e012e0a",
+  "preservedCopy": "iteration-001-Harmonia-Architecture.xml.gz",
+  "workingTree": "Existing uncommitted Iteration 001 changes preserved; see git-status.txt"
+}

@@ -3,12 +3,20 @@
 # Architecture Continuum RAD
 
 The human-readable narrative publication of the canonical Architecture Continuum.
+Read the accepted **1.1.17 [LaTeX RAD](published/1.1.17/continuum-rad.tex)** and [complete correspondence](published/1.1.17/structure.json). The [completed release HCRL](../../design/register/1.1.17/hcrl-1.1.17-002.complete.md) records accepted incorporation, the two expressly deferred reader-facing reviews and retained transport/source qualifications. No separate reader-facing visual review or PDF compilation is claimed. Later release-labelled development publications inherit their stated baseline until separately authorised change; the historical PDF below remains a publication of its own release.
+
+------- Legacy Content - Superseded ------- Start ------
+Superseded by: the prepared 1.1.17 LaTeX source/correspondence links above. The original 1.1.10 publication and acceptance account is retained unchanged.
+---------------------------------------------------------
+
 Read the **1.1.10 [PDF](published/1.1.10/continuum-rad.pdf)** or
 [LaTeX source](published/1.1.10/continuum-rad.tex).
 The [correspondence record](published/1.1.10/structure.json) accounts for every
 source, its hash, full navigation coordinate and preserved standing.
 The [completed 1.1.10 HCRL](../../design/register/1.1.10/hcrl-1.1.10-001.complete.md)
 records the Solution Architect’s acceptance, preserved deferrals and documented limits.
+
+------- Legacy Content - Superseded ------- Finish ----
 
 Front matter leads to Architecture Governance, Parts I–VI (Motivation, Strategy,
 Business, Application, Technology, Implementation & Migration), and the

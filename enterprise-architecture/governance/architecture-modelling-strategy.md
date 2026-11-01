@@ -132,6 +132,20 @@ discover additional homes from changed catalogues or relationships. New or
 changed Home requires an explicitly reviewed assertion. The original capture,
 all native relationships, and historical publications remain preserved.
 
+## Current element and relationship catalogue projection — RAD-1.1.17 / 002
+
+The [Archi catalogue contract](continuum-representation.md#archi-catalogue-organisation--rad-1117-iteration-002) replaces earlier element/relationship Model Tree folder
+instructions in this document. Native category / Catalogue / native type places
+elements; Relations / Catalogue / explicit source element places relationships.
+Home, Composition, Grouping, specialisation and reading coordinates no longer
+supply folder ancestry. Governed names and meaningful identifiers are preserved;
+native Name and element entry labels equal displayName without generated numbering.
+Earlier naming/containment semantics and View-specific conventions remain in force.
+Existing Views and their separate folder organisation are preserved, including
+presentation labels; this change supplies no View development or reorganisation
+authority. Earlier release-specific folder examples remain historical context,
+not competing current folder-generation rules.
+
 ## Home-derived naming and navigation
 
 **Subsequent cross-layer adjudication:** the naming-context aspect of this earlier

@@ -34,24 +34,18 @@ The initial backfill is accepted 1.1.11; historical Manifest publications are
 preserved. See the [workbench procedure](../design/archimate/README.md) for canonical
 authority, architect-modified submissions and evidence distinctions.
 The canonical `continuum/navigation.json` supplies architectural organisation,
-while native-type Markdown paths remain storage locators. The shared
-`continuum_navigation.py` validates complete unique coverage and derives every
-hierarchical coordinate. All projections consume that same traversal. The
-1.1.11 reference area R holds the non-decompositional Stakeholder Index and
-historical Capability identities. Business Behaviour repeats only the complete
-recorded ancestry of populated contexts, with typed canonical Strategy links.
-Stakeholder contexts cite existing Association IDs. Exchange item documentation
-and derived `Continuum / Navigation References` properties expose the same
-references and context paths; those properties preserve orientation when Archi
-cannot preserve navigation-only folders. None of these links asserts an edge.
-The 1.1.13 Exchange adapter uses native-layer markers to preserve those folders,
-gives every member of the established Capability/Feature and logical Topic
-hierarchies and explicit governed model containment a stable directory containing
-its canonical element, including leaves (212 Business Behaviour Home subjects
-retain their accepted Business contexts),
-retains other navigation-parent folders without inferring containment, and
-qualifies cross-layer and reference indexes explicitly. RAD/Manifest keep the
-same canonical hierarchy. See the [physical workbench policy](../design/archimate/README.md#physical-workbench-organisation--1113).
+while native-type Markdown paths remain storage locators. The shared `continuum_navigation.py` validates complete unique reading-tree
+coverage and derives hierarchical coordinates for the Manifest and narrative RAD.
+The Archi projector uses independent native catalogues under the
+[governed contract](../governance/continuum-representation.md#archi-catalogue-organisation--rad-1117-iteration-002):
+native category / Catalogue / native type for elements, Relations / Catalogue /
+explicit source for relationships. Source folders show displayName [canonicalId]
+to distinguish equal names. No semantic relationship or reading hierarchy controls
+catalogue placement. Native Name and element entry labels equal displayName;
+generated numbering remains separate reading metadata. Views, their labels,
+geometry, references and folder tree (including empty folders) are preserved from
+the maintained template. Archi-returned View changes require explicit review and
+authorised template incorporation; no-edit returns never replace the template.
 Material navigation/publication changes require Solution Architect structural
 review under the existing Review Praxis before HCRL acceptance.
 The

@@ -100,7 +100,15 @@
         "Topic",
         "Package",
         "RequirementGroup",
-        "Class"
+        "Class",
+        "Axiom",
+        "ArchitecturalAxiom",
+        "Mandate",
+        "FunctionalRequirement",
+        "NonFunctionalRequirement",
+        "InformationRequirement",
+        "TransitionRequirement",
+        "AssuranceRequirement"
       ]
     },
     "displayName": {

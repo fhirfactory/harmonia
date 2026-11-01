@@ -365,6 +365,16 @@
               "canonicalId": "8f70dbb9c28f4dd9afe91c21243e5914",
               "kind": "element",
               "basis": "Existing canonical native classification"
+            },
+            {
+              "canonicalId": "adf5bd2a409b44099253fbed486d736f",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "150b3b1eea9b484b89ddc609bf550485",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
             }
           ]
         },
@@ -838,6 +848,111 @@
               "canonicalId": "807861850fa54d6c849e3e26d7172b9c",
               "kind": "element",
               "basis": "Existing canonical native classification"
+            },
+            {
+              "canonicalId": "79177908b67243a4a5f86fa180f5fd22",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "92ef574eb9b945dfaf6cf2b1b670595b",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "de466c998be34fae87a2be41983cbcdd",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "44b1a897fd1a41c097a1138bfee9cea6",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "8014fbaa48b5435785fced72aa748da6",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "ccea3a4dbd494cbe99c525ff2e87db26",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "5579b7ce9df540359b7ba36f807b52c5",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "75420022c1a7463e91ca48f229a78194",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "b29075c844cf403fb1322b4d1aba8803",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "d1380eec700a492b810354e0798c8146",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "e77f2e780a974dde99815ff63158941c",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "5220295ae5d144468066ae70683e0f19",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "8369e22bc3414ae49a1987095549ef03",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "9683182663cd40428d806ed2d8685511",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "0f07f89a3a854bfdac4d4fc423feefca",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "0d13da9390a3438ca887a4293bb034b9",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "65ac0367b7f241149ad1839032004039",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "76a67526fcdf40999f375a8cac54d5ef",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "3c11adccd7194276b787416368c13858",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "911511665a8a4135b7f2a37f5f79ad36",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "8ac5880576ad4f8fa9612f231178a06c",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
             }
           ]
         },
@@ -1024,6 +1139,176 @@
               "canonicalId": "5a6285eb1a1646e1badd693b8c175f01",
               "kind": "element",
               "basis": "Existing canonical native classification"
+            },
+            {
+              "canonicalId": "ae28fe841f6b476da4393c5e3c6a2eab",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "5acccfa8cf634669a26bb31010926720",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "d30a62f256ae44599841362118a84ec8",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "4a25d9c8aaa9418fbddb5bff7302c46d",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "eabd38371b6940289d9a4bf8e9773942",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "014a4549398d49ee81eadb7108598f48",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "8812fcd52d3f4afcbeef41b60bda5874",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "72b6d13c85944e2d93efc6c5f5a53d82",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "e04672ef7f2341b68c09a0348742a861",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "d93b50d0abe04c47bf09759627785745",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "d388ee6fb1d24ca886b2802cfb42c30e",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "de15359269cf45adb646a435c18306f8",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "e9d06b3fe6b744cc86bd2a136e02165a",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "151906f8acad4519b7f9204cce9fc758",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "c5c8a76fbcbb466bb94f27b4863fb84c",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "12466ce2701146c1b52a9c68c2fb426c",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "ea33d8db942f4b5b9e322d74cbfe975b",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "338a4cb1c2444ec2aa7703fcd9f28247",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "ab99a48c29c14a1883e820baf98b643a",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "4522bf0326334607a4a6177c819e61b6",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "4b540b55db1b4c1197482d8f29d70e45",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "fb7783088c894106a017912467a9e40d",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "40880a1432ab4848ab5278839620a406",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "13c56fcda53c406494561c883f32fc1c",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "81fdb5611a0f4338ae85478781032dd7",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "8731f88e202a4f5dacb408e5a1d474a8",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "fb30eb9b8a3c41eda3a8b5edfee95ac1",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "6316761bfd414032a8d889c7ba34131d",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "22583ccb89dc4cf683c710760bc4b1f2",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "4547bd339ff143c988391159e3407f20",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "54eb7e671c094ebcbb5503af36c7892d",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "96f7bfa320b049d2b76fcc35a1926883",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "5ce1ef8baaf84848979ff6c9ccf6ca91",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "f2d38e7beef84b61a769de4ca7f48951",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
             }
           ]
         },
@@ -1222,6 +1507,284 @@
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "title": "Principles",
+          "basis": "enterprise-architecture/design/evidence/1.1.17/001/before/ai-agent-tasks/20261031T104506Z-nfr-derived-elements-add.md; accepted Iteration 001 specification",
+          "source": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md",
+          "description": "Iteration 001 native Principles and prescriptive ArchitecturalAxiom specialisations; existing highest-authority AX definitions remain in Architecture Axioms.",
+          "children": [
+            {
+              "canonicalId": "45eb197073df406ea4080f9665ca12ab",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "86ecebbf65fc46af9763c96840342823",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "d8ae43c850a646d485e6aba6c41a88e2",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "82d29abf230d478aaf42ecb73ecbd01e",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "b7d07bb4ec064272898d2f0189cffefd",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "376363587388401194ff967b0fe80a5a",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "c2e7ee7597e64275b3523befd72c0987",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "2bd0132f072b42e9bf71bf483eb2deec",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "7e3b05a2e3e547cbbd26b1e181af0d10",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "26f3759e1d014a7cae5f265ea6530000",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "2ed20179a98d44a68880958155e47923",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "52083b57c01d4262bf965afa96489136",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "602eb50793f448d8bdbc92d41f851877",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "e9e0b4f82b6544e7ba87651c578d82c2",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "0da415a142c640d9ab1c73d770df8ea3",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "db8d320dc4c0454080f8c0f3c4e52801",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "6ee491b8c08d41868c3a7652fb794756",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "9d094b1b42644ab5aa2071a9460778e2",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "2e276eda09a94670bee0619468947895",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "39d698ff446d48ab9358844666fcafe5",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "9202f9b1adf84d4882a507a2d7280710",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "41fa01556ade4f22a35288b072113767",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "06ac0b10e0614c5cb33499c1e6c4edc7",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "e7b7d94a94194ef28a12051a550d3f3f",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "0968fc163ae54514bc1f02471fe6d866",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "d7e3f0388d0043259585d1e4c5c948d6",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "3da1fba95a00438db09c342dfba8b693",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "1c0b0e15434d47b1b08ad86e087a45d1",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "99adfc9b5af049748df91755d395c247",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "a9b1d031fa844057aa030f09e4fa6b01",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "6973441f2d62448188af9bfce5ad9d9f",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "4c270732fecf4e79bb83c938861ce05b",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "920606fdc7c14a27b7e39a08105c77b6",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "545465b03f794a509c932bd3126fbe57",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "0ce24ee595a445e5b1a95e54aa9f1eac",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "51191ca802f54efb8554d20423199cd0",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "41ce95e00e064d809ad4bda818705510",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "5bd9cc19d41e47d49978afaeea8343ed",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "2429db4dbecc4a03a66f5189d76a6c38",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "b1a46fce85b4448fba55987af146d61e",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "6df99d4979a942fe833e1c43317b385b",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "370d9a6e0e00402aba9720580a2e365e",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "859f884874094c96a6ace15e17131a4c",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "48e5415eff454e3e9e987506999e62f2",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "3ce5568f2ded498386fd6fcfb142f89a",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "33d348c2936b401aa567d8fa531147ea",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "49c13eb367b44565a011a77b90108cb8",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "f24e63c49135411bbfbc06f9385aeea5",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "43593f7a9566410ebc1aa30dbe935848",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "9cdbf642158c4c37a6f3f10a6dd9ebfe",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "1c2eb4d9aef4425288528907fed7ebc2",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "ed3e8d7923d14f8cbc6f08d3673248f2",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "aa179ef5bdf44b4eab3f2c855a8798d2",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "349f526a401e4e299b854cbfedad0fca",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
             }
           ]
         }
@@ -4847,6 +5410,181 @@
                   "basis": "Existing canonical native classification"
                 }
               ]
+            },
+            {
+              "canonicalId": "d4864b46c56e455189e418f3eaffec5c",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "c532bca066db4c419ccff5c52899af2a",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "2c21d1a175fb4c1486f6a91830838cde",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "8983e2a7c2814c9c99aa1f81eaabe9bd",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "f9ac3424852f4c30b5b152c7a007c704",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "d08bf41d719c43e3bc1a54bd79d95741",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "0b0be077a4d449e29d72048634e276e4",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "45c752faef034d3eb04ef6580f1dcc97",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "b5c3dcfd6ece40fdb6c8694924db2ae6",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "d0af3f7b7f9947008b3b066eefe73617",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "4332542fe3c54af9ba07220d255de9c2",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "80fe052799944843917044749288f297",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "be3bd95296c2427a870980a0e12adb41",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "93e40f54c22846538d91dc901ee34633",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "6ca05ae8b3b34c1493ecdb48cfda1979",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "a471a150c7d24210a991e96ed82e27a2",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "ddc28f789d69433686ef40561fec5750",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "b21633d8a1554688baf8704264c63608",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "1ad8342e9ffd43138b27be348e861a77",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "536bbcae0de5495a8f4d2e994cdc2232",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "e1521c49b740487e935fa9ecd00675a0",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "bbedb1ff13e94a88ac7ec60b8e40092e",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "427d41b9416943d4a362470a965baea5",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "267142b7a01a49c686458b9fc1c8d7b2",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "ab4206c7312449569abaa818b3a8727a",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "a0c7aa62c0ff498c91dcd6af011170ce",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "17ae70b671b5451a812df11d59ff6e1c",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "4621a5cb0dbe445488439ac03398a8b5",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "247ae4b498944e5f80c638fc958a3f43",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "4a2cd91fab0c42e98b09a017aefa66de",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "886896239b2e40b0b3bda53e922a2ab6",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "13ce74b78d624dd09c4401fafc911f67",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "71d7a55f3d8c4b12836601da142cb304",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "587db702f9134c5b8292f894dbcba53d",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
+            },
+            {
+              "canonicalId": "a6c8cc8f5647461cb210f88ced90cc57",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement"
             }
           ]
         },
@@ -11045,6 +11783,796 @@
               "canonicalId": "eeabb9c3c526404cbe4302906560fa7e",
               "kind": "historical",
               "basis": "Solution Architect 1.1.11 remediation Task, dispositions 1\u20133; navigation only"
+            }
+          ]
+        },
+        {
+          "title": "Architectural Subjects",
+          "basis": "enterprise-architecture/design/evidence/1.1.17/001/before/ai-agent-tasks/20261031T104506Z-nfr-derived-elements-add.md; accepted Iteration 001 specification",
+          "source": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md",
+          "description": "Iteration 001 subject classification across native architectural layers; explicit subject-containment Compositions do not establish component ownership or logical Home.",
+          "children": [
+            {
+              "canonicalId": "03cfbc2cac494fb9a15106c2c571d384",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "2ee0a6e46b47413d91cfb71ee3100e4b",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "ae28fe841f6b476da4393c5e3c6a2eab",
+                    "5acccfa8cf634669a26bb31010926720"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "6d6086134162468cac129040a139d8d9",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "45eb197073df406ea4080f9665ca12ab",
+                    "82d29abf230d478aaf42ecb73ecbd01e"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "8bf2a60efafc4caf89ed9744adfb628d",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "86ecebbf65fc46af9763c96840342823",
+                    "d8ae43c850a646d485e6aba6c41a88e2",
+                    "b7d07bb4ec064272898d2f0189cffefd",
+                    "376363587388401194ff967b0fe80a5a",
+                    "d4864b46c56e455189e418f3eaffec5c",
+                    "c532bca066db4c419ccff5c52899af2a",
+                    "2c21d1a175fb4c1486f6a91830838cde",
+                    "8983e2a7c2814c9c99aa1f81eaabe9bd",
+                    "40880a1432ab4848ab5278839620a406",
+                    "13c56fcda53c406494561c883f32fc1c",
+                    "17ae70b671b5451a812df11d59ff6e1c"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "5989495f1e224d5797054a8b6c0364a1",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "d30a62f256ae44599841362118a84ec8",
+                    "adf5bd2a409b44099253fbed486d736f"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
+            },
+            {
+              "canonicalId": "ef296738e68e4206a507dc3c811b3fe1",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "819aeed91d0544c3b7cc52e69aa46d72",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "c2e7ee7597e64275b3523befd72c0987"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "eb1b0526b898448688a322cce7ea6e74",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "3e45e60affb44bf384d54de26d3add6a",
+                    "4a25d9c8aaa9418fbddb5bff7302c46d",
+                    "6316761bfd414032a8d889c7ba34131d",
+                    "22583ccb89dc4cf683c710760bc4b1f2"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "b23f7fa8cb1b46569f63bde1aa5fbf1f",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "2bd0132f072b42e9bf71bf483eb2deec",
+                    "4c270732fecf4e79bb83c938861ce05b",
+                    "2429db4dbecc4a03a66f5189d76a6c38",
+                    "b1a46fce85b4448fba55987af146d61e",
+                    "4a2cd91fab0c42e98b09a017aefa66de"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "8b7fd22a55434e5ca3e7ba87afb020d6",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "f9ac3424852f4c30b5b152c7a007c704",
+                    "d08bf41d719c43e3bc1a54bd79d95741",
+                    "0b0be077a4d449e29d72048634e276e4",
+                    "45c752faef034d3eb04ef6580f1dcc97",
+                    "b5c3dcfd6ece40fdb6c8694924db2ae6",
+                    "d0af3f7b7f9947008b3b066eefe73617",
+                    "06ac0b10e0614c5cb33499c1e6c4edc7"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "aa179ef5bdf44b4eab3f2c855a8798d2",
+                    "349f526a401e4e299b854cbfedad0fca"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
+            },
+            {
+              "canonicalId": "a762424d13254eaa9467946d9d7355f8",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "f29ffa95c89d470b8a32e1369696327f",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "a471a150c7d24210a991e96ed82e27a2",
+                    "9683182663cd40428d806ed2d8685511",
+                    "886896239b2e40b0b3bda53e922a2ab6"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "4648cf5a1f8e4333978c13efae10eaa5",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "fe8916b03b084e82af587ac5a900349b",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "8812fcd52d3f4afcbeef41b60bda5874",
+                    "72b6d13c85944e2d93efc6c5f5a53d82",
+                    "370d9a6e0e00402aba9720580a2e365e"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "d2f8fcaac9984a12beab502d1944ea25",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "e04672ef7f2341b68c09a0348742a861",
+                    "d93b50d0abe04c47bf09759627785745",
+                    "ddc28f789d69433686ef40561fec5750",
+                    "52083b57c01d4262bf965afa96489136",
+                    "ab99a48c29c14a1883e820baf98b643a",
+                    "4522bf0326334607a4a6177c819e61b6",
+                    "4b540b55db1b4c1197482d8f29d70e45",
+                    "fb7783088c894106a017912467a9e40d",
+                    "4547bd339ff143c988391159e3407f20"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "84693ef7bb4a4ced9634737c6bd5a36d",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "bbedb1ff13e94a88ac7ec60b8e40092e",
+                    "6df99d4979a942fe833e1c43317b385b"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "bb3adbc3c2fb43e6a18a876c4e897c9c",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "92ef574eb9b945dfaf6cf2b1b670595b",
+                    "859f884874094c96a6ace15e17131a4c"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
+            },
+            {
+              "canonicalId": "abc27ddff6d644d9945db0cfd7488f07",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "40416671099a46678ac5dfc3d0d615cf",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "d388ee6fb1d24ca886b2802cfb42c30e",
+                    "ccea3a4dbd494cbe99c525ff2e87db26",
+                    "427d41b9416943d4a362470a965baea5",
+                    "41fa01556ade4f22a35288b072113767"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "c102ede2b9e249b2a2ddc9f19e0cbd7f",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "de466c998be34fae87a2be41983cbcdd"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "de791c4976f84676bf8545b1cfb8bf41",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "de15359269cf45adb646a435c18306f8",
+                    "9202f9b1adf84d4882a507a2d7280710"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "38d3dfcd23894f43b59d00c782170e63",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "44b1a897fd1a41c097a1138bfee9cea6",
+                    "8014fbaa48b5435785fced72aa748da6"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
+            },
+            {
+              "canonicalId": "098d2e468cd14029b43ec6dbd07374fd",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "0b9e18356e9e4dcca51007f03f7b81b4",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "267142b7a01a49c686458b9fc1c8d7b2",
+                    "e7b7d94a94194ef28a12051a550d3f3f",
+                    "a0c7aa62c0ff498c91dcd6af011170ce",
+                    "f24e63c49135411bbfbc06f9385aeea5"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "a44091225174403ebd2c5b75ba690a09",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "602eb50793f448d8bdbc92d41f851877",
+                    "ab4206c7312449569abaa818b3a8727a"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "bda335658c29473d9ba20352242c83f8",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "e9e0b4f82b6544e7ba87651c578d82c2",
+                    "e9d06b3fe6b744cc86bd2a136e02165a",
+                    "0968fc163ae54514bc1f02471fe6d866",
+                    "6973441f2d62448188af9bfce5ad9d9f"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "b3c19413e4b447adb5f1d86912db4052",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "b21633d8a1554688baf8704264c63608",
+                    "5579b7ce9df540359b7ba36f807b52c5",
+                    "0da415a142c640d9ab1c73d770df8ea3",
+                    "71d7a55f3d8c4b12836601da142cb304"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "1d7c50343cca49eeaeccf7c49c3c008b",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "49c13eb367b44565a011a77b90108cb8"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
+            },
+            {
+              "canonicalId": "afb9686c9f1c48159d92a518a7d17452",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "0b6d5f58354040189b3a9a30a9b913d9",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "2d89b3a1e74e42d28a9f0a3dfb2c4ecb",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "99adfc9b5af049748df91755d395c247",
+                    "a9b1d031fa844057aa030f09e4fa6b01",
+                    "911511665a8a4135b7f2a37f5f79ad36"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "9536aaf4114b4c35b8a795383d442f64",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "4332542fe3c54af9ba07220d255de9c2",
+                    "7e3b05a2e3e547cbbd26b1e181af0d10",
+                    "12466ce2701146c1b52a9c68c2fb426c",
+                    "338a4cb1c2444ec2aa7703fcd9f28247"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "5dde6ebecd094084b325ba59603bb919",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "76a67526fcdf40999f375a8cac54d5ef"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "5e8ddc78f9554243aeb051f77595cc88",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "80fe052799944843917044749288f297"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "f40da9359c7545d2ad0eef6c3a5bf645",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "79177908b67243a4a5f86fa180f5fd22",
+                    "8ac5880576ad4f8fa9612f231178a06c"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
+            },
+            {
+              "canonicalId": "914b8be39ecc4fb599e6bc0004c355c0",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "0a59e0ebb33c494e939148d30e42f49c",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "26f3759e1d014a7cae5f265ea6530000"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "e9804b6dea5c4e1db80be1925463786f",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "93e40f54c22846538d91dc901ee34633",
+                    "6ca05ae8b3b34c1493ecdb48cfda1979"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "8609b046777c4a8ab4d5cafb30e34d04",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "014a4549398d49ee81eadb7108598f48",
+                    "be3bd95296c2427a870980a0e12adb41",
+                    "0d13da9390a3438ca887a4293bb034b9",
+                    "545465b03f794a509c932bd3126fbe57",
+                    "0ce24ee595a445e5b1a95e54aa9f1eac"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "49966f8f01e244b4926ce4dc4c41fb47",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "81fdb5611a0f4338ae85478781032dd7",
+                    "8731f88e202a4f5dacb408e5a1d474a8"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "41900f15d1d2431295a4b9dc1aa752c0",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "eabd38371b6940289d9a4bf8e9773942",
+                    "6ee491b8c08d41868c3a7652fb794756",
+                    "65ac0367b7f241149ad1839032004039",
+                    "51191ca802f54efb8554d20423199cd0",
+                    "150b3b1eea9b484b89ddc609bf550485"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
+            },
+            {
+              "canonicalId": "8034148e63e6457f90e8cae1d4eb4453",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "cdcfbe8d106844109bb8ded51dea7a8a",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "75420022c1a7463e91ca48f229a78194",
+                    "d1380eec700a492b810354e0798c8146"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "47d8e097526248349dd6dbbd318b1ef4",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "b29075c844cf403fb1322b4d1aba8803"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "9cf94c0ac09141a3b909a6a1051bff97",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "ea33d8db942f4b5b9e322d74cbfe975b"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "0e5030d90c134f1ea445257f0b6e788e",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "db8d320dc4c0454080f8c0f3c4e52801",
+                    "e77f2e780a974dde99815ff63158941c",
+                    "5220295ae5d144468066ae70683e0f19",
+                    "fb30eb9b8a3c41eda3a8b5edfee95ac1",
+                    "41ce95e00e064d809ad4bda818705510",
+                    "4621a5cb0dbe445488439ac03398a8b5",
+                    "5bd9cc19d41e47d49978afaeea8343ed"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "f5df30b02e8a4d60bf44e8af2da4d5ab",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
+            },
+            {
+              "canonicalId": "16ebd2840f2246a4a9ec9991947f5db2",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "cc0a0cc2678c4c7db20ad015a75cc1de",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "151906f8acad4519b7f9204cce9fc758",
+                    "c5c8a76fbcbb466bb94f27b4863fb84c",
+                    "d7e3f0388d0043259585d1e4c5c948d6",
+                    "247ae4b498944e5f80c638fc958a3f43",
+                    "587db702f9134c5b8292f894dbcba53d"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "45cb08d300b74853b456f333572a2bf6",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "2ed20179a98d44a68880958155e47923",
+                    "b5d3447a05b249a8af154136fc36c4d9",
+                    "9cdbf642158c4c37a6f3f10a6dd9ebfe"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "f0402eea7b5a49f9b61fbd90e336b2de",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "96f7bfa320b049d2b76fcc35a1926883"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "b92ea843bd6342879b6a3be255743e31",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "f2e504e7d6374e41a81303265adda6de"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "da5b4238bd6945cf9b467ff3feb9d76b",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "9d094b1b42644ab5aa2071a9460778e2",
+                    "43593f7a9566410ebc1aa30dbe935848"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "315ba7bbe4624223a97a7e7e6d9cc252",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "4c02fec3af264b878ee3e0cfaecbf55f"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
+            },
+            {
+              "canonicalId": "4e5f729c97394b898918591f4d81a69a",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "3b56e60b042f429b8bf0efdb477c637e",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "36264352a7f745109deaac2025877690",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "1ad8342e9ffd43138b27be348e861a77",
+                    "54eb7e671c094ebcbb5503af36c7892d"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "ef476f07cd9e4ba6bdac99dc6e940baa",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "48e5415eff454e3e9e987506999e62f2"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "6b4df7dee51344b3b8c4c6eaace50d72",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "7f9cadb36d764b22840748a9608f9a37",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "3ce5568f2ded498386fd6fcfb142f89a",
+                    "33d348c2936b401aa567d8fa531147ea"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "1b4044525d474363bafb462e575582b9",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "536bbcae0de5495a8f4d2e994cdc2232",
+                    "e1521c49b740487e935fa9ecd00675a0"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
+            },
+            {
+              "canonicalId": "d0fa8cfaf5044359a5f6a1e91375429e",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "ab65501a8e3542839707ae31cd0b8efd",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "e8c7f8a36ff248cd9115d7a382324808",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "a6c8cc8f5647461cb210f88ced90cc57"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "35df8a5d8b1e495ba4cf79a5d4a47863",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "cd453ee30502406db647a0c5b4011739",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "1c2eb4d9aef4425288528907fed7ebc2"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "d3fb5abc58af4347ab52cdc26e9b14f1",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "f2d38e7beef84b61a769de4ca7f48951"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "7eceab6d8a9741708d438a7760103c69",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "13ce74b78d624dd09c4401fafc911f67",
+                    "5ce1ef8baaf84848979ff6c9ccf6ca91"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
+            },
+            {
+              "canonicalId": "1c57a3d9080443178f6e9159d0591c77",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "58c3577b30fd4748836a1d52e07c8a98",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "2e276eda09a94670bee0619468947895",
+                    "1c0b0e15434d47b1b08ad86e087a45d1"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "f814f4598722425cb3e7f45c32c11c90",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "8369e22bc3414ae49a1987095549ef03"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "0f07f89a3a854bfdac4d4fc423feefca"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "9f192036bee542ad883b89729a35bbfb",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "39d698ff446d48ab9358844666fcafe5"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "77cd076a5bdf463a93fe330698d9be19",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "3da1fba95a00438db09c342dfba8b693",
+                    "920606fdc7c14a27b7e39a08105c77b6"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
+            },
+            {
+              "canonicalId": "c77bba93c0c843959b30d9e1195fb68e",
+              "kind": "element",
+              "basis": "Explicit authorised creation placement",
+              "children": [
+                {
+                  "canonicalId": "114a3866dffc4a4cb6aabef39b48fadf",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "0f1014c80b0a473abf8c37845e0ed2fa",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "ed3e8d7923d14f8cbc6f08d3673248f2"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "432d52cc3de5443896a4559f215ece9f",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "22fce0d656ef4df89d2a35a85fa92aa1",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "71b9830ce1a543548334647cbbaec7f1",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                },
+                {
+                  "canonicalId": "0528b2ac76c548ae861ebcb1ef9cf3d9",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement",
+                  "relatedCanonicalIds": [
+                    "3c11adccd7194276b787416368c13858"
+                  ],
+                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement\u2019s one canonical native-layer location."
+                }
+              ]
             }
           ]
         }

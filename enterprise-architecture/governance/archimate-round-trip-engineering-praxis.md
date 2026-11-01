@@ -156,25 +156,15 @@ currentness is not approval. Competing/duplicate parents, cycles, missing endpoi
 and insufficient required ancestry remain findings, with no selected winner.
 Absence of a parent proves neither completeness nor semantic root status.
 
-Element and Relationship folders are derived navigation projections. Rebuild
-declared populations from this shared resolution and governed collection/role
-configuration, independently of submitted folder ancestry. **Every element
-participating in resolved semantic containment receives its own same-named
-Element navigation folder, including contained leaves.** Put the element's
-single reference inside its corresponding folder and nest contained children's
-folders recursively beneath the parent context, retaining governed collection
-and role placement. Leaf status never determines folder eligibility. Elements
-outside the resolved hierarchy retain their governed collection/standalone
-policy; do not manufacture containment to obtain folders. For example, Topic
-Care → Topic Encounter projects as `Care/Care` and `Care/Encounter/Encounter`
-(folders followed by the element reference), never two bare references in Care.
-Relationship navigation follows its actual
-source's resulting path, reuses a source context where present and supplies a
-source-element context otherwise. Relationship type/target does not select its
-home. Each semantic element/relationship has one navigation reference. Unmapped
-populations must be reported explicitly, never described as regenerated merely
-because their incoming folders were retained. Collection anchors are presentation
-configuration; they confer no architectural containment.
+Element and Relationship folders are deterministic catalogue projections under
+the [Archi catalogue contract](continuum-representation.md#archi-catalogue-organisation--rad-1117-iteration-002). Rebuild elements by native
+category / Catalogue / native type and relationships by Relations / Catalogue /
+explicit source canonical identity. Incoming folder ancestry, containment, Home,
+Grouping, specialisation and navigation coordinates do not select catalogue paths.
+Every element and relationship has exactly one catalogue reference. This retires
+the former containment-folder reconstruction while preserving all semantic
+containment/naming rules above. Never strip meaningful governed name identifiers;
+native Name and element entries equal displayName with no generated coordinates.
 
 **All existing Views are preserved architect-authored presentation artefacts in
 this round-trip process.** Preserve identity, membership, connections, nested
@@ -205,10 +195,11 @@ outcomes under repository instructions.
 Machinery corrections belong in governed context, shared implementation and
 regression/acceptance tests. Fixtures must distinguish preserved input, authored
 semantics, generated metadata/navigation and preserved presentation. Demonstrate
-folder generation with absent and misleading input folders, semantic-change
+catalogue regeneration with absent and misleading input folders, explicit-source
 sensitivity and unchanged semantic/View signatures. Assert the final serialized
-XML's parent/self and child-folder/child-reference structure, including contained
-leaves, non-leaves, multiple levels and both Home and Composition; output presence
+XML's native-type element paths and direct source relationship paths, including
+all represented native types, specialisations, and both Home and Composition
+participants without hierarchy-driven placement; output presence
 or arbitrary generated locations alone are insufficient. Secure before bytes
 before explicitly authorised in-run correction and pin machinery/configuration
 as needed for recovery and bounded read-only validation. These safeguards do not

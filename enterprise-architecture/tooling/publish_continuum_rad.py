@@ -160,8 +160,8 @@ def diagram(node, elements, population):
 
 
 def outputs(root, output):
-    # Use canonical navigation for chapters. Exchange's physical workbench
-    # representation may have more than one context for a shared location.
+    # Chapters follow canonical reading navigation, independently of Archi
+    # catalogues. Structural headings need no synthetic Exchange folder.
     model_bytes, _ = c.project(root)
     from lxml import etree as ET
     model = ET.fromstring(model_bytes)
@@ -169,17 +169,16 @@ def outputs(root, output):
     release = c.read_json(root / 'architecture-release.json')
     tree = nav.load(root, elements)
     locations = nav.by_element(tree)
-    model_nodes = {node.get('identifier'): node for node in model.findall('.//a:organizations//a:item', c.N)}
+    model_nodes = {node.get('identifier'): node for node in model.findall('a:elements/a:element', c.N)}
     for node in nav.walk(tree):
-        identifier = nav.transport_id(node)
-        if node['number'] == 'R':
-            projected = [model_nodes[identifier + '-' + layer] for layer in ('motivation', 'strategy')]
+        cid = node.get('canonicalId') or node.get('contextCanonicalId')
+        if cid:
+            projected = model_nodes[elements[cid][0]['exchange']['identifier']]
+            node['modelLocator'] = model.getroottree().getpath(projected)
         else:
-            projected = [model_nodes[identifier]] if identifier in model_nodes else []
-        c.require(projected, 'Missing Exchange navigation correspondence: ' + node['number'])
-        # XPath union records both native-layer index contexts without changing
-        # the single canonical R chapter or any RAD/Manifest navigation.
-        node['modelLocator'] = ' | '.join(model.getroottree().getpath(item) for item in projected)
+            # Canonical navigation alone owns this heading; inventing an XML
+            # folder would reintroduce the retired workbench hierarchy.
+            node['modelLocator'] = None
     prose = Prose(root, output, elements)
     notes = c.read_json(root / SOURCE / 'reader-notes.json')
     # Reuse the existing source-qualified relationship population selector.

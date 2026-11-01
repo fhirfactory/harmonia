@@ -3,9 +3,10 @@
 # Common canonical element template
 
 Generate the exact metadata skeleton with
-`python3 scripts/architecture_continuum.py template --type <NativeType>` and the
-explicit `--specialization Feature`, `--specialization Topic`, or
-`--specialization ImplementationGuideline` where applicable.
+`python3 enterprise-architecture/tooling/architecture_continuum.py template --type <NativeType>`
+and the explicit `--specialization <governed-specialisation>` where applicable.
+The [type catalogue](type-catalogue.json) supplies the complete native/specialisation
+mapping, including the accepted Iteration 001 architectural statement specialisations.
 Fill the metadata and body according to the [representation contract](../continuum-representation.md).
 The tool's template is the executable form; placeholders are not architecture.
 

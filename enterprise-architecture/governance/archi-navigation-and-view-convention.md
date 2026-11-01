@@ -15,6 +15,20 @@
 
 # Harmonia Archi Navigation & View Convention
 
+## Current element and relationship catalogue projection — RAD-1.1.17 / 002
+
+The [Archi catalogue contract](continuum-representation.md#archi-catalogue-organisation--rad-1117-iteration-002) replaces earlier element/relationship Model Tree folder
+instructions in this document. Native category / Catalogue / native type places
+elements; Relations / Catalogue / explicit source element places relationships.
+Home, Composition, Grouping, specialisation and reading coordinates no longer
+supply folder ancestry. Governed names and meaningful identifiers are preserved;
+native Name and element entry labels equal displayName without generated numbering.
+Earlier naming/containment semantics and View-specific conventions remain in force.
+Existing Views and their separate folder organisation are preserved, including
+presentation labels; this change supplies no View development or reorganisation
+authority. Earlier release-specific folder examples remain historical context,
+not competing current folder-generation rules.
+
 ## Continuum-derived workbench projection — 1.1.13
 
 The Solution Architect's [iteration 002 Task](../design/evidence/1.1.13/002/before/ai-agent-tasks/unresolved-archi-workbench-remediation.md)

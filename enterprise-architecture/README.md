@@ -15,6 +15,16 @@ The [Continuum Manifest](documentation/continuum-manifest/README.md) publishes t
 structural catalogue; the [Continuum RAD](documentation/continuum-rad/README.md)
 publishes the narrative architecture. Both derive from canonical Continuum state.
 
+Accepted architectural baseline: **1.1.17**, predecessor **1.1.16**. The completed [Iteration 001 HCRL](design/register/1.1.17/hcrl-1.1.17-001.complete.md) records the accepted NFR incorporation; [Iteration 002 / final release HCRL](design/register/1.1.17/hcrl-1.1.17-002.complete.md) records the accepted catalogue/display and round-trip result. The Solution Architect's two bounded reader-facing review deferrals remain explicit; neither review is claimed performed. Existing naming/source uncertainties and raw transport qualifications are retained.
+
+Accepted publications: [architecture browser](documentation/continuum-manifest/published/1.1.17/continuum.html), [element index](documentation/continuum-manifest/published/1.1.17/README.md), [ArchiMate Exchange](design/archimate/published/1.1.17/Harmonia-Architecture.xml) and [narrative LaTeX RAD](documentation/continuum-rad/published/1.1.17/continuum-rad.tex). The [reconciliation](design/evidence/1.1.17/001/after/reconciliation.md) accounts for all 150 source statements and 82 subject groups/subgroups. The root [release authority](../architecture-release.json) selects the current development/publication release; accepted 1.1.17 artefacts remain frozen at their release paths.
+
+Authorised next sequence: **1.1.18** — one-off AI-assisted ArchiMate View organisation/development, awaiting separate Solution Architect hierarchy/content instructions; **1.1.19** — resume substantive architectural design. This closure introduces no View or architectural-content changes. The generated root [Continuum Manifest](continuum/MANIFEST.md) follows the root release identity.
+
+------- Legacy Content - Superseded ------- Start ------
+Superseded by: the prepared-release navigation links above and the root release authority. The following 1.1.10 account is preserved unchanged as release-specific history.
+---------------------------------------------------------
+
 Current governed release: **1.1.10**, predecessor **1.1.9**. The
 [completed 1.1.10 HCRL](design/register/1.1.10/hcrl-1.1.10-001.complete.md) records the
 Solution Architect’s acceptance of the architectural organisation/navigation remap,
@@ -34,6 +44,8 @@ Canonical [navigation.json](continuum/navigation.json) supplies architectural
 organisation and every derived coordinate. Native-type directories remain storage
 locators. Canonical IDs, names, native types, semantic relationships and standing
 are unchanged. Historical publications and evidence remain historical.
+
+------- Legacy Content - Superseded ------- Finish ----
 
 ## Historical RAD-1.1.5 review-package account
 
