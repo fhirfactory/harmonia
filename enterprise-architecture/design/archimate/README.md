@@ -30,9 +30,9 @@ no additional visual-inspection claim or validation exemption.
 
 Release **1.1.18** is reserved for separately instructed one-off AI-assisted View
 organisation/development. Release **1.1.19** resumes substantive architectural design.
-Neither activity is commenced by release closure. A release-labelled 1.1.18 projection,
-when generated, inherits unchanged architecture and is a development baseline,
-not a separately accepted architectural transition.
+Neither activity is commenced by release closure. The [1.1.18 development projection](published/1.1.18/Harmonia-Architecture.xml)
+inherits unchanged architecture; only the model-level release identity differs.
+It is a development baseline, not a separately accepted architectural transition.
 
 The [1.1.16 projection](published/1.1.16/Harmonia-Architecture.xml)
 establishes the navigable architecture baseline incorporating the Calliope Information Unit foundational model, requirement groupings, and overview views,

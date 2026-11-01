@@ -1,0 +1,62 @@
+{
+  "outcome": "PASS_FOR_MAINTAINED_CHANGES_WITH_IDENTICAL_GENERATED_SOURCE_NOTICES",
+  "wholeIndexExitCode": 2,
+  "noticeCount": 12,
+  "files": {
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.18/parts/application.tex": [
+      {
+        "line": 344,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 810,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 815,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 1486,
+        "notice": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.18/parts/motivation.tex": [
+      {
+        "line": 1907,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 1914,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 1969,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 1976,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 2033,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 2040,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 2097,
+        "notice": "trailing whitespace."
+      },
+      {
+        "line": 2104,
+        "notice": "trailing whitespace."
+      }
+    ]
+  },
+  "allFlaggedDevelopmentFilesByteIdenticalToAcceptedReleaseCounterpart": true,
+  "maintainedChangesCheckExitCode": 0,
+  "treatment": "Preserve generated source bytes; inherited padding is unchanged from the accepted release."
+}

@@ -1,0 +1,11 @@
+{
+  "verification": "Unauthenticated read-only GitHub API; public repository matches configured origin",
+  "repository": {
+    "full_name": "fhirfactory/harmonia",
+    "private": false,
+    "html_url": "https://github.com/fhirfactory/harmonia",
+    "clone_url": "https://github.com/fhirfactory/harmonia.git",
+    "default_branch": "master",
+    "archived": false
+  }
+}

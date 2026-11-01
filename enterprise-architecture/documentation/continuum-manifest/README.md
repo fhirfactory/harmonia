@@ -9,6 +9,8 @@ projection; individually represented Markdown elements remain canonical.
 
 Accepted publication (**1.1.17**): [browser](published/1.1.17/continuum.html), [element index](published/1.1.17/README.md), [ArchiMate Exchange](published/1.1.17/Harmonia-Architecture.xml), [LaTeX catalogue](published/1.1.17/continuum-catalogue.tex), and [fully numbered hierarchy](published/1.1.17/navigation.json). The [completed release HCRL](../../design/register/1.1.17/hcrl-1.1.17-002.complete.md) preserves both bounded reader-facing review deferrals and all technical qualifications. Reader-facing visual review is not asserted. The root release authority selects the next development publication; accepted 1.1.17 paths remain immutable.
 
+Next development baseline (**1.1.18**): [browser](published/1.1.18/continuum.html), [index](published/1.1.18/README.md) and [Exchange](published/1.1.18/Harmonia-Architecture.xml). These inherit the accepted 1.1.17 architecture unchanged; reader-facing review remains deferred in its recorded scopes. No View work or new architectural acceptance is implied.
+
 ------- Legacy Content - Superseded ------- Start ------
 Superseded by: the prepared 1.1.17 publication links above; the previous publication link block remains unchanged historical navigation.
 ---------------------------------------------------------

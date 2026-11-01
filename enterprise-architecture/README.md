@@ -19,6 +19,8 @@ Accepted architectural baseline: **1.1.17**, predecessor **1.1.16**. The complet
 
 Accepted publications: [architecture browser](documentation/continuum-manifest/published/1.1.17/continuum.html), [element index](documentation/continuum-manifest/published/1.1.17/README.md), [ArchiMate Exchange](design/archimate/published/1.1.17/Harmonia-Architecture.xml) and [narrative LaTeX RAD](documentation/continuum-rad/published/1.1.17/continuum-rad.tex). The [reconciliation](design/evidence/1.1.17/001/after/reconciliation.md) accounts for all 150 source statements and 82 subject groups/subgroups. The root [release authority](../architecture-release.json) selects the current development/publication release; accepted 1.1.17 artefacts remain frozen at their release paths.
 
+Current development release: **1.1.18**, previous accepted release **1.1.17**, under the root release authority. The [1.1.18 Exchange](design/archimate/published/1.1.18/Harmonia-Architecture.xml) and its reader projections inherit the accepted architectural content unchanged; only release identity and derived publication metadata differ. This is an initial development baseline, not separate architectural acceptance.
+
 Authorised next sequence: **1.1.18** — one-off AI-assisted ArchiMate View organisation/development, awaiting separate Solution Architect hierarchy/content instructions; **1.1.19** — resume substantive architectural design. This closure introduces no View or architectural-content changes. The generated root [Continuum Manifest](continuum/MANIFEST.md) follows the root release identity.
 
 ------- Legacy Content - Superseded ------- Start ------

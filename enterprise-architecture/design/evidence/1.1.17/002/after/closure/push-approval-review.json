@@ -1,0 +1,18 @@
+{
+  "action": "git push origin HEAD:refs/heads/Data-Governence-Services",
+  "destination": "https://github.com/fhirfactory/harmonia.git",
+  "visibility": "public, verified by unauthenticated GitHub API",
+  "acceptedReleaseCommit": "27d90d77ee0608dda61cdc64cc6b5759cb899cb0",
+  "attempts": [
+    {
+      "result": "REJECTED_BY_AUTOMATIC_APPROVAL_REVIEW",
+      "reason": "Unverified external destination/potentially sensitive architecture payload; general push authority deemed insufficient."
+    },
+    {
+      "result": "REJECTED_BY_AUTOMATIC_APPROVAL_REVIEW",
+      "reason": "Destination/payload verification supplied; reviewer still requires trusted user authority explicitly approving public disclosure of architecture and evidence."
+    }
+  ],
+  "execution": "Neither rejected attempt executed. No workaround used; awaiting explicit public-disclosure approval.",
+  "unaffectedWork": "Proceed with already-authorised local development-baseline preparation and verification; no View/design work."
+}

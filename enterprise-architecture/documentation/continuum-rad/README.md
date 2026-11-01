@@ -5,6 +5,8 @@
 The human-readable narrative publication of the canonical Architecture Continuum.
 Read the accepted **1.1.17 [LaTeX RAD](published/1.1.17/continuum-rad.tex)** and [complete correspondence](published/1.1.17/structure.json). The [completed release HCRL](../../design/register/1.1.17/hcrl-1.1.17-002.complete.md) records accepted incorporation, the two expressly deferred reader-facing reviews and retained transport/source qualifications. No separate reader-facing visual review or PDF compilation is claimed. Later release-labelled development publications inherit their stated baseline until separately authorised change; the historical PDF below remains a publication of its own release.
 
+The **1.1.18 [development RAD source](published/1.1.18/continuum-rad.tex)** and [correspondence](published/1.1.18/structure.json) inherit unchanged 1.1.17 architecture with the next development release metadata. No View development or substantive design is introduced; both reader-facing review deferrals remain explicit.
+
 ------- Legacy Content - Superseded ------- Start ------
 Superseded by: the prepared 1.1.17 LaTeX source/correspondence links above. The original 1.1.10 publication and acceptance account is retained unchanged.
 ---------------------------------------------------------
