@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-11-01T02:03:12.545718Z",
+  "acceptedRelease": {
+    "version": "1.1.17",
+    "previousVersion": "1.1.16",
+    "commit": "27d90d77ee0608dda61cdc64cc6b5759cb899cb0",
+    "hcrls": [
+      "enterprise-architecture/design/register/1.1.17/hcrl-1.1.17-001.complete.md",
+      "enterprise-architecture/design/register/1.1.17/hcrl-1.1.17-002.complete.md"
+    ],
+    "publicationSha256": "b3c1bd71497497eb64e39e754dc69443d8012c762ffa00b9221116f12f3578a1",
+    "standing": "Accepted and locally committed; both reader-facing review scopes explicitly deferred"
+  },
+  "developmentBaseline": {
+    "version": "1.1.18",
+    "previousVersion": "1.1.17",
+    "commit": "8d6dfbf59aef7785061f58ac2badd65e8746823a",
+    "architecturalContentChanged": false,
+    "viewsChanged": false,
+    "validation": "PASS; entire Exchange identical except model-level Architecture Release property",
+    "localWorkingTreeAtBaselineCommit": "CLEAN"
+  },
+  "branch": "Data-Governence-Services",
+  "remote": "https://github.com/fhirfactory/harmonia.git",
+  "remoteVisibility": "public, verified by unauthenticated GitHub API",
+  "lastVerifiedRemoteCommit": "d5fdddb31e9bff39ae6c08b2e0f2c71d309ab5f5",
+  "push": {
+    "outcome": "REJECTED_BY_AUTOMATIC_APPROVAL_REVIEW_BEFORE_EXECUTION",
+    "rejectedRequests": 2,
+    "publicDisclosureApproval": "REQUIRED",
+    "remoteMutationPerformed": false,
+    "reason": "Automatic approval reviewer requires explicit user approval of public disclosure of the full architectural baseline, evidence and publications to this specific destination; general push authority was deemed insufficient."
+  },
+  "remainingMatters": {
+    "delivery": "Explicit public-disclosure approval for push to the verified public origin",
+    "humanReviews": "Two explicitly deferred reader-facing scopes; no completed review asserted",
+    "architecturalQualifications": "Retained transport differences, 117 unresolved new names, source-defined open parameters and qualified historical contributions"
+  },
+  "releaseSequence": {
+    "1.1.18": "One-off AI-assisted ArchiMate View organisation/development; separate instructions required; not commenced",
+    "1.1.19": "Resume substantive architectural design; not commenced"
+  },
+  "provenanceMaintenance": "The containing final evidence commit records these verified local baseline commits without a recursive self-hash or release increment; its resulting clean Git state is verified mechanically."
+}
