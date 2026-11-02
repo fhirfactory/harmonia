@@ -1,25 +1,27 @@
 <!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
 
-| Decision Review | Subject | Solution Architect Disposition | Comment |
-| --- | --- | --- | --- |
-| [DR-1](#dr-1) | Bounded export review and remaining incoming semantic changes | Transfer authorised; substantive disposition unresolved | Bounded G14–G18 interpretation completed; other semantic changes excluded and deferred, not accepted |
-| [DR-2](#dr-2) | G14–G18 accepted Subject hierarchy | Inherited accepted baseline; no new action | Completed and accepted; inherited baseline only |
-| [DR-3](#dr-3) | UseCase and UserStory modelling | Transfer authorised; substantive disposition unresolved | Deferred unresolved; no native modelling acceptance |
-| [DR-4](#dr-4) | Candidate identity and source contributions | Transfer authorised; substantive disposition unresolved | Deferred unresolved; no canonical identity allocated |
-| [DR-5](#dr-5) | Historical Capability targets | Transfer authorised; substantive disposition unresolved | Deferred unresolved; history retained |
-| [DR-6](#dr-6) | Capability and Feature coverage, including DR-6.01–DR-6.05 | Transfer authorised; substantive disposition unresolved | Deferred advisory assessment; no coverage or edge accepted |
-| [DR-7](#dr-7) | Primary and secondary Subject classification | Transfer authorised; substantive disposition unresolved | Deferred unresolved; supplied assignments retained |
-| [DR-8](#dr-8) | Source provenance, delivery scope and domain authority | Transfer authorised; substantive disposition unresolved | Deferred unresolved; original source limits retained |
-| [DR-9](#dr-9) | Historical Task times, supporting evidence and assurance limitations | Transfer authorised; substantive disposition unresolved | Deferred provenance/assurance qualifications; earlier failures retained as history |
-| [DR-10](#dr-10) | G18.03 spelling | Inherited accepted baseline; no new action | Completed and accepted; inherited baseline only |
-| [DR-11](#dr-11) | Previously blocked presentation reconciliation | Inherited accepted baseline; no new action | Superseded blocking state; completed by DR-12/DR-13, history preserved |
-| [DR-12](#dr-12) | 115 Groupings and distinct Composition/Home completion | Inherited accepted baseline; no new action | Completed and accepted with preserved naming qualifications |
-| [DR-13](#dr-13) | Five approved elements and complete authored Views | Inherited accepted baseline; no new action | Completed; exact candidate visually accepted by the Solution Architect |
-| [DR-14](#dr-14) | Inherited canonical naming, definition and standing qualifications | Transfer authorised; substantive disposition unresolved | Deferred unresolved; no acceptance inferred from publication |
-| [DR-15](#dr-15) | Deferred reader-facing structural reviews | Transfer authorised; substantive disposition unresolved | Existing reviews deferred; new review obligation identified for transfer |
-| [DR-16](#dr-16) | Actual no-edit Archi transport qualifications | Transfer authorised; substantive disposition unresolved | Actual transport executed; strict verifier FAIL retained; bounded differences classified |
+| Decision Review | Subject | Successor status | Preserved originating disposition | Comment |
+| --- | --- | --- | --- | --- |
+| [DR-1](#dr-1) | Bounded export review and remaining incoming semantic changes | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Bounded G14–G18 interpretation completed; other semantic changes excluded and deferred, not accepted |
+| [DR-2](#dr-2) | G14–G18 accepted Subject hierarchy | Unresolved — carried forward | Inherited accepted baseline; no new action | Completed and accepted; inherited baseline only |
+| [DR-3](#dr-3) | UseCase and UserStory modelling | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred unresolved; no native modelling acceptance |
+| [DR-4](#dr-4) | Candidate identity and source contributions | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred unresolved; no canonical identity allocated |
+| [DR-5](#dr-5) | Historical Capability targets | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred unresolved; history retained |
+| [DR-6](#dr-6) | Capability and Feature coverage, including DR-6.01–DR-6.05 | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred advisory assessment; no coverage or edge accepted |
+| [DR-7](#dr-7) | Primary and secondary Subject classification | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred unresolved; supplied assignments retained |
+| [DR-8](#dr-8) | Source provenance, delivery scope and domain authority | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred unresolved; original source limits retained |
+| [DR-9](#dr-9) | Historical Task times, supporting evidence and assurance limitations | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred provenance/assurance qualifications; earlier failures retained as history |
+| [DR-10](#dr-10) | G18.03 spelling | Unresolved — carried forward | Inherited accepted baseline; no new action | Completed and accepted; inherited baseline only |
+| [DR-11](#dr-11) | Previously blocked presentation reconciliation | Unresolved — carried forward | Inherited accepted baseline; no new action | Superseded blocking state; completed by DR-12/DR-13, history preserved |
+| [DR-12](#dr-12) | 115 Groupings and distinct Composition/Home completion | Unresolved — carried forward | Inherited accepted baseline; no new action | Completed and accepted with preserved naming qualifications |
+| [DR-13](#dr-13) | Five approved elements and complete authored Views | Unresolved — carried forward | Inherited accepted baseline; no new action | Completed; exact candidate visually accepted by the Solution Architect |
+| [DR-14](#dr-14) | Inherited canonical naming, definition and standing qualifications | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred unresolved; no acceptance inferred from publication |
+| [DR-15](#dr-15) | Deferred reader-facing structural reviews | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Existing reviews deferred; new review obligation identified for transfer |
+| [DR-16](#dr-16) | Actual no-edit Archi transport qualifications | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Actual transport executed; strict verifier FAIL retained; bounded differences classified |
 
 # HCRL 1.1.19 / 001 — Successor register for outstanding matters
+
+**Active successor status:** all 16 DR entries are carried forward as **Unresolved** in this HCRL, as directed by the Solution Architect's [record-reconciliation Task](../../evidence/1.1.18/001/before/ai-agent-tasks/20261102T030353Z-hcrl-record-reconciliation.md). The originating-disposition column and narrative preserve prior accepted implementation facts and qualifications; they do not mark a successor DR resolved or grant new acceptance. This records continuity of review obligations without reopening or changing accepted architecture. The former 1.1.18 review body is retired; its old path is now only a provenance locator.
 
 **Pending architectural decisions; successor of closed originating iteration 1.1.18/001.**
 This register carries all 16 prepared DR entries, their original statuses and every outstanding obligation into the published 1.1.19 governance context. Completed baseline entries are retained as correspondence, not reopened or newly resolved. It supplies no acceptance of unresolved architecture and authorises no implementation of transferred issues.
@@ -32,12 +34,14 @@ The Solution Architect's [revised release disposition](../../evidence/1.1.18/001
 
 The [completed originating HCRL](../../register/1.1.19/hcrl-1.1.18-001.complete.md) preserves the original review identity in the resulting-release register, following the existing cross-release convention. The [successor baseline evidence](../../evidence/1.1.19/001/before/inherited-baseline.json) identifies exact publication hashes and provenance. These successor records do not relocate or rename historical evidence.
 
-Original identifiers and originating evidence remain under their original iteration. DR-1–DR-13 retain correspondence with [iteration 001](../1.1.18/hcrl-1.1.18-001.pending.md); completed DRs are baseline references, not reopened implementation. DR-14–DR-16 collect explicit inherited qualifications, reader-facing review obligations and actual transport residuals. The [transfer evidence](../../evidence/1.1.18/001/after/closure-transition/transfer-register.json) records dependencies and original identifiers. HCRL DRs remain the sole semantic outstanding-work register.
+Original identifiers and originating evidence remain under their original iteration. DR-1–DR-13 retain correspondence with [iteration 001](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md); completed DRs are baseline references, not reopened implementation. DR-14–DR-16 collect explicit inherited qualifications, reader-facing review obligations and actual transport residuals. The [transfer evidence](../../evidence/1.1.18/001/after/closure-transition/transfer-register.json) records dependencies and original identifiers. HCRL DRs remain the sole semantic outstanding-work register.
 
 Applicable authority: [Architecture Governance](../../../governance/architecture-governance.md), [Review Praxis](../../../governance/architecture-review-praxis.md), [Provenance](../../../governance/architecture-change-provenance.md), [Release Policy](../../../governance/architecture-release-policy.md) and [Round-Trip Praxis](../../../governance/archimate-round-trip-engineering-praxis.md). AX-08/09 preserve purpose-selected evidence; AX-14 separates acceptance, currentness, Home, containment and presentation; AX-15/17 preserve uncertainty and bounded authority. No architecture is changed in establishing this register.
 
 <a id="dr-1"></a>
 ## DR-1 — Bounded export review and remaining incoming semantic changes
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-1.
 
@@ -49,12 +53,14 @@ Preserve the original full 3,824,520-byte delta and its 128,000-byte stop gate. 
 
 **Dependencies:** No additional dependency asserted.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-1)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-1)
 - [Origin/evidence 2](../../evidence/1.1.18/001/after/bounded-subject-review/scoped-subject-evidence.json)
 - [Origin/evidence 3](../../evidence/1.1.18/001/after/reconciliation/summary.json)
 
 <a id="dr-2"></a>
 ## DR-2 — G14–G18 accepted Subject hierarchy
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-2.
 
@@ -66,11 +72,13 @@ Preserve the 32 Subjects, 27 accepted Composition relationships, original CR-001
 
 **Dependencies:** No additional dependency asserted.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-2)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-2)
 - [Origin/evidence 2](../../evidence/1.1.18/001/after/subject-incorporation/incorporation-results.json)
 
 <a id="dr-3"></a>
 ## DR-3 — UseCase and UserStory modelling
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-3.
 
@@ -82,11 +90,13 @@ All 363 UseCase and 421 UserStory candidates remain candidates. Native construct
 
 **Dependencies:** DR-4, DR-8.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-3)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-3)
 - [Origin/evidence 2](../../evidence/1.1.18/001/after/reconciliation/candidates.json)
 
 <a id="dr-4"></a>
 ## DR-4 — Candidate identity and source contributions
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-4.
 
@@ -98,12 +108,14 @@ Preserve 784 rows from 421 sources, source-plus-kind keys, exact source text, 27
 
 **Dependencies:** DR-3, DR-8.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-4)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-4)
 - [Origin/evidence 2](../../evidence/1.1.18/001/after/reconciliation/duplicate-review.json)
 - [Origin/evidence 3](../../evidence/1.1.18/001/after/reconciliation/candidates.json)
 
 <a id="dr-5"></a>
 ## DR-5 — Historical Capability targets
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-5.
 
@@ -115,11 +127,13 @@ Four superseded targets affect 208 rows. Preserve the two recorded explicit succ
 
 **Dependencies:** DR-4, DR-6.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-5)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-5)
 - [Origin/evidence 2](../../evidence/1.1.18/001/after/reconciliation/mapping-targets.json)
 
 <a id="dr-6"></a>
 ## DR-6 — Capability and Feature coverage, including DR-6.01–DR-6.05
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-6; 1.1.18/001 DR-6.01; 1.1.18/001 DR-6.02; 1.1.18/001 DR-6.03; 1.1.18/001 DR-6.04; 1.1.18/001 DR-6.05.
 
@@ -134,34 +148,36 @@ Retain all five subordinate decisions and the 784-row/421-source assessment: 244
 <a id="dr-6-01"></a>
 ### DR-6.01 — Consent, representatives and emergency access
 
-Original identifier `1.1.18/001 DR-6.01`; unresolved continuation in this release. Preserve the complete originating finding, exclusions and evidence in [original DR-6](../1.1.18/hcrl-1.1.18-001.pending.md#dr-6). No recommendation or relationship is accepted by transfer.
+Original identifier `1.1.18/001 DR-6.01`; unresolved continuation in this release. Preserve the complete originating finding, exclusions and evidence in [original DR-6](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-6). No recommendation or relationship is accepted by transfer.
 
 <a id="dr-6-02"></a>
 ### DR-6.02 — Person identity and related persons
 
-Original identifier `1.1.18/001 DR-6.02`; unresolved continuation in this release. Preserve the complete originating finding, exclusions and evidence in [original DR-6](../1.1.18/hcrl-1.1.18-001.pending.md#dr-6). No recommendation or relationship is accepted by transfer.
+Original identifier `1.1.18/001 DR-6.02`; unresolved continuation in this release. Preserve the complete originating finding, exclusions and evidence in [original DR-6](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-6). No recommendation or relationship is accepted by transfer.
 
 <a id="dr-6-03"></a>
 ### DR-6.03 — Practitioner, organisation and directory information
 
-Original identifier `1.1.18/001 DR-6.03`; unresolved continuation in this release. Preserve the complete originating finding, exclusions and evidence in [original DR-6](../1.1.18/hcrl-1.1.18-001.pending.md#dr-6). No recommendation or relationship is accepted by transfer.
+Original identifier `1.1.18/001 DR-6.03`; unresolved continuation in this release. Preserve the complete originating finding, exclusions and evidence in [original DR-6](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-6). No recommendation or relationship is accepted by transfer.
 
 <a id="dr-6-04"></a>
 ### DR-6.04 — Terminology and mutable reference content
 
-Original identifier `1.1.18/001 DR-6.04`; unresolved continuation in this release. Preserve the complete originating finding, exclusions and evidence in [original DR-6](../1.1.18/hcrl-1.1.18-001.pending.md#dr-6). No recommendation or relationship is accepted by transfer.
+Original identifier `1.1.18/001 DR-6.04`; unresolved continuation in this release. Preserve the complete originating finding, exclusions and evidence in [original DR-6](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-6). No recommendation or relationship is accepted by transfer.
 
 <a id="dr-6-05"></a>
 ### DR-6.05 — Operational and cross-cutting concerns
 
-Original identifier `1.1.18/001 DR-6.05`; unresolved continuation in this release. Preserve the complete originating finding, exclusions and evidence in [original DR-6](../1.1.18/hcrl-1.1.18-001.pending.md#dr-6). No recommendation or relationship is accepted by transfer.
+Original identifier `1.1.18/001 DR-6.05`; unresolved continuation in this release. Preserve the complete originating finding, exclusions and evidence in [original DR-6](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-6). No recommendation or relationship is accepted by transfer.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-6)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-6)
 - [Origin/evidence 2](../../evidence/1.1.18/001/after/reconciliation/candidate-assessment.csv)
 - [Origin/evidence 3](../../evidence/1.1.18/001/after/reconciliation/source-alignment-review.json)
 
 <a id="dr-7"></a>
 ## DR-7 — Primary and secondary Subject classification
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-7.
 
@@ -173,11 +189,13 @@ Retain 426 rows flagged for changed/unresolved primary classification, all suppl
 
 **Dependencies:** DR-3, DR-4, DR-6.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-7)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-7)
 - [Origin/evidence 2](../../evidence/1.1.18/001/after/reconciliation/candidate-assessment.csv)
 
 <a id="dr-8"></a>
 ## DR-8 — Source provenance, delivery scope and domain authority
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-8.
 
@@ -189,11 +207,13 @@ Repository OpenSpec correspondence does not prove fidelity to unavailable upstre
 
 **Dependencies:** No additional dependency asserted.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-8)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-8)
 - [Origin/evidence 2](../../evidence/1.1.18/001/after/reconciliation/verification.json)
 
 <a id="dr-9"></a>
 ## DR-9 — Historical Task times, supporting evidence and assurance limitations
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-9.
 
@@ -205,7 +225,7 @@ Three original Task instruction-entry times and filename prefixes remain UNRESOL
 
 **Dependencies:** DR-1.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-9)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-9)
 - [Origin/evidence 2](../../evidence/1.1.18/001/after/complete-views/verification.json)
 - [Origin/evidence 3](../../evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md)
 - [Origin/evidence 4](../../evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md)
@@ -213,6 +233,8 @@ Three original Task instruction-entry times and filename prefixes remain UNRESOL
 
 <a id="dr-10"></a>
 ## DR-10 — G18.03 spelling
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-10.
 
@@ -224,11 +246,13 @@ Retain Directory-Information-Maintenance in the authored presentation and the un
 
 **Dependencies:** No additional dependency asserted.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-10)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-10)
 - [Origin/evidence 2](../../evidence/1.1.18/001/after/complete-views/presentation-transformations.json)
 
 <a id="dr-11"></a>
 ## DR-11 — Previously blocked presentation reconciliation
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-11.
 
@@ -240,12 +264,14 @@ The 120 missing native records were later correctly classified as 115 Groupings,
 
 **Dependencies:** No additional dependency asserted.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-11)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-11)
 - [Origin/evidence 2](../../evidence/1.1.18/001/after/views-reconciliation/comparison.md)
 - [Origin/evidence 3](../../evidence/1.1.18/001/after/complete-views/verification.json)
 
 <a id="dr-12"></a>
 ## DR-12 — 115 Groupings and distinct Composition/Home completion
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-12.
 
@@ -257,12 +283,14 @@ Retain 115 incorporated Groupings, 114 existing Subject identities for 115 folde
 
 **Dependencies:** No additional dependency asserted.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-12)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-12)
 - [Origin/evidence 2](../../evidence/1.1.18/001/after/subject-hierarchy/verification.json)
 - [Origin/evidence 3](../../evidence/1.1.18/001/after/complete-views/verification.json)
 
 <a id="dr-13"></a>
 ## DR-13 — Five approved elements and complete authored Views
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 DR-13.
 
@@ -274,13 +302,15 @@ Retain five governed identities/types/specialisations and the combined Stakehold
 
 **Dependencies:** No additional dependency asserted.
 
-- [Origin/evidence 1](../1.1.18/hcrl-1.1.18-001.pending.md#dr-13)
+- [Origin/evidence 1](../../evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md#dr-13)
 - [Origin/evidence 2](../../evidence/1.1.18/001/before/ai-agent-tasks/20261102T020822Z-closure-and-successor-transition.md)
 - [Origin/evidence 3](../../evidence/1.1.18/001/after/complete-views/five-element-results.json)
 - [Origin/evidence 4](../../evidence/1.1.18/001/after/complete-views/verification.json)
 
 <a id="dr-14"></a>
 ## DR-14 — Inherited canonical naming, definition and standing qualifications
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** Canonical validation at 1.1.18/001 closure; 1.1.18/001 DR-2, DR-12, DR-13 qualifications; Inherited 1.1.7 baseline qualifications.
 
@@ -297,6 +327,8 @@ Retain the complete 673-row canonical unresolved-property inventory, canonical I
 <a id="dr-15"></a>
 ## DR-15 — Deferred reader-facing structural reviews
 
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
+
 **Original identifier/provenance:** 1.1.17/001 reader-facing review deferral; 1.1.17/002 DR-2 reader-facing review deferral; 1.1.18/001 changed Subject navigation reader-facing checkpoint.
 
 **Iteration 001 conclusion:** Existing reviews deferred; new review obligation identified for transfer.
@@ -312,6 +344,8 @@ Preserve the two explicit 1.1.17 deferrals: iteration 001 NFR hierarchy, allocat
 
 <a id="dr-16"></a>
 ## DR-16 — Actual no-edit Archi transport qualifications
+
+**Successor review status:** Unresolved — carried forward; no decision is resolved or accepted by this reconciliation.
 
 **Original identifier/provenance:** 1.1.18/001 closure actual no-edit control; Inherited 1.1.17/002 DR-2 transport qualifications.
 

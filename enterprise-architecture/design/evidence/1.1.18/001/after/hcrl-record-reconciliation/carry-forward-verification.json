@@ -1,0 +1,293 @@
+{
+  "standing": "Record-continuity verification only; no issue resolution or architectural change",
+  "originatingHcrl": "1.1.18/001",
+  "completedRecord": "enterprise-architecture/design/register/1.1.19/hcrl-1.1.18-001.complete.md",
+  "activeSuccessor": "1.1.19/001",
+  "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md",
+  "retiredReviewLocator": "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md",
+  "exactReviewPreimage": "enterprise-architecture/design/evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.pending.md",
+  "readableRetiredHistory": "enterprise-architecture/design/evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md",
+  "entries": [
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-1"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-1",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-1",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Bounded G14–G18 interpretation completed; other semantic changes excluded and deferred, not accepted",
+      "dependencies": [],
+      "outstandingAcceptance": "Obtain explicit bounded interpretation scope before interpreting the oversized residual delta; adjudicate each independent architectural change before incorporation.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-1",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/bounded-subject-review/scoped-subject-evidence.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/summary.json"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-2"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-2",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-2",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Completed and accepted; inherited baseline only",
+      "dependencies": [],
+      "outstandingAcceptance": "None for this accepted bounded result; unresolved formal naming is tracked separately in DR-14.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-2",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/incorporation-results.json"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-3"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-3",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-3",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Deferred unresolved; no native modelling acceptance",
+      "dependencies": [
+        "DR-4",
+        "DR-8"
+      ],
+      "outstandingAcceptance": "Solution Architect metamodel/native-treatment decision and governed mechanism readiness before creation.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-3",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidates.json"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-4"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-4",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-4",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Deferred unresolved; no canonical identity allocated",
+      "dependencies": [
+        "DR-3",
+        "DR-8"
+      ],
+      "outstandingAcceptance": "Explicit identity/contribution dispositions before UUID allocation, merging or relationship creation.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-4",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/duplicate-review.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidates.json"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-5"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-5",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-5",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Deferred unresolved; history retained",
+      "dependencies": [
+        "DR-4",
+        "DR-6"
+      ],
+      "outstandingAcceptance": "Architectural target/currentness and association-meaning adjudication, separately from lexical correspondence.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-5",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/mapping-targets.json"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-6",
+        "1.1.18/001 DR-6.01",
+        "1.1.18/001 DR-6.02",
+        "1.1.18/001 DR-6.03",
+        "1.1.18/001 DR-6.04",
+        "1.1.18/001 DR-6.05"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-6",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-6",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Deferred advisory assessment; no coverage or edge accepted",
+      "dependencies": [
+        "DR-3",
+        "DR-4",
+        "DR-5",
+        "DR-8"
+      ],
+      "outstandingAcceptance": "Decide each proposed coverage claim and any future relationship native type, direction, endpoints, meaning, provenance and standing. No inferred Realization, CT3 ancestry, ownership or implementation.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-6",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidate-assessment.csv",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/source-alignment-review.json"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-7"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-7",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-7",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Deferred unresolved; supplied assignments retained",
+      "dependencies": [
+        "DR-3",
+        "DR-4",
+        "DR-6"
+      ],
+      "outstandingAcceptance": "Explicit classification and relationship-semantics dispositions; do not create multiple primary containment/Home assignments from secondary labels or Views.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-7",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidate-assessment.csv"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-8"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-8",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-8",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Deferred unresolved; original source limits retained",
+      "dependencies": [],
+      "outstandingAcceptance": "Source verification or explicit qualified acceptance, and separate scope/domain-authority decisions before candidate incorporation. This is distinct from the closure publication release number.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-8",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/verification.json"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-9"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-9",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-9",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Deferred provenance/assurance qualifications; earlier failures retained as history",
+      "dependencies": [
+        "DR-1"
+      ],
+      "outstandingAcceptance": "Preserve unresolved temporal provenance for explicit Solution Architect treatment; separately scope any further assurance. Transfer does not claim full temporal conformance or full JDK analysis.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-9",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/verification.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md",
+        "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md",
+        "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-10"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-10",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-10",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Completed and accepted; inherited baseline only",
+      "dependencies": [],
+      "outstandingAcceptance": "None; no new architectural rename or UUID.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-10",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/presentation-transformations.json"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-11"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-11",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-11",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Superseded blocking state; completed by DR-12/DR-13, history preserved",
+      "dependencies": [],
+      "outstandingAcceptance": "None for the resolved reference gate; transport qualifications remain in DR-16.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-11",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/comparison.md",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/verification.json"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-12"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-12",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-12",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Completed and accepted with preserved naming qualifications",
+      "dependencies": [],
+      "outstandingAcceptance": "No repeat incorporation or Home creation. Formal Grouping naming vocabulary remains explicitly unresolved under DR-14.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-12",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/verification.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/verification.json"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-13"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-13",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-13",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Completed; exact candidate visually accepted by the Solution Architect",
+      "dependencies": [],
+      "outstandingAcceptance": "No further visual acceptance of this exact candidate is outstanding. Do not extend that acceptance to OpenSpec candidates, incoming semantic residuals, transport loss or reader-facing publications.",
+      "originalEvidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-13",
+        "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T020822Z-closure-and-successor-transition.md",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/five-element-results.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/verification.json"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "Canonical validation at 1.1.18/001 closure",
+        "1.1.18/001 DR-2, DR-12, DR-13 qualifications",
+        "Inherited 1.1.7 baseline qualifications"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-14",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-14",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Deferred unresolved; no acceptance inferred from publication",
+      "dependencies": [],
+      "outstandingAcceptance": "Separate architectural adjudication per material qualification before changing canonical meaning, identity, naming rules or standing.",
+      "originalEvidence": [
+        "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/inherited-canonical-qualifications.json"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.17/001 reader-facing review deferral",
+        "1.1.17/002 DR-2 reader-facing review deferral",
+        "1.1.18/001 changed Subject navigation reader-facing checkpoint"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-15",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-15",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Existing reviews deferred; new review obligation identified for transfer",
+      "dependencies": [],
+      "outstandingAcceptance": "Solution Architect structural review of these three scopes, or explicit bounded deferral under Common Governance. Closure Task authorises transfer of outstanding review obligations; no technical gate is waived.",
+      "originalEvidence": [
+        "enterprise-architecture/design/register/1.1.17/hcrl-1.1.17-002.complete.md#dr-2",
+        "enterprise-architecture/governance/architecture-review-praxis.md"
+      ]
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 closure actual no-edit control",
+        "Inherited 1.1.17/002 DR-2 transport qualifications"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-16",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-16",
+      "successorReviewStatus": "Unresolved",
+      "preservedOriginatingDisposition": "Actual transport executed; strict verifier FAIL retained; bounded differences classified",
+      "dependencies": [],
+      "outstandingAcceptance": "Retain exact candidate/native model/returned XML/log and classifications; separately adjudicate any desired machinery or transport-loss remediation. Do not change comparators or canonical/template sources to make this return pass.",
+      "originalEvidence": [
+        "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/archi-comparison-summary.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/archi-transport-classification.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/transport-verification.log",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/archi-execution.log"
+      ]
+    }
+  ]
+}
