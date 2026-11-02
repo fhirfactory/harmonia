@@ -1,0 +1,901 @@
+{
+  "authority": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md",
+  "hcrl": "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md",
+  "review": "enterprise-architecture/design/review/1.1.18/change-review.md",
+  "reviewAcceptanceSha256": "3f9d0360cdcab292c7f2e06fb5621d6a4784cc411c284911ab4cbef31af5b3e9",
+  "initialCanonicalElements": 1842,
+  "initialRelationships": 1882,
+  "subjects": [
+    {
+      "code": "G14",
+      "cr": "CR-001",
+      "canonicalId": "a9deca9adbb443208d6f08dbe4505717",
+      "exchangeId": "id-d941117192cb5253bf1e8753f31c3ca6",
+      "source": "enterprise-architecture/continuum/grouping/a9deca9adbb443208d6f08dbe4505717.md",
+      "displayName": "Patient Identity and Demographics",
+      "friendlyName": "PatientIdentityAndDemographics",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-001; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G14.01",
+      "cr": "CR-002",
+      "canonicalId": "5fcada54e6df40a8983335a90e4a9f02",
+      "exchangeId": "id-24e1752fecef5a519c3bf723657386c4",
+      "source": "enterprise-architecture/continuum/grouping/5fcada54e6df40a8983335a90e4a9f02.md",
+      "displayName": "Identity Registration and Verification",
+      "friendlyName": "IdentityRegistrationAndVerification",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-002; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G14.02",
+      "cr": "CR-003",
+      "canonicalId": "b91ec2110aaf4d44bd043bb787fbd910",
+      "exchangeId": "id-92aa8ffe30c75de89f854b727d240004",
+      "source": "enterprise-architecture/continuum/grouping/b91ec2110aaf4d44bd043bb787fbd910.md",
+      "displayName": "Identity Matching and Reconciliation",
+      "friendlyName": "IdentityMatchingAndReconciliation",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-003; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G14.03",
+      "cr": "CR-004",
+      "canonicalId": "801386f27cda458b8ce811f133d917e9",
+      "exchangeId": "id-9ee6053ff1eb54f78509532fda422b41",
+      "source": "enterprise-architecture/continuum/grouping/801386f27cda458b8ce811f133d917e9.md",
+      "displayName": "Identity Maintenance and Status",
+      "friendlyName": "IdentityMaintenanceAndStatus",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-004; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G14.04",
+      "cr": "CR-005",
+      "canonicalId": "58c5443983854dd98cd72f2dd795c063",
+      "exchangeId": "id-0474279e12225651bc637436e2cbaf58",
+      "source": "enterprise-architecture/continuum/grouping/58c5443983854dd98cd72f2dd795c063.md",
+      "displayName": "Demographic and Contact Management",
+      "friendlyName": "DemographicAndContactManagement",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-005; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G14.05",
+      "cr": "CR-006",
+      "canonicalId": "2f97190ae5734e8caee48d581e1a6ab2",
+      "exchangeId": "id-29f1a0f04d185eca9ad90b307f1a6ba0",
+      "source": "enterprise-architecture/continuum/grouping/2f97190ae5734e8caee48d581e1a6ab2.md",
+      "displayName": "Identity Access and Disclosure",
+      "friendlyName": "IdentityAccessAndDisclosure",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-006; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G14.06",
+      "cr": "CR-007",
+      "canonicalId": "ba2e95cc11374757bd0945148da43b07",
+      "exchangeId": "id-30499e8088fe55caa7925192adf06241",
+      "source": "enterprise-architecture/continuum/grouping/ba2e95cc11374757bd0945148da43b07.md",
+      "displayName": "Identity Quality and Oversight",
+      "friendlyName": "IdentityQualityAndOversight",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-007; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G15",
+      "cr": "CR-008",
+      "canonicalId": "fd9d0fa7117a4dc3b45cfed0e7be614b",
+      "exchangeId": "id-a5fe9dd5dcfd502dbdfea4ab86d0e26d",
+      "source": "enterprise-architecture/continuum/grouping/fd9d0fa7117a4dc3b45cfed0e7be614b.md",
+      "displayName": "Provider and Workforce Management",
+      "friendlyName": "ProviderAndWorkforceManagement",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-008; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G15.01",
+      "cr": "CR-009",
+      "canonicalId": "a58e87c95bd24c16a1006b217aeac691",
+      "exchangeId": "id-895be9de41a9574e8866fc73571a0cf2",
+      "source": "enterprise-architecture/continuum/grouping/a58e87c95bd24c16a1006b217aeac691.md",
+      "displayName": "Provider Identity and Registration",
+      "friendlyName": "ProviderIdentityAndRegistration",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-009; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G15.02",
+      "cr": "CR-010",
+      "canonicalId": "2ad6333e5858456dba8aefeec71773a5",
+      "exchangeId": "id-c76e998defa35740bdf92bea51aaf54d",
+      "source": "enterprise-architecture/continuum/grouping/2ad6333e5858456dba8aefeec71773a5.md",
+      "displayName": "Credentials and Professional Standing",
+      "friendlyName": "CredentialsAndProfessionalStanding",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-010; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G15.03",
+      "cr": "CR-011",
+      "canonicalId": "25a15d4bea2d418d918e3a7e01d9fcbf",
+      "exchangeId": "id-3ee9a01480ae5f8bb48fa6ad7148859f",
+      "source": "enterprise-architecture/continuum/grouping/25a15d4bea2d418d918e3a7e01d9fcbf.md",
+      "displayName": "Affiliations, Roles and Practice Locations",
+      "friendlyName": "AffiliationsRolesAndPracticeLocations",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-011; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G15.04",
+      "cr": "CR-012",
+      "canonicalId": "a47808600e8f4d7c83756f4ce77b498e",
+      "exchangeId": "id-bb0b8df89b025d5081ea84e83bce6d83",
+      "source": "enterprise-architecture/continuum/grouping/a47808600e8f4d7c83756f4ce77b498e.md",
+      "displayName": "Provider Profile Maintenance",
+      "friendlyName": "ProviderProfileMaintenance",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-012; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G15.05",
+      "cr": "CR-013",
+      "canonicalId": "ad16265c76114f4eaddf75b0be2d4755",
+      "exchangeId": "id-0dfc3ee08d0557d5bb5212b6eb8a5c52",
+      "source": "enterprise-architecture/continuum/grouping/ad16265c76114f4eaddf75b0be2d4755.md",
+      "displayName": "Provider Lifecycle and Administration",
+      "friendlyName": "ProviderLifecycleAndAdministration",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-013; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G16",
+      "cr": "CR-014",
+      "canonicalId": "abca473311ea40aca58756d859077ff7",
+      "exchangeId": "id-f55845b17ed5555aaaba3801f81c817a",
+      "source": "enterprise-architecture/continuum/grouping/abca473311ea40aca58756d859077ff7.md",
+      "displayName": "Consent and Information Sharing",
+      "friendlyName": "ConsentAndInformationSharing",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-014; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G16.01",
+      "cr": "CR-015",
+      "canonicalId": "884f06591f6c4dcf8e7f94e4b31269c1",
+      "exchangeId": "id-b78d26a55c40537dbf4d023760685ecd",
+      "source": "enterprise-architecture/continuum/grouping/884f06591f6c4dcf8e7f94e4b31269c1.md",
+      "displayName": "Consent Capture and Maintenance",
+      "friendlyName": "ConsentCaptureAndMaintenance",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-015; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G16.02",
+      "cr": "CR-016",
+      "canonicalId": "e48346674b0740c19f4a13cc50a7ae66",
+      "exchangeId": "id-fc23210d18b55cb8860fec99bcfb3abe",
+      "source": "enterprise-architecture/continuum/grouping/e48346674b0740c19f4a13cc50a7ae66.md",
+      "displayName": "Consent Scope and Preferences",
+      "friendlyName": "ConsentScopeAndPreferences",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-016; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G16.03",
+      "cr": "CR-017",
+      "canonicalId": "3d87dbf35e0a43a3b5e12cbc6b947763",
+      "exchangeId": "id-95ad291dd68351ce97207f2db51906c9",
+      "source": "enterprise-architecture/continuum/grouping/3d87dbf35e0a43a3b5e12cbc6b947763.md",
+      "displayName": "Consent Verification and Decisions",
+      "friendlyName": "ConsentVerificationAndDecisions",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-017; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G16.04",
+      "cr": "CR-018",
+      "canonicalId": "392c07b6a5ba4fc7bd5c19910437da98",
+      "exchangeId": "id-16faf14a6ee0563f923252aaa81a7c69",
+      "source": "enterprise-architecture/continuum/grouping/392c07b6a5ba4fc7bd5c19910437da98.md",
+      "displayName": "Representatives and Delegated Consent",
+      "friendlyName": "RepresentativesAndDelegatedConsent",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-018; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G16.05",
+      "cr": "CR-019",
+      "canonicalId": "52508b8b7aec4b1cbaa570576442d4c9",
+      "exchangeId": "id-0dc1356ee8915311a15faafe58d5d6de",
+      "source": "enterprise-architecture/continuum/grouping/52508b8b7aec4b1cbaa570576442d4c9.md",
+      "displayName": "Consent Communication and History",
+      "friendlyName": "ConsentCommunicationAndHistory",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-019; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G16.06",
+      "cr": "CR-020",
+      "canonicalId": "25bc65e773d64ecf9b71ae4f92ed57e1",
+      "exchangeId": "id-79f746bbd71154fc9a31955abc5622dd",
+      "source": "enterprise-architecture/continuum/grouping/25bc65e773d64ecf9b71ae4f92ed57e1.md",
+      "displayName": "Exceptional and Emergency Consent",
+      "friendlyName": "ExceptionalAndEmergencyConsent",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-020; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G17",
+      "cr": "CR-021",
+      "canonicalId": "8b27323cbaba400698842f77e0d28c0d",
+      "exchangeId": "id-456bb6d14e02597888087efdb73b2c32",
+      "source": "enterprise-architecture/continuum/grouping/8b27323cbaba400698842f77e0d28c0d.md",
+      "displayName": "Terminology and Reference Data",
+      "friendlyName": "TerminologyAndReferenceData",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-021; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G17.01",
+      "cr": "CR-022",
+      "canonicalId": "b83d63bb553c4642b26bbc41f66445b3",
+      "exchangeId": "id-7dee5f64d6f1554b9902c672d7b88794",
+      "source": "enterprise-architecture/continuum/grouping/b83d63bb553c4642b26bbc41f66445b3.md",
+      "displayName": "Terminology Definition and Maintenance",
+      "friendlyName": "TerminologyDefinitionAndMaintenance",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-022; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G17.02",
+      "cr": "CR-023",
+      "canonicalId": "8655d81cd41647449c3b1a10ffd453b3",
+      "exchangeId": "id-6ed4da93b31f51138a7b1b7a7fceed41",
+      "source": "enterprise-architecture/continuum/grouping/8655d81cd41647449c3b1a10ffd453b3.md",
+      "displayName": "Terminology Mapping and Validation",
+      "friendlyName": "TerminologyMappingAndValidation",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-023; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G17.03",
+      "cr": "CR-024",
+      "canonicalId": "4e0bcac2a001411c8802b5df30e6bb38",
+      "exchangeId": "id-60284c3cdbed5a1fa2afec62c72c7932",
+      "source": "enterprise-architecture/continuum/grouping/4e0bcac2a001411c8802b5df30e6bb38.md",
+      "displayName": "Terminology Release and Versioning",
+      "friendlyName": "TerminologyReleaseAndVersioning",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-024; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G17.04",
+      "cr": "CR-025",
+      "canonicalId": "ba0e7f67e2e7496d9df8f6617ee39ec3",
+      "exchangeId": "id-35d31191f04d573bb1a2b41862b4ee93",
+      "source": "enterprise-architecture/continuum/grouping/ba0e7f67e2e7496d9df8f6617ee39ec3.md",
+      "displayName": "Reference Data Management",
+      "friendlyName": "ReferenceDataManagement",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-025; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G17.05",
+      "cr": "CR-026",
+      "canonicalId": "400c5c54a23a44588cc473ed10ead4a8",
+      "exchangeId": "id-ad24be7e00bc56c3a99090b0ed5cec6d",
+      "source": "enterprise-architecture/continuum/grouping/400c5c54a23a44588cc473ed10ead4a8.md",
+      "displayName": "Reference Data Quality and Governance",
+      "friendlyName": "ReferenceDataQualityAndGovernance",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-026; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G18",
+      "cr": "CR-027",
+      "canonicalId": "0233415953ed487fbbe407ebb469e7bc",
+      "exchangeId": "id-91244c9aaabe5a34ad79277ab150659b",
+      "source": "enterprise-architecture/continuum/grouping/0233415953ed487fbbe407ebb469e7bc.md",
+      "displayName": "Provider Directory",
+      "friendlyName": "ProviderDirectory",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-027; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G18.01",
+      "cr": "CR-028",
+      "canonicalId": "c445fc55a6e547ae9b1a5bb43cad1a8e",
+      "exchangeId": "id-52e8fb7751485159b6b132af2b89fd75",
+      "source": "enterprise-architecture/continuum/grouping/c445fc55a6e547ae9b1a5bb43cad1a8e.md",
+      "displayName": "Provider Directory Discovery",
+      "friendlyName": "ProviderDirectoryDiscovery",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-028; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G18.02",
+      "cr": "CR-029",
+      "canonicalId": "b6a20afe29624f73906e5e852d6f2fbf",
+      "exchangeId": "id-f08086c42d43568fb185bf0cc206c674",
+      "source": "enterprise-architecture/continuum/grouping/b6a20afe29624f73906e5e852d6f2fbf.md",
+      "displayName": "Directory Publication and Visibility",
+      "friendlyName": "DirectoryPublicationAndVisibility",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-029; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G18.03",
+      "cr": "CR-030",
+      "canonicalId": "d2876dff4f5444e3b71bdeba487b2d6b",
+      "exchangeId": "id-7c52fd5b61275378b6d2751af8c212ad",
+      "source": "enterprise-architecture/continuum/grouping/d2876dff4f5444e3b71bdeba487b2d6b.md",
+      "displayName": "Directory Information Maintenance",
+      "friendlyName": "DirectoryInformationMaintenance",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-030; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G18.04",
+      "cr": "CR-031",
+      "canonicalId": "7b2cabb4089d414d8ad700ef5f7932b7",
+      "exchangeId": "id-719e7bcde9c6522195aa1bde4d1105d8",
+      "source": "enterprise-architecture/continuum/grouping/7b2cabb4089d414d8ad700ef5f7932b7.md",
+      "displayName": "Directory Verification and Quality",
+      "friendlyName": "DirectoryVerificationAndQuality",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-031; incorporated-result review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "code": "G18.05",
+      "cr": "CR-032",
+      "canonicalId": "e1ed88f315a84116a77ead21d8fe1792",
+      "exchangeId": "id-f384269d3ad45d049394be4fda84efe3",
+      "source": "enterprise-architecture/continuum/grouping/e1ed88f315a84116a77ead21d8fe1792.md",
+      "displayName": "Directory Synchronisation",
+      "friendlyName": "DirectorySynchronisation",
+      "canonicalName": null,
+      "specialization": null,
+      "operation": "CREATED_BY_GOVERNED_CREATE",
+      "standing": {
+        "semantic": "Solution Architect accepted CR-032; incorporated-result review pending",
+        "currentness": "current"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "cr": "CR-033",
+      "identifier": "id-8abf0a5bc85741cda445b57b5b67eec8",
+      "parentCode": "G14",
+      "childCode": "G14.01",
+      "sourceCanonicalId": "a9deca9adbb443208d6f08dbe4505717",
+      "targetCanonicalId": "5fcada54e6df40a8983335a90e4a9f02",
+      "source": "id-d941117192cb5253bf1e8753f31c3ca6",
+      "target": "id-24e1752fecef5a519c3bf723657386c4",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-034",
+      "identifier": "id-69f856cb32954865b22dba61c15e3d96",
+      "parentCode": "G14",
+      "childCode": "G14.02",
+      "sourceCanonicalId": "a9deca9adbb443208d6f08dbe4505717",
+      "targetCanonicalId": "b91ec2110aaf4d44bd043bb787fbd910",
+      "source": "id-d941117192cb5253bf1e8753f31c3ca6",
+      "target": "id-92aa8ffe30c75de89f854b727d240004",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-035",
+      "identifier": "id-85b5ef142a6545c9941cc14be026cdb0",
+      "parentCode": "G14",
+      "childCode": "G14.03",
+      "sourceCanonicalId": "a9deca9adbb443208d6f08dbe4505717",
+      "targetCanonicalId": "801386f27cda458b8ce811f133d917e9",
+      "source": "id-d941117192cb5253bf1e8753f31c3ca6",
+      "target": "id-9ee6053ff1eb54f78509532fda422b41",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-036",
+      "identifier": "id-76e63d6bd2a94139b0734829fc297997",
+      "parentCode": "G14",
+      "childCode": "G14.04",
+      "sourceCanonicalId": "a9deca9adbb443208d6f08dbe4505717",
+      "targetCanonicalId": "58c5443983854dd98cd72f2dd795c063",
+      "source": "id-d941117192cb5253bf1e8753f31c3ca6",
+      "target": "id-0474279e12225651bc637436e2cbaf58",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-037",
+      "identifier": "id-a4e94f24b2704b3bb4692c19b9786e37",
+      "parentCode": "G14",
+      "childCode": "G14.05",
+      "sourceCanonicalId": "a9deca9adbb443208d6f08dbe4505717",
+      "targetCanonicalId": "2f97190ae5734e8caee48d581e1a6ab2",
+      "source": "id-d941117192cb5253bf1e8753f31c3ca6",
+      "target": "id-29f1a0f04d185eca9ad90b307f1a6ba0",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-038",
+      "identifier": "id-9a8de4e9f07649efa5d773bc7bf7194e",
+      "parentCode": "G14",
+      "childCode": "G14.06",
+      "sourceCanonicalId": "a9deca9adbb443208d6f08dbe4505717",
+      "targetCanonicalId": "ba2e95cc11374757bd0945148da43b07",
+      "source": "id-d941117192cb5253bf1e8753f31c3ca6",
+      "target": "id-30499e8088fe55caa7925192adf06241",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-039",
+      "identifier": "id-3373898f24364cdbb160877ef3736585",
+      "parentCode": "G15",
+      "childCode": "G15.01",
+      "sourceCanonicalId": "fd9d0fa7117a4dc3b45cfed0e7be614b",
+      "targetCanonicalId": "a58e87c95bd24c16a1006b217aeac691",
+      "source": "id-a5fe9dd5dcfd502dbdfea4ab86d0e26d",
+      "target": "id-895be9de41a9574e8866fc73571a0cf2",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-040",
+      "identifier": "id-3af26f94665b4e2aac09061aa7a39e83",
+      "parentCode": "G15",
+      "childCode": "G15.02",
+      "sourceCanonicalId": "fd9d0fa7117a4dc3b45cfed0e7be614b",
+      "targetCanonicalId": "2ad6333e5858456dba8aefeec71773a5",
+      "source": "id-a5fe9dd5dcfd502dbdfea4ab86d0e26d",
+      "target": "id-c76e998defa35740bdf92bea51aaf54d",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-041",
+      "identifier": "id-44c480f471ac4911bcff69d5e47f0448",
+      "parentCode": "G15",
+      "childCode": "G15.03",
+      "sourceCanonicalId": "fd9d0fa7117a4dc3b45cfed0e7be614b",
+      "targetCanonicalId": "25a15d4bea2d418d918e3a7e01d9fcbf",
+      "source": "id-a5fe9dd5dcfd502dbdfea4ab86d0e26d",
+      "target": "id-3ee9a01480ae5f8bb48fa6ad7148859f",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-042",
+      "identifier": "id-85b62f6ca72645ed95c855839b2cbcb9",
+      "parentCode": "G15",
+      "childCode": "G15.04",
+      "sourceCanonicalId": "fd9d0fa7117a4dc3b45cfed0e7be614b",
+      "targetCanonicalId": "a47808600e8f4d7c83756f4ce77b498e",
+      "source": "id-a5fe9dd5dcfd502dbdfea4ab86d0e26d",
+      "target": "id-bb0b8df89b025d5081ea84e83bce6d83",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-043",
+      "identifier": "id-e10c2ecfa9134d048f731e071d6df484",
+      "parentCode": "G15",
+      "childCode": "G15.05",
+      "sourceCanonicalId": "fd9d0fa7117a4dc3b45cfed0e7be614b",
+      "targetCanonicalId": "ad16265c76114f4eaddf75b0be2d4755",
+      "source": "id-a5fe9dd5dcfd502dbdfea4ab86d0e26d",
+      "target": "id-0dfc3ee08d0557d5bb5212b6eb8a5c52",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-044",
+      "identifier": "id-baaf8b1103a84dfe9f7f4ea837e67892",
+      "parentCode": "G16",
+      "childCode": "G16.01",
+      "sourceCanonicalId": "abca473311ea40aca58756d859077ff7",
+      "targetCanonicalId": "884f06591f6c4dcf8e7f94e4b31269c1",
+      "source": "id-f55845b17ed5555aaaba3801f81c817a",
+      "target": "id-b78d26a55c40537dbf4d023760685ecd",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-045",
+      "identifier": "id-c8e5a12bb4334ec2b08798385fd62359",
+      "parentCode": "G16",
+      "childCode": "G16.02",
+      "sourceCanonicalId": "abca473311ea40aca58756d859077ff7",
+      "targetCanonicalId": "e48346674b0740c19f4a13cc50a7ae66",
+      "source": "id-f55845b17ed5555aaaba3801f81c817a",
+      "target": "id-fc23210d18b55cb8860fec99bcfb3abe",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-046",
+      "identifier": "id-386d4e82b6c944878e6cfaa34b92dad4",
+      "parentCode": "G16",
+      "childCode": "G16.03",
+      "sourceCanonicalId": "abca473311ea40aca58756d859077ff7",
+      "targetCanonicalId": "3d87dbf35e0a43a3b5e12cbc6b947763",
+      "source": "id-f55845b17ed5555aaaba3801f81c817a",
+      "target": "id-95ad291dd68351ce97207f2db51906c9",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-047",
+      "identifier": "id-0dfb9d6ae5e0424e9ab04a5381c0d0ec",
+      "parentCode": "G16",
+      "childCode": "G16.04",
+      "sourceCanonicalId": "abca473311ea40aca58756d859077ff7",
+      "targetCanonicalId": "392c07b6a5ba4fc7bd5c19910437da98",
+      "source": "id-f55845b17ed5555aaaba3801f81c817a",
+      "target": "id-16faf14a6ee0563f923252aaa81a7c69",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-048",
+      "identifier": "id-898e203c224e41c7905e010e1a2f8fa5",
+      "parentCode": "G16",
+      "childCode": "G16.05",
+      "sourceCanonicalId": "abca473311ea40aca58756d859077ff7",
+      "targetCanonicalId": "52508b8b7aec4b1cbaa570576442d4c9",
+      "source": "id-f55845b17ed5555aaaba3801f81c817a",
+      "target": "id-0dc1356ee8915311a15faafe58d5d6de",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-049",
+      "identifier": "id-31c45dc0961d49619ea2d9a1c635cc50",
+      "parentCode": "G16",
+      "childCode": "G16.06",
+      "sourceCanonicalId": "abca473311ea40aca58756d859077ff7",
+      "targetCanonicalId": "25bc65e773d64ecf9b71ae4f92ed57e1",
+      "source": "id-f55845b17ed5555aaaba3801f81c817a",
+      "target": "id-79f746bbd71154fc9a31955abc5622dd",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-050",
+      "identifier": "id-d0e17428560c4dd387abea7fc5027200",
+      "parentCode": "G17",
+      "childCode": "G17.01",
+      "sourceCanonicalId": "8b27323cbaba400698842f77e0d28c0d",
+      "targetCanonicalId": "b83d63bb553c4642b26bbc41f66445b3",
+      "source": "id-456bb6d14e02597888087efdb73b2c32",
+      "target": "id-7dee5f64d6f1554b9902c672d7b88794",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-051",
+      "identifier": "id-67cb817bd1e3463384e249f7c0d4d906",
+      "parentCode": "G17",
+      "childCode": "G17.02",
+      "sourceCanonicalId": "8b27323cbaba400698842f77e0d28c0d",
+      "targetCanonicalId": "8655d81cd41647449c3b1a10ffd453b3",
+      "source": "id-456bb6d14e02597888087efdb73b2c32",
+      "target": "id-6ed4da93b31f51138a7b1b7a7fceed41",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-052",
+      "identifier": "id-4afe6b16f2a3427e8c0d492ce36fd8ae",
+      "parentCode": "G17",
+      "childCode": "G17.03",
+      "sourceCanonicalId": "8b27323cbaba400698842f77e0d28c0d",
+      "targetCanonicalId": "4e0bcac2a001411c8802b5df30e6bb38",
+      "source": "id-456bb6d14e02597888087efdb73b2c32",
+      "target": "id-60284c3cdbed5a1fa2afec62c72c7932",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-053",
+      "identifier": "id-ec9f19ad1d0d4ed2aacc1aca27dd7548",
+      "parentCode": "G17",
+      "childCode": "G17.04",
+      "sourceCanonicalId": "8b27323cbaba400698842f77e0d28c0d",
+      "targetCanonicalId": "ba0e7f67e2e7496d9df8f6617ee39ec3",
+      "source": "id-456bb6d14e02597888087efdb73b2c32",
+      "target": "id-35d31191f04d573bb1a2b41862b4ee93",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-054",
+      "identifier": "id-4d044e1965864d51b4f6956a4849b541",
+      "parentCode": "G17",
+      "childCode": "G17.05",
+      "sourceCanonicalId": "8b27323cbaba400698842f77e0d28c0d",
+      "targetCanonicalId": "400c5c54a23a44588cc473ed10ead4a8",
+      "source": "id-456bb6d14e02597888087efdb73b2c32",
+      "target": "id-ad24be7e00bc56c3a99090b0ed5cec6d",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-055",
+      "identifier": "id-fd2e5cc0a589463b898107a283c84e37",
+      "parentCode": "G18",
+      "childCode": "G18.01",
+      "sourceCanonicalId": "0233415953ed487fbbe407ebb469e7bc",
+      "targetCanonicalId": "c445fc55a6e547ae9b1a5bb43cad1a8e",
+      "source": "id-91244c9aaabe5a34ad79277ab150659b",
+      "target": "id-52e8fb7751485159b6b132af2b89fd75",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-056",
+      "identifier": "id-b79685970c6447b1b482282e86782386",
+      "parentCode": "G18",
+      "childCode": "G18.02",
+      "sourceCanonicalId": "0233415953ed487fbbe407ebb469e7bc",
+      "targetCanonicalId": "b6a20afe29624f73906e5e852d6f2fbf",
+      "source": "id-91244c9aaabe5a34ad79277ab150659b",
+      "target": "id-f08086c42d43568fb185bf0cc206c674",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-057",
+      "identifier": "id-ea3a6d4042304e769ab17c05d7809ff7",
+      "parentCode": "G18",
+      "childCode": "G18.03",
+      "sourceCanonicalId": "0233415953ed487fbbe407ebb469e7bc",
+      "targetCanonicalId": "d2876dff4f5444e3b71bdeba487b2d6b",
+      "source": "id-91244c9aaabe5a34ad79277ab150659b",
+      "target": "id-7c52fd5b61275378b6d2751af8c212ad",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-058",
+      "identifier": "id-65435d65161042faadf78b7cc0416d29",
+      "parentCode": "G18",
+      "childCode": "G18.04",
+      "sourceCanonicalId": "0233415953ed487fbbe407ebb469e7bc",
+      "targetCanonicalId": "7b2cabb4089d414d8ad700ef5f7932b7",
+      "source": "id-91244c9aaabe5a34ad79277ab150659b",
+      "target": "id-719e7bcde9c6522195aa1bde4d1105d8",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    },
+    {
+      "cr": "CR-059",
+      "identifier": "id-7b0bf2f363da46c4a9a7d7059de6f10a",
+      "parentCode": "G18",
+      "childCode": "G18.05",
+      "sourceCanonicalId": "0233415953ed487fbbe407ebb469e7bc",
+      "targetCanonicalId": "e1ed88f315a84116a77ead21d8fe1792",
+      "source": "id-91244c9aaabe5a34ad79277ab150659b",
+      "target": "id-f384269d3ad45d049394be4fda84efe3",
+      "archimateType": "Composition",
+      "operation": "INCORPORATED_UNDER_SOURCE_SUBJECT"
+    }
+  ],
+  "presentation": {
+    "cr": "CR-060",
+    "path": [
+      "Views",
+      "1. Subject-Based-Views",
+      "18. Provider Directory",
+      "03. Directory-Information-Maintenance"
+    ],
+    "createdEmptyPresentationContext": [
+      "1. Subject-Based-Views",
+      "18. Provider Directory",
+      "03. Directory-Information-Maintenance"
+    ],
+    "existingViewsAndNavigation": "Preserved; independent verification required",
+    "otherIncomingFoldersOrViews": "Not adopted",
+    "template": "enterprise-architecture/design/archimate/projection-template.xml",
+    "templateSha256": "639f6f36ec399ecab48e1d1cecb882dde074c928510c00031663b7286dd0a8af"
+  },
+  "releaseTransition": "NOT AUTHORISED / NOT PERFORMED",
+  "status": "INCORPORATED_AUTOMATED_VERIFICATION_PASS_SOLUTION_ARCHITECT_REVIEW_PENDING",
+  "canonicalValidation": {
+    "status": "PASS",
+    "elements": 1874,
+    "relationships": 1909,
+    "qualifiedSourcePredicates": 462,
+    "canonicalIdentities": 1874,
+    "representationIdentities": 1874,
+    "provenanceCoverage": 1874,
+    "sourceBindings": 3730,
+    "supportedNativeTypes": 60,
+    "navigation": "PASS",
+    "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance"
+  },
+  "reviewedMeaningInputs": {
+    "proposalSnapshot": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-incorporation/change-review.md",
+    "proposalSha256": "33a183eb2d12c3f653db60e4c88a034198cc20eeca80817638a6ec7d8d91edb0",
+    "operativeAcceptanceTask": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md",
+    "taskSha256": "4cdc2217cc0bb8e8d2296537a1228cf7c7423ee423103d6d56857f87c57584dc",
+    "qualification": "The retained reviewed proposals plus the explicit Solution Architect Task define accepted meaning. reviewAcceptanceSha256 is the mechanical accepted-record state observed before application, not a separate human acceptance event or immutable reviewed input."
+  },
+  "finalToolingTests": {
+    "outcome": "PASS",
+    "testsRun": 85,
+    "failures": 0,
+    "errors": 0,
+    "elapsedSeconds": 314.19,
+    "runnerExitCode": 0,
+    "invocation": "timeout 420 /tmp/harmonia-tooling-venv/bin/python -B -m unittest discover -s enterprise-architecture/tooling/tests -v",
+    "log": "final-tooling-tests.log",
+    "logSha256": "0768e44173f0c426903434e225f58b64f7f459b6a1814cf464802ae2c39c1cc5",
+    "fixtureTreatment": "Maintained test-only fixtures now supply declared retained inputs; no production validator change; population assertion updated for accepted 32/27 delta",
+    "earlierRuns": "Original standard six fixture errors and supplemental one predecessor-count failure retained in their original logs"
+  }
+}

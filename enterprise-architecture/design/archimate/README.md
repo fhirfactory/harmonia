@@ -4,7 +4,7 @@
 
 The maintained source is the [individual-element continuum](../../README.md).
 [projection-template.xml](projection-template.xml) owns existing model-level
-properties, property definitions, View navigation and **1,216 Views**, including their
+properties, property definitions, View navigation and **1,285 Views**, including their
 geometry. Its element/relationship collections are empty. The current projector
 fills those collections from canonical Markdown and preserves the Views.
 From RAD-1.1.17 Iteration 002, the projector uses native-type element catalogues
@@ -15,7 +15,18 @@ remain separate architect-maintained presentation, preserved verbatim.
 
 The **Architecture Continuum is canonical architecture authority**. Open Exchange
 XML is its derived projection/interchange representation; **Archi is the architecture
-workbench**. The accepted [1.1.17 Open Exchange projection](published/1.1.17/Harmonia-Architecture.xml)
+workbench**. The accepted [1.1.19 Open Exchange projection](published/1.1.19/Harmonia-Architecture.xml)
+contains 1,994 elements, 2,235 relationships and the complete authored View tree
+(1,183 folders including Views, 42 empty folders). The
+[completed originating review](../register/1.1.19/hcrl-1.1.18-001.complete.md)
+preserves the 1.1.18/001 decision/evidence identity and Solution Architect Archi
+import/visual acceptance. The [successor register](../review/1.1.19/hcrl-1.1.19-001.pending.md)
+continues all 16 DR entries and outstanding obligations without additional
+incorporation. Historical source/evidence, protected 1.1.18 publication and raw
+Archi transport qualifications remain unchanged; no 1.1.18/002 successor is retained.
+
+The following release-preparation account preserves the earlier 1.1.17/1.1.18 context.
+The accepted [1.1.17 Open Exchange projection](published/1.1.17/Harmonia-Architecture.xml)
 is the immutable starting architectural baseline for the next View-development release.
 
 The completed [Iteration 001](../register/1.1.17/hcrl-1.1.17-001.complete.md) and

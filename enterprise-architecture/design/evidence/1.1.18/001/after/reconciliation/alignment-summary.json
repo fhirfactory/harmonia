@@ -1,0 +1,17 @@
+{
+  "candidateCount": 784,
+  "sourceCount": 421,
+  "alignmentOutcomes": {
+    "CT3_ONLY_FEATURE_GAP_OR_UNRESOLVED_SCOPE": 292,
+    "FEATURE_FIT_FOR_REVIEW": 244,
+    "FEATURE_FIT_WITH_RESIDUAL_SCOPE": 248
+  },
+  "sourcesWithFeatureGap": 289,
+  "rowsWithFeatureGap": 528,
+  "subjectReassessmentRows": 426,
+  "multipleCapabilityRows": 226,
+  "historicalTargetRows": 208,
+  "proposedCanonicalIdsAllocated": 0,
+  "relationshipsAsserted": 0,
+  "incorporated": 0
+}

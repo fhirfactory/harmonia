@@ -168,6 +168,98 @@
           "text": "Source NFR-122 / Domain. Primary subject classification containment. No component ownership, implementation containment, Home, dependency or realisation is implied."
         }
       ]
+    },
+    {
+      "identifier": "id-d5ec7ec8a36b43fdaea0883a8c2da103",
+      "source": "id-889cae531e4c51e0a50d441425553606",
+      "target": "id-3ff156cfaab8575facfa6961f68119f5",
+      "archimateType": "Association",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "standing": {
+        "semantic": "Solution Architect authorised Subject hierarchy and Home completion; result review pending",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+        "retainedAt": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+        "selector": "Consolidated scope / Composition containment and distinct authoritative Home; Existing Subject G02.03",
+        "sha256": "3ba6a88a66c3c4956e80e6676a9b60ceb04454b59d510643ace7ba1b7dd8fc5d",
+        "authority": "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-12",
+        "meaning": "Authoritative architectural location"
+      },
+      "name": [
+        {
+          "text": "Home"
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Existing Subject G02.03. Composition defines containment; the separate directed child-to-parent Home Association identifies authoritative architectural location. No new statement allocation or component responsibility is asserted."
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "specialization",
+          "values": [
+            {
+              "text": "Home",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
+      "specialization": "Home"
+    },
+    {
+      "identifier": "id-ee45bfd45b814332875a4dbeb6d51163",
+      "source": "id-889cae531e4c51e0a50d441425553606",
+      "target": "id-8f3100f85f834a1bbcd57dc0653dc5e3",
+      "archimateType": "Composition",
+      "attributes": {},
+      "standing": {
+        "semantic": "Solution Architect authorised Subject hierarchy and Home completion; result review pending",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+        "retainedAt": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+        "selector": "Consolidated scope / Composition containment and distinct authoritative Home; Authored Grouping id-8f3100f85f834a1bbcd57dc0653dc5e3",
+        "sha256": "3ba6a88a66c3c4956e80e6676a9b60ceb04454b59d510643ace7ba1b7dd8fc5d",
+        "authority": "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-12",
+        "meaning": "Subject Grouping containment"
+      },
+      "name": [
+        {
+          "text": "Subject Grouping containment"
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Authored Grouping id-8f3100f85f834a1bbcd57dc0653dc5e3. Composition defines containment; the separate directed child-to-parent Home Association identifies authoritative architectural location. No new statement allocation or component responsibility is asserted."
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        }
+      ]
     }
   ],
   "unresolvedProperties": {

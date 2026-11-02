@@ -1,0 +1,7 @@
+{
+  "verboseRepeatedContextBytes": 143305,
+  "scopedEvidenceBytes": 90051,
+  "limitBytes": 128000,
+  "method": "Factor identical per-row policy and redundant canonical context; preserve all scoped observations; same authorised scope; no limit waiver",
+  "gate": "PASS"
+}

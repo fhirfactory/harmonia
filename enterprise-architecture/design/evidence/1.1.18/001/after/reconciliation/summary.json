@@ -1,0 +1,372 @@
+{
+  "candidateCount": 784,
+  "specializations": {
+    "UseCase": 363,
+    "UserStory": 421
+  },
+  "domains": {
+    "consent-and-information-sharing": 69,
+    "cross-domain-services": 8,
+    "governance-quality-and-audit": 7,
+    "patient-identity-management": 127,
+    "provider-directory-integration": 109,
+    "provider-management": 66,
+    "terminology-and-reference-data": 35
+  },
+  "sourceCount": 421,
+  "sourceFilesNotMapped": [],
+  "mappingFilesNotInSpecs": [],
+  "manifestRows": 421,
+  "sourceIdMismatches": [],
+  "wordingMismatches": [],
+  "actorMismatches": [],
+  "sourceBoundCandidates": 0,
+  "lexicalLeadCandidates": 0,
+  "primarySubjects": {
+    "G16.02": 98,
+    "G16.05": 22,
+    "G16.06": 6,
+    "G16.04": 12,
+    "G15.04": 24,
+    "G18.02": 10,
+    "G04.04": 4,
+    "G18.04": 42,
+    "G17.05": 16,
+    "G15.03": 18,
+    "G14.01": 122,
+    "G14.03": 32,
+    "G14.06": 12,
+    "G14.05": 12,
+    "G14.02": 20,
+    "G14.04": 50,
+    "G18.03": 108,
+    "G15.01": 31,
+    "G18.05": 26,
+    "G15.05": 1,
+    "G18.01": 46,
+    "G15.02": 16,
+    "G17.01": 22,
+    "G17.02": 8,
+    "G17.04": 16,
+    "G17.03": 10
+  },
+  "missingSecondarySubjects": [],
+  "targetCounts": {
+    "id-0c99a409fcad5e30b1c384f25976197f": 98,
+    "id-b72487e00fef5855b909078e3b2ca3a0": 22,
+    "id-59c5db76c2d25e2d894cbaf05f986efb": 18,
+    "id-23f9ff8b179358d0ac2f9df5cc5f51bd": 142,
+    "id-8e1cc85a4269529bb99d74f1f6ebe1cf": 4,
+    "id-c0a2dee48aae56eaaf4266358083da80": 54,
+    "id-8cbd1321a0c15306b7355745d2e22818": 16,
+    "id-706567fdfba05959be6ac7247ad0480e": 18,
+    "id-a5df034d251455f0aba1de9817628801": 122,
+    "id-29e0bf94882559a7b6ed9d092303a560": 82,
+    "id-d58022670433565e85886b12893bd691": 38,
+    "id-aeafb86f7bb65c15acebe5f0048c9ef8": 20,
+    "id-30b102fdb0fd5f788ddf1812fe82689d": 32,
+    "id-523ec46acc27554ab7706bf0c6ed45b6": 46,
+    "id-7b77530f0c8a569498954dc0a5fcf798": 16,
+    "id-3eb94251dfaa56ca8f5d1988bec36b1c": 32,
+    "id-1116384ed5cc5bd3a0d28aa12a00d5cc": 8,
+    "id-d4d202241d2f573899138b0dd79e1090": 16
+  },
+  "sourceReleaseStatements": {
+    "openspec/specs/consent-and-information-sharing/uc-clinician-consent-19-record-withdrawal-of-consent/spec.md": [
+      "future activities respect their updated decision",
+      "- **User Story:** Record when a participant withdraws consent so that future activities respect their updated decision.",
+      "Harmonia SHALL support **Record Withdrawal of Consent** so that future activities respect their updated decision."
+    ],
+    "openspec/specs/provider-directory-integration/sr-1-receive-provider-information-from-primary-health-care-provider-data-store/spec.md": [
+      "Enable the Provider Directory to receive external provider data through standard integration while retaining source and error information. This supports the target-state objective that sr-1 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the directory of external providers is kept up to date.",
+      "Harmonia SHALL support **Receive Provider Information from Primary Health Care Provider Data Store** so that Enable the Provider Directory to receive external provider data through standard integration while retaining source and error information. This supports the target-state objective that sr-1 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the directory of external providers is kept up to date."
+    ],
+    "openspec/specs/provider-directory-integration/sr-10-confirm-provider-information-was-successfully-updated/spec.md": [
+      "Enable the Provider Directory to record and display success or failure for each incoming update and trace failures to the affected record. This supports the target-state objective that sr-10 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I know the update process completed.",
+      "Harmonia SHALL support **Confirm Provider Information Was Successfully Updated** so that Enable the Provider Directory to record and display success or failure for each incoming update and trace failures to the affected record. This supports the target-state objective that sr-10 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I know the update process completed."
+    ],
+    "openspec/specs/provider-directory-integration/sr-11-control-national-provider-data-integration/spec.md": [
+      "Enable the Provider Directory to schedule, trigger, pause and resume national provider data feeds. This supports the target-state objective that sr-11 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I can effectively manage system resources.",
+      "Harmonia SHALL support **Control National Provider Data Integration** so that Enable the Provider Directory to schedule, trigger, pause and resume national provider data feeds. This supports the target-state objective that sr-11 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I can effectively manage system resources."
+    ],
+    "openspec/specs/provider-directory-integration/sr-12-combine-national-provider-information-with-provider-directory-data/spec.md": [
+      "Enable the Provider Directory to apply information from multiple recognised sources to one provider record. This supports the target-state objective that sr-12 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that a single, complete record is maintained.",
+      "Harmonia SHALL support **Combine National Provider Information with Provider Directory Data** so that Enable the Provider Directory to apply information from multiple recognised sources to one provider record. This supports the target-state objective that sr-12 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that a single, complete record is maintained."
+    ],
+    "openspec/specs/provider-directory-integration/sr-13-track-the-source-of-each-provider-attribute/spec.md": [
+      "Enable the Provider Directory to retain attribute-level provenance whenever provider information is created or updated. This supports the target-state objective that sr-13 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that enriched records are auditable.",
+      "Harmonia SHALL support **Track the Source of Each Provider Attribute** so that Enable the Provider Directory to retain attribute-level provenance whenever provider information is created or updated. This supports the target-state objective that sr-13 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that enriched records are auditable."
+    ],
+    "openspec/specs/provider-directory-integration/sr-14-define-attribute-update-authority-by-source/spec.md": [
+      "Enable the Provider Directory to configure and enforce source-of-truth rules by provider attribute and source system. This supports the target-state objective that sr-14 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the Provider Directory only accepts trusted data.",
+      "Harmonia SHALL support **Define Attribute Update Authority by Source** so that Enable the Provider Directory to configure and enforce source-of-truth rules by provider attribute and source system. This supports the target-state objective that sr-14 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the Provider Directory only accepts trusted data."
+    ],
+    "openspec/specs/provider-directory-integration/sr-15-reject-updates-to-restricted-attributes/spec.md": [
+      "Enable the Provider Directory to enforce attribute restrictions while allowing permitted fields in the same transaction to be processed. This supports the target-state objective that sr-15 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that critical information remains controlled.",
+      "Harmonia SHALL support **Reject Updates to Restricted Attributes** so that Enable the Provider Directory to enforce attribute restrictions while allowing permitted fields in the same transaction to be processed. This supports the target-state objective that sr-15 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that critical information remains controlled."
+    ],
+    "openspec/specs/provider-directory-integration/sr-16-ensure-attributes-are-updated-only-by-approved-sources/spec.md": [
+      "Enable the Provider Directory to enforce authoritative-source controls and retain complete attribute-level change history, source, method and timestamp. This supports the target-state objective that sr-16 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that data integrity and policy requirements are met.",
+      "Harmonia SHALL support **Ensure Attributes Are Updated Only by Approved Sources** so that Enable the Provider Directory to enforce authoritative-source controls and retain complete attribute-level change history, source, method and timestamp. This supports the target-state objective that sr-16 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that data integrity and policy requirements are met."
+    ],
+    "openspec/specs/provider-directory-integration/sr-17-view-and-maintain-attribute-source-update-rules/spec.md": [
+      "Enable the Provider Directory to view, search, filter, maintain and export source update rules, including conditional rules. This supports the target-state objective that sr-17 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I can understand and manage the source of truth for each attribute.",
+      "Harmonia SHALL support **View and Maintain Attribute Source Update Rules** so that Enable the Provider Directory to view, search, filter, maintain and export source update rules, including conditional rules. This supports the target-state objective that sr-17 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I can understand and manage the source of truth for each attribute."
+    ],
+    "openspec/specs/provider-directory-integration/sr-18-manage-provider-record-status/spec.md": [
+      "Enable the Provider Directory to manage provider lifecycle statuses and use them to govern processing and distribution. This supports the target-state objective that sr-18 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I can manage the lifecycle of the record.",
+      "Harmonia SHALL support **Manage Provider Record Status** so that Enable the Provider Directory to manage provider lifecycle statuses and use them to govern processing and distribution. This supports the target-state objective that sr-18 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I can manage the lifecycle of the record."
+    ],
+    "openspec/specs/provider-directory-integration/sr-19-control-distribution-of-provider-records/spec.md": [
+      "Enable the Provider Directory to restrict or approve distribution based on provider status and governance rules. This supports the target-state objective that sr-19 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that incomplete records are not shared.",
+      "Harmonia SHALL support **Control Distribution of Provider Records** so that Enable the Provider Directory to restrict or approve distribution based on provider status and governance rules. This supports the target-state objective that sr-19 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that incomplete records are not shared."
+    ],
+    "openspec/specs/provider-directory-integration/sr-2-verify-incoming-provider-information/spec.md": [
+      "Enable the Provider Directory to validate formats, mandatory fields and reference values and transform data to defined standards before acceptance. This supports the target-state objective that sr-2 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that incorrect records are not stored.",
+      "Harmonia SHALL support **Verify Incoming Provider Information** so that Enable the Provider Directory to validate formats, mandatory fields and reference values and transform data to defined standards before acceptance. This supports the target-state objective that sr-2 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that incorrect records are not stored."
+    ],
+    "openspec/specs/provider-directory-integration/sr-20-receive-provider-information-from-internal-doh-systems/spec.md": [
+      "Enable the Provider Directory to receive provider information from internal DoH systems through standard integration and retain source and error information. This supports the target-state objective that sr-20 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the directory of internal providers is kept up to date.",
+      "Harmonia SHALL support **Receive Provider Information from Internal DoH Systems** so that Enable the Provider Directory to receive provider information from internal DoH systems through standard integration and retain source and error information. This supports the target-state objective that sr-20 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the directory of internal providers is kept up to date."
+    ],
+    "openspec/specs/provider-directory-integration/sr-21-verify-provider-information-received-from-internal-systems/spec.md": [
+      "Enable the Provider Directory to validate and transform incoming internal provider information before acceptance. This supports the target-state objective that sr-21 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that incorrect records are not stored.",
+      "Harmonia SHALL support **Verify Provider Information Received from Internal Systems** so that Enable the Provider Directory to validate and transform incoming internal provider information before acceptance. This supports the target-state objective that sr-21 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that incorrect records are not stored."
+    ],
+    "openspec/specs/provider-directory-integration/sr-22-store-unique-provider-identifiers-for-compliance/spec.md": [
+      "Enable the Provider Directory to store, validate and protect recognised identifiers such as HPI-I, HPI-O or AHPRA registration. This supports the target-state objective that sr-22 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I can meet ADHA compliance requirements.",
+      "Harmonia SHALL support **Store Unique Provider Identifiers for Compliance** so that Enable the Provider Directory to store, validate and protect recognised identifiers such as HPI-I, HPI-O or AHPRA registration. This supports the target-state objective that sr-22 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I can meet ADHA compliance requirements."
+    ],
+    "openspec/specs/provider-directory-integration/sr-23-match-internal-provider-data-using-unique-identifiers/spec.md": [
+      "Enable the Provider Directory to use unique identifiers to find existing providers before creation and flag ambiguous matches. This supports the target-state objective that sr-23 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that duplicate record creation is avoided.",
+      "Harmonia SHALL support **Match Internal Provider Data Using Unique Identifiers** so that Enable the Provider Directory to use unique identifiers to find existing providers before creation and flag ambiguous matches. This supports the target-state objective that sr-23 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that duplicate record creation is avoided."
+    ],
+    "openspec/specs/provider-directory-integration/sr-24-confirm-internal-provider-information-was-successfully-added/spec.md": [
+      "Enable the Provider Directory to record and display success or failure and trace failures to the specific incoming record and error. This supports the target-state objective that sr-24 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I know the update process completed.",
+      "Harmonia SHALL support **Confirm Internal Provider Information Was Successfully Added** so that Enable the Provider Directory to record and display success or failure and trace failures to the specific incoming record and error. This supports the target-state objective that sr-24 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I know the update process completed."
+    ],
+    "openspec/specs/provider-directory-integration/sr-25-control-internal-provider-data-integration/spec.md": [
+      "Enable the Provider Directory to schedule, trigger, pause and resume internal provider data feeds. This supports the target-state objective that sr-25 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I can effectively manage system resources.",
+      "Harmonia SHALL support **Control Internal Provider Data Integration** so that Enable the Provider Directory to schedule, trigger, pause and resume internal provider data feeds. This supports the target-state objective that sr-25 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I can effectively manage system resources."
+    ],
+    "openspec/specs/provider-directory-integration/sr-26-verify-provider-registration-status-against-national-provider-data-store/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-26 so that only currently registered clinicians are active in the provider directory. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Verify Provider Registration Status Against National Provider Data Store** so that Enable the target-state Provider Directory to support the capability described by SR-26 so that only currently registered clinicians are active in the provider directory. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-27-store-provider-registration-status-and-source/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-27 so that the directory contains an accurate view of who is registered to practice. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Store Provider Registration Status and Source** so that Enable the target-state Provider Directory to support the capability described by SR-27 so that the directory contains an accurate view of who is registered to practice. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-28-alert-administrators-when-provider-registration-status-changes/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-28 so that I can ensure all systems are aware of the changes. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Alert Administrators When Provider Registration Status Changes** so that Enable the target-state Provider Directory to support the capability described by SR-28 so that I can ensure all systems are aware of the changes. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-29-confirm-provider-identity-using-national-provider-data-store/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-29 so that the correct provider details are stored in the directory. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Confirm Provider Identity Using National Provider Data Store** so that Enable the target-state Provider Directory to support the capability described by SR-29 so that the correct provider details are stored in the directory. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-3-store-a-unique-provider-identifier/spec.md": [
+      "Enable the Provider Directory to store and protect a verified unique provider identifier such as HPI-I, HPI-O or XCode. This supports the target-state objective that sr-3 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the correct record can be matched to incoming data.",
+      "Harmonia SHALL support **Store a Unique Provider Identifier** so that Enable the Provider Directory to store and protect a verified unique provider identifier such as HPI-I, HPI-O or XCode. This supports the target-state objective that sr-3 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the correct record can be matched to incoming data."
+    ],
+    "openspec/specs/provider-directory-integration/sr-30-validate-hpi-i-or-hpi-o-for-compliance/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-30 so that we meet national compliance requirements. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Validate HPI-I or HPI-O for Compliance** so that Enable the target-state Provider Directory to support the capability described by SR-30 so that we meet national compliance requirements. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-31-trace-provider-identity-verification/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-31 so that I can support audits or investigate discrepancies. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Trace Provider Identity Verification** so that Enable the target-state Provider Directory to support the capability described by SR-31 so that I can support audits or investigate discrepancies. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-32-supply-provider-data-to-systems-via-integration/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-32 so that current provider information is available for downstream consumers. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Supply Provider Data to Systems via Integration** so that Enable the target-state Provider Directory to support the capability described by SR-32 so that current provider information is available for downstream consumers. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-33-receive-provider-details-via-integration/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-33 so that system users can reliably access provider details. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Receive Provider Details via Integration** so that Enable the target-state Provider Directory to support the capability described by SR-33 so that system users can reliably access provider details. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-34-ensure-accurate-provider-records-are-sent-to-systems/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-34 so that workflows are not using invalid data. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Ensure Accurate Provider Records Are Sent to Systems** so that Enable the target-state Provider Directory to support the capability described by SR-34 so that workflows are not using invalid data. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-35-monitor-and-manage-outbound-provider-data/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-35 so that I know when issues exist and require resolution. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Monitor and Manage Outbound Provider Data** so that Enable the target-state Provider Directory to support the capability described by SR-35 so that I know when issues exist and require resolution. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-36-generate-and-export-provider-data-in-a-standard-format/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-36 so that I can manually share it with systems that are not integrated. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Generate and Export Provider Data in a Standard Format** so that Enable the target-state Provider Directory to support the capability described by SR-36 so that I can manually share it with systems that are not integrated. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-37-receive-provider-data-updates-in-a-usable-manual-format/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-37 so that I can manually add the information into the system. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Receive Provider Data Updates in a Usable Manual Format** so that Enable the target-state Provider Directory to support the capability described by SR-37 so that I can manually add the information into the system. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-38-notify-system-administrators-of-provider-record-changes/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-38 so that I know when to launch a manual update process. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Notify System Administrators of Provider Record Changes** so that Enable the target-state Provider Directory to support the capability described by SR-38 so that I know when to launch a manual update process. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-39-record-provider-data-exports/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-39 so that I can confirm that current provider information was made available to other systems. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Record Provider Data Exports** so that Enable the target-state Provider Directory to support the capability described by SR-39 so that I can confirm that current provider information was made available to other systems. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-4-match-incoming-data-using-unique-provider-identifiers/spec.md": [
+      "Enable the Provider Directory to match incoming records to existing providers before creating new records and flag ambiguous matches. This supports the target-state objective that sr-4 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that duplicate record creation is avoided.",
+      "Harmonia SHALL support **Match Incoming Data Using Unique Provider Identifiers** so that Enable the Provider Directory to match incoming records to existing providers before creating new records and flag ambiguous matches. This supports the target-state objective that sr-4 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that duplicate record creation is avoided."
+    ],
+    "openspec/specs/provider-directory-integration/sr-40-expose-provider-data-via-an-api/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-40 so that systems can access the data securely. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Expose Provider Data via an API** so that Enable the target-state Provider Directory to support the capability described by SR-40 so that systems can access the data securely. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-41-apply-industry-standard-api-practices/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-41 so that it can be used by the broadest audience. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Apply Industry-Standard API Practices** so that Enable the target-state Provider Directory to support the capability described by SR-41 so that it can be used by the broadest audience. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-42-configure-provider-data-exposed-through-the-api/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-42 so that only appropriate information is sent. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Configure Provider Data Exposed Through the API** so that Enable the target-state Provider Directory to support the capability described by SR-42 so that only appropriate information is sent. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-43-monitor-provider-directory-api-feeds/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-43 so that I can ensure data is delivered reliably and securely. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Monitor Provider Directory API Feeds** so that Enable the target-state Provider Directory to support the capability described by SR-43 so that I can ensure data is delivered reliably and securely. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-44-notify-integration-administrators-of-provider-data-schema-changes/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-44 so that external API versions can be updated. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Notify Integration Administrators of Provider Data Schema Changes** so that Enable the target-state Provider Directory to support the capability described by SR-44 so that external API versions can be updated. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-45-broadcast-provider-updates-to-rhapsody-using-standard-messaging/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-45 so that subscribing systems receive timely updates. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Broadcast Provider Updates to Rhapsody Using Standard Messaging** so that Enable the target-state Provider Directory to support the capability described by SR-45 so that subscribing systems receive timely updates. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-46-monitor-provider-update-broadcasts-to-rhapsody/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-46 so that I can verify that updates are being distributed. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Monitor Provider Update Broadcasts to Rhapsody** so that Enable the target-state Provider Directory to support the capability described by SR-46 so that I can verify that updates are being distributed. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-47-manually-create-new-provider-records/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-47 so that missing providers can be added to the directory when needed. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Manually Create New Provider Records** so that Enable the target-state Provider Directory to support the capability described by SR-47 so that missing providers can be added to the directory when needed. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-48-manually-maintain-provider-records/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-48 so that provider information can be kept accurate. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Manually Maintain Provider Records** so that Enable the target-state Provider Directory to support the capability described by SR-48 so that provider information can be kept accurate. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-49-report-missing-or-incomplete-provider-data/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-49 so that I can fix gaps in the directory. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Report Missing or Incomplete Provider Data** so that Enable the target-state Provider Directory to support the capability described by SR-49 so that I can fix gaps in the directory. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-5-confirm-provider-information-was-successfully-added/spec.md": [
+      "Enable the Provider Directory to record processing success or failure and make each outcome traceable to the source record and error. This supports the target-state objective that sr-5 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I know the update process completed.",
+      "Harmonia SHALL support **Confirm Provider Information Was Successfully Added** so that Enable the Provider Directory to record processing success or failure and make each outcome traceable to the source record and error. This supports the target-state objective that sr-5 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I know the update process completed."
+    ],
+    "openspec/specs/provider-directory-integration/sr-50-report-potential-duplicate-provider-records/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-50 so that I can investigate and resolve them. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Report Potential Duplicate Provider Records** so that Enable the target-state Provider Directory to support the capability described by SR-50 so that I can investigate and resolve them. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-51-generate-provider-data-integrity-reports/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-51 so that I can verify that the directory is maintained according to compliance requirements. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Generate Provider Data Integrity Reports** so that Enable the target-state Provider Directory to support the capability described by SR-51 so that I can verify that the directory is maintained according to compliance requirements. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-52-create-update-and-deactivate-reference-data-sets/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-52 so that the directory supports standardised data entry. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Create Update and Deactivate Reference Data Sets** so that Enable the target-state Provider Directory to support the capability described by SR-52 so that the directory supports standardised data entry. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-53-use-reference-data-for-data-verification/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-53 so that the directory supports interoperability across multiple systems. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Use Reference Data for Data Verification** so that Enable the target-state Provider Directory to support the capability described by SR-53 so that the directory supports interoperability across multiple systems. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-54-manage-versioning-for-reference-data-sets/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-54 so that data governance requirements are met. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Manage Versioning for Reference Data Sets** so that Enable the target-state Provider Directory to support the capability described by SR-54 so that data governance requirements are met. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-55-restrict-changes-to-reference-data-sets/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-55 so that unapproved changes are prevented. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Restrict Changes to Reference Data Sets** so that Enable the target-state Provider Directory to support the capability described by SR-55 so that unapproved changes are prevented. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-56-align-reference-data-with-national-jurisdictional-and-governing-body-code-sets/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-56 so that interoperability is supported. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Align Reference Data with National Jurisdictional and Governing Body Code Sets** so that Enable the target-state Provider Directory to support the capability described by SR-56 so that interoperability is supported. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-57-associate-reference-data-with-categories-and-attributes/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-57 so that they can be used in the correct context. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Associate Reference Data with Categories and Attributes** so that Enable the target-state Provider Directory to support the capability described by SR-57 so that they can be used in the correct context. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-58-expose-reference-data-sets-via-an-api/spec.md": [
+      "Enable the target-state Provider Directory to support the capability described by SR-58 so that external systems can consume standardised values. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration.",
+      "Harmonia SHALL support **Expose Reference Data Sets via an API** so that Enable the target-state Provider Directory to support the capability described by SR-58 so that external systems can consume standardised values. The capability should operate as part of the governed Provider Directory service, with consistent identity, provenance, lifecycle, security, data-quality and audit controls applied irrespective of whether the activity is performed manually, through an API, or through system integration."
+    ],
+    "openspec/specs/provider-directory-integration/sr-6-control-when-provider-information-is-added/spec.md": [
+      "Enable the Provider Directory to schedule, trigger, pause and resume incoming provider feeds. This supports the target-state objective that sr-6 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I can effectively manage system resources.",
+      "Harmonia SHALL support **Control When Provider Information Is Added** so that Enable the Provider Directory to schedule, trigger, pause and resume incoming provider feeds. This supports the target-state objective that sr-6 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that I can effectively manage system resources."
+    ],
+    "openspec/specs/provider-directory-integration/sr-7-receive-provider-information-from-national-data-sources/spec.md": [
+      "Enable the Provider Directory to receive provider information from multiple national sources through standard interfaces and retain source and error information. This supports the target-state objective that sr-7 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider information is updated from authoritative systems.",
+      "Harmonia SHALL support **Receive Provider Information from National Data Sources** so that Enable the Provider Directory to receive provider information from multiple national sources through standard interfaces and retain source and error information. This supports the target-state objective that sr-7 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider information is updated from authoritative systems."
+    ],
+    "openspec/specs/provider-directory-integration/sr-8-verify-provider-information-received-from-national-sources/spec.md": [
+      "Enable the Provider Directory to validate and transform incoming national provider information before it is accepted. This supports the target-state objective that sr-8 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that incorrect records are not stored.",
+      "Harmonia SHALL support **Verify Provider Information Received from National Sources** so that Enable the Provider Directory to validate and transform incoming national provider information before it is accepted. This supports the target-state objective that sr-8 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that incorrect records are not stored."
+    ],
+    "openspec/specs/provider-directory-integration/sr-9-match-national-provider-updates-to-existing-records/spec.md": [
+      "Enable the Provider Directory to use unique identifiers to update the correct existing provider and log ambiguous matches. This supports the target-state objective that sr-9 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the correct record is updated.",
+      "Harmonia SHALL support **Match National Provider Updates to Existing Records** so that Enable the Provider Directory to use unique identifiers to update the correct existing provider and log ambiguous matches. This supports the target-state objective that sr-9 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the correct record is updated."
+    ],
+    "openspec/specs/provider-directory-integration/uc-10-broadcast-care-provider-details-to-rhapsody-integration-engine/spec.md": [
+      "Enable the Provider Directory to publish provider changes to the enterprise integration engine for distribution. This supports the target-state objective that uc-10 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that subscribing systems receive provider information through the established integration distribution mechanism.",
+      "Harmonia SHALL support **Broadcast Care Provider Details to Rhapsody Integration Engine** so that Enable the Provider Directory to publish provider changes to the enterprise integration engine for distribution. This supports the target-state objective that uc-10 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that subscribing systems receive provider information through the established integration distribution mechanism."
+    ],
+    "openspec/specs/provider-directory-integration/uc-11-maintain-care-provider-details/spec.md": [
+      "Enable the Provider Directory to maintain provider information and review its change history. This supports the target-state objective that uc-11 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that authorised administrators can keep provider records accurate, current and auditable.",
+      "Harmonia SHALL support **Maintain Care Provider Details** so that Enable the Provider Directory to maintain provider information and review its change history. This supports the target-state objective that uc-11 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that authorised administrators can keep provider records accurate, current and auditable."
+    ],
+    "openspec/specs/provider-directory-integration/uc-12-generate-reports-on-care-provider-data-integrity/spec.md": [
+      "Enable the Provider Directory to assess provider data integrity using reporting and exception information. This supports the target-state objective that uc-12 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that data-quality issues can be identified, prioritised and remediated.",
+      "Harmonia SHALL support **Generate Reports on Care Provider Data Integrity** so that Enable the Provider Directory to assess provider data integrity using reporting and exception information. This supports the target-state objective that uc-12 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that data-quality issues can be identified, prioritised and remediated."
+    ],
+    "openspec/specs/provider-directory-integration/uc-13-maintain-provider-directory-reference-data/spec.md": [
+      "Enable the Provider Directory to maintain controlled reference data used by Provider Directory processes. This supports the target-state objective that uc-13 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider information is captured and interpreted consistently using governed reference values.",
+      "Harmonia SHALL support **Maintain Provider Directory Reference Data** so that Enable the Provider Directory to maintain controlled reference data used by Provider Directory processes. This supports the target-state objective that uc-13 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider information is captured and interpreted consistently using governed reference values."
+    ],
+    "openspec/specs/provider-directory-integration/uc-2-receive-care-provider-details-from-national-provider-data-store/spec.md": [
+      "Enable the Provider Directory to receive provider information from national provider data sources. This supports the target-state objective that uc-2 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider information maintained by national authoritative or reference sources is incorporated into the Provider Directory.",
+      "Harmonia SHALL support **Receive Care Provider Details from National Provider Data Store** so that Enable the Provider Directory to receive provider information from national provider data sources. This supports the target-state objective that uc-2 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider information maintained by national authoritative or reference sources is incorporated into the Provider Directory."
+    ],
+    "openspec/specs/provider-directory-integration/uc-3-enrich-provider-records-from-multiple-data-sources/spec.md": [
+      "Enable the Provider Directory to combine provider information from multiple recognised sources. This supports the target-state objective that uc-3 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that a single, more complete provider record is maintained while preserving source authority and provenance.",
+      "Harmonia SHALL support **Enrich Provider Records from Multiple Data Sources** so that Enable the Provider Directory to combine provider information from multiple recognised sources. This supports the target-state objective that uc-3 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that a single, more complete provider record is maintained while preserving source authority and provenance."
+    ],
+    "openspec/specs/provider-directory-integration/uc-4-receive-care-provider-details-from-department-of-health-systems/spec.md": [
+      "Enable the Provider Directory to receive provider information from internal Department of Health systems. This supports the target-state objective that uc-4 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the directory of internal providers is kept current using controlled system integration.",
+      "Harmonia SHALL support **Receive Care Provider Details from Department of Health Systems** so that Enable the Provider Directory to receive provider information from internal Department of Health systems. This supports the target-state objective that uc-4 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the directory of internal providers is kept current using controlled system integration."
+    ],
+    "openspec/specs/provider-directory-integration/uc-5-confirm-provider-status-from-national-provider-data-store/spec.md": [
+      "Enable the Provider Directory to verify a provider's current status against an authoritative national source. This supports the target-state objective that uc-5 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider status used by the Provider Directory is supported by current authoritative evidence.",
+      "Harmonia SHALL support **Confirm Provider Status from National Provider Data Store** so that Enable the Provider Directory to verify a provider's current status against an authoritative national source. This supports the target-state objective that uc-5 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider status used by the Provider Directory is supported by current authoritative evidence."
+    ],
+    "openspec/specs/provider-directory-integration/uc-6-confirm-provider-identity-from-national-provider-data-store/spec.md": [
+      "Enable the Provider Directory to verify provider identity and recognised national identifiers. This supports the target-state objective that uc-6 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider identity is reliably linked to authoritative identifiers and duplicate or incorrect identities are reduced.",
+      "Harmonia SHALL support **Confirm Provider Identity from National Provider Data Store** so that Enable the Provider Directory to verify provider identity and recognised national identifiers. This supports the target-state objective that uc-6 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider identity is reliably linked to authoritative identifiers and duplicate or incorrect identities are reduced."
+    ],
+    "openspec/specs/provider-directory-integration/uc-7-supply-care-provider-details-to-other-systems-via-integration/spec.md": [
+      "Enable the Provider Directory to supply authorised provider information to downstream systems through managed integration. This supports the target-state objective that uc-7 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that consumer systems receive current provider information without maintaining unnecessary independent copies.",
+      "Harmonia SHALL support **Supply Care Provider Details to Other Systems via Integration** so that Enable the Provider Directory to supply authorised provider information to downstream systems through managed integration. This supports the target-state objective that uc-7 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that consumer systems receive current provider information without maintaining unnecessary independent copies."
+    ],
+    "openspec/specs/provider-directory-integration/uc-8-share-care-provider-details-with-other-systems-using-manual-processes/spec.md": [
+      "Enable the Provider Directory to provide authorised provider information through a controlled manual exchange. This supports the target-state objective that uc-8 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider information can be supplied where automated integration is unavailable or inappropriate.",
+      "Harmonia SHALL support **Share Care Provider Details with Other Systems Using Manual Processes** so that Enable the Provider Directory to provide authorised provider information through a controlled manual exchange. This supports the target-state objective that uc-8 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider information can be supplied where automated integration is unavailable or inappropriate."
+    ],
+    "openspec/specs/provider-directory-integration/uc-9-supply-care-provider-details-via-an-api/spec.md": [
+      "Enable the Provider Directory to make provider information available through a governed API. This supports the target-state objective that uc-9 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that authorised systems can retrieve current provider information using a reusable machine-to-machine interface.",
+      "Harmonia SHALL support **Supply Care Provider Details via an API** so that Enable the Provider Directory to make provider information available through a governed API. This supports the target-state objective that uc-9 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that authorised systems can retrieve current provider information using a reusable machine-to-machine interface."
+    ],
+    "openspec/specs/provider-management/uc-clinician-directory-18-manage-electronic-service-endpoints/spec.md": [
+      "- **GIVEN** Target-State Information Model:  For the target-state information model, a suitable model would specify the relationships as: "
+    ]
+  },
+  "baselineIssues": [],
+  "submissionIssues": [],
+  "governedSubjectCount": 82,
+  "duplicateCounts": {
+    "scopedSourceAndType": 0,
+    "sourceIdAndType": 0,
+    "sameWordingAndType": 18
+  }
+}

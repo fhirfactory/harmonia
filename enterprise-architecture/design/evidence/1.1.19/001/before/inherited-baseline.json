@@ -1,0 +1,22 @@
+{
+  "standing": "Inherited published architectural baseline; no transferred issue accepted or resolved",
+  "version": "1.1.19",
+  "iteration": "001",
+  "originatingChangeIteration": "1.1.18/001",
+  "closedOriginatingRecord": "enterprise-architecture/design/register/1.1.19/hcrl-1.1.18-001.complete.md",
+  "originatingEvidence": "enterprise-architecture/design/evidence/1.1.18/001",
+  "revisedAuthority": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T025100Z-release-1-1-19-revised-disposition.md",
+  "publishedXml": "enterprise-architecture/design/archimate/published/1.1.19/Harmonia-Architecture.xml",
+  "publishedSha256": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09",
+  "acceptedCandidateSha256": "8c54e0dbd0b86c8780d063caf0aa2650a24a41cf0e693fccb2c0e2c5609c4688",
+  "candidateDifference": "Only model-level release Property changes from 1.1.18 to 1.1.19",
+  "elements": 1994,
+  "relationships": 2235,
+  "views": 1285,
+  "viewFoldersIncludingRoot": 1183,
+  "emptyFolders": 42,
+  "transferRegister": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/transfer-register.json",
+  "transferredDecisionEntries": 16,
+  "preserveOriginalDispositions": true,
+  "transferredIssueImplementation": "NOT_STARTED"
+}

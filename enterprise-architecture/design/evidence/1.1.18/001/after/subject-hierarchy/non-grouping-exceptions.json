@@ -1,0 +1,113 @@
+[
+  {
+    "exchangeId": "id-558a8397dafb44c0ba32b8540559ea7e",
+    "name": "Distributed Authorisation Enforcement",
+    "nativeType": "Principle",
+    "subjectCodes": [
+      "G03.02",
+      "G03.03"
+    ],
+    "canonicalId": null,
+    "selector": "/*/*[4]/*[1458]",
+    "disposition": "UNRESOLVED; not authorised by Grouping-only Task; no canonical allocation or semantic placement",
+    "sourceDocumentation": "CANDIDATE 1.1.18-001-003 \u2014 newly proposed element, pending governed ADD to canonical Markdown.\n\nEvery Harmonia component and subsystem SHALL enforce applicable authorisation requirements through a Themis-governed Policy Enforcement Point (PEP) before permitting a governed operation.\n\nException 1; new candidate axiom.",
+    "sourceProperties": [
+      {
+        "definition": "harmoniaType",
+        "values": [
+          "ArchitecturalAxiom"
+        ]
+      },
+      {
+        "definition": "Specialization",
+        "values": [
+          "ArchitecturalAxiom"
+        ]
+      }
+    ]
+  },
+  {
+    "exchangeId": "id-7847cbe66b524f18ba8ace06b280af4e",
+    "name": "Passport Propagation / Availability",
+    "nativeType": "Principle",
+    "subjectCodes": [
+      "G03.02",
+      "G03.03"
+    ],
+    "canonicalId": null,
+    "selector": "/*/*[4]/*[1459]",
+    "disposition": "UNRESOLVED; not authorised by Grouping-only Task; no canonical allocation or semantic placement",
+    "sourceDocumentation": "CANDIDATE 1.1.18-001-003 \u2014 newly proposed element, pending governed ADD to canonical Markdown.\n\nHarmonia SHALL ensure that the applicable Themis Passport is available across internal component and subsystem interactions, preserving the authorisation capability and its governing context. The Passport is a preconstructed Themis snapshot of effective authorisation capability, not identity credentials; availability may be by governed reference.\n\nException 1; new candidate axiom.",
+    "sourceProperties": [
+      {
+        "definition": "harmoniaType",
+        "values": [
+          "ArchitecturalAxiom"
+        ]
+      },
+      {
+        "definition": "Specialization",
+        "values": [
+          "ArchitecturalAxiom"
+        ]
+      }
+    ]
+  },
+  {
+    "exchangeId": "id-aeae420df3be43fdb0664f9ee75c40e8",
+    "name": "Integration & Solution Engineers",
+    "nativeType": "Stakeholder",
+    "subjectCodes": [
+      "G05.03",
+      "G10.01",
+      "G11.02"
+    ],
+    "canonicalId": null,
+    "selector": "/*/*[4]/*[1462]",
+    "disposition": "UNRESOLVED; not authorised by Grouping-only Task; no canonical allocation or semantic placement",
+    "sourceDocumentation": "CANDIDATE 1.1.18-001-003 \u2014 newly proposed element, pending governed ADD to canonical Markdown.\n\nStakeholder responsible for developing, integrating and validating Harmonia components and solutions, including Pylai integrations, before deployment. Does not imply operational authority or OA&M competencies.\n\nException 23; replaces combined stakeholder as a distinct actor population; relationships require review, not automatic duplication.",
+    "sourceProperties": []
+  },
+  {
+    "exchangeId": "id-bedcc73d862c424da5f94904e9a28c53",
+    "name": "Platform Operations & OA&M Personnel",
+    "nativeType": "Stakeholder",
+    "subjectCodes": [
+      "G09.01",
+      "G09.03",
+      "G10.02"
+    ],
+    "canonicalId": null,
+    "selector": "/*/*[4]/*[1461]",
+    "disposition": "UNRESOLVED; not authorised by Grouping-only Task; no canonical allocation or semantic placement",
+    "sourceDocumentation": "CANDIDATE 1.1.18-001-003 \u2014 newly proposed element, pending governed ADD to canonical Markdown.\n\nStakeholder responsible for operating, monitoring, maintaining and recovering deployed Harmonia environments. Infrastructure and OA&M competencies and authorities are distinct from those of developers and integration engineers.\n\nException 23; replaces combined stakeholder as a distinct actor population; relationships require review, not automatic duplication.",
+    "sourceProperties": []
+  },
+  {
+    "exchangeId": "id-d4b072eb3b6949c3baf8753effc80b36",
+    "name": "Exclusive PetasosParcel Routing",
+    "nativeType": "Constraint",
+    "subjectCodes": [
+      "G05.04",
+      "G06.04"
+    ],
+    "canonicalId": null,
+    "selector": "/*/*[4]/*[1460]",
+    "disposition": "UNRESOLVED; not authorised by Grouping-only Task; no canonical allocation or semantic placement",
+    "sourceDocumentation": "CANDIDATE 1.1.18-001-003 \u2014 newly proposed element, pending governed ADD to canonical Markdown.\n\nHarmonia SHALL route all PetasosParcel instances exclusively through Apache ActiveMQ Artemis, irrespective of deployment location or runtime proximity of participating components. Petasos SHALL utilise Artemis native messaging capabilities for routing, concurrency, availability and delivery management.\n\nException 7; new candidate Mandate; native ArchiMate Constraint.",
+    "sourceProperties": [
+      {
+        "definition": "harmoniaType",
+        "values": [
+          "Mandate"
+        ]
+      },
+      {
+        "definition": "Specialization",
+        "values": [
+          "Mandate"
+        ]
+      }
+    ]
+  }
+]

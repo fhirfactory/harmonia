@@ -1,0 +1,146 @@
+{
+  "comparison_status": "DIFFERENCES",
+  "purpose": "Raw representation fidelity; use continuum_workbench for canonical Change Review; no architecture acceptance",
+  "published_sha256": "8c54e0dbd0b86c8780d063caf0aa2650a24a41cf0e693fccb2c0e2c5609c4688",
+  "incoming_sha256": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09",
+  "input_issues": {
+    "published": [],
+    "incoming": []
+  },
+  "classifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 0,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 0,
+    "SEMANTIC DIFFERENCE": 0,
+    "UNEXPLAINED DIFFERENCE": 1
+  },
+  "metrics": {
+    "published": {
+      "semantic_elements": 1994,
+      "relationships": 2235,
+      "views": 1285,
+      "visual_objects": 4388,
+      "visual_connections": 1804,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 28093718,
+      "xml_decimal_mb": 28.093718
+    },
+    "incoming": {
+      "semantic_elements": 1994,
+      "relationships": 2235,
+      "views": 1285,
+      "visual_objects": 4388,
+      "visual_connections": 1804,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 28093718,
+      "xml_decimal_mb": 28.093718
+    }
+  },
+  "elements": {
+    "before": 1994,
+    "after": 1994,
+    "retained_ids": 1994,
+    "missing_ids": [],
+    "additional_ids": [],
+    "changed_records": []
+  },
+  "relationships": {
+    "before": 2235,
+    "after": 2235,
+    "retained_ids": 2235,
+    "missing_ids": [],
+    "additional_ids": [],
+    "changed_records": []
+  },
+  "presentation": {
+    "before": 1285,
+    "after": 1285,
+    "retained_ids": 1285,
+    "missing_ids": [],
+    "additional_ids": [],
+    "changed_records": [],
+    "node_identity": {
+      "before": 4388,
+      "after": 4388,
+      "retained": 4388,
+      "missing": [],
+      "additional": []
+    },
+    "connection_identity": {
+      "before": 1804,
+      "after": 1804,
+      "retained": 1804,
+      "missing": [],
+      "additional": []
+    },
+    "coverage": "View-local visual IDs, parent/nesting, membership, coordinates, dimensions, ordered bendpoints, child order, style, labels and residual XML; no presentation replay or speculative equivalence rules"
+  },
+  "contract_properties": {
+    "canonicalId": {
+      "published_owners": 1994,
+      "exact_value_language_multiplicity_owner_preserved": 1994,
+      "changes": []
+    },
+    "displayName": {
+      "published_owners": 1994,
+      "exact_value_language_multiplicity_owner_preserved": 1994,
+      "changes": []
+    },
+    "friendlyName": {
+      "published_owners": 1986,
+      "exact_value_language_multiplicity_owner_preserved": 1986,
+      "changes": []
+    },
+    "canonicalName": {
+      "published_owners": 1557,
+      "exact_value_language_multiplicity_owner_preserved": 1557,
+      "changes": []
+    },
+    "archimateType": {
+      "published_owners": 1994,
+      "exact_value_language_multiplicity_owner_preserved": 1994,
+      "changes": []
+    },
+    "harmoniaType": {
+      "published_owners": 396,
+      "exact_value_language_multiplicity_owner_preserved": 396,
+      "changes": []
+    }
+  },
+  "findings": [
+    {
+      "classification": "UNEXPLAINED DIFFERENCE",
+      "path": "/model/properties[1]/property[key=Baseline / Architecture Release]/value[1]/text()",
+      "before": "1.1.18",
+      "after": "1.1.19",
+      "reason": "Exact text compared; whitespace/language selection is not normalised"
+    }
+  ],
+  "empirical_archi_fidelity": "UNRESOLVED: comparator alone does not authenticate an Archi execution; use the hash-pinned evidence procedure"
+}

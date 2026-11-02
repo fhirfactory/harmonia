@@ -1,0 +1,85 @@
+{
+  "evidenceConsistency": "PASS",
+  "candidateRows": 784,
+  "sourceFiles": 421,
+  "wordingAndSourceCorrespondence": "PASS",
+  "existingRecommendationIdentitiesAndStanding": "PASS",
+  "protectedInputs": {
+    "outcome": "PASS",
+    "checkedFiles": 2284,
+    "mismatches": [],
+    "excludedActivityOutputPins": [
+      "enterprise-architecture/design/evidence/1.1.18/001/after/architectural-delta.json",
+      "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/assess.py",
+      "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidate-subject-hierarchy.json",
+      "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/governed-subjects.json",
+      "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md"
+    ],
+    "canonicalFilePopulationUnchanged": true
+  },
+  "canonicalBaselineValidation": {
+    "status": "PASS",
+    "elements": 1842,
+    "relationships": 1882,
+    "qualifiedSourcePredicates": 462,
+    "canonicalIdentities": 1842,
+    "representationIdentities": 1842,
+    "provenanceCoverage": 1842,
+    "sourceBindings": 3666,
+    "supportedNativeTypes": 60,
+    "navigation": "PASS",
+    "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance",
+    "containment": "PASS",
+    "offlineXsd": "PASS",
+    "exchangeReferences": "PASS",
+    "outputSha256": "7df92528a09f9a765ddebec105643bae08ac92583cad4e8901b3135d49db2c2e",
+    "publicationAllocatedIdentities": 0,
+    "actualArchiTransport": "NOT_PERFORMED",
+    "fullResultSha256": "2cf0213953618dd1a81cfce2ede3b0c968bcde77e28e6b48a226e059c68e60b6",
+    "baselineUnresolvedProperties": 526
+  },
+  "incomingValidation": {
+    "outcome": "PASS",
+    "basis": "Maintained Exchange parser/offline XSD/reference/identifier checks; summary.json submissionIssues empty"
+  },
+  "fullDeltaReview": {
+    "outcome": "UNRESOLVED",
+    "bytes": 3824520,
+    "conditions": [
+      {
+        "kind": "REVIEW_PAYLOAD_LIMIT",
+        "detail": "Delta exceeds 128000 bytes. Retain this evidence; request bounded scope before AI interpretation."
+      }
+    ],
+    "architecturalInterpretation": "Pending bounded-scope disposition"
+  },
+  "javaArchitectureSuite": {
+    "outcome": "UNRESOLVED",
+    "harness": "Maven dependency resolution failed on read-only local repository before test execution",
+    "command": "timeout 120 mvn test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+    "log": "architecture-tests.log"
+  },
+  "documentLinks": {
+    "outcome": "PASS",
+    "issues": []
+  },
+  "provenance": {
+    "outcome": "UNRESOLVED",
+    "version": "1.1.18",
+    "iteration": "001",
+    "records": [
+      "evidence/1.1.18/001/after/ai-agent-reports/20261101T223733Z-openspec-subject-capability-reconciliation.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md"
+    ],
+    "errors": [],
+    "unresolved": [
+      "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+    ],
+    "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+  },
+  "architecturalAcceptance": "NOT RECORDED",
+  "canonicalIdsAllocated": 0,
+  "canonicalSourcesChanged": 0,
+  "releaseTransition": "NOT PERFORMED",
+  "actualArchiTransport": "NOT PERFORMED"
+}

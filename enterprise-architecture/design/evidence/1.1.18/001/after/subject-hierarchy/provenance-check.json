@@ -1,0 +1,24 @@
+{
+  "outcome": "UNRESOLVED",
+  "version": "1.1.18",
+  "iteration": "001",
+  "records": [
+    "evidence/1.1.18/001/after/ai-agent-reports/20261101T223733Z-openspec-subject-capability-reconciliation.md",
+    "evidence/1.1.18/001/after/ai-agent-reports/20261101T225438Z-bounded-subject-reconciliation.md",
+    "evidence/1.1.18/001/after/ai-agent-reports/20261101T232558Z-accepted-subject-incorporation.md",
+    "evidence/1.1.18/001/after/ai-agent-reports/20261102T001123Z-views-reconciliation.md",
+    "evidence/1.1.18/001/after/ai-agent-reports/20261102T005128Z-subject-grouping-hierarchy.md",
+    "evidence/1.1.18/001/before/ai-agent-tasks/20261102T000247Z-views-reconciliation.md",
+    "evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+    "evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md",
+    "evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md",
+    "evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md"
+  ],
+  "errors": [],
+  "unresolved": [
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+  ],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "authoredName": "Distributed Authorisation Enforcement",
+    "displayName": "[ArchitecturalAxiom] Distributed Authorisation Enforcement",
+    "nativeType": "Principle",
+    "specialization": "ArchitecturalAxiom",
+    "canonicalId": "172720628fa540928e34b52562c7067f",
+    "exchangeId": "id-558a8397dafb44c0ba32b8540559ea7e",
+    "source": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/172720628fa540928e34b52562c7067f.md",
+    "operation": "NEW_APPROVED_ELEMENT_CREATED",
+    "predecessorCanonicalId": null,
+    "identityBasis": "No existing equivalent instance established by source/name/definition review",
+    "initialCreateRepresentationId": "id-1f608a587bf35c749c7c7ed3701c4b42"
+  },
+  {
+    "authoredName": "Passport Propagation / Availability",
+    "displayName": "[ArchitecturalAxiom] Passport Propagation / Availability",
+    "nativeType": "Principle",
+    "specialization": "ArchitecturalAxiom",
+    "canonicalId": "284b53f4a3c54acdba9e707124e997b8",
+    "exchangeId": "id-7847cbe66b524f18ba8ace06b280af4e",
+    "source": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/284b53f4a3c54acdba9e707124e997b8.md",
+    "operation": "NEW_APPROVED_ELEMENT_CREATED",
+    "predecessorCanonicalId": null,
+    "identityBasis": "No existing equivalent instance established by source/name/definition review",
+    "initialCreateRepresentationId": "id-b4d721ac91685852bdead1dfd6ae9cbd"
+  },
+  {
+    "authoredName": "Integration & Solution Engineers",
+    "displayName": "Integration & Solution Engineers",
+    "nativeType": "Stakeholder",
+    "specialization": null,
+    "canonicalId": "1dc29678ec4a4a498620c84ffa03c2bb",
+    "exchangeId": "id-aeae420df3be43fdb0664f9ee75c40e8",
+    "source": "enterprise-architecture/continuum/motivation/stakeholder/1dc29678ec4a4a498620c84ffa03c2bb.md",
+    "operation": "SPLIT_SUCCESSOR_CREATED",
+    "predecessorCanonicalId": "c20aa17ce4aa4a58be5eb3cff2ecdd1d",
+    "identityBasis": "Distinct approved population after explicit composite separation",
+    "initialCreateRepresentationId": "id-d997a35a8e305294b9a145f281715ca4"
+  },
+  {
+    "authoredName": "Platform Operations & OA&M Personnel",
+    "displayName": "Platform Operations & OA&M Personnel",
+    "nativeType": "Stakeholder",
+    "specialization": null,
+    "canonicalId": "ec45ffa1b7d841cf920aa467d4d2b1f4",
+    "exchangeId": "id-bedcc73d862c424da5f94904e9a28c53",
+    "source": "enterprise-architecture/continuum/motivation/stakeholder/ec45ffa1b7d841cf920aa467d4d2b1f4.md",
+    "operation": "SPLIT_SUCCESSOR_CREATED",
+    "predecessorCanonicalId": "c20aa17ce4aa4a58be5eb3cff2ecdd1d",
+    "identityBasis": "Distinct approved population after explicit composite separation",
+    "initialCreateRepresentationId": "id-3579a1cbeb1e5cb390198cb188140282"
+  },
+  {
+    "authoredName": "Exclusive PetasosParcel Routing",
+    "displayName": "[Mandate] Exclusive PetasosParcel Routing",
+    "nativeType": "Constraint",
+    "specialization": "Mandate",
+    "canonicalId": "e024703b32c5437481ce290e8e50b079",
+    "exchangeId": "id-d4b072eb3b6949c3baf8753effc80b36",
+    "source": "enterprise-architecture/continuum/motivation/constraint/mandate/e024703b32c5437481ce290e8e50b079.md",
+    "operation": "NEW_APPROVED_ELEMENT_CREATED",
+    "predecessorCanonicalId": null,
+    "identityBasis": "No existing equivalent instance established by source/name/definition review",
+    "initialCreateRepresentationId": "id-c9650968841b5c46ad3eaf0c5ff2dbb1"
+  }
+]

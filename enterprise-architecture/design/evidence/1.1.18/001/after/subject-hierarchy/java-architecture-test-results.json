@@ -1,0 +1,19 @@
+{
+  "outcome": "PASS",
+  "command": "timeout 110 mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+  "exitCode": 0,
+  "testsRun": 90,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "build": "SUCCESS",
+  "timing": [
+    "[INFO] Total time:  25.247 s"
+  ],
+  "warningImportFallbacks": 3077,
+  "jdkFallbacks": 3077,
+  "nonJdkFallbackExamples": [],
+  "limitation": "ArchUnit uses simple-import fallback on unsupported Java 25 class files (major 69); successful assertions do not prove rich analysis of those fallback classes.",
+  "log": "java-architecture-tests.log.gz",
+  "offlineReason": "Avoid the earlier online Maven dependency-metadata write blocker without retrying the unchanged invocation."
+}

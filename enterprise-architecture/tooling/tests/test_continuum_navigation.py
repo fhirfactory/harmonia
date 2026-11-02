@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import architecture_continuum as c
 import continuum_navigation as nav
 import publish_continuum as pub
+from current_source_fixture import copy_retained_inputs
 
 
 class ContinuumNavigationTests(unittest.TestCase):
@@ -25,6 +26,7 @@ class ContinuumNavigationTests(unittest.TestCase):
             shutil.copytree(c.ROOT / rel, cls.root / rel, ignore=shutil.ignore_patterns('published', '__pycache__'))
         shutil.copyfile(c.ROOT / 'architecture-release.json', cls.root / 'architecture-release.json')
         shutil.copyfile(c.ROOT / 'enterprise-architecture/governance/authority-successors.json', cls.root / 'enterprise-architecture/governance/authority-successors.json')
+        copy_retained_inputs(c.ROOT, cls.root)
         cls.elements = c.load(cls.root)[1]
         cls.raw = c.read_json(cls.root / nav.SOURCE)
         cls.tree = nav.load(cls.root, cls.elements)
@@ -75,7 +77,7 @@ class ContinuumNavigationTests(unittest.TestCase):
         self.assertFalse(self.tree[5].get('children'))
         self.assertFalse(self.tree[6].get('children'))
         perspectives = [n for n in nav.walk(self.tree) if n.get('kind') == 'index-entry']
-        self.assertEqual(len(perspectives), 10)
+        self.assertEqual(len(perspectives), 12)
         self.assertTrue(all(n['number'].startswith('R.1.') for n in perspectives))
         self.assertEqual(len(self.tree[1]['children']), 10)
         branches = {n['title']: nav.descendants(n) for n in nav.walk(self.tree) if n['title'].startswith('Unclassified ')}
@@ -261,7 +263,7 @@ class ContinuumNavigationTests(unittest.TestCase):
         import continuum_workbench as workbench
         model = c.secure_xml(self.root / c.DESIGN / 'projection-template.xml')
         before = workbench.signatures(model, 'views/diagrams', 'view')
-        self.assertEqual(len(before), 1216)
+        self.assertEqual(len(before), 1285)
         first = model.find('a:views/a:diagrams/a:view', c.N)
         first.find('a:name', c.N).text += ' changed'
         after = workbench.signatures(model, 'views/diagrams', 'view')

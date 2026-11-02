@@ -1,0 +1,15 @@
+{
+  "outcome": "FAIL",
+  "invocation": "Existing unittest discovery with exact declared retained files copied into temporary source fixtures; unchanged tests and validators",
+  "testsRun": 85,
+  "failures": 1,
+  "errors": 0,
+  "skipped": 0,
+  "elapsedSeconds": 307.771,
+  "retainedInputs": {
+    "enterprise-architecture/design/evidence/1.1.18/001/before/Harmonia-OpenSpec-Expanded-Subject-Capability-Mapping.md": "b6f59ce36ad4b7719fd0e954e4c4b0e86a874fe5cab2459c1804019e43944094",
+    "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md": "4cdc2217cc0bb8e8d2296537a1228cf7c7423ee423103d6d56857f87c57584dc"
+  },
+  "temporaryFixtureTreesSupplied": 3,
+  "originalStandardInvocation": "tooling-tests.log retains six fixture-input errors; no unchanged retry or hidden replacement"
+}

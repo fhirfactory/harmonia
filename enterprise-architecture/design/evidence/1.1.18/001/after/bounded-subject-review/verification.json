@@ -1,0 +1,84 @@
+{
+  "outcome": "PASS",
+  "scope": "Bounded interpretation and evidence only; no architectural acceptance",
+  "scopedEvidenceBytes": 90051,
+  "limitBytes": 128000,
+  "folderCrosswalk": "PASS: 32 XML XPath/line/label/absence checks against original input",
+  "nativeScopedElementEndpoints": 0,
+  "submittedIncidentSemanticRelationships": 0,
+  "subjectConceptProposals": 32,
+  "subjectClassificationEdgeProposals": 27,
+  "viewSpellingProposals": 1,
+  "canonicalNameAndIdentityAllocation": "PASS: null; no formal token or UUID invented",
+  "governedSubjectIdentityContext": "PASS: all 82 existing source-bound Subjects preserved",
+  "originalCandidateAssessment": {
+    "outcome": "PASS",
+    "rows": 784,
+    "useCases": 363,
+    "userStories": 421,
+    "preservedFilesChecked": 1869,
+    "hashDifferences": [],
+    "originalReportsAndProductionEvents": "Unchanged"
+  },
+  "originalSourcePreservation": {
+    "outcome": "PASS",
+    "filesChecked": 2284,
+    "canonicalPopulationUnchanged": true
+  },
+  "changeReview": {
+    "outcome": "PASS",
+    "independentCRs": 60,
+    "allOnHoldUnresolved": true,
+    "summaryDetailAndEndpointDependencies": "PASS"
+  },
+  "canonicalAndInputValidation": {
+    "status": "PASS",
+    "elements": 1842,
+    "relationships": 1882,
+    "qualifiedSourcePredicates": 462,
+    "canonicalIdentities": 1842,
+    "representationIdentities": 1842,
+    "provenanceCoverage": 1842,
+    "sourceBindings": 3666,
+    "supportedNativeTypes": 60,
+    "navigation": "PASS",
+    "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance",
+    "containment": "PASS",
+    "offlineXsd": "PASS",
+    "exchangeReferences": "PASS",
+    "outputSha256": "7df92528a09f9a765ddebec105643bae08ac92583cad4e8901b3135d49db2c2e",
+    "publicationAllocatedIdentities": 0,
+    "actualArchiTransport": "NOT_PERFORMED"
+  },
+  "documentLinks": {
+    "outcome": "PASS",
+    "errors": []
+  },
+  "provenance": {
+    "outcome": "UNRESOLVED",
+    "version": "1.1.18",
+    "iteration": "001",
+    "records": [
+      "evidence/1.1.18/001/after/ai-agent-reports/20261101T223733Z-openspec-subject-capability-reconciliation.md",
+      "evidence/1.1.18/001/after/ai-agent-reports/20261101T225438Z-bounded-subject-reconciliation.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md"
+    ],
+    "errors": [],
+    "unresolved": [
+      "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+      "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+    ],
+    "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+  },
+  "javaArchitectureSuite": "UNRESOLVED: prior Maven dependency-cache write failure before tests; unchanged command not rerun",
+  "actualArchiTransport": "NOT PERFORMED",
+  "incorporation": "NOT AUTHORISED / NOT PERFORMED",
+  "capabilityRelationshipsCreated": 0,
+  "canonicalIdsAllocated": 0,
+  "canonicalSourcesChanged": 0,
+  "fullExportDelta": "Retained above 128 KB; not interpreted",
+  "otherIncomingChanges": "UNADJUDICATED / NOT AUTHORISED FOR INCORPORATION",
+  "releaseTransition": "NOT PERFORMED",
+  "commitPushAndHcrlClosure": "NOT PERFORMED"
+}

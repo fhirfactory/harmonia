@@ -1,0 +1,83 @@
+{
+  "outcome": "UNRESOLVED",
+  "maintainedTemplateChanged": false,
+  "verificationXmlGenerated": false,
+  "blocker": "120 unincorporated native Groupings have no established canonical mappings",
+  "baselines": {
+    "incoming": {
+      "elements": 1962,
+      "relationships": 1884,
+      "views": 1285,
+      "viewFoldersIncludingRoot": 1183,
+      "emptyViewFolders": 42
+    },
+    "published": {
+      "elements": 1842,
+      "relationships": 1882,
+      "views": 1216,
+      "viewFoldersIncludingRoot": 1043,
+      "emptyViewFolders": 0
+    },
+    "subjects": {
+      "elements": 1874,
+      "relationships": 1909,
+      "views": 1216,
+      "viewFoldersIncludingRoot": 1046,
+      "emptyViewFolders": 1
+    },
+    "template": {
+      "elements": 0,
+      "relationships": 0,
+      "views": 1216,
+      "viewFoldersIncludingRoot": 1046,
+      "emptyViewFolders": 1
+    }
+  },
+  "authoredViews": 1285,
+  "addedViews": 69,
+  "removedViews": 0,
+  "rawChangedExistingViews": 35,
+  "propertyDefinitionOrLanguageOnlyExistingViewChanges": 34,
+  "movedExistingViews": 1216,
+  "stagedExactViewsAfterDocumentedRebindings": 1285,
+  "stagedRawExactViews": 1251,
+  "stagedViewsSubtreeExactAfterDocumentedPropertyRebindings": true,
+  "stagedExactViewOrganisationExceptCR060": true,
+  "propertyDefinitionMappings": {
+    "propid-49": "propid-43",
+    "propid-58": "propid-52",
+    "propid-51": "propid-45",
+    "propid-59": "propid-53"
+  },
+  "reboundPropertyOccurrences": 68,
+  "stagedFolderCount": 1183,
+  "stagedEmptyFolders": 42,
+  "unresolvedElements": 120,
+  "unresolvedNodeOccurrences": 127,
+  "affectedViews": 57,
+  "canonicalCorrelation": {
+    "status": "CORRELATED",
+    "matches": 1842,
+    "rebindings": 0,
+    "unrelatedIncomingElementsExcluded": 120,
+    "acceptedSubjectsAbsentFromIncoming": 32
+  },
+  "viewReferences": {
+    "elementRef": 4350,
+    "relationshipRef": 1804,
+    "propertyDefinitionRef": 68
+  },
+  "visualSemanticEndpointMismatches": 0,
+  "inMemoryCompleteStructuralProbeXsd": "FAIL",
+  "acceptedProjectionExactReproduction": "PASS",
+  "acceptedSubjects": 32,
+  "acceptedCompositions": 27,
+  "preflight": {
+    "outcome": "FAIL",
+    "meaning": "expected reference gate rejection; task outcome UNRESOLVED",
+    "message": "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-a0ec3251d4564072a217279d4cb4a394'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'., line 52772",
+    "outputWritten": false
+  },
+  "actualArchiTransport": "NOT_PERFORMED",
+  "solutionArchitectVisualAcceptance": "PENDING"
+}

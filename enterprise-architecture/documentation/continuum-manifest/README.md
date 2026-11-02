@@ -7,12 +7,12 @@ here, relocated from `enterprise-architecture/continuum/documentation/` in 1.1.8
 The root Continuum `MANIFEST.md` remains its existing generated navigation
 projection; individually represented Markdown elements remain canonical.
 
-Accepted publication (**1.1.17**): [browser](published/1.1.17/continuum.html), [element index](published/1.1.17/README.md), [ArchiMate Exchange](published/1.1.17/Harmonia-Architecture.xml), [LaTeX catalogue](published/1.1.17/continuum-catalogue.tex), and [fully numbered hierarchy](published/1.1.17/navigation.json). The [completed release HCRL](../../design/register/1.1.17/hcrl-1.1.17-002.complete.md) preserves both bounded reader-facing review deferrals and all technical qualifications. Reader-facing visual review is not asserted. The root release authority selects the next development publication; accepted 1.1.17 paths remain immutable.
+Current publication (**1.1.19**): [browser](published/1.1.19/continuum.html), [element index](published/1.1.19/README.md), [ArchiMate Exchange](published/1.1.19/Harmonia-Architecture.xml), [LaTeX catalogue](published/1.1.19/continuum-catalogue.tex), and [fully numbered hierarchy](published/1.1.19/navigation.json). The [completed originating HCRL](../../design/register/1.1.19/hcrl-1.1.18-001.complete.md) records accepted architecture and Archi visual acceptance. The [successor register](../../design/review/1.1.19/hcrl-1.1.19-001.pending.md) preserves all outstanding reader-facing review scopes, naming/source qualifications and transport differences. Reader-facing structural review is not asserted.
 
-Next development baseline (**1.1.18**): [browser](published/1.1.18/continuum.html), [index](published/1.1.18/README.md) and [Exchange](published/1.1.18/Harmonia-Architecture.xml). These inherit the accepted 1.1.17 architecture unchanged; reader-facing review remains deferred in its recorded scopes. No View work or new architectural acceptance is implied.
+Protected predecessor development baseline (**1.1.18**): [browser](published/1.1.18/continuum.html), [index](published/1.1.18/README.md) and [Exchange](published/1.1.18/Harmonia-Architecture.xml). These retain their original unchanged 1.1.17 architecture and release metadata; the accepted 1.1.19 changes do not overwrite them.
 
 ------- Legacy Content - Superseded ------- Start ------
-Superseded by: the prepared 1.1.17 publication links above; the previous publication link block remains unchanged historical navigation.
+Superseded by: the current publication links above; the previous publication link block remains unchanged historical navigation.
 ---------------------------------------------------------
 
 Current publication (**1.1.10**): [browser](published/1.1.10/continuum.html),

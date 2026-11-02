@@ -1,0 +1,13 @@
+{
+  "outcome": "FAIL",
+  "testsRun": 85,
+  "failures": 2,
+  "errors": 0,
+  "elapsedSeconds": 282.357,
+  "issues": [
+    "Stakeholder population fixture expected old count 10 instead of 12",
+    "Optional numeric-prefix punctuation normalisation introduced identical folder paths; preserve original authored prefix instead"
+  ],
+  "productionValidatorChanged": false,
+  "action": "Restore original authored prefix and update population fixture; rerun applicable checks"
+}

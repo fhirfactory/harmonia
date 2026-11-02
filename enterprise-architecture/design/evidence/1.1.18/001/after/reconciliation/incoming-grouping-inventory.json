@@ -1,0 +1,4762 @@
+[
+  {
+    "exchangeId": "id-9a1e2bb269b14a4daea1ec78044ed129",
+    "name": "Interoperability-and-Integration.External-Connectivity.Assessments",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-a1bc3da1b5f044d7b0b41b2ad8623bc8",
+    "name": "Processing-and-Worflow.Message-Processing-View.Assessments",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-7367ff599bf853ec864a8891c0f154b6",
+    "name": "Accessibility",
+    "canonicalId": [
+      "f814f4598722425cb3e7f45c32c11c90"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/f814f4598722425cb3e7f45c32c11c90.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.12.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / User Experience / Accessibility"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "f814f4598722425cb3e7f45c32c11c90"
+      ],
+      "displayName": [
+        "Accessibility"
+      ],
+      "friendlyName": [
+        "Accessibility"
+      ]
+    },
+    "documentation": "Subject subgroup **G12.02 — Accessibility** in the accepted Iteration 001 hierarchy.\n\nAccessibility requirements and accommodation of differing user needs.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-76b5dcf51d53581b915783b544348df1",
+    "name": "Accountability and Traceability",
+    "canonicalId": [
+      "38d3dfcd23894f43b59d00c782170e63"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/38d3dfcd23894f43b59d00c782170e63.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.4.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Audit and Accountability / Accountability and Traceability"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "38d3dfcd23894f43b59d00c782170e63"
+      ],
+      "displayName": [
+        "Accountability and Traceability"
+      ],
+      "friendlyName": [
+        "AccountabilityAndTraceability"
+      ]
+    },
+    "documentation": "Subject subgroup **G04.04 — Accountability and Traceability** in the accepted Iteration 001 hierarchy.\n\nEstablishing who or what performed an activity, under which authority, and its relationship to other activities.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-c5f499e1694c552bae7311911aea1399",
+    "name": "Architectural Governance",
+    "canonicalId": [
+      "03cfbc2cac494fb9a15106c2c571d384"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/03cfbc2cac494fb9a15106c2c571d384.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Architectural Governance"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "03cfbc2cac494fb9a15106c2c571d384"
+      ],
+      "displayName": [
+        "Architectural Governance"
+      ],
+      "friendlyName": [
+        "ArchitecturalGovernance"
+      ]
+    },
+    "documentation": "Subject group **G01 — Architectural Governance** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-6256b2f5dd035708ae1e55f0fbcc1276",
+    "name": "Architecture Conformance",
+    "canonicalId": [
+      "5989495f1e224d5797054a8b6c0364a1"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/5989495f1e224d5797054a8b6c0364a1.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.1.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Architectural Governance / Architecture Conformance"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "5989495f1e224d5797054a8b6c0364a1"
+      ],
+      "displayName": [
+        "Architecture Conformance"
+      ],
+      "friendlyName": [
+        "ArchitectureConformance"
+      ]
+    },
+    "documentation": "Subject subgroup **G01.04 — Architecture Conformance** in the accepted Iteration 001 hierarchy.\n\nHow implementations are assessed against the governed architecture, including deviations and their resolution.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-f126e3a6ab6950ca9e3e61b02e83ba21",
+    "name": "Architecture Process",
+    "canonicalId": [
+      "2ee0a6e46b47413d91cfb71ee3100e4b"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/2ee0a6e46b47413d91cfb71ee3100e4b.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.1.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Architectural Governance / Architecture Process"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "2ee0a6e46b47413d91cfb71ee3100e4b"
+      ],
+      "displayName": [
+        "Architecture Process"
+      ],
+      "friendlyName": [
+        "ArchitectureProcess"
+      ]
+    },
+    "documentation": "Subject subgroup **G01.01 — Architecture Process** in the accepted Iteration 001 hierarchy.\n\nHow architecture is developed, reviewed, governed and maintained.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-fe0074888e97530c825d400d27e90ad5",
+    "name": "Architecture Vision",
+    "canonicalId": [
+      "6d6086134162468cac129040a139d8d9"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/6d6086134162468cac129040a139d8d9.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.1.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Architectural Governance / Architecture Vision"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "6d6086134162468cac129040a139d8d9"
+      ],
+      "displayName": [
+        "Architecture Vision"
+      ],
+      "friendlyName": [
+        "ArchitectureVision"
+      ]
+    },
+    "documentation": "Subject subgroup **G01.02 — Architecture Vision** in the accepted Iteration 001 hierarchy.\n\nThe intended architectural direction, objectives and desired outcomes.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-7cdc16c98037500d9eb63dfc591b5ca5",
+    "name": "Audit Generation",
+    "canonicalId": [
+      "40416671099a46678ac5dfc3d0d615cf"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/40416671099a46678ac5dfc3d0d615cf.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.4.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Audit and Accountability / Audit Generation"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "40416671099a46678ac5dfc3d0d615cf"
+      ],
+      "displayName": [
+        "Audit Generation"
+      ],
+      "friendlyName": [
+        "AuditGeneration"
+      ]
+    },
+    "documentation": "Subject subgroup **G04.01 — Audit Generation** in the accepted Iteration 001 hierarchy.\n\nCreation of audit records for activities subject to audit obligations.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-ec71ca548f145eeaad3c575fcf93d474",
+    "name": "Audit Integrity",
+    "canonicalId": [
+      "c102ede2b9e249b2a2ddc9f19e0cbd7f"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/c102ede2b9e249b2a2ddc9f19e0cbd7f.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.4.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Audit and Accountability / Audit Integrity"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "c102ede2b9e249b2a2ddc9f19e0cbd7f"
+      ],
+      "displayName": [
+        "Audit Integrity"
+      ],
+      "friendlyName": [
+        "AuditIntegrity"
+      ]
+    },
+    "documentation": "Subject subgroup **G04.02 — Audit Integrity** in the accepted Iteration 001 hierarchy.\n\nProtection of audit records against unauthorised alteration, deletion or corruption.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-4e16166c3bc65d5198b9210c17b04ae1",
+    "name": "Audit Management",
+    "canonicalId": [
+      "de791c4976f84676bf8545b1cfb8bf41"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/de791c4976f84676bf8545b1cfb8bf41.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.4.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Audit and Accountability / Audit Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "de791c4976f84676bf8545b1cfb8bf41"
+      ],
+      "displayName": [
+        "Audit Management"
+      ],
+      "friendlyName": [
+        "AuditManagement"
+      ]
+    },
+    "documentation": "Subject subgroup **G04.03 — Audit Management** in the accepted Iteration 001 hierarchy.\n\nRetention, retrieval, access and lifecycle management of audit information.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-ff3a2d67c241526199031d3dc1b50e0a",
+    "name": "Audit and Accountability",
+    "canonicalId": [
+      "abc27ddff6d644d9945db0cfd7488f07"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/abc27ddff6d644d9945db0cfd7488f07.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Audit and Accountability"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "abc27ddff6d644d9945db0cfd7488f07"
+      ],
+      "displayName": [
+        "Audit and Accountability"
+      ],
+      "friendlyName": [
+        "AuditAndAccountability"
+      ]
+    },
+    "documentation": "Subject group **G04 — Audit and Accountability** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-96ed88d244ed57e98031966d70a03051",
+    "name": "Authentication",
+    "canonicalId": [
+      "f29ffa95c89d470b8a32e1369696327f"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/f29ffa95c89d470b8a32e1369696327f.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.3.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Security and Authorisation / Authentication"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "f29ffa95c89d470b8a32e1369696327f"
+      ],
+      "displayName": [
+        "Authentication"
+      ],
+      "friendlyName": [
+        "Authentication"
+      ]
+    },
+    "documentation": "Subject subgroup **G03.01 — Authentication** in the accepted Iteration 001 hierarchy.\n\nEstablishing and verifying identity.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-cbc07a038364504d90e78a5104ec9fd7",
+    "name": "Authorisation",
+    "canonicalId": [
+      "4648cf5a1f8e4333978c13efae10eaa5"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/4648cf5a1f8e4333978c13efae10eaa5.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.3.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Security and Authorisation / Authorisation"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "4648cf5a1f8e4333978c13efae10eaa5"
+      ],
+      "displayName": [
+        "Authorisation"
+      ],
+      "friendlyName": [
+        "Authorisation"
+      ]
+    },
+    "documentation": "Subject subgroup **G03.02 — Authorisation** in the accepted Iteration 001 hierarchy.\n\nDetermining what an authenticated entity is permitted to do, under which conditions and within which scope.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-af15e7209c6e5720a7a0ff8767f968f1",
+    "name": "Authorisation Enforcement",
+    "canonicalId": [
+      "fe8916b03b084e82af587ac5a900349b"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/fe8916b03b084e82af587ac5a900349b.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.3.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Security and Authorisation / Authorisation Enforcement"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "fe8916b03b084e82af587ac5a900349b"
+      ],
+      "displayName": [
+        "Authorisation Enforcement"
+      ],
+      "friendlyName": [
+        "AuthorisationEnforcement"
+      ]
+    },
+    "documentation": "Subject subgroup **G03.03 — Authorisation Enforcement** in the accepted Iteration 001 hierarchy.\n\nEnsuring that activities and information access comply with applicable authorisation decisions.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-1caa66e6e4c3546e8218bf7d95e5b3c2",
+    "name": "Build Management",
+    "canonicalId": [
+      "3b56e60b042f429b8bf0efdb477c637e"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/3b56e60b042f429b8bf0efdb477c637e.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.10.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Deployment and Release Management / Build Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "3b56e60b042f429b8bf0efdb477c637e"
+      ],
+      "displayName": [
+        "Build Management"
+      ],
+      "friendlyName": [
+        "BuildManagement"
+      ]
+    },
+    "documentation": "Subject subgroup **G10.01 — Build Management** in the accepted Iteration 001 hierarchy.\n\nControlled, repeatable construction and packaging of solution artefacts.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-161e6e33f93e533582880e544b22ac3c",
+    "name": "Capacity Planning",
+    "canonicalId": [
+      "f5df30b02e8a4d60bf44e8af2da4d5ab"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/f5df30b02e8a4d60bf44e8af2da4d5ab.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.8.5"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Performance and Capacity / Capacity Planning"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "f5df30b02e8a4d60bf44e8af2da4d5ab"
+      ],
+      "displayName": [
+        "Capacity Planning"
+      ],
+      "friendlyName": [
+        "CapacityPlanning"
+      ]
+    },
+    "documentation": "Subject subgroup **G08.05 — Capacity Planning** in the accepted Iteration 001 hierarchy.\n\nEstablishing, monitoring and forecasting the capacity required to support expected workloads.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-28635ed61fe958ba9651723a71807aed",
+    "name": "Concurrency Management",
+    "canonicalId": [
+      "9536aaf4114b4c35b8a795383d442f64"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/9536aaf4114b4c35b8a795383d442f64.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.6.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Processing and Workflow / Concurrency Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "9536aaf4114b4c35b8a795383d442f64"
+      ],
+      "displayName": [
+        "Concurrency Management"
+      ],
+      "friendlyName": [
+        "ConcurrencyManagement"
+      ]
+    },
+    "documentation": "Subject subgroup **G06.03 — Concurrency Management** in the accepted Iteration 001 hierarchy.\n\nConcurrent execution, coordination and processing consistency.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-6868d76816f853a3876146eb6a80d6fd",
+    "name": "Configuration Management",
+    "canonicalId": [
+      "ef476f07cd9e4ba6bdac99dc6e940baa"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/ef476f07cd9e4ba6bdac99dc6e940baa.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.10.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Deployment and Release Management / Configuration Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "ef476f07cd9e4ba6bdac99dc6e940baa"
+      ],
+      "displayName": [
+        "Configuration Management"
+      ],
+      "friendlyName": [
+        "ConfigurationManagement"
+      ]
+    },
+    "documentation": "Subject subgroup **G10.03 — Configuration Management** in the accepted Iteration 001 hierarchy.\n\nManagement of environment-specific configuration and deployment parameters.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-703c2155d88d53aaa3d6a6e4911661bd",
+    "name": "Continuity of Operations",
+    "canonicalId": [
+      "41900f15d1d2431295a4b9dc1aa752c0"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/41900f15d1d2431295a4b9dc1aa752c0.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.7.5"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Resilience and Recovery / Continuity of Operations"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "41900f15d1d2431295a4b9dc1aa752c0"
+      ],
+      "displayName": [
+        "Continuity of Operations"
+      ],
+      "friendlyName": [
+        "ContinuityOfOperations"
+      ]
+    },
+    "documentation": "Subject subgroup **G07.05 — Continuity of Operations** in the accepted Iteration 001 hierarchy.\n\nPreserving accepted work and maintaining essential capabilities during disruptions, restarts and recovery activities.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-21b115ebf16552f08e76874c3c53e446",
+    "name": "Deployment Environments",
+    "canonicalId": [
+      "1b4044525d474363bafb462e575582b9"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/1b4044525d474363bafb462e575582b9.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.10.6"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Deployment and Release Management / Deployment Environments"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "1b4044525d474363bafb462e575582b9"
+      ],
+      "displayName": [
+        "Deployment Environments"
+      ],
+      "friendlyName": [
+        "DeploymentEnvironments"
+      ]
+    },
+    "documentation": "Subject subgroup **G10.06 — Deployment Environments** in the accepted Iteration 001 hierarchy.\n\nSupported platforms, runtime environments and deployment constraints.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-6bbc1810b125511ea2022493a0957543",
+    "name": "Deployment Management",
+    "canonicalId": [
+      "36264352a7f745109deaac2025877690"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/36264352a7f745109deaac2025877690.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.10.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Deployment and Release Management / Deployment Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "36264352a7f745109deaac2025877690"
+      ],
+      "displayName": [
+        "Deployment Management"
+      ],
+      "friendlyName": [
+        "DeploymentManagement"
+      ]
+    },
+    "documentation": "Subject subgroup **G10.02 — Deployment Management** in the accepted Iteration 001 hierarchy.\n\nDeployment processes, automation and infrastructure integration.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-9bdc892bfc1b564c97f85b758ed6a275",
+    "name": "Deployment and Release Management",
+    "canonicalId": [
+      "4e5f729c97394b898918591f4d81a69a"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/4e5f729c97394b898918591f4d81a69a.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.10"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Deployment and Release Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "4e5f729c97394b898918591f4d81a69a"
+      ],
+      "displayName": [
+        "Deployment and Release Management"
+      ],
+      "friendlyName": [
+        "DeploymentAndReleaseManagement"
+      ]
+    },
+    "documentation": "Subject group **G10 — Deployment and Release Management** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-5b985aab93395905ab9b470ba452efda",
+    "name": "Disaster Recovery",
+    "canonicalId": [
+      "49966f8f01e244b4926ce4dc4c41fb47"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/49966f8f01e244b4926ce4dc4c41fb47.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.7.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Resilience and Recovery / Disaster Recovery"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "49966f8f01e244b4926ce4dc4c41fb47"
+      ],
+      "displayName": [
+        "Disaster Recovery"
+      ],
+      "friendlyName": [
+        "DisasterRecovery"
+      ]
+    },
+    "documentation": "Subject subgroup **G07.04 — Disaster Recovery** in the accepted Iteration 001 hierarchy.\n\nRecovering the solution to a known, operationally consistent state following catastrophic failures or information corruption.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-58b147d652e05ac884c2a0f7eea3e2ff",
+    "name": "Distributed Coordination",
+    "canonicalId": [
+      "114a3866dffc4a4cb6aabef39b48fadf"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/114a3866dffc4a4cb6aabef39b48fadf.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.13.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Distributed Systems and Temporal Management / Distributed Coordination"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "114a3866dffc4a4cb6aabef39b48fadf"
+      ],
+      "displayName": [
+        "Distributed Coordination"
+      ],
+      "friendlyName": [
+        "DistributedCoordination"
+      ]
+    },
+    "documentation": "Subject subgroup **G13.01 — Distributed Coordination** in the accepted Iteration 001 hierarchy.\n\nCoordination of activities across distributed operational domains.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-a6b18bfedd3551b3a3319edd74491ec4",
+    "name": "Distributed State Consistency",
+    "canonicalId": [
+      "71b9830ce1a543548334647cbbaec7f1"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/71b9830ce1a543548334647cbbaec7f1.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.13.5"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Distributed Systems and Temporal Management / Distributed State Consistency"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "71b9830ce1a543548334647cbbaec7f1"
+      ],
+      "displayName": [
+        "Distributed State Consistency"
+      ],
+      "friendlyName": [
+        "DistributedStateConsistency"
+      ]
+    },
+    "documentation": "Subject subgroup **G13.05 — Distributed State Consistency** in the accepted Iteration 001 hierarchy.\n\nMaintaining appropriate consistency of operational state across distributed components.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-b26c1fb55b9e539cb50ea5452bd5e13a",
+    "name": "Distributed Systems and Temporal Management",
+    "canonicalId": [
+      "c77bba93c0c843959b30d9e1195fb68e"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/c77bba93c0c843959b30d9e1195fb68e.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.13"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Distributed Systems and Temporal Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "c77bba93c0c843959b30d9e1195fb68e"
+      ],
+      "displayName": [
+        "Distributed Systems and Temporal Management"
+      ],
+      "friendlyName": [
+        "DistributedSystemsAndTemporalManagement"
+      ]
+    },
+    "documentation": "Subject group **G13 — Distributed Systems and Temporal Management** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-e2f7246fed7a51a5ac3ab7eabb4ca7e1",
+    "name": "Event Horizon Management",
+    "canonicalId": [
+      "22fce0d656ef4df89d2a35a85fa92aa1"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/22fce0d656ef4df89d2a35a85fa92aa1.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.13.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Distributed Systems and Temporal Management / Event Horizon Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "22fce0d656ef4df89d2a35a85fa92aa1"
+      ],
+      "displayName": [
+        "Event Horizon Management"
+      ],
+      "friendlyName": [
+        "EventHorizonManagement"
+      ]
+    },
+    "documentation": "Subject subgroup **G13.04 — Event Horizon Management** in the accepted Iteration 001 hierarchy.\n\nEstablishing and managing temporal boundaries within distributed operational domains.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-48129c55f6e55c6f81dd738b9c136010",
+    "name": "Event Ordering and Causality",
+    "canonicalId": [
+      "432d52cc3de5443896a4559f215ece9f"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/432d52cc3de5443896a4559f215ece9f.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.13.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Distributed Systems and Temporal Management / Event Ordering and Causality"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "432d52cc3de5443896a4559f215ece9f"
+      ],
+      "displayName": [
+        "Event Ordering and Causality"
+      ],
+      "friendlyName": [
+        "EventOrderingAndCausality"
+      ]
+    },
+    "documentation": "Subject subgroup **G13.03 — Event Ordering and Causality** in the accepted Iteration 001 hierarchy.\n\nEstablishing ordering and causal relationships between distributed events.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-d9aee9f851385a009c8068965d39b9a0",
+    "name": "External Connectivity",
+    "canonicalId": [
+      "0b9e18356e9e4dcca51007f03f7b81b4"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/0b9e18356e9e4dcca51007f03f7b81b4.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.5.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Interoperability and Integration / External Connectivity"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "0b9e18356e9e4dcca51007f03f7b81b4"
+      ],
+      "displayName": [
+        "External Connectivity"
+      ],
+      "friendlyName": [
+        "ExternalConnectivity"
+      ]
+    },
+    "documentation": "Subject subgroup **G05.01 — External Connectivity** in the accepted Iteration 001 hierarchy.\n\nEstablishing, configuring and managing connections with external systems.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-c104c6bf7a585269a977e2d2de66ffb3",
+    "name": "Failure Detection and Handling",
+    "canonicalId": [
+      "e9804b6dea5c4e1db80be1925463786f"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/e9804b6dea5c4e1db80be1925463786f.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.7.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Resilience and Recovery / Failure Detection and Handling"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "e9804b6dea5c4e1db80be1925463786f"
+      ],
+      "displayName": [
+        "Failure Detection and Handling"
+      ],
+      "friendlyName": [
+        "FailureDetectionAndHandling"
+      ]
+    },
+    "documentation": "Subject subgroup **G07.02 — Failure Detection and Handling** in the accepted Iteration 001 hierarchy.\n\nRecognising failures and responding appropriately to prevent uncontrolled consequences.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-c3b22effdb8555edbd8565ae22edbf78",
+    "name": "Fault Tolerance",
+    "canonicalId": [
+      "0a59e0ebb33c494e939148d30e42f49c"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/0a59e0ebb33c494e939148d30e42f49c.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.7.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Resilience and Recovery / Fault Tolerance"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "0a59e0ebb33c494e939148d30e42f49c"
+      ],
+      "displayName": [
+        "Fault Tolerance"
+      ],
+      "friendlyName": [
+        "FaultTolerance"
+      ]
+    },
+    "documentation": "Subject subgroup **G07.01 — Fault Tolerance** in the accepted Iteration 001 hierarchy.\n\nContinuing acceptable operation despite component or dependency failures.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-d67a5527c17256f6a4faa2c50398f4a4",
+    "name": "Functional Verification",
+    "canonicalId": [
+      "ab65501a8e3542839707ae31cd0b8efd"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/ab65501a8e3542839707ae31cd0b8efd.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.11.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Verification and Testing / Functional Verification"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "ab65501a8e3542839707ae31cd0b8efd"
+      ],
+      "displayName": [
+        "Functional Verification"
+      ],
+      "friendlyName": [
+        "FunctionalVerification"
+      ]
+    },
+    "documentation": "Subject subgroup **G11.01 — Functional Verification** in the accepted Iteration 001 hierarchy.\n\nVerifying that implemented capabilities satisfy their functional requirements.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-658cd4a224585dc5b4e55f85f43fb58e",
+    "name": "Implementation Strategy",
+    "canonicalId": [
+      "8bf2a60efafc4caf89ed9744adfb628d"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/8bf2a60efafc4caf89ed9744adfb628d.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.1.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Architectural Governance / Implementation Strategy"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "8bf2a60efafc4caf89ed9744adfb628d"
+      ],
+      "displayName": [
+        "Implementation Strategy"
+      ],
+      "friendlyName": [
+        "ImplementationStrategy"
+      ]
+    },
+    "documentation": "Subject subgroup **G01.03 — Implementation Strategy** in the accepted Iteration 001 hierarchy.\n\nHow architectural direction guides solution design and implementation choices.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-df63fe8269255c72a26b3ceb863f9eea",
+    "name": "Information Exchange",
+    "canonicalId": [
+      "bda335658c29473d9ba20352242c83f8"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/bda335658c29473d9ba20352242c83f8.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.5.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Interoperability and Integration / Information Exchange"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "bda335658c29473d9ba20352242c83f8"
+      ],
+      "displayName": [
+        "Information Exchange"
+      ],
+      "friendlyName": [
+        "InformationExchange"
+      ]
+    },
+    "documentation": "Subject subgroup **G05.03 — Information Exchange** in the accepted Iteration 001 hierarchy.\n\nInbound and outbound information exchange, including transformation and interpretation.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-4009d96f39d456838b149621d4ed88a4",
+    "name": "Information Identity",
+    "canonicalId": [
+      "819aeed91d0544c3b7cc52e69aa46d72"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/819aeed91d0544c3b7cc52e69aa46d72.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.2.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Information Management / Information Identity"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "819aeed91d0544c3b7cc52e69aa46d72"
+      ],
+      "displayName": [
+        "Information Identity"
+      ],
+      "friendlyName": [
+        "InformationIdentity"
+      ]
+    },
+    "documentation": "Subject subgroup **G02.01 — Information Identity** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-f3a5bb10a924502881fe4e27cbcc799e",
+    "name": "Information Integrity",
+    "canonicalId": [
+      "eb1b0526b898448688a322cce7ea6e74"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/eb1b0526b898448688a322cce7ea6e74.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.2.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Information Management / Information Integrity"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "eb1b0526b898448688a322cce7ea6e74"
+      ],
+      "displayName": [
+        "Information Integrity"
+      ],
+      "friendlyName": [
+        "InformationIntegrity"
+      ]
+    },
+    "documentation": "Subject subgroup **G02.02 — Information Integrity** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-889cae531e4c51e0a50d441425553606",
+    "name": "Information Lifecycle",
+    "canonicalId": [
+      "b23f7fa8cb1b46569f63bde1aa5fbf1f"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/b23f7fa8cb1b46569f63bde1aa5fbf1f.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.2.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Information Management / Information Lifecycle"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "b23f7fa8cb1b46569f63bde1aa5fbf1f"
+      ],
+      "displayName": [
+        "Information Lifecycle"
+      ],
+      "friendlyName": [
+        "InformationLifecycle"
+      ]
+    },
+    "documentation": "Subject subgroup **G02.03 — Information Lifecycle** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-3ff156cfaab8575facfa6961f68119f5",
+    "name": "Information Management",
+    "canonicalId": [
+      "ef296738e68e4206a507dc3c811b3fe1"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/ef296738e68e4206a507dc3c811b3fe1.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Information Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "ef296738e68e4206a507dc3c811b3fe1"
+      ],
+      "displayName": [
+        "Information Management"
+      ],
+      "friendlyName": [
+        "InformationManagement"
+      ]
+    },
+    "documentation": "Subject group **G02 — Information Management** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-f2cab006808558c48632928a2ef00f86",
+    "name": "Information Persistence",
+    "canonicalId": [
+      "8b7fd22a55434e5ca3e7ba87afb020d6"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/8b7fd22a55434e5ca3e7ba87afb020d6.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.2.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Information Management / Information Persistence"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "8b7fd22a55434e5ca3e7ba87afb020d6"
+      ],
+      "displayName": [
+        "Information Persistence"
+      ],
+      "friendlyName": [
+        "InformationPersistence"
+      ]
+    },
+    "documentation": "Subject subgroup **G02.04 — Information Persistence** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-ee17a4ffd28254539defe217e77f3b75",
+    "name": "Information Protection",
+    "canonicalId": [
+      "d2f8fcaac9984a12beab502d1944ea25"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/d2f8fcaac9984a12beab502d1944ea25.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.3.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Security and Authorisation / Information Protection"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "d2f8fcaac9984a12beab502d1944ea25"
+      ],
+      "displayName": [
+        "Information Protection"
+      ],
+      "friendlyName": [
+        "InformationProtection"
+      ]
+    },
+    "documentation": "Subject subgroup **G03.04 — Information Protection** in the accepted Iteration 001 hierarchy.\n\nConfidentiality, encryption and protection of sensitive information.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-d1e317a30a9d53359c25a86673df3e56",
+    "name": "Information Sovereignty and Residency",
+    "canonicalId": [
+      "f4af2b5206264a6fa4c5040324ad272c"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/f4af2b5206264a6fa4c5040324ad272c.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.2.5"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Information Management / Information Sovereignty and Residency"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "f4af2b5206264a6fa4c5040324ad272c"
+      ],
+      "displayName": [
+        "Information Sovereignty and Residency"
+      ],
+      "friendlyName": [
+        "InformationSovereigntyAndResidency"
+      ]
+    },
+    "documentation": "Subject subgroup **G02.05 — Information Sovereignty and Residency** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-9392ac3126fc59028371a42bb421edc0",
+    "name": "Integration Verification",
+    "canonicalId": [
+      "e8c7f8a36ff248cd9115d7a382324808"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/e8c7f8a36ff248cd9115d7a382324808.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.11.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Verification and Testing / Integration Verification"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "e8c7f8a36ff248cd9115d7a382324808"
+      ],
+      "displayName": [
+        "Integration Verification"
+      ],
+      "friendlyName": [
+        "IntegrationVerification"
+      ]
+    },
+    "documentation": "Subject subgroup **G11.02 — Integration Verification** in the accepted Iteration 001 hierarchy.\n\nVerifying internal interactions and conformance with external interaction contracts.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-bb32b6788247543195d0fe2fc9a40424",
+    "name": "Interaction Contracts",
+    "canonicalId": [
+      "b3c19413e4b447adb5f1d86912db4052"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/b3c19413e4b447adb5f1d86912db4052.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.5.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Interoperability and Integration / Interaction Contracts"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "b3c19413e4b447adb5f1d86912db4052"
+      ],
+      "displayName": [
+        "Interaction Contracts"
+      ],
+      "friendlyName": [
+        "InteractionContracts"
+      ]
+    },
+    "documentation": "Subject subgroup **G05.04 — Interaction Contracts** in the accepted Iteration 001 hierarchy.\n\nDefinition, compatibility and evolution of external interaction contracts.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-83f12e6b714050f5a6648b03707484e0",
+    "name": "Interaction Reliability",
+    "canonicalId": [
+      "1d7c50343cca49eeaeccf7c49c3c008b"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/1d7c50343cca49eeaeccf7c49c3c008b.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.5.5"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Interoperability and Integration / Interaction Reliability"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "1d7c50343cca49eeaeccf7c49c3c008b"
+      ],
+      "displayName": [
+        "Interaction Reliability"
+      ],
+      "friendlyName": [
+        "InteractionReliability"
+      ]
+    },
+    "documentation": "Subject subgroup **G05.05 — Interaction Reliability** in the accepted Iteration 001 hierarchy.\n\nHandling failed, delayed or repeated external interactions.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-293efc8ee1975418b66cafda5d535b65",
+    "name": "Interoperability Standards",
+    "canonicalId": [
+      "a44091225174403ebd2c5b75ba690a09"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/a44091225174403ebd2c5b75ba690a09.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.5.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Interoperability and Integration / Interoperability Standards"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "a44091225174403ebd2c5b75ba690a09"
+      ],
+      "displayName": [
+        "Interoperability Standards"
+      ],
+      "friendlyName": [
+        "InteroperabilityStandards"
+      ]
+    },
+    "documentation": "Subject subgroup **G05.02 — Interoperability Standards** in the accepted Iteration 001 hierarchy.\n\nConformance with applicable exchange protocols, formats and interoperability standards.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-d17720b347085fb9bd409d2c5fbaf3b2",
+    "name": "Interoperability and Integration",
+    "canonicalId": [
+      "098d2e468cd14029b43ec6dbd07374fd"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/098d2e468cd14029b43ec6dbd07374fd.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.5"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Interoperability and Integration"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "098d2e468cd14029b43ec6dbd07374fd"
+      ],
+      "displayName": [
+        "Interoperability and Integration"
+      ],
+      "friendlyName": [
+        "InteroperabilityAndIntegration"
+      ]
+    },
+    "documentation": "Subject group **G05 — Interoperability and Integration** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-741c11216ebb5673bf6200a2ba6fc5f6",
+    "name": "Localisation and Internationalisation",
+    "canonicalId": [
+      "77cd076a5bdf463a93fe330698d9be19"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/77cd076a5bdf463a93fe330698d9be19.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.12.5"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / User Experience / Localisation and Internationalisation"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "77cd076a5bdf463a93fe330698d9be19"
+      ],
+      "displayName": [
+        "Localisation and Internationalisation"
+      ],
+      "friendlyName": [
+        "LocalisationAndInternationalisation"
+      ]
+    },
+    "documentation": "Subject subgroup **G12.05 — Localisation and Internationalisation** in the accepted Iteration 001 hierarchy.\n\nLanguage, locale and regional presentation requirements.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-ebf1a94aa10e5922b7934e68b6dd80f8",
+    "name": "Message Processing",
+    "canonicalId": [
+      "5dde6ebecd094084b325ba59603bb919"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/5dde6ebecd094084b325ba59603bb919.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.6.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Processing and Workflow / Message Processing"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "5dde6ebecd094084b325ba59603bb919"
+      ],
+      "displayName": [
+        "Message Processing"
+      ],
+      "friendlyName": [
+        "MessageProcessing"
+      ]
+    },
+    "documentation": "Subject subgroup **G06.04 — Message Processing** in the accepted Iteration 001 hierarchy.\n\nInternal message handling, sequencing, deduplication and processing semantics.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-4b02ff8e872250dc97aadd84282cede4",
+    "name": "Navigation and Interaction",
+    "canonicalId": [
+      "9f192036bee542ad883b89729a35bbfb"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/9f192036bee542ad883b89729a35bbfb.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.12.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / User Experience / Navigation and Interaction"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "9f192036bee542ad883b89729a35bbfb"
+      ],
+      "displayName": [
+        "Navigation and Interaction"
+      ],
+      "friendlyName": [
+        "NavigationAndInteraction"
+      ]
+    },
+    "documentation": "Subject subgroup **G12.04 — Navigation and Interaction** in the accepted Iteration 001 hierarchy.\n\nNavigation, contextual interaction and user workflow support.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-20903ed0e53c5bc7b98ceafa42e03453",
+    "name": "Operational Assurance",
+    "canonicalId": [
+      "315ba7bbe4624223a97a7e7e6d9cc252"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/315ba7bbe4624223a97a7e7e6d9cc252.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.9.6"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Operations and Assurance / Operational Assurance"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "315ba7bbe4624223a97a7e7e6d9cc252"
+      ],
+      "displayName": [
+        "Operational Assurance"
+      ],
+      "friendlyName": [
+        "OperationalAssurance"
+      ]
+    },
+    "documentation": "Subject subgroup **G09.06 — Operational Assurance** in the accepted Iteration 001 hierarchy.\n\nAssessing operational readiness, health and conformance with defined operational expectations.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-fbb84d2f17e45158b7930a6c9376d32a",
+    "name": "Operational Control",
+    "canonicalId": [
+      "f0402eea7b5a49f9b61fbd90e336b2de"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/f0402eea7b5a49f9b61fbd90e336b2de.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.9.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Operations and Assurance / Operational Control"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "f0402eea7b5a49f9b61fbd90e336b2de"
+      ],
+      "displayName": [
+        "Operational Control"
+      ],
+      "friendlyName": [
+        "OperationalControl"
+      ]
+    },
+    "documentation": "Subject subgroup **G09.03 — Operational Control** in the accepted Iteration 001 hierarchy.\n\nAuthorised administrative intervention, configuration and operational state management.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-771158ad93925187bc9351f47437a191",
+    "name": "Operational Diagnostics",
+    "canonicalId": [
+      "45cb08d300b74853b456f333572a2bf6"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/45cb08d300b74853b456f333572a2bf6.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.9.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Operations and Assurance / Operational Diagnostics"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "45cb08d300b74853b456f333572a2bf6"
+      ],
+      "displayName": [
+        "Operational Diagnostics"
+      ],
+      "friendlyName": [
+        "OperationalDiagnostics"
+      ]
+    },
+    "documentation": "Subject subgroup **G09.02 — Operational Diagnostics** in the accepted Iteration 001 hierarchy.\n\nCollecting and interpreting information to investigate failures and abnormal behaviour.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-0005aa8e85815cd2b64a9556cad0ea2f",
+    "name": "Operational Information Management",
+    "canonicalId": [
+      "da5b4238bd6945cf9b467ff3feb9d76b"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/da5b4238bd6945cf9b467ff3feb9d76b.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.9.5"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Operations and Assurance / Operational Information Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "da5b4238bd6945cf9b467ff3feb9d76b"
+      ],
+      "displayName": [
+        "Operational Information Management"
+      ],
+      "friendlyName": [
+        "OperationalInformationManagement"
+      ]
+    },
+    "documentation": "Subject subgroup **G09.05 — Operational Information Management** in the accepted Iteration 001 hierarchy.\n\nGovernance, retention and management of operational information.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-ffe599aaa17b5c249f754796a6ad6c3c",
+    "name": "Operational Monitoring",
+    "canonicalId": [
+      "cc0a0cc2678c4c7db20ad015a75cc1de"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/cc0a0cc2678c4c7db20ad015a75cc1de.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.9.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Operations and Assurance / Operational Monitoring"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "cc0a0cc2678c4c7db20ad015a75cc1de"
+      ],
+      "displayName": [
+        "Operational Monitoring"
+      ],
+      "friendlyName": [
+        "OperationalMonitoring"
+      ]
+    },
+    "documentation": "Subject subgroup **G09.01 — Operational Monitoring** in the accepted Iteration 001 hierarchy.\n\nObserving component, subsystem and overall solution health and behaviour.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-b291bf631b955bed9ca4f61b5e6471e6",
+    "name": "Operational Recovery",
+    "canonicalId": [
+      "8609b046777c4a8ab4d5cafb30e34d04"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/8609b046777c4a8ab4d5cafb30e34d04.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.7.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Resilience and Recovery / Operational Recovery"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "8609b046777c4a8ab4d5cafb30e34d04"
+      ],
+      "displayName": [
+        "Operational Recovery"
+      ],
+      "friendlyName": [
+        "OperationalRecovery"
+      ]
+    },
+    "documentation": "Subject subgroup **G07.03 — Operational Recovery** in the accepted Iteration 001 hierarchy.\n\nRestoring components and processing activities following recoverable failures.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-a36aa11a96b450a7bcf85c6f66750c4e",
+    "name": "Operational Reporting",
+    "canonicalId": [
+      "b92ea843bd6342879b6a3be255743e31"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/b92ea843bd6342879b6a3be255743e31.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.9.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Operations and Assurance / Operational Reporting"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "b92ea843bd6342879b6a3be255743e31"
+      ],
+      "displayName": [
+        "Operational Reporting"
+      ],
+      "friendlyName": [
+        "OperationalReporting"
+      ]
+    },
+    "documentation": "Subject subgroup **G09.04 — Operational Reporting** in the accepted Iteration 001 hierarchy.\n\nReporting operational status, performance, dependencies and significant conditions.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-784af4f480a051f99d91b26f22922d0a",
+    "name": "Operations and Assurance",
+    "canonicalId": [
+      "16ebd2840f2246a4a9ec9991947f5db2"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/16ebd2840f2246a4a9ec9991947f5db2.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.9"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Operations and Assurance"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "16ebd2840f2246a4a9ec9991947f5db2"
+      ],
+      "displayName": [
+        "Operations and Assurance"
+      ],
+      "friendlyName": [
+        "OperationsAndAssurance"
+      ]
+    },
+    "documentation": "Subject group **G09 — Operations and Assurance** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-bfe091f4713151fa803407c75d41bff2",
+    "name": "Performance and Capacity",
+    "canonicalId": [
+      "8034148e63e6457f90e8cae1d4eb4453"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/8034148e63e6457f90e8cae1d4eb4453.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.8"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Performance and Capacity"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "8034148e63e6457f90e8cae1d4eb4453"
+      ],
+      "displayName": [
+        "Performance and Capacity"
+      ],
+      "friendlyName": [
+        "PerformanceAndCapacity"
+      ]
+    },
+    "documentation": "Subject group **G08 — Performance and Capacity** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-0d75f3bac3445bdca1481093e12d46a6",
+    "name": "Performance and Capacity Testing",
+    "canonicalId": [
+      "cd453ee30502406db647a0c5b4011739"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/cd453ee30502406db647a0c5b4011739.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.11.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Verification and Testing / Performance and Capacity Testing"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "cd453ee30502406db647a0c5b4011739"
+      ],
+      "displayName": [
+        "Performance and Capacity Testing"
+      ],
+      "friendlyName": [
+        "PerformanceAndCapacityTesting"
+      ]
+    },
+    "documentation": "Subject subgroup **G11.04 — Performance and Capacity Testing** in the accepted Iteration 001 hierarchy.\n\nEvaluating performance and capacity against representative workloads and conditions.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-44afd245a0da5fbb9d9e87f24bf8379f",
+    "name": "Processing Outcomes",
+    "canonicalId": [
+      "f40da9359c7545d2ad0eef6c3a5bf645"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/f40da9359c7545d2ad0eef6c3a5bf645.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.6.6"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Processing and Workflow / Processing Outcomes"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "f40da9359c7545d2ad0eef6c3a5bf645"
+      ],
+      "displayName": [
+        "Processing Outcomes"
+      ],
+      "friendlyName": [
+        "ProcessingOutcomes"
+      ]
+    },
+    "documentation": "Subject subgroup **G06.06 — Processing Outcomes** in the accepted Iteration 001 hierarchy.\n\nEstablishment, reporting and verification of processing results.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-1cb5708c91f15e688913612219947f83",
+    "name": "Processing State Management",
+    "canonicalId": [
+      "5e8ddc78f9554243aeb051f77595cc88"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/5e8ddc78f9554243aeb051f77595cc88.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.6.5"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Processing and Workflow / Processing State Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "5e8ddc78f9554243aeb051f77595cc88"
+      ],
+      "displayName": [
+        "Processing State Management"
+      ],
+      "friendlyName": [
+        "ProcessingStateManagement"
+      ]
+    },
+    "documentation": "Subject subgroup **G06.05 — Processing State Management** in the accepted Iteration 001 hierarchy.\n\nPreservation, transition and recovery of processing state.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-458b576c4b745e94b610666bd4a94df4",
+    "name": "Processing and Workflow",
+    "canonicalId": [
+      "afb9686c9f1c48159d92a518a7d17452"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/afb9686c9f1c48159d92a518a7d17452.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.6"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Processing and Workflow"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "afb9686c9f1c48159d92a518a7d17452"
+      ],
+      "displayName": [
+        "Processing and Workflow"
+      ],
+      "friendlyName": [
+        "ProcessingAndWorkflow"
+      ]
+    },
+    "documentation": "Subject group **G06 — Processing and Workflow** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-c9fa49d57999510a8190be3f28523bf0",
+    "name": "Regression Testing",
+    "canonicalId": [
+      "35df8a5d8b1e495ba4cf79a5d4a47863"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/35df8a5d8b1e495ba4cf79a5d4a47863.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.11.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Verification and Testing / Regression Testing"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "35df8a5d8b1e495ba4cf79a5d4a47863"
+      ],
+      "displayName": [
+        "Regression Testing"
+      ],
+      "friendlyName": [
+        "RegressionTesting"
+      ]
+    },
+    "documentation": "Subject subgroup **G11.03 — Regression Testing** in the accepted Iteration 001 hierarchy.\n\nDetecting unintended changes in previously established solution behaviour.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-d0cf1ab882f250e1afb54168fbadd35e",
+    "name": "Release Compatibility",
+    "canonicalId": [
+      "7f9cadb36d764b22840748a9608f9a37"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/7f9cadb36d764b22840748a9608f9a37.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.10.5"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Deployment and Release Management / Release Compatibility"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "7f9cadb36d764b22840748a9608f9a37"
+      ],
+      "displayName": [
+        "Release Compatibility"
+      ],
+      "friendlyName": [
+        "ReleaseCompatibility"
+      ]
+    },
+    "documentation": "Subject subgroup **G10.05 — Release Compatibility** in the accepted Iteration 001 hierarchy.\n\nCompatibility and concurrent operation of adjacent solution releases.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-f061383fe2095bb7b37281d891fb6208",
+    "name": "Release Management",
+    "canonicalId": [
+      "6b4df7dee51344b3b8c4c6eaace50d72"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/6b4df7dee51344b3b8c4c6eaace50d72.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.10.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Deployment and Release Management / Release Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "6b4df7dee51344b3b8c4c6eaace50d72"
+      ],
+      "displayName": [
+        "Release Management"
+      ],
+      "friendlyName": [
+        "ReleaseManagement"
+      ]
+    },
+    "documentation": "Subject subgroup **G10.04 — Release Management** in the accepted Iteration 001 hierarchy.\n\nRelease preparation, approval, publication and lifecycle governance.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-13828cc9cbcc590f818caaa4db7d5256",
+    "name": "Resilience Testing",
+    "canonicalId": [
+      "d3fb5abc58af4347ab52cdc26e9b14f1"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/d3fb5abc58af4347ab52cdc26e9b14f1.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.11.5"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Verification and Testing / Resilience Testing"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "d3fb5abc58af4347ab52cdc26e9b14f1"
+      ],
+      "displayName": [
+        "Resilience Testing"
+      ],
+      "friendlyName": [
+        "ResilienceTesting"
+      ]
+    },
+    "documentation": "Subject subgroup **G11.05 — Resilience Testing** in the accepted Iteration 001 hierarchy.\n\nSimulating failures and verifying fault tolerance and recovery behaviour.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-bdeb1d9a401b551bbe6c2f9899ae157e",
+    "name": "Resilience and Recovery",
+    "canonicalId": [
+      "914b8be39ecc4fb599e6bc0004c355c0"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/914b8be39ecc4fb599e6bc0004c355c0.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.7"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Resilience and Recovery"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "914b8be39ecc4fb599e6bc0004c355c0"
+      ],
+      "displayName": [
+        "Resilience and Recovery"
+      ],
+      "friendlyName": [
+        "ResilienceAndRecovery"
+      ]
+    },
+    "documentation": "Subject group **G07 — Resilience and Recovery** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-eb46d3660484543cb3f107a963619568",
+    "name": "Resource Management",
+    "canonicalId": [
+      "0e5030d90c134f1ea445257f0b6e788e"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/0e5030d90c134f1ea445257f0b6e788e.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.8.4"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Performance and Capacity / Resource Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "0e5030d90c134f1ea445257f0b6e788e"
+      ],
+      "displayName": [
+        "Resource Management"
+      ],
+      "friendlyName": [
+        "ResourceManagement"
+      ]
+    },
+    "documentation": "Subject subgroup **G08.04 — Resource Management** in the accepted Iteration 001 hierarchy.\n\nResource consumption, contention, allocation and capacity limits.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-37411a09e3d35e92935715a26b2f340e",
+    "name": "Responsiveness",
+    "canonicalId": [
+      "47d8e097526248349dd6dbbd318b1ef4"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/47d8e097526248349dd6dbbd318b1ef4.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.8.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Performance and Capacity / Responsiveness"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "47d8e097526248349dd6dbbd318b1ef4"
+      ],
+      "displayName": [
+        "Responsiveness"
+      ],
+      "friendlyName": [
+        "Responsiveness"
+      ]
+    },
+    "documentation": "Subject subgroup **G08.02 — Responsiveness** in the accepted Iteration 001 hierarchy.\n\nResponse times and latency experienced by users and interacting systems.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-d7f24eed298d559baa21cc10fa3fbb87",
+    "name": "Scalability",
+    "canonicalId": [
+      "9cf94c0ac09141a3b909a6a1051bff97"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/9cf94c0ac09141a3b909a6a1051bff97.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.8.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Performance and Capacity / Scalability"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "9cf94c0ac09141a3b909a6a1051bff97"
+      ],
+      "displayName": [
+        "Scalability"
+      ],
+      "friendlyName": [
+        "Scalability"
+      ]
+    },
+    "documentation": "Subject subgroup **G08.03 — Scalability** in the accepted Iteration 001 hierarchy.\n\nAbility to accommodate increasing workloads through changes in processing capacity.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-0a13457eeb645fb784d0af3e36b38e43",
+    "name": "Security Administration",
+    "canonicalId": [
+      "84693ef7bb4a4ced9634737c6bd5a36d"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/84693ef7bb4a4ced9634737c6bd5a36d.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.3.5"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Security and Authorisation / Security Administration"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "84693ef7bb4a4ced9634737c6bd5a36d"
+      ],
+      "displayName": [
+        "Security Administration"
+      ],
+      "friendlyName": [
+        "SecurityAdministration"
+      ]
+    },
+    "documentation": "Subject subgroup **G03.05 — Security Administration** in the accepted Iteration 001 hierarchy.\n\nCredential lifecycle, revocation, security configuration and operational isolation.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-38d9b8fa1f13586da103fb1bef655591",
+    "name": "Security Monitoring",
+    "canonicalId": [
+      "bb3adbc3c2fb43e6a18a876c4e897c9c"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/bb3adbc3c2fb43e6a18a876c4e897c9c.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.3.6"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Security and Authorisation / Security Monitoring"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "bb3adbc3c2fb43e6a18a876c4e897c9c"
+      ],
+      "displayName": [
+        "Security Monitoring"
+      ],
+      "friendlyName": [
+        "SecurityMonitoring"
+      ]
+    },
+    "documentation": "Subject subgroup **G03.06 — Security Monitoring** in the accepted Iteration 001 hierarchy.\n\nDetection and reporting of security-related events and conditions.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-5f6b4e6f00e755788e198632589ce6ce",
+    "name": "Security and Authorisation",
+    "canonicalId": [
+      "a762424d13254eaa9467946d9d7355f8"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/a762424d13254eaa9467946d9d7355f8.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Security and Authorisation"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "a762424d13254eaa9467946d9d7355f8"
+      ],
+      "displayName": [
+        "Security and Authorisation"
+      ],
+      "friendlyName": [
+        "SecurityAndAuthorisation"
+      ]
+    },
+    "documentation": "Subject group **G03 — Security and Authorisation** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-bccdbd54801e509884908ef301281703",
+    "name": "Task Completion",
+    "canonicalId": [
+      "2d89b3a1e74e42d28a9f0a3dfb2c4ecb"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/2d89b3a1e74e42d28a9f0a3dfb2c4ecb.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.6.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Processing and Workflow / Task Completion"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "2d89b3a1e74e42d28a9f0a3dfb2c4ecb"
+      ],
+      "displayName": [
+        "Task Completion"
+      ],
+      "friendlyName": [
+        "TaskCompletion"
+      ]
+    },
+    "documentation": "Subject subgroup **G06.02 — Task Completion** in the accepted Iteration 001 hierarchy.\n\nCoordination, scheduling and orchestration of processing activities to achieve their defined completion outcomes.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-3672f9bc122356c89cdecc2065e7fc04",
+    "name": "Task Management",
+    "canonicalId": [
+      "0b6d5f58354040189b3a9a30a9b913d9"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/0b6d5f58354040189b3a9a30a9b913d9.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.6.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Processing and Workflow / Task Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "0b6d5f58354040189b3a9a30a9b913d9"
+      ],
+      "displayName": [
+        "Task Management"
+      ],
+      "friendlyName": [
+        "TaskManagement"
+      ]
+    },
+    "documentation": "Subject subgroup **G06.01 — Task Management** in the accepted Iteration 001 hierarchy.\n\nCreation, assignment, execution and completion of processing activities.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-cd642a833033571d8178726a01617641",
+    "name": "Task Ordering",
+    "canonicalId": [
+      "0528b2ac76c548ae861ebcb1ef9cf3d9"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/0528b2ac76c548ae861ebcb1ef9cf3d9.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.13.6"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Distributed Systems and Temporal Management / Task Ordering"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "0528b2ac76c548ae861ebcb1ef9cf3d9"
+      ],
+      "displayName": [
+        "Task Ordering"
+      ],
+      "friendlyName": [
+        "TaskOrdering"
+      ]
+    },
+    "documentation": "Subject subgroup **G13.06 — Task Ordering** in the accepted Iteration 001 hierarchy.\n\nEstablishing and enforcing execution-order constraints between distributed processing activities.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-9155cfde11615fce9d6ec68e0efcdab6",
+    "name": "Temporal Consistency",
+    "canonicalId": [
+      "0f1014c80b0a473abf8c37845e0ed2fa"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/0f1014c80b0a473abf8c37845e0ed2fa.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.13.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Distributed Systems and Temporal Management / Temporal Consistency"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "0f1014c80b0a473abf8c37845e0ed2fa"
+      ],
+      "displayName": [
+        "Temporal Consistency"
+      ],
+      "friendlyName": [
+        "TemporalConsistency"
+      ]
+    },
+    "documentation": "Subject subgroup **G13.02 — Temporal Consistency** in the accepted Iteration 001 hierarchy.\n\nConsistent interpretation of temporal information across distributed environments.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-c5697d102b0c588da0523966f7f5297f",
+    "name": "Test Governance",
+    "canonicalId": [
+      "7eceab6d8a9741708d438a7760103c69"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/7eceab6d8a9741708d438a7760103c69.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.11.6"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Verification and Testing / Test Governance"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "7eceab6d8a9741708d438a7760103c69"
+      ],
+      "displayName": [
+        "Test Governance"
+      ],
+      "friendlyName": [
+        "TestGovernance"
+      ]
+    },
+    "documentation": "Subject subgroup **G11.06 — Test Governance** in the accepted Iteration 001 hierarchy.\n\nManagement of the reference test harness, test evidence and release verification obligations.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-8f402ce69bf853e08149cd834bf0ca4b",
+    "name": "Throughput",
+    "canonicalId": [
+      "cdcfbe8d106844109bb8ded51dea7a8a"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/cdcfbe8d106844109bb8ded51dea7a8a.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.8.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Performance and Capacity / Throughput"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "cdcfbe8d106844109bb8ded51dea7a8a"
+      ],
+      "displayName": [
+        "Throughput"
+      ],
+      "friendlyName": [
+        "Throughput"
+      ]
+    },
+    "documentation": "Subject subgroup **G08.01 — Throughput** in the accepted Iteration 001 hierarchy.\n\nProcessing volumes and rates under defined operating conditions.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-35ac52a85cf75ae0883eb2d8710c1f3c",
+    "name": "Usability",
+    "canonicalId": [
+      "58c3577b30fd4748836a1d52e07c8a98"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/58c3577b30fd4748836a1d52e07c8a98.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.12.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / User Experience / Usability"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "58c3577b30fd4748836a1d52e07c8a98"
+      ],
+      "displayName": [
+        "Usability"
+      ],
+      "friendlyName": [
+        "Usability"
+      ]
+    },
+    "documentation": "Subject subgroup **G12.01 — Usability** in the accepted Iteration 001 hierarchy.\n\nEase of use, clarity and effectiveness of user interactions.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-2748e964f03157d19464eedcadd333a7",
+    "name": "User Experience",
+    "canonicalId": [
+      "1c57a3d9080443178f6e9159d0591c77"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/1c57a3d9080443178f6e9159d0591c77.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.12"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / User Experience"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "1c57a3d9080443178f6e9159d0591c77"
+      ],
+      "displayName": [
+        "User Experience"
+      ],
+      "friendlyName": [
+        "UserExperience"
+      ]
+    },
+    "documentation": "Subject group **G12 — User Experience** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-f8b45a0c16475d67938f268ef94adf62",
+    "name": "User Interface Responsiveness",
+    "canonicalId": [
+      "1f441cdb8fa342cca0afe5b3b65b368d"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/1f441cdb8fa342cca0afe5b3b65b368d.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.12.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / User Experience / User Interface Responsiveness"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "1f441cdb8fa342cca0afe5b3b65b368d"
+      ],
+      "displayName": [
+        "User Interface Responsiveness"
+      ],
+      "friendlyName": [
+        "UserInterfaceResponsiveness"
+      ]
+    },
+    "documentation": "Subject subgroup **G12.03 — User Interface Responsiveness** in the accepted Iteration 001 hierarchy.\n\nResponsiveness of user interactions and interface behaviour.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-e7d793503ad9510ea344a71220307695",
+    "name": "Verification and Testing",
+    "canonicalId": [
+      "d0fa8cfaf5044359a5f6a1e91375429e"
+    ],
+    "specialization": [],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/d0fa8cfaf5044359a5f6a1e91375429e.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "R.3.11"
+      ],
+      "Continuum / Navigation Path": [
+        "Cross-Cutting References / Architectural Subjects / Verification and Testing"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "d0fa8cfaf5044359a5f6a1e91375429e"
+      ],
+      "displayName": [
+        "Verification and Testing"
+      ],
+      "friendlyName": [
+        "VerificationAndTesting"
+      ]
+    },
+    "documentation": "Subject group **G11 — Verification and Testing** in the accepted Iteration 001 hierarchy.\n\nNo additional concern description is specified; no additional scope is inferred.\n\nThis is subject organisation of architectural statements. Explicit Composition denotes subject containment within this register; it establishes no component ownership, implementation containment, logical Home or naming ancestry. Grouping itself supplies no additional relationship."
+  },
+  {
+    "exchangeId": "id-a8f6eefb1d7a44a09acf06a41b59ffab",
+    "name": "[Package] core",
+    "canonicalId": [
+      "2d587cb7547e4e6a8c20aa64da0da78a"
+    ],
+    "specialization": [
+      "Package"
+    ],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/package/2d587cb7547e4e6a8c20aa64da0da78a.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "IV.1.3.1.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Application / Information Architecture / Logical Packages / [Package] model / [Package] core"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Accepted bounded architecture — HCRL 1.1.15-001 DR-1"
+      ],
+      "Specialization": [
+        "Package"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "2d587cb7547e4e6a8c20aa64da0da78a"
+      ],
+      "canonicalName": [
+        "PKG-Model.PKG-Core"
+      ],
+      "displayName": [
+        "[Package] core"
+      ],
+      "friendlyName": [
+        "model.core"
+      ],
+      "harmoniaType": [
+        "Package"
+      ]
+    },
+    "documentation": "Calliope core package grouping nested under model."
+  },
+  {
+    "exchangeId": "id-74614b2b4bdd4897852e3483d597bd01",
+    "name": "[Package] information",
+    "canonicalId": [
+      "13c028886fde4682812b45772e21522f"
+    ],
+    "specialization": [
+      "Package"
+    ],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/package/13c028886fde4682812b45772e21522f.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "IV.1.3.1.1.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Application / Information Architecture / Logical Packages / [Package] model / [Package] core / [Package] information"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Accepted bounded architecture — HCRL 1.1.15-001 DR-1"
+      ],
+      "Specialization": [
+        "Package"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "13c028886fde4682812b45772e21522f"
+      ],
+      "canonicalName": [
+        "PKG-Model.PKG-Core.PKG-Information"
+      ],
+      "displayName": [
+        "[Package] information"
+      ],
+      "friendlyName": [
+        "model.core.information"
+      ],
+      "harmoniaType": [
+        "Package"
+      ]
+    },
+    "documentation": "Calliope information package grouping nested under model.core containing logical model classes."
+  },
+  {
+    "exchangeId": "id-8a0f2c41d3264f988442781309550cc0",
+    "name": "[Package] model",
+    "canonicalId": [
+      "6bb218f2128e463482f505585e624889"
+    ],
+    "specialization": [
+      "Package"
+    ],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/package/6bb218f2128e463482f505585e624889.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "IV.1.3.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Application / Information Architecture / Logical Packages / [Package] model"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Accepted bounded architecture — HCRL 1.1.15-001 DR-1"
+      ],
+      "Specialization": [
+        "Package"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "6bb218f2128e463482f505585e624889"
+      ],
+      "canonicalName": [
+        "PKG-Model"
+      ],
+      "displayName": [
+        "[Package] model"
+      ],
+      "friendlyName": [
+        "model"
+      ],
+      "harmoniaType": [
+        "Package"
+      ]
+    },
+    "documentation": "Top-level Calliope model package grouping representing the architectural model namespace root."
+  },
+  {
+    "exchangeId": "id-a6e03ca37cb54e69b9052cd12d6642eb",
+    "name": "[RequirementGroup] Availability",
+    "canonicalId": [
+      "abf16578801a466b8f08d80ae292e644"
+    ],
+    "specialization": [
+      "RequirementGroup"
+    ],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/requirement-group/abf16578801a466b8f08d80ae292e644.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "I.9.2.3"
+      ],
+      "Continuum / Navigation Path": [
+        "Motivation / Requirement Groups / [RequirementGroup] Non-Functional-Requirements / [RequirementGroup] Availability"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Accepted bounded architecture — HCRL 1.1.15-001 DR-1"
+      ],
+      "Specialization": [
+        "RequirementGroup"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "abf16578801a466b8f08d80ae292e644"
+      ],
+      "displayName": [
+        "[RequirementGroup] Availability"
+      ],
+      "harmoniaType": [
+        "RequirementGroup"
+      ]
+    },
+    "documentation": "Availability requirements grouping nested under Non-Functional-Requirements accepted under HCRL 1.1.15-001 DR-1."
+  },
+  {
+    "exchangeId": "id-9384a733b3b04279ace34e4fdca25409",
+    "name": "[RequirementGroup] Disaster Recovery Requirements",
+    "canonicalId": [
+      "cb090e968a25409fb8ceb0fcc9a11ee7"
+    ],
+    "specialization": [
+      "RequirementGroup"
+    ],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/requirement-group/cb090e968a25409fb8ceb0fcc9a11ee7.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "I.9.2.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Motivation / Requirement Groups / [RequirementGroup] Non-Functional-Requirements / [RequirementGroup] Disaster Recovery Requirements"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Accepted bounded architecture — HCRL 1.1.15-001 DR-1"
+      ],
+      "Specialization": [
+        "RequirementGroup"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "cb090e968a25409fb8ceb0fcc9a11ee7"
+      ],
+      "displayName": [
+        "[RequirementGroup] Disaster Recovery Requirements"
+      ],
+      "harmoniaType": [
+        "RequirementGroup"
+      ]
+    },
+    "documentation": "Disaster recovery requirements grouping nested under Non-Functional-Requirements accepted under HCRL 1.1.15-001 DR-1."
+  },
+  {
+    "exchangeId": "id-2f1bdf2e08464b8084ead4f7ae315e4a",
+    "name": "[RequirementGroup] Functional Requirements",
+    "canonicalId": [
+      "6acde68c43b14b6d8c7707779abdfd53"
+    ],
+    "specialization": [
+      "RequirementGroup"
+    ],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/requirement-group/6acde68c43b14b6d8c7707779abdfd53.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "I.9.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Motivation / Requirement Groups / [RequirementGroup] Functional Requirements"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Accepted bounded architecture — HCRL 1.1.15-001 DR-1"
+      ],
+      "Specialization": [
+        "RequirementGroup"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "6acde68c43b14b6d8c7707779abdfd53"
+      ],
+      "displayName": [
+        "[RequirementGroup] Functional Requirements"
+      ],
+      "harmoniaType": [
+        "RequirementGroup"
+      ]
+    },
+    "documentation": "Functional Requirements grouping hierarchy root accepted under HCRL 1.1.15-001 DR-1."
+  },
+  {
+    "exchangeId": "id-e373852f1b5a4d9bbe4c646b2f6615ed",
+    "name": "[RequirementGroup] Information Availability",
+    "canonicalId": [
+      "1862d183cf7d45c4972e6aa3411d1193"
+    ],
+    "specialization": [
+      "RequirementGroup"
+    ],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/requirement-group/1862d183cf7d45c4972e6aa3411d1193.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "I.9.2.3.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Motivation / Requirement Groups / [RequirementGroup] Non-Functional-Requirements / [RequirementGroup] Availability / [RequirementGroup] Information Availability"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Accepted bounded architecture — HCRL 1.1.15-001 DR-1"
+      ],
+      "Specialization": [
+        "RequirementGroup"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "1862d183cf7d45c4972e6aa3411d1193"
+      ],
+      "displayName": [
+        "[RequirementGroup] Information Availability"
+      ],
+      "harmoniaType": [
+        "RequirementGroup"
+      ]
+    },
+    "documentation": "Information availability requirements grouping nested under Availability accepted under HCRL 1.1.15-001 DR-1."
+  },
+  {
+    "exchangeId": "id-458ce11fb42643e48a71bfda600b0d08",
+    "name": "[RequirementGroup] Information Management",
+    "canonicalId": [
+      "c34c366824ff452eb575345c16db720b"
+    ],
+    "specialization": [
+      "RequirementGroup"
+    ],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/requirement-group/c34c366824ff452eb575345c16db720b.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "I.9.1.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Motivation / Requirement Groups / [RequirementGroup] Functional Requirements / [RequirementGroup] Information Management"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Accepted bounded architecture — HCRL 1.1.15-001 DR-1"
+      ],
+      "Specialization": [
+        "RequirementGroup"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "c34c366824ff452eb575345c16db720b"
+      ],
+      "displayName": [
+        "[RequirementGroup] Information Management"
+      ],
+      "harmoniaType": [
+        "RequirementGroup"
+      ]
+    },
+    "documentation": "Information management requirements grouping nested under Functional Requirements accepted under HCRL 1.1.15-001 DR-1."
+  },
+  {
+    "exchangeId": "id-812dcde922614fde87adbccc993d0294",
+    "name": "[RequirementGroup] Non-Functional-Requirements",
+    "canonicalId": [
+      "f4a3060eba464f4ab89b50aec4628e5b"
+    ],
+    "specialization": [
+      "RequirementGroup"
+    ],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/requirement-group/f4a3060eba464f4ab89b50aec4628e5b.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "I.9.2"
+      ],
+      "Continuum / Navigation Path": [
+        "Motivation / Requirement Groups / [RequirementGroup] Non-Functional-Requirements"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Accepted bounded architecture — HCRL 1.1.15-001 DR-1"
+      ],
+      "Specialization": [
+        "RequirementGroup"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "f4a3060eba464f4ab89b50aec4628e5b"
+      ],
+      "displayName": [
+        "[RequirementGroup] Non-Functional-Requirements"
+      ],
+      "harmoniaType": [
+        "RequirementGroup"
+      ]
+    },
+    "documentation": "Non-Functional Requirements grouping hierarchy root accepted under HCRL 1.1.15-001 DR-1."
+  },
+  {
+    "exchangeId": "id-7a965baa4e6d46bd92a9b41433920d21",
+    "name": "[RequirementGroup] Performance Requirements",
+    "canonicalId": [
+      "dc3f2a927e284da88734df4f7e0f9311"
+    ],
+    "specialization": [
+      "RequirementGroup"
+    ],
+    "properties": {
+      "Continuum / Canonical Source": [
+        "enterprise-architecture/continuum/grouping/requirement-group/dc3f2a927e284da88734df4f7e0f9311.md"
+      ],
+      "Continuum / Currentness": [
+        "current"
+      ],
+      "Continuum / Navigation Number": [
+        "I.9.2.1"
+      ],
+      "Continuum / Navigation Path": [
+        "Motivation / Requirement Groups / [RequirementGroup] Non-Functional-Requirements / [RequirementGroup] Performance Requirements"
+      ],
+      "Continuum / Navigation References": [
+        "{\"occurrence\": \"architectural\", \"references\": []}"
+      ],
+      "Continuum / Semantic Standing": [
+        "Accepted bounded architecture — HCRL 1.1.15-001 DR-1"
+      ],
+      "Specialization": [
+        "RequirementGroup"
+      ],
+      "archimateType": [
+        "Grouping"
+      ],
+      "canonicalId": [
+        "dc3f2a927e284da88734df4f7e0f9311"
+      ],
+      "displayName": [
+        "[RequirementGroup] Performance Requirements"
+      ],
+      "harmoniaType": [
+        "RequirementGroup"
+      ]
+    },
+    "documentation": "Performance requirements grouping nested under Non-Functional-Requirements accepted under HCRL 1.1.15-001 DR-1."
+  },
+  {
+    "exchangeId": "id-a0ec3251d4564072a217279d4cb4a394",
+    "name": "Architectural-Governance.Architecture-Process.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-cc919812cdd343bfb22d661209906bc7",
+    "name": "Architectural-Governance.Architecture-Vision.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-ca7d2832c33b4b4e82827df69324daba",
+    "name": "Architectural-Governance.Architecture-Vision.Drivers",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-52dd6783a82c4582bc452f0a72327bf0",
+    "name": "Architectural-Governance.Architecture-Vision.Goals",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-f18d9e608ed8499ab5bb52bf4b0eb1f9",
+    "name": "Architectural-Governance.Architecture-Vision.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-c5129404bca24cb0b7ebf0326b019ef3",
+    "name": "Architectural-Governance.Architecture-Vision.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-8d9389121f444438868fd7b70ddf121e",
+    "name": "Architectural-Governance.Architecture-Vision.Stakeholders",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-89557de9c4844948bc97deabf3b68fbc",
+    "name": "Architectural-Governance.Implementation-Strategy.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-b67e6a308e864c5dbe522df87125fcb6",
+    "name": "Architectural-Governance.Implementation-Strategy.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-adebd5da32ca413f99024a96d351adc0",
+    "name": "Architectural-Governance.Architecture-Conformance.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-1fff2defea734ee686227be7c905e5ff",
+    "name": "Architectural-Governance.Architecture-Conformance.Goals",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-6119d0e4ada44045a69db34cc0aa154d",
+    "name": "Information-Management.Information-Identity.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-69d83d5d695a4f6d99e3ac7724c2f5cb",
+    "name": "Information-Management.Information-Identity.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-1fba1f2d08c445df823f325bea397992",
+    "name": "Information-Management.Information-Integrity.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-366f55d9d47a43ffb548c0f1de0045a8",
+    "name": "Information-Management.Information-Integrity.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-8f3100f85f834a1bbcd57dc0653dc5e3",
+    "name": "Information-Management.Information-Lifecycle.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-16b80b1feedd4b48a3745fad1c504ba9",
+    "name": "Information-Management.Information-Persistence.Assessments",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-9508b495e21740989bf5e86f7acecded",
+    "name": "Information-Management.Information-Persistence.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-ad5567429053481f8c7221f016e944e9",
+    "name": "Information-Management.Information-Persistence.Goals",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-1d3b4ccc970043d19d9ba1fc203ee092",
+    "name": "Information-Management.Information-Persistence.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-77dfe914f07a4cd6bf6f7bb1c48dd20f",
+    "name": "Information-Management.Information-Sovereignty-and-Residency.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-f61ee7b315944853b370486ae7fe5a68",
+    "name": "Security-and-Authorisation.Authentication.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-a04b838f87ac41e6a371b2940bdceca5",
+    "name": "Security-and-Authorisation.Authorisation.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-1fbd77614a2843a4ba118d3f983d5335",
+    "name": "Security-and-Authorisation.Authorisation-Enforcement.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-6354a0ca38e64266801a8a67cde40f58",
+    "name": "Security-and-Authorisation.Authorisation-Enforcement.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-e62f6403b16549a3b894d8eedb87db7a",
+    "name": "Security-and-Authorisation.Authorisation-Enforcement.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-f1c6f7c28e7b4d9d9a6f0441e9817406",
+    "name": "Security-and-Authorisation.Information-Protection.Assessments",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-9429be9e3e47419ea2d38332b7ff72c1",
+    "name": "Security-and-Authorisation.Information-Protection.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-f49e9dff66374a4e927e12a29ed4845f",
+    "name": "Security-and-Authorisation.Information-Protection.Drivers",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-a33614a85537406883b204719da57745",
+    "name": "Security-and-Authorisation.Information-Protection.Outcomes",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-0a17b369762e45d0bc20fd3bdf155783",
+    "name": "Security-and-Authorisation.Information-Protection.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-96c1944cd4c0438a96e04f3a9a0d27c1",
+    "name": "Security-and-Authorisation.Information-Protection.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-7a55306d968d4e799451c9833ac60377",
+    "name": "Security-and-Authorisation.Information-Protection.Stakeholders",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-95e03944d49c4cf7b29080edde0ed60d",
+    "name": "Security-and-Authorisation.Security-Administration.Assessments",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-7889b179a0ff4e2b99dd112f11136081",
+    "name": "Security-and-Authorisation.Security-Administration.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-a774fbe862574414bdc865b7eca33894",
+    "name": "Security-and-Authorisation.Security-Administration.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-f2090754e079418e954b0fc4318129c4",
+    "name": "Security-and-Authorisation.Security-Administration.Stakeholders",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-92f2307a851a4da6a658b8c4d60bcd51",
+    "name": "Security-and-Authorisation.Security-Monitoring.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-c946464ac41c47ac9a8088fece31022c",
+    "name": "Security-and-Authorisation.Security-Monitoring.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-e92fff09a73c455a8f08214753303f03",
+    "name": "Audit-and-Accountability.Audit-Generation.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-9e69fff940694a63b177fdb172399b26",
+    "name": "Audit-and-Accountability.Audit-Generation.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-1a06db77cfd943b980a2f1a1e1d7ae29",
+    "name": "Audit-and-Accountability.Audit-Generation.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-bf875446915c42ccb0bff4a538b4f41a",
+    "name": "Audit-and-Accountability.Audit-Integrity.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-9199011422af4fd4b71051dde6008dea",
+    "name": "Audit-and-Accountability.Audit-Management.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-4fb8edfe58864a4eba1eebb78ddf439a",
+    "name": "Audit-and-Accountability.Audit-Management.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-96de76241ecd42b2ac583eed9fb161c1",
+    "name": "Audit-and-Accountability.Accountability-and-Traceability.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-e9da4d32c9f94e1d96dab142e8a0de2e",
+    "name": "Interoperability-and-Integration.External-Connectivity.Drivers",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-87516cb980b5488482bab331a911b0d6",
+    "name": "Interoperability-and-Integration.External-Connectivity.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-17f11576f4364c8081b2db73b5a6393e",
+    "name": "Interoperability-and-Integration.Interoperability-Standards.Assessments",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-39d7e8efb6f340d89c970838f45cf2cc",
+    "name": "Interoperability-and-Integration.Interoperability-Standards.Drivers",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-6484a86c45114dc19d08968d2e8fe4a6",
+    "name": "Interoperability-and-Integration.Interoperability-Standards.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-00f9c244941c4c36ae47791075061c5a",
+    "name": "Interoperability-and-Integration.Information-Exchange.Assessments",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-f336cea8d7fc42fa80047385f900db82",
+    "name": "Interoperability-and-Integration.Information-Exchange.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-9a2d0a6b44b74c3da7e329b7589ee325",
+    "name": "Interoperability-and-Integration.Information-Exchange.Outcomes",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-3d83dae5d80a4ec8aee50f9ae4a140bd",
+    "name": "Interoperability-and-Integration.Information-Exchange.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-f77c66d07df146d38848a5d89832bb8b",
+    "name": "Interoperability-and-Integration.Information-Exchange.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-4a595661fb6742449dfa93780dda34eb",
+    "name": "Interoperability-and-Integration.Interaction-Contracts.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-386f5250a923447988f8acdfaf63dee8",
+    "name": "Interoperability-and-Integration.Interaction-Contracts.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-6495a040a2684ffba50a340f7e48e9c7",
+    "name": "Interoperability-and-Integration.Interaction-Reliability.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-a64e922707cd4bc9a375c80499367476",
+    "name": "Processing-and-Workflow.Task-Completion.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-14ed160c646f481e8c8527552fb50744",
+    "name": "Processing-and-Workflow.Task-Completion.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-e7c136fd5f4c4914a037c63372abe711",
+    "name": "Processing-and-Workflow.Task-Completion.Stakeholders",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-c02e147304774275b51786a342d90f77",
+    "name": "Processing-and-Workflow.Concurrency-Management.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-869980a1ea9a4f7ba17772184f7b2274",
+    "name": "Processing-and-Workflow.Concurrency-Management.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-e5b7e282ab0f4f84acfebf3b13b24b98",
+    "name": "Processing-and-Workflow.Message-Processing.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-3e9d1122fc85401baa929e2339d030d6",
+    "name": "Processing-and-Workflow.Message-Processing.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-555932c6057b4b72aefd0fe6dfc0dfee",
+    "name": "Processing-and-Workflow.Processing-Outcomes.Outcomes",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-8feb3ea6eb244bc289a02ec7066a17f5",
+    "name": "Processing-and-Workflow.Processing-Outcomes.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-8aa2b084d62a4640998e385ae69f0918",
+    "name": "Processing-and-Workflow.Processing-Outcomes.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-76d2dbcd18724197848332489f611e98",
+    "name": "Resilience-and-Recovery.Fault-Tolerance.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-1db025dd539640bcb935e922ead3d6e7",
+    "name": "Resilience-and-Recovery.Failure-Detection-and-Handling.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-5f50743743e54c148240abbcc771c40c",
+    "name": "Resilience-and-Recovery.Operational-Recovery.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-3cfa9679ba3d497691c545243d9c3964",
+    "name": "Resilience-and-Recovery.Operational-Recovery.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-4894c257f0bb4e0780794d0f7e6fd208",
+    "name": "Resilience-and-Recovery.Operational-Recovery.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-8ecdc98d1ed745bfb11b291ca59a1aa6",
+    "name": "Resilience-and-Recovery.Disaster-Recovery.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-f4cdd78991a843498f42b14643efcf0d",
+    "name": "Resilience-and-Recovery.Continuity-of-Operations.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-a2693cde7d0545689b29417eee7ef74b",
+    "name": "Resilience-and-Recovery.Continuity-of-Operations.Drivers",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-286c75221c2644769337f2d76d1679e5",
+    "name": "Resilience-and-Recovery.Continuity-of-Operations.Goals",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-6c0bdbc5f09341e097dfeb969eb06f14",
+    "name": "Resilience-and-Recovery.Continuity-of-Operations.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-6ecb9cfd63fc4122b34338125fbc351a",
+    "name": "Resilience-and-Recovery.Continuity-of-Operations.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-8100e735849d4346bcc0c3146f47f5bd",
+    "name": "Performance-and-Capacity.Throughput.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-581b9b60488d473bb240e080b2f71cbd",
+    "name": "Performance-and-Capacity.Responsiveness.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-c4a5a28f792e4924b681a9a253ef0a7c",
+    "name": "Performance-and-Capacity.Scalability.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-3cf1b2c93254461a97027fb2b6456f0b",
+    "name": "Performance-and-Capacity.Resource-Management.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-1c4b14c56ac54e1ea69e840581d90372",
+    "name": "Performance-and-Capacity.Resource-Management.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-b641c890a01c4e25b217c38daf552fc2",
+    "name": "Performance-and-Capacity.Resource-Management.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-918400789c3f471388455b18ac722408",
+    "name": "Operations-and-Assurance.Operational-Monitoring.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-2019e329346e41988959b8e279fbfbae",
+    "name": "Operations-and-Assurance.Operational-Monitoring.Goals",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-24cd2a16a67a42f689729f08898f6808",
+    "name": "Operations-and-Assurance.Operational-Monitoring.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-c7f0ce03183c42e09ba688ecfb969c9c",
+    "name": "Operations-and-Assurance.Operational-Diagnostics.Drivers",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-a149c282595b4434bb04588730bb88ef",
+    "name": "Operations-and-Assurance.Operational-Diagnostics.Goals",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-dd037a51d1654576929f4e74244bf9ca",
+    "name": "Operations-and-Assurance.Operational-Diagnostics.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-d202ffb64d4d4cc4aefa0a7f2021e094",
+    "name": "Operations-and-Assurance.Operational-Diagnostics.Stakeholders",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-b3112356ac314e86bc20698a74a44421",
+    "name": "Operations-and-Assurance.Operational-Control.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-e60d5335cb1847aa92ecb909653a32c3",
+    "name": "Operations-and-Assurance.Operational-Information-Management.Assessments",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-6a436d396d2041b39dbf44ccfbb34fdf",
+    "name": "Operations-and-Assurance.Operational-Information-Management.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-38e906fd2a26475889065f9ccfb23380",
+    "name": "Operations-and-Assurance.Operational-Assurance.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-1cdf16e8bcb64210b7311e5dde86441f",
+    "name": "Operations-and-Assurance.Operational-Assurance.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-2deaf1241aec45edb8a0f540356ec0a6",
+    "name": "Deployment-and-Release-Management.Deployment-Management.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-395153d54ba54992b830cb5ad3947b17",
+    "name": "Deployment-and-Release-Management.Deployment-Management.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-0336eab69f074587b7d11c5919c1d137",
+    "name": "Deployment-and-Release-Management.Configuration-Management.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-02fb026d5d5d4a2aaaf22f3c6db5781f",
+    "name": "Deployment-and-Release-Management.Configuration-Management.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-14d1047ee6204bf4be1398c68e17228e",
+    "name": "Deployment-and-Release-Management.Release-Compatibility.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-3920961155a24818a5b661f3cb1da510",
+    "name": "Verification-and-Testing.Performance-and-Capacity-Testing.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-fc3922c4f9d94972a744b6c713110f51",
+    "name": "Verification-and-Testing.Resilience-Testing.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-8b30c71c6e2e454480b5b6f00b5bb440",
+    "name": "Verification-and-Testing.Test-Governance.Constraints",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-da0a7f200fe24edfb876caf8dc1747f5",
+    "name": "User-Experience.Usability.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-95a48392b7484331bb44b2983a7c1514",
+    "name": "User-Experience.Accessibility.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-e0cf25ef898f4e7091e130fe935ecafd",
+    "name": "User-Experience.User-Interface-Responsiveness.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-62f66d959d71470dbfda6b337d34e773",
+    "name": "User-Experience.Navigation-and-Interaction.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-67d9fd4e1cd747819a5974bff1f89bea",
+    "name": "User-Experience.Localisation-and-Internationalisation.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-41c22ed603a2453a8216fc23e4464e02",
+    "name": "Distributed-Systems-and-Temporal-Management.Temporal-Consistency.Principles",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  },
+  {
+    "exchangeId": "id-09ed20f8eaa94c59af0a24a1e69cdf6d",
+    "name": "Distributed-Systems-and-Temporal-Management.Task-Ordering.Requirements",
+    "canonicalId": [],
+    "specialization": [],
+    "properties": {},
+    "documentation": null
+  }
+]

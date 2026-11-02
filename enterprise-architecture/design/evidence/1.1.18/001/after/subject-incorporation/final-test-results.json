@@ -1,0 +1,13 @@
+{
+  "outcome": "PASS",
+  "testsRun": 85,
+  "failures": 0,
+  "errors": 0,
+  "elapsedSeconds": 314.19,
+  "runnerExitCode": 0,
+  "invocation": "timeout 420 /tmp/harmonia-tooling-venv/bin/python -B -m unittest discover -s enterprise-architecture/tooling/tests -v",
+  "log": "final-tooling-tests.log",
+  "logSha256": "0768e44173f0c426903434e225f58b64f7f459b6a1814cf464802ae2c39c1cc5",
+  "fixtureTreatment": "Maintained test-only fixtures now supply declared retained inputs; no production validator change; population assertion updated for accepted 32/27 delta",
+  "earlierRuns": "Original standard six fixture errors and supplemental one predecessor-count failure retained in their original logs"
+}

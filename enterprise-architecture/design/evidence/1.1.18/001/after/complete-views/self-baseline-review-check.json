@@ -1,0 +1,6 @@
+{
+  "outcome": "PASS",
+  "elementChanges": 0,
+  "relationshipAndViewChanges": 0,
+  "purpose": "Verify exact-baseline review has no repeated-folder-path issue after restoring authored numeric prefix"
+}

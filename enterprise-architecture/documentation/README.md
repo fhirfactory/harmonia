@@ -18,7 +18,15 @@ and [existing EA tooling](../tooling/README.md). Generate/check with
 `make -C enterprise-architecture/tooling all`; compile the narrative PDF with
 `make -C enterprise-architecture/tooling rad-pdf`.
 
-Current governed release: **1.1.10**, predecessor **1.1.9**. The
+Current governed release: **1.1.19**, predecessor **1.1.18**. The
+[completed originating HCRL 1.1.18/001](../design/register/1.1.19/hcrl-1.1.18-001.complete.md)
+records the accepted architectural publication and original evidence boundary.
+[Successor HCRL 1.1.19/001](../design/review/1.1.19/hcrl-1.1.19-001.pending.md)
+continues all 16 prepared DR entries and outstanding obligations without accepting
+unresolved decisions. Reader-facing structural reviews and all recorded
+source/naming/transport qualifications remain explicit.
+
+Historical release **1.1.10**, predecessor **1.1.9**: the
 [completed 1.1.10 HCRL](../design/register/1.1.10/hcrl-1.1.10-001.complete.md) records the
 Solution Architect’s accepted taxonomy remap, incorporated result, explicit
 classification deferrals and documented projection/provenance limits. Publications remain derived.

@@ -1,0 +1,17 @@
+{
+  "outcome": "PASS",
+  "command": "timeout 110 mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+  "exitCode": 0,
+  "testsRun": 90,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "warningImportFallbacks": 3077,
+  "jdkFallbacks": 3077,
+  "nonJdkFallbacks": 0,
+  "limitation": "ArchUnit uses simple-import fallback for unsupported Java 25 JDK class files (major 69); PASS does not establish rich analysis of those fallback classes.",
+  "log": "java-architecture-tests.log.gz",
+  "timing": [
+    "[INFO] Total time:  26.715 s"
+  ]
+}

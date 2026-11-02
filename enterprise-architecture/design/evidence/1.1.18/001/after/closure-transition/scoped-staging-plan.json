@@ -1,0 +1,2854 @@
+{
+  "purpose": "Exact authorised accepted-architecture/publication/closure/successor/evidence payload; old published files and original authored working files excluded",
+  "branch": "Data-Governence-Services",
+  "preCommitHead": "763f97586685d5c4b9744509b067d95b9694d0db",
+  "records": [
+    {
+      "path": ".junie/reports/2026-11-02-accepted-subject-incorporation.md",
+      "bytes": 18362,
+      "sha256": "a5581ee00c258d77144a78ed353b3d61bde1d471b1be9f559f057f62e5de3bf3"
+    },
+    {
+      "path": ".junie/reports/2026-11-02-bounded-subject-reconciliation.md",
+      "bytes": 13892,
+      "sha256": "e49102ad04e432288d03897269be35458170deb946604c1b3c4e121d8a5e649a"
+    },
+    {
+      "path": ".junie/reports/2026-11-02-openspec-subject-capability-reconciliation.md",
+      "bytes": 16844,
+      "sha256": "34723df21336b14f1b5f8d3979dd89c6190aedf650c484574ed66e55e6dbb61b"
+    },
+    {
+      "path": "architecture-release.json",
+      "bytes": 58,
+      "sha256": "0b752da226da89bb7cb6837ad98ae52339907614e1b4bbaeafbdd131fe7ac8fa"
+    },
+    {
+      "path": "enterprise-architecture/README.md",
+      "bytes": 7917,
+      "sha256": "04a22474c68477e7e52c3598c71c9491c287d4de005b7ec61356097947b76576"
+    },
+    {
+      "path": "enterprise-architecture/continuum/MANIFEST.md",
+      "bytes": 1777729,
+      "sha256": "0375e4ae602c933c9da1e6446ab77531113c2fb965c600ae96376cc52eb2de33"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/0085c4fe23cf4b76829fae3369c9fbb1.md",
+      "bytes": 6583,
+      "sha256": "2bde4771bdfec1d90c988e4bd131fe038546debd2e5ac96bf10660413b24ad44"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/011207c2c69f42d7a5c9c7504ffbc951.md",
+      "bytes": 6583,
+      "sha256": "d774f27c1a89e1b7b18bb88edd834bb0c7c56f8bbb19904e20008a46ed705e83"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/0233415953ed487fbbe407ebb469e7bc.md",
+      "bytes": 13222,
+      "sha256": "b1de778f107f28d459bc9cac286d04955f63f2d193ec2126f43e6a264b231681"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/028a5b5f4b0e458a91489cac0513955d.md",
+      "bytes": 6457,
+      "sha256": "4cda10d782be5f0f8396bc907d1aa029b9cf9794a0f47523b381f907ca3ff7aa"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/0528b2ac76c548ae861ebcb1ef9cf3d9.md",
+      "bytes": 7109,
+      "sha256": "a66afc275c5c5796cad39267fd9dca89360f3db05d6824939d0ce2c9442c8b9b"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/08ffff9f57aa412b80e36ab154136ad0.md",
+      "bytes": 6575,
+      "sha256": "3b9379adfb0a10125f74dd9798c8917ea9c31af572122b366cd8916b2be558ce"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/0a59e0ebb33c494e939148d30e42f49c.md",
+      "bytes": 7093,
+      "sha256": "2e63941374afc0fdd283f68f9660cd7718dd09196bb583440beff152ae66b45d"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/0b6d5f58354040189b3a9a30a9b913d9.md",
+      "bytes": 4231,
+      "sha256": "705d4649d086685e9f6784c811211f94180f2439b91df93bbb0f1c4223843799"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/0b9e18356e9e4dcca51007f03f7b81b4.md",
+      "bytes": 13935,
+      "sha256": "a7432090551b5dbc732cbe33fb1f59241cd488fe6ed9c480af1da8b16f1b127d"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/0caf2fb84f944a6ab3872feb92b9338d.md",
+      "bytes": 6557,
+      "sha256": "99d0dc3c48df4b43cb5052b786d500107eb770bd1cdfb2b537199151dc1e1c01"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/0e5030d90c134f1ea445257f0b6e788e.md",
+      "bytes": 17207,
+      "sha256": "1c9fb6abef04f314894c463b9f62ba9bda7730fb8e270bb560d2148d6b73e20a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/0f1014c80b0a473abf8c37845e0ed2fa.md",
+      "bytes": 7122,
+      "sha256": "a3b8f2fc1cfba9f3d90eccaead6399cbc535d7c83ac3bdf423ecf7aaf2364c85"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/114a3866dffc4a4cb6aabef39b48fadf.md",
+      "bytes": 4261,
+      "sha256": "0886b6496d8fabed4638e236d50d7ca2fba06bd1d9b6c9587ac2ef10640427c5"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/1a235d13959e477ea52e0f201215fbe9.md",
+      "bytes": 6528,
+      "sha256": "e659ae9dc70ce8f24ad11352061cf13380551ee9953337bd20c9245b37678466"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/1b4044525d474363bafb462e575582b9.md",
+      "bytes": 6452,
+      "sha256": "f16d0e4beea5821253f46b9c7cc2255188e433059a1c7c89e7b7c3b733b9879f"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/1cdc1ee62ec548998a8db6ee23b59ca1.md",
+      "bytes": 6549,
+      "sha256": "d004a2d174e9e167a089c432103a1feffbb915e5f444178425892f42efeac910"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/1d7c50343cca49eeaeccf7c49c3c008b.md",
+      "bytes": 7111,
+      "sha256": "dc315be9b81c2bd4f4cbda1b5f71ea9deed9626f75405fcb5293f3be623787a8"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/1de844b879754fd7a21a29f2df3df97b.md",
+      "bytes": 6591,
+      "sha256": "bd51823167306e5dc53fecc81e9894d7f43912437d8446e6944cdab85aa4c02f"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/1eb3b965c7334b899133282bc0500a9d.md",
+      "bytes": 6543,
+      "sha256": "00d758436ee12e6ec6f7f37ee2ecea9ee9330b15d027b8549d0d93a6b06652a9"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/1f441cdb8fa342cca0afe5b3b65b368d.md",
+      "bytes": 7135,
+      "sha256": "7124e1c1eeddd19aba2912187df194f31d8bab054b9fd08d01676995f22f098c"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/202ebe880cc8456bb5e9f1389cc26fe8.md",
+      "bytes": 6581,
+      "sha256": "dbe0218a9b9297e953162cd678d634e10c779b6aa3df8d0d6e0586575ad6ab1e"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/20326d2f4f2e44dcbe12db38deea02d0.md",
+      "bytes": 6457,
+      "sha256": "e84e11701b6d164b87389378d3edceac340ce622122b3c011af54f55f228cb47"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/22fce0d656ef4df89d2a35a85fa92aa1.md",
+      "bytes": 4279,
+      "sha256": "f4f9b857c5462124a99528177660bb3c019ea54c5b75b9b4dea557ce1ae75164"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/23408174240a47f690d23dee589e4ddc.md",
+      "bytes": 6420,
+      "sha256": "f8bab0574cbfb71d3ad1a63546fcb77f88803c442e19ae2debb8f4a5a40b85b9"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/2423108223e14d27a7bf59610034297a.md",
+      "bytes": 6525,
+      "sha256": "f1e52ad9c6c4b2a9f1f494be1854b6356777cfae92d504083904456691f5d704"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/25a15d4bea2d418d918e3a7e01d9fcbf.md",
+      "bytes": 6400,
+      "sha256": "67d81327a3728bcb7f6de57bfa6ff07a19417458f560d25912bd7af2126f64c4"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/25bc65e773d64ecf9b71ae4f92ed57e1.md",
+      "bytes": 6334,
+      "sha256": "e429c779d8777a3ea5c38f361b308c4a59ca2519bd3e306621f892e098730ad3"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/2ad6333e5858456dba8aefeec71773a5.md",
+      "bytes": 6373,
+      "sha256": "34fecdb7f96435ffa660db1dc56778fc6d880f7b1c7320c922a0b778d0800f31"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/2d89b3a1e74e42d28a9f0a3dfb2c4ecb.md",
+      "bytes": 12855,
+      "sha256": "2a59c575c036506cd83cd4558f5201fe071d01930fefefe35717ff8321adfdb2"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/2ee0a6e46b47413d91cfb71ee3100e4b.md",
+      "bytes": 8201,
+      "sha256": "00a5d1b13286179f447fc62cc6ea36b2384eef2529feb65c2e3fcbb068460671"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/2f97190ae5734e8caee48d581e1a6ab2.md",
+      "bytes": 6330,
+      "sha256": "ddfcbf7be8b379b1523eb8a59bfd4117b2eb1fcbfdee82bd6598be9baf392cb8"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/315ba7bbe4624223a97a7e7e6d9cc252.md",
+      "bytes": 8903,
+      "sha256": "7e17b4a25b9735d794debb1011d5a0d329e46ae6662d8f5cdebf678ce902f0bb"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/31812051912e4dd99b07125d86ca2c11.md",
+      "bytes": 6588,
+      "sha256": "6790d969ee348d81c035f1fe855f6be2655b27e7a161af9bb6d6aab3371bae01"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/3189d80ed4c24efe9bfc6b28ab263b51.md",
+      "bytes": 6543,
+      "sha256": "fb7ad1fae4808b0831d2ad328044b54b4098e86cb7e2353aa0b8a18905094695"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/3566f7776b8741699f48139e1c6b8ec8.md",
+      "bytes": 6472,
+      "sha256": "501f9f58a72b9a0a5238234c8d6ecdc65a6b5c166c89d8b785f2cd22593527c6"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/35df8a5d8b1e495ba4cf79a5d4a47863.md",
+      "bytes": 4245,
+      "sha256": "ce23702d0fa65eb83aec2e64c64f7aa51aa43631e74f6da601cf3ebfc242d148"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/36264352a7f745109deaac2025877690.md",
+      "bytes": 9969,
+      "sha256": "f72c0a013291bf1b8060fb6b3561190337d0eb31834c53fce3f93571ea4e8af6"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/38d3dfcd23894f43b59d00c782170e63.md",
+      "bytes": 8291,
+      "sha256": "30d852e3d8034da14253541abea7f2afab031195ce78c28c856d1087d9deb5d1"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/392c07b6a5ba4fc7bd5c19910437da98.md",
+      "bytes": 6360,
+      "sha256": "a4f05611d90f1856fc1c35126d17fdae5cc574df7b2d6e527f0dedb5f86e4155"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/395d77eea25d40b0b74321dc7aabd283.md",
+      "bytes": 6503,
+      "sha256": "9047ca5f97be37fb2dc873041eef6951da94bc0e13299917a811d0f45905f313"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/3b06c335246c4307adb5801e05f2cef4.md",
+      "bytes": 6488,
+      "sha256": "014f17cb96835bc1d9f82a88670c6f5efa7102d836e8e0ab823aac0ac8d53f06"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/3b56e60b042f429b8bf0efdb477c637e.md",
+      "bytes": 4235,
+      "sha256": "63a55446e830696af367dcef009e6511453dd4ac159aa7b202b87701eb2cd453"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/3d87dbf35e0a43a3b5e12cbc6b947763.md",
+      "bytes": 6347,
+      "sha256": "e96895d266eb85b20a971ae424655aaa089b5ebf331f483eb56a2a430dcfff73"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/3f830af6837d4f89bcd042039572bcdc.md",
+      "bytes": 6559,
+      "sha256": "c2a59c9e7fd2a35f70d1e5441b8d0b1ff6a380537e284cb831b45950457fa365"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/400c5c54a23a44588cc473ed10ead4a8.md",
+      "bytes": 6355,
+      "sha256": "9d34ab0df5d19a4e2ef036f412b4216dd653cba2c9fd90c552654a48176c3ffb"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/40416671099a46678ac5dfc3d0d615cf.md",
+      "bytes": 13912,
+      "sha256": "2f6340f759df09622a5e961759ddab4b02a8f4a2f9a7b0738140d97a454e81d6"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/41040498bcaf469686edbee208b9b349.md",
+      "bytes": 6599,
+      "sha256": "f5a0ef717d29ba5a0ae815014d7a8011824497202bea3d962134c7927a68a37f"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/416367b1da96412299df199827b3541f.md",
+      "bytes": 6528,
+      "sha256": "cee118143c325a5870981c5e6d593a513392873e539c034e440f34713906637f"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/41900f15d1d2431295a4b9dc1aa752c0.md",
+      "bytes": 18616,
+      "sha256": "92adfd7f268dd941a6fd6f9298ee8a8dfff3ce616cfaa355599ef8c8e14f647a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/432d52cc3de5443896a4559f215ece9f.md",
+      "bytes": 4283,
+      "sha256": "7257748ea57a3a7a815e7169efcdaccee280c8fe20fc3b14f47fa058a80853f6"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/43ea78d2aa5e4e0eb4e0c80a6ddb22dd.md",
+      "bytes": 6489,
+      "sha256": "e6565fbb5b4d1983c872eca2beb2fc988aba5c4380f0c805313b6a6544c4af32"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/445d396942f549e5891086bd72fa5b44.md",
+      "bytes": 6519,
+      "sha256": "a3a15414ccce731941c04973550d138ec28025bdd7d0fce2b31a3347ea40cd9c"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/45cb08d300b74853b456f333572a2bf6.md",
+      "bytes": 14626,
+      "sha256": "282a0979c9184a64151690d22f0d9dd59e04ffa3d18e34975ee89e9ef49391cf"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/4643d0b24fe7420b8e3fd0f4a2f4b1de.md",
+      "bytes": 6544,
+      "sha256": "e866562e8c66a1cbb47acb18c8b915308b8b8b9431491efa5fe449c9a018710f"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/4648cf5a1f8e4333978c13efae10eaa5.md",
+      "bytes": 6024,
+      "sha256": "ce0c9efa6c864a0cea77d0cdd109cc3bc59fad0f9ff51eaab11c7d4ac0767f2b"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/46dd1f4490ae47cc854ce70ff600cb47.md",
+      "bytes": 6561,
+      "sha256": "c4177451b4985894cc203994b0c0a036c188791b052498e3ce4a3e7f9c673c6f"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/477d6408de0642fc875ce79d8e9dee86.md",
+      "bytes": 6520,
+      "sha256": "3c6fe660733d170f1336d8b6d5d116b93f5b531fd373bab97d693e182dfca435"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/47d8e097526248349dd6dbbd318b1ef4.md",
+      "bytes": 7089,
+      "sha256": "f059852cb33d33c97386ede03f7b8a2ec4353cb91f8bd61678410bb0f745fe77"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/493e4a05fe76496f82caf26e68f15edd.md",
+      "bytes": 6372,
+      "sha256": "e82db5fccb30029fa4e052679f37200a7f91ab0f802e3f33d8765a874d6ff2b7"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/49966f8f01e244b4926ce4dc4c41fb47.md",
+      "bytes": 8249,
+      "sha256": "6514f39e7b7b96a47bd345aada1cbf14ee292d8dc1c200ab400a52ded3d846f2"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/4cc994e1de714cc8915dc965d2694808.md",
+      "bytes": 6591,
+      "sha256": "afb6d86a46945fa2702790fe54f1df285325007155c880c5d1454ec2fe227dae"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/4df45b11a8c64144acea7c240a2c93d1.md",
+      "bytes": 6583,
+      "sha256": "3a8ef8bbe13073e775427ed42de90c884f3ec3c6df51482fe87e0edc81c6ba55"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/4e0bcac2a001411c8802b5df30e6bb38.md",
+      "bytes": 6342,
+      "sha256": "6d8bac4714bc88fdbcc76ef58d3cf52861b28e32447f7691d13a9650bd4a2021"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/4f80f28b3dad490abe942e5bb37e1a80.md",
+      "bytes": 6529,
+      "sha256": "2af8abc6b38cc2a781302c73f1dd4622dd64a462ef7b6ed31f72ecb68ea6ba5a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/50a4cb6b01c94904a0991175ab09004c.md",
+      "bytes": 6588,
+      "sha256": "3b8ed7815dad430f9545736ca2535806276da09a75c050ef3e33158b697c00d3"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/5120fbb391e24b3f941d8a5cc347a1fd.md",
+      "bytes": 6504,
+      "sha256": "8efb042944e98b4d8b5a4d7f8815ca623c6fcf0a30c64e7213b3bcbd28be5f2d"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/52508b8b7aec4b1cbaa570576442d4c9.md",
+      "bytes": 6343,
+      "sha256": "4cdf4b41f449d908217916efd7087a100357af3989649a5885adf1fda131a5cb"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/5280c9c5e5ac43fe8fd314fd74bb6e69.md",
+      "bytes": 6488,
+      "sha256": "bb226b34134ae5ec9567a68b05b969cc57dd18f30c28708965df025f7a491d25"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/549a5d805b3f40d49437ce704f923bf0.md",
+      "bytes": 6553,
+      "sha256": "6dad80521cb8b23fa14ba0606c3521874a7e8ab65ad4e5cd0be88142e54113b8"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/549eaf0604764c01814641872404017f.md",
+      "bytes": 6535,
+      "sha256": "89f2d3517b20c1ff03b44e05c2187943ccad4b044814cf1d1a7f750a8f7d6c15"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/54d5ba1ccaae46c8b372f7ccfca99741.md",
+      "bytes": 6521,
+      "sha256": "59691d0e3c5315a0a26e0011d1d29745e73216fe5bd26c369b1d40d71069b74c"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/55441c2677144a9da1c6348e633eaac8.md",
+      "bytes": 6599,
+      "sha256": "207317256e02f9f13e20714353d34dcfd05bf7a39fadcdcca4ec6e8ab895b5f1"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/582e15cf43f94ce6b1c128361ec31780.md",
+      "bytes": 6611,
+      "sha256": "7ba834da2584e48765ff576db80a657ada26cae03d9f67a9235786701f8ee749"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/58c3577b30fd4748836a1d52e07c8a98.md",
+      "bytes": 8153,
+      "sha256": "584b24a60fd7c40d995dc2ecc28dca1f472803861379c2af571651e86e7f53e9"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/58c5443983854dd98cd72f2dd795c063.md",
+      "bytes": 6346,
+      "sha256": "1876828b98379cce1c7dc4ab492acaf6695836923f2e069bf675cd77afe47a3a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/5989495f1e224d5797054a8b6c0364a1.md",
+      "bytes": 10027,
+      "sha256": "4eb3930fa3cf36500428563e1a390ef42d9a4dd66ea7853ef03d57b81f505ee6"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/5a4a41f263424c1aac14102b64f95bd0.md",
+      "bytes": 6504,
+      "sha256": "1e834e421e82ac520de4cd88b85873a979aee9984c6a0b31983d5cf948e902b0"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/5c36fbab326d484a9f7877b7fb6a2ff9.md",
+      "bytes": 6472,
+      "sha256": "63eca2a764ae08dd4e7bebf35992bae875abdd2a72c8750ca1b5de48f26db665"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/5dde6ebecd094084b325ba59603bb919.md",
+      "bytes": 10640,
+      "sha256": "395d2941775aadae8eb8dc5b27f37c69e5c1306b3e85790621094e413caddaa0"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/5e78ed0ddec14bb4b081082c66c75ad2.md",
+      "bytes": 6550,
+      "sha256": "62ba3f32864aaa51d776c12f5781dfa7f847a12c3d842a83704081a9c93298cd"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/5e7bdebc353e49259113adf2a5b93aad.md",
+      "bytes": 6608,
+      "sha256": "8d30a8e58a83268f09ed39cc85881e56458afd5790df7fa9e87af2aacdee50d0"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/5e8ddc78f9554243aeb051f77595cc88.md",
+      "bytes": 5360,
+      "sha256": "4dd0eb382cbfe71bfb74b4a5356d7bf72c9c1e955361fe291688311bf04ebfa9"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/5f25a2e8082d486d8f2b87aec6667e33.md",
+      "bytes": 6620,
+      "sha256": "cdfaabfad8f60eee0a08157b055dfbfd23866bcb967e32b1bd5c3aabac4fea34"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/5fcada54e6df40a8983335a90e4a9f02.md",
+      "bytes": 6368,
+      "sha256": "43c8477a55f7571e27455c179f9afbd102c4a623080f6ac4dfe898444fd7c082"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/60fcf91dfa7445999dfa8e039d993415.md",
+      "bytes": 6541,
+      "sha256": "d4d57608c65b2b3e40ba39faa64ca9b683baf1c69f435932a1166b332431dc3a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/63807867e2d147528542a914952b3e3e.md",
+      "bytes": 6629,
+      "sha256": "ba17c022eb35bc3fd31c44c0754703a0557e9df92ebb107c5ff069690f492320"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/66ec039ab4f042a8b4817ca1dafaedfe.md",
+      "bytes": 6565,
+      "sha256": "8225d336c45d33264125cfa66667e7f89bb61bb06473e9138528306ba6b955ff"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/67bfa710070c4618b3ba834da62cc63d.md",
+      "bytes": 6559,
+      "sha256": "a927ac7a31808256333dd1066bc9495cfd54bc901b02cc390cb7296a87bfb5db"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/6b4df7dee51344b3b8c4c6eaace50d72.md",
+      "bytes": 4239,
+      "sha256": "a73b4021e0ddeb90a71cb505766ed6095dde991ea70a67147efbf98d9a25278a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/6d6086134162468cac129040a139d8d9.md",
+      "bytes": 17027,
+      "sha256": "f492b1ce8047e799993a01b3fcce2af17f26db1fb5a4c6f722ede63c445d9edc"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/6fceb4d8857a4601b736a33e9bec140a.md",
+      "bytes": 6529,
+      "sha256": "b32fea4358909fa7a2c786c9c375fe2d90ff2f97a5ffb611dd6f191a0299135d"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/709d34e55e7b4c7a9e010f5465f76473.md",
+      "bytes": 6558,
+      "sha256": "45ca992f852c34ff5906a8d157260f70a13772fe3a1f5ccb5cc47935a3cf0db2"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/71b9830ce1a543548334647cbbaec7f1.md",
+      "bytes": 4301,
+      "sha256": "de3d549fcaab294697963398f7083e1ff43e325d475d8ff74c8c6497a9117a2c"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/73a9255ce3cd4be89c2f5f65868c5f79.md",
+      "bytes": 6535,
+      "sha256": "ca14d2433352ef126d0e79d84586b7decad7bf66843eef71ed3247f9b51d07fc"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/76b2a8e5551e4645a048f48e4820a0bc.md",
+      "bytes": 6539,
+      "sha256": "79522574dae70031075dc87d29b817589e7097f251c13eea5ec4aadb2f27424e"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/77cd076a5bdf463a93fe330698d9be19.md",
+      "bytes": 8259,
+      "sha256": "b85f81368019c39d2eb1d651ebc28e8d8d367800d3de0dad7df9d874a91daf92"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/793ed649804a4bf19b5fa92bac3e4c29.md",
+      "bytes": 6535,
+      "sha256": "92cad1eab14425500f1d1e10d2add563799fbf282704de06c01f9a25a38d6f59"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/7b2cabb4089d414d8ad700ef5f7932b7.md",
+      "bytes": 6333,
+      "sha256": "80e8211c356de7a1a1a0dee0a0f9ee1cf5b3769559b71c260fa1a58b46c5dec8"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/7eceab6d8a9741708d438a7760103c69.md",
+      "bytes": 8209,
+      "sha256": "152bfbc329d2bc2715f7af9653a97540026def2b64d4d01735f1a7f4aa8818ba"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/7f9cadb36d764b22840748a9608f9a37.md",
+      "bytes": 8209,
+      "sha256": "4c17d13a18172515a5bae10fa4964ae35e81c529333139f3e1c0e6f07e6e6809"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/801386f27cda458b8ce811f133d917e9.md",
+      "bytes": 6307,
+      "sha256": "7612b141745dbd20670bab216dc671e91e0b5ae26507e37338469ddeea36372e"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/805280b737e14b72ba401393c1f4a271.md",
+      "bytes": 6519,
+      "sha256": "8c223da080e73a454ef50ea21b6c4f4d761609ad9635fd81a6edfc19a5b1a68e"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/80aa94b4210047a0a14563f408da1694.md",
+      "bytes": 6523,
+      "sha256": "726764e1ae2d08613c9712c3ed561ca99792d60d04ff742e5c03c7f8d5136172"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/819aeed91d0544c3b7cc52e69aa46d72.md",
+      "bytes": 8885,
+      "sha256": "036e851c62122161f75d7f21f4db464ebef3c0ce90d432d93b83235bab8c5c4f"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/82837737622a46059703e99a8920533e.md",
+      "bytes": 6511,
+      "sha256": "6bfef5bfda87339947105c9e2b597770b0c955d37b0aaac7d6eaf4ca9b6bb055"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/84693ef7bb4a4ced9634737c6bd5a36d.md",
+      "bytes": 13526,
+      "sha256": "03019f152a05848c47e5ba00f53ba8134b72ddf4f8934c927e498aa58bda1fdd"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/8609b046777c4a8ab4d5cafb30e34d04.md",
+      "bytes": 15032,
+      "sha256": "ea0f3b675e79aa576e88172a56fea69ecc0e8b63dc69b16bc36d72638240629f"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/8655d81cd41647449c3b1a10ffd453b3.md",
+      "bytes": 6334,
+      "sha256": "e324d939a09abab6adffc9c0c5a2316ad67f6bb65d4cb9ac3b1b7487341834e3"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/87694e76de1d4b93af63a16a9f5de128.md",
+      "bytes": 6513,
+      "sha256": "cae1c360c73b5dd0e19be559298e61cdf96d67938d55d893fac06a58a32e5f0a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/884f06591f6c4dcf8e7f94e4b31269c1.md",
+      "bytes": 6322,
+      "sha256": "65586771ed87162b2771d6d769dcf928d534e6d8cb496439d7b9b63343f92f81"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/88d1c3fd640448c2b35933d2b03b8151.md",
+      "bytes": 6515,
+      "sha256": "880f14be363e27e4f4d4193aeceb83bd160d47b0a7428c74734a93cbd75f8c35"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/8b27323cbaba400698842f77e0d28c0d.md",
+      "bytes": 13302,
+      "sha256": "f4d569e698febaed256d59770983e129bbaeeacad08aaed66b285da4110050fc"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/8b7fd22a55434e5ca3e7ba87afb020d6.md",
+      "bytes": 19003,
+      "sha256": "d54caf1da12a1b50d1ff0835d7215236d1eae89a031ac275e562a673ec630102"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/8bf2a60efafc4caf89ed9744adfb628d.md",
+      "bytes": 19855,
+      "sha256": "8df5187f276942603d020d450ac4055f9047c52af20b41042eea147ec0c082b0"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/8d58b9333a374b9cbe936f34919fc122.md",
+      "bytes": 6511,
+      "sha256": "1ead0c4de27399d1979127d8a6db7825883e16655001eb00d72720d553655371"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/8e39da9fc2d443efa3cc5d0311fcaf79.md",
+      "bytes": 6648,
+      "sha256": "811c36068c53cbb96129f08d211a5508da80b0237db6f740524a7bd8e285744f"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/901d49996c9545bb99cb0e0e7c043c81.md",
+      "bytes": 6512,
+      "sha256": "26ef06249d98b333da2488cc28c34ace4848884904d980b1ea716ff0071d0d85"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/9020808d1ff9466db08ad2f8c9a97542.md",
+      "bytes": 6631,
+      "sha256": "c2095625bf44810a1b9c0d65948f13a0258e3073bacc7526e054ed0062ecc322"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/93adee1dcb7348dd8bc070e7a53264f6.md",
+      "bytes": 6545,
+      "sha256": "5f5d8e91fb0dbb2ce67d9100a54e1b05da881c407431ad4eb3ba01c444abc7dc"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/9536aaf4114b4c35b8a795383d442f64.md",
+      "bytes": 12163,
+      "sha256": "9ba2c55e3601c1472d2bee2e199e297c42770a01ac3748b124f2e9b86ee50bb2"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/980b414d73614bd48bc47a6aaa718a51.md",
+      "bytes": 6573,
+      "sha256": "2d9d63f9a0cedecacbc69e629346e0334a5ce33be3fd5e6b36147569cce00485"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/99436452c53a49b89fa6bc2863557572.md",
+      "bytes": 6503,
+      "sha256": "d6d5a89e12f3a903e9202afe34dab9a5b2feece039e81d6f136933af2f8d729c"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/99e7cebde18640df841ac7f5c0c996be.md",
+      "bytes": 6504,
+      "sha256": "29f2342f1c023f53b801d4ad0334f278bc8c22f7ab4e6cb7e53960c67dbb9e1b"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/9a5487f0dd7b42bca1f791aad1257849.md",
+      "bytes": 6589,
+      "sha256": "e4f80a4205e1ad7d52e89cebd24ec14f13979a0ca8ad2f3030c30d17c56721ec"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/9c613c6963e9451e945d3934a20bdd53.md",
+      "bytes": 6487,
+      "sha256": "d963d9021b56812bf11cb708e63489a608a75405bda42a4c076f2561ffc3cd2e"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/9c7c9de7ffc0457d87cf52548bca70ca.md",
+      "bytes": 6515,
+      "sha256": "b3499d9740ad58deca06dbcdd0d54292baf1e97ae092780fa21d2e1bfed36473"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/9cf94c0ac09141a3b909a6a1051bff97.md",
+      "bytes": 7088,
+      "sha256": "f3751d1ef63e0db8926c939c5a9b58a84d872b0644692946c834a919ec96f6d6"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/9f192036bee542ad883b89729a35bbfb.md",
+      "bytes": 7124,
+      "sha256": "d0ce5b747389660e499dfbe6bd30816387f703d04690377c0fc75e8f14e938dd"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/9fec9301e759460880557df71baa19c0.md",
+      "bytes": 6503,
+      "sha256": "6ba593c32367477fb02977a8fb8a13f5e798e4c1480e86e877b0f85992fb8308"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/a44091225174403ebd2c5b75ba690a09.md",
+      "bytes": 11777,
+      "sha256": "fd9159cd34b666fd0edc410cd2aecb17f68d9b51340afd8328ea0b697724d9ba"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/a47808600e8f4d7c83756f4ce77b498e.md",
+      "bytes": 6304,
+      "sha256": "04e851ac63df34666efbf226d1db50b13844d35706d5b331d54fad9d091fe970"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/a49c1e5afd224d12bae33fac366a1d37.md",
+      "bytes": 6557,
+      "sha256": "103da9da44ac4d79880a31d862b17c3b131309df655d22387a55d5b9e9b75215"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/a4fbf334ea6e48028e39eb7f74ced2bb.md",
+      "bytes": 6502,
+      "sha256": "d8a21f3ceff3f47b83a5f2a926b56ea14b3fa4884aaa7799c42ddc1ce4283ffd"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/a5228e483703437ba7617034e4ea207f.md",
+      "bytes": 6531,
+      "sha256": "c4026ba48e59a736c0568bc094007fe46634a79339921d79b9b877f98caa2f87"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/a58e87c95bd24c16a1006b217aeac691.md",
+      "bytes": 6338,
+      "sha256": "527a90c83ab2981218bc0c12ddeba777d61bbe87e801134ca599573359d945d4"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/a9deca9adbb443208d6f08dbe4505717.md",
+      "bytes": 15109,
+      "sha256": "7385e5a48a7abfc12a1eedc3c8421f094a4ff59accbee57063c29595e0671112"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/ab65501a8e3542839707ae31cd0b8efd.md",
+      "bytes": 4269,
+      "sha256": "7034aa036cc28333283d8696d194027c443c29847b51809d0496a1f9be8d27fa"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/aba77f43a26440dfb5e7cd67934e7ebd.md",
+      "bytes": 6542,
+      "sha256": "36b91b30fbef7ed2be65db27a92354e5147361bf1b58b295863e122268ca8e1a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/abca473311ea40aca58756d859077ff7.md",
+      "bytes": 15095,
+      "sha256": "15318d7ee3c891a7208537d5d7c6ddbf3041eb01c6d0dce229d6f9a3117fe2fd"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/ad16265c76114f4eaddf75b0be2d4755.md",
+      "bytes": 6362,
+      "sha256": "362d9d92786ef0c96b29f16767d233d380a4c4d75e7f1a7715aa721c9a453090"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/aeb3b98e54124d94b4a68ab18de60514.md",
+      "bytes": 6495,
+      "sha256": "8555b067e8dabb1fad929e623bf2903c336d87ce129aac0eb0bbe165f7e0a95f"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/af4f93db10cb47c282600babe51048e1.md",
+      "bytes": 6596,
+      "sha256": "4b76814c1a029b37b6fa732aaa3d99b6c6dadee933b47f1cc36c5d93c8d12ef5"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b01782f63be44bc9ab2f6ebbf84b37f2.md",
+      "bytes": 6473,
+      "sha256": "c52d2812a9b0b7ee178ef62747ba18e2daca689b190db4525a42e142692ae0fd"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b05d68295ed141d6815aa56c8a3d3b39.md",
+      "bytes": 6488,
+      "sha256": "e06a44299bd7c0bce68c821a2866f3d3071f18aec7c70bc7de726da828448662"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b12837a817d14919b5c33b35e3bb3d5a.md",
+      "bytes": 6621,
+      "sha256": "b886d207deb4e296badec116311dd6bc1ad43e633bc78493377284c3d2bbc0da"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b1997b3f14724bb983c06963fa7b4ea6.md",
+      "bytes": 6565,
+      "sha256": "1866b60518f099a20addf1efdd8c5eaf39815da1f568748454c07ae84edbdbcb"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b23f7fa8cb1b46569f63bde1aa5fbf1f.md",
+      "bytes": 11508,
+      "sha256": "a8514a0b06ef03bccf145b7e42ca63a4cd2d31f844cd2c255f73cc18f314b692"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b3c19413e4b447adb5f1d86912db4052.md",
+      "bytes": 12171,
+      "sha256": "34b1cb7ba4b27ac9a0e054f2372c7ec9960b50793411c8a436333bad73d5695a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b47210a43fe147d4a3f2fbc081321063.md",
+      "bytes": 6513,
+      "sha256": "e6bea9e50dd8d6f36fa85f66f8b9e3fc08a0a220cdec4675e3199774bad76161"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b558d26d626b4276bd5ec38b8d42213a.md",
+      "bytes": 6543,
+      "sha256": "3fa6fb06c059cd951532ef581dd32d57362de9ea5b3ceae0848ba619ad10a117"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b6a20afe29624f73906e5e852d6f2fbf.md",
+      "bytes": 6344,
+      "sha256": "ce2933eb85da344db4d58761b0b7e1763cd4c24b9c6ed26545906b5c005b37b1"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b6ff7b82c59e4125868902e34d89630d.md",
+      "bytes": 6533,
+      "sha256": "f18ac8cb3c91a9f5f4106cad3de4337d54d0911e434b5c54b5fd2b8f67d27dd3"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b83d63bb553c4642b26bbc41f66445b3.md",
+      "bytes": 6373,
+      "sha256": "f1f3acd52550d295ec02f3c508ba8be7462467c3713b004b5d35c1a6c26fe9b7"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b91ec2110aaf4d44bd043bb787fbd910.md",
+      "bytes": 6359,
+      "sha256": "cb35c2dfb9ce8f35b21129ae22f9bc0a63dac0679ffc3df2cd7c03129d04a37d"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/b92ea843bd6342879b6a3be255743e31.md",
+      "bytes": 5362,
+      "sha256": "dbd61ba81f55540717a56eba292b0f549c109d75552432b645e43c21e179c360"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/ba0e7f67e2e7496d9df8f6617ee39ec3.md",
+      "bytes": 6284,
+      "sha256": "8ed9f1496f0dd121635c9b4e720d36cd1967eaef99f7dfc7d821b93fb980ef42"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/ba2e95cc11374757bd0945148da43b07.md",
+      "bytes": 6307,
+      "sha256": "0eeee1753775c0d945e358f218eb2e7c9b4c7609db51a74b537e43d83a2108df"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/bb3adbc3c2fb43e6a18a876c4e897c9c.md",
+      "bytes": 9963,
+      "sha256": "101e3e3b4f682c0389dc98b657d3ced7649f02effafced8031551e6256ea3e53"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/bc45121331a04af7a54e790bd4a7ea6e.md",
+      "bytes": 6599,
+      "sha256": "6ec28a41f1e7ad71491ea9a050b90a134e0477365926c5e1eb8bc9693893a1a0"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/bda335658c29473d9ba20352242c83f8.md",
+      "bytes": 17475,
+      "sha256": "cc12833430939f60da540c44b85a7f79e49a5b8f50cdd744054f102e5324f14d"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/c0ef85ab954f447fb244149dfcc44aad.md",
+      "bytes": 6487,
+      "sha256": "396b737e7b0cfb9ba2bd7b0a8d1363da97d8129494cba2d8682ef414ce74d0d3"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/c102ede2b9e249b2a2ddc9f19e0cbd7f.md",
+      "bytes": 7104,
+      "sha256": "21dea155118683bb090216404d982fe6227db0d862033a7180aa5e4ced6393c8"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/c189826cd7024780abd89fa4f067947a.md",
+      "bytes": 6557,
+      "sha256": "22d2953c2fb43f597eb5e0689ed94ab561f2ce4211ce758cb577450eb3466f8b"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/c18ef04adb54413d89bd9434a344504f.md",
+      "bytes": 6495,
+      "sha256": "03d50c28358661b2b70aebb382e75d61d35270c32e37841d537c3413658a2206"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/c445fc55a6e547ae9b1a5bb43cad1a8e.md",
+      "bytes": 6301,
+      "sha256": "56e13b7513dbd65b3d84ab1404045fdbcfcf2e8d5fc931912956ce6eae050bfa"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/c5f38ca4adc24f03a2b885938186e509.md",
+      "bytes": 6487,
+      "sha256": "09093910ccf7e6fcc5e302e330d68fe3b1ed3dbf2d43a54acbcd4e3964840c9d"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/cc0a0cc2678c4c7db20ad015a75cc1de.md",
+      "bytes": 15035,
+      "sha256": "fb8dad4f96ac27a23b817e678d96e062f0a74b8f088028fa86b05e0273b64d8e"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/cd453ee30502406db647a0c5b4011739.md",
+      "bytes": 7170,
+      "sha256": "8ef9b623d0fd33f00e2a8a90b28ce666a6ddc42b45f5a87ca92124556437f2fa"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/cdcfbe8d106844109bb8ded51dea7a8a.md",
+      "bytes": 8161,
+      "sha256": "75cb6112270c6ea23396333a94b111334e85e1a3fdccb424f5b093714eaeb087"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/ce45a338a1fc4d11a8d64ce898119f94.md",
+      "bytes": 6525,
+      "sha256": "38e4bf5ee8fb6f8184d36d48134fec5b4841f905a9bd5bef9e8b700431bea226"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/d2876dff4f5444e3b71bdeba487b2d6b.md",
+      "bytes": 6311,
+      "sha256": "3bae89c9f0d381880f9e0f7a82df1764b3c979aee84b52daf30f82b144ff10b8"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/d2f8fcaac9984a12beab502d1944ea25.md",
+      "bytes": 26474,
+      "sha256": "b137df3455c420e55bf010f3308f53bf463e6b7e45898b2044cf23444e192b40"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/d3fb5abc58af4347ab52cdc26e9b14f1.md",
+      "bytes": 7105,
+      "sha256": "6dc6aface7606d0faada66c52fe5c7b9e87198d46ccec4315a93c557b764380d"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/d56a556f29ff4ba78634e58d103c786e.md",
+      "bytes": 6487,
+      "sha256": "8cfdd151bfdfdc41ed9d8e179066ecbfa173d04baad1c66e487d44defead868b"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/d733a698d2c4477db4a4289144417e3f.md",
+      "bytes": 6539,
+      "sha256": "f460417a87c0ce9b24c3567b8a40095f62dd3bee9708e534a9ac373c6b53cd0d"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/d8d1f0aeff354b2696d3d6475c44c36e.md",
+      "bytes": 6583,
+      "sha256": "4cf89fd459da355c39f0a52c350d647c4d1c5234e549818dcf733fa51293cb02"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/d903a1d46d6e4a3c84d247789e43aa41.md",
+      "bytes": 6519,
+      "sha256": "1324558cf3f5bb69ac6b4cf3dd8b7e7b299971c8850da66be257f9079d283b79"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/d90a28dcf8294c89a7a06022a3617aba.md",
+      "bytes": 6536,
+      "sha256": "86122d7250dd6ae6601b9f4c4d2b360e9604c301b573c44df240ce9be5ae376a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/d931781bb22243fdb892937b88141cf4.md",
+      "bytes": 6507,
+      "sha256": "84ef0fe5c51d233ecc8d9d25097bdfd92349e5642b72a9ab2463d5dab3a49eb3"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/da5b4238bd6945cf9b467ff3feb9d76b.md",
+      "bytes": 10020,
+      "sha256": "7223b3a999093944354de2da4427722eca02309b6011aed5d2842cc78a0962df"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/db0cac8c53b7404b8f2c17a542db7604.md",
+      "bytes": 6623,
+      "sha256": "dcbeab289735481d6504aa1b0ed7ab0028803df5626fa664b3892feef0a7ee18"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/dc8500b4e7eb4923884f54db99d10a88.md",
+      "bytes": 6489,
+      "sha256": "bd8356eda9ca1f838cc3a40fd7ed356d0dba177d5c2a7308ad609eea735af9f8"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/de3ff3302e504029b5b5f3f18fe9c380.md",
+      "bytes": 6495,
+      "sha256": "963c96de0cb01ff501fa877152211014773625b7edb0743672cb402c27858a2e"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/de791c4976f84676bf8545b1cfb8bf41.md",
+      "bytes": 9960,
+      "sha256": "5835857c977b189db732802cff0f880f5ae4f21f4b3d704ccfb05eab31cdc9d3"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/df0b38c3ba9c49ea8dfe3f032ad2a329.md",
+      "bytes": 6520,
+      "sha256": "ce6f22ae9184de55275a03522481dba7b7960caabf8cd6e6c2dccf8d99a3cca0"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/e1ed88f315a84116a77ead21d8fe1792.md",
+      "bytes": 6297,
+      "sha256": "9c9cc19460964a1b064de1c56927ce598e83293ae12d3dcad4e38c414c148e0c"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/e321b3c9558745fcaf58fe96ec8eca05.md",
+      "bytes": 6495,
+      "sha256": "333b08b3e85983f8f1d82d0cae41186a0e263adfaf78004c1146d966a18ead75"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/e48346674b0740c19f4a13cc50a7ae66.md",
+      "bytes": 6318,
+      "sha256": "5a36f485f8f78d7a08c431624e4c14782a880fccf703c52b80fdd4009894c22a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/e576768ae5cd4522b760c36d2b364be2.md",
+      "bytes": 6512,
+      "sha256": "95de9dfedf45fa06b265de74fc9c78447cf533d86ea3e183f5091099b8bc3dde"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/e5d75469d336405a8f187368a7dc0353.md",
+      "bytes": 6491,
+      "sha256": "1fe389a000cde3eb04885ad1a72e92218b48faa13ddd90ce636136de6627841c"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/e84139e878c740ab81c558cbc7ec6548.md",
+      "bytes": 6565,
+      "sha256": "5ba8687cd140549bd0ef9384d2a142159923f487a1d11d3557673cebb6fa6d90"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/e8c7f8a36ff248cd9115d7a382324808.md",
+      "bytes": 5375,
+      "sha256": "1d54381cb8c61b9e941b2ff9fb5f8ef766c70fd5923d12c3f952ec5912782fe3"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/e9804b6dea5c4e1db80be1925463786f.md",
+      "bytes": 8261,
+      "sha256": "a7be5b62b407ec49cca8a881a9a4408d98ac8592f294d9c986da9e5a70d92df8"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/eabbd522676448fcb075f7d4b5ef4434.md",
+      "bytes": 6529,
+      "sha256": "07307bb1c629ad959d4ca19934c7f74843db2c7ccd602c82df45e698c5ed53c9"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/eb1b0526b898448688a322cce7ea6e74.md",
+      "bytes": 12177,
+      "sha256": "d5106479bf26f0b98f3b77ac55cceb78945fce933d897d87314878e28d1bf96d"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/ee9bc6c96d944f2ea8bbaaeffb31db28.md",
+      "bytes": 6596,
+      "sha256": "47eb1a82b4a8c8521fa686e9707c42e17199c873c172989a169a74ce7dd6d484"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/eef79a8840434bd6b6fd37ab4f8ff75d.md",
+      "bytes": 6527,
+      "sha256": "9ec1a9e4011d8e1de3efe9eb4a32912a564b83cf3ccab5f0e8b7726e604cf391"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/ef476f07cd9e4ba6bdac99dc6e940baa.md",
+      "bytes": 8896,
+      "sha256": "b4444508579b51b8d52404804882dd79009008f9db2d0871556e41c5b6180ab0"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f0402eea7b5a49f9b61fbd90e336b2de.md",
+      "bytes": 7123,
+      "sha256": "e9347039877782a1d42614016e548756c8c468d72287ae37f21f41e60bd3e98e"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f147597cd5e04696887257c6316eedf7.md",
+      "bytes": 6637,
+      "sha256": "75baca9e4d13efcc48cd508a14a9cc9072a6cf8e856da08d37d90583e4b1b787"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f14ca9b3213d4c3db3c5d479b4cc938e.md",
+      "bytes": 6515,
+      "sha256": "3975bea02ffbe29d9a43fa4aab5f105137e384f0910468c5be83499b1e851898"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f29ffa95c89d470b8a32e1369696327f.md",
+      "bytes": 9245,
+      "sha256": "54b052eb253d4df7df9b3cca40b1cd32aadfad92abaf523b333e9d6aabc9d212"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f40da9359c7545d2ad0eef6c3a5bf645.md",
+      "bytes": 11726,
+      "sha256": "4d0298184cf1774a3e7e1bba03910b9fe7655d3900f7275545fc178de6fb577c"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f4af2b5206264a6fa4c5040324ad272c.md",
+      "bytes": 8282,
+      "sha256": "9c2bc55e98f2c1f86b6a0d8f45cf9d74f7e8b1f62ae23903a0b52fbb84f34242"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f5838796139b4157b91b53dfd56ea0a2.md",
+      "bytes": 6559,
+      "sha256": "5d70c9b6fbfe612e43f969dda9e4b3d762b2499d1222202f62ee2514321bc719"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f5df30b02e8a4d60bf44e8af2da4d5ab.md",
+      "bytes": 4260,
+      "sha256": "7c704334599c844804e1ae93afd2995424947fb50483b35412313c0060ceaa49"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f6985401675b47c0a1c480aa156aaa0c.md",
+      "bytes": 6612,
+      "sha256": "f7aa0e5459339719d60d4428e2fa00d58167c7b8c1eaa518da99a48cb424a78a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f6b8d4c19f9649a0bdde6727182855b6.md",
+      "bytes": 6639,
+      "sha256": "8a88d1582767176bf506c78026fd09fa80a368c1946b1fbc14b9d6c7b27b8897"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f71f084dd9154318b86ca22f0fe8c36d.md",
+      "bytes": 6592,
+      "sha256": "c8dffb5049e87179ef2621bae621e049a484f8937c2e759c4c44be729b99ede2"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f7d9c92661ed44af99516400635041bf.md",
+      "bytes": 6496,
+      "sha256": "d6150d32a67afa9a6478298c63382d8c7173eb4b3816369ade290b618996d70b"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f812d4f33612403986c174602b358a2f.md",
+      "bytes": 6518,
+      "sha256": "b05b7065bf7fa6d09e0c040b776c4e2ee8ded1599afb9d1aafb34ef6e08ab1bb"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f814f4598722425cb3e7f45c32c11c90.md",
+      "bytes": 7082,
+      "sha256": "6a064ee917f194e7685c206c53fc6b4bba4a0ec70e1edd9bab3fe4a08cbe9e8d"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f85948e2b4e145a4b56ab369c1a70c22.md",
+      "bytes": 6573,
+      "sha256": "3f6411724bd7c8287d723aed2adc553e220ce7e571a9e2c1da622ecbbb683359"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f9035f49dbab4676b23ab9e4f45678f9.md",
+      "bytes": 6565,
+      "sha256": "f9527539eb8524c22c19ea4529813f5f535651c95e858f29c4e7f835f45e6853"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/fd9d0fa7117a4dc3b45cfed0e7be614b.md",
+      "bytes": 13323,
+      "sha256": "4bd5acbce5cefd053595026c80921bc284669c292f5cbc3089eac96c0ad2f1a5"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/fe8916b03b084e82af587ac5a900349b.md",
+      "bytes": 12877,
+      "sha256": "b39090eee792cf1f4d45bf82a6aedcf4a679b1ebbc85b9f68b3eb9aa3ca51f01"
+    },
+    {
+      "path": "enterprise-architecture/continuum/motivation/constraint/mandate/e024703b32c5437481ce290e8e50b079.md",
+      "bytes": 4140,
+      "sha256": "131493e3b1877214e65e1f780155871a8845e5c7f280161d094d6dbb81de7a0d"
+    },
+    {
+      "path": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/172720628fa540928e34b52562c7067f.md",
+      "bytes": 4136,
+      "sha256": "71436465cd9d0c513083bf3a989def78f2b6615a45185b55c7e8a6765930b1d4"
+    },
+    {
+      "path": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/284b53f4a3c54acdba9e707124e997b8.md",
+      "bytes": 4269,
+      "sha256": "1144ce2f1474e9b8a4495fc16e311fc0c236dfd803c1ee4a11fa801c0368f833"
+    },
+    {
+      "path": "enterprise-architecture/continuum/motivation/stakeholder/1dc29678ec4a4a498620c84ffa03c2bb.md",
+      "bytes": 5136,
+      "sha256": "fe54edceb0ae5ce2bc6750d8d8f1058b0a1ffe028e8dd6aacfa42c4139fbfb5f"
+    },
+    {
+      "path": "enterprise-architecture/continuum/motivation/stakeholder/c20aa17ce4aa4a58be5eb3cff2ecdd1d.md",
+      "bytes": 9529,
+      "sha256": "66e10dd64706f20391430745552864d9da8d695f1eea0d282614c06a3fb1e925"
+    },
+    {
+      "path": "enterprise-architecture/continuum/motivation/stakeholder/ec45ffa1b7d841cf920aa467d4d2b1f4.md",
+      "bytes": 5198,
+      "sha256": "8313756d79d207e2eb0db6e2b329edc3276bc6e3e7e633dddc51e1d66a93066a"
+    },
+    {
+      "path": "enterprise-architecture/continuum/navigation.json",
+      "bytes": 717471,
+      "sha256": "8b6ab9698202933c031c223de4d18e1a002aa22c530ab481cd6529cf994c6a83"
+    },
+    {
+      "path": "enterprise-architecture/design/archimate/README.md",
+      "bytes": 16800,
+      "sha256": "97344131624394f5075abaefe6de07d6b9d7d02f947851cc61b73632e4db2c92"
+    },
+    {
+      "path": "enterprise-architecture/design/archimate/projection-template.xml",
+      "bytes": 9480429,
+      "sha256": "cbf1a2549a1061c9950d91905c804864efdfb5f58fbe839d3bf35815cb1e965a"
+    },
+    {
+      "path": "enterprise-architecture/design/archimate/published/1.1.19/Harmonia-Architecture.xml",
+      "bytes": 28093718,
+      "sha256": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/ai-agent-reports/20261101T223733Z-openspec-subject-capability-reconciliation.md",
+      "bytes": 16098,
+      "sha256": "bf0410696a4d46f726d8c9db57802d2753f237a3e3e6104fe7eb05bf6fdfc0ed"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/ai-agent-reports/20261101T225438Z-bounded-subject-reconciliation.md",
+      "bytes": 13533,
+      "sha256": "0230c71dccbc80eb605195329b7a6dfd01806d082aa71e9455fd411f42fecc73"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/ai-agent-reports/20261101T232558Z-accepted-subject-incorporation.md",
+      "bytes": 17343,
+      "sha256": "3fd377ca5d23ac70d920b2a51a16cf6b536bd6af2b82c52bbe123fc63f7002dd"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/ai-agent-reports/20261102T001123Z-views-reconciliation.md",
+      "bytes": 8563,
+      "sha256": "1e9f235291698a4eac432571554795a2a99aee3b8079c8b4e3e06732cfe26b39"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/ai-agent-reports/20261102T005128Z-subject-grouping-hierarchy.md",
+      "bytes": 14209,
+      "sha256": "2ec658dd1780e53dba58e3fc5b00aac686c96323815e556fa22d2d976d858b26"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/ai-agent-reports/20261102T013425Z-complete-subject-views.md",
+      "bytes": 13785,
+      "sha256": "65634cd9c8f0f4fddf389d5eb85077f7943fda1b5e7324b1b659a236eacd14b2"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/ai-agent-reports/20261102T024051Z-closure-transition-checkpoint.md",
+      "bytes": 14131,
+      "sha256": "bc3e37e17f876f1ab6166e227c3baecc4c155e0a3571b91c776c61398132619c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/ai-agent-reports/20261102T030057Z-release-1-1-19-closure.md",
+      "bytes": 13736,
+      "sha256": "6441c39f621d2adedb72171f77a75216f652038b3a6bbc222c6f0069ea1ddf26"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/architectural-delta.json",
+      "bytes": 3824520,
+      "sha256": "734ea6082d1db1347c8d087b005085a48d93fb3f7d75ebbd718d3c05fad2966a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/bounded-subject-review/assess_subjects.py",
+      "bytes": 14154,
+      "sha256": "c6cf489800ec3ca8fd2f797a55e0df4e62a2580ea9f9676dfbba761c8abfa9ea"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/bounded-subject-review/change-requests.json",
+      "bytes": 78610,
+      "sha256": "fc3f952d67776fc1aae50edc41f222fb8509f7871fa73d3d7a7c09617b5b7558"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/bounded-subject-review/payload-preflight.json",
+      "bytes": 271,
+      "sha256": "18fa143f49db9cc1a77dd4278bd0515ce711831c94602612b9f0d23c820278b1"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/bounded-subject-review/prepare_change_review.py",
+      "bytes": 16576,
+      "sha256": "31d765dab1cb18cd778861c97e2df08418f27bf68bca26cfe98cc03504d5ee88"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/bounded-subject-review/review-succession.json",
+      "bytes": 1973,
+      "sha256": "1dcf0d370932c3d13e8a41a980e1266e6e5a142383144f84d7f39864d1f59381"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/bounded-subject-review/scoped-subject-evidence.json",
+      "bytes": 90051,
+      "sha256": "8f391d569e5a5f6875b739f28599e976a45f9d0e6fdf20a4667e51ea27a97f75"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/bounded-subject-review/subject-reconciliation.csv",
+      "bytes": 12658,
+      "sha256": "7f9fadaccd6c965278776f4cd4852229d8be1b67927e732f3d99653f10dd4b04"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/bounded-subject-review/summary.json",
+      "bytes": 1801,
+      "sha256": "a692a24b96835d2b67498492d9117b79587846db0ffabb1eb297b65ba10cfbd3"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/bounded-subject-review/verification.json",
+      "bytes": 3693,
+      "sha256": "13cb6636d489c0b2f542b144546b7e1573a1b2d7dfe98c3d873e3fda042136cb"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/bounded-subject-review/verify_subjects.py",
+      "bytes": 10676,
+      "sha256": "98129f505d18d6c3370ffa68d2231e2b14d647a5d84975f4327a315b0282caff"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/archi-comparison-summary.json",
+      "bytes": 125034,
+      "sha256": "46d63be0ec92fc3e53920cac145ffc0076604b658bb572c7f9bd1035a07797c2"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/archi-imported.archimate.gz",
+      "bytes": 2737394,
+      "sha256": "2ba276ad95ccc967fa1dc948a3aafce124e06946954f2681d25bb7bf59e47633"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/archi-normalised-comparison.json.gz",
+      "bytes": 33036,
+      "sha256": "12b8de4fe71d8613d7c9d9915b95550630607c001a678786d0aca4161c6e4c7b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/archi-raw-comparison.json.gz",
+      "bytes": 953157,
+      "sha256": "f48e23cb179d7e4bfb14f64339dc214874ab9784e5c0504249661cbdbc2b238f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/archi-returned.xml.gz",
+      "bytes": 2805167,
+      "sha256": "ec7ae8a859a5c36d92ef25a05cb81132dcc0966231b48254f0f3cbd293da7aaf"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/archi-transport-classification.json",
+      "bytes": 2211,
+      "sha256": "aa8d253a2e9e705588901bc62689ce8e6404d82452e9f20b0dd855a3e444c2b6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/candidate-to-published-comparison.json",
+      "bytes": 4269,
+      "sha256": "780f78beebd974205b732f1385c8907428be3147b3cbf021fd238eaaff5e750f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/checkpoint-final-checks.json",
+      "bytes": 640,
+      "sha256": "6fef99bc605159cc04dab057b28247bd5d3ca5600177b10cc663a8042c1c50fd"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/checkpoint-report-link-check.json",
+      "bytes": 158,
+      "sha256": "2b15becc7d960a383e86447073c26b7cf262e9b9b649c361a7e5a55948fdc4a9"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/closure-evidence-layout.json",
+      "bytes": 2291,
+      "sha256": "8703ffa8b6d395081e30754b8f7d55f3ac0e5e7486ed5a05f86c1a35cd31c5f2"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/closure-preservation-check.json",
+      "bytes": 1245,
+      "sha256": "c6677d86572405cbe5b1c3834783a272854ce0e3e7677f32857a7a883f0b749e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/excluded-working-files.json",
+      "bytes": 2476,
+      "sha256": "9eaf4728fa99080c16e9d5a46026659ec18f7563bde84f8b53bc9d51bde67b57"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/git-checkpoint.json",
+      "bytes": 431,
+      "sha256": "60a16edc9ee3b5b0c7ccbda3be10d6bc80f1871e1b576b941a6a7c7aac554ce8"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/inherited-canonical-qualifications.json",
+      "bytes": 450263,
+      "sha256": "1e2c567abbf8cab4bb36376baebec0ba00f79f3259ab8f15ad76f7c8fb6d57c6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/prepared-register-link-check.json",
+      "bytes": 165,
+      "sha256": "df9e4828b1a9f13f39679156cd0c706169a61fa2405e63e6c0c86c6c7690a6c5"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/release-1.1.19-closure-validation.json",
+      "bytes": 3562,
+      "sha256": "ed5206ecf6c8cdc32d38b7b6b1a34cf12a9f82b6b6dabb19f7a361f8f9e20ee0"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/release-1.1.19-links.json",
+      "bytes": 452,
+      "sha256": "228b02d61022a819975ea4ed2b4730811815a99b111c6cca6b6dea7eeef27e6e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/release-1.1.19-preservation.json",
+      "bytes": 1918,
+      "sha256": "6c392a28852f46ed8aec2cca709891325ed672c12efc075196967405dc5b8a76"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/release-1.1.19-reproducibility.json",
+      "bytes": 8905,
+      "sha256": "c115baec64a538b8af7e412fee3fc7584a0cb84e410d8fa5da710ed7d6584051"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/release-1.1.19-transport/archi-comparison-summary.json",
+      "bytes": 125062,
+      "sha256": "3c381a011db09449a9b8d5a296ed61d8c382d6cbcb33b98e056dedb8d29f9839"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/release-1.1.19-transport/archi-imported.archimate.gz",
+      "bytes": 2737350,
+      "sha256": "d22a5c1430ca83c0dc9c2d1340dd2edd69d966c067db8505acee2cde1c89b8d5"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/release-1.1.19-transport/archi-normalised-comparison.json.gz",
+      "bytes": 33006,
+      "sha256": "3346a5c73c8f25798554fdd90a2e61ffc2672c98c39c82437ed2de39bdfccd7b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/release-1.1.19-transport/archi-raw-comparison.json.gz",
+      "bytes": 953158,
+      "sha256": "d9aa29b7332e03edd59740a6f7d2a358d6ed8ba5b01032a7b5b4bf03e4f33390"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/release-1.1.19-transport/archi-returned.xml.gz",
+      "bytes": 2805167,
+      "sha256": "0b5ec24e3953b2bd1ced64d12407faec657068dd9e8af02881b5e169df19dc39"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/release-1.1.19-transport/archi-transport-classification.json",
+      "bytes": 2211,
+      "sha256": "aa8d253a2e9e705588901bc62689ce8e6404d82452e9f20b0dd855a3e444c2b6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/release-1.1.19-transport/classify-preserved-transport.py",
+      "bytes": 4450,
+      "sha256": "6f9076ff4b4a7229e090d290ba26d71b7085716816767c5fdc4b153ab0544dac"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/release-1.1.19-transport/execution.json",
+      "bytes": 1294,
+      "sha256": "061fc0c87ef3ca0620d37bd4e2e582f6b25aff38b8c3f752c9dda86bdb70fcb7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/transfer-register.json",
+      "bytes": 24082,
+      "sha256": "256d315d9eb50980c61774fcbe14cfd558d8eb2403913330d1525b5774ca544a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/Harmonia-Subjects-Views-reconciled-unreleased.xml",
+      "bytes": 28093718,
+      "sha256": "8c54e0dbd0b86c8780d063caf0aa2650a24a41cf0e693fccb2c0e2c5609c4688"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/final-mechanical-check.json",
+      "bytes": 773,
+      "sha256": "c4fceede03650974c612807bd5b11474a7d99b61eae85ba63a18e649d6a22e05"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/five-element-results.json",
+      "bytes": 3498,
+      "sha256": "d2187826a9a65d9862c3b7f1db7bc467d29b57f7c83f628b0910822c0580521c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/generation-validation.json",
+      "bytes": 198821,
+      "sha256": "237b84ebef98ec479408711a69c96afaf79cd6eba66b4647d211eb9e76820988"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/identity-reconciliation.json",
+      "bytes": 5322,
+      "sha256": "321a455ac8f1c39c58885e16b3a69ad7aa22b403c80f48e1b1c9cb825f61e64d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/incorporate_approved.py",
+      "bytes": 10389,
+      "sha256": "28f90a2791c8c717e24a4764b26ac35f0219bf91a7a4587d891a0d451afe52bd"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/incorporation-validation.json",
+      "bytes": 197974,
+      "sha256": "b4fd6bb7233452c4dd4a24db8d84b343a93b89020f1df3f662cafd7f2d718add"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/initial-checks/Harmonia-Subjects-Views-reconciled-unreleased.xml.gz",
+      "bytes": 3400584,
+      "sha256": "c7957dbc1756a99bfc3e886c66b202d6d011289e9497aa2c93dee70e131bc0b7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/initial-checks/generation-validation.json",
+      "bytes": 198821,
+      "sha256": "7e05725966b51bce69bea554c4c28ca3c4a3fe0f14b41400c485d7a075f07c6e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/initial-checks/presentation-transformations.json",
+      "bytes": 1163,
+      "sha256": "daae5582351c20896a5a658cc739bd28d5c070b6fc3a21c27d4cf6bb5f18cef8"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/initial-checks/projection-template.reconciled.xml.gz",
+      "bytes": 1001070,
+      "sha256": "dd3816b2b488434a824a59f44f7372a27effe7631ad63c8c89ada244caac38d4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/initial-checks/test-results.json",
+      "bytes": 471,
+      "sha256": "8f4d1766da48dfa659619930f5331769e0b9981f9965df9e0a0fa6e815b266f8"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/initial-checks/verification.json",
+      "bytes": 1762,
+      "sha256": "0c2f0463561de0d613dad45780ce45dbf24733cfd725993c5e1d303e77ddf5c2"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/java-architecture-tests.log.gz",
+      "bytes": 286933,
+      "sha256": "7d51077906c1f0c4cab218848ed1e45b05212612e366ee01cc864b0183d3e57a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/java-test-results.json",
+      "bytes": 601,
+      "sha256": "e6f6080b29a3c31f69747230a31ea8a7e28bcaf8c7cb0ad874ec1a0035f15e07"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/manifest-check.json",
+      "bytes": 173,
+      "sha256": "cbab76562a0946439619034840e305d90378754e547dac9efd6c56350f171227"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/presentation-preflight.json",
+      "bytes": 198821,
+      "sha256": "237b84ebef98ec479408711a69c96afaf79cd6eba66b4647d211eb9e76820988"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/presentation-transformations.json",
+      "bytes": 1213,
+      "sha256": "9846b714d581fd4b9bac608c79ca2c44704f701eb1b35d44fa448bd58947d386"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/projection-template.reconciled.xml",
+      "bytes": 9480429,
+      "sha256": "cbf1a2549a1061c9950d91905c804864efdfb5f58fbe839d3bf35815cb1e965a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/provenance-check.json",
+      "bytes": 2189,
+      "sha256": "5a7d9dfaf5e3fb53a9f2ebb665314694861ab3c05fc4e059f0089e9cf4738bcf"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/reconcile_and_verify.py",
+      "bytes": 11711,
+      "sha256": "ae14970c07ad7f9e2ded28f36b7c8a1fa821e33fb1ca329b55b93e47f995f300"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/reprojection-check.json",
+      "bytes": 1062,
+      "sha256": "68adbef232d901e61db37ef5f10ac9dd3e25e4746a54266bc697ea2c21ecdcdb"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/resulting-git-status.txt",
+      "bytes": 19484,
+      "sha256": "5e6eeb3c0bf0b22d1cf80b924a642df3231cf31a997ca4944cecc97d5ca6e871"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/self-baseline-review-check.json",
+      "bytes": 201,
+      "sha256": "7a722f04ede19f0e3fd4f7a72a0c6e86064f2632dee3bb5a46b3f7b7c5d31650"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/stakeholder-evolution.json",
+      "bytes": 1824,
+      "sha256": "fc919f1ea7482afab0da9766be5bc987e39f52fad52ab012ebeeccd3c1de8081"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/tooling-test-results.json",
+      "bytes": 648,
+      "sha256": "bf7fa36a0db20db493fa04d7dec6627338f4b54b45bc2a5cab5777e9d9e756b1"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/verification.json",
+      "bytes": 1762,
+      "sha256": "b107ea1ae19a3d5d9dc2cbfd2f09dee299ac142aaa50215bd878ebba73648ea0"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/alignment-summary.json",
+      "bytes": 459,
+      "sha256": "d3dcccdb8269460e4b00d7305222a50005496ff53e25b718dc12690427031203"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/assess.py",
+      "bytes": 10297,
+      "sha256": "35ed954499832909002361b32f9174c5dc678a44559b9a51b9183b2840f3eee7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidate-assessment.csv",
+      "bytes": 589712,
+      "sha256": "792085a86f9d485839d1d460effd5db29240f76c1c7392b0c06fea883afad418"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidate-subject-hierarchy.json",
+      "bytes": 5262,
+      "sha256": "8d3f632ae3696d7dd8b42387ab34244850f365900b719d00258f094a7083b96b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidates.json",
+      "bytes": 2809380,
+      "sha256": "c86aafb033fd1604cedca564f9ac74446377ccd8fe64c075d531bf295174dbe7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/duplicate-review.json",
+      "bytes": 12749,
+      "sha256": "947f30d71adff04b18c69f08c4b44b5c54d4a099fd7fcc001d6fdfccab0f3908"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/existing-features.json",
+      "bytes": 262825,
+      "sha256": "fd49372db26f7e1d47e581c0e745ae8ae503b2ddc1286da50290afc315d9cb83"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/governed-subjects.json",
+      "bytes": 294738,
+      "sha256": "18642e2825b75925c18a0107ee7a6239c8a232a1ca5c939cbbc51b0215fa1d82"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/incoming-grouping-inventory.json",
+      "bytes": 178335,
+      "sha256": "1374f1e2dcc6ac4b76e9591bad5baa4996ff2cc1dd6135cc65eb3f68614ad3b8"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/input-pins.json",
+      "bytes": 532400,
+      "sha256": "7672f6852343b419e25c0dfe15d89aeb6e3c89ca28afb3b7227887f235f93198"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/mapping-targets.json",
+      "bytes": 45735,
+      "sha256": "56fab1c965b00293db524c6f7e3fa066effbd813f8f2d8b3fa9b98e7aea6d9d6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/prepare_alignment.py",
+      "bytes": 39315,
+      "sha256": "d5418d5a125fdae8a52aff6c6323113e49e03c19e4aa30acf49cf649b8cb68f8"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/source-alignment-review.json",
+      "bytes": 894185,
+      "sha256": "e75b185ade243a35a2e1984046fa0fac11db5a6532a680e0c27afd39513e128e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/source-records.json",
+      "bytes": 631048,
+      "sha256": "81b3db02f49146085b31941e7241ec0550a966046cd3f7e3dcc3331701ee81da"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/subject-label-observations.json",
+      "bytes": 15150,
+      "sha256": "cd9034decb22c37f8320e2aec404ac08d07c103c98b88d210246767e0e0cee01"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/summary.json",
+      "bytes": 73976,
+      "sha256": "fab2b089ac8b34c538757743e6835911dff999aa9c53b4b4602c7f750bccf4cc"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/verification.json",
+      "bytes": 3633,
+      "sha256": "32e5193c63b9283b4a430436e353abf979571289e08862491b5451dab6c3a2c6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/verify.py",
+      "bytes": 6435,
+      "sha256": "f04a942983efa151d3ab3993c37af7c8d5926739428acaf9a5fe8357ca62085e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/report-index.md",
+      "bytes": 3115,
+      "sha256": "6b59ba35610f764dee8c5dd9638c23ad0fc9d30d13d301b8637b1e5e08e43259"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/Harmonia-Subject-Hierarchy-canonical-unreleased.xml",
+      "bytes": 27876382,
+      "sha256": "caf647a098339bb25af215ba597976f701d14fe8a335cec6b278f94c0de22871"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/all-120-dispositions.csv",
+      "bytes": 41090,
+      "sha256": "7f3945388e6f7d0cd5481faf5be4d3f6fbaf803603bebf2cd0492d48e71e60b1"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/authored-presentation-xsd.json",
+      "bytes": 2687,
+      "sha256": "736a1c6c2c589adcecfa21c329306fea06ac1a0ea640e761ab826c5ab58eed22"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/canonical-generation-validation.json",
+      "bytes": 197953,
+      "sha256": "2abe1862143faaf08e09d377c56f6ee1d767a9c0f59f573e1d32bcca1fae6a21"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/creation-validation.json",
+      "bytes": 197106,
+      "sha256": "6c52ef2896680da7a331a9388e02fdff339d0f8bae040234987eef2960fb1843"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/establish_relationships.py",
+      "bytes": 7033,
+      "sha256": "83fce5144d8d6053032d54c06b7abef907c26e6ba684022957aba68680fdf876"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/final-mechanical-check.json",
+      "bytes": 646,
+      "sha256": "899a05a81b5327601fb865dccd83aa401cf6cbdf91c177de651eb9c1a5d096f2"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/folder-reconciliation.json",
+      "bytes": 73900,
+      "sha256": "c3f0daf570084e0bbbb9f0dd98a9a14893adaeb251058500eced4fe74f8c39cb"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/grouping-plan.json",
+      "bytes": 44700,
+      "sha256": "0494ca039dcafa4b870242a48f89ff2aa46e66a43e451846af3ad860cb188e6f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/incorporate_groupings.py",
+      "bytes": 9492,
+      "sha256": "5bf624a80763f1eca62eb9fce4baf7f41b9efa1ab7b4855e2bfdfb9d870fb798"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/incorporated-groupings.json",
+      "bytes": 86983,
+      "sha256": "15c36ee4d3ba1b1e79d3788111ae3703cd17b8e8df49c012d508288fb39a3f9f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/java-architecture-test-results.json",
+      "bytes": 767,
+      "sha256": "d0947a673c8ed7226e134fb648743d95c6977a28327edef23544158e5eb83add"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/java-architecture-tests.log.gz",
+      "bytes": 286936,
+      "sha256": "4d7468ec435b3c9084ad64618d85f6ec60944f43c60625c84714738f7e0367b1"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/manifest-check.json",
+      "bytes": 173,
+      "sha256": "6fe259a36f3e4c5529f078eea13584d00669853262e8437212b2ab7a4aafee70"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/non-grouping-exceptions.json",
+      "bytes": 5151,
+      "sha256": "e033a9f69fc1ecb5ef8f0a9c40540066ace5cb6f908c9e58cb8055561858f3cd"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/projection-template.staged.xml",
+      "bytes": 9480439,
+      "sha256": "d1981deff7cdf180973b2fe6a0f5e3babf9bc4be941cfbe1010f973dc66399e9"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/provenance-check.json",
+      "bytes": 2004,
+      "sha256": "bf1538f684f80fe8367db08bbb47419ca939d64f5ac1fbd6f8bf15b51b27cbcd"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/relationship-results.json",
+      "bytes": 169488,
+      "sha256": "a537c2ed6cd893df857c6c478b8bf983b00094fe58758f0d3329b4a0cdede375"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/relationship-validation.json",
+      "bytes": 197106,
+      "sha256": "aba96d463b22547f3dad266db2e4eb17a5144819e81c01844eb35463662e4048"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/remaining-unresolved-references.json",
+      "bytes": 2995,
+      "sha256": "6f20913255fef655f42ae8e7325655616acaa69452fffbc99cbc31d955fe29f7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/reprojection-check.json",
+      "bytes": 1062,
+      "sha256": "8bbae5b3e9e390ace2faed6d5e72c93fc4fa510e9a0d307d76a8aa0f45502699"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/resulting-git-status.txt",
+      "bytes": 18865,
+      "sha256": "1c7cec422d79ef76e3a87335fae90130a255aecd67e96d8920fcc5f37d7c6f06"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/spelling-corrections.json",
+      "bytes": 529,
+      "sha256": "2f3e93b9916a1873746bf2465742cfdec938206d13ba8c1fef04ed1e28f9c644"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/tooling-test-results.json",
+      "bytes": 529,
+      "sha256": "edbb77b1c490cee6b25264e154924e42659a7c33a75b291fbf541f0c8fa6f3d8"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/verification.json",
+      "bytes": 1727,
+      "sha256": "522a2ae9b7e9609d7d95e3d64f39614ab65c022ad44cb09d062e2bf424b53f2e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/verify_and_project.py",
+      "bytes": 11273,
+      "sha256": "0f20ff8021a0d8c8e213f5f98f16407fb1cc587c0b2c7ec4954b05b3fe19c53a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/Harmonia-Subjects-unreleased.xml",
+      "bytes": 27193347,
+      "sha256": "aa899767de1b146feb27fe08b7f40fafa1c7f691178643e7f921de285040b631"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/final-test-results.json",
+      "bytes": 695,
+      "sha256": "7395fb9e4be0f1a0dffefa672764c96e67742a71e5fae697ba947af2d846facf"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/incorporate_subjects.py",
+      "bytes": 11575,
+      "sha256": "a88f58ded6a17dcd1edb63eb0e6976fe6c456af84b4bb15a1ea28bfced81a676"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/incorporated-classification-relationships.csv",
+      "bytes": 6563,
+      "sha256": "5aba20a8e4cc31a5a866258784881def580bb50fc0fdcb56c03e5168e0c304ea"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/incorporated-subjects.csv",
+      "bytes": 12238,
+      "sha256": "2efa32031dd493022900d438377b2d9b8ea75135e62b17c8dc0858d764d81c64"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/incorporation-results.json",
+      "bytes": 36935,
+      "sha256": "6199ec22309f03b03d699df0d9d2557c5a3447a739a6000ee6332179f6d2b0ff"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/projection-validation.json",
+      "bytes": 1062,
+      "sha256": "7cf83420155440c46921f7d493820007ccc145b3cca79fe7c7af489d989d66ec"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/run_tests_with_retained_inputs.py",
+      "bytes": 2965,
+      "sha256": "3c87b47dfeab85403aa73e6119de087297715f86a92ec21b56e355a4ddddc8d4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/supplemental-test-results.json",
+      "bytes": 846,
+      "sha256": "ab2ef106519e0dc992d91bf43ac762773594223435ab8172cc48555382ba6fd6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/test-adjustments.json",
+      "bytes": 1498,
+      "sha256": "ad8920087c7272b297dd0b0f7a4d299975642631872d7eaf9d763abc09d6556b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/verification.json",
+      "bytes": 7505,
+      "sha256": "512c5945772389bc5566aaa4670a6f2b9d9f2a01df7ce9927e40a0b64c904c9c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/verify_incorporation.py",
+      "bytes": 12795,
+      "sha256": "c1ccac9b85d65d99708ec5826ea9b1a659c588d0bbc062d72301d382ebc8b940"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/authored-existing-view-change.json",
+      "bytes": 396,
+      "sha256": "47ecadc0d7e69fa5b7e3f07375a594834c2ce5bbc710ddf73b34151d8dd8b5c0"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/canonical-projection-validation.json",
+      "bytes": 171388,
+      "sha256": "00adba7a66f2698fbff1c6953c5ebab72b8e7941f99cfacb7c49e4f3c21ed970"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/changed-existing-views.json",
+      "bytes": 5589,
+      "sha256": "19b45f848f71f5cb39f481ba8ee3110cabb689311a23458947a07ea431a57a23"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/compare_presentation.py",
+      "bytes": 16924,
+      "sha256": "0ce48c7b15088d0c22f822223a977444a1b11205209abab3af3cabff889ee6ff"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/comparison.md",
+      "bytes": 9861,
+      "sha256": "5448362b12903eef152afd1d7577fff9c792542d8ef522c2d07c7e4ae489d32a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/final-mechanical-check.json",
+      "bytes": 275,
+      "sha256": "a21b9a19e0cd9e28ac75ad9f9c20f650a202365379096721d16683a5339047e4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/folder-inventories.json",
+      "bytes": 2711040,
+      "sha256": "138df02b87dfdd5aebb48065b84c12ef5b7c0607c2e67d7d0eaca440f52040d7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/intentional-transformations.json",
+      "bytes": 13744,
+      "sha256": "5bc3559fea4f829daa6ae713b1ac547c7f0b76f63f7ca521e3c64fe3c64a8405"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/preservation-verification.json",
+      "bytes": 681,
+      "sha256": "73b1720723a7b7e4f3a125108ee9d76ebf254dc9d0b2ee0c0fdc547dcc945bf8"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/projection-template.staged.xml",
+      "bytes": 9480437,
+      "sha256": "efde22adeb5a77b5ada8957f05dd536753c647f5885b9f3132d3588cf9efae3c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/provenance-check.json",
+      "bytes": 1811,
+      "sha256": "4b2c0ace0e6ed34884727a9523ba0ac4ffb23d3b796fcce3c0d6d2b3e30a0728"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/relationship-endpoint-check.json",
+      "bytes": 23,
+      "sha256": "873688e870649106b2aa593fd19ceb36a274e6145e5ce8c179f3d6bb343f3f6d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/staged-generation-preflight.json",
+      "bytes": 364,
+      "sha256": "ec2865b1bb05ae15675f732ae9a46c5c78f402746f29be04a8b5def98879c8af"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/structural-probe-xsd.json",
+      "bytes": 27794,
+      "sha256": "2b4b7ae9b440e8bd7d6fdf8203d25dea176e5aea76afe133b14236a86c98f1b7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/summary.json",
+      "bytes": 2595,
+      "sha256": "ae4aeb3225fa6293973b0326816a94bf63b774134eb05375588d25c1cb5a2b40"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/unresolved-references.json",
+      "bytes": 68294,
+      "sha256": "82f4ce48aba1934f3f7e7a9c3e4eac29691b45ed44579515080b55fa3953a104"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/verify_preservation.py",
+      "bytes": 3646,
+      "sha256": "6dcd0eed4867cd4ae8579377557924db48a50ea21ed966611ac5e5d46b999063"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/view-comparison.json",
+      "bytes": 406000,
+      "sha256": "9acce44d5c1e4975832960dc8cde05b5b252bf35970236e2ecb0058c894db1ae"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/Harmonia-Continuum-1.1.18-001-004.xml",
+      "bytes": 29121058,
+      "sha256": "4ddfaa9045d8d0196f1003c9344d85eb2f121398a79a579fbb6c18545470c0de"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/Harmonia-OpenSpec-Expanded-Subject-Capability-Mapping.md",
+      "bytes": 414779,
+      "sha256": "b6f59ce36ad4b7719fd0e954e4c4b0e86a874fe5cab2459c1804019e43944094"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T000247Z-views-reconciliation.md",
+      "bytes": 8386,
+      "sha256": "823d5d0c9a8289b407ebc35243e66a2eff3a9bb9837665cf5cad196bb604639a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+      "bytes": 10786,
+      "sha256": "3ba6a88a66c3c4956e80e6676a9b60ceb04454b59d510643ace7ba1b7dd8fc5d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T011114Z-complete-subject-views.md",
+      "bytes": 5331,
+      "sha256": "3136dcc41913c0daf4d9252e402ebe190a4d0c8209e981cffe38c48e94b7c0d9"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T020822Z-closure-and-successor-transition.md",
+      "bytes": 7118,
+      "sha256": "736ea2a462b4e5225ab858f5649156b1ee1ebc816fbd29bdc3863f055fe00e02"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T025100Z-release-1-1-19-revised-disposition.md",
+      "bytes": 2852,
+      "sha256": "9bf418f0195048507d100fa12da0f4a7d38ad340b088c353ab2591c037f04e55"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md",
+      "bytes": 7900,
+      "sha256": "4cdc2217cc0bb8e8d2296537a1228cf7c7423ee423103d6d56857f87c57584dc"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md",
+      "bytes": 2090,
+      "sha256": "8b68c5549974d99cfcf3a7048106c355b174453e9ee01030b888c77a482260bc"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md",
+      "bytes": 5767,
+      "sha256": "92996e6d7a1612c31e86d015edca55effa5b2684f796638b1a0c9e2079922eb7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/bounded-subject-review/change-review.md",
+      "bytes": 3441,
+      "sha256": "51c7a3b99c1167ec60b2460247aaeb93cba155ba5ac86df525a3c5c72d854e15"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/bounded-subject-review/hcrl-1.1.18-001.pending.md",
+      "bytes": 19551,
+      "sha256": "dde39053a21ae68148dccbfcfede53351811b89f89d095f950f3026af17a0ebf"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/bounded-subject-review/preservation-pins.json",
+      "bytes": 427934,
+      "sha256": "f08ca329c70fb13078ce199001a53e98e1554682a2b67c07748ef81017faa414"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/bounded-subject-review/report-index.md",
+      "bytes": 676,
+      "sha256": "a4651c7b4b8e2d2495e957948cdda60a938057c193ec403787e0d9d1e8d47fda"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/closure-transition/change-review.md",
+      "bytes": 236118,
+      "sha256": "fbd065166c04c04190460f5a45b0ea6b61ab6916af6e30cc017957c710fbfaa6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/closure-transition/hcrl-1.1.18-001.pending.md",
+      "bytes": 47297,
+      "sha256": "a97fa48114bfd4ebaba37814d8507550212bc718f1cebb2d3ec8acdf106e7fee"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/closure-transition/input-pins.json",
+      "bytes": 418285,
+      "sha256": "95f8523ee9891870a9cb817893ce0362e99df7632543ceeb63eaa0363b7af087"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/complete-views/MANIFEST.md",
+      "bytes": 1774289,
+      "sha256": "5cd27ce1a0213dce338591b373b34db34a60bdad23de22943aef229f1a6542eb"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/complete-views/combined-stakeholder.md",
+      "bytes": 7826,
+      "sha256": "cfc7af1cdbb20a23227757083e0091b042555157bddf351adbe87ea56062d128"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/complete-views/hcrl-1.1.18-001.pending.md",
+      "bytes": 41090,
+      "sha256": "bfad79477944bac7bf79a4d27ce0fa6f2845c2381ece11f59a76fd6bb8f6732e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/complete-views/input-pins.json",
+      "bytes": 405250,
+      "sha256": "42a11a5beb22c32ef4b003d5003e12448fc9af3a0b8c30b3a6f480cce0f1f3b4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/complete-views/navigation.json",
+      "bytes": 716508,
+      "sha256": "2773356203289024f0cdb8171b572edca079c2751d273bffae5141c1df8874dc"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/complete-views/projection-template.xml",
+      "bytes": 9280114,
+      "sha256": "639f6f36ec399ecab48e1d1cecb882dde074c928510c00031663b7286dd0a8af"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/complete-views/test_continuum.py",
+      "bytes": 23367,
+      "sha256": "eb2fc2b96db3ade349da41ec3e169a10a663c8f8d5e082074e10aa7e831ac5b4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/complete-views/test_continuum_navigation.py",
+      "bytes": 21619,
+      "sha256": "015b572c734d8e8686b791ca76cb2d596dc5755aeb07b019bfb5cec5216c6d92"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/MANIFEST.md",
+      "bytes": 1695903,
+      "sha256": "feddeacbe7dc8c824f97c1cd97c9c29d4ec87c724f031e94408aa6e961a12c2b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/0233415953ed487fbbe407ebb469e7bc.md",
+      "bytes": 13222,
+      "sha256": "b1de778f107f28d459bc9cac286d04955f63f2d193ec2126f43e6a264b231681"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/03cfbc2cac494fb9a15106c2c571d384.md",
+      "bytes": 6798,
+      "sha256": "ba6cb13503b36c6554b50fc5aa3358e6134dc181b169e49facb24df260805e68"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/0528b2ac76c548ae861ebcb1ef9cf3d9.md",
+      "bytes": 3408,
+      "sha256": "212d4a88fec71fac79cdf11f3bff0ae22cc2ff17830228bd836e1ea5893bb7ed"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/098d2e468cd14029b43ec6dbd07374fd.md",
+      "bytes": 7949,
+      "sha256": "2ef3077a5fda3357aca0ea712b2215a2bb597a9be0f6e46a7deaa3817d7f9d07"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/0a59e0ebb33c494e939148d30e42f49c.md",
+      "bytes": 3392,
+      "sha256": "71c1d682ee600a5390b78867db9f223de1bf1adc232b6c05babbfe0d7273610e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/0b6d5f58354040189b3a9a30a9b913d9.md",
+      "bytes": 2293,
+      "sha256": "4b8f0778d223b50f42a62807bbcf1e337e21ae37fee3cf3497e63b4d85d91ec8"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/0b9e18356e9e4dcca51007f03f7b81b4.md",
+      "bytes": 6704,
+      "sha256": "bcec50d6c73d0de1c3a4a89e7a97265d3ace6383540f21048b79b0bd0e5f2330"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/0e5030d90c134f1ea445257f0b6e788e.md",
+      "bytes": 9976,
+      "sha256": "86160ba0642509cd33d3b40dbb229a0df4d4f5ffaeb492fb961dbe8a724e865a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/0f1014c80b0a473abf8c37845e0ed2fa.md",
+      "bytes": 3421,
+      "sha256": "0183074e66ddb2a0038fe2b126a3710c062e6ca27241d08e7920c13b5bb637d0"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/114a3866dffc4a4cb6aabef39b48fadf.md",
+      "bytes": 2323,
+      "sha256": "e88fc42c8c51f9c59e924fc62ef5a34f0c4eda2d0ed18d8046f7b9bc06a54e81"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/16ebd2840f2246a4a9ec9991947f5db2.md",
+      "bytes": 9037,
+      "sha256": "589804487d8e1ed9d1cdf1bb272353cdb0ae6f1c44ab7fdc356c701d9aaaafa0"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/1b4044525d474363bafb462e575582b9.md",
+      "bytes": 4516,
+      "sha256": "14114bc8ed6ef603493b846b74c561924966c6356bd9462c01f37b8bdec33761"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/1c57a3d9080443178f6e9159d0591c77.md",
+      "bytes": 7882,
+      "sha256": "3c606d3ce84f30f15aeb34c27d89281e7bce008bb6349e501ca71c66340f1ede"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/1d7c50343cca49eeaeccf7c49c3c008b.md",
+      "bytes": 3410,
+      "sha256": "6f2c4daa71a4001924b2a61b3877fecee461f9282c68d650856c837e56fc4df1"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/1f441cdb8fa342cca0afe5b3b65b368d.md",
+      "bytes": 3434,
+      "sha256": "1369e824212f7779939738a0c64ca1369937360ca8348a240baa40d8c2845e16"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/22fce0d656ef4df89d2a35a85fa92aa1.md",
+      "bytes": 2341,
+      "sha256": "f87ae4d11c062f6e80f9c613e2530a14be7aee4d5eb149f30fe78176cabb20e0"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/25a15d4bea2d418d918e3a7e01d9fcbf.md",
+      "bytes": 4462,
+      "sha256": "69fe8a960caf32090a06613a596e7fd42370f6e52f053d049e02016ce4aa07d7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/25bc65e773d64ecf9b71ae4f92ed57e1.md",
+      "bytes": 4396,
+      "sha256": "3dd5d7de3683ad9e64e360a567f43e9eac116baeab68abad0cc13004d45d60e4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/2ad6333e5858456dba8aefeec71773a5.md",
+      "bytes": 4435,
+      "sha256": "531bde69253d4b776fa6a7ec3305207bc7752119ed52202dc9ac392a1f62521a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/2d89b3a1e74e42d28a9f0a3dfb2c4ecb.md",
+      "bytes": 5624,
+      "sha256": "39473f9cc11f815948398080aa9681089b27da00eac1d8dce5a19bde3b0d2dd5"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/2ee0a6e46b47413d91cfb71ee3100e4b.md",
+      "bytes": 4500,
+      "sha256": "01b49c166d6cfa942eafc12071ba17850c9cbd4f335474613dfb56262472c953"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/2f97190ae5734e8caee48d581e1a6ab2.md",
+      "bytes": 4392,
+      "sha256": "8503d10e602e0b2c1b2dfd18d9d35d520cb3bd4e96ed98d7a4bc57f4be88f5ee"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/315ba7bbe4624223a97a7e7e6d9cc252.md",
+      "bytes": 3437,
+      "sha256": "08f8045be346165b6185a15e0d86a79b3c23b83cfc82a89834bff7602d292a41"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/35df8a5d8b1e495ba4cf79a5d4a47863.md",
+      "bytes": 2307,
+      "sha256": "adea12a7ac6ba59c42bd93eee1eec42c5bc84120bb46755375cd144509162210"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/36264352a7f745109deaac2025877690.md",
+      "bytes": 4503,
+      "sha256": "2e1239456d0056d2e76881a927cd95a5a6e53857819bda7e3aafa6901b24fc15"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/38d3dfcd23894f43b59d00c782170e63.md",
+      "bytes": 4590,
+      "sha256": "579945f693a7558d5468627793b881e009d17cb1a9fbe859fc518a1b11c3f357"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/392c07b6a5ba4fc7bd5c19910437da98.md",
+      "bytes": 4422,
+      "sha256": "16e6a728d8592c344fc8b32ce88e4c2c2eb9ef5ef4e007c7a5a0d15963323304"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/3b56e60b042f429b8bf0efdb477c637e.md",
+      "bytes": 2297,
+      "sha256": "4bf153ba4ec7198f435b95a6c8d0410bb784e3f3170a00fc78e26163149e630b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/3d87dbf35e0a43a3b5e12cbc6b947763.md",
+      "bytes": 4409,
+      "sha256": "8437d80fb065c3a357ad0bc5751edf7bc2f6389e7a7a6ab2093e827f7b8eb983"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/400c5c54a23a44588cc473ed10ead4a8.md",
+      "bytes": 4417,
+      "sha256": "6680fa44e3d8f6e59965b4c4d171a88cb856dffbd085f2ee06515470eaecd12d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/40416671099a46678ac5dfc3d0d615cf.md",
+      "bytes": 6681,
+      "sha256": "992f5bf1c31bf4aaaa374629e7403dc42b798169285606add793f34258af6bf2"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/41900f15d1d2431295a4b9dc1aa752c0.md",
+      "bytes": 7855,
+      "sha256": "84200c6c98d36589fecec4338e92c975d88e2a02bddcea5c3641963c3600cd69"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/432d52cc3de5443896a4559f215ece9f.md",
+      "bytes": 2345,
+      "sha256": "a0883e897dc432a817710e0acc2c47439b614230db475fdae332ef3ce0300816"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/45cb08d300b74853b456f333572a2bf6.md",
+      "bytes": 5630,
+      "sha256": "6755b2ca857dc01f832f80648c9622643ef9915482b70def21ee8c8d1cc324f3"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/4648cf5a1f8e4333978c13efae10eaa5.md",
+      "bytes": 2321,
+      "sha256": "21e40ae93584d39b4c2e215a0ba515eb70e83a985f31adeaa3ac4f7ad8a6135e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/47d8e097526248349dd6dbbd318b1ef4.md",
+      "bytes": 3388,
+      "sha256": "b7de866c173b85cdeeb412330d008da15b5a2426d587e358b5faaee9808d6096"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/49966f8f01e244b4926ce4dc4c41fb47.md",
+      "bytes": 4548,
+      "sha256": "a231dedb9b7a240222cc406e9ab7d529d188653372d925c27555ab7376dbb9fd"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/4e0bcac2a001411c8802b5df30e6bb38.md",
+      "bytes": 4404,
+      "sha256": "723717fc2cb00744dfdd054267308c48a4342213d34b873c1b7d4955c44c76ba"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/4e5f729c97394b898918591f4d81a69a.md",
+      "bytes": 9072,
+      "sha256": "914376e171f8ecc6d77139b1925fe87d24c0935f282a8509ebb30dc0c625f209"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/52508b8b7aec4b1cbaa570576442d4c9.md",
+      "bytes": 4405,
+      "sha256": "d0f5a47f53c32fe64a17c0f199aa3aa652c888f907d41a5bc67f099f8cba9463"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/58c3577b30fd4748836a1d52e07c8a98.md",
+      "bytes": 4452,
+      "sha256": "1bab432aa46856b94e8cae86574109d7c3a63848bfd8704bcd04c323b0be7e9c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/58c5443983854dd98cd72f2dd795c063.md",
+      "bytes": 4408,
+      "sha256": "d3cbc21478ccb33c2afa4e8e5427ebfa595c5de74f01752f93b86b3e85c8c16e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/5989495f1e224d5797054a8b6c0364a1.md",
+      "bytes": 4561,
+      "sha256": "b8c711ba00f0bb7d5dce7e6c8d8bb98275366cbd4950b9d8755732f2dc1d91d1"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/5dde6ebecd094084b325ba59603bb919.md",
+      "bytes": 3409,
+      "sha256": "0e7ad0547be876a10bc6b86021e94f5b452859808f6ccbcffabd7355b9b80c3e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/5e8ddc78f9554243aeb051f77595cc88.md",
+      "bytes": 3424,
+      "sha256": "d44682312f154b878b3e94702135153cdf10cfa1afc6beca735bf61578ff7ce5"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/5fcada54e6df40a8983335a90e4a9f02.md",
+      "bytes": 4430,
+      "sha256": "81fb7b3ec7327b4cd706438858ff6af8e9f9f31d64f772af7614866aab188b98"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/6b4df7dee51344b3b8c4c6eaace50d72.md",
+      "bytes": 2301,
+      "sha256": "a8b7d3cfc65ca805dde944cb8d366ec7323af5ebe58b1ebacc65a31f38feced2"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/6d6086134162468cac129040a139d8d9.md",
+      "bytes": 4501,
+      "sha256": "f344f89500cda89e6b9526834b094a64ff26a9e0908dafd65dd960dd9888a7b6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/71b9830ce1a543548334647cbbaec7f1.md",
+      "bytes": 2363,
+      "sha256": "6f95b0d739acace1d12f53fbb285c1f15f44a16e3979a396f60cd9cda4ad7c01"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/77cd076a5bdf463a93fe330698d9be19.md",
+      "bytes": 4558,
+      "sha256": "634a3f2e794a55155251620f57a42a06095b8a8720a0574ce6d1090b56c6e602"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/7b2cabb4089d414d8ad700ef5f7932b7.md",
+      "bytes": 4395,
+      "sha256": "a3cde80e963a3468a540faa8f2f468511ee172050a6dda43fd3231dce482dc6b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/7eceab6d8a9741708d438a7760103c69.md",
+      "bytes": 4508,
+      "sha256": "9887e122a62fc612709e5e01fde53465b1d02d675528ea23c082559eb1c61895"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/7f9cadb36d764b22840748a9608f9a37.md",
+      "bytes": 4508,
+      "sha256": "5d399021c5dcf66a2aceb222a48af56c6c5ec2a9a4ff55ac5d837c5eb71857a6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/801386f27cda458b8ce811f133d917e9.md",
+      "bytes": 4369,
+      "sha256": "2a13ecbeed59381f732ddec5513ac700ab156cd67ff57c39e463921fd1d678e4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/8034148e63e6457f90e8cae1d4eb4453.md",
+      "bytes": 7917,
+      "sha256": "819b8fd113b2ead0b55e7a959e5f04aebfc8357ad7fc0c2930ede6c0ad7820cb"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/819aeed91d0544c3b7cc52e69aa46d72.md",
+      "bytes": 3419,
+      "sha256": "83a8ec9572942892971a6368f1397a8c63d1fd7ce362de293fdee5b5d3cf3e02"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/84693ef7bb4a4ced9634737c6bd5a36d.md",
+      "bytes": 4530,
+      "sha256": "7d8346f87ed84aac12f0d23c57410afc32a387cdfec2e34123deab86acfe07b5"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/8609b046777c4a8ab4d5cafb30e34d04.md",
+      "bytes": 7801,
+      "sha256": "0dc7232882adca9a93b698105447ebe72fb14af77e63a8d5a8cc5ab7131a41f1"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/8655d81cd41647449c3b1a10ffd453b3.md",
+      "bytes": 4396,
+      "sha256": "8c7a15515aea28a6b86299a7e09e44ff75ae648e21bdcd544cb9525f12f41b77"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/884f06591f6c4dcf8e7f94e4b31269c1.md",
+      "bytes": 4384,
+      "sha256": "d6ef5cc426f1ebec524e97129944149905ca26c4544d96eaba62b0c8db2d9c62"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/8b27323cbaba400698842f77e0d28c0d.md",
+      "bytes": 13302,
+      "sha256": "f4d569e698febaed256d59770983e129bbaeeacad08aaed66b285da4110050fc"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/8b7fd22a55434e5ca3e7ba87afb020d6.md",
+      "bytes": 10007,
+      "sha256": "f02f0a35f125819dda8bae9f442a40156be6312e5f6c49a81fd7c1de4768f6d5"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/8bf2a60efafc4caf89ed9744adfb628d.md",
+      "bytes": 14389,
+      "sha256": "058727214d2d393d39282d3d8b2db233f1b6ef75beacc8cdb21e2e9f9c50f871"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/914b8be39ecc4fb599e6bc0004c355c0.md",
+      "bytes": 7913,
+      "sha256": "2613ca4e66f2018f31234e63325d89cebef5fb64a1e1ef6f6ca8e7074a2b288f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/9536aaf4114b4c35b8a795383d442f64.md",
+      "bytes": 6697,
+      "sha256": "cfe4c692f16ae8712d6c61a7e77a3b5c27ab0a75c59ceaf4bff00653c8da6547"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/9cf94c0ac09141a3b909a6a1051bff97.md",
+      "bytes": 3387,
+      "sha256": "78d9756526c6ec829fbf6f4c937e0ed4a96fc5db3ce83bb0f682353412c131b5"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/9f192036bee542ad883b89729a35bbfb.md",
+      "bytes": 3423,
+      "sha256": "3bdee6d1a97e379957a13c441bd59b08c986ca74a3937fa90a89d9a18e9d1d41"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/a44091225174403ebd2c5b75ba690a09.md",
+      "bytes": 4546,
+      "sha256": "d9173c3a19e03f6e89425992f03c90638336c1a5374fd77bf2ecb56e71414d52"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/a47808600e8f4d7c83756f4ce77b498e.md",
+      "bytes": 4366,
+      "sha256": "562ac51fb1f7970c717cd1ede48048d271a2189e3f83b261a07b666cf07ac09b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/a58e87c95bd24c16a1006b217aeac691.md",
+      "bytes": 4400,
+      "sha256": "256ae2ba082a697fb09573102017172ccf011f412e69c7f58ddbc91e912eeae0"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/a762424d13254eaa9467946d9d7355f8.md",
+      "bytes": 9045,
+      "sha256": "6237b64811d18b4309e073f701387261b7ba5dfed0471c147dad7d6dfe46d4fc"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/a9deca9adbb443208d6f08dbe4505717.md",
+      "bytes": 15109,
+      "sha256": "7385e5a48a7abfc12a1eedc3c8421f094a4ff59accbee57063c29595e0671112"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/ab65501a8e3542839707ae31cd0b8efd.md",
+      "bytes": 2331,
+      "sha256": "218fd8130416684e47d997c01100af85fc4f9ab7618bcde56b3f97a1f31f1558"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/abc27ddff6d644d9945db0cfd7488f07.md",
+      "bytes": 6797,
+      "sha256": "144ccc5b10e25f0463f7278f48ab6339d01a4f2281b9396b373b2d72965a7270"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/abca473311ea40aca58756d859077ff7.md",
+      "bytes": 15095,
+      "sha256": "15318d7ee3c891a7208537d5d7c6ddbf3041eb01c6d0dce229d6f9a3117fe2fd"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/ad16265c76114f4eaddf75b0be2d4755.md",
+      "bytes": 4424,
+      "sha256": "89542a044476203183696a2d203ef28b3c41bd3e03e49e2165f603f9a0ac1355"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/afb9686c9f1c48159d92a518a7d17452.md",
+      "bytes": 9033,
+      "sha256": "83740031434dad7c16d0ac063af4c8edd4661aa8816f4ca0e798b98790c7674d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/b23f7fa8cb1b46569f63bde1aa5fbf1f.md",
+      "bytes": 7807,
+      "sha256": "f6a4d075becf1911e4e6d1796486579199b935fc08c85c5bef7f74a1f0f833ac"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/b3c19413e4b447adb5f1d86912db4052.md",
+      "bytes": 6705,
+      "sha256": "64b84b4dec8b8d622d9f23df00f5819c8b8295047d0721901835d10eab141b4d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/b6a20afe29624f73906e5e852d6f2fbf.md",
+      "bytes": 4406,
+      "sha256": "6aad4a84d5695c2ebbbbec42fd3feb24287180bb9c044fc41ed385d716e93d44"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/b83d63bb553c4642b26bbc41f66445b3.md",
+      "bytes": 4435,
+      "sha256": "327a69eb94ea6676cdbfd4705d71b0530d47bd9e28b3d24fa66d8a4de91e84da"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/b91ec2110aaf4d44bd043bb787fbd910.md",
+      "bytes": 4421,
+      "sha256": "af3ead27183b3d1d5649b081dd6b9acce1590c59c4b6a41d4a6cbca23d6bffa8"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/b92ea843bd6342879b6a3be255743e31.md",
+      "bytes": 3426,
+      "sha256": "08637a111cc8845bcfef9406f43600330b9fb524de3a9724b385d49c6827ed68"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/ba0e7f67e2e7496d9df8f6617ee39ec3.md",
+      "bytes": 4346,
+      "sha256": "1bc495ed75de7fbf008346a9544c20a17d8d0ce5e441c891c19f7ff5df33186d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/ba2e95cc11374757bd0945148da43b07.md",
+      "bytes": 4369,
+      "sha256": "d406832fb09ef73bfdfa440bd5b2b11a256cee52c3bb4e02c881f4c4658f0d7e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/bb3adbc3c2fb43e6a18a876c4e897c9c.md",
+      "bytes": 4497,
+      "sha256": "8124c3b292a4dd99b7d34d1c106794f298202b363625bef182a3244a0af72e03"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/bda335658c29473d9ba20352242c83f8.md",
+      "bytes": 6714,
+      "sha256": "b5d9973204bc4a9c9a4d176cf5bea47d560b78b56173d2015c52d08bfcf6da9e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/c102ede2b9e249b2a2ddc9f19e0cbd7f.md",
+      "bytes": 3403,
+      "sha256": "498e62f2297b7e86abf8cf7597742963ba5615ba188446ddb2747e92022c011d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/c445fc55a6e547ae9b1a5bb43cad1a8e.md",
+      "bytes": 4363,
+      "sha256": "8bc890aa6169432d866be9670e0c98e035d2dfe8260451d949851d10b3ae873c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/c77bba93c0c843959b30d9e1195fb68e.md",
+      "bytes": 9111,
+      "sha256": "74fcdcd0144afa7ab1abb2bde366e94949506b81bacf592e5e18f7c23841d5c6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/cc0a0cc2678c4c7db20ad015a75cc1de.md",
+      "bytes": 7804,
+      "sha256": "888a48aecf7ae2de6b929b9002e8cf0b8fdba93f59a6d2e6bc25fb4329e1d71c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/cd453ee30502406db647a0c5b4011739.md",
+      "bytes": 3469,
+      "sha256": "84481b4784577a740e80785ac693a0637d36af63c9385d7ebd7585c176851b60"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/cdcfbe8d106844109bb8ded51dea7a8a.md",
+      "bytes": 4460,
+      "sha256": "c9853a430a86f3803cd09cdf2b5e8772733f8093012aceafea4afb20dede4725"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/d0fa8cfaf5044359a5f6a1e91375429e.md",
+      "bytes": 9037,
+      "sha256": "55fa8be0b348bfe265b5d70719f54cf1e19ab0120096a39429e98fed2b48ab72"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/d2876dff4f5444e3b71bdeba487b2d6b.md",
+      "bytes": 4373,
+      "sha256": "914b0b58fbd0759e7d71a42a3eee4284ce221784cd31c725367df5819a548f47"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/d2f8fcaac9984a12beab502d1944ea25.md",
+      "bytes": 12183,
+      "sha256": "4d271e1167222aae00183f5e06477f0b2457c1037122754c2372dd6d738c4822"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/d3fb5abc58af4347ab52cdc26e9b14f1.md",
+      "bytes": 3404,
+      "sha256": "87c626096db9fb9a38fbf8b5885050059fa3bb07fcd419e83eef0f6144ea42dc"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/da5b4238bd6945cf9b467ff3feb9d76b.md",
+      "bytes": 4554,
+      "sha256": "99accf7b3a347694ef88a5283aa80d57ffb26e347c6e1c075dcb4b5529d337d4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/de791c4976f84676bf8545b1cfb8bf41.md",
+      "bytes": 4494,
+      "sha256": "7bbb39fb44408cb54ef7c72c7dfbe10ee0ef3f15090e1fe0c0e02d8139ebb4c8"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/e1ed88f315a84116a77ead21d8fe1792.md",
+      "bytes": 4359,
+      "sha256": "6c45fa14572d52dc8966486da32012c40e85d3f1afa52019973e02c415368e42"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/e48346674b0740c19f4a13cc50a7ae66.md",
+      "bytes": 4380,
+      "sha256": "d6ca6004602abe290d237f589429268d6869db46b3562f4281274ffe64f595a4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/e8c7f8a36ff248cd9115d7a382324808.md",
+      "bytes": 3439,
+      "sha256": "56599bc92c544a58d6b5a0f7ca2cdf3bae75dca955072258382cf19d15886516"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/e9804b6dea5c4e1db80be1925463786f.md",
+      "bytes": 4560,
+      "sha256": "1260f4340ba78d2fe69694fede4ee6820209105e890fa575722ff4e4692c7fd8"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/eb1b0526b898448688a322cce7ea6e74.md",
+      "bytes": 6711,
+      "sha256": "3347e287ba09944e4e8465dae5ce71ba2986c696b02424189998003b55374b30"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/ef296738e68e4206a507dc3c811b3fe1.md",
+      "bytes": 7910,
+      "sha256": "11569c05dcd3561e96679fdb12b4190951d1c054303b4b0b8887f67123ef12c1"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/ef476f07cd9e4ba6bdac99dc6e940baa.md",
+      "bytes": 3430,
+      "sha256": "5d9b2285a095cca4fa0d2e94b1b2ea0b8a8ca2ee6c6f892a51ae9663acce053a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/f0402eea7b5a49f9b61fbd90e336b2de.md",
+      "bytes": 3422,
+      "sha256": "068e7c49e57a688aedc97b61da77e853820fc6b84916de88e76f625ca19b8fb0"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/f29ffa95c89d470b8a32e1369696327f.md",
+      "bytes": 5544,
+      "sha256": "dcb9c301fb3a6f62a8459a2f70a83c1ee3e15277f2b3330d64ff046d350bd624"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/f40da9359c7545d2ad0eef6c3a5bf645.md",
+      "bytes": 4495,
+      "sha256": "a37cb6ea56eb406d746c1d9a6175effe06825bbc74ba77f015e590b5009ccd6e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/f4af2b5206264a6fa4c5040324ad272c.md",
+      "bytes": 4581,
+      "sha256": "69d31fcf82067c302be73ed49f312f297b83806274e2bb57ee534619be3d9ff4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/f5df30b02e8a4d60bf44e8af2da4d5ab.md",
+      "bytes": 2322,
+      "sha256": "cdad2593313c0b4d791027ad179d61310b9451913fdca1959d8a10933f79f699"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/f814f4598722425cb3e7f45c32c11c90.md",
+      "bytes": 3381,
+      "sha256": "6c645ee50ef4fe78a263960320b8d85b3b572c8bf02df0d7f7c11859d1acf3ba"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/fd9d0fa7117a4dc3b45cfed0e7be614b.md",
+      "bytes": 13323,
+      "sha256": "4bd5acbce5cefd053595026c80921bc284669c292f5cbc3089eac96c0ad2f1a5"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/canonical/enterprise-architecture/continuum/grouping/fe8916b03b084e82af587ac5a900349b.md",
+      "bytes": 5646,
+      "sha256": "f18d31dfa2bcf14b668ef47a96b4bfd5bdf0c918f3b8f96436164810e7443b2d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/hcrl-1.1.18-001.pending.md",
+      "bytes": 35206,
+      "sha256": "0927eb9a200316f74efb2a2c7cbd65b55b9e2041e035b0b708d2c9be0d83784e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/input-pins.json",
+      "bytes": 425885,
+      "sha256": "1edcd74e08be10284e0d5664937c9fc3cc5e952258dfaccdb346db0b559f2abc"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/navigation.json",
+      "bytes": 687083,
+      "sha256": "24f9c2aced64b9bbdcbad2c62fb01a7d76207fcf6ac6b85981e4ff622f9e9be7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-hierarchy/projection-template.xml",
+      "bytes": 9280114,
+      "sha256": "639f6f36ec399ecab48e1d1cecb882dde074c928510c00031663b7286dd0a8af"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-incorporation/MANIFEST.md",
+      "bytes": 1671959,
+      "sha256": "561d277549290d4fec920fb966a1841b300d0b79f9e5f73c58f60a82bc6a628f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-incorporation/change-review.md",
+      "bytes": 157043,
+      "sha256": "33a183eb2d12c3f653db60e4c88a034198cc20eeca80817638a6ec7d8d91edb0"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-incorporation/hcrl-1.1.18-001.pending.md",
+      "bytes": 24978,
+      "sha256": "3f546837ea79bf16e208172616a509c3d3650c2c973c716c5c25e7f51dec2028"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-incorporation/navigation.json",
+      "bytes": 681390,
+      "sha256": "d10a1a9146f58e87e8a0c4364f19dfdad0f93ea57ccfa461509ec8fd187a7054"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-incorporation/preimages.json",
+      "bytes": 437557,
+      "sha256": "091514d654af1d2263fe5b2c2cf2cce8f4e6466a4024f3f3876f965313dacd36"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-incorporation/projection-template.xml",
+      "bytes": 9279907,
+      "sha256": "6cb23ebef81a9afbc4c7c14dfbf59aa8d6faec4f19f78908a4ecd186af04f26e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/subject-incorporation/report-index.md",
+      "bytes": 1683,
+      "sha256": "d937b18fdb435a2eb0e981af89c61cc9f8948fd7cecf68307bdbeab70dca5344"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/views-reconciliation/change-review.md",
+      "bytes": 236118,
+      "sha256": "fbd065166c04c04190460f5a45b0ea6b61ab6916af6e30cc017957c710fbfaa6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/views-reconciliation/hcrl-1.1.18-001.pending.md",
+      "bytes": 31590,
+      "sha256": "7da757b7b351c7a6f4c592cd8d8a312becc459987c1deb9ceb295993ca72d37c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/views-reconciliation/input-pins.json",
+      "bytes": 334279,
+      "sha256": "02ef7db24389773a3b920599b14c263152ece1676aa6f16558e4018578e797e0"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/views-reconciliation/projection-template.xml",
+      "bytes": 9280114,
+      "sha256": "639f6f36ec399ecab48e1d1cecb882dde074c928510c00031663b7286dd0a8af"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.19/001/before/inherited-baseline.json",
+      "bytes": 1290,
+      "sha256": "1f4cc6ffc1d389ea246af2b5f2d62f620786c8fc652d48bf64c6731d233e9b1a"
+    },
+    {
+      "path": "enterprise-architecture/design/register/1.1.19/hcrl-1.1.18-001.complete.md",
+      "bytes": 25978,
+      "sha256": "2a9b3ba52695f2627293848a96d19357f7649a25f106dc8aaba6d82f463cf2ef"
+    },
+    {
+      "path": "enterprise-architecture/design/review/1.1.18/change-review.md",
+      "bytes": 251172,
+      "sha256": "4425c0223faa941feadc012d5fca08fc58bfe7a528663339a5a9fd140f505603"
+    },
+    {
+      "path": "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md",
+      "bytes": 53139,
+      "sha256": "e022ec5b4a4782f0aefe6d14471d091e19e24f4e6f2c92a9b2107dd040d95772"
+    },
+    {
+      "path": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md",
+      "bytes": 27069,
+      "sha256": "367f7c8478342537bba2de26ca6827a0581f98ed0862d6eaa0401439bbb569ca"
+    },
+    {
+      "path": "enterprise-architecture/documentation/README.md",
+      "bytes": 2207,
+      "sha256": "f655e5223646a6e139ab9d11483b4e240c782d23b908dc86624470a7712a51ae"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/README.md",
+      "bytes": 3262,
+      "sha256": "98dc9a298ba1f186e73dbce4d5a51cdc87bb0de1143f3dad7396c22e052c7c94"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/Harmonia-Architecture.xml",
+      "bytes": 28093718,
+      "sha256": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/README.md",
+      "bytes": 497090,
+      "sha256": "1b0d1eda18661b79192bdf115fea314a8a7ac6148d3caf923028c5a87bd451c8"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/continuum-catalogue.tex",
+      "bytes": 1048321,
+      "sha256": "e740c109572aa0caa61e12d6054e040445cbaaa37d26bdc2d33c284096fb0759"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/continuum.html",
+      "bytes": 12681007,
+      "sha256": "714a824ecdd4b89651fd8a958998a7bb09b67c201933069502c9e0afc9d6d5c0"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/navigation.json",
+      "bytes": 2922629,
+      "sha256": "53fcb647bb9a341941a3f5330ebed5b0cc327b403796996b5573bcb2606b6cf2"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/publication.json",
+      "bytes": 964,
+      "sha256": "03cb7ca55389c1df5eae0e946c6ea896756e1f2645e47c9793515ea66f0e3acd"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/README.md",
+      "bytes": 4463,
+      "sha256": "cf85bc0130c227fc46571a39ecc50fd692493bd38cb5bd2604484fec1f1e81dd"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.19/README.md",
+      "bytes": 562,
+      "sha256": "cf13e0ea5946a13127f7f770a628f406e3618d99f207ed8caed347b4855c78a0"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.19/continuum-rad.tex",
+      "bytes": 9687,
+      "sha256": "cff81fd7b00ca6f86297140113c36e05bd1cf8858c7b0cb3df93c36159fff0a9"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/application.tex",
+      "bytes": 272127,
+      "sha256": "695880e714a77cec15ca4f51a07a19623c31c66a4a84372d3bd20e51079529c2"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/architecture-governance.tex",
+      "bytes": 9487,
+      "sha256": "bb8b35a7b23d47c22c5d0ef8eaf7ac926f2f4f2ddc5c082cb7eaf4a350e13821"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/business.tex",
+      "bytes": 564075,
+      "sha256": "667a6cec51c85355f810e46feb09bfebd675009852f5d5dc1ed596afa7fe24f7"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/cross-cutting-references.tex",
+      "bytes": 644078,
+      "sha256": "819aca45e358a3ef36e25975528863737be3622b1e5bb4790f8be338b317b53c"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/implementation-and-migration.tex",
+      "bytes": 335,
+      "sha256": "cc088fb5e4a5189f8f669d5c30c830cc75bc53068673bde335306341efdd3353"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/motivation.tex",
+      "bytes": 377829,
+      "sha256": "3c8242623a4ead77f173b92d99901f3ea2900c7a1f13b23fcb0a1a841a310a60"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/strategy.tex",
+      "bytes": 935917,
+      "sha256": "cf203067efe32941e79925d000471d50a98247d3c569af1cb48e36dea7a61bce"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/technology.tex",
+      "bytes": 257,
+      "sha256": "6f1e2c08086d8457df080a89d5b5dd6de1ca46adea91584fc9d9a864ed6a5760"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.19/publication.json",
+      "bytes": 2087,
+      "sha256": "dff00c7ca09692efda72150f31da694bdf8866ffabc7e171affda570d2305b25"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.19/structure.json",
+      "bytes": 3596418,
+      "sha256": "c396c12019cf618cf4b4f871e9315329e03fae57a70d3b056b7ce4a0d05c3111"
+    },
+    {
+      "path": "enterprise-architecture/tooling/tests/current_source_fixture.py",
+      "bytes": 953,
+      "sha256": "b37d4f0b5f6517d7a0964a478afded0a8072de986bca6e7c2e6b18e3be6b8329"
+    },
+    {
+      "path": "enterprise-architecture/tooling/tests/test_continuum.py",
+      "bytes": 23367,
+      "sha256": "d60726fef1370e79d720f8c46465203a0fee9fb23159f96abf7c1749a701f254"
+    },
+    {
+      "path": "enterprise-architecture/tooling/tests/test_continuum_navigation.py",
+      "bytes": 21619,
+      "sha256": "18fc14aaa7648e1487f7edb6da34563ed5956e7696ec5b020fff9ad4e31ca053"
+    },
+    {
+      "path": "enterprise-architecture/tooling/tests/test_continuum_rad.py",
+      "bytes": 8263,
+      "sha256": "9d32f8849934d96bd9135064be791b4afee26c6f5250c0a008aeda5a69e6e0d3"
+    }
+  ],
+  "excludedPreserved": [
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Continuum-1.1.18-001.archimate",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Enterprise-Continuum-1.1.18-001-001.xml",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Enterprise-Continuum-1.1.18-001-002.xml",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Enterprise-Continuum-1.1.18-001-003.xml",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Motivation-View-Reconciliation-1.1.18-001-002.csv",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Motivation-View-Reconciliation-1.1.18-001-002.md",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Motivation-View-Reconciliation-1.1.18-001-003.csv",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Motivation-View-Reconciliation-1.1.18-001-003.md",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-OpenSpec-Expanded-Subject-Capability-Mapping.md",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.18/continuum-rad.aux",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.18/continuum-rad.idx",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.18/continuum-rad.pdf",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.18/parts/motivation.tex"
+  ],
+  "selfHashExcluded": "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/scoped-staging-plan.json",
+  "selectedCountIncludingPlan": 567
+}

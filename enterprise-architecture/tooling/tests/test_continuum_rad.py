@@ -12,6 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import architecture_continuum as c
 import publish_continuum_rad as rad
 import continuum_navigation as nav
+from current_source_fixture import copy_retained_inputs
 
 
 class ContinuumRadTests(unittest.TestCase):
@@ -23,6 +24,7 @@ class ContinuumRadTests(unittest.TestCase):
             shutil.copytree(c.ROOT / rel, cls.root / rel, ignore=shutil.ignore_patterns('published', '__pycache__'))
         shutil.copyfile(c.ROOT / 'architecture-release.json', cls.root / 'architecture-release.json')
         shutil.copyfile(c.ROOT / 'enterprise-architecture/governance/authority-successors.json', cls.root / 'enterprise-architecture/governance/authority-successors.json')
+        copy_retained_inputs(c.ROOT, cls.root)
         cls.elements = c.load(cls.root)[1]
         cls.output = cls.root / c.RAD_PUBLICATION / c.read_json(cls.root / 'architecture-release.json')['version']
         cls.before = {cid: path.read_bytes() for cid, (_, _, path) in cls.elements.items()}

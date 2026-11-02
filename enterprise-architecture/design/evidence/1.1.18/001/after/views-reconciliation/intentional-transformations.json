@@ -1,0 +1,484 @@
+[
+  {
+    "kind": "ACCEPTED_CR_060",
+    "before": "03. Directory-Informaton-Maintenance",
+    "after": "03. Directory-Information-Maintenance",
+    "semanticEffect": "none"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-d0a0a07824235e10a4e1bca6812a22c7"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-d0a0a07824235e10a4e1bca6812a22c7"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-8bc8a07409fe561eb7713afcf1205985"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-8bc8a07409fe561eb7713afcf1205985"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-1aa3966292ff5cd298837a0048177137"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-1aa3966292ff5cd298837a0048177137"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-9d83dbaf639c54208a407714f1d240f3"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-9d83dbaf639c54208a407714f1d240f3"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-681d87471de25ac8a7930e1cc00bf1d8"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-681d87471de25ac8a7930e1cc00bf1d8"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-2056f95fa9245931882067c126cb83c1"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-2056f95fa9245931882067c126cb83c1"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-c0c10cf8a936583cbee4ed93f4ef30b1"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-c0c10cf8a936583cbee4ed93f4ef30b1"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-ef86a373353956389692ae57ec4dc4e4"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-ef86a373353956389692ae57ec4dc4e4"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-a1450ea2d7b657d7afea3d4c5ba918ee"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-a1450ea2d7b657d7afea3d4c5ba918ee"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-c7c88f2cd3165ece95ca3111f5dfaf3c"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-c7c88f2cd3165ece95ca3111f5dfaf3c"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-a27c3798e5f95d609a3fb4b070554a50"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-a27c3798e5f95d609a3fb4b070554a50"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-661aaecfa2fe5dc8a61f4aef64d3f23f"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-661aaecfa2fe5dc8a61f4aef64d3f23f"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-8a9f9981dec0545780db6ea6e59b8f3f"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-8a9f9981dec0545780db6ea6e59b8f3f"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-6b5917b8195759a3b2a919019f0c60fe"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-6b5917b8195759a3b2a919019f0c60fe"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-70f42f4ec1fe50fc9b53930508510625"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-70f42f4ec1fe50fc9b53930508510625"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-6abe502c604c5f5193d6d05a32ba8a5d"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-6abe502c604c5f5193d6d05a32ba8a5d"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-168c83c5b1205395886fcd07a7e20ef8"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-168c83c5b1205395886fcd07a7e20ef8"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-73369d62b05856958a615a81858961e2"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-73369d62b05856958a615a81858961e2"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-151468dabca35e30846cff199a211008"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-151468dabca35e30846cff199a211008"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-f4455095a2705628a3971c9c254f2e2b"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-f4455095a2705628a3971c9c254f2e2b"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-8235739b70385a098eecc54bbf2e031e"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-8235739b70385a098eecc54bbf2e031e"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-01966458f4eb5322a76b5dc81c4d7d21"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-01966458f4eb5322a76b5dc81c4d7d21"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-2c50fe83ac0d52d39712d404571c364d"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-2c50fe83ac0d52d39712d404571c364d"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-cb6aa01af51e5505991e2b31587f5f82"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-cb6aa01af51e5505991e2b31587f5f82"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-7876add337795e32aad89fe7b98453e5"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-7876add337795e32aad89fe7b98453e5"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-c82f1dedfa6f5fe68720871d07d13278"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-c82f1dedfa6f5fe68720871d07d13278"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-4f547f2f949953d788d166e97ec2c9c7"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-4f547f2f949953d788d166e97ec2c9c7"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-12808a930fe65a2dae51b632a10dce9c"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-12808a930fe65a2dae51b632a10dce9c"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-adb87863e646512993b2f972331e7fdf"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-adb87863e646512993b2f972331e7fdf"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-58",
+    "after": "propid-52",
+    "key": "v0.2 / Source Path",
+    "visualObject": "id-02dc2c6e50c95f938493028d2c6ed9cf"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-59",
+    "after": "propid-53",
+    "key": "v0.2 / Source SHA256",
+    "visualObject": "id-02dc2c6e50c95f938493028d2c6ed9cf"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-49",
+    "after": "propid-43",
+    "key": "Baseline / Source Path",
+    "visualObject": "id-834614032ae156ff8c6b6ccaae61d4aa"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-51",
+    "after": "propid-45",
+    "key": "Baseline / Source SHA256",
+    "visualObject": "id-834614032ae156ff8c6b6ccaae61d4aa"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-49",
+    "after": "propid-43",
+    "key": "Baseline / Source Path",
+    "visualObject": "id-61a84b3979135950999d7a0ecb0e2d3e"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-51",
+    "after": "propid-45",
+    "key": "Baseline / Source SHA256",
+    "visualObject": "id-61a84b3979135950999d7a0ecb0e2d3e"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-49",
+    "after": "propid-43",
+    "key": "Baseline / Source Path",
+    "visualObject": "id-a0f5c59bc3925a33b4f6b0599384f1d9"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-51",
+    "after": "propid-45",
+    "key": "Baseline / Source SHA256",
+    "visualObject": "id-a0f5c59bc3925a33b4f6b0599384f1d9"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-49",
+    "after": "propid-43",
+    "key": "Baseline / Source Path",
+    "visualObject": "id-50fe76d4160d525181784de74a41cd93"
+  },
+  {
+    "kind": "PROPERTY_DEFINITION_REBINDING",
+    "before": "propid-51",
+    "after": "propid-45",
+    "key": "Baseline / Source SHA256",
+    "visualObject": "id-50fe76d4160d525181784de74a41cd93"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "branch": "Data-Governence-Services",
+  "upstream": "origin/Data-Governence-Services",
+  "head": "763f97586685d5c4b9744509b067d95b9694d0db",
+  "localRemoteTrackingHead": "763f97586685d5c4b9744509b067d95b9694d0db",
+  "localAheadBehind": "0\t0",
+  "remote": "https://github.com/fhirfactory/harmonia.git",
+  "remoteLiveVerification": "NOT_PERFORMED",
+  "commit": "NOT_PERFORMED",
+  "push": "NOT_PERFORMED",
+  "indexChanges": ""
+}

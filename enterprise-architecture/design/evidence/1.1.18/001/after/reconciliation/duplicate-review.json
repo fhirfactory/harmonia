@@ -1,0 +1,378 @@
+{
+  "scopedSourceAndType": [],
+  "sourceIdAndType": [],
+  "sameWordingAndType": [
+    {
+      "key": [
+        "View Consent History",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 75,
+          "source": "openspec/specs/consent-and-information-sharing/uc-clinician-consent-11-view-consent-history/spec.md",
+          "sourceId": "UC-Clinician-Consent-11",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 183,
+          "source": "openspec/specs/consent-and-information-sharing/uc-participant-consent-16-view-consent-history/spec.md",
+          "sourceId": "UC-Participant-Consent-16",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "Record Emergency Access",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 83,
+          "source": "openspec/specs/consent-and-information-sharing/uc-clinician-consent-15-record-emergency-access/spec.md",
+          "sourceId": "UC-Clinician-Consent-15",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 129,
+          "source": "openspec/specs/consent-and-information-sharing/uc-externalclinician-consent-18-record-emergency-access/spec.md",
+          "sourceId": "UC-ExternalClinician-Consent-18",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "Receive Consent Alerts",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 95,
+          "source": "openspec/specs/consent-and-information-sharing/uc-clinician-consent-20-receive-consent-alerts/spec.md",
+          "sourceId": "UC-Clinician-Consent-20",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 123,
+          "source": "openspec/specs/consent-and-information-sharing/uc-externalclinician-consent-15-receive-consent-alerts/spec.md",
+          "sourceId": "UC-ExternalClinician-Consent-15",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "Record Refusal of Consent",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 99,
+          "source": "openspec/specs/consent-and-information-sharing/uc-clinician-consent-4-record-refusal-of-consent/spec.md",
+          "sourceId": "UC-Clinician-Consent-4",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 155,
+          "source": "openspec/specs/consent-and-information-sharing/uc-externalclinician-consent-7-record-refusal-of-consent/spec.md",
+          "sourceId": "UC-ExternalClinician-Consent-7",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "Record Representative Consent",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 105,
+          "source": "openspec/specs/consent-and-information-sharing/uc-clinician-consent-7-record-representative-consent/spec.md",
+          "sourceId": "UC-Clinician-Consent-7",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 121,
+          "source": "openspec/specs/consent-and-information-sharing/uc-externalclinician-consent-14-record-representative-consent/spec.md",
+          "sourceId": "UC-ExternalClinician-Consent-14",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "Verify Representative Authority",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 107,
+          "source": "openspec/specs/consent-and-information-sharing/uc-clinician-consent-8-verify-representative-authority/spec.md",
+          "sourceId": "UC-Clinician-Consent-8",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 119,
+          "source": "openspec/specs/consent-and-information-sharing/uc-externalclinician-consent-13-verify-representative-authority/spec.md",
+          "sourceId": "UC-ExternalClinician-Consent-13",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "Respond to Verification Requests",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 231,
+          "source": "openspec/specs/governance-quality-and-audit/uc-clinician-directory-24-respond-to-verification-requests/spec.md",
+          "sourceId": "UC-Clinician-Directory-24",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 489,
+          "source": "openspec/specs/patient-identity-management/uc-relatedperson-relationship-8-respond-to-verification-requests/spec.md",
+          "sourceId": "UC-RelatedPerson-Relationship-8",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "Manage My Communication Preferences",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 349,
+          "source": "openspec/specs/patient-identity-management/uc-participant-demographics-16-manage-my-communication-preferences/spec.md",
+          "sourceId": "UC-Participant-Demographics-16",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 459,
+          "source": "openspec/specs/patient-identity-management/uc-relatedperson-relationship-12-manage-my-communication-preferences/spec.md",
+          "sourceId": "UC-RelatedPerson-Relationship-12",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "View My Relationships",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 413,
+          "source": "openspec/specs/patient-identity-management/uc-participant-relationship-1-view-my-relationships/spec.md",
+          "sourceId": "UC-Participant-Relationship-1",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 453,
+          "source": "openspec/specs/patient-identity-management/uc-relatedperson-relationship-1-view-my-relationships/spec.md",
+          "sourceId": "UC-RelatedPerson-Relationship-1",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "Upload Supporting Documentation",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 425,
+          "source": "openspec/specs/patient-identity-management/uc-participant-relationship-15-upload-supporting-documentation/spec.md",
+          "sourceId": "UC-Participant-Relationship-15",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 487,
+          "source": "openspec/specs/patient-identity-management/uc-relatedperson-relationship-7-upload-supporting-documentation/spec.md",
+          "sourceId": "UC-RelatedPerson-Relationship-7",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "View Relationship History",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 437,
+          "source": "openspec/specs/patient-identity-management/uc-participant-relationship-20-view-relationship-history/spec.md",
+          "sourceId": "UC-Participant-Relationship-20",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 465,
+          "source": "openspec/specs/patient-identity-management/uc-relatedperson-relationship-15-view-relationship-history/spec.md",
+          "sourceId": "UC-RelatedPerson-Relationship-15",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "As an Integration Administrator, I want to control when provider information is added to the Provider Directory, so that I can effectively manage system resources.",
+        "UserStory"
+      ],
+      "rows": [
+        {
+          "row": 495,
+          "source": "openspec/specs/provider-directory-integration/sr-11-control-national-provider-data-integration/spec.md",
+          "sourceId": "SR-11",
+          "specialization": "UserStory"
+        },
+        {
+          "row": 510,
+          "source": "openspec/specs/provider-directory-integration/sr-25-control-internal-provider-data-integration/spec.md",
+          "sourceId": "SR-25",
+          "specialization": "UserStory"
+        },
+        {
+          "row": 547,
+          "source": "openspec/specs/provider-directory-integration/sr-6-control-when-provider-information-is-added/spec.md",
+          "sourceId": "SR-6",
+          "specialization": "UserStory"
+        }
+      ]
+    },
+    {
+      "key": [
+        "As an Integration Administrator, I want to verify provider information, so that incorrect records are not stored.",
+        "UserStory"
+      ],
+      "rows": [
+        {
+          "row": 504,
+          "source": "openspec/specs/provider-directory-integration/sr-2-verify-incoming-provider-information/spec.md",
+          "sourceId": "SR-2",
+          "specialization": "UserStory"
+        },
+        {
+          "row": 506,
+          "source": "openspec/specs/provider-directory-integration/sr-21-verify-provider-information-received-from-internal-systems/spec.md",
+          "sourceId": "SR-21",
+          "specialization": "UserStory"
+        },
+        {
+          "row": 549,
+          "source": "openspec/specs/provider-directory-integration/sr-8-verify-provider-information-received-from-national-sources/spec.md",
+          "sourceId": "SR-8",
+          "specialization": "UserStory"
+        }
+      ]
+    },
+    {
+      "key": [
+        "As an Integration Administrator, I want to use unique provider identifiers to match with existing records, so that duplicate record creation is avoided.",
+        "UserStory"
+      ],
+      "rows": [
+        {
+          "row": 508,
+          "source": "openspec/specs/provider-directory-integration/sr-23-match-internal-provider-data-using-unique-identifiers/spec.md",
+          "sourceId": "SR-23",
+          "specialization": "UserStory"
+        },
+        {
+          "row": 526,
+          "source": "openspec/specs/provider-directory-integration/sr-4-match-incoming-data-using-unique-provider-identifiers/spec.md",
+          "sourceId": "SR-4",
+          "specialization": "UserStory"
+        }
+      ]
+    },
+    {
+      "key": [
+        "As an Integration Administrator, I want to confirm that the provider information was successfully added, so that I know the update process completed.",
+        "UserStory"
+      ],
+      "rows": [
+        {
+          "row": 509,
+          "source": "openspec/specs/provider-directory-integration/sr-24-confirm-internal-provider-information-was-successfully-added/spec.md",
+          "sourceId": "SR-24",
+          "specialization": "UserStory"
+        },
+        {
+          "row": 537,
+          "source": "openspec/specs/provider-directory-integration/sr-5-confirm-provider-information-was-successfully-added/spec.md",
+          "sourceId": "SR-5",
+          "specialization": "UserStory"
+        }
+      ]
+    },
+    {
+      "key": [
+        "Search Providers by Specialty",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 587,
+          "source": "openspec/specs/provider-directory-integration/uc-integration-providerdirectory-12-search-providers-by-specialty/spec.md",
+          "sourceId": "UC-Integration-ProviderDirectory-12",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 713,
+          "source": "openspec/specs/provider-management/uc-clinician-providerdirectorysearch-4-search-providers-by-specialty/spec.md",
+          "sourceId": "UC-Clinician-ProviderDirectorySearch-4",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "Search Providers by Clinical Capability",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 591,
+          "source": "openspec/specs/provider-directory-integration/uc-integration-providerdirectory-14-search-providers-by-clinical-capability/spec.md",
+          "sourceId": "UC-Integration-ProviderDirectory-14",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 715,
+          "source": "openspec/specs/provider-management/uc-clinician-providerdirectorysearch-5-search-providers-by-clinical-capability/spec.md",
+          "sourceId": "UC-Clinician-ProviderDirectorySearch-5",
+          "specialization": "UseCase"
+        }
+      ]
+    },
+    {
+      "key": [
+        "Manage Electronic Service Endpoints",
+        "UseCase"
+      ],
+      "rows": [
+        {
+          "row": 661,
+          "source": "openspec/specs/provider-management/uc-clinician-directory-18-manage-electronic-service-endpoints/spec.md",
+          "sourceId": "UC-Clinician-Directory-18",
+          "specialization": "UseCase"
+        },
+        {
+          "row": 741,
+          "source": "openspec/specs/provider-management/uc-departmentalofficer-providerdirectory-17-manage-electronic-service-endpoints/spec.md",
+          "sourceId": "UC-DepartmentalOfficer-ProviderDirectory-17",
+          "specialization": "UseCase"
+        }
+      ]
+    }
+  ]
+}

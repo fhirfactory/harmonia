@@ -1,0 +1,141 @@
+---
+{
+  "schemaVersion": 1,
+  "canonicalId": "ee9bc6c96d944f2ea8bbaaeffb31db28",
+  "archimateType": "Grouping",
+  "specialization": null,
+  "displayName": "Resilience-and-Recovery.Failure-Detection-and-Handling.Constraints",
+  "friendlyName": "ResilienceAndRecoveryFailureDetectionAndHandlingConstraints",
+  "canonicalName": null,
+  "standing": {
+    "semantic": "Solution Architect authorised Subject Grouping incorporation; visual/result review pending",
+    "currentness": "current"
+  },
+  "identity": {
+    "authority": "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-12",
+    "incorporationTask": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+    "allocation": "UUIDv4 allocated once by explicit create",
+    "incomingRepresentationBinding": "id-1db025dd539640bcb935e922ead3d6e7",
+    "initialCreateRepresentationId": "id-407ac0c512b9521f9abe39eea90fd51e"
+  },
+  "naming": {
+    "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md",
+    "mode": "Local lexical component; unqualified Grouping supplies no formal naming token or ancestry",
+    "expected": {
+      "displayName": "Resilience-and-Recovery.Failure-Detection-and-Handling.Constraints",
+      "friendlyName": "ResilienceAndRecoveryFailureDetectionAndHandlingConstraints",
+      "canonicalName": null
+    }
+  },
+  "provenance": [
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.18/001/before/Harmonia-Continuum-1.1.18-001-004.xml",
+      "selector": "/*/*[4]/*[1920]",
+      "role": "Authored native Grouping explicitly authorised for incorporation",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.18/001/before/Harmonia-Continuum-1.1.18-001-004.xml",
+      "sha256": "4ddfaa9045d8d0196f1003c9344d85eb2f121398a79a579fbb6c18545470c0de"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+      "selector": "Consolidated authorised activity / native Groupings and relationships",
+      "role": "Operative Solution Architect incorporation and spelling authority",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+      "sha256": "3ba6a88a66c3c4956e80e6676a9b60ceb04454b59d510643ace7ba1b7dd8fc5d"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.18/001/before/Harmonia-Continuum-1.1.18-001-004.xml",
+      "selector": "/*/*[4]/*[1920]"
+    }
+  ],
+  "relationships": [
+    {
+      "identifier": "id-4c284b72c7df449fb6605fab80fe92ba",
+      "source": "id-1db025dd539640bcb935e922ead3d6e7",
+      "target": "id-c104c6bf7a585269a977e2d2de66ffb3",
+      "archimateType": "Association",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "standing": {
+        "semantic": "Solution Architect authorised Subject hierarchy and Home completion; result review pending",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+        "retainedAt": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+        "selector": "Consolidated scope / Composition containment and distinct authoritative Home; Authored Grouping id-1db025dd539640bcb935e922ead3d6e7",
+        "sha256": "3ba6a88a66c3c4956e80e6676a9b60ceb04454b59d510643ace7ba1b7dd8fc5d",
+        "authority": "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-12",
+        "meaning": "Authoritative architectural location"
+      },
+      "name": [
+        {
+          "text": "Home"
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Authored Grouping id-1db025dd539640bcb935e922ead3d6e7. Composition defines containment; the separate directed child-to-parent Home Association identifies authoritative architectural location. No new statement allocation or component responsibility is asserted."
+        }
+      ],
+      "properties": [
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "specialization",
+          "values": [
+            {
+              "text": "Home",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
+      "specialization": "Home"
+    }
+  ],
+  "unresolvedProperties": {
+    "canonicalName": "No formal-name qualifier is established for unspecialised Grouping; no token or naming ancestry invented."
+  },
+  "exchange": {
+    "identifier": "id-1db025dd539640bcb935e922ead3d6e7",
+    "properties": [],
+    "previousNativeName": "Resilience-and-Recovery.Failure-Detection-and-Handling.Constraints"
+  }
+}
+---
+
+# Resilience-and-Recovery.Failure-Detection-and-Handling.Constraints
+
+## Architectural content
+
+Native Subject Grouping authored as `Resilience-and-Recovery.Failure-Detection-and-Handling.Constraints` in the retained 004 export,
+incorporated under the Solution Architect's Subject Grouping hierarchy Task.
+It groups the source-qualified `Constraints` concern within
+the existing **Failure Detection and Handling** Subject (G07.02). Its authored full name
+is retained apart from explicitly recorded unambiguous spelling corrections.
+The incoming record has no Documentation or authored Properties; no normative
+definition, native statement, classification of individual statements, or
+additional responsibility is invented to complete that absence.
+
+The Task explicitly establishes parent-to-child Composition as containment and
+a separate directed child-to-parent Home Association as authoritative architectural
+location. These are distinct assertions. Neither diagram membership nor the
+Grouping's label alone establishes another Home or a statement allocation.
+No component ownership, implementation dependency, Capability decomposition,
+new Motivation statement or OpenSpec candidate incorporation is conferred.
+
+Source Exchange identifier: `id-1db025dd539640bcb935e922ead3d6e7`. View placement corroborates
+the authorised containing Subject; the exact correspondence is retained in the
+iteration's folder/Grouping inventories. Existing canonical identities and all
+pre-existing architectural assertions retain their standing. Archi visual
+acceptance and HCRL closure remain separate.

@@ -18,6 +18,7 @@ import continuum_manifest as manifest
 import continuum_navigation as nav
 import markdown
 from lxml import html
+from current_source_fixture import copy_retained_inputs
 
 
 class ContinuumTests(unittest.TestCase):
@@ -29,6 +30,7 @@ class ContinuumTests(unittest.TestCase):
             shutil.copytree(c.ROOT/rel,cls.root/rel,ignore=shutil.ignore_patterns('published','__pycache__'))
         shutil.copyfile(c.ROOT/'architecture-release.json',cls.root/'architecture-release.json')
         shutil.copyfile(c.ROOT/'enterprise-architecture/governance/authority-successors.json',cls.root/'enterprise-architecture/governance/authority-successors.json')
+        copy_retained_inputs(c.ROOT, cls.root)
         cls.catalogue,cls.elements=c.load(cls.root)
         cls.cid=next(cid for cid,(m,_,_) in cls.elements.items() if m['archimateType']=='Principle')
         cls.baseline=cls.root/'baseline.xml';cls.baseline.write_bytes(c.project(cls.root)[0])
@@ -46,7 +48,7 @@ class ContinuumTests(unittest.TestCase):
 
     def test_population_and_provenance(self):
         r=c.validate(self.root)
-        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(1842,1882,462))
+        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(1994,2235,462))
         self.assertEqual(r['elements'],r['provenanceCoverage'])
 
     def test_identity_type_location_and_standing_fail_closed(self):

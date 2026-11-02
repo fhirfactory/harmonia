@@ -3,12 +3,12 @@
 # Architecture Continuum RAD
 
 The human-readable narrative publication of the canonical Architecture Continuum.
-Read the accepted **1.1.17 [LaTeX RAD](published/1.1.17/continuum-rad.tex)** and [complete correspondence](published/1.1.17/structure.json). The [completed release HCRL](../../design/register/1.1.17/hcrl-1.1.17-002.complete.md) records accepted incorporation, the two expressly deferred reader-facing reviews and retained transport/source qualifications. No separate reader-facing visual review or PDF compilation is claimed. Later release-labelled development publications inherit their stated baseline until separately authorised change; the historical PDF below remains a publication of its own release.
+Read the **1.1.19 [LaTeX RAD](published/1.1.19/continuum-rad.tex)** and [complete correspondence](published/1.1.19/structure.json). The [completed originating HCRL](../../design/register/1.1.19/hcrl-1.1.18-001.complete.md) records the accepted architecture and complete authored Views. The [successor register](../../design/review/1.1.19/hcrl-1.1.19-001.pending.md) retains the two earlier reader-facing deferrals, new Subject/navigation structural-review obligation and all naming/source/transport qualifications. No reader-facing structural review or PDF compilation is claimed; the historical PDF below remains a publication of its own release.
 
-The **1.1.18 [development RAD source](published/1.1.18/continuum-rad.tex)** and [correspondence](published/1.1.18/structure.json) inherit unchanged 1.1.17 architecture with the next development release metadata. No View development or substantive design is introduced; both reader-facing review deferrals remain explicit.
+The protected **1.1.18 [development RAD source](published/1.1.18/continuum-rad.tex)** and [correspondence](published/1.1.18/structure.json) retain their original 1.1.17 architectural baseline and release metadata. They are not replaced during 1.1.19 publication.
 
 ------- Legacy Content - Superseded ------- Start ------
-Superseded by: the prepared 1.1.17 LaTeX source/correspondence links above. The original 1.1.10 publication and acceptance account is retained unchanged.
+Superseded by: the current LaTeX source/correspondence links above. The original 1.1.10 publication and acceptance account is retained unchanged.
 ---------------------------------------------------------
 
 Read the **1.1.10 [PDF](published/1.1.10/continuum-rad.pdf)** or

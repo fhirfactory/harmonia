@@ -1,0 +1,36 @@
+{
+  "publication": "enterprise-architecture/design/archimate/published/1.1.19/Harmonia-Architecture.xml",
+  "sha256": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09",
+  "executable": "/home/mhunter/Development/Tools/Archi/Archi",
+  "operator": "Codex",
+  "environment": {
+    "DISPLAY": ":0",
+    "GDK_BACKEND": "x11"
+  },
+  "temporaryConfiguration": "/tmp/harmonia-1119-closure-config",
+  "temporaryWorkspace": "/tmp/harmonia-1119-closure-workspace",
+  "arguments": [
+    "-nosplash",
+    "-consoleLog",
+    "-application",
+    "com.archimatetool.commandline.app",
+    "-a",
+    "--xmlexchange.import",
+    "<publication>",
+    "--saveModel",
+    "/tmp/harmonia-1119-closure-imported.archimate",
+    "--xmlexchange.export",
+    "/tmp/harmonia-1119-closure-returned.xml",
+    "--xmlexchange.exportFolders",
+    "--xmlexchange.exportLang",
+    "en"
+  ],
+  "timeoutSeconds": 90,
+  "exitCode": 0,
+  "log": "../release-1.1.19-archi.log",
+  "strictVerifierExitCode": 1,
+  "strictVerifierLog": "strict-verification.log",
+  "strictVerifierConclusion": "FAIL: Relationship/View transport drift; original verifier unchanged",
+  "boundedClassification": "archi-transport-classification.json",
+  "returnedXmlSha256": "5aa0287075809110a2d1b5f102425d6b648159fee03a8953ccb8b9d14a7f9b89"
+}

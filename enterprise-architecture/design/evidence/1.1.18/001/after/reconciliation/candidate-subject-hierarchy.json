@@ -1,0 +1,162 @@
+[
+  {
+    "code": "G14",
+    "name": "Patient Identity and Demographics",
+    "concern": "Business-functional motivation grouping for patient identity and demographics."
+  },
+  {
+    "code": "G14.01",
+    "name": "Identity Registration and Verification",
+    "concern": "Establishing and validating patient identity and supporting evidence."
+  },
+  {
+    "code": "G14.02",
+    "name": "Identity Matching and Reconciliation",
+    "concern": "Matching, linking, separating, merging and resolving patient identities."
+  },
+  {
+    "code": "G14.03",
+    "name": "Identity Maintenance and Status",
+    "concern": "Updating identity records, statuses and lifecycle."
+  },
+  {
+    "code": "G14.04",
+    "name": "Demographic and Contact Management",
+    "concern": "Maintaining patient demographic, contact and communication information."
+  },
+  {
+    "code": "G14.05",
+    "name": "Identity Access and Disclosure",
+    "concern": "Patient identity lookup, controlled disclosure and external identity enquiries."
+  },
+  {
+    "code": "G14.06",
+    "name": "Identity Quality and Oversight",
+    "concern": "Identity exceptions, risk, quality review and oversight."
+  },
+  {
+    "code": "G15",
+    "name": "Provider and Workforce Management",
+    "concern": "Business-functional motivation grouping for provider and workforce management."
+  },
+  {
+    "code": "G15.01",
+    "name": "Provider Identity and Registration",
+    "concern": "Registering and maintaining provider and practitioner identity."
+  },
+  {
+    "code": "G15.02",
+    "name": "Credentials and Professional Standing",
+    "concern": "Qualifications, registration, credential verification and professional standing."
+  },
+  {
+    "code": "G15.03",
+    "name": "Affiliations, Roles and Practice Locations",
+    "concern": "Provider organisational relationships, roles, locations and service affiliations."
+  },
+  {
+    "code": "G15.04",
+    "name": "Provider Profile Maintenance",
+    "concern": "Maintaining professional profiles and provider contact details."
+  },
+  {
+    "code": "G15.05",
+    "name": "Provider Lifecycle and Administration",
+    "concern": "Provider onboarding, change, suspension and lifecycle administration."
+  },
+  {
+    "code": "G16",
+    "name": "Consent and Information Sharing",
+    "concern": "Business-functional motivation grouping for consent and information sharing."
+  },
+  {
+    "code": "G16.01",
+    "name": "Consent Capture and Maintenance",
+    "concern": "Obtaining, recording, changing, renewing and withdrawing consent."
+  },
+  {
+    "code": "G16.02",
+    "name": "Consent Scope and Preferences",
+    "concern": "Managing consent purpose, duration, restrictions and sharing preferences."
+  },
+  {
+    "code": "G16.03",
+    "name": "Consent Verification and Decisions",
+    "concern": "Determining whether consent and relevant authority apply to an activity."
+  },
+  {
+    "code": "G16.04",
+    "name": "Representatives and Delegated Consent",
+    "concern": "Consent by representatives and verification of delegated authority."
+  },
+  {
+    "code": "G16.05",
+    "name": "Consent Communication and History",
+    "concern": "Presenting consent history, notices, discussions and change notifications."
+  },
+  {
+    "code": "G16.06",
+    "name": "Exceptional and Emergency Consent",
+    "concern": "Consent handling for emergency access and exceptional situations."
+  },
+  {
+    "code": "G17",
+    "name": "Terminology and Reference Data",
+    "concern": "Business-functional motivation grouping for terminology and reference data."
+  },
+  {
+    "code": "G17.01",
+    "name": "Terminology Definition and Maintenance",
+    "concern": "Maintaining code systems, concepts, ValueSets and terminology definitions."
+  },
+  {
+    "code": "G17.02",
+    "name": "Terminology Mapping and Validation",
+    "concern": "Validating, comparing and mapping terminology and concepts."
+  },
+  {
+    "code": "G17.03",
+    "name": "Terminology Release and Versioning",
+    "concern": "Governed terminology publication, versioning and release lifecycle."
+  },
+  {
+    "code": "G17.04",
+    "name": "Reference Data Management",
+    "concern": "Maintaining governed reference values and reference datasets."
+  },
+  {
+    "code": "G17.05",
+    "name": "Reference Data Quality and Governance",
+    "concern": "Reference data ownership, verification, quality and stewardship."
+  },
+  {
+    "code": "G18",
+    "name": "Provider Directory",
+    "concern": "Business-functional motivation grouping for provider directory."
+  },
+  {
+    "code": "G18.01",
+    "name": "Provider Directory Discovery",
+    "concern": "Searching and discovering providers, services and locations."
+  },
+  {
+    "code": "G18.02",
+    "name": "Directory Publication and Visibility",
+    "concern": "Publishing and controlling provider directory visibility."
+  },
+  {
+    "code": "G18.03",
+    "name": "Directory Information Maintenance",
+    "concern": "Updating and managing directory entries."
+  },
+  {
+    "code": "G18.04",
+    "name": "Directory Verification and Quality",
+    "concern": "Verifying and assessing directory information and changes."
+  },
+  {
+    "code": "G18.05",
+    "name": "Directory Synchronisation",
+    "concern": "Synchronising provider directory information with participating systems."
+  }
+]

@@ -9,7 +9,8 @@
   "canonicalName": "MOT-PlatformOperationsAndIntegrationEngineers",
   "standing": {
     "semantic": "Agreed",
-    "currentness": "current"
+    "currentness": "superseded",
+    "evolution": "Approved separation into distinct integration/development and platform operations/OA&M populations; original combined identity reserved as history."
   },
   "identity": {
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
@@ -47,6 +48,13 @@
       "role": "current governed definition",
       "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
       "sha256": "04283275d49dd9e8cb6e96c13a7b7a86ceec165fd341ce2f3e36a4beda4d4d25"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T011114Z-complete-subject-views.md",
+      "selector": "Five approved elements / necessary stakeholder migration",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T011114Z-complete-subject-views.md",
+      "sha256": "3136dcc41913c0daf4d9252e402ebe190a4d0c8209e981cffe38c48e94b7c0d9",
+      "role": "Authorised one-to-many population separation; original UUID/definition/relationships retained, no equivalence or retargeting"
     }
   ],
   "sourceBindings": [
@@ -63,7 +71,7 @@
         "ref": "propid-40",
         "values": [
           {
-            "text": "current",
+            "text": "superseded",
             "attributes": {
               "{http://www.w3.org/XML/1998/namespace}lang": "en"
             }
@@ -230,3 +238,13 @@ Platform Operations and Integration Engineers are the systems reliability engine
 - **Zero Unmonitored Message Loss**: Deterministic verification regarding the progression state of incoming events, ensuring that failed downstream deliveries are immediately flagged rather than lost in silent dead-letter sinks.
 - **Observable Multi-Stage Activity State**: Transparent visibility into complex, distributed workflows (such as fan-out distributions) where tasks progress across multiple hops and destination endpoints.
 - **Deterministic Failure Semantics**: Clean separation of active operational coordination from authoritative durable state, preventing data corruption during unexpected node crashes or network partitions.
+
+
+### Approved stakeholder separation — 1.1.18 / 001
+
+The original profile above is retained as the historical combined population. The Solution Architect approved its separation into two distinct actor populations through the complete Subject/Views Task. Its canonical UUID and Exchange ID are reserved and unchanged. Neither successor is assigned the predecessor identity.
+
+- [Integration & Solution Engineers](1dc29678ec4a4a498620c84ffa03c2bb.md), canonical UUID `1dc29678ec4a4a498620c84ffa03c2bb`.
+- [Platform Operations & OA&M Personnel](ec45ffa1b7d841cf920aa467d4d2b1f4.md), canonical UUID `ec45ffa1b7d841cf920aa467d4d2b1f4`.
+
+Existing references and relationships remain attached to the historical combined population. No relationship is duplicated or retargeted by the separation. The one-to-many evolution is recorded by these reciprocal explanations and attributable provenance, rather than an invented one-to-one equivalence.

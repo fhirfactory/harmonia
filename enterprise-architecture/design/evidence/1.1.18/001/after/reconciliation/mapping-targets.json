@@ -1,0 +1,605 @@
+[
+  {
+    "exchangeId": "id-0c99a409fcad5e30b1c384f25976197f",
+    "mappingName": "[CT3] Patient Health Information Restriction Management",
+    "canonicalId": "262366990bda4ac4ace5429269cf6a98",
+    "source": "enterprise-architecture/continuum/strategy/capability/262366990bda4ac4ace5429269cf6a98.md",
+    "name": "[CT3] Patient Health Information Restriction Management",
+    "specialization": null,
+    "standing": {
+      "semantic": "Proposed",
+      "currentness": "current",
+      "placement_status": "Proposed",
+      "structural_id_status": "Proposed",
+      "name_status": "Proposed",
+      "ancestry_status": "proposed"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+      "predecessorCanonicalIds": [
+        "5ad91d045474435a96b560e66ff7de05"
+      ]
+    },
+    "relationships": [],
+    "content": "# [CT3] Patient Health Information Restriction Management\n\n## Architectural content\n\nManage application of patient health-information restrictions using the client-associated privacy and consent responsibilities retained by Client Privacy Guardrail Management.\n\n**Overview**\n\nManage application of patient health-information restrictions using the client-associated privacy and consent responsibilities retained by Client Privacy Guardrail Management. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.\n\n**Intent**\n\nManage application of patient health-information restrictions using the client-associated privacy and consent responsibilities retained by Client Privacy Guardrail Management.\n\n**Boundary**\n\nInformation administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority. Client consent directives remain owned by Client Privacy Guardrail Management (FEAT-EM-09); this capability references and respects those determinations without defining a second consent owner.\n\n## ARB identity continuity\n\nHistorical identity [5ad91d045474435a96b560e66ff7de05](5ad91d045474435a96b560e66ff7de05.md) has direct correspondence with this capability under HCRL 1.1.5-002. Historical provenance and UUID reservation remain with that record; this resource retains its existing identity and independent standing.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 98,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-b72487e00fef5855b909078e3b2ca3a0",
+    "mappingName": "[CT3] Health Information Sharing Programme Management",
+    "canonicalId": "6c5c2cb625414b149ac7f2ccb4b8a897",
+    "source": "enterprise-architecture/continuum/strategy/capability/6c5c2cb625414b149ac7f2ccb4b8a897.md",
+    "name": "[CT3] Health Information Sharing Programme Management",
+    "specialization": null,
+    "standing": {
+      "semantic": "Candidate",
+      "currentness": "current",
+      "placement_status": "Proposed",
+      "structural_id_status": "Proposed",
+      "name_status": "Candidate",
+      "ancestry_status": "proposed"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    },
+    "relationships": [],
+    "content": "# [CT3] Health Information Sharing Programme Management\n\n## Architectural content\n\nDefinition unresolved in the baseline. No definition has been synthesised from the name.\n\n**Proposed overview**\n\nProgramme-level coordination supplies a plausible frame for the preserved name without replacing the established exchange abilities.\n\n**Proposed definition**\n\nCoordinate the governed scope, participants and change context of a health-information-sharing programme.\n\n**Proposed boundary**\n\nThe element remains Candidate. The definition/placement elaboration is Proposed and does not adjudicate the unresolved RAD question or transfer source-domain authority.\n\n---\n\n## History\n\n### Capability Overview — predecessor explanation\n\nThe RAD retains this named working concern while establishing only its corrected spelling. The name suggests an organised information-sharing context, but it does not provide enough governed meaning to decide what that programme manages or how it differs from the established exchange responsibilities. A fuller architectural overview would require inventing scope that the source has not supplied.\n\n### Additional Notes / Unresolved Matters — predecessor explanation\n\nDefinition, tier and parent remain unresolved. This is an explicitly constrained description, not an approved programme-management responsibility or an allocated structural path.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 22,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-59c5db76c2d25e2d894cbaf05f986efb",
+    "mappingName": "[Feature] Consent Directive Evaluation",
+    "canonicalId": "baf6dc6ef38a4256a9a67a65fd3f31ba",
+    "source": "enterprise-architecture/continuum/strategy/capability/feature/baf6dc6ef38a4256a9a67a65fd3f31ba.md",
+    "name": "[Feature] Consent Directive Evaluation",
+    "specialization": "Feature",
+    "standing": {
+      "semantic": "Canonical",
+      "currentness": "current",
+      "placement_status": "Proposed",
+      "structural_id_status": "Proposed",
+      "name_status": "Canonical",
+      "ancestry_status": "proposed"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    },
+    "relationships": [],
+    "content": "# [Feature] Consent Directive Evaluation\n\n## Architectural content\n\nEvaluate client consent directives against requested information disclosure and exchange actions.\n\nConsent evaluation brings the client's applicable directives into consideration of a requested disclosure or exchange. It distinguishes the recorded directive from the particular action being evaluated, preserving the need for established policy and authority rather than treating consent data as a universal permission token.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 18,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-23f9ff8b179358d0ac2f9df5cc5f51bd",
+    "mappingName": "[CT3] Healthcare Organisation Profile Administration",
+    "canonicalId": "e485424b799c42aca7399d341ca02d0b",
+    "source": "enterprise-architecture/continuum/strategy/capability/e485424b799c42aca7399d341ca02d0b.md",
+    "name": "[CT3] Healthcare Organisation Profile Administration",
+    "specialization": null,
+    "standing": {
+      "semantic": "Superseded historical identity — direct correspondence",
+      "currentness": "superseded"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+      "correspondence": {
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "disposition": "direct correspondence",
+        "successorCanonicalId": "f2de9e9394b849f2943355c7a2882a15",
+        "previousStanding": {
+          "semantic": "Historical reference — RAD correspondence unresolved",
+          "currentness": "historical_reference"
+        },
+        "historicalIdentityReserved": true,
+        "reason": "Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter."
+      }
+    },
+    "relationships": [],
+    "content": "# [CT3] Healthcare Organisation Profile Administration\n\n## Architectural content\n\nThe governed source has no established definition. This absence is retained for Solution Architect review; no definition is inferred from the name.\n\n## ARB correspondence\n\nSame bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter.\n\nCurrent representation: [[CT3] Healthcare Organisation Profile Administration](f2de9e9394b849f2943355c7a2882a15.md). This resource reserves the historical identity and representation for provenance and existing Views. Its missing original definition remains missing.\n",
+    "explicitSuccessorCanonicalId": "f2de9e9394b849f2943355c7a2882a15",
+    "mappingRows": 142,
+    "identityResolution": "Explicit historical correspondence; preserve both identities"
+  },
+  {
+    "exchangeId": "id-8e1cc85a4269529bb99d74f1f6ebe1cf",
+    "mappingName": "[CT3] Security & Information-Use Accountability",
+    "canonicalId": "a33d0cc14c384bd48012def4ded54a67",
+    "source": "enterprise-architecture/continuum/strategy/capability/a33d0cc14c384bd48012def4ded54a67.md",
+    "name": "[CT3] Security & Information-Use Accountability",
+    "specialization": null,
+    "standing": {
+      "semantic": "Canonical",
+      "currentness": "current",
+      "placement_status": "Established",
+      "structural_id_status": "Established",
+      "name_status": "Canonical",
+      "ancestry_status": "established"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    },
+    "relationships": [],
+    "content": "# [CT3] Security & Information-Use Accountability\n\n## Architectural content\n\nEvaluate whether attributed security-relevant activity/information use was appropriate within policy, obligation and authority constraints, and establish accountability.\n\nThis capability evaluates attributed activity and information use against applicable policy, obligations and authority constraints. It establishes accountability rather than simply recording participation. Its purpose depends on preserving the circumstances of action so that appropriateness is considered within the relevant mandate instead of inferred from identity or technical success.\n\n**Boundary**\n\nAn authenticated actor and a successful operation are not proof of legitimate information use.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 4,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-c0a2dee48aae56eaaf4266358083da80",
+    "mappingName": "[CT3] Identity Qualification Control",
+    "canonicalId": "3d53064f2fb7475b8f49fb58ec8ad4a5",
+    "source": "enterprise-architecture/continuum/strategy/capability/3d53064f2fb7475b8f49fb58ec8ad4a5.md",
+    "name": "[CT3] Identity Qualification Control",
+    "specialization": null,
+    "standing": {
+      "semantic": "Canonical",
+      "currentness": "current",
+      "placement_status": "Established",
+      "structural_id_status": "Established",
+      "name_status": "Canonical",
+      "ancestry_status": "established"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    },
+    "relationships": [],
+    "content": "# [CT3] Identity Qualification Control\n\n## Architectural content\n\nDetermine whether presented identity characteristics, provenance and assurance quality are sufficient for its intended context.\n\nIdentity Qualification Control evaluates whether presented identity characteristics, provenance and assurance are sufficient for the intended context. It adds a contextual judgement beyond whether the actor can be authenticated. This permits an identity adequate for one purpose to remain insufficient for another without claiming that the identity is necessarily false.\n\n**Boundary**\n\nIdentity qualification does not establish practitioner clinical qualification or a general permission to act.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 54,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-8cbd1321a0c15306b7355745d2e22818",
+    "mappingName": "[CT3] Enterprise Reference Data Stewardship",
+    "canonicalId": "971d4b079ad24e89b70a8ed8dec0c8bf",
+    "source": "enterprise-architecture/continuum/strategy/capability/971d4b079ad24e89b70a8ed8dec0c8bf.md",
+    "name": "[CT3] Enterprise Reference Data Stewardship",
+    "specialization": null,
+    "standing": {
+      "semantic": "Proposed",
+      "currentness": "current",
+      "placement_status": "Proposed",
+      "structural_id_status": "Proposed",
+      "name_status": "Proposed",
+      "ancestry_status": "proposed"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+      "predecessorCanonicalIds": [
+        "fd9f3239fdb64ea687825b66bb4d1f17"
+      ]
+    },
+    "relationships": [],
+    "content": "# [CT3] Enterprise Reference Data Stewardship\n\n## Architectural content\n\nSteward enterprise reference-data definitions, bindings and applicable governance independently of mutable runtime dataset administration.\n\n**Overview**\n\nSteward enterprise reference-data definitions, bindings and applicable governance independently of mutable runtime dataset administration. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.\n\n**Intent**\n\nSteward enterprise reference-data definitions, bindings and applicable governance independently of mutable runtime dataset administration.\n\n**Boundary**\n\nInformation administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.\n\n## ARB identity continuity\n\nHistorical identity [fd9f3239fdb64ea687825b66bb4d1f17](fd9f3239fdb64ea687825b66bb4d1f17.md) has direct correspondence with this capability under HCRL 1.1.5-002. Historical provenance and UUID reservation remain with that record; this resource retains its existing identity and independent standing.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 16,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-706567fdfba05959be6ac7247ad0480e",
+    "mappingName": "[CT3] Provider Relationship",
+    "canonicalId": "3bb8a3d5b62a4b779442290fe8d5106c",
+    "source": "enterprise-architecture/continuum/strategy/capability/3bb8a3d5b62a4b779442290fe8d5106c.md",
+    "name": "[CT3] Provider Relationship",
+    "specialization": null,
+    "standing": {
+      "semantic": "Proposed",
+      "currentness": "superseded",
+      "placement_status": "Proposed",
+      "structural_id_status": "Proposed",
+      "name_status": "Proposed",
+      "ancestry_status": "proposed"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    },
+    "relationships": [],
+    "content": "# [CT3] Provider Relationship\n\n## Architectural content\n\nManaging organizational affiliations and multidisciplinary team relationships.\n\n**Overview**\n\nEffective affiliations explain which practitioner or team participates with which organisation. These relationships support collaboration and routing while each participating identity keeps its own responsibility owner.\n\n**Intent**\n\nPreserve which affiliations apply when interpreting provider participation.\n\n**Boundary**\n\nAffiliation records do not transfer the participating organisations or practitioner identities to this capability.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 18,
+    "identityResolution": "Superseded target; no direct successor identity inferred"
+  },
+  {
+    "exchangeId": "id-a5df034d251455f0aba1de9817628801",
+    "mappingName": "[CT3] Identity Assurance",
+    "canonicalId": "56ccd6d3bf5b4ec980a333dfadf8d9fa",
+    "source": "enterprise-architecture/continuum/strategy/capability/56ccd6d3bf5b4ec980a333dfadf8d9fa.md",
+    "name": "[CT3] Identity Assurance",
+    "specialization": null,
+    "standing": {
+      "semantic": "Canonical",
+      "currentness": "current",
+      "placement_status": "Established",
+      "structural_id_status": "Established",
+      "name_status": "Canonical",
+      "ancestry_status": "established"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    },
+    "relationships": [],
+    "content": "# [CT3] Identity Assurance\n\n## Architectural content\n\nEstablish sufficient confidence that a person is who they claim to be through appropriate evidence and processes.\n\nIdentity Assurance establishes confidence that a person is who they claim to be using appropriate evidence and processes. It concerns the basis and strength of the identity claim, rather than only successful use of an authentication mechanism. Within identity governance it makes confidence a question that can be considered separately from contextual sufficiency and access authority.\n\n**Boundary**\n\nAn assured identity is not automatically sufficient for every context or permitted to perform every action.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 122,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-29e0bf94882559a7b6ed9d092303a560",
+    "mappingName": "[CT3] Person Identity Administration",
+    "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+    "source": "enterprise-architecture/continuum/strategy/capability/6c3de7750ef1436cad6a9533731782b6.md",
+    "name": "[CT3] Person Identity Administration",
+    "specialization": null,
+    "standing": {
+      "semantic": "Canonical",
+      "currentness": "current",
+      "placement_status": "Proposed",
+      "structural_id_status": "Proposed",
+      "name_status": "Proposed",
+      "ancestry_status": "proposed"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+      "predecessorCanonicalIds": [
+        "7550fd5b17e643118fa76d2616e1ba20"
+      ]
+    },
+    "relationships": [
+      {
+        "identifier": "id-73ecd7a39407404ba8e2bb663efbdc19",
+        "source": "id-29e0bf94882559a7b6ed9d092303a560",
+        "target": "id-d9272acdc675539cb441d2db9c5ad6e6",
+        "archimateType": "Composition",
+        "attributes": {},
+        "standing": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "provenance": {
+          "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+          "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+          "selector": "relationship[@identifier=\"id-73ecd7a39407404ba8e2bb663efbdc19\"]"
+        },
+        "properties": [],
+        "name": [],
+        "documentation": []
+      },
+      {
+        "identifier": "id-36b2aa8ad58149fdb20d44c1c16dd64c",
+        "source": "id-29e0bf94882559a7b6ed9d092303a560",
+        "target": "id-6f0bfe5e814c5734a7c530f2b7515666",
+        "archimateType": "Composition",
+        "attributes": {},
+        "standing": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "provenance": {
+          "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+          "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+          "selector": "relationship[@identifier=\"id-36b2aa8ad58149fdb20d44c1c16dd64c\"]"
+        },
+        "properties": [],
+        "name": [],
+        "documentation": []
+      },
+      {
+        "identifier": "id-3c3d723683c147a4a902b4d35a2af018",
+        "source": "id-29e0bf94882559a7b6ed9d092303a560",
+        "target": "id-bdf18b5e580b5b85a34357a3b21f36db",
+        "archimateType": "Composition",
+        "attributes": {},
+        "standing": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "provenance": {
+          "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+          "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+          "selector": "relationship[@identifier=\"id-3c3d723683c147a4a902b4d35a2af018\"]"
+        },
+        "properties": [],
+        "name": [],
+        "documentation": []
+      },
+      {
+        "identifier": "id-daf437bb32114daa8a6b9462cb9b4fb2",
+        "source": "id-29e0bf94882559a7b6ed9d092303a560",
+        "target": "id-f1e1928516765880955f638a7fec8c35",
+        "archimateType": "Composition",
+        "attributes": {},
+        "standing": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "provenance": {
+          "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+          "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+          "selector": "relationship[@identifier=\"id-daf437bb32114daa8a6b9462cb9b4fb2\"]"
+        },
+        "properties": [],
+        "name": [],
+        "documentation": []
+      },
+      {
+        "identifier": "id-f9b270950f0241108b68f1c3daa50019",
+        "source": "id-29e0bf94882559a7b6ed9d092303a560",
+        "target": "id-28d7815137a05a2aab6d1684011dbbde",
+        "archimateType": "Composition",
+        "attributes": {},
+        "standing": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "provenance": {
+          "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+          "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+          "selector": "relationship[@identifier=\"id-f9b270950f0241108b68f1c3daa50019\"]"
+        },
+        "properties": [],
+        "name": [],
+        "documentation": []
+      },
+      {
+        "identifier": "id-bff76286f8994d20aa1b8aef166acebd",
+        "source": "id-29e0bf94882559a7b6ed9d092303a560",
+        "target": "id-727a264026584f80bc3304ff8383dc92",
+        "archimateType": "Composition",
+        "attributes": {},
+        "standing": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "provenance": {
+          "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+          "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+          "selector": "relationship[@identifier=\"id-bff76286f8994d20aa1b8aef166acebd\"]"
+        },
+        "properties": [],
+        "name": [],
+        "documentation": []
+      }
+    ],
+    "content": "# [CT3] Person Identity Administration\n\n## Architectural content\n\nResolving, maintaining, and correlating identities and identifiers assigned to an individual across different authorities.\n\nDefinition — reviewed candidate\n\nResolve, maintain and correlate identities and identifiers assigned to a person across issuing authorities, retaining source-qualified correction history.\n\n**Overview**\n\nResolve, maintain and correlate identities and identifiers assigned to a person across issuing authorities, retaining source-qualified correction history.\n\n**Intent**\n\nResolve, maintain and correlate identities and identifiers assigned to a person across issuing authorities, retaining source-qualified correction history.\n\n**Boundary**\n\nInformation administration does not confer authority over the represented person, organisation, service, place, device or clinical activity.\n\n---\n\n## History\n\n### Capability Overview — predecessor explanation\n\nPerson Identity resolves and correlates the identities and identifiers assigned to one individual by different authorities. It enables an incoming local identifier to be understood in its issuing namespace and related to other known identifiers without destructively replacing their history. Resolution, cross-authority correlation, alias association and governed correction preserve different aspects of that responsibility.\n\n### Intent — predecessor explanation\n\nSupport reliable association of care information with the intended individual across participating systems.\n\n### Boundary — predecessor explanation\n\nHarmonia relies on authoritative upstream PAS/MPI information for R1/R2. Correlation and correction notifications do not establish an autonomous master-patient reconciliation engine.\n\n### Harmonia Architectural Relevance — predecessor explanation\n\nIdentity association is a direct platform concern because clinical records, orders and operational activity need an enduring subject context. Its Core standing does not imply originating master identity authority.\n\n## Qualified relationship assertions\n\nOriginal source predicates, evidence and qualifications remain in the metadata. The ARB has now adjudicated their native treatment; explicitly unestablished relationship existence remains excluded. Native representation does not promote source standing.\n\n| Source predicate | Target element | Source standing / currentness | ARB native treatment |\n| --- | --- | --- | --- |\n| enterprise_enabled_by | [[CT2] Managed Entity & Relationship](910634fb1621416c818a022ab0b5d3a1.md) | Proposed / current | Serving (reverse) — `id-eae6d6072b4f58e1825337205605b9c2` |\n| enterprise_enabled_by | [[CT2] Managed State & Lifecycle](6296abeee5074b9e80f21aea3a297e42.md) | Proposed / current | Serving (reverse) — `id-783e863158ec55c2b5c9a1648ba295d9` |\n| enterprise_enabled_by | [[CT2] Search & Discovery](6a45701634f04b43919d9152a61e5f2e.md) | Proposed / current | Serving (reverse) — `id-7c25dc788ae3553d99771eff1152b612` |\n| enterprise_enabled_by | [[CT2] Provenance & Traceability](68a0755aa4e14a509ac5e6c0bbcff3e7.md) | Proposed / current | Serving (reverse) — `id-76a2e24e2e935c9e91d0e8a6eb2f5c54` |\n| enterprise_enabled_by | [[CT2] Information Authority Qualification](cbba9984dd404deabed41fdcc96088b1.md) | Proposed / current | Serving (reverse) — `id-e64f76bbe27c530d8c8616059437de82` |\n| enterprise_enabled_by | [[CT3] Information Attribution & Lineage](8bc66c9bc1024a68a1bfd010b4dd1b79.md) | Proposed / current | Serving (reverse) — `id-f535f79890f9586a97dadb60c3ba83bf` |\n\n## Source-qualified contribution\n\nSource: `docs/markdown/03-business-architecture/behaviours/01-entity-management.md` — entry lines 16-16. Standing: exact originating assertion; current resource standing unchanged.\n\n- **Owning Capability**: `Person Identity` (under `Client Administration`)\n\n## ARB identity continuity\n\nHistorical identity [7550fd5b17e643118fa76d2616e1ba20](7550fd5b17e643118fa76d2616e1ba20.md) has direct correspondence with this capability under HCRL 1.1.5-002. Historical provenance and UUID reservation remain with that record; this resource retains its existing identity and independent standing.\n\n## ARB source correspondence\n\nScope/anti-responsibility and clinical/operational meaning establish the responsible Capability; descriptive ledger/registry/asset labels do not establish a separately bounded formal Information Concept. Preserve non-transfer and source authority.\n\nSource: `docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md` — information responsibility row 1. Standing: Established Business responsibility only; formal information identity/lifecycle not inferred.\n\n```text\n| **Person Identity** *(Client Administration)* | **Person Identity & Identifier Correlation Graph** | Ingested authoritative person identifiers and source-attributed identity information, namespace bindings, demographic traits, aliases, authoritative relationship correlations, and history of externally decided corrections/merge/unlink outcomes and their managed-state consequences. | Does not originate probabilistic matching, golden-record determination, authoritative master-person selection or person-merge decisions; does not own encounter registrations or clinical observations. |\n```\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 82,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-d58022670433565e85886b12893bd691",
+    "mappingName": "[CT3] Identity Modelling & Interoperability",
+    "canonicalId": "c40a00b0fe56405d99b6bb6ede72e18e",
+    "source": "enterprise-architecture/continuum/strategy/capability/c40a00b0fe56405d99b6bb6ede72e18e.md",
+    "name": "[CT3] Identity Modelling & Interoperability",
+    "specialization": null,
+    "standing": {
+      "semantic": "Canonical",
+      "currentness": "current",
+      "placement_status": "Established",
+      "structural_id_status": "Established",
+      "name_status": "Canonical",
+      "ancestry_status": "established"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    },
+    "relationships": [],
+    "content": "# [CT3] Identity Modelling & Interoperability\n\n## Architectural content\n\nEstablish identity models and interoperability arrangements appropriate to organisational identity use.\n\nThis capability establishes identity models and arrangements through which identities can be understood across organisational use. It addresses the coherence needed when parties exchange or rely on identity information without assuming that their identity assertions have identical quality. Its purpose is meaningful interoperability, rather than a particular federation or Single Sign-On technology.\n\n**Boundary**\n\nInteroperability does not guarantee assurance quality or transfer each party's control ownership.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 38,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-aeafb86f7bb65c15acebe5f0048c9ef8",
+    "mappingName": "[CT3] Health Information Data Correlation",
+    "canonicalId": "6c41e90a8cf24ed689d9d6a363c8d3fe",
+    "source": "enterprise-architecture/continuum/strategy/capability/6c41e90a8cf24ed689d9d6a363c8d3fe.md",
+    "name": "[CT3] Health Information Data Correlation",
+    "specialization": null,
+    "standing": {
+      "semantic": "Canonical",
+      "currentness": "current",
+      "placement_status": "Established",
+      "structural_id_status": "Established",
+      "name_status": "Canonical",
+      "ancestry_status": "established"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    },
+    "relationships": [],
+    "content": "# [CT3] Health Information Data Correlation\n\n## Architectural content\n\nEstablish meaningful relationships between independently managed information items/sets.\n\nHealth Information Data Correlation establishes meaningful relationships between independently managed information items or sets. It helps information be understood together without requiring a merger of their identities, histories or originating authority. The responsibility is the association itself, rather than a clinical conclusion inferred from the associated content.\n\n**Boundary**\n\nCorrelation does not establish person identity, clinical interpretation or ownership transfer between the related items.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 20,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-30b102fdb0fd5f788ddf1812fe82689d",
+    "mappingName": "[CT3] Provider Engagement",
+    "canonicalId": "a0777dbd9b0c4528817e99a7f34aa444",
+    "source": "enterprise-architecture/continuum/strategy/capability/a0777dbd9b0c4528817e99a7f34aa444.md",
+    "name": "[CT3] Provider Engagement",
+    "specialization": null,
+    "standing": {
+      "semantic": "Proposed",
+      "currentness": "superseded",
+      "placement_status": "Proposed",
+      "structural_id_status": "Proposed",
+      "name_status": "Proposed",
+      "ancestry_status": "proposed"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    },
+    "relationships": [],
+    "content": "# [CT3] Provider Engagement\n\n## Architectural content\n\nCapturing terms of service and clinical privilege agreements.\n\n**Overview**\n\nEngagement information represents the terms and externally granted practice privileges under which a provider participates. This differs from who the practitioner is and from whether a particular operation is authorised now.\n\n**Intent**\n\nMake the externally established terms and privilege standing of provider participation available without granting it.\n\n**Boundary**\n\nRecords externally granted service terms and privileges; it does not independently grant those privileges.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 32,
+    "identityResolution": "Superseded target; no direct successor identity inferred"
+  },
+  {
+    "exchangeId": "id-523ec46acc27554ab7706bf0c6ed45b6",
+    "mappingName": "[Feature] Provider Directory Discovery & Resolution",
+    "canonicalId": "cd3bd35f7f9e4852bbbce299bb795d8a",
+    "source": "enterprise-architecture/continuum/strategy/capability/feature/cd3bd35f7f9e4852bbbce299bb795d8a.md",
+    "name": "[Feature] Provider Directory Discovery & Resolution",
+    "specialization": "Feature",
+    "standing": {
+      "semantic": "Proposed",
+      "currentness": "current",
+      "placement_status": "Proposed",
+      "structural_id_status": "Proposed",
+      "name_status": "Proposed",
+      "ancestry_status": "proposed"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    },
+    "relationships": [],
+    "content": "# [Feature] Provider Directory Discovery & Resolution\n\n## Architectural content\n\nExpose qualified practitioner discovery using identifiers, profile criteria and effective standing.\n\n**Overview**\n\nRouting and care participation need to find a described provider matching stated criteria, beyond merely ingesting a national identifier or updating a profile.\n\n**Boundary**\n\nDiscovery supplies information; it does not determine privilege or availability.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 46,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-7b77530f0c8a569498954dc0a5fcf798",
+    "mappingName": "[CT3] Provider Clinical Qualification Tracking",
+    "canonicalId": "8fd5c78eba3046fa9153fb4efb44e9c8",
+    "source": "enterprise-architecture/continuum/strategy/capability/8fd5c78eba3046fa9153fb4efb44e9c8.md",
+    "name": "[CT3] Provider Clinical Qualification Tracking",
+    "specialization": null,
+    "standing": {
+      "semantic": "Proposed",
+      "currentness": "current",
+      "placement_status": "Proposed",
+      "structural_id_status": "Proposed",
+      "name_status": "Proposed",
+      "ancestry_status": "proposed"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+      "predecessorCanonicalIds": [
+        "ab0415e2ea0a4da4ad3dc46997d48bc3"
+      ]
+    },
+    "relationships": [],
+    "content": "# [CT3] Provider Clinical Qualification Tracking\n\n## Architectural content\n\nTrack supplied provider clinical qualifications, competency certificates and privilege evidence with effective dates and issuing-authority standing.\n\n**Overview**\n\nTrack supplied provider clinical qualifications, competency certificates and privilege evidence with effective dates and issuing-authority standing. The reviewed hierarchy assigns this enduring ability to its stated business-enabling context.\n\n**Intent**\n\nTrack supplied provider clinical qualifications, competency certificates and privilege evidence with effective dates and issuing-authority standing.\n\n**Boundary**\n\nInformation administration and coordination preserve the authority of the responsible source, clinical actor and governed domain; they confer no additional real-world management authority.\n\n## ARB identity continuity\n\nHistorical identity [ab0415e2ea0a4da4ad3dc46997d48bc3](ab0415e2ea0a4da4ad3dc46997d48bc3.md) has direct correspondence with this capability under HCRL 1.1.5-002. Historical provenance and UUID reservation remain with that record; this resource retains its existing identity and independent standing.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 16,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-3eb94251dfaa56ca8f5d1988bec36b1c",
+    "mappingName": "[CT3] Terminology Governance",
+    "canonicalId": "e926a47881fa482088859f59fa6fe7e4",
+    "source": "enterprise-architecture/continuum/strategy/capability/e926a47881fa482088859f59fa6fe7e4.md",
+    "name": "[CT3] Terminology Governance",
+    "specialization": null,
+    "standing": {
+      "semantic": "Canonical",
+      "currentness": "current",
+      "placement_status": "Established",
+      "structural_id_status": "Established",
+      "name_status": "Canonical",
+      "ancestry_status": "established"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    },
+    "relationships": [],
+    "content": "# [CT3] Terminology Governance\n\n## Architectural content\n\nManage governed terminology/reference-set lifecycle and standing, including acceptance, release, update, supersession/retirement and authority/provider coordination.\n\nTerminology Governance maintains the lifecycle and standing of terminology and reference sets used by the organisation. Acceptance, release, updates and retirement require coordination with the appropriate authority or provider so that a code's meaning is not treated as timeless or locally self-defined. This supplies a governed semantic basis for information bindings and knowledge associations.\n\n**Boundary**\n\nGoverning terminology differs from binding a structure to it or overseeing its actual use.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 32,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-1116384ed5cc5bd3a0d28aa12a00d5cc",
+    "mappingName": "[Feature] Bidirectional Terminology Mapping",
+    "canonicalId": "6134dc91af8d45e8b81cc28d18a5251f",
+    "source": "enterprise-architecture/continuum/strategy/capability/feature/6134dc91af8d45e8b81cc28d18a5251f.md",
+    "name": "[Feature] Bidirectional Terminology Mapping",
+    "specialization": "Feature",
+    "standing": {
+      "semantic": "Canonical",
+      "currentness": "current",
+      "placement_status": "Proposed",
+      "structural_id_status": "Proposed",
+      "name_status": "Canonical",
+      "ancestry_status": "proposed"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    },
+    "relationships": [],
+    "content": "# [Feature] Bidirectional Terminology Mapping\n\n## Architectural content\n\nTranslate between legacy local code systems and canonical national healthcare profiles.\n\nTerminology mapping applies governed correspondence between local and canonical semantic systems. Translation preserves the limitations and authority of the map; it does not justify silently treating related source concepts as identical or clinically adjudicating the underlying information.\n",
+    "explicitSuccessorCanonicalId": null,
+    "mappingRows": 8,
+    "identityResolution": "Current governed record; semantic applicability still requires review"
+  },
+  {
+    "exchangeId": "id-d4d202241d2f573899138b0dd79e1090",
+    "mappingName": "[CT3] Governed Reference Dataset Administration",
+    "canonicalId": "15d972931ed6447797c30a5ddb71737e",
+    "source": "enterprise-architecture/continuum/strategy/capability/15d972931ed6447797c30a5ddb71737e.md",
+    "name": "[CT3] Governed Reference Dataset Administration",
+    "specialization": null,
+    "standing": {
+      "semantic": "Superseded historical identity — direct correspondence",
+      "currentness": "superseded"
+    },
+    "identity": {
+      "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+      "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+      "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+      "correspondence": {
+        "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+        "disposition": "direct correspondence",
+        "successorCanonicalId": "682b8684ad9e49d5a5c348a148081607",
+        "previousStanding": {
+          "semantic": "Historical reference — RAD correspondence unresolved",
+          "currentness": "historical_reference"
+        },
+        "historicalIdentityReserved": true,
+        "reason": "Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter."
+      }
+    },
+    "relationships": [],
+    "content": "# [CT3] Governed Reference Dataset Administration\n\n## Architectural content\n\nThe governed source has no established definition. This absence is retained for Solution Architect review; no definition is inferred from the name.\n\n## ARB correspondence\n\nSame bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter.\n\nCurrent representation: [[CT3] Governed Reference Dataset Administration](682b8684ad9e49d5a5c348a148081607.md). This resource reserves the historical identity and representation for provenance and existing Views. Its missing original definition remains missing.\n",
+    "explicitSuccessorCanonicalId": "682b8684ad9e49d5a5c348a148081607",
+    "mappingRows": 16,
+    "identityResolution": "Explicit historical correspondence; preserve both identities"
+  }
+]

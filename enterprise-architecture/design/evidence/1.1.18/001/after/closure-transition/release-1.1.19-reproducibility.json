@@ -1,0 +1,168 @@
+{
+  "status": "PASS",
+  "canonicalSources": 1994,
+  "identicalArtifacts": {
+    "enterprise-architecture/design/archimate/published/1.1.19/Harmonia-Architecture.xml": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09",
+    "Harmonia-Architecture.xml": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09",
+    "continuum.html": "714a824ecdd4b89651fd8a958998a7bb09b67c201933069502c9e0afc9d6d5c0",
+    "README.md": "1b0d1eda18661b79192bdf115fea314a8a7ac6148d3caf923028c5a87bd451c8",
+    "continuum-catalogue.tex": "e740c109572aa0caa61e12d6054e040445cbaaa37d26bdc2d33c284096fb0759",
+    "navigation.json": "53fcb647bb9a341941a3f5330ebed5b0cc327b403796996b5573bcb2606b6cf2",
+    "publication.json": "03cb7ca55389c1df5eae0e946c6ea896756e1f2645e47c9793515ea66f0e3acd",
+    "enterprise-architecture/continuum/MANIFEST.md": "0375e4ae602c933c9da1e6446ab77531113c2fb965c600ae96376cc52eb2de33",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/architecture-governance.tex": "bb8b35a7b23d47c22c5d0ef8eaf7ac926f2f4f2ddc5c082cb7eaf4a350e13821",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/motivation.tex": "3c8242623a4ead77f173b92d99901f3ea2900c7a1f13b23fcb0a1a841a310a60",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/strategy.tex": "cf203067efe32941e79925d000471d50a98247d3c569af1cb48e36dea7a61bce",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/business.tex": "667a6cec51c85355f810e46feb09bfebd675009852f5d5dc1ed596afa7fe24f7",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/application.tex": "695880e714a77cec15ca4f51a07a19623c31c66a4a84372d3bd20e51079529c2",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/technology.tex": "6f1e2c08086d8457df080a89d5b5dd6de1ca46adea91584fc9d9a864ed6a5760",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/implementation-and-migration.tex": "cc088fb5e4a5189f8f669d5c30c830cc75bc53068673bde335306341efdd3353",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/cross-cutting-references.tex": "819aca45e358a3ef36e25975528863737be3622b1e5bb4790f8be338b317b53c",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/continuum-rad.tex": "cff81fd7b00ca6f86297140113c36e05bd1cf8858c7b0cb3df93c36159fff0a9",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/structure.json": "c396c12019cf618cf4b4f871e9315329e03fae57a70d3b056b7ce4a0d05c3111",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/README.md": "cf13e0ea5946a13127f7f770a628f406e3618d99f207ed8caed347b4855c78a0",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/publication.json": "dff00c7ca09692efda72150f31da694bdf8866ffabc7e171affda570d2305b25"
+  },
+  "steps": [
+    {
+      "command": [
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "validate"
+      ],
+      "status": "PASS",
+      "summary": "{\"status\": \"PASS\", \"elements\": 1994, \"relationships\": 2235, \"qualifiedSourcePredicates\": 462, \"canonicalIdentities\": 1994, \"representationIdentities\": 1994, \"provenanceCoverage\": 1994, \"sourceBindings\": 3850, \"supportedNativeTypes\": 60, \"navigation\": \"PASS\", \"architecturalAcceptance\": \"See governed HCRLs; validation supplies no acceptance\"}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/continuum_manifest.py"
+      ],
+      "status": "PASS",
+      "summary": "{\"status\": \"PASS\", \"manifest\": \"enterprise-architecture/continuum/MANIFEST.md\", \"check\": false, \"sha256\": \"0375e4ae602c933c9da1e6446ab77531113c2fb965c600ae96376cc52eb2de33\"}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/Harmonia-Architecture.xml",
+        "--publish"
+      ],
+      "status": "PASS",
+      "summary": "absent_identity\": 0, \"canonical_ids_allocated\": 0, \"metadata_changes\": {}}, \"offlineXsd\": \"PASS\", \"exchangeReferences\": \"PASS\", \"outputSha256\": \"9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09\", \"publicationAllocatedIdentities\": 0, \"actualArchiTransport\": \"NOT_PERFORMED\", \"publishedProjection\": \"enterprise-architecture/design/archimate/published/1.1.19/Harmonia-Architecture.xml\"}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/publish_continuum.py",
+        "--output",
+        "enterprise-architecture/documentation/continuum-manifest/published/1.1.19"
+      ],
+      "status": "PASS",
+      "summary": "{\"status\": \"PASS\", \"artifacts\": 5, \"check\": false}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/publish_continuum_rad.py",
+        "--output",
+        "enterprise-architecture/documentation/continuum-rad/published/1.1.19"
+      ],
+      "status": "PASS",
+      "summary": "{\"status\": \"PASS\", \"artifacts\": 12, \"check\": false}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/continuum_manifest.py",
+        "--check"
+      ],
+      "status": "PASS",
+      "summary": "{\"status\": \"PASS\", \"manifest\": \"enterprise-architecture/continuum/MANIFEST.md\", \"check\": true, \"sha256\": \"0375e4ae602c933c9da1e6446ab77531113c2fb965c600ae96376cc52eb2de33\"}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/Harmonia-Architecture.xml",
+        "--publish",
+        "--check"
+      ],
+      "status": "PASS",
+      "summary": "absent_identity\": 0, \"canonical_ids_allocated\": 0, \"metadata_changes\": {}}, \"offlineXsd\": \"PASS\", \"exchangeReferences\": \"PASS\", \"outputSha256\": \"9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09\", \"publicationAllocatedIdentities\": 0, \"actualArchiTransport\": \"NOT_PERFORMED\", \"publishedProjection\": \"enterprise-architecture/design/archimate/published/1.1.19/Harmonia-Architecture.xml\"}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/publish_continuum.py",
+        "--output",
+        "enterprise-architecture/documentation/continuum-manifest/published/1.1.19",
+        "--check"
+      ],
+      "status": "PASS",
+      "summary": "{\"status\": \"PASS\", \"artifacts\": 5, \"check\": true}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/publish_continuum_rad.py",
+        "--output",
+        "enterprise-architecture/documentation/continuum-rad/published/1.1.19",
+        "--check"
+      ],
+      "status": "PASS",
+      "summary": "{\"status\": \"PASS\", \"artifacts\": 12, \"check\": true}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/verify_continuum_links.py",
+        "--report",
+        "links.json"
+      ],
+      "status": "PASS",
+      "summary": "PASS\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/continuum_workbench.py",
+        "review",
+        "--baseline",
+        "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/Harmonia-Architecture.xml",
+        "--submitted",
+        "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/Harmonia-Architecture.xml",
+        "--output",
+        "review.json"
+      ],
+      "status": "PASS",
+      "summary": "{\"elementChanges\": 0, \"relationshipAndViewChanges\": 0, \"unresolved\": 0}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/exchange_compare.py",
+        "compare",
+        "--baseline",
+        "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/Harmonia-Architecture.xml",
+        "--submitted",
+        "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/Harmonia-Architecture.xml",
+        "--report",
+        "raw.json"
+      ],
+      "status": "PASS",
+      "summary": "EQUIVALENT\n"
+    },
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "enterprise-architecture/tooling/tests",
+        "-v"
+      ],
+      "status": "PASS",
+      "summary": ""
+    }
+  ],
+  "legacyRadPresent": false,
+  "scriptsPresent": false,
+  "historicalConfigurationPresent": false,
+  "allocatedLiveIdentities": 0,
+  "currentDesignLinkTargets": [],
+  "inputs": "EA continuum, governance, design presentation/declared retained evidence, tooling; root release and installed Python dependencies",
+  "limits": "Synthetic creation/application and transport fixtures; no actual Archi execution, visual inspection or architectural acceptance asserted."
+}
