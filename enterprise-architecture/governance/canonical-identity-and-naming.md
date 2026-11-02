@@ -255,6 +255,30 @@ continues validating persisted fields without repair. The
 [run lifecycle](architecture-release-policy.md#machinery-validation-runs--2026-10-20)
 governs candidate standing and the release boundary.
 
+### SolutionFacet naming roles — DR-17 final dispositions
+
+The Solution Architect's [final naming dispositions](../design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-final-naming-dispositions.md)
+clarify these distinct roles for the bounded SolutionFacet completion in
+[DR-17](../design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-17).
+`canonicalId` remains immutable through naming or containment changes.
+`friendlyName` is a dot-separated programmatic name expressing verified
+Composition ancestry; it neither establishes nor overrides containment.
+View folders, Grouping membership, Home and textual names supply no substitute
+for that explicit Composition evidence.
+
+`displayName` is a locally meaningful human-readable label. A generic leaf such
+as Constraints, Requirements, Principles or Drivers may include its immediate
+parent context, for example `ArchitectureConformance - Constraints`, without
+reproducing the full friendlyName hierarchy. The existing native ArchiMate
+Name/displayName invariant remains in force.
+
+`canonicalName` retains its separately governed formal semantics, qualifiers,
+value and any unresolved vocabulary. It is not automatically equated with or
+populated from friendlyName or displayName. The three authorised resources retain
+their existing canonicalName values; this completion supplies no new qualifier or
+allocation. Historical authored names remain source provenance. These dispositions
+do not authorise unrelated renaming or change independently governed naming scopes.
+
 ## Legacy fields and types
 
 Legacy `canonical_id` is structural-path evidence corresponding semantically to

@@ -95,6 +95,7 @@
     "specialization": {
       "enum": [
         null,
+        "SolutionFacet",
         "ImplementationGuideline",
         "Feature",
         "Topic",

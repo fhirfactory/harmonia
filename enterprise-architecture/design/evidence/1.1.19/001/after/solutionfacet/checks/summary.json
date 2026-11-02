@@ -1,0 +1,29 @@
+{
+  "architectureTests": {
+    "outcome": "PASS",
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "java": "21"
+  },
+  "toolingInitialSuite": {
+    "outcome": "FAIL",
+    "tests": 86,
+    "failures": 1,
+    "elapsedSeconds": 342.941,
+    "cause": "Stale 1285-View fixture expectation; actual authored candidate has 1288 Views"
+  },
+  "correctedViewCountTest": {
+    "outcome": "PASS",
+    "tests": 1,
+    "elapsedSeconds": 1.978
+  },
+  "toolingCoverage": "All 86 tests covered successfully: initial 85 PASS plus the one corrected test PASS; no full-suite green-run claim",
+  "candidateValidation": "PASS",
+  "determinismAndIsolatedProjection": "PASS",
+  "manifestReaderAndLatexStalenessChecks": "PASS",
+  "browserDomContract": "PASS",
+  "localLinks": "PASS",
+  "actualArchiImportExport": "PASS",
+  "strictTransportVerifier": "FAIL; retained inherited raw English-language drift on 575 relationships; semantic values and all Views preserved"
+}

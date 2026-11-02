@@ -15,7 +15,7 @@
     <item>
       <label xml:lang="en">Views</label>
       <item>
-        <label xml:lang="en">1. Subject-Based-Views</label>
+        <label xml:lang="en">1. SolutionFacet-Based-Views</label>
         <item>
           <label xml:lang="en">01. Architectural-Governance</label>
           <item>
@@ -34,6 +34,7 @@
             <label xml:lang="en">04. Architecture-Conformance</label>
             <item identifierRef="id-7c0d291a29f34feab7be4d9f29a08027"/>
           </item>
+          <item identifierRef="id-93b3ce60b18a4bf2b931779f1dde91e2"/>
         </item>
         <item>
           <label xml:lang="en">02. Information-Management</label>
@@ -57,6 +58,7 @@
             <label xml:lang="en">05. Information-Sovereignty-and-Residency</label>
             <item identifierRef="id-6429b82599df4027a745d84cfacf587c"/>
           </item>
+          <item identifierRef="id-36a82d51b7cb4611a65ace4b06488484"/>
         </item>
         <item>
           <label xml:lang="en">03. Security-and-Management</label>
@@ -67,9 +69,6 @@
           <item>
             <label xml:lang="en">02. Authorisation</label>
             <item identifierRef="id-9873a9236c5a453bb1f2426cd94ec3a1"/>
-          </item>
-          <item>
-            <label xml:lang="en">03 Authorisation-Enforcement</label>
           </item>
           <item>
             <label xml:lang="en">04. Information-Protection</label>
@@ -87,6 +86,7 @@
             <label xml:lang="en">03. Authorisation-Enforcement</label>
             <item identifierRef="id-da484996370e48e5979e58f7196b0f98"/>
           </item>
+          <item identifierRef="id-7095a65ca0be48fe8b8eecad63e01815"/>
         </item>
         <item>
           <label xml:lang="en">04. Audit-and-Accountability</label>
@@ -5039,7 +5039,7 @@
     <diagrams>
       <view identifier="id-81cfffb25890400d9292449a8a375366" xsi:type="Diagram">
         <name xml:lang="en">Architecture-Process-View</name>
-        <node identifier="id-89ec25b2d5b5408baca693a7357e5a6c" elementRef="id-a0ec3251d4564072a217279d4cb4a394" xsi:type="Element" x="12" y="30" w="856" h="202">
+        <node identifier="id-89ec25b2d5b5408baca693a7357e5a6c" elementRef="id-a0ec3251d4564072a217279d4cb4a394" xsi:type="Element" x="12" y="30" w="856" h="271">
           <style>
             <fillColor r="255" g="255" b="255" a="100"/>
             <lineColor r="92" g="92" b="92" a="100"/>
@@ -5047,7 +5047,7 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-70e6e9e496bc487ea342344d53fe7647" elementRef="id-8a9d79736ae757a0ab9c20779175d30a" xsi:type="Element" x="20" y="38" w="190" h="64">
+          <node identifier="id-70e6e9e496bc487ea342344d53fe7647" elementRef="id-8a9d79736ae757a0ab9c20779175d30a" xsi:type="Element" x="20" y="78" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5056,7 +5056,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-9144f8b0b119407186bd75261fd789f6" elementRef="id-a661a911649e543abc284ebe313643e2" xsi:type="Element" x="224" y="38" w="190" h="64">
+          <node identifier="id-9144f8b0b119407186bd75261fd789f6" elementRef="id-a661a911649e543abc284ebe313643e2" xsi:type="Element" x="224" y="78" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5065,7 +5065,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-8f6ed1a160074be89f539e80b35bd0e7" elementRef="id-0ff05d6fdd4250c8b8e6cf1a6a629e7c" xsi:type="Element" x="428" y="38" w="190" h="64">
+          <node identifier="id-8f6ed1a160074be89f539e80b35bd0e7" elementRef="id-0ff05d6fdd4250c8b8e6cf1a6a629e7c" xsi:type="Element" x="428" y="78" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5074,7 +5074,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-3e8f8c258ca74a52a2219a1dd174d003" elementRef="id-b46235d7d9875eb893745a5f2c8a0b72" xsi:type="Element" x="632" y="38" w="190" h="64">
+          <node identifier="id-3e8f8c258ca74a52a2219a1dd174d003" elementRef="id-b46235d7d9875eb893745a5f2c8a0b72" xsi:type="Element" x="636" y="78" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5083,7 +5083,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-28c2865709b24ee58937ca9a3e7f803e" elementRef="id-806a31e08c7c545f957bfe59c5d79de3" xsi:type="Element" x="20" y="112" w="190" h="64">
+          <node identifier="id-28c2865709b24ee58937ca9a3e7f803e" elementRef="id-806a31e08c7c545f957bfe59c5d79de3" xsi:type="Element" x="20" y="174" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5092,7 +5092,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-8c9890d07359449f9f13c1f7a52f291e" elementRef="id-f84e301fa92a5e2292c504ddbb1a3896" xsi:type="Element" x="224" y="112" w="190" h="64">
+          <node identifier="id-8c9890d07359449f9f13c1f7a52f291e" elementRef="id-f84e301fa92a5e2292c504ddbb1a3896" xsi:type="Element" x="224" y="174" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5101,7 +5101,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-2ef3212e0df64554aa396b04efc89cf6" elementRef="id-e351b66f7207579493196046b8766e5e" xsi:type="Element" x="428" y="112" w="190" h="64">
+          <node identifier="id-2ef3212e0df64554aa396b04efc89cf6" elementRef="id-e351b66f7207579493196046b8766e5e" xsi:type="Element" x="428" y="174" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5122,15 +5122,6 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-0ffd3678cf4842629f7b5343c5c42ab9" elementRef="id-78d8fa44cc7452fea57041c8a2b8b102" xsi:type="Element" x="20" y="38" w="190" h="64">
-            <style>
-              <fillColor r="204" g="204" b="255" a="100"/>
-              <lineColor r="92" g="92" b="92" a="100"/>
-              <font name="Sans" size="9">
-                <color r="0" g="0" b="0"/>
-              </font>
-            </style>
-          </node>
         </node>
         <node identifier="id-099b7f60bd3541e682dd598541ae1d39" elementRef="id-ca7d2832c33b4b4e82827df69324daba" xsi:type="Element" x="12" y="356" w="856" h="148">
           <style>
@@ -5141,6 +5132,15 @@
             </font>
           </style>
           <node identifier="id-389bd5d3bee5447888d876ba949bbb89" elementRef="id-0d1411c63a0556cab46fef00558d9606" xsi:type="Element" x="20" y="38" w="190" h="64">
+            <style>
+              <fillColor r="204" g="204" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-0ffd3678cf4842629f7b5343c5c42ab9" elementRef="id-78d8fa44cc7452fea57041c8a2b8b102" xsi:type="Element" x="24" y="380" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5224,7 +5224,7 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-b46d7c84123a4176ac78830889fd9ae1" elementRef="id-6c9bda47d6e95bbfba4728704fdb5a56" xsi:type="Element" x="20" y="38" w="190" h="64">
+          <node identifier="id-b46d7c84123a4176ac78830889fd9ae1" elementRef="id-6c9bda47d6e95bbfba4728704fdb5a56" xsi:type="Element" x="24" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5233,7 +5233,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-5c31e03b0561439a9dae38b138565d05" elementRef="id-636b1b2caa195256bcd09043b43ec170" xsi:type="Element" x="224" y="38" w="190" h="64">
+          <node identifier="id-5c31e03b0561439a9dae38b138565d05" elementRef="id-636b1b2caa195256bcd09043b43ec170" xsi:type="Element" x="228" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5242,7 +5242,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-8d000d985f8d4260ada3f83f07afe271" elementRef="id-1a098402db7b5283aca1855543c962ae" xsi:type="Element" x="428" y="38" w="190" h="64">
+          <node identifier="id-8d000d985f8d4260ada3f83f07afe271" elementRef="id-1a098402db7b5283aca1855543c962ae" xsi:type="Element" x="432" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5308,7 +5308,7 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-b5eebef3828e4bdb8f8d7322c448574b" elementRef="id-ebd5d304672a5aee9d2b0efad5180ee2" xsi:type="Element" x="20" y="38" w="190" h="64">
+          <node identifier="id-b5eebef3828e4bdb8f8d7322c448574b" elementRef="id-ebd5d304672a5aee9d2b0efad5180ee2" xsi:type="Element" x="24" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5317,7 +5317,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-30b7ecc0f28945ffbfea19754b781912" elementRef="id-1052e53fa13a551aa93cbda7d63038c2" xsi:type="Element" x="224" y="38" w="190" h="64">
+          <node identifier="id-30b7ecc0f28945ffbfea19754b781912" elementRef="id-1052e53fa13a551aa93cbda7d63038c2" xsi:type="Element" x="228" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5326,7 +5326,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-5df5fea9e7cc46b4b6f9913e2b97f18f" elementRef="id-f84e301fa92a5e2292c504ddbb1a3896" xsi:type="Element" x="428" y="38" w="190" h="64">
+          <node identifier="id-5df5fea9e7cc46b4b6f9913e2b97f18f" elementRef="id-f84e301fa92a5e2292c504ddbb1a3896" xsi:type="Element" x="432" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5373,6 +5373,54 @@
           </node>
         </node>
       </view>
+      <view identifier="id-93b3ce60b18a4bf2b931779f1dde91e2" xsi:type="Diagram">
+        <name xml:lang="en">architecture-governance-view</name>
+        <node identifier="id-40302143fbde4c38b805d0c8763c4877" elementRef="id-c5f499e1694c552bae7311911aea1399" xsi:type="Element" x="12" y="12" w="637" h="361">
+          <style>
+            <fillColor r="255" g="255" b="255" a="100"/>
+            <lineColor r="92" g="92" b="92" a="100"/>
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0"/>
+            </font>
+          </style>
+          <node identifier="id-4944225fd46d4394b38bdf949fa9e6cb" elementRef="id-6256b2f5dd035708ae1e55f0fbcc1276" xsi:type="Element" x="24" y="132" w="301" h="73">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-45b099d860cb4b91a3f6a18c878243b7" elementRef="id-f126e3a6ab6950ca9e3e61b02e83ba21" xsi:type="Element" x="24" y="48" w="301" h="73">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-1c3120c1b1ff4ca4807b3a5e0bdc79a6" elementRef="id-fe0074888e97530c825d400d27e90ad5" xsi:type="Element" x="336" y="132" w="301" h="73">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-e86db9c96f6f429aa6378d72f1ccdd0a" elementRef="id-658cd4a224585dc5b4e55f85f43fb58e" xsi:type="Element" x="336" y="48" w="301" h="72">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+        </node>
+      </view>
       <view identifier="id-ee264a765fb547859c50a3dc74e1dfdf" xsi:type="Diagram">
         <name xml:lang="en">Information-Identity-View</name>
         <node identifier="id-00e665bb2c72477384fc37d7beab3335" elementRef="id-6119d0e4ada44045a69db34cc0aa154d" xsi:type="Element" x="12" y="30" w="856" h="148">
@@ -5383,7 +5431,7 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-7c9b6735f27f49d5953ffef28091d0ee" elementRef="id-b640a0a5223e529aa16a3a599aebba0b" xsi:type="Element" x="20" y="38" w="190" h="64">
+          <node identifier="id-7c9b6735f27f49d5953ffef28091d0ee" elementRef="id-b640a0a5223e529aa16a3a599aebba0b" xsi:type="Element" x="24" y="54" w="190" h="73">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5392,7 +5440,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-5c9844c07ec246e583f75b634178feaf" elementRef="id-0d1411c63a0556cab46fef00558d9606" xsi:type="Element" x="224" y="38" w="190" h="64">
+          <node identifier="id-5c9844c07ec246e583f75b634178feaf" elementRef="id-0d1411c63a0556cab46fef00558d9606" xsi:type="Element" x="228" y="54" w="190" h="73">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5423,7 +5471,7 @@
       </view>
       <view identifier="id-abcc22053a464d7aa1f05b41e0fade01" xsi:type="Diagram">
         <name xml:lang="en">Information-Integrity-View</name>
-        <node identifier="id-fe71d3a4f7964aa7a53ada6b6b0d4f7f" elementRef="id-1fba1f2d08c445df823f325bea397992" xsi:type="Element" x="12" y="30" w="856" h="202">
+        <node identifier="id-fe71d3a4f7964aa7a53ada6b6b0d4f7f" elementRef="id-1fba1f2d08c445df823f325bea397992" xsi:type="Element" x="12" y="30" w="856" h="223">
           <style>
             <fillColor r="255" g="255" b="255" a="100"/>
             <lineColor r="92" g="92" b="92" a="100"/>
@@ -5431,7 +5479,7 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-14f92a75f48345e38bfc20161810c041" elementRef="id-bf767dc4cf3d57cfb44bc6970d72c841" xsi:type="Element" x="20" y="38" w="190" h="64">
+          <node identifier="id-14f92a75f48345e38bfc20161810c041" elementRef="id-bf767dc4cf3d57cfb44bc6970d72c841" xsi:type="Element" x="24" y="126" w="385" h="53">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5440,7 +5488,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-9441f69ec657487787580e8526b43d54" elementRef="id-d2987c2c1348569bb16b4884d8988d66" xsi:type="Element" x="224" y="38" w="190" h="64">
+          <node identifier="id-9441f69ec657487787580e8526b43d54" elementRef="id-d2987c2c1348569bb16b4884d8988d66" xsi:type="Element" x="24" y="66" w="385" h="50">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5449,7 +5497,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-7a3150a46a324e9eac028879be57a231" elementRef="id-f73986108cdf5b47b32d9175278b5eb9" xsi:type="Element" x="428" y="38" w="190" h="64">
+          <node identifier="id-7a3150a46a324e9eac028879be57a231" elementRef="id-f73986108cdf5b47b32d9175278b5eb9" xsi:type="Element" x="420" y="66" w="385" h="50">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5458,7 +5506,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-28881988c3e84488813b869783dc5ecb" elementRef="id-c0fce63656a4534ca259b22e9b33dfdb" xsi:type="Element" x="632" y="38" w="190" h="64">
+          <node identifier="id-28881988c3e84488813b869783dc5ecb" elementRef="id-c0fce63656a4534ca259b22e9b33dfdb" xsi:type="Element" x="420" y="126" w="385" h="53">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5467,7 +5515,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-bf50b59e74964a4baf7678967c665082" elementRef="id-806a31e08c7c545f957bfe59c5d79de3" xsi:type="Element" x="20" y="112" w="190" h="64">
+          <node identifier="id-bf50b59e74964a4baf7678967c665082" elementRef="id-806a31e08c7c545f957bfe59c5d79de3" xsi:type="Element" x="24" y="186" w="385" h="49">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5477,7 +5525,7 @@
             </style>
           </node>
         </node>
-        <node identifier="id-e24273d498454e23a037493985d4d13a" elementRef="id-366f55d9d47a43ffb548c0f1de0045a8" xsi:type="Element" x="12" y="200" w="856" h="148">
+        <node identifier="id-e24273d498454e23a037493985d4d13a" elementRef="id-366f55d9d47a43ffb548c0f1de0045a8" xsi:type="Element" x="12" y="264" w="856" h="148">
           <style>
             <fillColor r="255" g="255" b="255" a="100"/>
             <lineColor r="92" g="92" b="92" a="100"/>
@@ -5485,7 +5533,7 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-e8fa2266c9b74e49af3217971043d53f" elementRef="id-0742441375bc5c3d9c379586193ac1df" xsi:type="Element" x="20" y="38" w="190" h="64">
+          <node identifier="id-e8fa2266c9b74e49af3217971043d53f" elementRef="id-0742441375bc5c3d9c379586193ac1df" xsi:type="Element" x="20" y="102" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5494,7 +5542,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-0e85f8a9ea054c85823e2d97ce7ce9a2" elementRef="id-6d2ca8be864c507eaad661fe8df80e44" xsi:type="Element" x="224" y="38" w="190" h="64">
+          <node identifier="id-0e85f8a9ea054c85823e2d97ce7ce9a2" elementRef="id-6d2ca8be864c507eaad661fe8df80e44" xsi:type="Element" x="224" y="102" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5503,7 +5551,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-e2380f8459394ac294bfc48414f4e1ff" elementRef="id-985a7362a46f5ad19ee0b488e922c00c" xsi:type="Element" x="428" y="38" w="190" h="64">
+          <node identifier="id-e2380f8459394ac294bfc48414f4e1ff" elementRef="id-985a7362a46f5ad19ee0b488e922c00c" xsi:type="Element" x="428" y="102" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5512,7 +5560,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-fde4537fb57f4c81ae68800e695ab71f" elementRef="id-0ff05d6fdd4250c8b8e6cf1a6a629e7c" xsi:type="Element" x="632" y="38" w="190" h="64">
+          <node identifier="id-fde4537fb57f4c81ae68800e695ab71f" elementRef="id-0ff05d6fdd4250c8b8e6cf1a6a629e7c" xsi:type="Element" x="632" y="102" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5525,7 +5573,7 @@
       </view>
       <view identifier="id-bfbf78c6cb8448118468197fc9269ad9" xsi:type="Diagram">
         <name xml:lang="en">Information-Lifecycle-View</name>
-        <node identifier="id-6d1c08e94d28438a906ecb70af4550a3" elementRef="id-8f3100f85f834a1bbcd57dc0653dc5e3" xsi:type="Element" x="12" y="30" w="856" h="276">
+        <node identifier="id-6d1c08e94d28438a906ecb70af4550a3" elementRef="id-8f3100f85f834a1bbcd57dc0653dc5e3" xsi:type="Element" x="12" y="30" w="856" h="319">
           <style>
             <fillColor r="255" g="255" b="255" a="100"/>
             <lineColor r="92" g="92" b="92" a="100"/>
@@ -5533,7 +5581,7 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-13f5ae7a6325412baa47c42ff05f90d9" elementRef="id-4dd3787b70ed5be390f576dd41b1e1bc" xsi:type="Element" x="20" y="38" w="190" h="64">
+          <node identifier="id-13f5ae7a6325412baa47c42ff05f90d9" elementRef="id-4dd3787b70ed5be390f576dd41b1e1bc" xsi:type="Element" x="20" y="54" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5542,7 +5590,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-9f61e77aac914d009f1fc2f0a59ff0ff" elementRef="id-3e576fab494a50b9bde5f67817f095a1" xsi:type="Element" x="224" y="38" w="190" h="64">
+          <node identifier="id-9f61e77aac914d009f1fc2f0a59ff0ff" elementRef="id-3e576fab494a50b9bde5f67817f095a1" xsi:type="Element" x="224" y="54" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5551,7 +5599,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-89ae2db7a5cc433daab8020f3603f217" elementRef="id-4fe903d6cb8c5d19b4e0199ff6badbc4" xsi:type="Element" x="428" y="38" w="190" h="64">
+          <node identifier="id-89ae2db7a5cc433daab8020f3603f217" elementRef="id-4fe903d6cb8c5d19b4e0199ff6badbc4" xsi:type="Element" x="428" y="54" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5560,7 +5608,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-f0d3cd2e1ec0430881837feebe000a2a" elementRef="id-4202ef50570f51d3ad4d8bba6dfce1f9" xsi:type="Element" x="632" y="38" w="190" h="64">
+          <node identifier="id-f0d3cd2e1ec0430881837feebe000a2a" elementRef="id-4202ef50570f51d3ad4d8bba6dfce1f9" xsi:type="Element" x="632" y="54" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5569,7 +5617,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-b3ed7786534542129f11d7624ba7dda5" elementRef="id-1a098402db7b5283aca1855543c962ae" xsi:type="Element" x="20" y="112" w="190" h="64">
+          <node identifier="id-b3ed7786534542129f11d7624ba7dda5" elementRef="id-1a098402db7b5283aca1855543c962ae" xsi:type="Element" x="20" y="150" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5578,7 +5626,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-47daa965416f422db709f50d4057d432" elementRef="id-fa4ff3ac6c65596da40c494344adcfe3" xsi:type="Element" x="224" y="112" w="190" h="64">
+          <node identifier="id-47daa965416f422db709f50d4057d432" elementRef="id-fa4ff3ac6c65596da40c494344adcfe3" xsi:type="Element" x="224" y="150" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5587,7 +5635,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-c334283e767c426e88771be87123c349" elementRef="id-177c1ff231df5e0fbad07c1605049a38" xsi:type="Element" x="428" y="112" w="190" h="64">
+          <node identifier="id-c334283e767c426e88771be87123c349" elementRef="id-177c1ff231df5e0fbad07c1605049a38" xsi:type="Element" x="428" y="150" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5596,7 +5644,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-b337177fe10e496eb74ca4b64dac3be9" elementRef="id-78d8fa44cc7452fea57041c8a2b8b102" xsi:type="Element" x="632" y="112" w="190" h="64">
+          <node identifier="id-b337177fe10e496eb74ca4b64dac3be9" elementRef="id-78d8fa44cc7452fea57041c8a2b8b102" xsi:type="Element" x="632" y="150" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5605,7 +5653,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-f14ebb6f7ef04ef69a472e5feed69035" elementRef="id-f21c2b8de17e58a9a93c431b67ac2612" xsi:type="Element" x="20" y="186" w="190" h="64">
+          <node identifier="id-f14ebb6f7ef04ef69a472e5feed69035" elementRef="id-f21c2b8de17e58a9a93c431b67ac2612" xsi:type="Element" x="20" y="246" w="190" h="85">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5626,7 +5674,7 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-4e2d1b7ea25441dcb75abf165f07c906" elementRef="id-501e36466872549f8191b4dbec30497a" xsi:type="Element" x="20" y="38" w="190" h="64">
+          <node identifier="id-4e2d1b7ea25441dcb75abf165f07c906" elementRef="id-501e36466872549f8191b4dbec30497a" xsi:type="Element" x="24" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5635,7 +5683,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-834c8e1330414710aecc4c75ff506321" elementRef="id-8ef15265eaae5fcab29ef9777048e283" xsi:type="Element" x="224" y="38" w="190" h="64">
+          <node identifier="id-834c8e1330414710aecc4c75ff506321" elementRef="id-8ef15265eaae5fcab29ef9777048e283" xsi:type="Element" x="228" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5809,7 +5857,7 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-bf61c974640a4b808209be354a8f004b" elementRef="id-41676587bed857ae8b5e1a8ad2759962" xsi:type="Element" x="20" y="38" w="190" h="64">
+          <node identifier="id-bf61c974640a4b808209be354a8f004b" elementRef="id-41676587bed857ae8b5e1a8ad2759962" xsi:type="Element" x="24" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5818,9 +5866,66 @@
               </font>
             </style>
           </node>
-          <node identifier="id-0abde1ec9b5a49a78d6c9ccea0f0627b" elementRef="id-39127ef60510569696a031ae3c24ad65" xsi:type="Element" x="224" y="38" w="190" h="64">
+          <node identifier="id-0abde1ec9b5a49a78d6c9ccea0f0627b" elementRef="id-39127ef60510569696a031ae3c24ad65" xsi:type="Element" x="228" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+        </node>
+      </view>
+      <view identifier="id-36a82d51b7cb4611a65ace4b06488484" xsi:type="Diagram">
+        <name xml:lang="en">information-management-view</name>
+        <node identifier="id-4285a0577044456594fe436e68070217" elementRef="id-3ff156cfaab8575facfa6961f68119f5" xsi:type="Element" x="12" y="24" w="637" h="325">
+          <style>
+            <fillColor r="255" g="255" b="255" a="100"/>
+            <lineColor r="92" g="92" b="92" a="100"/>
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0"/>
+            </font>
+          </style>
+          <node identifier="id-d59012038870424dacfed6b8bca6ce5f" elementRef="id-4009d96f39d456838b149621d4ed88a4" xsi:type="Element" x="24" y="48" w="289" h="61">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-a11aad7439194f73b2302ce1dffcc737" elementRef="id-f3a5bb10a924502881fe4e27cbcc799e" xsi:type="Element" x="24" y="120" w="289" h="61">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-8b14cfcf37884082ace77c50be7cef21" elementRef="id-889cae531e4c51e0a50d441425553606" xsi:type="Element" x="24" y="192" w="289" h="61">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-d4bce39fe0994673a930ef69798c4eed" elementRef="id-f2cab006808558c48632928a2ef00f86" xsi:type="Element" x="324" y="48" w="289" h="61">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-f11bc1723f8747019eb819afb10491a4" elementRef="id-d1e317a30a9d53359c25a86673df3e56" xsi:type="Element" x="324" y="120" w="289" h="61">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
               <font name="Sans" size="9">
                 <color r="0" g="0" b="0"/>
@@ -5839,7 +5944,7 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-f3ecc57fcac245f09acb7f91c13918af" elementRef="id-401b8a8fe55852dea1a0257d2f1910e7" xsi:type="Element" x="20" y="38" w="190" h="64">
+          <node identifier="id-f3ecc57fcac245f09acb7f91c13918af" elementRef="id-401b8a8fe55852dea1a0257d2f1910e7" xsi:type="Element" x="24" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5860,7 +5965,7 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-5d55bbeca446484cac92aa14740d2f1b" elementRef="id-37be70aeb2cc51ddac1d6ebb3d5c11c9" xsi:type="Element" x="20" y="38" w="190" h="64">
+          <node identifier="id-5d55bbeca446484cac92aa14740d2f1b" elementRef="id-37be70aeb2cc51ddac1d6ebb3d5c11c9" xsi:type="Element" x="24" y="76" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5869,7 +5974,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-304c4e5bec2e4a4aab34b4d72a9111f2" elementRef="id-761b743e34fb58d2ab00626dc5e6492b" xsi:type="Element" x="224" y="38" w="190" h="64">
+          <node identifier="id-304c4e5bec2e4a4aab34b4d72a9111f2" elementRef="id-761b743e34fb58d2ab00626dc5e6492b" xsi:type="Element" x="228" y="76" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5878,7 +5983,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-4bb563ae71314fabb6cf939b8b42b7b8" elementRef="id-6b57a87f5b27537f8c8f2faa67ee472c" xsi:type="Element" x="428" y="38" w="190" h="64">
+          <node identifier="id-4bb563ae71314fabb6cf939b8b42b7b8" elementRef="id-6b57a87f5b27537f8c8f2faa67ee472c" xsi:type="Element" x="432" y="76" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5887,7 +5992,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-3fc500b94896462da936db86353e68d0" elementRef="id-23164821b3cc553291b04d37a879f37d" xsi:type="Element" x="632" y="38" w="190" h="64">
+          <node identifier="id-3fc500b94896462da936db86353e68d0" elementRef="id-23164821b3cc553291b04d37a879f37d" xsi:type="Element" x="636" y="76" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5896,7 +6001,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-48c8839452e442c48401b17c4265d488" elementRef="id-3324eb4dfcb551ff95acb9551d2c09f8" xsi:type="Element" x="20" y="112" w="190" h="64">
+          <node identifier="id-48c8839452e442c48401b17c4265d488" elementRef="id-3324eb4dfcb551ff95acb9551d2c09f8" xsi:type="Element" x="24" y="150" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5905,7 +6010,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-da0d1c9b16b34334aefe2ab543be331a" elementRef="id-c9713852025850db9e6e784318ddf74e" xsi:type="Element" x="224" y="112" w="190" h="64">
+          <node identifier="id-da0d1c9b16b34334aefe2ab543be331a" elementRef="id-c9713852025850db9e6e784318ddf74e" xsi:type="Element" x="228" y="150" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5914,7 +6019,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-a5dbf59ff2964577b7f2841bdc1e3337" elementRef="id-558a8397dafb44c0ba32b8540559ea7e" xsi:type="Element" x="428" y="112" w="190" h="64">
+          <node identifier="id-a5dbf59ff2964577b7f2841bdc1e3337" elementRef="id-558a8397dafb44c0ba32b8540559ea7e" xsi:type="Element" x="432" y="150" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -5923,7 +6028,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-4d2815a144be42d8b59e9d6333b2d875" elementRef="id-7847cbe66b524f18ba8ace06b280af4e" xsi:type="Element" x="632" y="112" w="190" h="64">
+          <node identifier="id-4d2815a144be42d8b59e9d6333b2d875" elementRef="id-7847cbe66b524f18ba8ace06b280af4e" xsi:type="Element" x="636" y="150" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -6259,7 +6364,7 @@
               <color r="0" g="0" b="0"/>
             </font>
           </style>
-          <node identifier="id-6f917652a10c471d8306295ab507b719" elementRef="id-36a34da9b45e5f028372a722fe1950fe" xsi:type="Element" x="20" y="38" w="190" h="64">
+          <node identifier="id-6f917652a10c471d8306295ab507b719" elementRef="id-36a34da9b45e5f028372a722fe1950fe" xsi:type="Element" x="24" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -6268,7 +6373,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-4d57bb18e5974774ab5183161a0659f2" elementRef="id-691c0f0f1d0c5abd96906ac417838158" xsi:type="Element" x="224" y="38" w="190" h="64">
+          <node identifier="id-4d57bb18e5974774ab5183161a0659f2" elementRef="id-691c0f0f1d0c5abd96906ac417838158" xsi:type="Element" x="228" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -6277,7 +6382,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-449752db2eff425d9a0214f014bd427b" elementRef="id-30ba2d7279ba5be5a14ebdad36657bdf" xsi:type="Element" x="428" y="38" w="190" h="64">
+          <node identifier="id-449752db2eff425d9a0214f014bd427b" elementRef="id-30ba2d7279ba5be5a14ebdad36657bdf" xsi:type="Element" x="432" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -6286,7 +6391,7 @@
               </font>
             </style>
           </node>
-          <node identifier="id-18961186649546b1811bb93020c6a032" elementRef="id-76ead730d8545b4c915c6a959d343ae1" xsi:type="Element" x="632" y="38" w="190" h="64">
+          <node identifier="id-18961186649546b1811bb93020c6a032" elementRef="id-76ead730d8545b4c915c6a959d343ae1" xsi:type="Element" x="636" y="54" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
@@ -6379,6 +6484,72 @@
           <node identifier="id-19b36c957d664499bbaac92e386d1979" elementRef="id-7847cbe66b524f18ba8ace06b280af4e" xsi:type="Element" x="632" y="38" w="190" h="64">
             <style>
               <fillColor r="204" g="204" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+        </node>
+      </view>
+      <view identifier="id-7095a65ca0be48fe8b8eecad63e01815" xsi:type="Diagram">
+        <name xml:lang="en">security-and-management-view</name>
+        <node identifier="id-48a2d438f9d740c7a7abf6c615c11c6a" elementRef="id-5f6b4e6f00e755788e198632589ce6ce" xsi:type="Element" x="12" y="12" w="757" h="229">
+          <style>
+            <fillColor r="255" g="255" b="255" a="100"/>
+            <lineColor r="92" g="92" b="92" a="100"/>
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0"/>
+            </font>
+          </style>
+          <node identifier="id-5c5dae26f2c2448aa330bdd1dbc6d14d" elementRef="id-96ed88d244ed57e98031966d70a03051" xsi:type="Element" x="24" y="36" w="313" h="49">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-d40e1ba48110484abccbb48f730c6995" elementRef="id-cbc07a038364504d90e78a5104ec9fd7" xsi:type="Element" x="24" y="96" w="313" h="49">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-4a8b55f53271455f8f144a19fa2a567d" elementRef="id-af15e7209c6e5720a7a0ff8767f968f1" xsi:type="Element" x="24" y="156" w="313" h="49">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-e551aa9d01e44487bb291e1f34309e61" elementRef="id-ee17a4ffd28254539defe217e77f3b75" xsi:type="Element" x="348" y="36" w="313" h="49">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-172f04e566bd4589b764cb623bdf7990" elementRef="id-0a13457eeb645fb784d0af3e36b38e43" xsi:type="Element" x="348" y="96" w="313" h="49">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
+              <lineColor r="92" g="92" b="92" a="100"/>
+              <font name="Sans" size="9">
+                <color r="0" g="0" b="0"/>
+              </font>
+            </style>
+          </node>
+          <node identifier="id-434d9cc726b1440498bc795381b94503" elementRef="id-38d9b8fa1f13586da103fb1bef655591" xsi:type="Element" x="348" y="156" w="313" h="49">
+            <style>
+              <fillColor r="255" g="255" b="255" a="100"/>
               <lineColor r="92" g="92" b="92" a="100"/>
               <font name="Sans" size="9">
                 <color r="0" g="0" b="0"/>

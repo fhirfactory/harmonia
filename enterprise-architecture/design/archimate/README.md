@@ -4,9 +4,23 @@
 
 The maintained source is the [individual-element continuum](../../README.md).
 [projection-template.xml](projection-template.xml) owns existing model-level
-properties, property definitions, View navigation and **1,285 Views**, including their
+properties, property definitions, View navigation and **1,288 Views**, including their
 geometry. Its element/relationship collections are empty. The current projector
 fills those collections from canonical Markdown and preserves the Views.
+The maintained template currently includes the uncommitted
+[SolutionFacet candidate](../review/1.1.19/hcrl-1.1.19-001.pending.md#dr-17):
+three additional authored Views and 12 changed existing Views, with authored
+layout and references preserved. The protected 1.1.19 projection below retains
+its accepted 1,285-View presentation; candidate preparation does not replace it.
+The subsequent [additional authorisation](../evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-additional-authorisation.md)
+is incorporated in the [updated correction candidate](../evidence/1.1.19/001/after/solutionfacet-corrections/Harmonia-SolutionFacet-corrected-candidate.xml).
+It corrects three ArchitecturalAxiom classifications and six current friendlyNames
+while preserving all 1,288 Views and their maintained template exactly.
+The [final naming candidate](../evidence/1.1.19/001/after/solutionfacet-final-naming/Harmonia-SolutionFacet-final-naming-candidate.xml)
+applies the later Composition-verified dispositions to the remaining three names.
+Its native Name remains displayName; friendlyName expresses programmatic context;
+canonicalName is independently governed and unchanged. Earlier candidates remain
+retained evidence, and no protected baseline is replaced.
 From RAD-1.1.17 Iteration 002, the projector uses native-type element catalogues
 and explicit-source relationship catalogues, independently of Continuum reading
 navigation and architectural containment. Native Name and element entry labels

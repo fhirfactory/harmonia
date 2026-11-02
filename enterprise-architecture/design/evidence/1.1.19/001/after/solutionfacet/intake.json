@@ -1,0 +1,46 @@
+{
+  "standing": "Intake evidence only; no architectural reconciliation or acceptance",
+  "inputSelection": "One iteration-specific before export, corresponding to supplied 1.1.19-001 workbench; no timestamp or backup selection",
+  "files": [
+    {
+      "path": "enterprise-architecture/design/archimate/published/1.1.19/Harmonia-Architecture.xml",
+      "bytes": 28093718,
+      "sha256": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.19/001/before/Harmonia-Continuum-1.1.19-001.xml",
+      "bytes": 30007053,
+      "sha256": "217202bb3c303c0843b20b5fe6811ccd73cb2cd8c6ea3ed23c2de5951bcf52e1"
+    },
+    {
+      "path": "enterprise-architecture/design/archimate/working/1.1.19/Harmonia-Continuum-1.1.19-001.archimate",
+      "bytes": 28549319,
+      "sha256": "73ba050bcf96e772b44c5bbf2bc040702f279bf68a3eebad672423dd7800c411"
+    }
+  ],
+  "baseline": {
+    "elements": 1994,
+    "relationships": 2235,
+    "views": 1285
+  },
+  "submission": {
+    "elements": 1994,
+    "relationships": 2236,
+    "views": 1288
+  },
+  "intakeGate": {
+    "outcome": "UNRESOLVED",
+    "kind": "REVIEW_PAYLOAD_LIMIT",
+    "deltaBytes": 2158524,
+    "thresholdBytes": 128000,
+    "boundedScopeRequested": true,
+    "interpretationStarted": false
+  },
+  "git": {
+    "startingHead": "93d6649a8ea296d07dd489641910f33c2848bca0",
+    "committed": false,
+    "pushed": false,
+    "staged": false
+  },
+  "taskTimestamp": "UNRESOLVED; attributable instruction-entry event unavailable; no current-clock substitution"
+}

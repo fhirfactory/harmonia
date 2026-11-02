@@ -11812,10 +11812,10 @@
           ]
         },
         {
-          "title": "Architectural Subjects",
+          "title": "Solution Facets",
           "basis": "enterprise-architecture/design/evidence/1.1.17/001/before/ai-agent-tasks/20261031T104506Z-nfr-derived-elements-add.md; accepted Iteration 001 specification",
           "source": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md",
-          "description": "Iteration 001 subject classification across native architectural layers; explicit subject-containment Compositions do not establish component ownership or logical Home.",
+          "description": "Iteration 001 SolutionFacet classification across native architectural layers; explicit SolutionFacet-containment Compositions do not establish component ownership or logical Home.",
           "children": [
             {
               "canonicalId": "03cfbc2cac494fb9a15106c2c571d384",
@@ -11830,7 +11830,7 @@
                     "ae28fe841f6b476da4393c5e3c6a2eab",
                     "5acccfa8cf634669a26bb31010926720"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "6fceb4d8857a4601b736a33e9bec140a",
@@ -11847,7 +11847,7 @@
                     "45eb197073df406ea4080f9665ca12ab",
                     "82d29abf230d478aaf42ecb73ecbd01e"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "b01782f63be44bc9ab2f6ebbf84b37f2",
@@ -11898,7 +11898,7 @@
                     "13c56fcda53c406494561c883f32fc1c",
                     "17ae70b671b5451a812df11d59ff6e1c"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "549a5d805b3f40d49437ce704f923bf0",
@@ -11920,7 +11920,7 @@
                     "d30a62f256ae44599841362118a84ec8",
                     "adf5bd2a409b44099253fbed486d736f"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "b47210a43fe147d4a3f2fbc081321063",
@@ -11948,7 +11948,7 @@
                   "relatedCanonicalIds": [
                     "c2e7ee7597e64275b3523befd72c0987"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "9c7c9de7ffc0457d87cf52548bca70ca",
@@ -11972,7 +11972,7 @@
                     "6316761bfd414032a8d889c7ba34131d",
                     "22583ccb89dc4cf683c710760bc4b1f2"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "80aa94b4210047a0a14563f408da1694",
@@ -11997,7 +11997,7 @@
                     "b1a46fce85b4448fba55987af146d61e",
                     "4a2cd91fab0c42e98b09a017aefa66de"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "f14ca9b3213d4c3db3c5d479b4cc938e",
@@ -12019,7 +12019,7 @@
                     "d0af3f7b7f9947008b3b066eefe73617",
                     "06ac0b10e0614c5cb33499c1e6c4edc7"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "d733a698d2c4477db4a4289144417e3f",
@@ -12051,7 +12051,7 @@
                     "aa179ef5bdf44b4eab3f2c855a8798d2",
                     "349f526a401e4e299b854cbfedad0fca"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "f6b8d4c19f9649a0bdde6727182855b6",
@@ -12076,7 +12076,7 @@
                     "9683182663cd40428d806ed2d8685511",
                     "886896239b2e40b0b3bda53e922a2ab6"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "395d77eea25d40b0b74321dc7aabd283",
@@ -12090,7 +12090,7 @@
                   "kind": "element",
                   "basis": "Explicit authorised creation placement",
                   "relatedCanonicalIds": [],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "c0ef85ab954f447fb244149dfcc44aad",
@@ -12108,7 +12108,7 @@
                     "72b6d13c85944e2d93efc6c5f5a53d82",
                     "370d9a6e0e00402aba9720580a2e365e"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "202ebe880cc8456bb5e9f1389cc26fe8",
@@ -12142,7 +12142,7 @@
                     "fb7783088c894106a017912467a9e40d",
                     "4547bd339ff143c988391159e3407f20"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "1cdc1ee62ec548998a8db6ee23b59ca1",
@@ -12189,7 +12189,7 @@
                     "bbedb1ff13e94a88ac7ec60b8e40092e",
                     "6df99d4979a942fe833e1c43317b385b"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "f9035f49dbab4676b23ab9e4f45678f9",
@@ -12221,7 +12221,7 @@
                     "92ef574eb9b945dfaf6cf2b1b670595b",
                     "859f884874094c96a6ace15e17131a4c"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "2423108223e14d27a7bf59610034297a",
@@ -12252,7 +12252,7 @@
                     "427d41b9416943d4a362470a965baea5",
                     "41fa01556ade4f22a35288b072113767"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "9fec9301e759460880557df71baa19c0",
@@ -12278,7 +12278,7 @@
                   "relatedCanonicalIds": [
                     "de466c998be34fae87a2be41983cbcdd"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "de3ff3302e504029b5b5f3f18fe9c380",
@@ -12295,7 +12295,7 @@
                     "de15359269cf45adb646a435c18306f8",
                     "9202f9b1adf84d4882a507a2d7280710"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "9c613c6963e9451e945d3934a20bdd53",
@@ -12317,7 +12317,7 @@
                     "44b1a897fd1a41c097a1138bfee9cea6",
                     "8014fbaa48b5435785fced72aa748da6"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "b12837a817d14919b5c33b35e3bb3d5a",
@@ -12343,7 +12343,7 @@
                     "a0c7aa62c0ff498c91dcd6af011170ce",
                     "f24e63c49135411bbfbc06f9385aeea5"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "011207c2c69f42d7a5c9c7504ffbc951",
@@ -12370,7 +12370,7 @@
                     "602eb50793f448d8bdbc92d41f851877",
                     "ab4206c7312449569abaa818b3a8727a"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "9020808d1ff9466db08ad2f8c9a97542",
@@ -12399,7 +12399,7 @@
                     "0968fc163ae54514bc1f02471fe6d866",
                     "6973441f2d62448188af9bfce5ad9d9f"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "0085c4fe23cf4b76829fae3369c9fbb1",
@@ -12438,7 +12438,7 @@
                     "0da415a142c640d9ab1c73d770df8ea3",
                     "71d7a55f3d8c4b12836601da142cb304"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "55441c2677144a9da1c6348e633eaac8",
@@ -12459,7 +12459,7 @@
                   "relatedCanonicalIds": [
                     "49c13eb367b44565a011a77b90108cb8"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "41040498bcaf469686edbee208b9b349",
@@ -12480,7 +12480,7 @@
                   "kind": "element",
                   "basis": "Explicit authorised creation placement",
                   "relatedCanonicalIds": [],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 },
                 {
                   "canonicalId": "2d89b3a1e74e42d28a9f0a3dfb2c4ecb",
@@ -12491,7 +12491,7 @@
                     "a9b1d031fa844057aa030f09e4fa6b01",
                     "911511665a8a4135b7f2a37f5f79ad36"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "5280c9c5e5ac43fe8fd314fd74bb6e69",
@@ -12520,7 +12520,7 @@
                     "12466ce2701146c1b52a9c68c2fb426c",
                     "338a4cb1c2444ec2aa7703fcd9f28247"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "416367b1da96412299df199827b3541f",
@@ -12541,7 +12541,7 @@
                   "relatedCanonicalIds": [
                     "76a67526fcdf40999f375a8cac54d5ef"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "e576768ae5cd4522b760c36d2b364be2",
@@ -12567,7 +12567,7 @@
                   "relatedCanonicalIds": [
                     "80fe052799944843917044749288f297"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 },
                 {
                   "canonicalId": "f40da9359c7545d2ad0eef6c3a5bf645",
@@ -12577,7 +12577,7 @@
                     "79177908b67243a4a5f86fa180f5fd22",
                     "8ac5880576ad4f8fa9612f231178a06c"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "b05d68295ed141d6815aa56c8a3d3b39",
@@ -12610,7 +12610,7 @@
                   "relatedCanonicalIds": [
                     "26f3759e1d014a7cae5f265ea6530000"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "3566f7776b8741699f48139e1c6b8ec8",
@@ -12627,7 +12627,7 @@
                     "93e40f54c22846538d91dc901ee34633",
                     "6ca05ae8b3b34c1493ecdb48cfda1979"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "ee9bc6c96d944f2ea8bbaaeffb31db28",
@@ -12647,7 +12647,7 @@
                     "545465b03f794a509c932bd3126fbe57",
                     "0ce24ee595a445e5b1a95e54aa9f1eac"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "901d49996c9545bb99cb0e0e7c043c81",
@@ -12674,7 +12674,7 @@
                     "81fdb5611a0f4338ae85478781032dd7",
                     "8731f88e202a4f5dacb408e5a1d474a8"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "f7d9c92661ed44af99516400635041bf",
@@ -12694,7 +12694,7 @@
                     "51191ca802f54efb8554d20423199cd0",
                     "150b3b1eea9b484b89ddc609bf550485"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "a4fbf334ea6e48028e39eb7f74ced2bb",
@@ -12738,7 +12738,7 @@
                     "75420022c1a7463e91ca48f229a78194",
                     "d1380eec700a492b810354e0798c8146"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "20326d2f4f2e44dcbe12db38deea02d0",
@@ -12754,7 +12754,7 @@
                   "relatedCanonicalIds": [
                     "b29075c844cf403fb1322b4d1aba8803"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "43ea78d2aa5e4e0eb4e0c80a6ddb22dd",
@@ -12770,7 +12770,7 @@
                   "relatedCanonicalIds": [
                     "ea33d8db942f4b5b9e322d74cbfe975b"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "028a5b5f4b0e458a91489cac0513955d",
@@ -12792,7 +12792,7 @@
                     "4621a5cb0dbe445488439ac03398a8b5",
                     "5bd9cc19d41e47d49978afaeea8343ed"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "8d58b9333a374b9cbe936f34919fc122",
@@ -12816,7 +12816,7 @@
                   "kind": "element",
                   "basis": "Explicit authorised creation placement",
                   "relatedCanonicalIds": [],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 }
               ]
             },
@@ -12836,7 +12836,7 @@
                     "247ae4b498944e5f80c638fc958a3f43",
                     "587db702f9134c5b8292f894dbcba53d"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "e321b3c9558745fcaf58fe96ec8eca05",
@@ -12864,7 +12864,7 @@
                     "b5d3447a05b249a8af154136fc36c4d9",
                     "9cdbf642158c4c37a6f3f10a6dd9ebfe"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "99436452c53a49b89fa6bc2863557572",
@@ -12895,7 +12895,7 @@
                   "relatedCanonicalIds": [
                     "96f7bfa320b049d2b76fcc35a1926883"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "445d396942f549e5891086bd72fa5b44",
@@ -12911,7 +12911,7 @@
                   "relatedCanonicalIds": [
                     "f2e504e7d6374e41a81303265adda6de"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 },
                 {
                   "canonicalId": "da5b4238bd6945cf9b467ff3feb9d76b",
@@ -12921,7 +12921,7 @@
                     "9d094b1b42644ab5aa2071a9460778e2",
                     "43593f7a9566410ebc1aa30dbe935848"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "63807867e2d147528542a914952b3e3e",
@@ -12942,7 +12942,7 @@
                   "relatedCanonicalIds": [
                     "4c02fec3af264b878ee3e0cfaecbf55f"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "3189d80ed4c24efe9bfc6b28ab263b51",
@@ -12968,7 +12968,7 @@
                   "kind": "element",
                   "basis": "Explicit authorised creation placement",
                   "relatedCanonicalIds": [],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 },
                 {
                   "canonicalId": "36264352a7f745109deaac2025877690",
@@ -12978,7 +12978,7 @@
                     "1ad8342e9ffd43138b27be348e861a77",
                     "54eb7e671c094ebcbb5503af36c7892d"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "af4f93db10cb47c282600babe51048e1",
@@ -12999,7 +12999,7 @@
                   "relatedCanonicalIds": [
                     "48e5415eff454e3e9e987506999e62f2"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "f6985401675b47c0a1c480aa156aaa0c",
@@ -13018,7 +13018,7 @@
                   "kind": "element",
                   "basis": "Explicit authorised creation placement",
                   "relatedCanonicalIds": [],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 },
                 {
                   "canonicalId": "7f9cadb36d764b22840748a9608f9a37",
@@ -13028,7 +13028,7 @@
                     "3ce5568f2ded498386fd6fcfb142f89a",
                     "33d348c2936b401aa567d8fa531147ea"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "31812051912e4dd99b07125d86ca2c11",
@@ -13045,7 +13045,7 @@
                     "536bbcae0de5495a8f4d2e994cdc2232",
                     "e1521c49b740487e935fa9ecd00675a0"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 }
               ]
             },
@@ -13059,7 +13059,7 @@
                   "kind": "element",
                   "basis": "Explicit authorised creation placement",
                   "relatedCanonicalIds": [],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 },
                 {
                   "canonicalId": "e8c7f8a36ff248cd9115d7a382324808",
@@ -13068,14 +13068,14 @@
                   "relatedCanonicalIds": [
                     "a6c8cc8f5647461cb210f88ced90cc57"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 },
                 {
                   "canonicalId": "35df8a5d8b1e495ba4cf79a5d4a47863",
                   "kind": "element",
                   "basis": "Explicit authorised creation placement",
                   "relatedCanonicalIds": [],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 },
                 {
                   "canonicalId": "cd453ee30502406db647a0c5b4011739",
@@ -13084,7 +13084,7 @@
                   "relatedCanonicalIds": [
                     "1c2eb4d9aef4425288528907fed7ebc2"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "582e15cf43f94ce6b1c128361ec31780",
@@ -13100,7 +13100,7 @@
                   "relatedCanonicalIds": [
                     "f2d38e7beef84b61a769de4ca7f48951"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "82837737622a46059703e99a8920533e",
@@ -13117,7 +13117,7 @@
                     "13ce74b78d624dd09c4401fafc911f67",
                     "5ce1ef8baaf84848979ff6c9ccf6ca91"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "c5f38ca4adc24f03a2b885938186e509",
@@ -13141,7 +13141,7 @@
                     "2e276eda09a94670bee0619468947895",
                     "1c0b0e15434d47b1b08ad86e087a45d1"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "493e4a05fe76496f82caf26e68f15edd",
@@ -13157,7 +13157,7 @@
                   "relatedCanonicalIds": [
                     "8369e22bc3414ae49a1987095549ef03"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "23408174240a47f690d23dee589e4ddc",
@@ -13173,7 +13173,7 @@
                   "relatedCanonicalIds": [
                     "0f07f89a3a854bfdac4d4fc423feefca"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "4643d0b24fe7420b8e3fd0f4a2f4b1de",
@@ -13189,7 +13189,7 @@
                   "relatedCanonicalIds": [
                     "39d698ff446d48ab9358844666fcafe5"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "5120fbb391e24b3f941d8a5cc347a1fd",
@@ -13206,7 +13206,7 @@
                     "3da1fba95a00438db09c342dfba8b693",
                     "920606fdc7c14a27b7e39a08105c77b6"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "f71f084dd9154318b86ca22f0fe8c36d",
@@ -13227,7 +13227,7 @@
                   "kind": "element",
                   "basis": "Explicit authorised creation placement",
                   "relatedCanonicalIds": [],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 },
                 {
                   "canonicalId": "0f1014c80b0a473abf8c37845e0ed2fa",
@@ -13236,7 +13236,7 @@
                   "relatedCanonicalIds": [
                     "ed3e8d7923d14f8cbc6f08d3673248f2"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "8e39da9fc2d443efa3cc5d0311fcaf79",
@@ -13250,21 +13250,21 @@
                   "kind": "element",
                   "basis": "Explicit authorised creation placement",
                   "relatedCanonicalIds": [],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 },
                 {
                   "canonicalId": "22fce0d656ef4df89d2a35a85fa92aa1",
                   "kind": "element",
                   "basis": "Explicit authorised creation placement",
                   "relatedCanonicalIds": [],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 },
                 {
                   "canonicalId": "71b9830ce1a543548334647cbbaec7f1",
                   "kind": "element",
                   "basis": "Explicit authorised creation placement",
                   "relatedCanonicalIds": [],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location."
                 },
                 {
                   "canonicalId": "0528b2ac76c548ae861ebcb1ef9cf3d9",
@@ -13273,7 +13273,7 @@
                   "relatedCanonicalIds": [
                     "3c11adccd7194276b787416368c13858"
                   ],
-                  "description": "Primary subject allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
+                  "description": "Primary SolutionFacet allocations in the accepted Iteration 001 register; links resolve to each statement’s one canonical native-layer location.",
                   "children": [
                     {
                       "canonicalId": "5e7bdebc353e49259113adf2a5b93aad",

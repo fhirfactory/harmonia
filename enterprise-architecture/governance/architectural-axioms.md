@@ -29,7 +29,7 @@ The [original register](../../docs/markdown/governance/architectural-axioms.md) 
 - [AX-06 Information Authority Is Explicit](../continuum/motivation/principle/952c3b6148ce4fce94b69f99a0c2fec7.md)
 <a id="ax-07"></a>
 <a id="kleio-mandatory-capture-authority"></a>
-- [AX-07 Security Is Intrinsic to Managed Operations](../continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md)
+- [[ArchitecturalAxiom] AX-07 Security Is Intrinsic to Managed Operations](../continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md)
 <a id="ax-08"></a>
 - [AX-08 Evidence Records Meaning, Not Machinery](../continuum/motivation/principle/21d6864657964ba5b03e3f6b5eb29cd5.md)
 <a id="ax-09"></a>
@@ -49,9 +49,9 @@ The [original register](../../docs/markdown/governance/architectural-axioms.md) 
 <a id="ax-16"></a>
 - [AX-16 Operational Activity & Entity State Progress Together](../continuum/motivation/principle/de7e90f46127455a9ec9ad3b9b48ba54.md)
 <a id="ax-17"></a>
-- [AX-17 Architectural Authority and Explicit Uncertainty](../continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md)
+- [[ArchitecturalAxiom] AX-17 Architectural Authority and Explicit Uncertainty](../continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md)
 <a id="ax-18"></a>
-- [AX-18 Integration and Coordination Do Not Confer Domain Authority](../continuum/motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md)
+- [[ArchitecturalAxiom] AX-18 Integration and Coordination Do Not Confer Domain Authority](../continuum/motivation/principle/architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md)
 
 ## 1. Purpose
 

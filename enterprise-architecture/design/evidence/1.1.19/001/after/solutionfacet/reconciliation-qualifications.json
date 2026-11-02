@@ -1,0 +1,191 @@
+{
+  "standing": "Qualifications for Solution Architect review; no missing authority inferred",
+  "namingTreatment": "Explicit authored displayName and friendlyName follow the operative Task example; differing native Names retained in naming provenance. No typo/path corrections inferred.",
+  "nativeNameFriendlyNameInconsistencies": [
+    {
+      "identifier": "id-161e6e33f93e533582880e544b22ac3c",
+      "canonicalId": "f5df30b02e8a4d60bf44e8af2da4d5ab",
+      "oldName": "Capacity Planning",
+      "name": "[SolutionFacet] PerformanceAndCapacity.CapacityPlanning",
+      "oldFriendly": "CapacityPlanning",
+      "friendly": "PerformancAndCapacity.CapacityPlanning",
+      "displayProperty": "Capacity Planning"
+    },
+    {
+      "identifier": "id-2748e964f03157d19464eedcadd333a7",
+      "canonicalId": "1c57a3d9080443178f6e9159d0591c77",
+      "oldName": "User Experience",
+      "name": "[solutionFacet] UserExperience",
+      "oldFriendly": "UserExperience",
+      "friendly": "UserExperience",
+      "displayProperty": "User Experience"
+    },
+    {
+      "identifier": "id-555932c6057b4b72aefd0fe6dfc0dfee",
+      "canonicalId": "b05d68295ed141d6815aa56c8a3d3b39",
+      "oldName": "Processing-and-Workflow.Processing-Outcomes.Outcomes",
+      "name": "[SolutionFacet] Processing-AndWorkflow.ProcessingOutcomes.Outcomes",
+      "oldFriendly": "ProcessingAndWorkflowProcessingOutcomesOutcomes",
+      "friendly": "ProcessingAndWorkflow.ProcessingOutcomes.Outcomes",
+      "displayProperty": "Processing Outcomes - Outcomes"
+    },
+    {
+      "identifier": "id-89557de9c4844948bc97deabf3b68fbc",
+      "canonicalId": "549a5d805b3f40d49437ce704f923bf0",
+      "oldName": "Architectural-Governance.Implementation-Strategy.Constraints",
+      "name": "[solutionFacet] Architectural-Governance.Implementation-Strategy.Constraints",
+      "oldFriendly": "ArchitecturalGovernanceImplementationStrategyConstraints",
+      "friendly": "ArchitecturalGovernance.ImplementationStrategy.Constraints",
+      "displayProperty": "Implementation Strategy - Constraints"
+    },
+    {
+      "identifier": "id-8feb3ea6eb244bc289a02ec7066a17f5",
+      "canonicalId": "5a4a41f263424c1aac14102b64f95bd0",
+      "oldName": "Processing-and-Workflow.Processing-Outcomes.Principles",
+      "name": "[solutionFacet] ProcessingAndWorkflow.ProcessingOutcomes.Principles",
+      "oldFriendly": "ProcessingAndWorkflowProcessingOutcomesPrinciples",
+      "friendly": "ProcessingAndWorkflow.ProcessingOutcomes.Principles",
+      "displayProperty": "Processing Outcomes - Principles"
+    },
+    {
+      "identifier": "id-92f2307a851a4da6a658b8c4d60bcd51",
+      "canonicalId": "2423108223e14d27a7bf59610034297a",
+      "oldName": "Security-and-Authorisation.Security-Monitoring.Principles",
+      "name": "[SolutionFacet] SecurityAndManagement.SecurityMonitoring.Principles",
+      "oldFriendly": "SecurityAndAuthorisationSecurityMonitoringPrinciples",
+      "friendly": "SecurityAndManagementSecurityMonitoringPrinciples",
+      "displayProperty": "Security Monitoring - Principles"
+    },
+    {
+      "identifier": "id-adebd5da32ca413f99024a96d351adc0",
+      "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+      "oldName": "Architectural-Governance.Architecture-Conformance.Constraints",
+      "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureConformance.Constraints",
+      "oldFriendly": "ArchitecturalGovernanceArchitectureConformanceConstraints",
+      "friendly": "ArchitecturalGovernanceArchitectureConformanceConstraints",
+      "displayProperty": "Architectural-Governance.Architecture-Conformance.Constraints"
+    },
+    {
+      "identifier": "id-af15e7209c6e5720a7a0ff8767f968f1",
+      "canonicalId": "fe8916b03b084e82af587ac5a900349b",
+      "oldName": "Authorisation Enforcement",
+      "name": "[SolutionFacet] Authorisation Enforcement",
+      "oldFriendly": "AuthorisationEnforcement",
+      "friendly": "SecurityAndManagement.AuthorisationEnforcement",
+      "displayProperty": "Authorisation Enforcement"
+    },
+    {
+      "identifier": "id-c3b22effdb8555edbd8565ae22edbf78",
+      "canonicalId": "0a59e0ebb33c494e939148d30e42f49c",
+      "oldName": "Fault Tolerance",
+      "name": "[SolutionFacet] ResilienceAndRecovery.FaultTolerance",
+      "oldFriendly": "FaultTolerance",
+      "friendly": "ReslienceAndRecovery.FaultTolerance",
+      "displayProperty": "Fault Tolerance"
+    },
+    {
+      "identifier": "id-c5f499e1694c552bae7311911aea1399",
+      "canonicalId": "03cfbc2cac494fb9a15106c2c571d384",
+      "oldName": "Architectural Governance",
+      "name": "[SolutionFacet] Architectural Governance",
+      "oldFriendly": "ArchitecturalGovernance",
+      "friendly": "ArchitecturalGovernance",
+      "displayProperty": "Architectural Governance"
+    },
+    {
+      "identifier": "id-c7f0ce03183c42e09ba688ecfb969c9c",
+      "canonicalId": "805280b737e14b72ba401393c1f4a271",
+      "oldName": "Operations-and-Assurance.Operational-Diagnostics.Drivers",
+      "name": "[SolutionFacet] OperationsAndAssurance.OperationalDiagnostics.Drivers",
+      "oldFriendly": "OperationsAndAssuranceOperationalDiagnosticsDrivers",
+      "friendly": "OperationsAndAssuranceOperationalDiagnosticsDrivers",
+      "displayProperty": "Operational Diagnostics - Drivers"
+    },
+    {
+      "identifier": "id-d1e317a30a9d53359c25a86673df3e56",
+      "canonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+      "oldName": "Information Sovereignty and Residency",
+      "name": "[SolutionFacet] InformationManagement.InformationSovereigntyAndResidency",
+      "oldFriendly": "InformationSovereigntyAndResidency",
+      "friendly": "InformationSovereigntyAndResidency",
+      "displayProperty": "Information Sovereignty and Residency"
+    },
+    {
+      "identifier": "id-e62f6403b16549a3b894d8eedb87db7a",
+      "canonicalId": "9a5487f0dd7b42bca1f791aad1257849",
+      "oldName": "Security-and-Authorisation.Authorisation-Enforcement.Requirements",
+      "name": "[solutionFacet] SecurityAndManagement.AuthorisationEnforcement.Requirements",
+      "oldFriendly": "SecurityAndAuthorisationAuthorisationEnforcementRequirements",
+      "friendly": "SecurityAndManagement.AuthorisationEnforcement.Requirements",
+      "displayProperty": "Authorisation Enforcement - Requirements"
+    },
+    {
+      "identifier": "id-f8b45a0c16475d67938f268ef94adf62",
+      "canonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+      "oldName": "User Interface Responsiveness",
+      "name": "[SolutionFacet] UserExperience.UserInterfaceResponsiveness",
+      "oldFriendly": "UserInterfaceResponsiveness",
+      "friendly": "UserInterfaceResponsiveness",
+      "displayProperty": "User Interface Responsiveness"
+    },
+    {
+      "identifier": "id-fe0074888e97530c825d400d27e90ad5",
+      "canonicalId": "6d6086134162468cac129040a139d8d9",
+      "oldName": "Architecture Vision",
+      "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureVision",
+      "oldFriendly": "ArchitectureVision",
+      "friendly": "ArchitectureGovernance.ArchitectureVision",
+      "displayProperty": "Architecture Vision"
+    },
+    {
+      "identifier": "id-ff3a2d67c241526199031d3dc1b50e0a",
+      "canonicalId": "abc27ddff6d644d9945db0cfd7488f07",
+      "oldName": "Audit and Accountability",
+      "name": "[SolutionFacet] Audit and Accountability",
+      "oldFriendly": "AuditAndAccountability",
+      "friendly": "AuditAndAccountability",
+      "displayProperty": "Audit and Accountability"
+    }
+  ],
+  "unexpectedArchitecturalAxiomChanges": [
+    {
+      "identifier": "id-0ff05d6fdd4250c8b8e6cf1a6a629e7c",
+      "submittedName": [
+        {
+          "text": "[ArchitecturalAxiom] AX-07 Security Is Intrinsic to Managed Operations",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "treatment": "Baseline native Principle classification retained; specific unrelated ArchitecturalAxiom reclassification remains for SA disposition"
+    },
+    {
+      "identifier": "id-806a31e08c7c545f957bfe59c5d79de3",
+      "submittedName": [
+        {
+          "text": "[ArchitecturalAxiom] AX-18 Integration and Coordination Do Not Confer Domain Authority",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "treatment": "Baseline native Principle classification retained; specific unrelated ArchitecturalAxiom reclassification remains for SA disposition"
+    },
+    {
+      "identifier": "id-b46235d7d9875eb893745a5f2c8a0b72",
+      "submittedName": [
+        {
+          "text": "[ArchitecturalAxiom] AX-17 Architectural Authority and Explicit Uncertainty",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "treatment": "Baseline native Principle classification retained; specific unrelated ArchitecturalAxiom reclassification remains for SA disposition"
+    }
+  ],
+  "inheritedUnresolvedPropertyCount": 673,
+  "taskEventTimes": "UNRESOLVED for both operative Task and clarification; no substitute clock or filesystem timestamp used",
+  "scope": "All 229 SolutionFacets, three additional Views, 12 changed existing Views, authored navigation and the additional Aggregation incorporated. The three unrelated axiom reclassifications are separate unresolved input differences."
+}

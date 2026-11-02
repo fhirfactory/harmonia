@@ -1,0 +1,2358 @@
+{
+  "sourceSha256": "bf3529fd2cb322918c91100b85fc8dcb72873e6cdb42302f918faad2e99bfa61",
+  "records": [
+    {
+      "sourcePointer": "/relationships/changed/269/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-77d374e0b45745ccacca707b563b69cb",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-77d374e0b45745ccacca707b563b69cb]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/269/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-77d374e0b45745ccacca707b563b69cb",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-77d374e0b45745ccacca707b563b69cb]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/269/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-77d374e0b45745ccacca707b563b69cb",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-77d374e0b45745ccacca707b563b69cb]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/270/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7834cab58d1d4e4ab79df5026135d034",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7834cab58d1d4e4ab79df5026135d034]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/270/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7834cab58d1d4e4ab79df5026135d034",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7834cab58d1d4e4ab79df5026135d034]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/271/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-783907d892ad4541b27202d2159d23c2",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-783907d892ad4541b27202d2159d23c2]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/271/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-783907d892ad4541b27202d2159d23c2",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-783907d892ad4541b27202d2159d23c2]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/271/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-783907d892ad4541b27202d2159d23c2",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-783907d892ad4541b27202d2159d23c2]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/271/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-783907d892ad4541b27202d2159d23c2",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-783907d892ad4541b27202d2159d23c2]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/272/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-795e0c4ebdf24434aadfd06a79b82bf0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-795e0c4ebdf24434aadfd06a79b82bf0]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/272/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-795e0c4ebdf24434aadfd06a79b82bf0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-795e0c4ebdf24434aadfd06a79b82bf0]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/273/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7963f11e150b4aa092e8aa4e46645d6e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7963f11e150b4aa092e8aa4e46645d6e]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/273/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7963f11e150b4aa092e8aa4e46645d6e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7963f11e150b4aa092e8aa4e46645d6e]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/273/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7963f11e150b4aa092e8aa4e46645d6e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7963f11e150b4aa092e8aa4e46645d6e]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/274/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-79d5317b2db34d4db71fa0e19d3c811d",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-79d5317b2db34d4db71fa0e19d3c811d]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/274/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-79d5317b2db34d4db71fa0e19d3c811d",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-79d5317b2db34d4db71fa0e19d3c811d]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/275/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7b0bf2f363da46c4a9a7d7059de6f10a",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7b0bf2f363da46c4a9a7d7059de6f10a]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/275/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7b0bf2f363da46c4a9a7d7059de6f10a",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7b0bf2f363da46c4a9a7d7059de6f10a]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/275/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7b0bf2f363da46c4a9a7d7059de6f10a",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7b0bf2f363da46c4a9a7d7059de6f10a]/properties[1]/property[key=v0.2 / Assertion Status]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/275/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7b0bf2f363da46c4a9a7d7059de6f10a",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7b0bf2f363da46c4a9a7d7059de6f10a]/properties[1]/property[key=v0.2 / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/276/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7bb0362edb424f279081a4ad163f8e73",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7bb0362edb424f279081a4ad163f8e73]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/276/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7bb0362edb424f279081a4ad163f8e73",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7bb0362edb424f279081a4ad163f8e73]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/276/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7bb0362edb424f279081a4ad163f8e73",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7bb0362edb424f279081a4ad163f8e73]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/276/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7bb0362edb424f279081a4ad163f8e73",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7bb0362edb424f279081a4ad163f8e73]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/277/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7c98658ffa5c4e0e937ef4dacb7eeee0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7c98658ffa5c4e0e937ef4dacb7eeee0]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/277/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7c98658ffa5c4e0e937ef4dacb7eeee0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7c98658ffa5c4e0e937ef4dacb7eeee0]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/277/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7c98658ffa5c4e0e937ef4dacb7eeee0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7c98658ffa5c4e0e937ef4dacb7eeee0]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/277/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7c98658ffa5c4e0e937ef4dacb7eeee0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7c98658ffa5c4e0e937ef4dacb7eeee0]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/278/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7cd4d324a734498bab3a343adfd0a53b",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7cd4d324a734498bab3a343adfd0a53b]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/278/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7cd4d324a734498bab3a343adfd0a53b",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7cd4d324a734498bab3a343adfd0a53b]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/278/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7cd4d324a734498bab3a343adfd0a53b",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7cd4d324a734498bab3a343adfd0a53b]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/279/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7cfabe53fcd24cd9993f3be25553a44a",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7cfabe53fcd24cd9993f3be25553a44a]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/279/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7cfabe53fcd24cd9993f3be25553a44a",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7cfabe53fcd24cd9993f3be25553a44a]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/279/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7cfabe53fcd24cd9993f3be25553a44a",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7cfabe53fcd24cd9993f3be25553a44a]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/279/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7cfabe53fcd24cd9993f3be25553a44a",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7cfabe53fcd24cd9993f3be25553a44a]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/280/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7d44d41e99684af28f5638a3d0730369",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7d44d41e99684af28f5638a3d0730369]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/280/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7d44d41e99684af28f5638a3d0730369",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7d44d41e99684af28f5638a3d0730369]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/280/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7d44d41e99684af28f5638a3d0730369",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7d44d41e99684af28f5638a3d0730369]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/280/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7d44d41e99684af28f5638a3d0730369",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7d44d41e99684af28f5638a3d0730369]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/281/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7e0a09945510499aad94ab6d42dea233",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7e0a09945510499aad94ab6d42dea233]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/281/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7e0a09945510499aad94ab6d42dea233",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7e0a09945510499aad94ab6d42dea233]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/281/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7e0a09945510499aad94ab6d42dea233",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7e0a09945510499aad94ab6d42dea233]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/281/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7e0a09945510499aad94ab6d42dea233",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7e0a09945510499aad94ab6d42dea233]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/282/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7e35102d44d842c79c3beaff9c6aedc2",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7e35102d44d842c79c3beaff9c6aedc2]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/282/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7e35102d44d842c79c3beaff9c6aedc2",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7e35102d44d842c79c3beaff9c6aedc2]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/282/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7e35102d44d842c79c3beaff9c6aedc2",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7e35102d44d842c79c3beaff9c6aedc2]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/282/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7e35102d44d842c79c3beaff9c6aedc2",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7e35102d44d842c79c3beaff9c6aedc2]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/283/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7e5b7208042c4de599d0b4be2c3d70d0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7e5b7208042c4de599d0b4be2c3d70d0]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/283/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7e5b7208042c4de599d0b4be2c3d70d0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7e5b7208042c4de599d0b4be2c3d70d0]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/283/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7e5b7208042c4de599d0b4be2c3d70d0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7e5b7208042c4de599d0b4be2c3d70d0]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/283/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7e5b7208042c4de599d0b4be2c3d70d0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7e5b7208042c4de599d0b4be2c3d70d0]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/284/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7eabc41327dc44d68a2a5a2a9b5d786f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7eabc41327dc44d68a2a5a2a9b5d786f]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/284/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7eabc41327dc44d68a2a5a2a9b5d786f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7eabc41327dc44d68a2a5a2a9b5d786f]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/284/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7eabc41327dc44d68a2a5a2a9b5d786f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7eabc41327dc44d68a2a5a2a9b5d786f]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/285/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7ef470a802a9415587a204fcebd5d005",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7ef470a802a9415587a204fcebd5d005]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/285/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7ef470a802a9415587a204fcebd5d005",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7ef470a802a9415587a204fcebd5d005]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/285/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7ef470a802a9415587a204fcebd5d005",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7ef470a802a9415587a204fcebd5d005]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/285/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7ef470a802a9415587a204fcebd5d005",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7ef470a802a9415587a204fcebd5d005]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/286/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7efca5f6e366405da59a54e0bc8f8957",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7efca5f6e366405da59a54e0bc8f8957]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/286/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7efca5f6e366405da59a54e0bc8f8957",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7efca5f6e366405da59a54e0bc8f8957]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/287/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7f1dfeb7a14346cc90bf8a828161ce9c",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7f1dfeb7a14346cc90bf8a828161ce9c]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/287/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-7f1dfeb7a14346cc90bf8a828161ce9c",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-7f1dfeb7a14346cc90bf8a828161ce9c]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/288/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8028febce4f44239860bb1b069ab4b07",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8028febce4f44239860bb1b069ab4b07]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/288/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8028febce4f44239860bb1b069ab4b07",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8028febce4f44239860bb1b069ab4b07]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/288/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8028febce4f44239860bb1b069ab4b07",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8028febce4f44239860bb1b069ab4b07]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/289/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-802b4f31c4214508b360b73af097c019",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-802b4f31c4214508b360b73af097c019]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/289/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-802b4f31c4214508b360b73af097c019",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-802b4f31c4214508b360b73af097c019]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/289/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-802b4f31c4214508b360b73af097c019",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-802b4f31c4214508b360b73af097c019]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/289/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-802b4f31c4214508b360b73af097c019",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-802b4f31c4214508b360b73af097c019]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/290/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-803b2b80328844bc9a762cd195a1a5f1",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-803b2b80328844bc9a762cd195a1a5f1]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/290/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-803b2b80328844bc9a762cd195a1a5f1",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-803b2b80328844bc9a762cd195a1a5f1]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/290/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-803b2b80328844bc9a762cd195a1a5f1",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-803b2b80328844bc9a762cd195a1a5f1]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/291/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8046c9edd1894533b9b79cd1a1db4962",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8046c9edd1894533b9b79cd1a1db4962]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/291/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8046c9edd1894533b9b79cd1a1db4962",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8046c9edd1894533b9b79cd1a1db4962]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/291/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8046c9edd1894533b9b79cd1a1db4962",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8046c9edd1894533b9b79cd1a1db4962]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/291/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8046c9edd1894533b9b79cd1a1db4962",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8046c9edd1894533b9b79cd1a1db4962]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/292/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-808fdbc8492448f79530ea81169a1713",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-808fdbc8492448f79530ea81169a1713]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/292/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-808fdbc8492448f79530ea81169a1713",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-808fdbc8492448f79530ea81169a1713]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/292/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-808fdbc8492448f79530ea81169a1713",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-808fdbc8492448f79530ea81169a1713]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/292/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-808fdbc8492448f79530ea81169a1713",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-808fdbc8492448f79530ea81169a1713]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/293/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-80b1252f221a4f1e80f5f595067707ef",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-80b1252f221a4f1e80f5f595067707ef]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/293/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-80b1252f221a4f1e80f5f595067707ef",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-80b1252f221a4f1e80f5f595067707ef]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/293/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-80b1252f221a4f1e80f5f595067707ef",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-80b1252f221a4f1e80f5f595067707ef]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/294/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8142b96798eb47548fc2e1ea42c969f9",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8142b96798eb47548fc2e1ea42c969f9]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/294/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8142b96798eb47548fc2e1ea42c969f9",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8142b96798eb47548fc2e1ea42c969f9]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/295/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-81b90f7c20474de3bd893e41c87feeed",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-81b90f7c20474de3bd893e41c87feeed]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/295/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-81b90f7c20474de3bd893e41c87feeed",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-81b90f7c20474de3bd893e41c87feeed]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/296/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-81c74679a1764c19b41baba6eb4fa928",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-81c74679a1764c19b41baba6eb4fa928]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/296/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-81c74679a1764c19b41baba6eb4fa928",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-81c74679a1764c19b41baba6eb4fa928]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/297/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-822e8640de6a4c26a2f7cb023a079ac8",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-822e8640de6a4c26a2f7cb023a079ac8]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/297/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-822e8640de6a4c26a2f7cb023a079ac8",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-822e8640de6a4c26a2f7cb023a079ac8]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/297/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-822e8640de6a4c26a2f7cb023a079ac8",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-822e8640de6a4c26a2f7cb023a079ac8]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/298/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-826174d734ae47c1a032a250d439e37e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-826174d734ae47c1a032a250d439e37e]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/298/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-826174d734ae47c1a032a250d439e37e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-826174d734ae47c1a032a250d439e37e]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/299/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-82f2418a883a498b85a6992612ed3053",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-82f2418a883a498b85a6992612ed3053]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/299/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-82f2418a883a498b85a6992612ed3053",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-82f2418a883a498b85a6992612ed3053]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/300/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-832ceb5bfc5b4ed5b397a03e55aed9f1",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-832ceb5bfc5b4ed5b397a03e55aed9f1]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/300/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-832ceb5bfc5b4ed5b397a03e55aed9f1",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-832ceb5bfc5b4ed5b397a03e55aed9f1]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/300/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-832ceb5bfc5b4ed5b397a03e55aed9f1",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-832ceb5bfc5b4ed5b397a03e55aed9f1]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/300/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-832ceb5bfc5b4ed5b397a03e55aed9f1",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-832ceb5bfc5b4ed5b397a03e55aed9f1]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/301/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8374e12a3cfe467e83871b6bd9a1c80e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8374e12a3cfe467e83871b6bd9a1c80e]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/301/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8374e12a3cfe467e83871b6bd9a1c80e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8374e12a3cfe467e83871b6bd9a1c80e]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/302/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8387c93cb6404c7290c48b34a0bcab1b",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8387c93cb6404c7290c48b34a0bcab1b]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/302/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8387c93cb6404c7290c48b34a0bcab1b",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8387c93cb6404c7290c48b34a0bcab1b]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/302/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8387c93cb6404c7290c48b34a0bcab1b",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8387c93cb6404c7290c48b34a0bcab1b]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/302/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8387c93cb6404c7290c48b34a0bcab1b",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8387c93cb6404c7290c48b34a0bcab1b]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/303/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-840a3e8797344a818f83cc9c3a4407f0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-840a3e8797344a818f83cc9c3a4407f0]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/303/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-840a3e8797344a818f83cc9c3a4407f0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-840a3e8797344a818f83cc9c3a4407f0]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/303/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-840a3e8797344a818f83cc9c3a4407f0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-840a3e8797344a818f83cc9c3a4407f0]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/304/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8474b6f8d1474f8c8d42757c9aa59550",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8474b6f8d1474f8c8d42757c9aa59550]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/304/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8474b6f8d1474f8c8d42757c9aa59550",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8474b6f8d1474f8c8d42757c9aa59550]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/304/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8474b6f8d1474f8c8d42757c9aa59550",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8474b6f8d1474f8c8d42757c9aa59550]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/304/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8474b6f8d1474f8c8d42757c9aa59550",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8474b6f8d1474f8c8d42757c9aa59550]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/305/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-84954a58b35b4cc7b1079f44452c0128",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-84954a58b35b4cc7b1079f44452c0128]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/305/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-84954a58b35b4cc7b1079f44452c0128",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-84954a58b35b4cc7b1079f44452c0128]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/305/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-84954a58b35b4cc7b1079f44452c0128",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-84954a58b35b4cc7b1079f44452c0128]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/305/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-84954a58b35b4cc7b1079f44452c0128",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-84954a58b35b4cc7b1079f44452c0128]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/306/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-84c560d0c0b54c9c85b2cc6674f34080",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-84c560d0c0b54c9c85b2cc6674f34080]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/306/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-84c560d0c0b54c9c85b2cc6674f34080",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-84c560d0c0b54c9c85b2cc6674f34080]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/307/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-84dcd9a68d404f279f0daaaf17069231",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-84dcd9a68d404f279f0daaaf17069231]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/307/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-84dcd9a68d404f279f0daaaf17069231",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-84dcd9a68d404f279f0daaaf17069231]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/307/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-84dcd9a68d404f279f0daaaf17069231",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-84dcd9a68d404f279f0daaaf17069231]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/307/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-84dcd9a68d404f279f0daaaf17069231",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-84dcd9a68d404f279f0daaaf17069231]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/308/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85001b91745145bdae1905da36dc8d4c",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85001b91745145bdae1905da36dc8d4c]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/308/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85001b91745145bdae1905da36dc8d4c",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85001b91745145bdae1905da36dc8d4c]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/308/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85001b91745145bdae1905da36dc8d4c",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85001b91745145bdae1905da36dc8d4c]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/309/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-853d296bb8a842499949fe84ef73037e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-853d296bb8a842499949fe84ef73037e]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/309/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-853d296bb8a842499949fe84ef73037e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-853d296bb8a842499949fe84ef73037e]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/310/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85aee2cdd062430094feef3b4148a9bf",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85aee2cdd062430094feef3b4148a9bf]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/310/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85aee2cdd062430094feef3b4148a9bf",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85aee2cdd062430094feef3b4148a9bf]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/311/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85b5ef142a6545c9941cc14be026cdb0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85b5ef142a6545c9941cc14be026cdb0]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/311/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85b5ef142a6545c9941cc14be026cdb0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85b5ef142a6545c9941cc14be026cdb0]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/311/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85b5ef142a6545c9941cc14be026cdb0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85b5ef142a6545c9941cc14be026cdb0]/properties[1]/property[key=v0.2 / Assertion Status]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/311/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85b5ef142a6545c9941cc14be026cdb0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85b5ef142a6545c9941cc14be026cdb0]/properties[1]/property[key=v0.2 / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/312/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85b62f6ca72645ed95c855839b2cbcb9",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85b62f6ca72645ed95c855839b2cbcb9]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/312/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85b62f6ca72645ed95c855839b2cbcb9",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85b62f6ca72645ed95c855839b2cbcb9]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/312/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85b62f6ca72645ed95c855839b2cbcb9",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85b62f6ca72645ed95c855839b2cbcb9]/properties[1]/property[key=v0.2 / Assertion Status]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/312/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85b62f6ca72645ed95c855839b2cbcb9",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85b62f6ca72645ed95c855839b2cbcb9]/properties[1]/property[key=v0.2 / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/313/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85e6b46c63d94212835c71ab1cc19b76",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85e6b46c63d94212835c71ab1cc19b76]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/313/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85e6b46c63d94212835c71ab1cc19b76",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85e6b46c63d94212835c71ab1cc19b76]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/313/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85e6b46c63d94212835c71ab1cc19b76",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85e6b46c63d94212835c71ab1cc19b76]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/313/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-85e6b46c63d94212835c71ab1cc19b76",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-85e6b46c63d94212835c71ab1cc19b76]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/314/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8633f98ef000476c8d49f726cd30b2f6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8633f98ef000476c8d49f726cd30b2f6]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/314/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8633f98ef000476c8d49f726cd30b2f6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8633f98ef000476c8d49f726cd30b2f6]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/314/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8633f98ef000476c8d49f726cd30b2f6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8633f98ef000476c8d49f726cd30b2f6]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/314/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8633f98ef000476c8d49f726cd30b2f6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8633f98ef000476c8d49f726cd30b2f6]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/315/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8647fa1c4e364368846862fcb6660c7b",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8647fa1c4e364368846862fcb6660c7b]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/315/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8647fa1c4e364368846862fcb6660c7b",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8647fa1c4e364368846862fcb6660c7b]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/316/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8678f10a68d9400b96acdb3ff6c4e510",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8678f10a68d9400b96acdb3ff6c4e510]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/316/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8678f10a68d9400b96acdb3ff6c4e510",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8678f10a68d9400b96acdb3ff6c4e510]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/317/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-871cfbb028104d1cbd7a67c346c260db",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-871cfbb028104d1cbd7a67c346c260db]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/317/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-871cfbb028104d1cbd7a67c346c260db",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-871cfbb028104d1cbd7a67c346c260db]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/317/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-871cfbb028104d1cbd7a67c346c260db",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-871cfbb028104d1cbd7a67c346c260db]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/317/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-871cfbb028104d1cbd7a67c346c260db",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-871cfbb028104d1cbd7a67c346c260db]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/318/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-875b0d7477e74c20904c8c4cedbcf273",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-875b0d7477e74c20904c8c4cedbcf273]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/318/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-875b0d7477e74c20904c8c4cedbcf273",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-875b0d7477e74c20904c8c4cedbcf273]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/318/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-875b0d7477e74c20904c8c4cedbcf273",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-875b0d7477e74c20904c8c4cedbcf273]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/319/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-87a75846154f429ebe91361488cb2ca9",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-87a75846154f429ebe91361488cb2ca9]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/319/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-87a75846154f429ebe91361488cb2ca9",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-87a75846154f429ebe91361488cb2ca9]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/319/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-87a75846154f429ebe91361488cb2ca9",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-87a75846154f429ebe91361488cb2ca9]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/319/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-87a75846154f429ebe91361488cb2ca9",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-87a75846154f429ebe91361488cb2ca9]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/320/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8957fd21c0e04d6a96d40579f887d985",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8957fd21c0e04d6a96d40579f887d985]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/320/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8957fd21c0e04d6a96d40579f887d985",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8957fd21c0e04d6a96d40579f887d985]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/320/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8957fd21c0e04d6a96d40579f887d985",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8957fd21c0e04d6a96d40579f887d985]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/320/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8957fd21c0e04d6a96d40579f887d985",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8957fd21c0e04d6a96d40579f887d985]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/321/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-898e203c224e41c7905e010e1a2f8fa5",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-898e203c224e41c7905e010e1a2f8fa5]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/321/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-898e203c224e41c7905e010e1a2f8fa5",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-898e203c224e41c7905e010e1a2f8fa5]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/321/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-898e203c224e41c7905e010e1a2f8fa5",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-898e203c224e41c7905e010e1a2f8fa5]/properties[1]/property[key=v0.2 / Assertion Status]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/321/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-898e203c224e41c7905e010e1a2f8fa5",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-898e203c224e41c7905e010e1a2f8fa5]/properties[1]/property[key=v0.2 / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/322/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-89cb2a12aba44421a55ce249b2a223e3",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-89cb2a12aba44421a55ce249b2a223e3]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/322/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-89cb2a12aba44421a55ce249b2a223e3",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-89cb2a12aba44421a55ce249b2a223e3]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/322/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-89cb2a12aba44421a55ce249b2a223e3",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-89cb2a12aba44421a55ce249b2a223e3]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/322/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-89cb2a12aba44421a55ce249b2a223e3",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-89cb2a12aba44421a55ce249b2a223e3]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/323/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-89df73bacb86437492bfabf2bc25ae5f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-89df73bacb86437492bfabf2bc25ae5f]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/323/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-89df73bacb86437492bfabf2bc25ae5f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-89df73bacb86437492bfabf2bc25ae5f]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/323/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-89df73bacb86437492bfabf2bc25ae5f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-89df73bacb86437492bfabf2bc25ae5f]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/323/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-89df73bacb86437492bfabf2bc25ae5f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-89df73bacb86437492bfabf2bc25ae5f]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/324/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8abf0a5bc85741cda445b57b5b67eec8",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8abf0a5bc85741cda445b57b5b67eec8]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/324/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8abf0a5bc85741cda445b57b5b67eec8",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8abf0a5bc85741cda445b57b5b67eec8]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/324/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8abf0a5bc85741cda445b57b5b67eec8",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8abf0a5bc85741cda445b57b5b67eec8]/properties[1]/property[key=v0.2 / Assertion Status]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/324/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-8abf0a5bc85741cda445b57b5b67eec8",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-8abf0a5bc85741cda445b57b5b67eec8]/properties[1]/property[key=v0.2 / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    }
+  ]
+}

@@ -305,6 +305,14 @@
     }
   },
   "specializations": {
+    "SolutionFacet": {
+      "nativeType": "Grouping",
+      "directory": "grouping",
+      "authority": "enterprise-architecture/governance/continuum-representation.md#solutionfacet-classification--1119-candidate",
+      "displayPrefix": null,
+      "canonicalQualifier": null,
+      "meaning": "A named aspect of a solution, expressed in accessible terminology and organised within a hierarchical taxonomy to support the classification, contextualisation and navigation of solution-related information."
+    },
     "ImplementationGuideline": {
       "nativeType": "CourseOfAction",
       "directory": "strategy/course-of-action/implementation-guideline",

@@ -190,7 +190,10 @@ def validate(root=ROOT, *, previous=None, pending=None):
         specialization = m.get('specialization')
         if specialization:
             prefix = catalogue['specializations'][specialization]['displayPrefix']
-            require(m['displayName'].startswith(prefix + ' '), 'Specialization/displayName mismatch: ' + cid)
+            # The governed SolutionFacet profile retains accessible displayName
+            # properties without imposing a bracketed specialisation prefix.
+            if prefix is not None:
+                require(m['displayName'].startswith(prefix + ' '), 'Specialization/displayName mismatch: ' + cid)
         for source in m['provenance']:
             require(isinstance(source, dict) and source.get('source') and source.get('selector') and source.get('role'), 'Incomplete source provenance: ' + cid)
             require(source.get('revision') or source.get('retainedAt') or source.get('maintained'), 'Unrecoverable provenance: ' + cid)

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "elements": 1994,
+  "canonicalIdentitiesPreserved": 1994,
+  "representationIdentitiesPreserved": 1994,
+  "relationships": 2236,
+  "existingRelationshipsExactlyPreserved": 2235,
+  "authoredAggregationAdded": 1,
+  "compositionAssertionsPreserved": 1105,
+  "homeAssertionsPreserved": 423,
+  "G01ThroughG18AndClassificationHierarchyPreserved": true,
+  "solutionFacets": 229,
+  "views": 1288,
+  "allAuthoredViewContentPreserved": true,
+  "noUnauthorisedElementAdditionsOrDeletions": true,
+  "nonFacetCanonicalFilesUnchanged": 1765,
+  "priorIdentityStandingAndProvenancePreserved": true,
+  "deterministicReprojection": "PASS",
+  "isolatedMaintainedInputsProjection": "PASS",
+  "offlineXsd": "PASS",
+  "identityAndReferences": "PASS",
+  "protectedPublishedFilesUnchanged": 234,
+  "releaseUnchanged": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "candidateSha256": "1501c39d66ddf1aecff4539719c919b38f51099909f852de57f2bb0b5ed72ab9",
+  "limits": [
+    "Three unrelated ArchitecturalAxiom reclassifications remain baseline-qualified differences.",
+    "Submitted explicit displayName/friendlyName retained; native names and inconsistencies recorded.",
+    "Automated preservation does not establish Solution Architect visual inspection or acceptance."
+  ]
+}

@@ -263,7 +263,7 @@ class ContinuumNavigationTests(unittest.TestCase):
         import continuum_workbench as workbench
         model = c.secure_xml(self.root / c.DESIGN / 'projection-template.xml')
         before = workbench.signatures(model, 'views/diagrams', 'view')
-        self.assertEqual(len(before), 1285)
+        self.assertEqual(len(before), 1288)
         first = model.find('a:views/a:diagrams/a:view', c.N)
         first.find('a:name', c.N).text += ' changed'
         after = workbench.signatures(model, 'views/diagrams', 'view')

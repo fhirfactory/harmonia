@@ -236,7 +236,63 @@ directed Association specialisation and is stored as an assertion, not an elemen
 
 ## Resource fields and Markdown content
 
+### SolutionFacet classification — 1.1.19 candidate
+
+The Solution Architect's [refactoring Task](../design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-refactoring.md)
+and [DR-17 clarification](../design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-dr17-clarification.md)
+authorise an identity-preserving UPDATE of the former Subject classification to
+**SolutionFacet**, a Harmonia specialisation of native ArchiMate **Grouping**.
+[HCRL DR-17](../design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-17)
+records application and outstanding candidate review; this is not acceptance or
+publication of a protected baseline. Earlier incorporation accounts below retain
+their historical terminology and standing.
+
+A SolutionFacet is a named aspect of a solution, expressed in accessible
+terminology and organised within a hierarchical taxonomy to support the
+classification, contextualisation and navigation of solution-related information.
+It provides a plain-English organisation of solution information and may provide
+context for architectural elements of different types. It does not represent an
+architectural capability, imply implementation responsibility or ownership, or
+inherently establish an architectural concern, requirement or constraint.
+
+The Solution-Facet taxonomy asks **“What aspects of the solution are we describing?”**
+The complementary Capability Map asks **“What must the solution be capable of doing?”**
+The Capability Map may become more technical as the architecture develops;
+the Solution-Facet taxonomy should remain accessible to a broad audience.
+
+Preserve the existing G01–G18 identities and hierarchy. Existing parent-to-child
+Composition expresses explicit classification containment. Separately established,
+directed child-to-parent Home Associations retain their authoritative-location
+meaning; Composition does not create Home. No relationship is inferred from
+specialisation, presentation or navigation. This refactoring supplies no new
+Capability, element identity, naming token or naming ancestry. Existing formal-name
+qualifications remain unresolved where no naming vocabulary is established.
+
+The Task's accessible `displayName` and explicit `friendlyName` fields are
+retained separately. SolutionFacet supplies no required display prefix or formal
+canonical-name qualifier. Projection continues to use `displayName` as native
+Name; the authored workbench Name is retained as naming provenance where it
+differs. Existing canonical Markdown storage paths remain under `grouping/`;
+changing the specialisation does not require relocating these resources.
+
+The later [DR-17 final naming dispositions](canonical-identity-and-naming.md#solutionfacet-naming-roles--dr-17-final-dispositions)
+confirm Composition as the authority for the three affected SolutionFacets'
+programmatic context, local displayName presentation and independent canonicalName
+semantics. Earlier incorporation accounts supply no prohibition overriding those
+explicitly verified naming dispositions and no authority to populate canonicalName.
+
+The existing `subjectGroup` metadata key and its `sourceId` values remain source
+correspondence identifiers for compatibility with the originating registers and
+their tooling. The architectural concept they classify is now SolutionFacet;
+the retained key neither creates another specialisation nor changes identity.
+
 ### Iteration 001 architectural statement specialisations — RAD-1.1.17
+
+This incorporation account retains its original Subject terminology and navigation
+labels as history. For the current candidate, the SolutionFacet section above
+supersedes that classification terminology and its reader-facing labels only;
+statement specialisations, source correspondence and relationship meanings remain
+unchanged.
 
 The Solution Architect-reviewed [Iteration 001 specification](../design/offline-design/Harmoni-NFR-Derived%20Architetural%20Elements%20-%20Iteration%20001.md)
 and its [authorised ADD Task](../design/evidence/1.1.17/001/before/ai-agent-tasks/20261031T104506Z-nfr-derived-elements-add.md)

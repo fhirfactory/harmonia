@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "elements": 1994,
+  "canonicalIdsPreserved": 1994,
+  "representationIdsPreserved": 1994,
+  "nativeTypesPreserved": 1994,
+  "architecturalAxiomCorrections": 3,
+  "friendlyNameCorrections": 6,
+  "storageRelocations": 3,
+  "mechanicalLinkOnlyCanonicalFiles": 15,
+  "canonicalLinkDestinationsRebased": 43,
+  "definitionsAndLinkTargetIdentitiesPreserved": true,
+  "allRelationshipsExactlyPreserved": 2236,
+  "allViewRecordsExactlyPreserved": 1288,
+  "compositionAndHomeSemanticsPreserved": true,
+  "G01ThroughG18AndNavigationBytesPreserved": true,
+  "maintainedPresentationTemplateBytesPreserved": true,
+  "unaffectedCanonicalFilesByteIdentical": 1970,
+  "identityStandingAndPriorProvenancePreserved": true,
+  "priorCandidateAndEvidenceFilesUnchanged": 79,
+  "priorReportsUnchanged": 2,
+  "protectedPublishedFilesUnchanged": 234,
+  "originalAuthoredExportUnchanged": true,
+  "releaseUnchanged": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "schema": "PASS",
+  "identifierAndReferences": "PASS",
+  "deterministicReprojection": "PASS",
+  "independentStagePreflightByteEquality": "PASS",
+  "remainingNamingQualifications": [
+    {
+      "canonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+      "property": "friendlyName",
+      "reason": "Explicit local friendlyName conflicts with an authored qualified native Name. Adding ancestry changes qualification rather than fixing punctuation; retain for SA review."
+    },
+    {
+      "canonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+      "property": "friendlyName",
+      "reason": "Explicit local friendlyName conflicts with an authored qualified native Name. No new ancestor qualification inferred."
+    },
+    {
+      "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+      "property": "displayName",
+      "reason": "The explicit dotted/hyphenated full-context displayName may reflect a naming convention. Replacing it with a shorter leaf-style label exceeds unambiguous spelling/punctuation correction."
+    }
+  ],
+  "candidateXml": "enterprise-architecture/design/evidence/1.1.19/001/after/solutionfacet-corrections/Harmonia-SolutionFacet-corrected-candidate.xml",
+  "candidateSha256": "19ea1487121553ad443fd0845de9361375dddbb4aaba8594b04f322016b12f22",
+  "limits": "No Solution Architect visual inspection, architectural acceptance, protected publication or HCRL closure asserted."
+}

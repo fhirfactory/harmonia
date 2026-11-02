@@ -1,0 +1,53 @@
+{
+  "actualArchiImportSaveExport": "PASS",
+  "executionExitCode": 0,
+  "schemaAndReferences": "PASS",
+  "strictTransportVerifier": "FAIL: Relationship/View transport drift",
+  "candidateSha256": "19ea1487121553ad443fd0845de9361375dddbb4aaba8594b04f322016b12f22",
+  "returnedXmlSha256": "3f6e14a87a65662910d646fd2c1ee2bd957b99a1f97fb7c057b817af671ffc03",
+  "preservedElementFields": {
+    "identifier": 1994,
+    "archimateType": 1994,
+    "specialization": 1994,
+    "name": 1994,
+    "documentation": 1994
+  },
+  "allElementPropertyValuesPreserved": 1994,
+  "relationships": {
+    "count": 2236,
+    "missing": 0,
+    "added": 0,
+    "rawChangedRecords": 575,
+    "englishAttributeAdditions": 1741,
+    "textValuesIdentityNativeTypeEndpointsPreserved": true
+  },
+  "views": {
+    "count": 1288,
+    "missing": 0,
+    "added": 0,
+    "changed": 0
+  },
+  "rawComparatorStatus": "DIFFERENCES",
+  "rawClassifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 696,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 5112,
+    "SEMANTIC DIFFERENCE": 24486,
+    "UNEXPLAINED DIFFERENCE": 4230
+  },
+  "rawReasons": {
+    "Uniquely keyed unordered collection": 631,
+    "Semantic record attribute changed": 24486,
+    "Attribute absent after transport": 882,
+    "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation": 4230,
+    "Subtree absent after transport; raw input retained by hash": 4230,
+    "Exact unique Property key resolves both definition IDs; all other definition content and owner values compared independently": 65
+  },
+  "limits": [
+    "No raw fidelity PASS; the strict verifier and comparator remain unchanged.",
+    "Inherited English language additions and omitted generated catalogue labels/organisation identifiers remain qualifications.",
+    "Exact raw input/return and native model are preserved; the maintained template is not replaced with the return.",
+    "Successful CLI execution does not assert Solution Architect visual inspection or acceptance."
+  ],
+  "environment": "Archi CLI with approved display access, explicit X11 authentication/backend and isolated /tmp configuration, settings, workspace and outputs; no user workbench or protected publication changed."
+}

@@ -48,7 +48,7 @@ class ContinuumTests(unittest.TestCase):
 
     def test_population_and_provenance(self):
         r=c.validate(self.root)
-        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(1994,2235,462))
+        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(1994,2236,462))
         self.assertEqual(r['elements'],r['provenanceCoverage'])
 
     def test_identity_type_location_and_standing_fail_closed(self):

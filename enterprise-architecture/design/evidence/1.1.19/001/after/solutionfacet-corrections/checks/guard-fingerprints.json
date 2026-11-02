@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "unchangedFromStartingGitCommit": {
+    "enterprise-architecture/tooling/exchange_compare.py": "3d1f8a4906080ed585676623ca5c3da05fd30860eb5015a72aa616d94b9fd58e",
+    "enterprise-architecture/tooling/exchange_signatures.py": "32ba590ca50133ec1f661ee25e2c7d84c1eb3a1f1a06c1c852700f367822b7e5",
+    "enterprise-architecture/tooling/verify_continuum_transport.py": "98540176ec4726722093e6880c7cfee3cf8f198a9bff667c6f9cc0820a186cb9",
+    "enterprise-architecture/tooling/verify_continuum_links.py": "6ca7b276746be372e1a69d87817c45d00684e722b5430ea3be92abfb3d8bd3a8"
+  },
+  "scope": "Strict comparator, transport verifier and link-validation implementations unchanged; specialised source/profile handling remains enforced."
+}

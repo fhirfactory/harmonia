@@ -26,6 +26,16 @@ MODEL = '''<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi=
 <propertyDefinitions><propertyDefinition identifier="canonical" type="string"><name>canonicalId</name></propertyDefinition></propertyDefinitions></model>'''
 
 
+def governing_axiom_code(metadata):
+    if metadata['archimateType'] != 'Principle':
+        return None
+    name = metadata['displayName']
+    if metadata.get('specialization') == 'ArchitecturalAxiom':
+        name = name.removeprefix('[ArchitecturalAxiom] ')
+    match = re.match(r'^(AX-\d{2}) ', name)
+    return match[1] if match else None
+
+
 class CurrentEaTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
@@ -153,17 +163,17 @@ class CurrentEaTests(unittest.TestCase):
 
     def test_axiom_navigation_identifies_each_canonical_principle(self):
         elements = c.load()[1]
-        axioms = {m['displayName'].split()[0]: (m, path)
+        axioms = {governing_axiom_code(m): (m, path)
                   for m, _, path in elements.values()
-                  if m['archimateType'] == 'Principle'
-                  and re.match(r'^AX-\d{2} ', m['displayName'])}
+                  if governing_axiom_code(m)}
         self.assertEqual(set(axioms), {f'AX-{n:02}' for n in range(1, 19)})
         page = c.ROOT / 'enterprise-architecture/governance/architectural-axioms.md'
         text = page.read_text()
         for axiom, (metadata, path) in axioms.items():
             with self.subTest(axiom=axiom):
                 self.assertIn(f'<a id="{axiom.lower()}"></a>', text)
-                self.assertIn(f'[{metadata["displayName"]}](../continuum/motivation/principle/{path.name})', text)
+                relative = path.relative_to(c.ROOT / c.CONTINUUM).as_posix()
+                self.assertIn(f'[{metadata["displayName"]}](../continuum/{relative})', text)
         self.assertIn('sole current normative definitions', ' '.join(text.split()))
         self.assertNotIn('This document defines the Architectural Axioms', text)
 
@@ -172,15 +182,19 @@ class CurrentEaTests(unittest.TestCase):
         # remains legitimate. Canonical content, prior publications and governed
         # historical review/register/evidence are deliberately outside this scan.
         definitions = []
+        axiom_codes = set()
         for metadata, body, _ in c.load()[1].values():
-            if metadata['archimateType'] != 'Principle' or not re.match(r'^AX-\d{2} ', metadata['displayName']):
+            code = governing_axiom_code(metadata)
+            if not code:
                 continue
+            axiom_codes.add(code)
             section = re.search(r'^#### Axiom\s*\n(.*?)(?=^#### |\Z)', body, re.M | re.S)
             self.assertIsNotNone(section, metadata['displayName'])
             for paragraph in re.split(r'\n\s*\n', section[1].strip()):
                 normalized = ' '.join(paragraph.split())
                 if len(normalized.split()) >= 10:
                     definitions.append((metadata['displayName'], normalized))
+        self.assertEqual(axiom_codes, {f'AX-{n:02}' for n in range(1, 19)})
         ea = c.ROOT / 'enterprise-architecture'
         for path in sorted(ea.rglob('*')):
             relative = path.relative_to(ea)

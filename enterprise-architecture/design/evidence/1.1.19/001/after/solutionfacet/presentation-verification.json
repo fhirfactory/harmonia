@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "authoredViews": 1288,
+  "allAuthoredViewSignaturesPreserved": true,
+  "unchangedBaselineViewSignaturesPreserved": 1273,
+  "changedExistingViews": 12,
+  "additionalViews": 3,
+  "viewFoldersIncludingRoot": 1182,
+  "emptyViewFolders": 41,
+  "viewNavigationPreservedExceptAuthorisedSubjectTerminology": true,
+  "propertyReferencesResolvedByExactDefinitionName": true
+}

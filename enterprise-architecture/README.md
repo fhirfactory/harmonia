@@ -2,6 +2,18 @@
 
 # Harmonia Enterprise Architecture
 
+The uncommitted [SolutionFacet refactoring candidate](design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-17)
+updates the former Subject classification to native Grouping / SolutionFacet,
+preserving G01–G18 and the distinction from the Capability Map. Its authored
+presentation contains 1,288 Views. It awaits Solution Architect inspection and
+acceptance; the protected publications linked below remain the accepted baseline.
+The [current naming candidate](design/evidence/1.1.19/001/after/solutionfacet-final-naming/Harmonia-SolutionFacet-final-naming-candidate.xml)
+retains the approved AX-07/AX-17/AX-18 ArchitecturalAxiom specialisations and
+completes the three final naming dispositions after Composition verification.
+Programmatic friendlyName, local displayName and independently governed
+canonicalName remain distinct. Earlier candidates and their evidence are preserved;
+Solution Architect inspection remains pending under DR-17.
+
 Current operations: [EA tooling](tooling/README.md), [governance](governance/README.md), and [completed RAD-1.1.6 operational succession](design/register/1.1.6/hcrl-1.1.6-001.complete.md).
 
 The Solution Architect's [prospective RAD-1.1.7 acceptance](design/register/1.1.7/hcrl-1.1.7-001.complete.md)
