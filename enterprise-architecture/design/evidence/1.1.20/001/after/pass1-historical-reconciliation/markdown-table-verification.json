@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-11-03T07:12:08.605096+00:00",
+  "method": "Python Markdown with tables/fenced_code and lxml HTML inspection",
+  "pages": [
+    {
+      "page": "01-pending-capabilities.md",
+      "rows": 11,
+      "columns": 16
+    },
+    {
+      "page": "02-pending-features.md",
+      "rows": 21,
+      "columns": 16
+    },
+    {
+      "page": "03-superseded-unreconciled.md",
+      "rows": 32,
+      "columns": 16
+    },
+    {
+      "page": "04-correspondence-ct1.md",
+      "rows": 25,
+      "columns": 16
+    },
+    {
+      "page": "04-correspondence-ct2-01.md",
+      "rows": 40,
+      "columns": 16
+    },
+    {
+      "page": "04-correspondence-ct2-02.md",
+      "rows": 40,
+      "columns": 16
+    },
+    {
+      "page": "04-correspondence-ct2-03.md",
+      "rows": 5,
+      "columns": 16
+    },
+    {
+      "page": "04-correspondence-ct3-01.md",
+      "rows": 40,
+      "columns": 16
+    },
+    {
+      "page": "04-correspondence-ct3-02.md",
+      "rows": 40,
+      "columns": 16
+    },
+    {
+      "page": "04-correspondence-ct3-03.md",
+      "rows": 24,
+      "columns": 16
+    },
+    {
+      "page": "05-current-unresolved-business.md",
+      "rows": 10,
+      "columns": 16
+    },
+    {
+      "page": "05-current-unresolved-business_enabling-01.md",
+      "rows": 40,
+      "columns": 16
+    },
+    {
+      "page": "05-current-unresolved-business_enabling-02.md",
+      "rows": 40,
+      "columns": 16
+    },
+    {
+      "page": "05-current-unresolved-business_enabling-03.md",
+      "rows": 27,
+      "columns": 16
+    },
+    {
+      "page": "05-current-unresolved-enterprise.md",
+      "rows": 14,
+      "columns": 16
+    },
+    {
+      "page": "05-current-unresolved-features.md",
+      "rows": 27,
+      "columns": 16
+    }
+  ],
+  "rows": 436,
+  "limit": "Validates rendered table structure; no Solution Architect visual acceptance is asserted."
+}

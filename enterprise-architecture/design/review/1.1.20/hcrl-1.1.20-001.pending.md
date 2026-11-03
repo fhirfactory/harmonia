@@ -103,6 +103,61 @@ Historical Capability/Feature adjudication and gap analysis remain explicitly de
 
 The programme also preserves reconsideration of relevant Superseded elements, definition/placement/standing/relationship reconciliation, coverage gaps, subsequent UseCase/UserStory reconciliation and the full 784-candidate/source assessment. Its execution is outside the closure/initialisation task.
 
+### Pass 1 preparation — inventory submitted for adjudication
+
+The separately issued Solution Architect [Pass 1 Task](../../evidence/1.1.20/001/before/ai-agent-tasks/20261103T065659Z-pass1-historical-capability-feature-reconciliation.md),
+issued at **2026-11-03T06:56:59.964Z**, authorises evidence-based reconciliation
+and recommendations only. This begins preparation after the opening baseline's
+“not commenced” account above; it supplies no model-incorporation authority.
+
+The [reconciliation report and review guide](../../evidence/1.1.20/001/after/pass1-historical-reconciliation/README.md)
+and [complete adjudication inventory](../../evidence/1.1.20/001/after/pass1-historical-reconciliation/adjudication-inventory.md)
+account for **842 existing Capability/Feature identities**. The inventory includes
+**436 identities: 388 Capabilities and 48 Features** — **32 Pending Adjudication,
+246 Superseded and 158 existing current Proposed/Candidate carry-forward records**.
+The additional current records remain separately identified because currentness
+does not accept their semantic standing. They are existing proposals, not new
+Pass 2 gap discoveries. The remaining 406 current Canonical/accepted records
+supply comparison context. The 784 OpenSpec assessments are a different population;
+no UseCase/UserStory reconciliation is performed.
+
+**Codex recommendations, not Solution Architect dispositions:** 189 ACCEPT,
+246 RETIRE and one REJECT. ACCEPT concerns the bounded architectural concept,
+not automatic retention of an overlapping historical representation. RETIRE
+preserves identities/provenance and, for already Superseded resources, normally
+confirms their existing inactive treatment without a new state transition. The
+sole REJECT concerns incorporation of the underdefined sharing-programme addition;
+its Candidate record and proposed elaboration remain preserved.
+
+The inventory preserves the **214 already governed correspondences** (209 direct,
+five evolved) without reopening them or promoting successor standing. Other
+comparisons distinguish overlap, different responsibility and unresolved meaning;
+no new equivalence or successor is asserted. Coordinated SA judgement remains
+necessary for internal/external work, subject/service assurance, physical/clinical
+credentials, protocol/patient communication, general security Feature framing,
+audit/provenance/source authority, requirement publication, collective readiness
+and the device-maintenance membership conflict. The current external-work CT2's
+retained internal-registry source contribution is exposed as a scope tension,
+not resolved by widening its definition. Detailed consequences and independently
+traceable dependencies belong to the linked inventory.
+
+**Verification:** canonical validation PASS (1,996 elements / 2,246 relationships);
+the [accounting and preservation checks](../../evidence/1.1.20/001/after/pass1-historical-reconciliation/verification.json)
+record exact population/row/source correspondence and preservation results.
+No Capability Model, canonical identity, definition, classification, standing,
+relationship, navigation, candidate or accepted 1.1.19 publication is changed.
+DR-4, DR-6 including its five subordinate matters, DR-14 and all inherited
+qualifications retain their recorded scope. The pending HCRL is not advanced,
+completed or accepted; no release is allocated.
+
+[Formal preparation Report](../../evidence/1.1.20/001/after/ai-agent-reports/20261103T071256Z-pass1-historical-capability-feature-reconciliation.md) preserves
+the actual outcome, limitations, Task correspondence and production event.
+
+**Handover:** every inventory SA decision is **PENDING** and every incorporation
+status **NOT AUTHORISED**. Preparation is complete to the evidence-producing
+boundary; **Pass 1 is not complete**. The next activity is Solution Architect and
+ChatGPT adjudication of the individual rows under this DR.
+
 <a id="dr-6"></a>
 ## DR-6 — Capability and Feature coverage, including DR-6.01–DR-6.05
 

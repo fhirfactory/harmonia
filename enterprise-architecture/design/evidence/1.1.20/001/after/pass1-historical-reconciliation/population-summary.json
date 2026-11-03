@@ -1,0 +1,142 @@
+{
+  "allCapabilitiesAndFeatures": 842,
+  "included": 436,
+  "excludedCurrentReferenceModel": 406,
+  "byType": {
+    "Feature": 48,
+    "Capability": 388
+  },
+  "byCurrentness": {
+    "pending_adjudication": 32,
+    "current": 158,
+    "superseded": 246
+  },
+  "bySemanticStanding": {
+    "Proposed": 207,
+    "Superseded historical identity — direct correspondence": 209,
+    "Canonical": 12,
+    "Superseded historical identity — evolved correspondence": 5,
+    "Candidate": 3
+  },
+  "byRecommendation": {
+    "ACCEPT": 189,
+    "RETIRE": 246,
+    "REJECT": 1
+  },
+  "byAssessment": {
+    "distinct": 8,
+    "overlapping": 213,
+    "equivalent": 214,
+    "unresolved": 1
+  },
+  "byGroup": {
+    "pending": 32,
+    "current-unresolved": 158,
+    "superseded-correspondence": 214,
+    "superseded-unreconciled": 32
+  },
+  "byTypeStandingRecommendation": [
+    {
+      "type": "Capability",
+      "semantic": "Candidate",
+      "currentness": "current",
+      "recommendation": "ACCEPT",
+      "count": 2
+    },
+    {
+      "type": "Capability",
+      "semantic": "Candidate",
+      "currentness": "current",
+      "recommendation": "REJECT",
+      "count": 1
+    },
+    {
+      "type": "Capability",
+      "semantic": "Canonical",
+      "currentness": "pending_adjudication",
+      "recommendation": "ACCEPT",
+      "count": 4
+    },
+    {
+      "type": "Capability",
+      "semantic": "Canonical",
+      "currentness": "superseded",
+      "recommendation": "RETIRE",
+      "count": 1
+    },
+    {
+      "type": "Capability",
+      "semantic": "Proposed",
+      "currentness": "current",
+      "recommendation": "ACCEPT",
+      "count": 128
+    },
+    {
+      "type": "Capability",
+      "semantic": "Proposed",
+      "currentness": "pending_adjudication",
+      "recommendation": "ACCEPT",
+      "count": 7
+    },
+    {
+      "type": "Capability",
+      "semantic": "Proposed",
+      "currentness": "superseded",
+      "recommendation": "RETIRE",
+      "count": 31
+    },
+    {
+      "type": "Capability",
+      "semantic": "Superseded historical identity — direct correspondence",
+      "currentness": "superseded",
+      "recommendation": "RETIRE",
+      "count": 209
+    },
+    {
+      "type": "Capability",
+      "semantic": "Superseded historical identity — evolved correspondence",
+      "currentness": "superseded",
+      "recommendation": "RETIRE",
+      "count": 5
+    },
+    {
+      "type": "Feature",
+      "semantic": "Canonical",
+      "currentness": "pending_adjudication",
+      "recommendation": "ACCEPT",
+      "count": 7
+    },
+    {
+      "type": "Feature",
+      "semantic": "Proposed",
+      "currentness": "current",
+      "recommendation": "ACCEPT",
+      "count": 27
+    },
+    {
+      "type": "Feature",
+      "semantic": "Proposed",
+      "currentness": "pending_adjudication",
+      "recommendation": "ACCEPT",
+      "count": 14
+    }
+  ],
+  "pages": {
+    "01-pending-capabilities.md": 11,
+    "02-pending-features.md": 21,
+    "03-superseded-unreconciled.md": 32,
+    "04-correspondence-ct1.md": 25,
+    "04-correspondence-ct2-01.md": 40,
+    "04-correspondence-ct2-02.md": 40,
+    "04-correspondence-ct2-03.md": 5,
+    "04-correspondence-ct3-01.md": 40,
+    "04-correspondence-ct3-02.md": 40,
+    "04-correspondence-ct3-03.md": 24,
+    "05-current-unresolved-business.md": 10,
+    "05-current-unresolved-business_enabling-01.md": 40,
+    "05-current-unresolved-business_enabling-02.md": 40,
+    "05-current-unresolved-business_enabling-03.md": 27,
+    "05-current-unresolved-enterprise.md": 14,
+    "05-current-unresolved-features.md": 27
+  }
+}

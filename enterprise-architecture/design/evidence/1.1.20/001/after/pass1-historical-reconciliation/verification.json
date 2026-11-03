@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "verifiedAt": "2026-11-03T07:13:18.024879+00:00",
+  "scope": "Accounting, source correspondence, review navigation and preservation; no semantic adjudication or implementation satisfaction.",
+  "canonicalElements": 1996,
+  "nativeCapabilityRecords": 842,
+  "nativeRelationships": 2246,
+  "historicalMarkedPopulation": 278,
+  "pendingAdjudication": 32,
+  "superseded": 246,
+  "additionalCurrentUnresolved": 158,
+  "inventoryIdentities": 436,
+  "inventoryTypes": {
+    "Feature": 48,
+    "Capability": 388
+  },
+  "recommendedDispositions": {
+    "ACCEPT": 189,
+    "RETIRE": 246,
+    "REJECT": 1
+  },
+  "omittedIdentities": [],
+  "unexpectedIdentities": [],
+  "duplicateIdentities": [],
+  "duplicateReferences": [],
+  "existingCorrespondencesPreserved": 214,
+  "historicalSourceEquation": "627 + 214 + 1 = 842",
+  "recordedSourceEditionsRecovered": 8,
+  "unresolvedSourceEditions": [],
+  "priorMappingTargetPopulation": 18,
+  "priorUnresolvedTargetsInventoried": 9,
+  "completeTablePages": 16,
+  "fullColumnCount": 16,
+  "reviewLinksChecked": 6787,
+  "renderedTableStructure": {
+    "status": "PASS",
+    "checkedAt": "2026-11-03T07:12:08.605096+00:00",
+    "method": "Python Markdown with tables/fenced_code and lxml HTML inspection",
+    "pages": [
+      {
+        "page": "01-pending-capabilities.md",
+        "rows": 11,
+        "columns": 16
+      },
+      {
+        "page": "02-pending-features.md",
+        "rows": 21,
+        "columns": 16
+      },
+      {
+        "page": "03-superseded-unreconciled.md",
+        "rows": 32,
+        "columns": 16
+      },
+      {
+        "page": "04-correspondence-ct1.md",
+        "rows": 25,
+        "columns": 16
+      },
+      {
+        "page": "04-correspondence-ct2-01.md",
+        "rows": 40,
+        "columns": 16
+      },
+      {
+        "page": "04-correspondence-ct2-02.md",
+        "rows": 40,
+        "columns": 16
+      },
+      {
+        "page": "04-correspondence-ct2-03.md",
+        "rows": 5,
+        "columns": 16
+      },
+      {
+        "page": "04-correspondence-ct3-01.md",
+        "rows": 40,
+        "columns": 16
+      },
+      {
+        "page": "04-correspondence-ct3-02.md",
+        "rows": 40,
+        "columns": 16
+      },
+      {
+        "page": "04-correspondence-ct3-03.md",
+        "rows": 24,
+        "columns": 16
+      },
+      {
+        "page": "05-current-unresolved-business.md",
+        "rows": 10,
+        "columns": 16
+      },
+      {
+        "page": "05-current-unresolved-business_enabling-01.md",
+        "rows": 40,
+        "columns": 16
+      },
+      {
+        "page": "05-current-unresolved-business_enabling-02.md",
+        "rows": 40,
+        "columns": 16
+      },
+      {
+        "page": "05-current-unresolved-business_enabling-03.md",
+        "rows": 27,
+        "columns": 16
+      },
+      {
+        "page": "05-current-unresolved-enterprise.md",
+        "rows": 14,
+        "columns": 16
+      },
+      {
+        "page": "05-current-unresolved-features.md",
+        "rows": 27,
+        "columns": 16
+      }
+    ],
+    "rows": 436,
+    "limit": "Validates rendered table structure; no Solution Architect visual acceptance is asserted."
+  },
+  "protectedFilesIdentical": 2060,
+  "acceptedPredecessorSHA256": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09",
+  "canonicalModelModified": false,
+  "releaseAllocated": false,
+  "priorHCRLContentPreserved": true,
+  "resultingGitState": {
+    "head": "44915796351bbdf65ab8088d375064f042cf58f0",
+    "trackedMutation": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md",
+    "newEvidencePaths": [
+      "enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261103T071256Z-pass1-historical-capability-feature-reconciliation.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/README.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/adjudication-inventory.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/canonical-validation.json",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/dependencies.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/evidence-layout.json",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/01-pending-capabilities.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/02-pending-features.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/03-superseded-unreconciled.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/04-correspondence-ct1.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/04-correspondence-ct2-01.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/04-correspondence-ct2-02.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/04-correspondence-ct2-03.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/04-correspondence-ct3-01.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/04-correspondence-ct3-02.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/04-correspondence-ct3-03.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/05-current-unresolved-business.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/05-current-unresolved-business_enabling-01.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/05-current-unresolved-business_enabling-02.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/05-current-unresolved-business_enabling-03.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/05-current-unresolved-enterprise.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/inventory/05-current-unresolved-features.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/markdown-table-verification.json",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/population-screening.json",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/population-summary.json",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/reconciliation.json",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/source-population-accounting.json",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/verification.json",
+      "enterprise-architecture/design/evidence/1.1.20/001/after/pass1-historical-reconciliation/verify_inventory.py",
+      "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/20261103T065659Z-pass1-historical-capability-feature-reconciliation.md",
+      "enterprise-architecture/design/evidence/1.1.20/001/before/pass1-source-state.json"
+    ],
+    "stagingCommitPush": "not performed"
+  },
+  "forwardOutputFilesAwaitingEmission": [],
+  "limits": [
+    "Semantic recommendations require Solution Architect adjudication.",
+    "No new Archi transport or visual acceptance is claimed.",
+    "Inherited property, source and transport qualifications are preserved."
+  ]
+}
