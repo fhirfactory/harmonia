@@ -137,3 +137,20 @@ No Git success is inferred from architectural completion.
 accepted/candidate identities and actual scope. The prior blocked preflight Report
 retains its original outcome/time; this explicit subsequent disposition supersedes
 that stop without rewriting the earlier evidence.
+
+## Git delivery outcome — provenance maintenance
+
+The authorised local transition is committed as `94743309f0bb2edfebf3a36657b80a539d351cc2` on
+`Data-Governence-Services`. Exactly 207 reviewed files were committed; both unrelated
+offline-design drafts remain excluded. The immutable publications, original candidate
+and completed HCRL have not changed. No additional release or HCRL iteration is created.
+
+**Remote push: BLOCKED before execution.** Automatic approval review rejected the
+non-force push to `https://github.com/fhirfactory/harmonia.git`, branch
+`Data-Governence-Services`, because it considered origin unverified and the architecture/
+evidence payload insufficiently explicitly authorised for export. No push was executed;
+no remote success or unchanged remote state is inferred. Explicit user approval for
+that concrete push has been requested and is pending. No alternate export is attempted.
+[Git delivery evidence](../dr20-disposition/git-delivery.json) retains the stated reason.
+The original Report production event remains unchanged; final Git/provenance checks
+terminate at the resulting state rather than recursively producing another Report.

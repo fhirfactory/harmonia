@@ -32,5 +32,8 @@
   "successorHcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md",
   "candidateDifferences": "enterprise-architecture/design/evidence/1.1.19/002/after/dr20-disposition/difference-assessment.json",
   "programme": "NOT_STARTED",
-  "gitDelivery": "Pending explicit verification and authorised transition; no success inferred here"
+  "gitDelivery": {
+    "transitionCommit": "94743309f0bb2edfebf3a36657b80a539d351cc2",
+    "push": "BLOCKED \u2014 automatic approval review; explicit user approval requested"
+  }
 }
