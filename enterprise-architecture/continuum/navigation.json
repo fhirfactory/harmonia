@@ -10051,6 +10051,11 @@
                   "canonicalId": "008f622bf9ce4d40b8a85024748bd485",
                   "kind": "element",
                   "basis": "Existing cross-application logical PractitionerCapacity concept; not retyped as a Topic or Class"
+                },
+                {
+                  "canonicalId": "e282811b51274649816566aac7edeb8a",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement"
                 }
               ]
             },
@@ -10272,6 +10277,11 @@
                       "canonicalId": "8fe50975372b4d399a4bcb9f3d9348f7",
                       "kind": "element",
                       "basis": "Existing canonical definition establishes this application/component-scoped responsibility; navigation adds no semantic relationship"
+                    },
+                    {
+                      "canonicalId": "171f05d188384cedb7d5c493eeaee519",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
                     }
                   ]
                 }

@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "inspection": "Agent structural inspection of generated reader data, numbered navigation and imported native XML tree; not human visual/structural acceptance",
+  "elementsExposedOnce": 1996,
+  "affectedElements": [
+    {
+      "canonicalId": "e282811b51274649816566aac7edeb8a",
+      "displayName": "Provenance",
+      "readerCoordinate": "IV.1.2.2",
+      "readerType": "DataObject",
+      "nativeCatalogueFolders": [
+        "Application",
+        "Catalogue",
+        "DataObject"
+      ],
+      "candidateStandingVisible": true,
+      "nativeNameEqualsDisplayName": true
+    },
+    {
+      "canonicalId": "171f05d188384cedb7d5c493eeaee519",
+      "displayName": "Provenance Client Library",
+      "readerCoordinate": "IV.3.4.2.3",
+      "readerType": "ApplicationComponent",
+      "nativeCatalogueFolders": [
+        "Application",
+        "Catalogue",
+        "ApplicationComponent"
+      ],
+      "candidateStandingVisible": true,
+      "nativeNameEqualsDisplayName": true
+    }
+  ],
+  "browserSmoke": {
+    "status": "PASS",
+    "elements": 1996,
+    "checks": [
+      "initial population",
+      "identity search",
+      "selection",
+      "Feature filter",
+      "combined currentness filter"
+    ],
+    "limits": "DOM-contract smoke test; no pixel/visual browser claim"
+  },
+  "solutionArchitectInspection": "PENDING — candidate definitions, associations and affected reader/native catalogue entries"
+}

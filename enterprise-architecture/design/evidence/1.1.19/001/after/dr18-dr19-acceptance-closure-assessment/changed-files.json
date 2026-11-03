@@ -1,0 +1,25 @@
+{
+  "scope": "This architectural-acceptance record and closure-readiness assessment relative to incoming uncommitted state",
+  "modifiedPreExistingFiles": [
+    "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md"
+  ],
+  "newFiles": [
+    ".junie/reports/dr18-dr19-architectural-acceptance-closure-readiness.md",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/ai-agent-reports/20261103T013651Z-dr18-dr19-acceptance-closure-readiness.md",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/dr18-dr19-acceptance-closure-assessment/accepted-content.json",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/dr18-dr19-acceptance-closure-assessment/changed-files.json",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/dr18-dr19-acceptance-closure-assessment/closure-readiness.json",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/dr18-dr19-acceptance-closure-assessment/current-projection-validation.json",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/dr18-dr19-acceptance-closure-assessment/evidence-layout.json",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/dr18-dr19-acceptance-closure-assessment/final-verification.json",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/dr18-dr19-acceptance-closure-assessment/preservation.json",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/dr18-dr19-acceptance-closure-assessment/verification-reconciliation.json",
+    "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dr18-dr19-acceptance-closure-preparation.md",
+    "enterprise-architecture/design/evidence/1.1.19/001/before/dr18-dr19-acceptance-closure-assessment/hcrl-before.pending.md",
+    "enterprise-architecture/design/evidence/1.1.19/001/before/dr18-dr19-acceptance-closure-assessment/source-state.json"
+  ],
+  "canonicalContentModified": false,
+  "priorEvidenceModified": false,
+  "releaseOrGitMutationsPerformed": false,
+  "authoritativeReport": "enterprise-architecture/design/evidence/1.1.19/001/after/ai-agent-reports/20261103T013651Z-dr18-dr19-acceptance-closure-readiness.md"
+}

@@ -1,0 +1,115 @@
+{
+  "developmentRelease": "1.1.20",
+  "acceptedPredecessor": "1.1.19",
+  "standing": "Qualified working candidate only; no reference publication",
+  "candidate": "enterprise-architecture/design/evidence/1.1.20/001/after/initial-candidate/Harmonia-Architecture-candidate.xml",
+  "sha256": "39c2e5d22f28a6260bcc47597864d6fd4b0222cac59b87fd9e34b8804eeb8210",
+  "originalCandidateSha256": "ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b",
+  "population": {
+    "elements": 1996,
+    "relationships": 2246,
+    "views": 1288
+  },
+  "identityAndAllElementRelationshipViewContent": "PASS — exact preservation of all original candidate records",
+  "soleRepresentationChange": {
+    "classification": "UNEXPLAINED DIFFERENCE",
+    "path": "/model/properties[1]/property[key=Baseline / Architecture Release]/value[1]/text()",
+    "before": "1.1.19",
+    "after": "1.1.20",
+    "reason": "Exact text compared; whitespace/language selection is not normalised"
+  },
+  "acceptedPublicationRetained": "No write/regeneration; original 1.1.19 bytes unchanged",
+  "commands": [
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/continuum_manifest.py"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/architecture_release.py",
+        "check"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.20/001/after/initial-candidate/Harmonia-Architecture-candidate.xml"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.20/001/after/initial-candidate/reader-candidate/Harmonia-Architecture.xml"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/publish_continuum.py",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.20/001/after/initial-candidate/reader-candidate"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/publish_continuum_rad.py",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.20/001/after/initial-candidate/narrative-candidate"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/continuum_manifest.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.20/001/after/initial-candidate/Harmonia-Architecture-candidate.xml",
+        "--check"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    }
+  ],
+  "programme": "NOT_STARTED",
+  "sourceTask": "enterprise-architecture/design/evidence/1.1.19/002/before/ai-agent-tasks/20261103T061713Z-dr20-baseline-preserving-finalisation.md",
+  "originatingEvidence": "enterprise-architecture/design/evidence/1.1.19/002/after/dr20-disposition"
+}

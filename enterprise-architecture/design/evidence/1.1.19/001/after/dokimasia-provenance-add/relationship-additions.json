@@ -1,0 +1,370 @@
+{
+  "count": 10,
+  "relationships": [
+    {
+      "sourceCanonicalId": "d739c75dffe2453081735710b285f03b",
+      "targetCanonicalId": "171f05d188384cedb7d5c493eeaee519",
+      "identifier": "id-45281b5e60ee44aba4aa848d479e306b",
+      "archimateType": "Association",
+      "source": "id-d16663c3976756bb9cd23104f8bdd0c7",
+      "target": "id-49813472168e57fbb42d5daf2b64ad48",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.2",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "Provides reusable Provenance Client Library",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. Provides reusable Provenance Client Library",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ]
+    },
+    {
+      "sourceCanonicalId": "d739c75dffe2453081735710b285f03b",
+      "targetCanonicalId": "e282811b51274649816566aac7edeb8a",
+      "identifier": "id-86502907d244442aad6470652bc3fd19",
+      "archimateType": "Access",
+      "source": "id-d16663c3976756bb9cd23104f8bdd0c7",
+      "target": "id-70ce24ab295258d6bade403a18aac261",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-19; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.1/2.5",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-19; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "Manages Provenance lifecycle and uses it as foundational Assurance evidence",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. Manages Provenance lifecycle and uses it as foundational Assurance evidence",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "accessType": "ReadWrite"
+      }
+    },
+    {
+      "sourceCanonicalId": "171f05d188384cedb7d5c493eeaee519",
+      "targetCanonicalId": "e282811b51274649816566aac7edeb8a",
+      "identifier": "id-47cd0528b7464d7ca6c7ad2a9e98d759",
+      "archimateType": "Access",
+      "source": "id-49813472168e57fbb42d5daf2b64ad48",
+      "target": "id-70ce24ab295258d6bade403a18aac261",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.2",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "Creates and reports Provenance for originating components and activities",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. Creates and reports Provenance for originating components and activities",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "accessType": "Write"
+      }
+    },
+    {
+      "sourceCanonicalId": "1af8a56358f7429fabfb57be66542a99",
+      "targetCanonicalId": "e282811b51274649816566aac7edeb8a",
+      "identifier": "id-48b5618f63b24ea5abbbcd2cd58d70f2",
+      "archimateType": "Access",
+      "source": "id-18c2979e55a7525b90321395f550d958",
+      "target": "id-70ce24ab295258d6bade403a18aac261",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.3",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "Manages governed Provenance information",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. Manages governed Provenance information",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "accessType": "ReadWrite"
+      }
+    },
+    {
+      "sourceCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "targetCanonicalId": "e282811b51274649816566aac7edeb8a",
+      "identifier": "id-f8b0d09b13764f7298735519bb998d26",
+      "archimateType": "Access",
+      "source": "id-829d7b5b57965765adf492ce3aaaa7d2",
+      "target": "id-70ce24ab295258d6bade403a18aac261",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.3",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "Establishes authoritative durable persistence of Provenance",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. Establishes authoritative durable persistence of Provenance",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "accessType": "ReadWrite"
+      }
+    },
+    {
+      "sourceCanonicalId": "e282811b51274649816566aac7edeb8a",
+      "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "identifier": "id-6bf9674e35c04cd88c11a80cdf777a17",
+      "archimateType": "Association",
+      "source": "id-70ce24ab295258d6bade403a18aac261",
+      "target": "id-f5c345ab6c47433da11ee12f5d84e557",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.4",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "References relevant InformationUnits",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. References relevant InformationUnits",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "isDirected": "true"
+      }
+    },
+    {
+      "sourceCanonicalId": "e282811b51274649816566aac7edeb8a",
+      "targetCanonicalId": "27ad143e7c784e378556af8a57c438f7",
+      "identifier": "id-0077a1c0c70c4c50a9b90e7f91a1cf8c",
+      "archimateType": "Association",
+      "source": "id-70ce24ab295258d6bade403a18aac261",
+      "target": "id-7e466917d880545b949fe8e07a20cb68",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.4",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "References relevant Pragma instances",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. References relevant Pragma instances",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "isDirected": "true"
+      }
+    },
+    {
+      "sourceCanonicalId": "e282811b51274649816566aac7edeb8a",
+      "targetCanonicalId": "49c9eb2bef0c47b8b5328621d5fc5479",
+      "identifier": "id-47d6e2bd19d342d982c0c195ca4916ce",
+      "archimateType": "Association",
+      "source": "id-70ce24ab295258d6bade403a18aac261",
+      "target": "id-53cebb2cc93f501fa6937a7ad2c5e316",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.4",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "References execution activities performed by Ergon",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. References execution activities performed by Ergon",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "isDirected": "true"
+      }
+    },
+    {
+      "sourceCanonicalId": "e282811b51274649816566aac7edeb8a",
+      "targetCanonicalId": "76ded4866bf443dabc0849d68b215690",
+      "identifier": "id-f9ee3e4f6faf4c61b97ce7d1494d86a5",
+      "archimateType": "Association",
+      "source": "id-70ce24ab295258d6bade403a18aac261",
+      "target": "id-584ea943d2c25bb4a1d6f381e24b026f",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.4",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "References associated execution Context",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. References associated execution Context",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "isDirected": "true"
+      }
+    },
+    {
+      "sourceCanonicalId": "fefda110e2274884ad58906733606efd",
+      "targetCanonicalId": "d739c75dffe2453081735710b285f03b",
+      "identifier": "id-cfb102b2ad0c47cdad7a6b2031afa877",
+      "archimateType": "Association",
+      "source": "id-d6e1b1c535985930a5d9805d0f3f0c53",
+      "target": "id-d16663c3976756bb9cd23104f8bdd0c7",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-19; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.6",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-19; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "Historical audit evidence may contribute to independent Assurance",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. Historical audit evidence may contribute to independent Assurance",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ]
+    }
+  ],
+  "limits": "Access expresses architectural information responsibility/use; Association expresses only the explicitly labelled relationship. No Composition/Home, Serving, invocation, transport flow, deployment or new execution mechanism is inferred."
+}

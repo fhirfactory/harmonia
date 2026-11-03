@@ -2,6 +2,8 @@
 
 # Architecture Continuum RAD
 
+**Current development: 1.1.20 / 001 — pending.** [Active HCRL](../../design/review/1.1.20/hcrl-1.1.20-001.pending.md). The accepted 1.1.19 publication remains immutable; [review closure](../../design/register/1.1.19/hcrl-1.1.19-002.complete.md) and [deterministic carried-candidate assessment](../../design/evidence/1.1.19/002/after/dr20-disposition/difference-assessment.md). The working candidate is not an accepted 1.1.20 publication. Earlier 1.1.19 candidate accounts below retain their originating scope/history; no consolidation programme has started.
+
 The human-readable narrative publication of the canonical Architecture Continuum.
 Read the **1.1.19 [LaTeX RAD](published/1.1.19/continuum-rad.tex)** and [complete correspondence](published/1.1.19/structure.json). The [completed originating HCRL](../../design/register/1.1.19/hcrl-1.1.18-001.complete.md) records the accepted architecture and complete authored Views. The [successor register](../../design/review/1.1.19/hcrl-1.1.19-001.pending.md) retains the two earlier reader-facing deferrals, new Subject/navigation structural-review obligation and all naming/source/transport qualifications. No reader-facing structural review or PDF compilation is claimed; the historical PDF below remains a publication of its own release.
 

@@ -1,0 +1,56 @@
+{
+  "actualArchiImportSaveExport": "PASS",
+  "exitCode": 0,
+  "workbench": "Installed Archi 5.10.0; commandline app; local display access; temporary configuration/workspace/Java user.home; outputs /tmp; imported candidate hash below",
+  "environmentResolution": "Initial sandbox execution exited 13 because GTK could not access display. Same bounded command succeeded with reviewed sandbox escalation. No source, validator, comparator or presentation-template changes.",
+  "schemaAndReferences": "PASS — Archi import/export validation; canonical projector offline schema/reference checks separately PASS",
+  "strictTransportVerifier": "FAIL — inherited Relationship/View transport drift; exact failure retained in strict-verifier.log",
+  "candidateSha256": "13b0c5cf52d092e70a9f57e6d95a8ebc1d3fd712dfb7c60dfb92b6c38d7ecebf",
+  "returnedXmlSha256": "d51da17dca64b89791301df8024405e364903a5c25b30d9521ef649297534176",
+  "canonicalElementValuesPreservedExactly": 1996,
+  "nativeRelationshipIdentityTypeEndpointsNamesDocumentationAndPropertyValuesPreserved": 2246,
+  "rawRelationshipChangedRecords": 575,
+  "rawRelationshipChangesExactlyEqualPriorDR17Qualification": true,
+  "rawRelationshipMissing": 0,
+  "rawRelationshipAdded": 0,
+  "viewsPreservedExactly": 1288,
+  "rawComparatorStatus": "DIFFERENCES",
+  "rawClassifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 696,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 5130,
+    "SEMANTIC DIFFERENCE": 24506,
+    "UNEXPLAINED DIFFERENCE": 4242
+  },
+  "rawReasons": {
+    "Uniquely keyed unordered collection": 631,
+    "Semantic record attribute changed": 24506,
+    "Attribute absent after transport": 888,
+    "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation": 4242,
+    "Subtree absent after transport; raw input retained by hash": 4242,
+    "Exact unique Property key resolves both definition IDs; all other definition content and owner values compared independently": 65
+  },
+  "normalisedCounts": {
+    "elements": {
+      "added": 0,
+      "removed": 0,
+      "changed": 0
+    },
+    "relationships": {
+      "added": 0,
+      "removed": 0,
+      "changed": 575
+    },
+    "views": {
+      "added": 0,
+      "removed": 0,
+      "changed": 0
+    }
+  },
+  "limits": [
+    "Automated real transport, not Solution Architect visual/structural inspection or candidate acceptance.",
+    "Strict FAIL remains visible: inherited absent-to-English language changes on 575 relationship records; native type/identity/endpoints/text/property values remain unchanged.",
+    "Raw generated label and organisation-ID omissions and navigation normalisation remain explicit; no raw whole-model fidelity or acceptance of losses asserted.",
+    "Returned model does not replace canonical sources, candidate projection or maintained View template."
+  ]
+}

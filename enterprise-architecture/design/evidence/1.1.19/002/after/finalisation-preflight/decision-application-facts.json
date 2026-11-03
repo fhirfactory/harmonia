@@ -1,0 +1,20 @@
+{
+  "candidateUseCaseUserStoryElements": {
+    "UseCase": 0,
+    "UserStory": 0
+  },
+  "currentMetamodelSpecializationsRegistered": {
+    "UseCase": false,
+    "UserStory": false
+  },
+  "treatment": "Accepted decisions will be recorded in HCRL; no creation, per-candidate equivalence, naming-rule implementation or coverage reconciliation performed during blocked preflight",
+  "assessment": {
+    "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidates.json",
+    "sha256": "c86aafb033fd1604cedca564f9ac74446377ccd8fe64c075d531bf295174dbe7",
+    "shape": {
+      "representation": "list",
+      "rows": 784
+    },
+    "standing": "Preserved unincorporated candidate assessment; no acceptance or complete coverage inferred"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "outcome": "UNRESOLVED",
+  "version": "1.1.19",
+  "iteration": "001",
+  "records": [
+    "evidence/1.1.19/001/after/ai-agent-reports/20261102T103940Z-solutionfacet-intake.md",
+    "evidence/1.1.19/001/after/ai-agent-reports/20261102T110045Z-solutionfacet-refactoring-candidate.md",
+    "evidence/1.1.19/001/after/ai-agent-reports/20261102T123213Z-solutionfacet-additional-corrections.md",
+    "evidence/1.1.19/001/after/ai-agent-reports/20261102T224604Z-solutionfacet-final-naming.md",
+    "evidence/1.1.19/001/after/ai-agent-reports/20261102T230333Z-dr17-acceptance-closure-readiness.md",
+    "evidence/1.1.19/001/after/ai-agent-reports/20261103T000246Z-dokimasia-provenance-add.md",
+    "evidence/1.1.19/001/after/ai-agent-reports/20261103T011842Z-mneme-post-create-availability-amendment.md",
+    "evidence/1.1.19/001/after/ai-agent-reports/20261103T013651Z-dr18-dr19-acceptance-closure-readiness.md",
+    "evidence/1.1.19/001/before/ai-agent-tasks/20261103T024702Z-final-dispositions-and-closure.md",
+    "evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+    "evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dr17-acceptance-closure-assessment.md",
+    "evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dr18-dr19-acceptance-closure-preparation.md",
+    "evidence/1.1.19/001/before/ai-agent-tasks/unresolved-mneme-post-create-availability-amendment.md",
+    "evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-additional-authorisation.md",
+    "evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-dr17-clarification.md",
+    "evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-final-naming-dispositions.md",
+    "evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-refactoring.md"
+  ],
+  "errors": [],
+  "unresolved": [
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dr17-acceptance-closure-assessment.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dr18-dr19-acceptance-closure-preparation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-mneme-post-create-availability-amendment.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-additional-authorisation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-dr17-clarification.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-final-naming-dispositions.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-refactoring.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+  ],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}

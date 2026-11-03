@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "baseline": "Unique uncommitted DR-18/19 candidate; exact prior XML plus retained Mneme/HCRL preimages, not Git HEAD alone",
+  "baselineProjection": "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/Harmonia-Provenance-candidate.xml",
+  "baselineSha256": "13b0c5cf52d092e70a9f57e6d95a8ebc1d3fd712dfb7c60dfb92b6c38d7ecebf",
+  "candidateProjection": "Harmonia-Provenance-availability-amended-candidate.xml",
+  "candidateSha256": "ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b",
+  "elements": 1996,
+  "relationships": 2246,
+  "views": 1288,
+  "newOrRemovedElements": 0,
+  "newOrChangedRelationships": 0,
+  "newOrChangedViews": 0,
+  "canonicalSourceFilesChangedThisAmendment": [
+    "enterprise-architecture/continuum/application/application-component/1af8a56358f7429fabfb57be66542a99.md"
+  ],
+  "all1995OtherCanonicalElementFilesByteIdentical": true,
+  "originalMnemeBodyRecoveredExactlyByRemovingInsertedPolicySubsection": true,
+  "existingMnemeMetadataPreservedExceptOneAppendedProvenanceContribution": true,
+  "namesTypesSpecialisationsIdentitiesStandingBindingsAndGraphPreserved": true,
+  "rootManifestNavigationAndViewTemplateByteIdentical": true,
+  "exactThreeEnumerationValues": [
+    "Immediate-And-Distributed",
+    "Immediate",
+    "OnRequest"
+  ],
+  "mnemosyneByteIdentical": true,
+  "otherFiveReviewedDefinitionsByteIdentical": true,
+  "allOriginalCandidateRelationshipsPreserved": true,
+  "protectedInputEarlierEvidencePublicationAndToolingFilesUnchanged": 3759,
+  "protectedPublicationsUnchanged": 204,
+  "originalSixUnresolvedQuestionsPreserved": true,
+  "selectedRuntimeOrModelPolicyValueAdded": false,
+  "releaseUnchanged": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "formalAcceptance": "PENDING",
+  "taskEventAndFilenamePrefix": "UNRESOLVED; original event unavailable"
+}

@@ -1,0 +1,31 @@
+{
+  "developmentRelease": "1.1.20",
+  "standing": "Active pending development baseline, not an accepted reference release",
+  "acceptedPredecessor": {
+    "release": "1.1.19",
+    "publication": "enterprise-architecture/design/archimate/published/1.1.19/Harmonia-Architecture.xml",
+    "sha256": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09",
+    "population": {
+      "elements": 1994,
+      "relationships": 2235,
+      "views": 1285
+    },
+    "originalAcceptance": "enterprise-architecture/design/register/1.1.19/hcrl-1.1.18-001.complete.md"
+  },
+  "originatingReviewClosure": "enterprise-architecture/design/register/1.1.19/hcrl-1.1.19-002.complete.md",
+  "operativeTask": "enterprise-architecture/design/evidence/1.1.19/002/before/ai-agent-tasks/20261103T061713Z-dr20-baseline-preserving-finalisation.md",
+  "originalCandidate": {
+    "path": "enterprise-architecture/design/evidence/1.1.19/001/after/iteration-processing/Harmonia-Architecture-candidate.xml",
+    "sha256": "ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b",
+    "population": {
+      "elements": 1996,
+      "relationships": 2246,
+      "views": 1288
+    },
+    "sourceRecovery": "enterprise-architecture/design/evidence/1.1.19/001/before/iteration-processing/source-state.json"
+  },
+  "carriedDifferences": "enterprise-architecture/design/evidence/1.1.19/002/after/dr20-disposition/difference-assessment.json",
+  "workingState": "Existing canonical working candidate retained as explicit overlay on accepted predecessor; no rollback, inferred acceptance or new candidate implementation",
+  "programme": "Three passes recorded in DR-5; NOT_STARTED",
+  "evidenceModel": "Initialisation is part of the originating closure Task/Report at 1.1.19/002; successor references that preserved evidence without duplicate Task/Report or processing history."
+}

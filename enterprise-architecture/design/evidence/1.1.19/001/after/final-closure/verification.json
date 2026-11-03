@@ -1,0 +1,67 @@
+{
+  "acceptedCandidateVerification": "PASS",
+  "canonicalMarkdownAuthorityPreserved": true,
+  "projectionSha256": "ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b",
+  "elements": 1996,
+  "relationships": 2246,
+  "views": 1288,
+  "acceptedDefinitionsByteIdentical": 6,
+  "acceptedAddRelationshipsExact": 10,
+  "canonicalSchemaNamingProvenanceNavigationNativeEndpointsOfflineXsdReferences": "PASS via maintained project validation",
+  "projectionMatchesAcceptedSpecimenExactly": true,
+  "preservation": {
+    "protectedFilesChecked": 2586,
+    "changed": [],
+    "priorDecisionReviewNarrativePreserved": 19,
+    "priorHcrlExactPreimage": "before/final-closure/hcrl-before.pending.md"
+  },
+  "retainedTestEvidence": {
+    "tooling": 87,
+    "finalFocused": 4,
+    "javaArchitecture": 90,
+    "outcome": "PASS; retained logs checked, no repeat implied"
+  },
+  "actualArchiTransport": "PASS; retained exact execution/native/return evidence reconciled, no new inspection claimed",
+  "strictTransportVerifier": "FAIL — preserved unchanged",
+  "strictFailureScope": {
+    "relationshipIdentities": 575,
+    "xmlLangAttributes": 1741
+  },
+  "returnedCanonicalElementFieldsAndPropertiesExact": 1996,
+  "returnedViewsExact": 1288,
+  "evidenceLayout": {
+    "outcome": "UNRESOLVED",
+    "errors": 0,
+    "unresolvedCurrentTaskRecords": 8,
+    "solutionArchitectException": "Final closure Task disposition 2; 8 current plus 3 inherited; not temporal PASS"
+  },
+  "readerReview": "ACCEPTED — actual Solution Architect review, final closure Task disposition 3",
+  "minutiaeAccepted": "Yes — DR-17 disclosed group only",
+  "wholeHcrlConfirmation": "CONFIRMED — conditional closure authorised, final closure Task disposition 5",
+  "releaseAuthority": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "publicationCheck": {
+    "outcome": "FAIL",
+    "command": "timeout 90s /tmp/harmonia-tooling-venv/bin/python -B enterprise-architecture/tooling/architecture_continuum.py project --publish --check",
+    "exitCode": 1,
+    "message": "Projection is missing or stale: /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/archimate/published/1.1.19/Harmonia-Architecture.xml",
+    "existingProjectionSha256": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09",
+    "acceptedCandidateSha256": "ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b",
+    "guardUnchanged": true
+  },
+  "hcrlStatus": "PENDING — DR-20 release-path disposition required",
+  "dependentClosurePublicationCommitPush": "NOT PERFORMED; fail-closed stop",
+  "freshJavaArchitectureTests": {
+    "outcome": "PASS",
+    "exitCode": 0,
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "jdkFallbackWarnings": 3077,
+    "nonJdkFallbackWarnings": 0,
+    "scope": "Architecture suite, not whole-JDK analysis"
+  }
+}

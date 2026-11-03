@@ -1,0 +1,157 @@
+{
+  "authority": "Operative acceptance Task §3; six definitions plus associated DR-18/19 relationships and responsibility allocations",
+  "task": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dr18-dr19-acceptance-closure-preparation.md",
+  "decisionEventTime": "UNRESOLVED; not stated/exposed",
+  "projectionPath": "enterprise-architecture/design/evidence/1.1.19/001/after/mneme-post-create-availability/Harmonia-Provenance-availability-amended-candidate.xml",
+  "projectionSha256": "ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b",
+  "definitions": [
+    {
+      "canonicalId": "e282811b51274649816566aac7edeb8a",
+      "archimateType": "DataObject",
+      "specialization": null,
+      "displayName": "Provenance",
+      "canonicalPath": "enterprise-architecture/continuum/application/data-object/e282811b51274649816566aac7edeb8a.md",
+      "sourceSha256": "51b35e2e299c661073a8abe195e1bc56c977af1fcad5acba6c5debcd2a062407",
+      "exchangeIdentifier": "id-70ce24ab295258d6bade403a18aac261",
+      "solutionArchitectDisposition": "ACCEPTED",
+      "canonicalSourceUnchanged": true,
+      "sourceStandingPreserved": {
+        "semantic": "Candidate — Solution Architect intent agreed; HCRL 1.1.19-001 DR-18/DR-19 candidate acceptance pending",
+        "currentness": "current"
+      },
+      "unresolvedPropertiesPreserved": {
+        "canonicalName": "Formal qualifier for native DataObject is not established by the current naming contract (HCRL 1.1.5-002 DR-5); this ADD supplies no new qualifier or ancestry.",
+        "retryPragma": "Whether an Ergon retry uses the original Pragma or creates a new linked Pragma remains unresolved; Task §4.5(1), DR-18/19.",
+        "executionAttempts": "Detailed representation of execution attempts remains unresolved; Task §4.5(2), DR-18/19.",
+        "publicationTiming": "Synchronous versus asynchronous Provenance reporting/publication remains unresolved; Task §4.5(3), DR-18.",
+        "publicationRecovery": "Publication acknowledgement and recovery semantics remain unresolved; Task §4.5(4), DR-18.",
+        "provenanceRepresentation": "Detailed schemas, cardinalities and lifecycle states remain unresolved; Task §4.5(5), DR-18/19.",
+        "clientLibraryDetail": "Detailed client-library contracts and deployment arrangements remain unresolved; Task §4.5(6), DR-18."
+      }
+    },
+    {
+      "canonicalId": "171f05d188384cedb7d5c493eeaee519",
+      "archimateType": "ApplicationComponent",
+      "specialization": null,
+      "displayName": "Provenance Client Library",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-component/171f05d188384cedb7d5c493eeaee519.md",
+      "sourceSha256": "01980a806c746e98745789a66a8ef5be4c0a9fa3942f0133fb8513f5c6dd325c",
+      "exchangeIdentifier": "id-49813472168e57fbb42d5daf2b64ad48",
+      "solutionArchitectDisposition": "ACCEPTED",
+      "canonicalSourceUnchanged": true,
+      "sourceStandingPreserved": {
+        "semantic": "Candidate — Solution Architect intent agreed; HCRL 1.1.19-001 DR-18/DR-19 candidate acceptance pending",
+        "currentness": "current"
+      },
+      "unresolvedPropertiesPreserved": {
+        "canonicalName": "Formal qualifier for native ApplicationComponent is not established by the current naming contract (HCRL 1.1.5-002 DR-5); this ADD supplies no new qualifier or ancestry.",
+        "retryPragma": "Whether an Ergon retry uses the original Pragma or creates a new linked Pragma remains unresolved; Task §4.5(1), DR-18/19.",
+        "executionAttempts": "Detailed representation of execution attempts remains unresolved; Task §4.5(2), DR-18/19.",
+        "publicationTiming": "Synchronous versus asynchronous Provenance reporting/publication remains unresolved; Task §4.5(3), DR-18.",
+        "publicationRecovery": "Publication acknowledgement and recovery semantics remain unresolved; Task §4.5(4), DR-18.",
+        "provenanceRepresentation": "Detailed schemas, cardinalities and lifecycle states remain unresolved; Task §4.5(5), DR-18/19.",
+        "clientLibraryDetail": "Detailed client-library contracts and deployment arrangements remain unresolved; Task §4.5(6), DR-18."
+      }
+    },
+    {
+      "canonicalId": "d739c75dffe2453081735710b285f03b",
+      "archimateType": "ApplicationComponent",
+      "specialization": null,
+      "displayName": "Dokimasia",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-component/d739c75dffe2453081735710b285f03b.md",
+      "sourceSha256": "7cf396a3042088939414fe6119e9d8acad90ea47a5e4ca83fa51ad352df60d57",
+      "exchangeIdentifier": "id-d16663c3976756bb9cd23104f8bdd0c7",
+      "solutionArchitectDisposition": "ACCEPTED",
+      "canonicalSourceUnchanged": true,
+      "sourceStandingPreserved": {
+        "semantic": "Candidate — accepted Step-B baseline; final Solution Architecture unapproved",
+        "currentness": "current",
+        "qualification": "Exact source standing retained; migration/identity allocation does not approve architectural assertions."
+      },
+      "unresolvedPropertiesPreserved": {
+        "canonicalName": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+      }
+    },
+    {
+      "canonicalId": "fefda110e2274884ad58906733606efd",
+      "archimateType": "ApplicationComponent",
+      "specialization": null,
+      "displayName": "Kleio",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-component/fefda110e2274884ad58906733606efd.md",
+      "sourceSha256": "cfb8e5eb3b3479e6081dd5c3c9e912b43680c415ee2077e6209fa70e051ce18c",
+      "exchangeIdentifier": "id-d6e1b1c535985930a5d9805d0f3f0c53",
+      "solutionArchitectDisposition": "ACCEPTED",
+      "canonicalSourceUnchanged": true,
+      "sourceStandingPreserved": {
+        "semantic": "Candidate — accepted Step-B baseline; final Solution Architecture unapproved",
+        "currentness": "current",
+        "qualification": "Exact source standing retained; migration/identity allocation does not approve architectural assertions."
+      },
+      "unresolvedPropertiesPreserved": {
+        "canonicalName": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+      }
+    },
+    {
+      "canonicalId": "1af8a56358f7429fabfb57be66542a99",
+      "archimateType": "ApplicationComponent",
+      "specialization": null,
+      "displayName": "Mneme",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-component/1af8a56358f7429fabfb57be66542a99.md",
+      "sourceSha256": "c306dd8e66f90cc4a1f26ef045b2786d07c9e22b3390c6daf374e25b3822926a",
+      "exchangeIdentifier": "id-18c2979e55a7525b90321395f550d958",
+      "solutionArchitectDisposition": "ACCEPTED",
+      "canonicalSourceUnchanged": true,
+      "sourceStandingPreserved": {
+        "semantic": "Candidate — accepted Step-B baseline; final Solution Architecture unapproved",
+        "currentness": "current",
+        "qualification": "Exact source standing retained; migration/identity allocation does not approve architectural assertions."
+      },
+      "unresolvedPropertiesPreserved": {
+        "canonicalName": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+      }
+    },
+    {
+      "canonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "ApplicationComponent",
+      "specialization": null,
+      "displayName": "Mnemosyne",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md",
+      "sourceSha256": "10579cbb345b7f619b55ee08abf45e581dcc3b48d728dbd30f5719b8239c36ef",
+      "exchangeIdentifier": "id-829d7b5b57965765adf492ce3aaaa7d2",
+      "solutionArchitectDisposition": "ACCEPTED",
+      "canonicalSourceUnchanged": true,
+      "sourceStandingPreserved": {
+        "semantic": "Candidate — accepted Step-B baseline; final Solution Architecture unapproved",
+        "currentness": "current",
+        "qualification": "Exact source standing retained; migration/identity allocation does not approve architectural assertions."
+      },
+      "unresolvedPropertiesPreserved": {
+        "canonicalName": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+      }
+    }
+  ],
+  "associatedAddRelationshipsAcceptedAndPreserved": 10,
+  "relationshipIds": [
+    "id-45281b5e60ee44aba4aa848d479e306b",
+    "id-86502907d244442aad6470652bc3fd19",
+    "id-47cd0528b7464d7ca6c7ad2a9e98d759",
+    "id-48b5618f63b24ea5abbbcd2cd58d70f2",
+    "id-f8b0d09b13764f7298735519bb998d26",
+    "id-6bf9674e35c04cd88c11a80cdf777a17",
+    "id-0077a1c0c70c4c50a9b90e7f91a1cf8c",
+    "id-47d6e2bd19d342d982c0c195ca4916ce",
+    "id-f9ee3e4f6faf4c61b97ce7d1494d86a5",
+    "id-cfb102b2ad0c47cdad7a6b2031afa877"
+  ],
+  "acceptedPolicy": {
+    "property": "Cache{InformationUnit}.postCreateAvailability",
+    "values": [
+      "Immediate-And-Distributed",
+      "Immediate",
+      "OnRequest"
+    ],
+    "semantics": "As unchanged amended Mneme canonical definition; on-demand materialisation does not delay persistence/accessibility",
+    "determination": "UNRESOLVED: supplied creation value versus governing metadata; no selected precedence/default"
+  },
+  "limits": "Architectural content accepted; no acceptance of defects, missing governance evidence, closure, release or implementation design; originating candidate/source qualifications retained"
+}

@@ -350,6 +350,148 @@ submission and review provenance; never substitute session memory or select an
 ambiguous export by timestamp. Machinery-validation runs are not RAD releases;
 the bounded release-policy exception applies to the RAD-1.0.10 proving cycle.
 
+## HCRL lifecycle commands
+
+Codex and Junie MUST interpret an explicit Solution Architect instruction of
+**HCRL Updated** or **HCRL Finalised** using the shared definitions below.
+Case and terminal punctuation do not change their meaning. Quoted examples,
+discussion, inspection and requests to define these commands do not invoke them.
+These are agent-orchestrated procedures using existing machinery, not shell
+commands or a new governance framework. Junie's `.junie/guidelines.md` points here.
+
+### Common inputs, authority and stop conditions
+
+Load [Architecture Governance](enterprise-architecture/governance/architecture-governance.md),
+[Architecture Review Praxis](enterprise-architecture/governance/architecture-review-praxis.md),
+[Architecture Change Provenance](enterprise-architecture/governance/architecture-change-provenance.md)
+and [Release Policy](enterprise-architecture/governance/architecture-release-policy.md).
+Follow the [Round-Trip Praxis](enterprise-architecture/governance/archimate-round-trip-engineering-praxis.md)
+when Archi submissions or transport are involved. Existing human checkpoints,
+canonical Markdown authority and representation/validation controls remain binding.
+
+Before mutation, establish:
+
+- The exact current pending HCRL, iteration, reviewed content and attributable
+  Solution Architect dispositions. An explicit locator is optional only when
+  the current target is uniquely established by repository-held task/review provenance.
+- The originating and resulting canonical state, exact candidate(s), required
+  evidence and source/result correspondence; distinguish existing working changes
+  from authorised application. Do not select by newest timestamp or filename alone.
+- Root `architecture-release.json`, the actual accepted predecessor, existing
+  publications and any release allocation already belonging to this change set.
+- The permitted application scope, mandatory checks, remaining obligations,
+  qualifications, authorised deferrals and repository-transition authority.
+
+Retain required formal Task/Report records within the applicable iteration under
+the Provenance contract; record material application/verification conclusions in
+the applicable DRs. Preserve decisions, IDs, original evidence and prior history.
+Neither phrase supplies missing architectural dispositions, exceptions or release-path
+decisions. An unanswered decision stays unanswered; successful tooling supplies no acceptance.
+
+STOP affected work for ambiguous targets/authority, missing required evidence,
+changed reviewed inputs, a failed or uncertain mandatory gate without an applicable
+disposition, conflicting release/provenance mapping, or new material architectural
+meaning. Report the exact blocker for Solution Architect adjudication under §1.5.
+Independent authorised work may continue. An unrelated unresolved matter does not
+block iteration advancement; terminal treatment follows the closure rules below.
+On interruption or retry, establish the state already reached before continuing;
+do not repeat an iteration advance, release allocation or uncertain publication.
+
+### HCRL Updated — process and advance one pending iteration
+
+1. Apply only unambiguous authorised iteration directives through the existing
+   Review Praxis and, where applicable, reviewed round-trip operations. Preserve
+   unapproved proposals separately. Perform the applicable bounded candidate
+   verification and human review checkpoints; record actual outcomes and limits.
+   Respect adapter limits; unsupported reconciliation returns for adjudication
+   rather than initiating substantial new automation.
+2. Preserve the resulting iteration candidate and purpose-selected evidence at
+   its originating `design/evidence/<version>/<iteration>/before/` and `after/`
+   locations. Generate new candidate XML/readers/narrative through the existing
+   projectors/publishers with explicit evidence-local `--output` destinations.
+   Preserve existing candidate bytes; use a distinct destination for a changed
+   candidate. Candidate outputs retain their qualified standing, even if they
+   display the current root version.
+3. Record incorporated changes, attributable dispositions, validation conclusions
+   and qualifications in the current HCRL's applicable DRs. Account explicitly for
+   unresolved decisions, obligations, dependencies, exclusions and authorised
+   deferrals. Not every outstanding decision must be resolved to advance.
+4. Once the iteration's applicable gates are satisfied or explicitly dispositioned,
+   preserve its pending HCRL and advance its numeric iteration by exactly one
+   (`001` to `002`, with at least three digits). Keep the same HCRL version identity.
+   Establish `design/review/<version>/hcrl-<version>-<next>.pending.md` from the
+   resulting governed state. Retain DR identities, decision history and incorporated
+   facts; carry unresolved matters and obligations forward with their actual status.
+   Reference evidence in its originating iteration rather than moving or recopying it.
+   Record reciprocal predecessor/successor links and identify the processed iteration
+   and next active pending iteration so a subsequent invocation can discover its target.
+   Verify carry-forward correspondence and usable relative links before reporting success.
+5. If the next HCRL already exists, establish whether this instruction already
+   advanced it; stop on ambiguity rather than overwrite it or skip an iteration.
+   Report the preserved candidate/evidence, processed and next HCRL paths, resulting
+   state, carried matters and any blockers. The next HCRL remains pending.
+
+This operation MUST NOT complete/register the HCRL, allocate a release, publish or
+replace an accepted reference baseline, or infer commit/push authority. Do not use
+`project --publish` or the Makefile `continuum` target for iteration candidates:
+that target invokes accepted-release publication even with an output override.
+`architecture_review_evidence.py --prepare` creates fresh review scaffolding;
+it does not roll over an existing HCRL. The agent performs the bounded carry-forward
+above, preserving existing dispositions rather than replacing them with a scaffold.
+
+### HCRL Finalised — complete the HCRL and publish the accepted architecture
+
+1. Review the complete decision history and incorporated canonical state under
+   Review Praxis §§1–5. Verify the exact final candidate and required evidence,
+   outstanding obligations, and the scope/conditions of each acceptance or deferral.
+   Run applicable bounded closure, architecture and publication checks, preserving
+   distinct PASS, FAIL, TIMEOUT, STALLED and UNRESOLVED outcomes.
+2. Obtain or identify the Solution Architect's attributable confirmation that
+   this exact HCRL represents both the authorised change and actual incorporated
+   result under Review Praxis §6. The command initiates processing; agents cannot
+   invent whole-HCRL confirmation or missing per-matter dispositions. Unresolved
+   matters and deferrals may remain only with the explicit treatment governance
+   permits; preserve their standing and obligations.
+3. Before completion or release mutation, establish the release plan under existing
+   release governance: actual accepted predecessor, resulting release, whether this
+   accepted change set already has its one patch allocation, and publication
+   destinations. Use the existing expected-current patch mechanism only when that
+   allocation is required and authorised; completion itself consumes no extra release.
+   The HCRL filename does not allocate or reserve a release. Preserve existing HCRL
+   and evidence identities and record resulting-release correspondence; stop if that
+   mapping requires an unestablished decision. Major/minor changes need explicit authority.
+4. Preflight existing accepted publications against the planned release and exact
+   candidate. Identical publication may be repeated; differing immutable published
+   bytes MUST NOT be replaced. Do not delete publications, weaken guards, relabel
+   historical sources or choose a new version merely to escape a conflict. An unresolved
+   release-path decision, including HCRL 1.1.19-001 / DR-20, requires explicit Solution
+   Architect disposition before dependent finalisation. This command supplies none.
+5. Preserve final candidate and governance evidence and perform the established
+   release allocation/publication operations in the verified plan. Register the
+   confirmed HCRL as complete at the governed resulting-release location under
+   Review Praxis §6 only after its mandatory gates have succeeded or received
+   applicable explicit treatment; preserve the pending record/history until then.
+   Use `architecture_release.py bump --expect CURRENT` when allocation is required;
+   use existing `continuum`, `continuum-rad` and applicable PDF/publication checks
+   only against the intended release's governed source. Generation never allocates
+   a release. Preserve prior publications and explicit residual qualifications.
+6. Complete only the authorised repository transition; commits and pushes require
+   applicable instruction/branch authority and include only the accepted change set.
+   Record actual HCRL status, release, publication results and Git state. Report a
+   stop or partial outcome accurately; do not claim terminal success while a mandatory
+   step remains incomplete or leave a falsely completed record after a blocker.
+
+Existing entry points are documented in the
+[current tooling README](enterprise-architecture/tooling/README.md).
+`architecture_review_evidence.py` supplies evidence emission/checks;
+`continuum_workbench.py review/apply` supplies adjudicated round-trip operations;
+`architecture_continuum.py validate` supplies canonical validation;
+`architecture_continuum.py project --output ...`, `publish_continuum.py` and
+`publish_continuum_rad.py` with explicit outputs supply iteration candidates. The existing
+`architecture_release.py` and tooling Makefile supply terminal release/publication.
+No additional lifecycle CLI is required; the processing agent orchestrates these
+operations and the human checkpoints using this shared instruction authority.
+
 ## 2. System Taxonomy & Module Hierarchy
 
 Harmonia enforces strict separation of concerns across its 9 core

@@ -2,6 +2,8 @@
 
 # ArchiMate projection and review workbench
 
+**Current development: 1.1.20 / 001 — pending.** [Active HCRL](../review/1.1.20/hcrl-1.1.20-001.pending.md). The accepted 1.1.19 publication remains immutable; [review closure](../register/1.1.19/hcrl-1.1.19-002.complete.md) and [deterministic carried-candidate assessment](../evidence/1.1.19/002/after/dr20-disposition/difference-assessment.md). The working candidate is not an accepted 1.1.20 publication. Earlier 1.1.19 candidate accounts below retain their originating scope/history; no consolidation programme has started.
+
 The maintained source is the [individual-element continuum](../../README.md).
 [projection-template.xml](projection-template.xml) owns existing model-level
 properties, property definitions, View navigation and **1,288 Views**, including their

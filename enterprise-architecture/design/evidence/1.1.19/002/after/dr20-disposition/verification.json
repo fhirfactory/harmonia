@@ -1,0 +1,69 @@
+{
+  "acceptedBaseline": "Verified existing accepted 1.1.19; original acceptance remains HCRL 1.1.18/001",
+  "baselineSha256": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09",
+  "baselineInputValidation": "PASS — offline XSD/identities/references",
+  "existingManifestEntriesVerified": 15,
+  "publishedCopiesExact": true,
+  "candidateSha256": "ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b",
+  "candidateCanonicalReproduction": "PASS",
+  "canonicalValidation": "PASS",
+  "canonicalQualificationCount": 687,
+  "deterministicDifferenceRepeat": "PASS",
+  "summary": {
+    "elements": {
+      "added": 2,
+      "removed": 0,
+      "modified": 251
+    },
+    "relationships": {
+      "added": 11,
+      "removed": 0,
+      "modified": 0
+    },
+    "views": {
+      "added": 3,
+      "removed": 0,
+      "modified": 12
+    }
+  },
+  "assessmentExceptions": [],
+  "application": "No candidate change applied, accepted, rejected or discarded by this assessment",
+  "publicationRegenerationOrWrite": "NOT_PERFORMED",
+  "hcrlClosure": "COMPLETE — existing accepted publication retained; no new publication event",
+  "completedHcrl": "enterprise-architecture/design/register/1.1.19/hcrl-1.1.19-002.complete.md",
+  "completeHcrlSha256": "a1d059cf8a72f17611d78c9b8f054fd9f8154c8a23ce30ebe2401f6ddaeaa6a4",
+  "successorHcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md",
+  "successorRelease": {
+    "version": "1.1.20",
+    "previous_version": "1.1.19",
+    "standing": "Active pending development identity only"
+  },
+  "protectedPriorFilesUnchanged": 2698,
+  "currentCanonicalElementAndRelationshipSourcesUnchanged": true,
+  "allPublishedFilesUnchanged": true,
+  "programme": "NOT_STARTED",
+  "freshTests": {
+    "javaArchitecture": 90,
+    "tooling": 87,
+    "outcome": "PASS",
+    "jdkFallbackWarnings": 3077,
+    "jdkAssuranceQualification": "Preserved"
+  },
+  "inheritedQualifications": "Original temporal exceptions and strict transport FAIL remain unchanged in originating records; no new exception",
+  "links": "PASS — closed/origin/successor/Task/assessment/current entry points",
+  "gitDelivery": "Pending reviewed transition; recorded separately",
+  "finalPreGitChecks": {
+    "links": "PASS",
+    "newTaskReportEventsAnd002Layout": "PASS",
+    "completeRecordUnchangedSinceRegistration": true,
+    "protectedPriorFilesUnchanged": 2698,
+    "acceptedPublicationsUnchanged": true,
+    "reviewedStageFiles": 207,
+    "unrelatedFilesExcluded": [
+      "enterprise-architecture/design/offline-design/DRP-Harmonia-Logging-Middleware-Strategy-rsyslog.md",
+      "enterprise-architecture/design/offline-design/DRP-Logging-AuditEvent-Provenance-Governance-and-Export.md"
+    ],
+    "programme": "NOT_STARTED",
+    "gitDelivery": "PENDING"
+  }
+}

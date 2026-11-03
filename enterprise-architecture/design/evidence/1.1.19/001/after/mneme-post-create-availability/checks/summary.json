@@ -1,0 +1,78 @@
+{
+  "canonicalSchemaIdentityNamingProvenanceNavigation": "PASS",
+  "nativeRelationshipsContainmentOfflineXsdAndReferences": "PASS",
+  "exactExistingStatePreservation": "PASS",
+  "deterministicProjectionAndDerivedSourceStaleness": "PASS",
+  "rootManifestNavigationAndViewTemplate": "UNCHANGED; staleness check PASS",
+  "maintainedInputIndependentGeneration": {
+    "status": "PASS",
+    "identicalArtifacts": [
+      "candidate.xml",
+      "manifest.md",
+      "reader-candidate/publication.json",
+      "reader-candidate/navigation.json",
+      "reader-candidate/continuum-catalogue.tex",
+      "reader-candidate/README.md",
+      "reader-candidate/continuum.html",
+      "narrative-candidate/publication.json",
+      "narrative-candidate/README.md",
+      "narrative-candidate/structure.json",
+      "narrative-candidate/continuum-rad.tex",
+      "narrative-candidate/parts/cross-cutting-references.tex",
+      "narrative-candidate/parts/implementation-and-migration.tex",
+      "narrative-candidate/parts/technology.tex",
+      "narrative-candidate/parts/application.tex",
+      "narrative-candidate/parts/business.tex",
+      "narrative-candidate/parts/strategy.tex",
+      "narrative-candidate/parts/motivation.tex",
+      "narrative-candidate/parts/architecture-governance.tex"
+    ],
+    "count": 19,
+    "declaredMaintainedInputsOnly": true,
+    "historicalDocsScriptsGitAndProcessingAbsent": true,
+    "allocatedIdentities": 0,
+    "tests": "Full tooling suite executed separately once; not repeated here",
+    "limits": "Projection/publication-source generation independence; no human acceptance or raw transport fidelity claim."
+  },
+  "sourceLinks": "PASS",
+  "browserSmoke": {
+    "status": "PASS",
+    "elements": 1996,
+    "checks": [
+      "initial population",
+      "identity search",
+      "selection",
+      "Feature filter",
+      "combined currentness filter"
+    ],
+    "limits": "DOM-contract smoke test; no pixel/visual browser claim"
+  },
+  "toolingTests": {
+    "status": "PASS",
+    "scope": "Full suite before final policy-subsection placement; final focused tests recorded separately",
+    "exitCode": 0,
+    "tests": 87,
+    "seconds": 365.903,
+    "command": "timeout --signal=TERM --kill-after=5s 420s /tmp/harmonia-tooling-venv/bin/python -B -m unittest discover -s enterprise-architecture/tooling/tests -v"
+  },
+  "finalFocusedTests": {
+    "status": "PASS",
+    "exitCode": 0,
+    "tests": 4,
+    "seconds": 129.339,
+    "scope": "After narrative subsection placement: source correspondence, narrative determinism, projection/publication determinism, exact-baseline workbench review/application"
+  },
+  "javaArchitectureTests": {
+    "status": "PASS",
+    "exitCode": 0,
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "actualArchiImportSaveExport": "PASS",
+  "strictTransportVerifier": "FAIL — exact inherited 575 relationship xml:lang drift; unchanged guards",
+  "formalCandidateAcceptance": "PENDING",
+  "taskEventAndFilenamePrefix": "UNRESOLVED; original event not exposed",
+  "scope": "Candidate refinement only; no release transition/accepted publication/closure/Git mutations"
+}

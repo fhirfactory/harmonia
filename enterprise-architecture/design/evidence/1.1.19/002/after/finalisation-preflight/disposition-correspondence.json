@@ -1,0 +1,67 @@
+{
+  "purpose": "Evidence of supplied Solution Architect disposition recording, not another decision register",
+  "task": "enterprise-architecture/design/evidence/1.1.19/002/before/ai-agent-tasks/20261103T054949Z-finalisation-and-successor-preflight.md",
+  "hcrl": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md",
+  "decisions": [
+    {
+      "decisionReview": "DR-1",
+      "suppliedDisposition": "CLOSED — historical incoming export reconciliation",
+      "architecturalMeaning": "Historical incoming export reconciliation is closed. Retain all historical evidence; accepted incorporated changes remain authoritative. The prior oversized-delta interpretation gate is no longer an active instruction to continue historical reconciliation. This closure does not accept unincorporated residual proposals, erase their evidence or reopen accepted changes.",
+      "priorTableDisposition": "Unresolved — carried forward",
+      "priorTableComment": "Preserved originating disposition/provenance: Transfer authorised; substantive disposition unresolved. Bounded G14–G18 interpretation completed; other semantic changes excluded and deferred, not accepted",
+      "incorporation": "No canonical change in this preflight; accepted directions and actual prior incorporation remain distinct"
+    },
+    {
+      "decisionReview": "DR-2",
+      "suppliedDisposition": "ACCEPTED — inherited G14–G18 Subject hierarchy",
+      "architecturalMeaning": "The G14–G18 Subject hierarchy is accepted as inherited baseline. No repeat incorporation, renaming or identity change is performed; independently recorded formal naming/standing qualifications remain intact.",
+      "priorTableDisposition": "Unresolved — carried forward",
+      "priorTableComment": "Preserved originating disposition/provenance: Inherited accepted baseline; no new action. Completed and accepted; inherited baseline only",
+      "incorporation": "No canonical change in this preflight; accepted directions and actual prior incorporation remain distinct"
+    },
+    {
+      "decisionReview": "DR-3",
+      "suppliedDisposition": "ACCEPTED — Requirement specialisations; creation authorised",
+      "architecturalMeaning": "`UseCase` and `UserStory` are specialisations of ArchiMate `Requirement`. Their creation is authorised, with naming following the established SolutionFacet-based convention. This is accepted architectural direction, not evidence that creation or metamodel/naming implementation has occurred. The current candidate contains zero UseCase/UserStory specialisation instances and the maintained type catalogue registers neither specialisation. No canonical UUID, naming token, specialisation implementation or candidate instance is introduced during this blocked preflight. The 784-candidate reconciliation remains deferred until the adjudicated Capability Model is available.",
+      "priorTableDisposition": "Unresolved — carried forward",
+      "priorTableComment": "Preserved originating disposition/provenance: Transfer authorised; substantive disposition unresolved. Deferred unresolved; no native modelling acceptance",
+      "incorporation": "No canonical change in this preflight; accepted directions and actual prior incorporation remain distinct"
+    },
+    {
+      "decisionReview": "DR-4",
+      "suppliedDisposition": "ACCEPTED — independent identities and semantic equivalence",
+      "architecturalMeaning": "UseCases and UserStories have independent canonical identities. Semantic equivalence, not identical wording, determines whether candidates represent the same canonical element. Multiple source contributions retain their provenance. No candidate-level equivalence, merge, UUID allocation or actual incorporation is adjudicated or performed here. Preserve the existing source-plus-kind assessment and original source evidence for future governed reconciliation.",
+      "priorTableDisposition": "Unresolved — carried forward",
+      "priorTableComment": "Preserved originating disposition/provenance: Transfer authorised; substantive disposition unresolved. Deferred unresolved; no canonical identity allocated",
+      "incorporation": "No canonical change in this preflight; accepted directions and actual prior incorporation remain distinct"
+    },
+    {
+      "decisionReview": "DR-5",
+      "suppliedDisposition": "REVIEWED WITH QUALIFICATIONS — Capability Model adjudication deferred",
+      "architecturalMeaning": "Historical Capability mappings have been reviewed, with qualifications. Definitive Capability/Feature coverage conclusions remain subject to Capability Model adjudication. This records the Solution Architect review, not an agent claim to have adjudicated historical elements. No Pending Adjudication or Superseded element is resolved, reclassified, retargeted or given an inferred successor during this transition.",
+      "priorTableDisposition": "Unresolved — carried forward",
+      "priorTableComment": "Preserved originating disposition/provenance: Transfer authorised; substantive disposition unresolved. Deferred unresolved; history retained",
+      "incorporation": "No canonical change in this preflight; accepted directions and actual prior incorporation remain distinct"
+    },
+    {
+      "decisionReview": "DR-6",
+      "suppliedDisposition": "ACCEPTED — multi-Feature/multi-Capability partial coverage semantics",
+      "architecturalMeaning": "A UseCase or UserStory may require multiple Features across multiple Capabilities. Partial coverage is legitimate. Architectural coverage does not establish implementation satisfaction. These accepted general semantics establish no particular coverage relationship, satisfaction claim, complete coverage of the 784 candidates or resolution of DR-6.01–DR-6.05. Actual reconciliation and coverage-gap adjudication remain explicitly deferred.",
+      "priorTableDisposition": "Unresolved — carried forward",
+      "priorTableComment": "Preserved originating disposition/provenance: Transfer authorised; substantive disposition unresolved. Deferred advisory assessment; no coverage or edge accepted",
+      "incorporation": "No canonical change in this preflight; accepted directions and actual prior incorporation remain distinct"
+    }
+  ],
+  "authorisedFutureWork": {
+    "targetRelease": "1.1.20",
+    "condition": "Only after lawful 1.1.19 finalisation",
+    "programmeRecordedIn": "DR-5",
+    "execution": "NOT_STARTED",
+    "historicalCapabilityFeatureAdjudication": "NOT_PERFORMED",
+    "coverageReconciliation": "NOT_PERFORMED",
+    "candidateAssessmentRows": 784
+  },
+  "phaseB": "BLOCKED — DR-20",
+  "phaseC": "NOT_STARTED",
+  "otherDrDispositions": "Unchanged"
+}

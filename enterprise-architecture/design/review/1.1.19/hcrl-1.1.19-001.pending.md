@@ -10,17 +10,22 @@
 | [DR-6](#dr-6) | Capability and Feature coverage, including DR-6.01–DR-6.05 | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred advisory assessment; no coverage or edge accepted |
 | [DR-7](#dr-7) | Primary and secondary Subject classification | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred unresolved; supplied assignments retained |
 | [DR-8](#dr-8) | Source provenance, delivery scope and domain authority | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred unresolved; original source limits retained |
-| [DR-9](#dr-9) | Historical Task times, supporting evidence and assurance limitations | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred provenance/assurance qualifications; earlier failures retained as history |
+| [DR-9](#dr-9) | Historical Task times, supporting evidence and assurance limitations | UNRESOLVED — bounded temporal exception authorised | Final closure Task disposition 2; original transfer/history preserved | Three inherited and eight current Task events/prefixes may remain UNRESOLVED; assurance limitations and future requirements preserved |
 | [DR-10](#dr-10) | G18.03 spelling | Unresolved — carried forward | Inherited accepted baseline; no new action | Completed and accepted; inherited baseline only |
 | [DR-11](#dr-11) | Previously blocked presentation reconciliation | Unresolved — carried forward | Inherited accepted baseline; no new action | Superseded blocking state; completed by DR-12/DR-13, history preserved |
 | [DR-12](#dr-12) | 115 Groupings and distinct Composition/Home completion | Unresolved — carried forward | Inherited accepted baseline; no new action | Completed and accepted with preserved naming qualifications |
 | [DR-13](#dr-13) | Five approved elements and complete authored Views | Unresolved — carried forward | Inherited accepted baseline; no new action | Completed; exact candidate visually accepted by the Solution Architect |
 | [DR-14](#dr-14) | Inherited canonical naming, definition and standing qualifications | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Deferred unresolved; no acceptance inferred from publication |
-| [DR-15](#dr-15) | Deferred reader-facing structural reviews | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Existing reviews deferred; new review obligation identified for transfer |
-| [DR-16](#dr-16) | Actual no-edit Archi transport qualifications | Unresolved — carried forward | Transfer authorised; substantive disposition unresolved | Actual transport executed; strict verifier FAIL retained; bounded differences classified |
-| [DR-17](#dr-17) | SolutionFacet refactoring and final naming dispositions | ACCEPTED — Solution Architect visual/model acceptance | Explicit acceptance in the acceptance/closure-assessment Task; prior directives retained | Exact final candidate accepted: hierarchy, ArchitecturalAxioms, naming and Views satisfactory; strict transport qualification retained; DR-1–DR-16 unchanged; whole-HCRL closure not demonstrated |
+| [DR-15](#dr-15) | Generated-reader structural review | ACCEPTED — actual Solution Architect review | Final closure Task disposition 3; prior deferral history preserved | Retained three scopes and applicable DR-18/DR-19 additions reviewed and accepted; no exhaustive page/element inspection asserted |
+| [DR-16](#dr-16) | Actual no-edit Archi transport qualifications | ACCEPTED WITH QUALIFICATION — remediation deferred | Final closure Task disposition 1; actual strict FAIL preserved | Exactly 575 relationship identities / 1,741 xml:lang differences; evidence retained; no content-loss acceptance or general exemption |
+| [DR-17](#dr-17) | SolutionFacet refactoring and final naming dispositions | ACCEPTED — visual/model acceptance and bounded Minutiae | Earlier exact-candidate acceptance plus final closure Task disposition 4 | Minutiae-Accepted: Yes for the disclosed supporting group only; all prior decisions and qualifications retained |
+| [DR-18](#dr-18) | Provenance Management | ACCEPTED — Solution Architect architectural content acceptance | Prior formal acceptance reaffirmed by final closure Task; history retained | Six definitions, ten relationships and Mneme policy accepted unchanged; detailed design unknowns preserved; conditional whole-HCRL closure authorised |
+| [DR-19](#dr-19) | Provenance and Assurance | ACCEPTED — Solution Architect architectural content acceptance | Prior formal acceptance reaffirmed by final closure Task; history retained | Assurance/Audit/Provenance boundaries accepted; final whole-HCRL confirmation recorded; release conflict in DR-20 awaits adjudication |
+| [DR-20](#dr-20) | Existing 1.1.19 publication and accepted-candidate release conflict | UNRESOLVED — Solution Architect disposition required | No departure or replacement authority inferred | Existing accepted 1.1.19 bytes differ; publication guard preserved; completion/publication/commit/push stopped pending disposition |
 
 # HCRL 1.1.19 / 001 — Successor register for outstanding matters
+
+**Current closure status: PENDING — conditional closure authorised; new release-control conflict awaits Solution Architect disposition (DR-20).** Mark Hunter's [final dispositions and closure Task](../../evidence/1.1.19/001/before/ai-agent-tasks/20261103T024702Z-final-dispositions-and-closure.md), issued at `2026-11-03T02:47:02.967Z`, records all five final dispositions and whole-HCRL confirmation. These satisfy the five previously identified treatment categories within their explicit bounds. They do not authorise bypassing the separately discovered publication-history guard. Canonical Markdown and accepted content remain unchanged. The successor-establishment and earlier readiness accounts below retain their historical scope; current treatment is recorded in DR-9/15/16/17/18/19/20.
 
 **Active successor status:** all 16 DR entries are carried forward as **Unresolved** in this HCRL, as directed by the Solution Architect's [record-reconciliation Task](../../evidence/1.1.18/001/before/ai-agent-tasks/20261102T030353Z-hcrl-record-reconciliation.md). The originating-disposition column and narrative preserve prior accepted implementation facts and qualifications; they do not mark a successor DR resolved or grant new acceptance. This records continuity of review obligations without reopening or changing accepted architecture. The former 1.1.18 review body is retired; its old path is now only a provenance locator.
 
@@ -232,6 +237,8 @@ Three original Task instruction-entry times and filename prefixes remain UNRESOL
 - [Origin/evidence 4](../../evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md)
 - [Origin/evidence 5](../../evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md)
 
+**Final Solution Architect disposition 2 — BOUNDED EXCEPTION AUTHORISED:** Mark Hunter's [final closure Task](../../evidence/1.1.19/001/before/ai-agent-tasks/20261103T024702Z-final-dispositions-and-closure.md) permits exactly eight current-iteration and three inherited Task provenance records to retain `UNRESOLVED` original event times and filename prefixes. Preserve all available attribution/evidence; do not reconstruct or substitute historical times. The exception is limited to the eleven identified records and does not relax future provenance. The eight current records are `unresolved-dokimasia-provenance-add.md`, `unresolved-dr17-acceptance-closure-assessment.md`, `unresolved-dr18-dr19-acceptance-closure-preparation.md`, `unresolved-mneme-post-create-availability-amendment.md`, `unresolved-solutionfacet-additional-authorisation.md`, `unresolved-solutionfacet-dr17-clarification.md`, `unresolved-solutionfacet-final-naming-dispositions.md` and `unresolved-solutionfacet-refactoring.md`, under this iteration's `before/ai-agent-tasks/`. The three inherited records are the original DR-9 Tasks linked above. This treats the closure obligation without claiming temporal conformance or resolving the separate JDK/ArchUnit assurance limitation. The new final closure Task has an established system instruction-entry event, `2026-11-03T02:47:02.967Z`, and is outside this exception.
+
 <a id="dr-10"></a>
 ## DR-10 — G18.03 spelling
 
@@ -343,6 +350,8 @@ Preserve the two explicit 1.1.17 deferrals: iteration 001 NFR hierarchy, allocat
 - [Origin/evidence 1](../../register/1.1.17/hcrl-1.1.17-002.complete.md#dr-2)
 - [Origin/evidence 2](../../../governance/architecture-review-praxis.md)
 
+**Final Solution Architect disposition 3 — ACCEPTED, ACTUAL SOLUTION ARCHITECT REVIEW:** In the [final closure Task](../../evidence/1.1.19/001/before/ai-agent-tasks/20261103T024702Z-final-dispositions-and-closure.md), Mark Hunter confirms having used and inspected the generated architecture readers throughout architectural development and review. He accepts reader-facing structure/navigation covering the retained DR-15 scopes (1.1.17/001 NFR hierarchy, allocations, native-layer separation and qualified reused contributions; 1.1.17/002 reader navigation/XML catalogue correspondence; expanded Subject/SolutionFacet hierarchy/navigation) and applicable DR-18/DR-19 additions. This satisfies the representative structural-review obligation through actual human review, not deferral. It asserts no exhaustive inspection of every page or element. Earlier deferral/no-inspection statements remain historical accounts of the record at those times.
+
 <a id="dr-16"></a>
 ## DR-16 — Actual no-edit Archi transport qualifications
 
@@ -363,6 +372,8 @@ Archi 5.10 imported the exact accepted candidate, saved a native model and expor
 - [Origin/evidence 3](../../evidence/1.1.18/001/after/closure-transition/transport-verification.log)
 - [Origin/evidence 4](../../evidence/1.1.18/001/after/closure-transition/archi-execution.log)
 
+
+**Final Solution Architect disposition 1 — ACCEPTED WITH QUALIFICATION:** The [final closure Task](../../evidence/1.1.19/001/before/ai-agent-tasks/20261103T024702Z-final-dispositions-and-closure.md) explicitly accepts the inherited strict transport-verification failure involving **575 relationship identities / 1,741 `xml:lang` attribute differences** as a bounded qualification for HCRL 1.1.19-001. The strict verifier remains unchanged and its result remains **FAIL**. Retain all native, returned, canonical and verification evidence. Remediation is deferred; no loss of authoritative architectural content is accepted and no general transport-verification exemption is established. Earlier raw generated-label/organisation-ID/navigation classifications remain retrievable and are not represented as a raw-equivalence PASS. This supplies whole-HCRL treatment of the identified qualification without resolving it technically.
 
 <a id="dr-17"></a>
 ## DR-17 — Subject → SolutionFacet governed UPDATE candidate
@@ -396,8 +407,8 @@ Archi 5.10 imported the exact accepted candidate, saved a native model and expor
 
 **Bounded supporting Minutiae:** Required Task/Report retention, exact input pins, batch/source correspondence, check logs and working-tree inventory document this authorised activity. They confer no architectural acceptance and create no new transition.
 
-Minutiae-Accepted: [awaiting Solution Architect: Yes | No]
-Comment: Awaiting Solution Architect result/qualification review; no supporting-group acceptance inferred.
+Minutiae-Accepted: Yes
+Comment: Mark Hunter, Solution Architect, explicitly accepts this disclosed bounded supporting governance-evidence group in final closure Task disposition 4. Acceptance does not extend to unrelated governance deviations. The prior awaiting-disposition state is preserved in the preceding review history and exact before-HCRL evidence.
 
 
 **Additional Solution Architect authorisation — operative dispositions:** The [additional authorisation Task](../../evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-additional-authorisation.md) explicitly resolves the two matters below. It supersedes the earlier exclusion/retention of these corrections without rewriting the earlier candidate or its evidence. HCRL completion, protected publication and all staging/commit/push/tag/history operations remain prohibited.
@@ -463,3 +474,415 @@ Comment: Awaiting Solution Architect result/qualification review; no supporting-
 
 
 **Acceptance/closure assessment Report and terminal boundary:** The [governed readiness Report](../../evidence/1.1.19/001/after/ai-agent-reports/20261102T230333Z-dr17-acceptance-closure-readiness.md) records exact DR-17 acceptance and the [all-DR readiness assessment](../../evidence/1.1.19/001/after/dr17-acceptance-closure-assessment/closure-assessment.json). The accepted architecture/candidate and prior evidence are unchanged. Closure is **not demonstrably eligible on the current record**: whole-HCRL confirmation/residual continuity, the bounded Minutiae disposition, treatment of unavailable Task event times/prefixes and applicable reader-facing review/deferral treatment remain unestablished. Recorded deferrals/exclusions can permit closure without resolving every deferred subject; the five completed baseline references are not reopened blockers. No DR-1–DR-16 status was changed, no raw transport PASS or qualification waiver asserted, and no new canonicalName migration, release/version, publication, Git operation or completion was performed. The activity terminates at the Report; HCRL remains pending.
+
+
+**Final Solution Architect disposition 4 — ACCEPTED, bounded Minutiae:** The [final closure Task](../../evidence/1.1.19/001/before/ai-agent-tasks/20261103T024702Z-final-dispositions-and-closure.md) explicitly sets `Minutiae-Accepted: Yes` for the supporting governance evidence already disclosed in DR-17: required Task/Report retention, exact input pins, batch/source correspondence, check logs and working-tree inventory for that authorised activity. The control above records the same decision. Acceptance does not extend to unrelated governance deviations; earlier awaiting-disposition accounts remain history.
+
+<a id="dr-18"></a>
+## DR-18 — Provenance Management
+
+**Solution Architect disposition:** Architectural intent agreed as recorded in the
+[operative ADD Task](../../evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md), §§2.1–2.4;
+preparation of this bounded candidate authorised. Formal candidate acceptance is
+**pending**; this entry is not closed.
+
+**Issue/origin:** The Task records the Solution Architect/architecture-peer
+DR-1 discussion about preservation of historical evidence. It distinguishes
+boundary audit, activity-generated Provenance, governed persistence and independent
+assessment. The discussion itself was not separately supplied; this Task is the
+attributable source of the agreed intent. [DR-1](#dr-1) retains its exact scope,
+status and outstanding gate; this ADD does not adjudicate its residual export delta.
+
+**Intent and authorised ADD:** Dokimasia owns the Provenance Management framework
+and lifecycle, distinct from physical persistence. Originating components and
+execution activities generate Provenance using a reusable Dokimasia-provided
+Provenance Client Library for creation, relevant references and reporting/publication.
+Provenance is governed information managed through Mneme and durably persisted
+through Mnemosyne using existing mechanisms and reliability/durability/timeliness
+requirements. No independent persistence subsystem is authorised. Records reference
+relevant InformationUnits, Pragma instances, execution activities and context;
+embedding acted-upon contents is not required. Existing identity/version/reference
+and governance semantics are preserved.
+
+**Examination/reuse obligation:** Inspect current canonical Dokimasia, Provenance
+concepts and Data Provenance Capture, Kleio, Mneme, Mnemosyne, Ponos, Praxis,
+Journey, Pragma/Pragma Management, Ergon, InformationUnit and applicable provenance
+requirements/constraints before allocating any missing construct. Reuse before
+clarification, relationships or genuinely missing-element ADD. Preserve exact
+identities, classifications, specialisations, definitions, standing and prior edges.
+
+**Unresolved and exclusions:** Retry original versus linked new Pragma; attempt
+representation; synchronous/asynchronous publication; acknowledgement/recovery;
+detailed Provenance schemas/cardinalities/lifecycle states; client-library contracts
+and deployment remain unresolved. They do not block these agreed responsibilities.
+No code/API, transport, deployment boundary, duplicate concept, workflow redesign,
+unrelated architecture or supersession is authorised. Conflicting assertions stay
+unchanged for Solution Architect adjudication under AX-17.
+
+**Evidence/review obligations:** Retain current-state correspondence, responsibility
+reconciliation, exact canonical/relationship changes, identity and unaffected-state
+checks, metamodel/schema/reference checks, deterministic projection and applicable
+conformance/round-trip results in iteration 1.1.19/001. Required Task/Report follow
+common Provenance; original Task time/prefix remain unresolved before closure.
+Submit actual candidate and qualifications for explicit Solution Architect review;
+no acceptance, DR/HCRL closure, release transition, accepted publication, commit or push.
+
+**Candidate preparation status:** Registered before architectural mutation.
+Discovery, candidate changes and actual validation conclusions will be appended
+within this DR, preserving this registration and its authority boundary.
+
+
+**Actual ADD preparation result — DR-18:** Current canonical review found existing
+information-authority/lineage, execution and Mneme/Mnemosyne boundaries, but no
+explicit Provenance framework owner or equivalent logical Provenance/client-library
+elements. Added candidate DataObject **Provenance** (`e282811b51274649816566aac7edeb8a`)
+and ApplicationComponent **Provenance Client Library** (`171f05d188384cedb7d5c493eeaee519`)
+through governed `create`; clarified Dokimasia framework/lifecycle ownership and
+originating-component generation, and Mneme/Mnemosyne governed management/durable
+persistence. Existing four-component definitions are preserved with append-only
+qualified contributions (Kleio boundary under DR-19). Ten candidate native assertions
+represent management/use, library provision/creation, relevant references and optional
+audit-evidence contribution; no Composition/Home, API, transport or persistence subsystem.
+The [responsibility reconciliation](../../evidence/1.1.19/001/after/dokimasia-provenance-add/reconciliation.md)
+records existing adequate meaning, clarifications, genuinely missing concepts,
+classification/naming rationale and conflict assessment. No conflict requiring a
+replacement/supersession was identified; none was silently resolved.
+
+**Validation and qualifications — DR-18:** PASS for canonical/metamodel/naming/
+provenance/navigation, offline schema/references, deterministic and isolated
+maintained-input generation, Manifest/candidate reader/narrative staleness, links,
+87 tooling tests and 90 Java architecture tests. All 1,994 prior IDs/standing/
+names/bindings, 2,236 prior native/projected relationships and 1,288 Views persist;
+1,990 unaffected element files and protected earlier evidence/publications remain
+byte-identical. Existing navigation paths/order and DR-1–DR-17 text/dispositions are
+unchanged. One existing exact-population fixture reflects only +2 elements/+10 edges;
+no validator/comparator weakened. The six detailed questions remain unresolved in
+the new resources; formal-name qualifiers remain qualified nulls. Original Task
+time/prefix remain unresolved before closure. Exact candidate: **1,996 elements /
+2,246 relationships / 1,288 Views**, SHA-256 `13b0c5cf52d092e70a9f57e6d95a8ebc1d3fd712dfb7c60dfb92b6c38d7ecebf`.
+[Governed Report](../../evidence/1.1.19/001/after/ai-agent-reports/20261103T000246Z-dokimasia-provenance-add.md) and [check summary](../../evidence/1.1.19/001/after/dokimasia-provenance-add/checks/summary.json)
+record actual facts and limits. Formal candidate acceptance/structural inspection
+remain pending. Root 1.1.19/1.1.18, HCRL/DR status and completion exclusions remain.
+
+
+**Bounded candidate amendment — operative review findings:** The
+[follow-up Task](../../evidence/1.1.19/001/before/ai-agent-tasks/unresolved-mneme-post-create-availability-amendment.md)
+records concluded component-level review: Provenance, Provenance Client Library,
+Dokimasia, Kleio and Mnemosyne are **recommended acceptance unchanged**; Mneme
+requires the specified cache-availability amendment. These are review
+recommendations, not formal Solution Architect candidate acceptance. Existing
+DR-18/19 intent, graph, qualifications and previous evidence remain intact.
+
+**Registered amendment authority:** Add `Cache{InformationUnit}.postCreateAvailability`
+within the existing Mneme candidate definition, with exactly `Immediate-And-Distributed`,
+`Immediate` and `OnRequest` and Task §4's semantics/invariants. Mneme interprets/applies
+cache availability; Mnemosyne retains authoritative persistence/version/outcomes.
+`OnRequest` is on-demand materialisation, not delayed persistence or accessibility.
+Existing governed retrieval/search remains available, independently of complete
+cache population. Represent the architectural requirement in existing component
+content; no new element/specialisation/relationship is authorised or required by
+that representation. Escalate if a different representation proves necessary.
+Policy determination (operation value versus governing metadata), precedence,
+defaults, thresholds, topology, cache implementation and APIs remain unresolved;
+no additional value or universal Provenance `OnRequest` rule is authorised.
+
+**Boundary/evidence:** This follow-up stays within 1.1.19/001 DR-18/DR-19. Retain
+exact unique uncommitted Mneme/HCRL inputs and preceding candidate, append-only
+meaning/provenance, reconciliation, preservation and applicable verification/Archi
+transport evidence. No identity allocation, Mnemosyne amendment, new service/store,
+acceptance, closure, release, accepted publication, commit or push. Original Task
+time/prefix is unavailable for later Solution Architect treatment. Actual result
+and new Report references follow after validation.
+
+
+**Bounded cache-availability amendment — actual result:** Mneme's existing component
+now contains the normative `Cache{InformationUnit}.postCreateAvailability` policy
+with exactly `Immediate-And-Distributed`, `Immediate` and `OnRequest`, their Task
+semantics and all five invariants. Mneme interprets/applies cache availability;
+Mnemosyne alone establishes/reports authoritative durable persistence and retains
+version/outcome/Search Management responsibility. `OnRequest` defers materialisation,
+not persistence or governed accessibility. Supplied operation value versus governing
+metadata remains unresolved, with no default, precedence, threshold, topology,
+implementation/API or universal Provenance assignment. All six original DR-18/19
+questions and earlier qualifications remain unresolved. Existing component-body
+representation is sufficient; no element/specialisation/relationship is introduced.
+
+**Amendment verification and consolidated review:** PASS for canonical/metamodel/
+provenance/naming/navigation, offline schema/references, deterministic and isolated
+maintained-input generation, derived source/Manifest staleness, source links/browser,
+87 tooling tests, four focused final-placement checks and 90 Java architecture tests. All 1,996 IDs/names/types/standing/
+bindings, 2,246 relationships and 1,288 Views/folders persist. Only Mneme body/provenance
+changes; other 1,995 canonical files (including all other five reviewed definitions),
+Manifest/navigation/template, prior evidence and protected publications are exact.
+Amended XML SHA-256 `ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b`; [reconciliation](../../evidence/1.1.19/001/after/mneme-post-create-availability/reconciliation.md)
+and [governed amendment Report](../../evidence/1.1.19/001/after/ai-agent-reports/20261103T011842Z-mneme-post-create-availability-amendment.md) retain full correspondence and results.
+Actual Archi import/save/export PASS; strict transport **FAIL remains inherited**
+for the same 575 relationship IDs / 1741 language attributes,
+with all element values, relationship meaning/values and Views preserved and raw
+label/organisation/navigation qualifications retained. No guard was changed.
+Candidate is ready for consolidated Solution Architect review, not accepted/closed.
+Task event/prefix remains unavailable before closure; root 1.1.19/1.1.18, DR-1 and
+all unrelated dispositions are unchanged. No release, accepted publication or Git
+mutation occurred.
+
+
+**Solution Architect formal architectural acceptance — ACCEPTED:** The
+[acceptance/closure-preparation Task](../../evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dr18-dr19-acceptance-closure-preparation.md)
+expressly accepts the six reviewed definitions: Provenance (DataObject), Provenance
+Client Library, Dokimasia, Kleio, Mneme including the post-creation cache-availability
+amendment, and Mnemosyne (ApplicationComponents). It also accepts the associated
+DR-18/DR-19 relationships and responsibility allocations as represented in the
+consolidated reviewed content. This records the Solution Architect's decision;
+it is not an agent-issued approval. Earlier recommendation/pending accounts remain
+history and are superseded for this exact architectural content only.
+
+**Accepted Mneme policy and specimen:** `Cache{InformationUnit}.postCreateAvailability`
+and exactly `Immediate-And-Distributed`, `Immediate`, `OnRequest` are accepted with
+the amended definition's semantics and invariants: `OnRequest` means on-demand
+materialisation while authoritative persistence and governed accessibility remain.
+Canonical Markdown remains authority; the exact retained projection identifying
+this consolidated content is [amended XML](../../evidence/1.1.19/001/after/mneme-post-create-availability/Harmonia-Provenance-availability-amended-candidate.xml),
+SHA-256 `ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b`,
+1,996 elements / 2,246 relationships / 1,288 Views. No definition, native identity,
+relationship, View, source standing/provenance or publication is changed to record
+this acceptance; the HCRL supplies the current disposition without rewriting prior
+candidate-origin metadata or detailed-design qualifications.
+
+**Limits and closure preparation:** All six original DR-18/DR-19 design questions
+and unresolved policy determination (per-creation versus governing metadata, no
+selected precedence/default) remain unresolved. Acceptance supplies no waiver of
+verification/governance defects, no technical strict PASS, no DR-1–DR-17 change,
+no whole-HCRL closure confirmation and no release/publication/Git authority. The
+recorded 87 tooling, four final focused and 90 Java architecture tests PASS and real
+Archi 5.10 import/save/export PASS remain retained; the strict `xml:lang` verifier
+FAIL remains at 575 relationship IDs / 1,741 attributes. Original Task/acceptance
+event time is unavailable and remains unresolved, separately from explicit acceptance.
+Actual acceptance bindings, fresh preservation checks and closure-readiness findings
+are retained with the new governed Report after assessment; no missing disposition
+is manufactured.
+
+
+**Acceptance reconciliation and whole-HCRL readiness — actual result:** Fresh
+read-only canonical/schema/reference/native-endpoint verification reproduces the
+exact formally accepted specimen (`ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b`) byte for byte.
+All 1,996 canonical sources/IDs, 2,246 relationships and 1,288 Views/template records,
+including the six accepted definitions and ten associated ADD assertions, remain
+unchanged. Retained 87 tooling / four final focused / 90 Java architecture tests and
+actual Archi 5.10 import/save/export PASS are corroborated without rerunning or
+rewriting their evidence. Strict transport remains **FAIL**, exactly 575 relationship
+IDs / 1,741 xml:lang attribute differences; other raw format qualifications remain.
+No guard, canonical definition or prior evidence/publication changed.
+
+**Closure-readiness determination — NOT READY ON THE CURRENT RECORD:** The
+[governed Report](../../evidence/1.1.19/001/after/ai-agent-reports/20261103T013651Z-dr18-dr19-acceptance-closure-readiness.md) and [assessment](../../evidence/1.1.19/001/after/dr18-dr19-acceptance-closure-assessment/closure-readiness.json)
+identify five required treatment categories under current contracts: bounded
+whole-HCRL treatment of the retained transport qualification (classified-residual
+closure is possible, but no automatic waiver/PASS); original event/prefix provenance
+(eight current Task records, separately three inherited DR-9 originals); DR-15's three
+reader-facing structural-review scopes or explicit bounded treatment; the existing
+unanswered Minutiae control; and final whole-HCRL authorised/resulting-meaning and
+residual-continuity confirmation. Common Governance permits recorded explicit
+deferrals/exclusions without implementing every deferred matter; the five completed
+baseline references are not reopened blockers. No new deferral or waiver is issued.
+
+The six DR-18/19 detailed-design questions and policy-determination alternatives
+remain unresolved and are not implicit design-resolution prerequisites. This
+Task's architectural review/content acceptance is complete; it does not attest
+unrecorded reader inspections or accept unrelated verification/governance defects.
+Current acceptance event time remains unavailable, independently of explicit
+acceptance. Root 1.1.19/1.1.18, DR-1–DR-17 and the existing Minutiae control remain
+unchanged. HCRL stays pending; no completion, release advance, accepted publication,
+staging, commit or push. Final Solution Architect closure disposition is required.
+
+**Final Solution Architect disposition 5 — CONFIRMED, CLOSURE AUTHORISED:** The [final closure Task](../../evidence/1.1.19/001/before/ai-agent-tasks/20261103T024702Z-final-dispositions-and-closure.md) confirms that HCRL 1.1.19-001 accurately represents the authorised architectural changes and their incorporated results, subject to accurate recording of dispositions 1–4, and authorises governed closure conditional on applicable checks. DR-18/DR-19's six definitions, ten relationships and Mneme policy remain accepted unchanged. Previously unresolved design matters and authorised deferrals remain preserved; no resolution or promotion is implied. This is the Solution Architect's whole-HCRL confirmation, not agent confirmation. The new publication-history conflict in DR-20 triggers the Task's explicit stop-and-return condition; HCRL completion and the dependent accepted publication/commit/push await that disposition.
+
+<a id="dr-19"></a>
+## DR-19 — Provenance and Assurance
+
+**Solution Architect disposition:** Architectural intent agreed in the same
+[operative ADD Task](../../evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md), §§2.5–2.6;
+preparation authorised; formal candidate acceptance **pending**. This entry is open.
+
+**Issue/origin:** Separate adjudicable assurance meaning from DR-18 management and
+persistence while retaining their dependency. Both originate in the Task's account
+of the [DR-1](#dr-1) historical-evidence discussion. DR-1 and DR-17's explicit accepted
+scope remain unchanged; no inherited disposition is reopened or silently resolved.
+
+**Intent and authorised ADD:** Provenance is foundational evidence for Harmonia
+Assurance. Dokimasia evaluates governed activities/information against applicable
+assurance obligations, preserving observed activity/evidence, describing Provenance,
+applicable basis and assessment/findings/outcomes as distinct. Praxis remains the
+assurance basis; Journey remains the observed-progression evidence subject.
+Dokimasia remains Ponos-based and reuses the common execution/workflow framework,
+executing specialised Dokimasia Ergon and authorised AI Assurance Ergon. The assured
+activity must not determine, suppress, manufacture or alter its own outcome.
+Kleio retains Audit information management and historical audit evidence; that
+evidence may contribute to Assurance without making Kleio its engine. Provenance
+ownership does not transfer Audit responsibilities or conflate AuditEvents and Provenance.
+
+**Examination/reuse obligation:** Examine the existing elements listed in DR-18
+plus independent-assurance requirements, finite-assurance/self-audit constraints,
+Journey-observation/inference distinction and existing evidence/basis/assessment/
+finding/outcome representations. Preserve current qualifications and detailed-design
+deferrals. No duplicate Assurance information family or separate execution platform.
+
+**Constraints and unresolved matters:** All six Task §4.5 questions remain unresolved
+as in DR-18. Existing Praxis/Journey, independent evidence-access/control, detailed
+assurance structures/workflow and AI-discovery qualifications retain their standing.
+Do not manufacture requirements, authority, acceptance or missing historical decisions.
+
+**Evidence/review obligations:** Reconcile the six responsibilities against canonical
+sources; distinguish already represented, clarification, ADD and conflict; validate
+independence and preservation together with DR-18. Retain sufficient traceability
+and actual validation limits in this DR and governed iteration evidence, plus the
+working report under `.junie/reports/`. Explicit Solution Architect acceptance of
+the actual candidate is required; all task completion exclusions apply.
+
+**Candidate preparation status:** Registered before architectural mutation.
+Actual reconciliation, changes and validation will be appended here. Registration
+is authority to prepare, not formal acceptance or closure.
+
+
+**Actual ADD preparation result — DR-19:** Provenance's foundational evidence role is
+explicit in its new candidate DataObject and the appended Dokimasia contribution;
+Dokimasia Access expresses lifecycle management and Assurance evidence use. Existing
+Praxis basis, Journey observed-evidence subject, common Ponos execution, specialised
+Dokimasia/authorised AI Ergon, observed-versus-inferred meaning and independent
+assessment/findings/outcomes are reused without new concepts or invented schemas.
+Kleio's append-only clarification and qualified Association preserve optional
+historical audit input without transferring Audit ownership, equating AuditEvents
+and Provenance or making Kleio an assessor. Existing reference/necessary-replication,
+finite Dokimasia boundary, no separate self-AuditEvent, evidence-access/control and
+detailed design qualifications remain intact. The assured component's evidence
+contribution supplies no control over its Assurance outcome. No new finding/result
+DataObjects, recursive assessment or parallel execution framework is introduced.
+
+**Validation/transport and next checkpoint — DR-19:** DR-18's preservation/conformance
+results apply. Actual Archi 5.10 import/save/export PASS (exit 0), with all 1,996
+canonical element values, 2,246 relationship identities/types/endpoints/text/Property
+values and 1,288 Views preserved. **Strict transport verifier FAIL remains** for
+the exact same 575 inherited language-changed relationship IDs; generated label/
+organisation-ID omissions and raw navigation differences remain explicit, with no
+whole-model fidelity or loss-acceptance claim. See [transport evidence](../../evidence/1.1.19/001/after/dokimasia-provenance-add/archi-transport/summary.json)
+and [governed Report](../../evidence/1.1.19/001/after/ai-agent-reports/20261103T000246Z-dokimasia-provenance-add.md). Candidate Source/graph/native/reader inspection
+and formal Solution Architect acceptance remain required. No DR-1/DR-17/inherited
+status is changed. All six Task questions, broader inherited qualifications and Task
+event-time uncertainty remain; no DR/HCRL closure, release, accepted publication,
+commit or push occurred. This authorised activity stops at the review boundary.
+
+
+**Review findings follow-up — DR-19:** The same bounded amendment Task records the
+six component-level recommendations and expressly preserves independent Assurance,
+Provenance/Audit distinctions, the existing candidate graph and all six original
+DR-18/19 design questions. Only Mneme post-creation cache availability is refined;
+Mnemosyne remains unchanged. Concluded component review does not accept DR-19,
+DR-18 or the HCRL; consolidated Solution Architect review remains the next boundary.
+
+
+**Consolidated amendment review boundary — DR-19:** The six component-level findings
+remain recommendations: five unchanged definitions and the single required Mneme
+amendment. Exact preservation confirms Dokimasia/Kleio/Provenance/client-library and
+Mnemosyne responsibilities, the full original graph, Assurance independence and all
+six design questions intact. DR-18 records actual policy/verification; the
+[amendment Report](../../evidence/1.1.19/001/after/ai-agent-reports/20261103T011842Z-mneme-post-create-availability-amendment.md) and [transport qualification](../../evidence/1.1.19/001/after/mneme-post-create-availability/archi-transport/summary.json)
+record ready-for-review results and inherited strict xml:lang FAIL without waiver.
+This follow-up is candidate refinement only. No DR/HCRL acceptance/closure,
+version advance, accepted publication, commit or push; consolidated Solution
+Architect disposition remains outstanding.
+
+
+**Solution Architect formal architectural acceptance — ACCEPTED (DR-19):** The
+same [acceptance Task](../../evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dr18-dr19-acceptance-closure-preparation.md)
+formally accepts the consolidated six definitions and associated DR-18/DR-19
+architectural relationships/responsibility allocations. Independent Assurance,
+foundational Provenance evidence, Praxis/Journey and common execution distinctions,
+Kleio Audit ownership and Mneme/Mnemosyne separation are accepted as represented.
+DR-18 binds the exact unchanged specimen and accepted cache policy. Earlier pending
+accounts remain historical; detailed unknowns, strict FAIL and governance obligations
+remain separate. No unrelated acceptance, DR-1–DR-17 disposition change, defect
+waiver, HCRL closure, version advance, accepted publication, commit or push is implied.
+
+
+**DR-19 acceptance evidence and terminal readiness boundary:** Formal architectural
+acceptance remains **ACCEPTED**, as explicitly issued; no further architecture
+amendment is requested or performed. The [acceptance/readiness Report](../../evidence/1.1.19/001/after/ai-agent-reports/20261103T013651Z-dr18-dr19-acceptance-closure-readiness.md)
+and [unchanged content bindings](../../evidence/1.1.19/001/after/dr18-dr19-acceptance-closure-assessment/accepted-content.json)
+retain source, result and decision correspondence. The five closure-treatment
+categories recorded in DR-18 remain outstanding under their exact governing
+references. Independent Assurance/Audit/Provenance distinctions, original detailed
+unknowns and inherited qualifications are preserved. No strict FAIL is relabelled
+PASS and no missing governance evidence is inferred from content acceptance.
+The HCRL remains **not ready for closure on this record** and open for final
+Solution Architect disposition; no unrelated disposition, closure, publication,
+version or Git mutation occurs.
+
+
+**Final closure disposition and preserved DR-19 meaning:** The final closure Task reaffirms this accepted architectural content and explicitly confirms the whole HCRL, with the bounded transport qualification, eleven-record temporal exception, actual reader-review acceptance and DR-17 Minutiae acceptance recorded in their applicable DRs. The independent Assurance/Audit/Provenance distinctions, six original detailed-design questions, policy-determination alternatives, 673 inherited unresolved properties and 784 unincorporated OpenSpec candidates remain preserved. The conditional closure authorisation does not authorise the newly discovered DR-20 release departure.
+
+<a id="dr-20"></a>
+## DR-20 — Existing 1.1.19 publication and accepted-candidate release conflict
+
+**Solution Architect disposition:** UNRESOLVED — explicit bounded release-path disposition requested; none inferred from closure authorisation.
+
+**Discovered mandatory blocker:** Root release authority already records `version=1.1.19`, `previous_version=1.1.18`. The established 1.1.19 publication was accepted under originating HCRL 1.1.18/001 and the revised release disposition; its exact published XML SHA-256 is `9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09` (1,994 elements / 2,235 relationships / 1,285 Views). The currently accepted consolidated candidate is `ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b` (1,996 / 2,246 / 1,288). They are distinct architectural states, not repeated identical publication.
+
+**Applicable control and actual result:** The [workbench publication contract](../../archimate/README.md#publication-and-round-trip-use) states: “differing existing published bytes are rejected to preserve release history.” The maintained `architecture_continuum.write_projection` preflights every destination and rejects different existing published bytes. Its read-only `project --publish --check` returns exit 1 / **FAIL**, “Projection is missing or stale”, for the existing 1.1.19 projection. This is a separate release/publication failure from the explicitly qualified strict transport FAIL. No guard is changed, file removed or publication overwritten to bypass it. An initial system-Python invocation could not execute because `jsonschema` was absent; the existing dependency-complete EA virtual environment executed the actual check and established the failure.
+
+**Authority and stop boundary:** The final closure Task authorises the accepted 1.1.19 transition subject to existing release controls and expressly requires stopping for a new material discrepancy or previously unidentified mandatory blocker. [Fail-closed authority](../../../governance/architecture-governance.md#governance-enforcement-and-fail-closed-authority) requires explicit disposition of a departure. The Task is not inferred as permission to overwrite an existing accepted release or allocate an unrequested next release. HCRL remains pending; dependent completion, accepted publication, staging, commit and push stop. Recording the five issued dispositions, preserving evidence and read-only accepted-candidate verification continue independently.
+
+**Required Solution Architect treatment:** Explicitly choose the release path: a bounded authorisation to replace the 1.1.19 publications while preserving their prior baseline and provenance as retrievable evidence, an explicitly authorised next-patch publication transition with corresponding HCRL/release treatment, or a hold. Any approved departure must preserve its exact scope/conditions and keep verification guards intact. No option is selected by the agent. Previously accepted content and all unresolved/deferred matters remain unchanged.
+
+
+**Final verification and governed stop Report:** The [governed Report](../../evidence/1.1.19/001/after/ai-agent-reports/20261103T025148Z-final-dispositions-and-closure-stop.md) records all five final dispositions, exact accepted-candidate reproduction (**1,996 elements / 2,246 relationships / 1,288 Views**, SHA-256 `ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b`), six unchanged definitions/ten ADD relationships, preservation of 2,586 protected files and prior DR narratives, and a fresh **90-test Java architecture PASS**. The inherited 3,077 JDK simple-import fallbacks remain an assurance limitation; zero non-JDK fallbacks. Retained 87 tooling/four focused tests and actual Archi PASS are reconciled; strict transport remains **FAIL, 575/1,741**. Evidence layout remains **UNRESOLVED** for the eight current Tasks under disposition 2, with no layout errors. Read-only publication check remains **FAIL**, separate from the qualified transport result. DR-20 is unresolved; HCRL completion, publication, commit and push remain stopped, with current HEAD `32014bb5843ad7dffdda9ccc404173b758cec690` unchanged. The final closure Task timestamp is established; no historical time is manufactured.
+
+**Bounded command-definition activity — not a release-path disposition:** The
+Solution Architect's [command-definition Task](../../evidence/1.1.19/001/before/ai-agent-tasks/20261103T032456Z-hcrl-lifecycle-command-definitions.md)
+authorises shared agent orchestration only. The repository-root
+[HCRL lifecycle commands](../../../../AGENTS.md#hcrl-lifecycle-commands) define
+`HCRL Updated` as processing/preserving one pending iteration and carrying its
+actual decisions/obligations into the next, without release or accepted publication;
+`HCRL Finalised` invokes existing closure/release/publication gates with a verified
+release plan. Junie's guidelines reference the same definitions. AX-04 is preserved
+through existing machinery reuse; AX-08/09 through bounded provenance; AX-14 through
+distinct iteration, acceptance and release states; AX-15/17 through explicit
+outcomes, authority and stops. Neither command was executed. No new HCRL/DR,
+iteration, release allocation, accepted publication, commit or push is produced.
+Existing DR-20 disposition and prior decision history remain unchanged; this
+activity supplies no permission to replace 1.1.19, allocate 1.1.20 or close this HCRL.
+
+The [command-definition Report](../../evidence/1.1.19/001/after/ai-agent-reports/20261103T032921Z-hcrl-lifecycle-command-definitions.md)
+records bounded source/interface and semantic review, valid shared instruction
+links, preserved prior HCRL text and 130 unchanged protected files. No live Junie
+session or lifecycle execution is asserted; final file/link checks are provenance
+maintenance within this activity. No additional automation was required.
+
+
+**Iteration processing status — HCRL Updated:** HCRL **1.1.19/001 is PROCESSED**;
+terminal HCRL status remains **PENDING**. The active successor is
+[hcrl-1.1.19-002.pending.md](hcrl-1.1.19-002.pending.md), established from the same
+canonical state under the [operative Task](../../evidence/1.1.19/001/before/ai-agent-tasks/20261103T034015Z-hcrl-updated-iteration-processing.md).
+All 20 DRs/five DR-6 submatters, actual dispositions, incorporated facts, unresolved
+obligations and authorised deferrals carry forward; no disposition is reset.
+The original text above and its exact before evidence remain preserved.
+
+**Iteration verification and incorporated-state disposition:** No further canonical
+or implementation change is made; prior DR-17/18/19 application/acceptance remains
+scoped as recorded. Fresh maintained validation, offline XSD/references, exact
+candidate reproduction and reader/narrative staleness checks PASS. The preserved
+[candidate XML](../../evidence/1.1.19/001/after/iteration-processing/Harmonia-Architecture-candidate.xml)
+is byte-identical to the accepted specimen, SHA-256
+`ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b`
+(**1,996 elements / 2,246 relationships / 1,288 Views**). Reader navigation matches
+the reviewed candidate. Existing transport strict **FAIL** and the eight originating
+Task temporal **UNRESOLVED** records retain their exact Solution Architect treatment;
+687 current property qualifications comprise 673 inherited plus 14 on DR-18's two
+additions. No fresh transport, tests, PDF or human inspection is claimed.
+[Carry-forward evidence](../../evidence/1.1.19/001/after/iteration-processing/carry-forward.json)
+and [verification](../../evidence/1.1.19/001/after/iteration-processing/verification.json)
+record correspondence and limits. AX-04/08/09/14/15/17 are preserved through machinery
+reuse, originating evidence retention, distinct iteration/release states and explicit
+qualifications. **DR-20 remains UNRESOLVED**. Iteration advancement does not replace
+1.1.19, allocate 1.1.20, complete/register the HCRL, publish an accepted baseline,
+or authorise staging/commit/push. Root release remains 1.1.19 / predecessor 1.1.18.
+
+**Iteration processing Report:** [Formal Report](../../evidence/1.1.19/001/after/ai-agent-reports/20261103T034825Z-hcrl-updated-iteration-processing.md) records actual outcomes, preserved qualifications and the active pending successor.

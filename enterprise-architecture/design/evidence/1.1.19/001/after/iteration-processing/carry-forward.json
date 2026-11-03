@@ -1,0 +1,280 @@
+{
+  "purpose": "Bounded correspondence evidence for 001 to 002, not a separate decision register",
+  "sourceHcrl": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md",
+  "sourceBeforeSha256": "82455f278a4b79f9f0dac4a477fde297bf4bd56bf63999250fec20250066fce8",
+  "resultHcrl": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md",
+  "topLevelDecisionReviews": 20,
+  "subordinateDecisionReviews": [
+    "DR-6.01",
+    "DR-6.02",
+    "DR-6.03",
+    "DR-6.04",
+    "DR-6.05"
+  ],
+  "drNarrativesSha256": "0255cc00ec0dbfdcc257193e4eee07cd79291b987e9ef62b273badf37e848967",
+  "allNarrativesVerbatim": true,
+  "openingTable": "Common four-column form; source successor status retained as disposition and originating disposition/provenance retained in comment, with no field discarded",
+  "evidenceRetention": "Retained in originating iterations; linked from 002",
+  "decisions": [
+    {
+      "decisionReview": "DR-1",
+      "sourceFields": {
+        "subject": "Bounded export review and remaining incoming semantic changes",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+        "comment": "Bounded G14–G18 interpretation completed; other semantic changes excluded and deferred, not accepted"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-1",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-1",
+      "narrativeSha256": "21c50319ca55fd5fd08b6211724f861fb4236b3795dfd1e9c36e6e99cf32d242",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-2",
+      "sourceFields": {
+        "subject": "G14–G18 accepted Subject hierarchy",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Inherited accepted baseline; no new action",
+        "comment": "Completed and accepted; inherited baseline only"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-2",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-2",
+      "narrativeSha256": "47d18acdefd6f28363d02289d8cf4826a54930d593167803a9b2611b3cb01c11",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-3",
+      "sourceFields": {
+        "subject": "UseCase and UserStory modelling",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+        "comment": "Deferred unresolved; no native modelling acceptance"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-3",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-3",
+      "narrativeSha256": "a839e4d5d7969c4ca65968f932fc3053b301f58446ed3b9d65799f3fa64f0ee7",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-4",
+      "sourceFields": {
+        "subject": "Candidate identity and source contributions",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+        "comment": "Deferred unresolved; no canonical identity allocated"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-4",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-4",
+      "narrativeSha256": "d1ee434ae6c1a4b6b9ba543e62bd79c66f551a044e0684fe5e4a21a060214117",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-5",
+      "sourceFields": {
+        "subject": "Historical Capability targets",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+        "comment": "Deferred unresolved; history retained"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-5",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-5",
+      "narrativeSha256": "8c6422719f46a18150e2b52f34bf374835d856fec7726037f8fbf81869f96034",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-6",
+      "sourceFields": {
+        "subject": "Capability and Feature coverage, including DR-6.01–DR-6.05",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+        "comment": "Deferred advisory assessment; no coverage or edge accepted"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-6",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-6",
+      "narrativeSha256": "1c5c4d6c7d3756a390b0815b68e7195c50ccdede982166a0463c17927a9b6181",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-7",
+      "sourceFields": {
+        "subject": "Primary and secondary Subject classification",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+        "comment": "Deferred unresolved; supplied assignments retained"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-7",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-7",
+      "narrativeSha256": "eb2cc72be8e3274215356c66939a322b43762257a405ea01ba1801743117a9fa",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-8",
+      "sourceFields": {
+        "subject": "Source provenance, delivery scope and domain authority",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+        "comment": "Deferred unresolved; original source limits retained"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-8",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-8",
+      "narrativeSha256": "d49481d87faec1e63178b4560486db9e5371587185e81c2a94cbbff1fe510eae",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-9",
+      "sourceFields": {
+        "subject": "Historical Task times, supporting evidence and assurance limitations",
+        "successorStatus": "UNRESOLVED — bounded temporal exception authorised",
+        "preservedOriginatingDisposition": "Final closure Task disposition 2; original transfer/history preserved",
+        "comment": "Three inherited and eight current Task events/prefixes may remain UNRESOLVED; assurance limitations and future requirements preserved"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-9",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-9",
+      "narrativeSha256": "f25cf77b32f84c1af1596c51ac19689cb6b217362304a18b93b9d68429c38f8b",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-10",
+      "sourceFields": {
+        "subject": "G18.03 spelling",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Inherited accepted baseline; no new action",
+        "comment": "Completed and accepted; inherited baseline only"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-10",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-10",
+      "narrativeSha256": "672aa7bf90eb132bbe776dbde08928c874001f32230e0a1f7c662249a6aff7e9",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-11",
+      "sourceFields": {
+        "subject": "Previously blocked presentation reconciliation",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Inherited accepted baseline; no new action",
+        "comment": "Superseded blocking state; completed by DR-12/DR-13, history preserved"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-11",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-11",
+      "narrativeSha256": "9513cf0503d9f2734ef168a8555031ffffc39e6e5431ab6a8901cf2d03ea43ef",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-12",
+      "sourceFields": {
+        "subject": "115 Groupings and distinct Composition/Home completion",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Inherited accepted baseline; no new action",
+        "comment": "Completed and accepted with preserved naming qualifications"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-12",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-12",
+      "narrativeSha256": "9f5ec399e23da21db1d6802cf7f511bbe89036218080bae577b50c5fd103aa6b",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-13",
+      "sourceFields": {
+        "subject": "Five approved elements and complete authored Views",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Inherited accepted baseline; no new action",
+        "comment": "Completed; exact candidate visually accepted by the Solution Architect"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-13",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-13",
+      "narrativeSha256": "a1f782e954025f382dc0b21055ec4c6bd4aa8bba02b6b2253ec5a73a2c5e9511",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-14",
+      "sourceFields": {
+        "subject": "Inherited canonical naming, definition and standing qualifications",
+        "successorStatus": "Unresolved — carried forward",
+        "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+        "comment": "Deferred unresolved; no acceptance inferred from publication"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-14",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-14",
+      "narrativeSha256": "53ec087534e6a84d504b832cffefa7aff221ce9ecc89fde325c628907d59b177",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-15",
+      "sourceFields": {
+        "subject": "Generated-reader structural review",
+        "successorStatus": "ACCEPTED — actual Solution Architect review",
+        "preservedOriginatingDisposition": "Final closure Task disposition 3; prior deferral history preserved",
+        "comment": "Retained three scopes and applicable DR-18/DR-19 additions reviewed and accepted; no exhaustive page/element inspection asserted"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-15",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-15",
+      "narrativeSha256": "e431964cb8f250459923ea7a00dae8ae49d6c80c45b63455c0957e1777193f49",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-16",
+      "sourceFields": {
+        "subject": "Actual no-edit Archi transport qualifications",
+        "successorStatus": "ACCEPTED WITH QUALIFICATION — remediation deferred",
+        "preservedOriginatingDisposition": "Final closure Task disposition 1; actual strict FAIL preserved",
+        "comment": "Exactly 575 relationship identities / 1,741 xml:lang differences; evidence retained; no content-loss acceptance or general exemption"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-16",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-16",
+      "narrativeSha256": "a61335bdfa7d9a51ce25426598e070b41b34f4b8e6ca0f01b7120c8952b585a6",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-17",
+      "sourceFields": {
+        "subject": "SolutionFacet refactoring and final naming dispositions",
+        "successorStatus": "ACCEPTED — visual/model acceptance and bounded Minutiae",
+        "preservedOriginatingDisposition": "Earlier exact-candidate acceptance plus final closure Task disposition 4",
+        "comment": "Minutiae-Accepted: Yes for the disclosed supporting group only; all prior decisions and qualifications retained"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-17",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-17",
+      "narrativeSha256": "1ece5a17c043705182f634420dda01fe7ba4f8188c03e28db09c6590ff7af7a1",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-18",
+      "sourceFields": {
+        "subject": "Provenance Management",
+        "successorStatus": "ACCEPTED — Solution Architect architectural content acceptance",
+        "preservedOriginatingDisposition": "Prior formal acceptance reaffirmed by final closure Task; history retained",
+        "comment": "Six definitions, ten relationships and Mneme policy accepted unchanged; detailed design unknowns preserved; conditional whole-HCRL closure authorised"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-18",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-18",
+      "narrativeSha256": "f5e6c60e95d623429980a5745283cc66376c56fde16671a53ef4b684cedcb9b4",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-19",
+      "sourceFields": {
+        "subject": "Provenance and Assurance",
+        "successorStatus": "ACCEPTED — Solution Architect architectural content acceptance",
+        "preservedOriginatingDisposition": "Prior formal acceptance reaffirmed by final closure Task; history retained",
+        "comment": "Assurance/Audit/Provenance boundaries accepted; final whole-HCRL confirmation recorded; release conflict in DR-20 awaits adjudication"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-19",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-19",
+      "narrativeSha256": "fe6cd1ed5a443d5820ece1371951a441b35ba5cd8f558593a401878519c15b4a",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    },
+    {
+      "decisionReview": "DR-20",
+      "sourceFields": {
+        "subject": "Existing 1.1.19 publication and accepted-candidate release conflict",
+        "successorStatus": "UNRESOLVED — Solution Architect disposition required",
+        "preservedOriginatingDisposition": "No departure or replacement authority inferred",
+        "comment": "Existing accepted 1.1.19 bytes differ; publication guard preserved; completion/publication/commit/push stopped pending disposition"
+      },
+      "source": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-20",
+      "result": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-002.pending.md#dr-20",
+      "narrativeSha256": "e1e6319e1a99c899443eba416c41e9954869330baeb7c77e91851f5dda9ef7b5",
+      "treatment": "Preserve original narrative and exact disposition/status fields; no new decision"
+    }
+  ]
+}

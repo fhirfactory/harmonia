@@ -1,0 +1,16 @@
+{
+  "command": [
+    "mvn",
+    "-o",
+    "test",
+    "-pl",
+    "paradeigma/paradeigma-test",
+    "-am",
+    "-Dtest=*ArchitectureTest",
+    "-Dsurefire.failIfNoSpecifiedTests=false"
+  ],
+  "exitCode": 0,
+  "outcome": "PASS",
+  "summary": "enterprise-architecture/design/evidence/1.1.19/002/after/dr20-disposition/architecture-tests-summary.log",
+  "jdkJrtFallbackWarnings": 3077
+}

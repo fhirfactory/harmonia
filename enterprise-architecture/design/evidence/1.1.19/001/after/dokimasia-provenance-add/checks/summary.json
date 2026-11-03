@@ -1,0 +1,76 @@
+{
+  "toolingTests": {
+    "status": "PASS",
+    "exitCode": 0,
+    "tests": 87,
+    "seconds": 358.3,
+    "command": "timeout --signal=TERM --kill-after=5s 420s /tmp/harmonia-tooling-venv/bin/python -B -m unittest discover -s enterprise-architecture/tooling/tests -v"
+  },
+  "requiredJavaArchitectureTests": {
+    "status": "PASS",
+    "exitCode": 0,
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "command": "timeout --signal=TERM --kill-after=5s 300s mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false"
+  },
+  "browserSmoke": {
+    "status": "PASS",
+    "elements": 1996,
+    "checks": [
+      "initial population",
+      "identity search",
+      "selection",
+      "Feature filter",
+      "combined currentness filter"
+    ],
+    "limits": "DOM-contract smoke test; no pixel/visual browser claim"
+  },
+  "independentGeneration": {
+    "status": "PASS",
+    "artifactsIdentical": [
+      "candidate.xml",
+      "manifest.md",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/reader-candidate/publication.json",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/reader-candidate/navigation.json",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/reader-candidate/continuum-catalogue.tex",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/reader-candidate/README.md",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/reader-candidate/continuum.html",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/narrative-candidate/publication.json",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/narrative-candidate/README.md",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/narrative-candidate/structure.json",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/narrative-candidate/continuum-rad.tex",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/narrative-candidate/parts/cross-cutting-references.tex",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/narrative-candidate/parts/implementation-and-migration.tex",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/narrative-candidate/parts/technology.tex",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/narrative-candidate/parts/application.tex",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/narrative-candidate/parts/business.tex",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/narrative-candidate/parts/strategy.tex",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/narrative-candidate/parts/motivation.tex",
+      "enterprise-architecture/design/evidence/1.1.19/001/after/dokimasia-provenance-add/narrative-candidate/parts/architecture-governance.tex"
+    ],
+    "isolatedProject": {
+      "status": "PASS",
+      "projectedSha256": "13b0c5cf52d092e70a9f57e6d95a8ebc1d3fd712dfb7c60dfb92b6c38d7ecebf",
+      "elements": 1996,
+      "relationships": 2246
+    },
+    "inputs": "Maintained canonical Continuum, governance, tooling, design presentation/explicit retained Task evidence, narrative presentation, root release and installed dependencies",
+    "historicalDocsScriptsGitAndProcessingAbsent": true,
+    "allocatedIdentities": 0,
+    "tests": "Full tooling suite executed separately once; not repeated inside this generation check.",
+    "limits": "Isolated regeneration proves declared-input independence and byte reproducibility, not human acceptance or raw Archi fidelity."
+  },
+  "canonicalValidation": "PASS",
+  "projectionOfflineSchemaIdentityReferencesNativeEndpoints": "PASS",
+  "deterministicRegeneration": "PASS",
+  "rootManifestCandidateReaderNarrativeSourceStaleness": "PASS",
+  "sourceLinks": "PASS",
+  "exactExistingStatePreservation": "PASS",
+  "actualArchiImportSaveExport": "PASS",
+  "strictArchiTransport": "FAIL — inherited language-attribute qualification; not waived",
+  "humanInspectionAndCandidateAcceptance": "PENDING",
+  "taskEventAndFilenamePrefix": "UNRESOLVED — current and inherited Task events require Solution Architect treatment before closure",
+  "scope": "Candidate preparation only; no accepted-baseline publication/release transition"
+}

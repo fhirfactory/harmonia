@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "exactFinalCandidateSha256": "ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b",
+  "onlyMnemeAndBoundedHcrlAdditionsChanged": true,
+  "priorDr1ThroughDr17AndRecommendationsUnchanged": true,
+  "priorCandidateInputsReportsPublicationsAndToolingUnchanged": true,
+  "reportAndReconciliationLocalLinksChecked": 28,
+  "evidenceLayoutErrors": 0,
+  "unresolvedTaskEventRecords": 7,
+  "evidenceLayoutOutcome": "UNRESOLVED; original Task times/prefixes preserved for Solution Architect treatment",
+  "releaseUnchanged": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "formalAcceptance": "PENDING"
+}
