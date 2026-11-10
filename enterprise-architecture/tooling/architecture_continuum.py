@@ -281,6 +281,8 @@ def validate(root=ROOT, *, previous=None, pending=None):
                 relation['standing'] == {'semantic': q['source_assertion']['status'], 'currentness': q['record_state']} and relation['provenance'].get('sourceAssertion') == q['source_assertion'])
             require(preserved,
                     'Materialised predicate loses source standing/provenance: ' + q['sourcePointer'])
+    import journey_requirements
+    journey_requirements.validate(elements, relationships, representations, require)
     boundary_path = root / CONFIG / 'migration-boundary.json'
     if boundary_path.exists():
         boundary = read_json(boundary_path)
@@ -341,7 +343,11 @@ def project(root=ROOT):
     propdefs = model.find('a:propertyDefinitions', N)
     for identifier, name in [('continuum-navigation-number', 'Continuum / Navigation Number'),
                              ('continuum-navigation-path', 'Continuum / Navigation Path'),
-                             ('continuum-navigation-references', 'Continuum / Navigation References')]:
+                             ('continuum-navigation-references', 'Continuum / Navigation References'),
+                             ('journey-definition', 'Journey / Definition'),
+                             ('journey-participation-characteristics', 'Journey / Participation characteristics'),
+                             ('stakeholder-perspective', 'Stakeholder / Catalogue perspective'),
+                             ('requirement-solution-facet', 'Requirement / SolutionFacet context')]:
         require(identifier not in definitions and name not in definitions.values(), 'Duplicate navigation property definition')
         prop = ET.SubElement(propdefs, tag('propertyDefinition'), identifier=identifier, type='string')
         ET.SubElement(prop, tag('name')).text = name
@@ -366,6 +372,12 @@ def project(root=ROOT):
         # Feature is already an established specialization even in captures whose
         # original transport used only harmoniaType. Topic needs explicit authorship.
         set_property(rows, definitions, 'Specialization', m.get('specialization'))
+        if m.get('journeyDefinition') is not None:
+            set_property(rows, definitions, 'Journey / Definition', json.dumps(m['journeyDefinition'], ensure_ascii=False, sort_keys=True))
+        if m.get('stakeholderPerspective'):
+            set_property(rows, definitions, 'Stakeholder / Catalogue perspective', m['stakeholderPerspective'])
+        if m.get('naming', {}).get('solutionFacetCanonicalId'):
+            set_property(rows, definitions, 'Requirement / SolutionFacet context', m['naming']['solutionFacetCanonicalId'])
         set_property(rows, definitions, 'Continuum / Canonical Source', str(element_path(m, catalogue)))
         set_property(rows, definitions, 'Continuum / Semantic Standing', m['standing']['semantic'])
         set_property(rows, definitions, 'Continuum / Currentness', m['standing']['currentness'])
@@ -380,7 +392,10 @@ def project(root=ROOT):
         for key in ('name', 'documentation'):
             for value in row.get(key, []):
                 ET.SubElement(node, tag(key), **value.get('attributes', {})).text = value['text']
-        properties(node, row.get('properties', []))
+        rows = copy.deepcopy(row.get('properties', []))
+        if row.get('participationCharacteristics') is not None:
+            set_property(rows, definitions, 'Journey / Participation characteristics', json.dumps(row['participationCharacteristics']))
+        properties(node, rows)
     release = read_json(root / 'architecture-release.json')
     model_props = model.find('a:properties', N)
     for prop in model_props:

@@ -1,0 +1,14 @@
+{
+  "authority": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T215321Z-bounded-patient-and-transport-follow-up.md",
+  "relevantAxioms": {
+    "AX-14": "Preserve individual perspective versus broad group and historical assertion standing.",
+    "AX-15": "Keep no-edit transport uncertainty distinct from canonical correction.",
+    "AX-17": "Use the issued bounded identity-resolution authority; infer no release acceptance."
+  },
+  "preferredCurrentCanonicalId": "5f6d333e94634420b8a8bbf8b9cb6e2a",
+  "duplicateAllocationToReserve": "ad2012d59bb542e8bc7d8bd20547e342",
+  "broaderIdentityUnchanged": "ea5a315450ce4cfb87417263560c2b6d",
+  "reason": "The historical Patient definition is Care Recipient, with no different actor, organisational scope, clinical boundary or alternative perspective established. It matches the individual care-subject perspective in the accepted sixteen-member catalogue. The old privacy association remains historical. This is definition/scope reconciliation, not name matching. The broader Patients & Care Recipients group includes families and communities and remains distinct.",
+  "relationshipTreatment": "Preserve historical privacy edge unchanged; rebind the current Journey participation source to the reused Patient binding, retaining its assertion ID and original endpoint provenance.",
+  "viewTreatment": "Change only the two new Patient node elementRefs; preserve all visual IDs, geometry, connections and inherited Views."
+}

@@ -1,0 +1,1 @@
+Observed 3681 native folders; 17110 direct element/relationship/View entries

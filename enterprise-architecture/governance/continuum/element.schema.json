@@ -109,7 +109,10 @@
         "NonFunctionalRequirement",
         "InformationRequirement",
         "TransitionRequirement",
-        "AssuranceRequirement"
+        "AssuranceRequirement",
+        "Journey",
+        "UseCase",
+        "UserStory"
       ]
     },
     "displayName": {

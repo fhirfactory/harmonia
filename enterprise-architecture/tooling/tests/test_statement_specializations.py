@@ -109,7 +109,7 @@ class StatementSpecializationTests(unittest.TestCase):
         self.assertEqual((authored.get(c.XSI), authored.get('source'), authored.get('target')),
                          ('Aggregation', 'id-ca7d2832c33b4b4e82827df69324daba',
                           'id-78d8fa44cc7452fea57041c8a2b8b102'))
-        self.assertEqual(len(model.findall('a:views/a:diagrams/a:view', c.N)), 1288)
+        self.assertEqual(len(model.findall('a:views/a:diagrams/a:view', c.N)), 1304)
 
     def test_projection_preserves_statement_type_and_explicit_subject_edges(self):
         _, elements = c.load()

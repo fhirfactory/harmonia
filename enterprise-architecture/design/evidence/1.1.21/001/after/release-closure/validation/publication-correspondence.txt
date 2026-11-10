@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "publishedArtifacts": 19,
+  "unchangedAcceptedInputs": 6620,
+  "sha256": "6471411187a5ff72b005c9b9855c48beb3d86b7ae6c7c556a4eb58338011a739",
+  "checks": {
+    "relativeUrlCarriers": 59374,
+    "readerElementRecords": 13084,
+    "digestEntries": 15
+  }
+}

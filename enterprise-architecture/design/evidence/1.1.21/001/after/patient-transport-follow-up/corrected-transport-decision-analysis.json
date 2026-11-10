@@ -1,0 +1,142 @@
+{
+  "scope": "Exact corrected 1.1.21 transport only; diagnostic interpretation does not modify comparator, raw evidence, classifications, canonical model or template.",
+  "baselineXmlSha256": "6471411187a5ff72b005c9b9855c48beb3d86b7ae6c7c556a4eb58338011a739",
+  "returnedXmlSha256": "0c1422c1f0dc609e9c963eb7a1d66b169e758f437e859e7e1d5189060724e89f",
+  "rawClassificationsUnchanged": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 4693,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 18304,
+    "SEMANTIC DIFFERENCE": 111868,
+    "UNEXPLAINED DIFFERENCE": 16297
+  },
+  "architecturalTextAndStructureChecks": {
+    "ownerPopulations": {
+      "element": 6542,
+      "relationship": 9264,
+      "view": 1304,
+      "model": 1
+    },
+    "allElementAndRelationshipAttributesIncludingEndpointsIdentical": true,
+    "allElementRelationshipNameAndDocumentationTextsPreservedWithOnlyLanguageAnnotationChanges": true,
+    "propertyValueCountWithExactTextMultiplicityAndOwner": 138188,
+    "languageAttributeChanges": [
+      {
+        "before": null,
+        "after": "en",
+        "count": 111868
+      }
+    ]
+  },
+  "organisation": {
+    "memberReferencesAndTheirOrderedPlacementIdentical": true,
+    "foldersWithUnchangedNamesAndDocumentation": 3681,
+    "folderDocumentationRecordsPreserved": 2455,
+    "folderIdentifiersLost": 2498,
+    "leafLabelsLost": {
+      "element": 6542,
+      "relationship": 9264
+    },
+    "allLostLeafLabelTextsRecoverableExactlyFromReferencedRecords": 15806,
+    "meaning": "Real loss of representation IDs and explicit labels. These are generated locators/duplicate labels, not canonical element IDs or architectural definitions. Regeneration remains possible; the returned Exchange is not byte- or metadata-faithful."
+  },
+  "presentation": {
+    "visualNodesWithIdenticalAttributesAndReferences": 4599,
+    "connectionsWithIdenticalAttributesAndBendpoints": 2042,
+    "preExistingStylesIdentical": true,
+    "explicitConnectionStylesAdded": 238,
+    "viewsWithReorderedConnections": [
+      "id-cbbd8ecf3d3c4a8cb5c317cf88482765",
+      "id-0351ef328583443cabe79ec78a2d6bc2",
+      "id-a8556f6c21e2464ab6343c93430173cf",
+      "id-2071f36be105473380926869b6d99440",
+      "id-c42053244d354baba7e41d2275de1861",
+      "id-ef2dafd44f7c45bd844c67b1564afae9",
+      "id-30dcae1b8ce64ef0948307d5b1a798f8",
+      "id-bca92c597bf3442e852a4d93dc1173dc",
+      "id-2b55fa20a97a4e7ab6f2474cd1c3f581",
+      "id-861324d256a14489a729dcc709fefcd8",
+      "id-bec8887be1c14ae2be82be812029ff78",
+      "id-682d2d0609a548368a123886c0dae029",
+      "id-a98cdc680f214c7a8339d9ed0f777c39",
+      "id-7902eb92cb944442902c099ce4b52486",
+      "id-9fcf15eef3774e74afa6d4db30c4b5cc"
+    ],
+    "viewNodeOrderUnchanged": true,
+    "meaning": "Default-looking black line/Sans 9 styling was made explicit. Connection stacking order may affect overlaps; no pixel equivalence or invariance across Archi preferences is established."
+  },
+  "findingFamilyAccounting": [
+    {
+      "scope": "elements",
+      "rawClassification": "SEMANTIC DIFFERENCE",
+      "reason": "Semantic record attribute changed",
+      "count": 99640
+    },
+    {
+      "scope": "elements",
+      "rawClassification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "reason": "Uniquely keyed unordered collection",
+      "count": 4410
+    },
+    {
+      "scope": "organisation",
+      "rawClassification": "INFORMATION LOSS",
+      "reason": "Attribute absent after transport",
+      "count": 2498
+    },
+    {
+      "scope": "organisation",
+      "rawClassification": "INFORMATION LOSS",
+      "reason": "Subtree absent after transport; raw input retained by hash",
+      "count": 15806
+    },
+    {
+      "scope": "organisation",
+      "rawClassification": "UNEXPLAINED DIFFERENCE",
+      "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation",
+      "count": 15806
+    },
+    {
+      "scope": "other",
+      "rawClassification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "reason": "Exact unique Property key resolves both definition IDs; all other definition content and owner values compared independently",
+      "count": 69
+    },
+    {
+      "scope": "other",
+      "rawClassification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "reason": "Uniquely keyed unordered collection",
+      "count": 1
+    },
+    {
+      "scope": "relationships",
+      "rawClassification": "SEMANTIC DIFFERENCE",
+      "reason": "Semantic record attribute changed",
+      "count": 12228
+    },
+    {
+      "scope": "relationships",
+      "rawClassification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "reason": "Uniquely keyed unordered collection",
+      "count": 213
+    },
+    {
+      "scope": "views",
+      "rawClassification": "UNEXPLAINED DIFFERENCE",
+      "reason": "Additional subtree with no established equivalence",
+      "count": 238
+    },
+    {
+      "scope": "views",
+      "rawClassification": "UNEXPLAINED DIFFERENCE",
+      "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation",
+      "count": 253
+    }
+  ],
+  "demonstratedArchitecturalContentLoss": "None found in checked identities, native types, endpoints, names, documentation, owner/key/value/multiplicity, geometry or references. This is a bounded conclusion, not whole-byte fidelity.",
+  "semanticQualification": "111868 absent-to-en language annotations change language metadata, even though all associated texts and owners survive. Treating them as English for this exact dataset is reasonable with an explicit qualification; no general multilingual equivalence is established.",
+  "remainingUncertainty": [
+    "View connection paint/stacking order and newly explicit styles may affect appearance; numeric geometry and labels are preserved but pixel equivalence has not been demonstrated.",
+    "Returned organisation locators and explicit labels cannot serve as a lossless editable source; canonical Markdown and the authored template remain authoritative."
+  ],
+  "recommendation": "Reasonably accept this exact retained Archi operation with a bounded transport qualification, preserving strict FAIL and the exact native/returned evidence. Do not apply returned XML or treat this as approval of comparator changes or future runs. This corrected run establishes correspondence to the corrected candidate pinned above."
+}

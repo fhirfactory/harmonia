@@ -48,8 +48,34 @@ class ContinuumTests(unittest.TestCase):
 
     def test_population_and_provenance(self):
         r=c.validate(self.root)
-        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(5685,6636,462))
+        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(6542,9264,462))
         self.assertEqual(r['elements'],r['provenanceCoverage'])
+
+    def test_journey_and_independent_requirement_projection_retains_context(self):
+        model = c.secure_xml(self.baseline)
+        definitions = {p.get('identifier'): p.findtext('a:name', namespaces=c.N)
+                       for p in model.findall('a:propertyDefinitions/a:propertyDefinition', c.N)}
+        nodes = {n.get('identifier'): n for n in model.findall('a:elements/a:element', c.N)}
+
+        def values(node):
+            return {definitions[p.get('propertyDefinitionRef')]: p.findtext('a:value', namespaces=c.N)
+                    for p in node.findall('a:properties/a:property', c.N)}
+
+        for cid, (metadata, _, _) in self.elements.items():
+            projected = values(nodes[metadata['exchange']['identifier']])
+            if metadata.get('specialization') == 'Journey':
+                self.assertEqual(json.loads(projected['Journey / Definition']), metadata['journeyDefinition'])
+            if metadata.get('specialization') in ('UseCase', 'UserStory'):
+                self.assertEqual(projected['Requirement / SolutionFacet context'],
+                                 metadata['naming']['solutionFacetCanonicalId'])
+            if metadata.get('stakeholderPerspective'):
+                self.assertEqual(projected['Stakeholder / Catalogue perspective'], metadata['stakeholderPerspective'])
+        relationships = {n.get('identifier'): n for n in model.findall('a:relationships/a:relationship', c.N)}
+        for metadata, _, _ in self.elements.values():
+            for row in metadata['relationships']:
+                if 'participationCharacteristics' in row:
+                    self.assertEqual(json.loads(values(relationships[row['identifier']])[
+                        'Journey / Participation characteristics']), row['participationCharacteristics'])
 
     def test_identity_type_location_and_standing_fail_closed(self):
         cases=[{'canonicalId':'bad'}, {'archimateType':'InventedDocument'}, {'specialization':'Feature'},

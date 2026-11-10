@@ -40,7 +40,101 @@
       "selector": "NFR-081"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "identifier": "id-f99179417e0d458786de214183cdcd59",
+      "archimateType": "Association",
+      "source": "id-67196ebfe93e5e2c9d05bf596493aeee",
+      "target": "id-37c2ba58273f596e9c82f751b363ee01",
+      "standing": {
+        "semantic": "Authorised 1.1.21 incorporation candidate; exact assertions pending Solution Architect result review",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md",
+        "selector": "Accepted semantics; Authorised Activity / Scope",
+        "contributions": [
+          {
+            "canonicalRequirement": "0f07f89a3a854bfdac4d4fc423feefca",
+            "nativeDisposition": "Solution Architect directed Association disposition, 2026-11-10T10:47:35.537Z"
+          }
+        ]
+      },
+      "documentation": [
+        {
+          "text": "This independently identifiable requirement constrains the applicable Journey behaviour, progression or outcome within its original release/workload scope. Source thresholds, unresolved targets and qualifications remain unchanged.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "isDirected": "true"
+      }
+    },
+    {
+      "identifier": "id-53525d090e7e434a9e225fbf139dce8f",
+      "archimateType": "Association",
+      "source": "id-67196ebfe93e5e2c9d05bf596493aeee",
+      "target": "id-8adc37c458e05a4a87542379ac8388e4",
+      "standing": {
+        "semantic": "Authorised 1.1.21 incorporation candidate; exact assertions pending Solution Architect result review",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md",
+        "selector": "Accepted semantics; Authorised Activity / Scope",
+        "contributions": [
+          {
+            "canonicalRequirement": "0f07f89a3a854bfdac4d4fc423feefca",
+            "nativeDisposition": "Solution Architect directed Association disposition, 2026-11-10T10:47:35.537Z"
+          }
+        ]
+      },
+      "documentation": [
+        {
+          "text": "This independently identifiable requirement constrains the applicable Journey behaviour, progression or outcome within its original release/workload scope. Source thresholds, unresolved targets and qualifications remain unchanged.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "isDirected": "true"
+      }
+    },
+    {
+      "identifier": "id-fecfb2f1b36740db875b558251bf57fe",
+      "archimateType": "Association",
+      "source": "id-67196ebfe93e5e2c9d05bf596493aeee",
+      "target": "id-577fbdb4938c570b8f107bddd69bc036",
+      "standing": {
+        "semantic": "Authorised 1.1.21 incorporation candidate; exact assertions pending Solution Architect result review",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md",
+        "selector": "Accepted semantics; Authorised Activity / Scope",
+        "contributions": [
+          {
+            "canonicalRequirement": "0f07f89a3a854bfdac4d4fc423feefca",
+            "nativeDisposition": "Solution Architect directed Association disposition, 2026-11-10T10:47:35.537Z"
+          }
+        ]
+      },
+      "documentation": [
+        {
+          "text": "This independently identifiable requirement constrains the applicable Journey behaviour, progression or outcome within its original release/workload scope. Source thresholds, unresolved targets and qualifications remain unchanged.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "isDirected": "true"
+      }
+    }
+  ],
   "unresolvedProperties": {
     "responseTimeThresholds": "The accepted source explicitly leaves response-time thresholds TBD. Preserved under HCRL 1.1.17-001 DR-3."
   },

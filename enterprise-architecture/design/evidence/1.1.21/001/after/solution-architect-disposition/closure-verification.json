@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "scope": "Record issued Solution Architect dispositions and verify unchanged exact incorporated candidate, with mandatory human gates explicitly pending.",
+  "taskIssuedAt": "2026-11-10T22:17:57.677Z",
+  "dispositions": {
+    "DR-24": "ACCEPTED subject to outstanding mandatory release checks; reviewed new Views visually accepted.",
+    "DR-25": "ACCEPTED WITH QUALIFICATION for exact original/corrected operations; strict FAIL and all classifications retained.",
+    "DR-26": "ACCEPTED, including established identity, historical correspondence, privacy assertion, corrected Journey participation and visual inspection of both corrected Views."
+  },
+  "candidateSha256": "6471411187a5ff72b005c9b9855c48beb3d86b7ae6c7c556a4eb58338011a739",
+  "pinnedInputsUnchanged": 6620,
+  "canonicalSourcesUnchanged": 6542,
+  "checks": [
+    {
+      "check": "project-check",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/project-check.txt"
+    },
+    {
+      "check": "reader-check",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/reader-check.txt"
+    },
+    {
+      "check": "narrative-check",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/narrative-check.txt"
+    },
+    {
+      "check": "independent-generation",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/independent-generation.txt"
+    },
+    {
+      "check": "native-tree",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/native-tree.txt"
+    },
+    {
+      "check": "canonical-links",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/canonical-links.txt"
+    }
+  ],
+  "isolatedReproduction": {
+    "generatedCandidateArtifacts": 18,
+    "rootManifest": 1,
+    "legacyDocsScriptsAndGitAbsent": true,
+    "liveCanonicalSourcesUnchanged": true
+  },
+  "testEvidence": "Earlier broad ADD and corrected 22-test follow-up evidence remains valid for unchanged source/test bytes; no unnecessary test-suite rerun.",
+  "releaseAuthorityAndManifestCheck": "PASS",
+  "releasePreflight": "PASS; no additional patch allocation; no immutable path conflict.",
+  "transport": "Original and corrected operations accepted with bounded qualification; strict verifier FAIL unchanged. No new import/export or remediation.",
+  "humanClosureRequirements": [
+    {
+      "requirement": "Solution Architect review of exact imported native tree and generated reader navigation, or explicit bounded 1.1.21 departure.",
+      "authority": "Architecture Review Praxis section 5"
+    },
+    {
+      "requirement": "Explicit DR-22 supporting Minutiae group disposition.",
+      "authority": "Architecture Governance / Bounded Minutiae"
+    },
+    {
+      "requirement": "Confirmation that the exact HCRL represents the authorised change and incorporated result with retained qualifications.",
+      "authority": "Architecture Review Praxis section 6"
+    }
+  ],
+  "hcrl": "pending 1.1.21/001",
+  "head": "c08a02a5569ead5805a46048da486db5365adc7c",
+  "transition": "No canonical/template/tooling change, release allocation, iteration advance, immutable publication, HCRL completion, commit or push.",
+  "limits": [
+    "Automated checks and generated inventory do not replace the required human structural reviews.",
+    "Existing historical qualifications retain original scope; settled Patient, transport and incorporation decisions are not reopened.",
+    "No PDF compilation or new visual inspection is claimed."
+  ],
+  "validationLogSha256": {
+    "native-tree.txt": "6e5c3583bba76896b0f242b52e1c465f5fdf51e51a16ca754f77463361bc693e",
+    "canonical-links.txt": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431",
+    "reader-check.txt": "237819d9e4e4c97bb7ef9938202536d01b5ced667f54bb6a4b1e55d6cae53270",
+    "project-check.txt": "de66a868b9d9e813f76f9c5e82355a44915da7087a1429654fb2ca7b8b17c202",
+    "independent-generation.txt": "e99e7abdf08ca56275a0330cd422a8312671915dcf3701ac23f7cc620aee3417",
+    "narrative-check.txt": "7655e01069d33f1d03972882ab38b17a4a257ae401edfd0d6383e31019c81d60"
+  }
+}

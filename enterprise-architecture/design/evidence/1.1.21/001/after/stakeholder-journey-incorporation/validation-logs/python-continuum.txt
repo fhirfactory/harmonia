@@ -1,0 +1,8 @@
+test_journey_and_independent_requirement_projection_retains_context (test_continuum.ContinuumTests.test_journey_and_independent_requirement_projection_retains_context) ... ok
+test_workbench_exact_baseline_and_complete_dispositions (test_continuum.ContinuumTests.test_workbench_exact_baseline_and_complete_dispositions) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 139.010s
+
+OK
+total 95 passed 41 remaining {'continuum': 2, 'navigation': 14, 'other': 38}

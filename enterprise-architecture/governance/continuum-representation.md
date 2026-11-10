@@ -236,6 +236,25 @@ directed Association specialisation and is stored as an assertion, not an elemen
 
 ## Resource fields and Markdown content
 
+### Stakeholder, Journey and independent requirements — 1.1.21 ADD
+
+The [Stakeholder/Journey/requirements profile](stakeholder-journey-requirements-profile.md)
+implements the issued 1.1.21 semantics and attributable native-relationship
+disposition. Journey specialises ValueStream; UseCase and UserStory independently
+specialise Requirement. A constituent Journey has the same element type as its
+parent. Optional contextual participation and progression remain separate from
+authorisation, accountability and runtime execution. The profile records naming,
+projection, identity reconciliation and review limits; incorporation supplies no
+final acceptance of the resulting candidate.
+
+The bounded [Patient reconciliation](../design/review/1.1.21/hcrl-1.1.21-001.pending.md#dr-26)
+uses the existing identity-correspondence contract to reserve a duplicate
+Stakeholder allocation as history. Such a correspondence-backed historical
+Stakeholder entry remains in the cross-cutting Stakeholder index, with a derived
+successor reference; it does not enter the Capability history hierarchy or the
+Motivation decomposition. Historical association standing is independent of the
+reused element's current catalogue applicability.
+
 ### SolutionFacet classification — 1.1.19 candidate
 
 The Solution Architect's [refactoring Task](../design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-refactoring.md)

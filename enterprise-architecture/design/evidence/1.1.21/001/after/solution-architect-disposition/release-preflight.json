@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "phase": "Read-only release preflight; publication/completion not executed",
+  "release": {
+    "version": "1.1.21",
+    "previous_version": "1.1.20"
+  },
+  "patchAllocation": "Already allocated once by 1.1.21 initialisation; this change set requires no additional increment.",
+  "acceptedPredecessorHcrl": "enterprise-architecture/design/register/1.1.20/hcrl-1.1.20-001.complete.md",
+  "acceptedPredecessorXmlSha256": "1954006168f3a993de9b31be4f7f81599f39f7ba55b4c32b85ff7aca0b151512",
+  "acceptedCandidateSha256": "6471411187a5ff72b005c9b9855c48beb3d86b7ae6c7c556a4eb58338011a739",
+  "futureDestinationsAbsent": [
+    "enterprise-architecture/design/archimate/published/1.1.21",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.21",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21",
+    "enterprise-architecture/design/register/1.1.21"
+  ],
+  "immutablePathConflicts": [],
+  "protectedAcceptedPublicationRegisterAndReleaseFilesUnchanged": 240,
+  "remainingGate": "Separate human structural checkpoints, DR-22 supporting group disposition, and Review Praxis section 6 whole-HCRL result confirmation.",
+  "repositoryTransition": "Dependent terminal actions remain unexecuted while mandatory closure gates are open.",
+  "head": "c08a02a5569ead5805a46048da486db5365adc7c",
+  "branch": "Capability-Map-Consolidation"
+}

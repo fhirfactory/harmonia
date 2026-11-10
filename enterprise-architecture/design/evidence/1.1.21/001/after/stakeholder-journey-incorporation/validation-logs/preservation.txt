@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "baselineGitHead": "c08a02a5569ead5805a46048da486db5365adc7c",
+  "priorElementsPreserved": 5685,
+  "priorRelationshipsPreservedExactly": 6636,
+  "nativeTypesNamesBindingsNamingStandingAndOriginalProvenancePreserved": true,
+  "originalBodiesPreserved": 5685,
+  "reusedValueStreamsClassifiedAsJourney": [
+    "01f655eae3d8485699449c3dcf4f9b56",
+    "02e036f18bab400bac261007e39457ee",
+    "beea615ca7b34bbcbd0ad3a2a6ab2cff",
+    "3ba98c0c1170458f8c02fa76694fee67"
+  ],
+  "priorViewsPreservedExactly": 1288,
+  "newViews": 16,
+  "acceptedPublicationAndRegisterFilesUnchanged": 239,
+  "releaseAuthorityUnchanged": true,
+  "capabilityIdentitiesAndStructuralHierarchyUnchanged": 4531,
+  "originalSourceBytesPreservedBehindBoundedWrappers": 421,
+  "supersededSections": 1147,
+  "pinnedFilesUnchanged": 5881
+}
+{
+  "journeyCount": 68,
+  "useCases": 363,
+  "userStories": 415,
+  "structuralRootJourneys": 13,
+  "maximumRepresentedJourneyLevels": 2,
+  "useCasesContributingToMultipleStories": 17,
+  "storiesWithMultipleUseCases": 10,
+  "userStoriesWithoutUseCases": 44,
+  "interpretation": "Optional relationships, partial coverage and evidence-based omissions supply no completeness, satisfaction, implementation or acceptance claim."
+}
+new coverage [{'source': 'Capability', 'relationship': 'Serving', 'target': 'Journey', 'count': 52}, {'source': 'Feature', 'relationship': 'Serving', 'target': 'Journey', 'count': 5}, {'source': 'FunctionalRequirement', 'relationship': 'Association', 'target': 'Journey', 'count': 5}, {'source': 'Journey', 'relationship': 'Aggregation', 'target': 'Journey', 'count': 65}, {'source': 'Journey', 'relationship': 'Association', 'target': 'ApplicationComponent', 'count': 4}, {'source': 'Journey', 'relationship': 'Association', 'target': 'BusinessFunction', 'count': 1}, {'source': 'Journey', 'relationship': 'Association', 'target': 'BusinessService', 'count': 1}, {'source': 'Journey', 'relationship': 'Triggering', 'target': 'Journey', 'count': 48}, {'source': 'NonFunctionalRequirement', 'relationship': 'Association', 'target': 'Journey', 'count': 10}, {'source': 'Stakeholder', 'relationship': 'Association', 'target': 'Journey', 'count': 21}, {'source': 'UseCase', 'relationship': 'Association', 'target': 'Capability', 'count': 537}, {'source': 'UseCase', 'relationship': 'Association', 'target': 'Feature', 'count': 14}, {'source': 'UseCase', 'relationship': 'Association', 'target': 'Journey', 'count': 385}, {'source': 'UseCase', 'relationship': 'Association', 'target': 'UserStory', 'count': 389}, {'source': 'UserStory', 'relationship': 'Association', 'target': 'Capability', 'count': 634}, {'source': 'UserStory', 'relationship': 'Association', 'target': 'Feature', 'count': 14}, {'source': 'UserStory', 'relationship': 'Association', 'target': 'Journey', 'count': 443}]

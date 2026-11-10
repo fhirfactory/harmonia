@@ -10,7 +10,18 @@ Enable the target-state Provider Directory to support the capability described b
 - **Source Scope:** Additional Source Requirements – SR-26 to SR-58
 - **Primary Actor:** Compliance Officer
 - **Supporting Actors:** Provider Directory Administrator; Provider Identity / Matching Service; Provider Directory
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/1cc94d8bee0d4aca957d7c44f47451da.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As a Compliance Officer, I want to ensure that each provider record includes a validated HPI-I or HPI-O, so that we meet national compliance requirements.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-30 – Match Provider Records: supports provider identity resolution and duplicate avoidance.; UC-Integration-ProviderDirectory-31 – Receive Provider Identifier Cross References: supports reconciliation of identifiers across source systems.
 
 ## Requirements

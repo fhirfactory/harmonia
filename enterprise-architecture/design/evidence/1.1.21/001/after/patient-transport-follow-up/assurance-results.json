@@ -1,0 +1,127 @@
+{
+  "scope": "Bounded Patient identity correction and exact transport interpretation under 1.1.21/001; no broad transport remediation.",
+  "executions": [
+    {
+      "check": "Canonical validation and evidence-local projection",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/project-final.txt"
+    },
+    {
+      "check": "Projection deterministic check",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/project-check.txt"
+    },
+    {
+      "check": "Reader deterministic check",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/reader-check.txt"
+    },
+    {
+      "check": "Narrative deterministic check",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/narrative-check.txt"
+    },
+    {
+      "check": "Root Manifest generation",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/manifest.txt"
+    },
+    {
+      "check": "Focused navigation and Journey/requirements tests: 22",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/tests.txt"
+    },
+    {
+      "check": "Bounded pre-/post-state preservation",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "correction-validation.json"
+    },
+    {
+      "check": "Canonical prose local-link/anchor check",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "link-validation.json"
+    },
+    {
+      "check": "Reader DOM-contract smoke check",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "validation/browser.txt"
+    },
+    {
+      "check": "Actual corrected Archi import/export/native save",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "archi-transport/execution.txt"
+    },
+    {
+      "check": "Strict corrected transport verification",
+      "outcome": "FAIL",
+      "exitCode": 1,
+      "evidence": "validation/strict-transport.txt"
+    },
+    {
+      "check": "Original and corrected raw-family diagnostic checks",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "transport-decision-analysis.json; corrected-transport-decision-analysis.json"
+    },
+    {
+      "check": "Root Manifest deterministic check",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "sha256": "620837c4709783b97c6b1f60d14f8882ea5b4cc9bd118c3270903b3891ff8562"
+    },
+    {
+      "check": "Retained diagnostic and preservation scripts exercised from governed evidence paths",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "evidence": "transport-decision-analysis.json; corrected-transport-decision-analysis.json; correction-validation.json"
+    }
+  ],
+  "correctedPreflightFindings": [
+    {
+      "outcome": "FAIL",
+      "evidence": "validation/project.txt",
+      "finding": "Superseded allocation had no remaining sourceBinding; schema requires at least one.",
+      "correction": "Retained distinct follow-up sourceBinding for the reserved historical allocation; original binding retained in replacement history and incorporated on the current identity."
+    },
+    {
+      "outcome": "FAIL",
+      "evidence": "validation/project-corrected.txt",
+      "finding": "Navigation permitted correspondence-backed historical entries only for Capability.",
+      "correction": "Bounded native Stakeholder support added in existing reference-navigation guard, backed by DR-26 and focused tests. Identity validation and relationship applicability unchanged."
+    }
+  ],
+  "interpretationLimits": [
+    "Strict transport remains FAIL; diagnostic interpretation does not replace or reclassify comparator findings.",
+    "DOM checks and preservation checks do not establish human visual, native-tree or reader-structure acceptance.",
+    "22 focused tests rerun for this correction; earlier broad ADD checks retain their original evidence and scope.",
+    "Evidence-local reader/LaTeX generation checked; no PDF compilation or immutable publication performed."
+  ],
+  "reproduction": {
+    "workingDirectory": "repository root",
+    "originalTransportChecks": "python3 enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/transport_decision_checks.py",
+    "correctedTransportChecks": "python3 enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/transport_decision_checks.py corrected",
+    "patientPreservationChecks": "python3 enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/patient_preservation_checks.py",
+    "note": "These purpose-selected scripts only inspect governed inputs and emit supporting evidence; they do not replace maintained validators or change the strict comparator."
+  },
+  "head": "c08a02a5569ead5805a46048da486db5365adc7c",
+  "release": {
+    "version": "1.1.21",
+    "previous_version": "1.1.20"
+  },
+  "hcrl": "enterprise-architecture/design/review/1.1.21/hcrl-1.1.21-001.pending.md",
+  "remainingDisposition": [
+    "Confirm the bounded Patient correction.",
+    "Disposition the exact original/corrected strict transport qualification."
+  ],
+  "transition": "Uncommitted working candidate; no HCRL completion, immutable publication, release allocation, commit or push."
+}

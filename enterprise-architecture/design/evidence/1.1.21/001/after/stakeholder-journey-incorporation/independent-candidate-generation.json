@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "scope": "Candidate generation only, using maintained entry points in an isolated current-EA tree; no accepted-release publication path or --publish operation used.",
+  "steps": [
+    {
+      "command": [
+        "enterprise-architecture/tooling/continuum_manifest.py"
+      ],
+      "status": "PASS",
+      "output": "{\"status\": \"PASS\", \"manifest\": \"enterprise-architecture/continuum/MANIFEST.md\", \"check\": false, \"sha256\": \"179aa1990a376110d1e692dadcbc099fb34293102307c49525b5e34aa7934b99\"}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.21/001/after/stakeholder-journey-incorporation/candidate/Harmonia-Architecture.xml"
+      ],
+      "status": "PASS",
+      "output": "{\"status\": \"PASS\", \"elements\": 6542, \"relationships\": 9264, \"qualifiedSourcePredicates\": 462, \"canonicalIdentities\": 6542, \"representationIdentities\": 6542, \"provenanceCoverage\": 6542, \"sourceBindings\": 8404, \"supportedNativeTypes\": 60, \"navigation\": \"PASS\", \"architecturalAcceptance\": \"See governed HCRLs; validation supplies no acceptance\", \"archiCatalogue\": {\"elementEntries\": 6542, \"nativeTypeDirectories\": 27, \"relationshipEntries\": 9264, \"sourceDirectories\": 2456}, \"containment\": \"PASS\", \"informationNaming\": {\"information_elements\": 96, \"native_types\": {\"DataObject\": 83, \"BusinessObject\": 13}, \"classifications\": {\"Topic\": 70, \"BusinessObject\": 13, \"UNRESOLVED\": 12, \"Class\": 1}, \"fully_derived\": 84, \"unresolved\": 12, \"contextual\": 60, \"preserved_identity\": 96, \"absent_identity\": 0, \"canonical_ids_allocated\": 0, \"metadata_changes\": {}}, \"offlineXsd\": \"PASS\", \"exchangeReferences\": \"PASS\", \"outputSha256\": \"4d1e924f521d801c8ff544aca38e1fcada611c7cbda5cc61b4c6825c77199457\", \"publicationAllocatedIdentities\": 0, \"actualArchiTransport\": \"NOT_PERFORMED\"}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/publish_continuum.py",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.21/001/after/stakeholder-journey-incorporation/candidate"
+      ],
+      "status": "PASS",
+      "output": "{\"status\": \"PASS\", \"artifacts\": 5, \"check\": false}\n"
+    },
+    {
+      "command": [
+        "enterprise-architecture/tooling/publish_continuum_rad.py",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.21/001/after/stakeholder-journey-incorporation/narrative"
+      ],
+      "status": "PASS",
+      "output": "{\"status\": \"PASS\", \"artifacts\": 12, \"check\": false}\n"
+    }
+  ],
+  "identicalCandidateArtifacts": {
+    "candidate/Harmonia-Architecture.xml": "4d1e924f521d801c8ff544aca38e1fcada611c7cbda5cc61b4c6825c77199457",
+    "candidate/navigation.json": "761792a7adaaadba084dec861be892b0c58edb4c6df14bf31f25b2cceb798a5f",
+    "candidate/continuum-catalogue.tex": "2adc72ea256e328d239b46fcf43c5187604680aed4641acd23ad997a068c7650",
+    "candidate/continuum.html": "0f88ceb52fe131decf16204e74fd506673c9fd991b3cc6279186594585a29981",
+    "candidate/README.md": "55bd7614433971f69338bdce539563b3d5b177c630f50a7a4d7994c69c36604e",
+    "candidate/publication.json": "3e731b49f950c6272581ed8275014003db54276f29900c02983300f61e39898b",
+    "narrative/continuum-rad.tex": "2c560e87caf950f8ee74d6ddd86d13ab98e96d2fb0af1b493e0a8da27d915a75",
+    "narrative/structure.json": "00cf27438519cf5b5c8184231c0689caf3a928802111191e0d0e3e70deb5a5bf",
+    "narrative/README.md": "9a0504ddd578fb757841e8a429b3f6fad95284b3f7c48f7fecb6fe1908d5abe5",
+    "narrative/publication.json": "217dd7fbb99e309eee2d0879f8e83fc02875f1ca370d6f955a812aa13ed7f8a0",
+    "narrative/parts/business.tex": "a2383b7a797fd10e3c1738198199323665c272b18da32ca09aa7f7f772c884ab",
+    "narrative/parts/architecture-governance.tex": "6c99de0c4aff3ba3d47d8042062f91d40834509abe3fc2d9478bea812704bb71",
+    "narrative/parts/application.tex": "ac15dbf93a829dea0192becf20e0f8dedf70a5681c2c6bb274cc39e0c2f47698",
+    "narrative/parts/cross-cutting-references.tex": "0d2a3b93bd7fee1716cd1d9eef091814c0ab3976107109f96266be6ad36b306f",
+    "narrative/parts/implementation-and-migration.tex": "cc088fb5e4a5189f8f669d5c30c830cc75bc53068673bde335306341efdd3353",
+    "narrative/parts/strategy.tex": "9dc7b154c075e736b2125e9ad51ce383ce43489d3d7c785ce43c320d145918d0",
+    "narrative/parts/technology.tex": "6f1e2c08086d8457df080a89d5b5dd6de1ca46adea91584fc9d9a864ed6a5760",
+    "narrative/parts/motivation.tex": "889a0c93ea0c80c2d91a6d5f6e286265cef67d9c4c04ee82b8c777edee3e735c"
+  },
+  "identicalRootManifestSha256": "179aa1990a376110d1e692dadcbc099fb34293102307c49525b5e34aa7934b99",
+  "canonicalSourceCount": 6542,
+  "canonicalSourcesUnchanged": true,
+  "legacyDocsScriptsAndGitAbsent": true,
+  "retainedProvenanceFiles": 16,
+  "testSuites": "Separately retained bounded tooling checks; no repeated aggregate suite here.",
+  "limits": "Source-byte reproducibility only; no visual acceptance, PDF compilation or immutable publication claim."
+}

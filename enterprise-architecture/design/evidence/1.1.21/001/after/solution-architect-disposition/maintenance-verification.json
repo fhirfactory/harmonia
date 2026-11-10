@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "phase": "Post-emission provenance maintenance",
+  "recordFileLinks": {
+    "enterprise-architecture/design/review/1.1.21/hcrl-1.1.21-001.pending.md": [],
+    "enterprise-architecture/design/evidence/1.1.21/001/after/ai-agent-reports/20261110T222344Z-solution-architect-dispositions-and-closure-verification.md": [],
+    "enterprise-architecture/design/evidence/1.1.21/001/after/solution-architect-disposition/closure-review.md": [],
+    "enterprise-architecture/design/archimate/README.md": []
+  },
+  "pinnedInputsUnchanged": 6620,
+  "gitDiffWhitespace": "PASS",
+  "headUnchanged": "c08a02a5569ead5805a46048da486db5365adc7c",
+  "acceptedPublicationRegisterPathsStillAbsent": true,
+  "pendingHcrl": "enterprise-architecture/design/review/1.1.21/hcrl-1.1.21-001.pending.md",
+  "pendingHcrlSha256": "dec09a4410f37fd8469ef944870d481dd0775f0b93fb8f6057fbdbc4c449f070",
+  "report": "enterprise-architecture/design/evidence/1.1.21/001/after/ai-agent-reports/20261110T222344Z-solution-architect-dispositions-and-closure-verification.md",
+  "limit": "Mechanical verification supplies no architectural acceptance; recorded Report production event is not replaced."
+}

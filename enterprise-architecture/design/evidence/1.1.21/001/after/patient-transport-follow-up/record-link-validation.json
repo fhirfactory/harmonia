@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "reviewRecordFileLinks": {
+    "enterprise-architecture/design/review/1.1.21/hcrl-1.1.21-001.pending.md": [],
+    "enterprise-architecture/design/archimate/README.md": [],
+    "enterprise-architecture/design/evidence/1.1.21/001/after/ai-agent-reports/20261110T220857Z-bounded-patient-and-transport-follow-up.md": [],
+    "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/decision-brief.md": []
+  },
+  "limit": "Rendered Markdown local file targets; does not establish architectural acceptance or inspect external URLs."
+}

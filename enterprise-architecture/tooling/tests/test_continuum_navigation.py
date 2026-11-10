@@ -77,7 +77,13 @@ class ContinuumNavigationTests(unittest.TestCase):
         self.assertFalse(self.tree[5].get('children'))
         self.assertFalse(self.tree[6].get('children'))
         perspectives = [n for n in nav.walk(self.tree) if n.get('kind') == 'index-entry']
-        self.assertEqual(len(perspectives), 12)
+        # The duplicate Patient allocation is a historical correspondence entry;
+        # the established Patient and OA&M identities serve the current catalogue.
+        self.assertEqual(len(perspectives), 26)
+        catalogue = [self.elements[n['canonicalId']][0]['stakeholderPerspective']
+                     for n in perspectives if self.elements[n['canonicalId']][0].get('stakeholderPerspective')]
+        self.assertEqual(len(catalogue), 16)
+        self.assertEqual(len(set(catalogue)), 16)
         self.assertTrue(all(n['number'].startswith('R.1.') for n in perspectives))
         self.assertEqual(len(self.tree[1]['children']), 10)
         branches = {n['title']: nav.descendants(n) for n in nav.walk(self.tree) if n['title'].startswith('Unclassified ')}
@@ -99,10 +105,14 @@ class ContinuumNavigationTests(unittest.TestCase):
     def test_history_uses_governed_correspondence_and_preserves_distinct_exchange_responsibilities(self):
         pairs = {cid: m['identity']['correspondence']['successorCanonicalId']
                  for cid, (m, _, _) in self.elements.items() if m['identity'].get('correspondence')}
-        self.assertEqual(len(pairs), 841)
+        self.assertEqual(sum(self.elements[cid][0]['archimateType'] == 'Capability' for cid in pairs), 841)
+        self.assertEqual({cid: successor for cid, successor in pairs.items()
+                          if self.elements[cid][0]['archimateType'] == 'Stakeholder'},
+                         {'ad2012d59bb542e8bc7d8bd20547e342': '5f6d333e94634420b8a8bbf8b9cb6e2a'})
         for old, successor in pairs.items():
             self.assertEqual(self.locations[old]['kind'], 'historical')
-            self.assertTrue(self.locations[old]['number'].startswith('R.2.'))
+            prefix = 'R.1.' if self.elements[old][0]['archimateType'] == 'Stakeholder' else 'R.2.'
+            self.assertTrue(self.locations[old]['number'].startswith(prefix))
             self.assertEqual(self.locations[old]['successorReference']['canonicalId'], successor)
             self.assertIn(old, [r['canonicalId'] for r in self.locations[successor]['historicalReferences']])
         bc, old_bec, bec = ('baad6b6117084311acbf5fc4044dfabf', '330d1c43856a4322a2e9f331b1a5ed20', 'a61a15908ed544e6acf3e9cab63a0267')
@@ -112,6 +122,25 @@ class ContinuumNavigationTests(unittest.TestCase):
         self.assertNotEqual(pairs[bc], pairs[bec])
         self.assertIn('Enterprise Capabilities', self.locations[pairs[bc]]['path'])
         self.assertIn('Enterprise Capabilities', self.locations[pairs[bec]]['path'])
+
+    def test_patient_reconciliation_preserves_the_historical_edge_and_one_current_perspective(self):
+        patient = self.elements['5f6d333e94634420b8a8bbf8b9cb6e2a'][0]
+        duplicate = self.elements['ad2012d59bb542e8bc7d8bd20547e342'][0]
+        self.assertEqual(patient['stakeholderPerspective'], 'Patient')
+        self.assertEqual(patient['standing']['currentness'], 'current')
+        self.assertEqual(duplicate['standing']['currentness'], 'superseded')
+        self.assertNotIn('stakeholderPerspective', duplicate)
+        self.assertEqual(sum(m.get('stakeholderPerspective') == 'Patient'
+                             for m, _, _ in self.elements.values()), 1)
+        edges = {row['identifier']: row for row in patient['relationships']}
+        historical = edges['id-daee593684c55e55bf1ce04c223cf585']
+        self.assertEqual(historical['standing']['Baseline / Record State'], 'historical_reference')
+        participation = edges['id-3555d732029e4afc8c838289340cbf54']
+        self.assertEqual(participation['source'], patient['exchange']['identifier'])
+        self.assertEqual(participation['participationCharacteristics'], ['Beneficiary'])
+        self.assertEqual(duplicate['relationships'], [])
+        self.assertNotIn('stakeholderPerspective',
+                         self.elements['ea5a315450ce4cfb87417263560c2b6d'][0])
 
     def test_complete_relevant_contexts_and_existing_stakeholder_associations_are_guarded(self):
         contexts = [n for n in nav.walk(self.tree) if n.get('contextRole') == 'capability']
@@ -258,7 +287,7 @@ class ContinuumNavigationTests(unittest.TestCase):
         import continuum_workbench as workbench
         model = c.secure_xml(self.root / c.DESIGN / 'projection-template.xml')
         before = workbench.signatures(model, 'views/diagrams', 'view')
-        self.assertEqual(len(before), 1288)
+        self.assertEqual(len(before), 1304)
         first = model.find('a:views/a:diagrams/a:view', c.N)
         first.find('a:name', c.N).text += ' changed'
         after = workbench.signatures(model, 'views/diagrams', 'view')

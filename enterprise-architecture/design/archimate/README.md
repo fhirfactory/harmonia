@@ -2,14 +2,45 @@
 
 # ArchiMate projection and review workbench
 
-**Current development: 1.1.20 / 001 — pending.** [Active HCRL](../review/1.1.20/hcrl-1.1.20-001.pending.md). The accepted 1.1.19 publication remains immutable; [review closure](../register/1.1.19/hcrl-1.1.19-002.complete.md) and [deterministic carried-candidate assessment](../evidence/1.1.19/002/after/dr20-disposition/difference-assessment.md). The working candidate is not an accepted 1.1.20 publication. Earlier 1.1.19 candidate accounts below retain their originating scope/history; no consolidation programme has started.
+**Accepted baseline: 1.1.21 / 001 — HCRL complete.**
+[Completed HCRL](../register/1.1.21/hcrl-1.1.21-001.complete.md).
+The [immutable Exchange](published/1.1.21/Harmonia-Architecture.xml),
+[HTML reader/catalogue](../../documentation/continuum-manifest/published/1.1.21/README.md)
+and [narrative RAD source/correspondence](../../documentation/continuum-rad/published/1.1.21/README.md)
+represent the accepted increment. The model contains 6,542 elements, 9,264
+relationships and 1,304 Views, incorporating sixteen catalogue perspectives,
+68 Journeys, 363 UseCases and 415 UserStories. XML SHA-256 is
+`6471411187a5ff72b005c9b9855c48beb3d86b7ae6c7c556a4eb58338011a739`.
+The Solution Architect accepts the incorporation, all reviewed new Views including
+both corrected Patient Views, native workbench-tree and reader/navigation structural
+review, bounded supporting Minutiae and the whole incorporated HCRL result.
+Exact original/corrected Archi operations are accepted with qualification;
+**strict transport verification remains FAIL**. All classifications and evidence
+remain; returned XML is not a lossless authoring source. Existing historical
+qualifications retain their scope, and future transport verification is not waived.
+The [final Report](../evidence/1.1.21/001/after/ai-agent-reports/20261110T230433Z-final-accepted-release-closure.md)
+and [Git transition evidence](../evidence/1.1.21/001/after/release-closure/git-transition-status.json)
+record actual terminal outcomes separately from architectural acceptance.
+
+The accepted predecessor [1.1.20](../register/1.1.20/hcrl-1.1.20-001.complete.md)
+and its [immutable projection](published/1.1.20/Harmonia-Architecture.xml) remain unchanged.
+[Patient/transport decision brief](../evidence/1.1.21/001/after/patient-transport-follow-up/decision-brief.md)
+and the [original catalogue and View inventory](../evidence/1.1.21/001/after/stakeholder-journey-incorporation/catalogue-and-review-guide.md)
+retain their review-stage scope. The brief records the Patient identity correction
+and transport findings; later dispositions and closure are authoritative in the register.
 
 The maintained source is the [individual-element continuum](../../README.md).
 [projection-template.xml](projection-template.xml) owns existing model-level
-properties, property definitions, View navigation and **1,288 Views**, including their
+properties, property definitions, View navigation and **1,304 Views**, including their
 geometry. Its element/relationship collections are empty. The current projector
 fills those collections from canonical Markdown and preserves the Views.
-The maintained template currently includes the uncommitted
+All 1,288 inherited Views remain unchanged. Sixteen additional Views are in
+**Journeys and stakeholder perspectives**; their exact identifiers and review
+targets are in the inventory above. Journey definitions remain distinct from the
+existing Application DataObject Journey used for observed runtime progression.
+
+The following paragraphs retain the historical SolutionFacet candidate account.
+The maintained template incorporated the then-uncommitted
 [SolutionFacet candidate](../review/1.1.19/hcrl-1.1.19-001.pending.md#dr-17):
 three additional authored Views and 12 changed existing Views, with authored
 layout and references preserved. The protected 1.1.19 projection below retains

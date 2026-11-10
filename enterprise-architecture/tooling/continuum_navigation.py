@@ -62,7 +62,7 @@ def load(root=c.ROOT, elements=None, *, document=None):
             expected = 'III' if native == 'ValueStream' else namespace_for_domain.get(domain)
             reference_entry = namespace == 'R' and (
                 (node.get('kind') == 'index-entry' and native == 'Stakeholder') or
-                (node.get('kind') == 'historical' and native == 'Capability'
+                (node.get('kind') == 'historical' and native in ('Capability', 'Stakeholder')
                  and elements[cid][0]['identity'].get('correspondence')))
             c.require(reference_entry or expected is None or namespace == expected,
                       'Navigation changes architectural domain without authority: ' + cid)

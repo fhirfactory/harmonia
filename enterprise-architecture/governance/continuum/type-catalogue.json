@@ -420,6 +420,30 @@
       "displayPrefix": "[AssuranceRequirement]",
       "canonicalQualifier": "MOT",
       "meaning": "Required demonstrable evidence or verification outcome."
+    },
+    "Journey": {
+      "nativeType": "ValueStream",
+      "directory": "strategy/value-stream",
+      "authority": "enterprise-architecture/governance/stakeholder-journey-requirements-profile.md",
+      "displayPrefix": null,
+      "canonicalQualifier": null,
+      "meaning": "Reusable progression directed towards an intended outcome; constituent Journeys retain independent identity and can be reused."
+    },
+    "UseCase": {
+      "nativeType": "Requirement",
+      "directory": "motivation/requirement/use-case",
+      "authority": "enterprise-architecture/governance/stakeholder-journey-requirements-profile.md",
+      "displayPrefix": "[UseCase]",
+      "canonicalQualifier": "MOT",
+      "meaning": "Independent interaction-oriented requirement describing a recognisable interaction directed towards a result."
+    },
+    "UserStory": {
+      "nativeType": "Requirement",
+      "directory": "motivation/requirement/user-story",
+      "authority": "enterprise-architecture/governance/stakeholder-journey-requirements-profile.md",
+      "displayPrefix": "[UserStory]",
+      "canonicalQualifier": "MOT",
+      "meaning": "Independent stakeholder need, expectation or desired outcome; not a restatement of an interaction or proof of its satisfaction."
     }
   },
   "relationshipSpecializations": {

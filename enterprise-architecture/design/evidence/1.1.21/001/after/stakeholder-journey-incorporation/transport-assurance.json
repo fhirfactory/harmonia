@@ -1,0 +1,127 @@
+{
+  "actualArchiImportExport": "PASS",
+  "ArchiVersion": "5.10",
+  "inputSha256": "4d1e924f521d801c8ff544aca38e1fcada611c7cbda5cc61b4c6825c77199457",
+  "returnedSha256": "f8fa7b364f475b78e79190256fa23ddf23e6acb84839ea039d48e34b1282bffa",
+  "nativeSha256": "c50d421468d8b8519c1f1dc8dc444bc0cc7d8f9675f0992b44e09f61527a990e",
+  "operator": "Codex, within authorised 1.1.21 ADD verification",
+  "environmentResolution": "Initial sandbox connection to /tmp/.X11-unix/X0 denied with EPERM. Automatically approved unsandboxed retry used existing :0 display with temporary workspace and configuration. Exact candidate unchanged.",
+  "strictVerifier": "FAIL: Relationship/View transport drift",
+  "rawComparatorStatus": "DIFFERENCES",
+  "rawClassifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 4693,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 18305,
+    "SEMANTIC DIFFERENCE": 111868,
+    "UNEXPLAINED DIFFERENCE": 16297
+  },
+  "rawReasons": {
+    "Uniquely keyed unordered collection": 4624,
+    "Semantic record attribute changed": 111868,
+    "Attribute absent after transport": 2499,
+    "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation": 16059,
+    "Subtree absent after transport; raw input retained by hash": 15806,
+    "Exact unique Property key resolves both definition IDs; all other definition content and owner values compared independently": 69,
+    "Additional subtree with no established equivalence": 238
+  },
+  "inputIssues": {
+    "published": [],
+    "incoming": []
+  },
+  "metrics": {
+    "published": {
+      "semantic_elements": 6542,
+      "relationships": 9264,
+      "views": 1304,
+      "visual_objects": 4599,
+      "visual_connections": 2042,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 48444353,
+      "xml_decimal_mb": 48.444353
+    },
+    "incoming": {
+      "semantic_elements": 6542,
+      "relationships": 9264,
+      "views": 1304,
+      "visual_objects": 4599,
+      "visual_connections": 2042,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 53782172,
+      "xml_decimal_mb": 53.782172
+    }
+  },
+  "canonicalPopulationPreserved": true,
+  "canonicalElementCount": 6542,
+  "preservedElementFields": {
+    "identifier": 6542,
+    "archimateType": 6542,
+    "specialization": 6542,
+    "name": 6542,
+    "documentation": 6542
+  },
+  "preservedGovernedNameProperties": {
+    "canonicalId": 6542,
+    "displayName": 6542,
+    "friendlyName": 6542,
+    "canonicalName": 6542
+  },
+  "rawRelationshipAndViewCounts": {
+    "relationships": {
+      "before": 9264,
+      "after": 9264,
+      "missing_ids": 0,
+      "additional_ids": 0,
+      "changed_records": 6456
+    },
+    "presentation": {
+      "before": 1304,
+      "after": 1304,
+      "missing_ids": 0,
+      "additional_ids": 0,
+      "changed_records": 15
+    }
+  },
+  "canonicalWorkbenchReview": {
+    "elementChanges": 0,
+    "relationshipAndViewChanges": 6471,
+    "unresolved": 0
+  },
+  "humanVisualReview": "NOT PERFORMED",
+  "SolutionArchitectStructuralReview": "PENDING",
+  "acceptance": "No transport failure disposition inferred from the 1.1.20-specific acceptance. This exact result requires treatment before closure; the returned model has not been applied to canonical state or the maintained template.",
+  "retainedEvidence": [
+    "archi-transport/raw-comparison.json.gz",
+    "archi-transport/canonical-review.json.gz",
+    "archi-transport/returned-model.xml.gz",
+    "archi-transport/native-model.archimate.gz",
+    "archi-transport/initial-display-failure.txt",
+    "archi-transport/successful-import-export.txt",
+    "archi-transport/strict-verifier-failure.txt"
+  ]
+}

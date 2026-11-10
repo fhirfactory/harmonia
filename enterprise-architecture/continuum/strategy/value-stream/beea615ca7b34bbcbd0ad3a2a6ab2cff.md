@@ -3,19 +3,21 @@
   "schemaVersion": 1,
   "canonicalId": "beea615ca7b34bbcbd0ad3a2a6ab2cff",
   "archimateType": "ValueStream",
-  "specialization": null,
+  "specialization": "Journey",
   "displayName": "Operational Need → Coordinated Activity → Resolved Outcome",
   "friendlyName": "OperationalNeedCoordinatedActivityResolvedOutcome",
   "canonicalName": null,
   "standing": {
     "semantic": "Canonical",
     "currentness": "current",
-    "qualification": "Exact source standing retained; migration/identity allocation does not approve architectural assertions."
+    "qualification": "Exact source standing retained; migration/identity allocation does not approve architectural assertions.",
+    "journeyClassification": "Explicitly authorised by the 1.1.21 Task; resulting additions pending incorporated-result review"
   },
   "identity": {
     "allocation": "UUIDv4 allocated once under the explicit RAD-1.1.5 migration Task",
     "authority": "enterprise-architecture/design/evidence/1.1.5/002/before/ai-agent-tasks/20261021T092725Z-establish-and-apply-element-continuum.md",
-    "sourceAbsenceCheck": "No existing governed canonical source binding for this bounded definition; no name-based correspondence adopted."
+    "sourceAbsenceCheck": "No existing governed canonical source binding for this bounded definition; no name-based correspondence adopted.",
+    "additionalClassificationAuthority": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md"
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -33,6 +35,12 @@
       "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
       "sha256": "e35fc8a438c8b236e269e9aa8b071be492691b0c6446855e16e09f28c058e14a",
       "standing": "Canonical"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md",
+      "selector": "Journey semantics; Constraints 1 and 4",
+      "role": "Identity-preserving Journey specialisation of the existing Value Stream",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md"
     }
   ],
   "sourceBindings": [
@@ -45,13 +53,201 @@
     "identifier": "id-fc4621beb95b5af1a1398f683115a449",
     "properties": []
   },
-  "relationships": [],
+  "relationships": [
+    {
+      "identifier": "id-ad18dc4855924c38afaa0bf9778ae064",
+      "archimateType": "Aggregation",
+      "source": "id-fc4621beb95b5af1a1398f683115a449",
+      "target": "id-e9d3bcd6dc905b9f9e886b411e796a6d",
+      "standing": {
+        "semantic": "Authorised 1.1.21 incorporation candidate; exact assertions pending Solution Architect result review",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md",
+        "selector": "Accepted semantics; Authorised Activity / Scope",
+        "contributions": [
+          [
+            [
+              "/home/hunterm/Development/Code/harmonia/enterprise-architecture/continuum/strategy/value-stream/beea615ca7b34bbcbd0ad3a2a6ab2cff.md",
+              "## Architectural content"
+            ]
+          ]
+        ]
+      },
+      "documentation": [
+        {
+          "text": "Constituent Journey retained with independent identity and reusable scope; this structural aggregation does not prescribe execution order.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ]
+    },
+    {
+      "identifier": "id-60b2b580742f4187a2800bbf39ff3340",
+      "archimateType": "Aggregation",
+      "source": "id-fc4621beb95b5af1a1398f683115a449",
+      "target": "id-abfa20b21ae35b6caa00fb3dfc642e1b",
+      "standing": {
+        "semantic": "Authorised 1.1.21 incorporation candidate; exact assertions pending Solution Architect result review",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md",
+        "selector": "Accepted semantics; Authorised Activity / Scope",
+        "contributions": [
+          [
+            [
+              "/home/hunterm/Development/Code/harmonia/enterprise-architecture/continuum/strategy/value-stream/beea615ca7b34bbcbd0ad3a2a6ab2cff.md",
+              "## Architectural content"
+            ]
+          ]
+        ]
+      },
+      "documentation": [
+        {
+          "text": "Constituent Journey retained with independent identity and reusable scope; this structural aggregation does not prescribe execution order.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ]
+    },
+    {
+      "identifier": "id-1b9a45d9d7cc40689dc0beedfcfd55df",
+      "archimateType": "Aggregation",
+      "source": "id-fc4621beb95b5af1a1398f683115a449",
+      "target": "id-47e15f9ca2845cb08156abbdb9296007",
+      "standing": {
+        "semantic": "Authorised 1.1.21 incorporation candidate; exact assertions pending Solution Architect result review",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md",
+        "selector": "Accepted semantics; Authorised Activity / Scope",
+        "contributions": [
+          [
+            [
+              "/home/hunterm/Development/Code/harmonia/enterprise-architecture/continuum/strategy/value-stream/beea615ca7b34bbcbd0ad3a2a6ab2cff.md",
+              "## Architectural content"
+            ]
+          ]
+        ]
+      },
+      "documentation": [
+        {
+          "text": "Constituent Journey retained with independent identity and reusable scope; this structural aggregation does not prescribe execution order.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ]
+    },
+    {
+      "identifier": "id-6ac282f8db2849f098ca00b8d2150d38",
+      "archimateType": "Aggregation",
+      "source": "id-fc4621beb95b5af1a1398f683115a449",
+      "target": "id-88c135de5d605846a03ef1a0b99881c1",
+      "standing": {
+        "semantic": "Authorised 1.1.21 incorporation candidate; exact assertions pending Solution Architect result review",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md",
+        "selector": "Accepted semantics; Authorised Activity / Scope",
+        "contributions": [
+          [
+            [
+              "/home/hunterm/Development/Code/harmonia/enterprise-architecture/continuum/strategy/value-stream/beea615ca7b34bbcbd0ad3a2a6ab2cff.md",
+              "## Architectural content"
+            ]
+          ]
+        ]
+      },
+      "documentation": [
+        {
+          "text": "Constituent Journey retained with independent identity and reusable scope; this structural aggregation does not prescribe execution order.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ]
+    },
+    {
+      "identifier": "id-856676b79da14925bbd421c4547ee064",
+      "archimateType": "Aggregation",
+      "source": "id-fc4621beb95b5af1a1398f683115a449",
+      "target": "id-94264816884e50b89d2119b1ab96d131",
+      "standing": {
+        "semantic": "Authorised 1.1.21 incorporation candidate; exact assertions pending Solution Architect result review",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md",
+        "selector": "Accepted semantics; Authorised Activity / Scope",
+        "contributions": [
+          [
+            [
+              "/home/hunterm/Development/Code/harmonia/enterprise-architecture/continuum/strategy/value-stream/beea615ca7b34bbcbd0ad3a2a6ab2cff.md",
+              "## Architectural content"
+            ]
+          ]
+        ]
+      },
+      "documentation": [
+        {
+          "text": "Constituent Journey retained with independent identity and reusable scope; this structural aggregation does not prescribe execution order.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ]
+    },
+    {
+      "identifier": "id-6026f52f262a4168b0237a88eed6719c",
+      "archimateType": "Aggregation",
+      "source": "id-fc4621beb95b5af1a1398f683115a449",
+      "target": "id-d602ec528b9650b7a9018d8e709750b2",
+      "standing": {
+        "semantic": "Authorised 1.1.21 incorporation candidate; exact assertions pending Solution Architect result review",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md",
+        "selector": "Accepted semantics; Authorised Activity / Scope",
+        "contributions": [
+          [
+            [
+              "/home/hunterm/Development/Code/harmonia/enterprise-architecture/continuum/strategy/value-stream/beea615ca7b34bbcbd0ad3a2a6ab2cff.md",
+              "## Architectural content"
+            ]
+          ]
+        ]
+      },
+      "documentation": [
+        {
+          "text": "Constituent Journey retained with independent identity and reusable scope; this structural aggregation does not prescribe execution order.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ]
+    }
+  ],
   "unresolvedProperties": {
     "canonicalName": "Formal qualifier for native ValueStream is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
   },
   "representation": {
     "sourceLinksRebased": true,
     "authority": "HCRL 1.1.5-002 DR-3; source meaning unchanged"
+  },
+  "journeyDefinition": {
+    "intendedOutcome": "Operational demand is resolved with governed activity outcomes and corresponding affected-entity state progression.",
+    "startCondition": "The initiating condition in the inherited Value Stream definition applies.",
+    "alternativeOutcomes": [
+      "Progress may remain unresolved where the inherited governance, identity or completion conditions are not established."
+    ]
   }
 }
 ---
@@ -112,3 +308,7 @@ Activity execution constructs and downstream mechanisms (illustratively, worker 
 | Existing current Enterprise Capability contributions | **Established, partial:** [EC-02 — Context Management](../../../../docs/markdown/02-strategy/capabilities/enterprise-capabilities.md#ec-02-context-management); [EC-12 — Operational Assurance](../../../../docs/markdown/02-strategy/capabilities/enterprise-capabilities.md#ec-12-operational-assurance). These previously documented contributions retain their canonical meanings. Other current contributions are unresolved; the retired EC labels do not establish replacements. |
 
 - **Strategic Courses of Action**: `COA-04` (Governed Asynchronous Activity Progression), `COA-05` (Entity-Centred Operational Coordination), `COA-06` (Collaborative Reusable Capability Realisation).
+
+### 1.1.21 Journey incorporation
+
+This existing Value Stream is reused as a Journey with the same canonical and Exchange identities, names, original definition and standing. Its source-defined transformations are represented by independently identifiable constituent Journeys. The added Aggregation relationships express reusable structure; Triggering expresses meaningful progression with its stated conditions. Neither creates runtime orchestration. New, explicitly qualified capability contributions supplement the predecessor traceability account; the original unestablished relationships and qualifications above are not retrospectively rewritten or declared accepted.

@@ -1,0 +1,16 @@
+{
+  "authority": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T215321Z-bounded-patient-and-transport-follow-up.md",
+  "conclusion": "Same individual Patient perspective; established identity reused, duplicate unaccepted allocation retained as superseded history. Broader Patients & Care Recipients group remains distinct.",
+  "currentPatientCanonicalId": "5f6d333e94634420b8a8bbf8b9cb6e2a",
+  "currentPatientExchangeId": "id-68708d76e8105d48a69bf1e03c888b27",
+  "supersededDuplicateCanonicalId": "ad2012d59bb542e8bc7d8bd20547e342",
+  "historicalPrivacyRelationshipPreserved": "id-daee593684c55e55bf1ce04c223cf585",
+  "currentParticipationRelationshipRebound": "id-3555d732029e4afc8c838289340cbf54",
+  "viewsWithPatientReferenceCorrection": [
+    "id-75a00ddc7c384343a0b95324d5f2d092",
+    "id-cbbd8ecf3d3c4a8cb5c317cf88482765"
+  ],
+  "newIdentitiesAllocated": 0,
+  "relationshipsAddedOrRemoved": 0,
+  "visualAcceptance": "SA accepted other reviewed 1.1.21 Views in the issued follow-up. Patient correction awaits confirmation; no fresh visual inspection is asserted."
+}

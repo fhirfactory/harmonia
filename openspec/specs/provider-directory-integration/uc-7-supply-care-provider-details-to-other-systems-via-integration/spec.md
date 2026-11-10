@@ -1,8 +1,19 @@
 # Supply Care Provider Details to Other Systems via Integration
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/60d6209f40f346f389106a588a56951d.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 Enable the Provider Directory to supply authorised provider information to downstream systems through managed integration. This supports the target-state objective that uc-7 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that consumer systems receive current provider information without maintaining unnecessary independent copies.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ Enable the Provider Directory to supply authorised provider information to downs
 - **Source Scope:** Additional Source Use Cases and System Requirements
 - **Primary Actor:** Downstream Consumer System System
 - **Supporting Actors:** Integration Administrator; Provider Directory
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/74592bc03e0c4ef38c991a95155e7d22.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As the Provider Directory, I need to supply authorised provider information to downstream systems through managed integration, so that consumer systems receive current provider information without maintaining unnecessary independent copies.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-30 – Match Provider Records: supports reliable identity matching where provider information is received or reconciled.; UC-Integration-ProviderDirectory-32 – Validate Provider Data Quality: supports validation and data-quality controls.; UC-Integration-ProviderDirectory-34 – Audit Provider Information Exchange: supports traceability and audit of information exchange.; UC-Integration-ProviderDirectory-35 – Monitor Provider Integration Interfaces: supports operational monitoring of automated interfaces.; UC-Integration-ProviderDirectory-36 – Reconcile Provider Synchronisation Failures: supports remediation of failed or ambiguous synchronisation.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/60d6209f40f346f389106a588a56951d.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Supply Care Provider Details to Other Systems via
 Harmonia SHALL support **Supply Care Provider Details to Other Systems via Integration** so that Enable the Provider Directory to supply authorised provider information to downstream systems through managed integration. This supports the target-state objective that uc-7 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that consumer systems receive current provider information without maintaining unnecessary independent copies.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Supply Care Provider Details to Other Systems via Integration - successful outcome
 - **GIVEN** The actor is appropriately authenticated and authorised to perform the activity.

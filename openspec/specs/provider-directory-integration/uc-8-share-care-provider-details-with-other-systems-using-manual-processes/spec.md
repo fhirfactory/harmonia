@@ -1,8 +1,19 @@
 # Share Care Provider Details with Other Systems Using Manual Processes
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/1fd9c4ee243b4507b0fcbc3d86ae2fcd.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 Enable the Provider Directory to provide authorised provider information through a controlled manual exchange. This supports the target-state objective that uc-8 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider information can be supplied where automated integration is unavailable or inappropriate.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ Enable the Provider Directory to provide authorised provider information through
 - **Source Scope:** Additional Source Use Cases and System Requirements
 - **Primary Actor:** Provider Directory Administrator
 - **Supporting Actors:** Downstream Consumer System; Provider Directory; Integration Service
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/08a301efe30e4e349ce58680d026cd95.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As the Provider Directory, I need to provide authorised provider information through a controlled manual exchange, so that provider information can be supplied where automated integration is unavailable or inappropriate.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-30 – Match Provider Records: supports reliable identity matching where provider information is received or reconciled.; UC-Integration-ProviderDirectory-32 – Validate Provider Data Quality: supports validation and data-quality controls.; UC-Integration-ProviderDirectory-34 – Audit Provider Information Exchange: supports traceability and audit of information exchange.; UC-Integration-ProviderDirectory-35 – Monitor Provider Integration Interfaces: supports operational monitoring of automated interfaces.; UC-Integration-ProviderDirectory-36 – Reconcile Provider Synchronisation Failures: supports remediation of failed or ambiguous synchronisation.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/1fd9c4ee243b4507b0fcbc3d86ae2fcd.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Share Care Provider Details with Other Systems Us
 Harmonia SHALL support **Share Care Provider Details with Other Systems Using Manual Processes** so that Enable the Provider Directory to provide authorised provider information through a controlled manual exchange. This supports the target-state objective that uc-8 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider information can be supplied where automated integration is unavailable or inappropriate.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Share Care Provider Details with Other Systems Using Manual Processes - successful outcome
 - **GIVEN** The actor is appropriately authenticated and authorised to perform the activity.

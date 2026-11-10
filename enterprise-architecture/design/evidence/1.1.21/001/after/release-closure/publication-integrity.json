@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "publishedRelease": "1.1.21",
+  "acceptedPredecessor": "1.1.20",
+  "acceptedCandidateSha256": "6471411187a5ff72b005c9b9855c48beb3d86b7ae6c7c556a4eb58338011a739",
+  "publishedXmlIdenticalToAcceptedCandidate": true,
+  "publishedArtifactSha256": {
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.21/Harmonia-Architecture.xml": "6471411187a5ff72b005c9b9855c48beb3d86b7ae6c7c556a4eb58338011a739",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.21/navigation.json": "de84b6af0559c8125024b99b8a1f8298cb50ba22c9b209ecfcc64129ca37a10e",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.21/continuum-catalogue.tex": "9572c7794ef00aa810b7e2a247b3a2fbffeb77700b58c5539c7b047c3bedb8f7",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.21/continuum.html": "e6b5a9535e2d4b52b86d06ee8603cd8e5ef88e045b6bcf1386d819acff5b2fdf",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.21/README.md": "a73cbf65394e7ff910a0638ea608ea4cf2d93f606d4d398b332ca69d789ea9b7",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.21/publication.json": "2b65a0369219c950848ce4907972629324b0e161fc26b5b67771038a3d25e7dc",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21/continuum-rad.tex": "2c560e87caf950f8ee74d6ddd86d13ab98e96d2fb0af1b493e0a8da27d915a75",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21/structure.json": "cbbbb223a673aab84b57a880b6fc0d68dfdc7de88d014e1bec0489fef1820bfa",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21/README.md": "9a0504ddd578fb757841e8a429b3f6fad95284b3f7c48f7fecb6fe1908d5abe5",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21/publication.json": "75e5d4584e00248109a809b370495add790dd9ef5ba440e61d6075c5df408393",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/business.tex": "b097e574d0d56f9c1f1ce0f5393d7a53b82928aee01b04fae4e74753ba699478",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/architecture-governance.tex": "bb8b35a7b23d47c22c5d0ef8eaf7ac926f2f4f2ddc5c082cb7eaf4a350e13821",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/application.tex": "83113bded4d8eff7f293e7be1381f81c8bd5aec8e97942372f3d2f63aee366e4",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/cross-cutting-references.tex": "75bf79e567c6609d96ccf3ea5965e1ee00739e4e26577e664181150142657248",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/implementation-and-migration.tex": "cc088fb5e4a5189f8f669d5c30c830cc75bc53068673bde335306341efdd3353",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/strategy.tex": "a89d73b285afffdd69bedfc5e1039899946597311ce1d344c28add92c084c809",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/technology.tex": "6f1e2c08086d8457df080a89d5b5dd6de1ca46adea91584fc9d9a864ed6a5760",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/motivation.tex": "df249ba78174e2f5acb09ac6e75f109007cd880da41d6a5b2c5e0527e4692229",
+    "enterprise-architecture/design/archimate/published/1.1.21/Harmonia-Architecture.xml": "6471411187a5ff72b005c9b9855c48beb3d86b7ae6c7c556a4eb58338011a739"
+  },
+  "candidatePublicationCorrespondence": [
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/candidate/Harmonia-Architecture.xml",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.21/Harmonia-Architecture.xml",
+      "result": "EXACT"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/candidate/navigation.json",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.21/navigation.json",
+      "result": "EXACT"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/candidate/continuum-catalogue.tex",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.21/continuum-catalogue.tex",
+      "result": "Only destination-relative URLs differ; all resolve to identical targets"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/candidate/continuum.html",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.21/continuum.html",
+      "result": "Only destination-relative URLs differ; all resolve to identical targets"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/candidate/README.md",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.21/README.md",
+      "result": "Only destination-relative URLs differ; all resolve to identical targets"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/candidate/publication.json",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.21/publication.json",
+      "result": "Generated digest map corresponds to verified destination outputs"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/narrative/continuum-rad.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.21/continuum-rad.tex",
+      "result": "EXACT"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/narrative/structure.json",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.21/structure.json",
+      "result": "EXACT"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/narrative/README.md",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.21/README.md",
+      "result": "EXACT"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/narrative/publication.json",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.21/publication.json",
+      "result": "Generated digest map corresponds to verified destination outputs"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/narrative/parts/business.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/business.tex",
+      "result": "Only destination-relative URLs differ; all resolve to identical targets"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/narrative/parts/architecture-governance.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/architecture-governance.tex",
+      "result": "Only destination-relative URLs differ; all resolve to identical targets"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/narrative/parts/application.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/application.tex",
+      "result": "Only destination-relative URLs differ; all resolve to identical targets"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/narrative/parts/cross-cutting-references.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/cross-cutting-references.tex",
+      "result": "Only destination-relative URLs differ; all resolve to identical targets"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/narrative/parts/implementation-and-migration.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/implementation-and-migration.tex",
+      "result": "EXACT"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/narrative/parts/strategy.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/strategy.tex",
+      "result": "Only destination-relative URLs differ; all resolve to identical targets"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/narrative/parts/technology.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/technology.tex",
+      "result": "EXACT"
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/patient-transport-follow-up/narrative/parts/motivation.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.21/parts/motivation.tex",
+      "result": "Only destination-relative URLs differ; all resolve to identical targets"
+    }
+  ],
+  "comparisonChecks": {
+    "relativeUrlCarriers": 59374,
+    "readerElementRecords": 13084,
+    "digestEntries": 15
+  },
+  "publishedArtifacts": 19,
+  "unchangedAcceptedInputs": 6620,
+  "protectedHistoricalPublicationRegisterAndReleaseFilesUnchanged": 240,
+  "patchAllocation": "Existing 1.1.21 allocation reused; root release bytes unchanged.",
+  "humanAcceptance": "Final issued Solution Architect acceptance at 2026-11-10T22:52:33.672Z, exact Task retained before/ai-agent-tasks.",
+  "transport": "Strict FAIL accepted with exact bounded qualification; raw classifications/evidence unchanged.",
+  "resolvedVerificationFinding": "Preliminary URL diagnostics were corrected to resolve TeX part links from the master publication directory and map sibling artifact correspondence. A preliminary HTML link diagnostic also interpreted a JavaScript dynamic-link string as a URL; the checker now preserves all script bytes exactly. An initial all-artifact byte-equality assertion failed on the catalogue because maintained publishers intentionally rebase relative links for each output directory. This check proves identical resolved URL targets and exact non-URL content; generated digest maps are independently verified. No generated file or maintained comparator was changed.",
+  "pdf": "Not compiled; established HTML/Exchange/LaTeX source publications generated and checked."
+}
