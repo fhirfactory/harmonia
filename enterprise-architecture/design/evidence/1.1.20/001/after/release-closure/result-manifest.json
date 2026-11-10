@@ -1,5 +1,5 @@
 {
-  "standing": "Accepted immutable 1.1.20 publication; terminal Git transition pending at manifest emission",
+  "standing": "Accepted immutable 1.1.20 publication and complete local HCRL; overall terminal repository transition BLOCKED at authenticated push",
   "release": {
     "version": "1.1.20",
     "previous_version": "1.1.19",
@@ -29,7 +29,7 @@
   "selectedResultPins": [
     {
       "path": "enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261110T092248Z-release-closure-complete.md",
-      "sha256": "27543ac607ae77fc3ec6269c9da3cd4714699dc4724c913b869a890cf023ca2f"
+      "sha256": "e2ae004334356a4baa4810dccf6bf5d61c196d81bc43001e96d8b25ddc18d3e1"
     },
     {
       "path": "enterprise-architecture/design/register/1.1.20/hcrl-1.1.20-001.complete.md",
@@ -98,6 +98,10 @@
     {
       "path": "enterprise-architecture/design/evidence/1.1.20/001/after/release-closure/repository-verification.json",
       "sha256": "b89b021384f9f3f00284e9e3474ce5d45911a3b025aa1940cf25706c83c0a311"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/release-closure/git-transition-status.json",
+      "sha256": "aaeb2c7fc92fff21b275a3b1037d4ea35df233f49c76f0f6de2e75564775421c"
     }
   ],
   "acceptedSourcePins": [
@@ -194,5 +198,12 @@
       "Transient Python bytecode"
     ]
   },
-  "noSelfHashing": "This manifest and terminal Git commit are not recursively self-pinned; Git preserves their resulting state."
+  "noSelfHashing": "This manifest and terminal Git commit are not recursively self-pinned; Git preserves their resulting state.",
+  "postEmissionGitObservation": {
+    "acceptedArchitectureCommit": "f4b35925a71730f453533a126e015d15798e89be",
+    "push": "FAIL — unavailable credentials",
+    "actualRemoteHead": "3bbdf01ad6d185a5f810842c255e5a8503d79dde",
+    "nextRelease": "NOT_INITIALISED",
+    "statusEvidence": "enterprise-architecture/design/evidence/1.1.20/001/after/release-closure/git-transition-status.json"
+  }
 }

@@ -73,3 +73,23 @@ and offline DRP remain untouched outside the accepted commit scope.
 No release-blocking architectural defect remains under the explicit dispositions.
 1.1.21 initialisation remains conditional on verified 1.1.20 commit/push and will
 be recorded in its own iteration; the 1.1.20 exceptions do not transfer to it.
+
+## Terminal Git observation — remote transition blocked
+
+Recorded at 2026-11-10T09:27:00.828547Z from actual Git command results (provenance maintenance;
+original Report production event/prefix unchanged). Accepted publication/closure
+commit: `f4b35925a71730f453533a126e015d15798e89be` on `Capability-Map-Consolidation`. All
+19 publication files and 37 selected evidence/source pins verify inside that commit;
+tracked accepted paths agree with the worktree. Two pre-existing unrelated files
+remain untracked and untouched.
+
+The authorised push failed, exit 128: Git could not read a GitHub username because
+no usable shell credentials were available. Read-only remote verification succeeds
+and still identifies `3bbdf01ad6d185a5f810842c255e5a8503d79dde`. No push or remote
+correspondence success is claimed. [Actual Git transition status](../release-closure/git-transition-status.json)
+retains the diagnostic and recovery condition. The HCRL and accepted publication
+are complete locally; **the overall repository transition remains blocked at push**.
+1.1.21 is **NOT INITIALISED**; root remains 1.1.20 with predecessor 1.1.19.
+The user has been asked to restore authentication or push through the IDE. No
+credentials need to be shared in chat. Subsequent mechanical Git-state evidence
+terminates this same lifecycle without recursive reporting or release increments.
