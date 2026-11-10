@@ -1,0 +1,14 @@
+{
+  "outcome": "PASS_WITH_FORMATTING_QUALIFICATION",
+  "stagedScope": "PASS \u2014 48 authorised initialisation files before this mechanical evidence update",
+  "authoredReleaseManifestGovernanceAndFormalRecordsWhitespace": "PASS",
+  "rawStagedWhitespace": {
+    "exitCode": 2,
+    "outcome": "FAIL \u2014 formatting only",
+    "findingCount": 189,
+    "scope": "177 trailing spaces in verbatim Maven output; 12 in unchanged deterministic narrative TeX",
+    "treatment": "Raw command evidence and generated publication bytes preserved. No architecture/code defect or mandatory release-gate failure is indicated."
+  },
+  "noModelChange": "PASS \u2014 source digest and exhaustive XML comparator",
+  "immutablePredecessor": "PASS \u2014 239 accepted publication/register files unchanged"
+}
