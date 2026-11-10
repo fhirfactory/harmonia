@@ -46,3 +46,31 @@ bytes are retained faithfully; immutable publications, accepted candidates and
 execution evidence are not rewritten to satisfy a whitespace diagnostic. The
 established mandatory release/publication checks remain PASS. This introduces no
 new architectural exception or remediation scope.
+
+## Terminal Git observation
+
+The accepted release was committed on `Capability-Map-Consolidation` as
+**`dae2f333ec0f014ef55354af02aa64915adf3fa7`**, parent
+`c08a02a5569ead5805a46048da486db5365adc7c`, with all 1,526 verified paths.
+The commit succeeded; its recorded commit time is **2026-11-11T10:09:52+11:00**.
+All nineteen immutable publication files, the completed HCRL, root Manifest and
+release authority match their result-manifest hashes in both the working tree
+and release commit. The tree was clean immediately after that commit.
+
+The authorised ordinary push was attempted at **2026-11-10T23:10:08.860750Z**
+and completed at **2026-11-10T23:10:09.165762Z** with **FAIL, exit 128**:
+`fatal: could not read Username for 'https://github.com': terminal prompts disabled`.
+No shell credential helper is configured. A separate actual remote check at
+**2026-11-10T23:10:19.800749Z** succeeded and confirms the remote branch remains
+`c08a02a5569ead5805a46048da486db5365adc7c`; the release commit is not on origin.
+The [Git transition evidence](../release-closure/git-transition-status.json)
+retains the exact command, execution timestamps, return codes and diagnostics.
+
+HCRL completion and local immutable publication are complete. **Remote push is
+blocked by authentication**, and no successful remote release is claimed.
+Authenticate through the established local or IDE credential mechanism and push
+this branch normally. No Solution Architect adjudication remains. The qualified
+strict transport FAIL and all inherited qualifications remain unchanged.
+This terminal observation and its Git evidence are retained in a bounded
+provenance maintenance commit; subsequent mechanical Git checks terminate at
+actual Git state without a new Task, iteration, release or recursive report.
