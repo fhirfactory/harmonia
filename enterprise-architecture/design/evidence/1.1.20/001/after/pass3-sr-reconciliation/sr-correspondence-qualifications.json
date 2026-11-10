@@ -1,0 +1,87 @@
+[
+  {
+    "id": "SR-001",
+    "disposition": "Implement accepted consolidation",
+    "elements": [
+      "B05.03.01",
+      "B05.03.04"
+    ],
+    "incorporation": "Consolidated five source Features into existing F01/F02/F04/F05, with identity assurance at F03 and rejection/escalation at F06. Retired source CT3 and its five Feature identities. Operational handovers unchanged.",
+    "status": "Accepted and incorporated",
+    "authority": "../../before/pass3-sr-reconciliation-issued-directions.md",
+    "result_review": "Solution Architect review pending; offline only",
+    "qualification": "",
+    "historical_issue": "Accepted register says consolidate B05.03.04 into B05.03.01; both remain active in supplied Pass3/011.",
+    "resolution": "Consolidated five source Features into existing F01/F02/F04/F05, with identity assurance at F03 and rejection/escalation at F06. Retired source CT3 and its five Feature identities. Operational handovers unchanged."
+  },
+  {
+    "id": "SR-004",
+    "disposition": "Keep distinct; refine wording",
+    "elements": [
+      "E06.03.01",
+      "E06.03.03"
+    ],
+    "incorporation": "Applied accepted CT3 names and boundaries; refined handoff state/accountability, correlation and evidence. Destination selection, delivery attempt and accepted handoff remain distinct. All ten Feature identities/containments retained; XD-012 decision evidence unchanged.",
+    "status": "Accepted and incorporated",
+    "authority": "../../before/pass3-sr-reconciliation-issued-directions.md",
+    "result_review": "Solution Architect review pending; offline only",
+    "qualification": "",
+    "historical_issue": "Accepted register says rename E06.03.01 to Governed Parcel Handoff & Accountability; baseline still says Governed Parcel Routing.",
+    "resolution": "Applied accepted CT3 names and boundaries; refined handoff state/accountability, correlation and evidence. Destination selection, delivery attempt and accepted handoff remain distinct. All ten Feature identities/containments retained; XD-012 decision evidence unchanged."
+  },
+  {
+    "id": "SR-015",
+    "disposition": "Keep distinct; refine wording",
+    "elements": [
+      "E06.08.07",
+      "E06.09.07"
+    ],
+    "incorporation": "Applied outcome/continuation versus long-duration activity responsibilities and accepted names. Retained all ten recovery/subscription/lineage obligations and original criteria alongside Task/activity state and outcome semantics. No automatic extra Task or commitment inference.",
+    "status": "Accepted and incorporated",
+    "authority": "../../before/pass3-sr-reconciliation-issued-directions.md",
+    "result_review": "Solution Architect review pending; offline only",
+    "qualification": "Original recovery/safeguarding obligations remain additional conditions; original criteria do not alone assure the expanded accepted scope.",
+    "historical_issue": "Accepted register describes E06.08.07 as Ergon output processing; baseline names it Published Work Recovery & Reconciliation. E06.09.07 remains Deferred Work Recovery & Reconciliation.",
+    "resolution": "Applied outcome/continuation versus long-duration activity responsibilities and accepted names. Retained all ten recovery/subscription/lineage obligations and original criteria alongside Task/activity state and outcome semantics. No automatic extra Task or commitment inference."
+  },
+  {
+    "id": "SR-016",
+    "disposition": "Keep distinct; refine wording",
+    "elements": [
+      "B13.04.02",
+      "B14.06.01"
+    ],
+    "incorporation": "Applied research de-identification/pseudonymisation/minimisation and participant-contextual protection responsibilities. Retained all ten safeguarding/consent/risk/withdrawal/adverse-response obligations and original criteria. Research utility, re-identification risk, disclosure conditions and domain authority remain distinct.",
+    "status": "Accepted and incorporated",
+    "authority": "../../before/pass3-sr-reconciliation-issued-directions.md",
+    "result_review": "Solution Architect review pending; offline only",
+    "qualification": "Original recovery/safeguarding obligations remain additional conditions; original criteria do not alone assure the expanded accepted scope.",
+    "historical_issue": "Accepted register frames B13.04.02 as research de-identification/minimisation; baseline is Research Participant Safeguarding, whose F01 concerns consent/safeguarding.",
+    "resolution": "Applied research de-identification/pseudonymisation/minimisation and participant-contextual protection responsibilities. Retained all ten safeguarding/consent/risk/withdrawal/adverse-response obligations and original criteria. Research utility, re-identification risk, disclosure conditions and domain authority remain distinct."
+  },
+  {
+    "id": "SR-017",
+    "disposition": "Keep distinct; correct narrative correspondence",
+    "elements": [
+      "E03.06.04",
+      "E03.06.05"
+    ],
+    "incorporation": "Corrected current SR narrative: E03.06.04 exposes server interactions to external clients; E03.06.05 consumes external servers as client. All ten already correct Features, both CT3 definitions and containment preserved byte-for-byte.",
+    "status": "Accepted and incorporated",
+    "authority": "../../before/pass3-sr-reconciliation-issued-directions.md",
+    "result_review": "Solution Architect review pending; offline only",
+    "qualification": "",
+    "historical_issue": "Register narrative associates the first and second IDs with client/server opposite to baseline titles: E03.06.04 Server; E03.06.05 Client.",
+    "resolution": "Corrected current SR narrative: E03.06.04 exposes server interactions to external clients; E03.06.05 consumes external servers as client. All ten already correct Features, both CT3 definitions and containment preserved byte-for-byte."
+  },
+  {
+    "id": "Temporal provenance",
+    "status": "UNRESOLVED",
+    "resolution": "Original instruction-entry event times and Task filename prefixes unavailable; SA treatment required before HCRL closure."
+  },
+  {
+    "id": "Spreadsheet application",
+    "status": "UNRESOLVED",
+    "resolution": "Prior bounded LibreOffice launcher failures remain qualified. No new application load/export or visual inspection is claimed; current ZIP/XML and data checks are independent."
+  }
+]

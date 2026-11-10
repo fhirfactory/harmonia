@@ -9,7 +9,7 @@
   "canonicalName": "CT1-DiagnosticTherapeuticAndClinicalSupportServices.CT2-DiagnosticSupportProvision.CT3-DiagnosticReportDistribution",
   "standing": {
     "semantic": "Canonical",
-    "currentness": "current",
+    "currentness": "superseded",
     "placement_status": "Established",
     "structural_id_status": "Established",
     "name_status": "Canonical",
@@ -18,7 +18,31 @@
   "identity": {
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
-    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+    "replacementHistory": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "originalIdentityMetadata": {
+        "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+        "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+        "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+      },
+      "replacementCatalogueIds": [
+        "B04.03.02",
+        "E02.04.01"
+      ],
+      "replacementCanonicalIds": [
+        "1eb70d951f164ed8a0b75ce1704b9083",
+        "87869a1eec5f4c7cb87600a06cc8fd6e"
+      ],
+      "disposition": "replacement-scope-correspondence",
+      "completeSemanticEquivalenceAsserted": false
+    },
+    "correspondence": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "successorCanonicalId": "1eb70d951f164ed8a0b75ce1704b9083",
+      "historicalIdentityReserved": true,
+      "disposition": "Primary replacement scope; partial/multiple correspondence retained separately, not complete equivalence"
+    }
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -140,17 +164,6 @@
         "values": [
           {
             "text": "Canonical",
-            "attributes": {
-              "{http://www.w3.org/XML/1998/namespace}lang": "en"
-            }
-          }
-        ]
-      },
-      {
-        "ref": "propid-7",
-        "values": [
-          {
-            "text": "current",
             "attributes": {
               "{http://www.w3.org/XML/1998/namespace}lang": "en"
             }
@@ -332,6 +345,15 @@
             }
           }
         ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "superseded",
+            "attributes": {}
+          }
+        ]
       }
     ]
   },
@@ -361,3 +383,7 @@ Diagnostic Report Distribution provides an already established report to applica
 **Boundary**
 
 Delivery does not establish clinical review, report authorisation or a patient-level clinical decision.
+
+## Capability model replacement history
+
+The original content above remains historical and unchanged. This resource is superseded under [the replacement task](../../../design/evidence/1.1.20/001/before/CapabilityReplacementTask.md). Primary replacement catalogue identity `B04.03.02`; additional scope correspondences: `E02.04.01`. Original canonical/Exchange identities and source contributions remain reserved. Correspondence does not assert complete semantic equivalence, implementation satisfaction or transfer domain authority.

@@ -9,7 +9,7 @@
   "canonicalName": "CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-HealthInformationAccess.CT3-BEC-GovernedHealthInformationRetrieval.FEAT-AccessControlledInformationFiltering",
   "standing": {
     "semantic": "Canonical",
-    "currentness": "current",
+    "currentness": "superseded",
     "placement_status": "Proposed",
     "structural_id_status": "Proposed",
     "name_status": "Canonical",
@@ -18,7 +18,31 @@
   "identity": {
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
-    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+    "replacementHistory": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "originalIdentityMetadata": {
+        "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+        "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+        "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+      },
+      "replacementCatalogueIds": [
+        "E02.01.03",
+        "E05.02.02"
+      ],
+      "replacementCanonicalIds": [
+        "13cf2657a8ef4fdf8d014fc92475dcbf",
+        "948a4556bb1b4c4793dbbfcdea092e57"
+      ],
+      "disposition": "replacement-scope-correspondence",
+      "completeSemanticEquivalenceAsserted": false
+    },
+    "correspondence": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "successorCanonicalId": "13cf2657a8ef4fdf8d014fc92475dcbf",
+      "historicalIdentityReserved": true,
+      "disposition": "Primary replacement scope; partial/multiple correspondence retained separately, not complete equivalence"
+    }
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -124,17 +148,6 @@
         "values": [
           {
             "text": "Canonical",
-            "attributes": {
-              "{http://www.w3.org/XML/1998/namespace}lang": "en"
-            }
-          }
-        ]
-      },
-      {
-        "ref": "propid-7",
-        "values": [
-          {
-            "text": "current",
             "attributes": {
               "{http://www.w3.org/XML/1998/namespace}lang": "en"
             }
@@ -338,6 +351,15 @@
             }
           }
         ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "superseded",
+            "attributes": {}
+          }
+        ]
       }
     ]
   },
@@ -357,3 +379,7 @@
 Filter search results dynamically according to requesting user authorizations and patient consent directives.
 
 Access-qualified filtering restricts the disclosed result to the verified caller's authority and applicable consent. The responsibility is more specific than retrieving a resource; the latter's shared owner and subject matter do not establish a Feature realisation relationship.
+
+## Capability model replacement history
+
+The original content above remains historical and unchanged. This resource is superseded under [the replacement task](../../../../design/evidence/1.1.20/001/before/CapabilityReplacementTask.md). Primary replacement catalogue identity `E02.01.03`; additional scope correspondences: `E05.02.02`. Original canonical/Exchange identities and source contributions remain reserved. Correspondence does not assert complete semantic equivalence, implementation satisfaction or transfer domain authority.

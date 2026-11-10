@@ -5,8 +5,8 @@
   "archimateType": "BusinessProcess",
   "specialization": null,
   "displayName": "Encounter Lifecycle Process",
-  "friendlyName": "CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLifecycleManagement.EncounterStateProgression.EncounterLifecycleProcess",
-  "canonicalName": "CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.CT3-BEC-EncounterLifecycleManagement.FEAT-EncounterStateProgression.PR-EncounterLifecycleProcess",
+  "friendlyName": "InformationPresentationAndHumanInteraction.LongitudinalInformationViewing.EncounterAndEpisodeContextNavigation.EncounterLifecycleProcess",
+  "canonicalName": "CT1-EC-InformationPresentationAndHumanInteraction.CT2-EC-LongitudinalInformationViewing.CT3-EC-EncounterAndEpisodeContextNavigation.PR-EncounterLifecycleProcess",
   "standing": {
     "semantic": "Canonical",
     "currentness": "current",
@@ -21,13 +21,45 @@
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
   },
   "naming": {
-    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md",
     "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
     "expected": {
       "displayName": "Encounter Lifecycle Process",
+      "friendlyName": "InformationPresentationAndHumanInteraction.LongitudinalInformationViewing.EncounterAndEpisodeContextNavigation.EncounterLifecycleProcess",
+      "canonicalName": "CT1-EC-InformationPresentationAndHumanInteraction.CT2-EC-LongitudinalInformationViewing.CT3-EC-EncounterAndEpisodeContextNavigation.PR-EncounterLifecycleProcess"
+    },
+    "preReplacementNames": {
       "friendlyName": "CareAdministrationEnablement.EpisodeAndEncounterAdministration.EncounterLifecycleManagement.EncounterStateProgression.EncounterLifecycleProcess",
       "canonicalName": "CT1-BEC-CareAdministrationEnablement.CT2-BEC-EpisodeAndEncounterAdministration.CT3-BEC-EncounterLifecycleManagement.FEAT-EncounterStateProgression.PR-EncounterLifecycleProcess"
-    }
+    },
+    "inputs": [
+      {
+        "key": "E07",
+        "type": "capability",
+        "name": "Information Presentation & Human Interaction",
+        "tier": "CT1",
+        "category": "enterprise"
+      },
+      {
+        "key": "E07.03",
+        "type": "capability",
+        "name": "Longitudinal Information Viewing",
+        "tier": "CT2",
+        "category": "enterprise"
+      },
+      {
+        "key": "E07.03.06",
+        "type": "capability",
+        "name": "Encounter & Episode Context Navigation",
+        "tier": "CT3",
+        "category": "enterprise"
+      },
+      {
+        "key": "df49e2e8bb3748f3abbdd1c28ae1be8f",
+        "type": "process",
+        "name": "Encounter Lifecycle Process"
+      }
+    ]
   },
   "provenance": [
     {
@@ -382,7 +414,8 @@
         "isDirected": "true"
       },
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -400,11 +433,86 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "specialization": "Home",
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
+    },
+    {
+      "identifier": "id-19c246d20fef54be81f04e09f1895378",
+      "archimateType": "Association",
+      "source": "id-0e94558f9afd57259e6017e0fea3ec07",
+      "target": "id-47306531bd5e58ce9fe41c0b7a0ad593",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-1f7c2303c3885f60a1986af112f79eb0",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "specialization",
+          "values": [
+            {
+              "text": "Home",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "specialization": "Home",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "name": [],
+      "documentation": [
+        {
+          "text": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-1f7c2303c3885f60a1986af112f79eb0 remains preserved as history.",
+          "attributes": {}
+        }
+      ]
     }
   ],
   "unresolvedProperties": {},

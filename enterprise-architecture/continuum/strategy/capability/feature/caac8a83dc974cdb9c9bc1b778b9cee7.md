@@ -9,7 +9,7 @@
   "canonicalName": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-WorkAllocationAndDispatch.CT3-BEC-OperationalWorkAssignmentAndDispatchCoordination.FEAT-WorkerMatchingAndAllocation",
   "standing": {
     "semantic": "Canonical",
-    "currentness": "current",
+    "currentness": "superseded",
     "placement_status": "Proposed",
     "structural_id_status": "Proposed",
     "name_status": "Canonical",
@@ -18,7 +18,31 @@
   "identity": {
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
-    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+    "replacementHistory": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "originalIdentityMetadata": {
+        "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+        "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+        "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+      },
+      "replacementCatalogueIds": [
+        "E06.08.04",
+        "E06.08.05"
+      ],
+      "replacementCanonicalIds": [
+        "8601901c695d4089b82e877b443d3a65",
+        "7dd8a3f7f9cc46b18125234079577915"
+      ],
+      "disposition": "replacement-scope-correspondence",
+      "completeSemanticEquivalenceAsserted": false
+    },
+    "correspondence": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "successorCanonicalId": "8601901c695d4089b82e877b443d3a65",
+      "historicalIdentityReserved": true,
+      "disposition": "Primary replacement scope; partial/multiple correspondence retained separately, not complete equivalence"
+    }
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -124,17 +148,6 @@
         "values": [
           {
             "text": "Canonical",
-            "attributes": {
-              "{http://www.w3.org/XML/1998/namespace}lang": "en"
-            }
-          }
-        ]
-      },
-      {
-        "ref": "propid-7",
-        "values": [
-          {
-            "text": "current",
             "attributes": {
               "{http://www.w3.org/XML/1998/namespace}lang": "en"
             }
@@ -327,6 +340,15 @@
             }
           }
         ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "superseded",
+            "attributes": {}
+          }
+        ]
       }
     ]
   },
@@ -346,3 +368,7 @@
 Match work items against available staff roles, credentials, and locations based on allocation policies.
 
 Worker matching relates an operational requirement to eligible roles, credentials, locations and availability under policy. It consumes those constraints rather than changing their authoritative records, and does not turn operational allocation into permission to decide clinical work.
+
+## Capability model replacement history
+
+The original content above remains historical and unchanged. This resource is superseded under [the replacement task](../../../../design/evidence/1.1.20/001/before/CapabilityReplacementTask.md). Primary replacement catalogue identity `E06.08.04`; additional scope correspondences: `E06.08.05`. Original canonical/Exchange identities and source contributions remain reserved. Correspondence does not assert complete semantic equivalence, implementation satisfaction or transfer domain authority.

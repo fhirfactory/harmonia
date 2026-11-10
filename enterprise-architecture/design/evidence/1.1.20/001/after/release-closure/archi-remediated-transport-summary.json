@@ -1,0 +1,80 @@
+{
+  "actualArchiCliImportNativeSaveExport": "PASS",
+  "installedArchiVersion": "5.10.0.202608252016",
+  "baselineSha256": "1954006168f3a993de9b31be4f7f81599f39f7ba55b4c32b85ff7aca0b151512",
+  "returnedXmlSha256": "bb88312ad31840c7b6ca61e65bfd52dff740e7e0e88628a5d75f9a1df012271f",
+  "nativeSha256": "d3fb2be986202d241afebb2ca4cc04dfe2a81497197b0a459d38ae85b92e9955",
+  "nativeCatalogueInspection": {
+    "outcome": "PASS",
+    "elements": 5685,
+    "relationships": 6636,
+    "elementAndDirectSourceRelationshipFolders": "PASS"
+  },
+  "sourceToAcceptanceProjection": {
+    "outcome": "PASS",
+    "derivedNavigationStatusSnapshots": 1344,
+    "relationshipAcceptancePropertyChanges": 725,
+    "documentationConsolidations": 509,
+    "allOtherElementAndRelationshipContent": "UNCHANGED",
+    "authoredViews": "UNCHANGED"
+  },
+  "rawComparatorStatus": "DIFFERENCES",
+  "rawClassifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 3843,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 13963,
+    "SEMANTIC DIFFERENCE": 100708,
+    "UNEXPLAINED DIFFERENCE": 12321
+  },
+  "boundedResidualClasses": {
+    "maintained comparator equivalent": 3843,
+    "absent scalar xml:lang becomes en": 100708,
+    "organisation representation identifier omitted": 1642,
+    "catalogue reference sole-label omission reflected in child order": 12321,
+    "redundant catalogue reference label omitted": 12321
+  },
+  "unclassifiedCount": 0,
+  "unclassified": [],
+  "boundedSignatureChecks": {
+    "element": {
+      "before": 5685,
+      "after": 5685,
+      "allIdsPreserved": true,
+      "exactAfterOnlyAbsentEnglishAndUniquePropertyOrder": 5685,
+      "residualIds": []
+    },
+    "relationship": {
+      "before": 6636,
+      "after": 6636,
+      "allIdsPreserved": true,
+      "exactAfterOnlyAbsentEnglishAndUniquePropertyOrder": 6636,
+      "residualIds": []
+    },
+    "view": {
+      "before": 1288,
+      "after": 1288,
+      "allIdsPreserved": true,
+      "exactAfterOnlyAbsentEnglishAndUniquePropertyOrder": 1288,
+      "residualIds": []
+    }
+  },
+  "viewNavigationDeltaCounts": {
+    "changedViews": 0,
+    "folderChanges": 0,
+    "orderChanges": 0,
+    "addedViewPlacements": 0,
+    "removedViewPlacements": 0,
+    "issues": 0
+  },
+  "rawChangedRelationshipCount": 6435,
+  "rawChangedViewCount": 0,
+  "strictTransportGate": "FAIL — raw residuals remain; no production validator weakened",
+  "documentationRepair": "PASS — all 509 generated migration qualifications now survive actual transport with exact text",
+  "humanWorkbenchStructuralReview": "NOT_PERFORMED",
+  "humanGeneratedReaderReview": "NOT_PERFORMED",
+  "limits": [
+    "The bounded evidence signatures explicitly classify absent/en language and uniquely keyed Property order; this is not raw equivalence or acceptance.",
+    "Actual CLI import/save/export and native-tree inspection are not GUI workbench operation or Solution Architect visual review.",
+    "Prior exact-candidate dispositions are not silently extended; current residuals require applicable disposition before dependent closure."
+  ]
+}

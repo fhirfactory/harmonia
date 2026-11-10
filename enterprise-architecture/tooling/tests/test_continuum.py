@@ -48,7 +48,7 @@ class ContinuumTests(unittest.TestCase):
 
     def test_population_and_provenance(self):
         r=c.validate(self.root)
-        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(1996,2246,462))
+        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(5685,6636,462))
         self.assertEqual(r['elements'],r['provenanceCoverage'])
 
     def test_identity_type_location_and_standing_fail_closed(self):
@@ -253,8 +253,9 @@ class ContinuumTests(unittest.TestCase):
             target=a.get('href')
             if target.startswith('#'):
                 self.assertIn(target[1:],anchors)
+        document_text=doc.text_content()
         for node in nav.walk(tree):
-            self.assertIn(nav.title(node),doc.text_content())
+            self.assertIn(nav.title(node),document_text)
 
     def test_manifest_escapes_source_text_without_hiding_qualifications(self):
         value='Proposed | [label](fake-target) *qualified* `literal` & <script>x</script> \\ suffix'

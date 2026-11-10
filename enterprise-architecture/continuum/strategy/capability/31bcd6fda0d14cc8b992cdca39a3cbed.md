@@ -9,7 +9,7 @@
   "canonicalName": "CT1-BEC-EntityInformationEnablement.CT2-BEC-ClinicalDeviceAdministration",
   "standing": {
     "semantic": "Canonical",
-    "currentness": "current",
+    "currentness": "superseded",
     "placement_status": "Proposed",
     "structural_id_status": "Proposed",
     "name_status": "Canonical",
@@ -19,9 +19,33 @@
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
-    "predecessorCanonicalIds": [
-      "3792be10541e4d68b3f740b1ba964966"
-    ]
+    "replacementHistory": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "originalIdentityMetadata": {
+        "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+        "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+        "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+        "predecessorCanonicalIds": [
+          "3792be10541e4d68b3f740b1ba964966"
+        ]
+      },
+      "replacementCatalogueIds": [
+        "B09.02",
+        "E05.07.01"
+      ],
+      "replacementCanonicalIds": [
+        "e53263d0800243fe9ced7822116646f8",
+        "d403533b88f243d0aa555a3a7566b5d1"
+      ],
+      "disposition": "replacement-scope-correspondence",
+      "completeSemanticEquivalenceAsserted": false
+    },
+    "correspondence": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "successorCanonicalId": "e53263d0800243fe9ced7822116646f8",
+      "historicalIdentityReserved": true,
+      "disposition": "Primary replacement scope; partial/multiple correspondence retained separately, not complete equivalence"
+    }
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -167,17 +191,6 @@
         "values": [
           {
             "text": "Canonical",
-            "attributes": {
-              "{http://www.w3.org/XML/1998/namespace}lang": "en"
-            }
-          }
-        ]
-      },
-      {
-        "ref": "propid-7",
-        "values": [
-          {
-            "text": "current",
             "attributes": {
               "{http://www.w3.org/XML/1998/namespace}lang": "en"
             }
@@ -381,6 +394,15 @@
             }
           }
         ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "superseded",
+            "attributes": {}
+          }
+        ]
       }
     ]
   },
@@ -394,7 +416,8 @@
       "standing": {
         "v0.2 / Assertion Status": "Proposed",
         "v0.2 / Record State": "current",
-        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -407,17 +430,6 @@
           "values": [
             {
               "text": "Proposed",
-              "attributes": {
-                "{http://www.w3.org/XML/1998/namespace}lang": "en"
-              }
-            }
-          ]
-        },
-        {
-          "ref": "propid-7",
-          "values": [
-            {
-              "text": "current",
               "attributes": {
                 "{http://www.w3.org/XML/1998/namespace}lang": "en"
               }
@@ -467,6 +479,15 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "name": [],
@@ -477,7 +498,16 @@
             "{http://www.w3.org/XML/1998/namespace}lang": "en"
           }
         }
-      ]
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "v0.2 / Assertion Status": "Proposed",
+          "v0.2 / Record State": "current",
+          "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-545d79190b7051fbb3421c13d896eb4f",
@@ -488,7 +518,8 @@
       "standing": {
         "v0.2 / Assertion Status": "Proposed",
         "v0.2 / Record State": "preserved historical assertion",
-        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -501,17 +532,6 @@
           "values": [
             {
               "text": "Proposed",
-              "attributes": {
-                "{http://www.w3.org/XML/1998/namespace}lang": "en"
-              }
-            }
-          ]
-        },
-        {
-          "ref": "propid-7",
-          "values": [
-            {
-              "text": "preserved historical assertion",
               "attributes": {
                 "{http://www.w3.org/XML/1998/namespace}lang": "en"
               }
@@ -561,6 +581,15 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "name": [],
@@ -571,7 +600,16 @@
             "{http://www.w3.org/XML/1998/namespace}lang": "en"
           }
         }
-      ]
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "v0.2 / Assertion Status": "Proposed",
+          "v0.2 / Record State": "preserved historical assertion",
+          "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-ca0283d064a35e24ad76c54e1c08b52f",
@@ -582,7 +620,8 @@
       "standing": {
         "v0.2 / Assertion Status": "Proposed",
         "v0.2 / Record State": "preserved historical assertion",
-        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -595,17 +634,6 @@
           "values": [
             {
               "text": "Proposed",
-              "attributes": {
-                "{http://www.w3.org/XML/1998/namespace}lang": "en"
-              }
-            }
-          ]
-        },
-        {
-          "ref": "propid-7",
-          "values": [
-            {
-              "text": "preserved historical assertion",
               "attributes": {
                 "{http://www.w3.org/XML/1998/namespace}lang": "en"
               }
@@ -655,6 +683,15 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "name": [],
@@ -665,7 +702,16 @@
             "{http://www.w3.org/XML/1998/namespace}lang": "en"
           }
         }
-      ]
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "v0.2 / Assertion Status": "Proposed",
+          "v0.2 / Record State": "preserved historical assertion",
+          "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-2cdd63f2b3fa518da744c417ddf560f4",
@@ -676,7 +722,8 @@
       "standing": {
         "v0.2 / Assertion Status": "Proposed",
         "v0.2 / Record State": "current",
-        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -689,17 +736,6 @@
           "values": [
             {
               "text": "Proposed",
-              "attributes": {
-                "{http://www.w3.org/XML/1998/namespace}lang": "en"
-              }
-            }
-          ]
-        },
-        {
-          "ref": "propid-7",
-          "values": [
-            {
-              "text": "current",
               "attributes": {
                 "{http://www.w3.org/XML/1998/namespace}lang": "en"
               }
@@ -749,6 +785,15 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "name": [],
@@ -759,7 +804,16 @@
             "{http://www.w3.org/XML/1998/namespace}lang": "en"
           }
         }
-      ]
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "v0.2 / Assertion Status": "Proposed",
+          "v0.2 / Record State": "current",
+          "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-36502a9fd3ed5a2f920fb90bda1fcfb4",
@@ -770,7 +824,8 @@
       "standing": {
         "v0.2 / Assertion Status": "Proposed",
         "v0.2 / Record State": "current",
-        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -783,17 +838,6 @@
           "values": [
             {
               "text": "Proposed",
-              "attributes": {
-                "{http://www.w3.org/XML/1998/namespace}lang": "en"
-              }
-            }
-          ]
-        },
-        {
-          "ref": "propid-7",
-          "values": [
-            {
-              "text": "current",
               "attributes": {
                 "{http://www.w3.org/XML/1998/namespace}lang": "en"
               }
@@ -843,6 +887,15 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "name": [],
@@ -853,7 +906,16 @@
             "{http://www.w3.org/XML/1998/namespace}lang": "en"
           }
         }
-      ]
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "v0.2 / Assertion Status": "Proposed",
+          "v0.2 / Record State": "current",
+          "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-e2abc90ae3c75852b3d2636cf70ae2f2",
@@ -864,7 +926,8 @@
       "standing": {
         "v0.2 / Assertion Status": "Proposed",
         "v0.2 / Record State": "preserved historical assertion",
-        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -877,17 +940,6 @@
           "values": [
             {
               "text": "Proposed",
-              "attributes": {
-                "{http://www.w3.org/XML/1998/namespace}lang": "en"
-              }
-            }
-          ]
-        },
-        {
-          "ref": "propid-7",
-          "values": [
-            {
-              "text": "preserved historical assertion",
               "attributes": {
                 "{http://www.w3.org/XML/1998/namespace}lang": "en"
               }
@@ -937,6 +989,15 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "name": [],
@@ -947,7 +1008,16 @@
             "{http://www.w3.org/XML/1998/namespace}lang": "en"
           }
         }
-      ]
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "v0.2 / Assertion Status": "Proposed",
+          "v0.2 / Record State": "preserved historical assertion",
+          "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-ba9ba8c301415bcc8628f4dfca5ab596",
@@ -958,7 +1028,8 @@
       "standing": {
         "v0.2 / Assertion Status": "Proposed",
         "v0.2 / Record State": "current",
-        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -971,17 +1042,6 @@
           "values": [
             {
               "text": "Proposed",
-              "attributes": {
-                "{http://www.w3.org/XML/1998/namespace}lang": "en"
-              }
-            }
-          ]
-        },
-        {
-          "ref": "propid-7",
-          "values": [
-            {
-              "text": "current",
               "attributes": {
                 "{http://www.w3.org/XML/1998/namespace}lang": "en"
               }
@@ -1031,6 +1091,15 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "name": [],
@@ -1041,7 +1110,16 @@
             "{http://www.w3.org/XML/1998/namespace}lang": "en"
           }
         }
-      ]
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "v0.2 / Assertion Status": "Proposed",
+          "v0.2 / Record State": "current",
+          "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-546d88c5821151208d0fa6664fcdc9ce",
@@ -1051,7 +1129,7 @@
       "attributes": {},
       "standing": {
         "semantic": "Proposed",
-        "currentness": "current"
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
@@ -1160,8 +1238,25 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
-      ]
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "semantic": "Proposed",
+          "currentness": "current"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     }
   ],
   "unresolvedProperties": {},
@@ -1182,7 +1277,7 @@
       "targetCanonicalId": "910634fb1621416c818a022ab0b5d3a1",
       "disposition": "metadata_and_finding",
       "reason": "Enterprise enablement does not establish native Serving or Composition; qualified profile requires review.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/740",
       "source_assertion": {
         "from": "capability:clinical-device-administration",
@@ -1224,7 +1319,8 @@
         "relationshipIdentifier": "id-55bba08abc535e38b03704cc7bfedcfd",
         "sourceCanonicalId": "910634fb1621416c818a022ab0b5d3a1",
         "targetCanonicalId": "31bcd6fda0d14cc8b992cdca39a3cbed"
-      }
+      },
+      "preReplacementRecordState": "current"
     },
     {
       "sourcePointer": "/relationships/741",
@@ -1232,7 +1328,7 @@
       "targetCanonicalId": "6296abeee5074b9e80f21aea3a297e42",
       "disposition": "metadata_and_finding",
       "reason": "Enterprise enablement does not establish native Serving or Composition; qualified profile requires review.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/741",
       "source_assertion": {
         "from": "capability:clinical-device-administration",
@@ -1274,7 +1370,8 @@
         "relationshipIdentifier": "id-791f28bc30e85e5bbe7912c1041ca31a",
         "sourceCanonicalId": "6296abeee5074b9e80f21aea3a297e42",
         "targetCanonicalId": "31bcd6fda0d14cc8b992cdca39a3cbed"
-      }
+      },
+      "preReplacementRecordState": "current"
     },
     {
       "sourcePointer": "/relationships/742",
@@ -1282,7 +1379,7 @@
       "targetCanonicalId": "6a45701634f04b43919d9152a61e5f2e",
       "disposition": "metadata_and_finding",
       "reason": "Enterprise enablement does not establish native Serving or Composition; qualified profile requires review.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/742",
       "source_assertion": {
         "from": "capability:clinical-device-administration",
@@ -1324,7 +1421,8 @@
         "relationshipIdentifier": "id-d0e7bf0824915aeca3cbf0ccf08c4572",
         "sourceCanonicalId": "6a45701634f04b43919d9152a61e5f2e",
         "targetCanonicalId": "31bcd6fda0d14cc8b992cdca39a3cbed"
-      }
+      },
+      "preReplacementRecordState": "current"
     },
     {
       "sourcePointer": "/relationships/743",
@@ -1332,7 +1430,7 @@
       "targetCanonicalId": "68a0755aa4e14a509ac5e6c0bbcff3e7",
       "disposition": "metadata_and_finding",
       "reason": "Enterprise enablement does not establish native Serving or Composition; qualified profile requires review.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/743",
       "source_assertion": {
         "from": "capability:clinical-device-administration",
@@ -1374,7 +1472,8 @@
         "relationshipIdentifier": "id-ef983ed19bc75757be46f66b6b200dbe",
         "sourceCanonicalId": "68a0755aa4e14a509ac5e6c0bbcff3e7",
         "targetCanonicalId": "31bcd6fda0d14cc8b992cdca39a3cbed"
-      }
+      },
+      "preReplacementRecordState": "current"
     }
   ]
 }
@@ -1436,3 +1535,7 @@ Source: `docs/markdown/03-business-architecture/information-responsibility/infor
 ```text
 | **Clinical Device Administration** | **Device Registry & Association Ledger** | Medical device types, manufacturers, Unique Device Identifiers (UDI), physical serial numbers, active device-to-patient/bed bindings, and network communication endpoints. | Does not own physiological observation streams. |
 ```
+
+## Capability model replacement history
+
+The original content above remains historical and unchanged. This resource is superseded under [the replacement task](../../../design/evidence/1.1.20/001/before/CapabilityReplacementTask.md). Primary replacement catalogue identity `B09.02`; additional scope correspondences: `E05.07.01`. Original canonical/Exchange identities and source contributions remain reserved. Correspondence does not assert complete semantic equivalence, implementation satisfaction or transfer domain authority.

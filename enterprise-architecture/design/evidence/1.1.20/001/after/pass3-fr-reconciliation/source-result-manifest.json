@@ -1,0 +1,63 @@
+{
+  "standing": "Offline candidate; Solution Architect result review pending",
+  "baseline_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_013_SR_Reconciled_Catalogue.md",
+  "baseline_catalogue_sha256": "9b229610992d8aaec412e79e5012ff986c335943c59e63fc18beea4a777acf28",
+  "baseline_workbook": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/Harmonia_1.1.20_Pass3_013_SR_Adjudication_Workbook.xlsx",
+  "baseline_workbook_sha256": "b170216cab898f3071299b9f970b9fd038801820e1719182e7b3dad5ad9504b2",
+  "baseline_package_manifest": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/source-result-manifest.json",
+  "baseline_package_manifest_sha256": "f47d184f477e36f10dc48e208427aa97ae2d02dc3301af236a1e74f17e0bdc32",
+  "input_manifest": "enterprise-architecture/design/evidence/1.1.20/001/before/pass3-fr-reconciliation-input-manifest.json",
+  "input_manifest_sha256": "efbaaa21ef84369dff62bd1b85900c4fd52211d9a0082a1c23983e259bb81b91",
+  "operative_package": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+  "operative_package_sha256": "7aca973832645dfa278a858e48cfe767d8dc4f5c01119320d556c791c883d543",
+  "scope_disposition": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+  "scope_disposition_sha256": "0b4ecc9242ab136cec9e84ae7d91282149cad1e0661122798c38e540ed631ee1",
+  "result_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+  "result_catalogue_sha256": "83aa0a696e057a4d1cb63177269d6c613554fea86189b9c5a8578472f09272a4",
+  "result_workbook": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Pass3_014_FR_Adjudication_Workbook.xlsx",
+  "result_workbook_sha256": "d99dd8d506badfcc5c8d88be28481a8c47706e0d9a43a7e060f1368edaaca8f7",
+  "before": {
+    "ct1": 24,
+    "ct2": 145,
+    "ct3": 585,
+    "features": 2936
+  },
+  "after": {
+    "ct1": 24,
+    "ct2": 145,
+    "ct3": 585,
+    "features": 2935
+  },
+  "retirement_register_before": {
+    "features": 14,
+    "ct3": 2
+  },
+  "retirement_register_after": {
+    "features": 15,
+    "ct3": 2
+  },
+  "retired": [
+    "B11.05.01.F02"
+  ],
+  "added_identifiers": [],
+  "historical_retirements": [
+    "../pass3-sr-reconciliation/retirement-trace.json",
+    "../pass3-sr-reconciliation/sr-retirement-trace.json"
+  ],
+  "reproduction": "PYTHONDONTWRITEBYTECODE=1 python3 enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/build_result.py",
+  "evidence_sha256": {
+    "Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md": "83aa0a696e057a4d1cb63177269d6c613554fea86189b9c5a8578472f09272a4",
+    "Harmonia_1.1.20_Pass3_014_FR_Adjudication_Workbook.xlsx": "d99dd8d506badfcc5c8d88be28481a8c47706e0d9a43a7e060f1368edaaca8f7",
+    "feature-reconciliation.json": "5651c07dada52be14d56c34561a27bb4d6369ed9207c3c47c41cd002dd12833a",
+    "capability-reconciliation.json": "23963796bc65bd84ad2e36377b1d22553a73981df39449e2c7c1511ed5aea43f",
+    "criterion-reconciliation.json": "935b54aaa3bd0cafa98bd6865775d78055d2e10094549a8a7116c5f1863d5d78",
+    "measurement-criteria.csv": "850e23742bdafbb4fcbb926ee075de51cf743724cb3779dcb71ed4ce52cffa0f",
+    "definition-changes.json": "2473147fd91fbb8275028c2cd4df9653bbc0739992982a9bfcfd9d342576083c",
+    "fr-incorporation.json": "0c1c3565a6e184e94b90bf1140f68b4a5c99e3aa528698dceb28cd4f13543601",
+    "fr-retirement-trace.json": "a4bf60039c2aa487895c840b40a565ff51bc04069251ce0593fc6929d2589b1a",
+    "authoring/changes.json": "70ec2f1481f27ec51430ff9fc80e2423df335be987afc049c1767a3f398de7df",
+    "authoring/build_result.py": "a747d43d1e9b6fcba99598f7a825f505d27506e533653684d481184469c0330d",
+    "authoring/verify_result.py": "0f44e8eb4dc68ab7d3aeabf49c136fcd2f3290e7271fd8f4c92d087ab4a91001",
+    "authoring/README.md": "a62c20f0fd154cb31490cbdf266acc55f3a17840e6c53beecd27e877ec8f2526"
+  }
+}

@@ -9,7 +9,7 @@
   "canonicalName": "CT1-SecurityPrivacyAndDigitalTrust.CT2-DigitalIdentityAndAccessGovernance.CT3-AccessControlAssuranceAndReporting",
   "standing": {
     "semantic": "Canonical",
-    "currentness": "current",
+    "currentness": "superseded",
     "placement_status": "Established",
     "structural_id_status": "Established",
     "name_status": "Canonical",
@@ -18,7 +18,31 @@
   "identity": {
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
-    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+    "replacementHistory": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "originalIdentityMetadata": {
+        "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+        "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+        "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+      },
+      "replacementCatalogueIds": [
+        "E05.05.04",
+        "E05.03.03"
+      ],
+      "replacementCanonicalIds": [
+        "d2d8948d1d62495eab64a3a49e157208",
+        "8f09030124dd4907be85ffde9598c9cb"
+      ],
+      "disposition": "replacement-scope-correspondence",
+      "completeSemanticEquivalenceAsserted": false
+    },
+    "correspondence": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "successorCanonicalId": "d2d8948d1d62495eab64a3a49e157208",
+      "historicalIdentityReserved": true,
+      "disposition": "Primary replacement scope; partial/multiple correspondence retained separately, not complete equivalence"
+    }
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -140,17 +164,6 @@
         "values": [
           {
             "text": "Canonical",
-            "attributes": {
-              "{http://www.w3.org/XML/1998/namespace}lang": "en"
-            }
-          }
-        ]
-      },
-      {
-        "ref": "propid-7",
-        "values": [
-          {
-            "text": "current",
             "attributes": {
               "{http://www.w3.org/XML/1998/namespace}lang": "en"
             }
@@ -332,6 +345,15 @@
             }
           }
         ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "superseded",
+            "attributes": {}
+          }
+        ]
       }
     ]
   },
@@ -361,3 +383,7 @@ This capability establishes organisational evidence and assurance about whether 
 **Boundary**
 
 Subject-specific access-control assurance does not create another macro-level Health Service Assurance hierarchy.
+
+## Capability model replacement history
+
+The original content above remains historical and unchanged. This resource is superseded under [the replacement task](../../../design/evidence/1.1.20/001/before/CapabilityReplacementTask.md). Primary replacement catalogue identity `E05.05.04`; additional scope correspondences: `E05.03.03`. Original canonical/Exchange identities and source contributions remain reserved. Correspondence does not assert complete semantic equivalence, implementation satisfaction or transfer domain authority.

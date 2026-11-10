@@ -5,8 +5,8 @@
   "archimateType": "BusinessFunction",
   "specialization": null,
   "displayName": "Manage Referral Progression",
-  "friendlyName": "CareAdministrationEnablement.ReferralAdministration.ReferralIntakeAndProgression.ReferralStatusAndOutcomeTracking.ManageReferralProgression",
-  "canonicalName": "CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.CT3-BEC-ReferralIntakeAndProgression.FEAT-ReferralStatusAndOutcomeTracking.FN-ManageReferralProgression",
+  "friendlyName": "CareCoordinationAndContinuity.ReferralAndTransferCoordination.ReferralAcceptanceAndTracking.ReferralDispositionVisibility.ManageReferralProgression",
+  "canonicalName": "CT1-CareCoordinationAndContinuity.CT2-ReferralAndTransferCoordination.CT3-ReferralAcceptanceAndTracking.FEAT-ReferralDispositionVisibility.FN-ManageReferralProgression",
   "standing": {
     "semantic": "Canonical",
     "currentness": "current",
@@ -21,13 +21,52 @@
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
   },
   "naming": {
-    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md",
     "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
     "expected": {
       "displayName": "Manage Referral Progression",
+      "friendlyName": "CareCoordinationAndContinuity.ReferralAndTransferCoordination.ReferralAcceptanceAndTracking.ReferralDispositionVisibility.ManageReferralProgression",
+      "canonicalName": "CT1-CareCoordinationAndContinuity.CT2-ReferralAndTransferCoordination.CT3-ReferralAcceptanceAndTracking.FEAT-ReferralDispositionVisibility.FN-ManageReferralProgression"
+    },
+    "preReplacementNames": {
       "friendlyName": "CareAdministrationEnablement.ReferralAdministration.ReferralIntakeAndProgression.ReferralStatusAndOutcomeTracking.ManageReferralProgression",
       "canonicalName": "CT1-BEC-CareAdministrationEnablement.CT2-BEC-ReferralAdministration.CT3-BEC-ReferralIntakeAndProgression.FEAT-ReferralStatusAndOutcomeTracking.FN-ManageReferralProgression"
-    }
+    },
+    "inputs": [
+      {
+        "key": "B05",
+        "type": "capability",
+        "name": "Care Coordination & Continuity",
+        "tier": "CT1",
+        "category": "business"
+      },
+      {
+        "key": "B05.02",
+        "type": "capability",
+        "name": "Referral & Transfer Coordination",
+        "tier": "CT2",
+        "category": "business"
+      },
+      {
+        "key": "B05.02.02",
+        "type": "capability",
+        "name": "Referral Acceptance and Tracking",
+        "tier": "CT3",
+        "category": "business"
+      },
+      {
+        "key": "B05.02.02.F03",
+        "type": "feature",
+        "name": "Referral Disposition Visibility",
+        "tier": "FT",
+        "category": "business"
+      },
+      {
+        "key": "7f9f01be4fd14facb943de5f63f1d8fd",
+        "type": "function",
+        "name": "Manage Referral Progression"
+      }
+    ]
   },
   "provenance": [
     {
@@ -361,7 +400,8 @@
         "isDirected": "true"
       },
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -379,11 +419,27 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "specialization": "Home",
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-f2c0b9dc549f526ea224673428880660",
@@ -394,7 +450,8 @@
       "standing": {
         "v0.2 / Assertion Status": "established",
         "v0.2 / Record State": "current",
-        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -407,17 +464,6 @@
           "values": [
             {
               "text": "established",
-              "attributes": {
-                "{http://www.w3.org/XML/1998/namespace}lang": "en"
-              }
-            }
-          ]
-        },
-        {
-          "ref": "propid-7",
-          "values": [
-            {
-              "text": "current",
               "attributes": {
                 "{http://www.w3.org/XML/1998/namespace}lang": "en"
               }
@@ -467,6 +513,15 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "name": [],
@@ -477,7 +532,16 @@
             "{http://www.w3.org/XML/1998/namespace}lang": "en"
           }
         }
-      ]
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "v0.2 / Assertion Status": "established",
+          "v0.2 / Record State": "current",
+          "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-799dfbfc8a0e5b2aa911c086e1e9741d",
@@ -582,6 +646,167 @@
               }
             }
           ]
+        }
+      ]
+    },
+    {
+      "identifier": "id-fb4f58f118f758238bae71dce1a1cc43",
+      "archimateType": "Association",
+      "source": "id-770c0b13f2a05e4184064d7056a35ac1",
+      "target": "id-d61fb9e7cd1159be993ceb2057679879",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-6cc58054d4a6541eb13df4104f572767",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "specialization",
+          "values": [
+            {
+              "text": "Home",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "specialization": "Home",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "name": [],
+      "documentation": [
+        {
+          "text": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-6cc58054d4a6541eb13df4104f572767 remains preserved as history.",
+          "attributes": {}
+        }
+      ]
+    },
+    {
+      "identifier": "id-7418218f31c1533eb2017f450270d1f6",
+      "archimateType": "Realization",
+      "source": "id-770c0b13f2a05e4184064d7056a35ac1",
+      "target": "id-d61fb9e7cd1159be993ceb2057679879",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-f2c0b9dc549f526ea224673428880660",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-54",
+          "values": [
+            {
+              "text": "established",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-55",
+          "values": [
+            {
+              "text": "realises_feature",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-56",
+          "values": [
+            {
+              "text": "{\"from\":\"function:manage-referral-progression\",\"sources\":[{\"anchor\":\"3-referral-administration\",\"line\":39,\"source\":\"sa\",\"text\":\" - *Function*: `Manage Referral Progression` — Tracks referral disposition in an **illustrative specialist pathway; dispositions vary**: *Submitted* $\\\\to$ *Triaged* $\\\\to$ *Accepted/Waitlisted* $\\\\to$ *Scheduled* $\\\\to$ *Discharged*.\"}],\"status\":\"established\",\"to\":\"feature:referral-status--outcome-tracking\",\"type\":\"realises_feature\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/75",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-12",
+          "values": [
+            {
+              "text": "Unresolved — representation ID only",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "attributes": {},
+      "name": [],
+      "documentation": [
+        {
+          "text": "Snapshot predicate: realises_feature; assertion status: established; currentness: current.\n\n{\n  \"type\": \"realises_feature\",\n  \"from\": \"function:manage-referral-progression\",\n  \"to\": \"feature:referral-status--outcome-tracking\",\n  \"status\": \"established\",\n  \"sources\": [\n    {\n      \"source\": \"sa\",\n      \"line\": 39,\n      \"text\": \"    - *Function*: `Manage Referral Progression` — Tracks referral disposition in an **illustrative specialist pathway; dispositions vary**: *Submitted* $\\\\to$ *Triaged* $\\\\to$ *Accepted/Waitlisted* $\\\\to$ *Scheduled* $\\\\to$ *Discharged*.\",\n      \"anchor\": \"3-referral-administration\"\n    }\n  ]\n}\n\nCandidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-f2c0b9dc549f526ea224673428880660 remains preserved as history.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
         }
       ]
     }

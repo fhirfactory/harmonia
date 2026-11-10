@@ -9,7 +9,7 @@
   "canonicalName": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalSupervision.CT3-BEC-ClinicalEscalationPathManagement",
   "standing": {
     "semantic": "Proposed",
-    "currentness": "current",
+    "currentness": "superseded",
     "placement_status": "Proposed",
     "structural_id_status": "Proposed",
     "name_status": "Proposed",
@@ -19,9 +19,33 @@
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
-    "predecessorCanonicalIds": [
-      "759a2e52172345e8ad1bc96d7e5ddad3"
-    ]
+    "replacementHistory": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "originalIdentityMetadata": {
+        "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+        "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+        "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+        "predecessorCanonicalIds": [
+          "759a2e52172345e8ad1bc96d7e5ddad3"
+        ]
+      },
+      "replacementCatalogueIds": [
+        "B03.03.02",
+        "B03.03.03"
+      ],
+      "replacementCanonicalIds": [
+        "6fcb84e5587842fc83c46672c66f00ba",
+        "8c73702ea0ab49239e2474ccd710b298"
+      ],
+      "disposition": "replacement-scope-correspondence",
+      "completeSemanticEquivalenceAsserted": false
+    },
+    "correspondence": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "successorCanonicalId": "6fcb84e5587842fc83c46672c66f00ba",
+      "historicalIdentityReserved": true,
+      "disposition": "Primary replacement scope; partial/multiple correspondence retained separately, not complete equivalence"
+    }
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -119,17 +143,6 @@
         "values": [
           {
             "text": "Proposed",
-            "attributes": {
-              "{http://www.w3.org/XML/1998/namespace}lang": "en"
-            }
-          }
-        ]
-      },
-      {
-        "ref": "propid-7",
-        "values": [
-          {
-            "text": "current",
             "attributes": {
               "{http://www.w3.org/XML/1998/namespace}lang": "en"
             }
@@ -300,6 +313,15 @@
             }
           }
         ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "superseded",
+            "attributes": {}
+          }
+        ]
       }
     ]
   },
@@ -333,3 +355,7 @@ Harmonia manages the escalation path; responsible clinical participants perform 
 ## ARB identity continuity
 
 Historical identity [759a2e52172345e8ad1bc96d7e5ddad3](759a2e52172345e8ad1bc96d7e5ddad3.md) has direct correspondence with this capability under HCRL 1.1.5-002. Historical provenance and UUID reservation remain with that record; this resource retains its existing identity and independent standing.
+
+## Capability model replacement history
+
+The original content above remains historical and unchanged. This resource is superseded under [the replacement task](../../../design/evidence/1.1.20/001/before/CapabilityReplacementTask.md). Primary replacement catalogue identity `B03.03.02`; additional scope correspondences: `B03.03.03`. Original canonical/Exchange identities and source contributions remain reserved. Correspondence does not assert complete semantic equivalence, implementation satisfaction or transfer domain authority.

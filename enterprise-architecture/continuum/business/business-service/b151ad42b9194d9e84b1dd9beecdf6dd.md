@@ -5,8 +5,8 @@
   "archimateType": "BusinessService",
   "specialization": null,
   "displayName": "Diagnostic Report Ingress",
-  "friendlyName": "CareAdministrationEnablement.DiagnosticAdministration.DiagnosticWorkflowManagement.DiagnosticReportIngestionAndBinding.DiagnosticReportIngress",
-  "canonicalName": "CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.CT3-BEC-DiagnosticWorkflowManagement.FEAT-DiagnosticReportIngestionAndBinding.SV-DiagnosticReportIngress",
+  "friendlyName": "GovernedInformationCustody.GovernedInformationPersistence.DurableInformationAcceptance.DiagnosticReportIngress",
+  "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationPersistence.CT3-EC-DurableInformationAcceptance.SV-DiagnosticReportIngress",
   "standing": {
     "semantic": "Canonical",
     "currentness": "current",
@@ -21,13 +21,45 @@
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
   },
   "naming": {
-    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md",
     "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
     "expected": {
       "displayName": "Diagnostic Report Ingress",
+      "friendlyName": "GovernedInformationCustody.GovernedInformationPersistence.DurableInformationAcceptance.DiagnosticReportIngress",
+      "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationPersistence.CT3-EC-DurableInformationAcceptance.SV-DiagnosticReportIngress"
+    },
+    "preReplacementNames": {
       "friendlyName": "CareAdministrationEnablement.DiagnosticAdministration.DiagnosticWorkflowManagement.DiagnosticReportIngestionAndBinding.DiagnosticReportIngress",
       "canonicalName": "CT1-BEC-CareAdministrationEnablement.CT2-BEC-DiagnosticAdministration.CT3-BEC-DiagnosticWorkflowManagement.FEAT-DiagnosticReportIngestionAndBinding.SV-DiagnosticReportIngress"
-    }
+    },
+    "inputs": [
+      {
+        "key": "E01",
+        "type": "capability",
+        "name": "Governed Information Custody",
+        "tier": "CT1",
+        "category": "enterprise"
+      },
+      {
+        "key": "E01.01",
+        "type": "capability",
+        "name": "Governed Information Persistence",
+        "tier": "CT2",
+        "category": "enterprise"
+      },
+      {
+        "key": "E01.01.01",
+        "type": "capability",
+        "name": "Durable Information Acceptance",
+        "tier": "CT3",
+        "category": "enterprise"
+      },
+      {
+        "key": "b151ad42b9194d9e84b1dd9beecdf6dd",
+        "type": "service",
+        "name": "Diagnostic Report Ingress"
+      }
+    ]
   },
   "provenance": [
     {
@@ -363,7 +395,8 @@
         "isDirected": "true"
       },
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -381,11 +414,27 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "specialization": "Home",
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-3299f4b6a38558188642ba9d76298a1b",
@@ -397,7 +446,7 @@
       },
       "standing": {
         "semantic": "established",
-        "currentness": "current"
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
@@ -490,6 +539,193 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "semantic": "established",
+          "currentness": "current"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
+    },
+    {
+      "identifier": "id-b2a195ff99bf5b90889328895976477c",
+      "archimateType": "Association",
+      "source": "id-77ff0fef85f05d44b38dda24fc719a2b",
+      "target": "id-5c2271089300511c97d49f5a0dd95f80",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-3e5075abed5a599a874e5faa42b69a01",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "specialization",
+          "values": [
+            {
+              "text": "Home",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "specialization": "Home",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "name": [],
+      "documentation": [
+        {
+          "text": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-3e5075abed5a599a874e5faa42b69a01 remains preserved as history.",
+          "attributes": {}
+        }
+      ]
+    },
+    {
+      "identifier": "id-14ca29c9e9a154338559bb5dcaaa6c39",
+      "archimateType": "Association",
+      "source": "id-77ff0fef85f05d44b38dda24fc719a2b",
+      "target": "id-31c9ccf8994c5785aae7c9e9e7eb22f4",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-3299f4b6a38558188642ba9d76298a1b",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "established",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "associated_feature",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"service:diagnostic-report-ingress\", \"sources\": [{\"anchor\": \"7-diagnostic-administration\", \"line\": 120, \"source\": \"sa\", \"text\": \" - *Exposed Service*: `Diagnostic Report Ingress` — Ingests results from external LIS/RIS systems.\"}], \"status\": \"established\", \"to\": \"feature:diagnostic-report-ingestion--binding\", \"type\": \"associated_feature\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/98",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "attributes": {
+        "isDirected": "true"
+      },
+      "name": [
+        {
+          "text": "associated_feature",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"service:diagnostic-report-ingress\", \"sources\": [{\"anchor\": \"7-diagnostic-administration\", \"line\": 120, \"source\": \"sa\", \"text\": \" - *Exposed Service*: `Diagnostic Report Ingress` — Ingests results from external LIS/RIS systems.\"}], \"status\": \"established\", \"to\": \"feature:diagnostic-report-ingestion--binding\", \"type\": \"associated_feature\"}\n\nCandidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-3299f4b6a38558188642ba9d76298a1b remains preserved as history.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
         }
       ]
     }
@@ -506,7 +742,7 @@
       "targetCanonicalId": "a00823445a8a44c1a00f3ec93a7e0e6f",
       "disposition": "metadata_and_finding",
       "reason": "Feature association does not establish a particular native edge or whole-Feature realisation.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/98",
       "source_assertion": {
         "from": "service:diagnostic-report-ingress",
@@ -532,7 +768,8 @@
         "relationshipIdentifier": "id-3299f4b6a38558188642ba9d76298a1b",
         "sourceCanonicalId": "b151ad42b9194d9e84b1dd9beecdf6dd",
         "targetCanonicalId": "a00823445a8a44c1a00f3ec93a7e0e6f"
-      }
+      },
+      "preReplacementRecordState": "current"
     }
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "outcome": "UNRESOLVED",
+  "activity": "LibreOffice headless open/export to a distinct temporary directory",
+  "attempts": [
+    {
+      "exit_code": 1,
+      "observed": "javaldx warning and dconf read-only /run/user/1000 failure"
+    },
+    {
+      "exit_code": 1,
+      "changed_environment": "isolated writable XDG_RUNTIME_DIR, memory GSettings backend and separate temporary office profile",
+      "observed": "javaldx warning; no output workbook produced"
+    }
+  ],
+  "interpretation": "Application/harness launch did not establish a workbook parsing failure or successful application load. No workbook repair or mutation performed. No further unchanged retries. Automated OOXML/data checks remain separately PASS."
+}

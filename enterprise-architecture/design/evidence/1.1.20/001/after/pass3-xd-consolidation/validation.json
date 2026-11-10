@@ -1,0 +1,83 @@
+{
+  "checks": {
+    "baseline_population": "PASS",
+    "result_population_and_identity_preservation": "PASS",
+    "no_duplicate_feature_or_capability_identifiers": "PASS",
+    "hierarchy_and_containment": "PASS",
+    "complete_feature_source_correspondence": "PASS",
+    "original_assessment_evidence_preserved_verbatim": "PASS",
+    "no_kpi_formula_as_canonical_definition": "PASS",
+    "no_editorial_status_tokens": "PASS",
+    "no_measurement_criterion_or_source_status_lost": "PASS",
+    "accepted_retirements_absent_from_active_hierarchy": "PASS",
+    "no_active_references_to_retired_identifiers": "PASS",
+    "accepted_numbering_gaps_preserved": "PASS",
+    "all_28_xd_records": "PASS",
+    "only_authorised_ct3_renames": "PASS",
+    "xd018_recipient_acknowledgement_and_evidence": "PASS",
+    "xd014_policy_disclosure_not_unconditional": "PASS",
+    "xd020_broad_access_parent_preserved": "PASS",
+    "xd021_model_and_instance_verification_preserved": "PASS",
+    "xd022_enterprise_outcome_unchanged": "PASS",
+    "xd027_authorised_existing_feature_allocation": "PASS",
+    "xd028_permission_and_reference_distinction": "PASS",
+    "baseline_catalogue_bytes_preserved": "PASS",
+    "baseline_workbook_bytes_preserved": "PASS",
+    "release_authority_unchanged": "PASS",
+    "xlsx_zip_integrity": "PASS",
+    "xlsx_xml_wellformed": "PASS",
+    "xlsx_all_sheet_targets_exist": "PASS",
+    "xlsx_sheet_names_unique": "PASS",
+    "xlsx_sr_register_unchanged": "PASS",
+    "xlsx_fr_register_unchanged": "PASS",
+    "xlsx_historical_snapshots_preserved": "PASS",
+    "xlsx_feature_correspondence": "PASS",
+    "xlsx_source_criterion_preservation": "PASS",
+    "xlsx_all_xd_current": "PASS",
+    "xlsx_current_crosspath_not_pending": "PASS",
+    "xlsx_cell_order": "PASS"
+  },
+  "all_automated_checks_pass": true,
+  "before": {
+    "ct1": 24,
+    "ct2": 145,
+    "ct3": 586,
+    "features": 2941
+  },
+  "after": {
+    "ct1": 24,
+    "ct2": 145,
+    "ct3": 586,
+    "features": 2941
+  },
+  "population_by_hierarchy": {
+    "B": {
+      "ct3": 292,
+      "features": 1470
+    },
+    "E": {
+      "ct3": 294,
+      "features": 1471
+    }
+  },
+  "canonical_descriptions_changed_beyond_status_removal": 2030,
+  "ct3_descriptions_changed": 17,
+  "feature_names_changed": 43,
+  "capability_status_names_cleaned": 197,
+  "source_measurements": 1990,
+  "substantive_unverified_subjects_preserved": [
+    "B08.03.05.F03",
+    "B11.05.04.F02",
+    "E02.06.04.F01",
+    "E02.06.04.F05",
+    "E03.06.07.F04",
+    "E09.04.04.F05"
+  ],
+  "sr_qualifications": "See sr-correspondence-qualifications.json; accepted SR decisions not reopened or represented as newly incorporated",
+  "limits": [
+    "Automated structure/text/OOXML checks do not prove every business interpretation or implementation conformance.",
+    "No interactive spreadsheet application inspection performed.",
+    "Whole-candidate Solution Architect acceptance and Continuum incorporation are outside scope.",
+    "Task issuance timestamps remain unresolved; iteration evidence check reports them as such."
+  ]
+}

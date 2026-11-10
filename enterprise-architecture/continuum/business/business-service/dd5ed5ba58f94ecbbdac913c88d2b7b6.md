@@ -5,8 +5,8 @@
   "archimateType": "BusinessService",
   "specialization": null,
   "displayName": "Person Identity Correction",
-  "friendlyName": "EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.GovernedIdentityCorrection.PersonIdentityCorrection",
-  "canonicalName": "CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.FEAT-GovernedIdentityCorrection.SV-PersonIdentityCorrection",
+  "friendlyName": "IdentityTrustAndInformationProtection.HealthEntityIdentityAndAssociation.ControlledIdentityLinkAndUnlink.PersonIdentityCorrection",
+  "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection.CT2-EC-HealthEntityIdentityAndAssociation.CT3-EC-ControlledIdentityLinkAndUnlink.SV-PersonIdentityCorrection",
   "standing": {
     "semantic": "Canonical",
     "currentness": "current",
@@ -21,13 +21,45 @@
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
   },
   "naming": {
-    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md",
     "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
     "expected": {
       "displayName": "Person Identity Correction",
+      "friendlyName": "IdentityTrustAndInformationProtection.HealthEntityIdentityAndAssociation.ControlledIdentityLinkAndUnlink.PersonIdentityCorrection",
+      "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection.CT2-EC-HealthEntityIdentityAndAssociation.CT3-EC-ControlledIdentityLinkAndUnlink.SV-PersonIdentityCorrection"
+    },
+    "preReplacementNames": {
       "friendlyName": "EntityInformationEnablement.ClientAdministration.PersonIdentityAdministration.GovernedIdentityCorrection.PersonIdentityCorrection",
       "canonicalName": "CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-PersonIdentityAdministration.FEAT-GovernedIdentityCorrection.SV-PersonIdentityCorrection"
-    }
+    },
+    "inputs": [
+      {
+        "key": "E05",
+        "type": "capability",
+        "name": "Identity, Trust & Information Protection",
+        "tier": "CT1",
+        "category": "enterprise"
+      },
+      {
+        "key": "E05.07",
+        "type": "capability",
+        "name": "Health Entity Identity & Association",
+        "tier": "CT2",
+        "category": "enterprise"
+      },
+      {
+        "key": "E05.07.05",
+        "type": "capability",
+        "name": "Controlled Identity Link & Unlink",
+        "tier": "CT3",
+        "category": "enterprise"
+      },
+      {
+        "key": "dd5ed5ba58f94ecbbdac913c88d2b7b6",
+        "type": "service",
+        "name": "Person Identity Correction"
+      }
+    ]
   },
   "provenance": [
     {
@@ -330,7 +362,8 @@
         "isDirected": "true"
       },
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -348,11 +381,27 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "specialization": "Home",
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-ce3f2c3bce4a55bea7b58ccf7560ed6e",
@@ -364,7 +413,7 @@
       },
       "standing": {
         "semantic": "established",
-        "currentness": "current"
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
@@ -457,6 +506,193 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "semantic": "established",
+          "currentness": "current"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
+    },
+    {
+      "identifier": "id-5dacae64bae751a9a79c2b0211f0b88b",
+      "archimateType": "Association",
+      "source": "id-a236d718153153808c072f1d8cae8c1f",
+      "target": "id-78fd6b07c22a5b6f9bd9bdea5a2fb653",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-522e3c0de84f53509fc53e401c579c8e",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "specialization",
+          "values": [
+            {
+              "text": "Home",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "specialization": "Home",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "name": [],
+      "documentation": [
+        {
+          "text": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-522e3c0de84f53509fc53e401c579c8e remains preserved as history.",
+          "attributes": {}
+        }
+      ]
+    },
+    {
+      "identifier": "id-03ca0bd2304b5c0dba7ddc7c8bfd21dd",
+      "archimateType": "Association",
+      "source": "id-a236d718153153808c072f1d8cae8c1f",
+      "target": "id-88475206059751f4b49015ce96773254",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-ce3f2c3bce4a55bea7b58ccf7560ed6e",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "established",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "associated_feature",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"service:person-identity-correction\", \"sources\": [{\"anchor\": \"21-person-identity\", \"line\": 34, \"source\": \"em\", \"text\": \" - *Exposed Service*: `Person Identity Correction` — Exposed to authorized HIM/Medical Records administrators.\"}], \"status\": \"established\", \"to\": \"feature:governed-identity-correction\", \"type\": \"associated_feature\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/12",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "attributes": {
+        "isDirected": "true"
+      },
+      "name": [
+        {
+          "text": "associated_feature",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"service:person-identity-correction\", \"sources\": [{\"anchor\": \"21-person-identity\", \"line\": 34, \"source\": \"em\", \"text\": \" - *Exposed Service*: `Person Identity Correction` — Exposed to authorized HIM/Medical Records administrators.\"}], \"status\": \"established\", \"to\": \"feature:governed-identity-correction\", \"type\": \"associated_feature\"}\n\nCandidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-ce3f2c3bce4a55bea7b58ccf7560ed6e remains preserved as history.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
         }
       ]
     }
@@ -473,7 +709,7 @@
       "targetCanonicalId": "f7ab7a24e8234129b2ab02e9abd4fba2",
       "disposition": "metadata_and_finding",
       "reason": "Feature association does not establish a particular native edge or whole-Feature realisation.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/12",
       "source_assertion": {
         "from": "service:person-identity-correction",
@@ -499,7 +735,8 @@
         "relationshipIdentifier": "id-ce3f2c3bce4a55bea7b58ccf7560ed6e",
         "sourceCanonicalId": "dd5ed5ba58f94ecbbdac913c88d2b7b6",
         "targetCanonicalId": "f7ab7a24e8234129b2ab02e9abd4fba2"
-      }
+      },
+      "preReplacementRecordState": "current"
     }
   ]
 }

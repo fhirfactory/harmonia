@@ -1,0 +1,138 @@
+{
+  "continuum_validation": {
+    "command": "timeout 120s python3 enterprise-architecture/tooling/architecture_continuum.py validate",
+    "exit_code": 0,
+    "outcome": "PASS",
+    "elements": 1996,
+    "relationships": 2246,
+    "navigation": "PASS",
+    "limits": "Unchanged canonical Continuum, not offline candidate validation or acceptance"
+  },
+  "architecture_tests": {
+    "command": "timeout 120s mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+    "exit_code": 0,
+    "outcome": "PASS",
+    "reactor_projects": 36,
+    "total_time_seconds": 18.606,
+    "classes": [
+      {
+        "class": "net.fhirfactory.harmonia.paradeigma.test.arch.ParadeigmaIsolationArchitectureTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 4.482
+      },
+      {
+        "class": "net.fhirfactory.harmonia.paradeigma.test.arch.PetasosApiIsolationArchitectureTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.075
+      },
+      {
+        "class": "net.fhirfactory.harmonia.paradeigma.test.arch.PackageLayeringArchitectureTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 1.206
+      },
+      {
+        "class": "net.fhirfactory.harmonia.paradeigma.test.arch.SecurityEnforcementArchitectureTest",
+        "tests": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 4.616
+      },
+      {
+        "class": "net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteCompositionArchitectureTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.926
+      },
+      {
+        "class": "net.fhirfactory.harmonia.paradeigma.test.arch.MnemosyneAuthoritativePersistenceArchitectureTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.446
+      },
+      {
+        "class": "net.fhirfactory.harmonia.paradeigma.test.arch.AgoraIsolationArchitectureTest",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 1.229
+      },
+      {
+        "class": "net.fhirfactory.harmonia.paradeigma.test.arch.ProviderRegistryArchitectureTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.01
+      },
+      {
+        "class": "net.fhirfactory.harmonia.paradeigma.test.arch.IrisDecouplingArchitectureTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 0.204
+      },
+      {
+        "class": "net.fhirfactory.harmonia.paradeigma.test.arch.PylaiPublicationBoundaryArchitectureTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 1.023
+      },
+      {
+        "class": "net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteContractArchitectureTest",
+        "tests": 12,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "seconds": 1.088
+      }
+    ],
+    "totals": {
+      "tests": 90,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "limits": "Existing architecture suite; no runtime behaviour changed"
+  },
+  "release_check": {
+    "command": "python3 enterprise-architecture/tooling/architecture_release.py check",
+    "exit_code": 0,
+    "outcome": "PASS",
+    "version": "1.1.20",
+    "previous_version": "1.1.19"
+  },
+  "iteration_evidence": {
+    "command": "python3 enterprise-architecture/tooling/architecture_review_evidence.py --version 1.1.20 --iteration 001",
+    "exit_code": 2,
+    "outcome": "UNRESOLVED",
+    "errors": [],
+    "reason": "Three current unresolved Task-Issued-At events and filename prefixes: XD, SR and FR. Formal FR scope clarification time is also unresolved. No closure or temporal exception inferred."
+  },
+  "office_application": {
+    "outcome": "NOT RUN",
+    "inherited_qualification": "UNRESOLVED",
+    "reason": "Prior bounded external-office launcher failures remain qualified; unchanged failed commands not retried. Standard-library OOXML ZIP/XML/data validation is separate."
+  },
+  "full_OOXML_schema": {
+    "outcome": "NOT RUN",
+    "reason": "Not supplied by the existing bounded standard-library adapter; no full ECMA-376 XSD claim."
+  }
+}

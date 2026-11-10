@@ -16,15 +16,37 @@
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
     "correspondence": {
-      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
-      "disposition": "direct correspondence",
-      "successorCanonicalId": "81be04a2d58548a4aea94f9aae90feb6",
-      "previousStanding": {
-        "semantic": "Historical reference — RAD correspondence unresolved",
-        "currentness": "historical_reference"
-      },
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "successorCanonicalId": "b0100053f6174e2b86e15c545a2fd4d0",
       "historicalIdentityReserved": true,
-      "reason": "Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter."
+      "disposition": "Primary replacement scope; partial/multiple correspondence retained separately, not complete equivalence"
+    },
+    "replacementHistory": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "originalIdentityMetadata": {
+        "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+        "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+        "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+        "correspondence": {
+          "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+          "disposition": "direct correspondence",
+          "successorCanonicalId": "81be04a2d58548a4aea94f9aae90feb6",
+          "previousStanding": {
+            "semantic": "Historical reference — RAD correspondence unresolved",
+            "currentness": "historical_reference"
+          },
+          "historicalIdentityReserved": true,
+          "reason": "Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter."
+        }
+      },
+      "replacementCatalogueIds": [
+        "B13.02"
+      ],
+      "replacementCanonicalIds": [
+        "b0100053f6174e2b86e15c545a2fd4d0"
+      ],
+      "disposition": "historical-correspondence-carried",
+      "completeSemanticEquivalenceAsserted": false
     }
   },
   "naming": {
@@ -172,6 +194,15 @@
             }
           }
         ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "superseded",
+            "attributes": {}
+          }
+        ]
       }
     ]
   },
@@ -183,16 +214,34 @@
       "archimateType": "Composition",
       "attributes": {},
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
         "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
         "selector": "relationship[@identifier=\"id-fd5f55e945da5039840bdeb62547b1d6\"]"
       },
-      "properties": [],
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-42721eae02a2507abfe9c5d7e0d66b76",
@@ -201,16 +250,34 @@
       "archimateType": "Composition",
       "attributes": {},
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
         "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
         "selector": "relationship[@identifier=\"id-42721eae02a2507abfe9c5d7e0d66b76\"]"
       },
-      "properties": [],
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-5487663bf1165d588d9b282092ed00b6",
@@ -219,16 +286,34 @@
       "archimateType": "Composition",
       "attributes": {},
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
         "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
         "selector": "relationship[@identifier=\"id-5487663bf1165d588d9b282092ed00b6\"]"
       },
-      "properties": [],
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-56e6447f0e315f6d86d98430f0204c18",
@@ -237,16 +322,34 @@
       "archimateType": "Composition",
       "attributes": {},
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
         "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
         "selector": "relationship[@identifier=\"id-56e6447f0e315f6d86d98430f0204c18\"]"
       },
-      "properties": [],
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-2efeb4bb20d458f09b6ec78b0ca5a2c8",
@@ -255,16 +358,34 @@
       "archimateType": "Composition",
       "attributes": {},
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
         "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
         "selector": "relationship[@identifier=\"id-2efeb4bb20d458f09b6ec78b0ca5a2c8\"]"
       },
-      "properties": [],
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-94ef0736ecb153b3a7e88635884f9b3e",
@@ -273,16 +394,34 @@
       "archimateType": "Composition",
       "attributes": {},
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
         "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
         "selector": "relationship[@identifier=\"id-94ef0736ecb153b3a7e88635884f9b3e\"]"
       },
-      "properties": [],
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     }
   ],
   "unresolvedProperties": {
@@ -306,3 +445,7 @@ The governed source has no established definition. This absence is retained for 
 Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter.
 
 Current representation: [[CT2] Preventative Health](81be04a2d58548a4aea94f9aae90feb6.md). This resource reserves the historical identity and representation for provenance and existing Views. Its missing original definition remains missing.
+
+## Capability model replacement history
+
+The original content above remains historical and unchanged. This resource is superseded under [the replacement task](../../../design/evidence/1.1.20/001/before/CapabilityReplacementTask.md). Primary replacement catalogue identity `B13.02`; additional scope correspondences: . Original canonical/Exchange identities and source contributions remain reserved. Correspondence does not assert complete semantic equivalence, implementation satisfaction or transfer domain authority.

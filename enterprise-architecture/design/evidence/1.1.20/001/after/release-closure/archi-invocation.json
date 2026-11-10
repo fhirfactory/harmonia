@@ -1,0 +1,43 @@
+{
+  "operator": "Codex executing Mark Hunter, Solution Architect, 1.1.20 closure Task",
+  "executable": "/home/hunterm/Development/Tools/Archi/Archi",
+  "installedArchiVersion": "5.10.0.202608252016",
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "120s",
+    "/home/hunterm/Development/Tools/Archi/Archi",
+    "-nosplash",
+    "-consoleLog",
+    "-configuration",
+    "/tmp/harmonia-1120-release-assurance-t9865kth/configuration",
+    "-data",
+    "/tmp/harmonia-1120-release-assurance-t9865kth/workspace",
+    "-application",
+    "com.archimatetool.commandline.app",
+    "-a",
+    "--xmlexchange.import",
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/candidate-v2/Harmonia-Architecture-candidate.xml",
+    "--saveModel",
+    "/tmp/harmonia-1120-release-assurance-t9865kth/imported-model.archimate",
+    "--xmlexchange.export",
+    "/tmp/harmonia-1120-release-assurance-t9865kth/returned-model.xml",
+    "--xmlexchange.exportFolders",
+    "--xmlexchange.exportLang",
+    "en",
+    "-vmargs",
+    "-Duser.home=/tmp/harmonia-1120-release-assurance-t9865kth/home",
+    "-Ddata.location=/tmp/harmonia-1120-release-assurance-t9865kth/home/Documents/Archi",
+    "-Dosgi.instance.area=/tmp/harmonia-1120-release-assurance-t9865kth/workspace",
+    "-Dosgi.configuration.area=/tmp/harmonia-1120-release-assurance-t9865kth/configuration"
+  ],
+  "environment": {
+    "GDK_BACKEND": "x11",
+    "DISPLAY": ":0"
+  },
+  "scope": "Actual CLI import, native save and no-edit export; no GUI workbench or Solution Architect visual inspection asserted",
+  "exitCode": 13,
+  "producedNativeModel": false,
+  "producedReturnedXml": false
+}

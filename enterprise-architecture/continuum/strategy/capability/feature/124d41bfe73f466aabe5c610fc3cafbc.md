@@ -1,0 +1,151 @@
+---
+{
+  "schemaVersion": 1,
+  "canonicalId": "124d41bfe73f466aabe5c610fc3cafbc",
+  "archimateType": "Capability",
+  "specialization": "Feature",
+  "displayName": "[Feature] Suitable Appointment Choice",
+  "friendlyName": "CareParticipationAndAccess.CareEntryAndAccessArrangement.CareAppointmentArrangement.SuitableAppointmentChoice",
+  "canonicalName": "CT1-CareParticipationAndAccess.CT2-CareEntryAndAccessArrangement.CT3-CareAppointmentArrangement.FEAT-SuitableAppointmentChoice",
+  "standing": {
+    "semantic": "Accepted replacement model — Pass3/014; implementation unverified",
+    "currentness": "current",
+    "incorporationReview": "Accepted by Solution Architect — 1.1.20 closure disposition"
+  },
+  "identity": {
+    "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+    "sourceIdentity": "B01.02.02.F03",
+    "allocation": "UUIDv4 allocated once by explicit create"
+  },
+  "naming": {
+    "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md",
+    "inputs": [
+      {
+        "key": "B01",
+        "type": "capability",
+        "name": "Care Participation & Access",
+        "tier": "CT1",
+        "category": "business"
+      },
+      {
+        "key": "B01.02",
+        "type": "capability",
+        "name": "Care Entry & Access Arrangement",
+        "tier": "CT2",
+        "category": "business"
+      },
+      {
+        "key": "B01.02.02",
+        "type": "capability",
+        "name": "Care Appointment Arrangement",
+        "tier": "CT3",
+        "category": "business"
+      },
+      {
+        "key": "B01.02.02.F03",
+        "type": "feature",
+        "name": "Suitable Appointment Choice",
+        "tier": "FT",
+        "category": "business"
+      }
+    ],
+    "categoryInterpretation": "Accepted combined Business/Business Enabling hierarchy uses existing business CTn vocabulary; Enterprise uses CTn-EC. No artificial BEC split."
+  },
+  "catalogue": {
+    "id": "B01.02.02.F03",
+    "parent": "B01.02.02",
+    "tier": "Feature",
+    "sourceName": "Suitable Appointment Choice",
+    "hierarchy": "Business/Business Enabling"
+  },
+  "provenance": [
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+      "selector": "B01.02.02.F03",
+      "role": "Accepted Pass3/014 source definition, now incorporated into this canonical resource",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+      "sha256": "83aa0a696e057a4d1cb63177269d6c613554fea86189b9c5a8578472f09272a4"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/feature-reconciliation.json",
+      "selector": "/22",
+      "role": "Exact source contributions, original wording/criteria/status and accepted adjudication correspondence; historical assurance evidence",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/feature-reconciliation.json"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "selector": "Authorised Activity / Scope / B",
+      "role": "Explicit canonical incorporation and UUID allocation authority",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+      "selector": "B01.02.02.F03"
+    }
+  ],
+  "relationships": [],
+  "unresolvedProperties": {},
+  "exchange": {
+    "identifier": "id-821c8e9aab275960b02df68ec5da2f1b",
+    "properties": [
+      {
+        "ref": "propid-25",
+        "values": [
+          {
+            "text": "B01.02.02.F03",
+            "attributes": {}
+          }
+        ]
+      },
+      {
+        "ref": "propid-24",
+        "values": [
+          {
+            "text": "Feature",
+            "attributes": {}
+          }
+        ]
+      },
+      {
+        "ref": "propid-5",
+        "values": [
+          {
+            "text": "FT",
+            "attributes": {}
+          }
+        ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "current",
+            "attributes": {}
+          }
+        ]
+      },
+      {
+        "ref": "propid-6",
+        "values": [
+          {
+            "text": "Accepted",
+            "attributes": {}
+          }
+        ]
+      }
+    ]
+  }
+}
+---
+
+# [Feature] Suitable Appointment Choice
+
+## Architectural content
+
+Suitable appointment choice is supported through available and usable support.
+
+### Incorporation standing
+
+Catalogue identity `B01.02.02.F03`. The accepted definition is preserved above. Migration verification and source measurements do not establish implementation satisfaction. Existing source qualifications remain in force.

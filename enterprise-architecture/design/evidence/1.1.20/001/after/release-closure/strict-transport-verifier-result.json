@@ -1,0 +1,26 @@
+{
+  "outcome": "FAIL",
+  "exitCode": 1,
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "90s",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/verify_continuum_transport.py",
+    "--baseline",
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.20/001/after/release-closure/assurance-candidate-remediated/Harmonia-Architecture.xml",
+    "--returned",
+    "/tmp/harmonia-1120-archi-desktop-79eesb5q/returned-model.xml",
+    "--execution-log",
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.20/001/after/release-closure/archi-remediated-execution.log",
+    "--operator",
+    "Codex executing Mark Hunter, Solution Architect, 1.1.20 closure Task",
+    "--report",
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.20/001/after/release-closure/strict-transport-passed.json"
+  ],
+  "failure": "Relationship/View transport drift",
+  "rawQualification": "See exact remediated transport summary; no validator normalization or weakening",
+  "acceptance": "Requires current bounded SA disposition"
+}

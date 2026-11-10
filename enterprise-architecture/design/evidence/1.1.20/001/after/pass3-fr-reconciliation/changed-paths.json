@@ -1,0 +1,35 @@
+{
+  "scope": "Paths authored by this FR task only; pre-existing working changes remain separately owned",
+  "new_files": [
+    ".junie/reports/2026-11-10-pass3-fr-reconciliation.md",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261110T052641Z-pass3-fr-reconciliation.md",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Pass3_014_FR_Adjudication_Workbook.xlsx",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/README.md",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/build_result.py",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/changes.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/verify_result.py",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/capability-reconciliation.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/changed-paths.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/criterion-reconciliation.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/definition-changes.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/determinism.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/feature-reconciliation.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/fr-incorporation.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/fr-retirement-trace.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/measurement-criteria.csv",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/reconciliation-report.md",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/repository-checks.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/source-result-manifest.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/validation.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/pass3-fr-reconciliation-input-manifest.json"
+  ],
+  "modified_existing_files": [
+    "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md"
+  ],
+  "input_package_preserved_unchanged": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+  "candidate_delta": "16 surviving Feature definitions, E07.02.02 CT3 description, B11.05.01.F02 retirement only",
+  "formal_report": "enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261110T052641Z-pass3-fr-reconciliation.md",
+  "requested_report": ".junie/reports/2026-11-10-pass3-fr-reconciliation.md"
+}

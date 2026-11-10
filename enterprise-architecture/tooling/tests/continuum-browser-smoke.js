@@ -22,6 +22,6 @@ assert.equal(nodes.list.hidden, true);
 nodes.search.value=rows[0].number;nodes.search.listeners.input();assert(nodes.list.children.length>=1);assert.equal(nodes.hierarchy.hidden,true);
 nodes.search.value=rows[0].id;nodes.search.listeners.input();assert.equal(nodes.list.children.length,1);
 nodes.list.children[0].children[0].onclick();assert.equal(location.hash,rows[0].id);assert(nodes.detail.innerHTML.includes('Canonical Markdown'));
-nodes.search.value='';nodes.type.value='Capability / Feature';nodes.type.listeners.input();assert.equal(nodes.list.children.length,179);
+nodes.search.value='';nodes.type.value='Capability / Feature';nodes.type.listeners.input();const featureCount=rows.filter(r=>r.type==='Capability / Feature').length;assert(featureCount>0);assert.equal(nodes.list.children.length,featureCount);
 nodes.state.value='current';nodes.state.listeners.input();assert.equal(nodes.list.children.length,rows.filter(r=>r.type==='Capability / Feature'&&r.currentness==='current').length);
 console.log(JSON.stringify({status:'PASS',elements:rows.length,checks:['initial population','identity search','selection','Feature filter','combined currentness filter'],limits:'DOM-contract smoke test; no pixel/visual browser claim'}));

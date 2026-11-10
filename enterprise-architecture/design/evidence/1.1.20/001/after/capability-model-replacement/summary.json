@@ -1,0 +1,30 @@
+{
+  "standing": "Working Continuum candidate; migration result review pending",
+  "activePopulation": {
+    "CT1": 24,
+    "CT2": 145,
+    "CT3": 585,
+    "Feature": 2935
+  },
+  "baselineElements": 1996,
+  "resultingElements": 5685,
+  "newCanonicalIdentities": 3689,
+  "retainedLegacyCapabilityIdentities": 842,
+  "legacyRetiredWithoutSuccessor": 1,
+  "relationshipDispositions": {
+    "retained-historical-only": 18,
+    "migrated": 725,
+    "merged-equivalent-migrated-assertion": 31,
+    "replaced-by-accepted-hierarchy": 676,
+    "collapsed-within-replacement-scope": 20
+  },
+  "acceptedHierarchyRelationships": 3665,
+  "migratedRelationshipTypes": {
+    "Realization": 138,
+    "Association": 370,
+    "Serving": 217
+  },
+  "homeDerivedNamingChanges": 212,
+  "canonicalApplied": true,
+  "stage": "/tmp/harmonia-capability-replacement-2hu4u0fc"
+}

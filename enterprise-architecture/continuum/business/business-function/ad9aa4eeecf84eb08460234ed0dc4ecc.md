@@ -5,8 +5,8 @@
   "archimateType": "BusinessFunction",
   "specialization": null,
   "displayName": "Maintain Care-Place Definition",
-  "friendlyName": "EntityInformationEnablement.LocationAdministration.CarePlaceDefinitionAdministration.AtomicCarePlaceModeling.MaintainCarePlaceDefinition",
-  "canonicalName": "CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.CT3-BEC-CarePlaceDefinitionAdministration.FEAT-AtomicCarePlaceModeling.FN-MaintainCarePlaceDefinition",
+  "friendlyName": "InformationAccessDiscoveryAndDistribution.EntityAndServiceDirectoryDiscovery.ServiceAndLocationDiscovery.MaintainCarePlaceDefinition",
+  "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution.CT2-EC-EntityAndServiceDirectoryDiscovery.CT3-EC-ServiceAndLocationDiscovery.FN-MaintainCarePlaceDefinition",
   "standing": {
     "semantic": "Canonical",
     "currentness": "current",
@@ -21,13 +21,45 @@
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
   },
   "naming": {
-    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md",
     "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
     "expected": {
       "displayName": "Maintain Care-Place Definition",
+      "friendlyName": "InformationAccessDiscoveryAndDistribution.EntityAndServiceDirectoryDiscovery.ServiceAndLocationDiscovery.MaintainCarePlaceDefinition",
+      "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution.CT2-EC-EntityAndServiceDirectoryDiscovery.CT3-EC-ServiceAndLocationDiscovery.FN-MaintainCarePlaceDefinition"
+    },
+    "preReplacementNames": {
       "friendlyName": "EntityInformationEnablement.LocationAdministration.CarePlaceDefinitionAdministration.AtomicCarePlaceModeling.MaintainCarePlaceDefinition",
       "canonicalName": "CT1-BEC-EntityInformationEnablement.CT2-BEC-LocationAdministration.CT3-BEC-CarePlaceDefinitionAdministration.FEAT-AtomicCarePlaceModeling.FN-MaintainCarePlaceDefinition"
-    }
+    },
+    "inputs": [
+      {
+        "key": "E02",
+        "type": "capability",
+        "name": "Information Access, Discovery & Distribution",
+        "tier": "CT1",
+        "category": "enterprise"
+      },
+      {
+        "key": "E02.06",
+        "type": "capability",
+        "name": "Entity & Service Directory Discovery",
+        "tier": "CT2",
+        "category": "enterprise"
+      },
+      {
+        "key": "E02.06.03",
+        "type": "capability",
+        "name": "Service & Location Discovery",
+        "tier": "CT3",
+        "category": "enterprise"
+      },
+      {
+        "key": "ad9aa4eeecf84eb08460234ed0dc4ecc",
+        "type": "function",
+        "name": "Maintain Care-Place Definition"
+      }
+    ]
   },
   "provenance": [
     {
@@ -313,7 +345,8 @@
       "standing": {
         "v0.2 / Assertion Status": "established",
         "v0.2 / Record State": "current",
-        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -333,10 +366,168 @@
           ]
         },
         {
+          "ref": "propid-55",
+          "values": [
+            {
+              "text": "realises_feature",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-56",
+          "values": [
+            {
+              "text": "{\"from\":\"function:maintain-care-place-definition\",\"sources\":[{\"anchor\":\"5-location-administration\",\"line\":151,\"source\":\"em\",\"text\":\" - *Function*: `Maintain Care-Place Definition` — Defines static bed bays, treatment chairs, surgical tables, and emergency resuscitation cubicles, including equipment capabilities and oxygen/telemetry infrastructure.\"}],\"status\":\"established\",\"to\":\"feature:atomic-care-place-modeling\",\"type\":\"realises_feature\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/49",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-12",
+          "values": [
+            {
+              "text": "Unresolved — representation ID only",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
+      "name": [],
+      "documentation": [
+        {
+          "text": "Snapshot predicate: realises_feature; assertion status: established; currentness: current.\n\n{\n  \"type\": \"realises_feature\",\n  \"from\": \"function:maintain-care-place-definition\",\n  \"to\": \"feature:atomic-care-place-modeling\",\n  \"status\": \"established\",\n  \"sources\": [\n    {\n      \"source\": \"em\",\n      \"line\": 151,\n      \"text\": \"    - *Function*: `Maintain Care-Place Definition` — Defines static bed bays, treatment chairs, surgical tables, and emergency resuscitation cubicles, including equipment capabilities and oxygen/telemetry infrastructure.\",\n      \"anchor\": \"5-location-administration\"\n    }\n  ]\n}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "v0.2 / Assertion Status": "established",
+          "v0.2 / Record State": "current",
+          "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
+    },
+    {
+      "identifier": "id-2ecd5c189eab5b9d969d856df57ad348",
+      "source": "id-5c75704849c65375aa020ede0e2630fb",
+      "target": "id-d1125ae070df590ba4705abb33cf77ea",
+      "archimateType": "Association",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "standing": {
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
+      },
+      "provenance": {
+        "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+        "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+        "selector": "relationship[@identifier=\"id-2ecd5c189eab5b9d969d856df57ad348\"]"
+      },
+      "properties": [
+        {
+          "ref": "specialization",
+          "values": [
+            {
+              "text": "Home",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
+      "specialization": "Home",
+      "name": [],
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
+    },
+    {
+      "identifier": "id-3051e4e417e751918d7e037255c608e4",
+      "archimateType": "Realization",
+      "source": "id-5c75704849c65375aa020ede0e2630fb",
+      "target": "id-b21d7f6c70d05cb29422e8b080b877a6",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-fe25df8c775c529196c088662153b328",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
           "ref": "propid-7",
           "values": [
             {
               "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-54",
+          "values": [
+            {
+              "text": "established",
               "attributes": {
                 "{http://www.w3.org/XML/1998/namespace}lang": "en"
               }
@@ -388,10 +579,11 @@
           ]
         }
       ],
+      "attributes": {},
       "name": [],
       "documentation": [
         {
-          "text": "Snapshot predicate: realises_feature; assertion status: established; currentness: current.\n\n{\n  \"type\": \"realises_feature\",\n  \"from\": \"function:maintain-care-place-definition\",\n  \"to\": \"feature:atomic-care-place-modeling\",\n  \"status\": \"established\",\n  \"sources\": [\n    {\n      \"source\": \"em\",\n      \"line\": 151,\n      \"text\": \"    - *Function*: `Maintain Care-Place Definition` — Defines static bed bays, treatment chairs, surgical tables, and emergency resuscitation cubicles, including equipment capabilities and oxygen/telemetry infrastructure.\",\n      \"anchor\": \"5-location-administration\"\n    }\n  ]\n}",
+          "text": "Snapshot predicate: realises_feature; assertion status: established; currentness: current.\n\n{\n  \"type\": \"realises_feature\",\n  \"from\": \"function:maintain-care-place-definition\",\n  \"to\": \"feature:atomic-care-place-modeling\",\n  \"status\": \"established\",\n  \"sources\": [\n    {\n      \"source\": \"em\",\n      \"line\": 151,\n      \"text\": \"    - *Function*: `Maintain Care-Place Definition` — Defines static bed bays, treatment chairs, surgical tables, and emergency resuscitation cubicles, including equipment capabilities and oxygen/telemetry infrastructure.\",\n      \"anchor\": \"5-location-administration\"\n    }\n  ]\n}\n\nCandidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-fe25df8c775c529196c088662153b328 remains preserved as history.",
           "attributes": {
             "{http://www.w3.org/XML/1998/namespace}lang": "en"
           }
@@ -399,22 +591,40 @@
       ]
     },
     {
-      "identifier": "id-2ecd5c189eab5b9d969d856df57ad348",
-      "source": "id-5c75704849c65375aa020ede0e2630fb",
-      "target": "id-d1125ae070df590ba4705abb33cf77ea",
+      "identifier": "id-8d7981b20b91565b9502dde5ed8024c6",
       "archimateType": "Association",
-      "attributes": {
-        "isDirected": "true"
-      },
+      "source": "id-5c75704849c65375aa020ede0e2630fb",
+      "target": "id-ad0b1f00bc34546bb13e4d2b2fda76b1",
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
       },
       "provenance": {
-        "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
-        "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
-        "selector": "relationship[@identifier=\"id-2ecd5c189eab5b9d969d856df57ad348\"]"
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-2ecd5c189eab5b9d969d856df57ad348",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
       },
       "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
         {
           "ref": "specialization",
           "values": [
@@ -428,8 +638,16 @@
         }
       ],
       "specialization": "Home",
+      "attributes": {
+        "isDirected": "true"
+      },
       "name": [],
-      "documentation": []
+      "documentation": [
+        {
+          "text": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-2ecd5c189eab5b9d969d856df57ad348 remains preserved as history.",
+          "attributes": {}
+        }
+      ]
     }
   ],
   "unresolvedProperties": {},

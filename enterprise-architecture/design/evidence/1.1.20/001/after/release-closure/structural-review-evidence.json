@@ -1,0 +1,112 @@
+{
+  "standing": "Automated structural evidence; no human structural acceptance",
+  "completeUniqueCanonicalLocations": 5685,
+  "nativeElementFolders": 5685,
+  "nativeRelationshipSourceFolders": 6636,
+  "activePopulation": {
+    "CT3": 585,
+    "CT2": 145,
+    "CT1": 24,
+    "Feature": 2935
+  },
+  "businessCapabilityContexts": 180,
+  "roots": [
+    {
+      "number": "G",
+      "title": "Architecture Governance"
+    },
+    {
+      "number": "I",
+      "title": "Motivation"
+    },
+    {
+      "number": "II",
+      "title": "Strategy"
+    },
+    {
+      "number": "III",
+      "title": "Business"
+    },
+    {
+      "number": "IV",
+      "title": "Application"
+    },
+    {
+      "number": "V",
+      "title": "Technology"
+    },
+    {
+      "number": "VI",
+      "title": "Implementation & Migration"
+    },
+    {
+      "number": "R",
+      "title": "Cross-Cutting References"
+    }
+  ],
+  "representativeReaderSubjects": [
+    {
+      "number": "II.1.1.1",
+      "displayName": "[CT1] Care Participation & Access",
+      "canonicalId": "5b06afe075e44cc39236f628c5ada113",
+      "scope": "accepted hierarchy / deep Feature"
+    },
+    {
+      "number": "II.1.1.1.1",
+      "displayName": "[CT2] Health Needs & Service Navigation",
+      "canonicalId": "921957cb576a4da38465e1d09cb52d25",
+      "scope": "accepted hierarchy / deep Feature"
+    },
+    {
+      "number": "II.1.1.1.1.1",
+      "displayName": "[CT3] Health Need Recognition Support",
+      "canonicalId": "0c00869c2c4e48c9b9ffc756a8afcedd",
+      "scope": "accepted hierarchy / deep Feature"
+    },
+    {
+      "number": "II.1.1.1.1.1.1",
+      "displayName": "[Feature] UnderstoodNextStep",
+      "canonicalId": "38a0391d4052441981555e97132c7476",
+      "scope": "accepted hierarchy / deep Feature"
+    },
+    {
+      "number": "II.1.2.7",
+      "displayName": "[CT1] Information Presentation & Human Interaction",
+      "canonicalId": "6e54d18d8a914aafa39357d66c3a7bf9",
+      "scope": "accepted hierarchy / deep Feature"
+    },
+    {
+      "number": "II.1.2.7.4.1.5",
+      "displayName": "[Feature] Interrupted Work Context Recovery",
+      "canonicalId": "3603ab61b6b74f3d9064918dde0c4fdf",
+      "scope": "accepted hierarchy / deep Feature"
+    },
+    {
+      "number": "I.7.5",
+      "displayName": "AX-05 Active State and Authoritative Durable State Are Distinct",
+      "canonicalId": "0412a2084f0145babc4f022c71fea65f",
+      "scope": "Motivation"
+    },
+    {
+      "number": "III.4.3.5.2.1",
+      "displayName": "Dispatch Operational Work Order",
+      "canonicalId": "05a14489d3e943499581620356130007",
+      "scope": "Business context"
+    },
+    {
+      "number": "IV.3.4.2.3",
+      "displayName": "Provenance Client Library",
+      "canonicalId": "171f05d188384cedb7d5c493eeaee519",
+      "scope": "Application"
+    },
+    {
+      "number": "R.2.2",
+      "displayName": "[CT1] Shared Information & Coordination Enablement",
+      "canonicalId": "0062fcacae1740988b6be2bda2aa1674",
+      "scope": "history / successor reference"
+    }
+  ],
+  "candidateSha256": "1954006168f3a993de9b31be4f7f81599f39f7ba55b4c32b85ff7aca0b151512",
+  "humanWorkbenchInspection": "NOT_PERFORMED",
+  "humanReaderInspection": "NOT_PERFORMED"
+}

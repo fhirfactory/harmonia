@@ -9,7 +9,7 @@
   "canonicalName": "CT1-BEC-SharedInformationAndCoordinationEnablement.CT2-BEC-InformationContentMaintainerManagement.CT3-BEC-InformationProductAdministration.FEAT-DemandAndCapacityPlanningProjection",
   "standing": {
     "semantic": "Proposed",
-    "currentness": "current",
+    "currentness": "superseded",
     "placement_status": "Proposed",
     "structural_id_status": "Proposed",
     "name_status": "Proposed",
@@ -18,7 +18,31 @@
   "identity": {
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
-    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+    "replacementHistory": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "originalIdentityMetadata": {
+        "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+        "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+        "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+      },
+      "replacementCatalogueIds": [
+        "E09.03.02",
+        "B07.03"
+      ],
+      "replacementCanonicalIds": [
+        "6e83f496338f447592d93014c116cb0f",
+        "f94ce7fcb1904141aeae8f2602518126"
+      ],
+      "disposition": "replacement-scope-correspondence",
+      "completeSemanticEquivalenceAsserted": false
+    },
+    "correspondence": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "successorCanonicalId": "6e83f496338f447592d93014c116cb0f",
+      "historicalIdentityReserved": true,
+      "disposition": "Primary replacement scope; partial/multiple correspondence retained separately, not complete equivalence"
+    }
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -122,17 +146,6 @@
         "values": [
           {
             "text": "Proposed",
-            "attributes": {
-              "{http://www.w3.org/XML/1998/namespace}lang": "en"
-            }
-          }
-        ]
-      },
-      {
-        "ref": "propid-7",
-        "values": [
-          {
-            "text": "current",
             "attributes": {
               "{http://www.w3.org/XML/1998/namespace}lang": "en"
             }
@@ -325,6 +338,15 @@
             }
           }
         ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "superseded",
+            "attributes": {}
+          }
+        ]
       }
     ]
   },
@@ -339,7 +361,7 @@
       },
       "standing": {
         "semantic": "Proposed",
-        "currentness": "current"
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
@@ -438,8 +460,25 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
-      ]
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "semantic": "Proposed",
+          "currentness": "current"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     }
   ],
   "unresolvedProperties": {},
@@ -454,7 +493,7 @@
       "targetCanonicalId": "4873cd4b960d45d8b93560d5c8b98500",
       "disposition": "metadata_and_finding",
       "reason": "Purpose context is preserved as context; it is not decomposition.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/1095",
       "source_assertion": {
         "from": "proposal:feature-demand-capacity-planning-projection",
@@ -486,7 +525,8 @@
         "relationshipIdentifier": "id-6bc506cfd4f35efe9fa8e069b2775d17",
         "sourceCanonicalId": "4f97baa3aed24b8385bf3ecda4eab622",
         "targetCanonicalId": "4873cd4b960d45d8b93560d5c8b98500"
-      }
+      },
+      "preReplacementRecordState": "current"
     }
   ]
 }
@@ -513,3 +553,7 @@ Original source predicates, evidence and qualifications remain in the metadata. 
 | Source predicate | Target element | Source standing / currentness | ARB native treatment |
 | --- | --- | --- | --- |
 | purpose_context | [[CT2] Service Planning Data Management](../4873cd4b960d45d8b93560d5c8b98500.md) | Proposed / current | Association — `id-6bc506cfd4f35efe9fa8e069b2775d17` |
+
+## Capability model replacement history
+
+The original content above remains historical and unchanged. This resource is superseded under [the replacement task](../../../../design/evidence/1.1.20/001/before/CapabilityReplacementTask.md). Primary replacement catalogue identity `E09.03.02`; additional scope correspondences: `B07.03`. Original canonical/Exchange identities and source contributions remain reserved. Correspondence does not assert complete semantic equivalence, implementation satisfaction or transfer domain authority.

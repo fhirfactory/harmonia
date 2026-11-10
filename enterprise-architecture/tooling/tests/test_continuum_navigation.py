@@ -84,46 +84,40 @@ class ContinuumNavigationTests(unittest.TestCase):
         self.assertEqual({k: len(v) for k, v in branches.items()}, {'Unclassified Motivation': 7, 'Unclassified Business': 69})
 
     def test_capability_decomposition_uses_recorded_parentage_without_standing_branches(self):
-        snapshots, keys = {}, {}
-        for cid, (m, _, _) in self.elements.items():
-            for row in m['exchange']['properties']:
-                if row['ref'] == 'propid-14':
-                    data = json.loads(row['values'][0]['text'])
-                    snapshots[cid] = data
-                    keys[data['key']] = cid
+        active = {cid: m for cid, (m, _, _) in self.elements.items()
+                  if m['archimateType'] == 'Capability' and m['standing']['currentness'] == 'current'}
+        catalogue = {m['catalogue']['id']: cid for cid, m in active.items()}
+        self.assertEqual(len(catalogue), 3689)
         parents = {child.get('canonicalId'): node for node in nav.walk(self.tree) for child in node.get('children', []) if child.get('canonicalId')}
-        for cid, data in snapshots.items():
-            if self.elements[cid][0]['archimateType'] != 'Capability':
-                continue
-            if self.elements[cid][0]['identity'].get('correspondence'):
-                continue
-            parent = data.get('parent_key') or data.get('owner_key')
+        for cid, metadata in active.items():
+            parent = metadata['catalogue']['parent']
             if parent:
-                self.assertEqual(parents[cid].get('canonicalId'), keys[parent], cid)
+                self.assertEqual(parents[cid].get('canonicalId'), catalogue[parent], cid)
         # Business contexts refer to Strategy; no second capability population.
         self.assertFalse(any(self.elements[cid][0]['archimateType'] == 'Capability' for cid in nav.descendants(self.tree[3])))
 
     def test_history_uses_governed_correspondence_and_preserves_distinct_exchange_responsibilities(self):
         pairs = {cid: m['identity']['correspondence']['successorCanonicalId']
                  for cid, (m, _, _) in self.elements.items() if m['identity'].get('correspondence')}
-        self.assertEqual(len(pairs), 214)
-        self.assertEqual(sum(self.elements[a][0]['displayName'] == self.elements[b][0]['displayName'] for a, b in pairs.items()), 212)
+        self.assertEqual(len(pairs), 841)
         for old, successor in pairs.items():
             self.assertEqual(self.locations[old]['kind'], 'historical')
             self.assertTrue(self.locations[old]['number'].startswith('R.2.'))
             self.assertEqual(self.locations[old]['successorReference']['canonicalId'], successor)
             self.assertIn(old, [r['canonicalId'] for r in self.locations[successor]['historicalReferences']])
         bc, old_bec, bec = ('baad6b6117084311acbf5fc4044dfabf', '330d1c43856a4322a2e9f331b1a5ed20', 'a61a15908ed544e6acf3e9cab63a0267')
-        self.assertEqual(pairs[old_bec], bec)
+        self.assertEqual(self.elements[old_bec][0]['identity']['replacementHistory']['originalIdentityMetadata']['correspondence']['successorCanonicalId'], bec)
+        self.assertEqual(pairs[old_bec], pairs[bec])
         self.assertNotEqual(bc, bec)
-        self.assertIn('Business Capabilities', self.locations[bc]['path'])
-        self.assertIn('Business Enabling Capabilities', self.locations[bec]['path'])
+        self.assertNotEqual(pairs[bc], pairs[bec])
+        self.assertIn('Enterprise Capabilities', self.locations[pairs[bc]]['path'])
+        self.assertIn('Enterprise Capabilities', self.locations[pairs[bec]]['path'])
 
     def test_complete_relevant_contexts_and_existing_stakeholder_associations_are_guarded(self):
         contexts = [n for n in nav.walk(self.tree) if n.get('contextRole') == 'capability']
-        self.assertEqual(len(contexts), 89)
+        self.assertEqual(len(contexts), 180)
         self.assertEqual(sum(any(ch.get('title') in ('Business Services', 'Business Functions', 'Business Processes', 'Business Events')
-                                 for ch in n.get('children', [])) for n in contexts), 72)
+                                 for ch in n.get('children', [])) for n in contexts), 110)
         for node in contexts:
             self.assertEqual(node['occurrence'], 'contextual')
             self.assertEqual(node['canonicalReference']['number'], self.locations[node['contextCanonicalId']]['number'])
@@ -161,6 +155,7 @@ class ContinuumNavigationTests(unittest.TestCase):
             artifacts = pub.outputs(self.root, output)
         model = c.ET.fromstring(content)
         rows = {n.get('identifier'): n for n in model.findall('a:elements/a:element', c.N)}
+        transport_metadata = nav.transport_metadata(self.tree)
         for cid, node in self.locations.items():
             m = self.elements[cid][0]
             element = rows[m['exchange']['identifier']]
@@ -168,7 +163,7 @@ class ContinuumNavigationTests(unittest.TestCase):
             number = element.findtext('a:properties/a:property[@propertyDefinitionRef="continuum-navigation-number"]/a:value', namespaces=c.N)
             self.assertEqual(number, node['number'])
             metadata = element.findtext('a:properties/a:property[@propertyDefinitionRef="continuum-navigation-references"]/a:value', namespaces=c.N)
-            self.assertEqual(json.loads(metadata), nav.transport_metadata(self.tree)[cid])
+            self.assertEqual(json.loads(metadata), transport_metadata[cid])
         expected = {r['identifier']: r for m, _, _ in self.elements.values() for r in m['relationships']}
         self.assertEqual({r.get('identifier') for r in model.findall('a:relationships/a:relationship', c.N)}, set(expected))
         for edge in model.findall('a:relationships/a:relationship', c.N):

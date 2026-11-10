@@ -16,15 +16,39 @@
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
     "correspondence": {
-      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
-      "disposition": "direct correspondence",
-      "successorCanonicalId": "d2ef01c4cab348df822e802ab084faae",
-      "previousStanding": {
-        "semantic": "Historical reference — RAD correspondence unresolved",
-        "currentness": "historical_reference"
-      },
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "successorCanonicalId": "6e83f496338f447592d93014c116cb0f",
       "historicalIdentityReserved": true,
-      "reason": "Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter."
+      "disposition": "Primary replacement scope; partial/multiple correspondence retained separately, not complete equivalence"
+    },
+    "replacementHistory": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "originalIdentityMetadata": {
+        "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+        "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+        "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+        "correspondence": {
+          "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+          "disposition": "direct correspondence",
+          "successorCanonicalId": "d2ef01c4cab348df822e802ab084faae",
+          "previousStanding": {
+            "semantic": "Historical reference — RAD correspondence unresolved",
+            "currentness": "historical_reference"
+          },
+          "historicalIdentityReserved": true,
+          "reason": "Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter."
+        }
+      },
+      "replacementCatalogueIds": [
+        "E09.03.02",
+        "B13.02"
+      ],
+      "replacementCanonicalIds": [
+        "6e83f496338f447592d93014c116cb0f",
+        "b0100053f6174e2b86e15c545a2fd4d0"
+      ],
+      "disposition": "historical-correspondence-carried",
+      "completeSemanticEquivalenceAsserted": false
     }
   },
   "naming": {
@@ -172,6 +196,15 @@
             }
           }
         ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "superseded",
+            "attributes": {}
+          }
+        ]
       }
     ]
   },
@@ -197,3 +230,7 @@ The governed source has no established definition. This absence is retained for 
 Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter.
 
 Current representation: [[CT3] Preventative Health Reporting](d2ef01c4cab348df822e802ab084faae.md). This resource reserves the historical identity and representation for provenance and existing Views. Its missing original definition remains missing.
+
+## Capability model replacement history
+
+The original content above remains historical and unchanged. This resource is superseded under [the replacement task](../../../design/evidence/1.1.20/001/before/CapabilityReplacementTask.md). Primary replacement catalogue identity `E09.03.02`; additional scope correspondences: `B13.02`. Original canonical/Exchange identities and source contributions remain reserved. Correspondence does not assert complete semantic equivalence, implementation satisfaction or transfer domain authority.

@@ -9,7 +9,7 @@
   "canonicalName": "CT1-BEC-CareAdministrationEnablement.CT2-BEC-ClientCentredAdministration.CT3-BEC-ScreeningAndImmunisationEnablement",
   "standing": {
     "semantic": "Canonical",
-    "currentness": "current",
+    "currentness": "superseded",
     "placement_status": "Proposed",
     "structural_id_status": "Proposed",
     "name_status": "Proposed",
@@ -18,7 +18,31 @@
   "identity": {
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
-    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+    "replacementHistory": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "originalIdentityMetadata": {
+        "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+        "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+        "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
+      },
+      "replacementCatalogueIds": [
+        "B13.02.01",
+        "B13.03"
+      ],
+      "replacementCanonicalIds": [
+        "5e440d45f96e47a29981efa4e7153a9d",
+        "9499ab81e619412fbecbbc519d78032c"
+      ],
+      "disposition": "replacement-scope-correspondence",
+      "completeSemanticEquivalenceAsserted": false
+    },
+    "correspondence": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "successorCanonicalId": "5e440d45f96e47a29981efa4e7153a9d",
+      "historicalIdentityReserved": true,
+      "disposition": "Primary replacement scope; partial/multiple correspondence retained separately, not complete equivalence"
+    }
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -152,17 +176,6 @@
         "values": [
           {
             "text": "Canonical",
-            "attributes": {
-              "{http://www.w3.org/XML/1998/namespace}lang": "en"
-            }
-          }
-        ]
-      },
-      {
-        "ref": "propid-7",
-        "values": [
-          {
-            "text": "current",
             "attributes": {
               "{http://www.w3.org/XML/1998/namespace}lang": "en"
             }
@@ -388,6 +401,15 @@
             }
           }
         ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "superseded",
+            "attributes": {}
+          }
+        ]
       }
     ]
   },
@@ -404,7 +426,7 @@
       "targetCanonicalId": "3cfd3e56c23a4943bd1b476ec248ac49",
       "disposition": "metadata_and_finding",
       "reason": "Enterprise enablement does not establish native Serving or Composition; qualified profile requires review.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/822",
       "source_assertion": {
         "from": "capability:preventive-care",
@@ -446,7 +468,8 @@
         "relationshipIdentifier": "id-1749412ad0e256288f38dbe6e664f8c1",
         "sourceCanonicalId": "3cfd3e56c23a4943bd1b476ec248ac49",
         "targetCanonicalId": "3e9016eaebae4ed0b67a5cacba2652f5"
-      }
+      },
+      "preReplacementRecordState": "current"
     },
     {
       "sourcePointer": "/relationships/823",
@@ -454,7 +477,7 @@
       "targetCanonicalId": "43051efd406b4040bff8e794b7a631e0",
       "disposition": "metadata_and_finding",
       "reason": "Enterprise enablement does not establish native Serving or Composition; qualified profile requires review.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/823",
       "source_assertion": {
         "from": "capability:preventive-care",
@@ -496,7 +519,8 @@
         "relationshipIdentifier": "id-8ecb084173cb5701927986273a865e95",
         "sourceCanonicalId": "43051efd406b4040bff8e794b7a631e0",
         "targetCanonicalId": "3e9016eaebae4ed0b67a5cacba2652f5"
-      }
+      },
+      "preReplacementRecordState": "current"
     },
     {
       "sourcePointer": "/relationships/824",
@@ -504,7 +528,7 @@
       "targetCanonicalId": "0f2e5222874949d8b0cce234941ecb20",
       "disposition": "metadata_and_finding",
       "reason": "Enterprise enablement does not establish native Serving or Composition; qualified profile requires review.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/824",
       "source_assertion": {
         "from": "capability:preventive-care",
@@ -546,7 +570,8 @@
         "relationshipIdentifier": "id-f65b8515eac8577db047c309af6f8a55",
         "sourceCanonicalId": "0f2e5222874949d8b0cce234941ecb20",
         "targetCanonicalId": "3e9016eaebae4ed0b67a5cacba2652f5"
-      }
+      },
+      "preReplacementRecordState": "current"
     }
   ]
 }
@@ -589,3 +614,7 @@ Original source predicates, evidence and qualifications remain in the metadata. 
 Source: `docs/markdown/03-business-architecture/behaviours/03-service-delivery.md` — entry lines 164-164. Standing: exact originating assertion; current resource standing unchanged.
 
 - **Owning Capability**: `Preventive Care`
+
+## Capability model replacement history
+
+The original content above remains historical and unchanged. This resource is superseded under [the replacement task](../../../design/evidence/1.1.20/001/before/CapabilityReplacementTask.md). Primary replacement catalogue identity `B13.02.01`; additional scope correspondences: `B13.03`. Original canonical/Exchange identities and source contributions remain reserved. Correspondence does not assert complete semantic equivalence, implementation satisfaction or transfer domain authority.

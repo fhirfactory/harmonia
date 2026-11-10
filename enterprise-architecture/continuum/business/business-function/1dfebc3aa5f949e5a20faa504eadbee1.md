@@ -5,8 +5,8 @@
   "archimateType": "BusinessFunction",
   "specialization": null,
   "displayName": "Verify Clinical Qualification for Work Dispatch",
-  "friendlyName": "HealthServiceOperationsEnablement.ClinicalQualificationAdministration.ProviderClinicalQualificationTracking.OperationalCredentialCheck.VerifyClinicalQualificationForWorkDispatch",
-  "canonicalName": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalQualificationAdministration.CT3-BEC-ProviderClinicalQualificationTracking.FEAT-OperationalCredentialCheck.FN-VerifyClinicalQualificationForWorkDispatch",
+  "friendlyName": "WorkforceAndProfessionalPractice.ProfessionalQualificationAndCredentialAssurance.ProfessionalEligibilityVerification.VerifyClinicalQualificationForWorkDispatch",
+  "canonicalName": "CT1-WorkforceAndProfessionalPractice.CT2-ProfessionalQualificationAndCredentialAssurance.CT3-ProfessionalEligibilityVerification.FN-VerifyClinicalQualificationForWorkDispatch",
   "standing": {
     "semantic": "Canonical",
     "currentness": "current",
@@ -21,13 +21,45 @@
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
   },
   "naming": {
-    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md",
     "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
     "expected": {
       "displayName": "Verify Clinical Qualification for Work Dispatch",
+      "friendlyName": "WorkforceAndProfessionalPractice.ProfessionalQualificationAndCredentialAssurance.ProfessionalEligibilityVerification.VerifyClinicalQualificationForWorkDispatch",
+      "canonicalName": "CT1-WorkforceAndProfessionalPractice.CT2-ProfessionalQualificationAndCredentialAssurance.CT3-ProfessionalEligibilityVerification.FN-VerifyClinicalQualificationForWorkDispatch"
+    },
+    "preReplacementNames": {
       "friendlyName": "HealthServiceOperationsEnablement.ClinicalQualificationAdministration.ProviderClinicalQualificationTracking.OperationalCredentialCheck.VerifyClinicalQualificationForWorkDispatch",
       "canonicalName": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-ClinicalQualificationAdministration.CT3-BEC-ProviderClinicalQualificationTracking.FEAT-OperationalCredentialCheck.FN-VerifyClinicalQualificationForWorkDispatch"
-    }
+    },
+    "inputs": [
+      {
+        "key": "B08",
+        "type": "capability",
+        "name": "Workforce & Professional Practice",
+        "tier": "CT1",
+        "category": "business"
+      },
+      {
+        "key": "B08.02",
+        "type": "capability",
+        "name": "Professional Qualification & Credential Assurance",
+        "tier": "CT2",
+        "category": "business"
+      },
+      {
+        "key": "B08.02.01",
+        "type": "capability",
+        "name": "Professional Eligibility Verification",
+        "tier": "CT3",
+        "category": "business"
+      },
+      {
+        "key": "1dfebc3aa5f949e5a20faa504eadbee1",
+        "type": "function",
+        "name": "Verify Clinical Qualification for Work Dispatch"
+      }
+    ]
   },
   "provenance": [
     {
@@ -338,7 +370,8 @@
         "isDirected": "true"
       },
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -356,11 +389,27 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "specialization": "Home",
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-270b0aab231153caa6907f41a3417e0d",
@@ -371,7 +420,8 @@
       "standing": {
         "v0.2 / Assertion Status": "established",
         "v0.2 / Record State": "current",
-        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -391,10 +441,177 @@
           ]
         },
         {
+          "ref": "propid-55",
+          "values": [
+            {
+              "text": "realises_feature",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-56",
+          "values": [
+            {
+              "text": "{\"from\":\"function:verify-clinical-qualification-for-work-dispatch\",\"sources\":[{\"anchor\":\"216-clinical-qualification-management\",\"line\":295,\"source\":\"hso\",\"text\":\" - *Function*: `Verify Clinical Qualification for Work Dispatch` — Validates that a practitioner possesses active clinical credentials and required competency certificates before dispatch of specialised work.\"}],\"status\":\"established\",\"to\":\"feature:operational-credential-check\",\"type\":\"realises_feature\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/177",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-12",
+          "values": [
+            {
+              "text": "Unresolved — representation ID only",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
+      "name": [],
+      "documentation": [
+        {
+          "text": "Snapshot predicate: realises_feature; assertion status: established; currentness: current.\n\n{\n  \"type\": \"realises_feature\",\n  \"from\": \"function:verify-clinical-qualification-for-work-dispatch\",\n  \"to\": \"feature:operational-credential-check\",\n  \"status\": \"established\",\n  \"sources\": [\n    {\n      \"source\": \"hso\",\n      \"line\": 295,\n      \"text\": \"    - *Function*: `Verify Clinical Qualification for Work Dispatch` — Validates that a practitioner possesses active clinical credentials and required competency certificates before dispatch of specialised work.\",\n      \"anchor\": \"216-clinical-qualification-management\"\n    }\n  ]\n}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "v0.2 / Assertion Status": "established",
+          "v0.2 / Record State": "current",
+          "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
+    },
+    {
+      "identifier": "id-2157a1fe02be5f33a55474542385bc48",
+      "archimateType": "Association",
+      "source": "id-6933f43beb6a5e83ad5a87ba30539e9f",
+      "target": "id-7f5e8e858b785a8b9e6eef19f0412e37",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-c690c378a70553f4aa3fd6c9d1d26c4a",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
           "ref": "propid-7",
           "values": [
             {
               "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "specialization",
+          "values": [
+            {
+              "text": "Home",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "specialization": "Home",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "name": [],
+      "documentation": [
+        {
+          "text": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-c690c378a70553f4aa3fd6c9d1d26c4a remains preserved as history.",
+          "attributes": {}
+        }
+      ]
+    },
+    {
+      "identifier": "id-7b01d5835f4a513680a42ae7f4b68133",
+      "archimateType": "Realization",
+      "source": "id-6933f43beb6a5e83ad5a87ba30539e9f",
+      "target": "id-7f5e8e858b785a8b9e6eef19f0412e37",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-270b0aab231153caa6907f41a3417e0d",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-54",
+          "values": [
+            {
+              "text": "established",
               "attributes": {
                 "{http://www.w3.org/XML/1998/namespace}lang": "en"
               }
@@ -446,10 +663,11 @@
           ]
         }
       ],
+      "attributes": {},
       "name": [],
       "documentation": [
         {
-          "text": "Snapshot predicate: realises_feature; assertion status: established; currentness: current.\n\n{\n  \"type\": \"realises_feature\",\n  \"from\": \"function:verify-clinical-qualification-for-work-dispatch\",\n  \"to\": \"feature:operational-credential-check\",\n  \"status\": \"established\",\n  \"sources\": [\n    {\n      \"source\": \"hso\",\n      \"line\": 295,\n      \"text\": \"    - *Function*: `Verify Clinical Qualification for Work Dispatch` — Validates that a practitioner possesses active clinical credentials and required competency certificates before dispatch of specialised work.\",\n      \"anchor\": \"216-clinical-qualification-management\"\n    }\n  ]\n}",
+          "text": "Snapshot predicate: realises_feature; assertion status: established; currentness: current.\n\n{\n  \"type\": \"realises_feature\",\n  \"from\": \"function:verify-clinical-qualification-for-work-dispatch\",\n  \"to\": \"feature:operational-credential-check\",\n  \"status\": \"established\",\n  \"sources\": [\n    {\n      \"source\": \"hso\",\n      \"line\": 295,\n      \"text\": \"    - *Function*: `Verify Clinical Qualification for Work Dispatch` — Validates that a practitioner possesses active clinical credentials and required competency certificates before dispatch of specialised work.\",\n      \"anchor\": \"216-clinical-qualification-management\"\n    }\n  ]\n}\n\nCandidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-270b0aab231153caa6907f41a3417e0d remains preserved as history.",
           "attributes": {
             "{http://www.w3.org/XML/1998/namespace}lang": "en"
           }

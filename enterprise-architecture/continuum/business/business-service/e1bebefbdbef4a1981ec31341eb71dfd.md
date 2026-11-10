@@ -5,8 +5,8 @@
   "archimateType": "BusinessService",
   "specialization": null,
   "displayName": "Consent Decision Service",
-  "friendlyName": "EntityInformationEnablement.ClientAdministration.ClientPrivacyGuardrailManagement.ConsentDirectiveEvaluation.ConsentDecisionService",
-  "canonicalName": "CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientPrivacyGuardrailManagement.FEAT-ConsentDirectiveEvaluation.SV-ConsentDecisionService",
+  "friendlyName": "IdentityTrustAndInformationProtection.ContextualAuthorisationDetermination.ContextSensitiveAccessDecision.ConsentDecisionService",
+  "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection.CT2-EC-ContextualAuthorisationDetermination.CT3-EC-ContextSensitiveAccessDecision.SV-ConsentDecisionService",
   "standing": {
     "semantic": "Canonical",
     "currentness": "current",
@@ -21,13 +21,45 @@
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
   },
   "naming": {
-    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md",
     "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
     "expected": {
       "displayName": "Consent Decision Service",
+      "friendlyName": "IdentityTrustAndInformationProtection.ContextualAuthorisationDetermination.ContextSensitiveAccessDecision.ConsentDecisionService",
+      "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection.CT2-EC-ContextualAuthorisationDetermination.CT3-EC-ContextSensitiveAccessDecision.SV-ConsentDecisionService"
+    },
+    "preReplacementNames": {
       "friendlyName": "EntityInformationEnablement.ClientAdministration.ClientPrivacyGuardrailManagement.ConsentDirectiveEvaluation.ConsentDecisionService",
       "canonicalName": "CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientPrivacyGuardrailManagement.FEAT-ConsentDirectiveEvaluation.SV-ConsentDecisionService"
-    }
+    },
+    "inputs": [
+      {
+        "key": "E05",
+        "type": "capability",
+        "name": "Identity, Trust & Information Protection",
+        "tier": "CT1",
+        "category": "enterprise"
+      },
+      {
+        "key": "E05.02",
+        "type": "capability",
+        "name": "Contextual Authorisation Determination",
+        "tier": "CT2",
+        "category": "enterprise"
+      },
+      {
+        "key": "E05.02.01",
+        "type": "capability",
+        "name": "Context-Sensitive Access Decision",
+        "tier": "CT3",
+        "category": "enterprise"
+      },
+      {
+        "key": "e1bebefbdbef4a1981ec31341eb71dfd",
+        "type": "service",
+        "name": "Consent Decision Service"
+      }
+    ]
   },
   "provenance": [
     {
@@ -330,7 +362,8 @@
         "isDirected": "true"
       },
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -348,11 +381,27 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "specialization": "Home",
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-f9ff674beb6551c0ad7e041d0acbac1b",
@@ -364,7 +413,7 @@
       },
       "standing": {
         "semantic": "established",
-        "currentness": "current"
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
@@ -457,6 +506,193 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "semantic": "established",
+          "currentness": "current"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
+    },
+    {
+      "identifier": "id-c2532786b95e55b59d2e9ebda7ef9c88",
+      "archimateType": "Association",
+      "source": "id-f004e0762488533d95b1b0a829c9c89e",
+      "target": "id-519456c9156a5c7a9db67e4255f5f9d8",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-e4bf2a4218b55d3b9f9eb26951aa5d37",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "specialization",
+          "values": [
+            {
+              "text": "Home",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "specialization": "Home",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "name": [],
+      "documentation": [
+        {
+          "text": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-e4bf2a4218b55d3b9f9eb26951aa5d37 remains preserved as history.",
+          "attributes": {}
+        }
+      ]
+    },
+    {
+      "identifier": "id-93d9ca46f5d158cda108d4cbc38f80a6",
+      "archimateType": "Association",
+      "source": "id-f004e0762488533d95b1b0a829c9c89e",
+      "target": "id-8d5101a06efb5c9c960c89bdd30d457f",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-f9ff674beb6551c0ad7e041d0acbac1b",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "established",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "associated_feature",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"service:consent-decision-service\", \"sources\": [{\"anchor\": \"24-client-privacy\", \"line\": 74, \"source\": \"em\", \"text\": \" - *Exposed Service*: `Consent Decision Service` — Provides real-time consent evaluation decisions to Health Information Control.\"}], \"status\": \"established\", \"to\": \"feature:consent-directive-evaluation\", \"type\": \"associated_feature\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/22",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "attributes": {
+        "isDirected": "true"
+      },
+      "name": [
+        {
+          "text": "associated_feature",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"service:consent-decision-service\", \"sources\": [{\"anchor\": \"24-client-privacy\", \"line\": 74, \"source\": \"em\", \"text\": \" - *Exposed Service*: `Consent Decision Service` — Provides real-time consent evaluation decisions to Health Information Control.\"}], \"status\": \"established\", \"to\": \"feature:consent-directive-evaluation\", \"type\": \"associated_feature\"}\n\nCandidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-f9ff674beb6551c0ad7e041d0acbac1b remains preserved as history.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
         }
       ]
     }
@@ -473,7 +709,7 @@
       "targetCanonicalId": "baf6dc6ef38a4256a9a67a65fd3f31ba",
       "disposition": "metadata_and_finding",
       "reason": "Feature association does not establish a particular native edge or whole-Feature realisation.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/22",
       "source_assertion": {
         "from": "service:consent-decision-service",
@@ -499,7 +735,8 @@
         "relationshipIdentifier": "id-f9ff674beb6551c0ad7e041d0acbac1b",
         "sourceCanonicalId": "e1bebefbdbef4a1981ec31341eb71dfd",
         "targetCanonicalId": "baf6dc6ef38a4256a9a67a65fd3f31ba"
-      }
+      },
+      "preReplacementRecordState": "current"
     }
   ]
 }

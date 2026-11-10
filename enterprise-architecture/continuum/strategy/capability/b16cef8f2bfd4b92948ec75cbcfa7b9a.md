@@ -9,7 +9,7 @@
   "canonicalName": "CT1-BEC-HealthServiceOperationsEnablement.CT2-BEC-OnCallManagement",
   "standing": {
     "semantic": "Canonical",
-    "currentness": "current",
+    "currentness": "superseded",
     "placement_status": "Proposed",
     "structural_id_status": "Proposed",
     "name_status": "Canonical",
@@ -19,9 +19,33 @@
     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
     "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
-    "predecessorCanonicalIds": [
-      "c8e6e66e8718493c9093f37d129f9ff2"
-    ]
+    "replacementHistory": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "originalIdentityMetadata": {
+        "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+        "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+        "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+        "predecessorCanonicalIds": [
+          "c8e6e66e8718493c9093f37d129f9ff2"
+        ]
+      },
+      "replacementCatalogueIds": [
+        "B08.01.02",
+        "E02.06.02"
+      ],
+      "replacementCanonicalIds": [
+        "ca77b75538364a67a1e8cc38df81cf77",
+        "dd0d16f6e6b9491c85deea915bb7bf4d"
+      ],
+      "disposition": "replacement-scope-correspondence",
+      "completeSemanticEquivalenceAsserted": false
+    },
+    "correspondence": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "successorCanonicalId": "ca77b75538364a67a1e8cc38df81cf77",
+      "historicalIdentityReserved": true,
+      "disposition": "Primary replacement scope; partial/multiple correspondence retained separately, not complete equivalence"
+    }
   },
   "naming": {
     "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
@@ -155,17 +179,6 @@
         "values": [
           {
             "text": "Canonical",
-            "attributes": {
-              "{http://www.w3.org/XML/1998/namespace}lang": "en"
-            }
-          }
-        ]
-      },
-      {
-        "ref": "propid-7",
-        "values": [
-          {
-            "text": "current",
             "attributes": {
               "{http://www.w3.org/XML/1998/namespace}lang": "en"
             }
@@ -369,6 +382,15 @@
             }
           }
         ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "superseded",
+            "attributes": {}
+          }
+        ]
       }
     ]
   },
@@ -382,7 +404,8 @@
       "standing": {
         "v0.2 / Assertion Status": "Proposed",
         "v0.2 / Record State": "current",
-        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -395,17 +418,6 @@
           "values": [
             {
               "text": "Proposed",
-              "attributes": {
-                "{http://www.w3.org/XML/1998/namespace}lang": "en"
-              }
-            }
-          ]
-        },
-        {
-          "ref": "propid-7",
-          "values": [
-            {
-              "text": "current",
               "attributes": {
                 "{http://www.w3.org/XML/1998/namespace}lang": "en"
               }
@@ -455,6 +467,15 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "name": [],
@@ -465,7 +486,16 @@
             "{http://www.w3.org/XML/1998/namespace}lang": "en"
           }
         }
-      ]
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "v0.2 / Assertion Status": "Proposed",
+          "v0.2 / Record State": "current",
+          "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     }
   ],
   "unresolvedProperties": {},
@@ -480,7 +510,7 @@
       "targetCanonicalId": "6a45701634f04b43919d9152a61e5f2e",
       "disposition": "metadata_and_finding",
       "reason": "Enterprise enablement does not establish native Serving or Composition; qualified profile requires review.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/787",
       "source_assertion": {
         "from": "capability:on-call-management",
@@ -519,7 +549,8 @@
         "relationshipIdentifier": "id-eca076690a47576f971456ebd2703af1",
         "sourceCanonicalId": "6a45701634f04b43919d9152a61e5f2e",
         "targetCanonicalId": "b16cef8f2bfd4b92948ec75cbcfa7b9a"
-      }
+      },
+      "preReplacementRecordState": "current"
     },
     {
       "sourcePointer": "/relationships/788",
@@ -527,7 +558,7 @@
       "targetCanonicalId": "0c5d986cc948421a8bebcab3b74d108f",
       "disposition": "metadata_and_finding",
       "reason": "Enterprise enablement does not establish native Serving or Composition; qualified profile requires review.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/788",
       "source_assertion": {
         "from": "capability:on-call-management",
@@ -566,7 +597,8 @@
         "relationshipIdentifier": "id-f090b6a28adb5b3dbb76e7bc0067d5fa",
         "sourceCanonicalId": "0c5d986cc948421a8bebcab3b74d108f",
         "targetCanonicalId": "b16cef8f2bfd4b92948ec75cbcfa7b9a"
-      }
+      },
+      "preReplacementRecordState": "current"
     }
   ]
 }
@@ -620,3 +652,7 @@ Source: `docs/markdown/03-business-architecture/behaviours/04-health-service-ope
 ## ARB identity continuity
 
 Historical identity [c8e6e66e8718493c9093f37d129f9ff2](c8e6e66e8718493c9093f37d129f9ff2.md) has direct correspondence with this capability under HCRL 1.1.5-002. Historical provenance and UUID reservation remain with that record; this resource retains its existing identity and independent standing.
+
+## Capability model replacement history
+
+The original content above remains historical and unchanged. This resource is superseded under [the replacement task](../../../design/evidence/1.1.20/001/before/CapabilityReplacementTask.md). Primary replacement catalogue identity `B08.01.02`; additional scope correspondences: `E02.06.02`. Original canonical/Exchange identities and source contributions remain reserved. Correspondence does not assert complete semantic equivalence, implementation satisfaction or transfer domain authority.

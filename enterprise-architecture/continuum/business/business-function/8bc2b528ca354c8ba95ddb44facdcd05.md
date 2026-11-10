@@ -349,7 +349,8 @@
       "standing": {
         "v0.2 / Assertion Status": "Proposed",
         "v0.2 / Record State": "current",
-        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        "v0.2 / Architecture Identity Status": "Unresolved — representation ID only",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -369,10 +370,118 @@
           ]
         },
         {
+          "ref": "propid-55",
+          "values": [
+            {
+              "text": "realises_feature",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-56",
+          "values": [
+            {
+              "text": "{\"from\":\"function:associate-order-outcome\",\"provenance\":{\"authority\":\"Proposed only; cited source standing is not inherited\",\"derivation\":\"Semantic responsibility analysis; no authority transfer\",\"evidence\":[{\"line\":10,\"path\":\"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\",\"standing\":\"Current corpus evidence; does not promote the derived assertion\",\"text\":\"### 1.2 Non-Transfer of Ownership Guardrail\"}],\"method\":\"AI architectural synthesis under the explicitly authorised Step 2 task\"},\"rationale\":\"This existing behaviour materially discharges the proposed Feature; ownership and canonical definition remain unchanged.\",\"sources\":[],\"status\":\"Proposed\",\"to\":\"proposal:feature-order-outcome-association\",\"type\":\"realises_feature\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/463",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-12",
+          "values": [
+            {
+              "text": "Unresolved — representation ID only",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
+      "name": [],
+      "documentation": [
+        {
+          "text": "Snapshot predicate: realises_feature; assertion status: Proposed; currentness: current.\n\n{\n  \"type\": \"realises_feature\",\n  \"from\": \"function:associate-order-outcome\",\n  \"to\": \"proposal:feature-order-outcome-association\",\n  \"status\": \"Proposed\",\n  \"sources\": [],\n  \"rationale\": \"This existing behaviour materially discharges the proposed Feature; ownership and canonical definition remain unchanged.\",\n  \"provenance\": {\n    \"derivation\": \"Semantic responsibility analysis; no authority transfer\",\n    \"evidence\": [\n      {\n        \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\",\n        \"line\": 10,\n        \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\",\n        \"standing\": \"Current corpus evidence; does not promote the derived assertion\"\n      }\n    ],\n    \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\",\n    \"authority\": \"Proposed only; cited source standing is not inherited\"\n  }\n}",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "v0.2 / Assertion Status": "Proposed",
+          "v0.2 / Record State": "current",
+          "v0.2 / Architecture Identity Status": "Unresolved — representation ID only"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
+    },
+    {
+      "identifier": "id-d04010fb1ad6512b95ac2f25aafbed54",
+      "archimateType": "Realization",
+      "source": "id-954c6d98636851f4aae3e1839793ab03",
+      "target": "id-239cc1c52b875dc79215032dc39362b4",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-3e94b9d6b62a539daa6ac7d244475017",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
           "ref": "propid-7",
           "values": [
             {
               "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-54",
+          "values": [
+            {
+              "text": "Proposed",
               "attributes": {
                 "{http://www.w3.org/XML/1998/namespace}lang": "en"
               }
@@ -424,10 +533,11 @@
           ]
         }
       ],
+      "attributes": {},
       "name": [],
       "documentation": [
         {
-          "text": "Snapshot predicate: realises_feature; assertion status: Proposed; currentness: current.\n\n{\n  \"type\": \"realises_feature\",\n  \"from\": \"function:associate-order-outcome\",\n  \"to\": \"proposal:feature-order-outcome-association\",\n  \"status\": \"Proposed\",\n  \"sources\": [],\n  \"rationale\": \"This existing behaviour materially discharges the proposed Feature; ownership and canonical definition remain unchanged.\",\n  \"provenance\": {\n    \"derivation\": \"Semantic responsibility analysis; no authority transfer\",\n    \"evidence\": [\n      {\n        \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\",\n        \"line\": 10,\n        \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\",\n        \"standing\": \"Current corpus evidence; does not promote the derived assertion\"\n      }\n    ],\n    \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\",\n    \"authority\": \"Proposed only; cited source standing is not inherited\"\n  }\n}",
+          "text": "Snapshot predicate: realises_feature; assertion status: Proposed; currentness: current.\n\n{\n  \"type\": \"realises_feature\",\n  \"from\": \"function:associate-order-outcome\",\n  \"to\": \"proposal:feature-order-outcome-association\",\n  \"status\": \"Proposed\",\n  \"sources\": [],\n  \"rationale\": \"This existing behaviour materially discharges the proposed Feature; ownership and canonical definition remain unchanged.\",\n  \"provenance\": {\n    \"derivation\": \"Semantic responsibility analysis; no authority transfer\",\n    \"evidence\": [\n      {\n        \"path\": \"docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\",\n        \"line\": 10,\n        \"text\": \"### 1.2 Non-Transfer of Ownership Guardrail\",\n        \"standing\": \"Current corpus evidence; does not promote the derived assertion\"\n      }\n    ],\n    \"method\": \"AI architectural synthesis under the explicitly authorised Step 2 task\",\n    \"authority\": \"Proposed only; cited source standing is not inherited\"\n  }\n}\n\nCandidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-3e94b9d6b62a539daa6ac7d244475017 remains preserved as history.",
           "attributes": {
             "{http://www.w3.org/XML/1998/namespace}lang": "en"
           }

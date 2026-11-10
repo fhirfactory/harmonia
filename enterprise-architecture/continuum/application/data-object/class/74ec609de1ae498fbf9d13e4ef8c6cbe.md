@@ -8,7 +8,7 @@
   "friendlyName": "model.core.information.InformationUnit",
   "canonicalName": "PKG-Model.PKG-Core.PKG-Information.CLASS-InformationUnit",
   "standing": {
-    "semantic": "Accepted bounded architecture \u2014 HCRL 1.1.15-001 DR-1",
+    "semantic": "Accepted bounded architecture — HCRL 1.1.15-001 DR-1",
     "currentness": "current"
   },
   "identity": {
@@ -40,7 +40,7 @@
     },
     {
       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.draft.002.md",
-      "selector": "\u00a75 Class::InformationUnit"
+      "selector": "§5 Class::InformationUnit"
     }
   ],
   "exchange": {

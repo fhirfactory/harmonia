@@ -1,0 +1,12 @@
+{
+  "markdown_link_files_checked": 7,
+  "markdown_link_errors": {},
+  "prior_hcrl_content_byte_preserved": true,
+  "all_pass3_012_inputs_unchanged": true,
+  "catalogue_and_workbook_hashes_match_manifest": true,
+  "git_diff_check_exit_code": 0,
+  "git_diff_check_output": "",
+  "formal_report": "enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261109T101507Z-pass3-sr-reconciliation.md",
+  "git_head_unchanged": true,
+  "outcome": "PASS"
+}

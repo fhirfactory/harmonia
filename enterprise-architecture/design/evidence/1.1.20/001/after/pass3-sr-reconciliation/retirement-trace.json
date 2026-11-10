@@ -1,0 +1,82 @@
+[
+  [
+    "E01.01.05.F02",
+    "E01.01.01.F02",
+    "XD-001 duplicate retirement",
+    "DurableBeforeAcknowledgement",
+    "No durable-acceptance acknowledgement precedes required persistence evidence. *PROPOSED — unverified*.",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_002_Adjudicated_Overlay.md"
+  ],
+  [
+    "E03.05.04.F02",
+    "E03.05.03.F02",
+    "XD-005 duplicate retirement",
+    "ConformanceSuiteRepeatable",
+    "A release can rerun a bounded interface conformance suite. *PROPOSED — unverified*.",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_002_Adjudicated_Overlay.md"
+  ],
+  [
+    "E07.03.04.F03",
+    "E07.03.01.F04",
+    "XD-007 duplicate retirement",
+    "HistoricalVersionAccessible",
+    "A relevant past state can be retrieved without current overwrite. *PROPOSED — unverified*.",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_002_Adjudicated_Overlay.md"
+  ],
+  [
+    "B04.03.03",
+    "B04.03.04",
+    "XD-002 CT3 consolidation",
+    "Critical Finding Communication",
+    "CT3 context; original Feature criteria are in the individual Feature rows.",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_002_Adjudicated_Overlay.md"
+  ],
+  [
+    "B04.03.03.F01",
+    "B04.03.04.F04",
+    "XD-002 retired separate identity; retained survivor coverage refined by XD-018",
+    "Acknowledged Critical Result",
+    "proportion of critical findings acknowledged by a responsible recipient within the prescribed interval. *PROPOSED*.",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_002_Adjudicated_Overlay.md"
+  ],
+  [
+    "B04.03.03.F02",
+    "B04.03.04.F01; B04.03.04.F05",
+    "XD-002 retired separate identity; retained survivor coverage refined by XD-018",
+    "CorrectCriticalResultRecipient",
+    "proportion of critical findings directed to an appropriately accountable recipient. *PROPOSED*.",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_002_Adjudicated_Overlay.md"
+  ],
+  [
+    "B04.03.03.F03",
+    "B04.03.04.F06",
+    "XD-002 transfer",
+    "Critical Finding Classification",
+    "proportion of sampled risk-bearing critical finding communication scenarios with correct critical finding classification, including prescribed adverse cases. *PROPOSED*.",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_002_Adjudicated_Overlay.md"
+  ],
+  [
+    "B04.03.03.F04",
+    "B04.03.04.F07",
+    "XD-002 transfer",
+    "Rapid Appropriate Notification",
+    "elapsed time from the applicable trigger to the rapid appropriate notification outcome; proportion within a context-defined interval. *PROPOSED*.",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_002_Adjudicated_Overlay.md"
+  ],
+  [
+    "B04.03.03.F05",
+    "B04.03.04.F01; B04.03.04.F05",
+    "XD-002 retired separate identity; retained survivor coverage refined by XD-018",
+    "Recipient Identity Assurance",
+    "proportion of independently checked critical finding communication instances satisfying the specified recipient identity assurance quality condition. *PROPOSED*.",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_002_Adjudicated_Overlay.md"
+  ],
+  [
+    "B04.03.03.F06",
+    "B04.03.04.F04; B04.03.04.F05",
+    "XD-002 retired separate identity; retained survivor coverage refined by XD-018",
+    "Unacknowledged Finding Escalation",
+    "proportion of applicable critical finding communication interactions where unacknowledged finding escalation reaches and is understood by the intended recipient. *PROPOSED*.",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_002_Adjudicated_Overlay.md"
+  ]
+]

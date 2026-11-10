@@ -1,0 +1,129 @@
+{
+  "standing": "Automated verification of working migration candidate; no architectural acceptance",
+  "toolingSuite": {
+    "outcome": "PASS",
+    "exitCode": 0,
+    "tests": 87,
+    "failures": 0,
+    "errors": 0,
+    "durationSeconds": 572.472,
+    "boundSeconds": 600,
+    "command": "timeout --signal=TERM --kill-after=5s 600s python3 -B -m unittest discover -s enterprise-architecture/tooling/tests -v",
+    "log": "verification/tooling-final.log.gz",
+    "diagnosticQualification": "The malformed-input negative test emits a FAIL parser diagnostic and completes ok; final unittest result is OK."
+  },
+  "architectureSuite": {
+    "outcome": "PASS",
+    "exitCode": 0,
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "durationSeconds": 18.434,
+    "log": "verification/architecture-tests.log.gz"
+  },
+  "earlierAttempts": [
+    {
+      "check": "Initial complete staging preflight",
+      "outcome": "FAIL",
+      "reason": "Temporary stage omitted retained 1.1.19 evidence paths",
+      "remediation": "Full evidence tree exposed to the staging environment; complete canonical preflight PASS before live application, reusing persisted allocations",
+      "log": "initial-preflight.log"
+    },
+    {
+      "check": "Initial Python suite",
+      "outcome": "TIMEOUT",
+      "exitCode": 124,
+      "boundSeconds": 420,
+      "log": "verification/tooling-initial-timeout.log.gz",
+      "separateObservedFailure": {
+        "outcome": "FAIL",
+        "test": "test_population_and_provenance",
+        "reason": "Obsolete 1996/2246 element/relationship fixture; updated to verified 5685/6636 population",
+        "finalOutcome": "PASS in final 87-test suite"
+      }
+    }
+  ],
+  "canonical": {
+    "outcome": "PASS",
+    "elements": 5685,
+    "relationships": 6636,
+    "sourceBindings": 7541,
+    "qualifiedSourcePredicates": 462,
+    "evidence": "canonical-validation.json"
+  },
+  "independentPreservation": {
+    "outcome": "PASS",
+    "checks": 3704,
+    "parentChecks": 3665,
+    "preservationScopeChecks": 39,
+    "evidence": "preservation-validation.json"
+  },
+  "candidateInterchange": {
+    "outcome": "PASS",
+    "offlineXsd": "PASS",
+    "exchangeReferences": "PASS",
+    "containment": "PASS",
+    "evidence": "projection-validation-v2.json"
+  },
+  "repeatProjection": {
+    "outcome": "PASS",
+    "evidence": "determinism-validation-v2.json",
+    "sha256": "658a9e021b298f700a3f4fbd38b6fa9119d632c7aca00975f6516c0375629456"
+  },
+  "reader": {
+    "outcome": "PASS",
+    "artifacts": 5,
+    "evidence": "verification/reader-check-v2.json"
+  },
+  "narrative": {
+    "outcome": "PASS",
+    "artifacts": 12,
+    "evidence": "verification/narrative-check-v2.json"
+  },
+  "manifest": {
+    "outcome": "PASS",
+    "evidence": "verification/manifest-check-v2.json"
+  },
+  "browser": {
+    "outcome": "PASS",
+    "elements": 5685,
+    "evidence": "verification/browser-v2.json",
+    "limit": "DOM-contract smoke test, no pixel or human structural acceptance"
+  },
+  "canonicalLinks": {
+    "outcome": "PASS",
+    "checked": 2245,
+    "evidence": "link-validation.json"
+  },
+  "inputProtection": {
+    "outcome": "PASS",
+    "protectedPublicationsAndRegisters": 219,
+    "sourcePackagePins": 19,
+    "release": {
+      "version": "1.1.20",
+      "previous_version": "1.1.19"
+    },
+    "operativeTaskUnchanged": true
+  },
+  "iterationEvidence": {
+    "outcome": "UNRESOLVED",
+    "layoutErrors": 0,
+    "unresolvedTemporalFindings": 4,
+    "qualification": "Recorded event/prefix checks only; unavailable original Task events require SA treatment before closure"
+  },
+  "remainingQualifications": {
+    "actualArchiTransport": "NOT_PERFORMED",
+    "solutionArchitectWorkbenchAndReaderReview": "PENDING",
+    "externalOfficeVerification": "UNRESOLVED \u2014 inherited; not performed in this activity",
+    "fullOoxmlSchemaAssurance": "NOT_PERFORMED \u2014 inherited",
+    "jdkAssurance": "UNRESOLVED \u2014 inherited separate limitation",
+    "originalTaskTimeAndPrefix": "UNRESOLVED",
+    "E07.03.05": "Separate semantic review retained; not resolved"
+  },
+  "testChanges": [
+    "enterprise-architecture/tooling/tests/continuum-browser-smoke.js",
+    "enterprise-architecture/tooling/tests/test_continuum.py",
+    "enterprise-architecture/tooling/tests/test_continuum_navigation.py"
+  ]
+}

@@ -1,0 +1,19 @@
+# Report — Pass3/013 SR reconciliation
+
+Report-Produced-At: 2026-11-09T10:15:07.226639Z
+
+Timestamp source: UTC system clock recording emission of this completed Report. This records the observable Report-production event, not an instruction-entry or internal model-generation time.
+
+Corresponding [formal Task](../../before/ai-agent-tasks/unresolved-pass3-sr-reconciliation.md) and [complete issued directions](../../before/pass3-sr-reconciliation-issued-directions.md); provenance boundary **HCRL 1.1.20/001, DR-5**. Original instruction-entry timestamp remains UNRESOLVED; no time or filename prefix is fabricated.
+
+The completed offline Pass3/013 package incorporates accepted SR-001, SR-004, SR-015, SR-016 and SR-017 while preserving all XD-001–XD-028 dispositions and AR-001/AR-002. Population changes from **24 CT1 / 145 CT2 / 586 CT3 / 2,941 Features** to **24 / 145 / 585 / 2,936**. Only B05.03.04 and its five Feature identities retire; all obligations and original criteria are reconciled into the existing six B05.03.01 Features. Governed operational and human operational handover remain distinct and unchanged.
+
+SR-004 separates selection, delivery attempt and accepted handoff. SR-015 separates Ergon/activity/Task/commitment outcomes and retains all inherited recovery/subscription obligations. SR-016 separates research preparation from participant-contextual protection and preserves all inherited safeguarding obligations. SR-017 corrects the narrative while both already correct FHIR role definitions and all ten Features remain unchanged. Seven CT3 definitions and 33 Feature definitions change; no Feature name, surviving identifier or containment changes.
+
+**62 automated checks PASS** for structure, exact allowed delta, unaffected definitions, all XD references/retirements, original criteria/status and workbook OOXML/data correspondence. Both source and result load using available standard-library OOXML tooling; repeat builds produce byte-identical catalogue/workbook. All 2,941 source criteria, including 1,990 measurement-oriented criteria, remain linked to active targets or explicit retirement history. The 24 baseline package files and protected Continuum/register/publication/release bytes are unchanged.
+
+Qualifications: external office application load/export and visual inspection remain UNRESOLVED after the previously recorded launcher failures; complete ECMA-376 XSD validation is not claimed. Instruction-entry times/prefixes remain UNRESOLVED for SA treatment before closure; the iteration evidence checker has no layout errors. Original criteria do not alone assure all refined scope or implementation. No unresolved architectural conflict or deferred incorporation remains within the five SR decisions; whole-candidate SA review remains pending.
+
+The [detailed execution report](../pass3-sr-reconciliation/reconciliation-report.md) provides exact source/result hashes, per-SR application, the source-to-target map, population/wording/measurement reconciliation, validation, limits and final locations. [Catalogue](../pass3-sr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_013_SR_Reconciled_Catalogue.md) · [Workbook](../pass3-sr-reconciliation/Harmonia_1.1.20_Pass3_013_SR_Adjudication_Workbook.xlsx) · [Manifest](../pass3-sr-reconciliation/source-result-manifest.json) · [Validation](../pass3-sr-reconciliation/validation.json).
+
+DR-5 records the factual result and retains historical decisions. HCRL remains pending and is neither closed nor advanced. Existing prior uncommitted changes and supplied untracked inputs remain; new evidence is uncommitted. No Continuum incorporation, accepted-baseline/publication mutation, release allocation, FR adjudication, unrelated catalogue change, commit or push is performed. This Report terminates the bounded activity at the offline review package; subsequent mechanical correspondence checks are provenance maintenance within this boundary.

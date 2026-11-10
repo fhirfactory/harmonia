@@ -1,0 +1,25 @@
+{
+  "preamble": "# Harmonia 1.1.20 — Complete Business and Enterprise Capability Catalogue\n\n> **PASS 3 / STEP 4 — ADJUDICATED OFFLINE OVERLAY (002).** This is an **unpublished candidate preview**, not a governed 1.1.20 Continuum incorporation or Solution Architect acceptance of new Feature wording. It preserves Candidate 017 and applies accepted wording/representation clarifications plus the agreed E07.02.08 CT3. FC-042, FC-059 and FC-101 remain outside the accepted coverage group. See the separate change-set report and FC register.\n\n> **PASS 3 / 009 WORKING COPY:** XD-007 accepted. Historical-version accessibility remains at `E07.03.01.F04`; duplicate `E07.03.04.F03` removed. `E07.03.04` is now Cross-Domain Longitudinal Presentation, with `E07.03.04.F04` restricted to displaying existing governed associations and their uncertainties—no inferred matches or clinical interpretation. `E07.03.05` remains unaltered for separate review. XD-006 KEEP BOTH decision recorded; its descriptive clarification remains pending. Unpublished candidate only.\n\n> **PASS 3 / 008 WORKING COPY:** Carries forward the XD-001 and XD-002 accepted catalogue changes. XD-005 additionally consolidates repeatable interface conformance testing into E03.05.03.F02, explicitly qualifying it by Harmonia release and supported exchange contract/version, and retires E03.05.04.F02 without renumbering. XD-003 and XD-004 are KEEP BOTH decisions recorded in the adjudication workbook; their wording refinements remain separate, not applied here. Not governed or published.\n\n**Candidate 017 — Candidate 014–016 preserved; adds reusable E03.07 governed bulk-data interconnect coverage; not accepted or governed.**\n**Source branch / pinned commit:** `Capability-Map-Consolidation` / `fecb465cab9c8c5f6e9a6035a1f7c6780e7ca374`. Original Candidate 006 population is retained unchanged; Candidate 012, 013 and 014 additions are labelled. New locators are not governed canonical identities.\n**Architecture:** CT1 → CT2 → CT3 → measurable Features. Business and Enterprise populations separate. All business-to-enterprise contribution hypotheses require review.\n\n",
+  "other_notes": [
+    {
+      "source_line": 9,
+      "text": "**Candidate 017 — Candidate 014–016 preserved; adds reusable E03.07 governed bulk-data interconnect coverage; not accepted or governed.**"
+    },
+    {
+      "source_line": 4609,
+      "text": "**New Candidate 012 CT2 — proposed for Solution Architect review.**"
+    },
+    {
+      "source_line": 5026,
+      "text": "**New Candidate 012 CT2 — proposed for Solution Architect review.**"
+    },
+    {
+      "source_line": 5874,
+      "text": "**New Candidate 012 CT2 — proposed for Solution Architect review.**"
+    },
+    {
+      "source_line": 5923,
+      "text": "**New Candidate 012 CT2 — proposed for Solution Architect review.**"
+    }
+  ]
+}

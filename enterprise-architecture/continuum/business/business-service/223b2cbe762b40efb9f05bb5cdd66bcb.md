@@ -5,8 +5,8 @@
   "archimateType": "BusinessService",
   "specialization": null,
   "displayName": "Organisation Verification Service",
-  "friendlyName": "EntityInformationEnablement.OrganisationAdministration.HealthcareOrganisationProfileAdministration.NationalOrganisationVerification.OrganisationVerificationService",
-  "canonicalName": "CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.CT3-BEC-HealthcareOrganisationProfileAdministration.FEAT-NationalOrganisationVerification.SV-OrganisationVerificationService",
+  "friendlyName": "IdentityTrustAndInformationProtection.HealthEntityIdentityAndAssociation.SourceIdentifierAndAliasStewardship.OrganisationVerificationService",
+  "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection.CT2-EC-HealthEntityIdentityAndAssociation.CT3-EC-SourceIdentifierAndAliasStewardship.SV-OrganisationVerificationService",
   "standing": {
     "semantic": "Canonical",
     "currentness": "current",
@@ -21,13 +21,45 @@
     "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2"
   },
   "naming": {
-    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md",
     "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
     "expected": {
       "displayName": "Organisation Verification Service",
+      "friendlyName": "IdentityTrustAndInformationProtection.HealthEntityIdentityAndAssociation.SourceIdentifierAndAliasStewardship.OrganisationVerificationService",
+      "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection.CT2-EC-HealthEntityIdentityAndAssociation.CT3-EC-SourceIdentifierAndAliasStewardship.SV-OrganisationVerificationService"
+    },
+    "preReplacementNames": {
       "friendlyName": "EntityInformationEnablement.OrganisationAdministration.HealthcareOrganisationProfileAdministration.NationalOrganisationVerification.OrganisationVerificationService",
       "canonicalName": "CT1-BEC-EntityInformationEnablement.CT2-BEC-OrganisationAdministration.CT3-BEC-HealthcareOrganisationProfileAdministration.FEAT-NationalOrganisationVerification.SV-OrganisationVerificationService"
-    }
+    },
+    "inputs": [
+      {
+        "key": "E05",
+        "type": "capability",
+        "name": "Identity, Trust & Information Protection",
+        "tier": "CT1",
+        "category": "enterprise"
+      },
+      {
+        "key": "E05.07",
+        "type": "capability",
+        "name": "Health Entity Identity & Association",
+        "tier": "CT2",
+        "category": "enterprise"
+      },
+      {
+        "key": "E05.07.02",
+        "type": "capability",
+        "name": "Source Identifier & Alias Stewardship",
+        "tier": "CT3",
+        "category": "enterprise"
+      },
+      {
+        "key": "223b2cbe762b40efb9f05bb5cdd66bcb",
+        "type": "service",
+        "name": "Organisation Verification Service"
+      }
+    ]
   },
   "provenance": [
     {
@@ -330,7 +362,8 @@
         "isDirected": "true"
       },
       "standing": {
-        "source": "Retained accepted model assertion; original qualifications apply"
+        "source": "Retained accepted model assertion; original qualifications apply",
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
@@ -348,11 +381,27 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
         }
       ],
       "specialization": "Home",
       "name": [],
-      "documentation": []
+      "documentation": [],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "source": "Retained accepted model assertion; original qualifications apply"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
     },
     {
       "identifier": "id-a0765054771b5cf7b761751254c8e8aa",
@@ -364,7 +413,7 @@
       },
       "standing": {
         "semantic": "established",
-        "currentness": "current"
+        "currentness": "superseded"
       },
       "provenance": {
         "source": "enterprise-architecture/design/evidence/1.1.5/002/before/arb-reconciliation-plan.json",
@@ -457,6 +506,193 @@
               }
             }
           ]
+        },
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "superseded",
+              "attributes": {}
+            }
+          ]
+        }
+      ],
+      "migrationHistory": {
+        "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "originalStanding": {
+          "semantic": "established",
+          "currentness": "current"
+        },
+        "disposition": "superseded relationship; exact original preserved in before snapshot"
+      }
+    },
+    {
+      "identifier": "id-ff97bfb253ba52279c5f766f4408340d",
+      "archimateType": "Association",
+      "source": "id-975b6adcaec55a84b41eeff62e424af2",
+      "target": "id-ad1d95ee859854dc85549aad6b1373ec",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-4e669e02b9b75db6b2ef45c820b511c9",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "specialization",
+          "values": [
+            {
+              "text": "Home",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "specialization": "Home",
+      "attributes": {
+        "isDirected": "true"
+      },
+      "name": [],
+      "documentation": [
+        {
+          "text": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-4e669e02b9b75db6b2ef45c820b511c9 remains preserved as history.",
+          "attributes": {}
+        }
+      ]
+    },
+    {
+      "identifier": "id-355f1af277dd576aad4e63d14b8e7eec",
+      "archimateType": "Association",
+      "source": "id-975b6adcaec55a84b41eeff62e424af2",
+      "target": "id-ad1d95ee859854dc85549aad6b1373ec",
+      "standing": {
+        "semantic": "Accepted semantic migration — Solution Architect 1.1.20 closure disposition",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+        "selector": "C",
+        "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md#dr-5",
+        "predecessorRelationshipIdentifier": "id-a0765054771b5cf7b761751254c8e8aa",
+        "coverage": "Candidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority"
+      },
+      "properties": [
+        {
+          "ref": "propid-7",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-6",
+          "values": [
+            {
+              "text": "Accepted",
+              "attributes": {}
+            }
+          ]
+        },
+        {
+          "ref": "propid-40",
+          "values": [
+            {
+              "text": "current",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-47",
+          "values": [
+            {
+              "text": "established",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-58",
+          "values": [
+            {
+              "text": "associated_feature",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-59",
+          "values": [
+            {
+              "text": "{\"from\": \"service:organisation-verification-service\", \"sources\": [{\"anchor\": \"4-organisation-administration\", \"line\": 122, \"source\": \"em\", \"text\": \" - *Exposed Service*: `Organisation Verification Service` — Provides verified organisation credentials to external and internal partners.\"}], \"status\": \"established\", \"to\": \"feature:national-organisation-verification\", \"type\": \"associated_feature\"}",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        },
+        {
+          "ref": "propid-57",
+          "values": [
+            {
+              "text": "/relationships/38",
+              "attributes": {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              }
+            }
+          ]
+        }
+      ],
+      "attributes": {
+        "isDirected": "true"
+      },
+      "name": [
+        {
+          "text": "associated_feature",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Native treatment authorised by HCRL 1.1.5-002. Original qualification: {\"from\": \"service:organisation-verification-service\", \"sources\": [{\"anchor\": \"4-organisation-administration\", \"line\": 122, \"source\": \"em\", \"text\": \" - *Exposed Service*: `Organisation Verification Service` — Provides verified organisation credentials to external and internal partners.\"}], \"status\": \"established\", \"to\": \"feature:national-organisation-verification\", \"type\": \"associated_feature\"}\n\nCandidate migration; partial scope correspondence; no implementation satisfaction or transferred domain authority. Original relationship id-a0765054771b5cf7b761751254c8e8aa remains preserved as history.",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
         }
       ]
     }
@@ -473,7 +709,7 @@
       "targetCanonicalId": "0f17fe5439fe45dc8f4edbff3cca0776",
       "disposition": "metadata_and_finding",
       "reason": "Feature association does not establish a particular native edge or whole-Feature realisation.",
-      "record_state": "current",
+      "record_state": "superseded",
       "snapshot_pointer": "/relationships/38",
       "source_assertion": {
         "from": "service:organisation-verification-service",
@@ -499,7 +735,8 @@
         "relationshipIdentifier": "id-a0765054771b5cf7b761751254c8e8aa",
         "sourceCanonicalId": "223b2cbe762b40efb9f05bb5cdd66bcb",
         "targetCanonicalId": "0f17fe5439fe45dc8f4edbff3cca0776"
-      }
+      },
+      "preReplacementRecordState": "current"
     }
   ]
 }
