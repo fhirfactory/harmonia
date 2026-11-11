@@ -1,0 +1,10 @@
+{
+  "outcome": "PASS",
+  "identicalCandidateArtifacts": 18,
+  "rootManifestIdentical": true,
+  "canonicalSourcesUnchanged": 6546,
+  "allocatedIdentities": 0,
+  "legacyDocsScriptsGitAbsent": true,
+  "inputs": "Maintained Continuum/governance/tooling, narrative presentation, View template, declared retained provenance and root release only",
+  "limit": "Automated independent generation, not actual Archi fidelity or Solution Architect acceptance."
+}

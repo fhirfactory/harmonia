@@ -215,7 +215,41 @@
       }
     ]
   },
-  "relationships": [],
+  "relationships": [
+    {
+      "identifier": "id-863631b2255846f6afea386398ba4996",
+      "archimateType": "Association",
+      "source": "id-e351b66f7207579493196046b8766e5e",
+      "target": "id-0525ac7ff42457dd9339e3ad95255296",
+      "name": [
+        {
+          "text": "Subject-reference integrity retains its specialised scope within managed IU information",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Accepted IU DRP §§1.2–1.3,14–17,23.1; incorporation is authorised by enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md. Subject-reference integrity retains its specialised scope within managed IU information",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "standing": {
+        "semantic": "Accepted Information Unit Framework semantics; resulting increment confirmation pending",
+        "currentness": "current"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.001.md",
+        "selector": "§§1.2–1.3,14–17,23.1",
+        "role": "Accepted whole DRP; IU-01–IU-13 adjudications; ADD authorised by operative Task",
+        "retainedAt": "enterprise-architecture/design/evidence/1.1.22/001/before/accepted-input/DRP-Information-Unit-Framework.Final.001.md",
+        "sha256": "98abd39feea66f5f9d5c5a9540d2053b7a340864e68b22d3ac415028f4c42775"
+      }
+    }
+  ],
   "unresolvedProperties": {},
   "representation": {
     "sourceLinksRebased": true,

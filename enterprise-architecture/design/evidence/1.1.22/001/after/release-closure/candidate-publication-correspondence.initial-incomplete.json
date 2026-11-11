@@ -1,0 +1,114 @@
+{
+  "status": "FAIL",
+  "artifactChecks": [
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/reader/Harmonia-Architecture.xml",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.22/Harmonia-Architecture.xml",
+      "byteEqual": true,
+      "equalAfterRepositoryHrefRebase": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/reader/README.md",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.22/README.md",
+      "byteEqual": false,
+      "equalAfterRepositoryHrefRebase": false
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/reader/continuum-catalogue.tex",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.22/continuum-catalogue.tex",
+      "byteEqual": false,
+      "equalAfterRepositoryHrefRebase": false
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/reader/continuum.html",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.22/continuum.html",
+      "byteEqual": false,
+      "equalAfterRepositoryHrefRebase": false
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/reader/navigation.json",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.22/navigation.json",
+      "byteEqual": true,
+      "equalAfterRepositoryHrefRebase": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/README.md",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/README.md",
+      "byteEqual": true,
+      "equalAfterRepositoryHrefRebase": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/continuum-rad.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/continuum-rad.tex",
+      "byteEqual": true,
+      "equalAfterRepositoryHrefRebase": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/application.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/application.tex",
+      "byteEqual": false,
+      "equalAfterRepositoryHrefRebase": false
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/architecture-governance.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/architecture-governance.tex",
+      "byteEqual": false,
+      "equalAfterRepositoryHrefRebase": false
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/business.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/business.tex",
+      "byteEqual": false,
+      "equalAfterRepositoryHrefRebase": false
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/cross-cutting-references.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/cross-cutting-references.tex",
+      "byteEqual": false,
+      "equalAfterRepositoryHrefRebase": false
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/implementation-and-migration.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/implementation-and-migration.tex",
+      "byteEqual": true,
+      "equalAfterRepositoryHrefRebase": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/motivation.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/motivation.tex",
+      "byteEqual": false,
+      "equalAfterRepositoryHrefRebase": false
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/strategy.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/strategy.tex",
+      "byteEqual": false,
+      "equalAfterRepositoryHrefRebase": false
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/technology.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/technology.tex",
+      "byteEqual": true,
+      "equalAfterRepositoryHrefRebase": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/structure.json",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/structure.json",
+      "byteEqual": true,
+      "equalAfterRepositoryHrefRebase": true
+    }
+  ],
+  "manifestChecks": [
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.22/publication.json",
+      "nonHashFieldsEqual": true,
+      "declaredHashesMatch": true
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/publication.json",
+      "nonHashFieldsEqual": true,
+      "declaredHashesMatch": true
+    }
+  ],
+  "limits": "Repository-relative href prefixes are the only normalisation in this publication correspondence check. This does not normalise or waive Archi transport differences."
+}

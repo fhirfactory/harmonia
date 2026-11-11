@@ -1,0 +1,245 @@
+{
+  "added": [
+    {
+      "canonicalId": "b9891b88150840ada3daefdec6f26c35",
+      "role": "representation",
+      "path": "enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md"
+    },
+    {
+      "canonicalId": "c05b7e37278141488ecc90b9a9ef96eb",
+      "role": "metadata",
+      "path": "enterprise-architecture/continuum/application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md"
+    },
+    {
+      "canonicalId": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "role": "topic",
+      "path": "enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md"
+    },
+    {
+      "canonicalId": "bb489157a6bf48be926c5a601bb0a6c3",
+      "role": "mask",
+      "path": "enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md"
+    }
+  ],
+  "modified": [
+    {
+      "canonicalId": "1af8a56358f7429fabfb57be66542a99",
+      "path": "enterprise-architecture/continuum/application/application-component/1af8a56358f7429fabfb57be66542a99.md",
+      "displayName": "Mneme"
+    },
+    {
+      "canonicalId": "307b3440a507403f8bc214d290bffb6a",
+      "path": "enterprise-architecture/continuum/application/application-component/307b3440a507403f8bc214d290bffb6a.md",
+      "displayName": "Calliope-Models"
+    },
+    {
+      "canonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "path": "enterprise-architecture/continuum/application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md",
+      "displayName": "Mnemosyne"
+    },
+    {
+      "canonicalId": "899d34ec491948b68aad09e507dea6d1",
+      "path": "enterprise-architecture/continuum/application/application-component/899d34ec491948b68aad09e507dea6d1.md",
+      "displayName": "Themis"
+    },
+    {
+      "canonicalId": "d739c75dffe2453081735710b285f03b",
+      "path": "enterprise-architecture/continuum/application/application-component/d739c75dffe2453081735710b285f03b.md",
+      "displayName": "Dokimasia"
+    },
+    {
+      "canonicalId": "fefda110e2274884ad58906733606efd",
+      "path": "enterprise-architecture/continuum/application/application-component/fefda110e2274884ad58906733606efd.md",
+      "displayName": "Kleio"
+    },
+    {
+      "canonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "path": "enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md",
+      "displayName": "[Class] InformationUnit"
+    },
+    {
+      "canonicalId": "10284034c8534b639284386b064f2c54",
+      "path": "enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md",
+      "displayName": "[BusinessObject] Information Unit"
+    },
+    {
+      "canonicalId": "b683ae87c72a4c16aba948a4b8cb0998",
+      "path": "enterprise-architecture/continuum/business/business-object/b683ae87c72a4c16aba948a4b8cb0998.md",
+      "displayName": "[BusinessObject] Search Result Set"
+    },
+    {
+      "canonicalId": "13c028886fde4682812b45772e21522f",
+      "path": "enterprise-architecture/continuum/grouping/package/13c028886fde4682812b45772e21522f.md",
+      "displayName": "[Package] information"
+    },
+    {
+      "canonicalId": "4a25d9c8aaa9418fbddb5bff7302c46d",
+      "path": "enterprise-architecture/continuum/motivation/constraint/mandate/4a25d9c8aaa9418fbddb5bff7302c46d.md",
+      "displayName": "[Mandate] Immutable Information Protection"
+    },
+    {
+      "canonicalId": "6316761bfd414032a8d889c7ba34131d",
+      "path": "enterprise-architecture/continuum/motivation/constraint/mandate/6316761bfd414032a8d889c7ba34131d.md",
+      "displayName": "[Mandate] Information Integrity Assessment"
+    },
+    {
+      "canonicalId": "8812fcd52d3f4afcbeef41b60bda5874",
+      "path": "enterprise-architecture/continuum/motivation/constraint/mandate/8812fcd52d3f4afcbeef41b60bda5874.md",
+      "displayName": "[Mandate] Governed Information Authorisation"
+    },
+    {
+      "canonicalId": "2429db4dbecc4a03a66f5189d76a6c38",
+      "path": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/2429db4dbecc4a03a66f5189d76a6c38.md",
+      "displayName": "[ArchitecturalAxiom] Information Archival and Retrieval"
+    },
+    {
+      "canonicalId": "2bd0132f072b42e9bf71bf483eb2deec",
+      "path": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/2bd0132f072b42e9bf71bf483eb2deec.md",
+      "displayName": "[ArchitecturalAxiom] Governed Information Versioning"
+    },
+    {
+      "canonicalId": "c2e7ee7597e64275b3523befd72c0987",
+      "path": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/c2e7ee7597e64275b3523befd72c0987.md",
+      "displayName": "[ArchitecturalAxiom] Governed Information Identity"
+    },
+    {
+      "canonicalId": "43ecbfe8f9b14fcbbc59ee0c03c8774b",
+      "path": "enterprise-architecture/continuum/motivation/requirement/43ecbfe8f9b14fcbbc59ee0c03c8774b.md",
+      "displayName": "REQ-FND-003: Subject Referential Integrity"
+    },
+    {
+      "canonicalId": "6a2a3de03beb47b884293797b92a91eb",
+      "path": "enterprise-architecture/continuum/motivation/requirement/6a2a3de03beb47b884293797b92a91eb.md",
+      "displayName": "[Requirement] Information Durability During Platform Failure"
+    },
+    {
+      "canonicalId": "3e45e60affb44bf384d54de26d3add6a",
+      "path": "enterprise-architecture/continuum/motivation/requirement/assurance-requirement/3e45e60affb44bf384d54de26d3add6a.md",
+      "displayName": "[AssuranceRequirement] PROV-001 — End-to-End Provenance"
+    },
+    {
+      "canonicalId": "bbb7438e78604308abba93afc14f4e2e",
+      "path": "enterprise-architecture/continuum/motivation/requirement/bbb7438e78604308abba93afc14f4e2e.md",
+      "displayName": "REQ-FND-005: Independent Assurance of Governed Activity"
+    },
+    {
+      "canonicalId": "0b681ff0fbae406e92294e9c14995f83",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/0b681ff0fbae406e92294e9c14995f83.md",
+      "displayName": "[Feature] NativeRepresentationTraceable"
+    },
+    {
+      "canonicalId": "12ba7d0c60e547a7b0ba101b6372419a",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/12ba7d0c60e547a7b0ba101b6372419a.md",
+      "displayName": "[Feature] Acceptance Outcome Visibility"
+    },
+    {
+      "canonicalId": "19714d1f35414e2796079620949db7f4",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/19714d1f35414e2796079620949db7f4.md",
+      "displayName": "[Feature] ActionMaskIndependent"
+    },
+    {
+      "canonicalId": "21992d8919f444c3bcd686cf5f78509e",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/21992d8919f444c3bcd686cf5f78509e.md",
+      "displayName": "[Feature] RepresentationBindingValid"
+    },
+    {
+      "canonicalId": "344849f852ba4dfb823b15e3f2efd1fb",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/344849f852ba4dfb823b15e3f2efd1fb.md",
+      "displayName": "[Feature] VerifiedInformationIntegrity"
+    },
+    {
+      "canonicalId": "3c5738c9529647a48ba0d11fef1d2389",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/3c5738c9529647a48ba0d11fef1d2389.md",
+      "displayName": "[Feature] CoordinateResolutionDeterministic"
+    },
+    {
+      "canonicalId": "52089090cbd8473da42bdeb6b27d2cae",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/52089090cbd8473da42bdeb6b27d2cae.md",
+      "displayName": "[Feature] Retention-Hold Respect"
+    },
+    {
+      "canonicalId": "645d01876b7d41c4ab3c0046110676f9",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/645d01876b7d41c4ab3c0046110676f9.md",
+      "displayName": "[Feature] PersistenceBeforeAcknowledgement"
+    },
+    {
+      "canonicalId": "732a50da8b64427386799b0135192607",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/732a50da8b64427386799b0135192607.md",
+      "displayName": "[Feature] Lifecycle Action Conformance"
+    },
+    {
+      "canonicalId": "8b9531db49334913a1d8f0a460227fc7",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/8b9531db49334913a1d8f0a460227fc7.md",
+      "displayName": "[Feature] SubscriptionMatchCorrect"
+    },
+    {
+      "canonicalId": "9210349f026b4ff1aca1092c309b4139",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/9210349f026b4ff1aca1092c309b4139.md",
+      "displayName": "[Feature] TopicIdentityStable"
+    },
+    {
+      "canonicalId": "94cc6885ef9d4c57a0fcf8d2242ff486",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/94cc6885ef9d4c57a0fcf8d2242ff486.md",
+      "displayName": "[Feature] AcceptedInformationRecoverable"
+    },
+    {
+      "canonicalId": "99479070cc4447f28acac8328c18e6b1",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/99479070cc4447f28acac8328c18e6b1.md",
+      "displayName": "[Feature] RecordedTimeNotSubstituted"
+    },
+    {
+      "canonicalId": "a56b35afe4524be4bad951b58342a68d",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/a56b35afe4524be4bad951b58342a68d.md",
+      "displayName": "[Feature] ResultVersionsPinned"
+    },
+    {
+      "canonicalId": "b977a275ea1d48099231791ad3003315",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/b977a275ea1d48099231791ad3003315.md",
+      "displayName": "[Feature] MetadataDomainSeparation"
+    },
+    {
+      "canonicalId": "bb7833db973f489f8adc8083819ab14f",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/bb7833db973f489f8adc8083819ab14f.md",
+      "displayName": "[Feature] EvidenceReferencesValid"
+    },
+    {
+      "canonicalId": "bc8947423d254cd194f467158f36b869",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/bc8947423d254cd194f467158f36b869.md",
+      "displayName": "[Feature] Version Specification Integrity"
+    },
+    {
+      "canonicalId": "bccfc5315c8c43cdac25406cef3016c4",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/bccfc5315c8c43cdac25406cef3016c4.md",
+      "displayName": "[Feature] Authorised Lifecycle Action Confirmation"
+    },
+    {
+      "canonicalId": "bfbe5a35c4844127b7ea88f2e46fc513",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/bfbe5a35c4844127b7ea88f2e46fc513.md",
+      "displayName": "[Feature] IncompleteLineageQualified"
+    },
+    {
+      "canonicalId": "c7958c9d7aae42b6b57ef9d028b8bc5e",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/c7958c9d7aae42b6b57ef9d028b8bc5e.md",
+      "displayName": "[Feature] Chronological Change Visibility"
+    },
+    {
+      "canonicalId": "d71ae98e798b401a992d6ec53b48c6f2",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/d71ae98e798b401a992d6ec53b48c6f2.md",
+      "displayName": "[Feature] CompartmentMaskCorrect"
+    },
+    {
+      "canonicalId": "e45c574e67a2432594200c65464af260",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/e45c574e67a2432594200c65464af260.md",
+      "displayName": "[Feature] NoRestrictedDelivery"
+    },
+    {
+      "canonicalId": "eadcd968876542b9a9f48ad07a546dae",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/eadcd968876542b9a9f48ad07a546dae.md",
+      "displayName": "[Feature] DerivationLineageIntact"
+    }
+  ],
+  "newRelationshipCount": 50,
+  "deleted": [],
+  "retyped": [],
+  "applicationCodeChanged": false
+}

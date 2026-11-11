@@ -1,0 +1,117 @@
+{
+  "status": "FAIL",
+  "artifactChecks": [
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/reader/Harmonia-Architecture.xml",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.22/Harmonia-Architecture.xml",
+      "byteEqual": true,
+      "equalAfterRelativePathResolution": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/reader/README.md",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.22/README.md",
+      "byteEqual": false,
+      "equalAfterRelativePathResolution": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/reader/continuum-catalogue.tex",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.22/continuum-catalogue.tex",
+      "byteEqual": false,
+      "equalAfterRelativePathResolution": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/reader/continuum.html",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.22/continuum.html",
+      "byteEqual": false,
+      "equalAfterRelativePathResolution": false
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/reader/navigation.json",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.22/navigation.json",
+      "byteEqual": true,
+      "equalAfterRelativePathResolution": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/README.md",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/README.md",
+      "byteEqual": true,
+      "equalAfterRelativePathResolution": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/continuum-rad.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/continuum-rad.tex",
+      "byteEqual": true,
+      "equalAfterRelativePathResolution": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/application.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/application.tex",
+      "byteEqual": false,
+      "equalAfterRelativePathResolution": false
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/architecture-governance.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/architecture-governance.tex",
+      "byteEqual": false,
+      "equalAfterRelativePathResolution": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/business.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/business.tex",
+      "byteEqual": false,
+      "equalAfterRelativePathResolution": false
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/cross-cutting-references.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/cross-cutting-references.tex",
+      "byteEqual": false,
+      "equalAfterRelativePathResolution": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/implementation-and-migration.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/implementation-and-migration.tex",
+      "byteEqual": true,
+      "equalAfterRelativePathResolution": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/motivation.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/motivation.tex",
+      "byteEqual": false,
+      "equalAfterRelativePathResolution": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/strategy.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/strategy.tex",
+      "byteEqual": false,
+      "equalAfterRelativePathResolution": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/parts/technology.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/parts/technology.tex",
+      "byteEqual": true,
+      "equalAfterRelativePathResolution": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/narrative/structure.json",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/structure.json",
+      "byteEqual": true,
+      "equalAfterRelativePathResolution": true
+    }
+  ],
+  "manifestChecks": [
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.22/publication.json",
+      "nonHashFieldsEqual": true,
+      "declaredHashesMatch": true
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.22/publication.json",
+      "nonHashFieldsEqual": true,
+      "declaredHashesMatch": true
+    }
+  ],
+  "method": "Byte equality, or complete-byte comparison after resolving parent-relative path prefixes against each known publication output base (also for included narrative parts, as implemented by the publisher). No remaining byte is ignored. Publication manifests compare every non-hash field and verify every declared artifact hash.",
+  "pathPrefixPattern": "(?<![./])(?:\\.\\./)*\\.\\.(?:/)?",
+  "initialDiagnostic": "The initial root-prefix-only comparison was incomplete: publishers compute paths to common ancestors, not invariably the repository root. Its FAIL is retained separately; it establishes no artifact defect. Corrected path resolution accounts for those generated references. No production comparator or publication content changed.",
+  "limits": "Only publication path correspondence is checked. No Archi transport normalisation or waiver is applied."
+}

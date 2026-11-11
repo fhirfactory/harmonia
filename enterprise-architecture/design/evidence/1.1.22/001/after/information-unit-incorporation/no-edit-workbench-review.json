@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "standing": "UNREVIEWED; no application authority",
+  "baselineSha256": "8ef02598667b643850efca6bd3a8f3f8438f08dce1c764c190018de3a410e312",
+  "submissionSha256": "8ef02598667b643850efca6bd3a8f3f8438f08dce1c764c190018de3a410e312",
+  "elementChanges": [],
+  "relationshipAndViewChanges": [],
+  "unresolved": [],
+  "canonicalIdsAllocated": 0,
+  "canonicalSourcesChanged": 0
+}

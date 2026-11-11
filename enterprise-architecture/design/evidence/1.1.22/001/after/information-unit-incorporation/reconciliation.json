@@ -1,0 +1,2065 @@
+{
+  "baseline": "1.1.21",
+  "resultingDevelopmentRelease": "1.1.22",
+  "acceptedInput": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.001.md",
+  "sourceSha256": "98abd39feea66f5f9d5c5a9540d2053b7a340864e68b22d3ac415028f4c42775",
+  "canonicalIds": {
+    "iu": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+    "bo": "10284034c8534b639284386b064f2c54",
+    "package": "13c028886fde4682812b45772e21522f",
+    "mneme": "1af8a56358f7429fabfb57be66542a99",
+    "mnemosyne": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+    "themis": "899d34ec491948b68aad09e507dea6d1",
+    "kleio": "fefda110e2274884ad58906733606efd",
+    "dokimasia": "d739c75dffe2453081735710b285f03b",
+    "models": "307b3440a507403f8bc214d290bffb6a",
+    "provenance": "e282811b51274649816566aac7edeb8a",
+    "search": "b683ae87c72a4c16aba948a4b8cb0998",
+    "pep": "7e10287b7e634bce8aa2481eb481bb76",
+    "representation": "b9891b88150840ada3daefdec6f26c35",
+    "metadata": "c05b7e37278141488ecc90b9a9ef96eb",
+    "topic": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+    "mask": "bb489157a6bf48be926c5a601bb0a6c3"
+  },
+  "historicalFeatureReconciliation": [
+    {
+      "historicalProposal": "Durable Information Persistence",
+      "disposition": "No new Feature; scoped applicability across existing accepted hierarchy, not identity-equivalence or ownership",
+      "matches": [
+        {
+          "canonicalId": "645d01876b7d41c4ab3c0046110676f9",
+          "definition": "Durable persistence is evidenced before a durable-acceptance acknowledgement is issued.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "05b64d34d550432a814485ab0c0dafcd",
+              "displayName": "[CT2] Governed Information Persistence",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationPersistence"
+            },
+            {
+              "canonicalId": "243b80f04f2542c8b0e63af2075b5a60",
+              "displayName": "[CT3] Durable Information Acceptance",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationPersistence.CT3-EC-DurableInformationAcceptance"
+            },
+            {
+              "canonicalId": "645d01876b7d41c4ab3c0046110676f9",
+              "displayName": "[Feature] PersistenceBeforeAcknowledgement",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationPersistence.CT3-EC-DurableInformationAcceptance.FEAT-PersistenceBeforeAcknowledgement"
+            }
+          ]
+        },
+        {
+          "canonicalId": "94cc6885ef9d4c57a0fcf8d2242ff486",
+          "definition": "Acknowledged information units can be retrieved intact after interruption.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "05b64d34d550432a814485ab0c0dafcd",
+              "displayName": "[CT2] Governed Information Persistence",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationPersistence"
+            },
+            {
+              "canonicalId": "243b80f04f2542c8b0e63af2075b5a60",
+              "displayName": "[CT3] Durable Information Acceptance",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationPersistence.CT3-EC-DurableInformationAcceptance"
+            },
+            {
+              "canonicalId": "94cc6885ef9d4c57a0fcf8d2242ff486",
+              "displayName": "[Feature] AcceptedInformationRecoverable",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationPersistence.CT3-EC-DurableInformationAcceptance.FEAT-AcceptedInformationRecoverable"
+            }
+          ]
+        },
+        {
+          "canonicalId": "12ba7d0c60e547a7b0ba101b6372419a",
+          "definition": "Acceptance outcome is visible, with accessible and accurate supporting evidence.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "05b64d34d550432a814485ab0c0dafcd",
+              "displayName": "[CT2] Governed Information Persistence",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationPersistence"
+            },
+            {
+              "canonicalId": "243b80f04f2542c8b0e63af2075b5a60",
+              "displayName": "[CT3] Durable Information Acceptance",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationPersistence.CT3-EC-DurableInformationAcceptance"
+            },
+            {
+              "canonicalId": "12ba7d0c60e547a7b0ba101b6372419a",
+              "displayName": "[Feature] Acceptance Outcome Visibility",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationPersistence.CT3-EC-DurableInformationAcceptance.FEAT-AcceptanceOutcomeVisibility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "historicalProposal": "Information State Verification",
+      "disposition": "No new Feature; scoped applicability across existing accepted hierarchy, not identity-equivalence or ownership",
+      "matches": [
+        {
+          "canonicalId": "344849f852ba4dfb823b15e3f2efd1fb",
+          "definition": "Information integrity can be verified against valid integrity evidence.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "f1ea1db460204cd8a99768c16dbb0b31",
+              "displayName": "[CT2] Information Integrity Management",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement"
+            },
+            {
+              "canonicalId": "160c0eb00505492cbacd8fc63ee881cc",
+              "displayName": "[CT3] Information Integrity Verification",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement.CT3-EC-InformationIntegrityVerification"
+            },
+            {
+              "canonicalId": "344849f852ba4dfb823b15e3f2efd1fb",
+              "displayName": "[Feature] VerifiedInformationIntegrity",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement.CT3-EC-InformationIntegrityVerification.FEAT-VerifiedInformationIntegrity"
+            }
+          ]
+        },
+        {
+          "canonicalId": "21992d8919f444c3bcd686cf5f78509e",
+          "definition": "Exactly one governed representation is associated with the Information Unit being tested.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "f1ea1db460204cd8a99768c16dbb0b31",
+              "displayName": "[CT2] Information Integrity Management",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement"
+            },
+            {
+              "canonicalId": "777c22e9b9df47b397b8c76a90913e33",
+              "displayName": "[CT3] Cross-Representation Integrity",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement.CT3-EC-CrossRepresentationIntegrity"
+            },
+            {
+              "canonicalId": "21992d8919f444c3bcd686cf5f78509e",
+              "displayName": "[Feature] RepresentationBindingValid",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement.CT3-EC-CrossRepresentationIntegrity.FEAT-RepresentationBindingValid"
+            }
+          ]
+        },
+        {
+          "canonicalId": "b977a275ea1d48099231791ad3003315",
+          "definition": "Container, content and Information Unit metadata remain distinguishable.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "f1ea1db460204cd8a99768c16dbb0b31",
+              "displayName": "[CT2] Information Integrity Management",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement"
+            },
+            {
+              "canonicalId": "777c22e9b9df47b397b8c76a90913e33",
+              "displayName": "[CT3] Cross-Representation Integrity",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement.CT3-EC-CrossRepresentationIntegrity"
+            },
+            {
+              "canonicalId": "b977a275ea1d48099231791ad3003315",
+              "displayName": "[Feature] MetadataDomainSeparation",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement.CT3-EC-CrossRepresentationIntegrity.FEAT-MetadataDomainSeparation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "historicalProposal": "Information Content Identification and Protection",
+      "disposition": "No new Feature; scoped applicability across existing accepted hierarchy, not identity-equivalence or ownership",
+      "matches": [
+        {
+          "canonicalId": "9210349f026b4ff1aca1092c309b4139",
+          "definition": "Accepted Topic identities survive rename and reclassification.",
+          "ancestry": [
+            {
+              "canonicalId": "cc25d325f7104ccda137cbf6ee371fb3",
+              "displayName": "[CT1] Semantic Meaning & Model Governance",
+              "canonicalName": "CT1-EC-SemanticMeaningAndModelGovernance"
+            },
+            {
+              "canonicalId": "9f077356ba9342d6a9b87437fa7210e8",
+              "displayName": "[CT2] Information Model Definition & Resolution",
+              "canonicalName": "CT1-EC-SemanticMeaningAndModelGovernance.CT2-EC-InformationModelDefinitionAndResolution"
+            },
+            {
+              "canonicalId": "f12cce1dda874e71be13a4e1d79eeeac",
+              "displayName": "[CT3] Governed Topic Identity & Namespace",
+              "canonicalName": "CT1-EC-SemanticMeaningAndModelGovernance.CT2-EC-InformationModelDefinitionAndResolution.CT3-EC-GovernedTopicIdentityAndNamespace"
+            },
+            {
+              "canonicalId": "9210349f026b4ff1aca1092c309b4139",
+              "displayName": "[Feature] TopicIdentityStable",
+              "canonicalName": "CT1-EC-SemanticMeaningAndModelGovernance.CT2-EC-InformationModelDefinitionAndResolution.CT3-EC-GovernedTopicIdentityAndNamespace.FEAT-TopicIdentityStable"
+            }
+          ]
+        },
+        {
+          "canonicalId": "0b681ff0fbae406e92294e9c14995f83",
+          "definition": "Preserved native content remains interpretable with its source representation definition.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "f1ea1db460204cd8a99768c16dbb0b31",
+              "displayName": "[CT2] Information Integrity Management",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement"
+            },
+            {
+              "canonicalId": "777c22e9b9df47b397b8c76a90913e33",
+              "displayName": "[CT3] Cross-Representation Integrity",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement.CT3-EC-CrossRepresentationIntegrity"
+            },
+            {
+              "canonicalId": "0b681ff0fbae406e92294e9c14995f83",
+              "displayName": "[Feature] NativeRepresentationTraceable",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement.CT3-EC-CrossRepresentationIntegrity.FEAT-NativeRepresentationTraceable"
+            }
+          ]
+        },
+        {
+          "canonicalId": "19714d1f35414e2796079620949db7f4",
+          "definition": "Action limitations are applied independently of compartment restrictions.",
+          "ancestry": [
+            {
+              "canonicalId": "def358c06649413ba4773582e0d5c6d4",
+              "displayName": "[CT1] Identity, Trust & Information Protection",
+              "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection"
+            },
+            {
+              "canonicalId": "c8bd1d6e0796442a934a74cc69077543",
+              "displayName": "[CT2] Contextual Authorisation Determination",
+              "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection.CT2-EC-ContextualAuthorisationDetermination"
+            },
+            {
+              "canonicalId": "b8144b07129144a386f8b70b7092b07d",
+              "displayName": "[CT3] Subject-Specific Required Criteria",
+              "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection.CT2-EC-ContextualAuthorisationDetermination.CT3-EC-SubjectSpecificRequiredCriteria"
+            },
+            {
+              "canonicalId": "19714d1f35414e2796079620949db7f4",
+              "displayName": "[Feature] ActionMaskIndependent",
+              "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection.CT2-EC-ContextualAuthorisationDetermination.CT3-EC-SubjectSpecificRequiredCriteria.FEAT-ActionMaskIndependent"
+            }
+          ]
+        },
+        {
+          "canonicalId": "d71ae98e798b401a992d6ec53b48c6f2",
+          "definition": "Classification/compartment conditions alter outcome as defined.",
+          "ancestry": [
+            {
+              "canonicalId": "def358c06649413ba4773582e0d5c6d4",
+              "displayName": "[CT1] Identity, Trust & Information Protection",
+              "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection"
+            },
+            {
+              "canonicalId": "c8bd1d6e0796442a934a74cc69077543",
+              "displayName": "[CT2] Contextual Authorisation Determination",
+              "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection.CT2-EC-ContextualAuthorisationDetermination"
+            },
+            {
+              "canonicalId": "b8144b07129144a386f8b70b7092b07d",
+              "displayName": "[CT3] Subject-Specific Required Criteria",
+              "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection.CT2-EC-ContextualAuthorisationDetermination.CT3-EC-SubjectSpecificRequiredCriteria"
+            },
+            {
+              "canonicalId": "d71ae98e798b401a992d6ec53b48c6f2",
+              "displayName": "[Feature] CompartmentMaskCorrect",
+              "canonicalName": "CT1-EC-IdentityTrustAndInformationProtection.CT2-EC-ContextualAuthorisationDetermination.CT3-EC-SubjectSpecificRequiredCriteria.FEAT-CompartmentMaskCorrect"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "historicalProposal": "Information Discovery and Distribution",
+      "disposition": "No new Feature; scoped applicability across existing accepted hierarchy, not identity-equivalence or ownership",
+      "matches": [
+        {
+          "canonicalId": "8b9531db49334913a1d8f0a460227fc7",
+          "definition": "Authorized subscribers receive events matching agreed criteria.",
+          "ancestry": [
+            {
+              "canonicalId": "73cd0e24923a4c8b9678654a7cf0d81a",
+              "displayName": "[CT1] Information Access, Discovery & Distribution",
+              "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution"
+            },
+            {
+              "canonicalId": "1c2aad9aca7242149b4f30045c42711f",
+              "displayName": "[CT2] Information Distribution & Notification",
+              "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution.CT2-EC-InformationDistributionAndNotification"
+            },
+            {
+              "canonicalId": "0f79a2e62740435b9bef0f662838ab16",
+              "displayName": "[CT3] Governed Subscription Matching",
+              "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution.CT2-EC-InformationDistributionAndNotification.CT3-EC-GovernedSubscriptionMatching"
+            },
+            {
+              "canonicalId": "8b9531db49334913a1d8f0a460227fc7",
+              "displayName": "[Feature] SubscriptionMatchCorrect",
+              "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution.CT2-EC-InformationDistributionAndNotification.CT3-EC-GovernedSubscriptionMatching.FEAT-SubscriptionMatchCorrect"
+            }
+          ]
+        },
+        {
+          "canonicalId": "e45c574e67a2432594200c65464af260",
+          "definition": "Subscriber filters never override local information disclosure requirements.",
+          "ancestry": [
+            {
+              "canonicalId": "73cd0e24923a4c8b9678654a7cf0d81a",
+              "displayName": "[CT1] Information Access, Discovery & Distribution",
+              "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution"
+            },
+            {
+              "canonicalId": "1c2aad9aca7242149b4f30045c42711f",
+              "displayName": "[CT2] Information Distribution & Notification",
+              "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution.CT2-EC-InformationDistributionAndNotification"
+            },
+            {
+              "canonicalId": "0f79a2e62740435b9bef0f662838ab16",
+              "displayName": "[CT3] Governed Subscription Matching",
+              "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution.CT2-EC-InformationDistributionAndNotification.CT3-EC-GovernedSubscriptionMatching"
+            },
+            {
+              "canonicalId": "e45c574e67a2432594200c65464af260",
+              "displayName": "[Feature] NoRestrictedDelivery",
+              "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution.CT2-EC-InformationDistributionAndNotification.CT3-EC-GovernedSubscriptionMatching.FEAT-NoRestrictedDelivery"
+            }
+          ]
+        },
+        {
+          "canonicalId": "a56b35afe4524be4bad951b58342a68d",
+          "definition": "Persisted result sets retain version references used during the search.",
+          "ancestry": [
+            {
+              "canonicalId": "73cd0e24923a4c8b9678654a7cf0d81a",
+              "displayName": "[CT1] Information Access, Discovery & Distribution",
+              "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution"
+            },
+            {
+              "canonicalId": "6621b9a124d7444aa83793810531c388",
+              "displayName": "[CT2] Information Discovery & Search",
+              "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution.CT2-EC-InformationDiscoveryAndSearch"
+            },
+            {
+              "canonicalId": "fc3cdbc9fa264edabbf54143877cf4eb",
+              "displayName": "[CT3] Governed Search Completeness Qualification",
+              "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution.CT2-EC-InformationDiscoveryAndSearch.CT3-EC-GovernedSearchCompletenessQualification"
+            },
+            {
+              "canonicalId": "a56b35afe4524be4bad951b58342a68d",
+              "displayName": "[Feature] ResultVersionsPinned",
+              "canonicalName": "CT1-EC-InformationAccessDiscoveryAndDistribution.CT2-EC-InformationDiscoveryAndSearch.CT3-EC-GovernedSearchCompletenessQualification.FEAT-ResultVersionsPinned"
+            }
+          ]
+        },
+        {
+          "canonicalId": "3c5738c9529647a48ba0d11fef1d2389",
+          "definition": "Identical stable coordinates select the same governed identity and version.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "39205a4164cc4e92b372f182cec834e0",
+              "displayName": "[CT2] Governed Information Reference Management",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationReferenceManagement"
+            },
+            {
+              "canonicalId": "b69b41062928499486ab0df6d20509d1",
+              "displayName": "[CT3] Information Coordinates & Addressability",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationReferenceManagement.CT3-EC-InformationCoordinatesAndAddressability"
+            },
+            {
+              "canonicalId": "3c5738c9529647a48ba0d11fef1d2389",
+              "displayName": "[Feature] CoordinateResolutionDeterministic",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-GovernedInformationReferenceManagement.CT3-EC-InformationCoordinatesAndAddressability.FEAT-CoordinateResolutionDeterministic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "historicalProposal": "Temporal Information Management",
+      "disposition": "No new Feature; scoped applicability across existing accepted hierarchy, not identity-equivalence or ownership",
+      "matches": [
+        {
+          "canonicalId": "bc8947423d254cd194f467158f36b869",
+          "definition": "The identity, metadata, specification and relationships of a preserved information version retain verifiable integrity independently of current content availability.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "04d00c46bd714f6688fe013f35cd1d74",
+              "displayName": "[CT2] Information Version & History Management",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationVersionAndHistoryManagement"
+            },
+            {
+              "canonicalId": "60fa9a38aa664154ad85f5eb6d681e1d",
+              "displayName": "[CT3] Immutable Version Preservation",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationVersionAndHistoryManagement.CT3-EC-ImmutableVersionPreservation"
+            },
+            {
+              "canonicalId": "bc8947423d254cd194f467158f36b869",
+              "displayName": "[Feature] Version Specification Integrity",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationVersionAndHistoryManagement.CT3-EC-ImmutableVersionPreservation.FEAT-VersionSpecificationIntegrity"
+            }
+          ]
+        },
+        {
+          "canonicalId": "c7958c9d7aae42b6b57ef9d028b8bc5e",
+          "definition": "Chronological change is visible, with accessible and accurate supporting evidence.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "04d00c46bd714f6688fe013f35cd1d74",
+              "displayName": "[CT2] Information Version & History Management",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationVersionAndHistoryManagement"
+            },
+            {
+              "canonicalId": "890878f052bc42a4bab25f9527f4a651",
+              "displayName": "[CT3] Information History Navigation",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationVersionAndHistoryManagement.CT3-EC-InformationHistoryNavigation"
+            },
+            {
+              "canonicalId": "c7958c9d7aae42b6b57ef9d028b8bc5e",
+              "displayName": "[Feature] Chronological Change Visibility",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationVersionAndHistoryManagement.CT3-EC-InformationHistoryNavigation.FEAT-ChronologicalChangeVisibility"
+            }
+          ]
+        },
+        {
+          "canonicalId": "99479070cc4447f28acac8328c18e6b1",
+          "definition": "Late evidence insertion does not silently redefine occurrence order.",
+          "ancestry": [
+            {
+              "canonicalId": "209359b883df42379e7b1c44e65437d8",
+              "displayName": "[CT1] Operational Observability, Assurance & Resilience",
+              "canonicalName": "CT1-EC-OperationalObservabilityAssuranceAndResilience"
+            },
+            {
+              "canonicalId": "adf5e2bc81b4468d9bb486b1d77bf92b",
+              "displayName": "[CT2] Audit, Provenance & Assurance Evidence Recording",
+              "canonicalName": "CT1-EC-OperationalObservabilityAssuranceAndResilience.CT2-EC-AuditProvenanceAndAssuranceEvidenceRecording"
+            },
+            {
+              "canonicalId": "95c06dba5448453992d55106b19f977d",
+              "displayName": "[CT3] Chronological Provenance Evidence",
+              "canonicalName": "CT1-EC-OperationalObservabilityAssuranceAndResilience.CT2-EC-AuditProvenanceAndAssuranceEvidenceRecording.CT3-EC-ChronologicalProvenanceEvidence"
+            },
+            {
+              "canonicalId": "99479070cc4447f28acac8328c18e6b1",
+              "displayName": "[Feature] RecordedTimeNotSubstituted",
+              "canonicalName": "CT1-EC-OperationalObservabilityAssuranceAndResilience.CT2-EC-AuditProvenanceAndAssuranceEvidenceRecording.CT3-EC-ChronologicalProvenanceEvidence.FEAT-RecordedTimeNotSubstituted"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "historicalProposal": "Information Provenance and Accountability",
+      "disposition": "No new Feature; scoped applicability across existing accepted hierarchy, not identity-equivalence or ownership",
+      "matches": [
+        {
+          "canonicalId": "bb7833db973f489f8adc8083819ab14f",
+          "definition": "Referenced evidence has stable identity and role semantics.",
+          "ancestry": [
+            {
+              "canonicalId": "209359b883df42379e7b1c44e65437d8",
+              "displayName": "[CT1] Operational Observability, Assurance & Resilience",
+              "canonicalName": "CT1-EC-OperationalObservabilityAssuranceAndResilience"
+            },
+            {
+              "canonicalId": "adf5e2bc81b4468d9bb486b1d77bf92b",
+              "displayName": "[CT2] Audit, Provenance & Assurance Evidence Recording",
+              "canonicalName": "CT1-EC-OperationalObservabilityAssuranceAndResilience.CT2-EC-AuditProvenanceAndAssuranceEvidenceRecording"
+            },
+            {
+              "canonicalId": "95c06dba5448453992d55106b19f977d",
+              "displayName": "[CT3] Chronological Provenance Evidence",
+              "canonicalName": "CT1-EC-OperationalObservabilityAssuranceAndResilience.CT2-EC-AuditProvenanceAndAssuranceEvidenceRecording.CT3-EC-ChronologicalProvenanceEvidence"
+            },
+            {
+              "canonicalId": "bb7833db973f489f8adc8083819ab14f",
+              "displayName": "[Feature] EvidenceReferencesValid",
+              "canonicalName": "CT1-EC-OperationalObservabilityAssuranceAndResilience.CT2-EC-AuditProvenanceAndAssuranceEvidenceRecording.CT3-EC-ChronologicalProvenanceEvidence.FEAT-EvidenceReferencesValid"
+            }
+          ]
+        },
+        {
+          "canonicalId": "bfbe5a35c4844127b7ea88f2e46fc513",
+          "definition": "Unresolved evidence is explicitly identified without inventing a complete chain.",
+          "ancestry": [
+            {
+              "canonicalId": "209359b883df42379e7b1c44e65437d8",
+              "displayName": "[CT1] Operational Observability, Assurance & Resilience",
+              "canonicalName": "CT1-EC-OperationalObservabilityAssuranceAndResilience"
+            },
+            {
+              "canonicalId": "adf5e2bc81b4468d9bb486b1d77bf92b",
+              "displayName": "[CT2] Audit, Provenance & Assurance Evidence Recording",
+              "canonicalName": "CT1-EC-OperationalObservabilityAssuranceAndResilience.CT2-EC-AuditProvenanceAndAssuranceEvidenceRecording"
+            },
+            {
+              "canonicalId": "95c06dba5448453992d55106b19f977d",
+              "displayName": "[CT3] Chronological Provenance Evidence",
+              "canonicalName": "CT1-EC-OperationalObservabilityAssuranceAndResilience.CT2-EC-AuditProvenanceAndAssuranceEvidenceRecording.CT3-EC-ChronologicalProvenanceEvidence"
+            },
+            {
+              "canonicalId": "bfbe5a35c4844127b7ea88f2e46fc513",
+              "displayName": "[Feature] IncompleteLineageQualified",
+              "canonicalName": "CT1-EC-OperationalObservabilityAssuranceAndResilience.CT2-EC-AuditProvenanceAndAssuranceEvidenceRecording.CT3-EC-ChronologicalProvenanceEvidence.FEAT-IncompleteLineageQualified"
+            }
+          ]
+        },
+        {
+          "canonicalId": "eadcd968876542b9a9f48ad07a546dae",
+          "definition": "Separately governed derivatives retain a traceable source relationship.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "f1ea1db460204cd8a99768c16dbb0b31",
+              "displayName": "[CT2] Information Integrity Management",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement"
+            },
+            {
+              "canonicalId": "777c22e9b9df47b397b8c76a90913e33",
+              "displayName": "[CT3] Cross-Representation Integrity",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement.CT3-EC-CrossRepresentationIntegrity"
+            },
+            {
+              "canonicalId": "eadcd968876542b9a9f48ad07a546dae",
+              "displayName": "[Feature] DerivationLineageIntact",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationIntegrityManagement.CT3-EC-CrossRepresentationIntegrity.FEAT-DerivationLineageIntact"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "historicalProposal": "Information Lifecycle Management",
+      "disposition": "No new Feature; scoped applicability across existing accepted hierarchy, not identity-equivalence or ownership",
+      "matches": [
+        {
+          "canonicalId": "732a50da8b64427386799b0135192607",
+          "definition": "Requested governed information lifecycle actions conform to applicable policy and retention holds, with an explicit permitted or rejected outcome.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "c556ecf7d3db491895148ba56d7be22a",
+              "displayName": "[CT2] Information Retention & Recovery",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationRetentionAndRecovery"
+            },
+            {
+              "canonicalId": "bd655b0c0d044e399e80d988ce9d4382",
+              "displayName": "[CT3] Governed Information Lifecycle Actions",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationRetentionAndRecovery.CT3-EC-GovernedInformationLifecycleActions"
+            },
+            {
+              "canonicalId": "732a50da8b64427386799b0135192607",
+              "displayName": "[Feature] Lifecycle Action Conformance",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationRetentionAndRecovery.CT3-EC-GovernedInformationLifecycleActions.FEAT-LifecycleActionConformance"
+            }
+          ]
+        },
+        {
+          "canonicalId": "52089090cbd8473da42bdeb6b27d2cae",
+          "definition": "Requested governed information lifecycle actions are evaluated against applicable retention holds, preventing actions that would violate those holds and providing an appropriately governed outcome for rejected requests.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "c556ecf7d3db491895148ba56d7be22a",
+              "displayName": "[CT2] Information Retention & Recovery",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationRetentionAndRecovery"
+            },
+            {
+              "canonicalId": "bd655b0c0d044e399e80d988ce9d4382",
+              "displayName": "[CT3] Governed Information Lifecycle Actions",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationRetentionAndRecovery.CT3-EC-GovernedInformationLifecycleActions"
+            },
+            {
+              "canonicalId": "52089090cbd8473da42bdeb6b27d2cae",
+              "displayName": "[Feature] Retention-Hold Respect",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationRetentionAndRecovery.CT3-EC-GovernedInformationLifecycleActions.FEAT-RetentionHoldRespect"
+            }
+          ]
+        },
+        {
+          "canonicalId": "bccfc5315c8c43cdac25406cef3016c4",
+          "definition": "A requested governed information lifecycle action proceeds only with the applicable authorisation, including the relevant policy and hold conditions.",
+          "ancestry": [
+            {
+              "canonicalId": "a5176cd813924b329691ab8ba528467e",
+              "displayName": "[CT1] Governed Information Custody",
+              "canonicalName": "CT1-EC-GovernedInformationCustody"
+            },
+            {
+              "canonicalId": "c556ecf7d3db491895148ba56d7be22a",
+              "displayName": "[CT2] Information Retention & Recovery",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationRetentionAndRecovery"
+            },
+            {
+              "canonicalId": "bd655b0c0d044e399e80d988ce9d4382",
+              "displayName": "[CT3] Governed Information Lifecycle Actions",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationRetentionAndRecovery.CT3-EC-GovernedInformationLifecycleActions"
+            },
+            {
+              "canonicalId": "bccfc5315c8c43cdac25406cef3016c4",
+              "displayName": "[Feature] Authorised Lifecycle Action Confirmation",
+              "canonicalName": "CT1-EC-GovernedInformationCustody.CT2-EC-InformationRetentionAndRecovery.CT3-EC-GovernedInformationLifecycleActions.FEAT-AuthorisedLifecycleActionConfirmation"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "historicalCapability": {
+    "name": "Information Content and State Management",
+    "disposition": "No allocation; foundational IU semantics apply across existing Governed Information Custody, Information Access/Discovery/Distribution, Semantic Meaning/Model Governance, Identity/Trust/Information Protection and Operational Observability/Assurance/Resilience ancestry"
+  },
+  "historicalRequirementGroups": [
+    {
+      "name": "GovernedInformationState",
+      "disposition": "No allocation or asserted identity-equivalence; reuse existing Motivation requirements/axioms/mandates and existing Information Management RequirementGroup without reparenting them"
+    },
+    {
+      "name": "InformationPersistence",
+      "disposition": "No allocation or asserted identity-equivalence; reuse existing Motivation requirements/axioms/mandates and existing Information Management RequirementGroup without reparenting them"
+    }
+  ],
+  "motivationReused": [
+    {
+      "canonicalId": "c2e7ee7597e64275b3523befd72c0987",
+      "meaning": "Governed information identity applies to persistent IU identity",
+      "type": "Principle",
+      "specialization": "ArchitecturalAxiom",
+      "standing": {
+        "semantic": "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "canonicalId": "2bd0132f072b42e9bf71bf483eb2deec",
+      "meaning": "Governed versioning remains distinct from operational Version, generation and Content versions",
+      "type": "Principle",
+      "specialization": "ArchitecturalAxiom",
+      "standing": {
+        "semantic": "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "canonicalId": "6316761bfd414032a8d889c7ba34131d",
+      "meaning": "IU integrity assessment preserves the single-representation contract",
+      "type": "Constraint",
+      "specialization": "Mandate",
+      "standing": {
+        "semantic": "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "canonicalId": "4a25d9c8aaa9418fbddb5bff7302c46d",
+      "meaning": "Existing immutability designations constrain governed IU handling",
+      "type": "Constraint",
+      "specialization": "Mandate",
+      "standing": {
+        "semantic": "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "canonicalId": "8812fcd52d3f4afcbeef41b60bda5874",
+      "meaning": "Governed IU operations require authorisation; a TopicMask match is insufficient",
+      "type": "Constraint",
+      "specialization": "Mandate",
+      "standing": {
+        "semantic": "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "canonicalId": "3e45e60affb44bf384d54de26d3add6a",
+      "meaning": "Existing provenance obligations apply without making IU references Provenance",
+      "type": "Requirement",
+      "specialization": "AssuranceRequirement",
+      "standing": {
+        "semantic": "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending",
+        "currentness": "current",
+        "qualification": "Only the accepted Iteration 001 contribution is current; historical source contributions retain their original standing."
+      }
+    },
+    {
+      "canonicalId": "6a2a3de03beb47b884293797b92a91eb",
+      "meaning": "IU preservation and recovery reuse existing platform-failure durability obligations",
+      "type": "Requirement",
+      "specialization": null,
+      "standing": {
+        "semantic": "Accepted bounded architecture — HCRL 1.1.15-001 DR-1",
+        "currentness": "current"
+      }
+    },
+    {
+      "canonicalId": "2429db4dbecc4a03a66f5189d76a6c38",
+      "meaning": "Existing archival/retrieval governance applies to managed IUs",
+      "type": "Principle",
+      "specialization": "ArchitecturalAxiom",
+      "standing": {
+        "semantic": "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending",
+        "currentness": "current"
+      }
+    },
+    {
+      "canonicalId": "43ecbfe8f9b14fcbbc59ee0c03c8774b",
+      "meaning": "Subject-reference integrity retains its specialised scope within managed IU information",
+      "type": "Requirement",
+      "specialization": null,
+      "standing": {
+        "semantic": "Accepted",
+        "currentness": "current"
+      }
+    },
+    {
+      "canonicalId": "bbb7438e78604308abba93afc14f4e2e",
+      "meaning": "IU use does not acquire authority over independent assurance outcomes",
+      "type": "Requirement",
+      "specialization": null,
+      "standing": {
+        "semantic": "APPROVED",
+        "currentness": "current"
+      }
+    }
+  ],
+  "newRelationships": [
+    {
+      "identifier": "id-8aa8d0b08a3145b0bccda3307dd2fd35",
+      "sourceCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Realization",
+      "meaning": "Logical representation of the same conceptual Information Unit",
+      "sourceSelector": "IU-01; §§0.1,3"
+    },
+    {
+      "identifier": "id-eae38cd87c8b4d919c56a1db5f89d38c",
+      "sourceCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "targetCanonicalId": "b9891b88150840ada3daefdec6f26c35",
+      "archimateType": "Composition",
+      "meaning": "Contains exactly one governed InformationRepresentation [1..1]",
+      "sourceSelector": "IU-02; §§2,6"
+    },
+    {
+      "identifier": "id-855f9109f49842f79cecb538ded6f44c",
+      "sourceCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "targetCanonicalId": "c05b7e37278141488ecc90b9a9ef96eb",
+      "archimateType": "Composition",
+      "meaning": "Contains the IU Metadata concerns; no independently governed nested IU",
+      "sourceSelector": "IU-03; §§2,5"
+    },
+    {
+      "identifier": "id-b7161defb76f4b63bdff3e570bfa89a5",
+      "sourceCanonicalId": "13c028886fde4682812b45772e21522f",
+      "targetCanonicalId": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "archimateType": "Composition",
+      "meaning": "Contains the shared logical Topic model",
+      "sourceSelector": "§§12,21,23.4"
+    },
+    {
+      "identifier": "id-12409a03605e4fa98d0d4f9baf7b149d",
+      "sourceCanonicalId": "13c028886fde4682812b45772e21522f",
+      "targetCanonicalId": "bb489157a6bf48be926c5a601bb0a6c3",
+      "archimateType": "Composition",
+      "meaning": "Contains the shared logical TopicMask model",
+      "sourceSelector": "§§10–12,21,23.4"
+    },
+    {
+      "identifier": "id-14ff6e983e1e45ac81f7f181b5339c8c",
+      "sourceCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "targetCanonicalId": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "archimateType": "Association",
+      "meaning": "IU UUID identifies the unit; its own Topic provides its canonical name",
+      "sourceSelector": "IU-06; §§3–4"
+    },
+    {
+      "identifier": "id-831971a5defd4748a1f59c246b4f12a0",
+      "sourceCanonicalId": "c05b7e37278141488ecc90b9a9ef96eb",
+      "targetCanonicalId": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "archimateType": "Association",
+      "meaning": "Four coordinate TopicIDs and separate IU-required security Topic references",
+      "sourceSelector": "IU-04–IU-06; §5"
+    },
+    {
+      "identifier": "id-54105ff7cc084045b9d47d1cac66578a",
+      "sourceCanonicalId": "b9891b88150840ada3daefdec6f26c35",
+      "targetCanonicalId": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "archimateType": "Association",
+      "meaning": "ContentMetadata references its Content Structure Topic; structure version is separate",
+      "sourceSelector": "§§8–9"
+    },
+    {
+      "identifier": "id-e65f6bff659440f9b0fe65860beeda97",
+      "sourceCanonicalId": "c05b7e37278141488ecc90b9a9ef96eb",
+      "targetCanonicalId": "bb489157a6bf48be926c5a601bb0a6c3",
+      "archimateType": "Association",
+      "meaning": "IU SecurityContext may carry required shared TopicMasks",
+      "sourceSelector": "IU-05; §§5.3,13"
+    },
+    {
+      "identifier": "id-1adf053e54b74ba8a15db8eec3760f06",
+      "sourceCanonicalId": "bb489157a6bf48be926c5a601bb0a6c3",
+      "targetCanonicalId": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "archimateType": "Association",
+      "meaning": "Discriminates corresponding individual canonical-name elements using regex patterns",
+      "sourceSelector": "IU-05; §12"
+    },
+    {
+      "identifier": "id-ac0b3c266ef24f09b582a1a1b6499b0c",
+      "sourceCanonicalId": "1af8a56358f7429fabfb57be66542a99",
+      "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "archimateType": "Access",
+      "meaning": "Manages active IU access, operational working state and local reference acceptability",
+      "sourceSelector": "§§14,16,18"
+    },
+    {
+      "identifier": "id-3aa3156cd4b94050935b5f950ebaf834",
+      "sourceCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "archimateType": "Access",
+      "meaning": "Establishes authoritative durable state and delivers the governed single-representation IU contract",
+      "sourceSelector": "§§6,17,19"
+    },
+    {
+      "identifier": "id-8fa345b8a7b349918455d204fc3695bd",
+      "sourceCanonicalId": "899d34ec491948b68aad09e507dea6d1",
+      "targetCanonicalId": "c05b7e37278141488ecc90b9a9ef96eb",
+      "archimateType": "Association",
+      "meaning": "Owns policy/enforcement for IU-side required criteria; coordinate values grant no access",
+      "sourceSelector": "§13"
+    },
+    {
+      "identifier": "id-35c1b5b190aa4626826eba96acf8a3f3",
+      "sourceCanonicalId": "c05b7e37278141488ecc90b9a9ef96eb",
+      "targetCanonicalId": "7e10287b7e634bce8aa2481eb481bb76",
+      "archimateType": "Association",
+      "meaning": "IU-required security criteria are distinct from Identity-specific effective PEP-Criteria",
+      "sourceSelector": "§13"
+    },
+    {
+      "identifier": "id-0bd604980b464f499ba4524776d613f6",
+      "sourceCanonicalId": "307b3440a507403f8bc214d290bffb6a",
+      "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "archimateType": "Association",
+      "meaning": "Defines the shared logical IU model; runtime ownership remains with consuming components",
+      "sourceSelector": "§§18,21"
+    },
+    {
+      "identifier": "id-c824642c7cfa4ab5871c3bf1ac32e55a",
+      "sourceCanonicalId": "307b3440a507403f8bc214d290bffb6a",
+      "targetCanonicalId": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "archimateType": "Association",
+      "meaning": "Defines common logical Topic semantics",
+      "sourceSelector": "§§12,21"
+    },
+    {
+      "identifier": "id-f2e2bb714b034785b0f5abb931f1aeed",
+      "sourceCanonicalId": "307b3440a507403f8bc214d290bffb6a",
+      "targetCanonicalId": "bb489157a6bf48be926c5a601bb0a6c3",
+      "archimateType": "Association",
+      "meaning": "Defines shared element-wise TopicMask semantics for consuming Features",
+      "sourceSelector": "§§10–12,21"
+    },
+    {
+      "identifier": "id-3c357307319847eabc24416980a54072",
+      "sourceCanonicalId": "645d01876b7d41c4ab3c0046110676f9",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for durable information persistence",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-cb67775a9735467a9e28eddb77331cb0",
+      "sourceCanonicalId": "94cc6885ef9d4c57a0fcf8d2242ff486",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for durable information persistence",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-a5845af41ce848d1a8d41a8b5027defb",
+      "sourceCanonicalId": "12ba7d0c60e547a7b0ba101b6372419a",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for durable information persistence",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-d5495420c39247d28d1ebf8c24ebefc8",
+      "sourceCanonicalId": "344849f852ba4dfb823b15e3f2efd1fb",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information state verification",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-5ee4787c12194498afd58a6fc3e45453",
+      "sourceCanonicalId": "21992d8919f444c3bcd686cf5f78509e",
+      "targetCanonicalId": "b9891b88150840ada3daefdec6f26c35",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information state verification",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-7ad29ad17ed24f568d586e0046604881",
+      "sourceCanonicalId": "b977a275ea1d48099231791ad3003315",
+      "targetCanonicalId": "b9891b88150840ada3daefdec6f26c35",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information state verification",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-30dda91a27f642d09504dbce3869547e",
+      "sourceCanonicalId": "9210349f026b4ff1aca1092c309b4139",
+      "targetCanonicalId": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information content identification and protection",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-45f8527087a94cee8a1c2c184994c736",
+      "sourceCanonicalId": "0b681ff0fbae406e92294e9c14995f83",
+      "targetCanonicalId": "b9891b88150840ada3daefdec6f26c35",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information content identification and protection",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-067ed052c3ac46988f2b6785f09fa016",
+      "sourceCanonicalId": "19714d1f35414e2796079620949db7f4",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information content identification and protection",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-0b94d056f4ec46a5817efab94a34d34f",
+      "sourceCanonicalId": "d71ae98e798b401a992d6ec53b48c6f2",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information content identification and protection",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-6949100bd92944f4ae9c42643746eaff",
+      "sourceCanonicalId": "8b9531db49334913a1d8f0a460227fc7",
+      "targetCanonicalId": "bb489157a6bf48be926c5a601bb0a6c3",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information discovery and distribution",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-ca7375de13f745eaac36b706a344b1c8",
+      "sourceCanonicalId": "e45c574e67a2432594200c65464af260",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information discovery and distribution",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-661a4582f72540bfb095c0753203c144",
+      "sourceCanonicalId": "a56b35afe4524be4bad951b58342a68d",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information discovery and distribution",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-e78a0d63320c4d4695326de070e869ad",
+      "sourceCanonicalId": "3c5738c9529647a48ba0d11fef1d2389",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information discovery and distribution",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-00f1c1521c9f44bbb8cf8b975bdd3466",
+      "sourceCanonicalId": "bc8947423d254cd194f467158f36b869",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for temporal information management",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-780d509bd9be4744b62a106928931c41",
+      "sourceCanonicalId": "c7958c9d7aae42b6b57ef9d028b8bc5e",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for temporal information management",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-a7c38a078e5949649a50e7800ad083a5",
+      "sourceCanonicalId": "99479070cc4447f28acac8328c18e6b1",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for temporal information management",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-8a9c0165953f42329a3c1fa12f78d51f",
+      "sourceCanonicalId": "bb7833db973f489f8adc8083819ab14f",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information provenance and accountability",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-f4836657695147e28d9bded07f81b0e3",
+      "sourceCanonicalId": "bfbe5a35c4844127b7ea88f2e46fc513",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information provenance and accountability",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-91af3a630414467c87fe29b1eafd6dba",
+      "sourceCanonicalId": "eadcd968876542b9a9f48ad07a546dae",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information provenance and accountability",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-e17cc325fb7b4d368afd732cdc9ac818",
+      "sourceCanonicalId": "732a50da8b64427386799b0135192607",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information lifecycle management",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-67af05bdc7044e2e9943b0e9e80019a7",
+      "sourceCanonicalId": "52089090cbd8473da42bdeb6b27d2cae",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information lifecycle management",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-088a457ee5374f668dbcfd44c88553af",
+      "sourceCanonicalId": "bccfc5315c8c43cdac25406cef3016c4",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Uses accepted IU semantics for information lifecycle management",
+      "sourceSelector": "IU-10; §§1.1,23.1–23.5"
+    },
+    {
+      "identifier": "id-cb1a5fd2e06048d1b1d12e55732fe94e",
+      "sourceCanonicalId": "c2e7ee7597e64275b3523befd72c0987",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Governed information identity applies to persistent IU identity",
+      "sourceSelector": "§§1.2–1.3,14–17,23.1"
+    },
+    {
+      "identifier": "id-feead22184b34d548c411cd4f0f25b00",
+      "sourceCanonicalId": "2bd0132f072b42e9bf71bf483eb2deec",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Governed versioning remains distinct from operational Version, generation and Content versions",
+      "sourceSelector": "§§1.2–1.3,14–17,23.1"
+    },
+    {
+      "identifier": "id-3c5ebef086b649449eddf4398b3533a0",
+      "sourceCanonicalId": "6316761bfd414032a8d889c7ba34131d",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "IU integrity assessment preserves the single-representation contract",
+      "sourceSelector": "§§1.2–1.3,14–17,23.1"
+    },
+    {
+      "identifier": "id-7cedb757246c46a395b158e13c1691fb",
+      "sourceCanonicalId": "4a25d9c8aaa9418fbddb5bff7302c46d",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Existing immutability designations constrain governed IU handling",
+      "sourceSelector": "§§1.2–1.3,14–17,23.1"
+    },
+    {
+      "identifier": "id-8f2f5f11bd7c437f9228415a7693245b",
+      "sourceCanonicalId": "8812fcd52d3f4afcbeef41b60bda5874",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Governed IU operations require authorisation; a TopicMask match is insufficient",
+      "sourceSelector": "§§1.2–1.3,14–17,23.1"
+    },
+    {
+      "identifier": "id-c42aa6081f0f4611872a94e4f80b7ef5",
+      "sourceCanonicalId": "3e45e60affb44bf384d54de26d3add6a",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Existing provenance obligations apply without making IU references Provenance",
+      "sourceSelector": "§§1.2–1.3,14–17,23.1"
+    },
+    {
+      "identifier": "id-5bf56857ae8c4363842166eb1ce85223",
+      "sourceCanonicalId": "6a2a3de03beb47b884293797b92a91eb",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "IU preservation and recovery reuse existing platform-failure durability obligations",
+      "sourceSelector": "§§1.2–1.3,14–17,23.1"
+    },
+    {
+      "identifier": "id-2fa459cd479047218ccd7648e6610423",
+      "sourceCanonicalId": "2429db4dbecc4a03a66f5189d76a6c38",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Existing archival/retrieval governance applies to managed IUs",
+      "sourceSelector": "§§1.2–1.3,14–17,23.1"
+    },
+    {
+      "identifier": "id-863631b2255846f6afea386398ba4996",
+      "sourceCanonicalId": "43ecbfe8f9b14fcbbc59ee0c03c8774b",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "Subject-reference integrity retains its specialised scope within managed IU information",
+      "sourceSelector": "§§1.2–1.3,14–17,23.1"
+    },
+    {
+      "identifier": "id-f4691af9bc8f4245beb529a4bf1c2815",
+      "sourceCanonicalId": "bbb7438e78604308abba93afc14f4e2e",
+      "targetCanonicalId": "10284034c8534b639284386b064f2c54",
+      "archimateType": "Association",
+      "meaning": "IU use does not acquire authority over independent assurance outcomes",
+      "sourceSelector": "§§1.2–1.3,14–17,23.1"
+    }
+  ],
+  "reusedRelationships": [
+    {
+      "ownerCanonicalId": "13c028886fde4682812b45772e21522f",
+      "identifier": "id-b63d27292ce9457b886a0b50e0534075",
+      "source": "id-74614b2b4bdd4897852e3483d597bd01",
+      "target": "id-f5c345ab6c47433da11ee12f5d84e557",
+      "archimateType": "Composition",
+      "standing": {
+        "source": "Accepted bounded architecture — HCRL 1.1.15-001 DR-1"
+      },
+      "provenance": {
+        "source": "enterprise-architecture/design/evidence/1.1.15/001/before/harmonia-continuum-1.1.15-001.xml",
+        "selector": "relationship[@identifier=\"id-b63d27292ce9457b886a0b50e0534075\"]",
+        "revision": "a31ed511c07e0a54c503383f6e52dfdad1e5905e642c05e7dc14fb7649af2eb9",
+        "sha256": "a31ed511c07e0a54c503383f6e52dfdad1e5905e642c05e7dc14fb7649af2eb9"
+      }
+    },
+    {
+      "ownerCanonicalId": "e282811b51274649816566aac7edeb8a",
+      "identifier": "id-6bf9674e35c04cd88c11a80cdf777a17",
+      "archimateType": "Association",
+      "source": "id-70ce24ab295258d6bade403a18aac261",
+      "target": "id-f5c345ab6c47433da11ee12f5d84e557",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.4",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "References relevant InformationUnits",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. References relevant InformationUnits",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "isDirected": "true"
+      }
+    },
+    {
+      "ownerCanonicalId": "d739c75dffe2453081735710b285f03b",
+      "identifier": "id-86502907d244442aad6470652bc3fd19",
+      "archimateType": "Access",
+      "source": "id-d16663c3976756bb9cd23104f8bdd0c7",
+      "target": "id-70ce24ab295258d6bade403a18aac261",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-19; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.1/2.5",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-19; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "Manages Provenance lifecycle and uses it as foundational Assurance evidence",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. Manages Provenance lifecycle and uses it as foundational Assurance evidence",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "accessType": "ReadWrite"
+      }
+    },
+    {
+      "ownerCanonicalId": "1af8a56358f7429fabfb57be66542a99",
+      "identifier": "id-48b5618f63b24ea5abbbcd2cd58d70f2",
+      "archimateType": "Access",
+      "source": "id-18c2979e55a7525b90321395f550d958",
+      "target": "id-70ce24ab295258d6bade403a18aac261",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.3",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "Manages governed Provenance information",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. Manages governed Provenance information",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "accessType": "ReadWrite"
+      }
+    },
+    {
+      "ownerCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "identifier": "id-f8b0d09b13764f7298735519bb998d26",
+      "archimateType": "Access",
+      "source": "id-829d7b5b57965765adf492ce3aaaa7d2",
+      "target": "id-70ce24ab295258d6bade403a18aac261",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.3",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "Establishes authoritative durable persistence of Provenance",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. Establishes authoritative durable persistence of Provenance",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "accessType": "ReadWrite"
+      }
+    }
+  ],
+  "reusedCapabilityCompositionRelationships": [
+    {
+      "ownerCanonicalId": "04d00c46bd714f6688fe013f35cd1d74",
+      "identifier": "id-cccc982bcdf0585db777e100cb7b38be",
+      "sourceCanonicalId": "04d00c46bd714f6688fe013f35cd1d74",
+      "targetCanonicalId": "890878f052bc42a4bab25f9527f4a651",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "04d00c46bd714f6688fe013f35cd1d74",
+      "identifier": "id-82eac4657f9c58edbb3662b045d9f80e",
+      "sourceCanonicalId": "04d00c46bd714f6688fe013f35cd1d74",
+      "targetCanonicalId": "60fa9a38aa664154ad85f5eb6d681e1d",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "05b64d34d550432a814485ab0c0dafcd",
+      "identifier": "id-2432174d40d45d84b00ebfdc1eafb7d4",
+      "sourceCanonicalId": "05b64d34d550432a814485ab0c0dafcd",
+      "targetCanonicalId": "243b80f04f2542c8b0e63af2075b5a60",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "0f79a2e62740435b9bef0f662838ab16",
+      "identifier": "id-9c4ed9ad30f95f61ace0d5b328a41aa4",
+      "sourceCanonicalId": "0f79a2e62740435b9bef0f662838ab16",
+      "targetCanonicalId": "8b9531db49334913a1d8f0a460227fc7",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "0f79a2e62740435b9bef0f662838ab16",
+      "identifier": "id-ff516d5c25a15c58984bfa1eace6d408",
+      "sourceCanonicalId": "0f79a2e62740435b9bef0f662838ab16",
+      "targetCanonicalId": "e45c574e67a2432594200c65464af260",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "160c0eb00505492cbacd8fc63ee881cc",
+      "identifier": "id-31e440f803a95f1abf6329ed392552bc",
+      "sourceCanonicalId": "160c0eb00505492cbacd8fc63ee881cc",
+      "targetCanonicalId": "344849f852ba4dfb823b15e3f2efd1fb",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "1c2aad9aca7242149b4f30045c42711f",
+      "identifier": "id-050ddae6b3e8566fb08ef0a93cb79203",
+      "sourceCanonicalId": "1c2aad9aca7242149b4f30045c42711f",
+      "targetCanonicalId": "0f79a2e62740435b9bef0f662838ab16",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "209359b883df42379e7b1c44e65437d8",
+      "identifier": "id-d331ef8753f45f0caeb1f7fe19d00c35",
+      "sourceCanonicalId": "209359b883df42379e7b1c44e65437d8",
+      "targetCanonicalId": "adf5e2bc81b4468d9bb486b1d77bf92b",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "243b80f04f2542c8b0e63af2075b5a60",
+      "identifier": "id-3c097ec00c075b92ab4bc57bc4a17fe9",
+      "sourceCanonicalId": "243b80f04f2542c8b0e63af2075b5a60",
+      "targetCanonicalId": "94cc6885ef9d4c57a0fcf8d2242ff486",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "243b80f04f2542c8b0e63af2075b5a60",
+      "identifier": "id-b3456a3351c15c0e97d33bc070be30a6",
+      "sourceCanonicalId": "243b80f04f2542c8b0e63af2075b5a60",
+      "targetCanonicalId": "645d01876b7d41c4ab3c0046110676f9",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "243b80f04f2542c8b0e63af2075b5a60",
+      "identifier": "id-0c7d1683e4ee5e4ea1608d3986ceeb41",
+      "sourceCanonicalId": "243b80f04f2542c8b0e63af2075b5a60",
+      "targetCanonicalId": "12ba7d0c60e547a7b0ba101b6372419a",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "39205a4164cc4e92b372f182cec834e0",
+      "identifier": "id-83d2914986e65469bdd151c0dbf87032",
+      "sourceCanonicalId": "39205a4164cc4e92b372f182cec834e0",
+      "targetCanonicalId": "b69b41062928499486ab0df6d20509d1",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "60fa9a38aa664154ad85f5eb6d681e1d",
+      "identifier": "id-c860adc3e1125df7a7e43f2630149dca",
+      "sourceCanonicalId": "60fa9a38aa664154ad85f5eb6d681e1d",
+      "targetCanonicalId": "bc8947423d254cd194f467158f36b869",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "6621b9a124d7444aa83793810531c388",
+      "identifier": "id-8fa85dcbf55754e382d29c7f017cee81",
+      "sourceCanonicalId": "6621b9a124d7444aa83793810531c388",
+      "targetCanonicalId": "fc3cdbc9fa264edabbf54143877cf4eb",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "73cd0e24923a4c8b9678654a7cf0d81a",
+      "identifier": "id-f7cc2d7db05a5838a80cbfd65e2c3a0e",
+      "sourceCanonicalId": "73cd0e24923a4c8b9678654a7cf0d81a",
+      "targetCanonicalId": "6621b9a124d7444aa83793810531c388",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "73cd0e24923a4c8b9678654a7cf0d81a",
+      "identifier": "id-5c1d046d914558198efa94c32e44258c",
+      "sourceCanonicalId": "73cd0e24923a4c8b9678654a7cf0d81a",
+      "targetCanonicalId": "1c2aad9aca7242149b4f30045c42711f",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "777c22e9b9df47b397b8c76a90913e33",
+      "identifier": "id-b5e29eafc171575b90668d8f5ee902ca",
+      "sourceCanonicalId": "777c22e9b9df47b397b8c76a90913e33",
+      "targetCanonicalId": "21992d8919f444c3bcd686cf5f78509e",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "777c22e9b9df47b397b8c76a90913e33",
+      "identifier": "id-6e079672cd9e5d0c990a3d66efbe0c09",
+      "sourceCanonicalId": "777c22e9b9df47b397b8c76a90913e33",
+      "targetCanonicalId": "eadcd968876542b9a9f48ad07a546dae",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "777c22e9b9df47b397b8c76a90913e33",
+      "identifier": "id-570dc6c0cc4056e882c7a63c89a9876e",
+      "sourceCanonicalId": "777c22e9b9df47b397b8c76a90913e33",
+      "targetCanonicalId": "b977a275ea1d48099231791ad3003315",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "777c22e9b9df47b397b8c76a90913e33",
+      "identifier": "id-c35ad07c0b7e5f5b9bf3e42a73c4256f",
+      "sourceCanonicalId": "777c22e9b9df47b397b8c76a90913e33",
+      "targetCanonicalId": "0b681ff0fbae406e92294e9c14995f83",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "890878f052bc42a4bab25f9527f4a651",
+      "identifier": "id-594d10a6967058b7a5d6ca709056b4fc",
+      "sourceCanonicalId": "890878f052bc42a4bab25f9527f4a651",
+      "targetCanonicalId": "c7958c9d7aae42b6b57ef9d028b8bc5e",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "95c06dba5448453992d55106b19f977d",
+      "identifier": "id-c4df00d3aac15a29a07ac36ff29f4cc2",
+      "sourceCanonicalId": "95c06dba5448453992d55106b19f977d",
+      "targetCanonicalId": "99479070cc4447f28acac8328c18e6b1",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "95c06dba5448453992d55106b19f977d",
+      "identifier": "id-5a8863524b745135b8c85387f4852088",
+      "sourceCanonicalId": "95c06dba5448453992d55106b19f977d",
+      "targetCanonicalId": "bb7833db973f489f8adc8083819ab14f",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "95c06dba5448453992d55106b19f977d",
+      "identifier": "id-2b4545ef432e5c2186cce0c3a0eb7fdf",
+      "sourceCanonicalId": "95c06dba5448453992d55106b19f977d",
+      "targetCanonicalId": "bfbe5a35c4844127b7ea88f2e46fc513",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "9f077356ba9342d6a9b87437fa7210e8",
+      "identifier": "id-85133d7c74f65c66bca263bf99c58f2b",
+      "sourceCanonicalId": "9f077356ba9342d6a9b87437fa7210e8",
+      "targetCanonicalId": "f12cce1dda874e71be13a4e1d79eeeac",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "a5176cd813924b329691ab8ba528467e",
+      "identifier": "id-5abdc33dd8d05317958e42e932ac5360",
+      "sourceCanonicalId": "a5176cd813924b329691ab8ba528467e",
+      "targetCanonicalId": "05b64d34d550432a814485ab0c0dafcd",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "a5176cd813924b329691ab8ba528467e",
+      "identifier": "id-df8b3f934e7d598cac4431389ff89548",
+      "sourceCanonicalId": "a5176cd813924b329691ab8ba528467e",
+      "targetCanonicalId": "04d00c46bd714f6688fe013f35cd1d74",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "a5176cd813924b329691ab8ba528467e",
+      "identifier": "id-ba6d59b1b3ef5e3a8466f4e6fb3a5224",
+      "sourceCanonicalId": "a5176cd813924b329691ab8ba528467e",
+      "targetCanonicalId": "f1ea1db460204cd8a99768c16dbb0b31",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "a5176cd813924b329691ab8ba528467e",
+      "identifier": "id-9e1864f687c85c92be0690accb1afa17",
+      "sourceCanonicalId": "a5176cd813924b329691ab8ba528467e",
+      "targetCanonicalId": "c556ecf7d3db491895148ba56d7be22a",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "a5176cd813924b329691ab8ba528467e",
+      "identifier": "id-1bb0d33c682d53edb260278e6ff3442c",
+      "sourceCanonicalId": "a5176cd813924b329691ab8ba528467e",
+      "targetCanonicalId": "39205a4164cc4e92b372f182cec834e0",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "adf5e2bc81b4468d9bb486b1d77bf92b",
+      "identifier": "id-a238dcf5bfca5599953dd1589973b903",
+      "sourceCanonicalId": "adf5e2bc81b4468d9bb486b1d77bf92b",
+      "targetCanonicalId": "95c06dba5448453992d55106b19f977d",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "b69b41062928499486ab0df6d20509d1",
+      "identifier": "id-97ccece498965be688095ba907d9552c",
+      "sourceCanonicalId": "b69b41062928499486ab0df6d20509d1",
+      "targetCanonicalId": "3c5738c9529647a48ba0d11fef1d2389",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "b8144b07129144a386f8b70b7092b07d",
+      "identifier": "id-550e44f592bd55ea8c09f0fc9025e78f",
+      "sourceCanonicalId": "b8144b07129144a386f8b70b7092b07d",
+      "targetCanonicalId": "19714d1f35414e2796079620949db7f4",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "b8144b07129144a386f8b70b7092b07d",
+      "identifier": "id-8247cf5c267c54b6ad4a6fb2ac19c8e3",
+      "sourceCanonicalId": "b8144b07129144a386f8b70b7092b07d",
+      "targetCanonicalId": "d71ae98e798b401a992d6ec53b48c6f2",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "bd655b0c0d044e399e80d988ce9d4382",
+      "identifier": "id-2c45a0c8ddb15f27b8f07e7205fe902a",
+      "sourceCanonicalId": "bd655b0c0d044e399e80d988ce9d4382",
+      "targetCanonicalId": "732a50da8b64427386799b0135192607",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "bd655b0c0d044e399e80d988ce9d4382",
+      "identifier": "id-5f7d586a956a5197bc505b43df6bee0e",
+      "sourceCanonicalId": "bd655b0c0d044e399e80d988ce9d4382",
+      "targetCanonicalId": "52089090cbd8473da42bdeb6b27d2cae",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "bd655b0c0d044e399e80d988ce9d4382",
+      "identifier": "id-6b4a300b02dc569889fa8f3f4deee5db",
+      "sourceCanonicalId": "bd655b0c0d044e399e80d988ce9d4382",
+      "targetCanonicalId": "bccfc5315c8c43cdac25406cef3016c4",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "c556ecf7d3db491895148ba56d7be22a",
+      "identifier": "id-b3dbe768cae857d4bc25b326f29d7503",
+      "sourceCanonicalId": "c556ecf7d3db491895148ba56d7be22a",
+      "targetCanonicalId": "bd655b0c0d044e399e80d988ce9d4382",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "c8bd1d6e0796442a934a74cc69077543",
+      "identifier": "id-09a5e525c6ab57f38425a50e2714c338",
+      "sourceCanonicalId": "c8bd1d6e0796442a934a74cc69077543",
+      "targetCanonicalId": "b8144b07129144a386f8b70b7092b07d",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "cc25d325f7104ccda137cbf6ee371fb3",
+      "identifier": "id-7fa27177679d591fa0a4805ee5d22aa6",
+      "sourceCanonicalId": "cc25d325f7104ccda137cbf6ee371fb3",
+      "targetCanonicalId": "9f077356ba9342d6a9b87437fa7210e8",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "def358c06649413ba4773582e0d5c6d4",
+      "identifier": "id-a61643c2803c5605b290d33d6acacdc0",
+      "sourceCanonicalId": "def358c06649413ba4773582e0d5c6d4",
+      "targetCanonicalId": "c8bd1d6e0796442a934a74cc69077543",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "f12cce1dda874e71be13a4e1d79eeeac",
+      "identifier": "id-885b07dd229e5ebaa1304ed5b3457099",
+      "sourceCanonicalId": "f12cce1dda874e71be13a4e1d79eeeac",
+      "targetCanonicalId": "9210349f026b4ff1aca1092c309b4139",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "f1ea1db460204cd8a99768c16dbb0b31",
+      "identifier": "id-a716fcda23575004835d11325d921a1d",
+      "sourceCanonicalId": "f1ea1db460204cd8a99768c16dbb0b31",
+      "targetCanonicalId": "160c0eb00505492cbacd8fc63ee881cc",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "f1ea1db460204cd8a99768c16dbb0b31",
+      "identifier": "id-711f50a1344f54b0a3c138e17044583f",
+      "sourceCanonicalId": "f1ea1db460204cd8a99768c16dbb0b31",
+      "targetCanonicalId": "777c22e9b9df47b397b8c76a90913e33",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    },
+    {
+      "ownerCanonicalId": "fc3cdbc9fa264edabbf54143877cf4eb",
+      "identifier": "id-c378e1d1a15b5f94ae578e4f1010f6cf",
+      "sourceCanonicalId": "fc3cdbc9fa264edabbf54143877cf4eb",
+      "targetCanonicalId": "a56b35afe4524be4bad951b58342a68d",
+      "standing": {
+        "semantic": "Accepted Pass3/014 containment",
+        "currentness": "current"
+      }
+    }
+  ],
+  "requirementGroupContextReused": {
+    "canonicalId": "c34c366824ff452eb575345c16db720b",
+    "meaning": "Existing Information Management requirements context; no reparenting or asserted identity-equivalence with either historical proposal"
+  },
+  "historicalRequirementReconciliation": [
+    {
+      "historicalSource": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.draft.003.md §1.2 bullet 1",
+      "historicalStatement": "Harmonia shall manage information through a technology-neutral, governed Information Unit.",
+      "authority": "Accepted Final.001 §§1.2,2–21,23.1; IU-10",
+      "disposition": "Represented by reused Motivation/Feature semantics and bounded canonical IU definitions; no duplicate Requirement allocation",
+      "canonicalReferences": [
+        {
+          "canonicalId": "54508cda80484a6caf95b901780eaf7d",
+          "path": "enterprise-architecture/continuum/motivation/principle/54508cda80484a6caf95b901780eaf7d.md",
+          "nativeType": "Principle",
+          "specialization": null
+        },
+        {
+          "canonicalId": "10284034c8534b639284386b064f2c54",
+          "path": "enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md",
+          "nativeType": "BusinessObject",
+          "specialization": null
+        },
+        {
+          "canonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+          "path": "enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md",
+          "nativeType": "DataObject",
+          "specialization": "Class"
+        }
+      ]
+    },
+    {
+      "historicalSource": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.draft.003.md §1.2 bullet 2",
+      "historicalStatement": "Harmonia shall maintain Information Unit identity separately from identities belonging to represented information or represented entities.",
+      "authority": "Accepted Final.001 §§1.2,2–21,23.1; IU-10",
+      "disposition": "Represented by reused Motivation/Feature semantics and bounded canonical IU definitions; no duplicate Requirement allocation",
+      "canonicalReferences": [
+        {
+          "canonicalId": "c2e7ee7597e64275b3523befd72c0987",
+          "path": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/c2e7ee7597e64275b3523befd72c0987.md",
+          "nativeType": "Principle",
+          "specialization": "ArchitecturalAxiom"
+        },
+        {
+          "canonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+          "path": "enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md",
+          "nativeType": "DataObject",
+          "specialization": "Class"
+        }
+      ]
+    },
+    {
+      "historicalSource": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.draft.003.md §1.2 bullet 3",
+      "historicalStatement": "Harmonia shall maintain exactly one Information Representation for each Information Unit.",
+      "authority": "Accepted Final.001 §§1.2,2–21,23.1; IU-10",
+      "disposition": "Represented by reused Motivation/Feature semantics and bounded canonical IU definitions; no duplicate Requirement allocation",
+      "canonicalReferences": [
+        {
+          "canonicalId": "21992d8919f444c3bcd686cf5f78509e",
+          "path": "enterprise-architecture/continuum/strategy/capability/feature/21992d8919f444c3bcd686cf5f78509e.md",
+          "nativeType": "Capability",
+          "specialization": "Feature"
+        },
+        {
+          "canonicalId": "b9891b88150840ada3daefdec6f26c35",
+          "path": "enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md",
+          "nativeType": "DataObject",
+          "specialization": null
+        }
+      ]
+    },
+    {
+      "historicalSource": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.draft.003.md §1.2 bullet 4",
+      "historicalStatement": "Harmonia shall preserve the semantic distinction between Information Unit Metadata, Container Metadata, Content Metadata and Content.",
+      "authority": "Accepted Final.001 §§1.2,2–21,23.1; IU-10",
+      "disposition": "Represented by reused Motivation/Feature semantics and bounded canonical IU definitions; no duplicate Requirement allocation",
+      "canonicalReferences": [
+        {
+          "canonicalId": "b977a275ea1d48099231791ad3003315",
+          "path": "enterprise-architecture/continuum/strategy/capability/feature/b977a275ea1d48099231791ad3003315.md",
+          "nativeType": "Capability",
+          "specialization": "Feature"
+        },
+        {
+          "canonicalId": "c05b7e37278141488ecc90b9a9ef96eb",
+          "path": "enterprise-architecture/continuum/application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md",
+          "nativeType": "DataObject",
+          "specialization": null
+        },
+        {
+          "canonicalId": "b9891b88150840ada3daefdec6f26c35",
+          "path": "enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md",
+          "nativeType": "DataObject",
+          "specialization": null
+        }
+      ]
+    },
+    {
+      "historicalSource": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.draft.003.md §1.2 bullet 5",
+      "historicalStatement": "Harmonia shall enable Information Unit characteristics required by filtering, discovery, publication/subscription, routing and information protection to be evaluated without requiring consumers to depend upon the internal structure of the Information Unit.",
+      "authority": "Accepted Final.001 §§1.2,2–21,23.1; IU-10",
+      "disposition": "Represented by reused Motivation/Feature semantics and bounded canonical IU definitions; no duplicate Requirement allocation",
+      "canonicalReferences": [
+        {
+          "canonicalId": "8b9531db49334913a1d8f0a460227fc7",
+          "path": "enterprise-architecture/continuum/strategy/capability/feature/8b9531db49334913a1d8f0a460227fc7.md",
+          "nativeType": "Capability",
+          "specialization": "Feature"
+        },
+        {
+          "canonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+          "path": "enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md",
+          "nativeType": "DataObject",
+          "specialization": "Class"
+        },
+        {
+          "canonicalId": "bb489157a6bf48be926c5a601bb0a6c3",
+          "path": "enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md",
+          "nativeType": "DataObject",
+          "specialization": null
+        }
+      ]
+    },
+    {
+      "historicalSource": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.draft.003.md §1.2 bullet 6",
+      "historicalStatement": "Harmonia shall maintain information structure independently from representation format.",
+      "authority": "Accepted Final.001 §§1.2,2–21,23.1; IU-10",
+      "disposition": "Represented by reused Motivation/Feature semantics and bounded canonical IU definitions; no duplicate Requirement allocation",
+      "canonicalReferences": [
+        {
+          "canonicalId": "e99a4e2bf99f476d876394300d6b9c3d",
+          "path": "enterprise-architecture/continuum/motivation/principle/e99a4e2bf99f476d876394300d6b9c3d.md",
+          "nativeType": "Principle",
+          "specialization": null
+        },
+        {
+          "canonicalId": "b9891b88150840ada3daefdec6f26c35",
+          "path": "enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md",
+          "nativeType": "DataObject",
+          "specialization": null
+        }
+      ]
+    },
+    {
+      "historicalSource": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.draft.003.md §1.2 bullet 7",
+      "historicalStatement": "Harmonia shall maintain governed version progression independently from active manifestation or generation.",
+      "authority": "Accepted Final.001 §§1.2,2–21,23.1; IU-10",
+      "disposition": "Represented by reused Motivation/Feature semantics and bounded canonical IU definitions; no duplicate Requirement allocation",
+      "canonicalReferences": [
+        {
+          "canonicalId": "2bd0132f072b42e9bf71bf483eb2deec",
+          "path": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/2bd0132f072b42e9bf71bf483eb2deec.md",
+          "nativeType": "Principle",
+          "specialization": "ArchitecturalAxiom"
+        },
+        {
+          "canonicalId": "0412a2084f0145babc4f022c71fea65f",
+          "path": "enterprise-architecture/continuum/motivation/principle/0412a2084f0145babc4f022c71fea65f.md",
+          "nativeType": "Principle",
+          "specialization": null
+        },
+        {
+          "canonicalId": "c05b7e37278141488ecc90b9a9ef96eb",
+          "path": "enterprise-architecture/continuum/application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md",
+          "nativeType": "DataObject",
+          "specialization": null
+        }
+      ]
+    },
+    {
+      "historicalSource": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.draft.003.md §1.2 bullet 8",
+      "historicalStatement": "Harmonia shall preserve applicable provenance, authority, lifecycle, temporal and Information Unit relationship semantics.",
+      "authority": "Accepted Final.001 §§1.2,2–21,23.1; IU-10",
+      "disposition": "Represented by reused Motivation/Feature semantics and bounded canonical IU definitions; no duplicate Requirement allocation",
+      "canonicalReferences": [
+        {
+          "canonicalId": "3e45e60affb44bf384d54de26d3add6a",
+          "path": "enterprise-architecture/continuum/motivation/requirement/assurance-requirement/3e45e60affb44bf384d54de26d3add6a.md",
+          "nativeType": "Requirement",
+          "specialization": "AssuranceRequirement"
+        },
+        {
+          "canonicalId": "952c3b6148ce4fce94b69f99a0c2fec7",
+          "path": "enterprise-architecture/continuum/motivation/principle/952c3b6148ce4fce94b69f99a0c2fec7.md",
+          "nativeType": "Principle",
+          "specialization": null
+        },
+        {
+          "canonicalId": "43ecbfe8f9b14fcbbc59ee0c03c8774b",
+          "path": "enterprise-architecture/continuum/motivation/requirement/43ecbfe8f9b14fcbbc59ee0c03c8774b.md",
+          "nativeType": "Requirement",
+          "specialization": null
+        },
+        {
+          "canonicalId": "c05b7e37278141488ecc90b9a9ef96eb",
+          "path": "enterprise-architecture/continuum/application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md",
+          "nativeType": "DataObject",
+          "specialization": null
+        }
+      ]
+    },
+    {
+      "historicalSource": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.draft.003.md §1.2 bullet 9",
+      "historicalStatement": "Harmonia shall permit Content-aware and Content-neutral services to operate upon Information Units without redefining the Information Unit architecture.",
+      "authority": "Accepted Final.001 §§1.2,2–21,23.1; IU-10",
+      "disposition": "Represented by reused Motivation/Feature semantics and bounded canonical IU definitions; no duplicate Requirement allocation",
+      "canonicalReferences": [
+        {
+          "canonicalId": "307b3440a507403f8bc214d290bffb6a",
+          "path": "enterprise-architecture/continuum/application/application-component/307b3440a507403f8bc214d290bffb6a.md",
+          "nativeType": "ApplicationComponent",
+          "specialization": null
+        },
+        {
+          "canonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+          "path": "enterprise-architecture/continuum/application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md",
+          "nativeType": "ApplicationComponent",
+          "specialization": null
+        },
+        {
+          "canonicalId": "b9891b88150840ada3daefdec6f26c35",
+          "path": "enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md",
+          "nativeType": "DataObject",
+          "specialization": null
+        }
+      ]
+    },
+    {
+      "historicalSource": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.draft.003.md §1.2 bullet 10",
+      "historicalStatement": "Harmonia shall enable independently governed representations to be expressed as independently governed Information Units and related through governed Information Unit relationships and provenance.",
+      "authority": "Accepted Final.001 §§1.2,2–21,23.1; IU-10",
+      "disposition": "Represented by reused Motivation/Feature semantics and bounded canonical IU definitions; no duplicate Requirement allocation",
+      "canonicalReferences": [
+        {
+          "canonicalId": "eadcd968876542b9a9f48ad07a546dae",
+          "path": "enterprise-architecture/continuum/strategy/capability/feature/eadcd968876542b9a9f48ad07a546dae.md",
+          "nativeType": "Capability",
+          "specialization": "Feature"
+        },
+        {
+          "canonicalId": "21992d8919f444c3bcd686cf5f78509e",
+          "path": "enterprise-architecture/continuum/strategy/capability/feature/21992d8919f444c3bcd686cf5f78509e.md",
+          "nativeType": "Capability",
+          "specialization": "Feature"
+        },
+        {
+          "canonicalId": "10284034c8534b639284386b064f2c54",
+          "path": "enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md",
+          "nativeType": "BusinessObject",
+          "specialization": null
+        },
+        {
+          "canonicalId": "b9891b88150840ada3daefdec6f26c35",
+          "path": "enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md",
+          "nativeType": "DataObject",
+          "specialization": null
+        }
+      ]
+    }
+  ],
+  "scopeQualifications": [
+    "Applicability is not capability ownership or implementation satisfaction.",
+    "The canonical Subject Referential Integrity Requirement retains its specialised subject scope; the IU model does not add remote-target validation.",
+    "Traceable derivation may use Provenance without mandatory reciprocal or basedOn IU attributes.",
+    "Current Motivation types/standing remain intact; a historical requirement label does not reclassify an Axiom or Mandate."
+  ]
+}

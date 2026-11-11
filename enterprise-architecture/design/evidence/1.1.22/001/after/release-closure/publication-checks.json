@@ -1,0 +1,14 @@
+{
+  "command": [
+    "make",
+    "-C",
+    "enterprise-architecture/tooling",
+    "check",
+    "browser-test"
+  ],
+  "exitCode": 0,
+  "outcome": "PASS",
+  "seconds": 53.686,
+  "log": "publication-checks.log",
+  "limits": "Source/publication freshness, release, link and DOM smoke checks; actual Archi and human reviews are separately retained. Strict transport FAIL remains."
+}

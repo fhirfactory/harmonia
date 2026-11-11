@@ -1,0 +1,16 @@
+{
+  "command": [
+    "make",
+    "-C",
+    "enterprise-architecture/tooling",
+    "continuum",
+    "continuum-rad"
+  ],
+  "exitCode": 0,
+  "outcome": "PASS",
+  "seconds": 50.829,
+  "log": "publication.log",
+  "release": "1.1.22",
+  "releaseIncrement": "none; existing allocation used",
+  "strictTransport": "FAIL retained; accepted bounded qualification"
+}
