@@ -1,0 +1,76 @@
+{
+  "canonicalProjectionOfflineXsdReferences": "PASS",
+  "exactNoEditWorkbenchReview": "PASS",
+  "acceptedBaselineAndSourcePreservation": "PASS",
+  "independentGeneration": "PASS",
+  "focusedContinuumTests": {
+    "status": "PASS",
+    "tests": 8,
+    "seconds": 290.404
+  },
+  "navigationTests": {
+    "status": "PASS",
+    "tests": 4,
+    "seconds": 22.475
+  },
+  "requiredMavenArchitectureSuite": {
+    "status": "PASS",
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 27.368
+  },
+  "readerDOMContract": "PASS",
+  "canonicalLinks": "PASS",
+  "actualArchiImportNativeSaveExport": "PASS",
+  "strictArchiTransport": "FAIL",
+  "humanStructuralReview": "NOT PERFORMED; pending Solution Architect",
+  "resultingHCRLConfirmation": "PENDING",
+  "taskEventTemporalConformance": "UNRESOLVED",
+  "releaseAllocation": "NOT PERFORMED; root remains 1.1.22",
+  "acceptedPublication": "NOT PERFORMED",
+  "gitTransition": "No commit or push",
+  "newFormalNameQualifications": 11,
+  "newInformationNameQualifications": 1,
+  "inheritedUnresolvedInformationNames": 16,
+  "totalUnresolvedInformationNames": 17,
+  "candidateMetadataRelease": "1.1.22; unchanged root authority; this is evidence for proposed 1.1.23, never an accepted 1.1.22 replacement",
+  "counts": {
+    "elements": 6557,
+    "relationships": 9376,
+    "views": 1304,
+    "newElements": 11,
+    "newRelationships": 62,
+    "modifiedExistingElements": 15
+  },
+  "initialEnvironmentDiagnostics": [
+    "Base Python lacked jsonschema/Markdown and ensurepip; declared dependencies installed only in temporary /tmp target, no host/repository environment modification.",
+    "First unittest invocation failed to import current_source_fixture; corrected working directory before focused run. This was invocation/environment failure, not a semantic test failure.",
+    "Empty navigation preflight rejected before identity allocation; corrected only agent-created empty headings.",
+    "Sandbox GTK failed before importing; approved display access succeeded. Both logs retained."
+  ],
+  "limits": "No tests or comparison policy weakened; one mechanical population expectation updated to the authorised counts. No production tooling/application code changed. No whole-suite EA test pass, PDF compilation, pixel review or human acceptance claimed.",
+  "retainedExecutionLogs": {
+    "independent-reproduction": {
+      "file": "independent-reproduction.txt",
+      "uncompressedSha256": "440d82b4802f57d12212d1848a6be4c8bd8e96a280c5ad63daf41a9658e8b314",
+      "bytes": 215
+    },
+    "navigation-tests": {
+      "file": "navigation-tests.txt",
+      "uncompressedSha256": "f0707a665c5ceb06c94562b4613ac9e07faf20219adc3ecb64dcaa000beb27d8",
+      "bytes": 887
+    },
+    "focused-continuum-tests": {
+      "file": "focused-continuum-tests.txt",
+      "uncompressedSha256": "efb2f1ca4a7b034b6c24301952a505a7ea3e328b3f7834885deb76a2acc32814",
+      "bytes": 1230
+    },
+    "architecture-suite": {
+      "file": "architecture-suite.txt.gz",
+      "uncompressedSha256": "1903faa410c91dd8666385d42b113f9873b7f029bc0db9a9697794c8a11652fd",
+      "bytes": 28921430
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "register": "enterprise-architecture/design/register/1.1.23/hcrl-1.1.23-001.complete.md",
+  "sha256": "4f1c9acca7408fe7ccbb84721ef698881a12d119397aa2147da18fd9b8fbc361",
+  "reviewHistory": "enterprise-architecture/design/review/1.1.23/hcrl-1.1.23-001.pending.md",
+  "reviewHistorySha256": "18a1d0ffbb6986dab453c7c331fcf75c9cda9e1454d2c11b8c78d3b6b7581f96",
+  "release": "1.1.23",
+  "predecessor": "1.1.22",
+  "strictTransport": "FAIL accepted with release-specific qualification",
+  "CR001": "Accepted \u2014 Qualified; Disposition Accept / Outcome Resolved",
+  "gitAtRegistration": "Uncommitted; explicit commit/push follows passed controls"
+}

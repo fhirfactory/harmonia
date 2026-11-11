@@ -48,7 +48,7 @@ class ContinuumTests(unittest.TestCase):
 
     def test_population_and_provenance(self):
         r=c.validate(self.root)
-        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(6546,9314,462))
+        self.assertEqual((r['elements'],r['relationships'],r['qualifiedSourcePredicates']),(6557,9376,462))
         self.assertEqual(r['elements'],r['provenanceCoverage'])
 
     def test_journey_and_independent_requirement_projection_retains_context(self):

@@ -1,0 +1,601 @@
+{
+  "added": [
+    {
+      "identifier": "id-a321fb66fd8b40e4bd262f1676913b26",
+      "sourceCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "targetCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "archimateType": "Assignment",
+      "name": "Performs this logical responsibility in each Mnemosyne instance",
+      "sourceSelector": "§§2,3.2"
+    },
+    {
+      "identifier": "id-42b28b1f43fc4080b1599f0c4bdde4f8",
+      "sourceCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "Association",
+      "name": "Architectural Home in Mnemosyne",
+      "sourceSelector": "§§2,3.2"
+    },
+    {
+      "identifier": "id-63057abff028405981074dc1ccd58885",
+      "sourceCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "targetCanonicalId": "ef864d509efa44a7a4160db2ca821163",
+      "archimateType": "Assignment",
+      "name": "Performs this logical responsibility in each Mnemosyne instance",
+      "sourceSelector": "§§2,3.2"
+    },
+    {
+      "identifier": "id-e4f31723f03945c197753c70e1d00733",
+      "sourceCanonicalId": "ef864d509efa44a7a4160db2ca821163",
+      "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "Association",
+      "name": "Architectural Home in Mnemosyne",
+      "sourceSelector": "§§2,3.2"
+    },
+    {
+      "identifier": "id-59ae473f20df4da0bd77beadfb3e70e0",
+      "sourceCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "targetCanonicalId": "75349ac7a0d44dec955b77bb5ecf1151",
+      "archimateType": "Assignment",
+      "name": "Performs this logical responsibility in each Mnemosyne instance",
+      "sourceSelector": "§§2,3.2"
+    },
+    {
+      "identifier": "id-cfcd18d2d739433b95046ea4f131dd5f",
+      "sourceCanonicalId": "75349ac7a0d44dec955b77bb5ecf1151",
+      "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "Association",
+      "name": "Architectural Home in Mnemosyne",
+      "sourceSelector": "§§2,3.2"
+    },
+    {
+      "identifier": "id-cdeacd0cf21f44ef9cb392b4e66a851d",
+      "sourceCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "targetCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "archimateType": "Assignment",
+      "name": "Performs this logical responsibility in each Mnemosyne instance",
+      "sourceSelector": "§§2,3.2"
+    },
+    {
+      "identifier": "id-b4b215252e564e5c9f3e89d242fe6b7f",
+      "sourceCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "Association",
+      "name": "Architectural Home in Mnemosyne",
+      "sourceSelector": "§§2,3.2"
+    },
+    {
+      "identifier": "id-b6973bdaa9e84f41a4f1f69c7bc2bfba",
+      "sourceCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "targetCanonicalId": "000f7241f12f411195b39fe8b8386e05",
+      "archimateType": "Assignment",
+      "name": "Performs this logical responsibility in each Mnemosyne instance",
+      "sourceSelector": "§§2,3.2"
+    },
+    {
+      "identifier": "id-01027a8688894fb58016806109320463",
+      "sourceCanonicalId": "000f7241f12f411195b39fe8b8386e05",
+      "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "Association",
+      "name": "Architectural Home in Mnemosyne",
+      "sourceSelector": "§§2,3.2"
+    },
+    {
+      "identifier": "id-bdbd5c1fbbaf474f84f3748a684c370d",
+      "sourceCanonicalId": "1af8a56358f7429fabfb57be66542a99",
+      "targetCanonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+      "archimateType": "Assignment",
+      "name": "Performs TopicMask discovery, eligible-instance selection and consumer disposition",
+      "sourceSelector": "§7A"
+    },
+    {
+      "identifier": "id-5c2e1f98f2554d5a9c68ae3a847a3c09",
+      "sourceCanonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+      "targetCanonicalId": "1af8a56358f7429fabfb57be66542a99",
+      "archimateType": "Association",
+      "name": "Architectural Home in Mneme",
+      "sourceSelector": "§7A"
+    },
+    {
+      "identifier": "id-79f41c9b26424e50bf7f294d36af4757",
+      "sourceCanonicalId": "410a938f42964474b7cf5655815dc830",
+      "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "Association",
+      "name": "Architectural Home in Mnemosyne; service is not another tier",
+      "sourceSelector": "§§2,5"
+    },
+    {
+      "identifier": "id-f62b0a587df744ba92a2a4d672d84395",
+      "sourceCanonicalId": "105f6ebe61f74bc6b51938ba550bc1a7",
+      "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "Association",
+      "name": "Architectural Home in Mnemosyne; service is not another tier",
+      "sourceSelector": "§§2,5"
+    },
+    {
+      "identifier": "id-a1627bcf26884cbdbdee074bb97f3bd4",
+      "sourceCanonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+      "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "Association",
+      "name": "Architectural Home in Mnemosyne; service is not another tier",
+      "sourceSelector": "§§2,5"
+    },
+    {
+      "identifier": "id-0be6e1a522874ef18741483b504ce210",
+      "sourceCanonicalId": "c050edfefe8b4d2b8892bc94b2d27a5c",
+      "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "Association",
+      "name": "Architectural Home in Mnemosyne; service is not another tier",
+      "sourceSelector": "§§2,5"
+    },
+    {
+      "identifier": "id-3381d7b16e594f5687c125fb696defc6",
+      "sourceCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "targetCanonicalId": "410a938f42964474b7cf5655815dc830",
+      "archimateType": "Realization",
+      "name": "Participates through the governed boundary contract with the other Mnemosyne tiers",
+      "sourceSelector": "§5.1"
+    },
+    {
+      "identifier": "id-115d9935595c4ef291ed58d7100c1b96",
+      "sourceCanonicalId": "410a938f42964474b7cf5655815dc830",
+      "targetCanonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+      "archimateType": "Serving",
+      "name": "Provides the governed persistence-facing contract to Mneme Store",
+      "sourceSelector": "§§5.1,7A.2"
+    },
+    {
+      "identifier": "id-7698aad11eae481faac5b35ebe57fd85",
+      "sourceCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "targetCanonicalId": "105f6ebe61f74bc6b51938ba550bc1a7",
+      "archimateType": "Realization",
+      "name": "Participates through the governed boundary contract with the other Mnemosyne tiers",
+      "sourceSelector": "§5.1"
+    },
+    {
+      "identifier": "id-6ca42802bada4e7ebd928ffe12ff3d41",
+      "sourceCanonicalId": "105f6ebe61f74bc6b51938ba550bc1a7",
+      "targetCanonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+      "archimateType": "Serving",
+      "name": "Provides the governed persistence-facing contract to Mneme Store",
+      "sourceSelector": "§§5.1,7A.2"
+    },
+    {
+      "identifier": "id-ba5ee30065a7487ca18bfed456b0b96f",
+      "sourceCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "targetCanonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+      "archimateType": "Realization",
+      "name": "Participates through the governed boundary contract with the other Mnemosyne tiers",
+      "sourceSelector": "§5.1"
+    },
+    {
+      "identifier": "id-7cd48c0f4cbb4cb1b594432beda0e6e1",
+      "sourceCanonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+      "targetCanonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+      "archimateType": "Serving",
+      "name": "Provides the governed persistence-facing contract to Mneme Store",
+      "sourceSelector": "§§5.1,7A.2"
+    },
+    {
+      "identifier": "id-fb2ad2212e984399a8e05f7b3905a9b8",
+      "sourceCanonicalId": "ef864d509efa44a7a4160db2ca821163",
+      "targetCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "archimateType": "Serving",
+      "name": "Supplies its bounded responsibility to governed request/return handling",
+      "sourceSelector": "§§2,3.2,5"
+    },
+    {
+      "identifier": "id-c588f17f27f042de8c19b76e88c42c53",
+      "sourceCanonicalId": "75349ac7a0d44dec955b77bb5ecf1151",
+      "targetCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "archimateType": "Serving",
+      "name": "Supplies its bounded responsibility to governed request/return handling",
+      "sourceSelector": "§§2,3.2,5"
+    },
+    {
+      "identifier": "id-8fc21ea3fef34ffcad8d06229c936c77",
+      "sourceCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "targetCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "archimateType": "Serving",
+      "name": "Supplies its bounded responsibility to governed request/return handling",
+      "sourceSelector": "§§2,3.2,5"
+    },
+    {
+      "identifier": "id-6bf22f1d6ac44b84a24e55612b7cf98d",
+      "sourceCanonicalId": "000f7241f12f411195b39fe8b8386e05",
+      "targetCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "archimateType": "Serving",
+      "name": "Supplies delegated native execution and factual verification",
+      "sourceSelector": "§§5.3,6.4–6.6"
+    },
+    {
+      "identifier": "id-64f6802beb9d48c9b860952a89a0df9b",
+      "sourceCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "targetCanonicalId": "c050edfefe8b4d2b8892bc94b2d27a5c",
+      "archimateType": "Realization",
+      "name": "Joint contribution: persistence-service state/workflow control; adapter execution also required",
+      "sourceSelector": "§§2,5.3"
+    },
+    {
+      "identifier": "id-9fea2369c669479297b6cf902346a8b0",
+      "sourceCanonicalId": "000f7241f12f411195b39fe8b8386e05",
+      "targetCanonicalId": "c050edfefe8b4d2b8892bc94b2d27a5c",
+      "archimateType": "Realization",
+      "name": "Joint contribution: native execution/verification; GPF workflow control also required",
+      "sourceSelector": "§§2,5.3"
+    },
+    {
+      "identifier": "id-bf248d8357f24661b383e2043c6b73be",
+      "sourceCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "targetCanonicalId": "000f7241f12f411195b39fe8b8386e05",
+      "archimateType": "Flow",
+      "name": "Delegated operation and workflow correlation; no rigid universal call stack",
+      "sourceSelector": "§6.5–6.6"
+    },
+    {
+      "identifier": "id-de0e630c32c342718a95788015406a8b",
+      "sourceCanonicalId": "000f7241f12f411195b39fe8b8386e05",
+      "targetCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "archimateType": "Flow",
+      "name": "Factual delegated-operation Outcome and correlation",
+      "sourceSelector": "§6.4–6.6"
+    },
+    {
+      "identifier": "id-41e8ee6f62ec45829082613a7e93169e",
+      "sourceCanonicalId": "c050edfefe8b4d2b8892bc94b2d27a5c",
+      "targetCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "archimateType": "Serving",
+      "name": "Supplies jointly realised persistence capability behind the governed boundary",
+      "sourceSelector": "§§2,5"
+    },
+    {
+      "identifier": "id-636cc1fbc93244f19047da37e479a9fb",
+      "sourceCanonicalId": "899d34ec491948b68aad09e507dea6d1",
+      "targetCanonicalId": "ef864d509efa44a7a4160db2ca821163",
+      "archimateType": "Serving",
+      "name": "Provides/enables PDP/PEP functionality for local distributed execution",
+      "sourceSelector": "§§2,5.2,9.1"
+    },
+    {
+      "identifier": "id-33eda1af54214c35b09ccc716756dac8",
+      "sourceCanonicalId": "fefda110e2274884ad58906733606efd",
+      "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "Serving",
+      "name": "Supplies existing authoritative AuditEvent capture capability; persistence does not transfer audit ownership",
+      "sourceSelector": "§9.2"
+    },
+    {
+      "identifier": "id-9fda32184300432cb67737167137da58",
+      "sourceCanonicalId": "171f05d188384cedb7d5c493eeaee519",
+      "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "Serving",
+      "name": "Supplies the existing Dokimasia-provided Provenance participation capability",
+      "sourceSelector": "§§3.3,9.2"
+    },
+    {
+      "identifier": "id-9834a2391afc427394d7b159b5ce899b",
+      "sourceCanonicalId": "307b3440a507403f8bc214d290bffb6a",
+      "targetCanonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+      "archimateType": "Association",
+      "name": "Defines and owns the common logical Outcome and governed Reason models; no runtime store ownership",
+      "sourceSelector": "§§3.3,6.1"
+    },
+    {
+      "identifier": "id-bea28c19b5d548ad82bc72e8e0fb5ef4",
+      "sourceCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "targetCanonicalId": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "archimateType": "Access",
+      "name": "Registers this instance’s IU-type capabilities through established Topics",
+      "sourceSelector": "§7A.2"
+    },
+    {
+      "identifier": "id-50256cc4c9ec4b58baf48875ea470754",
+      "sourceCanonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+      "targetCanonicalId": "bb489157a6bf48be926c5a601bb0a6c3",
+      "archimateType": "Access",
+      "name": "Matches registered IU types using the existing shared TopicMask primitive",
+      "sourceSelector": "§7A.2"
+    },
+    {
+      "identifier": "id-fcd75cb93e0c431098393ce8c481c90c",
+      "sourceCanonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+      "targetCanonicalId": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "archimateType": "Access",
+      "name": "Discovers registered IU-type capability declarations; matching is not authorisation",
+      "sourceSelector": "§7A.2"
+    },
+    {
+      "identifier": "id-d2f028c16d7440dfb89fe3fd9d6f2451",
+      "sourceCanonicalId": "ef864d509efa44a7a4160db2ca821163",
+      "targetCanonicalId": "c05b7e37278141488ecc90b9a9ef96eb",
+      "archimateType": "Access",
+      "name": "Uses separate IU governance/security and coordinate context without conflating them",
+      "sourceSelector": "§§4,9.1"
+    },
+    {
+      "identifier": "id-6b54124bdeed4b4a9951cc2b32f521c4",
+      "sourceCanonicalId": "75349ac7a0d44dec955b77bb5ecf1151",
+      "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "archimateType": "Access",
+      "name": "Decomposes/reconstitutes the same atomic IU with exactly one governed representation",
+      "sourceSelector": "§4"
+    },
+    {
+      "identifier": "id-8375f704236141deb56b256f44359f99",
+      "sourceCanonicalId": "75349ac7a0d44dec955b77bb5ecf1151",
+      "targetCanonicalId": "b9891b88150840ada3daefdec6f26c35",
+      "archimateType": "Access",
+      "name": "Preserves governed Content and representation structure during persistence mapping",
+      "sourceSelector": "§4"
+    },
+    {
+      "identifier": "id-77931e2749a24bae859b5c6d8436b304",
+      "sourceCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "targetCanonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+      "archimateType": "Access",
+      "name": "Reports knowledge of the specified persistence workflow operation/stage",
+      "sourceSelector": "§6"
+    },
+    {
+      "identifier": "id-16bf8b46e0434a4abbb6a1d40aea8b66",
+      "sourceCanonicalId": "000f7241f12f411195b39fe8b8386e05",
+      "targetCanonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+      "archimateType": "Access",
+      "name": "Reports actual known delegated native-operation result after appropriate verification",
+      "sourceSelector": "§6.4"
+    },
+    {
+      "identifier": "id-777f9fe6326d4629bb553fd75bc42029",
+      "sourceCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "targetCanonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+      "archimateType": "Access",
+      "name": "Conveys factual persistence Outcome without taking Mneme consumer disposition",
+      "sourceSelector": "§6.7"
+    },
+    {
+      "identifier": "id-90d191cbec7748b3946c41aecfdfee24",
+      "sourceCanonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+      "targetCanonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+      "archimateType": "Access",
+      "name": "Consumes factual Outcome and makes Mneme’s separate consumer-level disposition",
+      "sourceSelector": "§6.7"
+    },
+    {
+      "identifier": "id-dd3086fcaab5407492ecba90a72fdf6a",
+      "sourceCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "targetCanonicalId": "645d01876b7d41c4ab3c0046110676f9",
+      "archimateType": "Realization",
+      "name": "Architectural contribution to evidenced durable acceptance; adapter verification also required; architectural allocation, implementation unverified",
+      "sourceSelector": "§§1.2,6"
+    },
+    {
+      "identifier": "id-becc71579ce64b0187b0a7f237dbfd56",
+      "sourceCanonicalId": "000f7241f12f411195b39fe8b8386e05",
+      "targetCanonicalId": "645d01876b7d41c4ab3c0046110676f9",
+      "archimateType": "Realization",
+      "name": "Native-operation verification contribution to durable acknowledgement evidence; architectural allocation, implementation unverified",
+      "sourceSelector": "§6.4"
+    },
+    {
+      "identifier": "id-4c724198c7454b40ae347d8886a1cd66",
+      "sourceCanonicalId": "75349ac7a0d44dec955b77bb5ecf1151",
+      "targetCanonicalId": "c20f304cf9294bb892bc853d497bf21c",
+      "archimateType": "Realization",
+      "name": "Preserves governed identity/version independently of provider encoding; architectural allocation, implementation unverified",
+      "sourceSelector": "§§3.1,4"
+    },
+    {
+      "identifier": "id-610a94be01c7475bb8251d7812c83754",
+      "sourceCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "targetCanonicalId": "94cc6885ef9d4c57a0fcf8d2242ff486",
+      "archimateType": "Realization",
+      "name": "Partial persistence contribution to ordinary recoverability; no catastrophic orchestration; architectural allocation, implementation unverified",
+      "sourceSelector": "§§3.1,8"
+    },
+    {
+      "identifier": "id-478a3a5926254c48985f4f82feb794ef",
+      "sourceCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "targetCanonicalId": "2ce77199a5564a37a4ee98f8a9d4385d",
+      "archimateType": "Realization",
+      "name": "Preserves uncertainty at the actual persistence reporting stage; architectural allocation, implementation unverified",
+      "sourceSelector": "§6"
+    },
+    {
+      "identifier": "id-694a973b375a4e2bb34bddcce0117c2f",
+      "sourceCanonicalId": "410a938f42964474b7cf5655815dc830",
+      "targetCanonicalId": "9ac82bbbf21c4feba916e1e46d5fd2de",
+      "archimateType": "Realization",
+      "name": "Authoritative acquisition contribution within applicable provider capability and availability; architectural allocation, implementation unverified",
+      "sourceSelector": "§§3.1,5.1"
+    },
+    {
+      "identifier": "id-b6b6d301c99d4e8ab1b0b549ef9512f2",
+      "sourceCanonicalId": "410a938f42964474b7cf5655815dc830",
+      "targetCanonicalId": "d4f5198624644e69b2c9b3cbc5882ea7",
+      "archimateType": "Realization",
+      "name": "Partial authoritative retrieval contribution; retains governing version scope; architectural allocation, implementation unverified",
+      "sourceSelector": "§§3.4,5.1"
+    },
+    {
+      "identifier": "id-f4a903efd7414c6aa3b739563d7a6db9",
+      "sourceCanonicalId": "ef864d509efa44a7a4160db2ca821163",
+      "targetCanonicalId": "b0ef1dffdd4c4026b7d221d9b19c9628",
+      "archimateType": "Realization",
+      "name": "Persistence-context enforcement contribution using locally executed Themis functions; architectural allocation, implementation unverified",
+      "sourceSelector": "§9.1"
+    },
+    {
+      "identifier": "id-942d9969f6424153b5fb2f334e1afab3",
+      "sourceCanonicalId": "1af8a56358f7429fabfb57be66542a99",
+      "targetCanonicalId": "e1e1e21c2e4549269179535cba70cf57",
+      "archimateType": "Realization",
+      "name": "Individual IU concurrency remains Mneme responsibility; architectural allocation, implementation unverified",
+      "sourceSelector": "§7A"
+    },
+    {
+      "identifier": "id-8ca148c3896945698cea879f88be4e99",
+      "sourceCanonicalId": "0412a2084f0145babc4f022c71fea65f",
+      "targetCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "archimateType": "Association",
+      "name": "Scoped applicability; existing native classification and definition preserved; no satisfaction claim",
+      "sourceSelector": "§§1.3,3.4"
+    },
+    {
+      "identifier": "id-af155ffedfd84d8ca27fb7619b1590f5",
+      "sourceCanonicalId": "ef8abbaec37e4890ad78b9f263e67906",
+      "targetCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "archimateType": "Association",
+      "name": "Scoped applicability; existing native classification and definition preserved; no satisfaction claim",
+      "sourceSelector": "§6"
+    },
+    {
+      "identifier": "id-770a117596dd46228f84385a687c5bc2",
+      "sourceCanonicalId": "fc732b64fc564127b73174e28d9ccce8",
+      "targetCanonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+      "archimateType": "Association",
+      "name": "Scoped applicability; existing native classification and definition preserved; no satisfaction claim",
+      "sourceSelector": "§6"
+    },
+    {
+      "identifier": "id-dd503a9a338d46429c2d013a959d48fb",
+      "sourceCanonicalId": "4522bf0326334607a4a6177c819e61b6",
+      "targetCanonicalId": "000f7241f12f411195b39fe8b8386e05",
+      "archimateType": "Association",
+      "name": "Scoped applicability; existing native classification and definition preserved; no satisfaction claim",
+      "sourceSelector": "§§8,9"
+    },
+    {
+      "identifier": "id-d7444cd5c63f412290009b01a895070a",
+      "sourceCanonicalId": "4b540b55db1b4c1197482d8f29d70e45",
+      "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "archimateType": "Association",
+      "name": "Scoped applicability; existing native classification and definition preserved; no satisfaction claim",
+      "sourceSelector": "§§8,9"
+    },
+    {
+      "identifier": "id-0ba15914635b40bcb3d6845dd7502400",
+      "sourceCanonicalId": "eabd38371b6940289d9a4bf8e9773942",
+      "targetCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "archimateType": "Association",
+      "name": "Scoped applicability; existing native classification and definition preserved; no satisfaction claim",
+      "sourceSelector": "§§3.4,8"
+    },
+    {
+      "identifier": "id-2b0edf70e93c4729b7441f87ba07e6d5",
+      "sourceCanonicalId": "0d13da9390a3438ca887a4293bb034b9",
+      "targetCanonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+      "archimateType": "Association",
+      "name": "Scoped applicability; existing native classification and definition preserved; no satisfaction claim",
+      "sourceSelector": "§§7A,8"
+    },
+    {
+      "identifier": "id-68e2d82382c54b5592b83f341f3fd5b3",
+      "sourceCanonicalId": "7f40b2f4947845d287564b43f812b6c8",
+      "targetCanonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+      "archimateType": "Association",
+      "name": "Scoped applicability; existing native classification and definition preserved; no satisfaction claim",
+      "sourceSelector": "§§3.4,7A"
+    }
+  ],
+  "reusedUnchanged": [
+    {
+      "identifier": "id-3aa3156cd4b94050935b5f950ebaf834",
+      "sourceCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "type": "Access",
+      "scope": "existing assertion retained unchanged"
+    },
+    {
+      "identifier": "id-ac0b3c266ef24f09b582a1a1b6499b0c",
+      "sourceCanonicalId": "1af8a56358f7429fabfb57be66542a99",
+      "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "type": "Access",
+      "scope": "existing assertion retained unchanged"
+    },
+    {
+      "identifier": "id-f8b0d09b13764f7298735519bb998d26",
+      "sourceCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "targetCanonicalId": "e282811b51274649816566aac7edeb8a",
+      "type": "Access",
+      "scope": "existing assertion retained unchanged"
+    },
+    {
+      "identifier": "id-86502907d244442aad6470652bc3fd19",
+      "sourceCanonicalId": "d739c75dffe2453081735710b285f03b",
+      "targetCanonicalId": "e282811b51274649816566aac7edeb8a",
+      "type": "Access",
+      "scope": "existing assertion retained unchanged"
+    },
+    {
+      "identifier": "id-c824642c7cfa4ab5871c3bf1ac32e55a",
+      "sourceCanonicalId": "307b3440a507403f8bc214d290bffb6a",
+      "targetCanonicalId": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "type": "Association",
+      "scope": "existing assertion retained unchanged"
+    },
+    {
+      "identifier": "id-f2e2bb714b034785b0f5abb931f1aeed",
+      "sourceCanonicalId": "307b3440a507403f8bc214d290bffb6a",
+      "targetCanonicalId": "bb489157a6bf48be926c5a601bb0a6c3",
+      "type": "Association",
+      "scope": "existing assertion retained unchanged"
+    }
+  ],
+  "featureContributions": [
+    {
+      "sourceCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "featureCanonicalId": "645d01876b7d41c4ab3c0046110676f9",
+      "meaning": "Architectural contribution to evidenced durable acceptance; adapter verification also required",
+      "sourceSelector": "§§1.2,6"
+    },
+    {
+      "sourceCanonicalId": "000f7241f12f411195b39fe8b8386e05",
+      "featureCanonicalId": "645d01876b7d41c4ab3c0046110676f9",
+      "meaning": "Native-operation verification contribution to durable acknowledgement evidence",
+      "sourceSelector": "§6.4"
+    },
+    {
+      "sourceCanonicalId": "75349ac7a0d44dec955b77bb5ecf1151",
+      "featureCanonicalId": "c20f304cf9294bb892bc853d497bf21c",
+      "meaning": "Preserves governed identity/version independently of provider encoding",
+      "sourceSelector": "§§3.1,4"
+    },
+    {
+      "sourceCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "featureCanonicalId": "94cc6885ef9d4c57a0fcf8d2242ff486",
+      "meaning": "Partial persistence contribution to ordinary recoverability; no catastrophic orchestration",
+      "sourceSelector": "§§3.1,8"
+    },
+    {
+      "sourceCanonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "featureCanonicalId": "2ce77199a5564a37a4ee98f8a9d4385d",
+      "meaning": "Preserves uncertainty at the actual persistence reporting stage",
+      "sourceSelector": "§6"
+    },
+    {
+      "sourceCanonicalId": "410a938f42964474b7cf5655815dc830",
+      "featureCanonicalId": "9ac82bbbf21c4feba916e1e46d5fd2de",
+      "meaning": "Authoritative acquisition contribution within applicable provider capability and availability",
+      "sourceSelector": "§§3.1,5.1"
+    },
+    {
+      "sourceCanonicalId": "410a938f42964474b7cf5655815dc830",
+      "featureCanonicalId": "d4f5198624644e69b2c9b3cbc5882ea7",
+      "meaning": "Partial authoritative retrieval contribution; retains governing version scope",
+      "sourceSelector": "§§3.4,5.1"
+    },
+    {
+      "sourceCanonicalId": "ef864d509efa44a7a4160db2ca821163",
+      "featureCanonicalId": "b0ef1dffdd4c4026b7d221d9b19c9628",
+      "meaning": "Persistence-context enforcement contribution using locally executed Themis functions",
+      "sourceSelector": "§9.1"
+    },
+    {
+      "sourceCanonicalId": "1af8a56358f7429fabfb57be66542a99",
+      "featureCanonicalId": "e1e1e21c2e4549269179535cba70cf57",
+      "meaning": "Individual IU concurrency remains Mneme responsibility",
+      "sourceSelector": "§7A"
+    }
+  ],
+  "associationRationale": "Home uses governed directed Association. Model-definition ownership and Motivation applicability have no stronger established native ownership/satisfaction meaning; runtime use is Access, assigned behaviour is Assignment, provided functionality is Serving, service/Feature contributions are Realization, and actual exchanges are Flow. No generic Association substitutes for an established stronger relationship."
+}

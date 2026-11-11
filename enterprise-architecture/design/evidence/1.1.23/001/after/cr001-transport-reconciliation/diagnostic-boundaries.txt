@@ -1,0 +1,10 @@
+test_language_is_a_separately_visible_raw_dimension (__main__.DiagnosticBoundaries.test_language_is_a_separately_visible_raw_dimension) ... ok
+test_nonredundant_labels_and_folder_metadata_are_not_erased_by_signature (__main__.DiagnosticBoundaries.test_nonredundant_labels_and_folder_metadata_are_not_erased_by_signature) ... ok
+test_relationship_type_direction_endpoint_and_access_changes_remain_detectable (__main__.DiagnosticBoundaries.test_relationship_type_direction_endpoint_and_access_changes_remain_detectable) ... ok
+test_text_properties_multiplicity_and_whitespace_are_preserved (__main__.DiagnosticBoundaries.test_text_properties_multiplicity_and_whitespace_are_preserved) ... ok
+test_view_geometry_styles_bendpoints_and_order_are_not_implicitly_unordered (__main__.DiagnosticBoundaries.test_view_geometry_styles_bendpoints_and_order_are_not_implicitly_unordered) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.023s
+
+OK

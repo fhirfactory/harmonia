@@ -1,0 +1,18 @@
+{
+  "outcome": "PASS",
+  "reviewLinkDocuments": 6,
+  "errors": [],
+  "preservedPinnedFiles": 6985,
+  "changedPinnedFiles": [],
+  "gitDiffCheck": "PASS",
+  "ignoredIterationEvidence": [],
+  "formalEvidenceLayout": "UNRESOLVED: two unavailable original Task events/prefixes; both Report events/prefixes pass",
+  "strictTransport": "FAIL unchanged",
+  "CR001": "On-Hold / Unresolved; awaiting Solution Architect",
+  "humanNativeTreeAndHtmlReaderReview": "Accepted by explicit follow-up Task; whole-HCRL/result confirmation remains separate",
+  "newIterationOrCompletedRegister": false,
+  "releaseAuthority": {
+    "version": "1.1.22",
+    "previous_version": "1.1.21"
+  }
+}

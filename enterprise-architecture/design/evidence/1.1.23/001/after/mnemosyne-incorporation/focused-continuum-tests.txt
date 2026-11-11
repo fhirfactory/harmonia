@@ -1,0 +1,13 @@
+test_population_and_provenance (test_continuum.ContinuumTests.test_population_and_provenance) ... ok
+test_identity_type_location_and_standing_fail_closed (test_continuum.ContinuumTests.test_identity_type_location_and_standing_fail_closed) ... ok
+test_duplicate_binding_and_withdrawn_id (test_continuum.ContinuumTests.test_duplicate_binding_and_withdrawn_id) ... ok
+test_native_information_naming_is_checked_independently (test_continuum.ContinuumTests.test_native_information_naming_is_checked_independently) ... ok
+test_containment_cycle_is_rejected (test_continuum.ContinuumTests.test_containment_cycle_is_rejected) ... ok
+test_native_endpoints_reject_schema_valid_but_illegal_relationship (test_continuum.ContinuumTests.test_native_endpoints_reject_schema_valid_but_illegal_relationship) ... ok
+test_projection_and_publication_are_deterministic_and_allocate_nothing (test_continuum.ContinuumTests.test_projection_and_publication_are_deterministic_and_allocate_nothing) ... ok
+test_workbench_exact_baseline_and_complete_dispositions (test_continuum.ContinuumTests.test_workbench_exact_baseline_and_complete_dispositions) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 290.404s
+
+OK

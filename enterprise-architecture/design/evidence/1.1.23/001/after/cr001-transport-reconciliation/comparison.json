@@ -1,0 +1,534 @@
+{
+  "status": "PASS",
+  "scope": "Bounded retained evidence comparison; no new transport run or predecessor investigation",
+  "inputs": {
+    "predecessorOriginal": {
+      "path": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/reader/Harmonia-Architecture.xml",
+      "sha256": "8ef02598667b643850efca6bd3a8f3f8438f08dce1c764c190018de3a410e312",
+      "bytes": 48533783
+    },
+    "predecessorReturned": {
+      "path": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/archi-transport/returned-model.xml.gz",
+      "sha256": "9c5aa27f6fcd3575372432130f389d6134eeee885888f5c565164ec65b3b98b5",
+      "bytes": 4917570,
+      "uncompressedSha256": "d79a958a14639288c23bcf2de9653543712a23c6333c71cb1ec862ff904ead62"
+    },
+    "predecessorNative": {
+      "path": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/archi-transport/native-model.archimate.gz",
+      "sha256": "74a4a2cacb431dcced6f29ecf0c7b0647ef9d9309e2288dc25b9e84385b7c177",
+      "bytes": 4531483,
+      "uncompressedSha256": "c0a842893b015ad46bab3d9ea431b2519c37136ec4739caf2ee9bbb2b58a8dac"
+    },
+    "predecessorRaw": {
+      "path": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/archi-transport/raw-comparison.json.gz",
+      "sha256": "f1099886eb714adbd0bd4bf91789968861177c769ce2a25a4a8b85b0bbe388ca",
+      "bytes": 3807448,
+      "uncompressedSha256": "24de4760adf7b68baffe0b9d1d78b6c54f3a41ea1e6351292afa5e8ae7a6300c"
+    },
+    "predecessorAnalysis": {
+      "path": "enterprise-architecture/design/evidence/1.1.22/001/after/transport-investigation/candidate-v2-analysis/analysis.json",
+      "sha256": "5692d793b1dc3527836698401b66e6c8aa932a5c2c42f37ec65758a9bf7e9ef7",
+      "bytes": 1968771
+    },
+    "existingDiagnostic": {
+      "path": "enterprise-architecture/design/evidence/1.1.22/001/after/transport-investigation/analyse-transport.py",
+      "sha256": "454765cb0b228427bf8d1352b239e2c6c27cee77b9eed94cd79b78028a9a7d82",
+      "bytes": 13458
+    },
+    "predecessorAcceptedHcrl": {
+      "path": "enterprise-architecture/design/register/1.1.22/hcrl-1.1.22-001.complete.md",
+      "sha256": "251df603fd63f74b46cdf3c7fafe1a64fe15afe6923932cf65aa3b74a7bde175",
+      "bytes": 32232
+    },
+    "candidateOriginal": {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/reader/Harmonia-Architecture.xml",
+      "sha256": "eb4c340c25a2d8ee114053a445056b1afaf4b000e38b15c2f0259384e7f5f6a9",
+      "bytes": 48629401
+    },
+    "candidateReturned": {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/archi-transport/returned-model.xml.gz",
+      "sha256": "ec4222589a3bbd93ad4e879fdadcff9952c6286de3a78f5744551f875b3750bf",
+      "bytes": 4936172,
+      "uncompressedSha256": "617f10f2fa8bcd87bfbab2a0858b60ba72a0a3ad0b07c8530f99f731bdea69cb"
+    },
+    "candidateNative": {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/archi-transport/native-model.archimate.gz",
+      "sha256": "ae8d63f22255b2799a6d4c54c0a08e8398693195fc758d75c7f4807389043ec2",
+      "bytes": 4546695,
+      "uncompressedSha256": "5e222d5f64775485f5f446bdb96b543bd237891903064744bc1587d179e6b07f"
+    },
+    "candidateRaw": {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/raw-transport-comparison.json.gz",
+      "sha256": "f2ddb40248cfca0bca57a0a7b5585a776eda07b8e5321742fbdd0157609beeec",
+      "bytes": 3817008,
+      "uncompressedSha256": "c786c39ca6c664f9e8bd423b1f7674d396adcaaf9ba572c42b6f7189b8516c82"
+    },
+    "candidateStrictResult": {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/strict-transport-verification.json",
+      "sha256": "2ecc4f566443c8056a1a48f1ef8a3591ad5a8d8dd4bb63d7b57a84f8323e38fa",
+      "bytes": 512
+    }
+  },
+  "checkedInputIssues": "None in all four securely parsed/offline-validated Exchange inputs",
+  "oldRelationships": 9314,
+  "candidateRelationships": 9376,
+  "newRelationships": 62,
+  "missingExistingOriginalRelationships": [],
+  "missingExistingReturnedRelationships": [],
+  "existingOriginalRelationshipDifferences": [],
+  "existingReturnedRelationshipDifferences": [],
+  "newRelationshipIDs": [
+    "id-01027a8688894fb58016806109320463",
+    "id-0ba15914635b40bcb3d6845dd7502400",
+    "id-0be6e1a522874ef18741483b504ce210",
+    "id-115d9935595c4ef291ed58d7100c1b96",
+    "id-16bf8b46e0434a4abbb6a1d40aea8b66",
+    "id-2b0edf70e93c4729b7441f87ba07e6d5",
+    "id-3381d7b16e594f5687c125fb696defc6",
+    "id-33eda1af54214c35b09ccc716756dac8",
+    "id-41e8ee6f62ec45829082613a7e93169e",
+    "id-42b28b1f43fc4080b1599f0c4bdde4f8",
+    "id-478a3a5926254c48985f4f82feb794ef",
+    "id-4c724198c7454b40ae347d8886a1cd66",
+    "id-50256cc4c9ec4b58baf48875ea470754",
+    "id-59ae473f20df4da0bd77beadfb3e70e0",
+    "id-5c2e1f98f2554d5a9c68ae3a847a3c09",
+    "id-610a94be01c7475bb8251d7812c83754",
+    "id-63057abff028405981074dc1ccd58885",
+    "id-636cc1fbc93244f19047da37e479a9fb",
+    "id-64f6802beb9d48c9b860952a89a0df9b",
+    "id-68e2d82382c54b5592b83f341f3fd5b3",
+    "id-694a973b375a4e2bb34bddcce0117c2f",
+    "id-6b54124bdeed4b4a9951cc2b32f521c4",
+    "id-6bf22f1d6ac44b84a24e55612b7cf98d",
+    "id-6ca42802bada4e7ebd928ffe12ff3d41",
+    "id-7698aad11eae481faac5b35ebe57fd85",
+    "id-770a117596dd46228f84385a687c5bc2",
+    "id-777f9fe6326d4629bb553fd75bc42029",
+    "id-77931e2749a24bae859b5c6d8436b304",
+    "id-79f41c9b26424e50bf7f294d36af4757",
+    "id-7cd48c0f4cbb4cb1b594432beda0e6e1",
+    "id-8375f704236141deb56b256f44359f99",
+    "id-8ca148c3896945698cea879f88be4e99",
+    "id-8fc21ea3fef34ffcad8d06229c936c77",
+    "id-90d191cbec7748b3946c41aecfdfee24",
+    "id-942d9969f6424153b5fb2f334e1afab3",
+    "id-9834a2391afc427394d7b159b5ce899b",
+    "id-9fda32184300432cb67737167137da58",
+    "id-9fea2369c669479297b6cf902346a8b0",
+    "id-a1627bcf26884cbdbdee074bb97f3bd4",
+    "id-a321fb66fd8b40e4bd262f1676913b26",
+    "id-af155ffedfd84d8ca27fb7619b1590f5",
+    "id-b4b215252e564e5c9f3e89d242fe6b7f",
+    "id-b6973bdaa9e84f41a4f1f69c7bc2bfba",
+    "id-b6b6d301c99d4e8ab1b0b549ef9512f2",
+    "id-ba5ee30065a7487ca18bfed456b0b96f",
+    "id-bdbd5c1fbbaf474f84f3748a684c370d",
+    "id-bea28c19b5d548ad82bc72e8e0fb5ef4",
+    "id-becc71579ce64b0187b0a7f237dbfd56",
+    "id-bf248d8357f24661b383e2043c6b73be",
+    "id-c588f17f27f042de8c19b76e88c42c53",
+    "id-cdeacd0cf21f44ef9cb392b4e66a851d",
+    "id-cfcd18d2d739433b95046ea4f131dd5f",
+    "id-d2f028c16d7440dfb89fe3fd9d6f2451",
+    "id-d7444cd5c63f412290009b01a895070a",
+    "id-dd3086fcaab5407492ecba90a72fdf6a",
+    "id-dd503a9a338d46429c2d013a959d48fb",
+    "id-de0e630c32c342718a95788015406a8b",
+    "id-e4f31723f03945c197753c70e1d00733",
+    "id-f4a903efd7414c6aa3b739563d7a6db9",
+    "id-f62b0a587df744ba92a2a4d672d84395",
+    "id-fb2ad2212e984399a8e05f7b3905a9b8",
+    "id-fcd75cb93e0c431098393ce8c481c90c"
+  ],
+  "newKeyResolvedFieldOrOrderDifferences": [],
+  "newRelationshipMissingAfter": [],
+  "rawFindingsWithinNewRelationshipRecords": [],
+  "newElementIDs": [
+    "id-0963cd3209e25145ac6bd2cc12d38577",
+    "id-47d58cb363a25dddafeb3f444eecfca6",
+    "id-4e98d072432d55f9accf552cec1235ad",
+    "id-548e72ab6ead52c5b4897208d62320f2",
+    "id-572429fd8c905b8cb3a73cbc58351c70",
+    "id-61834e375e4753cc9f6c95bae8b3cd1b",
+    "id-9131fe3f63be560c982d45b26e304ec4",
+    "id-9570096e088d5171866eff68d6b7afdb",
+    "id-a71c8e65e5d55b7188313d6b7b40ada5",
+    "id-e4f0c48dc7125a5a90d70c52af02ecd4",
+    "id-f55007386d9157cab9a957d8a45ada41"
+  ],
+  "languageAdditionsOnNewElements": 110,
+  "allPropertyDefinitionsCrossReleaseEqual": {
+    "Original": true,
+    "Returned": true
+  },
+  "allOriginalViewsCrossReleaseEqual": true,
+  "allReturnedViewsCrossReleaseEqual": true,
+  "originalViewDifferences": [],
+  "returnedViewDifferences": [],
+  "exactViewDiagnosticRecordsCrossReleaseEqual": {
+    "connectionDefaultStyleAdditions": true,
+    "defaultStyleExceptions": true,
+    "nativeConnectionAttributesForAddedStyles": true,
+    "connectionSequenceChanges": true,
+    "otherViewDifferences": true
+  },
+  "viewCount": 1304,
+  "visualNodes": 4599,
+  "visualConnections": 2042,
+  "newPatternClasses": [],
+  "patternCounts": [
+    {
+      "scope": "elements",
+      "pattern": "absent-to-en-language-annotation",
+      "rawClassification": "SEMANTIC DIFFERENCE",
+      "predecessor": 99680,
+      "candidate": 99790,
+      "delta": 110
+    },
+    {
+      "scope": "elements",
+      "pattern": "unordered-keyed-collection-order",
+      "rawClassification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "predecessor": 4409,
+      "candidate": 4409,
+      "delta": 0
+    },
+    {
+      "scope": "navigation",
+      "pattern": "organization-item-identifier-omitted",
+      "rawClassification": "INFORMATION LOSS",
+      "predecessor": 2537,
+      "candidate": 2553,
+      "delta": 16
+    },
+    {
+      "scope": "navigation",
+      "pattern": "organization-label-removal-child-list",
+      "rawClassification": "UNEXPLAINED DIFFERENCE",
+      "predecessor": 15860,
+      "candidate": 15933,
+      "delta": 73
+    },
+    {
+      "scope": "navigation",
+      "pattern": "organization-reference-label-omitted",
+      "rawClassification": "INFORMATION LOSS",
+      "predecessor": 15860,
+      "candidate": 15933,
+      "delta": 73
+    },
+    {
+      "scope": "other",
+      "pattern": "property-definition-rekey",
+      "rawClassification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "predecessor": 69,
+      "candidate": 69,
+      "delta": 0
+    },
+    {
+      "scope": "other",
+      "pattern": "unordered-keyed-collection-order",
+      "rawClassification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "predecessor": 3,
+      "candidate": 3,
+      "delta": 0
+    },
+    {
+      "scope": "relationships",
+      "pattern": "absent-to-en-language-annotation",
+      "rawClassification": "SEMANTIC DIFFERENCE",
+      "predecessor": 12228,
+      "candidate": 12228,
+      "delta": 0
+    },
+    {
+      "scope": "relationships",
+      "pattern": "unordered-keyed-collection-order",
+      "rawClassification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "predecessor": 212,
+      "candidate": 212,
+      "delta": 0
+    },
+    {
+      "scope": "views",
+      "pattern": "connection-default-style-added",
+      "rawClassification": "UNEXPLAINED DIFFERENCE",
+      "predecessor": 238,
+      "candidate": 238,
+      "delta": 0
+    },
+    {
+      "scope": "views",
+      "pattern": "connection-style-addition-child-list",
+      "rawClassification": "UNEXPLAINED DIFFERENCE",
+      "predecessor": 238,
+      "candidate": 238,
+      "delta": 0
+    },
+    {
+      "scope": "views",
+      "pattern": "view-connection-sequence-changed",
+      "rawClassification": "UNEXPLAINED DIFFERENCE",
+      "predecessor": 15,
+      "candidate": 15,
+      "delta": 0
+    }
+  ],
+  "predecessorUnexplainedPatterns": 0,
+  "candidateUnexplainedPatterns": 0,
+  "rawFindingCounts": {
+    "predecessor": 151349,
+    "candidate": 151621,
+    "delta": 272
+  },
+  "rawClassifications": {
+    "predecessor": {
+      "SEMANTICALLY EQUIVALENT NORMALISATION": 4693,
+      "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+      "INFORMATION LOSS": 18397,
+      "SEMANTIC DIFFERENCE": 111908,
+      "UNEXPLAINED DIFFERENCE": 16351
+    },
+    "candidate": {
+      "SEMANTICALLY EQUIVALENT NORMALISATION": 4693,
+      "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+      "INFORMATION LOSS": 18486,
+      "SEMANTIC DIFFERENCE": 112018,
+      "UNEXPLAINED DIFFERENCE": 16424
+    }
+  },
+  "languageValuesByInput": {
+    "predecessorOriginal": [
+      "en"
+    ],
+    "predecessorReturned": [
+      "en"
+    ],
+    "candidateOriginal": [
+      "en"
+    ],
+    "candidateReturned": [
+      "en"
+    ]
+  },
+  "noGraphTextValueDifferences": true,
+  "navigationAfterSeparateOmissionAccountingEqual": true,
+  "navigationExceptions": [],
+  "generatedFolderIDsOmitted": {
+    "predecessor": 2537,
+    "candidate": 2553,
+    "omittedWithinViews": 0,
+    "missingPriorOmissions": [],
+    "changedPriorOmissionRecords": [],
+    "addedSourceCatalogueFolderRecords": [
+      {
+        "identifier": "catalogue-source-000f7241f12f411195b39fe8b8386e05",
+        "label": [
+          {
+            "text": "Persistence Adapter [000f7241f12f411195b39fe8b8386e05]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-0d13da9390a3438ca887a4293bb034b9",
+        "label": [
+          {
+            "text": "[AssuranceRequirement] Single-Machine Failure Recovery [0d13da9390a3438ca887a4293bb034b9]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-105f6ebe61f74bc6b51938ba550bc1a7",
+        "label": [
+          {
+            "text": "GovernedWriter [105f6ebe61f74bc6b51938ba550bc1a7]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-22bdac97fe0d48d1844f1e982d03d387",
+        "label": [
+          {
+            "text": "Mneme Adapter / Fa\u00e7ade [22bdac97fe0d48d1844f1e982d03d387]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-410a938f42964474b7cf5655815dc830",
+        "label": [
+          {
+            "text": "GovernedReader [410a938f42964474b7cf5655815dc830]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-4522bf0326334607a4a6177c819e61b6",
+        "label": [
+          {
+            "text": "[Mandate] Encryption at Rest [4522bf0326334607a4a6177c819e61b6]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-4b540b55db1b4c1197482d8f29d70e45",
+        "label": [
+          {
+            "text": "[Mandate] Internal Encryption in Transit [4b540b55db1b4c1197482d8f29d70e45]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-75349ac7a0d44dec955b77bb5ecf1151",
+        "label": [
+          {
+            "text": "InformationUnit Constructor / Disassembler [75349ac7a0d44dec955b77bb5ecf1151]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-7f40b2f4947845d287564b43f812b6c8",
+        "label": [
+          {
+            "text": "DATA-005 \u2014 Concurrency and Version Integrity [7f40b2f4947845d287564b43f812b6c8]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-812fa47cef1442aeb34ec34f263616be",
+        "label": [
+          {
+            "text": "GovernedPersistenceFramework [812fa47cef1442aeb34ec34f263616be]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-9c680d56a6b943da8ff22f3264e19bc7",
+        "label": [
+          {
+            "text": "Mnemosyne Adapter (Store) [9c680d56a6b943da8ff22f3264e19bc7]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-c050edfefe8b4d2b8892bc94b2d27a5c",
+        "label": [
+          {
+            "text": "PersistenceService [c050edfefe8b4d2b8892bc94b2d27a5c]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-dcb31810ae134818adeeba9b27bd2f30",
+        "label": [
+          {
+            "text": "GovernedSearch [dcb31810ae134818adeeba9b27bd2f30]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-eabd38371b6940289d9a4bf8e9773942",
+        "label": [
+          {
+            "text": "[Mandate] Accepted Work Durability [eabd38371b6940289d9a4bf8e9773942]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-ef864d509efa44a7a4160db2ca821163",
+        "label": [
+          {
+            "text": "InformationUnit Controller [ef864d509efa44a7a4160db2ca821163]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-fc732b64fc564127b73174e28d9ccce8",
+        "label": [
+          {
+            "text": "REQ-FND-004: Explicit Indeterminate Outcome [fc732b64fc564127b73174e28d9ccce8]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      }
+    ]
+  },
+  "reconstructedLabels": {
+    "predecessor": {
+      "elements-name": 6546,
+      "relationships-name": 1553,
+      "relationships-identifier-fallback": 7761
+    },
+    "candidate": {
+      "elements-name": 6557,
+      "relationships-name": 1615,
+      "relationships-identifier-fallback": 7761
+    }
+  },
+  "strictTransport": "FAIL retained, not replayed or reclassified",
+  "architecturalAcceptance": "CR-001 On-Hold / Unresolved; Solution Architect adjudication pending",
+  "limitations": "No rendered-pixel/cross-platform proof, no second-pass candidate stability test, no recovery of lost folder IDs, original global sequence or implicit style state."
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PENDING",
+  "branch": "Mneme-and-Mnemosyne-Build",
+  "remote": "origin",
+  "baselineCommit": "fde98cde3c44b4f4b89e7f3a29765e1a44fca515",
+  "release": "1.1.23",
+  "releaseCommit": null,
+  "pushVerified": false,
+  "limits": "Initial receipt before authorised Git transition; no future commit SHA or success asserted."
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "predecessor": "1.1.22",
+  "nextPatch": "1.1.23",
+  "allocationAlreadyPerformed": false,
+  "candidateReproduction": "Exact SHA-256 match",
+  "canonicalElements": 6557,
+  "relationships": 9376,
+  "allPlannedPublicationDestinationsAbsent": 19,
+  "decisionTableIds": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "duplicateDr3AtEntry": false,
+  "protectedAcceptedFilesUnchanged": 311
+}

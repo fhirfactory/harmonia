@@ -38041,6 +38041,11 @@
                   "canonicalId": "bb489157a6bf48be926c5a601bb0a6c3",
                   "kind": "element",
                   "basis": "Explicit authorised creation placement"
+                },
+                {
+                  "canonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+                  "kind": "element",
+                  "basis": "Explicit authorised creation placement"
                 }
               ]
             },
@@ -38496,6 +38501,11 @@
                       "canonicalId": "a6580e0b9f0f40c9a33d731d20110057",
                       "kind": "element",
                       "basis": "Existing canonical definition establishes this application/component-scoped responsibility; navigation adds no semantic relationship"
+                    },
+                    {
+                      "canonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
                     }
                   ]
                 }
@@ -38516,6 +38526,69 @@
                       "relatedCanonicalIds": [
                         "e07ef0bcd9444af3a22ab45bbb3afc38"
                       ]
+                    }
+                  ]
+                },
+                {
+                  "title": "Internal Functions",
+                  "basis": "Authorised Mnemosyne incorporation; logical responsibilities/services only; no semantic edge inferred",
+                  "relatedCanonicalIds": [
+                    "7985e647bf9e4ca3ba70faf9e3e4ae02"
+                  ],
+                  "children": [
+                    {
+                      "canonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
+                    },
+                    {
+                      "canonicalId": "ef864d509efa44a7a4160db2ca821163",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
+                    },
+                    {
+                      "canonicalId": "75349ac7a0d44dec955b77bb5ecf1151",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
+                    },
+                    {
+                      "canonicalId": "812fa47cef1442aeb34ec34f263616be",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
+                    },
+                    {
+                      "canonicalId": "000f7241f12f411195b39fe8b8386e05",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
+                    }
+                  ]
+                },
+                {
+                  "title": "Services",
+                  "basis": "Authorised Mnemosyne incorporation; logical responsibilities/services only; no semantic edge inferred",
+                  "relatedCanonicalIds": [
+                    "7985e647bf9e4ca3ba70faf9e3e4ae02"
+                  ],
+                  "children": [
+                    {
+                      "canonicalId": "c050edfefe8b4d2b8892bc94b2d27a5c",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
+                    },
+                    {
+                      "canonicalId": "410a938f42964474b7cf5655815dc830",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
+                    },
+                    {
+                      "canonicalId": "105f6ebe61f74bc6b51938ba550bc1a7",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
+                    },
+                    {
+                      "canonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
                     }
                   ]
                 }

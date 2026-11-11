@@ -1,0 +1,14 @@
+{
+  "outcome": "UNRESOLVED",
+  "version": "1.1.23",
+  "iteration": "001",
+  "records": [
+    "evidence/1.1.23/001/after/ai-agent-reports/20261111T065144Z-mnemosyne-authoritative-persistence-incorporation.md",
+    "evidence/1.1.23/001/before/ai-agent-tasks/unresolved-mnemosyne-authoritative-persistence-incorporation.md"
+  ],
+  "errors": [],
+  "unresolved": [
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.23/001/before/ai-agent-tasks/unresolved-mnemosyne-authoritative-persistence-incorporation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+  ],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}

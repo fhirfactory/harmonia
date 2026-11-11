@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "artifactChecks": [
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/reader/Harmonia-Architecture.xml",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/Harmonia-Architecture.xml",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/reader/README.md",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/README.md",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/reader/continuum-catalogue.tex",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/continuum-catalogue.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/reader/continuum.html",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/continuum.html",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/reader/navigation.json",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/navigation.json",
+      "byteEqual": true,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/README.md",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/README.md",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/continuum-rad.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/continuum-rad.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/application.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/application.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/architecture-governance.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/architecture-governance.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/business.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/business.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/cross-cutting-references.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/cross-cutting-references.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/implementation-and-migration.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/implementation-and-migration.tex",
+      "byteEqual": true,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/motivation.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/motivation.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/strategy.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/strategy.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/technology.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/technology.tex",
+      "byteEqual": true,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/structure.json",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/structure.json",
+      "byteEqual": false,
+      "corresponds": true
+    }
+  ],
+  "manifestChecks": [
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/publication.json",
+      "allOtherFieldsEqual": true,
+      "hashesMatch": true
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/publication.json",
+      "allOtherFieldsEqual": true,
+      "hashesMatch": true
+    }
+  ],
+  "dualExchangeBytesEqual": true,
+  "allowedChanges": "Only selected generated release metadata fields, independently verified model hash and generated relative link targets; entire maintained master exact after template release fields, with its fixed publication-context links retained literally. All remaining model/content/field/order/page bytes preserved.",
+  "initialDiagnostic": "Initial FAIL retained: evidence-only checker incorrectly resolved fixed master-template links relative to the evidence directory and omitted the expected derived modelSha256 change. Exact diffs prove these two harness assumptions; publications and all production comparison policy remain unchanged.",
+  "architectureAuthority": "Canonical Markdown unchanged; publication is derived, transport FAIL remains explicitly qualified."
+}

@@ -1,0 +1,31 @@
+{
+  "publicationGeneration": "PASS",
+  "publicationFreshnessReleaseIntegrityAndLinks": "PASS",
+  "readerDomSmoke": "PASS",
+  "canonicalElements": 6557,
+  "relationships": 9376,
+  "authoredViews": 1304,
+  "qualifiedSourcePredicates": 462,
+  "architectureTests": {
+    "status": "PASS",
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 26.052,
+    "log": "architecture-tests.txt.gz",
+    "uncompressedSha256": "86b19e0d5cf6b483ec0d1d7df8c57ab769f66d51c70b99a7acedf8ce7fef7f73"
+  },
+  "candidatePublicationCorrespondence": "PASS: only root release metadata, derived model hash and generated links differ; fixed master template retains literal publication-context links",
+  "initialCorrespondenceDiagnostic": "FAIL retained; two evidence-harness assumptions corrected, no production or publication changes",
+  "strictTransport": "FAIL accepted with release-specific qualification; original outcomes and observations unchanged",
+  "humanNativeTreeAndHtmlReaderReview": "Accepted by Solution Architect",
+  "formalNameQualifications": 11,
+  "unresolvedInformationNames": 17,
+  "taskEventProvenance": "UNRESOLVED; accepted qualification, never fabricated",
+  "pdfCompilation": "NOT_PERFORMED; optional; release publishes LaTeX narrative and correspondence",
+  "rootRelease": {
+    "version": "1.1.23",
+    "previous_version": "1.1.22"
+  }
+}

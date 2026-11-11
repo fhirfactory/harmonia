@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "unchangedCanonicalSourceAndNavigationFiles": 6558,
+  "unchangedPriorIterationEvidenceFiles": 69,
+  "unchangedMachineryAndPresentationFiles": 59,
+  "unchangedAcceptedPublicationAndRegisterFiles": 311,
+  "rootManifest": "Regenerated for 1.1.23 only",
+  "applicationChanges": 0,
+  "strictTransportVerifierChanges": 0,
+  "originalTransportEvidenceChanges": 0,
+  "limits": "Preservation/source correspondence; strict FAIL qualification is an explicit Solution Architect disposition."
+}
