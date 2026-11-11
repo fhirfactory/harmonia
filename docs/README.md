@@ -42,6 +42,9 @@ docs/
 │   ├── build.md                              # Prerequisites, Maven commands & compilation guide
 │   └── first-deployment.md                   # Docker Compose local deployment & MLLP verification runbook
 │
+├── implementation /                          # Implementation Philosophies and Principles
+│   ├── Harmonia-Implementation-Guide-Philosophy.md # Engineering Philosophy, Defensive Programming and Educational Documentation
+│
 ├── concepts/                                 # The 16 Core Architectural Concepts
 │   ├── harmonia.md                           # Platform cohesion, architecture invariants & lifecycle
 │   ├── hestia.md                             # Dual-state persistence foundation (Mneme + Mnemosyne)

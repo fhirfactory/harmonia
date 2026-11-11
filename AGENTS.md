@@ -1002,3 +1002,42 @@ Material changes to the sequence or milestone intent MUST be explicit and
 reviewed before subsequent implementation proceeds. Junie MUST NOT rewrite
 historical milestone intent merely to make later implementation appear to have
 followed the plan.
+
+## Harmonia Implementation Standards
+
+The normative implementation standard for Harmonia is:
+
+[Harmonia Implementation Guide]
+(docs/implementation/Harmonia-ImplementationGuide.md)
+
+All software implementation and implementation-review
+activities MUST comply with this guide.
+
+The guide establishes three foundational requirements:
+
+1. Harmonia is an educational software engineering
+   and software architecture project.
+2. Defensive programming and meaningful unhappy-path
+   support are mandatory, following Harmonia's
+   95/5 engineering philosophy.
+3. Classes and significant methods MUST contain
+   sufficient documentation for a newcomer to
+   understand their responsibilities, implementation
+   logic and failure behaviour.
+
+Implementation agents MUST read the guide before
+undertaking substantive source-code development.
+
+Passing compilation or automated tests is not, by
+itself, sufficient evidence of conformance.
+
+Implementation reports MUST address:
+- Functional correctness.
+- Defensive programming and unhappy-path handling.
+- Educational documentation quality.
+- Applicable test evidence.
+- Known limitations and unsupported conditions.
+
+These requirements supplement the Architecture
+Continuum and existing governance obligations.
+They do not authorise architectural changes.
