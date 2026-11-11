@@ -6,10 +6,11 @@ Event source: architecture_review_evidence.emit_record system UTC clock immediat
 
 # Mnemosyne 1.1.23/001 — final acceptance and release closure Report
 
-**HCRL 1.1.23/001 is COMPLETE and accepted architecture 1.1.23 is published.**
+**HCRL 1.1.23/001 is COMPLETE and accepted architecture 1.1.23 is published locally.**
 CR-001 is **Accepted — Qualified**, specifically for this release. Strict Archi
-transport verification remains **FAIL**. Terminal commit/push verification follows
-the passed release controls and is recorded in this Report's Git receipt section.
+transport verification remains **FAIL**. The release commit is complete; push failed
+for unavailable terminal credentials and is handed to the user. Overall release
+closure remains incomplete pending remote verification, as recorded below.
 
 ## Authority and acceptance
 
@@ -169,11 +170,36 @@ blocking this release absent a new material discrepancy.
 
 ## Git transition receipt
 
-At initial Report emission the accepted change set is uncommitted on
+At initial Report emission the accepted change set was uncommitted on
 `Mneme-and-Mnemosyne-Build`, entry HEAD
 `fde98cde3c44b4f4b89e7f3a29765e1a44fca515`. All required release/publication controls
-have passed, and commit/push is expressly authorised. Actual accepted-release
-commit SHA, push result, remote verification and clean-tree state will be appended
-here after those operations and retained in the closure Git receipt. No future
-commit identifier or success is fabricated. This terminal mechanical completion
-preserves the Report's original production timestamp and consumes no extra release.
+passed, and commit/push was expressly authorised.
+
+The accepted release is committed as
+**`d3eee757244f3a185c8d8a3273180e4e7e78d6fa`**, subject
+`Publish accepted Mnemosyne persistence architecture as RAD 1.1.23`, containing
+152 accepted-scope files. The working tree was verified clean at that commit.
+The ordinary HTTPS push exited **128** because `/usr/bin/ksshaskpass` supplied
+no username response and terminal prompts were disabled. This was an authentication
+failure, not an automatic approval rejection. No remote ref was updated.
+
+Authentication checks found no configured HTTPS credential helper or `gh`
+executable, no identities in the existing SSH agent and no default SSH identity
+files. The connected GitHub service and successful `git ls-remote` independently
+confirmed that `origin/Mneme-and-Mnemosyne-Build` remained at
+`fde98cde3c44b4f4b89e7f3a29765e1a44fca515`. No replacement API commit, rewritten
+history or permanent credential/remote configuration change was made.
+
+The user's explicit follow-up is **“I will push the commits locally”**. The agent
+therefore completes and commits only this local provenance receipt, leaving the
+push to the user. The [Git transition receipt](../release-closure/git-transition.json)
+records actual release SHA, failed push, remote observation and handoff. Its
+observation clock is not substituted for an unavailable instruction-entry time.
+The original Report production event is preserved.
+
+**Remaining terminal obligation:** push the release and provenance receipt commits
+to `origin/Mneme-and-Mnemosyne-Build`, then verify remote HEAD equals local HEAD and
+the working tree is clean. Overall release closure is **pending that verification**;
+architectural acceptance, completed register and local publications are unchanged.
+The receipt commit's own SHA and final local clean-tree check are reported outside
+its self-referential content. This maintenance consumes no release or HCRL iteration.

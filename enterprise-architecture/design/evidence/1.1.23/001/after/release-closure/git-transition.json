@@ -1,10 +1,33 @@
 {
-  "status": "PENDING",
+  "status": "PUSH_HANDOFF_PENDING",
   "branch": "Mneme-and-Mnemosyne-Build",
   "remote": "origin",
   "baselineCommit": "fde98cde3c44b4f4b89e7f3a29765e1a44fca515",
   "release": "1.1.23",
-  "releaseCommit": null,
+  "releaseCommit": "d3eee757244f3a185c8d8a3273180e4e7e78d6fa",
+  "releaseCommitSubject": "Publish accepted Mnemosyne persistence architecture as RAD 1.1.23",
+  "workingTreeCleanAtReleaseCommit": true,
+  "remoteBranchObserved": "fde98cde3c44b4f4b89e7f3a29765e1a44fca515",
+  "remoteVerificationCommand": "GIT_TERMINAL_PROMPT=0 timeout --signal=TERM --kill-after=5s 45 git ls-remote --heads origin refs/heads/Mneme-and-Mnemosyne-Build",
+  "remoteVerificationExitCode": 0,
+  "observationRecordedAt": "2026-11-11T08:37:43Z",
+  "observationTimeMeaning": "System UTC clock after successful remote-ref observation; not a Task instruction-entry event.",
   "pushVerified": false,
-  "limits": "Initial receipt before authorised Git transition; no future commit SHA or success asserted."
+  "pushAttempt": {
+    "command": "GIT_TERMINAL_PROMPT=0 timeout --signal=TERM --kill-after=5s 240 git push origin HEAD:refs/heads/Mneme-and-Mnemosyne-Build",
+    "exitCode": 128,
+    "result": "Authentication failure; no remote ref update",
+    "diagnostics": [
+      "error: unable to read askpass response from '/usr/bin/ksshaskpass'",
+      "fatal: could not read Username for 'https://github.com': terminal prompts disabled"
+    ],
+    "automaticApprovalRejected": false
+  },
+  "authenticationChecks": "No configured HTTPS credential helper or gh executable; existing SSH agent has no identities and default SSH identity files are absent. Connected GitHub and git ls-remote independently confirm the remote baseline; no replacement API commit or branch update was made.",
+  "userHandoff": {
+    "instruction": "I will push the commits locally",
+    "source": "User reply to the authentication handoff question in this interaction",
+    "scope": "User performs terminal push; agent completes local provenance receipt only"
+  },
+  "limits": "Accepted architecture, publications and completed HCRL are locally committed. Overall release closure remains incomplete until the user pushes the release and provenance receipt commits and remote equality/clean working-tree state are verified. No remote success or future receipt-commit SHA is asserted."
 }

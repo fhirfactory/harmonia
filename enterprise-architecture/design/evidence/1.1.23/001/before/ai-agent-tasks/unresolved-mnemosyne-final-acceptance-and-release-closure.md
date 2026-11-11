@@ -124,3 +124,16 @@ Release 1.1.23 is complete when the governed release controls have passed, the a
 
 No additional Solution Architect architectural adjudication is required unless new material discrepancies are discovered.
 ````
+
+## Terminal Git handoff follow-up
+
+After the authorised release commit succeeded and HTTPS push failed for unavailable
+terminal authentication, the user replied to the authentication handoff question:
+
+> I will push the commits locally
+
+Source: attributable user reply in this same interaction. Its instruction-entry
+event time is unavailable in exposed metadata; no current or observation time is
+substituted. This follow-up hands the push to the user while the agent completes
+local provenance maintenance within this same 1.1.23/001 activity. It changes no
+architectural acceptance, publication or release qualification.

@@ -39,3 +39,9 @@ recorded before the final provenance receipt commit; that receipt's final SHA is
 externally verified and reported without a self-referential commit identifier.
 
 [Formal closure Report](../ai-agent-reports/20261111T083155Z-mnemosyne-final-acceptance-and-release-closure.md) · [Git transition receipt](git-transition.json).
+
+Accepted release commit: `d3eee757244f3a185c8d8a3273180e4e7e78d6fa`; clean tree
+verified at that commit. HTTPS push failed for unavailable terminal credentials.
+The user explicitly elected to push the commits locally. Remote remained at
+`fde98cde3c44b4f4b89e7f3a29765e1a44fca515` on observation. The local receipt records
+this handoff; overall release closure awaits push and remote equality verification.
