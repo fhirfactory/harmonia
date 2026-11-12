@@ -264,7 +264,7 @@ The accepted architectural names are:
 
 The shared logical/software interface is **`IrisComponentObservabilityInterface`**. The six `Component*Packet` types use PascalCase. Architectural component names are hyphen-separated.
 
-The DRP identifier/filename remains `DRP-Harmonia-OAM-UI`; this does **not** establish a replacement component called Iris-Console.
+The DRP identifier/filename remains `DRP-Harmonia-OAM-UI`; this does **not** establish a separate replacement component named after the DRP.
 
 Legacy Iris Console/Monitor and Iris BEFE implementation identities shall be reconciled with governed canonical identities; Iris Administration remains a separate scope and is not silently incorporated.
 
@@ -332,8 +332,6 @@ The agent's *southbound* acquisition mechanisms may vary by source: host instrum
 Each Iris-IM instance must be able to obtain a sufficiently complete view independently; incremental delivery must not inadvertently divide necessary observations among competing consumers.
 
 The contract shall preserve source/observer identity, timestamps, completeness, availability and appropriate error information. Connection recovery and retries must be bounded and source-sensitive.
-
-## 4.3 Direct Platform and Infrastructure Interaction
 
 ## 4.3 Platform, Middleware and Infrastructure Observation
 
@@ -645,7 +643,7 @@ Multiple independent Iris-IM instances may operate active/active behind a common
 
 Iris-Agent failure must not prevent its host component's primary processing. A failed Iris-Observer-Agent must not force unrelated observation providers to fail. Source retries and reacquisition shall be bounded.
 
-### 4.14 Shared Observability Contract and Packets
+## 4.14 Shared Observability Contract and Packets
 
 The accepted **`IrisComponentObservabilityInterface`** provides the same gRPC/HTTP2 and Protocol Buffers northbound service to Iris-IM, irrespective of agent type or implementation language.
 
@@ -664,7 +662,7 @@ These packet names/categories are accepted; their exact fields, schema evolution
 
 The contract supports provider description, efficient initial snapshots, incremental observation, and bounded/authorised on-demand queries. Each observation must preserve the observed entity, reporting agent, original source and observation timestamp; Iris-IM adds acquisition/freshness semantics.
 
-### 4.15 Embedded Iris-Agent and External Iris-Observer-Agent
+## 4.15 Embedded Iris-Agent and External Iris-Observer-Agent
 
 **Iris-Agent** resides within a Harmonia component. It acquires observations through local component facilities, publishes relevant metadata and does not become a dependency of the host's core processing.
 
@@ -674,7 +672,7 @@ Iris-Observer-Agent is not necessarily a separate process per observed instance;
 
 Neither agent type owns system-wide correlation, Iris-IM cache lifecycle, authoritative persistence or general management/control.
 
-### 4.16 Operational Metadata Boundary
+## 4.16 Operational Metadata Boundary
 
 Iris-IM and Iris-Console expose **operational metadata**, subject to appropriate Themis governance, not governed processing content.
 
@@ -684,7 +682,7 @@ Outside ordinary OA&M introspection: InformationUnit payloads, clinical/business
 
 Operational diagnostic LogEvent messages remain subject to established logging/security policy; this does not authorise arbitrary payload retrieval.
 
-### 4.17 TaskQueue, Execution, Digital Twins and Dokimasia
+## 4.17 TaskQueue, Execution, Digital Twins and Dokimasia
 
 Iris-Console shall support read-only TaskQueue summaries, on-demand bounded queue metadata, Pragma identities, processing state, retries and associated execution relationships. Petasos message-transport queues must remain distinguishable from work/task processing queues.
 
@@ -696,7 +694,7 @@ Dokimasia assurance activity identity, lifecycle, status, outcome and relevant c
 
 **Operational health and assurance outcome are independent dimensions.**
 
-### 4.18 Log-Persistence and Audit-Persistence Specialisation
+## 4.18 Log-Persistence and Audit-Persistence Specialisation
 
 Agents associated with Log-Persistence and Audit-Persistence serve two distinct roles:
 
@@ -709,7 +707,7 @@ Neither agent routinely transfers an entire durable history into Iris-IM. Detail
 
 The design must avoid unbounded observation or audit-query recursion, especially where querying audit information itself produces an AuditEvent.
 
-### 4.19 Iris-Console Implementation Perspective
+## 4.19 Iris-Console Implementation Perspective
 
 The existing Vue 3/TypeScript Iris-Console remains the frontend. The Component Topology Viewer is a suitable first educational implementation exercise, with subsequent logs, metrics, Praxis and contextual introspection.
 
