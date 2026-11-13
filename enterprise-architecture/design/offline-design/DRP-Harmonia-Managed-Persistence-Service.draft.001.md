@@ -8,7 +8,7 @@
 **Prepared by:** ChatGPT (architecture peer)  
 **Date:** 13 November 2026  
 **Working architectural context:** Harmonia 1.1.24, `Mneme-and-Mnemosyne-Build`  
-**Intended repository location:** `enterprise-architecture/design/offline-design/DRP-Harmonia-Managed-Persistence-Service.md`
+**Intended repository location:** `enterprise-architecture/design/offline-design/DRP-Harmonia-Managed-Persistence-Service.draft.001.md`
 
 > **Standing and limits.** This DRP consolidates the explicit decisions made in the current Harmonia architectural discussion concerning *where site-level authoritative-information redundancy is managed* and the choice of PostgreSQL for **Harmonia-managed** PersistenceServices. It also reconciles, without silently accepting open questions, the earlier Mnemosyne availability/resilience/recovery draft. R1/R2 deployment patterns, Patroni/CloudNativePG use, configuration details and numerical service objectives are **candidates for review**, not already-adjudicated decisions. No repository/Architecture Continuum changes are authorised merely by drafting this document.
 
