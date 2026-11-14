@@ -1,0 +1,264 @@
+{
+  "standing": "Actual coordinates for representative human inspection; no visual acceptance asserted.",
+  "candidateSha256": "6f6432a979a92a3adbf0261ba4bc761d092f87eb55fd4e5d7968f597e4d64d3a",
+  "selected": [
+    {
+      "role": "summary_reader",
+      "canonicalId": "2988247b75664896a7deb97b12b20c0a",
+      "displayName": "GovernedSummaryReader",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-service/2988247b75664896a7deb97b12b20c0a.md",
+      "navigation": {
+        "canonicalId": "2988247b75664896a7deb97b12b20c0a",
+        "kind": "element",
+        "basis": "Explicit authorised creation placement",
+        "title": "GovernedSummaryReader",
+        "number": "IV.3.12.3.5",
+        "path": [
+          "Application",
+          "Applications",
+          "Mnemosyne",
+          "Services",
+          "GovernedSummaryReader"
+        ],
+        "locator": "enterprise-architecture/continuum/navigation.json#/IV.3.12.3.5",
+        "occurrence": "architectural"
+      }
+    },
+    {
+      "role": "summary_writer",
+      "canonicalId": "bffb611e29844eedaf39a5b27ccbbcc7",
+      "displayName": "GovernedSummaryWriter",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-service/bffb611e29844eedaf39a5b27ccbbcc7.md",
+      "navigation": {
+        "canonicalId": "bffb611e29844eedaf39a5b27ccbbcc7",
+        "kind": "element",
+        "basis": "Explicit authorised creation placement",
+        "title": "GovernedSummaryWriter",
+        "number": "IV.3.12.3.6",
+        "path": [
+          "Application",
+          "Applications",
+          "Mnemosyne",
+          "Services",
+          "GovernedSummaryWriter"
+        ],
+        "locator": "enterprise-architecture/continuum/navigation.json#/IV.3.12.3.6",
+        "occurrence": "architectural"
+      }
+    },
+    {
+      "role": "reader",
+      "canonicalId": "410a938f42964474b7cf5655815dc830",
+      "displayName": "GovernedReader",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-service/410a938f42964474b7cf5655815dc830.md",
+      "navigation": {
+        "canonicalId": "410a938f42964474b7cf5655815dc830",
+        "kind": "element",
+        "basis": "Explicit authorised creation placement",
+        "title": "GovernedReader",
+        "number": "IV.3.12.3.2",
+        "path": [
+          "Application",
+          "Applications",
+          "Mnemosyne",
+          "Services",
+          "GovernedReader"
+        ],
+        "locator": "enterprise-architecture/continuum/navigation.json#/IV.3.12.3.2",
+        "occurrence": "architectural"
+      }
+    },
+    {
+      "role": "writer",
+      "canonicalId": "105f6ebe61f74bc6b51938ba550bc1a7",
+      "displayName": "GovernedWriter",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-service/105f6ebe61f74bc6b51938ba550bc1a7.md",
+      "navigation": {
+        "canonicalId": "105f6ebe61f74bc6b51938ba550bc1a7",
+        "kind": "element",
+        "basis": "Explicit authorised creation placement",
+        "title": "GovernedWriter",
+        "number": "IV.3.12.3.3",
+        "path": [
+          "Application",
+          "Applications",
+          "Mnemosyne",
+          "Services",
+          "GovernedWriter"
+        ],
+        "locator": "enterprise-architecture/continuum/navigation.json#/IV.3.12.3.3",
+        "occurrence": "architectural"
+      }
+    },
+    {
+      "role": "search",
+      "canonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+      "displayName": "GovernedSummarySearch",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-service/dcb31810ae134818adeeba9b27bd2f30.md",
+      "navigation": {
+        "canonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+        "kind": "element",
+        "basis": "Explicit authorised creation placement",
+        "title": "GovernedSummarySearch",
+        "number": "IV.3.12.3.4",
+        "path": [
+          "Application",
+          "Applications",
+          "Mnemosyne",
+          "Services",
+          "GovernedSummarySearch"
+        ],
+        "locator": "enterprise-architecture/continuum/navigation.json#/IV.3.12.3.4",
+        "occurrence": "architectural"
+      }
+    },
+    {
+      "role": "standard",
+      "canonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+      "displayName": "Mneme-Standard-Cache",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md",
+      "navigation": {
+        "canonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+        "kind": "element",
+        "basis": "Explicit authorised creation placement",
+        "title": "Mneme-Standard-Cache",
+        "number": "IV.3.11.5.4",
+        "path": [
+          "Application",
+          "Applications",
+          "Mneme",
+          "Internal Functions",
+          "Mneme-Standard-Cache"
+        ],
+        "locator": "enterprise-architecture/continuum/navigation.json#/IV.3.11.5.4",
+        "occurrence": "architectural"
+      }
+    },
+    {
+      "role": "workflow",
+      "canonicalId": "0bddade1309e426aa84d0cd97c35742a",
+      "displayName": "Mneme-Workflow-Cache",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-function/0bddade1309e426aa84d0cd97c35742a.md",
+      "navigation": {
+        "canonicalId": "0bddade1309e426aa84d0cd97c35742a",
+        "kind": "element",
+        "basis": "Explicit authorised creation placement",
+        "title": "Mneme-Workflow-Cache",
+        "number": "IV.3.11.5.5",
+        "path": [
+          "Application",
+          "Applications",
+          "Mneme",
+          "Internal Functions",
+          "Mneme-Workflow-Cache"
+        ],
+        "locator": "enterprise-architecture/continuum/navigation.json#/IV.3.11.5.5",
+        "occurrence": "architectural"
+      }
+    },
+    {
+      "role": "server",
+      "canonicalId": "c2b216d461b24d659c202268f0ec7fb7",
+      "displayName": "Infinispan Server — Standard Cache",
+      "canonicalPath": "enterprise-architecture/continuum/technology/system-software/c2b216d461b24d659c202268f0ec7fb7.md",
+      "navigation": {
+        "canonicalId": "c2b216d461b24d659c202268f0ec7fb7",
+        "kind": "element",
+        "basis": "Explicit authorised creation placement",
+        "title": "Infinispan Server — Standard Cache",
+        "number": "V.1",
+        "path": [
+          "Technology",
+          "Infinispan Server — Standard Cache"
+        ],
+        "locator": "enterprise-architecture/continuum/navigation.json#/V.1",
+        "occurrence": "architectural"
+      }
+    },
+    {
+      "role": "embedded",
+      "canonicalId": "4048a6c775c542b6a29610d9e248a4d8",
+      "displayName": "Embedded Infinispan LOCAL — Workflow Cache",
+      "canonicalPath": "enterprise-architecture/continuum/technology/system-software/4048a6c775c542b6a29610d9e248a4d8.md",
+      "navigation": {
+        "canonicalId": "4048a6c775c542b6a29610d9e248a4d8",
+        "kind": "element",
+        "basis": "Explicit authorised creation placement",
+        "title": "Embedded Infinispan LOCAL — Workflow Cache",
+        "number": "V.2",
+        "path": [
+          "Technology",
+          "Embedded Infinispan LOCAL — Workflow Cache"
+        ],
+        "locator": "enterprise-architecture/continuum/navigation.json#/V.2",
+        "occurrence": "architectural"
+      }
+    },
+    {
+      "role": "ponos",
+      "canonicalId": "b521762c1ea444b48cd5f66be3752d30",
+      "displayName": "Ponos",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-component/b521762c1ea444b48cd5f66be3752d30.md",
+      "navigation": {
+        "canonicalId": "b521762c1ea444b48cd5f66be3752d30",
+        "kind": "element",
+        "basis": "Existing canonical definition establishes this application/component-scoped responsibility; navigation adds no semantic relationship",
+        "title": "Ponos",
+        "number": "IV.3.13.1.1",
+        "path": [
+          "Application",
+          "Applications",
+          "Ponos",
+          "Application Overview",
+          "Ponos"
+        ],
+        "locator": "enterprise-architecture/continuum/navigation.json#/IV.3.13.1.1",
+        "occurrence": "architectural"
+      }
+    },
+    {
+      "role": "twin",
+      "canonicalId": "3f64d339648246e99e8866c8089f8960",
+      "displayName": "DigitalTwin",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-component/3f64d339648246e99e8866c8089f8960.md",
+      "navigation": {
+        "canonicalId": "3f64d339648246e99e8866c8089f8960",
+        "kind": "element",
+        "basis": "Existing canonical definition establishes this application/component-scoped responsibility; navigation adds no semantic relationship",
+        "title": "DigitalTwin",
+        "number": "IV.3.3.1.1",
+        "path": [
+          "Application",
+          "Applications",
+          "DigitalTwin",
+          "Application Overview",
+          "DigitalTwin"
+        ],
+        "locator": "enterprise-architecture/continuum/navigation.json#/IV.3.3.1.1",
+        "occurrence": "architectural"
+      }
+    },
+    {
+      "role": "dokimasia",
+      "canonicalId": "d739c75dffe2453081735710b285f03b",
+      "displayName": "Dokimasia",
+      "canonicalPath": "enterprise-architecture/continuum/application/application-component/d739c75dffe2453081735710b285f03b.md",
+      "navigation": {
+        "canonicalId": "d739c75dffe2453081735710b285f03b",
+        "kind": "element",
+        "basis": "Existing canonical definition establishes this application/component-scoped responsibility; navigation adds no semantic relationship",
+        "title": "Dokimasia",
+        "number": "IV.3.4.1.1",
+        "path": [
+          "Application",
+          "Applications",
+          "Dokimasia",
+          "Application Overview",
+          "Dokimasia"
+        ],
+        "locator": "enterprise-architecture/continuum/navigation.json#/IV.3.4.1.1",
+        "occurrence": "architectural"
+      }
+    }
+  ]
+}

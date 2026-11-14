@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "documents": 8,
+  "localLinks": 138,
+  "missingFiles": [],
+  "unresolvedAnchors": [],
+  "limits": "Current review/report/disposition/task Markdown; exact before-review snapshots retain original source-directory link context; external URLs not dereferenced."
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "acceptedCandidateSha256": "6f6432a979a92a3adbf0261ba4bc761d092f87eb55fd4e5d7968f597e4d64d3a",
+  "entryRelease": {
+    "version": "1.1.23",
+    "previous_version": "1.1.22"
+  },
+  "resultingRelease": "1.1.24",
+  "exactAcceptedCandidateReproduced": true,
+  "publicationAndRegisterDestinations": {
+    "enterprise-architecture/design/archimate/published/1.1.24": "ABSENT",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.24": "ABSENT",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.24": "ABSENT",
+    "enterprise-architecture/design/register/1.1.24": "ABSENT"
+  },
+  "architecturePopulation": {
+    "elements": 6563,
+    "relationships": 9427
+  },
+  "requiredTransportResult": "FAIL retained with candidate-specific acceptance",
+  "historicalReleasePathConflict": "Closed in accepted 1.1.20/1.1.21 successors; no dependent release-path decision",
+  "remoteAtEntry": "8204fd49a4d380c068a03acdf30c17bb06e5d953 equals local HEAD"
+}

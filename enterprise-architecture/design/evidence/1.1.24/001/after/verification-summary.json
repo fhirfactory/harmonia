@@ -1,0 +1,149 @@
+{
+  "candidate": "1.1.24/001 — PENDING",
+  "acceptedPredecessor": "1.1.23",
+  "rootReleaseUnchanged": {
+    "version": "1.1.23",
+    "previous_version": "1.1.22"
+  },
+  "candidateSha256": "6f6432a979a92a3adbf0261ba4bc761d092f87eb55fd4e5d7968f597e4d64d3a",
+  "canonical": {
+    "status": "PASS",
+    "elements": 6563,
+    "relationships": 9427,
+    "qualifiedSourcePredicates": 462,
+    "sourceBindings": 8446
+  },
+  "preservation": {
+    "status": "PASS",
+    "oldElements": 6557,
+    "oldRelationshipRecords": 9376,
+    "authoredViews": 1304,
+    "pinnedFiles": 6913,
+    "evidence": "preservation.json"
+  },
+  "reproducibility": {
+    "status": "PASS",
+    "byteIdenticalOutputs": 19,
+    "evidence": "reproducibility.json"
+  },
+  "projectionNativeXsdReferenceNavigationNaming": {
+    "status": "PASS",
+    "evidence": "projection-validation.json",
+    "qualifiedInformationNames": 17,
+    "newFormalNamesExplicitlyUnestablished": 6
+  },
+  "exactNoEditReview": {
+    "status": "PASS",
+    "changes": 0,
+    "unresolved": 0,
+    "evidence": "exact-no-edit-review.json"
+  },
+  "candidateStalenessChecks": {
+    "status": "PASS",
+    "evidence": "candidate-checks.json"
+  },
+  "sourceLinks": {
+    "status": "PASS",
+    "currentLinks": 3045,
+    "evidence": "source-links.json"
+  },
+  "browserDomSmoke": {
+    "status": "PASS",
+    "evidence": "browser-smoke.txt",
+    "visualReview": false
+  },
+  "focusedContinuumTests": {
+    "status": "PASS",
+    "tests": 8,
+    "elapsedSeconds": 226.506,
+    "timeoutSeconds": 240,
+    "evidence": "focused-continuum-tests.txt"
+  },
+  "focusedNavigationTests": {
+    "status": "PASS",
+    "tests": 4,
+    "elapsedSeconds": 44.784,
+    "timeoutSeconds": 240,
+    "evidence": "focused-navigation-tests.txt"
+  },
+  "architectureSuite": {
+    "status": "PASS",
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsedSeconds": 20.315,
+    "command": "timeout 180 mvn test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+    "evidence": "architecture-suite.txt"
+  },
+  "actualArchiTransport": {
+    "status": "PASS",
+    "evidence": "archi-transport/execution-status.json"
+  },
+  "strictTransport": {
+    "status": "FAIL",
+    "reason": "Relationship/View transport drift",
+    "changedRelationships": 6507,
+    "changedViews": 15,
+    "missingOrAddedIds": 0,
+    "evidence": "transport-summary.json",
+    "review": "change-review.md#cr-001",
+    "disposition": "Accept",
+    "dispositionHistory": [
+      {
+        "disposition": "On-Hold",
+        "outcome": "Unresolved",
+        "standing": "Initial pre-disposition checkpoint",
+        "source": "../before/cr001-disposition/change-review.before.md"
+      },
+      {
+        "disposition": "Accept",
+        "outcome": "Resolved",
+        "solutionArchitectDecision": "ACCEPTED WITH QUALIFICATION (1.1.24 only)",
+        "source": "../before/cr001-solution-architect-disposition.md"
+      }
+    ],
+    "outcome": "Resolved",
+    "solutionArchitectDecision": "ACCEPTED WITH QUALIFICATION (1.1.24 only)",
+    "acceptedCandidateSha256": "6f6432a979a92a3adbf0261ba4bc761d092f87eb55fd4e5d7968f597e4d64d3a",
+    "decisionSource": "../before/cr001-solution-architect-disposition.md",
+    "strictResultUnchanged": true,
+    "candidateSpecificExceptionAccepted": true,
+    "subsequentReleaseWaiver": false,
+    "returnedModelApplicationAuthorised": false,
+    "comparatorTemplateOrArchitecturalRemediationAuthorised": false,
+    "historicalTransportSummaryRetainedUnchanged": true
+  },
+  "independentTransportCorrespondence": {
+    "status": "PASS",
+    "existingRelationshipDifferencesAcrossReleases": 0,
+    "allSourceAndReturnedViewsIdenticalAcrossReleases": true,
+    "newRelationshipRawFindings": 51,
+    "newFindingPattern": "Absent-to-en documentation language",
+    "evidence": "predecessor-transport-correspondence.json",
+    "strictFailWaived": false
+  },
+  "temporalProvenance": {
+    "taskIssuedAt": "UNRESOLVED — instruction-entry timestamp unavailable",
+    "taskFilenamePrefix": "UNRESOLVED",
+    "reportProduction": "Evidence emitter captures actual completed Report emission"
+  },
+  "humanReview": {
+    "nativeTree": "PENDING",
+    "readerStructure": "PENDING",
+    "actualResultAcceptance": "PENDING",
+    "boundedMinutiae": "PENDING"
+  },
+  "javaImplementationChanged": false,
+  "releaseAllocated": false,
+  "acceptedPublicationProduced": false,
+  "hcrlCompleted": false,
+  "commitOrPushPerformed": false,
+  "limits": "Static/candidate evidence does not establish as-built Infinispan topology, multi-site guarantees, runtime conformance, pixel equivalence, visual review or architectural acceptance.",
+  "formalReport": "ai-agent-reports/20261114T045751Z-mneme-interaction-cache-add.md",
+  "evidenceLayout": {
+    "evidence": "iteration-provenance-check.json",
+    "exitCode": 2,
+    "outcome": "UNRESOLVED"
+  }
+}

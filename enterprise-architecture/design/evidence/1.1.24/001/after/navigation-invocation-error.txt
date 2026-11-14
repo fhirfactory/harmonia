@@ -1,0 +1,29 @@
+NavigationTests (unittest.loader._FailedTest.NavigationTests) ... ERROR
+NavigationTests (unittest.loader._FailedTest.NavigationTests) ... ERROR
+NavigationTests (unittest.loader._FailedTest.NavigationTests) ... ERROR
+NavigationTests (unittest.loader._FailedTest.NavigationTests) ... ERROR
+
+======================================================================
+ERROR: NavigationTests (unittest.loader._FailedTest.NavigationTests)
+----------------------------------------------------------------------
+AttributeError: module 'test_continuum_navigation' has no attribute 'NavigationTests'
+
+======================================================================
+ERROR: NavigationTests (unittest.loader._FailedTest.NavigationTests)
+----------------------------------------------------------------------
+AttributeError: module 'test_continuum_navigation' has no attribute 'NavigationTests'
+
+======================================================================
+ERROR: NavigationTests (unittest.loader._FailedTest.NavigationTests)
+----------------------------------------------------------------------
+AttributeError: module 'test_continuum_navigation' has no attribute 'NavigationTests'
+
+======================================================================
+ERROR: NavigationTests (unittest.loader._FailedTest.NavigationTests)
+----------------------------------------------------------------------
+AttributeError: module 'test_continuum_navigation' has no attribute 'NavigationTests'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (errors=4)

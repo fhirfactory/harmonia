@@ -1,0 +1,13 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[XML Exchange] Validating...
+[XML Exchange] Validated!
+[XML Exchange] Importing XML from /home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/Harmonia-Architecture.xml
+[XML Exchange] XML Imported!
+[XML Exchange] Exporting from 'Harmonia Architecture — Synchronised Markdown / ArchiMate Baseline' to /home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/returned.xml
+[XML Exchange] XML Exported!
+[XML Exchange] Validating...
+[XML Exchange] Validated!
+[Core] Saved model to '/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/candidate.archimate'

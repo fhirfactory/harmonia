@@ -1,0 +1,240 @@
+[
+  {
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "sha256": "9696e135a47fe5bd0d568a7f88624b64cb172d1c565c6529a60311b37431b3a6",
+    "standing": "Complete DRP approved by operative Solution Architect Task; preserved unchanged as accepted input/decision provenance; incorporated definitions in canonical elements with pending-result standing.",
+    "sections": [
+      {
+        "heading": "<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->",
+        "startLine": 1,
+        "endLine": 15,
+        "sha256": "d43eee5633a829ac78e6a10986be9aa5bdea33465d68eb99f1354bf9f70a9aae",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 0. Authority, scope and source succession",
+        "startLine": 16,
+        "endLine": 27,
+        "sha256": "5d033c87888145b5435cb7f5864eb2cca743fc214a3e8046d18667d57a8c26c3",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 1. Feature realisation",
+        "startLine": 28,
+        "endLine": 67,
+        "sha256": "92760952b3b76474ede2bc9ff1dbf906540c47c114e62c4593a90fa1d3b1c396",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 2. Proposal",
+        "startLine": 68,
+        "endLine": 89,
+        "sha256": "f3b86e5f91ad7bd5eb7a9a19aee79370ea2d281dfe269ee8f9a162994563fcbb",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 3. Conceptual interaction context",
+        "startLine": 90,
+        "endLine": 121,
+        "sha256": "bbce575c9bd694145bfd39a4d9912e19ad0ce133adb533ea64ae05ad2fd09d9f",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 4. Architectural definition",
+        "startLine": 122,
+        "endLine": 429,
+        "sha256": "695f9019f17566d4e57dccc0e29f13d1d76f90ff9931200ac438bfa569cdbc57",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 5. Explicitly not prescribed",
+        "startLine": 430,
+        "endLine": 437,
+        "sha256": "710800b1ce47620918747812e671fd33cd98d9ddbfe5f7f5cfd966d24ba2ab6d",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 6. Evidence and rationale",
+        "startLine": 438,
+        "endLine": 447,
+        "sha256": "cf09866c027a12cd1f0d8b97286cb9ee4f8aada292d9ce29f5b4d91d7a2c077e",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 7. Relationship to current Architecture Continuum",
+        "startLine": 448,
+        "endLine": 457,
+        "sha256": "92069e1c3b7f58b17fda4689c873befbc6eb117df367d19ec37689f918e9efe5",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 8. Conformance expectations",
+        "startLine": 458,
+        "endLine": 479,
+        "sha256": "66707f0a97c6c062f978f109d636516b5a5ecdfe2ade46db9cdc80b8f380f817",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 9. Review register — reconciled matters and residual decisions",
+        "startLine": 480,
+        "endLine": 556,
+        "sha256": "f091b2d2f68eafa42333ffe5eb25bdcadb703ac6521c2a155d8b3647cbad89d3",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 10. Governed Continuum incorporation — connected delta after acceptance",
+        "startLine": 557,
+        "endLine": 592,
+        "sha256": "639dd4ca604333ff4ef8070b91ede29d21e6526207579a5ff36b5d682d0153da",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 11. Solution Architect review decision",
+        "startLine": 593,
+        "endLine": 599,
+        "sha256": "1e05fe240205c05cee3b17179c6c4218f7c1fa158d371d5f3033866f91b4765a",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 12. Post-decision disposition",
+        "startLine": 600,
+        "endLine": 605,
+        "sha256": "9b3ec8ea767e385edf030c90252b5e2dac2374637aa30e3e5809796bb6c7584d",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## Appendix A — Source succession and traceability (informative)",
+        "startLine": 606,
+        "endLine": 615,
+        "sha256": "91de7b2f609032f657104e1d24164966220f58c5339dcff2b0bddbee6ebfc3c4",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## Appendix B — Adjudication preservation summary (informative)",
+        "startLine": 616,
+        "endLine": 622,
+        "sha256": "d243a78f8d8096ece5cb204a18c9162630063e4248bcfc7fd51b7fd898281434",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      }
+    ]
+  },
+  {
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "sha256": "a95901d84c32c4568d5db01e170087097308a40b241b7b9254387e638c45d96c",
+    "standing": "Complete DRP approved by operative Solution Architect Task; preserved unchanged as accepted input/decision provenance; incorporated definitions in canonical elements with pending-result standing.",
+    "sections": [
+      {
+        "heading": "<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->",
+        "startLine": 1,
+        "endLine": 13,
+        "sha256": "a1c81bd5990cbdd635204aa017da75c0cd880fda2145f1310133dbdce1ad1e74",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 0. Standing, authority and boundaries",
+        "startLine": 14,
+        "endLine": 21,
+        "sha256": "01da151f45f994dbdafcabdadfa0b56a49465cada4546c35d9a60ae5c32603dc",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 1. Feature realisation",
+        "startLine": 22,
+        "endLine": 51,
+        "sha256": "3c06fad3afddde67a80d2447856c40102d520eab0da2055d054b333eab8b6968",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 2. Proposal",
+        "startLine": 52,
+        "endLine": 67,
+        "sha256": "cf37d9f971a572d091d8b9c7272ad21b835701c93b26dd908d72ff4f752254b9",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 3. Design context and terminology",
+        "startLine": 68,
+        "endLine": 130,
+        "sha256": "38c75f2dc67c66144a88115a439847a114af138bf57374b531fc25e32e478865",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 4. Architectural definition",
+        "startLine": 131,
+        "endLine": 282,
+        "sha256": "192f4ba1783867871461bdd70a86263bcc01af683c9b0ff0702cdcdeb682df23",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 5. Explicitly not prescribed",
+        "startLine": 283,
+        "endLine": 296,
+        "sha256": "1636d85d83c91871e04281b0a205e5861a50fdfcfba3097720a27c75ca6ea390",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 6. Evidence and rationale",
+        "startLine": 297,
+        "endLine": 326,
+        "sha256": "505c1121cbbe51f724235a9a411c3c62d2e2ddfc0658681ade1873be586f6758",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 7. Relationship to current architecture",
+        "startLine": 327,
+        "endLine": 340,
+        "sha256": "29bbba145a990218d35f38ffef19f8574e896dd8d748349a232643912d96f4b9",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 8. Conformance expectations",
+        "startLine": 341,
+        "endLine": 362,
+        "sha256": "0b7da7588b8c7facfe9c88c6ef68c671dd2206278b64796c96395010e1f1dff7",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 9. Open questions / qualifications — **not** accepted as additional decisions",
+        "startLine": 363,
+        "endLine": 380,
+        "sha256": "66219734fa981b519d5c569693173217961f582bb4ac32260230df0ed38e970d",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 10. Continuum update — connected architectural delta for subsequent authorised incorporation",
+        "startLine": 381,
+        "endLine": 420,
+        "sha256": "e7619fb6f6fc47b113eb7f6f422afb7652eec37ac351dc69910bc447ec0cb1d9",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 11. Review disposition",
+        "startLine": 421,
+        "endLine": 441,
+        "sha256": "6b938ada02a2fa3a23f16e7f26037645962953788c1a0c7e696abc425334d2d0",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## 12. Post-decision actions",
+        "startLine": 442,
+        "endLine": 445,
+        "sha256": "a7ae01d39d907c4ed27c08ffea86105aa84ed4a7c78008e715b468579e3d233f",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## Appendix A — Design provenance",
+        "startLine": 446,
+        "endLine": 454,
+        "sha256": "635b2abd99f8aaa80a1587b879cd0ef12b4482be7d00c6233cf18b1023d9b661",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      },
+      {
+        "heading": "## Appendix B — 1.1.24 final interaction adjudication crosswalk (informative)",
+        "startLine": 455,
+        "endLine": 462,
+        "sha256": "b6fa93c90a3d266edcaa490c6950dc790e76dffc691c836b4afff00aa1f4ecf1",
+        "treatment": "See complete grouped section accounting and decision crosswalk in source-correspondence.md; source bytes unchanged."
+      }
+    ]
+  }
+]

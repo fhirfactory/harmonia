@@ -1,0 +1,17 @@
+test_numbering_covers_every_node_and_qualified_population (test_continuum_navigation.ContinuumNavigationTests.test_numbering_covers_every_node_and_qualified_population) ... FAIL
+test_projection_and_browser_expose_the_same_full_coordinates_without_semantic_changes (test_continuum_navigation.ContinuumNavigationTests.test_projection_and_browser_expose_the_same_full_coordinates_without_semantic_changes) ... ok
+test_catalogues_cover_every_element_and_explicit_source_once (test_continuum_navigation.ContinuumNavigationTests.test_catalogues_cover_every_element_and_explicit_source_once) ... ok
+test_all_native_types_exact_names_and_collision_safe_sources (test_continuum_navigation.ContinuumNavigationTests.test_all_native_types_exact_names_and_collision_safe_sources) ... ok
+
+======================================================================
+FAIL: test_numbering_covers_every_node_and_qualified_population (test_continuum_navigation.ContinuumNavigationTests.test_numbering_covers_every_node_and_qualified_population)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/tests/test_continuum_navigation.py", line 77, in test_numbering_covers_every_node_and_qualified_population
+    self.assertFalse(self.tree[5].get('children'))
+AssertionError: [{'canonicalId': 'c2b216d461b24d659c202268f0ec7fb7', 'kind': 'element', 'basis': 'Explicit authorised creation placement', 'title': 'Infinispan Server — Standard Cache', 'number': 'V.1', 'path': ['Technology', 'Infinispan Server — Standard Cache'], 'locator': 'enterprise-architecture/continuum/navigation.json#/V.1', 'occurrence': 'architectural'}, {'canonicalId': '4048a6c775c542b6a29610d9e248a4d8', 'kind': 'element', 'basis': 'Explicit authorised creation placement', 'title': 'Embedded Infinispan LOCAL — Workflow Cache', 'number': 'V.2', 'path': ['Technology', 'Embedded Infinispan LOCAL — Workflow Cache'], 'locator': 'enterprise-architecture/continuum/navigation.json#/V.2', 'occurrence': 'architectural'}] is not false
+
+----------------------------------------------------------------------
+Ran 4 tests in 40.717s
+
+FAILED (failures=1)

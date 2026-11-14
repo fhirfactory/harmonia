@@ -38506,6 +38506,16 @@
                       "canonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
                       "kind": "element",
                       "basis": "Explicit authorised creation placement"
+                    },
+                    {
+                      "canonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
+                    },
+                    {
+                      "canonicalId": "0bddade1309e426aa84d0cd97c35742a",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
                     }
                   ]
                 }
@@ -38587,6 +38597,16 @@
                     },
                     {
                       "canonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
+                    },
+                    {
+                      "canonicalId": "2988247b75664896a7deb97b12b20c0a",
+                      "kind": "element",
+                      "basis": "Explicit authorised creation placement"
+                    },
+                    {
+                      "canonicalId": "bffb611e29844eedaf39a5b27ccbbcc7",
                       "kind": "element",
                       "basis": "Explicit authorised creation placement"
                     }
@@ -38730,7 +38750,19 @@
       "title": "Technology",
       "basis": "Authorised 1.1.10 taxonomy; populated only by existing architecture or governed sources",
       "namespace": "V",
-      "description": "No individually represented Technology architecture is present in the current Continuum. No data, platform or infrastructure subsections are inferred."
+      "description": "Selected Infinispan Server/Hot Rod and embedded LOCAL cache machinery for 1.1.24; topology and deployment qualifications remain explicit. Runtime instances do not allocate architectural identities.",
+      "children": [
+        {
+          "canonicalId": "c2b216d461b24d659c202268f0ec7fb7",
+          "kind": "element",
+          "basis": "Explicit authorised creation placement"
+        },
+        {
+          "canonicalId": "4048a6c775c542b6a29610d9e248a4d8",
+          "kind": "element",
+          "basis": "Explicit authorised creation placement"
+        }
+      ]
     },
     {
       "title": "Implementation & Migration",

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "enterprise-architecture/tooling/architecture_release.py",
+    "bump",
+    "--expect",
+    "1.1.23"
+  ],
+  "exitCode": 0,
+  "stdout": "{\n  \"version\": \"1.1.24\",\n  \"previous_version\": \"1.1.23\"\n}\n",
+  "stderr": "",
+  "meaning": "One authorised accepted-change patch allocation, not generation or iteration advancement"
+}

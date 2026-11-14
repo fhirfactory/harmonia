@@ -1,0 +1,512 @@
+[
+  {
+    "identifier": "id-f9016125d294485390ece53388e55e6f",
+    "sourceCanonicalId": "2988247b75664896a7deb97b12b20c0a",
+    "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+    "archimateType": "Association",
+    "specialization": "Home",
+    "label": "Architectural Home in Mnemosyne",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§2,4.4–4.5"
+  },
+  {
+    "identifier": "id-4c3cdb466b524a86bf652272af947b9f",
+    "sourceCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+    "targetCanonicalId": "2988247b75664896a7deb97b12b20c0a",
+    "archimateType": "Realization",
+    "specialization": null,
+    "label": "Façade participates in this governed contract with existing Mnemosyne tiers",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§2,4.1"
+  },
+  {
+    "identifier": "id-50cb303faba44552bf434676c9ad8ab7",
+    "sourceCanonicalId": "2988247b75664896a7deb97b12b20c0a",
+    "targetCanonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Provides authoritative Summary contract to Mneme Store",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§2,4.4–4.5"
+  },
+  {
+    "identifier": "id-c21977b99cac447487606e88b5600602",
+    "sourceCanonicalId": "bffb611e29844eedaf39a5b27ccbbcc7",
+    "targetCanonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+    "archimateType": "Association",
+    "specialization": "Home",
+    "label": "Architectural Home in Mnemosyne",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§2,4.4–4.5"
+  },
+  {
+    "identifier": "id-bf0034ffbc06439cab42a48ff57c8967",
+    "sourceCanonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+    "targetCanonicalId": "bffb611e29844eedaf39a5b27ccbbcc7",
+    "archimateType": "Realization",
+    "specialization": null,
+    "label": "Façade participates in this governed contract with existing Mnemosyne tiers",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§2,4.1"
+  },
+  {
+    "identifier": "id-be5525c1ea69466f972152164e1ca6c0",
+    "sourceCanonicalId": "bffb611e29844eedaf39a5b27ccbbcc7",
+    "targetCanonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Provides authoritative Summary contract to Mneme Store",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§2,4.4–4.5"
+  },
+  {
+    "identifier": "id-8cae2768027a49b59e7d84cdbb897235",
+    "sourceCanonicalId": "2988247b75664896a7deb97b12b20c0a",
+    "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+    "archimateType": "Access",
+    "specialization": null,
+    "label": "Uses same IU identity/version; Summary/full projection determined by this contract",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§4.3–4.8"
+  },
+  {
+    "identifier": "id-93799ae9362848a284e37296d81f3de1",
+    "sourceCanonicalId": "2988247b75664896a7deb97b12b20c0a",
+    "targetCanonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+    "archimateType": "Access",
+    "specialization": null,
+    "label": "Reports factual operation Outcome without changing consumer disposition",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§4.9"
+  },
+  {
+    "identifier": "id-4e8d7fa445484eb3b4a710bcebcd5a51",
+    "sourceCanonicalId": "bffb611e29844eedaf39a5b27ccbbcc7",
+    "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+    "archimateType": "Access",
+    "specialization": null,
+    "label": "Uses same IU identity/version; Summary/full projection determined by this contract",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§4.3–4.8"
+  },
+  {
+    "identifier": "id-769596f4cddc46769abd0d2f859f9c06",
+    "sourceCanonicalId": "bffb611e29844eedaf39a5b27ccbbcc7",
+    "targetCanonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+    "archimateType": "Access",
+    "specialization": null,
+    "label": "Reports factual operation Outcome without changing consumer disposition",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§4.9"
+  },
+  {
+    "identifier": "id-0fd79f830c614614bc394c9c7c1b2620",
+    "sourceCanonicalId": "410a938f42964474b7cf5655815dc830",
+    "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+    "archimateType": "Access",
+    "specialization": null,
+    "label": "Uses same IU identity/version; Summary/full projection determined by this contract",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§4.3–4.8"
+  },
+  {
+    "identifier": "id-1fa62de9dead4ed18a2c224ef7a59876",
+    "sourceCanonicalId": "410a938f42964474b7cf5655815dc830",
+    "targetCanonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+    "archimateType": "Access",
+    "specialization": null,
+    "label": "Reports factual operation Outcome without changing consumer disposition",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§4.9"
+  },
+  {
+    "identifier": "id-b0a6943826394dc2aabf0612f76ef0ce",
+    "sourceCanonicalId": "105f6ebe61f74bc6b51938ba550bc1a7",
+    "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+    "archimateType": "Access",
+    "specialization": null,
+    "label": "Uses same IU identity/version; Summary/full projection determined by this contract",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§4.3–4.8"
+  },
+  {
+    "identifier": "id-e1fe28c9b8944c20901528d2736122ea",
+    "sourceCanonicalId": "105f6ebe61f74bc6b51938ba550bc1a7",
+    "targetCanonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+    "archimateType": "Access",
+    "specialization": null,
+    "label": "Reports factual operation Outcome without changing consumer disposition",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§4.9"
+  },
+  {
+    "identifier": "id-b30ba3bece654db0bab8c3dbc9b552b8",
+    "sourceCanonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+    "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+    "archimateType": "Access",
+    "specialization": null,
+    "label": "Uses same IU identity/version; Summary/full projection determined by this contract",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§4.3–4.8"
+  },
+  {
+    "identifier": "id-1b0e9d538b1b415480830d0edc68a9de",
+    "sourceCanonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+    "targetCanonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+    "archimateType": "Access",
+    "specialization": null,
+    "label": "Reports factual operation Outcome without changing consumer disposition",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§4.9"
+  },
+  {
+    "identifier": "id-cfe915410e044d32933dd6ccb99a96c5",
+    "sourceCanonicalId": "1af8a56358f7429fabfb57be66542a99",
+    "targetCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "archimateType": "Assignment",
+    "specialization": null,
+    "label": "Mneme performs this non-authoritative active/working cache responsibility",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§2,4.1–4.2"
+  },
+  {
+    "identifier": "id-29d8e78fea4647c1930aaf07ed556d80",
+    "sourceCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "targetCanonicalId": "1af8a56358f7429fabfb57be66542a99",
+    "archimateType": "Association",
+    "specialization": "Home",
+    "label": "Architectural Home in Mneme",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§2,4.1–4.2"
+  },
+  {
+    "identifier": "id-7811ea90cd8540c98acf2e8cd472ef4b",
+    "sourceCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+    "archimateType": "Access",
+    "specialization": null,
+    "label": "Maintains governed manifestations of the same IU; no new authoritative identity",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§3.2,4.1–4.2"
+  },
+  {
+    "identifier": "id-eacda2f17b24474b86acf4bcfeedf33f",
+    "sourceCanonicalId": "1af8a56358f7429fabfb57be66542a99",
+    "targetCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "archimateType": "Assignment",
+    "specialization": null,
+    "label": "Mneme performs this non-authoritative active/working cache responsibility",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§2,4.1–4.2"
+  },
+  {
+    "identifier": "id-415acc4b9cc8473db54d27da8cc92f42",
+    "sourceCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "targetCanonicalId": "1af8a56358f7429fabfb57be66542a99",
+    "archimateType": "Association",
+    "specialization": "Home",
+    "label": "Architectural Home in Mneme",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§2,4.1–4.2"
+  },
+  {
+    "identifier": "id-17a76894ec9e4c97ab545bacc98b895f",
+    "sourceCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "targetCanonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+    "archimateType": "Access",
+    "specialization": null,
+    "label": "Maintains governed manifestations of the same IU; no new authoritative identity",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§3.2,4.1–4.2"
+  },
+  {
+    "identifier": "id-425f276072414feea68b2af231bbe18a",
+    "sourceCanonicalId": "c2b216d461b24d659c202268f0ec7fb7",
+    "targetCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Infinispan Server/Hot Rod supplies distributed reference-cache machinery; MC-01/02 qualified",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§2,4.1,9"
+  },
+  {
+    "identifier": "id-edb19d561e0a4642bd6ceeb787089613",
+    "sourceCanonicalId": "4048a6c775c542b6a29610d9e248a4d8",
+    "targetCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Embedded Infinispan LOCAL supplies JVM-local materialised cache machinery",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§2,4.2–4.3"
+  },
+  {
+    "identifier": "id-f9aa53db0e4d4e0abd7736da569913d0",
+    "sourceCanonicalId": "4048a6c775c542b6a29610d9e248a4d8",
+    "targetCanonicalId": "b521762c1ea444b48cd5f66be3752d30",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Embedded LOCAL machinery resides inside each applicable execution JVM",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§4.2–4.3"
+  },
+  {
+    "identifier": "id-f1818f00bc3a45b998362f5d5ecfb8df",
+    "sourceCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "targetCanonicalId": "b521762c1ea444b48cd5f66be3752d30",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Provides local governed working information through common context facilities",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§4.2–4.5"
+  },
+  {
+    "identifier": "id-075a974a6cb04f35a41cd3acf75a250d",
+    "sourceCanonicalId": "4048a6c775c542b6a29610d9e248a4d8",
+    "targetCanonicalId": "3f64d339648246e99e8866c8089f8960",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Embedded LOCAL machinery resides inside each applicable execution JVM",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§4.2–4.3"
+  },
+  {
+    "identifier": "id-cc6e6f318e5f4789ba6c1af3995a6a63",
+    "sourceCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "targetCanonicalId": "3f64d339648246e99e8866c8089f8960",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Provides local governed working information through common context facilities",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§4.2–4.5"
+  },
+  {
+    "identifier": "id-347c0b0dc25240be9b2c52ef0c9263e9",
+    "sourceCanonicalId": "4048a6c775c542b6a29610d9e248a4d8",
+    "targetCanonicalId": "d739c75dffe2453081735710b285f03b",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Embedded LOCAL machinery resides inside each applicable execution JVM",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§4.2–4.3"
+  },
+  {
+    "identifier": "id-d14819eae8f6458d8f001b63a356fa01",
+    "sourceCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "targetCanonicalId": "d739c75dffe2453081735710b285f03b",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Provides local governed working information through common context facilities",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§4.2–4.5"
+  },
+  {
+    "identifier": "id-3a3c5bb266134f53baa7a40d67b98cb3",
+    "sourceCanonicalId": "2988247b75664896a7deb97b12b20c0a",
+    "targetCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Authoritative Summary operation supports Mneme-controlled reference-cache management",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§2,4.6; no cache population side effect implied"
+  },
+  {
+    "identifier": "id-a124dca3efa14025b956df16c15187a7",
+    "sourceCanonicalId": "bffb611e29844eedaf39a5b27ccbbcc7",
+    "targetCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Authoritative Summary operation supports Mneme-controlled reference-cache management",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§2,4.6; no cache population side effect implied"
+  },
+  {
+    "identifier": "id-a49357e5b8d24b5a97909c7c8c81c02e",
+    "sourceCanonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+    "targetCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Authoritative Summary operation supports Mneme-controlled reference-cache management",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§2,4.6; no cache population side effect implied"
+  },
+  {
+    "identifier": "id-a3d049b09b684062a5c6ab173ed658a9",
+    "sourceCanonicalId": "410a938f42964474b7cf5655815dc830",
+    "targetCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "archimateType": "Serving",
+    "specialization": null,
+    "label": "Authoritative full read supports governed local Content materialisation",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§4.2,4.6"
+  },
+  {
+    "identifier": "id-f924ad301b9b45af99b2f97308cb977c",
+    "sourceCanonicalId": "2988247b75664896a7deb97b12b20c0a",
+    "targetCanonicalId": "7e590de2689e4450a2d25fd417f78e57",
+    "archimateType": "Realization",
+    "specialization": null,
+    "label": "Partial contribution: [Feature] CorrectVersionRetrieval within accepted contract scope; implementation unverified",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§1,10 existing Feature reconciliation"
+  },
+  {
+    "identifier": "id-926a8d645f144618a078e109cead04fd",
+    "sourceCanonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+    "targetCanonicalId": "302d2f39091c497cbb511193eeb8c529",
+    "archimateType": "Realization",
+    "specialization": null,
+    "label": "Partial contribution: [Feature] SearchNotCacheOnly within accepted contract scope; implementation unverified",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§1,10 existing Feature reconciliation"
+  },
+  {
+    "identifier": "id-c39abf0cb6c04f6f9dda2def58a8bf16",
+    "sourceCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "targetCanonicalId": "edd0eff404cf40989f698871b6a7315d",
+    "archimateType": "Realization",
+    "specialization": null,
+    "label": "Partial contribution: [Feature] WorkingStateNotAuthoritative within accepted contract scope; implementation unverified",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§1,10 existing Feature reconciliation"
+  },
+  {
+    "identifier": "id-b4a956ce983f4621993722c162b42841",
+    "sourceCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "targetCanonicalId": "e1e1e21c2e4549269179535cba70cf57",
+    "archimateType": "Realization",
+    "specialization": null,
+    "label": "Partial contribution: [Feature] ConcurrentVersionSafety within accepted contract scope; implementation unverified",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§1,10 existing Feature reconciliation"
+  },
+  {
+    "identifier": "id-2d26ad9585d840f0b7e6a01ba0bbbca1",
+    "sourceCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "targetCanonicalId": "7aad9f541fa2465db6f2015d0e91a07b",
+    "archimateType": "Realization",
+    "specialization": null,
+    "label": "Partial contribution: [Feature] ContextRehydratedFromAuthority within accepted contract scope; implementation unverified",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§1,10 existing Feature reconciliation"
+  },
+  {
+    "identifier": "id-740156063eb14380bbfb82b17de8f949",
+    "sourceCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "targetCanonicalId": "93d48197d552460ea6dc680e9e046e6c",
+    "archimateType": "Realization",
+    "specialization": null,
+    "label": "Partial contribution: [Feature] LostCacheNotLostWork within accepted contract scope; implementation unverified",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§1,10 existing Feature reconciliation"
+  },
+  {
+    "identifier": "id-b2877b3e02b24b2ea570e87a42deb860",
+    "sourceCanonicalId": "ff04c3dab8a04359b9c4d62939839be7",
+    "targetCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "archimateType": "Association",
+    "specialization": null,
+    "label": "Governs cache applicability; no satisfaction or stronger availability claim",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§1.2–1.3,4,9–10"
+  },
+  {
+    "identifier": "id-9d044e193e6e488c8f04cebf28a0a17f",
+    "sourceCanonicalId": "7f40b2f4947845d287564b43f812b6c8",
+    "targetCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "archimateType": "Association",
+    "specialization": null,
+    "label": "Governs cache applicability; no satisfaction or stronger availability claim",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§1.2–1.3,4,9–10"
+  },
+  {
+    "identifier": "id-f2645de30762449ebec9c19f187bcdaf",
+    "sourceCanonicalId": "eabd38371b6940289d9a4bf8e9773942",
+    "targetCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "archimateType": "Association",
+    "specialization": null,
+    "label": "Governs cache applicability; no satisfaction or stronger availability claim",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§1.2–1.3,4,9–10"
+  },
+  {
+    "identifier": "id-039e493cc12d43a8812c148dca7e8646",
+    "sourceCanonicalId": "8a1e995f16954484a78ae1c5c114d546",
+    "targetCanonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "archimateType": "Association",
+    "specialization": null,
+    "label": "Governs cache applicability; no satisfaction or stronger availability claim",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§1.2–1.3,4,9–10"
+  },
+  {
+    "identifier": "id-c26611da1fdd4c3aa5efefb6e17b8a02",
+    "sourceCanonicalId": "ff04c3dab8a04359b9c4d62939839be7",
+    "targetCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "archimateType": "Association",
+    "specialization": null,
+    "label": "Governs cache applicability; no satisfaction or stronger availability claim",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§1.2–1.3,4,9–10"
+  },
+  {
+    "identifier": "id-4654fa5eda9c4566a1ac3a275c3d31ab",
+    "sourceCanonicalId": "7f40b2f4947845d287564b43f812b6c8",
+    "targetCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "archimateType": "Association",
+    "specialization": null,
+    "label": "Governs cache applicability; no satisfaction or stronger availability claim",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§1.2–1.3,4,9–10"
+  },
+  {
+    "identifier": "id-07aae0e30ade4a80b73650d7527112ee",
+    "sourceCanonicalId": "eabd38371b6940289d9a4bf8e9773942",
+    "targetCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "archimateType": "Association",
+    "specialization": null,
+    "label": "Governs cache applicability; no satisfaction or stronger availability claim",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§1.2–1.3,4,9–10"
+  },
+  {
+    "identifier": "id-0ce2334cbbde4b12b6bbd96270d91f77",
+    "sourceCanonicalId": "8a1e995f16954484a78ae1c5c114d546",
+    "targetCanonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "archimateType": "Association",
+    "specialization": null,
+    "label": "Governs cache applicability; no satisfaction or stronger availability claim",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "§§1.2–1.3,4,9–10"
+  },
+  {
+    "identifier": "id-4e0d103d63cc461180ee5493bad23234",
+    "sourceCanonicalId": "fc732b64fc564127b73174e28d9ccce8",
+    "targetCanonicalId": "2988247b75664896a7deb97b12b20c0a",
+    "archimateType": "Association",
+    "specialization": null,
+    "label": "Explicit unknown outcome and evidence-based reconciliation remain required",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§4.9–4.12"
+  },
+  {
+    "identifier": "id-909e93a9676d47ee933d568a657bcc2b",
+    "sourceCanonicalId": "fc732b64fc564127b73174e28d9ccce8",
+    "targetCanonicalId": "bffb611e29844eedaf39a5b27ccbbcc7",
+    "archimateType": "Association",
+    "specialization": null,
+    "label": "Explicit unknown outcome and evidence-based reconciliation remain required",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§4.9–4.12"
+  },
+  {
+    "identifier": "id-98b624b125c947c5baf456c3e4f91875",
+    "sourceCanonicalId": "fc732b64fc564127b73174e28d9ccce8",
+    "targetCanonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+    "archimateType": "Association",
+    "specialization": null,
+    "label": "Explicit unknown outcome and evidence-based reconciliation remain required",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "§§4.9–4.12"
+  }
+]

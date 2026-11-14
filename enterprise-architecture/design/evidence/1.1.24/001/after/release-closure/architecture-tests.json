@@ -1,0 +1,23 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "180s",
+    "mvn",
+    "test",
+    "-pl",
+    "paradeigma/paradeigma-test",
+    "-am",
+    "-Dtest=*ArchitectureTest",
+    "-Dsurefire.failIfNoSpecifiedTests=false"
+  ],
+  "exitCode": 0,
+  "status": "PASS",
+  "seconds": 22.264,
+  "summary": [
+    "[\u001b[1;34mINFO\u001b[m] \u001b[1;32mTests run: 90, Failures: 0, Errors: 0, Skipped: 0\u001b[m",
+    "[\u001b[1;34mINFO\u001b[m] \u001b[1;32mBUILD SUCCESS\u001b[m",
+    "[\u001b[1;34mINFO\u001b[m] Total time:  21.207 s"
+  ]
+}

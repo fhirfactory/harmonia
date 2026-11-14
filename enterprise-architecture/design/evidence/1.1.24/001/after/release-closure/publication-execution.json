@@ -1,0 +1,15 @@
+{
+  "command": [
+    "make",
+    "-C",
+    "enterprise-architecture/tooling",
+    "continuum",
+    "continuum-rad"
+  ],
+  "exitCode": 0,
+  "status": "PASS",
+  "seconds": 48.225,
+  "release": "1.1.24",
+  "immutableDestinations": "all absent before generation",
+  "additionalAllocation": false
+}

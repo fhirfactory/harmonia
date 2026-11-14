@@ -1,0 +1,60 @@
+[
+  {
+    "command": [
+      "architecture_continuum.py",
+      "project",
+      "--output",
+      "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/Harmonia-Architecture.xml",
+      "--check"
+    ],
+    "status": "PASS",
+    "exitCode": 0,
+    "output": "{\"status\": \"PASS\", \"elements\": 6563, \"relationships\": 9427, \"qualifiedSourcePredicates\": 462, \"canonicalIdentities\": 6563, \"representationIdentities\": 6563, \"provenanceCoverage\": 6563, \"sourceBindings\": 8446, \"supportedNativeTypes\": 60, \"navigation\": \"PASS\", \"architecturalAcceptance\": \"See governed HCRLs; validation supplies no acceptance\", \"archiCatalogue\": {\"elementEntries\": 6563, \"nativeTypeDirectories\": 28, \"relationshipEntries\": 9427, \"sourceDirectories\": 2518}, \"containment\": \"PASS\", \"informationNaming\": {\"information_elements\": 101, \"native_types\": {\"DataObject\": 88, \"BusinessObject\": 13}, \"classifications\": {\"Topic\": 70, \"BusinessObject\": 13, \"UNRESOLVED\": 17, \"Class\": 1}, \"fully_derived\": 84, \"unresolved\": 17, \"contextual\": 60, \"preserved_identity\": 101, \"absent_identity\": 0, \"canonical_ids_allocated\": 0, \"metadata_changes\": {}}, \"offlineXsd\": \"PASS\", \"exchangeReferences\": \"PASS\", \"outputSha256\": \"6f6432a979a92a3adbf0261ba4bc761d092f87eb55fd4e5d7968f597e4d64d3a\", \"publicationAllocatedIdentities\": 0, \"actualArchiTransport\": \"NOT_PERFORMED\"}\n",
+    "elapsedSeconds": 12.503
+  },
+  {
+    "command": [
+      "publish_continuum.py",
+      "--output",
+      "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader",
+      "--check"
+    ],
+    "status": "PASS",
+    "exitCode": 0,
+    "output": "{\"status\": \"PASS\", \"artifacts\": 5, \"check\": true}\n",
+    "elapsedSeconds": 11.83
+  },
+  {
+    "command": [
+      "publish_continuum_rad.py",
+      "--output",
+      "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative",
+      "--check"
+    ],
+    "status": "PASS",
+    "exitCode": 0,
+    "output": "{\"status\": \"PASS\", \"artifacts\": 12, \"check\": true}\n",
+    "elapsedSeconds": 21.918
+  },
+  {
+    "command": [
+      "continuum_manifest.py",
+      "--check"
+    ],
+    "status": "PASS",
+    "exitCode": 0,
+    "output": "{\"status\": \"PASS\", \"manifest\": \"enterprise-architecture/continuum/MANIFEST.md\", \"check\": true, \"sha256\": \"88c5b2e0766ce79cc638f695207c5355feb6554966c9026ec5b715887c2c6da3\"}\n",
+    "elapsedSeconds": 6.609
+  },
+  {
+    "command": [
+      "verify_continuum_links.py",
+      "--report",
+      "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.24/001/after/source-links.json"
+    ],
+    "status": "PASS",
+    "exitCode": 0,
+    "output": "PASS\n",
+    "elapsedSeconds": 6.576
+  }
+]

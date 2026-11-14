@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "artifactChecks": [
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/Harmonia-Architecture.xml",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.24/Harmonia-Architecture.xml",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/README.md",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.24/README.md",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/continuum-catalogue.tex",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.24/continuum-catalogue.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/continuum.html",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.24/continuum.html",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/navigation.json",
+      "published": "enterprise-architecture/documentation/continuum-manifest/published/1.1.24/navigation.json",
+      "byteEqual": true,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/README.md",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/README.md",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/continuum-rad.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/continuum-rad.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/application.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/application.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/architecture-governance.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/architecture-governance.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/business.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/business.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/cross-cutting-references.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/cross-cutting-references.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/implementation-and-migration.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/implementation-and-migration.tex",
+      "byteEqual": true,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/motivation.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/motivation.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/strategy.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/strategy.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/technology.tex",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/technology.tex",
+      "byteEqual": false,
+      "corresponds": true
+    },
+    {
+      "candidate": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/structure.json",
+      "published": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/structure.json",
+      "byteEqual": false,
+      "corresponds": true
+    }
+  ],
+  "manifestChecks": [
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.24/publication.json",
+      "allOtherFieldsEqual": true,
+      "hashesMatch": true
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/publication.json",
+      "allOtherFieldsEqual": true,
+      "hashesMatch": true
+    }
+  ],
+  "dualExchangeBytesEqual": true,
+  "allowedChanges": "Only selected generated release metadata fields, independently verified model hash and generated relative link targets; entire maintained master exact after template release fields, with its fixed publication-context links retained literally. All remaining model/content/field/order/page bytes preserved.",
+  "priorMethod": "Reuses the predecessor field-specific publication comparison, including literal master-template links and independently verified derived model hash. Only candidate/publication locators and exact old/new release identities are adapted; no production comparator or validation change.",
+  "architectureAuthority": "Canonical Markdown unchanged; publication is derived, transport FAIL remains explicitly qualified."
+}

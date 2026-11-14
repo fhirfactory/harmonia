@@ -74,7 +74,11 @@ class ContinuumNavigationTests(unittest.TestCase):
             for node in nav.walk([part]):
                 for i, child in enumerate(node.get('children', []), 1):
                     self.assertEqual(child['number'], node['number'] + '.' + str(i))
-        self.assertFalse(self.tree[5].get('children'))
+        # The accepted cache design selects two distinct technology configurations.
+        self.assertEqual(set(nav.descendants(self.tree[5])), {
+            'c2b216d461b24d659c202268f0ec7fb7',
+            '4048a6c775c542b6a29610d9e248a4d8',
+        })
         self.assertFalse(self.tree[6].get('children'))
         perspectives = [n for n in nav.walk(self.tree) if n.get('kind') == 'index-entry']
         # The duplicate Patient allocation is a historical correspondence entry;
