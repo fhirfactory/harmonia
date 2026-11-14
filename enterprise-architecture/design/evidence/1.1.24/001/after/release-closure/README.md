@@ -24,3 +24,7 @@ The [final Solution Architect Task](../../before/ai-agent-tasks/20261114T093810Z
 Optional PDFs were not built. The narrative publication consists of generated LaTeX source/parts and complete structure/source correspondence. No returned Exchange, authored View, maintained template, comparator or implementation is changed. The accepted patch allocation is not repeated for registration or finite Git receipt maintenance.
 
 Terminal commit/push verification and the formal closure Report are retained here as they are emitted. The accepted release commit is followed, where needed, by a bounded provenance receipt commit. The final receipt's own SHA is verified externally and reported without a self-referential commit identifier.
+
+[Formal closure Report](../ai-agent-reports/20261114T094845Z-final-acceptance-and-release-closure.md) · [Git transition receipt](git-transition.json) · [User push handoff](../../before/release-closure/push-handoff.md).
+
+Accepted release commit: `88fc1a4208a61a93dfe513c0a3c9bd0ec6d495da`; working tree was clean immediately after it. Agent push failed authentication; the user will push locally. Overall closure remains pending actual delivery and terminal remote/clean-tree verification.
