@@ -34,7 +34,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 /**
- * The foundational, indivisible unit of governed information within Harmonia.
+ * Encapsulates the canonical, immutable representation of a Harmonia Information Unit (IU).
  * <p>
  * <b>Architectural Context &amp; Authority:</b>
  * In accordance with the accepted 1.1.25 Architecture Continuum ({@code model.core.information.InformationUnit}):
@@ -49,14 +49,15 @@ import java.util.UUID;
  *   <li><b>Singular Governed Representation:</b> An Information Unit contains <b>exactly one</b> governed
  *       {@link InformationRepresentation}. It SHALL NOT maintain alternative representations or conversion collections.
  *       A consumer requiring a differently structured representation creates a <b>new Information Unit</b>.</li>
- *   <li><b>Metadata Concerns ({@link InformationUnitMetadata}):</b>
+ *   <li><b>Metadata Concerns ({@link InformationMetadata}):</b>
  *     <ol>
  *       <li>{@link InformationCoordinates}: Four named Topic references (PersistenceGateway, GatewayEndpoint, InformationLocation, InformationOwner).
  *           <b>100% independent of SecurityContext</b>.</li>
  *       <li>{@link InformationItinerary}: Distinct conceptual information path and component participation concern with strongly typed Topics.</li>
+ *       <li><b>Origin:</b> Governed Topic describing where the information originated.</li>
  *       <li>{@link InformationSecurityContext}: IU-side required criteria, compartments, and action masks.</li>
- *       <li>{@link LifecycleContext}: Governed information lifecycle and persistence coordination.</li>
- *       <li>{@link ManagementContext}: Mneme operational working context (operational version, active generation).</li>
+ *       <li>{@link LifecycleContext}: Governed information lifecycle (retention, disposition, archive).</li>
+ *       <li><b>Relationships:</b> Creator-supplied relationships ({@link InformationUnitRelationship}).</li>
  *     </ol>
  *   </li>
  *   <li><b>IU Summary Projection Semantics:</b> The IU Summary is an operational projection of that <b>same
@@ -80,7 +81,7 @@ public final class InformationUnit implements Serializable {
 
     private final InformationUnitIdentifier identifier;
     private final String version;
-    private final InformationUnitMetadata metadata;
+    private final InformationMetadata metadata;
     private final InformationRepresentation representation;
 
     /**
@@ -92,40 +93,47 @@ public final class InformationUnit implements Serializable {
      * @param representation the single governed representation (optional, defaults to empty Summary)
      * @throws NullPointerException if {@code identifier} is null
      */
+    public InformationUnit(
+            InformationUnitIdentifier identifier,
+            String version,
+            InformationMetadata metadata,
+            InformationRepresentation representation) {
+        this.identifier = Objects.requireNonNull(identifier, "identifier must not be null");
+        this.version = version != null && !version.isBlank() ? version.trim() : null;
+        this.metadata = metadata != null ? metadata : InformationMetadata.empty();
+        this.representation = representation != null ? representation : InformationRepresentation.builder().buildSummary();
+    }
+
     @JsonCreator
     public InformationUnit(
             @JsonProperty("identifier") InformationUnitIdentifier identifier,
             @JsonProperty("version") String version,
             @JsonProperty("metadata") InformationUnitMetadata metadata,
             @JsonProperty("representation") InformationRepresentation representation) {
-        this.identifier = Objects.requireNonNull(identifier, "identifier must not be null");
-        this.version = version != null && !version.isBlank() ? version.trim() : null;
-        this.metadata = metadata != null ? metadata : InformationUnitMetadata.empty();
-        this.representation = representation != null ? representation : InformationRepresentation.builder().buildSummary();
+        this(identifier, version, (InformationMetadata) metadata, representation);
     }
 
-    /**
-     * Compatibility constructor without explicit authoritative version.
-     *
-     * @param identifier     the persistent identity and canonical Topic, must not be null
-     * @param metadata       metadata contexts and relationships (optional, defaults to empty)
-     * @param representation single governed representation (optional, defaults to empty Summary)
-     */
     public InformationUnit(
             InformationUnitIdentifier identifier,
-            InformationUnitMetadata metadata,
+            InformationMetadata metadata,
             InformationRepresentation representation) {
         this(identifier, null, metadata, representation);
     }
 
-    /**
-     * Factory method creating an {@code InformationUnit} with specified UUID, metadata, and representation.
-     *
-     * @param uuid           the persistent UUID, must not be null
-     * @param metadata       metadata contexts (optional, defaults to empty)
-     * @param representation single governed representation (optional, defaults to empty Summary)
-     * @return populated InformationUnit
-     */
+    public InformationUnit(
+            InformationUnitIdentifier identifier,
+            InformationUnitMetadata metadata,
+            InformationRepresentation representation) {
+        this(identifier, null, (InformationMetadata) metadata, representation);
+    }
+
+    public static InformationUnit create(
+            UUID uuid,
+            InformationMetadata metadata,
+            InformationRepresentation representation) {
+        return new InformationUnit(InformationUnitIdentifier.fromUuid(uuid), null, metadata, representation);
+    }
+
     public static InformationUnit create(
             UUID uuid,
             InformationUnitMetadata metadata,
@@ -133,15 +141,14 @@ public final class InformationUnit implements Serializable {
         return new InformationUnit(InformationUnitIdentifier.fromUuid(uuid), null, metadata, representation);
     }
 
-    /**
-     * Factory method creating an {@code InformationUnit} with specified UUID, authoritative version, metadata, and representation.
-     *
-     * @param uuid           the persistent UUID, must not be null
-     * @param version        authoritative persisted version
-     * @param metadata       metadata contexts (optional, defaults to empty)
-     * @param representation single governed representation (optional, defaults to empty Summary)
-     * @return populated InformationUnit
-     */
+    public static InformationUnit create(
+            UUID uuid,
+            String version,
+            InformationMetadata metadata,
+            InformationRepresentation representation) {
+        return new InformationUnit(InformationUnitIdentifier.fromUuid(uuid), version, metadata, representation);
+    }
+
     public static InformationUnit create(
             UUID uuid,
             String version,
@@ -150,24 +157,18 @@ public final class InformationUnit implements Serializable {
         return new InformationUnit(InformationUnitIdentifier.fromUuid(uuid), version, metadata, representation);
     }
 
-    /**
-     * Factory method creating an {@code InformationUnit} with a freshly generated random UUID.
-     *
-     * @param metadata       metadata contexts (optional, defaults to empty)
-     * @param representation single governed representation (optional, defaults to empty Summary)
-     * @return populated InformationUnit
-     */
+    public static InformationUnit random(
+            InformationMetadata metadata,
+            InformationRepresentation representation) {
+        return new InformationUnit(InformationUnitIdentifier.random(), null, metadata, representation);
+    }
+
     public static InformationUnit random(
             InformationUnitMetadata metadata,
             InformationRepresentation representation) {
         return new InformationUnit(InformationUnitIdentifier.random(), null, metadata, representation);
     }
 
-    /**
-     * Creates a new builder for constructing {@code InformationUnit} instances.
-     *
-     * @return a new builder
-     */
     public static Builder builder() {
         return new Builder();
     }
@@ -176,11 +177,6 @@ public final class InformationUnit implements Serializable {
     // Core Accessors
     // =========================================================================
 
-    /**
-     * Returns the persistent identity and canonical Topic of the Information Unit.
-     *
-     * @return the identifier, never null
-     */
     @JsonProperty("identifier")
     public InformationUnitIdentifier identifier() {
         return identifier;
@@ -190,11 +186,6 @@ public final class InformationUnit implements Serializable {
         return identifier;
     }
 
-    /**
-     * Returns the persistent UUID of this Information Unit.
-     *
-     * @return the UUID, never null
-     */
     @JsonIgnore
     public UUID uuid() {
         return identifier.uuid();
@@ -205,11 +196,6 @@ public final class InformationUnit implements Serializable {
         return identifier.uuid();
     }
 
-    /**
-     * Returns the canonical hierarchical Topic name for this Information Unit.
-     *
-     * @return canonical topic string, never null
-     */
     @JsonIgnore
     public String topicName() {
         return identifier.topicName();
@@ -220,21 +206,11 @@ public final class InformationUnit implements Serializable {
         return identifier.topicName();
     }
 
-    /**
-     * Returns the canonical {@link Topic} representation of this Information Unit identifier.
-     *
-     * @return canonical Topic instance
-     */
     @JsonIgnore
     public Topic toTopic() {
         return identifier.toTopic();
     }
 
-    /**
-     * Returns the authoritative persisted version established by Mnemosyne.
-     *
-     * @return authoritative persisted version, or null if not yet persisted
-     */
     @JsonProperty("version")
     public String version() {
         return version;
@@ -244,25 +220,27 @@ public final class InformationUnit implements Serializable {
         return version;
     }
 
-    /**
-     * Returns the metadata contexts and creator-supplied relationships.
-     *
-     * @return the metadata, never null
-     */
     @JsonProperty("metadata")
-    public InformationUnitMetadata metadata() {
+    public InformationMetadata metadata() {
         return metadata;
     }
 
+    @JsonIgnore
     public InformationUnitMetadata getMetadata() {
-        return metadata;
+        if (metadata instanceof InformationUnitMetadata ium) {
+            return ium;
+        }
+        return new InformationUnitMetadata(
+                ManagementContext.empty(),
+                metadata.coordinates(),
+                metadata.itinerary(),
+                metadata.origin().orElse(null),
+                metadata.securityContext(),
+                metadata.lifecycleContext(),
+                metadata.relationships()
+        );
     }
 
-    /**
-     * Returns the single governed representation of this Information Unit.
-     *
-     * @return the representation, never null
-     */
     @JsonProperty("representation")
     public InformationRepresentation representation() {
         return representation;
@@ -278,22 +256,31 @@ public final class InformationUnit implements Serializable {
 
     @JsonIgnore
     public ManagementContext managementContext() {
-        return metadata.managementContext();
+        if (metadata instanceof InformationUnitMetadata ium) {
+            return ium.managementContext();
+        }
+        return ManagementContext.empty();
     }
 
     @JsonIgnore
     public ManagementContext getManagementContext() {
-        return metadata.managementContext();
+        return managementContext();
     }
 
     @JsonIgnore
+    public Optional<OperationalRevision> operationalRevision() {
+        return managementContext().operationalRevision();
+    }
+
+    @Deprecated
+    @JsonIgnore
     public Optional<AuthoritativeVersion> operationalVersion() {
-        return metadata.managementContext().operationalVersion();
+        return managementContext().operationalVersion();
     }
 
     @JsonIgnore
     public Optional<String> activeGeneration() {
-        return metadata.managementContext().activeGeneration();
+        return managementContext().activeGeneration();
     }
 
     // =========================================================================
@@ -302,52 +289,52 @@ public final class InformationUnit implements Serializable {
 
     @JsonIgnore
     public InformationCoordinates informationCoordinates() {
-        return metadata.informationCoordinates();
+        return metadata.coordinates();
     }
 
     @JsonIgnore
     public InformationCoordinates getInformationCoordinates() {
-        return metadata.informationCoordinates();
+        return metadata.coordinates();
     }
 
     @JsonIgnore
     public Optional<Topic> persistenceGateway() {
-        return metadata.informationCoordinates().persistenceGateway();
+        return metadata.coordinates().persistenceGateway();
     }
 
     @JsonIgnore
     public Optional<Topic> gatewayEndpoint() {
-        return metadata.informationCoordinates().gatewayEndpoint();
+        return metadata.coordinates().gatewayEndpoint();
     }
 
     @JsonIgnore
     public Optional<Topic> informationLocation() {
-        return metadata.informationCoordinates().informationLocation();
+        return metadata.coordinates().informationLocation();
     }
 
     @JsonIgnore
     public Optional<Topic> informationOwner() {
-        return metadata.informationCoordinates().informationOwner();
+        return metadata.coordinates().informationOwner();
     }
 
     @JsonIgnore
     public Optional<String> persistenceGatewayName() {
-        return metadata.informationCoordinates().persistenceGatewayName();
+        return metadata.coordinates().persistenceGatewayName();
     }
 
     @JsonIgnore
     public Optional<String> gatewayEndpointName() {
-        return metadata.informationCoordinates().gatewayEndpointName();
+        return metadata.coordinates().gatewayEndpointName();
     }
 
     @JsonIgnore
     public Optional<String> informationLocationName() {
-        return metadata.informationCoordinates().informationLocationName();
+        return metadata.coordinates().informationLocationName();
     }
 
     @JsonIgnore
     public Optional<String> informationOwnerName() {
-        return metadata.informationCoordinates().informationOwnerName();
+        return metadata.coordinates().informationOwnerName();
     }
 
     // =========================================================================
@@ -356,42 +343,56 @@ public final class InformationUnit implements Serializable {
 
     @JsonIgnore
     public InformationItinerary informationItinerary() {
-        return metadata.informationItinerary();
+        return metadata.itinerary();
     }
 
     @JsonIgnore
     public InformationItinerary getInformationItinerary() {
-        return metadata.informationItinerary();
+        return metadata.itinerary();
     }
 
     @JsonIgnore
     public Optional<Topic> sourceEntryComponent() {
-        return metadata.informationItinerary().sourceEntryComponent();
+        return metadata.itinerary().sourceEntryComponent();
     }
 
     @JsonIgnore
     public Optional<Topic> creationComponent() {
-        return metadata.informationItinerary().creationComponent();
+        return metadata.itinerary().creationComponent();
     }
 
     @JsonIgnore
     public Optional<Topic> previousComponent() {
-        return metadata.informationItinerary().previousComponent();
+        return metadata.itinerary().previousComponent();
     }
 
     @JsonIgnore
     public Optional<Topic> nextComponent() {
-        return metadata.informationItinerary().nextComponent();
+        return metadata.itinerary().nextComponent();
     }
 
     @JsonIgnore
     public Optional<Topic> targetExitComponent() {
-        return metadata.informationItinerary().targetExitComponent();
+        return metadata.itinerary().targetExitComponent();
     }
 
     @JsonIgnore
     public List<Topic> participatingComponents() {
-        return metadata.informationItinerary().participatingComponents();
+        return metadata.itinerary().participatingComponents();
+    }
+
+    // =========================================================================
+    // Origin Convenience Accessors
+    // =========================================================================
+
+    @JsonIgnore
+    public Optional<Topic> origin() {
+        return metadata.origin();
+    }
+
+    @JsonIgnore
+    public Topic getOrigin() {
+        return metadata.origin().orElse(null);
     }
 
     // =========================================================================
@@ -514,20 +515,6 @@ public final class InformationUnit implements Serializable {
     // Summary Projection Semantics
     // =========================================================================
 
-    /**
-     * Projects this Information Unit to its <b>Information Unit Summary</b>.
-     * <p>
-     * In accordance with {@code DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md} (FC-01–FC-05):
-     * <ul>
-     *   <li>The Summary is an operational projection of the <b>same Information Unit</b>.</li>
-     *   <li>Excludes <b>precisely {@code InformationRepresentation.Content}</b>.</li>
-     *   <li>Preserves all metadata contexts, relationships, {@link ContainerMetadata},
-     *       and {@link ContentMetadata} (crucially including {@code contentReference}).</li>
-     *   <li>The Summary is not an independently versioned or separate entity.</li>
-     * </ul>
-     *
-     * @return Summary projection of this Information Unit
-     */
     public InformationUnit toSummary() {
         if (isSummary()) {
             return this;
@@ -547,8 +534,16 @@ public final class InformationUnit implements Serializable {
         return new InformationUnit(this.identifier, version != null ? version.value() : null, this.metadata, this.representation);
     }
 
+    public InformationUnit withMetadata(InformationMetadata metadata) {
+        return new InformationUnit(this.identifier, this.version, metadata, this.representation);
+    }
+
     public InformationUnit withMetadata(InformationUnitMetadata metadata) {
         return new InformationUnit(this.identifier, this.version, metadata, this.representation);
+    }
+
+    public InformationUnit withOrigin(Topic origin) {
+        return withMetadata(this.metadata.withOrigin(origin));
     }
 
     public InformationUnit withRepresentation(InformationRepresentation representation) {
@@ -556,15 +551,19 @@ public final class InformationUnit implements Serializable {
     }
 
     public InformationUnit withManagementContext(ManagementContext managementContext) {
-        return new InformationUnit(this.identifier, this.version, this.metadata.withManagementContext(managementContext), this.representation);
+        if (this.metadata instanceof InformationUnitMetadata ium) {
+            return new InformationUnit(this.identifier, this.version, ium.withManagementContext(managementContext), this.representation);
+        }
+        InformationUnitMetadata newMeta = new InformationUnitMetadata(managementContext, metadata.coordinates(), metadata.itinerary(), metadata.origin().orElse(null), metadata.securityContext(), metadata.lifecycleContext(), metadata.relationships());
+        return new InformationUnit(this.identifier, this.version, newMeta, this.representation);
     }
 
     public InformationUnit withInformationCoordinates(InformationCoordinates informationCoordinates) {
-        return new InformationUnit(this.identifier, this.version, this.metadata.withInformationCoordinates(informationCoordinates), this.representation);
+        return new InformationUnit(this.identifier, this.version, this.metadata.withCoordinates(informationCoordinates), this.representation);
     }
 
     public InformationUnit withInformationItinerary(InformationItinerary informationItinerary) {
-        return new InformationUnit(this.identifier, this.version, this.metadata.withInformationItinerary(informationItinerary), this.representation);
+        return new InformationUnit(this.identifier, this.version, this.metadata.withItinerary(informationItinerary), this.representation);
     }
 
     public InformationUnit withSecurityContext(InformationSecurityContext securityContext) {
@@ -587,6 +586,10 @@ public final class InformationUnit implements Serializable {
         return new InformationUnit(this.identifier, this.version, this.metadata, this.representation.withContent(content));
     }
 
+    public InformationUnit withContent(Content content) {
+        return new InformationUnit(this.identifier, this.version, this.metadata, this.representation.withContent(content));
+    }
+
     public InformationUnit withContentMetadata(ContentMetadata contentMetadata) {
         return new InformationUnit(this.identifier, this.version, this.metadata, this.representation.withContentMetadata(contentMetadata));
     }
@@ -599,12 +602,6 @@ public final class InformationUnit implements Serializable {
     // Validation Helper
     // =========================================================================
 
-    /**
-     * Validates that this Information Unit satisfies foundational model invariants.
-     *
-     * @return true if valid
-     * @throws IllegalStateException if any architectural invariant is violated
-     */
     public boolean validate() {
         if (identifier == null) {
             throw new IllegalStateException("InformationUnit must have a non-null identifier");
@@ -633,10 +630,10 @@ public final class InformationUnit implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InformationUnit that = (InformationUnit) o;
-        return identifier.equals(that.identifier) &&
+        return Objects.equals(identifier, that.identifier) &&
                 Objects.equals(version, that.version) &&
-                metadata.equals(that.metadata) &&
-                representation.equals(that.representation);
+                Objects.equals(metadata, that.metadata) &&
+                Objects.equals(representation, that.representation);
     }
 
     @Override
@@ -663,11 +660,12 @@ public final class InformationUnit implements Serializable {
 
         private InformationUnitIdentifier identifier;
         private String version;
-        private InformationUnitMetadata metadata;
+        private InformationMetadata metadata;
         private InformationRepresentation representation;
 
         private InformationCoordinates coordinates;
         private InformationItinerary itinerary;
+        private Topic origin;
         private InformationSecurityContext securityContext;
         private LifecycleContext lifecycleContext;
         private ManagementContext managementContext;
@@ -675,7 +673,7 @@ public final class InformationUnit implements Serializable {
 
         private ContainerMetadata containerMetadata;
         private ContentMetadata contentMetadata;
-        private Object content;
+        private Content content;
 
         public Builder identifier(InformationUnitIdentifier identifier) {
             this.identifier = identifier;
@@ -707,6 +705,11 @@ public final class InformationUnit implements Serializable {
             return this;
         }
 
+        public Builder metadata(InformationMetadata metadata) {
+            this.metadata = metadata;
+            return this;
+        }
+
         public Builder metadata(InformationUnitMetadata metadata) {
             this.metadata = metadata;
             return this;
@@ -734,6 +737,11 @@ public final class InformationUnit implements Serializable {
 
         public Builder informationItinerary(InformationItinerary itinerary) {
             this.itinerary = itinerary;
+            return this;
+        }
+
+        public Builder origin(Topic origin) {
+            this.origin = origin;
             return this;
         }
 
@@ -778,37 +786,69 @@ public final class InformationUnit implements Serializable {
         }
 
         public Builder content(Object content) {
-            this.content = content;
+            this.content = Content.of(content);
             return this;
         }
 
-        public InformationUnit buildSummary() {
-            this.content = null;
-            return build();
+        public Builder content(Content content) {
+            this.content = content != null ? content : Content.empty();
+            return this;
+        }
+
+        public Builder content(String content) {
+            this.content = content != null ? Content.text(content) : Content.empty();
+            return this;
+        }
+
+        public Builder content(byte[] content) {
+            this.content = content != null ? Content.binary(content) : Content.empty();
+            return this;
         }
 
         public InformationUnit build() {
-            InformationUnitIdentifier id = identifier != null ? identifier : InformationUnitIdentifier.random();
-            InformationUnitMetadata meta = metadata;
+            InformationUnitIdentifier id = this.identifier != null ? this.identifier : InformationUnitIdentifier.random();
+            InformationMetadata meta = this.metadata;
             if (meta == null) {
-                meta = new InformationUnitMetadata(
-                        managementContext != null ? managementContext : ManagementContext.empty(),
-                        coordinates != null ? coordinates : InformationCoordinates.empty(),
-                        itinerary != null ? itinerary : InformationItinerary.empty(),
-                        securityContext != null ? securityContext : InformationSecurityContext.empty(),
-                        lifecycleContext != null ? lifecycleContext : LifecycleContext.empty(),
-                        relationships
-                );
+                if (managementContext != null) {
+                    meta = new InformationUnitMetadata(
+                            managementContext,
+                            coordinates != null ? coordinates : InformationCoordinates.empty(),
+                            itinerary != null ? itinerary : InformationItinerary.empty(),
+                            origin,
+                            securityContext != null ? securityContext : InformationSecurityContext.empty(),
+                            lifecycleContext != null ? lifecycleContext : LifecycleContext.empty(),
+                            relationships
+                    );
+                } else {
+                    meta = new InformationMetadata(
+                            coordinates != null ? coordinates : InformationCoordinates.empty(),
+                            itinerary != null ? itinerary : InformationItinerary.empty(),
+                            origin,
+                            securityContext != null ? securityContext : InformationSecurityContext.empty(),
+                            lifecycleContext != null ? lifecycleContext : LifecycleContext.empty(),
+                            relationships
+                    );
+                }
             }
-            InformationRepresentation rep = representation;
+            InformationRepresentation rep = this.representation;
             if (rep == null) {
                 rep = new InformationRepresentation(
                         containerMetadata != null ? containerMetadata : ContainerMetadata.empty(),
                         contentMetadata != null ? contentMetadata : ContentMetadata.empty(),
-                        content
+                        content != null ? content : Content.empty()
                 );
             }
             return new InformationUnit(id, version, meta, rep);
+        }
+
+        public InformationUnit buildSummary() {
+            InformationRepresentation rep = this.representation;
+            if (rep != null) {
+                this.representation = rep.toSummary();
+            } else {
+                this.content = Content.empty();
+            }
+            return build();
         }
     }
 }

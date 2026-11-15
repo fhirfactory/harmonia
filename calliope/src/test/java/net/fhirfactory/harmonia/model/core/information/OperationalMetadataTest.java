@@ -56,7 +56,8 @@ public class OperationalMetadataTest {
 
         assertThat(op.getSubjectIdentifier()).isEqualTo(subjectId);
         assertThat(op.getOperationalContext()).isEqualTo(contextTopic);
-        assertThat(op.getOperationalRevision()).isEqualTo(AuthoritativeVersion.of("42"));
+        assertThat(op.getOperationalRevision()).isEqualTo(OperationalRevision.of("42"));
+        assertThat(op.getOperationalVersion()).isEqualTo(AuthoritativeVersion.of("42"));
         assertThat(op.getActiveGeneration()).isEqualTo("gen-alpha-001");
         assertThat(op.getCachedAt()).isEqualTo(now);
         assertThat(op.getTransientProperties()).containsEntry("nodeId", "mneme-node-1");
@@ -75,7 +76,7 @@ public class OperationalMetadataTest {
         String authoritativeVersion = "10";
 
         // 2. Mneme Operational Revision (for cache optimistic concurrency)
-        AuthoritativeVersion operationalRev = AuthoritativeVersion.of("12");
+        OperationalRevision operationalRev = OperationalRevision.of("12");
 
         // 3. Cache Active Generation (cache manifestation instance)
         String activeGen = "cache-gen-east-99";
@@ -117,7 +118,8 @@ public class OperationalMetadataTest {
 
         // Assert independence
         assertThat(unit.version()).isEqualTo("10");
-        assertThat(op.getOperationalRevision()).isEqualTo(AuthoritativeVersion.of("12"));
+        assertThat(op.getOperationalRevision()).isEqualTo(OperationalRevision.of("12"));
+        assertThat(op.getOperationalVersion()).isEqualTo(AuthoritativeVersion.of("12"));
         assertThat(op.getActiveGeneration()).isEqualTo("cache-gen-east-99");
         assertThat(op.getLifecycleStage()).isEqualTo("COMMITTED");
         assertThat(op.getCommitOutcome()).isEqualTo(AuthoritativeCommitOutcome.COMMITTED);

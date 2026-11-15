@@ -30,28 +30,27 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
- * Encapsulates the single governed representation of an Information Unit, comprising Container Metadata,
- * Content Metadata, and actual represented Content.
+ * Encapsulates the single governed representation of an Information Unit, containing its container envelope metadata,
+ * content structure metadata, and portable content payload.
  * <p>
  * <b>Architectural Context &amp; Authority:</b>
- * In accordance with {@code DRP-Information-Unit-Framework.Final.001.md} (§§2, 6, 9; IU-02) and
- * {@code DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md} (§§4.3, 4.3.1; FC-01–FC-05):
+ * In accordance with the accepted 1.1.25 Architecture Continuum ({@code model.core.information.InformationUnit})
+ * and {@code DRP-Information-Unit-Framework.Final.002.md} (§§1, 5; IU-02):
  * <ul>
  *   <li><b>EXACTLY-ONE-REPRESENTATION INVARIANT (IU-02):</b> An Information Unit contains <b>exactly one</b> governed
  *       {@code InformationRepresentation}. It SHALL NOT maintain alternative governed representations, collections of
  *       alternate encodings, or reverse transformation rules. A consumer requiring a differently structured or formatted
  *       governed representation transforms the information and creates a <b>new Information Unit</b>.</li>
- *   <li><b>Composition:</b>
+ *   <li><b>THREE-FOLD CONSTITUENTS:</b>
  *     <ol>
- *       <li><b>{@link ContainerMetadata}:</b> Describes the container, envelope, carriage, and assembly.</li>
- *       <li><b>{@link ContentMetadata}:</b> Describes the Content Structure Topic, Content Structure Version, Format,
- *           and resolvable {@code contentReference}.</li>
- *       <li><b>Content:</b> The actual represented information payload (structured, textual, binary, or opaque).</li>
+ *       <li><b>{@link ContainerMetadata}:</b> Dimensions describing the container or transport envelope.</li>
+ *       <li><b>{@link ContentMetadata}:</b> Dimensions describing the schema, model, version, format, and content reference.</li>
+ *       <li><b>{@link Content}:</b> The portable represented content (textual, binary, or by reference), or working manifestation.</li>
  *     </ol>
  *   </li>
  *   <li><b>SUMMARY PROJECTION SEMANTICS:</b> The Information Unit Summary projection is an operation projection of the
- *       same Information Unit that <b>precisely excludes {@code Content} ({@code content == null})</b> while preserving
- *       {@link ContainerMetadata} and {@link ContentMetadata} (including the {@code contentReference}).
+ *       same Information Unit that <b>precisely excludes {@code Content}</b> while preserving {@link ContainerMetadata}
+ *       and {@link ContentMetadata} (including the {@code contentReference}).
  *       The Summary is <b>not</b> a second entity, second representation kind, or independently governed record.</li>
  * </ul>
  * <p>
@@ -59,8 +58,7 @@ import java.util.Optional;
  * <ul>
  *   <li>{@link ContainerMetadata} and {@link ContentMetadata} are guaranteed non-null.</li>
  *   <li>Byte arrays passed as content are defensively cloned upon construction and access to preserve immutability.</li>
- *   <li>Type-safe conversion helpers ({@link #contentAsString()}, {@link #contentAsBytes()}, {@link #contentAs(Class)})
- *       provide explicit unhappy-path handling.</li>
+ *   <li>Invariant 7 (Zero-PHI diagnostic logging) is enforced through {@link Content#toString()}.</li>
  *   <li>Immutable value object design.</li>
  * </ul>
  */
@@ -72,14 +70,26 @@ public final class InformationRepresentation implements Serializable {
 
     private final ContainerMetadata containerMetadata;
     private final ContentMetadata contentMetadata;
-    private final Object content;
+    private final Content content;
 
     /**
-     * Canonical constructor establishing validated representation components.
+     * Canonical constructor establishing validated representation components with governed {@link Content}.
      *
      * @param containerMetadata container and envelope metadata (optional, defaults to empty)
      * @param contentMetadata   content metadata and structure version (optional, defaults to empty)
-     * @param content           actual information payload (nullable; null in Summary projection)
+     * @param content           governed portable content (optional, defaults to empty)
+     */
+    public InformationRepresentation(
+            ContainerMetadata containerMetadata,
+            ContentMetadata contentMetadata,
+            Content content) {
+        this.containerMetadata = containerMetadata != null ? containerMetadata : ContainerMetadata.empty();
+        this.contentMetadata = contentMetadata != null ? contentMetadata : ContentMetadata.empty();
+        this.content = content != null ? content : Content.empty();
+    }
+
+    /**
+     * Flexible creator accepting either {@link Content} or raw Object payloads (including null for Summary projection).
      */
     @JsonCreator
     public InformationRepresentation(
@@ -88,10 +98,12 @@ public final class InformationRepresentation implements Serializable {
             @JsonProperty("content") Object content) {
         this.containerMetadata = containerMetadata != null ? containerMetadata : ContainerMetadata.empty();
         this.contentMetadata = contentMetadata != null ? contentMetadata : ContentMetadata.empty();
-        if (content instanceof byte[] bytes) {
-            this.content = bytes.clone();
+        if (content == null) {
+            this.content = Content.empty();
+        } else if (content instanceof Content c) {
+            this.content = c;
         } else {
-            this.content = content;
+            this.content = Content.of(content);
         }
     }
 
@@ -111,6 +123,21 @@ public final class InformationRepresentation implements Serializable {
     }
 
     /**
+     * Factory method creating an {@code InformationRepresentation} with governed {@link Content}.
+     *
+     * @param containerMetadata container metadata (optional, defaults to empty)
+     * @param contentMetadata   content metadata (optional, defaults to empty)
+     * @param content           the governed content
+     * @return populated InformationRepresentation
+     */
+    public static InformationRepresentation of(
+            ContainerMetadata containerMetadata,
+            ContentMetadata contentMetadata,
+            Content content) {
+        return new InformationRepresentation(containerMetadata, contentMetadata, content);
+    }
+
+    /**
      * Factory method creating an {@code InformationRepresentation} in Summary projection (excluding content).
      *
      * @param containerMetadata container metadata (optional, defaults to empty)
@@ -120,7 +147,7 @@ public final class InformationRepresentation implements Serializable {
     public static InformationRepresentation summary(
             ContainerMetadata containerMetadata,
             ContentMetadata contentMetadata) {
-        return new InformationRepresentation(containerMetadata, contentMetadata, null);
+        return new InformationRepresentation(containerMetadata, contentMetadata, Content.empty());
     }
 
     /**
@@ -146,6 +173,10 @@ public final class InformationRepresentation implements Serializable {
         return containerMetadata;
     }
 
+    public ContainerMetadata getContainerMetadata() {
+        return containerMetadata;
+    }
+
     /**
      * Returns the content metadata (including structure topic, version, and content reference).
      *
@@ -156,17 +187,31 @@ public final class InformationRepresentation implements Serializable {
         return contentMetadata;
     }
 
+    public ContentMetadata getContentMetadata() {
+        return contentMetadata;
+    }
+
     /**
-     * Returns the actual represented content, if present.
+     * Returns the governed portable {@link Content} model.
+     *
+     * @return the governed content, never null
+     */
+    @JsonIgnore
+    public Content governedContent() {
+        return content;
+    }
+
+    /**
+     * Returns the represented content payload, or empty Optional in Summary projection.
      *
      * @return optional content payload
      */
     @JsonIgnore
     public Optional<Object> content() {
-        if (content instanceof byte[] bytes) {
-            return Optional.of(bytes.clone());
+        if (content.isEmpty()) {
+            return Optional.empty();
         }
-        return Optional.ofNullable(content);
+        return content.workingManifestation();
     }
 
     /**
@@ -176,10 +221,19 @@ public final class InformationRepresentation implements Serializable {
      */
     @JsonProperty("content")
     public Object getRawContent() {
-        if (content instanceof byte[] bytes) {
-            return bytes.clone();
+        if (content.isEmpty()) {
+            return null;
         }
-        return content;
+        if (content.isBinary()) {
+            return content.asBytes();
+        }
+        if (content.isText()) {
+            return content.asString();
+        }
+        if (content.isReference()) {
+            return content.asReference();
+        }
+        return content.workingManifestation().orElse(null);
     }
 
     /**
@@ -195,11 +249,11 @@ public final class InformationRepresentation implements Serializable {
     /**
      * Indicates whether this representation is a Summary projection (i.e. content is excluded).
      *
-     * @return true if content is null (Summary projection), false if content is present
+     * @return true if content is empty (Summary projection), false if content is present
      */
     @JsonIgnore
     public boolean isSummary() {
-        return content == null;
+        return content.isEmpty();
     }
 
     /**
@@ -209,7 +263,7 @@ public final class InformationRepresentation implements Serializable {
      */
     @JsonIgnore
     public boolean hasContent() {
-        return content != null;
+        return !content.isEmpty();
     }
 
     // =========================================================================
@@ -223,16 +277,7 @@ public final class InformationRepresentation implements Serializable {
      */
     @JsonIgnore
     public Optional<String> contentAsString() {
-        if (content == null) {
-            return Optional.empty();
-        }
-        if (content instanceof String s) {
-            return Optional.of(s);
-        }
-        if (content instanceof byte[] bytes) {
-            return Optional.of(new String(bytes, StandardCharsets.UTF_8));
-        }
-        return Optional.of(content.toString());
+        return content.textContent();
     }
 
     /**
@@ -242,16 +287,7 @@ public final class InformationRepresentation implements Serializable {
      */
     @JsonIgnore
     public Optional<byte[]> contentAsBytes() {
-        if (content == null) {
-            return Optional.empty();
-        }
-        if (content instanceof byte[] bytes) {
-            return Optional.of(bytes.clone());
-        }
-        if (content instanceof String s) {
-            return Optional.of(s.getBytes(StandardCharsets.UTF_8));
-        }
-        return Optional.of(content.toString().getBytes(StandardCharsets.UTF_8));
+        return content.binaryContent();
     }
 
     /**
@@ -263,17 +299,7 @@ public final class InformationRepresentation implements Serializable {
      */
     @JsonIgnore
     public <T> Optional<T> contentAs(Class<T> targetType) {
-        Objects.requireNonNull(targetType, "targetType must not be null");
-        if (content == null) {
-            return Optional.empty();
-        }
-        if (targetType.isInstance(content)) {
-            if (content instanceof byte[] bytes) {
-                return Optional.of(targetType.cast(bytes.clone()));
-            }
-            return Optional.of(targetType.cast(content));
-        }
-        return Optional.empty();
+        return content.as(targetType);
     }
 
     // =========================================================================
@@ -286,10 +312,10 @@ public final class InformationRepresentation implements Serializable {
      * @return new InformationRepresentation without content
      */
     public InformationRepresentation toSummary() {
-        if (this.content == null) {
+        if (this.content.isEmpty()) {
             return this;
         }
-        return new InformationRepresentation(this.containerMetadata, this.contentMetadata, null);
+        return new InformationRepresentation(this.containerMetadata, this.contentMetadata, Content.empty());
     }
 
     /**
@@ -308,6 +334,10 @@ public final class InformationRepresentation implements Serializable {
      * @return new InformationRepresentation with content
      */
     public InformationRepresentation withContent(Object newContent) {
+        return new InformationRepresentation(this.containerMetadata, this.contentMetadata, newContent);
+    }
+
+    public InformationRepresentation withContent(Content newContent) {
         return new InformationRepresentation(this.containerMetadata, this.contentMetadata, newContent);
     }
 
@@ -340,27 +370,26 @@ public final class InformationRepresentation implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InformationRepresentation that = (InformationRepresentation) o;
-        if (!Objects.equals(containerMetadata, that.containerMetadata)) return false;
-        if (!Objects.equals(contentMetadata, that.contentMetadata)) return false;
-        if (content instanceof byte[] b1 && that.content instanceof byte[] b2) {
-            return Arrays.equals(b1, b2);
-        }
-        return Objects.equals(content, that.content);
+        return Objects.equals(containerMetadata, that.containerMetadata) &&
+                Objects.equals(contentMetadata, that.contentMetadata) &&
+                Objects.equals(content, that.content);
     }
 
     @Override
     public int hashCode() {
-        int contentHash = (content instanceof byte[] b) ? Arrays.hashCode(b) : Objects.hashCode(content);
-        return Objects.hash(containerMetadata, contentMetadata, contentHash);
+        return Objects.hash(containerMetadata, contentMetadata, content);
     }
 
+    /**
+     * Zero-PHI safe diagnostic logging.
+     */
     @Override
     public String toString() {
         return "InformationRepresentation{" +
                 "containerMetadata=" + containerMetadata +
                 ", contentMetadata=" + contentMetadata +
                 ", isSummary=" + isSummary() +
-                (hasContent() ? ", contentType=" + content.getClass().getSimpleName() : "") +
+                ", content=" + content +
                 '}';
     }
 
@@ -374,7 +403,7 @@ public final class InformationRepresentation implements Serializable {
     public static final class Builder {
         private ContainerMetadata containerMetadata = ContainerMetadata.empty();
         private ContentMetadata contentMetadata = ContentMetadata.empty();
-        private Object content;
+        private Content content = Content.empty();
 
         private Builder() {}
 
@@ -389,17 +418,22 @@ public final class InformationRepresentation implements Serializable {
         }
 
         public Builder content(Object content) {
-            this.content = content;
+            this.content = Content.of(content);
+            return this;
+        }
+
+        public Builder content(Content content) {
+            this.content = content != null ? content : Content.empty();
             return this;
         }
 
         public Builder content(String content) {
-            this.content = content;
+            this.content = content != null ? Content.text(content) : Content.empty();
             return this;
         }
 
         public Builder content(byte[] content) {
-            this.content = content != null ? content.clone() : null;
+            this.content = content != null ? Content.binary(content) : Content.empty();
             return this;
         }
 
@@ -408,7 +442,7 @@ public final class InformationRepresentation implements Serializable {
         }
 
         public InformationRepresentation buildSummary() {
-            return new InformationRepresentation(containerMetadata, contentMetadata, null);
+            return new InformationRepresentation(containerMetadata, contentMetadata, Content.empty());
         }
     }
 }

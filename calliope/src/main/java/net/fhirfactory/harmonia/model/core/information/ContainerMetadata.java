@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import net.fhirfactory.harmonia.model.topic.Topic;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -34,11 +35,15 @@ import java.util.Optional;
  * Encapsulates the metadata describing the container, envelope, assembly, or carriage of an Information Unit's representation.
  * <p>
  * <b>Architectural Context &amp; Authority:</b>
- * In accordance with {@code DRP-Information-Unit-Framework.Final.001.md} (§7):
+ * In accordance with the accepted 1.1.25 Architecture Continuum ({@code model.core.information.InformationUnit})
+ * and {@code DRP-Information-Unit-Framework.Final.002.md} (§§1, 5):
  * <ul>
  *   <li>{@code ContainerMetadata} describes the container or transport envelope associated with the IU's representation.</li>
- *   <li>Dimensions include container type (e.g. {@code FHIR_BUNDLE}, {@code HL7_MESSAGE}, {@code DOCUMENT}, {@code EVENT}, {@code PRAGMA}),
- *       source, destination, author, recipient, assembly context, interaction mechanism, and envelope structure.</li>
+ *   <li><b>Topic-Valued Classification:</b> In accordance with the fundamental Harmonia architectural principle,
+ *       {@link #type()} is a strongly typed {@link Topic} (e.g. {@code Harmonia.Container.FHIR.Bundle},
+ *       {@code Harmonia.Container.HL7.Message}, {@code Harmonia.Container.Document}, {@code Harmonia.Container.Pragma}).</li>
+ *   <li><b>Component and Endpoint References:</b> Where source, destination, author, or recipient represent governed
+ *       Harmonia components, systems, or endpoints, they are represented as strongly typed {@link Topic} references.</li>
  *   <li>Relevant native envelope semantics are preserved when governed by the information-management contract,
  *       without being conflated with Information Unit Metadata or Content Metadata.</li>
  * </ul>
@@ -56,53 +61,121 @@ public final class ContainerMetadata implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private static final ContainerMetadata EMPTY = new ContainerMetadata(null, null, null, null, null, null, null, null, Map.of());
+    public static final Topic TYPE_FHIR_BUNDLE = Topic.fromName("Harmonia.Container.FHIR.Bundle");
+    public static final Topic TYPE_HL7_MESSAGE = Topic.fromName("Harmonia.Container.HL7.Message");
+    public static final Topic TYPE_DOCUMENT = Topic.fromName("Harmonia.Container.Document");
+    public static final Topic TYPE_PRAGMA = Topic.fromName("Harmonia.Container.Pragma");
+    public static final Topic TYPE_EVENT = Topic.fromName("Harmonia.Container.Event");
 
-    private final String containerType;
-    private final String source;
-    private final String destination;
-    private final String author;
-    private final String recipient;
+    private static final ContainerMetadata EMPTY = new ContainerMetadata((Topic) null, (Topic) null, (Topic) null, (Topic) null, (Topic) null, null, null, null, Map.of());
+
+    private final Topic type;
+    private final Topic sourceTopic;
+    private final Topic destinationTopic;
+    private final Topic authorTopic;
+    private final Topic recipientTopic;
     private final String assemblyContext;
     private final String interactionMechanism;
     private final String envelopeStructure;
     private final Map<String, String> attributes;
 
     /**
-     * Canonical constructor establishing validated container metadata.
+     * Canonical constructor establishing validated container metadata with strongly typed Topic entities.
      *
-     * @param containerType        type of container (e.g. "FHIR_BUNDLE", "HL7_MESSAGE") (optional)
-     * @param source               source gateway or system identifier (optional)
-     * @param destination          target destination identifier (optional)
-     * @param author               author/sender (optional)
-     * @param recipient            intended recipient (optional)
+     * @param type                 Topic classifying the container envelope (optional)
+     * @param sourceTopic          Topic describing the source gateway or system (optional)
+     * @param destinationTopic     Topic describing the target destination (optional)
+     * @param authorTopic          Topic describing the author/sender (optional)
+     * @param recipientTopic       Topic describing the recipient (optional)
      * @param assemblyContext      assembly context (optional)
      * @param interactionMechanism interaction mechanism (e.g. "MLLP", "REST") (optional)
      * @param envelopeStructure    envelope structure definition (optional)
      * @param attributes           additional container attributes (optional)
      */
-    @JsonCreator
     public ContainerMetadata(
-            @JsonProperty("containerType") String containerType,
-            @JsonProperty("source") String source,
-            @JsonProperty("destination") String destination,
-            @JsonProperty("author") String author,
-            @JsonProperty("recipient") String recipient,
-            @JsonProperty("assemblyContext") String assemblyContext,
-            @JsonProperty("interactionMechanism") String interactionMechanism,
-            @JsonProperty("envelopeStructure") String envelopeStructure,
-            @JsonProperty("attributes") Map<String, String> attributes) {
-        this.containerType = sanitize(containerType);
-        this.source = sanitize(source);
-        this.destination = sanitize(destination);
-        this.author = sanitize(author);
-        this.recipient = sanitize(recipient);
+            Topic type,
+            Topic sourceTopic,
+            Topic destinationTopic,
+            Topic authorTopic,
+            Topic recipientTopic,
+            String assemblyContext,
+            String interactionMechanism,
+            String envelopeStructure,
+            Map<String, String> attributes) {
+        this.type = type;
+        this.sourceTopic = sourceTopic;
+        this.destinationTopic = destinationTopic;
+        this.authorTopic = authorTopic;
+        this.recipientTopic = recipientTopic;
         this.assemblyContext = sanitize(assemblyContext);
         this.interactionMechanism = sanitize(interactionMechanism);
         this.envelopeStructure = sanitize(envelopeStructure);
         this.attributes = attributes == null || attributes.isEmpty()
                 ? Map.of()
                 : Collections.unmodifiableMap(new LinkedHashMap<>(attributes));
+    }
+
+    /**
+     * Flexible creator handling both strongly-typed Topics and legacy String properties.
+     */
+    @JsonCreator
+    public ContainerMetadata(
+            @JsonProperty("type") Topic type,
+            @JsonProperty("containerType") String containerType,
+            @JsonProperty("sourceTopic") Topic sourceTopic,
+            @JsonProperty("source") String source,
+            @JsonProperty("destinationTopic") Topic destinationTopic,
+            @JsonProperty("destination") String destination,
+            @JsonProperty("authorTopic") Topic authorTopic,
+            @JsonProperty("author") String author,
+            @JsonProperty("recipientTopic") Topic recipientTopic,
+            @JsonProperty("recipient") String recipient,
+            @JsonProperty("assemblyContext") String assemblyContext,
+            @JsonProperty("interactionMechanism") String interactionMechanism,
+            @JsonProperty("envelopeStructure") String envelopeStructure,
+            @JsonProperty("attributes") Map<String, String> attributes) {
+        this(
+                type != null ? type : (containerType != null && !containerType.isBlank() ? Topic.fromName(containerType.trim()) : null),
+                sourceTopic != null ? sourceTopic : (source != null && !source.isBlank() ? Topic.fromName(source.trim()) : null),
+                destinationTopic != null ? destinationTopic : (destination != null && !destination.isBlank() ? Topic.fromName(destination.trim()) : null),
+                authorTopic != null ? authorTopic : (author != null && !author.isBlank() ? Topic.fromName(author.trim()) : null),
+                recipientTopic != null ? recipientTopic : (recipient != null && !recipient.isBlank() ? Topic.fromName(recipient.trim()) : null),
+                assemblyContext,
+                interactionMechanism,
+                envelopeStructure,
+                attributes
+        );
+    }
+
+    /**
+     * Backward-compatible constructor accepting String identifiers.
+     */
+    public ContainerMetadata(
+            String containerType,
+            String source,
+            String destination,
+            String author,
+            String recipient,
+            String assemblyContext,
+            String interactionMechanism,
+            String envelopeStructure,
+            Map<String, String> attributes) {
+        this(
+                containerType != null && !containerType.isBlank() ? Topic.fromName(containerType.trim()) : null,
+                null,
+                source != null && !source.isBlank() ? Topic.fromName(source.trim()) : null,
+                source,
+                destination != null && !destination.isBlank() ? Topic.fromName(destination.trim()) : null,
+                destination,
+                author != null && !author.isBlank() ? Topic.fromName(author.trim()) : null,
+                author,
+                recipient != null && !recipient.isBlank() ? Topic.fromName(recipient.trim()) : null,
+                recipient,
+                assemblyContext,
+                interactionMechanism,
+                envelopeStructure,
+                attributes
+        );
     }
 
     private static String sanitize(String input) {
@@ -131,54 +204,128 @@ public final class ContainerMetadata implements Serializable {
     // Accessors
     // =========================================================================
 
+    /**
+     * Returns the strongly typed {@link Topic} classifying the container envelope.
+     *
+     * @return the container type Topic, or null if unspecified
+     */
+    @JsonProperty("type")
+    public Topic type() {
+        return type;
+    }
+
+    public Topic getType() {
+        return type;
+    }
+
     @JsonIgnore
     public Optional<String> containerType() {
-        return Optional.ofNullable(containerType);
+        return type != null ? Optional.of(type.getName()) : Optional.empty();
     }
 
     @JsonProperty("containerType")
     public String getContainerType() {
-        return containerType;
+        return type != null ? type.getName() : null;
+    }
+
+    /**
+     * Returns the strongly typed {@link Topic} identifying the source system or gateway.
+     *
+     * @return optional source Topic
+     */
+    @JsonIgnore
+    public Optional<Topic> sourceTopic() {
+        return Optional.ofNullable(sourceTopic);
+    }
+
+    @JsonProperty("sourceTopic")
+    public Topic getSourceTopic() {
+        return sourceTopic;
     }
 
     @JsonIgnore
     public Optional<String> source() {
-        return Optional.ofNullable(source);
+        return sourceTopic != null ? Optional.of(sourceTopic.getName()) : Optional.empty();
     }
 
     @JsonProperty("source")
     public String getSource() {
-        return source;
+        return sourceTopic != null ? sourceTopic.getName() : null;
+    }
+
+    /**
+     * Returns the strongly typed {@link Topic} identifying the target destination.
+     *
+     * @return optional destination Topic
+     */
+    @JsonIgnore
+    public Optional<Topic> destinationTopic() {
+        return Optional.ofNullable(destinationTopic);
+    }
+
+    @JsonProperty("destinationTopic")
+    public Topic getDestinationTopic() {
+        return destinationTopic;
     }
 
     @JsonIgnore
     public Optional<String> destination() {
-        return Optional.ofNullable(destination);
+        return destinationTopic != null ? Optional.of(destinationTopic.getName()) : Optional.empty();
     }
 
     @JsonProperty("destination")
     public String getDestination() {
-        return destination;
+        return destinationTopic != null ? destinationTopic.getName() : null;
+    }
+
+    /**
+     * Returns the strongly typed {@link Topic} identifying the author or sender.
+     *
+     * @return optional author Topic
+     */
+    @JsonIgnore
+    public Optional<Topic> authorTopic() {
+        return Optional.ofNullable(authorTopic);
+    }
+
+    @JsonProperty("authorTopic")
+    public Topic getAuthorTopic() {
+        return authorTopic;
     }
 
     @JsonIgnore
     public Optional<String> author() {
-        return Optional.ofNullable(author);
+        return authorTopic != null ? Optional.of(authorTopic.getName()) : Optional.empty();
     }
 
     @JsonProperty("author")
     public String getAuthor() {
-        return author;
+        return authorTopic != null ? authorTopic.getName() : null;
+    }
+
+    /**
+     * Returns the strongly typed {@link Topic} identifying the intended recipient.
+     *
+     * @return optional recipient Topic
+     */
+    @JsonIgnore
+    public Optional<Topic> recipientTopic() {
+        return Optional.ofNullable(recipientTopic);
+    }
+
+    @JsonProperty("recipientTopic")
+    public Topic getRecipientTopic() {
+        return recipientTopic;
     }
 
     @JsonIgnore
     public Optional<String> recipient() {
-        return Optional.ofNullable(recipient);
+        return recipientTopic != null ? Optional.of(recipientTopic.getName()) : Optional.empty();
     }
 
     @JsonProperty("recipient")
     public String getRecipient() {
-        return recipient;
+        return recipientTopic != null ? recipientTopic.getName() : null;
     }
 
     @JsonIgnore
@@ -225,40 +372,65 @@ public final class ContainerMetadata implements Serializable {
     // Immutable Derivations ("With" Mutators)
     // =========================================================================
 
+    public ContainerMetadata withType(Topic type) {
+        return new ContainerMetadata(type, this.sourceTopic, this.destinationTopic, this.authorTopic, this.recipientTopic, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, this.attributes);
+    }
+
     public ContainerMetadata withContainerType(String containerType) {
-        return new ContainerMetadata(containerType, this.source, this.destination, this.author, this.recipient, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, this.attributes);
+        Topic newType = containerType != null && !containerType.isBlank() ? Topic.fromName(containerType.trim()) : null;
+        return withType(newType);
+    }
+
+    public ContainerMetadata withSourceTopic(Topic sourceTopic) {
+        return new ContainerMetadata(this.type, sourceTopic, this.destinationTopic, this.authorTopic, this.recipientTopic, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, this.attributes);
     }
 
     public ContainerMetadata withSource(String source) {
-        return new ContainerMetadata(this.containerType, source, this.destination, this.author, this.recipient, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, this.attributes);
+        Topic s = source != null && !source.isBlank() ? Topic.fromName(source.trim()) : null;
+        return withSourceTopic(s);
+    }
+
+    public ContainerMetadata withDestinationTopic(Topic destinationTopic) {
+        return new ContainerMetadata(this.type, this.sourceTopic, destinationTopic, this.authorTopic, this.recipientTopic, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, this.attributes);
     }
 
     public ContainerMetadata withDestination(String destination) {
-        return new ContainerMetadata(this.containerType, this.source, destination, this.author, this.recipient, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, this.attributes);
+        Topic d = destination != null && !destination.isBlank() ? Topic.fromName(destination.trim()) : null;
+        return withDestinationTopic(d);
+    }
+
+    public ContainerMetadata withAuthorTopic(Topic authorTopic) {
+        return new ContainerMetadata(this.type, this.sourceTopic, this.destinationTopic, authorTopic, this.recipientTopic, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, this.attributes);
     }
 
     public ContainerMetadata withAuthor(String author) {
-        return new ContainerMetadata(this.containerType, this.source, this.destination, author, this.recipient, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, this.attributes);
+        Topic a = author != null && !author.isBlank() ? Topic.fromName(author.trim()) : null;
+        return withAuthorTopic(a);
+    }
+
+    public ContainerMetadata withRecipientTopic(Topic recipientTopic) {
+        return new ContainerMetadata(this.type, this.sourceTopic, this.destinationTopic, this.authorTopic, recipientTopic, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, this.attributes);
     }
 
     public ContainerMetadata withRecipient(String recipient) {
-        return new ContainerMetadata(this.containerType, this.source, this.destination, this.author, recipient, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, this.attributes);
+        Topic r = recipient != null && !recipient.isBlank() ? Topic.fromName(recipient.trim()) : null;
+        return withRecipientTopic(r);
     }
 
     public ContainerMetadata withAssemblyContext(String assemblyContext) {
-        return new ContainerMetadata(this.containerType, this.source, this.destination, this.author, this.recipient, assemblyContext, this.interactionMechanism, this.envelopeStructure, this.attributes);
+        return new ContainerMetadata(this.type, this.sourceTopic, this.destinationTopic, this.authorTopic, this.recipientTopic, assemblyContext, this.interactionMechanism, this.envelopeStructure, this.attributes);
     }
 
     public ContainerMetadata withInteractionMechanism(String interactionMechanism) {
-        return new ContainerMetadata(this.containerType, this.source, this.destination, this.author, this.recipient, this.assemblyContext, interactionMechanism, this.envelopeStructure, this.attributes);
+        return new ContainerMetadata(this.type, this.sourceTopic, this.destinationTopic, this.authorTopic, this.recipientTopic, this.assemblyContext, interactionMechanism, this.envelopeStructure, this.attributes);
     }
 
     public ContainerMetadata withEnvelopeStructure(String envelopeStructure) {
-        return new ContainerMetadata(this.containerType, this.source, this.destination, this.author, this.recipient, this.assemblyContext, this.interactionMechanism, envelopeStructure, this.attributes);
+        return new ContainerMetadata(this.type, this.sourceTopic, this.destinationTopic, this.authorTopic, this.recipientTopic, this.assemblyContext, this.interactionMechanism, envelopeStructure, this.attributes);
     }
 
     public ContainerMetadata withAttributes(Map<String, String> attributes) {
-        return new ContainerMetadata(this.containerType, this.source, this.destination, this.author, this.recipient, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, attributes);
+        return new ContainerMetadata(this.type, this.sourceTopic, this.destinationTopic, this.authorTopic, this.recipientTopic, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, attributes);
     }
 
     public ContainerMetadata withAttribute(String key, String value) {
@@ -269,11 +441,11 @@ public final class ContainerMetadata implements Serializable {
         } else {
             updated.put(key, value);
         }
-        return new ContainerMetadata(this.containerType, this.source, this.destination, this.author, this.recipient, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, updated);
+        return new ContainerMetadata(this.type, this.sourceTopic, this.destinationTopic, this.authorTopic, this.recipientTopic, this.assemblyContext, this.interactionMechanism, this.envelopeStructure, updated);
     }
 
     // =========================================================================
-    // Standard Object Methods
+    // Identity and Equality
     // =========================================================================
 
     @Override
@@ -281,32 +453,35 @@ public final class ContainerMetadata implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContainerMetadata that = (ContainerMetadata) o;
-        return Objects.equals(containerType, that.containerType)
-                && Objects.equals(source, that.source)
-                && Objects.equals(destination, that.destination)
-                && Objects.equals(author, that.author)
-                && Objects.equals(recipient, that.recipient)
-                && Objects.equals(assemblyContext, that.assemblyContext)
-                && Objects.equals(interactionMechanism, that.interactionMechanism)
-                && Objects.equals(envelopeStructure, that.envelopeStructure)
-                && Objects.equals(attributes, that.attributes);
+        return Objects.equals(type, that.type) &&
+                Objects.equals(sourceTopic, that.sourceTopic) &&
+                Objects.equals(destinationTopic, that.destinationTopic) &&
+                Objects.equals(authorTopic, that.authorTopic) &&
+                Objects.equals(recipientTopic, that.recipientTopic) &&
+                Objects.equals(assemblyContext, that.assemblyContext) &&
+                Objects.equals(interactionMechanism, that.interactionMechanism) &&
+                Objects.equals(envelopeStructure, that.envelopeStructure) &&
+                Objects.equals(attributes, that.attributes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(containerType, source, destination, author, recipient, assemblyContext, interactionMechanism, envelopeStructure, attributes);
+        return Objects.hash(type, sourceTopic, destinationTopic, authorTopic, recipientTopic,
+                assemblyContext, interactionMechanism, envelopeStructure, attributes);
     }
 
     @Override
     public String toString() {
         return "ContainerMetadata{" +
-                "containerType='" + containerType + '\'' +
-                ", source='" + source + '\'' +
-                ", destination='" + destination + '\'' +
-                ", author='" + author + '\'' +
-                ", recipient='" + recipient + '\'' +
+                "type=" + type +
+                ", source=" + sourceTopic +
+                ", destination=" + destinationTopic +
+                ", author=" + authorTopic +
+                ", recipient=" + recipientTopic +
+                ", assemblyContext='" + assemblyContext + '\'' +
                 ", interactionMechanism='" + interactionMechanism + '\'' +
-                ", attributesCount=" + attributes.size() +
+                ", envelopeStructure='" + envelopeStructure + '\'' +
+                ", attributes=" + attributes +
                 '}';
     }
 
@@ -314,15 +489,12 @@ public final class ContainerMetadata implements Serializable {
     // Builder
     // =========================================================================
 
-    /**
-     * Fluent builder for {@link ContainerMetadata}.
-     */
     public static final class Builder {
-        private String containerType;
-        private String source;
-        private String destination;
-        private String author;
-        private String recipient;
+        private Topic type;
+        private Topic sourceTopic;
+        private Topic destinationTopic;
+        private Topic authorTopic;
+        private Topic recipientTopic;
         private String assemblyContext;
         private String interactionMechanism;
         private String envelopeStructure;
@@ -330,28 +502,53 @@ public final class ContainerMetadata implements Serializable {
 
         private Builder() {}
 
+        public Builder type(Topic type) {
+            this.type = type;
+            return this;
+        }
+
         public Builder containerType(String containerType) {
-            this.containerType = containerType;
+            this.type = containerType != null && !containerType.isBlank() ? Topic.fromName(containerType.trim()) : null;
+            return this;
+        }
+
+        public Builder sourceTopic(Topic sourceTopic) {
+            this.sourceTopic = sourceTopic;
             return this;
         }
 
         public Builder source(String source) {
-            this.source = source;
+            this.sourceTopic = source != null && !source.isBlank() ? Topic.fromName(source.trim()) : null;
+            return this;
+        }
+
+        public Builder destinationTopic(Topic destinationTopic) {
+            this.destinationTopic = destinationTopic;
             return this;
         }
 
         public Builder destination(String destination) {
-            this.destination = destination;
+            this.destinationTopic = destination != null && !destination.isBlank() ? Topic.fromName(destination.trim()) : null;
+            return this;
+        }
+
+        public Builder authorTopic(Topic authorTopic) {
+            this.authorTopic = authorTopic;
             return this;
         }
 
         public Builder author(String author) {
-            this.author = author;
+            this.authorTopic = author != null && !author.isBlank() ? Topic.fromName(author.trim()) : null;
+            return this;
+        }
+
+        public Builder recipientTopic(Topic recipientTopic) {
+            this.recipientTopic = recipientTopic;
             return this;
         }
 
         public Builder recipient(String recipient) {
-            this.recipient = recipient;
+            this.recipientTopic = recipient != null && !recipient.isBlank() ? Topic.fromName(recipient.trim()) : null;
             return this;
         }
 
@@ -370,20 +567,6 @@ public final class ContainerMetadata implements Serializable {
             return this;
         }
 
-        public Builder attribute(String key, String value) {
-            Objects.requireNonNull(key, "key must not be null");
-            if (value != null) {
-                this.attributes.put(key, value);
-            } else {
-                this.attributes.remove(key);
-            }
-            return this;
-        }
-
-        public Builder putAttribute(String key, String value) {
-            return attribute(key, value);
-        }
-
         public Builder attributes(Map<String, String> attributes) {
             this.attributes.clear();
             if (attributes != null) {
@@ -392,8 +575,32 @@ public final class ContainerMetadata implements Serializable {
             return this;
         }
 
+        public Builder putAttribute(String key, String value) {
+            return attribute(key, value);
+        }
+
+        public Builder attribute(String key, String value) {
+            if (key != null) {
+                if (value == null) {
+                    this.attributes.remove(key);
+                } else {
+                    this.attributes.put(key, value);
+                }
+            }
+            return this;
+        }
+
         public ContainerMetadata build() {
-            return new ContainerMetadata(containerType, source, destination, author, recipient, assemblyContext, interactionMechanism, envelopeStructure, attributes);
+            return new ContainerMetadata(
+                    type,
+                    sourceTopic,
+                    destinationTopic,
+                    authorTopic,
+                    recipientTopic,
+                    assemblyContext,
+                    interactionMechanism,
+                    envelopeStructure,
+                    attributes);
         }
     }
 }

@@ -74,6 +74,7 @@ public final class InformationSecurityContext implements Serializable {
     private final Set<Topic> containerCriteria;
     private final Set<Topic> contentCriteria;
     private final Set<String> actionMasks;
+    private final Set<TopicMask> actionTopicMasks;
     private final Set<TopicMask> compartmentMasks;
     private final Set<HarmoniaSecurityLabelEnum> securityLabels;
     private final FhirConfidentialityEnum confidentiality;
@@ -85,7 +86,7 @@ public final class InformationSecurityContext implements Serializable {
      * @param unitCriteria      unit-level Topic criteria (optional)
      * @param containerCriteria container-level Topic criteria (optional)
      * @param contentCriteria   content-level Topic criteria (optional)
-     * @param actionMasks       required action masks (e.g. "ACCESS", "READ", "WRITE") (optional)
+     * @param actionMasks       required action names/masks (optional)
      * @param compartmentMasks  required compartment TopicMasks (optional)
      * @param securityLabels    governed security labels (optional)
      * @param confidentiality   FHIR/Harmonia confidentiality rating (optional)
@@ -96,7 +97,7 @@ public final class InformationSecurityContext implements Serializable {
             @JsonProperty("unitCriteria") Collection<Topic> unitCriteria,
             @JsonProperty("containerCriteria") Collection<Topic> containerCriteria,
             @JsonProperty("contentCriteria") Collection<Topic> contentCriteria,
-            @JsonProperty("actionMasks") Collection<String> actionMasks,
+            @JsonProperty("actionMasks") Collection<?> actionMasks,
             @JsonProperty("compartmentMasks") Collection<TopicMask> compartmentMasks,
             @JsonProperty("securityLabels") Collection<HarmoniaSecurityLabelEnum> securityLabels,
             @JsonProperty("confidentiality") FhirConfidentialityEnum confidentiality,
@@ -104,7 +105,31 @@ public final class InformationSecurityContext implements Serializable {
         this.unitCriteria = sanitizeTopicSet(unitCriteria);
         this.containerCriteria = sanitizeTopicSet(containerCriteria);
         this.contentCriteria = sanitizeTopicSet(contentCriteria);
-        this.actionMasks = sanitizeStringSet(actionMasks);
+
+        Set<String> actions = new LinkedHashSet<>();
+        Set<TopicMask> masks = new LinkedHashSet<>();
+        if (actionMasks != null) {
+            for (Object item : actionMasks) {
+                if (item instanceof TopicMask tm) {
+                    masks.add(tm);
+                    String pattern = tm.getMaskPattern();
+                    if (pattern != null && pattern.startsWith("Harmonia.Security.Action.")) {
+                        actions.add(pattern.substring("Harmonia.Security.Action.".length()));
+                    } else if (pattern != null && !pattern.isBlank()) {
+                        actions.add(pattern);
+                    } else {
+                        actions.add(tm.getId().toString());
+                    }
+                } else if (item instanceof String s && !s.isBlank()) {
+                    String trimmed = s.trim();
+                    actions.add(trimmed);
+                    masks.add(TopicMask.nameBased(Topic.fromName("Harmonia.Security.Action." + trimmed)));
+                }
+            }
+        }
+        this.actionMasks = Collections.unmodifiableSet(actions);
+        this.actionTopicMasks = Collections.unmodifiableSet(masks);
+
         this.compartmentMasks = sanitizeMaskSet(compartmentMasks);
         this.securityLabels = securityLabels == null || securityLabels.isEmpty()
                 ? Set.of()
@@ -141,19 +166,6 @@ public final class InformationSecurityContext implements Serializable {
         return Collections.unmodifiableSet(result);
     }
 
-    private static Set<String> sanitizeStringSet(Collection<String> input) {
-        if (input == null || input.isEmpty()) {
-            return Set.of();
-        }
-        Set<String> result = new LinkedHashSet<>();
-        for (String item : input) {
-            if (item != null && !item.isBlank()) {
-                result.add(item.trim());
-            }
-        }
-        return Collections.unmodifiableSet(result);
-    }
-
     /**
      * Returns an empty, default {@code InformationSecurityContext} instance.
      *
@@ -173,7 +185,7 @@ public final class InformationSecurityContext implements Serializable {
     }
 
     // =========================================================================
-    // Core Accessors (Strongly Typed Topic References & Masks)
+    // Core Accessors
     // =========================================================================
 
     public Set<Topic> unitCriteria() {
@@ -200,12 +212,18 @@ public final class InformationSecurityContext implements Serializable {
         return contentCriteria;
     }
 
+    @JsonProperty("actionMasks")
     public Set<String> actionMasks() {
         return actionMasks;
     }
 
     public Set<String> getActionMasks() {
         return actionMasks;
+    }
+
+    @JsonIgnore
+    public Set<TopicMask> actionTopicMasks() {
+        return actionTopicMasks;
     }
 
     public Set<TopicMask> compartmentMasks() {
@@ -301,7 +319,7 @@ public final class InformationSecurityContext implements Serializable {
         private final Set<Topic> unitCriteria = new LinkedHashSet<>();
         private final Set<Topic> containerCriteria = new LinkedHashSet<>();
         private final Set<Topic> contentCriteria = new LinkedHashSet<>();
-        private final Set<String> actionMasks = new LinkedHashSet<>();
+        private final Set<Object> actionMasks = new LinkedHashSet<>();
         private final Set<TopicMask> compartmentMasks = new LinkedHashSet<>();
         private final Set<HarmoniaSecurityLabelEnum> securityLabels = new LinkedHashSet<>();
         private FhirConfidentialityEnum confidentiality;
@@ -352,21 +370,24 @@ public final class InformationSecurityContext implements Serializable {
             return this;
         }
 
-        public Builder addActionMask(String actionMask) {
-            if (actionMask != null && !actionMask.isBlank()) {
-                this.actionMasks.add(actionMask.trim());
+        public Builder addActionMask(TopicMask actionMask) {
+            if (actionMask != null) {
+                this.actionMasks.add(actionMask);
             }
             return this;
         }
 
-        public Builder actionMasks(Collection<String> actionMasks) {
+        public Builder addActionMask(String actionName) {
+            if (actionName != null && !actionName.isBlank()) {
+                this.actionMasks.add(actionName.trim());
+            }
+            return this;
+        }
+
+        public Builder actionMasks(Collection<?> actionMasks) {
             this.actionMasks.clear();
             if (actionMasks != null) {
-                for (String mask : actionMasks) {
-                    if (mask != null && !mask.isBlank()) {
-                        this.actionMasks.add(mask.trim());
-                    }
-                }
+                this.actionMasks.addAll(actionMasks);
             }
             return this;
         }
@@ -406,17 +427,25 @@ public final class InformationSecurityContext implements Serializable {
             return this;
         }
 
-        public Builder putAttribute(String key, String value) {
-            if (key != null && value != null) {
-                this.attributes.put(key.trim(), value.trim());
-            }
-            return this;
-        }
-
         public Builder attributes(Map<String, String> attributes) {
             this.attributes.clear();
             if (attributes != null) {
                 this.attributes.putAll(attributes);
+            }
+            return this;
+        }
+
+        public Builder putAttribute(String key, String value) {
+            return attribute(key, value);
+        }
+
+        public Builder attribute(String key, String value) {
+            if (key != null) {
+                if (value == null) {
+                    this.attributes.remove(key);
+                } else {
+                    this.attributes.put(key, value);
+                }
             }
             return this;
         }

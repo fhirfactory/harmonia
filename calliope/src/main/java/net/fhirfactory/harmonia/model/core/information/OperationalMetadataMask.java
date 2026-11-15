@@ -279,6 +279,11 @@ public final class OperationalMetadataMask implements Serializable {
             return this;
         }
 
+        public Builder operationalRevision(OperationalRevision operationalRevision) {
+            this.operationalRevision = operationalRevision != null ? operationalRevision.value() : null;
+            return this;
+        }
+
         public Builder operationalRevision(String operationalRevision) {
             this.operationalRevision = operationalRevision;
             return this;

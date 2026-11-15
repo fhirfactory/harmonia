@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import net.fhirfactory.harmonia.model.topic.Topic;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -39,17 +40,18 @@ import java.util.UUID;
  *       the IU when supplied by its creator or authorised updater.</li>
  *   <li>The Information Unit is <b>not a graph coordinator</b>: it does not automatically track derived copies,
  *       generate reciprocal links, or synchronise referents.</li>
+ *   <li><b>Topic-Valued Classification:</b> In accordance with the fundamental Harmonia architectural principle,
+ *       relationship types (e.g. {@code RelatesTo}, {@code PartOf}, {@code BasedOn}, {@code DerivedFrom}, {@code Replaces})
+ *       are represented as strongly typed {@link Topic} instances.</li>
  *   <li><b>Local Reference ({@code local = true}):</b> Identifies another Information Unit in Harmonia (by UUID or Topic).
  *       Mneme validates local reference acceptability under the applicable local-reference contract.</li>
  *   <li><b>Remote Reference ({@code local = false}):</b> Identifies an external resource (by URI or identifier).
  *       Mneme preserves the reference without assuming responsibility for validating remote availability.</li>
- *   <li>Relationship types (e.g. {@code relatesTo}, {@code partOf}, {@code basedOn}, {@code derivedFrom}) are illustrative
- *       semantic classifications supplied by the creator.</li>
  * </ul>
  * <p>
  * <b>Defensive Programming:</b>
  * <ul>
- *   <li>{@code relationshipType} and {@code targetIdentifier} must not be null or blank.</li>
+ *   <li>Relationship type Topic and targetIdentifier must not be null or blank.</li>
  *   <li>Immutable value object design.</li>
  * </ul>
  */
@@ -59,45 +61,100 @@ public final class InformationUnitRelationship implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public static final String TYPE_RELATES_TO = "relatesTo";
-    public static final String TYPE_PART_OF = "partOf";
-    public static final String TYPE_BASED_ON = "basedOn";
-    public static final String TYPE_DERIVED_FROM = "derivedFrom";
-    public static final String TYPE_REPLACES = "replaces";
+    public static final Topic TYPE_RELATES_TO = Topic.fromName("Harmonia.Relationship.RelatesTo");
+    public static final Topic TYPE_PART_OF = Topic.fromName("Harmonia.Relationship.PartOf");
+    public static final Topic TYPE_BASED_ON = Topic.fromName("Harmonia.Relationship.BasedOn");
+    public static final Topic TYPE_DERIVED_FROM = Topic.fromName("Harmonia.Relationship.DerivedFrom");
+    public static final Topic TYPE_REPLACES = Topic.fromName("Harmonia.Relationship.Replaces");
 
-    private final String relationshipType;
+    public static final String RELATES_TO = "relatesTo";
+    public static final String PART_OF = "partOf";
+    public static final String BASED_ON = "basedOn";
+    public static final String DERIVED_FROM = "derivedFrom";
+    public static final String REPLACES = "replaces";
+
+    private final Topic type;
     private final String targetIdentifier;
     private final boolean local;
     private final String description;
 
     /**
-     * Canonical constructor establishing validated relationship attributes.
+     * Canonical constructor establishing validated relationship attributes with strongly typed Topic.
      *
-     * @param relationshipType the semantic type of relationship (e.g. "relatesTo", "partOf"), must not be null or blank
-     * @param targetIdentifier target UUID, Topic, or URI, must not be null or blank
+     * @param type             the semantic type of relationship as a Topic, must not be null
+     * @param targetIdentifier target UUID, Topic name, or URI, must not be null or blank
      * @param local            true if target is a local Harmonia IU, false if external/remote
      * @param description      optional human-readable description or annotation
      */
-    @JsonCreator
     public InformationUnitRelationship(
-            @JsonProperty("relationshipType") String relationshipType,
-            @JsonProperty("targetIdentifier") String targetIdentifier,
-            @JsonProperty("local") boolean local,
-            @JsonProperty("description") String description) {
-        if (relationshipType == null || relationshipType.isBlank()) {
-            throw new IllegalArgumentException("relationshipType must not be null or blank");
-        }
+            Topic type,
+            String targetIdentifier,
+            boolean local,
+            String description) {
+        Objects.requireNonNull(type, "relationship type Topic must not be null");
         if (targetIdentifier == null || targetIdentifier.isBlank()) {
             throw new IllegalArgumentException("targetIdentifier must not be null or blank");
         }
-        this.relationshipType = relationshipType.trim();
+        this.type = type;
         this.targetIdentifier = targetIdentifier.trim();
         this.local = local;
         this.description = description != null && !description.isBlank() ? description.trim() : null;
     }
 
-    public InformationUnitRelationship(String relationshipType, String targetIdentifier) {
-        this(relationshipType, targetIdentifier, true, null);
+    /**
+     * Flexible creator handling both strongly-typed Topic and String relationship types.
+     */
+    @JsonCreator
+    public InformationUnitRelationship(
+            @JsonProperty("type") Topic type,
+            @JsonProperty("relationshipType") String relationshipType,
+            @JsonProperty("targetIdentifier") String targetIdentifier,
+            @JsonProperty("local") boolean local,
+            @JsonProperty("description") String description) {
+        if (type != null) {
+            this.type = type;
+        } else if (relationshipType != null && !relationshipType.isBlank()) {
+            this.type = mapStringToTopic(relationshipType);
+        } else {
+            throw new IllegalArgumentException("relationship type must not be null or blank");
+        }
+
+        if (targetIdentifier == null || targetIdentifier.isBlank()) {
+            throw new IllegalArgumentException("targetIdentifier must not be null or blank");
+        }
+        this.targetIdentifier = targetIdentifier.trim();
+        this.local = local;
+        this.description = description != null && !description.isBlank() ? description.trim() : null;
+    }
+
+    public InformationUnitRelationship(
+            String relationshipType,
+            String targetIdentifier,
+            boolean local,
+            String description) {
+        this(null, relationshipType, targetIdentifier, local, description);
+    }
+
+    public InformationUnitRelationship(Object relationshipTypeOrTopic, String targetIdentifier) {
+        this(
+                relationshipTypeOrTopic instanceof Topic t ? t : null,
+                relationshipTypeOrTopic instanceof String s ? s : null,
+                targetIdentifier,
+                true,
+                null
+        );
+    }
+
+    private static Topic mapStringToTopic(String relType) {
+        String trimmed = relType.trim();
+        return switch (trimmed) {
+            case "relatesTo", "RelatesTo" -> TYPE_RELATES_TO;
+            case "partOf", "PartOf" -> TYPE_PART_OF;
+            case "basedOn", "BasedOn" -> TYPE_BASED_ON;
+            case "derivedFrom", "DerivedFrom" -> TYPE_DERIVED_FROM;
+            case "replaces", "Replaces" -> TYPE_REPLACES;
+            default -> Topic.fromName(trimmed.contains(".") ? trimmed : "Harmonia.Relationship." + trimmed);
+        };
     }
 
     /**
@@ -108,6 +165,10 @@ public final class InformationUnitRelationship implements Serializable {
      * @return populated local relationship
      */
     public static InformationUnitRelationship local(String relationshipType, String targetIdentifier) {
+        return new InformationUnitRelationship(relationshipType, targetIdentifier, true, null);
+    }
+
+    public static InformationUnitRelationship local(Topic relationshipType, String targetIdentifier) {
         return new InformationUnitRelationship(relationshipType, targetIdentifier, true, null);
     }
 
@@ -123,6 +184,11 @@ public final class InformationUnitRelationship implements Serializable {
         return new InformationUnitRelationship(relationshipType, targetUuid.toString(), true, null);
     }
 
+    public static InformationUnitRelationship local(Topic relationshipType, UUID targetUuid) {
+        Objects.requireNonNull(targetUuid, "targetUuid must not be null");
+        return new InformationUnitRelationship(relationshipType, targetUuid.toString(), true, null);
+    }
+
     /**
      * Creates a remote relationship to an external resource by URI or external identifier.
      *
@@ -134,16 +200,15 @@ public final class InformationUnitRelationship implements Serializable {
         return new InformationUnitRelationship(relationshipType, targetUri, false, null);
     }
 
-    /**
-     * Full factory constructor.
-     *
-     * @param relationshipType relationship type
-     * @param targetIdentifier target identifier
-     * @param local            local vs remote
-     * @param description      description
-     * @return populated relationship
-     */
+    public static InformationUnitRelationship remote(Topic relationshipType, String targetUri) {
+        return new InformationUnitRelationship(relationshipType, targetUri, false, null);
+    }
+
     public static InformationUnitRelationship of(String relationshipType, String targetIdentifier, boolean local, String description) {
+        return new InformationUnitRelationship(relationshipType, targetIdentifier, local, description);
+    }
+
+    public static InformationUnitRelationship of(Topic relationshipType, String targetIdentifier, boolean local, String description) {
         return new InformationUnitRelationship(relationshipType, targetIdentifier, local, description);
     }
 
@@ -152,42 +217,86 @@ public final class InformationUnitRelationship implements Serializable {
     // =========================================================================
 
     /**
-     * Returns the semantic relationship type (e.g. "relatesTo", "partOf", "basedOn").
+     * Returns the strongly typed {@link Topic} classifying the relationship.
      *
-     * @return the relationship type
+     * @return the relationship type Topic, never null
+     */
+    @JsonProperty("type")
+    public Topic type() {
+        return type;
+    }
+
+    public Topic getType() {
+        return type;
+    }
+
+    /**
+     * Returns the semantic relationship type name (e.g. "relatesTo", "partOf").
+     *
+     * @return the relationship type name
      */
     @JsonProperty("relationshipType")
     public String relationshipType() {
-        return relationshipType;
+        if (TYPE_RELATES_TO.equals(type)) return RELATES_TO;
+        if (TYPE_PART_OF.equals(type)) return PART_OF;
+        if (TYPE_BASED_ON.equals(type)) return BASED_ON;
+        if (TYPE_DERIVED_FROM.equals(type)) return DERIVED_FROM;
+        if (TYPE_REPLACES.equals(type)) return REPLACES;
+        return type.getName();
+    }
+
+    public String getRelationshipType() {
+        return relationshipType();
     }
 
     /**
      * Returns the target identifier (UUID, Topic, or URI).
      *
-     * @return the target identifier
+     * @return the target identifier, never null
      */
     @JsonProperty("targetIdentifier")
     public String targetIdentifier() {
         return targetIdentifier;
     }
 
+    public String getTargetIdentifier() {
+        return targetIdentifier;
+    }
+
     /**
-     * Returns whether this relationship references a local Harmonia Information Unit (true) or remote entity (false).
+     * Attempts to parse the target identifier as a UUID.
      *
-     * @return true if local, false if remote
+     * @return optional parsed UUID
+     */
+    @JsonIgnore
+    public Optional<UUID> targetUuid() {
+        try {
+            return Optional.of(UUID.fromString(targetIdentifier));
+        } catch (IllegalArgumentException e) {
+            return Optional.empty();
+        }
+    }
+
+    /**
+     * Returns true if this relationship targets a local Harmonia Information Unit.
+     *
+     * @return true for local, false for remote
      */
     @JsonProperty("local")
+    public boolean local() {
+        return local;
+    }
+
     public boolean isLocal() {
         return local;
     }
 
-    @JsonIgnore
     public boolean isRemote() {
         return !local;
     }
 
     /**
-     * Returns the optional human-readable description of this relationship.
+     * Returns the human-readable description or annotation, if present.
      *
      * @return optional description
      */
@@ -196,11 +305,6 @@ public final class InformationUnitRelationship implements Serializable {
         return Optional.ofNullable(description);
     }
 
-    /**
-     * Returns the raw description string, or null if not set.
-     *
-     * @return description, or null
-     */
     @JsonProperty("description")
     public String getDescription() {
         return description;
@@ -215,24 +319,24 @@ public final class InformationUnitRelationship implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InformationUnitRelationship that = (InformationUnitRelationship) o;
-        return local == that.local
-                && relationshipType.equalsIgnoreCase(that.relationshipType)
-                && targetIdentifier.equalsIgnoreCase(that.targetIdentifier)
-                && Objects.equals(description, that.description);
+        return local == that.local &&
+                Objects.equals(type, that.type) &&
+                Objects.equals(targetIdentifier, that.targetIdentifier) &&
+                Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(relationshipType.toLowerCase(), targetIdentifier.toLowerCase(), local, description);
+        return Objects.hash(type, targetIdentifier, local, description);
     }
 
     @Override
     public String toString() {
         return "InformationUnitRelationship{" +
-                "type='" + relationshipType + '\'' +
-                ", target='" + targetIdentifier + '\'' +
+                "type=" + type +
+                ", targetIdentifier='" + targetIdentifier + '\'' +
                 ", local=" + local +
-                (description != null ? ", description='" + description + '\'' : "") +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

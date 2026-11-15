@@ -217,6 +217,29 @@ public final class TopicMask implements Serializable {
     }
 
     /**
+     * Creates a {@code TopicMask} matching an exact Topic name.
+     *
+     * @param topic Topic to match
+     * @return compiled TopicMask
+     */
+    public static TopicMask nameBased(Topic topic) {
+        if (topic == null) {
+            throw new IllegalArgumentException("topic must not be null");
+        }
+        return fromPattern(topic.getName());
+    }
+
+    /**
+     * Creates a {@code TopicMask} matching a Topic name pattern.
+     *
+     * @param pattern pattern string
+     * @return compiled TopicMask
+     */
+    public static TopicMask nameBased(String pattern) {
+        return fromPattern(pattern);
+    }
+
+    /**
      * Creates a {@code TopicMask} from a dot-delimited pattern string.
      *
      * @param maskPattern dot-delimited element patterns (e.g. {@code "Health.HL7.*"} or {@code "Australia.ACT.Canberra"})

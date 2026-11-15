@@ -146,10 +146,27 @@ public final class ContentMetadata implements Serializable {
     // Core Accessors (Strongly Typed Topic References & Values)
     // =========================================================================
 
+    /**
+     * Returns the strongly typed {@link Topic} identifying the Content Structure schema/model.
+     *
+     * @return the content structure type Topic, or null if unspecified
+     */
+    @JsonProperty("type")
+    public Topic type() {
+        return contentStructureTopic;
+    }
+
+    @JsonIgnore
+    public Topic getType() {
+        return contentStructureTopic;
+    }
+
+    @JsonIgnore
     public Optional<Topic> contentStructureTopic() {
         return Optional.ofNullable(contentStructureTopic);
     }
 
+    @JsonProperty("contentStructureTopic")
     public Topic getContentStructureTopic() {
         return contentStructureTopic;
     }
@@ -164,43 +181,103 @@ public final class ContentMetadata implements Serializable {
         return contentStructureTopic().map(Topic::getName);
     }
 
+    @JsonIgnore
     public Optional<String> contentStructureVersion() {
         return Optional.ofNullable(contentStructureVersion);
     }
 
+    @JsonProperty("contentStructureVersion")
     public String getContentStructureVersion() {
         return contentStructureVersion;
     }
 
+    @JsonIgnore
+    public Optional<String> structureVersion() {
+        return Optional.ofNullable(contentStructureVersion);
+    }
+
+    @JsonIgnore
+    public String getStructureVersion() {
+        return contentStructureVersion;
+    }
+
+    @JsonIgnore
     public Optional<String> contentFormat() {
         return Optional.ofNullable(contentFormat);
     }
 
+    @JsonProperty("contentFormat")
     public String getContentFormat() {
         return contentFormat;
     }
 
+    @JsonIgnore
+    public Optional<String> format() {
+        return Optional.ofNullable(contentFormat);
+    }
+
+    @JsonIgnore
+    public String getFormat() {
+        return contentFormat;
+    }
+
+    @JsonIgnore
     public Optional<String> contentReference() {
         return Optional.ofNullable(contentReference);
     }
 
+    @JsonProperty("contentReference")
     public String getContentReference() {
         return contentReference;
     }
 
+    @JsonIgnore
+    public Optional<String> reference() {
+        return Optional.ofNullable(contentReference);
+    }
+
+    @JsonIgnore
+    public String getReference() {
+        return contentReference;
+    }
+
+    @JsonIgnore
     public Optional<String> contentDigest() {
         return Optional.ofNullable(contentDigest);
     }
 
+    @JsonProperty("contentDigest")
     public String getContentDigest() {
         return contentDigest;
     }
 
+    @JsonIgnore
+    public Optional<String> digest() {
+        return Optional.ofNullable(contentDigest);
+    }
+
+    @JsonIgnore
+    public String getDigest() {
+        return contentDigest;
+    }
+
+    @JsonIgnore
     public Optional<Long> contentSize() {
         return Optional.ofNullable(contentSize);
     }
 
+    @JsonProperty("contentSize")
     public Long getContentSize() {
+        return contentSize;
+    }
+
+    @JsonIgnore
+    public Optional<Long> size() {
+        return Optional.ofNullable(contentSize);
+    }
+
+    @JsonIgnore
+    public Long getSize() {
         return contentSize;
     }
 

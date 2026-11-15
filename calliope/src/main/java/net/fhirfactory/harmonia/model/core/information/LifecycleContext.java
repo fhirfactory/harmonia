@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeCommitOutcome;
+import net.fhirfactory.harmonia.model.topic.Topic;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -33,20 +34,22 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
- * Encapsulates operational handshaking and Mneme–Mnemosyne lifecycle coordination metadata.
+ * Encapsulates governed information lifecycle state (disposition, retention, archive) and optional
+ * operational persistence coordination facts.
  * <p>
  * <b>Architectural Context &amp; Authority:</b>
  * In accordance with {@code DRP-Information-Unit-Framework.Final.001.md} (§§5.4, 17; IU-03) and
- * {@code DRP-Information-Unit-Framework.Final.002.md} (§§3, 4):
+ * {@code DRP-Information-Unit-Framework.Final.002.md} (§§3, 4.3):
  * <ul>
- *   <li>{@code LifecycleContext} provides information needed for Mneme–Mnemosyne lifecycle and persistence
- *       coordination, including distinguishing request, acceptance, commit, and completion stages.</li>
- *   <li>It is <b>not</b> itself a universal state machine, nor does it own the clinical/business semantic lifecycle
- *       of the underlying Content.</li>
- *   <li><b>Persistence Stage:</b> Coordinates operational persistence handshakes (e.g. {@code REQUESTED}, {@code ACCEPTED},
- *       {@code COMMITTED}, {@code COMPLETED}, {@code RETIRED}).</li>
- *   <li><b>Retirement &amp; Archive Semantics:</b> Governed retirement (RETIRE) and archive mark lifecycle status without
- *       physically deleting historical data or destroying externally referenced Content (ADR-020).</li>
+ *   <li><b>Governed Information Lifecycle vs Middleware Handshake:</b> An IU has information-specific preservation,
+ *       retention, legal hold, archive, supersession or RETIRE semantics. Those are <b>governed information concerns</b>
+ *       and remain associated with the IU (OM-R09 / OM-10).</li>
+ *   <li><b>Topic-Valued Classification:</b> Governed disposition status and retention policies are represented as
+ *       strongly typed {@link Topic} references (e.g. {@code Harmonia.Lifecycle.Active}, {@code Harmonia.Lifecycle.Retired},
+ *       {@code Harmonia.Lifecycle.Archived}, {@code Harmonia.Lifecycle.LegalHold}).</li>
+ *   <li><b>Operational Handshake Migration:</b> A persistence request's acceptance, durability confirmation, or commit
+ *       outcome describes a middleware operation and belongs conceptually to {@link OperationalMetadata} (OM-R07 / OM-08).
+ *       Bridges are provided here for compatibility.</li>
  * </ul>
  * <p>
  * <b>Defensive Programming:</b>
@@ -62,8 +65,15 @@ public final class LifecycleContext implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private static final LifecycleContext EMPTY = new LifecycleContext(null, null, null, false, false, Map.of());
+    public static final Topic DISPOSITION_ACTIVE = Topic.fromName("Harmonia.Lifecycle.Active");
+    public static final Topic DISPOSITION_RETIRED = Topic.fromName("Harmonia.Lifecycle.Retired");
+    public static final Topic DISPOSITION_ARCHIVED = Topic.fromName("Harmonia.Lifecycle.Archived");
+    public static final Topic DISPOSITION_HOLD = Topic.fromName("Harmonia.Lifecycle.LegalHold");
 
+    private static final LifecycleContext EMPTY = new LifecycleContext(null, null, null, null, null, false, false, Map.of());
+
+    private final Topic dispositionStatus;
+    private final Topic retentionPolicy;
     private final String lifecycleStage;
     private final Instant persistenceTimestamp;
     private final AuthoritativeCommitOutcome commitOutcome;
@@ -72,8 +82,10 @@ public final class LifecycleContext implements Serializable {
     private final Map<String, String> coordinationAttributes;
 
     /**
-     * Canonical constructor establishing validated lifecycle coordination context.
+     * Canonical constructor establishing validated lifecycle context.
      *
+     * @param dispositionStatus      governed disposition status Topic (optional)
+     * @param retentionPolicy        governed retention policy Topic (optional)
      * @param lifecycleStage         the current lifecycle/persistence stage (optional)
      * @param persistenceTimestamp   timestamp of persistence/handshake operation (optional)
      * @param commitOutcome          authoritative commit outcome (optional)
@@ -83,12 +95,16 @@ public final class LifecycleContext implements Serializable {
      */
     @JsonCreator
     public LifecycleContext(
+            @JsonProperty("dispositionStatus") Topic dispositionStatus,
+            @JsonProperty("retentionPolicy") Topic retentionPolicy,
             @JsonProperty("lifecycleStage") String lifecycleStage,
             @JsonProperty("persistenceTimestamp") Instant persistenceTimestamp,
             @JsonProperty("commitOutcome") AuthoritativeCommitOutcome commitOutcome,
             @JsonProperty("retained") boolean retained,
             @JsonProperty("archived") boolean archived,
             @JsonProperty("coordinationAttributes") Map<String, String> coordinationAttributes) {
+        this.dispositionStatus = dispositionStatus;
+        this.retentionPolicy = retentionPolicy;
         this.lifecycleStage = lifecycleStage != null && !lifecycleStage.isBlank() ? lifecycleStage.trim() : null;
         this.persistenceTimestamp = persistenceTimestamp;
         this.commitOutcome = commitOutcome;
@@ -99,16 +115,23 @@ public final class LifecycleContext implements Serializable {
                 : Collections.unmodifiableMap(new LinkedHashMap<>(coordinationAttributes));
     }
 
-    /**
-     * Compatibility constructor without explicit {@code archived} parameter.
-     */
+    public LifecycleContext(
+            String lifecycleStage,
+            Instant persistenceTimestamp,
+            AuthoritativeCommitOutcome commitOutcome,
+            boolean retained,
+            boolean archived,
+            Map<String, String> coordinationAttributes) {
+        this(null, null, lifecycleStage, persistenceTimestamp, commitOutcome, retained, archived, coordinationAttributes);
+    }
+
     public LifecycleContext(
             String lifecycleStage,
             Instant persistenceTimestamp,
             AuthoritativeCommitOutcome commitOutcome,
             boolean retained,
             Map<String, String> coordinationAttributes) {
-        this(lifecycleStage, persistenceTimestamp, commitOutcome, retained, false, coordinationAttributes);
+        this(null, null, lifecycleStage, persistenceTimestamp, commitOutcome, retained, false, coordinationAttributes);
     }
 
     /**
@@ -134,6 +157,36 @@ public final class LifecycleContext implements Serializable {
     // =========================================================================
 
     /**
+     * Returns the governed disposition status Topic.
+     *
+     * @return optional disposition status Topic
+     */
+    @JsonIgnore
+    public Optional<Topic> dispositionStatus() {
+        return Optional.ofNullable(dispositionStatus);
+    }
+
+    @JsonProperty("dispositionStatus")
+    public Topic getDispositionStatus() {
+        return dispositionStatus;
+    }
+
+    /**
+     * Returns the governed retention policy Topic.
+     *
+     * @return optional retention policy Topic
+     */
+    @JsonIgnore
+    public Optional<Topic> retentionPolicy() {
+        return Optional.ofNullable(retentionPolicy);
+    }
+
+    @JsonProperty("retentionPolicy")
+    public Topic getRetentionPolicy() {
+        return retentionPolicy;
+    }
+
+    /**
      * Returns the operational lifecycle/persistence stage name.
      *
      * @return optional lifecycle stage name
@@ -143,11 +196,6 @@ public final class LifecycleContext implements Serializable {
         return Optional.ofNullable(lifecycleStage);
     }
 
-    /**
-     * Returns the raw lifecycle stage, or null if not set.
-     *
-     * @return lifecycle stage, or null
-     */
     @JsonProperty("lifecycleStage")
     public String getLifecycleStage() {
         return lifecycleStage;
@@ -163,71 +211,36 @@ public final class LifecycleContext implements Serializable {
         return Optional.ofNullable(persistenceTimestamp);
     }
 
-    /**
-     * Returns the raw persistence timestamp, or null if not set.
-     *
-     * @return persistence timestamp, or null
-     */
     @JsonProperty("persistenceTimestamp")
     public Instant getPersistenceTimestamp() {
         return persistenceTimestamp;
     }
 
     /**
-     * Returns the authoritative commit outcome.
+     * Returns the authoritative commit outcome, if persistence has been attempted.
      *
-     * @return optional authoritative commit outcome
+     * @return optional commit outcome
      */
     @JsonIgnore
     public Optional<AuthoritativeCommitOutcome> commitOutcome() {
         return Optional.ofNullable(commitOutcome);
     }
 
-    /**
-     * Returns the raw commit outcome, or null if not set.
-     *
-     * @return commit outcome, or null
-     */
     @JsonProperty("commitOutcome")
     public AuthoritativeCommitOutcome getCommitOutcome() {
         return commitOutcome;
     }
 
-    /**
-     * Returns whether a retention hold/policy applies to this Information Unit.
-     *
-     * @return true if retained, false otherwise
-     */
     @JsonProperty("retained")
     public boolean isRetained() {
         return retained;
     }
 
-    @JsonIgnore
-    public boolean retained() {
-        return retained;
-    }
-
-    /**
-     * Returns whether this Information Unit is archived.
-     *
-     * @return true if archived, false otherwise
-     */
     @JsonProperty("archived")
     public boolean isArchived() {
         return archived;
     }
 
-    @JsonIgnore
-    public boolean archived() {
-        return archived;
-    }
-
-    /**
-     * Returns the unmodifiable map of operational coordination attributes.
-     *
-     * @return coordination attributes map, never null
-     */
     @JsonProperty("coordinationAttributes")
     public Map<String, String> coordinationAttributes() {
         return coordinationAttributes;
@@ -237,22 +250,31 @@ public final class LifecycleContext implements Serializable {
         return coordinationAttributes;
     }
 
-    /**
-     * Returns a specific coordination attribute value by key.
-     *
-     * @param key the attribute key
-     * @return optional attribute value
-     */
-    public Optional<String> coordinationAttribute(String key) {
+    public Optional<String> getCoordinationAttribute(String key) {
+        if (key == null) return Optional.empty();
         return Optional.ofNullable(coordinationAttributes.get(key));
     }
 
-    public Optional<String> getCoordinationAttribute(String key) {
-        return coordinationAttribute(key);
+    public Optional<String> coordinationAttribute(String key) {
+        return getCoordinationAttribute(key);
+    }
+
+    @JsonIgnore
+    public boolean isCommitted() {
+        return commitOutcome == AuthoritativeCommitOutcome.COMMITTED
+                || (lifecycleStage != null && lifecycleStage.equalsIgnoreCase("COMMITTED"));
+    }
+
+    @JsonIgnore
+    public boolean isRetired() {
+        return (dispositionStatus != null && dispositionStatus.equals(DISPOSITION_RETIRED))
+                || (lifecycleStage != null && lifecycleStage.equalsIgnoreCase("RETIRED"));
     }
 
     public boolean isEmpty() {
-        return lifecycleStage == null
+        return dispositionStatus == null
+                && retentionPolicy == null
+                && lifecycleStage == null
                 && persistenceTimestamp == null
                 && commitOutcome == null
                 && !retained
@@ -264,28 +286,47 @@ public final class LifecycleContext implements Serializable {
     // Immutable Derivations ("With" Mutators)
     // =========================================================================
 
+    public LifecycleContext withDispositionStatus(Topic dispositionStatus) {
+        return new LifecycleContext(dispositionStatus, this.retentionPolicy, this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, this.archived, this.coordinationAttributes);
+    }
+
+    public LifecycleContext withRetentionPolicy(Topic retentionPolicy) {
+        return new LifecycleContext(this.dispositionStatus, retentionPolicy, this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, this.archived, this.coordinationAttributes);
+    }
+
     public LifecycleContext withLifecycleStage(String lifecycleStage) {
-        return new LifecycleContext(lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, this.archived, this.coordinationAttributes);
+        return new LifecycleContext(this.dispositionStatus, this.retentionPolicy, lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, this.archived, this.coordinationAttributes);
     }
 
     public LifecycleContext withPersistenceTimestamp(Instant persistenceTimestamp) {
-        return new LifecycleContext(this.lifecycleStage, persistenceTimestamp, this.commitOutcome, this.retained, this.archived, this.coordinationAttributes);
+        return new LifecycleContext(this.dispositionStatus, this.retentionPolicy, this.lifecycleStage, persistenceTimestamp, this.commitOutcome, this.retained, this.archived, this.coordinationAttributes);
     }
 
     public LifecycleContext withCommitOutcome(AuthoritativeCommitOutcome commitOutcome) {
-        return new LifecycleContext(this.lifecycleStage, this.persistenceTimestamp, commitOutcome, this.retained, this.archived, this.coordinationAttributes);
+        return new LifecycleContext(this.dispositionStatus, this.retentionPolicy, this.lifecycleStage, this.persistenceTimestamp, commitOutcome, this.retained, this.archived, this.coordinationAttributes);
     }
 
     public LifecycleContext withRetained(boolean retained) {
-        return new LifecycleContext(this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, retained, this.archived, this.coordinationAttributes);
+        return new LifecycleContext(this.dispositionStatus, this.retentionPolicy, this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, retained, this.archived, this.coordinationAttributes);
     }
 
     public LifecycleContext withArchived(boolean archived) {
-        return new LifecycleContext(this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, archived, this.coordinationAttributes);
+        return new LifecycleContext(this.dispositionStatus, this.retentionPolicy, this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, archived, this.coordinationAttributes);
     }
 
     public LifecycleContext withCoordinationAttributes(Map<String, String> coordinationAttributes) {
-        return new LifecycleContext(this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, this.archived, coordinationAttributes);
+        return new LifecycleContext(this.dispositionStatus, this.retentionPolicy, this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, this.archived, coordinationAttributes);
+    }
+
+    public LifecycleContext withCoordinationAttribute(String key, String value) {
+        Objects.requireNonNull(key, "coordinationAttribute key must not be null");
+        Map<String, String> updated = new LinkedHashMap<>(this.coordinationAttributes);
+        if (value == null) {
+            updated.remove(key);
+        } else {
+            updated.put(key, value);
+        }
+        return new LifecycleContext(this.dispositionStatus, this.retentionPolicy, this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, this.archived, updated);
     }
 
     // =========================================================================
@@ -299,6 +340,8 @@ public final class LifecycleContext implements Serializable {
         LifecycleContext that = (LifecycleContext) o;
         return retained == that.retained &&
                 archived == that.archived &&
+                Objects.equals(dispositionStatus, that.dispositionStatus) &&
+                Objects.equals(retentionPolicy, that.retentionPolicy) &&
                 Objects.equals(lifecycleStage, that.lifecycleStage) &&
                 Objects.equals(persistenceTimestamp, that.persistenceTimestamp) &&
                 commitOutcome == that.commitOutcome &&
@@ -307,18 +350,18 @@ public final class LifecycleContext implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(lifecycleStage, persistenceTimestamp, commitOutcome, retained, archived, coordinationAttributes);
+        return Objects.hash(dispositionStatus, retentionPolicy, lifecycleStage, persistenceTimestamp, commitOutcome, retained, archived, coordinationAttributes);
     }
 
     @Override
     public String toString() {
         return "LifecycleContext{" +
-                "stage=" + lifecycleStage +
-                ", timestamp=" + persistenceTimestamp +
+                "disposition=" + dispositionStatus +
+                ", retentionPolicy=" + retentionPolicy +
+                ", stage='" + lifecycleStage + '\'' +
                 ", outcome=" + commitOutcome +
                 ", retained=" + retained +
                 ", archived=" + archived +
-                ", attributes=" + coordinationAttributes.size() +
                 '}';
     }
 
@@ -327,13 +370,26 @@ public final class LifecycleContext implements Serializable {
     // =========================================================================
 
     public static final class Builder {
-
+        private Topic dispositionStatus;
+        private Topic retentionPolicy;
         private String lifecycleStage;
         private Instant persistenceTimestamp;
         private AuthoritativeCommitOutcome commitOutcome;
         private boolean retained;
         private boolean archived;
         private final Map<String, String> coordinationAttributes = new LinkedHashMap<>();
+
+        private Builder() {}
+
+        public Builder dispositionStatus(Topic dispositionStatus) {
+            this.dispositionStatus = dispositionStatus;
+            return this;
+        }
+
+        public Builder retentionPolicy(Topic retentionPolicy) {
+            this.retentionPolicy = retentionPolicy;
+            return this;
+        }
 
         public Builder lifecycleStage(String lifecycleStage) {
             this.lifecycleStage = lifecycleStage;
@@ -360,13 +416,6 @@ public final class LifecycleContext implements Serializable {
             return this;
         }
 
-        public Builder putCoordinationAttribute(String key, String value) {
-            if (key != null && value != null) {
-                this.coordinationAttributes.put(key.trim(), value.trim());
-            }
-            return this;
-        }
-
         public Builder coordinationAttributes(Map<String, String> coordinationAttributes) {
             this.coordinationAttributes.clear();
             if (coordinationAttributes != null) {
@@ -375,8 +424,25 @@ public final class LifecycleContext implements Serializable {
             return this;
         }
 
+        public Builder putCoordinationAttribute(String key, String value) {
+            return coordinationAttribute(key, value);
+        }
+
+        public Builder coordinationAttribute(String key, String value) {
+            if (key != null) {
+                if (value == null) {
+                    this.coordinationAttributes.remove(key);
+                } else {
+                    this.coordinationAttributes.put(key, value);
+                }
+            }
+            return this;
+        }
+
         public LifecycleContext build() {
             return new LifecycleContext(
+                    dispositionStatus,
+                    retentionPolicy,
                     lifecycleStage,
                     persistenceTimestamp,
                     commitOutcome,

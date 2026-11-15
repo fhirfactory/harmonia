@@ -36,18 +36,17 @@ import java.util.Optional;
  * Encapsulates operational working information maintained principally by Mneme and exposed to appropriate clients.
  * <p>
  * <b>Architectural Context &amp; Authority:</b>
- * In accordance with {@code DRP-Information-Unit-Framework.Final.001.md} (§§5.1, 16; IU-03, IU-09):
+ * In accordance with {@code DRP-Information-Unit-Framework.Final.001.md} (§§5.1, 16; IU-03, IU-09) and
+ * {@code DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md} (§§0, 2):
  * <ul>
- *   <li>{@code ManagementContext} is one of the four distinct metadata contexts within an Information Unit.</li>
- *   <li>It is dedicated to operational and working-cache data that does <b>not</b> belong to the IU's identity,
- *       native Content, or durable Content metadata.</li>
- *   <li><b>Operational Version:</b> Used for cache conflict detection, optimistic concurrency, and stale-update
- *       handling within Mneme. Distinct from both Content Structure Version and payload-native instance version.</li>
+ *   <li>{@code ManagementContext} is dedicated to operational and working-cache data that does <b>not</b>
+ *       belong to the IU's durable Information Metadata, native Content, or durable Content metadata.</li>
+ *   <li><b>Operational Revision:</b> Typed as {@link OperationalRevision}, used for cache conflict detection,
+ *       optimistic concurrency, and stale-update handling within Mneme.
+ *       It is <b>strictly distinct</b> from durable {@link AuthoritativeVersion} committed by Mnemosyne.</li>
  *   <li><b>Active Generation:</b> Identifies an individual active manifestation of an IU in a particular distributed
- *       Mneme cache environment. Multiple cache generations may express the same operational Version without creating
+ *       Mneme cache environment. Multiple cache generations may express the same operational revision without creating
  *       a new IU identity or representation.</li>
- *   <li><b>Transient Properties:</b> Properties in {@code ManagementContext} may be expressly transient.
- *       Their presence here does not automatically create a durable persistence obligation.</li>
  * </ul>
  * <p>
  * <b>Defensive Programming:</b>
@@ -65,26 +64,61 @@ public final class ManagementContext implements Serializable {
 
     private static final ManagementContext EMPTY = new ManagementContext(null, null, null, Map.of());
 
-    private final AuthoritativeVersion operationalVersion;
+    private final OperationalRevision operationalRevision;
     private final String activeGeneration;
     private final Instant cachedAt;
     private final Map<String, String> transientProperties;
 
     /**
-     * Canonical constructor establishing validated management context attributes.
+     * Canonical constructor establishing validated management context attributes with {@link OperationalRevision}
+     * or backward-compatible {@link AuthoritativeVersion}.
      *
-     * @param operationalVersion  the Mneme operational version for concurrency/staleness control (optional)
-     * @param activeGeneration   the active cache manifestation identifier (optional)
-     * @param cachedAt           the working cache timestamp (optional)
-     * @param transientProperties transient operational properties (optional, will be wrapped in unmodifiable map)
+     * @param operationalRevisionOrVersion the Mneme operational revision (optional)
+     * @param activeGeneration             the active cache manifestation identifier (optional)
+     * @param cachedAt                     the working cache timestamp (optional)
+     * @param transientProperties          transient operational properties (optional)
+     */
+    public ManagementContext(
+            Object operationalRevisionOrVersion,
+            String activeGeneration,
+            Instant cachedAt,
+            Map<String, String> transientProperties) {
+        if (operationalRevisionOrVersion instanceof OperationalRevision or) {
+            this.operationalRevision = or;
+        } else if (operationalRevisionOrVersion instanceof AuthoritativeVersion av) {
+            this.operationalRevision = OperationalRevision.of(av.value());
+        } else if (operationalRevisionOrVersion instanceof String s && !s.isBlank()) {
+            this.operationalRevision = OperationalRevision.of(s.trim());
+        } else {
+            this.operationalRevision = null;
+        }
+        this.activeGeneration = activeGeneration != null && !activeGeneration.isBlank() ? activeGeneration.trim() : null;
+        this.cachedAt = cachedAt;
+        if (transientProperties == null || transientProperties.isEmpty()) {
+            this.transientProperties = Map.of();
+        } else {
+            this.transientProperties = Collections.unmodifiableMap(new LinkedHashMap<>(transientProperties));
+        }
+    }
+
+    /**
+     * Flexible creator handling both {@link OperationalRevision} and legacy version parameters.
      */
     @JsonCreator
     public ManagementContext(
-            @JsonProperty("operationalVersion") AuthoritativeVersion operationalVersion,
+            @JsonProperty("operationalRevision") OperationalRevision operationalRevision,
+            @JsonProperty("operationalVersion") Object operationalVersionRaw,
             @JsonProperty("activeGeneration") String activeGeneration,
             @JsonProperty("cachedAt") Instant cachedAt,
             @JsonProperty("transientProperties") Map<String, String> transientProperties) {
-        this.operationalVersion = operationalVersion;
+        if (operationalRevision != null) {
+            this.operationalRevision = operationalRevision;
+        } else if (operationalVersionRaw != null) {
+            String val = operationalVersionRaw instanceof AuthoritativeVersion av ? av.value() : operationalVersionRaw.toString();
+            this.operationalRevision = val != null && !val.isBlank() ? OperationalRevision.of(val.trim()) : null;
+        } else {
+            this.operationalRevision = null;
+        }
         this.activeGeneration = activeGeneration != null && !activeGeneration.isBlank() ? activeGeneration.trim() : null;
         this.cachedAt = cachedAt;
         if (transientProperties == null || transientProperties.isEmpty()) {
@@ -117,23 +151,35 @@ public final class ManagementContext implements Serializable {
     // =========================================================================
 
     /**
-     * Returns the Mneme operational version used for cache conflict detection and optimistic concurrency.
+     * Returns the Mneme operational revision used for cache conflict detection and optimistic concurrency.
      *
-     * @return optional operational version
+     * @return optional operational revision
      */
     @JsonIgnore
-    public Optional<AuthoritativeVersion> operationalVersion() {
-        return Optional.ofNullable(operationalVersion);
+    public Optional<OperationalRevision> operationalRevision() {
+        return Optional.ofNullable(operationalRevision);
+    }
+
+    @JsonProperty("operationalRevision")
+    public OperationalRevision getOperationalRevision() {
+        return operationalRevision;
     }
 
     /**
-     * Returns the raw operational version value, or null if not set.
+     * Backward-compatible accessor returning the revision as {@link AuthoritativeVersion}.
      *
-     * @return the operational version, or null
+     * @deprecated Use {@link #operationalRevision()} instead to preserve architectural separation.
      */
+    @Deprecated
+    @JsonIgnore
+    public Optional<AuthoritativeVersion> operationalVersion() {
+        return operationalRevision != null ? Optional.of(AuthoritativeVersion.of(operationalRevision.value())) : Optional.empty();
+    }
+
+    @Deprecated
     @JsonProperty("operationalVersion")
     public AuthoritativeVersion getOperationalVersion() {
-        return operationalVersion;
+        return operationalRevision != null ? AuthoritativeVersion.of(operationalRevision.value()) : null;
     }
 
     /**
@@ -146,11 +192,6 @@ public final class ManagementContext implements Serializable {
         return Optional.ofNullable(activeGeneration);
     }
 
-    /**
-     * Returns the raw active generation identifier, or null if not set.
-     *
-     * @return the active generation, or null
-     */
     @JsonProperty("activeGeneration")
     public String getActiveGeneration() {
         return activeGeneration;
@@ -166,97 +207,77 @@ public final class ManagementContext implements Serializable {
         return Optional.ofNullable(cachedAt);
     }
 
-    /**
-     * Returns the raw cached timestamp, or null if not set.
-     *
-     * @return the cached timestamp, or null
-     */
     @JsonProperty("cachedAt")
     public Instant getCachedAt() {
         return cachedAt;
     }
 
-    /**
-     * Returns the unmodifiable map of transient operational working properties.
-     *
-     * @return unmodifiable map of transient properties
-     */
     @JsonProperty("transientProperties")
     public Map<String, String> transientProperties() {
         return transientProperties;
     }
 
-    /**
-     * Retrieves a single transient property value by key.
-     *
-     * @param key the property key
-     * @return optional property value
-     */
+    public Map<String, String> getTransientProperties() {
+        return transientProperties;
+    }
+
     public Optional<String> getTransientProperty(String key) {
         if (key == null) return Optional.empty();
         return Optional.ofNullable(transientProperties.get(key));
+    }
+
+    public boolean isEmpty() {
+        return operationalRevision == null
+                && activeGeneration == null
+                && cachedAt == null
+                && transientProperties.isEmpty();
     }
 
     // =========================================================================
     // Immutable Derivations ("With" Mutators)
     // =========================================================================
 
-    /**
-     * Derives an immutable copy with an updated operational version.
-     *
-     * @param version new operational version
-     * @return new ManagementContext
-     */
-    public ManagementContext withOperationalVersion(AuthoritativeVersion version) {
-        return new ManagementContext(version, this.activeGeneration, this.cachedAt, this.transientProperties);
+    public ManagementContext withOperationalRevision(OperationalRevision operationalRevision) {
+        return new ManagementContext(operationalRevision, this.activeGeneration, this.cachedAt, this.transientProperties);
     }
 
-    /**
-     * Derives an immutable copy with an updated active generation identifier.
-     *
-     * @param generation new active generation
-     * @return new ManagementContext
-     */
-    public ManagementContext withActiveGeneration(String generation) {
-        return new ManagementContext(this.operationalVersion, generation, this.cachedAt, this.transientProperties);
+    public ManagementContext withOperationalRevision(String operationalRevision) {
+        OperationalRevision rev = operationalRevision != null && !operationalRevision.isBlank() ? OperationalRevision.of(operationalRevision) : null;
+        return withOperationalRevision(rev);
     }
 
-    /**
-     * Derives an immutable copy with an updated cached timestamp.
-     *
-     * @param timestamp new cache timestamp
-     * @return new ManagementContext
-     */
-    public ManagementContext withCachedAt(Instant timestamp) {
-        return new ManagementContext(this.operationalVersion, this.activeGeneration, timestamp, this.transientProperties);
+    @Deprecated
+    public ManagementContext withOperationalVersion(String operationalVersion) {
+        return withOperationalRevision(operationalVersion);
     }
 
-    /**
-     * Derives an immutable copy with updated transient properties.
-     *
-     * @param properties new transient properties map
-     * @return new ManagementContext
-     */
-    public ManagementContext withTransientProperties(Map<String, String> properties) {
-        return new ManagementContext(this.operationalVersion, this.activeGeneration, this.cachedAt, properties);
+    @Deprecated
+    public ManagementContext withOperationalVersion(AuthoritativeVersion operationalVersion) {
+        OperationalRevision rev = operationalVersion != null ? OperationalRevision.of(operationalVersion.value()) : null;
+        return withOperationalRevision(rev);
     }
 
-    /**
-     * Derives an immutable copy with an added or updated transient property.
-     *
-     * @param key   property key, must not be null
-     * @param value property value
-     * @return new ManagementContext
-     */
+    public ManagementContext withActiveGeneration(String activeGeneration) {
+        return new ManagementContext(this.operationalRevision, activeGeneration, this.cachedAt, this.transientProperties);
+    }
+
+    public ManagementContext withCachedAt(Instant cachedAt) {
+        return new ManagementContext(this.operationalRevision, this.activeGeneration, cachedAt, this.transientProperties);
+    }
+
+    public ManagementContext withTransientProperties(Map<String, String> transientProperties) {
+        return new ManagementContext(this.operationalRevision, this.activeGeneration, this.cachedAt, transientProperties);
+    }
+
     public ManagementContext withTransientProperty(String key, String value) {
-        Objects.requireNonNull(key, "property key must not be null");
+        Objects.requireNonNull(key, "transientProperty key must not be null");
         Map<String, String> updated = new LinkedHashMap<>(this.transientProperties);
         if (value == null) {
             updated.remove(key);
         } else {
             updated.put(key, value);
         }
-        return new ManagementContext(this.operationalVersion, this.activeGeneration, this.cachedAt, updated);
+        return new ManagementContext(this.operationalRevision, this.activeGeneration, this.cachedAt, updated);
     }
 
     // =========================================================================
@@ -268,24 +289,24 @@ public final class ManagementContext implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ManagementContext that = (ManagementContext) o;
-        return Objects.equals(operationalVersion, that.operationalVersion)
-                && Objects.equals(activeGeneration, that.activeGeneration)
-                && Objects.equals(cachedAt, that.cachedAt)
-                && Objects.equals(transientProperties, that.transientProperties);
+        return Objects.equals(operationalRevision, that.operationalRevision) &&
+                Objects.equals(activeGeneration, that.activeGeneration) &&
+                Objects.equals(cachedAt, that.cachedAt) &&
+                Objects.equals(transientProperties, that.transientProperties);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operationalVersion, activeGeneration, cachedAt, transientProperties);
+        return Objects.hash(operationalRevision, activeGeneration, cachedAt, transientProperties);
     }
 
     @Override
     public String toString() {
         return "ManagementContext{" +
-                "operationalVersion=" + operationalVersion +
-                ", activeGeneration='" + activeGeneration + '\'' +
+                "revision=" + operationalRevision +
+                ", generation='" + activeGeneration + '\'' +
                 ", cachedAt=" + cachedAt +
-                ", transientPropertiesCount=" + transientProperties.size() +
+                ", transientProperties=" + transientProperties.size() +
                 '}';
     }
 
@@ -293,24 +314,34 @@ public final class ManagementContext implements Serializable {
     // Builder
     // =========================================================================
 
-    /**
-     * Fluent builder for {@link ManagementContext}.
-     */
     public static final class Builder {
-        private AuthoritativeVersion operationalVersion;
+        private OperationalRevision operationalRevision;
         private String activeGeneration;
         private Instant cachedAt;
         private final Map<String, String> transientProperties = new LinkedHashMap<>();
 
         private Builder() {}
 
-        public Builder operationalVersion(AuthoritativeVersion operationalVersion) {
-            this.operationalVersion = operationalVersion;
+        public Builder operationalRevision(OperationalRevision operationalRevision) {
+            this.operationalRevision = operationalRevision;
             return this;
         }
 
-        public Builder operationalVersion(String version) {
-            this.operationalVersion = version != null && !version.isBlank() ? AuthoritativeVersion.of(version) : null;
+        public Builder operationalRevision(String operationalRevision) {
+            this.operationalRevision = operationalRevision != null && !operationalRevision.isBlank()
+                    ? OperationalRevision.of(operationalRevision)
+                    : null;
+            return this;
+        }
+
+        @Deprecated
+        public Builder operationalVersion(String operationalVersion) {
+            return operationalRevision(operationalVersion);
+        }
+
+        @Deprecated
+        public Builder operationalVersion(AuthoritativeVersion operationalVersion) {
+            this.operationalRevision = operationalVersion != null ? OperationalRevision.of(operationalVersion.value()) : null;
             return this;
         }
 
@@ -324,26 +355,27 @@ public final class ManagementContext implements Serializable {
             return this;
         }
 
-        public Builder transientProperties(Map<String, String> properties) {
+        public Builder transientProperties(Map<String, String> transientProperties) {
             this.transientProperties.clear();
-            if (properties != null) {
-                this.transientProperties.putAll(properties);
+            if (transientProperties != null) {
+                this.transientProperties.putAll(transientProperties);
             }
             return this;
         }
 
         public Builder transientProperty(String key, String value) {
-            Objects.requireNonNull(key, "key must not be null");
-            if (value != null) {
-                this.transientProperties.put(key, value);
-            } else {
-                this.transientProperties.remove(key);
+            if (key != null) {
+                if (value == null) {
+                    this.transientProperties.remove(key);
+                } else {
+                    this.transientProperties.put(key, value);
+                }
             }
             return this;
         }
 
         public ManagementContext build() {
-            return new ManagementContext(operationalVersion, activeGeneration, cachedAt, transientProperties);
+            return new ManagementContext(operationalRevision, activeGeneration, cachedAt, transientProperties);
         }
     }
 }

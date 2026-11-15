@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.model.core.information;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -34,20 +35,23 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.UUID;
 
 /**
  * Encapsulates the peer operational metadata associated with middleware operations upon and manifestations
  * of information, parcels, and work.
  * <p>
  * <b>Architectural Context &amp; Authority:</b>
- * In accordance with the accepted 1.1.25 Architecture Continuum ({@code model.core.information.InformationUnit}):
+ * In accordance with the accepted 1.1.25 Architecture Continuum ({@code model.core.information.InformationUnit})
+ * and {@code DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md} (§§0, 2):
  * <ul>
- *   <li><b>Peer Operational Concern:</b> {@code OperationalMetadata} is strictly separated from {@link InformationUnitMetadata}.
+ *   <li><b>Peer Operational Concern:</b> {@code OperationalMetadata} is strictly separated from {@link InformationMetadata}.
  *       It is not an internal constituent or identity of an {@link InformationUnit}, nor does it require co-persistence.</li>
  *   <li><b>Clear Separation of Versioning Dimensions:</b>
  *     <ol>
  *       <li><b>Authoritative Persisted IU Version ({@link InformationUnit#version()}):</b> Durable database version committed by Mnemosyne.</li>
- *       <li><b>Mneme Operational Revision ({@link #operationalRevision()}):</b> Active working version for cache optimistic concurrency.</li>
+ *       <li><b>Mneme Operational Revision ({@link #operationalRevision()}):</b> Active working version typed as {@link OperationalRevision}
+ *           for cache optimistic concurrency.</li>
  *       <li><b>Cache Active Generation ({@link #activeGeneration()}):</b> Unique identifier of an active manifestation in a distributed cache.</li>
  *       <li><b>Mneme–Mnemosyne Persistence Coordination ({@link #lifecycleStage()}, {@link #commitOutcome()}):</b> Handshake operation facts.</li>
  *       <li><b>Governed Information Lifecycle ({@link LifecycleContext}):</b> Governed disposition and retention hold of the information.</li>
@@ -75,7 +79,7 @@ public final class OperationalMetadata implements Serializable {
 
     private final String subjectIdentifier;
     private final Topic operationalContext;
-    private final AuthoritativeVersion operationalRevision;
+    private final OperationalRevision operationalRevision;
     private final String activeGeneration;
     private final Instant cachedAt;
     private final Map<String, Object> transientProperties;
@@ -91,24 +95,23 @@ public final class OperationalMetadata implements Serializable {
     private final List<String> evidenceReferences;
 
     /**
-     * Canonical constructor establishing validated operational metadata.
+     * Canonical constructor establishing validated operational metadata with {@link OperationalRevision}.
      */
-    @JsonCreator
     public OperationalMetadata(
-            @JsonProperty("subjectIdentifier") String subjectIdentifier,
-            @JsonProperty("operationalContext") Topic operationalContext,
-            @JsonProperty("operationalRevision") AuthoritativeVersion operationalRevision,
-            @JsonProperty("activeGeneration") String activeGeneration,
-            @JsonProperty("cachedAt") Instant cachedAt,
-            @JsonProperty("transientProperties") Map<String, Object> transientProperties,
-            @JsonProperty("lifecycleStage") String lifecycleStage,
-            @JsonProperty("persistenceTimestamp") Instant persistenceTimestamp,
-            @JsonProperty("commitOutcome") AuthoritativeCommitOutcome commitOutcome,
-            @JsonProperty("coordinationAttributes") Map<String, Object> coordinationAttributes,
-            @JsonProperty("executionCoordination") Map<String, Object> executionCoordination,
-            @JsonProperty("conveyanceOperations") Map<String, Object> conveyanceOperations,
-            @JsonProperty("temporalObservations") Map<String, Object> temporalObservations,
-            @JsonProperty("evidenceReferences") List<String> evidenceReferences) {
+            String subjectIdentifier,
+            Topic operationalContext,
+            OperationalRevision operationalRevision,
+            String activeGeneration,
+            Instant cachedAt,
+            Map<String, Object> transientProperties,
+            String lifecycleStage,
+            Instant persistenceTimestamp,
+            AuthoritativeCommitOutcome commitOutcome,
+            Map<String, Object> coordinationAttributes,
+            Map<String, Object> executionCoordination,
+            Map<String, Object> conveyanceOperations,
+            Map<String, Object> temporalObservations,
+            List<String> evidenceReferences) {
         this.subjectIdentifier = sanitize(subjectIdentifier);
         this.operationalContext = operationalContext;
         this.operationalRevision = operationalRevision;
@@ -137,6 +140,57 @@ public final class OperationalMetadata implements Serializable {
             }
             this.evidenceReferences = Collections.unmodifiableList(list);
         }
+    }
+
+    /**
+     * Flexible creator handling both {@link OperationalRevision} and legacy parameters.
+     */
+    @JsonCreator
+    public OperationalMetadata(
+            @JsonProperty("subjectIdentifier") String subjectIdentifier,
+            @JsonProperty("operationalContext") Topic operationalContext,
+            @JsonProperty("operationalRevision") Object operationalRevisionRaw,
+            @JsonProperty("activeGeneration") String activeGeneration,
+            @JsonProperty("cachedAt") Instant cachedAt,
+            @JsonProperty("transientProperties") Map<String, Object> transientProperties,
+            @JsonProperty("lifecycleStage") String lifecycleStage,
+            @JsonProperty("persistenceTimestamp") Instant persistenceTimestamp,
+            @JsonProperty("commitOutcome") AuthoritativeCommitOutcome commitOutcome,
+            @JsonProperty("coordinationAttributes") Map<String, Object> coordinationAttributes,
+            @JsonProperty("executionCoordination") Map<String, Object> executionCoordination,
+            @JsonProperty("conveyanceOperations") Map<String, Object> conveyanceOperations,
+            @JsonProperty("temporalObservations") Map<String, Object> temporalObservations,
+            @JsonProperty("evidenceReferences") List<String> evidenceReferences) {
+        this(
+                subjectIdentifier,
+                operationalContext,
+                parseRevision(operationalRevisionRaw),
+                activeGeneration,
+                cachedAt,
+                transientProperties,
+                lifecycleStage,
+                persistenceTimestamp,
+                commitOutcome,
+                coordinationAttributes,
+                executionCoordination,
+                conveyanceOperations,
+                temporalObservations,
+                evidenceReferences
+        );
+    }
+
+    private static OperationalRevision parseRevision(Object raw) {
+        if (raw == null) {
+            return null;
+        }
+        if (raw instanceof OperationalRevision or) {
+            return or;
+        }
+        if (raw instanceof AuthoritativeVersion av) {
+            return OperationalRevision.of(av.value());
+        }
+        String str = raw.toString().trim();
+        return str.isEmpty() ? null : OperationalRevision.of(str);
     }
 
     private static String sanitize(String input) {
@@ -172,46 +226,89 @@ public final class OperationalMetadata implements Serializable {
     // Accessors
     // =========================================================================
 
+    @JsonIgnore
     public Optional<String> subjectIdentifier() {
         return Optional.ofNullable(subjectIdentifier);
     }
 
+    @JsonProperty("subjectIdentifier")
     public String getSubjectIdentifier() {
         return subjectIdentifier;
     }
 
+    @JsonIgnore
+    public Optional<Topic> subjectTopic() {
+        if (subjectIdentifier == null) return Optional.empty();
+        try {
+            return Optional.of(Topic.fromName(subjectIdentifier));
+        } catch (Exception e) {
+            return Optional.empty();
+        }
+    }
+
+    @JsonIgnore
+    public Optional<UUID> subjectUuid() {
+        if (subjectIdentifier == null) return Optional.empty();
+        try {
+            return Optional.of(UUID.fromString(subjectIdentifier));
+        } catch (IllegalArgumentException e) {
+            return Optional.empty();
+        }
+    }
+
+    @JsonIgnore
     public Optional<Topic> operationalContext() {
         return Optional.ofNullable(operationalContext);
     }
 
+    @JsonProperty("operationalContext")
     public Topic getOperationalContext() {
         return operationalContext;
     }
 
-    public Optional<AuthoritativeVersion> operationalRevision() {
+    @JsonIgnore
+    public Optional<OperationalRevision> operationalRevision() {
         return Optional.ofNullable(operationalRevision);
     }
 
-    public AuthoritativeVersion getOperationalRevision() {
+    @JsonProperty("operationalRevision")
+    public OperationalRevision getOperationalRevision() {
         return operationalRevision;
     }
 
+    @Deprecated
+    @JsonIgnore
+    public Optional<AuthoritativeVersion> operationalVersion() {
+        return operationalRevision != null ? Optional.of(AuthoritativeVersion.of(operationalRevision.value())) : Optional.empty();
+    }
+
+    @Deprecated
+    @JsonProperty("operationalVersion")
+    public AuthoritativeVersion getOperationalVersion() {
+        return operationalRevision != null ? AuthoritativeVersion.of(operationalRevision.value()) : null;
+    }
+
+    @JsonIgnore
     public Optional<String> activeGeneration() {
         return Optional.ofNullable(activeGeneration);
     }
 
+    @JsonProperty("activeGeneration")
     public String getActiveGeneration() {
         return activeGeneration;
     }
 
+    @JsonIgnore
     public Optional<Instant> cachedAt() {
         return Optional.ofNullable(cachedAt);
     }
 
+    @JsonProperty("cachedAt")
     public Instant getCachedAt() {
         return cachedAt;
     }
 
+    @JsonProperty("transientProperties")
     public Map<String, Object> transientProperties() {
         return transientProperties;
     }
@@ -220,30 +317,43 @@ public final class OperationalMetadata implements Serializable {
         return transientProperties;
     }
 
+    @JsonIgnore
     public Optional<String> lifecycleStage() {
         return Optional.ofNullable(lifecycleStage);
     }
 
+    @JsonProperty("lifecycleStage")
     public String getLifecycleStage() {
         return lifecycleStage;
     }
 
+    @JsonIgnore
+    public Optional<Topic> lifecycleStageTopic() {
+        if (lifecycleStage == null) return Optional.empty();
+        return Optional.of(Topic.fromName("Harmonia.Persistence.Stage." + lifecycleStage));
+    }
+
+    @JsonIgnore
     public Optional<Instant> persistenceTimestamp() {
         return Optional.ofNullable(persistenceTimestamp);
     }
 
+    @JsonProperty("persistenceTimestamp")
     public Instant getPersistenceTimestamp() {
         return persistenceTimestamp;
     }
 
+    @JsonIgnore
     public Optional<AuthoritativeCommitOutcome> commitOutcome() {
         return Optional.ofNullable(commitOutcome);
     }
 
+    @JsonProperty("commitOutcome")
     public AuthoritativeCommitOutcome getCommitOutcome() {
         return commitOutcome;
     }
 
+    @JsonProperty("coordinationAttributes")
     public Map<String, Object> coordinationAttributes() {
         return coordinationAttributes;
     }
@@ -252,6 +362,7 @@ public final class OperationalMetadata implements Serializable {
         return coordinationAttributes;
     }
 
+    @JsonProperty("executionCoordination")
     public Map<String, Object> executionCoordination() {
         return executionCoordination;
     }
@@ -260,6 +371,7 @@ public final class OperationalMetadata implements Serializable {
         return executionCoordination;
     }
 
+    @JsonProperty("conveyanceOperations")
     public Map<String, Object> conveyanceOperations() {
         return conveyanceOperations;
     }
@@ -268,6 +380,7 @@ public final class OperationalMetadata implements Serializable {
         return conveyanceOperations;
     }
 
+    @JsonProperty("temporalObservations")
     public Map<String, Object> temporalObservations() {
         return temporalObservations;
     }
@@ -276,6 +389,7 @@ public final class OperationalMetadata implements Serializable {
         return temporalObservations;
     }
 
+    @JsonProperty("evidenceReferences")
     public List<String> evidenceReferences() {
         return evidenceReferences;
     }
@@ -311,16 +425,17 @@ public final class OperationalMetadata implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(subjectIdentifier, operationalContext, operationalRevision, activeGeneration, cachedAt,
-                transientProperties, lifecycleStage, persistenceTimestamp, commitOutcome, coordinationAttributes,
-                executionCoordination, conveyanceOperations, temporalObservations, evidenceReferences);
+        return Objects.hash(subjectIdentifier, operationalContext, operationalRevision, activeGeneration,
+                cachedAt, transientProperties, lifecycleStage, persistenceTimestamp, commitOutcome,
+                coordinationAttributes, executionCoordination, conveyanceOperations,
+                temporalObservations, evidenceReferences);
     }
 
     @Override
     public String toString() {
         return "OperationalMetadata{" +
                 "subject='" + subjectIdentifier + '\'' +
-                ", context=" + (operationalContext != null ? operationalContext.getName() : "null") +
+                ", context=" + operationalContext +
                 ", revision=" + operationalRevision +
                 ", generation='" + activeGeneration + '\'' +
                 ", stage='" + lifecycleStage + '\'' +
@@ -333,10 +448,9 @@ public final class OperationalMetadata implements Serializable {
     // =========================================================================
 
     public static final class Builder {
-
         private String subjectIdentifier;
         private Topic operationalContext;
-        private AuthoritativeVersion operationalRevision;
+        private OperationalRevision operationalRevision;
         private String activeGeneration;
         private Instant cachedAt;
         private final Map<String, Object> transientProperties = new LinkedHashMap<>();
@@ -351,8 +465,20 @@ public final class OperationalMetadata implements Serializable {
         private final Map<String, Object> temporalObservations = new LinkedHashMap<>();
         private final List<String> evidenceReferences = new ArrayList<>();
 
+        private Builder() {}
+
         public Builder subjectIdentifier(String subjectIdentifier) {
             this.subjectIdentifier = subjectIdentifier;
+            return this;
+        }
+
+        public Builder subjectIdentifier(UUID uuid) {
+            this.subjectIdentifier = uuid != null ? uuid.toString() : null;
+            return this;
+        }
+
+        public Builder subjectTopic(Topic topic) {
+            this.subjectIdentifier = topic != null ? topic.getName() : null;
             return this;
         }
 
@@ -361,13 +487,23 @@ public final class OperationalMetadata implements Serializable {
             return this;
         }
 
-        public Builder operationalRevision(AuthoritativeVersion operationalRevision) {
+        public Builder operationalRevision(OperationalRevision operationalRevision) {
             this.operationalRevision = operationalRevision;
             return this;
         }
 
         public Builder operationalRevision(String operationalRevision) {
-            this.operationalRevision = operationalRevision != null ? AuthoritativeVersion.of(operationalRevision) : null;
+            this.operationalRevision = operationalRevision != null && !operationalRevision.isBlank()
+                    ? OperationalRevision.of(operationalRevision)
+                    : null;
+            return this;
+        }
+
+        @Deprecated
+        public Builder operationalRevision(AuthoritativeVersion operationalVersion) {
+            this.operationalRevision = operationalVersion != null
+                    ? OperationalRevision.of(operationalVersion.value())
+                    : null;
             return this;
         }
 
@@ -381,23 +517,36 @@ public final class OperationalMetadata implements Serializable {
             return this;
         }
 
-        public Builder putTransientProperty(String key, Object value) {
-            if (key != null) {
-                this.transientProperties.put(key, value);
+        public Builder transientProperties(Map<String, Object> transientProperties) {
+            this.transientProperties.clear();
+            if (transientProperties != null) {
+                this.transientProperties.putAll(transientProperties);
             }
             return this;
         }
 
-        public Builder transientProperties(Map<String, Object> properties) {
-            this.transientProperties.clear();
-            if (properties != null) {
-                this.transientProperties.putAll(properties);
+        public Builder putTransientProperty(String key, Object value) {
+            return transientProperty(key, value);
+        }
+
+        public Builder transientProperty(String key, Object value) {
+            if (key != null) {
+                if (value == null) {
+                    this.transientProperties.remove(key);
+                } else {
+                    this.transientProperties.put(key, value);
+                }
             }
             return this;
         }
 
         public Builder lifecycleStage(String lifecycleStage) {
             this.lifecycleStage = lifecycleStage;
+            return this;
+        }
+
+        public Builder lifecycleStage(Topic stageTopic) {
+            this.lifecycleStage = stageTopic != null ? stageTopic.getName() : null;
             return this;
         }
 
@@ -411,45 +560,68 @@ public final class OperationalMetadata implements Serializable {
             return this;
         }
 
-        public Builder putCoordinationAttribute(String key, Object value) {
-            if (key != null) {
-                this.coordinationAttributes.put(key, value);
-            }
-            return this;
-        }
-
-        public Builder coordinationAttributes(Map<String, Object> attributes) {
+        public Builder coordinationAttributes(Map<String, Object> coordinationAttributes) {
             this.coordinationAttributes.clear();
-            if (attributes != null) {
-                this.coordinationAttributes.putAll(attributes);
+            if (coordinationAttributes != null) {
+                this.coordinationAttributes.putAll(coordinationAttributes);
             }
             return this;
         }
 
-        public Builder putExecutionCoordination(String key, Object value) {
+        public Builder putCoordinationAttribute(String key, Object value) {
+            return coordinationAttribute(key, value);
+        }
+
+        public Builder coordinationAttribute(String key, Object value) {
             if (key != null) {
-                this.executionCoordination.put(key, value);
+                if (value == null) {
+                    this.coordinationAttributes.remove(key);
+                } else {
+                    this.coordinationAttributes.put(key, value);
+                }
             }
             return this;
         }
 
-        public Builder putConveyanceOperation(String key, Object value) {
-            if (key != null) {
-                this.conveyanceOperations.put(key, value);
+        public Builder executionCoordination(Map<String, Object> executionCoordination) {
+            this.executionCoordination.clear();
+            if (executionCoordination != null) {
+                this.executionCoordination.putAll(executionCoordination);
             }
             return this;
         }
 
-        public Builder putTemporalObservation(String key, Object value) {
-            if (key != null) {
-                this.temporalObservations.put(key, value);
+        public Builder conveyanceOperations(Map<String, Object> conveyanceOperations) {
+            this.conveyanceOperations.clear();
+            if (conveyanceOperations != null) {
+                this.conveyanceOperations.putAll(conveyanceOperations);
             }
             return this;
         }
 
-        public Builder addEvidenceReference(String evidenceReference) {
-            if (evidenceReference != null && !evidenceReference.isBlank()) {
-                this.evidenceReferences.add(evidenceReference.trim());
+        public Builder temporalObservations(Map<String, Object> temporalObservations) {
+            this.temporalObservations.clear();
+            if (temporalObservations != null) {
+                this.temporalObservations.putAll(temporalObservations);
+            }
+            return this;
+        }
+
+        public Builder evidenceReferences(List<String> evidenceReferences) {
+            this.evidenceReferences.clear();
+            if (evidenceReferences != null) {
+                this.evidenceReferences.addAll(evidenceReferences);
+            }
+            return this;
+        }
+
+        public Builder addEvidenceReference(String reference) {
+            return evidenceReference(reference);
+        }
+
+        public Builder evidenceReference(String reference) {
+            if (reference != null && !reference.isBlank()) {
+                this.evidenceReferences.add(reference.trim());
             }
             return this;
         }
