@@ -1,0 +1,30 @@
+{
+  "recordedAt": "2026-11-15T05:36:17.057826Z",
+  "hcrl": "enterprise-architecture/design/register/1.1.25/hcrl-1.1.25-001.complete.md",
+  "hcrlStatus": "COMPLETE; exact result confirmed by Solution Architect, human native-tree/reader reviews complete",
+  "release": {
+    "version": "1.1.25",
+    "previous_version": "1.1.24"
+  },
+  "patchAllocations": 1,
+  "publishedExchangeSha256": "cb04e5d14392641e2368c6e4b9d3493b5d5d2e655b9fa9a3d1420031dcf05ab7",
+  "humanAcceptedCandidateSha256": "7d1fe1f3d23aa39d87cedb0779c88772b4e04dafa5b8e32efd1c72863dae50c8",
+  "candidateCorrespondence": "Only root Architecture Release value changed to 1.1.25; complete ordered XML otherwise identical.",
+  "checks": "PASS: publication/freshness/offline validation/links/browser, 20-artifact isolated reproduction and preservation.",
+  "retainedQualifiers": [
+    "CR-001 FAIL \u2014 QUALIFIED / UNRESOLVED",
+    "Focused inherited test expectation actual FAIL",
+    "Broader Python suite TIMEOUT/incomplete",
+    "Java checks NOT PERFORMED/authorised architecture-only deferral",
+    "Unavailable instruction-entry times/prefixes and original Topic.java before hash",
+    "Detailed design deferrals and operational Mneme/Mnemosyne 0.5 Petasos gate"
+  ],
+  "branch": "Mneme-and-Mnemosyne-Build",
+  "headAtRegistration": "626d72fdb2c26768114a6c7f0a2f5845875e5b2f",
+  "upstream": "origin/Mneme-and-Mnemosyne-Build",
+  "gitTransition": "PENDING explicit applicable commit/push authority; no commit or push performed",
+  "terminalState": "Architecture publication/registration complete; repository transition not terminal",
+  "authorityBoundary": "Original Task: no implicit commit/push permission. AGENTS.md HCRL Finalised step 6: commits and pushes require applicable instruction/branch authority.",
+  "preservation": "115 prior evidence files, 320 protected files excluding authorised root-release change, and all 30 current-entry user files unchanged. No authored canonical changes; generated Manifest version heading only.",
+  "limits": "Registration does not convert retained FAIL/TIMEOUT/UNRESOLVED/unperformed outcomes to PASS or supply missing Git authority."
+}

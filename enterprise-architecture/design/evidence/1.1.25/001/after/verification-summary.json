@@ -1,0 +1,345 @@
+{
+  "standing": "Pending 1.1.25/001 candidate verification; no acceptance, release allocation or publication",
+  "acceptedBaseline": {
+    "branch": "Mneme-and-Mnemosyne-Build",
+    "head": "626d72fdb2c26768114a6c7f0a2f5845875e5b2f",
+    "release": "1.1.24",
+    "previousRelease": "1.1.23"
+  },
+  "candidate": {
+    "path": "candidate-v2/reader/Harmonia-Architecture.xml",
+    "sha256": "7d1fe1f3d23aa39d87cedb0779c88772b4e04dafa5b8e32efd1c72863dae50c8",
+    "rootReleaseMetadata": "1.1.24",
+    "nativeModel": "archi-transport-v2/candidate.archimate",
+    "reader": "candidate-v2/reader/continuum.html",
+    "narrative": "candidate-v2/narrative/continuum-rad.tex"
+  },
+  "checks": [
+    {
+      "check": "canonical and projection validation",
+      "status": "PASS",
+      "elements": 6563,
+      "relationships": 9427,
+      "qualifiedSourcePredicates": 462,
+      "sourceBindings": 8459,
+      "offlineXsd": "PASS",
+      "exchangeReferences": "PASS",
+      "navigation": "PASS",
+      "containment": "PASS",
+      "evidence": [
+        "projection-validation-v2.json"
+      ]
+    },
+    {
+      "check": "bounded generation, freshness, source links, DOM and exact no-edit review",
+      "status": "PASS",
+      "commandResults": [
+        {
+          "step": "manifest",
+          "status": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 5.965,
+          "command": [
+            "python3",
+            "-B",
+            "enterprise-architecture/tooling/continuum_manifest.py"
+          ]
+        },
+        {
+          "step": "projection",
+          "status": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 11.996,
+          "command": [
+            "python3",
+            "-B",
+            "enterprise-architecture/tooling/architecture_continuum.py",
+            "project",
+            "--output",
+            "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/Harmonia-Architecture.xml",
+            "--report",
+            "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/after/projection-validation-v2.json"
+          ]
+        },
+        {
+          "step": "reader",
+          "status": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 10.49,
+          "command": [
+            "python3",
+            "-B",
+            "enterprise-architecture/tooling/publish_continuum.py",
+            "--output",
+            "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader"
+          ]
+        },
+        {
+          "step": "narrative",
+          "status": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 18.812,
+          "command": [
+            "python3",
+            "-B",
+            "enterprise-architecture/tooling/publish_continuum_rad.py",
+            "--output",
+            "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative"
+          ]
+        },
+        {
+          "step": "manifest-check",
+          "status": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 6.595,
+          "command": [
+            "python3",
+            "-B",
+            "enterprise-architecture/tooling/continuum_manifest.py",
+            "--check"
+          ]
+        },
+        {
+          "step": "projection-check",
+          "status": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 12.75,
+          "command": [
+            "python3",
+            "-B",
+            "enterprise-architecture/tooling/architecture_continuum.py",
+            "project",
+            "--output",
+            "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/Harmonia-Architecture.xml",
+            "--check"
+          ]
+        },
+        {
+          "step": "reader-check",
+          "status": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 10.678,
+          "command": [
+            "python3",
+            "-B",
+            "enterprise-architecture/tooling/publish_continuum.py",
+            "--output",
+            "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader",
+            "--check"
+          ]
+        },
+        {
+          "step": "narrative-check",
+          "status": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 18.53,
+          "command": [
+            "python3",
+            "-B",
+            "enterprise-architecture/tooling/publish_continuum_rad.py",
+            "--output",
+            "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative",
+            "--check"
+          ]
+        },
+        {
+          "step": "links",
+          "status": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 5.793,
+          "command": [
+            "python3",
+            "-B",
+            "enterprise-architecture/tooling/verify_continuum_links.py",
+            "--report",
+            "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/after/source-link-validation-v2.json"
+          ]
+        },
+        {
+          "step": "browser",
+          "status": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 0.374,
+          "command": [
+            "node",
+            "enterprise-architecture/tooling/tests/continuum-browser-smoke.js",
+            "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/continuum.html"
+          ]
+        },
+        {
+          "step": "no-edit-review",
+          "status": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 24.723,
+          "command": [
+            "python3",
+            "-B",
+            "enterprise-architecture/tooling/continuum_workbench.py",
+            "review",
+            "--baseline",
+            "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/Harmonia-Architecture.xml",
+            "--submitted",
+            "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/Harmonia-Architecture.xml",
+            "--output",
+            "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/after/no-edit-review-v2.json"
+          ]
+        }
+      ],
+      "evidence": [
+        "verification-commands-v2.json",
+        "source-link-validation-v2.json",
+        "no-edit-review-v2.json"
+      ],
+      "limits": "No-edit review compares the exact candidate with itself; actual Archi transport is a separate check."
+    },
+    {
+      "check": "independent maintained-input reproduction",
+      "status": "PASS",
+      "identicalArtifacts": 18,
+      "evidence": [
+        "reproducibility.json",
+        "reproducibility.log"
+      ],
+      "limits": "Maintained-input generation reproduction; not actual Archi transport, Java verification or human acceptance."
+    },
+    {
+      "check": "identity, graph, View, source and user-work preservation",
+      "status": "PASS",
+      "changedCanonicalElements": 9,
+      "newElements": 0,
+      "newRelationships": 0,
+      "unchangedUserFiles": 29,
+      "unchangedProtectedFiles": 321,
+      "unchangedViews": 1304,
+      "evidence": [
+        "preservation.json",
+        "canonical-delta.json",
+        "canonical-inventory.json",
+        "user-work-preservation-qualification.json"
+      ],
+      "limits": "29 pinned user files independently hash-preserved. Pre-existing tracked Topic.java is recorded in original dirty status but was omitted from original hash set; independent byte-for-byte preservation for that path is unestablished. No Java edit performed."
+    },
+    {
+      "check": "actual Archi import, native save and export",
+      "status": "PASS",
+      "editorBundleVersion": "5.10.0.202608252016",
+      "returnedSha256": "5fa02a2ed6fd4a12199b4c5f6ac4d3b0529e87eec08ea89e6737f268fb900003",
+      "evidence": [
+        "archi-transport-v2/execution.log",
+        "archi-transport-v2/candidate.archimate",
+        "archi-transport-v2/returned.xml"
+      ],
+      "limits": "Isolated CLI execution; initial sandbox display failure retained separately. No interactive human inspection."
+    },
+    {
+      "check": "strict actual transport fidelity",
+      "status": "FAIL",
+      "changedRelationshipRecords": 6507,
+      "changedViewRecords": 15,
+      "rawClassifications": {
+        "SEMANTICALLY EQUIVALENT NORMALISATION": 4693,
+        "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+        "INFORMATION LOSS": 18552,
+        "SEMANTIC DIFFERENCE": 112129,
+        "UNEXPLAINED DIFFERENCE": 16481
+      },
+      "evidence": [
+        "strict-transport-status.json",
+        "strict-transport.log",
+        "transport-summary.json",
+        "raw-transport-comparison.json.gz",
+        "change-review.md"
+      ],
+      "limits": "CR-001 On-Hold/Unresolved. No accepted waiver or canonical application of returned model."
+    },
+    {
+      "check": "bounded transport correspondence with accepted predecessor",
+      "status": "PASS",
+      "sourceRelationshipRecordsEqual": 9427,
+      "returnedRelationshipRecordsEqual": 9427,
+      "sourceViewRecordsEqual": 1304,
+      "returnedViewRecordsEqual": 1304,
+      "evidence": [
+        "predecessor-transport-correspondence.json"
+      ],
+      "limits": "No newly introduced relationship/View drift; does not waive strict transport FAIL or establish lossless/pixel fidelity."
+    },
+    {
+      "check": "broader existing Python Continuum test suite",
+      "status": "TIMEOUT",
+      "budgetSeconds": 240,
+      "completedPasses": 18,
+      "inProgressTest": "test_projection_and_publication_are_deterministic_and_allocate_nothing",
+      "evidence": [
+        "continuum-tests.log"
+      ],
+      "limits": "Incomplete suite, neither PASS nor an implementation FAIL."
+    },
+    {
+      "check": "focused existing Python Continuum corruption tests",
+      "status": "FAIL",
+      "passed": 7,
+      "failed": 1,
+      "failedTest": "test_reserved_historical_identity_cannot_become_a_second_current_capability",
+      "evidence": [
+        "focused-continuum-tests.log"
+      ],
+      "diagnostic": "Invalid mutation rejected; expected regex identity correspondence differs from actual Inconsistent predecessor identity lineage: 5f6d333e94634420b8a8bbf8b9cb6e2a"
+    },
+    {
+      "check": "accepted-HEAD control of focused failure",
+      "status": "FAIL",
+      "matchesCandidateDiagnostic": true,
+      "exactCanonicalBaseline": true,
+      "unchangedTooling": true,
+      "evidence": [
+        "accepted-baseline-test-control.json",
+        "accepted-baseline-test-control.log",
+        "accepted-baseline-test-control-run.log"
+      ],
+      "limits": "Identical inherited diagnostic-text expectation mismatch; no test/validator change and no passing result inferred."
+    },
+    {
+      "check": "Java ArchUnit architecture suite",
+      "status": "NOT_PERFORMED",
+      "reason": "Task explicitly excludes Java/build. AGENTS.md section 4 ordinarily requires this check; scope/check boundary requires explicit Solution Architect treatment before closure."
+    },
+    {
+      "check": "original Task/follow-up instruction-entry event times and Task filename prefix",
+      "status": "UNRESOLVED",
+      "evidence": [
+        "../before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
+      ],
+      "limits": "Original timestamps unavailable; current clock, metadata and capture time cannot substitute. Explicit Solution Architect closure treatment required."
+    },
+    {
+      "check": "applicable human native-tree/reader structural review and exact-result acceptance",
+      "status": "PENDING",
+      "authority": "Architecture Review Praxis sections 5 and 6",
+      "limits": "Agent checks and input approval do not supply human confirmation."
+    },
+    {
+      "check": "iteration evidence layout and event/prefix correspondence",
+      "status": "UNRESOLVED",
+      "exitCode": 2,
+      "evidence": [
+        "iteration-evidence-check.json"
+      ],
+      "errors": [],
+      "unresolved": [
+        "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+      ],
+      "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+    },
+    {
+      "check": "final change scope, HEAD and release",
+      "status": "PASS",
+      "evidence": [
+        "final-git-state.json"
+      ],
+      "limits": "Scope/pinned-head/release check only; preservation is bounded to 29 pinned user files. Original tracked Topic.java modification is status-recorded but lacks original hash; see user-work-preservation-qualification.json. No commit/push or acceptance."
+    }
+  ],
+  "gate": "STOP before finalisation/release allocation/publication/commit/push. Obtain exact-result acceptance and explicit treatment of failed, incomplete, unperformed and unresolved obligations through the pending HCRL.",
+  "limits": "Purpose-selected evidence; individual outcomes remain distinct. No all-checks-PASS claim, test waiver or architectural acceptance."
+}

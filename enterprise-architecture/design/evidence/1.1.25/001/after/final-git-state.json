@@ -1,0 +1,482 @@
+{
+  "status": "PASS",
+  "branch": "Mneme-and-Mnemosyne-Build",
+  "head": "626d72fdb2c26768114a6c7f0a2f5845875e5b2f",
+  "release": {
+    "version": "1.1.24",
+    "previous_version": "1.1.23"
+  },
+  "dirty": true,
+  "changedPaths": [
+    {
+      "state": " M",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/topic/Topic.java"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/MANIFEST.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/application-function/22bdac97fe0d48d1844f1e982d03d387.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md"
+    },
+    {
+      "state": "??",
+      "path": ".junie/reports/2026-11-14-mneme-mnemosyne-build-v001-increment-001.md"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/ContainerMetadata.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/ContentMetadata.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationCoordinates.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationRepresentation.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationSecurityContext.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnit.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnitIdentifier.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnitMetadata.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnitRelationship.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/LifecycleContext.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/ManagementContext.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/topic/TopicMask.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationRepresentationTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationUnitIdentifierTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationUnitMetadataTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationUnitSerializationTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationUnitSummaryTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationUnitTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationUnitVersionDistinctionTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/topic/TopicMaskTest.java"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/accepted-baseline-test-control.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/ai-agent-reports/20261115T050805Z-information-unit-final002-reconciliation.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport-v2/candidate.archimate"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport-v2/execution-status.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport-v2/invocation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport-v2/returned.xml"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport/execution-status.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport/invocation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/README.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/continuum-rad.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/application.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/architecture-governance.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/business.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/cross-cutting-references.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/implementation-and-migration.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/motivation.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/strategy.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/technology.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/publication.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/structure.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/Harmonia-Architecture.xml"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/README.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/continuum-catalogue.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/continuum.html"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/navigation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/publication.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/README.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/continuum-rad.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/application.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/architecture-governance.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/business.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/cross-cutting-references.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/implementation-and-migration.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/motivation.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/strategy.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/technology.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/publication.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/structure.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/Harmonia-Architecture.xml"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/README.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/continuum-catalogue.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/continuum.html"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/navigation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/publication.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/canonical-changes.patch"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/canonical-delta.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/canonical-inventory.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/canonical-validation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/change-review.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/checks/check-preservation.py"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/checks/reproduce-candidate.py"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/final-git-state.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/iteration-evidence-check.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/no-edit-review-v2.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/no-edit-review.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/predecessor-transport-correspondence.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/preservation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/projection-validation-v2.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/projection-validation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/raw-transport-comparison.json.gz"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/reproducibility.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/review-guide.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/review-link-validation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/source-link-validation-v2.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/source-link-validation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/source-reconciliation.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/strict-transport-status.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/transport-summary.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/verification-commands-v2.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/verification-commands.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/verification-summary.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/baseline.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.revised.draft.002.002.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.revised.draft.002.003.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.draft.001.001.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.draft.001.002.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-PetasosParcel-and-PetasosParcelMask.Final.001.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/review/1.1.25/hcrl-1.1.25-001.pending.md"
+    }
+  ],
+  "unexpectedChanges": [],
+  "limits": "Scope/pinned-head/release check only; preservation is bounded to 29 pinned user files. Original tracked Topic.java modification is status-recorded but lacks original hash; see user-work-preservation-qualification.json. No commit/push or acceptance."
+}

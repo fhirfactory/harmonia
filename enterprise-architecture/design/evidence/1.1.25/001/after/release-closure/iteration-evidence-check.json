@@ -1,0 +1,32 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "enterprise-architecture/tooling/architecture_review_evidence.py",
+    "--version",
+    "1.1.25",
+    "--iteration",
+    "001"
+  ],
+  "exitCode": 2,
+  "result": {
+    "outcome": "UNRESOLVED",
+    "version": "1.1.25",
+    "iteration": "001",
+    "records": [
+      "evidence/1.1.25/001/after/ai-agent-reports/20261115T050805Z-information-unit-final002-reconciliation.md",
+      "evidence/1.1.25/001/after/ai-agent-reports/20261115T053444Z-information-unit-final002-release-closure.md",
+      "evidence/1.1.25/001/before/ai-agent-tasks/unresolved-final-acceptance-and-release-closure.md",
+      "evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md",
+      "evidence/1.1.25/001/before/ai-agent-tasks/unresolved-solution-architect-review-disposition.md"
+    ],
+    "errors": [],
+    "unresolved": [
+      "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-final-acceptance-and-release-closure.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+      "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+      "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-solution-architect-review-disposition.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+    ],
+    "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+  },
+  "treatment": "Accepted unavailable temporal provenance; original values retained, no structural errors."
+}

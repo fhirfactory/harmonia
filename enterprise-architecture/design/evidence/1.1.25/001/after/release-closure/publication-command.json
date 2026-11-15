@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "exitCode": 0,
+  "elapsedSeconds": 49.713,
+  "command": [
+    "make",
+    "-C",
+    "enterprise-architecture/tooling",
+    "continuum",
+    "continuum-rad"
+  ],
+  "release": "1.1.25",
+  "log": "publication.log"
+}

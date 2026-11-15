@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "identicalArtifacts": {
+    "enterprise-architecture/continuum/MANIFEST.md": "759868aca55779915a6a6ef211d0d609ace545d3c52888fcef9f9d210f91a558",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/continuum.html": "34375a900311a30cc18fc415589fc03d2744157c155e0dc338215eeab27847b3",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/README.md": "32787365c8b98f6a21da02d2390f380809100c3ff8a0d7ae7f1d7e9953030986",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/continuum-catalogue.tex": "2bc9f27ee77a0e539f3421655bb7d1489067f91f40f0ab0042eacf673f0c3638",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/navigation.json": "15466f65a59552cefc3926bca452d9e3641404f44e1c68a8ef6042bbf3741c19",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/publication.json": "c734a46e132a195b700b71023430debc6a24724614e319238bc21f4edce0b025",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/architecture-governance.tex": "6c99de0c4aff3ba3d47d8042062f91d40834509abe3fc2d9478bea812704bb71",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/motivation.tex": "a71118b8e79e2c916dce5273bc2f4d53458c779edcac08802cd011a6fa9446cf",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/strategy.tex": "9dc7b154c075e736b2125e9ad51ce383ce43489d3d7c785ce43c320d145918d0",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/business.tex": "b54a5aca12a1c68c58f074e7c110af94adb99be84508237f5d5fc82ae0a17b2c",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/application.tex": "80b932be2238f5ddbd85a726ff04a80aa955d61d72521ae73542ef4c0618b4ba",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/technology.tex": "bb164d238ba4190e2504db197585fb27d88e8edc110e464407b565d51d90acb0",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/implementation-and-migration.tex": "cc088fb5e4a5189f8f669d5c30c830cc75bc53068673bde335306341efdd3353",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/cross-cutting-references.tex": "0393467a7c585dd30151f5453d7275ecf703b492cf512031b682f8e46bd520d7",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/continuum-rad.tex": "3d3dad214148e5d8c565c8ae1ca6293fc4a5a621eb2509be8d8b3d7a4845924f",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/structure.json": "eaaa1b3af7c97736ef358bae9f1b21080ab84e7b6e466de731cefab054f4f3c8",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/README.md": "05f99077b3e982cb56d176620a8c34c5f35313c3caa8886922166bebdc5dd3ec",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/publication.json": "c44f9dfceec23e3d9e0064a20df95efd8d8ce7ad66718403c9d2db8adacf5b95"
+  },
+  "canonicalSources": 6563,
+  "liveIdentityAllocations": 0,
+  "legacyRadPresent": false,
+  "scriptsPresent": false,
+  "gitPresent": false,
+  "limits": "Maintained-input generation reproduction; not actual Archi transport, Java verification or human acceptance."
+}

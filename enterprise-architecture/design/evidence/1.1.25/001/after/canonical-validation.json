@@ -1,0 +1,1 @@
+{"status": "PASS", "elements": 6563, "relationships": 9427, "qualifiedSourcePredicates": 462, "canonicalIdentities": 6563, "representationIdentities": 6563, "provenanceCoverage": 6563, "sourceBindings": 8459, "supportedNativeTypes": 60, "navigation": "PASS", "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance"}

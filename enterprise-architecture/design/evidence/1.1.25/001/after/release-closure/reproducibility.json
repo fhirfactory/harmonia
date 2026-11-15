@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "release": "1.1.25",
+  "identicalArtifacts": {
+    "enterprise-architecture/continuum/MANIFEST.md": "ad6f4400928d89f553a0d1bfee3e95eb7ec523c9692c8d45d50885607d3c9393",
+    "enterprise-architecture/design/archimate/published/1.1.25/Harmonia-Architecture.xml": "cb04e5d14392641e2368c6e4b9d3493b5d5d2e655b9fa9a3d1420031dcf05ab7",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.25/Harmonia-Architecture.xml": "cb04e5d14392641e2368c6e4b9d3493b5d5d2e655b9fa9a3d1420031dcf05ab7",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.25/continuum.html": "28deff22ea33e5ee8601b99a96b098726bb12cf32bf0d2eb3a3f72cb62b8690f",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.25/README.md": "ffcf36858f8b1a467324d1b575c193e68e2ee17ca203ec4e7f832bfc65a78b6f",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.25/continuum-catalogue.tex": "237caf411737c15f80ac0542d1c140e48a81924c24c901d618a223e7e2249d0b",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.25/navigation.json": "15466f65a59552cefc3926bca452d9e3641404f44e1c68a8ef6042bbf3741c19",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.25/publication.json": "8b301a2c4ae121375f70399f481d79a05b5d453210cca48f580f04c4f460f6ff",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/architecture-governance.tex": "bb8b35a7b23d47c22c5d0ef8eaf7ac926f2f4f2ddc5c082cb7eaf4a350e13821",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/motivation.tex": "df249ba78174e2f5acb09ac6e75f109007cd880da41d6a5b2c5e0527e4692229",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/strategy.tex": "a89d73b285afffdd69bedfc5e1039899946597311ce1d344c28add92c084c809",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/business.tex": "2f2e702b39d69d35168077b344e22525f7d1a20fe325e409d60270450fd47635",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/application.tex": "15585667e02e1847704e8bd109fa43ee7f482876279b0e33d64b709b91cabc82",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/technology.tex": "a87c87047219e0a44ad3f04382c5ad534ae99da21a5bfd37595dc3bf0c09869d",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/implementation-and-migration.tex": "cc088fb5e4a5189f8f669d5c30c830cc75bc53068673bde335306341efdd3353",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/cross-cutting-references.tex": "75bf79e567c6609d96ccf3ea5965e1ee00739e4e26577e664181150142657248",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.25/continuum-rad.tex": "09e58da57be093ca79a5c1c4d7bcaeec0c861f13ef2962e72e1f38d9ba61012c",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.25/structure.json": "bd5690abba4decb68da059d70b70c78890360c3ed694a7c009111f38a8fe33d0",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.25/README.md": "8dd3c367b54cc4941eaa5eeb26bea9b2c46ea9956fc39f465aa8d092246ae93e",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.25/publication.json": "b1e6cd37eca5f37c28acbf2b89153596ea453e11b57a11e6ac3f97e0f5441bc7"
+  },
+  "canonicalSources": 6563,
+  "liveIdentityAllocations": 0,
+  "legacyRadPresent": false,
+  "scriptsPresent": false,
+  "gitPresent": false,
+  "limits": "Independent final-publication generation reproduction; no broad test-suite PASS, Java verification, new Archi transport or new human acceptance claim."
+}

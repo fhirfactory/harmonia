@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "paths": {
+    "acceptedSource": "enterprise-architecture/design/archimate/published/1.1.24/Harmonia-Architecture.xml",
+    "acceptedReturn": "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/returned.xml",
+    "candidateSource": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/Harmonia-Architecture.xml",
+    "candidateReturn": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport-v2/returned.xml"
+  },
+  "sha256": {
+    "acceptedSource": "9f2e2c7b663423218fd03e6a1c26cd2ada1444b1690f7015e2ec022b29968dc4",
+    "acceptedReturn": "40996d0972757a322d36636a9ec1dc30a35981a7a7cbed98892b14fafc8f44b4",
+    "candidateSource": "7d1fe1f3d23aa39d87cedb0779c88772b4e04dafa5b8e32efd1c72863dae50c8",
+    "candidateReturn": "5fa02a2ed6fd4a12199b4c5f6ac4d3b0529e87eec08ea89e6737f268fb900003"
+  },
+  "comparisons": {
+    "relationships": {
+      "sourceRecords": 9427,
+      "returnedRecords": 9427,
+      "allSourceRecordsEqual": true,
+      "allReturnedRecordsEqual": true
+    },
+    "views": {
+      "sourceRecords": 1304,
+      "returnedRecords": 1304,
+      "allSourceRecordsEqual": true,
+      "allReturnedRecordsEqual": true
+    }
+  },
+  "limits": "Bounded per-record actual source/return correspondence only. Strict transport FAIL remains; prior release acceptance is not a waiver, and pixel/default/order fidelity is not established."
+}

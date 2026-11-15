@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "canonicalElements": 6563,
+  "relationships": 9427,
+  "changedCanonicalElements": [
+    "10284034c8534b639284386b064f2c54",
+    "22bdac97fe0d48d1844f1e982d03d387",
+    "74ec609de1ae498fbf9d13e4ef8c6cbe",
+    "9c680d56a6b943da8ff22f3264e19bc7",
+    "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+    "b9891b88150840ada3daefdec6f26c35",
+    "bb489157a6bf48be926c5a601bb0a6c3",
+    "c05b7e37278141488ecc90b9a9ef96eb",
+    "cfe4e0dbe6894a14841452b731ab9cb8"
+  ],
+  "newElements": 0,
+  "newRelationships": 0,
+  "unchangedUserFiles": 29,
+  "unchangedProtectedFiles": 321,
+  "allExistingTopicInstancesUnchanged": true,
+  "allIdentityNameTypeAndRelationshipMetadataUnchanged": true,
+  "mismatches": [],
+  "exchangeComparison": {
+    "status": "PASS",
+    "changedElementRecords": [
+      "10284034c8534b639284386b064f2c54",
+      "22bdac97fe0d48d1844f1e982d03d387",
+      "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "9c680d56a6b943da8ff22f3264e19bc7",
+      "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "b9891b88150840ada3daefdec6f26c35",
+      "bb489157a6bf48be926c5a601bb0a6c3",
+      "c05b7e37278141488ecc90b9a9ef96eb",
+      "cfe4e0dbe6894a14841452b731ab9cb8"
+    ],
+    "relationshipRecordsUnchanged": 9427,
+    "authoredViewsUnchanged": 1304,
+    "organizationsUnchanged": true,
+    "candidateSha256": "7d1fe1f3d23aa39d87cedb0779c88772b4e04dafa5b8e32efd1c72863dae50c8"
+  },
+  "gitHeadUnchanged": true
+}

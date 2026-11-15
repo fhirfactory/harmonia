@@ -9,7 +9,8 @@
   "canonicalName": "PKG-Model.PKG-Core.PKG-Information.CLASS-InformationUnit",
   "standing": {
     "semantic": "Accepted bounded architecture — HCRL 1.1.15-001 DR-1",
-    "currentness": "current"
+    "currentness": "current",
+    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
   },
   "identity": {
     "allocation": "UUIDv4 allocated once under explicit HCRL 1.1.15-001 application",
@@ -38,6 +39,14 @@
       "role": "Accepted whole DRP; IU-01–IU-13 adjudications; ADD authorised by operative Task",
       "retainedAt": "enterprise-architecture/design/evidence/1.1.22/001/before/accepted-input/DRP-Information-Unit-Framework.Final.001.md",
       "sha256": "98abd39feea66f5f9d5c5a9540d2053b7a340864e68b22d3ac415028f4c42775"
+    },
+    {
+      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+      "selector": "§§0–4,7,10; Appendices A–B — existing logical Class and projection compatibility",
+      "role": "Solution Architect-approved conceptual input; bounded ADD authorised by operative Task; actual incorporated result awaiting review",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md",
+      "sha256": "3735ec2968ffced91119b00ca623f66edce1b9d0364b1d3870401c3dc7ac5097",
+      "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
     }
   ],
   "sourceBindings": [
@@ -52,6 +61,10 @@
     {
       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.001.md",
       "selector": "§§0.1,2–21,23.4 — existing logical InformationUnit"
+    },
+    {
+      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+      "selector": "§§0–4,7,10; Appendices A–B — existing logical Class and projection compatibility"
     }
   ],
   "exchange": {
@@ -203,12 +216,58 @@
 
 ## Architectural content
 
-### Accepted Information Unit Framework incorporation — 1.1.22
+### Final.002 conceptual allocation — incorporated result pending review
+
+InformationUnit remains definitive. There is one governed UUID, an IU Topic with
+its own distinct Topic UUID, and one InformationRepresentation. Conceptual notation:
+
+```text
+InformationUnit
+├── Identity: IU UUID; IU Topic (distinct Topic UUID)
+├── authoritative persisted revision: Mnemosyne-established/returned
+├── information-related Metadata
+│   ├── InformationCoordinates: PersistenceGateway; GatewayEndpoint;
+│   │                         InformationLocation; InformationOwner
+│   ├── InformationItinerary: distinct conceptual information path/participation
+│   ├── information origin / provenance association (detailed allocation open)
+│   ├── IU-required SecurityContext
+│   ├── governed information lifecycle / disposition
+│   └── Relationships [0..*]: creator/updater-supplied
+└── InformationRepresentation [1..1]
+    ├── ContainerMetadata
+    ├── ContentMetadata: Content Structure Topic; Content Structure Version
+    └── Content: portable textual/binary/by-reference; native version if supplied
+
+Associated peer OperationalMetadata (not another IU constituent or identity):
+  Mneme operational revision; Active Generation/cache/working facts;
+  Mneme–Mnemosyne operation/handshake facts, associated with their actual subjects.
+```
+
+`InformationMetadata` names a conceptual concern, not a compulsory rename/wrapper
+for this Class's existing Metadata structure. `InformationUnit.version : String`
+is the accepted conceptual authoritative persisted revision, not a new independent
+counter or a guarantee of equality to a native Content version. Existing
+ManagementContext/LifecycleContext fields remain available through their accepted
+façade/summary projections; conceptual peer allocation does not remove contracts
+or require physical co-persistence. OperationalMetadata association representation,
+exact fields and wire/storage encoding remain detailed design.
+
+Itinerary vocabulary names conceptual participants, not mandatory Java members,
+Classes, Topics or application services. This Class/its existing Composition edges
+are preserved; no ManagedIU, nested IU, extra representation or superclass is added.
+
+### Retained 1.1.22 identity and representation contract
 
 This Calliope logical Class and [[BusinessObject] Information Unit](../../../business/business-object/10284034c8534b639284386b064f2c54.md) represent the **same IU** at
 logical and conceptual levels. Its existing canonicalId, Class classification,
 Package Composition and names are preserved. No additional implementation Class
 is inferred from the semantic decomposition below.
+
+------- Legacy Content - Superseded ------- Start ------
+Superseded by: Final.002 conceptual allocation above; existing four-context API projections remain supported.
+Only the enclosed concern allocation or model wording is superseded;
+original text is unchanged. Other predecessor obligations remain effective.
+---------------------------------------------------------
 
 ```text
 InformationUnit
@@ -226,6 +285,7 @@ InformationUnit
     ├── ContentMetadata: Content Structure Topic; Content Structure Version
     └── Content: native information; native instance version only if supported
 ```
+------- Legacy Content - Superseded ------- Finish ----
 
 [Information Unit Metadata](../c05b7e37278141488ecc90b9a9ef96eb.md) and [InformationRepresentation](../b9891b88150840ada3daefdec6f26c35.md)
 define the two logical structures; their native Composition represents IU

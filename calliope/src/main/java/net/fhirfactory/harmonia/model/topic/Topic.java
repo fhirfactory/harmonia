@@ -25,6 +25,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
+import java.util.UUID;
 
 /**
  * Encapsulates the canonical topic metadata for clinical, operational, and integration messages
@@ -219,6 +220,40 @@ public class Topic implements Serializable {
      */
     public static Topic forEgress(String messageType, String triggerEvent, String source, String target, String destination) {
         return fromHl7(DEFAULT_HL7_VERSION, messageType, triggerEvent, source, target, null, destination);
+    }
+
+    /**
+     * Creates a Topic representing an Information Unit from its persistent unique identifier.
+     *
+     * @param uuid the persistent unique identifier (UUID) of the Information Unit, must not be null
+     * @return populated Topic representing the Information Unit
+     */
+    public static Topic forInformationUnit(UUID uuid) {
+        Objects.requireNonNull(uuid, "uuid must not be null");
+        long msb = uuid.getMostSignificantBits();
+        long lsb = uuid.getLeastSignificantBits();
+        String hex = String.format("%016x%016x", msb, lsb);
+        return forInformationUnit(hex);
+    }
+
+    /**
+     * Creates a Topic representing an Information Unit from its 32-character compressed hexadecimal UUID.
+     *
+     * @param hexCompressedUuid 32-character hexadecimal string representing the UUID, must not be null or blank
+     * @return populated Topic representing the Information Unit
+     */
+    public static Topic forInformationUnit(String hexCompressedUuid) {
+        if (hexCompressedUuid == null || hexCompressedUuid.isBlank()) {
+            throw new IllegalArgumentException("hexCompressedUuid must not be null or blank");
+        }
+        Topic topic = new Topic();
+        topic.setDomain("harmonia");
+        topic.setModel("mneme");
+        topic.setModelVersion("iu");
+        topic.setDataElement(hexCompressedUuid.trim().toLowerCase());
+        topic.setDataElementQualifier("");
+        topic.setReceivedDate(new Date());
+        return topic;
     }
 
     // =========================================================================

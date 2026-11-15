@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "hcrlStatus": "COMPLETE",
+  "localFileLinks": {
+    "status": "PASS",
+    "files": [
+      "enterprise-architecture/design/register/1.1.25/hcrl-1.1.25-001.complete.md",
+      "enterprise-architecture/design/review/1.1.25/hcrl-1.1.25-001.pending.md",
+      "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-final-acceptance-and-release-closure.md",
+      "enterprise-architecture/design/evidence/1.1.25/001/after/ai-agent-reports/20261115T053444Z-information-unit-final002-release-closure.md"
+    ],
+    "errors": []
+  },
+  "gitDiffCheck": {
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "noStagedChanges": true,
+  "headUnchanged": true,
+  "userWorkUnchanged": true,
+  "priorEvidenceUnchanged": true,
+  "qualification": "Temporal checker remains UNRESOLVED under accepted treatment; no new tests/transport or Git transition claimed.",
+  "gitScope": {
+    "status": "PASS",
+    "acceptedFiles": 169,
+    "excludedUserFiles": 27,
+    "ignoredEvidenceLogs": 34,
+    "unexpectedPaths": [],
+    "indexUntouched": true
+  }
+}

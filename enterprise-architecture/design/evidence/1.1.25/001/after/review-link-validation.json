@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "files": [
+    "enterprise-architecture/design/evidence/1.1.25/001/after/review-guide.md",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/source-reconciliation.md",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/change-review.md",
+    "enterprise-architecture/design/review/1.1.25/hcrl-1.1.25-001.pending.md",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/ai-agent-reports/20261115T050805Z-information-unit-final002-reconciliation.md"
+  ],
+  "errors": [],
+  "limits": "Local Markdown file targets only; no architectural acceptance or external/anchor validation."
+}

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "exitCode": 0,
+  "elapsedSeconds": 61.618,
+  "command": [
+    "python3",
+    "-B",
+    "/tmp/iu-release-reproduce.py"
+  ],
+  "log": "reproducibility.log"
+}

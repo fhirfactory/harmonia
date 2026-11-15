@@ -1,0 +1,404 @@
+/*
+ * Copyright (c) 2026 Mark Hunter
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+package net.fhirfactory.harmonia.model.core.information;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.Optional;
+
+/**
+ * Encapsulates the single governed representation of an Information Unit, comprising Container Metadata,
+ * Content Metadata, and actual represented Content.
+ * <p>
+ * <b>Architectural Context &amp; Authority:</b>
+ * In accordance with {@code DRP-Information-Unit-Framework.Final.001.md} (§§2, 6, 9; IU-02) and
+ * {@code DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md} (§§4.3, 4.3.1; FC-01–FC-05):
+ * <ul>
+ *   <li><b>EXACTLY-ONE-REPRESENTATION INVARIANT (IU-02):</b> An Information Unit contains <b>exactly one</b> governed
+ *       {@code InformationRepresentation}. It SHALL NOT maintain alternative governed representations, collections of
+ *       alternate encodings, or reverse transformation rules. A consumer requiring a differently structured or formatted
+ *       governed representation transforms the information and creates a <b>new Information Unit</b>.</li>
+ *   <li><b>Composition:</b>
+ *     <ol>
+ *       <li><b>{@link ContainerMetadata}:</b> Describes the container, envelope, carriage, and assembly.</li>
+ *       <li><b>{@link ContentMetadata}:</b> Describes the Content Structure Topic, Content Structure Version, Format,
+ *           and resolvable {@code contentReference}.</li>
+ *       <li><b>Content:</b> The actual represented information payload (structured, textual, binary, or opaque).</li>
+ *     </ol>
+ *   </li>
+ *   <li><b>SUMMARY PROJECTION SEMANTICS:</b> The Information Unit Summary projection is an operation projection of the
+ *       same Information Unit that <b>precisely excludes {@code Content} ({@code content == null})</b> while preserving
+ *       {@link ContainerMetadata} and {@link ContentMetadata} (including the {@code contentReference}).
+ *       The Summary is <b>not</b> a second entity, second representation kind, or independently governed record.</li>
+ * </ul>
+ * <p>
+ * <b>Defensive Programming:</b>
+ * <ul>
+ *   <li>{@link ContainerMetadata} and {@link ContentMetadata} are guaranteed non-null.</li>
+ *   <li>Byte arrays passed as content are defensively cloned upon construction and access to preserve immutability.</li>
+ *   <li>Type-safe conversion helpers ({@link #contentAsString()}, {@link #contentAsBytes()}, {@link #contentAs(Class)})
+ *       provide explicit unhappy-path handling.</li>
+ *   <li>Immutable value object design.</li>
+ * </ul>
+ */
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public final class InformationRepresentation implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private final ContainerMetadata containerMetadata;
+    private final ContentMetadata contentMetadata;
+    private final Object content;
+
+    /**
+     * Canonical constructor establishing validated representation components.
+     *
+     * @param containerMetadata container and envelope metadata (optional, defaults to empty)
+     * @param contentMetadata   content metadata and structure version (optional, defaults to empty)
+     * @param content           actual information payload (nullable; null in Summary projection)
+     */
+    @JsonCreator
+    public InformationRepresentation(
+            @JsonProperty("containerMetadata") ContainerMetadata containerMetadata,
+            @JsonProperty("contentMetadata") ContentMetadata contentMetadata,
+            @JsonProperty("content") Object content) {
+        this.containerMetadata = containerMetadata != null ? containerMetadata : ContainerMetadata.empty();
+        this.contentMetadata = contentMetadata != null ? contentMetadata : ContentMetadata.empty();
+        if (content instanceof byte[] bytes) {
+            this.content = bytes.clone();
+        } else {
+            this.content = content;
+        }
+    }
+
+    /**
+     * Factory method creating a populated {@code InformationRepresentation} with content.
+     *
+     * @param containerMetadata container metadata (optional, defaults to empty)
+     * @param contentMetadata   content metadata (optional, defaults to empty)
+     * @param content           the payload content
+     * @return populated InformationRepresentation
+     */
+    public static InformationRepresentation of(
+            ContainerMetadata containerMetadata,
+            ContentMetadata contentMetadata,
+            Object content) {
+        return new InformationRepresentation(containerMetadata, contentMetadata, content);
+    }
+
+    /**
+     * Factory method creating an {@code InformationRepresentation} in Summary projection (excluding content).
+     *
+     * @param containerMetadata container metadata (optional, defaults to empty)
+     * @param contentMetadata   content metadata (optional, defaults to empty)
+     * @return InformationRepresentation in Summary projection
+     */
+    public static InformationRepresentation summary(
+            ContainerMetadata containerMetadata,
+            ContentMetadata contentMetadata) {
+        return new InformationRepresentation(containerMetadata, contentMetadata, null);
+    }
+
+    /**
+     * Creates a new builder for constructing {@code InformationRepresentation} instances.
+     *
+     * @return a new builder
+     */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    // =========================================================================
+    // Accessors
+    // =========================================================================
+
+    /**
+     * Returns the container metadata.
+     *
+     * @return container metadata, never null
+     */
+    @JsonProperty("containerMetadata")
+    public ContainerMetadata containerMetadata() {
+        return containerMetadata;
+    }
+
+    /**
+     * Returns the content metadata (including structure topic, version, and content reference).
+     *
+     * @return content metadata, never null
+     */
+    @JsonProperty("contentMetadata")
+    public ContentMetadata contentMetadata() {
+        return contentMetadata;
+    }
+
+    /**
+     * Returns the actual represented content, if present.
+     *
+     * @return optional content payload
+     */
+    @JsonIgnore
+    public Optional<Object> content() {
+        if (content instanceof byte[] bytes) {
+            return Optional.of(bytes.clone());
+        }
+        return Optional.ofNullable(content);
+    }
+
+    /**
+     * Returns the raw content object, or null in Summary projection.
+     *
+     * @return raw content, or null
+     */
+    @JsonProperty("content")
+    public Object getRawContent() {
+        if (content instanceof byte[] bytes) {
+            return bytes.clone();
+        }
+        return content;
+    }
+
+    /**
+     * Indicates whether this representation is a Summary projection (i.e. content is excluded).
+     *
+     * @return true if content is null (Summary projection), false if content is present
+     */
+    @JsonIgnore
+    public boolean isSummary() {
+        return content == null;
+    }
+
+    /**
+     * Indicates whether actual content is present in this representation.
+     *
+     * @return true if content is present, false if excluded (Summary projection)
+     */
+    @JsonIgnore
+    public boolean hasContent() {
+        return content != null;
+    }
+
+    // =========================================================================
+    // Content Extraction Helpers
+    // =========================================================================
+
+    /**
+     * Retrieves the content as a UTF-8 String.
+     *
+     * @return optional String content
+     */
+    @JsonIgnore
+    public Optional<String> contentAsString() {
+        if (content == null) {
+            return Optional.empty();
+        }
+        if (content instanceof String s) {
+            return Optional.of(s);
+        }
+        if (content instanceof byte[] bytes) {
+            return Optional.of(new String(bytes, StandardCharsets.UTF_8));
+        }
+        return Optional.of(content.toString());
+    }
+
+    /**
+     * Retrieves the content as a byte array (defensively cloned).
+     *
+     * @return optional byte array content
+     */
+    @JsonIgnore
+    public Optional<byte[]> contentAsBytes() {
+        if (content == null) {
+            return Optional.empty();
+        }
+        if (content instanceof byte[] bytes) {
+            return Optional.of(bytes.clone());
+        }
+        if (content instanceof String s) {
+            return Optional.of(s.getBytes(StandardCharsets.UTF_8));
+        }
+        return Optional.of(content.toString().getBytes(StandardCharsets.UTF_8));
+    }
+
+    /**
+     * Casts or converts the content to the requested target type if compatible.
+     *
+     * @param targetType target class type
+     * @param <T>        target type
+     * @return optional cast content
+     */
+    @JsonIgnore
+    public <T> Optional<T> contentAs(Class<T> targetType) {
+        Objects.requireNonNull(targetType, "targetType must not be null");
+        if (content == null) {
+            return Optional.empty();
+        }
+        if (targetType.isInstance(content)) {
+            if (content instanceof byte[] bytes) {
+                return Optional.of(targetType.cast(bytes.clone()));
+            }
+            return Optional.of(targetType.cast(content));
+        }
+        return Optional.empty();
+    }
+
+    // =========================================================================
+    // Immutable Derivations ("With" Mutators & Projections)
+    // =========================================================================
+
+    /**
+     * Derives an Information Unit Summary projection by excluding precisely the {@code content} payload.
+     *
+     * @return new InformationRepresentation without content
+     */
+    public InformationRepresentation toSummary() {
+        if (this.content == null) {
+            return this;
+        }
+        return new InformationRepresentation(this.containerMetadata, this.contentMetadata, null);
+    }
+
+    /**
+     * Alias for {@link #toSummary()} emphasizing content omission.
+     *
+     * @return new InformationRepresentation without content
+     */
+    public InformationRepresentation withoutContent() {
+        return toSummary();
+    }
+
+    /**
+     * Derives a hydrated representation with the supplied content payload.
+     *
+     * @param newContent the new payload content
+     * @return new InformationRepresentation with content
+     */
+    public InformationRepresentation withContent(Object newContent) {
+        return new InformationRepresentation(this.containerMetadata, this.contentMetadata, newContent);
+    }
+
+    /**
+     * Derives an immutable copy with updated container metadata.
+     *
+     * @param containerMetadata new container metadata
+     * @return new InformationRepresentation
+     */
+    public InformationRepresentation withContainerMetadata(ContainerMetadata containerMetadata) {
+        return new InformationRepresentation(containerMetadata, this.contentMetadata, this.content);
+    }
+
+    /**
+     * Derives an immutable copy with updated content metadata.
+     *
+     * @param contentMetadata new content metadata
+     * @return new InformationRepresentation
+     */
+    public InformationRepresentation withContentMetadata(ContentMetadata contentMetadata) {
+        return new InformationRepresentation(this.containerMetadata, contentMetadata, this.content);
+    }
+
+    // =========================================================================
+    // Standard Object Methods
+    // =========================================================================
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InformationRepresentation that = (InformationRepresentation) o;
+        if (!Objects.equals(containerMetadata, that.containerMetadata)) return false;
+        if (!Objects.equals(contentMetadata, that.contentMetadata)) return false;
+        if (content instanceof byte[] b1 && that.content instanceof byte[] b2) {
+            return Arrays.equals(b1, b2);
+        }
+        return Objects.equals(content, that.content);
+    }
+
+    @Override
+    public int hashCode() {
+        int contentHash = (content instanceof byte[] b) ? Arrays.hashCode(b) : Objects.hashCode(content);
+        return Objects.hash(containerMetadata, contentMetadata, contentHash);
+    }
+
+    @Override
+    public String toString() {
+        return "InformationRepresentation{" +
+                "containerMetadata=" + containerMetadata +
+                ", contentMetadata=" + contentMetadata +
+                ", isSummary=" + isSummary() +
+                (hasContent() ? ", contentType=" + content.getClass().getSimpleName() : "") +
+                '}';
+    }
+
+    // =========================================================================
+    // Builder
+    // =========================================================================
+
+    /**
+     * Fluent builder for {@link InformationRepresentation}.
+     */
+    public static final class Builder {
+        private ContainerMetadata containerMetadata = ContainerMetadata.empty();
+        private ContentMetadata contentMetadata = ContentMetadata.empty();
+        private Object content;
+
+        private Builder() {}
+
+        public Builder containerMetadata(ContainerMetadata containerMetadata) {
+            this.containerMetadata = containerMetadata != null ? containerMetadata : ContainerMetadata.empty();
+            return this;
+        }
+
+        public Builder contentMetadata(ContentMetadata contentMetadata) {
+            this.contentMetadata = contentMetadata != null ? contentMetadata : ContentMetadata.empty();
+            return this;
+        }
+
+        public Builder content(Object content) {
+            this.content = content;
+            return this;
+        }
+
+        public Builder content(String content) {
+            this.content = content;
+            return this;
+        }
+
+        public Builder content(byte[] content) {
+            this.content = content != null ? content.clone() : null;
+            return this;
+        }
+
+        public InformationRepresentation build() {
+            return new InformationRepresentation(containerMetadata, contentMetadata, content);
+        }
+
+        public InformationRepresentation buildSummary() {
+            return new InformationRepresentation(containerMetadata, contentMetadata, null);
+        }
+    }
+}

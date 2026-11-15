@@ -1,0 +1,23 @@
+{
+  "status": "FAIL",
+  "exitCode": 1,
+  "elapsedSeconds": 11.865,
+  "command": [
+    "python3",
+    "-B",
+    "enterprise-architecture/tooling/verify_continuum_transport.py",
+    "--baseline",
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/Harmonia-Architecture.xml",
+    "--returned",
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport-v2/returned.xml",
+    "--execution-log",
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport-v2/execution.log",
+    "--operator",
+    "Codex; bounded authorised CLI candidate validation",
+    "--environment-resolution",
+    "Initial sandbox SWT display initialization failed; isolated CLI completed with local display access. No interactive human inspection.",
+    "--report",
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/after/strict-transport.json"
+  ],
+  "diagnostic": "Traceback (most recent call last):\n  File \"/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/verify_continuum_transport.py\", line 39, in <module>\n    print(verify(a.baseline,a.returned,a.execution_log,a.operator,a.report,a.environment_resolution)['actualArchiImportExport'])\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/verify_continuum_transport.py\", line 22, in verify\n    c.require(not any(raw[kind][k] for k in ('missing_ids','additional_ids','changed_records')),'Relationship/View transport drift')\n  File \"/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/architecture_continuum.py\", line 51, in require\n    raise ContinuumError(message)\narchitecture_continuum.ContinuumError: Relationship/View transport drift\n"
+}

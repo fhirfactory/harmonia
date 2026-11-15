@@ -1,0 +1,152 @@
+[
+  {
+    "step": "manifest",
+    "status": "PASS",
+    "exitCode": 0,
+    "elapsedSeconds": 6.02,
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/continuum_manifest.py"
+    ]
+  },
+  {
+    "step": "projection",
+    "status": "PASS",
+    "exitCode": 0,
+    "elapsedSeconds": 11.589,
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/architecture_continuum.py",
+      "project",
+      "--output",
+      "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/Harmonia-Architecture.xml",
+      "--report",
+      "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/after/projection-validation.json"
+    ]
+  },
+  {
+    "step": "reader",
+    "status": "PASS",
+    "exitCode": 0,
+    "elapsedSeconds": 10.399,
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/publish_continuum.py",
+      "--output",
+      "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader"
+    ]
+  },
+  {
+    "step": "narrative",
+    "status": "PASS",
+    "exitCode": 0,
+    "elapsedSeconds": 18.535,
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/publish_continuum_rad.py",
+      "--output",
+      "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative"
+    ]
+  },
+  {
+    "step": "manifest-check",
+    "status": "PASS",
+    "exitCode": 0,
+    "elapsedSeconds": 5.998,
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/continuum_manifest.py",
+      "--check"
+    ]
+  },
+  {
+    "step": "projection-check",
+    "status": "PASS",
+    "exitCode": 0,
+    "elapsedSeconds": 12.168,
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/architecture_continuum.py",
+      "project",
+      "--output",
+      "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/Harmonia-Architecture.xml",
+      "--check"
+    ]
+  },
+  {
+    "step": "reader-check",
+    "status": "PASS",
+    "exitCode": 0,
+    "elapsedSeconds": 11.269,
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/publish_continuum.py",
+      "--output",
+      "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader",
+      "--check"
+    ]
+  },
+  {
+    "step": "narrative-check",
+    "status": "PASS",
+    "exitCode": 0,
+    "elapsedSeconds": 18.55,
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/publish_continuum_rad.py",
+      "--output",
+      "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative",
+      "--check"
+    ]
+  },
+  {
+    "step": "links",
+    "status": "PASS",
+    "exitCode": 0,
+    "elapsedSeconds": 5.656,
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/verify_continuum_links.py",
+      "--report",
+      "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/after/source-link-validation.json"
+    ]
+  },
+  {
+    "step": "browser",
+    "status": "PASS",
+    "exitCode": 0,
+    "elapsedSeconds": 0.444,
+    "command": [
+      "node",
+      "enterprise-architecture/tooling/tests/continuum-browser-smoke.js",
+      "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/continuum.html"
+    ]
+  },
+  {
+    "step": "no-edit-review",
+    "status": "PASS",
+    "exitCode": 0,
+    "elapsedSeconds": 23.327,
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/continuum_workbench.py",
+      "review",
+      "--baseline",
+      "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/Harmonia-Architecture.xml",
+      "--submitted",
+      "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/Harmonia-Architecture.xml",
+      "--output",
+      "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/after/no-edit-review.json"
+    ]
+  }
+]
