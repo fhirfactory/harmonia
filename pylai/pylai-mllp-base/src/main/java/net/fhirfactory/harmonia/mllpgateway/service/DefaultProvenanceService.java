@@ -45,7 +45,10 @@ public class DefaultProvenanceService implements ProvenanceService {
     @Inject
     private FhirContext fhirContext;
 
+    private RemoteCache<String, String> inMemoryCache;
+
     public DefaultProvenanceService() {
+        this.inMemoryCache = createInMemoryCache();
     }
 
     public DefaultProvenanceService(RemoteCacheManager remoteCacheManager) {
@@ -55,6 +58,52 @@ public class DefaultProvenanceService implements ProvenanceService {
     public DefaultProvenanceService(RemoteCacheManager remoteCacheManager, FhirContext fhirContext) {
         this.remoteCacheManager = remoteCacheManager;
         this.fhirContext = fhirContext;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static RemoteCache<String, String> createInMemoryCache() {
+        Map<String, String> map = new ConcurrentHashMap<>();
+        return (RemoteCache<String, String>) java.lang.reflect.Proxy.newProxyInstance(
+                RemoteCache.class.getClassLoader(),
+                new Class<?>[]{RemoteCache.class},
+                (proxy, method, args) -> {
+                    String name = method.getName();
+                    if ("get".equals(name) && args != null && args.length == 1) {
+                        return map.get(args[0]);
+                    }
+                    if ("put".equals(name) && args != null && args.length == 2) {
+                        return map.put((String) args[0], (String) args[1]);
+                    }
+                    if ("remove".equals(name) && args != null && args.length == 1) {
+                        return map.remove(args[0]);
+                    }
+                    if ("clear".equals(name)) {
+                        map.clear();
+                        return null;
+                    }
+                    if ("size".equals(name)) {
+                        if (method.getReturnType() == int.class) {
+                            return map.size();
+                        }
+                        return (long) map.size();
+                    }
+                    if ("isEmpty".equals(name)) {
+                        return map.isEmpty();
+                    }
+                    if ("values".equals(name)) {
+                        return map.values();
+                    }
+                    if ("keySet".equals(name)) {
+                        return map.keySet();
+                    }
+                    if ("entrySet".equals(name)) {
+                        return map.entrySet();
+                    }
+                    if ("toString".equals(name)) {
+                        return "InMemoryRemoteCache" + map;
+                    }
+                    return null;
+                });
     }
 
     public RemoteCacheManager getRemoteCacheManager() {
@@ -84,7 +133,7 @@ public class DefaultProvenanceService implements ProvenanceService {
                 log.debug("Remote cache [{}] query failed in MLLP Gateway: {}", PROVENANCE_CACHE_NAME, e.getMessage());
             }
         }
-        return null;
+        return inMemoryCache;
     }
 
     private RemoteCache<String, String> requireRemoteCache() {

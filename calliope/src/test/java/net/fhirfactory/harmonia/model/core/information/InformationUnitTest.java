@@ -20,10 +20,12 @@ package net.fhirfactory.harmonia.model.core.information;
 import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeCommitOutcome;
 import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
 import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.topic.Topic;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;
+import java.util.List;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -31,18 +33,33 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /**
  * Tests for {@link InformationUnit}.
- * Verifies construction, invariant enforcement, core accessors, delegation, and immutable derivations.
+ * Verifies construction, invariant enforcement, core accessors, delegation, and immutable derivations with strong Topic typing.
  */
 class InformationUnitTest {
 
     @Test
-    @DisplayName("Should create complete InformationUnit using builder with all metadata contexts")
+    @DisplayName("Should create complete InformationUnit using builder with strongly typed Topic references")
     void testCompleteInformationUnitCreation() {
         UUID uuid = UUID.fromString("11111111-2222-3333-4444-555555555555");
         Instant now = Instant.now();
 
+        Topic gwTopic = Topic.fromName("Health.Gateway.Postgres");
+        Topic epTopic = Topic.fromName("Health.Endpoint.Rest");
+        Topic locTopic = Topic.fromName("Health.Location.HospitalA");
+        Topic ownerTopic = Topic.fromName("Health.Owner.HealthSystem");
+
+        Topic srcEntry = Topic.fromName("Health.Component.PylaiIn");
+        Topic creationComp = Topic.fromName("Health.Component.IngressErgon");
+        Topic prevComp = Topic.fromName("Health.Component.FilterErgon");
+        Topic nextComp = Topic.fromName("Health.Component.TransformErgon");
+        Topic targetExit = Topic.fromName("Health.Component.PylaiOut");
+        Topic partComp = Topic.fromName("Health.Component.AuditErgon");
+
+        Topic contentTopic = Topic.fromName("Health.FHIR.R5.Patient");
+
         InformationUnit unit = InformationUnit.builder()
                 .identifier(uuid)
+                .version("1")
                 .managementContext(ManagementContext.builder()
                         .operationalVersion("10")
                         .activeGeneration("gen-alpha")
@@ -50,10 +67,18 @@ class InformationUnitTest {
                         .transientProperty("node", "mneme-01")
                         .build())
                 .informationCoordinates(InformationCoordinates.builder()
-                        .persistenceGateway("Health.Gateway.Postgres")
-                        .gatewayEndpoint("Health.Endpoint.Rest")
-                        .informationLocation("Health.Location.HospitalA")
-                        .informationOwner("Health.Owner.HealthSystem")
+                        .persistenceGateway(gwTopic)
+                        .gatewayEndpoint(epTopic)
+                        .informationLocation(locTopic)
+                        .informationOwner(ownerTopic)
+                        .build())
+                .informationItinerary(InformationItinerary.builder()
+                        .sourceEntryComponent(srcEntry)
+                        .creationComponent(creationComp)
+                        .previousComponent(prevComp)
+                        .nextComponent(nextComp)
+                        .targetExitComponent(targetExit)
+                        .addParticipatingComponent(partComp)
                         .build())
                 .securityContext(InformationSecurityContext.builder()
                         .addActionMask("READ")
@@ -67,7 +92,7 @@ class InformationUnitTest {
                 .addRelationship(InformationUnitRelationship.local("basedOn", "target-iu-99"))
                 .containerMetadata(ContainerMetadata.builder().containerType("FHIR_BUNDLE").build())
                 .contentMetadata(ContentMetadata.builder()
-                        .contentStructureTopic("Health.FHIR.R5.Patient")
+                        .contentStructureTopic(contentTopic)
                         .contentStructureVersion("R5")
                         .contentFormat("application/fhir+json")
                         .build())
@@ -76,13 +101,26 @@ class InformationUnitTest {
 
         // Identity
         assertThat(unit.uuid()).isEqualTo(uuid);
+        assertThat(unit.version()).isEqualTo("1");
         assertThat(unit.topicName()).isEqualTo("harmonia.mneme.iu.11111111222233334444555555555555");
         assertThat(unit.toTopic().getDataElement()).isEqualTo("11111111222233334444555555555555");
 
-        // Metadata Delegation
+        // Metadata Delegation & Strongly Typed Coordinates
         assertThat(unit.managementContext().operationalVersion()).contains(AuthoritativeVersion.of("10"));
         assertThat(unit.managementContext().activeGeneration()).contains("gen-alpha");
-        assertThat(unit.informationCoordinates().persistenceGateway()).contains("Health.Gateway.Postgres");
+        assertThat(unit.informationCoordinates().persistenceGateway()).contains(gwTopic);
+        assertThat(unit.informationCoordinates().gatewayEndpoint()).contains(epTopic);
+        assertThat(unit.informationCoordinates().informationLocation()).contains(locTopic);
+        assertThat(unit.informationCoordinates().informationOwner()).contains(ownerTopic);
+
+        // Itinerary Strongly Typed Topic References
+        assertThat(unit.informationItinerary().sourceEntryComponent()).contains(srcEntry);
+        assertThat(unit.informationItinerary().creationComponent()).contains(creationComp);
+        assertThat(unit.informationItinerary().previousComponent()).contains(prevComp);
+        assertThat(unit.informationItinerary().nextComponent()).contains(nextComp);
+        assertThat(unit.informationItinerary().targetExitComponent()).contains(targetExit);
+        assertThat(unit.informationItinerary().participatingComponents()).containsExactly(partComp);
+
         assertThat(unit.securityContext().actionMasks()).containsExactly("READ");
         assertThat(unit.lifecycleContext().lifecycleStage()).contains("COMMITTED");
         assertThat(unit.relationships()).hasSize(1);
@@ -90,7 +128,7 @@ class InformationUnitTest {
 
         // Representation & Content Delegation
         assertThat(unit.containerMetadata().containerType()).contains("FHIR_BUNDLE");
-        assertThat(unit.contentMetadata().contentStructureTopic()).contains("Health.FHIR.R5.Patient");
+        assertThat(unit.contentMetadata().contentStructureTopic()).contains(contentTopic);
         assertThat(unit.contentMetadata().contentStructureVersion()).contains("R5");
         assertThat(unit.isSummary()).isFalse();
         assertThat(unit.hasContent()).isTrue();
@@ -135,12 +173,19 @@ class InformationUnitTest {
         assertThat(initial.managementContext().operationalVersion()).isEmpty();
 
         // Mutate coordinates
+        Topic locTopic = Topic.fromName("Health.Location.Loc1");
         InformationUnit withCoords = withMgmt.withInformationCoordinates(
-                InformationCoordinates.builder().informationLocation("Loc-1").build());
-        assertThat(withCoords.informationCoordinates().informationLocation()).contains("Loc-1");
+                InformationCoordinates.builder().informationLocation(locTopic).build());
+        assertThat(withCoords.informationCoordinates().informationLocation()).contains(locTopic);
+
+        // Mutate itinerary
+        Topic stepTopic = Topic.fromName("Health.Component.Step1");
+        InformationUnit withItinerary = withCoords.withInformationItinerary(
+                InformationItinerary.builder().sourceEntryComponent(stepTopic).build());
+        assertThat(withItinerary.informationItinerary().sourceEntryComponent()).contains(stepTopic);
 
         // Mutate security
-        InformationUnit withSec = withCoords.withSecurityContext(
+        InformationUnit withSec = withItinerary.withSecurityContext(
                 InformationSecurityContext.builder().addActionMask("WRITE").build());
         assertThat(withSec.securityContext().actionMasks()).containsExactly("WRITE");
 
@@ -160,9 +205,10 @@ class InformationUnitTest {
         assertThat(withCont.containerMetadata().containerType()).contains("DOCUMENT");
 
         // Mutate content metadata
+        Topic contentTopic = Topic.fromName("Health.Topic.X");
         InformationUnit withContentMeta = withCont.withContentMetadata(
-                ContentMetadata.builder().contentStructureTopic("Health.Topic.X").build());
-        assertThat(withContentMeta.contentMetadata().contentStructureTopic()).contains("Health.Topic.X");
+                ContentMetadata.builder().contentStructureTopic(contentTopic).build());
+        assertThat(withContentMeta.contentMetadata().contentStructureTopic()).contains(contentTopic);
 
         // Hydrate with content
         InformationUnit hydrated = withContentMeta.withContent("Hello World");

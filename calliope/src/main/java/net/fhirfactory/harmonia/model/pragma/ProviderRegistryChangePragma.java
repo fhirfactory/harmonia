@@ -141,10 +141,8 @@ public class ProviderRegistryChangePragma implements Serializable {
         String resourceType = resource != null ? resource.fhirType() : "Unknown";
         String resourceId = resource != null && resource.getIdElement() != null ? resource.getIdElement().getIdPart() : null;
 
-        Topic topic = new Topic("Health", "FHIR", "R5", resourceType, operation);
-        topic.setSource(sourceSystem != null ? sourceSystem : "pylai-fhir-registry");
-        topic.setTarget("energeia-ponos");
-        topic.setReceivedDate(new Date());
+        Topic topic = new Topic("Health", "FHIR", "R5", resourceType, operation,
+                sourceSystem != null ? sourceSystem : "pylai-fhir-registry", "energeia-ponos", null, null, new Date());
 
         ErgonPayload inputPayload = resource != null ?
                 ErgonPayload.fromFhirResource(0, topic, topic, resource) : null;

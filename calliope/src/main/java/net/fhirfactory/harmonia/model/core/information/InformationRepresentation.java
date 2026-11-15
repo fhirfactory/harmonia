@@ -183,6 +183,16 @@ public final class InformationRepresentation implements Serializable {
     }
 
     /**
+     * Alias for {@link #getRawContent()} for standard getter compatibility.
+     *
+     * @return raw content object, or null in Summary projection
+     */
+    @JsonIgnore
+    public Object getContent() {
+        return getRawContent();
+    }
+
+    /**
      * Indicates whether this representation is a Summary projection (i.e. content is excluded).
      *
      * @return true if content is null (Summary projection), false if content is present

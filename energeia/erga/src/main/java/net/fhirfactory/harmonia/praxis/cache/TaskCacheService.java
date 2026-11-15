@@ -60,16 +60,72 @@ public class TaskCacheService {
 
     private final ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
 
+    private RemoteCache<String, String> inMemoryTaskCache;
+    private RemoteCache<String, String> inMemoryProvenanceCache;
+
     public TaskCacheService() {
     }
 
     public TaskCacheService(RemoteCacheManager remoteCacheManager) {
-        this.remoteCacheManager = remoteCacheManager;
+        this(remoteCacheManager, null);
     }
 
     public TaskCacheService(RemoteCacheManager remoteCacheManager, FhirContext fhirContext) {
         this.remoteCacheManager = remoteCacheManager;
         this.fhirContext = fhirContext;
+    }
+
+    public static TaskCacheService createInMemoryForTesting() {
+        TaskCacheService service = new TaskCacheService();
+        service.inMemoryTaskCache = createInMemoryCache("task-cache");
+        service.inMemoryProvenanceCache = createInMemoryCache("provenance-cache");
+        return service;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static RemoteCache<String, String> createInMemoryCache(String name) {
+        Map<String, String> map = new ConcurrentHashMap<>();
+        return (RemoteCache<String, String>) java.lang.reflect.Proxy.newProxyInstance(
+                RemoteCache.class.getClassLoader(),
+                new Class<?>[]{RemoteCache.class},
+                (proxy, method, args) -> {
+                    String methodName = method.getName();
+                    if ("get".equals(methodName) && args != null && args.length == 1) {
+                        return map.get(args[0]);
+                    }
+                    if ("put".equals(methodName) && args != null && args.length == 2) {
+                        return map.put((String) args[0], (String) args[1]);
+                    }
+                    if ("remove".equals(methodName) && args != null && args.length == 1) {
+                        return map.remove(args[0]);
+                    }
+                    if ("clear".equals(methodName)) {
+                        map.clear();
+                        return null;
+                    }
+                    if ("size".equals(methodName)) {
+                        if (method.getReturnType() == int.class) {
+                            return map.size();
+                        }
+                        return (long) map.size();
+                    }
+                    if ("isEmpty".equals(methodName)) {
+                        return map.isEmpty();
+                    }
+                    if ("values".equals(methodName)) {
+                        return map.values();
+                    }
+                    if ("keySet".equals(methodName)) {
+                        return map.keySet();
+                    }
+                    if ("entrySet".equals(methodName)) {
+                        return map.entrySet();
+                    }
+                    if ("toString".equals(methodName)) {
+                        return "InMemoryRemoteCache[" + name + "]" + map;
+                    }
+                    return null;
+                });
     }
 
     @PostConstruct
@@ -110,7 +166,7 @@ public class TaskCacheService {
                 log.debug("Remote cache [{}] query failed: {}", TASK_CACHE_NAME, e.getMessage());
             }
         }
-        return null;
+        return inMemoryTaskCache;
     }
 
     private RemoteCache<String, String> requireTaskCache() {
@@ -129,7 +185,7 @@ public class TaskCacheService {
                 log.debug("Remote cache [{}] query failed: {}", PROVENANCE_CACHE_NAME, e.getMessage());
             }
         }
-        return null;
+        return inMemoryProvenanceCache;
     }
 
     private RemoteCache<String, String> requireProvenanceCache() {

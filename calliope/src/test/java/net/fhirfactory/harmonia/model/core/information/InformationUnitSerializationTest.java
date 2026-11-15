@@ -23,6 +23,7 @@ import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeCommitOutcome;
 import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
 import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
 import net.fhirfactory.harmonia.model.security.HarmoniaSecurityLabelEnum;
+import net.fhirfactory.harmonia.model.topic.Topic;
 import net.fhirfactory.harmonia.model.topic.TopicMask;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -101,8 +102,12 @@ class InformationUnitSerializationTest {
     @Test
     @DisplayName("InformationCoordinates: should round-trip through JSON and Java Serialization")
     void testInformationCoordinatesSerialization() throws Exception {
-        InformationCoordinates coords = InformationCoordinates.of(
-                "Health.Gateway.A", "Health.Endpoint.B", "Health.Location.C", "Health.Owner.D");
+        Topic gw = Topic.fromName("Health.Gateway.A");
+        Topic ep = Topic.fromName("Health.Endpoint.B");
+        Topic loc = Topic.fromName("Health.Location.C");
+        Topic owner = Topic.fromName("Health.Owner.D");
+
+        InformationCoordinates coords = InformationCoordinates.of(gw, ep, loc, owner);
 
         // JSON
         String json = objectMapper.writeValueAsString(coords);
@@ -115,53 +120,79 @@ class InformationUnitSerializationTest {
     }
 
     @Test
-    @DisplayName("InformationSecurityContext: should round-trip through JSON and Java Serialization")
-    void testSecurityContextSerialization() throws Exception {
-        InformationSecurityContext security = InformationSecurityContext.builder()
-                .addUnitCriterion("Health.Security.Criterion.A")
-                .addActionMask("READ")
-                .addCompartmentMask("*.*.InformationCompartment.PersonalInformation*")
-                .addSecurityLabel(HarmoniaSecurityLabelEnum.RESTRICTED)
-                .confidentiality(FhirConfidentialityEnum.R)
-                .attribute("attrKey", "attrVal")
+    @DisplayName("InformationItinerary: should round-trip through JSON and Java Serialization")
+    void testInformationItinerarySerialization() throws Exception {
+        Topic src = Topic.fromName("Health.Gateway.MllpIn");
+        Topic create = Topic.fromName("Health.Ergon.Ingress");
+        Topic part = Topic.fromName("Health.Ergon.Audit");
+
+        InformationItinerary itinerary = InformationItinerary.builder()
+                .sourceEntryComponent(src)
+                .creationComponent(create)
+                .addParticipatingComponent(part)
                 .build();
 
         // JSON
-        String json = objectMapper.writeValueAsString(security);
-        InformationSecurityContext fromJson = objectMapper.readValue(json, InformationSecurityContext.class);
-        assertThat(fromJson).isEqualTo(security);
+        String json = objectMapper.writeValueAsString(itinerary);
+        InformationItinerary fromJson = objectMapper.readValue(json, InformationItinerary.class);
+        assertThat(fromJson).isEqualTo(itinerary);
 
         // Java Serialization
-        InformationSecurityContext fromJava = javaSerializeRoundtrip(security);
-        assertThat(fromJava).isEqualTo(security);
+        InformationItinerary fromJava = javaSerializeRoundtrip(itinerary);
+        assertThat(fromJava).isEqualTo(itinerary);
+    }
+
+    @Test
+    @DisplayName("InformationSecurityContext: should round-trip through JSON and Java Serialization")
+    void testSecurityContextSerialization() throws Exception {
+        Topic unitTopic = Topic.fromName("Health.Security.ProtectedHealthInformation");
+        TopicMask compMask = TopicMask.fromPattern("Health.Compartment.Oncology.*");
+
+        InformationSecurityContext context = InformationSecurityContext.builder()
+                .addUnitCriterion(unitTopic)
+                .addActionMask("READ")
+                .addActionMask("WRITE")
+                .addCompartmentMask(compMask)
+                .addSecurityLabel(HarmoniaSecurityLabelEnum.RESTRICTED)
+                .confidentiality(FhirConfidentialityEnum.R)
+                .putAttribute("env", "prod")
+                .build();
+
+        // JSON
+        String json = objectMapper.writeValueAsString(context);
+        InformationSecurityContext fromJson = objectMapper.readValue(json, InformationSecurityContext.class);
+        assertThat(fromJson).isEqualTo(context);
+
+        // Java Serialization
+        InformationSecurityContext fromJava = javaSerializeRoundtrip(context);
+        assertThat(fromJava).isEqualTo(context);
     }
 
     @Test
     @DisplayName("LifecycleContext: should round-trip through JSON and Java Serialization")
     void testLifecycleContextSerialization() throws Exception {
-        LifecycleContext lifecycle = LifecycleContext.builder()
+        LifecycleContext context = LifecycleContext.builder()
                 .lifecycleStage("COMMITTED")
                 .persistenceTimestamp(Instant.ofEpochMilli(1700000000000L))
                 .commitOutcome(AuthoritativeCommitOutcome.COMMITTED)
                 .retained(true)
-                .coordinationAttribute("node", "mneme-01")
+                .archived(false)
                 .build();
 
         // JSON
-        String json = objectMapper.writeValueAsString(lifecycle);
+        String json = objectMapper.writeValueAsString(context);
         LifecycleContext fromJson = objectMapper.readValue(json, LifecycleContext.class);
-        assertThat(fromJson).isEqualTo(lifecycle);
+        assertThat(fromJson).isEqualTo(context);
 
         // Java Serialization
-        LifecycleContext fromJava = javaSerializeRoundtrip(lifecycle);
-        assertThat(fromJava).isEqualTo(lifecycle);
+        LifecycleContext fromJava = javaSerializeRoundtrip(context);
+        assertThat(fromJava).isEqualTo(context);
     }
 
     @Test
     @DisplayName("InformationUnitRelationship: should round-trip through JSON and Java Serialization")
     void testRelationshipSerialization() throws Exception {
-        InformationUnitRelationship rel = InformationUnitRelationship.of(
-                "relatesTo", "iu-target-123", true, "Primary care episode");
+        InformationUnitRelationship rel = InformationUnitRelationship.local("relatesTo", "target-iu-001");
 
         // JSON
         String json = objectMapper.writeValueAsString(rel);
@@ -174,98 +205,97 @@ class InformationUnitSerializationTest {
     }
 
     @Test
-    @DisplayName("InformationRepresentation (Full and Summary): should round-trip through JSON and Java Serialization")
-    void testRepresentationSerialization() throws Exception {
-        ContainerMetadata container = ContainerMetadata.builder().containerType("FHIR_BUNDLE").build();
-        ContentMetadata contentMeta = ContentMetadata.builder()
-                .contentStructureTopic("Health.FHIR.R5.Patient")
-                .contentStructureVersion("R5")
-                .contentFormat("application/json")
-                .contentReference("s3://store/p-1.json")
+    @DisplayName("ContainerMetadata & ContentMetadata: should round-trip through JSON and Java Serialization")
+    void testContainerAndContentMetadataSerialization() throws Exception {
+        ContainerMetadata container = ContainerMetadata.builder()
+                .containerType("FHIR_BUNDLE")
+                .source("pas-gw")
+                .destination("mneme-store")
+                .author("DrSmith")
+                .assemblyContext("DischargeSummary")
                 .build();
 
-        InformationRepresentation full = InformationRepresentation.of(container, contentMeta, "{\"patient\":\"123\"}");
-        InformationRepresentation summary = full.toSummary();
+        Topic contentTopic = Topic.fromName("Health.FHIR.R5.Patient");
 
-        // Full JSON
-        String fullJson = objectMapper.writeValueAsString(full);
-        InformationRepresentation fullFromJson = objectMapper.readValue(fullJson, InformationRepresentation.class);
-        assertThat(fullFromJson).isEqualTo(full);
-        assertThat(fullFromJson.isSummary()).isFalse();
+        ContentMetadata content = ContentMetadata.builder()
+                .contentStructureTopic(contentTopic)
+                .contentStructureVersion("R5")
+                .contentFormat("application/fhir+json")
+                .contentReference("s3://bundles/b-1.json")
+                .contentDigest("sha256-abcdef")
+                .contentSize(4096L)
+                .putAttribute("profile", "PatientProfile")
+                .build();
 
-        // Summary JSON
-        String summaryJson = objectMapper.writeValueAsString(summary);
-        InformationRepresentation summaryFromJson = objectMapper.readValue(summaryJson, InformationRepresentation.class);
-        assertThat(summaryFromJson).isEqualTo(summary);
-        assertThat(summaryFromJson.isSummary()).isTrue();
-        assertThat(summaryFromJson.contentMetadata().contentReference()).contains("s3://store/p-1.json");
+        // JSON Container
+        String cJson = objectMapper.writeValueAsString(container);
+        ContainerMetadata cFromJson = objectMapper.readValue(cJson, ContainerMetadata.class);
+        assertThat(cFromJson).isEqualTo(container);
+
+        // JSON Content
+        String contJson = objectMapper.writeValueAsString(content);
+        ContentMetadata contFromJson = objectMapper.readValue(contJson, ContentMetadata.class);
+        assertThat(contFromJson).isEqualTo(content);
 
         // Java Serialization
-        assertThat(javaSerializeRoundtrip(full)).isEqualTo(full);
-        assertThat(javaSerializeRoundtrip(summary)).isEqualTo(summary);
+        assertThat(javaSerializeRoundtrip(container)).isEqualTo(container);
+        assertThat(javaSerializeRoundtrip(content)).isEqualTo(content);
     }
 
     @Test
-    @DisplayName("InformationUnit (Full and Summary): should round-trip through JSON and Java Serialization")
-    void testInformationUnitSerialization() throws Exception {
-        UUID uuid = UUID.randomUUID();
-        Instant now = Instant.ofEpochMilli(1700000000000L);
+    @DisplayName("Complete InformationUnit (Full and Summary): should round-trip through JSON and Java Serialization")
+    void testCompleteInformationUnitSerialization() throws Exception {
+        Topic gw = Topic.fromName("Health.Gateway.A");
+        Topic ep = Topic.fromName("Health.Endpoint.B");
+        Topic loc = Topic.fromName("Health.Location.C");
+        Topic owner = Topic.fromName("Health.Owner.D");
+        Topic src = Topic.fromName("Health.Gateway.In");
+        Topic contentTopic = Topic.fromName("Health.FHIR.R5.Patient");
 
         InformationUnit fullUnit = InformationUnit.builder()
-                .identifier(uuid)
+                .randomIdentifier()
+                .version("1")
                 .managementContext(ManagementContext.builder()
-                        .operationalVersion("1")
-                        .activeGeneration("gen-001")
-                        .cachedAt(now)
+                        .operationalVersion("100")
+                        .activeGeneration("gen-alpha")
                         .build())
-                .informationCoordinates(InformationCoordinates.of("GatewayA", "EndpointB", "LocC", "OwnerD"))
+                .informationCoordinates(InformationCoordinates.of(gw, ep, loc, owner))
+                .informationItinerary(InformationItinerary.builder().sourceEntryComponent(src).build())
                 .securityContext(InformationSecurityContext.builder().addActionMask("READ").build())
                 .lifecycleContext(LifecycleContext.builder().lifecycleStage("COMMITTED").build())
-                .addRelationship(InformationUnitRelationship.local("relatesTo", "iu-prev-01"))
-                .containerMetadata(ContainerMetadata.builder().containerType("DOCUMENT").build())
+                .containerMetadata(ContainerMetadata.builder().containerType("FHIR_BUNDLE").build())
                 .contentMetadata(ContentMetadata.builder()
-                        .contentStructureTopic("Health.FHIR.R5.Patient")
+                        .contentStructureTopic(contentTopic)
                         .contentStructureVersion("R5")
-                        .contentReference("urn:uuid:patient-doc-ref")
+                        .contentFormat("application/fhir+json")
                         .build())
-                .content("{\"resourceType\":\"Patient\"}")
+                .content("{\"resourceType\":\"Patient\",\"id\":\"p-1\"}")
                 .build();
 
-        InformationUnit summaryUnit = fullUnit.toSummary();
-
-        // Full JSON
+        // JSON Full
         String fullJson = objectMapper.writeValueAsString(fullUnit);
         InformationUnit fullFromJson = objectMapper.readValue(fullJson, InformationUnit.class);
         assertThat(fullFromJson).isEqualTo(fullUnit);
         assertThat(fullFromJson.isSummary()).isFalse();
+        assertThat(fullFromJson.contentAsString()).contains("{\"resourceType\":\"Patient\",\"id\":\"p-1\"}");
 
-        // Summary JSON
-        String summaryJson = objectMapper.writeValueAsString(summaryUnit);
+        // Java Serialization Full
+        InformationUnit fullFromJava = javaSerializeRoundtrip(fullUnit);
+        assertThat(fullFromJava).isEqualTo(fullUnit);
+
+        // Summary Projection
+        InformationUnit summary = fullUnit.toSummary();
+
+        // JSON Summary
+        String summaryJson = objectMapper.writeValueAsString(summary);
         InformationUnit summaryFromJson = objectMapper.readValue(summaryJson, InformationUnit.class);
-        assertThat(summaryFromJson).isEqualTo(summaryUnit);
+        assertThat(summaryFromJson).isEqualTo(summary);
         assertThat(summaryFromJson.isSummary()).isTrue();
-        assertThat(summaryFromJson.contentMetadata().contentReference()).contains("urn:uuid:patient-doc-ref");
+        assertThat(summaryFromJson.content()).isEmpty();
 
-        // Java Serialization
-        assertThat(javaSerializeRoundtrip(fullUnit)).isEqualTo(fullUnit);
-        assertThat(javaSerializeRoundtrip(summaryUnit)).isEqualTo(summaryUnit);
-    }
-
-    @Test
-    @DisplayName("TopicMask: should round-trip through JSON and Java Serialization")
-    void testTopicMaskSerialization() throws Exception {
-        TopicMask mask = TopicMask.of("Health.HL7.2.4.ADT.(A01|A08)");
-
-        // JSON
-        String json = objectMapper.writeValueAsString(mask);
-        TopicMask fromJson = objectMapper.readValue(json, TopicMask.class);
-        assertThat(fromJson).isEqualTo(mask);
-        assertThat(fromJson.matches("Health.HL7.2.4.ADT.A01")).isTrue();
-
-        // Java Serialization
-        TopicMask fromJava = javaSerializeRoundtrip(mask);
-        assertThat(fromJava).isEqualTo(mask);
-        assertThat(fromJava.matches("Health.HL7.2.4.ADT.A01")).isTrue();
-        assertThat(fromJava.matches("Health.HL7.2.4.ADT.A03")).isFalse();
+        // Java Serialization Summary
+        InformationUnit summaryFromJava = javaSerializeRoundtrip(summary);
+        assertThat(summaryFromJava).isEqualTo(summary);
+        assertThat(summaryFromJava.isSummary()).isTrue();
     }
 }

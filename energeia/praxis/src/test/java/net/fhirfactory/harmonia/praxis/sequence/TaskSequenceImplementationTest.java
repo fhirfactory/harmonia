@@ -140,6 +140,7 @@ class TaskSequenceImplementationTest {
     @DisplayName("Should execute pipeline route through activities and apply gateway/trigger filter")
     void testPipelineRouteExecution() throws Exception {
         PraxisImplementation impl = new PraxisImplementation("seq-pipeline", "Pipeline Test");
+        impl.setPragmaCacheService(net.fhirfactory.harmonia.praxis.PraxisTestMockHelper.createMockPragmaCacheService());
         impl.setTargetGatewayInstances(List.of("pas-gw"));
         impl.setTargetTriggerTypes(List.of("A01"));
         impl.setInputEndpoint("direct:patient-seq-test-in");

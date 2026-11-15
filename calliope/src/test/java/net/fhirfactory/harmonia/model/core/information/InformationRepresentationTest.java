@@ -17,6 +17,7 @@
 
 package net.fhirfactory.harmonia.model.core.information;
 
+import net.fhirfactory.harmonia.model.topic.Topic;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +30,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 /**
  * Tests for {@link InformationRepresentation}, {@link ContainerMetadata}, and {@link ContentMetadata}.
  * Verifies single governed representation semantics, content exclusion in Summary projection,
- * content reference preservation, and defensive immutability.
+ * content reference preservation, and defensive immutability with strongly typed Topics.
  */
 class InformationRepresentationTest {
 
@@ -45,7 +46,7 @@ class InformationRepresentationTest {
                 .assemblyContext("AdmissionEvent")
                 .interactionMechanism("REST")
                 .envelopeStructure("Bundle/collection")
-                .attribute("correlationTag", "TAG-123")
+                .putAttribute("correlationTag", "TAG-123")
                 .build();
 
         assertThat(container.containerType()).contains("FHIR_BUNDLE");
@@ -64,19 +65,22 @@ class InformationRepresentationTest {
     }
 
     @Test
-    @DisplayName("ContentMetadata: should distinguish Content Structure from Content Format and preserve contentReference")
+    @DisplayName("ContentMetadata: should distinguish Content Structure Topic from Content Format and preserve contentReference")
     void testContentMetadata() {
+        Topic patientTopic = Topic.fromName("Health.FHIR.R5.Patient");
+
         ContentMetadata contentMeta = ContentMetadata.builder()
-                .contentStructureTopic("Health.FHIR.R5.Patient")
+                .contentStructureTopic(patientTopic)
                 .contentStructureVersion("R5")
                 .contentFormat("application/fhir+json")
                 .contentReference("s3://clinical-store/fhir/patient-001.json")
                 .contentDigest("sha256-abcdef1234567890")
                 .contentSize(2048L)
-                .attribute("profile", "http://hl7.org/fhir/StructureDefinition/Patient")
+                .putAttribute("profile", "http://hl7.org/fhir/StructureDefinition/Patient")
                 .build();
 
-        assertThat(contentMeta.contentStructureTopic()).contains("Health.FHIR.R5.Patient");
+        assertThat(contentMeta.contentStructureTopic()).contains(patientTopic);
+        assertThat(contentMeta.contentStructureTopicName()).contains("Health.FHIR.R5.Patient");
         assertThat(contentMeta.contentStructureVersion()).contains("R5");
         assertThat(contentMeta.contentFormat()).contains("application/fhir+json");
         assertThat(contentMeta.contentReference()).contains("s3://clinical-store/fhir/patient-001.json");
@@ -85,18 +89,24 @@ class InformationRepresentationTest {
         assertThat(contentMeta.contentSize()).contains(2048L);
         assertThat(contentMeta.getAttribute("profile")).contains("http://hl7.org/fhir/StructureDefinition/Patient");
 
+        // Negative size rejection
+        assertThatThrownBy(() -> ContentMetadata.builder().contentSize(-10L).build())
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("contentSize must not be negative");
+
         // With mutators
         ContentMetadata updated = contentMeta.withContentReference("s3://clinical-store/fhir/patient-002.json");
         assertThat(updated.contentReference()).contains("s3://clinical-store/fhir/patient-002.json");
-        assertThat(updated.contentStructureTopic()).contains("Health.FHIR.R5.Patient");
+        assertThat(updated.contentStructureTopic()).contains(patientTopic);
     }
 
     @Test
     @DisplayName("InformationRepresentation: should handle hydrated representation with String content")
     void testHydratedStringRepresentation() {
         ContainerMetadata container = ContainerMetadata.builder().containerType("DOCUMENT").build();
+        Topic obsTopic = Topic.fromName("Health.FHIR.R5.Observation");
         ContentMetadata contentMeta = ContentMetadata.builder()
-                .contentStructureTopic("Health.FHIR.R5.Observation")
+                .contentStructureTopic(obsTopic)
                 .contentStructureVersion("R5")
                 .contentFormat("application/json")
                 .build();
@@ -139,8 +149,9 @@ class InformationRepresentationTest {
                 .containerType("FHIR_BUNDLE")
                 .source("pas-gw")
                 .build();
+        Topic patientTopic = Topic.fromName("Health.FHIR.R5.Patient");
         ContentMetadata contentMeta = ContentMetadata.builder()
-                .contentStructureTopic("Health.FHIR.R5.Patient")
+                .contentStructureTopic(patientTopic)
                 .contentStructureVersion("R5")
                 .contentReference("urn:uuid:opaque-ref-1234")
                 .contentSize(4096L)
@@ -159,7 +170,7 @@ class InformationRepresentationTest {
         assertThat(summary.containerMetadata()).isEqualTo(container);
         assertThat(summary.contentMetadata()).isEqualTo(contentMeta);
         assertThat(summary.contentMetadata().contentReference()).contains("urn:uuid:opaque-ref-1234");
-        assertThat(summary.contentMetadata().contentStructureTopic()).contains("Health.FHIR.R5.Patient");
+        assertThat(summary.contentMetadata().contentStructureTopic()).contains(patientTopic);
 
         // Hydrating from summary
         InformationRepresentation rehydrated = summary.withContent("{\"patient\":\"new-content\"}");

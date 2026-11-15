@@ -30,18 +30,19 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Encapsulates the four distinct metadata contexts and optional relationships of an Information Unit.
+ * Encapsulates the distinct metadata contexts and optional relationships of an Information Unit.
  * <p>
  * <b>Architectural Context &amp; Authority:</b>
- * In accordance with {@code DRP-Information-Unit-Framework.Final.001.md} (§5; IU-03, IU-04, IU-05):
+ * In accordance with the accepted 1.1.25 Architecture Continuum ({@code model.core.information.InformationUnit}):
  * <ul>
- *   <li>{@code InformationUnitMetadata} groups the four distinct, non-overlapping metadata concerns:
+ *   <li>{@code InformationUnitMetadata} groups the distinct, non-overlapping metadata concerns:
  *     <ol>
- *       <li><b>{@link ManagementContext}:</b> Operational and working-cache data maintained principally by Mneme.</li>
  *       <li><b>{@link InformationCoordinates}:</b> Four named Topic references identifying PersistenceGateway,
  *           GatewayEndpoint, InformationLocation, and InformationOwner.</li>
+ *       <li><b>{@link InformationItinerary}:</b> Distinct conceptual information path and participation concern.</li>
  *       <li><b>{@link InformationSecurityContext}:</b> IU-side required security criteria, compartments, and action masks.</li>
- *       <li><b>{@link LifecycleContext}:</b> Operational handshaking and Mneme–Mnemosyne lifecycle coordination.</li>
+ *       <li><b>{@link LifecycleContext}:</b> Governed information lifecycle and persistence coordination.</li>
+ *       <li><b>{@link ManagementContext}:</b> Operational working context maintained by Mneme.</li>
  *     </ol>
  *   </li>
  *   <li><b>Relationships:</b> Optional creator- or updater-supplied local and remote references ({@link InformationUnitRelationship}).</li>
@@ -50,7 +51,7 @@ import java.util.Objects;
  * <p>
  * <b>Defensive Programming:</b>
  * <ul>
- *   <li>All four context fields are guaranteed non-null (defaulting to their respective {@code empty()} instances).</li>
+ *   <li>All context fields are guaranteed non-null (defaulting to their respective {@code empty()} instances).</li>
  *   <li>Relationships list is defensively copied and returned as an unmodifiable list.</li>
  *   <li>Immutable value object design.</li>
  * </ul>
@@ -64,12 +65,14 @@ public final class InformationUnitMetadata implements Serializable {
     private static final InformationUnitMetadata EMPTY = new InformationUnitMetadata(
             ManagementContext.empty(),
             InformationCoordinates.empty(),
+            InformationItinerary.empty(),
             InformationSecurityContext.empty(),
             LifecycleContext.empty(),
             List.of());
 
     private final ManagementContext managementContext;
     private final InformationCoordinates informationCoordinates;
+    private final InformationItinerary informationItinerary;
     private final InformationSecurityContext securityContext;
     private final LifecycleContext lifecycleContext;
     private final List<InformationUnitRelationship> relationships;
@@ -79,6 +82,7 @@ public final class InformationUnitMetadata implements Serializable {
      *
      * @param managementContext      operational management context (optional, defaults to empty)
      * @param informationCoordinates operational coordinates (optional, defaults to empty)
+     * @param informationItinerary   information itinerary context (optional, defaults to empty)
      * @param securityContext        security requirements context (optional, defaults to empty)
      * @param lifecycleContext       lifecycle coordination context (optional, defaults to empty)
      * @param relationships          creator-supplied relationships (optional, defaults to empty list)
@@ -87,11 +91,13 @@ public final class InformationUnitMetadata implements Serializable {
     public InformationUnitMetadata(
             @JsonProperty("managementContext") ManagementContext managementContext,
             @JsonProperty("informationCoordinates") InformationCoordinates informationCoordinates,
+            @JsonProperty("informationItinerary") InformationItinerary informationItinerary,
             @JsonProperty("securityContext") InformationSecurityContext securityContext,
             @JsonProperty("lifecycleContext") LifecycleContext lifecycleContext,
             @JsonProperty("relationships") Collection<InformationUnitRelationship> relationships) {
         this.managementContext = managementContext != null ? managementContext : ManagementContext.empty();
         this.informationCoordinates = informationCoordinates != null ? informationCoordinates : InformationCoordinates.empty();
+        this.informationItinerary = informationItinerary != null ? informationItinerary : InformationItinerary.empty();
         this.securityContext = securityContext != null ? securityContext : InformationSecurityContext.empty();
         this.lifecycleContext = lifecycleContext != null ? lifecycleContext : LifecycleContext.empty();
         if (relationships == null || relationships.isEmpty()) {
@@ -105,6 +111,18 @@ public final class InformationUnitMetadata implements Serializable {
             }
             this.relationships = Collections.unmodifiableList(list);
         }
+    }
+
+    /**
+     * Compatibility constructor without explicit {@code InformationItinerary}.
+     */
+    public InformationUnitMetadata(
+            ManagementContext managementContext,
+            InformationCoordinates informationCoordinates,
+            InformationSecurityContext securityContext,
+            LifecycleContext lifecycleContext,
+            Collection<InformationUnitRelationship> relationships) {
+        this(managementContext, informationCoordinates, InformationItinerary.empty(), securityContext, lifecycleContext, relationships);
     }
 
     /**
@@ -139,6 +157,10 @@ public final class InformationUnitMetadata implements Serializable {
         return managementContext;
     }
 
+    public ManagementContext getManagementContext() {
+        return managementContext;
+    }
+
     /**
      * Returns the operational information coordinates.
      *
@@ -149,6 +171,24 @@ public final class InformationUnitMetadata implements Serializable {
         return informationCoordinates;
     }
 
+    public InformationCoordinates getInformationCoordinates() {
+        return informationCoordinates;
+    }
+
+    /**
+     * Returns the information itinerary context.
+     *
+     * @return the information itinerary, never null
+     */
+    @JsonProperty("informationItinerary")
+    public InformationItinerary informationItinerary() {
+        return informationItinerary;
+    }
+
+    public InformationItinerary getInformationItinerary() {
+        return informationItinerary;
+    }
+
     /**
      * Returns the IU-side security requirements context.
      *
@@ -156,6 +196,10 @@ public final class InformationUnitMetadata implements Serializable {
      */
     @JsonProperty("securityContext")
     public InformationSecurityContext securityContext() {
+        return securityContext;
+    }
+
+    public InformationSecurityContext getSecurityContext() {
         return securityContext;
     }
 
@@ -169,6 +213,10 @@ public final class InformationUnitMetadata implements Serializable {
         return lifecycleContext;
     }
 
+    public LifecycleContext getLifecycleContext() {
+        return lifecycleContext;
+    }
+
     /**
      * Returns the unmodifiable list of creator-supplied relationships.
      *
@@ -179,35 +227,43 @@ public final class InformationUnitMetadata implements Serializable {
         return relationships;
     }
 
+    public List<InformationUnitRelationship> getRelationships() {
+        return relationships;
+    }
+
     // =========================================================================
     // Immutable Derivations ("With" Mutators)
     // =========================================================================
 
     public InformationUnitMetadata withManagementContext(ManagementContext managementContext) {
-        return new InformationUnitMetadata(managementContext, this.informationCoordinates, this.securityContext, this.lifecycleContext, this.relationships);
+        return new InformationUnitMetadata(managementContext, this.informationCoordinates, this.informationItinerary, this.securityContext, this.lifecycleContext, this.relationships);
     }
 
     public InformationUnitMetadata withInformationCoordinates(InformationCoordinates informationCoordinates) {
-        return new InformationUnitMetadata(this.managementContext, informationCoordinates, this.securityContext, this.lifecycleContext, this.relationships);
+        return new InformationUnitMetadata(this.managementContext, informationCoordinates, this.informationItinerary, this.securityContext, this.lifecycleContext, this.relationships);
+    }
+
+    public InformationUnitMetadata withInformationItinerary(InformationItinerary informationItinerary) {
+        return new InformationUnitMetadata(this.managementContext, this.informationCoordinates, informationItinerary, this.securityContext, this.lifecycleContext, this.relationships);
     }
 
     public InformationUnitMetadata withSecurityContext(InformationSecurityContext securityContext) {
-        return new InformationUnitMetadata(this.managementContext, this.informationCoordinates, securityContext, this.lifecycleContext, this.relationships);
+        return new InformationUnitMetadata(this.managementContext, this.informationCoordinates, this.informationItinerary, securityContext, this.lifecycleContext, this.relationships);
     }
 
     public InformationUnitMetadata withLifecycleContext(LifecycleContext lifecycleContext) {
-        return new InformationUnitMetadata(this.managementContext, this.informationCoordinates, this.securityContext, lifecycleContext, this.relationships);
+        return new InformationUnitMetadata(this.managementContext, this.informationCoordinates, this.informationItinerary, this.securityContext, lifecycleContext, this.relationships);
     }
 
     public InformationUnitMetadata withRelationships(Collection<InformationUnitRelationship> relationships) {
-        return new InformationUnitMetadata(this.managementContext, this.informationCoordinates, this.securityContext, this.lifecycleContext, relationships);
+        return new InformationUnitMetadata(this.managementContext, this.informationCoordinates, this.informationItinerary, this.securityContext, this.lifecycleContext, relationships);
     }
 
     public InformationUnitMetadata withRelationship(InformationUnitRelationship relationship) {
         Objects.requireNonNull(relationship, "relationship must not be null");
         List<InformationUnitRelationship> updated = new ArrayList<>(this.relationships);
         updated.add(relationship);
-        return new InformationUnitMetadata(this.managementContext, this.informationCoordinates, this.securityContext, this.lifecycleContext, updated);
+        return new InformationUnitMetadata(this.managementContext, this.informationCoordinates, this.informationItinerary, this.securityContext, this.lifecycleContext, updated);
     }
 
     // =========================================================================
@@ -219,26 +275,28 @@ public final class InformationUnitMetadata implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InformationUnitMetadata that = (InformationUnitMetadata) o;
-        return Objects.equals(managementContext, that.managementContext)
-                && Objects.equals(informationCoordinates, that.informationCoordinates)
-                && Objects.equals(securityContext, that.securityContext)
-                && Objects.equals(lifecycleContext, that.lifecycleContext)
-                && Objects.equals(relationships, that.relationships);
+        return Objects.equals(managementContext, that.managementContext) &&
+                Objects.equals(informationCoordinates, that.informationCoordinates) &&
+                Objects.equals(informationItinerary, that.informationItinerary) &&
+                Objects.equals(securityContext, that.securityContext) &&
+                Objects.equals(lifecycleContext, that.lifecycleContext) &&
+                Objects.equals(relationships, that.relationships);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(managementContext, informationCoordinates, securityContext, lifecycleContext, relationships);
+        return Objects.hash(managementContext, informationCoordinates, informationItinerary, securityContext, lifecycleContext, relationships);
     }
 
     @Override
     public String toString() {
         return "InformationUnitMetadata{" +
                 "managementContext=" + managementContext +
-                ", informationCoordinates=" + informationCoordinates +
+                ", coordinates=" + informationCoordinates +
+                ", itinerary=" + informationItinerary +
                 ", securityContext=" + securityContext +
                 ", lifecycleContext=" + lifecycleContext +
-                ", relationshipsCount=" + relationships.size() +
+                ", relationships=" + relationships.size() +
                 '}';
     }
 
@@ -246,35 +304,37 @@ public final class InformationUnitMetadata implements Serializable {
     // Builder
     // =========================================================================
 
-    /**
-     * Fluent builder for {@link InformationUnitMetadata}.
-     */
     public static final class Builder {
-        private ManagementContext managementContext = ManagementContext.empty();
-        private InformationCoordinates informationCoordinates = InformationCoordinates.empty();
-        private InformationSecurityContext securityContext = InformationSecurityContext.empty();
-        private LifecycleContext lifecycleContext = LifecycleContext.empty();
+
+        private ManagementContext managementContext;
+        private InformationCoordinates informationCoordinates;
+        private InformationItinerary informationItinerary;
+        private InformationSecurityContext securityContext;
+        private LifecycleContext lifecycleContext;
         private final List<InformationUnitRelationship> relationships = new ArrayList<>();
 
-        private Builder() {}
-
         public Builder managementContext(ManagementContext managementContext) {
-            this.managementContext = managementContext != null ? managementContext : ManagementContext.empty();
+            this.managementContext = managementContext;
             return this;
         }
 
         public Builder informationCoordinates(InformationCoordinates informationCoordinates) {
-            this.informationCoordinates = informationCoordinates != null ? informationCoordinates : InformationCoordinates.empty();
+            this.informationCoordinates = informationCoordinates;
+            return this;
+        }
+
+        public Builder informationItinerary(InformationItinerary informationItinerary) {
+            this.informationItinerary = informationItinerary;
             return this;
         }
 
         public Builder securityContext(InformationSecurityContext securityContext) {
-            this.securityContext = securityContext != null ? securityContext : InformationSecurityContext.empty();
+            this.securityContext = securityContext;
             return this;
         }
 
         public Builder lifecycleContext(LifecycleContext lifecycleContext) {
-            this.lifecycleContext = lifecycleContext != null ? lifecycleContext : LifecycleContext.empty();
+            this.lifecycleContext = lifecycleContext;
             return this;
         }
 
@@ -288,15 +348,19 @@ public final class InformationUnitMetadata implements Serializable {
         public Builder relationships(Collection<InformationUnitRelationship> relationships) {
             this.relationships.clear();
             if (relationships != null) {
-                for (InformationUnitRelationship rel : relationships) {
-                    if (rel != null) this.relationships.add(rel);
-                }
+                this.relationships.addAll(relationships);
             }
             return this;
         }
 
         public InformationUnitMetadata build() {
-            return new InformationUnitMetadata(managementContext, informationCoordinates, securityContext, lifecycleContext, relationships);
+            return new InformationUnitMetadata(
+                    managementContext,
+                    informationCoordinates,
+                    informationItinerary,
+                    securityContext,
+                    lifecycleContext,
+                    relationships);
         }
     }
 }

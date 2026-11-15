@@ -52,8 +52,7 @@ class TaskSequenceLoaderTest {
     void setUp() {
         camelContext = new DefaultCamelContext();
         producerTemplate = camelContext.createProducerTemplate();
-        sequenceService = new PraxisService();
-        sequenceService.init();
+        sequenceService = net.fhirfactory.harmonia.praxis.PraxisTestMockHelper.createMockPraxisService();
         sequenceService.clear();
     }
 
@@ -149,7 +148,7 @@ class TaskSequenceLoaderTest {
         PatientIdentityUpdateErgon patientIdAct = new PatientIdentityUpdateErgon();
         Instance<ErgonBase> mockActivities = new MockActivityInstance<>(List.of(act1, act2, patientIdAct));
 
-        loader = new TaskSequenceLoader(sequenceService, mockActivities);
+        loader = new TaskSequenceLoader(sequenceService, mockActivities, net.fhirfactory.harmonia.praxis.PraxisTestMockHelper.createMockPragmaCacheService());
         List<Praxis> loaded = loader.loadAndRegisterSequences(camelContext);
         camelContext.start();
 
@@ -178,7 +177,7 @@ class TaskSequenceLoaderTest {
 
         sequenceService.save(patientSeq);
 
-        loader = new TaskSequenceLoader(sequenceService, mockActivities);
+        loader = new TaskSequenceLoader(sequenceService, mockActivities, net.fhirfactory.harmonia.praxis.PraxisTestMockHelper.createMockPragmaCacheService());
         loader.loadAndRegisterSequences(camelContext);
         camelContext.start();
 
@@ -225,7 +224,7 @@ class TaskSequenceLoaderTest {
 
         sequenceService.save(patientSeq);
 
-        loader = new TaskSequenceLoader(sequenceService, mockActivities);
+        loader = new TaskSequenceLoader(sequenceService, mockActivities, net.fhirfactory.harmonia.praxis.PraxisTestMockHelper.createMockPragmaCacheService());
         loader.loadAndRegisterSequences(camelContext);
         camelContext.start();
 
@@ -282,7 +281,7 @@ class TaskSequenceLoaderTest {
 
         sequenceService.save(pasAdmitSequence);
 
-        loader = new TaskSequenceLoader(sequenceService, mockActivities);
+        loader = new TaskSequenceLoader(sequenceService, mockActivities, net.fhirfactory.harmonia.praxis.PraxisTestMockHelper.createMockPragmaCacheService());
         loader.loadAndRegisterSequences(camelContext);
         camelContext.start();
 
@@ -320,7 +319,7 @@ class TaskSequenceLoaderTest {
 
         sequenceService.save(limsSequence);
 
-        loader = new TaskSequenceLoader(sequenceService, mockActivities);
+        loader = new TaskSequenceLoader(sequenceService, mockActivities, net.fhirfactory.harmonia.praxis.PraxisTestMockHelper.createMockPragmaCacheService());
         loader.loadAndRegisterSequences(camelContext);
         camelContext.start();
 
@@ -361,7 +360,7 @@ class TaskSequenceLoaderTest {
 
         sequenceService.save(seq);
 
-        loader = new TaskSequenceLoader(sequenceService, mockActivities);
+        loader = new TaskSequenceLoader(sequenceService, mockActivities, net.fhirfactory.harmonia.praxis.PraxisTestMockHelper.createMockPragmaCacheService());
         loader.loadAndRegisterSequences(camelContext);
         camelContext.start();
 

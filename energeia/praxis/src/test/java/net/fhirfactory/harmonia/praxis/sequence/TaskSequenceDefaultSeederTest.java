@@ -39,8 +39,7 @@ class TaskSequenceDefaultSeederTest {
 
     @BeforeEach
     void setUp() {
-        sequenceService = new PraxisService();
-        sequenceService.init();
+        sequenceService = net.fhirfactory.harmonia.praxis.PraxisTestMockHelper.createMockPraxisService();
         sequenceService.clear();
         seeder = new TaskSequenceDefaultSeeder(sequenceService);
     }

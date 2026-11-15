@@ -65,9 +65,17 @@ public class TaskSequenceLoader {
         this.sequenceSeeder = new TaskSequenceDefaultSeeder(sequenceService);
     }
 
+    @Inject
+    private net.fhirfactory.harmonia.praxis.cache.PragmaCacheService pragmaCacheService;
+
     public TaskSequenceLoader(PraxisService sequenceService, Instance<ErgonBase> availableActivities) {
+        this(sequenceService, availableActivities, null);
+    }
+
+    public TaskSequenceLoader(PraxisService sequenceService, Instance<ErgonBase> availableActivities, net.fhirfactory.harmonia.praxis.cache.PragmaCacheService pragmaCacheService) {
         this.sequenceService = sequenceService;
         this.availableActivities = availableActivities;
+        this.pragmaCacheService = pragmaCacheService;
         this.sequenceSeeder = new TaskSequenceDefaultSeeder(sequenceService);
     }
 
@@ -133,6 +141,9 @@ public class TaskSequenceLoader {
             }
 
             Praxis seq = def instanceof Praxis ? (Praxis) def : new Praxis(def);
+            if (this.pragmaCacheService != null) {
+                seq.setPragmaCacheService(this.pragmaCacheService);
+            }
 
             // Resolve activities for this sequence
             Map<Integer, ErgonBase> structuredActivities = resolveActivitiesForSequence(seq, activityIndex);

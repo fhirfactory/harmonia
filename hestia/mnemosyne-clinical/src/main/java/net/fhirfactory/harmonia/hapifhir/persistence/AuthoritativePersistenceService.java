@@ -101,7 +101,7 @@ public class AuthoritativePersistenceService implements AuthoritativePersistence
         try {
             Optional<FhirResourceEntity> entityOpt = repository.findByResourceTypeAndFhirId(key.resourceType(), key.id());
             if (entityOpt.isEmpty()) {
-                return new AuthoritativePersistenceResult.NotCommitted<>(
+                return new AuthoritativePersistenceResult.Absent<>(
                         "Resource not found: " + key.toQualifiedPath());
             }
             FhirResourceEntity entity = entityOpt.get();

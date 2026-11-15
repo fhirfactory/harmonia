@@ -1086,7 +1086,8 @@ public abstract class ErgonBase extends RouteBuilder {
 
     public TaskCacheService getTaskCacheService() {
         if (this.taskCacheService == null) {
-            this.taskCacheService = new TaskCacheService(null, getFhirContext());
+            this.taskCacheService = TaskCacheService.createInMemoryForTesting();
+            this.taskCacheService.setFhirContext(getFhirContext());
         }
         return this.taskCacheService;
     }

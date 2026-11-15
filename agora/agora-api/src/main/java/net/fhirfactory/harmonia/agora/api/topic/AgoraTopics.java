@@ -51,11 +51,8 @@ public final class AgoraTopics {
      * @return a structured Calliope Topic instance
      */
     public static Topic createTopic(String dataElement, String qualifier, String destination) {
-        Topic topic = new Topic(TOPIC_DOMAIN, TOPIC_MODEL, TOPIC_MODEL_VERSION, dataElement, qualifier);
-        topic.setSource(DEFAULT_SOURCE);
-        topic.setDestination(destination);
-        topic.setReceivedDate(new Date());
-        return topic;
+        return new Topic(TOPIC_DOMAIN, TOPIC_MODEL, TOPIC_MODEL_VERSION, dataElement, qualifier,
+                DEFAULT_SOURCE, null, null, destination, new Date());
     }
 
     /**

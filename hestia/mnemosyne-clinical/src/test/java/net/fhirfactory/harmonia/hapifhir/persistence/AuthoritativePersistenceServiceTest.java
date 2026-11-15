@@ -490,11 +490,11 @@ class AuthoritativePersistenceServiceTest {
     }
 
     @Test
-    @DisplayName("14. READ: returns NotCommitted for non-existent resource or null key")
+    @DisplayName("14. READ: returns Absent for non-existent resource, and NotCommitted for null key")
     void testReadNonExistentResource() {
         ResourceKey absentKey = ResourceKey.of("Patient", "absent-" + UUID.randomUUID());
         AuthoritativePersistenceResult<IBaseResource> readRes = persistenceService.read(absentKey);
-        assertThat(readRes).isInstanceOf(AuthoritativePersistenceResult.NotCommitted.class);
+        assertThat(readRes).isInstanceOf(AuthoritativePersistenceResult.Absent.class);
         assertThat(readRes.isCommitted()).isFalse();
 
         AuthoritativePersistenceResult<IBaseResource> nullKeyRes = persistenceService.read(null);

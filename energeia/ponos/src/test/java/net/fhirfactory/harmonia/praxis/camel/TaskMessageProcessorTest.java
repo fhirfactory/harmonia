@@ -63,8 +63,8 @@ class TaskMessageProcessorTest {
         System.clearProperty(PhiLoggingConfig.PROPERTY_PHI_ENABLED);
 
         fhirContext = FhirContext.forR5();
-        taskCacheService = new TaskCacheService();
-        taskCacheService.init();
+        taskCacheService = TaskCacheService.createInMemoryForTesting();
+        taskCacheService.setFhirContext(fhirContext);
         taskCacheService.clear();
 
         processor = new TaskMessageProcessor();

@@ -36,7 +36,8 @@ import java.util.Optional;
  * Encapsulates operational handshaking and Mneme–Mnemosyne lifecycle coordination metadata.
  * <p>
  * <b>Architectural Context &amp; Authority:</b>
- * In accordance with {@code DRP-Information-Unit-Framework.Final.001.md} (§§5.4, 17; IU-03):
+ * In accordance with {@code DRP-Information-Unit-Framework.Final.001.md} (§§5.4, 17; IU-03) and
+ * {@code DRP-Information-Unit-Framework.Final.002.md} (§§3, 4):
  * <ul>
  *   <li>{@code LifecycleContext} provides information needed for Mneme–Mnemosyne lifecycle and persistence
  *       coordination, including distinguishing request, acceptance, commit, and completion stages.</li>
@@ -44,8 +45,8 @@ import java.util.Optional;
  *       of the underlying Content.</li>
  *   <li><b>Persistence Stage:</b> Coordinates operational persistence handshakes (e.g. {@code REQUESTED}, {@code ACCEPTED},
  *       {@code COMMITTED}, {@code COMPLETED}, {@code RETIRED}).</li>
- *   <li><b>Retirement Semantics:</b> Governed retirement (RETIRE) marks lifecycle status without physically deleting
- *       historical data or destroying externally referenced Content (ADR-020).</li>
+ *   <li><b>Retirement &amp; Archive Semantics:</b> Governed retirement (RETIRE) and archive mark lifecycle status without
+ *       physically deleting historical data or destroying externally referenced Content (ADR-020).</li>
  * </ul>
  * <p>
  * <b>Defensive Programming:</b>
@@ -61,12 +62,13 @@ public final class LifecycleContext implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private static final LifecycleContext EMPTY = new LifecycleContext(null, null, null, false, Map.of());
+    private static final LifecycleContext EMPTY = new LifecycleContext(null, null, null, false, false, Map.of());
 
     private final String lifecycleStage;
     private final Instant persistenceTimestamp;
     private final AuthoritativeCommitOutcome commitOutcome;
     private final boolean retained;
+    private final boolean archived;
     private final Map<String, String> coordinationAttributes;
 
     /**
@@ -76,6 +78,7 @@ public final class LifecycleContext implements Serializable {
      * @param persistenceTimestamp   timestamp of persistence/handshake operation (optional)
      * @param commitOutcome          authoritative commit outcome (optional)
      * @param retained               whether a retention hold/policy applies
+     * @param archived               whether this information unit is archived
      * @param coordinationAttributes operational coordination attributes (optional)
      */
     @JsonCreator
@@ -84,14 +87,28 @@ public final class LifecycleContext implements Serializable {
             @JsonProperty("persistenceTimestamp") Instant persistenceTimestamp,
             @JsonProperty("commitOutcome") AuthoritativeCommitOutcome commitOutcome,
             @JsonProperty("retained") boolean retained,
+            @JsonProperty("archived") boolean archived,
             @JsonProperty("coordinationAttributes") Map<String, String> coordinationAttributes) {
         this.lifecycleStage = lifecycleStage != null && !lifecycleStage.isBlank() ? lifecycleStage.trim() : null;
         this.persistenceTimestamp = persistenceTimestamp;
         this.commitOutcome = commitOutcome;
         this.retained = retained;
+        this.archived = archived;
         this.coordinationAttributes = coordinationAttributes == null || coordinationAttributes.isEmpty()
                 ? Map.of()
                 : Collections.unmodifiableMap(new LinkedHashMap<>(coordinationAttributes));
+    }
+
+    /**
+     * Compatibility constructor without explicit {@code archived} parameter.
+     */
+    public LifecycleContext(
+            String lifecycleStage,
+            Instant persistenceTimestamp,
+            AuthoritativeCommitOutcome commitOutcome,
+            boolean retained,
+            Map<String, String> coordinationAttributes) {
+        this(lifecycleStage, persistenceTimestamp, commitOutcome, retained, false, coordinationAttributes);
     }
 
     /**
@@ -177,69 +194,98 @@ public final class LifecycleContext implements Serializable {
     }
 
     /**
-     * Returns whether this Information Unit is marked with an active retention policy or hold.
+     * Returns whether a retention hold/policy applies to this Information Unit.
      *
-     * @return true if retained
+     * @return true if retained, false otherwise
      */
     @JsonProperty("retained")
     public boolean isRetained() {
         return retained;
     }
 
+    @JsonIgnore
+    public boolean retained() {
+        return retained;
+    }
+
     /**
-     * Returns unmodifiable map of operational coordination attributes.
+     * Returns whether this Information Unit is archived.
      *
-     * @return unmodifiable map of coordination attributes
+     * @return true if archived, false otherwise
+     */
+    @JsonProperty("archived")
+    public boolean isArchived() {
+        return archived;
+    }
+
+    @JsonIgnore
+    public boolean archived() {
+        return archived;
+    }
+
+    /**
+     * Returns the unmodifiable map of operational coordination attributes.
+     *
+     * @return coordination attributes map, never null
      */
     @JsonProperty("coordinationAttributes")
     public Map<String, String> coordinationAttributes() {
         return coordinationAttributes;
     }
 
+    public Map<String, String> getCoordinationAttributes() {
+        return coordinationAttributes;
+    }
+
     /**
-     * Retrieves a single coordination attribute value by key.
+     * Returns a specific coordination attribute value by key.
      *
      * @param key the attribute key
      * @return optional attribute value
      */
-    public Optional<String> getCoordinationAttribute(String key) {
-        if (key == null) return Optional.empty();
+    public Optional<String> coordinationAttribute(String key) {
         return Optional.ofNullable(coordinationAttributes.get(key));
+    }
+
+    public Optional<String> getCoordinationAttribute(String key) {
+        return coordinationAttribute(key);
+    }
+
+    public boolean isEmpty() {
+        return lifecycleStage == null
+                && persistenceTimestamp == null
+                && commitOutcome == null
+                && !retained
+                && !archived
+                && coordinationAttributes.isEmpty();
     }
 
     // =========================================================================
     // Immutable Derivations ("With" Mutators)
     // =========================================================================
 
-    public LifecycleContext withLifecycleStage(String stage) {
-        return new LifecycleContext(stage, this.persistenceTimestamp, this.commitOutcome, this.retained, this.coordinationAttributes);
+    public LifecycleContext withLifecycleStage(String lifecycleStage) {
+        return new LifecycleContext(lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, this.archived, this.coordinationAttributes);
     }
 
-    public LifecycleContext withPersistenceTimestamp(Instant timestamp) {
-        return new LifecycleContext(this.lifecycleStage, timestamp, this.commitOutcome, this.retained, this.coordinationAttributes);
+    public LifecycleContext withPersistenceTimestamp(Instant persistenceTimestamp) {
+        return new LifecycleContext(this.lifecycleStage, persistenceTimestamp, this.commitOutcome, this.retained, this.archived, this.coordinationAttributes);
     }
 
-    public LifecycleContext withCommitOutcome(AuthoritativeCommitOutcome outcome) {
-        return new LifecycleContext(this.lifecycleStage, this.persistenceTimestamp, outcome, this.retained, this.coordinationAttributes);
+    public LifecycleContext withCommitOutcome(AuthoritativeCommitOutcome commitOutcome) {
+        return new LifecycleContext(this.lifecycleStage, this.persistenceTimestamp, commitOutcome, this.retained, this.archived, this.coordinationAttributes);
     }
 
     public LifecycleContext withRetained(boolean retained) {
-        return new LifecycleContext(this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, retained, this.coordinationAttributes);
+        return new LifecycleContext(this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, retained, this.archived, this.coordinationAttributes);
     }
 
-    public LifecycleContext withCoordinationAttributes(Map<String, String> attributes) {
-        return new LifecycleContext(this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, attributes);
+    public LifecycleContext withArchived(boolean archived) {
+        return new LifecycleContext(this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, archived, this.coordinationAttributes);
     }
 
-    public LifecycleContext withCoordinationAttribute(String key, String value) {
-        Objects.requireNonNull(key, "attribute key must not be null");
-        Map<String, String> updated = new LinkedHashMap<>(this.coordinationAttributes);
-        if (value == null) {
-            updated.remove(key);
-        } else {
-            updated.put(key, value);
-        }
-        return new LifecycleContext(this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, updated);
+    public LifecycleContext withCoordinationAttributes(Map<String, String> coordinationAttributes) {
+        return new LifecycleContext(this.lifecycleStage, this.persistenceTimestamp, this.commitOutcome, this.retained, this.archived, coordinationAttributes);
     }
 
     // =========================================================================
@@ -251,26 +297,28 @@ public final class LifecycleContext implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LifecycleContext that = (LifecycleContext) o;
-        return retained == that.retained
-                && Objects.equals(lifecycleStage, that.lifecycleStage)
-                && Objects.equals(persistenceTimestamp, that.persistenceTimestamp)
-                && commitOutcome == that.commitOutcome
-                && Objects.equals(coordinationAttributes, that.coordinationAttributes);
+        return retained == that.retained &&
+                archived == that.archived &&
+                Objects.equals(lifecycleStage, that.lifecycleStage) &&
+                Objects.equals(persistenceTimestamp, that.persistenceTimestamp) &&
+                commitOutcome == that.commitOutcome &&
+                Objects.equals(coordinationAttributes, that.coordinationAttributes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lifecycleStage, persistenceTimestamp, commitOutcome, retained, coordinationAttributes);
+        return Objects.hash(lifecycleStage, persistenceTimestamp, commitOutcome, retained, archived, coordinationAttributes);
     }
 
     @Override
     public String toString() {
         return "LifecycleContext{" +
-                "lifecycleStage='" + lifecycleStage + '\'' +
-                ", persistenceTimestamp=" + persistenceTimestamp +
-                ", commitOutcome=" + commitOutcome +
+                "stage=" + lifecycleStage +
+                ", timestamp=" + persistenceTimestamp +
+                ", outcome=" + commitOutcome +
                 ", retained=" + retained +
-                ", coordinationAttributesCount=" + coordinationAttributes.size() +
+                ", archived=" + archived +
+                ", attributes=" + coordinationAttributes.size() +
                 '}';
     }
 
@@ -278,30 +326,27 @@ public final class LifecycleContext implements Serializable {
     // Builder
     // =========================================================================
 
-    /**
-     * Fluent builder for {@link LifecycleContext}.
-     */
     public static final class Builder {
+
         private String lifecycleStage;
         private Instant persistenceTimestamp;
         private AuthoritativeCommitOutcome commitOutcome;
         private boolean retained;
+        private boolean archived;
         private final Map<String, String> coordinationAttributes = new LinkedHashMap<>();
 
-        private Builder() {}
-
-        public Builder lifecycleStage(String stage) {
-            this.lifecycleStage = stage;
+        public Builder lifecycleStage(String lifecycleStage) {
+            this.lifecycleStage = lifecycleStage;
             return this;
         }
 
-        public Builder persistenceTimestamp(Instant timestamp) {
-            this.persistenceTimestamp = timestamp;
+        public Builder persistenceTimestamp(Instant persistenceTimestamp) {
+            this.persistenceTimestamp = persistenceTimestamp;
             return this;
         }
 
-        public Builder commitOutcome(AuthoritativeCommitOutcome outcome) {
-            this.commitOutcome = outcome;
+        public Builder commitOutcome(AuthoritativeCommitOutcome commitOutcome) {
+            this.commitOutcome = commitOutcome;
             return this;
         }
 
@@ -310,26 +355,34 @@ public final class LifecycleContext implements Serializable {
             return this;
         }
 
-        public Builder coordinationAttribute(String key, String value) {
-            Objects.requireNonNull(key, "key must not be null");
-            if (value != null) {
-                this.coordinationAttributes.put(key, value);
-            } else {
-                this.coordinationAttributes.remove(key);
+        public Builder archived(boolean archived) {
+            this.archived = archived;
+            return this;
+        }
+
+        public Builder putCoordinationAttribute(String key, String value) {
+            if (key != null && value != null) {
+                this.coordinationAttributes.put(key.trim(), value.trim());
             }
             return this;
         }
 
-        public Builder coordinationAttributes(Map<String, String> attributes) {
+        public Builder coordinationAttributes(Map<String, String> coordinationAttributes) {
             this.coordinationAttributes.clear();
-            if (attributes != null) {
-                this.coordinationAttributes.putAll(attributes);
+            if (coordinationAttributes != null) {
+                this.coordinationAttributes.putAll(coordinationAttributes);
             }
             return this;
         }
 
         public LifecycleContext build() {
-            return new LifecycleContext(lifecycleStage, persistenceTimestamp, commitOutcome, retained, coordinationAttributes);
+            return new LifecycleContext(
+                    lifecycleStage,
+                    persistenceTimestamp,
+                    commitOutcome,
+                    retained,
+                    archived,
+                    coordinationAttributes);
         }
     }
 }

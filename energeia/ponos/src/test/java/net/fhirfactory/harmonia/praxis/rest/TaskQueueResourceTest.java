@@ -50,8 +50,8 @@ class TaskQueueResourceTest {
     @BeforeEach
     void setUp() throws Exception {
         fhirContext = FhirContext.forR5();
-        taskCacheService = new TaskCacheService();
-        taskCacheService.init();
+        taskCacheService = TaskCacheService.createInMemoryForTesting();
+        taskCacheService.setFhirContext(fhirContext);
         taskCacheService.clear();
 
         producerService = Mockito.mock(TaskQueueProducerService.class);

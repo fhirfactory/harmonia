@@ -20,6 +20,8 @@ package net.fhirfactory.harmonia.model.core.information;
 import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeCommitOutcome;
 import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
 import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.topic.TopicMask;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -29,28 +31,30 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Focused tests for the Information Unit Summary projection contract.
- * <p>
- * Verifies that:
- * <ul>
- *   <li>The IU Summary is an operation projection of the same IU, <b>excluding precisely {@code Content}</b>.</li>
- *   <li>All four Metadata contexts ({@link ManagementContext}, {@link InformationCoordinates},
- *       {@link InformationSecurityContext}, {@link LifecycleContext}) and {@link InformationUnitRelationship}s are preserved.</li>
- *   <li>{@link ContainerMetadata} and {@link ContentMetadata} are preserved with zero loss.</li>
- *   <li>{@code ContentMetadata.contentReference} is specifically preserved in Summary projection.</li>
- *   <li>Projection is idempotent and reversible via {@link InformationUnit#withContent(Object)}.</li>
- * </ul>
+ * Focused tests for the Information Unit Summary projection contract with strongly typed Topics.
  */
 class InformationUnitSummaryTest {
 
     @Test
-    @DisplayName("Summary Projection: must exclude precisely content while preserving all metadata and contentReference")
+    @DisplayName("Summary Projection: must exclude precisely content while preserving all metadata, strongly typed Topics, and contentReference")
     void testSummaryProjectionFullFidelity() {
         UUID uuid = UUID.randomUUID();
         Instant now = Instant.now();
 
+        Topic gwTopic = Topic.fromName("Health.Persistence.Gateway.Default");
+        Topic epTopic = Topic.fromName("Health.Persistence.Endpoint.Rest");
+        Topic locTopic = Topic.fromName("Health.Location.HospitalNorth");
+        Topic ownerTopic = Topic.fromName("Health.Owner.HealthSystem");
+
+        Topic srcEntry = Topic.fromName("Health.Gateway.MllpIn");
+        Topic creationComp = Topic.fromName("Health.Ergon.Ingress");
+
+        Topic contentTopic = Topic.fromName("Health.FHIR.R5.Bundle");
+        TopicMask compMask = TopicMask.fromPattern("*.*.InformationCompartment.Clinical*");
+
         InformationUnit fullUnit = InformationUnit.builder()
                 .identifier(uuid)
+                .version("1")
                 .managementContext(ManagementContext.builder()
                         .operationalVersion("42")
                         .activeGeneration("gen-007")
@@ -58,13 +62,17 @@ class InformationUnitSummaryTest {
                         .transientProperty("clusterNode", "mneme-east-1")
                         .build())
                 .informationCoordinates(InformationCoordinates.of(
-                        "Health.Persistence.Gateway.Default",
-                        "Health.Persistence.Endpoint.Rest",
-                        "Health.Location.HospitalNorth",
-                        "Health.Owner.HealthSystem"))
+                        gwTopic,
+                        epTopic,
+                        locTopic,
+                        ownerTopic))
+                .informationItinerary(InformationItinerary.builder()
+                        .sourceEntryComponent(srcEntry)
+                        .creationComponent(creationComp)
+                        .build())
                 .securityContext(InformationSecurityContext.builder()
                         .addActionMask("READ")
-                        .addCompartmentMask("*.*.InformationCompartment.Clinical*")
+                        .addCompartmentMask(compMask)
                         .confidentiality(FhirConfidentialityEnum.R)
                         .build())
                 .lifecycleContext(LifecycleContext.builder()
@@ -82,13 +90,13 @@ class InformationUnitSummaryTest {
                         .assemblyContext("DischargeSummary")
                         .build())
                 .contentMetadata(ContentMetadata.builder()
-                        .contentStructureTopic("Health.FHIR.R5.Bundle")
+                        .contentStructureTopic(contentTopic)
                         .contentStructureVersion("R5")
                         .contentFormat("application/fhir+json")
                         .contentReference("s3://harmonia-authoritative/bundles/b-9988.json")
                         .contentDigest("sha256-1122334455667788")
                         .contentSize(8192L)
-                        .attribute("profile", "http://hl7.org/fhir/StructureDefinition/Bundle")
+                        .putAttribute("profile", "http://hl7.org/fhir/StructureDefinition/Bundle")
                         .build())
                 .content("{\"resourceType\":\"Bundle\",\"id\":\"b-9988\",\"entry\":[]}")
                 .build();
@@ -108,15 +116,18 @@ class InformationUnitSummaryTest {
         assertThat(summary.uuid()).isEqualTo(uuid);
         assertThat(summary.topicName()).isEqualTo(fullUnit.topicName());
 
-        // 3. Four Metadata contexts and relationships are completely preserved
+        // 3. Metadata contexts and relationships are completely preserved
         assertThat(summary.managementContext().operationalVersion()).contains(AuthoritativeVersion.of("42"));
         assertThat(summary.managementContext().activeGeneration()).contains("gen-007");
-        assertThat(summary.managementContext().getTransientProperty("clusterNode")).contains("mneme-east-1");
 
-        assertThat(summary.informationCoordinates().persistenceGateway()).contains("Health.Persistence.Gateway.Default");
-        assertThat(summary.informationCoordinates().informationOwner()).contains("Health.Owner.HealthSystem");
+        assertThat(summary.informationCoordinates().persistenceGateway()).contains(gwTopic);
+        assertThat(summary.informationCoordinates().informationOwner()).contains(ownerTopic);
+
+        assertThat(summary.informationItinerary().sourceEntryComponent()).contains(srcEntry);
+        assertThat(summary.informationItinerary().creationComponent()).contains(creationComp);
 
         assertThat(summary.securityContext().actionMasks()).containsExactly("READ");
+        assertThat(summary.securityContext().compartmentMasks()).containsExactly(compMask);
         assertThat(summary.securityContext().confidentiality()).contains(FhirConfidentialityEnum.R);
 
         assertThat(summary.lifecycleContext().lifecycleStage()).contains("COMMITTED");
@@ -129,13 +140,13 @@ class InformationUnitSummaryTest {
         assertThat(summary.containerMetadata().containerType()).contains("FHIR_BUNDLE");
         assertThat(summary.containerMetadata().author()).contains("DrSmith");
 
-        assertThat(summary.contentMetadata().contentStructureTopic()).contains("Health.FHIR.R5.Bundle");
+        assertThat(summary.contentMetadata().contentStructureTopic()).contains(contentTopic);
         assertThat(summary.contentMetadata().contentStructureVersion()).contains("R5");
         assertThat(summary.contentMetadata().contentFormat()).contains("application/fhir+json");
         assertThat(summary.contentMetadata().contentReference()).contains("s3://harmonia-authoritative/bundles/b-9988.json");
         assertThat(summary.contentMetadata().contentDigest()).contains("sha256-1122334455667788");
         assertThat(summary.contentMetadata().contentSize()).contains(8192L);
-        assertThat(summary.contentMetadata().getAttribute("profile")).contains("http://hl7.org/fhir/StructureDefinition/Bundle");
+        assertThat(summary.contentMetadata().attribute("profile")).contains("http://hl7.org/fhir/StructureDefinition/Bundle");
 
         // 5. Projection idempotency
         InformationUnit summaryOfSummary = summary.toSummary();
@@ -152,17 +163,21 @@ class InformationUnitSummaryTest {
     @Test
     @DisplayName("Summary Registration: should support GovernedSummaryWriter(CREATE) registration of external content reference")
     void testSummaryWriterCreateExternalRegistration() {
-        // GovernedSummaryWriter(CREATE) registers an IU referring to Content already present externally
-        // without fetching, rewriting, or materialising that external Content
         UUID uuid = UUID.randomUUID();
+
+        Topic gwTopic = Topic.fromName("Health.Gateway.ExternalPacs");
+        Topic epTopic = Topic.fromName("Health.Endpoint.DicomWeb");
+        Topic locTopic = Topic.fromName("Health.Location.RadiologyArchive");
+        Topic ownerTopic = Topic.fromName("Health.Owner.DiagnosticImaging");
+        Topic contentTopic = Topic.fromName("Health.DICOM.Study.CT");
 
         InformationUnit externalRegisteredSummary = InformationUnit.builder()
                 .identifier(uuid)
                 .informationCoordinates(InformationCoordinates.of(
-                        "Health.Gateway.ExternalPacs",
-                        "Health.Endpoint.DicomWeb",
-                        "Health.Location.RadiologyArchive",
-                        "Health.Owner.DiagnosticImaging"))
+                        gwTopic,
+                        epTopic,
+                        locTopic,
+                        ownerTopic))
                 .lifecycleContext(LifecycleContext.builder()
                         .lifecycleStage("COMMITTED")
                         .commitOutcome(AuthoritativeCommitOutcome.COMMITTED)
@@ -172,7 +187,7 @@ class InformationUnitSummaryTest {
                         .source("ris-pacs-gw")
                         .build())
                 .contentMetadata(ContentMetadata.builder()
-                        .contentStructureTopic("Health.DICOM.Study.CT")
+                        .contentStructureTopic(contentTopic)
                         .contentStructureVersion("2024c")
                         .contentFormat("application/dicom")
                         .contentReference("wado-rs://pacs.imaging.org/studies/1.2.840.113619.2.55.3.123456")

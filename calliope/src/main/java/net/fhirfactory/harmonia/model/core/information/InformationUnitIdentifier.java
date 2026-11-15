@@ -215,18 +215,12 @@ public final class InformationUnitIdentifier implements Serializable, Comparable
     }
 
     /**
-     * Reconciles this Information Unit identifier with a legacy Calliope {@link Topic} instance.
+     * Reconciles this Information Unit identifier with a canonical {@link Topic} instance.
      *
-     * @return a populated Calliope Topic representing this IU
+     * @return a populated canonical Topic representing this IU
      */
     public Topic toTopic() {
-        Topic topic = new Topic();
-        topic.setDomain("harmonia");
-        topic.setModel("mneme");
-        topic.setModelVersion("iu");
-        topic.setDataElement(hexString());
-        topic.setDataElementQualifier("");
-        return topic;
+        return Topic.forInformationUnit(this.uuid);
     }
 
     // =========================================================================

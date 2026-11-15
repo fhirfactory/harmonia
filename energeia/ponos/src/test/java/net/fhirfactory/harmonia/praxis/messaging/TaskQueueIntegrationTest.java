@@ -121,8 +121,8 @@ class TaskQueueIntegrationTest {
         connectionFactory = new ActiveMQConnectionFactory(brokerUrl);
 
         // Cache Service
-        taskCacheService = new TaskCacheService();
-        taskCacheService.init();
+        taskCacheService = TaskCacheService.createInMemoryForTesting();
+        taskCacheService.setFhirContext(fhirContext);
 
         // Sequence Service & Loader
         sequenceService = new PraxisService();

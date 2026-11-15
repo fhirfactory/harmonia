@@ -46,8 +46,8 @@ class TaskProcessorRouteTest {
     @BeforeEach
     void setUp() throws Exception {
         fhirContext = FhirContext.forR5();
-        taskCacheService = new TaskCacheService();
-        taskCacheService.init();
+        taskCacheService = TaskCacheService.createInMemoryForTesting();
+        taskCacheService.setFhirContext(fhirContext);
         taskCacheService.clear();
 
         TaskMessageProcessor processor = new TaskMessageProcessor();

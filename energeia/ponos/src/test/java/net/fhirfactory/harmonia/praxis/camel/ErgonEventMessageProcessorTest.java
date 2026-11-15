@@ -45,8 +45,8 @@ class ErgonEventMessageProcessorTest {
     @BeforeEach
     void setUp() {
         fhirContext = FhirContext.forR5();
-        taskCacheService = new TaskCacheService();
-        taskCacheService.init();
+        taskCacheService = TaskCacheService.createInMemoryForTesting();
+        taskCacheService.setFhirContext(fhirContext);
         taskCacheService.clear();
 
         objectMapper = new ObjectMapper();

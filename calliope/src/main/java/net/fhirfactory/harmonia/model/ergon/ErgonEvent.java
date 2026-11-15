@@ -91,16 +91,10 @@ public class ErgonEvent implements Serializable {
     }
 
     private void ensureTopicSync() {
-        if (this.topic == null) {
-            String gw = gatewayInstanceId != null ? gatewayInstanceId : source;
-            this.topic = Topic.fromHl7(messageType != null ? messageType : "ADT",
-                    triggerType != null ? triggerType : "",
-                    gw);
-        } else {
-            if (gatewayInstanceId != null) this.topic.setSource(gatewayInstanceId);
-            if (messageType != null) this.topic.setDataElement(messageType);
-            if (triggerType != null) this.topic.setDataElementQualifier(triggerType);
-        }
+        String gw = gatewayInstanceId != null ? gatewayInstanceId : (source != null ? source : "default");
+        String mt = messageType != null && !messageType.isBlank() ? messageType : (this.topic != null ? this.topic.getDataElement() : "ADT");
+        String tt = triggerType != null && !triggerType.isBlank() ? triggerType : (this.topic != null ? this.topic.getDataElementQualifier() : "*");
+        this.topic = Topic.fromHl7(mt, tt, gw);
     }
 
     public String getTaskId() {
@@ -151,17 +145,11 @@ public class ErgonEvent implements Serializable {
     }
 
     public String getGatewayInstanceId() {
-        if (gatewayInstanceId == null && topic != null) {
-            return topic.getSource();
-        }
         return gatewayInstanceId;
     }
 
     public void setGatewayInstanceId(String gatewayInstanceId) {
         this.gatewayInstanceId = gatewayInstanceId;
-        if (this.topic != null) {
-            this.topic.setSource(gatewayInstanceId);
-        }
     }
 
     public String getMessageType() {
@@ -173,9 +161,6 @@ public class ErgonEvent implements Serializable {
 
     public void setMessageType(String messageType) {
         this.messageType = messageType;
-        if (this.topic != null) {
-            this.topic.setDataElement(messageType);
-        }
     }
 
     public String getTriggerType() {
@@ -187,9 +172,6 @@ public class ErgonEvent implements Serializable {
 
     public void setTriggerType(String triggerType) {
         this.triggerType = triggerType;
-        if (this.topic != null) {
-            this.topic.setDataElementQualifier(triggerType);
-        }
     }
 
     public String getControlId() {
@@ -209,9 +191,6 @@ public class ErgonEvent implements Serializable {
 
     public void setSource(String source) {
         this.source = source;
-        if (this.topic != null && this.topic.getSource() == null) {
-            this.topic.setSource(source);
-        }
     }
 
     public String getDescription() {

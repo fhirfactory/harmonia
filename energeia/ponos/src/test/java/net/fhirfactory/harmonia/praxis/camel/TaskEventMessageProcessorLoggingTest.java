@@ -63,8 +63,8 @@ class TaskEventMessageProcessorLoggingTest {
         System.clearProperty(PhiLoggingConfig.PROPERTY_PHI_ENABLED);
 
         fhirContext = FhirContext.forR5();
-        taskCacheService = new TaskCacheService();
-        taskCacheService.init();
+        taskCacheService = TaskCacheService.createInMemoryForTesting();
+        taskCacheService.setFhirContext(fhirContext);
         taskCacheService.clear();
 
         objectMapper = new ObjectMapper();

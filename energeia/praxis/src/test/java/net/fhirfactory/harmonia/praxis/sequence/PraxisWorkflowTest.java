@@ -55,8 +55,7 @@ class PraxisWorkflowTest {
     void setUp() {
         camelContext = new DefaultCamelContext();
         producerTemplate = camelContext.createProducerTemplate();
-        pragmaCacheService = new PragmaCacheService();
-        pragmaCacheService.init();
+        pragmaCacheService = net.fhirfactory.harmonia.praxis.PraxisTestMockHelper.createMockPragmaCacheService();
         checkpointManager = new PraxisCheckpointManager(pragmaCacheService, null);
     }
 

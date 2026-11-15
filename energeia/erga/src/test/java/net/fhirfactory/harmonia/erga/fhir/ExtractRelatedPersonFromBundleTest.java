@@ -52,7 +52,8 @@ class ExtractRelatedPersonFromBundleTest {
         producerTemplate = camelContext.createProducerTemplate();
         activity = new ExtractRelatedPersonFromBundle();
         fhirContext = FhirContext.forR5();
-        taskCacheService = new TaskCacheService(null, fhirContext);
+        taskCacheService = TaskCacheService.createInMemoryForTesting();
+        taskCacheService.setFhirContext(fhirContext);
         activity.setTaskCacheService(taskCacheService);
     }
 

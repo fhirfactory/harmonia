@@ -17,7 +17,6 @@
 
 package net.fhirfactory.harmonia.model.topic;
 
-import net.fhirfactory.harmonia.model.core.information.InformationUnitIdentifier;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -26,113 +25,168 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-/**
- * Tests for {@link TopicMask}.
- * Verifies element-wise regular expression matching, strict dot-boundary enforcement,
- * wildcard shorthand expansion, and defensive compilation failure handling.
- */
-class TopicMaskTest {
+@DisplayName("TopicMask Immutable Model and Matching Tests")
+public class TopicMaskTest {
 
     @Test
-    @DisplayName("Should perform exact and wildcard element-wise matching on canonical IU topics")
-    void testCanonicalIuTopicMatching() {
-        UUID uuid = UUID.fromString("01234567-89ab-cdef-0123-456789abcdef");
-        InformationUnitIdentifier id = InformationUnitIdentifier.fromUuid(uuid);
-        String topicStr = id.topicName(); // "harmonia.mneme.iu.0123456789abcdef0123456789abcdef"
+    @DisplayName("TopicNameBased inclusive and exact matching semantics")
+    void testTopicNameBasedExactAndInclusiveSemantics() {
+        Topic twoLevel = Topic.fromName("Australia.ACT");
+        Topic threeLevel = Topic.fromName("Australia.ACT.Canberra");
+        Topic otherState = Topic.fromName("Australia.NSW.Sydney");
 
-        // 1. Wildcard shorthand for hex segment
-        TopicMask iuWildcardMask = TopicMask.of("harmonia.mneme.iu.*");
-        assertThat(iuWildcardMask.matches(topicStr)).isTrue();
-        assertThat(iuWildcardMask.matches(id)).isTrue();
+        // Inclusive Australia.ACT mask
+        TopicMask inclusiveMask = TopicMask.builder()
+                .topicNameBased()
+                .inclusive()
+                .addNamePattern("Australia")
+                .addNamePattern("ACT")
+                .build();
 
-        // 2. Exact match mask
-        TopicMask exactMask = TopicMask.exact(topicStr);
-        assertThat(exactMask.matches(topicStr)).isTrue();
-        assertThat(exactMask.matches(id)).isTrue();
+        assertThat(inclusiveMask.matches(twoLevel)).isTrue();
+        assertThat(inclusiveMask.matches(threeLevel)).isTrue();
+        assertThat(inclusiveMask.matches(otherState)).isFalse();
 
-        // 3. Different UUID mismatch
-        InformationUnitIdentifier otherId = InformationUnitIdentifier.random();
-        assertThat(exactMask.matches(otherId)).isFalse();
+        // Exact Australia.ACT mask
+        TopicMask exactMask = TopicMask.builder()
+                .topicNameBased()
+                .exact()
+                .addNamePattern("Australia")
+                .addNamePattern("ACT")
+                .build();
 
-        // 4. Wildcard matching otherId
-        assertThat(iuWildcardMask.matches(otherId)).isTrue();
+        assertThat(exactMask.matches(twoLevel)).isTrue();
+        assertThat(exactMask.matches(threeLevel)).isFalse(); // Exact rejects deeper depth
+        assertThat(exactMask.matches(otherState)).isFalse();
     }
 
     @Test
-    @DisplayName("Should evaluate element-wise regex across business domain and compartment topics")
-    void testElementWiseRegexMatching() {
-        // Illustrative mask from DRP §12: *.*.InformationCompartment.PersonalInformation*
-        TopicMask compartmentMask = TopicMask.of("*.*.InformationCompartment.PersonalInformation.*");
+    @DisplayName("TopicCanonicalNameBased matches qualifiers and names independently")
+    void testTopicCanonicalNameBasedMatching() {
+        Topic canberra = Topic.builder()
+                .addEntry("Country", "Australia")
+                .addEntry("StateTerritory", "ACT")
+                .addEntry("City", "Canberra")
+                .build();
 
-        assertThat(compartmentMask.matches("Health.HL7.InformationCompartment.PersonalInformation.Demographics")).isTrue();
-        assertThat(compartmentMask.matches("Admin.FHIR.InformationCompartment.PersonalInformation.Address")).isTrue();
-        assertThat(compartmentMask.matches("Health.HL7.OtherCompartment.PersonalInformation.Demographics")).isFalse();
+        Topic sydney = Topic.builder()
+                .addEntry("Country", "Australia")
+                .addEntry("StateTerritory", "NSW")
+                .addEntry("City", "Sydney")
+                .build();
 
-        // Element-level regex with alternatives (6 dot-delimited elements)
-        TopicMask hl7VersionMask = TopicMask.of("Health.HL7.2.4.ADT.(A01|A08)");
-        assertThat(hl7VersionMask.matches("Health.HL7.2.4.ADT.A01")).isTrue();
-        assertThat(hl7VersionMask.matches("Health.HL7.2.4.ADT.A08")).isTrue();
-        assertThat(hl7VersionMask.matches("Health.HL7.2.4.ADT.A03")).isFalse();
-        assertThat(hl7VersionMask.matches("Health.HL7.2.3.ADT.A01")).isFalse();
-        assertThat(hl7VersionMask.matches("Health.HL7.R5.ADT.A01")).isFalse();
+        // Match qualifier 'StateTerritory' with regex 'A.*' and name 'ACT'
+        TopicMask mask = TopicMask.builder()
+                .topicCanonicalNameBased()
+                .inclusive()
+                .addCanonicalPattern("Country", "Australia")
+                .addCanonicalPattern("State.*", "A.*")
+                .build();
 
-        // Match against Calliope Topic object
-        Topic topic = Topic.fromHl7("2.4", "ADT", "A01", "gw", "target", "orig", "dest");
-        assertThat(hl7VersionMask.matches(topic)).isTrue();
+        assertThat(mask.matches(canberra)).isTrue();
+        assertThat(mask.matches(sydney)).isFalse();
+
+        // Mismatched qualifier regex
+        TopicMask wrongQualifierMask = TopicMask.builder()
+                .topicCanonicalNameBased()
+                .inclusive()
+                .addCanonicalPattern("Province", "Australia")
+                .build();
+
+        assertThat(wrongQualifierMask.matches(canberra)).isFalse();
     }
 
     @Test
-    @DisplayName("Should enforce strict dot boundaries without letting wildcards silently span elements")
-    void testStrictDotBoundaries() {
-        // 2-element mask must not match 4-element topic
-        TopicMask shortMask = TopicMask.of("harmonia.*");
-        assertThat(shortMask.matches("harmonia.mneme")).isTrue();
-        assertThat(shortMask.matches("harmonia.mneme.iu.1234567890abcdef1234567890abcdef")).isFalse();
+    @DisplayName("Element-wise regex matching and literal dot boundaries")
+    void testElementWiseRegexIsolation() {
+        TopicMask mask = TopicMask.builder()
+                .topicNameBased()
+                .exact()
+                .addNamePattern("Health")
+                .addNamePattern("HL7|FHIR")
+                .addNamePattern("2\\..*|R5")
+                .addNamePattern("ADT.*")
+                .addNamePattern("A0[18]")
+                .build();
 
-        // 5-element mask must not match 4-element topic
-        TopicMask longMask = TopicMask.of("harmonia.mneme.iu.*.extra");
-        assertThat(longMask.matches("harmonia.mneme.iu.1234567890abcdef1234567890abcdef")).isFalse();
+        Topic adtA01 = Topic.fromHl7("ADT", "A01", null);
+        Topic adtA08 = Topic.fromHl7("ADT", "A08", null);
+        Topic adtA03 = Topic.fromHl7("ADT", "A03", null);
+        Topic fhirPatient = Topic.fromFhir("Patient", "create", null);
+
+        assertThat(mask.matches(adtA01)).isTrue();
+        assertThat(mask.matches(adtA08)).isTrue();
+        assertThat(mask.matches(adtA03)).isFalse();
+        assertThat(mask.matches(fhirPatient)).isFalse();
     }
 
     @Test
-    @DisplayName("Should safely handle null and blank match candidates")
-    void testNullAndBlankCandidates() {
-        TopicMask mask = TopicMask.of("harmonia.mneme.iu.*");
+    @DisplayName("Default unrestricted mask matches any Topic")
+    void testUnrestrictedMask() {
+        TopicMask unrestricted = TopicMask.unrestricted();
 
-        assertThat(mask.matches((String) null)).isFalse();
-        assertThat(mask.matches("")).isFalse();
-        assertThat(mask.matches("   ")).isFalse();
-        assertThat(mask.matches((Topic) null)).isFalse();
-        assertThat(mask.matches((InformationUnitIdentifier) null)).isFalse();
+        assertThat(unrestricted.matches(Topic.fromName("Health.HL7.2.4.ADT.A01"))).isTrue();
+        assertThat(unrestricted.matches(Topic.fromName("harmonia.mneme.iu.0123456789abcdef0123456789abcdef"))).isTrue();
+        assertThat(unrestricted.matches(Topic.fromName("Single"))).isTrue();
+        assertThat(unrestricted.matches((Topic) null)).isFalse();
     }
 
     @Test
-    @DisplayName("Should reject invalid mask patterns during compilation")
-    void testInvalidMaskPatternRejection() {
-        // Null or blank
-        assertThatThrownBy(() -> TopicMask.of(null))
-                .isInstanceOf(IllegalArgumentException.class);
-        assertThatThrownBy(() -> TopicMask.of("   "))
-                .isInstanceOf(IllegalArgumentException.class);
+    @DisplayName("fromPattern parses wildcard shorthand and exact mask syntax")
+    void testFromPatternFactory() {
+        TopicMask mask = TopicMask.fromPattern("Health.HL7.*");
 
-        // Invalid regex syntax in an element
-        assertThatThrownBy(() -> TopicMask.of("Health.HL7.[unclosed-bracket.ADT"))
+        assertThat(mask.getType()).isEqualTo(TopicMaskType.TopicNameBased);
+        assertThat(mask.getMaskType()).isEqualTo(MaskType.Inclusive);
+        assertThat(mask.getDepth()).isEqualTo(2);
+
+        assertThat(mask.matches(Topic.fromName("Health.HL7.2.4.ADT.A01"))).isTrue();
+        assertThat(mask.matches(Topic.fromName("Health.FHIR.R5"))).isFalse();
+    }
+
+    @Test
+    @DisplayName("TopicMask for InformationUnits matches IU topics and specific IU UUID")
+    void testInformationUnitMasks() {
+        UUID iu1 = UUID.fromString("123e4567-e89b-12d3-a456-426614174000");
+        UUID iu2 = UUID.fromString("987fcdeb-51a2-43d7-b890-123456789abc");
+
+        Topic topic1 = Topic.forInformationUnit(iu1);
+        Topic topic2 = Topic.forInformationUnit(iu2);
+        Topic other = Topic.fromName("Health.HL7.2.4.ADT.A01");
+
+        TopicMask allIUs = TopicMask.forInformationUnits();
+        assertThat(allIUs.matches(topic1)).isTrue();
+        assertThat(allIUs.matches(topic2)).isTrue();
+        assertThat(allIUs.matches(other)).isFalse();
+
+        TopicMask specificIU = TopicMask.forInformationUnit(iu1);
+        assertThat(specificIU.matches(topic1)).isTrue();
+        assertThat(specificIU.matches(topic2)).isFalse();
+    }
+
+    @Test
+    @DisplayName("Invalid regex syntax is rejected at construction time")
+    void testInvalidRegexRejection() {
+        assertThatThrownBy(() -> TopicMask.builder().addNamePattern("[invalid(").build())
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("Invalid regular expression in mask element");
+                .hasMessageContaining("Invalid regular expression syntax");
     }
 
     @Test
-    @DisplayName("Should support equality, hashCode, and toString")
-    void testObjectMethods() {
-        TopicMask m1 = TopicMask.of("Health.HL7.2.4.ADT.*");
-        TopicMask m2 = TopicMask.of("Health.HL7.2.4.ADT.*");
-        TopicMask m3 = TopicMask.of("Health.FHIR.R5.Patient.*");
+    @DisplayName("TopicMask is immutable and provides diagnostic formatting")
+    void testTopicMaskDiagnostics() {
+        UUID id = UUID.randomUUID();
+        TopicMask mask = TopicMask.builder()
+                .id(id)
+                .topicNameBased()
+                .exact()
+                .addNamePattern("Health")
+                .addNamePattern("HL7")
+                .build();
 
-        assertThat(m1).isEqualTo(m2);
-        assertThat(m1.hashCode()).isEqualTo(m2.hashCode());
-        assertThat(m1).isNotEqualTo(m3);
-        assertThat(m1.toString()).isEqualTo("Health.HL7.2.4.ADT.*");
-        assertThat(m1.elementCount()).isEqualTo(6);
-        assertThat(m1.elementPatterns()).containsExactly("Health", "HL7", "2", "4", "ADT", "*");
+        assertThat(mask.getId()).isEqualTo(id);
+        assertThat(mask.getShortId()).isEqualTo(id.toString().substring(0, 8));
+        assertThat(mask.getMaskPattern()).isEqualTo("Health.HL7");
+        assertThat(mask.toString()).contains("TopicMask{");
     }
 }

@@ -21,6 +21,8 @@ import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeCommitOutcome;
 import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
 import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
 import net.fhirfactory.harmonia.model.security.HarmoniaSecurityLabelEnum;
+import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.topic.TopicMask;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -35,9 +37,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /**
- * Tests for the four Information Unit metadata contexts and relationships:
- * {@link ManagementContext}, {@link InformationCoordinates}, {@link InformationSecurityContext},
- * {@link LifecycleContext}, {@link InformationUnitRelationship}, and {@link InformationUnitMetadata}.
+ * Tests for the Information Unit metadata contexts and relationships:
+ * {@link ManagementContext}, {@link InformationCoordinates}, {@link InformationItinerary},
+ * {@link InformationSecurityContext}, {@link LifecycleContext}, {@link InformationUnitRelationship}, and {@link InformationUnitMetadata}.
  */
 class InformationUnitMetadataTest {
 
@@ -112,76 +114,74 @@ class InformationUnitMetadataTest {
     }
 
     // =========================================================================
-    // InformationCoordinates Tests
+    // InformationCoordinates Tests (Strongly Typed Topics)
     // =========================================================================
 
     @Test
-    @DisplayName("InformationCoordinates: should hold four distinct named Topic references and preserve independence from security")
-    void testInformationCoordinates() {
-        InformationCoordinates coords = InformationCoordinates.of(
-                "Health.Persistence.Gateway.Default",
-                "Health.Persistence.Endpoint.RestFhir",
-                "Health.Location.HospitalNorth.Room101",
-                "Health.Owner.MetropolitanHealthDistrict");
+    @DisplayName("InformationCoordinates: should construct with four strongly typed Topic references and support accessors")
+    void testInformationCoordinatesConstruction() {
+        Topic gw = Topic.fromName("Health.Persistence.Gateway.Default");
+        Topic ep = Topic.fromName("Health.Persistence.Endpoint.Rest");
+        Topic loc = Topic.fromName("Health.Location.HospitalNorth");
+        Topic owner = Topic.fromName("Health.Owner.HealthSystem");
 
-        assertThat(coords.persistenceGateway()).contains("Health.Persistence.Gateway.Default");
-        assertThat(coords.gatewayEndpoint()).contains("Health.Persistence.Endpoint.RestFhir");
-        assertThat(coords.informationLocation()).contains("Health.Location.HospitalNorth.Room101");
-        assertThat(coords.informationOwner()).contains("Health.Owner.MetropolitanHealthDistrict");
+        InformationCoordinates coords = InformationCoordinates.of(gw, ep, loc, owner);
 
-        // With mutators
-        InformationCoordinates updated = coords
-                .withPersistenceGateway("Health.Persistence.Gateway.Secondary")
-                .withGatewayEndpoint("Health.Persistence.Endpoint.DirectDb")
-                .withInformationLocation("Health.Location.HospitalSouth")
-                .withInformationOwner("Health.Owner.RegionalHealthDistrict");
+        assertThat(coords.persistenceGateway()).contains(gw);
+        assertThat(coords.gatewayEndpoint()).contains(ep);
+        assertThat(coords.informationLocation()).contains(loc);
+        assertThat(coords.informationOwner()).contains(owner);
 
-        assertThat(updated.persistenceGateway()).contains("Health.Persistence.Gateway.Secondary");
-        assertThat(updated.gatewayEndpoint()).contains("Health.Persistence.Endpoint.DirectDb");
-        assertThat(updated.informationLocation()).contains("Health.Location.HospitalSouth");
-        assertThat(updated.informationOwner()).contains("Health.Owner.RegionalHealthDistrict");
+        // Name helpers
+        assertThat(coords.persistenceGatewayName()).contains("Health.Persistence.Gateway.Default");
+        assertThat(coords.gatewayEndpointName()).contains("Health.Persistence.Endpoint.Rest");
+        assertThat(coords.informationLocationName()).contains("Health.Location.HospitalNorth");
+        assertThat(coords.informationOwnerName()).contains("Health.Owner.HealthSystem");
 
-        // Trimming of empty / whitespace strings
-        InformationCoordinates emptyCoords = new InformationCoordinates("  ", "\t", null, "");
-        assertThat(emptyCoords.persistenceGateway()).isEmpty();
-        assertThat(emptyCoords.gatewayEndpoint()).isEmpty();
-        assertThat(emptyCoords.informationLocation()).isEmpty();
-        assertThat(emptyCoords.informationOwner()).isEmpty();
+        // Builder
+        InformationCoordinates built = InformationCoordinates.builder()
+                .persistenceGateway(gw)
+                .informationOwner(owner)
+                .build();
+
+        assertThat(built.persistenceGateway()).contains(gw);
+        assertThat(built.gatewayEndpoint()).isEmpty();
+        assertThat(built.informationLocation()).isEmpty();
+        assertThat(built.informationOwner()).contains(owner);
     }
 
     // =========================================================================
-    // InformationSecurityContext Tests
+    // InformationSecurityContext Tests (Strongly Typed Topics)
     // =========================================================================
 
     @Test
-    @DisplayName("InformationSecurityContext: should encapsulate IU-side security requirements")
+    @DisplayName("InformationSecurityContext: should express required criteria and compartments with Topics and TopicMasks")
     void testInformationSecurityContext() {
-        InformationSecurityContext security = InformationSecurityContext.builder()
-                .addUnitCriterion("Health.Security.Criterion.HighAssurance")
-                .addContainerCriterion("Health.Security.Container.EncryptedEnvelope")
-                .addContentCriterion("Health.Security.Content.ClinicalSensitive")
+        Topic unitTopic = Topic.fromName("Health.Security.PHI");
+        Topic contTopic = Topic.fromName("Health.Security.Container.Egress");
+        Topic contentTopic = Topic.fromName("Health.Security.Content.Sensitive");
+        TopicMask compMask = TopicMask.fromPattern("Health.Compartment.Oncology.*");
+
+        InformationSecurityContext sec = InformationSecurityContext.builder()
+                .addUnitCriterion(unitTopic)
+                .addContainerCriterion(contTopic)
+                .addContentCriterion(contentTopic)
                 .addActionMask("READ")
-                .addActionMask("ACCESS")
-                .addCompartmentMask("*.*.InformationCompartment.PersonalInformation*")
+                .addActionMask("EXPORT")
+                .addCompartmentMask(compMask)
                 .addSecurityLabel(HarmoniaSecurityLabelEnum.RESTRICTED)
                 .confidentiality(FhirConfidentialityEnum.R)
-                .attribute("retentionClearance", "Level3")
+                .putAttribute("legalHold", "true")
                 .build();
 
-        assertThat(security.unitCriteria()).containsExactly("Health.Security.Criterion.HighAssurance");
-        assertThat(security.containerCriteria()).containsExactly("Health.Security.Container.EncryptedEnvelope");
-        assertThat(security.contentCriteria()).containsExactly("Health.Security.Content.ClinicalSensitive");
-        assertThat(security.actionMasks()).containsExactlyInAnyOrder("READ", "ACCESS");
-        assertThat(security.compartmentMasks()).containsExactly("*.*.InformationCompartment.PersonalInformation*");
-        assertThat(security.securityLabels()).containsExactly(HarmoniaSecurityLabelEnum.RESTRICTED);
-        assertThat(security.confidentiality()).contains(FhirConfidentialityEnum.R);
-        assertThat(security.attributes()).containsEntry("retentionClearance", "Level3");
-
-        // Immutability
-        assertThatThrownBy(() -> security.actionMasks().add("WRITE"))
-                .isInstanceOf(UnsupportedOperationException.class);
-        assertThatThrownBy(() -> security.attributes().put("foo", "bar"))
-                .isInstanceOf(UnsupportedOperationException.class);
+        assertThat(sec.unitCriteria()).containsExactly(unitTopic);
+        assertThat(sec.containerCriteria()).containsExactly(contTopic);
+        assertThat(sec.contentCriteria()).containsExactly(contentTopic);
+        assertThat(sec.actionMasks()).containsExactly("READ", "EXPORT");
+        assertThat(sec.compartmentMasks()).containsExactly(compMask);
+        assertThat(sec.securityLabels()).containsExactly(HarmoniaSecurityLabelEnum.RESTRICTED);
+        assertThat(sec.confidentiality()).contains(FhirConfidentialityEnum.R);
+        assertThat(sec.attribute("legalHold")).contains("true");
     }
 
     // =========================================================================
@@ -189,29 +189,24 @@ class InformationUnitMetadataTest {
     // =========================================================================
 
     @Test
-    @DisplayName("LifecycleContext: should encapsulate lifecycle stage, timestamps, outcomes, and retention")
+    @DisplayName("LifecycleContext: should coordinate lifecycle stages and retention hold")
     void testLifecycleContext() {
         Instant now = Instant.now();
-        LifecycleContext lifecycle = LifecycleContext.builder()
+        LifecycleContext context = LifecycleContext.builder()
                 .lifecycleStage("COMMITTED")
                 .persistenceTimestamp(now)
                 .commitOutcome(AuthoritativeCommitOutcome.COMMITTED)
                 .retained(true)
-                .coordinationAttribute("storageTier", "hot")
+                .archived(false)
+                .putCoordinationAttribute("leaseId", "L-9988")
                 .build();
 
-        assertThat(lifecycle.lifecycleStage()).contains("COMMITTED");
-        assertThat(lifecycle.persistenceTimestamp()).contains(now);
-        assertThat(lifecycle.commitOutcome()).contains(AuthoritativeCommitOutcome.COMMITTED);
-        assertThat(lifecycle.isRetained()).isTrue();
-        assertThat(lifecycle.coordinationAttributes()).containsEntry("storageTier", "hot");
-
-        // With mutator for retirement (RETIRE)
-        LifecycleContext retired = lifecycle
-                .withLifecycleStage("RETIRED")
-                .withRetained(false);
-        assertThat(retired.lifecycleStage()).contains("RETIRED");
-        assertThat(retired.isRetained()).isFalse();
+        assertThat(context.lifecycleStage()).contains("COMMITTED");
+        assertThat(context.persistenceTimestamp()).contains(now);
+        assertThat(context.commitOutcome()).contains(AuthoritativeCommitOutcome.COMMITTED);
+        assertThat(context.isRetained()).isTrue();
+        assertThat(context.isArchived()).isFalse();
+        assertThat(context.coordinationAttribute("leaseId")).contains("L-9988");
     }
 
     // =========================================================================
@@ -219,62 +214,52 @@ class InformationUnitMetadataTest {
     // =========================================================================
 
     @Test
-    @DisplayName("InformationUnitRelationship: should support local and remote relationships with defensive validation")
-    void testInformationUnitRelationship() {
-        UUID targetUuid = UUID.randomUUID();
-        InformationUnitRelationship localRel = InformationUnitRelationship.local(
-                InformationUnitRelationship.TYPE_RELATES_TO, targetUuid);
-
-        assertThat(localRel.relationshipType()).isEqualTo(InformationUnitRelationship.TYPE_RELATES_TO);
-        assertThat(localRel.targetIdentifier()).isEqualTo(targetUuid.toString());
+    @DisplayName("InformationUnitRelationship: should support local and remote target references")
+    void testRelationships() {
+        InformationUnitRelationship localRel = InformationUnitRelationship.local("basedOn", "iu-001");
         assertThat(localRel.isLocal()).isTrue();
-        assertThat(localRel.description()).isEmpty();
+        assertThat(localRel.isRemote()).isFalse();
+        assertThat(localRel.targetIdentifier()).isEqualTo("iu-001");
 
-        InformationUnitRelationship remoteRel = InformationUnitRelationship.remote(
-                InformationUnitRelationship.TYPE_BASED_ON, "https://external-ehr.org/Observation/9988");
-
-        assertThat(remoteRel.relationshipType()).isEqualTo(InformationUnitRelationship.TYPE_BASED_ON);
-        assertThat(remoteRel.targetIdentifier()).isEqualTo("https://external-ehr.org/Observation/9988");
+        InformationUnitRelationship remoteRel = InformationUnitRelationship.remote("derivedFrom", "http://external.hie/iu/ext-99");
+        assertThat(remoteRel.isRemote()).isTrue();
         assertThat(remoteRel.isLocal()).isFalse();
+        assertThat(remoteRel.targetIdentifier()).isEqualTo("http://external.hie/iu/ext-99");
 
-        // Validation unhappy paths
-        assertThatThrownBy(() -> new InformationUnitRelationship(null, "target", true, null))
+        // Null relationshipType or targetIdentifier rejected
+        assertThatThrownBy(() -> new InformationUnitRelationship(null, "target"))
                 .isInstanceOf(IllegalArgumentException.class);
-        assertThatThrownBy(() -> new InformationUnitRelationship("relatesTo", "", true, null))
+        assertThatThrownBy(() -> new InformationUnitRelationship("rel", null))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
     // =========================================================================
-    // InformationUnitMetadata Composite Tests
+    // Composite InformationUnitMetadata Tests
     // =========================================================================
 
     @Test
-    @DisplayName("InformationUnitMetadata: should compose all four contexts and relationships with empty defaults")
+    @DisplayName("InformationUnitMetadata: should compose all contexts and enforce immutability")
     void testInformationUnitMetadataComposition() {
-        InformationUnitMetadata empty = InformationUnitMetadata.empty();
-        assertThat(empty.managementContext()).isNotNull();
-        assertThat(empty.informationCoordinates()).isNotNull();
-        assertThat(empty.securityContext()).isNotNull();
-        assertThat(empty.lifecycleContext()).isNotNull();
-        assertThat(empty.relationships()).isEmpty();
+        ManagementContext mgmt = ManagementContext.builder().operationalVersion("1").build();
+        Topic gw = Topic.fromName("Health.Gateway.A");
+        InformationCoordinates coords = InformationCoordinates.builder().persistenceGateway(gw).build();
+        Topic src = Topic.fromName("Health.Component.In");
+        InformationItinerary itinerary = InformationItinerary.builder().sourceEntryComponent(src).build();
+        InformationSecurityContext sec = InformationSecurityContext.builder().addActionMask("READ").build();
+        LifecycleContext life = LifecycleContext.builder().lifecycleStage("ACCEPTED").build();
+        InformationUnitRelationship rel = InformationUnitRelationship.local("relatesTo", "iu-002");
 
-        InformationUnitRelationship rel1 = InformationUnitRelationship.local("partOf", "target-001");
-        InformationUnitMetadata populated = InformationUnitMetadata.builder()
-                .managementContext(ManagementContext.builder().activeGeneration("gen-1").build())
-                .informationCoordinates(InformationCoordinates.builder().informationOwner("OwnerOrg").build())
-                .securityContext(InformationSecurityContext.builder().addActionMask("ACCESS").build())
-                .lifecycleContext(LifecycleContext.builder().lifecycleStage("CURRENT").build())
-                .addRelationship(rel1)
-                .build();
+        InformationUnitMetadata metadata = new InformationUnitMetadata(mgmt, coords, itinerary, sec, life, List.of(rel));
 
-        assertThat(populated.managementContext().activeGeneration()).contains("gen-1");
-        assertThat(populated.informationCoordinates().informationOwner()).contains("OwnerOrg");
-        assertThat(populated.securityContext().actionMasks()).containsExactly("ACCESS");
-        assertThat(populated.lifecycleContext().lifecycleStage()).contains("CURRENT");
-        assertThat(populated.relationships()).containsExactly(rel1);
+        assertThat(metadata.managementContext()).isEqualTo(mgmt);
+        assertThat(metadata.informationCoordinates()).isEqualTo(coords);
+        assertThat(metadata.informationItinerary()).isEqualTo(itinerary);
+        assertThat(metadata.securityContext()).isEqualTo(sec);
+        assertThat(metadata.lifecycleContext()).isEqualTo(life);
+        assertThat(metadata.relationships()).containsExactly(rel);
 
-        // Immutability of relationships list
-        assertThatThrownBy(() -> populated.relationships().add(InformationUnitRelationship.local("relatesTo", "target-002")))
+        // Immutability on relationships
+        assertThatThrownBy(() -> metadata.relationships().add(InformationUnitRelationship.local("x", "y")))
                 .isInstanceOf(UnsupportedOperationException.class);
     }
 }

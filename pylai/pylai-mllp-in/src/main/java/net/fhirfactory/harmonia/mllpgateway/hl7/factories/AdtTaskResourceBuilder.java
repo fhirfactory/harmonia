@@ -231,14 +231,18 @@ public class AdtTaskResourceBuilder {
 
         // Communication resource as Task.input
         if (communication != null) {
-            task.addContained(communication);
+            Communication containedComm = communication.copy();
+            String idPart = communication.getIdElement() != null && communication.getIdElement().hasIdPart() ?
+                    communication.getIdElement().getIdPart() : communication.getId();
+            containedComm.setId("#" + idPart);
+            task.addContained(containedComm);
 
             Task.TaskInputComponent input = task.addInput();
             input.getType().setText("HL7 Communication Resource").addCoding()
                     .setSystem("http://terminology.hl7.org/CodeSystem/task-input-type")
                     .setCode("input-communication")
                     .setDisplay("HL7 Communication Resource");
-            String commRef = communication.getIdPart() != null ? "#" + communication.getIdPart() : "#" + communication.getId();
+            String commRef = "#" + idPart;
             input.setValue(new Reference(commRef));
         }
 

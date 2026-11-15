@@ -71,8 +71,7 @@ class MllpDestinationRegistryTest {
         assertThat(resolved2.get().getDestinationId()).isEqualTo("LIS_MAIN");
 
         // Resolve by topic origin (facility code)
-        Topic topic3 = new Topic();
-        topic3.setOrigin("LAB_MAIN");
+        Topic topic3 = new Topic("Health", "HL7", "2.4", "ADT", "A01", null, null, "LAB_MAIN", null, new java.util.Date());
         Optional<MllpDestinationConfig> resolved3 = registry.resolveDestination(topic3);
         assertThat(resolved3).isPresent();
         assertThat(resolved3.get().getDestinationId()).isEqualTo("LIS_MAIN");

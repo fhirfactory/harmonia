@@ -96,6 +96,10 @@ public final class InformationUnitRelationship implements Serializable {
         this.description = description != null && !description.isBlank() ? description.trim() : null;
     }
 
+    public InformationUnitRelationship(String relationshipType, String targetIdentifier) {
+        this(relationshipType, targetIdentifier, true, null);
+    }
+
     /**
      * Creates a local relationship to another Information Unit by target identifier string (UUID or Topic).
      *
@@ -175,6 +179,11 @@ public final class InformationUnitRelationship implements Serializable {
     @JsonProperty("local")
     public boolean isLocal() {
         return local;
+    }
+
+    @JsonIgnore
+    public boolean isRemote() {
+        return !local;
     }
 
     /**

@@ -22,27 +22,30 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import net.fhirfactory.harmonia.model.topic.Topic;
 
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.UUID;
 
 /**
  * Encapsulates the four semantically distinct named Topic references providing operational resolution and ownership.
  * <p>
  * <b>Architectural Context &amp; Authority:</b>
- * In accordance with {@code DRP-Information-Unit-Framework.Final.001.md} (§§5.2, 19; IU-04):
+ * In accordance with {@code DRP-Information-Unit-Framework.Final.001.md} (§§5.2, 19; IU-04) and
+ * {@code DRP-Information-Unit-Framework.Final.002.md} (§3):
  * <ul>
  *   <li>{@code InformationCoordinates} comprises four semantically distinct named Topic references:
  *     <ol>
- *       <li><b>PersistenceGateway:</b> Topic identifier/name describing a named PersistenceService gateway or capability.</li>
- *       <li><b>GatewayEndpoint:</b> Topic identifier/name describing a named logical endpoint or parameter context.</li>
- *       <li><b>InformationLocation:</b> Topic identifier/name describing the logical location or node where information lives.</li>
- *       <li><b>InformationOwner:</b> Topic identifier/name describing the operational owner (e.g. organisation or facility).</li>
+ *       <li><b>PersistenceGateway:</b> Strongly typed Topic describing a named PersistenceService gateway or capability.</li>
+ *       <li><b>GatewayEndpoint:</b> Strongly typed Topic describing a named logical endpoint or parameter context.</li>
+ *       <li><b>InformationLocation:</b> Strongly typed Topic describing the logical location or node where information lives.</li>
+ *       <li><b>InformationOwner:</b> Strongly typed Topic describing the operational owner (e.g. organisation or facility).</li>
  *     </ol>
  *   </li>
- *   <li>These are <b>Topic names/identities</b> within governed containment hierarchies, <b>not</b> inline gateway implementations,
- *       network URLs, connection credentials, or physical database addresses.</li>
+ *   <li>These are <b>strongly typed Topic references</b> preserving full immutable {@link UUID} identity, <b>not</b>
+ *       inline gateway implementations, network URLs, connection credentials, or physical database addresses.</li>
  *   <li>Mnemosyne interprets these coordinates to resolve a PersistenceService and access context.</li>
  *   <li><b>CRITICAL ARCHITECTURAL INVARIANT:</b> {@code InformationCoordinates} is <b>100% independent of SecurityContext</b>.
  *       Operational ownership or location does not establish a compartment, clearance, right to read, or authorisation.</li>
@@ -51,7 +54,6 @@ import java.util.Optional;
  * <b>Defensive Programming:</b>
  * <ul>
  *   <li>Immutable value object design.</li>
- *   <li>Coordinate fields are trimmed and sanitized; empty strings are treated as absent.</li>
  *   <li>Accessors return {@link Optional} to explicitly signal that individual coordinates may be unpopulated.</li>
  * </ul>
  */
@@ -63,10 +65,10 @@ public final class InformationCoordinates implements Serializable {
 
     private static final InformationCoordinates EMPTY = new InformationCoordinates(null, null, null, null);
 
-    private final String persistenceGateway;
-    private final String gatewayEndpoint;
-    private final String informationLocation;
-    private final String informationOwner;
+    private final Topic persistenceGateway;
+    private final Topic gatewayEndpoint;
+    private final Topic informationLocation;
+    private final Topic informationOwner;
 
     /**
      * Canonical constructor establishing validated information coordinate Topic references.
@@ -78,18 +80,14 @@ public final class InformationCoordinates implements Serializable {
      */
     @JsonCreator
     public InformationCoordinates(
-            @JsonProperty("persistenceGateway") String persistenceGateway,
-            @JsonProperty("gatewayEndpoint") String gatewayEndpoint,
-            @JsonProperty("informationLocation") String informationLocation,
-            @JsonProperty("informationOwner") String informationOwner) {
-        this.persistenceGateway = sanitize(persistenceGateway);
-        this.gatewayEndpoint = sanitize(gatewayEndpoint);
-        this.informationLocation = sanitize(informationLocation);
-        this.informationOwner = sanitize(informationOwner);
-    }
-
-    private static String sanitize(String input) {
-        return input != null && !input.isBlank() ? input.trim() : null;
+            @JsonProperty("persistenceGateway") Topic persistenceGateway,
+            @JsonProperty("gatewayEndpoint") Topic gatewayEndpoint,
+            @JsonProperty("informationLocation") Topic informationLocation,
+            @JsonProperty("informationOwner") Topic informationOwner) {
+        this.persistenceGateway = persistenceGateway;
+        this.gatewayEndpoint = gatewayEndpoint;
+        this.informationLocation = informationLocation;
+        this.informationOwner = informationOwner;
     }
 
     /**
@@ -111,10 +109,10 @@ public final class InformationCoordinates implements Serializable {
      * @return populated InformationCoordinates
      */
     public static InformationCoordinates of(
-            String persistenceGateway,
-            String gatewayEndpoint,
-            String informationLocation,
-            String informationOwner) {
+            Topic persistenceGateway,
+            Topic gatewayEndpoint,
+            Topic informationLocation,
+            Topic informationOwner) {
         return new InformationCoordinates(persistenceGateway, gatewayEndpoint, informationLocation, informationOwner);
     }
 
@@ -128,131 +126,110 @@ public final class InformationCoordinates implements Serializable {
     }
 
     // =========================================================================
-    // Accessors
+    // Core Accessors (Strongly Typed Topic References)
     // =========================================================================
 
-    /**
-     * Returns the PersistenceGateway Topic reference.
-     *
-     * @return optional PersistenceGateway Topic reference
-     */
-    @JsonIgnore
-    public Optional<String> persistenceGateway() {
+    public Optional<Topic> persistenceGateway() {
         return Optional.ofNullable(persistenceGateway);
     }
 
-    /**
-     * Returns the raw PersistenceGateway Topic reference, or null if not set.
-     *
-     * @return PersistenceGateway, or null
-     */
-    @JsonProperty("persistenceGateway")
-    public String getPersistenceGateway() {
+    public Topic getPersistenceGateway() {
         return persistenceGateway;
     }
 
-    /**
-     * Returns the GatewayEndpoint Topic reference.
-     *
-     * @return optional GatewayEndpoint Topic reference
-     */
-    @JsonIgnore
-    public Optional<String> gatewayEndpoint() {
+    public Optional<Topic> gatewayEndpoint() {
         return Optional.ofNullable(gatewayEndpoint);
     }
 
-    /**
-     * Returns the raw GatewayEndpoint Topic reference, or null if not set.
-     *
-     * @return GatewayEndpoint, or null
-     */
-    @JsonProperty("gatewayEndpoint")
-    public String getGatewayEndpoint() {
+    public Topic getGatewayEndpoint() {
         return gatewayEndpoint;
     }
 
-    /**
-     * Returns the InformationLocation Topic reference.
-     *
-     * @return optional InformationLocation Topic reference
-     */
-    @JsonIgnore
-    public Optional<String> informationLocation() {
+    public Optional<Topic> informationLocation() {
         return Optional.ofNullable(informationLocation);
     }
 
-    /**
-     * Returns the raw InformationLocation Topic reference, or null if not set.
-     *
-     * @return InformationLocation, or null
-     */
-    @JsonProperty("informationLocation")
-    public String getInformationLocation() {
+    public Topic getInformationLocation() {
         return informationLocation;
     }
 
-    /**
-     * Returns the InformationOwner Topic reference.
-     *
-     * @return optional InformationOwner Topic reference
-     */
-    @JsonIgnore
-    public Optional<String> informationOwner() {
+    public Optional<Topic> informationOwner() {
         return Optional.ofNullable(informationOwner);
     }
 
-    /**
-     * Returns the raw InformationOwner Topic reference, or null if not set.
-     *
-     * @return InformationOwner, or null
-     */
-    @JsonProperty("informationOwner")
-    public String getInformationOwner() {
+    public Topic getInformationOwner() {
         return informationOwner;
+    }
+
+    // =========================================================================
+    // Derived Convenience Accessors
+    // =========================================================================
+
+    @JsonIgnore
+    public Optional<UUID> persistenceGatewayId() {
+        return persistenceGateway().map(Topic::getId);
+    }
+
+    @JsonIgnore
+    public Optional<UUID> gatewayEndpointId() {
+        return gatewayEndpoint().map(Topic::getId);
+    }
+
+    @JsonIgnore
+    public Optional<UUID> informationLocationId() {
+        return informationLocation().map(Topic::getId);
+    }
+
+    @JsonIgnore
+    public Optional<UUID> informationOwnerId() {
+        return informationOwner().map(Topic::getId);
+    }
+
+    @JsonIgnore
+    public Optional<String> persistenceGatewayName() {
+        return persistenceGateway().map(Topic::getName);
+    }
+
+    @JsonIgnore
+    public Optional<String> gatewayEndpointName() {
+        return gatewayEndpoint().map(Topic::getName);
+    }
+
+    @JsonIgnore
+    public Optional<String> informationLocationName() {
+        return informationLocation().map(Topic::getName);
+    }
+
+    @JsonIgnore
+    public Optional<String> informationOwnerName() {
+        return informationOwner().map(Topic::getName);
+    }
+
+    public boolean isEmpty() {
+        return persistenceGateway == null
+                && gatewayEndpoint == null
+                && informationLocation == null
+                && informationOwner == null;
     }
 
     // =========================================================================
     // Immutable Derivations ("With" Mutators)
     // =========================================================================
 
-    /**
-     * Derives an immutable copy with an updated PersistenceGateway Topic reference.
-     *
-     * @param gateway new PersistenceGateway Topic
-     * @return new InformationCoordinates
-     */
-    public InformationCoordinates withPersistenceGateway(String gateway) {
-        return new InformationCoordinates(gateway, this.gatewayEndpoint, this.informationLocation, this.informationOwner);
+    public InformationCoordinates withPersistenceGateway(Topic persistenceGateway) {
+        return new InformationCoordinates(persistenceGateway, this.gatewayEndpoint, this.informationLocation, this.informationOwner);
     }
 
-    /**
-     * Derives an immutable copy with an updated GatewayEndpoint Topic reference.
-     *
-     * @param endpoint new GatewayEndpoint Topic
-     * @return new InformationCoordinates
-     */
-    public InformationCoordinates withGatewayEndpoint(String endpoint) {
-        return new InformationCoordinates(this.persistenceGateway, endpoint, this.informationLocation, this.informationOwner);
+    public InformationCoordinates withGatewayEndpoint(Topic gatewayEndpoint) {
+        return new InformationCoordinates(this.persistenceGateway, gatewayEndpoint, this.informationLocation, this.informationOwner);
     }
 
-    /**
-     * Derives an immutable copy with an updated InformationLocation Topic reference.
-     *
-     * @param location new InformationLocation Topic
-     * @return new InformationCoordinates
-     */
-    public InformationCoordinates withInformationLocation(String location) {
-        return new InformationCoordinates(this.persistenceGateway, this.gatewayEndpoint, location, this.informationOwner);
+    public InformationCoordinates withInformationLocation(Topic informationLocation) {
+        return new InformationCoordinates(this.persistenceGateway, this.gatewayEndpoint, informationLocation, this.informationOwner);
     }
 
-    /**
-     * Derives an immutable copy with an updated InformationOwner Topic reference.
-     *
-     * @param owner new InformationOwner Topic
-     * @return new InformationCoordinates
-     */
-    public InformationCoordinates withInformationOwner(String owner) {
-        return new InformationCoordinates(this.persistenceGateway, this.gatewayEndpoint, this.informationLocation, owner);
+    public InformationCoordinates withInformationOwner(Topic informationOwner) {
+        return new InformationCoordinates(this.persistenceGateway, this.gatewayEndpoint, this.informationLocation, informationOwner);
     }
 
     // =========================================================================
@@ -264,10 +241,10 @@ public final class InformationCoordinates implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         InformationCoordinates that = (InformationCoordinates) o;
-        return Objects.equals(persistenceGateway, that.persistenceGateway)
-                && Objects.equals(gatewayEndpoint, that.gatewayEndpoint)
-                && Objects.equals(informationLocation, that.informationLocation)
-                && Objects.equals(informationOwner, that.informationOwner);
+        return Objects.equals(persistenceGateway, that.persistenceGateway) &&
+                Objects.equals(gatewayEndpoint, that.gatewayEndpoint) &&
+                Objects.equals(informationLocation, that.informationLocation) &&
+                Objects.equals(informationOwner, that.informationOwner);
     }
 
     @Override
@@ -278,10 +255,10 @@ public final class InformationCoordinates implements Serializable {
     @Override
     public String toString() {
         return "InformationCoordinates{" +
-                "persistenceGateway='" + persistenceGateway + '\'' +
-                ", gatewayEndpoint='" + gatewayEndpoint + '\'' +
-                ", informationLocation='" + informationLocation + '\'' +
-                ", informationOwner='" + informationOwner + '\'' +
+                "gateway=" + (persistenceGateway != null ? persistenceGateway.getShortId() : "null") +
+                ", endpoint=" + (gatewayEndpoint != null ? gatewayEndpoint.getShortId() : "null") +
+                ", location=" + (informationLocation != null ? informationLocation.getShortId() : "null") +
+                ", owner=" + (informationOwner != null ? informationOwner.getShortId() : "null") +
                 '}';
     }
 
@@ -289,39 +266,39 @@ public final class InformationCoordinates implements Serializable {
     // Builder
     // =========================================================================
 
-    /**
-     * Fluent builder for {@link InformationCoordinates}.
-     */
     public static final class Builder {
-        private String persistenceGateway;
-        private String gatewayEndpoint;
-        private String informationLocation;
-        private String informationOwner;
 
-        private Builder() {}
+        private Topic persistenceGateway;
+        private Topic gatewayEndpoint;
+        private Topic informationLocation;
+        private Topic informationOwner;
 
-        public Builder persistenceGateway(String persistenceGateway) {
+        public Builder persistenceGateway(Topic persistenceGateway) {
             this.persistenceGateway = persistenceGateway;
             return this;
         }
 
-        public Builder gatewayEndpoint(String gatewayEndpoint) {
+        public Builder gatewayEndpoint(Topic gatewayEndpoint) {
             this.gatewayEndpoint = gatewayEndpoint;
             return this;
         }
 
-        public Builder informationLocation(String informationLocation) {
+        public Builder informationLocation(Topic informationLocation) {
             this.informationLocation = informationLocation;
             return this;
         }
 
-        public Builder informationOwner(String informationOwner) {
+        public Builder informationOwner(Topic informationOwner) {
             this.informationOwner = informationOwner;
             return this;
         }
 
         public InformationCoordinates build() {
-            return new InformationCoordinates(persistenceGateway, gatewayEndpoint, informationLocation, informationOwner);
+            return new InformationCoordinates(
+                    persistenceGateway,
+                    gatewayEndpoint,
+                    informationLocation,
+                    informationOwner);
         }
     }
 }

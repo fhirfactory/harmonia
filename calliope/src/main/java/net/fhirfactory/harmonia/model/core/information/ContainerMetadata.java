@@ -380,6 +380,10 @@ public final class ContainerMetadata implements Serializable {
             return this;
         }
 
+        public Builder putAttribute(String key, String value) {
+            return attribute(key, value);
+        }
+
         public Builder attributes(Map<String, String> attributes) {
             this.attributes.clear();
             if (attributes != null) {

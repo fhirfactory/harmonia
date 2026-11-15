@@ -91,8 +91,18 @@ class ErgonPraxisEndToEndIntegrationTest {
             return petasosSubscriptionMock;
         });
 
-        pragmaCacheService = new PragmaCacheService();
-        pragmaCacheService.init();
+        org.infinispan.client.hotrod.RemoteCacheManager mockCacheManager = mock(org.infinispan.client.hotrod.RemoteCacheManager.class);
+        org.infinispan.client.hotrod.RemoteCache<String, String> mockCache = mock(org.infinispan.client.hotrod.RemoteCache.class);
+        java.util.Map<String, String> remoteStore = new java.util.concurrent.ConcurrentHashMap<>();
+
+        when(mockCacheManager.isStarted()).thenReturn(true);
+        doReturn(mockCache).when(mockCacheManager).getCache(eq(PragmaCacheService.PRAGMA_CACHE_NAME));
+
+        when(mockCache.get(anyString())).thenAnswer(i -> remoteStore.get(i.getArgument(0)));
+        when(mockCache.put(anyString(), anyString())).thenAnswer(i -> remoteStore.put(i.getArgument(0), i.getArgument(1)));
+        when(mockCache.remove(anyString())).thenAnswer(i -> remoteStore.remove(i.getArgument(0)));
+
+        pragmaCacheService = new PragmaCacheService(mockCacheManager);
 
         checkpointManager = new PraxisCheckpointManager(pragmaCacheService, null);
         workflowDispatcher = new PragmaWorkflowDispatcher(camelContext, null);

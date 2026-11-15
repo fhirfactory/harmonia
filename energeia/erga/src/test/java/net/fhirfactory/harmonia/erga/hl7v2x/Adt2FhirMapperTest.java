@@ -68,7 +68,8 @@ class Adt2FhirMapperTest {
         producerTemplate = camelContext.createProducerTemplate();
         mapper = new Adt2FhirMapper();
         fhirContext = FhirContext.forR5();
-        taskCacheService = new TaskCacheService(null, fhirContext);
+        taskCacheService = TaskCacheService.createInMemoryForTesting();
+        taskCacheService.setFhirContext(fhirContext);
         mapper.setTaskCacheService(taskCacheService);
     }
 
