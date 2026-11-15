@@ -1008,7 +1008,7 @@ followed the plan.
 The normative implementation standard for Harmonia is:
 
 [Harmonia Implementation Guide]
-(docs/implementation/Harmonia-ImplementationGuide.md)
+(docs/implementation/Harmonia-Implementation-Guide-Philosophy.md)
 
 All software implementation and implementation-review
 activities MUST comply with this guide.

@@ -4,7 +4,7 @@
 **Status:** Draft 001 — Solution Architect Review  
 **Scope:** All Harmonia software development  
 **Applicability:** Human developers, Codex, Junie and other implementation agents  
-**Proposed location:** `docs/implementation/Harmonia-ImplementationGuide.md`
+**Proposed location:** `docs/implementation/Harmonia-Implementation-Guide-Philosophy.md`
 
 ---
 
@@ -143,7 +143,7 @@ Small value objects and straightforward utility classes need not contain extensi
 
 ### 4.2 Method-Level Documentation
 
-Methods should be documented where their behaviour, contract or implementation is not immediately obvious.
+All public and protected methods and constructors MUST be documented. Private methods MUST also be documented where their purpose, semantics, constraints or implementation decisions are not immediately obvious. No method is exempt from the requirement for understandable and appropriately documented code merely because its implementation appears straightforward.
 
 Particular attention should be given to:
 
@@ -235,7 +235,148 @@ Diagnostic logging must not become an uncontrolled mechanism for exposing sensit
 
 The established distinctions between operational LogEvents, AuditEvents and Provenance remain applicable.
 
-## 7. Engineering Clarity and Maintainability
+## 7. Object-Oriented Engineering and Code Organisation
+
+### 7.1 Object-Oriented Design Is Fundamental
+
+**Object-oriented design is the fundamental software engineering methodology for Harmonia Java development.**
+
+Java implementations MUST be structured around cohesive objects with identifiable responsibilities, well-defined contracts and meaningful encapsulation.
+
+Classes must represent coherent domain concepts, information structures, behaviours or supporting responsibilities. Collaboration between objects must be preferred over concentrating unrelated functionality within large, multifunctional classes.
+
+The existence of an established class or package structure does not establish that the structure represents good object-oriented design.
+
+Implementation agents MUST critically assess existing structures against the accepted architecture and these engineering principles rather than reproduce historical arrangements by default.
+
+Object-oriented design is not synonymous with inheritance. Composition, delegation and appropriately encapsulated collaboration should be preferred where inheritance does not represent genuine shared structure or behaviour.
+
+### 7.2 Java Package Organisation
+
+**A Java package represents a cohesive collection of objects that collectively provide identifiable value.**
+
+Package organisation MUST reflect the logical organisation of Harmonia's information and software contracts, rather than incidental implementation history, individual development tasks or the identity of consuming components.
+
+Calliope is Harmonia's shared core data and information model. Its packages should therefore be organised around cohesive information concepts and their supporting objects.
+
+For example:
+
+```text
+net.fhirfactory.harmonia.model.core.naming
+    Topic
+    TopicMask
+
+net.fhirfactory.harmonia.model.core.information
+    InformationUnit
+    InformationUnitMask
+
+net.fhirfactory.harmonia.model.core.messaging
+    Petasos...
+```
+
+These names illustrate the intended organisational methodology; they do not independently authorise changes to the accepted Architecture Continuum.
+
+Within a cohesive package, the following supporting subpackages SHOULD be used where applicable:
+
+- **`datatypes`** — lower-level supporting data structures, constituent objects, metadata and associated types.
+- **`valuesets`** — enumerations, constants and defined sets of values.
+- **`factory`** — object construction, assembly, conversion and related factory responsibilities where these warrant separate encapsulation.
+- **`base`** — shared base classes or abstractions, **if and only if** multiple classes within the relevant scope exhibit genuine commonality that justifies such an abstraction.
+
+These subpackages MUST NOT be created merely to satisfy a template. Their existence must be justified by the objects and responsibilities they contain.
+
+Primary domain objects should remain readily discoverable at the root of their logical package. Supporting implementation detail should not obscure the principal model.
+
+### 7.3 Separation of Information Models, Interfaces and Implementations
+
+Information models, logical interfaces and component implementations represent different engineering concerns.
+
+Calliope MUST NOT be organised as a replication of Harmonia's implementation-component hierarchy.
+
+An information object used by Ponos, Petasos, Mneme or another Harmonia component does not automatically belong in a package named after that consuming component.
+
+Shared information objects should be located according to the information concepts they represent.
+
+Interfaces SHOULD be grouped according to their logical contractual responsibility, independently of the implementation that happens to fulfil the contract.
+
+For example:
+
+```text
+net.fhirfactory.harmonia.audit.interfaces.AuditSatelliteAdapter
+```
+
+The logical ownership of the contract determines its placement; the implementation technology or consuming component does not.
+
+An interface's package location must not, by itself, be interpreted as assigning its implementation responsibility.
+
+### 7.4 Class Size and Responsibility
+
+**A Java source file longer than 500 lines is an engineering antipattern.**
+
+This threshold applies to production Java source files, including documentation and supporting declarations.
+
+A source file approaching this threshold SHOULD prompt examination of its responsibilities and opportunities for improved object-oriented decomposition.
+
+A source file exceeding 500 lines MUST be treated as an implementation-review exception. It MUST be decomposed into appropriately encapsulated collaborating classes unless the Solution Architect explicitly accepts a justified exception.
+
+Appropriate decomposition may include:
+
+- Extraction of constituent data structures or metadata objects.
+- Separation of factory and construction responsibilities.
+- Extraction of conversion, mapping or translation responsibilities.
+- Delegation of independently meaningful algorithms or operations.
+- Identification of genuine shared abstractions where multiple classes exhibit commonality.
+
+Decomposition MUST preserve the intended semantic responsibilities, object invariants and architectural contracts.
+
+Artificial fragmentation, unnecessary inheritance and collections of unrelated static helper methods are not acceptable substitutes for object-oriented design.
+
+**Passing unit tests does not establish that an oversized or poorly encapsulated class is appropriately designed.**
+
+### 7.5 Source Code Documentation Is Mandatory
+
+**NO CODE IS SELF-DOCUMENTING.**
+
+Meaningful identifiers, clear control flow and well-structured classes improve code readability, but they do not replace documentation.
+
+Every production Java class and interface MUST contain documentation explaining its purpose, responsibilities and intended architectural role.
+
+Public and protected operations MUST be documented sufficiently to establish their contracts, including applicable parameters, return values, preconditions, exceptional outcomes and side effects.
+
+Implementation commentary MUST explain significant decisions, assumptions, invariants and non-obvious processing behaviour.
+
+Documentation should explain **why** an implementation behaves as it does, not merely restate the Java statements.
+
+Where applicable, documentation MUST identify relevant architectural concepts and accepted design contracts.
+
+Documentation is a maintained part of the implementation. Changes to behaviour, contracts or architectural responsibilities MUST include corresponding documentation review and updates.
+
+The presence of Javadoc alone does not establish documentation adequacy. Documentation must be meaningful, accurate and useful to developers seeking to understand or maintain the software.
+
+### 7.6 Engineering Agent Responsibilities
+
+These requirements apply equally to human developers and automated implementation agents.
+
+Before implementing or materially modifying Java code, an agent MUST:
+
+1. Identify the relevant architectural concepts, their logical ownership and their relationships.
+2. Determine an appropriate object-oriented decomposition and package organisation.
+3. Reconcile existing implementation structures against the accepted architectural model.
+4. Identify responsibilities that warrant supporting data types, value sets, factories or shared abstractions.
+5. Ensure that the proposed design does not introduce unnecessarily oversized classes.
+6. Establish the documentation required to explain the resulting implementation.
+
+Where the accepted architecture and existing code disagree, the agent MUST identify and report the discrepancy.
+
+An agent MUST NOT silently resolve such a discrepancy by treating existing code as architectural authority.
+
+Where an alternative design may improve the architecture, the agent MAY propose it, but MUST distinguish the proposal from the currently accepted design and MUST NOT implement an architectural change without the necessary authorisation.
+
+Implementation completion reports MUST identify any unresolved violations or explicitly accepted exceptions to these principles.
+
+**Architectural fidelity, object-oriented design quality, documentation and functional correctness are all required outcomes of implementation.**
+
+## 8. Engineering Clarity and Maintainability
 
 The educational objective does not imply that implementations should be unnecessarily elaborate.
 
@@ -256,7 +397,9 @@ The objective is **engineering clarity, not complexity for its own sake**.
 
 Where a technically sophisticated mechanism is necessary, its purpose, operation and trade-offs should be explained.
 
-## 8. Applicability Across Harmonia
+Engineering clarity includes the quality of object-oriented decomposition, package cohesion, encapsulation and documented design intent. Functional correctness and successful automated tests do not excuse violations of the object-oriented engineering principles defined in §7.
+
+## 9. Applicability Across Harmonia
 
 These principles apply to all implementation technologies and components, including:
 
@@ -275,7 +418,7 @@ For example, Java implementations will generally use Javadoc, while TypeScript i
 
 The underlying expectation is the same: **the code should be comprehensible, its contracts explicit, and its failure behaviour deliberate**.
 
-## 9. AI-Assisted Development
+## 10. AI-Assisted Development
 
 The implementation principles apply equally to software written by human developers and AI implementation agents.
 
@@ -289,21 +432,21 @@ The use of AI does not diminish the requirement for understandable code or appro
 
 These expectations complement Harmonia's existing architecture governance and implementation review procedures.
 
-## 10. Implementation Review Expectations
+## 11. Implementation Review Expectations
 
 Implementation reviews should consider three complementary dimensions.
 
-### 10.1 Functional Correctness
+### 11.1 Functional Correctness
 
 Does the implementation satisfy the intended functional and architectural contracts?
 
-### 10.2 Defensive Correctness
+### 11.2 Defensive Correctness
 
 Does it behave appropriately when operations fail, are interrupted or encounter adverse conditions?
 
 Are important unhappy paths covered by meaningful tests?
 
-### 10.3 Educational Quality
+### 11.3 Educational Quality
 
 Can a newcomer understand what the code does, why it does it, how it fits into Harmonia and what happens when things go wrong?
 
@@ -311,7 +454,7 @@ These dimensions are complementary. An implementation that satisfies only one or
 
 Review effort should remain proportionate to complexity, risk and architectural significance.
 
-## 11. Relationship to Architecture and Governance
+## 12. Relationship to Architecture and Governance
 
 This Implementation Guide establishes repository-wide software engineering expectations.
 
@@ -328,7 +471,7 @@ Where this guide reveals a genuine architecture or requirements gap, that gap mu
 
 The guide must not be used to justify unauthorised changes to architectural responsibilities or accepted system behaviour.
 
-## 12. Closing Principle
+## 13. Closing Principle
 
 Harmonia is intended to be both a functioning system and an accessible body of software engineering knowledge.
 
