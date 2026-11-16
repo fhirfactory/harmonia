@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.mllpgateway.hl7;
 
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.hl7.fhir.r5.model.Communication;
 import org.hl7.fhir.r5.model.Provenance;
 import org.hl7.fhir.r5.model.Task;
@@ -58,7 +58,7 @@ public class AdtProcessingResult {
                                String ackMessage, boolean success, String errorMessage) {
         this.messageControlId = messageControlId;
         this.triggerEvent = triggerEvent;
-        this.topic = topic != null ? topic : Topic.fromHl7(triggerEvent, "mllp-gateway");
+        this.topic = topic != null ? topic : Topic.fromHl7(triggerEvent);
         this.patientId = patientId;
         this.patientName = patientName;
         this.communication = communication;

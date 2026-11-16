@@ -18,7 +18,7 @@
 package net.fhirfactory.harmonia.mllpgateway.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -35,7 +35,7 @@ class OutboundMllpModelsTest {
 
     @Test
     void testOutboundMllpRequestSerialization() throws Exception {
-        Topic topic = Topic.forEgress("ADT", "A01", "harmonia", "mllp-out", "HIS_NORTH");
+        Topic topic = Topic.fromHl7("ADT", "A01");
         OutboundMllpRequest request = new OutboundMllpRequest("MSG-1001", "HIS_NORTH", "MSH|^~\\&|...", topic);
         request.setTargetQueue("petasos.queue.mllp.outbound.his_north");
         request.setFacility("HOSP_N");
@@ -51,7 +51,7 @@ class OutboundMllpModelsTest {
         assertThat(deserialized.getTargetQueue()).isEqualTo("petasos.queue.mllp.outbound.his_north");
         assertThat(deserialized.getFacility()).isEqualTo("HOSP_N");
         assertThat(deserialized.getTaskId()).isEqualTo("TASK-999");
-        assertThat(deserialized.getTopic().getDestination()).isEqualTo("HIS_NORTH");
+        assertThat(deserialized.getTopic().getName()).isEqualTo("Health.HL7.2.4.ADT.A01");
     }
 
     @Test

@@ -20,7 +20,7 @@ package net.fhirfactory.harmonia.model.pragma;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;

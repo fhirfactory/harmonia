@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.petasos.api.config.PetasosConfig;
 import net.fhirfactory.harmonia.petasos.api.destination.PetasosDestination;

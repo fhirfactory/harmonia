@@ -28,7 +28,7 @@ import net.fhirfactory.harmonia.mllpout.config.MllpOutboundConfig;
 import net.fhirfactory.harmonia.mllpout.consumer.OutboundTaskQueueConsumer;
 import net.fhirfactory.harmonia.mllpout.lifecycle.OutboundStateLifecycleManager;
 import net.fhirfactory.harmonia.mllpout.test.MockMllpServer;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.camel.CamelContext;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.junit.jupiter.api.AfterEach;
@@ -89,7 +89,7 @@ class OutboundMllpIntegrationTest {
 
     @Test
     void testDispatchToHisSuccess() {
-        Topic topic = Topic.forEgress("ADT", "A01", "harmonia", "mllp-out", "HIS_NORTH");
+        Topic topic = Topic.fromHl7("ADT", "A01");
         String hl7 = "MSH|^~\\&|HARMONIA|HIE|HIS_SYS|HOSP_N|20260915083000||ADT^A01|MSG-INTEG-001|P|2.4\r" +
                 "PID|1||MRN12345^^^HOSPITAL^MR||SMITH^JOHN^^^^||19800101|M\r" +
                 "PV1|1|I|WARD1^RM1^BED1\r";
@@ -111,7 +111,7 @@ class OutboundMllpIntegrationTest {
         mockLisServer.setAckCode("AE");
         mockLisServer.setAckTextMessage("Order number not found");
 
-        Topic topic = Topic.forEgress("ORU", "R01", "harmonia", "mllp-out", "LIS_MAIN");
+        Topic topic = Topic.fromHl7("ORU", "R01");
         String hl7 = "MSH|^~\\&|HARMONIA|HIE|LIS_SYS|LAB|20260915083000||ORU^R01|MSG-INTEG-002|P|2.4\r";
         OutboundMllpRequest request = new OutboundMllpRequest("MSG-INTEG-002", "LIS_MAIN", hl7, topic);
 

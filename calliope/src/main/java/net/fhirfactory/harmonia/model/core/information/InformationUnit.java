@@ -22,8 +22,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import net.fhirfactory.harmonia.model.core.information.factory.InformationUnitBuilder;
+import net.fhirfactory.harmonia.model.core.information.factory.InformationUnitFactory;
+import net.fhirfactory.harmonia.model.core.information.factory.InformationUnitValidator;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
-import net.fhirfactory.harmonia.model.topic.Topic;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -127,50 +130,32 @@ public final class InformationUnit implements Serializable {
         this(identifier, null, (InformationMetadata) metadata, representation);
     }
 
-    public static InformationUnit create(
-            UUID uuid,
-            InformationMetadata metadata,
-            InformationRepresentation representation) {
-        return new InformationUnit(InformationUnitIdentifier.fromUuid(uuid), null, metadata, representation);
+    public static InformationUnit create(UUID uuid, InformationMetadata metadata, InformationRepresentation representation) {
+        return InformationUnitFactory.create(uuid, metadata, representation);
     }
 
-    public static InformationUnit create(
-            UUID uuid,
-            InformationUnitMetadata metadata,
-            InformationRepresentation representation) {
-        return new InformationUnit(InformationUnitIdentifier.fromUuid(uuid), null, metadata, representation);
+    public static InformationUnit create(UUID uuid, InformationUnitMetadata metadata, InformationRepresentation representation) {
+        return InformationUnitFactory.create(uuid, metadata, representation);
     }
 
-    public static InformationUnit create(
-            UUID uuid,
-            String version,
-            InformationMetadata metadata,
-            InformationRepresentation representation) {
-        return new InformationUnit(InformationUnitIdentifier.fromUuid(uuid), version, metadata, representation);
+    public static InformationUnit create(UUID uuid, String version, InformationMetadata metadata, InformationRepresentation representation) {
+        return InformationUnitFactory.create(uuid, version, metadata, representation);
     }
 
-    public static InformationUnit create(
-            UUID uuid,
-            String version,
-            InformationUnitMetadata metadata,
-            InformationRepresentation representation) {
-        return new InformationUnit(InformationUnitIdentifier.fromUuid(uuid), version, metadata, representation);
+    public static InformationUnit create(UUID uuid, String version, InformationUnitMetadata metadata, InformationRepresentation representation) {
+        return InformationUnitFactory.create(uuid, version, metadata, representation);
     }
 
-    public static InformationUnit random(
-            InformationMetadata metadata,
-            InformationRepresentation representation) {
-        return new InformationUnit(InformationUnitIdentifier.random(), null, metadata, representation);
+    public static InformationUnit random(InformationMetadata metadata, InformationRepresentation representation) {
+        return InformationUnitFactory.random(metadata, representation);
     }
 
-    public static InformationUnit random(
-            InformationUnitMetadata metadata,
-            InformationRepresentation representation) {
-        return new InformationUnit(InformationUnitIdentifier.random(), null, metadata, representation);
+    public static InformationUnit random(InformationUnitMetadata metadata, InformationRepresentation representation) {
+        return InformationUnitFactory.random(metadata, representation);
     }
 
-    public static Builder builder() {
-        return new Builder();
+    public static InformationUnitBuilder builder() {
+        return new InformationUnitBuilder();
     }
 
     // =========================================================================
@@ -178,52 +163,28 @@ public final class InformationUnit implements Serializable {
     // =========================================================================
 
     @JsonProperty("identifier")
-    public InformationUnitIdentifier identifier() {
-        return identifier;
-    }
-
-    public InformationUnitIdentifier getIdentifier() {
-        return identifier;
-    }
+    public InformationUnitIdentifier identifier() { return identifier; }
+    public InformationUnitIdentifier getIdentifier() { return identifier; }
 
     @JsonIgnore
-    public UUID uuid() {
-        return identifier.uuid();
-    }
+    public UUID uuid() { return identifier.uuid(); }
+    @JsonIgnore
+    public UUID getUuid() { return identifier.uuid(); }
 
     @JsonIgnore
-    public UUID getUuid() {
-        return identifier.uuid();
-    }
+    public String topicName() { return identifier.topicName(); }
+    @JsonIgnore
+    public String getTopicName() { return identifier.topicName(); }
 
     @JsonIgnore
-    public String topicName() {
-        return identifier.topicName();
-    }
-
-    @JsonIgnore
-    public String getTopicName() {
-        return identifier.topicName();
-    }
-
-    @JsonIgnore
-    public Topic toTopic() {
-        return identifier.toTopic();
-    }
+    public Topic toTopic() { return identifier.toTopic(); }
 
     @JsonProperty("version")
-    public String version() {
-        return version;
-    }
-
-    public String getVersion() {
-        return version;
-    }
+    public String version() { return version; }
+    public String getVersion() { return version; }
 
     @JsonProperty("metadata")
-    public InformationMetadata metadata() {
-        return metadata;
-    }
+    public InformationMetadata metadata() { return metadata; }
 
     @JsonIgnore
     public InformationUnitMetadata getMetadata() {
@@ -242,13 +203,8 @@ public final class InformationUnit implements Serializable {
     }
 
     @JsonProperty("representation")
-    public InformationRepresentation representation() {
-        return representation;
-    }
-
-    public InformationRepresentation getRepresentation() {
-        return representation;
-    }
+    public InformationRepresentation representation() { return representation; }
+    public InformationRepresentation getRepresentation() { return representation; }
 
     // =========================================================================
     // Operational Management Context Convenience Accessors
@@ -256,260 +212,140 @@ public final class InformationUnit implements Serializable {
 
     @JsonIgnore
     public ManagementContext managementContext() {
-        if (metadata instanceof InformationUnitMetadata ium) {
-            return ium.managementContext();
-        }
-        return ManagementContext.empty();
+        return metadata instanceof InformationUnitMetadata ium ? ium.managementContext() : ManagementContext.empty();
     }
+    @JsonIgnore
+    public ManagementContext getManagementContext() { return managementContext(); }
 
     @JsonIgnore
-    public ManagementContext getManagementContext() {
-        return managementContext();
-    }
-
-    @JsonIgnore
-    public Optional<OperationalRevision> operationalRevision() {
-        return managementContext().operationalRevision();
-    }
-
+    public Optional<OperationalRevision> operationalRevision() { return managementContext().operationalRevision(); }
     @Deprecated
     @JsonIgnore
-    public Optional<AuthoritativeVersion> operationalVersion() {
-        return managementContext().operationalVersion();
-    }
-
+    public Optional<AuthoritativeVersion> operationalVersion() { return managementContext().operationalVersion(); }
     @JsonIgnore
-    public Optional<String> activeGeneration() {
-        return managementContext().activeGeneration();
-    }
+    public Optional<String> activeGeneration() { return managementContext().activeGeneration(); }
 
     // =========================================================================
     // Information Coordinates Convenience Accessors (Strongly Typed Topics)
     // =========================================================================
 
     @JsonIgnore
-    public InformationCoordinates informationCoordinates() {
-        return metadata.coordinates();
-    }
+    public InformationCoordinates informationCoordinates() { return metadata.coordinates(); }
+    @JsonIgnore
+    public InformationCoordinates getInformationCoordinates() { return metadata.coordinates(); }
 
     @JsonIgnore
-    public InformationCoordinates getInformationCoordinates() {
-        return metadata.coordinates();
-    }
+    public Optional<Topic> persistenceGateway() { return metadata.coordinates().persistenceGateway(); }
+    @JsonIgnore
+    public Optional<Topic> gatewayEndpoint() { return metadata.coordinates().gatewayEndpoint(); }
+    @JsonIgnore
+    public Optional<Topic> informationLocation() { return metadata.coordinates().informationLocation(); }
+    @JsonIgnore
+    public Optional<Topic> informationOwner() { return metadata.coordinates().informationOwner(); }
 
     @JsonIgnore
-    public Optional<Topic> persistenceGateway() {
-        return metadata.coordinates().persistenceGateway();
-    }
-
+    public Optional<String> persistenceGatewayName() { return metadata.coordinates().persistenceGatewayName(); }
     @JsonIgnore
-    public Optional<Topic> gatewayEndpoint() {
-        return metadata.coordinates().gatewayEndpoint();
-    }
-
+    public Optional<String> gatewayEndpointName() { return metadata.coordinates().gatewayEndpointName(); }
     @JsonIgnore
-    public Optional<Topic> informationLocation() {
-        return metadata.coordinates().informationLocation();
-    }
-
+    public Optional<String> informationLocationName() { return metadata.coordinates().informationLocationName(); }
     @JsonIgnore
-    public Optional<Topic> informationOwner() {
-        return metadata.coordinates().informationOwner();
-    }
-
-    @JsonIgnore
-    public Optional<String> persistenceGatewayName() {
-        return metadata.coordinates().persistenceGatewayName();
-    }
-
-    @JsonIgnore
-    public Optional<String> gatewayEndpointName() {
-        return metadata.coordinates().gatewayEndpointName();
-    }
-
-    @JsonIgnore
-    public Optional<String> informationLocationName() {
-        return metadata.coordinates().informationLocationName();
-    }
-
-    @JsonIgnore
-    public Optional<String> informationOwnerName() {
-        return metadata.coordinates().informationOwnerName();
-    }
+    public Optional<String> informationOwnerName() { return metadata.coordinates().informationOwnerName(); }
 
     // =========================================================================
     // Information Itinerary Convenience Accessors (Strongly Typed Topics)
     // =========================================================================
 
     @JsonIgnore
-    public InformationItinerary informationItinerary() {
-        return metadata.itinerary();
-    }
+    public InformationItinerary informationItinerary() { return metadata.itinerary(); }
+    @JsonIgnore
+    public InformationItinerary getInformationItinerary() { return metadata.itinerary(); }
 
     @JsonIgnore
-    public InformationItinerary getInformationItinerary() {
-        return metadata.itinerary();
-    }
-
+    public Optional<Topic> sourceEntryComponent() { return metadata.itinerary().sourceEntryComponent(); }
     @JsonIgnore
-    public Optional<Topic> sourceEntryComponent() {
-        return metadata.itinerary().sourceEntryComponent();
-    }
-
+    public Optional<Topic> creationComponent() { return metadata.itinerary().creationComponent(); }
     @JsonIgnore
-    public Optional<Topic> creationComponent() {
-        return metadata.itinerary().creationComponent();
-    }
-
+    public Optional<Topic> previousComponent() { return metadata.itinerary().previousComponent(); }
     @JsonIgnore
-    public Optional<Topic> previousComponent() {
-        return metadata.itinerary().previousComponent();
-    }
-
+    public Optional<Topic> nextComponent() { return metadata.itinerary().nextComponent(); }
     @JsonIgnore
-    public Optional<Topic> nextComponent() {
-        return metadata.itinerary().nextComponent();
-    }
-
+    public Optional<Topic> targetExitComponent() { return metadata.itinerary().targetExitComponent(); }
     @JsonIgnore
-    public Optional<Topic> targetExitComponent() {
-        return metadata.itinerary().targetExitComponent();
-    }
-
-    @JsonIgnore
-    public List<Topic> participatingComponents() {
-        return metadata.itinerary().participatingComponents();
-    }
+    public List<Topic> participatingComponents() { return metadata.itinerary().participatingComponents(); }
 
     // =========================================================================
     // Origin Convenience Accessors
     // =========================================================================
 
     @JsonIgnore
-    public Optional<Topic> origin() {
-        return metadata.origin();
-    }
-
+    public Optional<Topic> origin() { return metadata.origin(); }
     @JsonIgnore
-    public Topic getOrigin() {
-        return metadata.origin().orElse(null);
-    }
+    public Topic getOrigin() { return metadata.origin().orElse(null); }
 
     // =========================================================================
     // Security Context Convenience Accessors
     // =========================================================================
 
     @JsonIgnore
-    public InformationSecurityContext securityContext() {
-        return metadata.securityContext();
-    }
-
+    public InformationSecurityContext securityContext() { return metadata.securityContext(); }
     @JsonIgnore
-    public InformationSecurityContext getSecurityContext() {
-        return metadata.securityContext();
-    }
+    public InformationSecurityContext getSecurityContext() { return metadata.securityContext(); }
 
     // =========================================================================
     // Lifecycle Context Convenience Accessors
     // =========================================================================
 
     @JsonIgnore
-    public LifecycleContext lifecycleContext() {
-        return metadata.lifecycleContext();
-    }
-
+    public LifecycleContext lifecycleContext() { return metadata.lifecycleContext(); }
     @JsonIgnore
-    public LifecycleContext getLifecycleContext() {
-        return metadata.lifecycleContext();
-    }
+    public LifecycleContext getLifecycleContext() { return metadata.lifecycleContext(); }
 
     // =========================================================================
     // Relationships Convenience Accessors
     // =========================================================================
 
     @JsonIgnore
-    public List<InformationUnitRelationship> relationships() {
-        return metadata.relationships();
-    }
-
+    public List<InformationUnitRelationship> relationships() { return metadata.relationships(); }
     @JsonIgnore
-    public List<InformationUnitRelationship> getRelationships() {
-        return metadata.relationships();
-    }
+    public List<InformationUnitRelationship> getRelationships() { return metadata.relationships(); }
 
     // =========================================================================
     // Representation Convenience Accessors
     // =========================================================================
 
     @JsonIgnore
-    public ContainerMetadata containerMetadata() {
-        return representation.containerMetadata();
-    }
+    public ContainerMetadata containerMetadata() { return representation.containerMetadata(); }
+    @JsonIgnore
+    public ContainerMetadata getContainerMetadata() { return representation.containerMetadata(); }
 
     @JsonIgnore
-    public ContainerMetadata getContainerMetadata() {
-        return representation.containerMetadata();
-    }
+    public ContentMetadata contentMetadata() { return representation.contentMetadata(); }
+    @JsonIgnore
+    public ContentMetadata getContentMetadata() { return representation.contentMetadata(); }
 
     @JsonIgnore
-    public ContentMetadata contentMetadata() {
-        return representation.contentMetadata();
-    }
+    public Optional<Topic> contentStructureTopic() { return representation.contentMetadata().contentStructureTopic(); }
+    @JsonIgnore
+    public Optional<String> contentStructureTopicName() { return representation.contentMetadata().contentStructureTopicName(); }
+    @JsonIgnore
+    public Optional<String> contentStructureVersion() { return representation.contentMetadata().contentStructureVersion(); }
 
     @JsonIgnore
-    public ContentMetadata getContentMetadata() {
-        return representation.contentMetadata();
-    }
+    public Optional<Object> content() { return representation.content(); }
+    @JsonIgnore
+    public Object getContent() { return representation.getContent(); }
 
     @JsonIgnore
-    public Optional<Topic> contentStructureTopic() {
-        return representation.contentMetadata().contentStructureTopic();
-    }
-
+    public Optional<String> contentAsString() { return representation.contentAsString(); }
     @JsonIgnore
-    public Optional<String> contentStructureTopicName() {
-        return representation.contentMetadata().contentStructureTopicName();
-    }
-
+    public Optional<byte[]> contentAsBytes() { return representation.contentAsBytes(); }
     @JsonIgnore
-    public Optional<String> contentStructureVersion() {
-        return representation.contentMetadata().contentStructureVersion();
-    }
-
+    public <T> Optional<T> contentAs(Class<T> type) { return representation.contentAs(type); }
     @JsonIgnore
-    public Optional<Object> content() {
-        return representation.content();
-    }
-
+    public boolean hasContent() { return representation.hasContent(); }
     @JsonIgnore
-    public Object getContent() {
-        return representation.getContent();
-    }
-
-    @JsonIgnore
-    public Optional<String> contentAsString() {
-        return representation.contentAsString();
-    }
-
-    @JsonIgnore
-    public Optional<byte[]> contentAsBytes() {
-        return representation.contentAsBytes();
-    }
-
-    @JsonIgnore
-    public <T> Optional<T> contentAs(Class<T> type) {
-        return representation.contentAs(type);
-    }
-
-    @JsonIgnore
-    public boolean hasContent() {
-        return representation.hasContent();
-    }
-
-    @JsonIgnore
-    public boolean isSummary() {
-        return representation.isSummary();
-    }
+    public boolean isSummary() { return representation.isSummary(); }
 
     // =========================================================================
     // Summary Projection Semantics
@@ -603,22 +439,7 @@ public final class InformationUnit implements Serializable {
     // =========================================================================
 
     public boolean validate() {
-        if (identifier == null) {
-            throw new IllegalStateException("InformationUnit must have a non-null identifier");
-        }
-        if (identifier.uuid() == null) {
-            throw new IllegalStateException("InformationUnit identifier must have a non-null UUID");
-        }
-        if (identifier.topicName() == null || identifier.topicName().isBlank()) {
-            throw new IllegalStateException("InformationUnit identifier must have a non-blank topic name");
-        }
-        if (metadata == null) {
-            throw new IllegalStateException("InformationUnit must have non-null metadata");
-        }
-        if (representation == null) {
-            throw new IllegalStateException("InformationUnit must have exactly one non-null representation");
-        }
-        return true;
+        return InformationUnitValidator.validate(this);
     }
 
     // =========================================================================
@@ -656,199 +477,6 @@ public final class InformationUnit implements Serializable {
     // Builder
     // =========================================================================
 
-    public static final class Builder {
-
-        private InformationUnitIdentifier identifier;
-        private String version;
-        private InformationMetadata metadata;
-        private InformationRepresentation representation;
-
-        private InformationCoordinates coordinates;
-        private InformationItinerary itinerary;
-        private Topic origin;
-        private InformationSecurityContext securityContext;
-        private LifecycleContext lifecycleContext;
-        private ManagementContext managementContext;
-        private final List<InformationUnitRelationship> relationships = new ArrayList<>();
-
-        private ContainerMetadata containerMetadata;
-        private ContentMetadata contentMetadata;
-        private Content content;
-
-        public Builder identifier(InformationUnitIdentifier identifier) {
-            this.identifier = identifier;
-            return this;
-        }
-
-        public Builder identifier(UUID uuid) {
-            this.identifier = InformationUnitIdentifier.fromUuid(uuid);
-            return this;
-        }
-
-        public Builder uuid(UUID uuid) {
-            this.identifier = InformationUnitIdentifier.fromUuid(uuid);
-            return this;
-        }
-
-        public Builder randomIdentifier() {
-            this.identifier = InformationUnitIdentifier.random();
-            return this;
-        }
-
-        public Builder version(String version) {
-            this.version = version;
-            return this;
-        }
-
-        public Builder version(AuthoritativeVersion version) {
-            this.version = version != null ? version.value() : null;
-            return this;
-        }
-
-        public Builder metadata(InformationMetadata metadata) {
-            this.metadata = metadata;
-            return this;
-        }
-
-        public Builder metadata(InformationUnitMetadata metadata) {
-            this.metadata = metadata;
-            return this;
-        }
-
-        public Builder representation(InformationRepresentation representation) {
-            this.representation = representation;
-            return this;
-        }
-
-        public Builder coordinates(InformationCoordinates coordinates) {
-            this.coordinates = coordinates;
-            return this;
-        }
-
-        public Builder informationCoordinates(InformationCoordinates coordinates) {
-            this.coordinates = coordinates;
-            return this;
-        }
-
-        public Builder itinerary(InformationItinerary itinerary) {
-            this.itinerary = itinerary;
-            return this;
-        }
-
-        public Builder informationItinerary(InformationItinerary itinerary) {
-            this.itinerary = itinerary;
-            return this;
-        }
-
-        public Builder origin(Topic origin) {
-            this.origin = origin;
-            return this;
-        }
-
-        public Builder securityContext(InformationSecurityContext securityContext) {
-            this.securityContext = securityContext;
-            return this;
-        }
-
-        public Builder lifecycleContext(LifecycleContext lifecycleContext) {
-            this.lifecycleContext = lifecycleContext;
-            return this;
-        }
-
-        public Builder managementContext(ManagementContext managementContext) {
-            this.managementContext = managementContext;
-            return this;
-        }
-
-        public Builder addRelationship(InformationUnitRelationship relationship) {
-            if (relationship != null) {
-                this.relationships.add(relationship);
-            }
-            return this;
-        }
-
-        public Builder relationships(Collection<InformationUnitRelationship> relationships) {
-            this.relationships.clear();
-            if (relationships != null) {
-                this.relationships.addAll(relationships);
-            }
-            return this;
-        }
-
-        public Builder containerMetadata(ContainerMetadata containerMetadata) {
-            this.containerMetadata = containerMetadata;
-            return this;
-        }
-
-        public Builder contentMetadata(ContentMetadata contentMetadata) {
-            this.contentMetadata = contentMetadata;
-            return this;
-        }
-
-        public Builder content(Object content) {
-            this.content = Content.of(content);
-            return this;
-        }
-
-        public Builder content(Content content) {
-            this.content = content != null ? content : Content.empty();
-            return this;
-        }
-
-        public Builder content(String content) {
-            this.content = content != null ? Content.text(content) : Content.empty();
-            return this;
-        }
-
-        public Builder content(byte[] content) {
-            this.content = content != null ? Content.binary(content) : Content.empty();
-            return this;
-        }
-
-        public InformationUnit build() {
-            InformationUnitIdentifier id = this.identifier != null ? this.identifier : InformationUnitIdentifier.random();
-            InformationMetadata meta = this.metadata;
-            if (meta == null) {
-                if (managementContext != null) {
-                    meta = new InformationUnitMetadata(
-                            managementContext,
-                            coordinates != null ? coordinates : InformationCoordinates.empty(),
-                            itinerary != null ? itinerary : InformationItinerary.empty(),
-                            origin,
-                            securityContext != null ? securityContext : InformationSecurityContext.empty(),
-                            lifecycleContext != null ? lifecycleContext : LifecycleContext.empty(),
-                            relationships
-                    );
-                } else {
-                    meta = new InformationMetadata(
-                            coordinates != null ? coordinates : InformationCoordinates.empty(),
-                            itinerary != null ? itinerary : InformationItinerary.empty(),
-                            origin,
-                            securityContext != null ? securityContext : InformationSecurityContext.empty(),
-                            lifecycleContext != null ? lifecycleContext : LifecycleContext.empty(),
-                            relationships
-                    );
-                }
-            }
-            InformationRepresentation rep = this.representation;
-            if (rep == null) {
-                rep = new InformationRepresentation(
-                        containerMetadata != null ? containerMetadata : ContainerMetadata.empty(),
-                        contentMetadata != null ? contentMetadata : ContentMetadata.empty(),
-                        content != null ? content : Content.empty()
-                );
-            }
-            return new InformationUnit(id, version, meta, rep);
-        }
-
-        public InformationUnit buildSummary() {
-            InformationRepresentation rep = this.representation;
-            if (rep != null) {
-                this.representation = rep.toSummary();
-            } else {
-                this.content = Content.empty();
-            }
-            return build();
-        }
+    public static final class Builder extends InformationUnitBuilder {
     }
 }

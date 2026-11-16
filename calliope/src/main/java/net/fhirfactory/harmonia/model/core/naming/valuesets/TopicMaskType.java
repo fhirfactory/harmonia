@@ -15,17 +15,17 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package net.fhirfactory.harmonia.model.topic;
+package net.fhirfactory.harmonia.model.core.naming.valuesets;
 
 /**
- * Defines the matching basis for a {@link TopicMask}.
+ * Defines the matching basis for a {@link net.fhirfactory.harmonia.model.core.naming.TopicMask}.
  * <p>
- * In accordance with the accepted 1.1.25 Architecture Continuum:
+ * In accordance with the accepted Architecture Continuum:
  * <ul>
  *   <li><b>TopicNameBased:</b> Matches explicitly sequenced regex patterns against corresponding individual unqualified Topic names.</li>
  *   <li><b>TopicCanonicalNameBased:</b> Matches explicitly sequenced pattern entries against corresponding entry qualifier and name independently.</li>
  * </ul>
- * A single {@link TopicMask} has exactly one basis and does not combine both bases.
+ * A single {@link net.fhirfactory.harmonia.model.core.naming.TopicMask} has exactly one basis and does not combine both bases.
  */
 public enum TopicMaskType {
 

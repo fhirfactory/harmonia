@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.mllpgateway.hl7;
 
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.hl7.fhir.r5.model.Communication;
 import org.hl7.fhir.r5.model.Provenance;
 import org.hl7.fhir.r5.model.Task;

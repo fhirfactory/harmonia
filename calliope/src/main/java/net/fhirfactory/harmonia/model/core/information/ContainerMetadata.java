@@ -22,7 +22,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.information.factory.ContainerMetadataBuilder;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -196,8 +197,8 @@ public final class ContainerMetadata implements Serializable {
      *
      * @return a new builder
      */
-    public static Builder builder() {
-        return new Builder();
+    public static ContainerMetadataBuilder builder() {
+        return new ContainerMetadataBuilder();
     }
 
     // =========================================================================
@@ -489,118 +490,6 @@ public final class ContainerMetadata implements Serializable {
     // Builder
     // =========================================================================
 
-    public static final class Builder {
-        private Topic type;
-        private Topic sourceTopic;
-        private Topic destinationTopic;
-        private Topic authorTopic;
-        private Topic recipientTopic;
-        private String assemblyContext;
-        private String interactionMechanism;
-        private String envelopeStructure;
-        private final Map<String, String> attributes = new LinkedHashMap<>();
-
-        private Builder() {}
-
-        public Builder type(Topic type) {
-            this.type = type;
-            return this;
-        }
-
-        public Builder containerType(String containerType) {
-            this.type = containerType != null && !containerType.isBlank() ? Topic.fromName(containerType.trim()) : null;
-            return this;
-        }
-
-        public Builder sourceTopic(Topic sourceTopic) {
-            this.sourceTopic = sourceTopic;
-            return this;
-        }
-
-        public Builder source(String source) {
-            this.sourceTopic = source != null && !source.isBlank() ? Topic.fromName(source.trim()) : null;
-            return this;
-        }
-
-        public Builder destinationTopic(Topic destinationTopic) {
-            this.destinationTopic = destinationTopic;
-            return this;
-        }
-
-        public Builder destination(String destination) {
-            this.destinationTopic = destination != null && !destination.isBlank() ? Topic.fromName(destination.trim()) : null;
-            return this;
-        }
-
-        public Builder authorTopic(Topic authorTopic) {
-            this.authorTopic = authorTopic;
-            return this;
-        }
-
-        public Builder author(String author) {
-            this.authorTopic = author != null && !author.isBlank() ? Topic.fromName(author.trim()) : null;
-            return this;
-        }
-
-        public Builder recipientTopic(Topic recipientTopic) {
-            this.recipientTopic = recipientTopic;
-            return this;
-        }
-
-        public Builder recipient(String recipient) {
-            this.recipientTopic = recipient != null && !recipient.isBlank() ? Topic.fromName(recipient.trim()) : null;
-            return this;
-        }
-
-        public Builder assemblyContext(String assemblyContext) {
-            this.assemblyContext = assemblyContext;
-            return this;
-        }
-
-        public Builder interactionMechanism(String interactionMechanism) {
-            this.interactionMechanism = interactionMechanism;
-            return this;
-        }
-
-        public Builder envelopeStructure(String envelopeStructure) {
-            this.envelopeStructure = envelopeStructure;
-            return this;
-        }
-
-        public Builder attributes(Map<String, String> attributes) {
-            this.attributes.clear();
-            if (attributes != null) {
-                this.attributes.putAll(attributes);
-            }
-            return this;
-        }
-
-        public Builder putAttribute(String key, String value) {
-            return attribute(key, value);
-        }
-
-        public Builder attribute(String key, String value) {
-            if (key != null) {
-                if (value == null) {
-                    this.attributes.remove(key);
-                } else {
-                    this.attributes.put(key, value);
-                }
-            }
-            return this;
-        }
-
-        public ContainerMetadata build() {
-            return new ContainerMetadata(
-                    type,
-                    sourceTopic,
-                    destinationTopic,
-                    authorTopic,
-                    recipientTopic,
-                    assemblyContext,
-                    interactionMechanism,
-                    envelopeStructure,
-                    attributes);
-        }
+    public static final class Builder extends ContainerMetadataBuilder {
     }
 }

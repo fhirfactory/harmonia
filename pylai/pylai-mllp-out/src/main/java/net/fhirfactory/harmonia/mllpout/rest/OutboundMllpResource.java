@@ -34,7 +34,7 @@ import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpResponse;
 import net.fhirfactory.harmonia.mllpout.config.MllpOutboundConfig;
 import net.fhirfactory.harmonia.mllpout.consumer.OutboundTaskQueueConsumer;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -116,7 +116,7 @@ public class OutboundMllpResource {
             request = new OutboundMllpRequest();
         }
         if (request.getTopic() == null) {
-            request.setTopic(Topic.forEgress("ADT", "A01", "harmonia", "mllp-out", request.getDestinationId()));
+            request.setTopic(Topic.fromHl7("ADT", "A01"));
         }
         return send(request);
     }
@@ -131,7 +131,7 @@ public class OutboundMllpResource {
             request = new OutboundMllpRequest();
         }
         if (request.getTopic() == null) {
-            request.setTopic(Topic.forEgress("MFN", "M02", "harmonia", "mllp-out", request.getDestinationId()));
+            request.setTopic(Topic.fromHl7("MFN", "M02"));
         }
         return send(request);
     }

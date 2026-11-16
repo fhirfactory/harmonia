@@ -23,8 +23,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.topic.Topic;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
 import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
@@ -182,31 +182,12 @@ public class Pragma implements Serializable {
         this.lastModified = lastModified != null ? new Date(lastModified.getTime()) : new Date(this.authoredOn.getTime());
         this.source = source;
         this.destination = destination;
-        if (input != null) {
-            for (ErgonPayload payload : input) {
-                this.input.add(new ErgonPayload(payload));
-            }
-        }
-        if (output != null) {
-            for (ErgonPayload payload : output) {
-                this.output.add(new ErgonPayload(payload));
-            }
-        }
-        if (checkpoints != null) {
-            for (PragmaCheckpoint cp : checkpoints) {
-                this.checkpoints.add(new PragmaCheckpoint(cp));
-            }
-        }
-        if (metadata != null) {
-            this.metadata.putAll(metadata);
-        }
+        if (input != null) input.forEach(p -> this.input.add(new ErgonPayload(p)));
+        if (output != null) output.forEach(p -> this.output.add(new ErgonPayload(p)));
+        if (checkpoints != null) checkpoints.forEach(cp -> this.checkpoints.add(new PragmaCheckpoint(cp)));
+        if (metadata != null) this.metadata.putAll(metadata);
     }
 
-    /**
-     * Copy constructor.
-     *
-     * @param other Pragma instance to copy
-     */
     public Pragma(Pragma other) {
         if (other != null) {
             this.pragmaId = other.pragmaId;
@@ -220,29 +201,13 @@ public class Pragma implements Serializable {
             this.lastModified = other.lastModified != null ? new Date(other.lastModified.getTime()) : new Date();
             this.source = other.source;
             this.destination = other.destination;
-            if (other.input != null) {
-                for (ErgonPayload payload : other.input) {
-                    this.input.add(new ErgonPayload(payload));
-                }
-            }
-            if (other.output != null) {
-                for (ErgonPayload payload : other.output) {
-                    this.output.add(new ErgonPayload(payload));
-                }
-            }
-            if (other.checkpoints != null) {
-                for (PragmaCheckpoint cp : other.checkpoints) {
-                    this.checkpoints.add(new PragmaCheckpoint(cp));
-                }
-            }
-            if (other.metadata != null) {
-                this.metadata.putAll(other.metadata);
-            }
+            if (other.input != null) other.input.forEach(p -> this.input.add(new ErgonPayload(p)));
+            if (other.output != null) other.output.forEach(p -> this.output.add(new ErgonPayload(p)));
+            if (other.checkpoints != null) other.checkpoints.forEach(cp -> this.checkpoints.add(new PragmaCheckpoint(cp)));
+            if (other.metadata != null) this.metadata.putAll(other.metadata);
             this.originatingPrincipal = other.originatingPrincipal;
             this.executingPrincipal = other.executingPrincipal;
-            if (other.originatingAuthorities != null) {
-                this.originatingAuthorities.addAll(other.originatingAuthorities);
-            }
+            if (other.originatingAuthorities != null) this.originatingAuthorities.addAll(other.originatingAuthorities);
             this.originatingSecurityContext = other.originatingSecurityContext;
             this.policyVersion = other.policyVersion;
         } else {
@@ -258,8 +223,8 @@ public class Pragma implements Serializable {
     // Static Builder & Factory Methods
     // =========================================================================
 
-    public static Builder builder() {
-        return new Builder();
+    public static PragmaBuilder builder() {
+        return new PragmaBuilder();
     }
 
     public static Pragma newDraft() {
@@ -413,264 +378,84 @@ public class Pragma implements Serializable {
     // Getters and Setters
     // =========================================================================
 
-    public String getPragmaId() {
-        return pragmaId;
-    }
+    public String getPragmaId() { return pragmaId; }
+    public void setPragmaId(String pragmaId) { this.pragmaId = pragmaId; }
 
-    public void setPragmaId(String pragmaId) {
-        this.pragmaId = pragmaId;
-    }
+    public String getCorrelationId() { return correlationId; }
+    public void setCorrelationId(String correlationId) { this.correlationId = correlationId; }
 
-    public String getCorrelationId() {
-        return correlationId;
-    }
+    public String getCausationId() { return causationId; }
+    public void setCausationId(String causationId) { this.causationId = causationId; }
 
-    public void setCorrelationId(String correlationId) {
-        this.correlationId = correlationId;
-    }
+    public String getPraxisId() { return praxisId; }
+    public void setPraxisId(String praxisId) { this.praxisId = praxisId; }
 
-    public String getCausationId() {
-        return causationId;
-    }
+    public PragmaStatus getStatus() { return status; }
+    public void setStatus(PragmaStatus status) { this.status = status != null ? status : PragmaStatus.DRAFT; touch(); }
 
-    public void setCausationId(String causationId) {
-        this.causationId = causationId;
-    }
+    public Integer getPriority() { return priority; }
+    public void setPriority(Integer priority) { this.priority = priority; }
 
-    public String getPraxisId() {
-        return praxisId;
-    }
+    public String getPriorityCode() { return priorityCode; }
+    public void setPriorityCode(String priorityCode) { this.priorityCode = priorityCode; }
 
-    public void setPraxisId(String praxisId) {
-        this.praxisId = praxisId;
-    }
+    public Date getAuthoredOn() { return authoredOn != null ? new Date(authoredOn.getTime()) : null; }
+    public void setAuthoredOn(Date authoredOn) { this.authoredOn = authoredOn != null ? new Date(authoredOn.getTime()) : null; }
 
-    public PragmaStatus getStatus() {
-        return status;
-    }
+    public Date getLastModified() { return lastModified != null ? new Date(lastModified.getTime()) : null; }
+    public void setLastModified(Date lastModified) { this.lastModified = lastModified != null ? new Date(lastModified.getTime()) : null; }
 
-    public void setStatus(PragmaStatus status) {
-        this.status = status != null ? status : PragmaStatus.DRAFT;
-        touch();
-    }
+    public String getSource() { return source; }
+    public void setSource(String source) { this.source = source; }
 
-    public Integer getPriority() {
-        return priority;
-    }
+    public String getDestination() { return destination; }
+    public void setDestination(String destination) { this.destination = destination; }
 
-    public void setPriority(Integer priority) {
-        this.priority = priority;
-    }
+    public List<ErgonPayload> getInput() { return input; }
+    public void setInput(List<ErgonPayload> input) { this.input = input != null ? new ArrayList<>(input) : new ArrayList<>(); touch(); }
 
-    public String getPriorityCode() {
-        return priorityCode;
-    }
+    public List<ErgonPayload> getOutput() { return output; }
+    public void setOutput(List<ErgonPayload> output) { this.output = output != null ? new ArrayList<>(output) : new ArrayList<>(); touch(); }
 
-    public void setPriorityCode(String priorityCode) {
-        this.priorityCode = priorityCode;
-    }
+    public List<PragmaCheckpoint> getCheckpoints() { return checkpoints; }
+    public void setCheckpoints(List<PragmaCheckpoint> checkpoints) { this.checkpoints = checkpoints != null ? new ArrayList<>(checkpoints) : new ArrayList<>(); touch(); }
 
-    public Date getAuthoredOn() {
-        return authoredOn != null ? new Date(authoredOn.getTime()) : null;
-    }
+    public Map<String, String> getMetadata() { return metadata; }
+    public void setMetadata(Map<String, String> metadata) { this.metadata = metadata != null ? new LinkedHashMap<>(metadata) : new LinkedHashMap<>(); }
+    public Pragma addMetadata(String key, String value) { if (key != null) { this.metadata.put(key, value); } return this; }
 
-    public void setAuthoredOn(Date authoredOn) {
-        this.authoredOn = authoredOn != null ? new Date(authoredOn.getTime()) : null;
-    }
+    public ThemisPrincipal getOriginatingPrincipal() { return originatingPrincipal; }
+    public void setOriginatingPrincipal(ThemisPrincipal originatingPrincipal) { this.originatingPrincipal = originatingPrincipal; touch(); }
 
-    public Date getLastModified() {
-        return lastModified != null ? new Date(lastModified.getTime()) : null;
-    }
+    public ThemisPrincipal getExecutingPrincipal() { return executingPrincipal; }
+    public void setExecutingPrincipal(ThemisPrincipal executingPrincipal) { this.executingPrincipal = executingPrincipal; touch(); }
 
-    public void setLastModified(Date lastModified) {
-        this.lastModified = lastModified != null ? new Date(lastModified.getTime()) : null;
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    public List<ErgonPayload> getInput() {
-        return input;
-    }
-
-    public void setInput(List<ErgonPayload> input) {
-        this.input = input != null ? new ArrayList<>(input) : new ArrayList<>();
-        touch();
-    }
-
-    public List<ErgonPayload> getOutput() {
-        return output;
-    }
-
-    public void setOutput(List<ErgonPayload> output) {
-        this.output = output != null ? new ArrayList<>(output) : new ArrayList<>();
-        touch();
-    }
-
-    public List<PragmaCheckpoint> getCheckpoints() {
-        return checkpoints;
-    }
-
-    public void setCheckpoints(List<PragmaCheckpoint> checkpoints) {
-        this.checkpoints = checkpoints != null ? new ArrayList<>(checkpoints) : new ArrayList<>();
-        touch();
-    }
-
-    public Map<String, String> getMetadata() {
-        return metadata;
-    }
-
-    public void setMetadata(Map<String, String> metadata) {
-        this.metadata = metadata != null ? new LinkedHashMap<>(metadata) : new LinkedHashMap<>();
-    }
-
-    public Pragma addMetadata(String key, String value) {
-        if (key != null) {
-            this.metadata.put(key, value);
-        }
-        return this;
-    }
-
-    public ThemisPrincipal getOriginatingPrincipal() {
-        return originatingPrincipal;
-    }
-
-    public void setOriginatingPrincipal(ThemisPrincipal originatingPrincipal) {
-        this.originatingPrincipal = originatingPrincipal;
-        touch();
-    }
-
-    public ThemisPrincipal getExecutingPrincipal() {
-        return executingPrincipal;
-    }
-
-    public void setExecutingPrincipal(ThemisPrincipal executingPrincipal) {
-        this.executingPrincipal = executingPrincipal;
-        touch();
-    }
-
-    /**
-     * Resolves the initiating (human/requesting) principal, falling back to the originating security context.
-     *
-     * @return initiating principal, or null
-     */
     public ThemisPrincipal getInitiatingPrincipal() {
-        if (originatingPrincipal != null) {
-            return originatingPrincipal;
-        }
-        if (originatingSecurityContext != null) {
-            return originatingSecurityContext.originatingPrincipal();
-        }
+        if (originatingPrincipal != null) return originatingPrincipal;
+        if (originatingSecurityContext != null) return originatingSecurityContext.originatingPrincipal();
         return null;
     }
 
-    /**
-     * Resolves the effective executing (process/worker) principal, falling back to the originating security context.
-     *
-     * @return executing principal, or null
-     */
     public ThemisPrincipal getEffectiveExecutingPrincipal() {
-        if (executingPrincipal != null) {
-            return executingPrincipal;
-        }
-        if (originatingSecurityContext != null) {
-            return originatingSecurityContext.executingPrincipal();
-        }
+        if (executingPrincipal != null) return executingPrincipal;
+        if (originatingSecurityContext != null) return originatingSecurityContext.executingPrincipal();
         return null;
     }
 
-    /**
-     * Resolves canonical {@link ThemisSecurityContext} from this Pragma's security and correlation fields.
-     *
-     * @return resolved ThemisSecurityContext, or null
-     */
     public ThemisSecurityContext resolveSecurityContext() {
-        if (originatingSecurityContext != null) {
-            ThemisSecurityContext.Builder b = originatingSecurityContext.toBuilder();
-            if (originatingPrincipal != null && originatingSecurityContext.requestingPrincipal() == null) {
-                b.originatingPrincipal(originatingPrincipal);
-            }
-            if (executingPrincipal != null && originatingSecurityContext.executingPrincipal() == null) {
-                b.executingPrincipal(executingPrincipal);
-            }
-            if (!originatingAuthorities.isEmpty() && originatingSecurityContext.authorities().isEmpty()) {
-                b.authorities(originatingAuthorities);
-            }
-            if (correlationId != null && originatingSecurityContext.correlationId() == null) {
-                b.correlationId(correlationId);
-            }
-            if (causationId != null && originatingSecurityContext.causationId() == null) {
-                b.causationId(causationId);
-            }
-            return b.build();
-        }
-        if (originatingPrincipal != null || executingPrincipal != null || !originatingAuthorities.isEmpty()) {
-            return ThemisSecurityContext.builder()
-                    .originatingPrincipal(originatingPrincipal)
-                    .executingPrincipal(executingPrincipal)
-                    .authorities(originatingAuthorities)
-                    .correlationId(correlationId)
-                    .causationId(causationId)
-                    .build();
-        }
-        return null;
+        return PragmaSecurityContextResolver.resolveSecurityContext(this);
     }
 
-    public Set<ThemisAuthority> getOriginatingAuthorities() {
-        return Collections.unmodifiableSet(originatingAuthorities);
-    }
+    public Set<ThemisAuthority> getOriginatingAuthorities() { return Collections.unmodifiableSet(originatingAuthorities); }
+    public void setOriginatingAuthorities(Set<ThemisAuthority> originatingAuthorities) { this.originatingAuthorities = originatingAuthorities != null ? new HashSet<>(originatingAuthorities) : new HashSet<>(); touch(); }
+    public Pragma addOriginatingAuthority(ThemisAuthority authority) { if (authority != null) { this.originatingAuthorities.add(authority); touch(); } return this; }
+    public Pragma addOriginatingAuthority(String authorityCode) { if (authorityCode != null && !authorityCode.isBlank()) { this.originatingAuthorities.add(ThemisAuthority.of(authorityCode)); touch(); } return this; }
 
-    public void setOriginatingAuthorities(Set<ThemisAuthority> originatingAuthorities) {
-        this.originatingAuthorities = originatingAuthorities != null ? new HashSet<>(originatingAuthorities) : new HashSet<>();
-        touch();
-    }
+    public ThemisSecurityContext getOriginatingSecurityContext() { return originatingSecurityContext; }
+    public void setOriginatingSecurityContext(ThemisSecurityContext originatingSecurityContext) { this.originatingSecurityContext = originatingSecurityContext; touch(); }
 
-    public Pragma addOriginatingAuthority(ThemisAuthority authority) {
-        if (authority != null) {
-            this.originatingAuthorities.add(authority);
-            touch();
-        }
-        return this;
-    }
-
-    public Pragma addOriginatingAuthority(String authorityCode) {
-        if (authorityCode != null && !authorityCode.isBlank()) {
-            this.originatingAuthorities.add(ThemisAuthority.of(authorityCode));
-            touch();
-        }
-        return this;
-    }
-
-    public ThemisSecurityContext getOriginatingSecurityContext() {
-        return originatingSecurityContext;
-    }
-
-    public void setOriginatingSecurityContext(ThemisSecurityContext originatingSecurityContext) {
-        this.originatingSecurityContext = originatingSecurityContext;
-        touch();
-    }
-
-    public String getPolicyVersion() {
-        return policyVersion;
-    }
-
-    public void setPolicyVersion(String policyVersion) {
-        this.policyVersion = policyVersion;
-        touch();
-    }
+    public String getPolicyVersion() { return policyVersion; }
+    public void setPolicyVersion(String policyVersion) { this.policyVersion = policyVersion; touch(); }
 
     @Override
     public boolean equals(Object o) {
@@ -704,171 +489,6 @@ public class Pragma implements Serializable {
     // Builder
     // =========================================================================
 
-    public static class Builder {
-        private String pragmaId;
-        private String correlationId;
-        private String causationId;
-        private String praxisId;
-        private PragmaStatus status = PragmaStatus.DRAFT;
-        private Integer priority;
-        private String priorityCode;
-        private Date authoredOn;
-        private Date lastModified;
-        private String source;
-        private String destination;
-        private final List<ErgonPayload> input = new ArrayList<>();
-        private final List<ErgonPayload> output = new ArrayList<>();
-        private final List<PragmaCheckpoint> checkpoints = new ArrayList<>();
-        private final Map<String, String> metadata = new LinkedHashMap<>();
-        private ThemisPrincipal originatingPrincipal;
-        private ThemisPrincipal executingPrincipal;
-        private final Set<ThemisAuthority> originatingAuthorities = new HashSet<>();
-        private ThemisSecurityContext originatingSecurityContext;
-        private String policyVersion = "1.0.0";
-
-        public Builder pragmaId(String pragmaId) {
-            this.pragmaId = pragmaId;
-            return this;
-        }
-
-        public Builder correlationId(String correlationId) {
-            this.correlationId = correlationId;
-            return this;
-        }
-
-        public Builder causationId(String causationId) {
-            this.causationId = causationId;
-            return this;
-        }
-
-        public Builder praxisId(String praxisId) {
-            this.praxisId = praxisId;
-            return this;
-        }
-
-        public Builder status(PragmaStatus status) {
-            this.status = status;
-            return this;
-        }
-
-        public Builder priority(Integer priority) {
-            this.priority = priority;
-            return this;
-        }
-
-        public Builder priorityCode(String priorityCode) {
-            this.priorityCode = priorityCode;
-            return this;
-        }
-
-        public Builder authoredOn(Date authoredOn) {
-            this.authoredOn = authoredOn;
-            return this;
-        }
-
-        public Builder lastModified(Date lastModified) {
-            this.lastModified = lastModified;
-            return this;
-        }
-
-        public Builder source(String source) {
-            this.source = source;
-            return this;
-        }
-
-        public Builder destination(String destination) {
-            this.destination = destination;
-            return this;
-        }
-
-        public Builder addInput(ErgonPayload payload) {
-            if (payload != null) {
-                this.input.add(payload);
-            }
-            return this;
-        }
-
-        public Builder addOutput(ErgonPayload payload) {
-            if (payload != null) {
-                this.output.add(payload);
-            }
-            return this;
-        }
-
-        public Builder addCheckpoint(PragmaCheckpoint checkpoint) {
-            if (checkpoint != null) {
-                this.checkpoints.add(checkpoint);
-            }
-            return this;
-        }
-
-        public Builder metadata(Map<String, String> metadata) {
-            if (metadata != null) {
-                this.metadata.putAll(metadata);
-            }
-            return this;
-        }
-
-        public Builder addMetadata(String key, String value) {
-            if (key != null) {
-                this.metadata.put(key, value);
-            }
-            return this;
-        }
-
-        public Builder originatingPrincipal(ThemisPrincipal originatingPrincipal) {
-            this.originatingPrincipal = originatingPrincipal;
-            return this;
-        }
-
-        public Builder executingPrincipal(ThemisPrincipal executingPrincipal) {
-            this.executingPrincipal = executingPrincipal;
-            return this;
-        }
-
-        public Builder originatingAuthorities(Set<ThemisAuthority> originatingAuthorities) {
-            if (originatingAuthorities != null) {
-                this.originatingAuthorities.addAll(originatingAuthorities);
-            }
-            return this;
-        }
-
-        public Builder addOriginatingAuthority(ThemisAuthority authority) {
-            if (authority != null) {
-                this.originatingAuthorities.add(authority);
-            }
-            return this;
-        }
-
-        public Builder addOriginatingAuthority(String authorityCode) {
-            if (authorityCode != null && !authorityCode.isBlank()) {
-                this.originatingAuthorities.add(ThemisAuthority.of(authorityCode));
-            }
-            return this;
-        }
-
-        public Builder originatingSecurityContext(ThemisSecurityContext originatingSecurityContext) {
-            this.originatingSecurityContext = originatingSecurityContext;
-            return this;
-        }
-
-        public Builder policyVersion(String policyVersion) {
-            this.policyVersion = policyVersion;
-            return this;
-        }
-
-        public Pragma build() {
-            Pragma pragma = new Pragma(pragmaId, correlationId, causationId, praxisId, status,
-                    priority, priorityCode, authoredOn, lastModified, source, destination,
-                    input, output, checkpoints, metadata);
-            pragma.setOriginatingPrincipal(originatingPrincipal);
-            pragma.setExecutingPrincipal(executingPrincipal);
-            pragma.setOriginatingAuthorities(originatingAuthorities);
-            pragma.setOriginatingSecurityContext(originatingSecurityContext);
-            if (policyVersion != null) {
-                pragma.setPolicyVersion(policyVersion);
-            }
-            return pragma;
-        }
+    public static class Builder extends PragmaBuilder {
     }
 }

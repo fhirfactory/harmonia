@@ -20,8 +20,8 @@ package net.fhirfactory.harmonia.model.core.information;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
 import net.fhirfactory.harmonia.model.security.HarmoniaSecurityLabelEnum;
-import net.fhirfactory.harmonia.model.topic.Topic;
-import net.fhirfactory.harmonia.model.topic.TopicMask;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
+import net.fhirfactory.harmonia.model.core.naming.TopicMask;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

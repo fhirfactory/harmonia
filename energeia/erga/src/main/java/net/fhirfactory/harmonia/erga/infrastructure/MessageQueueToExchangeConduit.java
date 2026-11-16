@@ -21,7 +21,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.enterprise.context.Dependent;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;

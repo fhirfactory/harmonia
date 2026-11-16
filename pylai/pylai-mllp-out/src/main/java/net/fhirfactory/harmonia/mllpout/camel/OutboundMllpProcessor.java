@@ -27,7 +27,7 @@ import jakarta.inject.Inject;
 import net.fhirfactory.harmonia.mllpgateway.config.MllpDestinationConfig;
 import net.fhirfactory.harmonia.mllpgateway.config.MllpDestinationRegistry;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.commons.lang3.StringUtils;

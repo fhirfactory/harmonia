@@ -18,7 +18,7 @@
 package net.fhirfactory.harmonia.model.core.information;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

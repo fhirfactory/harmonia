@@ -20,7 +20,7 @@ package net.fhirfactory.harmonia.model.core.information;
 import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeCommitOutcome;
 import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
 import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

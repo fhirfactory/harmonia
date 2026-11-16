@@ -21,7 +21,7 @@ import net.fhirfactory.harmonia.mllpgateway.config.MllpConfig;
 import net.fhirfactory.harmonia.mllpgateway.messaging.TaskEventProducerService;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
 import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.mllpgateway.service.DefaultCommunicationService;
 import net.fhirfactory.harmonia.mllpgateway.service.DefaultTaskService;
 import org.hl7.fhir.r5.model.*;

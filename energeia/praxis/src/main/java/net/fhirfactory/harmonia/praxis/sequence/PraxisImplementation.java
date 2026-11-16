@@ -31,7 +31,7 @@ import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
 import net.fhirfactory.harmonia.model.praxis.PraxisDefinition;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import org.apache.camel.CamelContext;
@@ -722,18 +722,13 @@ public class PraxisImplementation extends PraxisDefinition {
                         .routeId("sequence-pipeline-" + generateSequenceRouteId())
                         .routeDescription(getSequenceDescription() != null ? getSequenceDescription() : getPraxisName())
                         .filter(exchange -> {
-                            Topic topic = exchange.getMessage().getHeader("HIE_TOPIC", Topic.class);
-                            if (topic != null) {
-                                return matches(topic);
-                            }
                             String gw = exchange.getMessage().getHeader("HIE_GATEWAY_INSTANCE", String.class);
                             String trig = exchange.getMessage().getHeader("HIE_TRIGGER_TYPE", String.class);
                             Object body = exchange.getMessage().getBody();
+                            Topic topic = exchange.getMessage().getHeader("HIE_TOPIC", Topic.class);
                             if (body instanceof ErgonEvent) {
                                 ErgonEvent te = (ErgonEvent) body;
-                                if (te.getTopic() != null) {
-                                    return matches(te.getTopic());
-                                }
+                                if (topic == null) topic = te.getTopic();
                                 if (gw == null) gw = te.getGatewayInstanceId();
                                 if (trig == null) trig = te.getTriggerType();
                             } else if (body instanceof String) {
@@ -742,11 +737,8 @@ public class PraxisImplementation extends PraxisDefinition {
                                     try {
                                         com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
                                         com.fasterxml.jackson.databind.JsonNode node = mapper.readTree(strBody);
-                                        if (node.has("topic")) {
-                                            Topic t = mapper.treeToValue(node.get("topic"), Topic.class);
-                                            if (t != null) {
-                                                return matches(t);
-                                            }
+                                        if (topic == null && node.has("topic")) {
+                                            topic = mapper.treeToValue(node.get("topic"), Topic.class);
                                         }
                                         if (gw == null && node.has("gatewayInstanceId")) {
                                             gw = node.get("gatewayInstanceId").asText();
@@ -757,6 +749,15 @@ public class PraxisImplementation extends PraxisDefinition {
                                     } catch (Exception ignored) {
                                     }
                                 }
+                            }
+                            if (topic != null) {
+                                if (!matches(topic)) {
+                                    return false;
+                                }
+                                if (gw != null && !matches(gw, null)) {
+                                    return false;
+                                }
+                                return true;
                             }
                             return matches(gw, trig);
                         })
@@ -772,7 +773,7 @@ public class PraxisImplementation extends PraxisDefinition {
                                     if (container == null) {
                                         container = new Topic("Health", "HL7", "2.4", "RAW", "INGRESS");
                                     }
-                                    Topic content = new Topic("Health", "Payload", "1.0", "RawMessage", null);
+                                    Topic content = new Topic("Health", "Payload", "1.0", "RawMessage", "Default");
                                     pragma.addInput(net.fhirfactory.harmonia.model.ergon.ErgonPayload.fromJson(0, container, content, rawBody.toString()));
                                     if (exchange.getMessage().getHeader(ErgonBase.HEADER_RAW_MESSAGE) == null) {
                                         exchange.getMessage().setHeader(ErgonBase.HEADER_RAW_MESSAGE, rawBody.toString());
@@ -780,7 +781,7 @@ public class PraxisImplementation extends PraxisDefinition {
                                 }
                             } else if (rawBody instanceof String && pragma.getInput().isEmpty()) {
                                 Topic container = new Topic("Health", "HL7", "2.4", "RAW", "INGRESS");
-                                Topic content = new Topic("Health", "Payload", "1.0", "RawMessage", null);
+                                Topic content = new Topic("Health", "Payload", "1.0", "RawMessage", "Default");
                                 pragma.addInput(net.fhirfactory.harmonia.model.ergon.ErgonPayload.fromJson(0, container, content, rawBody.toString()));
                                 if (exchange.getMessage().getHeader(ErgonBase.HEADER_RAW_MESSAGE) == null) {
                                     exchange.getMessage().setHeader(ErgonBase.HEADER_RAW_MESSAGE, rawBody.toString());

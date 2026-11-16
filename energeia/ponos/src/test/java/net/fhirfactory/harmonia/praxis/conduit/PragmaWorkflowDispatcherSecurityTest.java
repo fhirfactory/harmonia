@@ -24,7 +24,7 @@ import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
 import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
 import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
 import net.fhirfactory.harmonia.model.security.HarmoniaRoleEnum;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.praxis.sequence.PraxisImplementation;
 import net.fhirfactory.harmonia.themis.api.ThemisService;

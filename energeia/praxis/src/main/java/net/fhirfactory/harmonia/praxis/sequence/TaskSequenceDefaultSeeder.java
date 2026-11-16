@@ -19,7 +19,7 @@ package net.fhirfactory.harmonia.praxis.sequence;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import net.fhirfactory.harmonia.model.topic.TopicSubscription;
+import net.fhirfactory.harmonia.model.core.naming.TopicSubscription;
 import net.fhirfactory.harmonia.praxis.service.PraxisService;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.erga.infrastructure.MessageQueueToExchangeConduit;

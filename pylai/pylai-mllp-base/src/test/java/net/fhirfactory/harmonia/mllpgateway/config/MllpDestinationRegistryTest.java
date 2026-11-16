@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.mllpgateway.config;
 
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -58,20 +58,20 @@ class MllpDestinationRegistryTest {
         registry.registerDestination(his);
         registry.registerDestination(lis);
 
-        // Resolve by topic destination
-        Topic topic1 = Topic.forEgress("ADT", "A01", "harmonia", "mllp-out", "HIS_NORTH");
+        // Resolve by topic destination qualifier
+        Topic topic1 = Topic.fromHl7("ADT", "HIS_NORTH");
         Optional<MllpDestinationConfig> resolved1 = registry.resolveDestination(topic1);
         assertThat(resolved1).isPresent();
         assertThat(resolved1.get().getDestinationId()).isEqualTo("HIS_NORTH");
 
-        // Resolve by topic target
-        Topic topic2 = Topic.forEgress("ORU", "R01", "harmonia", "LIS_MAIN", null);
+        // Resolve by topic target qualifier
+        Topic topic2 = Topic.fromHl7("ORU", "LIS_MAIN");
         Optional<MllpDestinationConfig> resolved2 = registry.resolveDestination(topic2);
         assertThat(resolved2).isPresent();
         assertThat(resolved2.get().getDestinationId()).isEqualTo("LIS_MAIN");
 
-        // Resolve by topic origin (facility code)
-        Topic topic3 = new Topic("Health", "HL7", "2.4", "ADT", "A01", null, null, "LAB_MAIN", null, new java.util.Date());
+        // Resolve by facility code in qualifier
+        Topic topic3 = Topic.fromHl7("ADT", "LAB_MAIN");
         Optional<MllpDestinationConfig> resolved3 = registry.resolveDestination(topic3);
         assertThat(resolved3).isPresent();
         assertThat(resolved3.get().getDestinationId()).isEqualTo("LIS_MAIN");

@@ -15,12 +15,12 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package net.fhirfactory.harmonia.model.topic;
+package net.fhirfactory.harmonia.model.core.naming.valuesets;
 
 /**
- * Defines the containment depth matching semantics for a {@link TopicMask}.
+ * Defines the containment depth matching semantics for a {@link net.fhirfactory.harmonia.model.core.naming.TopicMask}.
  * <p>
- * In accordance with the accepted 1.1.25 Architecture Continuum:
+ * In accordance with the accepted Architecture Continuum:
  * <ul>
  *   <li><b>Exact:</b> Every specified level matches and candidate depth is exactly the mask depth.</li>
  *   <li><b>Inclusive:</b> Every specified level matches; further descendant levels are included.</li>

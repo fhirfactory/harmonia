@@ -20,7 +20,7 @@ package net.fhirfactory.harmonia.model.core.information;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 
 import java.io.Serializable;
 import java.util.Objects;

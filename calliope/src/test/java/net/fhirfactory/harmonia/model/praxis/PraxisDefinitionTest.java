@@ -18,8 +18,8 @@
 package net.fhirfactory.harmonia.model.praxis;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.fhirfactory.harmonia.model.topic.Topic;
-import net.fhirfactory.harmonia.model.topic.TopicSubscription;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
+import net.fhirfactory.harmonia.model.core.naming.TopicSubscription;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -101,15 +101,13 @@ public class PraxisDefinitionTest {
         def.addTopicSubscription(TopicSubscription.forHl7Gateway("pas-gw", "ADT", "A01"));
         def.addTopicSubscription(TopicSubscription.forHl7Gateway("pas-gw", "ADT", "A08"));
 
-        Topic topicA01 = Topic.fromHl7("ADT", "A01", "pas-gw");
-        Topic topicA08 = Topic.fromHl7("ADT", "A08", "pas-gw");
-        Topic topicA03 = Topic.fromHl7("ADT", "A03", "pas-gw");
-        Topic limsTopic = Topic.fromHl7("ADT", "A01", "lims-gw");
+        Topic topicA01 = Topic.fromHl7("ADT", "A01");
+        Topic topicA08 = Topic.fromHl7("ADT", "A08");
+        Topic topicA03 = Topic.fromHl7("ADT", "A03");
 
         assertThat(def.matches(topicA01)).isTrue();
         assertThat(def.matches(topicA08)).isTrue();
         assertThat(def.matches(topicA03)).isFalse();
-        assertThat(def.matches(limsTopic)).isFalse();
 
         // Overload with string params
         assertThat(def.matches("pas-gw", "A01")).isTrue();

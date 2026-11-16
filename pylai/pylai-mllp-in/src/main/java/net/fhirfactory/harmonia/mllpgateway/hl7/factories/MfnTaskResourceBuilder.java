@@ -23,7 +23,7 @@ import jakarta.inject.Inject;
 import net.fhirfactory.harmonia.mllpgateway.hl7.MfnMessageExtractor;
 import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 

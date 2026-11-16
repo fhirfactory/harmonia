@@ -22,9 +22,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import net.fhirfactory.harmonia.model.core.information.factory.OperationalMetadataBuilder;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeCommitOutcome;
 import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
-import net.fhirfactory.harmonia.model.topic.Topic;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -218,8 +219,8 @@ public final class OperationalMetadata implements Serializable {
      *
      * @return a new Builder instance
      */
-    public static Builder builder() {
-        return new Builder();
+    public static OperationalMetadataBuilder builder() {
+        return new OperationalMetadataBuilder();
     }
 
     // =========================================================================
@@ -447,201 +448,6 @@ public final class OperationalMetadata implements Serializable {
     // Builder
     // =========================================================================
 
-    public static final class Builder {
-        private String subjectIdentifier;
-        private Topic operationalContext;
-        private OperationalRevision operationalRevision;
-        private String activeGeneration;
-        private Instant cachedAt;
-        private final Map<String, Object> transientProperties = new LinkedHashMap<>();
-
-        private String lifecycleStage;
-        private Instant persistenceTimestamp;
-        private AuthoritativeCommitOutcome commitOutcome;
-        private final Map<String, Object> coordinationAttributes = new LinkedHashMap<>();
-
-        private final Map<String, Object> executionCoordination = new LinkedHashMap<>();
-        private final Map<String, Object> conveyanceOperations = new LinkedHashMap<>();
-        private final Map<String, Object> temporalObservations = new LinkedHashMap<>();
-        private final List<String> evidenceReferences = new ArrayList<>();
-
-        private Builder() {}
-
-        public Builder subjectIdentifier(String subjectIdentifier) {
-            this.subjectIdentifier = subjectIdentifier;
-            return this;
-        }
-
-        public Builder subjectIdentifier(UUID uuid) {
-            this.subjectIdentifier = uuid != null ? uuid.toString() : null;
-            return this;
-        }
-
-        public Builder subjectTopic(Topic topic) {
-            this.subjectIdentifier = topic != null ? topic.getName() : null;
-            return this;
-        }
-
-        public Builder operationalContext(Topic operationalContext) {
-            this.operationalContext = operationalContext;
-            return this;
-        }
-
-        public Builder operationalRevision(OperationalRevision operationalRevision) {
-            this.operationalRevision = operationalRevision;
-            return this;
-        }
-
-        public Builder operationalRevision(String operationalRevision) {
-            this.operationalRevision = operationalRevision != null && !operationalRevision.isBlank()
-                    ? OperationalRevision.of(operationalRevision)
-                    : null;
-            return this;
-        }
-
-        @Deprecated
-        public Builder operationalRevision(AuthoritativeVersion operationalVersion) {
-            this.operationalRevision = operationalVersion != null
-                    ? OperationalRevision.of(operationalVersion.value())
-                    : null;
-            return this;
-        }
-
-        public Builder activeGeneration(String activeGeneration) {
-            this.activeGeneration = activeGeneration;
-            return this;
-        }
-
-        public Builder cachedAt(Instant cachedAt) {
-            this.cachedAt = cachedAt;
-            return this;
-        }
-
-        public Builder transientProperties(Map<String, Object> transientProperties) {
-            this.transientProperties.clear();
-            if (transientProperties != null) {
-                this.transientProperties.putAll(transientProperties);
-            }
-            return this;
-        }
-
-        public Builder putTransientProperty(String key, Object value) {
-            return transientProperty(key, value);
-        }
-
-        public Builder transientProperty(String key, Object value) {
-            if (key != null) {
-                if (value == null) {
-                    this.transientProperties.remove(key);
-                } else {
-                    this.transientProperties.put(key, value);
-                }
-            }
-            return this;
-        }
-
-        public Builder lifecycleStage(String lifecycleStage) {
-            this.lifecycleStage = lifecycleStage;
-            return this;
-        }
-
-        public Builder lifecycleStage(Topic stageTopic) {
-            this.lifecycleStage = stageTopic != null ? stageTopic.getName() : null;
-            return this;
-        }
-
-        public Builder persistenceTimestamp(Instant persistenceTimestamp) {
-            this.persistenceTimestamp = persistenceTimestamp;
-            return this;
-        }
-
-        public Builder commitOutcome(AuthoritativeCommitOutcome commitOutcome) {
-            this.commitOutcome = commitOutcome;
-            return this;
-        }
-
-        public Builder coordinationAttributes(Map<String, Object> coordinationAttributes) {
-            this.coordinationAttributes.clear();
-            if (coordinationAttributes != null) {
-                this.coordinationAttributes.putAll(coordinationAttributes);
-            }
-            return this;
-        }
-
-        public Builder putCoordinationAttribute(String key, Object value) {
-            return coordinationAttribute(key, value);
-        }
-
-        public Builder coordinationAttribute(String key, Object value) {
-            if (key != null) {
-                if (value == null) {
-                    this.coordinationAttributes.remove(key);
-                } else {
-                    this.coordinationAttributes.put(key, value);
-                }
-            }
-            return this;
-        }
-
-        public Builder executionCoordination(Map<String, Object> executionCoordination) {
-            this.executionCoordination.clear();
-            if (executionCoordination != null) {
-                this.executionCoordination.putAll(executionCoordination);
-            }
-            return this;
-        }
-
-        public Builder conveyanceOperations(Map<String, Object> conveyanceOperations) {
-            this.conveyanceOperations.clear();
-            if (conveyanceOperations != null) {
-                this.conveyanceOperations.putAll(conveyanceOperations);
-            }
-            return this;
-        }
-
-        public Builder temporalObservations(Map<String, Object> temporalObservations) {
-            this.temporalObservations.clear();
-            if (temporalObservations != null) {
-                this.temporalObservations.putAll(temporalObservations);
-            }
-            return this;
-        }
-
-        public Builder evidenceReferences(List<String> evidenceReferences) {
-            this.evidenceReferences.clear();
-            if (evidenceReferences != null) {
-                this.evidenceReferences.addAll(evidenceReferences);
-            }
-            return this;
-        }
-
-        public Builder addEvidenceReference(String reference) {
-            return evidenceReference(reference);
-        }
-
-        public Builder evidenceReference(String reference) {
-            if (reference != null && !reference.isBlank()) {
-                this.evidenceReferences.add(reference.trim());
-            }
-            return this;
-        }
-
-        public OperationalMetadata build() {
-            return new OperationalMetadata(
-                    subjectIdentifier,
-                    operationalContext,
-                    operationalRevision,
-                    activeGeneration,
-                    cachedAt,
-                    transientProperties,
-                    lifecycleStage,
-                    persistenceTimestamp,
-                    commitOutcome,
-                    coordinationAttributes,
-                    executionCoordination,
-                    conveyanceOperations,
-                    temporalObservations,
-                    evidenceReferences);
-        }
+    public static final class Builder extends OperationalMetadataBuilder {
     }
 }

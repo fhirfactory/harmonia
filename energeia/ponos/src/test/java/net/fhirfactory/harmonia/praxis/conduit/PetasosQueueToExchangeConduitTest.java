@@ -26,7 +26,7 @@ import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
 import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.petasos.api.consumer.PetasosMessageContext;
 import net.fhirfactory.harmonia.petasos.api.consumer.PetasosMessageHandler;
@@ -91,7 +91,7 @@ class PetasosQueueToExchangeConduitTest {
         @Override
         protected void processErgon(Pragma pragma, Exchange exchange) throws Exception {
             Topic container = new Topic("Health", "HL7", "2.4", "ADT", "A01");
-            Topic content = new Topic("Health", "Clinical", "1.0", "PatientId", null);
+            Topic content = new Topic("Health", "Clinical", "1.0", "PatientId", "Default");
             pragma.addOutput(ErgonPayload.fromJson(0, container, content, "{\"result\":\"PROCESSED\"}"));
             pragma.setStatus(PragmaStatus.COMPLETED);
         }

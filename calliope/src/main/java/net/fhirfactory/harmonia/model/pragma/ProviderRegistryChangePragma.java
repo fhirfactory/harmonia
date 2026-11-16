@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.registry.ProviderRegistryConstants;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.OperationOutcome;
 import org.hl7.fhir.r5.model.Resource;
@@ -141,8 +141,7 @@ public class ProviderRegistryChangePragma implements Serializable {
         String resourceType = resource != null ? resource.fhirType() : "Unknown";
         String resourceId = resource != null && resource.getIdElement() != null ? resource.getIdElement().getIdPart() : null;
 
-        Topic topic = new Topic("Health", "FHIR", "R5", resourceType, operation,
-                sourceSystem != null ? sourceSystem : "pylai-fhir-registry", "energeia-ponos", null, null, new Date());
+        Topic topic = new Topic("Health", "FHIR", "R5", resourceType, operation);
 
         ErgonPayload inputPayload = resource != null ?
                 ErgonPayload.fromFhirResource(0, topic, topic, resource) : null;

@@ -35,7 +35,7 @@ import net.fhirfactory.harmonia.mllpgateway.service.CommunicationService;
 import net.fhirfactory.harmonia.mllpgateway.service.ProvenanceService;
 import net.fhirfactory.harmonia.mllpgateway.service.TaskService;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 import org.slf4j.Logger;
@@ -245,10 +245,8 @@ public class IncomingAdtMessageProcessor {
             String messageTimestamp = extractor.getTerserValue(terser, "/MSH-7", "MSH-7");
             String gatewayInstanceId = mllpConfig != null ? mllpConfig.getGatewayInstanceId() : "mllp-gateway-default";
 
-            // Build explicit Topic to capture data type (message type) and routing parameters
-            topic = Topic.fromHl7(version, messageType, triggerEvent, gatewayInstanceId, null,
-                    sendingFacility != null ? sendingFacility : sendingApp,
-                    receivingFacility != null ? receivingFacility : receivingApp);
+            // Build explicit Topic to capture data type (message type)
+            topic = Topic.fromHl7(version, messageType, triggerEvent);
 
             phiLog.debug("Inbound HL7 ADT message received [messageControlId={}, topic={}]: {}",
                     messageControlId, topic, hl7MessageString);
@@ -305,6 +303,8 @@ public class IncomingAdtMessageProcessor {
                 String status = savedTask.getStatus() != null ? savedTask.getStatus().toCode() : "REQUESTED";
                 String desc = "HL7 v2.4 " + messageType + "^" + triggerEvent + " event transformed to Task";
                 ErgonEvent event = new ErgonEvent(taskId, action, status, topic, messageControlId, desc);
+                event.setGatewayInstanceId(gatewayInstanceId);
+                event.setSource(sendingFacility != null ? sendingFacility : sendingApp);
                 taskEventProducerService.sendTaskEvent(event);
                 log.info("Sent TaskEvent for Task/{} [action={}, status={}, topic={}] to task-sequence-processor",
                         taskId, action, status, topic);

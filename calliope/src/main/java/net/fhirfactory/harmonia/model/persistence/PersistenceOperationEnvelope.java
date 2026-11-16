@@ -175,133 +175,53 @@ public class PersistenceOperationEnvelope<T> implements Serializable {
                 : Collections.unmodifiableMap(new LinkedHashMap<>(attributes));
     }
 
-    public String getOperationId() {
-        return operationId;
-    }
+    public String getOperationId() { return operationId; }
+    public String operationId() { return operationId; }
 
-    public String operationId() {
-        return operationId;
-    }
+    public PersistenceOperationType getOperationType() { return operationType; }
+    public PersistenceOperationType operationType() { return operationType; }
 
-    public PersistenceOperationType getOperationType() {
-        return operationType;
-    }
+    public String getResourceType() { return resourceType; }
+    public String resourceType() { return resourceType; }
 
-    public PersistenceOperationType operationType() {
-        return operationType;
-    }
+    public String getResourceId() { return resourceId; }
+    public String resourceId() { return resourceId; }
 
-    public String getResourceType() {
-        return resourceType;
-    }
+    public Long getExpectedVersion() { return expectedVersion; }
+    public Long expectedVersion() { return expectedVersion; }
 
-    public String resourceType() {
-        return resourceType;
-    }
+    public T getPayload() { return payload; }
+    public T payload() { return payload; }
 
-    public String getResourceId() {
-        return resourceId;
-    }
+    public ThemisPrincipal getOriginatingPrincipal() { return originatingPrincipal; }
+    public ThemisPrincipal originatingPrincipal() { return originatingPrincipal; }
 
-    public String resourceId() {
-        return resourceId;
-    }
+    public Set<ThemisAuthority> getOriginatingAuthorities() { return originatingAuthorities; }
+    public Set<ThemisAuthority> originatingAuthorities() { return originatingAuthorities; }
 
-    public Long getExpectedVersion() {
-        return expectedVersion;
-    }
+    public String getSecurityDomain() { return securityDomain; }
+    public String securityDomain() { return securityDomain; }
 
-    public Long expectedVersion() {
-        return expectedVersion;
-    }
+    public String getCorrelationId() { return correlationId; }
+    public String correlationId() { return correlationId; }
 
-    public T getPayload() {
-        return payload;
-    }
+    public String getCausationId() { return causationId; }
+    public String causationId() { return causationId; }
 
-    public T payload() {
-        return payload;
-    }
+    public Instant getRequestedAt() { return requestedAt; }
+    public Instant requestedAt() { return requestedAt; }
 
-    public ThemisPrincipal getOriginatingPrincipal() {
-        return originatingPrincipal;
-    }
+    public ThemisAuthorizationDecision getAuthorizationDecision() { return authorizationDecision; }
+    public ThemisAuthorizationDecision authorizationDecision() { return authorizationDecision; }
 
-    public ThemisPrincipal originatingPrincipal() {
-        return originatingPrincipal;
-    }
+    public ThemisPrincipal getExecutingPrincipal() { return executingPrincipal; }
+    public ThemisPrincipal executingPrincipal() { return executingPrincipal; }
 
-    public Set<ThemisAuthority> getOriginatingAuthorities() {
-        return originatingAuthorities;
-    }
+    public Instant getCreatedAt() { return createdAt; }
+    public Instant createdAt() { return createdAt; }
 
-    public Set<ThemisAuthority> originatingAuthorities() {
-        return originatingAuthorities;
-    }
-
-    public String getSecurityDomain() {
-        return securityDomain;
-    }
-
-    public String securityDomain() {
-        return securityDomain;
-    }
-
-    public String getCorrelationId() {
-        return correlationId;
-    }
-
-    public String correlationId() {
-        return correlationId;
-    }
-
-    public String getCausationId() {
-        return causationId;
-    }
-
-    public String causationId() {
-        return causationId;
-    }
-
-    public Instant getRequestedAt() {
-        return requestedAt;
-    }
-
-    public Instant requestedAt() {
-        return requestedAt;
-    }
-
-    public ThemisAuthorizationDecision getAuthorizationDecision() {
-        return authorizationDecision;
-    }
-
-    public ThemisAuthorizationDecision authorizationDecision() {
-        return authorizationDecision;
-    }
-
-    public ThemisPrincipal getExecutingPrincipal() {
-        return executingPrincipal;
-    }
-
-    public ThemisPrincipal executingPrincipal() {
-        return executingPrincipal;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public Instant createdAt() {
-        return createdAt;
-    }
-
-    public Map<String, String> getAttributes() {
-        return attributes;
-    }
-
-    public Map<String, String> attributes() {
-        return attributes;
-    }
+    public Map<String, String> getAttributes() { return attributes; }
+    public Map<String, String> attributes() { return attributes; }
 
     /**
      * Derives an immutable copy with an updated executing principal.
@@ -376,44 +296,9 @@ public class PersistenceOperationEnvelope<T> implements Serializable {
             ThemisSecurityContext securityContext,
             ThemisAuthorizationDecision authorizationDecision
     ) {
-        Objects.requireNonNull(securityContext, "securityContext must not be null");
-        Objects.requireNonNull(authorizationDecision, "authorizationDecision must not be null");
-
-        ThemisPrincipal origPrincipal = securityContext.originatingPrincipal();
-        if (origPrincipal == null) {
-            origPrincipal = securityContext.requestingPrincipal();
-        }
-        ThemisPrincipal execPrincipal = securityContext.executingPrincipal();
-        if (execPrincipal == null) {
-            execPrincipal = origPrincipal;
-        }
-        String causId = securityContext.causationId();
-        if (causId == null || causId.isBlank()) {
-            causId = securityContext.correlationId();
-        }
-
-        return PersistenceOperationEnvelope.<T>builder()
-                .operationId(UUID.randomUUID().toString())
-                .operationType(operationType)
-                .resourceType(resourceType)
-                .resourceId(resourceId)
-                .expectedVersion(expectedVersion)
-                .payload(payload)
-                .originatingPrincipal(origPrincipal)
-                .originatingAuthorities(securityContext.authorities())
-                .securityDomain(securityContext.securityDomain())
-                .correlationId(securityContext.correlationId())
-                .causationId(causId)
-                .requestedAt(securityContext.requestedAt())
-                .authorizationDecision(authorizationDecision)
-                .executingPrincipal(execPrincipal)
-                .attributes(securityContext.attributes())
-                .build();
+        return PersistenceOperationEnvelopeFactory.fromSecurityContext(operationType, resourceType, resourceId, expectedVersion, payload, securityContext, authorizationDecision);
     }
 
-    /**
-     * Factory method creating a persistence envelope from an active {@link ThemisSecurityContext} without versioning.
-     */
     public static <T> PersistenceOperationEnvelope<T> fromSecurityContext(
             PersistenceOperationType operationType,
             String resourceType,
@@ -422,12 +307,9 @@ public class PersistenceOperationEnvelope<T> implements Serializable {
             ThemisSecurityContext securityContext,
             ThemisAuthorizationDecision authorizationDecision
     ) {
-        return fromSecurityContext(operationType, resourceType, resourceId, null, payload, securityContext, authorizationDecision);
+        return PersistenceOperationEnvelopeFactory.fromSecurityContext(operationType, resourceType, resourceId, null, payload, securityContext, authorizationDecision);
     }
 
-    /**
-     * Factory helper for {@code CREATE} operations.
-     */
     public static <T> PersistenceOperationEnvelope<T> ofCreate(
             String resourceType,
             String resourceId,
@@ -435,12 +317,9 @@ public class PersistenceOperationEnvelope<T> implements Serializable {
             ThemisSecurityContext securityContext,
             ThemisAuthorizationDecision authorizationDecision
     ) {
-        return fromSecurityContext(PersistenceOperationType.CREATE, resourceType, resourceId, null, payload, securityContext, authorizationDecision);
+        return PersistenceOperationEnvelopeFactory.ofCreate(resourceType, resourceId, payload, securityContext, authorizationDecision);
     }
 
-    /**
-     * Factory helper for {@code UPDATE} operations with optimistic locking version.
-     */
     public static <T> PersistenceOperationEnvelope<T> ofUpdate(
             String resourceType,
             String resourceId,
@@ -449,12 +328,9 @@ public class PersistenceOperationEnvelope<T> implements Serializable {
             ThemisSecurityContext securityContext,
             ThemisAuthorizationDecision authorizationDecision
     ) {
-        return fromSecurityContext(PersistenceOperationType.UPDATE, resourceType, resourceId, expectedVersion, payload, securityContext, authorizationDecision);
+        return PersistenceOperationEnvelopeFactory.ofUpdate(resourceType, resourceId, expectedVersion, payload, securityContext, authorizationDecision);
     }
 
-    /**
-     * Factory helper for {@code UPDATE} operations without optimistic locking version.
-     */
     public static <T> PersistenceOperationEnvelope<T> ofUpdate(
             String resourceType,
             String resourceId,
@@ -462,12 +338,9 @@ public class PersistenceOperationEnvelope<T> implements Serializable {
             ThemisSecurityContext securityContext,
             ThemisAuthorizationDecision authorizationDecision
     ) {
-        return ofUpdate(resourceType, resourceId, null, payload, securityContext, authorizationDecision);
+        return PersistenceOperationEnvelopeFactory.ofUpdate(resourceType, resourceId, payload, securityContext, authorizationDecision);
     }
 
-    /**
-     * Factory helper for {@code DELETE} operations with optimistic locking version.
-     */
     public static <T> PersistenceOperationEnvelope<T> ofDelete(
             String resourceType,
             String resourceId,
@@ -475,164 +348,23 @@ public class PersistenceOperationEnvelope<T> implements Serializable {
             ThemisSecurityContext securityContext,
             ThemisAuthorizationDecision authorizationDecision
     ) {
-        return fromSecurityContext(PersistenceOperationType.DELETE, resourceType, resourceId, expectedVersion, null, securityContext, authorizationDecision);
+        return PersistenceOperationEnvelopeFactory.ofDelete(resourceType, resourceId, expectedVersion, securityContext, authorizationDecision);
     }
 
-    /**
-     * Factory helper for {@code DELETE} operations without optimistic locking version.
-     */
     public static <T> PersistenceOperationEnvelope<T> ofDelete(
             String resourceType,
             String resourceId,
             ThemisSecurityContext securityContext,
             ThemisAuthorizationDecision authorizationDecision
     ) {
-        return ofDelete(resourceType, resourceId, null, securityContext, authorizationDecision);
+        return PersistenceOperationEnvelopeFactory.ofDelete(resourceType, resourceId, securityContext, authorizationDecision);
     }
 
-    public static <T> Builder<T> builder() {
-        return new Builder<>();
+    public static <T> PersistenceOperationEnvelopeBuilder<T> builder() {
+        return new PersistenceOperationEnvelopeBuilder<>();
     }
 
-    public static class Builder<T> {
-        private String operationId;
-        private PersistenceOperationType operationType;
-        private String resourceType;
-        private String resourceId;
-        private Long expectedVersion;
-        private T payload;
-        private ThemisPrincipal originatingPrincipal;
-        private Set<ThemisAuthority> originatingAuthorities = new LinkedHashSet<>();
-        private String securityDomain;
-        private String correlationId;
-        private String causationId;
-        private Instant requestedAt;
-        private ThemisAuthorizationDecision authorizationDecision;
-        private ThemisPrincipal executingPrincipal;
-        private Instant createdAt;
-        private Map<String, String> attributes = new LinkedHashMap<>();
-
-        public Builder() {
-        }
-
-        public Builder<T> operationId(String operationId) {
-            this.operationId = operationId;
-            return this;
-        }
-
-        public Builder<T> operationType(PersistenceOperationType operationType) {
-            this.operationType = operationType;
-            return this;
-        }
-
-        public Builder<T> resourceType(String resourceType) {
-            this.resourceType = resourceType;
-            return this;
-        }
-
-        public Builder<T> resourceId(String resourceId) {
-            this.resourceId = resourceId;
-            return this;
-        }
-
-        public Builder<T> expectedVersion(Long expectedVersion) {
-            this.expectedVersion = expectedVersion;
-            return this;
-        }
-
-        public Builder<T> payload(T payload) {
-            this.payload = payload;
-            return this;
-        }
-
-        public Builder<T> originatingPrincipal(ThemisPrincipal originatingPrincipal) {
-            this.originatingPrincipal = originatingPrincipal;
-            return this;
-        }
-
-        public Builder<T> originatingAuthorities(Set<ThemisAuthority> originatingAuthorities) {
-            if (originatingAuthorities != null) {
-                this.originatingAuthorities = new LinkedHashSet<>(originatingAuthorities);
-            }
-            return this;
-        }
-
-        public Builder<T> addOriginatingAuthority(ThemisAuthority authority) {
-            if (authority != null) {
-                this.originatingAuthorities.add(authority);
-            }
-            return this;
-        }
-
-        public Builder<T> securityDomain(String securityDomain) {
-            this.securityDomain = securityDomain;
-            return this;
-        }
-
-        public Builder<T> correlationId(String correlationId) {
-            this.correlationId = correlationId;
-            return this;
-        }
-
-        public Builder<T> causationId(String causationId) {
-            this.causationId = causationId;
-            return this;
-        }
-
-        public Builder<T> requestedAt(Instant requestedAt) {
-            this.requestedAt = requestedAt;
-            return this;
-        }
-
-        public Builder<T> authorizationDecision(ThemisAuthorizationDecision authorizationDecision) {
-            this.authorizationDecision = authorizationDecision;
-            return this;
-        }
-
-        public Builder<T> executingPrincipal(ThemisPrincipal executingPrincipal) {
-            this.executingPrincipal = executingPrincipal;
-            return this;
-        }
-
-        public Builder<T> createdAt(Instant createdAt) {
-            this.createdAt = createdAt;
-            return this;
-        }
-
-        public Builder<T> attributes(Map<String, String> attributes) {
-            if (attributes != null) {
-                this.attributes = new LinkedHashMap<>(attributes);
-            }
-            return this;
-        }
-
-        public Builder<T> attribute(String key, String value) {
-            if (key != null && value != null) {
-                this.attributes.put(key, value);
-            }
-            return this;
-        }
-
-        public PersistenceOperationEnvelope<T> build() {
-            return new PersistenceOperationEnvelope<>(
-                    operationId,
-                    operationType,
-                    resourceType,
-                    resourceId,
-                    expectedVersion,
-                    payload,
-                    originatingPrincipal,
-                    originatingAuthorities,
-                    securityDomain,
-                    correlationId,
-                    causationId,
-                    requestedAt,
-                    authorizationDecision,
-                    executingPrincipal,
-                    createdAt,
-                    attributes
-            );
-        }
+    public static class Builder<T> extends PersistenceOperationEnvelopeBuilder<T> {
     }
 
     @Override

@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.agora.api.topic;
 
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 
 import java.util.Date;
 
@@ -51,8 +51,7 @@ public final class AgoraTopics {
      * @return a structured Calliope Topic instance
      */
     public static Topic createTopic(String dataElement, String qualifier, String destination) {
-        return new Topic(TOPIC_DOMAIN, TOPIC_MODEL, TOPIC_MODEL_VERSION, dataElement, qualifier,
-                DEFAULT_SOURCE, null, null, destination, new Date());
+        return new Topic(TOPIC_DOMAIN, TOPIC_MODEL, TOPIC_MODEL_VERSION, dataElement, qualifier);
     }
 
     /**

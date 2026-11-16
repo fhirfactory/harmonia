@@ -21,7 +21,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpResponse;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 

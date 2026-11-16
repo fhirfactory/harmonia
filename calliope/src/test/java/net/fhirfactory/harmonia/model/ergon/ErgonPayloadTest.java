@@ -19,7 +19,7 @@ package net.fhirfactory.harmonia.model.ergon;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.hl7.fhir.r5.model.Attachment;
 import org.hl7.fhir.r5.model.Patient;
 import org.hl7.fhir.r5.model.Reference;
@@ -129,7 +129,7 @@ class ErgonPayloadTest {
     @Test
     @DisplayName("Test conversion to and from Task.TaskInputComponent")
     void testTaskInputComponentConversion() {
-        Topic container = Topic.fromHl7("ADT", "A08", "pas-gw");
+        Topic container = Topic.fromHl7("ADT", "A08");
         Topic content = new Topic("Health", "FHIR", "R5", "Patient", "Resource");
 
         ErgonPayload original = ErgonPayload.fromFhirResourceReference(1, container, content, "Patient/PAT-1234");
@@ -156,7 +156,7 @@ class ErgonPayloadTest {
     @Test
     @DisplayName("Test conversion to and from Task.TaskOutputComponent")
     void testTaskOutputComponentConversion() {
-        Topic container = Topic.fromHl7("ADT", "A01", "pas-gw");
+        Topic container = Topic.fromHl7("ADT", "A01");
         Topic content = new Topic("Health", "JSON", "1.0", "AckResponse", "Json");
         String ackJson = "{\"status\":\"ACK\",\"controlId\":\"MSG-001\"}";
 
@@ -182,7 +182,7 @@ class ErgonPayloadTest {
         Task task = new Task();
         task.setId("Task/TASK-BULK-01");
 
-        Topic container = Topic.fromHl7("ADT", "A01", "pas-gw");
+        Topic container = Topic.fromHl7("ADT", "A01");
         Topic content1 = new Topic("Health", "FHIR", "R5", "Communication", "RawHL7");
         Topic content2 = new Topic("Health", "FHIR", "R5", "Patient", "Resource");
 
@@ -213,7 +213,7 @@ class ErgonPayloadTest {
     @Test
     @DisplayName("Test Comparable ordering of TaskPayload")
     void testComparableOrdering() {
-        Topic topic = Topic.fromHl7("ADT", "A01", "gw");
+        Topic topic = Topic.fromHl7("ADT", "A01");
         ErgonPayload p3 = ErgonPayload.fromFhirResourceReference(3, topic, topic, "Ref/3");
         ErgonPayload p1 = ErgonPayload.fromFhirResourceReference(1, topic, topic, "Ref/1");
         ErgonPayload p2 = ErgonPayload.fromFhirResourceReference(2, topic, topic, "Ref/2");
@@ -231,7 +231,7 @@ class ErgonPayloadTest {
     @Test
     @DisplayName("Test Jackson JSON serialization and deserialization")
     void testJacksonSerialization() throws Exception {
-        Topic container = Topic.fromHl7("ADT", "A01", "pas-gw");
+        Topic container = Topic.fromHl7("ADT", "A01");
         Topic content = new Topic("Health", "FHIR", "R5", "Patient", "Resource");
 
         ErgonPayload original = ErgonPayload.fromFhirResourceReference(1, container, content, "Patient/MRN-777");
@@ -252,7 +252,7 @@ class ErgonPayloadTest {
     @Test
     @DisplayName("Test copy constructor and equality")
     void testCopyAndEquality() {
-        Topic container = Topic.fromHl7("ADT", "A01", "pas-gw");
+        Topic container = Topic.fromHl7("ADT", "A01");
         Topic content = new Topic("Health", "FHIR", "R5", "Patient", "Resource");
 
         ErgonPayload original = ErgonPayload.fromFhirResourceReference(1, container, content, "Patient/PAT-1");

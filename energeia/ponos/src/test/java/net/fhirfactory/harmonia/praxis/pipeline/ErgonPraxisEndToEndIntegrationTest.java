@@ -31,7 +31,7 @@ import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
 import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.petasos.api.consumer.PetasosConsumer;
 import net.fhirfactory.harmonia.petasos.api.consumer.PetasosMessageContext;
@@ -168,7 +168,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 .build();
         inputPragma.addInput(ErgonPayload.fromJson(0,
                 new Topic("Health", "HL7", "2.4", "ADT", "A01"),
-                new Topic("Health", "Clinical", "1.0", "PatientId", null),
+                new Topic("Health", "Clinical", "1.0", "PatientId", "Default"),
                 hl7AdtMessage));
 
         ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
@@ -289,7 +289,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 .build();
         inputPragma.addInput(ErgonPayload.fromJson(0,
                 new Topic("Health", "HL7", "2.4", "ADT", "A01"),
-                new Topic("Health", "Clinical", "1.0", "PatientId", null),
+                new Topic("Health", "Clinical", "1.0", "PatientId", "Default"),
                 hl7AdtMessage));
 
         ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
@@ -434,7 +434,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 .build();
         inputPragma.addInput(ErgonPayload.fromJson(0,
                 new Topic("Health", "HL7", "2.4", "ADT", "A01"),
-                new Topic("Health", "Clinical", "1.0", "PatientId", null),
+                new Topic("Health", "Clinical", "1.0", "PatientId", "Default"),
                 "MSH|^~\\&|PAS|HOSP|HIE|REC|20260908120000||ADT^A01|MSG-001|P|2.4\rPID|||MRN-001^^^HOSP||DOE^J||19900101|M"));
 
         ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
@@ -520,7 +520,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 .build();
         inputPragma.addInput(ErgonPayload.fromJson(0,
                 new Topic("Health", "HL7", "2.4", "ADT", "A01"),
-                new Topic("Health", "Clinical", "1.0", "PatientId", null),
+                new Topic("Health", "Clinical", "1.0", "PatientId", "Default"),
                 "MSH|^~\\&|PAS|HOSP|HIE|REC|20260908120000||ADT^A01|MSG-001|P|2.4\rPID|||MRN-SVC-001^^^HOSP||TEST^P||19950101|F"));
 
         ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
@@ -589,7 +589,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 .build();
         inputPragma.addInput(ErgonPayload.fromJson(0,
                 new Topic("Health", "HL7", "2.4", "ADT", "A01"),
-                new Topic("Health", "Clinical", "1.0", "PatientId", null),
+                new Topic("Health", "Clinical", "1.0", "PatientId", "Default"),
                 "MSH|^~\\&|PAS|HOSP|HIE|REC|20260908120000||ADT^A01|MSG-001|P|2.4\rPID|||MRN-ANON-001^^^HOSP||ANON^U||20000101|U"));
 
         ObjectMapper mapper = new ObjectMapper().registerModule(new JavaTimeModule());
@@ -627,15 +627,14 @@ class ErgonPraxisEndToEndIntegrationTest {
         stagedPragma.setOriginatingSecurityContext(ThemisSecurityContext.fromPrincipal(recPrincipal, "CORR-REC-100"));
 
         Topic hl7Container = new Topic("Health", "HL7", "2.4", "ADT", "A01");
-        Topic adtContent = new Topic("Health", "Clinical", "1.0", "PatientId", null);
+        Topic adtContent = new Topic("Health", "Clinical", "1.0", "PatientId", "Default");
         stagedPragma.addInput(ErgonPayload.fromJson(0, hl7Container, adtContent,
                 "MSH|^~\\&|PAS|HOSP|HIE|REC|20260908120000||ADT^A01|MSG-001|P|2.4\rPID|||MRN-REC-100^^^HOSP||DOE^JOHN||19800101|M"));
 
-        // Add pre-existing outputs from step 1 & 2
         Patient patient = new Patient();
         patient.setId("Patient/MRN-REC-100");
         patient.addName().setFamily("DOE").addGiven("JOHN");
-        Topic fhirContainer = new Topic("Health", "FHIR", "R5", "Patient", null);
+        Topic fhirContainer = new Topic("Health", "FHIR", "R5", "Patient", "Default");
         Topic fhirContent = new Topic("Health", "Clinical", "1.0", "Patient", "Demographics");
         stagedPragma.addOutput(ErgonPayload.fromFhirResource(0, fhirContainer, fhirContent, patient));
 

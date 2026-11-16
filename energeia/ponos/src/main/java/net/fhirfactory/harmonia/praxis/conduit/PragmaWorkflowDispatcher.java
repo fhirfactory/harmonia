@@ -26,7 +26,7 @@ import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
 import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
 import net.fhirfactory.harmonia.model.security.HarmoniaSecurityLabelEnum;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.praxis.sequence.PraxisImplementation;
 import net.fhirfactory.harmonia.praxis.service.PraxisService;

@@ -20,7 +20,7 @@ package net.fhirfactory.harmonia.model.ergon;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -91,10 +91,9 @@ public class ErgonEvent implements Serializable {
     }
 
     private void ensureTopicSync() {
-        String gw = gatewayInstanceId != null ? gatewayInstanceId : (source != null ? source : "default");
         String mt = messageType != null && !messageType.isBlank() ? messageType : (this.topic != null ? this.topic.getDataElement() : "ADT");
         String tt = triggerType != null && !triggerType.isBlank() ? triggerType : (this.topic != null ? this.topic.getDataElementQualifier() : "*");
-        this.topic = Topic.fromHl7(mt, tt, gw);
+        this.topic = Topic.fromHl7(mt, tt);
     }
 
     public String getTaskId() {
@@ -131,10 +130,6 @@ public class ErgonEvent implements Serializable {
     public void setTopic(Topic topic) {
         this.topic = topic;
         if (topic != null) {
-            if (topic.getSource() != null) {
-                this.gatewayInstanceId = topic.getSource();
-                this.source = topic.getSource();
-            }
             if (topic.getDataElement() != null) {
                 this.messageType = topic.getDataElement();
             }
@@ -183,9 +178,6 @@ public class ErgonEvent implements Serializable {
     }
 
     public String getSource() {
-        if (source == null && topic != null) {
-            return topic.getSource();
-        }
         return source;
     }
 

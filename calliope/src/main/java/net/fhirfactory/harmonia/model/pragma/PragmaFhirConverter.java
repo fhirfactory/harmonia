@@ -17,9 +17,9 @@
 
 package net.fhirfactory.harmonia.model.pragma;
 
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
-import net.fhirfactory.harmonia.model.topic.Topic;
 import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
@@ -213,27 +213,7 @@ public final class PragmaFhirConverter {
         }
 
         // 10. Checkpoints (as annotations and extensions)
-        if (pragma.getCheckpoints() != null) {
-            for (PragmaCheckpoint cp : pragma.getCheckpoints()) {
-                if (cp != null) {
-                    Annotation note = new Annotation();
-                    note.setTime(cp.getTimestamp());
-                    StringBuilder sb = new StringBuilder();
-                    sb.append("[").append(cp.getStageName() != null ? cp.getStageName() : "CHECKPOINT").append("] ");
-                    if (cp.getErgonId() != null) {
-                        sb.append("Ergon: ").append(cp.getErgonId()).append(" ");
-                    }
-                    if (cp.getStatus() != null) {
-                        sb.append("Status: ").append(cp.getStatus().getCode()).append(" ");
-                    }
-                    if (cp.getStatusMessage() != null) {
-                        sb.append("- ").append(cp.getStatusMessage());
-                    }
-                    note.setText(sb.toString().trim());
-                    task.addNote(note);
-                }
-            }
-        }
+        PragmaFhirCheckpointConverter.applyCheckpoints(task, pragma.getCheckpoints());
 
         // 11. Metadata extensions
         if (pragma.getMetadata() != null) {
@@ -245,54 +225,7 @@ public final class PragmaFhirConverter {
         }
 
         // 12. Security Context (Originating & Executing)
-        ThemisPrincipal principal = pragma.getOriginatingPrincipal();
-        if (principal == null && pragma.getOriginatingSecurityContext() != null) {
-            principal = pragma.getOriginatingSecurityContext().originatingPrincipal();
-        }
-        if (principal != null) {
-            if (StringUtils.isNotBlank(principal.principalId())) {
-                task.addExtension(new Extension(EXTENSION_SECURITY_PRINCIPAL_ID, new StringType(principal.principalId())));
-            }
-            if (principal.principalType() != null) {
-                task.addExtension(new Extension(EXTENSION_SECURITY_PRINCIPAL_TYPE, new StringType(principal.principalType().name())));
-            }
-            if (StringUtils.isNotBlank(principal.sourceDomain())) {
-                task.addExtension(new Extension(EXTENSION_SECURITY_SOURCE_DOMAIN, new StringType(principal.sourceDomain())));
-            }
-        }
-
-        ThemisPrincipal execPrincipal = pragma.getExecutingPrincipal();
-        if (execPrincipal == null && pragma.getOriginatingSecurityContext() != null) {
-            execPrincipal = pragma.getOriginatingSecurityContext().executingPrincipal();
-        }
-        if (execPrincipal != null) {
-            if (StringUtils.isNotBlank(execPrincipal.principalId())) {
-                task.addExtension(new Extension(EXTENSION_SECURITY_EXECUTING_PRINCIPAL_ID, new StringType(execPrincipal.principalId())));
-            }
-            if (execPrincipal.principalType() != null) {
-                task.addExtension(new Extension(EXTENSION_SECURITY_EXECUTING_PRINCIPAL_TYPE, new StringType(execPrincipal.principalType().name())));
-            }
-            if (StringUtils.isNotBlank(execPrincipal.sourceDomain())) {
-                task.addExtension(new Extension(EXTENSION_SECURITY_EXECUTING_SOURCE_DOMAIN, new StringType(execPrincipal.sourceDomain())));
-            }
-        }
-
-        java.util.Set<ThemisAuthority> authorities = pragma.getOriginatingAuthorities();
-        if ((authorities == null || authorities.isEmpty()) && pragma.getOriginatingSecurityContext() != null) {
-            authorities = pragma.getOriginatingSecurityContext().authorities();
-        }
-        if (authorities != null && !authorities.isEmpty()) {
-            for (ThemisAuthority auth : authorities) {
-                if (auth != null && StringUtils.isNotBlank(auth.authorityCode())) {
-                    task.addExtension(new Extension(EXTENSION_SECURITY_AUTHORITY, new StringType(auth.authorityCode())));
-                }
-            }
-        }
-
-        String polVer = pragma.getPolicyVersion();
-        if (StringUtils.isNotBlank(polVer)) {
-            task.addExtension(new Extension(EXTENSION_SECURITY_POLICY_VERSION, new StringType(polVer)));
-        }
+        PragmaFhirSecurityConverter.applySecurityContext(task, pragma);
 
         // 13. Security Tagging
         if (pragma.getMetadata() != null && pragma.getMetadata().containsKey("confidentiality")) {
@@ -431,34 +364,10 @@ public final class PragmaFhirConverter {
         }
 
         // 10. Checkpoints from Notes
-        if (task.hasNote()) {
-            int stepIndex = 0;
-            for (Annotation note : task.getNote()) {
-                PragmaCheckpoint cp = new PragmaCheckpoint();
-                cp.setPragmaId(pragma.getPragmaId());
-                cp.setPraxisId(pragma.getPraxisId());
-                cp.setStepIndex(stepIndex++);
-                if (note.hasTime()) {
-                    cp.setTimestamp(note.getTime());
-                }
-                if (note.hasText()) {
-                    cp.setStatusMessage(note.getText());
-                    cp.setStageName(extractStageName(note.getText()));
-                }
-                pragma.getCheckpoints().add(cp);
-            }
-        }
+        PragmaFhirCheckpointConverter.extractCheckpoints(task, pragma);
 
         // 11. Metadata from extensions
         if (task.hasExtension()) {
-            String principalId = null;
-            PrincipalType principalType = null;
-            String sourceDomain = null;
-            String executingPrincipalId = null;
-            PrincipalType executingPrincipalType = null;
-            String executingSourceDomain = null;
-            String policyVersion = null;
-
             for (Extension ext : task.getExtension()) {
                 if (ext.hasUrl() && ext.getValue() instanceof StringType stringType) {
                     String url = ext.getUrl();
@@ -469,67 +378,11 @@ public final class PragmaFhirConverter {
                     } else if (url.startsWith(LEGACY_EXTENSION_METADATA_PREFIX)) {
                         String key = url.substring(LEGACY_EXTENSION_METADATA_PREFIX.length());
                         pragma.addMetadata(key, val);
-                    } else if (EXTENSION_SECURITY_PRINCIPAL_ID.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "principal-id").equals(url)) {
-                        principalId = val;
-                    } else if (EXTENSION_SECURITY_PRINCIPAL_TYPE.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "principal-type").equals(url)) {
-                        try {
-                            principalType = PrincipalType.valueOf(val);
-                        } catch (Exception ignored) {}
-                    } else if (EXTENSION_SECURITY_SOURCE_DOMAIN.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "source-domain").equals(url)) {
-                        sourceDomain = val;
-                    } else if (EXTENSION_SECURITY_EXECUTING_PRINCIPAL_ID.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "executing-principal-id").equals(url)) {
-                        executingPrincipalId = val;
-                    } else if (EXTENSION_SECURITY_EXECUTING_PRINCIPAL_TYPE.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "executing-principal-type").equals(url)) {
-                        try {
-                            executingPrincipalType = PrincipalType.valueOf(val);
-                        } catch (Exception ignored) {}
-                    } else if (EXTENSION_SECURITY_EXECUTING_SOURCE_DOMAIN.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "executing-source-domain").equals(url)) {
-                        executingSourceDomain = val;
-                    } else if (EXTENSION_SECURITY_AUTHORITY.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "authority").equals(url)) {
-                        pragma.addOriginatingAuthority(val);
-                    } else if (EXTENSION_SECURITY_POLICY_VERSION.equals(url) || (LEGACY_EXTENSION_SECURITY_PREFIX + "policy-version").equals(url)) {
-                        policyVersion = val;
                     }
                 }
             }
-
-            ThemisPrincipal originatingPrincipal = null;
-            if (principalId != null) {
-                originatingPrincipal = new ThemisPrincipal(
-                        principalId,
-                        principalType != null ? principalType : PrincipalType.HUMAN,
-                        sourceDomain,
-                        Map.of()
-                );
-                pragma.setOriginatingPrincipal(originatingPrincipal);
-            }
-
-            ThemisPrincipal executingPrincipal = null;
-            if (executingPrincipalId != null) {
-                executingPrincipal = new ThemisPrincipal(
-                        executingPrincipalId,
-                        executingPrincipalType != null ? executingPrincipalType : PrincipalType.PROCESS,
-                        executingSourceDomain,
-                        Map.of()
-                );
-                pragma.setExecutingPrincipal(executingPrincipal);
-            }
-
-            if (originatingPrincipal != null || executingPrincipal != null || !pragma.getOriginatingAuthorities().isEmpty()) {
-                ThemisSecurityContext secCtx = ThemisSecurityContext.builder()
-                        .originatingPrincipal(originatingPrincipal)
-                        .executingPrincipal(executingPrincipal)
-                        .authorities(pragma.getOriginatingAuthorities())
-                        .correlationId(pragma.getCorrelationId())
-                        .causationId(pragma.getCausationId())
-                        .build();
-                pragma.setOriginatingSecurityContext(secCtx);
-            }
-
-            if (policyVersion != null) {
-                pragma.setPolicyVersion(policyVersion);
-            }
         }
+        PragmaFhirSecurityConverter.extractSecurityContext(task, pragma);
 
         // 12. Security Tagging
         if (task.hasMeta() && task.getMeta().hasSecurity()) {

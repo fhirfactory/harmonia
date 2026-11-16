@@ -24,8 +24,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
-import net.fhirfactory.harmonia.model.topic.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
@@ -166,8 +166,8 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
     public ErgonPayload(ErgonPayload other) {
         if (other != null) {
             this.payloadOrder = other.payloadOrder;
-            this.payloadContainer = other.payloadContainer != null ? new Topic(other.payloadContainer) : null;
-            this.payloadContent = other.payloadContent != null ? new Topic(other.payloadContent) : null;
+            this.payloadContainer = other.payloadContainer;
+            this.payloadContent = other.payloadContent;
             this.payload = other.payload != null ? other.payload.copy() : new Task.TaskInputComponent();
         } else {
             this.payload = new Task.TaskInputComponent();
@@ -178,84 +178,30 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
     // Static Factory Methods
     // =========================================================================
 
-    /**
-     * Creates a TaskPayload encapsulating a FHIR Resource reference.
-     *
-     * @param payloadOrder      sequence order
-     * @param payloadContainer  container Topic
-     * @param payloadContent    content Topic
-     * @param resourceReference FHIR Reference to cached resource
-     * @return constructed TaskPayload
-     */
     public static ErgonPayload fromFhirResource(Integer payloadOrder, Topic payloadContainer, Topic payloadContent, Reference resourceReference) {
         return new ErgonPayload(payloadOrder, payloadContainer, payloadContent, resourceReference);
     }
 
-    /**
-     * Creates a TaskPayload encapsulating a FHIR Resource reference string (e.g., "Patient/123", "Bundle/456").
-     *
-     * @param payloadOrder           sequence order
-     * @param payloadContainer       container Topic
-     * @param payloadContent         content Topic
-     * @param resourceReferenceString reference path string
-     * @return constructed TaskPayload
-     */
     public static ErgonPayload fromFhirResourceReference(Integer payloadOrder, Topic payloadContainer, Topic payloadContent, String resourceReferenceString) {
         ErgonPayload ergonPayload = new ErgonPayload(payloadOrder, payloadContainer, payloadContent, (Task.TaskInputComponent) null);
         ergonPayload.setResourceReference(resourceReferenceString);
         return ergonPayload;
     }
 
-    /**
-     * Creates a TaskPayload encapsulating a FHIR Resource instance.
-     *
-     * @param payloadOrder     sequence order
-     * @param payloadContainer container Topic
-     * @param payloadContent   content Topic
-     * @param resource         FHIR resource instance
-     * @return constructed TaskPayload
-     */
     public static ErgonPayload fromFhirResource(Integer payloadOrder, Topic payloadContainer, Topic payloadContent, IBaseResource resource) {
         return new ErgonPayload(payloadOrder, payloadContainer, payloadContent, resource);
     }
 
-    /**
-     * Creates a TaskPayload encapsulating a JSON object string.
-     *
-     * @param payloadOrder     sequence order
-     * @param payloadContainer container Topic
-     * @param payloadContent   content Topic
-     * @param jsonString       JSON string
-     * @return constructed TaskPayload
-     */
     public static ErgonPayload fromJson(Integer payloadOrder, Topic payloadContainer, Topic payloadContent, String jsonString) {
         ErgonPayload ergonPayload = new ErgonPayload(payloadOrder, payloadContainer, payloadContent, (Task.TaskInputComponent) null);
         ergonPayload.setJsonObject(jsonString);
         return ergonPayload;
     }
 
-    /**
-     * Creates a TaskPayload encapsulating a Jackson JsonNode.
-     *
-     * @param payloadOrder     sequence order
-     * @param payloadContainer container Topic
-     * @param payloadContent   content Topic
-     * @param jsonNode         JSON node
-     * @return constructed TaskPayload
-     */
     public static ErgonPayload fromJson(Integer payloadOrder, Topic payloadContainer, Topic payloadContent, JsonNode jsonNode) {
         return new ErgonPayload(payloadOrder, payloadContainer, payloadContent, jsonNode);
     }
 
-    /**
-     * Creates a TaskPayload encapsulating any Java object serialized to JSON.
-     *
-     * @param payloadOrder     sequence order
-     * @param payloadContainer container Topic
-     * @param payloadContent   content Topic
-     * @param object           POJO object to serialize to JSON
-     * @return constructed TaskPayload
-     */
     public static ErgonPayload fromJsonObject(Integer payloadOrder, Topic payloadContainer, Topic payloadContent, Object object) {
         ErgonPayload ergonPayload = new ErgonPayload(payloadOrder, payloadContainer, payloadContent, (Task.TaskInputComponent) null);
         ergonPayload.setJsonObject(object);
@@ -266,71 +212,37 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
     // FHIR Resource and JSON Object Helper Methods
     // =========================================================================
 
-    /**
-     * Checks if the payload contains a FHIR resource {@link Reference}.
-     *
-     * @return true if payload contains a Reference value
-     */
     @JsonIgnore
     public boolean isFhirResource() {
         return payload != null && payload.hasValue() && (payload.getValue() instanceof Reference);
     }
 
-    /**
-     * Checks if the payload contains a JSON object (as StringType, Attachment, etc.).
-     *
-     * @return true if payload is not a FHIR Reference
-     */
     @JsonIgnore
     public boolean isJsonObject() {
         return payload != null && payload.hasValue() && !(payload.getValue() instanceof Reference);
     }
 
-    /**
-     * Returns the FHIR {@link Reference} if this payload encapsulates a FHIR resource.
-     *
-     * @return Reference instance or null
-     */
     @JsonIgnore
     public Reference getResourceReference() {
-        if (isFhirResource()) {
-            return (Reference) payload.getValue();
-        }
-        return null;
+        return isFhirResource() ? (Reference) payload.getValue() : null;
     }
 
-    /**
-     * Returns the FHIR resource reference string (e.g. "Patient/123") if present.
-     *
-     * @return resource reference string or null
-     */
     @JsonProperty("resourceReference")
     public String getResourceReferenceString() {
         Reference ref = getResourceReference();
         return ref != null ? ref.getReference() : null;
     }
 
-    /**
-     * Sets the payload value as a FHIR {@link Reference}.
-     *
-     * @param reference FHIR Reference
-     */
     public void setResourceReference(Reference reference) {
         ensurePayload();
         payload.setValue(reference);
         ensureTypeCoding(TASK_PAYLOAD_TYPE_FHIR_RESOURCE, "FHIR Resource Reference");
     }
 
-    /**
-     * Sets the payload value as a FHIR reference string.
-     *
-     * @param referenceString reference string (e.g. "Patient/123", "#comm-1")
-     */
     @JsonProperty("resourceReference")
     public void setResourceReference(String referenceString) {
         if (StringUtils.isNotBlank(referenceString)) {
-            Reference ref = new Reference(referenceString.trim());
-            setResourceReference(ref);
+            setResourceReference(new Reference(referenceString.trim()));
         }
     }
 
@@ -340,38 +252,7 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
      * @param resource FHIR resource
      */
     public void setResource(IBaseResource resource) {
-        if (resource == null) {
-            return;
-        }
-        ensurePayload();
-        String refString = null;
-        String display = null;
-        if (resource instanceof Resource) {
-            Resource r = (Resource) resource;
-            String idPart = r.getIdPart();
-            String fhirType = r.fhirType();
-            if (StringUtils.isNotBlank(idPart)) {
-                refString = fhirType + "/" + idPart;
-            } else if (StringUtils.isNotBlank(r.getId())) {
-                refString = r.getId();
-            } else {
-                refString = fhirType + "/" + UUID.randomUUID().toString();
-            }
-            display = fhirType + " resource";
-        } else {
-            refString = resource.getIdElement() != null && resource.getIdElement().hasIdPart()
-                    ? resource.getIdElement().getResourceType() + "/" + resource.getIdElement().getIdPart()
-                    : UUID.randomUUID().toString();
-        }
-        Reference ref = new Reference(refString);
-        if (display != null) {
-            ref.setDisplay(display);
-        }
-        if (resource instanceof Resource) {
-            FhirSecurityTagManager.applyDefaultSecurityTag((Resource) resource);
-            ref.setResource((Resource) resource);
-        }
-        setResourceReference(ref);
+        ErgonPayloadFhirConverter.setResource(this, resource);
     }
 
     /**
@@ -513,404 +394,68 @@ public class ErgonPayload implements Serializable, Comparable<ErgonPayload> {
      * @return populated TaskInputComponent
      */
     public Task.TaskInputComponent toTaskInput() {
-        Task.TaskInputComponent inputComponent = payload != null ? payload.copy() : new Task.TaskInputComponent();
-
-        if (payloadOrder != null) {
-            inputComponent.removeExtension(EXTENSION_PAYLOAD_ORDER);
-            inputComponent.addExtension(new Extension(EXTENSION_PAYLOAD_ORDER, new IntegerType(payloadOrder)));
-        }
-
-        if (payloadContainer != null) {
-            inputComponent.removeExtension(EXTENSION_PAYLOAD_CONTAINER);
-            inputComponent.addExtension(new Extension(EXTENSION_PAYLOAD_CONTAINER, new StringType(serializeTopic(payloadContainer))));
-        }
-
-        if (payloadContent != null) {
-            inputComponent.removeExtension(EXTENSION_PAYLOAD_CONTENT);
-            inputComponent.addExtension(new Extension(EXTENSION_PAYLOAD_CONTENT, new StringType(serializeTopic(payloadContent))));
-        }
-
-        return inputComponent;
+        return ErgonPayloadFhirConverter.toTaskInput(this);
     }
 
-    /**
-     * Alias for {@link #toTaskInput()}.
-     */
     public Task.TaskInputComponent toTaskInputComponent() {
         return toTaskInput();
     }
 
-    /**
-     * Constructs a TaskPayload from a {@link Task.TaskInputComponent}, resolving extensions for
-     * order, container topic, and content topic.
-     *
-     * @param inputComponent FHIR TaskInputComponent
-     * @return populated TaskPayload
-     */
     public static ErgonPayload fromTaskInput(Task.TaskInputComponent inputComponent) {
-        if (inputComponent == null) {
-            return new ErgonPayload();
-        }
-
-        ErgonPayload ergonPayload = new ErgonPayload();
-        if (inputComponent != null) {
-            Task.TaskInputComponent copy = inputComponent.copy();
-            if (inputComponent.hasValue() && inputComponent.getValue() instanceof Reference) {
-                Reference src = (Reference) inputComponent.getValue();
-                if (src.getResource() != null && copy.getValue() instanceof Reference) {
-                    ((Reference) copy.getValue()).setResource(src.getResource());
-                }
-            }
-            ergonPayload.setPayload(copy);
-        }
-
-        if (inputComponent.hasExtension(EXTENSION_PAYLOAD_ORDER)) {
-            Extension ext = inputComponent.getExtensionByUrl(EXTENSION_PAYLOAD_ORDER);
-            if (ext != null && ext.getValue() instanceof IntegerType) {
-                ergonPayload.setPayloadOrder(((IntegerType) ext.getValue()).getValue());
-            }
-        } else if (inputComponent.hasExtension(LEGACY_EXTENSION_PAYLOAD_ORDER)) {
-            Extension ext = inputComponent.getExtensionByUrl(LEGACY_EXTENSION_PAYLOAD_ORDER);
-            if (ext != null && ext.getValue() instanceof IntegerType) {
-                ergonPayload.setPayloadOrder(((IntegerType) ext.getValue()).getValue());
-            }
-        }
-
-        if (inputComponent.hasExtension(EXTENSION_PAYLOAD_CONTAINER)) {
-            Extension ext = inputComponent.getExtensionByUrl(EXTENSION_PAYLOAD_CONTAINER);
-            if (ext != null && ext.getValue() instanceof StringType) {
-                ergonPayload.setPayloadContainer(deserializeTopic(((StringType) ext.getValue()).getValue()));
-            }
-        } else if (inputComponent.hasExtension(LEGACY_EXTENSION_PAYLOAD_CONTAINER)) {
-            Extension ext = inputComponent.getExtensionByUrl(LEGACY_EXTENSION_PAYLOAD_CONTAINER);
-            if (ext != null && ext.getValue() instanceof StringType) {
-                ergonPayload.setPayloadContainer(deserializeTopic(((StringType) ext.getValue()).getValue()));
-            }
-        }
-
-        if (inputComponent.hasExtension(EXTENSION_PAYLOAD_CONTENT)) {
-            Extension ext = inputComponent.getExtensionByUrl(EXTENSION_PAYLOAD_CONTENT);
-            if (ext != null && ext.getValue() instanceof StringType) {
-                ergonPayload.setPayloadContent(deserializeTopic(((StringType) ext.getValue()).getValue()));
-            }
-        } else if (inputComponent.hasExtension(LEGACY_EXTENSION_PAYLOAD_CONTENT)) {
-            Extension ext = inputComponent.getExtensionByUrl(LEGACY_EXTENSION_PAYLOAD_CONTENT);
-            if (ext != null && ext.getValue() instanceof StringType) {
-                ergonPayload.setPayloadContent(deserializeTopic(((StringType) ext.getValue()).getValue()));
-            }
-        }
-
-        return ergonPayload;
+        return ErgonPayloadFhirConverter.fromTaskInput(inputComponent);
     }
 
-    /**
-     * Converts this TaskPayload into a {@link Task.TaskOutputComponent},
-     * encoding payloadOrder, payloadContainer, and payloadContent in standard FHIR extensions.
-     *
-     * @return populated TaskOutputComponent
-     */
     public Task.TaskOutputComponent toTaskOutput() {
-        Task.TaskOutputComponent outputComponent = new Task.TaskOutputComponent();
-        if (payload != null) {
-            if (payload.hasType()) {
-                outputComponent.setType(payload.getType().copy());
-            }
-            if (payload.hasValue()) {
-                DataType val = payload.getValue();
-                if (val instanceof Reference) {
-                    Reference ref = (Reference) val;
-                    Reference copy = ref.copy();
-                    if (ref.getResource() != null) {
-                        copy.setResource(ref.getResource());
-                    }
-                    outputComponent.setValue(copy);
-                } else {
-                    outputComponent.setValue(val.copy());
-                }
-            }
-        }
-
-        if (payloadOrder != null) {
-            outputComponent.addExtension(new Extension(EXTENSION_PAYLOAD_ORDER, new IntegerType(payloadOrder)));
-        }
-
-        if (payloadContainer != null) {
-            outputComponent.addExtension(new Extension(EXTENSION_PAYLOAD_CONTAINER, new StringType(serializeTopic(payloadContainer))));
-        }
-
-        if (payloadContent != null) {
-            outputComponent.addExtension(new Extension(EXTENSION_PAYLOAD_CONTENT, new StringType(serializeTopic(payloadContent))));
-        }
-
-        return outputComponent;
+        return ErgonPayloadFhirConverter.toTaskOutput(this);
     }
 
-    /**
-     * Alias for {@link #toTaskOutput()}.
-     */
     public Task.TaskOutputComponent toTaskOutputComponent() {
         return toTaskOutput();
     }
 
-    /**
-     * Constructs a TaskPayload from a {@link Task.TaskOutputComponent}.
-     *
-     * @param outputComponent FHIR TaskOutputComponent
-     * @return populated TaskPayload
-     */
     public static ErgonPayload fromTaskOutput(Task.TaskOutputComponent outputComponent) {
-        if (outputComponent == null) {
-            return new ErgonPayload();
-        }
-
-        ErgonPayload ergonPayload = new ErgonPayload();
-        Task.TaskInputComponent input = new Task.TaskInputComponent();
-        if (outputComponent.hasType()) {
-            input.setType(outputComponent.getType().copy());
-        }
-        if (outputComponent.hasValue()) {
-            DataType val = outputComponent.getValue();
-            if (val instanceof Reference) {
-                Reference ref = (Reference) val;
-                Reference copy = ref.copy();
-                if (ref.getResource() != null) {
-                    copy.setResource(ref.getResource());
-                }
-                input.setValue(copy);
-            } else {
-                input.setValue(val.copy());
-            }
-        }
-        ergonPayload.setPayload(input);
-
-        if (outputComponent.hasExtension(EXTENSION_PAYLOAD_ORDER)) {
-            Extension ext = outputComponent.getExtensionByUrl(EXTENSION_PAYLOAD_ORDER);
-            if (ext != null && ext.getValue() instanceof IntegerType) {
-                ergonPayload.setPayloadOrder(((IntegerType) ext.getValue()).getValue());
-            }
-        } else if (outputComponent.hasExtension(LEGACY_EXTENSION_PAYLOAD_ORDER)) {
-            Extension ext = outputComponent.getExtensionByUrl(LEGACY_EXTENSION_PAYLOAD_ORDER);
-            if (ext != null && ext.getValue() instanceof IntegerType) {
-                ergonPayload.setPayloadOrder(((IntegerType) ext.getValue()).getValue());
-            }
-        }
-
-        if (outputComponent.hasExtension(EXTENSION_PAYLOAD_CONTAINER)) {
-            Extension ext = outputComponent.getExtensionByUrl(EXTENSION_PAYLOAD_CONTAINER);
-            if (ext != null && ext.getValue() instanceof StringType) {
-                ergonPayload.setPayloadContainer(deserializeTopic(((StringType) ext.getValue()).getValue()));
-            }
-        } else if (outputComponent.hasExtension(LEGACY_EXTENSION_PAYLOAD_CONTAINER)) {
-            Extension ext = outputComponent.getExtensionByUrl(LEGACY_EXTENSION_PAYLOAD_CONTAINER);
-            if (ext != null && ext.getValue() instanceof StringType) {
-                ergonPayload.setPayloadContainer(deserializeTopic(((StringType) ext.getValue()).getValue()));
-            }
-        }
-
-        if (outputComponent.hasExtension(EXTENSION_PAYLOAD_CONTENT)) {
-            Extension ext = outputComponent.getExtensionByUrl(EXTENSION_PAYLOAD_CONTENT);
-            if (ext != null && ext.getValue() instanceof StringType) {
-                ergonPayload.setPayloadContent(deserializeTopic(((StringType) ext.getValue()).getValue()));
-            }
-        } else if (outputComponent.hasExtension(LEGACY_EXTENSION_PAYLOAD_CONTENT)) {
-            Extension ext = outputComponent.getExtensionByUrl(LEGACY_EXTENSION_PAYLOAD_CONTENT);
-            if (ext != null && ext.getValue() instanceof StringType) {
-                ergonPayload.setPayloadContent(deserializeTopic(((StringType) ext.getValue()).getValue()));
-            }
-        }
-
-        return ergonPayload;
+        return ErgonPayloadFhirConverter.fromTaskOutput(outputComponent);
     }
 
-    // =========================================================================
-    // Bulk Task Operations
-    // =========================================================================
-
-    /**
-     * Extracts all {@link ErgonPayload} elements from {@link Task#getInput()}.
-     *
-     * @param task source Task
-     * @return list of TaskPayload objects, ordered by payloadOrder
-     */
     public static List<ErgonPayload> extractInputPayloads(Task task) {
-        List<ErgonPayload> payloads = new ArrayList<>();
-        if (task == null || !task.hasInput()) {
-            return payloads;
-        }
-        int defaultOrder = 0;
-        for (Task.TaskInputComponent input : task.getInput()) {
-            ErgonPayload payload = fromTaskInput(input);
-            if (payload.getPayloadOrder() == null) {
-                payload.setPayloadOrder(defaultOrder++);
-            }
-            payloads.add(payload);
-        }
-        Collections.sort(payloads);
-        return payloads;
+        return ErgonPayloadFhirConverter.extractInputPayloads(task);
     }
 
-    /**
-     * Extracts all {@link ErgonPayload} elements from {@link Task#getOutput()}.
-     *
-     * @param task source Task
-     * @return list of TaskPayload objects, ordered by payloadOrder
-     */
     public static List<ErgonPayload> extractOutputPayloads(Task task) {
-        List<ErgonPayload> payloads = new ArrayList<>();
-        if (task == null || !task.hasOutput()) {
-            return payloads;
-        }
-        int defaultOrder = 0;
-        for (Task.TaskOutputComponent output : task.getOutput()) {
-            ErgonPayload payload = fromTaskOutput(output);
-            if (payload.getPayloadOrder() == null) {
-                payload.setPayloadOrder(defaultOrder++);
-            }
-            payloads.add(payload);
-        }
-        Collections.sort(payloads);
-        return payloads;
+        return ErgonPayloadFhirConverter.extractOutputPayloads(task);
     }
 
-    /**
-     * Applies a list of {@link ErgonPayload} objects to {@link Task#getInput()}.
-     *
-     * @param task     target Task
-     * @param payloads list of TaskPayload objects
-     */
     public static void applyInputPayloads(Task task, List<ErgonPayload> payloads) {
-        if (task == null) return;
-        task.getInput().clear();
-        if (payloads != null) {
-            for (int i = 0; i < payloads.size(); i++) {
-                ErgonPayload p = payloads.get(i);
-                if (p.getPayloadOrder() == null) {
-                    p.setPayloadOrder(i);
-                }
-                task.addInput(p.toTaskInput());
-            }
-        }
+        ErgonPayloadFhirConverter.applyInputPayloads(task, payloads);
     }
 
-    /**
-     * Applies a list of {@link ErgonPayload} objects to {@link Task#getOutput()}.
-     *
-     * @param task     target Task
-     * @param payloads list of TaskPayload objects
-     */
     public static void applyOutputPayloads(Task task, List<ErgonPayload> payloads) {
-        if (task == null) return;
-        task.getOutput().clear();
-        if (payloads != null) {
-            for (int i = 0; i < payloads.size(); i++) {
-                ErgonPayload p = payloads.get(i);
-                if (p.getPayloadOrder() == null) {
-                    p.setPayloadOrder(i);
-                }
-                task.addOutput(p.toTaskOutput());
-            }
-        }
+        ErgonPayloadFhirConverter.applyOutputPayloads(task, payloads);
     }
 
-    /**
-     * Adds a {@link ErgonPayload} to {@link Task#getInput()}.
-     *
-     * @param task    target Task
-     * @param payload TaskPayload to add
-     * @return updated Task
-     */
     public static Task addInputPayload(Task task, ErgonPayload payload) {
-        if (task != null && payload != null) {
-            if (payload.getPayloadOrder() == null) {
-                payload.setPayloadOrder(task.getInput().size());
-            }
-            task.addInput(payload.toTaskInput());
-        }
-        return task;
+        return ErgonPayloadFhirConverter.addInputPayload(task, payload);
     }
 
-    /**
-     * Adds a {@link ErgonPayload} to {@link Task#getOutput()}.
-     *
-     * @param task    target Task
-     * @param payload TaskPayload to add
-     * @return updated Task
-     */
     public static Task addOutputPayload(Task task, ErgonPayload payload) {
-        if (task != null && payload != null) {
-            if (payload.getPayloadOrder() == null) {
-                payload.setPayloadOrder(task.getOutput().size());
-            }
-            task.addOutput(payload.toTaskOutput());
-        }
-        return task;
-    }
-
-    // =========================================================================
-    // Topic Serialization Helpers
-    // =========================================================================
-
-    private static String serializeTopic(Topic topic) {
-        if (topic == null) return null;
-        try {
-            return OBJECT_MAPPER.writeValueAsString(topic);
-        } catch (Exception e) {
-            return topic.toTopicString();
-        }
-    }
-
-    private static Topic deserializeTopic(String topicStr) {
-        if (StringUtils.isBlank(topicStr)) return null;
-        String clean = topicStr.trim();
-        if (clean.startsWith("{")) {
-            try {
-                return OBJECT_MAPPER.readValue(clean, Topic.class);
-            } catch (Exception ignored) {
-            }
-        }
-        // Fallback: parse dot notation topic string e.g. "Health.HL7.2.4.ADT.A01"
-        String[] parts = clean.split("\\.");
-        if (parts.length >= 5) {
-            return new Topic(parts[0], parts[1], parts[2], parts[3], parts[4]);
-        }
-        return Topic.fromHl7(clean, null);
+        return ErgonPayloadFhirConverter.addOutputPayload(task, payload);
     }
 
     // =========================================================================
     // Getters, Setters, Comparable, and Object methods
     // =========================================================================
 
-    public Integer getPayloadOrder() {
-        return payloadOrder;
-    }
+    public Integer getPayloadOrder() { return payloadOrder; }
+    public void setPayloadOrder(Integer payloadOrder) { this.payloadOrder = payloadOrder; }
 
-    public void setPayloadOrder(Integer payloadOrder) {
-        this.payloadOrder = payloadOrder;
-    }
+    public Topic getPayloadContainer() { return payloadContainer; }
+    public void setPayloadContainer(Topic payloadContainer) { this.payloadContainer = payloadContainer; }
 
-    public Topic getPayloadContainer() {
-        return payloadContainer;
-    }
+    public Topic getPayloadContent() { return payloadContent; }
+    public void setPayloadContent(Topic payloadContent) { this.payloadContent = payloadContent; }
 
-    public void setPayloadContainer(Topic payloadContainer) {
-        this.payloadContainer = payloadContainer;
-    }
-
-    public Topic getPayloadContent() {
-        return payloadContent;
-    }
-
-    public void setPayloadContent(Topic payloadContent) {
-        this.payloadContent = payloadContent;
-    }
-
-    public Task.TaskInputComponent getPayload() {
-        return payload;
-    }
-
-    public void setPayload(Task.TaskInputComponent payload) {
-        this.payload = payload != null ? payload : new Task.TaskInputComponent();
-    }
+    public Task.TaskInputComponent getPayload() { return payload; }
+    public void setPayload(Task.TaskInputComponent payload) { this.payload = payload != null ? payload : new Task.TaskInputComponent(); }
 
     @Override
     public int compareTo(ErgonPayload other) {

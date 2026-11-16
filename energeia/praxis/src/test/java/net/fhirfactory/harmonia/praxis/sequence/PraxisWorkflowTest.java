@@ -23,7 +23,7 @@ import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
@@ -78,7 +78,7 @@ class PraxisWorkflowTest {
         @Override
         protected void processErgon(Pragma pragma, Exchange exchange) throws Exception {
             Topic container = new Topic("Health", "HL7", "2.4", "ADT", "A01");
-            Topic content = new Topic("Health", "Clinical", "1.0", "PatientId", null);
+            Topic content = new Topic("Health", "Clinical", "1.0", "PatientId", "Default");
             pragma.addOutput(ErgonPayload.fromJson(0, container, content, "{\"extractedMrn\":\"MRN-PRAXIS-99\"}"));
         }
     }
@@ -95,7 +95,7 @@ class PraxisWorkflowTest {
             patient.setId("Patient/PAT-PRAXIS-99");
             patient.addName().setFamily("Smith").addGiven("Alice");
 
-            Topic container = new Topic("Health", "FHIR", "R5", "Patient", null);
+            Topic container = new Topic("Health", "FHIR", "R5", "Patient", "Default");
             Topic content = new Topic("Health", "Clinical", "1.0", "Patient", "Demographics");
             pragma.addOutput(ErgonPayload.fromFhirResource(1, container, content, patient));
         }
@@ -109,7 +109,7 @@ class PraxisWorkflowTest {
 
         @Override
         protected void processErgon(Pragma pragma, Exchange exchange) throws Exception {
-            Topic container = new Topic("Health", "FHIR", "R5", "Observation", null);
+            Topic container = new Topic("Health", "FHIR", "R5", "Observation", "Default");
             Topic content = new Topic("Health", "Clinical", "1.0", "Observation", "Vitals");
             pragma.addOutput(ErgonPayload.fromFhirResource(2, container, content,
                     new Reference("Observation/OBS-99").setDisplay("Heart Rate 72 bpm")));

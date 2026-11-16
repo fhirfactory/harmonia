@@ -27,7 +27,7 @@ import net.fhirfactory.harmonia.logging.PhiLogger;
 import net.fhirfactory.harmonia.logging.PhiLoggerFactory;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
 import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;

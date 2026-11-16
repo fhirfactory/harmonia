@@ -28,7 +28,7 @@ import net.fhirfactory.harmonia.mllpout.config.MllpOutboundConfig;
 import net.fhirfactory.harmonia.mllpout.consumer.OutboundTaskQueueConsumer;
 import net.fhirfactory.harmonia.mllpout.lifecycle.OutboundStateLifecycleManager;
 import net.fhirfactory.harmonia.mllpout.test.MockMllpServer;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.camel.CamelContext;
 import org.apache.camel.impl.DefaultCamelContext;
 import org.junit.jupiter.api.AfterEach;
@@ -97,7 +97,7 @@ class MultiInstanceQueueIsolationTest {
     @Test
     void testHisOutageDoesNotBlockLisTransmission() {
         // Dispatch failing message to HIS instance
-        Topic hisTopic = Topic.forEgress("ADT", "A01", "harmonia", "mllp-out", "HIS_NORTH");
+        Topic hisTopic = Topic.fromHl7("ADT", "A01");
         String hisHl7 = "MSH|^~\\&|HARMONIA|HIE|HIS_SYS|HOSP_N|20260915083000||ADT^A01|MSG-HIS-01|P|2.4\r";
         OutboundMllpRequest hisRequest = new OutboundMllpRequest("MSG-HIS-01", "HIS_NORTH", hisHl7, hisTopic);
 
@@ -105,7 +105,7 @@ class MultiInstanceQueueIsolationTest {
         assertThat(hisResponse.isSuccessful()).isFalse();
 
         // Dispatch successful message to LIS instance concurrently
-        Topic lisTopic = Topic.forEgress("ORU", "R01", "harmonia", "mllp-out", "LIS_MAIN");
+        Topic lisTopic = Topic.fromHl7("ORU", "R01");
         String lisHl7 = "MSH|^~\\&|HARMONIA|HIE|LIS_SYS|LAB|20260915083000||ORU^R01|MSG-LIS-01|P|2.4\r";
         OutboundMllpRequest lisRequest = new OutboundMllpRequest("MSG-LIS-01", "LIS_MAIN", lisHl7, lisTopic);
 

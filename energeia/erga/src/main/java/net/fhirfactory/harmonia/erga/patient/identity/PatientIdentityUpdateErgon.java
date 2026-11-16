@@ -31,7 +31,7 @@ import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.commons.lang3.StringUtils;

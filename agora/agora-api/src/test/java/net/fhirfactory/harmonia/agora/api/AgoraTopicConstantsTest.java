@@ -18,7 +18,7 @@
 package net.fhirfactory.harmonia.agora.api;
 
 import net.fhirfactory.harmonia.agora.api.topic.AgoraTopics;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
@@ -48,9 +48,7 @@ class AgoraTopicConstantsTest {
         assertThat(topic.getModelVersion()).isEqualTo("R5");
         assertThat(topic.getDataElement()).isEqualTo("Communication");
         assertThat(topic.getDataElementQualifier()).isEqualTo("Inbound");
-        assertThat(topic.getSource()).isEqualTo("harmonia-agora");
-        assertThat(topic.getDestination()).isEqualTo("harmonia-core");
-        assertThat(topic.getReceivedDate()).isNotNull();
+        assertThat(topic.getName()).isEqualTo("Health.FHIR.R5.Communication.Inbound");
 
         Topic inbound = AgoraTopics.inboundTopic();
         assertThat(inbound.getDataElementQualifier()).isEqualTo("Inbound");

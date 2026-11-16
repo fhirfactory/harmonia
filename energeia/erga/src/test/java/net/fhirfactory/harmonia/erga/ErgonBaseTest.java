@@ -24,7 +24,7 @@ import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
@@ -112,16 +112,16 @@ class ErgonBaseTest {
             patient.setId("Patient/PAT-TEST-001");
             patient.addName().setFamily("Smith").addGiven("John").setText("John Smith");
 
-            Topic container = new Topic("Health", "FHIR", "R5", "Patient", null);
+            Topic container = new Topic("Health", "FHIR", "R5", "Patient", "Default");
             Topic content = new Topic("Health", "Clinical", "1.0", "Patient", "Demographics");
             pragma.addOutput(ErgonPayload.fromFhirResource(0, container, content, patient));
 
-            Topic obsContainer = new Topic("Health", "FHIR", "R5", "Observation", null);
+            Topic obsContainer = new Topic("Health", "FHIR", "R5", "Observation", "Default");
             Topic obsContent = new Topic("Health", "Clinical", "1.0", "Observation", "Vitals");
             pragma.addOutput(ErgonPayload.fromFhirResource(1, obsContainer, obsContent,
                     new Reference("Observation/OBS-101").setDisplay("Vital Signs Observation")));
 
-            Topic repContainer = new Topic("Health", "FHIR", "R5", "DiagnosticReport", null);
+            Topic repContainer = new Topic("Health", "FHIR", "R5", "DiagnosticReport", "Default");
             Topic repContent = new Topic("Health", "Clinical", "1.0", "DiagnosticReport", "CBC");
             pragma.addOutput(ErgonPayload.fromFhirResource(2, repContainer, repContent,
                     new Reference("DiagnosticReport/REP-202").setDisplay("CBC Diagnostic Report")));

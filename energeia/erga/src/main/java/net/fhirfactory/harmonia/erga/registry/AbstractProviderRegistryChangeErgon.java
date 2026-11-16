@@ -29,7 +29,7 @@ import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
 import net.fhirfactory.harmonia.model.pragma.ProviderRegistryChangePragma;
 import net.fhirfactory.harmonia.model.registry.ProviderRegistryConstants;
 import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.themis.api.ThemisService;
 import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAction;

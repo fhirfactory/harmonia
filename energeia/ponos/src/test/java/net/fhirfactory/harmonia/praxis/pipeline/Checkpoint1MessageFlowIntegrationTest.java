@@ -23,7 +23,7 @@ import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.petasos.api.config.PetasosConfig;
 import net.fhirfactory.harmonia.petasos.api.consumer.PetasosSubscription;
@@ -195,7 +195,7 @@ class Checkpoint1MessageFlowIntegrationTest {
         inboundEvent.setControlId("MSG-CHECKPOINT-1");
         inboundEvent.setAction("PROCESS");
         inboundEvent.setStatus("RECEIVED");
-        inboundEvent.setTopic(Topic.fromHl7("ADT", "A01", "mllp-gateway-default"));
+        inboundEvent.setTopic(Topic.fromHl7("ADT", "A01"));
 
         ponosProducer.sendTaskEvent(inboundEvent, SAMPLE_HL7_ADT);
 
@@ -222,7 +222,7 @@ class Checkpoint1MessageFlowIntegrationTest {
         ergon.setTargetQueues(List.of(EGRESS_QUEUE_EMR, EGRESS_QUEUE_LMS, EGRESS_QUEUE_RIS));
 
         Pragma pragma = new Pragma("PRAGMA-CP1-001", "ADT Processing Workflow", PragmaStatus.IN_PROGRESS);
-        Topic ingressTopic = Topic.fromHl7("ADT", "A01", "mllp-gateway-default");
+        Topic ingressTopic = Topic.fromHl7("ADT", "A01");
         pragma.addInput(ErgonPayload.fromJson(0, ingressTopic, ingressTopic, SAMPLE_HL7_ADT));
 
         Exchange exchange = new DefaultExchange(camelContext);
@@ -239,8 +239,10 @@ class Checkpoint1MessageFlowIntegrationTest {
         assertThat(checkpoints).filteredOn(cp -> "FANOUT_DISPATCH_INITIATED".equals(cp.getStageName())).hasSize(3);
 
         // 4. Dispatch the fan-out payloads to Petasos egress queues
-        for (ErgonPayload output : distributedPragma.getOutput()) {
-            String destinationQueue = output.getPayloadContainer().getTarget();
+        List<String> targetQueues = List.of(EGRESS_QUEUE_EMR, EGRESS_QUEUE_LMS, EGRESS_QUEUE_RIS);
+        for (int i = 0; i < distributedPragma.getOutput().size(); i++) {
+            ErgonPayload output = distributedPragma.getOutput().get(i);
+            String destinationQueue = targetQueues.get(i);
             PetasosMessage egressMsg = PetasosMessage.builder()
                     .messageId(UUID.randomUUID().toString())
                     .destination(PetasosDestination.queue(destinationQueue))

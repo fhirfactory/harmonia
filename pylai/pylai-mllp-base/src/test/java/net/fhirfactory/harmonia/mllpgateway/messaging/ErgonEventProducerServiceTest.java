@@ -21,7 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.jms.*;
 import net.fhirfactory.harmonia.mllpgateway.config.TaskProcessorConfig;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -106,11 +106,10 @@ class ErgonEventProducerServiceTest {
 
     @Test
     void testSendTaskEventWithTopic() throws Exception {
-        Topic topic = Topic.fromHl7("ADT", "A08", "pas-gw");
+        Topic topic = Topic.fromHl7("ADT", "A08");
         producerService.sendTaskEvent("TASK-TOPIC-01", "PROCESS", "REQUESTED", topic, "MSG-008", "Topic Test");
 
-        verify(jmsContext).createQueue("task.event.queue.pas-gw");
-        verify(textMessage).setStringProperty(TaskEventProducerService.HEADER_GATEWAY_INSTANCE, "pas-gw");
+        verify(jmsContext).createQueue("task.event.queue.mllp-gateway-default");
         verify(textMessage).setStringProperty(TaskEventProducerService.HEADER_TRIGGER_TYPE, "A08");
         verify(textMessage).setStringProperty(TaskEventProducerService.HEADER_MESSAGE_TYPE, "ADT");
         verify(textMessage).setStringProperty(TaskEventProducerService.HEADER_TOPIC_DATA_ELEMENT, "ADT");

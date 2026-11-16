@@ -21,7 +21,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import net.fhirfactory.harmonia.mllpgateway.hl7.AdtProcessingResult;
 import net.fhirfactory.harmonia.mllpgateway.hl7.IncomingAdtMessageProcessor;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.slf4j.Logger;
@@ -87,7 +87,6 @@ public class IncomingAdtMessageProcessorWrapper implements Processor {
             if (topic.getModelVersion() != null) exchange.getMessage().setHeader(HEADER_TOPIC_MODEL_VERSION, topic.getModelVersion());
             if (topic.getDataElement() != null) exchange.getMessage().setHeader(HEADER_TOPIC_DATA_ELEMENT, topic.getDataElement());
             if (topic.getDataElementQualifier() != null) exchange.getMessage().setHeader(HEADER_TOPIC_QUALIFIER, topic.getDataElementQualifier());
-            if (topic.getSource() != null) exchange.getMessage().setHeader(HEADER_TOPIC_SOURCE, topic.getSource());
         }
 
         if (result.isSuccess()) {

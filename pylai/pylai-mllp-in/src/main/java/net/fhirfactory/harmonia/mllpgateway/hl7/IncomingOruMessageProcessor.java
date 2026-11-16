@@ -36,7 +36,7 @@ import net.fhirfactory.harmonia.mllpgateway.service.CommunicationService;
 import net.fhirfactory.harmonia.mllpgateway.service.ProvenanceService;
 import net.fhirfactory.harmonia.mllpgateway.service.TaskService;
 import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.Communication;
 import org.hl7.fhir.r5.model.Provenance;
@@ -123,10 +123,7 @@ public class IncomingOruMessageProcessor {
             if (StringUtils.isBlank(messageControlId)) messageControlId = UUID.randomUUID().toString();
 
             String gatewayInstanceId = mllpConfig != null ? mllpConfig.getGatewayInstanceId() : MllpConfig.DEFAULT_GATEWAY_INSTANCE_ID;
-            Topic topic = Topic.fromHl7("2.4", messageType != null ? messageType : "ORU", triggerEvent,
-                    gatewayInstanceId, null,
-                    sendingFacility != null ? sendingFacility : sendingApp,
-                    receivingFacility != null ? receivingFacility : receivingApp);
+            Topic topic = Topic.fromHl7("2.4", messageType != null ? messageType : "ORU", triggerEvent);
 
             phiLog.debug("Inbound HL7 ORU message received [messageControlId={}, topic={}]: {}",
                     messageControlId, topic, rawHl7Message);
@@ -166,6 +163,8 @@ public class IncomingOruMessageProcessor {
                 String taskId = savedTask.getIdPart() != null ? savedTask.getIdPart() : messageControlId;
                 String desc = "HL7 v2.4 ORU^" + triggerEvent + " result " + fillerOrder;
                 ErgonEvent event = new ErgonEvent(taskId, action, status, topic, messageControlId, desc);
+                event.setGatewayInstanceId(gatewayInstanceId);
+                event.setSource(sendingFacility != null ? sendingFacility : sendingApp);
                 taskEventProducerService.sendTaskEvent(event);
             }
 

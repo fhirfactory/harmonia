@@ -21,7 +21,7 @@ import net.fhirfactory.harmonia.mllpgateway.config.MllpDestinationConfig;
 import net.fhirfactory.harmonia.mllpgateway.config.MllpDestinationRegistry;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpResponse;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -69,7 +69,7 @@ class OutboundMllpRouteTest {
 
     @Test
     void testRouteUnreachableDestinationGracefulFailure() {
-        Topic topic = Topic.forEgress("ADT", "A01", "harmonia", "mllp-out", "UNREACHABLE_DEST");
+        Topic topic = Topic.fromHl7("ADT", "A01");
         String hl7 = "MSH|^~\\&|HARMONIA|HIE|REC_SYS|REC_FAC|20260915083000||ADT^A01|MSG-TEST-001|P|2.4\rEVN|A01|20260915083000\r";
         OutboundMllpRequest request = new OutboundMllpRequest("MSG-TEST-001", "UNREACHABLE_DEST", hl7, topic);
 

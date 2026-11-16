@@ -24,8 +24,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.databind.JsonNode;
-import net.fhirfactory.harmonia.model.topic.Topic;
-import net.fhirfactory.harmonia.model.topic.TopicSubscription;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
+import net.fhirfactory.harmonia.model.core.naming.TopicSubscription;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -216,81 +216,11 @@ public class PraxisDefinition implements Serializable {
      * @return true if topic matches any configured TopicSubscription, or fallback criteria
      */
     public boolean matches(Topic topic) {
-        if (topic == null) {
-            return false;
-        }
-
-        if (topicSubscriptions != null && !topicSubscriptions.isEmpty()) {
-            for (TopicSubscription sub : topicSubscriptions) {
-                if (sub != null && sub.matches(topic)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        return matches(topic.getSource(), topic.getCompositeTrigger());
+        return PraxisDefinitionMatcher.matches(this, topic);
     }
 
-    /**
-     * Evaluates whether this PraxisDefinition matches the given gateway instance ID and trigger type.
-     *
-     * @param gatewayInstanceId Originating gateway instance identifier (null or "*" matches any)
-     * @param triggerType       HL7 trigger type code (e.g., "A01", "ADT^A01", "R01", null or "*" matches any)
-     * @return true if both gateway and trigger match criteria
-     */
     public boolean matches(String gatewayInstanceId, String triggerType) {
-        Topic topic = Topic.fromHl7(triggerType, gatewayInstanceId);
-        if (topicSubscriptions != null && !topicSubscriptions.isEmpty()) {
-            for (TopicSubscription sub : topicSubscriptions) {
-                if (sub != null && sub.matches(topic)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        boolean gatewayMatches = matchAllGateways;
-        if (!gatewayMatches) {
-            if (gatewayInstanceId == null || "*".equals(gatewayInstanceId)
-                    || targetGatewayInstances == null || targetGatewayInstances.isEmpty() || targetGatewayInstances.contains("*")) {
-                gatewayMatches = true;
-            } else {
-                for (String targetGw : targetGatewayInstances) {
-                    if (targetGw != null && (targetGw.equalsIgnoreCase(gatewayInstanceId) || "*".equals(targetGw))) {
-                        gatewayMatches = true;
-                        break;
-                    }
-                }
-            }
-        }
-
-        boolean triggerMatches = matchAllTriggers;
-        if (!triggerMatches) {
-            if (triggerType == null || "*".equals(triggerType)
-                    || targetTriggerTypes == null || targetTriggerTypes.isEmpty() || targetTriggerTypes.contains("*")) {
-                triggerMatches = true;
-            } else {
-                String normalizedTrigger = triggerType.contains("^")
-                        ? triggerType.substring(triggerType.indexOf('^') + 1)
-                        : triggerType;
-                for (String targetTrig : targetTriggerTypes) {
-                    if (targetTrig != null) {
-                        String normalizedTarget = targetTrig.contains("^")
-                                ? targetTrig.substring(targetTrig.indexOf('^') + 1)
-                                : targetTrig;
-                        if (targetTrig.equalsIgnoreCase(triggerType)
-                                || normalizedTarget.equalsIgnoreCase(normalizedTrigger)
-                                || "*".equals(targetTrig)) {
-                            triggerMatches = true;
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-
-        return gatewayMatches && triggerMatches;
+        return PraxisDefinitionMatcher.matches(this, gatewayInstanceId, triggerType);
     }
 
     /**
@@ -331,267 +261,62 @@ public class PraxisDefinition implements Serializable {
     // Getters and Setters
     // =========================================================================
 
-    /**
-     * Returns the unique Praxis identifier.
-     *
-     * @return unique sequence identifier
-     */
-    public String getPraxisId() {
-        return praxisId;
+    public static PraxisDefinitionBuilder builder() {
+        return new PraxisDefinitionBuilder();
     }
 
-    /**
-     * Sets the unique Praxis identifier.
-     *
-     * @param praxisId unique sequence identifier
-     */
-    public void setPraxisId(String praxisId) {
-        this.praxisId = praxisId;
+    public static class Builder extends PraxisDefinitionBuilder {
     }
 
-    /**
-     * Alias for {@link #getPraxisId()} for backwards compatibility.
-     *
-     * @return unique sequence identifier
-     */
+    public String getPraxisId() { return praxisId; }
+    public void setPraxisId(String praxisId) { this.praxisId = praxisId; }
     @JsonIgnore
-    public String getSequenceId() {
-        return getPraxisId();
-    }
+    public String getSequenceId() { return getPraxisId(); }
+    public void setSequenceId(String sequenceId) { setPraxisId(sequenceId); }
 
-    /**
-     * Alias for {@link #setPraxisId(String)} for backwards compatibility.
-     *
-     * @param sequenceId unique sequence identifier
-     */
-    public void setSequenceId(String sequenceId) {
-        setPraxisId(sequenceId);
-    }
-
-    /**
-     * Returns the human-readable Praxis sequence name.
-     *
-     * @return human-readable sequence name
-     */
-    public String getPraxisName() {
-        return praxisName;
-    }
-
-    /**
-     * Sets the human-readable Praxis sequence name.
-     *
-     * @param praxisName human-readable sequence name
-     */
-    public void setPraxisName(String praxisName) {
-        this.praxisName = praxisName;
-    }
-
-    /**
-     * Alias for {@link #getPraxisName()} for backwards compatibility.
-     *
-     * @return human-readable sequence name
-     */
+    public String getPraxisName() { return praxisName; }
+    public void setPraxisName(String praxisName) { this.praxisName = praxisName; }
     @JsonIgnore
-    public String getSequenceName() {
-        return getPraxisName();
-    }
+    public String getSequenceName() { return getPraxisName(); }
+    public void setSequenceName(String sequenceName) { setPraxisName(sequenceName); }
 
-    /**
-     * Alias for {@link #setPraxisName(String)} for backwards compatibility.
-     *
-     * @param sequenceName human-readable sequence name
-     */
-    public void setSequenceName(String sequenceName) {
-        setPraxisName(sequenceName);
-    }
-
-
-    /**
-     * Returns the description of the sequence.
-     *
-     * @return description string
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /**
-     * Sets the description of the sequence.
-     *
-     * @param description description string
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * Alias for {@link #getDescription()} for backwards compatibility.
-     *
-     * @return description string
-     */
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
     @JsonIgnore
-    public String getSequenceDescription() {
-        return getDescription();
-    }
-
-    /**
-     * Alias for {@link #setDescription(String)} for backwards compatibility.
-     *
-     * @param sequenceDescription description string
-     */
-    public void setSequenceDescription(String sequenceDescription) {
-        setDescription(sequenceDescription);
-    }
-
-    /**
-     * Returns the effective description from either description field.
-     *
-     * @return non-blank effective description or empty string
-     */
+    public String getSequenceDescription() { return getDescription(); }
+    public void setSequenceDescription(String sequenceDescription) { setDescription(sequenceDescription); }
     @JsonIgnore
-    public String getEffectiveDescription() {
-        if (description != null && !description.isBlank()) {
-            return description;
-        }
-        return "";
-    }
+    public String getEffectiveDescription() { return (description != null && !description.isBlank()) ? description : ""; }
 
-    /**
-     * Returns the version of the Praxis sequence.
-     *
-     * @return version string
-     */
-    public String getVersion() {
-        return version;
-    }
+    public String getVersion() { return version; }
+    public void setVersion(String version) { this.version = version; }
 
-    /**
-     * Sets the version of the Praxis sequence.
-     *
-     * @param version version string
-     */
-    public void setVersion(String version) {
-        this.version = version;
-    }
+    public String getInputEndpoint() { return inputEndpoint; }
+    public void setInputEndpoint(String inputEndpoint) { this.inputEndpoint = inputEndpoint; }
 
-    /**
-     * Returns the Camel input endpoint URI.
-     *
-     * @return input endpoint URI
-     */
-    public String getInputEndpoint() {
-        return inputEndpoint;
-    }
+    public String getOutputEndpoint() { return outputEndpoint; }
+    public void setOutputEndpoint(String outputEndpoint) { this.outputEndpoint = outputEndpoint; }
 
-    /**
-     * Sets the Camel input endpoint URI.
-     *
-     * @param inputEndpoint input endpoint URI
-     */
-    public void setInputEndpoint(String inputEndpoint) {
-        this.inputEndpoint = inputEndpoint;
-    }
+    public String getErrorEndpoint() { return errorEndpoint; }
+    public void setErrorEndpoint(String errorEndpoint) { this.errorEndpoint = errorEndpoint; }
 
-    /**
-     * Returns the Camel output endpoint URI.
-     *
-     * @return output endpoint URI
-     */
-    public String getOutputEndpoint() {
-        return outputEndpoint;
-    }
+    public String getSourceQueueName() { return sourceQueueName; }
+    public void setSourceQueueName(String sourceQueueName) { this.sourceQueueName = sourceQueueName; }
 
-    /**
-     * Sets the Camel output endpoint URI.
-     *
-     * @param outputEndpoint output endpoint URI
-     */
-    public void setOutputEndpoint(String outputEndpoint) {
-        this.outputEndpoint = outputEndpoint;
-    }
+    public boolean isEnabled() { return enabled; }
+    public void setEnabled(boolean enabled) { this.enabled = enabled; }
 
-    /**
-     * Returns the Camel error endpoint URI.
-     *
-     * @return error endpoint URI
-     */
-    public String getErrorEndpoint() {
-        return errorEndpoint;
-    }
-
-    /**
-     * Sets the Camel error endpoint URI.
-     *
-     * @param errorEndpoint error endpoint URI
-     */
-    public void setErrorEndpoint(String errorEndpoint) {
-        this.errorEndpoint = errorEndpoint;
-    }
-
-    /**
-     * Returns the source message queue name consumed by this sequence.
-     *
-     * @return source queue name
-     */
-    public String getSourceQueueName() {
-        return sourceQueueName;
-    }
-
-    /**
-     * Sets the source message queue name consumed by this sequence.
-     *
-     * @param sourceQueueName source queue name
-     */
-    public void setSourceQueueName(String sourceQueueName) {
-        this.sourceQueueName = sourceQueueName;
-    }
-
-    /**
-     * Returns whether this Praxis sequence is enabled.
-     *
-     * @return true if enabled, false otherwise
-     */
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    /**
-     * Sets whether this Praxis sequence is enabled.
-     *
-     * @param enabled true to enable, false to disable
-     */
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    /**
-     * Returns the list of configured topic subscriptions.
-     *
-     * @return list of topic subscriptions
-     */
     public List<TopicSubscription> getTopicSubscriptions() {
         return topicSubscriptions != null ? topicSubscriptions : List.of();
     }
 
-    /**
-     * Sets the list of configured topic subscriptions.
-     *
-     * @param topicSubscriptions list of topic subscriptions
-     */
     public void setTopicSubscriptions(List<TopicSubscription> topicSubscriptions) {
         this.topicSubscriptions = topicSubscriptions != null ? new ArrayList<>(topicSubscriptions) : new ArrayList<>();
         syncLegacyFilterFields();
     }
 
-    /**
-     * Adds a single topic subscription to this sequence.
-     *
-     * @param subscription topic subscription to add
-     */
     public void addTopicSubscription(TopicSubscription subscription) {
-        if (this.topicSubscriptions == null) {
-            this.topicSubscriptions = new ArrayList<>();
-        }
+        if (this.topicSubscriptions == null) this.topicSubscriptions = new ArrayList<>();
         if (subscription != null) {
             this.topicSubscriptions.add(subscription);
             syncLegacyFilterFields();
@@ -606,9 +331,14 @@ public class PraxisDefinition implements Serializable {
                 if (sub.getSource() != null && !gws.contains(sub.getSource())) {
                     gws.add(sub.getSource());
                 }
-                String trig = sub.getDataElementQualifier() != null && !sub.getDataElementQualifier().isBlank()
-                        ? sub.getDataElementQualifier()
-                        : sub.getDataElement();
+                String elem = sub.getDataElement();
+                String qual = sub.getDataElementQualifier();
+                String trig = null;
+                if (qual != null && !qual.isBlank() && !"*".equals(qual)) {
+                    trig = (elem != null && !elem.isBlank() && !"*".equals(elem)) ? elem + "^" + qual : qual;
+                } else if (elem != null && !elem.isBlank() && !"*".equals(elem)) {
+                    trig = elem;
+                }
                 if (trig != null && !triggers.contains(trig)) {
                     triggers.add(trig);
                 }
@@ -618,50 +348,27 @@ public class PraxisDefinition implements Serializable {
         }
     }
 
-    /**
-     * Returns the target gateway instance IDs for fallback filtering.
-     *
-     * @return list of target gateway instance IDs
-     */
     public List<String> getTargetGatewayInstances() {
         return targetGatewayInstances != null ? targetGatewayInstances : List.of();
     }
 
-    /**
-     * Sets the target gateway instance IDs for fallback filtering.
-     *
-     * @param targetGatewayInstances list of target gateway instance IDs
-     */
     public void setTargetGatewayInstances(List<String> targetGatewayInstances) {
         this.targetGatewayInstances = targetGatewayInstances != null ? new ArrayList<>(targetGatewayInstances) : new ArrayList<>();
         rebuildTopicSubscriptionsFromLegacy();
     }
 
-    /**
-     * Returns the target trigger types for fallback filtering.
-     *
-     * @return list of target trigger types
-     */
     public List<String> getTargetTriggerTypes() {
         return targetTriggerTypes != null ? targetTriggerTypes : List.of();
     }
 
-    /**
-     * Sets the target trigger types for fallback filtering.
-     *
-     * @param targetTriggerTypes list of target trigger types
-     */
     public void setTargetTriggerTypes(List<String> targetTriggerTypes) {
         this.targetTriggerTypes = targetTriggerTypes != null ? new ArrayList<>(targetTriggerTypes) : new ArrayList<>();
         rebuildTopicSubscriptionsFromLegacy();
     }
 
     private void rebuildTopicSubscriptionsFromLegacy() {
-        List<String> gws = targetGatewayInstances != null && !targetGatewayInstances.isEmpty()
-                ? targetGatewayInstances : List.of("*");
-        List<String> trigs = targetTriggerTypes != null && !targetTriggerTypes.isEmpty()
-                ? targetTriggerTypes : List.of("*");
-
+        List<String> gws = targetGatewayInstances != null && !targetGatewayInstances.isEmpty() ? targetGatewayInstances : List.of("*");
+        List<String> trigs = targetTriggerTypes != null && !targetTriggerTypes.isEmpty() ? targetTriggerTypes : List.of("*");
         this.topicSubscriptions = new ArrayList<>();
         for (String gw : gws) {
             for (String trig : trigs) {
@@ -670,65 +377,14 @@ public class PraxisDefinition implements Serializable {
         }
     }
 
-    /**
-     * Returns whether this sequence matches all gateway instances.
-     *
-     * @return true if matching all gateways
-     */
-    public boolean isMatchAllGateways() {
-        return matchAllGateways;
-    }
+    public boolean isMatchAllGateways() { return matchAllGateways; }
+    public void setMatchAllGateways(boolean matchAllGateways) { this.matchAllGateways = matchAllGateways; }
 
-    /**
-     * Sets whether this sequence matches all gateway instances.
-     *
-     * @param matchAllGateways true to match all gateways
-     */
-    public void setMatchAllGateways(boolean matchAllGateways) {
-        this.matchAllGateways = matchAllGateways;
-    }
+    public boolean isMatchAllTriggers() { return matchAllTriggers; }
+    public void setMatchAllTriggers(boolean matchAllTriggers) { this.matchAllTriggers = matchAllTriggers; }
 
-    /**
-     * Returns whether this sequence matches all message triggers.
-     *
-     * @return true if matching all triggers
-     */
-    public boolean isMatchAllTriggers() {
-        return matchAllTriggers;
-    }
-
-    /**
-     * Sets whether this sequence matches all message triggers.
-     *
-     * @param matchAllTriggers true to match all triggers
-     */
-    public void setMatchAllTriggers(boolean matchAllTriggers) {
-        this.matchAllTriggers = matchAllTriggers;
-    }
-
-    /**
-     * Returns the ordered map of activity IDs in the sequence.
-     *
-     * @return map of order index to activity ID
-     */
-    public Map<Integer, String> getActivityIds() {
-        return activityIds != null ? activityIds : new TreeMap<>();
-    }
-
-    /**
-     * Sets the ordered map of activity IDs in the sequence.
-     *
-     * @param activityIds map of order index to activity ID
-     */
-    public void setActivityIds(Map<Integer, String> activityIds) {
-        this.activityIds = activityIds != null ? new TreeMap<>(activityIds) : new TreeMap<>();
-    }
-
-    /**
-     * Sets the activity IDs from an ordered list.
-     *
-     * @param activityIdList list of activity IDs in execution order
-     */
+    public Map<Integer, String> getActivityIds() { return activityIds != null ? activityIds : new TreeMap<>(); }
+    public void setActivityIds(Map<Integer, String> activityIds) { this.activityIds = activityIds != null ? new TreeMap<>(activityIds) : new TreeMap<>(); }
     public void setActivityIds(List<String> activityIdList) {
         this.activityIds = new TreeMap<>();
         if (activityIdList != null) {
@@ -737,40 +393,22 @@ public class PraxisDefinition implements Serializable {
             }
         }
     }
-
-    /**
-     * Returns the activity IDs as an ordered list.
-     *
-     * @return ordered list of activity IDs
-     */
     @JsonIgnore
     public List<String> getActivityIdList() {
-        if (activityIds == null || activityIds.isEmpty()) {
-            return Collections.emptyList();
-        }
+        if (activityIds == null || activityIds.isEmpty()) return Collections.emptyList();
         return new ArrayList<>(new TreeMap<>(activityIds).values());
     }
 
-    /**
-     * Jackson custom deserializer setter for activity IDs supporting both JSON arrays and objects.
-     *
-     * @param node JSON node representing activity IDs
-     */
     @JsonSetter("activityIds")
     public void setActivityIdsFromJson(JsonNode node) {
         this.activityIds = new TreeMap<>();
-        if (node == null || node.isNull()) {
-            return;
-        }
+        if (node == null || node.isNull()) return;
         if (node.isArray()) {
-            for (int i = 0; i < node.size(); i++) {
-                this.activityIds.put(i, node.get(i).asText());
-            }
+            for (int i = 0; i < node.size(); i++) this.activityIds.put(i, node.get(i).asText());
         } else if (node.isObject()) {
             node.fields().forEachRemaining(entry -> {
                 try {
-                    int order = Integer.parseInt(entry.getKey());
-                    this.activityIds.put(order, entry.getValue().asText());
+                    this.activityIds.put(Integer.parseInt(entry.getKey()), entry.getValue().asText());
                 } catch (NumberFormatException e) {
                     this.activityIds.put(this.activityIds.size(), entry.getValue().asText());
                 }
@@ -778,29 +416,8 @@ public class PraxisDefinition implements Serializable {
         }
     }
 
-    /**
-     * Returns the ordered map of activity class names in the sequence.
-     *
-     * @return map of order index to activity class name
-     */
-    public Map<Integer, String> getActivityClassNames() {
-        return activityClassNames != null ? activityClassNames : new TreeMap<>();
-    }
-
-    /**
-     * Sets the ordered map of activity class names in the sequence.
-     *
-     * @param activityClassNames map of order index to activity class name
-     */
-    public void setActivityClassNames(Map<Integer, String> activityClassNames) {
-        this.activityClassNames = activityClassNames != null ? new TreeMap<>(activityClassNames) : new TreeMap<>();
-    }
-
-    /**
-     * Sets the activity class names from an ordered list.
-     *
-     * @param activityClassNameList list of activity class names in execution order
-     */
+    public Map<Integer, String> getActivityClassNames() { return activityClassNames != null ? activityClassNames : new TreeMap<>(); }
+    public void setActivityClassNames(Map<Integer, String> activityClassNames) { this.activityClassNames = activityClassNames != null ? new TreeMap<>(activityClassNames) : new TreeMap<>(); }
     public void setActivityClassNames(List<String> activityClassNameList) {
         this.activityClassNames = new TreeMap<>();
         if (activityClassNameList != null) {
@@ -809,40 +426,22 @@ public class PraxisDefinition implements Serializable {
             }
         }
     }
-
-    /**
-     * Returns the activity class names as an ordered list.
-     *
-     * @return ordered list of activity class names
-     */
     @JsonIgnore
     public List<String> getActivityClassNameList() {
-        if (activityClassNames == null || activityClassNames.isEmpty()) {
-            return Collections.emptyList();
-        }
+        if (activityClassNames == null || activityClassNames.isEmpty()) return Collections.emptyList();
         return new ArrayList<>(new TreeMap<>(activityClassNames).values());
     }
 
-    /**
-     * Jackson custom deserializer setter for activity class names supporting both JSON arrays and objects.
-     *
-     * @param node JSON node representing activity class names
-     */
     @JsonSetter("activityClassNames")
     public void setActivityClassNamesFromJson(JsonNode node) {
         this.activityClassNames = new TreeMap<>();
-        if (node == null || node.isNull()) {
-            return;
-        }
+        if (node == null || node.isNull()) return;
         if (node.isArray()) {
-            for (int i = 0; i < node.size(); i++) {
-                this.activityClassNames.put(i, node.get(i).asText());
-            }
+            for (int i = 0; i < node.size(); i++) this.activityClassNames.put(i, node.get(i).asText());
         } else if (node.isObject()) {
             node.fields().forEachRemaining(entry -> {
                 try {
-                    int order = Integer.parseInt(entry.getKey());
-                    this.activityClassNames.put(order, entry.getValue().asText());
+                    this.activityClassNames.put(Integer.parseInt(entry.getKey()), entry.getValue().asText());
                 } catch (NumberFormatException e) {
                     this.activityClassNames.put(this.activityClassNames.size(), entry.getValue().asText());
                 }

@@ -32,7 +32,7 @@ import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
 import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
 import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;

@@ -23,7 +23,7 @@ import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.commons.lang3.StringUtils;
@@ -74,7 +74,7 @@ public class AdtDistributionErgon extends ErgonBase {
 
             int order = pragma.getOutput() != null ? pragma.getOutput().size() : 0;
             for (String targetQueue : targetQueues) {
-                Topic egressTopic = Topic.forEgress("ADT", extractTriggerEvent(rawHl7), "harmonia", targetQueue, targetQueue);
+                Topic egressTopic = Topic.fromHl7("ADT", extractTriggerEvent(rawHl7));
                 ErgonPayload dispatchPayload = ErgonPayload.fromJson(order++, egressTopic, egressTopic, rawHl7);
                 pragma.addOutput(dispatchPayload);
 

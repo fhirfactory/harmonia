@@ -26,7 +26,7 @@ import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
 import net.fhirfactory.harmonia.model.pragma.Pragma;
 import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.petasos.api.consumer.PetasosConsumer;
 import net.fhirfactory.harmonia.petasos.api.consumer.PetasosMessageContext;
@@ -214,8 +214,8 @@ public class PetasosQueueToExchangeConduit {
             pragma.setAuthoredOn(message.getTimestamp() != null ? Date.from(message.getTimestamp()) : new Date());
 
             if (StringUtils.isNotBlank(payloadStr)) {
-                Topic container = new Topic("Health", "Petasos", "1.0", "Envelope", message.getMessageType());
-                Topic content = new Topic("Health", "Payload", "1.0", "MessageContent", message.getContentType());
+                Topic container = new Topic("Health", "Petasos", "1.0", "Envelope", message.getMessageType() != null ? message.getMessageType() : "Default");
+                Topic content = new Topic("Health", "Payload", "1.0", "MessageContent", message.getContentType() != null ? message.getContentType() : "Default");
                 pragma.addInput(ErgonPayload.fromJson(0, container, content, payloadStr));
             }
         } else {

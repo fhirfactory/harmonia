@@ -18,7 +18,7 @@
 package net.fhirfactory.harmonia.mllpgateway.config;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -116,27 +116,19 @@ public class MllpDestinationRegistry implements Serializable {
             return getDefaultDestination();
         }
 
-        // 1. Check topic destination
-        if (StringUtils.isNotBlank(topic.getDestination())) {
-            Optional<MllpDestinationConfig> byDest = resolveDestination(topic.getDestination());
-            if (byDest.isPresent()) {
-                return byDest;
+        // 1. Check topic data element qualifier (e.g. HIS_NORTH, LIS_MAIN)
+        if (StringUtils.isNotBlank(topic.getDataElementQualifier())) {
+            Optional<MllpDestinationConfig> byQual = resolveDestination(topic.getDataElementQualifier());
+            if (byQual.isPresent()) {
+                return byQual;
             }
         }
 
-        // 2. Check topic target
-        if (StringUtils.isNotBlank(topic.getTarget())) {
-            Optional<MllpDestinationConfig> byTarget = resolveDestination(topic.getTarget());
-            if (byTarget.isPresent()) {
-                return byTarget;
-            }
-        }
-
-        // 3. Check topic origin / facility
-        if (StringUtils.isNotBlank(topic.getOrigin())) {
-            Optional<MllpDestinationConfig> byOrigin = resolveDestination(topic.getOrigin());
-            if (byOrigin.isPresent()) {
-                return byOrigin;
+        // 2. Check topic friendly name / leaf name
+        if (StringUtils.isNotBlank(topic.getFriendlyName())) {
+            Optional<MllpDestinationConfig> byFriendly = resolveDestination(topic.getFriendlyName());
+            if (byFriendly.isPresent()) {
+                return byFriendly;
             }
         }
 

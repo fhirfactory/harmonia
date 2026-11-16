@@ -20,7 +20,7 @@ package net.fhirfactory.harmonia.mllpout.camel;
 import net.fhirfactory.harmonia.mllpgateway.config.MllpDestinationConfig;
 import net.fhirfactory.harmonia.mllpgateway.config.MllpDestinationRegistry;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
-import net.fhirfactory.harmonia.model.topic.Topic;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -48,7 +48,7 @@ class OutboundMllpProcessorTest {
 
     @Test
     void testProcessOutboundMllpRequestObject() throws Exception {
-        Topic topic = Topic.forEgress("ADT", "A01", "harmonia", "mllp-out", "HIS_NORTH");
+        Topic topic = Topic.fromHl7("ADT", "A01");
         String hl7 = "MSH|^~\\&|HARMONIA|HIE|HIS_SYS|HOSP_N|20260915083000||ADT^A01|MSG-9901|P|2.4\rEVN|A01|20260915083000\r";
         OutboundMllpRequest request = new OutboundMllpRequest("MSG-9901", "HIS_NORTH", hl7, topic);
 
