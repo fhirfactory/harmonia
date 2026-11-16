@@ -39,7 +39,7 @@ complexity, uncertainty and materiality identified through review. Classificatio
 as implementation or similar does not itself reduce or bypass the Praxis.
 For substantive AI-agent activity associated with an HCRL iteration, formal Tasks
 and corresponding Reports MUST be retained at
-`enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/before/ai-agent-tasks/`
+`enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/before/ai-agent-tasks/`
 and that iteration's `after/ai-agent-reports/`, under the common provenance
 contract, irrespective of architectural materiality. Investigation, analysis,
 review, candidate/pending-HCRL preparation or revision, corrective work, application
@@ -61,6 +61,15 @@ RAD-1.1.3 first required execution-only records at release level; 1.1.4-003
 demonstrated/refactored the iteration structure, and 1.1.4-004 implements it
 prospectively, superseding the narrower rule. No retrospective compliance,
 historical rewrite, migration or unrelated disposal authority is supplied.
+
+For software transitions, `<target-key>` is `software-X.Y.Z` under the common
+[Software Development Praxis](../enterprise-architecture/governance/software-development-praxis.md);
+Architecture targets retain their numeric release key. `docs/backlog/` is the
+single human/agent Backlog Item location; the common Praxis and backlog template
+supply its minimum structure and correspondence rules. Existing sample content is
+historical, not the template. Use references between items, Tasks, Reports and
+HCRLs rather than duplicate complete specifications. Historical evidence is not
+migrated or reclassified by this extension.
 
 Every change receives review; material implementation discoveries require
 adjudication. The accepted target structure does not authorise repository

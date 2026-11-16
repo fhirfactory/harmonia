@@ -1,0 +1,426 @@
+{
+  "recordedAt": "2026-11-16T01:15:37.794576Z",
+  "meaning": "Actual application verification capture; not Task issuance or Solution Architect confirmation",
+  "boundary": "1.1.26/001",
+  "technicalOutcome": "PASS",
+  "temporalProvenance": "UNRESOLVED",
+  "environment": {
+    "root": "/home/hunterm/Development/Code/harmonia",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "java": "openjdk version \"21.0.13.0.3\" 2026-10-24\nOpenJDK Runtime Environment (build 21.0.13.0.3+1-1-24.04.1-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.13.0.3+1-1-24.04.1-Ubuntu, mixed mode, sharing)",
+    "mavenNetworkMode": "offline"
+  },
+  "checks": {
+    "exactReviewedDocumentCorrespondence": {
+      "outcome": "PASS",
+      "targets": [
+        {
+          "path": "enterprise-architecture/governance/architecture-governance.md",
+          "sha256": "61b73a1c854d2cf49798e602aca0e5706d8a30f88be3bc1d089ffeba9e57006c",
+          "outcome": "PASS"
+        },
+        {
+          "path": "enterprise-architecture/governance/architecture-review-praxis.md",
+          "sha256": "11190b37f1e26e815bc13bc9c3fcfabb3f77156187ab772ad8fb32a10a99a59b",
+          "outcome": "PASS"
+        },
+        {
+          "path": "enterprise-architecture/governance/architecture-change-provenance.md",
+          "sha256": "e0b4292279bb026566b5f61fbf3b60b333087cea72b39895868b13abb4cb6b5a",
+          "outcome": "PASS"
+        },
+        {
+          "path": "enterprise-architecture/governance/architecture-release-policy.md",
+          "sha256": "ec7809b450a50216c4cb15da5737fef080aa5acffe861511f6495f07d7922096",
+          "outcome": "PASS"
+        },
+        {
+          "path": "AGENTS.md",
+          "sha256": "10f04260a0e9abccd719fa75a7031f1b99b82ffcef2ddd2031c6ab7ec1772e76",
+          "outcome": "PASS"
+        },
+        {
+          "path": "docs/AGENTS.md",
+          "sha256": "fbd01b92ef302677b57a8d22cd323c6b8405d0c5369227abf02f849ce476c19c",
+          "outcome": "PASS"
+        },
+        {
+          "path": "enterprise-architecture/governance/templates/hcrl-template.pending.md",
+          "sha256": "97bceb07222fb785a94ed908dd4ccc92f28c6be930d8fe5c8c5ccdec128e6443",
+          "outcome": "PASS"
+        },
+        {
+          "path": "enterprise-architecture/governance/software-development-praxis.md",
+          "sha256": "694c867e0efa58d6b6c557e6be4c7c94bf5d67dd5ff33043e3d9d71348f77bf3",
+          "outcome": "PASS"
+        },
+        {
+          "path": "docs/backlog/backlog-item-template.md",
+          "sha256": "b968c33dc54e12434b85081fe386ef0016498c963770c6fd444654055a76e5d9",
+          "outcome": "PASS"
+        },
+        {
+          "path": "docs/backlog/README.md",
+          "sha256": "6ee7a5dbc8a0769c864e3d7f48be67ddd550e146618069199900977306268f05",
+          "outcome": "PASS"
+        }
+      ],
+      "acceptedPatchSha256": "c8ead9603dec26ec53b82f2522c7dcd66c27a91c7f8d2c22e7aee3728993b3bb",
+      "acceptedInputHcrlSha256": "72b96064bb38f1127f516043cfe58e738b1657de04a1d109f7c74fb94373dda3"
+    },
+    "backlogStructureAndMetadata": {
+      "outcome": "PASS",
+      "sections": [
+        "Overview",
+        "Context",
+        "Associated Requirements",
+        "Expected / Associated Activity",
+        "Expected Outcomes",
+        "Acceptance Criteria"
+      ],
+      "overviewSynopses": [
+        "High-Level Synopsis of Effort",
+        "High-Level Synopsis of Activities",
+        "High-Level Synopsis of Outcome",
+        "High-Level Synopsis of Acceptance Criteria"
+      ],
+      "titleIdentifiesItem": true,
+      "metadata": [
+        "Backlog Item ID",
+        "Backlog Item Revision"
+      ],
+      "newIdentifierScheme": false
+    },
+    "maintainedBacklogLinks": {
+      "outcome": "PASS",
+      "targets": [
+        "docs/backlog/backlog-item-template.md",
+        "enterprise-architecture/governance/software-development-praxis.md"
+      ],
+      "proposalOnlyLinks": false
+    },
+    "reviewHistory": {
+      "outcome": "PASS",
+      "retainedInputs": [
+        {
+          "stage": "solution-architect-review",
+          "source": "enterprise-architecture/design/review/1.1.26/hcrl-1.1.26-001.pending.md",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "solution-architect-review",
+          "source": "enterprise-architecture/design/review/1.1.26/software-development-praxis.proposed.md",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "solution-architect-review",
+          "source": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-amendments.proposed.patch",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "solution-architect-review",
+          "source": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-assessment.md",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "solution-architect-review",
+          "source": "enterprise-architecture/design/evidence/1.1.26/001/after/supporting-amendments.proposed.md",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "solution-architect-review",
+          "source": "enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "solution-architect-review",
+          "source": "enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "final-backlog-refinements",
+          "source": "enterprise-architecture/design/review/1.1.26/backlog-item-template.proposed.md",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "final-backlog-refinements",
+          "source": "enterprise-architecture/design/review/1.1.26/hcrl-1.1.26-001.pending.md",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "final-backlog-refinements",
+          "source": "enterprise-architecture/design/review/1.1.26/backlog-readme.proposed.md",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "final-backlog-refinements",
+          "source": "enterprise-architecture/design/review/1.1.26/software-development-praxis.proposed.md",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "final-backlog-refinements",
+          "source": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-amendments.proposed.patch",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "final-backlog-refinements",
+          "source": "enterprise-architecture/design/evidence/1.1.26/001/after/supporting-amendments.proposed.md",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "final-backlog-refinements",
+          "source": "enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md",
+          "outcome": "PASS"
+        },
+        {
+          "stage": "final-backlog-refinements",
+          "source": "enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+          "outcome": "PASS"
+        }
+      ],
+      "beforeDecisionTable": [
+        "| [DR-1](#dr-1) | Backlog Items, delegated lifecycle and acceptance boundaries | Changes Requested | Recorded review directions and two clarifications incorporated; revised candidate awaits acceptance. |",
+        "| [DR-2](#dr-2) | Solution-wide software identity and pre-submission verification | Accepted with refinement | Independent X.Y.Z retained; integrated-solution acceptance and required testing made explicit. |",
+        "| [DR-3](#dr-3) | Shared evidence, originating items and corrective iterations | Accepted with refinement | Report/HCRL identify items and criteria/conformance/regression/integration evidence; no new ordinary-correction approval. |",
+        "| [DR-4](#dr-4) | Supporting governance, Backlog template and bounded tooling | Revise and resubmit | Exact revised diff and minimum Backlog structure submitted in this same iteration. |",
+        "| [DR-5](#dr-5) | First accepted software baseline and version | Accepted | Deferred to first appropriately authorised software-development assignment. |",
+        "| [DR-6](#dr-6) | Bounded supporting Minutiae and temporal qualification | Accepted with qualification | Original Task time/prefix remain unresolved by explicit disposition; evidence retained. |"
+      ],
+      "currentDecisionTable": [
+        "| [DR-1](#dr-1) | Backlog Items, delegated lifecycle and acceptance boundaries | Accepted — corrected proposal | Solution Architect accepts the corrected proposal and authorises application; incorporated-result confirmation pending. |",
+        "| [DR-2](#dr-2) | Solution-wide software identity and pre-submission verification | Accepted with refinement | Independent X.Y.Z retained; integrated-solution acceptance and required testing made explicit. |",
+        "| [DR-3](#dr-3) | Shared evidence, originating items and corrective iterations | Accepted with refinement | Report/HCRL identify items and criteria/conformance/regression/integration evidence; no new ordinary-correction approval. |",
+        "| [DR-4](#dr-4) | Supporting governance, Backlog template and bounded tooling | Accepted — application authorised | Ten reviewed document amendments and bounded helper/test/README changes incorporated; result confirmation pending. |",
+        "| [DR-5](#dr-5) | First accepted software baseline and version | Accepted | Deferred to first appropriately authorised software-development assignment. |",
+        "| [DR-6](#dr-6) | Bounded supporting Minutiae and temporal qualification | Accepted with qualification | Original Task time/prefix remain unresolved by explicit disposition; evidence retained. |"
+      ],
+      "explanation": "DR-1 and DR-4 reflect the later attributable acceptance/application instruction; DR-2/3/5/6 retain their accepted dispositions. All prior HCRL bytes remain in verified snapshots."
+    },
+    "gitAndReleaseState": {
+      "outcome": "PASS",
+      "head": "441ec989a3853db4ea4dad253e14b8464181f293",
+      "branch": "Mneme-and-Mnemosyne-Build",
+      "release": {
+        "version": "1.1.26",
+        "previous_version": "1.1.25"
+      },
+      "acceptedPredecessor": "1.1.25",
+      "patchAllocationsForThisChangeSet": 1,
+      "allocationCommand": "python3 -B enterprise-architecture/tooling/architecture_release.py bump --expect 1.1.25",
+      "trackedModifiedFiles": [
+        "AGENTS.md",
+        "architecture-release.json",
+        "docs/AGENTS.md",
+        "enterprise-architecture/governance/architecture-change-provenance.md",
+        "enterprise-architecture/governance/architecture-governance.md",
+        "enterprise-architecture/governance/architecture-release-policy.md",
+        "enterprise-architecture/governance/architecture-review-praxis.md",
+        "enterprise-architecture/governance/templates/hcrl-template.pending.md",
+        "enterprise-architecture/tooling/README.md",
+        "enterprise-architecture/tooling/architecture_review_evidence.py",
+        "enterprise-architecture/tooling/tests/test_architecture_review_evidence.py"
+      ],
+      "newMaintainedDocuments": [
+        "docs/backlog/README.md",
+        "docs/backlog/backlog-item-template.md",
+        "enterprise-architecture/governance/software-development-praxis.md"
+      ],
+      "untrackedProvenanceRoots": [
+        "enterprise-architecture/design/evidence/1.1.26/",
+        "enterprise-architecture/design/review/1.1.26/"
+      ],
+      "historicalSampleUnchanged": true,
+      "canonicalAndPublishedAndRegisterSourcesUnchanged": true,
+      "stagedChanges": false,
+      "committed": false,
+      "published": false,
+      "softwareBaselineEstablished": false,
+      "hcrlStatus": "PENDING: incorporated-result confirmation required",
+      "iterationAdvanced": false
+    },
+    "boundedToolingCandidate": {
+      "outcome": "PASS",
+      "files": [
+        {
+          "path": "enterprise-architecture/tooling/architecture_review_evidence.py",
+          "sha256": "ef062f719615f3b9b4472e8f67ecbec441db032f66ebef00ad79f57c34d307eb"
+        },
+        {
+          "path": "enterprise-architecture/tooling/tests/test_architecture_review_evidence.py",
+          "sha256": "7d0a103787b8ca3e4733bf71c4b5debedc4af1d89f5a7c8328cbda692600c3e7"
+        },
+        {
+          "path": "enterprise-architecture/tooling/README.md",
+          "sha256": "62a61ed58c1f8bcc0c296a58b911c249b44bef8d9c0c72914a1218d68d1ef61e"
+        },
+        {
+          "path": "architecture-release.json",
+          "sha256": "2d8fe3d62e328efa18284fd0261ba50c2f635e10fd739c5714e476bb42735d53"
+        }
+      ],
+      "patch": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-application/tooling-and-release.applied.patch",
+      "patchSha256": "80087ce87f93e227f6e345303285c6f84fadf01aaf04a997b4aa392d79b53f4f",
+      "sourceBase": "441ec989a3853db4ea4dad253e14b8464181f293"
+    },
+    "executedVerification": [
+      {
+        "name": "evidence-helper",
+        "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B -m unittest discover -s enterprise-architecture/tooling/tests -p test_architecture_review_evidence.py -v",
+        "outcome": "PASS",
+        "exitCode": 0,
+        "transientLogSha256": "096256071fe9fdd612ca732c7ce0569dfe54f78fd959221d8a0773ae34edfc5b",
+        "tests": 24,
+        "elapsedSeconds": 0.26
+      },
+      {
+        "name": "release-helper",
+        "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B -m unittest discover -s enterprise-architecture/tooling/tests -p test_architecture_release.py -v",
+        "outcome": "PASS",
+        "exitCode": 0,
+        "transientLogSha256": "dd1418c15a467af185b4e0a0203393e721118c7682b2fac3c1d72248ff8c02cc",
+        "tests": 3,
+        "elapsedSeconds": 0.006
+      },
+      {
+        "name": "current-ea",
+        "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B -m unittest discover -s enterprise-architecture/tooling/tests -p test_current_ea.py -v",
+        "outcome": "PASS",
+        "exitCode": 0,
+        "transientLogSha256": "436d5eeac786de70ed88302d3594ada80d4c80a17d95e4852a2320aaf675c23a",
+        "tests": 11,
+        "elapsedSeconds": 4.77
+      },
+      {
+        "name": "architecture",
+        "command": "timeout --signal=TERM --kill-after=5s 240s mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+        "outcome": "PASS",
+        "exitCode": 0,
+        "transientLogSha256": "9a7abac3643c6ced72a6b5222c9a5910828142b3871546d36e75e804edc18f22",
+        "tests": 90,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "elapsedSeconds": 18.935
+      },
+      {
+        "name": "continuum",
+        "command": "timeout --signal=TERM --kill-after=5s 90s python3 -B enterprise-architecture/tooling/architecture_continuum.py validate",
+        "outcome": "PASS",
+        "exitCode": 0,
+        "transientLogSha256": "b3468e3d65916dc4b6610987474f85cfb0ed37e42f5d0054ba0b8542a1225739",
+        "result": {
+          "status": "PASS",
+          "elements": 6563,
+          "relationships": 9427,
+          "qualifiedSourcePredicates": 462,
+          "canonicalIdentities": 6563,
+          "representationIdentities": 6563,
+          "provenanceCoverage": 6563,
+          "sourceBindings": 8459,
+          "supportedNativeTypes": 60,
+          "navigation": "PASS",
+          "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance"
+        }
+      }
+    ],
+    "canonicalSourceLinks": {
+      "command": "timeout --signal=TERM --kill-after=5s 90s python3 -B enterprise-architecture/tooling/verify_continuum_links.py --report enterprise-architecture/design/evidence/1.1.26/001/after/governance-application/continuum-links.json",
+      "exitCode": 0,
+      "result": {
+        "status": "PASS",
+        "renderedLocalLinksChecked": 3047,
+        "promotedAuthorityLinks": 5,
+        "historicalProvenanceLinks": 354,
+        "repositoryInstructionSourceCitations": 2,
+        "missingTargetFiles": [],
+        "unresolvedAnchors": [],
+        "limit": "Current EA local targets/anchors only. Historical source/evidence and repository-instruction citations remain locators and are not prerequisites; external network targets and code examples are not dereferenced."
+      }
+    },
+    "verificationScope": {
+      "reasonForFinalRuns": "Resolve the handoff gap in retained invocation details by capturing exact commands and current results; prior successful logs were not overwritten.",
+      "scope": "Existing evidence-helper, release-helper and current-EA suites; mandatory architecture suite; canonical Continuum validation. No source changes between these runs and the candidate hashes.",
+      "limits": "Governance adoption with supporting tooling, not a software release candidate. Solution-wide software regression/integration readiness, publication, deployment and operational rollback are not claimed."
+    },
+    "maintainedAndFormalRecordLinks": {
+      "outcome": "PASS",
+      "files": 16,
+      "renderedLocalFileLinks": 211,
+      "missingTargets": [],
+      "scope": "Actual rendered local file links, including reference-style links, in the ten applied documents, tooling README, current HCRL and all formal Tasks/Reports. External sites and code examples not dereferenced. Canonical-source anchors are checked by the existing Continuum link validator."
+    },
+    "releaseAuthority": {
+      "outcome": "PASS",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "30s",
+        "python3",
+        "-B",
+        "enterprise-architecture/tooling/architecture_release.py",
+        "check"
+      ],
+      "exitCode": 0,
+      "output": "{\n  \"version\": \"1.1.26\",\n  \"previous_version\": \"1.1.25\"\n}"
+    },
+    "whitespace": {
+      "outcome": "PASS",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "30s",
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0
+    },
+    "iterationEvidence": {
+      "command": "timeout 30s python3 -B enterprise-architecture/tooling/architecture_review_evidence.py --version 1.1.26 --iteration 001",
+      "exitCode": 2,
+      "result": {
+        "outcome": "UNRESOLVED",
+        "version": "1.1.26",
+        "iteration": "001",
+        "records": [
+          "evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+          "evidence/1.1.26/001/after/ai-agent-reports/20261116T011524Z-software-development-praxis-application.md",
+          "evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-application.md",
+          "evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md"
+        ],
+        "errors": [],
+        "unresolved": [
+          "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-application.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+          "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+        ],
+        "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+      },
+      "treatment": "Original proposal Task event/prefix retains accepted DR-6 qualification. Application Task event/prefix is separately unavailable and requires Solution Architect treatment before closure; the original exception is not extended by inference. Report events are actual emitter production events."
+    }
+  },
+  "implementationConformance": [
+    {
+      "contract": "DR-4 bounded software evidence-target support",
+      "implementation": "review_target_kind, boundary_paths, check_iteration; existing strict release grammar",
+      "evidence": "24 helper tests, including malformed/traversal targets, numeric/software coexistence and read-only checks"
+    },
+    {
+      "contract": "Defensive/unhappy-path handling and evidence preservation",
+      "implementation": "Reject software ArchiMate preparation before input reads; preserve existing exclusive writes, role/event/iteration checks and exit meanings",
+      "evidence": "Missing-input early rejection, overwrite conflict, wrong-role, event mismatch/UNRESOLVED and CLI failure tests"
+    },
+    {
+      "contract": "Implementation Guide educational documentation and cohesive design",
+      "implementation": "Documented target-kind helper; contextual module/CLI help; maintained tooling README; reuse existing allocator grammar with no duplicated register/framework",
+      "evidence": "Inspected bounded diff; contract and failure-path tests; current-EA and release regressions"
+    },
+    {
+      "contract": "AX-04/08/14/15/17 and Solution Architect acceptance",
+      "implementation": "Machinery validates evidence locators without accepting software or architecture; namespaces and uncertain outcomes stay distinct",
+      "evidence": "Numeric authority nonmutation/exclusive-write tests; preserved HCRL history; pending incorporated-result confirmation and explicit temporal exception"
+    }
+  ]
+}

@@ -47,6 +47,17 @@ implementation, bug, patch, backlog item or similar does not itself reduce or
 bypass the Praxis. Review may establish that a change has no material
 architectural effect; such a transition still receives appropriate HCRL review.
 
+For software-target transitions, the [Software Development Praxis](software-development-praxis.md)
+specialises assignment, autonomous engineering, candidate submission, acceptance
+and closure without reducing this review. A target key is the resulting numeric
+Architecture version or `software-X.Y.Z`; historical decisions retain their scope.
+Software assignments reference their Backlog Items; software PR/HCRL candidates
+are always solution-wide. Before submission, perform component/unit, solution-wide
+regression/integration and relevant conformance validation under the software
+Praxis; incomplete required verification needs explicit Solution Architect treatment.
+Reports and HCRLs identify originating items and reference acceptance-criteria
+results rather than copying the work specification.
+
 ## Activity, evidence and semantic record
 
 The Praxis SHALL distinguish the following, using the normative definitions in
@@ -65,7 +76,7 @@ The Praxis SHALL distinguish the following, using the normative definitions in
   governance artefacts required to document an already-authorised substantive
   activity within an existing provenance boundary. Provenance maintenance SHALL NOT
   recursively instantiate a new Task, Report or HCRL iteration.
-- **HCRL:** the authoritative semantic change/decision record for the governed RAD
+- **HCRL:** the authoritative semantic change/decision record for the governed Architecture or software
   transition. It is not the Architecture Review working document or a substitute
   for detailed supporting evidence.
 
@@ -107,7 +118,7 @@ Architecture Review activity
 ├── transient working material
 │   └── not retained merely because it existed
 ├── durable evidence
-│   └── enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/
+│   └── enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/
 │       ├── before/
 │       │   └── ai-agent-tasks/<timestamp>-<task>.md
 │       └── after/
@@ -116,8 +127,8 @@ Architecture Review activity
     └── governed semantic change/decision record
 ```
 
-The HCRL iteration SHALL be the provenance boundary. The version is the resulting
-RAD release; the iteration corresponds to its HCRL, such as `1.1.4/004`.
+The HCRL iteration SHALL be the provenance boundary. The target key and iteration
+correspond to the explicit HCRL, such as `1.1.4/004` or `software-X.Y.Z/001`.
 `before/` contains activity inputs/input provenance; `after/` contains outputs/output
 provenance. These roles do not assert presence in predecessor/successor Git states
 or acceptance of results. Keep earlier evidence with its originating iteration;
@@ -172,7 +183,7 @@ proposed architecture; its Task/Report nonetheless follows the same iteration mo
 
 ## 2. Prepare the candidate HCRL
 
-Use `design/review/<resulting-version>/hcrl-<version>-<iteration>.pending.md`
+Use `design/review/<target-key>/hcrl-<target-key>-<iteration>.pending.md`
 and the [common HCRL template][template]. Keep one opening Decision Review table,
 consecutive top-level DRs and at most one subordinate level. Describe material
 proposals, relevant authority, uncertainties, evidence, consequences and
@@ -210,10 +221,12 @@ conditions/exclusions. Retain formal application Task Details and material
 follow-up instructions at the associated iteration's task location, preserving
 their correspondence, issuance event times and required timestamped filenames.
 
-Prepare the one accepted-change patch increment under the existing release policy
-and expected-current check; identify the release used for resulting-state
-verification. An increment alone does not establish acceptance or publication.
-Do not allocate another increment for a further iteration within that change set.
+For accepted architectural/governance changes, prepare the one Architecture patch
+increment under the release policy and expected-current check. For software-only
+changes, use the independent software identity and closure rules in the Software
+Development Praxis; do not bump architectural authority. Identify the release and
+source used for verification. An increment alone establishes no acceptance or
+publication. Further iterations of the same change set consume no extra release.
 
 Implementation discoveries that materially affect architectural meaning SHALL
 return to the applicable HCRL DR for review/adjudication before dependent work.
@@ -298,7 +311,7 @@ applicable DR; normally minor report detail remains supporting provenance.
 
 Present the authorised meaning and actual incorporated result for Solution
 Architect confirmation. Complete the HCRL at
-`design/register/<resulting-version>/hcrl-<version>-<iteration>.complete.md`
+`design/register/<target-key>/hcrl-<target-key>-<iteration>.complete.md`
 only after that confirmation. Agents report facts and cannot self-confirm
 architectural closure. Preserve explicit deferrals/exclusions, attributable
 decisions, required retrievable Task/Report evidence and relevant correspondence.

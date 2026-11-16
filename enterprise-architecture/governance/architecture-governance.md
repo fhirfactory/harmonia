@@ -62,6 +62,22 @@ and root [release authority](../../architecture-release.json) continue to contro
 allocation. Specialised contracts retain their specialised purpose, subject to
 these common review and provenance rules.
 
+## Software-development specialisation
+
+The [Software Development Praxis](software-development-praxis.md) specialises this
+common lifecycle for bounded implementation assignments, delegated engineering,
+software acceptance and release. It establishes no competing review authority or
+semantic decision log. Solution Architect confirmation remains mandatory.
+Architecture targets use numeric release keys; software targets use
+`software-X.Y.Z`. In current operational path conventions below, `<target-key>`
+means that explicitly identified target. Historical adoption accounts retain their
+original Architecture-only scope. HCRL lifecycle commands dispatch by target kind;
+software-only closure does not allocate or publish an Architecture release.
+`docs/backlog/` holds the single human/agent Backlog specification source under that
+Praxis. Items are work-management artefacts, not Continuum/Motivation elements or
+implementation authority. Every software PR/HCRL candidate and accepted software
+baseline represents the integrated Harmonia solution, regardless of changed modules.
+
 ## Architectural decision authority
 
 The Architecture Review Board (ARB) is the collaborative architectural review and
@@ -196,8 +212,9 @@ pattern, constraint or design.
 ## HCRL as the common Decision Review Log
 
 HCRL SHALL be the single authoritative semantic change/review record for each
-governed RAD release transition. A completed HCRL records the authorised semantic
-transition from the immediate governed predecessor to the resulting release.
+governed Architecture or software release transition. A completed HCRL records
+the authorised semantic transition from its identified predecessor to its resulting
+release, with software conformance tied to explicit accepted architectural authority.
 It governs that transition, not every intermediate edit or processing event.
 A transition without material architectural effect still receives appropriate
 review, including the bounded Minutiae mechanism where applicable.
@@ -270,9 +287,9 @@ enterprise-architecture/
 │   └── continuum-rad/         <narrative LaTeX publication>
 ├── design/
 │   ├── archimate/
-│   ├── review/<version>/
-│   ├── register/<version>/
-│   └── evidence/<RAD-version>/<HCRL-iteration>/
+│   ├── review/<target-key>/
+│   ├── register/<target-key>/
+│   └── evidence/<target-key>/<HCRL-iteration>/
 │       ├── before/
 │       │   └── ai-agent-tasks/<timestamp>-<task>.md
 │       └── after/
@@ -281,7 +298,7 @@ enterprise-architecture/
 └── tooling/
 ```
 
-The version is the resulting architecture release. `continuum/` contains the
+The target key identifies the resulting Architecture or software release. `continuum/` contains the
 governed Enterprise/Solution Architecture; Markdown is its representation format,
 not its architectural taxonomy. The two publication locations hold derived
 documentation outside canonical Continuum state. RAD-1.1.8's
@@ -293,15 +310,15 @@ existing ArchiMate strategy remains authoritative beneath `design/archimate/`;
 restructuring does not authorise redesigning it.
 
 Material not fully approved, including partially approved artefacts requiring
-another iteration, belongs in `design/review/<version>/`. Approved architectural
-artefacts/design records belong in `design/register/<version>/`. Partially
+another iteration, belongs in `design/review/<target-key>/`. Confirmed accepted
+artefacts/design records belong in `design/register/<target-key>/`. Partially
 approved artefacts do not enter the register. Required evidence belongs in the
 iteration-scoped before/after locations under the provenance contract.
 
 `before/ai-agent-tasks/` and `after/ai-agent-reports/` beneath the corresponding
 HCRL iteration retain formal substantive AI-agent Tasks and Reports. They
 represent activity-input and activity-output roles, not assertions of presence
-in predecessor/successor Git states or acceptance. The resulting RAD version and
+in predecessor/successor Git states or acceptance. The explicit target key and
 HCRL iteration identify the boundary (for example `1.1.4/004`), independently of
 agent/session or processing-run identity. Earlier evidence stays with its
 originating iteration and is referenced where relevant by subsequent iterations.
@@ -311,8 +328,8 @@ RAD-1.1.3 established execution-only records at release level; the common
 iteration-scoped rule takes prospective effect in 1.1.4-004 after 003's bounded
 demonstration/refactoring. No earlier record is rewritten to assert compliance.
 
-Use `hcrl-<target-version>-<iteration>.pending.md` and
-`hcrl-<target-version>-<iteration>.complete.md`. The completed HCRL belongs in the
+Use `hcrl-<target-key>-<iteration>.pending.md` and
+`hcrl-<target-key>-<iteration>.complete.md`. The completed HCRL belongs in the
 register. Iterations are not releases or processing-run identities.
 
 Adoption of this structure does not itself authorise repository migration.
@@ -428,8 +445,10 @@ completed, cancelled or otherwise reconciled unless a future specific
 architectural need requires it. No old evidence, frozen claim or unknown
 correspondence is rewritten to imply retrospective compliance.
 
-Every accepted repository change set continues to receive the patch increment
-under the existing release policy. Pending iterations do not consume releases;
-generation does not allocate one. Major/minor changes require an explicit
-governance decision. Recheck the immediate accepted predecessor before acceptance;
+Accepted architectural and normative governance changes receive the Architecture
+patch increment under the [release policy](architecture-release-policy.md).
+Software-only changes receive their independent software identity under the
+Software Development Praxis and do not increment architectural authority. Pending
+iterations consume no releases; generation allocates none. Architecture major/minor
+changes require an explicit governance decision. Recheck the immediate accepted predecessor before acceptance;
 do not treat renaming an HCRL after baseline drift as renewed approval.

@@ -1,0 +1,162 @@
+{
+  "recordedAt": "2026-11-16T02:37:12.353768Z",
+  "phase": "PRE_REGISTRATION_VERIFICATION",
+  "meaning": "Mechanical closure checks, not an instruction-entry or acceptance timestamp",
+  "exactMaintainedFiles": {
+    "outcome": "PASS",
+    "count": 14
+  },
+  "priorEvidenceAndProposals": {
+    "outcome": "PASS",
+    "count": 37
+  },
+  "predecessorPublicationPreservation": {
+    "outcome": "PASS",
+    "count": 19
+  },
+  "candidateTestEvidence": {
+    "outcome": "PASS",
+    "source": "after/governance-application/verification.json",
+    "status": "REUSED: exact candidate unchanged; no new test execution claimed",
+    "pythonTests": 38,
+    "architectureTests": 90,
+    "originalRuns": [
+      {
+        "name": "evidence-helper",
+        "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B -m unittest discover -s enterprise-architecture/tooling/tests -p test_architecture_review_evidence.py -v",
+        "outcome": "PASS",
+        "exitCode": 0,
+        "transientLogSha256": "096256071fe9fdd612ca732c7ce0569dfe54f78fd959221d8a0773ae34edfc5b",
+        "tests": 24,
+        "elapsedSeconds": 0.26
+      },
+      {
+        "name": "release-helper",
+        "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B -m unittest discover -s enterprise-architecture/tooling/tests -p test_architecture_release.py -v",
+        "outcome": "PASS",
+        "exitCode": 0,
+        "transientLogSha256": "dd1418c15a467af185b4e0a0203393e721118c7682b2fac3c1d72248ff8c02cc",
+        "tests": 3,
+        "elapsedSeconds": 0.006
+      },
+      {
+        "name": "current-ea",
+        "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B -m unittest discover -s enterprise-architecture/tooling/tests -p test_current_ea.py -v",
+        "outcome": "PASS",
+        "exitCode": 0,
+        "transientLogSha256": "436d5eeac786de70ed88302d3594ada80d4c80a17d95e4852a2320aaf675c23a",
+        "tests": 11,
+        "elapsedSeconds": 4.77
+      },
+      {
+        "name": "architecture",
+        "command": "timeout --signal=TERM --kill-after=5s 240s mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+        "outcome": "PASS",
+        "exitCode": 0,
+        "transientLogSha256": "9a7abac3643c6ced72a6b5222c9a5910828142b3871546d36e75e804edc18f22",
+        "tests": 90,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "elapsedSeconds": 18.935
+      },
+      {
+        "name": "continuum",
+        "command": "timeout --signal=TERM --kill-after=5s 90s python3 -B enterprise-architecture/tooling/architecture_continuum.py validate",
+        "outcome": "PASS",
+        "exitCode": 0,
+        "transientLogSha256": "b3468e3d65916dc4b6610987474f85cfb0ed37e42f5d0054ba0b8542a1225739",
+        "result": {
+          "status": "PASS",
+          "elements": 6563,
+          "relationships": 9427,
+          "qualifiedSourcePredicates": 462,
+          "canonicalIdentities": 6563,
+          "representationIdentities": 6563,
+          "provenanceCoverage": 6563,
+          "sourceBindings": 8459,
+          "supportedNativeTypes": 60,
+          "navigation": "PASS",
+          "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance"
+        }
+      }
+    ]
+  },
+  "canonicalValidation": {
+    "command": "timeout --signal=TERM --kill-after=5s 90s python3 -B enterprise-architecture/tooling/architecture_continuum.py validate",
+    "exitCode": 0,
+    "result": {
+      "status": "PASS",
+      "elements": 6563,
+      "relationships": 9427,
+      "navigation": "PASS"
+    },
+    "scope": "Fresh read-only closure validation; no architectural acceptance inferred"
+  },
+  "prospectiveRegisteredAndMaintainedLinks": {
+    "outcome": "PASS",
+    "markdownFiles": 18,
+    "renderedLocalLinks": 247,
+    "missingFiles": [],
+    "unresolvedAnchors": [],
+    "scope": "Rendered local file and heading/explicit-anchor links in the applied documents, current review/register HCRLs and iteration formal records; external sites/code examples not dereferenced."
+  },
+  "iterationEvidence": {
+    "command": [
+      "timeout",
+      "30s",
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/architecture_review_evidence.py",
+      "--version",
+      "1.1.26",
+      "--iteration",
+      "001"
+    ],
+    "exitCode": 2,
+    "stderr": "",
+    "result": {
+      "outcome": "UNRESOLVED",
+      "version": "1.1.26",
+      "iteration": "001",
+      "records": [
+        "evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+        "evidence/1.1.26/001/after/ai-agent-reports/20261116T011524Z-software-development-praxis-application.md",
+        "evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-application.md",
+        "evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md"
+      ],
+      "errors": [],
+      "unresolved": [
+        "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-application.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+        "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+      ],
+      "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+    },
+    "qualification": "Both original and application Task event/prefix uncertainties explicitly accepted with qualification by the Solution Architect; factual UNRESOLVED remains. No rules weakened."
+  },
+  "releaseAuthority": {
+    "command": [
+      "timeout",
+      "30s",
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/architecture_release.py",
+      "check"
+    ],
+    "exitCode": 0,
+    "stdout": "{\n  \"version\": \"1.1.26\",\n  \"previous_version\": \"1.1.25\"\n}",
+    "stderr": ""
+  },
+  "whitespace": {
+    "command": [
+      "timeout",
+      "30s",
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

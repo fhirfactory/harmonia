@@ -87,6 +87,38 @@ agent prepares `change-review.md` from that evidence and the
 The tools supply no Solution Architect decision or final acceptance.
 Review and apply use explicit locators; there is no newest-export discovery rule.
 
+## Software-target Task/Report evidence
+
+The [Software Development Praxis](../governance/software-development-praxis.md)
+uses the same HCRL review/register/evidence structure with `software-X.Y.Z` target
+keys. Numeric `X.Y.Z` targets continue to identify Architecture transitions. Use
+an explicitly authorised target and iteration; the following numeric placeholders
+are replaced by that assignment's values and do not establish a first software
+baseline or allocate a release.
+
+```bash
+python3 enterprise-architecture/tooling/architecture_review_evidence.py --version software-X.Y.Z --iteration 001 --record-role ai-agent-tasks --name software-assignment --content /path/to/issued-assignment.md --event ATTRIBUTABLE_INSTRUCTION_ENTRY_ISO8601 --event-source 'attributable system instruction-entry event'
+python3 enterprise-architecture/tooling/architecture_review_evidence.py --version software-X.Y.Z --iteration 001 --record-role ai-agent-reports --name implementation-result --content /path/to/completed-report.md
+python3 enterprise-architecture/tooling/architecture_review_evidence.py --version software-X.Y.Z --iteration 001
+```
+
+The Task references Backlog Item ID, Backlog Item Revision and exact source with
+execution authority/instructions, rather than copying the specification. Reports
+and HCRLs identify originating items and criteria/conformance evidence, including
+actual solution-wide regression/integration scope and results. The emitter retains
+these supplied contents; checking does not adjudicate their semantic adequacy.
+Omit a Task `--event` only when unavailable: it remains UNRESOLVED, never a clock
+substitution. Report emission captures its actual production event. Existing
+event-prefix, before/after, exclusive-write and exit-code semantics are preserved.
+
+Software and Architecture targets sharing numeric version values remain separate.
+Only strict release numbers are accepted: candidate `rc.N`/build labels are not
+HCRL target keys. ArchiMate `--prepare` rejects software targets before reading
+inputs or producing scaffolding. `HCRL Updated` and `HCRL Finalised` remain governed
+agent procedures dispatched by target kind, not shell commands or acceptance
+decisions. Do not run `architecture_release.py bump`, `continuum`, `continuum-rad`
+or other Architecture publication targets to close software-only work.
+
 For an optional catalogue PDF, compile the generated `continuum-catalogue.tex` twice with
 XeLaTeX, a fixed `SOURCE_DATE_EPOCH` and temporary output directory. Inspect it
 before retaining it as a derived publication. Existing historical PDFs are unchanged.

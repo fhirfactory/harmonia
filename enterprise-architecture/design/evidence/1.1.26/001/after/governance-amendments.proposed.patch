@@ -1,0 +1,835 @@
+diff --git a/enterprise-architecture/governance/architecture-governance.md b/enterprise-architecture/governance/architecture-governance.md
+--- a/enterprise-architecture/governance/architecture-governance.md
++++ b/enterprise-architecture/governance/architecture-governance.md
+@@ -61,6 +61,22 @@
+ and root [release authority](../../architecture-release.json) continue to control
+ allocation. Specialised contracts retain their specialised purpose, subject to
+ these common review and provenance rules.
++
++## Software-development specialisation
++
++The [Software Development Praxis](software-development-praxis.md) specialises this
++common lifecycle for bounded implementation assignments, delegated engineering,
++software acceptance and release. It establishes no competing review authority or
++semantic decision log. Solution Architect confirmation remains mandatory.
++Architecture targets use numeric release keys; software targets use
++`software-X.Y.Z`. In current operational path conventions below, `<target-key>`
++means that explicitly identified target. Historical adoption accounts retain their
++original Architecture-only scope. HCRL lifecycle commands dispatch by target kind;
++software-only closure does not allocate or publish an Architecture release.
++`docs/backlog/` holds the single human/agent Backlog specification source under that
++Praxis. Items are work-management artefacts, not Continuum/Motivation elements or
++implementation authority. Every software PR/HCRL candidate and accepted software
++baseline represents the integrated Harmonia solution, regardless of changed modules.
+ 
+ ## Architectural decision authority
+ 
+@@ -196,8 +212,9 @@
+ ## HCRL as the common Decision Review Log
+ 
+ HCRL SHALL be the single authoritative semantic change/review record for each
+-governed RAD release transition. A completed HCRL records the authorised semantic
+-transition from the immediate governed predecessor to the resulting release.
++governed Architecture or software release transition. A completed HCRL records
++the authorised semantic transition from its identified predecessor to its resulting
++release, with software conformance tied to explicit accepted architectural authority.
+ It governs that transition, not every intermediate edit or processing event.
+ A transition without material architectural effect still receives appropriate
+ review, including the bounded Minutiae mechanism where applicable.
+@@ -270,9 +287,9 @@
+ │   └── continuum-rad/         <narrative LaTeX publication>
+ ├── design/
+ │   ├── archimate/
+-│   ├── review/<version>/
+-│   ├── register/<version>/
+-│   └── evidence/<RAD-version>/<HCRL-iteration>/
++│   ├── review/<target-key>/
++│   ├── register/<target-key>/
++│   └── evidence/<target-key>/<HCRL-iteration>/
+ │       ├── before/
+ │       │   └── ai-agent-tasks/<timestamp>-<task>.md
+ │       └── after/
+@@ -281,7 +298,7 @@
+ └── tooling/
+ ```
+ 
+-The version is the resulting architecture release. `continuum/` contains the
++The target key identifies the resulting Architecture or software release. `continuum/` contains the
+ governed Enterprise/Solution Architecture; Markdown is its representation format,
+ not its architectural taxonomy. The two publication locations hold derived
+ documentation outside canonical Continuum state. RAD-1.1.8's
+@@ -293,15 +310,15 @@
+ restructuring does not authorise redesigning it.
+ 
+ Material not fully approved, including partially approved artefacts requiring
+-another iteration, belongs in `design/review/<version>/`. Approved architectural
+-artefacts/design records belong in `design/register/<version>/`. Partially
++another iteration, belongs in `design/review/<target-key>/`. Confirmed accepted
++artefacts/design records belong in `design/register/<target-key>/`. Partially
+ approved artefacts do not enter the register. Required evidence belongs in the
+ iteration-scoped before/after locations under the provenance contract.
+ 
+ `before/ai-agent-tasks/` and `after/ai-agent-reports/` beneath the corresponding
+ HCRL iteration retain formal substantive AI-agent Tasks and Reports. They
+ represent activity-input and activity-output roles, not assertions of presence
+-in predecessor/successor Git states or acceptance. The resulting RAD version and
++in predecessor/successor Git states or acceptance. The explicit target key and
+ HCRL iteration identify the boundary (for example `1.1.4/004`), independently of
+ agent/session or processing-run identity. Earlier evidence stays with its
+ originating iteration and is referenced where relevant by subsequent iterations.
+@@ -311,8 +328,8 @@
+ iteration-scoped rule takes prospective effect in 1.1.4-004 after 003's bounded
+ demonstration/refactoring. No earlier record is rewritten to assert compliance.
+ 
+-Use `hcrl-<target-version>-<iteration>.pending.md` and
+-`hcrl-<target-version>-<iteration>.complete.md`. The completed HCRL belongs in the
++Use `hcrl-<target-key>-<iteration>.pending.md` and
++`hcrl-<target-key>-<iteration>.complete.md`. The completed HCRL belongs in the
+ register. Iterations are not releases or processing-run identities.
+ 
+ Adoption of this structure does not itself authorise repository migration.
+@@ -428,8 +445,10 @@
+ architectural need requires it. No old evidence, frozen claim or unknown
+ correspondence is rewritten to imply retrospective compliance.
+ 
+-Every accepted repository change set continues to receive the patch increment
+-under the existing release policy. Pending iterations do not consume releases;
+-generation does not allocate one. Major/minor changes require an explicit
+-governance decision. Recheck the immediate accepted predecessor before acceptance;
++Accepted architectural and normative governance changes receive the Architecture
++patch increment under the [release policy](architecture-release-policy.md).
++Software-only changes receive their independent software identity under the
++Software Development Praxis and do not increment architectural authority. Pending
++iterations consume no releases; generation allocates none. Architecture major/minor
++changes require an explicit governance decision. Recheck the immediate accepted predecessor before acceptance;
+ do not treat renaming an HCRL after baseline drift as renewed approval.
+diff --git a/enterprise-architecture/governance/architecture-review-praxis.md b/enterprise-architecture/governance/architecture-review-praxis.md
+--- a/enterprise-architecture/governance/architecture-review-praxis.md
++++ b/enterprise-architecture/governance/architecture-review-praxis.md
+@@ -47,6 +47,17 @@
+ bypass the Praxis. Review may establish that a change has no material
+ architectural effect; such a transition still receives appropriate HCRL review.
+ 
++For software-target transitions, the [Software Development Praxis](software-development-praxis.md)
++specialises assignment, autonomous engineering, candidate submission, acceptance
++and closure without reducing this review. A target key is the resulting numeric
++Architecture version or `software-X.Y.Z`; historical decisions retain their scope.
++Software assignments reference their Backlog Items; software PR/HCRL candidates
++are always solution-wide. Before submission, perform component/unit, solution-wide
++regression/integration and relevant conformance validation under the software
++Praxis; incomplete required verification needs explicit Solution Architect treatment.
++Reports and HCRLs identify originating items and reference acceptance-criteria
++results rather than copying the work specification.
++
+ ## Activity, evidence and semantic record
+ 
+ The Praxis SHALL distinguish the following, using the normative definitions in
+@@ -65,7 +76,7 @@
+   governance artefacts required to document an already-authorised substantive
+   activity within an existing provenance boundary. Provenance maintenance SHALL NOT
+   recursively instantiate a new Task, Report or HCRL iteration.
+-- **HCRL:** the authoritative semantic change/decision record for the governed RAD
++- **HCRL:** the authoritative semantic change/decision record for the governed Architecture or software
+   transition. It is not the Architecture Review working document or a substitute
+   for detailed supporting evidence.
+ 
+@@ -107,7 +118,7 @@
+ ├── transient working material
+ │   └── not retained merely because it existed
+ ├── durable evidence
+-│   └── enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/
++│   └── enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/
+ │       ├── before/
+ │       │   └── ai-agent-tasks/<timestamp>-<task>.md
+ │       └── after/
+@@ -116,8 +127,8 @@
+     └── governed semantic change/decision record
+ ```
+ 
+-The HCRL iteration SHALL be the provenance boundary. The version is the resulting
+-RAD release; the iteration corresponds to its HCRL, such as `1.1.4/004`.
++The HCRL iteration SHALL be the provenance boundary. The target key and iteration
++correspond to the explicit HCRL, such as `1.1.4/004` or `software-X.Y.Z/001`.
+ `before/` contains activity inputs/input provenance; `after/` contains outputs/output
+ provenance. These roles do not assert presence in predecessor/successor Git states
+ or acceptance of results. Keep earlier evidence with its originating iteration;
+@@ -172,7 +183,7 @@
+ 
+ ## 2. Prepare the candidate HCRL
+ 
+-Use `design/review/<resulting-version>/hcrl-<version>-<iteration>.pending.md`
++Use `design/review/<target-key>/hcrl-<target-key>-<iteration>.pending.md`
+ and the [common HCRL template][template]. Keep one opening Decision Review table,
+ consecutive top-level DRs and at most one subordinate level. Describe material
+ proposals, relevant authority, uncertainties, evidence, consequences and
+@@ -210,10 +221,12 @@
+ follow-up instructions at the associated iteration's task location, preserving
+ their correspondence, issuance event times and required timestamped filenames.
+ 
+-Prepare the one accepted-change patch increment under the existing release policy
+-and expected-current check; identify the release used for resulting-state
+-verification. An increment alone does not establish acceptance or publication.
+-Do not allocate another increment for a further iteration within that change set.
++For accepted architectural/governance changes, prepare the one Architecture patch
++increment under the release policy and expected-current check. For software-only
++changes, use the independent software identity and closure rules in the Software
++Development Praxis; do not bump architectural authority. Identify the release and
++source used for verification. An increment alone establishes no acceptance or
++publication. Further iterations of the same change set consume no extra release.
+ 
+ Implementation discoveries that materially affect architectural meaning SHALL
+ return to the applicable HCRL DR for review/adjudication before dependent work.
+@@ -298,7 +311,7 @@
+ 
+ Present the authorised meaning and actual incorporated result for Solution
+ Architect confirmation. Complete the HCRL at
+-`design/register/<resulting-version>/hcrl-<version>-<iteration>.complete.md`
++`design/register/<target-key>/hcrl-<target-key>-<iteration>.complete.md`
+ only after that confirmation. Agents report facts and cannot self-confirm
+ architectural closure. Preserve explicit deferrals/exclusions, attributable
+ decisions, required retrievable Task/Report evidence and relevant correspondence.
+diff --git a/enterprise-architecture/governance/architecture-change-provenance.md b/enterprise-architecture/governance/architecture-change-provenance.md
+--- a/enterprise-architecture/governance/architecture-change-provenance.md
++++ b/enterprise-architecture/governance/architecture-change-provenance.md
+@@ -72,7 +72,7 @@
+ and tooling outputs, not through recursive provenance records.
+ 
+ The completed HCRL is the single authoritative semantic change/review record for
+-the immediate governed predecessor → resulting governed RAD release. It records
++the identified governed predecessor → resulting Architecture or software release. It records
+ the authorised meaning, actual incorporated result, attributable decisions and
+ material revisions, scope, conditions, dependencies, exclusions, deferrals,
+ relevant correspondence and validation conclusions/limits within the applicable
+@@ -122,7 +122,7 @@
+ through HCRL for Solution Architect adjudication under AX-17.
+ 
+ **HCRL** is the authoritative semantic change/decision record for the governed
+-RAD transition. Pending iterations preserve its review/adjudication lifecycle;
++Architecture or software transition. Pending iterations preserve its review/adjudication lifecycle;
+ the completed HCRL records the accepted transition. HCRL SHALL NOT serve as the
+ Architecture Review working document, an inventory of every evidence file or a
+ substitute for detailed supporting evidence. Include material meaning, decisions,
+@@ -146,10 +146,13 @@
+ Task/Report records optional or require retention of every agent interaction.
+ 
+ Required before/after evidence belongs at
+-`enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/before/`
+-and `after/`. The HCRL iteration is the provenance boundary. Use the resulting
+-governed RAD version and corresponding HCRL iteration (for example `1.1.4/004`),
+-independently of agent, session, software version or processing-run identity.
++`enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/before/`
++and `after/`. The HCRL iteration is the provenance boundary. The target key is
++the resulting Architecture version or `software-X.Y.Z` for a software transition
++under the [Software Development Praxis](software-development-praxis.md). Use its
++corresponding HCRL iteration, independently of agent, session or processing-run
++identity. Software-target evidence does not assert an Architecture release change;
++historical numeric keys retain their original meaning and placement.
+ Retain evidence with its originating activity; later iterations reference it
+ without moving it or duplicating it merely to populate a new package. Preserve
+ source/result correspondence for any purpose-required later representation.
+@@ -172,7 +175,7 @@
+ locations, under the same model for all activity purposes:
+ 
+ ```text
+-enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/
++enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/
+ ├── before/
+ │   └── ai-agent-tasks/
+ └── after/
+@@ -189,6 +192,14 @@
+ Git state. Follow-up tasks remain task inputs. Interim, unsuccessful or uncertain
+ results retain their actual standing; location supplies neither success nor
+ architectural acceptance.
++
++For software assignments, the Task SHALL reference originating Backlog Item(s) at
++`docs/backlog/` and their exact revision/source, rather than duplicate their complete
++specifications. Retain the authorised execution-specific instructions and actual
++issued wording under the following rule. Implementation Reports and software HCRLs
++SHALL identify those items and reference acceptance-criteria/conformance evidence
++and solution-wide regression/integration results. This extends correspondence,
++not the number of required records or the existing provenance boundary.
+ 
+ The Task SHALL preserve the operative issued instruction and sufficient
+ attributable context to establish what work was authorised or requested,
+diff --git a/enterprise-architecture/governance/architecture-release-policy.md b/enterprise-architecture/governance/architecture-release-policy.md
+--- a/enterprise-architecture/governance/architecture-release-policy.md
++++ b/enterprise-architecture/governance/architecture-release-policy.md
+@@ -28,20 +28,30 @@
+ This document establishes the mechanism in that same bundle. Preparation and
+ validation do not themselves claim that a commit or Archi visual review occurred.
+ 
+-Every accepted repository change SHALL increment the RAD / Architecture patch
+-release, regardless of author or tool. One accepted change set receives one
+-increment, including its governance documents, tests and generated artefacts.
+-Work-in-progress edits and repeated generation within that set do not each
+-receive another increment. The increment and all associated changes SHALL be
+-committed together. Concurrent change sets SHALL recheck the accepted current
+-release before acceptance and rebase their increment if necessary.
++Every accepted change to architectural authority or normative governance SHALL
++receive one RAD / Architecture patch increment, regardless of author or tool.
++Ordinary conforming software implementation, tests and documentation SHALL NOT
++increment the Architecture release merely because repository source changed.
++Software acceptance and its independent release identity follow the
++[Software Development Praxis](software-development-praxis.md). Architecture Review
++continues to apply to every change; review establishes architectural effect.
++Software releases identify the integrated Harmonia solution. Component Maven or
++build versions do not establish independently accepted software baselines.
++
++One accepted architecture/governance change set receives one Architecture increment,
++including its supporting tests and generated artefacts. A mixed change identifies
++both governed transitions and their dependency, allocating each identity once.
++Work-in-progress, corrective iterations and repeated generation allocate nothing.
++The Architecture increment and associated accepted changes SHALL be committed
++together under applicable Git authority. Recheck the accepted predecessor before
++acceptance; baseline drift requires reassessment, not merely an HCRL rename.
+ 
+ Provenance maintenance within an existing authorized boundary (including mechanical
+ creation, completion, timestamp synchronization, formatting, or consistency checks
+ of Task, Report, HCRL, or associated governance documentation) SHALL NOT allocate
+ an Architecture Release increment. Pending review iterations consume no release
+ allocation. Release increments are reserved for accepted repository change sets
+-containing substantive architectural or solution transitions. Governance
++containing substantive architectural or normative governance transitions. Governance
+ documentation maintenance performed to record or regularise an already-allocated
+ change set belongs to that same change set and consumes no additional release.
+ 
+diff --git a/AGENTS.md b/AGENTS.md
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -194,13 +194,16 @@
+ 
+ ### 1.3 RAD / Architecture Release Governance
+ 
+-Every accepted repository change MUST apply the patch increment defined in
+-[the governed release policy](enterprise-architecture/governance/architecture-release-policy.md).
+-The root `architecture-release.json` is the single current-release authority.
+-Publication/report tooling reads it; generation does not increment it. Minor or
+-major increments require an explicit governance decision. Maven software versions
+-and branch names remain independent. Include the increment in the same accepted
+-change set, regardless of author or tool.
++Accepted architectural or normative governance changes MUST apply the Architecture
++patch increment under [the release policy](enterprise-architecture/governance/architecture-release-policy.md).
++The root `architecture-release.json` is the single current Architecture-release
++authority. Publication/report tooling reads it; generation does not increment it.
++Architecture major/minor changes require an explicit governance decision.
++Software-only changes use the independent release identity under the
++[Software Development Praxis](enterprise-architecture/governance/software-development-praxis.md)
++and MUST NOT automatically increment the Architecture release. Every change still
++receives Architecture Review. Include each applicable increment in its accepted
++change set; branch names and Maven versions do not allocate architectural authority.
+ 
+ ### 1.4 Architecture-change provenance
+ 
+@@ -251,7 +254,7 @@
+ 
+ For substantive AI-agent activity associated with an HCRL iteration,
+ retain formal Task Details at
+-`enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/before/ai-agent-tasks/`
++`enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/before/ai-agent-tasks/`
+ and corresponding Reports at that iteration's `after/ai-agent-reports/`,
+ irrespective of architectural materiality, under the provenance contract.
+ Investigation, analysis, review, candidate/pending-HCRL preparation or revision,
+@@ -396,6 +399,21 @@
+ block iteration advancement; terminal treatment follows the closure rules below.
+ On interruption or retry, establish the state already reached before continuing;
+ do not repeat an iteration advance, release allocation or uncertain publication.
++
++### Software-target HCRL dispatch
++
++Establish the exact target kind before either lifecycle operation. Software-target
++HCRLs use `software-X.Y.Z` for the target key in the same review/register/evidence
++structure. Apply the common inputs, fail-closed controls, attributable dispositions,
++provenance and iteration-preservation requirements above, then the
++[Software Development Praxis](enterprise-architecture/governance/software-development-praxis.md)
++for target-specific candidate, release and closure actions. The Architecture
++projection/publication/allocation steps below apply only to Architecture targets.
++For software, **HCRL Updated** processes/advances exactly one reviewed iteration;
++**HCRL Finalised** processes exact accepted implementation closure without an
++Architecture bump or Continuum publication. Neither command supplies missing
++acceptance, exceptions or commit/merge/tag/push/deployment authority. Linked
++Architecture and software transitions retain separate identities and decisions.
+ 
+ ### HCRL Updated — process and advance one pending iteration
+ 
+@@ -1003,6 +1021,35 @@
+ historical milestone intent merely to make later implementation appear to have
+ followed the plan.
+ 
++## Software Development Assignments
++
++Load and follow the [Software Development Praxis](enterprise-architecture/governance/software-development-praxis.md)
++for implementation assignments and implementation review. `docs/backlog/` is the
++single location for human- and agent-authored Backlog Items; use the governed
++minimum structure/template, not the historical sample. Items specify work and
++may propose architecture changes subject to established governance, ADD and HCRL;
++they supply neither implementation nor architectural authority. Formal software
++Tasks reference their applicable items/revisions and add execution instructions,
++rather than duplicate complete specifications. Implementation Reports and HCRLs
++identify those items and acceptance-criteria/conformance evidence.
++
++Every software PR/HCRL acceptance candidate represents the integrated solution,
++even if only some modules changed. Before submission, perform applicable
++component/unit tests, solution-wide regression and integration tests, and relevant
++architectural/implementation-conformance checks. Record actual commands, scope,
++environment, outcomes and failures. Missing/failed/unexecuted verification requires
++explicit reporting; incomplete required tests need Solution Architect disposition,
++not an assumed pass. Component versions do not establish accepted Harmonia baselines.
++
++A bounded authorised
++assignment delegates ordinary engineering, testing, documentation, in-scope review
++corrections and evidence production. Do not seek repeated approval for those
++choices. Escalate genuine architectural decisions, material scope changes and
++unresolved authority conflicts. Agents may submit exact candidates and HCRLs,
++but cannot accept their own implementation. Retain the common Task/Report model
++at the explicitly established Architecture or software target/iteration; no
++additional per-command, per-test or provenance-maintenance task loop is required.
++
+ ## Harmonia Implementation Standards
+ 
+ The normative implementation standard for Harmonia is:
+diff --git a/docs/AGENTS.md b/docs/AGENTS.md
+--- a/docs/AGENTS.md
++++ b/docs/AGENTS.md
+@@ -39,7 +39,7 @@
+ as implementation or similar does not itself reduce or bypass the Praxis.
+ For substantive AI-agent activity associated with an HCRL iteration, formal Tasks
+ and corresponding Reports MUST be retained at
+-`enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/before/ai-agent-tasks/`
++`enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/before/ai-agent-tasks/`
+ and that iteration's `after/ai-agent-reports/`, under the common provenance
+ contract, irrespective of architectural materiality. Investigation, analysis,
+ review, candidate/pending-HCRL preparation or revision, corrective work, application
+@@ -62,6 +62,15 @@
+ prospectively, superseding the narrower rule. No retrospective compliance,
+ historical rewrite, migration or unrelated disposal authority is supplied.
+ 
++For software transitions, `<target-key>` is `software-X.Y.Z` under the common
++[Software Development Praxis](../enterprise-architecture/governance/software-development-praxis.md);
++Architecture targets retain their numeric release key. `docs/backlog/` is the
++single human/agent Backlog Item location; the common Praxis and backlog template
++supply its minimum structure and correspondence rules. Existing sample content is
++historical, not the template. Use references between items, Tasks, Reports and
++HCRLs rather than duplicate complete specifications. Historical evidence is not
++migrated or reclassified by this extension.
++
+ Every change receives review; material implementation discoveries require
+ adjudication. The accepted target structure does not authorise repository
+ migration. Existing documentation remains at its current paths until bounded
+diff --git a/enterprise-architecture/governance/templates/hcrl-template.pending.md b/enterprise-architecture/governance/templates/hcrl-template.pending.md
+--- a/enterprise-architecture/governance/templates/hcrl-template.pending.md
++++ b/enterprise-architecture/governance/templates/hcrl-template.pending.md
+@@ -21,6 +21,15 @@
+ and attributable dispositions/comments consistent. Do not create parallel
+ knowledge, action, uncertainty or minutiae decision taxonomies.
+ 
++**Target.** `<Architecture: numeric resulting version | Software: software-X.Y.Z>`.
++For software identify the originating Backlog Item(s)/revision, accepted software
++predecessor/source, exact integrated solution candidate, accepted Architecture
++baseline/source, acceptance-criteria and implementation-conformance evidence,
++component/unit and solution-wide regression/integration commands/scope/environment/
++results, verification exceptions and their actual dispositions, requested release
++scope and Git/release authority. Link the item specifications rather than copy them. Use the same DR table and bounded Minutiae;
++this template supplies no acceptance or software-release allocation.
++
+ **Review basis.** `<actor/date; target and iteration; originating immediate
+ governed release/state and source locator; proposed/actual result distinguished;
+ exact supplied decision/input provenance; conditions, exclusions and evidence
+@@ -41,7 +50,7 @@
+ and limits, remaining explicit deferrals/exclusions, and the Solution Architect's
+ confirmation status. For substantive AI-agent activity associated with this HCRL
+ iteration, retain formal Tasks at
+-`enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/before/ai-agent-tasks/`
++`enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/before/ai-agent-tasks/`
+ and corresponding Reports at this iteration's `after/ai-agent-reports/`,
+ irrespective of architectural materiality. Investigation, analysis, review,
+ candidate/pending-HCRL preparation or revision, corrective work, application and
+diff --git a/enterprise-architecture/governance/software-development-praxis.md b/enterprise-architecture/governance/software-development-praxis.md
+new file mode 100644
+--- /dev/null
++++ b/enterprise-architecture/governance/software-development-praxis.md
+@@ -0,0 +1,288 @@
++<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
++
++# Harmonia Software Development Praxis
++
++## 1. Authority and purpose
++
++This Praxis specialises the common [Architecture Governance](architecture-governance.md),
++[Review Praxis](architecture-review-praxis.md) and
++[Change Provenance](architecture-change-provenance.md)
++for software development. Every software change still receives proportionate
++Architecture Review. HCRL remains the single semantic review/decision record;
++Backlog Items specify work; pull requests, CI and release tags supply coordination
++and evidence. Their roles do not confer equivalent architectural authority.
++Mark Hunter, Solution Architect, retains final acceptance authority. An
++implementation agent cannot accept its own work or declare architectural closure.
++
++The [Architectural Axioms](architectural-axioms.md), accepted
++contracts, repository guardrails and [Implementation Guide](../../docs/implementation/Harmonia-Implementation-Guide-Philosophy.md)
++remain binding. Applicable implementation-sequencing constraints remain in force.
++This Praxis creates no runtime component, architectural element or parallel board.
++
++## 2. Baselines and release identities
++
++An **Architecture release** identifies accepted architectural/governance authority,
++under `architecture-release.json` and the amended common release policy. A
++**software release** identifies an accepted implementation baseline, its exact
++source state, tested scope and architectural conformance, including qualifications.
++Neither identity implies complete implementation of the other.
++
++Use a solution-wide, repository-wide software `X.Y.Z` identity, independent of
++Architecture versions. Components may retain their Maven artefact versions or
++build identities; these do not establish independently accepted Harmonia software
++baselines. Patch denotes compatible corrections; minor denotes compatible added
++functionality; major denotes incompatible supported contracts. The assignment
++proposes the target; Solution Architect acceptance confirms it. These software
++rules do not change the separate authority required for Architecture major/minor
++increments. Optional `rc.N` labels identify candidates, never accepted baselines.
++HCRL iteration numbers identify review iterations, not software versions or builds.
++
++Ordinary implementation that conforms to unchanged architectural authority
++increments only the software release on acceptance. Accepted architectural or
++normative governance changes receive the existing Architecture patch allocation.
++A change set affecting both identifies both transitions and their dependency;
++each identity is allocated once, with no increment for corrective iterations,
++rejected candidates, provenance maintenance or HCRL completion. Adoption of this
++governance proposal is an Architecture change, not a software release.
++
++The completed software HCRL is the semantic acceptance authority. An immutable
++`software/vX.Y.Z` Git tag locates the accepted implementation commit; the HCRL
++records that tag, commit, Architecture release/source locator, artefacts where
++applicable and qualifications. No second software JSON release register is needed.
++Record Maven/package versions explicitly. Publishable binaries require immutable,
++unambiguous versions; prepare any release-version edits before final candidate
++testing and review. A mutable `SNAPSHOT` label alone never identifies accepted bytes.
++
++Establish the actual accepted software predecessor from its completed HCRL and
++source locator. Branch names, passing tests, Maven versions and existing commits
++do not establish acceptance. If none exists, the Solution Architect must explicitly
++establish the first baseline or accept a first release with no asserted predecessor.
++There is no retrospective acceptance of current source through adoption of this Praxis.
++
++## 3. Backlog Items, assignments and traceability
++
++`docs/backlog/` SHALL be the single authoritative location for Harmonia Backlog
++Items authored by humans or agents. Backlog Items are work-management artefacts;
++they are not Continuum elements and neither replace nor duplicate Motivation
++elements. They may reference Requirements, Constraints, Goals, Outcomes, Journeys,
++Use Cases, Capabilities, Features or other elements; propose changes or new elements;
++define bounded realisation of accepted requirements; or capture justified engineering
++corrections, refactoring, remediation and testing. Resulting architectural change
++remains subject to established governance, ADD and HCRL controls. A Backlog Item
++itself neither authorises implementation nor authorises or enacts architecture.
++
++Every Backlog Item SHALL contain, at minimum:
++
++- **Overview**, with **High-Level Synopsis of Effort**, **High-Level Synopsis of
++  Activities**, **High-Level Synopsis of Outcome** and **High-Level Synopsis of
++  Acceptance Criteria** as subsections.
++- **Context**, including scope, constraints, exclusions and relevant starting facts.
++- **Associated Requirements**, identifying applicable architectural references and
++  their actual standing; justify engineering work with no applicable requirement
++  rather than inventing one. Identify proposed or missing architecture explicitly.
++- **Expected / Associated Activity**.
++- **Expected Outcomes**.
++- **Acceptance Criteria**, with observable results and how they will be verified.
++
++Each item's title SHALL identify the item, with explicit **Backlog Item ID** and
++**Backlog Item Revision** header metadata. Retain established identifiers; no new
++allocation scheme or revision format is introduced. Task Details, Implementation
++Reports and HCRLs reference both values and the corresponding source/revision
++locator. The item revision identifies its work specification, independently of
++Architecture/software releases and HCRL iteration numbers.
++
++The Overview summarises the detailed sections; it is not a second specification.
++Use the [repository Backlog Item template](../../docs/backlog/backlog-item-template.md), stable
++item identifiers and exact source/version references. The existing Task 9 sample is
++historical work material, not the desired structure/content for future items.
++No historical item is rewritten or retrospectively declared compliant by this Praxis.
++
++The Backlog Item specifies the objective, intended outcome, requirements, scope,
++constraints and acceptance criteria. The formal AI-agent Task Detail SHALL reference
++the applicable item(s) and reviewed revision/source instead of duplicating their
++complete specifications. It records the specific authorised assignment, agent,
++baseline/authority, execution instructions, exclusions and additional evidence or
++verification directions. Preserve actual issued wording under the common provenance
++contract; do not discard instructions to create an artificially shorter record.
++Specification, delegated execution and implementation acceptance remain distinct.
++
++Maintain **Architecture Continuum ↔ Backlog Item → AI-Agent Task → Implementation/Report
++→ HCRL → Accepted Software Release** correspondence. Use appropriate many-to-many
++links, not mandatory one-to-one mappings. The Continuum/Backlog correspondence
++represents information and proposals; it does not confer equal authority. Existing
++element references, item IDs, source locators, Task/Report links and HCRL/release
++references suffice. Record reverse correspondence in the Backlog/HCRL where useful;
++traceability alone does not require adding backlinks to each Continuum element.
++Changing a Backlog Item must not silently change the criteria of an already reviewed
++assignment or candidate; preserve the referenced revision and material changes.
++
++## 4. Milestones and acceptance boundaries
++
++| Milestone | Required result and boundary |
++| --- | --- |
++| Accepted baseline | Establish accepted software predecessor and relevant accepted Architecture release, exact sources, qualifications and existing work. |
++| Bounded assignment | Reference the originating Backlog Item(s) and their revision; retain issued execution authority, baseline, exclusions, additional verification and permitted repository/release actions. This authorises engineering work, not acceptance. An item's existence supplies no implementation authority. |
++| Implementation and testing | Agent performs ordinary design, code, tests, documentation and evidence work autonomously within the assignment. Internal failures/corrections are normal development. |
++| Candidate submitted | Preserve an exact integrated Harmonia solution candidate, originating Backlog Item references, Report, required solution-wide verification/conformance evidence and pending HCRL requesting implementation acceptance. Any software PR/HCRL submission is always solution-wide. A PR is optional transport where repository interaction is authorised, not another acceptance gate. |
++| Review and correction | Solution Architect records acceptance, qualifications, changes requested or rejection against the exact candidate. Corrections within delegated scope proceed under the assignment and attributable review directions; resubmit changed candidate and affected verification. |
++| Accepted release closure | After exact-result confirmation, complete the software HCRL, perform authorised Git/release operations, verify correspondence and establish the next software baseline. Report partial closure if any mandatory step remains incomplete. |
++
++An assignment should identify the software predecessor/target and Architecture
++baseline, reference its Backlog Item(s), and state execution-specific constraints,
++required checks/evidence and commit/branch/merge/tag/push/publication/deployment
++authority where relevant. Work outcomes, scope and criteria remain in the referenced
++items; do not duplicate their complete specifications. Repository defaults need
++not be restated.
++Clarify missing authority only when the affected action requires it. Preparation
++may continue without permission to merge, publish or deploy.
++
++## 5. Autonomous implementation and escalation
++
++Within the authorised scope, the agent SHALL make ordinary implementation choices,
++decompose cohesive classes, organise packages consistently with accepted ownership,
++write and correct tests, handle realistic failures, update documentation, diagnose
++build problems and produce evidence without repeated engineering approval.
++The Implementation Guide's defensive programming, 95/5 philosophy, object design,
++educational documentation and exception rules remain applicable. Its 500-line Java
++exception requires the specified Solution Architect disposition; this Praxis
++does not convert explicit existing exceptions into routine delegated choices.
++
++An engineering choice implements established contracts within delegated scope.
++Changing authority, responsibility, public semantics, invariants, security,
++durability, deployment boundaries or an accepted design decision may require
++architectural adjudication. An apparent architecture/code conflict, material scope
++change or missing architectural authority SHALL be raised in the applicable HCRL
++DR under AX-17 before dependent implementation. Record proposed resolution and
++evidence; do not derive authority from existing code. Continue independent
++authorised work where it cannot prejudge the decision.
++
++Required architecture changes use an Architecture-target HCRL under the common
++Praxis, cross-linked from the software HCRL. Each records its own transition once;
++do not copy decisions or treat software acceptance as architecture adoption.
++The software candidate identifies the resulting accepted architecture before its
++dependent release closure. Narrow pre-existing exceptions require exact attribution;
++an Architecture-release qualification is not automatically a software-test waiver.
++
++## 6. Solution-wide candidate submission and evidence
++
++Every software PR/HCRL acceptance candidate SHALL represent the integrated Harmonia
++solution, even when its Backlog Items and assignment change only one or several
++modules. This requires solution-wide verification, not changes to every module.
++Before submitting a candidate for acceptance review the implementation agent SHALL
++perform applicable component/unit testing, solution-wide regression testing,
++solution-wide integration testing, and relevant architectural and
++implementation-conformance validation against the exact candidate.
++
++Record actual commands, scope, source state, environment, outcomes and material
++failures, including unavailable environments, unexecuted tests and unresolved
++dependencies. A module passing its tests is insufficient solution-wide readiness;
++neither an architecture suite nor a Maven phase name alone proves regression or
++integration coverage. Identify the actual solution scope exercised. Where required
++testing cannot complete, disclose the exception and request an explicit Solution
++Architect disposition in the candidate HCRL before treating the prerequisite as
++satisfied. Submission of an exception for adjudication is not a readiness claim;
++pending disposition and failed/unexecuted/uncertain results remain visible.
++
++Use the common `design/` structure with a qualified software target key:
++
++```text
++enterprise-architecture/design/
++  review/software-X.Y.Z/hcrl-software-X.Y.Z-001.pending.md
++  register/software-X.Y.Z/hcrl-software-X.Y.Z-NNN.complete.md
++  evidence/software-X.Y.Z/001/
++    before/ai-agent-tasks/<issued-UTC>-<assignment>.md
++    after/ai-agent-reports/<produced-UTC>-<report>.md
++```
++
++This extends existing HCRL/evidence target naming, not governance semantics.
++Architecture paths retain their existing numeric keys. The HCRL iteration remains
++the provenance boundary. Retain the operative Task and substantive follow-ups,
++corresponding Reports and purpose-selected evidence using the common provenance
++contract, irrespective of architectural materiality. Do not issue a Task for
++every command, test, review comment or mechanical evidence update. Retain material
++correction instructions and resulting activity correspondence within that model.
++Later iterations reference earlier evidence at its original location.
++
++A submission SHALL establish, without copying the Backlog specifications:
++
++- Exact accepted predecessor and candidate source: commit/tree and bounded diff,
++  or a retained patch plus exact base and necessary new files while uncommitted.
++  Preserve reviewed candidate correspondence through later corrections; Git is
++  the source-history authority. A hash cannot replace missing source bytes.
++- Required tests actually executed: command, source state, relevant environment,
++  scenario/suite scope, outcomes and material failure diagnostics. Retain useful
++  summaries/results; retain detailed logs only where needed for review/recovery.
++  Apply bounded execution and distinguish PASS, FAIL, TIMEOUT, STALLED and UNRESOLVED;
++  identify unperformed checks and reasons separately. Passing unit tests do not
++  imply integration, operational or deployment verification.
++- Implementation conformance: a concise contract → implementation → evidence
++  mapping covering functional correctness, defensive/unhappy paths, educational
++  documentation and object/package quality, architectural invariants, known
++  limitations and accepted exceptions. Include security, concurrency, retry,
++  partial failure and recovery where relevant. Identify originating Backlog Item(s)
++  in both the Implementation Report and HCRL, and map applicable acceptance criteria
++  to implementation/results, architectural conformance and solution-wide
++  regression/integration evidence. Compilation/coverage alone is insufficient.
++- A pending HCRL with one opening DR table, independently adjudicable material
++  matters, actual candidate conclusions and a bounded Minutiae group. Record the
++  implementation-acceptance request and exact acceptance scope explicitly even
++  when Architecture Review finds no material architectural effect.
++
++Use the common timestamp/prefix requirements and unresolved-event treatment.
++One substantive activity may have adequate many-to-many Task/Report correspondence;
++PR descriptions, CI logs and HCRL shall link formal evidence rather than duplicate it.
++Keep evidence free of PHI and respect existing security/logging boundaries.
++
++## 7. Review outcomes and corrective iterations
++
++| Outcome | Treatment |
++| --- | --- |
++| Accepted | Attributable Solution Architect confirmation binds the exact source candidate, incorporated result, conformance evidence and release scope. Proceed only to authorised closure actions. |
++| Qualified acceptance | Record each limitation/failed or unperformed check, accepted risk, affected usage/release restrictions, remediation responsibility and trigger or due point. Distinguish a condition required before closure from an explicitly permitted post-release obligation. Unmet preconditions prevent closure; agents cannot waive mandatory gates. |
++| Changes requested | Retain the reviewed candidate and disposition; correct within the same development increment and proposed software release where authorised. Retest affected behaviour and required component, solution-wide regression/integration and conformance checks; identify superseded results and re-establish integrated readiness for resubmission. No fresh approval is needed for ordinary in-scope corrections. |
++| Rejected candidate | Preserve the rejection, reason and sufficient candidate/evidence correspondence. It establishes no accepted baseline, consumes no software or Architecture release and does not erase the previous baseline. Resume remediation only within continuing assignment/review authority; rejection alone does not authorise expanded scope. |
++| Abandoned increment | Record the attributable cancellation/disposition and actual remaining Git state in the pending HCRL. Mark review closed without acceptance; retain it in `review/`, not the completed register. Allocate no release. Preserve required evidence and isolate/revert only the authorised work. |
++| Rollback | Before acceptance, reversible local corrections within the assignment are engineering work. After acceptance, source reversion is a new bounded software transition with its own HCRL/release; preserve prior tags and completed HCRLs. An operational redeployment of a previously accepted artefact follows explicit existing rollback authority and records the actual deployed version, rather than inventing a new source release. |
++
++Uncertain rollback, migration or distributed effects remain UNRESOLVED under
++AX-15 until established by authoritative observation. Never assume that reverting
++Git undoes durable state or that a timeout proves failure. Deployment and database
++operations require their actual authority; source acceptance alone supplies none.
++
++Preserve attributable decisions and candidate changes in the same HCRL history.
++`HCRL Updated` processes and advances exactly one reviewed iteration under common
++controls, using software-qualified paths. It neither accepts nor allocates a release.
++Ordinary development/test retries do not each create a review iteration. A
++successor carries forward decisions, unresolved matters, obligations and links.
++An agent cannot overwrite reviewed inputs or convert a recorded disposition into
++an agent status. Reassessment is required when the baseline or candidate changes
++in a way that invalidates reviewed evidence or acceptance.
++
++## 8. Closure, Git verification and next baseline
++
++`HCRL Finalised` dispatches by the explicitly established target kind. For software,
++it initiates exact-result confirmation/closure under Review Praxis §6; it supplies
++no missing acceptance, test waiver, architecture adoption or Git/deployment authority.
++No Architecture bump or Continuum publication occurs for software-only closure.
++
++Recheck predecessor, candidate and concurrent baseline drift. Verify mandatory
++checks have succeeded or received an applicable explicit disposition. Identify
++accepted implementation source separately from the commit containing closure
++records; no record must contain its own final commit hash. Verify the authorised
++merge's implementation tree against the accepted candidate; code changes require
++affected revalidation and renewed exact-candidate confirmation. Mechanical HCRL
++completion/evidence updates remain provenance maintenance.
++
++Register only the confirmed accepted solution-wide result, preserving originating
++Backlog Item links, conditions and original history. Perform only authorised
++commit/merge/tag/push/artefact publication actions.
++An existing identical tag/artefact can be verified; differing immutable content
++must fail closed. Record the actual branch, implementation commit, release tag,
++closure-record source locator, clean/dirty state and remote/published correspondence
++when performed. If repository authority is absent or an operation fails, report
++accepted-but-closure-pending with the precise remaining obligation; do not claim a
++terminal baseline or overwrite acceptance history. Retry from verified reached state.
++
++The next assignment starts from the release whose required closure correspondence
++has been verified, carrying all continuing qualifications and remediation obligations.
++Acceptance, Git release, artefact publication and deployment remain distinct facts.
+diff --git a/docs/backlog/backlog-item-template.md b/docs/backlog/backlog-item-template.md
+new file mode 100644
+--- /dev/null
++++ b/docs/backlog/backlog-item-template.md
+@@ -0,0 +1,69 @@
++<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
++
++# Backlog Item: _identifier — title_
++
++**Backlog Item ID:** _same identifier as the title_
++
++**Backlog Item Revision:** _revision of this work specification_
++
++Template only. A completed item specifies work; implementation requires a specific
++authorised assignment and acceptance remains governed by HCRL.
++Retain an established item identifier; this template introduces no allocation scheme
++or prescribed revision format. Assignments and evidence reference both header values
++and a source locator that preserves the specific specification used.
++
++## Overview
++
++### High-Level Synopsis of Effort
++
++_Summarise the objective, purpose and bounded effort._
++
++### High-Level Synopsis of Activities
++
++_Summarise the expected work; details belong in Expected / Associated Activity._
++
++### High-Level Synopsis of Outcome
++
++_Summarise the intended observable result._
++
++### High-Level Synopsis of Acceptance Criteria
++
++_Summarise how completion will be judged; details belong in Acceptance Criteria._
++
++## Context
++
++_Explain the current situation, scope, constraints, exclusions and relevant
++architectural/software baseline or source references. Distinguish facts from
++proposals. Use a stable identifier and preserve the referenced item revision._
++
++_Link associated Task Details, Implementation Reports, HCRLs and accepted releases
++as those records become available. An empty future link is not an approval._
++
++## Associated Requirements
++
++_Reference applicable accepted Requirements, Constraints, Goals, Outcomes, Journeys,
++Use Cases, Capabilities, Features or other architectural elements using their
++existing identities/locators and actual standing. Identify proposed changes or
++new elements and their governance dependencies. For justified technical work with
++no applicable requirement, state the rationale; do not manufacture a Motivation
++element or impose a one-to-one mapping._
++
++## Expected / Associated Activity
++
++_Describe the expected work and dependencies sufficiently to bound the assignment.
++Retain engineering autonomy within accepted contracts. Architecture proposals follow
++established governance, ADD and HCRL; this item does not authorise their application._
++
++## Expected Outcomes
++
++_Describe the intended changes, deliverables and observable effects._
++
++## Acceptance Criteria
++
++| Criterion | Observable result | Verification / expected evidence |
++| --- | --- | --- |
++| AC-1 | _State a testable or reviewable outcome._ | _Identify how satisfaction will be demonstrated._ |
++
++_Add criteria appropriate to the work. Reference these criteria from evidence
++rather than copying this specification into Tasks, Reports or HCRLs. The common
++solution-wide release verification requirements apply in addition to item criteria._
+diff --git a/docs/backlog/README.md b/docs/backlog/README.md
+new file mode 100644
+--- /dev/null
++++ b/docs/backlog/README.md
+@@ -0,0 +1,18 @@
++<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
++
++# Harmonia Backlog Items
++
++`docs/backlog/` is the single authoritative location for human- and agent-authored
++Backlog Items. They specify work and proposed changes; their existence supplies
++neither implementation authority nor architectural acceptance.
++
++Use the [Backlog Item template](backlog-item-template.md) and follow the
++[Software Development Praxis](../../enterprise-architecture/governance/software-development-praxis.md) for content,
++traceability, authorised assignments and solution-wide acceptance. Each item title
++identifies the item; its header records **Backlog Item ID** and **Backlog Item
++Revision**. Reference those values and the exact source from assignments and evidence.
++Reuse links rather than copying complete specifications between artefacts.
++
++The existing `Harmonia - Task 9 - Backlog.md` is preserved historical work material;
++its structure and content do not define future Backlog Items. No separate human
++or AI backlog, duplicate catalogue or automated backlog service is required.

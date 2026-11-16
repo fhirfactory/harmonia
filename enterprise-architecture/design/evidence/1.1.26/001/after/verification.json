@@ -1,0 +1,136 @@
+{
+  "recordedAt": "2026-11-15T23:35:26.662554Z",
+  "sourceHead": "441ec989a3853db4ea4dad253e14b8464181f293",
+  "checks": [
+    {
+      "check": "required architecture suite",
+      "command": "timeout --signal=TERM --kill-after=5s 240s mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+      "exitCode": 0,
+      "outcome": "PASS",
+      "tests": {
+        "run": 90,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "elapsedSeconds": 18.632,
+      "limits": "Existing source baseline only; no software acceptance or future tooling verification."
+    },
+    {
+      "check": "canonical Continuum validation",
+      "command": "timeout --signal=TERM --kill-after=5s 90s python3 -B enterprise-architecture/tooling/architecture_continuum.py validate",
+      "exitCode": 0,
+      "outcome": "PASS",
+      "result": {
+        "status": "PASS",
+        "elements": 6563,
+        "relationships": 9427,
+        "qualifiedSourcePredicates": 462,
+        "canonicalIdentities": 6563,
+        "representationIdentities": 6563,
+        "provenanceCoverage": 6563,
+        "sourceBindings": 8459,
+        "supportedNativeTypes": 60,
+        "navigation": "PASS",
+        "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance"
+      }
+    },
+    {
+      "check": "root Architecture release check",
+      "command": "timeout 30s python3 -B enterprise-architecture/tooling/architecture_release.py check",
+      "exitCode": 0,
+      "outcome": "PASS",
+      "release": {
+        "version": "1.1.25",
+        "previous_version": "1.1.24"
+      }
+    },
+    {
+      "check": "prospective diff applicability",
+      "command": "git apply --check enterprise-architecture/design/evidence/1.1.26/001/after/governance-amendments.proposed.patch",
+      "exitCode": 0,
+      "outcome": "PASS",
+      "limits": "Check only; diff not applied. Does not verify operational software-target support."
+    },
+    {
+      "check": "proposed canonical inline local links",
+      "outcome": "PASS",
+      "files": [
+        "enterprise-architecture/governance/architecture-governance.md",
+        "enterprise-architecture/governance/architecture-review-praxis.md",
+        "enterprise-architecture/governance/architecture-change-provenance.md",
+        "enterprise-architecture/governance/architecture-release-policy.md",
+        "AGENTS.md",
+        "docs/AGENTS.md",
+        "enterprise-architecture/governance/templates/hcrl-template.pending.md",
+        "enterprise-architecture/governance/software-development-praxis.md"
+      ],
+      "errors": [],
+      "limits": "Resolved against in-memory proposed document set plus current repository, without installing normative changes."
+    },
+    {
+      "check": "source preservation",
+      "outcome": "PASS",
+      "facts": "No tracked difference from entry HEAD; canonical proposed Praxis absent; only new proposal/review/evidence paths added."
+    }
+  ],
+  "unresolved": [
+    "Operative Task instruction-entry event and required UTC filename prefix unavailable; explicit SA treatment required before closure."
+  ],
+  "notPerformed": [
+    "Proposed software-target helper implementation or its future tests",
+    "Adoption, acceptance, release allocation or publication",
+    "Commit, push, tag, merge, deployment or remote verification"
+  ],
+  "limits": "Purpose-selected check summaries retained. Raw Maven output remains transient in /tmp; no log archive or universal evidence snapshot required.",
+  "postEmissionMechanicalChecks": {
+    "recordedAt": "2026-11-15T23:36:30.351726Z",
+    "proposalLocalLinksAndDRStructure": {
+      "outcome": "PASS",
+      "markdownFiles": 6,
+      "DRs": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "errors": []
+    },
+    "iterationEvidence": {
+      "outcome": "UNRESOLVED",
+      "exitCode": 2,
+      "errors": [],
+      "unresolved": [
+        "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+      ],
+      "records": [
+        "evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+        "evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md"
+      ]
+    },
+    "diffWhitespaceAndApplicability": {
+      "outcome": "PASS",
+      "exitCode": 0
+    },
+    "gitState": {
+      "head": "441ec989a3853db4ea4dad253e14b8464181f293",
+      "trackedDiff": "",
+      "status": [
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-amendments.proposed.patch",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-assessment.md",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/iteration-evidence-check.json",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/supporting-amendments.proposed.md",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/verification.json",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/before/repository-state.json",
+        "?? enterprise-architecture/design/review/1.1.26/hcrl-1.1.26-001.pending.md",
+        "?? enterprise-architecture/design/review/1.1.26/software-development-praxis.proposed.md"
+      ],
+      "commitOrPushPerformed": false
+    },
+    "meaning": "Provenance maintenance completing this same activity; preserves original Report production event without recursive Report amendment."
+  }
+}

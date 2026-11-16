@@ -21,6 +21,15 @@ deeper decomposition becomes another top-level DR. Keep table/section references
 and attributable dispositions/comments consistent. Do not create parallel
 knowledge, action, uncertainty or minutiae decision taxonomies.
 
+**Target.** `<Architecture: numeric resulting version | Software: software-X.Y.Z>`.
+For software identify the originating Backlog Item(s)/revision, accepted software
+predecessor/source, exact integrated solution candidate, accepted Architecture
+baseline/source, acceptance-criteria and implementation-conformance evidence,
+component/unit and solution-wide regression/integration commands/scope/environment/
+results, verification exceptions and their actual dispositions, requested release
+scope and Git/release authority. Link the item specifications rather than copy them. Use the same DR table and bounded Minutiae;
+this template supplies no acceptance or software-release allocation.
+
 **Review basis.** `<actor/date; target and iteration; originating immediate
 governed release/state and source locator; proposed/actual result distinguished;
 exact supplied decision/input provenance; conditions, exclusions and evidence
@@ -41,7 +50,7 @@ before/after evidence or adequate source-control locators, validation conclusion
 and limits, remaining explicit deferrals/exclusions, and the Solution Architect's
 confirmation status. For substantive AI-agent activity associated with this HCRL
 iteration, retain formal Tasks at
-`enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/before/ai-agent-tasks/`
+`enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/before/ai-agent-tasks/`
 and corresponding Reports at this iteration's `after/ai-agent-reports/`,
 irrespective of architectural materiality. Investigation, analysis, review,
 candidate/pending-HCRL preparation or revision, corrective work, application and

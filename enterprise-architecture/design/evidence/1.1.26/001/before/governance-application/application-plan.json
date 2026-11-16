@@ -1,0 +1,91 @@
+{
+  "recordedAt": "2026-11-16T01:06:38.007968Z",
+  "meaning": "Pre-application verification and plan, not Task issuance",
+  "head": "441ec989a3853db4ea4dad253e14b8464181f293",
+  "branch": "Mneme-and-Mnemosyne-Build",
+  "acceptedPatch": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-amendments.proposed.patch",
+  "acceptedPatchSha256": "c8ead9603dec26ec53b82f2522c7dcd66c27a91c7f8d2c22e7aee3728993b3bb",
+  "acceptedHcrlCopy": "accepted-review-hcrl.md.gz",
+  "acceptedHcrlSha256": "72b96064bb38f1127f516043cfe58e738b1657de04a1d109f7c74fb94373dda3",
+  "documentTargets": [
+    {
+      "path": "enterprise-architecture/governance/architecture-governance.md",
+      "beforePresent": true,
+      "beforeSource": "Git HEAD 441ec989a3853db4ea4dad253e14b8464181f293",
+      "expectedSha256": "61b73a1c854d2cf49798e602aca0e5706d8a30f88be3bc1d089ffeba9e57006c"
+    },
+    {
+      "path": "enterprise-architecture/governance/architecture-review-praxis.md",
+      "beforePresent": true,
+      "beforeSource": "Git HEAD 441ec989a3853db4ea4dad253e14b8464181f293",
+      "expectedSha256": "11190b37f1e26e815bc13bc9c3fcfabb3f77156187ab772ad8fb32a10a99a59b"
+    },
+    {
+      "path": "enterprise-architecture/governance/architecture-change-provenance.md",
+      "beforePresent": true,
+      "beforeSource": "Git HEAD 441ec989a3853db4ea4dad253e14b8464181f293",
+      "expectedSha256": "e0b4292279bb026566b5f61fbf3b60b333087cea72b39895868b13abb4cb6b5a"
+    },
+    {
+      "path": "enterprise-architecture/governance/architecture-release-policy.md",
+      "beforePresent": true,
+      "beforeSource": "Git HEAD 441ec989a3853db4ea4dad253e14b8464181f293",
+      "expectedSha256": "ec7809b450a50216c4cb15da5737fef080aa5acffe861511f6495f07d7922096"
+    },
+    {
+      "path": "AGENTS.md",
+      "beforePresent": true,
+      "beforeSource": "Git HEAD 441ec989a3853db4ea4dad253e14b8464181f293",
+      "expectedSha256": "10f04260a0e9abccd719fa75a7031f1b99b82ffcef2ddd2031c6ab7ec1772e76"
+    },
+    {
+      "path": "docs/AGENTS.md",
+      "beforePresent": true,
+      "beforeSource": "Git HEAD 441ec989a3853db4ea4dad253e14b8464181f293",
+      "expectedSha256": "fbd01b92ef302677b57a8d22cd323c6b8405d0c5369227abf02f849ce476c19c"
+    },
+    {
+      "path": "enterprise-architecture/governance/templates/hcrl-template.pending.md",
+      "beforePresent": true,
+      "beforeSource": "Git HEAD 441ec989a3853db4ea4dad253e14b8464181f293",
+      "expectedSha256": "97bceb07222fb785a94ed908dd4ccc92f28c6be930d8fe5c8c5ccdec128e6443"
+    },
+    {
+      "path": "enterprise-architecture/governance/software-development-praxis.md",
+      "beforePresent": false,
+      "beforeSource": "Absent at application entry",
+      "expectedSha256": "694c867e0efa58d6b6c557e6be4c7c94bf5d67dd5ff33043e3d9d71348f77bf3"
+    },
+    {
+      "path": "docs/backlog/backlog-item-template.md",
+      "beforePresent": false,
+      "beforeSource": "Absent at application entry",
+      "expectedSha256": "b968c33dc54e12434b85081fe386ef0016498c963770c6fd444654055a76e5d9"
+    },
+    {
+      "path": "docs/backlog/README.md",
+      "beforePresent": false,
+      "beforeSource": "Absent at application entry",
+      "expectedSha256": "6ee7a5dbc8a0769c864e3d7f48be67ddd550e146618069199900977306268f05"
+    }
+  ],
+  "releasePlan": {
+    "acceptedPredecessor": "1.1.25",
+    "entryAuthority": {
+      "version": "1.1.25",
+      "previous_version": "1.1.24"
+    },
+    "resultingVersion": "1.1.26",
+    "existingAllocationForChangeSet": false,
+    "requiredAllocations": 1,
+    "mechanism": "architecture_release.py bump --expect 1.1.25",
+    "publicationInScope": false,
+    "finalConfirmation": "Must obtain after application/verification; not supplied by proposal acceptance"
+  },
+  "toolingTargets": [
+    "enterprise-architecture/tooling/architecture_review_evidence.py",
+    "enterprise-architecture/tooling/tests/test_architecture_review_evidence.py",
+    "enterprise-architecture/tooling/README.md"
+  ],
+  "limits": "No finalisation, register record, publication, commit, tag, merge or push authorised. This is governance application with bounded supporting tooling, not the first solution software release."
+}

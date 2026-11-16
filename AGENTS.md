@@ -194,13 +194,16 @@ deletion or migration of existing legacy material.
 
 ### 1.3 RAD / Architecture Release Governance
 
-Every accepted repository change MUST apply the patch increment defined in
-[the governed release policy](enterprise-architecture/governance/architecture-release-policy.md).
-The root `architecture-release.json` is the single current-release authority.
-Publication/report tooling reads it; generation does not increment it. Minor or
-major increments require an explicit governance decision. Maven software versions
-and branch names remain independent. Include the increment in the same accepted
-change set, regardless of author or tool.
+Accepted architectural or normative governance changes MUST apply the Architecture
+patch increment under [the release policy](enterprise-architecture/governance/architecture-release-policy.md).
+The root `architecture-release.json` is the single current Architecture-release
+authority. Publication/report tooling reads it; generation does not increment it.
+Architecture major/minor changes require an explicit governance decision.
+Software-only changes use the independent release identity under the
+[Software Development Praxis](enterprise-architecture/governance/software-development-praxis.md)
+and MUST NOT automatically increment the Architecture release. Every change still
+receives Architecture Review. Include each applicable increment in its accepted
+change set; branch names and Maven versions do not allocate architectural authority.
 
 ### 1.4 Architecture-change provenance
 
@@ -251,7 +254,7 @@ Any new material architectural issue or unintentional code change discovered dur
 
 For substantive AI-agent activity associated with an HCRL iteration,
 retain formal Task Details at
-`enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/before/ai-agent-tasks/`
+`enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/before/ai-agent-tasks/`
 and corresponding Reports at that iteration's `after/ai-agent-reports/`,
 irrespective of architectural materiality, under the provenance contract.
 Investigation, analysis, review, candidate/pending-HCRL preparation or revision,
@@ -396,6 +399,21 @@ Independent authorised work may continue. An unrelated unresolved matter does no
 block iteration advancement; terminal treatment follows the closure rules below.
 On interruption or retry, establish the state already reached before continuing;
 do not repeat an iteration advance, release allocation or uncertain publication.
+
+### Software-target HCRL dispatch
+
+Establish the exact target kind before either lifecycle operation. Software-target
+HCRLs use `software-X.Y.Z` for the target key in the same review/register/evidence
+structure. Apply the common inputs, fail-closed controls, attributable dispositions,
+provenance and iteration-preservation requirements above, then the
+[Software Development Praxis](enterprise-architecture/governance/software-development-praxis.md)
+for target-specific candidate, release and closure actions. The Architecture
+projection/publication/allocation steps below apply only to Architecture targets.
+For software, **HCRL Updated** processes/advances exactly one reviewed iteration;
+**HCRL Finalised** processes exact accepted implementation closure without an
+Architecture bump or Continuum publication. Neither command supplies missing
+acceptance, exceptions or commit/merge/tag/push/deployment authority. Linked
+Architecture and software transitions retain separate identities and decisions.
 
 ### HCRL Updated — process and advance one pending iteration
 
@@ -1002,6 +1020,35 @@ Material changes to the sequence or milestone intent MUST be explicit and
 reviewed before subsequent implementation proceeds. Junie MUST NOT rewrite
 historical milestone intent merely to make later implementation appear to have
 followed the plan.
+
+## Software Development Assignments
+
+Load and follow the [Software Development Praxis](enterprise-architecture/governance/software-development-praxis.md)
+for implementation assignments and implementation review. `docs/backlog/` is the
+single location for human- and agent-authored Backlog Items; use the governed
+minimum structure/template, not the historical sample. Items specify work and
+may propose architecture changes subject to established governance, ADD and HCRL;
+they supply neither implementation nor architectural authority. Formal software
+Tasks reference their applicable items/revisions and add execution instructions,
+rather than duplicate complete specifications. Implementation Reports and HCRLs
+identify those items and acceptance-criteria/conformance evidence.
+
+Every software PR/HCRL acceptance candidate represents the integrated solution,
+even if only some modules changed. Before submission, perform applicable
+component/unit tests, solution-wide regression and integration tests, and relevant
+architectural/implementation-conformance checks. Record actual commands, scope,
+environment, outcomes and failures. Missing/failed/unexecuted verification requires
+explicit reporting; incomplete required tests need Solution Architect disposition,
+not an assumed pass. Component versions do not establish accepted Harmonia baselines.
+
+A bounded authorised
+assignment delegates ordinary engineering, testing, documentation, in-scope review
+corrections and evidence production. Do not seek repeated approval for those
+choices. Escalate genuine architectural decisions, material scope changes and
+unresolved authority conflicts. Agents may submit exact candidates and HCRLs,
+but cannot accept their own implementation. Retain the common Task/Report model
+at the explicitly established Architecture or software target/iteration; no
+additional per-command, per-test or provenance-maintenance task loop is required.
 
 ## Harmonia Implementation Standards
 

@@ -28,20 +28,30 @@ the mapping, publication and release-governance review bundle as Release 1.0.1.
 This document establishes the mechanism in that same bundle. Preparation and
 validation do not themselves claim that a commit or Archi visual review occurred.
 
-Every accepted repository change SHALL increment the RAD / Architecture patch
-release, regardless of author or tool. One accepted change set receives one
-increment, including its governance documents, tests and generated artefacts.
-Work-in-progress edits and repeated generation within that set do not each
-receive another increment. The increment and all associated changes SHALL be
-committed together. Concurrent change sets SHALL recheck the accepted current
-release before acceptance and rebase their increment if necessary.
+Every accepted change to architectural authority or normative governance SHALL
+receive one RAD / Architecture patch increment, regardless of author or tool.
+Ordinary conforming software implementation, tests and documentation SHALL NOT
+increment the Architecture release merely because repository source changed.
+Software acceptance and its independent release identity follow the
+[Software Development Praxis](software-development-praxis.md). Architecture Review
+continues to apply to every change; review establishes architectural effect.
+Software releases identify the integrated Harmonia solution. Component Maven or
+build versions do not establish independently accepted software baselines.
+
+One accepted architecture/governance change set receives one Architecture increment,
+including its supporting tests and generated artefacts. A mixed change identifies
+both governed transitions and their dependency, allocating each identity once.
+Work-in-progress, corrective iterations and repeated generation allocate nothing.
+The Architecture increment and associated accepted changes SHALL be committed
+together under applicable Git authority. Recheck the accepted predecessor before
+acceptance; baseline drift requires reassessment, not merely an HCRL rename.
 
 Provenance maintenance within an existing authorized boundary (including mechanical
 creation, completion, timestamp synchronization, formatting, or consistency checks
 of Task, Report, HCRL, or associated governance documentation) SHALL NOT allocate
 an Architecture Release increment. Pending review iterations consume no release
 allocation. Release increments are reserved for accepted repository change sets
-containing substantive architectural or solution transitions. Governance
+containing substantive architectural or normative governance transitions. Governance
 documentation maintenance performed to record or regularise an already-allocated
 change set belongs to that same change set and consumes no additional release.
 

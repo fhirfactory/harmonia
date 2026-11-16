@@ -5,6 +5,8 @@
 Checks conventional Markdown Task/Report records, not evidence significance,
 event authenticity, task/report semantic correspondence or acceptance. This is
 not a retrospective audit or a requirement to create empty evidence packages.
+Targets identify Architecture X.Y.Z or software-X.Y.Z HCRLs independently;
+record emission and checking never allocate either release.
 """
 import argparse
 from datetime import datetime, timezone
@@ -21,8 +23,26 @@ ROLES = {"ai-agent-tasks": ("before", "Task-Issued-At"),
          "ai-agent-reports": ("after", "Report-Produced-At")}
 
 
+def review_target_kind(target):
+    """Validate an HCRL target and return its Architecture/software distinction.
+
+    Both kinds reuse the strict numeric release grammar. Only software targets
+    carry a prefix: no prerelease labels, arbitrary namespaces or path components
+    may become evidence destinations. This validates a locator, not acceptance
+    or release allocation; the Architecture release authority stays unchanged.
+    """
+    if not isinstance(target, str):
+        raise ValueError('HCRL target requires X.Y.Z or software-X.Y.Z')
+    software = target.startswith('software-')
+    try:
+        version_parts(target.removeprefix('software-') if software else target)
+    except ValueError as exc:
+        raise ValueError(f'Invalid HCRL target {target!r}; use X.Y.Z or software-X.Y.Z') from exc
+    return 'software' if software else 'architecture'
+
+
 def boundary_paths(root, version, iteration):
-    version_parts(version)
+    review_target_kind(version)
     if not re.fullmatch(r'\d{3,}', iteration) or int(iteration) == 0:
         raise ValueError('Use a positive HCRL iteration, such as 004')
     design = Path(root) / 'enterprise-architecture/design'
@@ -97,6 +117,8 @@ def prepare_review(root, version, iteration, delta_path, task_path):
     once. No AI, DRP traversal, disposition inference or recursive provenance.
     Existing review/HCRL files are never overwritten.
     """
+    if review_target_kind(version) != 'architecture':
+        raise ValueError('ArchiMate --prepare requires an Architecture target; software HCRLs use the Software Development Praxis')
     import hashlib
     from time import perf_counter
     started = perf_counter()
@@ -219,7 +241,7 @@ def check_event(path, label):
 
 
 def check_iteration(root, version, iteration):
-    version_parts(version)
+    review_target_kind(version)
     if not re.fullmatch(r"\d{3,}", iteration) or int(iteration) == 0:
         raise ValueError("Use the corresponding positive HCRL iteration, such as 004")
     design = Path(root) / "enterprise-architecture/design"
@@ -266,7 +288,8 @@ def check_iteration(root, version, iteration):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repository", type=Path, default=ROOT)
-    parser.add_argument("--version", required=True)
+    parser.add_argument("--version", required=True,
+                        help="HCRL target: Architecture X.Y.Z or software-X.Y.Z; never allocates a release")
     parser.add_argument("--iteration", required=True)
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument('--prepare', action='store_true', help='Checkpoint scaffolding; no architectural interpretation or acceptance')

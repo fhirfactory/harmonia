@@ -72,7 +72,7 @@ edits to governance artefacts is evidenced through Git history, execution sessio
 and tooling outputs, not through recursive provenance records.
 
 The completed HCRL is the single authoritative semantic change/review record for
-the immediate governed predecessor → resulting governed RAD release. It records
+the identified governed predecessor → resulting Architecture or software release. It records
 the authorised meaning, actual incorporated result, attributable decisions and
 material revisions, scope, conditions, dependencies, exclusions, deferrals,
 relevant correspondence and validation conclusions/limits within the applicable
@@ -122,7 +122,7 @@ SHALL NOT be resolved or dismissed as provenance maintenance; it SHALL be surfac
 through HCRL for Solution Architect adjudication under AX-17.
 
 **HCRL** is the authoritative semantic change/decision record for the governed
-RAD transition. Pending iterations preserve its review/adjudication lifecycle;
+Architecture or software transition. Pending iterations preserve its review/adjudication lifecycle;
 the completed HCRL records the accepted transition. HCRL SHALL NOT serve as the
 Architecture Review working document, an inventory of every evidence file or a
 substitute for detailed supporting evidence. Include material meaning, decisions,
@@ -146,10 +146,13 @@ selection rules govern additional evidence; they do not make these formal
 Task/Report records optional or require retention of every agent interaction.
 
 Required before/after evidence belongs at
-`enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/before/`
-and `after/`. The HCRL iteration is the provenance boundary. Use the resulting
-governed RAD version and corresponding HCRL iteration (for example `1.1.4/004`),
-independently of agent, session, software version or processing-run identity.
+`enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/before/`
+and `after/`. The HCRL iteration is the provenance boundary. The target key is
+the resulting Architecture version or `software-X.Y.Z` for a software transition
+under the [Software Development Praxis](software-development-praxis.md). Use its
+corresponding HCRL iteration, independently of agent, session or processing-run
+identity. Software-target evidence does not assert an Architecture release change;
+historical numeric keys retain their original meaning and placement.
 Retain evidence with its originating activity; later iterations reference it
 without moving it or duplicating it merely to populate a new package. Preserve
 source/result correspondence for any purpose-required later representation.
@@ -172,7 +175,7 @@ Task Detail(s) and corresponding Report(s) SHALL be retained at these governed
 locations, under the same model for all activity purposes:
 
 ```text
-enterprise-architecture/design/evidence/<RAD-version>/<HCRL-iteration>/
+enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/
 ├── before/
 │   └── ai-agent-tasks/
 └── after/
@@ -189,6 +192,14 @@ not assert that a contained artefact existed in the predecessor or successor
 Git state. Follow-up tasks remain task inputs. Interim, unsuccessful or uncertain
 results retain their actual standing; location supplies neither success nor
 architectural acceptance.
+
+For software assignments, the Task SHALL reference originating Backlog Item(s) at
+`docs/backlog/` and their exact revision/source, rather than duplicate their complete
+specifications. Retain the authorised execution-specific instructions and actual
+issued wording under the following rule. Implementation Reports and software HCRLs
+SHALL identify those items and reference acceptance-criteria/conformance evidence
+and solution-wide regression/integration results. This extends correspondence,
+not the number of required records or the existing provenance boundary.
 
 The Task SHALL preserve the operative issued instruction and sufficient
 attributable context to establish what work was authorised or requested,

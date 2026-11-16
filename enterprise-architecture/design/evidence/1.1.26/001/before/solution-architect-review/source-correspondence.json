@@ -1,0 +1,70 @@
+{
+  "capturedAt": "2026-11-16T00:45:08.951712Z",
+  "eventMeaning": "Review-input preservation; not original or follow-up Task issuance",
+  "activity": "Review-driven correction within existing 1.1.26/001 assignment; no new HCRL iteration or release",
+  "head": "441ec989a3853db4ea4dad253e14b8464181f293",
+  "records": [
+    {
+      "sourcePath": "enterprise-architecture/design/review/1.1.26/hcrl-1.1.26-001.pending.md",
+      "reviewedCopy": "hcrl-1.1.26-001.pending.md.reviewed.gz",
+      "bytes": 11074,
+      "sha256": "f0d1853e130c6347970f87b8f7cbdf4dd484f0b7a3755dccc9aa695f680a406f",
+      "role": "Exact pre-correction reviewed content; source-relative links retain their sourcePath context"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/review/1.1.26/software-development-praxis.proposed.md",
+      "reviewedCopy": "software-development-praxis.proposed.md.reviewed.gz",
+      "bytes": 15841,
+      "sha256": "a76ee9a2ae1e1b854eebd64fbfa78bf222f29a1f629e59520a163c8d1ff73213",
+      "role": "Exact pre-correction reviewed content; source-relative links retain their sourcePath context"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-amendments.proposed.patch",
+      "reviewedCopy": "governance-amendments.proposed.patch.reviewed.gz",
+      "bytes": 40086,
+      "sha256": "e649760b44b9bc3ca87a63f22587eadafbbca8412f0b9b8c40b94f71ba3802a1",
+      "role": "Exact pre-correction reviewed content; source-relative links retain their sourcePath context"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-assessment.md",
+      "reviewedCopy": "governance-assessment.md.reviewed.gz",
+      "bytes": 9105,
+      "sha256": "588e0042de4880d455eed6427659523fd7762a93bbb32af1e7a6d0e8357ce32a",
+      "role": "Exact pre-correction reviewed content; source-relative links retain their sourcePath context"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/evidence/1.1.26/001/after/supporting-amendments.proposed.md",
+      "reviewedCopy": "supporting-amendments.proposed.md.reviewed.gz",
+      "bytes": 7494,
+      "sha256": "71d2919428aeab2b495ebb4e9b21aad3399208ddaafa6f469e2da6c084fdf26a",
+      "role": "Exact pre-correction reviewed content; source-relative links retain their sourcePath context"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md",
+      "reviewedCopy": "unresolved-software-development-praxis-proposal.md.reviewed.gz",
+      "bytes": 7409,
+      "sha256": "5057112a3a206b1486aa61a65943deaccd3e61c07f453a9cd925d6c1035fe2fa",
+      "role": "Exact pre-correction reviewed content; source-relative links retain their sourcePath context"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+      "reviewedCopy": "20261115T233608Z-software-development-praxis-proposal.md.reviewed.gz",
+      "bytes": 10459,
+      "sha256": "36740f40bb4b4c71d8cc25efeb4aa1224bcda90621e6b14f887e311d99925e5a",
+      "role": "Exact pre-correction reviewed content; source-relative links retain their sourcePath context"
+    }
+  ],
+  "backlogInspection": {
+    "files": [
+      "docs/backlog/Harmonia - Task 9 - Backlog.md"
+    ],
+    "conventions": [
+      "Grouped Markdown document by task/context",
+      "Subsystem heading Mneme",
+      "Stable entry heading BL-09-01 followed by short objective prose"
+    ],
+    "bytes": 418,
+    "sha256": "5ee9b168657b10f0c9840748dffffc800946a353995eaa7a1d0d6076a53b3b61",
+    "existingBacklogModified": false
+  }
+}

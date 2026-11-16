@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-11-15T23:29:13.886836Z",
+  "observationMeaning": "Repository inspection; not Task instruction-entry time or an acceptance event",
+  "branch": "Mneme-and-Mnemosyne-Build",
+  "head": "441ec989a3853db4ea4dad253e14b8464181f293",
+  "entryWorktree": "Clean, established by initial git status --short before proposal files were written",
+  "architectureRelease": {
+    "version": "1.1.25",
+    "previous_version": "1.1.24"
+  },
+  "acceptedArchitectureRecord": "enterprise-architecture/design/register/1.1.25/hcrl-1.1.25-001.complete.md",
+  "acceptedArchitectureStanding": "Accepted and published with recorded qualifications; CR-001 remains FAIL / UNRESOLVED; original closure receipt leaves Git handoff pending, later local commits observed without inferring their authority",
+  "rootMavenVersion": "1.0.0-SNAPSHOT",
+  "localTags": [],
+  "softwareBaselineStanding": "No accepted software-release identity established by examined root POM, local tags or completed Architecture HCRL. HEAD is a source-state locator only; no retrospective acceptance inferred.",
+  "subsequentLocalHistory": [
+    "441ec989a3853db4ea4dad253e14b8464181f293 1.1.25 (Snapshot) Update to Agents.md to address S/W Development Issues",
+    "fc3133d42ab0efb5a702052d7dac0973043b1639 1.1.25 (Snapshot) Second Iteration of Calliope for Mneme + Meneosyne",
+    "039d83fbe125f7ff36eb1d3eeeb4d6082dc5a7a8 1.1.25 (Snapshot) Initial Iteration of Calliope for Mneme + Mnenosyne"
+  ],
+  "architectureAndGovernanceChangesSinceArchitectureCommit": [],
+  "reviewBoundary": "1.1.26/001 is a provisional normal next-patch identity under current governance; not allocated or reserved",
+  "limits": [
+    "Local repository inspection; no fetch, remote verification, software acceptance audit or retrospective provenance repair.",
+    "Implementation Guide has Draft/Pending wording; current root AGENTS.md explicitly requires compliance; no header changed."
+  ]
+}

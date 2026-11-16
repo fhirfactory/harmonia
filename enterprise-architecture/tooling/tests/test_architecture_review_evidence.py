@@ -4,6 +4,7 @@ import importlib.util
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -180,3 +181,128 @@ class ArchitectureReviewEvidenceTests(unittest.TestCase):
         result = evidence.prepare_review(self.root, '9.8.7', '004', delta, task)
         self.assertEqual(result['outcome'], 'UNRESOLVED')
         self.assertTrue(any('IDENTITY' in x for x in result['validation']['unresolved']))
+
+
+class SoftwareReviewEvidenceTests(unittest.TestCase):
+    """Exercise software targets through real emission/checking and CLI boundaries."""
+
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+        self.design = self.root / 'enterprise-architecture/design'
+        self.target, self.iteration = 'software-9.8.7', '004'
+        self.release_file = self.root / 'architecture-release.json'
+        self.release_bytes = b'{"version":"9.8.7","previous_version":"9.8.6"}\n'
+        self.release_file.write_bytes(self.release_bytes)
+        self.pending = self.design / 'review' / self.target / f'hcrl-{self.target}-004.pending.md'
+        self.pending.parent.mkdir(parents=True)
+        self.pending.write_text('Pending software acceptance; fixture only.\n')
+
+    def pair(self):
+        """Emit synthetic authoritative events without reusing real task content."""
+        task = evidence.emit_record(self.root, self.target, self.iteration,
+            'ai-agent-tasks', 'software-assignment', 'Fixture Backlog Item reference; no acceptance.',
+            event='2026-10-21T17:43:22.583+11:00', source='Synthetic instruction event')
+        report = evidence.emit_record(self.root, self.target, self.iteration,
+            'ai-agent-reports', 'software-result', 'Fixture result, not a Solution Architect decision.')
+        return task, report
+
+    def check(self):
+        return evidence.check_iteration(self.root, self.target, self.iteration)
+
+    def test_numeric_and_software_targets_coexist_without_reclassifying_or_allocating(self):
+        numeric = self.design / 'review/9.8.7/hcrl-9.8.7-004.pending.md'
+        numeric.parent.mkdir(parents=True)
+        numeric.write_text('Existing Architecture review.\n')
+        old_task = evidence.emit_record(self.root, '9.8.7', '004', 'ai-agent-tasks',
+            'architecture-task', 'Original fixture', event='2026-10-21T06:43:22Z', source='Fixture')
+        protected = {p: p.read_bytes() for p in (numeric, old_task, self.release_file)}
+        task, report = self.pair()
+        before_check = {p: p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
+        result = self.check()
+        self.assertEqual('PASS', result['outcome'])
+        self.assertEqual(2, len(result['records']))
+        self.assertTrue(all('/software-9.8.7/' in p for p in result['records']))
+        self.assertIn('before/ai-agent-tasks', task.as_posix())
+        self.assertIn('after/ai-agent-reports', report.as_posix())
+        self.assertEqual(protected, {p: p.read_bytes() for p in protected})
+        self.assertEqual(before_check, {p: p.read_bytes() for p in self.root.rglob('*') if p.is_file()})
+
+    def test_completed_software_hcrl_is_discovered_without_requiring_pending(self):
+        self.pair()
+        complete = self.design / 'register' / self.target / f'hcrl-{self.target}-004.complete.md'
+        complete.parent.mkdir(parents=True)
+        self.pending.rename(complete)
+        self.assertEqual('PASS', self.check()['outcome'])
+
+    def test_software_event_mismatch_remains_fail_and_missing_original_remains_unresolved(self):
+        task, _ = self.pair()
+        task = task.rename(task.with_name('20261021T064323Z-software-assignment.md'))
+        self.assertEqual('FAIL', self.check()['outcome'])
+        task.write_text('Task-Issued-At: UNRESOLVED\nUnavailable original event; no substitute.\n')
+        task.rename(task.with_name('unresolved-software-assignment.md'))
+        self.assertEqual('UNRESOLVED', self.check()['outcome'])
+
+    def test_invalid_targets_reject_before_emission_or_path_mutation(self):
+        before = {p: p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
+        targets = ('software-', 'software-9.8', 'software-09.8.7', 'Software-9.8.7',
+                   'software-9.8.7-rc.1', 'software-9.8.7+build', 'software-software-9.8.7',
+                   'architecture-9.8.7', '../9.8.7', 'software-../9.8.7',
+                   'software-9.8.7/other', 'software-9.8.7\\other', '/9.8.7', None)
+        for target in targets:
+            with self.subTest(target=target):
+                with self.assertRaises(ValueError):
+                    evidence.emit_record(self.root, target, '004', 'ai-agent-tasks',
+                                         'invalid', 'Must not write')
+                with self.assertRaises(ValueError):
+                    evidence.check_iteration(self.root, target, '004')
+        self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob('*') if p.is_file()})
+
+    def test_invalid_software_iteration_and_wrong_role_remain_rejected(self):
+        task, _ = self.pair()
+        for iteration in ('../004', '000', '4'):
+            with self.subTest(iteration=iteration), self.assertRaises(ValueError):
+                evidence.boundary_paths(self.root, self.target, iteration)
+        wrong = self.design / 'evidence' / self.target / '004/after/ai-agent-tasks'
+        wrong.mkdir()
+        task.rename(wrong / task.name)
+        self.assertEqual('FAIL', self.check()['outcome'])
+
+    def test_software_emission_preserves_exclusive_write_and_event_prefix(self):
+        task, _ = self.pair()
+        self.assertEqual('20261021T064322Z-software-assignment.md', task.name)
+        self.assertIn('2026-10-21T17:43:22.583+11:00', task.read_text())
+        before = task.read_bytes()
+        with self.assertRaises(FileExistsError):
+            evidence.emit_record(self.root, self.target, '004', 'ai-agent-tasks',
+                'software-assignment', 'Replacement', event='2026-10-21T17:43:22.583+11:00',
+                source='Synthetic conflicting instruction')
+        self.assertEqual(before, task.read_bytes())
+        self.assertEqual(self.release_bytes, self.release_file.read_bytes())
+
+    def test_software_archimate_preparation_rejects_before_reading_inputs(self):
+        before = {p: p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
+        with self.assertRaisesRegex(ValueError, 'ArchiMate --prepare requires an Architecture target'):
+            evidence.prepare_review(self.root, self.target, '004',
+                                    self.root / 'missing-delta.json', self.root / 'missing-task.md')
+        self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob('*') if p.is_file()})
+
+    def test_software_cli_emits_and_checks_but_rejects_archimate_preparation(self):
+        content = self.root / 'issued.md'
+        content.write_text('Fixture references Backlog Item/revision; no duplicated specification.\n')
+        command = [sys.executable, '-B', str(SCRIPTS / 'architecture_review_evidence.py'),
+                   '--repository', str(self.root), '--version', self.target, '--iteration', '004']
+        emitted = subprocess.run(command + ['--record-role', 'ai-agent-tasks', '--name', 'cli-task',
+            '--content', str(content)], capture_output=True, text=True, timeout=10)
+        self.assertEqual(2, emitted.returncode, emitted.stdout + emitted.stderr)
+        self.assertEqual('UNRESOLVED', json.loads(emitted.stdout)['outcome'])
+        checked = subprocess.run(command, capture_output=True, text=True, timeout=10)
+        self.assertEqual(2, checked.returncode, checked.stdout + checked.stderr)
+        self.assertEqual('UNRESOLVED', json.loads(checked.stdout)['outcome'])
+        before = {p: p.read_bytes() for p in self.root.rglob('*') if p.is_file()}
+        rejected = subprocess.run(command + ['--prepare', '--delta', 'missing.json',
+            '--task', 'missing.md'], capture_output=True, text=True, timeout=10)
+        self.assertEqual(1, rejected.returncode, rejected.stdout + rejected.stderr)
+        self.assertIn('ArchiMate --prepare requires an Architecture target', rejected.stdout)
+        self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob('*') if p.is_file()})
