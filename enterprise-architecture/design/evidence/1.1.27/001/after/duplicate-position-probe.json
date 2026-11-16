@@ -1,0 +1,19 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "30s",
+    "java",
+    "--class-path",
+    "calliope/target/classes",
+    "/tmp/harmonia-calliope-probe-fzn340ef/DuplicateTopicPositionProbe.java"
+  ],
+  "purpose": "Read-only reproduction against classes built from inspected HEAD; no implementation/test edit",
+  "probeSource": "import java.util.UUID;\nimport net.fhirfactory.harmonia.model.topic.Topic;\nclass DuplicateTopicPositionProbe {\n public static void main(String[] args) {\n  Topic.Builder b = Topic.builder().id(UUID.fromString(\"123e4567-e89b-12d3-a456-426614174000\"));\n  b.addEntry(0, \"Country\", \"Australia\");\n  b.addEntry(0, \"Country\", \"NewZealand\");\n  System.out.println(\"builtName=\" + b.build().getName());\n }\n}\n",
+  "exitCode": 0,
+  "stdout": "builtName=NewZealand\n",
+  "stderr": "warning: unknown enum constant Include.NON_NULL\n  reason: class file for com.fasterxml.jackson.annotation.JsonInclude$Include not found\nwarning: unknown enum constant Shape.STRING\n  reason: class file for com.fasterxml.jackson.annotation.JsonFormat$Shape not found\n2 warnings\n",
+  "outcome": "CONFIRMED",
+  "conclusion": "Current explicit-position builder silently replaces the original entry; accepted Topic sequencing requires rejection. This probe records the defect, not conformance."
+}

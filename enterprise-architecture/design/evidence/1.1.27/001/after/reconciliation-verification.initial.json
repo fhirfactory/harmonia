@@ -1,0 +1,163 @@
+{
+  "checkedAt": "2026-11-16T03:27:21.312182+00:00",
+  "meaning": "Current reconciliation verification; not historical Task/decision event time",
+  "scope": "Record SA dispositions and accepted-item standing; do not close, register, release, investigate architecture or perform Git mutations",
+  "outcome": "FAIL",
+  "errors": [
+    {
+      "unexpectedTrackedChanges": [
+        "AGENTS.md",
+        "docs/AGENTS.md"
+      ]
+    }
+  ],
+  "boundedDocumentAndSourceCheck": {
+    "checkedAt": "2026-11-16T03:27:21.257649+00:00",
+    "meaning": "Current validation observation, not instruction issuance or acceptance",
+    "command": "python3 -B enterprise-architecture/design/evidence/1.1.27/001/after/verify-preparation.py",
+    "structuralOutcome": "FAIL",
+    "errors": [
+      {
+        "unexpectedTrackedChanges": [
+          "AGENTS.md",
+          "docs/AGENTS.md"
+        ]
+      }
+    ],
+    "candidate": {
+      "item": "docs/backlog/calliope-oo-01-topic-models.md",
+      "id": "BL-CALLIOPE-OO-01",
+      "revision": "1",
+      "sha256": "dc1cef07d983b425d9314026fe8418f1e2898859d3c28052c45a9ca7fcd81df6",
+      "baseHead": "dc30cfbcc7ad4113b29e3710904453c023df4dc1"
+    },
+    "requiredSections": [
+      "Overview",
+      "Context",
+      "Associated Requirements",
+      "Expected / Associated Activity",
+      "Expected Outcomes",
+      "Acceptance Criteria"
+    ],
+    "overviewSynopses": [
+      "High-Level Synopsis of Effort",
+      "High-Level Synopsis of Activities",
+      "High-Level Synopsis of Outcome",
+      "High-Level Synopsis of Acceptance Criteria"
+    ],
+    "acceptanceCriteria": 7,
+    "whitespaceCheck": {
+      "exitCode": 1,
+      "diagnostics": "",
+      "meaning": "git diff --no-index --check; exit 1 without diagnostics denotes new-file differences, not whitespace failure"
+    },
+    "checkerCorrection": "Initial local checker falsely classified that benign exit 1 as FAIL; corrected interpretation and reran. No source or whitespace defect was found.",
+    "maintainedAndFormalMarkdownFiles": 5,
+    "localLinksAndAnchorsChecked": 71,
+    "productionFilesUnchanged": 69,
+    "trackedChanges": [
+      "AGENTS.md",
+      "docs/AGENTS.md"
+    ],
+    "newFiles": [
+      "docs/backlog/calliope-oo-01-topic-models.md",
+      "enterprise-architecture/design/evidence/1.1.27/001/after/ai-agent-reports/20261116T031417Z-calliope-oo-backlog-preparation.md",
+      "enterprise-architecture/design/evidence/1.1.27/001/after/architecture-tests.json",
+      "enterprise-architecture/design/evidence/1.1.27/001/after/consumer-inventory.json",
+      "enterprise-architecture/design/evidence/1.1.27/001/after/document-validation.json",
+      "enterprise-architecture/design/evidence/1.1.27/001/after/duplicate-position-probe.json",
+      "enterprise-architecture/design/evidence/1.1.27/001/after/engineering-assessment.md",
+      "enterprise-architecture/design/evidence/1.1.27/001/after/iteration-evidence-check.json",
+      "enterprise-architecture/design/evidence/1.1.27/001/after/reconciliation-verification.json",
+      "enterprise-architecture/design/evidence/1.1.27/001/after/topic-tests.json",
+      "enterprise-architecture/design/evidence/1.1.27/001/after/verify-preparation.py",
+      "enterprise-architecture/design/evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md",
+      "enterprise-architecture/design/evidence/1.1.27/001/before/junie-phase1-review.source.md",
+      "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/backlog-item.accepted-revision-1.md",
+      "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/hcrl.before.md",
+      "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/source-pins.json",
+      "enterprise-architecture/design/evidence/1.1.27/001/before/source-state.json",
+      "enterprise-architecture/design/review/1.1.27/hcrl-1.1.27-001.pending.md"
+    ],
+    "architectureReleaseUnchanged": {
+      "version": "1.1.26",
+      "previous_version": "1.1.25"
+    },
+    "temporalProvenance": "UNRESOLVED; original Task/follow-up instruction-entry times and filename correspondence need SA treatment",
+    "limits": "Structure, local references and source/scope preservation; semantic adequacy requires SA review. No solution-wide software readiness claim."
+  },
+  "originalPreservation": {
+    "enterprise-architecture/design/review/1.1.27/hcrl-1.1.27-001.pending.md": {
+      "originalContentPreserved": true,
+      "originalSha256": "3ce44f0fc07b7e7198bac7faa593d8307aadf3f74e01f73320f210ec2a412bd6"
+    },
+    "docs/backlog/calliope-oo-01-topic-models.md": {
+      "originalContentPreserved": true,
+      "originalSha256": "47f83182b39de96824d475a883a858427647ff59a5e9b7ccc20c9d3a5bad21f4"
+    },
+    "enterprise-architecture/design/evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md": {
+      "originalContentPreserved": true,
+      "originalSha256": "7b8b3790236d62c93949b0c0881ef835f38f85010e0fadf9f3295617002d641a"
+    },
+    "enterprise-architecture/design/evidence/1.1.27/001/after/ai-agent-reports/20261116T031417Z-calliope-oo-backlog-preparation.md": {
+      "originalContentPreserved": true,
+      "originalSha256": "b6309a53f2a629c0567992de6b49f33f328357d489bc745b12b4ea2f5f5963c9"
+    },
+    "enterprise-architecture/design/evidence/1.1.27/001/after/engineering-assessment.md": {
+      "originalContentPreserved": true,
+      "originalSha256": "b4c0539daa517a78f06b3794171f08cf040d489ace22ed690d5b532778fa7e5e"
+    },
+    "enterprise-architecture/design/evidence/1.1.27/001/after/document-validation.json": {
+      "originalContentPreserved": true,
+      "originalSha256": "c89ca3f2e88e9ab8b0af04528333fcf1a36f3921100c7a9bba5ce629609c0bb0"
+    },
+    "enterprise-architecture/design/evidence/1.1.27/001/after/iteration-evidence-check.json": {
+      "originalContentPreserved": true,
+      "originalSha256": "9c2dc936a2afaecee8389d65eaba4408af97d3960ed1e7c59ecdab16bd4fb028"
+    }
+  },
+  "backlogSpecificationUnchanged": true,
+  "changesToItem": "Acceptance/provenance annotations only; ID BL-CALLIOPE-OO-01 and revision 1 retained",
+  "acceptedReviewedItemSha256": "47f83182b39de96824d475a883a858427647ff59a5e9b7ccc20c9d3a5bad21f4",
+  "maintainedItemSha256": "dc1cef07d983b425d9314026fe8418f1e2898859d3c28052c45a9ca7fcd81df6",
+  "reviewStanding": "DRs dispositioned; incorrect Architecture-target carrier retained at original review path; administrative non-release closure unresolved",
+  "closureLimitation": "Software Praxis section 7 non-release abandonment applies to software increments; no explicit cancellation route for this incorrectly initiated Architecture-target HCRL. Minimum recommendation is an explicit bounded SA cancellation disposition under existing fail-closed authority. Not applied.",
+  "architectureRelease": {
+    "version": "1.1.26",
+    "previous_version": "1.1.25"
+  },
+  "registerEntryCreated": false,
+  "hcrlIterations": 1,
+  "iterationEvidence": {
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/architecture_review_evidence.py",
+      "--version",
+      "1.1.27",
+      "--iteration",
+      "001"
+    ],
+    "exitCode": 2,
+    "result": {
+      "outcome": "UNRESOLVED",
+      "version": "1.1.27",
+      "iteration": "001",
+      "records": [
+        "evidence/1.1.27/001/after/ai-agent-reports/20261116T031417Z-calliope-oo-backlog-preparation.md",
+        "evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md"
+      ],
+      "errors": [],
+      "unresolved": [
+        "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+      ],
+      "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+    },
+    "qualifiedTreatment": "Mark Hunter accepted DR-4 with qualification. Recorded events/prefixes remain UNRESOLVED; no checker rule changed."
+  },
+  "gitStatus": "## Mneme-and-Mnemosyne-Build...origin/Mneme-and-Mnemosyne-Build\n M AGENTS.md\n M docs/AGENTS.md\n?? docs/backlog/calliope-oo-01-topic-models.md\n?? enterprise-architecture/design/evidence/1.1.27/001/after/ai-agent-reports/20261116T031417Z-calliope-oo-backlog-preparation.md\n?? enterprise-architecture/design/evidence/1.1.27/001/after/architecture-tests.json\n?? enterprise-architecture/design/evidence/1.1.27/001/after/consumer-inventory.json\n?? enterprise-architecture/design/evidence/1.1.27/001/after/document-validation.json\n?? enterprise-architecture/design/evidence/1.1.27/001/after/duplicate-position-probe.json\n?? enterprise-architecture/design/evidence/1.1.27/001/after/engineering-assessment.md\n?? enterprise-architecture/design/evidence/1.1.27/001/after/iteration-evidence-check.json\n?? enterprise-architecture/design/evidence/1.1.27/001/after/reconciliation-verification.json\n?? enterprise-architecture/design/evidence/1.1.27/001/after/topic-tests.json\n?? enterprise-architecture/design/evidence/1.1.27/001/after/verify-preparation.py\n?? enterprise-architecture/design/evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md\n?? enterprise-architecture/design/evidence/1.1.27/001/before/junie-phase1-review.source.md\n?? enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/backlog-item.accepted-revision-1.md\n?? enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/hcrl.before.md\n?? enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/source-pins.json\n?? enterprise-architecture/design/evidence/1.1.27/001/before/source-state.json\n?? enterprise-architecture/design/review/1.1.27/hcrl-1.1.27-001.pending.md\n",
+  "gitActionsPerformed": [],
+  "requiredReleaseActions": [],
+  "gitBoundary": "Staging, commit or push not performed; report proposed durable-retention actions before any separate authorisation.",
+  "testScope": "Existing 23 naming-model and 90 architecture tests retained against unchanged code; no repeat or solution-wide readiness claim."
+}

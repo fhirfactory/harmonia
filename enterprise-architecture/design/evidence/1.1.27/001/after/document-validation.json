@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-11-16T03:14:59.157761+00:00",
+  "meaning": "Current validation observation, not instruction issuance or acceptance",
+  "command": "python3 -B enterprise-architecture/design/evidence/1.1.27/001/after/verify-preparation.py",
+  "structuralOutcome": "PASS",
+  "errors": [],
+  "candidate": {
+    "item": "docs/backlog/calliope-oo-01-topic-models.md",
+    "id": "BL-CALLIOPE-OO-01",
+    "revision": "1",
+    "sha256": "47f83182b39de96824d475a883a858427647ff59a5e9b7ccc20c9d3a5bad21f4",
+    "baseHead": "dc30cfbcc7ad4113b29e3710904453c023df4dc1"
+  },
+  "requiredSections": [
+    "Overview",
+    "Context",
+    "Associated Requirements",
+    "Expected / Associated Activity",
+    "Expected Outcomes",
+    "Acceptance Criteria"
+  ],
+  "overviewSynopses": [
+    "High-Level Synopsis of Effort",
+    "High-Level Synopsis of Activities",
+    "High-Level Synopsis of Outcome",
+    "High-Level Synopsis of Acceptance Criteria"
+  ],
+  "acceptanceCriteria": 7,
+  "whitespaceCheck": {
+    "exitCode": 1,
+    "diagnostics": "",
+    "meaning": "git diff --no-index --check; exit 1 without diagnostics denotes new-file differences, not whitespace failure"
+  },
+  "checkerCorrection": "Initial local checker falsely classified that benign exit 1 as FAIL; corrected interpretation and reran. No source or whitespace defect was found.",
+  "maintainedAndFormalMarkdownFiles": 5,
+  "localLinksAndAnchorsChecked": 58,
+  "productionFilesUnchanged": 69,
+  "trackedChanges": [],
+  "newFiles": [
+    "docs/backlog/calliope-oo-01-topic-models.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/ai-agent-reports/20261116T031417Z-calliope-oo-backlog-preparation.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/architecture-tests.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/consumer-inventory.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/document-validation.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/duplicate-position-probe.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/engineering-assessment.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/iteration-evidence-check.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/topic-tests.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/verify-preparation.py",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/junie-phase1-review.source.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/source-state.json",
+    "enterprise-architecture/design/review/1.1.27/hcrl-1.1.27-001.pending.md"
+  ],
+  "architectureReleaseUnchanged": {
+    "version": "1.1.26",
+    "previous_version": "1.1.25"
+  },
+  "temporalProvenance": "UNRESOLVED; original Task/follow-up instruction-entry times and filename correspondence need SA treatment",
+  "limits": "Structure, local references and source/scope preservation; semantic adequacy requires SA review. No solution-wide software readiness claim."
+}

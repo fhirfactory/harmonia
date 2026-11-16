@@ -1,0 +1,372 @@
+{
+  "meaning": "Current input capture for this authoring task, not retrospective formalisation or acceptance of the earlier Junie activity",
+  "head": "dc30cfbcc7ad4113b29e3710904453c023df4dc1",
+  "branch": "Mneme-and-Mnemosyne-Build",
+  "architectureRelease": {
+    "version": "1.1.26",
+    "previous_version": "1.1.25"
+  },
+  "initialWorkingTree": "clean before task output creation",
+  "hcrlTargetAuthority": "User reply: 1.1.27; preparation carrier only; no release allocation",
+  "junieSource": {
+    "path": "/home/hunterm/.junie/sessions/session-261116-094435-19r6/transcript.md",
+    "session": "session-261116-094435-19r6",
+    "wholeSourceSha256": "95802d3d3f61c1b88be6194945d2f394a9da70d70b15feaa9243e2fc6c890e5d",
+    "excerptLines": [
+      1096,
+      1425
+    ],
+    "excerptPath": "before/junie-phase1-review.source.md",
+    "excerptSha256": "da2b7fed8fc3dba5f12dea7ba07677991ac9a34de875619fb67ae0dc2efda712",
+    "originalTaskIssuance": "UNRESOLVED in this capture; no historical event claim",
+    "originalReportProduction": "UNRESOLVED in this capture; no historical event claim",
+    "standing": "Unaccepted investigation input, checked independently"
+  },
+  "productionFiles": [
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/logging/DefaultPhiLogger.java",
+      "lines": 201,
+      "sha256": "fc70cd57a5c646b5d97990c11bee498d35bd0aa0f4bb9c9a75404b64cae5e91f"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/logging/PhiLogger.java",
+      "lines": 150,
+      "sha256": "849ba0e586b16140c317f5f85b1538b9ccc3cf815e11f3f7c4da1679082cdfe1"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/logging/PhiLoggerFactory.java",
+      "lines": 65,
+      "sha256": "13328eb48c36673114744a206f3b937e6c93c3ec83022e7078abfc947995af0a"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/logging/PhiLoggingConfig.java",
+      "lines": 128,
+      "sha256": "c09e52fb62d7e18280c57991840ee486acd8e51a725c9da93cfca1cf192745f2"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/alignment/AlignmentAssessment.java",
+      "lines": 57,
+      "sha256": "98674fad6f18cac8ea897eff3c1e0c00c381596a0a1b570040a3f3a00f851fb0"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/alignment/ResourceAlignmentPort.java",
+      "lines": 55,
+      "sha256": "751d997dfb141abc336c8a9634c1b02b761e564f3066a23235914f62bcc54c73"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/ContainerMetadata.java",
+      "lines": 606,
+      "sha256": "4059804a565378166758029020b42ffe918d06be10a4767b45bb241e389ffef9"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/Content.java",
+      "lines": 406,
+      "sha256": "06cf23cac7bc8df7942e5f818644ebee8920186a4f949ada965c39156644ec15"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/ContentMetadata.java",
+      "lines": 450,
+      "sha256": "38a72995691a55df3dd67f76d18dcad4b355ca0c2f1dba9f2b41c3130a8ffe5f"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationCoordinates.java",
+      "lines": 304,
+      "sha256": "21b6a2abd722b5329f5319e2bccc95d685623cb293b6d63505797f722ba4fbc8"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationItinerary.java",
+      "lines": 341,
+      "sha256": "a3b7b91da183964b6ff4d094232452c975bd53d0bde84aff9bd1dff91ae62121"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationMetadata.java",
+      "lines": 362,
+      "sha256": "44bfcac75cc05640b563fcc992fbe8fae954c90f76629662ce7571e7f5445354"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationRepresentation.java",
+      "lines": 448,
+      "sha256": "3f6f8935c24a6de22cd872c799566f9776f2da99d1dec1212387d0f720aa9061"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationSecurityContext.java",
+      "lines": 465,
+      "sha256": "d35e76a604a1eb702f582c1ff9734b78e486a952bddfab2a62cdeac4a3dd86ec"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnit.java",
+      "lines": 854,
+      "sha256": "6d4f76e0479d38514cbaf040f5a24c825a11359bbea13420710826e6b53ce70f"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnitIdentifier.java",
+      "lines": 291,
+      "sha256": "44887b98b4f5e056594e5309fb6b0b7bf0f6f8de4e114b9733e6499a6a940065"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnitMask.java",
+      "lines": 417,
+      "sha256": "e59f04dacb3f3586a404fb336a6dfe62f4842f6f979f6da52617dc852fa02457"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnitMetadata.java",
+      "lines": 317,
+      "sha256": "9107500bac8d72556bd45849681ed00d7ec9a408be30e4c03ad6e08a4af0d689"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnitRelationship.java",
+      "lines": 342,
+      "sha256": "acb0b0b3f7934363663d291ba25c6bad46957b65901cd84eb05f1460b7af122e"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/LifecycleContext.java",
+      "lines": 454,
+      "sha256": "5d733de92e34d999fcf5b1abd6ea4f3896c7c670867af024ab3492340854ac70"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/ManagementContext.java",
+      "lines": 381,
+      "sha256": "d17ece833c0e7b5eb8a8929b611f5d4455745158759ac642a064575dd7b07285"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/OperationalMetadata.java",
+      "lines": 647,
+      "sha256": "b6531ffbdc77be2e8a71b43d325cf8976e7032777df35faa11b19cfa9e536165"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/OperationalMetadataMask.java",
+      "lines": 311,
+      "sha256": "f760479da41d07412d19e2c996fdc1947422a6709d247ec67ddbefa066b94c6f"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/OperationalRevision.java",
+      "lines": 96,
+      "sha256": "0cadf640a09acb3e3b61f77796902526e7c4b26a430fbd5a5a48c0dd8b6bc701"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/ergon/ErgonEvent.java",
+      "lines": 247,
+      "sha256": "ea89b672f671265d5a201eb7b90303d63654119742a101a8e270ced51295f2f6"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/ergon/ErgonPayload.java",
+      "lines": 952,
+      "sha256": "1f09fc0e60d090055d07f2e2709e52d361e9e48da2c9874c055ef6c88c8d5928"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/ergon/ErgonReasonEnum.java",
+      "lines": 221,
+      "sha256": "76a95173232dc67c9e2a71bb9833d2c574c0d0854749125d7233a010318729d8"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/ActiveStateConflict.java",
+      "lines": 39,
+      "sha256": "452e38163c59530a9a39da6f88340faf8f35ab6ea335d6e05fae8679e1e2efda"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/ActiveStateConvergencePort.java",
+      "lines": 39,
+      "sha256": "34b065fd929b094c628be13f06c2ff29d24243e689980ef659182994467760d4"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/ActiveStateCoordinationResult.java",
+      "lines": 38,
+      "sha256": "883357dfc16a7c91224757cc81d90b2fdaaca2e21299aedccafc430ab0fdc920"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/ActiveStateCoordinator.java",
+      "lines": 45,
+      "sha256": "4023c51774ff9d899c30bb3b1b1d3ffed5714dbf6e537bac214810694e5ad7cb"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/ActiveStateToken.java",
+      "lines": 65,
+      "sha256": "dba11fc0cf0bd2777f8e20d83ab1a5e24fd486a19233cee6355f5cb51d0c8c9b"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/ActiveStateTokenBridge.java",
+      "lines": 43,
+      "sha256": "54df2fc7278ea5b548dcf1ecd2834675d8fa79f12a7c3b4acc9da5447411dcb0"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/AuthoritativeCommitOutcome.java",
+      "lines": 39,
+      "sha256": "72d82a92f76388d3e6170e23c24d787fd7e2ed8c4bf62c8a3a38bcefdc3bc19b"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/AuthoritativePreconditionConflict.java",
+      "lines": 78,
+      "sha256": "8c761528e1fd54a2e24ed12213b96a42205dcde182ef52b5f581a7eb7981623e"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/AuthoritativeVersion.java",
+      "lines": 61,
+      "sha256": "9ac043a610680a4a9e93dcc570dcbeed2db021d7a680dcb8d4645b1f1fdf9856"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/ConvergenceStatus.java",
+      "lines": 39,
+      "sha256": "0a53cff841621f5ded57903eb35730d2c81e37b038591a8c87cadddfe273aa15"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/ExpectedAuthoritativeVersion.java",
+      "lines": 86,
+      "sha256": "a83ef376ee5d3598d6b4bcfea854a05f1e028e507c17f04434a55a0d1999c591"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/GovernedAccess.java",
+      "lines": 28,
+      "sha256": "f999e33772fc01009a8e3fee68882bc741ea3c212e0298363ac257fd79e9a78d"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/GovernedBoundaryValidator.java",
+      "lines": 89,
+      "sha256": "de515c17d39973c21d1cda9ac8a12ef6257a6f92a32be0432a372dd71068cc3d"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/GovernedRead.java",
+      "lines": 54,
+      "sha256": "fa568506439c060e7667ee23334a4dc099e2f46f768c29f0adc71d0a206719dc"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/GovernedReader.java",
+      "lines": 41,
+      "sha256": "2fb47a2ebd7e718e53c23a5ea2c615690490f7846b64ccc3d4e552107ee9cabc"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/GovernedWriter.java",
+      "lines": 51,
+      "sha256": "185c6f3eaa8feee417585f0842e0fa2dafb64349a0745d0ce60e7be79202fa4b"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/PreconditionFailureReason.java",
+      "lines": 33,
+      "sha256": "6021f902e9343b9ee1afb4ff88771aa6a6c0c3c7d1e4eb2ad56c82cd6cc26d6f"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/ResourceKey.java",
+      "lines": 54,
+      "sha256": "3cc4374807aa9609870ea7db1ab69e3d08dbc2ddd6d1c7666671adf3051b2edf"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite/WriteResult.java",
+      "lines": 253,
+      "sha256": "0b2e3cc4d0f4ddd88433d7f73fce16e17dc431e1b577df8b066bdfa0a61f24d0"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/persistence/PersistenceOperationEnvelope.java",
+      "lines": 701,
+      "sha256": "ead541518fb501ef7e70cdeee3abd122415c91e8e809cda0b26a702f040419d0"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/persistence/PersistenceOperationType.java",
+      "lines": 27,
+      "sha256": "0e24e22bb6ce9bf648477b015e968a4c2edc3f8ca36b7a8d962ef399d5bb5ede"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/petasos/PetasosQueueDefinition.java",
+      "lines": 280,
+      "sha256": "4bb4256d41ecb444de53c209f70e06dcf05156df8b0b071a5556ef497f068b42"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/pragma/Pragma.java",
+      "lines": 874,
+      "sha256": "957baece28a360e0859eda0c8be86523df1c3467b2071c7c458d49e1aa9b75e1"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/pragma/PragmaCheckpoint.java",
+      "lines": 402,
+      "sha256": "0015d191a7a6bb90bdd8d47e04ef14a7534f024a5afca8ce77958f2ea5254fc4"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/pragma/PragmaFhirConverter.java",
+      "lines": 565,
+      "sha256": "32c6d6a0080a778e0de0ae2a3c61fd68be4918b465f1854a046d3b981c548164"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/pragma/PragmaStatus.java",
+      "lines": 171,
+      "sha256": "61b7a2825d307fe06477ee54bc331f930848822054ca9fd846513f352907be0c"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/pragma/ProviderRegistryChangePragma.java",
+      "lines": 215,
+      "sha256": "e2adf98dba5c37a319cdb4d7f07a2c28d7724fe2d07592bc295b5ad31707d1d4"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/praxis/PraxisDefinition.java",
+      "lines": 879,
+      "sha256": "f9ce5a4b9e01ecd7e1620ac70cf5b0b9c5b5f86d43c58f115ca4c09f5e895133"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/registry/ProviderRegistryConstants.java",
+      "lines": 92,
+      "sha256": "e1013d4a1065da388d2e03eccff43112da5a55572effcdbf2e83519b999a8f03"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/security/ErgonSecurityDefinition.java",
+      "lines": 174,
+      "sha256": "566131946de7b7eacf88621f3dd0ce8693e67567496fa3ff91d1aa8fb25f1630"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/security/FhirConfidentialityEnum.java",
+      "lines": 204,
+      "sha256": "e232330777ba7274e9119a07e1e54f82394ed8545e3f4333ae042a4fe554a02d"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/security/FhirSecurityTagManager.java",
+      "lines": 306,
+      "sha256": "7ccd84d30841f8ca704627d46cb0c5efda5f13ca40b491072673aee1261c0ca5"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/security/HarmoniaAuthorityEnum.java",
+      "lines": 77,
+      "sha256": "0391426ab6e45299c17a59a8cb2ab0ae3326b105164ac09a3a4368c23209d073"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/security/HarmoniaRoleEnum.java",
+      "lines": 123,
+      "sha256": "cb07cf89ef334a4ffb78fb7cc5df157744df04fbcbb6b3b9c3ca44440b6700de"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/security/HarmoniaSecurityCodeSystem.java",
+      "lines": 32,
+      "sha256": "0f83ff299b2192f2c0b7bfd995a09f17fcf90372fce35e9551aa81ed9597c240"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/security/HarmoniaSecurityLabelEnum.java",
+      "lines": 90,
+      "sha256": "d58b43f2a98b7ca80ad5183029ee0000aeb3f20d2357706b1e88c30205d19bfd"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/status/ModuleStatus.java",
+      "lines": 264,
+      "sha256": "acb49b9879f986c7181540e8e2bc0058e77f52b8a3e4464e4ecdf70e5f92765a"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/topic/MaskType.java",
+      "lines": 40,
+      "sha256": "60b1a3d3d870edaf030769eacdebe0c8973a2eda405993d423808177b281e8a1"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/topic/Topic.java",
+      "lines": 736,
+      "sha256": "97b81c783d7da3dec1fcc1f33c6fd12362a2353d3b01531b4d3905a92a299833"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/topic/TopicMask.java",
+      "lines": 672,
+      "sha256": "adbc1dbbebb81a4376db59347fb61540e8331fa628a2f30b3eba6eb87dc96de8"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/topic/TopicMaskType.java",
+      "lines": 41,
+      "sha256": "52e9a68b5dad1c4fe587d88617ad3250d6390883c41b2e554ca5fdb1af30f72e"
+    },
+    {
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/topic/TopicSubscription.java",
+      "lines": 417,
+      "sha256": "c79830429de5cee80b67e63b1d868b76d4d4f912bf0261ac25e10e4f10490b03"
+    }
+  ]
+}

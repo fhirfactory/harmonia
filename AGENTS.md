@@ -1088,3 +1088,27 @@ Implementation reports MUST address:
 These requirements supplement the Architecture
 Continuum and existing governance obligations.
 They do not authorise architectural changes.
+
+## Backlog Item Preparation
+
+Preparation or maintenance of a Backlog Item under docs/backlog/ is a work-planning activity, not inherently an Architecture Continuum change or software implementation activity.
+
+All AI agents, including Codex, Junie and Claude, SHALL follow the Backlog Item preparation instructions in docs/AGENTS.md and the accepted structure in docs/backlog/backlog-item-template.md.
+
+When specifically assigned to prepare a Backlog Item, agents SHALL:
+
+* Use the requested objective, relevant accepted Architecture Continuum elements, existing codebase and available engineering evidence.
+
+* Exercise independent engineering judgement and conduct only proportionate investigation.
+
+* Produce a bounded Backlog Item containing expected activities, outcomes and verifiable acceptance criteria.
+
+* Identify architectural discrepancies as observations or dependencies without independently initiating architectural resolution.
+
+Backlog Item preparation alone SHALL NOT trigger Architecture Review Praxis, Software Development Praxis execution procedures, ADD, HCRL, formal AI-agent Task/Report provenance, release allocation or publication.
+
+These exclusions apply only to ordinary Backlog Item preparation. They do not override an explicit assignment or binding repository governance. If existing mandatory governance conflicts with this instruction, report the conflict rather than silently bypassing it.
+
+Agents SHALL NOT initiate implementation, modify production code, commit or push unless separately authorised.
+
+Subsequent software implementation and architectural modifications remain subject to their applicable governance.

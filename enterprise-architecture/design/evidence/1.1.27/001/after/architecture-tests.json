@@ -1,0 +1,41 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "240s",
+    "mvn",
+    "-o",
+    "test",
+    "-pl",
+    "paradeigma/paradeigma-test",
+    "-am",
+    "-Dtest=*ArchitectureTest",
+    "-Dsurefire.failIfNoSpecifiedTests=false"
+  ],
+  "scope": "Repository-mandated ArchUnit suite; not solution-wide software readiness",
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "java": "openjdk version \"21.0.13.0.3\" 2026-10-24\nOpenJDK Runtime Environment (build 21.0.13.0.3+1-1-24.04.1-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.13.0.3+1-1-24.04.1-Ubuntu, mixed mode, sharing)",
+    "mavenMode": "offline"
+  },
+  "source": "dc30cfbcc7ad4113b29e3710904453c023df4dc1; only new backlog/review evidence may differ",
+  "exitCode": 0,
+  "outcome": "PASS",
+  "elapsedSeconds": 19.587,
+  "results": [
+    "[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.015 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.ParadeigmaIsolationArchitectureTest",
+    "[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.114 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.PetasosApiIsolationArchitectureTest",
+    "[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.291 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.PackageLayeringArchitectureTest",
+    "[INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.121 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.SecurityEnforcementArchitectureTest",
+    "[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.084 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteCompositionArchitectureTest",
+    "[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.479 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.MnemosyneAuthoritativePersistenceArchitectureTest",
+    "[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.011 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.AgoraIsolationArchitectureTest",
+    "[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.ProviderRegistryArchitectureTest",
+    "[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.189 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.IrisDecouplingArchitectureTest",
+    "[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.976 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.PylaiPublicationBoundaryArchitectureTest",
+    "[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.391 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteContractArchitectureTest",
+    "[INFO] Tests run: 90, Failures: 0, Errors: 0, Skipped: 0",
+    "[INFO] BUILD SUCCESS"
+  ]
+}

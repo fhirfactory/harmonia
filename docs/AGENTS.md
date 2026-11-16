@@ -80,3 +80,29 @@ For architecture-completion tasks, also follow the
 [Architecture Completion Plan](markdown/architecture-completion-plan.md),
 including its context-loading guidance and completion gates. This scoped file
 adds no architectural rules or exceptions and does not duplicate the root policy.
+
+## Backlog Item Preparation — AI Agent Operating Rules
+
+Preparing or updating a Backlog Item under docs/backlog/ is a work-planning activity, not inherently a software implementation or Architecture Continuum modification.
+
+Agents SHALL:
+
+1. Use the accepted Backlog Item template and structure.
+
+2. Base the item on the requested objective, relevant Architecture Continuum elements, existing code and available engineering evidence.
+
+3. Exercise independent engineering judgement to establish coherent scope, expected activities, outcomes and verifiable acceptance criteria.
+
+4. Perform investigation proportionate to the work item being prepared.
+
+5. Identify architectural discrepancies as observations or dependencies without independently initiating architectural changes.
+
+6. Present the resulting Backlog Item for review.
+
+Backlog Item preparation SHALL NOT, by itself, initiate ADD, HCRL, release allocation, architecture publication or software implementation acceptance procedures.
+
+Formal AI-agent Task/Report provenance SHALL NOT be created solely because an agent is drafting a Backlog Item, unless required by applicable authoritative governance or expressly requested.
+
+Agents SHALL NOT modify implementation code, commit, push or commence downstream implementation unless separately authorised.
+
+These provisions do not exempt subsequent architectural changes or software implementation from their applicable governance.
