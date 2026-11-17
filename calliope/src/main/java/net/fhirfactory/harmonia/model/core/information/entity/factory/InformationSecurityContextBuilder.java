@@ -163,10 +163,8 @@ public final class InformationSecurityContextBuilder {
 
     /** Builds an immutable security context. */
     public InformationSecurityContext build() {
-        Set<Object> actions = new LinkedHashSet<>(actionMasks);
-        actions.addAll(actionTopicMasks);
-        return new InformationSecurityContext(unitCriteria, containerCriteria, contentCriteria, actions,
-                compartmentMasks, securityLabels, confidentiality, attributes);
+        return new InformationSecurityContext(unitCriteria, containerCriteria, contentCriteria, actionMasks,
+                actionTopicMasks, compartmentMasks, securityLabels, confidentiality, attributes);
     }
 
     private static <T> void addIfPresent(Set<T> target, T value) {

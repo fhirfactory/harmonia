@@ -22,8 +22,10 @@ import ca.uhn.fhir.parser.IParser;
 import net.fhirfactory.harmonia.hapifhir.model.FhirResourceEntity;
 import net.fhirfactory.harmonia.hapifhir.repository.FhirResourceRepository;
 import net.fhirfactory.harmonia.hapifhir.service.FhirStorageService;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaRoleEnum;
 import net.fhirfactory.harmonia.paradeigma.common.generator.SyntheticProviderRegistryGenerator;
 import net.fhirfactory.harmonia.paradeigma.common.generator.SyntheticProviderRegistryGenerator.ProviderRegistryGraph;
+import net.fhirfactory.harmonia.paradeigma.test.security.TrustedServletRequests;
 import net.fhirfactory.harmonia.pylai.fhir.controller.FhirRestGatewayController;
 import net.fhirfactory.harmonia.pylai.fhir.provider.CapabilityStatementProvider;
 import net.fhirfactory.harmonia.pylai.fhir.security.FhirSecurityInterceptor;
@@ -112,7 +114,7 @@ class ProviderRegistrySearchIntegrationTest {
         ResponseEntity<String> prResp = gatewayController.searchResources(
                 "Practitioner",
                 Map.of("name", "Bowman", "identifier", "8003610000000050"),
-                null
+                TrustedServletRequests.forPrincipal("user:provider-reader", java.util.Set.of(HarmoniaRoleEnum.PRV_RDR))
         );
         assertThat(prResp.getStatusCode().value()).isEqualTo(200);
         Bundle prBundle = parser.parseResource(Bundle.class, prResp.getBody());
@@ -122,7 +124,7 @@ class ProviderRegistrySearchIntegrationTest {
         ResponseEntity<String> orgResp = gatewayController.searchResources(
                 "Organization",
                 Map.of("name", "Vincent", "active", "true"),
-                null
+                TrustedServletRequests.forPrincipal("user:provider-reader", java.util.Set.of(HarmoniaRoleEnum.PRV_RDR))
         );
         assertThat(orgResp.getStatusCode().value()).isEqualTo(200);
         Bundle orgBundle = parser.parseResource(Bundle.class, orgResp.getBody());
@@ -132,7 +134,7 @@ class ProviderRegistrySearchIntegrationTest {
         ResponseEntity<String> locResp = gatewayController.searchResources(
                 "Location",
                 Map.of("status", "active", "organization", graph.getOrganization().getIdPart()),
-                null
+                TrustedServletRequests.forPrincipal("user:provider-reader", java.util.Set.of(HarmoniaRoleEnum.PRV_RDR))
         );
         assertThat(locResp.getStatusCode().value()).isEqualTo(200);
         Bundle locBundle = parser.parseResource(Bundle.class, locResp.getBody());
@@ -142,7 +144,7 @@ class ProviderRegistrySearchIntegrationTest {
         ResponseEntity<String> svcResp = gatewayController.searchResources(
                 "HealthcareService",
                 Map.of("location", graph.getLocation().getIdPart(), "active", "true"),
-                null
+                TrustedServletRequests.forPrincipal("user:provider-reader", java.util.Set.of(HarmoniaRoleEnum.PRV_RDR))
         );
         assertThat(svcResp.getStatusCode().value()).isEqualTo(200);
         Bundle svcBundle = parser.parseResource(Bundle.class, svcResp.getBody());
@@ -152,7 +154,7 @@ class ProviderRegistrySearchIntegrationTest {
         ResponseEntity<String> epResp = gatewayController.searchResources(
                 "Endpoint",
                 Map.of("connection-type", "hl7-fhir-rest", "status", "active"),
-                null
+                TrustedServletRequests.forPrincipal("user:provider-reader", java.util.Set.of(HarmoniaRoleEnum.PRV_RDR))
         );
         assertThat(epResp.getStatusCode().value()).isEqualTo(200);
         Bundle epBundle = parser.parseResource(Bundle.class, epResp.getBody());
@@ -167,7 +169,7 @@ class ProviderRegistrySearchIntegrationTest {
                         "location", graph.getLocation().getIdPart(),
                         "service", graph.getHealthcareService().getIdPart()
                 ),
-                null
+                TrustedServletRequests.forPrincipal("user:provider-reader", java.util.Set.of(HarmoniaRoleEnum.PRV_RDR))
         );
         assertThat(roleResp.getStatusCode().value()).isEqualTo(200);
         Bundle roleBundle = parser.parseResource(Bundle.class, roleResp.getBody());
@@ -177,7 +179,7 @@ class ProviderRegistrySearchIntegrationTest {
         ResponseEntity<String> grpResp = gatewayController.searchResources(
                 "Group",
                 Map.of("name", "Cardiovascular", "type", "practitioner"),
-                null
+                TrustedServletRequests.forPrincipal("user:provider-reader", java.util.Set.of(HarmoniaRoleEnum.PRV_RDR))
         );
         assertThat(grpResp.getStatusCode().value()).isEqualTo(200);
         Bundle grpBundle = parser.parseResource(Bundle.class, grpResp.getBody());

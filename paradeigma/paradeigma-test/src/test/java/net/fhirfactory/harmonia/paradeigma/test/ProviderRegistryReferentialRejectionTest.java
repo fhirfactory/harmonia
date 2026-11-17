@@ -28,6 +28,8 @@ import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
 import net.fhirfactory.harmonia.model.core.domain.fhir.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import net.fhirfactory.harmonia.model.core.domain.fhir.valuesets.ProviderRegistryConstants;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaRoleEnum;
+import net.fhirfactory.harmonia.paradeigma.test.security.TrustedServletRequests;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.pylai.fhir.controller.FhirRestGatewayController;
 import net.fhirfactory.harmonia.pylai.fhir.provider.CapabilityStatementProvider;
@@ -130,7 +132,8 @@ class ProviderRegistryReferentialRejectionTest {
         String json = parser.encodeResourceToString(role);
 
         // 1. Submit POST request -> 202 Accepted
-        ResponseEntity<String> response = gatewayController.createResource("PractitionerRole", json, "corr-rej-1", "pas", "admin", null);
+        ResponseEntity<String> response = gatewayController.createResource("PractitionerRole", json, "corr-rej-1", "pas", "admin",
+                TrustedServletRequests.forPrincipal("user:provider-admin", java.util.Set.of(HarmoniaRoleEnum.PRV_ADM)));
         assertThat(response.getStatusCode().value()).isEqualTo(202);
 
         String location = response.getHeaders().getLocation().toString();
@@ -148,7 +151,8 @@ class ProviderRegistryReferentialRejectionTest {
         assertThat(pragma.getOutput()).isNotEmpty();
 
         // 4. Verify polling GET /Task/{id} yields rejected Task with OperationOutcome diagnostic details
-        ResponseEntity<String> taskResp = gatewayController.getTaskStatus(pragmaId, null);
+        ResponseEntity<String> taskResp = gatewayController.getTaskStatus(pragmaId,
+                TrustedServletRequests.forPrincipal("user:provider-admin", java.util.Set.of(HarmoniaRoleEnum.PRV_ADM)));
         assertThat(taskResp.getStatusCode().value()).isEqualTo(200);
 
         Task fhirTask = parser.parseResource(Task.class, taskResp.getBody());

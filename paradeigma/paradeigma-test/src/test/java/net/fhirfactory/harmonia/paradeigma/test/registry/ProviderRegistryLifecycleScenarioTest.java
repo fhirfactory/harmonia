@@ -27,6 +27,7 @@ import net.fhirfactory.harmonia.hapifhir.service.FhirStorageService;
 import net.fhirfactory.harmonia.hapifhir.service.ProviderRegistryReferenceValidator;
 import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
 import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaRoleEnum;
 import net.fhirfactory.harmonia.paradeigma.common.generator.PractitionerGenerator;
 import net.fhirfactory.harmonia.paradeigma.common.generator.SyntheticProviderRegistryGenerator;
 import net.fhirfactory.harmonia.paradeigma.common.security.ParadeigmaSecurityActors;
@@ -36,6 +37,7 @@ import net.fhirfactory.harmonia.pylai.fhir.controller.FhirRestGatewayController;
 import net.fhirfactory.harmonia.pylai.fhir.provider.CapabilityStatementProvider;
 import net.fhirfactory.harmonia.pylai.fhir.security.FhirSecurityInterceptor;
 import net.fhirfactory.harmonia.pylai.fhir.service.ChangeRequestSubmissionService;
+import net.fhirfactory.harmonia.paradeigma.test.security.TrustedServletRequests;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -51,6 +53,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -156,7 +159,7 @@ public class ProviderRegistryLifecycleScenarioTest {
                 "corr-create-101",
                 "pas",
                 "steward",
-                null
+                TrustedServletRequests.forPrincipal("user:provider-steward", Set.of(HarmoniaRoleEnum.PRV_ADM))
         );
 
         assertThat(postResp.getStatusCode().value()).isEqualTo(202);
@@ -177,7 +180,8 @@ public class ProviderRegistryLifecycleScenarioTest {
         assertThat(savedPract).isPresent();
         String savedId = savedPract.get().getFhirId();
 
-        ResponseEntity<String> getResp = gatewayController.readResource("Practitioner", savedId, null);
+        ResponseEntity<String> getResp = gatewayController.readResource("Practitioner", savedId,
+                TrustedServletRequests.forPrincipal("user:provider-steward", Set.of(HarmoniaRoleEnum.PRV_ADM)));
         assertThat(getResp.getStatusCode().value()).isEqualTo(200);
         Practitioner fetched = parser.parseResource(Practitioner.class, getResp.getBody());
         assertThat(fetched.getNameFirstRep().getFamily()).isEqualTo(practitioner.getNameFirstRep().getFamily());
@@ -202,7 +206,7 @@ public class ProviderRegistryLifecycleScenarioTest {
                 "corr-upd-102",
                 "pas",
                 "steward",
-                null
+                TrustedServletRequests.forPrincipal("user:provider-steward", Set.of(HarmoniaRoleEnum.PRV_ADM))
         );
 
         assertThat(putResp.getStatusCode().value()).isEqualTo(202);
@@ -215,7 +219,8 @@ public class ProviderRegistryLifecycleScenarioTest {
         assertThat(pragma.getStatus()).isEqualTo(PragmaStatus.COMPLETED);
 
         // Verify version incremented
-        ResponseEntity<String> getResp = gatewayController.readResource("Practitioner", "pract-update-102", null);
+        ResponseEntity<String> getResp = gatewayController.readResource("Practitioner", "pract-update-102",
+                TrustedServletRequests.forPrincipal("user:provider-steward", Set.of(HarmoniaRoleEnum.PRV_ADM)));
         assertThat(getResp.getStatusCode().value()).isEqualTo(200);
         assertThat(getResp.getHeaders().getETag()).isEqualTo("W/\"2\"");
     }
@@ -238,7 +243,7 @@ public class ProviderRegistryLifecycleScenarioTest {
                 "corr-stale-103",
                 "pas",
                 "steward",
-                null
+                TrustedServletRequests.forPrincipal("user:provider-steward", Set.of(HarmoniaRoleEnum.PRV_ADM))
         );
 
         assertThat(putResp.getStatusCode().value()).isEqualTo(202);
@@ -265,7 +270,7 @@ public class ProviderRegistryLifecycleScenarioTest {
                 "corr-ref-rej",
                 "pas",
                 "steward",
-                null
+                TrustedServletRequests.forPrincipal("user:provider-steward", Set.of(HarmoniaRoleEnum.PRV_ADM))
         );
 
         assertThat(resp.getStatusCode().value()).isEqualTo(202);

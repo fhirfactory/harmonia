@@ -26,7 +26,9 @@ import net.fhirfactory.harmonia.hapifhir.service.FhirStorageService;
 import net.fhirfactory.harmonia.hapifhir.service.ProviderRegistryReferenceValidator;
 import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
 import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaRoleEnum;
 import net.fhirfactory.harmonia.paradeigma.common.generator.PractitionerGenerator;
+import net.fhirfactory.harmonia.paradeigma.test.security.TrustedServletRequests;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.pylai.fhir.controller.FhirRestGatewayController;
 import net.fhirfactory.harmonia.pylai.fhir.provider.CapabilityStatementProvider;
@@ -124,7 +126,7 @@ public class ProviderRegistryFailureSeamTest {
                 "corr-fail-101",
                 "pas",
                 "steward",
-                null
+                TrustedServletRequests.forPrincipal("user:provider-steward", java.util.Set.of(HarmoniaRoleEnum.PRV_ADM))
         );
 
         assertThat(postResp.getStatusCode().value()).isEqualTo(202);

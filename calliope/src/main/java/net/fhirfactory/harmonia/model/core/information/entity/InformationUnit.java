@@ -117,31 +117,37 @@ public final class InformationUnit implements Serializable {
     // Core Accessors
     // =========================================================================
 
+    /** Returns the stable IU identifier and its canonical Topic representation. */
     @JsonProperty("identifier")
     public InformationUnitIdentifier identifier() {
         return identifier;
     }
 
+    /** Returns the authoritative persisted version, when assigned by Mnemosyne. */
     @JsonProperty("version")
     public String version() {
         return version;
     }
 
+    /** Returns governed information metadata, excluding operational working context. */
     @JsonProperty("metadata")
     public InformationMetadata metadata() {
         return metadata;
     }
 
+    /** Returns the operational/cache context, or an empty context when none is embedded. */
     @JsonIgnore
     public ManagementContext managementContext() {
         return managementContext != null ? managementContext : ManagementContext.empty();
     }
 
+    /** Returns the nullable management-context value for JSON and JavaBean serialization. */
     @JsonProperty("managementContext")
     public ManagementContext getManagementContext() {
         return managementContext;
     }
 
+    /** Returns the single governed representation of this IU. */
     @JsonProperty("representation")
     public InformationRepresentation representation() {
         return representation;
@@ -213,6 +219,7 @@ public final class InformationUnit implements Serializable {
     // Standard Object Methods
     // =========================================================================
 
+    /** Compares the complete logical IU state, including its optional operational view. */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -225,11 +232,13 @@ public final class InformationUnit implements Serializable {
                 Objects.equals(representation, that.representation);
     }
 
+    /** Hashes the same identity and value constituents used by {@link #equals(Object)}. */
     @Override
     public int hashCode() {
         return Objects.hash(identifier, version, metadata, managementContext, representation);
     }
 
+    /** Returns an identifier-only summary without exposing metadata or represented content. */
     @Override
     public String toString() {
         return "InformationUnit{" +

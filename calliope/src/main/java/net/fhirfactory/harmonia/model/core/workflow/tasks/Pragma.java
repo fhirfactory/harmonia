@@ -298,57 +298,6 @@ public class Pragma implements Serializable {
         return Optional.of(checkpoints.get(checkpoints.size() - 1));
     }
 
-    /**
-     * Finds the first input payload matching the given container and content topics.
-     *
-     * @param container container topic (optional)
-     * @param content   content topic (optional)
-     * @return optional matching ErgonPayload
-     */
-    public Optional<ErgonPayload> findInput(Topic container, Topic content) {
-        return input.stream()
-                .filter(p -> (container == null || Objects.equals(p.getPayloadContainer(), container)))
-                .filter(p -> (content == null || Objects.equals(p.getPayloadContent(), content)))
-                .findFirst();
-    }
-
-    /**
-     * Finds the first output payload matching the given container and content topics.
-     *
-     * @param container container topic (optional)
-     * @param content   content topic (optional)
-     * @return optional matching ErgonPayload
-     */
-    public Optional<ErgonPayload> findOutput(Topic container, Topic content) {
-        return output.stream()
-                .filter(p -> (container == null || Objects.equals(p.getPayloadContainer(), container)))
-                .filter(p -> (content == null || Objects.equals(p.getPayloadContent(), content)))
-                .findFirst();
-    }
-
-    /**
-     * Finds an input payload by sequential order index.
-     *
-     * @param order 0-based order
-     * @return optional ErgonPayload
-     */
-    public Optional<ErgonPayload> findInputByOrder(int order) {
-        return input.stream()
-                .filter(p -> p.getPayloadOrder() != null && p.getPayloadOrder() == order)
-                .findFirst();
-    }
-
-    /**
-     * Finds an output payload by sequential order index.
-     *
-     * @param order 0-based order
-     * @return optional ErgonPayload
-     */
-    public Optional<ErgonPayload> findOutputByOrder(int order) {
-        return output.stream()
-                .filter(p -> p.getPayloadOrder() != null && p.getPayloadOrder() == order)
-                .findFirst();
-    }
 
     /**
      * Updates the {@link #lastModified} timestamp to current time.
@@ -361,85 +310,132 @@ public class Pragma implements Serializable {
     // Getters and Setters
     // =========================================================================
 
+    /** Returns this task instance's identifier. */
     public String getPragmaId() { return pragmaId; }
+    /** Sets this task instance's identifier. */
     public void setPragmaId(String pragmaId) { this.pragmaId = pragmaId; }
 
+    /** Returns the workflow correlation identifier. */
     public String getCorrelationId() { return correlationId; }
+    /** Sets the workflow correlation identifier. */
     public void setCorrelationId(String correlationId) { this.correlationId = correlationId; }
 
+    /** Returns the causal predecessor identifier. */
     public String getCausationId() { return causationId; }
+    /** Sets the causal predecessor identifier. */
     public void setCausationId(String causationId) { this.causationId = causationId; }
 
+    /** Returns the Praxis definition responsible for this task. */
     public String getPraxisId() { return praxisId; }
+    /** Sets the Praxis definition responsible for this task. */
     public void setPraxisId(String praxisId) { this.praxisId = praxisId; }
 
+    /** Returns the current governed task status. */
     public PragmaStatus getStatus() { return status; }
+    /** Replaces status, defaulting null to DRAFT, and records the modification time. */
     public void setStatus(PragmaStatus status) { this.status = status != null ? status : PragmaStatus.DRAFT; touch(); }
 
+    /** Returns the task priority value. */
     public Integer getPriority() { return priority; }
+    /** Sets the task priority value. */
     public void setPriority(Integer priority) { this.priority = priority; }
 
+    /** Returns the source-system priority code. */
     public String getPriorityCode() { return priorityCode; }
+    /** Sets the source-system priority code. */
     public void setPriorityCode(String priorityCode) { this.priorityCode = priorityCode; }
 
+    /** Returns a defensive copy of the authored timestamp. */
     public Date getAuthoredOn() { return authoredOn != null ? new Date(authoredOn.getTime()) : null; }
+    /** Stores a defensive copy of the authored timestamp. */
     public void setAuthoredOn(Date authoredOn) { this.authoredOn = authoredOn != null ? new Date(authoredOn.getTime()) : null; }
 
+    /** Returns a defensive copy of the last-modified timestamp. */
     public Date getLastModified() { return lastModified != null ? new Date(lastModified.getTime()) : null; }
+    /** Stores a defensive copy of the last-modified timestamp. */
     public void setLastModified(Date lastModified) { this.lastModified = lastModified != null ? new Date(lastModified.getTime()) : null; }
 
+    /** Returns the source identifier or display value. */
     public String getSource() { return source; }
+    /** Sets the source identifier or display value. */
     public void setSource(String source) { this.source = source; }
 
+    /** Returns the destination identifier or display value. */
     public String getDestination() { return destination; }
+    /** Sets the destination identifier or display value. */
     public void setDestination(String destination) { this.destination = destination; }
 
+    /** Returns the mutable FHIR interchange input list. */
     public List<ErgonPayload> getInput() { return input; }
+    /** Replaces input payloads with defensive copies and advances last-modified time. */
     public void setInput(List<ErgonPayload> input) { this.input = input != null ? new ArrayList<>(input) : new ArrayList<>(); touch(); }
 
+    /** Returns the mutable FHIR interchange output list. */
     public List<ErgonPayload> getOutput() { return output; }
+    /** Replaces output payloads with defensive copies and advances last-modified time. */
     public void setOutput(List<ErgonPayload> output) { this.output = output != null ? new ArrayList<>(output) : new ArrayList<>(); touch(); }
 
+    /** Returns execution checkpoints in recorded order. */
     public List<PragmaCheckpoint> getCheckpoints() { return checkpoints; }
+    /** Replaces checkpoints with defensive copies and advances last-modified time. */
     public void setCheckpoints(List<PragmaCheckpoint> checkpoints) { this.checkpoints = checkpoints != null ? new ArrayList<>(checkpoints) : new ArrayList<>(); touch(); }
 
+    /** Returns task metadata. */
     public Map<String, String> getMetadata() { return metadata; }
+    /** Replaces task metadata with a defensive copy. */
     public void setMetadata(Map<String, String> metadata) { this.metadata = metadata != null ? new LinkedHashMap<>(metadata) : new LinkedHashMap<>(); }
+    /** Adds one metadata value when the key is non-null. */
     public Pragma addMetadata(String key, String value) { if (key != null) { this.metadata.put(key, value); } return this; }
 
+    /** Returns the originating security principal. */
     public ThemisPrincipal getOriginatingPrincipal() { return originatingPrincipal; }
+    /** Sets the originating principal and advances last-modified time. */
     public void setOriginatingPrincipal(ThemisPrincipal originatingPrincipal) { this.originatingPrincipal = originatingPrincipal; touch(); }
 
+    /** Returns the explicitly assigned executing principal. */
     public ThemisPrincipal getExecutingPrincipal() { return executingPrincipal; }
+    /** Sets the executing principal and advances last-modified time. */
     public void setExecutingPrincipal(ThemisPrincipal executingPrincipal) { this.executingPrincipal = executingPrincipal; touch(); }
 
+    /** Resolves the originating principal from the explicit field or retained security context. */
     public ThemisPrincipal getInitiatingPrincipal() {
         if (originatingPrincipal != null) return originatingPrincipal;
         if (originatingSecurityContext != null) return originatingSecurityContext.originatingPrincipal();
         return null;
     }
 
+    /** Resolves the executing principal from the explicit field or retained security context. */
     public ThemisPrincipal getEffectiveExecutingPrincipal() {
         if (executingPrincipal != null) return executingPrincipal;
         if (originatingSecurityContext != null) return originatingSecurityContext.executingPrincipal();
         return null;
     }
 
+    /** Resolves the effective Themis security context through the established resolver. */
     public ThemisSecurityContext resolveSecurityContext() {
         return PragmaSecurityContextResolver.resolveSecurityContext(this);
     }
 
+    /** Returns an immutable snapshot of originating authorities. */
     public Set<ThemisAuthority> getOriginatingAuthorities() { return Collections.unmodifiableSet(originatingAuthorities); }
+    /** Replaces originating authorities with a defensive copy and advances last-modified time. */
     public void setOriginatingAuthorities(Set<ThemisAuthority> originatingAuthorities) { this.originatingAuthorities = originatingAuthorities != null ? new HashSet<>(originatingAuthorities) : new HashSet<>(); touch(); }
+    /** Adds one non-null originating authority and advances last-modified time. */
     public Pragma addOriginatingAuthority(ThemisAuthority authority) { if (authority != null) { this.originatingAuthorities.add(authority); touch(); } return this; }
+    /** Adds an authority from its code when non-blank. */
     public Pragma addOriginatingAuthority(String authorityCode) { if (authorityCode != null && !authorityCode.isBlank()) { this.originatingAuthorities.add(ThemisAuthority.of(authorityCode)); touch(); } return this; }
 
+    /** Returns the retained originating security context. */
     public ThemisSecurityContext getOriginatingSecurityContext() { return originatingSecurityContext; }
+    /** Sets the retained originating security context and advances last-modified time. */
     public void setOriginatingSecurityContext(ThemisSecurityContext originatingSecurityContext) { this.originatingSecurityContext = originatingSecurityContext; touch(); }
 
+    /** Returns the policy version used to authorize this task. */
     public String getPolicyVersion() { return policyVersion; }
+    /** Sets the policy version and advances last-modified time. */
     public void setPolicyVersion(String policyVersion) { this.policyVersion = policyVersion; touch(); }
 
+    /** Compares Pragma instances by their task identity. */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -448,11 +444,13 @@ public class Pragma implements Serializable {
         return Objects.equals(pragmaId, pragma.pragmaId);
     }
 
+    /** Hashes the task identity used by {@link #equals(Object)}. */
     @Override
     public int hashCode() {
         return Objects.hash(pragmaId);
     }
 
+    /** Returns task identity, status, and payload/checkpoint counts without emitting payload values. */
     @Override
     public String toString() {
         return "Pragma{" +

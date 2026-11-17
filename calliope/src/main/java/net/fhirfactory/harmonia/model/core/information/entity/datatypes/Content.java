@@ -173,6 +173,7 @@ public final class Content implements Serializable {
     // Accessors and Inspection
     // =========================================================================
 
+    /** Returns the in-memory mode without converting the payload. */
     public ContentMode mode() {
         return mode;
     }
@@ -192,26 +193,31 @@ public final class Content implements Serializable {
     }
 
 
+    /** Indicates whether this Content has no represented payload. */
     @JsonIgnore
     public boolean isEmpty() {
         return mode == ContentMode.EMPTY;
     }
 
+    /** Indicates whether the canonical payload is textual. */
     @JsonIgnore
     public boolean isText() {
         return mode == ContentMode.TEXT;
     }
 
+    /** Indicates whether the canonical payload is binary. */
     @JsonIgnore
     public boolean isBinary() {
         return mode == ContentMode.BINARY;
     }
 
+    /** Indicates whether the canonical payload is represented by reference. */
     @JsonIgnore
     public boolean isReference() {
         return mode == ContentMode.REFERENCE;
     }
 
+    /** Indicates whether the payload is available only as an in-memory Java manifestation. */
     @JsonIgnore
     public boolean isWorking() {
         return mode == ContentMode.WORKING;
@@ -232,6 +238,7 @@ public final class Content implements Serializable {
         return Optional.empty();
     }
 
+    /** Returns the canonical text field for JSON serialization. */
     @JsonProperty("textContent")
     public String getTextContent() {
         return textContent;
@@ -253,6 +260,7 @@ public final class Content implements Serializable {
         return Optional.empty();
     }
 
+    /** Returns a defensive copy of the canonical binary field for JSON serialization. */
     @JsonProperty("binaryContent")
     public byte[] getBinaryContent() {
         return binaryContent != null ? Arrays.copyOf(binaryContent, binaryContent.length) : null;
@@ -268,6 +276,7 @@ public final class Content implements Serializable {
         return Optional.ofNullable(reference);
     }
 
+    /** Returns the opaque reference for JSON serialization. */
     @JsonProperty("reference")
     public String getReference() {
         return reference;
@@ -333,6 +342,7 @@ public final class Content implements Serializable {
     // Identity, Equality, and Safe Diagnostic Logging
     // =========================================================================
 
+    /** Compares mode and payload values, including binary-array contents. */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -345,6 +355,7 @@ public final class Content implements Serializable {
         return Objects.equals(workingManifestation, that.workingManifestation);
     }
 
+    /** Hashes the mode and payload values consistently with {@link #equals(Object)}. */
     @Override
     public int hashCode() {
         int result = Objects.hash(mode, textContent, reference, workingManifestation);

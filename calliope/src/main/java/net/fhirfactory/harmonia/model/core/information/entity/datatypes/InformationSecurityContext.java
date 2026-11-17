@@ -73,7 +73,7 @@ public final class InformationSecurityContext implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private static final InformationSecurityContext EMPTY = new InformationSecurityContext(
-            Set.of(), Set.of(), Set.of(), Set.of(), Set.of(), Set.of(), null, Map.of());
+            Set.of(), Set.of(), Set.of(), Set.of(), Set.of(), Set.of(), Set.of(), null, Map.of());
 
     private final Set<Topic> unitCriteria;
     private final Set<Topic> containerCriteria;
@@ -91,7 +91,8 @@ public final class InformationSecurityContext implements Serializable {
      * @param unitCriteria      unit-level Topic criteria (optional)
      * @param containerCriteria container-level Topic criteria (optional)
      * @param contentCriteria   content-level Topic criteria (optional)
-     * @param actionMasks       required action names/masks (optional)
+     * @param actionMasks       required action names (optional)
+     * @param actionTopicMasks  typed action TopicMasks (optional)
      * @param compartmentMasks  required compartment TopicMasks (optional)
      * @param securityLabels    governed security labels (optional)
      * @param confidentiality   FHIR/Harmonia confidentiality rating (optional)
@@ -102,7 +103,8 @@ public final class InformationSecurityContext implements Serializable {
             @JsonProperty("unitCriteria") Collection<Topic> unitCriteria,
             @JsonProperty("containerCriteria") Collection<Topic> containerCriteria,
             @JsonProperty("contentCriteria") Collection<Topic> contentCriteria,
-            @JsonProperty("actionMasks") Collection<?> actionMasks,
+            @JsonProperty("actionMasks") Collection<String> actionMasks,
+            @JsonProperty("actionTopicMasks") Collection<TopicMask> actionTopicMasks,
             @JsonProperty("compartmentMasks") Collection<TopicMask> compartmentMasks,
             @JsonProperty("securityLabels") Collection<HarmoniaSecurityLabelEnum> securityLabels,
             @JsonProperty("confidentiality") FhirConfidentialityEnum confidentiality,
@@ -112,24 +114,21 @@ public final class InformationSecurityContext implements Serializable {
         this.contentCriteria = sanitizeTopicSet(contentCriteria);
 
         Set<String> actions = new LinkedHashSet<>();
-        Set<TopicMask> masks = new LinkedHashSet<>();
+        Set<TopicMask> masks = new LinkedHashSet<>(sanitizeMaskSet(actionTopicMasks));
         if (actionMasks != null) {
-            for (Object item : actionMasks) {
-                if (item instanceof TopicMask tm) {
-                    masks.add(tm);
-                    String pattern = tm.getMaskPattern();
-                    if (pattern != null && pattern.startsWith("Harmonia.Security.Action.")) {
-                        actions.add(pattern.substring("Harmonia.Security.Action.".length()));
-                    } else if (pattern != null && !pattern.isBlank()) {
-                        actions.add(pattern);
-                    } else {
-                        actions.add(tm.getId().toString());
-                    }
-                } else if (item instanceof String s && !s.isBlank()) {
-                    String trimmed = s.trim();
-                    actions.add(trimmed);
-                    masks.add(TopicMaskFactory.nameBased(TopicFactory.fromName("Harmonia.Security.Action." + trimmed)));
+            for (String action : actionMasks) {
+                if (action != null && !action.isBlank()) {
+                    String normalized = action.trim();
+                    actions.add(normalized);
+                    masks.add(TopicMaskFactory.nameBased(
+                            TopicFactory.fromName("Harmonia.Security.Action." + normalized)));
                 }
+            }
+        }
+        for (TopicMask mask : masks) {
+            String pattern = mask.getMaskPattern();
+            if (pattern != null && pattern.startsWith("Harmonia.Security.Action.")) {
+                actions.add(pattern.substring("Harmonia.Security.Action.".length()));
             }
         }
         this.actionMasks = Collections.unmodifiableSet(actions);

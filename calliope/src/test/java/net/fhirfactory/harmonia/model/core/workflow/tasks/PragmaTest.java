@@ -138,17 +138,18 @@ class PragmaTest {
         assertThat(pragma.getOutput()).hasSize(1);
         assertThat(pragma.getOutput().get(0).getPayloadOrder()).isEqualTo(0);
 
-        Optional<ErgonPayload> foundInput = pragma.findInput(hl7Container, adtContent);
+        PragmaPayloadSelector selector = new PragmaPayloadSelector(pragma);
+        Optional<ErgonPayload> foundInput = selector.findInput(hl7Container, adtContent);
         assertThat(foundInput).isPresent();
         assertThat(foundInput.get().getJsonString()).isEqualTo("MSH|^~\\&|...");
 
-        Optional<ErgonPayload> foundOutput = pragma.findOutput(fhirContainer, fhirContent);
+        Optional<ErgonPayload> foundOutput = selector.findOutput(fhirContainer, fhirContent);
         assertThat(foundOutput).isPresent();
         assertThat(foundOutput.get().getJsonString()).contains("resourceType");
 
-        assertThat(pragma.findInputByOrder(0)).isPresent();
-        assertThat(pragma.findOutputByOrder(0)).isPresent();
-        assertThat(pragma.findInputByOrder(99)).isEmpty();
+        assertThat(selector.findInputByOrder(0)).isPresent();
+        assertThat(selector.findOutputByOrder(0)).isPresent();
+        assertThat(selector.findInputByOrder(99)).isEmpty();
     }
 
     @Test

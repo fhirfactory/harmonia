@@ -26,7 +26,9 @@ import net.fhirfactory.harmonia.hapifhir.service.FhirStorageService;
 import net.fhirfactory.harmonia.hapifhir.service.ProviderRegistryReferenceValidator;
 import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
 import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaRoleEnum;
 import net.fhirfactory.harmonia.model.core.workflow.tasks.ProviderRegistryChangePragma;
+import net.fhirfactory.harmonia.paradeigma.test.security.TrustedServletRequests;
 import net.fhirfactory.harmonia.model.core.domain.fhir.valuesets.ProviderRegistryConstants;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.pylai.fhir.controller.FhirRestGatewayController;
@@ -145,7 +147,7 @@ class ProviderRegistryConcurrencyTest {
                 "corr-conc-1",
                 "client-a",
                 "user-a",
-                null
+                TrustedServletRequests.forPrincipal("user:provider-steward", java.util.Set.of(HarmoniaRoleEnum.PRV_ADM))
         );
 
         assertThat(putResp.getStatusCode().value()).isEqualTo(202);

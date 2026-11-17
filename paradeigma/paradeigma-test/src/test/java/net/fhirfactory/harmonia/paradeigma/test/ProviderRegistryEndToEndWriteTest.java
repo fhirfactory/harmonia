@@ -28,8 +28,10 @@ import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
 import net.fhirfactory.harmonia.model.core.domain.fhir.PragmaFhirConverter;
 import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import net.fhirfactory.harmonia.model.core.domain.fhir.valuesets.ProviderRegistryConstants;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaRoleEnum;
 import net.fhirfactory.harmonia.paradeigma.common.generator.SyntheticProviderRegistryGenerator;
 import net.fhirfactory.harmonia.paradeigma.common.generator.SyntheticProviderRegistryGenerator.ProviderRegistryGraph;
+import net.fhirfactory.harmonia.paradeigma.test.security.TrustedServletRequests;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.pylai.fhir.controller.FhirRestGatewayController;
 import net.fhirfactory.harmonia.pylai.fhir.provider.CapabilityStatementProvider;
@@ -179,7 +181,8 @@ class ProviderRegistryEndToEndWriteTest {
 
         // Step 1: POST /Organization -> 202 Accepted -> Ponos commits Organization
         String orgJson = parser.encodeResourceToString(graph.getOrganization());
-        ResponseEntity<String> orgResp = gatewayController.createResource("Organization", orgJson, "corr-1", "pas", "admin", null);
+        ResponseEntity<String> orgResp = gatewayController.createResource("Organization", orgJson, "corr-1", "pas", "admin",
+                TrustedServletRequests.forPrincipal("user:provider-admin", Set.of(HarmoniaRoleEnum.PRV_ADM)));
         assertThat(orgResp.getStatusCode().value()).isEqualTo(202);
         String orgPragmaId = extractPragmaIdFromLocation(orgResp.getHeaders().getLocation().toString());
 
@@ -191,7 +194,8 @@ class ProviderRegistryEndToEndWriteTest {
 
         // Step 2: POST /Endpoint -> 202 Accepted -> Ponos commits Endpoint
         String epJson = parser.encodeResourceToString(graph.getEndpoint());
-        ResponseEntity<String> epResp = gatewayController.createResource("Endpoint", epJson, "corr-2", "pas", "admin", null);
+        ResponseEntity<String> epResp = gatewayController.createResource("Endpoint", epJson, "corr-2", "pas", "admin",
+                TrustedServletRequests.forPrincipal("user:provider-admin", Set.of(HarmoniaRoleEnum.PRV_ADM)));
         assertThat(epResp.getStatusCode().value()).isEqualTo(202);
         String epPragmaId = extractPragmaIdFromLocation(epResp.getHeaders().getLocation().toString());
 
@@ -202,7 +206,8 @@ class ProviderRegistryEndToEndWriteTest {
 
         // Step 3: POST /Location -> 202 Accepted -> Ponos validates Organization & Endpoint and commits Location
         String locJson = parser.encodeResourceToString(graph.getLocation());
-        ResponseEntity<String> locResp = gatewayController.createResource("Location", locJson, "corr-3", "pas", "admin", null);
+        ResponseEntity<String> locResp = gatewayController.createResource("Location", locJson, "corr-3", "pas", "admin",
+                TrustedServletRequests.forPrincipal("user:provider-admin", Set.of(HarmoniaRoleEnum.PRV_ADM)));
         assertThat(locResp.getStatusCode().value()).isEqualTo(202);
         String locPragmaId = extractPragmaIdFromLocation(locResp.getHeaders().getLocation().toString());
 
@@ -213,7 +218,8 @@ class ProviderRegistryEndToEndWriteTest {
 
         // Step 4: POST /HealthcareService -> 202 Accepted -> Ponos validates references and commits HealthcareService
         String svcJson = parser.encodeResourceToString(graph.getHealthcareService());
-        ResponseEntity<String> svcResp = gatewayController.createResource("HealthcareService", svcJson, "corr-4", "pas", "admin", null);
+        ResponseEntity<String> svcResp = gatewayController.createResource("HealthcareService", svcJson, "corr-4", "pas", "admin",
+                TrustedServletRequests.forPrincipal("user:provider-admin", Set.of(HarmoniaRoleEnum.PRV_ADM)));
         assertThat(svcResp.getStatusCode().value()).isEqualTo(202);
         String svcPragmaId = extractPragmaIdFromLocation(svcResp.getHeaders().getLocation().toString());
 
@@ -224,7 +230,8 @@ class ProviderRegistryEndToEndWriteTest {
 
         // Step 5: POST /Practitioner -> 202 Accepted -> Ponos commits Practitioner
         String practJson = parser.encodeResourceToString(graph.getPractitioner());
-        ResponseEntity<String> practResp = gatewayController.createResource("Practitioner", practJson, "corr-5", "pas", "admin", null);
+        ResponseEntity<String> practResp = gatewayController.createResource("Practitioner", practJson, "corr-5", "pas", "admin",
+                TrustedServletRequests.forPrincipal("user:provider-admin", Set.of(HarmoniaRoleEnum.PRV_ADM)));
         assertThat(practResp.getStatusCode().value()).isEqualTo(202);
         String practPragmaId = extractPragmaIdFromLocation(practResp.getHeaders().getLocation().toString());
 
@@ -235,7 +242,8 @@ class ProviderRegistryEndToEndWriteTest {
 
         // Step 6: POST /PractitionerRole -> 202 Accepted -> Ponos validates all 5 references and commits PractitionerRole
         String roleJson = parser.encodeResourceToString(graph.getPractitionerRole());
-        ResponseEntity<String> roleResp = gatewayController.createResource("PractitionerRole", roleJson, "corr-6", "pas", "admin", null);
+        ResponseEntity<String> roleResp = gatewayController.createResource("PractitionerRole", roleJson, "corr-6", "pas", "admin",
+                TrustedServletRequests.forPrincipal("user:provider-admin", Set.of(HarmoniaRoleEnum.PRV_ADM)));
         assertThat(roleResp.getStatusCode().value()).isEqualTo(202);
         String rolePragmaId = extractPragmaIdFromLocation(roleResp.getHeaders().getLocation().toString());
 
@@ -246,7 +254,8 @@ class ProviderRegistryEndToEndWriteTest {
 
         // Step 7: POST /Group -> 202 Accepted -> Ponos validates member references and commits Group
         String groupJson = parser.encodeResourceToString(graph.getGroup());
-        ResponseEntity<String> groupResp = gatewayController.createResource("Group", groupJson, "corr-7", "pas", "admin", null);
+        ResponseEntity<String> groupResp = gatewayController.createResource("Group", groupJson, "corr-7", "pas", "admin",
+                TrustedServletRequests.forPrincipal("user:provider-admin", Set.of(HarmoniaRoleEnum.PRV_ADM)));
         assertThat(groupResp.getStatusCode().value()).isEqualTo(202);
         String groupPragmaId = extractPragmaIdFromLocation(groupResp.getHeaders().getLocation().toString());
 
@@ -259,7 +268,7 @@ class ProviderRegistryEndToEndWriteTest {
         ResponseEntity<String> searchResp = gatewayController.searchResources(
                 "PractitionerRole",
                 Map.of("practitioner", graph.getPractitioner().getIdPart()),
-                null
+                TrustedServletRequests.forPrincipal("user:provider-admin", Set.of(HarmoniaRoleEnum.PRV_ADM))
         );
 
         assertThat(searchResp.getStatusCode().value()).isEqualTo(200);

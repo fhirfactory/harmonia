@@ -33,6 +33,7 @@ import net.fhirfactory.harmonia.model.core.domain.fhir.valuesets.ProviderRegistr
 import net.fhirfactory.harmonia.model.core.security.ErgonSecurityDefinition;
 import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaAuthorityEnum;
 import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaRoleEnum;
+import net.fhirfactory.harmonia.paradeigma.test.security.TrustedServletRequests;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.praxis.sequence.PraxisImplementation;
@@ -148,16 +149,14 @@ class ThemisDefenceInDepthAcceptanceTest {
 
         // 1. Authorized Read
         mockMvc.perform(get("/Practitioner/PR-A1")
-                        .header(FhirSecurityInterceptor.HEADER_USER_ROLES, "PRV_RDR")
-                        .header(FhirSecurityInterceptor.HEADER_REQUESTER, "user:registry-reader"))
+                        .with(TrustedServletRequests.withPrincipal("user:registry-reader", Set.of(HarmoniaRoleEnum.PRV_RDR))))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.resourceType").value("Practitioner"))
                 .andExpect(jsonPath("$.name[0].family").value("Smith"));
 
         // 2. Authorized Search
         mockMvc.perform(get("/Practitioner?name=Smith")
-                        .header(FhirSecurityInterceptor.HEADER_USER_ROLES, "PRV_RDR")
-                        .header(FhirSecurityInterceptor.HEADER_REQUESTER, "user:registry-reader"))
+                        .with(TrustedServletRequests.withPrincipal("user:registry-reader", Set.of(HarmoniaRoleEnum.PRV_RDR))))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.resourceType").value("Bundle"))
                 .andExpect(jsonPath("$.entry[0].resource.resourceType").value("Practitioner"));
@@ -180,8 +179,7 @@ class ThemisDefenceInDepthAcceptanceTest {
 
         mockMvc.perform(put("/Practitioner/PR-B1")
                         .contentType("application/fhir+json")
-                        .header(FhirSecurityInterceptor.HEADER_USER_ROLES, "PRV_RDR") // Only reader, missing submit!
-                        .header(FhirSecurityInterceptor.HEADER_REQUESTER, "user:registry-reader")
+                        .with(TrustedServletRequests.withPrincipal("user:registry-reader", Set.of(HarmoniaRoleEnum.PRV_RDR)))
                         .content(json))
                 .andExpect(status().isForbidden())
                 .andExpect(jsonPath("$.resourceType").value("OperationOutcome"))
