@@ -17,8 +17,8 @@
 
 package net.fhirfactory.harmonia.paradeigma.common.security;
 
-import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
-import net.fhirfactory.harmonia.model.security.HarmoniaRoleEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaAuthorityEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaRoleEnum;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
 import net.fhirfactory.harmonia.themis.api.model.ThemisRole;

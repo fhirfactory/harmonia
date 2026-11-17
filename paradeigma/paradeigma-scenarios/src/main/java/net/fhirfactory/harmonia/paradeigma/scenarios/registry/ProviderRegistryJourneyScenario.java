@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.paradeigma.scenarios.registry;
 
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import net.fhirfactory.harmonia.paradeigma.common.generator.SyntheticProviderRegistryGenerator;
 import net.fhirfactory.harmonia.paradeigma.common.generator.SyntheticProviderRegistryGenerator.ProviderRegistryGraph;
 import net.fhirfactory.harmonia.paradeigma.common.security.ParadeigmaSecurityActors;

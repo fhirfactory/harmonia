@@ -17,6 +17,8 @@
 
 package net.fhirfactory.harmonia.mllpout.integration;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import net.fhirfactory.harmonia.mllpgateway.config.MllpDestinationConfig;
 import net.fhirfactory.harmonia.mllpgateway.config.MllpDestinationRegistry;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
@@ -89,7 +91,7 @@ class OutboundMllpIntegrationTest {
 
     @Test
     void testDispatchToHisSuccess() {
-        Topic topic = Topic.fromHl7("ADT", "A01");
+        Topic topic = TopicFactory.fromHl7("ADT", "A01");
         String hl7 = "MSH|^~\\&|HARMONIA|HIE|HIS_SYS|HOSP_N|20260915083000||ADT^A01|MSG-INTEG-001|P|2.4\r" +
                 "PID|1||MRN12345^^^HOSPITAL^MR||SMITH^JOHN^^^^||19800101|M\r" +
                 "PV1|1|I|WARD1^RM1^BED1\r";
@@ -111,7 +113,7 @@ class OutboundMllpIntegrationTest {
         mockLisServer.setAckCode("AE");
         mockLisServer.setAckTextMessage("Order number not found");
 
-        Topic topic = Topic.fromHl7("ORU", "R01");
+        Topic topic = TopicFactory.fromHl7("ORU", "R01");
         String hl7 = "MSH|^~\\&|HARMONIA|HIE|LIS_SYS|LAB|20260915083000||ORU^R01|MSG-INTEG-002|P|2.4\r";
         OutboundMllpRequest request = new OutboundMllpRequest("MSG-INTEG-002", "LIS_MAIN", hl7, topic);
 

@@ -25,12 +25,14 @@ import net.fhirfactory.harmonia.erga.fhir.ExtractPatientFromBundle;
 import net.fhirfactory.harmonia.erga.hl7v2x.Adt2FhirMapper;
 import net.fhirfactory.harmonia.erga.patient.demographics.PatientDemographicsUpdateErgon;
 import net.fhirfactory.harmonia.erga.patient.identity.PatientIdentityUpdateErgon;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
-import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.PragmaBuilder;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.datatypes.PragmaCheckpoint;
+import net.fhirfactory.harmonia.model.core.domain.fhir.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaAuthorityEnum;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.petasos.api.consumer.PetasosConsumer;
@@ -154,7 +156,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 "PV1||I|WARD-4B^BED-12^^HOSPITAL_MAIN||||1234^CURIE^MARIE^^^DR||||||||||ADM-9001";
 
         ThemisPrincipal principal = ThemisPrincipal.of("system:pylai-gateway", PrincipalType.SYSTEM, "clinical");
-        Pragma inputPragma = Pragma.builder()
+        Pragma inputPragma = new PragmaBuilder()
                 .pragmaId("PETASOS-MSG-9001")
                 .praxisId("praxis-adt-e2e-pipeline")
                 .correlationId("CORR-CLINICAL-9001")
@@ -166,7 +168,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 .originatingSecurityContext(ThemisSecurityContext.fromPrincipal(principal, "CORR-CLINICAL-9001"))
                 .policyVersion("1.0.0")
                 .build();
-        inputPragma.addInput(ErgonPayload.fromJson(0,
+        inputPragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "HL7", "2.4", "ADT", "A01"),
                 new Topic("Health", "Clinical", "1.0", "PatientId", "Default"),
                 hl7AdtMessage));
@@ -274,7 +276,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 "PID|||MRN-HUMAN-7001^^^HOSPITAL_MAIN||SMITH^JOHN^^^DR||19750512|M||2106-3^White|200 GEORGE ST^^SYDNEY^NSW^2000^AUS\r" +
                 "PV1||I|WARD-2A^BED-01^^HOSPITAL_MAIN||||1234^CURIE^MARIE^^^DR||||||||||ADM-7001";
 
-        Pragma inputPragma = Pragma.builder()
+        Pragma inputPragma = new PragmaBuilder()
                 .pragmaId("PRAGMA-HUMAN-7001")
                 .praxisId("praxis-human-security-e2e")
                 .correlationId("CORR-HUMAN-7001")
@@ -287,7 +289,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 .originatingSecurityContext(secContext)
                 .policyVersion("1.0.0")
                 .build();
-        inputPragma.addInput(ErgonPayload.fromJson(0,
+        inputPragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "HL7", "2.4", "ADT", "A01"),
                 new Topic("Health", "Clinical", "1.0", "PatientId", "Default"),
                 hl7AdtMessage));
@@ -421,7 +423,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 .securityDomain("PROVIDER_REGISTRY")
                 .build();
 
-        Pragma inputPragma = Pragma.builder()
+        Pragma inputPragma = new PragmaBuilder()
                 .pragmaId("PRAGMA-UNAUTH-001")
                 .praxisId("praxis-unauth-e2e")
                 .correlationId("CORR-UNAUTH-001")
@@ -432,7 +434,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 .originatingSecurityContext(secContext)
                 .policyVersion("1.0.0")
                 .build();
-        inputPragma.addInput(ErgonPayload.fromJson(0,
+        inputPragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "HL7", "2.4", "ADT", "A01"),
                 new Topic("Health", "Clinical", "1.0", "PatientId", "Default"),
                 "MSH|^~\\&|PAS|HOSP|HIE|REC|20260908120000||ADT^A01|MSG-001|P|2.4\rPID|||MRN-001^^^HOSP||DOE^J||19900101|M"));
@@ -505,7 +507,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 .securityDomain("PROVIDER_REGISTRY")
                 .build();
 
-        Pragma inputPragma = Pragma.builder()
+        Pragma inputPragma = new PragmaBuilder()
                 .pragmaId("PRAGMA-SERVICE-8001")
                 .praxisId("praxis-service-e2e")
                 .correlationId("CORR-SERVICE-8001")
@@ -518,7 +520,7 @@ class ErgonPraxisEndToEndIntegrationTest {
                 .originatingSecurityContext(serviceContext)
                 .policyVersion("1.0.0")
                 .build();
-        inputPragma.addInput(ErgonPayload.fromJson(0,
+        inputPragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "HL7", "2.4", "ADT", "A01"),
                 new Topic("Health", "Clinical", "1.0", "PatientId", "Default"),
                 "MSH|^~\\&|PAS|HOSP|HIE|REC|20260908120000||ADT^A01|MSG-001|P|2.4\rPID|||MRN-SVC-001^^^HOSP||TEST^P||19950101|F"));
@@ -580,14 +582,14 @@ class ErgonPraxisEndToEndIntegrationTest {
         conduit.start();
 
         // Pragma lacking principal and security context
-        Pragma inputPragma = Pragma.builder()
+        Pragma inputPragma = new PragmaBuilder()
                 .pragmaId("PRAGMA-MISSING-CTX")
                 .praxisId("praxis-missing-ctx-e2e")
                 .correlationId("CORR-MISSING-001")
                 .status(PragmaStatus.REQUESTED)
                 .source("service:unauthenticated-gateway")
                 .build();
-        inputPragma.addInput(ErgonPayload.fromJson(0,
+        inputPragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "HL7", "2.4", "ADT", "A01"),
                 new Topic("Health", "Clinical", "1.0", "PatientId", "Default"),
                 "MSH|^~\\&|PAS|HOSP|HIE|REC|20260908120000||ADT^A01|MSG-001|P|2.4\rPID|||MRN-ANON-001^^^HOSP||ANON^U||20000101|U"));
@@ -628,7 +630,7 @@ class ErgonPraxisEndToEndIntegrationTest {
 
         Topic hl7Container = new Topic("Health", "HL7", "2.4", "ADT", "A01");
         Topic adtContent = new Topic("Health", "Clinical", "1.0", "PatientId", "Default");
-        stagedPragma.addInput(ErgonPayload.fromJson(0, hl7Container, adtContent,
+        stagedPragma.addInput(ErgonPayloadFactory.fromJson(0, hl7Container, adtContent,
                 "MSH|^~\\&|PAS|HOSP|HIE|REC|20260908120000||ADT^A01|MSG-001|P|2.4\rPID|||MRN-REC-100^^^HOSP||DOE^JOHN||19800101|M"));
 
         Patient patient = new Patient();
@@ -636,7 +638,7 @@ class ErgonPraxisEndToEndIntegrationTest {
         patient.addName().setFamily("DOE").addGiven("JOHN");
         Topic fhirContainer = new Topic("Health", "FHIR", "R5", "Patient", "Default");
         Topic fhirContent = new Topic("Health", "Clinical", "1.0", "Patient", "Demographics");
-        stagedPragma.addOutput(ErgonPayload.fromFhirResource(0, fhirContainer, fhirContent, patient));
+        stagedPragma.addOutput(ErgonPayloadFactory.fromFhirResource(0, fhirContainer, fhirContent, patient));
 
         // Save staged state into cache
         pragmaCacheService.savePragma(stagedPragma);

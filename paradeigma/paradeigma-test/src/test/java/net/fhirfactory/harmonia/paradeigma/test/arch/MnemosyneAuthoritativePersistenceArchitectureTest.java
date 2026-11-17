@@ -87,9 +87,9 @@ public class MnemosyneAuthoritativePersistenceArchitectureTest {
         ArchRule rule = noClasses()
                 .that().resideInAPackage(MNEMOSYNE_PERSISTENCE_PACKAGE)
                 .should().dependOnClassesThat()
-                .haveFullyQualifiedName("net.fhirfactory.harmonia.model.governedwrite.ActiveStateToken")
+                .haveFullyQualifiedName("net.fhirfactory.harmonia.model.core.information.access.ActiveStateToken")
                 .orShould().dependOnClassesThat()
-                .haveFullyQualifiedName("net.fhirfactory.harmonia.model.governedwrite.ActiveStateTokenBridge");
+                .haveFullyQualifiedName("net.fhirfactory.harmonia.model.core.information.access.ActiveStateTokenBridge");
 
         rule.check(persistenceClasses);
     }
@@ -131,7 +131,7 @@ public class MnemosyneAuthoritativePersistenceArchitectureTest {
         String[] forbiddenImports = {
                 "import org.infinispan",
                 "import net.fhirfactory.harmonia.hestia.mneme",
-                "import net.fhirfactory.harmonia.model.governedwrite.ActiveStateToken"
+                "import net.fhirfactory.harmonia.model.core.information.access.ActiveStateToken"
         };
 
         try (Stream<Path> paths = Files.walk(sourceDir)) {

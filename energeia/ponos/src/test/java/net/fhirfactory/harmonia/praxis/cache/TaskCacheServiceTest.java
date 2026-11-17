@@ -18,9 +18,9 @@
 package net.fhirfactory.harmonia.praxis.cache;
 
 import ca.uhn.fhir.context.FhirContext;
-import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.ErgonReasonEnum;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import org.hl7.fhir.r5.model.Provenance;
 import org.hl7.fhir.r5.model.Reference;
 import org.hl7.fhir.r5.model.Task;

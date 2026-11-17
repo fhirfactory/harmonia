@@ -22,8 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicEntry;
 import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicMaskEntryPattern;
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicMaskBuilder;
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicMaskFactory;
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
 import net.fhirfactory.harmonia.model.core.naming.valuesets.MaskType;
 import net.fhirfactory.harmonia.model.core.naming.valuesets.TopicMaskType;
 
@@ -41,7 +40,7 @@ import java.util.*;
  * </ul>
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TopicMask implements Serializable {
+public final class TopicMask implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -203,58 +202,7 @@ public class TopicMask implements Serializable {
         if (topicName == null) {
             return false;
         }
-        return matches(Topic.fromName(topicName));
-    }
-
-    // --- Static Factory and Builder Entry Points ---
-
-    public static TopicMaskBuilder builder() {
-        return new TopicMaskBuilder();
-    }
-
-    public static TopicMaskBuilder builder(UUID id) {
-        return new TopicMaskBuilder(id);
-    }
-
-    public static TopicMask unrestricted() {
-        return TopicMaskFactory.unrestricted();
-    }
-
-    public static TopicMask nameBased(Topic topic) {
-        if (topic == null) {
-            return TopicMaskFactory.unrestricted();
-        }
-        return TopicMaskFactory.fromNamePattern(topic.getName());
-    }
-
-    public static TopicMask fromNamePattern(String dotSeparatedPattern) {
-        return TopicMaskFactory.fromNamePattern(dotSeparatedPattern);
-    }
-
-    public static TopicMask fromPattern(String pattern) {
-        return TopicMaskFactory.fromNamePattern(pattern);
-    }
-
-    public static TopicMask fromNamePattern(String dotSeparatedPattern, MaskType maskType) {
-        return TopicMaskFactory.fromNamePattern(dotSeparatedPattern, maskType);
-    }
-
-    // --- Nested Aliases for Backward Compatibility ---
-
-    public static class EntryPattern extends TopicMaskEntryPattern {
-        public EntryPattern(String qualifierRegex, String nameRegex) {
-            super(qualifierRegex, nameRegex);
-        }
-    }
-
-    public static class Builder extends TopicMaskBuilder {
-        public Builder() {
-            super();
-        }
-
-        public Builder(UUID id) {
-            super(id);
-        }
+        return matches(TopicFactory.fromName(topicName));
     }
 
     @Override

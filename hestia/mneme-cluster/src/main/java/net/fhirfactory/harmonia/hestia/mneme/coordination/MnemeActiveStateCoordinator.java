@@ -17,9 +17,9 @@
 
 package net.fhirfactory.harmonia.hestia.mneme.coordination;
 
-import net.fhirfactory.harmonia.model.governedwrite.ActiveStateCoordinator;
-import net.fhirfactory.harmonia.model.governedwrite.ActiveStateToken;
-import net.fhirfactory.harmonia.model.governedwrite.ResourceKey;
+import net.fhirfactory.harmonia.model.core.information.access.ActiveStateCoordinator;
+import net.fhirfactory.harmonia.model.core.information.access.ActiveStateToken;
+import net.fhirfactory.harmonia.model.core.information.access.ResourceKey;
 
 /**
  * Mneme-side extension of {@link ActiveStateCoordinator} providing Active Hegemon observation

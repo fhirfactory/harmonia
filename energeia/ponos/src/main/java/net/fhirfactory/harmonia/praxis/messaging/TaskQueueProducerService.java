@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.jms.*;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.config.QueueConfig;
 import org.hl7.fhir.r5.model.Task;

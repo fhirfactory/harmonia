@@ -17,9 +17,11 @@
 
 package net.fhirfactory.harmonia.erga.result.processing;
 
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.PragmaBuilder;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -49,8 +51,8 @@ class OruProcessingErgonTest {
                 "OBR|1|ORD-1001|LMS-2001|CBC^Complete Blood Count^LN|||20260915120000\r" +
                 "OBX|1|NM|718-7^Haemoglobin^LN||140.0|g/L|130-180|N|||F\r";
 
-        Pragma pragma = Pragma.builder().pragmaId("pragma-201").correlationId("task-201").build();
-        ErgonPayload input = ErgonPayload.fromJson(0, null, null, oruHl7);
+        Pragma pragma = new PragmaBuilder().pragmaId("pragma-201").correlationId("task-201").build();
+        ErgonPayload input = ErgonPayloadFactory.fromJson(0, null, null, oruHl7);
         pragma.addInput(input);
 
         Exchange exchange = new DefaultExchange(camelContext);

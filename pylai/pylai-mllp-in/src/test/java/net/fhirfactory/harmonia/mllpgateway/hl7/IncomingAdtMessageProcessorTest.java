@@ -19,8 +19,8 @@ package net.fhirfactory.harmonia.mllpgateway.hl7;
 
 import net.fhirfactory.harmonia.mllpgateway.config.MllpConfig;
 import net.fhirfactory.harmonia.mllpgateway.messaging.TaskEventProducerService;
-import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.ErgonReasonEnum;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.mllpgateway.service.CommunicationService;
 import net.fhirfactory.harmonia.mllpgateway.service.DefaultCommunicationService;

@@ -18,10 +18,10 @@
 package net.fhirfactory.harmonia.erga.registry;
 
 import net.fhirfactory.harmonia.hapifhir.service.FhirStorageService;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.pragma.ProviderRegistryChangePragma;
-import net.fhirfactory.harmonia.model.registry.ProviderRegistryConstants;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ProviderRegistryChangePragma;
+import net.fhirfactory.harmonia.model.core.domain.fhir.valuesets.ProviderRegistryConstants;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.impl.DefaultCamelContext;

@@ -17,6 +17,8 @@
 
 package net.fhirfactory.harmonia.mllpgateway.hl7;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import ca.uhn.hl7v2.DefaultHapiContext;
 import ca.uhn.hl7v2.HapiContext;
 import ca.uhn.hl7v2.model.Message;
@@ -35,7 +37,7 @@ import net.fhirfactory.harmonia.mllpgateway.messaging.TaskEventProducerService;
 import net.fhirfactory.harmonia.mllpgateway.service.CommunicationService;
 import net.fhirfactory.harmonia.mllpgateway.service.ProvenanceService;
 import net.fhirfactory.harmonia.mllpgateway.service.TaskService;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.Communication;
@@ -123,7 +125,7 @@ public class IncomingOrmMessageProcessor {
             if (StringUtils.isBlank(messageControlId)) messageControlId = UUID.randomUUID().toString();
 
             String gatewayInstanceId = mllpConfig != null ? mllpConfig.getGatewayInstanceId() : MllpConfig.DEFAULT_GATEWAY_INSTANCE_ID;
-            Topic topic = Topic.fromHl7("2.4", messageType != null ? messageType : "ORM", triggerEvent);
+            Topic topic = TopicFactory.fromHl7("2.4", messageType != null ? messageType : "ORM", triggerEvent);
 
             phiLog.debug("Inbound HL7 ORM message received [messageControlId={}, topic={}]: {}",
                     messageControlId, topic, rawHl7Message);

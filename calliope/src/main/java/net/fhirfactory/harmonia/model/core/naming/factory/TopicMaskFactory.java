@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.model.core.naming.factory;
 
 import net.fhirfactory.harmonia.model.core.naming.TopicMask;
+import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.model.core.naming.valuesets.MaskType;
 import org.apache.commons.lang3.StringUtils;
 
@@ -39,6 +40,16 @@ public final class TopicMaskFactory {
      */
     public static TopicMask unrestricted() {
         return new TopicMask(UUID.randomUUID(), MaskType.Inclusive, null, null);
+    }
+
+    /**
+     * Builds a name-based mask for a Topic, or an unrestricted mask when no Topic is supplied.
+     *
+     * @param topic Topic whose name supplies the mask pattern
+     * @return matching name-based mask, or unrestricted mask for null
+     */
+    public static TopicMask nameBased(Topic topic) {
+        return topic != null ? fromNamePattern(topic.getName()) : unrestricted();
     }
 
     /**

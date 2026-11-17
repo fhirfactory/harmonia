@@ -22,7 +22,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.jms.*;
 import net.fhirfactory.harmonia.mllpgateway.config.TaskProcessorConfig;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
 import org.apache.commons.lang3.StringUtils;

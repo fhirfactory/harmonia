@@ -21,7 +21,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import net.fhirfactory.harmonia.befe.model.operations.DependencyHealth;
 import net.fhirfactory.harmonia.befe.model.operations.OperationalHealth;
 import net.fhirfactory.harmonia.befe.model.operations.TimeSeries;
-import net.fhirfactory.harmonia.model.status.ModuleStatus;
+import net.fhirfactory.harmonia.model.core.observability.ModuleStatus;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

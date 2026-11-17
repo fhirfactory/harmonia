@@ -17,12 +17,15 @@
 
 package net.fhirfactory.harmonia.praxis.pipeline;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import net.fhirfactory.harmonia.erga.distribution.AdtDistributionErgon;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.datatypes.PragmaCheckpoint;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.petasos.api.config.PetasosConfig;
@@ -195,7 +198,7 @@ class Checkpoint1MessageFlowIntegrationTest {
         inboundEvent.setControlId("MSG-CHECKPOINT-1");
         inboundEvent.setAction("PROCESS");
         inboundEvent.setStatus("RECEIVED");
-        inboundEvent.setTopic(Topic.fromHl7("ADT", "A01"));
+        inboundEvent.setTopic(TopicFactory.fromHl7("ADT", "A01"));
 
         ponosProducer.sendTaskEvent(inboundEvent, SAMPLE_HL7_ADT);
 
@@ -222,8 +225,8 @@ class Checkpoint1MessageFlowIntegrationTest {
         ergon.setTargetQueues(List.of(EGRESS_QUEUE_EMR, EGRESS_QUEUE_LMS, EGRESS_QUEUE_RIS));
 
         Pragma pragma = new Pragma("PRAGMA-CP1-001", "ADT Processing Workflow", PragmaStatus.IN_PROGRESS);
-        Topic ingressTopic = Topic.fromHl7("ADT", "A01");
-        pragma.addInput(ErgonPayload.fromJson(0, ingressTopic, ingressTopic, SAMPLE_HL7_ADT));
+        Topic ingressTopic = TopicFactory.fromHl7("ADT", "A01");
+        pragma.addInput(ErgonPayloadFactory.fromJson(0, ingressTopic, ingressTopic, SAMPLE_HL7_ADT));
 
         Exchange exchange = new DefaultExchange(camelContext);
         exchange.getIn().setBody(pragma);

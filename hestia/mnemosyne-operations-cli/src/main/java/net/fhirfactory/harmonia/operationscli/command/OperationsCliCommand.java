@@ -18,7 +18,7 @@
 package net.fhirfactory.harmonia.operationscli.command;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.fhirfactory.harmonia.model.petasos.PetasosQueueDefinition;
+import net.fhirfactory.harmonia.model.core.message.routing.PetasosQueueDefinition;
 import net.fhirfactory.harmonia.operationscli.client.OperationsHttpClient;
 import net.fhirfactory.harmonia.operationscli.formatter.OutputFormatter;
 import net.fhirfactory.harmonia.operationscli.model.OperationResourceDto;

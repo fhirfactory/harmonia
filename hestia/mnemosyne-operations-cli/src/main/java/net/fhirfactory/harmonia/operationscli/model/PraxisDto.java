@@ -19,7 +19,7 @@ package net.fhirfactory.harmonia.operationscli.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import net.fhirfactory.harmonia.model.praxis.PraxisDefinition;
+import net.fhirfactory.harmonia.model.core.workflow.orchestration.PraxisDefinition;
 
 /**
  * Data Transfer Object representing a Praxis task sequence definition in the CLI.

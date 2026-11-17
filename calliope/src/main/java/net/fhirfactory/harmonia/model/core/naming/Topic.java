@@ -21,8 +21,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicEntry;
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicBuilder;
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.TopicValueSets;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
@@ -45,16 +44,10 @@ import java.util.*;
  * </ul>
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Topic implements Serializable {
+public final class Topic implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public static final String DEFAULT_DOMAIN = "Health";
-    public static final String QUALIFIER_DOMAIN = "Domain";
-    public static final String QUALIFIER_MODEL = "Model";
-    public static final String QUALIFIER_MODEL_VERSION = "ModelVersion";
-    public static final String QUALIFIER_DATA_ELEMENT = "DataElement";
-    public static final String QUALIFIER_DATA_ELEMENT_QUALIFIER = "DataElementQualifier";
 
     private final UUID id;
     private final SortedMap<Integer, TopicEntry> canonicalName;
@@ -135,11 +128,11 @@ public class Topic implements Serializable {
             String domain, String model, String modelVersion,
             String dataElement, String dataElementQualifier) {
         SortedMap<Integer, TopicEntry> map = new TreeMap<>();
-        map.put(0, new TopicEntry(QUALIFIER_DOMAIN, StringUtils.defaultIfBlank(domain, DEFAULT_DOMAIN)));
-        map.put(1, new TopicEntry(QUALIFIER_MODEL, StringUtils.defaultIfBlank(model, "FHIR")));
-        map.put(2, new TopicEntry(QUALIFIER_MODEL_VERSION, StringUtils.defaultIfBlank(modelVersion, "R5")));
-        map.put(3, new TopicEntry(QUALIFIER_DATA_ELEMENT, StringUtils.defaultIfBlank(dataElement, "General")));
-        map.put(4, new TopicEntry(QUALIFIER_DATA_ELEMENT_QUALIFIER, StringUtils.defaultIfBlank(dataElementQualifier, "Default")));
+        map.put(0, new TopicEntry(TopicValueSets.QUALIFIER_DOMAIN, StringUtils.defaultIfBlank(domain, TopicValueSets.DEFAULT_DOMAIN)));
+        map.put(1, new TopicEntry(TopicValueSets.QUALIFIER_MODEL, StringUtils.defaultIfBlank(model, "FHIR")));
+        map.put(2, new TopicEntry(TopicValueSets.QUALIFIER_MODEL_VERSION, StringUtils.defaultIfBlank(modelVersion, "R5")));
+        map.put(3, new TopicEntry(TopicValueSets.QUALIFIER_DATA_ELEMENT, StringUtils.defaultIfBlank(dataElement, "General")));
+        map.put(4, new TopicEntry(TopicValueSets.QUALIFIER_DATA_ELEMENT_QUALIFIER, StringUtils.defaultIfBlank(dataElementQualifier, "Default")));
         return map;
     }
 
@@ -304,65 +297,6 @@ public class Topic implements Serializable {
         return name + " [id=" + id + "]";
     }
 
-    // --- Static Factory and Builder Entry Points ---
-
-    public static TopicBuilder builder() {
-        return new TopicBuilder();
-    }
-
-    public static TopicBuilder builder(UUID id) {
-        return new TopicBuilder(id);
-    }
-
-    public static Topic fromName(String dotSeparatedName) {
-        return TopicFactory.fromName(dotSeparatedName);
-    }
-
-    public static Topic fromName(UUID id, String dotSeparatedName) {
-        return TopicFactory.fromName(id, dotSeparatedName);
-    }
-
-    public static Topic forInformationUnit(UUID informationUnitId) {
-        return TopicFactory.forInformationUnit(informationUnitId);
-    }
-
-    public static Topic forInformationUnit(String informationUnitId) {
-        return TopicFactory.forInformationUnit(informationUnitId);
-    }
-
-    public static Topic fromHl7(String messageType, String triggerEvent) {
-        return TopicFactory.fromHl7(messageType, triggerEvent);
-    }
-
-    public static Topic fromHl7(String version, String messageType, String triggerEvent) {
-        return TopicFactory.fromHl7(version, messageType, triggerEvent);
-    }
-
-    public static Topic fromHl7(String triggerType) {
-        return TopicFactory.fromHl7(triggerType);
-    }
-
-    public static Topic fromFhir(String resourceType, String interaction) {
-        return TopicFactory.fromFhir(resourceType, interaction);
-    }
-
-    // --- Nested Aliases for Backward Compatibility ---
-
-    public static class Entry extends TopicEntry {
-        public Entry(String qualifier, String name) {
-            super(qualifier, name);
-        }
-    }
-
-    public static class Builder extends TopicBuilder {
-        public Builder() {
-            super();
-        }
-
-        public Builder(UUID id) {
-            super(id);
-        }
-    }
 
     @Override
     public boolean equals(Object o) {

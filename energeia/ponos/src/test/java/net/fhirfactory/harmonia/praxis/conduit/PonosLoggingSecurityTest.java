@@ -21,7 +21,7 @@ import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.read.ListAppender;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
 import net.fhirfactory.harmonia.petasos.api.message.PetasosMessage;
 import net.fhirfactory.harmonia.petasos.api.consumer.PetasosMessageContext;
 import org.apache.camel.CamelContext;

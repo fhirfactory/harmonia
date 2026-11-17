@@ -30,7 +30,7 @@ import net.fhirfactory.harmonia.mllpgateway.messaging.TaskEventProducerService;
 import net.fhirfactory.harmonia.mllpgateway.service.DefaultCommunicationService;
 import net.fhirfactory.harmonia.mllpgateway.service.DefaultProvenanceService;
 import net.fhirfactory.harmonia.mllpgateway.service.DefaultTaskService;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.impl.DefaultCamelContext;

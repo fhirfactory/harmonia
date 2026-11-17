@@ -20,7 +20,7 @@ package net.fhirfactory.harmonia.hapifhir.service;
 import ca.uhn.fhir.rest.server.exceptions.ForbiddenOperationException;
 import net.fhirfactory.harmonia.hapifhir.model.FhirResourceEntity;
 import net.fhirfactory.harmonia.hapifhir.repository.FhirResourceRepository;
-import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaAuthorityEnum;
 import net.fhirfactory.harmonia.themis.api.ThemisService;
 import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;

@@ -20,7 +20,7 @@ package net.fhirfactory.harmonia.praxis.sequence;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.enterprise.context.Dependent;
-import net.fhirfactory.harmonia.model.praxis.PraxisDefinition;
+import net.fhirfactory.harmonia.model.core.workflow.orchestration.PraxisDefinition;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import org.apache.camel.CamelContext;
 

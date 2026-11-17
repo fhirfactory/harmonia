@@ -56,11 +56,11 @@ public class GovernedWriteCompositionArchitectureTest {
     }
 
     @Test
-    @DisplayName("ArchUnit: GovernedWriter interface must reside in Calliope (net.fhirfactory.harmonia.model.governedwrite)")
+    @DisplayName("ArchUnit: GovernedWriter interface must reside in Calliope (net.fhirfactory.harmonia.model.core.information.access)")
     void governedWriterMustResideInCalliope() {
         ArchRule rule = classes()
                 .that().haveSimpleName("GovernedWriter")
-                .should().resideInAPackage("net.fhirfactory.harmonia.model.governedwrite..");
+                .should().resideInAPackage("net.fhirfactory.harmonia.model.core.information.access..");
 
         rule.check(allProductionClasses);
     }

@@ -17,10 +17,12 @@
 
 package net.fhirfactory.harmonia.mllpgateway.messaging;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.jms.*;
 import net.fhirfactory.harmonia.mllpgateway.config.TaskProcessorConfig;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -106,7 +108,7 @@ class ErgonEventProducerServiceTest {
 
     @Test
     void testSendTaskEventWithTopic() throws Exception {
-        Topic topic = Topic.fromHl7("ADT", "A08");
+        Topic topic = TopicFactory.fromHl7("ADT", "A08");
         producerService.sendTaskEvent("TASK-TOPIC-01", "PROCESS", "REQUESTED", topic, "MSG-008", "Topic Test");
 
         verify(jmsContext).createQueue("task.event.queue.mllp-gateway-default");

@@ -17,14 +17,16 @@
 
 package net.fhirfactory.harmonia.mllpgateway.hl7;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import ca.uhn.hl7v2.DefaultHapiContext;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.util.Terser;
 import net.fhirfactory.harmonia.mllpgateway.hl7.factories.AdtCommunicationResourceBuilder;
 import net.fhirfactory.harmonia.mllpgateway.hl7.factories.AdtTaskResourceBuilder;
-import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
-import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
+import net.fhirfactory.harmonia.model.core.security.valuesets.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.core.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.hl7.fhir.r5.model.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -90,7 +92,7 @@ class AdtModularBuildersTest {
         String hl7 = "MSH|^~\\&|EPIC|HOSPITAL|HIE|HIE_IM|20260907101500||ADT^A01|MSG-01|P|2.4\r";
         Message msg = pipeParser.parse(hl7);
         Terser terser = new Terser(msg);
-        Topic topic = Topic.fromHl7("2.4", "ADT", "A01");
+        Topic topic = TopicFactory.fromHl7("2.4", "ADT", "A01");
 
         Communication comm = communicationBuilder.buildCommunication(terser, topic, hl7, "MSG-01", "PAT10099", "JOHN SMITH", "EPIC", "HOSPITAL", "20260907101500");
 
@@ -110,7 +112,7 @@ class AdtModularBuildersTest {
         String hl7 = "MSH|^~\\&|EPIC|HOSPITAL|HIE|HIE_IM|20260907101500||ADT^A01|MSG-01|P|2.4\r";
         Message msg = pipeParser.parse(hl7);
         Terser terser = new Terser(msg);
-        Topic topic = Topic.fromHl7("2.4", "ADT", "A01");
+        Topic topic = TopicFactory.fromHl7("2.4", "ADT", "A01");
 
         Communication comm = new Communication();
         comm.setId("Communication/comm-MSG-01");

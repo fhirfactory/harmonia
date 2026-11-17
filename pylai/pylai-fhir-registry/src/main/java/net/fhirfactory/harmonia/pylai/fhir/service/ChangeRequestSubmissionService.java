@@ -21,9 +21,9 @@ import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
 import ca.uhn.fhir.rest.server.exceptions.InvalidRequestException;
 import ca.uhn.fhir.rest.server.exceptions.UnprocessableEntityException;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.ProviderRegistryChangePragma;
-import net.fhirfactory.harmonia.model.registry.ProviderRegistryConstants;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ProviderRegistryChangePragma;
+import net.fhirfactory.harmonia.model.core.domain.fhir.valuesets.ProviderRegistryConstants;
 import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.petasos.api.destination.PetasosDestination;
 import net.fhirfactory.harmonia.petasos.api.message.PetasosMessage;
@@ -183,7 +183,7 @@ public class ChangeRequestSubmissionService {
         if (petasos != null) {
             try {
                 String pragmaJson = fhirContext.newJsonParser().encodeResourceToString(
-                        net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter.toFhirTask(pragma)
+                        net.fhirfactory.harmonia.model.core.domain.fhir.PragmaFhirConverter.toFhirTask(pragma)
                 );
                 PetasosMessage msg = PetasosMessage.builder()
                         .messageId(pragma.getPragmaId())

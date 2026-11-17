@@ -18,6 +18,7 @@
 package net.fhirfactory.harmonia.model.core.naming.factory;
 
 import net.fhirfactory.harmonia.model.core.naming.Topic;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.TopicValueSets;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
@@ -75,11 +76,11 @@ public final class TopicFactory {
         TopicBuilder builder = new TopicBuilder(id);
 
         String[] standardQualifiers = new String[]{
-                Topic.QUALIFIER_DOMAIN,
-                Topic.QUALIFIER_MODEL,
-                Topic.QUALIFIER_MODEL_VERSION,
-                Topic.QUALIFIER_DATA_ELEMENT,
-                Topic.QUALIFIER_DATA_ELEMENT_QUALIFIER
+                TopicValueSets.QUALIFIER_DOMAIN,
+                TopicValueSets.QUALIFIER_MODEL,
+                TopicValueSets.QUALIFIER_MODEL_VERSION,
+                TopicValueSets.QUALIFIER_DATA_ELEMENT,
+                TopicValueSets.QUALIFIER_DATA_ELEMENT_QUALIFIER
         };
 
         for (int i = 0; i < segments.size(); i++) {
@@ -111,11 +112,11 @@ public final class TopicFactory {
             throw new IllegalArgumentException("informationUnitId must not be blank");
         }
         String hex = informationUnitId.trim().replace("-", "").toLowerCase();
-        return Topic.builder()
-                .addEntry(0, Topic.QUALIFIER_DOMAIN, "harmonia")
-                .addEntry(1, Topic.QUALIFIER_MODEL, "mneme")
-                .addEntry(2, Topic.QUALIFIER_MODEL_VERSION, "iu")
-                .addEntry(3, Topic.QUALIFIER_DATA_ELEMENT, hex)
+        return new TopicBuilder()
+                .addEntry(0, TopicValueSets.QUALIFIER_DOMAIN, "harmonia")
+                .addEntry(1, TopicValueSets.QUALIFIER_MODEL, "mneme")
+                .addEntry(2, TopicValueSets.QUALIFIER_MODEL_VERSION, "iu")
+                .addEntry(3, TopicValueSets.QUALIFIER_DATA_ELEMENT, hex)
                 .build();
     }
 
@@ -142,7 +143,7 @@ public final class TopicFactory {
         String cleanVersion = StringUtils.defaultIfBlank(version, "2.4");
         String cleanType = StringUtils.defaultIfBlank(messageType, "ADT");
         String cleanTrigger = StringUtils.defaultIfBlank(triggerEvent, "A01");
-        return new Topic(Topic.DEFAULT_DOMAIN, "HL7", cleanVersion, cleanType, cleanTrigger);
+        return new Topic(TopicValueSets.DEFAULT_DOMAIN, "HL7", cleanVersion, cleanType, cleanTrigger);
     }
 
     /**
@@ -172,6 +173,6 @@ public final class TopicFactory {
     public static Topic fromFhir(String resourceType, String interaction) {
         String cleanResource = StringUtils.defaultIfBlank(resourceType, "Practitioner");
         String cleanInteraction = StringUtils.defaultIfBlank(interaction, "CREATE");
-        return new Topic(Topic.DEFAULT_DOMAIN, "FHIR", "R5", cleanResource, cleanInteraction);
+        return new Topic(TopicValueSets.DEFAULT_DOMAIN, "FHIR", "R5", cleanResource, cleanInteraction);
     }
 }

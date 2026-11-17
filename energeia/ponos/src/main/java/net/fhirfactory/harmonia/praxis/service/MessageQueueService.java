@@ -21,7 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import net.fhirfactory.harmonia.model.petasos.PetasosQueueDefinition;
+import net.fhirfactory.harmonia.model.core.message.routing.PetasosQueueDefinition;
 import net.fhirfactory.harmonia.praxis.config.QueueConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.infinispan.client.hotrod.RemoteCache;

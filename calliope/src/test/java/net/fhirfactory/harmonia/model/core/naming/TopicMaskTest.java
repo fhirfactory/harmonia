@@ -17,6 +17,12 @@
 
 package net.fhirfactory.harmonia.model.core.naming;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicMaskBuilder;
+
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicMaskFactory;
+
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.fhirfactory.harmonia.model.core.naming.valuesets.MaskType;
 import net.fhirfactory.harmonia.model.core.naming.valuesets.TopicMaskType;
@@ -40,7 +46,7 @@ public class TopicMaskTest {
     @Test
     @DisplayName("Name-based mask with inclusive depth matching")
     void testNameBasedInclusiveMask() {
-        TopicMask mask = TopicMask.builder()
+        TopicMask mask = new TopicMaskBuilder()
                 .inclusive()
                 .addNamePattern("Health")
                 .addNamePattern("HL7")
@@ -50,34 +56,34 @@ public class TopicMaskTest {
         assertThat(mask.getType()).isEqualTo(TopicMaskType.TopicNameBased);
         assertThat(mask.getMaskType()).isEqualTo(MaskType.Inclusive);
 
-        Topic candidate = Topic.fromName("Health.HL7.2.4.ADT.A01");
+        Topic candidate = TopicFactory.fromName("Health.HL7.2.4.ADT.A01");
         assertThat(mask.matches(candidate)).isTrue();
 
-        Topic nonMatching = Topic.fromName("Finance.HL7.2.4.ADT.A01");
+        Topic nonMatching = TopicFactory.fromName("Finance.HL7.2.4.ADT.A01");
         assertThat(mask.matches(nonMatching)).isFalse();
     }
 
     @Test
     @DisplayName("Name-based mask with exact depth matching")
     void testNameBasedExactMask() {
-        TopicMask mask = TopicMask.builder()
+        TopicMask mask = new TopicMaskBuilder()
                 .exact()
                 .addNamePattern("Health")
                 .addNamePattern("HL7")
                 .addNamePattern("2\\.4")
                 .build();
 
-        Topic depth3 = Topic.fromName("Health.HL7.2.4");
+        Topic depth3 = TopicFactory.fromName("Health.HL7.2.4");
         assertThat(mask.matches(depth3)).isTrue();
 
-        Topic depth5 = Topic.fromName("Health.HL7.2.4.ADT.A01");
+        Topic depth5 = TopicFactory.fromName("Health.HL7.2.4.ADT.A01");
         assertThat(mask.matches(depth5)).isFalse();
     }
 
     @Test
     @DisplayName("Canonical-based mask matches qualifier and name independently")
     void testCanonicalBasedMask() {
-        TopicMask mask = TopicMask.builder()
+        TopicMask mask = new TopicMaskBuilder()
                 .inclusive()
                 .addCanonicalPattern("Domain", "Health")
                 .addCanonicalPattern("Model", "FHIR")
@@ -87,17 +93,17 @@ public class TopicMaskTest {
 
         assertThat(mask.getType()).isEqualTo(TopicMaskType.TopicCanonicalNameBased);
 
-        Topic candidate = Topic.fromFhir("Practitioner", "CREATE");
+        Topic candidate = TopicFactory.fromFhir("Practitioner", "CREATE");
         assertThat(mask.matches(candidate)).isTrue();
 
-        Topic nonMatching = Topic.fromFhir("Patient", "CREATE");
+        Topic nonMatching = TopicFactory.fromFhir("Patient", "CREATE");
         assertThat(mask.matches(nonMatching)).isFalse();
     }
 
     @Test
     @DisplayName("Should reject mixing name and canonical pattern bases")
     void testRejectMixingBases() {
-        assertThatThrownBy(() -> TopicMask.builder()
+        assertThatThrownBy(() -> new TopicMaskBuilder()
                 .addNamePattern("Health")
                 .addCanonicalPattern("Model", "HL7"))
                 .isInstanceOf(IllegalStateException.class);
@@ -106,15 +112,15 @@ public class TopicMaskTest {
     @Test
     @DisplayName("Unrestricted mask matches any Topic")
     void testUnrestrictedMask() {
-        TopicMask unrestricted = TopicMask.unrestricted();
-        assertThat(unrestricted.matches(Topic.fromName("Health.HL7.2.4.ADT.A01"))).isTrue();
-        assertThat(unrestricted.matches(Topic.fromFhir("Practitioner", "READ"))).isTrue();
+        TopicMask unrestricted = TopicMaskFactory.unrestricted();
+        assertThat(unrestricted.matches(TopicFactory.fromName("Health.HL7.2.4.ADT.A01"))).isTrue();
+        assertThat(unrestricted.matches(TopicFactory.fromFhir("Practitioner", "READ"))).isTrue();
     }
 
     @Test
     @DisplayName("JSON roundtrip serialization")
     void testJsonRoundtrip() throws Exception {
-        TopicMask mask = TopicMask.fromNamePattern("Health.HL7.2.4.*", MaskType.Inclusive);
+        TopicMask mask = TopicMaskFactory.fromNamePattern("Health.HL7.2.4.*", MaskType.Inclusive);
 
         String json = objectMapper.writeValueAsString(mask);
         TopicMask deserialized = objectMapper.readValue(json, TopicMask.class);
@@ -122,6 +128,6 @@ public class TopicMaskTest {
         assertThat(deserialized.getId()).isEqualTo(mask.getId());
         assertThat(deserialized.getType()).isEqualTo(mask.getType());
         assertThat(deserialized.getMaskType()).isEqualTo(mask.getMaskType());
-        assertThat(deserialized.matches(Topic.fromName("Health.HL7.2.4.ADT.A01"))).isTrue();
+        assertThat(deserialized.matches(TopicFactory.fromName("Health.HL7.2.4.ADT.A01"))).isTrue();
     }
 }

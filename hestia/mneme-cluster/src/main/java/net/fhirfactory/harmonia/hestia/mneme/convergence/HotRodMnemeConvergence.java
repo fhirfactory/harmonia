@@ -18,10 +18,10 @@
 package net.fhirfactory.harmonia.hestia.mneme.convergence;
 
 import ca.uhn.fhir.context.FhirContext;
-import net.fhirfactory.harmonia.model.governedwrite.ActiveStateConvergencePort;
-import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
-import net.fhirfactory.harmonia.model.governedwrite.ConvergenceStatus;
-import net.fhirfactory.harmonia.model.governedwrite.ResourceKey;
+import net.fhirfactory.harmonia.model.core.information.access.ActiveStateConvergencePort;
+import net.fhirfactory.harmonia.model.core.information.access.AuthoritativeVersion;
+import net.fhirfactory.harmonia.model.core.information.access.ConvergenceStatus;
+import net.fhirfactory.harmonia.model.core.information.access.ResourceKey;
 import org.infinispan.client.hotrod.MetadataValue;
 import org.infinispan.client.hotrod.RemoteCache;
 import org.infinispan.client.hotrod.RemoteCacheManager;

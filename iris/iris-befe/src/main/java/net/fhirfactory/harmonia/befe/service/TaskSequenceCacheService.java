@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import net.fhirfactory.harmonia.model.praxis.PraxisDefinition;
+import net.fhirfactory.harmonia.model.core.workflow.orchestration.PraxisDefinition;
 import net.fhirfactory.harmonia.model.core.naming.TopicSubscription;
 import org.apache.commons.lang3.StringUtils;
 import org.infinispan.client.hotrod.RemoteCache;

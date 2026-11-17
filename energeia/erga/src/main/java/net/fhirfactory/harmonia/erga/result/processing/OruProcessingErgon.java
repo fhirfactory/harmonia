@@ -19,9 +19,9 @@ package net.fhirfactory.harmonia.erga.result.processing;
 
 import jakarta.enterprise.context.Dependent;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.commons.lang3.StringUtils;

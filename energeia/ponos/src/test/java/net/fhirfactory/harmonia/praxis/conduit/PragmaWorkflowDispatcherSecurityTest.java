@@ -18,12 +18,14 @@
 package net.fhirfactory.harmonia.praxis.conduit;
 
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
-import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
-import net.fhirfactory.harmonia.model.security.HarmoniaRoleEnum;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.PragmaBuilder;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.security.ErgonSecurityDefinition;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaAuthorityEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaRoleEnum;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.praxis.sequence.PraxisImplementation;
@@ -108,7 +110,7 @@ class PragmaWorkflowDispatcherSecurityTest {
         ThemisPrincipal principal = ThemisPrincipal.of("user:registry-submitter", PrincipalType.HUMAN, "hospital-east");
         ThemisAuthority submitAuth = HarmoniaAuthorityEnum.PROVIDER_CHANGE_SUBMIT.toThemisAuthority();
 
-        Pragma pragma = Pragma.builder()
+        Pragma pragma = new PragmaBuilder()
                 .pragmaId("pragma-auth-001")
                 .praxisId("praxis:practitioner-change")
                 .status(PragmaStatus.ACCEPTED)
@@ -118,7 +120,7 @@ class PragmaWorkflowDispatcherSecurityTest {
                 .policyVersion("1.0.0")
                 .build();
 
-        pragma.addInput(ErgonPayload.fromJson(0,
+        pragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "ProviderRegistry", "1.0", "Change", "Practitioner"),
                 null,
                 "{\"resourceType\":\"Practitioner\",\"id\":\"PR-1\"}"));
@@ -148,7 +150,7 @@ class PragmaWorkflowDispatcherSecurityTest {
         ThemisPrincipal principal = ThemisPrincipal.of("user:reader-only", PrincipalType.HUMAN, "hospital-east");
         ThemisAuthority readAuth = HarmoniaAuthorityEnum.PROVIDER_READ.toThemisAuthority();
 
-        Pragma pragma = Pragma.builder()
+        Pragma pragma = new PragmaBuilder()
                 .pragmaId("pragma-deny-001")
                 .praxisId("praxis:practitioner-change")
                 .status(PragmaStatus.ACCEPTED)
@@ -158,7 +160,7 @@ class PragmaWorkflowDispatcherSecurityTest {
                 .policyVersion("1.0.0")
                 .build();
 
-        pragma.addInput(ErgonPayload.fromJson(0,
+        pragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "ProviderRegistry", "1.0", "Change", "Practitioner"),
                 null,
                 "{\"resourceType\":\"Practitioner\",\"id\":\"PR-2\"}"));
@@ -194,7 +196,7 @@ class PragmaWorkflowDispatcherSecurityTest {
         ThemisPrincipal principal = ThemisPrincipal.of("user:registry-submitter", PrincipalType.HUMAN, "hospital-east");
         ThemisAuthority submitAuth = HarmoniaAuthorityEnum.PROVIDER_CHANGE_SUBMIT.toThemisAuthority();
 
-        Pragma pragma = Pragma.builder()
+        Pragma pragma = new PragmaBuilder()
                 .pragmaId("pragma-deny-002")
                 .praxisId("praxis:practitioner-change")
                 .status(PragmaStatus.ACCEPTED)
@@ -204,7 +206,7 @@ class PragmaWorkflowDispatcherSecurityTest {
                 .policyVersion("1.0.0")
                 .build();
 
-        pragma.addInput(ErgonPayload.fromJson(0,
+        pragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "ProviderRegistry", "1.0", "Change", "Practitioner"),
                 null,
                 "{\"resourceType\":\"Practitioner\",\"id\":\"PR-3\"}"));
@@ -230,14 +232,14 @@ class PragmaWorkflowDispatcherSecurityTest {
         dispatcher.registerWorkflow(praxis);
 
         // Pragma lacking originating principal and security context (no synthetic fallback allowed)
-        Pragma pragma = Pragma.builder()
+        Pragma pragma = new PragmaBuilder()
                 .pragmaId("pragma-anon-001")
                 .praxisId("praxis:practitioner-change")
                 .status(PragmaStatus.ACCEPTED)
                 .source("service:unauthenticated-gateway")
                 .build();
 
-        pragma.addInput(ErgonPayload.fromJson(0,
+        pragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "ProviderRegistry", "1.0", "Change", "Practitioner"),
                 null,
                 "{\"resourceType\":\"Practitioner\",\"id\":\"PR-ANON\"}"));
@@ -263,7 +265,7 @@ class PragmaWorkflowDispatcherSecurityTest {
         dispatcher.registerWorkflow(praxis);
 
         ThemisPrincipal principal = ThemisPrincipal.of("user:no-authorities", PrincipalType.HUMAN, "hospital-east");
-        Pragma pragma = Pragma.builder()
+        Pragma pragma = new PragmaBuilder()
                 .pragmaId("pragma-noauth-001")
                 .praxisId("praxis:practitioner-change")
                 .status(PragmaStatus.ACCEPTED)
@@ -271,7 +273,7 @@ class PragmaWorkflowDispatcherSecurityTest {
                 .policyVersion("1.0.0")
                 .build();
 
-        pragma.addInput(ErgonPayload.fromJson(0,
+        pragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "ProviderRegistry", "1.0", "Change", "Practitioner"),
                 null,
                 "{\"resourceType\":\"Practitioner\",\"id\":\"PR-NOAUTH\"}"));
@@ -309,7 +311,7 @@ class PragmaWorkflowDispatcherSecurityTest {
                 .securityDomain("PROVIDER_REGISTRY")
                 .build();
 
-        Pragma pragma = Pragma.builder()
+        Pragma pragma = new PragmaBuilder()
                 .pragmaId("pragma-auth-002")
                 .praxisId("praxis:practitioner-change")
                 .status(PragmaStatus.ACCEPTED)
@@ -322,7 +324,7 @@ class PragmaWorkflowDispatcherSecurityTest {
                 .policyVersion("1.0.0")
                 .build();
 
-        pragma.addInput(ErgonPayload.fromJson(0,
+        pragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "ProviderRegistry", "1.0", "Change", "Practitioner"),
                 null,
                 "{\"resourceType\":\"Practitioner\",\"id\":\"PR-99\"}"));
@@ -375,7 +377,7 @@ class PragmaWorkflowDispatcherSecurityTest {
                 .securityDomain("PROVIDER_REGISTRY")
                 .build();
 
-        Pragma pragma = Pragma.builder()
+        Pragma pragma = new PragmaBuilder()
                 .pragmaId("pragma-service-001")
                 .praxisId("praxis:practitioner-change")
                 .status(PragmaStatus.ACCEPTED)
@@ -387,7 +389,7 @@ class PragmaWorkflowDispatcherSecurityTest {
                 .policyVersion("1.0.0")
                 .build();
 
-        pragma.addInput(ErgonPayload.fromJson(0,
+        pragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "ProviderRegistry", "1.0", "Change", "Practitioner"),
                 null,
                 "{\"resourceType\":\"Practitioner\",\"id\":\"PR-SVC\"}"));

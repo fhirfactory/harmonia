@@ -22,13 +22,14 @@ import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.hapifhir.service.FhirStorageService;
 import net.fhirfactory.harmonia.hapifhir.service.ProviderRegistryReferenceValidator;
 import net.fhirfactory.harmonia.hapifhir.service.ProviderRegistryReferenceValidator.ValidationResult;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.pragma.ProviderRegistryChangePragma;
-import net.fhirfactory.harmonia.model.registry.ProviderRegistryConstants;
-import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.datatypes.PragmaCheckpoint;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ProviderRegistryChangePragma;
+import net.fhirfactory.harmonia.model.core.domain.fhir.valuesets.ProviderRegistryConstants;
+import net.fhirfactory.harmonia.model.core.security.ErgonSecurityDefinition;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.themis.api.ThemisService;
 import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
@@ -41,8 +42,8 @@ import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;
 import net.fhirfactory.harmonia.themis.api.model.ThemisResource;
 import net.fhirfactory.harmonia.themis.api.model.ThemisSecurityContext;
 import net.fhirfactory.harmonia.themis.core.evaluator.DeterministicPolicyEvaluator;
-import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
-import net.fhirfactory.harmonia.model.security.HarmoniaSecurityLabelEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaAuthorityEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaSecurityLabelEnum;
 import org.apache.camel.Exchange;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.instance.model.api.IBaseResource;
@@ -287,7 +288,7 @@ public abstract class AbstractProviderRegistryChangeErgon<T extends Resource> ex
             pragma.getMetadata().put(ProviderRegistryConstants.METADATA_RESULTING_VERSION, resultingVersion);
 
             Topic outputTopic = new Topic("Health", "FHIR", "R5", expectedResourceType, "PersistedState");
-            pragma.addOutput(ErgonPayload.fromFhirResource(pragma.getOutput().size(), outputTopic, outputTopic, persisted));
+            pragma.addOutput(ErgonPayloadFactory.fromFhirResource(pragma.getOutput().size(), outputTopic, outputTopic, persisted));
 
             pragma.setStatus(PragmaStatus.COMPLETED);
             pragma.addCheckpoint(PragmaCheckpoint.builder()

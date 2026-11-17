@@ -18,8 +18,10 @@
 package net.fhirfactory.harmonia.paradeigma.test;
 
 import net.fhirfactory.harmonia.erga.distribution.AdtDistributionErgon;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.PragmaBuilder;
 import net.fhirfactory.harmonia.paradeigma.common.generator.SyntheticPatientGenerator;
 import net.fhirfactory.harmonia.paradeigma.common.hl7.AckResult;
 import net.fhirfactory.harmonia.paradeigma.common.hl7.Hl7AckHandler;
@@ -84,8 +86,8 @@ class AdtFanOutIntegrationTest {
         String controlId = Hl7Parsers.extractMessageControlId(adtA01);
 
         // Process through Ponos AdtDistributionErgon
-        Pragma pragma = Pragma.builder().pragmaId("pragma-fan-1").correlationId(controlId).build();
-        ErgonPayload input = ErgonPayload.fromJson(0, null, null, adtA01);
+        Pragma pragma = new PragmaBuilder().pragmaId("pragma-fan-1").correlationId(controlId).build();
+        ErgonPayload input = ErgonPayloadFactory.fromJson(0, null, null, adtA01);
         pragma.addInput(input);
 
         Exchange exchange = new DefaultExchange(camelContext);

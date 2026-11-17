@@ -18,7 +18,7 @@
 package net.fhirfactory.harmonia.erga.fhir;
 
 import ca.uhn.fhir.context.FhirContext;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import org.apache.camel.CamelContext;

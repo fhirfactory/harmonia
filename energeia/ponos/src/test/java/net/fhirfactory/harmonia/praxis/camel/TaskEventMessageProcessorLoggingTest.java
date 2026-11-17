@@ -25,7 +25,7 @@ import ch.qos.logback.core.read.ListAppender;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.fhirfactory.harmonia.logging.DefaultPhiLogger;
 import net.fhirfactory.harmonia.logging.PhiLoggingConfig;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import org.apache.camel.Exchange;
 import org.apache.camel.impl.DefaultCamelContext;

@@ -23,7 +23,7 @@ import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.parser.PipeParser;
 import ca.uhn.hl7v2.util.Terser;
 import ca.uhn.hl7v2.util.idgenerator.NanoTimeGenerator;
-import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
+import net.fhirfactory.harmonia.model.core.security.FhirSecurityTagManager;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.*;
 import org.slf4j.Logger;

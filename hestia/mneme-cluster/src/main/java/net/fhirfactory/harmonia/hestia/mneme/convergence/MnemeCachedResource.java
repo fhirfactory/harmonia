@@ -20,7 +20,7 @@ package net.fhirfactory.harmonia.hestia.mneme.convergence;
 import ca.uhn.fhir.context.FhirContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
+import net.fhirfactory.harmonia.model.core.information.access.AuthoritativeVersion;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.Extension;
 import org.hl7.fhir.r5.model.Integer64Type;

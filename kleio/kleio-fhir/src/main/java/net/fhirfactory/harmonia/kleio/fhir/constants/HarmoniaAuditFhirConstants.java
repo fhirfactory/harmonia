@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.kleio.fhir.constants;
 
-import net.fhirfactory.harmonia.model.security.HarmoniaSecurityCodeSystem;
+import net.fhirfactory.harmonia.model.core.security.HarmoniaSecurityCodeSystem;
 
 public final class HarmoniaAuditFhirConstants {
     private HarmoniaAuditFhirConstants() {}

@@ -23,7 +23,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import net.fhirfactory.harmonia.befe.model.operations.OperationalInstance;
 import net.fhirfactory.harmonia.befe.service.ModuleStatusService;
-import net.fhirfactory.harmonia.model.status.ModuleStatus;
+import net.fhirfactory.harmonia.model.core.observability.ModuleStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

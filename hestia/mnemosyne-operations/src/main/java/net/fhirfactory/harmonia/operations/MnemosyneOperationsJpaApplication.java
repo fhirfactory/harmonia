@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.operations;
 
-import net.fhirfactory.harmonia.model.status.ModuleStatus;
+import net.fhirfactory.harmonia.model.core.observability.ModuleStatus;
 import net.fhirfactory.harmonia.operations.service.OperationStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

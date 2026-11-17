@@ -20,12 +20,12 @@ package net.fhirfactory.harmonia.praxis.conduit;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
-import net.fhirfactory.harmonia.model.security.HarmoniaSecurityLabelEnum;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.datatypes.PragmaCheckpoint;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaAuthorityEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaSecurityLabelEnum;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.praxis.sequence.PraxisImplementation;
@@ -367,7 +367,7 @@ public class PragmaWorkflowDispatcher {
 
         // 2. Lookup via PraxisService
         if (praxisService != null && StringUtils.isNotBlank(pragma.getPraxisId())) {
-            Optional<net.fhirfactory.harmonia.model.praxis.PraxisDefinition> servicePraxis = praxisService.getById(pragma.getPraxisId());
+            Optional<net.fhirfactory.harmonia.model.core.workflow.orchestration.PraxisDefinition> servicePraxis = praxisService.getById(pragma.getPraxisId());
             if (servicePraxis.isPresent() && servicePraxis.get().isEnabled() && servicePraxis.get() instanceof PraxisImplementation) {
                 return (PraxisImplementation) servicePraxis.get();
             }

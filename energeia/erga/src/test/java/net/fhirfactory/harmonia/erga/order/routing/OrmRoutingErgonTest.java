@@ -17,8 +17,10 @@
 
 package net.fhirfactory.harmonia.erga.order.routing;
 
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.PragmaBuilder;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -48,8 +50,8 @@ class OrmRoutingErgonTest {
                 "ORC|NW|ORD-1001|||IP||^^^R||20260915120000\r" +
                 "OBR|1|ORD-1001||CBC^Complete Blood Count^LN\r";
 
-        Pragma pragma = Pragma.builder().pragmaId("pragma-101").correlationId("task-101").build();
-        ErgonPayload input = ErgonPayload.fromJson(0, null, null, labOrm);
+        Pragma pragma = new PragmaBuilder().pragmaId("pragma-101").correlationId("task-101").build();
+        ErgonPayload input = ErgonPayloadFactory.fromJson(0, null, null, labOrm);
         pragma.addInput(input);
 
         Exchange exchange = new DefaultExchange(camelContext);
@@ -69,8 +71,8 @@ class OrmRoutingErgonTest {
                 "ORC|NW|ORD-1002|||IP||^^^R||20260915120000\r" +
                 "OBR|1|ORD-1002||XR_CHEST^Chest X-Ray PA and Lateral^RAD\r";
 
-        Pragma pragma = Pragma.builder().pragmaId("pragma-102").correlationId("task-102").build();
-        ErgonPayload input = ErgonPayload.fromJson(0, null, null, radOrm);
+        Pragma pragma = new PragmaBuilder().pragmaId("pragma-102").correlationId("task-102").build();
+        ErgonPayload input = ErgonPayloadFactory.fromJson(0, null, null, radOrm);
         pragma.addInput(input);
 
         Exchange exchange = new DefaultExchange(camelContext);

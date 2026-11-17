@@ -18,9 +18,9 @@
 package net.fhirfactory.harmonia.befe.service;
 
 import net.fhirfactory.harmonia.befe.security.ThemisSecurityContextProvider;
-import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
-import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
-import net.fhirfactory.harmonia.model.security.HarmoniaSecurityLabelEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.core.security.FhirSecurityTagManager;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaSecurityLabelEnum;
 import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
 import net.fhirfactory.harmonia.themis.api.model.ThemisPrincipal;

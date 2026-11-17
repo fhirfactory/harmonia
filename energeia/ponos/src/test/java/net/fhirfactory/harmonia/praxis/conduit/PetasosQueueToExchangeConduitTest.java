@@ -21,11 +21,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.erga.base.ErgonException;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.PragmaBuilder;
+import net.fhirfactory.harmonia.model.core.domain.fhir.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaAuthorityEnum;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.petasos.api.consumer.PetasosMessageContext;
@@ -92,7 +94,7 @@ class PetasosQueueToExchangeConduitTest {
         protected void processErgon(Pragma pragma, Exchange exchange) throws Exception {
             Topic container = new Topic("Health", "HL7", "2.4", "ADT", "A01");
             Topic content = new Topic("Health", "Clinical", "1.0", "PatientId", "Default");
-            pragma.addOutput(ErgonPayload.fromJson(0, container, content, "{\"result\":\"PROCESSED\"}"));
+            pragma.addOutput(ErgonPayloadFactory.fromJson(0, container, content, "{\"result\":\"PROCESSED\"}"));
             pragma.setStatus(PragmaStatus.COMPLETED);
         }
     }
@@ -159,7 +161,7 @@ class PetasosQueueToExchangeConduitTest {
                 .causationId("domain-cause-222")
                 .build();
 
-        Pragma authoritativePragma = Pragma.builder()
+        Pragma authoritativePragma = new PragmaBuilder()
                 .pragmaId("pragma-domain-001")
                 .correlationId("domain-corr-111")
                 .causationId("domain-cause-222")
@@ -335,7 +337,7 @@ class PetasosQueueToExchangeConduitTest {
         inputPragma.setOriginatingPrincipal(principal);
         inputPragma.addOriginatingAuthority(HarmoniaAuthorityEnum.PROVIDER_CHANGE_SUBMIT.toThemisAuthority());
         inputPragma.setOriginatingSecurityContext(ThemisSecurityContext.fromPrincipal(principal, "corr-disp-001"));
-        inputPragma.addInput(ErgonPayload.fromJson(0,
+        inputPragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "HL7", "2.4", "ADT", "A01"), null, "{\"id\":\"123\"}"));
 
         boolean dispatched = dispatcher.dispatchPragma(inputPragma);

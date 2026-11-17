@@ -17,6 +17,8 @@
 
 package net.fhirfactory.harmonia.mllpout.rest;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
@@ -116,7 +118,7 @@ public class OutboundMllpResource {
             request = new OutboundMllpRequest();
         }
         if (request.getTopic() == null) {
-            request.setTopic(Topic.fromHl7("ADT", "A01"));
+            request.setTopic(TopicFactory.fromHl7("ADT", "A01"));
         }
         return send(request);
     }
@@ -131,7 +133,7 @@ public class OutboundMllpResource {
             request = new OutboundMllpRequest();
         }
         if (request.getTopic() == null) {
-            request.setTopic(Topic.fromHl7("MFN", "M02"));
+            request.setTopic(TopicFactory.fromHl7("MFN", "M02"));
         }
         return send(request);
     }

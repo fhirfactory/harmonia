@@ -36,7 +36,7 @@ import net.fhirfactory.harmonia.befe.security.ThemisOperationsAuthorizer;
 import net.fhirfactory.harmonia.befe.service.ModuleStatusService;
 import net.fhirfactory.harmonia.befe.service.OperationsAggregatorService;
 import net.fhirfactory.harmonia.befe.service.TaskSequenceCacheService;
-import net.fhirfactory.harmonia.model.status.ModuleStatus;
+import net.fhirfactory.harmonia.model.core.observability.ModuleStatus;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthorizationDecision;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

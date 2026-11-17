@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.befe.service;
 
-import net.fhirfactory.harmonia.model.praxis.PraxisDefinition;
+import net.fhirfactory.harmonia.model.core.workflow.orchestration.PraxisDefinition;
 import net.fhirfactory.harmonia.model.core.naming.TopicSubscription;
 import org.infinispan.client.hotrod.RemoteCache;
 import org.infinispan.client.hotrod.RemoteCacheManager;

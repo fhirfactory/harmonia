@@ -38,13 +38,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Architectural tests enforcing that the foundational governed-write contracts
- * ({@code net.fhirfactory.harmonia.model.governedwrite..}) remain pure domain abstractions
+ * ({@code net.fhirfactory.harmonia.model.core.information.access..}) remain pure domain abstractions
  * completely free of Infinispan/Hot Rod, JPA/Hibernate, HTTP frameworks, and physical DELETE operations.
  */
 public class GovernedWriteContractArchitectureTest {
 
-    private static final String GOVERNED_WRITE_PACKAGE = "net.fhirfactory.harmonia.model.governedwrite..";
-    private static final String ALIGNMENT_PACKAGE = "net.fhirfactory.harmonia.model.alignment..";
+    private static final String GOVERNED_WRITE_PACKAGE = "net.fhirfactory.harmonia.model.core.information.access..";
+    private static final String ALIGNMENT_PACKAGE = "net.fhirfactory.harmonia.model.core.domain.fhir..";
 
     private static JavaClasses importedClasses;
 
@@ -53,8 +53,8 @@ public class GovernedWriteContractArchitectureTest {
         importedClasses = new ClassFileImporter()
                 .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
                 .importPackages(
-                        "net.fhirfactory.harmonia.model.governedwrite",
-                        "net.fhirfactory.harmonia.model.alignment"
+                        "net.fhirfactory.harmonia.model.core.information.access",
+                        "net.fhirfactory.harmonia.model.core.domain.fhir"
                 );
     }
 
@@ -129,11 +129,11 @@ public class GovernedWriteContractArchitectureTest {
 
         ArchRule rule = noClasses()
                 .that().resideOutsideOfPackages(
-                        "net.fhirfactory.harmonia.model.governedwrite..",
+                        "net.fhirfactory.harmonia.model.core.information.access..",
                         "net.fhirfactory.harmonia.hestia.mneme.."
                 )
                 .should().dependOnClassesThat()
-                .haveFullyQualifiedName("net.fhirfactory.harmonia.model.governedwrite.ActiveStateTokenBridge");
+                .haveFullyQualifiedName("net.fhirfactory.harmonia.model.core.information.access.ActiveStateTokenBridge");
 
         rule.check(allProductionClasses);
     }
@@ -167,7 +167,7 @@ public class GovernedWriteContractArchitectureTest {
     @DisplayName("Static Source Check: Governed-write Java sources must not contain forbidden imports")
     void governedWriteSourcesMustNotContainForbiddenImports() throws IOException {
         Path projectRoot = findProjectRoot();
-        Path sourceDir = projectRoot.resolve("calliope/src/main/java/net/fhirfactory/harmonia/model/governedwrite");
+        Path sourceDir = projectRoot.resolve("calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/access");
         assertThat(Files.exists(sourceDir)).isTrue();
 
         String[] forbiddenImports = {
@@ -264,7 +264,7 @@ public class GovernedWriteContractArchitectureTest {
     @DisplayName("Static Source Check: Calliope alignment Java sources must not contain forbidden imports")
     void alignmentSourcesMustNotContainForbiddenImports() throws IOException {
         Path projectRoot = findProjectRoot();
-        Path sourceDir = projectRoot.resolve("calliope/src/main/java/net/fhirfactory/harmonia/model/alignment");
+        Path sourceDir = projectRoot.resolve("calliope/src/main/java/net/fhirfactory/harmonia/model/core/domain/fhir");
         assertThat(Files.exists(sourceDir)).isTrue();
 
         String[] forbiddenImports = {

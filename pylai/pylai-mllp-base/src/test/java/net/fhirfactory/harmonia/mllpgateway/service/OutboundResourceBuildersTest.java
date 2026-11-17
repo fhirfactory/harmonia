@@ -17,10 +17,12 @@
 
 package net.fhirfactory.harmonia.mllpgateway.service;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpResponse;
-import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
-import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
+import net.fhirfactory.harmonia.model.core.security.valuesets.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.core.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.hl7.fhir.r5.model.Communication;
 import org.hl7.fhir.r5.model.Enumerations;
@@ -46,7 +48,7 @@ class OutboundResourceBuildersTest {
 
     @Test
     void testCommunicationLifecycle() {
-        Topic topic = Topic.fromHl7("ADT", "A01");
+        Topic topic = TopicFactory.fromHl7("ADT", "A01");
         String hl7 = "MSH|^~\\&|HARMONIA|HIE|HIS_SYS|HOSP_N|20260915083000||ADT^A01|MSG-9001|P|2.4\r";
         OutboundMllpRequest request = new OutboundMllpRequest("MSG-9001", "HIS_NORTH", hl7, topic);
 
@@ -65,7 +67,7 @@ class OutboundResourceBuildersTest {
 
     @Test
     void testTaskLifecycle() {
-        Topic topic = Topic.fromHl7("ADT", "A01");
+        Topic topic = TopicFactory.fromHl7("ADT", "A01");
         String hl7 = "MSH|^~\\&|HARMONIA|HIE|HIS_SYS|HOSP_N|20260915083000||ADT^A01|MSG-9002|P|2.4\r";
         OutboundMllpRequest request = new OutboundMllpRequest("MSG-9002", "HIS_NORTH", hl7, topic);
 
@@ -88,7 +90,7 @@ class OutboundResourceBuildersTest {
 
     @Test
     void testProvenanceCreation() {
-        Topic topic = Topic.fromHl7("ADT", "A01");
+        Topic topic = TopicFactory.fromHl7("ADT", "A01");
         OutboundMllpRequest request = new OutboundMllpRequest("MSG-9003", "HIS_NORTH", "MSH|...", topic);
         OutboundMllpResponse response = OutboundMllpResponse.success("MSG-9003", "AA", "MSA|AA|MSG-9003", 25L);
 

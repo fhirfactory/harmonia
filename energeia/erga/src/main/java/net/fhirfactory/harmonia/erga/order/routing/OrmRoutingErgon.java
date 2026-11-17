@@ -17,10 +17,13 @@
 
 package net.fhirfactory.harmonia.erga.order.routing;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import jakarta.enterprise.context.Dependent;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
@@ -74,8 +77,8 @@ public class OrmRoutingErgon extends ErgonBase {
         if (body instanceof Pragma) {
             Pragma pragma = (Pragma) body;
             int order = pragma.getOutput() != null ? pragma.getOutput().size() : 0;
-            Topic egressTopic = Topic.fromHl7("ORM", "O01");
-            ErgonPayload dispatchPayload = ErgonPayload.fromJson(order, egressTopic, egressTopic, rawHl7);
+            Topic egressTopic = TopicFactory.fromHl7("ORM", "O01");
+            ErgonPayload dispatchPayload = ErgonPayloadFactory.fromJson(order, egressTopic, egressTopic, rawHl7);
             pragma.addOutput(dispatchPayload);
             exchange.getMessage().setBody(pragma);
         }

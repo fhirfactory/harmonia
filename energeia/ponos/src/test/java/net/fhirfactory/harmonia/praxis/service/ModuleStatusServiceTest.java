@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.praxis.service;
 
-import net.fhirfactory.harmonia.model.status.ModuleStatus;
+import net.fhirfactory.harmonia.model.core.observability.ModuleStatus;
 import org.infinispan.client.hotrod.RemoteCache;
 import org.infinispan.client.hotrod.RemoteCacheManager;
 import org.junit.jupiter.api.BeforeEach;

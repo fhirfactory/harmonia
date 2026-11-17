@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.praxis.service;
 
-import net.fhirfactory.harmonia.model.petasos.PetasosQueueDefinition;
+import net.fhirfactory.harmonia.model.core.message.routing.PetasosQueueDefinition;
 import net.fhirfactory.harmonia.praxis.config.QueueConfig;
 import org.infinispan.client.hotrod.RemoteCache;
 import org.infinispan.client.hotrod.RemoteCacheManager;

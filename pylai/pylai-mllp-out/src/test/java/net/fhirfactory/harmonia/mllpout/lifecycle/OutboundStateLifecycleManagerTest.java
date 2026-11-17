@@ -17,6 +17,8 @@
 
 package net.fhirfactory.harmonia.mllpout.lifecycle;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import net.fhirfactory.harmonia.mllpgateway.messaging.TaskEventProducerService;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpResponse;
@@ -66,7 +68,7 @@ class OutboundStateLifecycleManagerTest {
 
     @Test
     void testOnDispatchInitiated() {
-        Topic topic = Topic.fromHl7("ADT", "A01");
+        Topic topic = TopicFactory.fromHl7("ADT", "A01");
         OutboundMllpRequest request = new OutboundMllpRequest("MSG-8001", "HIS_NORTH", "MSH|...", topic);
 
         when(communicationService.create(any(Communication.class))).thenAnswer(invocation -> invocation.getArgument(0));
@@ -82,7 +84,7 @@ class OutboundStateLifecycleManagerTest {
 
     @Test
     void testOnDispatchCompletedSuccess() throws Exception {
-        Topic topic = Topic.fromHl7("ADT", "A01");
+        Topic topic = TopicFactory.fromHl7("ADT", "A01");
         OutboundMllpRequest request = new OutboundMllpRequest("MSG-8002", "HIS_NORTH", "MSH|...", topic);
         OutboundMllpResponse response = OutboundMllpResponse.success("MSG-8002", "AA", "MSA|AA|MSG-8002", 30L);
 

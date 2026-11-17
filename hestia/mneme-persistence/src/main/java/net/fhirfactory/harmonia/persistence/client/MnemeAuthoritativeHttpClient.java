@@ -21,10 +21,10 @@ import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
 import net.fhirfactory.harmonia.hapifhir.persistence.AuthoritativePersistencePort;
 import net.fhirfactory.harmonia.hapifhir.persistence.model.AuthoritativePersistenceResult;
-import net.fhirfactory.harmonia.model.governedwrite.AuthoritativePreconditionConflict;
-import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
-import net.fhirfactory.harmonia.model.governedwrite.ExpectedAuthoritativeVersion;
-import net.fhirfactory.harmonia.model.governedwrite.ResourceKey;
+import net.fhirfactory.harmonia.model.core.information.access.AuthoritativePreconditionConflict;
+import net.fhirfactory.harmonia.model.core.information.access.AuthoritativeVersion;
+import net.fhirfactory.harmonia.model.core.information.access.ExpectedAuthoritativeVersion;
+import net.fhirfactory.harmonia.model.core.information.access.ResourceKey;
 import net.fhirfactory.harmonia.persistence.config.MnemeAuthoritativeClientConfig;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.slf4j.Logger;
@@ -270,7 +270,7 @@ public class MnemeAuthoritativeHttpClient implements AuthoritativePersistencePor
             return new AuthoritativePersistenceResult.Conflict<>(
                     new AuthoritativePreconditionConflict(
                             key,
-                            net.fhirfactory.harmonia.model.governedwrite.PreconditionFailureReason.EXPECTED_VERSION_MISMATCH,
+                            net.fhirfactory.harmonia.model.core.information.access.PreconditionFailureReason.EXPECTED_VERSION_MISMATCH,
                             expectedVersion,
                             null,
                             "Expected version must not be NONE for UPDATE"));
@@ -325,7 +325,7 @@ public class MnemeAuthoritativeHttpClient implements AuthoritativePersistencePor
                 return new AuthoritativePersistenceResult.Conflict<>(
                         new AuthoritativePreconditionConflict(
                                 key,
-                                net.fhirfactory.harmonia.model.governedwrite.PreconditionFailureReason.EXPECTED_VERSION_MISMATCH,
+                                net.fhirfactory.harmonia.model.core.information.access.PreconditionFailureReason.EXPECTED_VERSION_MISMATCH,
                                 expectedVersion,
                                 null,
                                 "Precondition required by server (HTTP 428)"));

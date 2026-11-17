@@ -19,6 +19,8 @@ package net.fhirfactory.harmonia.model.core.naming;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicEntry;
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicBuilder;
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -92,7 +94,7 @@ public class TopicTest {
     @Test
     @DisplayName("Topic is immutable; canonicalName map cannot be modified")
     void testTopicImmutability() {
-        Topic topic = Topic.fromName("Health.HL7.2.4.ADT.A01");
+        Topic topic = TopicFactory.fromName("Health.HL7.2.4.ADT.A01");
         assertThatThrownBy(() -> topic.getCanonicalName().put(5, new TopicEntry("Ext", "Extra")))
                 .isInstanceOf(UnsupportedOperationException.class);
     }
@@ -114,7 +116,7 @@ public class TopicTest {
     @DisplayName("JSON serialization and deserialization roundtrip")
     void testJsonRoundtrip() throws Exception {
         UUID id = UUID.randomUUID();
-        Topic topic = Topic.builder(id)
+        Topic topic = new TopicBuilder(id)
                 .addEntry("Domain", "Health")
                 .addEntry("Model", "HL7")
                 .addEntry("ModelVersion", "2.4")

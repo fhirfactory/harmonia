@@ -19,10 +19,11 @@ package net.fhirfactory.harmonia.praxis.sequence;
 
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.erga.base.ErgonException;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.datatypes.PragmaCheckpoint;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import org.apache.camel.CamelContext;
@@ -79,7 +80,7 @@ class PraxisWorkflowTest {
         protected void processErgon(Pragma pragma, Exchange exchange) throws Exception {
             Topic container = new Topic("Health", "HL7", "2.4", "ADT", "A01");
             Topic content = new Topic("Health", "Clinical", "1.0", "PatientId", "Default");
-            pragma.addOutput(ErgonPayload.fromJson(0, container, content, "{\"extractedMrn\":\"MRN-PRAXIS-99\"}"));
+            pragma.addOutput(ErgonPayloadFactory.fromJson(0, container, content, "{\"extractedMrn\":\"MRN-PRAXIS-99\"}"));
         }
     }
 
@@ -97,7 +98,7 @@ class PraxisWorkflowTest {
 
             Topic container = new Topic("Health", "FHIR", "R5", "Patient", "Default");
             Topic content = new Topic("Health", "Clinical", "1.0", "Patient", "Demographics");
-            pragma.addOutput(ErgonPayload.fromFhirResource(1, container, content, patient));
+            pragma.addOutput(ErgonPayloadFactory.fromFhirResource(1, container, content, patient));
         }
     }
 
@@ -111,7 +112,7 @@ class PraxisWorkflowTest {
         protected void processErgon(Pragma pragma, Exchange exchange) throws Exception {
             Topic container = new Topic("Health", "FHIR", "R5", "Observation", "Default");
             Topic content = new Topic("Health", "Clinical", "1.0", "Observation", "Vitals");
-            pragma.addOutput(ErgonPayload.fromFhirResource(2, container, content,
+            pragma.addOutput(ErgonPayloadFactory.fromReference(2, container, content,
                     new Reference("Observation/OBS-99").setDisplay("Heart Rate 72 bpm")));
         }
     }
@@ -151,7 +152,7 @@ class PraxisWorkflowTest {
 
         // Create initial Ingress Pragma
         Pragma inputPragma = new Pragma("PRAGMA-SEQ-001", "praxis-patient-pipeline", PragmaStatus.REQUESTED);
-        inputPragma.addInput(ErgonPayload.fromJson(0,
+        inputPragma.addInput(ErgonPayloadFactory.fromJson(0,
                 new Topic("Health", "HL7", "2.4", "RAW", "INGRESS"),
                 null,
                 "MSH|^~\\&|PAS|HOSP|HIE|REC|20260908120000||ADT^A01|MSG-001|P|2.4"));

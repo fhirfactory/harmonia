@@ -17,9 +17,9 @@
 
 package net.fhirfactory.harmonia.hapifhir.persistence.model;
 
-import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeCommitOutcome;
-import net.fhirfactory.harmonia.model.governedwrite.AuthoritativePreconditionConflict;
-import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
+import net.fhirfactory.harmonia.model.core.information.access.AuthoritativeCommitOutcome;
+import net.fhirfactory.harmonia.model.core.information.access.AuthoritativePreconditionConflict;
+import net.fhirfactory.harmonia.model.core.information.access.AuthoritativeVersion;
 
 import java.io.Serializable;
 import java.util.Objects;

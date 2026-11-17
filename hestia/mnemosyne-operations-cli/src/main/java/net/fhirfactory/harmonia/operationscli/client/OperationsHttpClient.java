@@ -21,7 +21,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import net.fhirfactory.harmonia.model.petasos.PetasosQueueDefinition;
+import net.fhirfactory.harmonia.model.core.message.routing.PetasosQueueDefinition;
 import net.fhirfactory.harmonia.operationscli.model.OperationResourceDto;
 import net.fhirfactory.harmonia.operationscli.model.PraxisDto;
 import org.slf4j.Logger;

@@ -21,7 +21,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Any;
 import jakarta.enterprise.inject.Instance;
 import jakarta.inject.Inject;
-import net.fhirfactory.harmonia.model.praxis.PraxisDefinition;
+import net.fhirfactory.harmonia.model.core.workflow.orchestration.PraxisDefinition;
 import net.fhirfactory.harmonia.praxis.service.PraxisService;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.erga.infrastructure.MessageQueueToExchangeConduit;

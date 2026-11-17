@@ -17,6 +17,8 @@
 
 package net.fhirfactory.harmonia.mllpgateway.hl7;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.hl7.fhir.r5.model.Communication;
 import org.hl7.fhir.r5.model.Provenance;
@@ -58,7 +60,7 @@ public class MfnProcessingResult {
                                String ackMessage, boolean success, String errorMessage) {
         this.messageControlId = messageControlId;
         this.triggerEvent = triggerEvent;
-        this.topic = topic != null ? topic : Topic.fromHl7(triggerEvent);
+        this.topic = topic != null ? topic : TopicFactory.fromHl7(triggerEvent);
         this.practitionerId = practitionerId;
         this.practitionerName = practitionerName;
         this.communication = communication;

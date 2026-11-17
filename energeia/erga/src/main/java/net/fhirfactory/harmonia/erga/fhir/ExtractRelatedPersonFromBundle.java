@@ -19,11 +19,13 @@ package net.fhirfactory.harmonia.erga.fhir;
 
 import ca.uhn.fhir.context.FhirContext;
 import jakarta.enterprise.context.Dependent;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.domain.fhir.ErgonPayloadFhirConverter;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.ErgonReasonEnum;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.domain.fhir.PragmaFhirConverter;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.commons.lang3.StringUtils;
@@ -101,7 +103,7 @@ public class ExtractRelatedPersonFromBundle extends ErgonBase {
         pragma.getOutput().clear();
         if (processedTask != null && processedTask.hasOutput()) {
             for (Task.TaskOutputComponent outComp : processedTask.getOutput()) {
-                pragma.addOutput(ErgonPayload.fromTaskOutput(outComp));
+                pragma.addOutput(ErgonPayloadFhirConverter.fromTaskOutput(outComp));
             }
         }
 

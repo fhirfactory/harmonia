@@ -19,9 +19,9 @@ package net.fhirfactory.harmonia.hestia.mneme.convergence;
 
 import ca.uhn.fhir.context.FhirContext;
 import net.fhirfactory.harmonia.infinispan.scenario.support.InfinispanLaboratoryServer;
-import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
-import net.fhirfactory.harmonia.model.governedwrite.ConvergenceStatus;
-import net.fhirfactory.harmonia.model.governedwrite.ResourceKey;
+import net.fhirfactory.harmonia.model.core.information.access.AuthoritativeVersion;
+import net.fhirfactory.harmonia.model.core.information.access.ConvergenceStatus;
+import net.fhirfactory.harmonia.model.core.information.access.ResourceKey;
 import org.hl7.fhir.r5.model.HumanName;
 import org.hl7.fhir.r5.model.Patient;
 import org.infinispan.client.hotrod.MetadataValue;

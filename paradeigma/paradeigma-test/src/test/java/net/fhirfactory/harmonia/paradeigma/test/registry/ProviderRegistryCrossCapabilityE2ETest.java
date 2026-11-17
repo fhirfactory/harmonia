@@ -29,8 +29,8 @@ import net.fhirfactory.harmonia.hapifhir.service.ProviderRegistryReferenceValida
 import net.fhirfactory.harmonia.logging.PhiLogger;
 import net.fhirfactory.harmonia.logging.PhiLoggerFactory;
 import net.fhirfactory.harmonia.logging.PhiLoggingConfig;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import net.fhirfactory.harmonia.paradeigma.common.generator.PractitionerGenerator;
 import net.fhirfactory.harmonia.paradeigma.common.logging.PhiLogTestProbe;
 import net.fhirfactory.harmonia.paradeigma.common.logging.SecretLeakageAssertion;
@@ -60,7 +60,7 @@ import org.mockito.Mockito;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mock.web.MockHttpServletRequest;
-import net.fhirfactory.harmonia.model.security.HarmoniaRoleEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaRoleEnum;
 
 import java.util.Map;
 import java.util.Optional;

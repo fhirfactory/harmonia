@@ -17,8 +17,8 @@
 
 package net.fhirfactory.harmonia.pylai.fhir.publication;
 
-import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
-import net.fhirfactory.harmonia.model.security.HarmoniaSecurityCodeSystem;
+import net.fhirfactory.harmonia.model.core.security.valuesets.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.core.security.HarmoniaSecurityCodeSystem;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.Coding;
 import org.springframework.stereotype.Component;

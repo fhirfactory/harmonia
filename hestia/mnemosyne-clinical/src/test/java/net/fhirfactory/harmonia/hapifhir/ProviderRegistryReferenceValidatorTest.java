@@ -20,7 +20,7 @@ package net.fhirfactory.harmonia.hapifhir;
 import net.fhirfactory.harmonia.hapifhir.service.FhirStorageService;
 import net.fhirfactory.harmonia.hapifhir.service.ProviderRegistryReferenceValidator;
 import net.fhirfactory.harmonia.hapifhir.service.ProviderRegistryReferenceValidator.ValidationResult;
-import net.fhirfactory.harmonia.model.registry.ProviderRegistryConstants;
+import net.fhirfactory.harmonia.model.core.domain.fhir.valuesets.ProviderRegistryConstants;
 import org.hl7.fhir.r5.model.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

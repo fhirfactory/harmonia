@@ -18,8 +18,10 @@
 package net.fhirfactory.harmonia.paradeigma.test;
 
 import net.fhirfactory.harmonia.erga.order.routing.OrmRoutingErgon;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.PragmaBuilder;
 import net.fhirfactory.harmonia.paradeigma.common.generator.SyntheticOrderGenerator;
 import net.fhirfactory.harmonia.paradeigma.common.generator.SyntheticPatientGenerator;
 import net.fhirfactory.harmonia.paradeigma.common.hl7.AckResult;
@@ -86,8 +88,8 @@ class OrmDeterministicRoutingTest {
             String ormHl7 = Hl7MessageBuilders.buildOrmO01(order, patient, visit);
             String controlId = Hl7Parsers.extractMessageControlId(ormHl7);
 
-            Pragma pragma = Pragma.builder().pragmaId("pragma-lab-" + test).correlationId(controlId).build();
-            pragma.addInput(ErgonPayload.fromJson(0, null, null, ormHl7));
+            Pragma pragma = new PragmaBuilder().pragmaId("pragma-lab-" + test).correlationId(controlId).build();
+            pragma.addInput(ErgonPayloadFactory.fromJson(0, null, null, ormHl7));
 
             Exchange exchange = new DefaultExchange(camelContext);
             exchange.getIn().setBody(pragma);
@@ -116,8 +118,8 @@ class OrmDeterministicRoutingTest {
             String ormHl7 = Hl7MessageBuilders.buildOrmO01(order, patient, visit);
             String controlId = Hl7Parsers.extractMessageControlId(ormHl7);
 
-            Pragma pragma = Pragma.builder().pragmaId("pragma-rad-" + study).correlationId(controlId).build();
-            pragma.addInput(ErgonPayload.fromJson(0, null, null, ormHl7));
+            Pragma pragma = new PragmaBuilder().pragmaId("pragma-rad-" + study).correlationId(controlId).build();
+            pragma.addInput(ErgonPayloadFactory.fromJson(0, null, null, ormHl7));
 
             Exchange exchange = new DefaultExchange(camelContext);
             exchange.getIn().setBody(pragma);

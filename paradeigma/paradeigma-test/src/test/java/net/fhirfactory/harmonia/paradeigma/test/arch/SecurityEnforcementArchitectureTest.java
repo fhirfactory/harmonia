@@ -18,9 +18,9 @@
 package net.fhirfactory.harmonia.paradeigma.test.arch;
 
 import net.fhirfactory.harmonia.logging.PhiLoggingConfig;
-import net.fhirfactory.harmonia.model.persistence.PersistenceOperationEnvelope;
-import net.fhirfactory.harmonia.model.persistence.PersistenceOperationType;
-import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
+import net.fhirfactory.harmonia.model.core.information.persistence.PersistenceOperationEnvelope;
+import net.fhirfactory.harmonia.model.core.information.persistence.PersistenceOperationType;
+import net.fhirfactory.harmonia.model.core.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.themis.api.ThemisService;
 import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
@@ -178,15 +178,15 @@ public class SecurityEnforcementArchitectureTest {
     }
 
     @Test
-    @DisplayName("Architecture Check: Canonical persistence contract types reside strictly in calliope model.persistence")
+    @DisplayName("Architecture Check: Canonical persistence contract types reside strictly in calliope model.core.information.persistence")
     void persistenceContractArchitectureInvariants() {
         assertThat(PersistenceOperationType.class.isEnum()).isTrue();
         assertThat(PersistenceOperationType.class.getPackageName())
-                .isEqualTo("net.fhirfactory.harmonia.model.persistence");
+                .isEqualTo("net.fhirfactory.harmonia.model.core.information.persistence");
 
         assertThat(PersistenceOperationEnvelope.class).isNotNull();
         assertThat(PersistenceOperationEnvelope.class.getPackageName())
-                .isEqualTo("net.fhirfactory.harmonia.model.persistence");
+                .isEqualTo("net.fhirfactory.harmonia.model.core.information.persistence");
 
         // Verify zero dependencies on JPA, Hibernate, or storage modules
         for (var field : PersistenceOperationEnvelope.class.getDeclaredFields()) {

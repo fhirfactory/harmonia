@@ -24,7 +24,7 @@ import jakarta.enterprise.util.TypeLiteral;
 import jakarta.jms.ConnectionFactory;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import net.fhirfactory.harmonia.praxis.camel.CamelContextManager;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
 import net.fhirfactory.harmonia.praxis.camel.TaskEventMessageProcessor;
 import net.fhirfactory.harmonia.praxis.camel.TaskMessageProcessor;
 import net.fhirfactory.harmonia.praxis.camel.TaskProcessorRouteBuilder;

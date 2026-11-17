@@ -19,9 +19,9 @@ package net.fhirfactory.harmonia.hapifhir.persistence;
 
 import ca.uhn.fhir.context.FhirContext;
 import net.fhirfactory.harmonia.hapifhir.persistence.model.AuthoritativePersistenceResult;
-import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
-import net.fhirfactory.harmonia.model.governedwrite.ExpectedAuthoritativeVersion;
-import net.fhirfactory.harmonia.model.governedwrite.ResourceKey;
+import net.fhirfactory.harmonia.model.core.information.access.AuthoritativeVersion;
+import net.fhirfactory.harmonia.model.core.information.access.ExpectedAuthoritativeVersion;
+import net.fhirfactory.harmonia.model.core.information.access.ResourceKey;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.HumanName;
 import org.hl7.fhir.r5.model.Patient;

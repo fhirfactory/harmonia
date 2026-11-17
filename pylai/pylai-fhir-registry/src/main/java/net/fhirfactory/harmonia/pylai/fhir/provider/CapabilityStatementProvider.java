@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.pylai.fhir.provider;
 
-import net.fhirfactory.harmonia.model.registry.ProviderRegistryConstants;
+import net.fhirfactory.harmonia.model.core.domain.fhir.valuesets.ProviderRegistryConstants;
 import org.hl7.fhir.r5.model.CapabilityStatement;
 import org.hl7.fhir.r5.model.Enumerations;
 import org.springframework.stereotype.Component;

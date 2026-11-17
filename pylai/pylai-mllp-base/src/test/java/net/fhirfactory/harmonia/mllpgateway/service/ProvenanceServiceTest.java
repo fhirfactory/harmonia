@@ -18,8 +18,8 @@
 package net.fhirfactory.harmonia.mllpgateway.service;
 
 import ca.uhn.fhir.context.FhirContext;
-import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
-import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
+import net.fhirfactory.harmonia.model.core.security.valuesets.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.core.security.FhirSecurityTagManager;
 import org.hl7.fhir.r5.model.Provenance;
 import org.hl7.fhir.r5.model.Reference;
 import org.infinispan.client.hotrod.RemoteCache;

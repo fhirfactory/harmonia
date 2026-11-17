@@ -17,12 +17,15 @@
 
 package net.fhirfactory.harmonia.erga.distribution;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import jakarta.enterprise.context.Dependent;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.datatypes.PragmaCheckpoint;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
@@ -74,8 +77,8 @@ public class AdtDistributionErgon extends ErgonBase {
 
             int order = pragma.getOutput() != null ? pragma.getOutput().size() : 0;
             for (String targetQueue : targetQueues) {
-                Topic egressTopic = Topic.fromHl7("ADT", extractTriggerEvent(rawHl7));
-                ErgonPayload dispatchPayload = ErgonPayload.fromJson(order++, egressTopic, egressTopic, rawHl7);
+                Topic egressTopic = TopicFactory.fromHl7("ADT", extractTriggerEvent(rawHl7));
+                ErgonPayload dispatchPayload = ErgonPayloadFactory.fromJson(order++, egressTopic, egressTopic, rawHl7);
                 pragma.addOutput(dispatchPayload);
 
                 // REC-002: Record granular destination fan-out checkpoint sub-state

@@ -19,9 +19,11 @@ package net.fhirfactory.harmonia.paradeigma.test;
 
 import net.fhirfactory.harmonia.erga.distribution.AdtDistributionErgon;
 import net.fhirfactory.harmonia.erga.order.routing.OrmRoutingErgon;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.PragmaBuilder;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import net.fhirfactory.harmonia.paradeigma.common.generator.SyntheticOrderGenerator;
 import net.fhirfactory.harmonia.paradeigma.common.generator.SyntheticPatientGenerator;
 import net.fhirfactory.harmonia.paradeigma.common.hl7.AckResult;
@@ -121,8 +123,8 @@ public class RecoveryAcceptanceTest {
 
         // Process through AdtDistributionErgon post-recovery
         AdtDistributionErgon ergon = new AdtDistributionErgon(camelContext);
-        Pragma pragma = Pragma.builder().pragmaId("pragma-rec-1").correlationId(controlId).build();
-        pragma.addInput(ErgonPayload.fromJson(0, null, null, replayedMessage));
+        Pragma pragma = new PragmaBuilder().pragmaId("pragma-rec-1").correlationId(controlId).build();
+        pragma.addInput(ErgonPayloadFactory.fromJson(0, null, null, replayedMessage));
 
         Exchange exchange = new DefaultExchange(camelContext);
         exchange.getIn().setBody(pragma);
@@ -144,12 +146,12 @@ public class RecoveryAcceptanceTest {
         String adtMessage = Hl7MessageBuilders.buildAdtA01(patient, visit);
         String controlId = Hl7Parsers.extractMessageControlId(adtMessage);
 
-        Pragma pragma = Pragma.builder()
+        Pragma pragma = new PragmaBuilder()
                 .pragmaId("pragma-rec-worker-1")
                 .correlationId(controlId)
                 .status(PragmaStatus.IN_PROGRESS)
                 .build();
-        pragma.addInput(ErgonPayload.fromJson(0, null, null, adtMessage));
+        pragma.addInput(ErgonPayloadFactory.fromJson(0, null, null, adtMessage));
 
         // 1. Worker 1 begins processing but encounters a simulated fatal JVM interruption
         AtomicBoolean worker1Crashed = new AtomicBoolean(false);
@@ -342,12 +344,12 @@ public class RecoveryAcceptanceTest {
         String adtA01 = Hl7MessageBuilders.buildAdtA01(patient, visit);
         String controlId = Hl7Parsers.extractMessageControlId(adtA01);
 
-        Pragma pendingTask = Pragma.builder()
+        Pragma pendingTask = new PragmaBuilder()
                 .pragmaId("pragma-cold-restart-1")
                 .correlationId(controlId)
                 .status(PragmaStatus.REQUESTED)
                 .build();
-        pendingTask.addInput(ErgonPayload.fromJson(0, null, null, adtA01));
+        pendingTask.addInput(ErgonPayloadFactory.fromJson(0, null, null, adtA01));
         stateStore.put(pendingTask.getPragmaId(), pendingTask);
 
         // 2. Full platform shutdown

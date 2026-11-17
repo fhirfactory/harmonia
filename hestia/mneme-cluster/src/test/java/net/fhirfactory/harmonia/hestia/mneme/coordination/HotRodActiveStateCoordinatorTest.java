@@ -18,10 +18,10 @@
 package net.fhirfactory.harmonia.hestia.mneme.coordination;
 
 import net.fhirfactory.harmonia.infinispan.scenario.support.InfinispanLaboratoryServer;
-import net.fhirfactory.harmonia.model.governedwrite.ActiveStateCoordinationResult;
-import net.fhirfactory.harmonia.model.governedwrite.ActiveStateToken;
-import net.fhirfactory.harmonia.model.governedwrite.ActiveStateTokenBridge;
-import net.fhirfactory.harmonia.model.governedwrite.ResourceKey;
+import net.fhirfactory.harmonia.model.core.information.access.ActiveStateCoordinationResult;
+import net.fhirfactory.harmonia.model.core.information.access.ActiveStateToken;
+import net.fhirfactory.harmonia.model.core.information.access.ActiveStateTokenBridge;
+import net.fhirfactory.harmonia.model.core.information.access.ResourceKey;
 import org.infinispan.client.hotrod.RemoteCache;
 import org.infinispan.client.hotrod.RemoteCacheManager;
 import org.junit.jupiter.api.AfterEach;

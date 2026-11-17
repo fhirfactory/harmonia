@@ -18,8 +18,8 @@
 package net.fhirfactory.harmonia.erga.registry;
 
 import jakarta.enterprise.context.Dependent;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.registry.ProviderRegistryConstants;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.domain.fhir.valuesets.ProviderRegistryConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.r5.model.HumanName;
 import org.hl7.fhir.r5.model.Identifier;

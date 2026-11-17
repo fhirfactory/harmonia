@@ -17,8 +17,8 @@
 
 package net.fhirfactory.harmonia.hapifhir.controller.dto;
 
-import net.fhirfactory.harmonia.model.governedwrite.AuthoritativeVersion;
-import net.fhirfactory.harmonia.model.governedwrite.ExpectedAuthoritativeVersion;
+import net.fhirfactory.harmonia.model.core.information.access.AuthoritativeVersion;
+import net.fhirfactory.harmonia.model.core.information.access.ExpectedAuthoritativeVersion;
 
 import java.util.Optional;
 

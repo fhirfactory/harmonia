@@ -17,8 +17,10 @@
 
 package net.fhirfactory.harmonia.erga.distribution;
 
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.PragmaBuilder;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.impl.DefaultCamelContext;
@@ -46,8 +48,8 @@ class AdtDistributionErgonTest {
         String adtHl7 = "MSH|^~\\&|PAS|FAC|HARMONIA|HIE|20260915120000||ADT^A01|MSG-101|P|2.4\r" +
                 "PID|1||PAT-101^^^MRN||Smith^John\r";
 
-        Pragma pragma = Pragma.builder().pragmaId("pragma-101").correlationId("task-101").build();
-        ErgonPayload input = ErgonPayload.fromJson(0, null, null, adtHl7);
+        Pragma pragma = new PragmaBuilder().pragmaId("pragma-101").correlationId("task-101").build();
+        ErgonPayload input = ErgonPayloadFactory.fromJson(0, null, null, adtHl7);
         pragma.addInput(input);
 
         Exchange exchange = new DefaultExchange(camelContext);

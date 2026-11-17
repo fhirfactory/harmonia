@@ -17,8 +17,8 @@
 
 package net.fhirfactory.harmonia.praxis.sequence;
 
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
-import net.fhirfactory.harmonia.model.praxis.PraxisDefinition;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.workflow.orchestration.PraxisDefinition;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.erga.infrastructure.MessageQueueToExchangeConduit;
 import net.fhirfactory.harmonia.erga.patient.demographics.PatientDemographicsUpdateErgon;

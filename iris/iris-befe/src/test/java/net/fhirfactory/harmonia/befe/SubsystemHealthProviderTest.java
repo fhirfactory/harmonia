@@ -23,7 +23,7 @@ import net.fhirfactory.harmonia.befe.model.operations.OperationalSubsystem;
 import net.fhirfactory.harmonia.befe.model.operations.TimeSeries;
 import net.fhirfactory.harmonia.befe.provider.*;
 import net.fhirfactory.harmonia.befe.service.ModuleStatusService;
-import net.fhirfactory.harmonia.model.status.ModuleStatus;
+import net.fhirfactory.harmonia.model.core.observability.ModuleStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

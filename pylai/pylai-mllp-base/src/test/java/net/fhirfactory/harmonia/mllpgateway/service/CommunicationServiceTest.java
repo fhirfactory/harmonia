@@ -17,8 +17,8 @@
 
 package net.fhirfactory.harmonia.mllpgateway.service;
 
-import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
-import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
+import net.fhirfactory.harmonia.model.core.security.valuesets.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.core.security.FhirSecurityTagManager;
 import org.hl7.fhir.r5.model.Attachment;
 import org.hl7.fhir.r5.model.Communication;
 import org.hl7.fhir.r5.model.Enumerations;

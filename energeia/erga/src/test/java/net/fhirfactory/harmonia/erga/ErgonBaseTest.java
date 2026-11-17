@@ -18,12 +18,13 @@
 package net.fhirfactory.harmonia.erga;
 
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
-import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.datatypes.PragmaCheckpoint;
+import net.fhirfactory.harmonia.model.core.domain.fhir.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import net.fhirfactory.harmonia.themis.api.model.PrincipalType;
@@ -114,16 +115,16 @@ class ErgonBaseTest {
 
             Topic container = new Topic("Health", "FHIR", "R5", "Patient", "Default");
             Topic content = new Topic("Health", "Clinical", "1.0", "Patient", "Demographics");
-            pragma.addOutput(ErgonPayload.fromFhirResource(0, container, content, patient));
+            pragma.addOutput(ErgonPayloadFactory.fromFhirResource(0, container, content, patient));
 
             Topic obsContainer = new Topic("Health", "FHIR", "R5", "Observation", "Default");
             Topic obsContent = new Topic("Health", "Clinical", "1.0", "Observation", "Vitals");
-            pragma.addOutput(ErgonPayload.fromFhirResource(1, obsContainer, obsContent,
+            pragma.addOutput(ErgonPayloadFactory.fromReference(1, obsContainer, obsContent,
                     new Reference("Observation/OBS-101").setDisplay("Vital Signs Observation")));
 
             Topic repContainer = new Topic("Health", "FHIR", "R5", "DiagnosticReport", "Default");
             Topic repContent = new Topic("Health", "Clinical", "1.0", "DiagnosticReport", "CBC");
-            pragma.addOutput(ErgonPayload.fromFhirResource(2, repContainer, repContent,
+            pragma.addOutput(ErgonPayloadFactory.fromReference(2, repContainer, repContent,
                     new Reference("DiagnosticReport/REP-202").setDisplay("CBC Diagnostic Report")));
 
             pragma.setStatus(PragmaStatus.COMPLETED);
@@ -256,11 +257,11 @@ class ErgonBaseTest {
         Pragma processedPragma = new Pragma("PRAGMA-PARENT-888", "praxis-e2e", PragmaStatus.IN_PROGRESS);
 
         Topic obsTopic = new Topic("Health", "FHIR", "R5", "Observation", null);
-        processedPragma.addOutput(ErgonPayload.fromFhirResource(0, obsTopic, obsTopic,
+        processedPragma.addOutput(ErgonPayloadFactory.fromReference(0, obsTopic, obsTopic,
                 new Reference("Observation/OBS-1").setDisplay("Blood Glucose")));
 
         Topic medTopic = new Topic("Health", "FHIR", "R5", "MedicationRequest", null);
-        processedPragma.addOutput(ErgonPayload.fromFhirResource(1, medTopic, medTopic,
+        processedPragma.addOutput(ErgonPayloadFactory.fromReference(1, medTopic, medTopic,
                 new Reference("MedicationRequest/MED-2").setDisplay("Metformin")));
 
         Exchange exchange = new org.apache.camel.support.DefaultExchange(camelContext);
@@ -352,9 +353,9 @@ class ErgonBaseTest {
         parentPragma.setExecutingPrincipal(HarmoniaServiceIdentities.PRINCIPAL_PONOS_PROCESS);
 
         Topic obsTopic = new Topic("Health", "FHIR", "R5", "Observation", null);
-        parentPragma.addOutput(ErgonPayload.fromFhirResource(0, obsTopic, obsTopic,
+        parentPragma.addOutput(ErgonPayloadFactory.fromReference(0, obsTopic, obsTopic,
                 new Reference("Observation/OBS-1").setDisplay("Blood Glucose")));
-        parentPragma.addOutput(ErgonPayload.fromFhirResource(1, obsTopic, obsTopic,
+        parentPragma.addOutput(ErgonPayloadFactory.fromReference(1, obsTopic, obsTopic,
                 new Reference("Observation/OBS-2").setDisplay("Blood Pressure")));
 
         Task processedTask = PragmaFhirConverter.toFhirTask(parentPragma);

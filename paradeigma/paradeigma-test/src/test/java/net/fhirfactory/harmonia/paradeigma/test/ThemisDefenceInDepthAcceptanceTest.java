@@ -23,15 +23,16 @@ import net.fhirfactory.harmonia.erga.registry.PractitionerChangeErgon;
 import net.fhirfactory.harmonia.hapifhir.repository.FhirResourceRepository;
 import net.fhirfactory.harmonia.hapifhir.service.FhirStorageService;
 import net.fhirfactory.harmonia.hapifhir.service.ProviderRegistryReferenceValidator;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.pragma.ProviderRegistryChangePragma;
-import net.fhirfactory.harmonia.model.registry.ProviderRegistryConstants;
-import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
-import net.fhirfactory.harmonia.model.security.HarmoniaAuthorityEnum;
-import net.fhirfactory.harmonia.model.security.HarmoniaRoleEnum;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.PragmaBuilder;
+import net.fhirfactory.harmonia.model.core.domain.fhir.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ProviderRegistryChangePragma;
+import net.fhirfactory.harmonia.model.core.domain.fhir.valuesets.ProviderRegistryConstants;
+import net.fhirfactory.harmonia.model.core.security.ErgonSecurityDefinition;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaAuthorityEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaRoleEnum;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
 import net.fhirfactory.harmonia.praxis.sequence.PraxisImplementation;
@@ -344,7 +345,7 @@ class ThemisDefenceInDepthAcceptanceTest {
     @DisplayName("Pragma context serialization and tamper-resistance verification")
     void testPragmaSecurityContextSerializationAndIntegrity() {
         ThemisPrincipal principal = ThemisPrincipal.of("user:dr-franklin", PrincipalType.HUMAN, "genomics-dept");
-        Pragma pragma = Pragma.builder()
+        Pragma pragma = new PragmaBuilder()
                 .pragmaId("pragma-tamper-01")
                 .originatingPrincipal(principal)
                 .addOriginatingAuthority(HarmoniaAuthorityEnum.PROVIDER_CHANGE_SUBMIT.toThemisAuthority())

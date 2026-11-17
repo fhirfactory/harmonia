@@ -17,6 +17,8 @@
 
 package net.fhirfactory.harmonia.mllpgateway.hl7;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import ca.uhn.hl7v2.DefaultHapiContext;
 import ca.uhn.hl7v2.HapiContext;
 import ca.uhn.hl7v2.model.Message;
@@ -25,8 +27,8 @@ import ca.uhn.hl7v2.util.Terser;
 import ca.uhn.hl7v2.validation.impl.NoValidation;
 import net.fhirfactory.harmonia.mllpgateway.hl7.factories.MfnCommunicationResourceBuilder;
 import net.fhirfactory.harmonia.mllpgateway.hl7.factories.MfnTaskResourceBuilder;
-import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
-import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
+import net.fhirfactory.harmonia.model.core.security.valuesets.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.core.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.hl7.fhir.r5.model.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -103,7 +105,7 @@ class MfnModularBuildersTest {
     void testCommunicationAndTaskBuilders() throws Exception {
         Message msg = pipeParser.parse(FULL_MFN_M02);
         Terser terser = new Terser(msg);
-        Topic topic = Topic.fromHl7("2.4", "MFN", "M02");
+        Topic topic = TopicFactory.fromHl7("2.4", "MFN", "M02");
 
         Communication comm = communicationBuilder.buildCommunication(terser, topic, FULL_MFN_M02, "MSG-CTRL-99901",
                 "DOC-12345", "DR. JOHN SMITH", "STAFF_APP", "HOSPITAL_A", "20260910120000");

@@ -28,7 +28,7 @@ import net.fhirfactory.harmonia.befe.server.OperationsServerManager;
 import net.fhirfactory.harmonia.befe.service.FhirCacheService;
 import net.fhirfactory.harmonia.befe.service.ModuleStatusService;
 import net.fhirfactory.harmonia.befe.service.TaskSequenceCacheService;
-import net.fhirfactory.harmonia.model.status.ModuleStatus;
+import net.fhirfactory.harmonia.model.core.observability.ModuleStatus;
 import org.infinispan.client.hotrod.RemoteCacheManager;
 
 import java.util.Collections;

@@ -17,9 +17,9 @@
 
 package net.fhirfactory.harmonia.pylai.fhir.publication;
 
-import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
-import net.fhirfactory.harmonia.model.security.FhirConfidentialityEnum;
-import net.fhirfactory.harmonia.model.security.HarmoniaSecurityCodeSystem;
+import net.fhirfactory.harmonia.model.core.domain.fhir.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.core.security.valuesets.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.core.security.HarmoniaSecurityCodeSystem;
 import org.hl7.fhir.r5.model.Bundle;
 import org.hl7.fhir.r5.model.CanonicalType;
 import org.hl7.fhir.r5.model.CodeableConcept;

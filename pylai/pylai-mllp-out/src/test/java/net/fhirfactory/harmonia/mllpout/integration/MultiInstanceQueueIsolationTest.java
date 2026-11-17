@@ -17,6 +17,8 @@
 
 package net.fhirfactory.harmonia.mllpout.integration;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import net.fhirfactory.harmonia.mllpgateway.config.MllpDestinationConfig;
 import net.fhirfactory.harmonia.mllpgateway.config.MllpDestinationRegistry;
 import net.fhirfactory.harmonia.mllpgateway.model.OutboundMllpRequest;
@@ -97,7 +99,7 @@ class MultiInstanceQueueIsolationTest {
     @Test
     void testHisOutageDoesNotBlockLisTransmission() {
         // Dispatch failing message to HIS instance
-        Topic hisTopic = Topic.fromHl7("ADT", "A01");
+        Topic hisTopic = TopicFactory.fromHl7("ADT", "A01");
         String hisHl7 = "MSH|^~\\&|HARMONIA|HIE|HIS_SYS|HOSP_N|20260915083000||ADT^A01|MSG-HIS-01|P|2.4\r";
         OutboundMllpRequest hisRequest = new OutboundMllpRequest("MSG-HIS-01", "HIS_NORTH", hisHl7, hisTopic);
 
@@ -105,7 +107,7 @@ class MultiInstanceQueueIsolationTest {
         assertThat(hisResponse.isSuccessful()).isFalse();
 
         // Dispatch successful message to LIS instance concurrently
-        Topic lisTopic = Topic.fromHl7("ORU", "R01");
+        Topic lisTopic = TopicFactory.fromHl7("ORU", "R01");
         String lisHl7 = "MSH|^~\\&|HARMONIA|HIE|LIS_SYS|LAB|20260915083000||ORU^R01|MSG-LIS-01|P|2.4\r";
         OutboundMllpRequest lisRequest = new OutboundMllpRequest("MSG-LIS-01", "LIS_MAIN", lisHl7, lisTopic);
 

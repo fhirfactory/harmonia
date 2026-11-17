@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.praxis.service;
 
-import net.fhirfactory.harmonia.model.status.ModuleStatus;
+import net.fhirfactory.harmonia.model.core.observability.ModuleStatus;
 import net.fhirfactory.harmonia.petasos.api.Petasos;
 import net.fhirfactory.harmonia.petasos.api.health.ConnectionState;
 import net.fhirfactory.harmonia.petasos.api.health.HealthStatus;

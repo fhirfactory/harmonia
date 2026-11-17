@@ -17,6 +17,8 @@
 
 package net.fhirfactory.harmonia.mllpgateway.model;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,7 +37,7 @@ class OutboundMllpModelsTest {
 
     @Test
     void testOutboundMllpRequestSerialization() throws Exception {
-        Topic topic = Topic.fromHl7("ADT", "A01");
+        Topic topic = TopicFactory.fromHl7("ADT", "A01");
         OutboundMllpRequest request = new OutboundMllpRequest("MSG-1001", "HIS_NORTH", "MSH|^~\\&|...", topic);
         request.setTargetQueue("petasos.queue.mllp.outbound.his_north");
         request.setFacility("HOSP_N");

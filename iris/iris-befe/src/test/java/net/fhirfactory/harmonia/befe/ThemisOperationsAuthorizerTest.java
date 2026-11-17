@@ -19,8 +19,8 @@ package net.fhirfactory.harmonia.befe;
 
 import net.fhirfactory.harmonia.befe.security.DefaultThemisAuthorizer;
 import net.fhirfactory.harmonia.befe.security.ThemisOperationsAuthorizer;
-import net.fhirfactory.harmonia.model.security.HarmoniaRoleEnum;
-import net.fhirfactory.harmonia.model.security.HarmoniaSecurityLabelEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaRoleEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaSecurityLabelEnum;
 import net.fhirfactory.harmonia.themis.api.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

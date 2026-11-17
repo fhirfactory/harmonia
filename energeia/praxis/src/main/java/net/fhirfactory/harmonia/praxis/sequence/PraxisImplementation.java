@@ -25,12 +25,13 @@ import jakarta.enterprise.context.Dependent;
 import jakarta.enterprise.inject.Any;
 import jakarta.enterprise.inject.Instance;
 import jakarta.inject.Inject;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
-import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.praxis.PraxisDefinition;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.datatypes.PragmaCheckpoint;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.domain.fhir.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.orchestration.PraxisDefinition;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import net.fhirfactory.harmonia.praxis.cache.PragmaCacheService;
@@ -774,7 +775,7 @@ public class PraxisImplementation extends PraxisDefinition {
                                         container = new Topic("Health", "HL7", "2.4", "RAW", "INGRESS");
                                     }
                                     Topic content = new Topic("Health", "Payload", "1.0", "RawMessage", "Default");
-                                    pragma.addInput(net.fhirfactory.harmonia.model.ergon.ErgonPayload.fromJson(0, container, content, rawBody.toString()));
+                                    pragma.addInput(ErgonPayloadFactory.fromJson(0, container, content, rawBody.toString()));
                                     if (exchange.getMessage().getHeader(ErgonBase.HEADER_RAW_MESSAGE) == null) {
                                         exchange.getMessage().setHeader(ErgonBase.HEADER_RAW_MESSAGE, rawBody.toString());
                                     }
@@ -782,7 +783,7 @@ public class PraxisImplementation extends PraxisDefinition {
                             } else if (rawBody instanceof String && pragma.getInput().isEmpty()) {
                                 Topic container = new Topic("Health", "HL7", "2.4", "RAW", "INGRESS");
                                 Topic content = new Topic("Health", "Payload", "1.0", "RawMessage", "Default");
-                                pragma.addInput(net.fhirfactory.harmonia.model.ergon.ErgonPayload.fromJson(0, container, content, rawBody.toString()));
+                                pragma.addInput(ErgonPayloadFactory.fromJson(0, container, content, rawBody.toString()));
                                 if (exchange.getMessage().getHeader(ErgonBase.HEADER_RAW_MESSAGE) == null) {
                                     exchange.getMessage().setHeader(ErgonBase.HEADER_RAW_MESSAGE, rawBody.toString());
                                 }

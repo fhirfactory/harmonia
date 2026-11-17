@@ -18,7 +18,7 @@
 package net.fhirfactory.harmonia.paradeigma.scenarios.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
 import net.fhirfactory.harmonia.themis.api.model.ThemisDecision;
 
 import java.time.LocalDateTime;

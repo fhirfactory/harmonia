@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.mllpgateway.service;
 
-import net.fhirfactory.harmonia.model.status.ModuleStatus;
+import net.fhirfactory.harmonia.model.core.observability.ModuleStatus;
 
 import java.util.List;
 import java.util.Map;

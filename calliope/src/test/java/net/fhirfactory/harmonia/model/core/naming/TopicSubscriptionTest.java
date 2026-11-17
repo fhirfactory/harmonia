@@ -17,6 +17,8 @@
 
 package net.fhirfactory.harmonia.model.core.naming;
 
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -38,8 +40,8 @@ public class TopicSubscriptionTest {
     @DisplayName("forAll subscribes to any Topic")
     void testForAll() {
         TopicSubscription sub = TopicSubscription.forAll();
-        assertThat(sub.matches(Topic.fromName("Health.HL7.2.4.ADT.A01"))).isTrue();
-        assertThat(sub.matches(Topic.fromFhir("Practitioner", "CREATE"))).isTrue();
+        assertThat(sub.matches(TopicFactory.fromName("Health.HL7.2.4.ADT.A01"))).isTrue();
+        assertThat(sub.matches(TopicFactory.fromFhir("Practitioner", "CREATE"))).isTrue();
     }
 
     @Test
@@ -47,28 +49,28 @@ public class TopicSubscriptionTest {
     void testHierarchicalMatching() {
         TopicSubscription hl7Sub = TopicSubscription.forModel("Health", "HL7");
 
-        Topic adt = Topic.fromHl7("ADT", "A01");
+        Topic adt = TopicFactory.fromHl7("ADT", "A01");
         assertThat(hl7Sub.matches(adt)).isTrue();
 
-        Topic fhir = Topic.fromFhir("Patient", "CREATE");
+        Topic fhir = TopicFactory.fromFhir("Patient", "CREATE");
         assertThat(hl7Sub.matches(fhir)).isFalse();
 
         TopicSubscription adtOnly = TopicSubscription.forHl7("ADT^A01");
-        assertThat(adtOnly.matches(Topic.fromHl7("ADT", "A01"))).isTrue();
-        assertThat(adtOnly.matches(Topic.fromHl7("ADT", "A08"))).isFalse();
+        assertThat(adtOnly.matches(TopicFactory.fromHl7("ADT", "A01"))).isTrue();
+        assertThat(adtOnly.matches(TopicFactory.fromHl7("ADT", "A08"))).isFalse();
     }
 
     @Test
     @DisplayName("FHIR resource and interaction matching")
     void testFhirMatching() {
         TopicSubscription practitionerSub = TopicSubscription.forFhir("Practitioner");
-        assertThat(practitionerSub.matches(Topic.fromFhir("Practitioner", "CREATE"))).isTrue();
-        assertThat(practitionerSub.matches(Topic.fromFhir("Practitioner", "UPDATE"))).isTrue();
-        assertThat(practitionerSub.matches(Topic.fromFhir("Patient", "CREATE"))).isFalse();
+        assertThat(practitionerSub.matches(TopicFactory.fromFhir("Practitioner", "CREATE"))).isTrue();
+        assertThat(practitionerSub.matches(TopicFactory.fromFhir("Practitioner", "UPDATE"))).isTrue();
+        assertThat(practitionerSub.matches(TopicFactory.fromFhir("Patient", "CREATE"))).isFalse();
 
         TopicSubscription createOnly = TopicSubscription.forFhir("Practitioner", "CREATE");
-        assertThat(createOnly.matches(Topic.fromFhir("Practitioner", "CREATE"))).isTrue();
-        assertThat(createOnly.matches(Topic.fromFhir("Practitioner", "UPDATE"))).isFalse();
+        assertThat(createOnly.matches(TopicFactory.fromFhir("Practitioner", "CREATE"))).isTrue();
+        assertThat(createOnly.matches(TopicFactory.fromFhir("Practitioner", "UPDATE"))).isFalse();
     }
 
     @Test
@@ -83,6 +85,6 @@ public class TopicSubscriptionTest {
         assertThat(deserialized.getModel()).isEqualTo(sub.getModel());
         assertThat(deserialized.getDataElement()).isEqualTo(sub.getDataElement());
         assertThat(deserialized.getDataElementQualifier()).isEqualTo(sub.getDataElementQualifier());
-        assertThat(deserialized.matches(Topic.fromHl7("ADT", "A01"))).isTrue();
+        assertThat(deserialized.matches(TopicFactory.fromHl7("ADT", "A01"))).isTrue();
     }
 }

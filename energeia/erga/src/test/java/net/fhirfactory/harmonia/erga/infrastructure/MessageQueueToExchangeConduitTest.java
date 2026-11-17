@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.erga.infrastructure;
 
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
 import net.fhirfactory.harmonia.erga.base.ErgonBase;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;

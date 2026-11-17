@@ -25,7 +25,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.apache.commons.lang3.StringUtils;
 import net.fhirfactory.harmonia.befe.service.FhirCacheService;
-import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.ErgonReasonEnum;
 import org.hl7.fhir.r5.model.Bundle;
 import org.hl7.fhir.r5.model.Task;
 

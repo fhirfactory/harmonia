@@ -23,15 +23,16 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.inject.Inject;
-import net.fhirfactory.harmonia.model.ergon.ErgonReasonEnum;
-import net.fhirfactory.harmonia.model.ergon.ErgonEvent;
-import net.fhirfactory.harmonia.model.ergon.ErgonPayload;
-import net.fhirfactory.harmonia.model.pragma.Pragma;
-import net.fhirfactory.harmonia.model.pragma.PragmaCheckpoint;
-import net.fhirfactory.harmonia.model.pragma.PragmaFhirConverter;
-import net.fhirfactory.harmonia.model.pragma.PragmaStatus;
-import net.fhirfactory.harmonia.model.security.ErgonSecurityDefinition;
-import net.fhirfactory.harmonia.model.security.FhirSecurityTagManager;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.ErgonReasonEnum;
+import net.fhirfactory.harmonia.model.core.message.entity.ErgonEvent;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.factory.ErgonPayloadFactory;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.Pragma;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.datatypes.PragmaCheckpoint;
+import net.fhirfactory.harmonia.model.core.domain.fhir.PragmaFhirConverter;
+import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.PragmaStatus;
+import net.fhirfactory.harmonia.model.core.security.ErgonSecurityDefinition;
+import net.fhirfactory.harmonia.model.core.security.FhirSecurityTagManager;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.praxis.cache.TaskCacheService;
 import net.fhirfactory.harmonia.themis.api.model.ThemisAuthority;
@@ -269,7 +270,7 @@ public abstract class ErgonBase extends RouteBuilder {
                     container = new Topic("Health", "HL7", "2.4", "RAW", "INGRESS");
                 }
                 Topic content = new Topic("Health", "Payload", "1.0", "RawMessage", null);
-                ErgonPayload inputPayload = ErgonPayload.fromJson(0, container, content, body.toString());
+                ErgonPayload inputPayload = ErgonPayloadFactory.fromJson(0, container, content, body.toString());
                 pragma.addInput(inputPayload);
 
                 if (exchange.getMessage().getHeader(HEADER_RAW_MESSAGE) == null) {
@@ -558,13 +559,13 @@ public abstract class ErgonBase extends RouteBuilder {
         }
         ErgonPayload outputPayload;
         if (data instanceof IBaseResource) {
-            outputPayload = ErgonPayload.fromFhirResource(pragma.getOutput().size(), container, content, (IBaseResource) data);
+            outputPayload = ErgonPayloadFactory.fromFhirResource(pragma.getOutput().size(), container, content, (IBaseResource) data);
         } else if (data instanceof Reference) {
-            outputPayload = ErgonPayload.fromFhirResource(pragma.getOutput().size(), container, content, (Reference) data);
+            outputPayload = ErgonPayloadFactory.fromReference(pragma.getOutput().size(), container, content, (Reference) data);
         } else if (data instanceof String) {
-            outputPayload = ErgonPayload.fromJson(pragma.getOutput().size(), container, content, (String) data);
+            outputPayload = ErgonPayloadFactory.fromJson(pragma.getOutput().size(), container, content, (String) data);
         } else {
-            outputPayload = ErgonPayload.fromJsonObject(pragma.getOutput().size(), container, content, data);
+            outputPayload = ErgonPayloadFactory.fromJsonObject(pragma.getOutput().size(), container, content, data);
         }
         pragma.addOutput(outputPayload);
     }

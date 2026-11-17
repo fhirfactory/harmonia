@@ -18,8 +18,8 @@
 package net.fhirfactory.harmonia.hapifhir.persistence;
 
 import net.fhirfactory.harmonia.hapifhir.persistence.model.AuthoritativePersistenceResult;
-import net.fhirfactory.harmonia.model.governedwrite.ExpectedAuthoritativeVersion;
-import net.fhirfactory.harmonia.model.governedwrite.ResourceKey;
+import net.fhirfactory.harmonia.model.core.information.access.ExpectedAuthoritativeVersion;
+import net.fhirfactory.harmonia.model.core.information.access.ResourceKey;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 
 /**

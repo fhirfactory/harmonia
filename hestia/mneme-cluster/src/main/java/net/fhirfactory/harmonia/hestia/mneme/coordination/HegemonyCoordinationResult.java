@@ -17,7 +17,7 @@
 
 package net.fhirfactory.harmonia.hestia.mneme.coordination;
 
-import net.fhirfactory.harmonia.model.governedwrite.ActiveStateToken;
+import net.fhirfactory.harmonia.model.core.information.access.ActiveStateToken;
 
 import java.util.Objects;
 
