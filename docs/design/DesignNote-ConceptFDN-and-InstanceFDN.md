@@ -234,18 +234,46 @@ The component type, component role and component instance represent distinct con
 
 ### 7.2 InformationUnit
 
-```java
-ConceptFDN informationProfile;
-String uuid;
-```
+An InformationUnit has an independently assigned, immutable UUID
+(`InformationUnit.id`) as its authoritative and durable instance identity. The UUID
+is independent of classification, information representation, ownership, location,
+lifecycle and version. An InformationUnit neither has nor requires an `InstanceFDN`.
 
-`informationProfile` classifies the InformationUnit **as a whole**. It does not classify the encapsulated payload in place of `InformationRepresentation`.
+`InformationUnit.informationProfile` is the `ConceptFDN` that identifies the
+IU's conceptual classification. Its value,
+`solution=harmonia.domain=internal.concept=InformationUnit`, is intrinsic to the
+InformationUnit concept and immutable for the lifetime of the IU. The model retains
+this fixed value to preserve explicit conceptual identity and provenance
+independently of Java class names, package hierarchies, Maven modules,
+implementation language and software refactoring or restructuring. A constructor
+default could supply the fixed value. The initialisation mechanism remains a
+detailed design choice.
 
-`InformationRepresentation`, including its `ContainerMetadata` and `ContentMetadata`, retains responsibility for describing the payload and its representation.
+Each IU has exactly one governed `InformationRepresentation`. Its
+`ContainerMetadata` describes the envelope, its `ContentMetadata` describes the
+content structure and technical characteristics, and its `Content` carries the
+represented information. Changes to that information leave `informationProfile`
+unchanged and follow the accepted IU revision and lifecycle rules. A transformation
+that produces a differently structured or formatted governed representation
+creates a new IU with provenance.
+[IU lifecycle](../../enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md#43-information-lifecycle-is-not-an-operational-handshake) ·
+[IU representation](../../enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md#5-informationrepresentation-containermetadata-contentmetadata-and-content)
 
-The UUID establishes the InformationUnit's durable identity independently of its profile, information representation, owner, logical coordinates or persistence location. Versioning is independent of that identity.
+Where an existing contract requires an IU Topic representation, a deterministic
+projection may be derived from `InformationUnit.informationProfile + InformationUnit.id`.
+The immutable inputs keep the projection stable. The ConceptFDN supplies the
+conceptual classification, and the UUID remains authoritative for the instance.
+The projection introduces no additional IU identity or `InstanceFDN`.
 
-The established canonical InformationUnit Topic naming convention, `harmonia.mneme.iu.<hex-uuid>`, is retained as a deterministic representation derived from the UUID, **not** a second independently assigned identity. This canonical Topic name does not imply that the InformationUnit uses an `InstanceFDN`.
+The historical `harmonia.mneme.iu.<hex-uuid>` convention concerns the IU Topic
+designation. The accepted Architecture Continuum 1.1.26 specifies that
+designation as `harmonia.mneme.iu.<hex-string-of-compressed-uuid>` and gives the
+IU Topic a distinct Topic UUID. F-01.78 preserves the designation as the
+unqualified projection in the Topic redesign. The IU Topic contract and its
+boundary mappings remain subject to the outstanding G02 reconciliation.
+[Architecture Topic](../../enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md#architectural-content) ·
+[InformationUnit Class](../../enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md#architectural-content) ·
+[F-01.78](../../enterprise-architecture/design/evidence/software-0.1.0/004/before/F-01-Topic-TopicMask-Adjudications-Continuation-004.md#f-0178--r3-information-unit-topic-designation--accepted)
 
 ### 7.3 PetasosParcel
 
@@ -344,7 +372,9 @@ The common identification framework shall:
 - Reuse Topic as its underlying hierarchical mechanism.
 - Distinguish conceptual classification from instance identity.
 - Use hierarchical `InstanceFDN` identity where containment is intrinsic to identity; use UUID identity where the object must remain independent of containment and location.
-- Preserve `InformationUnit.informationProfile` as distinct from the payload's `InformationRepresentation`.
+- Preserve the InformationUnit's immutable `informationProfile` as explicit
+  conceptual classification and provenance. Keep representation characteristics
+  with `InformationRepresentation`.
 - Keep UUIDs and their deterministic naming projections from becoming competing identities.
 - Preserve qualified containment information.
 - Permit both controlled value-sets and custom terminology.
