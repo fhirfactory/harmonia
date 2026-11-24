@@ -17,26 +17,24 @@
 
 package net.fhirfactory.harmonia.model.core.information.entity.datatypes;
 
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicMaskFactory;
-
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import net.fhirfactory.harmonia.model.core.information.entity.factory.InformationSecurityContextBuilder;
-import net.fhirfactory.harmonia.model.core.security.valuesets.FhirConfidentialityEnum;
-import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaSecurityLabelEnum;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.model.core.naming.TopicMask;
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicMaskFactory;
+import net.fhirfactory.harmonia.model.core.security.valuesets.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaSecurityLabelEnum;
 
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -57,6 +55,8 @@ import java.util.Set;
  *       to Themis and {@code ThemisSecurityContext}.</li>
  *   <li><b>CRITICAL INDEPENDENCE:</b> {@code InformationSecurityContext} is <b>100% independent of {@link InformationCoordinates}</b>.
  *       Operational gateway, endpoint, location, or owner metadata does not establish security clearance or compartments.</li>
+ *   <li>Typed action TopicMasks are serialized as semantic criteria and participate in equality and emptiness checks.
+ *       Legacy action display strings reject selector syntax rather than changing the scope of a typed criterion.</li>
  * </ul>
  * <p>
  * <b>Defensive Programming:</b>
@@ -97,6 +97,8 @@ public final class InformationSecurityContext implements Serializable {
      * @param securityLabels    governed security labels (optional)
      * @param confidentiality   FHIR/Harmonia confidentiality rating (optional)
      * @param attributes        additional security requirement attributes (optional)
+     * @throws IllegalArgumentException if a mask collection contains null, or a legacy action
+     *         name contains path, escape, or RegEx syntax that could change its selector scope
      */
     @JsonCreator
     public InformationSecurityContext(
@@ -115,20 +117,27 @@ public final class InformationSecurityContext implements Serializable {
 
         Set<String> actions = new LinkedHashSet<>();
         Set<TopicMask> masks = new LinkedHashSet<>(sanitizeMaskSet(actionTopicMasks));
+        // Derive display names only from the exact inclusive literal path that a legacy
+        // name itself produces, so name -> mask -> name is idempotent across JSON round
+        // trips. Exact-depth, versioned, or expression masks never yield a name and are
+        // carried only as typed criteria, keeping their narrower scope intact.
+        for (TopicMask mask : masks) {
+            TopicMaskFactory.literalValuePath(mask)
+                    .filter(path -> path.size() == 4
+                            && path.subList(0, 3).equals(List.of("Harmonia", "Security", "Action")))
+                    .map(path -> path.get(3))
+                    .filter(InformationSecurityContext::isUnambiguousLegacyAction)
+                    .ifPresent(actions::add);
+        }
         if (actionMasks != null) {
             for (String action : actionMasks) {
                 if (action != null && !action.isBlank()) {
                     String normalized = action.trim();
+                    requireUnambiguousLegacyAction(normalized);
                     actions.add(normalized);
-                    masks.add(TopicMaskFactory.nameBased(
-                            TopicFactory.fromName("Harmonia.Security.Action." + normalized)));
+                    masks.add(TopicMaskFactory.forLiteralValuePath(
+                            List.of("Harmonia", "Security", "Action", normalized)));
                 }
-            }
-        }
-        for (TopicMask mask : masks) {
-            String pattern = mask.getMaskPattern();
-            if (pattern != null && pattern.startsWith("Harmonia.Security.Action.")) {
-                actions.add(pattern.substring("Harmonia.Security.Action.".length()));
             }
         }
         this.actionMasks = Collections.unmodifiableSet(actions);
@@ -144,6 +153,7 @@ public final class InformationSecurityContext implements Serializable {
                 : Collections.unmodifiableMap(new LinkedHashMap<>(attributes));
     }
 
+    /** Copies Topic criteria into an immutable set, retaining the existing null-element normalization. */
     private static Set<Topic> sanitizeTopicSet(Collection<Topic> input) {
         if (input == null || input.isEmpty()) {
             return Set.of();
@@ -157,17 +167,39 @@ public final class InformationSecurityContext implements Serializable {
         return Collections.unmodifiableSet(result);
     }
 
+    /** Copies mask criteria and rejects null elements because they cannot express a valid selector. */
     private static Set<TopicMask> sanitizeMaskSet(Collection<TopicMask> input) {
         if (input == null || input.isEmpty()) {
             return Set.of();
         }
         Set<TopicMask> result = new LinkedHashSet<>();
         for (TopicMask item : input) {
-            if (item != null) {
-                result.add(item);
+            if (item == null) {
+                throw new IllegalArgumentException("Security TopicMask criteria must not contain null");
             }
+            result.add(item);
         }
         return Collections.unmodifiableSet(result);
+    }
+
+    /** Rejects legacy names that could be interpreted as path, escape, or RegEx syntax. */
+    private static void requireUnambiguousLegacyAction(String action) {
+        if (!isUnambiguousLegacyAction(action)) {
+            throw new IllegalArgumentException("Legacy action name contains selector syntax");
+        }
+    }
+
+    /** Checks whether a legacy display name can safely represent one literal action value. */
+    private static boolean isUnambiguousLegacyAction(String action) {
+        if (action == null || action.isEmpty()) {
+            return false;
+        }
+        for (int index = 0; index < action.length(); index++) {
+            if (".=\\^$|?*+()[]{}".indexOf(action.charAt(index)) >= 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -192,86 +224,119 @@ public final class InformationSecurityContext implements Serializable {
     // Core Accessors
     // =========================================================================
 
+    /** @return immutable unit-level Topic criteria; never null */
     public Set<Topic> unitCriteria() {
         return unitCriteria;
     }
 
+    /** @return immutable unit-level Topic criteria (bean-style alias) */
     public Set<Topic> getUnitCriteria() {
         return unitCriteria;
     }
 
+    /** @return immutable container-level Topic criteria; never null */
     public Set<Topic> containerCriteria() {
         return containerCriteria;
     }
 
+    /** @return immutable container-level Topic criteria (bean-style alias) */
     public Set<Topic> getContainerCriteria() {
         return containerCriteria;
     }
 
+    /** @return immutable content-level Topic criteria; never null */
     public Set<Topic> contentCriteria() {
         return contentCriteria;
     }
 
+    /** @return immutable content-level Topic criteria (bean-style alias) */
     public Set<Topic> getContentCriteria() {
         return contentCriteria;
     }
 
+    /**
+     * Returns legacy action display names. These are a derived convenience view; the
+     * authoritative selector semantics are {@link #actionTopicMasks()}.
+     *
+     * @return immutable legacy action names; never null
+     */
     @JsonProperty("actionMasks")
     public Set<String> actionMasks() {
         return actionMasks;
     }
 
+    /** @return immutable legacy action names (bean-style alias) */
     public Set<String> getActionMasks() {
         return actionMasks;
     }
 
-    @JsonIgnore
+    /** @return immutable typed action selectors, preserved by JSON interchange */
+    @JsonProperty("actionTopicMasks")
     public Set<TopicMask> actionTopicMasks() {
         return actionTopicMasks;
     }
 
+    /** @return immutable compartment selectors; never null */
     public Set<TopicMask> compartmentMasks() {
         return compartmentMasks;
     }
 
+    /** @return immutable compartment selectors (bean-style alias) */
     public Set<TopicMask> getCompartmentMasks() {
         return compartmentMasks;
     }
 
+    /** @return immutable governed security labels; never null */
     public Set<HarmoniaSecurityLabelEnum> securityLabels() {
         return securityLabels;
     }
 
+    /** @return immutable governed security labels (bean-style alias) */
     public Set<HarmoniaSecurityLabelEnum> getSecurityLabels() {
         return securityLabels;
     }
 
+    /** @return confidentiality rating, or empty when none is required */
     public Optional<FhirConfidentialityEnum> confidentiality() {
         return Optional.ofNullable(confidentiality);
     }
 
+    /** @return confidentiality rating, or null when none is required */
     public FhirConfidentialityEnum getConfidentiality() {
         return confidentiality;
     }
 
+    /** @return immutable additional requirement attributes; never null */
     public Map<String, String> attributes() {
         return attributes;
     }
 
+    /** @return immutable additional requirement attributes (bean-style alias) */
     public Map<String, String> getAttributes() {
         return attributes;
     }
 
+    /**
+     * @param key attribute key
+     * @return attribute value, or empty when absent
+     */
     public Optional<String> attribute(String key) {
         return Optional.ofNullable(attributes.get(key));
     }
 
+    /**
+     * Reports whether no requirement of any kind is expressed. Typed action masks count
+     * as requirements even when they have no legacy display name.
+     *
+     * @return true only when every criterion, label, rating, and attribute is absent
+     */
     @JsonIgnore
     public boolean isEmpty() {
         return unitCriteria.isEmpty()
                 && containerCriteria.isEmpty()
                 && contentCriteria.isEmpty()
                 && actionMasks.isEmpty()
+                && actionTopicMasks.isEmpty()
                 && compartmentMasks.isEmpty()
                 && securityLabels.isEmpty()
                 && confidentiality == null
@@ -282,6 +347,13 @@ public final class InformationSecurityContext implements Serializable {
     // Standard Object Methods
     // =========================================================================
 
+    /**
+     * Compares all requirement state, including typed action masks, so contexts whose
+     * selectors differ only in exactness or version constraints are not equal.
+     *
+     * @param o comparison value
+     * @return true when all requirement state is equal
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -291,17 +363,21 @@ public final class InformationSecurityContext implements Serializable {
                 Objects.equals(containerCriteria, that.containerCriteria) &&
                 Objects.equals(contentCriteria, that.contentCriteria) &&
                 Objects.equals(actionMasks, that.actionMasks) &&
+                Objects.equals(actionTopicMasks, that.actionTopicMasks) &&
                 Objects.equals(compartmentMasks, that.compartmentMasks) &&
                 Objects.equals(securityLabels, that.securityLabels) &&
                 confidentiality == that.confidentiality &&
                 Objects.equals(attributes, that.attributes);
     }
 
+    /** @return hash consistent with {@link #equals(Object)} */
     @Override
     public int hashCode() {
-        return Objects.hash(unitCriteria, containerCriteria, contentCriteria, actionMasks, compartmentMasks, securityLabels, confidentiality, attributes);
+        return Objects.hash(unitCriteria, containerCriteria, contentCriteria, actionMasks, actionTopicMasks,
+                compartmentMasks, securityLabels, confidentiality, attributes);
     }
 
+    /** @return count-only summary that discloses no criteria, attributes, or expressions */
     @Override
     public String toString() {
         return "InformationSecurityContext{" +
@@ -309,6 +385,7 @@ public final class InformationSecurityContext implements Serializable {
                 ", containerCriteria=" + containerCriteria.size() +
                 ", contentCriteria=" + contentCriteria.size() +
                 ", actionMaskCount=" + actionMasks.size() +
+                ", actionTopicMaskCount=" + actionTopicMasks.size() +
                 ", compartmentMasks=" + compartmentMasks.size() +
                 ", labelCount=" + securityLabels.size() +
                 ", hasConfidentiality=" + (confidentiality != null) +

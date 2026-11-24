@@ -31,7 +31,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.UUID;
 
 /**
  * Encapsulates the metadata describing the Content of an Information Unit independently of the Content's actual data values.
@@ -164,8 +163,8 @@ public final class ContentMetadata implements Serializable {
     }
 
     @JsonIgnore
-    public Optional<UUID> contentStructureTopicId() {
-        return contentStructureTopic().map(Topic::getId);
+    public Optional<String> contentStructureTopicCanonicalName() {
+        return contentStructureTopic().map(Topic::getCanonicalName);
     }
 
     @JsonIgnore
@@ -363,11 +362,15 @@ public final class ContentMetadata implements Serializable {
     @Override
     public String toString() {
         return "ContentMetadata{" +
-                "structure=" + (contentStructureTopic != null ? contentStructureTopic.getShortId() : "null") +
+                "structure=" + topicSummary(contentStructureTopic) +
                 (contentSize != null ? ", size=" + contentSize : "") +
                 ", hasReference=" + (contentReference != null) +
                 ", attributeCount=" + attributes.size() +
                 '}';
+    }
+
+    private static String topicSummary(Topic topic) {
+        return topic != null ? "Topic(depth=" + topic.getDepth() + ")" : "null";
     }
 
 }

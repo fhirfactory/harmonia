@@ -20,7 +20,12 @@ package net.fhirfactory.harmonia.hapifhir.persistence;
 import ca.uhn.fhir.context.FhirContext;
 import net.fhirfactory.harmonia.hapifhir.model.FhirResourceEntity;
 import net.fhirfactory.harmonia.hapifhir.persistence.model.AuthoritativePersistenceResult;
+import net.fhirfactory.harmonia.hapifhir.persistence.model.DurabilityAssurance;
 import net.fhirfactory.harmonia.hapifhir.repository.FhirResourceRepository;
+import net.fhirfactory.harmonia.hestia.mnemosyne.framework.FhirPersistenceServiceBinding;
+import net.fhirfactory.harmonia.hestia.mnemosyne.framework.GovernedPersistenceFramework;
+import net.fhirfactory.harmonia.hestia.mnemosyne.framework.PersistenceDurabilityProfile;
+import net.fhirfactory.harmonia.hestia.mnemosyne.nonfhir.NonFhirPersistenceService;
 import net.fhirfactory.harmonia.model.core.information.access.AuthoritativeCommitOutcome;
 import net.fhirfactory.harmonia.model.core.information.access.AuthoritativeVersion;
 import net.fhirfactory.harmonia.model.core.information.access.ExpectedAuthoritativeVersion;
@@ -56,6 +61,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
+import static org.mockito.Mockito.mock;
 
 @SpringBootTest
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
@@ -91,6 +97,43 @@ class AuthoritativePersistencePostgreSqlConcurrencyTest {
     void setUp() {
         repository.deleteAll();
         persistenceService = new AuthoritativePersistenceService(repository, transactionManager, FhirContext.forR5());
+    }
+
+    @Test
+    @DisplayName("GPF routes FHIR create, update and read through the existing PostgreSQL persistence port")
+    void governedPersistenceFrameworkBindsExistingFhirPostgresService() {
+        ResourceKey key = ResourceKey.of("Patient", "v001-gpf-fhir-" + UUID.randomUUID());
+        Patient proposed = new Patient();
+        proposed.setActive(true);
+        proposed.addName(new HumanName().setFamily("V001-Initial"));
+        FhirPersistenceServiceBinding fhirBinding = new FhirPersistenceServiceBinding(
+                persistenceService,
+                DurabilityAssurance.LOCAL_TRANSACTION_COMMITTED);
+        GovernedPersistenceFramework framework = new GovernedPersistenceFramework(
+                mock(NonFhirPersistenceService.class),
+                fhirBinding,
+                PersistenceDurabilityProfile.DEVELOPMENT_LOCAL_TRANSACTION);
+
+        AuthoritativePersistenceResult<IBaseResource> created = framework.createFhir(key, proposed);
+        assertThat(created).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+        assertThat(((AuthoritativePersistenceResult.Committed<IBaseResource>) created).durabilityAssurance())
+                .isEqualTo(DurabilityAssurance.LOCAL_TRANSACTION_COMMITTED);
+
+        Patient update = new Patient();
+        update.setActive(false);
+        update.addName(new HumanName().setFamily("V001-Updated"));
+        AuthoritativePersistenceResult<IBaseResource> updated = framework.updateFhir(
+                key, update, ExpectedAuthoritativeVersion.of(1));
+        assertThat(updated).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+        assertThat(((AuthoritativePersistenceResult.Committed<IBaseResource>) updated).authoritativeVersion())
+                .isEqualTo(AuthoritativeVersion.of(2));
+
+        AuthoritativePersistenceResult<IBaseResource> retrieved = framework.readFhir(key);
+        assertThat(retrieved).isInstanceOf(AuthoritativePersistenceResult.Committed.class);
+        Patient persistedPatient = (Patient) ((AuthoritativePersistenceResult.Committed<IBaseResource>) retrieved)
+                .persistedResource();
+        assertThat(persistedPatient.getActive()).isFalse();
+        assertThat(persistedPatient.getNameFirstRep().getFamily()).isEqualTo("V001-Updated");
     }
 
     @Test

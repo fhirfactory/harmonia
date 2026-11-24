@@ -28,7 +28,6 @@ import net.fhirfactory.harmonia.model.core.naming.Topic;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.UUID;
 
 /**
  * Encapsulates the four semantically distinct named Topic references providing operational resolution and ownership.
@@ -45,7 +44,7 @@ import java.util.UUID;
  *       <li><b>InformationOwner:</b> Strongly typed Topic describing the operational owner (e.g. organisation or facility).</li>
  *     </ol>
  *   </li>
- *   <li>These are <b>strongly typed Topic references</b> preserving full immutable {@link UUID} identity, <b>not</b>
+ *   <li>These are <b>strongly typed Topic references</b> preserving full ordered canonical path identity, <b>not</b>
  *       inline gateway implementations, network URLs, connection credentials, or physical database addresses.</li>
  *   <li>Mnemosyne interprets these coordinates to resolve a PersistenceService and access context.</li>
  *   <li><b>CRITICAL ARCHITECTURAL INVARIANT:</b> {@code InformationCoordinates} is <b>100% independent of SecurityContext</b>.
@@ -167,23 +166,23 @@ public final class InformationCoordinates implements Serializable {
     // =========================================================================
 
     @JsonIgnore
-    public Optional<UUID> persistenceGatewayId() {
-        return persistenceGateway().map(Topic::getId);
+    public Optional<String> persistenceGatewayCanonicalName() {
+        return persistenceGateway().map(Topic::getCanonicalName);
     }
 
     @JsonIgnore
-    public Optional<UUID> gatewayEndpointId() {
-        return gatewayEndpoint().map(Topic::getId);
+    public Optional<String> gatewayEndpointCanonicalName() {
+        return gatewayEndpoint().map(Topic::getCanonicalName);
     }
 
     @JsonIgnore
-    public Optional<UUID> informationLocationId() {
-        return informationLocation().map(Topic::getId);
+    public Optional<String> informationLocationCanonicalName() {
+        return informationLocation().map(Topic::getCanonicalName);
     }
 
     @JsonIgnore
-    public Optional<UUID> informationOwnerId() {
-        return informationOwner().map(Topic::getId);
+    public Optional<String> informationOwnerCanonicalName() {
+        return informationOwner().map(Topic::getCanonicalName);
     }
 
     @JsonIgnore
@@ -257,11 +256,15 @@ public final class InformationCoordinates implements Serializable {
     @Override
     public String toString() {
         return "InformationCoordinates{" +
-                "gateway=" + (persistenceGateway != null ? persistenceGateway.getShortId() : "null") +
-                ", endpoint=" + (gatewayEndpoint != null ? gatewayEndpoint.getShortId() : "null") +
-                ", location=" + (informationLocation != null ? informationLocation.getShortId() : "null") +
-                ", owner=" + (informationOwner != null ? informationOwner.getShortId() : "null") +
+                "gateway=" + topicSummary(persistenceGateway) +
+                ", endpoint=" + topicSummary(gatewayEndpoint) +
+                ", location=" + topicSummary(informationLocation) +
+                ", owner=" + topicSummary(informationOwner) +
                 '}';
+    }
+
+    private static String topicSummary(Topic topic) {
+        return topic != null ? "Topic(depth=" + topic.getDepth() + ")" : "null";
     }
 
 }

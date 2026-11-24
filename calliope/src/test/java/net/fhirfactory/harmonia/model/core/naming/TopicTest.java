@@ -17,120 +17,266 @@
 
 package net.fhirfactory.harmonia.model.core.naming;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicEntry;
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicBuilder;
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.SortedMap;
-import java.util.TreeMap;
-import java.util.UUID;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.TreeSet;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@DisplayName("Topic Canonical Naming Model Tests")
-public class TopicTest {
+@DisplayName("Accepted immutable Topic model")
+class TopicTest {
 
-    private ObjectMapper objectMapper;
+    @Test
+    @DisplayName("Identity, comparison, and hashing use ordered qualifier/value pairs but ignore versions")
+    void identityAndOrderingIgnoreVersions() {
+        Topic first = Topic.builder().addEntry("Region", "North", "v1")
+                .addEntry("Region", "Clinic").build();
+        Topic second = Topic.builder().addEntry("Region", "North", "v2")
+                .addEntry("Region", "Clinic").build();
+        Topic differentQualifier = Topic.builder().addEntry("Area", "North", "v1")
+                .addEntry("Region", "Clinic").build();
 
-    @BeforeEach
-    void setUp() {
-        objectMapper = new ObjectMapper();
+        assertThat(first).isEqualTo(second);
+        assertThat(first.hashCode()).isEqualTo(second.hashCode());
+        assertThat(first.compareTo(second)).isZero();
+        assertThat(new java.util.HashSet<>(java.util.List.of(first, second))).hasSize(1);
+        assertThat(new TreeSet<>(java.util.List.of(first, second))).hasSize(1);
+        assertThat(first).isNotEqualTo(differentQualifier);
+        assertThat(first.getName()).isEqualTo(differentQualifier.getName());
+
+        Topic reordered = Topic.builder().addEntry("Region", "Clinic").addEntry("Region", "North").build();
+        Topic repeatedQualifier = Topic.builder().addEntry("Region", "North")
+                .addEntry("Region", "Clinic").build();
+        assertThat(repeatedQualifier).isEqualTo(first);
+        assertThat(reordered).isNotEqualTo(first);
     }
 
     @Test
-    @DisplayName("Topic explicitly sequenced construction and derived names")
-    void testExplicitCanonicalSequencingAndDerivedNames() {
-        UUID id = UUID.randomUUID();
-        SortedMap<Integer, TopicEntry> entries = new TreeMap<>();
-        entries.put(0, new TopicEntry("Country", "Australia"));
-        entries.put(1, new TopicEntry("StateTerritory", "ACT"));
-        entries.put(2, new TopicEntry("City", "Canberra"));
+    @DisplayName("Natural ordering is field-wise and shorter complete prefixes sort first")
+    void naturalOrderingIsDeterministic() {
+        Topic prefix = Topic.builder().addEntry("A", "same").build();
+        Topic child = Topic.builder().addEntry("A", "same").addEntry("B", "child").build();
+        Topic qualifierOrder = Topic.builder().addEntry("B", "same").build();
+        Topic valueOrder = Topic.builder().addEntry("A", "different").build();
+        Topic caseVariant = Topic.builder().addEntry("A", "Same").build();
+        Topic lowercaseVariant = Topic.builder().addEntry("A", "same").build();
 
-        Topic topic = new Topic(id, entries);
-
-        assertThat(topic.getId()).isEqualTo(id);
-        assertThat(topic.getDepth()).isEqualTo(3);
-        assertThat(topic.getName()).isEqualTo("Australia.ACT.Canberra");
-        assertThat(topic.getFriendlyName()).isEqualTo("Canberra");
-        assertThat(topic.getRelativeName()).isEqualTo("City=Canberra");
-        assertThat(topic.toCanonicalString()).isEqualTo("Country=Australia.StateTerritory=ACT.City=Canberra");
-        assertThat(topic.getShortId()).isEqualTo(id.toString().substring(0, 8));
-        assertThat(topic.toFormattedString()).contains(topic.getName());
+        assertThat(prefix.compareTo(child)).isNegative();
+        assertThat(valueOrder.compareTo(prefix)).isNegative();
+        assertThat(prefix.compareTo(qualifierOrder)).isNegative();
+        assertThat(caseVariant).isNotEqualTo(lowercaseVariant);
+        assertThat(caseVariant.compareTo(lowercaseVariant)).isNegative();
     }
 
     @Test
-    @DisplayName("Topic construction strictly rejects gaps in sequence numbers")
-    void testRejectionOfSequenceGaps() {
-        UUID id = UUID.randomUUID();
-        SortedMap<Integer, TopicEntry> gapEntries = new TreeMap<>();
-        gapEntries.put(0, new TopicEntry("Country", "Australia"));
-        gapEntries.put(2, new TopicEntry("City", "Canberra")); // Gap at index 1
+    @DisplayName("Parent and ancestor navigation preserve retained versions and strict ancestry")
+    void hierarchyPreservesVersions() {
+        Topic root = Topic.builder().addEntry("R", "root", "one").build();
+        Topic child = Topic.builder().addEntry("R", "root", "two")
+                .addEntry("C", "child", "three").build();
 
-        assertThatThrownBy(() -> new Topic(id, gapEntries))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("gap at position: 1");
+        assertThat(root.isAncestorOf(child)).isTrue();
+        assertThat(child.isAncestorOf(root)).isFalse();
+        assertThat(root.isAncestorOf(null)).isFalse();
+        assertThat(root.getParent()).isNull();
+        assertThat(child.getParent().getCanonicalNameWithVersion()).isEqualTo("R:two=root");
+        assertThat(child.getAncestor(child.getDepth())).isSameAs(child);
+        assertThat(child.getAncestor(1).getEntries().getFirst().getVersion()).contains("two");
+        assertThatThrownBy(() -> child.getAncestor(0)).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> child.getAncestor(3)).isInstanceOf(IllegalArgumentException.class);
+        assertThat(root.getDepth()).isEqualTo(1);
     }
 
     @Test
-    @DisplayName("Topic construction strictly rejects null ID or empty canonicalName")
-    void testRejectionOfNullIdOrEmptyCanonicalName() {
-        SortedMap<Integer, TopicEntry> validEntries = new TreeMap<>();
-        validEntries.put(0, new TopicEntry("A", "B"));
+    @DisplayName("Canonical identity and versioned text round-trip escaped fields exactly")
+    void canonicalFormsRoundTrip() {
+        String literal = "value.with=delimiters:and\\slashes";
+        Topic topic = Topic.builder().addEntry("qualifier.with=marks", literal, "ver:sion\\1")
+                .addEntry(null, "leaf").build();
 
-        assertThatThrownBy(() -> new Topic(null, validEntries))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("Topic id must not be null");
-
-        assertThatThrownBy(() -> new Topic(UUID.randomUUID(), new TreeMap<>()))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("Topic canonicalName must not be null or empty");
+        String canonical = topic.getCanonicalName();
+        String versioned = topic.getCanonicalNameWithVersion();
+        assertThat(Topic.fromCanonicalName(canonical)).isEqualTo(topic);
+        assertThat(Topic.fromCanonicalNameWithVersion(versioned).getCanonicalNameWithVersion())
+                .isEqualTo(versioned);
+        assertThat(topic.toString()).isEqualTo(versioned);
+        assertThat(Topic.fromCanonicalNameWithVersion(versioned)).isEqualTo(topic);
+        assertThat(topic.getEntries().getFirst().getVersion()).contains("ver:sion\\1");
+        assertThat(topic.getRelativeName()).isEqualTo("N1=leaf");
+        assertThat(topic.getFriendlyName()).isEqualTo("leaf");
+        assertThat(topic.getDisplayName()).isEqualTo(literal + "-leaf");
+        assertThat(Topic.fromCanonicalName(canonical).getEntries().getFirst().getVersion()).isEmpty();
     }
 
     @Test
-    @DisplayName("Topic is immutable; canonicalName map cannot be modified")
-    void testTopicImmutability() {
-        Topic topic = TopicFactory.fromName("Health.HL7.2.4.ADT.A01");
-        assertThatThrownBy(() -> topic.getCanonicalName().put(5, new TopicEntry("Ext", "Extra")))
+    @DisplayName("Canonical parsing rejects missing structure, invalid escapes, and misplaced versions")
+    void canonicalParserRejectsMalformedInput() {
+        for (String invalid : java.util.List.of("", ".q=v", "q=v.", "=v", "q=", "q=v=x", "q=v\\q")) {
+            assertThatThrownBy(() -> Topic.fromCanonicalName(invalid))
+                    .as("invalid Topic syntax %s", invalid)
+                    .isInstanceOf(IllegalArgumentException.class);
+        }
+        assertThatThrownBy(() -> Topic.fromCanonicalName("q:v=x"))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> Topic.fromCanonicalNameWithVersion("q:=x"))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> Topic.fromCanonicalNameWithVersion("q=v:late"))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    @DisplayName("Field validation accepts Unicode letters, marks, symbols, and internal ASCII spaces")
+    void fieldValidationUsesCodePointsAndPreservesText() {
+        String decomposed = "e\u0301";
+        String composed = "\u00e9";
+        String supplementary = "🩺";
+        Topic topic = Topic.builder().addEntry("A", "pre composed space post")
+                .addEntry("B", decomposed + supplementary).build();
+        assertThat(topic.getEntries().get(1).getValue()).isEqualTo(decomposed + supplementary);
+        Topic composedTopic = Topic.builder().addEntry("B", composed).build();
+        Topic decomposedTopic = Topic.builder().addEntry("B", decomposed).build();
+        assertThat(composedTopic.getEntries().getFirst().getValue()).isEqualTo(composed);
+        assertThat(decomposedTopic.getEntries().getFirst().getValue()).isEqualTo(decomposed);
+        assertThat(composedTopic).isNotEqualTo(decomposedTopic);
+        assertThat(new java.util.HashSet<>(java.util.List.of(composedTopic, decomposedTopic))).hasSize(2);
+        assertThat(new TopicEntry("Q X", "letters 123 !€\u0301", "version 2").getValue())
+                .isEqualTo("letters 123 !€\u0301");
+
+        assertThatThrownBy(() -> new TopicEntry("A", " leading", null))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("A", "trailing ", null))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("A", "non\u00a0breaking", null))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("A", "control\u0001", null))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("é", "value", null))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("A", "bad" + String.valueOf((char) 0xd800), null))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("A\u007f", "value", null))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("A\u0001", "value", null))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("A", "value", "control\u0001"))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("A", "value", "delete\u007f"))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("A", "value", "non-ASCII é"))
+                .isInstanceOf(IllegalArgumentException.class);
+        for (String excluded : java.util.List.of("tab\tcontrol", "line\nseparator", "format\u200b",
+                "private\ue000", "unassigned\u0378", "line\u2028separator", "paragraph\u2029separator")) {
+            assertThatThrownBy(() -> new TopicEntry("A", excluded, null))
+                    .as("excluded value %s", excluded)
+                    .isInstanceOf(IllegalArgumentException.class);
+        }
+    }
+
+    @Test
+    @DisplayName("Candidate field bounds are enforced in Unicode code points before canonical escaping")
+    void resourceLimitsApplyToDecodedFields() {
+        TopicEntry maximumQualifier = new TopicEntry("q".repeat(64), "value", null);
+        TopicEntry maximumValue = new TopicEntry("Q", "🩺".repeat(256), "v".repeat(64));
+        assertThat(maximumQualifier.getQualifier()).hasSize(64);
+        assertThat(maximumValue.getValue().codePointCount(0, maximumValue.getValue().length())).isEqualTo(256);
+        assertThat(maximumValue.getVersion()).contains("v".repeat(64));
+
+        assertThatThrownBy(() -> new TopicEntry("q".repeat(65), "value", null))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("Q", "v".repeat(257), null))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("Q", "value", "v".repeat(65)))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("Q", "value", "é"))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> new TopicEntry("Q", "value", " version"))
+                .isInstanceOf(IllegalArgumentException.class);
+
+        Topic escapedMaximum = Topic.builder().addEntry("Q", ".".repeat(256), ":".repeat(64)).build();
+        assertThat(escapedMaximum.getCanonicalNameWithVersion().length()).isGreaterThan(256);
+        assertThat(Topic.fromCanonicalNameWithVersion(escapedMaximum.getCanonicalNameWithVersion()))
+                .isEqualTo(escapedMaximum);
+        assertThat(Topic.builder().addEntry("Q", "value", "").build().getEntries().getFirst().getVersion())
+                .isEmpty();
+        assertThatThrownBy(() -> new TopicEntry("Q", "🩺".repeat(257), null))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    @DisplayName("Display projections follow depth-specific rules without altering canonical identity")
+    void displayProjectionsArePresentationOnly() {
+        Topic root = Topic.builder().addEntry("A", "root").build();
+        Topic child = Topic.builder().addEntry("A", "root").addEntry("B", "child").build();
+        Topic deep = Topic.builder().addEntry("A", "one").addEntry("B", "two")
+                .addEntry("C", "three").addEntry("D", "four").build();
+
+        assertThat(root.getDisplayName()).isEqualTo("root");
+        assertThat(child.getDisplayName()).isEqualTo("root-child");
+        assertThat(deep.getDisplayName()).isEqualTo("three-four");
+        assertThat(deep.getName()).isEqualTo("one.two.three.four");
+        assertThat(deep.getCanonicalName()).isEqualTo("A=one.B=two.C=three.D=four");
+    }
+
+    @Test
+    @DisplayName("Topic and entry lists are immutable defensive snapshots")
+    void valuesAreDefensivelyCopied() {
+        java.util.ArrayList<TopicEntry> entries = new java.util.ArrayList<>();
+        entries.add(new TopicEntry("A", "one", null));
+        Topic topic = new Topic(entries);
+        entries.add(new TopicEntry("B", "two", null));
+
+        assertThat(topic.getEntries()).hasSize(1);
+        assertThatThrownBy(() -> topic.getEntries().add(new TopicEntry("B", "two", null)))
                 .isInstanceOf(UnsupportedOperationException.class);
+        assertThatThrownBy(() -> new Topic(java.util.List.of()))
+                .isInstanceOf(IllegalArgumentException.class);
+
+        Topic generated = Topic.builder().addEntry(null, "same").build();
+        Topic explicit = Topic.builder().addEntry("N0", "same").build();
+        Topic historical = Topic.builder().addEntry("Domain", "same").build();
+        assertThat(generated.getEntries().getFirst().getQualifier()).isEqualTo("N0");
+        assertThat(generated).isEqualTo(explicit);
+        assertThat(generated).isNotEqualTo(historical);
     }
 
     @Test
-    @DisplayName("Standard 5-tuple Topic convenience accessors")
-    void test5TupleTopicAccessors() {
-        Topic topic = new Topic("Health", "HL7", "2.4", "ADT", "A01");
-        assertThat(topic.getDomain()).isEqualTo("Health");
-        assertThat(topic.getModel()).isEqualTo("HL7");
-        assertThat(topic.getModelVersion()).isEqualTo("2.4");
-        assertThat(topic.getDataElement()).isEqualTo("ADT");
-        assertThat(topic.getDataElementQualifier()).isEqualTo("A01");
-        assertThat(topic.getCompositeTrigger()).isEqualTo("ADT^A01");
-        assertThat(topic.getName()).isEqualTo("Health.HL7.2.4.ADT.A01");
+    @DisplayName("Jackson uses the ordered logical entry form without a generated UUID")
+    void jacksonRoundTripUsesLogicalForm() throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        Topic topic = Topic.builder().addEntry("A", "one", "v1").addEntry(null, "two").build();
+        JsonNode json = mapper.readTree(mapper.writeValueAsBytes(topic));
+
+        assertThat(json.has("entries")).isTrue();
+        assertThat(json.has("id")).isFalse();
+        assertThat(json.get("entries").get(0).get("value").asText()).isEqualTo("one");
+        assertThat(json.get("entries").get(0).get("version").asText()).isEqualTo("v1");
+        Topic restored = mapper.treeToValue(json, Topic.class);
+        assertThat(restored).isEqualTo(topic);
+        assertThat(restored.getEntries().getFirst().getVersion()).contains("v1");
     }
 
     @Test
-    @DisplayName("JSON serialization and deserialization roundtrip")
-    void testJsonRoundtrip() throws Exception {
-        UUID id = UUID.randomUUID();
-        Topic topic = new TopicBuilder(id)
-                .addEntry("Domain", "Health")
-                .addEntry("Model", "HL7")
-                .addEntry("ModelVersion", "2.4")
-                .addEntry("DataElement", "ADT")
-                .addEntry("DataElementQualifier", "A01")
-                .build();
-
-        String json = objectMapper.writeValueAsString(topic);
-        Topic deserialized = objectMapper.readValue(json, Topic.class);
-
-        assertThat(deserialized.getId()).isEqualTo(id);
-        assertThat(deserialized.getName()).isEqualTo("Health.HL7.2.4.ADT.A01");
-        assertThat(deserialized.getDomain()).isEqualTo("Health");
-        assertThat(deserialized.getModel()).isEqualTo("HL7");
-        assertThat(deserialized).isEqualTo(topic);
+    @DisplayName("Java serialization reconstructs a validated Topic snapshot")
+    void javaSerializationRoundTrip() throws Exception {
+        Topic topic = Topic.builder().addEntry("A", "one", "v1").addEntry("B", "two").build();
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
+            output.writeObject(topic);
+        }
+        Topic restored;
+        try (ObjectInputStream input = new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
+            restored = (Topic) input.readObject();
+        }
+        assertThat(restored).isEqualTo(topic);
+        assertThat(restored.getCanonicalNameWithVersion()).isEqualTo(topic.getCanonicalNameWithVersion());
     }
 }

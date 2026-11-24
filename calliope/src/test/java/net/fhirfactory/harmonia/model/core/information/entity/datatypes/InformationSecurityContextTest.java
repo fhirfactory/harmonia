@@ -17,19 +17,18 @@
 
 package net.fhirfactory.harmonia.model.core.information.entity.datatypes;
 
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicMaskFactory;
-
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.fhirfactory.harmonia.model.core.security.valuesets.FhirConfidentialityEnum;
-import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaSecurityLabelEnum;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.model.core.naming.TopicMask;
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicMaskFactory;
+import net.fhirfactory.harmonia.model.core.security.valuesets.FhirConfidentialityEnum;
+import net.fhirfactory.harmonia.model.core.security.valuesets.HarmoniaSecurityLabelEnum;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.UUID;
+import java.util.List;
+import java.util.HashSet;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -82,6 +81,34 @@ public class InformationSecurityContextTest {
     }
 
     @Test
+    @DisplayName("Action adapters trim the display name but compile a literal value-path selector")
+    void testActionMaskCompatibilityAndLiteralSelection() throws Exception {
+        InformationSecurityContext context = InformationSecurityContext.builder()
+                .addActionMask("  EXPORT  ")
+                .build();
+
+        assertThat(context.actionMasks()).containsExactly("EXPORT");
+        assertThat(context.actionTopicMasks()).singleElement().satisfies(mask -> {
+            assertThat(mask.matches(TopicFactory.fromName("Harmonia.Security.Action.EXPORT"))).isTrue();
+            assertThat(mask.matches(TopicFactory.fromName("Harmonia.Security.Action.EXPORTER"))).isFalse();
+        });
+
+        String escapedAction = "EXPORT\\E";
+        TopicMask literalMask = TopicMaskFactory.forLiteralValuePath(
+                List.of("Harmonia", "Security", "Action", escapedAction));
+        assertThat(TopicMaskFactory.literalValuePath(literalMask))
+                .contains(List.of("Harmonia", "Security", "Action", escapedAction));
+        InformationSecurityContext maskOnly = new InformationSecurityContext(null, null, null, null,
+                List.of(literalMask), null, null, null, null);
+        assertThat(maskOnly.actionMasks()).isEmpty();
+        assertThat(maskOnly.actionTopicMasks()).containsExactly(literalMask);
+        InformationSecurityContext restored = objectMapper.readValue(
+                objectMapper.writeValueAsBytes(maskOnly), InformationSecurityContext.class);
+        assertThat(restored.actionMasks()).isEmpty();
+        assertThat(restored.actionTopicMasks()).containsExactly(literalMask);
+    }
+
+    @Test
     @DisplayName("Should serialize and deserialize InformationSecurityContext preserving typed Topic criteria and TopicMasks")
     void testSecurityContextJsonRoundtrip() throws Exception {
         Topic unitTopic = TopicFactory.fromName("Health.Security.ProtectedHealthInformation");
@@ -101,5 +128,53 @@ public class InformationSecurityContextTest {
         assertThat(deserialized.compartmentMasks()).isEqualTo(sec.compartmentMasks());
         assertThat(deserialized.actionMasks()).isEqualTo(sec.actionMasks());
         assertThat(deserialized.confidentiality()).isEqualTo(sec.confidentiality());
+    }
+
+    @Test
+    @DisplayName("Typed action masks preserve exact, inclusive, and version selection through JSON")
+    void typedActionMasksRetainTheirSelectionSemantics() throws Exception {
+        TopicMask exactMask = TopicMask.builder().addRegex("Domain", "Alpha", "v1").build();
+        TopicMask inclusiveMask = TopicMask.builder().addRegex("Domain", "Alpha", "v1")
+                .includeContainedElements(true).build();
+        InformationSecurityContext exact = new InformationSecurityContext(null, null, null, null,
+                List.of(exactMask), null, null, null, null);
+        InformationSecurityContext inclusive = new InformationSecurityContext(null, null, null, null,
+                List.of(inclusiveMask), null, null, null, null);
+
+        assertThat(exact.isEmpty()).isFalse();
+        assertThat(exact).isNotEqualTo(inclusive);
+        assertThat(new HashSet<>(List.of(exact, inclusive))).hasSize(2);
+        String json = objectMapper.writeValueAsString(exact);
+        assertThat(json).contains("actionTopicMasks");
+        InformationSecurityContext restored = objectMapper.readValue(json, InformationSecurityContext.class);
+        assertThat(restored.actionTopicMasks()).containsExactly(exactMask);
+        assertThat(restored).isEqualTo(exact);
+        assertThat(restored.hashCode()).isEqualTo(exact.hashCode());
+        assertThat(restored.isEmpty()).isFalse();
+        assertThat(restored.actionTopicMasks().iterator().next().getEntries().getFirst()
+                .getVersionRegex()).contains("v1");
+
+        Topic exactTopic = Topic.builder().addEntry("Domain", "Alpha", "v1").build();
+        Topic wrongVersion = Topic.builder().addEntry("Domain", "Alpha", "v2").build();
+        Topic appended = Topic.builder().addEntry("Domain", "Alpha", "v1").addEntry("Model", "FHIR").build();
+        assertThat(restored.actionTopicMasks()).allSatisfy(mask -> {
+            assertThat(mask.matches(exactTopic)).isTrue();
+            assertThat(mask.matches(wrongVersion)).isFalse();
+            assertThat(mask.matches(appended)).isFalse();
+        });
+
+        InformationSecurityContext restoredInclusive = objectMapper.readValue(
+                objectMapper.writeValueAsString(inclusive), InformationSecurityContext.class);
+        assertThat(restoredInclusive.actionTopicMasks()).singleElement()
+                .satisfies(mask -> assertThat(mask.isIncludeContainedElements()).isTrue());
+        assertThat(restoredInclusive.actionTopicMasks()).allSatisfy(mask ->
+                assertThat(mask.matches(appended)).isTrue());
+    }
+
+    @Test
+    @DisplayName("Ambiguous legacy action strings are rejected instead of becoming a narrower literal path")
+    void ambiguousLegacyActionStringsFailClosed() {
+        assertThatThrownBy(() -> InformationSecurityContext.builder().addActionMask("Read.Detail").build())
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }

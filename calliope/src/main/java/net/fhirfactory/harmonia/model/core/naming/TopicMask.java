@@ -17,218 +17,329 @@
 
 package net.fhirfactory.harmonia.model.core.naming;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicEntry;
-import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicMaskEntryPattern;
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
-import net.fhirfactory.harmonia.model.core.naming.valuesets.MaskType;
-import net.fhirfactory.harmonia.model.core.naming.valuesets.TopicMaskType;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicMaskEntry;
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicMaskBuilder;
+import net.fhirfactory.harmonia.model.core.naming.support.CanonicalText;
+import net.fhirfactory.harmonia.model.core.naming.support.TopicFieldRules;
+import net.fhirfactory.harmonia.model.core.naming.support.TopicMaskJsonDecoder;
+import net.fhirfactory.harmonia.model.core.naming.support.TopicLimits;
+import net.fhirfactory.harmonia.model.core.naming.support.TopicMaskEvaluator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 /**
- * An immutable selector and filter construct within Harmonia's Architecture Continuum.
+ * Immutable neutral positional selector with distinct ordinary and universal kinds.
  * <p>
- * A {@code TopicMask} evaluates candidate {@link Topic} instances according to either:
- * <ul>
- *   <li><b>TopicNameBased:</b> Explicitly sequenced regex patterns against unqualified Topic entry names.</li>
- *   <li><b>TopicCanonicalNameBased:</b> Explicitly sequenced entry patterns matching entry qualifier and
- *       name independently.</li>
- * </ul>
+ * A successful match conveys no access, disclosure, routing, publication, or
+ * persistence authority. Security decisions remain the responsibility of Themis.
+ * Equality and hashing distinguish ordinary expression state from explicit
+ * universality; ordinary masks retain ordered expressions and containment.
+ * Logical JSON is either exactly {@code {"universal":true}} or a complete
+ * ordinary object with entries and an explicit containment flag.
+ * This implementation follows {@code DRP-Topic-and-TopicMask.Final.001.001.md} §§4–7.
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE,
+        getterVisibility = JsonAutoDetect.Visibility.NONE,
+        isGetterVisibility = JsonAutoDetect.Visibility.NONE,
+        setterVisibility = JsonAutoDetect.Visibility.NONE,
+        creatorVisibility = JsonAutoDetect.Visibility.NONE)
+@JsonDeserialize(using = TopicMaskJsonDecoder.class)
 public final class TopicMask implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
+    private static final Logger LOGGER = LoggerFactory.getLogger(TopicMask.class);
+    private static final TopicMask UNIVERSAL = new TopicMask(true, List.of(), false);
 
-    private final UUID id;
-    private final TopicMaskType type;
-    private final MaskType maskType;
-    private final SortedMap<Integer, String> namePatterns;
-    private final SortedMap<Integer, TopicMaskEntryPattern> canonicalPatterns;
+    private final boolean universal;
+    private final List<TopicMaskEntry> entries;
+    private final boolean includeContainedElements;
 
-    /**
-     * Constructs an immutable TopicMask.
-     *
-     * @param id                non-null identifier
-     * @param maskType          containment depth semantics; defaults to {@link MaskType#Inclusive}
-     * @param namePatterns      name-based patterns, or {@code null} if canonical-based
-     * @param canonicalPatterns canonical entry patterns, or {@code null} if name-based
-     */
-    @JsonCreator
-    public TopicMask(
-            @JsonProperty("id") UUID id,
-            @JsonProperty("maskType") MaskType maskType,
-            @JsonProperty("namePatterns") SortedMap<Integer, String> namePatterns,
-            @JsonProperty("canonicalPatterns") SortedMap<Integer, TopicMaskEntryPattern> canonicalPatterns) {
-        this.id = id != null ? id : UUID.randomUUID();
-        this.maskType = maskType != null ? maskType : MaskType.Inclusive;
-
-        if (canonicalPatterns != null && !canonicalPatterns.isEmpty()) {
-            this.type = TopicMaskType.TopicCanonicalNameBased;
-            this.canonicalPatterns = Collections.unmodifiableSortedMap(new TreeMap<>(canonicalPatterns));
-            this.namePatterns = Collections.emptySortedMap();
-        } else if (namePatterns != null && !namePatterns.isEmpty()) {
-            this.type = TopicMaskType.TopicNameBased;
-            this.namePatterns = Collections.unmodifiableSortedMap(new TreeMap<>(namePatterns));
-            this.canonicalPatterns = Collections.emptySortedMap();
-        } else {
-            this.type = TopicMaskType.TopicNameBased;
-            this.namePatterns = Collections.emptySortedMap();
-            this.canonicalPatterns = Collections.emptySortedMap();
-        }
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public TopicMaskType getType() {
-        return type;
-    }
-
-    public MaskType getMaskType() {
-        return maskType;
-    }
-
-    public SortedMap<Integer, String> getNamePatterns() {
-        return namePatterns;
-    }
-
-    public SortedMap<Integer, TopicMaskEntryPattern> getCanonicalPatterns() {
-        return canonicalPatterns;
-    }
-
-    public int getDepth() {
-        return type == TopicMaskType.TopicCanonicalNameBased ? canonicalPatterns.size() : namePatterns.size();
-    }
-
-    public boolean isCanonical() {
-        return type == TopicMaskType.TopicCanonicalNameBased;
-    }
-
-    public boolean isNameBased() {
-        return type == TopicMaskType.TopicNameBased;
-    }
-
-    public boolean isExact() {
-        return maskType == MaskType.Exact;
-    }
-
-    public boolean isInclusive() {
-        return maskType == MaskType.Inclusive;
+    private TopicMask(boolean universal, List<TopicMaskEntry> entries, boolean includeContainedElements) {
+        this.universal = universal;
+        this.entries = Collections.unmodifiableList(new ArrayList<>(entries));
+        this.includeContainedElements = includeContainedElements;
     }
 
     /**
-     * Evaluates whether a candidate {@link Topic} satisfies this mask.
+     * Creates a builder for an ordinary mask. Builders never produce the universal kind.
      *
-     * @param topic candidate Topic
-     * @return {@code true} if candidate matches, otherwise {@code false}
+     * @return new mutable, single-thread builder
      */
-    public boolean matches(Topic topic) {
-        if (topic == null) {
+    public static TopicMaskBuilder builder() {
+        return new TopicMaskBuilder();
+    }
+
+    /**
+     * Returns the explicit universal kind, which matches every non-null Topic.
+     * This is the only route to universal selection; empty ordinary criteria are invalid.
+     *
+     * @return shared immutable universal mask
+     */
+    public static TopicMask all() {
+        return UNIVERSAL;
+    }
+
+    /**
+     * Reconstructs an ordinary mask from validated entries. Intended for builders
+     * and logical adapters; an empty list never means universal.
+     *
+     * @param entries nonempty ordered criteria
+     * @param includeContainedElements whether trailing Topic entries may be present
+     * @return immutable ordinary mask
+     */
+    public static TopicMask ordinary(List<TopicMaskEntry> entries, boolean includeContainedElements) {
+        try {
+            if (entries == null || entries.isEmpty()) {
+                throw new IllegalArgumentException("Ordinary TopicMask requires at least one entry");
+            }
+            TopicLimits.requireDepth(entries.size());
+            List<TopicMaskEntry> copy = new ArrayList<>(entries.size());
+            for (TopicMaskEntry entry : entries) {
+                if (entry == null) {
+                    throw new IllegalArgumentException("Ordinary TopicMask entries must not contain null");
+                }
+                copy.add(entry);
+            }
+            return new TopicMask(false, copy, includeContainedElements);
+        } catch (IllegalArgumentException exception) {
+            logConstructionFailure();
+            throw exception;
+        }
+    }
+
+    /**
+     * Parses a strict ordinary canonical expression and compiles every entry.
+     * No text token, including `@all`, means universal.
+     *
+     * @param expression escaped canonical mask expression
+     * @param includeContainedElements whether trailing Topic entries are allowed
+     * @return immutable ordinary mask
+     * @throws IllegalArgumentException for empty, malformed, oversized, or uncompilable expressions
+     */
+    public static TopicMask fromCanonicalExpression(String expression, boolean includeContainedElements) {
+        try {
+            if (expression == null || expression.isEmpty()) {
+                throw new IllegalArgumentException("Canonical mask expression must not be empty");
+            }
+            TopicFieldRules.requireWellFormedUnicode(expression, "canonical mask expression");
+            TopicLimits.requireLength(expression, TopicLimits.MAX_MASK_TEXT_CODE_POINTS,
+                    "canonical mask expression");
+            List<String> segments = CanonicalText.splitRaw(expression, '.', TopicLimits.MAX_DEPTH);
+            TopicLimits.requireDepth(segments.size());
+            List<TopicMaskEntry> parsed = new ArrayList<>(segments.size());
+            for (String segment : segments) {
+                if (segment.isEmpty()) {
+                    throw new IllegalArgumentException("Canonical mask contains an empty segment");
+                }
+                List<Integer> equals = CanonicalText.unescapedPositions(segment, '=');
+                List<Integer> colons = CanonicalText.unescapedPositions(segment, ':');
+                if (equals.size() != 1) {
+                    throw new IllegalArgumentException("Canonical mask segment requires one value separator");
+                }
+                int equalsAt = equals.get(0);
+                if (colons.size() > 1 || (!colons.isEmpty() && colons.get(0) > equalsAt)) {
+                    throw new IllegalArgumentException("Canonical mask version separator is misplaced");
+                }
+                int qualifierEnd = colons.isEmpty() ? equalsAt : colons.get(0);
+                String qualifier = CanonicalText.decode(segment.substring(0, qualifierEnd));
+                String version = colons.isEmpty() ? null
+                        : CanonicalText.decode(segment.substring(colons.get(0) + 1, equalsAt));
+                String value = CanonicalText.decode(segment.substring(equalsAt + 1));
+                parsed.add(TopicMaskEntry.of(qualifier, value, version));
+            }
+            return ordinary(parsed, includeContainedElements);
+        } catch (IllegalArgumentException exception) {
+            logConstructionFailure();
+            throw exception;
+        }
+    }
+
+    /** @return true only for the explicit universal mask kind */
+    public boolean isUniversal() {
+        return universal;
+    }
+
+    /** @return immutable ordered mask entries; empty for the universal kind */
+    public List<TopicMaskEntry> getEntries() {
+        return entries;
+    }
+
+    /**
+     * Returns the ordinary mask's trailing-element policy.
+     *
+     * @throws IllegalStateException when called on the universal kind
+     */
+    public boolean isIncludeContainedElements() {
+        requireOrdinary();
+        return includeContainedElements;
+    }
+
+    /**
+     * Returns the ordinary canonical expression.
+     *
+     * @throws IllegalStateException when called on the universal kind
+     */
+    public String getCanonicalExpression() {
+        requireOrdinary();
+        StringBuilder expression = new StringBuilder();
+        for (TopicMaskEntry entry : entries) {
+            if (expression.length() > 0) {
+                expression.append('.');
+            }
+            expression.append(CanonicalText.escape(entry.getQualifierRegex()));
+            if (entry.getVersionRegex().isPresent()) {
+                expression.append(':').append(CanonicalText.escape(entry.getVersionRegex().get()));
+            }
+            expression.append('=').append(CanonicalText.escape(entry.getValueRegex()));
+        }
+        return expression.toString();
+    }
+
+    /**
+     * Evaluates this selector without conferring any operational authority.
+     * Null candidates and any unexpected evaluation error fail closed.
+     *
+     * @param candidate candidate Topic
+     * @return true only when the explicit kind and all positional criteria match
+     */
+    public boolean matches(Topic candidate) {
+        if (candidate == null) {
             return false;
         }
-
-        if (type == TopicMaskType.TopicNameBased) {
-            if (namePatterns.isEmpty()) {
-                return maskType != MaskType.Exact || topic.getDepth() == 0;
-            }
-            if (maskType == MaskType.Exact && topic.getDepth() != namePatterns.size()) {
-                return false;
-            }
-            if (topic.getDepth() < namePatterns.size()) {
-                return false;
-            }
-            for (Map.Entry<Integer, String> entry : namePatterns.entrySet()) {
-                TopicEntry topicEntry = topic.getEntry(entry.getKey());
-                if (topicEntry == null) {
-                    return false;
-                }
-                String regex = entry.getValue();
-                if (!".*".equals(regex) && !topicEntry.getName().matches(regex)) {
-                    return false;
-                }
-            }
-            return true;
-        } else {
-            if (canonicalPatterns.isEmpty()) {
-                return maskType != MaskType.Exact || topic.getDepth() == 0;
-            }
-            if (maskType == MaskType.Exact && topic.getDepth() != canonicalPatterns.size()) {
-                return false;
-            }
-            if (topic.getDepth() < canonicalPatterns.size()) {
-                return false;
-            }
-            for (Map.Entry<Integer, TopicMaskEntryPattern> entry : canonicalPatterns.entrySet()) {
-                TopicEntry topicEntry = topic.getEntry(entry.getKey());
-                if (topicEntry == null || !entry.getValue().matches(topicEntry)) {
-                    return false;
-                }
-            }
+        if (universal) {
             return true;
         }
+        return TopicMaskEvaluator.defaultEvaluator().matches(entries, includeContainedElements, candidate);
     }
 
-    public String toCanonicalString() {
-        StringBuilder sb = new StringBuilder();
-        if (type == TopicMaskType.TopicCanonicalNameBased) {
-            for (Map.Entry<Integer, TopicMaskEntryPattern> entry : canonicalPatterns.entrySet()) {
-                if (sb.length() > 0) sb.append(".");
-                sb.append(entry.getValue().getQualifierRegex()).append("=").append(entry.getValue().getNameRegex());
-            }
-        } else {
-            for (Map.Entry<Integer, String> entry : namePatterns.entrySet()) {
-                if (sb.length() > 0) sb.append(".");
-                sb.append(entry.getValue());
-            }
+    /** Prevents universal masks from being read as ordinary expression data. */
+    private void requireOrdinary() {
+        if (universal) {
+            throw new IllegalStateException("Universal TopicMask has no ordinary expression data");
         }
-        return sb.toString();
     }
 
-    public String getMaskPattern() {
-        return toCanonicalString();
-    }
-
-    public String getShortId() {
-        return id.toString().substring(0, 8);
-    }
-
-    public boolean matches(String topicName) {
-        if (topicName == null) {
-            return false;
+    /**
+     * Emits a payload-free diagnostic for rejected construction. Logging faults
+     * are contained so they cannot replace the original validation failure.
+     */
+    private static void logConstructionFailure() {
+        try {
+            LOGGER.error("TopicMask construction or reconstruction rejected");
+        } catch (RuntimeException ignored) {
+            // A diagnostic failure cannot change the invalid construction result.
         }
-        return matches(TopicFactory.fromName(topicName));
     }
 
+    /*
+     * Logical JSON writers. Universal masks emit only {"universal":true}; ordinary
+     * masks emit only entries and containment, so the two kinds never overlap.
+     * Reading is performed exclusively by TopicMaskJsonDecoder.
+     */
+    @JsonProperty("universal")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Boolean universalForJson() {
+        return universal ? Boolean.TRUE : null;
+    }
+
+    @JsonProperty("entries")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private List<TopicMaskEntry> entriesForJson() {
+        return universal ? null : entries;
+    }
+
+    @JsonProperty("includeContainedElements")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private Boolean containmentForJson() {
+        return universal ? null : includeContainedElements;
+    }
+
+    /** Creates the validated Java serialization proxy rather than serializing fields directly. */
+    private Object writeReplace() {
+        return new SerializationProxy(universal, entries, includeContainedElements);
+    }
+
+    /** Rejects direct Java deserialization so all instances pass through the proxy invariants. */
+    private void readObject(ObjectInputStream stream) throws InvalidObjectException {
+        throw new InvalidObjectException("Serialization proxy required");
+    }
+
+    /**
+     * Compares explicit kind, ordered original expressions, version presence,
+     * and containment; all universal instances are equivalent.
+     *
+     * @param other comparison value
+     * @return true when both masks have identical logical state
+     */
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || !(o instanceof TopicMask)) return false;
-        TopicMask topicMask = (TopicMask) o;
-        return Objects.equals(id, topicMask.id) &&
-                type == topicMask.type &&
-                maskType == topicMask.maskType &&
-                Objects.equals(namePatterns, topicMask.namePatterns) &&
-                Objects.equals(canonicalPatterns, topicMask.canonicalPatterns);
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof TopicMask)) {
+            return false;
+        }
+        TopicMask that = (TopicMask) other;
+        return universal == that.universal
+                && (universal || (includeContainedElements == that.includeContainedElements
+                && entries.equals(that.entries)));
     }
 
+    /** @return hash consistent with the mask kind and its equality-relevant state */
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, maskType, namePatterns, canonicalPatterns);
+        return universal ? 1 : Objects.hash(entries, includeContainedElements);
     }
 
+    /** @return canonical ordinary expression, or descriptive universal text */
     @Override
     public String toString() {
-        return "TopicMask{" +
-                "id=" + id +
-                ", type=" + type +
-                ", maskType=" + maskType +
-                ", pattern=" + toCanonicalString() +
-                '}';
+        return universal ? "TopicMask{universal}" : getCanonicalExpression();
+    }
+
+    /**
+     * Java serialization form. Reading resolves through {@link #all()} or
+     * {@link #ordinary(List, boolean)}, so a stream cannot create a universal mask
+     * carrying ordinary data or an ordinary mask without criteria.
+     */
+    private static final class SerializationProxy implements Serializable {
+        private static final long serialVersionUID = 1L;
+        private final boolean universal;
+        private final List<TopicMaskEntry> entries;
+        private final boolean includeContainedElements;
+
+        private SerializationProxy(boolean universal, List<TopicMaskEntry> entries,
+                                   boolean includeContainedElements) {
+            this.universal = universal;
+            this.entries = new ArrayList<>(entries);
+            this.includeContainedElements = includeContainedElements;
+        }
+
+        private Object readResolve() throws InvalidObjectException {
+            if (universal) {
+                if (entries == null || !entries.isEmpty() || includeContainedElements) {
+                    throw new InvalidObjectException("Universal TopicMask proxy contains ordinary data");
+                }
+                return TopicMask.all();
+            }
+            try {
+                return TopicMask.ordinary(entries, includeContainedElements);
+            } catch (IllegalArgumentException exception) {
+                // The cause is deliberately not chained: it may describe expression content.
+                throw new InvalidObjectException("Invalid ordinary TopicMask proxy");
+            }
+        }
     }
 }

@@ -17,56 +17,55 @@
 
 package net.fhirfactory.harmonia.model.core.naming.datatypes;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.apache.commons.lang3.StringUtils;
+import net.fhirfactory.harmonia.model.core.naming.support.TopicFieldRules;
 
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
- * An immutable element of a {@link net.fhirfactory.harmonia.model.core.naming.Topic}'s canonical name,
- * consisting of a qualifier and a name.
+ * One immutable, typed position in a Topic path.
  * <p>
- * In accordance with the accepted Architecture Continuum:
- * <ul>
- *   <li>The qualifier identifies the semantic role of the entry (e.g. {@code Domain}, {@code MessageType},
- *       {@code TriggerEvent}, {@code ResourceType}, {@code Interaction}).</li>
- *   <li>The name specifies the concrete value at this hierarchical level (e.g. {@code Health}, {@code ADT},
- *       {@code A01}, {@code Practitioner}, {@code CREATE}).</li>
- *   <li>Neither qualifier nor name may be null or blank, and name must not contain the delimiter dot ({@code .}).</li>
- * </ul>
+ * Qualifier and value retain their exact validated text. An optional version
+ * belongs to this entry and is distinct from Topic identity, as specified by
+ * {@code DRP-Topic-and-TopicMask.Final.001.001.md} §1.
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class TopicEntry implements Serializable, Comparable<TopicEntry> {
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE,
+        getterVisibility = JsonAutoDetect.Visibility.NONE,
+        isGetterVisibility = JsonAutoDetect.Visibility.NONE,
+        setterVisibility = JsonAutoDetect.Visibility.NONE,
+        creatorVisibility = JsonAutoDetect.Visibility.NONE)
+public final class TopicEntry implements Serializable, Comparable<TopicEntry> {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
     private final String qualifier;
-    private final String name;
+    private final String value;
+    private final String version;
 
     /**
-     * Constructs an immutable canonical name entry.
+     * Reconstructs one validated logical Topic entry.
      *
-     * @param qualifier the semantic qualifier for this level; must not be blank
-     * @param name      the name value for this level; must not be blank and must not contain dots
-     * @throws IllegalArgumentException if qualifier or name is null or blank, or if name contains a dot
+     * @param qualifier printable ASCII qualifier
+     * @param value valid nonempty Unicode value
+     * @param version optional printable ASCII version; empty is interpreted as absent
      */
     @JsonCreator
     public TopicEntry(
             @JsonProperty("qualifier") String qualifier,
-            @JsonProperty("name") String name) {
-        if (StringUtils.isBlank(qualifier)) {
-            throw new IllegalArgumentException("TopicEntry qualifier must not be null or blank");
-        }
-        if (StringUtils.isBlank(name)) {
-            throw new IllegalArgumentException("TopicEntry name must not be null or blank");
-        }
-        String trimmedQualifier = qualifier.trim();
-        String trimmedName = name.trim();
-        this.qualifier = trimmedQualifier;
-        this.name = trimmedName;
+            @JsonProperty("value") String value,
+            @JsonProperty("version") String version) {
+        TopicFieldRules.requireQualifier(qualifier);
+        TopicFieldRules.requireValue(value);
+        this.qualifier = qualifier;
+        this.value = value;
+        this.version = TopicFieldRules.normalizedVersion(version);
     }
 
     /**
@@ -74,35 +73,39 @@ public class TopicEntry implements Serializable, Comparable<TopicEntry> {
      *
      * @return non-blank qualifier string
      */
+    @JsonProperty("qualifier")
     public String getQualifier() {
         return qualifier;
     }
 
     /**
-     * Returns the name value of this entry.
+     * Returns the literal value at this path position.
      *
      * @return non-blank name string
      */
-    public String getName() {
-        return name;
+    @JsonProperty("value")
+    public String getValue() {
+        return value;
     }
 
     /**
-     * Formats this entry as a canonical pair: {@code qualifier=name}.
+     * Returns this entry's optional version.
      *
-     * @return formatted canonical entry string
+     * @return empty when the version is absent
      */
-    public String toCanonicalString() {
-        return qualifier + "=" + name;
+    public Optional<String> getVersion() {
+        return Optional.ofNullable(version);
     }
 
     /**
-     * Formats this entry as its unqualified name representation.
+     * Exposes the nullable interchange field while keeping the Java API optional.
      *
-     * @return unqualified name string
+     * @return version text or null when absent
      */
-    public String toTopicString() {
-        return name;
+    @JsonProperty("version")
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String versionForJson() {
+        return version;
     }
 
     @Override
@@ -110,28 +113,62 @@ public class TopicEntry implements Serializable, Comparable<TopicEntry> {
         if (other == null) {
             return 1;
         }
-        int cmp = this.qualifier.compareTo(other.qualifier);
+        int cmp = qualifier.compareTo(other.qualifier);
         if (cmp != 0) {
             return cmp;
         }
-        return this.name.compareTo(other.name);
+        cmp = value.compareTo(other.value);
+        if (cmp != 0) {
+            return cmp;
+        }
+        if (version == null) {
+            return other.version == null ? 0 : -1;
+        }
+        return other.version == null ? 1 : version.compareTo(other.version);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || !(o instanceof TopicEntry)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         TopicEntry that = (TopicEntry) o;
-        return Objects.equals(qualifier, that.qualifier) && Objects.equals(name, that.name);
+        return Objects.equals(qualifier, that.qualifier)
+                && Objects.equals(value, that.value)
+                && Objects.equals(version, that.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(qualifier, name);
+        return Objects.hash(qualifier, value, version);
     }
 
     @Override
     public String toString() {
-        return toCanonicalString();
+        return "TopicEntry{qualifier, value, version=" + (version == null ? "absent" : "present") + '}';
+    }
+
+    private Object writeReplace() {
+        return new SerializationProxy(qualifier, value, version);
+    }
+
+    private void readObject(ObjectInputStream stream) throws InvalidObjectException {
+        throw new InvalidObjectException("Serialization proxy required");
+    }
+
+    private static final class SerializationProxy implements Serializable {
+        private static final long serialVersionUID = 1L;
+        private final String qualifier;
+        private final String value;
+        private final String version;
+
+        private SerializationProxy(String qualifier, String value, String version) {
+            this.qualifier = qualifier;
+            this.value = value;
+            this.version = version;
+        }
+
+        private Object readResolve() {
+            return new TopicEntry(qualifier, value, version);
+        }
     }
 }

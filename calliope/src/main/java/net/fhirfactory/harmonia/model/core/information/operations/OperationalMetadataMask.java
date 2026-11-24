@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import net.fhirfactory.harmonia.model.core.information.access.AuthoritativeCommitOutcome;
 import net.fhirfactory.harmonia.model.core.information.operations.factory.OperationalMetadataMaskBuilder;
 import net.fhirfactory.harmonia.model.core.naming.TopicMask;
+import net.fhirfactory.harmonia.model.core.naming.factory.HistoricalTopicNames;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -120,7 +121,7 @@ public final class OperationalMetadataMask implements Serializable {
 
         if (subjectMask != null) {
             String subject = metadata.getSubjectIdentifier();
-            if (subject == null || !subjectMask.matches(subject)) {
+            if (subject == null || !matchesSubject(subjectMask, subject)) {
                 return false;
             }
         }
@@ -159,6 +160,22 @@ public final class OperationalMetadataMask implements Serializable {
         }
 
         return true;
+    }
+
+    /**
+     * Converts a persisted historical subject with its old qualifier mapping
+     * (Domain, Model, ModelVersion, DataElement, DataElementQualifier, Level&lt;n&gt;),
+     * so masks written against historical qualifiers keep their meaning. Text that
+     * cannot be converted unambiguously (for example backslash or empty segments)
+     * fails closed as a non-match rather than being reinterpreted with generated
+     * {@code N<position>} qualifiers.
+     */
+    private static boolean matchesSubject(TopicMask mask, String subject) {
+        try {
+            return mask.matches(HistoricalTopicNames.fromName(subject));
+        } catch (IllegalArgumentException exception) {
+            return false;
+        }
     }
 
     // =========================================================================
@@ -244,11 +261,16 @@ public final class OperationalMetadataMask implements Serializable {
     public String toString() {
         return "OperationalMetadataMask{" +
                 "id=" + id +
-                (subjectMask != null ? ", subjectMask=" + subjectMask.getShortId() : "") +
-                (contextMask != null ? ", contextMask=" + contextMask.getShortId() : "") +
+                (subjectMask != null ? ", subjectMask=" + maskSummary(subjectMask) : "") +
+                (contextMask != null ? ", contextMask=" + maskSummary(contextMask) : "") +
                 (operationalRevision != null ? ", revision='" + operationalRevision + '\'' : "") +
                 (lifecycleStage != null ? ", stage='" + lifecycleStage + '\'' : "") +
                 '}';
+    }
+
+    /** Summarises a mask by kind and depth only, so diagnostics never contain expressions. */
+    private static String maskSummary(TopicMask mask) {
+        return mask.isUniversal() ? "universal" : "ordinary(depth=" + mask.getEntries().size() + ")";
     }
 
 }

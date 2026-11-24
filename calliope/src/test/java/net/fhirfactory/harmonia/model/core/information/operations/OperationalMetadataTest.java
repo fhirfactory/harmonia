@@ -37,6 +37,7 @@ import net.fhirfactory.harmonia.model.core.information.entity.datatypes.Lifecycl
 import net.fhirfactory.harmonia.model.core.information.operations.factory.ManagementContextBuilder;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.model.core.naming.TopicMask;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.MaskType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -169,6 +170,25 @@ class OperationalMetadataTest {
         assertThat(OperationalMetadataMask.builder().commitOutcome(AuthoritativeCommitOutcome.NOT_COMMITTED)
                 .build().matches(metadata)).isFalse();
         assertThat(matchingMask.matches(null)).isFalse();
+    }
+
+    @Test
+    @DisplayName("Legacy subject qualification preserves historical Domain and Exact/Inclusive scope")
+    void legacySubjectSelectorsRetainHistoricalQualifiers() {
+        OperationalMetadata singleSegment = OperationalMetadata.builder()
+                .subjectIdentifier("Alpha").build();
+        OperationalMetadata twoSegments = OperationalMetadata.builder()
+                .subjectIdentifier("Alpha.Beta").build();
+        TopicMask domainExact = TopicMaskFactory.fromNamePattern("Domain=Alpha", MaskType.Exact);
+        TopicMask generatedExact = TopicMaskFactory.fromNamePattern("N0=Alpha", MaskType.Exact);
+        TopicMask domainInclusive = TopicMaskFactory.fromNamePattern("Domain=Alpha", MaskType.Inclusive);
+        TopicMask generatedInclusive = TopicMaskFactory.fromNamePattern("N0=Alpha", MaskType.Inclusive);
+
+        assertThat(OperationalMetadataMask.builder().subjectMask(domainExact).build().matches(singleSegment)).isTrue();
+        assertThat(OperationalMetadataMask.builder().subjectMask(generatedExact).build().matches(singleSegment)).isFalse();
+        assertThat(OperationalMetadataMask.builder().subjectMask(domainExact).build().matches(twoSegments)).isFalse();
+        assertThat(OperationalMetadataMask.builder().subjectMask(domainInclusive).build().matches(twoSegments)).isTrue();
+        assertThat(OperationalMetadataMask.builder().subjectMask(generatedInclusive).build().matches(twoSegments)).isFalse();
     }
 
     @Test

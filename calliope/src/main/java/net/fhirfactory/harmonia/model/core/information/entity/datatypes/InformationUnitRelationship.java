@@ -290,7 +290,7 @@ public final class InformationUnitRelationship implements Serializable {
     @Override
     public String toString() {
         return "InformationUnitRelationship{" +
-                "typeId=" + type.getShortId() +
+                "type=" + (type == null ? "null" : "Topic(depth=" + type.getDepth() + ")") +
                 ", local=" + local +
                 ", hasTarget=" + (targetIdentifier != null) +
                 ", hasDescription=" + (description != null) +

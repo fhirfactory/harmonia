@@ -18,109 +18,116 @@
 package net.fhirfactory.harmonia.model.core.naming.factory;
 
 import net.fhirfactory.harmonia.model.core.naming.Topic;
-import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicEntry;
+import net.fhirfactory.harmonia.model.core.naming.TopicMask;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@DisplayName("TopicBuilder Invariant & Validation Tests")
-public class TopicBuilderTest {
+@DisplayName("Accepted TopicBuilder construction and recovery")
+class TopicBuilderTest {
 
     @Test
-    @DisplayName("Should build valid Topic with sequential entries")
-    void testSuccessfulBuild() {
-        UUID id = UUID.randomUUID();
-        Topic topic = new TopicBuilder(id)
-                .addEntry("Country", "Australia")
-                .addEntry("StateTerritory", "NSW")
-                .addEntry("City", "Sydney")
-                .build();
+    @DisplayName("Sequential and indexed construction generate the same positional qualifiers")
+    void generatedQualifiersArePositionBased() {
+        Topic sequential = Topic.builder().addEntry(null, "one").addEntry("", "two").build();
+        Topic indexed = Topic.builder().addEntry(1, null, "two").addEntry(0, null, "one").build();
+        Topic explicit = Topic.builder().addEntry("N0", "one").addEntry("N1", "two").build();
 
-        assertThat(topic.getId()).isEqualTo(id);
-        assertThat(topic.getDepth()).isEqualTo(3);
-        assertThat(topic.getName()).isEqualTo("Australia.NSW.Sydney");
+        assertThat(sequential).isEqualTo(indexed).isEqualTo(explicit);
+        assertThat(sequential.compareTo(explicit)).isZero();
+        assertThat(sequential.getCanonicalName()).isEqualTo(explicit.getCanonicalName());
+        assertThat(sequential.getEntries()).extracting(entry -> entry.getQualifier()).containsExactly("N0", "N1");
+        assertThat(TopicMask.builder().addLiterals("N0", "one").addLiterals("N1", "two").build()
+                .matches(explicit)).isTrue();
     }
 
     @Test
-    @DisplayName("Should reject duplicate sequence positions without corrupting builder state")
-    void testRejectDuplicateSequencePositions() {
-        TopicBuilder builder = new TopicBuilder()
-                .addEntry(0, "Country", "Australia")
-                .addEntry(1, "StateTerritory", "ACT");
+    @DisplayName("Indexed entries can be replaced without growth and invalid replacement preserves old data")
+    void indexedReplacementIsValidatedAndReusable() {
+        TopicBuilder builder = Topic.builder().addEntry(1, "B", "second").addEntry(0, "A", "first");
+        Topic firstSnapshot = builder.build();
+        assertThatThrownBy(() -> builder.addEntry(0, "A", ""))
+                .isInstanceOf(IllegalArgumentException.class);
 
-        // Attempt to overwrite position 0 with duplicate sequence number
-        assertThatThrownBy(() -> builder.addEntry(0, "Country", "NewZealand"))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("Duplicate Topic sequence position rejected: 0");
-
-        // Attempt to overwrite position 1 with TopicEntry
-        assertThatThrownBy(() -> builder.addEntry(1, new TopicEntry("State", "NSW")))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("Duplicate Topic sequence position rejected: 1");
-
-        // Verify that builder state was NOT corrupted and can be completed
-        builder.addEntry(2, "City", "Canberra");
-        Topic topic = builder.build();
-
-        assertThat(topic.getDepth()).isEqualTo(3);
-        assertThat(topic.getEntry(0).getName()).isEqualTo("Australia");
-        assertThat(topic.getEntry(1).getName()).isEqualTo("ACT");
-        assertThat(topic.getEntry(2).getName()).isEqualTo("Canberra");
-        assertThat(topic.getName()).isEqualTo("Australia.ACT.Canberra");
+        builder.addEntry(0, "A", "replacement");
+        Topic secondSnapshot = builder.build();
+        assertThat(firstSnapshot.getDepth()).isEqualTo(2);
+        assertThat(firstSnapshot.getEntries().getFirst().getValue()).isEqualTo("first");
+        assertThat(secondSnapshot.getEntries().getFirst().getValue()).isEqualTo("replacement");
+        assertThat(secondSnapshot.getDepth()).isEqualTo(2);
     }
 
     @Test
-    @DisplayName("Should reject negative sequence numbers")
-    void testRejectNegativeSequenceNumber() {
-        TopicBuilder builder = new TopicBuilder();
-        assertThatThrownBy(() -> builder.addEntry(-1, "Country", "Australia"))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("Sequence number must be non-negative: -1");
+    @DisplayName("Out-of-order gaps can be repaired after a failed build")
+    void gapsAreReportedAndRecoverable() {
+        TopicBuilder builder = Topic.builder().addEntry(2, null, "third");
+        assertThatThrownBy(builder::build).isInstanceOf(IllegalStateException.class);
+        builder.addEntry(0, "A", "first");
+        assertThatThrownBy(builder::build).isInstanceOf(IllegalStateException.class);
+        builder.addEntry(1, "B", "second");
+
+        Topic result = builder.build();
+        assertThat(result.getName()).isEqualTo("first.second.third");
+        assertThat(result.getEntries().get(2).getQualifier()).isEqualTo("N2");
     }
 
     @Test
-    @DisplayName("Should reject building with gaps in sequence numbers")
-    void testRejectGapsInSequence() {
-        TopicBuilder builder = new TopicBuilder()
-                .addEntry(0, "Country", "Australia")
-                .addEntry(2, "City", "Sydney"); // Missing index 1
-
-        assertThatThrownBy(builder::build)
-                .isInstanceOf(IllegalStateException.class)
-                .hasMessageContaining("sequence has gap at position: 1");
+    @DisplayName("A failed first addition leaves mode undecided and failed builds consume no state")
+    void failuresDoNotFixModeOrConsumeInputs() {
+        TopicBuilder builder = Topic.builder();
+        assertThatThrownBy(() -> builder.addEntry(null, ""))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(builder::build).isInstanceOf(IllegalStateException.class);
+        builder.addEntry(0, "A", "valid");
+        assertThat(builder.build().getName()).isEqualTo("valid");
     }
 
     @Test
-    @DisplayName("Should reject building without entries")
-    void testRejectEmptyBuild() {
-        TopicBuilder builder = new TopicBuilder();
-        assertThatThrownBy(builder::build)
-                .isInstanceOf(IllegalStateException.class)
-                .hasMessageContaining("Cannot build Topic with no canonical name entries");
+    @DisplayName("Sequential and indexed modes are exclusive")
+    void modesCannotBeMixed() {
+        TopicBuilder sequential = Topic.builder().addEntry("A", "one");
+        assertThatThrownBy(() -> sequential.addEntry(1, "B", "two"))
+                .isInstanceOf(IllegalStateException.class);
+        TopicBuilder indexed = Topic.builder().addEntry(0, "A", "one");
+        assertThatThrownBy(() -> indexed.addEntry("B", "two"))
+                .isInstanceOf(IllegalStateException.class);
     }
 
     @Test
-    @DisplayName("Should reject blank qualifier or name")
-    void testRejectBlankQualifierOrName() {
-        TopicBuilder builder = new TopicBuilder();
-        assertThatThrownBy(() -> builder.addEntry("", "Australia"))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("qualifier must not be null or blank");
+    @DisplayName("Invalid positions, values, and depth are rejected before state changes")
+    void rejectsInvalidInputAndDepth() {
+        TopicBuilder builder = Topic.builder();
+        assertThatThrownBy(() -> builder.addEntry(-1, "A", "value"))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> builder.addEntry(32, "A", "value"))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> builder.addEntry("A", "  "))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> builder.addEntry(" ", "value"))
+                .isInstanceOf(IllegalArgumentException.class);
+        builder.addEntry(0, null, "valid");
+        assertThat(builder.build().getName()).isEqualTo("valid");
 
-        assertThatThrownBy(() -> builder.addEntry("Country", "  "))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("name must not be null or blank");
+        TopicBuilder depthLimited = Topic.builder();
+        for (int index = 0; index < 32; index++) {
+            depthLimited.addEntry(null, "value" + index);
+        }
+        assertThat(depthLimited.build().getDepth()).isEqualTo(32);
+        assertThat(depthLimited.build().getEntries().getLast().getQualifier()).isEqualTo("N31");
+        assertThatThrownBy(() -> depthLimited.addEntry(null, "too deep"))
+                .isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> Topic.builder().addEntry("A", null))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
-    @DisplayName("Topic entry supports version strings with dots")
-    void testTopicEntrySupportsVersionStringsWithDots() {
-        TopicEntry entry = new TopicEntry("ModelVersion", "2.4");
-        assertThat(entry.getName()).isEqualTo("2.4");
-        assertThat(entry.getQualifier()).isEqualTo("ModelVersion");
+    @DisplayName("Builder does not expose removal, renumbering, or Topic-editing operations")
+    void noEditingConvenienceOperationsAreExposed() {
+        assertThat(java.util.Arrays.stream(TopicBuilder.class.getMethods())
+                .map(method -> method.getName())
+                .noneMatch(name -> name.startsWith("remove") || name.startsWith("renumber")
+                        || name.equals("fromTopic"))).isTrue();
     }
 }

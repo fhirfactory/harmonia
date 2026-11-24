@@ -34,7 +34,17 @@
     <name>Harmonia :: Calliope (Canonical Model &amp; Schema Library)</name>
     <description>Calliope — Canonical Model &amp; Schema Library. The authoritative repository and management service for the shared information models, schemas and structural definitions used throughout Harmonia.</description>
 
+    <properties>
+        <re2j.version>1.8</re2j.version>
+    </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>com.google.re2j</groupId>
+            <artifactId>re2j</artifactId>
+            <version>${re2j.version}</version>
+        </dependency>
+
         <!-- Themis API (Security & Policy Contracts) -->
         <dependency>
             <groupId>net.fhirfactory.harmonia</groupId>

@@ -328,12 +328,16 @@ public final class InformationUnitMask implements Serializable {
     public String toString() {
         return "InformationUnitMask{" +
                 "id=" + getShortId() +
-                (identityMask != null ? ", identityMask=" + identityMask.getShortId() : "") +
-                (containerTypeMask != null ? ", containerMask=" + containerTypeMask.getShortId() : "") +
-                (contentStructureMask != null ? ", contentStructureMask=" + contentStructureMask.getShortId() : "") +
-                (originMask != null ? ", originMask=" + originMask.getShortId() : "") +
+                (identityMask != null ? ", identityMask=" + maskSummary(identityMask) : "") +
+                (containerTypeMask != null ? ", containerMask=" + maskSummary(containerTypeMask) : "") +
+                (contentStructureMask != null ? ", contentStructureMask=" + maskSummary(contentStructureMask) : "") +
+                (originMask != null ? ", originMask=" + maskSummary(originMask) : "") +
                 (version != null ? ", version='" + version + '\'' : "") +
                 '}';
+    }
+
+    private static String maskSummary(TopicMask mask) {
+        return mask.isUniversal() ? "universal" : "ordinary(depth=" + mask.getEntries().size() + ")";
     }
 
 }

@@ -17,11 +17,9 @@
 
 package net.fhirfactory.harmonia.model.core.domain.fhir;
 
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
 import net.fhirfactory.harmonia.model.core.workflow.tasks.ErgonPayload;
 import net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.ErgonReasonEnum;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import org.apache.commons.lang3.StringUtils;
 import org.hl7.fhir.instance.model.api.IBaseResource;
@@ -37,8 +35,6 @@ import static net.fhirfactory.harmonia.model.core.workflow.tasks.valuesets.Ergon
  * Bi-directional converter between {@link ErgonPayload} domain models and FHIR R5 {@link Task} input/output components.
  */
 public final class ErgonPayloadFhirConverter {
-
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     private ErgonPayloadFhirConverter() {
         // Utility class
@@ -367,21 +363,26 @@ public final class ErgonPayloadFhirConverter {
         return task;
     }
 
+    /**
+     * Writes a Topic for an Ergon Task extension using only the current logical JSON form.
+     *
+     * @param topic Topic to write, or null
+     * @return logical JSON text, or null for a null Topic
+     * @throws IllegalStateException if JSON generation fails; no lossy name fallback is used
+     */
     public static String serializeTopic(Topic topic) {
-        if (topic == null) return null;
-        try {
-            return OBJECT_MAPPER.writeValueAsString(topic);
-        } catch (Exception e) {
-            return topic.toTopicString();
-        }
+        return ErgonTopicInterchange.serialize(topic);
     }
 
+    /**
+     * Reads a Topic from an Ergon Task extension, dispatching explicitly between current
+     * JSON, the predecessor's JSON and the predecessor's plain dotted-name fallback.
+     *
+     * @param str stored extension text; null or blank means no Topic
+     * @return reconstructed Topic, or null when no value was stored
+     * @throws IllegalArgumentException for malformed, inconsistent, or ambiguous representations
+     */
     public static Topic deserializeTopic(String str) {
-        if (StringUtils.isBlank(str)) return null;
-        try {
-            return OBJECT_MAPPER.readValue(str, Topic.class);
-        } catch (Exception e) {
-            return TopicFactory.fromName(str);
-        }
+        return ErgonTopicInterchange.deserialize(str);
     }
 }

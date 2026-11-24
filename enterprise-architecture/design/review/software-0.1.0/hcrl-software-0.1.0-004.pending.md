@@ -11,7 +11,7 @@
 | [DR-7](#dr-7-pragma-fhir-security-context-authority) | Pragma FHIR security-context authority | PENDING REVIEW | `PragmaFhirSecurityConverter` remains unchanged; determine whether Task extensions are an authorized transport representation or caller-controlled authority under Invariant 6.2. |
 | [DR-8](#dr-8-persistence-delete-operation-semantics) | Persistence DELETE operation semantics | PENDING REVIEW | Existing `PersistenceOperationType.DELETE` remains unchanged; confirm its meaning against the no-physical-DELETE lifecycle rule. |
 | [DR-9](#dr-9-legacy-information-unit-json-representation) | Legacy Information Unit JSON representation | PENDING REVIEW | No external consumer or accepted historical snapshot contract was found; confirm whether old `InformationUnitMetadata` JSON needs migration beyond the candidate's tested round-trip contract. |
-| [DR-10](#dr-10) | Draft.001.003 Topic/TopicMask design review | PENDING SOLUTION ARCHITECT REVIEW | F-01.75–F-01.81 incorporated. R1–R6 design dispositions are accepted individually. The draft and implementation obligations await their respective review and evidence. |
+| [DR-10](#dr-10) | Draft.001.003 Topic/TopicMask design review | ACCEPTED WITH QUALIFICATIONS | Mark Hunter accepted the design recorded in [Final.001.001][topic-final-001-001], including the §8 Java API. F-01.1–F-01.81 and R1–R6 retain their decision lineage. Acceptance provenance is in [Iteration 007][topic-acceptance-boundary]. Compatibility, conformance and reconciliation obligations remain open. |
 | [DR-11](#dr-11) | Bounded Minutiae | PENDING REVIEW | Supporting Task/Report provenance and source-locator clarification, with unresolved event time disclosed. |
 | [DR-12](#dr-12) | Pragma publication and subscription design review | PENDING SOLUTION ARCHITECT REVIEW | Iteration 005 documents PS-01–PS-16 in Draft.000.001. Draft.000.002 reconciles execution-information semantics with Pragmaton Draft.000.003. G03 adds Mneme Pragma Model Draft.000.003 for work identity, IU cardinality and scheduling review, Ergon–Mneme Draft.000.003 for governed WorkSpace access, save and recovery, and Petasos–Mneme Draft.000.003 for reference handoff, acknowledgement and retry. Handoff order, terminology, selector scope and remaining contract decisions require adjudication. The cross-document review finds a coherent core and identifies exceptions for collective adjudication. G03 adjudications are reflected in five new pending drafts. The audit staging proposal and remaining PF decisions await review. The routing candidate captures durable decision recovery for both Petasos routers. Canonical correspondence and PF-07/PF-08 contracts remain pending. Routing Draft.000.002 records Ergon Egress work creation, direct Praxis routing of existing work and authoritative-provenance handover recovery. Routing Draft.000.003 records Mneme-managed ephemeral routing-set coordination and the qualified PF-08 strategy disposition. The processing-framework candidate adds the three-tier model and synchronous named Checkpoints for bounded intra-module review. [Final.001 records qualified acceptance of the Processing Framework and Checkpoints DRP](#g03-processing-framework-final-001). The collective G03 review remains pending. [PF-07 resolves H10/H11 responsibilities and normal-path behaviour](#g03-pf-07-ergon-egress-petasos-handover). Detailed contracts and conformance evidence remain outstanding. [Routing Final.001 records qualified acceptance of the PF-07 handover and PF-08 strategy](#g03-petasos-routing-final-001). The detailed obligations carry forward and the collective G03 review remains pending. |
 
@@ -114,9 +114,9 @@ This review record has two bases. DR-1–DR-9 retain the exact implementation ca
 <a id="dr-10"></a>
 ## DR-10 — Draft.001.003 Topic/TopicMask Design Review
 
-**Disposition · Pending Solution Architect review.**
+**Solution Architect disposition · Accepted with qualifications.** Mark Hunter accepted exact [Draft.001.003][draft] for the runtime Topic/TopicMask model, matching semantics, construction, canonical representations and Java API. [Final.001.001][topic-final-001-001] is the accepted offline design for subsequent Calliope work. [Operative acceptance and amendment][topic-acceptance-task]
 
-**Objective** · Determine whether [Draft.001.003][draft] correctly incorporates all accepted F-01 adjudications and is suitable for Solution Architect acceptance as the revised Topic/TopicMask design.
+**Original review objective** · Determine whether [Draft.001.003][draft] correctly incorporates all accepted F-01 adjudications and is suitable for Solution Architect acceptance as the revised Topic/TopicMask design.
 
 **Review basis**
 
@@ -138,7 +138,21 @@ This review record has two bases. DR-1–DR-9 retain the exact implementation ca
 6. Complete [mandatory criteria][acceptance] for subsequent implementation acceptance.
 7. Scope evidence that the activity created documentation and review material only.
 
-**Disposition requested** · Review the exact draft and evidence, including the proposed Java exception types, and record acceptance, qualification or requested changes for the design. Preserve the stated obligations and qualifications. The scope of this review is the design document.
+**Original disposition request (Iteration 004)** · Review the exact draft and evidence, including the proposed Java exception types, and record acceptance, qualification or requested changes for the design. Preserve the stated obligations and qualifications. The scope of this review is the design document.
+
+**Accepted Java API** · The §8 signatures, `Optional<String>` and locale-independent `String.compareTo` field ordering are accepted. `Topic.getAncestor(int)` uses `IllegalArgumentException` for out-of-range depths. Ordinary-only `TopicMask` accessors use `IllegalStateException` on universal masks. The signature block and all settled F-01 decisions carry forward. [Accepted Java surface][topic-final-java]
+
+**Outstanding qualifications**
+
+1. Preserve or explicitly migrate historical Topic UUID references, registry uniqueness and aliases, and persisted selectors and their references. Establish approved compatibility evidence.
+2. Prove legacy selector equivalence, including security-sensitive matching and the absence of widened selection on invalid or ambiguous input.
+3. Establish the fully qualified IU Topic representation, canonical qualifier vocabulary and boundary mappings. Preserve the established unqualified IU designation and independent IU UUID.
+4. Establish release-specific limits, pinned RE2/J compatibility and resource safeguards. Confirm module placement and retain the separate `themis-api` governance concern.
+5. Verify logging integration, bounded latency and reliability under normal operation and failure, including ERROR delivery and outstanding delivery uncertainty.
+6. Demonstrate the actual Java implementation and consumer conformance against the retained mandatory behavioural criteria and applicable solution-wide evidence requirements.
+7. Reconcile the design with applicable accepted Continuum contracts where required. Any incorporation requires separate authority through ADD/HCRL.
+
+**Application and provenance** · The original review and F-01 decision history remain here. The acceptance occurred after the establishment of Iteration 006. [Iteration 007][topic-acceptance-boundary] holds the Task and finalisation evidence. Comparison with Draft.001.003 confirmed that the runtime contracts, Java signatures and behavioural acceptance criteria were preserved. The changes record standing, provenance and the explicit Java API disposition. The V001 implementation, HCRL.004 and the collective G03 review retain their pending standing. [Open evidence][topic-final-obligations] · [Behavioural criteria][topic-final-criteria] · [Finalisation Report][topic-acceptance-report]
 
 <a id="dr-11"></a>
 ## DR-11 — Bounded Minutiae
@@ -347,6 +361,13 @@ Comment: [awaiting Solution Architect / ARB comment]
 [draft001]: ../../offline-design/DRP-Topic-and-TopicMask.draft.001.001.md
 [draft002]: ../../offline-design/DRP-Topic-and-TopicMask.draft.001.002.md
 [draft]: ../../offline-design/DRP-Topic-and-TopicMask.draft.001.003.md
+[topic-final-001-001]: ../../offline-design/DRP-Topic-and-TopicMask.Final.001.001.md
+[topic-final-java]: ../../offline-design/DRP-Topic-and-TopicMask.Final.001.001.md#8-accepted-java-surface
+[topic-final-obligations]: ../../offline-design/DRP-Topic-and-TopicMask.Final.001.001.md#9-open-decisions-and-evidence
+[topic-final-criteria]: ../../offline-design/DRP-Topic-and-TopicMask.Final.001.001.md#10-mandatory-behavioural-acceptance
+[topic-acceptance-boundary]: hcrl-software-0.1.0-007.pending.md
+[topic-acceptance-task]: ../../evidence/software-0.1.0/007/before/ai-agent-tasks/unresolved-topic-topicmask-finalisation-task.md
+[topic-acceptance-report]: ../../evidence/software-0.1.0/007/after/ai-agent-reports/20261123T204533Z-topic-topicmask-finalisation-report.md
 [acceptance]: ../../offline-design/DRP-Topic-and-TopicMask.draft.001.003.md#10-mandatory-behavioural-acceptance
 [rad]: ../../register/1.1.25/hcrl-1.1.25-001.complete.md#dr-3
 [decisions002]: ../../evidence/software-0.1.0/002/before/F-01-Topic-TopicMask-Adjudications.md

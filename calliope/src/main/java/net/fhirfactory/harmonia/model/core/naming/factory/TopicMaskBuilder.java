@@ -18,116 +18,123 @@
 package net.fhirfactory.harmonia.model.core.naming.factory;
 
 import net.fhirfactory.harmonia.model.core.naming.TopicMask;
-import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicMaskEntryPattern;
-import net.fhirfactory.harmonia.model.core.naming.valuesets.MaskType;
-import net.fhirfactory.harmonia.model.core.naming.valuesets.TopicMaskType;
+import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicMaskEntry;
+import net.fhirfactory.harmonia.model.core.naming.support.TopicLimits;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.Objects;
-import java.util.SortedMap;
-import java.util.TreeMap;
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Fluent builder for creating immutable {@link TopicMask} instances with strict validation.
+ * Reusable fluent builder for ordinary immutable TopicMasks.
+ * <p>
+ * Each operation validates and compiles its entry before changing builder state.
+ * A built mask is a defensive snapshot; subsequent additions affect only later
+ * results. Universal masks are created explicitly with {@link TopicMask#all()}.
+ * The ordinary-mask contract is defined by {@code DRP-Topic-and-TopicMask.Final.001.001.md} §§4, 8.
  */
-public class TopicMaskBuilder {
+public final class TopicMaskBuilder {
 
-    private UUID id = UUID.randomUUID();
-    private MaskType maskType = MaskType.Inclusive;
-    private TopicMaskType maskBasis = null;
-    private final SortedMap<Integer, String> namePatterns = new TreeMap<>();
-    private final SortedMap<Integer, TopicMaskEntryPattern> canonicalPatterns = new TreeMap<>();
+    private static final Logger LOGGER = LoggerFactory.getLogger(TopicMaskBuilder.class);
+    private final List<TopicMaskEntry> entries = new ArrayList<>();
+    private boolean includeContainedElements;
 
+    /** Creates an empty ordinary-mask builder. */
     public TopicMaskBuilder() {
     }
 
-    public TopicMaskBuilder(UUID id) {
-        this.id = Objects.requireNonNull(id, "id must not be null");
-    }
-
-    public TopicMaskBuilder id(UUID id) {
-        this.id = Objects.requireNonNull(id, "id must not be null");
+    /** Adds a validated immutable entry. */
+    public TopicMaskBuilder add(TopicMaskEntry entry) {
+        if (entry == null) {
+            logInvalidAddition();
+            throw new IllegalArgumentException("entry must not be null");
+        }
+        try {
+            TopicLimits.requireDepth(entries.size() + 1);
+        } catch (IllegalArgumentException exception) {
+            logInvalidAddition();
+            throw exception;
+        }
+        entries.add(entry);
         return this;
     }
 
-    public TopicMaskBuilder maskType(MaskType maskType) {
-        this.maskType = Objects.requireNonNull(maskType, "maskType must not be null");
+    /** Adds an independent qualifier/value expression pair. */
+    public TopicMaskBuilder addRegex(String qualifierRegex, String valueRegex) {
+        return add(TopicMaskEntry.of(qualifierRegex, valueRegex));
+    }
+
+    /** Adds qualifier, value, and optional version expressions. */
+    public TopicMaskBuilder addRegex(String qualifierRegex, String valueRegex, String versionRegex) {
+        return add(TopicMaskEntry.of(qualifierRegex, valueRegex, versionRegex));
+    }
+
+    /** Adds a value expression with an unrestricted qualifier. */
+    public TopicMaskBuilder addForValue(String valueRegex) {
+        return add(TopicMaskEntry.forValue(valueRegex));
+    }
+
+    /** Adds a qualifier expression with an unrestricted value. */
+    public TopicMaskBuilder addForQualifier(String qualifierRegex) {
+        return add(TopicMaskEntry.forQualifier(qualifierRegex));
+    }
+
+    /** Adds a positional entry that matches any qualifier and value. */
+    public TopicMaskBuilder addAny() {
+        return add(TopicMaskEntry.any());
+    }
+
+    /** Adds literal qualifier and value criteria. */
+    public TopicMaskBuilder addLiterals(String qualifier, String value) {
+        return add(TopicMaskEntry.ofLiterals(qualifier, value));
+    }
+
+    /** Adds literal qualifier, value, and version criteria. */
+    public TopicMaskBuilder addLiterals(String qualifier, String value, String version) {
+        return add(TopicMaskEntry.ofLiterals(qualifier, value, version));
+    }
+
+    /** Adds a literal value with an unrestricted qualifier. */
+    public TopicMaskBuilder addForLiteralValue(String value) {
+        return add(TopicMaskEntry.forLiteralValue(value));
+    }
+
+    /** Adds a literal qualifier with an unrestricted value. */
+    public TopicMaskBuilder addForLiteralQualifier(String qualifier) {
+        return add(TopicMaskEntry.forLiteralQualifier(qualifier));
+    }
+
+    /**
+     * Configures whether matching accepts trailing Topic entries.
+     *
+     * @param include true for trailing-element containment, false for exact depth
+     * @return this builder
+     */
+    public TopicMaskBuilder includeContainedElements(boolean include) {
+        includeContainedElements = include;
         return this;
     }
 
-    public TopicMaskBuilder exact() {
-        this.maskType = MaskType.Exact;
-        return this;
-    }
-
-    public TopicMaskBuilder inclusive() {
-        this.maskType = MaskType.Inclusive;
-        return this;
-    }
-
-    public TopicMaskBuilder addNamePattern(String regex) {
-        int nextSeq = namePatterns.isEmpty() ? 0 : namePatterns.lastKey() + 1;
-        return addNamePattern(nextSeq, regex);
-    }
-
-    public TopicMaskBuilder addNamePattern(int sequenceNumber, String regex) {
-        if (sequenceNumber < 0) {
-            throw new IllegalArgumentException("sequenceNumber must be non-negative: " + sequenceNumber);
-        }
-        if (maskBasis == TopicMaskType.TopicCanonicalNameBased) {
-            throw new IllegalStateException("Cannot add name pattern to canonical-name-based mask");
-        }
-        if (namePatterns.containsKey(sequenceNumber)) {
-            throw new IllegalArgumentException("Duplicate sequence position rejected: " + sequenceNumber);
-        }
-        this.maskBasis = TopicMaskType.TopicNameBased;
-        this.namePatterns.put(sequenceNumber, regex);
-        return this;
-    }
-
-    public TopicMaskBuilder addCanonicalPattern(String qualifierRegex, String nameRegex) {
-        int nextSeq = canonicalPatterns.isEmpty() ? 0 : canonicalPatterns.lastKey() + 1;
-        return addCanonicalPattern(nextSeq, qualifierRegex, nameRegex);
-    }
-
-    public TopicMaskBuilder addCanonicalPattern(int sequenceNumber, String qualifierRegex, String nameRegex) {
-        return addCanonicalPattern(sequenceNumber, new TopicMaskEntryPattern(qualifierRegex, nameRegex));
-    }
-
-    public TopicMaskBuilder addCanonicalPattern(int sequenceNumber, TopicMaskEntryPattern pattern) {
-        if (sequenceNumber < 0) {
-            throw new IllegalArgumentException("sequenceNumber must be non-negative: " + sequenceNumber);
-        }
-        if (maskBasis == TopicMaskType.TopicNameBased) {
-            throw new IllegalStateException("Cannot add canonical pattern to name-based mask");
-        }
-        Objects.requireNonNull(pattern, "pattern must not be null");
-        if (canonicalPatterns.containsKey(sequenceNumber)) {
-            throw new IllegalArgumentException("Duplicate sequence position rejected: " + sequenceNumber);
-        }
-        this.maskBasis = TopicMaskType.TopicCanonicalNameBased;
-        this.canonicalPatterns.put(sequenceNumber, pattern);
-        return this;
-    }
-
+    /**
+     * Builds a snapshot of the configured ordinary mask.
+     *
+     * @return new immutable ordinary mask
+     * @throws IllegalStateException when no criteria have been added
+     */
     public TopicMask build() {
-        if (maskBasis == null) {
-            this.maskBasis = TopicMaskType.TopicNameBased;
+        if (entries.isEmpty()) {
+            logInvalidAddition();
+            throw new IllegalStateException("Cannot build an empty ordinary TopicMask");
         }
-        if (maskBasis == TopicMaskType.TopicNameBased) {
-            for (int i = 0; i < namePatterns.size(); i++) {
-                if (!namePatterns.containsKey(i)) {
-                    throw new IllegalStateException("Gap in sequence at: " + i);
-                }
-            }
-            return new TopicMask(id, maskType, namePatterns, null);
-        } else {
-            for (int i = 0; i < canonicalPatterns.size(); i++) {
-                if (!canonicalPatterns.containsKey(i)) {
-                    throw new IllegalStateException("Gap in sequence at: " + i);
-                }
-            }
-            return new TopicMask(id, maskType, null, canonicalPatterns);
+        return TopicMask.ordinary(new ArrayList<>(entries), includeContainedElements);
+    }
+
+    private static void logInvalidAddition() {
+        try {
+            LOGGER.error("TopicMask builder rejected an invalid operation");
+        } catch (RuntimeException ignored) {
+            // A diagnostic failure cannot alter the rejected builder operation.
         }
     }
 }

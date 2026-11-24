@@ -41,6 +41,12 @@
             <artifactId>calliope</artifactId>
         </dependency>
 
+        <!-- Governed persistence ports carry the canonical Themis context. -->
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>themis-api</artifactId>
+        </dependency>
+
         <!-- HAPI FHIR Base & Structures R5 -->
         <dependency>
             <groupId>ca.uhn.hapi.fhir</groupId>

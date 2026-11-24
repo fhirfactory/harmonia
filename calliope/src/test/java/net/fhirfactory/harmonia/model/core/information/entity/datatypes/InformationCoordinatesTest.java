@@ -17,14 +17,11 @@
 
 package net.fhirfactory.harmonia.model.core.information.entity.datatypes;
 
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -34,17 +31,12 @@ public class InformationCoordinatesTest {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Test
-    @DisplayName("Should construct InformationCoordinates with strongly typed Topic references and preserve Topic UUID identity")
+    @DisplayName("Should construct InformationCoordinates with strongly typed canonical Topic references")
     void testCoordinatesConstructionAndIdentityPreservation() {
-        UUID gwId = UUID.randomUUID();
-        UUID epId = UUID.randomUUID();
-        UUID locId = UUID.randomUUID();
-        UUID ownerId = UUID.randomUUID();
-
-        Topic gwTopic = TopicFactory.fromName(gwId, "Health.Gateway.Postgres");
-        Topic epTopic = TopicFactory.fromName(epId, "Health.Endpoint.Rest");
-        Topic locTopic = TopicFactory.fromName(locId, "Health.Location.HospitalA");
-        Topic ownerTopic = TopicFactory.fromName(ownerId, "Health.Owner.HealthSystem");
+        Topic gwTopic = TopicFactory.fromName("Health.Gateway.Postgres");
+        Topic epTopic = TopicFactory.fromName("Health.Endpoint.Rest");
+        Topic locTopic = TopicFactory.fromName("Health.Location.HospitalA");
+        Topic ownerTopic = TopicFactory.fromName("Health.Owner.HealthSystem");
 
         InformationCoordinates coords = InformationCoordinates.builder()
                 .persistenceGateway(gwTopic)
@@ -58,11 +50,11 @@ public class InformationCoordinatesTest {
         assertThat(coords.informationLocation()).contains(locTopic);
         assertThat(coords.informationOwner()).contains(ownerTopic);
 
-        // Verify UUID identities are preserved
-        assertThat(coords.persistenceGatewayId()).contains(gwId);
-        assertThat(coords.gatewayEndpointId()).contains(epId);
-        assertThat(coords.informationLocationId()).contains(locId);
-        assertThat(coords.informationOwnerId()).contains(ownerId);
+        // Verify complete canonical identities are preserved
+        assertThat(coords.persistenceGatewayCanonicalName()).contains(gwTopic.getCanonicalName());
+        assertThat(coords.gatewayEndpointCanonicalName()).contains(epTopic.getCanonicalName());
+        assertThat(coords.informationLocationCanonicalName()).contains(locTopic.getCanonicalName());
+        assertThat(coords.informationOwnerCanonicalName()).contains(ownerTopic.getCanonicalName());
 
         // Verify derived name helpers
         assertThat(coords.persistenceGatewayName()).contains("Health.Gateway.Postgres");

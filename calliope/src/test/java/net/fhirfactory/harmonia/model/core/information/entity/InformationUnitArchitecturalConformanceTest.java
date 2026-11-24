@@ -86,8 +86,8 @@ public class InformationUnitArchitecturalConformanceTest {
             assertThat(container.authorTopic()).contains(TopicFactory.fromName("External.Hospital.PAS"));
             assertThat(container.recipientTopic()).contains(TopicFactory.fromName("Harmonia.System.Core"));
 
-            // Topic identity preservation (Topic UUID is preserved, not degraded to string)
-            assertThat(container.type().getId()).isNotNull();
+            // Topic identity is the complete canonical path, not a generated runtime UUID.
+            assertThat(Topic.fromCanonicalName(container.type().getCanonicalName())).isEqualTo(container.type());
         }
 
         @Test
@@ -107,7 +107,7 @@ public class InformationUnitArchitecturalConformanceTest {
             assertThat(contentMeta.contentStructureTopic()).contains(schemaTopic);
             assertThat(contentMeta.contentStructureTopic().orElseThrow().getName()).isEqualTo("Health.FHIR.R5.Patient");
 
-            // Architectural Principle 3: Associated version describes the version of the identified concept; Topic has no version
+            // Associated content version remains independent of optional TopicEntry versions.
             assertThat(contentMeta.contentStructureVersion()).contains("R5.0.0");
             assertThat(contentMeta.structureVersion()).contains("R5.0.0");
         }

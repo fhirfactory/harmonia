@@ -17,302 +17,419 @@
 
 package net.fhirfactory.harmonia.model.core.naming;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicEntry;
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicBuilder;
+import net.fhirfactory.harmonia.model.core.naming.support.CanonicalText;
+import net.fhirfactory.harmonia.model.core.naming.support.TopicFieldRules;
+import net.fhirfactory.harmonia.model.core.naming.support.TopicLimits;
 import net.fhirfactory.harmonia.model.core.naming.valuesets.TopicValueSets;
-import org.apache.commons.lang3.StringUtils;
 
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
- * An immutable naming and identity construct within Harmonia's Architecture Continuum.
+ * Immutable root-to-leaf Topic identity defined by its ordered qualifier/value path.
  * <p>
- * A Topic represents the classification and identity of data elements or information units
- * independently of any message transport or routing envelope.
- * <p>
- * In accordance with the accepted Architecture Continuum:
- * <ul>
- *   <li>A Topic is identified by a unique {@link UUID}.</li>
- *   <li>A Topic contains an explicitly sequenced zero-based {@link SortedMap} of {@link TopicEntry}
- *       elements with no gaps.</li>
- *   <li>The unqualified dot-delimited name is derived from the sequence of entry names.</li>
- *   <li>A Topic is a pure naming/identity model and does not contain routing metadata such as
- *       source, target, destination, or transport timestamps.</li>
- * </ul>
+ * Entry versions are retained as data but do not change Topic identity or natural
+ * ordering. The logical JSON form contains only ordered entries; no runtime UUID
+ * or derived name is stored. This implementation follows the accepted
+ * {@code DRP-Topic-and-TopicMask.Final.001.001.md} §§1–3 contract.
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
-public final class Topic implements Serializable {
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE,
+        getterVisibility = JsonAutoDetect.Visibility.NONE,
+        isGetterVisibility = JsonAutoDetect.Visibility.NONE,
+        setterVisibility = JsonAutoDetect.Visibility.NONE,
+        creatorVisibility = JsonAutoDetect.Visibility.NONE)
+public final class Topic implements Serializable, Comparable<Topic> {
 
-    private static final long serialVersionUID = 1L;
-
-
-    private final UUID id;
-    private final SortedMap<Integer, TopicEntry> canonicalName;
-    private final String name;
-    private final String friendlyName;
-    private final String relativeName;
+    private static final long serialVersionUID = 2L;
+    private final List<TopicEntry> entries;
 
     /**
-     * Constructs an immutable Topic from an explicit identifier and sequenced entries.
+     * Reconstructs a Topic from a nonempty ordered collection of completed entries.
      *
-     * @param id            non-null unique identifier
-     * @param canonicalName non-null, non-empty, zero-based gap-free sequence of entries
-     * @throws IllegalArgumentException if id is null, canonicalName is empty or contains gaps
+     * @param entries root-to-leaf immutable entry values
+     * @throws IllegalArgumentException when the path is empty, too deep, or contains null entries
      */
     @JsonCreator
-    public Topic(
-            @JsonProperty("id") UUID id,
-            @JsonProperty("canonicalName") SortedMap<Integer, TopicEntry> canonicalName) {
-        if (id == null) {
-            throw new IllegalArgumentException("Topic id must not be null");
+    public Topic(@JsonProperty("entries") List<TopicEntry> entries) {
+        if (entries == null || entries.isEmpty()) {
+            throw new IllegalArgumentException("Topic entries must not be empty");
         }
-        if (canonicalName == null || canonicalName.isEmpty()) {
-            throw new IllegalArgumentException("Topic canonicalName must not be null or empty");
-        }
-        SortedMap<Integer, TopicEntry> copy = new TreeMap<>(canonicalName);
-        for (int i = 0; i < copy.size(); i++) {
-            if (!copy.containsKey(i)) {
-                throw new IllegalArgumentException("Topic canonicalName sequence has gap at position: " + i);
+        TopicLimits.requireDepth(entries.size());
+        List<TopicEntry> copy = new ArrayList<>(entries.size());
+        for (TopicEntry entry : entries) {
+            if (entry == null) {
+                throw new IllegalArgumentException("Topic entries must not contain null");
             }
+            copy.add(entry);
         }
-        this.id = id;
-        this.canonicalName = Collections.unmodifiableSortedMap(copy);
+        this.entries = Collections.unmodifiableList(copy);
+    }
 
-        StringBuilder sb = new StringBuilder();
-        for (TopicEntry entry : this.canonicalName.values()) {
-            if (sb.length() > 0) {
-                sb.append(".");
+    /**
+     * Legacy five-position constructor retained for direct callers during migration.
+     * The optional final qualifier value is omitted when null or empty; other
+     * missing or invalid values are rejected rather than silently defaulted.
+     *
+     * @param domain legacy position zero
+     * @param model legacy position one
+     * @param modelVersion legacy position two
+     * @param dataElement legacy position three
+     * @param dataElementQualifier optional legacy position four
+     */
+    @Deprecated
+    public Topic(String domain, String model, String modelVersion, String dataElement, String dataElementQualifier) {
+        this(legacyEntries(domain, model, modelVersion, dataElement, dataElementQualifier));
+    }
+
+    /**
+     * Converts the retained positional constructor into explicitly typed entries.
+     * The optional fifth field remains absent when omitted; no former default value
+     * or runtime identifier is synthesized.
+     */
+    private static List<TopicEntry> legacyEntries(String domain, String model, String modelVersion,
+                                                   String dataElement, String dataElementQualifier) {
+        List<TopicEntry> result = new ArrayList<>(5);
+        result.add(new TopicEntry(TopicValueSets.QUALIFIER_DOMAIN, domain, null));
+        result.add(new TopicEntry(TopicValueSets.QUALIFIER_MODEL, model, null));
+        result.add(new TopicEntry(TopicValueSets.QUALIFIER_MODEL_VERSION, modelVersion, null));
+        result.add(new TopicEntry(TopicValueSets.QUALIFIER_DATA_ELEMENT, dataElement, null));
+        if (dataElementQualifier != null && !dataElementQualifier.isEmpty()) {
+            result.add(new TopicEntry(TopicValueSets.QUALIFIER_DATA_ELEMENT_QUALIFIER, dataElementQualifier, null));
+        }
+        return result;
+    }
+
+    /** Creates the accepted reusable builder. */
+    public static TopicBuilder builder() {
+        return new TopicBuilder();
+    }
+
+    /**
+     * Parses strict non-versioned canonical syntax. Every reconstructed entry has an absent version.
+     *
+     * @param text escaped canonical path
+     * @return immutable Topic
+     */
+    public static Topic fromCanonicalName(String text) {
+        return parseCanonical(text, false);
+    }
+
+    /**
+     * Parses strict canonical syntax with optional per-entry versions.
+     *
+     * @param text escaped canonical path with optional `qualifier:version=value` segments
+     * @return immutable Topic retaining every version
+     */
+    public static Topic fromCanonicalNameWithVersion(String text) {
+        return parseCanonical(text, true);
+    }
+
+    /**
+     * Performs the shared structural scan, then validates each decoded literal field.
+     *
+     * @param text complete canonical path
+     * @param versioned whether the optional per-entry version segment is permitted
+     * @return reconstructed immutable path
+     */
+    private static Topic parseCanonical(String text, boolean versioned) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Canonical Topic text must not be empty");
+        }
+        TopicFieldRules.requireWellFormedUnicode(text, "canonical Topic text");
+        TopicLimits.requireLength(text, TopicLimits.MAX_TOPIC_TEXT_CODE_POINTS, "canonical Topic text");
+        List<String> segments = CanonicalText.splitRaw(text, '.', TopicLimits.MAX_DEPTH);
+        TopicLimits.requireDepth(segments.size());
+        List<TopicEntry> parsed = new ArrayList<>(segments.size());
+        for (String segment : segments) {
+            if (segment.isEmpty()) {
+                throw new IllegalArgumentException("Canonical Topic contains an empty segment");
             }
-            sb.append(entry.getName());
+            List<Integer> equals = CanonicalText.unescapedPositions(segment, '=');
+            List<Integer> colons = CanonicalText.unescapedPositions(segment, ':');
+            if (equals.size() != 1) {
+                throw new IllegalArgumentException("Canonical Topic segment requires one value separator");
+            }
+            int equalsAt = equals.get(0);
+            if (!versioned && !colons.isEmpty()) {
+                throw new IllegalArgumentException("Non-versioned canonical Topic cannot contain a version separator");
+            }
+            if (colons.size() > 1 || (!colons.isEmpty() && colons.get(0) > equalsAt)) {
+                throw new IllegalArgumentException("Canonical Topic version separator is misplaced");
+            }
+            int qualifierEnd = colons.isEmpty() ? equalsAt : colons.get(0);
+            String qualifier = CanonicalText.decode(segment.substring(0, qualifierEnd));
+            String version = colons.isEmpty() ? null
+                    : CanonicalText.decode(segment.substring(colons.get(0) + 1, equalsAt));
+            String value = CanonicalText.decode(segment.substring(equalsAt + 1));
+            if (version != null && version.isEmpty()) {
+                throw new IllegalArgumentException("Canonical Topic version must not be empty");
+            }
+            parsed.add(new TopicEntry(qualifier, value, version));
         }
-        this.name = sb.toString();
-
-        TopicEntry leaf = this.canonicalName.get(this.canonicalName.lastKey());
-        this.friendlyName = leaf.getName();
-        this.relativeName = leaf.toCanonicalString();
+        return new Topic(parsed);
     }
 
-    /**
-     * Constructs a canonical 5-tuple Health Topic with the given explicit UUID.
-     *
-     * @param id                   non-null identifier
-     * @param domain               domain name (e.g. Health)
-     * @param model                model name (e.g. HL7, FHIR)
-     * @param modelVersion         model version (e.g. 2.4, R5)
-     * @param dataElement          data element (e.g. ADT, Practitioner)
-     * @param dataElementQualifier data element qualifier (e.g. A01, CREATE)
-     */
-    public Topic(UUID id, String domain, String model, String modelVersion,
-                 String dataElement, String dataElementQualifier) {
-        this(id, build5TupleEntries(domain, model, modelVersion, dataElement, dataElementQualifier));
+    /** @return an immutable root-to-leaf entry list */
+    @JsonProperty("entries")
+    public List<TopicEntry> getEntries() {
+        return entries;
     }
 
-    /**
-     * Constructs a canonical 5-tuple Health Topic with a random UUID.
-     *
-     * @param domain               domain name (e.g. Health)
-     * @param model                model name (e.g. HL7, FHIR)
-     * @param modelVersion         model version (e.g. 2.4, R5)
-     * @param dataElement          data element (e.g. ADT, Practitioner)
-     * @param dataElementQualifier data element qualifier (e.g. A01, CREATE)
-     */
-    public Topic(String domain, String model, String modelVersion,
-                 String dataElement, String dataElementQualifier) {
-        this(UUID.randomUUID(), domain, model, modelVersion, dataElement, dataElementQualifier);
+    /** @return escaped canonical identity, excluding entry versions */
+    public String getCanonicalName() {
+        return canonicalName(false);
     }
 
-    private static SortedMap<Integer, TopicEntry> build5TupleEntries(
-            String domain, String model, String modelVersion,
-            String dataElement, String dataElementQualifier) {
-        SortedMap<Integer, TopicEntry> map = new TreeMap<>();
-        map.put(0, new TopicEntry(TopicValueSets.QUALIFIER_DOMAIN, StringUtils.defaultIfBlank(domain, TopicValueSets.DEFAULT_DOMAIN)));
-        map.put(1, new TopicEntry(TopicValueSets.QUALIFIER_MODEL, StringUtils.defaultIfBlank(model, "FHIR")));
-        map.put(2, new TopicEntry(TopicValueSets.QUALIFIER_MODEL_VERSION, StringUtils.defaultIfBlank(modelVersion, "R5")));
-        map.put(3, new TopicEntry(TopicValueSets.QUALIFIER_DATA_ELEMENT, StringUtils.defaultIfBlank(dataElement, "General")));
-        map.put(4, new TopicEntry(TopicValueSets.QUALIFIER_DATA_ELEMENT_QUALIFIER, StringUtils.defaultIfBlank(dataElementQualifier, "Default")));
-        return map;
+    /** @return escaped canonical path including each present entry version */
+    public String getCanonicalNameWithVersion() {
+        return canonicalName(true);
     }
 
-    /**
-     * Returns the unique identifier of this Topic.
-     *
-     * @return non-null UUID
-     */
-    public UUID getId() {
-        return id;
+    /** Builds a canonical projection from the same ordered entries with optional versions. */
+    private String canonicalName(boolean includeVersions) {
+        StringBuilder result = new StringBuilder();
+        for (TopicEntry entry : entries) {
+            if (result.length() > 0) {
+                result.append('.');
+            }
+            result.append(CanonicalText.escape(entry.getQualifier()));
+            Optional<String> version = entry.getVersion();
+            if (includeVersions && version.isPresent()) {
+                result.append(':').append(CanonicalText.escape(version.get()));
+            }
+            result.append('=').append(CanonicalText.escape(entry.getValue()));
+        }
+        return result.toString();
     }
 
-    /**
-     * Returns an unmodifiable view of the canonical name map.
-     *
-     * @return unmodifiable map of sequence numbers to TopicEntry
-     */
-    public SortedMap<Integer, TopicEntry> getCanonicalName() {
-        return canonicalName;
-    }
-
-    /**
-     * Returns the unqualified dot-delimited name of this Topic.
-     *
-     * @return dot-delimited name string
-     */
+    /** @return unqualified raw values joined by periods; this projection is not a parse format */
     public String getName() {
-        return name;
+        return joinValues(entries.size());
     }
 
-    /**
-     * Returns the friendly name (leaf entry name).
-     *
-     * @return leaf entry name string
-     */
-    public String getFriendlyName() {
-        return friendlyName;
-    }
-
-    /**
-     * Returns the relative name (leaf entry as {@code qualifier=name}).
-     *
-     * @return leaf entry formatted string
-     */
+    /** @return escaped non-versioned representation of the final entry */
     public String getRelativeName() {
-        return relativeName;
+        TopicEntry leaf = entries.get(entries.size() - 1);
+        return CanonicalText.escape(leaf.getQualifier()) + '=' + CanonicalText.escape(leaf.getValue());
     }
 
-    /**
-     * Returns the depth (number of levels) of this Topic's canonical name.
-     *
-     * @return positive integer depth
-     */
+    /** @return raw value of the final entry */
+    public String getFriendlyName() {
+        return entries.get(entries.size() - 1).getValue();
+    }
+
+    /** @return final value, or the final two values joined with a hyphen */
+    public String getDisplayName() {
+        if (entries.size() == 1) {
+            return getFriendlyName();
+        }
+        return entries.get(entries.size() - 2).getValue() + '-' + getFriendlyName();
+    }
+
+    /** @return count of ordered entries; a root has depth one */
     public int getDepth() {
-        return canonicalName.size();
+        return entries.size();
+    }
+
+    /** @return parent path, or null when this Topic is a root */
+    public Topic getParent() {
+        return entries.size() == 1 ? null : new Topic(entries.subList(0, entries.size() - 1));
     }
 
     /**
-     * Returns the entry at the specified zero-based sequence position.
+     * Returns the path containing the first {@code depth} entries.
      *
-     * @param sequenceNumber sequence number
-     * @return TopicEntry at that position, or {@code null} if out of bounds
+     * @param depth retained entry count, from one through this Topic's depth
+     * @return immutable ancestor or this Topic when the requested depth is unchanged
+     * @throws IllegalArgumentException when depth is outside the valid range
      */
-    public TopicEntry getEntry(int sequenceNumber) {
-        return canonicalName.get(sequenceNumber);
-    }
-
-    /**
-     * Returns the first 8 characters of the Topic UUID.
-     *
-     * @return 8-character string
-     */
-    public String getShortId() {
-        return id.toString().substring(0, 8);
-    }
-
-    /**
-     * Returns the Domain name (entry 0).
-     */
-    public String getDomain() {
-        TopicEntry entry = canonicalName.get(0);
-        return entry != null ? entry.getName() : null;
-    }
-
-    /**
-     * Returns the Model name (entry 1).
-     */
-    public String getModel() {
-        TopicEntry entry = canonicalName.get(1);
-        return entry != null ? entry.getName() : null;
-    }
-
-    /**
-     * Returns the ModelVersion (entry 2).
-     */
-    public String getModelVersion() {
-        TopicEntry entry = canonicalName.get(2);
-        return entry != null ? entry.getName() : null;
-    }
-
-    /**
-     * Returns the DataElement (entry 3).
-     */
-    public String getDataElement() {
-        TopicEntry entry = canonicalName.get(3);
-        return entry != null ? entry.getName() : null;
-    }
-
-    /**
-     * Returns the DataElementQualifier (entry 4).
-     */
-    public String getDataElementQualifier() {
-        TopicEntry entry = canonicalName.get(4);
-        return entry != null ? entry.getName() : null;
-    }
-
-    /**
-     * Returns the composite trigger string (e.g. {@code ADT^A01}).
-     *
-     * @return composite trigger or empty string
-     */
-    public String getCompositeTrigger() {
-        String elem = getDataElement();
-        String qual = getDataElementQualifier();
-        if (elem == null && qual == null) {
-            return "";
+    public Topic getAncestor(int depth) {
+        if (depth < 1 || depth > entries.size()) {
+            throw new IllegalArgumentException("Ancestor depth is outside this Topic");
         }
-        return (elem != null ? elem : "") + "^" + (qual != null ? qual : "");
+        return depth == entries.size() ? this : new Topic(entries.subList(0, depth));
     }
 
     /**
-     * Formats this Topic as its canonical string: {@code qualifier=name.qualifier=name...}.
+     * Tests strict, version-independent literal ancestry.
      *
-     * @return canonical string representation
+     * @param candidate possible descendant
+     * @return true only when this complete path is a proper prefix of candidate
      */
-    public String toCanonicalString() {
-        StringBuilder sb = new StringBuilder();
-        for (TopicEntry entry : canonicalName.values()) {
-            if (sb.length() > 0) {
-                sb.append(".");
+    public boolean isAncestorOf(Topic candidate) {
+        if (candidate == null || entries.size() >= candidate.entries.size()) {
+            return false;
+        }
+        for (int index = 0; index < entries.size(); index++) {
+            TopicEntry left = entries.get(index);
+            TopicEntry right = candidate.entries.get(index);
+            if (!left.getQualifier().equals(right.getQualifier()) || !left.getValue().equals(right.getValue())) {
+                return false;
             }
-            sb.append(entry.toCanonicalString());
         }
-        return sb.toString();
+        return true;
     }
 
     /**
-     * Formats this Topic as its dot-delimited name string.
+     * Compares qualifier/value pairs lexicographically; versions do not participate.
      *
-     * @return name string
+     * @param other Topic to compare
+     * @return deterministic case-sensitive ordering result
      */
-    public String toTopicString() {
-        return name;
-    }
-
-    /**
-     * Formats this Topic with its name and short identifier.
-     *
-     * @return formatted diagnostic string
-     */
-    public String toFormattedString() {
-        return name + " [id=" + id + "]";
-    }
-
-
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || !(o instanceof Topic)) return false;
-        Topic topic = (Topic) o;
-        return Objects.equals(canonicalName, topic.canonicalName);
+    public int compareTo(Topic other) {
+        Objects.requireNonNull(other, "other Topic");
+        int sharedDepth = Math.min(entries.size(), other.entries.size());
+        for (int index = 0; index < sharedDepth; index++) {
+            TopicEntry left = entries.get(index);
+            TopicEntry right = other.entries.get(index);
+            int qualifier = left.getQualifier().compareTo(right.getQualifier());
+            if (qualifier != 0) {
+                return qualifier;
+            }
+            int value = left.getValue().compareTo(right.getValue());
+            if (value != 0) {
+                return value;
+            }
+        }
+        return Integer.compare(entries.size(), other.entries.size());
     }
 
+    /**
+     * Positional compatibility projection for legacy five-tuple callers.
+     *
+     * @return entry at index, or null when absent
+     */
+    @Deprecated
+    public TopicEntry getEntry(int index) {
+        return index < 0 || index >= entries.size() ? null : entries.get(index);
+    }
+
+    /** @return legacy position-zero value, or null when absent */
+    @Deprecated
+    public String getDomain() { return legacyValue(0); }
+
+    /** @return legacy position-one value, or null when absent */
+    @Deprecated
+    public String getModel() { return legacyValue(1); }
+
+    /** @return legacy position-two value, or null when absent */
+    @Deprecated
+    public String getModelVersion() { return legacyValue(2); }
+
+    /** @return legacy position-three value, or null when absent */
+    @Deprecated
+    public String getDataElement() { return legacyValue(3); }
+
+    /** @return legacy position-four value, or null when absent */
+    @Deprecated
+    public String getDataElementQualifier() { return legacyValue(4); }
+
+    /** @return legacy composite trigger projection */
+    @Deprecated
+    public String getCompositeTrigger() {
+        String element = getDataElement();
+        String qualifier = getDataElementQualifier();
+        return element == null && qualifier == null ? "" : (element == null ? "" : element)
+                + '^' + (qualifier == null ? "" : qualifier);
+    }
+
+    /** @return unqualified raw value projection retained for legacy callers */
+    @Deprecated
+    public String toTopicString() {
+        return getName();
+    }
+
+    private String legacyValue(int index) {
+        TopicEntry entry = getEntry(index);
+        return entry == null ? null : entry.getValue();
+    }
+
+    private String joinValues(int count) {
+        StringBuilder result = new StringBuilder();
+        for (int index = 0; index < count; index++) {
+            if (index > 0) {
+                result.append('.');
+            }
+            result.append(entries.get(index).getValue());
+        }
+        return result.toString();
+    }
+
+    private Object writeReplace() {
+        return new SerializationProxy(entries);
+    }
+
+    private void readObject(ObjectInputStream stream) throws InvalidObjectException {
+        throw new InvalidObjectException("Serialization proxy required");
+    }
+
+    /**
+     * Compares ordered qualifier/value pairs and deliberately ignores entry versions.
+     *
+     * @param other comparison value
+     * @return true when the ordered non-versioned identities are equal
+     */
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (!(other instanceof Topic)) {
+            return false;
+        }
+        Topic that = (Topic) other;
+        if (entries.size() != that.entries.size()) {
+            return false;
+        }
+        for (int index = 0; index < entries.size(); index++) {
+            TopicEntry left = entries.get(index);
+            TopicEntry right = that.entries.get(index);
+            if (!left.getQualifier().equals(right.getQualifier()) || !left.getValue().equals(right.getValue())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /** @return hash derived from the ordered non-versioned identity path */
     @Override
     public int hashCode() {
-        return Objects.hash(canonicalName);
+        int result = 1;
+        for (TopicEntry entry : entries) {
+            result = 31 * result + entry.getQualifier().hashCode();
+            result = 31 * result + entry.getValue().hashCode();
+        }
+        return result;
     }
 
+    /** @return versioned canonical representation for diagnostics and display */
     @Override
     public String toString() {
-        return toCanonicalString();
+        return getCanonicalNameWithVersion();
+    }
+
+    private static final class SerializationProxy implements Serializable {
+        private static final long serialVersionUID = 1L;
+        private final List<TopicEntry> entries;
+
+        private SerializationProxy(List<TopicEntry> entries) {
+            this.entries = new ArrayList<>(entries);
+        }
+
+        private Object readResolve() {
+            return new Topic(entries);
+        }
     }
 }

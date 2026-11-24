@@ -19,141 +19,157 @@ package net.fhirfactory.harmonia.model.core.naming.factory;
 
 import net.fhirfactory.harmonia.model.core.naming.Topic;
 import net.fhirfactory.harmonia.model.core.naming.datatypes.TopicEntry;
+import net.fhirfactory.harmonia.model.core.naming.support.TopicFieldRules;
+import net.fhirfactory.harmonia.model.core.naming.support.TopicLimits;
 
-import java.util.Objects;
-import java.util.SortedMap;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
-import java.util.UUID;
 
 /**
- * Fluent builder for constructing immutable {@link Topic} instances with strict validation.
+ * Reusable builder for immutable Topics using either sequential or indexed input.
  * <p>
- * Enforces the following invariants:
- * <ul>
- *   <li>Reject duplicate sequence positions without overwriting previous entries or corrupting builder state.</li>
- *   <li>Ensure sequence numbers are non-negative, start at 0, and form a continuous zero-indexed sequence with no gaps.</li>
- *   <li>Ensure every entry has a non-blank qualifier and non-blank name containing no '.' delimiter.</li>
- * </ul>
+ * The first successful addition fixes the mode. Indexed additions replace an
+ * occupied position, while builds require a complete zero-based path. Failed
+ * operations do not alter mode, stored inputs, or previously built snapshots.
+ * These rules implement {@code DRP-Topic-and-TopicMask.Final.001.001.md} §2.
  */
-public class TopicBuilder {
+public final class TopicBuilder {
 
-    private UUID id;
-    private final SortedMap<Integer, TopicEntry> entries = new TreeMap<>();
+    private enum Mode { SEQUENTIAL, INDEXED }
 
-    /**
-     * Constructs a new builder with a generated UUID.
-     */
+    private Mode mode;
+    private final List<Input> sequentialEntries = new ArrayList<>();
+    private final Map<Integer, Input> indexedEntries = new TreeMap<>();
+
+    /** Creates an empty builder. */
     public TopicBuilder() {
-        this(UUID.randomUUID());
     }
 
     /**
-     * Constructs a new builder with the specified UUID.
+     * Adds one entry at the end of sequential input.
      *
-     * @param id non-null unique identifier
-     */
-    public TopicBuilder(UUID id) {
-        this.id = Objects.requireNonNull(id, "Topic id must not be null");
-    }
-
-    /**
-     * Sets the unique identifier for the Topic.
-     *
-     * @param id non-null identifier
+     * @param qualifier supplied qualifier, or null/empty for generated `N<position>`
+     * @param value required value
      * @return this builder
      */
-    public TopicBuilder id(UUID id) {
-        this.id = Objects.requireNonNull(id, "Topic id must not be null");
+    public TopicBuilder addEntry(String qualifier, String value) {
+        return addEntry(qualifier, value, null);
+    }
+
+    /**
+     * Adds one versioned entry at the end of sequential input.
+     *
+     * @param qualifier supplied qualifier, or null/empty for generated `N<position>`
+     * @param value required value
+     * @param version optional version; null/empty means absent
+     * @return this builder
+     */
+    public TopicBuilder addEntry(String qualifier, String value, String version) {
+        requireMode(Mode.SEQUENTIAL);
+        int index = sequentialEntries.size();
+        TopicLimits.requireDepth(index + 1);
+        Input input = validateInput(qualifier, value, version);
+        if (mode == null) {
+            mode = Mode.SEQUENTIAL;
+        }
+        sequentialEntries.add(input);
         return this;
     }
 
     /**
-     * Adds an entry at the next sequential sequence number.
+     * Adds or replaces an indexed entry. Out-of-order positions are allowed.
      *
-     * @param qualifier non-blank qualifier
-     * @param name      non-blank name without dots
+     * @param index zero-based path position
+     * @param qualifier supplied qualifier, or null/empty for generated `N<position>`
+     * @param value required value
      * @return this builder
      */
-    public TopicBuilder addEntry(String qualifier, String name) {
-        int nextSeq = entries.isEmpty() ? 0 : entries.lastKey() + 1;
-        return addEntry(nextSeq, qualifier, name);
+    public TopicBuilder addEntry(int index, String qualifier, String value) {
+        return addEntry(index, qualifier, value, null);
     }
 
     /**
-     * Adds an entry at the next sequential sequence number.
+     * Adds or replaces an indexed versioned entry. A failed replacement leaves
+     * the prior input at that position intact.
      *
-     * @param entry non-null topic entry
+     * @param index zero-based path position
+     * @param qualifier supplied qualifier, or null/empty for generated `N<position>`
+     * @param value required value
+     * @param version optional version; null/empty means absent
      * @return this builder
      */
-    public TopicBuilder addEntry(TopicEntry entry) {
-        int nextSeq = entries.isEmpty() ? 0 : entries.lastKey() + 1;
-        return addEntry(nextSeq, entry);
-    }
-
-    /**
-     * Adds an entry at an explicit sequence number.
-     * <p>
-     * Rejects duplicate sequence positions immediately without overwriting existing entries.
-     *
-     * @param sequenceNumber zero-based sequence position
-     * @param qualifier      non-blank qualifier
-     * @param name           non-blank name without dots
-     * @return this builder
-     * @throws IllegalArgumentException if sequenceNumber is negative or already occupied
-     */
-    public TopicBuilder addEntry(int sequenceNumber, String qualifier, String name) {
-        if (sequenceNumber < 0) {
-            throw new IllegalArgumentException("Sequence number must be non-negative: " + sequenceNumber);
+    public TopicBuilder addEntry(int index, String qualifier, String value, String version) {
+        requireMode(Mode.INDEXED);
+        if (index < 0 || index >= TopicLimits.MAX_DEPTH) {
+            throw new IllegalArgumentException("Topic index is outside the supported range");
         }
-        if (entries.containsKey(sequenceNumber)) {
-            throw new IllegalArgumentException("Duplicate Topic sequence position rejected: " + sequenceNumber);
+        Input input = validateInput(qualifier, value, version);
+        if (mode == null) {
+            mode = Mode.INDEXED;
         }
-        TopicEntry entry = new TopicEntry(qualifier, name);
-        entries.put(sequenceNumber, entry);
+        indexedEntries.put(index, input);
         return this;
     }
 
     /**
-     * Adds an entry at an explicit sequence number.
-     * <p>
-     * Rejects duplicate sequence positions immediately without overwriting existing entries.
+     * Builds a new immutable Topic snapshot without consuming builder state.
      *
-     * @param sequenceNumber zero-based sequence position
-     * @param entry          non-null topic entry
-     * @return this builder
-     * @throws IllegalArgumentException if sequenceNumber is negative or already occupied
-     */
-    public TopicBuilder addEntry(int sequenceNumber, TopicEntry entry) {
-        if (sequenceNumber < 0) {
-            throw new IllegalArgumentException("Sequence number must be non-negative: " + sequenceNumber);
-        }
-        Objects.requireNonNull(entry, "TopicEntry must not be null");
-        if (entries.containsKey(sequenceNumber)) {
-            throw new IllegalArgumentException("Duplicate Topic sequence position rejected: " + sequenceNumber);
-        }
-        entries.put(sequenceNumber, entry);
-        return this;
-    }
-
-    /**
-     * Builds and returns an immutable {@link Topic}.
-     *
-     * @return constructed Topic
-     * @throws IllegalStateException if no entries are present or sequence has gaps
+     * @return independent immutable Topic
+     * @throws IllegalStateException if no entries exist or indexed positions have a gap
      */
     public Topic build() {
-        if (id == null) {
-            id = UUID.randomUUID();
-        }
-        if (entries.isEmpty()) {
-            throw new IllegalStateException("Cannot build Topic with no canonical name entries");
-        }
-        // Validate continuous sequence starting at 0 with no gaps
-        for (int i = 0; i < entries.size(); i++) {
-            if (!entries.containsKey(i)) {
-                throw new IllegalStateException("Topic canonical name sequence has gap at position: " + i);
+        List<Input> inputs;
+        if (mode == Mode.SEQUENTIAL) {
+            inputs = new ArrayList<>(sequentialEntries);
+        } else if (mode == Mode.INDEXED) {
+            if (indexedEntries.isEmpty()) {
+                throw new IllegalStateException("Cannot build an empty Topic");
             }
+            inputs = new ArrayList<>(indexedEntries.size());
+            for (int index = 0; index < indexedEntries.size(); index++) {
+                Input input = indexedEntries.get(index);
+                if (input == null) {
+                    throw new IllegalStateException("Topic indexed input has a gap");
+                }
+                inputs.add(input);
+            }
+        } else {
+            throw new IllegalStateException("Cannot build a Topic before adding an entry");
         }
-        return new Topic(id, entries);
+        TopicLimits.requireDepth(inputs.size());
+        List<TopicEntry> entries = new ArrayList<>(inputs.size());
+        for (int index = 0; index < inputs.size(); index++) {
+            Input input = inputs.get(index);
+            String qualifier = input.qualifier == null || input.qualifier.isEmpty()
+                    ? "N" + index : input.qualifier;
+            entries.add(new TopicEntry(qualifier, input.value, input.version));
+        }
+        return new Topic(entries);
+    }
+
+    private void requireMode(Mode requested) {
+        if (mode != null && mode != requested) {
+            throw new IllegalStateException("TopicBuilder input mode cannot be changed");
+        }
+    }
+
+    private static Input validateInput(String qualifier, String value, String version) {
+        TopicFieldRules.requireQualifierInput(qualifier);
+        TopicFieldRules.requireValue(value);
+        return new Input(qualifier, value, TopicFieldRules.normalizedVersion(version));
+    }
+
+    private static final class Input {
+        private final String qualifier;
+        private final String value;
+        private final String version;
+
+        private Input(String qualifier, String value, String version) {
+            this.qualifier = qualifier;
+            this.value = value;
+            this.version = version;
+        }
     }
 }

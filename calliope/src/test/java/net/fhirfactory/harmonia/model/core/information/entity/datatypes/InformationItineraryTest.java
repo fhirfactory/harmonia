@@ -17,43 +17,33 @@
 
 package net.fhirfactory.harmonia.model.core.information.entity.datatypes;
 
-import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.fhirfactory.harmonia.model.core.naming.Topic;
+import net.fhirfactory.harmonia.model.core.naming.factory.TopicFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@DisplayName("InformationItinerary Strongly Typed Topic Reference Tests")
+@DisplayName("InformationItinerary Strongly Typed Canonical Topic Reference Tests")
 public class InformationItineraryTest {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Test
-    @DisplayName("Should construct InformationItinerary with strongly typed Topic references and preserve Topic UUID identity")
+    @DisplayName("Should construct InformationItinerary with strongly typed Topic references and preserve canonical identity")
     void testItineraryConstructionAndIdentityPreservation() {
-        UUID srcId = UUID.randomUUID();
-        UUID createId = UUID.randomUUID();
-        UUID prevId = UUID.randomUUID();
-        UUID nextId = UUID.randomUUID();
-        UUID exitId = UUID.randomUUID();
-        UUID part1Id = UUID.randomUUID();
-        UUID part2Id = UUID.randomUUID();
-
-        Topic srcTopic = TopicFactory.fromName(srcId, "Health.Gateway.MllpIn");
-        Topic createTopic = TopicFactory.fromName(createId, "Health.Ergon.Ingress");
-        Topic prevTopic = TopicFactory.fromName(prevId, "Health.Ergon.Validation");
-        Topic nextTopic = TopicFactory.fromName(nextId, "Health.Ergon.Transform");
-        Topic exitTopic = TopicFactory.fromName(exitId, "Health.Gateway.MllpOut");
-        Topic part1 = TopicFactory.fromName(part1Id, "Health.Ergon.Audit");
-        Topic part2 = TopicFactory.fromName(part2Id, "Health.Ergon.Provenance");
+        Topic srcTopic = TopicFactory.fromName("Health.Gateway.MllpIn");
+        Topic createTopic = TopicFactory.fromName("Health.Ergon.Ingress");
+        Topic prevTopic = TopicFactory.fromName("Health.Ergon.Validation");
+        Topic nextTopic = TopicFactory.fromName("Health.Ergon.Transform");
+        Topic exitTopic = TopicFactory.fromName("Health.Gateway.MllpOut");
+        Topic part1 = TopicFactory.fromName("Health.Ergon.Audit");
+        Topic part2 = TopicFactory.fromName("Health.Ergon.Provenance");
 
         InformationItinerary itinerary = InformationItinerary.builder()
                 .sourceEntryComponent(srcTopic)
@@ -73,12 +63,12 @@ public class InformationItineraryTest {
         assertThat(itinerary.targetExitComponent()).contains(exitTopic);
         assertThat(itinerary.participatingComponents()).containsExactly(part1, part2);
 
-        // UUID Identity Preservation (not substituted by derived name)
-        assertThat(itinerary.sourceEntryComponentId()).contains(srcId);
-        assertThat(itinerary.creationComponentId()).contains(createId);
-        assertThat(itinerary.previousComponentId()).contains(prevId);
-        assertThat(itinerary.nextComponentId()).contains(nextId);
-        assertThat(itinerary.targetExitComponentId()).contains(exitId);
+        // Complete canonical path identity is retained independently of the unqualified name projection.
+        assertThat(itinerary.sourceEntryComponentCanonicalName()).contains(srcTopic.getCanonicalName());
+        assertThat(itinerary.creationComponentCanonicalName()).contains(createTopic.getCanonicalName());
+        assertThat(itinerary.previousComponentCanonicalName()).contains(prevTopic.getCanonicalName());
+        assertThat(itinerary.nextComponentCanonicalName()).contains(nextTopic.getCanonicalName());
+        assertThat(itinerary.targetExitComponentCanonicalName()).contains(exitTopic.getCanonicalName());
 
         // Derived Name Helpers
         assertThat(itinerary.sourceEntryComponentName()).contains("Health.Gateway.MllpIn");
@@ -105,13 +95,10 @@ public class InformationItineraryTest {
     }
 
     @Test
-    @DisplayName("Should serialize and deserialize InformationItinerary preserving full Topic references and UUIDs")
+    @DisplayName("Should serialize and deserialize InformationItinerary preserving full Topic references")
     void testItineraryJsonRoundtrip() throws Exception {
-        UUID srcId = UUID.randomUUID();
-        UUID exitId = UUID.randomUUID();
-
-        Topic srcTopic = TopicFactory.fromName(srcId, "Health.Gateway.MllpIn");
-        Topic exitTopic = TopicFactory.fromName(exitId, "Health.Gateway.MllpOut");
+        Topic srcTopic = TopicFactory.fromName("Health.Gateway.MllpIn");
+        Topic exitTopic = TopicFactory.fromName("Health.Gateway.MllpOut");
 
         InformationItinerary itinerary = InformationItinerary.builder()
                 .sourceEntryComponent(srcTopic)
@@ -123,8 +110,8 @@ public class InformationItineraryTest {
 
         assertThat(deserialized.sourceEntryComponent()).isEqualTo(itinerary.sourceEntryComponent());
         assertThat(deserialized.targetExitComponent()).isEqualTo(itinerary.targetExitComponent());
-        assertThat(deserialized.sourceEntryComponentId()).contains(srcId);
-        assertThat(deserialized.targetExitComponentId()).contains(exitId);
+        assertThat(deserialized.sourceEntryComponentCanonicalName()).contains(srcTopic.getCanonicalName());
+        assertThat(deserialized.targetExitComponentCanonicalName()).contains(exitTopic.getCanonicalName());
         assertThat(deserialized.creationComponent()).isEmpty();
     }
 }

@@ -342,17 +342,17 @@ public final class ContainerMetadata implements Serializable {
     @Override
     public String toString() {
         return "ContainerMetadata{" +
-                "typeId=" + shortId(type) +
-                ", sourceId=" + shortId(sourceTopic) +
-                ", destinationId=" + shortId(destinationTopic) +
-                ", authorId=" + shortId(authorTopic) +
-                ", recipientId=" + shortId(recipientTopic) +
+                "type=" + topicSummary(type) +
+                ", source=" + topicSummary(sourceTopic) +
+                ", destination=" + topicSummary(destinationTopic) +
+                ", author=" + topicSummary(authorTopic) +
+                ", recipient=" + topicSummary(recipientTopic) +
                 ", attributeCount=" + attributes.size() +
                 '}';
     }
 
-    private static String shortId(Topic topic) {
-        return topic != null ? topic.getShortId() : "none";
+    private static String topicSummary(Topic topic) {
+        return topic != null ? "Topic(depth=" + topic.getDepth() + ")" : "none";
     }
 
 }

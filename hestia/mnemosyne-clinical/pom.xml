@@ -39,6 +39,12 @@
             <groupId>net.fhirfactory.harmonia</groupId>
             <artifactId>mnemosyne-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>net.fhirfactory.harmonia</groupId>
+            <artifactId>mnemosyne-operations</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
 
         <!-- Calliope (Canonical Model & Schema Library) -->
         <dependency>

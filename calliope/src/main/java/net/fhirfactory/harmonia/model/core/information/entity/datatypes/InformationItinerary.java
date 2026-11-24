@@ -31,7 +31,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.UUID;
 
 /**
  * Encapsulates the distinct conceptual information path and component participation concern of an Information Unit.
@@ -44,8 +43,8 @@ import java.util.UUID;
  *       {@link InformationCoordinates}, {@link InformationSecurityContext}, and {@link LifecycleContext}.</li>
  *   <li><b>Strongly Typed Topic References:</b> Itinerary properties ({@code sourceEntryComponent}, {@code creationComponent},
  *       {@code previousComponent}, {@code nextComponent}, {@code targetExitComponent}, and {@code participatingComponents})
- *       are strongly typed {@link Topic} references, preserving full immutable {@link UUID} identity rather than discarding
- *       identity for derived names.</li>
+ *       are strongly typed {@link Topic} references, preserving the complete ordered canonical path rather than relying
+ *       on ambiguous unqualified names.</li>
  * </ul>
  * <p>
  * <b>Defensive Programming:</b>
@@ -184,28 +183,28 @@ public final class InformationItinerary implements Serializable {
     // =========================================================================
 
     @JsonIgnore
-    public Optional<UUID> sourceEntryComponentId() {
-        return sourceEntryComponent().map(Topic::getId);
+    public Optional<String> sourceEntryComponentCanonicalName() {
+        return sourceEntryComponent().map(Topic::getCanonicalName);
     }
 
     @JsonIgnore
-    public Optional<UUID> creationComponentId() {
-        return creationComponent().map(Topic::getId);
+    public Optional<String> creationComponentCanonicalName() {
+        return creationComponent().map(Topic::getCanonicalName);
     }
 
     @JsonIgnore
-    public Optional<UUID> previousComponentId() {
-        return previousComponent().map(Topic::getId);
+    public Optional<String> previousComponentCanonicalName() {
+        return previousComponent().map(Topic::getCanonicalName);
     }
 
     @JsonIgnore
-    public Optional<UUID> nextComponentId() {
-        return nextComponent().map(Topic::getId);
+    public Optional<String> nextComponentCanonicalName() {
+        return nextComponent().map(Topic::getCanonicalName);
     }
 
     @JsonIgnore
-    public Optional<UUID> targetExitComponentId() {
-        return targetExitComponent().map(Topic::getId);
+    public Optional<String> targetExitComponentCanonicalName() {
+        return targetExitComponent().map(Topic::getCanonicalName);
     }
 
     @JsonIgnore
@@ -264,13 +263,17 @@ public final class InformationItinerary implements Serializable {
     @Override
     public String toString() {
         return "InformationItinerary{" +
-                "sourceEntry=" + (sourceEntryComponent != null ? sourceEntryComponent.getShortId() : "null") +
-                ", creation=" + (creationComponent != null ? creationComponent.getShortId() : "null") +
-                ", previous=" + (previousComponent != null ? previousComponent.getShortId() : "null") +
-                ", next=" + (nextComponent != null ? nextComponent.getShortId() : "null") +
-                ", targetExit=" + (targetExitComponent != null ? targetExitComponent.getShortId() : "null") +
+                "sourceEntry=" + topicSummary(sourceEntryComponent) +
+                ", creation=" + topicSummary(creationComponent) +
+                ", previous=" + topicSummary(previousComponent) +
+                ", next=" + topicSummary(nextComponent) +
+                ", targetExit=" + topicSummary(targetExitComponent) +
                 ", participating=" + participatingComponents.size() +
                 '}';
+    }
+
+    private static String topicSummary(Topic topic) {
+        return topic != null ? "Topic(depth=" + topic.getDepth() + ")" : "null";
     }
 
 }

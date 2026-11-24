@@ -51,11 +51,25 @@ public sealed interface AuthoritativePersistenceResult<T> extends Serializable
 
     record Committed<T>(
             T persistedResource,
-            AuthoritativeVersion authoritativeVersion
+            AuthoritativeVersion authoritativeVersion,
+            DurabilityAssurance durabilityAssurance
     ) implements AuthoritativePersistenceResult<T> {
         public Committed {
             Objects.requireNonNull(persistedResource, "persistedResource must not be null");
             Objects.requireNonNull(authoritativeVersion, "authoritativeVersion must not be null");
+            Objects.requireNonNull(durabilityAssurance, "durabilityAssurance must not be null");
+        }
+
+        /**
+         * Preserves source compatibility for existing persistence adapters whose durability has
+         * not been explicitly qualified. Such results must not be promoted to durable success by
+         * a caller that requires a stronger assurance.
+         *
+         * @param persistedResource committed resource
+         * @param authoritativeVersion version assigned at the authoritative boundary
+         */
+        public Committed(T persistedResource, AuthoritativeVersion authoritativeVersion) {
+            this(persistedResource, authoritativeVersion, DurabilityAssurance.UNQUALIFIED);
         }
 
         public AuthoritativeCommitOutcome outcome() {
@@ -98,14 +112,21 @@ public sealed interface AuthoritativePersistenceResult<T> extends Serializable
 
     record OutcomeUnknown<T>(
             String message,
-            Throwable cause
+            Throwable cause,
+            DurabilityAssurance observedAssurance
     ) implements AuthoritativePersistenceResult<T> {
         public OutcomeUnknown {
             Objects.requireNonNull(message, "message must not be null");
+            Objects.requireNonNull(observedAssurance, "observedAssurance must not be null");
+        }
+
+        /** Preserves existing adapter construction where no lower-level assurance is known. */
+        public OutcomeUnknown(String message, Throwable cause) {
+            this(message, cause, DurabilityAssurance.UNQUALIFIED);
         }
 
         public OutcomeUnknown(String message) {
-            this(message, null);
+            this(message, null, DurabilityAssurance.UNQUALIFIED);
         }
 
         public AuthoritativeCommitOutcome outcome() {
