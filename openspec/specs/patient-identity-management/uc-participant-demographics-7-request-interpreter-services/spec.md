@@ -1,8 +1,19 @@
 # Request Interpreter Services
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/303f689c5ba0405388868cf15f3b1ea3.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 I can communicate effectively during my care
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ I can communicate effectively during my care
 - **Source Scope:** Scope – Participant Demographics
 - **Primary Actor:** Participant / Patient
 - **Supporting Actors:** Provider Directory
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/25d03e2a205a4937964a8b34efe3fe26.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** Indicate that I require an interpreter so that I can communicate effectively during my care.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** None identified.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/303f689c5ba0405388868cf15f3b1ea3.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Request Interpreter Services
 Harmonia SHALL support **Request Interpreter Services** so that I can communicate effectively during my care.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Request Interpreter Services - successful outcome
 - **GIVEN** The actor is appropriately identified and authorised to perform the activity; the relevant provider, participant, organisation or reference information is available to the process; and any prerequisite records or relationships exist.

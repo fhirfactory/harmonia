@@ -1,0 +1,23 @@
+{
+  "outcome": "UNRESOLVED_CLOSURE_CONDITION",
+  "dispositionEnteredAt": "2026-11-01T00:20:03.781Z",
+  "amendmentRecordedAt": "2026-11-01T00:21:30.354844Z",
+  "accepted": "ArchiMate publication and results of Iterations 001 and 002",
+  "authorisedDeferral": "Reader-facing navigation and XML-folder correspondence changes introduced by Iteration 002 only",
+  "governanceTreatment": "Permissible explicit bounded departure/deferral within its stated scope; Common Governance enforcement/completion and Review Praxis \u00a76",
+  "remainingCondition": "Iteration 001 DR-3 reader-facing subject hierarchy/allocations, native-layer separation and qualified reused contributions require actual review or an explicit bounded deferral covering that Iteration 001 scope.",
+  "changedClosureEntryFiles": [
+    "enterprise-architecture/design/review/1.1.17/hcrl-1.1.17-001.pending.md",
+    "enterprise-architecture/design/review/1.1.17/hcrl-1.1.17-002.pending.md"
+  ],
+  "allOtherClosureEntryFilesUnchanged": true,
+  "originalEvidenceUnchanged": true,
+  "publicationSha256": "b3c1bd71497497eb64e39e754dc69443d8012c762ffa00b9221116f12f3578a1",
+  "head": "d5fdddb31e9bff39ae6c08b2e0f2c71d309ab5f5",
+  "gitMutations": "NONE",
+  "release": {
+    "version": "1.1.17",
+    "previous_version": "1.1.16"
+  },
+  "nextDevelopmentBaseline": "NOT_ESTABLISHED; conditional on successful closure"
+}

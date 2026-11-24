@@ -10,7 +10,18 @@ Enable the target-state Provider Directory to support the capability described b
 - **Source Scope:** Additional Source Requirements – SR-26 to SR-58
 - **Primary Actor:** Provider Directory Administrator
 - **Supporting Actors:** Provider Identity / Matching Service; Data Steward; Provider Directory
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/4dc5ef9d97d14b92b8edb01af4bd5855.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As a Provider Directory Administrator, I want to manually create new provider records, so that missing providers can be added to the directory when needed.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-34 – Audit Provider Information Exchange: supports traceability and audit of Provider Directory information activities.
 
 ## Requirements

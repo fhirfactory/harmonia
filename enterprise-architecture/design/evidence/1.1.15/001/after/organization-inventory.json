@@ -1,0 +1,58 @@
+{
+  "purpose": "Direct, non-positional inventory of Open Exchange organization item attributes in the pinned baseline and candidate; discovery evidence only, with no architectural acceptance or producer attribution.",
+  "method": {
+    "parser": "Python xml.etree.ElementTree",
+    "scope": "All descendant item elements under the Open Exchange organizations element.",
+    "counts": "item_count counts item elements; identifier_attribute_count and identifier_ref_attribute_count count item attributes; items_with_documentation_count and items_with_label_count count items with a direct documentation or label child, respectively.",
+    "identifier_comparison": "Set comparison of all organization item @identifier values, independent of item position."
+  },
+  "models": {
+    "baseline": {
+      "path": "enterprise-architecture/design/archimate/published/1.1.14/Harmonia-Architecture.xml",
+      "release": "1.1.14",
+      "size_bytes": 26919406,
+      "sha256": "ee1d7ef8d5491a4a656d8c2f07c38999b6276a130064d797a08f19501aa47161",
+      "organization_item_count": 5135,
+      "identifier_attribute_count": 2894,
+      "identifier_ref_attribute_count": 2811,
+      "items_with_documentation_count": 1974,
+      "items_with_label_count": 3926,
+      "identifier_samples": [
+        "archi-native-application",
+        "archi-native-business",
+        "archi-native-implementation",
+        "archi-native-motivation",
+        "archi-native-other",
+        "archi-native-strategy",
+        "archi-native-technology",
+        "navigation-G",
+        "navigation-G-1-1"
+      ]
+    },
+    "candidate": {
+      "path": "enterprise-architecture/design/evidence/1.1.15/001/before/harmonia-continuum-1.1.15-001.xml",
+      "release_iteration": "1.1.15-001",
+      "size_bytes": 28590881,
+      "sha256": "a31ed511c07e0a54c503383f6e52dfdad1e5905e642c05e7dc14fb7649af2eb9",
+      "organization_item_count": 6838,
+      "identifier_attribute_count": 0,
+      "identifier_ref_attribute_count": 4490,
+      "items_with_documentation_count": 1285,
+      "items_with_label_count": 2348,
+      "identifier_samples": []
+    }
+  },
+  "identifier_set_comparison": {
+    "baseline_unique_identifier_count": 2894,
+    "candidate_unique_identifier_count": 0,
+    "baseline_identifiers_absent_from_candidate_count": 2894,
+    "baseline_identifiers_present_in_candidate_count": 0,
+    "candidate_identifiers_not_in_baseline_count": 0
+  },
+  "comparison_context": {
+    "comparison_report": "enterprise-architecture/design/evidence/1.1.15/001/after/model-comparison.json",
+    "comparator_positional_information_loss_findings_in_organizations": 540,
+    "interpretation": "The comparator's organization findings use positional item paths and do not provide a complete identifier-based inventory. The direct counts above show that all 2,894 baseline organization item identifiers are absent from the candidate, while the candidate contains 6,838 organization items and 4,490 identifierRef attributes.",
+    "unresolved_review_question": "Whether and how baseline navigation-folder identity and structure are preserved or represented in the candidate remains unresolved for Solution Architect adjudication. This evidence does not attribute the change to Archi or any other producer and does not assume the loss is acceptable."
+  }
+}

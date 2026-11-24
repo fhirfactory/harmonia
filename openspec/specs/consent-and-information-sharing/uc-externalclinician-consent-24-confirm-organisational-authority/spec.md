@@ -1,8 +1,19 @@
 # Confirm Organisational Authority
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/32fb86db4d3e4693976c302a56b43ce7.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 participants can trust that requests originate from a recognised provider
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ participants can trust that requests originate from a recognised provider
 - **Source Scope:** Scope - Governance and Compliance (Consent)
 - **Primary Actor:** External Healthcare Provider Representative (Practice Manager)
 - **Supporting Actors:** Provider Directory
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/d0004f85e3df4f548eb31d6dc1df865d.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** my organisation's authority to participate in information sharing to be verified so that participants can trust that requests originate from a recognised provider.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** None identified.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/32fb86db4d3e4693976c302a56b43ce7.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Confirm Organisational Authority
 Harmonia SHALL support **Confirm Organisational Authority** so that participants can trust that requests originate from a recognised provider.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Confirm Organisational Authority - successful outcome
 - **GIVEN** The actor is appropriately identified and authorised to perform the activity; the relevant provider, participant, organisation or reference information is available to the process; and any prerequisite records or relationships exist.

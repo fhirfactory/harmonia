@@ -1,0 +1,87 @@
+{
+  "metrics": {
+    "baseline": {
+      "semantic_elements": 1299,
+      "relationships": 852,
+      "views": 1196,
+      "visual_objects": 3915,
+      "visual_connections": 1449,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 20800334,
+      "xml_decimal_mb": 20.800334
+    },
+    "submission": {
+      "semantic_elements": 1308,
+      "relationships": 865,
+      "views": 1198,
+      "visual_objects": 3923,
+      "visual_connections": 1469,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 21854756,
+      "xml_decimal_mb": 21.854756
+    },
+    "control": {
+      "semantic_elements": 1299,
+      "relationships": 852,
+      "views": 1196,
+      "visual_objects": 3915,
+      "visual_connections": 1449,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 21835649,
+      "xml_decimal_mb": 21.835649
+    }
+  },
+  "added_elements": 9,
+  "added_relationships": 13,
+  "new_views": 2,
+  "modified_views_beyond_control": 2,
+  "element_removals": [],
+  "relationship_removals": [],
+  "retained_element_changes_beyond_control": [],
+  "retained_relationship_changes_beyond_control": [],
+  "retained_governed_metadata_mutations": [],
+  "input_schema_reference_issues": {
+    "baseline": [],
+    "submission": [],
+    "control": []
+  }
+}

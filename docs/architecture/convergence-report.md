@@ -17,7 +17,7 @@ All architectural discrepancies and implementation defects identified during the
 2. **Fan-Out State Tracking (HARM-DEF-002 / REC-002)**: Outbound delivery checkpoints per fan-out destination are tracked within `Pragma` envelopes and FHIR `Task.output` records.
 3. **Petasos Embedded Broker Failover Signaling (HARM-DEF-003)**: Corrected `failoverOnServerShutdown` signaling in `EmbeddedArtemisCluster`, bounded test reconnection retries, and configured Maven Surefire process timeouts, resolving the multi-hour Maven hang.
 4. **Architectural Guardrails (ArchUnit)**: 6 architecture test classes comprising 17 automated rules enforce zero production dependencies on Paradeigma, zero Artemis API leakage in `petasos-api`, complete decoupling of Iris from backend databases, separation of Provider Registry governance from `iris-administration`, and strict unidirectional package layering.
-5. **Authoritative Inventories & Verification**: All 41 modules (33 leaf modules across 8 subprojects), 22 MicroK8s workloads, 17 container images, 4 middleware platforms, dual-dimension configuration properties, and network ports are 100% reconciled and validated across Markdown, Kubernetes Kustomize, Ansible playbooks, and the 74-page compiled LaTeX reference document (`docs/latex/main.pdf`).
+5. **Authoritative Inventories & Verification**: All 41 modules (33 leaf modules across 8 subprojects), 22 MicroK8s workloads, 17 container images, 4 middleware platforms, dual-dimension configuration properties, and network ports are 100% reconciled and validated across Markdown, Kubernetes Kustomize, Ansible playbooks, and the 74-page compiled LaTeX reference document (`../latex-legacy`).
 
 ---
 
@@ -42,7 +42,7 @@ The continuation session successfully recovered and validated the substantial wo
   - Verified `deployment/kubernetes/environments/microk8s` (passes `kubectl kustomize`).
   - Verified `deployment/ansible/` playbooks (passes `ansible-playbook --syntax-check`).
 - **Formal LaTeX Reference Manual**:
-  - Reconstructed `docs/latex/` into 8 Parts, 23 Chapters, and 9 Appendices with 26 TikZ vector diagrams.
+  - Reconstructed `../latex-legacy` into 8 Parts, 23 Chapters, and 9 Appendices with 26 TikZ vector diagrams.
 
 ---
 
@@ -217,7 +217,7 @@ Harmonia comprises **41 Maven modules** across 8 core subprojects (33 leaf modul
 - [x] Port/protocol register complete: `YES` (documented in `docs/architecture/port-protocol-register.md` and Appendix C).
 - [x] Serial full Maven test: `PASS` (clean build across all 41 modules).
 - [x] Architecture tests: `PASS` (17 rules across 6 ArchUnit test classes).
-- [x] LaTeX build: `PASS` (`docs/latex/main.pdf`, 74 pages, zero fatal errors).
+- [x] LaTeX build: `PASS` (`../latex-legacy`, 74 pages, zero fatal errors).
 
 ### Detailed 25-Point Questionnaire Answers
 
@@ -441,7 +441,7 @@ The Git working tree contains high-signal, self-consistent enhancements completi
 - **Authoritative Markdown Documentation**:
   - Complete modular hierarchy in `docs/` (`architecture/`, `concepts/`, `modules/`, `middleware/`, `configuration/`, `deployment/`, `paradeigma/`, `operations/`).
 - **Formal LaTeX Reference Manual**:
-  - `docs/latex/`: 8 Parts, 23 Chapters, 9 Appendices, 26 TikZ vector diagrams, generating `docs/latex/main.pdf` (74 pages, 925 KB, zero fatal errors).
+  - `../latex-legacy`: 8 Parts, 23 Chapters, 9 Appendices, 26 TikZ vector diagrams, generating `../latex-legacy` (74 pages, 925 KB, zero fatal errors).
 
 ### 7.2 Shippability Verdict
 - **Status**: `SHIPPABLE / READY FOR COMMIT`

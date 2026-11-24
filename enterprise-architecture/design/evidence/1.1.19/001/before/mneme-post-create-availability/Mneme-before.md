@@ -1,0 +1,3723 @@
+---
+{
+  "schemaVersion": 1,
+  "canonicalId": "1af8a56358f7429fabfb57be66542a99",
+  "archimateType": "ApplicationComponent",
+  "specialization": null,
+  "displayName": "Mneme",
+  "friendlyName": "Mneme",
+  "canonicalName": null,
+  "standing": {
+    "semantic": "Candidate — accepted Step-B baseline; final Solution Architecture unapproved",
+    "currentness": "current",
+    "qualification": "Exact source standing retained; migration/identity allocation does not approve architectural assertions."
+  },
+  "identity": {
+    "allocation": "UUIDv4 allocated once under the explicit RAD-1.1.5 migration Task",
+    "authority": "enterprise-architecture/design/evidence/1.1.5/002/before/ai-agent-tasks/20261021T092725Z-establish-and-apply-element-continuum.md",
+    "sourceAbsenceCheck": "No existing governed canonical source binding for this bounded definition; no name-based correspondence adopted."
+  },
+  "naming": {
+    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "mode": "Local lexical component; no root or containment completeness inferred",
+    "expected": {
+      "friendlyName": "Mneme",
+      "canonicalName": null
+    }
+  },
+  "provenance": [
+    {
+      "source": "docs/markdown/05-information-systems-architecture/component-register.md",
+      "selector": "### C09 — Mneme",
+      "role": "ingested architectural definition or explicit source contribution",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "7f493dae1db3e77fe0342f7c21501763a4af2b4de9c59871a109626eaaad5aa0",
+      "standing": "Candidate — accepted Step-B baseline; final Solution Architecture unapproved"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/context-and-persistence-management.md",
+      "selector": "## Mneme — Context and Pragma Manager",
+      "role": "ingested architectural definition or explicit source contribution",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "4d2f4cd1890ad51e74fb87e75749ee6edb233b8e2e4fd28d9f00c852e21dd986",
+      "standing": "Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/context-and-persistence-management.md",
+      "selector": "## Retained uncertainty and existing adjudications",
+      "role": "ingested architectural definition or explicit source contribution",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "4d2f4cd1890ad51e74fb87e75749ee6edb233b8e2e4fd28d9f00c852e21dd986",
+      "standing": "Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/candidate-feature-map.md",
+      "selector": "table assertion: | F16 | **Context and Pragma Management — four principal exposed services** | **Mneme C09: Context Load, Context Save, Adhoc Resource Access, Adhoc Search**; supporting contracts C11 and Pragma Management C28 | Versioned temporal Context composes authoritative resource values; Context version differs from resource state/version; Pragma expresses inputs/outputs and new Content | U10, AX-05/11/12/14. Context Load preferred/performance-optimised; bounded runtime acquisition permitted, potentially more expensive. No fifth service or exhaustive preload; detail CDG-45. |",
+      "role": "ingested architectural definition or explicit source contribution",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "0585ca8887145ca21832bf1fcbf0f1829d1201251c7d7f68055b116bdf4afaab",
+      "standing": "Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/candidate-feature-map.md",
+      "selector": "table assertion: | F17 | Supporting authoritative state progression and guarded convergence | Mneme handles resulting Context/Pragma information consequences; Mnemosyne establishes/reports durable state; C11 retains supporting contract intent | Changed Context values and Pragma Outputs; proposed state/expected version; authoritative result, uncertainty and active convergence | U10/U11 and AX-05/14/15; internal supporting behaviour, not additional exposed Mneme services. Ergon/Unloader is not persistence; physical DELETE not lifecycle; old write-behind CDG-10, detail CDG-45/47. |",
+      "role": "ingested architectural definition or explicit source contribution",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "0585ca8887145ca21832bf1fcbf0f1829d1201251c7d7f68055b116bdf4afaab",
+      "standing": "Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/candidate-feature-map.md",
+      "selector": "table assertion: | F18 | **Adhoc Resource Access / Adhoc Search** for bounded runtime information needs | Mneme exposes both activity/context-facing services; Mnemosyne Search Management performs underlying authoritative persistence search | Dynamic external-system information, deep interrogation outside reasonably known boundaries and emerging requirements; resource values/search results | U10/U11. Supplementary to preferred Context Load, potentially materially more expensive; transient cache not complete searchable space. Registry/clinical discovery and history intent remains L13 ADR-010/L15/L23; detailed APIs/query/results/history CDG-31/45/48; Pylai external boundary retained. |",
+      "role": "ingested architectural definition or explicit source contribution",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "0585ca8887145ca21832bf1fcbf0f1829d1201251c7d7f68055b116bdf4afaab",
+      "standing": "Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/data-and-persistence.md",
+      "selector": "table assertion: | D04 | Supporting governed access/change carriers: ResourceKey, GovernedRead, active token, authoritative version, WriteResult, PersistenceOperationEnvelope | Mneme supporting contracts C11, constrained by its four-service surface; Mnemosyne establishes/reports persistence; Themis governs | Active generation and durable version differ; Context version/resource version also distinct; commit/degraded convergence/uncertain outcome differ | AX-05/14/15 and U10/U11. Historical carrier shapes are not additional services or Context schema; exact mappings CDG-31/45/47. |",
+      "role": "ingested architectural definition or explicit source contribution",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "8f1b4222a8e1303001235366a17de7555e56141711d5599c6851a7d865cb2dcd",
+      "standing": "Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/middleware.md",
+      "selector": "table assertion: | M05 | **Mneme Context/Pragma-facing four-service surface and supporting coordination** | Context Load, Context Save, Adhoc Resource Access, Adhoc Search; controlled concurrent active use, Mnemosyne authoritative persistence outcomes and post-commit convergence | U10/U11 and AX-05/07/11/12/14/15. C11 facade/carrier intent is supporting, not extra exposed services/network boundary; Context/resource versions and active generation distinct. Detail CDG-31/45/47/48. |",
+      "role": "ingested architectural definition or explicit source contribution",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "7ee1a4ab1c24abcb052daa5f0392270a8dc4997dd4083db8fea19736bc363213",
+      "standing": "Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 11-11",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 13-13",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 17-17",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 39-39",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 41-41",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 45-45",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 59-59",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 143-143",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 145-145",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 176-176",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 178-178",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 245-245",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 247-247",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 249-249",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 251-251",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 252-252",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 254-254",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 256-256",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 257-257",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 258-258",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 270-270",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 272-272",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 274-274",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 276-276",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 401-401",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 403-403",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 405-405",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 407-407",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 409-409",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 411-411",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 413-413",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 419-419",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 421-421",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 443-443",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 445-445",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 449-449",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 451-451",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 474-474",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 510-510",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 536-536",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 542-542",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 557-557",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 559-559",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 561-561",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 565-565",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 566-566",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 567-567",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 568-568",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 569-569",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 570-570",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 571-571",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 572-572",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 573-573",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 574-574",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 575-575",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 576-576",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 577-577",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 578-578",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 579-579",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 580-580",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 581-581",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 582-582",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 583-583",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 584-584",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 585-585",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 586-586",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 587-587",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 588-588",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 589-589",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 590-590",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 591-591",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 592-592",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 593-593",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 594-594",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 627-627",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 629-629",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 631-631",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 633-633",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 635-635",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 637-637",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 639-639",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U10/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 12-12",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 13-13",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 14-14",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 15-15",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 16-16",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 17-17",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 18-18",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 19-19",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 20-20",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 21-21",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 22-22",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 23-23",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 25-25",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 27-27",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 29-29",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 31-31",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 33-33",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 35-35",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 106-106",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 108-108",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 126-126",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 128-128",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 134-134",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 136-136",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 138-138",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 156-156",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 158-158",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 160-160",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 166-166",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 168-168",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 170-170",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 172-172",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 196-196",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 202-202",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 222-222",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 224-224",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 226-226",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 232-232",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 234-234",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 236-236",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 237-237",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 238-238",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 239-239",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 240-240",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 241-241",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 242-242",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 270-270",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 272-272",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 278-278",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 280-280",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 282-282",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 300-300",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 312-312",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 321-321",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 375-375",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 401-401",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 403-403",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 411-411",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 422-422",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 424-424",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 426-426",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 451-451",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 459-459",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 465-465",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 467-467",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 469-469",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 496-496",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 502-502",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 504-504",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 522-522",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 528-528",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 530-530",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 532-532",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 534-534",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 536-536",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 554-554",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 556-556",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 564-564",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 566-566",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 570-570",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 584-584",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 677-677",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 689-689",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 691-691",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 693-693",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 762-762",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 766-766",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 770-770",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 774-774",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 778-778",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 782-782",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 786-786",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 803-803",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 922-922",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 924-924",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U05/U09/U18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 17-17",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 28-28",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 44-44",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 46-46",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 50-50",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 69-69",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 71-71",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 100-100",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 102-102",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 104-104",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 106-106",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 127-127",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 146-146",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "role": "Exact DesignNote assertion contribution; source qualification retained",
+      "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+      "adjudication": "U03/U06/U19"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+      "selector": "§2.1–2.6 — mneme bounded responsibility clarification",
+      "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "source": "docs/markdown/05-information-systems-architecture/component-register.md",
+      "selector": "### C09 — Mneme"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/context-and-persistence-management.md",
+      "selector": "## Mneme — Context and Pragma Manager"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/context-and-persistence-management.md",
+      "selector": "## Retained uncertainty and existing adjudications"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/candidate-feature-map.md",
+      "selector": "table assertion: | F16 | **Context and Pragma Management — four principal exposed services** | **Mneme C09: Context Load, Context Save, Adhoc Resource Access, Adhoc Search**; supporting contracts C11 and Pragma Management C28 | Versioned temporal Context composes authoritative resource values; Context version differs from resource state/version; Pragma expresses inputs/outputs and new Content | U10, AX-05/11/12/14. Context Load preferred/performance-optimised; bounded runtime acquisition permitted, potentially more expensive. No fifth service or exhaustive preload; detail CDG-45. |"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/candidate-feature-map.md",
+      "selector": "table assertion: | F17 | Supporting authoritative state progression and guarded convergence | Mneme handles resulting Context/Pragma information consequences; Mnemosyne establishes/reports durable state; C11 retains supporting contract intent | Changed Context values and Pragma Outputs; proposed state/expected version; authoritative result, uncertainty and active convergence | U10/U11 and AX-05/14/15; internal supporting behaviour, not additional exposed Mneme services. Ergon/Unloader is not persistence; physical DELETE not lifecycle; old write-behind CDG-10, detail CDG-45/47. |"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/candidate-feature-map.md",
+      "selector": "table assertion: | F18 | **Adhoc Resource Access / Adhoc Search** for bounded runtime information needs | Mneme exposes both activity/context-facing services; Mnemosyne Search Management performs underlying authoritative persistence search | Dynamic external-system information, deep interrogation outside reasonably known boundaries and emerging requirements; resource values/search results | U10/U11. Supplementary to preferred Context Load, potentially materially more expensive; transient cache not complete searchable space. Registry/clinical discovery and history intent remains L13 ADR-010/L15/L23; detailed APIs/query/results/history CDG-31/45/48; Pylai external boundary retained. |"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/data-and-persistence.md",
+      "selector": "table assertion: | D04 | Supporting governed access/change carriers: ResourceKey, GovernedRead, active token, authoritative version, WriteResult, PersistenceOperationEnvelope | Mneme supporting contracts C11, constrained by its four-service surface; Mnemosyne establishes/reports persistence; Themis governs | Active generation and durable version differ; Context version/resource version also distinct; commit/degraded convergence/uncertain outcome differ | AX-05/14/15 and U10/U11. Historical carrier shapes are not additional services or Context schema; exact mappings CDG-31/45/47. |"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/middleware.md",
+      "selector": "table assertion: | M05 | **Mneme Context/Pragma-facing four-service surface and supporting coordination** | Context Load, Context Save, Adhoc Resource Access, Adhoc Search; controlled concurrent active use, Mnemosyne authoritative persistence outcomes and post-commit convergence | U10/U11 and AX-05/07/11/12/14/15. C11 facade/carrier intent is supporting, not extra exposed services/network boundary; Context/resource versions and active generation distinct. Detail CDG-31/45/47/48. |"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 11-11"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 13-13"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 17-17"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 39-39"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 41-41"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 45-45"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 59-59"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 143-143"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 145-145"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 176-176"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 178-178"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 245-245"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 247-247"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 249-249"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 251-251"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 252-252"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 254-254"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 256-256"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 257-257"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 258-258"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 270-270"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 272-272"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 274-274"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 276-276"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 401-401"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 403-403"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 405-405"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 407-407"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 409-409"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 411-411"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 413-413"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 419-419"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 421-421"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 443-443"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 445-445"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 449-449"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 451-451"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 474-474"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 510-510"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 536-536"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 542-542"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 557-557"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 559-559"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 561-561"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 565-565"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 566-566"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 567-567"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 568-568"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 569-569"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 570-570"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 571-571"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 572-572"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 573-573"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 574-574"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 575-575"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 576-576"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 577-577"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 578-578"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 579-579"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 580-580"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 581-581"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 582-582"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 583-583"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 584-584"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 585-585"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 586-586"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 587-587"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 588-588"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 589-589"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 590-590"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 591-591"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 592-592"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 593-593"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 594-594"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 627-627"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 629-629"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 631-631"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 633-633"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 635-635"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 637-637"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md",
+      "selector": "original lines 639-639"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 12-12"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 13-13"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 14-14"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 15-15"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 16-16"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 17-17"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 18-18"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 19-19"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 20-20"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 21-21"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 22-22"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 23-23"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 25-25"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 27-27"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 29-29"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 31-31"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 33-33"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 35-35"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 106-106"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 108-108"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 126-126"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 128-128"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 134-134"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 136-136"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 138-138"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 156-156"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 158-158"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 160-160"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 166-166"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 168-168"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 170-170"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 172-172"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 196-196"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 202-202"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 222-222"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 224-224"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 226-226"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 232-232"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 234-234"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 236-236"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 237-237"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 238-238"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 239-239"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 240-240"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 241-241"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 242-242"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 270-270"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 272-272"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 278-278"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 280-280"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 282-282"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 300-300"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 312-312"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 321-321"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 375-375"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 401-401"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 403-403"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 411-411"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 422-422"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 424-424"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 426-426"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 451-451"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 459-459"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 465-465"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 467-467"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 469-469"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 496-496"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 502-502"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 504-504"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 522-522"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 528-528"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 530-530"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 532-532"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 534-534"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 536-536"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 554-554"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 556-556"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 564-564"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 566-566"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 570-570"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 584-584"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 677-677"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 689-689"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 691-691"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 693-693"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 762-762"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 766-766"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 770-770"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 774-774"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 778-778"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 782-782"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 786-786"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 803-803"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 922-922"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md",
+      "selector": "original lines 924-924"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 17-17"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 28-28"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 44-44"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 46-46"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 50-50"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 69-69"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 71-71"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 100-100"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 102-102"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 104-104"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 106-106"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 127-127"
+    },
+    {
+      "source": "docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md",
+      "selector": "original lines 146-146"
+    }
+  ],
+  "exchange": {
+    "identifier": "id-18c2979e55a7525b90321395f550d958",
+    "properties": []
+  },
+  "relationships": [
+    {
+      "identifier": "id-48b5618f63b24ea5abbbcd2cd58d70f2",
+      "archimateType": "Access",
+      "source": "id-18c2979e55a7525b90321395f550d958",
+      "target": "id-70ce24ab295258d6bade403a18aac261",
+      "standing": "Candidate — HCRL 1.1.19-001 DR-18; intent agreed, formal acceptance pending",
+      "provenance": [
+        {
+          "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "selector": "§2.3",
+          "role": "Solution Architect agreed architectural intent; authorised ADD candidate preparation, not candidate acceptance",
+          "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+          "standing": "Candidate — HCRL 1.1.19-001 DR-18; explicit Solution Architect acceptance pending"
+        }
+      ],
+      "name": [
+        {
+          "text": "Manages governed Provenance information",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [
+        {
+          "text": "Architectural responsibility/reference only; no runtime transport, API, cardinality, lifecycle or deployment implication. Manages governed Provenance information",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "attributes": {
+        "accessType": "ReadWrite"
+      }
+    }
+  ],
+  "unresolvedProperties": {
+    "canonicalName": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+  },
+  "representation": {
+    "sourceLinksRebased": true,
+    "authority": "HCRL 1.1.5-002 DR-3; source meaning unchanged"
+  }
+}
+---
+
+# Mneme
+
+## Architectural content
+
+- **Role/responsibility:** **Harmonia's Context and Pragma Manager**. Mneme manages
+  the information context of activity through Pragma/Context, providing controlled,
+  concurrent and seamless access to existing values and management of new Content.
+  [U10](../../../../docs/markdown/05-information-systems-architecture/sources.md#u10) refines AX-05/11 active representation/coordination.
+- **Principal exposed services:** **Context Load, Context Save, Adhoc Resource
+  Access, Adhoc Search** — four services. [Lifecycle](49c9eb2bef0c47b8b5328621d5fc5479.md)
+  distinguishes Mneme materialisation/save from Ergo Loader/Unloader boundaries.
+  Likely resource sets are non-exhaustive; bounded runtime acquisition is supported.
+- **Internal responsibilities:** Pragma Management C28 retains PragmaFactory and
+  Publishing/Subscription/Pattern semantic eligibility/selection. Context management
+  composes authoritative resource values into a versioned temporal snapshot;
+  Resource Harmonisation Manager C40 manages exceptional delivery conditions.
+  C11 supporting contracts do not add exposed services.
+- **Information:** Context D26 is the working value environment; Pragma C07 is
+  the input/output envelope. Changed Context values and new Content expressed as
+  Pragma Output D28 remain distinct. Mneme manages their subsequent consequences.
+- **Persistence:** active state is reconstructable; Mnemosyne alone establishes
+  durable state and authoritatively reports persistence outcomes. Working changes,
+  cache retention/replication and output production confer no durable authority.
+  Context/resource versions and active generation remain distinct.
+- **Collaboration/exclusions:** Ergo framework anticipates/loads; Ergon primarily
+  acts on Context values and may acquire Adhoc information. Resource harmonisation
+  uses new governed Harmonisation Ergon work through common Ponos execution, not
+  originating-Ergon conflict resolution. Adhoc Search uses Mnemosyne Search Management.
+  Petasos retains handoff; Themis owns enforcement. Mneme is not a generic repository,
+  execution framework, durable version authority or raw database/cache access path.
+- **Standing:** U10 adjudicates Context/Pragma responsibility; detailed representation,
+  concurrency/access/Output and harmonisation contracts remain CDG-45/46; older
+  cache/write-behind and access variants remain CDG-10/11/16/27/31.
+
+## Source-qualified contribution
+
+Source: `docs/markdown/05-information-systems-architecture/context-and-persistence-management.md` — ## Mneme — Context and Pragma Manager. Standing: Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved.
+
+> **Mneme manages the information context of Harmonia activity — principally
+> through Pragma and Context — providing controlled, concurrent and seamless
+> access to existing resource values and management of the new Content produced
+> by that activity.**
+
+Mneme is Harmonia's **Context and Pragma Manager**. Distributed active
+representation, observation, coordination, reconstruction and convergence
+support this responsibility under AX-05/11; they do not make Mneme a generic
+repository or persistence authority. Pragma Management retains its adjudicated
+PragmaFactory and Publishing/Subscription/Pattern responsibilities. Semantic
+selection remains distinct from Petasos handoff and Ponos execution.
+
+Mneme exposes **four principal services**:
+
+| Exposed service | Architectural meaning |
+| :--- | :--- |
+| **Context Load** | Materialise a managed Context from authoritative resource values for anticipated activity requirements. |
+| **Context Save** | Return resulting Context state to Mneme management for appropriate subsequent information handling, alongside distinguishable Pragma Outputs. |
+| **Adhoc Resource Access** | Governed runtime acquisition of resource information outside the anticipated loaded Context where the bounded activity requires it. |
+| **Adhoc Search** | Activity/context-facing governed search, using Mnemosyne's underlying authoritative persistence Search Management. |
+
+Resource Harmonisation Manager is an **internal responsibility**, not a fifth
+exposed service. Historical read/write facades and supporting contracts are not
+additional principal services; their detailed relationship to this surface remains
+unresolved. No additional exposed Mneme services are established here.
+
+## Source-qualified contribution
+
+Source: `docs/markdown/05-information-systems-architecture/context-and-persistence-management.md` — ## Retained uncertainty and existing adjudications. Standing: Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved.
+
+[CDG-45–48](../../../../docs/markdown/05-information-systems-architecture/gaps.md#context-and-pragma-contracts) retain the new detailed gaps:
+Context and access representation/concurrency, exceptional harmonisation,
+persistence oversight/compartments/outcome contracts, and Search/Research Metadata.
+Transaction boundaries, rollback/retry, shard routing/topology/replication,
+service-health metrics, semantic compartment-applicability source, compartment
+representation/validation, PEP interaction and logging schemas remain unresolved.
+
+Kleio essential capture/immutable history and cross-target harmonisation SEP,
+Themis distributed enforcement/default-deny, Petasos queues/Parcel/handoff,
+Energeia Praxis/Journey ownership, DigitalTwin/Dokimasia specialisations and
+terminal rules, and Pathway/control/observed-evidence distinctions are preserved.
+Kleio's [mandatory capture authority](../../../../docs/markdown/05-information-systems-architecture/component-register.md#kleio-capture-authority)
+is intrinsic platform authority governed by Harmonia policy under AX-07. The
+audited Identity is evidence, not capture authority. Insufficient capture authority
+fails the governed operation closed; Mneme/Mnemosyne gain no equivalent authority.
+Those A2/A3 corrections did not themselves establish A4 acceptance. Current A4
+acceptance and the bounded B1 scope are recorded in the [orientation](../../../../docs/markdown/05-information-systems-architecture/README.md).
+
+## Source-qualified contribution
+
+Source: `docs/markdown/05-information-systems-architecture/candidate-feature-map.md` — ``table assertion: | F16 | **Context and Pragma Management — four principal exposed services** | **Mneme C09: Context Load, Context Save, Adhoc Resource Access, Adhoc Search**; supporting contracts C11 and Pragma Management C28 | Versioned temporal Context composes authoritative resource values; Context version differs from resource state/version; Pragma expresses inputs/outputs and new Content | U10, AX-05/11/12/14. Context Load preferred/performance-optimised; bounded runtime acquisition permitted, potentially more expensive. No fifth service or exhaustive preload; detail CDG-45. |``. Standing: Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved.
+
+| F16 | **Context and Pragma Management — four principal exposed services** | **Mneme C09: Context Load, Context Save, Adhoc Resource Access, Adhoc Search**; supporting contracts C11 and Pragma Management C28 | Versioned temporal Context composes authoritative resource values; Context version differs from resource state/version; Pragma expresses inputs/outputs and new Content | U10, AX-05/11/12/14. Context Load preferred/performance-optimised; bounded runtime acquisition permitted, potentially more expensive. No fifth service or exhaustive preload; detail CDG-45. |
+
+## Source-qualified contribution
+
+Source: `docs/markdown/05-information-systems-architecture/candidate-feature-map.md` — ``table assertion: | F17 | Supporting authoritative state progression and guarded convergence | Mneme handles resulting Context/Pragma information consequences; Mnemosyne establishes/reports durable state; C11 retains supporting contract intent | Changed Context values and Pragma Outputs; proposed state/expected version; authoritative result, uncertainty and active convergence | U10/U11 and AX-05/14/15; internal supporting behaviour, not additional exposed Mneme services. Ergon/Unloader is not persistence; physical DELETE not lifecycle; old write-behind CDG-10, detail CDG-45/47. |``. Standing: Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved.
+
+| F17 | Supporting authoritative state progression and guarded convergence | Mneme handles resulting Context/Pragma information consequences; Mnemosyne establishes/reports durable state; C11 retains supporting contract intent | Changed Context values and Pragma Outputs; proposed state/expected version; authoritative result, uncertainty and active convergence | U10/U11 and AX-05/14/15; internal supporting behaviour, not additional exposed Mneme services. Ergon/Unloader is not persistence; physical DELETE not lifecycle; old write-behind CDG-10, detail CDG-45/47. |
+
+## Source-qualified contribution
+
+Source: `docs/markdown/05-information-systems-architecture/candidate-feature-map.md` — ``table assertion: | F18 | **Adhoc Resource Access / Adhoc Search** for bounded runtime information needs | Mneme exposes both activity/context-facing services; Mnemosyne Search Management performs underlying authoritative persistence search | Dynamic external-system information, deep interrogation outside reasonably known boundaries and emerging requirements; resource values/search results | U10/U11. Supplementary to preferred Context Load, potentially materially more expensive; transient cache not complete searchable space. Registry/clinical discovery and history intent remains L13 ADR-010/L15/L23; detailed APIs/query/results/history CDG-31/45/48; Pylai external boundary retained. |``. Standing: Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved.
+
+| F18 | **Adhoc Resource Access / Adhoc Search** for bounded runtime information needs | Mneme exposes both activity/context-facing services; Mnemosyne Search Management performs underlying authoritative persistence search | Dynamic external-system information, deep interrogation outside reasonably known boundaries and emerging requirements; resource values/search results | U10/U11. Supplementary to preferred Context Load, potentially materially more expensive; transient cache not complete searchable space. Registry/clinical discovery and history intent remains L13 ADR-010/L15/L23; detailed APIs/query/results/history CDG-31/45/48; Pylai external boundary retained. |
+
+## Source-qualified contribution
+
+Source: `docs/markdown/05-information-systems-architecture/data-and-persistence.md` — ``table assertion: | D04 | Supporting governed access/change carriers: ResourceKey, GovernedRead, active token, authoritative version, WriteResult, PersistenceOperationEnvelope | Mneme supporting contracts C11, constrained by its four-service surface; Mnemosyne establishes/reports persistence; Themis governs | Active generation and durable version differ; Context version/resource version also distinct; commit/degraded convergence/uncertain outcome differ | AX-05/14/15 and U10/U11. Historical carrier shapes are not additional services or Context schema; exact mappings CDG-31/45/47. |``. Standing: Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved.
+
+| D04 | Supporting governed access/change carriers: ResourceKey, GovernedRead, active token, authoritative version, WriteResult, PersistenceOperationEnvelope | Mneme supporting contracts C11, constrained by its four-service surface; Mnemosyne establishes/reports persistence; Themis governs | Active generation and durable version differ; Context version/resource version also distinct; commit/degraded convergence/uncertain outcome differ | AX-05/14/15 and U10/U11. Historical carrier shapes are not additional services or Context schema; exact mappings CDG-31/45/47. |
+
+## Source-qualified contribution
+
+Source: `docs/markdown/05-information-systems-architecture/middleware.md` — ``table assertion: | M05 | **Mneme Context/Pragma-facing four-service surface and supporting coordination** | Context Load, Context Save, Adhoc Resource Access, Adhoc Search; controlled concurrent active use, Mnemosyne authoritative persistence outcomes and post-commit convergence | U10/U11 and AX-05/07/11/12/14/15. C11 facade/carrier intent is supporting, not extra exposed services/network boundary; Context/resource versions and active generation distinct. Detail CDG-31/45/47/48. |``. Standing: Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved.
+
+| M05 | **Mneme Context/Pragma-facing four-service surface and supporting coordination** | Context Load, Context Save, Adhoc Resource Access, Adhoc Search; controlled concurrent active use, Mnemosyne authoritative persistence outcomes and post-commit convergence | U10/U11 and AX-05/07/11/12/14/15. C11 facade/carrier intent is supporting, not extra exposed services/network boundary; Context/resource versions and active generation distinct. Detail CDG-31/45/47/48. |
+
+## ARB DesignNote assertion contributions
+
+These bounded source assertions are reconciled under the cited U-decisions and ARB release Praxis. They retain the source's candidate, scope and detailed-design qualifications. They do not accept the whole Domain05 candidate or create a new element per paragraph. Later-corrected assertions are retained in the disposition evidence instead of being restored here.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 11-11
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme is not principally an information repository and does not exist merely to provide generic CRUD access to persisted resources.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 13-13
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme manages the **information context of Harmonia activity**, principally through **Pragma** and **Context**. It provides distributed, concurrent, managed, assured, regulated and controlled seamless access to and update of Context within the Harmonia framework, while managing the information consequences and outputs of Harmonia activity.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 17-17
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Mneme manages the information context of Harmonia activity — principally through Pragma and Context — providing controlled, concurrent and seamless access to existing resource values and management of the new Content produced by that activity.**
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 39-39
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme's role is deliberately different from Mnemosyne.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 41-41
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Mneme manages the information context of Harmonia activity. Mnemosyne manages and authoritatively reports persistence.**
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 45-45
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme exposes four principal services:
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 59-59
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+These four services form the principal Mneme-facing information interaction surface.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 143-143
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+During Ergo development/definition, the Ergo identifies the resource set it is **most likely to access**.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 145-145
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+This declaration enables the Ergo framework, working with Mneme, to establish the execution Context efficiently.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 176-176
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+The expected resource set is intentionally **not required to be exhaustive**.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 178-178
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Attempting to preload every resource an Ergon could conceivably access would undermine the performance purpose of Context.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 245-245
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+The loaded Context is the preferred information-access mechanism, but it is not a closed-world constraint.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 247-247
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+An Ergon may legitimately require information that could not reasonably have been anticipated at definition time.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 249-249
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme therefore exposes:
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 251-251
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+- **Adhoc Resource Access**
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 252-252
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+- **Adhoc Search**
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 254-254
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+These services support cases including:
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 256-256
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+1. interaction with external systems where information may arrive or be discovered dynamically;
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 257-257
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+2. deep interrogation of state outside known or reasonably pre-loadable boundaries; and
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 258-258
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+3. activities whose information requirements emerge from runtime processing.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 270-270
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Adhoc access may be materially more expensive than Context Load.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 272-272
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+It is therefore supplementary, not an equivalent substitute for good Ergo Context definition.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 274-274
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Harmonia optimises the expected case without constraining the legitimate exceptional case.**
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 276-276
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Repeated predictable Adhoc access may indicate that an Ergo's expected resource-set definition should be reconsidered, but Adhoc access is not itself an architectural error.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 401-401
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme operates in a distributed and concurrent environment.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 403-403
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+A Context is a temporal working snapshot. The authoritative state of constituent resources may change while an Ergon is operating.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 405-405
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme therefore requires sufficient state/version information to recognise when resulting resource delivery cannot safely proceed through the normal path.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 407-407
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+However:
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 409-409
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Managing concurrent Contexts does not require the originating Ergon to resolve generic resource conflicts.**
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 411-411
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+The originating Ergon performed its bounded business activity against the Context supplied to it.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 413-413
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Where conflicting, discordant, malformed or otherwise unsuitable resource state requires further work, that condition is managed through the Resource Harmonisation Manager and appropriate specialised Ergon activity.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 419-419
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme contains an internal **Resource Harmonisation Manager (RHM)**.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 421-421
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+The RHM manages the exceptional resource-delivery path where resulting information cannot safely or appropriately proceed through normal handling.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 443-443
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+The percentages represent a design expectation rather than a hard SLA: Resource Harmonisation is expected to be an exceptional path, approximately **5% or less at worst**, rather than the normal execution path.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 445-445
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+The normal path SHALL NOT be unnecessarily burdened with expensive harmonisation machinery solely because the exceptional path exists.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 449-449
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+The Resource Harmonisation Manager does **not** itself perform domain harmonisation.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 451-451
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+It identifies and manages conditions that cannot proceed normally and causes the appropriate bounded harmonisation activity to occur.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 474-474
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Harmonisation may be required for conflicting work, poor/discordant data or other exceptional information states.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 510-510
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Where Resource Harmonisation is required, it represents new governed work.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 536-536
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+This preserves the existing Harmonia rule that execution does not resume inside an Ergon.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 542-542
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme and Mnemosyne have complementary but distinct responsibilities.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 557-557
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme manages Context, Pragma, resource interaction and resulting information consequences.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 559-559
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mnemosyne manages authoritative persistence, persistence-service oversight, shard management, persistence search execution, persistence-boundary compartment validation/reapplication, persistence logging and authoritative persistence reporting.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 561-561
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme SHALL NOT require Ergon Business Logic to understand those persistence mechanics.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 565-565
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+1. **Mneme manages the information context of Harmonia activity, principally through Pragma and Context.**
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 566-566
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+2. Mneme's principal exposed services are Context Load, Context Save, Adhoc Resource Access and Adhoc Search.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 567-567
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+3. A Context is a versioned temporal load-snapshot composed from resource values rather than merely references.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 568-568
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+4. Loaded resource values are composed into the Context bucket.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 569-569
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+5. Context version and constituent resource authoritative state/version are distinct.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 570-570
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+6. An Ergo definition identifies the resource set it is most likely to access.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 571-571
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+7. Context Load SHALL be the preferred and performance-optimised mechanism for anticipated information access.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 572-572
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+8. The expected resource set need not be exhaustive.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 573-573
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+9. Ergon Business Logic SHOULD primarily read and act upon values already provided in its Context.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 574-574
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+10. Ergon Business Logic MAY use Adhoc Resource Access or Adhoc Search where its bounded activity requires information outside the loaded Context.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 575-575
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+11. Adhoc Resource Access and Adhoc Search may be materially more expensive than Context Load.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 576-576
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+12. The Ergo Context Loader is not responsible for performing Mneme's resource acquisition mechanics.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 577-577
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+13. The Context Unloader is not a persistence mechanism.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 578-578
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+14. Mneme manages Pragma.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 579-579
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+15. New Content generated by an Ergon is expressed as Pragma Output.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 580-580
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+16. Changed Context values and newly generated Pragma Outputs SHALL remain semantically distinguishable.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 581-581
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+17. Mneme manages the subsequent information consequences of Pragma Output.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 582-582
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+18. An Ergon SHALL NOT be required to understand persistence mechanics merely because it changes values or produces Content.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 583-583
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+19. Mneme SHALL support distributed and concurrent Context operation.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 584-584
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+20. Generic resource conflict/harmonisation SHALL NOT be pushed into the originating Ergon.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 585-585
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+21. Resource Harmonisation Manager is an internal Mneme exception-path capability.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 586-586
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+22. Resource Harmonisation is expected to represent approximately 5% or less of resource-delivery activity at worst; this is a design expectation, not a hard SLA.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 587-587
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+23. The normal resource-delivery path SHALL NOT be unnecessarily burdened by exceptional harmonisation processing.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 588-588
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+24. Resource Harmonisation Manager manages the unhappy path but does not itself perform domain harmonisation.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 589-589
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+25. Required harmonisation SHALL be performed by an appropriate, explicitly defined Ergon.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 590-590
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+26. Harmonisation is new governed work and SHALL NOT resume inside the originating Ergon.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 591-591
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+27. Resource Harmonisation Manager SHALL reuse common Harmonia/Ponos execution capability rather than duplicating execution-framework responsibilities.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 592-592
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+28. Mneme SHALL remain insulated from Ponos implementation internals through an appropriate architectural execution/work contract.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 593-593
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+29. Mneme manages Context and Pragma; Mnemosyne manages and authoritatively reports persistence.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 594-594
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+30. Detailed UI, reusable-form and presentation architecture is deferred.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 627-627
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme is Harmonia's **Context and Pragma Manager**.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 629-629
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+It provides four principal exposed services: **Context Load, Context Save, Adhoc Resource Access and Adhoc Search**.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 631-631
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Context Load efficiently materialises a versioned, temporal, value-based working snapshot based principally on the resource set anticipated by the Ergo definition. Ergon Business Logic can then read and act upon those values without normally concerning itself with resource-loading or persistence mechanics.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 633-633
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Where runtime activity requires information outside the anticipated Context, Adhoc Resource Access and Adhoc Search provide deliberate, potentially more expensive escape paths.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 635-635
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme also manages Pragma. New Content produced by an Ergon is expressed as **Pragma Output** and managed by Mneme rather than being treated merely as an incidental Context mutation.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 637-637
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+Normal resource delivery is designed to remain efficient. Exceptional resource conditions are managed internally by the **Resource Harmonisation Manager**, expected to be required for approximately 5% or less of activity at worst. Actual harmonisation is undertaken as new governed work through appropriate Harmonisation Ergon using the common Harmonia execution framework.
+
+### DesignNote-Mneme-Context-and-Pragma-Management — original lines 639-639
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Context-and-Pragma-Management.md`; U10/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Mneme makes a distributed, concurrent and controlled information environment available to Harmonia activity as manageable Context, while managing the Pragma inputs and outputs through which that activity consumes and produces information.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 12-12
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- Mneme;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 13-13
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- Pragma;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 14-14
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- InformationUnit;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 15-15
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- Publishing;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 16-16
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- Subscription;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 17-17
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- Pattern;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 18-18
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- Petasos;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 19-19
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- ActionableTask;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 20-20
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- FulfillmentTask;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 21-21
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- Ponos;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 22-22
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- Ergo / Ergon; and
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 23-23
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- Journey.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 25-25
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+It complements the separate DesignNote concerning Pathways, Journeys and assurance representation.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 27-27
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+The principal architectural separation established here is:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 29-29
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Mneme manages the information and determines information eligibility, publication, subscription and selection. Petasos provides persistent/recoverable messaging and handoff services. Ponos manages execution.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 31-31
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+For ActionableTask processing specifically:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 33-33
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Petasos distributes the opportunity to undertake work, not the undertaking itself.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 35-35
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+This statement describes the ActionableTask handoff pattern and is not a complete definition of Petasos.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 106-106
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Pattern is the common matching concept used to evaluate relevant characteristics of managed Pragma and their payload information.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 108-108
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+A Pattern may potentially evaluate characteristics drawn from:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 126-126
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+The complete Pattern language, supported attributes, precedence, operators, matching implementation and performance model remain to be designed.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 128-128
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Pattern is an information-selection concept, not merely a messaging-broker topic expression.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 134-134
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+A Subscription allows a consumer to request that Pragma matching a Pattern be forwarded to its input queue.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 136-136
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Working definition:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 138-138
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Subscription is a governed consumer-side information-selection definition that requests handoff of Pragma matching its associated Pattern to the consumer's input queue or equivalent destination.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 156-156
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Subscription therefore expresses:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 158-158
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **What information/work is this consumer interested in receiving?**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 160-160
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Subscription matching is a Mneme information-management responsibility.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 166-166
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Publishing provides the provider-side control over what egress content may be made available through publication.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 168-168
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+A Publishing object contains or references Pattern-based filtering semantics.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 170-170
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Working definition:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 172-172
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Publishing is a governed provider-side publication definition that constrains whether egress Pragma may be made available for subscription-based handoff.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 196-196
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Publishing does not determine the ultimate execution of a consumer. It governs provider-side information eligibility for publication.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 202-202
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Publishing and Subscription use related Pattern semantics but represent different responsibilities.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 222-222
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Publishing constrains availability.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 224-224
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Subscription expresses interest.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 226-226
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme evaluates both as part of governed information selection.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 232-232
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Mneme is responsible for the semantic management of Harmonia publication/subscription processing.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 234-234
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+This includes, at the architectural level:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 236-236
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- management of Pragma;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 237-237
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- management of Publishing definitions;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 238-238
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- management of Subscription definitions;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 239-239
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- Pattern evaluation;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 240-240
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- information eligibility;
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 241-241
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- matching and selection; and
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 242-242
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+- determination of eligible destination(s).
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 270-270
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Mneme coordinates the governed management, selection, publication, subscription and availability of information. It does not coordinate execution of the activities that consume that information.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 272-272
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Execution responsibility remains with Ponos.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 278-278
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+For Pragma-based processing, Petasos does not transport the InformationUnit payload.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 280-280
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+The Pragma and its payload remain managed through Mneme.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 282-282
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Petasos transports/manages the identity or reference of the relevant Pragma together with the metadata required to effect the handoff.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 300-300
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Petasos receives/manages something conceptually closer to:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 312-312
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+rather than:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 321-321
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+The exact Petasos handoff structure remains to be designed.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 375-375
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+A single Pragma may match multiple Subscriptions.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 401-401
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+This does not inherently require duplication of the managed payload.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 403-403
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+The common managed Pragma remains within Mneme while Petasos may manage multiple independent handoff obligations or queue entries referring to it.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 411-411
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+A critical distinction exists between ActionableTask and FulfillmentTask.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 422-422
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+For ActionableTask processing, Petasos does **not** distribute the details of a FulfillmentTask.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 424-424
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+It hands off the ActionableTask identity/details required for a consumer to recognise and undertake the work.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 426-426
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Each consumer then copies/morphs the ActionableTask representation into its own distinct FulfillmentTask.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 451-451
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+This is consistent with the established Information Architecture relationship:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 459-459
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Multiple consumers undertaking the same ActionableTask therefore naturally produce multiple FulfillmentTasks.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 465-465
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+For the ActionableTask handoff pattern:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 467-467
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Petasos distributes the opportunity to undertake work, not the undertaking itself.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 469-469
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+The handoff may be understood conceptually as:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 496-496
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+The resulting FulfillmentTask belongs to the particular undertaking and must not be confused with the common ActionableTask offered through Petasos.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 502-502
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+The architecture should not collapse all processing/delivery/execution state into Pragma or ActionableTask metadata.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 504-504
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+At minimum, conceptually distinct state exists for:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 522-522
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+This distinction is consistent with the established principle that information state, operational activity state and workflow/progression state are not equivalent.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 528-528
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Petasos must **not** be architecturally reduced to a Ponos messenger or an ActionableTask delivery mechanism.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 530-530
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Petasos is a shared Harmonia messaging/handoff subsystem.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 532-532
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Working architectural responsibility:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 534-534
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Petasos provides persistent, recoverable messaging and handoff services between Harmonia processing boundaries without thereby acquiring ownership of the information or activity semantics that caused the handoff.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 536-536
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Known or anticipated service patterns include:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 554-554
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+For Pragma/ActionableTask handoff, identity/reference-based transfer is established as the candidate model.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 556-556
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+The architecture does **not** yet assert that every Petasos interaction must be reference-only. Communication Events, Notification Events and other message forms require their own semantics.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 564-564
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Petasos requires persistent queue management and destination/routing mechanics.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 566-566
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+The exact Petasos concept corresponding to a queue destination, channel or broker-style topic is not yet named or finalised.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 570-570
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+These are distinct concerns:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 584-584
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Even if a future implementation technology uses the word "topic" for both, the architecture should maintain the semantic distinction.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 677-677
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Publish/Subscribe and Pathway processing remain distinct control/progression mechanisms.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 689-689
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Pub/Sub does not require a predefined end-to-end Pathway or Route.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 691-691
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+Journey provides the common reporting and assurance representation across both mechanisms.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 693-693
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+A later design activity may further establish how Pub/Sub activity is represented within Journey and how mixed Pathway/Pub/Sub activity is correlated.
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 762-762
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Execution of, behaviour upon, or transport/handoff of managed information does not confer information-management responsibility for that information.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 766-766
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Mneme determines whether and where managed information should be made available according to Publishing, Subscription and Pattern semantics.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 770-770
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Petasos provides the persistent/recoverable messaging and handoff services required to effect those decisions without assuming Mneme's information-management responsibility or Ponos's execution responsibility.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 774-774
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **For ActionableTask processing, Petasos distributes the opportunity to undertake work, not the undertaking itself.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 778-778
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **A consumer undertaking an ActionableTask creates/morphs a distinct FulfillmentTask representing that particular undertaking.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 782-782
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **For Pragma-based ActionableTask handoff, the managed information payload remains under Mneme management; Petasos manages the identity/reference and handoff metadata required to cause subsequent processing.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 786-786
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Petasos is a shared Harmonia messaging/handoff subsystem and SHALL NOT be constrained to Ponos task messaging alone.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 803-803
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Implementation capability SHALL NOT be used to reverse-derive the Information Systems architecture.**
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 922-922
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+The central architectural separation is:
+
+### DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture — original lines 924-924
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Mneme-Publication-Subscription-and-Petasos-Handoff-Architecture.md`; U05/U09/U18; source-qualified assertion, current subject standing unchanged.
+
+> **Mneme knows what the information is and determines who is eligible to receive it. Petasos reliably manages the handoff. Ponos manages the resulting execution. Ergon performs the bounded activity. Journey represents what observably happened.**
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 17-17
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+Pragma management belongs with **Mneme**, rather than Ponos, Petasos, or Energeia merely because those runtime constructs use it.
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 28-28
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+Pragma is then consumed or acted upon by other runtime responsibilities:
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 44-44
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+The key architectural principle is:
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 46-46
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+> **Execution of, behaviour upon, or transport of managed information does not confer information-management responsibility for that information.**
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 50-50
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+The current conceptual separation is:
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 69-69
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+This is consistent with the broader Domain05 distinction between Information Responsibility, execution/activity responsibility, middleware/handoff responsibility, and persistence responsibility.
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 71-71
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+Persistence responsibility remains separate and is not adjudicated by this note.
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 100-100
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+The current reconstructed Candidate System Map places `Pragma — task/context/progression carrier construct` beneath `Energeia`.
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 102-102
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+That structural placement is now considered suspect and should be corrected during Candidate Architecture adjudication.
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 104-104
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+Pragma may be central to Energeia activity without belonging structurally to Energeia.
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 106-106
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+Likewise, Ponos, Petasos and Ergon may use, progress, act upon, or transfer Pragma-associated work without acquiring information-management ownership of Pragma.
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 127-127
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+The emerging responsibility boundary can be expressed as:
+
+### DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary — original lines 146-146
+
+Source: `docs/markdown/05-information-systems-architecture/design-notes/DesignNote-Pragma-Management-Responsibility-and-Energeia-Boundary.md`; U03/U06/U19; source-qualified assertion, current subject standing unchanged.
+
+This is a working architectural view intended to preserve the adjudicated responsibility separation while avoiding premature completion of the remaining Energeia design.
+
+## Candidate ADD — Provenance Management and Assurance
+
+Provenance is governed information managed through Mneme using existing governed
+information-management mechanisms. Dokimasia retains Provenance Management framework
+and lifecycle ownership; Mnemosyne establishes authoritative durable state/persistence.
+This adds no principal service, generic repository role, raw cache/database access
+path or independent Provenance store. Existing identity/version/reference/governance
+semantics and reliability/durability/timeliness requirements remain in force.
+Publication timing, acknowledgement/recovery, schemas/cardinalities/lifecycle states
+and client-library details remain unresolved; no transport or API is selected.
+
+Agreed intent is recorded in the operative ADD Task; this contribution awaits explicit
+Solution Architect candidate acceptance under HCRL 1.1.19-001 DR-18/DR-19. Prior
+definitions, assertion standing and unresolved detailed-design matters are preserved.
+
+Canonical ADD references: [Provenance](../data-object/e282811b51274649816566aac7edeb8a.md); [Provenance Client Library](171f05d188384cedb7d5c493eeaee519.md).

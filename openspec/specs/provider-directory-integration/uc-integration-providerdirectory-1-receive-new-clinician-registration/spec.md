@@ -1,8 +1,19 @@
 # Receive New Clinician Registration
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/fff7b4972abd40ebb006ed514113269e.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 newly onboarded providers can be created in the Provider Directory
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ newly onboarded providers can be created in the Provider Directory
 - **Source Scope:** Scope - Provider Registration and Onboarding
 - **Primary Actor:** Source System
 - **Supporting Actors:** Provider Directory
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/8c09ffad250f47bd8f9ddf567d938b7a.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** Receive new practitioner registrations so that newly onboarded providers can be created in the Provider Directory.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** None identified.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/fff7b4972abd40ebb006ed514113269e.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Receive New Clinician Registration
 Harmonia SHALL support **Receive New Clinician Registration** so that newly onboarded providers can be created in the Provider Directory.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Receive New Clinician Registration - successful outcome
 - **GIVEN** The actor is appropriately identified and authorised to perform the activity; the relevant provider, participant, organisation or reference information is available to the process; and any prerequisite records or relationships exist.

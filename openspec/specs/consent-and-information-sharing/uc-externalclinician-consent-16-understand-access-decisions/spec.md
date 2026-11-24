@@ -1,8 +1,19 @@
 # Understand Access Decisions
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/9fd2c08e3e164ed0b8be6c80ea7b5571.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 I know whether additional participant consent is required
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ I know whether additional participant consent is required
 - **Source Scope:** Scope - Clinical Decision Support (Consent)
 - **Primary Actor:** External ClinicianProvider (Rehabilitation Clinician)
 - **Supporting Actors:** Provider Directory
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/05320821154840d5bb1f5140ad13ef4b.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** Understand why access to information has been denied so that I know whether additional participant consent is required.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** None identified.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/9fd2c08e3e164ed0b8be6c80ea7b5571.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Understand Access Decisions
 Harmonia SHALL support **Understand Access Decisions** so that I know whether additional participant consent is required.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Understand Access Decisions - successful outcome
 - **GIVEN** The actor is appropriately identified and authorised to perform the activity; the relevant provider, participant, organisation or reference information is available to the process; and any prerequisite records or relationships exist.

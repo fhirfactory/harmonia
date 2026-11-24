@@ -1,0 +1,117 @@
+{
+  "actualArchiImportExport": "PASS",
+  "operator": "Codex; actual Archi 5.10 command-line import and complete-model export",
+  "baselineSha256": "ed9bf132230896b17d94a5345e7e6bf749e43cd4cccd81a2d9598b62730e628e",
+  "returnedXmlSha256": "b024ca4a589fbab5fb5a36bec2536fd5255275aad7228e6071d4328a090ac30a",
+  "returnedModel": "archi-transport/returned-model.xml.gz",
+  "inputIssues": {
+    "published": [],
+    "incoming": []
+  },
+  "metrics": {
+    "published": {
+      "semantic_elements": 1559,
+      "relationships": 1137,
+      "views": 1209,
+      "visual_objects": 4005,
+      "visual_connections": 1804,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 22990562,
+      "xml_decimal_mb": 22.990562
+    },
+    "incoming": {
+      "semantic_elements": 1559,
+      "relationships": 1137,
+      "views": 1209,
+      "visual_objects": 4005,
+      "visual_connections": 1804,
+      "largest_view": {
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "text": "Business Capability Model — v0.2",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "elements": 200,
+        "visual_objects": 200,
+        "connections": 182
+      },
+      "xml_bytes": 24357378,
+      "xml_decimal_mb": 24.357378
+    }
+  },
+  "preservedElementFieldCounts": {
+    "identifier": 1559,
+    "archimateType": 1559,
+    "specialization": 1559,
+    "name": 1559,
+    "documentation": 1559
+  },
+  "preservedPropertyValueAndOwnerCounts": {
+    "canonicalId": 1559,
+    "displayName": 1559,
+    "friendlyName": 1559,
+    "canonicalName": 1559
+  },
+  "relationships": {
+    "before": 1137,
+    "after": 1137,
+    "missing_ids": [],
+    "additional_ids": [],
+    "changed_records": []
+  },
+  "views": {
+    "before": 1209,
+    "after": 1209,
+    "missing_ids": [],
+    "additional_ids": [],
+    "changed_records": []
+  },
+  "rawComparatorStatus": "DIFFERENCES",
+  "rawClassifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 311,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 4917,
+    "SEMANTIC DIFFERENCE": 12806,
+    "UNEXPLAINED DIFFERENCE": 2264
+  },
+  "rawReasons": {
+    "Uniquely keyed unordered collection": 252,
+    "Semantic record attribute changed": 12806,
+    "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation": 541,
+    "Attribute absent after transport": 4267,
+    "Additional subtree with no established equivalence": 738,
+    "No proven representational equivalence for this attribute": 598,
+    "Exact text compared; whitespace/language selection is not normalised": 387,
+    "Subtree absent after transport; raw input retained by hash": 650,
+    "Exact unique Property key resolves both definition IDs; all other definition content and owner values compared independently": 59
+  },
+  "canonicalWorkbenchReview": {
+    "elementChanges": 0,
+    "relationshipAndViewChanges": 0,
+    "unresolved": 0
+  },
+  "limits": [
+    "The operator/execution log attributes the actual transport; comparison alone cannot authenticate execution.",
+    "Not whole-model byte fidelity: Archi adds en language attributes and restructures organization navigation. Raw differences remain visible.",
+    "The maintained presentation template is not replaced by the no-edit return. Interactive visual inspection and architectural acceptance are not asserted."
+  ],
+  "invocation": "Archi -nosplash -consoleLog -configuration <temporary-config> -data <temporary-workspace> -application com.archimatetool.commandline.app -a --xmlexchange.import <published-XML> --saveModel <temporary-native-model> --xmlexchange.export <returned-XML> --xmlexchange.exportFolders --xmlexchange.exportLang en",
+  "environmentResolution": "Initial sandbox display access failed gtk_init_check; authorised execution with local display access succeeded. No network dependency."
+}

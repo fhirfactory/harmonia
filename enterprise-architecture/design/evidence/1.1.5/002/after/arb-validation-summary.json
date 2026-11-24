@@ -1,0 +1,109 @@
+{
+  "entryRevision": "798344f80eb7fd3998e17f4f040cf7dabe260388",
+  "currentPipeline": {
+    "outcome": "PASS",
+    "command": "make -C docs/archimate/framework all",
+    "tests": 20,
+    "durationSeconds": 97.215,
+    "log": "arb-validation/continuum-tests-and-generation.txt",
+    "qualification": "Final source rendering and whitespace-preserving XML serializer included; every projected element documentation matches its complete canonical body."
+  },
+  "finalPublication": {
+    "outcome": "PASS",
+    "command": "make -C docs/archimate/framework all (included generation and final staleness checks)",
+    "log": "arb-validation/final-publication-checks.txt",
+    "projectionReport": "arb-projection-validation.json"
+  },
+  "requiredArchitectureSuite": {
+    "outcome": "PASS",
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "command": "mvn test -pl paradeigma/paradeigma-test -am -Dtest=*ArchitectureTest -Dsurefire.failIfNoSpecifiedTests=false",
+    "log": "arb-validation/architecture-tests.txt",
+    "logRendering": {
+      "rawLog": "arb-validation/architecture-tests.raw.txt.gz",
+      "rawSha256": "d98daa23c45391d120070e083d440b8997d3cbea7397fe6824fc5b8bcd6f5b27",
+      "rendering": "ANSI colour escapes and trailing console padding removed in the readable .txt; execution text/results unchanged."
+    }
+  },
+  "sourceAndRetryVerification": {
+    "outcome": "PASS",
+    "report": "arb-transition-verification.json"
+  },
+  "htmlDomContract": {
+    "outcome": "PASS",
+    "embeddedElementRecords": 1602,
+    "identityNativeTypeStandingCurrentnessNamesAndCompleteSourceBodies": "All match canonical sources",
+    "parser": "lxml HTMLParser(huge_tree=True) for embedded JSON exceeding default parser text-node limits",
+    "limit": "Embedded data/DOM contract checked; no live-browser or interactive visual review asserted."
+  },
+  "isolatedGeneration": {
+    "outcome": "PASS",
+    "report": "arb-reproducibility.json"
+  },
+  "renderedLocalLinks": {
+    "status": "PASS",
+    "renderedLocalLinksChecked": 1499,
+    "missingTargetFiles": [],
+    "unresolvedAnchors": [],
+    "limit": "Repository local links only; external network targets and code examples are not dereferenced."
+  },
+  "pdf": {
+    "status": "PASS",
+    "sha256": "2c3c2e9459d2d596ea4ef63d431240c818dbd2d8346c6cf40f77d5979a027f10",
+    "sameEnvironmentByteReproducibility": true,
+    "environment": "XeLaTeX / DejaVu Sans; SOURCE_DATE_EPOCH=1792574845 FORCE_SOURCE_DATE=1",
+    "pages": 261,
+    "limit": "Derived identity/standing catalogue, not a second narrative authority; no full visual inspection asserted."
+  },
+  "actualArchiTransport": {
+    "outcome": "PASS",
+    "report": "arb-transport/validation.json",
+    "limit": "1,602 canonical records, 1,651 relationships and 1,209 Views survive; raw representation differences remain, not whole-model byte fidelity."
+  },
+  "correctedFindings": [
+    "Initial duplicate Composition parent corrected by reusing the existing relationship with qualified contribution provenance.",
+    "Original DesignNote edition hashes and unchanged entry-state notes are distinct checks because pre-existing supersession wrappers are retained.",
+    "Two nested-label/source-local-fragment links corrected in contributed source rendering.",
+    "Final source-padding findings corrected in rendering; XML numeric references retain exact parsed source whitespace. Final 20-test pipeline includes complete projected documentation equality checks."
+  ],
+  "historicalSuites": {
+    "rerun": false,
+    "reference": "validation-summary.json",
+    "standing": "Original historical framework/shared-fixture authority-pin failures retained; not relabelled PASS or rewritten."
+  },
+  "release": {
+    "version": "1.1.5",
+    "previous_version": "1.1.4",
+    "additionalIncrement": false,
+    "reason": "Same pending authorised release transition"
+  },
+  "architecturalAcceptance": "Pending holistic Solution Architect/ARB confirmation",
+  "publicationSha256": {
+    "Harmonia-Architecture.xml": "440ed943908b375b8d66818ceaa341969925db51a859a67c6f365d0461ffb28b",
+    "continuum-catalogue.tex": "e26000d6751d167ea636536973d3deadcbb4ee386d735c2aba675dad4180de73",
+    "continuum.html": "5cc547456bd9bd2eadf9a8d44fa200df186e61479e783f9eb69c218cbeeabec2",
+    "continuum-catalogue.pdf": "2c3c2e9459d2d596ea4ef63d431240c818dbd2d8346c6cf40f77d5979a027f10",
+    "README.md": "70949989bcc1174d7c09e4425a0938885659b83e95d26f4cfd71f9dd14c1b8e7",
+    "publication.json": "f6308e99d61c36905a7b683c747aa6f413327affc97904433b2807d8da358ccd"
+  },
+  "releaseAndWhitespace": {
+    "status": "PASS",
+    "check": "architecture_release.py check; git diff HEAD --check",
+    "sourcePadding": "Original sources/evidence preserved; rendered copies trim table padding and XML encodes retained line-end whitespace as numeric references without changing parsed documentation."
+  },
+  "formalEvidenceLayout": {
+    "outcome": "PASS",
+    "tasks": 6,
+    "reports": 3,
+    "evidence": "arb-evidence-layout.json",
+    "limit": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+  },
+  "formalReportAndHcrlLinks": {
+    "outcome": "PASS",
+    "localLinksChecked": 53,
+    "missingTargetsOrAnchors": []
+  }
+}

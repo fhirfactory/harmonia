@@ -10,7 +10,18 @@ Enable the target-state Provider Directory to support the capability described b
 - **Source Scope:** Additional Source Requirements – SR-26 to SR-58
 - **Primary Actor:** Integration Administrator
 - **Supporting Actors:** Rhapsody Integration Engine; Downstream Subscriber System; Provider Directory; Integration Service
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/2ff2646e206e4c1b858d9ba55d47c759.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As an Integration Administrator, I want the Provider Directory to broadcast provider updates to Rhapsody using standard messaging, so that subscribing systems receive timely updates.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-35 – Monitor Provider Integration Interfaces: supports operational monitoring of Provider Directory interfaces.; UC-Integration-ProviderDirectory-36 – Reconcile Provider Synchronisation Failures: supports remediation of failed or incomplete synchronisation.
 
 ## Requirements

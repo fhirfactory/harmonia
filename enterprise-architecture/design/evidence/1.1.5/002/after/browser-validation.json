@@ -1,0 +1,1 @@
+{"status":"PASS","elements":1559,"checks":["initial population","identity search","selection","Feature filter","combined currentness filter"],"limits":"DOM-contract smoke test; no pixel/visual browser claim"}

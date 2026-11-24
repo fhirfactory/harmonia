@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "artifacts": 19,
+  "candidateComparisons": 16,
+  "manifests": [
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/publication.json",
+      "allOtherFieldsEqual": true,
+      "hashesMatch": true
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/publication.json",
+      "allOtherFieldsEqual": true,
+      "hashesMatch": true
+    }
+  ]
+}

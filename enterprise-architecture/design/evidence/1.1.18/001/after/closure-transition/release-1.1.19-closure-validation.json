@@ -1,0 +1,52 @@
+{
+  "closure": "COMPLETE under attributable Solution Architect disposition",
+  "originatingIteration": "1.1.18/001",
+  "publication": "1.1.19",
+  "successor": "1.1.19/001",
+  "transferEntries": 16,
+  "allOriginalDispositionsPreserved": true,
+  "crAcceptedResolved": 60,
+  "oldSuccessorAbsent": true,
+  "checkedMarkdownFiles": 17,
+  "linkErrors": [],
+  "pinChanges": {
+    "canonical": [],
+    "protectedEvidence": [],
+    "protectedPublication": [
+      "architecture-release.json"
+    ]
+  },
+  "evidenceLayout": {
+    "outcome": "UNRESOLVED",
+    "version": "1.1.18",
+    "iteration": "001",
+    "records": [
+      "evidence/1.1.18/001/after/ai-agent-reports/20261101T223733Z-openspec-subject-capability-reconciliation.md",
+      "evidence/1.1.18/001/after/ai-agent-reports/20261101T225438Z-bounded-subject-reconciliation.md",
+      "evidence/1.1.18/001/after/ai-agent-reports/20261101T232558Z-accepted-subject-incorporation.md",
+      "evidence/1.1.18/001/after/ai-agent-reports/20261102T001123Z-views-reconciliation.md",
+      "evidence/1.1.18/001/after/ai-agent-reports/20261102T005128Z-subject-grouping-hierarchy.md",
+      "evidence/1.1.18/001/after/ai-agent-reports/20261102T013425Z-complete-subject-views.md",
+      "evidence/1.1.18/001/after/ai-agent-reports/20261102T024051Z-closure-transition-checkpoint.md",
+      "evidence/1.1.18/001/after/ai-agent-reports/20261102T030057Z-release-1-1-19-closure.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/20261102T000247Z-views-reconciliation.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/20261102T011114Z-complete-subject-views.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/20261102T020822Z-closure-and-successor-transition.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/20261102T025100Z-release-1-1-19-revised-disposition.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md"
+    ],
+    "errors": [],
+    "unresolved": [
+      "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+      "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+      "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+    ],
+    "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+  },
+  "temporalQualificationTreatment": "Original three missing events/prefixes explicitly retained and transferred under revised Solution Architect disposition; not asserted resolved or temporally conformant",
+  "strictTransportVerifier": "FAIL retained; actual import/save/export exit 0; complete bounded classification retained with no uncertain View effects",
+  "transferredIssuesImplemented": false
+}

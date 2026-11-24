@@ -1,0 +1,15 @@
+{
+  "expected_second_sha256": "b869ac466340e204077c6a733d648153594563be134c386fc7a17af609428f41",
+  "expected_second_bytes": 21841727,
+  "git_object_count": 9442,
+  "git_blobs_of_expected_size": [],
+  "all_refs_path_history": "1294fbfbec2ec8d42465d20867082883721382cc Harmonia Documentation - Migration to Archi (IX)\n",
+  "index": "100644 4c616a90f880698dd8c8155f2f0e3c88e8b88a70 0\tdocs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml\n",
+  "searched_file_roots": [
+    "docs/",
+    ".junie/",
+    "/tmp/"
+  ],
+  "matching_size_files_found": [],
+  "limitation": "No exact second export found; no XML reconstruction performed. First XML is supplemental and not labelled as second."
+}

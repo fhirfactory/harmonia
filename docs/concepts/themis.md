@@ -1,6 +1,23 @@
 # Concept: Themis `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Themis Authorisation Model and distributed enforcement](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [PEP-Context availability and delegation](../markdown/05-information-systems-architecture/component-register.md#themis-availability-and-delegation)
+- [Kleio authoritative Audit Capture](../markdown/05-information-systems-architecture/component-register.md#c03)
+
+```text
+---------------------------------------------------------
+```
+
 Themis is Harmonia's centralized default-deny authorization engine, security policy evaluation framework, and non-PHI audit logging subsystem, enforcing strict zero-trust governance across all platform operations.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
@@ -12,6 +29,18 @@ Themis is Harmonia's centralized default-deny authorization engine, security pol
 - **Architectural Rationale**: Healthcare integration engines operate in an environment where privacy, confidentiality, and data governance are matters of legal and moral imperative (HIPAA, GDPR). Traditional perimeter security ("implicit trust once inside the firewall") is catastrophically inadequate. Themis brings unwavering divine law to the architecture: every action is evaluated against immutable policies, access is denied by default, and every decision is impartially weighed on the scales of justice.
 
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Themis Authorisation Model and distributed enforcement](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [PEP-Context availability and delegation](../markdown/05-information-systems-architecture/component-register.md#themis-availability-and-delegation)
+
+```text
+---------------------------------------------------------
+```
 
 ## 2. Architectural Definition `[IMPLEMENTED]`
 
@@ -54,9 +83,25 @@ Themis enforces a 4-gate security model spanning every tier of the platform:
 +---------------------------------------------------------------------------------------+
 ```
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ---
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C02 — Themis](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [Candidate security data D03](../markdown/05-information-systems-architecture/data-and-persistence.md)
+
+```text
+---------------------------------------------------------
+```
 
 ### What Themis Owns
 - Security principal representations (`ThemisPrincipal`) and service accounts (`HarmoniaServiceIdentities`).
@@ -65,6 +110,10 @@ Themis enforces a 4-gate security model spanning every tier of the platform:
 - Deterministic default-deny policy evaluation engine (`ThemisService`, `ThemisPolicy`).
 - Built-in server-side domain policies (`ProviderRegistryReadPolicy`, `ProviderRegistrySubmitPolicy`, `SystemAdminPolicy`).
 - Non-PHI security audit event generation and dispatch (`ThemisAuditService`, `ThemisAuditEvent`).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Themis Explicitly Does NOT Own (Anti-Responsibilities)
 - Direct network socket termination or MLLP wire framing (owned by Pylai).
@@ -94,9 +143,25 @@ Themis enforces a 4-gate security model spanning every tier of the platform:
 | **Policy Engine** | `themis-core` | Java 21, Spring/CDI | `ThemisService`, `ThemisDecision`, `ProviderRegistryPolicies` | `[IMPLEMENTED]` |
 | **Security Audit** | `themis-audit` | Java 21, Slf4j | `ThemisAuditService`, `ThemisAuditEvent`, `AuditDecisionEnum` | `[IMPLEMENTED]` |
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Governed permitted combinations and default DENY](../markdown/05-information-systems-architecture/component-register.md#authorisation-criteria)
+- [Additive grants and governed assignments](../markdown/05-information-systems-architecture/component-register.md#criteria-collections-and-authorisationroles)
+
+```text
+---------------------------------------------------------
+```
+
 ### Built-in Policy Portfolio `[IMPLEMENTED]`
 - `ProviderRegistryReadPolicy`: Requires `PRV_READ` or `PRV_SEARCH` authorities.
 - `ProviderRegistrySubmitPolicy`: Requires `PRV_SUBMIT` authority.
 - `ProviderRegistryProcessPolicy`: Requires `PRV_PROCESS` or `PRV_TRANSFORM` authorities.
 - `ProviderRegistryPersistPolicy`: Requires `PRV_WRITE` or `SYS_ADMIN` authorities.
 - `SystemAdminPolicy`: Grants wildcard access to users with `SYS_ADMIN`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```

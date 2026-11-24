@@ -1,0 +1,64 @@
+{
+  "standing": "Filesystem hash inventory of this final naming activity; no Git command or metadata query",
+  "changedMaintainedSources": [
+    {
+      "path": "enterprise-architecture/continuum/MANIFEST.md",
+      "beforeSha256": "3ac5b40884aa779e4667f9382a934d6cbfa81747d341598f42ab7f58f63873fb",
+      "afterSha256": "57f130596aaa0dbf97a28ec0286e0eee1589cf456e4002d56e989fe416136952"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/1f441cdb8fa342cca0afe5b3b65b368d.md",
+      "beforeSha256": "1258f8e93925cf2130fb2c04fdce81444048b281239cc7c0251cccf15619d063",
+      "afterSha256": "cf9db15f733977b144dddfff2be290fac7e12a56ac97ef5e5520eb512d59db89"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/46dd1f4490ae47cc854ce70ff600cb47.md",
+      "beforeSha256": "b2aceeed466971aba0bd90255c471702f0ee58c7b533ccb5d879d521e71070db",
+      "afterSha256": "1671587893af6e09b2889a25244c24cdf4e15b67e3cf7a9dcd97099f743d2a59"
+    },
+    {
+      "path": "enterprise-architecture/continuum/grouping/f4af2b5206264a6fa4c5040324ad272c.md",
+      "beforeSha256": "993e89122c7587fb32c58d0e802169cfb5bf650135f14fe4d896d6f2aa2305a8",
+      "afterSha256": "2dcd8c17bc8a05f7191369d02613aff79536e29d32d51b402fc74f0db6d84c80"
+    },
+    {
+      "path": "enterprise-architecture/governance/canonical-identity-and-naming.md",
+      "beforeSha256": "d423895842b09b55c99ffbf877b405335e769ff058b4344078f6b8fa92faf787",
+      "afterSha256": "97d24544488081847aee11b5e3e858978f2a70418c59664b33409a459e4f284d"
+    },
+    {
+      "path": "enterprise-architecture/governance/continuum-representation.md",
+      "beforeSha256": "846da936cd714f8d4ad2f6d4154da97dab0e1161e3b67350a8b2a519873fea52",
+      "afterSha256": "4c84c1584b8f3fc995d822dab42d48603fffebfdc01e134cb25e5ae600a0338e"
+    },
+    {
+      "path": "enterprise-architecture/tooling/tests/test_statement_specializations.py",
+      "beforeSha256": "e55350b11e0ee3b12f4f9aade7ee4f3378e0e6d2eb31230e3731f2f6cf29d1f0",
+      "afterSha256": "22636ae4ea14d7b5a5f37958c6f3a0ba45b95d2d4842d5535a5879835bd361f0"
+    },
+    {
+      "path": "enterprise-architecture/README.md",
+      "beforeSha256": "84caf57c02332fb82b8b1d388e85ecd678fa8e9d3b252606aae9e67a4e252456",
+      "afterSha256": "139393152343bdf740f2a76f843a6e926c3fc7b1165111769d71b614632e131e"
+    },
+    {
+      "path": "enterprise-architecture/design/archimate/README.md",
+      "beforeSha256": "bbeaece1089688dc3b9d3bd4c0b88028dfc05c1c753f4788e58d53844117dfc7",
+      "afterSha256": "233f721bcb7c502214452dbaf4383d54e74840e10373d3d3c1bca319a70e1eb3"
+    },
+    {
+      "path": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md",
+      "beforeSha256": "802035d999d17477ef1cf4e19b5cf2f38888681c693a747f338c3972bacd3af1",
+      "afterSha256": "35e2ddfc458d770ee416698b4157604b5fe258404a5b0e74e2272c1c0259f092"
+    }
+  ],
+  "newActivityLocations": [
+    "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-final-naming-dispositions.md",
+    "enterprise-architecture/design/evidence/1.1.19/001/before/solutionfacet-final-naming",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/solutionfacet-final-naming",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/ai-agent-reports/20261102T224604Z-solutionfacet-final-naming.md"
+  ],
+  "gitOperationsPerformed": 0,
+  "canonicalResourcesChanged": 3,
+  "previousUncommittedChangesPreserved": true
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "canonicalElements": 6542,
+  "relationships": 9264,
+  "changedCanonicalSources": [
+    "enterprise-architecture/continuum/motivation/stakeholder/5f6d333e94634420b8a8bbf8b9cb6e2a.md",
+    "enterprise-architecture/continuum/motivation/stakeholder/ad2012d59bb542e8bc7d8bd20547e342.md"
+  ],
+  "newCanonicalIds": 0,
+  "newOrRemovedRelationshipIds": 0,
+  "onlyReboundCurrentParticipationRelationship": "id-3555d732029e4afc8c838289340cbf54",
+  "historicalPrivacyRelationshipExact": true,
+  "preservedOriginalPatientBodyPrefix": true,
+  "broaderPatientGroupUnchanged": true,
+  "currentCataloguePerspectives": 16,
+  "viewsWithOnlyPatientElementRefChange": [
+    "id-75a00ddc7c384343a0b95324d5f2d092",
+    "id-cbbd8ecf3d3c4a8cb5c317cf88482765"
+  ],
+  "allOtherViewsByteIdentical": 1302,
+  "visualGeometryVisualIdsConnectionsUnchanged": true,
+  "originalTransportInputsComparatorAndVerifierUnchanged": true,
+  "acceptedPublicationRegisterAndReleaseFilesUnchanged": 240,
+  "scope": "Compares against the actual pre-follow-up working tree; does not relabel old incorporation evidence as current."
+}

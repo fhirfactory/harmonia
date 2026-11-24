@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-10-31T10:45:06.035Z",
+  "recordType": "response_item",
+  "payloadType": "message",
+  "role": "user",
+  "sourceLog": "/home/mhunter/.codex/sessions/2026/10/31/rollout-2026-10-31T20-29-08-01a1914a-9dae-7441-88a1-373ee25ff553.jsonl",
+  "line": 9,
+  "matchesRetainedInstruction": true,
+  "normalizedInstructionSha256": "6053ede25d50587dec9e684451da2c866d9382716a8024515bd5837aff42d924",
+  "eventMeaning": "Operative user instruction entering the current Codex interaction; Task-Issued-At. No earlier human composition time asserted.",
+  "correspondingTask": "enterprise-architecture/design/evidence/1.1.17/001/before/ai-agent-tasks/20261031T104506Z-nfr-derived-elements-add.md",
+  "normalizedComparison": "Exact equality to retained operative instruction after removing the outer Markdown code fence."
+}

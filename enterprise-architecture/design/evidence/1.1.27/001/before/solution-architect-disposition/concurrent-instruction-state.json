@@ -1,0 +1,7 @@
+{
+  "meaning": "Observed concurrent instruction-file changes, excluded from this reconciliation; hashes support subsequent preservation checks, not acceptance",
+  "files": {
+    "AGENTS.md": "d002fd3aaf8ac15c530e925fe84826d771379b79cb0c2850af3b7c639ee0dc1f",
+    "docs/AGENTS.md": "7a6d89173c869a57348c1c23147e5a80e46c4e1c862fc6c528d6a42e21e105ef"
+  }
+}

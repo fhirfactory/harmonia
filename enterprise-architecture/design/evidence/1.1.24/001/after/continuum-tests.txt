@@ -1,0 +1,18 @@
+E
+======================================================================
+ERROR: test_continuum (unittest.loader._FailedTest.test_continuum)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_continuum
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/tests/test_continuum.py", line 21, in <module>
+    from current_source_fixture import copy_retained_inputs
+ModuleNotFoundError: No module named 'current_source_fixture'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

@@ -1,0 +1,48 @@
+{
+  "authority": "docs/markdown/governance/canonical-identity-and-naming.md#information-object-canonical-name-vocabulary",
+  "architecture_release": {
+    "version": "1.0.10",
+    "previous_version": "1.0.9"
+  },
+  "original_source_sha256": "e021b98318c5e56868c82b65a974551544c822428c8ecd98b4d508df1510d942",
+  "completed_source_sha256": "4881e06319c806a3e719d60f60ef86d7414cd6f801b6000a1004def794489cfe",
+  "original_model_sha256": "73a5f4d5356595cfc7dc78926d446923541fe9da36577285f634dcb00ba73094",
+  "canonicalNames_completed": 54,
+  "identities_allocated": 0,
+  "allowed_resource_changes": [
+    "canonicalName",
+    "metadata_stops"
+  ],
+  "standing": "Solution Architect completion of unresolved naming within the same unsigned candidate",
+  "governed_authority_amendments": {
+    "docs/markdown/governance/canonical-identity-and-naming.md": {
+      "original_sha256": "7ac6b67b2c77da79d3938774f272d6111cd73a7ada6bdc6e907919b81e3eaa63",
+      "current_sha256": "ba2de5ad8bd7eb065ae6611a940f912d3345e67ceb7f0fa7514a5f1b0aee7bdb"
+    },
+    "docs/markdown/governance/architecture-release-policy.md": {
+      "original_sha256": "ea36483ff6a4f9bcedd7f3322bb07a2b82bf994a8d8c80154b5ebd3cb1199fa6",
+      "current_sha256": "929491ffaceb702a09e47caf89ba4357b0c5c0a013d2ae0070670fd817af0c75"
+    },
+    "docs/markdown/governance/architecture-modelling-strategy.md": {
+      "original_sha256": "545cefc7219786eae9d9547638df7326108250b0b9c504ad344adea68f8e6151",
+      "current_sha256": "5d7f17691a1947f2d95b43a1a4ab2ab920e2a936fa47b46029ea526fa66b9abf"
+    },
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md": {
+      "original_sha256": "a0b1474b2dfa7574980bca7fecbf666d887668dc6ac178ec03a125d1955f14c5",
+      "current_sha256": "7efcc219b3fad6bd685b1d4b91ff8e30e8f5f65d87b4b7bb762b39ec669670d5"
+    },
+    "docs/markdown/governance/rad-archimate-model-mapping.md": {
+      "original_sha256": "0e7f06a893338c53f7e32ffde7bfd0722f2af7748a4e1916a87873376b3c74ec",
+      "current_sha256": "b4b6bceadeecef12f06623533e9ea3631477b701a1a72b704c026715d3585d00"
+    },
+    "docs/markdown/governance/rad-archimate-mapping-catalogue.md": {
+      "original_sha256": "86bf2d2ee78935f44f2c5959182725b020ff1fe1b76daa28dac2c395aa19a1c0",
+      "current_sha256": "4725939881f6eabfa2eae37f08c99a779d09494c615a165c765f5731ee9257a9"
+    }
+  },
+  "containment_authority": "docs/markdown/governance/architecture-modelling-strategy.md#cross-layer-semantic-containment-and-contextual-naming",
+  "accepted_Business_modelling_debt": {
+    "elements": 323,
+    "standing": "NON-BLOCKING: explicitly accepted by Solution Architect; names preserved, no Composition inferred or migrated; naming follows ancestry once authored containment exists"
+  }
+}

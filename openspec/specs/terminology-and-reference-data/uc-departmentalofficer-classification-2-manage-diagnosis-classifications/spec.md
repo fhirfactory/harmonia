@@ -1,8 +1,19 @@
 # Manage Diagnosis Classifications
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/3b85423808fb4c74aa7e98363b82deef.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 clinical reporting remains consistent
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ clinical reporting remains consistent
 - **Source Scope:** Scope - Clinical Classification Management
 - **Primary Actor:** Reference Data / Terminology Administrator (Clinical Coding)
 - **Supporting Actors:** Provider Directory
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/27ea9a200a2242c6ba600a6f8c0cb4cc.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** Manage diagnosis classification values so that clinical reporting remains consistent.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** None identified.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/3b85423808fb4c74aa7e98363b82deef.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Manage Diagnosis Classifications
 Harmonia SHALL support **Manage Diagnosis Classifications** so that clinical reporting remains consistent.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Manage Diagnosis Classifications - successful outcome
 - **GIVEN** The actor is appropriately identified and authorised to perform the activity; the relevant provider, participant, organisation or reference information is available to the process; and any prerequisite records or relationships exist.

@@ -1,0 +1,44 @@
+{
+  "status": "PASS \u2014 CANONICAL IDENTITY AND GOVERNED NAMING TRANSPORT",
+  "architecture_release": "1.0.7",
+  "reviewer": "Solution Architect",
+  "export_profile": {
+    "archi_version": "5.10.0",
+    "scope": "entire imported model including every View",
+    "intentional_edits": false,
+    "include_organization": true,
+    "export_language": "en",
+    "import_locale": "en",
+    "format": "ArchiMate Open Exchange XML",
+    "retain_raw_export_bytes": true
+  },
+  "published": "docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-1.0.7.xml",
+  "published_sha256": "def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb",
+  "incoming": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-exports/release-1.0.7.xml",
+  "acceptance": [
+    "canonicalId values and owning elements exact",
+    "displayName/friendlyName/canonicalName values and owning elements exact",
+    "harmoniaType exact where present",
+    "all element representation IDs and native types retained",
+    "all relationship representation IDs, types and endpoints retained",
+    "all 14 historical EC alias owner bindings retained"
+  ],
+  "execution_attestation": {
+    "operator_role": "Solution Architect",
+    "source": "User-supplied declaration in the Release 1.0.7 empirical acceptance task",
+    "archi_version_reported": "5.10",
+    "imported_governed_release": "1.0.7",
+    "no_intentional_architectural_edits": true,
+    "complete_model_open_exchange_export": true,
+    "exact_patch_version_and_locale_independently_confirmed": false,
+    "note": "Human execution declaration bound to the input/export hashes; the comparator does not independently authenticate GUI execution. export_profile retains the requested preparation profile."
+  },
+  "known_transformations": "Increment 1 findings remain visible; comparator normalisation unchanged",
+  "incoming_sha256": "38e49fa348d015aba6b19e21b4f96dc00fddf3c4d7671b3e352b4c07748917ea",
+  "comparison_status": "DIFFERENCES",
+  "comparison_report": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-fidelity.json",
+  "acceptance_evidence": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/empirical-acceptance.json",
+  "validation_evidence": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/empirical-validation.json",
+  "whole_document_lossless": false,
+  "increment_2": "NOT STARTED"
+}

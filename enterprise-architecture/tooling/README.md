@@ -1,0 +1,174 @@
+<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
+
+# Current Enterprise Architecture operations
+
+Run current EA operations here. Maintained inputs are the canonical
+`enterprise-architecture/continuum/`, current `governance/`, `design/` and
+`tooling/`, the narrative publication's presentation inputs under
+`documentation/continuum-rad/`, plus the repository-root
+`architecture-release.json` release authority.
+Python 3.10 or later, GNU Make/timeout and the packages in
+[requirements.txt](requirements.txt) are required. The browser smoke check uses Node.
+
+From the repository root:
+
+```bash
+python3 -m pip install -r enterprise-architecture/tooling/requirements.txt
+make -C enterprise-architecture/tooling all
+make -C enterprise-architecture/tooling verify-independent
+make -C enterprise-architecture/tooling browser-test
+```
+
+`continuum` validates and generates the root navigation manifest, Open Exchange, HTML browser,
+Markdown index, LaTeX catalogue source and publication manifest for the root
+release under `documentation/continuum-manifest/published/<version>/`.
+The same validated Exchange bytes are also published at
+`design/archimate/published/<version>/Harmonia-Architecture.xml`, the durable
+starting file for importing that release into Archi. `project --publish` generates
+only that release destination; combining `--publish` with `--output` writes both
+destinations from one projection. `--check` verifies both without writing.
+The source tree's root release authority selects the version; generation does
+not allocate releases or supply architectural acceptance. Differing existing
+published XML is rejected rather than overwriting release history.
+The initial backfill is accepted 1.1.11; historical Manifest publications are
+preserved. See the [workbench procedure](../design/archimate/README.md) for canonical
+authority, architect-modified submissions and evidence distinctions.
+The canonical `continuum/navigation.json` supplies architectural organisation,
+while native-type Markdown paths remain storage locators. The shared `continuum_navigation.py` validates complete unique reading-tree
+coverage and derives hierarchical coordinates for the Manifest and narrative RAD.
+The Archi projector uses independent native catalogues under the
+[governed contract](../governance/continuum-representation.md#archi-catalogue-organisation--rad-1117-iteration-002):
+native category / Catalogue / native type for elements, Relations / Catalogue /
+explicit source for relationships. Source folders show displayName [canonicalId]
+to distinguish equal names. No semantic relationship or reading hierarchy controls
+catalogue placement. Native Name and element entry labels equal displayName;
+generated numbering remains separate reading metadata. Views, their labels,
+geometry, references and folder tree (including empty folders) are preserved from
+the maintained template. Archi-returned View changes require explicit review and
+authorised template incorporation; no-edit returns never replace the template.
+Material navigation/publication changes require Solution Architect structural
+review under the existing Review Praxis before HCRL acceptance.
+The
+generated Manifest `navigation.json` exposes the fully numbered tree for inspection;
+it is not an editable architecture source. Creation specifications require an
+explicit `navigationParent` context; publication performs no classification.
+`continuum-rad` generates the narrative LaTeX publication and complete model/source
+correspondence under `documentation/continuum-rad/published/<version>/`.
+`all` includes both products. `rad-pdf` compiles the narrative PDF with XeLaTeX,
+latexmk, makeindex, DejaVu fonts and TikZ using a fixed `SOURCE_DATE_EPOCH`;
+the release-local `build/` intermediates are ignored. Its PDF remains a derived
+publication, separate from source-byte checks and human acceptance.
+`check` performs read-only staleness and link checks. `test` runs current
+creation, mutation, identity, naming, containment, round-trip, publication, release
+and evidence-layout tests. `verify-independent` repeats generation, checks and
+the current tests in an isolated tree with no `docs/`, `scripts/`, Git metadata,
+historical framework, historical location mapping or historical processors.
+It compares derived bytes for both products, including the durable ArchiMate XML, and confirms canonical source bytes
+are unchanged. The isolated run retains only the new RAD's template and cited
+reader notes as presentation inputs; it reads no superseded LaTeX RAD workspace.
+Override `PYTHON` for a Python environment containing the declared dependencies.
+
+```bash
+python3 enterprise-architecture/tooling/architecture_continuum.py template --type Principle
+python3 enterprise-architecture/tooling/architecture_continuum.py create --spec /tmp/authorised-element.json
+python3 enterprise-architecture/tooling/continuum_workbench.py review --normalised --baseline /path/to/exact.xml --submitted /path/to/submission.xml --output /path/to/architectural-delta.json
+python3 enterprise-architecture/tooling/continuum_workbench.py apply --decision /path/to/reviewed-decision.json
+python3 enterprise-architecture/tooling/exchange_compare.py compare --baseline /path/to/exact.xml --submitted /path/to/returned.xml.gz --report /path/to/raw-comparison.json
+python3 enterprise-architecture/tooling/verify_continuum_transport.py --baseline /path/to/exact.xml --returned /path/to/returned.xml --execution-log /path/to/archi.txt --operator 'attributed operator' --report /path/to/transport.json
+python3 enterprise-architecture/tooling/architecture_review_evidence.py --version VERSION --iteration ITERATION
+```
+
+The [workbench procedure](../design/archimate/README.md) and
+[Round-Trip Praxis](../governance/archimate-round-trip-engineering-praxis.md)
+govern exact inputs, human review and application. The raw comparator observes
+transport fidelity; the workbench observes canonical amendments. A processing
+agent prepares `change-review.md` from that evidence and the
+[current template](../governance/templates/archimate-ingestion-change-review-template.md).
+The tools supply no Solution Architect decision or final acceptance.
+Review and apply use explicit locators; there is no newest-export discovery rule.
+
+## Software-target Task/Report evidence
+
+The [Software Development Praxis](../governance/software-development-praxis.md)
+uses the same HCRL review/register/evidence structure with `software-X.Y.Z` target
+keys. Numeric `X.Y.Z` targets continue to identify Architecture transitions. Use
+an explicitly authorised target and iteration; the following numeric placeholders
+are replaced by that assignment's values and do not establish a first software
+baseline or allocate a release.
+
+```bash
+python3 enterprise-architecture/tooling/architecture_review_evidence.py --version software-X.Y.Z --iteration 001 --record-role ai-agent-tasks --name software-assignment --content /path/to/issued-assignment.md --event ATTRIBUTABLE_INSTRUCTION_ENTRY_ISO8601 --event-source 'attributable system instruction-entry event'
+python3 enterprise-architecture/tooling/architecture_review_evidence.py --version software-X.Y.Z --iteration 001 --record-role ai-agent-reports --name implementation-result --content /path/to/completed-report.md
+python3 enterprise-architecture/tooling/architecture_review_evidence.py --version software-X.Y.Z --iteration 001
+```
+
+The Task references Backlog Item ID, Backlog Item Revision and exact source with
+execution authority/instructions, rather than copying the specification. Reports
+and HCRLs identify originating items and criteria/conformance evidence, including
+actual solution-wide regression/integration scope and results. The emitter retains
+these supplied contents; checking does not adjudicate their semantic adequacy.
+Omit a Task `--event` only when unavailable: it remains UNRESOLVED, never a clock
+substitution. Report emission captures its actual production event. Existing
+event-prefix, before/after, exclusive-write and exit-code semantics are preserved.
+
+Software and Architecture targets sharing numeric version values remain separate.
+Only strict release numbers are accepted: candidate `rc.N`/build labels are not
+HCRL target keys. ArchiMate `--prepare` rejects software targets before reading
+inputs or producing scaffolding. `HCRL Updated` and `HCRL Finalised` remain governed
+agent procedures dispatched by target kind, not shell commands or acceptance
+decisions. Do not run `architecture_release.py bump`, `continuum`, `continuum-rad`
+or other Architecture publication targets to close software-only work.
+
+For an optional catalogue PDF, compile the generated `continuum-catalogue.tex` twice with
+XeLaTeX, a fixed `SOURCE_DATE_EPOCH` and temporary output directory. Inspect it
+before retaining it as a derived publication. Existing historical PDFs are unchanged.
+
+<a id="proposed-bounded-review-preparation-pending-1115-002"></a>
+## Bounded review preparation — accepted in 1.1.15-002
+
+The Solution Architect accepted this opt-in preparation behavior through
+[HCRL 002](../design/review/1.1.15/hcrl-1.1.15-002.pending.md), DR-1–DR-4, and
+issued the post-adjudication application instruction. Use `review --normalised`
+for bounded review preparation; the default review/application and publication
+behavior remain unchanged as reviewed. Acceptance of the machinery supplies no
+decision about a submitted model. Final confirmation of the incorporated
+tooling result remains the next Solution Architect checkpoint.
+
+```bash
+timeout 110 python3 enterprise-architecture/tooling/continuum_workbench.py review --normalised --baseline /path/to/exact.xml --submitted /path/to/submission.xml --output enterprise-architecture/design/evidence/VERSION/ITERATION/after/architectural-delta.json
+python3 enterprise-architecture/tooling/architecture_review_evidence.py --version VERSION --iteration ITERATION --record-role ai-agent-tasks --name model-update --content /path/to/operative-instruction.md --event ATTRIBUTABLE_INSTRUCTION_ENTRY_ISO8601 --event-source 'attributable system instruction-entry event'
+python3 enterprise-architecture/tooling/architecture_review_evidence.py --version VERSION --iteration ITERATION --prepare --delta enterprise-architecture/design/evidence/VERSION/ITERATION/after/architectural-delta.json --task /path/to/iteration/before/ai-agent-tasks/TIMESTAMP-model-update.md
+```
+
+Capture the Task before substantive activity. Omit `--event` only when the Task
+event is unavailable; the tool preserves UNRESOLVED rather than inventing one.
+Preparation verifies hash/size pins, recorded event/prefix correspondence,
+iteration layout and generated relative file links. It refuses to overwrite an
+existing Change Review/HCRL, preserving human dispositions for explicit bounded
+updates. The emitted Report records mechanical facts; it does not replace the
+substantive architectural interpretation Report. A scaffold has
+`TARGETED_INTERPRETATION_REQUIRED` standing and allocates no CR IDs.
+
+Use the delta and bounded Continuum vicinity/context for targeted interpretation,
+complete independent CR decomposition and material HCRL conclusions, then STOP
+for the Solution Architect. No automatic AI/reviewer loop or corpus-wide DRP
+retrieval is implemented. Exit 2 reports unresolved conditions, exit 1 reports
+failure, and exit 0 demonstrates only the stated mechanical checks. A normalised
+review is review-only evidence; the existing element-amendment `apply` adapter
+explicitly rejects that schema. Application remains a separately governed step.
+
+The offline schemas are byte-preserving promotions of Archi's Open Exchange
+schemas. `exchange_xml.py` supplies the secure parser/offline resolver;
+`governed_naming.py`, `relationship_state.py`, `home_relationships.py`,
+`containment.py`, `information_naming.py`, `element_correlation.py` and
+`exchange_signatures.py` retain the required current rules. No adoption,
+RAD capture replay, identity registry, old publication subsystem or historical
+location resolver is imported. `architecture_identity.py` remains historical.
+
+Canonical source provenance and historical evidence keep their original locators.
+[Authority succession](../governance/authority-successors.json) maps the bounded
+promoted governance references to maintained successors when rendering/checking
+current links, without editing canonical source bytes. Other Legacy-RAD links are
+historical source/evidence locators; standing checks count them without requiring
+the historical files. Historical preservation/replay checks remain historical
+procedures in their originating checkout. Current operations do not run them.

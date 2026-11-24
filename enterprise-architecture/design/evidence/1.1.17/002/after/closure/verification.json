@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "closureEntryFilesChecked": 2566,
+  "changedEntryFiles": [],
+  "acceptedPublication": "enterprise-architecture/design/archimate/published/1.1.17/Harmonia-Architecture.xml",
+  "publicationSha256": "b3c1bd71497497eb64e39e754dc69443d8012c762ffa00b9221116f12f3578a1",
+  "retainedTestEvidence": {
+    "toolingTests": 85,
+    "javaArchitectureTests": 90,
+    "isolatedReproductionOperations": 13,
+    "derivedByteIdenticalArtifacts": 20,
+    "source": "../validation-summary.json and ../reproducibility.json",
+    "limits": "Retained successful execution; unchanged machinery and canonical inputs. Closure does not claim a new test-suite run."
+  },
+  "readerFacingStructuralReview": "Awaiting explicit Solution Architect disposition; direct Archi acceptance is retained separately."
+}

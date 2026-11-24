@@ -24,7 +24,9 @@ Harmonia adopts naming conventions rooted in Greek mythology and classical termi
 | **`Pragma`** | **Task Instance / State** | *Pragma* (πρᾶγμα) — That which has been done, an act, deed, concrete affair, or instance of action. | Concrete Task instance and runtime execution state wrapper used across workflow orchestration and pipeline tracking. |
 | **`Pylai`** | **Interface / Gateway Services** | *Pylai* (Πύλαι, pl. of *Pyle* / πύλη) — Greek word for "gates", "gateways", or portals of entry and exit. | The boundary through which Harmonia communicates with external systems (`pylai`), including MLLP inbound gateway (`pylai-mllp-in`), MLLP outbound gateway (`pylai-mllp-out`), FHIR Provider Registry gateway (`pylai-fhir-provider-registry`), shared utilities (`pylai-mllp-base`), and MLLP synthetic test CLI (`pylai-mllp-cli`). |
 | **`Iris`** | **User Interface / Presentation Services** | *Iris* (Ἶρις) — Goddess of the rainbow and divine messenger connecting heaven to humanity; symbol of visual representation and presentation. | Presentation tier (`iris`) comprising the WildFly Backend-For-Frontend gateway (`iris-befe`), Clinical UI (`iris-clinical`), Operations Console (`iris-console`), and Provider Registry Administration UI (`iris-administration`). |
+| **------- Legacy Content - Superseded ------- Start ------** | **Superseded by:** [Agora and Omilia responsibility boundary](docs/markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations).  |  |  |
 | **`Agora`** | **Collaboration & Matrix Gateway** | *Agora* (Ἀγορά) — The ancient Greek central public gathering space for assembly, civic discourse, and collaboration. | Real-time clinical collaboration projection subsystem (`agora`) interfacing with Matrix/Synapse via Application Service (AS) protocol, managing dynamic room and space lifecycles, and enforcing Themis default-deny security. |
+| **------- Legacy Content - Superseded ------- Finish ----** |  |  |  |
 | **`Paradeigma`** | **Synthetic Clinical Simulation Exemplar** | *Paradeigma* (Παράδειγμα) — The Greek term for pattern, archetype, exemplar, or illustrative model. | Comprehensive synthetic clinical simulation and testing subsystem (`paradeigma`) providing EMR, PAS, LMS, and RIS-PAC simulators, scenario generation engines, and automated multi-tier architecture verification. |
 
 ---
@@ -32,6 +34,20 @@ Harmonia adopts naming conventions rooted in Greek mythology and classical termi
 ## Architecture Overview
 
 The system is organized into a cohesive 5-tier architecture across coordinated subsystems:
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Agora and Omilia collaboration boundary](docs/markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+Supersession applies only to the Agora Collaboration Tier subgraph; the other diagram content is unchanged and is not adjudicated here.
+
+```text
+---------------------------------------------------------
+```
 
 ```mermaid
 graph TD
@@ -103,6 +119,11 @@ graph TD
   end
 ```
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ### Supported FHIR R5 Resources
 The platform delivers full CRUD, search, and validation lifecycle support for core FHIR R5 resources:
 1. `Person`
@@ -167,11 +188,30 @@ The repository enforces strict separation of concerns across 9 core subprojects:
   - **`iris-console`**: Single Page Application built with Vue 3, Vite, TypeScript, and Pinia dedicated to system topology monitoring, ActiveMQ Artemis messaging queues, distributed cache grid, and TaskSequence workflow management.
   - **`iris-administration`**: Single Page Application built with Vue 3, Vite, TypeScript, and Pinia for Provider Registry administration and practitioner governance.
 
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Agora and Omilia logical responsibility](docs/markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+Legacy module/package details remain implementation information; this wrapper supersedes their use as the complete collaboration architecture.
+
+```text
+---------------------------------------------------------
+```
+
 - **`Agora` (`agora`)**: Collaboration & Matrix Gateway Subsystem
   - **`agora-api`**: Contracts, interfaces, and DTOs for Matrix/Synapse collaboration projections, event encapsulation, and room/space lifecycles.
   - **`agora-matrix`**: Encapsulated Matrix protocol DTOs (Client-Server API, Synapse Admin API, Application Service transactions) preventing Matrix protocol structures from leaking into the wider platform.
   - **`agora-core`**: Core collaboration services, projection orchestration, room/space state machines, and Themis default-deny policy governance.
   - **`agora-service`**: Standalone collaboration gateway service handling Matrix Application Service (AS) transaction ingestion and Petasos event bridging.
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 
 - **`Paradeigma` (`paradeigma`)**: Synthetic Clinical Simulation Exemplar
   - **`paradeigma-common`**: Shared clinical simulation data models, generators, synthetic HL7 v2 message builders, and scenario helpers.
@@ -255,16 +295,16 @@ docker compose ps
 ```
 
 All services across the containers should show `Up` (and `healthy` where applicable):
-- `hie-postgres-1`, `hie-postgres-2` (PostgreSQL Clinical DB nodes)
-- `hie-postgres-ops-1`, `hie-postgres-ops-2` (PostgreSQL Operations DB nodes)
-- `hie-hapi-fhir-1`, `hie-hapi-fhir-2` (Mnemosyne Clinical JPA servers)
-- `hie-operations-1`, `hie-operations-2` (Mnemosyne Operations JPA servers)
-- `hie-infinispan-node1`, `hie-infinispan-node2` (Mneme In-Memory Cache Grid nodes)
-- `hie-befe` (Iris WildFly Backend-For-Frontend)
-- `hie-iris-clinical`, `hie-iris-console` (Iris Vue 3 SPAs)
-- `hie-mllp-gateway` (Pylai Inbound MLLP Gateway)
-- `hie-mllp-outbound-his`, `hie-mllp-outbound-lis` (Pylai Outbound MLLP Gateways)
-- `hie-task-processor` (Ponos WorkEngine & Petasos Artemis Broker)
+- `harmonia-postgres-1`, `harmonia-postgres-2` (PostgreSQL Clinical DB nodes)
+- `harmonia-postgres-ops-1`, `harmonia-postgres-ops-2` (PostgreSQL Operations DB nodes)
+- `harmonia-hapi-fhir-1`, `harmonia-hapi-fhir-2` (Mnemosyne Clinical JPA servers)
+- `harmonia-operations-1`, `harmonia-operations-2` (Mnemosyne Operations JPA servers)
+- `harmonia-infinispan-node1`, `harmonia-infinispan-node2` (Mneme In-Memory Cache Grid nodes)
+- `harmonia-befe` (Iris WildFly Backend-For-Frontend)
+- `harmonia-iris-clinical`, `harmonia-iris-console` (Iris Vue 3 SPAs)
+- `harmonia-mllp-gateway` (Pylai Inbound MLLP Gateway)
+- `harmonia-mllp-outbound-his`, `harmonia-mllp-outbound-lis` (Pylai Outbound MLLP Gateways)
+- `harmonia-task-processor` (Ponos WorkEngine & Petasos Artemis Broker)
 
 ### 3. Service Endpoints and Port Mappings
 
@@ -424,6 +464,15 @@ mvn clean package
 
 ## Documentation & Architectural Specifications
 
+Current architecture is held in the canonical [Architecture Continuum](enterprise-architecture/continuum/MANIFEST.md),
+accepted as the baseline in 1.1.7 with individual standing preserved. Its
+[Continuum RAD](enterprise-architecture/documentation/continuum-rad/README.md)
+provides the narrative architectural publication; the
+[Continuum Manifest](enterprise-architecture/documentation/continuum-manifest/README.md)
+provides the structural catalogue and browser. These 1.1.8 publications derive
+from the Continuum. Legacy technical guides below retain their qualified roles
+under the [repository governance rules](AGENTS.md#12-rads-and-legacy-documentation-governance).
+
 Comprehensive technical specifications, message lifecycles, and security guides are organized across the following documentation modules:
 
 - **[System Architecture Overview](docs/architecture/overview.md)**: Comprehensive architectural blueprint, multi-tier layout, and cross-subsystem contracts.
@@ -448,3 +497,7 @@ Copyright (C) 2026 Mark Hunter.
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [GNU General Public License](LICENSE) for details.
+
+## Implementation Philosophy, Defensive Programming and Educational Documentation
+Please refer to [Harmonia Implementation Guide]
+(docs/implementation/Harmonia-Implementation-Guide-Philosophy.md)

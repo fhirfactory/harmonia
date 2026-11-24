@@ -1,0 +1,2542 @@
+[
+  {
+    "number": "III.4.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78"
+    ],
+    "canonicalReference": {
+      "canonicalId": "28df27d55c514a37995145ab46945f78",
+      "number": "II.1.3.1",
+      "title": "[CT1] Care Administration Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.1.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Care Plan Administration"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "cf06eec5699f406fa30a00d2f76e3098"
+    ],
+    "canonicalReference": {
+      "canonicalId": "cf06eec5699f406fa30a00d2f76e3098",
+      "number": "II.1.3.1.5",
+      "title": "[CT2] Care Plan Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.5",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.1.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Care Plan Administration",
+      "[CT3] Community Care Coordination"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "cf06eec5699f406fa30a00d2f76e3098",
+      "8c8c6266d9ed43e09dbe44fcdd669132"
+    ],
+    "canonicalReference": {
+      "canonicalId": "8c8c6266d9ed43e09dbe44fcdd669132",
+      "number": "II.1.3.1.5.2",
+      "title": "[CT3] Community Care Coordination",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.5.2",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.1.2",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Care Plan Administration",
+      "[CT3] Outreach Care Continuity"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "cf06eec5699f406fa30a00d2f76e3098",
+      "8526d971b07f40de84ef05b0d192089c"
+    ],
+    "canonicalReference": {
+      "canonicalId": "8526d971b07f40de84ef05b0d192089c",
+      "number": "II.1.3.1.5.3",
+      "title": "[CT3] Outreach Care Continuity",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.5.3",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.2",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Client-Centred Administration"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "8752b7a937754b2faa296300c6a48911"
+    ],
+    "canonicalReference": {
+      "canonicalId": "8752b7a937754b2faa296300c6a48911",
+      "number": "II.1.3.1.6",
+      "title": "[CT2] Client-Centred Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.6",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.2.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Client-Centred Administration",
+      "[CT3] Screening and Immunisation Enablement"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "8752b7a937754b2faa296300c6a48911",
+      "3e9016eaebae4ed0b67a5cacba2652f5"
+    ],
+    "canonicalReference": {
+      "canonicalId": "3e9016eaebae4ed0b67a5cacba2652f5",
+      "number": "II.1.3.1.6.2",
+      "title": "[CT3] Screening and Immunisation Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.6.2",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.3",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Clinical Communication Administration"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "b38f2c2811724734b5887b6dbaaabbfc"
+    ],
+    "canonicalReference": {
+      "canonicalId": "b38f2c2811724734b5887b6dbaaabbfc",
+      "number": "II.1.3.1.8",
+      "title": "[CT2] Clinical Communication Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.8",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.4",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Clinical Record Administration"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "ce9e7e7b22054cefb707a650d5be7219"
+    ],
+    "canonicalReference": {
+      "canonicalId": "ce9e7e7b22054cefb707a650d5be7219",
+      "number": "II.1.3.1.9",
+      "title": "[CT2] Clinical Record Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.9",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.5",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Diagnostic Administration"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "3cc720ba2e8b4d7a94bb349391d61895"
+    ],
+    "canonicalReference": {
+      "canonicalId": "3cc720ba2e8b4d7a94bb349391d61895",
+      "number": "II.1.3.1.10",
+      "title": "[CT2] Diagnostic Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.10",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.5.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Diagnostic Administration",
+      "[CT3] Diagnostic Service Integration"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "3cc720ba2e8b4d7a94bb349391d61895",
+      "9ded2f3a28d24017bb921a0cdcf65a2b"
+    ],
+    "canonicalReference": {
+      "canonicalId": "9ded2f3a28d24017bb921a0cdcf65a2b",
+      "number": "II.1.3.1.10.1",
+      "title": "[CT3] Diagnostic Service Integration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.10.1",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.6",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Episode & Encounter Administration"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "61d7067aee0540259b3daca4287d66d2"
+    ],
+    "canonicalReference": {
+      "canonicalId": "61d7067aee0540259b3daca4287d66d2",
+      "number": "II.1.3.1.11",
+      "title": "[CT2] Episode & Encounter Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.11",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.6.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Episode & Encounter Administration",
+      "[CT3] Acute Care Monitoring & Event Coordination"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "61d7067aee0540259b3daca4287d66d2",
+      "ee17b26b8c874cc3af50d07a787ce488"
+    ],
+    "canonicalReference": {
+      "canonicalId": "ee17b26b8c874cc3af50d07a787ce488",
+      "number": "II.1.3.1.11.1",
+      "title": "[CT3] Acute Care Monitoring & Event Coordination",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.11.1",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.7",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Medication Administration"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "c907e2a95629435b9951941ad4e2ebe9"
+    ],
+    "canonicalReference": {
+      "canonicalId": "c907e2a95629435b9951941ad4e2ebe9",
+      "number": "II.1.3.1.13",
+      "title": "[CT2] Medication Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.13",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.7.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Medication Administration",
+      "[CT3] Medication Therapy Provision and Monitoring"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "c907e2a95629435b9951941ad4e2ebe9",
+      "d1821b4f6d5746f9a697dfe3b792a186"
+    ],
+    "canonicalReference": {
+      "canonicalId": "d1821b4f6d5746f9a697dfe3b792a186",
+      "number": "II.1.3.1.13.2",
+      "title": "[CT3] Medication Therapy Provision and Monitoring",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.13.2",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.8",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Order Administration"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "c3c5abd7987f4433a46cbfed8167914c"
+    ],
+    "canonicalReference": {
+      "canonicalId": "c3c5abd7987f4433a46cbfed8167914c",
+      "number": "II.1.3.1.14",
+      "title": "[CT2] Order Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.14",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.9",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Procedure Administration"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "649dd7cc26094e539386a050086dfb91"
+    ],
+    "canonicalReference": {
+      "canonicalId": "649dd7cc26094e539386a050086dfb91",
+      "number": "II.1.3.1.15",
+      "title": "[CT2] Procedure Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.15",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.10",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Referral Administration"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "ae0de25600ee416aa24d2a167b64f230"
+    ],
+    "canonicalReference": {
+      "canonicalId": "ae0de25600ee416aa24d2a167b64f230",
+      "number": "II.1.3.1.16",
+      "title": "[CT2] Referral Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.16",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.1.11",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Care Administration Enablement",
+      "[CT2] Scheduling Administration"
+    ],
+    "canonicalIdPath": [
+      "28df27d55c514a37995145ab46945f78",
+      "35fb3744c900470f9895056246a13fb1"
+    ],
+    "canonicalReference": {
+      "canonicalId": "35fb3744c900470f9895056246a13fb1",
+      "number": "II.1.3.1.17",
+      "title": "[CT2] Scheduling Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.1.17",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.2",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1"
+    ],
+    "canonicalReference": {
+      "canonicalId": "b5a92874f8ac4509a30af5253590edc1",
+      "number": "II.1.3.4",
+      "title": "[CT1] Entity Information Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.2.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Client Administration"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "f0885472cced4bccbcce1568bf0360dc"
+    ],
+    "canonicalReference": {
+      "canonicalId": "f0885472cced4bccbcce1568bf0360dc",
+      "number": "II.1.3.4.1",
+      "title": "[CT2] Client Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.1",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.2.1.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Client Administration",
+      "[CT3] Client Privacy Guardrail Management"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "f0885472cced4bccbcce1568bf0360dc",
+      "7577a6e1815243648dd5356c21cca151"
+    ],
+    "canonicalReference": {
+      "canonicalId": "7577a6e1815243648dd5356c21cca151",
+      "number": "II.1.3.4.1.1",
+      "title": "[CT3] Client Privacy Guardrail Management",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.1.1",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.2.1.2",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Client Administration",
+      "[CT3] Client Relationship Administration"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "f0885472cced4bccbcce1568bf0360dc",
+      "d682c11d3eb04770b1f20be478fd475e"
+    ],
+    "canonicalReference": {
+      "canonicalId": "d682c11d3eb04770b1f20be478fd475e",
+      "number": "II.1.3.4.1.2",
+      "title": "[CT3] Client Relationship Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.1.2",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.2.1.3",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Client Administration",
+      "[CT3] Healthcare Subject Profile Administration"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "f0885472cced4bccbcce1568bf0360dc",
+      "df214b5499694b768eb4a7a175a9d471"
+    ],
+    "canonicalReference": {
+      "canonicalId": "df214b5499694b768eb4a7a175a9d471",
+      "number": "II.1.3.4.1.3",
+      "title": "[CT3] Healthcare Subject Profile Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.1.3",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.2.1.4",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Client Administration",
+      "[CT3] Person Identity Administration"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "f0885472cced4bccbcce1568bf0360dc",
+      "6c3de7750ef1436cad6a9533731782b6"
+    ],
+    "canonicalReference": {
+      "canonicalId": "6c3de7750ef1436cad6a9533731782b6",
+      "number": "II.1.3.4.1.4",
+      "title": "[CT3] Person Identity Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.1.4",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.2.1.4.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Client Administration",
+      "[CT3] Person Identity Administration",
+      "[Feature] Identifier Capture"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "f0885472cced4bccbcce1568bf0360dc",
+      "6c3de7750ef1436cad6a9533731782b6",
+      "3cae3c4810974c5f8ee5a4c942f38b07"
+    ],
+    "canonicalReference": {
+      "canonicalId": "3cae3c4810974c5f8ee5a4c942f38b07",
+      "number": "II.1.3.4.1.4.3",
+      "title": "[Feature] Identifier Capture",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.1.4.3",
+      "standing": {
+        "semantic": "Accepted bounded reconciliation",
+        "currentness": "current"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.2.1.4.2",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Client Administration",
+      "[CT3] Person Identity Administration",
+      "[Feature] Identity Source & Correction Lineage"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "f0885472cced4bccbcce1568bf0360dc",
+      "6c3de7750ef1436cad6a9533731782b6",
+      "d72134e75001449a9e7ffae53f61458f"
+    ],
+    "canonicalReference": {
+      "canonicalId": "d72134e75001449a9e7ffae53f61458f",
+      "number": "II.1.3.4.1.4.6",
+      "title": "[Feature] Identity Source & Correction Lineage",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.1.4.6",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.2.2",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Clinical Device Administration"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "31bcd6fda0d14cc8b992cdca39a3cbed"
+    ],
+    "canonicalReference": {
+      "canonicalId": "31bcd6fda0d14cc8b992cdca39a3cbed",
+      "number": "II.1.3.4.2",
+      "title": "[CT2] Clinical Device Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.2",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.2.2.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Clinical Device Administration",
+      "[CT3] Device Utilisation Administration"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "31bcd6fda0d14cc8b992cdca39a3cbed",
+      "1a3732b5911c45b3aece38b2db2d0f15"
+    ],
+    "canonicalReference": {
+      "canonicalId": "1a3732b5911c45b3aece38b2db2d0f15",
+      "number": "II.1.3.4.2.7",
+      "title": "[CT3] Device Utilisation Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.2.7",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.2.3",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Health Service Administration"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "ba68a52913a0499d8377553bddfa74a4"
+    ],
+    "canonicalReference": {
+      "canonicalId": "ba68a52913a0499d8377553bddfa74a4",
+      "number": "II.1.3.4.4",
+      "title": "[CT2] Health Service Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.4",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.2.4",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Location Administration"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "c410005667444f99a221483bf577fad2"
+    ],
+    "canonicalReference": {
+      "canonicalId": "c410005667444f99a221483bf577fad2",
+      "number": "II.1.3.4.5",
+      "title": "[CT2] Location Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.5",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.2.5",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Organisation Administration"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "14fbdc5ce3dd4c2092c5397dab3ed743"
+    ],
+    "canonicalReference": {
+      "canonicalId": "14fbdc5ce3dd4c2092c5397dab3ed743",
+      "number": "II.1.3.4.6",
+      "title": "[CT2] Organisation Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.6",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.2.6",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Entity Information Enablement",
+      "[CT2] Provider Administration"
+    ],
+    "canonicalIdPath": [
+      "b5a92874f8ac4509a30af5253590edc1",
+      "d6312f85968a4209bafff5ed009297a6"
+    ],
+    "canonicalReference": {
+      "canonicalId": "d6312f85968a4209bafff5ed009297a6",
+      "number": "II.1.3.4.7",
+      "title": "[CT2] Provider Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.4.7",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.3",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Informatics Management"
+    ],
+    "canonicalIdPath": [
+      "a790b5f2c5a1497fa6ec09d7824da32e"
+    ],
+    "canonicalReference": {
+      "canonicalId": "a790b5f2c5a1497fa6ec09d7824da32e",
+      "number": "II.1.3.5",
+      "title": "[CT1] Health Informatics Management",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.5",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.3.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Informatics Management",
+      "[CT2] Research Information Curation"
+    ],
+    "canonicalIdPath": [
+      "a790b5f2c5a1497fa6ec09d7824da32e",
+      "4f5b8cec90324c2989cdc30e80bc8cb9"
+    ],
+    "canonicalReference": {
+      "canonicalId": "4f5b8cec90324c2989cdc30e80bc8cb9",
+      "number": "II.1.3.5.2",
+      "title": "[CT2] Research Information Curation",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.5.2",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2"
+    ],
+    "canonicalReference": {
+      "canonicalId": "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "number": "II.1.3.6",
+      "title": "[CT1] Health Service Operations Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.4.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Bed & Care-Place Management"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "f117ccec0bfa4f738e6ddb646b3534a2"
+    ],
+    "canonicalReference": {
+      "canonicalId": "f117ccec0bfa4f738e6ddb646b3534a2",
+      "number": "II.1.3.6.1",
+      "title": "[CT2] Bed & Care-Place Management",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.1",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.2",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Care Resource & Capacity Coordination"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "96f71cb8fa6844d7aa7e9f16759a3a62"
+    ],
+    "canonicalReference": {
+      "canonicalId": "96f71cb8fa6844d7aa7e9f16759a3a62",
+      "number": "II.1.3.6.3",
+      "title": "[CT2] Care Resource & Capacity Coordination",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.3",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "superseded",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.4.2.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Care Resource & Capacity Coordination",
+      "[CT3] Service Offering Readiness Coordination"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "96f71cb8fa6844d7aa7e9f16759a3a62",
+      "0caecaba5d3e4781b8671b12c13ee283"
+    ],
+    "canonicalReference": {
+      "canonicalId": "0caecaba5d3e4781b8671b12c13ee283",
+      "number": "II.1.3.6.3.2",
+      "title": "[CT3] Service Offering Readiness Coordination",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.3.2",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "pending_adjudication",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.3",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Clinic & Practice Operations"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "3dffe63e03124efab255204ee4e9a5d9"
+    ],
+    "canonicalReference": {
+      "canonicalId": "3dffe63e03124efab255204ee4e9a5d9",
+      "number": "II.1.3.6.5",
+      "title": "[CT2] Clinic & Practice Operations",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.5",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.4",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Clinical Logistics Coordination"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "0c27be11b4a44cb19e992309b8146a17"
+    ],
+    "canonicalReference": {
+      "canonicalId": "0c27be11b4a44cb19e992309b8146a17",
+      "number": "II.1.3.6.7",
+      "title": "[CT2] Clinical Logistics Coordination",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.7",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.5",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Clinical Qualification Administration"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "0511a705d74a4f48a0ce92590ae764fa"
+    ],
+    "canonicalReference": {
+      "canonicalId": "0511a705d74a4f48a0ce92590ae764fa",
+      "number": "II.1.3.6.8",
+      "title": "[CT2] Clinical Qualification Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.8",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.6",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Discharge Management"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "ec5e8d6732764aa489c2dd7630fc8fef"
+    ],
+    "canonicalReference": {
+      "canonicalId": "ec5e8d6732764aa489c2dd7630fc8fef",
+      "number": "II.1.3.6.14",
+      "title": "[CT2] Discharge Management",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.14",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.7",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Emergency Department Operations"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "24a4b5815faa4d369bc756a6e97d3e9e"
+    ],
+    "canonicalReference": {
+      "canonicalId": "24a4b5815faa4d369bc756a6e97d3e9e",
+      "number": "II.1.3.6.15",
+      "title": "[CT2] Emergency Department Operations",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.15",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.7.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Emergency Department Operations",
+      "[CT3] Emergency Care Progression"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "24a4b5815faa4d369bc756a6e97d3e9e",
+      "7125e459a48946d0ba075b5ecc3571b4"
+    ],
+    "canonicalReference": {
+      "canonicalId": "7125e459a48946d0ba075b5ecc3571b4",
+      "number": "II.1.3.6.15.1",
+      "title": "[CT3] Emergency Care Progression",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.15.1",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.8",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Mobile Staff Management"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "79a4a48fddf74c69acf7e16404d06ea5"
+    ],
+    "canonicalReference": {
+      "canonicalId": "79a4a48fddf74c69acf7e16404d06ea5",
+      "number": "II.1.3.6.16",
+      "title": "[CT2] Mobile Staff Management",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.16",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.9",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] On-Call Management"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "b16cef8f2bfd4b92948ec75cbcfa7b9a"
+    ],
+    "canonicalReference": {
+      "canonicalId": "b16cef8f2bfd4b92948ec75cbcfa7b9a",
+      "number": "II.1.3.6.17",
+      "title": "[CT2] On-Call Management",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.17",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.10",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Outpatient Operations"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "21399d52b9624ddfbeb786f1d72e40c3"
+    ],
+    "canonicalReference": {
+      "canonicalId": "21399d52b9624ddfbeb786f1d72e40c3",
+      "number": "II.1.3.6.19",
+      "title": "[CT2] Outpatient Operations",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.19",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.11",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Patient Transport"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "6041d7c0cc5d4519aaea584bb4e6d365"
+    ],
+    "canonicalReference": {
+      "canonicalId": "6041d7c0cc5d4519aaea584bb4e6d365",
+      "number": "II.1.3.6.20",
+      "title": "[CT2] Patient Transport",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.20",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.12",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Service Capacity Management"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "d86105bf9c86445394088f65c895d37f"
+    ],
+    "canonicalReference": {
+      "canonicalId": "d86105bf9c86445394088f65c895d37f",
+      "number": "II.1.3.6.21",
+      "title": "[CT2] Service Capacity Management",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.21",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.13",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Theatre Operations"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "4bf7a8260e1444fdac44e97c3557b533"
+    ],
+    "canonicalReference": {
+      "canonicalId": "4bf7a8260e1444fdac44e97c3557b533",
+      "number": "II.1.3.6.23",
+      "title": "[CT2] Theatre Operations",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.23",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.14",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Ward Operations"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "f996ecca728f4942a88b034aca818a99"
+    ],
+    "canonicalReference": {
+      "canonicalId": "f996ecca728f4942a88b034aca818a99",
+      "number": "II.1.3.6.24",
+      "title": "[CT2] Ward Operations",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.24",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.14.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Ward Operations",
+      "[CT3] Multidisciplinary Inpatient Care Coordination"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "f996ecca728f4942a88b034aca818a99",
+      "c798e38e12e5428dbb8b3cabc977d430"
+    ],
+    "canonicalReference": {
+      "canonicalId": "c798e38e12e5428dbb8b3cabc977d430",
+      "number": "II.1.3.6.24.1",
+      "title": "[CT3] Multidisciplinary Inpatient Care Coordination",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.24.1",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.15",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Work Allocation & Dispatch"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "152a5252952c405994e9b171234efcb0"
+    ],
+    "canonicalReference": {
+      "canonicalId": "152a5252952c405994e9b171234efcb0",
+      "number": "II.1.3.6.25",
+      "title": "[CT2] Work Allocation & Dispatch",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.25",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.4.16",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Workforce Qualification & Development Enablement"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "d24a1f4c4f674c45a95c317998ff4186"
+    ],
+    "canonicalReference": {
+      "canonicalId": "d24a1f4c4f674c45a95c317998ff4186",
+      "number": "II.1.3.6.26",
+      "title": "[CT2] Workforce Qualification & Development Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.26",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "superseded",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.4.16.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Health Service Operations Enablement",
+      "[CT2] Workforce Qualification & Development Enablement",
+      "[CT3] Credential Management"
+    ],
+    "canonicalIdPath": [
+      "b13ee2c5a4ef4fd6be8a44795696dfc2",
+      "d24a1f4c4f674c45a95c317998ff4186",
+      "3a7a4d2d0ce8446b8a6293284fb16b83"
+    ],
+    "canonicalReference": {
+      "canonicalId": "3a7a4d2d0ce8446b8a6293284fb16b83",
+      "number": "II.1.3.6.26.1",
+      "title": "[CT3] Credential Management",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.6.26.1",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "pending_adjudication",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.5",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Human Collaboration & Work Enablement"
+    ],
+    "canonicalIdPath": [
+      "c9347f73b21242c5b8cce41252b74da0"
+    ],
+    "canonicalReference": {
+      "canonicalId": "c9347f73b21242c5b8cce41252b74da0",
+      "number": "II.1.3.7",
+      "title": "[CT1] Human Collaboration & Work Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.7",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "superseded",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.5.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Human Collaboration & Work Enablement",
+      "[CT2] Operational Activity & Temporal Enablement"
+    ],
+    "canonicalIdPath": [
+      "c9347f73b21242c5b8cce41252b74da0",
+      "ca96b2b2ff434854995711e403e95f6f"
+    ],
+    "canonicalReference": {
+      "canonicalId": "ca96b2b2ff434854995711e403e95f6f",
+      "number": "II.1.3.7.2",
+      "title": "[CT2] Operational Activity & Temporal Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.7.2",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "superseded",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.5.1.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Human Collaboration & Work Enablement",
+      "[CT2] Operational Activity & Temporal Enablement",
+      "[CT3] Entity-Specific Operational Coordination"
+    ],
+    "canonicalIdPath": [
+      "c9347f73b21242c5b8cce41252b74da0",
+      "ca96b2b2ff434854995711e403e95f6f",
+      "9f0c1429b64f4f88982fbbda6eaec233"
+    ],
+    "canonicalReference": {
+      "canonicalId": "9f0c1429b64f4f88982fbbda6eaec233",
+      "number": "II.1.3.7.2.1",
+      "title": "[CT3] Entity-Specific Operational Coordination",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.7.2.1",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "pending_adjudication",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.5.1.2",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Human Collaboration & Work Enablement",
+      "[CT2] Operational Activity & Temporal Enablement",
+      "[CT3] Governed Operational Activity Design"
+    ],
+    "canonicalIdPath": [
+      "c9347f73b21242c5b8cce41252b74da0",
+      "ca96b2b2ff434854995711e403e95f6f",
+      "3a96040821c14fe38830411dab4f8453"
+    ],
+    "canonicalReference": {
+      "canonicalId": "3a96040821c14fe38830411dab4f8453",
+      "number": "II.1.3.7.2.2",
+      "title": "[CT3] Governed Operational Activity Design",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.7.2.2",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "pending_adjudication",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.5.1.3",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Human Collaboration & Work Enablement",
+      "[CT2] Operational Activity & Temporal Enablement",
+      "[CT3] Workflow & Activity Coordination"
+    ],
+    "canonicalIdPath": [
+      "c9347f73b21242c5b8cce41252b74da0",
+      "ca96b2b2ff434854995711e403e95f6f",
+      "94c683c7588f475e973b58cb226345db"
+    ],
+    "canonicalReference": {
+      "canonicalId": "94c683c7588f475e973b58cb226345db",
+      "number": "II.1.3.7.2.3",
+      "title": "[CT3] Workflow & Activity Coordination",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.7.2.3",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "pending_adjudication",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.6",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Independent Assurance Enablement"
+    ],
+    "canonicalIdPath": [
+      "616682b612d244429e656b040e002d56"
+    ],
+    "canonicalReference": {
+      "canonicalId": "616682b612d244429e656b040e002d56",
+      "number": "II.1.3.8",
+      "title": "[CT1] Independent Assurance Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.8",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.6.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Independent Assurance Enablement",
+      "[CT2] Assurance Specification"
+    ],
+    "canonicalIdPath": [
+      "616682b612d244429e656b040e002d56",
+      "b81775d89d774cf8ba61731d13c67a54"
+    ],
+    "canonicalReference": {
+      "canonicalId": "b81775d89d774cf8ba61731d13c67a54",
+      "number": "II.1.3.8.2",
+      "title": "[CT2] Assurance Specification",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.8.2",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.6.1.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Independent Assurance Enablement",
+      "[CT2] Assurance Specification",
+      "[CT3] Assurance Criteria Administration"
+    ],
+    "canonicalIdPath": [
+      "616682b612d244429e656b040e002d56",
+      "b81775d89d774cf8ba61731d13c67a54",
+      "1bfd71f24321428c8871b587d413f47e"
+    ],
+    "canonicalReference": {
+      "canonicalId": "1bfd71f24321428c8871b587d413f47e",
+      "number": "II.1.3.8.2.1",
+      "title": "[CT3] Assurance Criteria Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.8.2.1",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.6.1.2",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Independent Assurance Enablement",
+      "[CT2] Assurance Specification",
+      "[CT3] Assurance Design"
+    ],
+    "canonicalIdPath": [
+      "616682b612d244429e656b040e002d56",
+      "b81775d89d774cf8ba61731d13c67a54",
+      "71c8a612b88f4ecba049e94d506bd0c2"
+    ],
+    "canonicalReference": {
+      "canonicalId": "71c8a612b88f4ecba049e94d506bd0c2",
+      "number": "II.1.3.8.2.2",
+      "title": "[CT3] Assurance Design",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.8.2.2",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.6.2",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Independent Assurance Enablement",
+      "[CT2] Independent Assurance Evaluation Enablement"
+    ],
+    "canonicalIdPath": [
+      "616682b612d244429e656b040e002d56",
+      "7fa5112efb724b90a17a03c7c19c516a"
+    ],
+    "canonicalReference": {
+      "canonicalId": "7fa5112efb724b90a17a03c7c19c516a",
+      "number": "II.1.3.8.3",
+      "title": "[CT2] Independent Assurance Evaluation Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.8.3",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "pending_adjudication",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.6.2.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Independent Assurance Enablement",
+      "[CT2] Independent Assurance Evaluation Enablement",
+      "[CT3] Governed Assurance"
+    ],
+    "canonicalIdPath": [
+      "616682b612d244429e656b040e002d56",
+      "7fa5112efb724b90a17a03c7c19c516a",
+      "da1a983d4dcf4d5bb772b8f69bc08426"
+    ],
+    "canonicalReference": {
+      "canonicalId": "da1a983d4dcf4d5bb772b8f69bc08426",
+      "number": "II.1.3.8.3.1",
+      "title": "[CT3] Governed Assurance",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.8.3.1",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "pending_adjudication",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674"
+    ],
+    "canonicalReference": {
+      "canonicalId": "0062fcacae1740988b6be2bda2aa1674",
+      "number": "II.1.3.9",
+      "title": "[CT1] Shared Information & Coordination Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.7.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Calendar Management"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "7669036f7e6749219412fc64df5f7064"
+    ],
+    "canonicalReference": {
+      "canonicalId": "7669036f7e6749219412fc64df5f7064",
+      "number": "II.1.3.9.1",
+      "title": "[CT2] Calendar Management",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.1",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.2",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Clinical Collaboration"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "e6429225463a44d39f82e490e254e5d4"
+    ],
+    "canonicalReference": {
+      "canonicalId": "e6429225463a44d39f82e490e254e5d4",
+      "number": "II.1.3.9.2",
+      "title": "[CT2] Clinical Collaboration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.2",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.3",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Clinical Information Stewardship Enablement"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "3811c758ff2140c39a801bf89f75098a"
+    ],
+    "canonicalReference": {
+      "canonicalId": "3811c758ff2140c39a801bf89f75098a",
+      "number": "II.1.3.9.3",
+      "title": "[CT2] Clinical Information Stewardship Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.3",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "superseded",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.7.3.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Clinical Information Stewardship Enablement",
+      "[CT3] Information Authority Representation"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "3811c758ff2140c39a801bf89f75098a",
+      "8c850faafb334f97a81a0b4cd8fdb65f"
+    ],
+    "canonicalReference": {
+      "canonicalId": "8c850faafb334f97a81a0b4cd8fdb65f",
+      "number": "II.1.3.9.3.1",
+      "title": "[CT3] Information Authority Representation",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.3.1",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "pending_adjudication",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.4",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Clinical Knowledge Services"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "bbd2bd21859f40e39963bdbe7a851686"
+    ],
+    "canonicalReference": {
+      "canonicalId": "bbd2bd21859f40e39963bdbe7a851686",
+      "number": "II.1.3.9.4",
+      "title": "[CT2] Clinical Knowledge Services",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.4",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.4.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Clinical Knowledge Services",
+      "[CT3] Governed Reference Dataset Administration"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "bbd2bd21859f40e39963bdbe7a851686",
+      "682b8684ad9e49d5a5c348a148081607"
+    ],
+    "canonicalReference": {
+      "canonicalId": "682b8684ad9e49d5a5c348a148081607",
+      "number": "II.1.3.9.4.3",
+      "title": "[CT3] Governed Reference Dataset Administration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.4.3",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.5",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] General Collaboration"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "3bb740e6db284112b054905c0c6c80be"
+    ],
+    "canonicalReference": {
+      "canonicalId": "3bb740e6db284112b054905c0c6c80be",
+      "number": "II.1.3.9.5",
+      "title": "[CT2] General Collaboration",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.5",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.6",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Health Information Access"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "cc253aea3c5f489da0502df74dde1669"
+    ],
+    "canonicalReference": {
+      "canonicalId": "cc253aea3c5f489da0502df74dde1669",
+      "number": "II.1.3.9.6",
+      "title": "[CT2] Health Information Access",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.6",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.7",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Health Information Connectivity Enablement"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "6a1030483dfc4ae6af6998b587129d1c"
+    ],
+    "canonicalReference": {
+      "canonicalId": "6a1030483dfc4ae6af6998b587129d1c",
+      "number": "II.1.3.9.8",
+      "title": "[CT2] Health Information Connectivity Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.8",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "superseded",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.7.7.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Health Information Connectivity Enablement",
+      "[CT3] Health Information Communication"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "6a1030483dfc4ae6af6998b587129d1c",
+      "9794b2aff43443b495a19aefe0efa67b"
+    ],
+    "canonicalReference": {
+      "canonicalId": "9794b2aff43443b495a19aefe0efa67b",
+      "number": "II.1.3.9.8.1",
+      "title": "[CT3] Health Information Communication",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.8.1",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "pending_adjudication",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.8",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Health Information Control"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "44cc0e17ad534675bf26dce6e46a68ff"
+    ],
+    "canonicalReference": {
+      "canonicalId": "44cc0e17ad534675bf26dce6e46a68ff",
+      "number": "II.1.3.9.9",
+      "title": "[CT2] Health Information Control",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.9",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.9",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Health Information Exchange Enablement"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "a61a15908ed544e6acf3e9cab63a0267"
+    ],
+    "canonicalReference": {
+      "canonicalId": "a61a15908ed544e6acf3e9cab63a0267",
+      "number": "II.1.3.9.10",
+      "title": "[CT2] Health Information Exchange Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.10",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.10",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Information Content Maintainer Management"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "b81a1ab42af24c2e9896b8f3f78d291a"
+    ],
+    "canonicalReference": {
+      "canonicalId": "b81a1ab42af24c2e9896b8f3f78d291a",
+      "number": "II.1.3.9.12",
+      "title": "[CT2] Information Content Maintainer Management",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.12",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.7.10.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Information Content Maintainer Management",
+      "[CT3] Data Provenance Capture"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "b81a1ab42af24c2e9896b8f3f78d291a",
+      "44a7937520a54945b06b5fd4a2bbd870"
+    ],
+    "canonicalReference": {
+      "canonicalId": "44a7937520a54945b06b5fd4a2bbd870",
+      "number": "II.1.3.9.12.1",
+      "title": "[CT3] Data Provenance Capture",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.12.1",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.11",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Information Design Governance"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "f39ed9ebcc724857a4bf7a2b8e045c7a"
+    ],
+    "canonicalReference": {
+      "canonicalId": "f39ed9ebcc724857a4bf7a2b8e045c7a",
+      "number": "II.1.3.9.13",
+      "title": "[CT2] Information Design Governance",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.13",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.12",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Information Protection & Accountability Enablement"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "e922cba7cf1d4ebeb9abf6472a3803ce"
+    ],
+    "canonicalReference": {
+      "canonicalId": "e922cba7cf1d4ebeb9abf6472a3803ce",
+      "number": "II.1.3.9.14",
+      "title": "[CT2] Information Protection & Accountability Enablement",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.14",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "superseded",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": false
+  },
+  {
+    "number": "III.4.7.12.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Information Protection & Accountability Enablement",
+      "[CT3] Significant Activity Audit Capture"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "e922cba7cf1d4ebeb9abf6472a3803ce",
+      "d903948169eb4785b0f03d916c842a8a"
+    ],
+    "canonicalReference": {
+      "canonicalId": "d903948169eb4785b0f03d916c842a8a",
+      "number": "II.1.3.9.14.2",
+      "title": "[CT3] Significant Activity Audit Capture",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.14.2",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "pending_adjudication",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.13",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Patient Clinical Record"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "5478878e0e6e4d34a8d5023ac6ac2d54"
+    ],
+    "canonicalReference": {
+      "canonicalId": "5478878e0e6e4d34a8d5023ac6ac2d54",
+      "number": "II.1.3.9.15",
+      "title": "[CT2] Patient Clinical Record",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.15",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.13.1",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Patient Clinical Record",
+      "[CT3] Linked Information Curation"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "5478878e0e6e4d34a8d5023ac6ac2d54",
+      "5edb2a8b5ee54ddda8104d1fab323a94"
+    ],
+    "canonicalReference": {
+      "canonicalId": "5edb2a8b5ee54ddda8104d1fab323a94",
+      "number": "II.1.3.9.15.1",
+      "title": "[CT3] Linked Information Curation",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.15.1",
+      "standing": {
+        "semantic": "Proposed",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.13.2",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Patient Clinical Record",
+      "[CT3] Primary Care Coordination"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "5478878e0e6e4d34a8d5023ac6ac2d54",
+      "f80e73ee91624ce5baa11ae15480fd35"
+    ],
+    "canonicalReference": {
+      "canonicalId": "f80e73ee91624ce5baa11ae15480fd35",
+      "number": "II.1.3.9.15.3",
+      "title": "[CT3] Primary Care Coordination",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.15.3",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.13.3",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Patient Clinical Record",
+      "[CT3] Remote Patient Monitoring"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "5478878e0e6e4d34a8d5023ac6ac2d54",
+      "2d1addc7dd1d4821b71a11c692d35b27"
+    ],
+    "canonicalReference": {
+      "canonicalId": "2d1addc7dd1d4821b71a11c692d35b27",
+      "number": "II.1.3.9.15.4",
+      "title": "[CT3] Remote Patient Monitoring",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.15.4",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Proposed",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  },
+  {
+    "number": "III.4.7.14",
+    "path": [
+      "Business",
+      "Business Behaviour",
+      "[CT1] Shared Information & Coordination Enablement",
+      "[CT2] Presentation Services"
+    ],
+    "canonicalIdPath": [
+      "0062fcacae1740988b6be2bda2aa1674",
+      "e9b6ba1917ba44cca7466444d0836c98"
+    ],
+    "canonicalReference": {
+      "canonicalId": "e9b6ba1917ba44cca7466444d0836c98",
+      "number": "II.1.3.9.16",
+      "title": "[CT2] Presentation Services",
+      "locator": "enterprise-architecture/continuum/navigation.json#/II.1.3.9.16",
+      "standing": {
+        "semantic": "Canonical",
+        "currentness": "current",
+        "placement_status": "Proposed",
+        "structural_id_status": "Proposed",
+        "name_status": "Canonical",
+        "ancestry_status": "proposed"
+      }
+    },
+    "originalPopulatedContext": true
+  }
+]

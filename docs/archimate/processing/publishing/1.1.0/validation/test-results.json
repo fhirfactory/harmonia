@@ -1,0 +1,104 @@
+{
+  "architecture_release": {
+    "previous_version": "1.0.10",
+    "version": "1.1.0"
+  },
+  "checks": [
+    {
+      "log": "docs/archimate/processing/publishing/1.1.0/validation/framework-tests.log",
+      "log_sha256": "a1558ac8d184489947c5c3529118826c74755cbae5682bb3a32abb1ed57debd9",
+      "name": "Complete ArchiMate framework suite",
+      "status": "PASS",
+      "summary": {
+        "elapsed_seconds": 307.041,
+        "passed": 322,
+        "skipped": 9,
+        "tests": 331
+      }
+    },
+    {
+      "log": "docs/archimate/processing/publishing/1.1.0/validation/release-tests.log",
+      "log_sha256": "19d91b37e491a122444a7ab892f88f1a1c0c7381d708d04541e1dd0c8be065fd",
+      "name": "Current release preservation and allocation regression suite",
+      "status": "PASS",
+      "summary": {
+        "elapsed_seconds": 32.078,
+        "passed": 5,
+        "skipped": 0,
+        "tests": 5
+      }
+    },
+    {
+      "log": "docs/archimate/processing/publishing/1.1.0/validation/governance-tests.log",
+      "log_sha256": "dde87f0ab418fa96b46a60ef004383913328473cb9c3b48c18986dbe54f9e465",
+      "name": "Repository governance/source/identity/release suite",
+      "status": "PASS",
+      "summary": {
+        "elapsed_seconds": 23.349,
+        "passed": 72,
+        "skipped": 0,
+        "tests": 72
+      }
+    },
+    {
+      "log": "docs/archimate/processing/publishing/1.1.0/validation/architecture-tests.log",
+      "log_sha256": "27f0bc4b2016288090afe184b5e560895f71f9a52bb58e4ad778e1f34765ca0e",
+      "name": "Required Maven architecture suite",
+      "status": "PASS",
+      "summary": {
+        "elapsed_seconds": 19.981,
+        "passed": 90,
+        "skipped": 0,
+        "tests": 90
+      }
+    },
+    {
+      "log": "docs/archimate/processing/publishing/1.1.0/validation/independent-publication-reproduction.log",
+      "log_sha256": "b8bdbb4133e2736ec02cf8f682ec7c26393e28b1fbb242acd1e45a44690f6b75",
+      "name": "Independent current publication and report reproduction",
+      "status": "PASS",
+      "summary": "All nine generated outputs reproduce byte-for-byte; release authority unchanged"
+    },
+    {
+      "log": "docs/archimate/processing/publishing/1.1.0/validation/reconciliation-preflight.log",
+      "log_sha256": "121c4b350385ed705080ceeaae5b3ee8b63e17e6f0b976f0506c1a83ff128b60",
+      "name": "Persisted reconciliation replay before release transition",
+      "status": "PASS",
+      "summary": "PASS; zero identities allocated"
+    },
+    {
+      "log": "docs/archimate/processing/publishing/1.1.0/validation/frozen-run-002-replay.log",
+      "log_sha256": "2fc96650b8619a548109fb421ba370c7785e2aa7e41af267d9dedf121f5487e3",
+      "name": "Frozen Run-002 archived-machinery replay before release transition",
+      "status": "PASS",
+      "summary": "Candidate, metadata, navigation and containment byte-identical"
+    },
+    {
+      "log": "docs/archimate/processing/publishing/1.1.0/validation/archi-transport-replay.log",
+      "log_sha256": "68581d1dd18c9ac7f283e8ec800357c53122107063e9924dd407b3b54459acaa",
+      "name": "Actual Archi 5.10 complete-model transport and read-only evidence replay",
+      "status": "PASS",
+      "summary": "All 1,394 canonical identities, native semantics, Views and navigation paths preserved; zero raw semantic differences"
+    },
+    {
+      "log": "docs/archimate/processing/publishing/1.1.0/validation/release-check.log",
+      "log_sha256": "c02f9c7e34d0e17b2d6dd4b8229f1d84117254676831d55115a1b9b8bcf5b02f",
+      "name": "Root release authority",
+      "status": "PASS",
+      "summary": "RAD-1.1.0; predecessor RAD-1.0.10"
+    },
+    {
+      "log": "docs/archimate/processing/publishing/1.1.0/validation/whitespace-check.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "name": "Repository diff whitespace",
+      "status": "PASS",
+      "summary": "PASS"
+    }
+  ],
+  "limitations": [
+    "Final Solution Architect visual inspection remains pending.",
+    "Nine historical initial-population tests are inactive for the successor release."
+  ],
+  "resolved_verification_attempts": "See development-notes.md and retained attempt-001 logs; no unresolved implementation or verification failure remains.",
+  "status": "PASS"
+}

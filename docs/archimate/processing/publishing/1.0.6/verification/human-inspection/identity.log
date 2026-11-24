@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "architecture_release": {
+    "version": "1.0.6",
+    "previous_version": "1.0.5"
+  },
+  "registry_records": 14,
+  "note": "Validation does not authorise allocation or publish semantics"
+}

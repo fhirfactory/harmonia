@@ -1,0 +1,300 @@
+{
+  "before": {
+    "organisationSource": "git:b8c14272f0ab0a8a452d904a8c4fa608f65b620b:enterprise-architecture/design/archimate/projection-template.xml",
+    "nativeStorageTypeCounts": {
+      "Capability": 842,
+      "Requirement": 83,
+      "DataObject": 81,
+      "BusinessFunction": 160,
+      "BusinessService": 142,
+      "ValueStream": 4,
+      "ApplicationService": 5,
+      "Principle": 25,
+      "Outcome": 3,
+      "BusinessInteraction": 69,
+      "BusinessCollaboration": 7,
+      "Product": 4,
+      "BusinessRole": 34,
+      "Constraint": 36,
+      "BusinessObject": 13,
+      "BusinessProcess": 21,
+      "ApplicationComponent": 24,
+      "Stakeholder": 10,
+      "Driver": 10,
+      "Goal": 9,
+      "CourseOfAction": 7,
+      "Assessment": 5,
+      "Resource": 3,
+      "ApplicationInterface": 2,
+      "ApplicationCollaboration": 1,
+      "ApplicationFunction": 2
+    },
+    "topLevelOrganisationLabels": [
+      "Strategy",
+      "Business",
+      "Application",
+      "Motivation",
+      "Relations",
+      "Views"
+    ],
+    "labelledOrganisationNodes": 3598
+  },
+  "after": {
+    "canonicalSource": "enterprise-architecture/continuum/navigation.json",
+    "navigationNodes": 1941,
+    "maximumDescendantLevels": 6,
+    "domains": [
+      {
+        "namespace": "G",
+        "title": "Architecture Governance",
+        "elements": 0,
+        "immediateSubjects": [
+          {
+            "number": "G.1",
+            "title": "Governance Model",
+            "elements": 0
+          },
+          {
+            "number": "G.2",
+            "title": "Architecture Evidence",
+            "elements": 0
+          },
+          {
+            "number": "G.3",
+            "title": "Architecture Review",
+            "elements": 0
+          },
+          {
+            "number": "G.4",
+            "title": "Architecture Register",
+            "elements": 0
+          },
+          {
+            "number": "G.5",
+            "title": "Architecture Governance Processes",
+            "elements": 0
+          },
+          {
+            "number": "G.6",
+            "title": "Architecture Principles and Compliance",
+            "elements": 0
+          },
+          {
+            "number": "G.7",
+            "title": "Architecture Repository and Authority",
+            "elements": 0
+          }
+        ]
+      },
+      {
+        "namespace": "I",
+        "title": "Motivation",
+        "elements": 181,
+        "immediateSubjects": [
+          {
+            "number": "I.1",
+            "title": "Drivers",
+            "elements": 10
+          },
+          {
+            "number": "I.2",
+            "title": "Strategic Goals",
+            "elements": 9
+          },
+          {
+            "number": "I.3",
+            "title": "Business Outcomes",
+            "elements": 3
+          },
+          {
+            "number": "I.4",
+            "title": "Assessments",
+            "elements": 5
+          },
+          {
+            "number": "I.5",
+            "title": "Requirements",
+            "elements": 83
+          },
+          {
+            "number": "I.6",
+            "title": "Constraints",
+            "elements": 36
+          },
+          {
+            "number": "I.7",
+            "title": "Architecture Axioms",
+            "elements": 18
+          },
+          {
+            "number": "I.8",
+            "title": "Unclassified Motivation",
+            "elements": 7
+          },
+          {
+            "number": "I.9",
+            "title": "Care Team",
+            "elements": 1
+          },
+          {
+            "number": "I.10",
+            "title": "Clinicians & Care Teams",
+            "elements": 1
+          },
+          {
+            "number": "I.11",
+            "title": "Health Network",
+            "elements": 1
+          },
+          {
+            "number": "I.12",
+            "title": "Healthcare Delivery Organizations",
+            "elements": 1
+          },
+          {
+            "number": "I.13",
+            "title": "Healthcare Directory Stewards & Registrars",
+            "elements": 1
+          },
+          {
+            "number": "I.14",
+            "title": "Healthcare Provider",
+            "elements": 1
+          },
+          {
+            "number": "I.15",
+            "title": "Patient",
+            "elements": 1
+          },
+          {
+            "number": "I.16",
+            "title": "Patients & Care Recipients",
+            "elements": 1
+          },
+          {
+            "number": "I.17",
+            "title": "Platform Operations & Integration Engineers",
+            "elements": 1
+          },
+          {
+            "number": "I.18",
+            "title": "Regional Health Network Operator",
+            "elements": 1
+          }
+        ]
+      },
+      {
+        "namespace": "II",
+        "title": "Strategy",
+        "elements": 852,
+        "immediateSubjects": [
+          {
+            "number": "II.1",
+            "title": "Capabilities",
+            "elements": 842
+          },
+          {
+            "number": "II.2",
+            "title": "Courses of Action",
+            "elements": 7
+          },
+          {
+            "number": "II.3",
+            "title": "Resources",
+            "elements": 3
+          }
+        ]
+      },
+      {
+        "namespace": "III",
+        "title": "Business",
+        "elements": 454,
+        "immediateSubjects": [
+          {
+            "number": "III.1",
+            "title": "Business Information Architecture",
+            "elements": 13
+          },
+          {
+            "number": "III.2",
+            "title": "Products and Value Streams",
+            "elements": 8
+          },
+          {
+            "number": "III.3",
+            "title": "Organisation Architecture",
+            "elements": 41
+          },
+          {
+            "number": "III.4",
+            "title": "Business Behaviour",
+            "elements": 323
+          },
+          {
+            "number": "III.5",
+            "title": "Unclassified Business",
+            "elements": 69
+          }
+        ]
+      },
+      {
+        "namespace": "IV",
+        "title": "Application",
+        "elements": 115,
+        "immediateSubjects": [
+          {
+            "number": "IV.1",
+            "title": "Information Architecture",
+            "elements": 71
+          },
+          {
+            "number": "IV.2",
+            "title": "System-of-Systems Architecture",
+            "elements": 3
+          },
+          {
+            "number": "IV.3",
+            "title": "Applications",
+            "elements": 41
+          }
+        ]
+      },
+      {
+        "namespace": "V",
+        "title": "Technology",
+        "elements": 0,
+        "immediateSubjects": []
+      },
+      {
+        "namespace": "VI",
+        "title": "Implementation & Migration",
+        "elements": 0,
+        "immediateSubjects": []
+      }
+    ],
+    "classificationBasisCounts": {
+      "Existing governed capability parent/owner metadata; all independent placement/ancestry qualifications retained": 627,
+      "Existing canonical native classification": 278,
+      "Existing cross-application logical PractitionerCapacity concept; not retyped as a Topic or Class": 1,
+      "Existing historical folder/self-reference collapsed; original capability context retained": 199,
+      "Existing governed responsibility-owner context, independent of Feature association and native relationship existence": 323,
+      "Existing canonical definition establishes this application/component-scoped responsibility; navigation adds no semantic relationship": 44,
+      "Canonical AX-labelled Continuum Principle; definition unchanged": 18,
+      "Explicit Topic specialisation and existing logical Topic decomposition": 70,
+      "Native BusinessCollaboration: collective organisational participation, not an invented organisational unit": 7,
+      "Existing historical capability organisational context; identity and standing unchanged": 15,
+      "Existing native Stakeholder; cross-cutting perspective, not a chapter or a containment assertion": 10,
+      "Native CourseOfAction: existing strategic approach; no new pattern specialisation inferred": 6,
+      "Accepted bounded Feature: exact governed qualified-name context": 1,
+      "Substantive existing native strategic Resource definition": 3
+    },
+    "unclassifiedCounts": {
+      "Motivation": 7,
+      "Strategy": 0,
+      "Business": 69,
+      "Application": 0,
+      "Technology": 0,
+      "Implementation & Migration": 0
+    }
+  }
+}

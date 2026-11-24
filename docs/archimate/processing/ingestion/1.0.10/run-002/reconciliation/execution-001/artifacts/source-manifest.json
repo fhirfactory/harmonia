@@ -1,0 +1,20 @@
+{
+  "instructions": {
+    "decision": {
+      "path": "docs/archimate/processing/ingestion/1.0.10/run-002/reconciliation/execution-001/decision.json",
+      "sha256": "90f9a30c33e5366dcfb9c2de8dd0e2c261b68e9ffff3933834871dd7cf0b0a10"
+    },
+    "review": {
+      "path": "docs/archimate/processing/ingestion/1.0.10/run-002/reconciliation/execution-001/reviewed-instructions.md",
+      "sha256": "c3d376f15cea3efff9942af56a177875338261268b57b11a434abfa00d0793ca"
+    },
+    "review_identity": "ingestion/1.0.10/run-002"
+  },
+  "plan_sha256": "ea7924cd27c0331617af744691ec0e4f90ed690d6b032de1037674c63cbf2ef7",
+  "release_authority": {
+    "previous_version": "1.0.9",
+    "version": "1.0.10"
+  },
+  "source_path": "docs/markdown/governance/baseline/accepted-ingestion-1.0.10.json",
+  "source_sha256": "f87692bf30ea2fb7d5ea743920f68ea62c5c99ff3517f2b90bb37783d927cf16"
+}

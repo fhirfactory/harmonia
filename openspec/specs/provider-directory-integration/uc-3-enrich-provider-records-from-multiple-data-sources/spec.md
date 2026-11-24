@@ -1,8 +1,19 @@
 # Enrich Provider Records from Multiple Data Sources
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/82d9b3c0f2d2460fbf7e9d91ecbb7078.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 Enable the Provider Directory to combine provider information from multiple recognised sources. This supports the target-state objective that uc-3 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that a single, more complete provider record is maintained while preserving source authority and provenance.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ Enable the Provider Directory to combine provider information from multiple reco
 - **Source Scope:** Additional Source Use Cases and System Requirements
 - **Primary Actor:** Integration Administrator
 - **Supporting Actors:** Compliance Officer; Provider Directory; Provider Identity / Matching Service; Data Steward
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/9ad1c92261004c10be3562747ba8f09c.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As the Provider Directory, I need to combine provider information from multiple recognised sources, so that a single, more complete provider record is maintained while preserving source authority and provenance.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-30 – Match Provider Records: supports reliable identity matching where provider information is received or reconciled.; UC-Integration-ProviderDirectory-32 – Validate Provider Data Quality: supports validation and data-quality controls.; UC-Integration-ProviderDirectory-34 – Audit Provider Information Exchange: supports traceability and audit of information exchange.; UC-Integration-ProviderDirectory-35 – Monitor Provider Integration Interfaces: supports operational monitoring of automated interfaces.; UC-Integration-ProviderDirectory-36 – Reconcile Provider Synchronisation Failures: supports remediation of failed or ambiguous synchronisation.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/82d9b3c0f2d2460fbf7e9d91ecbb7078.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Enrich Provider Records from Multiple Data Source
 Harmonia SHALL support **Enrich Provider Records from Multiple Data Sources** so that Enable the Provider Directory to combine provider information from multiple recognised sources. This supports the target-state objective that uc-3 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that a single, more complete provider record is maintained while preserving source authority and provenance.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Enrich Provider Records from Multiple Data Sources - successful outcome
 - **GIVEN** The actor is appropriately authenticated and authorised to perform the activity.

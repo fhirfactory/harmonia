@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "originatingHead": "b8c14272f0ab0a8a452d904a8c4fa608f65b620b",
+  "canonicalElements": 1602,
+  "canonicalElementBytesIdentical": 1602,
+  "unchangedNativeStorageLocators": 1602,
+  "canonicalIdsAllocated": 0,
+  "canonicalIdsRemoved": 0,
+  "semanticRelationshipsPreserved": 1651,
+  "authoredViewsByteIdentical": 1209,
+  "viewFolderOrganizationIdentical": true,
+  "trackedHistoricalEvidenceRegisterPublicationsAndLegacyDocsChanged": [],
+  "scope": "All canonical element bytes compared with captured before hashes; all IDs and source paths matched. Source-control diff checked tracked historical material. View subtree canonical XML and View-folder structural records compared with initial HEAD.",
+  "meaning": "Element-byte identity preserves full names, type/specialization, body, relationships, properties, provenance and independent standing; navigation alone changes."
+}

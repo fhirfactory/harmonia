@@ -1,0 +1,133 @@
+{
+  "archi_manual_import": "PENDING_SOLUTION_ARCHITECT",
+  "architect_acceptance": "NOT_RECORDED",
+  "architecture_release": {
+    "previous_version": "1.0.9",
+    "version": "1.0.10"
+  },
+  "candidate_bytes": 22336985,
+  "candidate_xml_sha256": "541219c023d2cd507d591e81df9a0a82fbf1c8f4d324448a02bc476e00c3e59a",
+  "checks": [
+    {
+      "check": "full framework",
+      "log": "contained-leaf-correction/framework-tests.log.gz",
+      "seconds": 345.246,
+      "status": "PASS",
+      "tests": 317,
+      "timeout_seconds": 600
+    },
+    {
+      "check": "required architecture suite",
+      "log": "contained-leaf-correction/architecture-tests.log.gz",
+      "seconds": 18.289,
+      "status": "PASS",
+      "tests": 90,
+      "timeout_seconds": 300
+    },
+    {
+      "check": "guarded final regeneration",
+      "log": "contained-leaf-correction/generation.log.gz",
+      "status": "PASS",
+      "timeout_seconds": 120
+    },
+    {
+      "check": "live deterministic replay",
+      "log": "contained-leaf-correction/live-replay.log.gz",
+      "status": "PASS",
+      "timeout_seconds": 120
+    },
+    {
+      "check": "isolated archived replay",
+      "log": "contained-leaf-correction/isolated-replay.log.gz",
+      "status": "PASS",
+      "timeout_seconds": 120
+    },
+    {
+      "check": "final serialized Care/Encounter, all containment participants, preservation and integrity",
+      "evidence": "contained-leaf-correction/final-candidate-audit.json",
+      "status": "PASS",
+      "timeout_seconds": 30
+    },
+    {
+      "check": "absent/misleading input-folder counterfactuals",
+      "evidence": "../element-generation-proof.json",
+      "status": "PASS"
+    },
+    {
+      "check": "report links and git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "complete_archi_roundtrip": "NOT_PERFORMED",
+  "development_invocations": [
+    {
+      "check": "initial focused workspace regressions",
+      "failures": 1,
+      "log": "contained-leaf-correction/workspace-initial-failure.log.gz",
+      "reason": "Updated regression assertion incorrectly applied containment-participant expectations to standalone elements; corrected.",
+      "seconds": 35.765,
+      "status": "FAIL",
+      "tests": 36
+    },
+    {
+      "check": "initial full framework",
+      "failures": 1,
+      "log": "contained-leaf-correction/framework-initial-failure.log.gz",
+      "reason": "Inherited Home test expected the superseded bare-leaf path; corrected without production changes.",
+      "seconds": 350.903,
+      "status": "FAIL",
+      "tests": 317
+    }
+  ],
+  "element_navigation": {
+    "contained_leaf_folders": 691,
+    "containment_participants": 993,
+    "context_and_role_folders": 1317,
+    "references": 1394,
+    "total_folders": 1349
+  },
+  "files_sha256": {
+    "validation/contained-leaf-correction/architecture-tests.log.gz": "905f9b77207c06c0555ed6f73b2ce01420c47ef56ae909624e282b30829886f9",
+    "validation/contained-leaf-correction/care-context.xml": "dc47fb9b7bc7978cdd0817526eaed825f2c852cdc56d420313f83cb62e265043",
+    "validation/contained-leaf-correction/final-candidate-audit.json": "53f0e96a841928d5662cb09dcbea2a25ca30fd3f5c84e4380fc34a72bb2670d9",
+    "validation/contained-leaf-correction/framework-initial-failure.log.gz": "5e5e5e4b47e4c8dea84f6a4ca4a0ddf2169d8d30413991938b0a16d2da300bbc",
+    "validation/contained-leaf-correction/framework-tests.log.gz": "a82e898243171f7f93127a103406956c07ff057d9d6535cb617a08614ae73aba",
+    "validation/contained-leaf-correction/generation.log.gz": "86e8664320c7911e0b20f578264f43e08d5122929a28f58006879296fec4ddd1",
+    "validation/contained-leaf-correction/isolated-replay.log.gz": "586812ef588ff915621f76f39503dd90dc97a2741fe66b0f2808949ab0f83b8f",
+    "validation/contained-leaf-correction/live-replay.log.gz": "da798485b40d1d8410974879e5bef3df7795961b25a1714fd3766923a66e9b55",
+    "validation/contained-leaf-correction/verify_candidate.py": "7889ab2ef599afa9e21edacc021767b50fe2aac0322007546030a2cda258f1dc",
+    "validation/contained-leaf-correction/workspace-initial-failure.log.gz": "92c9c3de24f15fa6953554141fbcaecd8671e65d5b433ed8f699a03b68bd3e24"
+  },
+  "history_archives": {
+    "pre-contained-leaf-correction": 180,
+    "pre-contained-leaf-regression-completion": 97,
+    "pre-containment-correction": 130,
+    "pre-context-completion": 92,
+    "pre-element-projection-correction": 120,
+    "pre-view-navigation-guard": 93
+  },
+  "previous_validation_manifest": "pre-contained-leaf-correction/docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/manifest.json.gz",
+  "reconciliation": "NOT_PERFORMED",
+  "relationship_navigation": {
+    "serialized_subtree_sha256": "712b43d6c558adc526b184b74b662cdfd69b5796fd0f1e578c1ab5216ad3e7be",
+    "signature_sha256": "8d56e03718583b7590293f0357f209d365d676f8f379c150a72ff5d9fc3b398b",
+    "status": "EXACT_MATCH"
+  },
+  "release_created": false,
+  "report": {
+    "path": ".junie/reports/2026-10-20-information-architecture-machinery-run-002-workspace-organisation.md",
+    "sha256": "9b319e4a16daea6904fcddd0545adf9b238871dd4c86961bfbd556ca4169dcec"
+  },
+  "standing": "MACHINERY_VALIDATION_NOT_ACCEPTED_NOT_A_RAD_RELEASE",
+  "view_navigation": {
+    "serialized_subtree_sha256": "5edd5a52016d3aafa7fccad5dd2c7d844b43f73839c1d5606d8912c019bedbf2",
+    "signature_sha256": "628c04614899102fce3f5b9840258364a52df7d8cc1d9b19616e79eb1fb0b20b",
+    "status": "EXACT_MATCH"
+  },
+  "views": {
+    "count": 1209,
+    "serialized_subtree_sha256": "ddca4418ecb85bb73c67a4b1442ddecf17c43f9bcafe73a0edd489a225e28dc7",
+    "signature_sha256": "7884117cd23076e1c21e69a886287e642e6ab76675a0767619e21488d05c146b",
+    "status": "EXACT_MATCH"
+  }
+}

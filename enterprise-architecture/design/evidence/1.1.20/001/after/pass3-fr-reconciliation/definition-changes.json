@@ -1,0 +1,190 @@
+[
+  {
+    "id": "E07.02.02",
+    "kind": "CT3",
+    "fr_decisions": [
+      "FR-003"
+    ],
+    "before_name": "Review & Confirmation Interaction",
+    "after_name": "Review & Confirmation Interaction",
+    "before_description": "Users can review intended changes and acknowledge significant actions where required.",
+    "after_description": "Review & Confirmation Interaction supports review and explicit confirmation/rejection of intended actions by both authorised programmatic participants and human participants, according to their distinct interaction and authority requirements. It does not presume that every confirmation requires a human or that automated confirmation is equivalent to human authority."
+  },
+  {
+    "id": "B02.02.03.F01",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-004"
+    ],
+    "before_name": "TimelyNeedsReassessment",
+    "after_name": "Appropriate Needs Reassessment",
+    "before_description": "Qualifying changes prompt appropriate reassessment of care needs.",
+    "after_description": "Changes in a person's condition, needs or circumstances that warrant reassessment result in an appropriate reassessment addressing the relevant changes and their implications."
+  },
+  {
+    "id": "B02.02.03.F05",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-004"
+    ],
+    "before_name": "Timely Reassessment",
+    "after_name": "Timely Needs Reassessment",
+    "before_description": "Clinical needs are reassessed within the applicable context-defined interval.",
+    "after_description": "Required reassessments occur within timeframes appropriate to their clinical urgency, applicable care requirements and individual circumstances."
+  },
+  {
+    "id": "B08.06.02.F01",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-008"
+    ],
+    "before_name": "CurrentReadinessAssessment",
+    "after_name": "Current Workforce Readiness Determination",
+    "before_description": "Designated assignments have a valid workforce readiness status.",
+    "after_description": "The fitness and readiness of personnel for designated duties or assignments can be determined and represented accurately against applicable requirements, conditions and restrictions."
+  },
+  {
+    "id": "B08.06.02.F03",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-008"
+    ],
+    "before_name": "Readiness Assessment Currency",
+    "after_name": "Readiness Assessment Currency",
+    "before_description": "Readiness assessment is current through relevant changes or disruptions, with recovery where required.",
+    "after_description": "The currency and continuing applicability of workforce fitness and readiness assessments can be established against applicable validity periods, assessment requirements and relevant circumstances."
+  },
+  {
+    "id": "B11.05.01.F01",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-002"
+    ],
+    "before_name": "IdentifiedApplicableObligations",
+    "after_name": "Applicable Obligation Identification & Mapping",
+    "before_description": "Service areas have correctly mapped relevant regulatory requirements.",
+    "after_description": "Applicable statutory, regulatory, contractual and other authoritative obligations are identified for a governed service or enterprise context and mapped to their authoritative sources, relevant jurisdictions, effective scope and versions, and the contexts to which they apply, with accountable interpretation where required."
+  },
+  {
+    "id": "B12.01.02.F01",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-007"
+    ],
+    "before_name": "ComparableInvestmentEvidence",
+    "after_name": "Comparable Investment Evidence",
+    "before_description": "Investment decisions have consistent supporting option assessments.",
+    "after_description": "Evidence supporting alternative investments is prepared and assessed using sufficiently consistent assumptions, scope, reference periods and evaluation methods to enable meaningful comparison."
+  },
+  {
+    "id": "B12.01.02.F02",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-007"
+    ],
+    "before_name": "Comparable Investment Options",
+    "after_name": "Investment Option Comparability",
+    "before_description": "Comparable investment options are available.",
+    "after_description": "Alternative investment options can be evaluated against a common decision framework that makes their relative value, costs, benefits, risks, constraints and relevant differences explicit."
+  },
+  {
+    "id": "E03.03.03.F01",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-001"
+    ],
+    "before_name": "StandardsNativeFidelity",
+    "after_name": "Native Representation Conformance",
+    "before_description": "Required native standards representations remain conformant and retrievable.",
+    "after_description": "The structural and conformance characteristics of a retained source-native information representation can be identified and evaluated against the applicable declared native format or standard, while preserving the distinction between the representation as received and its conformance status. A received representation need not be conformant in order for its original native form to be retained."
+  },
+  {
+    "id": "E03.03.03.F02",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-001"
+    ],
+    "before_name": "Standards-Native Data Fidelity",
+    "after_name": "Native Content Fidelity",
+    "before_description": "Standards-native data is faithfully preserved.",
+    "after_description": "Source-native information content, including content not interpreted or supported locally, remains faithful to the received source without unauthorised alteration through transformation, translation or subsequent handling."
+  },
+  {
+    "id": "E06.06.02.F01",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-005"
+    ],
+    "before_name": "RecoverableWorkflowCheckpoint",
+    "after_name": "Recoverable Checkpoint Integrity",
+    "before_description": "Workflow interruption recovery preserves valid progression.",
+    "after_description": "Workflow checkpoints preserve a valid and identifiable recovery state, enabling their integrity and suitability for recovery to be established following interruption or failure."
+  },
+  {
+    "id": "E06.06.02.F03",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-005"
+    ],
+    "before_name": "Recoverable Workflow Position",
+    "after_name": "Recoverable Workflow Position",
+    "before_description": "Recoverable workflow has an identifiable position through relevant changes or disruptions, with recovery where required.",
+    "after_description": "Following interruption or failure, the workflow's valid continuation position can be recovered from accepted progress and checkpoint information, without incorrectly repeating completed work or bypassing required activities."
+  },
+  {
+    "id": "E07.02.02.F01",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-003"
+    ],
+    "before_name": "ExplicitActionConfirmation",
+    "after_name": "Programmatic Action Confirmation",
+    "before_description": "Actions requiring confirmation retain valid acknowledgement evidence.",
+    "after_description": "An authorised software component or automated participant, including a Digital Twin or agentic participant where permitted, can explicitly confirm or reject an intended action through a correlatable programmatic interaction, with the action, confirmation disposition and attributable supporting evidence distinguishable from transport delivery or completed execution."
+  },
+  {
+    "id": "E07.02.02.F03",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-003"
+    ],
+    "before_name": "Explicit User Confirmation",
+    "after_name": "Human Action Confirmation",
+    "before_description": "Explicit user confirmation reaches and can be understood by the intended recipient.",
+    "after_description": "A human participant is presented with the intended action and relevant consequences when confirmation is required and can explicitly confirm or reject that action, with the response and attributable supporting evidence recorded separately from message delivery and completed execution."
+  },
+  {
+    "id": "E07.04.01.F01",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-006",
+      "FR-009"
+    ],
+    "before_name": "RestoredUserWorkContext",
+    "after_name": "Restored Work Context",
+    "before_description": "User work recovery restores the required work context under the prescribed recovery conditions.",
+    "after_description": "A participant returning to unfinished work can recover the relevant, authorised information, subject context and work references necessary to continue that work without unintended loss of working context."
+  },
+  {
+    "id": "E07.04.01.F02",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-006"
+    ],
+    "before_name": "Restored User Work Position",
+    "after_name": "Restored Work Position",
+    "before_description": "Restored user work has an identifiable position through relevant changes or disruptions, with recovery where required.",
+    "after_description": "A participant returning to unfinished work can resume at the appropriate interaction or navigation position, consistent with the restored work context and current authorisation, without incorrectly repeating or bypassing required interactions."
+  },
+  {
+    "id": "E07.04.01.F05",
+    "kind": "Feature",
+    "fr_decisions": [
+      "FR-009"
+    ],
+    "before_name": "Context Recovery after Interruption",
+    "after_name": "Interrupted Work Context Recovery",
+    "before_description": "Context recovery after interruptions have explicit outcomes through relevant changes or disruptions, with recovery where required.",
+    "after_description": "Following an unexpected interruption, a participant's recoverable working context can be reconstructed or restored from available preserved state, with any lost, uncertain or unrecoverable context explicitly identified rather than silently assumed to have been preserved."
+  }
+]

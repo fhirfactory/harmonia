@@ -1,0 +1,13 @@
+{
+  "attempts": [
+    {
+      "command": "timeout --signal=TERM --kill-after=5s 180s python3 -B -m unittest discover -s docs/archimate/framework/tests -v",
+      "outcome": "FAIL",
+      "exit_code": 1,
+      "tests": 164,
+      "failed": 1,
+      "log": "framework-tests.log.gz",
+      "diagnosis": "Workspace test was pinned to current publication path 1.0.8. Corrected to read governed current release without changing historical 1.0.8 proofs. Final complete suite passes 167 tests."
+    }
+  ]
+}

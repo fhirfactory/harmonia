@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "currentCopyInjection": "Expected FAIL positively established; exact canonical Axiom content in a maintained governance file rejected",
+  "historicalEvidenceInjection": "PASS: historical/evidence copy excluded",
+  "probeContent": "Derived from canonical AX-01 during temporary verification; no duplicate retained",
+  "limit": "Exact whitespace-normalised paragraph guard; no paraphrase or authority classifier"
+}

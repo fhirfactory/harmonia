@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Diagnostic only — anchored-reference-folders" id="diagnostic-anchored-reference-folders" version="5.0.0">
+  <folder name="Strategy" id="id-df6b700552984249a0b07ce18354ae8b" type="strategy"/>
+  <folder name="Business" id="id-e4e6a3319e534646b589abd894472cc6" type="business"/>
+  <folder name="Application" id="id-79b7993a8fc7451e9ca2caa643ce5b4d" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-88e88753a64b4c02b381d3e6ca372489" type="technology"/>
+  <folder name="Motivation" id="id-b067691abf6f4e0f8dbb960038e171f4" type="motivation">
+    <folder name="I Motivation" id="id-82ca736b5d0748e88b679ac667091b1d">
+      <folder name="Driver navigation" id="id-4786d92ddf934ca1a1fee3d0bca8b059">
+        <folder name="Stakeholder references" id="id-71fcdab1f35b4197be647225c1a6365f">
+          <folder name="Stakeholder context" id="id-c1d016eb07c34ea0819bf49b12b6dd36">
+            <documentation>Canonical target: anchored-stakeholder; reference only</documentation>
+          </folder>
+        </folder>
+        <element xsi:type="archimate:Driver" name="Anchored Driver" id="anchored-driver"/>
+      </folder>
+    </folder>
+    <folder name="R Stakeholder index" id="id-37c628227702491dad4087acabe24fb6">
+      <element xsi:type="archimate:Stakeholder" name="Indexed Stakeholder" id="anchored-stakeholder"/>
+    </folder>
+  </folder>
+  <folder name="Implementation &amp; Migration" id="id-3bbd5aae0a2747278489ecdd07322015" type="implementation_migration"/>
+  <folder name="Other" id="id-ed48c93f549d40ad8f0bc947dc58a1df" type="other">
+    <folder name="G Governance reference" id="id-9b6545ca74fb4f379723cf140aba9825">
+      <folder name="Source-only leaf" id="id-2433799a7cbe4d9fb0dc63df4e8950d8">
+        <documentation>Diagnostic source locator only</documentation>
+      </folder>
+    </folder>
+  </folder>
+  <folder name="Relations" id="id-5a6ebca5b90042778cd3e340535d58f5" type="relations"/>
+  <folder name="Views" id="id-069f467ad4ae4a91a13ad924dd57cba2" type="diagrams"/>
+</archimate:model>

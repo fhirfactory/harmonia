@@ -1,0 +1,949 @@
+diff --git a/enterprise-architecture/continuum/MANIFEST.md b/enterprise-architecture/continuum/MANIFEST.md
+index aef45258..7888b16f 100644
+--- a/enterprise-architecture/continuum/MANIFEST.md
++++ b/enterprise-architecture/continuum/MANIFEST.md
+@@ -15652,7 +15652,7 @@ Canonical Strategy Capability: [II.1.1.10.1.5 &#91;CT3&#93; Longitudinal Record
+ | III.1.7 | &#91;BusinessObject&#93; Identity Correction | BusinessObject | — | Semantic: Established Package1 conceptual information meaning; residual qualifications in selected section remain unchanged.<br>Currentness: current | BO-IdentityCorrection | <a id="element-7c74034576cf4972bbb6e86e0f0e1e58"></a>7c74034576cf4972bbb6e86e0f0e1e58 | [business/business-object/7c74034576cf4972bbb6e86e0f0e1e58.md](business/business-object/7c74034576cf4972bbb6e86e0f0e1e58.md) | standing.representationDecision: Accepted RAD-1.1.0 CR CR-077 |
+ | III.1.8 | &#91;BusinessObject&#93; Identity Correlation Graph | BusinessObject | — | Semantic: Established Package1 conceptual information meaning; residual qualifications in selected section remain unchanged.<br>Currentness: current | BO-IdentityCorrelationGraph | <a id="element-8d0a2577d3364dbda96798afe0800200"></a>8d0a2577d3364dbda96798afe0800200 | [business/business-object/8d0a2577d3364dbda96798afe0800200.md](business/business-object/8d0a2577d3364dbda96798afe0800200.md) | standing.representationDecision: Accepted RAD-1.1.0 CR CR-078 |
+ | III.1.9 | &#91;BusinessObject&#93; Information Assertion | BusinessObject | — | Semantic: Canonical conceptual information definition<br>Currentness: current | BO-InformationAssertion | <a id="element-f3bd4181bb394db8a505705b03972cea"></a>f3bd4181bb394db8a505705b03972cea | [business/business-object/f3bd4181bb394db8a505705b03972cea.md](business/business-object/f3bd4181bb394db8a505705b03972cea.md) | standing.qualification: Exact source standing retained; migration/identity allocation does not approve architectural assertions. |
+-| III.1.10 | &#91;BusinessObject&#93; Information Unit | BusinessObject | — | Semantic: Established conceptual governed management boundary; no downstream schema or representation mapping.<br>Currentness: current | BO-InformationUnit | <a id="element-10284034c8534b639284386b064f2c54"></a>10284034c8534b639284386b064f2c54 | [business/business-object/10284034c8534b639284386b064f2c54.md](business/business-object/10284034c8534b639284386b064f2c54.md) | standing.representationDecision: Accepted RAD-1.1.0 CR CR-079 |
++| III.1.10 | &#91;BusinessObject&#93; Information Unit | BusinessObject | — | Semantic: Established conceptual governed management boundary; no downstream schema or representation mapping.<br>Currentness: current | BO-InformationUnit | <a id="element-10284034c8534b639284386b064f2c54"></a>10284034c8534b639284386b064f2c54 | [business/business-object/10284034c8534b639284386b064f2c54.md](business/business-object/10284034c8534b639284386b064f2c54.md) | standing.reconciliation: Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained<br>standing.representationDecision: Accepted RAD-1.1.0 CR CR-079 |
+ | III.1.11 | &#91;BusinessObject&#93; Legal Representation | BusinessObject | — | Semantic: Established Package1 conceptual information meaning; residual qualifications in selected section remain unchanged.<br>Currentness: current | BO-LegalRepresentation | <a id="element-33ddad9f1ce1424bbe0fb9a25efadb9f"></a>33ddad9f1ce1424bbe0fb9a25efadb9f | [business/business-object/33ddad9f1ce1424bbe0fb9a25efadb9f.md](business/business-object/33ddad9f1ce1424bbe0fb9a25efadb9f.md) | standing.representationDecision: Accepted RAD-1.1.0 CR CR-080 |
+ | III.1.12 | &#91;BusinessObject&#93; Metabolē | BusinessObject | — | Semantic: Adjudicated conceptual IA extension, 2026-10-13; no application manager.<br>Currentness: current | BO-Metabolē | <a id="element-c34b4929f71946708d37dbe6c1da920a"></a>c34b4929f71946708d37dbe6c1da920a | [business/business-object/c34b4929f71946708d37dbe6c1da920a.md](business/business-object/c34b4929f71946708d37dbe6c1da920a.md) | standing.representationDecision: Accepted RAD-1.1.0 CR CR-081 |
+ | III.1.13 | &#91;BusinessObject&#93; Search Result Set | BusinessObject | — | Semantic: Adjudicated conceptual managed metadata collection; Search Result Metadata-Set is the same concept, not an additional element.<br>Currentness: current | BO-SearchResultSet | <a id="element-b683ae87c72a4c16aba948a4b8cb0998"></a>b683ae87c72a4c16aba948a4b8cb0998 | [business/business-object/b683ae87c72a4c16aba948a4b8cb0998.md](business/business-object/b683ae87c72a4c16aba948a4b8cb0998.md) | standing.representationDecision: Accepted RAD-1.1.0 CR CR-082 |
+@@ -16424,15 +16424,15 @@ The existing application responsibilities form the system map. These links ident
+ | IV.1.1.11.7 | &#91;Topic&#93; Registration | DataObject | Topic | Semantic: Established Package1 conceptual information meaning; residual qualifications in selected section remain unchanged.<br>Currentness: current | TOPIC-Workforce.TOPIC-Registration | <a id="element-26c72794993044af98b5329b8b14ae89"></a>26c72794993044af98b5329b8b14ae89 | [application/data-object/topic/26c72794993044af98b5329b8b14ae89.md](application/data-object/topic/26c72794993044af98b5329b8b14ae89.md) | standing.representationDecision: Accepted RAD-1.1.0 CR CR-061 |
+ | IV.1.2.1 | PractitionerCapacity | DataObject | — | Semantic: Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved<br>Currentness: current | **Unresolved** | <a id="element-008f622bf9ce4d40b8a85024748bd485"></a>008f622bf9ce4d40b8a85024748bd485 | [application/data-object/008f622bf9ce4d40b8a85024748bd485.md](application/data-object/008f622bf9ce4d40b8a85024748bd485.md) | standing.qualification: Exact source standing retained; migration/identity allocation does not approve architectural assertions.<br>Unresolved canonicalName: Formal qualifier for native DataObject is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate. |
+ | IV.1.2.2 | Provenance | DataObject | — | Semantic: Candidate — Solution Architect intent agreed; HCRL 1.1.19-001 DR-18/DR-19 candidate acceptance pending<br>Currentness: current | **Unresolved** | <a id="element-e282811b51274649816566aac7edeb8a"></a>e282811b51274649816566aac7edeb8a | [application/data-object/e282811b51274649816566aac7edeb8a.md](application/data-object/e282811b51274649816566aac7edeb8a.md) | Unresolved canonicalName: Formal qualifier for native DataObject is not established by the current naming contract (HCRL 1.1.5-002 DR-5); this ADD supplies no new qualifier or ancestry.<br>Unresolved clientLibraryDetail: Detailed client-library contracts and deployment arrangements remain unresolved; Task §4.5(6), DR-18.<br>Unresolved executionAttempts: Detailed representation of execution attempts remains unresolved; Task §4.5(2), DR-18/19.<br>Unresolved provenanceRepresentation: Detailed schemas, cardinalities and lifecycle states remain unresolved; Task §4.5(5), DR-18/19.<br>Unresolved publicationRecovery: Publication acknowledgement and recovery semantics remain unresolved; Task §4.5(4), DR-18.<br>Unresolved publicationTiming: Synchronous versus asynchronous Provenance reporting/publication remains unresolved; Task §4.5(3), DR-18.<br>Unresolved retryPragma: Whether an Ergon retry uses the original Pragma or creates a new linked Pragma remains unresolved; Task §4.5(1), DR-18/19. |
+-| IV.1.2.3 | InformationRepresentation | DataObject | — | Semantic: Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-b9891b88150840ada3daefdec6f26c35"></a>b9891b88150840ada3daefdec6f26c35 | [application/data-object/b9891b88150840ada3daefdec6f26c35.md](application/data-object/b9891b88150840ada3daefdec6f26c35.md) | Unresolved canonicalName: No governed formal qualifier for an unspecialised logical DataObject; do not infer Class or Topic specialisation to populate a name. HCRL 1.1.22/001 DR-4. Identity, type and definition are established. |
+-| IV.1.2.4 | Information Unit Metadata | DataObject | — | Semantic: Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-c05b7e37278141488ecc90b9a9ef96eb"></a>c05b7e37278141488ecc90b9a9ef96eb | [application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md](application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md) | Unresolved canonicalName: No governed formal qualifier for an unspecialised logical DataObject; do not infer Class or Topic specialisation to populate a name. HCRL 1.1.22/001 DR-4. Identity, type and definition are established. |
+-| IV.1.2.5 | Topic | DataObject | — | Semantic: Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-9e2ffa9b4a1d4422a33c2a4bbcfc86ef"></a>9e2ffa9b4a1d4422a33c2a4bbcfc86ef | [application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md](application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md) | Unresolved canonicalName: No governed formal qualifier for an unspecialised logical DataObject; do not infer Class or Topic specialisation to populate a name. HCRL 1.1.22/001 DR-4. Identity, type and definition are established. |
+-| IV.1.2.6 | TopicMask | DataObject | — | Semantic: Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-bb489157a6bf48be926c5a601bb0a6c3"></a>bb489157a6bf48be926c5a601bb0a6c3 | [application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md](application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md) | Unresolved canonicalName: No governed formal qualifier for an unspecialised logical DataObject; do not infer Class or Topic specialisation to populate a name. HCRL 1.1.22/001 DR-4. Identity, type and definition are established. |
++| IV.1.2.3 | InformationRepresentation | DataObject | — | Semantic: Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-b9891b88150840ada3daefdec6f26c35"></a>b9891b88150840ada3daefdec6f26c35 | [application/data-object/b9891b88150840ada3daefdec6f26c35.md](application/data-object/b9891b88150840ada3daefdec6f26c35.md) | standing.reconciliation: Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained<br>Unresolved canonicalName: No governed formal qualifier for an unspecialised logical DataObject; do not infer Class or Topic specialisation to populate a name. HCRL 1.1.22/001 DR-4. Identity, type and definition are established. |
++| IV.1.2.4 | Information Unit Metadata | DataObject | — | Semantic: Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-c05b7e37278141488ecc90b9a9ef96eb"></a>c05b7e37278141488ecc90b9a9ef96eb | [application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md](application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md) | standing.reconciliation: Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained<br>Unresolved canonicalName: No governed formal qualifier for an unspecialised logical DataObject; do not infer Class or Topic specialisation to populate a name. HCRL 1.1.22/001 DR-4. Identity, type and definition are established. |
++| IV.1.2.5 | Topic | DataObject | — | Semantic: Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-9e2ffa9b4a1d4422a33c2a4bbcfc86ef"></a>9e2ffa9b4a1d4422a33c2a4bbcfc86ef | [application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md](application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md) | standing.reconciliation: Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained<br>Unresolved canonicalName: No governed formal qualifier for an unspecialised logical DataObject; do not infer Class or Topic specialisation to populate a name. HCRL 1.1.22/001 DR-4. Identity, type and definition are established. |
++| IV.1.2.6 | TopicMask | DataObject | — | Semantic: Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-bb489157a6bf48be926c5a601bb0a6c3"></a>bb489157a6bf48be926c5a601bb0a6c3 | [application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md](application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md) | standing.reconciliation: Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained<br>Unresolved canonicalName: No governed formal qualifier for an unspecialised logical DataObject; do not infer Class or Topic specialisation to populate a name. HCRL 1.1.22/001 DR-4. Identity, type and definition are established. |
+ | IV.1.2.7 | Outcome | DataObject | — | Semantic: Accepted Mnemosyne Final.001 semantics; authorised incorporation; exact resulting candidate awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-6d43c35381a9438f9101cf1d8b530b19"></a>6d43c35381a9438f9101cf1d8b530b19 | [application/data-object/6d43c35381a9438f9101cf1d8b530b19.md](application/data-object/6d43c35381a9438f9101cf1d8b530b19.md) | Unresolved canonicalName: No governed formal qualifier for this unspecialised native logical type/context; enterprise-architecture/design/review/1.1.23/hcrl-1.1.23-001.pending.md#dr-4; preserve Q-01 naming qualification, no implementation Class inferred. |
+ | IV.1.3.1 | &#91;Package&#93; model | Grouping | Package | Semantic: Accepted bounded architecture — HCRL 1.1.15-001 DR-1<br>Currentness: current | PKG-Model | <a id="element-6bb218f2128e463482f505585e624889"></a>6bb218f2128e463482f505585e624889 | [grouping/package/6bb218f2128e463482f505585e624889.md](grouping/package/6bb218f2128e463482f505585e624889.md) | None recorded |
+ | IV.1.3.1.1 | &#91;Package&#93; core | Grouping | Package | Semantic: Accepted bounded architecture — HCRL 1.1.15-001 DR-1<br>Currentness: current | PKG-Model.PKG-Core | <a id="element-2d587cb7547e4e6a8c20aa64da0da78a"></a>2d587cb7547e4e6a8c20aa64da0da78a | [grouping/package/2d587cb7547e4e6a8c20aa64da0da78a.md](grouping/package/2d587cb7547e4e6a8c20aa64da0da78a.md) | None recorded |
+ | IV.1.3.1.1.1 | &#91;Package&#93; information | Grouping | Package | Semantic: Accepted bounded architecture — HCRL 1.1.15-001 DR-1<br>Currentness: current | PKG-Model.PKG-Core.PKG-Information | <a id="element-13c028886fde4682812b45772e21522f"></a>13c028886fde4682812b45772e21522f | [grouping/package/13c028886fde4682812b45772e21522f.md](grouping/package/13c028886fde4682812b45772e21522f.md) | None recorded |
+-| IV.1.3.1.1.1.1 | &#91;Class&#93; InformationUnit | DataObject | Class | Semantic: Accepted bounded architecture — HCRL 1.1.15-001 DR-1<br>Currentness: current | PKG-Model.PKG-Core.PKG-Information.CLASS-InformationUnit | <a id="element-74ec609de1ae498fbf9d13e4ef8c6cbe"></a>74ec609de1ae498fbf9d13e4ef8c6cbe | [application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md](application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md) | None recorded |
++| IV.1.3.1.1.1.1 | &#91;Class&#93; InformationUnit | DataObject | Class | Semantic: Accepted bounded architecture — HCRL 1.1.15-001 DR-1<br>Currentness: current | PKG-Model.PKG-Core.PKG-Information.CLASS-InformationUnit | <a id="element-74ec609de1ae498fbf9d13e4ef8c6cbe"></a>74ec609de1ae498fbf9d13e4ef8c6cbe | [application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md](application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md) | standing.reconciliation: Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained |
+ | IV.2.2.1 | Provider Registry solution collaboration | ApplicationCollaboration | — | Semantic: Candidate — accepted Step-B baseline; final Solution Architecture unapproved<br>Currentness: current | **Unresolved** | <a id="element-9305dc8d55b34b70950190e28b5464cf"></a>9305dc8d55b34b70950190e28b5464cf | [application/application-collaboration/9305dc8d55b34b70950190e28b5464cf.md](application/application-collaboration/9305dc8d55b34b70950190e28b5464cf.md) | standing.qualification: Exact source standing retained; migration/identity allocation does not approve architectural assertions.<br>Unresolved canonicalName: Formal qualifier for native ApplicationCollaboration is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate. |
+ | IV.2.3.1.1.1 | Petasos | ApplicationComponent | — | Semantic: Candidate — accepted Step-B baseline; final Solution Architecture unapproved<br>Currentness: current | **Unresolved** | <a id="element-195e5f10db8e419391354197b5d7a8cc"></a>195e5f10db8e419391354197b5d7a8cc | [application/application-component/195e5f10db8e419391354197b5d7a8cc.md](application/application-component/195e5f10db8e419391354197b5d7a8cc.md) | standing.qualification: Exact source standing retained; migration/identity allocation does not approve architectural assertions.<br>Unresolved canonicalName: Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate. |
+ | IV.2.3.1.2.1 | PetasosParcel Topic | DataObject | — | Semantic: Bounded adjudicated application information meaning; Domain05 remains the accepted candidate Step-B baseline, not final Solution Architecture. Detailed representation is deferred; only this defined logical object is projected.<br>Currentness: current | TOPIC-PetasosParcelTopic | <a id="element-f0a88f05a0cb438cb42572ec07fb8513"></a>f0a88f05a0cb438cb42572ec07fb8513 | [application/data-object/f0a88f05a0cb438cb42572ec07fb8513.md](application/data-object/f0a88f05a0cb438cb42572ec07fb8513.md) | None recorded |
+@@ -16466,11 +16466,11 @@ The existing application responsibilities form the system map. These links ident
+ | IV.3.11.4.4 | Adhoc Search | ApplicationService | — | Semantic: Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved<br>Currentness: current | **Unresolved** | <a id="element-02bf54d699b44ed0b26fa5b8125f0f01"></a>02bf54d699b44ed0b26fa5b8125f0f01 | [application/application-service/02bf54d699b44ed0b26fa5b8125f0f01.md](application/application-service/02bf54d699b44ed0b26fa5b8125f0f01.md) | standing.qualification: Exact source standing retained; migration/identity allocation does not approve architectural assertions.<br>Unresolved canonicalName: Formal qualifier for native ApplicationService is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate. |
+ | IV.3.11.5.1 | Pragma Management | ApplicationFunction | — | Semantic: Candidate — accepted Step-B baseline; final Solution Architecture unapproved<br>Currentness: current | **Unresolved** | <a id="element-ab0cdaa7ed4149ee856216efa5a265c4"></a>ab0cdaa7ed4149ee856216efa5a265c4 | [application/application-function/ab0cdaa7ed4149ee856216efa5a265c4.md](application/application-function/ab0cdaa7ed4149ee856216efa5a265c4.md) | standing.qualification: Exact source standing retained; migration/identity allocation does not approve architectural assertions.<br>Unresolved canonicalName: Formal qualifier for native ApplicationFunction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate. |
+ | IV.3.11.5.2 | Resource Harmonisation Manager | ApplicationFunction | — | Semantic: Candidate — accepted Step-B baseline; final Solution Architecture unapproved<br>Currentness: current | **Unresolved** | <a id="element-a6580e0b9f0f40c9a33d731d20110057"></a>a6580e0b9f0f40c9a33d731d20110057 | [application/application-function/a6580e0b9f0f40c9a33d731d20110057.md](application/application-function/a6580e0b9f0f40c9a33d731d20110057.md) | standing.qualification: Exact source standing retained; migration/identity allocation does not approve architectural assertions.<br>Unresolved canonicalName: Formal qualifier for native ApplicationFunction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate. |
+-| IV.3.11.5.3 | Mnemosyne Adapter (Store) | ApplicationFunction | — | Semantic: Accepted Mnemosyne Final.001 semantics; authorised incorporation; exact resulting candidate awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-9c680d56a6b943da8ff22f3264e19bc7"></a>9c680d56a6b943da8ff22f3264e19bc7 | [application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md](application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md) | standing.incorporation124: Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation<br>Unresolved canonicalName: No governed formal qualifier for this unspecialised native logical type/context; enterprise-architecture/design/review/1.1.23/hcrl-1.1.23-001.pending.md#dr-4; preserve Q-01 naming qualification, no implementation Class inferred. |
+-| IV.3.11.5.4 | Mneme-Standard-Cache | ApplicationFunction | — | Semantic: Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-cfe4e0dbe6894a14841452b731ab9cb8"></a>cfe4e0dbe6894a14841452b731ab9cb8 | [application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md](application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md) | Unresolved canonicalName: Governed formal qualifier for this native type/context remains unestablished; enterprise-architecture/design/review/1.1.24/hcrl-1.1.24-001.pending.md#dr-5. Do not infer a Class, Topic or naming token. |
++| IV.3.11.5.3 | Mnemosyne Adapter (Store) | ApplicationFunction | — | Semantic: Accepted Mnemosyne Final.001 semantics; authorised incorporation; exact resulting candidate awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-9c680d56a6b943da8ff22f3264e19bc7"></a>9c680d56a6b943da8ff22f3264e19bc7 | [application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md](application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md) | standing.incorporation124: Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation<br>standing.reconciliation: Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained<br>Unresolved canonicalName: No governed formal qualifier for this unspecialised native logical type/context; enterprise-architecture/design/review/1.1.23/hcrl-1.1.23-001.pending.md#dr-4; preserve Q-01 naming qualification, no implementation Class inferred. |
++| IV.3.11.5.4 | Mneme-Standard-Cache | ApplicationFunction | — | Semantic: Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-cfe4e0dbe6894a14841452b731ab9cb8"></a>cfe4e0dbe6894a14841452b731ab9cb8 | [application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md](application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md) | standing.reconciliation: Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained<br>Unresolved canonicalName: Governed formal qualifier for this native type/context remains unestablished; enterprise-architecture/design/review/1.1.24/hcrl-1.1.24-001.pending.md#dr-5. Do not infer a Class, Topic or naming token. |
+ | IV.3.11.5.5 | Mneme-Workflow-Cache | ApplicationFunction | — | Semantic: Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-0bddade1309e426aa84d0cd97c35742a"></a>0bddade1309e426aa84d0cd97c35742a | [application/application-function/0bddade1309e426aa84d0cd97c35742a.md](application/application-function/0bddade1309e426aa84d0cd97c35742a.md) | Unresolved canonicalName: Governed formal qualifier for this native type/context remains unestablished; enterprise-architecture/design/review/1.1.24/hcrl-1.1.24-001.pending.md#dr-5. Do not infer a Class, Topic or naming token. |
+ | IV.3.12.1.1 | Mnemosyne | ApplicationComponent | — | Semantic: Candidate — accepted Step-B baseline; final Solution Architecture unapproved<br>Currentness: current | **Unresolved** | <a id="element-7985e647bf9e4ca3ba70faf9e3e4ae02"></a>7985e647bf9e4ca3ba70faf9e3e4ae02 | [application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md](application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md) | standing.incorporation124: Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation<br>standing.qualification: Exact source standing retained; migration/identity allocation does not approve architectural assertions.<br>Unresolved canonicalName: Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate. |
+-| IV.3.12.2.1 | Mneme Adapter / Façade | ApplicationFunction | — | Semantic: Accepted Mnemosyne Final.001 semantics; authorised incorporation; exact resulting candidate awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-22bdac97fe0d48d1844f1e982d03d387"></a>22bdac97fe0d48d1844f1e982d03d387 | [application/application-function/22bdac97fe0d48d1844f1e982d03d387.md](application/application-function/22bdac97fe0d48d1844f1e982d03d387.md) | standing.incorporation124: Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation<br>Unresolved canonicalName: No governed formal qualifier for this unspecialised native logical type/context; enterprise-architecture/design/review/1.1.23/hcrl-1.1.23-001.pending.md#dr-4; preserve Q-01 naming qualification, no implementation Class inferred. |
++| IV.3.12.2.1 | Mneme Adapter / Façade | ApplicationFunction | — | Semantic: Accepted Mnemosyne Final.001 semantics; authorised incorporation; exact resulting candidate awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-22bdac97fe0d48d1844f1e982d03d387"></a>22bdac97fe0d48d1844f1e982d03d387 | [application/application-function/22bdac97fe0d48d1844f1e982d03d387.md](application/application-function/22bdac97fe0d48d1844f1e982d03d387.md) | standing.incorporation124: Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation<br>standing.reconciliation: Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained<br>Unresolved canonicalName: No governed formal qualifier for this unspecialised native logical type/context; enterprise-architecture/design/review/1.1.23/hcrl-1.1.23-001.pending.md#dr-4; preserve Q-01 naming qualification, no implementation Class inferred. |
+ | IV.3.12.2.2 | InformationUnit Controller | ApplicationFunction | — | Semantic: Accepted Mnemosyne Final.001 semantics; authorised incorporation; exact resulting candidate awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-ef864d509efa44a7a4160db2ca821163"></a>ef864d509efa44a7a4160db2ca821163 | [application/application-function/ef864d509efa44a7a4160db2ca821163.md](application/application-function/ef864d509efa44a7a4160db2ca821163.md) | Unresolved canonicalName: No governed formal qualifier for this unspecialised native logical type/context; enterprise-architecture/design/review/1.1.23/hcrl-1.1.23-001.pending.md#dr-4; preserve Q-01 naming qualification, no implementation Class inferred. |
+ | IV.3.12.2.3 | InformationUnit Constructor / Disassembler | ApplicationFunction | — | Semantic: Accepted Mnemosyne Final.001 semantics; authorised incorporation; exact resulting candidate awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-75349ac7a0d44dec955b77bb5ecf1151"></a>75349ac7a0d44dec955b77bb5ecf1151 | [application/application-function/75349ac7a0d44dec955b77bb5ecf1151.md](application/application-function/75349ac7a0d44dec955b77bb5ecf1151.md) | Unresolved canonicalName: No governed formal qualifier for this unspecialised native logical type/context; enterprise-architecture/design/review/1.1.23/hcrl-1.1.23-001.pending.md#dr-4; preserve Q-01 naming qualification, no implementation Class inferred. |
+ | IV.3.12.2.4 | GovernedPersistenceFramework | ApplicationFunction | — | Semantic: Accepted Mnemosyne Final.001 semantics; authorised incorporation; exact resulting candidate awaiting Solution Architect confirmation<br>Currentness: current | **Unresolved** | <a id="element-812fa47cef1442aeb34ec34f263616be"></a>812fa47cef1442aeb34ec34f263616be | [application/application-function/812fa47cef1442aeb34ec34f263616be.md](application/application-function/812fa47cef1442aeb34ec34f263616be.md) | Unresolved canonicalName: No governed formal qualifier for this unspecialised native logical type/context; enterprise-architecture/design/review/1.1.23/hcrl-1.1.23-001.pending.md#dr-4; preserve Q-01 naming qualification, no implementation Class inferred. |
+diff --git a/enterprise-architecture/continuum/application/application-function/22bdac97fe0d48d1844f1e982d03d387.md b/enterprise-architecture/continuum/application/application-function/22bdac97fe0d48d1844f1e982d03d387.md
+index 6ee85e6f..ed367434 100644
+--- a/enterprise-architecture/continuum/application/application-function/22bdac97fe0d48d1844f1e982d03d387.md
++++ b/enterprise-architecture/continuum/application/application-function/22bdac97fe0d48d1844f1e982d03d387.md
+@@ -10,7 +10,8 @@
+   "standing": {
+     "semantic": "Accepted Mnemosyne Final.001 semantics; authorised incorporation; exact resulting candidate awaiting Solution Architect confirmation",
+     "currentness": "current",
+-    "incorporation124": "Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation"
++    "incorporation124": "Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation",
++    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.23/001/before/ai-agent-tasks/unresolved-mnemosyne-authoritative-persistence-incorporation.md",
+@@ -41,6 +42,21 @@
+       "sha256": "9696e135a47fe5bd0d568a7f88624b64cb172d1c565c6529a60311b37431b3a6",
+       "role": "Complete source approved and bounded ADD authorised by Mark Hunter in operative Task; original pre-approval wording is historical",
+       "authority": "enterprise-architecture/design/evidence/1.1.24/001/before/ai-agent-tasks/unresolved-mneme-interaction-cache-add.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§4.1–4.3,7; Appendix A IU-03/09/11 — Mnemosyne-side Façade operational projections and guarantees",
++      "role": "Solution Architect-approved conceptual input; bounded ADD authorised by operative Task; actual incorporated result awaiting review",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md",
++      "sha256": "3735ec2968ffced91119b00ca623f66edce1b9d0364b1d3870401c3dc7ac5097",
++      "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
++      "selector": "§§3.2–3.5,4; OM-06–OM-10 — bounded IU operational remapping and preservation safeguards — Mnemosyne-side Façade compatibility",
++      "role": "OM-06–OM-10 explicitly approved by operative Solution Architect instruction; retained internal pending-review wording records source-stage history, not actual-result acceptance",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
++      "sha256": "0d9e1fc3ef4102d2c093dcb75eb0cfc2c53d7d62df18d2cfb83d2fc4888c6ac3"
+     }
+   ],
+   "sourceBindings": [
+@@ -51,6 +67,14 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+       "selector": "§§2,4.1–4.2,4.9–4.12"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§4.1–4.3,7; Appendix A IU-03/09/11 — Mnemosyne-side Façade operational projections and guarantees"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
++      "selector": "§§3.2–3.5,4; OM-06–OM-10 — bounded IU operational remapping and preservation safeguards — Mnemosyne-side Façade compatibility"
+     }
+   ],
+   "relationships": [
+@@ -366,3 +390,23 @@ The Façade preserves the relationship to the IU UUID/Topic, applicable versions
+ ### Incorporation standing
+ 
+ Accepted parent DRP semantics, incorporated under the operative Task for 1.1.23/001. Actual resulting candidate confirmation remains pending. Earlier component/source qualifications remain independently in force.
++
++### Final.002 operational allocation and compatibility
++
++Mneme operational revision, Active Generation/cache-working facts and Mneme–Mnemosyne
++handshake observations are associated **peer OperationalMetadata**, scoped to the
++IU, manifestation or operation as appropriate. Their semantic home does not remove
++the existing ManagementContext/LifecycleContext projections, stale-write/concurrency
++checks, visibility, recovery, work preservation, retention or causal/evidence facts
++required by any of the **five existing logical contracts**. The precise association/
++projection layout remains bounded detailed design; no new façade field, service,
++schema or breaking removal is prescribed.
++
++The Mnemosyne-established authoritative persisted revision stays with the same IU;
++Summary and full access preserve that IU/version and accepted Themis/disclosure
++rules. Operational status cannot substitute for multi-site durable mutation Success,
++nor may a cache expiry discard required durable work or audit/provenance. MI-05
++continues to require **complete required coverage by the union of eligible available
++supported criteria**, not overlap or mere matching of the current request. Existing
++AV/FC/MI and MC-01–MC-07 qualifications remain unchanged; this allocation neither
++adds a sixth contract nor promotes cache state or operational observation to truth.
+diff --git a/enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md b/enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md
+index e7d1162f..7dff9961 100644
+--- a/enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md
++++ b/enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md
+@@ -10,7 +10,8 @@
+   "standing": {
+     "semantic": "Accepted Mnemosyne Final.001 semantics; authorised incorporation; exact resulting candidate awaiting Solution Architect confirmation",
+     "currentness": "current",
+-    "incorporation124": "Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation"
++    "incorporation124": "Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation",
++    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.23/001/before/ai-agent-tasks/unresolved-mnemosyne-authoritative-persistence-incorporation.md",
+@@ -41,6 +42,21 @@
+       "sha256": "9696e135a47fe5bd0d568a7f88624b64cb172d1c565c6529a60311b37431b3a6",
+       "role": "Complete source approved and bounded ADD authorised by Mark Hunter in operative Task; original pre-approval wording is historical",
+       "authority": "enterprise-architecture/design/evidence/1.1.24/001/before/ai-agent-tasks/unresolved-mneme-interaction-cache-add.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§4.1–4.3,7; Appendix A IU-03/09/11 — Mneme-side Store operational projections and guarantees",
++      "role": "Solution Architect-approved conceptual input; bounded ADD authorised by operative Task; actual incorporated result awaiting review",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md",
++      "sha256": "3735ec2968ffced91119b00ca623f66edce1b9d0364b1d3870401c3dc7ac5097",
++      "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
++      "selector": "§§3.2–3.5,4; OM-06–OM-10 — bounded IU operational remapping and preservation safeguards — Mneme-side Store compatibility",
++      "role": "OM-06–OM-10 explicitly approved by operative Solution Architect instruction; retained internal pending-review wording records source-stage history, not actual-result acceptance",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
++      "sha256": "0d9e1fc3ef4102d2c093dcb75eb0cfc2c53d7d62df18d2cfb83d2fc4888c6ac3"
+     }
+   ],
+   "sourceBindings": [
+@@ -51,6 +67,14 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+       "selector": "§§4.2,4.8–4.12; AV-02–AV-05; MI-05/06"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§4.1–4.3,7; Appendix A IU-03/09/11 — Mneme-side Store operational projections and guarantees"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
++      "selector": "§§3.2–3.5,4; OM-06–OM-10 — bounded IU operational remapping and preservation safeguards — Mneme-side Store compatibility"
+     }
+   ],
+   "relationships": [
+@@ -240,3 +264,23 @@ Mnemosyne reports factual persistence Outcome; Mneme decides its own subsequent
+ ### Incorporation standing
+ 
+ Accepted parent DRP semantics, incorporated under the operative Task for 1.1.23/001. Actual resulting candidate confirmation remains pending. Earlier component/source qualifications remain independently in force.
++
++### Final.002 operational allocation and compatibility
++
++Mneme operational revision, Active Generation/cache-working facts and Mneme–Mnemosyne
++handshake observations are associated **peer OperationalMetadata**, scoped to the
++IU, manifestation or operation as appropriate. Their semantic home does not remove
++the existing ManagementContext/LifecycleContext projections, stale-write/concurrency
++checks, visibility, recovery, work preservation, retention or causal/evidence facts
++required by any of the **five existing logical contracts**. The precise association/
++projection layout remains bounded detailed design; no new façade field, service,
++schema or breaking removal is prescribed.
++
++The Mnemosyne-established authoritative persisted revision stays with the same IU;
++Summary and full access preserve that IU/version and accepted Themis/disclosure
++rules. Operational status cannot substitute for multi-site durable mutation Success,
++nor may a cache expiry discard required durable work or audit/provenance. MI-05
++continues to require **complete required coverage by the union of eligible available
++supported criteria**, not overlap or mere matching of the current request. Existing
++AV/FC/MI and MC-01–MC-07 qualifications remain unchanged; this allocation neither
++adds a sixth contract nor promotes cache state or operational observation to truth.
+diff --git a/enterprise-architecture/continuum/application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md b/enterprise-architecture/continuum/application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md
+index cbf1e442..4e5d9b1d 100644
+--- a/enterprise-architecture/continuum/application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md
++++ b/enterprise-architecture/continuum/application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md
+@@ -9,7 +9,8 @@
+   "canonicalName": null,
+   "standing": {
+     "semantic": "Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation",
+-    "currentness": "current"
++    "currentness": "current",
++    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.24/001/before/ai-agent-tasks/unresolved-mneme-interaction-cache-add.md",
+@@ -32,12 +33,35 @@
+       "sha256": "a95901d84c32c4568d5db01e170087097308a40b241b7b9254387e638c45d96c",
+       "role": "Complete source approved and bounded ADD authorised by Mark Hunter in operative Task; original pre-approval wording is historical",
+       "authority": "enterprise-architecture/design/evidence/1.1.24/001/before/ai-agent-tasks/unresolved-mneme-interaction-cache-add.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§4.1–4.3,7; OM-R04–OM-R09 — Standard-Cache manifestation and compatible Summary projection",
++      "role": "Solution Architect-approved conceptual input; bounded ADD authorised by operative Task; actual incorporated result awaiting review",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md",
++      "sha256": "3735ec2968ffced91119b00ca623f66edce1b9d0364b1d3870401c3dc7ac5097",
++      "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
++      "selector": "§§3.2–3.5,4; OM-06–OM-10 — bounded IU operational remapping and preservation safeguards — Mneme cache manifestation and retained view",
++      "role": "OM-06–OM-10 explicitly approved by operative Solution Architect instruction; retained internal pending-review wording records source-stage history, not actual-result acceptance",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
++      "sha256": "0d9e1fc3ef4102d2c093dcb75eb0cfc2c53d7d62df18d2cfb83d2fc4888c6ac3"
+     }
+   ],
+   "sourceBindings": [
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+       "selector": "§§2,3.2–3.3,4.1,4.6–4.8,9 MC-01–MC-07"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§4.1–4.3,7; OM-R04–OM-R09 — Standard-Cache manifestation and compatible Summary projection"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
++      "selector": "§§3.2–3.5,4; OM-06–OM-10 — bounded IU operational remapping and preservation safeguards — Mneme cache manifestation and retained view"
+     }
+   ],
+   "relationships": [
+@@ -189,7 +213,33 @@
+ 
+ Mneme's lightweight distributed active-IU Summary/reference and operational-coordination cache responsibility. The selected machinery is **Infinispan Server accessed through Hot Rod**, with synchronous distribution as a direction qualified by MC-01/02. Authorised components use Mneme governance and Themis; a Hot Rod client grants no raw-cache bypass.
+ 
++The IU Summary remains the same governed IU projected by excluding **exactly
++InformationRepresentation.Content**. Identity/authoritative revision, applicable
++information metadata, ContainerMetadata and ContentMetadata remain. Required
++ManagementContext/LifecycleContext façade projections of associated OperationalMetadata
++remain available with their existing semantics; association does not add operational
++observations to authoritative search, make transient data durable, create a second
++IU/representation or establish another Summary version lineage. Exact API/search
++eligibility of operational properties requires its own governed contract.
++
++The opaque Content reference remains in ContentMetadata, interpreted with the unchanged
++four InformationCoordinates by Mnemosyne/PersistenceService. Logical separate Content
++addressability mandates neither separate databases nor one native transaction.
++Mneme operational revision, per-manifestation generation and working/cache observations
++are peer OperationalMetadata; persistence handshaking is scoped to its operation.
++Existing concurrency, visibility, recovery/no-loss work, audit/provenance and retention
++obligations survive relocation. Cache loss cannot discard required durable facts.
++
++### Predecessor summary allocation
++
++------- Legacy Content - Superseded ------- Start ------
++Superseded by: current Summary/associated operational projection definition above; no accepted contract is removed.
++Only the enclosed concern allocation or model wording is superseded;
++original text is unchanged. Other predecessor obligations remain effective.
++---------------------------------------------------------
++
+ The IU Summary is the projection of the same accepted InformationUnit excluding **exactly InformationRepresentation.Content**. It retains Identity, applicable Metadata (ManagementContext, InformationCoordinates, SecurityContext, LifecycleContext and optional Relationships), ContainerMetadata and ContentMetadata. A Content reference belongs in ContentMetadata and is opaque to Mneme; Mnemosyne/PersistenceService resolve it with InformationCoordinates. ContentReference is illustrative vocabulary, not a prescribed field encoding. Summary projection does not promote transient ManagementContext data to mandatory durable metadata, create a second IU/InformationRepresentation, independent metadata authority or Summary version lineage. Logical separate Content addressability does not require separate physical databases or a particular native transaction.
++------- Legacy Content - Superseded ------- Finish ----
+ 
+ Normal population/refresh uses GovernedSummaryReader, GovernedSummarySearch or the coherent Summary from a successful full GovernedWriter. Summary CREATE registers external Content; RETIRE adjusts governed visibility. Mneme decides population, refresh, invalidation and eviction; Mnemosyne does not manipulate either cache. Cache residence, replication and active generations establish no authoritative persistence or independent IU. AX-05 failed/degraded convergence creates no valid active generation; untrusted coordination requires authoritative reconciliation.
+ 
+diff --git a/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md b/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md
+index 6254021d..0f802f73 100644
+--- a/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md
++++ b/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md
+@@ -9,7 +9,8 @@
+   "canonicalName": null,
+   "standing": {
+     "semantic": "Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation",
+-    "currentness": "current"
++    "currentness": "current",
++    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md",
+@@ -31,12 +32,24 @@
+       "role": "Accepted whole DRP; IU-01–IU-13 adjudications; ADD authorised by operative Task",
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.22/001/before/accepted-input/DRP-Information-Unit-Framework.Final.001.md",
+       "sha256": "98abd39feea66f5f9d5c5a9540d2053b7a340864e68b22d3ac415028f4c42775"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.md",
++      "selector": "§§1–2,4–6 — immutable Topic model; explicit sequencing and distinct name roles",
++      "role": "Solution Architect-approved conceptual input; bounded ADD authorised by operative Task; actual incorporated result awaiting review",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.md",
++      "sha256": "1690ca87200db65d2254acfb5af68b7b960fb044934682b6ed89eb77ce9c5e40",
++      "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
+     }
+   ],
+   "sourceBindings": [
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.001.md",
+       "selector": "§§3–5,8,12,21 — common logical Topic model"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.md",
++      "selector": "§§1–2,4–6 — immutable Topic model; explicit sequencing and distinct name roles"
+     }
+   ],
+   "relationships": [],
+@@ -74,9 +87,49 @@ distinct from coordinate, Content Structure and SecurityContext Topic references
+ native Content/represented-entity identity, provider IDs, transport and correlation
+ identifiers. The earlier TopicID id example does not replace UUID-plus-Topic identity.
+ Referenced TopicIDs do not turn every metadata attribute into an independently
+-governed IU. Renaming a Topic can alter mask matching despite stable TopicID and
++governed IU.
++
++------- Legacy Content - Superseded ------- Start ------
++Superseded by: immutable Topic contract below; substantive replacement receives a different UUID.
++Only the enclosed concern allocation or model wording is superseded;
++original text is unchanged. Other predecessor obligations remain effective.
++---------------------------------------------------------
++
++Renaming a Topic can alter mask matching despite stable TopicID and
+ requires governance; name/identity/containment remain distinct semantic roles.
++------- Legacy Content - Superseded ------- Finish ----
+ 
+ Calliope-Models defines shared semantics; runtime use belongs to consuming Features
+ and components. No registry service, registration mechanism, physical topology,
+ runtime model instance or new implementation dependency is prescribed.
++
++### Approved foundational Topic reconciliation — actual result pending review
++
++A Topic is **immutable**, independently identifiable, typed and hierarchically
++contained. Its full TopicID is a UUID, distinct from an IU UUID and from this common
++model DataObject's canonical identity. Identity, canonical entries, qualifiers,
++containment and names cannot be mutated. A substantive replacement is a different
++Topic with a different UUID; historic references retain their original meaning.
++No current Topic instance, canonical ID, name or relationship is renamed here.
++
++The logical canonicalName is an **explicitly sequenced root-to-leaf mapping** of
++SequenceNumber to Entry(qualifier, name). Preserve sequence numbers in storage and
++exchange; list/array/map iteration alone is insufficient. Reject gaps, duplicate
++positions and ambiguous order rather than repairing them silently. An absent qualifier
++normalises to N0, N1, … by absolute position; qualifiers are typed discriminators.
++Precise interchange encoding remains detailed design with deterministic reconstruction.
++
++Derived name joins unqualified names in sequence; friendlyName is the leaf name;
++relativeName is its qualified leaf. For Country=Australia / StateTerritory=ACT /
++City=Canberra these are Australia.ACT.Canberra, Canberra and City=Canberra.
++Topic.name is globally unique within its applicable registry; registry-scope changes
++need separate authority. A short displayed UUID prefix is never full identity.
++Useful safe display helpers confer no replacement identity or prescribed Java API.
++
++**No Topic.Version.** IU authoritative revision, Mneme operational revision, Content
++Structure Version and optional native Content version belong to their own contracts.
++The common model's id/canonicalName/name/friendlyName/relativeName vocabulary is not
++a wholesale rename of Continuum metadata canonicalId/displayName or existing Topic
++Names. Their distinct representation roles are preserved; exact runtime interchange/
++registry mapping remains bounded detailed design. Earlier version-bearing candidate
++Topic prose is reconciled as source history, not promoted as a current contract.
+diff --git a/enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md b/enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md
+index 019b4c95..02fae3cf 100644
+--- a/enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md
++++ b/enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md
+@@ -9,7 +9,8 @@
+   "canonicalName": null,
+   "standing": {
+     "semantic": "Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation",
+-    "currentness": "current"
++    "currentness": "current",
++    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md",
+@@ -31,12 +32,24 @@
+       "role": "Accepted whole DRP; IU-01–IU-13 adjudications; ADD authorised by operative Task",
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.22/001/before/accepted-input/DRP-Information-Unit-Framework.Final.001.md",
+       "sha256": "98abd39feea66f5f9d5c5a9540d2053b7a340864e68b22d3ac415028f4c42775"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§2.2–2.3,4.2 OM-R13–OM-R15,5,7 — portable singular representation",
++      "role": "Solution Architect-approved conceptual input; bounded ADD authorised by operative Task; actual incorporated result awaiting review",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md",
++      "sha256": "3735ec2968ffced91119b00ca623f66edce1b9d0364b1d3870401c3dc7ac5097",
++      "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
+     }
+   ],
+   "sourceBindings": [
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.001.md",
+       "selector": "§§2,6–9,19–21 — logical InformationRepresentation"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§2.2–2.3,4.2 OM-R13–OM-R15,5,7 — portable singular representation"
+     }
+   ],
+   "relationships": [
+@@ -128,3 +141,25 @@ own governed contracts without redefining the IU. Content-aware integration may
+ inspect/transform relevant ContainerMetadata under its owning Feature; this does
+ not transfer integration business logic to Mnemosyne or require Content-neutral
+ providers to interpret native payload meaning.
++
++### Final.002 representation and portability clarification
++
++Container type belongs in ContainerMetadata; Content Structure type and its
++structureVersion belong in ContentMetadata. No duplicate external ContainerType,
++mandatory Container.Id or Content.Id UUID is required. Native identifiers and
++references retain their own governed meanings, without nested independently governed IUs.
++
++Content's governed contract is portable **textual, binary or by reference**, including
++the accepted large-binary pass-by-reference exception. Native Java objects may be
++working manifestations; an object graph cannot be the sole canonical interchange/
++persistence contract for non-Java peers and archival use. Encoding/decoding needs
++known structure/format at an explicit boundary; no universal JSON string, native
++Java serialisation, whole-content logging or new wire/storage format is prescribed.
++
++Content Structure Version remains distinct from the Mnemosyne-established authoritative
++IU revision, Mneme operational revision and optional native Content instance version.
++A native version remains in Content where its own model supplies one; this does not
++promise equality with IU revision or authorise native payload mutation. Container/
++ContentMetadata remain information representation concerns, not OperationalMetadata.
++The one-representation invariant, faithful provider reconstruction and new IU for a
++governed transformation remain unchanged. Actual result review is HCRL 1.1.25/001.
+diff --git a/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md b/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md
+index 1e22539d..88300f0c 100644
+--- a/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md
++++ b/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md
+@@ -9,7 +9,8 @@
+   "canonicalName": null,
+   "standing": {
+     "semantic": "Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation",
+-    "currentness": "current"
++    "currentness": "current",
++    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md",
+@@ -31,12 +32,24 @@
+       "role": "Accepted whole DRP; IU-01–IU-13 adjudications; ADD authorised by operative Task",
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.22/001/before/accepted-input/DRP-Information-Unit-Framework.Final.001.md",
+       "sha256": "98abd39feea66f5f9d5c5a9540d2053b7a340864e68b22d3ac415028f4c42775"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.md",
++      "selector": "§§3–6 — immutable selector identity; name/canonical basis; Exact/Inclusive and neutral composition",
++      "role": "Solution Architect-approved conceptual input; bounded ADD authorised by operative Task; actual incorporated result awaiting review",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.md",
++      "sha256": "1690ca87200db65d2254acfb5af68b7b960fb044934682b6ed89eb77ce9c5e40",
++      "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
+     }
+   ],
+   "sourceBindings": [
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.001.md",
+       "selector": "§§10–13,21 — common logical TopicMask model"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.md",
++      "selector": "§§3–6 — immutable selector identity; name/canonical basis; Exact/Inclusive and neutral composition"
+     }
+   ],
+   "relationships": [
+@@ -91,6 +104,12 @@
+ 
+ ## Architectural content
+ 
++------- Legacy Content - Superseded ------- Start ------
++Superseded by: approved naming-basis and immutable matching contract below; element-wise discrimination retained.
++Only the enclosed concern allocation or model wording is superseded;
++original text is unchanged. Other predecessor obligations remain effective.
++---------------------------------------------------------
++
+ TopicMask is Harmonia's shared logical discrimination structure, comprising
+ regular-expression patterns applied **separately to corresponding individual
+ canonical-name elements** of a Topic. Applicable element expressions must match
+@@ -98,6 +117,7 @@ under governed syntax/anchoring rules. It is neither one whole-name regex nor a
+ precomputed enumeration/set of TopicIDs. An element wildcard cannot silently span
+ adjacent dot-separated name elements. Matching can include subsequently introduced
+ Topics whose canonical-name elements satisfy the pattern without editing a list.
++------- Legacy Content - Superseded ------- Finish ----
+ 
+ For example, `<BusinessDomain>.<StandardsBodyName>.InformationCompartment.<CompartmentName>`
+ illustrates a Topic hierarchy. `*.*.InformationCompartment.PersonalInformation*`
+@@ -110,10 +130,55 @@ Publication/subscription, routing, discovery, security and other Topic-discrimin
+ Features reuse the same semantics. A match is a discrimination result; consuming
+ Features determine its consequence. Matching alone grants no access, publishes
+ nothing, schedules no delivery and selects no persistence provider. IU SecurityContext
+-is one consumer and does not own this common model. Canonical Topic renaming may
++is one consumer and does not own this common model.
++
++------- Legacy Content - Superseded ------- Start ------
++Superseded by: immutable Topic contract; replacements use a new Topic UUID.
++Only the enclosed concern allocation or model wording is superseded;
++original text is unchanged. Other predecessor obligations remain effective.
++---------------------------------------------------------
++
++Canonical Topic renaming may
+ change matching consequences without changing TopicID and requires governance.
++------- Legacy Content - Superseded ------- Finish ----
+ 
+ This is a logical DataObject, not an inferred Class, SecurityMask subtype,
+ Feature-specific wrapper, new named Topic, executable Function or universal IU
+ get()/test() catalogue. Existing accepted action/compartment criteria retain scope;
+ the IU model creates no parallel taxonomy or general-purpose policy interpreter.
++
++### Approved immutable TopicMask contract — actual result pending review
++
++A TopicMask has its own stable UUID and an immutable definition. Its UUID does not
++influence matching. Changing type, containment behaviour or patterns creates a new
++mask with a new UUID; old references retain meaning. It has **exactly one** basis:
++
++| type | Explicitly sequenced pattern entries and matching subject |
++| --- | --- |
++| TopicNameBased | SequenceNumber → NameRegex; corresponding individual unqualified Topic names. |
++| TopicCanonicalNameBased | SequenceNumber → EntryPattern(qualifierRegex, nameRegex); corresponding qualifier and name independently. |
++
++One mask does not combine these two bases with AND/OR. Every regex applies to one
++element; it cannot span adjacent path elements. There is no Topic/versionRegex axis.
++
++| maskType | Containment meaning |
++| --- | --- |
++| Exact | Every specified level matches and candidate depth is exactly the mask depth. |
++| Inclusive | Every specified level matches; further descendant levels are included. |
++
++Thus a name-based inclusive Australia.ACT mask includes Australia.ACT.Canberra;
++its exact counterpart includes only the two-level Topic. Typed qualifiers remain
++first-class independently matchable discriminators in canonical-name mode.
++An unrestricted mask is conceptually inclusive with unrestricted regex (.*);
++standalone * is human shorthand, not valid Java regex. The expected default is
++unrestricted, without accidental null-as-wildcard semantics. Exact root/unrestricted
++wire encoding, cross-language regex dialect, escaping, anchoring and invalid-regex
++handling remain bounded contracts requiring repeatable evaluation evidence.
++
++InformationUnitMask, OperationalMetadataMask and PetasosParcelMask may contain or
++reference TopicMasks for governed Topic-valued properties. SubscriptionStatement,
++PublicationStatement and FilterStatement compose higher masks; they do not inherit
++from TopicMask. Matching is neutral and confers no disclosure, publication, execution,
++persistence or routing authority. Themis policy/actions/Passport remain distinct;
++Passport is not an InformationUnitMask subclass. No higher-mask field catalogue,
++absence semantics or Petasos framework design is supplied by this common primitive.
+diff --git a/enterprise-architecture/continuum/application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md b/enterprise-architecture/continuum/application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md
+index 71e2aaa6..37569f3c 100644
+--- a/enterprise-architecture/continuum/application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md
++++ b/enterprise-architecture/continuum/application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md
+@@ -9,7 +9,8 @@
+   "canonicalName": null,
+   "standing": {
+     "semantic": "Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation",
+-    "currentness": "current"
++    "currentness": "current",
++    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md",
+@@ -31,12 +32,35 @@
+       "role": "Accepted whole DRP; IU-01–IU-13 adjudications; ADD authorised by operative Task",
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.22/001/before/accepted-input/DRP-Information-Unit-Framework.Final.001.md",
+       "sha256": "98abd39feea66f5f9d5c5a9540d2053b7a340864e68b22d3ac415028f4c42775"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§2–4,6–8; OM-R01–OM-R16; IU-IT01 — information/peer operational allocation and selectors",
++      "role": "Solution Architect-approved conceptual input; bounded ADD authorised by operative Task; actual incorporated result awaiting review",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md",
++      "sha256": "3735ec2968ffced91119b00ca623f66edce1b9d0364b1d3870401c3dc7ac5097",
++      "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
++      "selector": "§§3.2–3.5,4; OM-06–OM-10 — bounded IU operational remapping and preservation safeguards — IU metadata concern allocation",
++      "role": "OM-06–OM-10 explicitly approved by operative Solution Architect instruction; retained internal pending-review wording records source-stage history, not actual-result acceptance",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
++      "sha256": "0d9e1fc3ef4102d2c093dcb75eb0cfc2c53d7d62df18d2cfb83d2fc4888c6ac3"
+     }
+   ],
+   "sourceBindings": [
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.001.md",
+       "selector": "§§2,5,13–19,21 — logical InformationUnit Metadata"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§2–4,6–8; OM-R01–OM-R16; IU-IT01 — information/peer operational allocation and selectors"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
++      "selector": "§§3.2–3.5,4; OM-06–OM-10 — bounded IU operational remapping and preservation safeguards — IU metadata concern allocation"
+     }
+   ],
+   "relationships": [
+@@ -160,6 +184,97 @@
+ 
+ ## Architectural content
+ 
++Information Unit Metadata is the existing logical DataObject for information-related
++metadata of the same IU. **InformationMetadata** is its conceptual information
++concern, peer to OperationalMetadata and conveyance metadata; it establishes no
++mandatory wrapper, wholesale Class rename or shared physical owner. The IU's
++identity and Mnemosyne-established authoritative persisted revision remain with
++the IU. Existing native relationships and the enclosing IU Composition are preserved.
++
++### Current information and operational allocation
++
++| Concern | Current conceptual allocation and preserved boundary |
++| --- | --- |
++| InformationCoordinates | Unchanged four TopicID references: PersistenceGateway, GatewayEndpoint, InformationLocation, InformationOwner. They identify logical gateway capability, endpoint/parameter context, location/node and owner; Mnemosyne resolves them. They are not inline configuration, credentials or physical addresses. |
++| InformationItinerary | Distinct information participation/path concern, separate from the four coordinates, information origin, provenance evidence, business Journey and an individual handoff. |
++| SecurityContext | IU-side required action, compartment and other criteria; retained with information. Passport/identity permissions, PEP/PDP and Themis remain separate. A match grants no disclosure. |
++| Information lifecycle | Governed preservation, immutable history, retention/hold, archive, supersession, RETIRE and authorised disposition remain information concerns. No universal native business-state enum is implied. |
++| Relationships | Optional creator/updater-supplied references; existing local validation, no mandatory remote validation and no automatic reciprocal relationship obligations remain. |
++| Mneme working/version/cache facts | Associated peer OperationalMetadata, relative to the IU or its manifestation as appropriate (OM-06/07). Mneme retains active-state and individual-IU concurrency responsibility. |
++| Mneme–Mnemosyne handshake | Associated peer OperationalMetadata relative to the operation, including request/acceptance/commit/completion and operational times/correlations where governed (OM-08). The responsible contracts retain ownership. |
++
++The semantic reallocation is **not a deletion of ManagementContext or LifecycleContext
++from existing façade views**. Embedded, referenced and hybrid views remain valid.
++Consumers must retain operational facts and guarantees required by accepted read,
++write, Summary, search and cache contracts. The exact associated/reference/projection
++representation is bounded detailed design, not an approved API-breaking migration.
++InformationLifecycle describes governed information disposition; persistence-handshake
++progress does not establish that disposition or multi-site durable completion.
++
++### InformationItinerary and the parcel boundary
++
++InformationItinerary describes components participating in actual or intended
++information passage. SourceEntryComponent, CreationComponent, PreviousComponent,
++NextComponent and TargetExitComponent are **conceptual candidates**, not a required
++field catalogue. Historic participation and intended routing must be distinguishable;
++their exact representation/update semantics remain detailed design. An itinerary
++need not contain a fully known route and does not prove custody or replace Provenance.
++Information origin remains separate from logical location and a parcel's source;
++the exact overlapping origin/provenance association is unresolved detailed design.
++
++Each relevant PetasosParcel carries **its own complete itinerary instance** for its
++handoff. Complete means self-contained structure, not every value known/populated;
++later handoffs must not retroactively mutate earlier parcels' historic context.
++This is solely the approved common boundary. Parcel/Framework design, queue/retry/
++routing/processing machinery and itinerary update algorithms remain deferred until
++Mneme/Mnemosyne operational **0.5** build quality. No new Petasos element is allocated.
++
++### Revision, manifestation and retention distinctions
++
++| Value | Current meaning and conceptual home |
++| --- | --- |
++| Authoritative persisted IU revision | IU; established/returned by Mnemosyne. GovernedWriter may return a higher actual revision while preserving immutable history; authoritative reads cannot expose a pre-durable revision. |
++| Mneme operational revision | Associated OperationalMetadata; cache coherence, stale-write/conflict and optimistic concurrency obligations unchanged. |
++| Active Generation | Associated OperationalMetadata for a successfully established manifestation. Several generations may express one operational revision; no new IU, representation or version follows. |
++| Content Structure Version | InformationRepresentation.ContentMetadata; version of its structure/model/profile. |
++| Optional native Content instance version | Native Content where supplied; no synthetic native version, duplicate counter or promised equality with authoritative IU revision. |
++
++The predecessor's three-version table did not exhaust Mnemosyne's authoritative
++revision contract. This reconciliation makes that established role explicit; it
++creates no additional implementation counter or mutation of native FHIR meta.versionId.
++Active Generation is a manifestation identity, not another revision axis.
++
++OperationalMetadata may be transient **or durable** according to the responsible
++contract. Cache loss, eviction, parcel expiry or conceptual relocation must not
++discard facts/work required for recovery, uncertainty reconciliation, audit/provenance,
++or retention. Explicitly transient references can expire; they never become durable
++truth. No common persistence transaction, central metadata service, schema, global
++generation counter or mandatory UUID for every datum is prescribed.
++
++Business/clinical event times remain in Content; structure versions in ContentMetadata;
++working-cache and persistence-handshake observations are associated OperationalMetadata.
++Security/session material is not automatically durable IU information. Kleio audit,
++Dokimasia assurance/Provenance and operational logs retain their separate obligations.
++
++### Neutral selectors
++
++InformationUnitMask selects governed information characteristics;
++OperationalMetadataMask selects facts about the declared operational subject/context;
++PetasosParcelMask selects conveyance. They are separable neutral selectors, containing/
++referencing common TopicMasks for Topic-valued criteria. Operational properties do not
++silently re-enter an IU mask as intrinsic information. No field/operator/cardinality,
++absence, observation/snapshot or event catalogue is invented. The optional operational
++criterion and cross-mask conjunction are conceptual boundaries, not an implemented
++subscription design. Themis Passport does not inherit from InformationUnitMask.
++
++### Historical four-context allocation
++
++------- Legacy Content - Superseded ------- Start ------
++Superseded by: current conceptual allocation above, accepted IU Final.002 §§3–4 / OM-06–OM-10.
++Only the enclosed concern allocation or model wording is superseded;
++original text is unchanged. Other predecessor obligations remain effective.
++---------------------------------------------------------
++
+ Information Unit Metadata holds four distinguishable concerns within one IU and
+ optional supplied relationships. It is a logical DataObject, not a second governed
+ management entity, nested IU, implementation Class or undifferentiated context store.
+@@ -170,6 +285,7 @@ management entity, nested IU, implementation Class or undifferentiated context s
+ | InformationCoordinates | Four semantically distinct TopicID references: PersistenceGateway (named PersistenceService gateway/capability), GatewayEndpoint (named logical endpoint/parameter context), InformationLocation (logical location/node), InformationOwner (operational owner). Mnemosyne interprets them to resolve service and access context. They are names, not URLs, credentials, inline implementations, connection parameters or physical storage addresses. |
+ | SecurityContext | IU-side required action, compartment and other criteria using explicit Topics and/or TopicMasks. It is not the requesting Identity's permissions, Passport or PEP-Criteria. Themis owns policy and local PEP enforcement; a match alone grants no access. |
+ | LifecycleContext | Mneme–Mnemosyne persistence/lifecycle handshaking, preserving request, acceptance, commit and completion distinctions as required. No universal state machine or Content lifecycle owner; detailed vocabulary and preservation rules remain with governing contracts. |
++------- Legacy Content - Superseded ------- Finish ----
+ 
+ **InformationCoordinates is independent of SecurityContext.** Operational owner,
+ gateway or location grants no clearance, compartment membership or read right.
+@@ -177,12 +293,19 @@ Policy may separately consult a coordinate without turning it into a security ru
+ Presence/population rules are contract-specific; no universal mandatory-coordinate
+ rule or configuration/deployment scheme is introduced.
+ 
++------- Legacy Content - Superseded ------- Start ------
++Superseded by: current revision/manifestation table above; predecessor meanings/visibility retained.
++Only the enclosed concern allocation or model wording is superseded;
++original text is unchanged. Other predecessor obligations remain effective.
++---------------------------------------------------------
++
+ | Version/generation concern | Home and meaning |
+ | --- | --- |
+ | Operational Version | ManagementContext: Mneme cache coherence, conflict/stale-write detection and optimistic concurrency. Does not substitute for Mnemosyne authoritative durable version progression. |
+ | Active Generation | ManagementContext: an individual successfully established active manifestation of the same IU in a Mneme cache environment/endpoint. Multiple generations may express the same operational Version. No new IU, representation or Content version follows. |
+ | Content Structure Version | InformationRepresentation.ContentMetadata: schema/structure version described by the Content Structure Topic. |
+ | Native Content instance version, if any | InformationRepresentation.Content: native payload contract; no synthetic native version is required. |
++------- Legacy Content - Superseded ------- Finish ----
+ 
+ Active Generation is not a timestamp or a global counter. AX-05's successful-state,
+ failed/degraded-convergence and untrusted-coordination rules remain binding.
+@@ -190,10 +313,17 @@ Failure to establish a generation changes neither the IU's governed information
+ state nor, by itself, an already established generation. No cache coherence,
+ distributed locking, invalidation, retry or generation-selection algorithm is chosen.
+ 
++------- Legacy Content - Superseded ------- Start ------
++Superseded by: current temporal allocation above; no retention obligation is removed.
++Only the enclosed concern allocation or model wording is superseded;
++original text is unchanged. Other predecessor obligations remain effective.
++---------------------------------------------------------
++
+ Temporal information stays with its meaning: clinical/business event/effective
+ times in Content; structure versions in ContentMetadata; needed working-cache
+ timestamps in ManagementContext; needed persistence/handshake times in LifecycleContext.
+ There is no mandatory TemporalContext or universal native payload lifecycle/history.
++------- Legacy Content - Superseded ------- Finish ----
+ Retention holds, archival, immutable history, authorised disposition, recovery and
+ RETIRE versus physical destruction retain their distinct existing governance.
+ 
+diff --git a/enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md b/enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md
+index d490e00b..24e91cc8 100644
+--- a/enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md
++++ b/enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md
+@@ -9,7 +9,8 @@
+   "canonicalName": "PKG-Model.PKG-Core.PKG-Information.CLASS-InformationUnit",
+   "standing": {
+     "semantic": "Accepted bounded architecture — HCRL 1.1.15-001 DR-1",
+-    "currentness": "current"
++    "currentness": "current",
++    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
+   },
+   "identity": {
+     "allocation": "UUIDv4 allocated once under explicit HCRL 1.1.15-001 application",
+@@ -38,6 +39,14 @@
+       "role": "Accepted whole DRP; IU-01–IU-13 adjudications; ADD authorised by operative Task",
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.22/001/before/accepted-input/DRP-Information-Unit-Framework.Final.001.md",
+       "sha256": "98abd39feea66f5f9d5c5a9540d2053b7a340864e68b22d3ac415028f4c42775"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§0–4,7,10; Appendices A–B — existing logical Class and projection compatibility",
++      "role": "Solution Architect-approved conceptual input; bounded ADD authorised by operative Task; actual incorporated result awaiting review",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md",
++      "sha256": "3735ec2968ffced91119b00ca623f66edce1b9d0364b1d3870401c3dc7ac5097",
++      "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
+     }
+   ],
+   "sourceBindings": [
+@@ -52,6 +61,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.001.md",
+       "selector": "§§0.1,2–21,23.4 — existing logical InformationUnit"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§0–4,7,10; Appendices A–B — existing logical Class and projection compatibility"
+     }
+   ],
+   "exchange": {
+@@ -203,13 +216,59 @@
+ 
+ ## Architectural content
+ 
+-### Accepted Information Unit Framework incorporation — 1.1.22
++### Final.002 conceptual allocation — incorporated result pending review
++
++InformationUnit remains definitive. There is one governed UUID, an IU Topic with
++its own distinct Topic UUID, and one InformationRepresentation. Conceptual notation:
++
++```text
++InformationUnit
++├── Identity: IU UUID; IU Topic (distinct Topic UUID)
++├── authoritative persisted revision: Mnemosyne-established/returned
++├── information-related Metadata
++│   ├── InformationCoordinates: PersistenceGateway; GatewayEndpoint;
++│   │                         InformationLocation; InformationOwner
++│   ├── InformationItinerary: distinct conceptual information path/participation
++│   ├── information origin / provenance association (detailed allocation open)
++│   ├── IU-required SecurityContext
++│   ├── governed information lifecycle / disposition
++│   └── Relationships [0..*]: creator/updater-supplied
++└── InformationRepresentation [1..1]
++    ├── ContainerMetadata
++    ├── ContentMetadata: Content Structure Topic; Content Structure Version
++    └── Content: portable textual/binary/by-reference; native version if supplied
++
++Associated peer OperationalMetadata (not another IU constituent or identity):
++  Mneme operational revision; Active Generation/cache/working facts;
++  Mneme–Mnemosyne operation/handshake facts, associated with their actual subjects.
++```
++
++`InformationMetadata` names a conceptual concern, not a compulsory rename/wrapper
++for this Class's existing Metadata structure. `InformationUnit.version : String`
++is the accepted conceptual authoritative persisted revision, not a new independent
++counter or a guarantee of equality to a native Content version. Existing
++ManagementContext/LifecycleContext fields remain available through their accepted
++façade/summary projections; conceptual peer allocation does not remove contracts
++or require physical co-persistence. OperationalMetadata association representation,
++exact fields and wire/storage encoding remain detailed design.
++
++Itinerary vocabulary names conceptual participants, not mandatory Java members,
++Classes, Topics or application services. This Class/its existing Composition edges
++are preserved; no ManagedIU, nested IU, extra representation or superclass is added.
++
++### Retained 1.1.22 identity and representation contract
+ 
+ This Calliope logical Class and [[BusinessObject] Information Unit](../../../business/business-object/10284034c8534b639284386b064f2c54.md) represent the **same IU** at
+ logical and conceptual levels. Its existing canonicalId, Class classification,
+ Package Composition and names are preserved. No additional implementation Class
+ is inferred from the semantic decomposition below.
+ 
++------- Legacy Content - Superseded ------- Start ------
++Superseded by: Final.002 conceptual allocation above; existing four-context API projections remain supported.
++Only the enclosed concern allocation or model wording is superseded;
++original text is unchanged. Other predecessor obligations remain effective.
++---------------------------------------------------------
++
+ ```text
+ InformationUnit
+ ├── Identity: persistent UUID and its own Topic
+@@ -226,6 +285,7 @@ InformationUnit
+     ├── ContentMetadata: Content Structure Topic; Content Structure Version
+     └── Content: native information; native instance version only if supported
+ ```
++------- Legacy Content - Superseded ------- Finish ----
+ 
+ [Information Unit Metadata](../c05b7e37278141488ecc90b9a9ef96eb.md) and [InformationRepresentation](../b9891b88150840ada3daefdec6f26c35.md)
+ define the two logical structures; their native Composition represents IU
+diff --git a/enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md b/enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md
+index c284b51a..24ecc12c 100644
+--- a/enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md
++++ b/enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md
+@@ -10,7 +10,8 @@
+   "standing": {
+     "semantic": "Established conceptual governed management boundary; no downstream schema or representation mapping.",
+     "currentness": "current",
+-    "representationDecision": "Accepted RAD-1.1.0 CR CR-079"
++    "representationDecision": "Accepted RAD-1.1.0 CR CR-079",
++    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
+   },
+   "identity": {
+     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+@@ -184,6 +185,14 @@
+       "role": "Accepted whole DRP; IU-01–IU-13 adjudications; ADD authorised by operative Task",
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.22/001/before/accepted-input/DRP-Information-Unit-Framework.Final.001.md",
+       "sha256": "98abd39feea66f5f9d5c5a9540d2053b7a340864e68b22d3ac415028f4c42775"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§1–7,10; Appendix A — same conceptual IU, current concern boundaries",
++      "role": "Solution Architect-approved conceptual input; bounded ADD authorised by operative Task; actual incorporated result awaiting review",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md",
++      "sha256": "3735ec2968ffced91119b00ca623f66edce1b9d0364b1d3870401c3dc7ac5097",
++      "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
+     }
+   ],
+   "sourceBindings": [
+@@ -258,6 +267,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.001.md",
+       "selector": "§§0.1,2–21,23.3 — existing conceptual Information Unit"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
++      "selector": "§§1–7,10; Appendix A — same conceptual IU, current concern boundaries"
+     }
+   ],
+   "exchange": {
+@@ -381,6 +394,42 @@ The UUID encoding is deterministic/reversible; its exact algorithm is not chosen
+ IU identity is distinct from represented-information/entity identity, native Content
+ versions, coordinate/security/content-structure Topics and provider/transport IDs.
+ 
++The current conceptual allocation preserves **Identity / Metadata /
++InformationRepresentation** and one governed IU. Its authoritative persisted revision
++is established/returned by Mnemosyne and belongs to the IU. Its own Topic has a UUID
++distinct from the IU UUID. Information-related metadata retains the four unchanged
++InformationCoordinates, IU-required security, governed information disposition and
++optional creator/updater-supplied relationships. **InformationItinerary** is a distinct
++conceptual information concern, separate from coordinates, provenance and business
++Journey; its logical allocation and historic/intended route details remain bounded.
++
++Mneme operational revision, individual Active Generation, cache/working facts and
++Mneme–Mnemosyne persistence handshaking are associated **peer OperationalMetadata**
++concerns. Existing ManagementContext/LifecycleContext façade projections and their
++concurrency, visibility, durability, no-loss work and retention obligations remain;
++conceptual allocation supplies no field-removal, API-breaking or physical migration
++authority. [Information Unit Metadata](../../application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md)
++records the scoped allocation and retained projections.
++
++The singular [InformationRepresentation](../../application/data-object/b9891b88150840ada3daefdec6f26c35.md)
++contains ContainerMetadata, ContentMetadata and portable textual/binary/by-reference
++Content. Content Structure Version, optional native Content instance version,
++authoritative IU revision and Mneme operational revision remain distinct; Active
++Generation is a manifestation identity. No synthetic counter, mandatory Container.Id
++or Content.Id, ManagedIU wrapper or alternate governed representation is introduced.
++Unit Structure, Content Structure and Content Format remain distinct.
++
++Input authority is accepted IU Final.002 §§1–7 and Appendix A, supplementing IU-01–IU-13;
++the actual reconciliation remains subject to HCRL 1.1.25/001 result review.
++
++### Predecessor metadata partition
++
++------- Legacy Content - Superseded ------- Start ------
++Superseded by: the current allocation above and Information Unit Metadata, Final.002 reconciliation.
++Only the enclosed concern allocation or model wording is superseded;
++original text is unchanged. Other predecessor obligations remain effective.
++---------------------------------------------------------
++
+ The accepted conceptual form is **Identity / Metadata / InformationRepresentation**.
+ Metadata distinguishes ManagementContext, InformationCoordinates, SecurityContext
+ and LifecycleContext, with optional supplied relationships [0..*]. The singular
+@@ -390,6 +439,7 @@ only where supported). [Information Unit Metadata](../../application/data-object
+ [InformationRepresentation](../../application/data-object/b9891b88150840ada3daefdec6f26c35.md) detail the logical allocation without requiring
+ one implementation Class per concern or creating nested independently governed IUs.
+ Unit Structure, Content Structure and Content Format remain distinct.
++------- Legacy Content - Superseded ------- Finish ----
+ 
+ Mneme manages active access and operational Version/individual Active Generation;
+ Mnemosyne establishes authoritative durable state/version. These remain different

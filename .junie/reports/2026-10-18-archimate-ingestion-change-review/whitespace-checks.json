@@ -1,0 +1,14 @@
+{
+  "task-whitespace": {
+    "exit_code": 0,
+    "trailing_whitespace_findings": 0,
+    "files": []
+  },
+  "whole-worktree-whitespace": {
+    "exit_code": 2,
+    "trailing_whitespace_findings": 306,
+    "files": [
+      "docs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml"
+    ]
+  }
+}

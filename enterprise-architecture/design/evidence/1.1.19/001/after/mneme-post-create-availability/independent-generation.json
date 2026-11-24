@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "identicalArtifacts": [
+    "candidate.xml",
+    "manifest.md",
+    "reader-candidate/publication.json",
+    "reader-candidate/navigation.json",
+    "reader-candidate/continuum-catalogue.tex",
+    "reader-candidate/README.md",
+    "reader-candidate/continuum.html",
+    "narrative-candidate/publication.json",
+    "narrative-candidate/README.md",
+    "narrative-candidate/structure.json",
+    "narrative-candidate/continuum-rad.tex",
+    "narrative-candidate/parts/cross-cutting-references.tex",
+    "narrative-candidate/parts/implementation-and-migration.tex",
+    "narrative-candidate/parts/technology.tex",
+    "narrative-candidate/parts/application.tex",
+    "narrative-candidate/parts/business.tex",
+    "narrative-candidate/parts/strategy.tex",
+    "narrative-candidate/parts/motivation.tex",
+    "narrative-candidate/parts/architecture-governance.tex"
+  ],
+  "count": 19,
+  "declaredMaintainedInputsOnly": true,
+  "historicalDocsScriptsGitAndProcessingAbsent": true,
+  "allocatedIdentities": 0,
+  "tests": "Full tooling suite executed separately once; not repeated here",
+  "limits": "Projection/publication-source generation independence; no human acceptance or raw transport fidelity claim."
+}

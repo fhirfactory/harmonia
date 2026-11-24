@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "canonicalSources": 6557,
+  "identicalArtifacts": {
+    "reader/Harmonia-Architecture.xml": "eb4c340c25a2d8ee114053a445056b1afaf4b000e38b15c2f0259384e7f5f6a9",
+    "reader/continuum.html": "55eb9e15197461bfbf910d8bab58728f3b6988218e4a32ee7cd6c28b1fa87591",
+    "reader/README.md": "4a19a4136b8301053fb06a7b342f3735f927bb000edbdee6f94de84c50713eee",
+    "reader/continuum-catalogue.tex": "bf81692888ecd8415a3bf08e85180cb89178af8033cfbb6c0e54423fe29e9c4b",
+    "reader/navigation.json": "f3fcde43ad5edfd095eff5c4039fd52e6bedb0609514e0abc5efd0f5f6a07edf",
+    "reader/publication.json": "a6e5061f63507c302d8ca1e6420f99508879a7d7111dcd306f3fa9318e533e66",
+    "narrative/parts/architecture-governance.tex": "64de799bb04929d29c6a15898923572b5883e7e3d76cab703f2259f0d4cb152a",
+    "narrative/parts/motivation.tex": "c9dbe96697f63b3b313713003208ce45856d12a2c6a5579e524ffe925e5230df",
+    "narrative/parts/strategy.tex": "ed705d658d6667ec4d1dddaf770928226c0831c7d4d5a1fded61298ab79d3aa5",
+    "narrative/parts/business.tex": "7fdf0326eab52e774438fffcc58ece1085487340e8a9722b875c8e0316146abb",
+    "narrative/parts/application.tex": "5db52291066bafd641e080a1d31b7d45a1e639f12aa863d908960126d713fb66",
+    "narrative/parts/technology.tex": "6f1e2c08086d8457df080a89d5b5dd6de1ca46adea91584fc9d9a864ed6a5760",
+    "narrative/parts/implementation-and-migration.tex": "cc088fb5e4a5189f8f669d5c30c830cc75bc53068673bde335306341efdd3353",
+    "narrative/parts/cross-cutting-references.tex": "130d731f7058b4d1157c5bed7ce87fe899f51411a4cfc944c47b237e8c427591",
+    "narrative/continuum-rad.tex": "d4dbf64cfc3b32a1a12fe17f6eb53bd5b147f6b2cdb1f642eaab64bcebd5c616",
+    "narrative/structure.json": "3f2aa0deba27ba3958ddaf90d41fb4210ec150a8ddf1ad851154fca9bb859525",
+    "narrative/README.md": "acf9a6a43d51b9d95181ac21849edc2cdf6b820d6b5c2adc6cb49dd4e71db706",
+    "narrative/publication.json": "b4e3d61fc9c43f2f10bdac7ff9d917fa2660a815dd55af5abf6a9147fe3588d2",
+    "enterprise-architecture/continuum/MANIFEST.md": "148923a2d382a1a617e827799b40e141e36d95d58589eb5ea8dbdd7e10089be1"
+  },
+  "independentInputs": "Current canonical Continuum, governance, tooling, maintained presentation and declared retained provenance; installed dependencies; unchanged root release authority.",
+  "absentInputs": [
+    "docs",
+    "scripts",
+    ".git",
+    "historical processing workspaces",
+    "local interaction logs"
+  ],
+  "allocatedIdentities": 0,
+  "liveCanonicalSourceMutations": 0,
+  "acceptedPublicationWrites": 0,
+  "rootRelease": "1.1.22; candidate for proposed 1.1.23 transition, no allocation",
+  "limits": "Projection/publication-preparation reproducibility only; mutation tests, actual Archi transport and human acceptance are separate evidence."
+}

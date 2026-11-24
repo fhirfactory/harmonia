@@ -1,0 +1,191 @@
+{
+  "operation": "HCRL Updated",
+  "processedIteration": "1.1.19/001",
+  "nextIteration": "1.1.19/002",
+  "outcome": "PASS — iteration processing/advance only",
+  "task": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/20261103T034015Z-hcrl-updated-iteration-processing.md",
+  "population": {
+    "elements": 1996,
+    "relationships": 2246,
+    "views": 1288
+  },
+  "candidateSha256": "ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b",
+  "exactAcceptedSpecimenMatch": true,
+  "canonicalValidation": "PASS",
+  "offlineXsd": "PASS",
+  "exchangeReferences": "PASS",
+  "candidateReproductionAndReaderNarrativeStaleness": "PASS",
+  "readerNavigationIdenticalToPreviouslyReviewedCandidate": true,
+  "unresolvedPropertyQualifications": {
+    "inherited": 673,
+    "twoDr18Additions": 14,
+    "total": 687
+  },
+  "evidenceLayout": {
+    "outcome": "UNRESOLVED",
+    "errors": 0,
+    "unresolvedTaskRecords": 8,
+    "treatment": "Exact originating-001 records under final closure Task disposition 2; no future exemption"
+  },
+  "transport": {
+    "freshExecution": "NOT_PERFORMED — exact unchanged candidate",
+    "retainedActualArchiExecution": "PASS",
+    "strictVerifier": "FAIL — preserved",
+    "relationshipIdentities": 575,
+    "xmlLangAttributes": 1741,
+    "treatment": "Exact unchanged candidate qualified by final closure Task disposition 1; remediation deferred"
+  },
+  "humanReview": "Retained attributable exact-state content and reader structural acceptance; no new inspection claimed",
+  "tests": "Retained 90 Java architecture and 87 tooling/four focused PASS records; no fresh test run for unchanged source",
+  "pdf": "NOT_GENERATED — narrative source only; generated README PDF link is optional/unfulfilled",
+  "dr20": "UNRESOLVED; terminal release/publication blocker carried forward",
+  "release": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "acceptedPublication": "NOT_PERFORMED; protected existing bytes unchanged",
+  "hcrlFinalisation": "NOT_PERFORMED; next HCRL pending",
+  "repositoryTransition": "No staging/commit/push",
+  "sourceHead": "32014bb5843ad7dffdda9ccc404173b758cec690",
+  "commands": [
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "validate",
+        "--report",
+        "enterprise-architecture/design/evidence/1.1.19/001/after/iteration-processing/canonical-validation.json"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.19/001/after/iteration-processing/Harmonia-Architecture-candidate.xml",
+        "--report",
+        "enterprise-architecture/design/evidence/1.1.19/001/after/iteration-processing/projection.json"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/publish_continuum.py",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.19/001/after/iteration-processing/reader-candidate"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/publish_continuum_rad.py",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.19/001/after/iteration-processing/narrative-candidate"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.19/001/after/iteration-processing/Harmonia-Architecture-candidate.xml",
+        "--check"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/publish_continuum.py",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.19/001/after/iteration-processing/reader-candidate",
+        "--check"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/publish_continuum_rad.py",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.19/001/after/iteration-processing/narrative-candidate",
+        "--check"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS"
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.19/001/after/iteration-processing/reader-candidate/Harmonia-Architecture.xml"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS",
+      "purpose": "Supply XML at reader index advertised relative link, using candidate output only"
+    }
+  ],
+  "readerNarrativeArtifactsIdenticalToPreviouslyReviewedCandidate": 17,
+  "readerAdvertisedXmlLink": "PASS — additional reader-local projection exactly matches candidate; no accepted publication",
+  "candidateIndexLinks": {
+    "reader-candidate/README.md": {
+      "resolvableLocalTargets": 2018,
+      "directoryTargets": 8,
+      "optionalUnfulfilled": []
+    },
+    "narrative-candidate/README.md": {
+      "resolvableLocalTargets": 2,
+      "directoryTargets": 0,
+      "optionalUnfulfilled": [
+        "continuum-rad.pdf"
+      ]
+    }
+  },
+  "protectedPriorFilesUnchanged": 2647,
+  "priorHcrlChange": "Append-only iteration processing note; preimage and prior DRs retained",
+  "unownedConcurrentWorkingState": [
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Harmonia-Logging-Middleware-Strategy-rsyslog.md",
+      "sha256": "04fe3ff06d37e32fa97395c6e782d581502a115127acb7a68f0cc82437b3ca16",
+      "standing": "New untracked working file observed after task input capture; origin/authority not established here",
+      "treatment": "Outside this activity; not written, interpreted, incorporated or adjudicated by HCRL Updated; preserve untouched",
+      "candidateEffect": "None established; all pinned canonical/presentation/tooling/publication inputs are unchanged"
+    }
+  ],
+  "finalChecks": {
+    "localHcrlTaskReportIndexLinks": "PASS",
+    "newTaskReportEventPrefix": "PASS",
+    "allTwentyDecisionFieldsAndVerbatimNarratives": "PASS",
+    "fiveSubordinateMatters": "PASS",
+    "reciprocalIterationDiscoveryLinks": "PASS",
+    "protectedPriorFilesUnchanged": 2647,
+    "fileScope": "PASS — owned changes bounded; separately recorded unowned draft untouched",
+    "releaseAndHeadUnchanged": true,
+    "exactlyOneIterationAdvanced": true,
+    "completedHcrlCreated": false,
+    "evidenceLayoutErrors": 0,
+    "unresolvedQualifiedTaskEvents": 8
+  }
+}

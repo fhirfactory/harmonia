@@ -24,12 +24,12 @@
     <parent>
         <groupId>net.fhirfactory.harmonia</groupId>
         <artifactId>harmonia-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>iris</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Harmonia :: Iris :: Presentation Services</name>
     <description>Iris (User Interface / Presentation Services) — Presentation layer aggregating BEFE (Backend-For-Frontend) and Vue 3 single page applications</description>

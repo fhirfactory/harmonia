@@ -1,0 +1,31 @@
+{
+  "purpose": "Hashes of fixed review/input/evidence/query/report artefacts; final validation/preservation results and this manifest excluded to avoid circular hashes.",
+  "sha256": {
+    ".junie/reports/2026-10-18-archimate-first-governed-ingestion-review.md": "e23c72619ed011194d0102059ee819772f83381fe97762de257015e57f39100b",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md": "338fbeed8228aa76a85aac72df44e80de320549c3290ec5bf84402c4446ec761",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/baseline-diagnostic.json.gz": "907faddeb07cea46c48ac35347081bc4360da8bc279cf3d838577baf8f4ddd8c",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/change-requests.json": "c1dbe136489bb7af9b25272eb393df725857548c1f10495df25103c98c2f65a4",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/decomposition.md": "eae94ebcd0587fbf335032abf36df0c6d6eec8dd3289cb9908a0129be35a8443",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/detect.py": "afa26c82a9fb6b65485eea752340b319a2440d332b477e5d6cff6b05d4cbe093",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/diagnostic-commands.json": "3fe8732615b44c42327f6db6bfba8c6d8897ae8d59db3b3330f220572baa6d72",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/elements.json": "b3c84f3e3ddbc30925fb5c5b9a9ff9da79927b992df9624f782142b657c77421",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/historical-evidence.md": "55186b783f544ca95cb1ce9abe0774be4464c94134e6f1a9a38c160da5ecc090",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/identity-diagnostic.json.gz": "25f8cb61fe603ce7ab34c1f919ee954ac47d680865f5e2193b891819b3680e61",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/identity.json": "6af41af0021429a6dd9169c4276f384b5322cb69336ff2726763d1a41b917b60",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/navigation.json": "89f61d6b6efe47b6e904bdb2c57eb4cf9aa498217bb0486b56ca47d2d333f6ff",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/observations.md": "2e69c8a3c9c9cdc82de0aaada7a91d4433bf9321586c0c3431357dce94d56324",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/prepare-review.py": "7d4f77b9d7d70cc0df780571b43d26ab96bacd326c3b3d8c27e1214deeb0b702",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/provenance.json": "81bc786966e8faac80ec89cb31b9f304721627791a1632b0e4fb7c806bd079d3",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/relationships.json": "63b3be0e62d2af27ecbff164a5b9e56b74576f6c00ecea9b98cfa536519a065f",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/start-preservation.json": "d115c042a9bf0f3453f5b58abff75b8e3077a437fa5c16930be2250f56b27806",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/submission.xml": "6b973db242a4b26bc6a93e27b482100b6f96655cb40deb4ceb35a93c134c7d3e",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/summary.json": "8a15f021a2e1b8903a2f1a7d5e8569344cd455de8bd9080d05f553c18db7ec0d",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/transport-control-diagnostic.json.gz": "cd26ffdfcf13c8ae1545903f732d49234b3d941a4aebd365f2b087ae5d8497dc",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/transport.json": "a53926d3057bcdbc44a9b971545bceb9416c1718bee90c9fc8bc3129b9e59c15",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/detection/views.json": "eefda2ca70c9e7d22255b4ff49a49156f144c0f9ce737409db201af155077154",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/architecture-tests.log.gz": "4df6d406fa6efafbd8b8f48487f7d4ea4f554f3ed16e3fdbda64fcb7ba0db31c",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/command-results.json": "bffa2b9e8ecd93ee3433c2a0ab5a37dbd5e954e5c2031d6f6231412940e712dc",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/detection-query.log.gz": "c44105d50c457dbb70cfbd5d37fb1861db7d4e23c41473904b45e0712739df1a",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/validate-review.py": "b7d074ca6144e17b4756c36e9f85ab0337b78ecdcd3ee9b44ef975bba5854de2"
+  }
+}

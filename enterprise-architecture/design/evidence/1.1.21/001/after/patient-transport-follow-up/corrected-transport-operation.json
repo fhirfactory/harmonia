@@ -1,0 +1,16 @@
+{
+  "actualArchiImportExport": "PASS",
+  "baselineXmlSha256": "6471411187a5ff72b005c9b9855c48beb3d86b7ae6c7c556a4eb58338011a739",
+  "returnedXmlSha256": "0c1422c1f0dc609e9c963eb7a1d66b169e758f437e859e7e1d5189060724e89f",
+  "rawComparatorStatus": "DIFFERENCES",
+  "rawClassifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 4693,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 18304,
+    "SEMANTIC DIFFERENCE": 111868,
+    "UNEXPLAINED DIFFERENCE": 16297
+  },
+  "relationshipRecordsChanged": 6456,
+  "viewRecordsChanged": 15,
+  "purpose": "Bounded exact-candidate verification after the Patient correction; no remediation or returned-XML application. Original transport and all its evidence remain unchanged."
+}

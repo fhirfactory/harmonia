@@ -1,0 +1,33 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "180s",
+    "mvn",
+    "-o",
+    "test",
+    "-pl",
+    "calliope",
+    "-am",
+    "-Dtest=TopicTest,TopicMaskTest,TopicSubscriptionTest",
+    "-Dsurefire.failIfNoSpecifiedTests=false"
+  ],
+  "scope": "Existing Topic, TopicMask and TopicSubscription unit tests; inspection baseline only",
+  "environment": {
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "mavenMode": "offline",
+    "javaMajor": 21
+  },
+  "source": "dc30cfbcc7ad4113b29e3710904453c023df4dc1; no implementation/test edits",
+  "exitCode": 0,
+  "outcome": "PASS",
+  "elapsedSeconds": 2.17,
+  "results": [
+    "[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.174 s -- in net.fhirfactory.harmonia.model.topic.TopicSubscriptionTest",
+    "[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s -- in net.fhirfactory.harmonia.model.topic.TopicTest",
+    "[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in net.fhirfactory.harmonia.model.topic.TopicMaskTest",
+    "[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0",
+    "[INFO] BUILD SUCCESS"
+  ]
+}

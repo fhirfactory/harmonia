@@ -1,6 +1,22 @@
 # Petasos Subproject Reference: High-Availability Messaging `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Petasos durable purpose-defined queue management](../markdown/05-information-systems-architecture/component-register.md#c10)
+- [Common by-value PetasosParcel](../markdown/05-information-systems-architecture/component-register.md#petasos-parcel)
+
+```text
+---------------------------------------------------------
+```
+
 Petasos is Harmonia's resilient messaging abstraction and transport framework, isolating Apache ActiveMQ Artemis 2.33.0 broker clients behind pure transport interfaces.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
@@ -89,12 +105,28 @@ petasos/
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Petasos durable purpose-defined queue management](../markdown/05-information-systems-architecture/component-register.md#c10)
+- [Common by-value PetasosParcel](../markdown/05-information-systems-architecture/component-register.md#petasos-parcel)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Petasos Owns
 - Transport abstraction interfaces decoupled from messaging middleware.
 - Message envelope lifecycle (`PetasosMessage`), payload containment, and header metadata.
 - Transport-level sliding window deduplication (`DuplicateDetector`).
 - ActiveMQ Artemis cluster configuration, connection failover management, and session pooling.
 - Queue-level metrics and telemetry collection (`PetasosMetrics`).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Petasos Explicitly Does NOT Own (Anti-Responsibilities)
 - Parsing or validating HL7 or FHIR clinical payloads (payloads are treated as opaque `byte[]`).

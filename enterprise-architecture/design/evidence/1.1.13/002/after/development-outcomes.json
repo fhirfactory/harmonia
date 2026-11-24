@@ -1,0 +1,31 @@
+{
+  "standing": "Development/verification outcomes, not architectural acceptance",
+  "initialNavigationRegression": {
+    "outcome": "FAIL",
+    "reason": "Assertion required old unqualified physical labels for ValueStream reference contexts.",
+    "resolution": "Assert shared canonical coordinates and explicit physical qualifiers; final focused 12 tests pass."
+  },
+  "initialPublication": {
+    "outcome": "FAIL",
+    "reason": "RAD correspondence required the former single physical navigation-R item.",
+    "resolution": "Record both native R contexts in the existing locator using XPath union; RAD chapter organisation unchanged."
+  },
+  "initialFullEaSuite": {
+    "outcome": "FAIL",
+    "testsRun": 59,
+    "errors": 1,
+    "reason": "Test process had loaded the old RAD one-item R correspondence implementation before its correction.",
+    "resolution": "Final complete rerun after correction passes 65 tests."
+  },
+  "intermediateRadLocatorRevision": {
+    "outcome": "FAIL",
+    "reason": "Generic prefix scan encountered identifier-less authored View organisation items.",
+    "resolution": "Resolve the two explicit native R contexts; no View organisation is changed."
+  },
+  "initialEvidenceExpectations": {
+    "outcome": "FAIL",
+    "reason": "Leaf-path check did not account for intentional R root qualification; View check added a Views marker already present in the template.",
+    "resolution": "Checks now assert qualified reference-index context and exact existing template paths; actual published/native controls unchanged."
+  },
+  "timeoutsOrStalls": []
+}

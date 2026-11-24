@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "allCanonicalSourceFilesUnchanged": 1996,
+  "allRelationshipsUnchanged": 2246,
+  "allViewsAndTemplateUnchanged": 1288,
+  "sixAcceptedDefinitionsByteIdentical": true,
+  "allOriginalAndPolicyDesignQuestionsRetained": true,
+  "protectedPreExistingFilesUnchanged": 3806,
+  "protectedPublicationsUnchanged": 204,
+  "dr1ThroughDr17RowsAndBodiesUnchanged": true,
+  "dr18Dr19PreviousNarrativePreservedAndAcceptanceAppended": true,
+  "minutiaeControlUnchanged": true,
+  "onlyPreExistingFileChanged": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md",
+  "releaseUnchanged": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "architecturalAcceptanceRecordedNotClosure": true
+}

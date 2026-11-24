@@ -1,0 +1,284 @@
+<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
+
+# ArchiMate projection and review workbench
+
+**Accepted baseline: 1.1.21 / 001 — HCRL complete.**
+[Completed HCRL](../register/1.1.21/hcrl-1.1.21-001.complete.md).
+The [immutable Exchange](published/1.1.21/Harmonia-Architecture.xml),
+[HTML reader/catalogue](../../documentation/continuum-manifest/published/1.1.21/README.md)
+and [narrative RAD source/correspondence](../../documentation/continuum-rad/published/1.1.21/README.md)
+represent the accepted increment. The model contains 6,542 elements, 9,264
+relationships and 1,304 Views, incorporating sixteen catalogue perspectives,
+68 Journeys, 363 UseCases and 415 UserStories. XML SHA-256 is
+`6471411187a5ff72b005c9b9855c48beb3d86b7ae6c7c556a4eb58338011a739`.
+The Solution Architect accepts the incorporation, all reviewed new Views including
+both corrected Patient Views, native workbench-tree and reader/navigation structural
+review, bounded supporting Minutiae and the whole incorporated HCRL result.
+Exact original/corrected Archi operations are accepted with qualification;
+**strict transport verification remains FAIL**. All classifications and evidence
+remain; returned XML is not a lossless authoring source. Existing historical
+qualifications retain their scope, and future transport verification is not waived.
+The [final Report](../evidence/1.1.21/001/after/ai-agent-reports/20261110T230433Z-final-accepted-release-closure.md)
+and [Git transition evidence](../evidence/1.1.21/001/after/release-closure/git-transition-status.json)
+record actual terminal outcomes separately from architectural acceptance.
+
+The accepted predecessor [1.1.20](../register/1.1.20/hcrl-1.1.20-001.complete.md)
+and its [immutable projection](published/1.1.20/Harmonia-Architecture.xml) remain unchanged.
+[Patient/transport decision brief](../evidence/1.1.21/001/after/patient-transport-follow-up/decision-brief.md)
+and the [original catalogue and View inventory](../evidence/1.1.21/001/after/stakeholder-journey-incorporation/catalogue-and-review-guide.md)
+retain their review-stage scope. The brief records the Patient identity correction
+and transport findings; later dispositions and closure are authoritative in the register.
+
+The maintained source is the [individual-element continuum](../../README.md).
+[projection-template.xml](projection-template.xml) owns existing model-level
+properties, property definitions, View navigation and **1,304 Views**, including their
+geometry. Its element/relationship collections are empty. The current projector
+fills those collections from canonical Markdown and preserves the Views.
+All 1,288 inherited Views remain unchanged. Sixteen additional Views are in
+**Journeys and stakeholder perspectives**; their exact identifiers and review
+targets are in the inventory above. Journey definitions remain distinct from the
+existing Application DataObject Journey used for observed runtime progression.
+
+The following paragraphs retain the historical SolutionFacet candidate account.
+The maintained template incorporated the then-uncommitted
+[SolutionFacet candidate](../review/1.1.19/hcrl-1.1.19-001.pending.md#dr-17):
+three additional authored Views and 12 changed existing Views, with authored
+layout and references preserved. The protected 1.1.19 projection below retains
+its accepted 1,285-View presentation; candidate preparation does not replace it.
+The subsequent [additional authorisation](../evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-additional-authorisation.md)
+is incorporated in the [updated correction candidate](../evidence/1.1.19/001/after/solutionfacet-corrections/Harmonia-SolutionFacet-corrected-candidate.xml).
+It corrects three ArchitecturalAxiom classifications and six current friendlyNames
+while preserving all 1,288 Views and their maintained template exactly.
+The [final naming candidate](../evidence/1.1.19/001/after/solutionfacet-final-naming/Harmonia-SolutionFacet-final-naming-candidate.xml)
+applies the later Composition-verified dispositions to the remaining three names.
+Its native Name remains displayName; friendlyName expresses programmatic context;
+canonicalName is independently governed and unchanged. Earlier candidates remain
+retained evidence, and no protected baseline is replaced.
+From RAD-1.1.17 Iteration 002, the projector uses native-type element catalogues
+and explicit-source relationship catalogues, independently of Continuum reading
+navigation and architectural containment. Native Name and element entry labels
+equal governed displayName without generated numbering. View folders and labels
+remain separate architect-maintained presentation, preserved verbatim.
+
+The **Architecture Continuum is canonical architecture authority**. Open Exchange
+XML is its derived projection/interchange representation; **Archi is the architecture
+workbench**. The accepted [1.1.19 Open Exchange projection](published/1.1.19/Harmonia-Architecture.xml)
+contains 1,994 elements, 2,235 relationships and the complete authored View tree
+(1,183 folders including Views, 42 empty folders). The
+[completed originating review](../register/1.1.19/hcrl-1.1.18-001.complete.md)
+preserves the 1.1.18/001 decision/evidence identity and Solution Architect Archi
+import/visual acceptance. The [successor register](../review/1.1.19/hcrl-1.1.19-001.pending.md)
+continues all 16 DR entries and outstanding obligations without additional
+incorporation. Historical source/evidence, protected 1.1.18 publication and raw
+Archi transport qualifications remain unchanged; no 1.1.18/002 successor is retained.
+
+The following release-preparation account preserves the earlier 1.1.17/1.1.18 context.
+The accepted [1.1.17 Open Exchange projection](published/1.1.17/Harmonia-Architecture.xml)
+is the immutable starting architectural baseline for the next View-development release.
+
+The completed [Iteration 001](../register/1.1.17/hcrl-1.1.17-001.complete.md) and
+[Iteration 002 / final release record](../register/1.1.17/hcrl-1.1.17-002.complete.md)
+record NFR incorporation, catalogue organisation, display names and preservation
+of all 1,216 existing Views. The Solution Architect accepted the ArchiMate publication
+and both iterations' results. Reader-facing review of the Iteration 001 NFR hierarchy,
+allocations, native-layer separation and qualified reused contributions, and Iteration 002
+reader navigation/XML-folder correspondence, is explicitly deferred. Actual Archi 5.10
+transport and all documented raw qualifications remain retained; deferral supplies
+no additional visual-inspection claim or validation exemption.
+
+Release **1.1.18** is reserved for separately instructed one-off AI-assisted View
+organisation/development. Release **1.1.19** resumes substantive architectural design.
+Neither activity is commenced by release closure. The [1.1.18 development projection](published/1.1.18/Harmonia-Architecture.xml)
+inherits unchanged architecture; only the model-level release identity differs.
+It is a development baseline, not a separately accepted architectural transition.
+
+The [1.1.16 projection](published/1.1.16/Harmonia-Architecture.xml)
+establishes the navigable architecture baseline incorporating the Calliope Information Unit foundational model, requirement groupings, and overview views,
+accepted by the Solution Architect in [completed HCRL 1.1.15-001](../register/1.1.16/hcrl-1.1.15-001.complete.md).
+The [1.1.15 projection](published/1.1.15/Harmonia-Architecture.xml)
+remains the immutable predecessor baseline, and [1.1.14](published/1.1.14/Harmonia-Architecture.xml)
+remains the historical comparison baseline for the 001 candidate submission.
+The [accepted 1.1.13 projection](published/1.1.13/Harmonia-Architecture.xml)
+implements the Solution Architect's workbench-remediation dispositions, accepted
+after actual Archi 5.10 visual inspection in [completed HCRL 002](../register/1.1.13/hcrl-1.1.13-002.complete.md).
+Its [actual imported tree evidence](../evidence/1.1.13/002/after/contained-elements/inspection.html)
+is a reader-facing inventory of the retained Archi 5.10 native save, with canonical
+IDs and folder documentation; it is not a substitute for inspecting Archi or an
+assertion of acceptance. The accepted 1.1.11 publication remains historical.
+
+## Current physical workbench organisation — 1.1.17 Iteration 002
+
+Use the [native catalogue contract](../../governance/continuum-representation.md#archi-catalogue-organisation--rad-1117-iteration-002).
+Elements appear once under their native category / Catalogue / native type;
+relationships appear once directly under Relations / Catalogue / source element.
+Source folder labels include the full canonicalId to keep equal names distinct.
+Specialisations remain properties. Existing Views and their organisation remain
+unchanged. The former 1.1.13 organisation account below is historical: its
+containment, Home, contextual and reference folder-generation rules are retired
+for current element/relationship catalogues. RAD/Manifest reading navigation and
+all semantic/naming rules retain their scope.
+
+<a id="physical-workbench-organisation--1113-candidate"></a>
+## Physical workbench organisation — 1.1.13
+
+Canonical navigation semantics are shared across projections; physical navigation
+representation may be projection-specific where required by the target. RAD and
+Manifest continue to consume the unchanged shared tree. The Exchange adapter
+preserves native Archi layer containers and the canonical coordinates:
+
+- Every canonical member of an established governed containment hierarchy has a
+  numbered directory containing its single canonical element, including leaves.
+  Contained children's directories nest below it. Adding or removing a child
+  leaves the parent's directory and canonical placement intact. This applies to
+  the three Strategy Capability scopes (including Features under their recorded
+  parent/owner ancestry) and logical Information Architecture Topic decomposition.
+  Existing explicit, directed Home relationships additionally establish model
+  containment for 212 Business Behaviour elements (99 Services, 104 Functions,
+  nine Processes). They receive directories at their unchanged governed Business
+  navigation homes; Capability contexts and allocations remain unchanged.
+  Their existing coordinates, qualifications and ancestry remain unchanged.
+- Containment comes from the applicable governed model, never a universal rule
+  inferred from native relationships or folders. Other navigation parents retain
+  folder-plus-element representation for Archi mechanics; Motivation Stakeholder
+  associations do not thereby become containment. Unclassified/standalone subjects,
+  application scopes, contextual allocations and reference indexes are not turned
+  into containment hierarchies. The existing governed model resolver selects
+  applicable Home/type-selected Composition relationships with their state, while
+  historical/index occurrences retain reference presentation. No ordinary
+  Association or allocation is reinterpreted as containment.
+- Business Behaviour Capability contexts and Motivation Stakeholder references
+  remain navigation-only folders, carrying existing canonical/association metadata.
+  Explicit native category markers preserve them, source-only Governance folders,
+  the System Map reference, and unpopulated authorised domain headings.
+- Cross-Cutting References is a qualified index in each applicable native layer:
+  Stakeholder Index under Motivation and Historical Capability Identities under
+  Strategy. These are reference indexes, not architectural decomposition; each
+  canonical indexed subject is placed once. Existing standing and successor links
+  remain visible. No full foreign domain is copied into another layer.
+- Business ValueStreams retain their native Strategy type and their canonical
+  `III.2.2` coordinates. Strategy contains the explicitly labelled `III.2.2 Value
+  Streams — Business navigation reference; native Strategy` folder. The accepted
+  Business path contains reference-only folders identifying each canonical subject
+  and its native location. There is no repeated live element placement and no
+  `III Business` branch under Strategy.
+- All 1,209 authored Views and their original folders remain unchanged. Relations
+  retain Archi's native Relations organisation; this remediation does not introduce
+  semantic containment or a new relationship-folder hierarchy.
+
+Folder IDs are deterministic, mutable representation locators with no Canonical
+ID. Folder documentation links subjects and source locators; it never establishes
+another architectural element, relationship or authority. The native workbench
+does not provide clickable element aliases for reference-only folders: use their
+documented canonical identifier/coordinate and the element's unchanged navigation
+properties. Archi may sort displayed children; no semantic order follows from it.
+
+The Solution Architect's [contained-element clarification](../evidence/1.1.13/002/before/ai-agent-tasks/unresolved-contained-element-directories.md)
+supersedes the original iteration 002 parent-only directory policy. Earlier
+Task/Report and inspection evidence retain their original meaning. The Solution
+Architect has completed actual workbench visual review and accepted 1.1.13 / 002.
+
+The [Review Praxis safeguard](../../governance/architecture-review-praxis.md#5-report-and-verify-the-incorporated-result)
+requires import into the supported version and Solution Architect review of the
+actual workbench tree before acceptance of material organisation changes.
+
+## Publication and round-trip use
+
+The [1.1.16 projection](published/1.1.16/Harmonia-Architecture.xml), completed under
+[HCRL 1.1.15-001](../register/1.1.16/hcrl-1.1.15-001.complete.md), incorporates the
+accepted Calliope Information Unit foundational model (`model.core.information.InformationUnit`),
+requirement groupings, 7 overview Views, and 17 intentional preexisting View relocations.
+The [1.1.15 projection](published/1.1.15/Harmonia-Architecture.xml), prepared under
+[HCRL 1.1.15-002](../review/1.1.15/hcrl-1.1.15-002.pending.md), carries the
+machinery change's release metadata over the unchanged canonical architecture as the immutable predecessor baseline.
+Its elements, relationships, Views and navigation match 1.1.14. Incorporated-result
+confirmation for HCRL 1.1.15-002 remains pending with the Solution Architect. This projection applies none
+of the candidate changes from HCRL 1.1.15-001.
+The immutable 1.1.14 publication remains the historical comparison baseline for the 001 candidate submission.
+
+`published/<release>/Harmonia-Architecture.xml` is the durable release artefact
+for loading that Continuum release into Archi. The filename follows the maintained
+projector's existing convention. The initial 1.1.11 artefact is generated from the
+accepted 1.1.11 Continuum and presentation template, with the same bytes as its
+accepted Manifest Exchange publication. That older publication remains unchanged.
+Adding this operational location does not change 1.1.11 architecture or navigation.
+
+A local native `.archimate` workspace is a human workbench. XML exported after
+architect changes is **proposed input** to a subsequent Architecture Archi-Roundtrip;
+it neither modifies nor supersedes the Continuum merely by existing. Retain the
+exact submitted export as appropriate `before` evidence of the activity reviewing
+it, with exact baseline correspondence under the existing provenance contract.
+Future input handling belongs to the existing Round-Trip Praxis; this publication
+structure establishes no permanent `ingest/` directory or automatic ingest mechanism.
+
+Copies under governed evidence demonstrate generation, testing, transport or
+transition activity. They are evidence, not the normal operational location for
+retrieving a released workbench projection. Archi-returned controls must never
+replace the generated release projection or its maintained presentation template.
+
+The existing `make -C enterprise-architecture/tooling continuum` publication
+command writes both the Manifest Exchange and this durable release projection
+from one validated generation. `check` verifies both against the canonical source.
+For just the durable XML, from the matching release source tree:
+
+```bash
+python3 enterprise-architecture/tooling/architecture_continuum.py project --publish
+python3 enterprise-architecture/tooling/architecture_continuum.py project --publish --check
+```
+
+The root release authority determines `<release>`; generation never increments
+it or supplies acceptance. Preparing a candidate is distinct from publishing an
+accepted release under the existing HCRL gates. Repeating identical publication
+is safe; differing existing published bytes are rejected to preserve release
+history. To reproduce a historical release, use its exact canonical sources,
+navigation, template, release authority and compatible maintained tooling in an
+isolated source tree (`--root <tree>` before `project`). Do not relabel today's
+Continuum with a historical version. No historical backfill beyond 1.1.11 is implied.
+
+```bash
+python3 enterprise-architecture/tooling/continuum_workbench.py review --normalised \
+  --baseline /path/to/exact-current-projection.xml \
+  --submitted /path/to/complete-model-export.xml \
+  --output /path/to/iteration/evidence/review.json
+python3 enterprise-architecture/tooling/continuum_workbench.py apply --decision /path/to/reviewed-decision.json
+```
+
+Commands run from the repository root. The accepted `--normalised` path uses
+existing canonical identity where established and discovers new architect-authored
+elements without allocating missing canonical IDs. It reports a bounded semantic
+and View/navigation delta without writing sources. The default review without
+that flag remains the existing canonical-amendment intake. The baseline must
+match the current projection byte for byte.
+The [existing Round-Trip Praxis](../../governance/archimate-round-trip-engineering-praxis.md)
+and common HCRL process govern adjudication; the JSON adapter does not replace them.
+
+The existing element-amendment adapter consumes its schema-1 review; it rejects
+the normalized review-only schema rather than inferring application authority.
+Use the applicable governed incorporation/amendment operation after adjudication.
+A decision for that existing adapter names `authority` (repository-relative HCRL path and DR anchor), `review`
+(repository-relative review JSON), its exact `reviewSha256`, a `dispositions` map,
+and `replacements`. Every reviewed element uses its canonicalId as disposition key;
+relationships/Views use `relationship:<identifier>` / `view:<identifier>`. Each
+value records `action` (`apply`, `reject`, `defer`) and an attributable `reason`.
+Each applied replacement supplies complete `metadata` and `body`. Existing identity,
+native type and specialisation must remain unchanged in this bounded adapter.
+The review hash, complete disposition coverage, exact baseline and source preimages
+are checked before prospective validation and writes. The adapter validates the
+presence of recorded authority, not its authenticity; agents must read the actual
+Solution Architect disposition and obey its scope.
+
+New elements, retirements, splits, merges and retypings require their separately
+reviewed identity/lineage work under the incorporation Praxis. Relationship or View
+application requires reviewed amendment to the owning canonical element or maintained
+presentation template, followed by projection and verification. Record deferred
+items explicitly. This adapter rejects an unsupported automatic `apply` rather
+than silently dropping part of a submission. Multi-file writes are preflighted,
+but no filesystem transaction or concurrent-writer guarantee is claimed.
+
+The [actual Archi transport evidence](../evidence/1.1.5/002/after/archimate-validation.json)
+distinguishes canonical semantics from raw XML transport. The no-edit return
+preserves canonical values/owners, native relationships and Views. Archi adds
+language attributes and restructures organization folders; whole-model raw
+fidelity is not claimed. Preserve the presentation source and exact returned
+control; do not silently replace the template with that return. The full raw
+comparison can be regenerated with `python3 enterprise-architecture/tooling/exchange_compare.py compare --baseline <exact-XML> --submitted <returned-XML-or-gz> --report <report.json>` using the
+published XML and retained `returned-model.xml.gz` (decompress first).

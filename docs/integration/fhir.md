@@ -34,11 +34,11 @@ graph TD
 
 ### 2.1 Referential Integrity Validation (`ProviderRegistryReferenceValidator`)
 Before any create or update operation is committed to the registry, `ProviderRegistryReferenceValidator` asserts:
-- **`PractitionerRole.practitioner`**: Referenced `Practitioner/{id}` exists and is not logically deleted.
+- **`PractitionerRole.practitioner`**: Referenced `Practitioner/{id}` exists and is active/not retired.
 - **`PractitionerRole.organization`**: Referenced `Organization/{id}` exists.
 - **`PractitionerRole.location`**: Referenced `Location/{id}` exists and is active.
 - **`PractitionerRole.endpoint`**: Referenced `Endpoint/{id}` exists with matching connection type.
-- **Cascading Integrity**: Attempts to delete an `Organization` or `Practitioner` referenced by active `PractitionerRole` entities trigger `UnprocessableEntityException (422)`.
+- **Cascading Integrity**: Attempts to retire or deactivate an `Organization` or `Practitioner` referenced by active `PractitionerRole` entities trigger `UnprocessableEntityException (422)`.
 
 ---
 
@@ -67,7 +67,7 @@ CREATE INDEX idx_fhir_res_status ON hie_fhir_resources (res_type, res_status);
 ### 3.1 Versioning & Immutability Rules
 - Every resource modification (`PUT`, `PATCH`) generates a new row with incremented `res_version`.
 - Updates never overwrite existing rows, providing complete temporal history.
-- Soft-delete operations (`DELETE`) insert a version with `is_deleted = true`, preserving historical references for audit and lineage.
+- Domain lifecycle deactivations or retirements insert an authoritative version update (reflecting status changes or retirement), preserving complete historical references for Kleio audit and lineage (ADR-020).
 
 ---
 
@@ -107,7 +107,7 @@ Standard supported HAPI provider annotations:
 - `@Search`: Parameterized lookup with pagination (`_count`, `_offset`).
 - `@Create`: Synchronous storage write (evaluated by Themis security gates).
 - `@Update`: Version-incremented update with referential validation.
-- `@Delete`: Logical soft-delete.
+- `@Delete`: REST deactivation / lifecycle transition to retired state (processed as an authoritative UPDATE; see ADR-020).
 - `@History`: Full historical version trail for a resource instance.
 
 ---

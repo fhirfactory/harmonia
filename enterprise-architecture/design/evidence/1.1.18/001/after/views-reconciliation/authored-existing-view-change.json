@@ -1,0 +1,22 @@
+{
+  "id": "id-7d0bc19870225280ac6b0a268ce8a92b",
+  "name": "Assessments",
+  "changes": [
+    {
+      "path": "/node[2]/style[0]/fillColor[0]",
+      "kind": "attributes",
+      "before": {
+        "r": "245",
+        "g": "222",
+        "b": "245",
+        "a": "100"
+      },
+      "incoming": {
+        "r": "204",
+        "g": "204",
+        "b": "255",
+        "a": "100"
+      }
+    }
+  ]
+}

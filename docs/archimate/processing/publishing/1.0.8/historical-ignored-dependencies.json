@@ -1,0 +1,27 @@
+{
+  "files": [
+    ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/ec-bindings-check.log",
+    ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/identity-release-tests.log",
+    ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/identity-validation.log",
+    ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/independent-regeneration.log",
+    ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/publication-tests.log",
+    ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/recovery-check.log",
+    ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/release-check.log",
+    ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/resumed-independent-regeneration.log",
+    ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/resumed-publication-regeneration-invocation-error.log",
+    ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/resumed-publication-regeneration.log",
+    ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/resumed-publication-tests.log",
+    ".junie/reports/2026-10-18-archimate-roundtrip-increment-1/architecture.log",
+    ".junie/reports/2026-10-18-archimate-roundtrip-increment-1/bindings.log",
+    ".junie/reports/2026-10-18-archimate-roundtrip-increment-1/checks.log",
+    ".junie/reports/2026-10-18-archimate-roundtrip-increment-1/determinism.log",
+    ".junie/reports/2026-10-18-archimate-roundtrip-increment-1/empirical-architecture.log",
+    ".junie/reports/2026-10-18-archimate-roundtrip-increment-1/empirical-determinism.log",
+    ".junie/reports/2026-10-18-archimate-roundtrip-increment-1/empirical-publication.log",
+    ".junie/reports/2026-10-18-archimate-roundtrip-increment-1/identity-tests.log",
+    ".junie/reports/2026-10-18-archimate-roundtrip-increment-1/identity-validation.log",
+    ".junie/reports/2026-10-18-archimate-roundtrip-increment-1/publication.log",
+    ".junie/reports/2026-10-18-archimate-roundtrip-increment-1/release.log"
+  ],
+  "explanation": "Pre-existing ignored evidence dependencies were hash-verified and copied into the isolated 1.0.7 checkpoint for its exact report reproduction. No historical bytes were rewritten."
+}

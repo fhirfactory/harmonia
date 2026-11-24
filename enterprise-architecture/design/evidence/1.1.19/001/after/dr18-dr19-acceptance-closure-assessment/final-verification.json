@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "dr18Dr19ExplicitArchitecturalAcceptanceRecorded": true,
+  "hcrlClosureReadiness": "NOT READY ON CURRENT RECORD",
+  "onlyPreExistingFileChanged": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md",
+  "all1996CanonicalFilesSixDefinitions2246Relationships1288ViewsUnchanged": true,
+  "dr1ThroughDr17TableAndBodiesUnchanged": true,
+  "allPriorEvidencePublicationsGovernanceToolingUnchanged": true,
+  "acceptedSpecimenSha256": "ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b",
+  "strictTransport": "FAIL retained: 575 relationship identities / 1741 xml:lang attribute differences",
+  "eventLayout": "UNRESOLVED; 8 current Task events/prefixes; zero layout errors; 3 inherited DR-9 originals separately preserved",
+  "releaseUnchanged": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "noClosurePublicationVersionOrGitMutations": true,
+  "authoritativeReport": "enterprise-architecture/design/evidence/1.1.19/001/after/ai-agent-reports/20261103T013651Z-dr18-dr19-acceptance-closure-readiness.md"
+}

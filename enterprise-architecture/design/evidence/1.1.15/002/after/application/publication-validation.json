@@ -1,0 +1,21 @@
+{
+  "outcome": "PASS",
+  "beforeSha256": "ee1d7ef8d5491a4a656d8c2f07c38999b6276a130064d797a08f19501aa47161",
+  "afterSha256": "61e7ebb958b321404c1c4694ae952119480f1fabd04dc2d319f35def84313dec",
+  "onlyXmlChange": {
+    "classification": "UNEXPLAINED DIFFERENCE",
+    "path": "/model/properties[1]/property[key=Baseline / Architecture Release]/value[1]/text()",
+    "before": "1.1.14",
+    "after": "1.1.15",
+    "reason": "Exact text compared; whitespace/language selection is not normalised"
+  },
+  "semanticElementIdsRetained": 1602,
+  "relationshipIdsRetained": 1651,
+  "viewIdsRetained": 1209,
+  "organisationUnchanged": true,
+  "materialArchiOrganisationChange": false,
+  "actualArchiTransport": "NOT_PERFORMED",
+  "canonicalArchitectureChangesApplied": 0,
+  "iteration001CrsApplied": 0,
+  "release": "1.1.15"
+}

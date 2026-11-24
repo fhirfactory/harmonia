@@ -1,3 +1,4 @@
+```{=html}
 <!--
   Copyright (c) 2026 Mark Hunter
 
@@ -14,113 +15,94 @@
   You should have received a copy of the GNU General Public License
   along with this program. If not, see <https://www.gnu.org/licenses/>.
 -->
+```
+# Documentation Agent Instructions
 
-# Harmonia Architectural Guardrails & Rules for AI Agents (AGENTS.md)
+All work under docs/ inherits the repository [AGENTS.md](../AGENTS.md) in full.
+That root file is the single maintained instruction set for architectural authority,
+fresh-context and progressive authority loading, bounded command execution,
+architectural guardrails, documentation governance and required verification.
+Read and apply it before work, including the standing
+[RADS and legacy-doco rules](../AGENTS.md#12-rads-and-legacy-documentation-governance)
+for reconciliation, original-content preservation and section supersession.
 
-This document establishes the authoritative repository-wide architectural rules, boundaries, and development constraints for autonomous and co-executor agents working on the Harmonia Health Integration Environment (HIE) codebase.
+For all architecture-related work, load and apply the same
+[Architecture Change Provenance contract](../enterprise-architecture/governance/architecture-change-provenance.md)
+required by root instructions for Codex, Junie and other agents. This is a
+navigation reference to the normative contract, not a separate provenance rule.
 
----
+Apply the common [Architecture Review and HCRL governance](../enterprise-architecture/governance/architecture-governance.md).
+Load and follow the common
+[Architecture Review Praxis](../enterprise-architecture/governance/architecture-review-praxis.md)
+for every change, with review activity/evidence proportionate to scope,
+complexity, uncertainty and materiality identified through review. Classification
+as implementation or similar does not itself reduce or bypass the Praxis.
+For substantive AI-agent activity associated with an HCRL iteration, formal Tasks
+and corresponding Reports MUST be retained at
+`enterprise-architecture/design/evidence/<target-key>/<HCRL-iteration>/before/ai-agent-tasks/`
+and that iteration's `after/ai-agent-reports/`, under the common provenance
+contract, irrespective of architectural materiality. Investigation, analysis,
+review, candidate/pending-HCRL preparation or revision, corrective work, application
+and verification use the same model; the iteration is the provenance boundary.
+Material meaning and conclusions belong in the applicable HCRL DR with sufficient
+traceability references. HCRL is the semantic change/decision record, not the
+Architecture Review working document, an evidence-file manifest or a substitute
+for detailed supporting evidence. Durable mappings, inventories and checks are
+evidence when they materially support the activity. Transient working material
+is discardable when its purpose ends and is not retained merely because it existed;
+preserve active recovery, validation and unresolved dependencies. Apply the provenance
+contract's authoritative issuance/production timestamps, mandatory sortable UTC
+filename prefixes and unresolved-original-time treatment. The attributable system
+timestamps of operative instruction entry into the agent interaction and completed
+Report emission are the governed Task-Issued-At and Report-Produced-At events.
+Preserve subsequent Report amendments without replacing original production time;
+these events assert no earlier composition or internal model-generation time.
+RAD-1.1.3 first required execution-only records at release level; 1.1.4-003
+demonstrated/refactored the iteration structure, and 1.1.4-004 implements it
+prospectively, superseding the narrower rule. No retrospective compliance,
+historical rewrite, migration or unrelated disposal authority is supplied.
 
-## 1. System Taxonomy & Module Hierarchy
+For software transitions, `<target-key>` is `software-X.Y.Z` under the common
+[Software Development Praxis](../enterprise-architecture/governance/software-development-praxis.md);
+Architecture targets retain their numeric release key. `docs/backlog/` is the
+single human/agent Backlog Item location; the common Praxis and backlog template
+supply its minimum structure and correspondence rules. Existing sample content is
+historical, not the template. Use references between items, Tasks, Reports and
+HCRLs rather than duplicate complete specifications. Historical evidence is not
+migrated or reclassified by this extension.
 
-Harmonia enforces strict separation of concerns across its 8 core subprojects:
+Every change receives review; material implementation discoveries require
+adjudication. The accepted target structure does not authorise repository
+migration. Existing documentation remains at its current paths until bounded
+mapping and application are separately authorised.
 
-| Subproject | Domain / Responsibility | Allowed Dependencies | Invariants & Constraints |
-| :--- | :--- | :--- | :--- |
-| **Calliope** (`calliope`) | Canonical Schemas, Common Models, HL7/FHIR converters, Topic definitions | JDK, HAPI FHIR Structures | Pure domain models; zero dependencies on higher layers (Themis, Hestia, Petasos, Energeia, Pylai, Iris, Paradeigma). |
-| **Themis** (`themis/`) | Policy evaluation, RBAC/ABAC authorization, non-PHI security auditing | JDK, Calliope, HAPI FHIR | Default-deny security engine; `themis-api` contains pure contracts without engine or storage dependencies. |
-| **Hestia** (`hestia/`) | Mneme (Infinispan caching) and Mnemosyne (HAPI FHIR R5 / PostgreSQL JPA persistence) | Calliope, Themis, Infinispan, HAPI FHIR, PostgreSQL | Persistent authoritative storage; separate clinical (`fhir_node_*`) and operations (`ops_node_*`) databases. |
-| **Petasos** (`petasos/`) | Resilient messaging abstraction and ActiveMQ Artemis broker adapters | JDK, Calliope, Themis API | `petasos-api` is strictly free of JMS or Artemis dependencies. Artemis client code is isolated to `petasos-artemis`. |
-| **Energeia** (`energeia/`) | Task processing (Ponos), Ergon activity units (Erga), Workflow orchestration (Praxis) | Calliope, Themis, Hestia, Petasos | Activity execution handles `Pragma` envelopes and FHIR `Task` lifecycle. |
-| **Pylai** (`pylai/`) | Inbound/Outbound protocol gateways (MLLP, FHIR REST Registry) | Calliope, Themis, Petasos, Hestia | Translates external wire protocols into Petasos events and Mnemosyne tasks. |
-| **Iris** (`iris/`) | Presentation services (iris-befe WildFly gateway, iris-clinical, iris-console, iris-administration SPAs) | Calliope, Themis API, Hot Rod Client | Strictly decoupled from backend storage/JPA; communicates via REST and Hot Rod only. |
-| **Paradeigma** (`paradeigma/`) | Synthetic clinical simulation (EMR, LMS, PAS, RIS-PAC simulators, scenario engine) | Production APIs (MLLP, FHIR REST, Petasos API) | **Leaf / Simulation Only**. Production modules MUST NEVER depend on or import Paradeigma. |
+For architecture-completion tasks, also follow the
+[Architecture Completion Plan](markdown/architecture-completion-plan.md),
+including its context-loading guidance and completion gates. This scoped file
+adds no architectural rules or exceptions and does not duplicate the root policy.
 
----
+## Backlog Item Preparation — AI Agent Operating Rules
 
-## 2. Mandatory Architectural Invariants
+Preparing or updating a Backlog Item under docs/backlog/ is a work-planning activity, not inherently a software implementation or Architecture Continuum modification.
 
-### Invariant 1: Paradeigma Production Isolation
-- **Rule**: `Production Code -> Paradeigma` is strictly **forbidden**.
-- **Enforcement**:
-  1. No production POM may declare a `<dependency>` on any `net.fhirfactory.harmonia:paradeigma*` artifact.
-  2. No production Java class may import `net.fhirfactory.harmonia.paradeigma.*`.
-  3. No production class may include simulation flags (e.g. `paradeigmaMode`, `simulationMode`, `syntheticRequest`, `isParadeigmaGenerated`).
-  4. Verified continuously by `ParadeigmaIsolationArchitectureTest`.
+Agents SHALL:
 
-### Invariant 2: Petasos API Abstraction & Encapsulation
-- **Rule**: `petasos-api` contains pure Java abstractions (`Petasos`, `PetasosProducer`, `PetasosConsumer`, `PetasosMessage`, `PetasosDestination`).
-- **Enforcement**:
-  1. Zero `org.apache.activemq..`, `jakarta.jms..`, or `javax.jms..` classes may be exposed in or imported by `petasos-api`.
-  2. Message payloads in Petasos are treated as opaque binary/text streams (`byte[]` / `String`). Petasos never parses HL7 or FHIR business content.
-  3. Verified continuously by `PetasosApiIsolationArchitectureTest`.
+1. Use the accepted Backlog Item template and structure.
 
-### Invariant 3: Iris Presentation Decoupling
-- **Rule**: The Iris presentation tier (`iris-befe` and Vue 3 SPAs) must remain presentation-only and decoupled from internal databases.
-- **Enforcement**:
-  1. Iris modules must not depend on or import JPA/Hibernate (`jakarta.persistence..`, `org.hibernate..`), PostgreSQL drivers (`org.postgresql..`), or server-side JPA (`ca.uhn.fhir.jpa..`).
-  2. `iris-administration` is a Vue 3 SPA consuming FHIR REST endpoints (`/fhir/r5/Practitioner`, etc.). It must not implement Provider Registry database storage, authoritative validation state machines, or referential integrity rules.
-  3. Server-side Provider Registry governance is owned exclusively by `mnemosyne-clinical`, `energeia-erga`, and `themis-core`.
-  4. Verified continuously by `IrisDecouplingArchitectureTest` and `ProviderRegistryArchitectureTest`.
+2. Base the item on the requested objective, relevant Architecture Continuum elements, existing code and available engineering evidence.
 
-### Invariant 4: Ingress Dual-Write Safety (REC-001)
-- **Rule**: Inbound gateways (`pylai-mllp-in`) must guarantee end-to-end downstream message acceptance before returning an `AA` (Application Accept) ACK to the upstream sender.
-- **Enforcement**:
-  1. If downstream Petasos queue publishing (`taskEventProducerService.sendTaskEvent(...)`) or cache write fails, the exception must NOT be swallowed.
-  2. The failure MUST trigger an `AE` (Application Error) NACK response back over MLLP to prompt upstream sender retry.
+3. Exercise independent engineering judgement to establish coherent scope, expected activities, outcomes and verifiable acceptance criteria.
 
-### Invariant 5: Destination Fan-Out State Tracking (REC-002)
-- **Rule**: Parent workflow tasks in Mnemosyne and Pragma envelopes must track granular sub-status per fan-out destination.
-- **Enforcement**:
-  1. `AdtDistributionErgon` records destination checkpoints (`FANOUT_DISPATCH_INITIATED`, `destinationQueue`, `status=QUEUED`) in the `Pragma`.
-  2. `OutboundTaskResourceBuilder` updates `Task.output` with structured `http://example.org/hie/destination-delivery-status` extensions capturing `destinationId`, `status`, `ackCode`, and timestamps upon delivery.
+4. Perform investigation proportionate to the work item being prepared.
 
-### Invariant 6: Default-Deny Security Governance (Themis)
-- **Rule**: All ingress endpoints, task processors, and storage mutators must evaluate authorization through Themis.
-- **Enforcement**:
-  1. Unauthenticated or unauthorized requests must default to `DENY` (`ThemisDecision.DENY`).
-  2. Context propagation across pipelines must use immutable `PragmaSecurityContext` and FHIR security labels (`FhirSecurityTagManager`).
-  3. Audit records must be dispatched to `ThemisAuditService` without logging unmasked PHI.
+5. Identify architectural discrepancies as observations or dependencies without independently initiating architectural changes.
 
-### Invariant 7: Zero-PHI Diagnostic Logging
-- **Rule**: Protected Health Information (PHI) must never be emitted into non-clinical log streams.
-- **Enforcement**:
-  1. Log identifiers (MRN, control IDs) only; mask or omit patient names, addresses, and clinical observation values in standard log statements.
-  2. Use `FhirSanitizer` or `PhiLogRouting` for diagnostic message logging.
+6. Present the resulting Backlog Item for review.
 
----
+Backlog Item preparation SHALL NOT, by itself, initiate ADD, HCRL, release allocation, architecture publication or software implementation acceptance procedures.
 
-## 3. Automated Architecture Test Suite
+Formal AI-agent Task/Report provenance SHALL NOT be created solely because an agent is drafting a Backlog Item, unless required by applicable authoritative governance or expressly requested.
 
-All agents making modifications to the Harmonia repository must verify changes against the ArchUnit architecture suite located in `paradeigma/paradeigma-test/src/test/java/net/fhirfactory/harmonia/paradeigma/test/arch/`:
+Agents SHALL NOT modify implementation code, commit, push or commence downstream implementation unless separately authorised.
 
-- `ParadeigmaIsolationArchitectureTest`: Asserts zero production dependencies, imports, or simulation flags for Paradeigma.
-- `PetasosApiIsolationArchitectureTest`: Asserts zero JMS or ActiveMQ Artemis API leakage into `petasos-api`.
-- `IrisDecouplingArchitectureTest`: Asserts zero direct JPA, Hibernate, or PostgreSQL database dependencies in Iris.
-- `ProviderRegistryArchitectureTest`: Asserts `iris-administration` separation from server-side Provider Registry governance.
-- `PackageLayeringArchitectureTest`: Asserts strict unidirectional dependency layering across all subproject packages.
-- `SecurityEnforcementArchitectureTest`: Asserts Themis policy contracts and security context structures.
-
----
-
-## 4. Execution & Build Commands
-
-- **Run Architecture Tests**:
-  ```bash
-  mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest" -Dsurefire.failIfNoSpecifiedTests=false
-  ```
-
-- **Run Inbound MLLP Gateway Tests (REC-001)**:
-  ```bash
-  mvn test -pl pylai/pylai-mllp-in -am
-  ```
-
-- **Run Ergon Activity & Outbound Gateway Tests (REC-002)**:
-  ```bash
-  mvn test -pl energeia/erga,pylai/pylai-mllp-out -am
-  ```
-
-- **Run Full Repository Test Suite**:
-  ```bash
-  mvn test
-  ```
+These provisions do not exempt subsequent architectural changes or software implementation from their applicable governance.

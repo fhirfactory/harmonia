@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "elements": 1996,
+  "relationships": 2246,
+  "qualifiedSourcePredicates": 462,
+  "canonicalIdentities": 1996,
+  "representationIdentities": 1996,
+  "provenanceCoverage": 1996,
+  "sourceBindings": 3852,
+  "supportedNativeTypes": 60,
+  "navigation": "PASS",
+  "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance",
+  "archiCatalogue": {
+    "elementEntries": 1996,
+    "nativeTypeDirectories": 27,
+    "relationshipEntries": 2246,
+    "sourceDirectories": 845
+  },
+  "containment": "PASS",
+  "informationNaming": {
+    "information_elements": 96,
+    "native_types": {
+      "DataObject": 83,
+      "BusinessObject": 13
+    },
+    "classifications": {
+      "Topic": 70,
+      "BusinessObject": 13,
+      "UNRESOLVED": 12,
+      "Class": 1
+    },
+    "fully_derived": 84,
+    "unresolved": 12,
+    "contextual": 60,
+    "preserved_identity": 96,
+    "absent_identity": 0,
+    "canonical_ids_allocated": 0,
+    "metadata_changes": {}
+  },
+  "offlineXsd": "PASS",
+  "exchangeReferences": "PASS",
+  "outputSha256": "ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b",
+  "publicationAllocatedIdentities": 0,
+  "actualArchiTransport": "NOT_PERFORMED"
+}

@@ -1,0 +1,829 @@
+{
+  "review_run": "1.0.8/run-001",
+  "revision": 4,
+  "prior_revision": 3,
+  "recorded_by": "Codex",
+  "date": "2026-10-19",
+  "timezone": "Australia/Sydney",
+  "governance_release": "1.0.14",
+  "published_comparison_baseline": "1.0.8",
+  "governance_authority": "docs/markdown/governance/archimate-ingestion-change-review.md#outcome-and-outcome-reason",
+  "metamodel_authority": "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+  "metamodel_decision_release": "1.0.12",
+  "transition": "Four Realization/context questions resolved No by explicit Home strategy; all 36 On-Hold Dispositions and original detected evidence preserved. 10 Resolved Outcomes, 26 Unresolved.",
+  "crs": [
+    {
+      "id": "CR-001",
+      "observations": [
+        "A1"
+      ],
+      "related": [],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "efb423e6fcd2b4e2f39dd6d74e7dfc7f55d08af37d9757194134d05285de05a4",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-002",
+      "observations": [
+        "A2"
+      ],
+      "related": [],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "7233a7501b259f114110f72fb7a1b30da6e357efd5496b76147a6386a49a65e7",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-003",
+      "observations": [
+        "A3"
+      ],
+      "related": [],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "da08abc8f6972fb35d88c1843b096beeb61ddba645c5a028fd0189e28c806820",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-004",
+      "observations": [
+        "A4"
+      ],
+      "related": [],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "f8f2001dde7ecceaf154d0ed6da9d2a7af46cd192a9fc307b8e4b80990022794",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-005",
+      "observations": [
+        "A5"
+      ],
+      "related": [],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "39b08d26d9200ff0126473cfd93d4a0d1051d96211ae7cbdf050dc395666a440",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-006",
+      "observations": [
+        "A6"
+      ],
+      "related": [],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "3e122330d0a649cbabb64bcadb663c6a68439c2d690bb271ae0206097af0c70d",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-007",
+      "observations": [
+        "A7"
+      ],
+      "related": [],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "c7694a73c9ecb563dcc9f2fce506e6c9138f6a1f0673c8ceeabfde026a6d3385",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-008",
+      "observations": [
+        "A8"
+      ],
+      "related": [],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "2174ed5a2546d431b65a343c993c8f24b7a929dea29de3965642785dd3009836",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-009",
+      "observations": [
+        "A9"
+      ],
+      "related": [],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "7d1910d3a8f05094e2e937e937c4567b2a0d1cd6cc9b7a33ce40666a07dab9fa",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-010",
+      "observations": [
+        "R1",
+        "V1"
+      ],
+      "related": [
+        "CR-016",
+        "CR-033"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "0868c661ef90f94cca84c0266c9bc3183040a657b6ef908d636265fc844f5d14",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-011",
+      "observations": [
+        "R2",
+        "V1"
+      ],
+      "related": [
+        "CR-017",
+        "CR-033"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "f4c3e71a679eb2ac3b8a6a26a1205c35f486827f5dcc126f1ef2b3e72426205f",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-012",
+      "observations": [
+        "R3",
+        "V1"
+      ],
+      "related": [
+        "CR-018",
+        "CR-033"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "ea211cf9dc59318f99b2e570aae4c6ffcc03e6060247f337a4d42b5f7f6f3bc3",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-013",
+      "observations": [
+        "R4",
+        "V1"
+      ],
+      "related": [
+        "CR-019",
+        "CR-033"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "b1d96992285ad37368496781638dc946ccba7ed8d5e211cb7612782c3b3d42ef",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-014",
+      "observations": [
+        "R5",
+        "V1"
+      ],
+      "related": [
+        "CR-020",
+        "CR-033"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "8d70e37a7076e7f80e308cf27d1f36f8d11e2d2eafa158527e9b709696234f79",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-015",
+      "observations": [
+        "R6",
+        "V1"
+      ],
+      "related": [
+        "CR-021",
+        "CR-033"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "b17d009fe3afb4129e9d7a2e4f3410185576292190b9cff334aa0a57b0e89f5a",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": [
+        {
+          "cr": "CR-001",
+          "required_governed_state": "Identifier Capture exists as the resolved governed architectural endpoint for submitted A1, with its accepted native type/classification and evidenced reconciliation; identity has not been allocated here."
+        }
+      ]
+    },
+    {
+      "id": "CR-016",
+      "observations": [
+        "R1",
+        "V1"
+      ],
+      "related": [
+        "CR-033"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "f4563f6256578571ec79114bb9d24b691ef61b5a81642eb7bf09f2b056e30b32",
+      "disposition": "On-Hold",
+      "outcome": "Resolved",
+      "outcome_reason": "Resolved by Governing Decision: docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy; established in governance release 1.0.12. No related instance accepted or reconciled.",
+      "dependencies": [],
+      "conditional_future_instance_states": [
+        {
+          "cr": "CR-010",
+          "required_governed_state": "The exact native R1 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+        }
+      ]
+    },
+    {
+      "id": "CR-017",
+      "observations": [
+        "R2",
+        "V1"
+      ],
+      "related": [
+        "CR-033"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "9e9e6f33b9a5e14c5755e8fb3c1d3ad171ad9d69c66b45c4281a0fcfa5802e49",
+      "disposition": "On-Hold",
+      "outcome": "Resolved",
+      "outcome_reason": "Resolved by Governing Decision: docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy; established in governance release 1.0.12. No related instance accepted or reconciled.",
+      "dependencies": [],
+      "conditional_future_instance_states": [
+        {
+          "cr": "CR-011",
+          "required_governed_state": "The exact native R2 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+        }
+      ]
+    },
+    {
+      "id": "CR-018",
+      "observations": [
+        "R3",
+        "V1"
+      ],
+      "related": [
+        "CR-033"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "114451b7953aa0a83e7997952b1d6e6a4df97347028c0c511d568bb1f200ebc5",
+      "disposition": "On-Hold",
+      "outcome": "Resolved",
+      "outcome_reason": "Resolved by Governing Decision: docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy; established in governance release 1.0.12. No related instance accepted or reconciled.",
+      "dependencies": [],
+      "conditional_future_instance_states": [
+        {
+          "cr": "CR-012",
+          "required_governed_state": "The exact native R3 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+        }
+      ]
+    },
+    {
+      "id": "CR-019",
+      "observations": [
+        "R4",
+        "V1"
+      ],
+      "related": [
+        "CR-033"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "913a77d908de17bd7ece6f7838058809ed4c89f42919f98f4fd7366e16d3c81d",
+      "disposition": "On-Hold",
+      "outcome": "Resolved",
+      "outcome_reason": "Resolved by Governing Decision: docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy; established in governance release 1.0.12. No related instance accepted or reconciled.",
+      "dependencies": [],
+      "conditional_future_instance_states": [
+        {
+          "cr": "CR-013",
+          "required_governed_state": "The exact native R4 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+        }
+      ]
+    },
+    {
+      "id": "CR-020",
+      "observations": [
+        "R5",
+        "V1"
+      ],
+      "related": [
+        "CR-033"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "05b395ec924ff5b0ac9f8e4fe6e953b0bcea43a8d329b3b218e8956ad30621c0",
+      "disposition": "On-Hold",
+      "outcome": "Resolved",
+      "outcome_reason": "Resolved by Governing Decision: docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy; established in governance release 1.0.12. No related instance accepted or reconciled.",
+      "dependencies": [],
+      "conditional_future_instance_states": [
+        {
+          "cr": "CR-014",
+          "required_governed_state": "The exact native R5 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+        }
+      ]
+    },
+    {
+      "id": "CR-021",
+      "observations": [
+        "R6",
+        "V1"
+      ],
+      "related": [
+        "CR-033"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "ac7fb3f8d5caa6a9eda0f051ecce9ffe8c7d41c7eb76aa58289993c401ce2d0b",
+      "disposition": "On-Hold",
+      "outcome": "Resolved",
+      "outcome_reason": "Resolved by Governing Decision: docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy; established in governance release 1.0.12. No related instance accepted or reconciled.",
+      "dependencies": [],
+      "conditional_future_instance_states": [
+        {
+          "cr": "CR-015",
+          "required_governed_state": "The exact native R6 Composition exists as an evidenced reconciled relationship between resolved governed endpoints, at its authorised standing. Acceptance alone is insufficient."
+        }
+      ]
+    },
+    {
+      "id": "CR-022",
+      "observations": [
+        "R7",
+        "V3"
+      ],
+      "related": [
+        "CR-023"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "f1aec10bbdb7d45bec633ed4232c8fd4b9720c1adbb911680abdd068e75052b1",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": [
+        {
+          "cr": "CR-006",
+          "required_governed_state": "`[Business Service] Identifier Create` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+        },
+        {
+          "cr": "CR-001",
+          "required_governed_state": "`[Feature] Identifier Capture` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+        }
+      ]
+    },
+    {
+      "id": "CR-023",
+      "observations": [
+        "R7",
+        "V3"
+      ],
+      "related": [
+        "CR-035"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "fe204adb4353e1ab8984510d7e31588c28050b854145eb1509ad7f8e9696ab89",
+      "disposition": "On-Hold",
+      "outcome": "Resolved",
+      "outcome_reason": "Resolved by governing explicit Home modelling-strategy decision, release 1.0.14. Realization does not establish Home/context; native Realization remains independently proposed.",
+      "dependencies": [
+        {
+          "cr": "CR-022",
+          "required_governed_state": "The native R7 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state."
+        }
+      ],
+      "prior_outcome": "Unresolved",
+      "prior_outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies_condition_outcome": false
+    },
+    {
+      "id": "CR-024",
+      "observations": [
+        "R8",
+        "V3"
+      ],
+      "related": [
+        "CR-025"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "a34610e7f3efbfc107f6a737dced96c3918937c0dbdd45738a2336a90363b825",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": [
+        {
+          "cr": "CR-007",
+          "required_governed_state": "`[Business Service] Identifier Update` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+        },
+        {
+          "cr": "CR-001",
+          "required_governed_state": "`[Feature] Identifier Capture` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+        }
+      ]
+    },
+    {
+      "id": "CR-025",
+      "observations": [
+        "R8",
+        "V3"
+      ],
+      "related": [
+        "CR-035"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "2ce536ed6ead6fac31c2b965775a0bd0e9f6e027283340f046c80627496e20cb",
+      "disposition": "On-Hold",
+      "outcome": "Resolved",
+      "outcome_reason": "Resolved by governing explicit Home modelling-strategy decision, release 1.0.14. Realization does not establish Home/context; native Realization remains independently proposed.",
+      "dependencies": [
+        {
+          "cr": "CR-024",
+          "required_governed_state": "The native R8 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state."
+        }
+      ],
+      "prior_outcome": "Unresolved",
+      "prior_outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies_condition_outcome": false
+    },
+    {
+      "id": "CR-026",
+      "observations": [
+        "R9",
+        "V3"
+      ],
+      "related": [
+        "CR-027"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "1b521efc75aa9725f55b87ffb13cd22f91069ac2fbccf5a9d43f10a08d0d8bb2",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": [
+        {
+          "cr": "CR-008",
+          "required_governed_state": "`[Business Process] Identifier Verification` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+        },
+        {
+          "cr": "CR-001",
+          "required_governed_state": "`[Feature] Identifier Capture` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+        }
+      ]
+    },
+    {
+      "id": "CR-027",
+      "observations": [
+        "R9",
+        "V3"
+      ],
+      "related": [
+        "CR-035"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "3fa6dea082083074250664b3141de97a2f1e3efd4b05346c0ff53e108c18f331",
+      "disposition": "On-Hold",
+      "outcome": "Resolved",
+      "outcome_reason": "Resolved by governing explicit Home modelling-strategy decision, release 1.0.14. Realization does not establish Home/context; native Realization remains independently proposed.",
+      "dependencies": [
+        {
+          "cr": "CR-026",
+          "required_governed_state": "The native R9 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state."
+        }
+      ],
+      "prior_outcome": "Unresolved",
+      "prior_outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies_condition_outcome": false
+    },
+    {
+      "id": "CR-028",
+      "observations": [
+        "R12",
+        "V4"
+      ],
+      "related": [
+        "CR-029"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "32f5919e4a051eab1bb04015b1a9e6509f00601ec8c555872e80ee7504d7db89",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": [
+        {
+          "cr": "CR-009",
+          "required_governed_state": "`[Business Service] Verify Identity Source` exists as the evidenced reconciled governed endpoint for its submitted record, at its authorised native type/classification and standing."
+        }
+      ]
+    },
+    {
+      "id": "CR-029",
+      "observations": [
+        "R12",
+        "V4"
+      ],
+      "related": [
+        "CR-036"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "0a3850b5092d02fb5b636cd3366fee89ffa7b0705ab21d88195388d1e7537705",
+      "disposition": "On-Hold",
+      "outcome": "Resolved",
+      "outcome_reason": "Resolved by governing explicit Home modelling-strategy decision, release 1.0.14. Realization does not establish Home/context; native Realization remains independently proposed.",
+      "dependencies": [
+        {
+          "cr": "CR-028",
+          "required_governed_state": "The native R12 Realization has been reconciled and validated with the exact resolved governed source/target and authorised standing; an Accept disposition by itself supplies no resulting state."
+        }
+      ],
+      "prior_outcome": "Unresolved",
+      "prior_outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies_condition_outcome": false
+    },
+    {
+      "id": "CR-030",
+      "observations": [
+        "R10",
+        "V3"
+      ],
+      "related": [
+        "CR-035"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "4a47d31eedcb29b30c1eb4d970f07cc4fd09b33e2ec99b4ed9c7fa8cf9745490",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": [
+        {
+          "cr": "CR-006",
+          "required_governed_state": "`[Business Service] Identifier Create` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+        },
+        {
+          "cr": "CR-008",
+          "required_governed_state": "`[Business Process] Identifier Verification` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+        }
+      ]
+    },
+    {
+      "id": "CR-031",
+      "observations": [
+        "R11",
+        "V3"
+      ],
+      "related": [
+        "CR-035"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "3557686aaef3ddaf7e6139c7c38063d67338f4b90261974ca392ddf2f70fa639",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": [
+        {
+          "cr": "CR-007",
+          "required_governed_state": "`[Business Service] Identifier Update` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+        },
+        {
+          "cr": "CR-008",
+          "required_governed_state": "`[Business Process] Identifier Verification` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+        }
+      ]
+    },
+    {
+      "id": "CR-032",
+      "observations": [
+        "R13",
+        "V3"
+      ],
+      "related": [
+        "CR-035"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "932bf365092d5fee5ea0e1292be9a3a395c62215dbec5916e8ce6cf082112a4d",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": [
+        {
+          "cr": "CR-009",
+          "required_governed_state": "`[Business Service] Verify Identity Source` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+        },
+        {
+          "cr": "CR-008",
+          "required_governed_state": "`[Business Process] Identifier Verification` exists as its resolved, reconciled governed endpoint, with authorised responsibility/type and evidenced standing."
+        }
+      ]
+    },
+    {
+      "id": "CR-033",
+      "observations": [
+        "V1"
+      ],
+      "related": [
+        "CR-016",
+        "CR-017",
+        "CR-018",
+        "CR-019",
+        "CR-020",
+        "CR-021"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "6231a9001e66d98355facfd30694f4b42ac803052e413802dbc94ab8d1ee24e4",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": [
+        {
+          "cr": "CR-001",
+          "required_governed_state": "The governed element corresponding to submitted `id-727a264026584f80bc3304ff8383dc92` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+        },
+        {
+          "cr": "CR-011",
+          "required_governed_state": "The exact submitted relationship `id-36b2aa8ad58149fdb20d44c1c16dd64c` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        },
+        {
+          "cr": "CR-012",
+          "required_governed_state": "The exact submitted relationship `id-3c3d723683c147a4a902b4d35a2af018` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        },
+        {
+          "cr": "CR-010",
+          "required_governed_state": "The exact submitted relationship `id-73ecd7a39407404ba8e2bb663efbdc19` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        },
+        {
+          "cr": "CR-015",
+          "required_governed_state": "The exact submitted relationship `id-bff76286f8994d20aa1b8aef166acebd` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        },
+        {
+          "cr": "CR-013",
+          "required_governed_state": "The exact submitted relationship `id-daf437bb32114daa8a6b9462cb9b4fb2` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        },
+        {
+          "cr": "CR-014",
+          "required_governed_state": "The exact submitted relationship `id-f9b270950f0241108b68f1c3daa50019` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        }
+      ]
+    },
+    {
+      "id": "CR-034",
+      "observations": [
+        "V2"
+      ],
+      "related": [],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "7d0a093072b20f6cf72953c4007258ffa702b4d9a7071dd3bc37c6394bef68fa",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": []
+    },
+    {
+      "id": "CR-035",
+      "observations": [
+        "V3"
+      ],
+      "related": [
+        "CR-023",
+        "CR-025",
+        "CR-027",
+        "CR-029"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "4bdb1f59e180bc00bba879d92e3628a79a9eabdae255a2f3b81cf3b3d5658abe",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": [
+        {
+          "cr": "CR-007",
+          "required_governed_state": "The governed element corresponding to submitted `id-0088d61ccfcf4962b3aab8bc3b96021d` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+        },
+        {
+          "cr": "CR-001",
+          "required_governed_state": "The governed element corresponding to submitted `id-727a264026584f80bc3304ff8383dc92` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+        },
+        {
+          "cr": "CR-009",
+          "required_governed_state": "The governed element corresponding to submitted `id-9bfedbfd5b404694a2224c039fa5d4c4` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+        },
+        {
+          "cr": "CR-008",
+          "required_governed_state": "The governed element corresponding to submitted `id-c645a859ac2c4447ad5ae850cf384bf3` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+        },
+        {
+          "cr": "CR-006",
+          "required_governed_state": "The governed element corresponding to submitted `id-fddda503b8f0438e995465cd93204326` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+        },
+        {
+          "cr": "CR-031",
+          "required_governed_state": "The exact submitted relationship `id-0849f31d6d7d4f7eb1e484d7437e5cd7` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        },
+        {
+          "cr": "CR-024",
+          "required_governed_state": "The exact submitted relationship `id-69eb864f56df4d928f8abc3f7ab4e834` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        },
+        {
+          "cr": "CR-030",
+          "required_governed_state": "The exact submitted relationship `id-bef77e2eb7de4691b4fbe9a0c84e8232` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        },
+        {
+          "cr": "CR-026",
+          "required_governed_state": "The exact submitted relationship `id-c0f84a8e4c8d496580a68cac4823c58c` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        },
+        {
+          "cr": "CR-032",
+          "required_governed_state": "The exact submitted relationship `id-c53c42ba0a4f437f9cb76a4c1a701816` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        },
+        {
+          "cr": "CR-022",
+          "required_governed_state": "The exact submitted relationship `id-e84f2e9df66a48d795d604d75afc72cb` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        }
+      ]
+    },
+    {
+      "id": "CR-036",
+      "observations": [
+        "V4"
+      ],
+      "related": [
+        "CR-029"
+      ],
+      "instruction": "Not authorised",
+      "processing": "Not yet processed",
+      "detected_evidence_sha256": "adff1a1a6070a62c2d4ed13764ee935648d444168b2413049686e7b7c524e8d6",
+      "disposition": "On-Hold",
+      "outcome": "Unresolved",
+      "outcome_reason": "Architectural proposal/question remains undecided; no authority or processing/validation evidence establishes resolution.",
+      "dependencies": [
+        {
+          "cr": "CR-009",
+          "required_governed_state": "The governed element corresponding to submitted `id-9bfedbfd5b404694a2224c039fa5d4c4` exists with evidenced reconciled identity, native type/classification and standing for this View appearance."
+        },
+        {
+          "cr": "CR-028",
+          "required_governed_state": "The exact submitted relationship `id-37f6913198e2434db5309c1c8e36fbc0` exists as a reconciled governed edge, with correct resolved endpoints, direction and standing; the View connection must reference that edge."
+        }
+      ]
+    }
+  ],
+  "reconciliation": "Not performed",
+  "canonical_id_allocation": "None",
+  "publication": "Not performed",
+  "home_authority": "docs/markdown/governance/architecture-modelling-strategy.md#explicit-architectural-home",
+  "updated_input_run": "1.0.8/run-002"
+}

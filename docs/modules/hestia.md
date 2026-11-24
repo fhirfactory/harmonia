@@ -1,6 +1,24 @@
 # Hestia Subproject Reference: Data & Persistence Services `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Mnemosyne persistence responsibility domains](../markdown/05-information-systems-architecture/data-and-persistence.md#persistence-responsibility-domains)
+- [C&G coherent governance space](../markdown/05-information-systems-architecture/data-and-persistence.md#cg-governance-space)
+- [O&A horizontal partitionability](../markdown/05-information-systems-architecture/data-and-persistence.md#oa-partitionability)
+
+```text
+---------------------------------------------------------
+```
+
 Hestia is Harmonia's foundational persistence and caching subsystem, managing the dual-state persistence boundary between high-throughput in-memory caching (**Mneme**) and durable relational persistence (**Mnemosyne**) across clinical and operational domains.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 

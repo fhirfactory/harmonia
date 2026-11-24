@@ -1,0 +1,253 @@
+{
+  "status": "PASS",
+  "originalEvidenceFiles": [
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/ai-agent-reports/20261031T113057Z-nfr-derived-elements-add-execution.md",
+      "sha256": "709af7229cda02486115d017ec17650316aa19b3564b4cc398e2fd3e2ee7c0fb",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/canonical-relocations.json",
+      "sha256": "82d6431b2995cac9859675351cf4d99cad39559fafd1d0d5301ede37d40e12fe",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/evidence-layout-validation.json",
+      "sha256": "3ece476ba057ac32b305743e2972f5cc652e46bc100bb017595b7b00e6b9b106",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/increment-verification.json",
+      "sha256": "47543385e656b7aa3527860adfc257f66d0d1acd8b568072b69a8607311b106f",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/java-architecture-validation.json",
+      "sha256": "06ce6bf5dc85bff5c67f4c9b8c83c46b22f7243a8e78fbabd36372b714114bd2",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/reconciliation-notes.md",
+      "sha256": "753a73590b29f357829a736b1fd13d070f6beb281804c656cf9ae40841eb571b",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/reconciliation.json",
+      "sha256": "7605e1e0a3fff00960872163e1123d65b7358df51e0da0cc22462bf345c77f2f",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/reconciliation.md",
+      "sha256": "ddd25c2e276a93b4c3eaa5481f62bde7a0f6560edc32b31f6052b4691021135c",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/relationships.json",
+      "sha256": "66210b202328c2a8e535917a50ba1051bcf66d21127849eed8eb204d5066c69c",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/reproducibility.json",
+      "sha256": "d982c5b2deb5d56135d9780f8bc273ff00de031d815317cd6ee498792e947cad",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/review-index.md",
+      "sha256": "deb4952253cde220cbcbcc1a838610ab937b703f6dcced84821c768b8325b957",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/validation-summary.json",
+      "sha256": "1bac9510d8923e7841d452c027606f6a88507eccb338430e39e14146a71fca9b",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/after/verify-increment.py",
+      "sha256": "2378601a1c1880a3679d1dd6d4c2b693c72b7c3c929c03ed9a8dbdad435aedd9",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/before/ai-agent-tasks/20261031T104506Z-nfr-derived-elements-add.md",
+      "sha256": "b48a1f0ed79366e509ba88e614ddf09c2bf3586f8c127d25035a5d1771f8f6de",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/before/baseline.json",
+      "sha256": "d71bbdb965d71a60598623ea06e8c50bd383bd1c6b5a6f8c803957f580aa7950",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/001/before/task-event-provenance.json",
+      "sha256": "3e4d2d3d52e3ac52056d233c7aca60b5df33d7c7a2d29e95d33f554ee81cf79a",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/ai-agent-reports/20261101T000528Z-archi-catalogue-and-display-names-execution.md",
+      "sha256": "10f347d90c252e62fef997c247d39e3b89326444c48725d99c8eebdd1451f5a4",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/archi-transport/execution.txt",
+      "sha256": "9d3bcedb56d5285f593c872a753d391692b2079753b3799797c6b31e610b0b58",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/archi-transport/imported-model.archimate.gz",
+      "sha256": "1ee8b4a25511f05708cfc6f79a8898d1c8e08c486cab47d7cfb64f00c5800981",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/archi-transport/invocation.json",
+      "sha256": "04f433a2c42f13968259743b11f3a12d6520f17493983fe6551551ef33748a7c",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/archi-transport/normalised-review.json",
+      "sha256": "cf5c7b83f65fb1d36e3a10eb6e8b573f569b3122ad26dff7f7877e4db4f54c3d",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/archi-transport/raw-comparison.json.gz",
+      "sha256": "2c322bf417b99ad61a1402a6e8bcc6fc3fc6b0fc76a8f7655276361e146af1b2",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/archi-transport/returned-model.xml.gz",
+      "sha256": "b63f0e6374546b8b5ab3d89aa5fe9c6d3beb647caa25c43d4d215d513ffbcd33",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/browser-check.txt",
+      "sha256": "583370301ccec377581b953a1f720e89d8fd488dd3d23cf23d14a278723ca5b1",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/catalogue-accounting.json",
+      "sha256": "93bd72462f4dbfa9b3ecc7489555cb3b2db643d23db71c00d8e9dcdbefb01507",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/evidence-layout-validation.json",
+      "sha256": "66e22707e3bf25d7cbc35587aec98a2e0bb6b08f63c62bd366802581a05be7f9",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/git-state.json",
+      "sha256": "fa4ac89d4f76ae542cb7d0866b7e02c202b29a8d1e1b7a2e51d7bb10498095d5",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/java-architecture-tests.txt",
+      "sha256": "f630534c7687995ba0128a285267070e554bc90c519434ba629396b6b69d5aa4",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/native-tree-inspection.md",
+      "sha256": "36f61372bfb8afac58796e4ac85c78d9b26ab5d172f78fe6183fc11910196a9c",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/preservation-verification.json",
+      "sha256": "a1ddee5deef780bf38f1bc6951892f808b76975589213ca41292d0c984241c69",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/publication-checks.txt",
+      "sha256": "6206f6a56a299c767e8d073892c738494a1f50f2ffc6508efa430100f9edfd16",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/reproducibility.json",
+      "sha256": "2d7de1e1a7058a3bfd71c2ec84d0cd14e701769ccf96925a5f043ab6ca2e2656",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/review-index.md",
+      "sha256": "619bf1ecdc4117b2a4ac50abc5c207835e4209c71c3ce898eba861309eba0d6d",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/tooling-tests.txt",
+      "sha256": "20a045405ef4749aff0e4b6a4e0041d5259126d310f0aef0017816006d314aa4",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/validation-summary.json",
+      "sha256": "41e62db37c65a47155dc5ac548825a3ab6c124caef4a2d5d314e615ae371277d",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/verify-catalogue.py",
+      "sha256": "38a6082a61114baec0aac188f4928e9a7537933faf77e0f784040f721c9e8719",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/before/ai-agent-tasks/20261031T234829Z-archi-catalogue-and-display-names.md",
+      "sha256": "4fcfdb040d2450a51a5a5b8350c21c2dfa496378ed1bcabff0fbec8e034ce8b1",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/before/baseline.json",
+      "sha256": "15ca3af4c6bf63de75879b3fb77177913f8e150a6263c9f4abeb6403d23072be",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/before/git-head.txt",
+      "sha256": "5b2284ad03ea04926f7bdf48c2f775ee561edb669db11dcb09d4ead50e357640",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/before/git-status.txt",
+      "sha256": "b9acc13f3a6255d106cc48c3231d98f2fa20fe061e4091f681f690f3f6820a93",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/before/iteration-001-Harmonia-Architecture.xml.gz",
+      "sha256": "e8e3c8ca1eae5749fc7a565516b949c1ebab02a308b0c8a9db49575a7a2c7cc1",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/before/preserved-inputs.json",
+      "sha256": "d59eee9b3d83e8d4f26351368d363ecda7b98f20ba202e7d5e12d7c91a459267",
+      "unchanged": true
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/before/task-event-provenance.json",
+      "sha256": "6fcdc78777bd822b7a02690a15a8f7e3bfe39da33f49ceb5a49ebf49bc588871",
+      "unchanged": true
+    }
+  ],
+  "iteration001": {
+    "activeStatements": 150,
+    "reusedStatements": 4,
+    "newStatements": 146,
+    "subjectGroups": 13,
+    "subjectSubgroups": 69,
+    "specialisationDefinitions": 9,
+    "newRelationships": 222
+  },
+  "iteration002": {
+    "elements": 1842,
+    "relationships": 1882,
+    "views": 1216,
+    "nativeTypeDirectories": 27,
+    "sourceDirectories": 681,
+    "sha256": "b3c1bd71497497eb64e39e754dc69443d8012c762ffa00b9221116f12f3578a1"
+  },
+  "humanAcceptance": {
+    "quote": "All good. excellently done :)",
+    "source": "Closure instruction supplied by Mark Hunter, Solution Architect",
+    "sourceInstructionEntry": "2026-11-01T00:13:20.870Z",
+    "scope": "Inspected resulting 1.1.17 ArchiMate publication, catalogue organisation, display names and preservation of existing Views",
+    "originalVisualInspectionTime": "Not supplied; not inferred",
+    "readerFacingStructuralReview": "Awaiting explicit disposition under Review Praxis \u00a75"
+  },
+  "retainedQualifications": [
+    "Archi drops 3,724 redundant reference-label subtrees and 724 generated folder identifiers; anonymous organisation raw order findings retained.",
+    "21,194 absent-to-English XML language attribute findings, including 222 relationship language changes; no raw equivalence declared.",
+    "117 newly added Grouping/ImplementationGuideline formal names unresolved under existing Q-01 boundary.",
+    "NFR-081 response-time thresholds, NFR-092 traversal scope, NFR-065/087/105 unspecified search-performance/object-size/availability targets remain open; deployment resilience objectives remain deployment-specific.",
+    "Original historical contributions and incomplete durability Requirement retain their qualified standing.",
+    "Generated LaTeX sources; no PDF compilation claimed."
+  ]
+}

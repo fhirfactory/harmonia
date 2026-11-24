@@ -1,0 +1,56 @@
+ M architecture-release.json
+ M docs/archimate/exchange/ingest/1.0.8/HarmoniaArchictecture-1.0.8.archimate
+ M docs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml
+ M docs/archimate/exchange/publish/README.md
+ M docs/archimate/framework/README.md
+ M docs/archimate/framework/tests/test_workspace.py
+ M docs/archimate/framework/tools/report_baseline.py
+ M docs/archimate/framework/tools/synchronise_baseline.py
+ M docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md
+ M docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md
+ M docs/markdown/governance/README.md
+ M docs/markdown/governance/archi-navigation-and-view-convention.md
+ M docs/markdown/governance/archimate-ingestion-change-review.md
+ M docs/markdown/governance/archimate-ingestion-publication-semantics.md
+ M docs/markdown/governance/baseline/README.md
+ M docs/markdown/governance/baseline/correspondence.json
+ M docs/markdown/governance/baseline/relationships.md
+ M docs/markdown/governance/rad-archimate-model-mapping.md
+?? docs/archimate/exchange/publish/1.0.14/Harmonia-Architecture-1.0.14.xml
+?? docs/archimate/framework/tests/test_home_relationships.py
+?? docs/archimate/framework/tools/analyse_home_submission.py
+?? docs/archimate/framework/tools/home_relationships.py
+?? docs/archimate/framework/tools/report_home.py
+?? docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-003/change-review.md
+?? docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-003/manifest.json
+?? docs/archimate/processing/ingestion/1.0.8/run-001/review-revision-004.json
+?? docs/archimate/processing/ingestion/1.0.8/run-002/change-review.md
+?? docs/archimate/processing/ingestion/1.0.8/run-002/detection/change-requests.json
+?? docs/archimate/processing/ingestion/1.0.8/run-002/detection/explicit-homes.json
+?? docs/archimate/processing/ingestion/1.0.8/run-002/detection/start-preservation.json
+?? docs/archimate/processing/ingestion/1.0.8/run-002/detection/submission.xml.gz
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/architecture-tests.log.gz
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/baseline-check.log.gz
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/command-results.json
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/focused-tests.log.gz
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/framework-tests-final.log.gz
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/framework-tests.log.gz
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/governance-tests.log.gz
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/prior-test-attempts.json
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/rads-validation.log.gz
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/release-check.log.gz
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/validate-home-change.py
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/validation-final.log.gz
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/validation-results.json
+?? docs/archimate/processing/ingestion/1.0.8/run-002/validation/workspace-tests.log.gz
+?? docs/archimate/processing/publishing/1.0.14/archi-inspection-guide.md
+?? docs/archimate/processing/publishing/1.0.14/evidence-sha256.json
+?? docs/archimate/processing/publishing/1.0.14/home-normalisation.md
+?? docs/archimate/processing/publishing/1.0.14/home-verification.json
+?? docs/archimate/processing/publishing/1.0.14/independent-reproduction.json
+?? docs/archimate/processing/publishing/1.0.14/projection-checks.json
+?? docs/archimate/processing/publishing/1.0.14/publication-validation-1.0.14.json
+?? docs/archimate/processing/publishing/1.0.14/report-check-final.log.gz
+?? docs/archimate/processing/publishing/1.0.14/reproduction.log.gz
+?? docs/markdown/governance/architecture-modelling-strategy.md
+?? docs/markdown/governance/baseline/business-homes.json

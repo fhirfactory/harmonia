@@ -1,0 +1,91 @@
+{
+  "actor": "Codex (processing agent)",
+  "architecture_release": {
+    "previous_version": "1.0.9",
+    "version": "1.0.10"
+  },
+  "checks": [
+    {
+      "log": "validation/focused-tests.log",
+      "name": "focused reconciliation regressions",
+      "result": "PASS",
+      "tests": 9
+    },
+    {
+      "log": "validation/framework-tests.log",
+      "name": "full framework suite, corrected frozen index input",
+      "result": "PASS",
+      "seconds": 345.403,
+      "tests": 326
+    },
+    {
+      "category": "Frozen authority/input guard triggered by temporary baseline README index addition; restored exact original before retry",
+      "errors": 10,
+      "log": "validation/framework-tests-attempt-001.log",
+      "name": "full framework suite, first attempt",
+      "result": "FAIL",
+      "seconds": 149.255,
+      "tests_executed": 284
+    },
+    {
+      "log": "validation/architecture-tests.log",
+      "name": "required architecture suite",
+      "result": "PASS",
+      "seconds": 21.459,
+      "tests": 90
+    },
+    {
+      "log": "validation/replay-check.log",
+      "name": "persisted source replay, allocation zero",
+      "result": "PASS"
+    },
+    {
+      "log": "validation/frozen-run-002-replay.log",
+      "name": "isolated frozen Run-002 reproduction",
+      "result": "PASS"
+    },
+    {
+      "log": "validation/independent-audit.log",
+      "name": "independent complete-model/history/current-review audit",
+      "result": "PASS"
+    },
+    {
+      "name": "final identity-bearing actual Archi transport",
+      "reason": "Not performed in this bounded reconciliation; required before publication",
+      "result": "UNRESOLVED"
+    },
+    {
+      "name": "publication and new release",
+      "reason": "Explicit prior instruction remains in force",
+      "result": "NOT_AUTHORISED"
+    }
+  ],
+  "date": "2026-10-20",
+  "model_validation": {
+    "accepted_relationships": 60,
+    "accepted_view_changes": 12,
+    "checks": {
+      "actual_source_navigation": "PASS",
+      "composition_navigation": "PASS",
+      "exact_regeneration": "PASS",
+      "protected_content": "PASS",
+      "unique_navigation_references": "PASS",
+      "views_and_view_navigation": "UNCHANGED"
+    },
+    "deterministic_projection": "PASS",
+    "elements_reconciled": 82,
+    "held_unchanged": 4,
+    "identities": 1394,
+    "identities_allocated_by_replay": 0,
+    "model_sha256": "c7840ed0a41c66feb4730a9f66fab120b321f759bf8780d005cdcd82bff72d02",
+    "new_persisted_identities": 32,
+    "relationships_preserved": 1137,
+    "release_created": false,
+    "semantic_and_view_preservation": "PASS",
+    "standing": "ACCEPTED_RECONCILIATION_UNPUBLISHED",
+    "status": "PASS",
+    "view_navigation": "EXACT_SERIALIZED_MATCH",
+    "views_preserved": 1209
+  },
+  "release_created": false
+}

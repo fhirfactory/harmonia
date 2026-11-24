@@ -1,0 +1,51 @@
+{
+  "standing": "Applied authorised candidate changes; no acceptance",
+  "views": 1288,
+  "addedViews": [
+    {
+      "identifier": "id-36a82d51b7cb4611a65ace4b06488484",
+      "name": "information-management-view"
+    },
+    {
+      "identifier": "id-7095a65ca0be48fe8b8eecad63e01815",
+      "name": "security-and-management-view"
+    },
+    {
+      "identifier": "id-93b3ce60b18a4bf2b931779f1dde91e2",
+      "name": "architecture-governance-view"
+    }
+  ],
+  "viewPropertyRebindings": {
+    "v0.2 / Source Path": 30,
+    "v0.2 / Source SHA256": 30,
+    "Baseline / Source Path": 4,
+    "Baseline / Source SHA256": 4
+  },
+  "folderTerminologyChanges": [
+    {
+      "before": "1. Subject-Based-Views",
+      "after": "1. SolutionFacet-Based-Views"
+    }
+  ],
+  "authoredEmptyFolderRemoval": "Views/1. Subject-Based-Views/03. Security-and-Management/03 Authorisation-Enforcement",
+  "additionalRelationship": {
+    "identifier": "id-8590dea2bc74433dbc99f17927cdc092",
+    "source": "id-ca7d2832c33b4b4e82827df69324daba",
+    "target": "id-78d8fa44cc7452fea57041c8a2b8b102",
+    "archimateType": "Aggregation",
+    "attributes": {},
+    "standing": {
+      "semantic": "Solution Architect authorised authored Aggregation; reconciled candidate awaiting result review",
+      "currentness": "current"
+    },
+    "provenance": {
+      "source": "enterprise-architecture/design/evidence/1.1.19/001/before/Harmonia-Continuum-1.1.19-001.xml",
+      "selector": "relationship[@identifier=\"id-8590dea2bc74433dbc99f17927cdc092\"]",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.19/001/before/Harmonia-Continuum-1.1.19-001.xml",
+      "sha256": "217202bb3c303c0843b20b5fe6811ccd73cb2cd8c6ea3ed23c2de5951bcf52e1",
+      "authority": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-17"
+    },
+    "properties": []
+  },
+  "baselineRelationshipsEdited": 0
+}

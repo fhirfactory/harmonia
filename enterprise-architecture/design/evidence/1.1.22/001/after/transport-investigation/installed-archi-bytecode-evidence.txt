@@ -1,0 +1,623 @@
+Read-only javap -c -p inspection; installed Exchange plugin /home/hunterm/Development/Tools/Archi/plugins/org.opengroup.archimate.xmlexchange_5.10.0.202607081558.jar
+SHA-256 7442b0a8ee987b26ea53c98ce040890cb7c18945771a5f364f470f03de295e1a
+Methods establish export/import transformations, not architectural acceptance.
+
+EXPORTER
+  org.jdom2.Element writeFolder(com.archimatetool.model.IFolder, org.jdom2.Element);
+    Code:
+       0: new           #95                 // class org/jdom2/Element
+       3: dup
+       4: ldc_w         #499                // String item
+       7: getstatic     #149                // Field ARCHIMATE3_NAMESPACE:Lorg/jdom2/Namespace;
+      10: invokespecial #153                // Method org/jdom2/Element."<init>":(Ljava/lang/String;Lorg/jdom2/Namespace;)V
+      13: astore_3
+      14: aload_2
+      15: aload_3
+      16: invokevirtual #262                // Method org/jdom2/Element.addContent:(Lorg/jdom2/Content;)Lorg/jdom2/Element;
+      19: pop
+      20: aload_0
+      21: aload_1
+      22: invokeinterface #501,  1          // InterfaceMethod com/archimatetool/model/IFolder.getName:()Ljava/lang/String;
+      27: aload_3
+      28: ldc_w         #502                // String label
+      31: iconst_0
+      32: invokevirtual #229                // Method writeTextToElement:(Ljava/lang/String;Lorg/jdom2/Element;Ljava/lang/String;Z)Lorg/jdom2/Element;
+      35: pop
+      36: aload_0
+      37: aload_1
+      38: invokeinterface #504,  1          // InterfaceMethod com/archimatetool/model/IFolder.getDocumentation:()Ljava/lang/String;
+      43: aload_3
+      44: ldc           #236                // String documentation
+      46: iconst_0
+      47: invokevirtual #229                // Method writeTextToElement:(Ljava/lang/String;Lorg/jdom2/Element;Ljava/lang/String;Z)Lorg/jdom2/Element;
+      50: pop
+      51: aload_1
+      52: invokeinterface #398,  1          // InterfaceMethod com/archimatetool/model/IFolder.getFolders:()Lorg/eclipse/emf/common/util/EList;
+      57: invokeinterface #391,  1          // InterfaceMethod org/eclipse/emf/common/util/EList.iterator:()Ljava/util/Iterator;
+      62: astore        5
+      64: goto          87
+      67: aload         5
+      69: invokeinterface #118,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      74: checkcast     #367                // class com/archimatetool/model/IFolder
+      77: astore        4
+      79: aload_0
+      80: aload         4
+      82: aload_3
+      83: invokevirtual #494                // Method writeFolder:(Lcom/archimatetool/model/IFolder;Lorg/jdom2/Element;)Lorg/jdom2/Element;
+      86: pop
+      87: aload         5
+      89: invokeinterface #132,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      94: ifne          67
+      97: aload_1
+      98: invokeinterface #388,  1          // InterfaceMethod com/archimatetool/model/IFolder.getElements:()Lorg/eclipse/emf/common/util/EList;
+     103: invokeinterface #391,  1          // InterfaceMethod org/eclipse/emf/common/util/EList.iterator:()Ljava/util/Iterator;
+     108: astore        5
+     110: goto          196
+     113: aload         5
+     115: invokeinterface #118,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     120: checkcast     #352                // class org/eclipse/emf/ecore/EObject
+     123: astore        4
+     125: aload         4
+     127: instanceof    #505                // class com/archimatetool/model/IIdentifier
+     130: ifeq          196
+     133: aload         4
+     135: instanceof    #507                // class com/archimatetool/model/IDiagramModel
+     138: ifeq          152
+     141: aload         4
+     143: instanceof    #509                // class com/archimatetool/model/IArchimateDiagramModel
+     146: ifne          152
+     149: goto          196
+     152: aload         4
+     154: checkcast     #505                // class com/archimatetool/model/IIdentifier
+     157: astore        6
+     159: new           #95                 // class org/jdom2/Element
+     162: dup
+     163: ldc_w         #499                // String item
+     166: getstatic     #149                // Field ARCHIMATE3_NAMESPACE:Lorg/jdom2/Namespace;
+     169: invokespecial #153                // Method org/jdom2/Element."<init>":(Ljava/lang/String;Lorg/jdom2/Namespace;)V
+     172: astore        7
+     174: aload_3
+     175: aload         7
+     177: invokevirtual #262                // Method org/jdom2/Element.addContent:(Lorg/jdom2/Content;)Lorg/jdom2/Element;
+     180: pop
+     181: aload         7
+     183: ldc_w         #511                // String identifierRef
+     186: aload_0
+     187: aload         6
+     189: invokevirtual #209                // Method checkID:(Lcom/archimatetool/model/IIdentifier;)Ljava/lang/String;
+     192: invokevirtual #213                // Method org/jdom2/Element.setAttribute:(Ljava/lang/String;Ljava/lang/String;)Lorg/jdom2/Element;
+     195: pop
+     196: aload         5
+     198: invokeinterface #132,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+     203: ifne          113
+     206: aload_3
+     207: areturn
+
+
+  org.jdom2.Element writeProperties(com.archimatetool.model.IProperties, org.jdom2.Element);
+    Code:
+       0: new           #95                 // class org/jdom2/Element
+       3: dup
+       4: ldc_w         #573                // String properties
+       7: getstatic     #149                // Field ARCHIMATE3_NAMESPACE:Lorg/jdom2/Namespace;
+      10: invokespecial #153                // Method org/jdom2/Element."<init>":(Ljava/lang/String;Lorg/jdom2/Namespace;)V
+      13: astore_3
+      14: aload_1
+      15: invokeinterface #575,  1          // InterfaceMethod com/archimatetool/model/IProperties.getProperties:()Lorg/eclipse/emf/common/util/EList;
+      20: invokeinterface #391,  1          // InterfaceMethod org/eclipse/emf/common/util/EList.iterator:()Ljava/util/Iterator;
+      25: astore        5
+      27: goto          101
+      30: aload         5
+      32: invokeinterface #118,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      37: checkcast     #539                // class com/archimatetool/model/IProperty
+      40: astore        4
+      42: aload         4
+      44: invokeinterface #541,  1          // InterfaceMethod com/archimatetool/model/IProperty.getKey:()Ljava/lang/String;
+      49: astore        6
+      51: aload         4
+      53: invokeinterface #580,  1          // InterfaceMethod com/archimatetool/model/IProperty.getValue:()Ljava/lang/String;
+      58: astore        7
+      60: aload_0
+      61: aload         6
+      63: invokevirtual #449                // Method hasSomeText:(Ljava/lang/String;)Z
+      66: ifeq          101
+      69: aload_0
+      70: getfield      #220                // Field fPropertyDefsList:Ljava/util/Map;
+      73: aload         6
+      75: invokeinterface #582,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      80: checkcast     #124                // class java/lang/String
+      83: astore        8
+      85: aload         8
+      87: ifnull        101
+      90: aload_0
+      91: aload_3
+      92: aload         8
+      94: aload         7
+      96: iconst_1
+      97: invokevirtual #586                // Method writePropertyValue:(Lorg/jdom2/Element;Ljava/lang/String;Ljava/lang/String;Z)Lorg/jdom2/Element;
+     100: pop
+     101: aload         5
+     103: invokeinterface #132,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+     108: ifne          30
+     111: aload_1
+     112: instanceof    #554                // class com/archimatetool/model/IProfiles
+     115: ifeq          155
+     118: aload_1
+     119: checkcast     #554                // class com/archimatetool/model/IProfiles
+     122: astore        4
+     124: aload         4
+     126: invokeinterface #556,  1          // InterfaceMethod com/archimatetool/model/IProfiles.getPrimaryProfile:()Lcom/archimatetool/model/IProfile;
+     131: astore        5
+     133: aload         5
+     135: ifnull        155
+     138: aload_0
+     139: aload_3
+     140: ldc_w         #562                // String specialization
+     143: aload         5
+     145: invokeinterface #590,  1          // InterfaceMethod com/archimatetool/model/IProfile.getName:()Ljava/lang/String;
+     150: iconst_1
+     151: invokevirtual #586                // Method writePropertyValue:(Lorg/jdom2/Element;Ljava/lang/String;Ljava/lang/String;Z)Lorg/jdom2/Element;
+     154: pop
+     155: aload_3
+     156: invokevirtual #334                // Method org/jdom2/Element.getChildren:()Ljava/util/List;
+     159: invokeinterface #593,  1          // InterfaceMethod java/util/List.size:()I
+     164: ifle          173
+     167: aload_2
+     168: aload_3
+     169: invokevirtual #262                // Method org/jdom2/Element.addContent:(Lorg/jdom2/Content;)Lorg/jdom2/Element;
+     172: pop
+     173: aload_3
+     174: areturn
+
+
+  void writeConnections(com.archimatetool.model.IDiagramModel, org.jdom2.Element);
+    Code:
+       0: aload_1
+       1: invokeinterface #792,  1          // InterfaceMethod com/archimatetool/model/IDiagramModel.eAllContents:()Lorg/eclipse/emf/common/util/TreeIterator;
+       6: astore_3
+       7: goto          74
+      10: aload_3
+      11: invokeinterface #118,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      16: checkcast     #352                // class org/eclipse/emf/ecore/EObject
+      19: astore        4
+      21: aload         4
+      23: instanceof    #793                // class com/archimatetool/model/IDiagramModelArchimateConnection
+      26: ifeq          55
+      29: aload_0
+      30: aload         4
+      32: checkcast     #793                // class com/archimatetool/model/IDiagramModelArchimateConnection
+      35: invokevirtual #795                // Method isNestedConnection:(Lcom/archimatetool/model/IDiagramModelArchimateConnection;)Z
+      38: ifne          74
+      41: aload_0
+      42: aload         4
+      44: checkcast     #799                // class com/archimatetool/model/IDiagramModelConnection
+      47: aload_2
+      48: invokevirtual #801                // Method writeConnection:(Lcom/archimatetool/model/IDiagramModelConnection;Lorg/jdom2/Element;)Lorg/jdom2/Element;
+      51: pop
+      52: goto          74
+      55: aload         4
+      57: instanceof    #799                // class com/archimatetool/model/IDiagramModelConnection
+      60: ifeq          74
+      63: aload_0
+      64: aload         4
+      66: checkcast     #799                // class com/archimatetool/model/IDiagramModelConnection
+      69: aload_2
+      70: invokevirtual #801                // Method writeConnection:(Lcom/archimatetool/model/IDiagramModelConnection;Lorg/jdom2/Element;)Lorg/jdom2/Element;
+      73: pop
+      74: aload_3
+      75: invokeinterface #132,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      80: ifne          10
+      83: return
+
+
+  org.jdom2.Element writeConnectionStyle(com.archimatetool.model.IDiagramModelConnection, org.jdom2.Element);
+    Code:
+       0: new           #95                 // class org/jdom2/Element
+       3: dup
+       4: ldc_w         #743                // String style
+       7: getstatic     #149                // Field ARCHIMATE3_NAMESPACE:Lorg/jdom2/Namespace;
+      10: invokespecial #153                // Method org/jdom2/Element."<init>":(Ljava/lang/String;Lorg/jdom2/Namespace;)V
+      13: astore_3
+      14: aload_2
+      15: aload_3
+      16: invokevirtual #262                // Method org/jdom2/Element.addContent:(Lorg/jdom2/Content;)Lorg/jdom2/Element;
+      19: pop
+      20: aload_1
+      21: invokeinterface #866,  1          // InterfaceMethod com/archimatetool/model/IDiagramModelConnection.getLineWidth:()I
+      26: istore        4
+      28: iload         4
+      30: iconst_1
+      31: if_icmpeq     47
+      34: aload_3
+      35: ldc_w         #869                // String lineWidth
+      38: iload         4
+      40: invokestatic  #856                // Method java/lang/Integer.toString:(I)Ljava/lang/String;
+      43: invokevirtual #213                // Method org/jdom2/Element.setAttribute:(Ljava/lang/String;Ljava/lang/String;)Lorg/jdom2/Element;
+      46: pop
+      47: aload_0
+      48: aload_1
+      49: aload_3
+      50: invokevirtual #748                // Method writeLineColor:(Lcom/archimatetool/model/ILineObject;Lorg/jdom2/Element;)Lorg/jdom2/Element;
+      53: pop
+      54: aload_0
+      55: aload_1
+      56: aload_3
+      57: invokevirtual #752                // Method writeFont:(Lcom/archimatetool/model/IFontAttribute;Lorg/jdom2/Element;)Lorg/jdom2/Element;
+      60: pop
+      61: aload_3
+      62: areturn
+
+
+  org.jdom2.Element writeLineColor(com.archimatetool.model.ILineObject, org.jdom2.Element);
+    Code:
+       0: aconst_null
+       1: astore_3
+       2: aload_1
+       3: invokeinterface #871,  1          // InterfaceMethod com/archimatetool/model/ILineObject.getLineColor:()Ljava/lang/String;
+       8: invokestatic  #760                // Method com/archimatetool/editor/ui/ColorFactory.convertStringToRGB:(Ljava/lang/String;)Lorg/eclipse/swt/graphics/RGB;
+      11: astore        4
+      13: aload         4
+      15: ifnonnull     36
+      18: aload_1
+      19: invokestatic  #876                // Method com/archimatetool/editor/ui/ColorFactory.getDefaultLineColor:(Ljava/lang/Object;)Lorg/eclipse/swt/graphics/Color;
+      22: astore        5
+      24: aload         5
+      26: ifnull        36
+      29: aload         5
+      31: invokevirtual #770                // Method org/eclipse/swt/graphics/Color.getRGB:()Lorg/eclipse/swt/graphics/RGB;
+      34: astore        4
+      36: aload         4
+      38: ifnull        95
+      41: new           #95                 // class org/jdom2/Element
+      44: dup
+      45: ldc_w         #879                // String lineColor
+      48: getstatic     #149                // Field ARCHIMATE3_NAMESPACE:Lorg/jdom2/Namespace;
+      51: invokespecial #153                // Method org/jdom2/Element."<init>":(Ljava/lang/String;Lorg/jdom2/Namespace;)V
+      54: astore_3
+      55: aload_2
+      56: aload_3
+      57: invokevirtual #262                // Method org/jdom2/Element.addContent:(Lorg/jdom2/Content;)Lorg/jdom2/Element;
+      60: pop
+      61: aload_1
+      62: instanceof    #665                // class com/archimatetool/model/IDiagramModelObject
+      65: ifeq          87
+      68: aload_0
+      69: aload         4
+      71: aload_1
+      72: checkcast     #665                // class com/archimatetool/model/IDiagramModelObject
+      75: invokeinterface #881,  1          // InterfaceMethod com/archimatetool/model/IDiagramModelObject.getLineAlpha:()I
+      80: aload_3
+      81: invokevirtual #781                // Method writeRGBAttributes:(Lorg/eclipse/swt/graphics/RGB;ILorg/jdom2/Element;)V
+      84: goto          95
+      87: aload_0
+      88: aload         4
+      90: iconst_m1
+      91: aload_3
+      92: invokevirtual #781                // Method writeRGBAttributes:(Lorg/eclipse/swt/graphics/RGB;ILorg/jdom2/Element;)V
+      95: aload_3
+      96: areturn
+
+
+  org.jdom2.Element writeFont(com.archimatetool.model.IFontAttribute, org.jdom2.Element);
+    Code:
+       0: new           #95                 // class org/jdom2/Element
+       3: dup
+       4: ldc_w         #887                // String font
+       7: getstatic     #149                // Field ARCHIMATE3_NAMESPACE:Lorg/jdom2/Namespace;
+      10: invokespecial #153                // Method org/jdom2/Element."<init>":(Ljava/lang/String;Lorg/jdom2/Namespace;)V
+      13: astore_3
+      14: aconst_null
+      15: astore        4
+      17: aload_1
+      18: invokeinterface #889,  1          // InterfaceMethod com/archimatetool/model/IFontAttribute.getFont:()Ljava/lang/String;
+      23: astore        5
+      25: aload         5
+      27: ifnull        44
+      30: new           #894                // class org/eclipse/swt/graphics/FontData
+      33: dup
+      34: aload         5
+      36: invokespecial #896                // Method org/eclipse/swt/graphics/FontData."<init>":(Ljava/lang/String;)V
+      39: astore        4
+      41: goto          49
+      44: invokestatic  #898                // Method com/archimatetool/editor/ui/FontFactory.getDefaultUserViewFontData:()Lorg/eclipse/swt/graphics/FontData;
+      47: astore        4
+      49: aload_3
+      50: ldc           #227                // String name
+      52: aload         4
+      54: invokevirtual #904                // Method org/eclipse/swt/graphics/FontData.getName:()Ljava/lang/String;
+      57: invokevirtual #213                // Method org/jdom2/Element.setAttribute:(Ljava/lang/String;Ljava/lang/String;)Lorg/jdom2/Element;
+      60: pop
+      61: aload_3
+      62: ldc_w         #905                // String size
+      65: aload         4
+      67: invokevirtual #906                // Method org/eclipse/swt/graphics/FontData.getHeight:()I
+      70: invokestatic  #856                // Method java/lang/Integer.toString:(I)Ljava/lang/String;
+      73: invokevirtual #213                // Method org/jdom2/Element.setAttribute:(Ljava/lang/String;Ljava/lang/String;)Lorg/jdom2/Element;
+      76: pop
+      77: aload         4
+      79: invokevirtual #909                // Method org/eclipse/swt/graphics/FontData.getStyle:()I
+      82: istore        6
+      84: ldc_w         #912                // String
+      87: astore        7
+      89: iload         6
+      91: iconst_1
+      92: iand
+      93: iconst_1
+      94: if_icmpne     106
+      97: aload         7
+      99: invokedynamic #916,  0            // InvokeDynamic #1:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+     104: astore        7
+     106: iload         6
+     108: iconst_2
+     109: iand
+     110: iconst_2
+     111: if_icmpne     140
+     114: aload         7
+     116: invokestatic  #126                // Method com/archimatetool/editor/utils/StringUtils.isSet:(Ljava/lang/String;)Z
+     119: ifeq          131
+     122: aload         7
+     124: invokedynamic #918,  0            // InvokeDynamic #2:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+     129: astore        7
+     131: aload         7
+     133: invokedynamic #919,  0            // InvokeDynamic #3:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+     138: astore        7
+     140: aload_0
+     141: aload         7
+     143: invokevirtual #449                // Method hasSomeText:(Ljava/lang/String;)Z
+     146: ifeq          169
+     149: aload_3
+     150: ldc_w         #743                // String style
+     153: aload         7
+     155: invokevirtual #213                // Method org/jdom2/Element.setAttribute:(Ljava/lang/String;Ljava/lang/String;)Lorg/jdom2/Element;
+     158: pop
+     159: goto          169
+     162: astore        4
+     164: aload         4
+     166: invokevirtual #920                // Method java/lang/Exception.printStackTrace:()V
+     169: aload_1
+     170: invokeinterface #925,  1          // InterfaceMethod com/archimatetool/model/IFontAttribute.getFontColor:()Ljava/lang/String;
+     175: astore        4
+     177: aload         4
+     179: invokestatic  #760                // Method com/archimatetool/editor/ui/ColorFactory.convertStringToRGB:(Ljava/lang/String;)Lorg/eclipse/swt/graphics/RGB;
+     182: astore        5
+     184: new           #95                 // class org/jdom2/Element
+     187: dup
+     188: ldc_w         #928                // String color
+     191: getstatic     #149                // Field ARCHIMATE3_NAMESPACE:Lorg/jdom2/Namespace;
+     194: invokespecial #153                // Method org/jdom2/Element."<init>":(Ljava/lang/String;Lorg/jdom2/Namespace;)V
+     197: astore        6
+     199: aload_3
+     200: aload         6
+     202: invokevirtual #262                // Method org/jdom2/Element.addContent:(Lorg/jdom2/Content;)Lorg/jdom2/Element;
+     205: pop
+     206: aload_0
+     207: aload         5
+     209: iconst_m1
+     210: aload         6
+     212: invokevirtual #781                // Method writeRGBAttributes:(Lorg/eclipse/swt/graphics/RGB;ILorg/jdom2/Element;)V
+     215: aload_0
+     216: aload_3
+     217: invokevirtual #929                // Method hasElementContent:(Lorg/jdom2/Element;)Z
+     220: ifeq          229
+     223: aload_2
+     224: aload_3
+     225: invokevirtual #262                // Method org/jdom2/Element.addContent:(Lorg/jdom2/Content;)Lorg/jdom2/Element;
+     228: pop
+     229: aload_3
+     230: areturn
+    Exception table:
+       from    to  target type
+          14   159   162   Class java/lang/Exception
+
+
+  private void writeElementTextWithLanguageCode(org.jdom2.Element, java.lang.String, boolean);
+    Code:
+       0: aload_1
+       1: aload_2
+       2: invokevirtual #270                // Method org/jdom2/Element.setText:(Ljava/lang/String;)Lorg/jdom2/Element;
+       5: pop
+       6: iload_3
+       7: ifeq          32
+      10: aload_0
+      11: getfield      #144                // Field fLanguageCode:Ljava/lang/String;
+      14: ifnull        32
+      17: aload_1
+      18: ldc_w         #1000               // String lang
+      21: aload_0
+      22: getfield      #144                // Field fLanguageCode:Ljava/lang/String;
+      25: getstatic     #1002               // Field org/jdom2/Namespace.XML_NAMESPACE:Lorg/jdom2/Namespace;
+      28: invokevirtual #201                // Method org/jdom2/Element.setAttribute:(Ljava/lang/String;Ljava/lang/String;Lorg/jdom2/Namespace;)Lorg/jdom2/Element;
+      31: pop
+      32: return
+
+
+
+IMPORTER
+  private com.archimatetool.model.IArchimateModelObject getItemObject(org.jdom2.Element);
+    Code:
+       0: aload_1
+       1: ldc_w         #488                // String identifierRef
+       4: invokevirtual #157                // Method org/jdom2/Element.getAttributeValue:(Ljava/lang/String;)Ljava/lang/String;
+       7: astore_2
+       8: aload_0
+       9: aload_2
+      10: invokevirtual #490                // Method hasValue:(Ljava/lang/String;)Z
+      13: ifne          18
+      16: aconst_null
+      17: areturn
+      18: aload_1
+      19: ldc_w         #455                // String item
+      22: getstatic     #83                 // Field ARCHIMATE3_NAMESPACE:Lorg/jdom2/Namespace;
+      25: invokevirtual #119                // Method org/jdom2/Element.getChildren:(Ljava/lang/String;Lorg/jdom2/Namespace;)Ljava/util/List;
+      28: invokeinterface #493,  1          // InterfaceMethod java/util/List.isEmpty:()Z
+      33: ifne          38
+      36: aconst_null
+      37: areturn
+      38: aload_0
+      39: getfield      #44                 // Field fConceptsLookup:Ljava/util/Map;
+      42: aload_2
+      43: invokeinterface #201,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      48: checkcast     #486                // class com/archimatetool/model/IArchimateModelObject
+      51: astore_3
+      52: aload_3
+      53: ifnull        60
+      56: aload_3
+      57: goto          73
+      60: aload_0
+      61: getfield      #48                 // Field fDiagramsLookup:Ljava/util/Map;
+      64: aload_2
+      65: invokeinterface #201,  2          // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+      70: checkcast     #486                // class com/archimatetool/model/IArchimateModelObject
+      73: areturn
+
+
+  private com.archimatetool.model.IFolder getSubFolder(org.jdom2.Element, com.archimatetool.model.IFolder);
+    Code:
+       0: aload_2
+       1: ifnonnull     6
+       4: aconst_null
+       5: areturn
+       6: aload_0
+       7: aload_1
+       8: invokevirtual #497                // Method getItemHierarchy:(Lorg/jdom2/Element;)Ljava/util/List;
+      11: invokeinterface #123,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      16: astore        4
+      18: goto          93
+      21: aload         4
+      23: invokeinterface #129,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      28: checkcast     #88                 // class org/jdom2/Element
+      31: astore_3
+      32: aload_0
+      33: aload_3
+      34: ldc_w         #501                // String label
+      37: iconst_1
+      38: invokevirtual #163                // Method getChildElementText:(Lorg/jdom2/Element;Ljava/lang/String;Z)Ljava/lang/String;
+      41: invokestatic  #503                // Method com/archimatetool/editor/utils/StringUtils.safeString:(Ljava/lang/String;)Ljava/lang/String;
+      44: astore        5
+      46: aload_0
+      47: aload_3
+      48: ldc           #183                // String documentation
+      50: iconst_1
+      51: invokevirtual #163                // Method getChildElementText:(Lorg/jdom2/Element;Ljava/lang/String;Z)Ljava/lang/String;
+      54: invokestatic  #503                // Method com/archimatetool/editor/utils/StringUtils.safeString:(Ljava/lang/String;)Ljava/lang/String;
+      57: astore        6
+      59: aload_0
+      60: aload_3
+      61: invokevirtual #508                // Method getTopLevelArchiFolder:(Lorg/jdom2/Element;)Lcom/archimatetool/model/IFolder;
+      64: astore        7
+      66: aload         7
+      68: ifnull        83
+      71: aload         7
+      73: aload         6
+      75: invokeinterface #511,  2          // InterfaceMethod com/archimatetool/model/IFolder.setDocumentation:(Ljava/lang/String;)V
+      80: goto          93
+      83: aload_0
+      84: aload_2
+      85: aload         5
+      87: aload         6
+      89: invokevirtual #512                // Method createSubFolder:(Lcom/archimatetool/model/IFolder;Ljava/lang/String;Ljava/lang/String;)Lcom/archimatetool/model/IFolder;
+      92: astore_2
+      93: aload         4
+      95: invokeinterface #138,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+     100: ifne          21
+     103: aload_2
+     104: areturn
+
+
+  private com.archimatetool.model.IFolder createSubFolder(com.archimatetool.model.IFolder, java.lang.String, java.lang.String);
+    Code:
+       0: aload_1
+       1: invokeinterface #517,  1          // InterfaceMethod com/archimatetool/model/IFolder.getFolders:()Lorg/eclipse/emf/common/util/EList;
+       6: invokeinterface #520,  1          // InterfaceMethod org/eclipse/emf/common/util/EList.iterator:()Ljava/util/Iterator;
+      11: astore        5
+      13: goto          45
+      16: aload         5
+      18: invokeinterface #129,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      23: checkcast     #324                // class com/archimatetool/model/IFolder
+      26: astore        4
+      28: aload         4
+      30: invokeinterface #521,  1          // InterfaceMethod com/archimatetool/model/IFolder.getName:()Ljava/lang/String;
+      35: aload_2
+      36: invokevirtual #209                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      39: ifeq          45
+      42: aload         4
+      44: areturn
+      45: aload         5
+      47: invokeinterface #138,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      52: ifne          16
+      55: getstatic     #52                 // Field com/archimatetool/model/IArchimateFactory.eINSTANCE:Lcom/archimatetool/model/IArchimateFactory;
+      58: invokeinterface #522,  1          // InterfaceMethod com/archimatetool/model/IArchimateFactory.createFolder:()Lcom/archimatetool/model/IFolder;
+      63: astore        4
+      65: aload         4
+      67: aload_2
+      68: invokeinterface #526,  2          // InterfaceMethod com/archimatetool/model/IFolder.setName:(Ljava/lang/String;)V
+      73: aload         4
+      75: aload_3
+      76: invokeinterface #511,  2          // InterfaceMethod com/archimatetool/model/IFolder.setDocumentation:(Ljava/lang/String;)V
+      81: aload_1
+      82: invokeinterface #517,  1          // InterfaceMethod com/archimatetool/model/IFolder.getFolders:()Lorg/eclipse/emf/common/util/EList;
+      87: aload         4
+      89: invokeinterface #245,  2          // InterfaceMethod org/eclipse/emf/common/util/EList.add:(Ljava/lang/Object;)Z
+      94: pop
+      95: aload         4
+      97: areturn
+
+
+  java.lang.String getChildElementText(org.jdom2.Element, java.lang.String, boolean);
+    Code:
+       0: invokestatic  #1045               // Method java/util/Locale.getDefault:()Ljava/util/Locale;
+       3: invokevirtual #1051               // Method java/util/Locale.getLanguage:()Ljava/lang/String;
+       6: astore        4
+       8: aload         4
+      10: ifnonnull     18
+      13: ldc_w         #1054               // String en
+      16: astore        4
+      18: aload_1
+      19: aload_2
+      20: getstatic     #83                 // Field ARCHIMATE3_NAMESPACE:Lorg/jdom2/Namespace;
+      23: invokevirtual #119                // Method org/jdom2/Element.getChildren:(Ljava/lang/String;Lorg/jdom2/Namespace;)Ljava/util/List;
+      26: invokeinterface #123,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+      31: astore        6
+      33: goto          89
+      36: aload         6
+      38: invokeinterface #129,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+      43: checkcast     #88                 // class org/jdom2/Element
+      46: astore        5
+      48: aload         5
+      50: ldc_w         #1056               // String lang
+      53: getstatic     #1058               // Field org/jdom2/Namespace.XML_NAMESPACE:Lorg/jdom2/Namespace;
+      56: invokevirtual #298                // Method org/jdom2/Element.getAttributeValue:(Ljava/lang/String;Lorg/jdom2/Namespace;)Ljava/lang/String;
+      59: astore        7
+      61: aload         4
+      63: aload         7
+      65: invokevirtual #209                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      68: ifeq          89
+      71: iload_3
+      72: ifeq          83
+      75: aload         5
+      77: invokevirtual #1063               // Method org/jdom2/Element.getTextNormalize:()Ljava/lang/String;
+      80: goto          88
+      83: aload         5
+      85: invokevirtual #1066               // Method org/jdom2/Element.getText:()Ljava/lang/String;
+      88: areturn
+      89: aload         6
+      91: invokeinterface #138,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+      96: ifne          36
+      99: aload_1
+     100: aload_2
+     101: getstatic     #83                 // Field ARCHIMATE3_NAMESPACE:Lorg/jdom2/Namespace;
+     104: invokevirtual #87                 // Method org/jdom2/Element.getChild:(Ljava/lang/String;Lorg/jdom2/Namespace;)Lorg/jdom2/Element;
+     107: astore        5
+     109: aload         5
+     111: ifnonnull     118
+     114: aconst_null
+     115: goto          135
+     118: iload_3
+     119: ifeq          130
+     122: aload         5
+     124: invokevirtual #1063               // Method org/jdom2/Element.getTextNormalize:()Ljava/lang/String;
+     127: goto          135
+     130: aload         5
+     132: invokevirtual #1066               // Method org/jdom2/Element.getText:()Ljava/lang/String;
+     135: areturn
+

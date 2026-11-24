@@ -1,0 +1,2568 @@
+{
+  "sourceSha256": "bf3529fd2cb322918c91100b85fc8dcb72873e6cdb42302f918faad2e99bfa61",
+  "records": [
+    {
+      "sourcePointer": "/relationships/changed/569/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-fd32c575460f4945a6eb3f333a1d8844",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-fd32c575460f4945a6eb3f333a1d8844]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/570/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-fdef4ce772884bd3a94d1752dd135b9c",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-fdef4ce772884bd3a94d1752dd135b9c]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/570/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-fdef4ce772884bd3a94d1752dd135b9c",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-fdef4ce772884bd3a94d1752dd135b9c]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/571/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-febad8aa35594dda8eb550e24f471085",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-febad8aa35594dda8eb550e24f471085]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/571/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-febad8aa35594dda8eb550e24f471085",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-febad8aa35594dda8eb550e24f471085]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/572/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-ff437a821ffc43a896d48e68731873c6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-ff437a821ffc43a896d48e68731873c6]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/572/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-ff437a821ffc43a896d48e68731873c6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-ff437a821ffc43a896d48e68731873c6]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/572/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-ff437a821ffc43a896d48e68731873c6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-ff437a821ffc43a896d48e68731873c6]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/572/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-ff437a821ffc43a896d48e68731873c6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-ff437a821ffc43a896d48e68731873c6]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/573/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-ff938fb6100745f39e210533242c7ee6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-ff938fb6100745f39e210533242c7ee6]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/573/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-ff938fb6100745f39e210533242c7ee6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-ff938fb6100745f39e210533242c7ee6]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/573/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-ff938fb6100745f39e210533242c7ee6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-ff938fb6100745f39e210533242c7ee6]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/573/differences/3",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-ff938fb6100745f39e210533242c7ee6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-ff938fb6100745f39e210533242c7ee6]/properties[1]/property[key=Specialization]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/574/differences/0",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-ffdca12cb01f440898544554a377a40f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-ffdca12cb01f440898544554a377a40f]/documentation[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/574/differences/1",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-ffdca12cb01f440898544554a377a40f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-ffdca12cb01f440898544554a377a40f]/name[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/relationships/changed/574/differences/2",
+      "category": "relationships",
+      "action": "changed",
+      "identifier": "id-ffdca12cb01f440898544554a377a40f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/relationships[1]/relationship[id=id-ffdca12cb01f440898544554a377a40f]/properties[1]/property[key=Baseline / Record State]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/views/added/0",
+      "category": "views",
+      "action": "added",
+      "record": {
+        "identifier": "id-36a82d51b7cb4611a65ace4b06488484",
+        "archimateType": "Diagram",
+        "attributes": {
+          "identifier": "id-36a82d51b7cb4611a65ace4b06488484",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Diagram"
+        },
+        "name": [
+          {
+            "text": "information-management-view",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "nodes": 6,
+        "connections": 0,
+        "elementRefs": [
+          "id-3ff156cfaab8575facfa6961f68119f5",
+          "id-4009d96f39d456838b149621d4ed88a4",
+          "id-889cae531e4c51e0a50d441425553606",
+          "id-d1e317a30a9d53359c25a86673df3e56",
+          "id-f2cab006808558c48632928a2ef00f86",
+          "id-f3a5bb10a924502881fe4e27cbcc799e"
+        ],
+        "relationshipRefs": []
+      }
+    },
+    {
+      "sourcePointer": "/views/added/1",
+      "category": "views",
+      "action": "added",
+      "record": {
+        "identifier": "id-7095a65ca0be48fe8b8eecad63e01815",
+        "archimateType": "Diagram",
+        "attributes": {
+          "identifier": "id-7095a65ca0be48fe8b8eecad63e01815",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Diagram"
+        },
+        "name": [
+          {
+            "text": "security-and-management-view",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "nodes": 7,
+        "connections": 0,
+        "elementRefs": [
+          "id-0a13457eeb645fb784d0af3e36b38e43",
+          "id-38d9b8fa1f13586da103fb1bef655591",
+          "id-5f6b4e6f00e755788e198632589ce6ce",
+          "id-96ed88d244ed57e98031966d70a03051",
+          "id-af15e7209c6e5720a7a0ff8767f968f1",
+          "id-cbc07a038364504d90e78a5104ec9fd7",
+          "id-ee17a4ffd28254539defe217e77f3b75"
+        ],
+        "relationshipRefs": []
+      }
+    },
+    {
+      "sourcePointer": "/views/added/2",
+      "category": "views",
+      "action": "added",
+      "record": {
+        "identifier": "id-93b3ce60b18a4bf2b931779f1dde91e2",
+        "archimateType": "Diagram",
+        "attributes": {
+          "identifier": "id-93b3ce60b18a4bf2b931779f1dde91e2",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Diagram"
+        },
+        "name": [
+          {
+            "text": "architecture-governance-view",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "nodes": 5,
+        "connections": 0,
+        "elementRefs": [
+          "id-6256b2f5dd035708ae1e55f0fbcc1276",
+          "id-658cd4a224585dc5b4e55f85f43fb58e",
+          "id-c5f499e1694c552bae7311911aea1399",
+          "id-f126e3a6ab6950ca9e3e61b02e83ba21",
+          "id-fe0074888e97530c825d400d27e90ad5"
+        ],
+        "relationshipRefs": []
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/0/differences/0",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-25907c1ad9c84890ba36f0ce47e09283",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-25907c1ad9c84890ba36f0ce47e09283]/node[id=id-03920123ae42429cabd73b57c5378800]/node[id=id-4e2d1b7ea25441dcb75abf165f07c906]/@x",
+        "before": "20",
+        "after": "24",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/0/differences/1",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-25907c1ad9c84890ba36f0ce47e09283",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-25907c1ad9c84890ba36f0ce47e09283]/node[id=id-03920123ae42429cabd73b57c5378800]/node[id=id-4e2d1b7ea25441dcb75abf165f07c906]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/0/differences/2",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-25907c1ad9c84890ba36f0ce47e09283",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-25907c1ad9c84890ba36f0ce47e09283]/node[id=id-03920123ae42429cabd73b57c5378800]/node[id=id-834c8e1330414710aecc4c75ff506321]/@x",
+        "before": "224",
+        "after": "228",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/0/differences/3",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-25907c1ad9c84890ba36f0ce47e09283",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-25907c1ad9c84890ba36f0ce47e09283]/node[id=id-03920123ae42429cabd73b57c5378800]/node[id=id-834c8e1330414710aecc4c75ff506321]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/1/differences/0",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-6429b82599df4027a745d84cfacf587c",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-6429b82599df4027a745d84cfacf587c]/node[id=id-d7a7cf4b68654e72b8ab5acb436aa423]/node[id=id-0abde1ec9b5a49a78d6c9ccea0f0627b]/@x",
+        "before": "224",
+        "after": "228",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/1/differences/1",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-6429b82599df4027a745d84cfacf587c",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-6429b82599df4027a745d84cfacf587c]/node[id=id-d7a7cf4b68654e72b8ab5acb436aa423]/node[id=id-0abde1ec9b5a49a78d6c9ccea0f0627b]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/1/differences/2",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-6429b82599df4027a745d84cfacf587c",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-6429b82599df4027a745d84cfacf587c]/node[id=id-d7a7cf4b68654e72b8ab5acb436aa423]/node[id=id-bf61c974640a4b808209be354a8f004b]/@x",
+        "before": "20",
+        "after": "24",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/1/differences/3",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-6429b82599df4027a745d84cfacf587c",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-6429b82599df4027a745d84cfacf587c]/node[id=id-d7a7cf4b68654e72b8ab5acb436aa423]/node[id=id-bf61c974640a4b808209be354a8f004b]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/2/differences/0",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-6fc97b179aaa48b3aeb4696e8f3b2227",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-6fc97b179aaa48b3aeb4696e8f3b2227]/node[id=id-d9e042dcdf0f499aba0d4861c4e9e14e]/node[id=id-5c31e03b0561439a9dae38b138565d05]/@x",
+        "before": "224",
+        "after": "228",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/2/differences/1",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-6fc97b179aaa48b3aeb4696e8f3b2227",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-6fc97b179aaa48b3aeb4696e8f3b2227]/node[id=id-d9e042dcdf0f499aba0d4861c4e9e14e]/node[id=id-5c31e03b0561439a9dae38b138565d05]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/2/differences/2",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-6fc97b179aaa48b3aeb4696e8f3b2227",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-6fc97b179aaa48b3aeb4696e8f3b2227]/node[id=id-d9e042dcdf0f499aba0d4861c4e9e14e]/node[id=id-8d000d985f8d4260ada3f83f07afe271]/@x",
+        "before": "428",
+        "after": "432",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/2/differences/3",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-6fc97b179aaa48b3aeb4696e8f3b2227",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-6fc97b179aaa48b3aeb4696e8f3b2227]/node[id=id-d9e042dcdf0f499aba0d4861c4e9e14e]/node[id=id-8d000d985f8d4260ada3f83f07afe271]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/2/differences/4",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-6fc97b179aaa48b3aeb4696e8f3b2227",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-6fc97b179aaa48b3aeb4696e8f3b2227]/node[id=id-d9e042dcdf0f499aba0d4861c4e9e14e]/node[id=id-b46d7c84123a4176ac78830889fd9ae1]/@x",
+        "before": "20",
+        "after": "24",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/2/differences/5",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-6fc97b179aaa48b3aeb4696e8f3b2227",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-6fc97b179aaa48b3aeb4696e8f3b2227]/node[id=id-d9e042dcdf0f499aba0d4861c4e9e14e]/node[id=id-b46d7c84123a4176ac78830889fd9ae1]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/3/differences/0",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-702144c188c44a4292b338927ac17ad6",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-702144c188c44a4292b338927ac17ad6]/node[id=id-05386c688e0b4ea597937fe6c41f11b4]/child-order",
+        "before": [
+          "style[1]",
+          "node[id=id-0ffd3678cf4842629f7b5343c5c42ab9]"
+        ],
+        "after": [
+          "style[1]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/3/differences/1",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-702144c188c44a4292b338927ac17ad6",
+      "difference": {
+        "classification": "INFORMATION LOSS",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-702144c188c44a4292b338927ac17ad6]/node[id=id-05386c688e0b4ea597937fe6c41f11b4]/node[id=id-0ffd3678cf4842629f7b5343c5c42ab9]",
+        "before": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}node",
+          [
+            [
+              "elementRef",
+              "id-78d8fa44cc7452fea57041c8a2b8b102"
+            ],
+            [
+              "h",
+              "64"
+            ],
+            [
+              "identifier",
+              "id-0ffd3678cf4842629f7b5343c5c42ab9"
+            ],
+            [
+              "w",
+              "190"
+            ],
+            [
+              "x",
+              "20"
+            ],
+            [
+              "y",
+              "38"
+            ],
+            [
+              "{http://www.w3.org/2001/XMLSchema-instance}type",
+              "Element"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}style",
+              [],
+              null,
+              [
+                [
+                  "{http://www.opengroup.org/xsd/archimate/3.0/}fillColor",
+                  [
+                    [
+                      "a",
+                      "100"
+                    ],
+                    [
+                      "b",
+                      "255"
+                    ],
+                    [
+                      "g",
+                      "204"
+                    ],
+                    [
+                      "r",
+                      "204"
+                    ]
+                  ],
+                  null,
+                  []
+                ],
+                [
+                  "{http://www.opengroup.org/xsd/archimate/3.0/}lineColor",
+                  [
+                    [
+                      "a",
+                      "100"
+                    ],
+                    [
+                      "b",
+                      "92"
+                    ],
+                    [
+                      "g",
+                      "92"
+                    ],
+                    [
+                      "r",
+                      "92"
+                    ]
+                  ],
+                  null,
+                  []
+                ],
+                [
+                  "{http://www.opengroup.org/xsd/archimate/3.0/}font",
+                  [
+                    [
+                      "name",
+                      "Sans"
+                    ],
+                    [
+                      "size",
+                      "9"
+                    ]
+                  ],
+                  null,
+                  [
+                    [
+                      "{http://www.opengroup.org/xsd/archimate/3.0/}color",
+                      [
+                        [
+                          "b",
+                          "0"
+                        ],
+                        [
+                          "g",
+                          "0"
+                        ],
+                        [
+                          "r",
+                          "0"
+                        ]
+                      ],
+                      null,
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        "after": null,
+        "reason": "Subtree absent after transport; raw input retained by hash"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/3/differences/2",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-702144c188c44a4292b338927ac17ad6",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-702144c188c44a4292b338927ac17ad6]/node[id=id-099b7f60bd3541e682dd598541ae1d39]/child-order",
+        "before": [
+          "style[1]",
+          "node[id=id-389bd5d3bee5447888d876ba949bbb89]"
+        ],
+        "after": [
+          "style[1]",
+          "node[id=id-389bd5d3bee5447888d876ba949bbb89]",
+          "node[id=id-0ffd3678cf4842629f7b5343c5c42ab9]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/3/differences/3",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-702144c188c44a4292b338927ac17ad6",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-702144c188c44a4292b338927ac17ad6]/node[id=id-099b7f60bd3541e682dd598541ae1d39]/node[id=id-0ffd3678cf4842629f7b5343c5c42ab9]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}node",
+          [
+            [
+              "elementRef",
+              "id-78d8fa44cc7452fea57041c8a2b8b102"
+            ],
+            [
+              "h",
+              "64"
+            ],
+            [
+              "identifier",
+              "id-0ffd3678cf4842629f7b5343c5c42ab9"
+            ],
+            [
+              "w",
+              "190"
+            ],
+            [
+              "x",
+              "24"
+            ],
+            [
+              "y",
+              "380"
+            ],
+            [
+              "{http://www.w3.org/2001/XMLSchema-instance}type",
+              "Element"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}style",
+              [],
+              null,
+              [
+                [
+                  "{http://www.opengroup.org/xsd/archimate/3.0/}fillColor",
+                  [
+                    [
+                      "a",
+                      "100"
+                    ],
+                    [
+                      "b",
+                      "255"
+                    ],
+                    [
+                      "g",
+                      "204"
+                    ],
+                    [
+                      "r",
+                      "204"
+                    ]
+                  ],
+                  null,
+                  []
+                ],
+                [
+                  "{http://www.opengroup.org/xsd/archimate/3.0/}lineColor",
+                  [
+                    [
+                      "a",
+                      "100"
+                    ],
+                    [
+                      "b",
+                      "92"
+                    ],
+                    [
+                      "g",
+                      "92"
+                    ],
+                    [
+                      "r",
+                      "92"
+                    ]
+                  ],
+                  null,
+                  []
+                ],
+                [
+                  "{http://www.opengroup.org/xsd/archimate/3.0/}font",
+                  [
+                    [
+                      "name",
+                      "Sans"
+                    ],
+                    [
+                      "size",
+                      "9"
+                    ]
+                  ],
+                  null,
+                  [
+                    [
+                      "{http://www.opengroup.org/xsd/archimate/3.0/}color",
+                      [
+                        [
+                          "b",
+                          "0"
+                        ],
+                        [
+                          "g",
+                          "0"
+                        ],
+                        [
+                          "r",
+                          "0"
+                        ]
+                      ],
+                      null,
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/4/differences/0",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-7c0d291a29f34feab7be4d9f29a08027",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-7c0d291a29f34feab7be4d9f29a08027]/node[id=id-52b29b7f3e2146e0a797f01d5418d936]/node[id=id-30b7ecc0f28945ffbfea19754b781912]/@x",
+        "before": "224",
+        "after": "228",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/4/differences/1",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-7c0d291a29f34feab7be4d9f29a08027",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-7c0d291a29f34feab7be4d9f29a08027]/node[id=id-52b29b7f3e2146e0a797f01d5418d936]/node[id=id-30b7ecc0f28945ffbfea19754b781912]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/4/differences/2",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-7c0d291a29f34feab7be4d9f29a08027",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-7c0d291a29f34feab7be4d9f29a08027]/node[id=id-52b29b7f3e2146e0a797f01d5418d936]/node[id=id-5df5fea9e7cc46b4b6f9913e2b97f18f]/@x",
+        "before": "428",
+        "after": "432",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/4/differences/3",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-7c0d291a29f34feab7be4d9f29a08027",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-7c0d291a29f34feab7be4d9f29a08027]/node[id=id-52b29b7f3e2146e0a797f01d5418d936]/node[id=id-5df5fea9e7cc46b4b6f9913e2b97f18f]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/4/differences/4",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-7c0d291a29f34feab7be4d9f29a08027",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-7c0d291a29f34feab7be4d9f29a08027]/node[id=id-52b29b7f3e2146e0a797f01d5418d936]/node[id=id-b5eebef3828e4bdb8f8d7322c448574b]/@x",
+        "before": "20",
+        "after": "24",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/4/differences/5",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-7c0d291a29f34feab7be4d9f29a08027",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-7c0d291a29f34feab7be4d9f29a08027]/node[id=id-52b29b7f3e2146e0a797f01d5418d936]/node[id=id-b5eebef3828e4bdb8f8d7322c448574b]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/0",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/@h",
+        "before": "202",
+        "after": "271",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/1",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-28c2865709b24ee58937ca9a3e7f803e]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/2",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-28c2865709b24ee58937ca9a3e7f803e]/@y",
+        "before": "112",
+        "after": "174",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/3",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-2ef3212e0df64554aa396b04efc89cf6]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/4",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-2ef3212e0df64554aa396b04efc89cf6]/@y",
+        "before": "112",
+        "after": "174",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/5",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-3e8f8c258ca74a52a2219a1dd174d003]/@x",
+        "before": "632",
+        "after": "636",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/6",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-3e8f8c258ca74a52a2219a1dd174d003]/@y",
+        "before": "38",
+        "after": "78",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/7",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-70e6e9e496bc487ea342344d53fe7647]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/8",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-70e6e9e496bc487ea342344d53fe7647]/@y",
+        "before": "38",
+        "after": "78",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/9",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-8c9890d07359449f9f13c1f7a52f291e]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/10",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-8c9890d07359449f9f13c1f7a52f291e]/@y",
+        "before": "112",
+        "after": "174",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/11",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-8f6ed1a160074be89f539e80b35bd0e7]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/12",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-8f6ed1a160074be89f539e80b35bd0e7]/@y",
+        "before": "38",
+        "after": "78",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/13",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-9144f8b0b119407186bd75261fd789f6]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/5/differences/14",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-81cfffb25890400d9292449a8a375366",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-81cfffb25890400d9292449a8a375366]/node[id=id-89ec25b2d5b5408baca693a7357e5a6c]/node[id=id-9144f8b0b119407186bd75261fd789f6]/@y",
+        "before": "38",
+        "after": "78",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/0",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-304c4e5bec2e4a4aab34b4d72a9111f2]/@x",
+        "before": "224",
+        "after": "228",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/1",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-304c4e5bec2e4a4aab34b4d72a9111f2]/@y",
+        "before": "38",
+        "after": "76",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/2",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-3fc500b94896462da936db86353e68d0]/@x",
+        "before": "632",
+        "after": "636",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/3",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-3fc500b94896462da936db86353e68d0]/@y",
+        "before": "38",
+        "after": "76",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/4",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-48c8839452e442c48401b17c4265d488]/@x",
+        "before": "20",
+        "after": "24",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/5",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-48c8839452e442c48401b17c4265d488]/@y",
+        "before": "112",
+        "after": "150",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/6",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-4bb563ae71314fabb6cf939b8b42b7b8]/@x",
+        "before": "428",
+        "after": "432",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/7",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-4bb563ae71314fabb6cf939b8b42b7b8]/@y",
+        "before": "38",
+        "after": "76",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/8",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-4d2815a144be42d8b59e9d6333b2d875]/@x",
+        "before": "632",
+        "after": "636",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/9",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-4d2815a144be42d8b59e9d6333b2d875]/@y",
+        "before": "112",
+        "after": "150",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/10",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-5d55bbeca446484cac92aa14740d2f1b]/@x",
+        "before": "20",
+        "after": "24",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/11",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-5d55bbeca446484cac92aa14740d2f1b]/@y",
+        "before": "38",
+        "after": "76",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/12",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-a5dbf59ff2964577b7f2841bdc1e3337]/@x",
+        "before": "428",
+        "after": "432",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/13",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-a5dbf59ff2964577b7f2841bdc1e3337]/@y",
+        "before": "112",
+        "after": "150",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/14",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-da0d1c9b16b34334aefe2ab543be331a]/@x",
+        "before": "224",
+        "after": "228",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/6/differences/15",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-9873a9236c5a453bb1f2426cd94ec3a1]/node[id=id-d24ea752c1274474a4b3cf7780c88a4e]/node[id=id-da0d1c9b16b34334aefe2ab543be331a]/@y",
+        "before": "112",
+        "after": "150",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/0",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-e24273d498454e23a037493985d4d13a]/@y",
+        "before": "200",
+        "after": "264",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/1",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-e24273d498454e23a037493985d4d13a]/node[id=id-0e85f8a9ea054c85823e2d97ce7ce9a2]/@y",
+        "before": "38",
+        "after": "102",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/2",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-e24273d498454e23a037493985d4d13a]/node[id=id-e2380f8459394ac294bfc48414f4e1ff]/@y",
+        "before": "38",
+        "after": "102",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/3",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-e24273d498454e23a037493985d4d13a]/node[id=id-e8fa2266c9b74e49af3217971043d53f]/@y",
+        "before": "38",
+        "after": "102",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/4",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-e24273d498454e23a037493985d4d13a]/node[id=id-fde4537fb57f4c81ae68800e695ab71f]/@y",
+        "before": "38",
+        "after": "102",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/5",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/@h",
+        "before": "202",
+        "after": "223",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/6",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-14f92a75f48345e38bfc20161810c041]/@h",
+        "before": "64",
+        "after": "53",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/7",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-14f92a75f48345e38bfc20161810c041]/@w",
+        "before": "190",
+        "after": "385",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/8",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-14f92a75f48345e38bfc20161810c041]/@x",
+        "before": "20",
+        "after": "24",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/9",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-14f92a75f48345e38bfc20161810c041]/@y",
+        "before": "38",
+        "after": "126",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/10",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-28881988c3e84488813b869783dc5ecb]/@h",
+        "before": "64",
+        "after": "53",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/11",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-28881988c3e84488813b869783dc5ecb]/@w",
+        "before": "190",
+        "after": "385",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/12",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-28881988c3e84488813b869783dc5ecb]/@x",
+        "before": "632",
+        "after": "420",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/13",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-28881988c3e84488813b869783dc5ecb]/@y",
+        "before": "38",
+        "after": "126",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/14",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-7a3150a46a324e9eac028879be57a231]/@h",
+        "before": "64",
+        "after": "50",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/15",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-7a3150a46a324e9eac028879be57a231]/@w",
+        "before": "190",
+        "after": "385",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/16",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-7a3150a46a324e9eac028879be57a231]/@x",
+        "before": "428",
+        "after": "420",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/17",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-7a3150a46a324e9eac028879be57a231]/@y",
+        "before": "38",
+        "after": "66",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/18",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-9441f69ec657487787580e8526b43d54]/@h",
+        "before": "64",
+        "after": "50",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/19",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-9441f69ec657487787580e8526b43d54]/@w",
+        "before": "190",
+        "after": "385",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/20",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-9441f69ec657487787580e8526b43d54]/@x",
+        "before": "224",
+        "after": "24",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/21",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-9441f69ec657487787580e8526b43d54]/@y",
+        "before": "38",
+        "after": "66",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/22",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-bf50b59e74964a4baf7678967c665082]/@h",
+        "before": "64",
+        "after": "49",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/23",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-bf50b59e74964a4baf7678967c665082]/@w",
+        "before": "190",
+        "after": "385",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/24",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-bf50b59e74964a4baf7678967c665082]/@x",
+        "before": "20",
+        "after": "24",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/7/differences/25",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-abcc22053a464d7aa1f05b41e0fade01",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-abcc22053a464d7aa1f05b41e0fade01]/node[id=id-fe71d3a4f7964aa7a53ada6b6b0d4f7f]/node[id=id-bf50b59e74964a4baf7678967c665082]/@y",
+        "before": "112",
+        "after": "186",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/0",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/@h",
+        "before": "276",
+        "after": "319",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/1",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-13f5ae7a6325412baa47c42ff05f90d9]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/2",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-13f5ae7a6325412baa47c42ff05f90d9]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/3",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-47daa965416f422db709f50d4057d432]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/4",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-47daa965416f422db709f50d4057d432]/@y",
+        "before": "112",
+        "after": "150",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/5",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-89ae2db7a5cc433daab8020f3603f217]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/6",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-89ae2db7a5cc433daab8020f3603f217]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/7",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-9f61e77aac914d009f1fc2f0a59ff0ff]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/8",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-9f61e77aac914d009f1fc2f0a59ff0ff]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/9",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-b337177fe10e496eb74ca4b64dac3be9]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/10",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-b337177fe10e496eb74ca4b64dac3be9]/@y",
+        "before": "112",
+        "after": "150",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/11",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-b3ed7786534542129f11d7624ba7dda5]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/12",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-b3ed7786534542129f11d7624ba7dda5]/@y",
+        "before": "112",
+        "after": "150",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/13",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-c334283e767c426e88771be87123c349]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/14",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-c334283e767c426e88771be87123c349]/@y",
+        "before": "112",
+        "after": "150",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/15",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-f0d3cd2e1ec0430881837feebe000a2a]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/16",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-f0d3cd2e1ec0430881837feebe000a2a]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/17",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-f14ebb6f7ef04ef69a472e5feed69035]/@h",
+        "before": "64",
+        "after": "85",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/8/differences/18",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-bfbf78c6cb8448118468197fc9269ad9",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-bfbf78c6cb8448118468197fc9269ad9]/node[id=id-6d1c08e94d28438a906ecb70af4550a3]/node[id=id-f14ebb6f7ef04ef69a472e5feed69035]/@y",
+        "before": "186",
+        "after": "246",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/9/differences/0",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-da484996370e48e5979e58f7196b0f98",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-da484996370e48e5979e58f7196b0f98]/node[id=id-9974802a27f94ea0933921b1e1466091]/node[id=id-18961186649546b1811bb93020c6a032]/@x",
+        "before": "632",
+        "after": "636",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/9/differences/1",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-da484996370e48e5979e58f7196b0f98",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-da484996370e48e5979e58f7196b0f98]/node[id=id-9974802a27f94ea0933921b1e1466091]/node[id=id-18961186649546b1811bb93020c6a032]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/9/differences/2",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-da484996370e48e5979e58f7196b0f98",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-da484996370e48e5979e58f7196b0f98]/node[id=id-9974802a27f94ea0933921b1e1466091]/node[id=id-449752db2eff425d9a0214f014bd427b]/@x",
+        "before": "428",
+        "after": "432",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/9/differences/3",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-da484996370e48e5979e58f7196b0f98",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-da484996370e48e5979e58f7196b0f98]/node[id=id-9974802a27f94ea0933921b1e1466091]/node[id=id-449752db2eff425d9a0214f014bd427b]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/9/differences/4",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-da484996370e48e5979e58f7196b0f98",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-da484996370e48e5979e58f7196b0f98]/node[id=id-9974802a27f94ea0933921b1e1466091]/node[id=id-4d57bb18e5974774ab5183161a0659f2]/@x",
+        "before": "224",
+        "after": "228",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/9/differences/5",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-da484996370e48e5979e58f7196b0f98",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-da484996370e48e5979e58f7196b0f98]/node[id=id-9974802a27f94ea0933921b1e1466091]/node[id=id-4d57bb18e5974774ab5183161a0659f2]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/9/differences/6",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-da484996370e48e5979e58f7196b0f98",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-da484996370e48e5979e58f7196b0f98]/node[id=id-9974802a27f94ea0933921b1e1466091]/node[id=id-6f917652a10c471d8306295ab507b719]/@x",
+        "before": "20",
+        "after": "24",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/9/differences/7",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-da484996370e48e5979e58f7196b0f98",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-da484996370e48e5979e58f7196b0f98]/node[id=id-9974802a27f94ea0933921b1e1466091]/node[id=id-6f917652a10c471d8306295ab507b719]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/10/differences/0",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-e541e847576142029495840acd9250e2",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-e541e847576142029495840acd9250e2]/node[id=id-20571f23ec204aeb9018c1b80c87a640]/node[id=id-f3ecc57fcac245f09acb7f91c13918af]/@x",
+        "before": "20",
+        "after": "24",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/10/differences/1",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-e541e847576142029495840acd9250e2",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-e541e847576142029495840acd9250e2]/node[id=id-20571f23ec204aeb9018c1b80c87a640]/node[id=id-f3ecc57fcac245f09acb7f91c13918af]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/11/differences/0",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-ee264a765fb547859c50a3dc74e1dfdf",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-ee264a765fb547859c50a3dc74e1dfdf]/node[id=id-00e665bb2c72477384fc37d7beab3335]/node[id=id-5c9844c07ec246e583f75b634178feaf]/@h",
+        "before": "64",
+        "after": "73",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/11/differences/1",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-ee264a765fb547859c50a3dc74e1dfdf",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-ee264a765fb547859c50a3dc74e1dfdf]/node[id=id-00e665bb2c72477384fc37d7beab3335]/node[id=id-5c9844c07ec246e583f75b634178feaf]/@x",
+        "before": "224",
+        "after": "228",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/11/differences/2",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-ee264a765fb547859c50a3dc74e1dfdf",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-ee264a765fb547859c50a3dc74e1dfdf]/node[id=id-00e665bb2c72477384fc37d7beab3335]/node[id=id-5c9844c07ec246e583f75b634178feaf]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/11/differences/3",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-ee264a765fb547859c50a3dc74e1dfdf",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-ee264a765fb547859c50a3dc74e1dfdf]/node[id=id-00e665bb2c72477384fc37d7beab3335]/node[id=id-7c9b6735f27f49d5953ffef28091d0ee]/@h",
+        "before": "64",
+        "after": "73",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/11/differences/4",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-ee264a765fb547859c50a3dc74e1dfdf",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-ee264a765fb547859c50a3dc74e1dfdf]/node[id=id-00e665bb2c72477384fc37d7beab3335]/node[id=id-7c9b6735f27f49d5953ffef28091d0ee]/@x",
+        "before": "20",
+        "after": "24",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/views/changed/11/differences/5",
+      "category": "views",
+      "action": "changed",
+      "identifier": "id-ee264a765fb547859c50a3dc74e1dfdf",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/views[1]/diagrams[1]/view[id=id-ee264a765fb547859c50a3dc74e1dfdf]/node[id=id-00e665bb2c72477384fc37d7beab3335]/node[id=id-7c9b6735f27f49d5953ffef28091d0ee]/@y",
+        "before": "38",
+        "after": "54",
+        "reason": "No proven representational equivalence for this attribute"
+      }
+    },
+    {
+      "sourcePointer": "/viewNavigation/folderChanges/0",
+      "category": "viewNavigation",
+      "field": "folderChanges",
+      "record": {
+        "path": "[\"Views\", \"1. Subject-Based-Views\", \"03. Security-and-Management\", \"03 Authorisation-Enforcement\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "03 Authorisation-Enforcement",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      }
+    },
+    {
+      "sourcePointer": "/viewNavigation/addedViewPlacements",
+      "category": "viewNavigation",
+      "field": "addedViewPlacements",
+      "record": {
+        "id-36a82d51b7cb4611a65ace4b06488484": [
+          {
+            "path": [
+              "Views",
+              "1. Subject-Based-Views",
+              "02. Information-Management"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-36a82d51b7cb4611a65ace4b06488484"
+              },
+              "content": []
+            }
+          }
+        ],
+        "id-7095a65ca0be48fe8b8eecad63e01815": [
+          {
+            "path": [
+              "Views",
+              "1. Subject-Based-Views",
+              "03. Security-and-Management"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-7095a65ca0be48fe8b8eecad63e01815"
+              },
+              "content": []
+            }
+          }
+        ],
+        "id-93b3ce60b18a4bf2b931779f1dde91e2": [
+          {
+            "path": [
+              "Views",
+              "1. Subject-Based-Views",
+              "01. Architectural-Governance"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-93b3ce60b18a4bf2b931779f1dde91e2"
+              },
+              "content": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "sourcePointer": "/viewNavigation/removedViewPlacements",
+      "category": "viewNavigation",
+      "field": "removedViewPlacements",
+      "record": {}
+    },
+    {
+      "sourcePointer": "/classified/normalisations",
+      "category": "classified",
+      "field": "normalisations",
+      "record": {
+        "Generated scalar: unchanged text/attributes; absent xml:lang becomes en": 21957,
+        "Uniquely keyed unordered collection": 397,
+        "Exact unique Property key resolves both definition IDs; all other definition content and owner values compared independently": 65
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/0",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Architectural Status",
+        "before": "propid-26",
+        "submitted": "propid-3"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/1",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Architectural Status",
+        "before": "propid-47",
+        "submitted": "propid-52"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/2",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Architecture Identity Status",
+        "before": "propid-48",
+        "submitted": "propid-53"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/3",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Architecture Release",
+        "before": "propid-60",
+        "submitted": "propid-67"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/4",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Canonical Textual Projection",
+        "before": "propid-61",
+        "submitted": "propid-66"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/5",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Governance State",
+        "before": "propid-41",
+        "submitted": "propid-5"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/6",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Native Definition ID",
+        "before": "propid-46",
+        "submitted": "propid-56"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/7",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Record State",
+        "before": "propid-40",
+        "submitted": "propid-4"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/8",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Review State",
+        "before": "propid-50",
+        "submitted": "propid-55"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/9",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Source Assertion",
+        "before": "propid-59",
+        "submitted": "propid-61"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/10",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Source Path",
+        "before": "propid-43",
+        "submitted": "propid-49"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/11",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Source Predicate",
+        "before": "propid-58",
+        "submitted": "propid-60"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/12",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Source Projection Key",
+        "before": "propid-49",
+        "submitted": "propid-54"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/13",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Source SHA256",
+        "before": "propid-45",
+        "submitted": "propid-51"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/14",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Source Section",
+        "before": "propid-44",
+        "submitted": "propid-50"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/15",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Baseline / Textual Baseline Reference",
+        "before": "propid-17",
+        "submitted": "propid-32"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/16",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Capability Tier",
+        "before": "propid-24",
+        "submitted": "propid-2"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/17",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Continuum / Canonical Source",
+        "before": "continuum-source",
+        "submitted": "propid-11"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/18",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Continuum / Currentness",
+        "before": "continuum-currentness",
+        "submitted": "propid-13"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/19",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Continuum / Navigation Number",
+        "before": "continuum-navigation-number",
+        "submitted": "propid-14"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/20",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Continuum / Navigation Path",
+        "before": "continuum-navigation-path",
+        "submitted": "propid-15"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/21",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Continuum / Navigation References",
+        "before": "continuum-navigation-references",
+        "submitted": "propid-16"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/22",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Continuum / Semantic Standing",
+        "before": "continuum-standing",
+        "submitted": "propid-12"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/23",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Harmonia Architecture Layer",
+        "before": "propid-23",
+        "submitted": "propid-1"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/24",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Reference ID",
+        "before": "propid-25",
+        "submitted": "propid-41"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/25",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "Release Scope",
+        "before": "propid-42",
+        "submitted": "propid-36"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/26",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "archimateType",
+        "before": "propid-22",
+        "submitted": "propid-10"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/27",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "canonicalId",
+        "before": "propid-18",
+        "submitted": "propid-6"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/28",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "canonicalName",
+        "before": "propid-21",
+        "submitted": "propid-9"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/29",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "displayName",
+        "before": "propid-19",
+        "submitted": "propid-7"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/30",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "friendlyName",
+        "before": "propid-20",
+        "submitted": "propid-8"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/31",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "harmoniaType",
+        "before": "propid-34",
+        "submitted": "propid-48"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/32",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Adjudication Note",
+        "before": "propid-32",
+        "submitted": "propid-46"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/33",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Architectural Status",
+        "before": "propid-6",
+        "submitted": "propid-22"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/34",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Architecture Identity Status",
+        "before": "propid-12",
+        "submitted": "propid-29"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/35",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Assertion Status",
+        "before": "propid-54",
+        "submitted": "propid-62"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/36",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Canonical Architecture ID",
+        "before": "propid-29",
+        "submitted": "propid-42"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/37",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Capability Tier",
+        "before": "propid-5",
+        "submitted": "propid-21"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/38",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Construct Type",
+        "before": "propid-4",
+        "submitted": "propid-20"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/39",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Deferred Relationship Assertions",
+        "before": "propid-16",
+        "submitted": "propid-39"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "purpose": "Final revision-3 evidence and changed governance/release hashes. This manifest excludes itself; start-preservation separately pins original bytes.",
+  "sha256": {
+    ".junie/reports/2026-10-19-change-request-disposition-outcome.md": "8801f85405965fe7025c5e9e3f29dcf9cf430db4c8c134bfafa3093dd287a1fb",
+    "architecture-release.json": "98e9862d8b67890564e8cfed9e0e954dfa8dbde2b924f5ed567a0fb5772a7996",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md": "428e7e950bfa008cfccf6ebc17d2f62597384061be50639a8c6499e9bc768ffa",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-002/archimate-ingestion-change-review-template.md": "baf1ec1ef0e2cf40c67b6f8fce4d63b7c1192addc1d4e20553befdeb1f2155d3",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-002/archimate-ingestion-change-review.md": "7d36d9f076489c25e8c0002dd75178932c9569767452998e48eac1deeddce018",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-002/change-review.md": "1bfe21ca76c2363a8ba4a7e3de21f683b143e8aa6ca7741e26983817c1442b7d",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-002/manifest.json": "d8448a65ee51e1b98703ce7a27b02bc48a72204b2794d3765be5d4378aa26e0e",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/review-revision-003.json": "4f0421f5a41bce0a7729ec2f8f7a133cc918dc179047453ab523377b36e0dac3",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/architecture-tests.log.gz": "3f2b387de4b3cff35bdea6d1da0af788365e33b905fadb0932e834004777d4b9",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/command-results.json": "a733a5141ffc18d0e91e3828edbf06d4604bae3a27b924601f461f4515312b13",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/governance-tests.log.gz": "7ed50b512b5aefce64ec62ca5e727475b2f44405737734ede33c4217336507ff",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/rads-validation.log.gz": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/start-preservation.json": "56998a85a62b4364ccd6f51559e3f7695ef9a5014166106eb8743594f644537e",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/validate-revision.py": "b1a8a8e9d6fe94e63c3944270221279634e1d43937dd85f41a3ef8d3e8f3d74a",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-003/validation-results.json": "af007380abd5bc8cdc5511dc17b322256656e60b72127448d092e52ecc0e5fcd",
+    "docs/archimate/processing/ingestion/README.md": "353b29e23faaadb81a6f3475b03b0a3b9d5a98ec87a50e1f5663b5ae9f5f3dac",
+    "docs/markdown/governance/README.md": "077bf2e5eec96005846a99b2391e0da7d448f3db3c547db5e811917855791ea8",
+    "docs/markdown/governance/archimate-ingestion-change-review.md": "48cb4c06a3d5c2bf7eb0590165859f941c2df74eccfe759ea598c513cb43d319",
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md": "4bddb7eadc4b5fea74e3d432381571b492a1edfe293921c0b93ba01e110c30c8",
+    "docs/markdown/governance/architecture-authoring-praxis.md": "3872a5ff3c0c49ab3929ea0d111edea2008b438ae568d1c1bae7c795581777dc",
+    "docs/markdown/governance/baseline/correspondence.json": "ca4d3cad8e0051e08e37e2c107661816f1e4c546f61e6ebe862bc7a22d0d3769",
+    "docs/markdown/governance/templates/archimate-ingestion-change-review-template.md": "6692e3c4ecd7038ba1d1d4471966700c62a247ba865c551974e29a8c690b6877"
+  }
+}

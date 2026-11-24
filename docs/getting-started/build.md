@@ -154,4 +154,4 @@ npm run build
 - **Issue: Node / npm download failure behind corporate proxy**
   - *Fix*: Configure Maven proxy settings in `~/.m2/settings.xml` or pre-install Node.js v20.12.2 locally.
 - **Issue: ArchUnit test failure on new dependency**
-  - *Fix*: Check the dependency against `AGENTS.md`. Ensure you are not importing higher-layer classes from lower-layer modules.
+  - *Fix*: Check the dependency against `../../AGENTS-old.md`. Ensure you are not importing higher-layer classes from lower-layer modules.

@@ -1,0 +1,55 @@
+{
+  "detection_query_initial_attempt": {
+    "outcome": "HARNESS ERROR",
+    "cause": "Byte-restoration assertion initially searched for an unqualified value tag; actual baseline value carries xml:lang=en. Corrected literal against inspected bytes; bounded retry PASS. No input mutation."
+  },
+  "review_preparation_initial_attempt": {
+    "outcome": "HARNESS ERROR",
+    "cause": "Extra closing bracket in the new run-specific preparation query; corrected syntax; bounded retry PASS. No review adjudication/source mutation."
+  },
+  "environment_note": "Python crash-report hook could not create /var/crash files in the read-only environment after these query errors; no task state depended on the hook.",
+  "architecture_suite": {
+    "exit_code": 0,
+    "outcome": "PASS",
+    "timeout_seconds": 180,
+    "maven_seconds": 29.319,
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "command": "timeout --signal=TERM --kill-after=5s 180s env JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false"
+  },
+  "detection_query": {
+    "outcome": "PASS",
+    "timeout_seconds": 60,
+    "command": "python3 -B docs/archimate/processing/ingestion/1.0.8/run-001/detection/detect.py"
+  },
+  "review_preparation": {
+    "outcome": "PASS",
+    "timeout_seconds": 30,
+    "command": "python3 -B docs/archimate/processing/ingestion/1.0.8/run-001/detection/prepare-review.py"
+  },
+  "timeouts_or_stalls": [],
+  "release_check": {
+    "outcome": "PASS",
+    "exit_code": 0,
+    "timeout_seconds": 30,
+    "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B scripts/architecture_release.py check",
+    "value": {
+      "version": "1.0.11",
+      "previous_version": "1.0.10"
+    }
+  },
+  "review_validation": {
+    "outcome": "PASS",
+    "timeout_seconds": 60,
+    "command": "timeout --signal=TERM --kill-after=5s 60s python3 -B docs/archimate/processing/ingestion/1.0.8/run-001/validation/validate-review.py",
+    "scope": "All new Markdown including implementation report; pinned XML/locators, summary/details/dependencies and protected-file/write-boundary checks."
+  },
+  "git_diff_check": {
+    "command": "git diff --check",
+    "outcome": "PASS",
+    "exit_code": 0,
+    "scope": "Tracked worktree changes; independent validator also checks every new Markdown file."
+  }
+}

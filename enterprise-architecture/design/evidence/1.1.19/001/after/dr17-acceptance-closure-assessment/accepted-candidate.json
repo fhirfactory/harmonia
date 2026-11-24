@@ -1,0 +1,46 @@
+{
+  "decisionReview": "DR-17",
+  "disposition": "ACCEPTED",
+  "actor": "Solution Architect, as attributed by the operative user Task",
+  "source": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dr17-acceptance-closure-assessment.md",
+  "sourceSha256": "5275670b9a3b40caebf9a3c8327de282158f611dbc2a1d5e2fafecefe25536b5",
+  "exactDisposition": "Solution Architect disposition: ACCEPTED.",
+  "inspectionStatement": "The Solution Architect has imported and visually inspected the final SolutionFacet candidate.",
+  "confirmedScope": "SolutionFacet hierarchy, ArchitecturalAxiom specialisations, naming corrections and associated Views are satisfactory.",
+  "candidate": "enterprise-architecture/design/evidence/1.1.19/001/after/solutionfacet-final-naming/Harmonia-SolutionFacet-final-naming-candidate.xml",
+  "candidateSha256": "27ef3c237ef7dca9cc7577d8ebbde2ff47930ea6a33249468b36969293c7b5af",
+  "elements": 1994,
+  "relationships": 2236,
+  "views": 1288,
+  "candidateIdentityEvidence": "Issued candidate path plus matching preceding execution Report/verification and freshly computed hash",
+  "offlineXsdAndReferences": "PASS",
+  "readOnlyCanonicalReprojection": "PASS: byte-identical",
+  "verificationRetained": [
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.19/001/after/solutionfacet-final-naming/verification.json",
+      "sha256": "f63e37ab15bd0c07136f9c7ccc807ae949fac07899e0e38e9f5e6e65dfeedbce"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.19/001/after/solutionfacet-final-naming/checks/summary.json",
+      "sha256": "c956bcb1c330162cc6f9fd96e9c649f096b1788c22a79bb7d37a365eded8c168"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.19/001/after/solutionfacet-final-naming/archi-transport/summary.json",
+      "sha256": "693927a31190d5747e43d5ca84ed7a7c6cf136aafc995b1a30419d68286d7b9e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.19/001/after/ai-agent-reports/20261102T224604Z-solutionfacet-final-naming.md",
+      "sha256": "de291a511d5a227e01986a5a7bc1cc005c33c7382e10c457caa40c9c843a168c"
+    }
+  ],
+  "strictTransport": "FAIL: inherited Relationship/View transport drift",
+  "acceptanceEventTime": "UNRESOLVED; source gives the disposition but no attributable event timestamp",
+  "inspectionEventTime": "UNRESOLVED; source does not state when the inspection occurred",
+  "scopeLimits": [
+    "No acceptance/resolution of DR-1 through DR-16",
+    "No whole-HCRL closure confirmation",
+    "No raw-equivalence PASS or transport-loss acceptance inferred",
+    "No reader-facing publication review or bounded Minutiae acceptance inferred",
+    "No publication, release allocation or Git authority"
+  ]
+}

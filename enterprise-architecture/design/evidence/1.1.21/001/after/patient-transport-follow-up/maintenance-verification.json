@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "phase": "Post-emission provenance maintenance",
+  "evidenceLayout": "PASS",
+  "recordLinks": "PASS",
+  "gitDiffWhitespace": "PASS",
+  "head": "c08a02a5569ead5805a46048da486db5365adc7c",
+  "protectedAcceptedPublicationRegisterAndReleaseFilesUnchanged": 240,
+  "accepted121PublicationAndRegisterAbsent": true,
+  "hcrl": "pending 1.1.21/001",
+  "release": {
+    "version": "1.1.21",
+    "previous_version": "1.1.20"
+  },
+  "report": "enterprise-architecture/design/evidence/1.1.21/001/after/ai-agent-reports/20261110T220857Z-bounded-patient-and-transport-follow-up.md",
+  "limit": "Mechanical verification supplies no architectural acceptance; report event is preserved unchanged."
+}

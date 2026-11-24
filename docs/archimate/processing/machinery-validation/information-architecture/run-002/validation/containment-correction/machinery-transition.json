@@ -1,0 +1,81 @@
+{
+  "corrected_manifest_sha256": "ae0dca75694b236ff8424c5d593baed1858503abbc79f7122f8af3d1ded80650",
+  "governance": "UNCHANGED_BY_CORRECTION",
+  "original_manifest_sha256": "3ea2bab69e20f97cae0ac92364095b50c4dfe730fdc95e23788355e5c7991167",
+  "run": "run-002",
+  "source_changes": {
+    "docs/archimate/framework/README.md": {
+      "after": "642aea6b38a91d961c436456062d710c056740233fc8f6f0f713af41167c95c8",
+      "before": "577b7531bb648521c531566d1fd72f24f3d1a6bebd992786feeabd20b315326b"
+    },
+    "docs/archimate/framework/tests/test_containment.py": {
+      "after": "33214cd17400d6fb84f259e86f3da72d855b290849edcbfe6a0c4dcd73cd469b",
+      "before": null
+    },
+    "docs/archimate/framework/tests/test_home_context.py": {
+      "after": "be4c4103671583d5e25b4c2050c19474d5c9b34852118f1f23755e0c6a574b48",
+      "before": null
+    },
+    "docs/archimate/framework/tests/test_home_relationships.py": {
+      "after": "1b4003ece1978189c36a70f6bbc654165601b34cd91a64b8c71d947d067b1ed7",
+      "before": null
+    },
+    "docs/archimate/framework/tests/test_view_presentation.py": {
+      "after": "36719cb9371a875c6cbf279cf6e4e61cb0869b1089a2f4157b10f222d3480d9e",
+      "before": null
+    },
+    "docs/archimate/framework/tests/test_workspace_navigation.py": {
+      "after": "118b9655b201a268f1f73b9b711a8bef5fe9c3a9d2938a34782f38ea13d52eb8",
+      "before": "79fe63b604c0d0976e4772313a1c14279bf0fd2c34b44a220c245a29efeeab74"
+    },
+    "docs/archimate/framework/tools/containment.py": {
+      "after": "f60aa9237da97a98d2c6e8c2c258aa87996b893a1bd2ae36f585cc5d9c9d9bed",
+      "before": null
+    },
+    "docs/archimate/framework/tools/generate_views.py": {
+      "after": "5b4d2c2c49b631f03752e3bf1e43e36a869b1be0bf0b23ede171b94bf5a65460",
+      "before": "78980c637e1b1cfa991bc545865eda7a832eb9e3d40d76e62ca1d7e32865e3bc"
+    },
+    "docs/archimate/framework/tools/governed_metadata.py": {
+      "after": "96f3fd9a8821ee7be6e8d9187f2d4880384d012a255cb4fb4c23a4713d52567d",
+      "before": "a6c72e70be9499b31c4925382951ac1e2e7a44aa16804802bcf75e268f17e0cd"
+    },
+    "docs/archimate/framework/tools/home_context.py": {
+      "after": "7a885eb4047e2a5d109f63b7af44a0467ae0dc9c14618065a2e5069a5a6257de",
+      "before": "2f306d8a963e6776c5a8ece63d14fca34fd8ac4281601a5405ca38373547fe7e"
+    },
+    "docs/archimate/framework/tools/information_naming.py": {
+      "after": "c7074d62fab7e08f895f920f67a5202753d079400527bf59b8f6404665cdaa1c",
+      "before": "8543025f20ac7e89a6e9eab3b5715d8c7ae1b8fc077705e24bd38efaecaf1751"
+    },
+    "docs/archimate/framework/tools/information_workspace_run.py": {
+      "after": "64e6bb0a1c443281e36f90e9a85d6f7e5145ae13ceb493013b463b68d1b88d22",
+      "before": "b8043d0c7b617c46ce2e301c52f7b086372bca19a221186cbfcdf25955368a98"
+    },
+    "docs/archimate/framework/tools/publish_navigation.py": {
+      "after": "d3e32836d969c9b19e644df9f032b99fe65755655f5832ad64aa78a093563623",
+      "before": "5d6e616639b0e68edea7b9c375ad882ddba57e9d042b5bdc063a18d24a32c8fa"
+    },
+    "docs/archimate/framework/tools/recover_v02.py": {
+      "after": "ed30b6632e42d7fde1a114f3ab6afe2b61cd97ce9d728816f0323e1c571ff925",
+      "before": "e4e44ec36d9751804f29a97db5b21ada8151c2af8a721762bf24393bc7909c1b"
+    },
+    "docs/archimate/framework/tools/relationship_state.py": {
+      "after": "7acba65aea12a1264fbd7e4d2467a378a5c9a86fcf974491fc8efe18d7de45a4",
+      "before": null
+    },
+    "docs/archimate/framework/tools/synchronise_baseline.py": {
+      "after": "163cda3464d4966d885333314fbf719f782b0a86f178ea85e549d64425c4b741",
+      "before": "8be555ddfa23165b5d4c4172abbad6ca60b597708423694c818ecdfa812c622d"
+    },
+    "docs/archimate/framework/tools/view_presentation.py": {
+      "after": "fd8e7c7cb47acba063f343de35e99b257f5a210306cad28687c44629732b0fc2",
+      "before": "daa8b8814d60bed64ed35c85840cb73ba54e0887043cf9ecc1fed94cbb61e159"
+    },
+    "docs/archimate/framework/tools/workspace_navigation.py": {
+      "after": "831d4018076535ac8c276cf189cb2d81314b97a53b0de71c6ce01a97a38519f3",
+      "before": "969ea341c740752a2627c9c2447f6091e0fea9bd4a46f2c465a367936099ce93"
+    }
+  },
+  "status": "PASS"
+}

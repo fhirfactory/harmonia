@@ -1,8 +1,19 @@
 # Confirm Provider Identity from National Provider Data Store
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/8d89cfb7e01d4a6cb317efa0d1a4db82.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 Enable the Provider Directory to verify provider identity and recognised national identifiers. This supports the target-state objective that uc-6 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider identity is reliably linked to authoritative identifiers and duplicate or incorrect identities are reduced.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ Enable the Provider Directory to verify provider identity and recognised nationa
 - **Source Scope:** Additional Source Use Cases and System Requirements
 - **Primary Actor:** National Provider Data Store
 - **Supporting Actors:** Compliance Officer; Provider Directory; Integration Service
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/d7eb877a185b4d698336b185c0d3370d.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As the Provider Directory, I need to verify provider identity and recognised national identifiers, so that provider identity is reliably linked to authoritative identifiers and duplicate or incorrect identities are reduced.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-30 – Match Provider Records: supports reliable identity matching where provider information is received or reconciled.; UC-Integration-ProviderDirectory-32 – Validate Provider Data Quality: supports validation and data-quality controls.; UC-Integration-ProviderDirectory-34 – Audit Provider Information Exchange: supports traceability and audit of information exchange.; UC-Integration-ProviderDirectory-35 – Monitor Provider Integration Interfaces: supports operational monitoring of automated interfaces.; UC-Integration-ProviderDirectory-36 – Reconcile Provider Synchronisation Failures: supports remediation of failed or ambiguous synchronisation.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/8d89cfb7e01d4a6cb317efa0d1a4db82.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Confirm Provider Identity from National Provider
 Harmonia SHALL support **Confirm Provider Identity from National Provider Data Store** so that Enable the Provider Directory to verify provider identity and recognised national identifiers. This supports the target-state objective that uc-6 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider identity is reliably linked to authoritative identifiers and duplicate or incorrect identities are reduced.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Confirm Provider Identity from National Provider Data Store - successful outcome
 - **GIVEN** The actor is appropriately authenticated and authorised to perform the activity.

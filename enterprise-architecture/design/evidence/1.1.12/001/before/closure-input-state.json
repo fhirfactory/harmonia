@@ -1,0 +1,13 @@
+{
+  "sha256": "301b486533d5f8402643219986d5af3d19af2bd1f30ba1a0c84b782c364732a8",
+  "release": {
+    "version": "1.1.12",
+    "previous_version": "1.1.11"
+  },
+  "head": "ed8121ac8eccddb578641c5b2f88bb869950764e",
+  "existingInputs": 1982,
+  "scope": "Every existing non-ignored EA file and root release authority at closure entry; all must remain byte-identical. Per-file working inventory is transient verification material.",
+  "pendingHcrl": "enterprise-architecture/design/review/1.1.12/hcrl-1.1.12-001.pending.md",
+  "pendingHcrlSha256": "a28a3927b5aeb2fc47361c4be1cf745d8a37f6cc992ed755c36806e920469a87",
+  "eventMeaning": "Closure input-state capture; not the unavailable instruction-entry event"
+}

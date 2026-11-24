@@ -1,0 +1,24 @@
+{
+  "outcome": "PASS_WITH_FORMATTING_QUALIFICATION",
+  "stagedScope": "PASS \u2014 accepted paths only; unrelated pre-existing files excluded",
+  "canonicalToolingAndGovernanceWhitespace": {
+    "exitCode": 0,
+    "outcome": "PASS"
+  },
+  "allStagedWhitespace": {
+    "exitCode": 2,
+    "outcome": "FAIL \u2014 formatting only",
+    "findingCount": 9099,
+    "classes": {
+      "trailing whitespace.": 9095,
+      "new blank line at EOF.": 4
+    },
+    "scope": "9087 findings in retained input/evidence; 12 in deterministic published narrative TeX",
+    "treatment": "Preserve reviewed source/candidate and published bytes. Formatting warnings do not indicate architecture loss or a mandatory release-gate failure; no byte changes or tooling changes to hide them."
+  },
+  "fileSize": "PASS \u2014 maximum staged regular file 43,831,933 bytes",
+  "formalTaskReportLinks": "PASS",
+  "historicalPublicationRegisterPins": "PASS \u2014 219",
+  "sourcePins": "PASS \u2014 19",
+  "temporalEvidence": "UNRESOLVED \u2014 five current records, specifically authorised for 1.1.20 closure only"
+}

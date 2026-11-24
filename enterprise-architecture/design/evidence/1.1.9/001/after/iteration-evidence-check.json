@@ -1,0 +1,14 @@
+{
+  "outcome": "UNRESOLVED",
+  "version": "1.1.9",
+  "iteration": "001",
+  "records": [
+    "evidence/1.1.9/001/after/ai-agent-reports/20261022T103426Z-principle-authority-consolidation.md",
+    "evidence/1.1.9/001/before/ai-agent-tasks/unresolved-principle-authority-consolidation.md"
+  ],
+  "errors": [],
+  "unresolved": [
+    "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.9/001/before/ai-agent-tasks/unresolved-principle-authority-consolidation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+  ],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}

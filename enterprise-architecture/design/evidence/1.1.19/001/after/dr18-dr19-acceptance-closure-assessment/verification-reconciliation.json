@@ -1,0 +1,35 @@
+{
+  "status": "PASS — evidence reconciliation, not strict transport PASS",
+  "acceptedSpecimenMatchesCurrentCanonicalState": true,
+  "schemaIdentityReferenceEndpointValidation": "PASS",
+  "projectorAllocatedIdentities": 0,
+  "elementCount": 1996,
+  "relationshipCount": 2246,
+  "viewCount": 1288,
+  "acceptedDefinitionsUnchanged": 6,
+  "acceptedAddRelationshipsUnchanged": 10,
+  "retainedTests": {
+    "tooling": 87,
+    "finalFocused": 4,
+    "javaArchitecture": 90,
+    "outcome": "PASS",
+    "scope": "Full suite before final policy-subsection placement; final focused tests recorded separately"
+  },
+  "retainedActualArchiImportSaveExport": "PASS",
+  "strictTransportVerifier": "FAIL — preserved, not reclassified or waived",
+  "strictFailScope": {
+    "relationshipIdentities": 575,
+    "xmlLangAttributeDifferences": 1741
+  },
+  "retainedNativeAndReturnedEvidencePresentAndHashChecked": true,
+  "returnedElementFieldsAndPropertiesPreserved": 1996,
+  "viewsPreserved": 1288,
+  "rawOtherQualifications": [
+    "Strict verifier remains FAIL; semantic equivalence checks do not replace raw fidelity.",
+    "Inherited generated label/organisation-ID omissions and navigation normalisation remain explicit; no loss acceptance asserted.",
+    "Real automated transport is not consolidated Solution Architect inspection or acceptance.",
+    "No returned XML/native file replaces canonical sources, maintained Views or protected publication."
+  ],
+  "testsOrArchiExecutionRepeated": false,
+  "reason": "No architecture or tooling changed; existing completed evidence reconciled with fresh read-only canonical/schema/projection/preservation checks"
+}

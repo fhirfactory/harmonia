@@ -1,0 +1,101 @@
+{
+  "scope": "Publication relocation; relative links rebased and publication artifact hashes refreshed. Historical XML/PDF bytes unchanged. No canonical source content changed.",
+  "files": [
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.7/README.md",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.7/README.md",
+      "beforeSha256": "70798d834345759ce61427c28437a82cab465271ef2ae834866f19320262127e",
+      "afterSha256": "ea901aec14eb927c18cf5c7c90f9896b279f9bc12b1ce8d02a28876ff98198f0"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.7/publication.json",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.7/publication.json",
+      "beforeSha256": "3a49dc7420fb68972f5e710cba12423b44ed4e86f1b385a775bb66754b56200f",
+      "afterSha256": "9c1d918a49c5e2c637d8c41f8e967bb1332447c1235a73d10dd93266dc192ca3"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.7/continuum.html",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.7/continuum.html",
+      "beforeSha256": "a12c951084fd938ceeb155200be25b974295f0b8626d76dd25a5cfd33dbcaef2",
+      "afterSha256": "132de105c046ffa1a024646e74bbd75e3655704ae5b77123674344e64a5c529e"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.7/Harmonia-Architecture.xml",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.7/Harmonia-Architecture.xml",
+      "beforeSha256": "87b83ec162bf06fd35044eb22f724a81a39df2f99551190bf5050d82dafbfded",
+      "afterSha256": "87b83ec162bf06fd35044eb22f724a81a39df2f99551190bf5050d82dafbfded"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.7/continuum-catalogue.tex",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.7/continuum-catalogue.tex",
+      "beforeSha256": "a0667fced99df4c4a646f6b778521b2127f1c3121d691532394e26cfa9dfa0dd",
+      "afterSha256": "6f39c9dbeda2764631d8ef39dea8c5fa49fabbbe0e08fd70b13752945f923668"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.5/README.md",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.5/README.md",
+      "beforeSha256": "70949989bcc1174d7c09e4425a0938885659b83e95d26f4cfd71f9dd14c1b8e7",
+      "afterSha256": "70d367cbbe6c65fc03237c8cbbe7d87f81c83feef98af1e8564d6a64e488ffa4"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.5/continuum-catalogue.pdf",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.5/continuum-catalogue.pdf",
+      "beforeSha256": "2c3c2e9459d2d596ea4ef63d431240c818dbd2d8346c6cf40f77d5979a027f10",
+      "afterSha256": "2c3c2e9459d2d596ea4ef63d431240c818dbd2d8346c6cf40f77d5979a027f10"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.5/publication.json",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.5/publication.json",
+      "beforeSha256": "f6308e99d61c36905a7b683c747aa6f413327affc97904433b2807d8da358ccd",
+      "afterSha256": "955a81a36ff9ab0de6f0155fcfbbf1e126e58029b6654ee9e8b06539c9ee0fa0"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.5/continuum.html",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.5/continuum.html",
+      "beforeSha256": "5cc547456bd9bd2eadf9a8d44fa200df186e61479e783f9eb69c218cbeeabec2",
+      "afterSha256": "0af49b3a1f54dc6253711e362a67e4d6c8f0d05b46977ca1a94934f542ffc935"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.5/Harmonia-Architecture.xml",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.5/Harmonia-Architecture.xml",
+      "beforeSha256": "440ed943908b375b8d66818ceaa341969925db51a859a67c6f365d0461ffb28b",
+      "afterSha256": "440ed943908b375b8d66818ceaa341969925db51a859a67c6f365d0461ffb28b"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.5/continuum-catalogue.tex",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.5/continuum-catalogue.tex",
+      "beforeSha256": "e26000d6751d167ea636536973d3deadcbb4ee386d735c2aba675dad4180de73",
+      "afterSha256": "9d66d3cc5ff3a2e4bc2773bbcb05a320b4f0bde83310a61c927e2458f4c87187"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.6/README.md",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.6/README.md",
+      "beforeSha256": "2ef27eac56c7956726ad21a7c62fc0a9cbb38c421df653607eb7500b0ca93ce6",
+      "afterSha256": "07ca95c8e148e844ea24ecf31e805eae0fab10e5f07d26a223e2b7e9a613fae4"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.6/publication.json",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.6/publication.json",
+      "beforeSha256": "4f11d7813253ca96b01306134eb0bba65d95b5d3c024475eba7fdcb009b3107a",
+      "afterSha256": "95b150d1ac77127896ec44ac849ecfc1e573b2580240300858d4ce74d3adab79"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.6/continuum.html",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.6/continuum.html",
+      "beforeSha256": "f0a2b84b367e3a4dd71827a44abfde2b22241d07f57f5a5111cfa385b3f01fa4",
+      "afterSha256": "b06793532edb9c8add6f1422956a208c41956918e593ed71b1b476ae680fcfa3"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.6/Harmonia-Architecture.xml",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.6/Harmonia-Architecture.xml",
+      "beforeSha256": "f794177a9785d6e05685b6675e9dd035422ebb64b38866d0ff0b7993a07d4e1a",
+      "afterSha256": "f794177a9785d6e05685b6675e9dd035422ebb64b38866d0ff0b7993a07d4e1a"
+    },
+    {
+      "before": "enterprise-architecture/continuum/documentation/published/1.1.6/continuum-catalogue.tex",
+      "after": "enterprise-architecture/documentation/continuum-manifest/published/1.1.6/continuum-catalogue.tex",
+      "beforeSha256": "a1c08ea566b5bf9a73c0b3ed3971ae79ae661f52f781b64bb1d7d9cc1e73cc85",
+      "afterSha256": "a1a8108cbc5bb9af5358d7565553b9fa9e284c04951865edf795ff5b652a8279"
+    }
+  ]
+}

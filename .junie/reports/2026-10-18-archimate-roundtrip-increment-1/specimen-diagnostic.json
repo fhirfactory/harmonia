@@ -1,0 +1,189 @@
+{
+  "architecture_release": {
+    "previous_version": "1.0.5",
+    "version": "1.0.6"
+  },
+  "audit_status": "PASS",
+  "canonical_id": {
+    "continuity_findings": [],
+    "duplicates": {},
+    "lifetime_nonreuse": "UNRESOLVED: no active UUID32 allocation/tombstone history; two snapshots cannot prove lifetime non-reuse",
+    "malformed": [],
+    "missing": [],
+    "multiple_claims": [],
+    "single_valid_uuid32": 3,
+    "total_elements": 3,
+    "unique_valid_uuid32_elements": 3
+  },
+  "elements": [
+    {
+      "canonicalId": [
+        "00000000000040008000000000000001"
+      ],
+      "canonicalId_single_valid": true,
+      "element": "test-capability",
+      "governed_name_properties": {
+        "canonicalName": [
+          "CT1-BEC-SYNTHETIC-ROOT.CT2-BEC-SYNTHETIC-CONTEXT.CT3-BEC-SYNTHETIC-TRANSPORT-CAPABILITY"
+        ],
+        "displayName": [
+          "[CT3] Synthetic Transport Capability"
+        ],
+        "friendlyName": [
+          "SyntheticRoot.SyntheticContext.SyntheticTransportCapability"
+        ]
+      },
+      "legacy": {},
+      "native_names": [
+        {
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          },
+          "text": "[CT3] Synthetic Transport Capability"
+        }
+      ],
+      "native_type": "Capability",
+      "source": null,
+      "type_properties": {
+        "archimateType": [
+          "Capability"
+        ],
+        "harmoniaType": []
+      }
+    },
+    {
+      "canonicalId": [
+        "1234567890ab4def8123456789abcde0"
+      ],
+      "canonicalId_single_valid": true,
+      "element": "test-feature",
+      "governed_name_properties": {
+        "canonicalName": [
+          "CT1-BEC-SYNTHETIC-ROOT.CT2-BEC-SYNTHETIC-CONTEXT.CT3-BEC-SYNTHETIC-TRANSPORT-CAPABILITY.FEAT-SYNTHETIC-TRANSPORT"
+        ],
+        "displayName": [
+          "[FT] Synthetic Transport Feature"
+        ],
+        "friendlyName": [
+          "SyntheticRoot.SyntheticContext.SyntheticTransportCapability.SyntheticTransportFeature"
+        ]
+      },
+      "legacy": {
+        "v0.2 / Construct Type": [
+          "feature"
+        ]
+      },
+      "native_names": [
+        {
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          },
+          "text": "[FT] Synthetic Transport Feature"
+        }
+      ],
+      "native_type": "Capability",
+      "source": null,
+      "type_properties": {
+        "archimateType": [
+          "Capability"
+        ],
+        "harmoniaType": [
+          "Feature"
+        ]
+      }
+    },
+    {
+      "canonicalId": [
+        "abcdef0123454abc8def0123456789ab"
+      ],
+      "canonicalId_single_valid": true,
+      "element": "test-function",
+      "governed_name_properties": {
+        "canonicalName": [
+          "CT1-BEC-SYNTHETIC-ROOT.CT2-BEC-SYNTHETIC-CONTEXT.CT3-BEC-SYNTHETIC-TRANSPORT-CAPABILITY.FN-SYNTHETIC-TRANSPORT"
+        ],
+        "displayName": [
+          "Synthetic Transport Function"
+        ],
+        "friendlyName": [
+          "SyntheticRoot.SyntheticContext.SyntheticTransportCapability.SyntheticTransportFunction"
+        ]
+      },
+      "legacy": {},
+      "native_names": [
+        {
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          },
+          "text": "Synthetic Transport Function"
+        }
+      ],
+      "native_type": "BusinessFunction",
+      "source": null,
+      "type_properties": {
+        "archimateType": [
+          "BusinessFunction"
+        ],
+        "harmoniaType": []
+      }
+    }
+  ],
+  "future_identity_readiness": "CONFORMANT_IN_SNAPSHOT",
+  "future_naming_readiness": "PERSISTED_VALUES_PRESENT; derivation not established",
+  "historical_ec_aliases": {
+    "binding_conflicts": [],
+    "count": 0,
+    "duplicates": {},
+    "owners": {}
+  },
+  "input_issues": [],
+  "input_sha256": "0f0c0d4711ee8db12b2c6103958f88f4bde190802ced1793ead2052c73cc7cfb",
+  "legacy_property_coverage": {
+    "v0.2 / Construct Type": 1
+  },
+  "metrics": {
+    "largest_view": {
+      "connections": 1,
+      "elements": 3,
+      "identifier": "test-view",
+      "name": [
+        {
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          },
+          "text": "Synthetic Transport View"
+        }
+      ],
+      "visual_objects": 4
+    },
+    "relationships": 1,
+    "semantic_elements": 3,
+    "views": 1,
+    "visual_connections": 1,
+    "visual_objects": 4,
+    "xml_bytes": 7145,
+    "xml_decimal_mb": 0.007145
+  },
+  "naming": {
+    "canonicalName_derivation": "Existing bound source paths and Baseline.chain context only; no universal grammar or inferred ancestry",
+    "conflicts": [],
+    "counts": {
+      "canonicalName_property_empty_or_multiple": 0,
+      "canonicalName_property_missing": 0,
+      "canonicalName_property_single_nonempty": 3,
+      "displayName_property_empty_or_multiple": 0,
+      "displayName_property_missing": 0,
+      "displayName_property_single_nonempty": 3,
+      "friendlyName_property_empty_or_multiple": 0,
+      "friendlyName_property_missing": 0,
+      "friendlyName_property_single_nonempty": 3,
+      "native_display_available": 3,
+      "native_display_missing_or_multiple": 0
+    },
+    "friendlyName_derivation": "UNRESOLVED: no approved token/source grammar; no values derived",
+    "legacy_short_name_collisions": {},
+    "legacy_short_name_differences": [],
+    "source_path_standing": {}
+  },
+  "previous_input_issues": []
+}

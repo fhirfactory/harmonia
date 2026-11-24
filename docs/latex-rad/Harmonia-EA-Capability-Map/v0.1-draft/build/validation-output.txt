@@ -1,0 +1,36 @@
+PASS: source fingerprints, exact citations, identities, parent references, BC/Feature/behaviour inventories
+Rendered 719 identities and 1674 complete RAD source blocks
+{
+  "result": "PASS",
+  "publication": "Harmonia-EA-Capability-Map",
+  "version": "0.1",
+  "source_documents": 18,
+  "source_blocks": 1674,
+  "counts": {
+    "business_ct1": 18,
+    "business_ct2": 39,
+    "business_ct3": 133,
+    "business_enabling_ct1": 0,
+    "business_enabling_ct2": 0,
+    "business_enabling_ct3": 0,
+    "business_enabling_tier_unresolved": 76,
+    "features": 137,
+    "functions": 147,
+    "services": 133,
+    "processes": 19,
+    "enterprise_capabilities": 14,
+    "candidate_business_concerns": 3,
+    "unresolved_catalogue_description_identities": 69,
+    "publication_element_records": 719
+  },
+  "pdf_pages": 502,
+  "index_entries": 719,
+  "unique_labels": 2418,
+  "undefined_references": 0,
+  "duplicate_labels": 0,
+  "duplicate_reference_ids": 0,
+  "uncovered_nonblank_source_lines": 0,
+  "overfull_boxes": 0,
+  "missing_glyphs": 0,
+  "pdf_sha256": "8d2da6e40f7f6f2a5987e30da4e55678f4933b2207d6436b91f7ea3c7616789e"
+}

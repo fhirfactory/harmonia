@@ -1,0 +1,13 @@
+{
+  "status": "FAIL",
+  "command": [
+    "python3",
+    "-B",
+    "docs/archimate/framework/tools/report_baseline.py"
+  ],
+  "timeout_seconds": 90.0,
+  "elapsed_seconds": 0.415,
+  "exit_code": 1,
+  "log": "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/report-generation.log",
+  "log_sha256": "bca00fa76a88eae5011a1636ef547eda7a510f170b55fb3f3d8b689e70c6065c"
+}

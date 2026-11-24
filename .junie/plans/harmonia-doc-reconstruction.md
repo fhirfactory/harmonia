@@ -7,7 +7,7 @@ sessionId: session-260917-072541-w9zl
 ### Overview & Goals
 The goal of this initiative is to reconstruct and substantially expand the Harmonia documentation into an authoritative, complete, and mathematically precise **Architecture, Implementation, Configuration, Deployment, and Operations Reference**.
 
-Currently, architectural and operational knowledge is fragmented across individual modules, legacy markdown files, and partial LaTeX chapters without a coherent, unified system reference. This plan establishes an end-to-end documentation overhaul spanning both an intuitive, browsable **Markdown Information Architecture** under `docs/` and an authoritative, publication-quality **LaTeX ArchiMate 3.2 Reference Document** with TikZ diagrams under `docs/latex/`.
+Currently, architectural and operational knowledge is fragmented across individual modules, legacy markdown files, and partial LaTeX chapters without a coherent, unified system reference. This plan establishes an end-to-end documentation overhaul spanning both an intuitive, browsable **Markdown Information Architecture** under `docs/` and an authoritative, publication-quality **LaTeX ArchiMate 3.2 Reference Document** with TikZ diagrams under `../../docs/latex-legacy`.
 
 ### Scope
 - **In Scope**:
@@ -38,7 +38,7 @@ Currently, architectural and operational knowledge is fragmented across individu
 4. **Dual-Dimension Configuration Reference**: Distinguish Infrastructure Configuration (K8s manifests, CPU/memory, volumes, probes) from Application Configuration (Spring Boot properties, Jakarta annotations, Camel routes, Themis policies).
 5. **Authoritative Deployment Blueprints**: Document normal MicroK8s deployment, prerequisite packages, storage classes, ingress routes, secrets management, dependency order, and readiness checks.
 6. **Paradeigma Isolation & Simulation**: Document the simulation testbed, synthetic generators, fault injection, and the strict compile-time and runtime isolation boundary (`Paradeigma -> Harmonia APIs` permitted; `Harmonia Prod -> Paradeigma` forbidden).
-7. **Publication-Ready LaTeX Specification**: Restructure `docs/latex/main.tex` into 7 distinct Parts, 67 Chapters, 9 Appendices, and vector TikZ diagrams, compiling cleanly via `make pdf`.
+7. **Publication-Ready LaTeX Specification**: Restructure `../../docs/latex-legacy` into 7 distinct Parts, 67 Chapters, 9 Appendices, and vector TikZ diagrams, compiling cleanly via `make pdf`.
 
 ### Non-Functional Requirements
 - **Build Reproducibility**: The LaTeX document must compile cleanly via `latexmk` / `pdflatex` with zero fatal errors and clean visual layout.
@@ -63,7 +63,7 @@ Harmonia is a distributed Health Information Exchange platform structured as a 5
 - Missing authoritative dual-dimension configuration register mapping environment variables to code classes.
 
 ### Key Decisions
-1. **Dual Documentation Strategy**: Maintain lightweight, web-browsable Markdown under `docs/` for quick developer/operator lookup, paired with an exhaustive, publication-quality LaTeX document under `docs/latex/` as the formal system reference.
+1. **Dual Documentation Strategy**: Maintain lightweight, web-browsable Markdown under `docs/` for quick developer/operator lookup, paired with an exhaustive, publication-quality LaTeX document under `../../docs/latex-legacy` as the formal system reference.
 2. **Four-State Capability Classification**: All features across both Markdown and LaTeX will be tagged with `[IMPLEMENTED]`, `[CONFIGURED]`, `[PLANNED/DESIGNED]`, or `[EXAMPLE/REFERENCE]` to eliminate ambiguity.
 3. **Strict Separation of Configuration Dimensions**: Infrastructure configuration (Kubernetes/Ansible/OS) and Application configuration (properties, YAML, JVM options, code annotations) will never be conflated.
 4. **Authoritative TikZ Diagram Standard**: ASCII diagrams in LaTeX will be migrated to native TikZ using the ArchiMate 3.2 color palette defined in `styles/harmonia-archimate.sty`.
@@ -149,7 +149,7 @@ docs/
 ```
 
 ### LaTeX Restructuring Plan
-Restructure `docs/latex/main.tex` and chapter hierarchy into:
+Restructure `../../docs/latex-legacy` and chapter hierarchy into:
 - **PART I — HARMONIA FOUNDATIONS**: Chapters 1–6 (Purpose, Vision, Terminology, Principles, Conceptual Architecture, Capability Model).
 - **PART II — HARMONIA PLATFORM ARCHITECTURE**: Chapters 7–19 (Hestia, Pylai, Petasos, Energeia, Ponos/Ergon/Praxis/Pragma, Mneme, Mnemosyne, Calliope, Themis, Iris, Agora, Provider Registry, Paradeigma).
 - **PART III — MIDDLEWARE ARCHITECTURE**: Chapters 20–26 (Overview, ActiveMQ Artemis HA/Clustering, Infinispan Grid, PostgreSQL, HAPI FHIR, Matrix/Synapse, Other Middleware).
@@ -258,7 +258,7 @@ Complete operational guides, security framework references, end-to-end message w
 ###   Step 4: Reconstruct and Expand the Formal LaTeX Architecture Reference with TikZ Diagrams
 The formal LaTeX architecture specification document is fully restructured into 7 parts and 9 appendices with custom TikZ architecture diagrams.
 
-- Restructure `docs/latex/main.tex` into the formal 7-part master structure (Foundations, Platform Architecture, Middleware Architecture, Runtime Architecture, Deployment Architecture, Paradeigma, Operations) plus Appendices A through I.
+- Restructure `../../docs/latex-legacy` into the formal 7-part master structure (Foundations, Platform Architecture, Middleware Architecture, Runtime Architecture, Deployment Architecture, Paradeigma, Operations) plus Appendices A through I.
 - Author and expand all 67 numbered chapters across the 7 parts, incorporating detailed tables, configuration registers, and code mappings.
 - Replace ASCII diagrams with standardized, publication-quality TikZ vector diagrams across all chapters.
 - Ensure strict ArchiMate 3.2 alignment across motivation, business, application, technology, and physical layers using `styles/harmonia-archimate.sty` and `styles/harmonia-doc.sty`.

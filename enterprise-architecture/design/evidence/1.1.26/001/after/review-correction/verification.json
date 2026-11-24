@@ -1,0 +1,176 @@
+{
+  "recordedAt": "2026-11-16T00:55:13.617009Z",
+  "activity": "Review-driven correction within existing 1.1.26/001; no new Task, Report identity, HCRL iteration or release",
+  "outcome": "PASS",
+  "checks": {
+    "proposalAndProspectiveCanonicalLinks": {
+      "outcome": "PASS",
+      "currentMarkdownFiles": 8,
+      "proposedDocumentTargets": [
+        "enterprise-architecture/governance/architecture-governance.md",
+        "enterprise-architecture/governance/architecture-review-praxis.md",
+        "enterprise-architecture/governance/architecture-change-provenance.md",
+        "enterprise-architecture/governance/architecture-release-policy.md",
+        "AGENTS.md",
+        "docs/AGENTS.md",
+        "enterprise-architecture/governance/templates/hcrl-template.pending.md",
+        "enterprise-architecture/governance/software-development-praxis.md",
+        "docs/backlog/backlog-item-template.md",
+        "docs/backlog/README.md"
+      ]
+    },
+    "backlogMinimumStructure": {
+      "outcome": "PASS",
+      "topLevelSections": [
+        "Overview",
+        "Context",
+        "Associated Requirements",
+        "Expected / Associated Activity",
+        "Expected Outcomes",
+        "Acceptance Criteria"
+      ],
+      "overviewSubsections": [
+        "High-Level Synopsis of Effort",
+        "High-Level Synopsis of Activities",
+        "High-Level Synopsis of Outcome",
+        "High-Level Synopsis of Acceptance Criteria"
+      ]
+    },
+    "dispositionAndDRCorrespondence": {
+      "actualDispositions": [
+        "Changes Requested",
+        "Accepted with refinement",
+        "Accepted with refinement",
+        "Revise and resubmit",
+        "Accepted",
+        "Accepted with qualification"
+      ],
+      "DRs": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    "reviewedInputPreservation": [
+      {
+        "source": "enterprise-architecture/design/review/1.1.26/hcrl-1.1.26-001.pending.md",
+        "reviewedCopyVerified": true
+      },
+      {
+        "source": "enterprise-architecture/design/review/1.1.26/software-development-praxis.proposed.md",
+        "reviewedCopyVerified": true
+      },
+      {
+        "source": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-amendments.proposed.patch",
+        "reviewedCopyVerified": true
+      },
+      {
+        "source": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-assessment.md",
+        "reviewedCopyVerified": true
+      },
+      {
+        "source": "enterprise-architecture/design/evidence/1.1.26/001/after/supporting-amendments.proposed.md",
+        "reviewedCopyVerified": true
+      },
+      {
+        "source": "enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md",
+        "reviewedCopyVerified": true
+      },
+      {
+        "source": "enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+        "reviewedCopyVerified": true
+      }
+    ],
+    "historicalBacklogPreservation": "PASS",
+    "formalTaskAndReportOriginalPrefixPreservation": "PASS",
+    "diffApplicabilityAndWhitespace": {
+      "exitCode": 0,
+      "sha256": "66511284b4303b66437add37450a9c548036b1790c1e897280253a62af93181e",
+      "applied": false
+    },
+    "mandatoryArchitectureSuite": {
+      "outcome": "PASS",
+      "exitCode": 0,
+      "command": "timeout --signal=TERM --kill-after=5s 240s mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+      "tests": {
+        "run": 90,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "elapsedSeconds": 19.194,
+      "scope": "Existing architecture suite; not a solution-wide software acceptance claim"
+    },
+    "releaseValidation": {
+      "outcome": "PASS",
+      "command": "timeout 30s python3 -B enterprise-architecture/tooling/architecture_release.py check",
+      "exitCode": 0,
+      "release": {
+        "version": "1.1.25",
+        "previous_version": "1.1.24"
+      }
+    },
+    "iterationEvidence": {
+      "exitCode": 2,
+      "result": {
+        "outcome": "UNRESOLVED",
+        "version": "1.1.26",
+        "iteration": "001",
+        "records": [
+          "evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+          "evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md"
+        ],
+        "errors": [],
+        "unresolved": [
+          "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+        ],
+        "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+      },
+      "treatment": "Original event remains factually UNRESOLVED; SA DR-6 records accepted qualification. Follow-up instruction-entry times are separately unavailable in the same Task."
+    },
+    "gitState": {
+      "head": "441ec989a3853db4ea4dad253e14b8464181f293",
+      "branch": "Mneme-and-Mnemosyne-Build",
+      "trackedDiff": [],
+      "status": [
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-amendments.proposed.patch",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-assessment.md",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/iteration-evidence-check.json",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/review-correction/verification.json",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/supporting-amendments.proposed.md",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/after/verification.json",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/before/repository-state.json",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/20261115T233608Z-software-development-praxis-proposal.md.reviewed.gz",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/governance-amendments.proposed.patch.reviewed.gz",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/governance-assessment.md.reviewed.gz",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/hcrl-1.1.26-001.pending.md.reviewed.gz",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/software-development-praxis.proposed.md.reviewed.gz",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/source-correspondence.json",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/supporting-amendments.proposed.md.reviewed.gz",
+        "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/unresolved-software-development-praxis-proposal.md.reviewed.gz",
+        "?? enterprise-architecture/design/review/1.1.26/backlog-item-template.proposed.md",
+        "?? enterprise-architecture/design/review/1.1.26/backlog-readme.proposed.md",
+        "?? enterprise-architecture/design/review/1.1.26/hcrl-1.1.26-001.pending.md",
+        "?? enterprise-architecture/design/review/1.1.26/software-development-praxis.proposed.md"
+      ],
+      "releaseAllocated": false,
+      "commitOrPushPerformed": false
+    }
+  },
+  "notPerformed": [
+    "Software solution-wide regression/integration readiness run: this is a governance proposal correction, not a software acceptance candidate",
+    "Proposed helper implementation/tests or normative adoption",
+    "Continuum validation rerun: unchanged canonical sources; initial PASS evidence retained without relabelling it current execution",
+    "Release allocation, HCRL completion/advancement, tag/commit/merge/push/publication/deployment"
+  ],
+  "limits": [
+    "Static correspondence/link/layout checks do not establish semantic acceptance, authentic issuance or software readiness.",
+    "Architecture-suite logs are transient; retained structured summaries supply the relevant review evidence."
+  ],
+  "errors": []
+}

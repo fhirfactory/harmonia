@@ -1,0 +1,113 @@
+{
+  "baseline_head": "41047e1dc5c7d1ca4769dc7479bb50cae60989a7",
+  "baseline_tracked_sources": 3320,
+  "additional_prior_candidate_inputs": 1,
+  "ledger_records": 3321,
+  "counts": {
+    "Remain": 1176,
+    "Remain + CopyFixture": 2,
+    "Move": 2142,
+    "Move + CopyFixture": 1
+  },
+  "source_groups": {
+    ".junie": {
+      "Remain": 409,
+      "Remain + CopyFixture": 2
+    },
+    "Root/module/deployment Markdown": {
+      "Remain": 29
+    },
+    "Root release authority": {
+      "Remain": 1
+    },
+    "Remaining docs": {
+      "Remain": 153
+    },
+    "docs/archimate": {
+      "Move": 1829,
+      "Move + CopyFixture": 1
+    },
+    "docs/latex-legacy": {
+      "Remain": 101
+    },
+    "docs/latex-rad": {
+      "Move": 134
+    },
+    "docs/libreoffice": {
+      "Remain": 21
+    },
+    "docs/markdown": {
+      "Move": 179
+    },
+    "Existing enterprise-architecture": {
+      "Remain": 21
+    },
+    "openspec": {
+      "Remain": 424
+    },
+    "scripts": {
+      "Remain": 16
+    },
+    "Prior pending candidate (additional input)": {
+      "Remain": 1
+    }
+  },
+  "exact_path_reference_occurrences": 69210,
+  "reference_impact_rows": 24428,
+  "reference_consumers": 774,
+  "missing_sources": [],
+  "duplicate_sources": [],
+  "unmapped_sources": [],
+  "primary_destination_collisions": [],
+  "additional_destination_collisions": [],
+  "unchanged_source_hashes": 3320,
+  "prior_candidate_unchanged": true,
+  "openspec": {
+    "manifest_rows": 421,
+    "specs": 421,
+    "path_source_reference_and_title_agreement": true,
+    "requirements": 1657,
+    "scenarios": 4928
+  },
+  "preparation_checks": [
+    {
+      "command": "timeout --signal=TERM --kill-after=5s 240s mvn test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+      "result": "PASS",
+      "tests": 90,
+      "classes": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 17.478
+    },
+    {
+      "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B docs/archimate/framework/tools/governed_metadata.py validate",
+      "result": "FAIL (pre-existing baseline)",
+      "exit_code": 1,
+      "message": "INVALID: Current baseline authority drift; reconcile explicitly: AGENTS.md"
+    }
+  ],
+  "scope_limit": "Finite iteration-001 tracked corpus plus prior candidate. Lexical reference scan is an impact aid, not proof of runtime reachability or historical architectural acceptance. No migrated-state verification performed.",
+  "candidate_structure_checks": {
+    "opening_table_rows": 12,
+    "consecutive_dr_sections": 12,
+    "bounded_minutiae_controls": 1,
+    "local_reference_links": 16,
+    "all_links_resolve": true,
+    "all_ledger_dr_references_resolve": true
+  },
+  "proposed_move_destinations_by_root": {
+    "design": 1887,
+    "continuum": 208,
+    "governance": 48
+  },
+  "empty_payload_artefacts_with_explicit_treatment": 10,
+  "supporting_reference_format": "gzip-compressed UTF-8 CSV; deterministic mtime=0; exact lexical impact rows",
+  "candidate_sha256": {
+    "hcrl-1.1.4-002.pending.md": "298534c9ca078ae40e9edabc16e47830639f8937a87bcb32370a8e9814bd669b",
+    "hcrl-1.1.4-002.mapping.csv": "552fa43c2a651ee327425de55ab6b02f507784cda23d9b86c7c2d9b87982d1f5",
+    "hcrl-1.1.4-002.references.csv.gz": "36e7a5c03c03a67688e81d606670b038c146541f05b29b361771640124176562"
+  },
+  "final_source_preservation_check": "PASS: all 3320 baseline source hashes and prior candidate unchanged; tracked git diff empty; release remains 1.1.3",
+  "supporting_csv_format": "UTF-8, LF line endings; one record per source; embedded evidence line breaks normalised in snippets only"
+}

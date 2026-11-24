@@ -2,7 +2,7 @@
 
 This directory contains the publication-grade, interactive **LibreOffice OpenDocument Text (`.odt`)** architectural specification for the **Harmonia Health Information Exchange (HIE)** platform.
 
-The document provides 100% content parity with the primary LaTeX specification in `docs/latex/`, complete with embedded 300 DPI ArchiMate 3.2 architectural views, formatted technical data tables, color-coded callout blocks, and interactive navigation (clickable Table of Contents, List of Figures, List of Tables, and internal cross-reference bookmarks).
+The document provides 100% content parity with the primary LaTeX specification in `../latex-legacy`, complete with embedded 300 DPI ArchiMate 3.2 architectural views, formatted technical data tables, color-coded callout blocks, and interactive navigation (clickable Table of Contents, List of Figures, List of Tables, and internal cross-reference bookmarks).
 
 ---
 
@@ -58,7 +58,7 @@ The master document (`harmonia-architecture-specification.odt`) adheres to the *
 
 ## 3. Automated Document Generation
 
-The specification is compiled directly from the modular LaTeX sources in `docs/latex/` using a standalone Python 3 generator with zero external compilation dependencies.
+The specification is compiled directly from the modular LaTeX sources in `../latex-legacy` using a standalone Python 3 generator with zero external compilation dependencies.
 
 ### Quick Build with Make
 ```bash

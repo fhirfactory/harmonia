@@ -1,0 +1,12 @@
+{
+  "outcome": "PASS",
+  "version": "1.1.17",
+  "iteration": "001",
+  "records": [
+    "evidence/1.1.17/001/after/ai-agent-reports/20261031T113057Z-nfr-derived-elements-add-execution.md",
+    "evidence/1.1.17/001/before/ai-agent-tasks/20261031T104506Z-nfr-derived-elements-add.md"
+  ],
+  "errors": [],
+  "unresolved": [],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}

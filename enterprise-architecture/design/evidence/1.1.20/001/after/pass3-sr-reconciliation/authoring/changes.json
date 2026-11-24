@@ -1,0 +1,106 @@
+{
+  "capabilities": {
+    "B05.03.01": {
+      "sr": "SR-001",
+      "name": "Clinical Handover Acceptance",
+      "description": "Clinical responsibility is explicitly accepted by an accountable, appropriately identity-assured receiving party, with sufficient transferred care context, ownership of outstanding obligations, and traceable acceptance evidence and timing. Receipt alone does not establish acceptance; rejection, delay and escalation remain explicit. Clinical accountability remains distinct from governed operational responsibility transfer and human operational handover. This Business capability does not itself assign clinical decision or handover authority to Harmonia."
+    },
+    "E06.03.01": {
+      "sr": "SR-004",
+      "name": "Governed Parcel Handoff & Accountability",
+      "description": "Govern the transfer of PetasosParcel responsibility between processing participants to the destination prescribed by a governed routing decision. Preserve handoff state, accountable participants, outcome correlation and applicable audit evidence. Destination selection, delivery attempt and accepted handoff are distinct; a routing decision or delivery attempt alone does not establish acceptance of responsibility. Undeliverable Parcels retain an explicit disposition."
+    },
+    "E06.03.03": {
+      "sr": "SR-004",
+      "name": "Routing Decision Implementation",
+      "description": "Apply governed PetasosParcel routing decisions, including destination selection and preservation of the applicable rules, rationale, decision context and qualifications. Destination selection is distinct from a delivery attempt and from accepted handoff of responsibility. Routing does not take ownership of queue delivery, work execution or payload interpretation, and a successful decision does not establish delivery or acceptance by the destination."
+    },
+    "E06.08.07": {
+      "sr": "SR-015",
+      "name": "Ergon Output Processing & Continuation",
+      "description": "Process Ergon execution outcomes and determine their consequences for the enclosing Task, including continuation, subsequent work, failure handling and correlation of outstanding activities. Preserve and reconcile task-publication and subscription obligations through subscriber loss, redelivery, partition and restart. Ergon completion is not necessarily activity completion; activity completion is not necessarily Task completion; Task completion is not necessarily authoritative information commitment. Long-duration activities do not automatically require additional Tasks, and activity semantics are independent of a particular Stimulus, Effector or implementation mechanism."
+    },
+    "E06.09.07": {
+      "sr": "SR-015",
+      "name": "Long-Duration Asynchronous Activity Management",
+      "description": "Maintain continuing activities within their applicable Task context, including activity state, correlation, progress and eventual outcomes. Recover outstanding real-world obligations despite lost clients, offline periods, inconsistent reports or Digital Twin restart. Ergon completion, activity completion, Task completion and authoritative information commitment remain distinct outcomes. Long duration does not automatically require an additional Task, and activity semantics are independent of a particular Stimulus, Effector or implementation mechanism."
+    },
+    "B13.04.02": {
+      "sr": "SR-016",
+      "name": "Research Information De-identification & Minimisation",
+      "description": "Research-purpose information can be prepared through appropriate de-identification, pseudonymisation and minimisation, preserving research utility while managing re-identification risks. Participants' rights, information and wellbeing remain protected through consent, risk monitoring, withdrawal recognition and adverse-event response. De-identification does not authorise unrestricted disclosure: consent, authorisation and disclosure conditions remain governed. This Business capability does not imply that Harmonia performs every underlying transformation or makes every disclosure decision."
+    },
+    "B14.06.01": {
+      "sr": "SR-016",
+      "name": "Participant-Contextual Information Protection",
+      "description": "Participant information is protected according to context during authorised access, presentation and disclosure, with applicable consent, authorisation and disclosure conditions preserved. Contextual protection does not necessarily require de-identification. Safeguarding concerns, including abuse or neglect, can be identified, safely reported, reviewed, acted upon and followed up while respecting autonomy. This Business capability does not imply that Harmonia performs every underlying transformation or makes every disclosure decision."
+    }
+  },
+  "features": {
+    "B05.03.01.F01": "Care transfers have explicit, evidenced acceptance of clinical responsibility by an accountable receiving party. Handover identifies who accepted responsibility; receipt notification alone does not establish acceptance without the required evidence.",
+    "B05.03.01.F02": "Accepted transfers identify consequential outstanding care obligations and an accountable next owner for each unresolved obligation. The care context required to understand and discharge those obligations is available to the receiving party.",
+    "B05.03.01.F03": "The receiving party is verified with identity assurance appropriate to the clinical responsibility and applicable handover arrangements.",
+    "B05.03.01.F04": "The boundary of transferred clinical responsibility is explicit and traceable through the handover context and acceptance evidence. Clinical acceptance is distinguished from receipt, operational work allocation and human operational handover.",
+    "B05.03.01.F05": "Care handovers are confirmed within the applicable context-defined interval. Acceptance timing and any delay are independently evidenced and traceable to the handover and accountable receiving party.",
+    "B05.03.01.F06": "Rejected handovers receive an explicit resolution, maintained through relevant changes or disruptions and recovered where required. Rejection, missing acceptance or delayed acceptance prompts escalation under the applicable clinical handover arrangements without falsely completing the transfer of responsibility.",
+    "E06.03.01.F01": "Routed Parcels are delivered to their prescribed destinations. The resulting handoff state identifies whether the destination accepted responsibility, with accountable participants, correlated outcomes and applicable audit evidence; destination selection or a delivery attempt alone does not establish accepted handoff.",
+    "E06.03.01.F02": "The destination for a Parcel handoff is correctly resolved against the governed routing decision. Destination resolution remains distinct from a delivery attempt and acceptance of responsibility by that destination.",
+    "E06.03.01.F03": "Parcel metadata is faithfully preserved across handoff, retaining the context needed to correlate the routing decision, delivery outcome and transfer of responsibility.",
+    "E06.03.01.F04": "Parcel handoff conforms to the applicable routing policy, distinguishing permitted and nonconforming conditions without treating policy conformance as evidence of accepted responsibility.",
+    "E06.03.01.F05": "An undeliverable Parcel has an explicit, attributable disposition and correlated handoff evidence; failed or uncertain delivery does not become an accepted transfer of responsibility.",
+    "E06.03.03.F03": "Where no valid destination route is available, routing produces an explicit exception and the Parcel remains accounted for.",
+    "E06.03.03.F05": "A routing decision is not represented as evidence of successful delivery or acceptance of responsibility by the destination. Destination selection, delivery attempt and accepted handoff remain distinguishable.",
+    "E06.08.07.F01": "Accepted governed work remains recoverable across the specified failure scenarios. Ergon execution outcomes are processed to determine continuation, subsequent work or failure handling for the enclosing Task while retaining outstanding activity obligations.",
+    "E06.08.07.F02": "Recovered subscriptions have explicit currency and effective-state semantics, preserving their relationship to outstanding activity and Task context when Ergon outcomes are processed after recovery.",
+    "E06.08.07.F03": "Redelivery and repeated offers do not silently create duplicate accepted undertakings. Repeated Ergon outcomes are correlated with their Task and outstanding activities so that continuation does not silently duplicate those undertakings.",
+    "E06.08.07.F04": "Unavailable subscribers do not cause accepted tasks to disappear or become falsely completed. Processing an Ergon completion does not by itself establish activity completion, Task completion or authoritative information commitment.",
+    "E06.08.07.F05": "Publication, match, claim, assignment and eventual outcome remain correlatable across recovery. Ergon outputs and their continuation or failure consequences retain correlation with the enclosing Task and any outstanding activities.",
+    "E06.09.07.F01": "The Twin’s accepted unresolved work survives its own restart. Continuing activities retain their applicable Task context, state and progress; long duration alone does not require an additional Task.",
+    "E06.09.07.F02": "A late progress report can be matched to the correct historical task and current policy. Progress and eventual activity outcomes are reconciled within the applicable Task context, including after offline periods.",
+    "E06.09.07.F03": "Two contradictory completion reports are surfaced rather than arbitrarily collapsed. Ergon completion, activity completion, Task completion and authoritative information commitment remain distinguishable during outcome reconciliation.",
+    "E06.09.07.F04": "Reassignments preserve the prior responsible party and reason, with continuing activity state and correlation retained in the applicable Task context.",
+    "E06.09.07.F05": "Loss of a communication or UI session does not lose a durably accepted task or its outstanding activity obligations. Continuing activity semantics are independent of the particular Stimulus, Effector or implementation mechanism.",
+    "B13.04.02.F01": "Research participant interactions meet the relevant consent and safeguarding conditions. Research information preparation applies appropriate de-identification, pseudonymisation and minimisation while preserving research utility and participants' rights, information and wellbeing.",
+    "B13.04.02.F02": "Research participation and associated information use respect meaningful participant consent and applicable authorisation and disclosure conditions. De-identification or pseudonymisation does not authorise unrestricted disclosure.",
+    "B13.04.02.F03": "Participant risk can be monitored, including in adverse conditions. Research information preparation manages re-identification risks while preserving the utility required for the governed research purpose.",
+    "B13.04.02.F04": "Withdrawal is recognised, with accessible and accurate supporting evidence, and its applicable consequences for research information use and disclosure remain governed.",
+    "B13.04.02.F05": "Adverse events receive an appropriate response, including in adverse conditions, preserving participant safeguarding through research information preparation and use.",
+    "B14.06.01.F01": "Qualifying safeguarding concerns receive appropriate review and protective action. Participant information is protected according to context during authorised access, presentation and disclosure while respecting autonomy.",
+    "B14.06.01.F02": "Abuse and neglect are recognised, including in adverse conditions, with participant information protected according to the safeguarding context. Contextual information protection does not necessarily require de-identification.",
+    "B14.06.01.F03": "Safeguarding concerns can be reported safely, including in adverse conditions, while preserving the applicable consent, authorisation and disclosure conditions for participant information.",
+    "B14.06.01.F04": "Protective responses are appropriate to the participant's circumstances and respect autonomy, with context-sensitive protection of information during access, presentation and disclosure.",
+    "B14.06.01.F05": "Safeguarding concerns receive follow-up, including the continuing applicability of contextual information protections and governed disclosure conditions. The Business outcome does not itself assign every transformation or disclosure decision to Harmonia."
+  },
+  "sr001_transfers": [
+    {
+      "source": "B05.03.04.F01",
+      "targets": ["B05.03.01.F01"],
+      "obligation": "Identify the accountable party explicitly accepting clinical responsibility.",
+      "primary_criterion_target": "B05.03.01.F01"
+    },
+    {
+      "source": "B05.03.04.F02",
+      "targets": ["B05.03.01.F01", "B05.03.01.F04"],
+      "obligation": "Receipt notification does not constitute evidenced acceptance of clinical responsibility.",
+      "primary_criterion_target": "B05.03.01.F01"
+    },
+    {
+      "source": "B05.03.04.F03",
+      "targets": ["B05.03.01.F02"],
+      "obligation": "Each unresolved care obligation retains an accountable next owner.",
+      "primary_criterion_target": "B05.03.01.F02"
+    },
+    {
+      "source": "B05.03.04.F04",
+      "targets": ["B05.03.01.F02", "B05.03.01.F04"],
+      "obligation": "Required transferred care context is available to the receiving party.",
+      "primary_criterion_target": "B05.03.01.F02"
+    },
+    {
+      "source": "B05.03.04.F05",
+      "targets": ["B05.03.01.F05"],
+      "obligation": "Acceptance timing and delay remain independently evidenced and traceable.",
+      "primary_criterion_target": "B05.03.01.F05"
+    }
+  ]
+}

@@ -1,0 +1,3840 @@
+{
+  "authority": "docs/markdown/governance/archimate-ingestion-publication-semantics.md#deterministic-containment-view",
+  "architecture_release": {
+    "version": "1.0.9",
+    "previous_version": "1.0.8"
+  },
+  "containment": {
+    "id-626789f826c5532fbbff5686e3839825": {
+      "source": "id-2b13c6665f7b530fb21b07fd3e80e4ce",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-06c36cc9da8c5ad0b22ec96ff99f45aa",
+        "id-1e0db913564c55f59efd137db390e34f",
+        "id-30d731a19ab6526386b64c335fe3f7fd",
+        "id-c205b4ba14735b29b4f23bd7531d8750",
+        "id-e028d7e513fc5729b370465da8bc4ae8",
+        "id-e24ae17857c6529cb63c0c8d736ca5e7"
+      ],
+      "relationships": [
+        "id-7329514c924f51bc87c086028ec94a3c",
+        "id-7ac5d0986adf52c4b2436c80db92210d",
+        "id-9a08e42bb36c56fb9f20615682732e5f",
+        "id-9a7be5adcef258a2b1d9ded1038e8381",
+        "id-c208ff2976315a1aa167ffa80a5f944d",
+        "id-c3a187b0147754e9bf6aa910aadf7b28"
+      ]
+    },
+    "id-cef762b028f6513fa7fc3fbcca0bd703": {
+      "source": "id-2b13c6665f7b530fb21b07fd3e80e4ce",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-06c36cc9da8c5ad0b22ec96ff99f45aa",
+        "id-1e0db913564c55f59efd137db390e34f",
+        "id-30d731a19ab6526386b64c335fe3f7fd",
+        "id-c205b4ba14735b29b4f23bd7531d8750",
+        "id-e028d7e513fc5729b370465da8bc4ae8",
+        "id-e24ae17857c6529cb63c0c8d736ca5e7"
+      ],
+      "relationships": [
+        "id-7329514c924f51bc87c086028ec94a3c",
+        "id-7ac5d0986adf52c4b2436c80db92210d",
+        "id-9a08e42bb36c56fb9f20615682732e5f",
+        "id-9a7be5adcef258a2b1d9ded1038e8381",
+        "id-c208ff2976315a1aa167ffa80a5f944d",
+        "id-c3a187b0147754e9bf6aa910aadf7b28"
+      ]
+    },
+    "id-0d85800c26445f85a6e90c051a6f5485": {
+      "source": "id-c205b4ba14735b29b4f23bd7531d8750",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-697b75a82c515e48b6ba8de37109dc7f",
+        "id-abe9e3230f6d5577a13fca453e624a85",
+        "id-b003aaadcd6059e6b6ee2c683437017a"
+      ],
+      "relationships": [
+        "id-3e4e3123b6715136b872df5aab03b76d",
+        "id-7cbfdc30b5085ceda75969573c997922",
+        "id-7e64f25dc5d856b9ab257b6d8275c48d"
+      ]
+    },
+    "id-8f0d3ae7e3a357cab860193b1059fe4d": {
+      "source": "id-c205b4ba14735b29b4f23bd7531d8750",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-697b75a82c515e48b6ba8de37109dc7f",
+        "id-abe9e3230f6d5577a13fca453e624a85",
+        "id-b003aaadcd6059e6b6ee2c683437017a"
+      ],
+      "relationships": [
+        "id-3e4e3123b6715136b872df5aab03b76d",
+        "id-7cbfdc30b5085ceda75969573c997922",
+        "id-7e64f25dc5d856b9ab257b6d8275c48d"
+      ]
+    },
+    "id-d50734d29587574898a17a00d2042bb2": {
+      "source": "id-e028d7e513fc5729b370465da8bc4ae8",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0c22ff432234514c88760d28241e3a44",
+        "id-246a682df0be5a21a11b800c51461501",
+        "id-94f7aff6888a52d08db90e33e52c3fd3"
+      ],
+      "relationships": [
+        "id-a16dbba90f18574784d51f4767dd24c7",
+        "id-a540ef12efe05793bdf80025f610d1a0",
+        "id-b6cd0eeb993158dd90d987ef3883ab94"
+      ]
+    },
+    "id-888b570c44a45d7daa89c61be64e055e": {
+      "source": "id-e028d7e513fc5729b370465da8bc4ae8",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0c22ff432234514c88760d28241e3a44",
+        "id-246a682df0be5a21a11b800c51461501",
+        "id-94f7aff6888a52d08db90e33e52c3fd3"
+      ],
+      "relationships": [
+        "id-a16dbba90f18574784d51f4767dd24c7",
+        "id-a540ef12efe05793bdf80025f610d1a0",
+        "id-b6cd0eeb993158dd90d987ef3883ab94"
+      ]
+    },
+    "id-7e421c323ea15e58b2bfac02dca5ad54": {
+      "source": "id-e24ae17857c6529cb63c0c8d736ca5e7",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2d8ad28ce73e58448e5456abe7a8b9a0",
+        "id-c45b599ec97b544d8049f3bbc65859ca"
+      ],
+      "relationships": [
+        "id-5c0f34c07ab754d9af83d77d66383dd3",
+        "id-946ea046978e5ff78d23c785725c9918"
+      ]
+    },
+    "id-2e9f57ef887452ccb3585ab357964207": {
+      "source": "id-e24ae17857c6529cb63c0c8d736ca5e7",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2d8ad28ce73e58448e5456abe7a8b9a0",
+        "id-c45b599ec97b544d8049f3bbc65859ca"
+      ],
+      "relationships": [
+        "id-5c0f34c07ab754d9af83d77d66383dd3",
+        "id-946ea046978e5ff78d23c785725c9918"
+      ]
+    },
+    "id-812f5e9604f65044a5941f70bf07592f": {
+      "source": "id-30d731a19ab6526386b64c335fe3f7fd",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-7b61bd19dedf5e5aa7be430196c5573b",
+        "id-e24ada9f97a351f09911b66311963637"
+      ],
+      "relationships": [
+        "id-69d0d96e632b551fa49aad9e33406b12",
+        "id-9250fbed06365186a25da005e0ae9bf7"
+      ]
+    },
+    "id-3e867579268e5f0287d91d19e187fd02": {
+      "source": "id-30d731a19ab6526386b64c335fe3f7fd",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-7b61bd19dedf5e5aa7be430196c5573b",
+        "id-e24ada9f97a351f09911b66311963637"
+      ],
+      "relationships": [
+        "id-69d0d96e632b551fa49aad9e33406b12",
+        "id-9250fbed06365186a25da005e0ae9bf7"
+      ]
+    },
+    "id-d33266344c0955819624df7e04e28542": {
+      "source": "id-1e0db913564c55f59efd137db390e34f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-ad157f6fab0a5a8f94826cbe973f4946",
+        "id-dfa6322afd30598fb230e2d13f063d12"
+      ],
+      "relationships": [
+        "id-296f89401df555248fdb86c283a962c1",
+        "id-31490c807a82570592103425caaa43be"
+      ]
+    },
+    "id-df3662d827c0531c9d9f39f6e6b39de8": {
+      "source": "id-1e0db913564c55f59efd137db390e34f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-ad157f6fab0a5a8f94826cbe973f4946",
+        "id-dfa6322afd30598fb230e2d13f063d12"
+      ],
+      "relationships": [
+        "id-296f89401df555248fdb86c283a962c1",
+        "id-31490c807a82570592103425caaa43be"
+      ]
+    },
+    "id-f539cb219b9f5e0c8acbb4ed1fe5666b": {
+      "source": "id-e978dad02c4156938c03ac4b2d34e0c0",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-3ffe8db4705855b587349b8bf949f469",
+        "id-5abfc42605a55d9da4808dc3b3688708",
+        "id-645223e49d535a3ab69d95f865826bf7",
+        "id-76f2314e316c589083817b8d38b9f3ea",
+        "id-d7535b3161b65b9090c0af102f90b0d5"
+      ],
+      "relationships": [
+        "id-7828244ea17f5dec9a3939476f845d2c",
+        "id-7db01054981e5554812a87822febe89f",
+        "id-8b36c1cbdea658349ec1f736c7e976fe",
+        "id-d01ce059def75cb6808686687a89a6bb",
+        "id-eb8197d9a30759909eaa08880d187720"
+      ]
+    },
+    "id-9abf0bfac8e45ee88381796701cf6ffd": {
+      "source": "id-e978dad02c4156938c03ac4b2d34e0c0",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-3ffe8db4705855b587349b8bf949f469",
+        "id-5abfc42605a55d9da4808dc3b3688708",
+        "id-645223e49d535a3ab69d95f865826bf7",
+        "id-76f2314e316c589083817b8d38b9f3ea",
+        "id-d7535b3161b65b9090c0af102f90b0d5"
+      ],
+      "relationships": [
+        "id-7828244ea17f5dec9a3939476f845d2c",
+        "id-7db01054981e5554812a87822febe89f",
+        "id-8b36c1cbdea658349ec1f736c7e976fe",
+        "id-d01ce059def75cb6808686687a89a6bb",
+        "id-eb8197d9a30759909eaa08880d187720"
+      ]
+    },
+    "id-d30ad3ef6f42580cb0232c9ff737e6a1": {
+      "source": "id-ccc1bb332db751828feb9f8b4a4ee49b",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-231038e9a4565b83b18bb6e0f39e8d98",
+        "id-57698404473a5412bc6bb5f1e7f0230d"
+      ],
+      "relationships": [
+        "id-9c085da208645ecfa002a298d278af1e",
+        "id-f3b8292aafa257d694f3a224818775d3"
+      ]
+    },
+    "id-47230567db255adfb56f0d0c4671f8d0": {
+      "source": "id-ccc1bb332db751828feb9f8b4a4ee49b",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-231038e9a4565b83b18bb6e0f39e8d98",
+        "id-57698404473a5412bc6bb5f1e7f0230d"
+      ],
+      "relationships": [
+        "id-9c085da208645ecfa002a298d278af1e",
+        "id-f3b8292aafa257d694f3a224818775d3"
+      ]
+    },
+    "id-bb89f6a3373a56f2856f7ab55ec4f95a": {
+      "source": "id-06479aa74b3554608b6305af19064390",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-63b57eb4fcb458f6a7e0a8394bdfb606"
+      ],
+      "relationships": [
+        "id-df0af3d386815af99108374d4ca2b68f"
+      ]
+    },
+    "id-9cc7069ba53c5241b6229f6d8c321933": {
+      "source": "id-06479aa74b3554608b6305af19064390",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-63b57eb4fcb458f6a7e0a8394bdfb606"
+      ],
+      "relationships": [
+        "id-df0af3d386815af99108374d4ca2b68f"
+      ]
+    },
+    "id-e71901cf12e75b8a8c9ff587c79a4cec": {
+      "source": "id-1966794a16a75e03a984971281f020e8",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-354b3f173afe530c8ff123c2a01b51fb",
+        "id-cf5dcdc3ef505f91906dbc1eb61a469c"
+      ],
+      "relationships": [
+        "id-88005a9a99265720883ee663c82954eb",
+        "id-c320515ea0ba530699cb82a892c1872b"
+      ]
+    },
+    "id-3d70857370865ba7ad927691cda2fd3d": {
+      "source": "id-1966794a16a75e03a984971281f020e8",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-354b3f173afe530c8ff123c2a01b51fb",
+        "id-cf5dcdc3ef505f91906dbc1eb61a469c"
+      ],
+      "relationships": [
+        "id-88005a9a99265720883ee663c82954eb",
+        "id-c320515ea0ba530699cb82a892c1872b"
+      ]
+    },
+    "id-c5c29af786c65f9fb03de984d19ac75f": {
+      "source": "id-2456cb6acb345c4c9f2ce404c69e8a2e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-f383763eeeb6577bb01125fad97c5075"
+      ],
+      "relationships": [
+        "id-bb4cb33c742e514e855282170d0de8a5"
+      ]
+    },
+    "id-3ea7ddd8c3b3571c9864347b91cfa3f3": {
+      "source": "id-2456cb6acb345c4c9f2ce404c69e8a2e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-f383763eeeb6577bb01125fad97c5075"
+      ],
+      "relationships": [
+        "id-bb4cb33c742e514e855282170d0de8a5"
+      ]
+    },
+    "id-ea8cc88ff9f150999317c9cfcfee9909": {
+      "source": "id-3dc006e536ce50b3acdc8f625eccb36d",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-b77562f343435bef95c6cadcd10e216c",
+        "id-e30b9d5e5fa9522681e1b22c1d6ebcab"
+      ],
+      "relationships": [
+        "id-091aa397a6f6553691e7bd2b1a739c3b",
+        "id-2bb5bb79028e5b66bfcdb05e57797fad"
+      ]
+    },
+    "id-95e3c11799c45b13a9eef860dc35d2e4": {
+      "source": "id-3dc006e536ce50b3acdc8f625eccb36d",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-b77562f343435bef95c6cadcd10e216c",
+        "id-e30b9d5e5fa9522681e1b22c1d6ebcab"
+      ],
+      "relationships": [
+        "id-091aa397a6f6553691e7bd2b1a739c3b",
+        "id-2bb5bb79028e5b66bfcdb05e57797fad"
+      ]
+    },
+    "id-8a48408259db51c085529ec4d65ec239": {
+      "source": "id-593d0a2ec7f6521383b23ef03ca092ef",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-146ce7bf9faa57199f6b2f05c6a2e63d",
+        "id-5fc96b9106c85899953f0b0471689e42"
+      ],
+      "relationships": [
+        "id-255685b971575056ad6f0a8df93a59dd",
+        "id-88c8a7e2afa35e898bb5cb6fce86743e"
+      ]
+    },
+    "id-e45ef782f528529f843b06c4bd7e3145": {
+      "source": "id-593d0a2ec7f6521383b23ef03ca092ef",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-146ce7bf9faa57199f6b2f05c6a2e63d",
+        "id-5fc96b9106c85899953f0b0471689e42"
+      ],
+      "relationships": [
+        "id-255685b971575056ad6f0a8df93a59dd",
+        "id-88c8a7e2afa35e898bb5cb6fce86743e"
+      ]
+    },
+    "id-95f266a8191052d6b7efd61a55426365": {
+      "source": "id-fda046325ae0544ea6b6f2ecc18643eb",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-1063c969a10f5c0fa332b192aae77a77",
+        "id-df9ca2c4f85051b982eb433a6dae6f4b"
+      ],
+      "relationships": [
+        "id-2c33ab3d5dcf5d03907ac8ea21aec972",
+        "id-669d2e84ee8b506f8f751f75be17f4bc"
+      ]
+    },
+    "id-490e929554915d0e934bfd96b7d904d7": {
+      "source": "id-fda046325ae0544ea6b6f2ecc18643eb",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-1063c969a10f5c0fa332b192aae77a77",
+        "id-df9ca2c4f85051b982eb433a6dae6f4b"
+      ],
+      "relationships": [
+        "id-2c33ab3d5dcf5d03907ac8ea21aec972",
+        "id-669d2e84ee8b506f8f751f75be17f4bc"
+      ]
+    },
+    "id-1b71c0cbdd135441b3960a2961f53a7e": {
+      "source": "id-72ef59102ac75c2dad5ed5631107f6cd",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2134969d36665649a7d61fcea20bc15f",
+        "id-69970b9c42b256a0ae2eb697c3767796"
+      ],
+      "relationships": [
+        "id-16208de602f659f9a03ea48884eae09e",
+        "id-323f6d2887fd50e994a94f4d6fe284bf"
+      ]
+    },
+    "id-0928cc0b526f528e91124cd0641c174f": {
+      "source": "id-72ef59102ac75c2dad5ed5631107f6cd",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2134969d36665649a7d61fcea20bc15f",
+        "id-69970b9c42b256a0ae2eb697c3767796"
+      ],
+      "relationships": [
+        "id-16208de602f659f9a03ea48884eae09e",
+        "id-323f6d2887fd50e994a94f4d6fe284bf"
+      ]
+    },
+    "id-13053e5ae12b51428909594331c6a42c": {
+      "source": "id-c0d03ba4c03c57d9bd03b36ec9a15f61",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-3f3f1816206a57ceaccc2a3b8e6d126b",
+        "id-53b97ecf9a185c309bf2f6fadd74e527",
+        "id-c9d1ebe2bd675841a70e6e3c1bb5a1d7"
+      ],
+      "relationships": [
+        "id-6fbc6ec3c32956fc881f30baa77f15fc",
+        "id-83933f39c3b452a598d77a6749127108",
+        "id-e4368d76d1545ad8b67e28a0bc47c61b"
+      ]
+    },
+    "id-2e2827825c525071874cbb973b75b26d": {
+      "source": "id-c0d03ba4c03c57d9bd03b36ec9a15f61",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-3f3f1816206a57ceaccc2a3b8e6d126b",
+        "id-53b97ecf9a185c309bf2f6fadd74e527",
+        "id-c9d1ebe2bd675841a70e6e3c1bb5a1d7"
+      ],
+      "relationships": [
+        "id-6fbc6ec3c32956fc881f30baa77f15fc",
+        "id-83933f39c3b452a598d77a6749127108",
+        "id-e4368d76d1545ad8b67e28a0bc47c61b"
+      ]
+    },
+    "id-0ab0fedb920255afa5ddb94ebe8413b0": {
+      "source": "id-aae6d53e02cf5c689376034a9078b6f9",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-3a606ade585a5938971ee858eec584a2",
+        "id-50b36409f6b55504a198330f760ef888"
+      ],
+      "relationships": [
+        "id-7b4e68b12ca65e53b6a94dc9f8c68a9a",
+        "id-7ea07747c47c5729bd53fb29ff42719c"
+      ]
+    },
+    "id-323ea7a0b47a5f0bac21a75aef7b5ce8": {
+      "source": "id-aae6d53e02cf5c689376034a9078b6f9",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-3a606ade585a5938971ee858eec584a2",
+        "id-50b36409f6b55504a198330f760ef888"
+      ],
+      "relationships": [
+        "id-7b4e68b12ca65e53b6a94dc9f8c68a9a",
+        "id-7ea07747c47c5729bd53fb29ff42719c"
+      ]
+    },
+    "id-a91579659862553abad4381e776ac325": {
+      "source": "id-e6f4c5945b5b560599bdc95bb2589fb1",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-51689808d64b561a8041fe1b48bf3b01",
+        "id-a72e1eab6d6551e0b387e09c0ce9897e"
+      ],
+      "relationships": [
+        "id-7a4da95cc3845d8998a1690266a2a94a",
+        "id-f7d115e713715e689241826b99a987a4"
+      ]
+    },
+    "id-cfec818cf722563db288bd71f787b794": {
+      "source": "id-e6f4c5945b5b560599bdc95bb2589fb1",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-51689808d64b561a8041fe1b48bf3b01",
+        "id-a72e1eab6d6551e0b387e09c0ce9897e"
+      ],
+      "relationships": [
+        "id-7a4da95cc3845d8998a1690266a2a94a",
+        "id-f7d115e713715e689241826b99a987a4"
+      ]
+    },
+    "id-2b8a45c7cfff562798ef0dcc2b9b9657": {
+      "source": "id-a689bff5b2065570ba3d6a9d18f2aaf5",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-1e1cfa1c48e35db38def767e986ea56e",
+        "id-3f8f2e7a1e035b48b5d384db99054cce"
+      ],
+      "relationships": [
+        "id-38ab71850a5155b0b1789e9527367757",
+        "id-4bf054ed2c36594f9e9b10ca4279d8ba"
+      ]
+    },
+    "id-cdf0ba7052ea54639a140b7c04169817": {
+      "source": "id-a689bff5b2065570ba3d6a9d18f2aaf5",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-1e1cfa1c48e35db38def767e986ea56e",
+        "id-3f8f2e7a1e035b48b5d384db99054cce"
+      ],
+      "relationships": [
+        "id-38ab71850a5155b0b1789e9527367757",
+        "id-4bf054ed2c36594f9e9b10ca4279d8ba"
+      ]
+    },
+    "id-45c557c9d9df54398ea2b39dc9ef7d9e": {
+      "source": "id-ef8e56b261f959e6a7c3b299d43797d3",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-d8bd52f72b215fa795b82e4319a9b5bb",
+        "id-e7bf675c1f9f55e6a0c289210e0c2e81"
+      ],
+      "relationships": [
+        "id-8fabf6467e8b5aa7ad7efaae4d07ce99",
+        "id-fb37a01280f35823b4810672e792f2ec"
+      ]
+    },
+    "id-b1155306273c54f9b019334e65801f86": {
+      "source": "id-ef8e56b261f959e6a7c3b299d43797d3",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-d8bd52f72b215fa795b82e4319a9b5bb",
+        "id-e7bf675c1f9f55e6a0c289210e0c2e81"
+      ],
+      "relationships": [
+        "id-8fabf6467e8b5aa7ad7efaae4d07ce99",
+        "id-fb37a01280f35823b4810672e792f2ec"
+      ]
+    },
+    "id-f95c371c3fae56658b38d01d5567982d": {
+      "source": "id-74e288077f4356d281d9b4412c793e73",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-31c38c7c37fd5b19bf446b9937406be5",
+        "id-cb87b0ba8417587ebc94321210dbc9cf"
+      ],
+      "relationships": [
+        "id-786b218128fb54268233e0073d9ef460",
+        "id-ea2ab35939a45c87a84fb4484ab1517d"
+      ]
+    },
+    "id-e13d6a97e3f65537ab486c261bf57915": {
+      "source": "id-74e288077f4356d281d9b4412c793e73",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-31c38c7c37fd5b19bf446b9937406be5",
+        "id-cb87b0ba8417587ebc94321210dbc9cf"
+      ],
+      "relationships": [
+        "id-786b218128fb54268233e0073d9ef460",
+        "id-ea2ab35939a45c87a84fb4484ab1517d"
+      ]
+    },
+    "id-b5ee5541043257379ff60b06fae03620": {
+      "source": "id-e96366b568cc5e83a427548b52fa57e7",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-86f3196b695d595a9ce1480605378088",
+        "id-fe48e4fa8a025194ad49cc197a83d502"
+      ],
+      "relationships": [
+        "id-5530903cabfe50228dde2317c96ed402",
+        "id-85621c6019895b0180a85aaf7374d2d2"
+      ]
+    },
+    "id-c45de87e61355dc09c28f890f6440aad": {
+      "source": "id-e96366b568cc5e83a427548b52fa57e7",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-86f3196b695d595a9ce1480605378088",
+        "id-fe48e4fa8a025194ad49cc197a83d502"
+      ],
+      "relationships": [
+        "id-5530903cabfe50228dde2317c96ed402",
+        "id-85621c6019895b0180a85aaf7374d2d2"
+      ]
+    },
+    "id-8606449f93455f14b02040481052fd4a": {
+      "source": "id-3ffe8db4705855b587349b8bf949f469",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2c9e89d0cee75ce3a1a2e6ff62449a74",
+        "id-53444359e5665b29817e1bf2198ed57a",
+        "id-8850d02455155526bb82a3317a3e7966"
+      ],
+      "relationships": [
+        "id-1209eaa5c8a75312bfd963390edf41ba",
+        "id-158fd196a6465174856a02b537aa8162",
+        "id-f2d1e35a012d54749eb9321baab2f87b"
+      ]
+    },
+    "id-dc13f9fb5fda51f5bfbf86afbff20d49": {
+      "source": "id-3ffe8db4705855b587349b8bf949f469",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2c9e89d0cee75ce3a1a2e6ff62449a74",
+        "id-53444359e5665b29817e1bf2198ed57a",
+        "id-8850d02455155526bb82a3317a3e7966"
+      ],
+      "relationships": [
+        "id-1209eaa5c8a75312bfd963390edf41ba",
+        "id-158fd196a6465174856a02b537aa8162",
+        "id-f2d1e35a012d54749eb9321baab2f87b"
+      ]
+    },
+    "id-dc1804a0980d560783d6f3030d97444e": {
+      "source": "id-d7535b3161b65b9090c0af102f90b0d5",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-040505098b205e8db531a93757549c7d",
+        "id-34cfdfaefd4b52a9b58219b9a6227604",
+        "id-ac1518843b8359b18ed7500763ad836d",
+        "id-ad4cadf7fe205a499f487d5aec98ba4f",
+        "id-b9cdfa1c4c27554f92b4165837b8a362",
+        "id-fb15438e5dad5d19af167c1e064ff34a"
+      ],
+      "relationships": [
+        "id-100d6527f69858e4962e91e35d4d906f",
+        "id-29e291f63f69508f81721dd7f073d0e6",
+        "id-73bae3fe5f53564ab671bea5c085e73a",
+        "id-bdbbff020b0a5d028d6d869d443273ec",
+        "id-d5dc236f8d7658769d5462173aa8c60c",
+        "id-f03eb380e67558398c59ef42dd48b747"
+      ]
+    },
+    "id-29d6080979805579a33bcc0cb8ce9e77": {
+      "source": "id-d7535b3161b65b9090c0af102f90b0d5",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-040505098b205e8db531a93757549c7d",
+        "id-34cfdfaefd4b52a9b58219b9a6227604",
+        "id-ac1518843b8359b18ed7500763ad836d",
+        "id-ad4cadf7fe205a499f487d5aec98ba4f",
+        "id-b9cdfa1c4c27554f92b4165837b8a362",
+        "id-fb15438e5dad5d19af167c1e064ff34a"
+      ],
+      "relationships": [
+        "id-100d6527f69858e4962e91e35d4d906f",
+        "id-29e291f63f69508f81721dd7f073d0e6",
+        "id-73bae3fe5f53564ab671bea5c085e73a",
+        "id-bdbbff020b0a5d028d6d869d443273ec",
+        "id-d5dc236f8d7658769d5462173aa8c60c",
+        "id-f03eb380e67558398c59ef42dd48b747"
+      ]
+    },
+    "id-14b34b56a12e5b649f73207bd94746d2": {
+      "source": "id-76f2314e316c589083817b8d38b9f3ea",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-ab93bc6a6a505bad807ff053ff2c3cb3",
+        "id-e18ec168543758bf92bf61b2a0edf5b2",
+        "id-e4d13d2f89595e61a5190d63673c8051"
+      ],
+      "relationships": [
+        "id-01777315b3a454a897b9f99dd2756886",
+        "id-18d64ab100f05f2b8158cf02e27c2a87",
+        "id-7f3540b572aa54deb0c0de3b813cf226"
+      ]
+    },
+    "id-0e62a174f45b576a91dd4a2d7fd687e0": {
+      "source": "id-76f2314e316c589083817b8d38b9f3ea",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-ab93bc6a6a505bad807ff053ff2c3cb3",
+        "id-e18ec168543758bf92bf61b2a0edf5b2",
+        "id-e4d13d2f89595e61a5190d63673c8051"
+      ],
+      "relationships": [
+        "id-01777315b3a454a897b9f99dd2756886",
+        "id-18d64ab100f05f2b8158cf02e27c2a87",
+        "id-7f3540b572aa54deb0c0de3b813cf226"
+      ]
+    },
+    "id-b5f1d206c5da560f893b78192aab4dcb": {
+      "source": "id-645223e49d535a3ab69d95f865826bf7",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-5498ead3fc4852cb8d4e12c5010f3e9e",
+        "id-a895e887fe115faa9c303cf60916173a",
+        "id-b224448612cb5d62bbce730c2a84fb08"
+      ],
+      "relationships": [
+        "id-7ddcb03c937a5a4280b1bbef15c055b8",
+        "id-991cd4e3186e50f58a7aeb5346fa261f",
+        "id-c6534fa975ba5d8b96ba3b53721b896c"
+      ]
+    },
+    "id-bbeb1af5484e5e58a86400345e65b91c": {
+      "source": "id-645223e49d535a3ab69d95f865826bf7",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-5498ead3fc4852cb8d4e12c5010f3e9e",
+        "id-a895e887fe115faa9c303cf60916173a",
+        "id-b224448612cb5d62bbce730c2a84fb08"
+      ],
+      "relationships": [
+        "id-7ddcb03c937a5a4280b1bbef15c055b8",
+        "id-991cd4e3186e50f58a7aeb5346fa261f",
+        "id-c6534fa975ba5d8b96ba3b53721b896c"
+      ]
+    },
+    "id-0d95122931755330b931def5f6645384": {
+      "source": "id-57698404473a5412bc6bb5f1e7f0230d",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2639d5cab85d50eea6e13b397f9255d6",
+        "id-590de53fba7f53b18766b507fe3952df",
+        "id-5db277707e1f50fab4fc4ce1c9dddaba",
+        "id-7696a9fe8110555a86684f99345ad30f",
+        "id-bd52520eecc15d55b22866aee1a3c819",
+        "id-d5b1d7f0358b5ce095b5a56df9c07714",
+        "id-d798c8f902f45a40a16f1f6c5c50d79e"
+      ],
+      "relationships": [
+        "id-1341e78ec7ce5eac86fc1480ab89b2ca",
+        "id-4b4f0f3a148b5c3a87ce8b27c356ec81",
+        "id-694e828bbd1e567c91bd707232ec1666",
+        "id-7c051e2a50315d7da38dc040085de62e",
+        "id-bbafff9640a55d409da86bcb850a3d98",
+        "id-e9dbac6697f15d3ab9669dfa89fdbbd2",
+        "id-f7870ff020065a07ac3cb1b66fcb5166"
+      ]
+    },
+    "id-6c320d7f06765b97b5ff7239e573378d": {
+      "source": "id-57698404473a5412bc6bb5f1e7f0230d",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2639d5cab85d50eea6e13b397f9255d6",
+        "id-590de53fba7f53b18766b507fe3952df",
+        "id-5db277707e1f50fab4fc4ce1c9dddaba",
+        "id-7696a9fe8110555a86684f99345ad30f",
+        "id-bd52520eecc15d55b22866aee1a3c819",
+        "id-d5b1d7f0358b5ce095b5a56df9c07714",
+        "id-d798c8f902f45a40a16f1f6c5c50d79e"
+      ],
+      "relationships": [
+        "id-1341e78ec7ce5eac86fc1480ab89b2ca",
+        "id-4b4f0f3a148b5c3a87ce8b27c356ec81",
+        "id-694e828bbd1e567c91bd707232ec1666",
+        "id-7c051e2a50315d7da38dc040085de62e",
+        "id-bbafff9640a55d409da86bcb850a3d98",
+        "id-e9dbac6697f15d3ab9669dfa89fdbbd2",
+        "id-f7870ff020065a07ac3cb1b66fcb5166"
+      ]
+    },
+    "id-693477627f4551df9c3fca87d8874e53": {
+      "source": "id-231038e9a4565b83b18bb6e0f39e8d98",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-64b219d99dbd55af98af1d87b7ee4f5e",
+        "id-6c8a8c7d0d8f51f8982e57af660d1033",
+        "id-710e6b63b34f5919a25a78c6591ce61b",
+        "id-b83111228d98546a97d1f6a1ad0387ad",
+        "id-e6f04439399a50f395bc63f6d32a4a20"
+      ],
+      "relationships": [
+        "id-03e0a0dddcdb508aaba1c3f0f6f3e619",
+        "id-20e48881399b5d26bc0a50aaf906fa7e",
+        "id-3dd823c7975955c8875ab79af6b172c6",
+        "id-45961d7e13255dc583188b3bf3361e81",
+        "id-c4e55d3140275b4295f77dfa1a46ce4d"
+      ]
+    },
+    "id-23a6595b45495b6f8a7dbcfb0cddc6ef": {
+      "source": "id-231038e9a4565b83b18bb6e0f39e8d98",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-64b219d99dbd55af98af1d87b7ee4f5e",
+        "id-6c8a8c7d0d8f51f8982e57af660d1033",
+        "id-710e6b63b34f5919a25a78c6591ce61b",
+        "id-b83111228d98546a97d1f6a1ad0387ad",
+        "id-e6f04439399a50f395bc63f6d32a4a20"
+      ],
+      "relationships": [
+        "id-03e0a0dddcdb508aaba1c3f0f6f3e619",
+        "id-20e48881399b5d26bc0a50aaf906fa7e",
+        "id-3dd823c7975955c8875ab79af6b172c6",
+        "id-45961d7e13255dc583188b3bf3361e81",
+        "id-c4e55d3140275b4295f77dfa1a46ce4d"
+      ]
+    },
+    "id-fa868336acaa5fc8909d2d81e943273a": {
+      "source": "id-63b57eb4fcb458f6a7e0a8394bdfb606",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0d84a2b521425bfbaed489694ff00323",
+        "id-2ce5b7402493530699b6bf9f6ea83d71",
+        "id-36db1e018d39579e86ed2a2d638ffafc",
+        "id-64523cf9b3a850c0986ad84f59880fb8",
+        "id-7218b8cce3dd59beafac830a7ffaba9f",
+        "id-9a98e5b1b7f05f67b2a43383e5e996da",
+        "id-ac89b649b2045f1f9a228857bc828d26",
+        "id-de61ba0f4b035f648ed61bfb9552a476"
+      ],
+      "relationships": [
+        "id-179de51578115be69294433af57bc2cc",
+        "id-49ecafee03d6528b8e566c517636f37b",
+        "id-8bbbfa31462a5391a241d799ecd34da5",
+        "id-b6069d206f1b5072983aced649b25def",
+        "id-c7ef013af72858f2899fea3922161de4",
+        "id-d038b29a8e8b580e93f5907fd2c1b750",
+        "id-df5e67fb47fa52b484ab8d2c617c6533",
+        "id-eadec6c451995c0ebecca1995308fa29"
+      ]
+    },
+    "id-0b1dd65c9d3057368e28e13c44bf3c88": {
+      "source": "id-63b57eb4fcb458f6a7e0a8394bdfb606",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0d84a2b521425bfbaed489694ff00323",
+        "id-2ce5b7402493530699b6bf9f6ea83d71",
+        "id-36db1e018d39579e86ed2a2d638ffafc",
+        "id-64523cf9b3a850c0986ad84f59880fb8",
+        "id-7218b8cce3dd59beafac830a7ffaba9f",
+        "id-9a98e5b1b7f05f67b2a43383e5e996da",
+        "id-ac89b649b2045f1f9a228857bc828d26",
+        "id-de61ba0f4b035f648ed61bfb9552a476"
+      ],
+      "relationships": [
+        "id-179de51578115be69294433af57bc2cc",
+        "id-49ecafee03d6528b8e566c517636f37b",
+        "id-8bbbfa31462a5391a241d799ecd34da5",
+        "id-b6069d206f1b5072983aced649b25def",
+        "id-c7ef013af72858f2899fea3922161de4",
+        "id-d038b29a8e8b580e93f5907fd2c1b750",
+        "id-df5e67fb47fa52b484ab8d2c617c6533",
+        "id-eadec6c451995c0ebecca1995308fa29"
+      ]
+    },
+    "id-797ee74678e8542798697ea26ab07712": {
+      "source": "id-354b3f173afe530c8ff123c2a01b51fb",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-e85728e190e25bb488c845e6e92016a4",
+        "id-f4c49bf8522555c9aead252c0f829e25",
+        "id-f8ecf9800e2451508fc9c7a43d0bc920"
+      ],
+      "relationships": [
+        "id-84006fcc8bf2546cb9dde04afa3df56d",
+        "id-d10b7bbb04e453338746d681804c7349",
+        "id-f9636cfe36b8521abcec693cf24b7bbf"
+      ]
+    },
+    "id-21ac487a2ee55f75a630d106c5f8bacb": {
+      "source": "id-354b3f173afe530c8ff123c2a01b51fb",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-e85728e190e25bb488c845e6e92016a4",
+        "id-f4c49bf8522555c9aead252c0f829e25",
+        "id-f8ecf9800e2451508fc9c7a43d0bc920"
+      ],
+      "relationships": [
+        "id-84006fcc8bf2546cb9dde04afa3df56d",
+        "id-d10b7bbb04e453338746d681804c7349",
+        "id-f9636cfe36b8521abcec693cf24b7bbf"
+      ]
+    },
+    "id-0d4961971a455b3089a6bc8768c562bd": {
+      "source": "id-cf5dcdc3ef505f91906dbc1eb61a469c",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0d3beb2699a45eb081120d317f4a9a33",
+        "id-2e79b5737c3b5cfdbc86b901d77cd21c",
+        "id-c08e4d5e84485cfb920455ac3e20ed0c",
+        "id-f913c25edca8547fa47e0a6382936f18"
+      ],
+      "relationships": [
+        "id-3f78abcaa0d8531d871906ef09c713fd",
+        "id-5fc818da4a7e5ba2bee9265af1a66e0a",
+        "id-f13c6116e5315c4c8e2f8e19b62f1748",
+        "id-f6be4543ab4152bfad497aaa6da595fe"
+      ]
+    },
+    "id-9ad94dda1c9754acb644a09e69fd7e88": {
+      "source": "id-cf5dcdc3ef505f91906dbc1eb61a469c",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0d3beb2699a45eb081120d317f4a9a33",
+        "id-2e79b5737c3b5cfdbc86b901d77cd21c",
+        "id-c08e4d5e84485cfb920455ac3e20ed0c",
+        "id-f913c25edca8547fa47e0a6382936f18"
+      ],
+      "relationships": [
+        "id-3f78abcaa0d8531d871906ef09c713fd",
+        "id-5fc818da4a7e5ba2bee9265af1a66e0a",
+        "id-f13c6116e5315c4c8e2f8e19b62f1748",
+        "id-f6be4543ab4152bfad497aaa6da595fe"
+      ]
+    },
+    "id-251fd05edfd650acb94b9c8bca24f07d": {
+      "source": "id-f383763eeeb6577bb01125fad97c5075",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-210f08cf0a7e50a4b6515b7c25be2bf5",
+        "id-2353057b450154eda7dddfb4ea6b088f",
+        "id-6edcb625bec25de7b04c55e5f651ced8",
+        "id-a8aaef5643875dc0b4f7b5b85e1aed1a",
+        "id-d328fb8f811d551699099f3f2a6e1f43",
+        "id-f53321c902e4521ba2fd87e1b18260c1"
+      ],
+      "relationships": [
+        "id-054ac6eb3cc65ab1b1c68cc85d932701",
+        "id-314f3763c92652b18993c47b613ac24f",
+        "id-33467299475551feaf57dd5b77ee67c4",
+        "id-86eed6afd2c057c39fbc870a87f78f66",
+        "id-d93d0a6af695533c8d75633a1035070e",
+        "id-e529daa01ec953fb851ac920297fe27e"
+      ]
+    },
+    "id-2f4837e8f04559939e5905b8f2386e15": {
+      "source": "id-f383763eeeb6577bb01125fad97c5075",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-210f08cf0a7e50a4b6515b7c25be2bf5",
+        "id-2353057b450154eda7dddfb4ea6b088f",
+        "id-6edcb625bec25de7b04c55e5f651ced8",
+        "id-a8aaef5643875dc0b4f7b5b85e1aed1a",
+        "id-d328fb8f811d551699099f3f2a6e1f43",
+        "id-f53321c902e4521ba2fd87e1b18260c1"
+      ],
+      "relationships": [
+        "id-054ac6eb3cc65ab1b1c68cc85d932701",
+        "id-314f3763c92652b18993c47b613ac24f",
+        "id-33467299475551feaf57dd5b77ee67c4",
+        "id-86eed6afd2c057c39fbc870a87f78f66",
+        "id-d93d0a6af695533c8d75633a1035070e",
+        "id-e529daa01ec953fb851ac920297fe27e"
+      ]
+    },
+    "id-9ca14f6c28a1555da8fb25c3b380957d": {
+      "source": "id-e30b9d5e5fa9522681e1b22c1d6ebcab",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-62f15df98fda5574a39e62b40dea0e22",
+        "id-9c26415a3cfa59b9ae69b8d20d381651",
+        "id-d3163fc8744d5fd7adaa99e77c9e8424",
+        "id-d43ba8c16bb956f2a856c80fed59e5c5",
+        "id-e9a47db12b015e619c1e4718be7fc8df"
+      ],
+      "relationships": [
+        "id-5bc6486da5d55d3cb32e30aacc27289c",
+        "id-70833c485fb85fdf96d1d56b5ad450cb",
+        "id-8b5d3a329ab95b1cbca796b822670edf",
+        "id-91cced91ce8150ffb2054e056182fbb4",
+        "id-b35a17289fc85ae495a74b5d257e17a9"
+      ]
+    },
+    "id-ccd8f3cbf0db5470b5a36ab3fe85532c": {
+      "source": "id-e30b9d5e5fa9522681e1b22c1d6ebcab",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-62f15df98fda5574a39e62b40dea0e22",
+        "id-9c26415a3cfa59b9ae69b8d20d381651",
+        "id-d3163fc8744d5fd7adaa99e77c9e8424",
+        "id-d43ba8c16bb956f2a856c80fed59e5c5",
+        "id-e9a47db12b015e619c1e4718be7fc8df"
+      ],
+      "relationships": [
+        "id-5bc6486da5d55d3cb32e30aacc27289c",
+        "id-70833c485fb85fdf96d1d56b5ad450cb",
+        "id-8b5d3a329ab95b1cbca796b822670edf",
+        "id-91cced91ce8150ffb2054e056182fbb4",
+        "id-b35a17289fc85ae495a74b5d257e17a9"
+      ]
+    },
+    "id-b952c80be3ef5af6b53f16ed20ab2e97": {
+      "source": "id-b77562f343435bef95c6cadcd10e216c",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-3f079cb41bb05f1f82699c5e1feacfb7",
+        "id-d1b5e21ef6a250eebd417930385e18f9",
+        "id-f1cc8c768d9c5f1f87a6fb97c0e2a9b8"
+      ],
+      "relationships": [
+        "id-1a30366575ad57768216352d9ca5e45c",
+        "id-cda462f973ae5d7ab23a8ab6a5976dfe",
+        "id-df65356e25165e3eb779781067bbcfc9"
+      ]
+    },
+    "id-7810657cdf1c5d91ba9147a2d783a988": {
+      "source": "id-b77562f343435bef95c6cadcd10e216c",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-3f079cb41bb05f1f82699c5e1feacfb7",
+        "id-d1b5e21ef6a250eebd417930385e18f9",
+        "id-f1cc8c768d9c5f1f87a6fb97c0e2a9b8"
+      ],
+      "relationships": [
+        "id-1a30366575ad57768216352d9ca5e45c",
+        "id-cda462f973ae5d7ab23a8ab6a5976dfe",
+        "id-df65356e25165e3eb779781067bbcfc9"
+      ]
+    },
+    "id-0a43efe77046573a82dbb05527c75a2f": {
+      "source": "id-5fc96b9106c85899953f0b0471689e42",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0499c33921ce517c8a82f4eb516adc6d",
+        "id-12f544f28418535f8054f8e1a398cd9c",
+        "id-1619920904835b448ad96b47ac031fc8",
+        "id-772af14dd93455b2967714fa826da898",
+        "id-8f7817d6ddd25778ae7d5d5effbbbd16",
+        "id-aeafb86f7bb65c15acebe5f0048c9ef8",
+        "id-f83a006f0fc9592a8d5a9198c81aaae3"
+      ],
+      "relationships": [
+        "id-0c696330a9675f7ea3ffa96e9ebf7824",
+        "id-110422663b5c5e9896e4255ad9a5624f",
+        "id-378b6a3cfa665e279b606f176822543e",
+        "id-596dd2c989135f989006a49b02a06ae5",
+        "id-78d442b55e64565082a19e8b74dd3708",
+        "id-cbabb13420ea56edae5f4696c1abd5f4",
+        "id-d370ab0472e65672824614d45162a7b2"
+      ]
+    },
+    "id-5fbcdf68bdde50f1971099ab24401e80": {
+      "source": "id-5fc96b9106c85899953f0b0471689e42",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0499c33921ce517c8a82f4eb516adc6d",
+        "id-12f544f28418535f8054f8e1a398cd9c",
+        "id-1619920904835b448ad96b47ac031fc8",
+        "id-772af14dd93455b2967714fa826da898",
+        "id-8f7817d6ddd25778ae7d5d5effbbbd16",
+        "id-aeafb86f7bb65c15acebe5f0048c9ef8",
+        "id-f83a006f0fc9592a8d5a9198c81aaae3"
+      ],
+      "relationships": [
+        "id-0c696330a9675f7ea3ffa96e9ebf7824",
+        "id-110422663b5c5e9896e4255ad9a5624f",
+        "id-378b6a3cfa665e279b606f176822543e",
+        "id-596dd2c989135f989006a49b02a06ae5",
+        "id-78d442b55e64565082a19e8b74dd3708",
+        "id-cbabb13420ea56edae5f4696c1abd5f4",
+        "id-d370ab0472e65672824614d45162a7b2"
+      ]
+    },
+    "id-ef810452dd4f54dab7b39138f0fa87db": {
+      "source": "id-146ce7bf9faa57199f6b2f05c6a2e63d",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-4c3010101ae95144ba9af9f010df539b",
+        "id-7b82f2cc17bc5a69a36a16fc585f9159",
+        "id-820d3b4a4e6259608e1be64c809a8103",
+        "id-8cd4e38728b558789c67536ab75f508e",
+        "id-92984a7de06f57be9eaf2713871c5e03",
+        "id-e92f6df14dcd51a0905d0c294b78beb1"
+      ],
+      "relationships": [
+        "id-13a90ed2dd365e9fbcb7d00d281e9d18",
+        "id-1de5f4cc6bd95dcb804b188905d8757f",
+        "id-458dd9fd7a735820822fa2de825cf848",
+        "id-9a96958fea2959e09131386e49f57ec3",
+        "id-b958c2d17f8351269d7415b2732c8bc6",
+        "id-fc3b8a4db5375246a7e01db083540e4a"
+      ]
+    },
+    "id-9f7298c0c7df5fe087fcb4b2f4302179": {
+      "source": "id-146ce7bf9faa57199f6b2f05c6a2e63d",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-4c3010101ae95144ba9af9f010df539b",
+        "id-7b82f2cc17bc5a69a36a16fc585f9159",
+        "id-820d3b4a4e6259608e1be64c809a8103",
+        "id-8cd4e38728b558789c67536ab75f508e",
+        "id-92984a7de06f57be9eaf2713871c5e03",
+        "id-e92f6df14dcd51a0905d0c294b78beb1"
+      ],
+      "relationships": [
+        "id-13a90ed2dd365e9fbcb7d00d281e9d18",
+        "id-1de5f4cc6bd95dcb804b188905d8757f",
+        "id-458dd9fd7a735820822fa2de825cf848",
+        "id-9a96958fea2959e09131386e49f57ec3",
+        "id-b958c2d17f8351269d7415b2732c8bc6",
+        "id-fc3b8a4db5375246a7e01db083540e4a"
+      ]
+    },
+    "id-ad820cbb44035fb8a135c64622b7612e": {
+      "source": "id-1063c969a10f5c0fa332b192aae77a77",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-3ecc7c53a2e95a11a3efe3ff59ff50e4",
+        "id-4d9ce431849e5c9ea87fc5e7798bba22",
+        "id-9e57b7abee445a809059938014ef98aa",
+        "id-9ecbd74dbb335bd494a718d1402fd973",
+        "id-c0e0f14c28af58bd82aabe9069cff26c",
+        "id-d80607019cdb5e819abe227279c0f20e",
+        "id-edd55a066905575992dc0c06fd79de80"
+      ],
+      "relationships": [
+        "id-5a76fc65ab1650f8bda3583f36f5ca16",
+        "id-6e97d218d6855023ab1026985126ad7d",
+        "id-71dc62e8b2aa5badbdfcb0f5c0cd9edf",
+        "id-74fed680340f539484fda54ec4bca04f",
+        "id-82534e76e66e5dbda7c13fee5d3cf1f9",
+        "id-8588b28b09f750eda509d345f0091ef8",
+        "id-ec5e566b58fb5b27bf8ba07eb637eedd"
+      ]
+    },
+    "id-45b05ce4af655d33b99f517c70c08408": {
+      "source": "id-1063c969a10f5c0fa332b192aae77a77",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-3ecc7c53a2e95a11a3efe3ff59ff50e4",
+        "id-4d9ce431849e5c9ea87fc5e7798bba22",
+        "id-9e57b7abee445a809059938014ef98aa",
+        "id-9ecbd74dbb335bd494a718d1402fd973",
+        "id-c0e0f14c28af58bd82aabe9069cff26c",
+        "id-d80607019cdb5e819abe227279c0f20e",
+        "id-edd55a066905575992dc0c06fd79de80"
+      ],
+      "relationships": [
+        "id-5a76fc65ab1650f8bda3583f36f5ca16",
+        "id-6e97d218d6855023ab1026985126ad7d",
+        "id-71dc62e8b2aa5badbdfcb0f5c0cd9edf",
+        "id-74fed680340f539484fda54ec4bca04f",
+        "id-82534e76e66e5dbda7c13fee5d3cf1f9",
+        "id-8588b28b09f750eda509d345f0091ef8",
+        "id-ec5e566b58fb5b27bf8ba07eb637eedd"
+      ]
+    },
+    "id-a804d2ac25f35729ab009c0d5526eb7d": {
+      "source": "id-df9ca2c4f85051b982eb433a6dae6f4b",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0d82b50617d05608ba73f130916a07c3",
+        "id-3eb94251dfaa56ca8f5d1988bec36b1c",
+        "id-4ac46da5b1d157f5b20e48a42e1bed53",
+        "id-570b32e283fd550887828703316f6fb9",
+        "id-941e7bf5a59d53f38732a2dcbab6f79e",
+        "id-b6de79dfa55b538c93287ca1a74034ac"
+      ],
+      "relationships": [
+        "id-2daefb40f6f95effbed2b77f01fe2232",
+        "id-4431f3857e81542298de77e26db478cf",
+        "id-47a9541804175ab0baf91af2287dcd00",
+        "id-6e30a5af22295b9f8c68cc3663ae3432",
+        "id-77658dd22be75839b9fc957f3a72b7c7",
+        "id-e306564b0ce75a44a3ad9b87cc795b65"
+      ]
+    },
+    "id-98fe330cacec5b1f8f90730f51fec362": {
+      "source": "id-df9ca2c4f85051b982eb433a6dae6f4b",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0d82b50617d05608ba73f130916a07c3",
+        "id-3eb94251dfaa56ca8f5d1988bec36b1c",
+        "id-4ac46da5b1d157f5b20e48a42e1bed53",
+        "id-570b32e283fd550887828703316f6fb9",
+        "id-941e7bf5a59d53f38732a2dcbab6f79e",
+        "id-b6de79dfa55b538c93287ca1a74034ac"
+      ],
+      "relationships": [
+        "id-2daefb40f6f95effbed2b77f01fe2232",
+        "id-4431f3857e81542298de77e26db478cf",
+        "id-47a9541804175ab0baf91af2287dcd00",
+        "id-6e30a5af22295b9f8c68cc3663ae3432",
+        "id-77658dd22be75839b9fc957f3a72b7c7",
+        "id-e306564b0ce75a44a3ad9b87cc795b65"
+      ]
+    },
+    "id-a841c3c6331057b3a28d620fdd2f1b38": {
+      "source": "id-2134969d36665649a7d61fcea20bc15f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-b72487e00fef5855b909078e3b2ca3a0"
+      ],
+      "relationships": [
+        "id-d9946feff8765078adc1094fce0188eb"
+      ]
+    },
+    "id-9adc375de2bd5b1194b895c43f1a1eac": {
+      "source": "id-2134969d36665649a7d61fcea20bc15f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-b72487e00fef5855b909078e3b2ca3a0"
+      ],
+      "relationships": [
+        "id-d9946feff8765078adc1094fce0188eb"
+      ]
+    },
+    "id-e019d2eaa8475531bc4e194bdf3fa6d7": {
+      "source": "id-3f3f1816206a57ceaccc2a3b8e6d126b",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-03315366be1a58acbacd027ab32bf8bf",
+        "id-8cdf0ba785ed5e63b1330b61fb25a7c2",
+        "id-a5df034d251455f0aba1de9817628801",
+        "id-b85ddc19dd4f5d808a7c7c0343f7ad86",
+        "id-c0a2dee48aae56eaaf4266358083da80",
+        "id-d58022670433565e85886b12893bd691",
+        "id-de17cc6571dc50e688259ca76c68c889",
+        "id-ee4c4efdc81e5e7e99fb2d2d72895339"
+      ],
+      "relationships": [
+        "id-21538912c6f451efbe78386689b4fdfd",
+        "id-295bf9f8aba356e1b3a330b2bdfa9de1",
+        "id-8fc02bfb8bc959aa83c0ea095f19d161",
+        "id-a7effe2a475b59059814969e3d96b4cd",
+        "id-b58638b65ed65abdbb832437503c6df7",
+        "id-bb063f1b7b8853929ffd0556ce52e8b2",
+        "id-ee881aa421205b5387445480b4bfd80f",
+        "id-fda91fbbe3d75ea0bd5615fc6a426ae0"
+      ]
+    },
+    "id-59137c85487a523f9f82a25ed06bc103": {
+      "source": "id-3f3f1816206a57ceaccc2a3b8e6d126b",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-03315366be1a58acbacd027ab32bf8bf",
+        "id-8cdf0ba785ed5e63b1330b61fb25a7c2",
+        "id-a5df034d251455f0aba1de9817628801",
+        "id-b85ddc19dd4f5d808a7c7c0343f7ad86",
+        "id-c0a2dee48aae56eaaf4266358083da80",
+        "id-d58022670433565e85886b12893bd691",
+        "id-de17cc6571dc50e688259ca76c68c889",
+        "id-ee4c4efdc81e5e7e99fb2d2d72895339"
+      ],
+      "relationships": [
+        "id-21538912c6f451efbe78386689b4fdfd",
+        "id-295bf9f8aba356e1b3a330b2bdfa9de1",
+        "id-8fc02bfb8bc959aa83c0ea095f19d161",
+        "id-a7effe2a475b59059814969e3d96b4cd",
+        "id-b58638b65ed65abdbb832437503c6df7",
+        "id-bb063f1b7b8853929ffd0556ce52e8b2",
+        "id-ee881aa421205b5387445480b4bfd80f",
+        "id-fda91fbbe3d75ea0bd5615fc6a426ae0"
+      ]
+    },
+    "id-08e48dff4bc85e7b874187d48b128176": {
+      "source": "id-c9d1ebe2bd675841a70e6e3c1bb5a1d7",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-08d64c8f005f5276b8bc96386f66dd19",
+        "id-1068c50d6b1e5f39954ada6935bea433",
+        "id-58ef3273bf3d5fecbfe098646bcdff4a",
+        "id-98514bc9e1a85cc6a7cd787246610874",
+        "id-c53bfdd40a525de3adf5de52aa2b4adc"
+      ],
+      "relationships": [
+        "id-342e5fc5f4715ef68acc661f4df617c7",
+        "id-6057a1de2f1d5a0b8a2e1ffa82c98af4",
+        "id-6f6ecbfe5a2054d4b8f49fe256e20e38",
+        "id-bbf3d129a7515e9f9812ff23f540dc93",
+        "id-f521210e7c675ded9120317d6b6d09d7"
+      ]
+    },
+    "id-3b328daaaae95eff9497c8c8e707fe78": {
+      "source": "id-c9d1ebe2bd675841a70e6e3c1bb5a1d7",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-08d64c8f005f5276b8bc96386f66dd19",
+        "id-1068c50d6b1e5f39954ada6935bea433",
+        "id-58ef3273bf3d5fecbfe098646bcdff4a",
+        "id-98514bc9e1a85cc6a7cd787246610874",
+        "id-c53bfdd40a525de3adf5de52aa2b4adc"
+      ],
+      "relationships": [
+        "id-342e5fc5f4715ef68acc661f4df617c7",
+        "id-6057a1de2f1d5a0b8a2e1ffa82c98af4",
+        "id-6f6ecbfe5a2054d4b8f49fe256e20e38",
+        "id-bbf3d129a7515e9f9812ff23f540dc93",
+        "id-f521210e7c675ded9120317d6b6d09d7"
+      ]
+    },
+    "id-039fc26469b95d90b9db335e22d72118": {
+      "source": "id-53b97ecf9a185c309bf2f6fadd74e527",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-8e1cc85a4269529bb99d74f1f6ebe1cf",
+        "id-d065c2e07dad59eca48c9e60169c0b27"
+      ],
+      "relationships": [
+        "id-a821df696753579aa1f3ccc3c0d342fa",
+        "id-ebd0279c991f536b9de8594adb4f5f32"
+      ]
+    },
+    "id-5ff848846d1a5eb9bcf9f7fd36bf42f5": {
+      "source": "id-53b97ecf9a185c309bf2f6fadd74e527",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-8e1cc85a4269529bb99d74f1f6ebe1cf",
+        "id-d065c2e07dad59eca48c9e60169c0b27"
+      ],
+      "relationships": [
+        "id-a821df696753579aa1f3ccc3c0d342fa",
+        "id-ebd0279c991f536b9de8594adb4f5f32"
+      ]
+    },
+    "id-61a15d1d138b5b05b2861d6235f87b99": {
+      "source": "id-50b36409f6b55504a198330f760ef888",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-a9a4e74fe8bb55508e4a7b75ea333980"
+      ],
+      "relationships": [
+        "id-989359dcdafc59c7a1d2d61d5623dbf1"
+      ]
+    },
+    "id-d5d9b4a2be9b575d889781088e3098d1": {
+      "source": "id-50b36409f6b55504a198330f760ef888",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-a9a4e74fe8bb55508e4a7b75ea333980"
+      ],
+      "relationships": [
+        "id-989359dcdafc59c7a1d2d61d5623dbf1"
+      ]
+    },
+    "id-975e702aec8a500380b17ce1fc7e35cd": {
+      "source": "id-3a606ade585a5938971ee858eec584a2",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-777febeb138152a29372055b15957a23"
+      ],
+      "relationships": [
+        "id-d24805602d4657e8872a6401f88985f7"
+      ]
+    },
+    "id-2f6da489978d549ba1c81bec98df6d59": {
+      "source": "id-3a606ade585a5938971ee858eec584a2",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-777febeb138152a29372055b15957a23"
+      ],
+      "relationships": [
+        "id-d24805602d4657e8872a6401f88985f7"
+      ]
+    },
+    "id-690620297a985f5ca03e52eb57b8bd99": {
+      "source": "id-51689808d64b561a8041fe1b48bf3b01",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-10df1dc1dfd455a981b3e7c5ccafdf4d",
+        "id-1a11f717fc015997ba1e963cbaac0b8a",
+        "id-bc65f74c11945694ad12dc44fe736024",
+        "id-f24b2bd3966552018ad898a63b48cc4c"
+      ],
+      "relationships": [
+        "id-4d534472ee075f6e99dfcfd8564f194e",
+        "id-9e6549ba17775180bbedecbde4a32393",
+        "id-aef0d939124652bcb8f26bd7e8d6130c",
+        "id-dc1fbc02eaa25216b27c8049d3ccf490"
+      ]
+    },
+    "id-bc5c088ccec85002bb3871e66b411a25": {
+      "source": "id-51689808d64b561a8041fe1b48bf3b01",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-10df1dc1dfd455a981b3e7c5ccafdf4d",
+        "id-1a11f717fc015997ba1e963cbaac0b8a",
+        "id-bc65f74c11945694ad12dc44fe736024",
+        "id-f24b2bd3966552018ad898a63b48cc4c"
+      ],
+      "relationships": [
+        "id-4d534472ee075f6e99dfcfd8564f194e",
+        "id-9e6549ba17775180bbedecbde4a32393",
+        "id-aef0d939124652bcb8f26bd7e8d6130c",
+        "id-dc1fbc02eaa25216b27c8049d3ccf490"
+      ]
+    },
+    "id-367836a53ee65cd4b119bba47358d9fd": {
+      "source": "id-a72e1eab6d6551e0b387e09c0ce9897e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0259bdd793d65f3186810f502b700ee6",
+        "id-289650d19a325d8f90b7e7f66b54490f",
+        "id-a4cdf13bec0556e680f9abb2a60fe989",
+        "id-d3b307ced1bb58bab5dc299f2bd63ffb"
+      ],
+      "relationships": [
+        "id-7820ca1da52a58509b825b291087ebdb",
+        "id-bec6d0f119695e76a01234f41d2f9c27",
+        "id-ee437a1be1bd55ab99bde8df11d98af4",
+        "id-fc369bacd825597aa724e1ab7e3759f6"
+      ]
+    },
+    "id-d6c0218e150a52b795db7e1d3eb5caf8": {
+      "source": "id-a72e1eab6d6551e0b387e09c0ce9897e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0259bdd793d65f3186810f502b700ee6",
+        "id-289650d19a325d8f90b7e7f66b54490f",
+        "id-a4cdf13bec0556e680f9abb2a60fe989",
+        "id-d3b307ced1bb58bab5dc299f2bd63ffb"
+      ],
+      "relationships": [
+        "id-7820ca1da52a58509b825b291087ebdb",
+        "id-bec6d0f119695e76a01234f41d2f9c27",
+        "id-ee437a1be1bd55ab99bde8df11d98af4",
+        "id-fc369bacd825597aa724e1ab7e3759f6"
+      ]
+    },
+    "id-87b6c56a33eb55bca382a222c53c7091": {
+      "source": "id-1e1cfa1c48e35db38def767e986ea56e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-14aceb46b4575c24937a9500d6ea9492",
+        "id-6939d843cca65044b94dbd9e33db979f",
+        "id-74d8c7e477725fdfbf88fada3bbf80d1"
+      ],
+      "relationships": [
+        "id-2b6e0c8181a4596e94e684f79e2a0f28",
+        "id-2bdf33c15cd855dea6a549d7a04dfbd4",
+        "id-304d9340fb3b5daf9457f4566b775208"
+      ]
+    },
+    "id-0298b6b0d1bd58e0874d0fa2dd9b2a03": {
+      "source": "id-1e1cfa1c48e35db38def767e986ea56e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-14aceb46b4575c24937a9500d6ea9492",
+        "id-6939d843cca65044b94dbd9e33db979f",
+        "id-74d8c7e477725fdfbf88fada3bbf80d1"
+      ],
+      "relationships": [
+        "id-2b6e0c8181a4596e94e684f79e2a0f28",
+        "id-2bdf33c15cd855dea6a549d7a04dfbd4",
+        "id-304d9340fb3b5daf9457f4566b775208"
+      ]
+    },
+    "id-f5c61ef8e8fb5d5cb6be11c80657b672": {
+      "source": "id-3f8f2e7a1e035b48b5d384db99054cce",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-02ef028b3b425b1c82aea9f84d2b6631",
+        "id-27d9f6f7925550e4974fd5cc00a6a523",
+        "id-c202cbbd5a9a5759bcd79a6c933da7a2"
+      ],
+      "relationships": [
+        "id-34750f21356f52ac9f8f6b059dd6a59a",
+        "id-d6d4df14352d5356a8ade2af0d134779",
+        "id-e83fd7057c915c798e2bf347c232f2e4"
+      ]
+    },
+    "id-1904eedf32e358da811be6dcada08fed": {
+      "source": "id-3f8f2e7a1e035b48b5d384db99054cce",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-02ef028b3b425b1c82aea9f84d2b6631",
+        "id-27d9f6f7925550e4974fd5cc00a6a523",
+        "id-c202cbbd5a9a5759bcd79a6c933da7a2"
+      ],
+      "relationships": [
+        "id-34750f21356f52ac9f8f6b059dd6a59a",
+        "id-d6d4df14352d5356a8ade2af0d134779",
+        "id-e83fd7057c915c798e2bf347c232f2e4"
+      ]
+    },
+    "id-77e7ed15646d545eb09a93cb4c92b4fb": {
+      "source": "id-d8bd52f72b215fa795b82e4319a9b5bb",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-634d1636ba465070bd42fa4ae01abfb1"
+      ],
+      "relationships": [
+        "id-a659d635a85258adae874b6aa73fdbd9"
+      ]
+    },
+    "id-64a32ea34f685ef4866a67bf0d72c0b0": {
+      "source": "id-d8bd52f72b215fa795b82e4319a9b5bb",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-634d1636ba465070bd42fa4ae01abfb1"
+      ],
+      "relationships": [
+        "id-a659d635a85258adae874b6aa73fdbd9"
+      ]
+    },
+    "id-1c1369abb1a057ad9323a34878bc2f97": {
+      "source": "id-e7bf675c1f9f55e6a0c289210e0c2e81",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-44b93d25bc505fd7a63a17526ab77cf5",
+        "id-6b1554d6db2b5de4ad5ba2d0c8ca2852",
+        "id-7528db1a70905b898c093d3ae7e47bcc",
+        "id-ac9ffa1aed395f0b8127666f1cec22a1",
+        "id-bf24089b93df5112a20cb5016d9190cc",
+        "id-ea854ef849a35f8dac4fd8c6810b020a"
+      ],
+      "relationships": [
+        "id-322e3e744bdb585aa9653eb3ff807679",
+        "id-3259606422f255ee9476f5fae2070164",
+        "id-82e07811848b591cae8a9081c38affd3",
+        "id-af7d12a632a1579a8824bdabfe2a262f",
+        "id-d71e8d2735cb5c029b96b9d61739a375",
+        "id-e8a05aa88a7953f3a31437af5ea67b61"
+      ]
+    },
+    "id-f1714cfcaae752ecb6a285b3cda7f35e": {
+      "source": "id-e7bf675c1f9f55e6a0c289210e0c2e81",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-44b93d25bc505fd7a63a17526ab77cf5",
+        "id-6b1554d6db2b5de4ad5ba2d0c8ca2852",
+        "id-7528db1a70905b898c093d3ae7e47bcc",
+        "id-ac9ffa1aed395f0b8127666f1cec22a1",
+        "id-bf24089b93df5112a20cb5016d9190cc",
+        "id-ea854ef849a35f8dac4fd8c6810b020a"
+      ],
+      "relationships": [
+        "id-322e3e744bdb585aa9653eb3ff807679",
+        "id-3259606422f255ee9476f5fae2070164",
+        "id-82e07811848b591cae8a9081c38affd3",
+        "id-af7d12a632a1579a8824bdabfe2a262f",
+        "id-d71e8d2735cb5c029b96b9d61739a375",
+        "id-e8a05aa88a7953f3a31437af5ea67b61"
+      ]
+    },
+    "id-012c191563265c20874452012a90cdd3": {
+      "source": "id-cb87b0ba8417587ebc94321210dbc9cf",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-306f2ee359b85d3cbbf914f1d9920f5a",
+        "id-8d31da82f9965bebbef788d003e2e3d8"
+      ],
+      "relationships": [
+        "id-47435fb403ee53ee9a05c2caf9109c3f",
+        "id-f86ac3edbd61513889476bfdcdf9858d"
+      ]
+    },
+    "id-5ab895762ead5cc4b0dea839424bec47": {
+      "source": "id-cb87b0ba8417587ebc94321210dbc9cf",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-306f2ee359b85d3cbbf914f1d9920f5a",
+        "id-8d31da82f9965bebbef788d003e2e3d8"
+      ],
+      "relationships": [
+        "id-47435fb403ee53ee9a05c2caf9109c3f",
+        "id-f86ac3edbd61513889476bfdcdf9858d"
+      ]
+    },
+    "id-6e60a8fc34f757ce9eb93ee0808fc32d": {
+      "source": "id-31c38c7c37fd5b19bf446b9937406be5",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-a461b1332b2f5a05b6a98cc88a36bdc9",
+        "id-b6943759e49f58deb5c3fcbcb440fd66"
+      ],
+      "relationships": [
+        "id-a753089bcfc35bf486f74c4283a44357",
+        "id-fb9df72eb2935da793b9496e6ad6719e"
+      ]
+    },
+    "id-372762c3e33756798e011899c5e30388": {
+      "source": "id-31c38c7c37fd5b19bf446b9937406be5",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-a461b1332b2f5a05b6a98cc88a36bdc9",
+        "id-b6943759e49f58deb5c3fcbcb440fd66"
+      ],
+      "relationships": [
+        "id-a753089bcfc35bf486f74c4283a44357",
+        "id-fb9df72eb2935da793b9496e6ad6719e"
+      ]
+    },
+    "id-68daf2aa8f355f319b8aa1b282eac588": {
+      "source": "id-fe48e4fa8a025194ad49cc197a83d502",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-55bc2c3a7c375e1baeb0284bd21b9724",
+        "id-a28516f387e951deb72e816ac780649e"
+      ],
+      "relationships": [
+        "id-c75384bdbd06543297181b5e006124ea",
+        "id-ef547ddd8fcf52a88e927c03c76c1091"
+      ]
+    },
+    "id-f55decb1854957d0931aa9df145627ad": {
+      "source": "id-fe48e4fa8a025194ad49cc197a83d502",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-55bc2c3a7c375e1baeb0284bd21b9724",
+        "id-a28516f387e951deb72e816ac780649e"
+      ],
+      "relationships": [
+        "id-c75384bdbd06543297181b5e006124ea",
+        "id-ef547ddd8fcf52a88e927c03c76c1091"
+      ]
+    },
+    "id-c695ae0c9a5255b2b2a10c4bbbb4d0a2": {
+      "source": "id-86f3196b695d595a9ce1480605378088",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-4a9821af9af35a649a2f169f370acbe9",
+        "id-f7b1410300485ff3a1f03dc2cb35ce34"
+      ],
+      "relationships": [
+        "id-0a572f5d5708503bbb4cb2e8ee314ccd",
+        "id-b11df05b608e5f14b32155323b16e42f"
+      ]
+    },
+    "id-d1787dc8b13f51d1b9fba8dc69a7e3ec": {
+      "source": "id-86f3196b695d595a9ce1480605378088",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-4a9821af9af35a649a2f169f370acbe9",
+        "id-f7b1410300485ff3a1f03dc2cb35ce34"
+      ],
+      "relationships": [
+        "id-0a572f5d5708503bbb4cb2e8ee314ccd",
+        "id-b11df05b608e5f14b32155323b16e42f"
+      ]
+    },
+    "id-29652396bb525575bb2b30a1b3b4ea73": {
+      "source": "id-5abfc42605a55d9da4808dc3b3688708",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-7be68b9c793c522ebc7f5e772e91c6dc"
+      ],
+      "relationships": [
+        "id-3ed3ec4ace5851bca3b5dd31632f79c7"
+      ]
+    },
+    "id-2cb5e984dcb75609a2a591af06386f9e": {
+      "source": "id-5abfc42605a55d9da4808dc3b3688708",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-7be68b9c793c522ebc7f5e772e91c6dc"
+      ],
+      "relationships": [
+        "id-3ed3ec4ace5851bca3b5dd31632f79c7"
+      ]
+    },
+    "id-5b2641a930a85de78acc630119501e55": {
+      "source": "id-c67b67dba5cc512d94eac01eb1524775",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-12123907605b5a30a078af04daf3c730",
+        "id-29e0bf94882559a7b6ed9d092303a560",
+        "id-db94873a0aac5928aed7bf23ed0bcbea",
+        "id-e4ada895b3705f13829792ac8ab2e274"
+      ],
+      "relationships": [
+        "id-b31646dbdfe35a518733458d79ee7781",
+        "id-c76f743faece5d0f831b06a70a88d6f8",
+        "id-ccacf491b4af5b5583de1a2d71bfb16e",
+        "id-d5a9ec12940753ba9a807b12b1f0f3f5"
+      ]
+    },
+    "id-beebe18611d95fd683147895b905ffc6": {
+      "source": "id-c67b67dba5cc512d94eac01eb1524775",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-12123907605b5a30a078af04daf3c730",
+        "id-29e0bf94882559a7b6ed9d092303a560",
+        "id-db94873a0aac5928aed7bf23ed0bcbea",
+        "id-e4ada895b3705f13829792ac8ab2e274"
+      ],
+      "relationships": [
+        "id-b31646dbdfe35a518733458d79ee7781",
+        "id-c76f743faece5d0f831b06a70a88d6f8",
+        "id-ccacf491b4af5b5583de1a2d71bfb16e",
+        "id-d5a9ec12940753ba9a807b12b1f0f3f5"
+      ]
+    },
+    "id-d499dd5e9d4a58d9815b227d697371f9": {
+      "source": "id-7b438cff4f2d5b6d928cd7ea538f67a4",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-394620b518475a49b9810a7f556b3313",
+        "id-4c6e206c1684595b84981d627a110e53",
+        "id-f65c91b69f5a54cfae47b3572ae8bb4e"
+      ],
+      "relationships": [
+        "id-7b924b55cb16545f90bab1513dc315e6",
+        "id-852e76511a44553d960f241314195a06",
+        "id-e1ae1961e5955fd2a802b91a5d24a3d0"
+      ]
+    },
+    "id-9a836c3f7b1b5f6d9bf1ba3ba63405c3": {
+      "source": "id-7b438cff4f2d5b6d928cd7ea538f67a4",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-394620b518475a49b9810a7f556b3313",
+        "id-4c6e206c1684595b84981d627a110e53",
+        "id-f65c91b69f5a54cfae47b3572ae8bb4e"
+      ],
+      "relationships": [
+        "id-7b924b55cb16545f90bab1513dc315e6",
+        "id-852e76511a44553d960f241314195a06",
+        "id-e1ae1961e5955fd2a802b91a5d24a3d0"
+      ]
+    },
+    "id-5235346feb035b99b533e731e0de4b44": {
+      "source": "id-97a226da4bae53e9bb0cb071c6dbf5c2",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-4bd6510c5dc5510291b60560f6e68b71"
+      ],
+      "relationships": [
+        "id-5e914fc3b94e5bfaac4f9daa783f454f"
+      ]
+    },
+    "id-058717a66d935c268321b8d6c27d7db5": {
+      "source": "id-97a226da4bae53e9bb0cb071c6dbf5c2",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-4bd6510c5dc5510291b60560f6e68b71"
+      ],
+      "relationships": [
+        "id-5e914fc3b94e5bfaac4f9daa783f454f"
+      ]
+    },
+    "id-5be937ad9d65578aa341db36d0ab7bea": {
+      "source": "id-243b002011da54d5ac721e2a99d456ea",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-6406fe2dfdf65a79980a8fbd6881f251",
+        "id-bc2bc98a7a495b47bf11db08e9c29bae"
+      ],
+      "relationships": [
+        "id-4e32c0bc149652d49a64c0753ccc1b5d",
+        "id-f7ef6d56b05a5e2cb1c4becd4e756ee7"
+      ]
+    },
+    "id-199ffa512c3953dabfdbcf66263bccc8": {
+      "source": "id-243b002011da54d5ac721e2a99d456ea",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-6406fe2dfdf65a79980a8fbd6881f251",
+        "id-bc2bc98a7a495b47bf11db08e9c29bae"
+      ],
+      "relationships": [
+        "id-4e32c0bc149652d49a64c0753ccc1b5d",
+        "id-f7ef6d56b05a5e2cb1c4becd4e756ee7"
+      ]
+    },
+    "id-008b05f81e785b73b5a49cf211716d3b": {
+      "source": "id-19d0a7d9080e5758915878db238ec2d8",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-9c7e5f6635095618a9fb1650dc184c64"
+      ],
+      "relationships": [
+        "id-dee9b5a55e8859208d613315b0aa35e8"
+      ]
+    },
+    "id-55015937136c594e9944df216b9d2b89": {
+      "source": "id-19d0a7d9080e5758915878db238ec2d8",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-9c7e5f6635095618a9fb1650dc184c64"
+      ],
+      "relationships": [
+        "id-dee9b5a55e8859208d613315b0aa35e8"
+      ]
+    },
+    "id-9a580513bf4e5e679ab274e66efc351b": {
+      "source": "id-c480beb83dfe55e599ff5dc56b4249bb",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-ba55c7918aea5b8f9385ed78d5c72528",
+        "id-c433d8bde03c55eb85e0864109861ff2",
+        "id-f7048c29ae50565bad9ad68e7f030af4"
+      ],
+      "relationships": [
+        "id-1c38945c5acf518490a47b8897d9204c",
+        "id-49cc5ec596a4568da95aff93c4fdc918",
+        "id-982cb039b1ec5c188519a26bbb043e68"
+      ]
+    },
+    "id-0db6cd38f7cf51f78f0fdc8f8d7bbcc4": {
+      "source": "id-c480beb83dfe55e599ff5dc56b4249bb",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-ba55c7918aea5b8f9385ed78d5c72528",
+        "id-c433d8bde03c55eb85e0864109861ff2",
+        "id-f7048c29ae50565bad9ad68e7f030af4"
+      ],
+      "relationships": [
+        "id-1c38945c5acf518490a47b8897d9204c",
+        "id-49cc5ec596a4568da95aff93c4fdc918",
+        "id-982cb039b1ec5c188519a26bbb043e68"
+      ]
+    },
+    "id-69834a1c52bd504caf85461ad071b8d3": {
+      "source": "id-a6aaf19f1f225b67b1e3a19740d5f457",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-09b56d7aca615938baee8103ee9ffb15",
+        "id-66b395be368b5464932a1d028bac18a4",
+        "id-c7a85b3afdcf5eca8beba6058ebd91e7",
+        "id-ec5e54de56ea59dbb41c9ab6477ffea5"
+      ],
+      "relationships": [
+        "id-0cd04adf89055e91b9dd017adcfd8c71",
+        "id-2cdd63f2b3fa518da744c417ddf560f4",
+        "id-36502a9fd3ed5a2f920fb90bda1fcfb4",
+        "id-ba9ba8c301415bcc8628f4dfca5ab596"
+      ]
+    },
+    "id-afae23c0623351348379e373897b5c9f": {
+      "source": "id-a6aaf19f1f225b67b1e3a19740d5f457",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-09b56d7aca615938baee8103ee9ffb15",
+        "id-66b395be368b5464932a1d028bac18a4",
+        "id-c7a85b3afdcf5eca8beba6058ebd91e7",
+        "id-ec5e54de56ea59dbb41c9ab6477ffea5"
+      ],
+      "relationships": [
+        "id-0cd04adf89055e91b9dd017adcfd8c71",
+        "id-2cdd63f2b3fa518da744c417ddf560f4",
+        "id-36502a9fd3ed5a2f920fb90bda1fcfb4",
+        "id-ba9ba8c301415bcc8628f4dfca5ab596"
+      ]
+    },
+    "id-c796d1c0d4c158d08f8bd86308f2f0a0": {
+      "source": "id-29e0bf94882559a7b6ed9d092303a560",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-28d7815137a05a2aab6d1684011dbbde",
+        "id-6f0bfe5e814c5734a7c530f2b7515666",
+        "id-727a264026584f80bc3304ff8383dc92",
+        "id-bdf18b5e580b5b85a34357a3b21f36db",
+        "id-d9272acdc675539cb441d2db9c5ad6e6",
+        "id-f1e1928516765880955f638a7fec8c35"
+      ],
+      "relationships": [
+        "id-36b2aa8ad58149fdb20d44c1c16dd64c",
+        "id-3c3d723683c147a4a902b4d35a2af018",
+        "id-73ecd7a39407404ba8e2bb663efbdc19",
+        "id-bff76286f8994d20aa1b8aef166acebd",
+        "id-daf437bb32114daa8a6b9462cb9b4fb2",
+        "id-f9b270950f0241108b68f1c3daa50019"
+      ]
+    },
+    "id-2e20ff3ecf365a3f95d539be88f8528c": {
+      "source": "id-4759e7e551b45a3ab1b24088b8421b9f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2a555773d20b5eaaac720432d7e6f4ec",
+        "id-714b37e59d095316bb94389ebbc14e33"
+      ],
+      "relationships": [
+        "id-5f43371dad72578c9ae5eb122081f050",
+        "id-d1e7154c53ef5bcf88c3ccf98a715056"
+      ]
+    },
+    "id-622ae51979fe5f25b1b5059f7923cae9": {
+      "source": "id-4759e7e551b45a3ab1b24088b8421b9f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2a555773d20b5eaaac720432d7e6f4ec",
+        "id-714b37e59d095316bb94389ebbc14e33"
+      ],
+      "relationships": [
+        "id-5f43371dad72578c9ae5eb122081f050",
+        "id-d1e7154c53ef5bcf88c3ccf98a715056"
+      ]
+    },
+    "id-b46e3a1e7f765f99a4bbcbc894500591": {
+      "source": "id-5beae734749a57468bf09956473d2f40",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-f7fc7616aa89520a84e2235872dc93ed"
+      ],
+      "relationships": [
+        "id-7a77ee43a6685b34948346ddffd916a8"
+      ]
+    },
+    "id-9db5fc9bf9a257409333106032667879": {
+      "source": "id-5beae734749a57468bf09956473d2f40",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-f7fc7616aa89520a84e2235872dc93ed"
+      ],
+      "relationships": [
+        "id-7a77ee43a6685b34948346ddffd916a8"
+      ]
+    },
+    "id-eb90a3db06df583a82e57f29fe6eac6f": {
+      "source": "id-fa4797b3d84052ecbea381b52dfa8b3f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-75679799ab975e8088f69be6f0f414f0"
+      ],
+      "relationships": [
+        "id-a8acfa5129a35caf950d219d92dc1e25"
+      ]
+    },
+    "id-e514dbe4e7475228bea70e6824b3604b": {
+      "source": "id-fa4797b3d84052ecbea381b52dfa8b3f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-75679799ab975e8088f69be6f0f414f0"
+      ],
+      "relationships": [
+        "id-a8acfa5129a35caf950d219d92dc1e25"
+      ]
+    },
+    "id-628fa4d385e558658f3d624f0f812996": {
+      "source": "id-198c918e6b225485b2065dc763be8ce1",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-8c9e5a5c2384558db1e86af56d2c942b",
+        "id-db254db117db5f77926aa5add9ddb6bc"
+      ],
+      "relationships": [
+        "id-1cba280f030d5f62bfc7f0be9bc304db",
+        "id-90d0ac0e0b235fc39cb9493bdc68d3e7"
+      ]
+    },
+    "id-b9c56d70711152f69db28a944dd2745d": {
+      "source": "id-198c918e6b225485b2065dc763be8ce1",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-8c9e5a5c2384558db1e86af56d2c942b",
+        "id-db254db117db5f77926aa5add9ddb6bc"
+      ],
+      "relationships": [
+        "id-1cba280f030d5f62bfc7f0be9bc304db",
+        "id-90d0ac0e0b235fc39cb9493bdc68d3e7"
+      ]
+    },
+    "id-cf1fe15165cb520ab7d210acc8e306f3": {
+      "source": "id-35b56e00f8885f5f97147eca279b8ef6",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-5f410811dfd950f0a195ba1f600b15f0"
+      ],
+      "relationships": [
+        "id-e6d095d67f7c5741a0885e5209a42893"
+      ]
+    },
+    "id-ee03fff51c625dd889d3644f3644c15c": {
+      "source": "id-35b56e00f8885f5f97147eca279b8ef6",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-5f410811dfd950f0a195ba1f600b15f0"
+      ],
+      "relationships": [
+        "id-e6d095d67f7c5741a0885e5209a42893"
+      ]
+    },
+    "id-7a452d6cfdb05e7f945f3d9369635ad8": {
+      "source": "id-77908c3422545c70ba9ce082db020c0f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-8ad249d9cc7f5e85a84f1dbf5b7ccaaf",
+        "id-a0b4e1a965765006a8dc7b598f517bb3"
+      ],
+      "relationships": [
+        "id-3f5170911ed65f9f86fb5294b90c0346",
+        "id-bd45fc2d21ea5a27be5ae5f2c183356c"
+      ]
+    },
+    "id-2fb24b66f03c52a6b168d013be0aa415": {
+      "source": "id-77908c3422545c70ba9ce082db020c0f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-8ad249d9cc7f5e85a84f1dbf5b7ccaaf",
+        "id-a0b4e1a965765006a8dc7b598f517bb3"
+      ],
+      "relationships": [
+        "id-3f5170911ed65f9f86fb5294b90c0346",
+        "id-bd45fc2d21ea5a27be5ae5f2c183356c"
+      ]
+    },
+    "id-943830a726c857508262645fa9e08e83": {
+      "source": "id-b977d4fbbfbc5943bf2b03b300408b3a",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-ea9da64cb51253f1aabacc59253b8db8",
+        "id-f6b618c033b55400a9e26a6c1c5d9c16"
+      ],
+      "relationships": [
+        "id-21db0221d4a85e11944f7d92fe94b48e",
+        "id-bd48947def8d5df890d3c0fe4a89c5a4"
+      ]
+    },
+    "id-8ceafab1f6205a37a0af6ab728cba9e8": {
+      "source": "id-b977d4fbbfbc5943bf2b03b300408b3a",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-ea9da64cb51253f1aabacc59253b8db8",
+        "id-f6b618c033b55400a9e26a6c1c5d9c16"
+      ],
+      "relationships": [
+        "id-21db0221d4a85e11944f7d92fe94b48e",
+        "id-bd48947def8d5df890d3c0fe4a89c5a4"
+      ]
+    },
+    "id-66426997147b5e8193427eb34fb59520": {
+      "source": "id-4aa8850ccaab516b9d3854b9e82971eb",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-afd1a07848325b678cdee592358efbb4"
+      ],
+      "relationships": [
+        "id-13e0eed934335d8ca74f2ffa7ad1c966"
+      ]
+    },
+    "id-635075ccebd453159fe9871829e35ede": {
+      "source": "id-4aa8850ccaab516b9d3854b9e82971eb",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-afd1a07848325b678cdee592358efbb4"
+      ],
+      "relationships": [
+        "id-13e0eed934335d8ca74f2ffa7ad1c966"
+      ]
+    },
+    "id-89af6adb737351a0ac73c5520502fb18": {
+      "source": "id-839d37ad5fcd510d924a18389bada633",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-31701b65e27a544297e8b3807896433e"
+      ],
+      "relationships": [
+        "id-f37b5c0b280b5c998ca2d713802949a2"
+      ]
+    },
+    "id-e264c6945c5c5040ab7b046d198be3b3": {
+      "source": "id-839d37ad5fcd510d924a18389bada633",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-31701b65e27a544297e8b3807896433e"
+      ],
+      "relationships": [
+        "id-f37b5c0b280b5c998ca2d713802949a2"
+      ]
+    },
+    "id-a1fc117131285d83ae9c54fb6f23d5a3": {
+      "source": "id-8c082e2d6c605903834291c424722f75",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-ab0baa5289245368afb3d9943f0dee5c",
+        "id-c5461090ddce50daa204e0c031c184aa",
+        "id-d835f657a75459268088115e97986dd1"
+      ],
+      "relationships": [
+        "id-22797c02be4852d2907d5e5c955a623f",
+        "id-6e20779c45ea544a98ae0150a8eba6b1",
+        "id-c4a657c49aff5f768832126cc2433aee"
+      ]
+    },
+    "id-37541f43ebb954afaa731d83883fa6d7": {
+      "source": "id-8c082e2d6c605903834291c424722f75",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-ab0baa5289245368afb3d9943f0dee5c",
+        "id-c5461090ddce50daa204e0c031c184aa",
+        "id-d835f657a75459268088115e97986dd1"
+      ],
+      "relationships": [
+        "id-22797c02be4852d2907d5e5c955a623f",
+        "id-6e20779c45ea544a98ae0150a8eba6b1",
+        "id-c4a657c49aff5f768832126cc2433aee"
+      ]
+    },
+    "id-b60b3ed7b79f53ce92f8ccb0f96cfe3b": {
+      "source": "id-69fe602fea3e5afc95441b03dd7c198a",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-b87005ff372252e1893fbd216a77d525"
+      ],
+      "relationships": [
+        "id-58070bcfa27151719c659285296806b9"
+      ]
+    },
+    "id-e46b75c71a9a5ad28751a4fd5c88c517": {
+      "source": "id-69fe602fea3e5afc95441b03dd7c198a",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-b87005ff372252e1893fbd216a77d525"
+      ],
+      "relationships": [
+        "id-58070bcfa27151719c659285296806b9"
+      ]
+    },
+    "id-cdae1a11732c5354a49b126bb4839886": {
+      "source": "id-c907d86a7e995d0f99f48365418f41f8",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-5c2d8bf1b2ec5762b2be0bc402aa7ca1"
+      ],
+      "relationships": [
+        "id-b06cb3b2497059049e92d5417236825a"
+      ]
+    },
+    "id-144db84a94b6561eabd087191d2e2443": {
+      "source": "id-c907d86a7e995d0f99f48365418f41f8",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-5c2d8bf1b2ec5762b2be0bc402aa7ca1"
+      ],
+      "relationships": [
+        "id-b06cb3b2497059049e92d5417236825a"
+      ]
+    },
+    "id-b80e2f01ba9550f0a748a673ad1ca389": {
+      "source": "id-014da71d575756afa0db8502a0d1c904",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2fb39d490c105c5d985595cc71f06003",
+        "id-5d528e4fcb5e5092a26ac5fba62d8fe9"
+      ],
+      "relationships": [
+        "id-63ae61f37eb45f909a3a3d9ec07edb50",
+        "id-8497028149d8587091a9114c6805345f"
+      ]
+    },
+    "id-fd208e60a9f05c22a09e0814adc1f2e4": {
+      "source": "id-014da71d575756afa0db8502a0d1c904",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2fb39d490c105c5d985595cc71f06003",
+        "id-5d528e4fcb5e5092a26ac5fba62d8fe9"
+      ],
+      "relationships": [
+        "id-63ae61f37eb45f909a3a3d9ec07edb50",
+        "id-8497028149d8587091a9114c6805345f"
+      ]
+    },
+    "id-948aeb1131625b088438a4d88b0096d2": {
+      "source": "id-ee472a7091b85442911ccf12aac63a4d",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0df9d488a0865c958bf5b6c3557b8976"
+      ],
+      "relationships": [
+        "id-31ebae897cf25699a507581cc3f7ceba"
+      ]
+    },
+    "id-ada0a0520eca508fb1b031e9fd116b57": {
+      "source": "id-ee472a7091b85442911ccf12aac63a4d",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0df9d488a0865c958bf5b6c3557b8976"
+      ],
+      "relationships": [
+        "id-31ebae897cf25699a507581cc3f7ceba"
+      ]
+    },
+    "id-a32b55a082a157188b958856a724bdb2": {
+      "source": "id-60e2aa8fae4d51b993b4022f9ed688ff",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-036bd5a9fa1b5fca9c3245abf3016f44",
+        "id-1b8e6ac4079f5e8dad95cae8bbb52aaf"
+      ],
+      "relationships": [
+        "id-5b0756c95a9653959f0d14d04254e522",
+        "id-cddae672565c5c1983201b8311189fe9"
+      ]
+    },
+    "id-f802eafd35615d86867b25dae6964f8b": {
+      "source": "id-60e2aa8fae4d51b993b4022f9ed688ff",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-036bd5a9fa1b5fca9c3245abf3016f44",
+        "id-1b8e6ac4079f5e8dad95cae8bbb52aaf"
+      ],
+      "relationships": [
+        "id-5b0756c95a9653959f0d14d04254e522",
+        "id-cddae672565c5c1983201b8311189fe9"
+      ]
+    },
+    "id-23eab68242485b27932045b20ba2a712": {
+      "source": "id-f8932fe58ea154028a1a5dfa4887f491",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-4595d9da485357d4b4d5ab830b5ad0a1"
+      ],
+      "relationships": [
+        "id-e4bee0d6103156e2a4bc29952f4e9fe8"
+      ]
+    },
+    "id-1d9a91c32c3552f9a4ad32fc55372acd": {
+      "source": "id-f8932fe58ea154028a1a5dfa4887f491",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-4595d9da485357d4b4d5ab830b5ad0a1"
+      ],
+      "relationships": [
+        "id-e4bee0d6103156e2a4bc29952f4e9fe8"
+      ]
+    },
+    "id-848d8965a4e85f4a81dc7bfa75b423ee": {
+      "source": "id-99e98c1485575f90883330359d72b921",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-315b46c620d151868c9f84a0ed45ccd2",
+        "id-f498770b9a45551990afc0c14336212f"
+      ],
+      "relationships": [
+        "id-41979b1db3e753679aadf89db7d98521",
+        "id-a86ab90caf975b33845c936c073f05a8"
+      ]
+    },
+    "id-7c2ae9bf8be95ffca42ec7e481833de7": {
+      "source": "id-99e98c1485575f90883330359d72b921",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-315b46c620d151868c9f84a0ed45ccd2",
+        "id-f498770b9a45551990afc0c14336212f"
+      ],
+      "relationships": [
+        "id-41979b1db3e753679aadf89db7d98521",
+        "id-a86ab90caf975b33845c936c073f05a8"
+      ]
+    },
+    "id-b97e93d347295442b26ac908e2e32d57": {
+      "source": "id-2de1ef69d9675c59baa5c66e541e1df5",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-4125661f05bc5551a63787e0afe15491"
+      ],
+      "relationships": [
+        "id-eee8b14bef415602abe92d485b001508"
+      ]
+    },
+    "id-9461d26a1d93574c8695a125c108e059": {
+      "source": "id-2de1ef69d9675c59baa5c66e541e1df5",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-4125661f05bc5551a63787e0afe15491"
+      ],
+      "relationships": [
+        "id-eee8b14bef415602abe92d485b001508"
+      ]
+    },
+    "id-8d91d55fda5c5fffa68c022f640e1543": {
+      "source": "id-cbe0d80e3f8c501781eb087d3f932b11",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-50bd81c2c0425bbba29347b0aeb4025a"
+      ],
+      "relationships": [
+        "id-e9dd437ac28a51bc8957c4e74d7b5e52"
+      ]
+    },
+    "id-8946e146535e596e83627380cf297dab": {
+      "source": "id-cbe0d80e3f8c501781eb087d3f932b11",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-50bd81c2c0425bbba29347b0aeb4025a"
+      ],
+      "relationships": [
+        "id-e9dd437ac28a51bc8957c4e74d7b5e52"
+      ]
+    },
+    "id-3b6c76461a585610a148c3fdf7621382": {
+      "source": "id-bfbdb4730780550e884dabf485f6cc6f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-3fd840ab23015c128060f2b3dd4359b4"
+      ],
+      "relationships": [
+        "id-efab1044a5e8544aa1a5ad96ef3e6b94"
+      ]
+    },
+    "id-a379aca28e6a5437803d81cd7c2480b2": {
+      "source": "id-bfbdb4730780550e884dabf485f6cc6f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-3fd840ab23015c128060f2b3dd4359b4"
+      ],
+      "relationships": [
+        "id-efab1044a5e8544aa1a5ad96ef3e6b94"
+      ]
+    },
+    "id-8668945ce2eb5b07b26e6479da58506f": {
+      "source": "id-d398ed8aeb1c5dc49a55367f1421d42c",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-c3f38627d9395f77bf64711330c8f290"
+      ],
+      "relationships": [
+        "id-a5e6a72934f15ebb89395319507b77c5"
+      ]
+    },
+    "id-d14c1f05861152ef86ef65f3cd12954c": {
+      "source": "id-d398ed8aeb1c5dc49a55367f1421d42c",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-c3f38627d9395f77bf64711330c8f290"
+      ],
+      "relationships": [
+        "id-a5e6a72934f15ebb89395319507b77c5"
+      ]
+    },
+    "id-099ef0a99db95bbca21ea3c332db5e05": {
+      "source": "id-802e169720d253d1979cf0de2eb2004b",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-b4d502174176517d89e42e4cd48e1fff"
+      ],
+      "relationships": [
+        "id-d406de5e8e2d5d84b5796dd4768d1650"
+      ]
+    },
+    "id-0e21d8c34e6c52e498498038fe51c05d": {
+      "source": "id-802e169720d253d1979cf0de2eb2004b",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-b4d502174176517d89e42e4cd48e1fff"
+      ],
+      "relationships": [
+        "id-d406de5e8e2d5d84b5796dd4768d1650"
+      ]
+    },
+    "id-1e1ef4492fe15c39949a39ff132aa653": {
+      "source": "id-c1ec3269b7655d079fee5f5b92fbd5e6",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-5ae6f84e6e865ab78d46b5a33357cb9d",
+        "id-7b77530f0c8a569498954dc0a5fcf798"
+      ],
+      "relationships": [
+        "id-886e419c185b5d4f8fbabdbeee546a4b",
+        "id-ac62936545b75b9694da7f53ec252d12"
+      ]
+    },
+    "id-1a5acae4a325555fbe63dc712cbb3541": {
+      "source": "id-c1ec3269b7655d079fee5f5b92fbd5e6",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-5ae6f84e6e865ab78d46b5a33357cb9d",
+        "id-7b77530f0c8a569498954dc0a5fcf798"
+      ],
+      "relationships": [
+        "id-886e419c185b5d4f8fbabdbeee546a4b",
+        "id-ac62936545b75b9694da7f53ec252d12"
+      ]
+    },
+    "id-b5d1757017d35ddb8da3c6c7bb2fa8f7": {
+      "source": "id-57136cee07f65bf98b7bfe63fba60fa4",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-e77accf68d2a5f63b25c3c257d97feec"
+      ],
+      "relationships": [
+        "id-7c7ad1d9a3e1567c9bf32c2185ccc2bf"
+      ]
+    },
+    "id-307ecf84a6865f1aa53c77d0a41b91b2": {
+      "source": "id-57136cee07f65bf98b7bfe63fba60fa4",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-e77accf68d2a5f63b25c3c257d97feec"
+      ],
+      "relationships": [
+        "id-7c7ad1d9a3e1567c9bf32c2185ccc2bf"
+      ]
+    },
+    "id-1993a73362da5a38b0c3bdfc7f70c290": {
+      "source": "id-97b7e74f9a4d5e95a1f89de6b3cfc393",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-c67d028a12d457b1bff85ea82df63718"
+      ],
+      "relationships": [
+        "id-5e2b49ac0cf95da987c56c8084a5831b"
+      ]
+    },
+    "id-a87f828c4e845f899974b39f5660be56": {
+      "source": "id-97b7e74f9a4d5e95a1f89de6b3cfc393",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-c67d028a12d457b1bff85ea82df63718"
+      ],
+      "relationships": [
+        "id-5e2b49ac0cf95da987c56c8084a5831b"
+      ]
+    },
+    "id-bd0ccb6763e659afaf30c303d3ce144c": {
+      "source": "id-143b994de5cd593897012a96963e43ca",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-8c4d5090fb7150469d8e4b10a7551dab",
+        "id-e58d7bdb27f95fb396623167a677a5ba"
+      ],
+      "relationships": [
+        "id-2af8cd96ae125494a5211936a5817aca",
+        "id-5511cf0501a054c0ad9745bdc3c082b4"
+      ]
+    },
+    "id-24e70fffc1f257f9828da519db73dc7e": {
+      "source": "id-143b994de5cd593897012a96963e43ca",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-8c4d5090fb7150469d8e4b10a7551dab",
+        "id-e58d7bdb27f95fb396623167a677a5ba"
+      ],
+      "relationships": [
+        "id-2af8cd96ae125494a5211936a5817aca",
+        "id-5511cf0501a054c0ad9745bdc3c082b4"
+      ]
+    },
+    "id-65d27ed84cd857289c8c08b4bc5c1f98": {
+      "source": "id-481836991b9257c69af3d3dceb781a72",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-a99640e4d2c05ac3be8b58e113e550dc"
+      ],
+      "relationships": [
+        "id-1dcca114c02359ce878eef61e491e00f"
+      ]
+    },
+    "id-44b52c9f93175a5086c5cd06920f9cc1": {
+      "source": "id-481836991b9257c69af3d3dceb781a72",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-a99640e4d2c05ac3be8b58e113e550dc"
+      ],
+      "relationships": [
+        "id-1dcca114c02359ce878eef61e491e00f"
+      ]
+    },
+    "id-96ff8fcfc61a5978a2219407a84a9ead": {
+      "source": "id-974025114007505b922d37dc6ba0a04f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-b9ab7bb6c4865419928c0c1f13bf45b7",
+        "id-baf9aba95d5c539bab7fc75f6861f176",
+        "id-cb13e2de68e55d8c9204e770611aef37",
+        "id-dbb8a6f722f756808d5022cbd06aec85"
+      ],
+      "relationships": [
+        "id-5a54a7656f2950ca907d343f5214964b",
+        "id-637d8aba708a58ed982c42221349e785",
+        "id-df8f72ab44cd5077af20d8eb55631a88",
+        "id-faf5cf493aa956acb900d6bcb09ff5ef"
+      ]
+    },
+    "id-061c0846632e5c469f09215210466580": {
+      "source": "id-974025114007505b922d37dc6ba0a04f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-b9ab7bb6c4865419928c0c1f13bf45b7",
+        "id-baf9aba95d5c539bab7fc75f6861f176",
+        "id-cb13e2de68e55d8c9204e770611aef37",
+        "id-dbb8a6f722f756808d5022cbd06aec85"
+      ],
+      "relationships": [
+        "id-5a54a7656f2950ca907d343f5214964b",
+        "id-637d8aba708a58ed982c42221349e785",
+        "id-df8f72ab44cd5077af20d8eb55631a88",
+        "id-faf5cf493aa956acb900d6bcb09ff5ef"
+      ]
+    },
+    "id-70676ee9568a5670ab3ae321f79e7788": {
+      "source": "id-0712aaf441dc5100a5ac79c4b7848477",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-390fb11c89e7528e96684afcec04539a",
+        "id-6a1c86bc579e59e5854aafb3ace5c01f",
+        "id-7c8885a8c55552888e8b3cda35c06693"
+      ],
+      "relationships": [
+        "id-2603b2ceb6bc5005bfdc1bb2eb376f28",
+        "id-43c9c1c6c5665a55956129c7769830a0",
+        "id-b4b42bb7057f5da8953a52a1f079aa64"
+      ]
+    },
+    "id-fad41ce4f39e5febaaba2df1dcbafb4e": {
+      "source": "id-0712aaf441dc5100a5ac79c4b7848477",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-390fb11c89e7528e96684afcec04539a",
+        "id-6a1c86bc579e59e5854aafb3ace5c01f",
+        "id-7c8885a8c55552888e8b3cda35c06693"
+      ],
+      "relationships": [
+        "id-2603b2ceb6bc5005bfdc1bb2eb376f28",
+        "id-43c9c1c6c5665a55956129c7769830a0",
+        "id-b4b42bb7057f5da8953a52a1f079aa64"
+      ]
+    },
+    "id-a90a26a64e7c557084c8abf605e6b54a": {
+      "source": "id-20ff65f6cd1d5932968574bc72bd7aa3",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2b06d69a6fe75ab79dc8d11abe5c780a"
+      ],
+      "relationships": [
+        "id-84fe9f3578535be4841430d56b13de66"
+      ]
+    },
+    "id-17f896b7e058520fa5c0300cb4fab049": {
+      "source": "id-20ff65f6cd1d5932968574bc72bd7aa3",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-2b06d69a6fe75ab79dc8d11abe5c780a"
+      ],
+      "relationships": [
+        "id-84fe9f3578535be4841430d56b13de66"
+      ]
+    },
+    "id-4ae7ff31ff595f54acef171d29339839": {
+      "source": "id-b9c636efc8a35c18bd0dce7db89caa88",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0c99a409fcad5e30b1c384f25976197f",
+        "id-1174f336b2b158229d94060f3b0f43ed",
+        "id-38a9a0f14b5659f4b88fab8c9ae53274"
+      ],
+      "relationships": [
+        "id-6073189f20f45f0881f401c678f399ef",
+        "id-8140a99d807f525cbb82628376c1feb1",
+        "id-f71389e030bd5d6d91919f795714bfff"
+      ]
+    },
+    "id-cda09af94f7d53149f69bb48338c4e23": {
+      "source": "id-b9c636efc8a35c18bd0dce7db89caa88",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0c99a409fcad5e30b1c384f25976197f",
+        "id-1174f336b2b158229d94060f3b0f43ed",
+        "id-38a9a0f14b5659f4b88fab8c9ae53274"
+      ],
+      "relationships": [
+        "id-6073189f20f45f0881f401c678f399ef",
+        "id-8140a99d807f525cbb82628376c1feb1",
+        "id-f71389e030bd5d6d91919f795714bfff"
+      ]
+    },
+    "id-100bc0f12bdc5da6b232d778a3394a21": {
+      "source": "id-c7f56c1dcc525ca8805682bc1d92907d",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-048fd66ba8095ee3bb759b0c89bdf32f",
+        "id-59010f4f41df5e509a40226be95a123b",
+        "id-cc4edaeee1d3519185ee94a683e4a5e0"
+      ],
+      "relationships": [
+        "id-1d94399f559b5720b5c7fc9af9c4bb6a",
+        "id-5a858fb9891350018fa4894f06e27bad",
+        "id-5e19a7d4168154888ecc5abfa13b3a75"
+      ]
+    },
+    "id-aa0385ff39815005a357d04032716279": {
+      "source": "id-c7f56c1dcc525ca8805682bc1d92907d",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-048fd66ba8095ee3bb759b0c89bdf32f",
+        "id-59010f4f41df5e509a40226be95a123b",
+        "id-cc4edaeee1d3519185ee94a683e4a5e0"
+      ],
+      "relationships": [
+        "id-1d94399f559b5720b5c7fc9af9c4bb6a",
+        "id-5a858fb9891350018fa4894f06e27bad",
+        "id-5e19a7d4168154888ecc5abfa13b3a75"
+      ]
+    },
+    "id-82a72824fdfa535ea54b0483f7b38950": {
+      "source": "id-0770a7338b0a53adb14971ace57fea7f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-97b0afca9c9e513d8205eb624be06169"
+      ],
+      "relationships": [
+        "id-898f3e90614b5b9ea007953a8ab503b1"
+      ]
+    },
+    "id-20bd1e39fe0c58279c19195830f6a922": {
+      "source": "id-0770a7338b0a53adb14971ace57fea7f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-97b0afca9c9e513d8205eb624be06169"
+      ],
+      "relationships": [
+        "id-898f3e90614b5b9ea007953a8ab503b1"
+      ]
+    },
+    "id-87d0dff831a05c24bc548c4771d07e36": {
+      "source": "id-220d1f41d46b57fba6377fcd533fb94a",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-7a89497d659f50629cd7dd7105c0e411"
+      ],
+      "relationships": [
+        "id-4bcf52de8d995ebaae1bb6f607a62415"
+      ]
+    },
+    "id-02bc6fc5350654aab5a487cb1153c091": {
+      "source": "id-220d1f41d46b57fba6377fcd533fb94a",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-7a89497d659f50629cd7dd7105c0e411"
+      ],
+      "relationships": [
+        "id-4bcf52de8d995ebaae1bb6f607a62415"
+      ]
+    },
+    "id-d59ac276cbcc56a7ba5dc9f3601e3cea": {
+      "source": "id-6b7034b5239c505d858d651b8ee78832",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-d975937d894d521eaf2465cf00b08aaf"
+      ],
+      "relationships": [
+        "id-13d8cd7496685d96949accc85d515545"
+      ]
+    },
+    "id-cf7091f82b9a5d78967f18395a057ab7": {
+      "source": "id-6b7034b5239c505d858d651b8ee78832",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-d975937d894d521eaf2465cf00b08aaf"
+      ],
+      "relationships": [
+        "id-13d8cd7496685d96949accc85d515545"
+      ]
+    },
+    "id-a9fddaa234345db38d7ff69d3f736b5e": {
+      "source": "id-306525d358285c6cb525859aba8c7f7f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-dc26649d879b5c23813b59e7ada49e3d"
+      ],
+      "relationships": [
+        "id-e01ddadb62d2551aa4b9ad69a78fd529"
+      ]
+    },
+    "id-41f7e0aa6f375429b459d72d7a8a1b0e": {
+      "source": "id-306525d358285c6cb525859aba8c7f7f",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-dc26649d879b5c23813b59e7ada49e3d"
+      ],
+      "relationships": [
+        "id-e01ddadb62d2551aa4b9ad69a78fd529"
+      ]
+    },
+    "id-2b7bdd7801ac51a4abbb741cfc61cf4b": {
+      "source": "id-7f29effdff4f526fb023f7c3f8d2d82e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-8cbd1321a0c15306b7355745d2e22818",
+        "id-a3005df7ce87583ea31e0c4a7c3be749",
+        "id-bb43c048f11e5d069f844bdb8c3a1ed9",
+        "id-cd6d12693e255af7876c44caddfdbdb4"
+      ],
+      "relationships": [
+        "id-0e4725ebaacc514987f5d5882cfbd752",
+        "id-1173b361886354b3acdec3b49e5b31af",
+        "id-30f294a8bcb15053bd2556604f63d047",
+        "id-44cc81a1ebd954e2bc9104de6f951afd"
+      ]
+    },
+    "id-d4a33d9885b057ba865a4ff9ce3acbb3": {
+      "source": "id-7f29effdff4f526fb023f7c3f8d2d82e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-8cbd1321a0c15306b7355745d2e22818",
+        "id-a3005df7ce87583ea31e0c4a7c3be749",
+        "id-bb43c048f11e5d069f844bdb8c3a1ed9",
+        "id-cd6d12693e255af7876c44caddfdbdb4"
+      ],
+      "relationships": [
+        "id-0e4725ebaacc514987f5d5882cfbd752",
+        "id-1173b361886354b3acdec3b49e5b31af",
+        "id-30f294a8bcb15053bd2556604f63d047",
+        "id-44cc81a1ebd954e2bc9104de6f951afd"
+      ]
+    },
+    "id-dea5fd2a4c7e538c95baa35150e4b380": {
+      "source": "id-4726f9b8f6015e019238b5a8cc596c7c",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-19d0a7d9080e5758915878db238ec2d8",
+        "id-243b002011da54d5ac721e2a99d456ea",
+        "id-7b438cff4f2d5b6d928cd7ea538f67a4",
+        "id-97a226da4bae53e9bb0cb071c6dbf5c2",
+        "id-a6aaf19f1f225b67b1e3a19740d5f457",
+        "id-c480beb83dfe55e599ff5dc56b4249bb",
+        "id-c67b67dba5cc512d94eac01eb1524775"
+      ],
+      "relationships": [
+        "id-05fb0b3f26d8545a8caf8fcb8a92b2e3",
+        "id-3fc7839fceda5f4193e58dd14415a0ab",
+        "id-b297858a4ab352cb942b88df159109ed",
+        "id-be1babf8397d51b3878b271f8775d711",
+        "id-c099301d131c594580c840a6363997a3",
+        "id-c97120325e3e5a1b99a11eeec1e5c89e",
+        "id-f7deddb1eb2751aa96ba6a490b18003e"
+      ]
+    },
+    "id-c4f105aa310157b7b66f14c813e35bb2": {
+      "source": "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-198c918e6b225485b2065dc763be8ce1",
+        "id-35b56e00f8885f5f97147eca279b8ef6",
+        "id-4759e7e551b45a3ab1b24088b8421b9f",
+        "id-4aa8850ccaab516b9d3854b9e82971eb",
+        "id-5463239c9ef65cef98c5274ab6e8f6db",
+        "id-5beae734749a57468bf09956473d2f40",
+        "id-69fe602fea3e5afc95441b03dd7c198a",
+        "id-77908c3422545c70ba9ce082db020c0f",
+        "id-839d37ad5fcd510d924a18389bada633",
+        "id-8c082e2d6c605903834291c424722f75",
+        "id-b977d4fbbfbc5943bf2b03b300408b3a",
+        "id-c2df74422094583c85e83601696f971f",
+        "id-fa4797b3d84052ecbea381b52dfa8b3f"
+      ],
+      "relationships": [
+        "id-0ff026d172245933a65bfb576771c552",
+        "id-243b6e37b771560c9b95ddc234e45b0a",
+        "id-371c90009eea5b24a69e5ad07cbc8b87",
+        "id-3d3dadbc8cc659c0bafee65dc980a009",
+        "id-6236459728eb58fc8b76e4ebeaa710a2",
+        "id-677a2c2c85b156789fbc4333cbf0c87d",
+        "id-958822b3fad8502daaaecd1e60128205",
+        "id-a8e96c967238574391d0ce2e944598a7",
+        "id-ae3668c1170b542f8672bd2d4e4b94ae",
+        "id-b23acadd5432516896eba26d03840690",
+        "id-bc9dcf00b2795ff8bf6a4f2116abe3c0",
+        "id-d5a892665b035138936bb527acebeb34",
+        "id-def0a301eaf9549e9618fd95c316d3df"
+      ]
+    },
+    "id-e7934c698cef5b8daa890a8529a20af4": {
+      "source": "id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-198c918e6b225485b2065dc763be8ce1",
+        "id-35b56e00f8885f5f97147eca279b8ef6",
+        "id-4759e7e551b45a3ab1b24088b8421b9f",
+        "id-4aa8850ccaab516b9d3854b9e82971eb",
+        "id-5463239c9ef65cef98c5274ab6e8f6db",
+        "id-5beae734749a57468bf09956473d2f40",
+        "id-69fe602fea3e5afc95441b03dd7c198a",
+        "id-77908c3422545c70ba9ce082db020c0f",
+        "id-839d37ad5fcd510d924a18389bada633",
+        "id-8c082e2d6c605903834291c424722f75",
+        "id-b977d4fbbfbc5943bf2b03b300408b3a",
+        "id-c2df74422094583c85e83601696f971f",
+        "id-fa4797b3d84052ecbea381b52dfa8b3f"
+      ],
+      "relationships": [
+        "id-0ff026d172245933a65bfb576771c552",
+        "id-243b6e37b771560c9b95ddc234e45b0a",
+        "id-371c90009eea5b24a69e5ad07cbc8b87",
+        "id-3d3dadbc8cc659c0bafee65dc980a009",
+        "id-6236459728eb58fc8b76e4ebeaa710a2",
+        "id-677a2c2c85b156789fbc4333cbf0c87d",
+        "id-958822b3fad8502daaaecd1e60128205",
+        "id-a8e96c967238574391d0ce2e944598a7",
+        "id-ae3668c1170b542f8672bd2d4e4b94ae",
+        "id-b23acadd5432516896eba26d03840690",
+        "id-bc9dcf00b2795ff8bf6a4f2116abe3c0",
+        "id-d5a892665b035138936bb527acebeb34",
+        "id-def0a301eaf9549e9618fd95c316d3df"
+      ]
+    },
+    "id-f2bc8e907e105d93ad5ebea3878760b9": {
+      "source": "id-a5127b36f8a25c748c68426668173fcd",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0712aaf441dc5100a5ac79c4b7848477",
+        "id-0770a7338b0a53adb14971ace57fea7f",
+        "id-0e93a43b398a503d804b87204f939a09",
+        "id-20ff65f6cd1d5932968574bc72bd7aa3",
+        "id-220d1f41d46b57fba6377fcd533fb94a",
+        "id-306525d358285c6cb525859aba8c7f7f",
+        "id-36d21ea7e98b5e1bbbddad25ba53cd4e",
+        "id-5004f4019d1059108356b6ee7cfcaa8e",
+        "id-6b7034b5239c505d858d651b8ee78832",
+        "id-7f29effdff4f526fb023f7c3f8d2d82e",
+        "id-974025114007505b922d37dc6ba0a04f",
+        "id-b9c636efc8a35c18bd0dce7db89caa88",
+        "id-c7f56c1dcc525ca8805682bc1d92907d",
+        "id-f4e98809bf18585aac90aa1597b89bb0"
+      ],
+      "relationships": [
+        "id-131413fff1355dd79fb4135c299d4bce",
+        "id-2c38d0dd86b05054971561b058752f9e",
+        "id-409ee31a8ed0538b8b3a3e155d906813",
+        "id-49b2166892d353eeb7d871ca92e01ef4",
+        "id-609edc10eab4594a9628f22624cca4c0",
+        "id-635a9ec5c8d9566da49c0d0c2f41e49a",
+        "id-6acf7bca1c975ff6adcbbb9954f0e9ad",
+        "id-70f298f48f3958b892c2f08a504241c2",
+        "id-74f96ce74a5a52a4a06d3a7caa4bd85e",
+        "id-766c607772eb55fca764b3021e34b431",
+        "id-a75fd5c5ea1c593199b62f4fc1a314fa",
+        "id-b02c62ac49de5f74b21ab40f91919704",
+        "id-c99f0a1cf0a05c1b9ff882c4734b2f69",
+        "id-ed2061e01b1658c38afda6501b1ec374"
+      ]
+    },
+    "id-423c29208d88588593e47c660f97272b": {
+      "source": "id-a5127b36f8a25c748c68426668173fcd",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0712aaf441dc5100a5ac79c4b7848477",
+        "id-0770a7338b0a53adb14971ace57fea7f",
+        "id-0e93a43b398a503d804b87204f939a09",
+        "id-20ff65f6cd1d5932968574bc72bd7aa3",
+        "id-220d1f41d46b57fba6377fcd533fb94a",
+        "id-306525d358285c6cb525859aba8c7f7f",
+        "id-36d21ea7e98b5e1bbbddad25ba53cd4e",
+        "id-5004f4019d1059108356b6ee7cfcaa8e",
+        "id-6b7034b5239c505d858d651b8ee78832",
+        "id-7f29effdff4f526fb023f7c3f8d2d82e",
+        "id-974025114007505b922d37dc6ba0a04f",
+        "id-b9c636efc8a35c18bd0dce7db89caa88",
+        "id-c7f56c1dcc525ca8805682bc1d92907d",
+        "id-f4e98809bf18585aac90aa1597b89bb0"
+      ],
+      "relationships": [
+        "id-131413fff1355dd79fb4135c299d4bce",
+        "id-2c38d0dd86b05054971561b058752f9e",
+        "id-409ee31a8ed0538b8b3a3e155d906813",
+        "id-49b2166892d353eeb7d871ca92e01ef4",
+        "id-609edc10eab4594a9628f22624cca4c0",
+        "id-635a9ec5c8d9566da49c0d0c2f41e49a",
+        "id-6acf7bca1c975ff6adcbbb9954f0e9ad",
+        "id-70f298f48f3958b892c2f08a504241c2",
+        "id-74f96ce74a5a52a4a06d3a7caa4bd85e",
+        "id-766c607772eb55fca764b3021e34b431",
+        "id-a75fd5c5ea1c593199b62f4fc1a314fa",
+        "id-b02c62ac49de5f74b21ab40f91919704",
+        "id-c99f0a1cf0a05c1b9ff882c4734b2f69",
+        "id-ed2061e01b1658c38afda6501b1ec374"
+      ]
+    },
+    "id-eff959b3a595521f8bcfa37ca61ce058": {
+      "source": "id-7045e58c19235175b54f5d054232b883",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-8a7d47abbe015a309139a0ee2c1250d4",
+        "id-e18e1674a30c5c97a40ef75faea25663"
+      ],
+      "relationships": [
+        "id-0a0a84e48f6b5ade89ca66d0c8bfe2b2",
+        "id-bdcbe5a38efb51e5bbe177fa18dab4bb"
+      ]
+    },
+    "id-e2cc64ef55955d7bba919ea98320a707": {
+      "source": "id-7045e58c19235175b54f5d054232b883",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-8a7d47abbe015a309139a0ee2c1250d4",
+        "id-e18e1674a30c5c97a40ef75faea25663"
+      ],
+      "relationships": [
+        "id-0a0a84e48f6b5ade89ca66d0c8bfe2b2",
+        "id-bdcbe5a38efb51e5bbe177fa18dab4bb"
+      ]
+    },
+    "id-34df21cd967955229bafe4d7b0856a79": {
+      "source": "id-dc7f84d80543529cab8e2ccc86a0428c",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-1ba1dd139e615a7da6f08eef1caa56be",
+        "id-2bb6a6fd2f5f55db940b8d0793706993",
+        "id-95802b6c6b505351b4d3d57f8aed2753"
+      ],
+      "relationships": [
+        "id-2ff13a06ac0555eaa8e520306db3dc7a",
+        "id-df70babccbeb5977897dd2421f46d135",
+        "id-fc7b33bb093f56d491bf7174adc9e842"
+      ]
+    },
+    "id-1d54fa806b2d51fca51b6588f9aa6bcc": {
+      "source": "id-dc7f84d80543529cab8e2ccc86a0428c",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-1ba1dd139e615a7da6f08eef1caa56be",
+        "id-2bb6a6fd2f5f55db940b8d0793706993",
+        "id-95802b6c6b505351b4d3d57f8aed2753"
+      ],
+      "relationships": [
+        "id-2ff13a06ac0555eaa8e520306db3dc7a",
+        "id-df70babccbeb5977897dd2421f46d135",
+        "id-fc7b33bb093f56d491bf7174adc9e842"
+      ]
+    },
+    "id-571200dbd1c053a7ba6417dd69a0477b": {
+      "source": "id-e18e1674a30c5c97a40ef75faea25663",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-5b9c494f5afb5f348c6e67afc7e022d5",
+        "id-e5aa0bd0a82b5ee484397627845f3f1c"
+      ],
+      "relationships": [
+        "id-d9152aa8dd6255c3a1e1d38813811dc0",
+        "id-f99eedf511cb5ce696630acda2d1f1b3"
+      ]
+    },
+    "id-36fdab83cc895c5b948ab58392a7e703": {
+      "source": "id-e18e1674a30c5c97a40ef75faea25663",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-5b9c494f5afb5f348c6e67afc7e022d5",
+        "id-e5aa0bd0a82b5ee484397627845f3f1c"
+      ],
+      "relationships": [
+        "id-d9152aa8dd6255c3a1e1d38813811dc0",
+        "id-f99eedf511cb5ce696630acda2d1f1b3"
+      ]
+    },
+    "id-8dcfb8d2aa6e52c4a2090a8114b987e8": {
+      "source": "id-7afbcec0122951079c2bb647251be323",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-00c20496abf655fa974ae887a695102a",
+        "id-052abff4e30c5d5eaa4071331c4af500",
+        "id-0bdbebb9b36f5b2b8d5816dbc27aeeb3",
+        "id-12eca4e940755bed847e500b41770a5c",
+        "id-1c66c2d5d4925e4cb8872aa25ea0071b",
+        "id-2bc56e5d43a356dda381e7a34377af89",
+        "id-351cfc95a8c85684a3ff908f6df282eb",
+        "id-36aa4edb4b1557c7bb8fde88fa158486",
+        "id-38ea53c83c9a55cf920b5ce358b95c74",
+        "id-3bc2433424425db093822bd2db4dd8c7",
+        "id-52c91baf111d50f7bd4b24fcc80ab1be",
+        "id-6c80b51346315f2fa3d9111d871deba1",
+        "id-95b79770d57e537bbfb65b05c9c21829",
+        "id-a12191bde58c547b954e263c5e49ba3e",
+        "id-b2fc16d589fe5693abaf68993d5e5701",
+        "id-c9ed027109de56548cba237529d5f6d8"
+      ],
+      "relationships": [
+        "id-043aea128eb850fdaa02f14f76ff870e",
+        "id-17935c9735b15bebb0ddcb2c69b47d0c",
+        "id-1ea900ddfb2c5a938dc191a60f532b15",
+        "id-3551f41796b657b2ab75877ded20695f",
+        "id-43cce9d2c8b4518db3b2473ee119bbb7",
+        "id-445690e23e845885ae1e0e89cc4a3fcc",
+        "id-6becc39029d35ed8b2e15aa61ec50eea",
+        "id-7b21a12993ee5494ae0c4ab99817413b",
+        "id-a72519a45a0750da967ba829c7f8d2db",
+        "id-b79c26e8964658f083ee2f5a9de41c56",
+        "id-c32d3d347681509e94a346636bcf85f4",
+        "id-c66319b6fedc5864b0ff0b3ab1bb4d8c",
+        "id-c9586e2870c6516aa39063a4ffc255c6",
+        "id-d5cfc47123f959c1a477f229106a3ceb",
+        "id-f7114c80d2ac571d88c5c1a4d7425046",
+        "id-f888507b858e5f41908fc81ae950747d"
+      ]
+    },
+    "id-1622c398b739544782f13026ee4fe1b0": {
+      "source": "id-7afbcec0122951079c2bb647251be323",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-00c20496abf655fa974ae887a695102a",
+        "id-052abff4e30c5d5eaa4071331c4af500",
+        "id-0bdbebb9b36f5b2b8d5816dbc27aeeb3",
+        "id-12eca4e940755bed847e500b41770a5c",
+        "id-1c66c2d5d4925e4cb8872aa25ea0071b",
+        "id-2bc56e5d43a356dda381e7a34377af89",
+        "id-351cfc95a8c85684a3ff908f6df282eb",
+        "id-36aa4edb4b1557c7bb8fde88fa158486",
+        "id-38ea53c83c9a55cf920b5ce358b95c74",
+        "id-3bc2433424425db093822bd2db4dd8c7",
+        "id-52c91baf111d50f7bd4b24fcc80ab1be",
+        "id-6c80b51346315f2fa3d9111d871deba1",
+        "id-95b79770d57e537bbfb65b05c9c21829",
+        "id-a12191bde58c547b954e263c5e49ba3e",
+        "id-b2fc16d589fe5693abaf68993d5e5701",
+        "id-c9ed027109de56548cba237529d5f6d8"
+      ],
+      "relationships": [
+        "id-043aea128eb850fdaa02f14f76ff870e",
+        "id-17935c9735b15bebb0ddcb2c69b47d0c",
+        "id-1ea900ddfb2c5a938dc191a60f532b15",
+        "id-3551f41796b657b2ab75877ded20695f",
+        "id-43cce9d2c8b4518db3b2473ee119bbb7",
+        "id-445690e23e845885ae1e0e89cc4a3fcc",
+        "id-6becc39029d35ed8b2e15aa61ec50eea",
+        "id-7b21a12993ee5494ae0c4ab99817413b",
+        "id-a72519a45a0750da967ba829c7f8d2db",
+        "id-b79c26e8964658f083ee2f5a9de41c56",
+        "id-c32d3d347681509e94a346636bcf85f4",
+        "id-c66319b6fedc5864b0ff0b3ab1bb4d8c",
+        "id-c9586e2870c6516aa39063a4ffc255c6",
+        "id-d5cfc47123f959c1a477f229106a3ceb",
+        "id-f7114c80d2ac571d88c5c1a4d7425046",
+        "id-f888507b858e5f41908fc81ae950747d"
+      ]
+    },
+    "id-7c9f994d7876558da5e87a9077f2bf6a": {
+      "source": "id-ecc5bfe7e27b54dfb59023a05879f1b0",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-69e67b8a2bb25dd99ec9fb966b9d5481"
+      ],
+      "relationships": [
+        "id-7c988086a7ab55ba88ecd598cc989479"
+      ]
+    },
+    "id-eba517b63e195805aaf71bd8b293ef76": {
+      "source": "id-ecc5bfe7e27b54dfb59023a05879f1b0",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-69e67b8a2bb25dd99ec9fb966b9d5481"
+      ],
+      "relationships": [
+        "id-7c988086a7ab55ba88ecd598cc989479"
+      ]
+    },
+    "id-5a481398aaa15c47b78db0245fe7c28d": {
+      "source": "id-5004f4019d1059108356b6ee7cfcaa8e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-446513b2b23f594f80789cda9185d637",
+        "id-6f0e40c416e15dfa8c70a216c1a2bb6f",
+        "id-ac3af58b121552608850d847992c8afa",
+        "id-cb1d28c1e8135785a123e050fa77210a"
+      ],
+      "relationships": [
+        "id-1d6da7e72fed5635a6829ac7ecf17067",
+        "id-33bb89d1ee40549da4e5a01d464b917f",
+        "id-646c7d1460a75e23aae69f7da219969e",
+        "id-a017b9c0e673560ab71059a2f016d512"
+      ]
+    },
+    "id-ac8f084c480f5504be2df660f85199bd": {
+      "source": "id-5004f4019d1059108356b6ee7cfcaa8e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-446513b2b23f594f80789cda9185d637",
+        "id-6f0e40c416e15dfa8c70a216c1a2bb6f",
+        "id-ac3af58b121552608850d847992c8afa",
+        "id-cb1d28c1e8135785a123e050fa77210a"
+      ],
+      "relationships": [
+        "id-1d6da7e72fed5635a6829ac7ecf17067",
+        "id-33bb89d1ee40549da4e5a01d464b917f",
+        "id-646c7d1460a75e23aae69f7da219969e",
+        "id-a017b9c0e673560ab71059a2f016d512"
+      ]
+    },
+    "id-3cd71a3f556b5128ad644304f2d2262f": {
+      "source": "id-0e93a43b398a503d804b87204f939a09",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-6630abffd8ac5e50b947a7179e1d976c",
+        "id-d7356584bc845225b4e2870b336411ee"
+      ],
+      "relationships": [
+        "id-31344016c6e8524db8d0adab97c50055",
+        "id-d4dc14a69f825107ab15329dac917bf1"
+      ]
+    },
+    "id-342658293e795a91924e008423557626": {
+      "source": "id-0e93a43b398a503d804b87204f939a09",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-6630abffd8ac5e50b947a7179e1d976c",
+        "id-d7356584bc845225b4e2870b336411ee"
+      ],
+      "relationships": [
+        "id-31344016c6e8524db8d0adab97c50055",
+        "id-d4dc14a69f825107ab15329dac917bf1"
+      ]
+    },
+    "id-848e05d946645a6895b7d66389cef95f": {
+      "source": "id-f4e98809bf18585aac90aa1597b89bb0",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-72018038e84c518c8bb24cb76c3b418e",
+        "id-ed9226f42cd853c08bb48e6ce86cfd4b",
+        "id-fe08dab2f85453af9f1ebec308bf64f6"
+      ],
+      "relationships": [
+        "id-8987c7c0846d53259f9b97e50861d77a",
+        "id-8fd34b94672f5541b4066e0e363c5f31",
+        "id-ee35b93d41045db48e4657e0368814d9"
+      ]
+    },
+    "id-c5dd49d4c9b15e009c8c410b0225322f": {
+      "source": "id-f4e98809bf18585aac90aa1597b89bb0",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-72018038e84c518c8bb24cb76c3b418e",
+        "id-ed9226f42cd853c08bb48e6ce86cfd4b",
+        "id-fe08dab2f85453af9f1ebec308bf64f6"
+      ],
+      "relationships": [
+        "id-8987c7c0846d53259f9b97e50861d77a",
+        "id-8fd34b94672f5541b4066e0e363c5f31",
+        "id-ee35b93d41045db48e4657e0368814d9"
+      ]
+    },
+    "id-13a743b2105e5142a30eec5bcb40d4be": {
+      "source": "id-36d21ea7e98b5e1bbbddad25ba53cd4e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-44334b55ed7857dc9bea3f43ffb1d874",
+        "id-96e9160ac5bc532faed556f17a714f99",
+        "id-b42f6b68fe5a51959a491c7439d1b6c0",
+        "id-eed78c1571b356ff9a9222054e7feeb4"
+      ],
+      "relationships": [
+        "id-2751e5d9f9fe54e899cf9acf1d14fe77",
+        "id-77fb28cc16985dcfa83038441c331ed1",
+        "id-a3b5fe2bd6c856fc8a8923e7bd309bc7",
+        "id-e2434718dd765bb7a5070c30fe9d4f33"
+      ]
+    },
+    "id-c2bc29b25d7754f2aed716c5a85a61e5": {
+      "source": "id-36d21ea7e98b5e1bbbddad25ba53cd4e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-44334b55ed7857dc9bea3f43ffb1d874",
+        "id-96e9160ac5bc532faed556f17a714f99",
+        "id-b42f6b68fe5a51959a491c7439d1b6c0",
+        "id-eed78c1571b356ff9a9222054e7feeb4"
+      ],
+      "relationships": [
+        "id-2751e5d9f9fe54e899cf9acf1d14fe77",
+        "id-77fb28cc16985dcfa83038441c331ed1",
+        "id-a3b5fe2bd6c856fc8a8923e7bd309bc7",
+        "id-e2434718dd765bb7a5070c30fe9d4f33"
+      ]
+    },
+    "id-f87415abefb85342ab21b130a2d7fe38": {
+      "source": "id-8a7d47abbe015a309139a0ee2c1250d4",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0bcc748a066653819c90f63952059b9a"
+      ],
+      "relationships": [
+        "id-6edda368e62358899be44b9e8c29974d"
+      ]
+    },
+    "id-9603985b1ff9589e8fef6a6f986487a5": {
+      "source": "id-8a7d47abbe015a309139a0ee2c1250d4",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0bcc748a066653819c90f63952059b9a"
+      ],
+      "relationships": [
+        "id-6edda368e62358899be44b9e8c29974d"
+      ]
+    },
+    "id-64a90ac078885a58bb62e68148cf1944": {
+      "source": "id-9e79bc474aed516c8c6752ab81b63d6b",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-08ef90abe8f35705add6ae823077cc76",
+        "id-50306e15812e5ba3aa26482f2c9c84ac",
+        "id-591ee54ab6145bf58e837667f64a4265"
+      ],
+      "relationships": [
+        "id-948029b3efce58bca575ab2fbe9436b8",
+        "id-9b1ea982895a51f485723bb8fa6473b5",
+        "id-e2e491ef8a6a59b0af497c723650523f"
+      ]
+    },
+    "id-188d90fca7955a6eb28e6051d7301aea": {
+      "source": "id-a6f6d30d8fce5ac78f60f7aefa71b28e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-0331dca5104b504794a216037ed9bd40",
+        "id-9c71dcd24d0154db8ee01ab204012f48"
+      ],
+      "relationships": [
+        "id-109b15c2422c57e489ac089a109332eb",
+        "id-adccfe1278b3521d9fbc60f082010730"
+      ]
+    },
+    "id-60080b3973815f368aa7327f07d14479": {
+      "source": "id-d71457435a085e749ffb1e1a3b551228",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-08b52c79a6275638bdaa2e33d701aaea",
+        "id-606f9b0a3e6a51b5a9f6be7518853d78"
+      ],
+      "relationships": [
+        "id-0c47e9eb1c215d23bb2728666bdc9b12",
+        "id-34cffd0af0765d91bf20e95a7ca80b3e"
+      ]
+    },
+    "id-7e05de32af8357c992136fe040c6ad92": {
+      "source": "id-49d4f69ebeeb5ea782a52172fb3e8a7b",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-873bd8a6758955b996c204275d26ed4f",
+        "id-d066b2ac060b5d0fa4429dde7b2c73c2",
+        "id-dfb644fa99745553bf0ff980faf30c6d"
+      ],
+      "relationships": [
+        "id-0ef017ba32ea5c8c990662c86580468f",
+        "id-7d63fba519f05d1187532112dd932d93",
+        "id-a0d953a21fd05c49b6d1060be5fd14b2"
+      ]
+    },
+    "id-891f123cc7065469843e3d2c36c95c72": {
+      "source": "id-a0eebbba1ce35b2ea9bf499d3ea6b4c2",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-06e038737c5355edbc0591e08c594ab0",
+        "id-5891936941f65d20afad86b0697879c7",
+        "id-7d6f635ffb6f5c6181bde1d07b859662",
+        "id-9e79bc474aed516c8c6752ab81b63d6b",
+        "id-d53727d908365757a293b0896b2c769b",
+        "id-e11f02764fe55ff29c0782db21198040"
+      ],
+      "relationships": [
+        "id-0a5a7d66bdf05d7d9caf75e7a9adedaa",
+        "id-2a4c3a6c2fab5888ba38985fadee13a4",
+        "id-4601572d8306573588a0b44c175398bd",
+        "id-478c72c1d8725f39849dae551019e9ea",
+        "id-84c802a1fca052d8af53fcf61c262f14",
+        "id-90338fa8fc025883ace2ba8c09bd25c8"
+      ]
+    },
+    "id-312bac33ef5051d19f3a3103f3120c0b": {
+      "source": "id-6d2882efaa7756e886bb64a9ca045885",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-49d4f69ebeeb5ea782a52172fb3e8a7b",
+        "id-770ebb3e3bdc5f2bbe77b2bfd55bd74d",
+        "id-82cd1f6a3e2352639e22c542f5cb3a9d",
+        "id-dbd66e69788450649e184966aa724797"
+      ],
+      "relationships": [
+        "id-33024def4eff52eda8b1ec917f39ccf7",
+        "id-4ae9d35b5c7a53518c028702a07c60b1",
+        "id-6d218a01ac9e54169d737a200e6e8b19",
+        "id-f04fcd65e7445bb684d2e439055f3e63"
+      ]
+    },
+    "id-b1ee496f77825e698f264bffb6b3186e": {
+      "source": "id-9c7d1cf0966a5d1bb0c17707051a793e",
+      "purpose": "source and immediate Capability children",
+      "standing_filter": "current governed native relationships and accepted ingestion; current or accepted endpoints",
+      "children": [
+        "id-4dbf578f52bd5b3b9301b9807ce60f30",
+        "id-9bbd142f818e50d39a3d0429f74b72b4",
+        "id-a6f6d30d8fce5ac78f60f7aefa71b28e",
+        "id-d71457435a085e749ffb1e1a3b551228",
+        "id-e4ba93a12970559e916ecaabb0eb0bb3"
+      ],
+      "relationships": [
+        "id-09a8137afcd150389d816394eb677a12",
+        "id-14208bb178f85337b282545bc88b20e7",
+        "id-836662609cea512ca3a67615ba1142e6",
+        "id-b735cae8a3a756b1bbb639db60c6c7ee",
+        "id-e1c939110ad058c78cd91b18a3f77717"
+      ]
+    }
+  },
+  "historical_candidates": [
+    "id-06fefadb422255778c021388c0713da2",
+    "id-0e7b6ba9c64552058d6d7273467dafc2",
+    "id-0eb72b7674fe5b0abb0ee593a34ab824",
+    "id-15c51be9de6754aabb49ab7765085d1b",
+    "id-17960c0f03bc5573a350551a398d38a9",
+    "id-1ecd068d755d5962bf577fe1c47e5b60",
+    "id-202874e8c1855c668e86675544e1e180",
+    "id-225decdc70525611adc431d8eb3320b8",
+    "id-2fc88907a6ed5958bcbca842caea03df",
+    "id-37735921adba5c4d8e0011ac9981483f",
+    "id-3c27d9d7979c54f7b8a287c5d4a8a536",
+    "id-42588be5083b5bd6a2be9c6a665689d1",
+    "id-4acc1f0b08d95b8586bc5461848bdbbd",
+    "id-4ffdfb1734f45983a7afb5dfd9518349",
+    "id-5282c25d36385b22b9fdb5c2db775943",
+    "id-59b2ba7e1f7e5c35af55083846230c60",
+    "id-5b69ab63fe5a5bd4924f6fcc8b3f36b0",
+    "id-5eadd69d280d54a4a6c6d7dc3a7a513e",
+    "id-64525b07e7435daabb85f402c4f293d2",
+    "id-6766f9d99b4f5a1b868f1511a8cd3fb2",
+    "id-68e26519ebd4599284eb0678db934f1d",
+    "id-6a33f136250753ada7e97eeab5b69247",
+    "id-6eeff5813bcd5b07bda266dd8cb6cd5c",
+    "id-728f54aca66e506f941aee05379a7466",
+    "id-749424e4b7f4549189954da9dfffc875",
+    "id-7b1b163ce4fa5d3281fa848daf7829e1",
+    "id-89d14d26a5ac52559c800372bff0f941",
+    "id-8be23262288e557a9cc8caaec75459d4",
+    "id-8d9a8b90234f5598951c554b1d0a0217",
+    "id-90a700a617465490b4aba733a71f7077",
+    "id-92f403277fa650db800042d9a3d82b45",
+    "id-932867433ef257f9bc64442aba49a914",
+    "id-9427c2b5ae5f575c8f8e7e90744bdb9e",
+    "id-9779605732075637970322adb858d0f3",
+    "id-9e5458afa43b551fa648405b73d15470",
+    "id-9fc198f12bdc58e2afee377f2869141f",
+    "id-a86a439e68455e59a536985c6da6c06e",
+    "id-aa3dfeec47395ec681d1937d50978750",
+    "id-aff67db20d6e5852963fa403329f9fe5",
+    "id-b28522678a1552cdb225952bffda81fd",
+    "id-b48c8539dc0f5729a4126c1529a6cf7a",
+    "id-b7b089ffe49a5b75a8ef521bb0809ee1",
+    "id-b831b6439ef85fa398ca026543ddfd7f",
+    "id-bb14616dcde956faa9b2f93ea0383454",
+    "id-c2a7889a5ffb50ea80b7a085311ccb42",
+    "id-c8d68ba3081f5d11a09fbbeeff19a6f9",
+    "id-ca840c781c655552adf39903f66bf87b",
+    "id-caa497ab9fc9565d9bc0a95b32092e63",
+    "id-cbaa24b994e0569db2b52997c12e1dc1",
+    "id-d047682e0c6a58a29c98057a125d3f6e",
+    "id-d49e9989656d5f1e80e56cba7521da80",
+    "id-d5b148feba81531083607efbd08c8c71",
+    "id-d9d00fb7b3cb5245ba2cab01c6e92be4",
+    "id-dcc2d3161e8c5e3aae14fbc6f38156b8",
+    "id-e177f9e006f9530fb8c666e356827a53",
+    "id-e5122cd9fe6f5b949cde0575a9a51da6",
+    "id-ea6c3751e94056d6b67f03df3d1a045d",
+    "id-ef999ccd731051ea9335d267b70f70ca",
+    "id-f18aabff123c54cd8786f866c552c1d3",
+    "id-f43aba44d0cc57c7ad581c211184fda4",
+    "id-f95c0749700357ddbd6c7896cdca6dcd",
+    "id-fb9272bf552b53939b34d7d90dc2cb85"
+  ],
+  "oversized": [
+    {
+      "view": "id-2bf749a8feb75a2e9777e7bcb89ea548",
+      "children": 21
+    },
+    {
+      "view": "id-2fe4e484c5a85b59ae5ded504b4a2fee",
+      "children": 21
+    },
+    {
+      "view": "id-d4e0a5eea7ef588e8b0ad4dbee80ec88",
+      "children": 21
+    }
+  ],
+  "protected_authored": [
+    "id-216c4ab0757b45b3894e7e0c2594b9f9",
+    "id-8fb2f8b1776f4ebf969e9b5b638e4ed3",
+    "id-c8ec850977565a17869af357ee28d917",
+    "id-e2a326c7d36751af9076a32dabe0e9cd"
+  ],
+  "business": {
+    "id-22a46a1a5b11558693d150c57f6207e8": [
+      "id-e9c8a116d4295421b9b0d118b7c88d76"
+    ],
+    "id-d3894c06391d5b3e98a7453898c6d7dd": [
+      "id-1fe766c788f95199bf7d99acd18967d6"
+    ],
+    "id-750d865b216b53c5920d4be10c37f31f": [
+      "id-9bfba3c8259d57a8903cacf65c72dbcc"
+    ],
+    "id-03440c23d9f65bf3ae73bba3ea003b98": [
+      "id-076d8235ea6a52fe8add2428eb537208",
+      "id-d86ae01996c158bc9e7f54eda7968a99",
+      "id-bcabffe2e44f5d0f941dd79337054524"
+    ],
+    "id-a700a2cfe1525dc09354cae49cf9e314": [
+      "id-7e72778221695938b681a86bcdb4e29f",
+      "id-ba4afa2dfff152fc84bbf6ffda7fc2e1"
+    ],
+    "id-69bf1cbc0c0a5eeb9456ccb2016445dc": [
+      "id-bdb124ce10b0522f88852631301adde9"
+    ],
+    "id-629ab37cd48a5ce4ac7fcfcfe0e0b095": [
+      "id-bd49fbe1db3658c187d625c8f9b75bf4",
+      "id-f13c34aeec985c28b9b2c678cbcd8347"
+    ],
+    "id-66c66acfa99953a9a55f3d7f76df1155": [
+      "id-ba2b639f8f70509f93c4db24ddaad76e",
+      "id-8f16a0825d2f53acaf6b9b20d4d62edf"
+    ],
+    "id-bcd1bcfe2292565daf7bf05611f6291e": [
+      "id-a19d0751fbc1551c8b642ed573db40c9",
+      "id-c8664fab086d5fdfbed9d4f969d2b445"
+    ],
+    "id-7d63bb02e8c05423994896bf2700b686": [
+      "id-f4739d841ca658a1b3f7145512dea398",
+      "id-223c9c3ee9c359a4932ba6941e4a36ff",
+      "id-56422764466e55aa997bcfcf5f56a1f6"
+    ],
+    "id-0c3dfa54a755585a908d526200d0e042": [
+      "id-ef1e50beb7b859189e7bde769fa29794",
+      "id-c89cf54174435cfa88ceff5443fa3d13",
+      "id-e034f8d2fac559ec9db17163b59105d2"
+    ],
+    "id-db71d46921295e23922009dadbc3a231": [
+      "id-a894aced03305be184a59a9641e2f473",
+      "id-8ebc79ad2d9e5938843adb497505ff18",
+      "id-4453d475e55051739775bd24eed4e05d"
+    ],
+    "id-4dbb3862b2615405a78cf35c87f87d66": [
+      "id-105cd3aafab157579a3ba3ab34050e65",
+      "id-74752f719ac15cf19bb19fcfd6c710c4",
+      "id-3416a254eaf850589079f47c7181b017",
+      "id-3474306ba5fb549a8149177dd8e8ce3b"
+    ],
+    "id-d08fffb5be135af8ad634aa206538b2b": [
+      "id-84be2107d3265bbba88e791ae39ad45c",
+      "id-80dabf67dc3c55df92658d2a4ab1cae5"
+    ],
+    "id-67283eea83655f049272bc563f27a0ab": [],
+    "id-2768816514fe5299b29bd9c26da41724": [
+      "id-a68773283aa850b08b2385594f8232c6"
+    ],
+    "id-e261b5fc436b5375a56e24b801a52bfd": [
+      "id-b03ed0e2961b5552ada78aea9f737545",
+      "id-4d5cc8556b6655b696b21f30f32936fc",
+      "id-125eb1bafd6f576abf5f667d191671cc"
+    ],
+    "id-3a8b6b30fe16591db1bbc42154562f99": [
+      "id-dd07536676155f29aba4f7685f91928c"
+    ],
+    "id-1fa9c460a26056429e99c42ae9bbd3bb": [
+      "id-2e33d331d49e5ab395b7e9aca4d35a7b",
+      "id-7db4eb58099851c0abc028368d8bf3f4",
+      "id-2ff1e3c2d1be5854a3381eb4680ad2fc"
+    ],
+    "id-747eb742d71758ebae7fc8c8aef2e9fe": [],
+    "id-83e6255fbb385e108af6ca5137f5369c": [
+      "id-0a69584a15775238a1e61376783af72a",
+      "id-5be375dd5e0a52a59080d890c70026ee",
+      "id-5664989225065f559282eb3b6ae1a2c8"
+    ],
+    "id-97e990b2ebc55a46a791e5705d843733": [
+      "id-b3b38185e87952fa818968cfa46f6b97",
+      "id-89a363cc17845c33a48e9efa92a46759"
+    ],
+    "id-cea15c15920f5b30bb8c38379b2c24cc": [
+      "id-bb528b96ea865ab39eb647886a22da6c",
+      "id-49658c85e0af5e04b8bfa7e7e01e2de2"
+    ],
+    "id-6bea9e04a3b955108a5feeddc3765ea5": [
+      "id-6f69c505569953eb98b0c988701560e5",
+      "id-460bdb855c4a5848809702a33052b39c",
+      "id-30480c980bcb5c76b77212815c28ef23"
+    ],
+    "id-4eef4b65ce8553cf89d6249207c5c332": [
+      "id-8b43e004014f58d6a89615e010a635e9"
+    ],
+    "id-f919e484f3d0505484e5b7b861c14776": [
+      "id-d446139f6f1d553a85ee64fe9cc3441f"
+    ],
+    "id-b3fe6dad62ab5be4a896ed36af020d0a": [
+      "id-a21b019eae78531a9d04544c8848ff11"
+    ],
+    "id-e5c678707141565f8de694419dd108d8": [
+      "id-d437109a15ea5934be0e4e1f141d4bb0",
+      "id-f45ebdf7e7b350afbd2f0a3f7089d662",
+      "id-511bd8944f125350b0087bda5a67289d",
+      "id-da167aee6fdd52ada94167a4f2d38275"
+    ],
+    "id-c15bf40e13a55cad948c72f4ca465502": [
+      "id-8277670d4331537c8abb80cd7bc32c44",
+      "id-399e96333eac536d9a9dacfe61fab30e",
+      "id-4d7d03e29c0f591e8af54f3f5aacfdbf",
+      "id-8aeaa6ef5a72507ca930cefc795777ae"
+    ],
+    "id-7d7afd177c115c7ab9a99ecac863f922": [
+      "id-62c6a7d581c655b5869dc69330e7448d",
+      "id-9f9356f066805656b8299477cc407f7a"
+    ],
+    "id-74952585858152ee8d1cde85652b9cb7": [
+      "id-4b9eb96845475fdea912b5ed1006dc42",
+      "id-174d8d9bdebe52f3b75f7d7b833a238d",
+      "id-800530c90a5b5c67b01b69c9e294d84f",
+      "id-d8d58a12f31c5498891a77c0007db1f1",
+      "id-42c6ebed7ccc563cb3e676d8af04f557"
+    ],
+    "id-d5fc4a1379295728932ffef0707e45a0": [
+      "id-c4394d5fab4756eba23497f60d008a8a"
+    ],
+    "id-bba7a28cab89563081d47aafab8cfdd3": [
+      "id-c83733d8e9f95750a6eed1c2698c9728",
+      "id-339a78a4ce1b5458935001a13c69b541",
+      "id-51b0d4bdbe535b45bba9ef4692ec846d"
+    ],
+    "id-024ccb0007b1594d8c1988ab2c253764": [
+      "id-e17f897838ba5b378f5b8ad68ce7b21e",
+      "id-fb2510a379095ab690710bfdb349b7c3",
+      "id-80543b3936c75006b686049b21c3409b"
+    ],
+    "id-c90182c2f674517fbdb0b83eed6ac7cf": [
+      "id-a54f35b07b815d96968739ba578eafb8"
+    ],
+    "id-8422e524df725069962b4b52479ed7c7": [
+      "id-e1bed07eccfb54898fb32fee288bb348",
+      "id-218124def56b5269a230f77bc0b7c771",
+      "id-493f8b0295e95176b154dd5108519d15"
+    ],
+    "id-25a132ef6e3755628cd83333f7e47a22": [
+      "id-4b53c63b570e51049f253b97705c7b6b"
+    ],
+    "id-781b045c83bf5dc795c937bf9617c45a": [
+      "id-9d272a05351f56c6b36081fa3e82b5b9",
+      "id-a2488cd448b85054bfe3681664223ebd",
+      "id-2397bfe367735b1493b98301c0b14177",
+      "id-bb9b7f09468956f1b94629dba75c1864",
+      "id-d67a9079010b510d8d664c0526ab3972"
+    ],
+    "id-6c2b7660c16b5806a1df3d6e9843e54b": [
+      "id-36432aaad42d514dadf53c2400e792c2",
+      "id-67473bb334725bafaf02fe43b1b1bd2b",
+      "id-f6c4b81fb90a5e51ad46be3c04e649c8",
+      "id-eef298cf88b5510684d9438653eb2d57"
+    ],
+    "id-7bec5e8cfa7d5ebfb9a4fcc0de3ce589": [
+      "id-6fd2686106775d21a3f1328e9b5172cc",
+      "id-1ca58ce514835e8f971516c02f5966a0",
+      "id-e242592acf915579b226a74b9d593069"
+    ],
+    "id-7d0a0fce0c085c7099d601e8647988c9": [
+      "id-a0864f0411fc5b138ed60a92740a94e5",
+      "id-71e1e09725b75503b00d488a583ed5ab"
+    ],
+    "id-9f094c79c2bc58dc8cc868cc325a8cfc": [
+      "id-6f32d4fd28ed57c9b1954194f1815249",
+      "id-424c90401a9b56a692d86bdc570da5bf",
+      "id-618db518b33157748120fb9e7a2b2ced"
+    ],
+    "id-e7d777f4987257fa931370f8c10e68ba": [
+      "id-ce26d95c6e625c95b82ec5255efc54d2",
+      "id-91f0d805c8cb54b0b90703335de489c1"
+    ],
+    "id-9cfe6f83b1c05716a52003e90a4ecd7d": [
+      "id-fd6cadb66f93562dbc20e80f63a874e2",
+      "id-8f7fad4126c955dfbe5145031f53c009",
+      "id-f1d67043fc38521b82192f8608690171",
+      "id-e51073ecb9fe5b4089b2a8f6918c3e63"
+    ],
+    "id-64ade69fca8a5c74b0c182e49050f417": [
+      "id-f736b31500585e649c16f3698b80bb8b"
+    ],
+    "id-9374068d3d085ea4a475bcdd7ee499d9": [
+      "id-cf827cbd7a9b56c9920955a8ad8f696e"
+    ],
+    "id-47bece6aa1465202a21b2ae0c134d02e": [
+      "id-a3270ba5aaf05475ac9926dcf27213ec"
+    ],
+    "id-68dfcffefce751ceb993142bf7fafc3d": [
+      "id-9f603bdb1dd95df98e4435a09fd9d59e",
+      "id-8574d92a857c5c44993ba12ce39e6915"
+    ],
+    "id-5a07f634d9e2521595013593e691b81b": [
+      "id-5ee1cf56525a5ace8760a693f7178e26",
+      "id-5c81ec04e92f5de194dd94b4a825e6d5",
+      "id-3f5966bbff8e529b9b770b5a3a463d7c",
+      "id-8b1484311cdd59f99531825ffd3f4dd7",
+      "id-be9040f7a694593e9079630a47ac0d7d",
+      "id-c94dadee540d56bda2e0bb03e39317c2"
+    ],
+    "id-1d0b7fe227d155cbbf96969cb3ea6ab7": [
+      "id-cb1b7d0b975451d1b9e6f9af857e26d5",
+      "id-0c7ab71e71a454b2853aa416f627606f",
+      "id-4a5c8fa0174257c286b04b412b485c49"
+    ],
+    "id-edb03842b4a05324b1f952a7a654298e": [
+      "id-55999c5cc85c56839cd6a195f6c4a06e",
+      "id-3f6eeff72160526a9d3427bba8840a86"
+    ],
+    "id-0a06851e28c55cd8bb2fb7919e0f884e": [
+      "id-6956dbad6b54534eb4f00f4ef32f66cd",
+      "id-536b18b3f8f75b8ca4f5b7848047ca0c"
+    ],
+    "id-ba4e751d897f58c6abf794eb6f673897": [
+      "id-80ad8fc9adee572bad0dc3e1956aeb3f"
+    ],
+    "id-1d125fefcb1257e9b41842d0e50f58b6": [
+      "id-ee014bd458f950a9947433640265f979",
+      "id-b718f3f6044a5e90a2b30de1fefecf92",
+      "id-ec4c0319ccba5704ace61b26229b3e57"
+    ],
+    "id-500fd588dce655f9bd73619d47b359ad": [
+      "id-71d417c9f364593b9a2a4abb91bd0a88",
+      "id-c2a0206a9be752b6a842ff44111348e1"
+    ],
+    "id-cfb5eefe9f265d5786a7350ca9844449": [
+      "id-9120a970978c59cd83f0817824c60ea4",
+      "id-181e145642d851589d628513bc6f6ac0",
+      "id-84568453a0025bfe874d50266cc0b0e9",
+      "id-aca28e2a4a55525c9bd71ccb5cc805ab"
+    ],
+    "id-dfb8f77b68d65796b348d79e0ab685da": [
+      "id-8c64f156246758a583e912917b6ef646",
+      "id-f83b7cb73a8d51b7a75537b7364f8cb3"
+    ],
+    "id-5cf520b210f1547a93961bf193292a6b": [
+      "id-6f42f6c4e3505c76b76b71dd0c492ac0"
+    ],
+    "id-cf72f33c72bc59b785acee1790b3ce75": [
+      "id-65b2369b38c65a53b69a35c1189fbef4"
+    ],
+    "id-60103e700d665828953b33df43d67691": [
+      "id-555626d16cc154d5991d905428db845c"
+    ],
+    "id-96b3b1a980ee54a89dc47ed4338fecee": [
+      "id-7f12e940b4b955babe62e1c1fec724ac",
+      "id-822b81c6c1b65acf9426879c3079436a"
+    ]
+  },
+  "known_stale_connections": [
+    "id-1fe766c788f95199bf7d99acd18967d6",
+    "id-3f6eeff72160526a9d3427bba8840a86",
+    "id-555626d16cc154d5991d905428db845c",
+    "id-55999c5cc85c56839cd6a195f6c4a06e",
+    "id-62c6a7d581c655b5869dc69330e7448d",
+    "id-65b2369b38c65a53b69a35c1189fbef4",
+    "id-71e1e09725b75503b00d488a583ed5ab",
+    "id-7f12e940b4b955babe62e1c1fec724ac",
+    "id-89a363cc17845c33a48e9efa92a46759",
+    "id-8c64f156246758a583e912917b6ef646",
+    "id-8f16a0825d2f53acaf6b9b20d4d62edf",
+    "id-8f7fad4126c955dfbe5145031f53c009",
+    "id-9bfba3c8259d57a8903cacf65c72dbcc",
+    "id-9f9356f066805656b8299477cc407f7a",
+    "id-a0864f0411fc5b138ed60a92740a94e5",
+    "id-a19d0751fbc1551c8b642ed573db40c9",
+    "id-a3270ba5aaf05475ac9926dcf27213ec",
+    "id-a54f35b07b815d96968739ba578eafb8",
+    "id-b3b38185e87952fa818968cfa46f6b97",
+    "id-ba2b639f8f70509f93c4db24ddaad76e",
+    "id-c4394d5fab4756eba23497f60d008a8a",
+    "id-c8664fab086d5fdfbed9d4f969d2b445",
+    "id-cf827cbd7a9b56c9920955a8ad8f696e",
+    "id-dd07536676155f29aba4f7685f91928c",
+    "id-e51073ecb9fe5b4089b2a8f6918c3e63",
+    "id-e9c8a116d4295421b9b0d118b7c88d76",
+    "id-f1d67043fc38521b82192f8608690171",
+    "id-f83b7cb73a8d51b7a75537b7364f8cb3",
+    "id-fd6cadb66f93562dbc20e80f63a874e2"
+  ],
+  "uncertain_diagnostics": [
+    "id-ef8af9b152505720b37914080c957a1c"
+  ]
+}

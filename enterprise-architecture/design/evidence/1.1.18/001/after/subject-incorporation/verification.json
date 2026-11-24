@@ -1,0 +1,153 @@
+{
+  "outcome": "PASS",
+  "canonicalElements": 1874,
+  "canonicalRelationships": 1909,
+  "subjectsIncorporated": 32,
+  "classificationRelationshipsIncorporated": 27,
+  "canonicalIdentitiesAllocatedThroughGovernedCreate": 32,
+  "relationshipRepresentationIdentifiersAllocated": 27,
+  "existingCanonicalElementFilesBytePreserved": 1842,
+  "existingSubjectsPreserved": 82,
+  "originalAssessmentRowsUnchanged": 784,
+  "oldProjectedElementsAndRelationships": "PASS: every old semantic signature unchanged",
+  "views": {
+    "existingViewCount": 1216,
+    "allViewContentsUnchanged": true,
+    "allExistingViewNavigationUnchanged": true,
+    "necessaryCR060EmptyPathOnly": true,
+    "emptyPresentationItemsAdded": 3,
+    "unrelatedIncomingViewsAdopted": 0
+  },
+  "nativeCataloguePlacement": "PASS: one native Grouping entry per Subject; one direct-source entry per relationship",
+  "canonicalNavigation": "PASS: prune accepted new identities and original document is identical",
+  "naming": "PASS: native Grouping, null specialisation, local friendlyName, canonicalName null with explicit unresolved reason",
+  "protectedFilesChecked": 1905,
+  "allowedExistingFilesChanged": [
+    "enterprise-architecture/continuum/MANIFEST.md",
+    "enterprise-architecture/continuum/navigation.json",
+    "enterprise-architecture/design/archimate/projection-template.xml",
+    "enterprise-architecture/design/evidence/1.1.18/001/after/report-index.md",
+    "enterprise-architecture/design/review/1.1.18/change-review.md",
+    "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md"
+  ],
+  "unreleasedProjection": {
+    "path": "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/Harmonia-Subjects-unreleased.xml",
+    "sha256": "aa899767de1b146feb27fe08b7f40fafa1c7f691178643e7f921de285040b631",
+    "publicationAllocatedIdentities": 0
+  },
+  "validation": {
+    "status": "PASS",
+    "elements": 1874,
+    "relationships": 1909,
+    "qualifiedSourcePredicates": 462,
+    "canonicalIdentities": 1874,
+    "representationIdentities": 1874,
+    "provenanceCoverage": 1874,
+    "sourceBindings": 3730,
+    "supportedNativeTypes": 60,
+    "navigation": "PASS",
+    "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance",
+    "archiCatalogue": {
+      "elementEntries": 1874,
+      "nativeTypeDirectories": 27,
+      "relationshipEntries": 1909,
+      "sourceDirectories": 686
+    },
+    "containment": "PASS",
+    "informationNaming": {
+      "information_elements": 95,
+      "native_types": {
+        "DataObject": 82,
+        "BusinessObject": 13
+      },
+      "classifications": {
+        "Topic": 70,
+        "BusinessObject": 13,
+        "UNRESOLVED": 11,
+        "Class": 1
+      },
+      "fully_derived": 84,
+      "unresolved": 11,
+      "contextual": 60,
+      "preserved_identity": 95,
+      "absent_identity": 0,
+      "canonical_ids_allocated": 0,
+      "metadata_changes": {}
+    },
+    "offlineXsd": "PASS",
+    "exchangeReferences": "PASS",
+    "outputSha256": "aa899767de1b146feb27fe08b7f40fafa1c7f691178643e7f921de285040b631",
+    "publicationAllocatedIdentities": 0,
+    "actualArchiTransport": "NOT_PERFORMED"
+  },
+  "initialStandardToolingTests": {
+    "outcome": "FAIL",
+    "executedTests": 56,
+    "fixtureErrors": 6,
+    "basis": "Temporary source fixtures omitted declared retained inputs; original log preserved"
+  },
+  "supplementalToolingTests": {
+    "outcome": "FAIL",
+    "invocation": "Existing unittest discovery with exact declared retained files copied into temporary source fixtures; unchanged tests and validators",
+    "testsRun": 85,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0,
+    "elapsedSeconds": 307.771,
+    "retainedInputs": {
+      "enterprise-architecture/design/evidence/1.1.18/001/before/Harmonia-OpenSpec-Expanded-Subject-Capability-Mapping.md": "b6f59ce36ad4b7719fd0e954e4c4b0e86a874fe5cab2459c1804019e43944094",
+      "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md": "4cdc2217cc0bb8e8d2296537a1228cf7c7423ee423103d6d56857f87c57584dc"
+    },
+    "temporaryFixtureTreesSupplied": 3,
+    "originalStandardInvocation": "tooling-tests.log retains six fixture-input errors; no unchanged retry or hidden replacement"
+  },
+  "finalStandardToolingTests": {
+    "outcome": "PASS",
+    "testsRun": 85,
+    "failures": 0,
+    "errors": 0,
+    "elapsedSeconds": 314.19,
+    "runnerExitCode": 0,
+    "invocation": "timeout 420 /tmp/harmonia-tooling-venv/bin/python -B -m unittest discover -s enterprise-architecture/tooling/tests -v",
+    "log": "final-tooling-tests.log",
+    "logSha256": "0768e44173f0c426903434e225f58b64f7f459b6a1814cf464802ae2c39c1cc5",
+    "fixtureTreatment": "Maintained test-only fixtures now supply declared retained inputs; no production validator change; population assertion updated for accepted 32/27 delta",
+    "earlierRuns": "Original standard six fixture errors and supplemental one predecessor-count failure retained in their original logs"
+  },
+  "javaArchitectureSuite": "UNRESOLVED: earlier Maven read-only dependency-cache error before test execution; unchanged command not rerun",
+  "taskEventProvenance": "UNRESOLVED: original instruction-entry event times unavailable; no substitute timestamps",
+  "actualArchiTransportAndSolutionArchitectInspection": "NOT PERFORMED / REQUIRED BEFORE PUBLICATION ACCEPTANCE",
+  "release": {
+    "current": {
+      "version": "1.1.18",
+      "previous_version": "1.1.17"
+    },
+    "transition": "NOT AUTHORISED / NOT PERFORMED",
+    "publishedBaseline": "Unchanged and intentionally not overwritten; current working result is unreleased"
+  },
+  "commitPushAndHcrlClosure": "NOT AUTHORISED / NOT PERFORMED",
+  "documentLinks": {
+    "outcome": "PASS",
+    "errors": []
+  },
+  "provenance": {
+    "outcome": "UNRESOLVED",
+    "version": "1.1.18",
+    "iteration": "001",
+    "records": [
+      "evidence/1.1.18/001/after/ai-agent-reports/20261101T223733Z-openspec-subject-capability-reconciliation.md",
+      "evidence/1.1.18/001/after/ai-agent-reports/20261101T225438Z-bounded-subject-reconciliation.md",
+      "evidence/1.1.18/001/after/ai-agent-reports/20261101T232558Z-accepted-subject-incorporation.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md",
+      "evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md"
+    ],
+    "errors": [],
+    "unresolved": [
+      "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+      "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+      "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+    ],
+    "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+  }
+}

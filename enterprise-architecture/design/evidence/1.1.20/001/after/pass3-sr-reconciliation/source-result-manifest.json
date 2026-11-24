@@ -1,0 +1,60 @@
+{
+  "baseline_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/Harmonia_1.1.20_Candidate_017_Pass3_012_XD_Consolidated_Catalogue.md",
+  "baseline_catalogue_sha256": "54f7b6de1a78cb28a4db41dcc19dc30ee3e80aee88ea14ded7d3714aa9a0e5d0",
+  "baseline_workbook": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/Harmonia_1.1.20_Pass3_012_XD_Adjudication_Workbook.xlsx",
+  "baseline_workbook_sha256": "0500831703b2d5a3b7698caaddc7efebb8482c4934f228a9a3868b239a50cb75",
+  "baseline_package_manifest": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/source-result-manifest.json",
+  "baseline_package_manifest_sha256": "57632e8ff58a8be684f894c33136505a6eb9c3578d438b610a5eb1cfa1ee2348",
+  "input_manifest": "enterprise-architecture/design/evidence/1.1.20/001/before/pass3-sr-reconciliation-input-manifest.json",
+  "input_manifest_sha256": "a5f43b0b8e9b93c98097876c9cca3adcda3c726babe87777d744bb976bc742fb",
+  "operative_directions": "enterprise-architecture/design/evidence/1.1.20/001/before/pass3-sr-reconciliation-issued-directions.md",
+  "operative_directions_sha256": "30be6426adcccf31f9a6631a4cb8fde3736aadabe6e0e0f46f601150d8ed5117",
+  "result_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_013_SR_Reconciled_Catalogue.md",
+  "result_catalogue_sha256": "9b229610992d8aaec412e79e5012ff986c335943c59e63fc18beea4a777acf28",
+  "result_workbook": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/Harmonia_1.1.20_Pass3_013_SR_Adjudication_Workbook.xlsx",
+  "result_workbook_sha256": "b170216cab898f3071299b9f970b9fd038801820e1719182e7b3dad5ad9504b2",
+  "before": {
+    "ct1": 24,
+    "ct2": 145,
+    "ct3": 586,
+    "features": 2941
+  },
+  "after": {
+    "ct1": 24,
+    "ct2": 145,
+    "ct3": 585,
+    "features": 2936
+  },
+  "retired": [
+    "B05.03.04",
+    "B05.03.04.F01",
+    "B05.03.04.F02",
+    "B05.03.04.F03",
+    "B05.03.04.F04",
+    "B05.03.04.F05"
+  ],
+  "added_identifiers": [],
+  "reproduction": "PYTHONDONTWRITEBYTECODE=1 python3 enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/authoring/build_result.py",
+  "evidence_sha256": {
+    "Harmonia_1.1.20_Candidate_017_Pass3_013_SR_Reconciled_Catalogue.md": "9b229610992d8aaec412e79e5012ff986c335943c59e63fc18beea4a777acf28",
+    "Harmonia_1.1.20_Pass3_013_SR_Adjudication_Workbook.xlsx": "b170216cab898f3071299b9f970b9fd038801820e1719182e7b3dad5ad9504b2",
+    "authoring/README.md": "17d4f6403365b4a737cbf65b1a2edd278f7150c2d7c33c53e775a60c9b175844",
+    "authoring/build_result.py": "ddec478831eb7847ec88094846ea4feba3699e049c1da079f0253b419db974a4",
+    "authoring/changes.json": "43f0e62995a1da026e0fff6769633be1b6b19dc567ac86dc3be441f289b2f113",
+    "authoring/ooxml.py": "22a9e62bf4c09ad84b2f7de660404637769c45a7ac796ef10e8277fc9c835842",
+    "authoring/verify_result.py": "eedc58c5fba95d15a2e640fd29e437cc801fafa2430c45a7c8981915761fff04",
+    "capability-reconciliation.json": "aa3e75856072a658c1f0bb83c2fb3967286fa59383d3f79eb30f3127fa745dc2",
+    "criterion-reconciliation.json": "ed600d3d8855873759f2a0b32b0070872f8c18a061f0b86feb5e4340ea9348e5",
+    "definition-changes.json": "7a65e421fb8ba8e094f7fbcb5c32e471446c12f01a15193f39da43ffb1ddd058",
+    "feature-reconciliation.json": "7e8fd96f8d1266e82b23c3c906b52871ac81c6efdbf86399aaabb75feb5a1cc8",
+    "measurement-criteria.csv": "c7dabbd41ccf7b42732cfaf68b5b314dd980e7b9349b7c1a4b0174682744a14a",
+    "retirement-trace.json": "3d0be36bbe866ac64a999cf1c22ca40c894ba25bd2e827abc841065226548ba8",
+    "source-editorial-notes.json": "8a7dd1c14f53a8f222528a0bb071eed3ad4980be4a248393b2d9a767a25adb70",
+    "spreadsheet-application-check.json": "ff9d61c0d088cadacd97c6345250cbda62c04739417ec219856b30d30c2c5fe9",
+    "sr-correspondence-qualifications.json": "4e8d54f9217f25fc9691d250f6f598337f747b4f847a901fdf8e852207e56ee2",
+    "sr-incorporation.json": "d811a8778e44582914587be808390e4a5c5010dd6aa516e74e15cae60beeb5af",
+    "sr-retirement-trace.json": "ffd9d3a2f817c6e13deeadb60e35c94b4655ea37ab2d1cf89fadd9401f156947",
+    "sr001-feature-reconciliation.json": "c391f6acfa38696618c3536180e3a9db80eff6aebe41ae36d231ff0acd42bf7b",
+    "xd-incorporation.json": "63ce69bc33f4fbebc52cad10771d57685536fec048b524772bccdb3a3e34a033"
+  }
+}

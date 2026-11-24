@@ -1,0 +1,374 @@
+{
+  "checkpoint": "718fc278be5b89b6138d4341feddefce1269eaa6",
+  "branch": "feature/BL-CALLIOPE-OO-01",
+  "remote_checkpoint": "PASS: GitHub comparison identical",
+  "git_scope_and_protected_paths": "PASS",
+  "approved_tracked_deletions": 1326,
+  "deletion_nul_list_sha256": "f5ec3eaa1b897357a33f03bd137ab2e3079660b1b03ca7dd2dd490017079e963",
+  "retained_tracked_paths": 12837,
+  "unchanged_tracked_paths": 12783,
+  "changed_poms": 50,
+  "historical_review_addenda": [
+    "enterprise-architecture/design/review/software-0.1.0/hcrl-software-0.1.0-001.pending.md",
+    "enterprise-architecture/design/review/software-0.1.0/hcrl-software-0.1.0-004.pending.md",
+    "enterprise-architecture/design/review/software-0.1.0/hcrl-software-0.1.0-006.pending.md",
+    "enterprise-architecture/design/review/software-0.1.0/hcrl-software-0.1.0-008.pending.md"
+  ],
+  "removed_legacy_local_outputs": [
+    "energeia/ponos-cli/dependency-reduced-pom.xml",
+    "hestia/mnemosyne-operations-cli/dependency-reduced-pom.xml",
+    "iris/iris-administration/dist",
+    "iris/iris-administration/node",
+    "iris/iris-administration/node_modules",
+    "iris/iris-clinical/dist",
+    "iris/iris-clinical/node",
+    "iris/iris-clinical/node_modules",
+    "iris/iris-console/dist",
+    "iris/iris-console/node",
+    "iris/iris-console/node_modules",
+    "pylai/pylai-mllp-cli/dependency-reduced-pom.xml"
+  ],
+  "post_reset_application_source_absence": "PASS",
+  "maven_build_identity": "0.1.0-SNAPSHOT",
+  "maven_parent_version_references": 49,
+  "projects": {
+    "jar": 33,
+    "pom": 13,
+    "war": 4
+  },
+  "artifacts": [
+    {
+      "path": "agora/agora-api/target/agora-api-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/agora-api/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/agora-api/pom.xml"
+      ],
+      "sha256": "079fa5bc88974bcec6ac48562b7028a48a639426c94bb0cbffd3dbbe266a2fe0"
+    },
+    {
+      "path": "agora/agora-core/target/agora-core-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/agora-core/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/agora-core/pom.xml"
+      ],
+      "sha256": "2de06fd168e9909056452f402d16b7f3a5858e90fdadbeea543c6b4ffb1241a3"
+    },
+    {
+      "path": "agora/agora-matrix/target/agora-matrix-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/agora-matrix/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/agora-matrix/pom.xml"
+      ],
+      "sha256": "baf05ecd545897f21d86864b14851cdcdd906b028341b986e572eff77c473789"
+    },
+    {
+      "path": "agora/agora-service/target/agora-service-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/agora-service/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/agora-service/pom.xml"
+      ],
+      "sha256": "c87826ffd99c246aa15eb32cc1096c41252e29cb22be25d2b9c514e9d444416c"
+    },
+    {
+      "path": "calliope/target/calliope-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/calliope/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/calliope/pom.xml"
+      ],
+      "sha256": "c8043da2e6009828b2215b7839edfafb750b76953c77af3939efc894e7deee2e"
+    },
+    {
+      "path": "energeia/erga/target/erga-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/erga/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/erga/pom.xml"
+      ],
+      "sha256": "2a515cf955b933137811512bcee004f89c1309c3488760ec32747132c7b67ab3"
+    },
+    {
+      "path": "energeia/ponos-cli/target/ponos-cli-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/ponos-cli/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/ponos-cli/pom.xml"
+      ],
+      "sha256": "9e7d7afd6dacf16ef78c57c966a2ef584901a0eb523543df5761328fc8bd7ffa"
+    },
+    {
+      "path": "energeia/ponos/target/ponos-0.1.0-SNAPSHOT.war",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/ponos/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/ponos/pom.xml"
+      ],
+      "sha256": "9abb7e051c310c804ebc92de4d78d26f01d2041a04787ff7261d0146f3cd56c0"
+    },
+    {
+      "path": "energeia/praxis/target/praxis-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/praxis/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/praxis/pom.xml"
+      ],
+      "sha256": "3b43873d6511fc2fbb74e3566eaf6348c6284d95b53a113136105d56e96c326c"
+    },
+    {
+      "path": "hestia/mneme-cluster/target/mneme-cluster-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/mneme-cluster/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/mneme-cluster/pom.xml"
+      ],
+      "sha256": "0f717f633cc498773436c5ce727a99400227d10de71d7d39f09ac1e2ff1b3108"
+    },
+    {
+      "path": "hestia/mneme-persistence/target/mneme-persistence-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/mneme-persistence/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/mneme-persistence/pom.xml"
+      ],
+      "sha256": "fafbfb05276fb142e714a1358498dc8c38e11fdd863dcb51b16bdf984483bb51"
+    },
+    {
+      "path": "hestia/mnemosyne-api/target/mnemosyne-api-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/mnemosyne-api/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/mnemosyne-api/pom.xml"
+      ],
+      "sha256": "1aaacce73b64b8a8f8e3dc1aa0edc0ce8e3aa8ae9a6efc44dc65657a63711e53"
+    },
+    {
+      "path": "hestia/mnemosyne-clinical/target/mnemosyne-clinical-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/mnemosyne-clinical/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/mnemosyne-clinical/pom.xml"
+      ],
+      "sha256": "673a8d52ffc6c850e7f941034268a3b4f856b96f0564e4ee21a20768856e3189"
+    },
+    {
+      "path": "hestia/mnemosyne-operations-cli/target/mnemosyne-operations-cli-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/mnemosyne-operations-cli/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/mnemosyne-operations-cli/pom.xml"
+      ],
+      "sha256": "edf300405da1c81b71c08dcbbb5373d00eacb4bcba394cd4d581fca48ae29570"
+    },
+    {
+      "path": "hestia/mnemosyne-operations/target/mnemosyne-operations-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/mnemosyne-operations/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/mnemosyne-operations/pom.xml"
+      ],
+      "sha256": "ab3e17fc0f0122788567d65979cc99181392b575362bcc1a80eec8f0ff36c7e7"
+    },
+    {
+      "path": "iris/iris-befe/target/iris-befe-0.1.0-SNAPSHOT.war",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/iris-befe/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/iris-befe/pom.xml"
+      ],
+      "sha256": "e99d593214304a8b8d02a7bea2832e87a82431dc30de3d6c32bd8caad8d3e111"
+    },
+    {
+      "path": "kleio/kleio-core/target/kleio-core-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/kleio-core/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/kleio-core/pom.xml"
+      ],
+      "sha256": "f590f5fddc24930daaf9aa4119212bfc7c228e2bbc1b4c2106586f356f24a281"
+    },
+    {
+      "path": "kleio/kleio-fhir/target/kleio-fhir-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/kleio-fhir/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/kleio-fhir/pom.xml"
+      ],
+      "sha256": "fcb094a2c4e45a8846d73ab631c8a566e9aa0dd1b85945f22f824a00279bb188"
+    },
+    {
+      "path": "kleio/kleio-persistence/target/kleio-persistence-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/kleio-persistence/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/kleio-persistence/pom.xml"
+      ],
+      "sha256": "4e6a8926459d90768c6b31475946a3baf15f4cce16a68ae7b4912d283bb018a5"
+    },
+    {
+      "path": "paradeigma/paradeigma-common/target/paradeigma-common-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-common/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-common/pom.xml"
+      ],
+      "sha256": "212659b6b0b6d4e2800a138c11c76c1d62c9a687877eb07284bbb35e215246ab"
+    },
+    {
+      "path": "paradeigma/paradeigma-emr/target/paradeigma-emr-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-emr/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-emr/pom.xml"
+      ],
+      "sha256": "82ffc0c4dd61fdf394db490b89ca16f7d1037b8e811d4d2d8faf608a85f378cd"
+    },
+    {
+      "path": "paradeigma/paradeigma-lms/target/paradeigma-lms-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-lms/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-lms/pom.xml"
+      ],
+      "sha256": "a06cde7e1bd4594763f6ba81e1a1998cd9f36cfbc4e8d14872b9c0c37d26802f"
+    },
+    {
+      "path": "paradeigma/paradeigma-pas/target/paradeigma-pas-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-pas/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-pas/pom.xml"
+      ],
+      "sha256": "80af5346a4ef9810bf94ea53f14c30fe822ad5293a23592f16d428dfe5a92772"
+    },
+    {
+      "path": "paradeigma/paradeigma-rispac/target/paradeigma-rispac-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-rispac/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-rispac/pom.xml"
+      ],
+      "sha256": "471e2beaa86a68553b25dc877b026d3122ddbea109ea66f40bdd8992677df573"
+    },
+    {
+      "path": "paradeigma/paradeigma-scenarios/target/paradeigma-scenarios-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-scenarios/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-scenarios/pom.xml"
+      ],
+      "sha256": "782a15461736fd26114d5e5cd8868ac1afc375d30766af5b32262d6682e48abb"
+    },
+    {
+      "path": "paradeigma/paradeigma-test/target/paradeigma-test-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-test/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/paradeigma-test/pom.xml"
+      ],
+      "sha256": "7346e48400dce3a3d967e5a46a4d0422bcbadb82916e65f63c40b22b1c474cac"
+    },
+    {
+      "path": "petasos/petasos-api/target/petasos-api-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/petasos-api/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/petasos-api/pom.xml"
+      ],
+      "sha256": "c120d7547f2f6380da10452df146a74b33e031b82f75a6da53685d6da3b00866"
+    },
+    {
+      "path": "petasos/petasos-artemis/target/petasos-artemis-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/petasos-artemis/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/petasos-artemis/pom.xml"
+      ],
+      "sha256": "438dea2354e76e8eec4ec25581f14454c8ee95f921dd33980032593a1dba4074"
+    },
+    {
+      "path": "petasos/petasos-core/target/petasos-core-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/petasos-core/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/petasos-core/pom.xml"
+      ],
+      "sha256": "7646bc93d74a1bd65908aa3acd87935d992b3242a113ebe189d655ffb26f34ea"
+    },
+    {
+      "path": "petasos/petasos-test/target/petasos-test-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/petasos-test/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/petasos-test/pom.xml"
+      ],
+      "sha256": "610f65fa01b6b657da24e60affcc3e682ed67212401d87ab5a7dcf703b4353f7"
+    },
+    {
+      "path": "pylai/pylai-fhir-registry/target/pylai-fhir-registry-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/pylai-fhir-registry/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/pylai-fhir-registry/pom.xml"
+      ],
+      "sha256": "064f6db246321e40e2a783a51772a5a67105f2c14c2ac961a2dcd38a3d833a78"
+    },
+    {
+      "path": "pylai/pylai-mllp-base/target/pylai-mllp-base-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/pylai-mllp-base/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/pylai-mllp-base/pom.xml"
+      ],
+      "sha256": "32c15830932da86b90db548e04633105b836108e63a0c21788dd13a7f950f442"
+    },
+    {
+      "path": "pylai/pylai-mllp-cli/target/pylai-mllp-cli-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/pylai-mllp-cli/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/pylai-mllp-cli/pom.xml"
+      ],
+      "sha256": "df61947ff4053cb85c30f41c6f2ecdeaacc7a7f5645532cf1c301437ed44b368"
+    },
+    {
+      "path": "pylai/pylai-mllp-in/target/pylai-mllp-in-0.1.0-SNAPSHOT.war",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/pylai-mllp-in/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/pylai-mllp-in/pom.xml"
+      ],
+      "sha256": "09320e09c19447c62eb1785df33c753e17a9e0b294212b8749cf16a8851ddbaf"
+    },
+    {
+      "path": "pylai/pylai-mllp-out/target/pylai-mllp-out-0.1.0-SNAPSHOT.war",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/pylai-mllp-out/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/pylai-mllp-out/pom.xml"
+      ],
+      "sha256": "2c06d8ffdf3f2ff32f3c36672a0db30520c631cf40ae3f9ac6d3ef346a6eeaf7"
+    },
+    {
+      "path": "themis/themis-api/target/themis-api-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/themis-api/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/themis-api/pom.xml"
+      ],
+      "sha256": "01b03391dd87393e4ef81fcf4c849e865eb46f714bab616227cc82e91565fd5c"
+    },
+    {
+      "path": "themis/themis-core/target/themis-core-0.1.0-SNAPSHOT.jar",
+      "files": [
+        "META-INF/MANIFEST.MF",
+        "META-INF/maven/net.fhirfactory.harmonia/themis-core/pom.properties",
+        "META-INF/maven/net.fhirfactory.harmonia/themis-core/pom.xml"
+      ],
+      "sha256": "4bb1528e86a06f4b931708c3839200c8412a2e6dc8c7cb40d700cdb4028c6137"
+    }
+  ]
+}

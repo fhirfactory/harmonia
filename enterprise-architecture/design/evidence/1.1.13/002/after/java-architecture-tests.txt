@@ -1,0 +1,17 @@
+PASS — actual Java 21 offline Maven architecture suite
+Command: JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:$PATH timeout --signal=TERM --kill-after=5s 180s mvn -o test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest" -Dsurefire.failIfNoSpecifiedTests=false
+
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.457 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.ParadeigmaIsolationArchitectureTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.124 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.PetasosApiIsolationArchitectureTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.527 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.PackageLayeringArchitectureTest
+[INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.362 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.SecurityEnforcementArchitectureTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.291 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteCompositionArchitectureTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.465 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.MnemosyneAuthoritativePersistenceArchitectureTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.184 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.AgoraIsolationArchitectureTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.ProviderRegistryArchitectureTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.259 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.IrisDecouplingArchitectureTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.087 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.PylaiPublicationBoundaryArchitectureTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.209 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteContractArchitectureTest
+[INFO] Tests run: 90, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+[INFO] Total time:  20.189 s

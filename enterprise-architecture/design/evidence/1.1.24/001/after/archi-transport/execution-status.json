@@ -1,0 +1,5 @@
+{
+  "executionStatus": "PASS",
+  "exitCode": 0,
+  "environmentResolution": "Existing local X display access outside sandbox; isolated config/workspace/home and evidence destinations."
+}

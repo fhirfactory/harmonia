@@ -1,0 +1,265 @@
+{
+  "added": [
+    {
+      "xpath": "/*/*[4]/*[404]",
+      "physical_line": 34747,
+      "exchange_id": "id-727a264026584f80bc3304ff8383dc92",
+      "attributes": {
+        "identifier": "id-727a264026584f80bc3304ff8383dc92",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Capability"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Capability",
+      "name": [
+        {
+          "text": "[Feature] Identifier Capture",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [],
+      "properties": [],
+      "recognition": "Feature proposed classification recognised deterministically; native Capability retained",
+      "incident_relationships": [
+        "id-bff76286f8994d20aa1b8aef166acebd",
+        "id-e84f2e9df66a48d795d604d75afc72cb",
+        "id-69eb864f56df4d928f8abc3f7ab4e834",
+        "id-c0f84a8e4c8d496580a68cac4823c58c"
+      ],
+      "view_appearances": [
+        {
+          "view": "id-216c4ab0757b45b3894e7e0c2594b9f9",
+          "node": "id-3fd6725d68f4476884cf44f9fbf09794"
+        },
+        {
+          "view": "id-e2a326c7d36751af9076a32dabe0e9cd",
+          "node": "id-073fae7e65554293bed1a47ff6e535ee"
+        }
+      ]
+    },
+    {
+      "xpath": "/*/*[4]/*[843]",
+      "physical_line": 62338,
+      "exchange_id": "id-fddda503b8f0438e995465cd93204326",
+      "attributes": {
+        "identifier": "id-fddda503b8f0438e995465cd93204326",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "BusinessService"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessService",
+      "name": [
+        {
+          "text": "[Business Service] Identifier Create",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [],
+      "properties": [],
+      "recognition": "Qualifier repeats native type; no additional Harmonia subtype recognised",
+      "incident_relationships": [
+        "id-e84f2e9df66a48d795d604d75afc72cb",
+        "id-bef77e2eb7de4691b4fbe9a0c84e8232"
+      ],
+      "view_appearances": [
+        {
+          "view": "id-216c4ab0757b45b3894e7e0c2594b9f9",
+          "node": "id-4f78c588c80d42e0b4f52e765dc76ff2"
+        }
+      ]
+    },
+    {
+      "xpath": "/*/*[4]/*[844]",
+      "physical_line": 62341,
+      "exchange_id": "id-0088d61ccfcf4962b3aab8bc3b96021d",
+      "attributes": {
+        "identifier": "id-0088d61ccfcf4962b3aab8bc3b96021d",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "BusinessService"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessService",
+      "name": [
+        {
+          "text": "[Business Service] Identifier Update",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [],
+      "properties": [],
+      "recognition": "Qualifier repeats native type; no additional Harmonia subtype recognised",
+      "incident_relationships": [
+        "id-69eb864f56df4d928f8abc3f7ab4e834",
+        "id-0849f31d6d7d4f7eb1e484d7437e5cd7"
+      ],
+      "view_appearances": [
+        {
+          "view": "id-216c4ab0757b45b3894e7e0c2594b9f9",
+          "node": "id-d0a1079102c14d26901ace75bd379281"
+        }
+      ]
+    },
+    {
+      "xpath": "/*/*[4]/*[845]",
+      "physical_line": 62344,
+      "exchange_id": "id-c645a859ac2c4447ad5ae850cf384bf3",
+      "attributes": {
+        "identifier": "id-c645a859ac2c4447ad5ae850cf384bf3",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "BusinessProcess"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessProcess",
+      "name": [
+        {
+          "text": "[Business Process] Identifier Verification",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [],
+      "properties": [],
+      "recognition": "Qualifier repeats native type; no additional Harmonia subtype recognised",
+      "incident_relationships": [
+        "id-c0f84a8e4c8d496580a68cac4823c58c",
+        "id-bef77e2eb7de4691b4fbe9a0c84e8232",
+        "id-0849f31d6d7d4f7eb1e484d7437e5cd7",
+        "id-c53c42ba0a4f437f9cb76a4c1a701816"
+      ],
+      "view_appearances": [
+        {
+          "view": "id-216c4ab0757b45b3894e7e0c2594b9f9",
+          "node": "id-a222a0f6a6804944b188e32ee5caa9a5"
+        }
+      ]
+    },
+    {
+      "xpath": "/*/*[4]/*[846]",
+      "physical_line": 62347,
+      "exchange_id": "id-9bfedbfd5b404694a2224c039fa5d4c4",
+      "attributes": {
+        "identifier": "id-9bfedbfd5b404694a2224c039fa5d4c4",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "BusinessService"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}BusinessService",
+      "name": [
+        {
+          "text": "[Business Service] Verify Identity Source",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [],
+      "properties": [],
+      "recognition": "Qualifier repeats native type; no additional Harmonia subtype recognised",
+      "incident_relationships": [
+        "id-37f6913198e2434db5309c1c8e36fbc0",
+        "id-c53c42ba0a4f437f9cb76a4c1a701816"
+      ],
+      "view_appearances": [
+        {
+          "view": "id-8fb2f8b1776f4ebf969e9b5b638e4ed3",
+          "node": "id-5a05920f7422487c930faff16187327b"
+        },
+        {
+          "view": "id-216c4ab0757b45b3894e7e0c2594b9f9",
+          "node": "id-8e77730d5e7147bea761ee18da71358c"
+        }
+      ]
+    },
+    {
+      "xpath": "/*/*[4]/*[1166]",
+      "physical_line": 87210,
+      "exchange_id": "id-234b080d0ea54d57bb0001a2cb861080",
+      "attributes": {
+        "identifier": "id-234b080d0ea54d57bb0001a2cb861080",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Product"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Product",
+      "name": [
+        {
+          "text": "[Product] Provider Registry - Satellite",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [],
+      "properties": [],
+      "recognition": "Qualifier repeats native type; no additional Harmonia subtype recognised",
+      "incident_relationships": [],
+      "view_appearances": []
+    },
+    {
+      "xpath": "/*/*[4]/*[1167]",
+      "physical_line": 87213,
+      "exchange_id": "id-bfdd958364d1466a914d474dce8baab9",
+      "attributes": {
+        "identifier": "id-bfdd958364d1466a914d474dce8baab9",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Product"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Product",
+      "name": [
+        {
+          "text": "[Product] Provider Registry - Central",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [],
+      "properties": [],
+      "recognition": "Qualifier repeats native type; no additional Harmonia subtype recognised",
+      "incident_relationships": [],
+      "view_appearances": []
+    },
+    {
+      "xpath": "/*/*[4]/*[1168]",
+      "physical_line": 87216,
+      "exchange_id": "id-3c5ae26723224eb0a6e6a70d70fe2c83",
+      "attributes": {
+        "identifier": "id-3c5ae26723224eb0a6e6a70d70fe2c83",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Product"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Product",
+      "name": [
+        {
+          "text": "[Product] Practitioner Collaboration Service",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [],
+      "properties": [],
+      "recognition": "Qualifier repeats native type; no additional Harmonia subtype recognised",
+      "incident_relationships": [],
+      "view_appearances": []
+    },
+    {
+      "xpath": "/*/*[4]/*[1169]",
+      "physical_line": 87219,
+      "exchange_id": "id-d84d8e1f988c4bc998b18834aabfcd74",
+      "attributes": {
+        "identifier": "id-d84d8e1f988c4bc998b18834aabfcd74",
+        "{http://www.w3.org/2001/XMLSchema-instance}type": "Product"
+      },
+      "native_type": "{http://www.opengroup.org/xsd/archimate/3.0/}Product",
+      "name": [
+        {
+          "text": "[Product] Health Information Exchange Service",
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          }
+        }
+      ],
+      "documentation": [],
+      "properties": [],
+      "recognition": "Qualifier repeats native type; no additional Harmonia subtype recognised",
+      "incident_relationships": [],
+      "view_appearances": []
+    }
+  ],
+  "removed": [],
+  "retained_changes_beyond_control": []
+}

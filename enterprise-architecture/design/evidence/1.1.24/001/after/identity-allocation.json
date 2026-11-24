@@ -1,0 +1,56 @@
+[
+  {
+    "key": "summary_reader",
+    "canonicalId": "2988247b75664896a7deb97b12b20c0a",
+    "nativeType": "ApplicationService",
+    "path": "enterprise-architecture/continuum/application/application-service/2988247b75664896a7deb97b12b20c0a.md",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "\u00a7\u00a74.3.1,4.4,4.9\u20134.12; FC-02/04",
+    "necessity": "6557-element canonical inventory and scoped bindings examined: no element separately represents this accepted service/cache responsibility or selected technology configuration."
+  },
+  {
+    "key": "summary_writer",
+    "canonicalId": "bffb611e29844eedaf39a5b27ccbbcc7",
+    "nativeType": "ApplicationService",
+    "path": "enterprise-architecture/continuum/application/application-service/bffb611e29844eedaf39a5b27ccbbcc7.md",
+    "source": "enterprise-architecture/design/offline-design/DRP-Interaction-Mneme-to-Mnemosyne.Final.001.md",
+    "selector": "\u00a7\u00a74.3.1,4.5,4.9\u20134.12; FC-01/04/05",
+    "necessity": "6557-element canonical inventory and scoped bindings examined: no element separately represents this accepted service/cache responsibility or selected technology configuration."
+  },
+  {
+    "key": "standard",
+    "canonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+    "nativeType": "ApplicationFunction",
+    "path": "enterprise-architecture/continuum/application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "\u00a7\u00a72,3.2\u20133.3,4.1,4.6\u20134.8,9 MC-01\u2013MC-07",
+    "necessity": "6557-element canonical inventory and scoped bindings examined: no element separately represents this accepted service/cache responsibility or selected technology configuration."
+  },
+  {
+    "key": "workflow",
+    "canonicalId": "0bddade1309e426aa84d0cd97c35742a",
+    "nativeType": "ApplicationFunction",
+    "path": "enterprise-architecture/continuum/application/application-function/0bddade1309e426aa84d0cd97c35742a.md",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "\u00a7\u00a72,3.2\u20133.3,4.2\u20134.8,9 MC-01\u2013MC-07",
+    "necessity": "6557-element canonical inventory and scoped bindings examined: no element separately represents this accepted service/cache responsibility or selected technology configuration."
+  },
+  {
+    "key": "server",
+    "canonicalId": "c2b216d461b24d659c202268f0ec7fb7",
+    "nativeType": "SystemSoftware",
+    "path": "enterprise-architecture/continuum/technology/system-software/c2b216d461b24d659c202268f0ec7fb7.md",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "\u00a7\u00a72,4.1,6.2,9 MC-01/02/05",
+    "necessity": "6557-element canonical inventory and scoped bindings examined: no element separately represents this accepted service/cache responsibility or selected technology configuration."
+  },
+  {
+    "key": "embedded",
+    "canonicalId": "4048a6c775c542b6a29610d9e248a4d8",
+    "nativeType": "SystemSoftware",
+    "path": "enterprise-architecture/continuum/technology/system-software/4048a6c775c542b6a29610d9e248a4d8.md",
+    "source": "enterprise-architecture/design/offline-design/DRP-Mneme-Cache-Architecture.Final.001.md",
+    "selector": "\u00a7\u00a72,4.2\u20134.5,6.2,9 MC-03/07",
+    "necessity": "6557-element canonical inventory and scoped bindings examined: no element separately represents this accepted service/cache responsibility or selected technology configuration."
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "baselineRelease": "1.1.16",
+  "targetRelease": "1.1.17",
+  "iteration": "001",
+  "baselineCommit": "d5fdddb31e9bff39ae6c08b2e0f2c71d309ab5f5",
+  "source": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md",
+  "sourceSha256": "97a282ecc709a00b359c3686649ccfdb518e5c343b11280c9f1582bec3a912da",
+  "sourceBytes": 51249,
+  "baselineElements": 1614,
+  "baselineRelationships": 1660,
+  "sourceRecovery": "Source and baseline canonical files are tracked in baselineCommit; no duplicate model/source archive required.",
+  "authority": "Operative Solution Architect-reviewed ADD task retained alongside this input record. Final result acceptance remains pending."
+}

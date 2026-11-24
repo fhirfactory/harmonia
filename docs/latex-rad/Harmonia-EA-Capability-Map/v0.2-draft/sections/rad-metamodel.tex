@@ -1,0 +1,975 @@
+% !TeX root = ../Harmonia-EA-Capability-Map.tex
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from the explicit 0.2-draft model; all assertion status is retained.
+\chapter{Business Architecture Metamodel \& Modelling Rules}\label{rad:metamodel}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:metamodel:1}
+\section*{Business Architecture Metamodel \& Modelling Rules}
+\phantomsection\label{rad:metamodel:3}
+\subsection*{1. Overview \& Metamodel Hierarchy}
+\phantomsection\label{rad:metamodel:5}
+
+The Harmonia Business Architecture metamodel defines the structural and behavioural relationships governing how healthcare capabilities are operationalised into functions, exposed services, stateful processes, and information responsibilities.
+
+\phantomsection\label{rad:metamodel:7}
+
+\textit{RAD diagram: textual source notation.}
+\begin{Verbatim}[breaklines,fontsize=\footnotesize]
+graph TD
+    subgraph OWNER["Owning Business / Business Enabling Capability or Feature responsibility context"]
+        subgraph BC["Business Capability"]
+            BC1["BC CT1"] -->|Decomposes| BC2["BC CT2"]
+            BC2 -->|Decomposes| BC3["BC CT3"]
+        end
+        subgraph BEC["Business Enabling Capability"]
+            CT1["BEC CT1"] -->|Capability decomposition| CT2["BEC CT2"]
+            CT2 -->|Capability decomposition| CT3["BEC CT3"]
+            CT3 -->|Frames every Harmonia Feature| FT["FT Feature<br/>(Capability Specialisation)"]
+        end
+        BC -.->|Enabled-by / supported-by where established| BEC
+    end
+    OWNER -->|Delivers| FUNC["Business Function(s)"]
+    OWNER -->|Provides to clients| SERV["Business Service(s)"]
+    SERV -->|May use directly| FUNC
+    SERV -->|May use| PROC
+    FUNC -->|May require| PROC
+    PROC -->|Chains| FUNC
+    OWNER -->|Encompasses where progression is material| PROC["Business Process(es)"]
+    OWNER -->|Establishes| INFO["Business Information Responsibility"]
+\end{Verbatim}
+\phantomsection\label{rad:metamodel:31}
+
+The diagram distinguishes two Capability hierarchies and preserves the permissible behavioural responsibility contexts. Business Capabilities describe organisational abilities; Business Enabling Capabilities describe reusable enabling abilities Harmonia provides or supports. Enablement/\allowbreak{}support is not decomposition or implementation equivalence, and the aggregate diagram establishes no individual BC↔BEC mapping. Business Capability decomposition does not terminate in Harmonia Features. Every fully reconciled Harmonia Feature requires complete \textbf{Business Enabling CT1 → CT2 → CT3} ancestry. Functions, Services and Processes may still anchor directly at their established owning Capability or Feature; they do not require an intervening Feature. Service, Function and Process form a graph rather than a mandatory hierarchy. A Function need not have either a Service or a Process.
+
+\phantomsection\label{rad:metamodel:33}
+\subsubsection*{1.1 Capability Decomposition and Terminology}
+\phantomsection\label{rad:metamodel:35}
+
+The following terminology SHALL be used canonically:
+
+\phantomsection\label{rad:metamodel:37}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Term} & \textbf{Meaning}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Term} & \textbf{Meaning}\\\hline\endhead
+\hline\endfoot
+\textbf{Layer /\allowbreak{} Architectural Layer} & Architectural layering within the TOGAF /\allowbreak{} ArchiMate architecture model.\\\hline
+\textbf{Capability Tier} & Hierarchical decomposition within a Capability Model.\\\hline
+\textbf{Derivation /\allowbreak{} Derivation Progression} & Progression between different architectural constructs or models. A Derivation Stage is a stage in that progression.\\\hline
+\textbf{CT1} & Capability Tier 1: establishes the broad Capability frame within Harmonia's architectural scope.\\\hline
+\textbf{CT2} & Capability Tier 2: decomposes the CT1 frame into constituent Capabilities.\\\hline
+\textbf{CT3} & Capability Tier 3: establishes the finest Capability frame required by Harmonia. Within the Business Enabling hierarchy, CT3 provides the context within which Harmonia Features are defined.\\\hline
+\textbf{FT} & Feature: expresses required system-enabled behaviour within its owning Business Enabling CT3 Capability context.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:metamodel:47}
+
+\texttt{\seqsplit{Layer ≠ Capability Tier ≠ Derivation Stage}}. \texttt{\seqsplit{L1}}, \texttt{\seqsplit{L2}} and \texttt{\seqsplit{L3}} are deprecated as canonical capability classifications.
+
+\phantomsection\label{rad:metamodel:49}
+
+Harmonia SHALL use the fixed three-tier Capability decomposition:
+
+\phantomsection\label{rad:metamodel:51}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+Business Capability          CT1 → CT2 → CT3
+
+enabled-by / supported-by
+
+Business Enabling Capability CT1 → CT2 → CT3 → FT Feature
+\end{quote}
+\phantomsection\label{rad:metamodel:57}
+
+Every Harmonia Feature SHALL be immediately framed by a \textbf{Business Enabling CT3} Capability. Every established CT3 SHALL have a CT2 parent and every CT2 a CT1 parent within the same Capability category. Capability tiers SHALL NOT be skipped. Complete Business Enabling CT1 → CT2 → CT3 ancestry is required for a fully reconciled Feature; direct CT1 → FT and CT2 → FT framing SHALL NOT be used. Business Capability CT3s do not require or own Harmonia Features. An intentionally undecomposed BC branch does not indicate missing Feature framing.
+
+\phantomsection\label{rad:metamodel:59}
+
+\begin{quote}
+
+\textbf{A Feature cannot compensate for incomplete Capability decomposition. If Harmonia requires a Feature, the CT3 Capability that frames that Feature must first be identified. Failure to identify a meaningful CT3 indicates incomplete upstream Capability modelling, not permission to skip the tier.}
+
+
+\end{quote}
+\phantomsection\label{rad:metamodel:61}
+
+Complete decomposition is a modelling obligation, not authority to fabricate architectural elements. CT3 Capabilities SHALL NOT be manufactured merely to satisfy structural symmetry. Where an existing branch contains a Feature without an established CT3 frame or complete ancestry, the Feature, its established responsibility and local identifier SHALL be preserved, and its Capability ancestry/\allowbreak{}decomposition SHALL be recorded as requiring reconciliation under AX-17. It SHALL NOT be presented as fully reconciled or silently reattached to an invented owner. Established partial relationships remain valid evidence until separately adjudicated.
+
+\phantomsection\label{rad:metamodel:63}
+
+A Feature remains a finer-grained \textbf{Capability Specialisation} within Business Enabling responsibility and inherits Capability semantics. This retained classification does not make FT another Capability Tier, a Business Capability child or an arbitrary-depth frame. CT1 → CT2 and CT2 → CT3 denote same-category Capability decomposition; Business Enabling CT3 provides the mandatory Feature frame. BC↔BEC support relationships do not supply missing ancestry in either hierarchy.
+
+\phantomsection\label{rad:metamodel:65}
+
+CT3 is Harmonia's intentional Capability decomposition boundary. Harmonia's Capability Model is bounded to the level required to derive and govern Harmonia; it does not attempt to model the complete Enterprise Architecture of a hospital, health service provider, health department or other healthcare enterprise. Harmonia SHALL NOT define CT4, CT5 or deeper Capability tiers. Further detail is not authority to extend the Capability hierarchy.
+
+\phantomsection\label{rad:metamodel:67}
+
+Established higher-tier ancestry SHALL be represented in a lower-tier Capability's Canonical ID. Every Feature's complete structural Canonical ID SHALL include its CT1, CT2 and CT3 ancestry. An unidentified ancestor SHALL NOT permit omission of that tier; required but unresolved ancestry SHALL leave the Canonical ID unresolved, as specified in §8.
+
+\phantomsection\label{rad:metamodel:69}
+
+The five-stage \hyperref[rad:tier-model]{Domain02 derivation progression} SHALL NOT be reinterpreted as CT1 /\allowbreak{} CT2 /\allowbreak{} CT3 /\allowbreak{} FT. Enablement, derivation and contextual-view membership do not, by themselves, establish a Capability Tier assignment.
+
+\phantomsection\label{rad:metamodel:71}
+
+The \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/reviews/fixed-capability-decomposition-decision.md}{approved fixed-decomposition decision record} records the rationale and superseded permissive position. It changes the target metamodel, not the reconciliation status, tier allocation or identity of existing catalogue elements. K9's uncertainty and evidence rules remain controlling.
+
+\phantomsection\label{rad:metamodel:73}
+\subsubsection*{1.2 Hierarchy Naming \& Uniqueness Rules}
+\phantomsection\label{rad:metamodel:74}
+
+\begin{enumerate}
+
+\item
+\textbf{Global Uniqueness}: Capability names across CT1, CT2 and CT3 are globally unique across the entire Harmonia architecture.
+
+
+
+\item
+\textbf{Feature Scoping}: Feature names must be unique within their owning CT1 Capability hierarchy. An unresolved CT1 ancestor SHALL be recorded as unresolved rather than assigned speculatively.
+
+
+
+\item
+\textbf{No Disconnected Elements}: Business Functions, Business Services, and Business Processes must \textbf{never} be modelled as free-standing global catalogues disconnected from an owning Capability or Feature context.
+
+
+
+\end{enumerate}
+\phantomsection\label{rad:metamodel:78}
+
+\par\smallskip
+\phantomsection\label{rad:metamodel:80}
+\subsection*{2. Capability \& Feature Semantics}
+\phantomsection\label{rad:metamodel:82}
+
+A Capability or Feature establishes:
+
+\phantomsection\label{rad:metamodel:83}
+
+\begin{itemize}
+
+\item
+\textbf{Context \& Scope}: Sets the boundary of healthcare operational relevance.
+
+
+
+\item
+\textbf{Architectural Responsibility}: Establishes unambiguous ownership of behaviour and state.
+
+
+
+\item
+\textbf{Business Functions}: Defines the internal behaviour delivered within the boundary.
+
+
+
+\item
+\textbf{Exposed Business Services}: Declares behaviour made available to external or cross-capability consumers.
+
+
+
+\item
+\textbf{Business Processes}: Encompasses progression lifecycles where activity state tracking is material.
+
+
+
+\item
+\textbf{Information Responsibility}: Owns the conceptual information created or governed by its functions.
+
+
+
+\item
+\textbf{Dependencies}: Explicitly records consumption of services provided by other capabilities.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:metamodel:91}
+
+\par\smallskip
+\phantomsection\label{rad:metamodel:93}
+\subsection*{3. Function and Service Semantics}
+\phantomsection\label{rad:metamodel:95}
+
+Domain03 SHALL NOT establish a Feature identity that Strategy has not established. A Strategy Feature may be associated with Business behaviour only where that behaviour materially realises the semantic responsibility expressed by the Feature. Shared subject matter, terminology, information, Actor, Capability context or clinical purpose is insufficient. Where semantic realisation is not established, preserve the Feature, Function, Service and established owning Capability, and record \textbf{Feature association not established} without assigning a replacement Feature.
+
+\phantomsection\label{rad:metamodel:97}
+
+The following are \textbf{Harmonia architecture definitions}, reconciled by the 2026-10-13 B1 task decision. They apply across architectural views and need not conform to the exact semantics of ArchiMate or another modelling framework. Frameworks may represent them where useful but SHALL NOT redefine their Harmonia meaning. Domain03's owning Capability/\allowbreak{}Feature and exposure rules continue to qualify Business behaviour; they do not replace these definitions.
+
+\phantomsection\label{rad:metamodel:104}
+\subsubsection*{3.1 Business Function Rule}
+\phantomsection\label{rad:metamodel:106}
+
+\begin{quote}
+
+A \textbf{Function} is a mechanism that moves the state of information, or the state of a capability concern as a whole, from one status to another. A Function may operate over a small, medium or large concern. Its architectural meaning derives from what it does to or within the capability, not from what it exposes externally.
+
+
+\end{quote}
+\phantomsection\label{rad:metamodel:112}
+
+A Function answers \textbf{what change is effected?} Function accountability concerns achievement of the defined state transition. Function size does not determine whether something is a Function.
+
+\phantomsection\label{rad:metamodel:116}
+
+\begin{quote}
+
+\textbf{A Business Function represents behaviour delivered within the responsibility boundary of its owning Capability or Feature.}
+
+
+\end{quote}
+\phantomsection\label{rad:metamodel:118}
+
+A Business Function describes \emph{what} the capability does internally to discharge its architectural mandate. A Business Function may operate upon:
+
+\phantomsection\label{rad:metamodel:119}
+
+\begin{itemize}
+
+\item
+information owned by its Capability /\allowbreak{} Feature;
+
+
+
+\item
+information obtained through Services exposed by another Capability /\allowbreak{} Feature;
+
+
+
+\item
+information used under an explicit cross-capability dependency.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:metamodel:123}
+
+Therefore, \textbf{ownership of a Function does not imply ownership of every information item upon which that Function operates}.
+
+\phantomsection\label{rad:metamodel:125}
+\subsubsection*{3.2 Business Service Exposure Rule}
+\phantomsection\label{rad:metamodel:127}
+
+\begin{quote}
+
+A \textbf{Service} is a mechanism through which a client interacts with a capability to request change, request information, or be informed of change. A Service represents the interface between the capability and its client and operates according to a Service Contract. A Service may use one or more Functions and/\allowbreak{}or Processes to fulfil that contract.
+
+
+\end{quote}
+\phantomsection\label{rad:metamodel:133}
+
+A Service answers \textbf{what can the client ask for, obtain, or be informed about?} Service accountability concerns fulfilment of the \textbf{Service Contract}. A Service may use Functions directly, Processes, or both; a Function need not be exposed through a Service.
+
+\phantomsection\label{rad:metamodel:138}
+
+\begin{quote}
+
+\textbf{When Function behaviour is exposed for consumption outside the owning Capability or Feature responsibility boundary, that behaviour is exposed through a Business Service.}
+
+
+\end{quote}
+\phantomsection\label{rad:metamodel:140}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+Capability A (Owner)    provides    Service X    used by    Capability B (Client)
+
+fulfilled using
+
+Function(s) and/or Process(es)
+\end{quote}
+\phantomsection\label{rad:metamodel:148}
+\subsubsection*{3.3 Ownership and Non-Equivalence Invariants}
+\phantomsection\label{rad:metamodel:149}
+
+\begin{enumerate}
+
+\item
+\textbf{Ownership Preservation}: When Capability A exposes \texttt{\seqsplit{Function X}} as \texttt{\seqsplit{Business Service X}}, and Capability B consumes \texttt{\seqsplit{Business Service X}}, \textbf{Capability A retains sole architectural ownership of Function X and its underlying state}. Capability B is merely a consumer.
+
+
+
+\item
+\textbf{No 1:1 Mechanical Generation}: A Business Service is \textbf{not} created mechanically for every Business Function. A Service is modelled \emph{only} when an identifiable consumer exists outside the owning responsibility boundary.
+
+
+
+\item
+\textbf{Consumption Scope}:
+
+
+\begin{itemize}
+
+\item
+\textbf{Harmonia-Internal Consumption}: Services consumed by other Harmonia capabilities (e.g., Service Administration consuming Person Identifier Resolution from Entity Management).
+
+
+
+\item
+\textbf{Enterprise/\allowbreak{}External Consumption}: Services consumed by external healthcare participants, client systems, or national registries (e.g., Referral Submission exposed to external GP practices).
+
+
+
+\end{itemize}
+
+
+\end{enumerate}
+\phantomsection\label{rad:metamodel:155}
+\subsubsection*{3.4 Significance-Driven Relationships and Typed Dependencies}
+\phantomsection\label{rad:metamodel:157}
+
+Role, Actor, Function, Service, Interaction, Collaboration and Process relationships SHALL be established where they materially explain responsibility, participation, exposure, collaboration or Business progression. Their absence alone does not establish missing architecture. Exhaustive Function-to-Role, Function-to-Service, Interaction-to-Service or Actor-to-Function matrices are not required.
+
+\phantomsection\label{rad:metamodel:159}
+
+A Service dependency requires consuming behaviour that needs behaviour actually exposed by that Service. Related information or subject matter is insufficient. Capability dependency, Service consumption, Interaction participation and Collaboration involvement SHALL retain their distinct types and meanings. Descriptive or abbreviated references do not create aliases. An unestablished element or relationship SHALL remain explicitly unresolved; no replacement dependency is inferred.
+
+\phantomsection\label{rad:metamodel:161}
+\subsubsection*{3.5 Clinical and Operational Privilege}
+\phantomsection\label{rad:metamodel:163}
+
+\textbf{Clinical Privilege} concerns whether a practitioner is authorised/\allowbreak{}credentialed to undertake applicable clinical activity. \textbf{Operational Privilege} concerns whether an actor is authorised to undertake applicable operational activity. They are distinct responsibilities; an activity may require both.
+
+\phantomsection\label{rad:metamodel:165}
+
+Practitioner Role information may contextualise or contribute to a privilege determination, but Practitioner Role Resolution establishes neither Clinical Privilege nor Operational Privilege. These distinctions do not allocate new Roles, Services or policy mechanisms.
+
+\phantomsection\label{rad:metamodel:167}
+\subsubsection*{3.6 Business Responsibility and Reusable Composition}
+\phantomsection\label{rad:metamodel:169}
+
+Business Architecture SHALL describe responsibility meaningful to the Business at its declared architectural layer. Shared downstream machinery does not establish a shared Business Function. In service-delivery operational contexts, \textbf{Capacity Management} concerns understanding and managing available, committed and utilised service capacity. Contexts may have materially different capacity semantics. A generalised operational-state capture mechanism is a downstream derivation concern and SHALL NOT replace those Business responsibilities. The \hyperref[rad:hso:18]{HSO capacity responsibility boundary} distinguishes context-specific capacity from resource state and higher-order consumers.
+
+\phantomsection\label{rad:metamodel:171}
+
+A domain-specific Business Enabling Feature MAY be realised through composition of established reusable capabilities and configured workflow/\allowbreak{}Praxis without a correspondingly specialised Business Function. The composition must sufficiently express the required responsibility; clinical purpose or setting alone does not establish another Harmonia information-management responsibility. Do not create a Feature-to-Function relationship where only a composition-level sufficiency decision is established.
+
+\phantomsection\label{rad:metamodel:173}
+\subsubsection*{3.7 Clinical Work Integration Boundary}
+\phantomsection\label{rad:metamodel:175}
+
+\textbf{Harmonia may integrate and coordinate around clinical work; it does not thereby manage clinical work.} It may exchange work information, receive externally established requirements, route operational activity, observe progression, coordinate Harmonia-managed consequences and apply established qualification, privilege and policy constraints. It SHALL NOT thereby determine clinical work, manage clinical handover, acquire clinical allocation or decision authority, own clinical worklists or assume EMR workflow ownership. Information assembly for handover is distinct from performing or managing the handover.
+
+\phantomsection\label{rad:metamodel:177}
+
+Clinical facts retain their originating authority when consumed by patient-flow, capacity or discharge coordination. Clinical progression and operational patient progression SHALL remain distinct. A clinical/\allowbreak{}professional clearance may affect discharge readiness without the operational consumer acquiring authority to establish that clearance. Clinical Privilege and Operational Privilege retain §3.5's distinct meanings.
+
+\phantomsection\label{rad:metamodel:179}
+
+Harmonia terminology remains \textbf{Work Order = human doing}, \textbf{To Do = human review/\allowbreak{}update/\allowbreak{}approval}, and \textbf{Task = synthetic task}. External work/\allowbreak{}task vocabulary does not redefine Harmonia Task. Coordination of a To Do supports an authorised review or approval; it does not confer clinical-work management authority.
+
+\phantomsection\label{rad:metamodel:181}
+
+\par\smallskip
+\phantomsection\label{rad:metamodel:183}
+\subsection*{4. Business Process Semantics}
+\phantomsection\label{rad:metamodel:185}
+
+\begin{quote}
+
+A \textbf{Process} is an ordered chain of Functions used to realise a complex change. A Process provides a convenient mechanism for decomposing, structuring and managing change that would otherwise be difficult to understand or control as a single Function. A Function may itself require one or more Processes where the change for which that Function is responsible requires further decomposition.
+
+
+\end{quote}
+\phantomsection\label{rad:metamodel:191}
+
+A Process answers \textbf{how is a complex change decomposed and coordinated?} Process accountability concerns progression and coordination of its constituent Functions. Function and Process may be recursively composed:
+
+\phantomsection\label{rad:metamodel:195}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+Function
+
+may require → Process
+
+Function
+
+Function
+
+Function
+
+may require → Process
+\end{quote}
+\phantomsection\label{rad:metamodel:204}
+
+A Business Process applies this meaning to progressing Business behaviour within an owning Capability or Feature responsibility boundary. There is no mandatory Service → Process → Function hierarchy.
+
+\phantomsection\label{rad:metamodel:208}
+\subsubsection*{4.1 Process Justification Rule}
+\phantomsection\label{rad:metamodel:209}
+
+\begin{quote}
+
+\textbf{Model a Business Process where ordered Function decomposition is material to understanding, structuring or managing a complex Business change and its progression.}
+
+
+\end{quote}
+\phantomsection\label{rad:metamodel:213}
+
+Meaningful states, dispositions and outcomes may justify that decomposition. Not all Functions require a Process. Search, lookup, mapping, verification or presentation labels alone neither establish a Process nor exclude one where the bounded change requires decomposition. Primary Information traceability remains with the responsible Functions; Process-level aggregation does not replace it. Existing named Business Processes and responsibility boundaries are preserved; this rule creates no new catalogue entry.
+
+\phantomsection\label{rad:metamodel:221}
+\subsubsection*{4.2 Cross-Capability Process Guardrail}
+\phantomsection\label{rad:metamodel:222}
+
+If a proposed Business Process appears to span multiple Capability responsibility boundaries:
+
+\phantomsection\label{rad:metamodel:223}
+
+\begin{enumerate}
+
+\item
+Examine whether the process has been scoped incorrectly (conflating independent sequential activities with a single process); or
+
+
+
+\item
+Examine whether an architectural responsibility is missing or misassigned.
+
+
+
+\end{enumerate}
+\phantomsection\label{rad:metamodel:226}
+
+\textbf{Cross-capability processes must never be used to erase or blur Capability ownership boundaries.} Cross-boundary coordination is achieved via event notifications and service invocations between bounded capabilities.
+
+\phantomsection\label{rad:metamodel:228}
+\subsubsection*{4.3 Behaviour and Process Consistency}
+\phantomsection\label{rad:metamodel:230}
+
+A Business Process may elaborate progression for a defined activity within its owning Capability or Feature without reproducing the Behaviour stage list. It SHALL preserve established responsibility, ownership, authority boundaries and supported obligations. Scoped applicability, compound checkpoints and alternative dispositions SHALL remain explicit; additional Process detail SHALL NOT silently become a universal requirement or redefine owning responsibility.
+
+\phantomsection\label{rad:metamodel:232}
+
+Omission of a Process checkpoint from a Behaviour summary does not invalidate that checkpoint; omission of Behaviour responsibility from a Process does not remove that responsibility. Stage-count equality is not required. Greater Process detail does not override established responsibility.
+
+\phantomsection\label{rad:metamodel:234}
+\subsubsection*{4.4 Illustrative Progression and Material Outcome Uncertainty}
+\phantomsection\label{rad:metamodel:236}
+
+Illustrative progression SHALL NOT imply an authoritative transition model. Only established states/\allowbreak{}transitions may be normative. Where alternatives, terminal behaviour or post-completion relationships remain unresolved, both the surrounding text and the affected diagram SHALL visibly identify the uncertainty.
+
+\phantomsection\label{rad:metamodel:238}
+
+Where Harmonia manages or governs an activity with a materially significant outcome and available evidence cannot establish that outcome, the uncertainty SHALL remain explicit. Absence of acknowledgement, response, observation or evidence does not by itself establish success or failure. This follows \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md\#req-fnd-004-explicit-indeterminate-outcome}{REQ-FND-004} and AX-15; it creates no universal INDETERMINATE Process state or downstream execution-state machinery.
+
+\phantomsection\label{rad:metamodel:240}
+
+\par\smallskip
+\phantomsection\label{rad:metamodel:242}
+\subsection*{5. Cross-Cutting Responsibility Rule}
+\phantomsection\label{rad:metamodel:244}
+
+Harmonia establishes an essential architectural guardrail to maintain component cohesion and prevent boundary erosion:
+
+\phantomsection\label{rad:metamodel:246}
+
+\begin{quote}
+
+\textbf{Cross-cutting concern does not imply cross-cutting responsibility. A concern becomes cross-cutting because Capabilities depend upon Services or Functions delivered by other Capabilities whose responsibilities remain explicitly bounded.}
+
+
+\end{quote}
+\phantomsection\label{rad:metamodel:248}
+\subsubsection*{Concrete Guardrails:}
+\phantomsection\label{rad:metamodel:249}
+
+\begin{itemize}
+
+\item
+\textbf{Security \& Control}: Security does not become partly owned by every capability that consumes security services. Authorisation evaluation and security context propagation are owned exclusively by \emph{Health Information Control}.
+
+
+
+\item
+\textbf{Semantic Governance}: Terminology and canonical model definitions do not become owned by capabilities that use them. They are owned by \emph{Information Design Governance} and \emph{Clinical Knowledge Services}.
+
+
+
+\item
+\textbf{Workflow \& Activity Coordination}: Coordinating tasks and to-dos does not grant ownership of the underlying clinical or operational activities. Coordination semantics are owned by \emph{Workflow \& Activity Coordination}.
+
+
+
+\item
+\textbf{Presentation}: Presentation capabilities do not acquire ownership of the clinical information they render.
+
+
+
+\item
+\textbf{Information Exchange}: Transporting or mediating messages across networks does not grant ownership of the clinical payloads transported. Exchange state is owned by \emph{Health Information Exchange}, while clinical document ownership remains with \emph{Clinical Record Administration}.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:metamodel:255}
+
+\par\smallskip
+\phantomsection\label{rad:metamodel:257}
+\subsection*{6. Business Information Responsibility}
+\phantomsection\label{rad:metamodel:259}
+
+\begin{quote}
+
+\textbf{Business information ownership derives strictly from Capability responsibility and the Functions/\allowbreak{}Processes through which that responsibility is discharged.}
+
+
+\end{quote}
+\phantomsection\label{rad:metamodel:261}
+
+\begin{itemize}
+
+\item
+\textbf{No Ownership Transfer}: Access, use, transformation, transport, search, presentation, caching, persistence, or coordination of information does not transfer architectural ownership.
+
+
+
+\item
+\textbf{Pure Business Semantics}: Business information concepts must retain authentic clinical/\allowbreak{}business definitions. They must \textbf{never} be prematurely translated into:
+
+
+\begin{itemize}
+
+\item
+FHIR Resource structures (e.g., \texttt{\seqsplit{Patient}}, \texttt{\seqsplit{Observation}}, \texttt{\seqsplit{Task}});
+
+
+
+\item
+Database schemas, tables, or DDL;
+
+
+
+\item
+JSON schemas, DTOs, or wire payloads;
+
+
+
+\item
+Java classes or programming interfaces.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:metamodel:268}
+
+Domain04 formalises conceptual information meaning, semantic relationships and responsibility traceability. Realised representations are downstream: application logical/\allowbreak{}software representation in Domain05; exchange contracts, interoperability profiles, wire payloads and transformations in Domain06; physical platform/\allowbreak{}runtime/\allowbreak{}product/\allowbreak{}deployment realisation in Domain07. Persistence realisation may involve Domain05 and Domain07; a more precise allocation is not established. Representation does not define upstream business or conceptual meaning.
+
+\phantomsection\label{rad:metamodel:270}
+\subsubsection*{6.1 Management, Originating Authority and Historical Truth}
+\phantomsection\label{rad:metamodel:272}
+
+Managing, preserving, governing access to, communicating, contextualising or maintaining the history of information SHALL NOT imply originating authority for the represented facts.
+
+\phantomsection\label{rad:metamodel:274}
+
+Within Harmonia's operational boundaries, Harmonia may maintain durable, immutable, append-only historical truth concerning what it received, knew, asserted, managed, decided, communicated or did. Subsequent correction, supersession or changed knowledge SHALL NOT retrospectively alter that historical record. Current authoritative state and historical operational truth remain distinct. This does not make every transient observation durable evidence or weaken the active/\allowbreak{}durable-state separation.
+
+\phantomsection\label{rad:metamodel:276}
+\subsubsection*{6.2 Business Terminology and Context}
+\phantomsection\label{rad:metamodel:278}
+
+Interpret an element according to its declared architectural layer and Business meaning. Cache, index, routing, topic, session and similar terms do not prescribe a technology or product merely because those words also have technical uses. Preserve clear Business meanings; implementation structures or bindings require explicit downstream authority.
+
+\phantomsection\label{rad:metamodel:280}
+
+Where Healthcare Service context is material to an activity's meaning, authority, coordination, progression or accountability, that context SHALL remain identifiable through relevant Business behaviour and information responsibility. Organisation, Location, Practitioner or Role association does not imply that context. The obligation is contextual, not universal, and defines no representation, identifier structure, persistence mechanism, FHIR representation or implementation binding.
+
+\phantomsection\label{rad:metamodel:282}
+
+\par\smallskip
+\phantomsection\label{rad:metamodel:284}
+\subsection*{7. Qualified Architectural Reference Grammar}
+\phantomsection\label{rad:metamodel:286}
+
+To unambiguously express participants, their acting capacity, and situational context without inventing transient metamodel entities, Harmonia uses the \textbf{Qualified Architectural Reference Grammar}:
+
+\phantomsection\label{rad:metamodel:288}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+<EntityType>\#<Entity>-as-<Role>[\#<ContextQualifier>]
+\end{quote}
+\phantomsection\label{rad:metamodel:292}
+\subsubsection*{7.1 Grammar Structure}
+\phantomsection\label{rad:metamodel:293}
+
+\begin{itemize}
+
+\item
+\texttt{\seqsplit{<EntityType>}}: A rendering of the canonical Business Actor category (\texttt{\seqsplit{Person}}, \texttt{\seqsplit{Group}}, \texttt{\seqsplit{Organisation}}, \texttt{\seqsplit{Organisational Unit}}, \texttt{\seqsplit{Government / Regulatory Body}}, \texttt{\seqsplit{System}}, \texttt{\seqsplit{Device}}).
+
+
+
+\item
+\texttt{\seqsplit{<Entity>}}: The specific business instance identifier or name.
+
+
+
+\item
+\texttt{\seqsplit{<Role>}}: The canonical Business Role representing the stable business/\allowbreak{}functional capacity being fulfilled.
+
+
+
+\item
+\texttt{\seqsplit{[\#<ContextQualifier>]}}: \emph{(Optional)} The contextual function or situational qualifier in a specific interaction or collaboration.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:metamodel:298}
+
+Qualified references resolve to canonical architectural identities. For compact rendering, CamelCase SHOULD be used where possible: Information Supplier → \texttt{\seqsplit{InformationSupplier}}, Service Provider → \texttt{\seqsplit{ServiceProvider}}, Organisational Unit → \texttt{\seqsplit{OrganisationalUnit}}. This is syntactic rendering, not an alias or independent element. Preserve meaning and disambiguate where a compact expression could resolve to more than one identity; compact spelling alone SHALL NOT establish identity.
+
+\phantomsection\label{rad:metamodel:300}
+\subsubsection*{7.2 Canonical Examples}
+\phantomsection\label{rad:metamodel:302}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-10\tabcolsep-6\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.2\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Qualified Expression} & \textbf{Actor Category} & \textbf{Entity Name} & \textbf{Fulfilled Role} & \textbf{Context Qualifier}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Qualified Expression} & \textbf{Actor Category} & \textbf{Entity Name} & \textbf{Fulfilled Role} & \textbf{Context Qualifier}\\\hline\endhead
+\hline\endfoot
+\texttt{\seqsplit{Organisation\#ACT Pathology-as-InformationSupplier}} & \texttt{\seqsplit{Organisation}} & ACT Pathology & \texttt{\seqsplit{Information Supplier}} & \emph{(none)}\\\hline
+\texttt{\seqsplit{Organisation\#ACT Health-as-ServiceProvider\#ReferralSource}} & \texttt{\seqsplit{Organisation}} & ACT Health & \texttt{\seqsplit{Service Provider}} & \texttt{\seqsplit{ReferralSource}}\\\hline
+\texttt{\seqsplit{System\#ACT Pathology LIS-as-InformationSupplier\#DiagnosticResultSource}} & \texttt{\seqsplit{System}} & ACT Pathology LIS & \texttt{\seqsplit{Information Supplier}} & \texttt{\seqsplit{DiagnosticResultSource}}\\\hline
+\texttt{\seqsplit{Person\#Fred-as-Patient}} & \texttt{\seqsplit{Person}} & Fred & \texttt{\seqsplit{Patient}} & \emph{(none)}\\\hline
+\texttt{\seqsplit{Person\#Dr Smith-as-Clinician\#Reviewer}} & \texttt{\seqsplit{Person}} & Dr Smith & \texttt{\seqsplit{Clinician}} & \texttt{\seqsplit{Reviewer}}\\\hline
+\texttt{\seqsplit{OrganisationalUnit\#Finance Directorate-as-InformationCustodian}} & \texttt{\seqsplit{Organisational Unit}} & Finance Directorate & \texttt{\seqsplit{Information Custodian}} & \emph{(none)}\\\hline
+\texttt{\seqsplit{GovernmentRegulatoryBody\#AHPRA-as-Regulator}} & \texttt{\seqsplit{Government / Regulatory Body}} & AHPRA & \texttt{\seqsplit{Regulator}} & \emph{(none)}\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:metamodel:312}
+\subsubsection*{7.3 Governance Guardrails}
+\phantomsection\label{rad:metamodel:313}
+
+\begin{enumerate}
+
+\item
+The \textbf{Role} identifies stable architectural/\allowbreak{}business capacity.
+
+
+
+\item
+The \textbf{Context Qualifier} identifies situational nuance; it does \textbf{not} create a new Role.
+
+
+
+\item
+This notation is a \textbf{reference grammar}, not a new architectural metamodel class.
+
+
+
+\end{enumerate}
+\phantomsection\label{rad:metamodel:317}
+
+\par\smallskip
+\phantomsection\label{rad:metamodel:319}
+\subsection*{8. Architectural Element Identity and Canonical Identification}
+\phantomsection\label{rad:metamodel:321}
+\subsubsection*{8.1 Common Identity Properties}
+\phantomsection\label{rad:metamodel:323}
+
+Every governed Business Architecture element SHALL have the following identity properties:
+
+\phantomsection\label{rad:metamodel:325}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.24\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|>{\raggedright\arraybackslash}p{0.43\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Property} & \textbf{Cardinality} & \textbf{Meaning}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Property} & \textbf{Cardinality} & \textbf{Meaning}\\\hline\endhead
+\hline\endfoot
+\textbf{Element Type} & Exactly one & The element's architectural semantic type.\\\hline
+\textbf{Canonical Name} & Exactly one & The current authoritative architectural name.\\\hline
+\textbf{Canonical ID} & Exactly one current value & The Canonical Architectural Identifier expressing current architectural responsibility context.\\\hline
+\textbf{Name Alias} & Zero or more & A retained alternative or historical name for the same element.\\\hline
+\textbf{ID Alias} & Zero or more & A retained non-canonical identifier resolving directly to the same current element.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:metamodel:333}
+
+These properties SHALL preserve the semantic distinctions between Capability, Feature, Business Function, Business Service and Business Process. Existing canonical-name uniqueness and ownership rules remain applicable.
+
+\phantomsection\label{rad:metamodel:335}
+
+This convention establishes the identification requirement; it does not assert that the existing architecture corpus already conforms. Where required ancestry or identifier allocation is not established, the Canonical ID SHALL remain explicitly unresolved. A placeholder or speculative identifier SHALL NOT be treated as an allocated Canonical ID.
+
+\phantomsection\label{rad:metamodel:337}
+\subsubsection*{8.2 Typed Canonical Identifier Grammar}
+\phantomsection\label{rad:metamodel:339}
+
+The general form is \texttt{\seqsplit{<architectural-context>.<element-identifier>}}. A root CT1 Capability has no preceding context. For Capability, Feature, Business Function, Business Service and Business Process elements, the structural grammar is:
+
+\phantomsection\label{rad:metamodel:341}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+canonical-id =
+
+capability-path
+
+| feature-path
+
+| capability-path "." behaviour-token
+
+| feature-path "." behaviour-token
+
+capability-path = ct1-token [ "." ct2-token [ "." ct3-token ] ]
+
+ct3-path = ct1-token "." ct2-token "." ct3-token
+
+feature-path = ct3-path "." feature-token
+
+ct1-token = "CT1-" <approved-local-code>
+
+ct2-token = "CT2-" <approved-local-code>
+
+ct3-token = "CT3-" <approved-local-code>
+
+feature-token = "FEAT-" <approved-feature-code>
+
+behaviour-token =
+
+"FN-" <approved-local-code>
+
+| "SV-" <approved-local-code>
+
+| "PR-" <approved-local-code>
+\end{quote}
+\phantomsection\label{rad:metamodel:362}
+
+Codes SHALL be approved, nonempty tokens without the context separator \texttt{\seqsplit{.}}. This grammar establishes no code allocation or numeric width. Existing established Feature identifiers SHALL retain their canonical spelling, including \texttt{\seqsplit{FEAT-EM-01}}; \texttt{\seqsplit{FEAT-EM01}} SHALL NOT be substituted or assumed equivalent.
+
+\phantomsection\label{rad:metamodel:364}
+
+Capability tokens SHALL explicitly carry their Capability Tier type. Untyped forms such as \texttt{\seqsplit{CT01}}, \texttt{\seqsplit{CT02}} and \texttt{\seqsplit{CT03}} SHALL NOT be used as canonical Capability tokens. The FN /\allowbreak{} SV /\allowbreak{} PR prefixes identify behaviour types and SHALL NOT constitute additional Capability Tiers.
+
+\phantomsection\label{rad:metamodel:366}
+
+The following are syntax examples only; they SHALL NOT assign identifiers or Capability Tiers to existing architectural elements:
+
+\phantomsection\label{rad:metamodel:368}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+CT1-01
+
+CT1-01.CT2-02
+
+CT1-01.CT2-02.CT3-03
+
+CT1-01.CT2-02.CT3-03.FEAT-EM-01
+
+CT1-01.FN-01
+
+CT1-01.CT2-02.PR-01
+
+CT1-01.CT2-02.CT3-03.SV-01
+
+CT1-01.CT2-02.CT3-03.FEAT-EM-01.FN-01
+\end{quote}
+\phantomsection\label{rad:metamodel:379}
+
+Every ancestor prefix in a current Canonical ID SHALL identify the corresponding current Capability or Feature in the established responsibility ancestry. \texttt{\seqsplit{CT1-01.CT3-02}} SHALL NOT be generated merely because CT2 ancestry has not been identified. Unresolved ancestry SHALL remain unresolved rather than being omitted or manufactured.
+
+\phantomsection\label{rad:metamodel:381}
+
+The shorter \texttt{\seqsplit{capability-path}} forms identify CT1 or CT2 Capabilities and permit direct behavioural anchoring; they SHALL NOT frame a Feature token. A Feature, or behaviour anchored beneath it, requires \texttt{\seqsplit{feature-path}} with complete Business Enabling CT1 → CT2 → CT3 ancestry. A syntactically valid path under a Business Capability does not establish valid Harmonia Feature ownership. These are grammar rules only and allocate no identifier to an existing element.
+
+\phantomsection\label{rad:metamodel:383}
+
+The common identity properties apply to other governed Business Architecture element types, but this decision does not establish their token vocabularies or structural contexts. Those SHALL NOT be inferred from this grammar. The Qualified Architectural Reference Grammar in §7 remains distinct and unchanged.
+
+\phantomsection\label{rad:metamodel:385}
+\subsubsection*{8.3 Behavioural Anchoring and Contextual Containment}
+\phantomsection\label{rad:metamodel:387}
+
+Business Functions, Business Services and Business Processes MAY be anchored directly at any Capability Tier or Feature establishing responsibility for that behaviour. CT2, CT3 or FT elements SHALL NOT be invented merely to provide behavioural anchoring.
+
+\phantomsection\label{rad:metamodel:389}
+
+Canonical identifier containment SHALL express architectural responsibility context. It SHALL NOT redefine semantic relationships or Element Type, and SHALL NOT be interpreted as implementation containment. A Function beneath CT2 remains a Function; a Service beneath CT1 remains a Service; a Process beneath a Feature remains a Process. Function delivery, Service exposure and justified Process progression retain the rules in §§2–4.
+
+\phantomsection\label{rad:metamodel:391}
+
+The complete Canonical ID SHALL preserve contextual architectural standing in flat documents, generated diagrams, models, traceability matrices, cross-document references and AI contexts without depending on Markdown nesting. A flat representation retaining that context is permitted; disconnected ownership is not.
+
+\phantomsection\label{rad:metamodel:393}
+\subsubsection*{8.4 Rename, Relocation and Alias Rules}
+\phantomsection\label{rad:metamodel:395}
+
+A Canonical Name change alone SHALL NOT change architectural identity or require a Canonical ID change. A previous name MAY be retained as a Name Alias for historical or search purposes.
+
+\phantomsection\label{rad:metamodel:397}
+
+The approved rename \texttt{\seqsplit{Clinical Credential Management → Clinical Qualification Management}} preserves the existing practitioner professional /\allowbreak{} clinical qualification and competency responsibility. \texttt{\seqsplit{Clinical Credential Management}} MAY be retained as a Name Alias only for that same element. It SHALL remain distinct from Domain03 \texttt{\seqsplit{Credential Management}}, whose separately established responsibility concerns operational badges and physical access. The rename SHALL NOT establish equivalence or aliasing between those elements.
+
+\phantomsection\label{rad:metamodel:399}
+
+Where an element changes architectural responsibility context, its Canonical ID SHALL change to express current structural truth. The previous Canonical ID SHALL be retained as an ID Alias. This rule also applies to descendant elements whose responsibility paths change. The following relocation is a syntax example only:
+
+\phantomsection\label{rad:metamodel:401}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+Previous Canonical ID: CT1-01.CT2-02.FN-01
+
+Current Canonical ID:  CT1-01.CT2-02.CT3-03.FN-01
+
+ID Alias:              CT1-01.CT2-02.FN-01
+\end{quote}
+\phantomsection\label{rad:metamodel:407}
+
+An ID Alias SHALL:
+
+\phantomsection\label{rad:metamodel:409}
+
+\begin{itemize}
+
+\item
+refer to the same architectural element;
+
+
+
+\item
+be searchable and resolvable;
+
+
+
+\item
+be non-canonical;
+
+
+
+\item
+resolve directly to the current architectural element, without requiring an alias chain;
+
+
+
+\item
+never be used for a new authoritative architectural reference.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:metamodel:415}
+
+Canonical IDs and ID Aliases SHALL occupy one globally unique, non-reusable identifier namespace. Once an identifier has referred to an element, canonically or as a historical Canonical ID, it SHALL NOT subsequently identify another element. An ID Alias SHALL NOT collide with a current Canonical ID or an ID Alias assigned to another element. All retained aliases SHALL continue resolving directly after subsequent relocations. New authoritative references SHALL use the current Canonical ID.
+
+\phantomsection\label{rad:metamodel:417}
+
+Name Aliases are names, not members of the identifier namespace. Neither Name nor ID Aliases SHALL establish equivalence merely from similar wording or nested behaviour. The \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/04-information-architecture/reviews/package2-g1-review.md\#65-metamodel-guardrail}{approved G1 K5 rules} remain controlling: finer-grained Functions or Services SHALL NOT be promoted to Features, or assigned a broader Feature's identity, solely to obtain traceability symmetry.
+
+\phantomsection\label{rad:metamodel:419}
+\subsubsection*{8.5 Machine-Validation and Generation Intent}
+\phantomsection\label{rad:metamodel:421}
+
+This convention is intended to support future automated architectural navigation, diagram generation, model generation, traceability matrices, cross-document references and AI-assisted architecture interpretation. It SHALL permit validation of at least:
+
+\phantomsection\label{rad:metamodel:423}
+
+\begin{itemize}
+
+\item
+Canonical ID uniqueness;
+
+
+
+\item
+ID Alias uniqueness;
+
+
+
+\item
+Canonical ID /\allowbreak{} ID Alias collisions;
+
+
+
+\item
+ancestor existence and complete, correctly typed ancestry;
+
+
+
+\item
+valid element-type suffix or terminal token;
+
+
+
+\item
+valid Capability /\allowbreak{} Feature responsibility context;
+
+
+
+\item
+resolvable references;
+
+
+
+\item
+direct, unambiguous alias resolution;
+
+
+
+\item
+orphaned identifiers.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:metamodel:433}
+
+This decision implements no validators, schemas or classes. Generation intent does not require the exhaustive capability matrices excluded by Domain02's modelling position.
+
+\phantomsection\label{rad:metamodel:435}
+
+
+
+\phantomsection\label{rad:metamodel:437}
+\subsubsection*{8.6 Approved K9 Derivation and Uncertainty Rules}
+\phantomsection\label{rad:metamodel:439}
+
+\hyperref[rad:k9:1392]{Approved G1 K9} found no affected legacy owner assignment sufficiently validated to authorise mechanical conversion to CT1 /\allowbreak{} CT2 /\allowbreak{} CT3. Established identities and responsibilities remain valid; affected Capability Tier, complete ancestry and root status remain unresolved.
+
+\phantomsection\label{rad:metamodel:441}
+
+Unresolved Capability Tier or ancestry SHALL NOT prevent downstream derivation from an otherwise established owning Capability or Feature and its relevant responsibility. Downstream traceability SHALL reference that element without manufacturing structural ancestry. Document structure, catalogue grouping, numbering, indentation and decomposition presentation SHALL NOT by themselves establish Architectural Element identity.
+
+\phantomsection\label{rad:metamodel:443}
+
+\texttt{\seqsplit{Client Administration → Person Identity → Identifier Resolution [FT / FEAT-EM-01]}} is an established partial responsibility chain and SHALL be preserved. Its full structural Canonical ID remains unresolved until actual Capability Tier ancestry and identifier allocation are architecturally established. The former incorrect L3 example SHALL NOT supply that ancestry.
+
+\phantomsection\label{rad:metamodel:445}
+
+The fixed model in §1.1 does not retrospectively validate legacy L1 /\allowbreak{} L2 /\allowbreak{} L3 assignments or convert a known owner into CT3. Existing Features with incomplete ancestry remain valid architectural evidence requiring Capability decomposition reconciliation; downstream derivation from their established responsibility does not declare them structurally reconciled. Missing CT3 frames SHALL be separately established before subsequent Feature definition, without using catalogue presentation to manufacture them.
+
+\phantomsection\label{rad:metamodel:447}
+
+These rules preserve AX-01/\allowbreak{}AX-04 business meaning, AX-14 distinctions, AX-15 uncertainty and \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-17}{AX-17 architectural authority and explicit uncertainty}. They allocate no structural IDs, manufacture no ancestry and do not authorise Package2 Information Family derivation.
+
+\phantomsection\label{rad:metamodel:449}
+
+The subsequent \hyperref[rad:business]{R1/\allowbreak{}R2 Business Capability reconciliation} explicitly establishes its stated BC tiers/\allowbreak{}parents independently of catalogue indentation. It does not resolve any affected historical BEC ancestry, convert any of the 69 enabling descriptions into Capabilities, frame the 137 Features or allocate Canonical IDs. K9 continues to govern all unestablished dimensions.
+
+\phantomsection\label{rad:metamodel:451}
+\subsection*{9. R1.x/\allowbreak{}R2.x Semantic Sufficiency Boundary}
+\phantomsection\label{rad:metamodel:453}
+
+The human architectural adjudication of 2026-10-09 establishes semantic sufficiency rather than graph density. Domain03 must express the Business behaviour required by Strategy without mirroring Strategy's structure. Complete identifier allocation is not a prerequisite for semantic completeness; deterministic corrections preserve established identities, while unresolved ancestry, tiers and code allocations remain explicit.
+
+\phantomsection\label{rad:metamodel:455}
+
+Semantic completeness requires sufficient Business expression to derive Strategy's required behaviour. It requires neither one Function per Feature, one Service per Function, exhaustive Role/\allowbreak{}Function or Feature/\allowbreak{}Function mappings, identical decomposition nor structural symmetry. A composition/\allowbreak{}workflow realisation under §3.6 may suffice without a specialised Function; unestablished individual relationships remain unestablished. The residual SD-03, SD-08 and SD-14 decisions are recorded in the \hyperref[rad:sd:16]{Service Delivery catalogue}, while HSO-09 and HSO-16 are reconciled within their \hyperref[rad:hso]{operational responsibilities}.
+
+\phantomsection\label{rad:metamodel:457}
+
+The current approved assurance authority boundary and the three assurance Process purposes/\allowbreak{}progression descriptions are sufficient for this baseline. Detailed approval allocation and lifecycle transitions remain unestablished and may be revisited if later architecture demonstrates a genuine Business requirement. Evidentiary use alone establishes no Service, Interaction or dependency. The approved assurance catalogue remains two Roles, five Functions, three Processes, three Services and three Interactions; financial governance exclusion and non-recursion remain intact.
+
+\phantomsection\label{rad:metamodel:459}
+
+The approved G1 capability-scoped corrections and unresolved Feature/\allowbreak{}dependency relationships remain valid unless a separately authorised semantic decision establishes more. No exhaustive Value Stream derivation, participant/\allowbreak{}exposure matrix, Twin Business Actor or workflow, or organisational risk-management responsibility is required for structural completeness.

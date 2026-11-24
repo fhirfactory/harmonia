@@ -1,0 +1,13 @@
+{
+  "command": [
+    "make",
+    "-C",
+    "enterprise-architecture/tooling",
+    "check",
+    "browser-test"
+  ],
+  "exitCode": 0,
+  "status": "PASS",
+  "seconds": 50.225,
+  "limits": "Publication/release/source link and DOM contracts; not transport or pixel equivalence"
+}

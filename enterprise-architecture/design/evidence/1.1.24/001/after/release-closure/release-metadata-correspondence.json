@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "originalAcceptedCandidateSha256": "6f6432a979a92a3adbf0261ba4bc761d092f87eb55fd4e5d7968f597e4d64d3a",
+  "releasePublicationSha256": "9f2e2c7b663423218fd03e6a1c26cd2ada1444b1690f7015e2ec022b29968dc4",
+  "onlyExchangeChange": {
+    "rootProperty": "Baseline / Architecture Release",
+    "before": "1.1.23",
+    "after": "1.1.24"
+  },
+  "entireRemainingParsedExchangeExact": true,
+  "strictTransport": "FAIL retained for original exact accepted candidate; no new lossless transport claim",
+  "limits": "Deterministic release projection correspondence; no Archi return application or new actual transport run"
+}

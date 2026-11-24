@@ -1,0 +1,10 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+[XML Exchange] Validating...
+[XML Exchange] Validated!
+[XML Exchange] Importing XML from /home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.13/001/after/diagnostics/fixtures/category-markers.xml
+[XML Exchange] XML Imported!
+[XML Exchange] Exporting from 'Diagnostic only — category-markers' to /tmp/harmonia-1113-workbench/category-markers-returned.xml
+[XML Exchange] XML Exported!
+[XML Exchange] Validating...
+[XML Exchange] Validated!
+[Core] Saved model to '/tmp/harmonia-1113-workbench/category-markers.archimate'

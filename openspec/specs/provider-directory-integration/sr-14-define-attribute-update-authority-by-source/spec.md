@@ -10,7 +10,18 @@ Enable the Provider Directory to configure and enforce source-of-truth rules by 
 - **Source Scope:** Additional Source Use Cases and System Requirements
 - **Primary Actor:** Integration Administrator
 - **Supporting Actors:** Provider Directory Administrator; Provider Directory; Data Steward
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/a95a0b5cd40e4e45a34d92a806e0c86b.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As an Integration Administrator, I want to define which attribute can be updated from specific sources, so that the Provider Directory only accepts trusted data.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-30 – Match Provider Records: supports reliable identity matching where provider information is received or reconciled.; UC-Integration-ProviderDirectory-32 – Validate Provider Data Quality: supports validation and data-quality controls.; UC-Integration-ProviderDirectory-34 – Audit Provider Information Exchange: supports traceability and audit of information exchange.; UC-Integration-ProviderDirectory-35 – Monitor Provider Integration Interfaces: supports operational monitoring of automated interfaces.; UC-Integration-ProviderDirectory-36 – Reconcile Provider Synchronisation Failures: supports remediation of failed or ambiguous synchronisation.
 
 ## Requirements

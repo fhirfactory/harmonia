@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "architecture_release": {
+    "version": "1.0.9",
+    "previous_version": "1.0.8"
+  },
+  "scope": "Completion of unsigned RAD-1.0.9: Home-derived names and principal navigation; no View presentation or Information Architecture work",
+  "published_sha256": "efe3b986ae3e031d35bf38e7af47bb733af090dab63e46726f21b4e0a557cfec",
+  "test_counts": {
+    "archimate": 190,
+    "governance": 72,
+    "architecture": 90
+  },
+  "checks": {
+    "archimate_tests": {
+      "status": "PASS",
+      "command": "python3 -B -m unittest discover -s docs/archimate/framework/tests -v",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/archimate-final.log.gz",
+      "log_sha256": "ccb210e622d09fc2b757c3e52e31926784eeab8c20f820fdd18cd9e9ea7e1e2d"
+    },
+    "governance_tests": {
+      "status": "PASS",
+      "command": "python3 -B -m unittest discover -s scripts/tests -v",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/governance.log.gz",
+      "log_sha256": "570be49f6fbf8acc006d8563ad3f00cf4e86d6540e61e53457984062c97ab31e"
+    },
+    "architecture_tests": {
+      "status": "PASS",
+      "command": "env JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/architecture.log.gz",
+      "log_sha256": "cce5a18bbacdfc6ecddde9eb627a7e6a8fbaa38f3c2c6595c73c901d485e2283"
+    },
+    "publication": {
+      "status": "PASS",
+      "command": "python3 -B docs/archimate/framework/tools/synchronise_baseline.py --check",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/publication-final.log.gz",
+      "log_sha256": "c59cec9a55f761f740e726dc8b9d49d59325202ae942d45a3a1bf3faa4abd4bd"
+    },
+    "identity": {
+      "status": "PASS",
+      "command": "python3 -B docs/archimate/framework/tools/governed_metadata.py validate",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/identity.log.gz",
+      "log_sha256": "ba96bb1651d8249a6f934956752980005099de7415352a659fcdc6cb1428fc4c"
+    },
+    "identity_registry": {
+      "status": "PASS",
+      "command": "python3 -B scripts/architecture_identity.py validate",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/identity-registry.log.gz",
+      "log_sha256": "f094f2c6abd3d17fead043cf536f7e46320f79c5c8fbf2d3be96dec16346074b"
+    },
+    "rads": {
+      "status": "PASS",
+      "command": "python3 -B scripts/rads_business_architecture.py validate",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/rads.log.gz",
+      "log_sha256": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c"
+    },
+    "release": {
+      "status": "PASS",
+      "command": "python3 -B scripts/architecture_release.py check",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/release.log.gz",
+      "log_sha256": "f0f76d34ea472bd903f47125e734e31f4635f9f6a666d96aa9e564da74073ca3"
+    },
+    "recovery": {
+      "status": "PASS",
+      "command": "python3 -B docs/archimate/framework/tools/recover_v02.py --check",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/recovery.log.gz",
+      "log_sha256": "a0b40592901ba04d3f4ce91e920c71344202e928d002da4d182aeb3c7a00bf6f"
+    },
+    "preservation": {
+      "status": "PASS",
+      "command": "python3 -B docs/archimate/framework/tools/home_context.py audit",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/population-final.json.gz",
+      "log_sha256": "d7ee0c05b85feaba3cf8e73c870851511835f5ef8ff2066f24455ca7c2cfc6c9"
+    },
+    "governance_evidence": {
+      "status": "PASS",
+      "command": "python3 -B docs/archimate/framework/tools/verify_governance_evidence.py",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/history-final.json.gz",
+      "log_sha256": "b3c94cfd402f4d43b2e7f44d2149e2e3e90c10ed2d3b9d10246b4084a8f3b296"
+    },
+    "serialization_roundtrip": {
+      "status": "PASS",
+      "command": "Existing serializer and exhaustive comparator, no equivalence changes",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/serialization.json.gz",
+      "log_sha256": "90cfe8c678243f452ab0a71da9105a28d9e0e8cb13cca7ffb320e7a9d0a8671f"
+    },
+    "source_diagnostic": {
+      "status": "PASS",
+      "command": "python3 -B docs/archimate/framework/tools/diagnose_roundtrip.py diagnose --baseline-context",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/source-diagnostic.json.gz",
+      "log_sha256": "3b12527a106d80aff6db847a109beb7811b9dbd26abd4ff2036fcdaf398a2ac4"
+    },
+    "archi_transport": {
+      "status": "PASS",
+      "command": "python3 -B docs/archimate/processing/publishing/1.0.9/home-context-completion/roundtrip/verify-transport.py",
+      "log": "docs/archimate/processing/publishing/1.0.9/home-context-completion/validation/transport-probe.log.gz",
+      "log_sha256": "5935b7e12121149b38723d7fad5f79120329851778b05556047a987936a25ab1"
+    }
+  },
+  "roundtrip": {
+    "serialization": "EQUIVALENT",
+    "actual_archi_cli_transport": "PASS within recorded scope",
+    "raw_comparator": "DIFFERENCES",
+    "unchanged_historical_semantic_text_findings": 1669,
+    "human_rendering_acceptance": "PENDING INSPECTION"
+  },
+  "historical_failures_preserved": [
+    "validation/focused.log.gz",
+    "validation/archimate-tests.log.gz"
+  ],
+  "nonblocking_home_debt": {
+    "unestablished": 93,
+    "ambiguous": 18,
+    "assigned_by_this_completion": 0
+  },
+  "authority": "docs/markdown/governance/architecture-modelling-strategy.md#home-derived-naming-and-navigation"
+}

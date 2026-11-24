@@ -1,0 +1,78 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_ARCHI_TRANSPORT_DIFFERENCES",
+  "release": {
+    "version": "1.1.17",
+    "previous_version": "1.1.16"
+  },
+  "tooling": {
+    "outcome": "PASS",
+    "tests": 85,
+    "seconds": 315.122,
+    "command": "timeout 420s /tmp/harmonia-tooling-venv/bin/python -B -m unittest discover -s enterprise-architecture/tooling/tests -v"
+  },
+  "javaArchitecture": {
+    "outcome": "PASS",
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "command": "JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 timeout 240s mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false"
+  },
+  "publication": {
+    "outcome": "PASS",
+    "command": "make -C enterprise-architecture/tooling PYTHON=/tmp/harmonia-tooling-venv/bin/python continuum continuum-rad check",
+    "checks": [
+      "canonical validation",
+      "offline XSD",
+      "reference/identity",
+      "native endpoints",
+      "containment",
+      "information naming",
+      "Manifest/Exchange/browser/RAD staleness",
+      "current links"
+    ]
+  },
+  "browser": {
+    "outcome": "PASS",
+    "elements": 1842,
+    "command": "make -C enterprise-architecture/tooling PYTHON=/tmp/harmonia-tooling-venv/bin/python browser-test"
+  },
+  "preservation": {
+    "outcome": "PASS",
+    "unchangedOutsideOrganizations": true,
+    "canonicalElements": 1842,
+    "relationships": 1882,
+    "views": 1216,
+    "pinnedInputs": 1862,
+    "command": "timeout 90s /tmp/harmonia-tooling-venv/bin/python -B enterprise-architecture/design/evidence/1.1.17/002/after/verify-catalogue.py"
+  },
+  "archiTransport": {
+    "outcome": "PASS_WITH_DOCUMENTED_TRANSPORT_DIFFERENCES",
+    "version": "5.10",
+    "rawComparison": "DIFFERENCES",
+    "normalisedRelationshipLanguageChanges": 222,
+    "retainedNativeModel": true,
+    "actualNativeTreeCheck": "PASS",
+    "actualViewTreeCheck": "PASS",
+    "catalogueRegeneration": "PASS",
+    "humanStructuralReview": "PENDING Solution Architect"
+  },
+  "scopeLimits": [
+    "No architectural acceptance",
+    "No whole-model raw transport equivalence",
+    "No PDF compilation or interactive visual inspection claimed",
+    "No production implementation change",
+    "No additional release increment"
+  ],
+  "reproducibility": {
+    "outcome": "PASS",
+    "canonicalSources": 1842,
+    "identicalArtifacts": 20,
+    "steps": 13,
+    "isolatedTests": 85,
+    "allocatedLiveIdentities": 0,
+    "legacyRadPresent": false,
+    "historicalConfigurationPresent": false,
+    "command": "timeout 600s /tmp/harmonia-tooling-venv/bin/python -B enterprise-architecture/tooling/verify_continuum_reproducibility.py --report enterprise-architecture/design/evidence/1.1.17/002/after/reproducibility.json"
+  }
+}

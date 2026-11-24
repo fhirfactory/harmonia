@@ -1,0 +1,184 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+\chapter{Authority, identity and use}\label{guide}
+
+This publication answers: ``What capability architecture does the governed RAD currently contain?''
+Version 0.1 represents the current governed Markdown architecture without extending
+its decomposition or adjudicating its unresolved relationships. The Markdown RAD remains architectural authority;
+this publication is its definitive LaTeX representation at the recorded baseline.
+The Architectural Axioms remain the highest design authority.
+
+AX-01 and AX-04 preserve the business and health-information meaning of the model.
+AX-14 preserves distinctions between capability, behaviour, exposure, progression,
+relevance and status. AX-17 requires established, candidate and unresolved assertions
+to remain distinguishable. AX-18 prevents integration/coordination from conferring
+domain authority. This publication applies those constraints to representation;
+it makes no architectural change. The selected axiom text, metamodel and K9
+decision are reproduced in the semantic-detail part.
+
+\section{Reading the model}
+
+Business Capabilities use only the explicitly established CT1 → CT2 → CT3
+hierarchy. Regions are contextual groupings, not ancestors. Business Enabling
+Capabilities require CT1 → CT2 → CT3 → FT for a fully reconciled Feature, but the
+current RAD does not establish those BEC tier allocations or complete ancestry.
+This publication preserves established owners and the explicit partial
+Client Administration → Person Identity responsibility chain without manufacturing
+missing tiers. It reports zero \emph{established} BEC CT1, CT2 or CT3 allocations;
+this does not mean that the 76 established BEC contexts do not exist.
+
+Functions, Services and Processes retain their evidenced owners. They form a graph,
+not a mandatory Feature → Function → Service/Process tree. A Function need not
+have a Feature, Service or Process association. Enterprise Capabilities retain the
+fourteen governed entries and their actual descriptive responsibilities; no additional
+Enterprise decomposition is introduced.
+
+Each element has a stable label, metadata and a link to exact RAD source detail.
+Every Capability has an authored Capability Overview; Features have authored
+overviews and behavioural entries preserve their particular governed descriptions
+and qualifications. Significant behavioural entries also have authored explanation.
+These explanations synthesise the element's definition, established context and
+boundaries. They are interpretation for architectural review, not independent
+decisions, new architectural elements or a claim that every explanatory sentence
+was present verbatim in the RAD. A Canonical element can have newly authored prose.
+RAD-only architectural scope does not restrict explanation to source transcription.
+
+The reviewable authored Markdown is held under \texttt{catalogue/}, with separate
+fingerprints in the manifest. It is not added to the eighteen governed RAD sources.
+Definitions and exact governed semantic detail remain distinguishable from those
+overviews. Reference links and containing/owned-element tables navigate the actual
+architecture rather than inferring containment from heading depth.
+
+The semantic-detail part preserves the source definitions, boundaries, state-change
+statements, illustrative activities, examples, exclusions, notes, classifications,
+relationship tables and unresolved matters. Its source headings and retained diagram
+notation are not new containment assertions. The complete \texttt{manifest.json}
+records exact source lines and fingerprints; \texttt{source-coverage.json} records the
+transcribed blocks. Source references such as ``business:152'' mean source-key and
+Markdown line, not a new architectural identifier.
+
+\section{Definitive publication identity}
+
+Existing Feature identifiers (for example \texttt{FEAT-EM-01}) and Enterprise
+identifiers (\texttt{EC-01} through \texttt{EC-14}) are preserved exactly.
+Catalogue ordinals, BC-18-style source shorthand and CT syntax examples are not
+allocated structural Canonical IDs merely by their occurrence in source prose.
+This authorised v0.1 allocation establishes Structural Canonical IDs for all 190
+canonical Business Capabilities with complete, explicit ancestry. Existing
+\texttt{EC-01} through \texttt{EC-14} identifiers are retained for Enterprise
+Capabilities, to which no CT path applies.
+
+For a Business Capability, the approved local code is its initial frozen
+\texttt{HCM-BC-} semantic token in uppercase, excluding that publication prefix.
+Each path component is typed \texttt{CT1-}, \texttt{CT2-} or \texttt{CT3-}; the full
+identifier concatenates the established ancestors and current element with dots.
+For example, Health Innovation Evaluation is identified by
+\texttt{\seqsplit{CT1-HEALTH-RESEARCH-INNOVATION.CT2-HEALTH-INNOVATION.CT3-HEALTH-INNOVATION-EVALUATION}}.
+The Reference Id supplied a deterministic initial allocation seed, not an existing
+Canonical ID or a display ordinal. Local codes are frozen after allocation and do
+not change merely because a name changes. Every ancestor prefix resolves to the
+corresponding current Capability. No local code is inferred from catalogue order.
+
+For elements without an allocated identifier, the frozen Reference Id uses
+\texttt{HCM-}\emph{type}\texttt{-}\emph{semantic-name-token}. Type tokens are
+\texttt{BC}, \texttt{BEC}, \texttt{FN}, \texttt{SV} and \texttt{PR}.
+The initial token is the lowercase name with runs of non-alphanumeric characters
+replaced by a hyphen. This is a deterministic initial allocation rule only:
+\textbf{after v0.1, the manifest value must be reused verbatim, including after
+rename or relocation}. It is not regenerated from a future name, parent, tier,
+ordinal, chapter or build. A collision requires an explicitly recorded allocation,
+never a position-based suffix; this baseline has no collisions.
+
+The Reference Id is a definitive publication identity, distinct from the metamodel's
+contextual structural Canonical ID. The metamodel requires a structural ID to change
+when responsibility context changes, retaining the former value as an alias.
+Keeping these two fields separate satisfies both that rule and publication identity
+stability. After an authorised structural relocation, the current structural path
+must change and the former path must be retained as a direct, globally unique,
+non-reusable ID alias. A name change alone does not change either identity.
+Ancestry-dependent structural IDs remain unresolved: all 512 canonical
+BEC/Feature/behaviour records require unresolved BEC tiers, and three Candidate
+concerns lack approved placement. Publication IDs remain usable independently.
+
+Stable LaTeX label namespaces are \texttt{cap:bc-}, \texttt{cap:bec-},
+\texttt{cap:ec-}, \texttt{feature:}, \texttt{function:}, \texttt{service:}
+and \texttt{process:}. The exact values are frozen in the manifest and are also
+preserved across relocation or rename. Source-detail labels are locators, not
+architectural element identities. Internal reference-candidate record keys are
+retained for navigation continuity only; they are neither Canonical IDs nor aliases.
+
+\section{Architectural status and uncertainty}
+
+\textbf{Canonical} means that the element's identity/responsibility is established
+by the cited governed RAD. It does not establish every possible property or
+relationship of that element. \textbf{Candidate} preserves a named provisional
+concern without approving its placement or decomposition. \textbf{Unresolved}
+qualifies a particular unestablished dimension or relationship. It is not a fifth
+Harmonia relevance classification. Source-specific provisional proposals remain
+provisional in their source prose; occurrence in a canonical document does not
+promote them to Canonical.
+
+Health Service Governance is a Canonical CT1 with unresolved relevance and enabling
+derivation. The three assurance BECs are Canonical responsibilities with unresolved
+tiers, ancestry, view placement, relevance and Feature decomposition. All 137
+Features are established FT identities with unresolved complete capability ancestry.
+The 69 enabling catalogue descriptions with unestablished standalone element
+identity are not counted as new Capabilities.
+
+\section{Reconciled publication counts}
+
+\begin{longtable}{|p{0.53\linewidth}|p{0.37\linewidth}|}
+\hline\rowcolor{TableHead}\textbf{Architectural category} & \textbf{RAD / publication count}\\\hline
+Business CT1 / CT2 / CT3 & 18 / 39 / 133\\\hline
+Canonical Business Capabilities & 190\\\hline
+Named candidate BC concerns with unresolved placement & 3 (separate from 190)\\\hline
+Established BEC CT1 / CT2 / CT3 assignments & 0 / 0 / 0; tiers unresolved\\\hline
+Canonical BEC responsibility contexts & 76\\\hline
+Features / Functions / Services / Processes & 137 / 147 / 133 / 19\\\hline
+Enterprise Capabilities & 14\\\hline
+Named enabling decomposition descriptions & 73; 4 independently established, 69 unresolved identities\\\hline
+Definitive architectural-element publication records & 719; 716 Canonical, 3 Candidate\\\hline
+\end{longtable}
+
+Counts are of independently established identities or explicitly retained candidates,
+not source occurrences, descriptive bullets or possible future peers. The reference
+candidate capture was used to locate current Markdown evidence; its candidate
+standing supplies no architectural approval. Counts and identifiers are checked
+against the actual Markdown inventories and explicit parent assertions.
+
+\section{Preserved issues requiring later architectural review}
+
+\hyperref[model:exceptions]{The exception register} summarises material description
+constraints. \texttt{review-exceptions.json} lists every unallocated structural ID
+and every identified material semantic limitation by frozen identity. No overview
+is absent, but the sharing-programme concern lacks enough governed scope for a
+full description and is explicitly recorded as constrained.
+
+The full source qualifications remain controlling. In particular:
+\begin{itemize}
+\item BEC tier/ancestry reconciliation, 137 Feature frames and 69 description
+identities remain unresolved under K9; the five views do not resolve them.
+\item Health Information Exchange identifies distinct BC and BEC responsibilities.
+Their naming collision remains unresolved; they are not merged or renamed.
+\item Medication compounding/preparation (OI-BC-001), operational-readiness
+placement (OI-BC-002), maintenance membership and sharing-programme placement
+remain unadjudicated. Clinical Intervention's proposed three-child taxonomy
+remains provisional; Clinical Determination and Individual Care Planning have
+no adjudicated CT3 set.
+\item Operational Credential Management remains distinct from Clinical
+Qualification Management and its historical name alias. Name similarity does
+not establish Feature association.
+\item The existing care-team collaboration Function description mentions managing
+clinical handovers while the metamodel excludes that authority. Both source
+assertions are retained for review; this publication does not resolve the conflict.
+\item Process illustrations retain their stated scope and unresolved transitions,
+including Encounter ON\_LEAVE and the disconnected stalled/failed Synthetic Task
+outcome. Assurance lifecycle detail and internal Service/Function mappings remain
+unestablished; no additional state or edge is inferred.
+\item The assurance Strategy source's opening reconciliation qualifies older BC-18
+tier/relevance wording. Its Strategy stop boundary does not erase the later
+approved Domain03 assurance catalogue. B2.1's retained L1/L2 terminology does not
+allocate or override current CT classifications.
+\end{itemize}
+
+No legacy documentation or architectural material from the earlier candidate LaTeX
+publications was used. Version 0.2 derivation and reconciliation are outside this baseline.

@@ -24,12 +24,12 @@
     <parent>
         <groupId>net.fhirfactory.harmonia</groupId>
         <artifactId>harmonia-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>paradeigma</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Harmonia :: Paradeigma (HL7 v2 Reference Exemplar)</name>
     <description>Harmonia Paradeigma — End-to-end runnable exemplar demonstrating representative HL7 v2.4 clinical workflows across simulated healthcare systems interacting with Harmonia HIE</description>

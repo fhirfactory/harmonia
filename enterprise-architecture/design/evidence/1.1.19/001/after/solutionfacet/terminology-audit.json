@@ -1,0 +1,819 @@
+{
+  "classificationTerminology": "SolutionFacet in current specialisation/profile/navigation and canonical definitions",
+  "retainedHistoricalFacetBodyReferences": [
+    {
+      "canonicalId": "0085c4fe23cf4b76829fae3369c9fbb1",
+      "path": "enterprise-architecture/continuum/grouping/0085c4fe23cf4b76829fae3369c9fbb1.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "011207c2c69f42d7a5c9c7504ffbc951",
+      "path": "enterprise-architecture/continuum/grouping/011207c2c69f42d7a5c9c7504ffbc951.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "028a5b5f4b0e458a91489cac0513955d",
+      "path": "enterprise-architecture/continuum/grouping/028a5b5f4b0e458a91489cac0513955d.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "08ffff9f57aa412b80e36ab154136ad0",
+      "path": "enterprise-architecture/continuum/grouping/08ffff9f57aa412b80e36ab154136ad0.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "0caf2fb84f944a6ab3872feb92b9338d",
+      "path": "enterprise-architecture/continuum/grouping/0caf2fb84f944a6ab3872feb92b9338d.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "1a235d13959e477ea52e0f201215fbe9",
+      "path": "enterprise-architecture/continuum/grouping/1a235d13959e477ea52e0f201215fbe9.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "1cdc1ee62ec548998a8db6ee23b59ca1",
+      "path": "enterprise-architecture/continuum/grouping/1cdc1ee62ec548998a8db6ee23b59ca1.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "1de844b879754fd7a21a29f2df3df97b",
+      "path": "enterprise-architecture/continuum/grouping/1de844b879754fd7a21a29f2df3df97b.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "1eb3b965c7334b899133282bc0500a9d",
+      "path": "enterprise-architecture/continuum/grouping/1eb3b965c7334b899133282bc0500a9d.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "202ebe880cc8456bb5e9f1389cc26fe8",
+      "path": "enterprise-architecture/continuum/grouping/202ebe880cc8456bb5e9f1389cc26fe8.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "20326d2f4f2e44dcbe12db38deea02d0",
+      "path": "enterprise-architecture/continuum/grouping/20326d2f4f2e44dcbe12db38deea02d0.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "23408174240a47f690d23dee589e4ddc",
+      "path": "enterprise-architecture/continuum/grouping/23408174240a47f690d23dee589e4ddc.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "2423108223e14d27a7bf59610034297a",
+      "path": "enterprise-architecture/continuum/grouping/2423108223e14d27a7bf59610034297a.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "31812051912e4dd99b07125d86ca2c11",
+      "path": "enterprise-architecture/continuum/grouping/31812051912e4dd99b07125d86ca2c11.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "3189d80ed4c24efe9bfc6b28ab263b51",
+      "path": "enterprise-architecture/continuum/grouping/3189d80ed4c24efe9bfc6b28ab263b51.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "3566f7776b8741699f48139e1c6b8ec8",
+      "path": "enterprise-architecture/continuum/grouping/3566f7776b8741699f48139e1c6b8ec8.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "395d77eea25d40b0b74321dc7aabd283",
+      "path": "enterprise-architecture/continuum/grouping/395d77eea25d40b0b74321dc7aabd283.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "3b06c335246c4307adb5801e05f2cef4",
+      "path": "enterprise-architecture/continuum/grouping/3b06c335246c4307adb5801e05f2cef4.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "3f830af6837d4f89bcd042039572bcdc",
+      "path": "enterprise-architecture/continuum/grouping/3f830af6837d4f89bcd042039572bcdc.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "41040498bcaf469686edbee208b9b349",
+      "path": "enterprise-architecture/continuum/grouping/41040498bcaf469686edbee208b9b349.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "416367b1da96412299df199827b3541f",
+      "path": "enterprise-architecture/continuum/grouping/416367b1da96412299df199827b3541f.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "43ea78d2aa5e4e0eb4e0c80a6ddb22dd",
+      "path": "enterprise-architecture/continuum/grouping/43ea78d2aa5e4e0eb4e0c80a6ddb22dd.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "445d396942f549e5891086bd72fa5b44",
+      "path": "enterprise-architecture/continuum/grouping/445d396942f549e5891086bd72fa5b44.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "4643d0b24fe7420b8e3fd0f4a2f4b1de",
+      "path": "enterprise-architecture/continuum/grouping/4643d0b24fe7420b8e3fd0f4a2f4b1de.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+      "path": "enterprise-architecture/continuum/grouping/46dd1f4490ae47cc854ce70ff600cb47.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "477d6408de0642fc875ce79d8e9dee86",
+      "path": "enterprise-architecture/continuum/grouping/477d6408de0642fc875ce79d8e9dee86.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "493e4a05fe76496f82caf26e68f15edd",
+      "path": "enterprise-architecture/continuum/grouping/493e4a05fe76496f82caf26e68f15edd.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "4cc994e1de714cc8915dc965d2694808",
+      "path": "enterprise-architecture/continuum/grouping/4cc994e1de714cc8915dc965d2694808.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "4df45b11a8c64144acea7c240a2c93d1",
+      "path": "enterprise-architecture/continuum/grouping/4df45b11a8c64144acea7c240a2c93d1.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "4f80f28b3dad490abe942e5bb37e1a80",
+      "path": "enterprise-architecture/continuum/grouping/4f80f28b3dad490abe942e5bb37e1a80.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "50a4cb6b01c94904a0991175ab09004c",
+      "path": "enterprise-architecture/continuum/grouping/50a4cb6b01c94904a0991175ab09004c.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "5120fbb391e24b3f941d8a5cc347a1fd",
+      "path": "enterprise-architecture/continuum/grouping/5120fbb391e24b3f941d8a5cc347a1fd.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "5280c9c5e5ac43fe8fd314fd74bb6e69",
+      "path": "enterprise-architecture/continuum/grouping/5280c9c5e5ac43fe8fd314fd74bb6e69.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "549a5d805b3f40d49437ce704f923bf0",
+      "path": "enterprise-architecture/continuum/grouping/549a5d805b3f40d49437ce704f923bf0.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "549eaf0604764c01814641872404017f",
+      "path": "enterprise-architecture/continuum/grouping/549eaf0604764c01814641872404017f.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "54d5ba1ccaae46c8b372f7ccfca99741",
+      "path": "enterprise-architecture/continuum/grouping/54d5ba1ccaae46c8b372f7ccfca99741.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "55441c2677144a9da1c6348e633eaac8",
+      "path": "enterprise-architecture/continuum/grouping/55441c2677144a9da1c6348e633eaac8.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "582e15cf43f94ce6b1c128361ec31780",
+      "path": "enterprise-architecture/continuum/grouping/582e15cf43f94ce6b1c128361ec31780.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "5a4a41f263424c1aac14102b64f95bd0",
+      "path": "enterprise-architecture/continuum/grouping/5a4a41f263424c1aac14102b64f95bd0.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "5c36fbab326d484a9f7877b7fb6a2ff9",
+      "path": "enterprise-architecture/continuum/grouping/5c36fbab326d484a9f7877b7fb6a2ff9.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "5e78ed0ddec14bb4b081082c66c75ad2",
+      "path": "enterprise-architecture/continuum/grouping/5e78ed0ddec14bb4b081082c66c75ad2.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "5e7bdebc353e49259113adf2a5b93aad",
+      "path": "enterprise-architecture/continuum/grouping/5e7bdebc353e49259113adf2a5b93aad.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "5f25a2e8082d486d8f2b87aec6667e33",
+      "path": "enterprise-architecture/continuum/grouping/5f25a2e8082d486d8f2b87aec6667e33.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "60fcf91dfa7445999dfa8e039d993415",
+      "path": "enterprise-architecture/continuum/grouping/60fcf91dfa7445999dfa8e039d993415.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "63807867e2d147528542a914952b3e3e",
+      "path": "enterprise-architecture/continuum/grouping/63807867e2d147528542a914952b3e3e.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "66ec039ab4f042a8b4817ca1dafaedfe",
+      "path": "enterprise-architecture/continuum/grouping/66ec039ab4f042a8b4817ca1dafaedfe.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "67bfa710070c4618b3ba834da62cc63d",
+      "path": "enterprise-architecture/continuum/grouping/67bfa710070c4618b3ba834da62cc63d.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "6fceb4d8857a4601b736a33e9bec140a",
+      "path": "enterprise-architecture/continuum/grouping/6fceb4d8857a4601b736a33e9bec140a.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "709d34e55e7b4c7a9e010f5465f76473",
+      "path": "enterprise-architecture/continuum/grouping/709d34e55e7b4c7a9e010f5465f76473.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "73a9255ce3cd4be89c2f5f65868c5f79",
+      "path": "enterprise-architecture/continuum/grouping/73a9255ce3cd4be89c2f5f65868c5f79.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "76b2a8e5551e4645a048f48e4820a0bc",
+      "path": "enterprise-architecture/continuum/grouping/76b2a8e5551e4645a048f48e4820a0bc.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "793ed649804a4bf19b5fa92bac3e4c29",
+      "path": "enterprise-architecture/continuum/grouping/793ed649804a4bf19b5fa92bac3e4c29.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "805280b737e14b72ba401393c1f4a271",
+      "path": "enterprise-architecture/continuum/grouping/805280b737e14b72ba401393c1f4a271.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "80aa94b4210047a0a14563f408da1694",
+      "path": "enterprise-architecture/continuum/grouping/80aa94b4210047a0a14563f408da1694.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "82837737622a46059703e99a8920533e",
+      "path": "enterprise-architecture/continuum/grouping/82837737622a46059703e99a8920533e.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "87694e76de1d4b93af63a16a9f5de128",
+      "path": "enterprise-architecture/continuum/grouping/87694e76de1d4b93af63a16a9f5de128.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "88d1c3fd640448c2b35933d2b03b8151",
+      "path": "enterprise-architecture/continuum/grouping/88d1c3fd640448c2b35933d2b03b8151.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "8d58b9333a374b9cbe936f34919fc122",
+      "path": "enterprise-architecture/continuum/grouping/8d58b9333a374b9cbe936f34919fc122.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "8e39da9fc2d443efa3cc5d0311fcaf79",
+      "path": "enterprise-architecture/continuum/grouping/8e39da9fc2d443efa3cc5d0311fcaf79.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "901d49996c9545bb99cb0e0e7c043c81",
+      "path": "enterprise-architecture/continuum/grouping/901d49996c9545bb99cb0e0e7c043c81.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "9020808d1ff9466db08ad2f8c9a97542",
+      "path": "enterprise-architecture/continuum/grouping/9020808d1ff9466db08ad2f8c9a97542.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "93adee1dcb7348dd8bc070e7a53264f6",
+      "path": "enterprise-architecture/continuum/grouping/93adee1dcb7348dd8bc070e7a53264f6.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "980b414d73614bd48bc47a6aaa718a51",
+      "path": "enterprise-architecture/continuum/grouping/980b414d73614bd48bc47a6aaa718a51.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "99436452c53a49b89fa6bc2863557572",
+      "path": "enterprise-architecture/continuum/grouping/99436452c53a49b89fa6bc2863557572.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "99e7cebde18640df841ac7f5c0c996be",
+      "path": "enterprise-architecture/continuum/grouping/99e7cebde18640df841ac7f5c0c996be.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "9a5487f0dd7b42bca1f791aad1257849",
+      "path": "enterprise-architecture/continuum/grouping/9a5487f0dd7b42bca1f791aad1257849.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "9c613c6963e9451e945d3934a20bdd53",
+      "path": "enterprise-architecture/continuum/grouping/9c613c6963e9451e945d3934a20bdd53.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "9c7c9de7ffc0457d87cf52548bca70ca",
+      "path": "enterprise-architecture/continuum/grouping/9c7c9de7ffc0457d87cf52548bca70ca.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "9fec9301e759460880557df71baa19c0",
+      "path": "enterprise-architecture/continuum/grouping/9fec9301e759460880557df71baa19c0.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "a49c1e5afd224d12bae33fac366a1d37",
+      "path": "enterprise-architecture/continuum/grouping/a49c1e5afd224d12bae33fac366a1d37.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "a4fbf334ea6e48028e39eb7f74ced2bb",
+      "path": "enterprise-architecture/continuum/grouping/a4fbf334ea6e48028e39eb7f74ced2bb.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "a5228e483703437ba7617034e4ea207f",
+      "path": "enterprise-architecture/continuum/grouping/a5228e483703437ba7617034e4ea207f.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "aba77f43a26440dfb5e7cd67934e7ebd",
+      "path": "enterprise-architecture/continuum/grouping/aba77f43a26440dfb5e7cd67934e7ebd.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "aeb3b98e54124d94b4a68ab18de60514",
+      "path": "enterprise-architecture/continuum/grouping/aeb3b98e54124d94b4a68ab18de60514.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "af4f93db10cb47c282600babe51048e1",
+      "path": "enterprise-architecture/continuum/grouping/af4f93db10cb47c282600babe51048e1.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "b01782f63be44bc9ab2f6ebbf84b37f2",
+      "path": "enterprise-architecture/continuum/grouping/b01782f63be44bc9ab2f6ebbf84b37f2.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "b05d68295ed141d6815aa56c8a3d3b39",
+      "path": "enterprise-architecture/continuum/grouping/b05d68295ed141d6815aa56c8a3d3b39.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "b12837a817d14919b5c33b35e3bb3d5a",
+      "path": "enterprise-architecture/continuum/grouping/b12837a817d14919b5c33b35e3bb3d5a.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "b1997b3f14724bb983c06963fa7b4ea6",
+      "path": "enterprise-architecture/continuum/grouping/b1997b3f14724bb983c06963fa7b4ea6.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "b47210a43fe147d4a3f2fbc081321063",
+      "path": "enterprise-architecture/continuum/grouping/b47210a43fe147d4a3f2fbc081321063.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "b558d26d626b4276bd5ec38b8d42213a",
+      "path": "enterprise-architecture/continuum/grouping/b558d26d626b4276bd5ec38b8d42213a.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "b6ff7b82c59e4125868902e34d89630d",
+      "path": "enterprise-architecture/continuum/grouping/b6ff7b82c59e4125868902e34d89630d.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "bc45121331a04af7a54e790bd4a7ea6e",
+      "path": "enterprise-architecture/continuum/grouping/bc45121331a04af7a54e790bd4a7ea6e.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "c0ef85ab954f447fb244149dfcc44aad",
+      "path": "enterprise-architecture/continuum/grouping/c0ef85ab954f447fb244149dfcc44aad.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "c189826cd7024780abd89fa4f067947a",
+      "path": "enterprise-architecture/continuum/grouping/c189826cd7024780abd89fa4f067947a.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "c18ef04adb54413d89bd9434a344504f",
+      "path": "enterprise-architecture/continuum/grouping/c18ef04adb54413d89bd9434a344504f.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "c5f38ca4adc24f03a2b885938186e509",
+      "path": "enterprise-architecture/continuum/grouping/c5f38ca4adc24f03a2b885938186e509.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "ce45a338a1fc4d11a8d64ce898119f94",
+      "path": "enterprise-architecture/continuum/grouping/ce45a338a1fc4d11a8d64ce898119f94.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "d56a556f29ff4ba78634e58d103c786e",
+      "path": "enterprise-architecture/continuum/grouping/d56a556f29ff4ba78634e58d103c786e.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "d733a698d2c4477db4a4289144417e3f",
+      "path": "enterprise-architecture/continuum/grouping/d733a698d2c4477db4a4289144417e3f.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "d8d1f0aeff354b2696d3d6475c44c36e",
+      "path": "enterprise-architecture/continuum/grouping/d8d1f0aeff354b2696d3d6475c44c36e.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "d903a1d46d6e4a3c84d247789e43aa41",
+      "path": "enterprise-architecture/continuum/grouping/d903a1d46d6e4a3c84d247789e43aa41.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "d90a28dcf8294c89a7a06022a3617aba",
+      "path": "enterprise-architecture/continuum/grouping/d90a28dcf8294c89a7a06022a3617aba.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "d931781bb22243fdb892937b88141cf4",
+      "path": "enterprise-architecture/continuum/grouping/d931781bb22243fdb892937b88141cf4.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "db0cac8c53b7404b8f2c17a542db7604",
+      "path": "enterprise-architecture/continuum/grouping/db0cac8c53b7404b8f2c17a542db7604.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "dc8500b4e7eb4923884f54db99d10a88",
+      "path": "enterprise-architecture/continuum/grouping/dc8500b4e7eb4923884f54db99d10a88.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "de3ff3302e504029b5b5f3f18fe9c380",
+      "path": "enterprise-architecture/continuum/grouping/de3ff3302e504029b5b5f3f18fe9c380.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "df0b38c3ba9c49ea8dfe3f032ad2a329",
+      "path": "enterprise-architecture/continuum/grouping/df0b38c3ba9c49ea8dfe3f032ad2a329.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "e321b3c9558745fcaf58fe96ec8eca05",
+      "path": "enterprise-architecture/continuum/grouping/e321b3c9558745fcaf58fe96ec8eca05.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "e576768ae5cd4522b760c36d2b364be2",
+      "path": "enterprise-architecture/continuum/grouping/e576768ae5cd4522b760c36d2b364be2.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "e5d75469d336405a8f187368a7dc0353",
+      "path": "enterprise-architecture/continuum/grouping/e5d75469d336405a8f187368a7dc0353.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "e84139e878c740ab81c558cbc7ec6548",
+      "path": "enterprise-architecture/continuum/grouping/e84139e878c740ab81c558cbc7ec6548.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "eabbd522676448fcb075f7d4b5ef4434",
+      "path": "enterprise-architecture/continuum/grouping/eabbd522676448fcb075f7d4b5ef4434.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "ee9bc6c96d944f2ea8bbaaeffb31db28",
+      "path": "enterprise-architecture/continuum/grouping/ee9bc6c96d944f2ea8bbaaeffb31db28.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "eef79a8840434bd6b6fd37ab4f8ff75d",
+      "path": "enterprise-architecture/continuum/grouping/eef79a8840434bd6b6fd37ab4f8ff75d.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "f147597cd5e04696887257c6316eedf7",
+      "path": "enterprise-architecture/continuum/grouping/f147597cd5e04696887257c6316eedf7.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "f14ca9b3213d4c3db3c5d479b4cc938e",
+      "path": "enterprise-architecture/continuum/grouping/f14ca9b3213d4c3db3c5d479b4cc938e.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "f5838796139b4157b91b53dfd56ea0a2",
+      "path": "enterprise-architecture/continuum/grouping/f5838796139b4157b91b53dfd56ea0a2.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "f6985401675b47c0a1c480aa156aaa0c",
+      "path": "enterprise-architecture/continuum/grouping/f6985401675b47c0a1c480aa156aaa0c.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "f6b8d4c19f9649a0bdde6727182855b6",
+      "path": "enterprise-architecture/continuum/grouping/f6b8d4c19f9649a0bdde6727182855b6.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "f71f084dd9154318b86ca22f0fe8c36d",
+      "path": "enterprise-architecture/continuum/grouping/f71f084dd9154318b86ca22f0fe8c36d.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "f7d9c92661ed44af99516400635041bf",
+      "path": "enterprise-architecture/continuum/grouping/f7d9c92661ed44af99516400635041bf.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "f812d4f33612403986c174602b358a2f",
+      "path": "enterprise-architecture/continuum/grouping/f812d4f33612403986c174602b358a2f.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "f85948e2b4e145a4b56ab369c1a70c22",
+      "path": "enterprise-architecture/continuum/grouping/f85948e2b4e145a4b56ab369c1a70c22.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    },
+    {
+      "canonicalId": "f9035f49dbab4676b23ab9e4f45678f9",
+      "path": "enterprise-architecture/continuum/grouping/f9035f49dbab4676b23ab9e4f45678f9.md",
+      "bodyLine": 12,
+      "text": "incorporated under the Solution Architect's Subject Grouping hierarchy Task."
+    }
+  ],
+  "preservation": "Historical Task titles, provenance/standing/source selectors and protected publications unchanged. Ordinary subject usage, healthcare Subject concepts and RDF/predicate subject positions are not renamed. subjectGroup key retained for source compatibility. Current governance labels its originating Subject account as historical.",
+  "otherCanonicalSubjectOccurrenceCount": 1937,
+  "representativeOtherCanonicalSubjectContexts": [
+    {
+      "canonicalId": "fefda110e2274884ad58906733606efd",
+      "path": "enterprise-architecture/continuum/application/application-component/fefda110e2274884ad58906733606efd.md",
+      "bodyLine": 40,
+      "text": "> **Subject of audit evidence ≠ authority performing audit capture.**"
+    },
+    {
+      "canonicalId": "359b901df27f4b43b5a2ff14a8484e34",
+      "path": "enterprise-architecture/continuum/application/data-object/359b901df27f4b43b5a2ff14a8484e34.md",
+      "bodyLine": 33,
+      "text": "> available execution evidence and forming the primary subject of reporting, analysis and"
+    },
+    {
+      "canonicalId": "359b901df27f4b43b5a2ff14a8484e34",
+      "path": "enterprise-architecture/continuum/application/data-object/359b901df27f4b43b5a2ff14a8484e34.md",
+      "bodyLine": 334,
+      "text": "> **Journey is the governed representation of Harmonia's observed progression of information and activity, reconstructed from available execution evidence and forming the primary subject of reporting, monitoring, analysis and assurance, irrespective of whether that progression arose through Pathway-controlled routing, Publish/Subscribe processing, or a combination of both.**"
+    },
+    {
+      "canonicalId": "359b901df27f4b43b5a2ff14a8484e34",
+      "path": "enterprise-architecture/continuum/application/data-object/359b901df27f4b43b5a2ff14a8484e34.md",
+      "bodyLine": 472,
+      "text": "Journey is expected to be a principal subject of AI-assisted interpretation within Dokimasia assurance activity."
+    },
+    {
+      "canonicalId": "4627ee33845744f2ae2e10c84e313755",
+      "path": "enterprise-architecture/continuum/application/data-object/topic/4627ee33845744f2ae2e10c84e313755.md",
+      "bodyLine": 11,
+      "text": "- **Healthcare Subject Invariant**: While clinical service deliveries typically associate with a `Healthcare Subject Context`, broader service semantics (e.g., *Facility Sanitisation*, *Water Quality Testing*, *Equipment Calibration*) do not universally require a Healthcare Subject."
+    },
+    {
+      "canonicalId": "4af969b8c23a4dcab7569dc51b263383",
+      "path": "enterprise-architecture/continuum/application/data-object/topic/4af969b8c23a4dcab7569dc51b263383.md",
+      "bodyLine": 5,
+      "text": "**Description**: Information concerning an individual, their identity, identifiers, demographic characteristics, relationships, and their contextual participation as a subject of healthcare."
+    },
+    {
+      "canonicalId": "e92ea15616ea43c9a1d698e34ed1376b",
+      "path": "enterprise-architecture/continuum/application/data-object/topic/e92ea15616ea43c9a1d698e34ed1376b.md",
+      "bodyLine": 9,
+      "text": "Information describing an individual in their context as a recipient or subject of healthcare, including the healthcare-specific identity and administrative context required to support care."
+    },
+    {
+      "canonicalId": "76288dacb9034e0bbf75b43d8afe59d2",
+      "path": "enterprise-architecture/continuum/business/business-function/76288dacb9034e0bbf75b43d8afe59d2.md",
+      "bodyLine": 1,
+      "text": "# Govern Subject Demographic Context"
+    },
+    {
+      "canonicalId": "76288dacb9034e0bbf75b43d8afe59d2",
+      "path": "enterprise-architecture/continuum/business/business-function/76288dacb9034e0bbf75b43d8afe59d2.md",
+      "bodyLine": 11,
+      "text": "- *Function*: `Govern Subject Demographic Context` — Applies validation rules to address changes, date of birth verification, and death notifications."
+    },
+    {
+      "canonicalId": "f445f86f9de24461aabee527e5b41287",
+      "path": "enterprise-architecture/continuum/business/business-function/f445f86f9de24461aabee527e5b41287.md",
+      "bodyLine": 1,
+      "text": "# Establish Healthcare Subject Context"
+    },
+    {
+      "canonicalId": "f445f86f9de24461aabee527e5b41287",
+      "path": "enterprise-architecture/continuum/business/business-function/f445f86f9de24461aabee527e5b41287.md",
+      "bodyLine": 11,
+      "text": "- *Function*: `Establish Healthcare Subject Context` — Binds demographic, cultural, and communication requirements to a patient record."
+    },
+    {
+      "canonicalId": "33ddad9f1ce1424bbe0fb9a25efadb9f",
+      "path": "enterprise-architecture/continuum/business/business-object/33ddad9f1ce1424bbe0fb9a25efadb9f.md",
+      "bodyLine": 9,
+      "text": "| **Legal Representation** | `Person` (*Authorised Representative*) | `Person` (*Represented Subject*) | *Legal Mandate* (e.g. Guardian, Appointed Proxy, Substitute Decision Maker) | Verified statutory or judicial mandate specifying scope of legal authority, validity period, and evidence documentation. |"
+    },
+    {
+      "canonicalId": "33ddad9f1ce1424bbe0fb9a25efadb9f",
+      "path": "enterprise-architecture/continuum/business/business-object/33ddad9f1ce1424bbe0fb9a25efadb9f.md",
+      "bodyLine": 10,
+      "text": "| **Support Person** | `Person` (*Nominated Support*) | `Person` (*Supported Subject*) | *Informal Support* | Nominated contact or advocate for communication and emotional support. |"
+    },
+    {
+      "canonicalId": "f3bd4181bb394db8a505705b03972cea",
+      "path": "enterprise-architecture/continuum/business/business-object/f3bd4181bb394db8a505705b03972cea.md",
+      "bodyLine": 63,
+      "text": "    LHR --> A4[\"Assertion 4: Herbal Supplement Use<br/>Authority: Healthcare Subject (Self-Reported)\"]"
+    },
+    {
+      "canonicalId": "3c67e57403b041bb8ccdaf3980b6ff94",
+      "path": "enterprise-architecture/continuum/business/business-process/3c67e57403b041bb8ccdaf3980b6ff94.md",
+      "bodyLine": 31,
+      "text": "    SUBJECT[\"Identifiable Governed Subject\"] -->|Subject of assurance| EXEC"
+    },
+    {
+      "canonicalId": "ada564bbff80416aa661a1d2cde705f4",
+      "path": "enterprise-architecture/continuum/business/business-role/ada564bbff80416aa661a1d2cde705f4.md",
+      "bodyLine": 1,
+      "text": "# Subject of Care"
+    },
+    {
+      "canonicalId": "ada564bbff80416aa661a1d2cde705f4",
+      "path": "enterprise-architecture/continuum/business/business-role/ada564bbff80416aa661a1d2cde705f4.md",
+      "bodyLine": 5,
+      "text": "- **Subject of Care**: The identifiable individual whose health, clinical observations, biological samples, or clinical documents form the subject matter of an encounter or health record (often synonymous with Patient, but distinct when specimens, genomic data, or population screening cohorts are processed)."
+    },
+    {
+      "canonicalId": "99a739efc7be4d7b92d90181ecd69d15",
+      "path": "enterprise-architecture/continuum/business/business-service/99a739efc7be4d7b92d90181ecd69d15.md",
+      "bodyLine": 1,
+      "text": "# Healthcare Subject Context Resolution"
+    },
+    {
+      "canonicalId": "99a739efc7be4d7b92d90181ecd69d15",
+      "path": "enterprise-architecture/continuum/business/business-service/99a739efc7be4d7b92d90181ecd69d15.md",
+      "bodyLine": 13,
+      "text": "| associated_feature | [[Feature] Subject Context Binding](../../strategy/capability/feature/5d956689bc714e2d8be4fff7766c0b2d.md) | established / current | Association — `id-289707cbb65853a08e27fc8fe89543ca` |"
+    },
+    {
+      "canonicalId": "99a739efc7be4d7b92d90181ecd69d15",
+      "path": "enterprise-architecture/continuum/business/business-service/99a739efc7be4d7b92d90181ecd69d15.md",
+      "bodyLine": 19,
+      "text": "- *Exposed Service*: `Healthcare Subject Context Resolution` — Provides comprehensive demographic, language, and indigenous status context to clinical applications."
+    }
+  ]
+}

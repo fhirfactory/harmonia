@@ -1,0 +1,278 @@
+{
+  "sourceSha256": "bf3529fd2cb322918c91100b85fc8dcb72873e6cdb42302f918faad2e99bfa61",
+  "records": [
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/40",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Derivation Provenance",
+        "before": "propid-13",
+        "submitted": "propid-35"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/41",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Historical ID Aliases",
+        "before": "propid-27",
+        "submitted": "propid-38"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/42",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Inherited Release Scope",
+        "before": "propid-37",
+        "submitted": "propid-44"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/43",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / LaTeX Label",
+        "before": "propid-3",
+        "submitted": "propid-19"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/44",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Name Aliases",
+        "before": "propid-36",
+        "submitted": "propid-33"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/45",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Name Status",
+        "before": "propid-11",
+        "submitted": "propid-27"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/46",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Native Definition ID",
+        "before": "propid-51",
+        "submitted": "propid-57"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/47",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Placement Status",
+        "before": "propid-8",
+        "submitted": "propid-24"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/48",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Record State",
+        "before": "propid-7",
+        "submitted": "propid-23"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/49",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Release Scope Source",
+        "before": "propid-38",
+        "submitted": "propid-45"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/50",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Release Scope",
+        "before": "propid-39",
+        "submitted": "propid-37"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/51",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Reviewed Name",
+        "before": "propid-35",
+        "submitted": "propid-34"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/52",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Snapshot Pointer",
+        "before": "propid-57",
+        "submitted": "propid-65"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/53",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Snapshot Record JSON",
+        "before": "propid-14",
+        "submitted": "propid-31"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/54",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Snapshot Reference ID",
+        "before": "propid-2",
+        "submitted": "propid-18"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/55",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Source Assertion JSON",
+        "before": "propid-56",
+        "submitted": "propid-64"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/56",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Source Capture Key",
+        "before": "propid-1",
+        "submitted": "propid-17"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/57",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Source Owner Reference",
+        "before": "propid-33",
+        "submitted": "propid-47"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/58",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Source Parent Reference",
+        "before": "propid-15",
+        "submitted": "propid-43"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/59",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Source Path",
+        "before": "propid-52",
+        "submitted": "propid-58"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/60",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Source Predicate",
+        "before": "propid-55",
+        "submitted": "propid-63"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/61",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Source SHA256",
+        "before": "propid-53",
+        "submitted": "propid-59"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/62",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Structural Canonical ID",
+        "before": "propid-10",
+        "submitted": "propid-26"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/63",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Structural ID Status",
+        "before": "propid-9",
+        "submitted": "propid-25"
+      }
+    },
+    {
+      "sourcePointer": "/classified/propertyDefinitionRebindings/64",
+      "category": "classified",
+      "field": "propertyDefinitionRebindings",
+      "record": {
+        "key": "v0.2 / Unresolved Dimensions",
+        "before": "propid-31",
+        "submitted": "propid-40"
+      }
+    },
+    {
+      "sourcePointer": "/classified/nonViewNavigation",
+      "category": "classified",
+      "field": "nonViewNavigation",
+      "record": "DERIVED: regenerate with existing Continuum projector after governed incorporation; no architectural CR"
+    },
+    {
+      "sourcePointer": "/classified/organizationInventory",
+      "category": "classified",
+      "field": "organizationInventory",
+      "record": {
+        "baseline": {
+          "items": 7579,
+          "identifiers": 882,
+          "references": 5514
+        },
+        "submitted": {
+          "items": 7582,
+          "identifiers": 0,
+          "references": 5518
+        }
+      }
+    }
+  ]
+}

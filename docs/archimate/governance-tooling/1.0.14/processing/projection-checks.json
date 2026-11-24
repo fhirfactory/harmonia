@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B docs/archimate/framework/tools/report_baseline.py --check",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.14/report-check-final.log.gz",
+      "log_sha256": "a375a2257324302a80d41e7cc7df63a7c98fdfa1db432c54bc4a280220a0fb68"
+    },
+    {
+      "command": "timeout --signal=TERM --kill-after=5s 120s python3 -B docs/archimate/framework/tools/verify_baseline_outputs.py",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "log": "docs/archimate/processing/publishing/1.0.14/reproduction.log.gz",
+      "log_sha256": "50157163c19d19221b6894fb1224f13b00c141161719d34b7a1fd174b3a585d4"
+    }
+  ],
+  "all_14_outputs_reproduced": true,
+  "local_link_targets_checked": 181,
+  "missing_local_link_targets": 0,
+  "own_diff_whitespace": "PASS; byte-preserved pre-existing architect inputs excluded"
+}

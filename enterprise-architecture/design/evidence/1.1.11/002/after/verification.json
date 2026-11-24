@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "canonicalIdentitiesPreserved": 1602,
+  "canonicalElementBytesUnchanged": 1602,
+  "semanticRelationshipsPreserved": 1651,
+  "authoredViewsPreserved": 1209,
+  "protectedInputFilesUnchanged": 1674,
+  "historicalCorrespondencesPreserved": 214,
+  "sameNameHistoricalSuccessorGroups": 212,
+  "exceptionalDistinctBcBecCase": "PASS",
+  "capabilityContexts": 89,
+  "originalPopulatedContexts": 72,
+  "requiredAncestorsAdded": 17,
+  "behaviourCounts": {
+    "BusinessService": 142,
+    "BusinessFunction": 160,
+    "BusinessProcess": 21
+  },
+  "stakeholderIndex": 10,
+  "existingStakeholderAssociations": 4,
+  "inventedStakeholderAssociations": 0,
+  "navigationNodes": 1968,
+  "uniqueCoordinates": 1968,
+  "elementCoordinateChanges": 1066,
+  "elementPathChanges": 547,
+  "sharedProjectionNavigation": "PASS",
+  "derivedNavigationPropertiesPreservedInArchi": 1602,
+  "reportedExtraI6": "NOT_REPRODUCED; no remediation",
+  "limits": "Bounded preservation/navigation verification and transport metadata check. No human acceptance or exhaustive semantic review."
+}

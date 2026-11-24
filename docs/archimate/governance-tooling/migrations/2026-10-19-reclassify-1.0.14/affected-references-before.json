@@ -1,0 +1,14 @@
+[
+  "./docs/archimate/processing/ingestion/1.0.8/run-002/validation/validation-results.json",
+  "./docs/archimate/processing/publishing/1.0.14/archi-inspection-guide.md",
+  "./docs/archimate/processing/publishing/1.0.14/evidence-sha256.json",
+  "./docs/archimate/processing/publishing/1.0.14/projection-checks.json",
+  "./docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+  "./docs/archimate/processing/publishing/1.0.14/independent-reproduction.json",
+  "./docs/archimate/processing/publishing/1.0.14/home-verification.json",
+  "./docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/git-status-before.txt",
+  "./docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/before.json",
+  "./docs/archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/git-status-after.txt",
+  "./docs/archimate/exchange/publish/README.md",
+  "./docs/archimate/framework/README.md"
+]

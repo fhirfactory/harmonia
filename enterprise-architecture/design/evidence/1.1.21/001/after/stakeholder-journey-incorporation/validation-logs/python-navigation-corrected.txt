@@ -1,0 +1,6 @@
+test_numbering_covers_every_node_and_qualified_population (test_continuum_navigation.ContinuumNavigationTests.test_numbering_covers_every_node_and_qualified_population) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.135s
+
+OK

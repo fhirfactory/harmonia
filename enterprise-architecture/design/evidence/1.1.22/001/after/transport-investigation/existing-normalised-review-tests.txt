@@ -1,0 +1,16 @@
+test_ambiguous_view_folder_or_repeated_reference_is_not_silently_selected (test_normalised_review.NormalisedReviewTests.test_ambiguous_view_folder_or_repeated_reference_is_not_silently_selected) ... ok
+test_canonical_baseline_failure_is_retained_and_no_drp_is_read (test_normalised_review.NormalisedReviewTests.test_canonical_baseline_failure_is_retained_and_no_drp_is_read) ... ok
+test_context_seeds_follow_changed_relationship_endpoints_without_corpus_retrieval (test_normalised_review.NormalisedReviewTests.test_context_seeds_follow_changed_relationship_endpoints_without_corpus_retrieval) ... ok
+test_derived_navigation_is_ignored_without_hiding_view_moves (test_normalised_review.NormalisedReviewTests.test_derived_navigation_is_ignored_without_hiding_view_moves) ... ok
+test_generated_scalar_english_is_classified_but_raw_fidelity_is_preserved (test_normalised_review.NormalisedReviewTests.test_generated_scalar_english_is_classified_but_raw_fidelity_is_preserved) ... ok
+test_identity_loss_duplicate_claims_and_invalid_references_fail_closed_after_discovery (test_normalised_review.NormalisedReviewTests.test_identity_loss_duplicate_claims_and_invalid_references_fail_closed_after_discovery) ... ok
+test_malformed_input_emits_a_condition_file_and_stops (test_normalised_review.NormalisedReviewTests.test_malformed_input_emits_a_condition_file_and_stops) ... FAIL: Couldn't find end of Start Tag malformed line 1, line 1, column 11 (<string>, line 1)
+ok
+test_new_elements_without_ids_do_not_stop_other_elements_relationships_or_views (test_normalised_review.NormalisedReviewTests.test_new_elements_without_ids_do_not_stop_other_elements_relationships_or_views) ... ok
+test_text_language_inheritance_and_unknown_properties_are_not_normalised (test_normalised_review.NormalisedReviewTests.test_text_language_inheritance_and_unknown_properties_are_not_normalised) ... ok
+test_view_order_geometry_empty_folders_and_folder_metadata_remain_visible (test_normalised_review.NormalisedReviewTests.test_view_order_geometry_empty_folders_and_folder_metadata_remain_visible) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.114s
+
+OK

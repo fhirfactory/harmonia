@@ -1,0 +1,55 @@
+{
+  "capturedAt": "2026-11-16T01:00:57.734788Z",
+  "meaning": "Pre-correction reviewed-input preservation, not Task issuance",
+  "scope": "Final minor Backlog refinements within 1.1.26/001",
+  "records": [
+    {
+      "sourcePath": "enterprise-architecture/design/review/1.1.26/backlog-item-template.proposed.md",
+      "reviewedCopy": "backlog-item-template.proposed.md.reviewed.gz",
+      "bytes": 2782,
+      "sha256": "6991b1e307cdaf3e3432cf9b1161b89693d9ae4ba8e4ef1bf38e1db9d890006a"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/review/1.1.26/hcrl-1.1.26-001.pending.md",
+      "reviewedCopy": "hcrl-1.1.26-001.pending.md.reviewed.gz",
+      "bytes": 12504,
+      "sha256": "dc25e9edfc401d5787dfaddaeec0e0e4bdcd3a5a0e3b1656e60771c05b85b86c"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/review/1.1.26/backlog-readme.proposed.md",
+      "reviewedCopy": "backlog-readme.proposed.md.reviewed.gz",
+      "bytes": 1183,
+      "sha256": "5d69414e5fc4983daa6c519dfd7bdc13f72c75947e48fc62c366863e7e617612"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/review/1.1.26/software-development-praxis.proposed.md",
+      "reviewedCopy": "software-development-praxis.proposed.md.reviewed.gz",
+      "bytes": 21323,
+      "sha256": "6abeb94f407ffbee474dc362f824b51a651a63652af0ed4e31eb731dac3d9f3c"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-amendments.proposed.patch",
+      "reviewedCopy": "governance-amendments.proposed.patch.reviewed.gz",
+      "bytes": 53163,
+      "sha256": "66511284b4303b66437add37450a9c548036b1790c1e897280253a62af93181e"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/evidence/1.1.26/001/after/supporting-amendments.proposed.md",
+      "reviewedCopy": "supporting-amendments.proposed.md.reviewed.gz",
+      "bytes": 11130,
+      "sha256": "aa126fe47c8df12aae4503a756c2da1f95356e2b830518859beecead103de351"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md",
+      "reviewedCopy": "unresolved-software-development-praxis-proposal.md.reviewed.gz",
+      "bytes": 18919,
+      "sha256": "b4748aeabacf0d54f393c0996bba7edea0c853f22c1a78a4f99b7f21bd7319be"
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+      "reviewedCopy": "20261115T233608Z-software-development-praxis-proposal.md.reviewed.gz",
+      "bytes": 18095,
+      "sha256": "2a64c5a4ea677e61c416254fa2a29a3c5bd54c3a2c1c9367abc55d8462f4d973"
+    }
+  ]
+}

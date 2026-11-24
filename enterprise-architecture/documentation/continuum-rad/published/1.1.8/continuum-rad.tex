@@ -1,0 +1,182 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% !TeX program = xelatex
+% Compile this master directly; latexmk -pdf also runs makeindex and reruns.
+\documentclass[10pt,a4paper,oneside,headings=small]{scrreprt}
+\usepackage[margin=22mm,headheight=15pt]{geometry}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{DejaVuSans}
+  \usepackage[scaled=0.87]{DejaVuSansMono}
+  \usepackage{textcomp,amssymb,accsupp}
+  % Preserve the source's Unicode symbols with conventional pdfLaTeX fonts.
+  \DeclareTextCommandDefault{\textleftrightarrow}{\ensuremath{\leftrightarrow}}
+  \DeclareTextCommandDefault{\textneq}{\BeginAccSupp{method=hex,unicode,ActualText=2260}\ensuremath{\neq}\EndAccSupp{}}
+  \DeclareTextCommandDefault{\textDOWNarrow}{\ensuremath{\blacktriangledown}}
+  \DeclareUnicodeCharacter{2192}{\textrightarrow}
+  \DeclareUnicodeCharacter{2193}{\textdownarrow}
+  \DeclareUnicodeCharacter{2194}{\textleftrightarrow}
+  \DeclareUnicodeCharacter{2260}{\textneq}
+  \DeclareUnicodeCharacter{25BC}{\textDOWNarrow}
+\else
+\usepackage{fontspec}
+\setmainfont{DejaVu Sans}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}[Scale=0.87]
+\fi
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[table]{xcolor}
+\definecolor{Ink}{HTML}{19384C}
+\definecolor{TableHead}{HTML}{E6EDF2}
+\definecolor{Link}{HTML}{155B83}
+\usepackage{array,longtable,tabularx,seqsplit,needspace,enumitem,fvextra}
+\ifPDFTeX
+  % seqsplit's byte scanner splits UTF-8 characters under pdfTeX. Map complete
+  % text characters instead, preserving Unicode in editable code/identifier text.
+  \newcommand{\HarmoniaSequenceHasUnicode}[1]{\pdfmatch{[^ -\string~]}{\detokenize{#1}}}
+  \ExplSyntaxOn
+  \cs_new_eq:NN \__harmonia_ascii_seqsplit:n \seqsplit
+  \bool_new:N \l__harmonia_split_started_bool
+  \RenewDocumentCommand{\seqsplit}{m}{
+    \int_compare:nNnTF {\HarmoniaSequenceHasUnicode{#1}} = {0}
+    {\__harmonia_ascii_seqsplit:n {#1}}
+    {
+    \group_begin:
+    \bool_set_false:N \l__harmonia_split_started_bool
+    \text_map_inline:nn {#1}{
+      \bool_if:NT \l__harmonia_split_started_bool {\seqinsert}
+      ##1
+      \bool_set_true:N \l__harmonia_split_started_bool
+    }
+    \group_end:
+    }
+  }
+  \ExplSyntaxOff
+\fi
+\usepackage{makeidx}
+\makeindex
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+\ihead{Harmonia Architecture Continuum RAD}
+\ohead{RAD 1.1.8}
+\ifoot{Architecture Continuum · RAD 1.1.8}
+\ofoot{\pagemark}
+\usepackage[unicode,colorlinks,linkcolor=Link,urlcolor=Link,hyperindex=true,
+  pdftitle={Harmonia Architecture Continuum RAD 1.1.8},
+  pdfauthor={Harmonia},bookmarksnumbered]{hyperref}
+\usepackage{bookmark}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em plus 0.15em minus 0.1em}
+\setlength{\tabcolsep}{4pt}
+\setlength{\LTpre}{0.35em}
+\setlength{\LTpost}{0.5em}
+\renewcommand{\arraystretch}{1.15}
+\newlength{\TableWidth}
+\setlist{nosep,leftmargin=1.4em,topsep=0.3em}
+\setlistdepth{8}
+\renewlist{itemize}{itemize}{8}
+\renewlist{enumerate}{enumerate}{8}
+\setlist[itemize]{label=\textbullet}
+\setlist[enumerate]{label=\arabic*.}
+% Architectural entries appear in the contents and outline at their actual depth.
+% Catalogue fields retain contextual numbering without thousands of outline rows.
+\setcounter{tocdepth}{2}
+\hypersetup{bookmarksdepth=7}
+\bookmarksetup{open,openlevel=0}
+\RedeclareSectionCommands[runin=false,beforeskip=1.4ex,afterskip=.6ex]{paragraph,subparagraph}
+\setcounter{secnumdepth}{5}
+\newcommand{\cataloguefield}[2]{%
+  \begingroup
+  \renewcommand{\addcontentsline}[3]{}%
+  \csname #1\endcsname{#2}%
+  \endgroup
+}
+\DeclareTOCStyleEntries[pagenumberwidth=4em,dynnumwidth]{tocline}{chapter,section,subsection,subsubsection,paragraph,subparagraph}
+\DeclareTOCStyleEntries[dynindent]{tocline}{section,subsection,subsubsection,paragraph,subparagraph}
+\DeclareTOCStyleEntry[numwidth=2.6em]{tocline}{chapter}
+\DeclareTOCStyleEntry[numwidth=3.5em]{tocline}{section}
+\DeclareTOCStyleEntry[numwidth=4.5em]{tocline}{subsection}
+\DeclareTOCStyleEntry[numwidth=5.5em]{tocline}{subsubsection}
+\DeclareTOCStyleEntry[numwidth=6.5em]{tocline}{paragraph}
+\DeclareTOCStyleEntry[numwidth=7.5em]{tocline}{subparagraph}
+\DeclareTOCStyleEntry[pagenumberwidth=4em]{tocline}{part}
+% Preserve the deepest existing model folders and element-reference levels.
+% These are typesetting levels, not a publication taxonomy.
+\DeclareNewSectionCommand[style=section,level=6,indent=0pt,
+  beforeskip=1.4ex,afterskip=.6ex,font=\normalsize\bfseries,
+  counterwithin=subparagraph,tocstyle=tocline,tocindent=8em,tocnumwidth=9em]{subsubparagraph}
+\DeclareNewSectionCommand[style=section,level=7,indent=0pt,
+  beforeskip=1.4ex,afterskip=.6ex,font=\normalsize\bfseries,
+  counterwithin=subsubparagraph,tocstyle=tocline,tocindent=9em,tocnumwidth=10em]{subsubsubparagraph}
+\addtokomafont{disposition}{\color{Ink}}
+\tolerance=2000
+\emergencystretch=5em
+\raggedbottom
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{xurl}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\vspace*{24mm}
+{\Huge\bfseries\color{Ink} Harmonia\par}
+\vspace{8mm}
+{\LARGE Enterprise Architecture\par Architecture Continuum RAD\par}
+\vspace{12mm}
+{\Large Release 1.1.8\par Previous release 1.1.7\par}
+\vfill
+Narrative publication of the canonical Architecture Continuum\par
+\vspace{8mm}
+The Continuum supplies architectural authority. This document selects, organises
+and explains its existing content; publication confers no additional acceptance.
+Individual standing and unresolved matters remain as recorded in each source.
+\end{titlepage}
+\pagenumbering{roman}
+\hypersetup{pageanchor=true}
+\tableofcontents
+\chapter*{Reading the Architecture Continuum}
+\addcontentsline{toc}{chapter}{Reading the Architecture Continuum}
+Start with Motivation for architectural intent and axioms, then Strategy for
+capabilities and Business for operational responsibilities. Application describes
+software responsibilities and managed information. The chapters follow the
+complete governed model organisation; folder nesting is navigation, not an
+additional architectural relationship. The existing model's Continuum additions
+branches retain their labels, order and nesting within the applicable native EA
+domain Part. No fallback chapters or independent RAD hierarchy are introduced.
+
+The Architecture Continuum was accepted as the canonical baseline in RAD-1.1.7.
+This acceptance preserves the separate standing of each assertion. In particular,
+currentness does not mean approval. Candidate and Proposed descriptions remain
+qualified; source wording about pending detailed architecture is retained.
+Historical and superseded elements remain qualified within their existing model
+branches, with links to their canonical definitions. They are included in the
+complete correspondence record.
+
+Use the linked architectural names and page index to move between responsibilities.
+Each entry identifies its standing and links to canonical Markdown. Chapter
+introductions offer source-cited reading guidance. Explanatory diagrams show
+selected, explicitly represented relationships, with their existing qualifications;
+layout and proximity assert nothing further. Detailed source contributions,
+provenance, independent naming/placement qualifications and recorded unresolved
+properties remain available through those links and the Continuum Manifest.
+
+The \href{../../../../design/register/1.1.7/hcrl-1.1.7-001.complete.md}{accepted baseline record}
+and \href{../../../../governance/architectural-axioms.md}{Architectural Axioms}
+retain their governed roles. The superseded LaTeX RAD supplies reused typesetting
+facilities only. Its model copies and semantic extracts are not publication inputs.
+The \href{../../../continuum-manifest/published/1.1.8/continuum.html}{Continuum Manifest browser}
+provides the full structural catalogue. The machine-readable \href{structure.json}{publication correspondence}
+records every source's placement and preserved qualifications.
+\clearpage
+\pagenumbering{arabic}
+\input{parts/motivation.tex}
+\input{parts/strategy.tex}
+\input{parts/business.tex}
+\input{parts/application.tex}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Index of architectural names}
+\renewcommand{\indexname}{Index of architectural names}
+\printindex
+\end{document}

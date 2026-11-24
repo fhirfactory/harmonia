@@ -1,0 +1,19 @@
+{
+  "outcome": "PASS",
+  "meaning": "Mechanical preservation/provenance checks; full authored-Views task remains UNRESOLVED",
+  "canonicalElements": 1989,
+  "priorCanonicalResourcesWithOnlyAuthorisedRelationshipAdditions": 96,
+  "priorCanonicalResourcesUnchanged": 1778,
+  "protectedInputsUnchanged": 95,
+  "priorHcrlDecisionsAndTextPreserved": true,
+  "taskReportEventPrefixes": "PASS",
+  "links": "PASS",
+  "maintainedTemplateUnchanged": true,
+  "iterationProvenance": "UNRESOLVED",
+  "priorUnresolvedTaskTimes": 3,
+  "completeAuthoredXmlGenerated": false,
+  "commit": false,
+  "push": false,
+  "releaseTransition": false,
+  "closure": false
+}

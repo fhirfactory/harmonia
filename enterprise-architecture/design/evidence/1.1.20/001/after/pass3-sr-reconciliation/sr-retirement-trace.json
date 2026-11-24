@@ -1,0 +1,190 @@
+[
+  {
+    "source": "B05.03.04",
+    "targets": [
+      "B05.03.01"
+    ],
+    "decision": "SR-001",
+    "source_record": {
+      "id": "B05.03.04",
+      "level": 3,
+      "original_name": "Handover Acceptance & Evidence **[NEW C012]**",
+      "name": "Handover Acceptance & Evidence",
+      "original_description": "Establish whether receiving responsibility was actually accepted and whether outstanding obligations remain accounted for.",
+      "description": "Establish whether receiving responsibility was actually accepted and whether outstanding obligations remain accounted for.",
+      "source_line": 830
+    },
+    "source_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/Harmonia_1.1.20_Candidate_017_Pass3_012_XD_Consolidated_Catalogue.md",
+    "pass3_012_block": "#### B05.03.04 — Handover Acceptance & Evidence\nEstablish whether receiving responsibility was actually accepted and whether outstanding obligations remain accounted for.\n\n*Enterprise contributions: E06.07, E03.04, E08.07; findings: R07, R16.*\n\n- **`B05.03.04.F01` — ReceivingPartyAgreed:** Handover identifies who accepted clinical responsibility.\n- **`B05.03.04.F02` — UnacceptedHandoverVisible:** No receipt notification is treated as acceptance without required evidence.\n- **`B05.03.04.F03` — OutstandingWorkOwned:** Each unresolved obligation has accountable next owner.\n- **`B05.03.04.F04` — TransferredContextSufficient:** Required care context is available to receiver.\n- **`B05.03.04.F05` — AcceptanceTimeTraceable:** Timing of acceptance and any delay is independently evidenced.\n\n",
+    "supporting_context_transferred_unchanged": "*Enterprise contributions: E06.07, E03.04, E08.07; findings: R07, R16.*"
+  },
+  {
+    "source": "B05.03.04.F01",
+    "targets": [
+      "B05.03.01.F01"
+    ],
+    "obligation": "Identify the accountable party explicitly accepting clinical responsibility.",
+    "primary_criterion_target": "B05.03.01.F01",
+    "decision": "SR-001",
+    "status": "Accepted and incorporated",
+    "source_record": {
+      "id": "B05.03.04.F01",
+      "parent": "B05.03.04",
+      "parent_name": "Handover Acceptance & Evidence",
+      "original_name": "ReceivingPartyAgreed",
+      "name": "ReceivingPartyAgreed",
+      "original_description": "Handover identifies who accepted clinical responsibility. *PROPOSED — unverified*.",
+      "description": "Handover identifies who accepted clinical responsibility.",
+      "source_line": 835,
+      "normalisation": "retained-outcome",
+      "original_status": "PROPOSED — unverified",
+      "source_criterion": "Handover identifies who accepted clinical responsibility.",
+      "measurement_criterion": "",
+      "implementation_verification": "Not established by this activity",
+      "technical_correspondence": "",
+      "criterion_treatment": "Retained outcome/assurance condition",
+      "current_assurance_condition": "Handover identifies who accepted clinical responsibility."
+    },
+    "source_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/Harmonia_1.1.20_Candidate_017_Pass3_012_XD_Consolidated_Catalogue.md",
+    "target_definitions": {
+      "B05.03.01.F01": "Care transfers have explicit, evidenced acceptance of clinical responsibility by an accountable receiving party. Handover identifies who accepted responsibility; receipt notification alone does not establish acceptance without the required evidence."
+    },
+    "criterion_treatment": "Retained assurance condition of consolidated responsibility; source identifier retired, criterion not discarded or asserted tested."
+  },
+  {
+    "source": "B05.03.04.F02",
+    "targets": [
+      "B05.03.01.F01",
+      "B05.03.01.F04"
+    ],
+    "obligation": "Receipt notification does not constitute evidenced acceptance of clinical responsibility.",
+    "primary_criterion_target": "B05.03.01.F01",
+    "decision": "SR-001",
+    "status": "Accepted and incorporated",
+    "source_record": {
+      "id": "B05.03.04.F02",
+      "parent": "B05.03.04",
+      "parent_name": "Handover Acceptance & Evidence",
+      "original_name": "UnacceptedHandoverVisible",
+      "name": "UnacceptedHandoverVisible",
+      "original_description": "No receipt notification is treated as acceptance without required evidence. *PROPOSED — unverified*.",
+      "description": "No receipt notification is treated as acceptance without required evidence.",
+      "source_line": 836,
+      "normalisation": "retained-outcome",
+      "original_status": "PROPOSED — unverified",
+      "source_criterion": "No receipt notification is treated as acceptance without required evidence.",
+      "measurement_criterion": "",
+      "implementation_verification": "Not established by this activity",
+      "technical_correspondence": "",
+      "criterion_treatment": "Retained outcome/assurance condition",
+      "current_assurance_condition": "No receipt notification is treated as acceptance without required evidence."
+    },
+    "source_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/Harmonia_1.1.20_Candidate_017_Pass3_012_XD_Consolidated_Catalogue.md",
+    "target_definitions": {
+      "B05.03.01.F01": "Care transfers have explicit, evidenced acceptance of clinical responsibility by an accountable receiving party. Handover identifies who accepted responsibility; receipt notification alone does not establish acceptance without the required evidence.",
+      "B05.03.01.F04": "The boundary of transferred clinical responsibility is explicit and traceable through the handover context and acceptance evidence. Clinical acceptance is distinguished from receipt, operational work allocation and human operational handover."
+    },
+    "criterion_treatment": "Retained assurance condition of consolidated responsibility; source identifier retired, criterion not discarded or asserted tested."
+  },
+  {
+    "source": "B05.03.04.F03",
+    "targets": [
+      "B05.03.01.F02"
+    ],
+    "obligation": "Each unresolved care obligation retains an accountable next owner.",
+    "primary_criterion_target": "B05.03.01.F02",
+    "decision": "SR-001",
+    "status": "Accepted and incorporated",
+    "source_record": {
+      "id": "B05.03.04.F03",
+      "parent": "B05.03.04",
+      "parent_name": "Handover Acceptance & Evidence",
+      "original_name": "OutstandingWorkOwned",
+      "name": "OutstandingWorkOwned",
+      "original_description": "Each unresolved obligation has accountable next owner. *PROPOSED — unverified*.",
+      "description": "Each unresolved obligation has accountable next owner.",
+      "source_line": 837,
+      "normalisation": "retained-outcome",
+      "original_status": "PROPOSED — unverified",
+      "source_criterion": "Each unresolved obligation has accountable next owner.",
+      "measurement_criterion": "",
+      "implementation_verification": "Not established by this activity",
+      "technical_correspondence": "",
+      "criterion_treatment": "Retained outcome/assurance condition",
+      "current_assurance_condition": "Each unresolved obligation has accountable next owner."
+    },
+    "source_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/Harmonia_1.1.20_Candidate_017_Pass3_012_XD_Consolidated_Catalogue.md",
+    "target_definitions": {
+      "B05.03.01.F02": "Accepted transfers identify consequential outstanding care obligations and an accountable next owner for each unresolved obligation. The care context required to understand and discharge those obligations is available to the receiving party."
+    },
+    "criterion_treatment": "Retained assurance condition of consolidated responsibility; source identifier retired, criterion not discarded or asserted tested."
+  },
+  {
+    "source": "B05.03.04.F04",
+    "targets": [
+      "B05.03.01.F02",
+      "B05.03.01.F04"
+    ],
+    "obligation": "Required transferred care context is available to the receiving party.",
+    "primary_criterion_target": "B05.03.01.F02",
+    "decision": "SR-001",
+    "status": "Accepted and incorporated",
+    "source_record": {
+      "id": "B05.03.04.F04",
+      "parent": "B05.03.04",
+      "parent_name": "Handover Acceptance & Evidence",
+      "original_name": "TransferredContextSufficient",
+      "name": "TransferredContextSufficient",
+      "original_description": "Required care context is available to receiver. *PROPOSED — unverified*.",
+      "description": "Required care context is available to receiver.",
+      "source_line": 838,
+      "normalisation": "retained-outcome",
+      "original_status": "PROPOSED — unverified",
+      "source_criterion": "Required care context is available to receiver.",
+      "measurement_criterion": "",
+      "implementation_verification": "Not established by this activity",
+      "technical_correspondence": "",
+      "criterion_treatment": "Retained outcome/assurance condition",
+      "current_assurance_condition": "Required care context is available to receiver."
+    },
+    "source_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/Harmonia_1.1.20_Candidate_017_Pass3_012_XD_Consolidated_Catalogue.md",
+    "target_definitions": {
+      "B05.03.01.F02": "Accepted transfers identify consequential outstanding care obligations and an accountable next owner for each unresolved obligation. The care context required to understand and discharge those obligations is available to the receiving party.",
+      "B05.03.01.F04": "The boundary of transferred clinical responsibility is explicit and traceable through the handover context and acceptance evidence. Clinical acceptance is distinguished from receipt, operational work allocation and human operational handover."
+    },
+    "criterion_treatment": "Retained assurance condition of consolidated responsibility; source identifier retired, criterion not discarded or asserted tested."
+  },
+  {
+    "source": "B05.03.04.F05",
+    "targets": [
+      "B05.03.01.F05"
+    ],
+    "obligation": "Acceptance timing and delay remain independently evidenced and traceable.",
+    "primary_criterion_target": "B05.03.01.F05",
+    "decision": "SR-001",
+    "status": "Accepted and incorporated",
+    "source_record": {
+      "id": "B05.03.04.F05",
+      "parent": "B05.03.04",
+      "parent_name": "Handover Acceptance & Evidence",
+      "original_name": "AcceptanceTimeTraceable",
+      "name": "AcceptanceTimeTraceable",
+      "original_description": "Timing of acceptance and any delay is independently evidenced. *PROPOSED — unverified*.",
+      "description": "Timing of acceptance and any delay is independently evidenced.",
+      "source_line": 839,
+      "normalisation": "retained-outcome",
+      "original_status": "PROPOSED — unverified",
+      "source_criterion": "Timing of acceptance and any delay is independently evidenced.",
+      "measurement_criterion": "",
+      "implementation_verification": "Not established by this activity",
+      "technical_correspondence": "",
+      "criterion_treatment": "Retained outcome/assurance condition",
+      "current_assurance_condition": "Timing of acceptance and any delay is independently evidenced."
+    },
+    "source_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/Harmonia_1.1.20_Candidate_017_Pass3_012_XD_Consolidated_Catalogue.md",
+    "target_definitions": {
+      "B05.03.01.F05": "Care handovers are confirmed within the applicable context-defined interval. Acceptance timing and any delay are independently evidenced and traceable to the handover and accountable receiving party."
+    },
+    "criterion_treatment": "Retained assurance condition of consolidated responsibility; source identifier retired, criterion not discarded or asserted tested."
+  }
+]

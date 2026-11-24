@@ -1,0 +1,2943 @@
+{
+  "outcome": "PASS",
+  "revision": 2,
+  "checks": [
+    {
+      "check": "Review revision 1 retained byte-identically with original link origin",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Revision, decision date and preparation date are distinguished",
+      "outcome": "PASS"
+    },
+    {
+      "check": "First visible content is the governed compact table",
+      "outcome": "PASS"
+    },
+    {
+      "check": "36 stable unique IDs agree with the original summary/details",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Revision overlay includes all stable CRs and exactly six shared findings",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-001 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-001 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-001 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-001 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-002 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-002 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-002 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-002 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-002 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-003 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-003 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-003 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-003 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-003 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-004 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-004 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-004 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-004 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-004 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-005 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-005 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-005 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-005 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-005 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-006 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-006 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-006 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-006 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-006 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-007 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-007 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-007 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-007 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-007 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-008 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-008 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-008 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-008 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-008 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-009 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-009 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-009 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-009 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-009 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-010 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-010 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-010 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-010 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-010 Composition remains independently undecided with deterministic meaning if accepted",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-011 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-011 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-011 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-011 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-011 Composition remains independently undecided with deterministic meaning if accepted",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-012 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-012 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-012 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-012 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-012 Composition remains independently undecided with deterministic meaning if accepted",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-013 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-013 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-013 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-013 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-013 Composition remains independently undecided with deterministic meaning if accepted",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-014 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-014 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-014 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-014 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-014 Composition remains independently undecided with deterministic meaning if accepted",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-015 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-015 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-015 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-015 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-015 Composition remains independently undecided with deterministic meaning if accepted",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-016 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-016 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-016 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-016 shares one governing meaning decision without instance approval",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-017 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-017 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-017 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-017 shares one governing meaning decision without instance approval",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-018 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-018 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-018 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-018 shares one governing meaning decision without instance approval",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-019 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-019 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-019 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-019 shares one governing meaning decision without instance approval",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-020 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-020 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-020 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-020 shares one governing meaning decision without instance approval",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-021 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-021 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-021 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-021 shares one governing meaning decision without instance approval",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-022 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-022 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-022 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-022 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-022 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-023 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-023 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-023 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-023 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-023 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-024 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-024 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-024 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-024 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-024 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-025 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-025 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-025 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-025 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-025 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-026 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-026 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-026 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-026 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-026 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-027 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-027 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-027 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-027 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-027 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-028 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-028 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-028 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-028 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-028 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-029 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-029 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-029 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-029 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-029 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-030 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-030 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-030 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-030 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-030 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-031 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-031 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-031 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-031 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-031 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-032 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-032 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-032 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-032 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-032 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-033 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-033 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-033 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-033 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-034 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-034 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-034 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-034 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-034 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-035 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-035 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-035 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-035 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-035 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-036 template headings/table/status/instruction/processing agree",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-036 exact Detected Evidence retained, including source identity",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-036 required-state dependencies and source observations retained",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-036 individual Solution Architect decision remains unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "CR-036 complete unrelated detail unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Dependencies are valid and acyclic, not executed",
+      "outcome": "PASS"
+    },
+    {
+      "check": "View question no longer asks for six independent context approvals",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Governed hierarchy, direction, Feature typing and non-semantic placement are explicit",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Related current governance consistently references the resolved metamodel rule",
+      "outcome": "PASS"
+    },
+    {
+      "check": "One governed patch from actual starting release; no publication inference",
+      "outcome": "PASS"
+    },
+    {
+      "check": "All current authority pins match live sources",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Source/recovery/identity establishment pins remain historical and unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Frozen capture uses exact hash-proved historical source, distinct from new authority",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Submission, retained Submission and originating Published Baseline hashes unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "All nine proposed elements remain without Canonical IDs or generated metadata",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Only authorised governance, release, review and historical validation files modified",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Additions bounded to revision evidence, exact historical source archive and report",
+      "outcome": "PASS"
+    },
+    {
+      "check": "All other pre-existing files preserved, including semantic sources, capture, evidence and publications",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No reconciliation, new run or publication; repository HEAD unchanged",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-002",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-002",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-003",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-003",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-004",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-004",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-005",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-005",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-006",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-006",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-007",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-007",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-008",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-008",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-009",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-009",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-010",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-010",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-011",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-011",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-012",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-012",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-013",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-013",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-014",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-014",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-015",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-015",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-016",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-016",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-017",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-017",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-018",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-018",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-019",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-019",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-020",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-020",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-021",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-021",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-022",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-022",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-023",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-023",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-024",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-024",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-025",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-025",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-026",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-026",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-027",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-027",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-028",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-028",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-029",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-029",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-030",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-030",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-031",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-031",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-032",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-032",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-034",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-034",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-036",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-036",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../exchange/publish/README.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../publishing/1.0.8/publication-1.0.8.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../publishing/1.0.8/publication-comparison.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../publishing/1.0.8/archi-inspection-1.0.8.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../publishing/1.0.8/publication-validation-1.0.8.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/start-preservation.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/provenance.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../../.junie/reports/2026-10-18-archimate-canonical-identity-establishment/archi-exports/release-1.0.7.xml",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/detect.py",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/diagnostic-commands.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/summary.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/views.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/governance/templates/archimate-ingestion-change-review-template.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/governance/archimate-ingestion-change-review.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/governance/archimate-ingestion-publication-semantics.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/governance/architecture-authoring-praxis.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/historical-evidence.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/governance/archimate-ingestion-change-review.md#solution-architect-dispositions",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: solution-architect-dispositions",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: history/revision-001/change-review.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: history/revision-001/manifest.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: review-revision-002.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: validation/revision-002/validation-results.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/decomposition.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/change-requests.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: review-revision-002.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L34747",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/elements.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L87210",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/elements.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L87213",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/elements.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L87216",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/elements.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L87219",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/elements.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L62338",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/elements.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L62341",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/elements.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L62344",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/elements.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L62347",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/elements.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95230",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-016",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-016",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-016",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-016",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95231",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-017",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-017",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-017",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-017",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95232",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-018",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-018",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-018",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-018",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95233",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-019",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-019",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-019",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-019",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95234",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-020",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-020",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-020",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-020",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95235",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-021",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-021",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-021",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-021",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95230",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md#existing-feature-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: existing-feature-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-010",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-010",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-010",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-010",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95231",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md#existing-feature-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: existing-feature-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-011",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-011",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-011",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-011",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95232",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md#existing-feature-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: existing-feature-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-012",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-012",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-012",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-012",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95233",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md#existing-feature-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: existing-feature-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-013",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-013",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-013",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-013",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95234",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md#existing-feature-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: existing-feature-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-014",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-014",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-014",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-014",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95235",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md#existing-feature-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: existing-feature-context",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-015",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-015",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-015",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-015",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-033",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95236",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-006",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-006",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-023",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-023",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95236",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-022",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-022",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95237",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-007",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-007",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-025",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-025",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95237",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-024",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-024",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95238",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-008",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-008",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-027",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-027",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95238",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-026",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-026",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95241",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-009",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-009",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-029",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-029",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95241",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-028",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-028",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-036",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-036",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95239",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/views.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-006",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-006",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-008",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-008",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95240",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/views.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-007",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-007",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-008",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-008",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L95242",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/relationships.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/views.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-009",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-009",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-008",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-008",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-035",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L256740",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md#v1",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: v1",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/views.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: ../../../../../markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-011",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-011",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-012",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-012",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-010",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-010",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-015",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-015",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-013",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-013",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-014",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-014",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-016",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-016",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-017",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-017",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-018",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-018",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-019",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-019",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-020",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-020",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-021",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-021",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L259158",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md#v2",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: v2",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/views.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L256638",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md#v3",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: v3",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/views.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-007",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-007",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-001",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-009",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-009",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-008",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-008",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-006",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-006",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-031",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-031",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-024",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-024",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-030",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-030",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-026",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-026",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-032",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-032",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-022",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-022",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-023",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-023",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-025",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-025",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-027",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-027",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-029",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-029",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/submission.xml#L256609",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/observations.md#v4",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: v4",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: detection/views.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-009",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-009",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-028",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-028",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md: #cr-029",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: cr-029",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No newly introduced trailing whitespace in edited Markdown /usr/vm/devel/code/projects/github/harmonia/docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md#shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-001/change-review.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/markdown/governance/rad-archimate-model-mapping.md#5-relationship-profile-and-direction",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: 5-relationship-profile-and-direction",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/markdown/governance/rad-archimate-mapping-catalogue.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/markdown/governance/rad-archimate-coverage-assessment.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/markdown/governance/README.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/markdown/governance/baseline/correspondence.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/markdown/governance/architecture-release-policy.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/archimate/processing/ingestion/1.0.8/run-001/review-revision-002.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/command-results.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/markdown/governance/baseline/README.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../scripts/rads_business_architecture.py",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: .junie/reports/2026-10-19-ct3-feature-composition-decision.md: ../../docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/validation-results.json",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No newly introduced trailing whitespace in edited Markdown .junie/reports/2026-10-19-ct3-feature-composition-decision.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md: ../../governance/archimate-ingestion-change-review.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md: ../../../archimate/processing/ingestion/1.0.8/run-001/change-review.md#shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: shared-metamodel-decision",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No newly introduced trailing whitespace in edited Markdown docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: docs/markdown/governance/rad-archimate-model-mapping.md: ../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No newly introduced trailing whitespace in edited Markdown docs/markdown/governance/rad-archimate-model-mapping.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: docs/markdown/governance/archimate-ingestion-publication-semantics.md: ../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: docs/markdown/governance/archimate-ingestion-publication-semantics.md: ../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No newly introduced trailing whitespace in edited Markdown docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: docs/markdown/governance/rad-archimate-mapping-catalogue.md: ../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: docs/markdown/governance/rad-archimate-mapping-catalogue.md: ../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No newly introduced trailing whitespace in edited Markdown docs/markdown/governance/rad-archimate-mapping-catalogue.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: docs/markdown/governance/rad-archimate-coverage-assessment.md: ../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No newly introduced trailing whitespace in edited Markdown docs/markdown/governance/rad-archimate-coverage-assessment.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: docs/markdown/governance/README.md: ../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: docs/markdown/governance/README.md: architecture-authoring-praxis.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: docs/markdown/governance/README.md: ../../archimate/README.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No newly introduced trailing whitespace in edited Markdown docs/markdown/governance/README.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Link resolves: docs/markdown/governance/baseline/README.md: ../../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Markdown anchor resolves: bec-composition-hierarchy",
+      "outcome": "PASS"
+    },
+    {
+      "check": "No newly introduced trailing whitespace in edited Markdown docs/markdown/governance/baseline/README.md",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Architecture and governance regression suites passed",
+      "outcome": "PASS"
+    },
+    {
+      "check": "Historical capture validation preserves 2467 unresolved dimensions",
+      "outcome": "PASS"
+    }
+  ],
+  "check_count": 723,
+  "cr_count": 36,
+  "all_statuses": "On-Hold",
+  "all_instructions": "Not authorised",
+  "all_processing": "Not yet processed",
+  "shared_meaning_decision": "Resolved by Solution Architect; no individual proposal adjudication",
+  "retained_finding_disposition": "On-Hold pending confirmation of record handling",
+  "evidence_links_checked": 322,
+  "preserved_pre_existing_file_count": 2974,
+  "modified_pre_existing_files": [
+    "architecture-release.json",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md",
+    "docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md",
+    "docs/markdown/governance/README.md",
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+    "docs/markdown/governance/baseline/README.md",
+    "docs/markdown/governance/baseline/correspondence.json",
+    "docs/markdown/governance/rad-archimate-coverage-assessment.md",
+    "docs/markdown/governance/rad-archimate-mapping-catalogue.md",
+    "docs/markdown/governance/rad-archimate-model-mapping.md",
+    "scripts/rads_business_architecture.py",
+    "scripts/tests/test_rads_source_presentation.py"
+  ],
+  "new_revision_files": [
+    ".junie/reports/2026-10-19-ct3-feature-composition-decision.md",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-001/change-review.md",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/history/revision-001/manifest.json",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/review-revision-002.json",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/architecture-tests.log.gz",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/command-results.json",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/evidence-sha256.json",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/governance-tests-initial.log.gz",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/governance-tests.log.gz",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/rads-validation-initial.json",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/rads-validation.log.gz",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/start-preservation.json",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/validate-revision.py",
+    "docs/archimate/processing/ingestion/1.0.8/run-001/validation/revision-002/validation-results.json",
+    "docs/markdown/governance/baseline/source-history/business-architecture-metamodel-321cdfa5.md.gz"
+  ],
+  "submission_sha256": "6b973db242a4b26bc6a93e27b482100b6f96655cb40deb4ceb35a93c134c7d3e",
+  "baseline_sha256": "504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a",
+  "canonical_id_allocation": "None",
+  "proposal_reconciliation": "Not performed",
+  "publication": "Not performed"
+}

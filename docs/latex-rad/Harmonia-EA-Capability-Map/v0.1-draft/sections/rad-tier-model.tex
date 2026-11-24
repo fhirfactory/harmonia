@@ -1,0 +1,854 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from fingerprinted RAD Markdown and frozen publication identities.
+\chapter{Harmonia Capability Decomposition \& Derivation Progression}\label{rad:tier-model}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/02-strategy/capability-maps/capability-tier-model.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:tier-model:1}
+\section*{Harmonia Capability Decomposition \& Derivation Progression}
+\phantomsection\label{rad:tier-model:3}
+\subsection*{Overview}
+\phantomsection\label{rad:tier-model:5}
+
+This model distinguishes hierarchical Capability decomposition from the derivation progression, composition relationships, and derivation rules connecting high-level healthcare enterprise capabilities with reusable platform capabilities and downstream architectural responsibility boundaries.
+
+\phantomsection\label{rad:tier-model:7}
+
+Canonical terminology SHALL distinguish:
+
+\phantomsection\label{rad:tier-model:9}
+
+\begin{itemize}
+
+\item 
+\textbf{Layer /\allowbreak{} Architectural Layer}: architectural layering within the TOGAF /\allowbreak{} ArchiMate architecture model.
+
+
+
+\item 
+\textbf{Capability Tier}: hierarchical decomposition within a Capability Model.
+
+
+
+\item 
+\textbf{Derivation /\allowbreak{} Derivation Progression}: progression between different architectural constructs or models; a Derivation Stage is a stage in that progression.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:tier-model:13}
+
+\texttt{\seqsplit{Layer ≠ Capability Tier ≠ Derivation Stage}}.
+
+\phantomsection\label{rad:tier-model:15}
+
+Business Capability decomposition SHALL use \texttt{\seqsplit{CT1 → CT2 → CT3}}; Business Enabling Capability decomposition SHALL use \texttt{\seqsplit{CT1 → CT2 → CT3 → FT}}. BC↔BEC enabled-by/\allowbreak{}support is a separate relationship, not decomposition or implementation equivalence. In these fixed models: \texttt{\seqsplit{CT1}} means Capability Tier 1, \texttt{\seqsplit{CT2}} Capability Tier 2, \texttt{\seqsplit{CT3}} Capability Tier 3 and \texttt{\seqsplit{FT}} Feature. \texttt{\seqsplit{L1}}, \texttt{\seqsplit{L2}} and \texttt{\seqsplit{L3}} remain deprecated as canonical capability classifications.
+
+\phantomsection\label{rad:tier-model:17}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Tier /\allowbreak{} type} & \textbf{Architectural role}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Tier /\allowbreak{} type} & \textbf{Architectural role}\\\hline\endhead
+\hline\endfoot
+\textbf{CT1} & Establishes the broad Capability frame within Harmonia's architectural scope.\\\hline
+\textbf{CT2} & Decomposes the CT1 frame into constituent Capabilities.\\\hline
+\textbf{CT3} & Establishes the finest Capability frame required by Harmonia and within the Business Enabling hierarchy, the Capability context within which Harmonia Features are defined.\\\hline
+\textbf{FT} & Expresses required system-enabled behaviour within its owning Business Enabling CT3 Capability context.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:tier-model:24}
+
+Every Harmonia Feature SHALL be immediately framed by Business Enabling CT3; Business Capabilities do not decompose into Harmonia Features; every CT3 SHALL have a CT2 parent; every CT2 SHALL have a CT1 parent. Capability tiers SHALL NOT be skipped. Complete CT1 → CT2 → CT3 ancestry is required for a fully reconciled Feature. CT1 → CT2 and CT2 → CT3 are Capability decomposition relationships.
+
+\phantomsection\label{rad:tier-model:26}
+
+\begin{quote}
+
+\textbf{A Feature cannot compensate for incomplete Capability decomposition. If Harmonia requires a Feature, the CT3 Capability that frames that Feature must first be identified. Failure to identify a meaningful CT3 indicates incomplete upstream Capability modelling, not permission to skip the tier.}
+
+
+\end{quote}
+\phantomsection\label{rad:tier-model:28}
+
+This modelling obligation SHALL NOT authorise manufactured CT3 Capabilities for structural symmetry. Existing Features without established CT3 frames SHALL be preserved with their established responsibilities and local IDs; their Capability ancestry/\allowbreak{}decomposition requires reconciliation. Missing ancestry SHALL remain explicitly unresolved, rather than being omitted, invented or treated as direct CT1/\allowbreak{}CT2 Feature framing in the target model.
+
+\phantomsection\label{rad:tier-model:30}
+
+CT3 is the intentional Capability decomposition boundary. Harmonia models the level required to derive and govern Harmonia, rather than the complete Enterprise Architecture of a hospital, health service provider, health department or other healthcare enterprise. CT4, CT5 and deeper Capability tiers are outside that scope and SHALL NOT be defined. The \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/reviews/fixed-capability-decomposition-decision.md}{approved decision record} records the rationale and supersession; the \hyperref[rad:metamodel:33]{Domain03 metamodel} governs the fixed hierarchy.
+
+\phantomsection\label{rad:tier-model:32}
+
+The \hyperref[rad:metamodel:319]{Domain03 Business Architecture metamodel} governs typed Canonical IDs, identity, aliases and behavioural anchoring. The five-stage derivation progression below SHALL NOT be reinterpreted as CT1 /\allowbreak{} CT2 /\allowbreak{} CT3 /\allowbreak{} FT or used to assign Capability Tiers or identifier codes to existing elements. \hyperref[rad:k9:1392]{Approved G1 K9} establishes that affected legacy owner assignments are insufficiently evidenced; they SHALL NOT be mechanically translated to CT1 /\allowbreak{} CT2 /\allowbreak{} CT3. Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved where not established.
+
+\phantomsection\label{rad:tier-model:34}
+
+Unresolved Capability Tier or ancestry SHALL NOT prevent downstream derivation where the owning Capability or Feature and its relevant responsibility are established. Traceability SHALL reference that element without manufacturing ancestry, as required by \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-17}{AX-17}. Document structure, grouping, numbering, indentation and decomposition presentation SHALL NOT by themselves establish Architectural Element identity.
+
+\phantomsection\label{rad:tier-model:36}
+
+The model ensures that:
+
+\phantomsection\label{rad:tier-model:37}
+
+\begin{enumerate}
+
+\item 
+Enterprise healthcare practice is clearly demarcated from software enablement.
+
+
+
+\item 
+System-enabled capabilities reflect authentic clinical, administrative, and operational contexts rather than integration software mechanics.
+
+
+
+\item 
+System behaviours are decomposed into atomic, testable features.
+
+
+
+\item 
+Reusable capabilities (EC-01 .. EC-14) are derived systematically without creating centralized bottleneck services.
+
+
+
+\item 
+Technical realisations are guided by ICT Foundation lenses without allowing physical software products to define architectural capabilities.
+
+
+
+\end{enumerate}
+\phantomsection\label{rad:tier-model:43}
+
+\par\smallskip
+\phantomsection\label{rad:tier-model:45}
+\subsection*{1. The Five-Stage Derivation Progression}
+\phantomsection\label{rad:tier-model:47}
+
+The framework progresses through five derivation stages relating different architectural constructs and models. Their stage numbers SHALL NOT denote Capability Tiers or Architectural Layers:
+
+\phantomsection\label{rad:tier-model:49}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+STAGE 1: BUSINESS CAPABILITY
+
+What the enterprise must be capable of doing
+
+(18 catalogued capabilities across 5 natural healthcare regions)
+
+requires enablement by
+
+▼
+
+STAGE 2: BUSINESS ENABLING CAPABILITY
+
+What systems must enable or provide in support of the business
+
+(Structured across 5 authentic healthcare contextual views)
+
+specifies atomic behaviour as
+
+▼
+
+STAGE 3: FEATURE (FT)
+
+Smallest useful statement of required system-enabled behaviour
+
+(Independently understandable, testable, technology-neutral)
+
+derived into reusable
+
+▼
+
+STAGE 4: ENTERPRISE CAPABILITY (EC-01 .. EC-14)
+
+Reusable ICT functionality recurring across multiple domains
+
+(Decoupled from concurrency, message brokers, and storage DDL)
+
+viewed through
+
+▼
+
+STAGE 5: ICT FOUNDATION CAPABILITY LENSES (18 Lenses)
+
+Cross-cutting technical enablement considerations
+
+(Evaluates technical realization via technology-substitution test)
+
+realised by
+
+▼
+
+ARCHITECTURE REALISATION
+
+Domains 03–07: Business, Information, Application, Integration, Tech
+\end{quote}
+\phantomsection\label{rad:tier-model:91}
+
+\par\smallskip
+\phantomsection\label{rad:tier-model:93}
+\subsection*{2. Derivation Stage Definitions}
+\phantomsection\label{rad:tier-model:95}
+\subsubsection*{Stage 1: Business Capability}
+\phantomsection\label{rad:tier-model:96}
+
+\begin{itemize}
+
+\item 
+\textbf{Definition}: What the healthcare enterprise must be capable of doing to deliver healthcare services, govern operations, and ensure patient safety.
+
+
+
+\item 
+\textbf{Independence}: Exists independently of IT systems, software products, commercial organizational hierarchies, or automation.
+
+
+
+\item 
+\textbf{Structure}: 18 CT1 Business Capability roots grouped into five natural regions, with the explicit CT2/\allowbreak{}CT3 assertions and deliberate stopping points in the canonical BC catalogue. Their tiers are established by that reconciliation, not derivation-stage position; Canonical IDs remain unallocated:
+
+
+\begin{itemize}
+
+\item 
+\emph{Care \& Health Delivery} (01–08)
+
+
+
+\item 
+\emph{Health Information \& Digital Health} (09–12)
+
+
+
+\item 
+\emph{Research \& Innovation} (13)
+
+
+
+\item 
+\emph{Health Service Management} (14–16)
+
+
+
+\item 
+\emph{Governance \& Assurance} (17–18)
+
+
+
+\end{itemize}
+
+
+\item 
+\textbf{Harmonia Principle}: Harmonia provides core technical enablement for Health Information and Connected Health capabilities (09–12) and materially enables delivery and workforce capabilities (01, 02, 04, 06, 15) without asserting platform ownership over healthcare business practice.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:tier-model:106}
+
+Natural regions are contextual groupings, not capability tiers, organisational structures, application boundaries or ownership hierarchies, and are distinct from Business Enabling contextual views. Health Service Governance (17) retains unresolved relevance classification/\allowbreak{}enabling derivation; Health Service Assurance (18) is Harmonia-Relevant under the reconciled BC catalogue, preserving its approved independent governed-assurance participation. The \hyperref[rad:assurance-strategy]{approved Health Service Assurance derivation} establishes only REQ-FND-005 → BC-18 → the three named Business Enabling Capabilities → collaborative Enterprise Capability realisation. Stage diagrams and existing examples do not establish additional relationships.
+
+\phantomsection\label{rad:tier-model:108}
+\subsubsection*{Stage 2: Business Enabling Capability}
+\phantomsection\label{rad:tier-model:109}
+
+\begin{itemize}
+
+\item 
+\textbf{Definition}: What software systems and information infrastructure must enable or provide to support the enterprise healthcare capabilities.
+
+
+
+\item 
+\textbf{Structuring Axis}: Organized into five contextual views reflecting genuine healthcare operating environments:
+
+
+\begin{enumerate}
+
+\item 
+\emph{Entity Management}: Governance of practitioners, organizations, locations, services, products, and devices.
+
+
+
+\item 
+\emph{Service Administration}: Administrative progression of encounters, referrals, orders, scheduling, and billing.
+
+
+
+\item 
+\emph{Service Delivery}: Systems enablement across clinical delivery settings (primary, acute, emergency, diagnostic, virtual).
+
+
+
+\item 
+\emph{Health Service Operations}: Healthcare facility logistics, bed management, work allocation, dispatch, and discharge coordination.
+
+
+
+\item 
+\emph{Intrinsic /\allowbreak{} Shared Enablement}: Longitudinal clinical records, health information exchange, clinical collaboration, and workflow coordination.
+
+
+
+\end{enumerate}
+
+
+\item 
+\textbf{Independence}: Independent of commercial software product boundaries (PAS, EMR, LIS, RIS) and internal middleware engines.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:tier-model:118}
+
+The approved \hyperref[rad:enabling:674]{Assurance Design, Assurance Criteria Management and Governed Assurance} additionally support BC-18. Their contextual-view placement, relevance classification, Capability Tier, complete ancestry, root status and structural Canonical IDs remain unresolved. Their direct Strategy derivation does not create intermediate Features, a sixth view or inferred hierarchy.
+
+\phantomsection\label{rad:tier-model:120}
+\subsubsection*{Stage 3: Feature (FT)}
+\phantomsection\label{rad:tier-model:121}
+
+\begin{itemize}
+
+\item 
+\textbf{Definition}: The \textbf{smallest useful statement of required system-enabled behaviour} within its owning CT3 Business Enabling Capability context. Existing owners whose tier/\allowbreak{}ancestry is unresolved remain established responsibility evidence requiring reconciliation. FT is a Feature classification; derivation stage 3 SHALL NOT classify it as CT3.
+
+
+
+\item 
+\textbf{Criteria}:
+
+
+\begin{itemize}
+
+\item 
+\emph{Independently understandable}: Conveys a self-contained operational meaning.
+
+
+
+\item 
+\emph{Testable in principle}: Allows clear verification that the behavior occurred or was enabled.
+
+
+
+\item 
+\emph{Technology-independent}: Contains no product names, protocols, or storage mechanisms.
+
+
+
+\item 
+\emph{Component-independent}: Does not prescribe which software module executes it.
+
+
+
+\end{itemize}
+
+
+\item 
+\textbf{Scope Demarcation}: Formally authored for Harmonia-Relevant and Harmonia-Core capabilities in the established catalogue. Reference and Adjacent capabilities are intentionally not decomposed into features. This scope statement allocates no Capability Tier to existing elements and does not waive the fixed ancestry required for a fully reconciled Feature.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:tier-model:129}
+\subsubsection*{Stage 4: Enterprise Capability (EC-01 .. EC-14)}
+\phantomsection\label{rad:tier-model:130}
+
+\begin{itemize}
+
+\item 
+\textbf{Definition}: Reusable architectural functionality derived from recurring system-enabled features across multiple healthcare domains.
+
+
+
+\item 
+\textbf{Derivation Logic}: Derived by analyzing features and asking: \emph{"How is this function delivered?"} Functions that recur vertically across multiple distinct healthcare domains are abstracted into reusable Enterprise Capabilities.
+
+
+
+\item 
+\textbf{Catalogue}: The established EC-01 Managed Entity \& Relationship through EC-13 Semantic Governance \& Conformance, plus approved EC-14 Service Guardian.
+
+
+
+\item 
+\textbf{Collaborative Nature}: Enterprise Capabilities represent bounded reusable responsibilities. Their realisation may require participation, consumption or enforcement across multiple architectural elements, but this does not imply shared semantic ownership or prohibit establishment of a responsibility centre. \textbf{Distributed participation does not imply distributed responsibility. Cross-cutting concern does not imply cross-cutting responsibility.}
+
+
+
+\end{itemize}
+\phantomsection\label{rad:tier-model:135}
+
+EC-14 supplies the assurance-specific semantics needed to bind existing reusable capabilities into governed assurance. The \hyperref[rad:assurance-strategy:54]{approved first-pass contribution matrix} establishes collaborative realisation without extending EC-12's semantics or allocating EC-14 to a component. The generic progression through Features describes the existing derivation convention; it does not manufacture Feature relationships for this explicitly approved assurance derivation.
+
+\phantomsection\label{rad:tier-model:137}
+\subsubsection*{Stage 5: ICT Foundation Capability Lenses}
+\phantomsection\label{rad:tier-model:138}
+
+\begin{itemize}
+
+\item 
+\textbf{Definition}: Technical enablement lenses that provide cross-cutting engineering criteria, architectural considerations, and technology-substitution testing for realizing Enterprise Capabilities.
+
+
+
+\item 
+\textbf{Role}: They are technical lenses, NOT peers of the Business Enabling capabilities.
+
+
+
+\item 
+\textbf{Test}: Governed by the \emph{Technology-Substitution Test}: \emph{"If the named product, protocol, programming language, or deployment mechanism were replaced tomorrow, would the capability still exist?"}
+
+
+
+\end{itemize}
+\phantomsection\label{rad:tier-model:142}
+
+\par\smallskip
+\phantomsection\label{rad:tier-model:144}
+\subsection*{3. The Capability Composition Formula}
+\phantomsection\label{rad:tier-model:146}
+
+Harmonia capabilities are composed according to the following foundational relationship:
+
+\phantomsection\label{rad:tier-model:148}
+
+ Harmonia Capability = domain-specific enabling behaviour + reusable Enterprise Capabilities
+
+\phantomsection\label{rad:tier-model:150}
+
+Where:
+
+\phantomsection\label{rad:tier-model:151}
+
+\begin{itemize}
+
+\item 
+\textbf{Domain-Specific Enabling Behaviour}: The specific clinical or operational logic, context rules, and progression semantics unique to a healthcare domain (e.g., healthcare identifier system rules, diagnostic order workflows, bed turnover readiness).
+
+
+
+\item 
+\textbf{Reusable Enterprise Capabilities}: The horizontal, platform-wide capabilities (EC-01 through EC-14) that provide state management, context propagation, policy evaluation, provenance capture, interoperable transport and the approved assurance-specific semantics.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:tier-model:154}
+\subsubsection*{Informing Strategic Logical Component Boundaries}
+\phantomsection\label{rad:tier-model:156}
+
+In Harmonia Strategy:
+
+\phantomsection\label{rad:tier-model:157}
+
+\begin{itemize}
+
+\item 
+\textbf{Capabilities describe \emph{what} the platform achieves}.
+
+
+
+\item 
+\textbf{Strategic Logical Components describe \emph{how responsibility is organized}}.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:tier-model:160}
+
+When specific combinations of Enterprise Capabilities and domain-specific behaviours recur coherently across multiple features, they inform candidate \textbf{Strategic Logical Component responsibility boundaries}:
+
+\phantomsection\label{rad:tier-model:162}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+RECURRING COMPOSITION PATTERN
+
+Domain-specific enabling behaviour
+
++ Reusable Enterprise Capabilities
+
+informs clustering for
+
+▼
+
+STRATEGIC LOGICAL RESPONSIBILITY MODEL
+
+- Mneme (Managed Information \& Active State)
+
+- Mnemosyne (Durable Preservation \& Recovery)
+
+- Ponos (Managed Operational Activity Execution)
+
+- Pylai (Standards-Conformant Ingress/Egress Membrane)
+
+- Calliope (Semantic Authority \& Conformance)
+
+- Iris (Contextual Human Interaction \& Presentation)
+
+- Digital Twin (Entity Coordination Archetype)
+\end{quote}
+\phantomsection\label{rad:tier-model:182}
+
+\emph{Architectural Principle}: This composition informs component boundaries; it does \textbf{not} imply a rigid, mathematical one-to-one derivation. Components represent cohesive responsibility centres, not one-to-one wrappings of individual capabilities.
+
+\phantomsection\label{rad:tier-model:184}
+
+The displayed component-clustering examples remain the established EC-01 through EC-13 derivations. This convention does not allocate EC-14 or the three assurance Business Enabling Capabilities to a strategic logical component or establish a relationship to an existing implementation construct.
+
+\phantomsection\label{rad:tier-model:186}
+
+\par\smallskip
+\phantomsection\label{rad:tier-model:188}
+\subsection*{4. Representative Derivation Examples}
+\phantomsection\label{rad:tier-model:190}
+
+To demonstrate how Enterprise Capabilities recur across distinct Business Enabling features without constructing an exhaustive matrix, three representative derivation examples are detailed below.
+
+\phantomsection\label{rad:tier-model:192}
+\subsubsection*{Example 1: Person Identifier Resolution}
+\phantomsection\label{rad:tier-model:194}
+
+In healthcare integration, identifying an individual across disparate clinics, hospitals, and diagnostic centres requires resolving identifiers (MRNs, national healthcare identifiers, local practice IDs) issued by multiple independent authorities.
+
+\phantomsection\label{rad:tier-model:196}
+
+\begin{itemize}
+
+\item 
+\textbf{Domain-Specific Enabling Behaviour}:
+
+
+\begin{itemize}
+
+\item 
+Healthcare identifier system semantics (e.g., verifying issuing authority jurisdiction, assigning authority namespaces).
+
+
+
+\item 
+Scope of identifier validity (temporary vs. permanent, national vs. regional).
+
+
+
+\item 
+Client privacy and consent flags associated with identifier disclosure.
+
+
+
+\end{itemize}
+
+
+\item 
+\textbf{Reusable Enterprise Capability Contributions}:
+
+
+\begin{itemize}
+
+\item 
+\textbf{EC-01 Managed Entity \& Relationship}: Modeling the Person entity and linking multiple scoped identifiers and alias relationships.
+
+
+
+\item 
+\textbf{EC-05 Search \& Discovery}: Locating existing entity records matching supplied identifier sets and resolving candidate matches.
+
+
+
+\item 
+\textbf{EC-03 Managed State \& Lifecycle}: Governing the lifecycle status (active, superseded, suspended) of identifier records.
+
+
+
+\item 
+\textbf{EC-07 Provenance \& Traceability}: Recording the authoritative origin, verification timestamp, and issuing system attribution for each identifier.
+
+
+
+\item 
+\textbf{EC-06 Policy \& Control}: Enforcing default-deny access policies governing which requesting systems may view or resolve specific identifier authorities.
+
+
+
+\item 
+\textbf{EC-12 Operational Assurance}: Ensuring deterministic matching behavior and transactional consistency during concurrent resolution requests.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:tier-model:208}
+
+\par\smallskip
+\phantomsection\label{rad:tier-model:210}
+\subsubsection*{Example 2: Order Closed Loop}
+\phantomsection\label{rad:tier-model:212}
+
+A clinical diagnostic or procedure order requires governed progression from initial request to final diagnostic report.
+
+\phantomsection\label{rad:tier-model:214}
+
+\begin{itemize}
+
+\item 
+\textbf{Domain Progression Semantics}: Destination → Route → Deliver → Acknowledge → Progress → Complete → Outcome
+
+
+
+\item 
+\textbf{Critical Healthcare Distinction}:  Technical Delivery Acknowledgement ≠  Business Acknowledgement A technical acknowledgement establishes only the acceptance state defined by the applicable interaction contract. It SHALL NOT be interpreted as durable acceptance, committed business state, successful processing or successful business disposition unless that meaning is explicitly established by the governing contract. HTTP 200/\allowbreak{}202 and MLLP acknowledgements are interpreted under their applicable contracts. A handoff acknowledgement alone does not establish the eventual downstream business outcome or the receiving laboratory's clinical responsibility. \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md\#req-fnd-001-durable-ingress-acceptance-boundary}{REQ-FND-001} retains its explicit Harmonia durable-ingress requirement.
+
+
+
+\item 
+\textbf{Reusable Enterprise Capability Contributions}:
+
+
+\begin{itemize}
+
+\item 
+\textbf{EC-02 Context Management}: Establishing and propagating the clinical encounter, ordering provider, and subject-of-care context across all order lifecycle events.
+
+
+
+\item 
+\textbf{EC-05 Search \& Discovery}: Resolving the target fulfillment service endpoint and receiving facility capabilities.
+
+
+
+\item 
+\textbf{EC-01 Managed Entity \& Relationship}: Associating the Order entity with the Subject, Ordering Practitioner, Performing Organization, and Target Service.
+
+
+
+\item 
+\textbf{EC-08 Interoperability \& Exchange}: Standards-compliant boundary protocol adaptation, message transformation, delivery dispatch, and transport acknowledgement capture.
+
+
+
+\item 
+\textbf{EC-03 Managed State \& Lifecycle}: Tracking the formal Order state progression (\texttt{\seqsplit{PLACED}} → \texttt{\seqsplit{RECEIVED}} → \texttt{\seqsplit{ACCEPTED}} → \texttt{\seqsplit{IN\_PROGRESS}} → \texttt{\seqsplit{COMPLETED}}).
+
+
+
+\item 
+\textbf{EC-10 Activity \& Execution}: Instantiating and executing operational units of work, tracking timeouts, managing escalations, and supervising fulfillment deadlines.
+
+
+
+\item 
+\textbf{EC-07 Provenance \& Traceability}: Capturing complete chain-of-custody, transformation history, and delivery timestamps for clinical auditability.
+
+
+
+\item 
+\textbf{EC-12 Operational Assurance}: Guaranteeing dual-write safety, duplicate suppression, and exception recovery across asynchronous boundary handoffs.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:tier-model:229}
+
+\par\smallskip
+\phantomsection\label{rad:tier-model:231}
+\subsubsection*{Example 3: Work Allocation \& Dispatch}
+\phantomsection\label{rad:tier-model:233}
+
+Operational healthcare activities (e.g., patient transport, ward bed preparation, discharge coordination, emergency triage assessment) require assigning and dispatching work to qualified clinical or operational staff.
+
+\phantomsection\label{rad:tier-model:235}
+
+\begin{itemize}
+
+\item 
+\textbf{Domain Progression Semantics}: Event → Entity Context → Required Activity → Assignment → Dispatch → ACK → Progress → Outcome
+
+
+
+\item 
+\textbf{Healthcare Service Context Rule}: Where operational activity occurs in the context of a Healthcare Service, that service context must be explicitly associated with the activity/\allowbreak{}state rather than inferred solely from practitioner, organization, or location.
+
+
+
+\item 
+\textbf{Cross-Domain Recurrence}: This operational progression pattern recurs across:
+
+
+\begin{itemize}
+
+\item 
+\emph{Discharge Progress}: Coordinating multidisciplinary discharge milestones and readiness oversight.
+
+
+
+\item 
+\emph{Patient Transport}: Allocating transfer tasks to portering staff based on mobility requirements.
+
+
+
+\item 
+\emph{Mobile Work}: Dispatching community health visits to roving practitioners.
+
+
+
+\item 
+\emph{ED Operational Coordination}: Progressing triage queue assessments.
+
+
+
+\item 
+\emph{Bed Readiness}: Dispatching environmental cleaning staff upon patient discharge.
+
+
+
+\end{itemize}
+
+
+\item 
+\textbf{Reusable Enterprise Capability Contributions}:
+
+
+\begin{itemize}
+
+\item 
+\textbf{EC-02 Context Management}: Binding the patient, physical bed/\allowbreak{}room, care team, and healthcare service context to the operational work item.
+
+
+
+\item 
+\textbf{EC-03 Managed State \& Lifecycle}: Managing the lifecycle of the operational activity (\texttt{\seqsplit{REQUESTED}} → \texttt{\seqsplit{ASSIGNED}} → \texttt{\seqsplit{ACCEPTED}} → \texttt{\seqsplit{IN\_PROGRESS}} → \texttt{\seqsplit{COMPLETED}}).
+
+
+
+\item 
+\textbf{EC-05 Search \& Discovery}: Discovering available, rostered, and credentialed practitioners or operational personnel matching task criteria.
+
+
+
+\item 
+\textbf{EC-01 Managed Entity \& Relationship}: Linking the assigned worker, patient, location, and equipment entities.
+
+
+
+\item 
+\textbf{EC-10 Activity \& Execution}: Governing the assignment logic, dispatch mechanism, human notification, timeout monitoring, and escalation triggers.
+
+
+
+\item 
+\textbf{EC-08 Interoperability \& Exchange}: Delivering work orders to mobile devices or external task management systems where external dispatch is required.
+
+
+
+\item 
+\textbf{EC-12 Operational Assurance}: Preventing duplicate assignment and ensuring resilient recovery if a dispatched worker does not acknowledge within defined thresholds.
+
+
+
+\item 
+\textbf{EC-07 Provenance \& Traceability}: Recording assignment timestamps, worker acceptance, and completion evidence.
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\phantomsection\label{rad:tier-model:254}
+
+\par\smallskip
+\phantomsection\label{rad:tier-model:256}
+\subsection*{5. Architectural Modelling Position: Omission of Exhaustive N × M Matrices}
+\phantomsection\label{rad:tier-model:258}
+
+Harmonia explicitly rejects the generation of exhaustive N × M traceability matrices between Business Capabilities and Business Enabling Capabilities, or between Features and Enterprise Capabilities.
+
+\phantomsection\label{rad:tier-model:260}
+\subsubsection*{Formal Rationale}
+\phantomsection\label{rad:tier-model:262}
+
+\begin{quote}
+
+\textbf{The Business Enabling Capability model was derived with explicit consideration of the Business Capability model and is intended to provide the system-enabled capabilities necessary to support that business landscape. A formal many-to-many mapping between Business Capabilities and Business Enabling Capabilities has not been produced, as such traceability is not required for the current Harmonia architecture and strategy objectives. Such mapping may be developed subsequently where required for benefits realisation, investment analysis, business-case development or other value-traceability purposes.}
+
+
+\end{quote}
+\phantomsection\label{rad:tier-model:264}
+
+This statement records the existing derivation. BC-17 enabling derivation and relationships beyond the approved BC-18 derivation remain unresolved under \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-17}{AX-17}. The \hyperref[rad:assurance-strategy]{Health Service Assurance view} adds only the approved three Business Enabling Capabilities and bounded fourteen-row EC contribution matrix. That explicit matrix is not an exhaustive Business Capability-to-Business Enabling or Feature-to-Enterprise mapping, does not imply other coverage, and does not change EC-12's established operational semantics.
+
+\phantomsection\label{rad:tier-model:266}
+\subsubsection*{Utilitarian Justification}
+\phantomsection\label{rad:tier-model:267}
+
+\begin{enumerate}
+
+\item 
+\textbf{Avoidance of False Precision}: In a complex regional HIE, a single Business Capability (e.g., \emph{Care Access \& Coordination}) draws upon dozens of enabling capabilities across Entity Management, Service Administration, and Shared Enablement. An exhaustive matrix suggests mechanical one-to-one connections where real systems operate through dynamic, contextual composition.
+
+
+
+\item 
+\textbf{Maintenance Overhead vs. Value}: Maintaining a static matrix of hundreds of capabilities across thousands of cells creates substantial documentation drift without providing actionable guidance to software engineers or architects.
+
+
+
+\item 
+\textbf{Clarity of Representative Derivations}: As shown in Section 4, representative derivation patterns provide clear, verifiable architectural rationale for how enterprise needs compose reusable capabilities, without the clutter of exhaustive combinatorial tables.
+
+
+
+\end{enumerate}
+\phantomsection\label{rad:tier-model:271}
+
+\par\smallskip
+\phantomsection\label{rad:tier-model:273}
+\subsection*{Topic Navigation}
+\phantomsection\label{rad:tier-model:275}
+
+\begin{itemize}
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/README.md}{Domain 02 Strategy Overview}
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/capabilities/index.md}{Capability Framework Index}
+
+
+
+\item 
+\hyperref[rad:business]{Business Capabilities}
+
+
+
+\item 
+\hyperref[rad:enabling]{Business Enabling Capabilities}
+
+
+
+\item 
+\hyperref[rad:enterprise]{Enterprise Capabilities}
+
+
+
+\item 
+\hyperref[rad:assurance-strategy]{Health Service Assurance Strategy Derivation}
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/02-strategy/capabilities/ict-foundation-lenses.md}{ICT Foundation Lenses}
+
+
+
+\end{itemize}

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd" identifier="diagnostic-organisation-mechanics">
+  <name xml:lang="en">Diagnostic only — organisation-mechanics</name>
+  <elements>
+    <element identifier="parent" xsi:type="Capability">
+      <name xml:lang="en">Parent with children</name>
+    </element>
+    <element identifier="ct1" xsi:type="Capability">
+      <name xml:lang="en">[CT1] Diagnostic parent</name>
+    </element>
+    <element identifier="ct2" xsi:type="Capability">
+      <name xml:lang="en">[CT2] Diagnostic child</name>
+    </element>
+    <element identifier="simple" xsi:type="Capability">
+      <name xml:lang="en">Simple canonical leaf</name>
+    </element>
+    <element identifier="child" xsi:type="Capability">
+      <name xml:lang="en">Child leaf</name>
+    </element>
+    <element identifier="context-cap" xsi:type="Capability">
+      <name xml:lang="en">Canonical contextual Capability</name>
+    </element>
+    <element identifier="ct3" xsi:type="Capability">
+      <name xml:lang="en">[CT3] Diagnostic leaf</name>
+    </element>
+    <element identifier="a-ct1" xsi:type="Capability">
+      <name xml:lang="en">[CT1] Folder-plus-element parent</name>
+    </element>
+    <element identifier="a-ct2" xsi:type="Capability">
+      <name xml:lang="en">[CT2] Folder-plus-element child</name>
+    </element>
+    <element identifier="a-ct3" xsi:type="Capability">
+      <name xml:lang="en">[CT3] Folder-plus-element leaf</name>
+    </element>
+    <element identifier="stream" xsi:type="ValueStream">
+      <name xml:lang="en">Diagnostic Value Stream</name>
+    </element>
+    <element identifier="context-function" xsi:type="BusinessFunction">
+      <name xml:lang="en">Contextual behaviour</name>
+    </element>
+    <element identifier="product" xsi:type="Product">
+      <name xml:lang="en">Diagnostic Product</name>
+    </element>
+    <element identifier="care" xsi:type="DataObject">
+      <name xml:lang="en">[Topic] Diagnostic Care</name>
+    </element>
+    <element identifier="encounter" xsi:type="DataObject">
+      <name xml:lang="en">[Topic] Diagnostic Encounter</name>
+    </element>
+    <element identifier="a-care" xsi:type="DataObject">
+      <name xml:lang="en">[Topic] Folder-plus-element Care</name>
+    </element>
+    <element identifier="a-encounter" xsi:type="DataObject">
+      <name xml:lang="en">[Topic] Folder-plus-element Encounter</name>
+    </element>
+    <element identifier="driver" xsi:type="Driver">
+      <name xml:lang="en">Driver with reference-only children</name>
+    </element>
+  </elements>
+  <organizations>
+    <item>
+      <label xml:lang="en">Strategy</label>
+      <item>
+        <label xml:lang="en">Diagnostic cases</label>
+        <item>
+          <label xml:lang="en">1 Simple folder</label>
+          <item identifierRef="simple" />
+        </item>
+        <item>
+          <label xml:lang="en">2 Combined parent item</label>
+          <item>
+            <label xml:lang="en">Parent folder label</label>
+            <item identifierRef="child" />
+          </item>
+        </item>
+        <item>
+          <label xml:lang="en">3 Canonical primary location</label>
+          <item identifierRef="context-cap" />
+        </item>
+        <item>
+          <label xml:lang="en">4 Nested Strategy</label>
+          <item>
+            <label xml:lang="en">CT1 parent</label>
+            <item>
+              <label xml:lang="en">CT2 parent</label>
+              <item identifierRef="ct3" />
+            </item>
+          </item>
+        </item>
+        <item>
+          <label xml:lang="en">6 Candidate A Strategy</label>
+          <item>
+            <label xml:lang="en">CT1 folder</label>
+            <item>
+              <label xml:lang="en">CT2 folder</label>
+              <item identifierRef="a-ct2" />
+              <item identifierRef="a-ct3" />
+            </item>
+            <item identifierRef="a-ct1" />
+          </item>
+        </item>
+        <item>
+          <label xml:lang="en">7 Logical Business mixed types</label>
+          <item identifierRef="stream" />
+        </item>
+      </item>
+      <item identifierRef="parent" />
+      <item identifierRef="ct1" />
+      <item identifierRef="ct2" />
+    </item>
+    <item>
+      <label xml:lang="en">Business</label>
+      <item>
+        <label xml:lang="en">Diagnostic cases</label>
+        <item>
+          <label xml:lang="en">3 Business context</label>
+          <item>
+            <label xml:lang="en">CT1 context</label>
+            <documentation xml:lang="en">Reference to context-cap; not identifierRef</documentation>
+            <item>
+              <label xml:lang="en">CT2 context</label>
+              <item identifierRef="context-function" />
+            </item>
+          </item>
+        </item>
+        <item>
+          <label xml:lang="en">7 Logical Business mixed types</label>
+          <item identifierRef="product" />
+        </item>
+      </item>
+    </item>
+    <item>
+      <label xml:lang="en">Application</label>
+      <item>
+        <label xml:lang="en">Diagnostic cases</label>
+        <item>
+          <label xml:lang="en">5 Nested Application</label>
+          <item>
+            <label xml:lang="en">Care parent</label>
+            <item identifierRef="encounter" />
+          </item>
+        </item>
+        <item>
+          <label xml:lang="en">6 Candidate A Application</label>
+          <item>
+            <label xml:lang="en">Care folder</label>
+            <item identifierRef="a-care" />
+            <item identifierRef="a-encounter" />
+          </item>
+        </item>
+      </item>
+      <item identifierRef="care" />
+    </item>
+    <item>
+      <label xml:lang="en">Motivation</label>
+      <item identifierRef="driver" />
+    </item>
+  </organizations>
+</model>

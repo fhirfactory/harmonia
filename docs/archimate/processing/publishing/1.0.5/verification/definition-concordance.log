@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "definitions_checked": 647,
+  "missing": 0,
+  "method": "Exact source semantic-detail substrings after only allowbreak, heading-wrapper and whitespace normalization; all 30 included TeX files"
+}

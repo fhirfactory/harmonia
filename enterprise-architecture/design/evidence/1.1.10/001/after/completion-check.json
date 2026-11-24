@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "version": "1.1.10",
+  "previous_version": "1.1.9",
+  "reviewedPendingSha256": "2eadf2bd67d2225317dee62646c96a63ba04c7c49f3b62779384418d6ec152c4",
+  "reviewedPendingPreserved": true,
+  "completionInstruction": "hcrl-1.1.10-001.pending.md updated. Complete!",
+  "instructionEntryTime": "UNRESOLVED; unavailable and not inferred",
+  "humanAcceptance": "Solution Architect Accept DR-1–DR-4 and explicit completion instruction",
+  "temporalTreatment": "Accept DR-4 retains unavailable original Task event/prefix as an acknowledged provenance limitation that does not prevent closure",
+  "canonicalElementFilesByteIdentical": 1602,
+  "navigationNodesAndCoordinatesPreserved": 1941,
+  "navigationContentChanges": {
+    "number": "G.3.2",
+    "fields": [
+      "source",
+      "description"
+    ],
+    "meaning": "Lifecycle-only review navigation after confirmation; 76 classification questions remain deferred"
+  },
+  "reviewedNavigation": "../before/completion-inputs/reviewed-navigation.json",
+  "reviewedPdf": "../before/completion-inputs/reviewed-continuum-rad.pdf",
+  "reviewedProjectionReconstructedSha256": "7ce67d66b972e2b9e0e3f0c956a1235a4286200890ae01852648ae3ea9d6d7fd",
+  "resultingProjectionSha256": "38858a98634f29001ea0093a3820de7e6921dab3cdd430dc6dd698ecea6fb446",
+  "projectionOutsideOrganizationsByteIdenticalCanonicalXml": true,
+  "existingRelationshipsPreserved": 1651,
+  "authoredViewsPreserved": 1209,
+  "actualArchiTransport": "Prior actual transport input reconstructed exactly; semantic fields/relationships/Views unchanged in completion. No additional actual transport claimed.",
+  "pdf": {
+    "pages": 522,
+    "bytes": 1699400,
+    "sha256": "119484bfed9980bbf774298dc8adc2b4d1496f442a5180ed1b96510eb721ebbe",
+    "byteReproducibility": "PASS; clean sources, same relative build path, epoch and installed toolchain",
+    "distinctArchitecturalBookmarkDestinations": 1941,
+    "inspection": "Rendered and inspected the changed G.3.2 Governance page; no clipping observed"
+  },
+  "isolatedReproducibility": {
+    "status": "PASS",
+    "identicalArtifacts": 18,
+    "tests": 57,
+    "seconds": 173.199,
+    "report": "completion-reproducibility-check.json"
+  },
+  "generationStalenessReleaseLinks": "PASS; make continuum rad-pdf check",
+  "scope": "Completion within accepted 1.1.10 change set. Reviewed source/Report evidence preserved; no new release, semantic architecture or identity change. Required prior 90-test Java architecture result remains applicable to unchanged production and test sources.",
+  "register": "enterprise-architecture/design/register/1.1.10/hcrl-1.1.10-001.complete.md",
+  "completedRegisterSha256": "302d8644922f57b9982f72abe7651507058ff370efb653c081acb067241e3f22",
+  "dispositionsAndCommentsCarriedVerbatim": true,
+  "originalReportProductionEventPreserved": "2026-10-22T23:35:19Z",
+  "whitespaceCheck": "PASS",
+  "reportAmendedAt": "2026-10-22T23:55:48Z",
+  "originalReportBytesPreservedAsPrefix": true,
+  "originalReportPrefixSha256": "e4141b570fdd241f338b58868a21942f73d8d1d5772f43b67e5ef0413cc829c1",
+  "reviewedPublicationEvidenceRetained": true,
+  "finalIterationEvidenceCheck": {
+    "outcome": "UNRESOLVED",
+    "version": "1.1.10",
+    "iteration": "001",
+    "records": [
+      "evidence/1.1.10/001/after/ai-agent-reports/20261022T233519Z-continuum-taxonomy-remap.md",
+      "evidence/1.1.10/001/before/ai-agent-tasks/unresolved-continuum-taxonomy-remap.md"
+    ],
+    "errors": [],
+    "unresolved": [
+      "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.10/001/before/ai-agent-tasks/unresolved-continuum-taxonomy-remap.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+    ],
+    "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+  },
+  "localLinks": {
+    "status": "PASS",
+    "changedMarkdownFilesChecked": 15,
+    "localReferencesChecked": 5702,
+    "governedNavigationSourcesChecked": 19,
+    "issues": [],
+    "scope": "Completion register/current navigation/Task/Report and changed maintained Markdown; local targets and Markdown anchors. Canonical body links also receive the maintained separate gate. No network link availability is asserted."
+  },
+  "completionStanding": "Completed by Solution Architect Accept DR-1–DR-4 and explicit completion instruction; acknowledged Task event/prefix limitation accepted under DR-4; no further release increment."
+}

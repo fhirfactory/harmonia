@@ -1,0 +1,18 @@
+{
+  "outcome": "FAIL",
+  "errors": [
+    "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-558a8397dafb44c0ba32b8540559ea7e'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'.",
+    "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-7847cbe66b524f18ba8ace06b280af4e'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'.",
+    "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-558a8397dafb44c0ba32b8540559ea7e'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'.",
+    "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-7847cbe66b524f18ba8ace06b280af4e'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'.",
+    "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-aeae420df3be43fdb0664f9ee75c40e8'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'.",
+    "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-d4b072eb3b6949c3baf8753effc80b36'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'.",
+    "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-d4b072eb3b6949c3baf8753effc80b36'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'.",
+    "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-bedcc73d862c424da5f94904e9a28c53'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'.",
+    "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-bedcc73d862c424da5f94904e9a28c53'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'.",
+    "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-aeae420df3be43fdb0664f9ee75c40e8'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'.",
+    "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-bedcc73d862c424da5f94904e9a28c53'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'.",
+    "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-aeae420df3be43fdb0664f9ee75c40e8'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'."
+  ],
+  "fullModelWritten": false
+}

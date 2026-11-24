@@ -1,0 +1,662 @@
+{
+  "status": "PASS",
+  "resolved_local_links": 131,
+  "basis": "Unchanged reports, original manifest link bases and exact historical location map",
+  "links": [
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/archi-inspection-guide.md",
+      "recorded_target": "../../../exchange/publish/1.0.14/Harmonia-Architecture-1.0.14.xml",
+      "current_file": "docs/archimate/governance-tooling/1.0.14/exchange/Harmonia-Architecture-1.0.14.xml"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/archi-inspection-guide.md",
+      "recorded_target": "../../ingestion/1.0.8/run-002/detection/submission.xml.gz",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-002/detection/submission.xml.gz"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/archi-inspection-guide.md",
+      "recorded_target": "home-normalisation.md",
+      "current_file": "docs/archimate/governance-tooling/1.0.14/processing/home-normalisation.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/architecture-modelling-strategy.md",
+      "current_file": "docs/markdown/governance/architecture-modelling-strategy.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../ingestion/1.0.8/run-002/detection/submission.xml.gz",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-002/detection/submission.xml.gz"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../ingestion/1.0.8/run-002/detection/explicit-homes.json",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-002/detection/explicit-homes.json"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/business-homes.json",
+      "current_file": "docs/markdown/governance/baseline/business-homes.json"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/relationships.md#explicit-business-home-assertions",
+      "current_file": "docs/markdown/governance/baseline/relationships.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-practitioner-directory-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-manage-ward-capacity",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-manage-theatre-case-progression",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-theatre-case-progression-telemetry",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-coordinate-ed-departmental-capacity",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-manage-outpatient-capacity",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-manage-bed-turnover-progression",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-bed-turnover-lifecycle-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-dispatch-operational-work-order",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-work-dispatch-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-manage-patient-transport-progression",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-patient-transport-tracking-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-manage-discharge-coordination-progression",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-discharge-readiness-telemetry",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/processes.md#hcm-pr-theatre-case-progression-process",
+      "current_file": "docs/markdown/governance/baseline/processes.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/processes.md#hcm-pr-bed-turnover-process",
+      "current_file": "docs/markdown/governance/baseline/processes.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/processes.md#hcm-pr-patient-transport-process",
+      "current_file": "docs/markdown/governance/baseline/processes.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/processes.md#hcm-pr-discharge-progression-process",
+      "current_file": "docs/markdown/governance/baseline/processes.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-associate-order-outcome",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-order-outcome-notification",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-associate-care-plan-context",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-care-plan-context-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-distribute-care-plan-change",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-care-plan-change-notification",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-coordinate-multi-agency-chronic-care-plan",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-chronic-care-timeline-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-route-acute-critical-result-alert",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-acute-clinical-alert-dispatch",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-assemble-inpatient-discharge-dossier",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-discharge-dossier-packaging-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-receive-diagnostic-requisition-feed",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-modality-worklist-distribution",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-publish-governed-diagnostic-report",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-diagnostic-publication-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-correlate-adverse-reaction-allergy-profile",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-allergy-adverse-reaction-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-project-screening-eligibility-timeline",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-preventive-screening-status-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-bind-community-support-network-context",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-community-care-team-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-manage-clinic-practice-capacity",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-ward-operational-summary-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-manage-theatre-capacity",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-ed-operational-status-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-ambulatory-session-status-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-manage-mobile-service-capacity",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-track-operational-staff-presence",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-staff-presence-telemetry-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-verify-operational-access-credential",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-operational-credential-checkpoint-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-manage-specimen-transport-progression",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-retrieve-health-information",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-clinical-resource-retrieval-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-apply-access-qualified-result-filtering",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-mediate-standards-based-health-information-communication",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-standards-communication-gateway-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-evaluate-consent-constraint",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-consent-enforcement-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-propagate-security-context",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-security-context-validation-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-record-security-significant-activity",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-security-audit-ingress",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-coordinate-work-order",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-work-order-coordination-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-coordinate-to-do",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-to-do-management-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-coordinate-synthetic-task",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-synthetic-task-execution-service",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-supervise-activity-timeout-escalation",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-activity-escalation-telemetry",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-govern-information-definition",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-information-dictionary-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-govern-terminology-binding",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-terminology-binding-specification-lookup",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-govern-exchange-profile",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-exchange-profile-specification-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-design-service-assurance",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-manage-assurance-criteria",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-establish-assurance-context",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-assess-assurance-evidence",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-adjudicate-assurance-assessment",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-request-service-assurance",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-request-service-assurance-status",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-communicate-service-assurance-outcome",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/processes.md#hcm-pr-specimen-transport-process",
+      "current_file": "docs/markdown/governance/baseline/processes.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/processes.md#hcm-pr-work-order-progression-process",
+      "current_file": "docs/markdown/governance/baseline/processes.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/processes.md#hcm-pr-to-do-progression-process",
+      "current_file": "docs/markdown/governance/baseline/processes.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/processes.md#hcm-pr-synthetic-task-progression-process",
+      "current_file": "docs/markdown/governance/baseline/processes.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/processes.md#hcm-pr-assurance-process-design",
+      "current_file": "docs/markdown/governance/baseline/processes.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/processes.md#hcm-pr-assurance-process-execution",
+      "current_file": "docs/markdown/governance/baseline/processes.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/processes.md#hcm-pr-assurance-process-reporting-communication",
+      "current_file": "docs/markdown/governance/baseline/processes.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-resolve-associated-binary-content",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-assemble-associated-binary-content",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-associated-binary-content-retrieval",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-qualify-information-authority-standing",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-accept-governed-dataset-revision",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-governed-reference-dataset-content-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-capture-required-significant-audit-evidence",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-mandatory-audit-evidence-capture",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-record-significant-information-lineage",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-coordinate-entity-relative-input",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-entity-operational-input-submission",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-maintain-operational-fulfilment-definition",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-reconcile-indeterminate-activity-effects",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-establish-activity-effect-observation-basis",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-determine-reconciled-activity-continuation",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/processes.md#hcm-pr-indeterminate-activity-outcome-reconciliation-process",
+      "current_file": "docs/markdown/governance/baseline/processes.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-assess-service-offering-readiness",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-service-offering-readiness-query",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/functions.md#hcm-fn-assemble-purpose-qualified-research-release",
+      "current_file": "docs/markdown/governance/baseline/functions.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../../markdown/governance/baseline/services.md#hcm-sv-authorised-research-information-export",
+      "current_file": "docs/markdown/governance/baseline/services.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../ingestion/1.0.8/run-001/change-review.md#explicit-home-decision",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../ingestion/1.0.8/run-002/change-review.md",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-002/change-review.md"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../../exchange/publish/1.0.14/Harmonia-Architecture-1.0.14.xml",
+      "current_file": "docs/archimate/governance-tooling/1.0.14/exchange/Harmonia-Architecture-1.0.14.xml"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../ingestion/1.0.8/run-002/validation/validation-results.json",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-002/validation/validation-results.json"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../ingestion/1.0.8/run-002/validation/framework-tests-final.log.gz",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-002/validation/framework-tests-final.log.gz"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../ingestion/1.0.8/run-002/validation/architecture-tests.log.gz",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-002/validation/architecture-tests.log.gz"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../ingestion/1.0.8/run-002/validation/governance-tests.log.gz",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-002/validation/governance-tests.log.gz"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../ingestion/1.0.8/run-002/validation/validation-final.log.gz",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-002/validation/validation-final.log.gz"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../ingestion/1.0.8/run-002/validation/rads-validation.log.gz",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-002/validation/rads-validation.log.gz"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../ingestion/1.0.8/run-002/validation/release-check.log.gz",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-002/validation/release-check.log.gz"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "../../ingestion/1.0.8/run-002/validation/baseline-check.log.gz",
+      "current_file": "docs/archimate/processing/ingestion/1.0.8/run-002/validation/baseline-check.log.gz"
+    },
+    {
+      "original_document": "docs/archimate/processing/publishing/1.0.14/home-normalisation.md",
+      "recorded_target": "archi-inspection-guide.md",
+      "current_file": "docs/archimate/governance-tooling/1.0.14/processing/archi-inspection-guide.md"
+    }
+  ]
+}

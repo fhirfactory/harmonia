@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "report": "enterprise-architecture/design/evidence/1.1.18/001/after/ai-agent-reports/20261102T030904Z-hcrl-record-reconciliation.md",
+  "readOnlyGovernedChecks": "PASS exit 0",
+  "protectedFilesRechecked": 2040,
+  "completedHcrlUnchanged": true,
+  "successorUnresolvedEntries": 16,
+  "historicalReviewContentRetired": true,
+  "oldFilenameRetainedOnlyAsProvenanceLocator": true,
+  "provenanceLayout": "UNRESOLVED",
+  "provenanceErrors": [],
+  "historicalTemporalQualificationsRetained": 3,
+  "headUnchanged": "debd131a7336257daf55b191b56088ee19c987b8",
+  "indexEmpty": true,
+  "commitsDuringCurrentTask": 0,
+  "pushesDuringCurrentTask": 0,
+  "trackedWorkingTreeChanges": [
+    "enterprise-architecture/design/evidence/1.1.18/001/after/ai-agent-reports/20261102T030057Z-release-1-1-19-closure.md",
+    "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md",
+    "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.18/parts/motivation.tex"
+  ],
+  "solutionArchitectReviewRequiredBeforeGitDelivery": true
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "elements": 1602,
+  "relationships": 1651,
+  "qualifiedSourcePredicates": 462,
+  "canonicalIdentities": 1602,
+  "representationIdentities": 1602,
+  "provenanceCoverage": 1602,
+  "sourceBindings": 3421,
+  "supportedNativeTypes": 60,
+  "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance",
+  "publication": "Generated HTML full-content browser and LaTeX identity/standing catalogue",
+  "sha256": {
+    "continuum.html": "0671fd1d8a2d3aecb3e446e60f0e6b47db6ee7893207fcddecfb484d5d1d3dcf",
+    "README.md": "9d5c0302d32e660e46301a7782a675899a65751ae4ad2eb251ce09ff595816df",
+    "continuum-catalogue.tex": "461f7577eb890ef5e45145b5328458a65dd7845e3b8a75680e65bddc89b8185c"
+  },
+  "sourceInputs": "Canonical Markdown, maintained type/schema configuration and root release",
+  "latexIngested": false
+}

@@ -1,0 +1,28 @@
+{
+  "baseline_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_011_XD009_Working_Overlay.md",
+  "baseline_sha256": "222ab7ae26c001987c9b3397bfa1fd17c81d73934e0dd6efdbcebb58739a4670",
+  "baseline_workbook": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Pass3_011_NR001_Adjudication_Workbook.xlsx",
+  "baseline_workbook_sha256": "196d8388fe55183138a3cc19d9a550aa9d8dfce2905ef94d3866f174c0d94c89",
+  "specification_sha256": "f4c0d9824a96f6e1df9524f46f45136bdd50ff5287d9edb2649dc858258964d7",
+  "result_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/Harmonia_1.1.20_Candidate_017_Pass3_012_XD_Consolidated_Catalogue.md",
+  "result_sha256": "54f7b6de1a78cb28a4db41dcc19dc30ee3e80aee88ea14ded7d3714aa9a0e5d0",
+  "features": 2941,
+  "ct3": 586,
+  "feature_rules": {
+    "explicit-source-outcome": 462,
+    "contextual-responsibility-1": 233,
+    "contextual-responsibility-2": 88,
+    "contextual-responsibility-3": 239,
+    "contextual-responsibility-4": 89,
+    "contextual-responsibility-5": 88,
+    "contextual-responsibility-6": 141,
+    "contextual-responsibility-7": 106,
+    "contextual-responsibility-8": 354,
+    "contextual-responsibility-9": 136,
+    "retained-outcome": 911,
+    "contextual-responsibility-10": 39,
+    "Revision-2-XD": 55
+  },
+  "result_workbook": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/Harmonia_1.1.20_Pass3_012_XD_Adjudication_Workbook.xlsx",
+  "result_workbook_sha256": "0500831703b2d5a3b7698caaddc7efebb8482c4934f228a9a3868b239a50cb75"
+}

@@ -1,0 +1,43 @@
+{
+  "outcome": "PASS",
+  "standing": "Unreleased verification candidate; Solution Architect visual acceptance pending",
+  "output": "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/Harmonia-Subjects-Views-reconciled-unreleased.xml",
+  "sha256": "85d22db1f6749b9edd712a51599bf20ca854953d76ecbff7bde25fb56a9bd732",
+  "elements": 1994,
+  "relationships": 2235,
+  "views": 1285,
+  "viewFoldersIncludingRoot": 1183,
+  "emptyFolders": 42,
+  "originalCanonicalIdentitiesPreserved": 1989,
+  "originalRelationshipsPreserved": 2235,
+  "approvedElementsRepresented": 5,
+  "stakeholderEvolution": "Two new distinct successors; combined UUID/Exchange ID/definition/references retained as superseded history",
+  "priorGroupingIdentitiesAnd211PairsPreserved": true,
+  "previousMissingNodeReferencesResolved": 127,
+  "remainingMissingReferences": 0,
+  "viewGeometryMembershipConnectionsStyles": "Exact parsed View subtree after documented Property definition rebindings",
+  "viewOrganisation": "Exact authored tree after approved folder dispositions and spelling corrections",
+  "viewReferences": {
+    "elementRef": 4350,
+    "relationshipRef": 1804,
+    "propertyDefinitionRef": 68
+  },
+  "offlineXsd": "PASS",
+  "typedExchangeReferences": "PASS",
+  "canonicalSchema": "PASS",
+  "containment": "PASS",
+  "protectedInputsUnchanged": 250,
+  "manifest": {
+    "status": "PASS",
+    "manifest": "enterprise-architecture/continuum/MANIFEST.md",
+    "check": false,
+    "sha256": "4f7d51f130056171a587501056c455fdfbf333edff446a0c866b54b79962d43e"
+  },
+  "actualArchiImportExport": "NOT_PERFORMED",
+  "visualAcceptance": "PENDING",
+  "releaseTransition": false,
+  "protectedPublicationChanged": false,
+  "closure": false,
+  "commit": false,
+  "push": false
+}

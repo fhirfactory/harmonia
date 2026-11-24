@@ -10,7 +10,18 @@ Enable the target-state Provider Directory to support the capability described b
 - **Source Scope:** Additional Source Requirements – SR-26 to SR-58
 - **Primary Actor:** Provider Directory Administrator
 - **Supporting Actors:** Data Steward; Compliance Officer; Provider Directory
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/de1748cef6ff475b8db07330f11cc299.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As a Provider Directory Administrator, I want to manage versioning for reference data sets, so that data governance requirements are met.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-32 – Validate Provider Data Quality: supports validation, data-quality and remediation controls.
 
 ## Requirements

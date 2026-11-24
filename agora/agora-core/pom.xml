@@ -24,74 +24,13 @@
     <parent>
         <groupId>net.fhirfactory.harmonia</groupId>
         <artifactId>agora</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>agora-core</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Harmonia :: Agora :: Core</name>
     <description>Agora core domain logic, Mnemosyne JPA persistence, and Petasos messaging integration</description>
-
-    <dependencies>
-        <!-- Agora Modules -->
-        <dependency>
-            <groupId>net.fhirfactory.harmonia</groupId>
-            <artifactId>agora-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>net.fhirfactory.harmonia</groupId>
-            <artifactId>agora-matrix</artifactId>
-        </dependency>
-
-        <!-- Harmonia Platform Dependencies -->
-        <dependency>
-            <groupId>net.fhirfactory.harmonia</groupId>
-            <artifactId>themis-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>net.fhirfactory.harmonia</groupId>
-            <artifactId>themis-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>net.fhirfactory.harmonia</groupId>
-            <artifactId>petasos-api</artifactId>
-        </dependency>
-
-        <!-- Spring Data JPA & Persistence -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- Jackson Databind -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
-
-        <!-- Logging -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-
-        <!-- Testing Dependencies -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 </project>

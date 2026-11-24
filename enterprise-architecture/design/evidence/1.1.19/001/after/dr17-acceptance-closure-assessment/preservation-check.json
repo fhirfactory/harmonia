@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "acceptedCandidateHashUnchanged": true,
+  "canonicalSourceAndExistingContractsToolingUnchanged": 2065,
+  "priorEvidenceUnchanged": 209,
+  "protectedPublicationsUnchanged": 234,
+  "dr1Through16RowsAndNarrativesUnchanged": true,
+  "priorDr17HistoryPreserved": true,
+  "boundedMinutiaeControlUnchanged": true,
+  "releaseUnchanged": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "hcrlRemainsPending": true,
+  "completedRegisterNotCreated": true,
+  "gitOperationsPerformed": 0,
+  "soleExistingFileModified": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md",
+  "newRecords": [
+    "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dr17-acceptance-closure-assessment.md",
+    "enterprise-architecture/design/evidence/1.1.19/001/before/dr17-acceptance-closure-assessment",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/dr17-acceptance-closure-assessment",
+    "enterprise-architecture/design/evidence/1.1.19/001/after/ai-agent-reports/20261102T230333Z-dr17-acceptance-closure-readiness.md"
+  ],
+  "limit": "Filesystem hashes and record preservation only; Git state not queried and architectural acceptance comes from the issued Solution Architect Task."
+}

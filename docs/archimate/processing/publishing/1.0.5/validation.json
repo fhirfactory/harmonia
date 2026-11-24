@@ -1,0 +1,204 @@
+{
+  "status": "PASS",
+  "task": "1.0.5A",
+  "architecture_release": {
+    "version": "1.0.5",
+    "previous_version": "1.0.4"
+  },
+  "counts": {
+    "elements": 1165,
+    "relationships": 823,
+    "views": 984,
+    "element_types": {
+      "Capability": 841,
+      "BusinessFunction": 160,
+      "BusinessProcess": 20,
+      "BusinessService": 139,
+      "Principle": 5
+    },
+    "relationship_types": {
+      "Composition": 670,
+      "Realization": 153
+    }
+  },
+  "snapshot_records": 946,
+  "retained_elements": 228,
+  "retained_relationships": 189,
+  "retained_views": 219,
+  "retained_bindings": 14,
+  "persistent_identities_allocated": 0,
+  "new_representation_elements": 937,
+  "recovered_record_types": {
+    "capability": 421,
+    "feature": 178,
+    "function": 160,
+    "service": 139,
+    "process": 20,
+    "enterprise_capability": 28
+  },
+  "record_statuses": {
+    "Canonical": 716,
+    "Candidate": 3,
+    "Proposed": 227
+  },
+  "record_states": {
+    "current": 845,
+    "superseded": 32,
+    "pending_adjudication": 69
+  },
+  "native_relationship_statuses": {
+    "established": 297,
+    "Proposed": 337
+  },
+  "native_relationship_currentness": {
+    "current": 513,
+    "preserved historical assertion": 121
+  },
+  "deferred_relationships": 462,
+  "source_relationships": 1096,
+  "documentation": {
+    "snapshot_record_documentation": 946,
+    "principle_documentation": 5,
+    "definitions_available": 929,
+    "definition_gaps": 17,
+    "complete_snapshot_record_properties": 946,
+    "source_evidence_views": 30
+  },
+  "care_access_regression": {
+    "context": "id-e978dad02c4156938c03ac4b2d34e0c0",
+    "children": [
+      {
+        "name": "Care Access Management",
+        "status": "Canonical",
+        "identifier": "id-3ffe8db4705855b587349b8bf949f469",
+        "children": [
+          {
+            "name": "Care Intake Management",
+            "status": "Canonical",
+            "placement_status": "Established"
+          },
+          {
+            "name": "Care Referral Management",
+            "status": "Canonical",
+            "placement_status": "Established"
+          },
+          {
+            "name": "Care Eligibility Determination",
+            "status": "Canonical",
+            "placement_status": "Established"
+          }
+        ]
+      },
+      {
+        "name": "Care Scheduling & Capacity Management",
+        "status": "Canonical",
+        "identifier": "id-d7535b3161b65b9090c0af102f90b0d5",
+        "children": [
+          {
+            "name": "Care Appointment Management",
+            "status": "Canonical",
+            "placement_status": "Established"
+          },
+          {
+            "name": "Care-Place Allocation",
+            "status": "Canonical",
+            "placement_status": "Established"
+          },
+          {
+            "name": "Care-Place Readiness Management",
+            "status": "Canonical",
+            "placement_status": "Established"
+          },
+          {
+            "name": "Care Resource Deployment",
+            "status": "Canonical",
+            "placement_status": "Established"
+          },
+          {
+            "name": "Operational Care Flow Coordination",
+            "status": "Canonical",
+            "placement_status": "Established"
+          },
+          {
+            "name": "Operational Care Capacity Management",
+            "status": "Canonical",
+            "placement_status": "Established"
+          }
+        ]
+      },
+      {
+        "name": "Care Coordination & Transition",
+        "status": "Canonical",
+        "identifier": "id-76f2314e316c589083817b8d38b9f3ea",
+        "children": [
+          {
+            "name": "Care-Team Coordination",
+            "status": "Canonical",
+            "placement_status": "Established"
+          },
+          {
+            "name": "Care Responsibility Transition",
+            "status": "Canonical",
+            "placement_status": "Established"
+          },
+          {
+            "name": "Care Discharge Coordination",
+            "status": "Canonical",
+            "placement_status": "Established"
+          }
+        ]
+      },
+      {
+        "name": "Care Support Logistics Management",
+        "status": "Canonical",
+        "identifier": "id-645223e49d535a3ab69d95f865826bf7",
+        "children": [
+          {
+            "name": "Patient Movement Coordination",
+            "status": "Canonical",
+            "placement_status": "Established"
+          },
+          {
+            "name": "Clinical Material Logistics Coordination",
+            "status": "Canonical",
+            "placement_status": "Established"
+          },
+          {
+            "name": "Care Support Work Coordination",
+            "status": "Canonical",
+            "placement_status": "Established"
+          }
+        ]
+      },
+      {
+        "name": "Service Delivery Preparedness Management",
+        "status": "Proposed",
+        "identifier": "id-5abfc42605a55d9da4808dc3b3688708",
+        "children": [
+          {
+            "name": "Health Service Operational Readiness",
+            "status": "Candidate",
+            "placement_status": "Proposed"
+          }
+        ]
+      }
+    ]
+  },
+  "output_sha256": "f85be36ff6edb3c6491dd526c42d4207db9214154da437941b709de34dc106a1",
+  "source_manifest_sha256": "5d61ff920d12617d8fe994a0f052b431def5e5819439f573c92b48543bd006a9",
+  "checks": {
+    "archi_5_9_xsd": "PASS",
+    "unique_ids_and_references": "PASS",
+    "existing_semantics_and_bindings_preserved": "PASS",
+    "existing_219_views_and_visual_ids_preserved": "PASS",
+    "source_based_navigation_and_exactly_one_home": "PASS",
+    "snapshot_identity_locks_preserved": "PASS",
+    "no_persistent_identity_allocation": "PASS",
+    "explicit_relationship_accounting": "PASS",
+    "documentation_and_metadata": "PASS",
+    "source_status_and_currentness_preserved": "PASS",
+    "care_access_regression": "PASS",
+    "snapshot_fingerprints_and_no_current_rad_semantic_input": "PASS",
+    "deterministic_regeneration": "PASS"
+  }
+}

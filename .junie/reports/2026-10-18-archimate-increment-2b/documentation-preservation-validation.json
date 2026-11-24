@@ -1,0 +1,452 @@
+{
+  "status": "PASS",
+  "architecture_release": {
+    "version": "1.0.10",
+    "previous_version": "1.0.9"
+  },
+  "documents_checked": [
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+    "docs/markdown/governance/canonical-identity-and-naming.md",
+    "docs/markdown/governance/archi-navigation-and-view-convention.md",
+    "docs/markdown/governance/archimate-ingestion-change-review.md",
+    "docs/markdown/governance/README.md",
+    ".junie/reports/2026-10-18-archimate-increment-2b.md"
+  ],
+  "local_links_and_anchors_checked": 89,
+  "preservation": {
+    "existing_files_checked": 2939,
+    "unchanged": 2933,
+    "expected_changes": [
+      "architecture-release.json",
+      "docs/markdown/governance/README.md",
+      "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "docs/markdown/governance/baseline/correspondence.json",
+      "docs/markdown/governance/canonical-identity-and-naming.md"
+    ],
+    "unexpected_changes": [],
+    "missing_files": [],
+    "unexpected_new_files": [],
+    "blind_inputs_evidence_and_semantic_models_unchanged": true
+  },
+  "generation": {
+    "xml_release_value_only": true,
+    "baseline_sha256": "504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a",
+    "independent_xml_sha256": "fa14ea869ce00dc17b3f260ec725e04ff168b26f1d9d886f8dcf738419adc2c6",
+    "markdown": [
+      {
+        "path": "docs/markdown/governance/baseline/business-capabilities.md",
+        "identical": true,
+        "sha256": "2138e8c9e2dbe51c24efc486818c1ffda31f788e4aa4a1a33bd0133eb8bde144"
+      },
+      {
+        "path": "docs/markdown/governance/baseline/business-enabling-capabilities.md",
+        "identical": true,
+        "sha256": "6fd534ce5e80a2833e59c09b0d626f2437f0cc618d139b6bf068cc83ad3965a1"
+      },
+      {
+        "path": "docs/markdown/governance/baseline/discrepancies.json",
+        "identical": true,
+        "sha256": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa"
+      },
+      {
+        "path": "docs/markdown/governance/baseline/enterprise-capabilities.md",
+        "identical": true,
+        "sha256": "3dc4c8bb2635a93f309833c553e233b21e839352a39236efa4988c604c65330d"
+      },
+      {
+        "path": "docs/markdown/governance/baseline/features.md",
+        "identical": true,
+        "sha256": "5b04105715110d0d533fc62fd91b4e01d95925ffc0e72cce18644faa69f48dfa"
+      },
+      {
+        "path": "docs/markdown/governance/baseline/functions.md",
+        "identical": true,
+        "sha256": "050d9e43504357ff9f16c8c59ceca8014bd91f8e5037a5d9cac30982c219353e"
+      },
+      {
+        "path": "docs/markdown/governance/baseline/motivation.md",
+        "identical": true,
+        "sha256": "32ea35fa97479685147271535405a972f6d78b3cddf2b6ea012e0f28aa87fa76"
+      },
+      {
+        "path": "docs/markdown/governance/baseline/processes.md",
+        "identical": true,
+        "sha256": "9c00a738fb7cf2ff9258c45744b7609342f84e1954d928afd6d58aca45677bef"
+      },
+      {
+        "path": "docs/markdown/governance/baseline/relationships.md",
+        "identical": true,
+        "sha256": "c8eec0778bbd415dc2b0ccaf3ea9f6308df3b743fc275145c511245d0745d96c"
+      },
+      {
+        "path": "docs/markdown/governance/baseline/services.md",
+        "identical": true,
+        "sha256": "456c1415c7774896510084bc74bd8ee43ca3aed0b0fa2f8c0abc192a38e4fb59"
+      }
+    ],
+    "repository_exchange_publication_written": false,
+    "limitations": "Preservation-only reproduction of existing publisher; not 2B Name or Containment View conformance."
+  },
+  "name_displayName_findings": 841,
+  "focused_whitespace_exit_code": 0,
+  "errors": [],
+  "links": [
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "archimate-ingestion-change-review.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "architectural-axioms.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "architectural-axioms.md#ax-04"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "architectural-axioms.md#ax-14"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "architectural-axioms.md#ax-15"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "architectural-axioms.md#ax-17"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "canonical-identity-and-naming.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "rad-archimate-model-mapping.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "archi-navigation-and-view-convention.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "architecture-release-policy.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "archimate-ingestion-change-review.md#solution-architect-dispositions"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "canonical-identity-and-naming.md#three-governed-names"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "canonical-identity-and-naming.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "rad-archimate-model-mapping.md#5-relationship-profile-and-direction"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "archi-navigation-and-view-convention.md#relationship-homes-follow-the-source"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "archi-navigation-and-view-convention.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-publication-semantics.md",
+      "target": "archimate-ingestion-change-review.md#architectural-questions-and-separate-interpretations"
+    },
+    {
+      "document": "docs/markdown/governance/canonical-identity-and-naming.md",
+      "target": "archimate-ingestion-publication-semantics.md#recognition-classification-and-published-names"
+    },
+    {
+      "document": "docs/markdown/governance/canonical-identity-and-naming.md",
+      "target": "archimate-ingestion-publication-semantics.md#author-supplied-information-and-machine-governed-metadata"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "../../../architecture-release.json"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "architecture-release-policy.md"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "architectural-axioms.md"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "rad-archimate-model-mapping.md"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "architecture-identity/model.md"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "../04-information-architecture/traceability/domain03-traceability.md#11-traceability-principles"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "archimate-ingestion-publication-semantics.md"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "archimate-ingestion-publication-semantics.md#deterministic-containment-view"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "canonical-identity-and-naming.md"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "baseline/documentation-classification.json"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "../../archimate/README.md"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "baseline/README.md"
+    },
+    {
+      "document": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+      "target": "architecture-identity/adoption-1.0.3.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "architectural-axioms.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "../../../AGENTS.md#1-architectural-authority"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "architectural-axioms.md#ax-04"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "architectural-axioms.md#ax-14"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "architectural-axioms.md#ax-15"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "architectural-axioms.md#ax-17"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "canonical-identity-and-naming.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "archi-navigation-and-view-convention.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "rad-archimate-model-mapping.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "architecture-release-policy.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "templates/archimate-ingestion-change-review-template.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "archimate-ingestion-publication-semantics.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "archi-navigation-and-view-convention.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "canonical-identity-and-naming.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "../../archimate/processing/ingestion/README.md#run-layout"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "templates/archimate-ingestion-change-review-template.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "../../../.junie/reports/2026-10-18-archimate-increment-2-blind-analysis-1.0.8.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "../../../.junie/reports/2026-10-18-archimate-increment-2-updated-blind-analysis-1.0.8.md"
+    },
+    {
+      "document": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "target": "../../../.junie/reports/2026-10-18-archimate-increment-2-third-blind-analysis-1.0.8.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "architectural-axioms.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "../../../AGENTS.md#12-rads-and-legacy-documentation-governance"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "../architecture-completion-plan.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "architecture-release-policy.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "../../../architecture-release.json"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "rad-archimate-model-mapping.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "rad-archimate-mapping-catalogue.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "rad-archimate-coverage-assessment.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "rad-archimate-publication-plan.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "archimate-ingestion-change-review.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "templates/archimate-ingestion-change-review-template.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "archimate-ingestion-publication-semantics.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "architecture-identity/model.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "architecture-identity/inventory.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "architecture-identity/registry.schema.json"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "architecture-identity/adoption-1.0.3.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "architecture-identity/release-report.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "archi-navigation-and-view-convention.md"
+    },
+    {
+      "document": "docs/markdown/governance/README.md",
+      "target": "../../archimate/processing/publishing/1.0.4/navigation-release-report.md"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "../../docs/markdown/governance/archimate-ingestion-publication-semantics.md"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "../../docs/markdown/governance/canonical-identity-and-naming.md"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "../../docs/markdown/governance/archi-navigation-and-view-convention.md"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "../../docs/markdown/governance/archimate-ingestion-change-review.md#semantic-relationships-navigation-and-views"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "../../docs/markdown/governance/README.md"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "../../docs/markdown/governance/baseline/correspondence.json"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "2026-10-18-archimate-increment-2b/authority-pin-changes.json"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "../../architecture-release.json"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "2026-10-18-archimate-increment-2b/"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "2026-10-18-archimate-increment-2b/name-displayname-conformance.json"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "2026-10-18-archimate-increment-2b/architecture-tests.log"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "2026-10-18-archimate-increment-2b/release-identity-tests.log"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "2026-10-18-archimate-increment-2b/release-check.log"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "2026-10-18-archimate-increment-2b/rads-validation.log"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "2026-10-18-archimate-increment-2b/metadata-validation.log"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "2026-10-18-archimate-increment-2b/independent-generation.log"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "2026-10-18-archimate-increment-2b/independent-generation-validation.json"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "2026-10-18-archimate-increment-2b/documentation-preservation-validation.json"
+    },
+    {
+      "document": ".junie/reports/2026-10-18-archimate-increment-2b.md",
+      "target": "2026-10-18-archimate-increment-2b/documentation-preservation-initial.json"
+    }
+  ]
+}

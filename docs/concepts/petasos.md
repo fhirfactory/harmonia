@@ -1,6 +1,23 @@
 # Concept: Petasos `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C10 — shared persistent messaging and handoff](../markdown/05-information-systems-architecture/component-register.md#c10)
+- [Persistent handoff without information ownership](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#persistent-handoff)
+
+```text
+---------------------------------------------------------
+```
+
 Petasos is Harmonia's high-availability messaging and event transport framework, providing guaranteed, fault-tolerant message delivery while isolating upper application tiers from underlying broker implementations.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -62,6 +79,18 @@ Petasos separates abstract message passing from physical broker connectivity acr
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C10 — shared persistent messaging and handoff](../markdown/05-information-systems-architecture/component-register.md#c10)
+- [Persistent handoff without information ownership](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#persistent-handoff)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Petasos Owns
 - Pure transport interfaces (`Petasos`, `PetasosProducer`, `PetasosConsumer`, `PetasosDestination`).
 - Transport envelope models (`PetasosMessage`) and wire serialization.
@@ -70,10 +99,31 @@ Petasos separates abstract message passing from physical broker connectivity acr
 - Dead-Letter Queue (DLQ) routing policies and redelivery limit enforcement.
 - Broker metrics collection (`PetasosMetrics`).
 
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ### What Petasos Explicitly Does NOT Own (Anti-Responsibilities)
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C10 — Petasos exclusions](../markdown/05-information-systems-architecture/component-register.md#c10)
+- [Internal messaging responsibility](../markdown/05-information-systems-architecture/middleware.md)
+
+```text
+---------------------------------------------------------
+```
+
 - Clinical payload parsing or validation (payloads are treated as opaque binary `byte[]` or strings).
 - Relational clinical persistence (owned by Mnemosyne).
 - Task sequence state transitions or workflow rules (owned by Energeia).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 - External network protocol listeners like MLLP (owned by Pylai).
 
 ---

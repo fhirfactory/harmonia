@@ -1,0 +1,2627 @@
+{
+  "status": "PASS",
+  "elements": 1602,
+  "relationships": 1651,
+  "qualifiedSourcePredicates": 462,
+  "canonicalIdentities": 1602,
+  "representationIdentities": 1602,
+  "provenanceCoverage": 1602,
+  "sourceBindings": 3421,
+  "supportedNativeTypes": 60,
+  "navigation": "PASS",
+  "counts": [
+    {
+      "type": "ApplicationCollaboration",
+      "specialization": "",
+      "standing": "Candidate — accepted Step-B baseline; final Solution Architecture unapproved",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "ApplicationComponent",
+      "specialization": "",
+      "standing": "Candidate — accepted Step-B baseline; final Solution Architecture unapproved",
+      "currentness": "current",
+      "count": 24
+    },
+    {
+      "type": "ApplicationFunction",
+      "specialization": "",
+      "standing": "Candidate — accepted Step-B baseline; final Solution Architecture unapproved",
+      "currentness": "current",
+      "count": 2
+    },
+    {
+      "type": "ApplicationInterface",
+      "specialization": "",
+      "standing": "Candidate — accepted Step-B baseline; final Solution Architecture unapproved",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "ApplicationInterface",
+      "specialization": "",
+      "standing": "Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "ApplicationService",
+      "specialization": "",
+      "standing": "Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved",
+      "currentness": "current",
+      "count": 5
+    },
+    {
+      "type": "Assessment",
+      "specialization": "",
+      "standing": "Agreed",
+      "currentness": "current",
+      "count": 5
+    },
+    {
+      "type": "BusinessCollaboration",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "current",
+      "count": 7
+    },
+    {
+      "type": "BusinessFunction",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "current",
+      "count": 137
+    },
+    {
+      "type": "BusinessFunction",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "count": 10
+    },
+    {
+      "type": "BusinessFunction",
+      "specialization": "",
+      "standing": "Proposed",
+      "currentness": "current",
+      "count": 5
+    },
+    {
+      "type": "BusinessFunction",
+      "specialization": "",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "count": 8
+    },
+    {
+      "type": "BusinessInteraction",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "current",
+      "count": 69
+    },
+    {
+      "type": "BusinessObject",
+      "specialization": "",
+      "standing": "Adjudicated conceptual IA extension, 2026-10-13; no application manager.",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "BusinessObject",
+      "specialization": "",
+      "standing": "Adjudicated conceptual managed metadata collection; Search Result Metadata-Set is the same concept, not an additional element.",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "BusinessObject",
+      "specialization": "",
+      "standing": "Canonical conceptual information definition",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "BusinessObject",
+      "specialization": "",
+      "standing": "Established Package1 conceptual information meaning; residual qualifications in selected section remain unchanged.",
+      "currentness": "current",
+      "count": 9
+    },
+    {
+      "type": "BusinessObject",
+      "specialization": "",
+      "standing": "Established conceptual governed management boundary; no downstream schema or representation mapping.",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "BusinessProcess",
+      "specialization": "",
+      "standing": "Accepted bounded reconciliation",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "BusinessProcess",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "current",
+      "count": 13
+    },
+    {
+      "type": "BusinessProcess",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "count": 6
+    },
+    {
+      "type": "BusinessProcess",
+      "specialization": "",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "count": 1
+    },
+    {
+      "type": "BusinessRole",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "current",
+      "count": 34
+    },
+    {
+      "type": "BusinessService",
+      "specialization": "",
+      "standing": "Accepted bounded reconciliation",
+      "currentness": "current",
+      "count": 3
+    },
+    {
+      "type": "BusinessService",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "current",
+      "count": 124
+    },
+    {
+      "type": "BusinessService",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "count": 9
+    },
+    {
+      "type": "BusinessService",
+      "specialization": "",
+      "standing": "Proposed",
+      "currentness": "current",
+      "count": 3
+    },
+    {
+      "type": "BusinessService",
+      "specialization": "",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "count": 3
+    },
+    {
+      "type": "Capability",
+      "specialization": "",
+      "standing": "Candidate",
+      "currentness": "current",
+      "count": 3
+    },
+    {
+      "type": "Capability",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "current",
+      "count": 275
+    },
+    {
+      "type": "Capability",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "count": 4
+    },
+    {
+      "type": "Capability",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "superseded",
+      "count": 1
+    },
+    {
+      "type": "Capability",
+      "specialization": "",
+      "standing": "Proposed",
+      "currentness": "current",
+      "count": 128
+    },
+    {
+      "type": "Capability",
+      "specialization": "",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "count": 7
+    },
+    {
+      "type": "Capability",
+      "specialization": "",
+      "standing": "Proposed",
+      "currentness": "superseded",
+      "count": 31
+    },
+    {
+      "type": "Capability",
+      "specialization": "",
+      "standing": "Superseded historical identity — direct correspondence",
+      "currentness": "superseded",
+      "count": 209
+    },
+    {
+      "type": "Capability",
+      "specialization": "",
+      "standing": "Superseded historical identity — evolved correspondence",
+      "currentness": "superseded",
+      "count": 5
+    },
+    {
+      "type": "Capability",
+      "specialization": "Feature",
+      "standing": "Accepted bounded reconciliation",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "Capability",
+      "specialization": "Feature",
+      "standing": "Canonical",
+      "currentness": "current",
+      "count": 130
+    },
+    {
+      "type": "Capability",
+      "specialization": "Feature",
+      "standing": "Canonical",
+      "currentness": "pending_adjudication",
+      "count": 7
+    },
+    {
+      "type": "Capability",
+      "specialization": "Feature",
+      "standing": "Proposed",
+      "currentness": "current",
+      "count": 27
+    },
+    {
+      "type": "Capability",
+      "specialization": "Feature",
+      "standing": "Proposed",
+      "currentness": "pending_adjudication",
+      "count": 14
+    },
+    {
+      "type": "Constraint",
+      "specialization": "",
+      "standing": "Accepted",
+      "currentness": "current",
+      "count": 3
+    },
+    {
+      "type": "Constraint",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U02/U06/U19; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 3
+    },
+    {
+      "type": "Constraint",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U05/U09/U18; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "Constraint",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U06/U09/U19; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 2
+    },
+    {
+      "type": "Constraint",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U07/U15; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 4
+    },
+    {
+      "type": "Constraint",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U08/U12/U15; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 4
+    },
+    {
+      "type": "Constraint",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U09; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 2
+    },
+    {
+      "type": "Constraint",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U10/U18; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 4
+    },
+    {
+      "type": "Constraint",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U11; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 3
+    },
+    {
+      "type": "Constraint",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U12/U15/U16; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 6
+    },
+    {
+      "type": "Constraint",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U13/U15; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 3
+    },
+    {
+      "type": "Constraint",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U14/U15; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "CourseOfAction",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "current",
+      "count": 6
+    },
+    {
+      "type": "CourseOfAction",
+      "specialization": "ImplementationGuideline",
+      "standing": "Adjudicated Domain05 direction — U12/U15/U16; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "DataObject",
+      "specialization": "",
+      "standing": "Bounded adjudicated application information meaning; Domain05 remains the accepted candidate Step-B baseline, not final Solution Architecture. Detailed representation is deferred; only this defined logical object is projected.",
+      "currentness": "current",
+      "count": 4
+    },
+    {
+      "type": "DataObject",
+      "specialization": "",
+      "standing": "Candidate — accepted Step-B baseline; final Solution Architecture unapproved",
+      "currentness": "current",
+      "count": 2
+    },
+    {
+      "type": "DataObject",
+      "specialization": "",
+      "standing": "Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved",
+      "currentness": "current",
+      "count": 5
+    },
+    {
+      "type": "DataObject",
+      "specialization": "Topic",
+      "standing": "Accepted bounded reconciliation",
+      "currentness": "current",
+      "count": 32
+    },
+    {
+      "type": "DataObject",
+      "specialization": "Topic",
+      "standing": "Bounded adjudicated conceptual Task meaning; section 5 reservations, including runtime TaskOutcome identity/lifecycle, remain unresolved.",
+      "currentness": "current",
+      "count": 4
+    },
+    {
+      "type": "DataObject",
+      "specialization": "Topic",
+      "standing": "Established Package1 conceptual information meaning; residual qualifications in selected section remain unchanged.",
+      "currentness": "current",
+      "count": 29
+    },
+    {
+      "type": "DataObject",
+      "specialization": "Topic",
+      "standing": "Explicitly APPROVED G2 decision only; G2 remains candidate/open and all residual qualifications remain unresolved.",
+      "currentness": "current",
+      "count": 3
+    },
+    {
+      "type": "DataObject",
+      "specialization": "Topic",
+      "standing": "Explicitly APPROVED G2-D04; no promotion of Referral family/package or independent Referral Disposition.",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "DataObject",
+      "specialization": "Topic",
+      "standing": "G2-D04 explicitly retains significant historical progression information; historical describes represented occurrences, not historical architectural standing.",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "Driver",
+      "specialization": "",
+      "standing": "Agreed",
+      "currentness": "current",
+      "count": 7
+    },
+    {
+      "type": "Driver",
+      "specialization": "",
+      "standing": "Historical — current applicability unresolved",
+      "currentness": "historical_reference",
+      "count": 3
+    },
+    {
+      "type": "Goal",
+      "specialization": "",
+      "standing": "Agreed",
+      "currentness": "current",
+      "count": 6
+    },
+    {
+      "type": "Goal",
+      "specialization": "",
+      "standing": "Historical — current applicability unresolved",
+      "currentness": "historical_reference",
+      "count": 3
+    },
+    {
+      "type": "Outcome",
+      "specialization": "",
+      "standing": "Agreed",
+      "currentness": "current",
+      "count": 3
+    },
+    {
+      "type": "Principle",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "current",
+      "count": 18
+    },
+    {
+      "type": "Principle",
+      "specialization": "",
+      "standing": "Historical / Reclassified",
+      "currentness": "historical_reference",
+      "count": 3
+    },
+    {
+      "type": "Principle",
+      "specialization": "",
+      "standing": "Historical / Reclassified — Domain06",
+      "currentness": "historical_reference",
+      "count": 1
+    },
+    {
+      "type": "Principle",
+      "specialization": "",
+      "standing": "Historical — current applicability unresolved",
+      "currentness": "historical_reference",
+      "count": 2
+    },
+    {
+      "type": "Principle",
+      "specialization": "",
+      "standing": "Retired / Superseded",
+      "currentness": "historical_reference",
+      "count": 1
+    },
+    {
+      "type": "Product",
+      "specialization": "",
+      "standing": "Accepted bounded reconciliation",
+      "currentness": "current",
+      "count": 4
+    },
+    {
+      "type": "Requirement",
+      "specialization": "",
+      "standing": "APPROVED",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "Requirement",
+      "specialization": "",
+      "standing": "Accepted",
+      "currentness": "current",
+      "count": 4
+    },
+    {
+      "type": "Requirement",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U02/U06/U19; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "Requirement",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U04/U06/U14/U18; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "Requirement",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U07/U15; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 2
+    },
+    {
+      "type": "Requirement",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U10/U18; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "Requirement",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U11; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "Requirement",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U12/U15/U16; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 2
+    },
+    {
+      "type": "Requirement",
+      "specialization": "",
+      "standing": "Adjudicated Domain05 direction — U13/U15; holistic result acceptance pending",
+      "currentness": "current",
+      "count": 1
+    },
+    {
+      "type": "Requirement",
+      "specialization": "",
+      "standing": "Historical / Reclassified — Domain04/06",
+      "currentness": "historical_reference",
+      "count": 1
+    },
+    {
+      "type": "Requirement",
+      "specialization": "",
+      "standing": "Historical — current applicability unresolved",
+      "currentness": "historical_reference",
+      "count": 1
+    },
+    {
+      "type": "Requirement",
+      "specialization": "",
+      "standing": "Historical — current owning-domain standing not inferred",
+      "currentness": "historical_reference",
+      "count": 67
+    },
+    {
+      "type": "Resource",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "current",
+      "count": 3
+    },
+    {
+      "type": "Stakeholder",
+      "specialization": "",
+      "standing": "Agreed",
+      "currentness": "current",
+      "count": 6
+    },
+    {
+      "type": "Stakeholder",
+      "specialization": "",
+      "standing": "Historical — current applicability unresolved",
+      "currentness": "historical_reference",
+      "count": 4
+    },
+    {
+      "type": "ValueStream",
+      "specialization": "",
+      "standing": "Canonical",
+      "currentness": "current",
+      "count": 4
+    }
+  ],
+  "unresolvedProperties": [
+    {
+      "canonicalId": "9305dc8d55b34b70950190e28b5464cf",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationCollaboration is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "195e5f10db8e419391354197b5d7a8cc",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "1af8a56358f7429fabfb57be66542a99",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "307b3440a507403f8bc214d290bffb6a",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "33b8421ffc444b78b2d059201a58a688",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "34d7c844da3344a09e96ad821ff9fcea",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "369907025d06492bb414a72cea834a77",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "37b82d161c5640298e951acc361b338a",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "3f64d339648246e99e8866c8089f8960",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "466ad8f75a954c0581b5bba090443849",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "49c9eb2bef0c47b8b5328621d5fc5479",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "53bf6815c7a54ed0abde9b1aad311843",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "75e77d8dfd1d4870aa6151485d28d1dd",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "899d34ec491948b68aad09e507dea6d1",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "8fe50975372b4d399a4bcb9f3d9348f7",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "a26f06d66bec4981b266e202c46a9afb",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "b521762c1ea444b48cd5f66be3752d30",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "d1c4053e68384080b8eb79d2008632ba",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "d739c75dffe2453081735710b285f03b",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "e3e4147fea3640198dc251ed41ee854d",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "e927c1af96c64fcd979be659bee2cbe3",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "fb3f37a6ac614415ac486a6de9d35994",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "feea742463b84021b66853d287d8916f",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "fefda110e2274884ad58906733606efd",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationComponent is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "a6580e0b9f0f40c9a33d731d20110057",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationFunction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "ab0cdaa7ed4149ee856216efa5a265c4",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationFunction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "49c52c0466bc4760a11e0ca6fe8142c0",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationInterface is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "800789f54ba24f53a354600d5cd43f6f",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationInterface is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "02bf54d699b44ed0b26fa5b8125f0f01",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationService is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "1ccfe420541945bb9c0756a949799d95",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationService is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "24d4fc42d9524d53a747f0550833f1a4",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationService is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "410f2f55bbda481b973c6c67b924f0be",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationService is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "43b79574792443faa57daa76b9a47a19",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ApplicationService is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "008f622bf9ce4d40b8a85024748bd485",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native DataObject is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "0f961462340348b290fd844357d54d67",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native DataObject is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "359b901df27f4b43b5a2ff14a8484e34",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native DataObject is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "7e10287b7e634bce8aa2481eb481bb76",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native DataObject is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "90c3f7e03448452baec5c425c34fd77a",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native DataObject is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "b5be4886ec77466e860209443a03771b",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native DataObject is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "bad6431f87bd4bf59645c0962cc219a7",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native DataObject is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "05cb06fbfc3d4b119f067f5699f67efa",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessCollaboration is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "20f31ce141f947af8700fe7f41d695f6",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessCollaboration is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "232a2bc1e9604266b042ebf448e2297c",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessCollaboration is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "aeca28004a834fb1acbbf6946ab84a33",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessCollaboration is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "db39b636a6904a50a9225c98b30bc5a9",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessCollaboration is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "f558b3e0948a409a87b26989156063dc",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessCollaboration is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "f748b6d3b83c4591a721f773a3f372be",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessCollaboration is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "05bf8e557ce14f0eb1c869d07c5a93ca",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "06dbfdb6b8a84bd29f67ca955ba23006",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "126276873bde4105a08e21bb3187f5b3",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "1508d1e33b264534bbcde367eb3dc6a3",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "1a56f778873a4094b5a0f84cae842d35",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "1ce0ba25408c47f9bd82953fba605c40",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "29f2a74c8234411c9ac15458e66ca4bc",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "2c7ca48559fb4a72b4d9c250df4015ce",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "31e03beac32946a09985ad52e0f9cce4",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "332cdc30ae0346c6b86233db71caf683",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "3697066c0d634076be5a8d745e3fdd91",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "397a4200bb894479a54a03dc84451efb",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "3d3459edfa884ef0abdcfd3772b538e4",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "3f1db661c97b4fa692e3d70278a40226",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "40105b22c930413692cc64826d3ad32f",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "44d71c390a8f435cbb596601e627bdfa",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "45bf28eb44e64554b568db48a30ac43c",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "47536a5d81aa4d8eb2d13054b864d1bf",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "47b9abea0964451eb0fa419b464b4505",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "480556d544ad4dc18f6945f213044e9b",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "4d34b3705cb0405a910ddcacfdd6b6d3",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "64d7dfac2f5f4b61998df127b44c0521",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "6b606df4675f48b3baba03f4b2ca7602",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "6bad04918445465cb350c3252af73377",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "6bc0e6df5ba3405a9037e34f9810aefc",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "6fb6f66531874c2d983071a04b5934c2",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "73b6d1ab8ecc48c4bdea98f013288c9c",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "773133f23f7540eb9b90d39ca872aebd",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "7a2b6e8802e24e018af89f265271f5ca",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "7cb1eb055be44eefb7092356510acc77",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "8479c1d4b2304d9dabc3716c6cb20e83",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "8666d4168fe545fd9ce222217887bd61",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "8aabfdf9c83c4de486cf5f50c41c0d5e",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "8bb02a34807f4bb183bb42a722f4509b",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "8c8a371f6a324d908656c3c935c7656f",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "906c61eb392f4b538f6d0a79917d21cc",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "909faede10b5452cbee2d7d052635f47",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "9a53f10eac7748a2b4a9d88da75f8814",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "a1a6a8eeb4d54fa9ac184198a506d318",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "a687efed1f7e456bba53e356b157f0d8",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "a6e2525ea3294ee3ab9a4ec3dd4dfe9f",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "a950de4051d04cfa8bb180f8193f7495",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "abb4947b64944790b20fd52524f0babc",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "b2624626d06044fb9767a96045cd0302",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "b2c573b855ad4c7abc4f02b2ae484a65",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "b30441d9b44a4bc29771e8f6e94f6b5a",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "b7ea2864b6c044c1a9b7763ee6428d7c",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "baf4be48ac11472aa130c71e6474d9a4",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "be3915edc56d4020969b7e1f4837f112",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "c00bba65740947fea75542c13563553c",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "c15051a06c1a46b1acb75d18a5e728dd",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "c5611769a52d44aebeef55bd48e1f433",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "c71453e1b0ff46a7b91e27a1745d842b",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "cdb5d645d3984eaa8ad5e56a81023c59",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "ce1901f036364b7291451bfbd4f25c00",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "d119aa62e95f4d7aa01822401ca4203c",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "d2153d1057d740fea1665d71ff66dd1c",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "d3186ad3c8a74e92a80cb4c1f8f32fb6",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "d40c5ee0dbaa450dab073103f25ded6d",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "d4fb961b6148436686632668c98a6139",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "d6c56d2bb1274fc68cb0ed6c3b8a84b9",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "db44999c87d545618969319d3f63725a",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "dbb4668e39994da6bd7ec0251210d4bc",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "dd80af764f88480ea8b8b5898bb15ce7",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "e52b7159e28441769fcf3214cc6be6a6",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "e536ab3a1bbe4a36a99635458ba208f6",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "f451d56104944498909549ab7f864003",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "f4dc8ed1c034473784a5c8ec4227c7d6",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "f54492b30639431e80cd0723217d6be8",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessInteraction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "6ea7f8afe17d4319ab6fa9691db4328d",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "0b5544e3d9d741b39607a5e61d79049f",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "0d4ad18a7472447ebcd30619b37dce39",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "0dbbce90dc3e48b190890c832f52cb6f",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "1160219638ef42b292a5612e5ac7c539",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "197b811fc8594cc3a68a372b74008ba0",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "27d2797d2f9e4a9f9131300467d212bc",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "3ac6ca6e8c9a42b8a3b48e9631073235",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "3b90ebcc858e4b0685c7950ceeb8f3fd",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "3c2784f8f3404e978c618311148e3422",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "3ed945eeff23404d8dae43382ea746d1",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "4110a988149e4049844d4b683ff5d8d4",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "4a6e12d4f48d426a98136ea50ad91ef9",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "4f44e0f4c2ae4774a652c44874449487",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "545713793b154ed189f4229256933053",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "5c52eb31e8ba45a7a4eea4fa8d66d0c5",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "603a0fada51746ef9d26dd6fe20b2e78",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "7e85b6b2c65a4e038e11711a4c7f7c60",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "81942689c7b74960a23ce0d6da94859c",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "84cf0b0868b94a1ea5ce5791fcfa66f9",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "8845af697832409b90c51a65d7b06669",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "94fbd35dadc543dd8c5efaca1951e005",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "962735ea17a840e5a772f813d3ad7d45",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "9b4ea5f137c9474db1c9dc5ac57a1207",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "ada564bbff80416aa661a1d2cde705f4",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "c2334e0e5c3b40789c672471ea82c465",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "c30a4e1e36b44fd3a953395740d946ef",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "c3cdd7a91a584942abac167af15f642c",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "c87e99ff36224b9da5a05bbd3002da34",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "ca4ae4c178eb488d98118db7773b2127",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "da5d23f9d93a49f8ad11232c12a23e3f",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "dd262c6bed9a44829e7a4f6796c13b3b",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "e0ff9ce2cf4448568d1caf7a44023f48",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "e8f5b7caaee84a67afda4844b1580cee",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "ebc0fbc6ad7645439a32e1f1a7944209",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native BusinessRole is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "063b7a6b4ad549428a7566a4ce2c5de5",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "281155a0820942b884a13fa08d2e0b04",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b95f652107f4420b86cc10fb893c9b01",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "09a928910d3d458da3aebfb93d114654",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "1846c512d8f5405aaa4f4e33b5177098",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "407f93e81fd740e6b10728941a5a5172",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "59fb1f7c79eb4e5387fb0652649c2b9c",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "0115ed50867d468a95c0fafa1c5d79e2",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "018ccd818ec142fba1ffb086d900acc6",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "03a57e0c9ea34f7fb7b78e5f5c85379f",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "07cf507f183d4905a7ad2adbb8555df5",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "0856d2daf2ba4b92b5390b38b98efb54",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "0914f2bb267449e282e9ae0f7407d9fe",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "0bd3311d89af45bb935fde20e719369c",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "0bdd7f8c0cd74d9fabc49801af037fc2",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "0dec07b6ddbe48bda93a2295dd3e2d7d",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "11203b9c80964a9b96883eeab07f41d5",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "129119d7b2744ffd805c58f25557fa27",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "15b6d2518e60444098b7c546ca31c49b",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "15d972931ed6447797c30a5ddb71737e",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "162deb7e292042f78f677a14476a3a1d",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "166a22463d2c4534bda7ae31273398b6",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "175174c5cce549d2b154a4f6704721dc",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "19263e0802cc4b88af7a345f1410cffd",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "1a6630940ffb44fcad4543b93a367b67",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "1b0eacfbb27d4631a24f9279dab6681d",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "1c3b553c87704e27ba211fbbd02d95cb",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "1cb497aec93c4b82ba7f5b622813e54e",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "2054d57bb33a4361b3ef0824545a1784",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "20f719ab4b6741b393ef570b4d1b05df",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "232b3fb2ff204c9b9ff7a60ff6a7a32d",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "2415ddcbc73c47e1a63be310bd4342ee",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "243ea93e7b7448fe97dc74f90bfc8946",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "24c015676c254e2e82e8e4287c295179",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "24f3dd30223142efa35a5826552d53ab",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "2778f988e8d44e3091749542c39d38a4",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "28ec21d5918a49aaac12740c69f42d77",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "29076cbb9fc5442fb25faf43947574f7",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "2ad29cebc1e94053a300d869e7797232",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "2b1a27d5d9944e05b4cf0fcaad4ca433",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "2c799ec0c4c74c97a75c12e949887b95",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "2cc31384c8864c73989025cbe96dcfa7",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "2e4de521bda24ad7b0ea64ae535b7f84",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "31e7c27556314cafb74d040441d2dac6",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "31f49cdea9f44f188459503580c2b86e",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "32118856636f400a95fc28daacea61c8",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "3215f0b0e1ce45e8ab16dae272ea6fe7",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "32be309d65594592bac4d7b068def0d2",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "330d1c43856a4322a2e9f331b1a5ed20",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "346f024f74b447a8b6056b9d521837ff",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "35c5be472bf2433fbbde9646d87aefb3",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "360bf50f92484448a01cc57f2dbce23c",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "3717906f7f8840d3a8a3e3877543dd18",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "3792be10541e4d68b3f740b1ba964966",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "3b000d3712534d16a48470f79df8e33a",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "3b65a3d007f54aa9b875e655475e1786",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "3db41bc06ade4f9088eec7b8aedd7448",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "4422d865978c4353ad575759c6026d27",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "44433108cc8f4f5f9d7581f9e5b29eb5",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "466a4057001846bb8ae0481453d3e410",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "48f01ef8b0e6431c85cf4f40cf8f94c3",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "4952f86078c54a8d898ac992e6f4f577",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "4b17ec92f0af4c4b9556912dbdd0f29f",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "4b7177f3f40449518fba381acae6ba1e",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "4f58c82aca7a4b54aeb6e2920ce5c12a",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "4faef45b4ebe4fa69e57c3d81bfea05f",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "5019ae9f2cdc45a1b2de97bc0f5a313d",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "50c56bac0dc540a2b392fc2376efc129",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "50c838981f3946d78e8f78d18e31c70c",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "5298c6170cef4f05a6d956da716071bd",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "54032b52ee444bfe8b611fb9e8e2ba10",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "574e61e230e643f78c58649adb4db313",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "58376e5c53bf4af0a54f99f21ac52666",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "589f192797454d9e8960fb63774e5e9c",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "58beafcbcd084331be710eb00d27f6cf",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "5a38bf2527a8404bac714121f2dc76a9",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "5aafd1f4bff046b2b532c20dfb191473",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "5ad91d045474435a96b560e66ff7de05",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "5b0ccf4b30054145952c298b348ed266",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "5b1636373a8d4e788b3ddbc1659a47ef",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "5b8478b08c3f42c0a3480edb8f0b9ea7",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "5c691959e2cc4a289fc25b9f3497eed9",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "5d9b7f8d2d7b41759b6d4931c1d2aaa2",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "5fea7aaac4384245b1f08a3d8a076bd9",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "60f427e6b5764757b909624085a2af89",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "61258c7fe41f4541871a67ec9d7185cf",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "615f93d05fbb4a8481f07778bd4f4803",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "650ccec030fa46cc8c9d6b508a841778",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "68344272ca6049648a3ddae20c150f37",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "689bb3f8a24249b79f787e1f48eb268d",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "690da55f1f5b4c44ba58cf67a717a564",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "697de08ac49a4b7f8df7a1ed6f04210e",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "6a82dc1423374e809dbf542eeaa69482",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "6b777f1201db474eb22dd89f2b1f68c6",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "6cd45c27d0c344b9807174dbd812d572",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "6dab08ab1e3249d7b314843ca9ed0149",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "70d2a44a0442441f8b306b82b297bb8a",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "7180f6265d5c4687a001220c6126e301",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "750ef0d8e1504a8e9a1fde9bf13a6d0c",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "7550fd5b17e643118fa76d2616e1ba20",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "759a2e52172345e8ad1bc96d7e5ddad3",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "75e2b447659c4fdf94107d94758337ed",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "75f8b32a3d5048ccbdfb30d61ae73dad",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "7780ca2fed2346439d5f559d00cc4ee4",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "7a51321b00464016920976b269981edd",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "7ae95677a00346f18a0ba01522a20153",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "7b591957f7424424abc80f699e9f1960",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "8006ee0dd95f4d7fb1f408fa09b6ce19",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "80affa7bcd284ecbbcbc5092f8497ddf",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "88bf57b7a92c4c1da1b5f0a67d3ebd82",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "8963b571e9cc40e49c5d738e31d2f97e",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "8a04d1f16d0849e786d2aaec33e0ba87",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "8a4b918e1c9d47bb99daf2b42008ab39",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "8a63b08f34fa42c5bda2a3e12b9ecd55",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "8a9dcc3b5f0143458ec71bc188a56020",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "8b42aac6083441caa78b59f5e62eebd9",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "8bc15e2b8f114deebcbbe3f2013a8147",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "8bc2a106165a4702b5f72fe46a206b69",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "8bfbcc0a455d423c90ae2f1cfb732ca8",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "905eb2de1ac341ac96331e3d7f76079b",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "90a782ff2d004fa984ae0465528b2253",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "90b838d703dd472b8b6d74961f3a748c",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "9111446aa2d045bd9acd98542b0eef1f",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "9216f9cc905e4526b1d98cd4ab382cbf",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "9225f083d3474715a75af2a827a4016d",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "958345ee65f446d3b1259b8895ab100f",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "95985d244a234571892a9e9b4024f594",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "97f0d1acc37b4ca994c6c1ca006f2daa",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "984ee17123eb4f92b3e55e55d24459b8",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "99e9d9763ec94140b7d7642f4b5966f6",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "9ac72fea821c45e2b18632ae9a9867dd",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "9d0925bb39664a5985cacf3cea7442d1",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a03075a46f75497f8c6ba95d9c9e27c4",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a0af0a86667d48f4ab95ed2920e878cb",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a1c557bd263047d0b3ff566cf50b98c1",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a2dbd74847a44f4c879983229f5c9d08",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a3196aef21d443519de874c24f64a185",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a32c8bff0c284f5c9d6ab1f46991c232",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a3464bd9c0dc4a01b50803acc7705b4e",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a352fd50419d451887c85fcb98566cd5",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a398c72bef094dee96c96d97994449fb",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a5003436a7f348b1bff60ba593adfa27",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a50662edda954bc58c44184d84591d5b",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a631a8600b8b49df9ef452c48c91349a",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a98424298dac46d8b2ddd109d928270a",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "a99b4119339545a89dc54ebb216ddb85",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "ab0415e2ea0a4da4ad3dc46997d48bc3",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "ac205f374c9d41c3b6d18a6b7c356152",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "acb977e879204f1491293e5452e0ddf0",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "ae44a4ee78414d1098814315793bd751",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b01441b2f5584fc2b9c3988643a7c93b",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b1161fe1a315420fbc7d048a1ea58126",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b132224cfa6f435f8f2a66a3878d6df6",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b345cb12b45746409302899514126170",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b35d3521141c419fb676a79b2ede40bd",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b42afda9e876463ba56fa8f73fe7a32a",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b4d14abf930a4230a7f5b93e9ce3df91",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b57081e650f74ad488549fdaa5305bcb",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b5a76d4877424b2ea9b01fb5fa22772c",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b611a1fcfadb4b30af9ba74a4c993d8a",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b6527516a69c499d8cc9c8fe881169fe",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "b967c383dbcd4c24abe6a83ea5e79e00",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "bab3d0ab6eb748978b962ea20fb31640",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "bcaacf446f45443eafd8e21a1fd74ee1",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "bcc40a14465e48aca42c9505a6853081",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "bcefb378424842fcb6d703208c3f8773",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "bd4d6f4a7f03402ba7857383c7be7a4c",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "bd91d848cf424c42bec7c80cd32edd28",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "be34b54314c6444f8418d645f6c83b6d",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "be3f2e695eda403fbce8118daf83d386",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "bf3d2e3581f24beda20a6a3a3348460e",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "c0f6e5f7f5a94d1580fa6e0e8b82c93a",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "c57c0721ab0040ccb24e88e5e92e8cf8",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "c5adc1955b6046d8b920b0176cebc9de",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "c89e7c8b277247d9965fdb534aad2d1f",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "c8e6e66e8718493c9093f37d129f9ff2",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "c94d29b7d1c045dabc7814ceea795484",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "cdc16dd0f84049f8af3f1ec76f1e1428",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "ced472b2d1a54016878ee541de969d9b",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "cee085c690314802851de71f4741d8db",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "cee76a930a4e4e7d9c49357ba290c8bf",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "cf8ddfca7a8e4ed893ec39b795200d77",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "d2e6078b5db041cb904e0cadcebce6eb",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "d412aff3a5c64e6aaba910d4c2c9356d",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "d64569acaf2c44f3b2a5332f74fff7c7",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "d653c3247ddd49479f985f6b435933a0",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "d71def9e76a544ff9761c672bb24f3be",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "d81e0d6d76014066a682e3d9e03e5f8a",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "db064e0cd4794479be1374e97a3d7e63",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "dbc37445ad944a85a7c4f26f410967b2",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "dbe10959237f405caeadef2a5748303a",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "dc1bece79eb7452e951d03a2ee6dfaa6",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "dd2e2ee1a68845c087ba93610752181b",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "df8bff7df9c1469da16cac6a5eb2bf76",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e003b9cd0730459a84775d2837d1d173",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e05f6310f6d544efaca5568604f27dd8",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e1048f6c635d4e16b5384cc2cb45a71b",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e1b8db7c95fa4e7ea296351a03532e24",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e31407cea7624632a8ed2dc53b09d726",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e349d5f6a8774bbe8d150f9c51af770c",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e485424b799c42aca7399d341ca02d0b",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e4d959d6c71d498c9ce00d2be4c048e3",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e575c583783546ef85cf898523d18797",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e5812fcdf3f5465b9b1d8ba536075c5f",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e5edbb54258c490aaba0816d980dc624",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e6c59c7b72fe44169a5fdfd08a5e91c4",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e7813a06b9df462fa135c299261f192e",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e8c72952da144d6883caba7fd2afb88d",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e996b61b6e7b4619913f427aed2b55b1",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "e9c1a897884f4d758f5654b824364030",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "eb370c01fbdb4d22956d97e9ecd74b57",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "ebb735a2915744819d4001d9b8425cc6",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "eeabb9c3c526404cbe4302906560fa7e",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "f1ab1258cf2944efb50105e7885f8027",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "f1b888e8d50c4019ac1afe162d6223f3",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "f31902d474894670aeef3e0abbedccf0",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "f5eccd4f65df49bba98104e5abfa5e19",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "f8c13b6f74b840cc96fbeada5865455a",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "fd9f3239fdb64ea687825b66bb4d1f17",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "fe9d58b5cfe14e8cb7a83a1ac6686d65",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "3cae3c4810974c5f8ee5a4c942f38b07",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "fef479f0fd5048b19b2aec770f0233fe",
+      "property": "definition",
+      "reason": "Absent in the exact governed source and accepted representation."
+    },
+    {
+      "canonicalId": "25d8509146fd4f2794a17f4a5253b7a3",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native CourseOfAction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "4c71b89477b34733b31e478485e89b1a",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native CourseOfAction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "503939e1fa464b78b1d980ddedfeb3cf",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native CourseOfAction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "a8ab09ee29454376bd45ba90b320d6ec",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native CourseOfAction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "f601fe1f39a3447f8e9fb2cc4ffe9dee",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native CourseOfAction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "fd00bdbdc2234a208c5045aa69279db8",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native CourseOfAction is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "f8874dd3bc5c4b68b1ece4eb2859d1d9",
+      "property": "canonicalName",
+      "reason": "Q-01: ARB authorises ImplementationGuideline as CourseOfAction, but no formal canonical-name qualifier vocabulary is established. Do not invent one."
+    },
+    {
+      "canonicalId": "430f641e40aa4bd4a8e85a5cbc1f93be",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native Resource is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "4d725c804fb34dfa90486b21118bab8e",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native Resource is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "eac71c56624d43bda2b9d3648f14603a",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native Resource is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "01f655eae3d8485699449c3dcf4f9b56",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ValueStream is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "02e036f18bab400bac261007e39457ee",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ValueStream is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "3ba98c0c1170458f8c02fa76694fee67",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ValueStream is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    },
+    {
+      "canonicalId": "beea615ca7b34bbcbd0ad3a2a6ab2cff",
+      "property": "canonicalName",
+      "reason": "Formal qualifier for native ValueStream is not established in the current naming contract; HCRL 1.1.5-002 DR-5. Identity and source content are independently determinate."
+    }
+  ],
+  "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance",
+  "containment": "PASS",
+  "informationNaming": {
+    "information_elements": 94,
+    "native_types": {
+      "DataObject": 81,
+      "BusinessObject": 13
+    },
+    "classifications": {
+      "Topic": 70,
+      "BusinessObject": 13,
+      "UNRESOLVED": 11
+    },
+    "fully_derived": 83,
+    "unresolved": 11,
+    "contextual": 59,
+    "preserved_identity": 94,
+    "absent_identity": 0,
+    "canonical_ids_allocated": 0,
+    "metadata_changes": {}
+  },
+  "offlineXsd": "PASS",
+  "exchangeReferences": "PASS",
+  "outputSha256": "e33ae52b3934cf4d9b9b0102ce65e09461fa554022f43d56f2637685d8c39caa",
+  "publicationAllocatedIdentities": 0,
+  "actualArchiTransport": "NOT_PERFORMED",
+  "publishedProjection": "enterprise-architecture/design/archimate/published/1.1.11/Harmonia-Architecture.xml"
+}

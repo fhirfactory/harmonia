@@ -1,0 +1,760 @@
+<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
+
+**Retired review history, not an active HCRL.** This readable copy preserves the full superseded review body; only relative Markdown file links are rebased for this evidence location. The [exact input preimage](hcrl-1.1.18-001.pending.md) retains the original bytes. Original HCRL identity: 1.1.18/001.
+
+<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
+
+| Decision Review | Subject | Solution Architect Disposition | Comment |
+| --- | --- | --- | --- |
+| [DR-1](#dr-1) | Bound the oversized export review | Authorised — bounded interpretation only | Operative user disposition retained in bounded Task; semantic acceptance excluded |
+| [DR-2](#dr-2) | G14–G18 Subject correspondence and hierarchy | Accept | Operative incorporation instruction accepts CR-001–CR-059; resulting-state review pending |
+| [DR-3](#dr-3) | UseCase and UserStory modelling | Not recorded | Neither specialisation exists in the current catalogue |
+| [DR-4](#dr-4) | Candidate identities and source contributions | Not recorded | No new canonical IDs allocated |
+| [DR-5](#dr-5) | Historical Capability targets | Not recorded | Preserve history; no automatic retargeting |
+| [DR-6](#dr-6) | Capability and Feature coverage recommendations | Not recorded | Advisory assessment of all 784 rows |
+| [DR-7](#dr-7) | Primary and secondary Subject classification | Not recorded | Classification is distinct from coverage |
+| [DR-8](#dr-8) | Release scope and source provenance limits | Not recorded | No release transition proposed or performed |
+| [DR-9](#dr-9) | Bounded Minutiae and verification limits | Not recorded | Task event times and prior Java test execution unresolved |
+| [DR-10](#dr-10) | G18.03 authored View-folder spelling | Accept | Operative incorporation instruction accepts CR-060; resulting-state review pending |
+| [DR-11](#dr-11) | Authored Views reconciliation and unresolved native references | Presentation reconciliation authorised; reference treatment unresolved | Operative presentation-only Task; no additional incorporation or closure |
+| [DR-12](#dr-12) | Subject Grouping hierarchy, distinct Composition/Home and authored presentation | Explicitly authorised within Task scope; Grouping/Home incorporation applied | Non-Grouping candidate findings and three naming conflicts require disposition |
+| [DR-13](#dr-13) | Five approved elements and complete authored presentation | Approved by operative Solution Architect Task | Inclusion, necessary identity reconciliation/migration and three folder dispositions authorised; result/visual review pending |
+| [DR-14](#dr-14) | Views acceptance, governed closure and successor transfer | Closure/transfer/publication authorised subject to governance; release mapping pending | Exact candidate imported and visually accepted by the Solution Architect; successor register prepared, no unresolved architecture accepted |
+
+**Lifecycle pointer:** originating iteration **1.1.18/001 is closed** under the [completed resulting-release record](../../../../../register/1.1.19/hcrl-1.1.18-001.complete.md). This retained pending review preserves original proposal/application history; historical pending statements below do not reopen it. All outstanding matters continue in [1.1.19/001](../../../../../review/1.1.19/hcrl-1.1.19-001.pending.md).
+
+# HCRL 1.1.18 / 001 — Subject and OpenSpec incorporation preparation
+
+**Partial acceptance: DR-2 / DR-10 and CR-001–CR-060 authorised for incorporation. HCRL remains pending; DR-3–DR-9 are unresolved and excluded.**
+Prepared by Codex on 2026-11-01 UTC (2026-11-02 Australia/Sydney).
+The user assigns evidence boundary `1.1.18/001`. Root release authority currently
+reads `1.1.18`, previous `1.1.17`; this pending record does not allocate a
+transition, establish acceptance of either state, or select the eventual release.
+The exact current projection passes the maintained baseline check. Source HEAD:
+`763f97586685d5c4b9744509b067d95b9694d0db`, plus the pinned workspace inputs.
+
+The formal [Task](../ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md)
+preserves the operative request and locator follow-up. The
+[report index](../../after/report-index.md) identifies the formal
+Report. Detailed outputs are under
+[`after/reconciliation/`](../../after/reconciliation/summary.json).
+The [bounded Change Review](../../../../../review/1.1.18/change-review.md) now contains 60 independent proposals,
+all Accept / Unresolved: 32 incorporated Subject instances, 27 classification relationships,
+and one presentation spelling correction. The earlier
+[scope-gate version](../bounded-subject-review/hcrl-1.1.18-001.pending.md)
+is retained unchanged. The original 784-element candidate assessment and Report
+remain as emitted; the new formal Report supplements them under this same iteration.
+
+Applicable authority: [Architecture Governance](../../../../../../governance/architecture-governance.md),
+[Review Praxis](../../../../../../governance/architecture-review-praxis.md),
+[Provenance](../../../../../../governance/architecture-change-provenance.md),
+[Round-Trip Praxis](../../../../../../governance/archimate-round-trip-engineering-praxis.md),
+[representation](../../../../../../governance/continuum-representation.md), and
+[incorporation Praxis](../../../../../../governance/continuum-incorporation-praxis.md).
+AX-04, AX-08, AX-14, AX-15, AX-17 and AX-18 materially apply: tooling does not
+decide architecture; meaningful source/decision evidence is retained; classification,
+coverage, identity, currentness and acceptance remain distinct; uncertainty and
+domain-authority limits are preserved. No implementation conflict is resolved here.
+
+### Operative incorporation disposition
+
+The Solution Architect [accepted instruction](../ai-agent-tasks/unresolved-accepted-subject-incorporation.md) accepts the recorded DR-2 / DR-10 proposals, all CR-001–CR-060, their names, hierarchy, classification meanings and scope qualifications. It authorises 32 native Grouping Subjects, 27 classification Composition relationships and the G18.03 maintained presentation correction, using governed identity/provenance/naming and projection machinery. It expressly excludes the 784 Motivation candidates and their associations, DR-3–DR-9, unrelated export differences, HCRL closure, release transition, commit and push. Original instruction-entry time is unavailable and remains UNRESOLVED; this records the attributable operative disposition without inventing its time.
+
+The immediately previous [HCRL](../subject-incorporation/hcrl-1.1.18-001.pending.md) and Change Review are retained unchanged. Original proposal/finding text and prior scope-disposition history below remain historical review evidence; the new acceptance governs only the specified scope. Result incorporation/verification and Solution Architect confirmation remain separate. Publication will be staged as unreleased evidence because the existing 1.1.18 published projection is immutable and no release transition is authorised.
+
+<a id="dr-1"></a>
+## DR-1 — Bound the oversized export review
+
+The incoming export SHA-256 is
+`4ddfaa9045d8d0196f1003c9344d85eb2f121398a79a579fbb6c18545470c0de`;
+the exact current baseline SHA-256 is
+`7df92528a09f9a765ddebec105643bae08ac92583cad4e8901b3135d49db2c2e`.
+The original 3,824,520-byte full delta remains preserved and above the 128,000-byte
+limit. It has not been interpreted and supplies no acceptance of other changes.
+
+**Attributable Solution Architect scope disposition:** the operative user
+instruction, retained verbatim in the
+[bounded interpretation Task](../ai-agent-tasks/unresolved-bounded-subject-interpretation.md),
+authorises G14–G18, their subgroups, directly incident relationships and identity,
+naming, specialisation and containment interpretation needed for correspondence.
+It explicitly states: “All other incoming changes remain unadjudicated and are
+not authorised for incorporation.” It authorises interpretation and Change Review
+preparation only, without waiving the oversized-delta rule. No semantic acceptance,
+Motivation incorporation, Capability edges, Git action, HCRL closure or release
+transition is supplied. Instruction-entry event time remains UNRESOLVED; the
+current clock is not substituted. The prior missing-disposition state is retained
+in the previous review and original Report.
+
+**Actual bounded result:** the complete
+[scoped evidence](../../after/bounded-subject-review/scoped-subject-evidence.json)
+is **90,051 encoded bytes**, below the unchanged limit. Repeated uniform policy and
+canonical context were factored without dropping scoped observations. It includes
+all 32 folder/candidate correspondences, necessary G01–G13 identity context and
+incident-relationship absence, with exact input hashes, source XPaths and lines.
+No limit increase or repair of the original input occurred. The scope gate has
+been answered and bounded interpretation completed; architectural dispositions
+on the resulting CRs remain unrecorded.
+
+All other export changes, including the mechanically observed 120 added/23 changed
+elements, 2 added/222 changed relationships and 69 added/1 changed Views, remain
+unadjudicated outside this review. The G14–G18 folders are not those added native
+element records. Existing View/navigation differences are not assumed harmless
+transport effects. No exact no-edit transport control has been established.
+
+<a id="dr-2"></a>
+## DR-2 — G14–G18 Subject correspondence and hierarchy
+
+**Review history:** Original bounded findings/proposals below are preserved as reviewed. The subsequent acceptance and actual incorporation facts govern the current result; they do not rewrite what was present in export 004.
+
+**Observed:** G14–G18 exist in export 004 only as the numbered empty View folders
+`Views / 1. Subject-Based-Views / 14...18` and their 27 empty child folders.
+All 32 lack identifiers, identifier references, canonical IDs, native types,
+specialisations, Documentation/Properties and View membership. There are **zero
+corresponding scoped native Subject elements and zero incident native semantic
+relationships**. The scoped search of native names and explicit code/source claims
+finds no corresponding native element. These are presentation containers, not
+architectural Subjects or submitted Composition relationships.
+
+The mapping's five groups and 27 subgroups correspond to these folder positions
+by ordinal, parent context and lexical label; G18.03 has the specific spelling
+discrepancy in DR-10. This is a candidate source crosswalk, **not canonical identity
+correlation**. Existing canonical Subject metadata contains 82 G01–G13 records,
+no G14–G18 code/source binding and no exact normalised Grouping-name collision for
+these 32 candidates. No duplicate or identity conflict is established by that
+bounded search; semantic overlap does not itself justify identity merging.
+
+**Candidate architectural interpretation:** propose 32 native Grouping Subject
+resources, with null specialisation, source-qualified candidate concerns and
+local display/friendly names. Allocate no identity here. Existing unqualified
+Grouping has no established formal naming qualifier; all proposed canonicalName
+values therefore remain null with that explicit reason. No Subject/GRP token or
+Subject-derived naming ancestry is invented. If creation is later accepted,
+recheck identities and use governed UUIDv4 creation once, retaining scoped source
+codes and the folder/mapping evidence separately. Existing G01–G13 IDs, standing,
+relationships and history remain intact; no existing element is retyped or merged.
+
+Separately propose 27 parent-to-subgroup native Composition relationships under
+the existing Subject classification pattern in the representation contract. Their
+basis is the explicit candidate hierarchy and bounded extension intent, **not XML
+folder nesting**. Each edge and its endpoints need separate acceptance. No Home,
+Capability decomposition, component ownership, implementation authority, primary
+Motivation assignment or parent edge from the navigation index is implied.
+Root classification groups have no newly invented semantic ancestor.
+
+[All 32 reconciliation rows](../../after/bounded-subject-review/subject-reconciliation.csv)
+retain the mapping concern, exact folder path/XPath/line, proposed names/types,
+identity findings and unset IDs. CR-001–CR-032 address independent Subject concepts;
+CR-033–CR-059 independently address classification edges. They are all On-Hold /
+Unresolved with no executable instruction. This is completed interpretation and
+proposal preparation, not incorporation or evidence of architectural acceptance.
+
+### DR-2.01 — G14 Patient Identity and Demographics
+
+Group and six subgroups: CR-001–CR-007. Six classification edges: CR-033–CR-038.
+Mapping concepts and folder ordinals/labels correspond, with ordinary hyphen
+formatting. Propose existing native Grouping treatment, with no source-provided
+identity to import. Person evidence, correlation, maintenance/status, demographics,
+disclosure and oversight retain their distinct concerns. General carer/contact
+relationships are not automatically identity assurance or part of this hierarchy.
+
+### DR-2.02 — G15 Provider and Workforce Management
+
+Group and five subgroups: CR-008–CR-013. Five classification edges: CR-039–CR-043.
+G15.03 drops commas in its hyphenated folder label; the mapping's authored display
+name remains `Affiliations, Roles and Practice Locations` as the candidate name.
+The correspondence is lexical/contextual, not identity. The heading establishes
+no HR/workforce-management, privilege-granting or implementation responsibility.
+
+### DR-2.03 — G16 Consent and Information Sharing
+
+Group and six subgroups: CR-014–CR-020. Six classification edges: CR-044–CR-049.
+All candidate names correspond to the numbered folder structure. Capture,
+maintenance, scope, evaluation, representatives, communication/history and emergency
+exceptions remain distinct. Nominated relationships or delegated-consent records
+do not establish clinical/legal capacity or emergency override authority.
+
+### DR-2.04 — G17 Terminology and Reference Data
+
+Group and five subgroups: CR-021–CR-026. Five classification edges: CR-050–CR-054.
+All candidate names correspond, with hyphen formatting. Preserve terminology
+meaning, mapping, lifecycle, mutable runtime content and stewardship distinctions.
+Existing G02 Information Management classification is not renamed, merged or
+superseded. No Calliope Models/DataSets boundary change is proposed.
+
+### DR-2.05 — G18 Provider Directory
+
+Group and five subgroups: CR-027–CR-032. Five classification edges: CR-055–CR-059.
+The group label uses spaces, unlike most peer folders; that is formatting only.
+G18.03 has `Informaton` in the export versus `Information` in the mapping. The
+candidate Subject name follows the mapping; its native instance does not yet exist.
+The separate optional authored View-label correction is DR-10 / CR-060. Discovery,
+publication, maintenance, verification and synchronisation do not establish clinical
+qualification, practitioner privilege or healthcare-organisation authority.
+
+### Accepted incorporation — actual result, review pending
+
+The operative acceptance Task authorises CR-001–CR-059 and their documented
+qualifications. The maintained governed `create` operation allocated and persisted
+32 UUIDv4 canonical Subject identities and their separate established Exchange
+bindings after exact source/code/identity reconciliation. All are native Grouping,
+with no specialisation, accepted scoped standing, explicit currentness, local
+friendly names and null canonicalName with the existing unresolved formal-vocabulary
+reason. No existing G01–G13 resource was modified. Five source-owned records now
+contain the accepted 27 parent-to-subgroup Composition assertions with separate
+persisted relationship representation identifiers, currentness and acceptance
+provenance. No relationship canonical UUID, Motivation allocation, Capability edge,
+new semantic ancestor or additional Subject was created.
+
+The [identity results](../../after/subject-incorporation/incorporated-subjects.csv)
+and [relationship results](../../after/subject-incorporation/incorporated-classification-relationships.csv)
+identify every actual record and accepted CR. Canonical validation and maintained
+projection generation pass at **1,874 elements / 1,909 relationships**. The
+[unreleased projection](../../after/subject-incorporation/Harmonia-Subjects-unreleased.xml)
+is an evidence result, not a replacement publication or release transition.
+The protected 1.1.18 baseline remains unchanged. The root release remains 1.1.18;
+accepted-change release accounting and publication are deferred to a separately
+authorised transition, not waived or inferred from this work-in-progress state.
+
+Independent scope checks verify all 1,842 original canonical element files,
+all 1,882 original projected relationships and all 1,216 View contents are preserved;
+only the accepted 32/27 semantic delta and minimal CR-060 presentation path appear.
+The original 784-candidate assessment, earlier reports and pre-existing local
+publication edits remain unchanged. DR-3–DR-9 are not resolved or amended.
+
+The existing tooling suite initially reported six fixture errors because temporary
+source copies omitted the new declared retained inputs. A supplemental run
+identified the additional predecessor-population assertion. Test-only fixture
+setup was updated to supply declared current retained evidence, following the
+maintained independence verifier's existing treatment, and the baseline assertion
+was adjusted to the accepted 1,874/1,909 population. Production validators and
+architectural checks were not changed or weakened. Actual test results and any
+remaining limitation are retained in the
+[verification record](../../after/subject-incorporation/verification.json).
+The original failed logs are preserved; a test failure is not relabelled as PASS.
+The final unmodified standard unittest invocation passes **85 tests in 314.190 seconds**,
+with zero errors or failures, after those directly related test-only corrections.
+See [final test results](../../after/subject-incorporation/final-test-results.json).
+Earlier Java tests remain unexecuted because of Maven's read-only dependency cache.
+
+All CR dispositions are Accept; Outcomes remain Unresolved pending incorporated-result
+review and applicable human Archi/publication gates. No HCRL closure, commit, push,
+actual Archi transport or release transition is claimed. Task instruction-entry
+times remain explicitly unresolved; Report emission events are captured separately.
+
+<a id="dr-3"></a>
+## DR-3 — UseCase and UserStory modelling
+
+The current type catalogue has neither UseCase nor UserStory specialisation.
+Source heading/identifier prefixes cannot establish native type. All 363 UseCase
+and 421 UserStory candidates are therefore on hold for incorporation.
+Decide whether these are independently bounded Requirement specialisations,
+other native constructs, or source contributions to already represented meaning.
+Any metamodel extension requires explicit definitions, native bases, template,
+storage/naming/projection treatment and governed validation before creation.
+Do not silently substitute FunctionalRequirement or allocate two UUIDs merely
+because a UC source is expressed as both a title and a story.
+
+<a id="dr-4"></a>
+## DR-4 — Candidate identities and source contributions
+
+All 784 rows map to 421 existing OpenSpec files and 421 manifest rows: 363 UC
+sources each supply two candidates; 58 SR sources supply UserStory candidates only.
+Source IDs, title/story wording and supplied actor fields compare exactly. The
+27 absent primary-actor fields remain absent. Scoped source-plus-kind keys and
+source-ID-plus-kind keys have no duplicates. Eighteen identical-wording groups
+affect 38 rows; these are review leads, not duplicate-identity determinations.
+No canonical source binding to these OpenSpec files, nor exact candidate title/text
+lead in the scanned Motivation/Grouping resources, was found. This does not
+establish semantic novelty or authorise creation.
+
+Preserve original source IDs, source path/revision/hash, exact selector, full
+UserStory field and SR/UC provenance separately. The irregular source identifier
+`UC-1 of DoH_Requirements_Specification_PD v0.3.docx.` remains verbatim.
+Decide semantic overlap and paired UC/story instance treatment before UUIDv4
+allocation. No canonical IDs, aliases, relationships or tombstones were created.
+See [duplicate review](../../after/reconciliation/duplicate-review.json)
+and [all candidates](../../after/reconciliation/candidates.json).
+
+<a id="dr-5"></a>
+## DR-5 — Historical Capability targets
+
+All 18 proposed target Exchange identifiers resolve to existing canonical
+Capabilities/Features. Four refer to superseded records, affecting 208 rows.
+Healthcare Organisation Profile Administration (142 rows) has explicit historical
+`e485424b799c42aca7399d341ca02d0b` → current
+`f2de9e9394b849f2943355c7a2882a15` correspondence. Governed Reference Dataset
+Administration (16 rows) has explicit historical
+`15d972931ed6447797c30a5ddb71737e` → current
+`682b8684ad9e49d5a5c348a148081607` correspondence.
+
+Provider Relationship (18 rows, `3bb8a3d5b62a4b779442290fe8d5106c`) and Provider
+Engagement (32 rows, `a0777dbd9b0c4528817e99a7f34aa444`) are superseded but supply
+no direct successor identity field. Do not manufacture a successor binding.
+Current Features may instead be independently proposed on their definitions.
+Retain old IDs and relationships for history/Views. Even explicit correspondence
+does not establish that the mapping's original association is semantically valid.
+See [target resolution](../../after/reconciliation/mapping-targets.json).
+
+<a id="dr-6"></a>
+## DR-6 — Capability and Feature coverage recommendations
+
+The [784-row assessment](../../after/reconciliation/candidate-assessment.csv)
+and [421-source rationale](../../after/reconciliation/source-alignment-review.json)
+propose existing targets with explicit canonical IDs, definitions, source locators
+and independent standing. There are 244 Feature fits for review, 248 partial
+Feature fits with residual scope, and 292 CT3-only/gap/unresolved-scope rows.
+Gaps/residuals affect 528 rows from 289 sources; 226 rows identify more than one
+potentially relevant Capability/Feature. These categories describe review
+triage, not established coverage, satisfaction, implementation, or ownership.
+No new Capability or Feature is proposed as an allocated element.
+
+For any future edge, decide native type, direction, endpoints, meaning, source
+qualification and standing explicitly. No Realization or implementation
+responsibility follows from these suggestions. Feature CT3 ancestry is not
+inferred from a name or manufactured as Composition.
+
+### DR-6.01 — Consent, representatives and emergency access
+
+Patient Health Information Restriction Management explicitly respects the consent
+owner; it is not that owner. Prefer consideration of Client Privacy Guardrail
+Management for directive lifecycle and Consent Directive Evaluation only for
+evaluating a requested use. Relationship validity, legal capacity, emergency
+override, audit capture and appropriateness assessment remain distinct.
+Health Information Sharing Programme Management is Candidate with unresolved
+definition/tier/parent history; it is not defensible sole coverage for consent
+history/alerts. Capture, renewal, withdrawal, emergency and notification Feature
+gaps remain explicit. No patient access or emergency policy is invented.
+
+### DR-6.02 — Person identity and related persons
+
+Health Information Data Correlation explicitly excludes establishing person
+identity. Consider Cross-Authority Identifier Correlation for issuing-namespace
+identifier association. Distinguish Identity Assurance from contextual Identity
+Qualification Control; neither covers all profile, guardian or relationship
+activities. Consider Client Relationship Administration, Next-of-Kin & Guardian
+Association and Relationship Validity Tracking for nominated relationships.
+Externally decided corrections and source lineage may fit existing identity
+Features; golden-record authority, probabilistic matching, local merge decisions
+and interpreter-service fulfilment remain unestablished.
+
+### DR-6.03 — Practitioner, organisation and directory information
+
+Healthcare Organisation Profile Administration describes organisations, not every
+practitioner record. Practitioner Profile Governance, National Practitioner
+Verification, Practitioner-Organisation Affiliation, Role & Specialty Modeling,
+Service-Location-Provider Binding and Electronic Endpoint Binding are specific
+existing candidates for their respective actions. National Organisation
+Verification remains separately relevant for HPI-O/organisation sources.
+Identity Qualification Control is not clinical qualification or generic directory
+data quality. Provider Directory Discovery & Resolution expressly does not decide
+privilege or availability. Visibility, quality, duplicate resolution, approval,
+interface monitoring and integration contracts retain gaps/residual scope.
+
+### DR-6.04 — Terminology and mutable reference content
+
+Consider Bidirectional Terminology Mapping for map/translation actions, keeping
+mapping quality and source authority explicit. Terminology Governance covers
+lifecycle/standing; Enterprise Reference Data Stewardship covers definitions and
+governance; Governed Reference Dataset Administration and Governed Dataset Content
+Revision address mutable approved runtime content. Preserve Calliope Models/DataSets
+and Mneme/Mnemosyne boundaries. Do not claim a full release/version-validation or
+API/query Feature exists from these broad fits.
+
+### DR-6.05 — Operational and cross-cutting concerns
+
+Audit, interface monitoring, failure reconciliation, source-update rules,
+notifications and API delivery are not automatically covered by a business-functional
+directory/identity Capability. Source-specific gaps are retained. Rhapsody-named
+UC/SR records require an explicit portability/implementation-constraint decision;
+an engine name supplies no Harmonia semantic authority. Unresolved coverage is
+preferable to an invented Capability.
+
+<a id="dr-7"></a>
+## DR-7 — Primary and secondary Subject classification
+
+Of 784 primary assignments, 780 name G14–G18 proposals and four name existing
+G04.04. Every secondary Subject code resolves in the governed G01–G13 hierarchy.
+Existence supplies neither semantic fit nor an edge. Advisory source-level review
+flags 426 rows for a changed/unresolved primary classification; this is not an
+accepted correction count. Original assignments remain intact in the ledger.
+
+Examples: Record Consent/Withdrawal/Renewal is a capture/lifecycle concern rather
+than scope alone; Verify Consent is evaluation; Maintain Data Ownership Information
+is reference-data stewardship rather than directory verification; receiving
+Tasmanian provider details is not intrinsically audit accountability; interface
+monitoring is operational. General related-person/contact relationships need a
+Subject decision: the supplied G14 proposal has no general client-relationship
+subgroup, and G16.04 is specifically delegated consent. No additional subgroup is
+created. Decide whether secondary classification uses an ordinary Association or
+another explicit governed treatment; do not multiply primary containment by inference.
+
+<a id="dr-8"></a>
+## DR-8 — Release scope and source provenance limits
+
+The available mapping describes extraction from `openspec.zip` and uses working
+export 003 solely for names/IDs. Neither is canonical authority. The repository
+OpenSpec project identifies `HIE - Target State - Use Cases - v0.5.docx` as its
+upstream source. The original uploaded ZIP and upstream Word sources were not
+located in the bounded repository search and were not independently verified.
+This review proves correspondence to the current repository OpenSpec edition,
+not fidelity to unavailable originals. Preserve that limit for acceptance.
+
+Target-state SHALL wording does not assign R1/R2 delivery scope or expand current
+domain authority. Preserve source scope and unresolved current/future allocation
+for every candidate. In particular, Person Identity Administration retains its
+history of upstream PAS/MPI reliance for R1/R2; no autonomous master-patient
+reconciliation authority follows. Set no release, implementation owner or
+satisfaction status without disposition. Root release, published XML, canonical
+sources and existing local publication edits remain unchanged.
+
+<a id="dr-9"></a>
+## DR-9 — Bounded Minutiae and verification limits
+
+Minutiae-Accepted: No
+
+Comment: No Solution Architect acceptance recorded; this is an unaccepted group.
+
+Both formal Tasks retain unavailable instruction-entry times and filename prefixes
+as UNRESOLVED. Each formal Report uses the maintained completed-emission event
+capture; the original Report and its timestamp are unchanged. Original source/working inputs are pinned; unique uncommitted mapping
+bytes are retained in `before/`. No untracked input is claimed recoverable from HEAD.
+
+Current canonical schema, provenance, navigation, containment, Exchange references,
+offline XSD and exact baseline checks pass. Incoming Exchange XSD/identifier/
+reference checks report no issues. Technical validation is not architectural
+acceptance. The full delta remains above the 128 KB limit and is not interpreted. The
+separately authorised scoped evidence passes that limit at 90,051 bytes. The required
+Java architecture test command stopped in Maven dependency resolution because
+`~/.m2/.../resolver-status.properties` is read-only; suite outcome is UNRESOLVED,
+not an executed test failure. No unchanged retry or production-code correction
+was attempted. Actual Archi transport/inspection and publication were not performed.
+Detailed [verification](../../after/reconciliation/verification.json)
+records source/wording/identity preservation and evidence consistency checks.
+
+No commit, push, incorporation, accepted release increment, governance closure or
+Solution Architect result confirmation occurred. DR-1 authorises only the completed
+bounded interpretation. All application and semantic decisions remain separate.
+New [bounded verification](../../after/bounded-subject-review/verification.json)
+checks the compact evidence, original-candidate preservation, review consistency
+and unchanged canonical/input state; the earlier verification remains retained
+unchanged as evidence of its originating assessment.
+
+
+<a id="dr-10"></a>
+## DR-10 — G18.03 authored View-folder spelling
+
+**Review history:** Original bounded findings/proposals below are preserved as reviewed. The subsequent acceptance and actual incorporation facts govern the current result; they do not rewrite what was present in export 004.
+
+CR-060 independently proposes correcting only
+`Views / 1. Subject-Based-Views / 18. Provider Directory / 03. Directory-Informaton-Maintenance`
+to `03. Directory-Information-Maintenance` in a separately authorised maintained
+presentation result. The exact incoming spelling remains unchanged in evidence.
+The folder is empty and has no architectural identity. This is not a native
+Subject rename or identity rebinding, and may be decided independently of the
+G18.03 Subject proposal (CR-030) and its classification edge (CR-057).
+
+No correction is applied. The interpretation instruction supplies no View/template
+mutation authority. Retain ordinal, position, siblings and all other authored
+Views/navigation if this correction is later accepted; do not replace the whole
+presentation template with the unadjudicated export. Disposition remains unrecorded.
+
+
+### Accepted CR-060 application — actual result
+
+The accepted correction has been applied to the maintained
+`enterprise-architecture/design/archimate/projection-template.xml`. Its target
+path was absent. Only the necessary empty presentation path
+`Views / 1. Subject-Based-Views / 18. Provider Directory / 03. Directory-Information-Maintenance`
+was added (three empty organisation items); no other incoming G14–G18 folders,
+Views, properties or navigation branches were adopted. This is the necessary
+presentation context for the accepted correction, not an additional semantic
+parent or adoption of the submitted View tree. Removing that path reproduces
+the original template's complete parsed signature; all existing View memberships,
+order, geometry and content remain unchanged. The original misspelling is retained
+unchanged in the incoming export and source evidence. The corrected path is also
+present in the maintained unreleased projection. Disposition is Accept; Outcome
+and incorporated-result confirmation remain pending with the Solution Architect.
+
+
+<a id="dr-11"></a>
+## DR-11 — Authored Views reconciliation and unresolved native references
+
+The [operative Task](../ai-agent-tasks/20261102T000247Z-views-reconciliation.md)
+authorises faithful presentation reconciliation of the exact incoming 004 export
+while retaining the accepted Subject incorporation. It expressly excludes
+additional architectural incorporation, DR-3–DR-9 resolution, release transition,
+protected-publication replacement, closure, commit and push. Task-Issued-At:
+2026-11-02T00:02:47.861Z, from the attributable system instruction-entry event
+retained in the Task. No new architectural acceptance is implied.
+
+**Actual result: UNRESOLVED; maintained presentation application and import-ready
+XML generation blocked.** The [Report](../../after/ai-agent-reports/20261102T001123Z-views-reconciliation.md)
+and [bounded comparison](../../after/views-reconciliation/comparison.md)
+retain all 1,285 authored Views (69 added), the complete 1,183-folder tree
+including 42 empty folders, G18.03 correction and established Property-definition
+rebindings in staged evidence. All existing View identities survive; all existing
+paths change under the authored three-branch organisation. The staged Views are
+exact as parsed after only the 68 Property-reference rebindings; the Views folder
+tree is exact except CR-060. Existing `Assessments` node colour changes are
+preserved. No full incoming model or unrelated semantic delta is incorporated.
+
+The existing identity correlator establishes no canonical correspondence for
+120 incoming native Groupings referenced by 127 nodes across 57 new Views.
+They have no canonicalId and are distinct from the accepted 32 Subjects. Native
+Grouping cannot be treated as presentation-only merely to complete projection.
+No mapping, conversion, deletion or creation was invented. All authored content
+remains intact in the original export and staged evidence. All 1,804 visual
+relationship references resolve with no directly element-backed endpoint
+mismatch. The complete canonical-plus-presentation probe fails the offline XSD
+at the 127 missing element keyrefs; the maintained projector independently
+rejects the staged template at that gate. No import-ready XML was generated.
+
+The canonical 1,874/1,909 projection reproduces the prior Subject XML exactly;
+all 32/27 accepted identities/assertions, 1,882 original relationships and all
+pinned canonical/evidence inputs remain unchanged. The maintained template,
+original 004, published 1.1.18 XML and root release are unchanged. No actual Archi
+transport or Solution Architect visual acceptance occurred. The staged template
+is evidence, not an import target or accepted maintained source.
+
+**Required Solution Architect disposition:** establish the architectural or
+presentation treatment of the 120 Groupings, or supply established canonical
+correspondences, before dependent template application and candidate generation.
+AX-14/AX-17, the Round-Trip Praxis stop rule and common fail-closed authority
+apply. No departure or additional incorporation is inferred from this Task.
+After separately authorised resolution, schema/reference checks and separate
+Archi-model visual inspection remain required. All prior decisions and
+DR-3–DR-9 retain their recorded standing; this factual entry closes nothing.
+
+
+<a id="dr-12"></a>
+## DR-12 — Subject Grouping hierarchy incorporation and Home completion
+
+The [operative Task](../ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md)
+explicitly authorises folder-to-Subject reconciliation, native Grouping incorporation,
+Composition parent → child and distinct directed Home child → parent throughout
+G01–G18, spelling maintenance and complete authored presentation restoration.
+Task-Issued-At: 2026-11-02T00:29:14.357Z. Existing UUIDs/relationships, candidate
+assessments and release/publication boundaries are preserved. The instruction
+supplies incorporation authority, not closure, release transition, commit, push
+or Archi visual acceptance.
+
+**Application performed; full authored presentation unresolved.** The [folder inventory](../../after/subject-hierarchy/folder-reconciliation.json)
+identifies 115 folder occurrences and 114 existing G01–G18 Subjects. Duplicate
+Authorisation Enforcement folders correspond to one established identity; neither
+folder is removed. Names are reconciled against explicit source codes, native
+Grouping namespaces, existing Subject definitions and Composition hierarchy;
+no new identity is allocated merely for hyphen/space formatting.
+
+**Correction to DR-11 and its originating Report:** the 120 previously missing
+native elements are **115 Groupings, two Principles, two Stakeholders and one
+Constraint**, not 120 Groupings. The five non-Grouping candidates are retained in
+[exception evidence](../../after/subject-hierarchy/non-grouping-exceptions.json).
+Their native types and source Documentation explicitly identify proposed changes;
+no authority to incorporate them is inferred from the Task's mistaken aggregate
+population description. Their View references remain unresolved pending explicit
+Solution Architect disposition. The prior Report is preserved as emitted; its
+classification error is corrected here without rewriting its history. A question
+was presented during this task. No answer is inferred from silence.
+
+Three folder labels also differ materially from established Subject names:
+G03 Security-and-Management / Security and Authorisation;
+G07.04 Continuity-of-Operations / Disaster Recovery; and
+G11.04 Performance-and-Capability-Testing / Performance and Capacity Testing.
+The existing canonical identities and classifications remain authoritative. A
+bounded question seeks disposition on correcting these labels; they are not
+silently treated as spelling equivalences. Independent authorised Grouping and
+Home work may continue without resolving those naming questions.
+
+### DR-12 application and verification result
+
+The [formal Report](../../after/ai-agent-reports/20261102T005128Z-subject-grouping-hierarchy.md)
+and [verification](../../after/subject-hierarchy/verification.json)
+record 115 actual native Groupings incorporated through governed UUIDv4 creation,
+with authored Exchange bindings retained, and 114 existing Subjects reused for
+115 folder occurrences. No additional folder-derived identity was allocated.
+Three material folder labels remain unresolved. The earlier 120-Grouping
+classification error is corrected above and in the Report, not silently rewritten.
+
+Actual distinct assertions: 115 Composition created, 96 Composition reused,
+211 directed Home Associations created, zero Home reused. All 211 contained
+Grouping pairs have matching Composition parent → child and explicit Home
+child → parent. No duplicate, conflicting or View-inferred Home was introduced.
+All prior 1,874 identities, 1,909 relationships, accepted 32/27 Subject result,
+784-candidate assessment and unrelated architecture are preserved.
+
+The new canonical verification XML is
+`after/subject-hierarchy/Harmonia-Subject-Hierarchy-canonical-unreleased.xml`
+under this iteration's evidence. It validates and deterministically reproduces at
+1,989 elements / 2,235 relationships with the previous 1,216 maintained Views.
+It is **not** the requested complete authored-Views candidate. The complete staged
+presentation retains 1,285 Views, 1,183 folders and 42 empty folders, the 68
+Property-reference rebindings and authorised spelling maintenance (Architecture,
+Workflow, G18.03 Information and the missing numeric-prefix period). The three
+material folder-name substitutions are not assumed to be spelling corrections.
+
+All 115 native Grouping references resolve. The five non-Grouping proposals
+remain unincorporated in 12 nodes across 10 Views; the complete presentation XSD
+probe fails those 12 keyrefs. No node is discarded or retyped, and the maintained
+template remains unchanged to avoid installing an invalid projection source.
+The five candidate dispositions and three label decisions were requested; no
+response is inferred. Further dependent application remains fail-closed.
+
+Canonical/identity/relationship/naming/navigation/schema/reference checks and
+negative Home checks pass. The derived Manifest and exact reprojection checks
+pass. EA tooling tests: 85 PASS, zero failures/errors. Java architecture
+tests: 90 PASS in offline mode, with explicit JDK class-file fallback limitations
+retained in evidence. The related population fixture expectation was updated;
+validators and existing assertions were not weakened. No actual Archi import or
+visual acceptance occurred. DR-3–DR-9 and all prior dispositions retain their
+recorded standing. This records actual incorporation and blocked effects; it
+confirms no architectural closure, publication, release transition, commit or push.
+
+
+<a id="dr-13"></a>
+## DR-13 — Five approved elements and complete authored presentation
+
+The [operative approval Task](../ai-agent-tasks/20261102T011114Z-complete-subject-views.md)
+explicitly approves inclusion of Distributed Authorisation Enforcement and
+Passport Propagation / Availability as Principle / ArchitecturalAxiom;
+Integration & Solution Engineers and Platform Operations & OA&M Personnel as
+Stakeholders; and Exclusive PetasosParcel Routing as Constraint / Mandate.
+It authorises necessary identity reconciliation, migration and creation, and
+applying the complete authored presentation. Prior blocking conditions in
+DR-11/DR-12 retain their historical activity standing; this later Task supplies
+new authority rather than retrospectively rewriting those results.
+
+Folder dispositions are explicit: retain G03 `Security-and-Management` with its
+unchanged canonical `Security and Authorisation` Subject; correct G07.04 to
+`Disaster-Recovery`; correct G11.04 to `Performance-and-Capacity-Testing`.
+The established spelling housekeeping authority remains applicable. No release
+transition, protected-publication replacement, HCRL closure, commit or push is
+permitted. Actual Archi import and visual acceptance remain the Solution
+Architect's next checkpoint.
+
+**Identity reconciliation plan:** targeted canonical name/source/definition
+inspection establishes no existing equivalent instance for the three normative
+elements. Their concerns overlap broader existing security/messaging constraints
+without establishing equivalence. Source-bound native records explicitly identify
+new instances. The two distinct Stakeholders separate the pre-existing combined
+`Platform Operations & Integration Engineers` population. Its canonical UUID and
+Exchange ID must not be arbitrarily assigned to one distinct successor. Create
+two new distinct identities, retain the combined population as superseded history,
+keep its original definition and all existing references/relationships, and record
+the one-to-many evolution in attributable provenance and canonical explanations.
+Do not force that split into the existing singular identity.correspondence field
+or duplicate/retarget relationships. Native source Documentation supports the
+separation, and the Task expressly authorises necessary migration. No unrelated
+export changes or relationship assertions are adopted.
+
+Application/validation facts and formal Report correspondence follow when known.
+
+### DR-13 actual incorporation and verification
+
+The [formal Report](../../after/ai-agent-reports/20261102T013425Z-complete-subject-views.md)
+and [verification](../../after/complete-views/verification.json)
+record all five approved native elements incorporated through governed creation.
+Three are distinct new normative instances; two are distinct successor populations
+from the old combined operations/integration Stakeholder. All five retain their
+authored Exchange IDs and use native types/established specialisations and naming.
+The combined Stakeholder retains its UUID, binding, complete original definition
+and all references as superseded history, with reciprocal provenance/explanation
+links. No one-to-one equivalence is invented, and no relationship is duplicated
+or retargeted. The source-based identity reconciliation is complete within scope.
+
+The [complete candidate XML](../../after/complete-views/Harmonia-Subjects-Views-reconciled-unreleased.xml)
+contains 1,994 elements, 2,235 relationships, all 1,285 Views, 1,183 folders and
+42 empty folders. It resolves all 127 previously missing node references, including
+the final 12 nodes. The maintained template now owns the complete authored Views.
+Canonical collections continue to come from the Continuum; unrelated input
+semantics/model properties are not adopted. All prior 1,989 canonical identities,
+2,235 relationships, Groupings and 211 Composition/Home pairs are preserved.
+The combined Stakeholder is the sole pre-existing canonical resource amended for
+authorised lifecycle/history; 1,988 other resources and 250 protected inputs remain
+unchanged. The 784 OpenSpec candidates/assessments remain untouched.
+
+All three explicit folder dispositions are applied exactly. G03's authored
+Security-and-Management is intentionally distinct from canonical Security and
+Authorisation. G07.04/G11.04 labels now match their approved canonical Subjects.
+Spelling housekeeping and the four definition-ID mappings for 68 View Properties
+are retained. Exact parsed View/organisation comparisons preserve identities,
+membership, nesting/order, geometry, routing, connections, styling and empty
+folders after only those enumerated presentation transformations.
+
+Canonical schema, identities, naming, provenance, native relationships,
+containment, offline Exchange XSD and typed references/visual endpoints pass.
+Normal generation preflight precedes template installation; the candidate exactly
+reproduces that preflight, and deterministic reprojection/Manifest checks pass.
+EA tooling suite: 85 PASS, zero failures/errors. Java architecture suite:
+90 PASS, with the recorded JDK simple-import fallback limitation. Related fixture
+population expectations were updated; validators and fail-closed assertions were
+not weakened.
+
+The earlier unresolved reference/label conditions in DR-11/DR-12 are addressed
+prospectively by this explicit approval and resulting candidate, preserving those
+records' original scope and history. No actual Archi import/export or Solution
+Architect visual acceptance occurred. Historical temporal-provenance limits and
+DR-3–DR-9 remain at their recorded standing. This entry records successful bounded
+incorporation and automated verification, not HCRL closure, release transition,
+publication replacement, commit or push. Solution Architect visual inspection of
+this exact candidate remains the next human checkpoint.
+
+<a id="dr-14"></a>
+## DR-14 — Accepted candidate, closure preparation and successor transfer
+
+**Later attributable disposition; prior execution history remains unchanged.**
+The [closure Task](../ai-agent-tasks/20261102T020822Z-closure-and-successor-transition.md),
+issued at `2026-11-02T02:08:22.538Z`, records the Solution Architect's successful
+Archi import, satisfactory visual inspection and explicit acceptance of the
+complete Views reconciliation. The exact accepted candidate is
+`after/complete-views/Harmonia-Subjects-Views-reconciled-unreleased.xml`, SHA-256
+`8c54e0dbd0b86c8780d063caf0aa2650a24a41cf0e693fccb2c0e2c5609c4688`.
+This prospectively satisfies the candidate's human Archi checkpoint; earlier
+Reports' unperformed-import statements describe their original activity and are
+not rewritten. The Task authorises governed publication, closure, transfer of all
+outstanding matters to iteration 002 and subsequent scoped commit/push. It
+expressly supplies no acceptance of unresolved architecture or gate bypass.
+
+The [successor register](../../../../../review/1.1.19/hcrl-1.1.19-001.pending.md) preserves DR-1–DR-13
+correspondence, all five DR-6 subrecords, original source decisions and evidence.
+Its DR-14–DR-16 retain the 673 canonical unresolved-property qualifications,
+reader-facing review obligations and actual transport residuals. The
+[transfer inventory](../../after/closure-transition/transfer-register.json)
+records individual conclusion/status, continuation, dependencies and outstanding
+acceptance. Completed incorporation is inherited as baseline, not reopened or
+duplicated. Neither the 784 candidates nor unadjudicated incoming semantics are
+promoted by transfer. Formal closure and successor activation remain gated.
+
+**Independent actual transport control:** an isolated Archi 5.10 command-line
+execution imported this exact candidate, saved a native model and exported
+Open Exchange XML, exit 0. The
+[execution log](../../after/closure-transition/archi-execution.log),
+[bounded comparison](../../after/closure-transition/archi-comparison-summary.json)
+and [classified residuals](../../after/closure-transition/archi-transport-classification.json)
+retain schema/reference validity, all canonical model fields/Property values,
+all 2,235 relationship identities and all 1,285 View contents/tree. Archi adds
+English language attributes, reorders uniquely keyed unordered Properties and
+omits 4,229 redundant catalogue reference labels and 882 generated organisation
+identifiers. The strict maintained verifier **FAILS** with Relationship/View
+transport drift; its original log and the raw comparisons remain preserved.
+No comparator is weakened and no raw-equivalence PASS is asserted. Returned XML
+is evidence only, never a replacement for canonical sources or the template.
+These limitations follow the existing qualified transport distinction, and
+remain explicit successor qualifications rather than silently accepted loss.
+
+**Release/provenance gate:** the root remains 1.1.18 / previous 1.1.17. The existing
+published 1.1.18 XML is protected and cannot receive the changed architectural
+state. The Release Policy requires the accepted substantive change set's patch
+increment; 1.1.19 is proposed. Explicit disposition of the resulting-release /
+retained 1.1.18 iteration-evidence mapping has been requested, including the
+earlier 1.1.17 release reservation. No answer is inferred from silence or a
+general continuation instruction. No publication, completed registration,
+release increment, commit or push has occurred in this closure activity.
+
+The [closure checkpoint Report](../../after/ai-agent-reports/20261102T024051Z-closure-transition-checkpoint.md)
+retains the complete transfer correspondence, preservation/transport checks,
+release blocker and unchanged Git-delivery state. This pending entry records
+preparation facts; it does not assert completed registration or successor activation.
+
+### DR-14 revised release and successor disposition
+
+The [revised Solution Architect decision](../ai-agent-tasks/20261102T025100Z-release-1-1-19-revised-disposition.md), issued at `2026-11-02T02:51:00.943Z`, explicitly authorises closure of this originating iteration, publication as **1.1.19**, and all 16 prepared DR entries/obligations continuing under **1.1.19/001**. The proposed 1.1.18/002 successor arrangement is withdrawn and its prepared record removed. Earlier release-blocker statements above remain historical; this disposition answers the release/provenance gate without changing the Release Policy. Original evidence is neither renamed nor relocated. Unresolved architecture, missing Task times, reader-facing reviews, naming qualifications and transport differences remain explicit deferred obligations, not accepted or resolved by closure. The final [completed originating record](../../../../../register/1.1.19/hcrl-1.1.18-001.complete.md) governs closure after required validation; this pending review and earlier Reports preserve decision history.

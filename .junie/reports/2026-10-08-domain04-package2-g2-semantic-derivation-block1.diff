@@ -1,0 +1,778 @@
+diff --git a/docs/markdown/04-information-architecture/information-families/README.md b/docs/markdown/04-information-architecture/information-families/README.md
+index 3511f12..2212cbb 100644
+--- a/docs/markdown/04-information-architecture/information-families/README.md
++++ b/docs/markdown/04-information-architecture/information-families/README.md
+@@ -21,6 +21,19 @@ The foundational **Entity, Identity, and Service Information Families** establis
+ 
+ ---
+ 
++## Package2 — G2 Block 1 Candidate Families
++
++The following bounded drafts derive from the current reconciled Business Architecture. They are **G2 candidates awaiting architectural review**, not approved, CLOSED or FROZEN families:
++
++1. **[Referral](referral.md)**: Formal care-assessment/management/responsibility requests, independently qualified disposition and progression, and supporting referral context.
++2. **[Appointment / Scheduling](appointment-scheduling.md)**: Externally authoritative planned arrangements, received scheduling milestones, Harmonia synchronisation knowledge and a proposed consolidated schedule View.
++3. **[Episode / Encounter](episode-encounter.md)**: Encounter tracking context, progression and temporal care-place associations; independent Episode semantics explicitly unresolved.
++4. **[Order](order.md)**: Bounded requested fulfilment, routing, closed-loop evidence, modification/cancellation coordination and outcome association, reusing the existing Order Concept.
++
++The [G2 Block 1 review](../reviews/package2-g2-block1-review.md) records cross-family relationships, A–D standing, preserved uncertainty and seven architectural review questions. [G1 remains CLOSED](../reviews/package2-g1-review.md#16-controlled-g1-reconciliation-and-closure). G2 is not CLOSED; G3 and the later Package2 families have not commenced. Package1 semantics above remain unchanged.
++
++---
++
+ ## Relationship to the Domain 04 Metamodel & Foundational Patterns
+ 
+ Every concept within an Information Family is an instance of an **Information Concept** classified into one of the canonical metamodel semantic categories:
+diff --git a/docs/markdown/04-information-architecture/information-families/referral.md b/docs/markdown/04-information-architecture/information-families/referral.md
+new file mode 100644
+index 0000000..11cdc23
+--- /dev/null
++++ b/docs/markdown/04-information-architecture/information-families/referral.md
+@@ -0,0 +1,104 @@
++# Referral Information Family
++
++**Status: G2 CANDIDATE — Block 1; not approved, CLOSED or FROZEN.**
++
++Review standing uses [G2 categories A–D](../reviews/package2-g2-block1-review.md#2-review-standing). Even A identifies a directly derived proposition in this candidate package, not approval of the package. [G1 remains CLOSED](../reviews/package2-g1-review.md#16-controlled-g1-reconciliation-and-closure).
++
++## 1. Purpose & Semantic Boundary
++
++This family describes the information needed to receive a formal request for another care participant or service provider to assess, manage or assume some degree of clinical care responsibility, assemble its supporting context, and communicate its progression and disposition.
++
++The request's substantive meaning originates with the referring participant. Harmonia governs referral information and coordination; it does not thereby perform assessment, make triage judgements or assume clinical responsibility.
++
++```text
++Referral intent ≠ Referral disposition ≠ responsibility actually assumed ≠ Transfer of Care
++Referrer ≠ Requester ≠ Service Provider
++```
++
++Assessment, management and assumption are potentially overlapping requested purposes, not stages or an exhaustive subtype taxonomy. Referral does not require an Appointment, Encounter, Order, successful delivery or Transfer of Care.
++
++## 2. Domain 03 Responsibility & Traceability
++
++The derivation begins with [Strategy Referral Administration and FEAT-SA-03–05](../../02-strategy/capabilities/business-enabling-capabilities.md#2-referral-administration-harmonia-relevant), [reconciled Referral behaviour](../../03-business-architecture/behaviours/02-service-administration.md#3-referral-administration), the [Referral Progression Process](../../03-business-architecture/processes/business-processes.md#33-referral-progression-process), and the authoritative [Referral Master & Triage Ledger responsibility](../../03-business-architecture/information-responsibility/information-responsibility.md#2-canonical-business-information-ownership-matrix). Supporting Referral Master Record, Triage Decision Ledger and Referral Disposition Log wording does not create three independent assets or Concepts.
++
++The [Service Delivery Interactions](../../03-business-architecture/collaborations-interactions/interactions.md#22-service-delivery-interactions) distinguish Service Referral, Service Response and Service Outcome. [Collaborations](../../03-business-architecture/collaborations-interactions/collaborations.md#4-collaboration-governance-guardrails-and-invariants) permit discrete interactions without an enduring collaboration; none is mandatory for an individual referral. [Roles](../../03-business-architecture/actors-roles/roles.md#32-referral-direction-is-contextual) distinguish Referrer participation from a local relationship role or ReferralSource qualifier.
++
++The following keys are local review references, not allocated architectural Canonical IDs. Capability Tier, full ancestry and structural IDs remain unresolved under G1 K9.
++
++| Requirement | Established owner / Feature → Function / exposed Service / Process | Interaction → information need → candidate semantics |
++| :--- | :--- | :--- |
++| RF-IR1 | Referral Administration / FEAT-SA-03 Referral Document Ingestion → Receive Referral / Referral Submission Service | Service Referral → retain what is requested, by whom, for which subject, with indications, purpose and supplied priority → Referral and qualified participant/subject relationships. This meaning is necessary for intake validation, not inferred from a referral document format. |
++| RF-IR2 | Referral Administration / FEAT-SA-04 Referral Supporting Information → Assemble Referral Context / Referral Context Query | Clinical Information Supply/Query/Provision in referral triage → understand which supplied history or supporting information bears on this referral and its source → supporting-context relationships; proposed Referral Context Assembly. No new clinical kinds are derived here. |
++| RF-IR3 | Referral Administration / FEAT-SA-05 Referral Status & Outcome Tracking → Manage Referral Progression / Referral Status & Outcome Service / Referral Progression Process | Service Response → distinguish intake/triage progression from recipient disposition and communicate acceptance, decline or redirection with evidence → Referral Progression Event; proposed independently governed Referral Disposition. |
++| RF-IR4 | Referral Administration → consumed Person Identifier Resolution and Service Provision Resolution; [established dependency matrix](../../03-business-architecture/dependencies/cross-capability-dependencies.md#2-cross-capability-service-consumption-matrix) | Identity Query and service-context resolution → correlate the referred subject and identify a receiving service/provider/catchment where applicable → reuse Package1 identity and DeliverableHealthcareService. These dependencies confer no acceptance or care-transfer authority. |
++
++## 3. Principal Information Concepts
++
++### 3.1 Referral — A
++
++- **Semantic Classification**: Assertion / Request.
++- **Definition**: An identifiable formal request, concerning a subject of care, for another care participant or provider to assess, manage or assume a stated care responsibility.
++- **Necessity**: RF-IR1 requires the request to remain recognisable while its disposition changes. RF-IR4 requires its subject and intended service/recipient to be understood. This is a business request, not a document, generic Order, receiving decision or clinical relationship.
++- **Characteristics**: Requested purpose/responsibility, clinical indication/reason, referring participation, intended recipient and supplied clinical priority/context. Priority supplied with a request is distinct from a subsequent clinician's triage judgement. Particular referring and intended-recipient associations use existing relationships, not new Referrer or Referee entities.
++
++### 3.2 Referral Disposition — B
++
++- **Semantic Classification**: Assertion.
++- **Definition**: An attributable decision or reported disposition concerning a particular Referral, such as acceptance, decline, redirection or context-specific waitlisting.
++- **Necessity**: RF-IR3 requires the decision's meaning and responsible source to be distinguished from the request. The need for that distinction is directly derived; whether it warrants this separate identifiable Concept rather than qualified progression information requires [G2-Q01](../reviews/package2-g2-block1-review.md#g2-q01).
++- **Boundary**: Acceptance and waitlisting are distinct even in the local Accepted / Waitlisted checkpoint. A disposition does not itself define the extent, effective time or duration of clinical responsibility. Referral outcome wording referring to an intake decision is not automatically ServiceOutcome information about delivered care.
++
++### 3.3 Referral Progression Event — A
++
++- **Semantic Classification**: Event.
++- **Definition**: Information concerning a material occurrence or reported milestone in the administration of a Referral, qualified by its source, business context and occurrence/assertion time.
++- **Necessity**: RF-IR3 and the disposition-history responsibility require knowing how the referral progressed, rather than overwriting its intent with the latest process label. Intake validation, clinical triage and scheduling are examples within their evidenced scopes.
++- **Boundary**: Recording a disposition and the disposition assertion may correlate without becoming identical. A recorded event neither proves a later event nor turns an illustrative specialist pathway into every referral's lifecycle.
++
++### 3.4 Referral Context Assembly — B
++
++- **Semantic Classification**: Assembly.
++- **Definition**: A governed composition of a Referral and the independently meaningful supporting information selected for its intake/triage context.
++- **Necessity**: RF-IR2 explicitly requires assembly and a comprehensive referral dossier. A named assembly is proposed for that business purpose; its precise inclusion and snapshot/dynamic semantics require [G2-Q06](../reviews/package2-g2-block1-review.md#g2-q06).
++- **Boundary**: Constituent information retains its own authority, responsibility, identity and qualification. This is not a new clinical record, Collection ownership claim, mandatory stored package or universal longitudinal view.
++
++## 4. Key Information Relationships
++
++All rows apply the [canonical relationship pattern](../patterns/information-relationships.md): Source, Target, Type, with Qualification and Properties where meaningful. Named participant roles are local Relationship Roles; they do not create Business Roles. No cardinalities are allocated from workflow convention.
++
++| Source → Target | Relationship Type / Qualification | Properties needed for meaning | Standing / applicability |
++| :--- | :--- | :--- | :--- |
++| Referral → Healthcare Subject Context / Person identity reference | Concerns subject | Source subject identification and identity-correlation evidence; reuse [Person family](person-healthcare-subject.md) | A — required to understand the referred subject; no ownership of identity. |
++| Referral → Practitioner / Practitioner Role Binding; qualified source organisation where supplied | Originated through referring participation | Actual participant, source authority and context; Referring Clinician is an existing local Relationship Role | A — originating participation required; Practitioner fulfilment of Referrer supported. Exhaustive Actor eligibility and the recipient Business Role remain unresolved (G1 U6). |
++| Referral → intended participant/provider; DeliverableHealthcareService when resolved | Addresses / requests assessment or care; resolved service context | Intended recipient, requested purpose, resolution evidence and eligibility/catchment qualification where used | A — contextual/conditional service association under RF-IR4; it does not establish recipient acceptance. Reuse [service contextual binding](healthcare-service.md#stage-2-deliverablehealthcareservice-contextualisation--binding); no ServiceProvisionMapping. |
++| Referral Disposition → Referral | Disposes of request | Decision-maker/source, reason, disposition time and context | B — required meaning, proposed Concept boundary under G2-Q01. |
++| Referral Progression Event → Referral | Reports administrative progression | Milestone meaning, source, occurrence versus recorded time; decision reference when supplied | A — required for evidenced progression; not a mandatory stage list. |
++| Referral Context Assembly → Referral / supporting information | Assembles for triage | Selection purpose, source references and composition provenance | B — proposed composition under G2-Q06. Association does not mean containment or transfer of authority. |
++| Referral → Appointment | Associated scheduling | Source evidence identifying the referral and allocated appointment | A — conditional specialist booking pathway, not every referral; see [cross-family analysis](../reviews/package2-g2-block1-review.md#4-cross-family-semantic-analysis). |
++
++## 5. Authority, Responsibility & Provenance
++
++| Concept | Originating authority / source | Harmonia responsibility | Provenance required conceptually |
++| :--- | :--- | :--- | :--- |
++| Referral | Referring participant for the requested meaning and indications; sending system may only relay it | Referral Administration manages a governed request representation, validates intake, correlates subject/target, preserves and exposes progression | Originator versus supplying source, referral identity/context, indication/priority attribution, received versus authored time where available; correction source and evidence. |
++| Referral Disposition | Actual triage/recipient decision-maker; a scheduler cannot confer clinical acceptance merely by booking | Referral Administration governs the disposition record and communicates it; does not originate the clinician's judgement by recording it | Decision-maker, source authority, reason, asserted/disposition time, relationship to the referral and any changed decision. Exact authority eligibility remains contextual. |
++| Referral Progression Event | Participant/source reporting the occurrence; Harmonia may originate its own intake/coordination facts | Manage administrative progression and its evidence; consume reported clinical/scheduling facts without substituting its own authority | Source event/assertion context, event-to-referral correlation, material transition rationale and correction/derivation history. |
++| Referral Context Assembly | Constituent originators; Referral Administration for the composition only | Govern contextual assembly and authorised provision | Inclusion basis and generating context/time; lineage to constituent assertions and their qualifications. Composition acquires none of their originating authority. |
++
++## 6. Temporal & Lifecycle Characteristics
++
++RF-IR3 requires disposition/progression time and their recorded/asserted time to remain distinguishable: a late triage notification need not mean late triage. The request's originating/asserted time and reception time matter when explaining intake and progression. Any supplied requested urgency or timing belongs to the referring request; a triage urgency/category is attributable to its decision-maker, not an inferred appointment deadline.
++
++The Process's Submitted → Intake Validated → Clinically Triaged → Accepted / Waitlisted → Scheduled → Consultation Attended → Discharged / Rejected presentation remains a scoped specialist pathway. It establishes neither a universal sequence nor equivalence between its compound alternatives. No universal responsibility effective period is derivable. Information correction/history follows [Foundation lifecycle governance](../governance/information-lifecycle.md); this is distinct from the real-world care lifecycle and from process progression. No exhaustive retention period or universal Referral transition map is introduced.
++
++## 7. Assembly Participation & Other Families
++
++Reuse Healthcare Subject Context, Practitioner Role Binding, Healthcare Organisation and DeliverableHealthcareService for identity/participation/service context. Supporting clinical information is referenced under its existing responsibility; its later Package2 families are not derived here. A scheduling allocation can be conditionally associated with this referral. Direct Referral–Encounter and Referral–Order associations are **not established**. A subsequently evidenced delivery/outcome may contextualise the referral, but neither the precise fulfilment relationship nor responsibility transfer is established by referral intake alone; see cross-family analysis.
++
++## 8. Explicit Boundaries, Unresolved Semantics & Downstream Realisation
++
++G1 U1 retains acceptance commitments, extent/duration/effectiveness of assumed responsibility, referring-party relinquishment and the assessment-Referral/bounded-Order boundary. G1 U6 retains Actor eligibility and target-role uncertainty. There is no partial/total responsibility taxonomy, automatic enduring collaboration, clinical incorporation rule or accepted-implies-transfer rule.
++
++The B Concept boundaries remain review propositions. A possible separately attributable account of responsibility actually assumed is [D — suggested](../reviews/package2-g2-block1-review.md#7-non-authoritative-suggestions), not a Concept established in this family. The absence of a precise Referral–Encounter/Order relationship is preserved rather than completed.
++
++This family specifies information meaning and responsibility only. No FHIR mapping, profile, application object, persistence model, API, integration message, component allocation or EMR workflow is designed. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) governs all candidate and absent relationships.
+diff --git a/docs/markdown/04-information-architecture/information-families/appointment-scheduling.md b/docs/markdown/04-information-architecture/information-families/appointment-scheduling.md
+new file mode 100644
+index 0000000..31341f8
+--- /dev/null
++++ b/docs/markdown/04-information-architecture/information-families/appointment-scheduling.md
+@@ -0,0 +1,107 @@
++# Appointment / Scheduling Information Family
++
++**Status: G2 CANDIDATE — Block 1; not approved, CLOSED or FROZEN.**
++
++[G2 review standing A–D](../reviews/package2-g2-block1-review.md#2-review-standing) distinguishes derivation strength from acceptance. [G1 remains CLOSED](../reviews/package2-g1-review.md#16-controlled-g1-reconciliation-and-closure).
++
++## 1. Purpose & Semantic Boundary
++
++Scheduling Administration requires Harmonia to understand appointment notifications, synchronise changes and expose consolidated patient schedules. It does not require Harmonia to originate authoritative bookings. The [approved behaviour](../../03-business-architecture/behaviours/02-service-administration.md#4-scheduling-administration) explicitly retains host PAS/departmental scheduling authority.
++
++```text
++Scheduling need ≠ proposal ≠ authoritative allocation ≠ received scheduling information
++Authoritative booking state ≠ Harmonia's knowledge/synchronisation of that state
++Appointment ≠ Encounter ≠ HealthcareServiceDelivery
++```
++
++These distinctions identify meanings that must not be conflated when supplied; they do not establish six new Concepts. The architecture strongly establishes allocated/planned appointments and notification/synchronisation. It does not define an independent scheduling-request/proposal responsibility, booking negotiation or scheduler authority transfer.
++
++## 2. Domain 03 Responsibility & Traceability
++
++Use [Strategy FEAT-SA-06–07](../../02-strategy/capabilities/business-enabling-capabilities.md#3-scheduling-administration-harmonia-relevant), [Scheduling behaviour](../../03-business-architecture/behaviours/02-service-administration.md#4-scheduling-administration), and [Appointment Synchronisation State](../../03-business-architecture/information-responsibility/information-responsibility.md#2-canonical-business-information-ownership-matrix). Appointment Event History and Schedule Synchronisation State are supporting responsibility wording, not calendar/slot models.
++
++[Service Response and Service Coordination](../../03-business-architecture/collaborations-interactions/interactions.md#22-service-delivery-interactions) supply the interaction vocabulary for scheduling communications. Their applicability to notifications/coordination does not allocate a new Service dependency or require a [Business Collaboration](../../03-business-architecture/collaborations-interactions/collaborations.md#41-collaboration-existence-threshold). Referral and Encounter Processes provide local uses of allocated scheduling context; neither is a standalone scheduling process.
++
++Keys below are local references, not Canonical IDs. Established Scheduling Administration ownership suffices; Tier and ancestry remain unresolved under G1 K9.
++
++| Requirement | Owner / established Feature → Function / exposed Service | Interaction / local context → information need → candidate semantics |
++| :--- | :--- | :--- |
++| AP-IR1 | Scheduling Administration / FEAT-SA-06 Appointment Notification Ingestion → Receive Appointment Notification / Appointment Notification Ingress | Service Response / supplied notification → recognise the scheduled arrangement, its subject, originating scheduler and reported change → proposed Appointment; Scheduling Change Event. Need arises from booking notifications, not a standard resource shape. |
++| AP-IR2 | Scheduling Administration / FEAT-SA-07 Appointment Status Synchronization → Synchronise Appointment Status / Appointment Schedule Query | Clinical Information Provision/Notification and Service Coordination → distinguish received source milestones from the state Harmonia has synchronised and made available → Schedule Synchronisation State; proposed Patient Appointment Schedule View. |
++| AP-IR3 | Referral Administration → Referral Progression Process, Scheduled checkpoint; Episode & Encounter Administration → Encounter Lifecycle Process, Planned / Booked checkpoint | Locally allocated appointment and subject notification / planned elective admission or clinic appointment → preserve the particular scheduling association where identified → conditional Referral–Appointment and Appointment–Encounter relationships. This does not make Scheduling Administration owner of either other family. |
++
++AP-IR3 traces to the [Referral](../../03-business-architecture/processes/business-processes.md#33-referral-progression-process) and [Encounter](../../03-business-architecture/processes/business-processes.md#34-encounter-lifecycle-process) Processes; it creates no additional Feature association or universal stage correspondence.
++
++## 3. Principal Information Concepts
++
++### 3.1 Appointment — B
++
++- **Semantic Classification**: Assertion / Planned Contextual Binding — classification proposed for review.
++- **Definition**: An identifiable externally established planned arrangement for a healthcare subject's participation in a care/service context at an allocated time, as reported or referenced to Harmonia.
++- **Necessity**: AP-IR1 requires creation, rescheduling, cancellation and check-in notifications to concern a recognisable arrangement; AP-IR2 requires a schedule of those arrangements. Identity is scoped to the source authority, not presumed globally unique merely from a booking identifier.
++- **Boundary**: Planned arrangement does not establish attendance, care interaction or delivery. The existence/meaning of a booking is evidenced; the precise Concept boundary between the planned arrangement and source assertions about it requires [G2-Q02](../reviews/package2-g2-block1-review.md#g2-q02). Harmonia's managed information represents the arrangement without becoming the booking authority.
++
++### 3.2 Scheduling Change Event — A
++
++- **Semantic Classification**: Event.
++- **Definition**: Information reporting a material appointment milestone/change, such as creation, rescheduling, cancellation, check-in or attendance, with its source and scheduling context.
++- **Necessity**: AP-IR1 and AP-IR2 explicitly require notification ingestion, event history and propagation. A source change and Harmonia's receipt of its notification are distinguishable occurrences.
++- **Boundary**: Check-in and attendance retain their reported meanings; neither universally establishes Encounter creation, clinical review or successful care delivery. No compulsory booking → check-in → attendance sequence is inferred.
++
++### 3.3 Schedule Synchronisation State — A
++
++- **Semantic Classification**: Assertion / Derived Knowledge State.
++- **Definition**: The attributable state of what appointment information Harmonia has received, correlated and synchronised for provision to consumers, relative to identified scheduling sources.
++- **Necessity**: AP-IR2 and the ownership matrix explicitly require synchronisation state. It explains what Harmonia knows rather than making its last received notification the scheduler's current truth.
++- **Boundary**: This is semantic knowledge/derivation, not a cache model, version token or replication design. No complete synchronisation, latest-source-state claim or universal stale-state policy may be inferred without evidence. Missing information remains unknown rather than an authoritative cancellation or absence.
++
++### 3.4 Patient Appointment Schedule View — B
++
++- **Semantic Classification**: Information View, using the [existing Assembly/View distinction](../assemblies-views/assemblies-and-views.md#1-information-assembly-vs-information-view).
++- **Definition**: A subject-oriented projection of appointment information across facilities, with source qualifications and the state of Harmonia's knowledge retained.
++- **Necessity**: AP-IR2's Appointment Schedule Query explicitly exposes consolidated patient schedules. Naming a semantic View is proposed; precise inclusion, temporal horizon and composition semantics require [G2-Q06](../reviews/package2-g2-block1-review.md#g2-q06).
++- **Boundary**: Consolidation establishes neither one authoritative enterprise calendar nor booking ownership. The View does not acquire the originating authority of its constituent information.
++
++## 4. Key Information Relationships
++
++Use [Source / Target / Type / Qualification / Properties](../patterns/information-relationships.md), preserving source-specific scheduling authority.
++
++| Source → Target | Type / Qualification | Meaning-bearing properties | Standing / applicability |
++| :--- | :--- | :--- | :--- |
++| Appointment → Healthcare Subject Context | Planned participation concerns subject | Source identification, correlation and scheduling context | A meaning / B Appointment boundary; needed for patient schedule provision. Reuse [Package1 subject semantics](person-healthcare-subject.md). |
++| Appointment → reported service/provider/location context | Planned care/service context | Allocated time and source qualifications; reuse Package1 Concepts only when identifiable | Contextual; no mandatory provider/location/participant tuple is established. Exact required detail is C under G2-Q02, not imported from a scheduling product. |
++| Scheduling Change Event → Appointment | Reports scheduling milestone/change | Source booking reference, source assertion/occurrence time and received time; changed scheduled period where supplied | A — required correlation meaning; Appointment's precise boundary remains B. Cancellation is source-reported, not inferred from silence. |
++| Schedule Synchronisation State → source appointment information / Scheduling Change Event | Derives knowledge from received evidence | Identified sources, correlation and derivation/recorded time; uncertainty about unsupplied source changes | A — required; never substitutes for externally authoritative scheduling state. |
++| Patient Appointment Schedule View → Appointment information / Schedule Synchronisation State | Projects subject schedule | Inclusion purpose, constituent sources and projection time/context | B — G2-Q06. Inclusion is not physical containment or appointment ownership; no separate Collection is required. |
++| Appointment → Encounter | Scheduling context for encounter | Explicit source correlation; planned versus actual timing/occurrence | A — conditional under the Encounter Process's Planned / Booked context, not every appointment. |
++
++## 5. Authority, Responsibility & Provenance
++
++| Concept | Originating authority | Harmonia responsibility | Provenance characteristics |
++| :--- | :--- | :--- | :--- |
++| Appointment | Host PAS or departmental scheduler for allocation and booking state; clinical meaning within supplied service context retains its own source | Scheduling Administration consumes/references the arrangement and manages a governed representation for synchronisation/provision; does not allocate master slots | Booking/source authority, source-scoped identity, origin versus relay, reported scheduled context and alteration lineage. |
++| Scheduling Change Event | Source reporting the milestone; source actor may differ from scheduler for attendance evidence | Ingest, correlate, preserve event history and propagate reported milestones | Reporter, scheduler/source reference, reported occurrence/assertion versus receipt, affected appointment and change/correction context. |
++| Schedule Synchronisation State | Harmonia for its own evidenced synchronisation/derivation facts only | Own/govern synchronisation knowledge under Scheduling Administration | Source evidence used, derivation/correlation context and recorded time; uncertainty or conflict remains explicit without an invented resolution rule. |
++| Patient Appointment Schedule View | Constituent source authorities; Scheduling Administration for projection only | Assemble/expose the consolidated subject schedule with access qualification | Composition/inclusion basis, constituent references and projection time. Neither presentation nor aggregation transfers booking authority. |
++
++## 6. Temporal & Lifecycle Characteristics
++
++Allocated/scheduled time or period is required to understand an appointment schedule. Source change/occurrence time and received/recorded time are required to distinguish rescheduling from delayed notification. Attendance/check-in occurrence time matters only where that milestone is supplied; scheduled time is never actual encounter or delivery time by assumption.
++
++Requested periods and proposed periods must be distinguished from allocations if reported, but upstream architecture does not establish their detailed semantics or a standalone requested/proposed scheduling Concept. They remain C, not implied steps preceding every booking.
++
++An Appointment's source booking lifecycle, the scheduling-event history, Harmonia synchronisation progression and an Encounter's real-world/admin progression differ. No universal recurrence, missed-appointment disposition, calendar horizon or status transition model is derived. Foundation provenance/correction rules apply to managed information; they do not authorise Harmonia to alter the host scheduler's truth.
++
++## 7. Assembly Participation & Other Families
++
++The proposed View directly supports Appointment Schedule Query. It does not require a persistent appointment Collection or a new scheduler-owned assembly. Existing Service Provision Context may explain an identified service's availability; service availability is not a booked appointment, calendar or clinic slot model.
++
++Referral–Appointment and Appointment–Encounter associations are conditional on the evidenced local pathway. The Order Process's imaging scheduling checkpoint also supports a conditional Order–Appointment association. An operational clinic queue may consume booking/check-in information ([Clinic / Operational Queue Process](../../03-business-architecture/processes/business-processes.md#48-clinic--operational-queue-progression-process)); its arrival/readiness progression remains operational information, not an Appointment lifecycle. The [cross-family review](../reviews/package2-g2-block1-review.md#4-cross-family-semantic-analysis) qualifies these relationships.
++
++## 8. Explicit Boundaries, Unresolved Semantics & Downstream Realisation
++
++No scheduling engine, slot, calendar, recurrence structure, booking algorithm or negotiation workflow is introduced. An Appointment neither requires Referral nor produces Encounter or delivery by itself. No exact source-to-Harmonia state conflict/freshness rule is established.
++
++G2-Q02 retains the Appointment semantic boundary and source qualification; G2-Q06 retains the View boundary. Requested need/proposed context are explicitly unestablished as independently governed Concepts. Roles of schedulers and notification reporters are identified by source evidence; no new Scheduler Business Role or exhaustive participant eligibility is invented.
++
++This is conceptual Information Architecture. No FHIR resource/profile, application object, cache/persistence model, schema, API or integration contract is allocated. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) remains authoritative.
+diff --git a/docs/markdown/04-information-architecture/information-families/episode-encounter.md b/docs/markdown/04-information-architecture/information-families/episode-encounter.md
+new file mode 100644
+index 0000000..0d00883
+--- /dev/null
++++ b/docs/markdown/04-information-architecture/information-families/episode-encounter.md
+@@ -0,0 +1,110 @@
++# Episode / Encounter Information Family
++
++**Status: G2 CANDIDATE — Block 1; not approved, CLOSED or FROZEN.**
++
++[G2 review standing A–D](../reviews/package2-g2-block1-review.md#2-review-standing) qualifies the derivation. [G1 remains CLOSED](../reviews/package2-g1-review.md#16-controlled-g1-reconciliation-and-closure). This family intentionally contains an unresolved Episode requirement rather than a manufactured complete Episode model.
++
++## 1. Purpose & Semantic Boundary
++
++Episode & Encounter Administration requires identifiable patient/provider encounter contexts, administrative progression and historical care-place associations. Encounter context helps other capabilities understand the setting of care; it does not become every clinical activity performed in that setting.
++
++```text
++Longitudinal / episode context ≠ bounded encounter context
++Appointment ≠ Encounter ≠ HealthcareServiceDelivery
++Encounter administrative progression ≠ clinical service performance
++Care-place association ≠ Care-Place Definition ≠ operational bed state
++```
++
++The owner name includes Episode, but the reconciled Functions, Services and ownership-matrix asset are encounter-specific. G1 K5 explicitly prohibits using owner-name correction to broaden behaviour into unsupported Episode semantics. Longitudinal record synthesis belongs to Patient Clinical Record. A care team's episode context does not establish an Episode Collection, its membership criteria or its administrative authority.
++
++## 2. Domain 03 Responsibility & Traceability
++
++Use [Strategy FEAT-SA-08–10](../../02-strategy/capabilities/business-enabling-capabilities.md#4-episode--encounter-administration-harmonia-core), [Episode & Encounter behaviour](../../03-business-architecture/behaviours/02-service-administration.md#5-episode--encounter-administration), the [Encounter Lifecycle Process](../../03-business-architecture/processes/business-processes.md#34-encounter-lifecycle-process), and [Encounter Master & Movement Ledger](../../03-business-architecture/information-responsibility/information-responsibility.md#2-canonical-business-information-ownership-matrix). Supporting Encounter Master Record, Encounter State Transition Log and Encounter Care-Place Movement Ledger labels describe responsibility, not three predetermined Concepts.
++
++The [Service Delivery and Operational Interactions](../../03-business-architecture/collaborations-interactions/interactions.md#22-service-delivery-interactions) distinguish Service Response/Outcome/Coordination, Transfer of Care, Resource Reporting and Resource Allocation. Care-Team and Operational [Collaborations](../../03-business-architecture/collaborations-interactions/collaborations.md#34-care-team-collaboration) supply relevant participation settings; no universal collaboration instance or care-transfer result is inferred. Clinical Information Provision/Notification describes disclosed context and transition notification without inventing a new Interaction.
++
++Local keys below are not Canonical IDs. Capability Tier/ancestry remain unresolved under G1 K9; the established owner and exact Functions provide the trace.
++
++| Requirement | Established owner / Feature → Function / exposed Service / Process | Interaction → information need → candidate semantics |
++| :--- | :--- | :--- |
++| EC-IR1 | Episode & Encounter Administration / FEAT-SA-08 Encounter Context Creation → Establish Encounter Context / Encounter Context Resolution | Clinical Information Provision; care-context coordination → distinguish the encounter by source-qualified identity, subject, attending participant, clinical class and supplied admitting diagnosis → proposed Encounter; existing subject/practitioner relationships and candidate Encounter Context Assembly. It does not derive a new diagnosis Concept. |
++| EC-IR2 | Episode & Encounter Administration / FEAT-SA-09 Encounter State Progression → Progress Encounter State / Encounter Lifecycle Event Notification / Encounter Lifecycle Process | Service Response/Coordination and clinical information notification → retain attributable administrative state/milestone information independently of clinical performance → Encounter Progression Event and context-qualified state assertions. |
++| EC-IR3 | Episode & Encounter Administration / FEAT-SA-10 Encounter Bed/Location Association → Maintain Encounter Care-Place Association / Encounter Location History Query | Resource Allocation/Reporting and Operational Coordination → know which ward/room/bed context applied to the encounter over time → Encounter Care-Place Association using the Foundation relationship pattern. |
++| EC-IR4 | Episode & Encounter Administration → consumed Care-Place Specification Lookup and Bed Availability Query; [dependency matrix](../../03-business-architecture/dependencies/cross-capability-dependencies.md#2-cross-capability-service-consumption-matrix) | Location lookup and resource reporting before confirming a move → distinguish physical care-place characteristics, readiness evidence and the encounter's association → reuse Healthcare Location / Care-Place Definition; reference operational readiness under its existing owner. No operational-state family is derived. |
++| EC-IR5 | Care-Team Collaboration's acute/chronic/inpatient episode context; Primary Care's Correlate Primary Care Consultation Context / Primary Care Summary Ingress; Patient Clinical Record's Assemble Longitudinal Clinical Record / Longitudinal Clinical Record Query | Service Coordination / Clinical Information Provision → retain supplied episode or longitudinal contextual references where needed without equating them to an encounter → C: exact Episode meaning, association and information ownership are not established. No Episode Feature is assigned. |
++
++EC-IR5 uses [Care-Team Collaboration](../../03-business-architecture/collaborations-interactions/collaborations.md#34-care-team-collaboration), [Primary Care](../../03-business-architecture/behaviours/03-service-delivery.md#21-primary-care), and [Patient Clinical Record](../../03-business-architecture/behaviours/05-intrinsic-enablement.md#21-patient-clinical-record). The need for longitudinal/contextual understanding is evidenced; a particular Episode Concept, grouping rule or new responsibility does not follow.
++
++## 3. Principal Information Concepts
++
++### 3.1 Encounter — B
++
++- **Semantic Classification**: Activity / Contextual Binding — the precise classification/boundary remains proposed.
++- **Definition**: Information identifying and contextualising a bounded clinical and administrative interaction between a healthcare subject and participating healthcare providers, including its planned context and evidence of actual occurrence/progression when established.
++- **Necessity**: EC-IR1 and EC-IR2 require continuity of encounter identity across planning, arrival, active care and discharge information. Identity and meaning are directly evidenced; whether the Concept primarily represents the interaction/activity or an administrative binding requires [G2-Q03](../reviews/package2-g2-block1-review.md#g2-q03).
++- **Characteristics**: Source/namespace-qualified encounter identity, subject reference, attending participant, clinical class, admitting diagnosis/context as supplied, and attributable administrative state. These are governed characteristics/relationships, not automatically separate Concepts.
++- **Boundary**: A planned encounter context does not prove an actual interaction occurred. An interaction may contextualise multiple service deliveries without being identical to them. Encounter identity is distinct from Person identity, appointment booking identity and Episode references.
++
++### 3.2 Encounter Progression Event — A
++
++- **Semantic Classification**: Event.
++- **Definition**: Information concerning a material encounter administrative transition or reported milestone, with its triggering context, qualified state meaning, source authority and time.
++- **Necessity**: EC-IR2 expressly requires state progression, a transition log and notifications. The event carries state assertions where appropriate; the Foundation does not require a new Concept for each state label.
++- **Boundary**: Planned, arrived, active, on leave, discharged and completed information retain their source/context meanings. No unestablished equivalence between Behaviour, Strategy and Process labels is added. Discharged does not automatically establish all documentation/coding completion or legal closure.
++
++### 3.3 Encounter Care-Place Association — A
++
++- **Semantic Classification**: Relationship / Temporal Contextual Association.
++- **Definition**: The qualified association of an Encounter with a Healthcare Location or Care-Place over the period relevant to that encounter's operational location/context.
++- **Necessity**: EC-IR3 requires a movement history and current location context. This applies the existing relationship machinery; it does not add a local movement-record implementation.
++- **Boundary**: Planned placement/reservation and actual location must retain their qualification when supplied. A source asserting encounter location does not thereby establish bed readiness, cleaning completion, provider ownership or Transfer of Care. Physical care-place association is applicable where that setting has such locations, not mandatory for every virtual/community contact.
++
++### 3.4 Encounter Context Assembly — B
++
++- **Semantic Classification**: Assembly.
++- **Definition**: The existing Foundation candidate for composing independently meaningful encounter, subject, attending participant, admitting context and care-place information for encounter-context resolution.
++- **Necessity**: EC-IR1 and EC-IR3 support coordinated provision of these facts. Reuse [Foundation Encounter Context](../assemblies-views/assemblies-and-views.md#2-illustrative-candidate-context-assemblies--views) and Package1 assembly participation rather than create an equivalent local pattern.
++- **Boundary**: This is not the Encounter activity, an Episode Collection, a longitudinal record or a mandatory persisted aggregate. It acquires no originating authority over constituents. Exact inclusion/composition scope remains [G2-Q06](../reviews/package2-g2-block1-review.md#g2-q06).
++
++## 4. Key Information Relationships
++
++| Source → Target | Type / Qualification | Properties necessary for meaning | Standing / applicability |
++| :--- | :--- | :--- | :--- |
++| Encounter → Healthcare Subject Context | Concerns subject | Source identity reference, correlation and care setting | A meaning / B Encounter boundary — required. Reuse [Person family](person-healthcare-subject.md); registration does not originate Person identity. |
++| Encounter → Practitioner / Practitioner Role Binding | Attending / care participation | Source-attested participation and effective context/period where supplied | A — attending context required by EC-IR1; broader care-team context supported by FEAT-SA-10. Relationship Roles are not new Business Roles, and participation does not establish consent or decision authority. |
++| Encounter Progression Event → Encounter | Reports administrative transition | Source authority, prior/new state where meaningful, rationale and transition/recorded time | A — required EC-IR2; state-label correspondence remains contextual/unresolved. |
++| Encounter → Healthcare Location / Care-Place Definition | Encounter Care-Place Association | Location evidence, effective period, planned/actual qualification and change provenance | A — conditional on physical placement, required meaning for that context; reuse [Location family](healthcare-location.md#5-architectural-invariant-static-definition-vs-operational-state). |
++| Encounter Context Assembly → Encounter / subject / participants / contextual information | Assembles for encounter-context provision | Inclusion purpose and attributable constituent references | B — proposed composition boundary under G2-Q06, without containment/authority transfer. |
++| Encounter → HealthcareServiceDelivery | Context for delivery | Explicit encounter/delivery correlation, source and temporal qualification | B — contextual, supported by [Package1 candidate assembly participation](healthcare-service.md#8-candidate-information-assembly-participation); precise association boundary is G2-Q05. Neither every encounter nor every delivery requires this association. |
++| Encounter → supplied Episode / longitudinal contextual reference | Association not yet established | Meaning, scope, source authority and association evidence remain unavailable as a complete model | C — preserve the supplied reference's qualification; do not claim Episode membership or containment. G2-Q04. |
++
++## 5. Authority, Responsibility & Provenance
++
++| Concept | Originating authority / sources | Harmonia responsibility | Provenance characteristics |
++| :--- | :--- | :--- | :--- |
++| Encounter | Health-service administrative participant for registration/class/state; treating participant for clinical context assertions; no universal originator is specified | Episode & Encounter Administration creates/manages the governed tracking context, correlates and exposes it; does not originate every clinical fact or perform the encounter | Namespace/source identity, subject correlation, originating versus supplying participants, admitting-context attribution and correction evidence. Strategy's authoritative tracking-context responsibility does not confer authority over the represented care. |
++| Encounter Progression Event | Source empowered to assert the particular administrative/clinical milestone; Harmonia for its own governance/coordination facts | Govern encounter information progression and notification | Triggering interaction, source and authorising context, transition occurrence versus recorded time, rationale and amended/superseding assertion lineage. Exact eligibility for each transition remains context-specific. |
++| Encounter Care-Place Association | Placement/movement source; Location Administration retains place definition, Bed & Care-Place Management retains readiness/state | Govern encounter-to-location association/history; consume readiness evidence without taking its ownership | Source association, effective period, actual/planned qualification, move/correction evidence and referenced readiness context where used. |
++| Encounter Context Assembly | Each constituent originator; Episode & Encounter Administration for encounter-context composition | Govern assembled contextual provision only | Composition/inclusion context and generating time; constituent authority and source references. No assembly acquires clinical or booking authority. |
++
++## 6. Temporal & Lifecycle Characteristics
++
++Encounter progression requires transition/occurrence time distinct from asserted/recorded time. Care-place movement requires effective association periods to explain where a subject was accommodated over time. Planned timing and actual arrival/care/discharge timing remain distinguishable where evidenced; neither scheduled time nor a last-known state establishes actual service start/end.
++
++G1 K10 preserves independently established Strategy ON_LEAVE and the Behaviour/Process progressions. Their applicability and transition correspondence remain unresolved (G1 U8). The Process's triage, documentation finalisation, coding and legal-closure conditions remain local; they do not become every Encounter's lifecycle. ON_LEAVE is neither omitted nor mapped to another state.
++
++Information lifecycle governance, real-world care progression and Business Process progression may correlate but are distinct. Information corrections preserve the Foundation's history/provenance rules without changing history of the actual encounter. Discharge-summary publication before versus upon departure remains G1 U9; no alternative publication events or resolved timing are invented.
++
++## 7. Assembly Participation & Other Families
++
++Reuse Healthcare Subject Context, Practitioner Role Binding, Healthcare Location / Care-Place Definition, and the existing candidate Encounter Context Assembly. Encounter information can contribute to the established longitudinal assembly owned by Patient Clinical Record; this does not make Episode & Encounter Administration owner of longitudinal synthesis.
++
++An Appointment may provide conditional planned context. Encounter context may be associated with independently evidenced HealthcareServiceDelivery. Clinical orders may occur during the local encounter pathway, but exact universal Order–Encounter correlation and cardinality are not established. A Referral's attended consultation does not by itself supply an explicit Referral–Encounter link. See [cross-family analysis](../reviews/package2-g2-block1-review.md#4-cross-family-semantic-analysis).
++
++## 8. Explicit Boundaries, Unresolved Semantics & Downstream Realisation
++
++G2-Q03 retains Encounter's precise semantic boundary; G2-Q04 retains Episode identity/scope/authority and relationship meaning. A possible Episode Context is [D — suggested](../reviews/package2-g2-block1-review.md#7-non-authoritative-suggestions), not an established candidate Concept in the principal inventory. No Episode = Collection of Encounters rule, membership, hierarchy or universal lifecycle is added.
++
++G2-Q05 retains encounter/delivery association qualification; G2-Q06 retains the Assembly boundary. G1 U4's universal delivery/outcome authority, U8's ON_LEAVE correspondence and U9's discharge publication timing remain unresolved. No clinical responsibility transfer is inferred from movement or discharge, and no operational bed model is derived.
++
++No FHIR mapping, application component, class, persistence entity, schema, API, integration message, cache model or implementation allocation is created. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) governs the derivation itself.
+diff --git a/docs/markdown/04-information-architecture/information-families/order.md b/docs/markdown/04-information-architecture/information-families/order.md
+new file mode 100644
+index 0000000..9f92c27
+--- /dev/null
++++ b/docs/markdown/04-information-architecture/information-families/order.md
+@@ -0,0 +1,127 @@
++# Order Information Family
++
++**Status: G2 CANDIDATE — Block 1; not approved, CLOSED or FROZEN.**
++
++[G2 categories A–D](../reviews/package2-g2-block1-review.md#2-review-standing) describe derivation/review standing, not approval. [G1 remains CLOSED](../reviews/package2-g1-review.md#16-controlled-g1-reconciliation-and-closure).
++
++## 1. Purpose & Semantic Boundary
++
++Order Administration needs to understand an attributable request/direction for bounded clinical activity or service fulfilment, determine its destination, coordinate routing, track a closed loop, coordinate requested modification/cancellation and associate returned outcomes. Diagnostic, medication and procedural orders remain in scope; the local diagnostic Process does not delimit the entire family.
++
++```text
++Order ≠ Referral ≠ HealthcareServiceDelivery ≠ ServiceOutcome
++Dispatch ≠ receipt ≠ acknowledgement ≠ acceptance
++Modification/cancellation requested ≠ modification/cancellation effected
++Order closure / requester acknowledgement ≠ diagnostic-content verification
++```
++
++Reuse the [Healthcare Service semantic chain](healthcare-service.md#4-associated-request-mechanism-order): DeliverableHealthcareService → optional Order → HealthcareServiceDelivery → ServiceOutcome. These arrows distinguish meanings and evidenced associations, not mandatory states of a single lifecycle. Delivery may occur without an Order; an Order may remain unfulfilled.
++
++## 2. Domain 03 Responsibility & Traceability
++
++Use [Strategy FEAT-SA-11–14](../../02-strategy/capabilities/business-enabling-capabilities.md#5-order-administration-harmonia-core), [Order behaviour](../../03-business-architecture/behaviours/02-service-administration.md#6-order-administration), [Closed-Loop Order Progression Process](../../03-business-architecture/processes/business-processes.md#35-closed-loop-order-progression-process), and [Clinical Order & Closed-Loop Matrix](../../03-business-architecture/information-responsibility/information-responsibility.md#2-canonical-business-information-ownership-matrix). Supporting Clinical Order Master Record, Closed-Loop Tracking Ledger and Order-Result Correlation Matrix retain their G1 K3 meaning; they are not three new ownership-matrix entries.
++
++[Service Request, Service Response and Service Outcome Interactions](../../03-business-architecture/collaborations-interactions/interactions.md#22-service-delivery-interactions) carry requested work, reported dispositions and returned outcomes. [Service-Delivery Collaboration](../../03-business-architecture/collaborations-interactions/collaborations.md#35-service-delivery-collaboration) supports closed-loop fulfilment where such a collaboration exists, but every Order does not create an enduring collaboration. [Requester, Prescriber, Performer and Service Provider Roles](../../03-business-architecture/actors-roles/roles.md#22-care-delivery-roles) remain distinct from local requesting/performing participation relationships and from Referrer.
++
++Local keys below allocate no architectural Canonical IDs or ancestry. Outcome association derives from established Order Administration responsibility, not an invented Strategy Feature.
++
++| Requirement | Established owner / Feature → Function / exposed Service / Process | Interaction → information need → candidate semantics |
++| :--- | :--- | :--- |
++| OR-IR1 | Order Administration / FEAT-SA-11 Order Request Ingestion → Receive Order Request / Order Requisition Ingress | Service Request → know the requested bounded work/service, subject, requesting participant and indication/specification → reuse Order, subject and qualified requester/service relationships. |
++| OR-IR2 | Order Administration / FEAT-SA-12 Order Destination Resolution & Routing → Resolve Order Destination / Order Dispatch Service | Service Request transmission and Service Response → distinguish intended/resolved performing destination, routing direction and actual dispatch → reuse Order Routing Directive; qualified destination/service/endpoint associations and progression facts. |
++| OR-IR3 | Order Administration / FEAT-SA-13 Order Closed-Loop Progression Tracking → Manage Order Progression / Order Status & Tracking Query / Closed-Loop Order Progression Process | Service Response / Service Outcome → correlate receipt, technical or business acknowledgement, acceptance, execution, completion and closure evidence with the originating Order → Order Progression Event and existing relationship pattern. Absence of a report does not establish failure or successful completion. |
++| OR-IR4 | Order Administration / FEAT-SA-14 Order Cancellation & Modification Coordination → Coordinate Order Modification / Cancellation / Order Cancellation Service | Changed Service Request and coordination/response → distinguish request to change or cancel from performing-system response and established effect → Order Change Request; correlated progression facts. A control instruction is not the fact that the clinical work stopped. |
++| OR-IR5 | Order Administration, Feature association not established → Associate Order Outcome / Order Outcome Notification | Service Outcome / Clinical Information Notification → associate returned report/observation information with its originating request and notify the requester → reuse Order-Result Correlation Link; contextual ServiceOutcome relationship. Correlation does not adjudicate conflicting results. |
++| OR-IR6 | Order Administration → consumed Practitioner Role Resolution and Service Provision Resolution; [dependency matrix](../../03-business-architecture/dependencies/cross-capability-dependencies.md#2-cross-capability-service-consumption-matrix) | Credential/context resolution and service destination resolution → understand requesting privileges and performing service/provider context → reuse Practitioner Role Binding, Clinical Privilege, DeliverableHealthcareService and destination Endpoint where supplied. Validation does not confer substantive clinical authority. |
++
++## 3. Principal Information Concepts
++
++### 3.1 Order — A; existing Concept reused
++
++- **Semantic Classification**: Assertion / Request / Direction.
++- **Definition**: The independently identifiable clinical requisition, directive or prescription requesting bounded activity/service fulfilment for a stated subject and purpose.
++- **Necessity**: OR-IR1 requires the requested work to be understood and OR-IR3 requires returned facts to correlate with the same originating Order. Package1 already establishes Order as an associated direction mechanism; this family elaborates its information responsibility rather than creates a duplicate request Concept.
++- **Boundary**: The Order's directive standing is attributable to its originator/context; ingestion does not certify that every submitted Order is clinically valid. Order does not establish receipt, acceptance, execution or delivery. Requested clinical responsibility for bounded work does not by itself distinguish every assessment Order from Referral; G1 U1 remains.
++
++### 3.2 Order Routing Directive — A; Foundation Concept reused
++
++- **Semantic Classification**: Assertion / Instruction.
++- **Definition**: The attributable routing direction that relates an Order to the resolved performing destination/service context.
++- **Necessity**: OR-IR2 explicitly requires destination resolution and routing directives. Reuse [Foundation canonical Order derivation](../traceability/domain03-traceability.md#23-representative-example-3-order-administration).
++- **Boundary**: A resolved destination, routing instruction and dispatch occurrence are distinct facts. Destination is represented through existing provider/service/Endpoint relationships, not a new destination entity or universal routing-rule Definition. A receiving endpoint is not itself a clinician, Service Provider or accepting party.
++
++### 3.3 Order Progression Event — A
++
++- **Semantic Classification**: Event.
++- **Definition**: Information concerning a material occurrence or reported progression fact in the closed loop for an Order, qualified by source, destination, evidence and time.
++- **Necessity**: OR-IR3 needs distinguishable dispatch, receipt, acknowledgement, acceptance, execution, completion and closure facts; OR-IR4 needs the response/effect of changes to remain distinguishable from the change request.
++- **Boundary**: Event kind, reporting source and qualification express these distinctions without creating a Concept for every status. Acknowledgement must retain what it acknowledges. Technical receiving-boundary acceptance does not establish business acceptance; requester result acknowledgement is distinct again. No mandatory linear sequence is derived for all kinds of Order.
++
++### 3.4 Order Change Request — A
++
++- **Semantic Classification**: Assertion / Requested Direction Change.
++- **Definition**: An attributable request to modify a particular Order's clinical details or cancel its unexecuted requested work, retaining the original Order association and the requested change's meaning.
++- **Necessity**: OR-IR4 establishes modification/cancellation coordination even though the illustrative Process omits these checkpoints. This Concept captures requested effect rather than silently rewriting an Order as though the effect already occurred.
++- **Boundary**: Modification and cancellation remain different requested effects, expressed through qualification; no new universal generic request family is introduced. Authority to request a change, acceptance by the performing system and actual effect require their own evidence. Exact race/eligibility/effective-change rules are not established.
++
++### 3.5 Order-Result Correlation Link — A; Foundation relationship reused
++
++- **Semantic Classification**: Relationship / Correlation.
++- **Definition**: The qualified association of returned result/report information with its originating Order, preserving source authority, correlation evidence and qualification.
++- **Necessity**: OR-IR5 and the Order-Result Correlation Matrix require this association. Reuse the Foundation name and [common relationship structure](../patterns/information-relationships.md); do not create a redundant correlation Concept for each outcome type.
++- **Boundary**: Result correlation is not result production, diagnostic interpretation, conflict adjudication or verification. Association of broader ServiceOutcome kinds is supported by Package1's chain, with exact kind/authority semantics unresolved under G1 U4. No later clinical family is derived here.
++
++### 3.6 Order Context Assembly — B; existing candidate reused
++
++- **Semantic Classification**: Assembly.
++- **Definition**: A governed contextual composition linking an Order, its routing/progression/change evidence and separately meaningful fulfilment/outcome information when established.
++- **Necessity**: OR-IR3 and OR-IR5 support coherent tracking/query/notification. Package1 already identifies [Order Context Assembly](healthcare-service.md#8-candidate-information-assembly-participation). Its precise inclusion and temporal composition boundary require [G2-Q06](../reviews/package2-g2-block1-review.md#g2-q06).
++- **Boundary**: An assembly may contain an unfulfilled Order with no delivery/outcome evidence. It does not require a new Collection, acquire source authority or become an order-entry workflow.
++
++## 4. Key Information Relationships
++
++| Source → Target | Type / Qualification | Meaning-bearing properties | Standing / applicability |
++| :--- | :--- | :--- | :--- |
++| Order → Healthcare Subject Context / requesting Practitioner Role Binding | Concerns subject / originated by requester participation | Source-qualified subject/order identity, request authority/context, supplied indication and credential-resolution evidence | A — required clinical-order meaning. Reuse [subject](person-healthcare-subject.md) and [practitioner](practitioner.md) semantics. Relationship Roles do not establish a new Requester entity or equate it to Referrer. |
++| Order → DeliverableHealthcareService / requested work specification | Requests / directs bounded fulfilment | Identified service binding and request scope where resolved; source indication/specification | A — conditional contextual service binding from OR-IR2/6 and Package1. Order is not mandatory for service delivery, and not every intake request has a fully resolved binding. |
++| Order Routing Directive → Order / resolved service/provider/Endpoint | Routes request to destination | Resolution evidence, routing direction, destination qualification and decision time | A — required routing meaning; directive does not establish dispatch, receipt or acceptance. Reuse existing n-ary context rather than disconnected claims of universal service provision. |
++| Order Progression Event → Order / relevant destination or request | Reports closed-loop occurrence/disposition | Fact kind and scope, source/reporting authority, occurrence/recorded time, correlation evidence and acknowledged subject | A — required tracking. Multiple facts in a local checkpoint stay distinct; destination qualification is not a fan-out algorithm or cardinality requirement. |
++| Order Change Request → Order | Requests modification / cancellation | Requested effect, requesting authority, issue/received time, target Order context and response/effect evidence when returned | A — required coordination; exact authoritative effect rules are C under G2-Q07. |
++| Order → HealthcareServiceDelivery | Requests work / is associated with evidenced fulfilment | Request reference versus evidence that identified delivery occurred; performer/source and temporal context | A — conditional Package1 association. A request for delivery is not the fact of fulfilment. |
++| Order → ServiceOutcome / result information | Order-Result Correlation Link; broader outcome association when evidenced | Outcome source/kind, qualification, correlation basis, association time and correction lineage | A — required association capability, conditional on supplied outcome. No universal outcome qualification or ownership is established. |
++| Order Context Assembly → Order / routing / progression / change / delivery / outcome | Assembles tracking context | Inclusion purpose, evidence references and composition provenance | B — G2-Q06; missing delivery/outcome remains absent evidence, not an invented failed or completed disposition. |
++
++## 5. Authority, Responsibility & Provenance
++
++| Concept | Originating authority | Harmonia responsibility | Provenance characteristics |
++| :--- | :--- | :--- | :--- |
++| Order | Requesting clinician/clinical agent or prescriber within the evidenced request context; exhaustive authority criteria not supplied | Order Administration governs request information, intake, routing, tracking and exposure; does not prescribe or perform the work | Originator versus transmitting system, request identity/namespace, subject/requester context, supplied indication/specification and amendment attribution. Locally required signatures remain local. |
++| Order Routing Directive | Governed destination-resolution/routing responsibility; provider catalogue authority remains Health Service Administration's context | Own/govern routing direction under Order Administration | Resolution source/basis, chosen service/provider/Endpoint context and routing assertion time; no new routing-rule authority model. |
++| Order Progression Event | Dispatcher for dispatch facts; receiver/performer for their reported receipt/acceptance/execution; requester for result acknowledgement | Correlate/preserve/expose the closed loop; originate only evidenced internal coordination facts | Source, fact/acknowledgement scope, destination/request correlation, occurrence/assertion/recorded time and correction evidence. Unknown effect stays unknown under AX-15. |
++| Order Change Request | Participant submitting the requested change; exact authorisation/eligibility remains contextual | Govern coordination of the request, response and established effect, without substituting a directive for actual cancellation | Originator, reason/requested change, original Order association and response/effect lineage. |
++| Order-Result Correlation Link | Order Administration for the correlation assertion; result/report originator retains substantive authority | Own/govern association and notification; consume qualification without defining it | Source result/request references, correlation evidence/context, assertion time, qualification and correction/rebinding lineage. |
++| Order Context Assembly | Each constituent originator; Order Administration for composition | Govern tracking-context assembly/provision only | Inclusion/composition context, generating time and constituent lineage; no originating authority acquired by aggregation or review. |
++
++## 6. Temporal & Lifecycle Characteristics
++
++Closed-loop progression requires requested/issued and received time where available, dispatch time, recipient-reported occurrence/disposition time, association time and Harmonia recorded time to be distinguished. Requested timing, imaging scheduled timing and actual execution timing apply only where supplied/evidenced. A cancellation/modification request's time is distinct from an established effect time; a response delay does not determine whether the effect occurred.
++
++The local diagnostic/procedural Process preserves signed requisition, specimen/scheduling, preliminary/final result binding and requester acknowledgement/closure requirements. It does not establish a universal signature state, specimen stage or result lifecycle for medication or every Order. Its Order Dispatched compound checkpoint contains routing and recipient acceptance facts; Behaviour Received is not mapped to it without evidence (G1 U8).
++
++Foundation's illustrative independent Order states remain guidance, not an exhaustive universal state machine. Order information progression, actual service execution, returned-information lifecycle and Process checkpoint progression remain distinct. Closed / Verified concerns requester acknowledgement and Order closure; it does not establish diagnostic-content verification, approval or incorporation. G1 U2's signing/finality/legal criteria and U5's business-acceptance criteria remain unresolved.
++
++Foundation correction/provenance principles apply; the Closed-Loop Tracking Ledger label does not independently establish exhaustive retention policy. No cancellation race-resolution, retry protocol, order-entry workflow or universal completion rule is added.
++
++## 7. Assembly Participation & Other Families
++
++Reuse Package1 service definition/context/fulfilment/outcome distinctions, Practitioner Role Binding/Clinical Privilege/Endpoint, subject context and the existing Order Context Assembly candidate. Diagnostic information is an externally attributable boundary input to outcome association in this block; medication Order scope is retained without deriving Medication. Broader outcome-kind semantics and complete Delivery/Outcome owner traces remain G1 U3/U4.
++
++The imaging scheduling checkpoint supports a conditional Order–Appointment relationship, with scheduler authority external. Encounter Process context supports contextual occurrence of Orders during care but supplies no universal Order–Encounter relationship/cardinality. Referral–Order conversion/causation is not established. See [cross-family analysis](../reviews/package2-g2-block1-review.md#4-cross-family-semantic-analysis).
++
++## 8. Explicit Boundaries, Unresolved Semantics & Downstream Realisation
++
++G2-Q07 retains who may request/authorise changes, the meaning of performing-system response and when modification/cancellation takes effect. Candidate assembly boundaries remain G2-Q06. Exact diagnostic authority/finality/legal criteria are consumed only within established local requirements, never resolved by Order Administration.
++
++No Order subtype taxonomy, universal healthcare request superclass, order-entry system, clinical verification system or unsupported Service dependency is designed. Order Outcome association has no allocated Feature identity. The assessment Referral/bounded Order semantic boundary remains unresolved rather than merged.
++
++No FHIR/resource/profile mapping, Java/application representation, schema, persistence/cache model, API, integration message, topic or implementation allocation is created. [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) governs all candidate and unestablished derivation links.
+diff --git a/docs/markdown/04-information-architecture/reviews/package2-g2-block1-review.md b/docs/markdown/04-information-architecture/reviews/package2-g2-block1-review.md
+new file mode 100644
+index 0000000..118ca76
+--- /dev/null
++++ b/docs/markdown/04-information-architecture/reviews/package2-g2-block1-review.md
+@@ -0,0 +1,164 @@
++# Domain04 Package2 — G2 Block 1 Semantic Review
++
++**Status: G2 CANDIDATE ARCHITECTURE — awaiting architectural review. G2 is not CLOSED.**
++
++**Date:** 2026-10-08. **Scope:** Referral; Appointment / Scheduling; Episode / Encounter; Order only.
++
++## 1. Governing Authority & Derivation Basis
++
++The [central Architectural Axioms](../../../architectural-axioms.md) govern. Materially relevant are AX-01/AX-04 (information meaning before implementation machinery), AX-02/AX-03 (standards/representation boundaries), AX-06 (explicit information authority), AX-08 (meaningful provenance/evidence), AX-13 (managed-information boundary), AX-14 (semantic distinctions), AX-15 (operational uncertainty) and [AX-17](../../../architectural-axioms.md#ax-17--architectural-authority-and-explicit-uncertainty) (architectural authority and explicit absence). The candidates describe attributable business information and bounded Harmonia responsibility; none acquires authority from custody or derives its meaning from representation. Existing security/access governance is retained without designing a new access model.
++
++[G1 §16](package2-g1-review.md#16-controlled-g1-reconciliation-and-closure) is the current closure record: **G1 remains CLOSED; K1–K13 remain RESOLVED — APPROVED with their qualifications.** Its historical statements that G2 had not commenced describe the closure-time boundary. This separately authorised task commences bounded G2 derivation without rewriting G1 history or approving G2.
++
++Current reconciled sources, not pre-reconciliation quotations, supply the derivation:
++
++- [Strategy catalogue](../../02-strategy/capabilities/business-enabling-capabilities.md#view-2-service-administration): the four established owners and FEAT-SA-03–14; ancestry/Tier uncertainty retained. Strategy overview, capability index/taxonomy and derivation rules constrain the trace without assigning a new Business Capability ancestor.
++- [Service Administration behaviour §§3–6](../../03-business-architecture/behaviours/02-service-administration.md#3-referral-administration) and [Processes §§3.3–3.5](../../03-business-architecture/processes/business-processes.md#33-referral-progression-process): exact Functions, Services, locally scoped progression and explicit qualifications. The Clinic / Operational Queue Process supplies a bounded example of operational use of scheduling information, not a scheduling engine.
++- [Information responsibility matrix](../../03-business-architecture/information-responsibility/information-responsibility.md#2-canonical-business-information-ownership-matrix), [dependency matrix](../../03-business-architecture/dependencies/cross-capability-dependencies.md#2-cross-capability-service-consumption-matrix), [Roles](../../03-business-architecture/actors-roles/roles.md), [Actors](../../03-business-architecture/actors-roles/actors.md), [Interactions](../../03-business-architecture/collaborations-interactions/interactions.md) and [Collaborations](../../03-business-architecture/collaborations-interactions/collaborations.md): ownership, participation, exposure and qualified interactions.
++- [Service Delivery](../../03-business-architecture/behaviours/03-service-delivery.md) and [Patient Clinical Record](../../03-business-architecture/behaviours/05-intrinsic-enablement.md#21-patient-clinical-record): performance-enablement boundary and longitudinal contextual use. Capability-scoped Functions with unestablished Feature associations retain that standing.
++- Domain04 [Metamodel](../metamodel/information-architecture-metamodel.md), [Relationships](../patterns/information-relationships.md), [Collections/containment](../patterns/containment-and-collections.md), [Definition-to-accountability](../patterns/definition-to-accountability.md), [Authority/provenance](../governance/authority-custody-provenance.md), [Lifecycle](../governance/information-lifecycle.md), [Assemblies/Views](../assemblies-views/assemblies-and-views.md), [Guardrails](../guardrails/modelling-guardrails.md), [Traceability](../traceability/domain03-traceability.md) and all six [Package1 families](../information-families/README.md).
++
++Each family records the forward derivation: established owner/Feature → Function/Service/Process → established Interaction or qualified collaboration context → local Information Requirement → proposed/reused Concept → qualified relationship. Canonical ownership-matrix assets anchor responsibility. An applicable interaction vocabulary does not by itself establish a new Function-to-Interaction allocation, Service consumption or collaboration instance. Local requirement/question keys are document review references, not structural Canonical IDs.
++
++## 2. Review Standing
++
++| Category | Meaning in this review | Authority |
++| :--- | :--- | :--- |
++| **A — Directly Derived** | Information meaning/need strongly follows current Business Architecture or existing Domain04 semantics | Candidate proposition in this package; existing upstream meaning remains authoritative. A is not package approval. |
++| **B — Derived but Requires Review** | Evidenced need supports the derivation, but Concept boundary, classification or relationship/composition judgement remains | Candidate only; architect acceptance required before authoritative adoption. |
++| **C — Unresolved** | Architecture does not establish enough meaning, responsibility or relationship | Absence is explicitly retained. No candidate decision resolves it. |
++| **D — Suggested** | Potentially useful idea lacks sufficient derivation for candidate establishment | Explicitly non-authoritative; excluded from the principal Concept inventory and required relationships. |
++
++Category is separate from applicability: required, conditional, contextual or optional describes when a relationship matters. A strongly derived conditional relationship is still not universally required. A relationship not established is neither prohibited nor presumed available.
++
++## 3. Concept & Requirement Propositions
++
++Names below are semantic names; spacing/style does not allocate implementation classes. Existing Concepts and existing candidate Assemblies are identified to avoid duplication.
++
++| Family / local requirements | A — directly derived Concept propositions | B — proposed Concept/composition boundary | C — significant absence |
++| :--- | :--- | :--- | :--- |
++| [Referral](../information-families/referral.md), RF-IR1–4 | Referral (Assertion / Request); Referral Progression Event (Event). Subject, originating participation, intent/reason, supporting context and disposition meanings are required. | Referral Disposition (Assertion, independent boundary: G2-Q01); Referral Context Assembly (Assembly: G2-Q06) | Acceptance commitment/effective responsibility/transfer; recipient Role/Actor eligibility; exact assessment-Referral/bounded-Order boundary. |
++| [Appointment / Scheduling](../information-families/appointment-scheduling.md), AP-IR1–3 | Scheduling Change Event (Event); Schedule Synchronisation State (Assertion / Derived Knowledge State). Source authority and planned versus known state distinction are required. | Appointment (Assertion / Planned Contextual Binding: G2-Q02); Patient Appointment Schedule View (View: G2-Q06) | Standalone requested/proposed scheduling Concepts and their governance; detailed participant/service/temporal contract; source-conflict/freshness criteria. |
++| [Episode / Encounter](../information-families/episode-encounter.md), EC-IR1–5 | Encounter Progression Event (Event); Encounter Care-Place Association (Relationship, existing pattern). Identifiable encounter context, subject, attending participation and temporal movements are required. | Encounter (Activity / Contextual Binding boundary: G2-Q03); Encounter Context Assembly (existing candidate, reused: G2-Q06) | Independent Episode meaning/owner/identity/grouping; Episode–Encounter association; ON_LEAVE correspondence; discharge publication timing. |
++| [Order](../information-families/order.md), OR-IR1–6 | Order (existing Assertion / Direction); Order Routing Directive (existing Assertion / Instruction); Order Progression Event (Event); Order Change Request (Assertion); Order-Result Correlation Link (existing Relationship) | Order Context Assembly (existing candidate, reused: G2-Q06) | Change authority/response/effect criteria (G2-Q07); universal acceptance/finality/legal qualification; exact broader outcome kinds/owner traces. |
++
++The inventory contains **18 named principal candidate/reused Concepts or compositions: 11 A and 7 B**. It does not introduce Concepts for each identifier, participant role, status, date, acknowledgement qualifier, clinical context item or destination. Existing subject/practitioner/provider/location/service Concepts and Source/Target/Type/Qualification/Properties express those semantics where supported.
++
++Direct derivation establishes the need to distinguish request, source decision and reported milestone. B marks judgement about their independent Concept boundaries; it does not question or weaken the approved distinctions. No Concept is justified solely by a standard, conventional EMR practice or familiar software design.
++
++## 4. Cross-Family Semantic Analysis
++
++Each relationship uses the common relationship machinery. Properties below state semantic evidence/qualification, not a payload design. No multiplicities or implied counterpart creation are established by these rows.
++
++| Source → Target / relationship | Applicability / category | Evidence and qualification | What remains unestablished |
++| :--- | :--- | :--- | :--- |
++| Referral → DeliverableHealthcareService, intended/resolved service context | **Conditional / contextual — A** | Referral consumes Service Provision Resolution to resolve target clinic/provider/catchment; RF-IR4 reuses Package1 contextual binding. Properties: requested purpose, intended recipient and resolution evidence. | Every Referral need not have a fully resolved service binding; binding does not establish acceptance or delivery. |
++| Referral → Appointment, associated allocation | **Conditional — A** | Referral Process Scheduled allocates an outpatient appointment. Preserve source correlation and external scheduler authority. | No universal consequence of Referral; no mandated booking sequence. |
++| Referral → Encounter, direct association | **Not established — C** | Consultation Attended reports specialist assessment in a scoped pathway, but supplies no precise Referral–Encounter identity/association rule. | Appointment/consultation context does not fill this missing link. No relation is inferred transitively through Appointment. |
++| Referral → Order, conversion/causation/association | **Not established — C** | Approved K1 preserves distinct requests and explicitly rejects a universal Order consequence. | Specific causal or correlation rule and the assessment/bounded-order boundary. |
++| Referral → HealthcareServiceDelivery / ServiceOutcome, reported fulfilment/outcome context | **Contextual candidate — B** | Scoped consultation attendance/assessment and separate Service Outcome Interaction support relating actual delivery/outcome information to referral context when separately evidenced. G2-Q05 reviews precise meaning; disposition alone is insufficient. | Universal fulfilment criterion, complete authority trace, and automatic care-responsibility assumption/Transfer of Care. |
++| Appointment → Encounter, planned scheduling context | **Conditional — A meaning; Concept boundaries B** | Encounter Process Planned / Booked identifies elective admission/clinic scheduling. Preserve explicit source correlation and scheduled versus actual timing. | Every Appointment need not produce an Encounter, and the Concepts are not two lifecycle states of one thing. |
++| Appointment → HealthcareServiceDelivery, actual fulfilment | **Not established — C** | Booking notifications establish planned context; actual delivery requires independent evidence. | No direct universal or transitive appointment-fulfilment rule. |
++| Encounter → HealthcareServiceDelivery, care-interaction context | **Contextual candidate — B** | Package1 candidate Encounter Context Assembly includes identified deliveries during admission/visit; existing encounter information responsibility supports care context. G2-Q05. | Exact association scope/cardinality and universal owner; Encounter is not the delivery itself. |
++| Order → DeliverableHealthcareService, requested service context | **Conditional / contextual — A** | Package1 chain, Service Provision Resolution and routing responsibility. Properties: bounded request scope and resolved service/provider context. | Every incoming Order need not have a resolved binding; Order is not mandatory for delivery. |
++| Order → HealthcareServiceDelivery, request versus evidenced fulfilment association | **Conditional — A** | Package1 establishes direction and separate execution information; Order Process supplies execution evidence in its local scope. Properties distinguish requested performance from confirmed occurrence. | Existence of Order does not prove delivery, and unfulfilled Order remains legitimate information. |
++| Order → ServiceOutcome / returned result, outcome association | **Required responsibility; conditional instance — A** | Associate Order Outcome / Order Outcome Notification and existing Order-Result Correlation Link; source qualification and correlation evidence retained. | No universal outcome authority, diagnostic verification/finality definition, successful-outcome guarantee or conflict adjudication. |
++| Order → Appointment, imaging scheduling context | **Conditional — A** | Local Specimen Collected / Scheduled checkpoint includes imaging appointment booking. | Does not establish scheduling as a stage for all Orders or Order Administration as booking authority. |
++| Order → Encounter, particular care context | **Contextual occurrence evidenced; precise relationship not established — C** | Encounter Process Active In-Progress includes clinical orders underway. | No universal Order–Encounter identity/correlation rule, compulsory encounter context or cardinality is established. |
++| Encounter → Episode / longitudinal contextual reference | **Precise association not established — C** | Care-Team Collaboration and longitudinal synthesis require contextual understanding, but encounter-specific responsibilities do not supply an Episode membership rule. | Episode = Collection of Encounters, containment, common authority and shared lifecycle are not established. G2-Q04. |
++| Encounter Care-Place Association → operational place/readiness context | **Conditional — A** | Explicit location/readiness Service dependencies before confirmed moves. Location Administration owns definition; Bed & Care-Place Management owns readiness/state. | Encounter location does not establish bed cleaning/readiness or Transfer of Care. No operational family is derived. |
++
++Explicit equivalence distinctions are **A — mandatory constraints**: Referral ≠ Order; Referral intent ≠ disposition ≠ responsibility actually assumed ≠ Transfer of Care; Appointment ≠ Encounter; Encounter ≠ HealthcareServiceDelivery; Order ≠ delivery/outcome; dispatch ≠ receipt ≠ acknowledgement ≠ acceptance. These forbid collapse, not evidenced optional/contextual associations.
++
++## 5. Authority, Temporal Meaning & Composition Findings
++
++Originating authority and information responsibility are independent. Referral originators assert intent; triage/recipient decision-makers assert dispositions. Scheduling sources retain authoritative booking state; Harmonia governs knowledge/synchronisation and projection. Encounter Administration governs the tracking context and associations; administrative/clinical participants retain authority over their particular source assertions. Order Administration governs intake/routing/progression/correlation/change coordination, while requesters, performers and outcome originators retain substantive request/performance/outcome authority. Exhaustive eligibility and clinical/legal qualification are not invented.
++
++Source, relay, originator and responsible participant are separately identifiable where the business evidence requires them. Harmonia may originate its own intake, routing, association, synchronisation and composition facts; it does not thereby originate the clinical phenomena represented. Acknowledgement, review, credential validation, storage, aggregation and presentation confer no new originating authority.
++
++Temporal needs follow particular responsibilities: disposition/progression occurrence versus assertion/recording; scheduled allocation versus actual care; effective care-place association; requested change versus established effect; outcome association time versus outcome occurrence. No universal date bundle, common lifecycle or universal signature state is created. Information correction, real-world progression and Process checkpoints remain distinct. Source evidence and derivation/correction lineage remain conceptual provenance, not a database design.
++
++Referral Context Assembly and Patient Appointment Schedule View have directly evidenced assembly/query purposes but proposed composition boundaries. Existing Encounter Context Assembly and Order Context Assembly candidates are reused. **Assemblies/Views acquire no originating authority over constituent information.** No additional Collection is required by this derivation. Episode grouping is not presumed, and Collection ≠ Membership ≠ Containment remains intact.
++
++## 6. Architectural Review Questions
++
++These seven questions require judgement; none is answered for the architect. A review answer may retain an absence instead of establishing a new Concept or relationship. New upstream scope requires separately explicit approval; this block does not modify frozen upstream architecture.
++
++<a id="g2-q01"></a>
++
++### G2-Q01 — Referral disposition boundary (B; G1 U1 retained)
++
++Should Referral Disposition have an independently identifiable Assertion boundary, as proposed, or should the recipient/triage decision remain qualified information on Referral Progression Event? The decision must retain its own source/reason and meaning apart from request intent, even if no separate Concept is accepted. This question does not define acceptance's clinical responsibility effect.
++
++<a id="g2-q02"></a>
++
++### G2-Q02 — Appointment meaning and source qualification (B/C)
++
++Is Appointment the planned arrangement represented by source assertions, with the proposed Assertion / Planned Contextual Binding classification, or should the conceptual boundary be stated differently? What minimum service/participant/time qualification is established beyond an identifiable subject appointment and scheduled context? Requested/proposed arrangements remain unresolved, and an answer must preserve external scheduling authority.
++
++<a id="g2-q03"></a>
++
++### G2-Q03 — Encounter versus tracking/context assembly (B; G1 U4/U8 retained)
++
++Should Encounter primarily denote information about the bounded care interaction/activity, an administrative contextual binding, or another explicitly distinguished meaning? How should planned encounter context remain distinct from evidence of actual occurrence and from the existing Encounter Context Assembly? This question does not resolve ON_LEAVE correspondence or universalise Process checkpoints.
++
++<a id="g2-q04"></a>
++
++### G2-Q04 — Episode information responsibility (C)
++
++Does the current business need justify an independently identified Episode Context, and if so what longitudinal/grouping meaning and owning information responsibility establish it? What precise association with Encounter is intended? Current encounter-specific ownership and care-team/longitudinal references do not answer these questions; no Episode Collection or lifecycle is proposed for acceptance by implication.
++
++<a id="g2-q05"></a>
++
++### G2-Q05 — Referral and Encounter delivery/outcome contextualisation (B/C)
++
++Are the proposed evidence-qualified Referral–delivery/outcome and Encounter–delivery contextual associations sufficient, and what does each association assert? The judgement concerns association meaning and responsibility, not an automatic fulfilment, responsibility transfer, successful outcome or universal Delivery/Outcome owner. The missing direct Referral–Encounter link remains C unless independently established.
++
++<a id="g2-q06"></a>
++
++### G2-Q06 — Justified composition boundaries (B)
++
++Are Referral Context Assembly, Patient Appointment Schedule View, and the reused Encounter Context Assembly / Order Context Assembly the appropriate semantic compositions for their evidenced Functions/Queries? What inclusion and temporal composition boundary is actually required? No decision is implied about stored snapshots, dynamic materialisation, clinical completeness or authority over constituents.
++
++<a id="g2-q07"></a>
++
++### G2-Q07 — Order change responsibility and effect (C)
++
++What establishes authority to request/authorise a modification or cancellation, what does the performing-system response commit to, and when may Harmonia report the change as effected? Coordination is established, but exact effect/eligibility criteria are not. No response, timeout, acknowledgement or altered representation is taken as proof of effect without its governing evidence.
++
++## 7. Non-Authoritative Suggestions
++
++| D suggestion | Potential purpose | Why not established / acceptance prerequisite |
++| :--- | :--- | :--- |
++| **Episode Context** as a separately identified contextual association, not presumed Collection | Distinguish a sustained care/responsibility context from a bounded interaction and longitudinal record | EC-IR5 shows contextual need but no precise Episode identity, boundary, owner or membership semantics. G2-Q04 must first establish meaning and responsibility; the owner name alone is insufficient. |
++| **Responsibility Assumption Assertion** | If later required, distinguish an attributable account of responsibility actually assumed from referral intent and intake acceptance | G1 U1 retains extent, duration, effectiveness, relinquishment and transfer effects. G2 does not establish an information responsibility or lifecycle for this suggestion. Separate acceptance and traceable responsibility would be needed. |
++
++Neither suggestion is in the 18 principal Concept inventory, an accepted resolution, required relationship, backlog commitment or instruction to continue later work. They remain D under AX-17.
++
++## 8. Preserved G1 Uncertainty & Upstream Findings
++
++| G1 uncertainty | Block 1 treatment |
++| :--- | :--- |
++| U1 — Referral responsibility effects / assessment-Order boundary | Retained in Referral/Order; no automatic care consequence, narrowed taxonomy or converted request. |
++| U2 — Signing, finality, verification, authority and legal qualification | Local Order Process requirements preserved; no universal signature/finality Concept or consumer authority. |
++| U3 — Medication/procedure information kinds and detailed relationships | Broader Order scope retained; later families not derived. |
++| U4 — Delivery/Outcome representation, owner traces and kind/qualification authority | Package1 Concepts reused; no universal owner or asserted complete kind model. Contextual associations remain qualified/B. |
++| U5 — Business acceptance/filing, acknowledgement dispositions and clinical incorporation | Dispatch/receipt/ACK/acceptance distinct; no incorporation model or invented acceptance criteria. |
++| U6 — Referrer Actor eligibility, target qualifier/Role and authority effects | Practitioner fulfilment and ReferralSource context preserved; no exhaustive eligibility matrix or new receiving Role. |
++| U7 — Capability Tier/ancestry/root/structural IDs | Established owners/Features used; no invented ancestry, IDs or aliases. |
++| U8 — Behaviour/Process correspondence including ON_LEAVE | Independent scope/states preserved; no stage-equivalence mapping or universal sequence. |
++| U9 — Discharge publication timing and unrelated task orderings | Before/upon departure remains unresolved; no alternative event model. To Do/Synthetic Task uncertainties untouched and unused. |
++| U10 — Five unestablished Feature associations | Preserved; no replacement Feature association. Order Outcome remains Capability-scoped as already recorded. |
++| U11 — Collaboration summary source Service/consumer dependency | Untouched/unused; no new dependency invented from collaborative use. |
++| U12 — Detailed downstream representation allocation | No realised mapping or implementation assignment made. |
++| U13 — AX-16 central-register standing | Untouched; no Concept or relationship derived from presumed central adoption. |
++
++The G1-recorded AX-12 central/Domain01 discrepancy likewise remains unchanged and unused. No new upstream contradiction requiring modification was identified in this bounded derivation. Episode semantic absence, proposed Concept boundaries and missing associations are review results, not excuses to repair upstream architecture within G2. Domain02, Domain03, central axioms, Foundation, G1 and the six Package1 family bodies remain unchanged.
++
++## 9. Gate & Continuation Boundary
++
++The four files are reviewable candidates. This artefact supplies propositions and questions; it approves none. Architectural review/acceptance must precede authoritative adoption. **G2 is not CLOSED; G3 is not commenced.**
++
++Diagnostics, Medication, Procedure, Clinical Document, Problem / Condition / Care Need, Care Plan and Clinical Communication families are not derived. Existing references/examples are boundary evidence only. No FHIR resource/profile mapping, FSH, StructureDefinition, class, entity, schema/table, payload/API, integration message/topic, cache model, scheduling engine, order-entry design or application/implementation allocation is created.
++
++Verification and the complete task-specific diff are recorded in the [execution report](../../../../.junie/reports/2026-10-08-domain04-package2-g2-semantic-derivation-block1.md). That report is execution history, not architectural authority.
+diff --git a/.junie/reports/2026-10-08-domain04-package2-g2-semantic-derivation-block1.md b/.junie/reports/2026-10-08-domain04-package2-g2-semantic-derivation-block1.md
+new file mode 100644
+index 0000000..02062b2
+--- /dev/null
++++ b/.junie/reports/2026-10-08-domain04-package2-g2-semantic-derivation-block1.md
+@@ -0,0 +1,106 @@
++# Domain04 Package2 — G2 Semantic Derivation, Block 1
++
++## Task Goal
++
++Produce four bounded candidate Information Families for Referral, Appointment / Scheduling, Episode / Encounter and Order, derived forward from the reconciled authoritative Business Architecture. Make the derivation, information needs, relationships, authority, provenance, temporal meaning and uncertainty reviewable. This report is execution history and handover, not architectural authority or G2 approval.
++
++## Task Activity
++
++Read the repository instructions, central axioms and current G1 reconciliation/closure record before drafting. Inspected Domain02/03/04 inventories and the relevant Strategy catalogue, Functions, Services, Processes, Actors/Roles, Collaborations/Interactions, dependency matrix and information-responsibility matrix. Used current reconciled architecture as the semantic basis; historical G1 evidence quotations were not treated as current architecture.
++
++Applied the Domain04 Metamodel, Foundation patterns, authority/provenance/lifecycle rules, Assemblies/Views and guardrails. Inspected all six Package1 families and reused their subject, practitioner, organisation, location and service meanings. Existing Order, Order Routing Directive, Order-Result Correlation Link and candidate Encounter/Order Context Assemblies were reused. No equivalent local relationship machinery was introduced.
++
++Each family contains owner/Feature → Function/Service/Process → qualified interaction/collaboration context → Information Requirement → Concept → relationship derivation. Local requirement/question keys do not allocate Canonical IDs. Unresolved ancestry, unsupported Feature associations and Service dependencies remain unestablished. The convergence/runtime implementation programme is outside this conceptual task; no runtime milestone work was commenced.
++
++Materially relevant axioms: AX-01/AX-04 semantic purpose, AX-02/AX-03 representation boundary, AX-06 authority, AX-08 evidence, AX-13 management boundary, AX-14 distinctions, AX-15 operational uncertainty and AX-17 architectural authority/absence. No axiom, upstream responsibility or frozen meaning was overridden. G1's AX-12/AX-16 register discrepancies remain unchanged and unused as derivation authority.
++
++Session configuration: workspace tools do not expose session-launch or reasoning-effort settings, so fresh/xhigh configuration was not independently verifiable. No subagents were used.
++
++## Target Outcome
++
++Four G2 candidate families and a review artefact exist for architectural review. **G1 remains CLOSED; G2 is not CLOSED.** No candidate or suggestion is silently promoted into accepted architecture.
++
++### Authoritative inputs used
++
++- [Central Architectural Axioms](../../docs/architectural-axioms.md), especially AX-17, and repository/documentation AGENTS instructions.
++- [Strategy overview](../../docs/markdown/02-strategy/README.md), capability index/taxonomy and relevant [Business Enabling Capability/Feature catalogue](../../docs/markdown/02-strategy/capabilities/business-enabling-capabilities.md#view-2-service-administration); established owners and FEAT-SA-03–14 only where association is evidenced.
++- [Business Architecture metamodel](../../docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md), [Service Administration](../../docs/markdown/03-business-architecture/behaviours/02-service-administration.md), relevant [Service Delivery](../../docs/markdown/03-business-architecture/behaviours/03-service-delivery.md) and [Patient Clinical Record](../../docs/markdown/03-business-architecture/behaviours/05-intrinsic-enablement.md#21-patient-clinical-record) behaviour.
++- [Processes](../../docs/markdown/03-business-architecture/processes/business-processes.md), [Interactions](../../docs/markdown/03-business-architecture/collaborations-interactions/interactions.md), [Collaborations](../../docs/markdown/03-business-architecture/collaborations-interactions/collaborations.md), [Actors](../../docs/markdown/03-business-architecture/actors-roles/actors.md), [Roles](../../docs/markdown/03-business-architecture/actors-roles/roles.md), [responsibility](../../docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md) and [dependency](../../docs/markdown/03-business-architecture/dependencies/cross-capability-dependencies.md) matrices.
++- [Domain04 Metamodel](../../docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md), Foundation patterns/governance/Assemblies/Views/guardrails/traceability linked from the [overview](../../docs/markdown/04-information-architecture/README.md), all six [Package1 families](../../docs/markdown/04-information-architecture/information-families/README.md), and [G1 closure/uncertainty record](../../docs/markdown/04-information-architecture/reviews/package2-g1-review.md#16-controlled-g1-reconciliation-and-closure).
++
++### Files created / modified
++
++Created:
++
++- [Referral](../../docs/markdown/04-information-architecture/information-families/referral.md).
++- [Appointment / Scheduling](../../docs/markdown/04-information-architecture/information-families/appointment-scheduling.md).
++- [Episode / Encounter](../../docs/markdown/04-information-architecture/information-families/episode-encounter.md).
++- [Order](../../docs/markdown/04-information-architecture/information-families/order.md).
++- [G2 Block 1 review](../../docs/markdown/04-information-architecture/reviews/package2-g2-block1-review.md).
++- This execution report and the [complete task-specific diff](2026-10-08-domain04-package2-g2-semantic-derivation-block1.diff).
++
++Modified only the [Information Families index](../../docs/markdown/04-information-architecture/information-families/README.md) to add explicitly candidate navigation. Central axioms, G1, Domain01–03, Foundation and the six Package1 family bodies remain unchanged. No code, build configuration or runtime files changed. No staging or commit was performed.
++
++### Principal candidate Concepts
++
++| Family | Principal Concepts / compositions | Review standing |
++| :--- | :--- | :--- |
++| Referral | Referral; Referral Disposition; Referral Progression Event; Referral Context Assembly | 2 A; 2 B |
++| Appointment / Scheduling | Appointment; Scheduling Change Event; Schedule Synchronisation State; Patient Appointment Schedule View | 2 A; 2 B |
++| Episode / Encounter | Encounter; Encounter Progression Event; Encounter Care-Place Association; Encounter Context Assembly | 2 A; 2 B; independent Episode remains C/D |
++| Order | Order; Order Routing Directive; Order Progression Event; Order Change Request; Order-Result Correlation Link; Order Context Assembly | 5 A; 1 B; existing Concepts/Assemblies reused where identified |
++
++There are 18 principal candidate/reused Concepts or compositions, 11 A and 7 B. A is directly derived standing, not package approval. No new Concept is introduced merely for a relationship qualifier, status, date, participant or familiar healthcare representation.
++
++### Important semantic relationships
++
++Conditional/contextual relationships: Referral–DeliverableHealthcareService; Referral–Appointment in the specialist booking pathway; Appointment–Encounter for identified planned context; Order–Appointment in imaging scheduling; Order–DeliverableHealthcareService; Order–HealthcareServiceDelivery; Order–ServiceOutcome. Fulfilment/outcome associations require evidence and do not imply successful delivery.
++
++Referral–delivery/outcome and Encounter–delivery contextual associations remain B for precise qualification/responsibility review. Direct Referral–Encounter, Referral–Order, Appointment–actual-delivery, precise Order–Encounter and Episode–Encounter grouping semantics remain unestablished. No association is filled transitively from another one. Encounter care-place association and operational readiness have distinct owners/meanings.
++
++### Authority findings
++
++Referral intent originates with the referring participant; triage/recipient decisions retain their own sources. Scheduler/PAS systems remain authoritative for bookings. Harmonia owns synchronisation knowledge and governs representations/contextual provision without becoming the scheduler.
++
++Encounter Administration governs the tracking context, progression and location associations, while source administrative/clinical participants retain assertion authority. Order Administration governs intake/routing/tracking/change coordination/correlation; requesters, performers and outcome originators retain their substantive authority. Request validation, acknowledgement, review, custody and presentation confer no clinical performance responsibility or originating authority. Assemblies/Views acquire none of their constituents' originating authority.
++
++### G2 questions and unresolved matters
++
++The [review questions](../../docs/markdown/04-information-architecture/reviews/package2-g2-block1-review.md#6-architectural-review-questions) are consistently numbered:
++
++1. G2-Q01: Independent Referral Disposition boundary versus qualified progression information.
++2. G2-Q02: Appointment meaning/classification and minimum source/context qualification.
++3. G2-Q03: Encounter activity/context boundary versus tracking and contextual assembly.
++4. G2-Q04: Whether independent Episode meaning/ownership/association is established.
++5. G2-Q05: Meaning/responsibility of Referral and Encounter delivery/outcome associations.
++6. G2-Q06: Inclusion and temporal boundaries of the four justified candidate compositions.
++7. G2-Q07: Authority, response and established effect for Order modification/cancellation.
++
++G1 U1–U13 are explicitly preserved in the review. Material absences include care-responsibility effects, signature/finality/legal criteria, broader outcome-kind/authority traces, business-acceptance criteria, Actor eligibility, ancestry/Feature associations, ON_LEAVE correspondence, discharge publication timing, Episode meaning, detailed requested/proposed scheduling and Order change-effect criteria. No new upstream contradiction requiring modification was identified; no frozen source was reopened.
++
++D suggestions only: Episode Context; Responsibility Assumption Assertion. Neither is in the principal inventory, an approved resolution or an instruction to implement. No unrelated suggestion was promoted to make the architecture appear complete.
++
++### Verification
++
++Architecture tests: **PASS**. Executed the repository-required invocation with a 180-second command bound:
++
++```bash
++timeout --signal=TERM --kill-after=15s 180s mvn test -pl paradeigma/paradeigma-test -am -Dtest='*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false
++```
++
++Maven completed successfully in **17.301 seconds: 90 tests, zero failures, errors or skips**, across 11 ArchitectureTest classes. No timeout or stall occurred. The suite checks implemented repository architecture; it does not approve candidate conceptual semantics.
++
++- **PASS — links:** 418 Markdown documents scanned across docs and Junie artefacts; 1,190 baseline links and 1,328 final links checked, including file/anchor targets and inbound references. Zero new broken links; zero broken links in task files. Seven pre-existing historical Junie link defects remain unchanged.
++- **PASS — identifiers/references:** 18 unique local Information Requirement keys resolve; 18 Concept/composition definitions have necessity, classification and authority/provenance coverage; all G2-Q01–07 references resolve. FEAT-SA-03–14 references match existing Strategy definitions; all 137 Strategy Feature definitions remain unchanged and unique. Thirteen canonical Function/Service pairs and four ownership-matrix anchors resolve; Order Outcome remains Capability-scoped with no assigned Feature. No structural Canonical ID or alias allocated.
++- **PASS — preservation:** G1 closure, all K1–K13 approved decisions, U1–U13 and central AX-17 are byte-identical to the pre-task baseline. Domain01–03, 10 Foundation files and six Package1 family bodies are unchanged. The index change adds candidate navigation only; original Package1/metamodel/authority sections remain identical.
++- **PASS — scope:** only seven content files and the companion diff are changed/created; 2,247 out-of-scope tracked files remain byte-identical. Initial worktree was clean, staging/index state is unchanged and no commit was made. No production/downstream/runtime source changed.
++- **PASS — whitespace:** git diff --check; added/new-file whitespace checks; companion patch checked with git apply --check --whitespace=error. Existing unchanged index formatting is preserved.
++- **PASS — complete diff:** replay against saved pre-task content recreates all seven content files byte-for-byte. The diff includes every new file's complete content, excludes only its own generated bytes and has no unrelated changes.
++
++Semantic inspection preserved the G1 distinctions, source-specific authority, conditional/contextual associations, candidate composition standing and explicitly unresolved relationships. None of the verification results constitutes architectural acceptance of G2.
++
++### Stop boundary and handover
++
++Architectural review of the seven questions is the next activity; this task answers none on behalf of the architect. **G1 remains CLOSED. G2 is candidate and not CLOSED. G3 and later Package2 family derivation were not commenced.** Diagnostics, Medication, Procedure, Clinical Document, Problem / Condition / Care Need, Care Plan and Clinical Communication families were not derived. No downstream representation modelling, FHIR mapping, implementation allocation or runtime work occurred.
++
++The companion diff contains all seven content-file changes (four families, review, index and report), including new-file contents. As a generated patch it excludes only its own bytes; patch replay is verified against the saved pre-task content. Diagnostic logs, validator and baseline snapshots reside under `/tmp/harmonia-g2-block1/` and are verification artefacts, not architectural authority.

@@ -1,0 +1,88 @@
+# Representative current navigation
+
+Derived inspection excerpt. Omitted siblings are outside the sample, not absent architecture.
+
+- I Motivation
+  - I.1 Drivers
+    - I.1.1 24/7 Availability
+      - I.1.1.1 Stakeholder references — Reference navigation
+        - I.1.1.1.1 Healthcare Provider — Stakeholder reference [historical_reference]
+          - Canonical Stakeholder: R.1.6 Healthcare Provider; Canonical ID: `2018200a493d458096b72031cc2ae779`
+    - I.1.2 Audit & PHI Privacy
+      - I.1.2.1 Stakeholder references — Reference navigation
+        - I.1.2.1.1 Patient — Stakeholder reference [historical_reference]
+          - Canonical Stakeholder: R.1.7 Patient; Canonical ID: `5f6d333e94634420b8a8bbf8b9cb6e2a`
+    - I.1.3 Clinical Interoperability
+      - I.1.3.1 Stakeholder references — Reference navigation
+        - I.1.3.1.1 Health Network — Stakeholder reference [historical_reference]
+          - Canonical Stakeholder: R.1.3 Health Network; Canonical ID: `55e57c01dfe146a2a225228b31196862`
+        - I.1.3.1.2 Care Team — Stakeholder reference [historical_reference]
+          - Canonical Stakeholder: R.1.1 Care Team; Canonical ID: `6f5a203d81e24a81b384a80781987daa`
+  - I.2 Strategic Goals
+  - I.3 Business Outcomes
+  - I.4 Assessments
+  - I.5 Requirements
+  - I.6 Constraints
+  - I.7 Architecture Axioms
+  - I.8 Unclassified Motivation
+- II Strategy
+  - II.1 Capabilities
+    - II.1.2 Business Capabilities
+      - II.1.2.1 [CT1] Care Access & Coordination
+        - Historical predecessor: R.2.1 [CT1] Care Access & Coordination; Canonical ID: `0dec07b6ddbe48bda93a2295dd3e2d7d`
+      - II.1.2.4 [CT1] Connected Health Services
+        - Historical predecessor: R.2.20 [CT1] Connected Health Services; Canonical ID: `48f01ef8b0e6431c85cf4f40cf8f94c3`
+        - II.1.2.4.2 [CT2] Health Information Exchange
+    - II.1.3 Business Enabling Capabilities
+      - II.1.3.9 [CT1] Shared Information & Coordination Enablement
+        - Historical predecessor: R.2.214 [CT1] Shared Information & Coordination Enablement; Canonical ID: `eeabb9c3c526404cbe4302906560fa7e`
+        - II.1.3.9.10 [CT2] Health Information Exchange Enablement
+          - Historical predecessor: R.2.191 [CT2] Health Information Exchange; Canonical ID: `330d1c43856a4322a2e9f331b1a5ed20`
+- III Business
+  - III.4 Business Behaviour
+    - III.4.1 [CT1] Care Administration Enablement — Capability context
+      - Canonical Strategy Capability: II.1.3.1 [CT1] Care Administration Enablement; Canonical ID: `28df27d55c514a37995145ab46945f78`
+      - III.4.1.1 [CT2] Care Plan Administration — Capability context
+        - Canonical Strategy Capability: II.1.3.1.5 [CT2] Care Plan Administration; Canonical ID: `cf06eec5699f406fa30a00d2f76e3098`
+        - III.4.1.1.1 [CT3] Community Care Coordination — Capability context
+          - Canonical Strategy Capability: II.1.3.1.5.2 [CT3] Community Care Coordination; Canonical ID: `8c8c6266d9ed43e09dbe44fcdd669132`
+          - III.4.1.1.1.1 Business Services
+            - III.4.1.1.1.1.1 Community Care Encounter Ingress
+      - III.4.1.6 [CT2] Episode & Encounter Administration — Capability context
+        - Canonical Strategy Capability: II.1.3.1.11 [CT2] Episode & Encounter Administration; Canonical ID: `61d7067aee0540259b3daca4287d66d2`
+        - III.4.1.6.1 [CT3] Acute Care Monitoring & Event Coordination — Capability context
+          - Canonical Strategy Capability: II.1.3.1.11.1 [CT3] Acute Care Monitoring & Event Coordination; Canonical ID: `ee17b26b8c874cc3af50d07a787ce488`
+          - III.4.1.6.1.1 Business Services
+            - III.4.1.6.1.1.1 Acute Admission Dossier Query
+    - III.4.2 [CT1] Entity Information Enablement — Capability context
+      - Canonical Strategy Capability: II.1.3.4 [CT1] Entity Information Enablement; Canonical ID: `b5a92874f8ac4509a30af5253590edc1`
+      - III.4.2.1 [CT2] Client Administration — Capability context
+        - Canonical Strategy Capability: II.1.3.4.1 [CT2] Client Administration; Canonical ID: `f0885472cced4bccbcce1568bf0360dc`
+        - III.4.2.1.4 [CT3] Person Identity Administration — Capability context
+          - Canonical Strategy Capability: II.1.3.4.1.4 [CT3] Person Identity Administration; Canonical ID: `6c3de7750ef1436cad6a9533731782b6`
+          - III.4.2.1.4.1 [Feature] Identifier Capture — Capability context
+            - Canonical Strategy Capability: II.1.3.4.1.4.3 [Feature] Identifier Capture; Canonical ID: `3cae3c4810974c5f8ee5a4c942f38b07`
+            - III.4.2.1.4.1.1 Business Services
+              - III.4.2.1.4.1.1.1 [Business Service] Identifier Create
+- IV Application
+  - IV.3 Applications
+    - IV.3.1 Agora
+      - IV.3.1.1 Application Overview
+        - IV.3.1.1.1 Agora
+- R Cross-Cutting References — Reference navigation
+  - R.1 Stakeholder Index — Reference navigation
+    - R.1.1 Care Team — Stakeholder index entry [historical_reference]
+    - R.1.2 Clinicians & Care Teams — Stakeholder index entry
+    - R.1.3 Health Network — Stakeholder index entry [historical_reference]
+    - R.1.4 Healthcare Delivery Organizations — Stakeholder index entry
+    - R.1.5 Healthcare Directory Stewards & Registrars — Stakeholder index entry
+    - R.1.6 Healthcare Provider — Stakeholder index entry [historical_reference]
+    - R.1.7 Patient — Stakeholder index entry [historical_reference]
+    - R.1.8 Patients & Care Recipients — Stakeholder index entry
+    - R.1.9 Platform Operations & Integration Engineers — Stakeholder index entry
+    - R.1.10 Regional Health Network Operator — Stakeholder index entry
+  - R.2 Historical Capability Identities — Reference navigation
+    - R.2.1 [CT1] Care Access & Coordination — Historical identity [superseded]
+      - Governed successor (direct correspondence): II.1.2.1 [CT1] Care Access & Coordination; Canonical ID: `ed342cb8656b4f80b55ad519ecbd2d3a`
+    - R.2.191 [CT2] Health Information Exchange — Historical identity [superseded]
+      - Governed successor (evolved correspondence): II.1.3.9.10 [CT2] Health Information Exchange Enablement; Canonical ID: `a61a15908ed544e6acf3e9cab63a0267`

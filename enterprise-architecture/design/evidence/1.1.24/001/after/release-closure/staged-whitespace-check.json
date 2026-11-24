@@ -1,0 +1,185 @@
+{
+  "actualStatus": "FAIL: retained formatting diagnostics",
+  "exitCode": 2,
+  "diagnosticCount": 746932,
+  "interpretation": "Supplementary Git formatting scan, not a governed release-integrity or strict-transport gate. Exact source/log/generated LaTeX whitespace and verbatim Markdown hard breaks are retained. No conflict markers or architecture/application-source findings; all diagnostics are in supporting evidence/generated publications. Check remains enabled and its FAIL is retained, not reclassified or suppressed.",
+  "rawLog": "staged-whitespace-check.txt.gz",
+  "all75OriginalEvidenceFilesIndexed": true,
+  "diagnosticCountsByPath": {
+    "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/candidate.archimate": 4,
+    "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/initial-display-error.txt": 1,
+    "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/returned.xml": 746704,
+    "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/sandbox-display-error.txt": 1,
+    "enterprise-architecture/design/evidence/1.1.24/001/after/architecture-suite.txt": 177,
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/application.tex": 4,
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/motivation.tex": 8,
+    "enterprise-architecture/design/evidence/1.1.24/001/after/change-review.md": 5,
+    "enterprise-architecture/design/evidence/1.1.24/001/before/ai-agent-tasks/20261114T093810Z-final-acceptance-and-release-closure.md": 2,
+    "enterprise-architecture/design/evidence/1.1.24/001/before/ai-agent-tasks/unresolved-mneme-interaction-cache-add.md": 5,
+    "enterprise-architecture/design/evidence/1.1.24/001/before/cr001-disposition/change-review.before.md": 4,
+    "enterprise-architecture/design/evidence/1.1.24/001/before/release-closure/change-review.reviewed.md": 5,
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/application.tex": 4,
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/motivation.tex": 8
+  },
+  "representativeDiagnostics": {
+    "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/candidate.archimate": [
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/candidate.archimate",
+        "line": 164707,
+        "diagnostic": "trailing whitespace."
+      },
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/candidate.archimate",
+        "line": 164710,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/initial-display-error.txt": [
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/initial-display-error.txt",
+        "line": 37,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/returned.xml": [
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/returned.xml",
+        "line": 1,
+        "diagnostic": "trailing whitespace."
+      },
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/returned.xml",
+        "line": 2,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/sandbox-display-error.txt": [
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/archi-transport/sandbox-display-error.txt",
+        "line": 37,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/design/evidence/1.1.24/001/after/architecture-suite.txt": [
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/architecture-suite.txt",
+        "line": 4,
+        "diagnostic": "trailing whitespace."
+      },
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/architecture-suite.txt",
+        "line": 41,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/application.tex": [
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/application.tex",
+        "line": 344,
+        "diagnostic": "trailing whitespace."
+      },
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/application.tex",
+        "line": 810,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/motivation.tex": [
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/motivation.tex",
+        "line": 1907,
+        "diagnostic": "trailing whitespace."
+      },
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/motivation.tex",
+        "line": 1914,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/design/evidence/1.1.24/001/after/change-review.md": [
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/change-review.md",
+        "line": 40,
+        "diagnostic": "trailing whitespace."
+      },
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/after/change-review.md",
+        "line": 41,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/design/evidence/1.1.24/001/before/ai-agent-tasks/20261114T093810Z-final-acceptance-and-release-closure.md": [
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/before/ai-agent-tasks/20261114T093810Z-final-acceptance-and-release-closure.md",
+        "line": 9,
+        "diagnostic": "trailing whitespace."
+      },
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/before/ai-agent-tasks/20261114T093810Z-final-acceptance-and-release-closure.md",
+        "line": 10,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/design/evidence/1.1.24/001/before/ai-agent-tasks/unresolved-mneme-interaction-cache-add.md": [
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/before/ai-agent-tasks/unresolved-mneme-interaction-cache-add.md",
+        "line": 9,
+        "diagnostic": "trailing whitespace."
+      },
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/before/ai-agent-tasks/unresolved-mneme-interaction-cache-add.md",
+        "line": 10,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/design/evidence/1.1.24/001/before/cr001-disposition/change-review.before.md": [
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/before/cr001-disposition/change-review.before.md",
+        "line": 34,
+        "diagnostic": "trailing whitespace."
+      },
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/before/cr001-disposition/change-review.before.md",
+        "line": 35,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/design/evidence/1.1.24/001/before/release-closure/change-review.reviewed.md": [
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/before/release-closure/change-review.reviewed.md",
+        "line": 40,
+        "diagnostic": "trailing whitespace."
+      },
+      {
+        "path": "enterprise-architecture/design/evidence/1.1.24/001/before/release-closure/change-review.reviewed.md",
+        "line": 41,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/application.tex": [
+      {
+        "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/application.tex",
+        "line": 344,
+        "diagnostic": "trailing whitespace."
+      },
+      {
+        "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/application.tex",
+        "line": 810,
+        "diagnostic": "trailing whitespace."
+      }
+    ],
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/motivation.tex": [
+      {
+        "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/motivation.tex",
+        "line": 1907,
+        "diagnostic": "trailing whitespace."
+      },
+      {
+        "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.24/parts/motivation.tex",
+        "line": 1914,
+        "diagnostic": "trailing whitespace."
+      }
+    ]
+  },
+  "completeFindingsRetainedIn": "staged-whitespace-check.txt.gz; the full raw Git scan remains preserved without expanding every repeated finding into duplicate JSON records"
+}

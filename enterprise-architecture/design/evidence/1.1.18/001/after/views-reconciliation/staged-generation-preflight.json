@@ -1,0 +1,6 @@
+{
+  "outcome": "FAIL",
+  "meaning": "expected reference gate rejection; task outcome UNRESOLVED",
+  "message": "Element '{http://www.opengroup.org/xsd/archimate/3.0/}node': No match found for key-sequence ['id-a0ec3251d4564072a217279d4cb4a394'] of keyref '{http://www.opengroup.org/xsd/archimate/3.0/}ElementRefAttribute'., line 52772",
+  "outputWritten": false
+}

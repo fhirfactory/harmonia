@@ -1,0 +1,1957 @@
+[
+  {
+    "exchangeId": "id-00f9c244941c4c36ae47791075061c5a",
+    "name": "Interoperability-and-Integration.Information-Exchange.Assessments",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.03"
+    ],
+    "canonicalId": "0085c4fe23cf4b76829fae3369c9fbb1",
+    "selector": "/*/*[4]/*[1901]",
+    "parentCanonicalId": "bda335658c29473d9ba20352242c83f8",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/0085c4fe23cf4b76829fae3369c9fbb1.md",
+    "displayName": "Interoperability-and-Integration.Information-Exchange.Assessments",
+    "initialCreateRepresentationId": "id-e64ef706c6ba5532bffa92e138d5fce4",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-02fb026d5d5d4a2aaaf22f3c6db5781f",
+    "name": "Deployment-and-Release-Management.Configuration-Management.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G10.03"
+    ],
+    "canonicalId": "f6985401675b47c0a1c480aa156aaa0c",
+    "selector": "/*/*[4]/*[1951]",
+    "parentCanonicalId": "ef476f07cd9e4ba6bdac99dc6e940baa",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/f6985401675b47c0a1c480aa156aaa0c.md",
+    "displayName": "Deployment-and-Release-Management.Configuration-Management.Principles",
+    "initialCreateRepresentationId": "id-c7273c421a3a595abe01088ca8b7ad8b",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-0336eab69f074587b7d11c5919c1d137",
+    "name": "Deployment-and-Release-Management.Configuration-Management.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G10.03"
+    ],
+    "canonicalId": "5f25a2e8082d486d8f2b87aec6667e33",
+    "selector": "/*/*[4]/*[1950]",
+    "parentCanonicalId": "ef476f07cd9e4ba6bdac99dc6e940baa",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/5f25a2e8082d486d8f2b87aec6667e33.md",
+    "displayName": "Deployment-and-Release-Management.Configuration-Management.Constraints",
+    "initialCreateRepresentationId": "id-9f26688f0c72579193b330afc8f6e49c",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-09ed20f8eaa94c59af0a24a1e69cdf6d",
+    "name": "Distributed-Systems-and-Temporal-Management.Task-Ordering.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G13.06"
+    ],
+    "canonicalId": "5e7bdebc353e49259113adf2a5b93aad",
+    "selector": "/*/*[4]/*[1962]",
+    "parentCanonicalId": "0528b2ac76c548ae861ebcb1ef9cf3d9",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/5e7bdebc353e49259113adf2a5b93aad.md",
+    "displayName": "Distributed-Systems-and-Temporal-Management.Task-Ordering.Requirements",
+    "initialCreateRepresentationId": "id-e3e86429bd005e239ec9bee65c3e52ad",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-0a17b369762e45d0bc20fd3bdf155783",
+    "name": "Security-and-Authorisation.Information-Protection.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.04"
+    ],
+    "canonicalId": "1cdc1ee62ec548998a8db6ee23b59ca1",
+    "selector": "/*/*[4]/*[1880]",
+    "parentCanonicalId": "d2f8fcaac9984a12beab502d1944ea25",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/1cdc1ee62ec548998a8db6ee23b59ca1.md",
+    "displayName": "Security-and-Authorisation.Information-Protection.Principles",
+    "initialCreateRepresentationId": "id-13d050a842395db099b5c3ffa2cce09b",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-14d1047ee6204bf4be1398c68e17228e",
+    "name": "Deployment-and-Release-Management.Release-Compatibility.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G10.05"
+    ],
+    "canonicalId": "31812051912e4dd99b07125d86ca2c11",
+    "selector": "/*/*[4]/*[1952]",
+    "parentCanonicalId": "7f9cadb36d764b22840748a9608f9a37",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/31812051912e4dd99b07125d86ca2c11.md",
+    "displayName": "Deployment-and-Release-Management.Release-Compatibility.Principles",
+    "initialCreateRepresentationId": "id-8dd441ee62e75d0fbe9a09a0f8a2aa73",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-14ed160c646f481e8c8527552fb50744",
+    "name": "Processing-and-Workflow.Task-Completion.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G06.02"
+    ],
+    "canonicalId": "5280c9c5e5ac43fe8fd314fd74bb6e69",
+    "selector": "/*/*[4]/*[1910]",
+    "parentCanonicalId": "2d89b3a1e74e42d28a9f0a3dfb2c4ecb",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/5280c9c5e5ac43fe8fd314fd74bb6e69.md",
+    "displayName": "Processing-and-Workflow.Task-Completion.Requirements",
+    "initialCreateRepresentationId": "id-08f76579dd3d547dbbe12b0d976a02ef",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-16b80b1feedd4b48a3745fad1c504ba9",
+    "name": "Information-Management.Information-Persistence.Assessments",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G02.04"
+    ],
+    "canonicalId": "d733a698d2c4477db4a4289144417e3f",
+    "selector": "/*/*[4]/*[1866]",
+    "parentCanonicalId": "8b7fd22a55434e5ca3e7ba87afb020d6",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/d733a698d2c4477db4a4289144417e3f.md",
+    "displayName": "Information-Management.Information-Persistence.Assessments",
+    "initialCreateRepresentationId": "id-b18247e98f6d52729d66277a08d1c196",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-17f11576f4364c8081b2db73b5a6393e",
+    "name": "Interoperability-and-Integration.Interoperability-Standards.Assessments",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.02"
+    ],
+    "canonicalId": "9020808d1ff9466db08ad2f8c9a97542",
+    "selector": "/*/*[4]/*[1898]",
+    "parentCanonicalId": "a44091225174403ebd2c5b75ba690a09",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/9020808d1ff9466db08ad2f8c9a97542.md",
+    "displayName": "Interoperability-and-Integration.Interoperability-Standards.Assessments",
+    "initialCreateRepresentationId": "id-22095fbb4be25cc3977709a81b269b24",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-1a06db77cfd943b980a2f1a1e1d7ae29",
+    "name": "Audit-and-Accountability.Audit-Generation.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G04.01"
+    ],
+    "canonicalId": "9fec9301e759460880557df71baa19c0",
+    "selector": "/*/*[4]/*[1891]",
+    "parentCanonicalId": "40416671099a46678ac5dfc3d0d615cf",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/9fec9301e759460880557df71baa19c0.md",
+    "displayName": "Audit-and-Accountability.Audit-Generation.Requirements",
+    "initialCreateRepresentationId": "id-a88d47fa5f6a5845af972d6500d44f6d",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-1c4b14c56ac54e1ea69e840581d90372",
+    "name": "Performance-and-Capacity.Resource-Management.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G08.04"
+    ],
+    "canonicalId": "8d58b9333a374b9cbe936f34919fc122",
+    "selector": "/*/*[4]/*[1934]",
+    "parentCanonicalId": "0e5030d90c134f1ea445257f0b6e788e",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/8d58b9333a374b9cbe936f34919fc122.md",
+    "displayName": "Performance-and-Capacity.Resource-Management.Principles",
+    "initialCreateRepresentationId": "id-bece5b29c6eb5e6f8d33ba396a25b6ae",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-1cdf16e8bcb64210b7311e5dde86441f",
+    "name": "Operations-and-Assurance.Operational-Assurance.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G09.06"
+    ],
+    "canonicalId": "3189d80ed4c24efe9bfc6b28ab263b51",
+    "selector": "/*/*[4]/*[1947]",
+    "parentCanonicalId": "315ba7bbe4624223a97a7e7e6d9cc252",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/3189d80ed4c24efe9bfc6b28ab263b51.md",
+    "displayName": "Operations-and-Assurance.Operational-Assurance.Requirements",
+    "initialCreateRepresentationId": "id-19c425fe9bd8535c9f2d989bdcbe9b9e",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-1d3b4ccc970043d19d9ba1fc203ee092",
+    "name": "Information-Management.Information-Persistence.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G02.04"
+    ],
+    "canonicalId": "a5228e483703437ba7617034e4ea207f",
+    "selector": "/*/*[4]/*[1869]",
+    "parentCanonicalId": "8b7fd22a55434e5ca3e7ba87afb020d6",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/a5228e483703437ba7617034e4ea207f.md",
+    "displayName": "Information-Management.Information-Persistence.Principles",
+    "initialCreateRepresentationId": "id-2e1d23d60fbd55ae8cafdc09d49aa0a7",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-1db025dd539640bcb935e922ead3d6e7",
+    "name": "Resilience-and-Recovery.Failure-Detection-and-Handling.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G07.02"
+    ],
+    "canonicalId": "ee9bc6c96d944f2ea8bbaaeffb31db28",
+    "selector": "/*/*[4]/*[1920]",
+    "parentCanonicalId": "e9804b6dea5c4e1db80be1925463786f",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/ee9bc6c96d944f2ea8bbaaeffb31db28.md",
+    "displayName": "Resilience-and-Recovery.Failure-Detection-and-Handling.Constraints",
+    "initialCreateRepresentationId": "id-407ac0c512b9521f9abe39eea90fd51e",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-1fba1f2d08c445df823f325bea397992",
+    "name": "Information-Management.Information-Integrity.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G02.02"
+    ],
+    "canonicalId": "80aa94b4210047a0a14563f408da1694",
+    "selector": "/*/*[4]/*[1863]",
+    "parentCanonicalId": "eb1b0526b898448688a322cce7ea6e74",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/80aa94b4210047a0a14563f408da1694.md",
+    "displayName": "Information-Management.Information-Integrity.Constraints",
+    "initialCreateRepresentationId": "id-7a213720feab53fc97067d753a43b223",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-1fbd77614a2843a4ba118d3f983d5335",
+    "name": "Security-and-Authorisation.Authorisation-Enforcement.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.03"
+    ],
+    "canonicalId": "202ebe880cc8456bb5e9f1389cc26fe8",
+    "selector": "/*/*[4]/*[1873]",
+    "parentCanonicalId": "fe8916b03b084e82af587ac5a900349b",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/202ebe880cc8456bb5e9f1389cc26fe8.md",
+    "displayName": "Security-and-Authorisation.Authorisation-Enforcement.Constraints",
+    "initialCreateRepresentationId": "id-ff4c051ba70e5e6f83fede4f59750f07",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-1fff2defea734ee686227be7c905e5ff",
+    "name": "Architectural-Governance.Architecture-Conformance.Goals",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G01.04"
+    ],
+    "canonicalId": "b47210a43fe147d4a3f2fbc081321063",
+    "selector": "/*/*[4]/*[1860]",
+    "parentCanonicalId": "5989495f1e224d5797054a8b6c0364a1",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/b47210a43fe147d4a3f2fbc081321063.md",
+    "displayName": "Architectural-Governance.Architecture-Conformance.Goals",
+    "initialCreateRepresentationId": "id-94ae7ad3a6af5053b4d3899b57e671dc",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-2019e329346e41988959b8e279fbfbae",
+    "name": "Operations-and-Assurance.Operational-Monitoring.Goals",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G09.01"
+    ],
+    "canonicalId": "e321b3c9558745fcaf58fe96ec8eca05",
+    "selector": "/*/*[4]/*[1937]",
+    "parentCanonicalId": "cc0a0cc2678c4c7db20ad015a75cc1de",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/e321b3c9558745fcaf58fe96ec8eca05.md",
+    "displayName": "Operations-and-Assurance.Operational-Monitoring.Goals",
+    "initialCreateRepresentationId": "id-50de42a8a3d950a091794b9041113c84",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-24cd2a16a67a42f689729f08898f6808",
+    "name": "Operations-and-Assurance.Operational-Monitoring.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G09.01"
+    ],
+    "canonicalId": "73a9255ce3cd4be89c2f5f65868c5f79",
+    "selector": "/*/*[4]/*[1938]",
+    "parentCanonicalId": "cc0a0cc2678c4c7db20ad015a75cc1de",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/73a9255ce3cd4be89c2f5f65868c5f79.md",
+    "displayName": "Operations-and-Assurance.Operational-Monitoring.Principles",
+    "initialCreateRepresentationId": "id-c4e574badc4b50cfa131887b8c47b594",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-286c75221c2644769337f2d76d1679e5",
+    "name": "Resilience-and-Recovery.Continuity-of-Operations.Goals",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G07.05"
+    ],
+    "canonicalId": "a4fbf334ea6e48028e39eb7f74ced2bb",
+    "selector": "/*/*[4]/*[1927]",
+    "parentCanonicalId": "41900f15d1d2431295a4b9dc1aa752c0",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/a4fbf334ea6e48028e39eb7f74ced2bb.md",
+    "displayName": "Resilience-and-Recovery.Continuity-of-Operations.Goals",
+    "initialCreateRepresentationId": "id-310e1c1dea1b58eebd66e97d209c6a71",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-2deaf1241aec45edb8a0f540356ec0a6",
+    "name": "Deployment-and-Release-Management.Deployment-Management.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G10.02"
+    ],
+    "canonicalId": "af4f93db10cb47c282600babe51048e1",
+    "selector": "/*/*[4]/*[1948]",
+    "parentCanonicalId": "36264352a7f745109deaac2025877690",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/af4f93db10cb47c282600babe51048e1.md",
+    "displayName": "Deployment-and-Release-Management.Deployment-Management.Constraints",
+    "initialCreateRepresentationId": "id-08fb1e7977715d17b06d723c73f65f31",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-366f55d9d47a43ffb548c0f1de0045a8",
+    "name": "Information-Management.Information-Integrity.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G02.02"
+    ],
+    "canonicalId": "88d1c3fd640448c2b35933d2b03b8151",
+    "selector": "/*/*[4]/*[1864]",
+    "parentCanonicalId": "eb1b0526b898448688a322cce7ea6e74",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/88d1c3fd640448c2b35933d2b03b8151.md",
+    "displayName": "Information-Management.Information-Integrity.Principles",
+    "initialCreateRepresentationId": "id-2892daa1dd0e54a4942fe734f48fcab9",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-386f5250a923447988f8acdfaf63dee8",
+    "name": "Interoperability-and-Integration.Interaction-Contracts.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.04"
+    ],
+    "canonicalId": "55441c2677144a9da1c6348e633eaac8",
+    "selector": "/*/*[4]/*[1907]",
+    "parentCanonicalId": "b3c19413e4b447adb5f1d86912db4052",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/55441c2677144a9da1c6348e633eaac8.md",
+    "displayName": "Interoperability-and-Integration.Interaction-Contracts.Requirements",
+    "initialCreateRepresentationId": "id-194c1e55da5d5a3aac69c85352962c34",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-38e906fd2a26475889065f9ccfb23380",
+    "name": "Operations-and-Assurance.Operational-Assurance.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G09.06"
+    ],
+    "canonicalId": "793ed649804a4bf19b5fa92bac3e4c29",
+    "selector": "/*/*[4]/*[1946]",
+    "parentCanonicalId": "315ba7bbe4624223a97a7e7e6d9cc252",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/793ed649804a4bf19b5fa92bac3e4c29.md",
+    "displayName": "Operations-and-Assurance.Operational-Assurance.Constraints",
+    "initialCreateRepresentationId": "id-34ba45aba5795f849ed2285a598f5733",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-3920961155a24818a5b661f3cb1da510",
+    "name": "Verification-and-Testing.Performance-and-Capacity-Testing.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G11.04"
+    ],
+    "canonicalId": "582e15cf43f94ce6b1c128361ec31780",
+    "selector": "/*/*[4]/*[1953]",
+    "parentCanonicalId": "cd453ee30502406db647a0c5b4011739",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/582e15cf43f94ce6b1c128361ec31780.md",
+    "displayName": "Verification-and-Testing.Performance-and-Capacity-Testing.Principles",
+    "initialCreateRepresentationId": "id-76df32b098d550fb9f411c32a0771f6f",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-395153d54ba54992b830cb5ad3947b17",
+    "name": "Deployment-and-Release-Management.Deployment-Management.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G10.02"
+    ],
+    "canonicalId": "50a4cb6b01c94904a0991175ab09004c",
+    "selector": "/*/*[4]/*[1949]",
+    "parentCanonicalId": "36264352a7f745109deaac2025877690",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/50a4cb6b01c94904a0991175ab09004c.md",
+    "displayName": "Deployment-and-Release-Management.Deployment-Management.Principles",
+    "initialCreateRepresentationId": "id-7e6c46009e695a76802320ac124c0c63",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-39d7e8efb6f340d89c970838f45cf2cc",
+    "name": "Interoperability-and-Integration.Interoperability-Standards.Drivers",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.02"
+    ],
+    "canonicalId": "bc45121331a04af7a54e790bd4a7ea6e",
+    "selector": "/*/*[4]/*[1899]",
+    "parentCanonicalId": "a44091225174403ebd2c5b75ba690a09",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/bc45121331a04af7a54e790bd4a7ea6e.md",
+    "displayName": "Interoperability-and-Integration.Interoperability-Standards.Drivers",
+    "initialCreateRepresentationId": "id-b69a2511bd1e520991182256c25f7c1a",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-3cf1b2c93254461a97027fb2b6456f0b",
+    "name": "Performance-and-Capacity.Resource-Management.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G08.04"
+    ],
+    "canonicalId": "d903a1d46d6e4a3c84d247789e43aa41",
+    "selector": "/*/*[4]/*[1933]",
+    "parentCanonicalId": "0e5030d90c134f1ea445257f0b6e788e",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/d903a1d46d6e4a3c84d247789e43aa41.md",
+    "displayName": "Performance-and-Capacity.Resource-Management.Constraints",
+    "initialCreateRepresentationId": "id-67e13b04890b5e9f8bfc487409917f31",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-3cfa9679ba3d497691c545243d9c3964",
+    "name": "Resilience-and-Recovery.Operational-Recovery.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G07.03"
+    ],
+    "canonicalId": "901d49996c9545bb99cb0e0e7c043c81",
+    "selector": "/*/*[4]/*[1922]",
+    "parentCanonicalId": "8609b046777c4a8ab4d5cafb30e34d04",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/901d49996c9545bb99cb0e0e7c043c81.md",
+    "displayName": "Resilience-and-Recovery.Operational-Recovery.Principles",
+    "initialCreateRepresentationId": "id-8724d8ee5b5c575fb2360e5db5f290ca",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-3d83dae5d80a4ec8aee50f9ae4a140bd",
+    "name": "Interoperability-and-Integration.Information-Exchange.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.03"
+    ],
+    "canonicalId": "08ffff9f57aa412b80e36ab154136ad0",
+    "selector": "/*/*[4]/*[1904]",
+    "parentCanonicalId": "bda335658c29473d9ba20352242c83f8",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/08ffff9f57aa412b80e36ab154136ad0.md",
+    "displayName": "Interoperability-and-Integration.Information-Exchange.Principles",
+    "initialCreateRepresentationId": "id-13192f1999575524936388f68e70bfa7",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-3e9d1122fc85401baa929e2339d030d6",
+    "name": "Processing-and-Workflow.Message-Processing.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G06.04"
+    ],
+    "canonicalId": "e576768ae5cd4522b760c36d2b364be2",
+    "selector": "/*/*[4]/*[1915]",
+    "parentCanonicalId": "5dde6ebecd094084b325ba59603bb919",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/e576768ae5cd4522b760c36d2b364be2.md",
+    "displayName": "Processing-and-Workflow.Message-Processing.Requirements",
+    "initialCreateRepresentationId": "id-ea545f40bb2b532d9bf081f6367e43c9",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-41c22ed603a2453a8216fc23e4464e02",
+    "name": "Distributed-Systems-and-Temporal-Management.Temporal-Consistency.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G13.02"
+    ],
+    "canonicalId": "8e39da9fc2d443efa3cc5d0311fcaf79",
+    "selector": "/*/*[4]/*[1961]",
+    "parentCanonicalId": "0f1014c80b0a473abf8c37845e0ed2fa",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/8e39da9fc2d443efa3cc5d0311fcaf79.md",
+    "displayName": "Distributed-Systems-and-Temporal-Management.Temporal-Consistency.Principles",
+    "initialCreateRepresentationId": "id-bdb85b8f79eb5917b36fed6929d405d7",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-4894c257f0bb4e0780794d0f7e6fd208",
+    "name": "Resilience-and-Recovery.Operational-Recovery.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G07.03"
+    ],
+    "canonicalId": "1a235d13959e477ea52e0f201215fbe9",
+    "selector": "/*/*[4]/*[1923]",
+    "parentCanonicalId": "8609b046777c4a8ab4d5cafb30e34d04",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/1a235d13959e477ea52e0f201215fbe9.md",
+    "displayName": "Resilience-and-Recovery.Operational-Recovery.Requirements",
+    "initialCreateRepresentationId": "id-05280854f4a052ae9259047159306e35",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-4a595661fb6742449dfa93780dda34eb",
+    "name": "Interoperability-and-Integration.Interaction-Contracts.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.04"
+    ],
+    "canonicalId": "d8d1f0aeff354b2696d3d6475c44c36e",
+    "selector": "/*/*[4]/*[1906]",
+    "parentCanonicalId": "b3c19413e4b447adb5f1d86912db4052",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/d8d1f0aeff354b2696d3d6475c44c36e.md",
+    "displayName": "Interoperability-and-Integration.Interaction-Contracts.Principles",
+    "initialCreateRepresentationId": "id-9c68548d215b53f2a8bfbc3834a46595",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-4fb8edfe58864a4eba1eebb78ddf439a",
+    "name": "Audit-and-Accountability.Audit-Management.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G04.03"
+    ],
+    "canonicalId": "9c613c6963e9451e945d3934a20bdd53",
+    "selector": "/*/*[4]/*[1894]",
+    "parentCanonicalId": "de791c4976f84676bf8545b1cfb8bf41",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/9c613c6963e9451e945d3934a20bdd53.md",
+    "displayName": "Audit-and-Accountability.Audit-Management.Principles",
+    "initialCreateRepresentationId": "id-47527fd1953551859e6ab45b1cc96cb6",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-52dd6783a82c4582bc452f0a72327bf0",
+    "name": "Architectural-Governance.Architecture-Vision.Goals",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G01.02"
+    ],
+    "canonicalId": "b01782f63be44bc9ab2f6ebbf84b37f2",
+    "selector": "/*/*[4]/*[1853]",
+    "parentCanonicalId": "6d6086134162468cac129040a139d8d9",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/b01782f63be44bc9ab2f6ebbf84b37f2.md",
+    "displayName": "Architectural-Governance.Architecture-Vision.Goals",
+    "initialCreateRepresentationId": "id-ff88ab2ce0d45a3385a65601647a48ae",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-555932c6057b4b72aefd0fe6dfc0dfee",
+    "name": "Processing-and-Workflow.Processing-Outcomes.Outcomes",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G06.06"
+    ],
+    "canonicalId": "b05d68295ed141d6815aa56c8a3d3b39",
+    "selector": "/*/*[4]/*[1916]",
+    "parentCanonicalId": "f40da9359c7545d2ad0eef6c3a5bf645",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/b05d68295ed141d6815aa56c8a3d3b39.md",
+    "displayName": "Processing-and-Workflow.Processing-Outcomes.Outcomes",
+    "initialCreateRepresentationId": "id-92778cc5d0115f6e9033f8aa01cb5bf8",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-581b9b60488d473bb240e080b2f71cbd",
+    "name": "Performance-and-Capacity.Responsiveness.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G08.02"
+    ],
+    "canonicalId": "43ea78d2aa5e4e0eb4e0c80a6ddb22dd",
+    "selector": "/*/*[4]/*[1931]",
+    "parentCanonicalId": "47d8e097526248349dd6dbbd318b1ef4",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/43ea78d2aa5e4e0eb4e0c80a6ddb22dd.md",
+    "displayName": "Performance-and-Capacity.Responsiveness.Requirements",
+    "initialCreateRepresentationId": "id-dfc9dc5e4366503dadfc0b6d7b957dd9",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-5f50743743e54c148240abbcc771c40c",
+    "name": "Resilience-and-Recovery.Operational-Recovery.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G07.03"
+    ],
+    "canonicalId": "df0b38c3ba9c49ea8dfe3f032ad2a329",
+    "selector": "/*/*[4]/*[1921]",
+    "parentCanonicalId": "8609b046777c4a8ab4d5cafb30e34d04",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/df0b38c3ba9c49ea8dfe3f032ad2a329.md",
+    "displayName": "Resilience-and-Recovery.Operational-Recovery.Constraints",
+    "initialCreateRepresentationId": "id-475479bb6a6b5fac9b4f29ef282422d6",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-6119d0e4ada44045a69db34cc0aa154d",
+    "name": "Information-Management.Information-Identity.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G02.01"
+    ],
+    "canonicalId": "9c7c9de7ffc0457d87cf52548bca70ca",
+    "selector": "/*/*[4]/*[1861]",
+    "parentCanonicalId": "819aeed91d0544c3b7cc52e69aa46d72",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/9c7c9de7ffc0457d87cf52548bca70ca.md",
+    "displayName": "Information-Management.Information-Identity.Constraints",
+    "initialCreateRepresentationId": "id-fd8ed4a8bedb58358d2134633911433e",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-62f66d959d71470dbfda6b337d34e773",
+    "name": "User-Experience.Navigation-and-Interaction.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G12.04"
+    ],
+    "canonicalId": "5120fbb391e24b3f941d8a5cc347a1fd",
+    "selector": "/*/*[4]/*[1959]",
+    "parentCanonicalId": "9f192036bee542ad883b89729a35bbfb",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/5120fbb391e24b3f941d8a5cc347a1fd.md",
+    "displayName": "User-Experience.Navigation-and-Interaction.Principles",
+    "initialCreateRepresentationId": "id-dde664d3a5255291a80564166c86da51",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-6354a0ca38e64266801a8a67cde40f58",
+    "name": "Security-and-Authorisation.Authorisation-Enforcement.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.03"
+    ],
+    "canonicalId": "f85948e2b4e145a4b56ab369c1a70c22",
+    "selector": "/*/*[4]/*[1874]",
+    "parentCanonicalId": "fe8916b03b084e82af587ac5a900349b",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/f85948e2b4e145a4b56ab369c1a70c22.md",
+    "displayName": "Security-and-Authorisation.Authorisation-Enforcement.Principles",
+    "initialCreateRepresentationId": "id-5453a7ec617a53df8e11ed27945e64c6",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-6484a86c45114dc19d08968d2e8fe4a6",
+    "name": "Interoperability-and-Integration.Interoperability-Standards.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.02"
+    ],
+    "canonicalId": "db0cac8c53b7404b8f2c17a542db7604",
+    "selector": "/*/*[4]/*[1900]",
+    "parentCanonicalId": "a44091225174403ebd2c5b75ba690a09",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/db0cac8c53b7404b8f2c17a542db7604.md",
+    "displayName": "Interoperability-and-Integration.Interoperability-Standards.Principles",
+    "initialCreateRepresentationId": "id-a67fd7b344755b86b5fb9244d5db7707",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-6495a040a2684ffba50a340f7e48e9c7",
+    "name": "Interoperability-and-Integration.Interaction-Reliability.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.05"
+    ],
+    "canonicalId": "41040498bcaf469686edbee208b9b349",
+    "selector": "/*/*[4]/*[1908]",
+    "parentCanonicalId": "1d7c50343cca49eeaeccf7c49c3c008b",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/41040498bcaf469686edbee208b9b349.md",
+    "displayName": "Interoperability-and-Integration.Interaction-Reliability.Principles",
+    "initialCreateRepresentationId": "id-3c7cac0c9e5b582486b70d6e7f771ebb",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-67d9fd4e1cd747819a5974bff1f89bea",
+    "name": "User-Experience.Localisation-and-Internationalisation.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G12.05"
+    ],
+    "canonicalId": "f71f084dd9154318b86ca22f0fe8c36d",
+    "selector": "/*/*[4]/*[1960]",
+    "parentCanonicalId": "77cd076a5bdf463a93fe330698d9be19",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/f71f084dd9154318b86ca22f0fe8c36d.md",
+    "displayName": "User-Experience.Localisation-and-Internationalisation.Principles",
+    "initialCreateRepresentationId": "id-6820822bea7f548f870ebc679c6ca1c2",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-69d83d5d695a4f6d99e3ac7724c2f5cb",
+    "name": "Information-Management.Information-Identity.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G02.01"
+    ],
+    "canonicalId": "d931781bb22243fdb892937b88141cf4",
+    "selector": "/*/*[4]/*[1862]",
+    "parentCanonicalId": "819aeed91d0544c3b7cc52e69aa46d72",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/d931781bb22243fdb892937b88141cf4.md",
+    "displayName": "Information-Management.Information-Identity.Principles",
+    "initialCreateRepresentationId": "id-19f7a5232377519d9f36153c710d8527",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-6a436d396d2041b39dbf44ccfbb34fdf",
+    "name": "Operations-and-Assurance.Operational-Information-Management.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G09.05"
+    ],
+    "canonicalId": "63807867e2d147528542a914952b3e3e",
+    "selector": "/*/*[4]/*[1945]",
+    "parentCanonicalId": "da5b4238bd6945cf9b467ff3feb9d76b",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/63807867e2d147528542a914952b3e3e.md",
+    "displayName": "Operations-and-Assurance.Operational-Information-Management.Principles",
+    "initialCreateRepresentationId": "id-691f480a74ba5fc8bd9444a31b49a403",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-6c0bdbc5f09341e097dfeb969eb06f14",
+    "name": "Resilience-and-Recovery.Continuity-of-Operations.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G07.05"
+    ],
+    "canonicalId": "aba77f43a26440dfb5e7cd67934e7ebd",
+    "selector": "/*/*[4]/*[1928]",
+    "parentCanonicalId": "41900f15d1d2431295a4b9dc1aa752c0",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/aba77f43a26440dfb5e7cd67934e7ebd.md",
+    "displayName": "Resilience-and-Recovery.Continuity-of-Operations.Principles",
+    "initialCreateRepresentationId": "id-babaee7ee9395d85a693588e3888fecf",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-6ecb9cfd63fc4122b34338125fbc351a",
+    "name": "Resilience-and-Recovery.Continuity-of-Operations.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G07.05"
+    ],
+    "canonicalId": "709d34e55e7b4c7a9e010f5465f76473",
+    "selector": "/*/*[4]/*[1929]",
+    "parentCanonicalId": "41900f15d1d2431295a4b9dc1aa752c0",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/709d34e55e7b4c7a9e010f5465f76473.md",
+    "displayName": "Resilience-and-Recovery.Continuity-of-Operations.Requirements",
+    "initialCreateRepresentationId": "id-22a8ae13288b5f6fbac124c5b95ef2f5",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-76d2dbcd18724197848332489f611e98",
+    "name": "Resilience-and-Recovery.Fault-Tolerance.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G07.01"
+    ],
+    "canonicalId": "3566f7776b8741699f48139e1c6b8ec8",
+    "selector": "/*/*[4]/*[1919]",
+    "parentCanonicalId": "0a59e0ebb33c494e939148d30e42f49c",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/3566f7776b8741699f48139e1c6b8ec8.md",
+    "displayName": "Resilience-and-Recovery.Fault-Tolerance.Principles",
+    "initialCreateRepresentationId": "id-4e652d5b186958a4a9496e715e588599",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-77dfe914f07a4cd6bf6f7bb1c48dd20f",
+    "name": "Information-Management.Information-Sovereignty-and-Residency.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G02.05"
+    ],
+    "canonicalId": "f6b8d4c19f9649a0bdde6727182855b6",
+    "selector": "/*/*[4]/*[1870]",
+    "parentCanonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/f6b8d4c19f9649a0bdde6727182855b6.md",
+    "displayName": "Information-Management.Information-Sovereignty-and-Residency.Principles",
+    "initialCreateRepresentationId": "id-0c797afce5815b77a955046265094915",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-7889b179a0ff4e2b99dd112f11136081",
+    "name": "Security-and-Authorisation.Security-Administration.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.05"
+    ],
+    "canonicalId": "f9035f49dbab4676b23ab9e4f45678f9",
+    "selector": "/*/*[4]/*[1884]",
+    "parentCanonicalId": "84693ef7bb4a4ced9634737c6bd5a36d",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/f9035f49dbab4676b23ab9e4f45678f9.md",
+    "displayName": "Security-and-Authorisation.Security-Administration.Constraints",
+    "initialCreateRepresentationId": "id-9ba1f2be8e655a729cfff82c7ee7e084",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-7a55306d968d4e799451c9833ac60377",
+    "name": "Security-and-Authorisation.Information-Protection.Stakeholders",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.04"
+    ],
+    "canonicalId": "66ec039ab4f042a8b4817ca1dafaedfe",
+    "selector": "/*/*[4]/*[1882]",
+    "parentCanonicalId": "d2f8fcaac9984a12beab502d1944ea25",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/66ec039ab4f042a8b4817ca1dafaedfe.md",
+    "displayName": "Security-and-Authorisation.Information-Protection.Stakeholders",
+    "initialCreateRepresentationId": "id-ee46976f05a4580fa5b58d6410af6709",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-8100e735849d4346bcc0c3146f47f5bd",
+    "name": "Performance-and-Capacity.Throughput.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G08.01"
+    ],
+    "canonicalId": "20326d2f4f2e44dcbe12db38deea02d0",
+    "selector": "/*/*[4]/*[1930]",
+    "parentCanonicalId": "cdcfbe8d106844109bb8ded51dea7a8a",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/20326d2f4f2e44dcbe12db38deea02d0.md",
+    "displayName": "Performance-and-Capacity.Throughput.Requirements",
+    "initialCreateRepresentationId": "id-ceb1cf1f16b8507d8ee3b64a4718558b",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-869980a1ea9a4f7ba17772184f7b2274",
+    "name": "Processing-and-Workflow.Concurrency-Management.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G06.03"
+    ],
+    "canonicalId": "416367b1da96412299df199827b3541f",
+    "selector": "/*/*[4]/*[1913]",
+    "parentCanonicalId": "9536aaf4114b4c35b8a795383d442f64",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/416367b1da96412299df199827b3541f.md",
+    "displayName": "Processing-and-Workflow.Concurrency-Management.Principles",
+    "initialCreateRepresentationId": "id-52976728b1b45b4ab14916567a47619c",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-87516cb980b5488482bab331a911b0d6",
+    "name": "Interoperability-and-Integration.External-Connectivity.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.01"
+    ],
+    "canonicalId": "011207c2c69f42d7a5c9c7504ffbc951",
+    "selector": "/*/*[4]/*[1897]",
+    "parentCanonicalId": "0b9e18356e9e4dcca51007f03f7b81b4",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/011207c2c69f42d7a5c9c7504ffbc951.md",
+    "displayName": "Interoperability-and-Integration.External-Connectivity.Principles",
+    "initialCreateRepresentationId": "id-4b20ad656109526e83d6b81ef81a8ef8",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-89557de9c4844948bc97deabf3b68fbc",
+    "name": "Architectural-Governance.Implementation-Strategy.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G01.03"
+    ],
+    "canonicalId": "549a5d805b3f40d49437ce704f923bf0",
+    "selector": "/*/*[4]/*[1857]",
+    "parentCanonicalId": "8bf2a60efafc4caf89ed9744adfb628d",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/549a5d805b3f40d49437ce704f923bf0.md",
+    "displayName": "Architectural-Governance.Implementation-Strategy.Constraints",
+    "initialCreateRepresentationId": "id-0cb85f073972508b8d9b2a7ea3424111",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-8aa2b084d62a4640998e385ae69f0918",
+    "name": "Processing-and-Workflow.Processing-Outcomes.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G06.06"
+    ],
+    "canonicalId": "477d6408de0642fc875ce79d8e9dee86",
+    "selector": "/*/*[4]/*[1918]",
+    "parentCanonicalId": "f40da9359c7545d2ad0eef6c3a5bf645",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/477d6408de0642fc875ce79d8e9dee86.md",
+    "displayName": "Processing-and-Workflow.Processing-Outcomes.Requirements",
+    "initialCreateRepresentationId": "id-d48625eed1ee585d944d6fedbd9ada32",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-8b30c71c6e2e454480b5b6f00b5bb440",
+    "name": "Verification-and-Testing.Test-Governance.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G11.06"
+    ],
+    "canonicalId": "c5f38ca4adc24f03a2b885938186e509",
+    "selector": "/*/*[4]/*[1955]",
+    "parentCanonicalId": "7eceab6d8a9741708d438a7760103c69",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/c5f38ca4adc24f03a2b885938186e509.md",
+    "displayName": "Verification-and-Testing.Test-Governance.Constraints",
+    "initialCreateRepresentationId": "id-b26aff79bebb5267a6a2f747e63d5edd",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-8d9389121f444438868fd7b70ddf121e",
+    "name": "Architectural-Governance.Architecture-Vision.Stakeholders",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G01.02"
+    ],
+    "canonicalId": "4f80f28b3dad490abe942e5bb37e1a80",
+    "selector": "/*/*[4]/*[1856]",
+    "parentCanonicalId": "6d6086134162468cac129040a139d8d9",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/4f80f28b3dad490abe942e5bb37e1a80.md",
+    "displayName": "Architectural-Governance.Architecture-Vision.Stakeholders",
+    "initialCreateRepresentationId": "id-6f881da082fd56908740380f59a05ec8",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-8ecdc98d1ed745bfb11b291ca59a1aa6",
+    "name": "Resilience-and-Recovery.Disaster-Recovery.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G07.04"
+    ],
+    "canonicalId": "f7d9c92661ed44af99516400635041bf",
+    "selector": "/*/*[4]/*[1924]",
+    "parentCanonicalId": "49966f8f01e244b4926ce4dc4c41fb47",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/f7d9c92661ed44af99516400635041bf.md",
+    "displayName": "Resilience-and-Recovery.Disaster-Recovery.Constraints",
+    "initialCreateRepresentationId": "id-d510f6ef1cb95edfb172205db1168b07",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-8f3100f85f834a1bbcd57dc0653dc5e3",
+    "name": "Information-Management.Information-Lifecycle.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G02.03"
+    ],
+    "canonicalId": "f14ca9b3213d4c3db3c5d479b4cc938e",
+    "selector": "/*/*[4]/*[1865]",
+    "parentCanonicalId": "b23f7fa8cb1b46569f63bde1aa5fbf1f",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/f14ca9b3213d4c3db3c5d479b4cc938e.md",
+    "displayName": "Information-Management.Information-Lifecycle.Principles",
+    "initialCreateRepresentationId": "id-0bfe4007022b579e81e11bf8d6b28d39",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-8feb3ea6eb244bc289a02ec7066a17f5",
+    "name": "Processing-and-Workflow.Processing-Outcomes.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G06.06"
+    ],
+    "canonicalId": "5a4a41f263424c1aac14102b64f95bd0",
+    "selector": "/*/*[4]/*[1917]",
+    "parentCanonicalId": "f40da9359c7545d2ad0eef6c3a5bf645",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/5a4a41f263424c1aac14102b64f95bd0.md",
+    "displayName": "Processing-and-Workflow.Processing-Outcomes.Principles",
+    "initialCreateRepresentationId": "id-80a24a19bf415200a15a260bd67caff9",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-918400789c3f471388455b18ac722408",
+    "name": "Operations-and-Assurance.Operational-Monitoring.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G09.01"
+    ],
+    "canonicalId": "b558d26d626b4276bd5ec38b8d42213a",
+    "selector": "/*/*[4]/*[1936]",
+    "parentCanonicalId": "cc0a0cc2678c4c7db20ad015a75cc1de",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/b558d26d626b4276bd5ec38b8d42213a.md",
+    "displayName": "Operations-and-Assurance.Operational-Monitoring.Constraints",
+    "initialCreateRepresentationId": "id-13a23dbeec785e5d9aa1ca69cab33b57",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-9199011422af4fd4b71051dde6008dea",
+    "name": "Audit-and-Accountability.Audit-Management.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G04.03"
+    ],
+    "canonicalId": "c18ef04adb54413d89bd9434a344504f",
+    "selector": "/*/*[4]/*[1893]",
+    "parentCanonicalId": "de791c4976f84676bf8545b1cfb8bf41",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/c18ef04adb54413d89bd9434a344504f.md",
+    "displayName": "Audit-and-Accountability.Audit-Management.Constraints",
+    "initialCreateRepresentationId": "id-e349be3d8a075fe5a83a24ce4ea6a3d6",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-92f2307a851a4da6a658b8c4d60bcd51",
+    "name": "Security-and-Authorisation.Security-Monitoring.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.06"
+    ],
+    "canonicalId": "2423108223e14d27a7bf59610034297a",
+    "selector": "/*/*[4]/*[1887]",
+    "parentCanonicalId": "bb3adbc3c2fb43e6a18a876c4e897c9c",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/2423108223e14d27a7bf59610034297a.md",
+    "displayName": "Security-and-Authorisation.Security-Monitoring.Principles",
+    "initialCreateRepresentationId": "id-b54f572022065472ba43655d70c0e19b",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-9429be9e3e47419ea2d38332b7ff72c1",
+    "name": "Security-and-Authorisation.Information-Protection.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.04"
+    ],
+    "canonicalId": "a49c1e5afd224d12bae33fac366a1d37",
+    "selector": "/*/*[4]/*[1877]",
+    "parentCanonicalId": "d2f8fcaac9984a12beab502d1944ea25",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/a49c1e5afd224d12bae33fac366a1d37.md",
+    "displayName": "Security-and-Authorisation.Information-Protection.Constraints",
+    "initialCreateRepresentationId": "id-b71221618c755acf9c9f4ac276b3289e",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-9508b495e21740989bf5e86f7acecded",
+    "name": "Information-Management.Information-Persistence.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G02.04"
+    ],
+    "canonicalId": "76b2a8e5551e4645a048f48e4820a0bc",
+    "selector": "/*/*[4]/*[1867]",
+    "parentCanonicalId": "8b7fd22a55434e5ca3e7ba87afb020d6",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/76b2a8e5551e4645a048f48e4820a0bc.md",
+    "displayName": "Information-Management.Information-Persistence.Constraints",
+    "initialCreateRepresentationId": "id-ce1d91f0f1125aa09bca8ce10ff156af",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-95a48392b7484331bb44b2983a7c1514",
+    "name": "User-Experience.Accessibility.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G12.02"
+    ],
+    "canonicalId": "23408174240a47f690d23dee589e4ddc",
+    "selector": "/*/*[4]/*[1957]",
+    "parentCanonicalId": "f814f4598722425cb3e7f45c32c11c90",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/23408174240a47f690d23dee589e4ddc.md",
+    "displayName": "User-Experience.Accessibility.Requirements",
+    "initialCreateRepresentationId": "id-f92a9495e1715ecbb775ce52a38c4fb1",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-95e03944d49c4cf7b29080edde0ed60d",
+    "name": "Security-and-Authorisation.Security-Administration.Assessments",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.05"
+    ],
+    "canonicalId": "b1997b3f14724bb983c06963fa7b4ea6",
+    "selector": "/*/*[4]/*[1883]",
+    "parentCanonicalId": "84693ef7bb4a4ced9634737c6bd5a36d",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/b1997b3f14724bb983c06963fa7b4ea6.md",
+    "displayName": "Security-and-Authorisation.Security-Administration.Assessments",
+    "initialCreateRepresentationId": "id-a70ff95f24855d2086f7ffdd36cb8701",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-96c1944cd4c0438a96e04f3a9a0d27c1",
+    "name": "Security-and-Authorisation.Information-Protection.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.04"
+    ],
+    "canonicalId": "e84139e878c740ab81c558cbc7ec6548",
+    "selector": "/*/*[4]/*[1881]",
+    "parentCanonicalId": "d2f8fcaac9984a12beab502d1944ea25",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/e84139e878c740ab81c558cbc7ec6548.md",
+    "displayName": "Security-and-Authorisation.Information-Protection.Requirements",
+    "initialCreateRepresentationId": "id-8380a09a659d51efb8926ff8bb0baaf8",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-96de76241ecd42b2ac583eed9fb161c1",
+    "name": "Audit-and-Accountability.Accountability-and-Traceability.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G04.04"
+    ],
+    "canonicalId": "b12837a817d14919b5c33b35e3bb3d5a",
+    "selector": "/*/*[4]/*[1895]",
+    "parentCanonicalId": "38d3dfcd23894f43b59d00c782170e63",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/b12837a817d14919b5c33b35e3bb3d5a.md",
+    "displayName": "Audit-and-Accountability.Accountability-and-Traceability.Requirements",
+    "initialCreateRepresentationId": "id-c0cfd66aebf350728da2ab20c3bef499",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-9a1e2bb269b14a4daea1ec78044ed129",
+    "name": "Interoperability-and-Integration.External-Connectivity.Assessments",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.01"
+    ],
+    "canonicalId": "4cc994e1de714cc8915dc965d2694808",
+    "selector": "/*/*[4]/*[1756]",
+    "parentCanonicalId": "0b9e18356e9e4dcca51007f03f7b81b4",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/4cc994e1de714cc8915dc965d2694808.md",
+    "displayName": "Interoperability-and-Integration.External-Connectivity.Assessments",
+    "initialCreateRepresentationId": "id-3cb03bc203e05666a42dabf7252b9b51",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-9a2d0a6b44b74c3da7e329b7589ee325",
+    "name": "Interoperability-and-Integration.Information-Exchange.Outcomes",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.03"
+    ],
+    "canonicalId": "f5838796139b4157b91b53dfd56ea0a2",
+    "selector": "/*/*[4]/*[1903]",
+    "parentCanonicalId": "bda335658c29473d9ba20352242c83f8",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/f5838796139b4157b91b53dfd56ea0a2.md",
+    "displayName": "Interoperability-and-Integration.Information-Exchange.Outcomes",
+    "initialCreateRepresentationId": "id-714ab8f86cf2562db509f066a753576f",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-9e69fff940694a63b177fdb172399b26",
+    "name": "Audit-and-Accountability.Audit-Generation.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G04.01"
+    ],
+    "canonicalId": "d56a556f29ff4ba78634e58d103c786e",
+    "selector": "/*/*[4]/*[1890]",
+    "parentCanonicalId": "40416671099a46678ac5dfc3d0d615cf",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/d56a556f29ff4ba78634e58d103c786e.md",
+    "displayName": "Audit-and-Accountability.Audit-Generation.Principles",
+    "initialCreateRepresentationId": "id-aa92a6f097625b5a8a8009bfb5790845",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-a04b838f87ac41e6a371b2940bdceca5",
+    "name": "Security-and-Authorisation.Authorisation.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.02"
+    ],
+    "canonicalId": "c0ef85ab954f447fb244149dfcc44aad",
+    "selector": "/*/*[4]/*[1872]",
+    "parentCanonicalId": "4648cf5a1f8e4333978c13efae10eaa5",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/c0ef85ab954f447fb244149dfcc44aad.md",
+    "displayName": "Security-and-Authorisation.Authorisation.Constraints",
+    "initialCreateRepresentationId": "id-208cf44cbf0d5694b8fed7c8e20faec1",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-a0ec3251d4564072a217279d4cb4a394",
+    "name": "Architectural-Governance.Architecture-Process.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G01.01"
+    ],
+    "canonicalId": "6fceb4d8857a4601b736a33e9bec140a",
+    "selector": "/*/*[4]/*[1850]",
+    "parentCanonicalId": "2ee0a6e46b47413d91cfb71ee3100e4b",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/6fceb4d8857a4601b736a33e9bec140a.md",
+    "displayName": "Architectural-Governance.Architecture-Process.Constraints",
+    "initialCreateRepresentationId": "id-717d2f54bc745428a67840b697b34157",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-a149c282595b4434bb04588730bb88ef",
+    "name": "Operations-and-Assurance.Operational-Diagnostics.Goals",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G09.02"
+    ],
+    "canonicalId": "99436452c53a49b89fa6bc2863557572",
+    "selector": "/*/*[4]/*[1940]",
+    "parentCanonicalId": "45cb08d300b74853b456f333572a2bf6",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/99436452c53a49b89fa6bc2863557572.md",
+    "displayName": "Operations-and-Assurance.Operational-Diagnostics.Goals",
+    "initialCreateRepresentationId": "id-9972cff66188569185311f753c577234",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-a1bc3da1b5f044d7b0b41b2ad8623bc8",
+    "name": "Processing-and-Worflow.Message-Processing-View.Assessments",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G06.04"
+    ],
+    "canonicalId": "549eaf0604764c01814641872404017f",
+    "selector": "/*/*[4]/*[1757]",
+    "parentCanonicalId": "5dde6ebecd094084b325ba59603bb919",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/549eaf0604764c01814641872404017f.md",
+    "displayName": "Processing-and-Workflow.Message-Processing-View.Assessments",
+    "initialCreateRepresentationId": "id-f01e8a8d88ee5d7b9c5f198c3a511138",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-a2693cde7d0545689b29417eee7ef74b",
+    "name": "Resilience-and-Recovery.Continuity-of-Operations.Drivers",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G07.05"
+    ],
+    "canonicalId": "f812d4f33612403986c174602b358a2f",
+    "selector": "/*/*[4]/*[1926]",
+    "parentCanonicalId": "41900f15d1d2431295a4b9dc1aa752c0",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/f812d4f33612403986c174602b358a2f.md",
+    "displayName": "Resilience-and-Recovery.Continuity-of-Operations.Drivers",
+    "initialCreateRepresentationId": "id-3ff280b8f1b154d29350b9c7c53124a0",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-a33614a85537406883b204719da57745",
+    "name": "Security-and-Authorisation.Information-Protection.Outcomes",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.04"
+    ],
+    "canonicalId": "b6ff7b82c59e4125868902e34d89630d",
+    "selector": "/*/*[4]/*[1879]",
+    "parentCanonicalId": "d2f8fcaac9984a12beab502d1944ea25",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/b6ff7b82c59e4125868902e34d89630d.md",
+    "displayName": "Security-and-Authorisation.Information-Protection.Outcomes",
+    "initialCreateRepresentationId": "id-c0a04beb15845ec494012453ac18ff15",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-a64e922707cd4bc9a375c80499367476",
+    "name": "Processing-and-Workflow.Task-Completion.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G06.02"
+    ],
+    "canonicalId": "5c36fbab326d484a9f7877b7fb6a2ff9",
+    "selector": "/*/*[4]/*[1909]",
+    "parentCanonicalId": "2d89b3a1e74e42d28a9f0a3dfb2c4ecb",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/5c36fbab326d484a9f7877b7fb6a2ff9.md",
+    "displayName": "Processing-and-Workflow.Task-Completion.Principles",
+    "initialCreateRepresentationId": "id-ac1abe0a82e057659a78cc9ccd694beb",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-a774fbe862574414bdc865b7eca33894",
+    "name": "Security-and-Authorisation.Security-Administration.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.05"
+    ],
+    "canonicalId": "c189826cd7024780abd89fa4f067947a",
+    "selector": "/*/*[4]/*[1885]",
+    "parentCanonicalId": "84693ef7bb4a4ced9634737c6bd5a36d",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/c189826cd7024780abd89fa4f067947a.md",
+    "displayName": "Security-and-Authorisation.Security-Administration.Principles",
+    "initialCreateRepresentationId": "id-c09307b377b359ae9576059928098433",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-ad5567429053481f8c7221f016e944e9",
+    "name": "Information-Management.Information-Persistence.Goals",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G02.04"
+    ],
+    "canonicalId": "e5d75469d336405a8f187368a7dc0353",
+    "selector": "/*/*[4]/*[1868]",
+    "parentCanonicalId": "8b7fd22a55434e5ca3e7ba87afb020d6",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/e5d75469d336405a8f187368a7dc0353.md",
+    "displayName": "Information-Management.Information-Persistence.Goals",
+    "initialCreateRepresentationId": "id-cfa94267ab20522da1f71b4a01df2459",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-adebd5da32ca413f99024a96d351adc0",
+    "name": "Architectural-Governance.Architecture-Conformance.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G01.04"
+    ],
+    "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+    "selector": "/*/*[4]/*[1859]",
+    "parentCanonicalId": "5989495f1e224d5797054a8b6c0364a1",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/46dd1f4490ae47cc854ce70ff600cb47.md",
+    "displayName": "Architectural-Governance.Architecture-Conformance.Constraints",
+    "initialCreateRepresentationId": "id-599645d0458955e2a3b60ed71e6ec841",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-b3112356ac314e86bc20698a74a44421",
+    "name": "Operations-and-Assurance.Operational-Control.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G09.03"
+    ],
+    "canonicalId": "445d396942f549e5891086bd72fa5b44",
+    "selector": "/*/*[4]/*[1943]",
+    "parentCanonicalId": "f0402eea7b5a49f9b61fbd90e336b2de",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/445d396942f549e5891086bd72fa5b44.md",
+    "displayName": "Operations-and-Assurance.Operational-Control.Constraints",
+    "initialCreateRepresentationId": "id-45ff58e114b450c28644cccc106fa080",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-b641c890a01c4e25b217c38daf552fc2",
+    "name": "Performance-and-Capacity.Resource-Management.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G08.04"
+    ],
+    "canonicalId": "eef79a8840434bd6b6fd37ab4f8ff75d",
+    "selector": "/*/*[4]/*[1935]",
+    "parentCanonicalId": "0e5030d90c134f1ea445257f0b6e788e",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/eef79a8840434bd6b6fd37ab4f8ff75d.md",
+    "displayName": "Performance-and-Capacity.Resource-Management.Requirements",
+    "initialCreateRepresentationId": "id-ebc1abcae78a5156b4eb15684103c1c7",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-b67e6a308e864c5dbe522df87125fcb6",
+    "name": "Architectural-Governance.Implementation-Strategy.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G01.03"
+    ],
+    "canonicalId": "93adee1dcb7348dd8bc070e7a53264f6",
+    "selector": "/*/*[4]/*[1858]",
+    "parentCanonicalId": "8bf2a60efafc4caf89ed9744adfb628d",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/93adee1dcb7348dd8bc070e7a53264f6.md",
+    "displayName": "Architectural-Governance.Implementation-Strategy.Principles",
+    "initialCreateRepresentationId": "id-3f45aa023b4259229e317ac12f0448be",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-bf875446915c42ccb0bff4a538b4f41a",
+    "name": "Audit-and-Accountability.Audit-Integrity.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G04.02"
+    ],
+    "canonicalId": "de3ff3302e504029b5b5f3f18fe9c380",
+    "selector": "/*/*[4]/*[1892]",
+    "parentCanonicalId": "c102ede2b9e249b2a2ddc9f19e0cbd7f",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/de3ff3302e504029b5b5f3f18fe9c380.md",
+    "displayName": "Audit-and-Accountability.Audit-Integrity.Requirements",
+    "initialCreateRepresentationId": "id-c5b094e475f7525c88b515f9a3927546",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-c02e147304774275b51786a342d90f77",
+    "name": "Processing-and-Workflow.Concurrency-Management.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G06.03"
+    ],
+    "canonicalId": "d90a28dcf8294c89a7a06022a3617aba",
+    "selector": "/*/*[4]/*[1912]",
+    "parentCanonicalId": "9536aaf4114b4c35b8a795383d442f64",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/d90a28dcf8294c89a7a06022a3617aba.md",
+    "displayName": "Processing-and-Workflow.Concurrency-Management.Constraints",
+    "initialCreateRepresentationId": "id-956b4ffd2c9d57f0b33a2a2ec01504e0",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-c4a5a28f792e4924b681a9a253ef0a7c",
+    "name": "Performance-and-Capacity.Scalability.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G08.03"
+    ],
+    "canonicalId": "028a5b5f4b0e458a91489cac0513955d",
+    "selector": "/*/*[4]/*[1932]",
+    "parentCanonicalId": "9cf94c0ac09141a3b909a6a1051bff97",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/028a5b5f4b0e458a91489cac0513955d.md",
+    "displayName": "Performance-and-Capacity.Scalability.Constraints",
+    "initialCreateRepresentationId": "id-0c9c8ec546f65eafaef90c4bd829c339",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-c5129404bca24cb0b7ebf0326b019ef3",
+    "name": "Architectural-Governance.Architecture-Vision.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G01.02"
+    ],
+    "canonicalId": "eabbd522676448fcb075f7d4b5ef4434",
+    "selector": "/*/*[4]/*[1855]",
+    "parentCanonicalId": "6d6086134162468cac129040a139d8d9",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/eabbd522676448fcb075f7d4b5ef4434.md",
+    "displayName": "Architectural-Governance.Architecture-Vision.Requirements",
+    "initialCreateRepresentationId": "id-8e2c09f2964e5e3eac17edba44f0809f",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-c7f0ce03183c42e09ba688ecfb969c9c",
+    "name": "Operations-and-Assurance.Operational-Diagnostics.Drivers",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G09.02"
+    ],
+    "canonicalId": "805280b737e14b72ba401393c1f4a271",
+    "selector": "/*/*[4]/*[1939]",
+    "parentCanonicalId": "45cb08d300b74853b456f333572a2bf6",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/805280b737e14b72ba401393c1f4a271.md",
+    "displayName": "Operations-and-Assurance.Operational-Diagnostics.Drivers",
+    "initialCreateRepresentationId": "id-b73545005b7053d9a52ae892a9f91ab0",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-c946464ac41c47ac9a8088fece31022c",
+    "name": "Security-and-Authorisation.Security-Monitoring.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.06"
+    ],
+    "canonicalId": "60fcf91dfa7445999dfa8e039d993415",
+    "selector": "/*/*[4]/*[1888]",
+    "parentCanonicalId": "bb3adbc3c2fb43e6a18a876c4e897c9c",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/60fcf91dfa7445999dfa8e039d993415.md",
+    "displayName": "Security-and-Authorisation.Security-Monitoring.Requirements",
+    "initialCreateRepresentationId": "id-711c8388f858595482cd50cbe00ea4da",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-ca7d2832c33b4b4e82827df69324daba",
+    "name": "Architectural-Governance.Architecture-Vision.Drivers",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G01.02"
+    ],
+    "canonicalId": "dc8500b4e7eb4923884f54db99d10a88",
+    "selector": "/*/*[4]/*[1852]",
+    "parentCanonicalId": "6d6086134162468cac129040a139d8d9",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/dc8500b4e7eb4923884f54db99d10a88.md",
+    "displayName": "Architectural-Governance.Architecture-Vision.Drivers",
+    "initialCreateRepresentationId": "id-6c41153c82e25741a66ef5ed3279ee70",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-cc919812cdd343bfb22d661209906bc7",
+    "name": "Architectural-Governance.Architecture-Vision.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G01.02"
+    ],
+    "canonicalId": "54d5ba1ccaae46c8b372f7ccfca99741",
+    "selector": "/*/*[4]/*[1851]",
+    "parentCanonicalId": "6d6086134162468cac129040a139d8d9",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/54d5ba1ccaae46c8b372f7ccfca99741.md",
+    "displayName": "Architectural-Governance.Architecture-Vision.Constraints",
+    "initialCreateRepresentationId": "id-d8a21ab0de8c5508af07cffaee036b5b",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-d202ffb64d4d4cc4aefa0a7f2021e094",
+    "name": "Operations-and-Assurance.Operational-Diagnostics.Stakeholders",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G09.02"
+    ],
+    "canonicalId": "67bfa710070c4618b3ba834da62cc63d",
+    "selector": "/*/*[4]/*[1942]",
+    "parentCanonicalId": "45cb08d300b74853b456f333572a2bf6",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/67bfa710070c4618b3ba834da62cc63d.md",
+    "displayName": "Operations-and-Assurance.Operational-Diagnostics.Stakeholders",
+    "initialCreateRepresentationId": "id-b78f5745136e5b54aec565c6520956e9",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-da0a7f200fe24edfb876caf8dc1747f5",
+    "name": "User-Experience.Usability.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G12.01"
+    ],
+    "canonicalId": "493e4a05fe76496f82caf26e68f15edd",
+    "selector": "/*/*[4]/*[1956]",
+    "parentCanonicalId": "58c3577b30fd4748836a1d52e07c8a98",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/493e4a05fe76496f82caf26e68f15edd.md",
+    "displayName": "User-Experience.Usability.Principles",
+    "initialCreateRepresentationId": "id-0cf737cb05575a8cbc86845e8eee8ca1",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-dd037a51d1654576929f4e74244bf9ca",
+    "name": "Operations-and-Assurance.Operational-Diagnostics.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G09.02"
+    ],
+    "canonicalId": "1eb3b965c7334b899133282bc0500a9d",
+    "selector": "/*/*[4]/*[1941]",
+    "parentCanonicalId": "45cb08d300b74853b456f333572a2bf6",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/1eb3b965c7334b899133282bc0500a9d.md",
+    "displayName": "Operations-and-Assurance.Operational-Diagnostics.Principles",
+    "initialCreateRepresentationId": "id-a52f703ef073558b885f9f2bea5ee8ce",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-e0cf25ef898f4e7091e130fe935ecafd",
+    "name": "User-Experience.User-Interface-Responsiveness.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G12.03"
+    ],
+    "canonicalId": "4643d0b24fe7420b8e3fd0f4a2f4b1de",
+    "selector": "/*/*[4]/*[1958]",
+    "parentCanonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/4643d0b24fe7420b8e3fd0f4a2f4b1de.md",
+    "displayName": "User-Experience.User-Interface-Responsiveness.Requirements",
+    "initialCreateRepresentationId": "id-eceb25878f03527ea348e186ff6062db",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-e5b7e282ab0f4f84acfebf3b13b24b98",
+    "name": "Processing-and-Workflow.Message-Processing.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G06.04"
+    ],
+    "canonicalId": "99e7cebde18640df841ac7f5c0c996be",
+    "selector": "/*/*[4]/*[1914]",
+    "parentCanonicalId": "5dde6ebecd094084b325ba59603bb919",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/99e7cebde18640df841ac7f5c0c996be.md",
+    "displayName": "Processing-and-Workflow.Message-Processing.Constraints",
+    "initialCreateRepresentationId": "id-6d660e84027a5af1a239119baea77d24",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-e60d5335cb1847aa92ecb909653a32c3",
+    "name": "Operations-and-Assurance.Operational-Information-Management.Assessments",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G09.05"
+    ],
+    "canonicalId": "f147597cd5e04696887257c6316eedf7",
+    "selector": "/*/*[4]/*[1944]",
+    "parentCanonicalId": "da5b4238bd6945cf9b467ff3feb9d76b",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/f147597cd5e04696887257c6316eedf7.md",
+    "displayName": "Operations-and-Assurance.Operational-Information-Management.Assessments",
+    "initialCreateRepresentationId": "id-0b1df122ae4e5cdaba3d42dd63fc6c95",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-e62f6403b16549a3b894d8eedb87db7a",
+    "name": "Security-and-Authorisation.Authorisation-Enforcement.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.03"
+    ],
+    "canonicalId": "9a5487f0dd7b42bca1f791aad1257849",
+    "selector": "/*/*[4]/*[1875]",
+    "parentCanonicalId": "fe8916b03b084e82af587ac5a900349b",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/9a5487f0dd7b42bca1f791aad1257849.md",
+    "displayName": "Security-and-Authorisation.Authorisation-Enforcement.Requirements",
+    "initialCreateRepresentationId": "id-bd36ce538a13573db2788abb25856ba1",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-e7c136fd5f4c4914a037c63372abe711",
+    "name": "Processing-and-Workflow.Task-Completion.Stakeholders",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G06.02"
+    ],
+    "canonicalId": "3b06c335246c4307adb5801e05f2cef4",
+    "selector": "/*/*[4]/*[1911]",
+    "parentCanonicalId": "2d89b3a1e74e42d28a9f0a3dfb2c4ecb",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/3b06c335246c4307adb5801e05f2cef4.md",
+    "displayName": "Processing-and-Workflow.Task-Completion.Stakeholders",
+    "initialCreateRepresentationId": "id-58ee108b79635cc7a467a54e0bc495a0",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-e92fff09a73c455a8f08214753303f03",
+    "name": "Audit-and-Accountability.Audit-Generation.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G04.01"
+    ],
+    "canonicalId": "aeb3b98e54124d94b4a68ab18de60514",
+    "selector": "/*/*[4]/*[1889]",
+    "parentCanonicalId": "40416671099a46678ac5dfc3d0d615cf",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/aeb3b98e54124d94b4a68ab18de60514.md",
+    "displayName": "Audit-and-Accountability.Audit-Generation.Constraints",
+    "initialCreateRepresentationId": "id-0cc26d1760a65186883a166b01b7c3d9",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-e9da4d32c9f94e1d96dab142e8a0de2e",
+    "name": "Interoperability-and-Integration.External-Connectivity.Drivers",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.01"
+    ],
+    "canonicalId": "3f830af6837d4f89bcd042039572bcdc",
+    "selector": "/*/*[4]/*[1896]",
+    "parentCanonicalId": "0b9e18356e9e4dcca51007f03f7b81b4",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/3f830af6837d4f89bcd042039572bcdc.md",
+    "displayName": "Interoperability-and-Integration.External-Connectivity.Drivers",
+    "initialCreateRepresentationId": "id-4afa9342ab055a62a9d7bb32c99b915c",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-f18d9e608ed8499ab5bb52bf4b0eb1f9",
+    "name": "Architectural-Governance.Architecture-Vision.Principles",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G01.02"
+    ],
+    "canonicalId": "87694e76de1d4b93af63a16a9f5de128",
+    "selector": "/*/*[4]/*[1854]",
+    "parentCanonicalId": "6d6086134162468cac129040a139d8d9",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/87694e76de1d4b93af63a16a9f5de128.md",
+    "displayName": "Architectural-Governance.Architecture-Vision.Principles",
+    "initialCreateRepresentationId": "id-0ce3e3920bcc5ae9ba2f44da6cdfdd13",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-f1c6f7c28e7b4d9d9a6f0441e9817406",
+    "name": "Security-and-Authorisation.Information-Protection.Assessments",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.04"
+    ],
+    "canonicalId": "0caf2fb84f944a6ab3872feb92b9338d",
+    "selector": "/*/*[4]/*[1876]",
+    "parentCanonicalId": "d2f8fcaac9984a12beab502d1944ea25",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/0caf2fb84f944a6ab3872feb92b9338d.md",
+    "displayName": "Security-and-Authorisation.Information-Protection.Assessments",
+    "initialCreateRepresentationId": "id-87cf1c027fe55183961c09f56de2546a",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-f2090754e079418e954b0fc4318129c4",
+    "name": "Security-and-Authorisation.Security-Administration.Stakeholders",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.05"
+    ],
+    "canonicalId": "980b414d73614bd48bc47a6aaa718a51",
+    "selector": "/*/*[4]/*[1886]",
+    "parentCanonicalId": "84693ef7bb4a4ced9634737c6bd5a36d",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/980b414d73614bd48bc47a6aaa718a51.md",
+    "displayName": "Security-and-Authorisation.Security-Administration.Stakeholders",
+    "initialCreateRepresentationId": "id-4fc51078d08c5b8c80592b0326fa368d",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-f336cea8d7fc42fa80047385f900db82",
+    "name": "Interoperability-and-Integration.Information-Exchange.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.03"
+    ],
+    "canonicalId": "4df45b11a8c64144acea7c240a2c93d1",
+    "selector": "/*/*[4]/*[1902]",
+    "parentCanonicalId": "bda335658c29473d9ba20352242c83f8",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/4df45b11a8c64144acea7c240a2c93d1.md",
+    "displayName": "Interoperability-and-Integration.Information-Exchange.Constraints",
+    "initialCreateRepresentationId": "id-a116c81c25c9511e9aa604c75bd780cb",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-f49e9dff66374a4e927e12a29ed4845f",
+    "name": "Security-and-Authorisation.Information-Protection.Drivers",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.04"
+    ],
+    "canonicalId": "ce45a338a1fc4d11a8d64ce898119f94",
+    "selector": "/*/*[4]/*[1878]",
+    "parentCanonicalId": "d2f8fcaac9984a12beab502d1944ea25",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/ce45a338a1fc4d11a8d64ce898119f94.md",
+    "displayName": "Security-and-Authorisation.Information-Protection.Drivers",
+    "initialCreateRepresentationId": "id-6c1a491601a25922a783d4cae1b3cb3a",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-f4cdd78991a843498f42b14643efcf0d",
+    "name": "Resilience-and-Recovery.Continuity-of-Operations.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G07.05"
+    ],
+    "canonicalId": "5e78ed0ddec14bb4b081082c66c75ad2",
+    "selector": "/*/*[4]/*[1925]",
+    "parentCanonicalId": "41900f15d1d2431295a4b9dc1aa752c0",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/5e78ed0ddec14bb4b081082c66c75ad2.md",
+    "displayName": "Resilience-and-Recovery.Continuity-of-Operations.Constraints",
+    "initialCreateRepresentationId": "id-46a0d779574653568c377a208494ff43",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-f61ee7b315944853b370486ae7fe5a68",
+    "name": "Security-and-Authorisation.Authentication.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G03.01"
+    ],
+    "canonicalId": "395d77eea25d40b0b74321dc7aabd283",
+    "selector": "/*/*[4]/*[1871]",
+    "parentCanonicalId": "f29ffa95c89d470b8a32e1369696327f",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/395d77eea25d40b0b74321dc7aabd283.md",
+    "displayName": "Security-and-Authorisation.Authentication.Requirements",
+    "initialCreateRepresentationId": "id-ea0798cf61c75f15b33287db6b16dc22",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-f77c66d07df146d38848a5d89832bb8b",
+    "name": "Interoperability-and-Integration.Information-Exchange.Requirements",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G05.03"
+    ],
+    "canonicalId": "1de844b879754fd7a21a29f2df3df97b",
+    "selector": "/*/*[4]/*[1905]",
+    "parentCanonicalId": "bda335658c29473d9ba20352242c83f8",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/1de844b879754fd7a21a29f2df3df97b.md",
+    "displayName": "Interoperability-and-Integration.Information-Exchange.Requirements",
+    "initialCreateRepresentationId": "id-21692712fb6d5d25a16f92df56a1c953",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  },
+  {
+    "exchangeId": "id-fc3922c4f9d94972a744b6c713110f51",
+    "name": "Verification-and-Testing.Resilience-Testing.Constraints",
+    "nativeType": "Grouping",
+    "subjectCodes": [
+      "G11.05"
+    ],
+    "canonicalId": "82837737622a46059703e99a8920533e",
+    "selector": "/*/*[4]/*[1954]",
+    "parentCanonicalId": "d3fb5abc58af4347ab52cdc26e9b14f1",
+    "definition": null,
+    "authoredProperties": [],
+    "source": "enterprise-architecture/continuum/grouping/82837737622a46059703e99a8920533e.md",
+    "displayName": "Verification-and-Testing.Resilience-Testing.Constraints",
+    "initialCreateRepresentationId": "id-b0b8baa4b3645135b293806ae16d44f8",
+    "operation": "CREATED_BY_GOVERNED_CREATE; incoming Exchange binding preserved"
+  }
+]

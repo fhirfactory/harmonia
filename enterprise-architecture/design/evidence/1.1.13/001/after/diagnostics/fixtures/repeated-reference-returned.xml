@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd" identifier="diagnostic-repeated-reference">
+  <name xml:lang="en">Diagnostic only — repeated-reference</name>
+  <elements>
+    <element identifier="repeated" xsi:type="Capability">
+      <name xml:lang="en">One Capability referenced twice</name>
+    </element>
+  </elements>
+  <organizations>
+    <item>
+      <label xml:lang="en">Strategy</label>
+      <item>
+        <label xml:lang="en">First location</label>
+      </item>
+      <item>
+        <label xml:lang="en">Second location</label>
+        <item identifierRef="repeated" />
+      </item>
+    </item>
+  </organizations>
+</model>

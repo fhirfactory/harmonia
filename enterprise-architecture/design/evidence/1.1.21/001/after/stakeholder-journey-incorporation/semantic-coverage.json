@@ -1,0 +1,338 @@
+{
+  "journeyCount": 68,
+  "useCases": 363,
+  "userStories": 415,
+  "structuralRootJourneys": 13,
+  "maximumRepresentedJourneyLevels": 2,
+  "sharedConstituents": [
+    {
+      "canonicalId": "26719186d6444b5b80029fbf13ae7d06",
+      "name": "Establish governed information access",
+      "parents": [
+        "3ba98c0c1170458f8c02fa76694fee67",
+        "45372a8e0fc64dd3ba0f2cc4b14b0ee3",
+        "558e014abfce4750996f92473380284d",
+        "5d725d797f754857bf1b3d49d8f25044",
+        "850bba32295c4e53b20036b80f77f491"
+      ]
+    },
+    {
+      "canonicalId": "ee60990709724506905c5dbe8e21261a",
+      "name": "Verify representative authority and scope",
+      "parents": [
+        "45372a8e0fc64dd3ba0f2cc4b14b0ee3",
+        "850bba32295c4e53b20036b80f77f491"
+      ]
+    },
+    {
+      "canonicalId": "733f2f6c9a5e49ceb0107d30bc736945",
+      "name": "Verify provider evidence and professional standing",
+      "parents": [
+        "679b0055ee5d42d4a838e35edd3de01f",
+        "9eb9f3210d5e4b46ac21463f54e62ab9"
+      ]
+    },
+    {
+      "canonicalId": "3afbc885a4a74b24a1240acb8725bad2",
+      "name": "Reconcile provider identity and conflicting assertions",
+      "parents": [
+        "679b0055ee5d42d4a838e35edd3de01f",
+        "9eb9f3210d5e4b46ac21463f54e62ab9"
+      ]
+    },
+    {
+      "canonicalId": "4522e0c4204e4c0c93d2b1f9ef3887ad",
+      "name": "Publish a qualified provider profile",
+      "parents": [
+        "679b0055ee5d42d4a838e35edd3de01f",
+        "9eb9f3210d5e4b46ac21463f54e62ab9"
+      ]
+    },
+    {
+      "canonicalId": "08c2d05dd0174cc28288ed4ab0bc05d2",
+      "name": "Reconcile exchange state with authoritative evidence",
+      "parents": [
+        "9eb9f3210d5e4b46ac21463f54e62ab9",
+        "ad3479bfcefb4cc4b562e146f68eb579",
+        "f0ce31d5b71c4c5ab37ade566b224808"
+      ]
+    }
+  ],
+  "useCasesWithoutJourney": [
+    "72935fd1f53f41b7b41d10946ecd4b1d",
+    "efe753846d2d45448d5e8e3a52b88875"
+  ],
+  "userStoriesWithoutJourney": [
+    "569d2276f8fe4970b094566957a1571d",
+    "83763dc308ab45fea4e9421146877f89"
+  ],
+  "useCasesContributingToMultipleStories": 17,
+  "storiesWithMultipleUseCases": 10,
+  "userStoriesWithoutUseCases": 44,
+  "participation": [
+    {
+      "stakeholder": "Nurse & Support",
+      "journey": "Distributed Clinical Knowledge → Informed Clinical Collaboration",
+      "characteristics": [
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Diagnostics",
+      "journey": "Multi-Source Clinical Information → Coherent Clinical Picture",
+      "characteristics": [
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Practitioner",
+      "journey": "Multi-Source Clinical Information → Coherent Clinical Picture",
+      "characteristics": [
+        "Participant",
+        "Beneficiary"
+      ]
+    },
+    {
+      "stakeholder": "Practitioner",
+      "journey": "Distributed Clinical Knowledge → Informed Clinical Collaboration",
+      "characteristics": [
+        "Initiator",
+        "Participant",
+        "Beneficiary"
+      ]
+    },
+    {
+      "stakeholder": "Practitioner",
+      "journey": "Establish and maintain provider directory information",
+      "characteristics": [
+        "Initiator",
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Practitioner",
+      "journey": "Identify an appropriate provider or service",
+      "characteristics": [
+        "Initiator",
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Researchers",
+      "journey": "Establish, exercise and revise consent choices",
+      "characteristics": [
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Responsible Person",
+      "journey": "Establish and maintain recognised representation",
+      "characteristics": [
+        "Initiator",
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Responsible Person",
+      "journey": "Establish, exercise and revise consent choices",
+      "characteristics": [
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Participant",
+      "journey": "Establish and maintain participant identity",
+      "characteristics": [
+        "Initiator",
+        "Participant",
+        "Beneficiary"
+      ]
+    },
+    {
+      "stakeholder": "Participant",
+      "journey": "Establish, exercise and revise consent choices",
+      "characteristics": [
+        "Initiator",
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Participant",
+      "journey": "Establish and maintain recognised representation",
+      "characteristics": [
+        "Initiator",
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Allied Health",
+      "journey": "Distributed Clinical Knowledge → Informed Clinical Collaboration",
+      "characteristics": [
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Patient",
+      "journey": "Multi-Source Clinical Information → Coherent Clinical Picture",
+      "characteristics": [
+        "Beneficiary"
+      ]
+    },
+    {
+      "stakeholder": "External Organisation",
+      "journey": "Establish, exercise and revise consent choices",
+      "characteristics": [
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Administrators (System)",
+      "journey": "Establish and maintain provider directory information",
+      "characteristics": [
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Administrators (System)",
+      "journey": "Incorporate and distribute provider information",
+      "characteristics": [
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Administrators (System)",
+      "journey": "Release governed terminology and reference content",
+      "characteristics": [
+        "Initiator",
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Administrators (System)",
+      "journey": "Review information governance evidence",
+      "characteristics": [
+        "Observer"
+      ]
+    },
+    {
+      "stakeholder": "Operations (Facility)",
+      "journey": "Operational Need → Coordinated Activity → Resolved Outcome",
+      "characteristics": [
+        "Initiator",
+        "Participant"
+      ]
+    },
+    {
+      "stakeholder": "Operations (System)",
+      "journey": "Detect and reconcile information exchange failures",
+      "characteristics": [
+        "Participant"
+      ]
+    }
+  ],
+  "newRelationshipCoverage": [
+    {
+      "source": "Capability",
+      "relationship": "Serving",
+      "target": "Journey",
+      "count": 52
+    },
+    {
+      "source": "Feature",
+      "relationship": "Serving",
+      "target": "Journey",
+      "count": 5
+    },
+    {
+      "source": "FunctionalRequirement",
+      "relationship": "Association",
+      "target": "Journey",
+      "count": 5
+    },
+    {
+      "source": "Journey",
+      "relationship": "Aggregation",
+      "target": "Journey",
+      "count": 65
+    },
+    {
+      "source": "Journey",
+      "relationship": "Association",
+      "target": "ApplicationComponent",
+      "count": 4
+    },
+    {
+      "source": "Journey",
+      "relationship": "Association",
+      "target": "BusinessFunction",
+      "count": 1
+    },
+    {
+      "source": "Journey",
+      "relationship": "Association",
+      "target": "BusinessService",
+      "count": 1
+    },
+    {
+      "source": "Journey",
+      "relationship": "Triggering",
+      "target": "Journey",
+      "count": 48
+    },
+    {
+      "source": "NonFunctionalRequirement",
+      "relationship": "Association",
+      "target": "Journey",
+      "count": 10
+    },
+    {
+      "source": "Stakeholder",
+      "relationship": "Association",
+      "target": "Journey",
+      "count": 21
+    },
+    {
+      "source": "UseCase",
+      "relationship": "Association",
+      "target": "Capability",
+      "count": 537
+    },
+    {
+      "source": "UseCase",
+      "relationship": "Association",
+      "target": "Feature",
+      "count": 14
+    },
+    {
+      "source": "UseCase",
+      "relationship": "Association",
+      "target": "Journey",
+      "count": 385
+    },
+    {
+      "source": "UseCase",
+      "relationship": "Association",
+      "target": "UserStory",
+      "count": 389
+    },
+    {
+      "source": "UserStory",
+      "relationship": "Association",
+      "target": "Capability",
+      "count": 634
+    },
+    {
+      "source": "UserStory",
+      "relationship": "Association",
+      "target": "Feature",
+      "count": 14
+    },
+    {
+      "source": "UserStory",
+      "relationship": "Association",
+      "target": "Journey",
+      "count": 443
+    }
+  ],
+  "interpretation": "Optional relationships, partial coverage and evidence-based omissions supply no completeness, satisfaction, implementation or acceptance claim."
+}

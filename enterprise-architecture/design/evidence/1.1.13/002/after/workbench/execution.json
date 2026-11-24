@@ -1,0 +1,46 @@
+{
+  "operator": "Codex",
+  "archiVersion": "5.10.0",
+  "plugin": "/home/hunterm/Development/Tools/Archi/plugins/org.opengroup.archimate.xmlexchange_5.10.0.202607081558.jar",
+  "pluginSha256": "7442b0a8ee987b26ea53c98ce040890cb7c18945771a5f364f470f03de295e1a",
+  "published": "enterprise-architecture/design/archimate/published/1.1.13/Harmonia-Architecture.xml",
+  "workingDirectory": "/home/hunterm/Development/Code/harmonia",
+  "firstPass": {
+    "exitCode": 0,
+    "log": "published.log",
+    "source": "published 1.1.13 XML",
+    "nativeSave": "published.archimate.gz",
+    "export": "returned.xml.gz"
+  },
+  "secondPass": {
+    "exitCode": 0,
+    "log": "second.log",
+    "source": "returned.xml.gz decompressed",
+    "nativeSave": "second.archimate.gz",
+    "export": "second.xml.gz"
+  },
+  "invocation": [
+    "timeout --signal=TERM --kill-after=5s 90s",
+    "/home/hunterm/Development/Tools/Archi/Archi",
+    "-nosplash",
+    "-consoleLog",
+    "-configuration",
+    "<isolated temporary config>",
+    "-data",
+    "<isolated temporary workspace>",
+    "-application",
+    "com.archimatetool.commandline.app",
+    "-a",
+    "--xmlexchange.import",
+    "<source XML>",
+    "--saveModel",
+    "<native output>",
+    "--xmlexchange.export",
+    "<returned XML>",
+    "--xmlexchange.exportFolders",
+    "--xmlexchange.exportLang",
+    "en"
+  ],
+  "environment": "DISPLAY=:0 with approved access outside the display-restricted sandbox; isolated config/workspace; no existing human model edited",
+  "standing": "Actual application execution; no Solution Architect acceptance asserted."
+}

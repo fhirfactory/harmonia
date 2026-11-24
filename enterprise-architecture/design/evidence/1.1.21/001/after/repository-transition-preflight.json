@@ -1,0 +1,14 @@
+{
+  "predecessorRemoteVerification": "PASS — 1862b21372bfc7a1eba117d53b2bdd4c2cf24cc5",
+  "branch": "Capability-Map-Consolidation",
+  "initialisationCommit": "PENDING terminal Git operation",
+  "authenticationProbe": {
+    "command": "git -c credential.interactive=false credential fill (GIT_TERMINAL_PROMPT=0)",
+    "credentialOutput": "DISCARDED; no credential values retained",
+    "exitCode": 128,
+    "credentialAvailable": false,
+    "diagnostic": "fatal: could not read Username for 'https://github.com': terminal prompts disabled"
+  },
+  "newPush": "NOT_PERFORMED — no shell credentials; user IDE push remains available",
+  "release": "1.1.21 development only; immutable accepted predecessor 1.1.20"
+}

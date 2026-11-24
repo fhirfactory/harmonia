@@ -1,0 +1,2 @@
+rg: .github: No such file or directory (os error 2)
+rg: Makefile: No such file or directory (os error 2)

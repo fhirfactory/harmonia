@@ -1,0 +1,129 @@
+\contentsline {table}{\numberline {1}{\ignorespaces Harmonia Classical Architectural Nomenclature and System Meaning Matrix}}{iii}{table.caption.4}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Harmonia Strategic Capabilities and Subsystem Realization}}{5}{table.caption.9}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Harmonia Business Actors, Assigned Roles, and Operational Responsibilities}}{14}{table.caption.13}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {8.1}{\ignorespaces Agora Architecture Decision Records (ADRs)}}{31}{table.caption.22}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {11.1}{\ignorespaces Iris Presentation Tier Subsystem and Portal Topology Matrix}}{41}{table.caption.29}%
+\contentsline {table}{\numberline {11.2}{\ignorespaces Iris BEFE Clinical JAX-RS REST Endpoint Catalog (Port 8080)}}{42}{table.caption.30}%
+\contentsline {table}{\numberline {11.3}{\ignorespaces Iris Clinical Portal View Matrix and FHIR Resource Mapping}}{44}{table.caption.31}%
+\contentsline {table}{\numberline {11.4}{\ignorespaces Operations Backend REST Endpoint Catalog (iris-befe Port 8090)}}{47}{table.caption.33}%
+\contentsline {table}{\numberline {11.5}{\ignorespaces Iris Provider Administration Portal Route and Authority Matrix}}{49}{table.caption.34}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {12.1}{\ignorespaces FHIR R5 Provider Registry Managed Resource Model Catalog}}{55}{table.caption.35}%
+\contentsline {table}{\numberline {12.2}{\ignorespaces FHIR R5 Provider Registry REST Interaction Matrix}}{56}{table.caption.37}%
+\contentsline {table}{\numberline {12.3}{\ignorespaces Provider Registry Per-Resource Ergon Activity Responsibilities}}{58}{table.caption.39}%
+\contentsline {table}{\numberline {12.4}{\ignorespaces Provider Registry Mnemonic Role and Granular Authority Matrix}}{60}{table.caption.40}%
+\contentsline {table}{\numberline {12.5}{\ignorespaces Production Readiness Checklist for FHIR R5 Provider Registry Core Services}}{61}{table.caption.41}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {13.1}{\ignorespaces Canonical Provider Registry Validation and Error Diagnostic Codes}}{64}{table.caption.43}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {14.1}{\ignorespaces Canonical Provider Registry Validation and Error Diagnostic Codes}}{67}{table.caption.44}%
+\contentsline {table}{\numberline {14.2}{\ignorespaces Petasos Standard Message Envelope Attribute Specification}}{69}{table.caption.46}%
+\contentsline {table}{\numberline {14.3}{\ignorespaces Harmonia Supported FHIR R5 Resource Schema Catalog}}{70}{table.caption.47}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {15.1}{\ignorespaces HL7 v2 to FHIR R5 Task Canonical Mapping Specifications}}{75}{table.caption.49}%
+\contentsline {table}{\numberline {15.2}{\ignorespaces Synchronous HL7 Acknowledgement Response Contracts}}{76}{table.caption.50}%
+\contentsline {table}{\numberline {15.3}{\ignorespaces MLLP Outbound Gateway Environment Configuration Parameters}}{78}{table.caption.52}%
+\contentsline {table}{\numberline {15.4}{\ignorespaces Downstream HL7 Acknowledgement Code Decision Matrix}}{82}{table.caption.53}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {16.1}{\ignorespaces Harmonia Master Technology Infrastructure Port Allocation Matrix}}{91}{table.caption.56}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {18.1}{\ignorespaces Infinispan 15.0.3 Replicated Named Cache Definitions and Write-Behind Store Bindings}}{95}{table.caption.59}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {24.1}{\ignorespaces ActiveMQ Artemis Broker Storage Isolation and Persistent Volume Mapping}}{106}{table.caption.62}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {28.1}{\ignorespaces Primary Platform Configuration Parameters Cross-Reference}}{113}{table.caption.65}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {32.1}{\ignorespaces Harmonia Host Platform Sizing Profiles and Resource Allocation Matrix}}{120}{table.caption.67}%
+\contentsline {table}{\numberline {32.2}{\ignorespaces Authoritative Linux Kernel Parameters and Sysctl Network Tuning}}{121}{table.caption.68}%
+\contentsline {table}{\numberline {32.3}{\ignorespaces Host Network Port Matrix and Firewall Exposure Rules}}{121}{table.caption.69}%
+\contentsline {table}{\numberline {32.4}{\ignorespaces Authoritative MicroK8s Add-on Specification and Capabilities}}{122}{table.caption.70}%
+\contentsline {table}{\numberline {32.5}{\ignorespaces Kubernetes Container Probe Specifications and Compute Resource Allocations}}{125}{table.caption.71}%
+\contentsline {table}{\numberline {32.6}{\ignorespaces Harmonia Ansible Lifecycle Playbooks and Operational Capabilities}}{128}{table.caption.72}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {34.1}{\ignorespaces Authoritative Normal Production vs Paradeigma Simulation Deployment Matrix}}{134}{table.caption.75}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {35.1}{\ignorespaces Paradeigma Interface Catalogue and Port Mappings}}{136}{table.caption.77}%
+\contentsline {table}{\numberline {35.2}{\ignorespaces Paradeigma Synthetic Pathology LOINC Catalog}}{138}{table.caption.78}%
+\contentsline {table}{\numberline {35.3}{\ignorespaces Scenario Engine REST Control Endpoints}}{141}{table.caption.79}%
+\contentsline {table}{\numberline {35.4}{\ignorespaces FailureSimulator Fault Injection Capabilities}}{141}{table.caption.80}%
+\contentsline {table}{\numberline {35.5}{\ignorespaces Paradeigma Docker Compose Deployment Configuration}}{142}{table.caption.81}%
+\contentsline {table}{\numberline {35.6}{\ignorespaces Dedicated FHIR R5 Synthetic Resource Generators}}{143}{table.caption.82}%
+\contentsline {table}{\numberline {35.7}{\ignorespaces Paradeigma Themis Security Actors Reference Catalog}}{144}{table.caption.83}%
+\contentsline {table}{\numberline {35.8}{\ignorespaces Paradeigma Simulator Microservice Configuration Properties}}{147}{table.caption.84}%
+\contentsline {table}{\numberline {35.9}{\ignorespaces Security \& PHI Logging Governance Properties}}{148}{table.caption.85}%
+\contentsline {table}{\numberline {35.10}{\ignorespaces FailureSimulator Fault Injection Configuration Knobs}}{148}{table.caption.86}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {37.1}{\ignorespaces Standardized Exchange Headers and Properties Managed by ErgonBase}}{155}{table.caption.88}%
+\contentsline {table}{\numberline {37.2}{\ignorespaces Production Readiness Checklist for New Ergon Workflow Activity Modules}}{164}{table.caption.90}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {38.1}{\ignorespaces Praxis Workflow Execution Checkpoint Stages and Lifecycle Semantics}}{167}{table.caption.92}%
+\contentsline {table}{\numberline {38.2}{\ignorespaces Mandatory Apache Camel Exchange Properties and Headers in Praxis Pipelines}}{172}{table.caption.93}%
+\contentsline {table}{\numberline {38.3}{\ignorespaces Production Readiness Checklist for Praxis Workflow Sequences}}{175}{table.caption.94}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {39.1}{\ignorespaces Platform Failure Scenario Matrix and Automated Recovery Guarantees}}{177}{table.caption.95}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {40.1}{\ignorespaces Harmonia Platform Logging Policy Matrix}}{179}{table.caption.96}%
+\contentsline {table}{\numberline {40.2}{\ignorespaces PHI Logging Configuration Properties}}{181}{table.caption.98}%
+\contentsline {table}{\numberline {40.3}{\ignorespaces PhiLogger Interface API Contract}}{182}{table.caption.99}%
+\contentsline {table}{\numberline {40.4}{\ignorespaces Classification of Operational Metadata vs. Restricted PHI}}{183}{table.caption.100}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces Harmonia Classical Architectural Nomenclature and Etymology Register}}{188}{table.caption.101}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Healthcare and Enterprise Integration Terminology Register}}{189}{table.caption.102}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {B.1}{\ignorespaces Harmonia System Inventory: Foundation, Security, Caching, and Transport Modules}}{190}{table.caption.103}%
+\contentsline {table}{\numberline {B.2}{\ignorespaces Harmonia System Inventory: Workflow, Gateways, Presentation, and Simulation Modules}}{191}{table.caption.104}%
+\contentsline {table}{\numberline {B.3}{\ignorespaces Harmonia 25-Workload Infrastructure and Middleware Inventory}}{193}{table.caption.105}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {C.1}{\ignorespaces Authoritative 37-Leaf-Module Register Across 9 Subprojects}}{195}{table.caption.106}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {D.1}{\ignorespaces Harmonia Middleware Technology Capability Matrix}}{196}{table.caption.107}%
+\contentsline {table}{\numberline {D.2}{\ignorespaces ActiveMQ Artemis Capability Analysis: Used vs. Avoided}}{197}{table.caption.108}%
+\contentsline {table}{\numberline {D.3}{\ignorespaces Infinispan Capability Analysis: Used vs. Avoided}}{197}{table.caption.109}%
+\contentsline {table}{\numberline {D.4}{\ignorespaces PostgreSQL Capability Analysis: Used vs. Avoided}}{198}{table.caption.110}%
+\contentsline {table}{\numberline {D.5}{\ignorespaces WildFly Capability Analysis: Used vs. Avoided}}{198}{table.caption.111}%
+\contentsline {table}{\numberline {D.6}{\ignorespaces Matrix Synapse Capability Analysis: Used vs. Avoided}}{198}{table.caption.112}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {E.1}{\ignorespaces Harmonia Global Infrastructure Configuration Parameters}}{199}{table.caption.113}%
+\contentsline {table}{\numberline {E.2}{\ignorespaces Harmonia Subsystem Application Configuration Properties}}{200}{table.caption.114}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {F.1}{\ignorespaces Authoritative Harmonia 18-Port Network Listener Register}}{201}{table.caption.115}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {G.1}{\ignorespaces Harmonia Container Image and Runtime Security Register}}{202}{table.caption.116}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {H.1}{\ignorespaces Harmonia Kubernetes 25-Workload Resource Allocations and Storage Claims}}{204}{table.caption.117}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {I.1}{\ignorespaces Harmonia Relational Database Register}}{205}{table.caption.118}%
+\contentsline {table}{\numberline {I.2}{\ignorespaces Infinispan In-Memory Replicated Cache Grid Register}}{206}{table.caption.119}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {J.1}{\ignorespaces Harmonia Subproject Allowed Dependencies and Unidirectional Invariants}}{207}{table.caption.120}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

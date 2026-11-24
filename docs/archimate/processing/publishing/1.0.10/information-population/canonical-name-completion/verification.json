@@ -1,0 +1,106 @@
+{
+  "status": "PASS_WITH_ACCEPTED_NON_BLOCKING_MODELLING_DEBT",
+  "architecture_release": {
+    "version": "1.0.10",
+    "previous_version": "1.0.9"
+  },
+  "published_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+  "checks": {
+    "archimate_tests": {
+      "status": "PASS",
+      "command": "timeout 420s python3 -B -m unittest discover -s docs/archimate/framework/tests -v",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/validation/canonical-archimate-tests-final.log.gz",
+      "log_sha256": "f42ec94904adb7905ae8460c4c2035e1bb92233a3487eb1a53553a69cb43574f"
+    },
+    "governance_tests": {
+      "status": "PASS",
+      "command": "timeout 120s python3 -B -m unittest discover -s scripts/tests -v",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/validation/canonical-governance-tests.log.gz",
+      "log_sha256": "8eca9257a3aa6491c42ab1441179d90f47b942432b9aba0dc2723b87278389d4"
+    },
+    "architecture_tests": {
+      "status": "PASS",
+      "command": "timeout 180s env JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/validation/canonical-architecture-tests.log.gz",
+      "log_sha256": "f744e063ac195c40c16da76f067545d058ea6dd0a705904fa33b896af8dc1a93"
+    },
+    "publication": {
+      "status": "PASS",
+      "command": "timeout 90s python3 -B docs/archimate/framework/tools/synchronise_baseline.py",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/validation/canonical-publication-corrected.log.gz",
+      "log_sha256": "5a9cee673656cac301e04a053d2b08cdea3ff80320ee012f7d5143a2669a82c0"
+    },
+    "preservation": {
+      "status": "PASS",
+      "command": "timeout 45s python3 -B docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/verify-completion.py",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/validation/preservation.json",
+      "log_sha256": "5c321aff81a76598ed3b54d4826601ad3e987da4d4f4664c2ca678e727fff886"
+    },
+    "identity": {
+      "status": "PASS",
+      "command": "timeout 60s python3 -B docs/archimate/framework/tools/governed_metadata.py validate",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/validation/canonical-identity.log.gz",
+      "log_sha256": "1f065a04f8ff5ddfa3c684b9d405ba04b15d21272559008af6ed282ebb7b6576"
+    },
+    "rads": {
+      "status": "PASS",
+      "command": "timeout 30s python3 -B scripts/rads_business_architecture.py validate",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/validation/canonical-rads.log.gz",
+      "log_sha256": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c"
+    },
+    "history": {
+      "status": "PASS",
+      "command": "timeout 60s python3 -B docs/archimate/framework/tools/verify_governance_evidence.py",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/validation/canonical-history-final.log.gz",
+      "log_sha256": "0659e7d7ba865a0355b4cbe7b729867ac29a9343809680fdde387e379d0c37b5"
+    },
+    "serialization_roundtrip": {
+      "status": "EQUIVALENT",
+      "command": "Read/serialize/parse published Open Exchange; unchanged Increment 1 comparator",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/validation/serialization.json",
+      "log_sha256": "f81253ab5035db1bc395ef0d79dafab48d1ca359c60385aebffd360054a34d9d"
+    },
+    "archi_transport": {
+      "status": "PASS",
+      "command": "timeout 45s python3 -B docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/roundtrip/verify-transport.py",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/roundtrip/archi-transport-verification.json",
+      "log_sha256": "df2fb9c9f1adb181fe7d00981f744dca6aa85eb354a96e3d22281ded649ec443"
+    },
+    "final_model_diagnostic": {
+      "status": "PASS",
+      "command": "Existing diagnose_roundtrip.py final-model diagnostic against completed publication with baseline context",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/canonical-name-completion/validation/diagnostic.json.gz",
+      "log_sha256": "c0d906e4671aca3a9b4861efc5cf909f494637c782f44338ae2ae5321a702ef2"
+    }
+  },
+  "tests": {
+    "archimate": 216,
+    "governance": 72,
+    "java_architecture": 90
+  },
+  "canonicalNames_completed": 54,
+  "BusinessObjects": 50,
+  "DataObjects": 4,
+  "canonicalIds_allocated": 0,
+  "new_elements": 0,
+  "new_relationships": 0,
+  "IA_semantic_relationships_created": 0,
+  "Artifacts_created": 0,
+  "Artifact_qualifier": "NOT AUTHORISED",
+  "model_change_scope": "Exactly 54 canonicalName additions; all other candidate XML content and identities preserved",
+  "IA_context": "Existing local friendlyName components preserved; no root status or Composition context inferred",
+  "future_naming_readiness": "CONFORMANT_WITH_GOVERNED_DERIVATION: source/persisted names only; does not clear Composition modelling debt",
+  "accepted_Business_modelling_debt": {
+    "elements": 323,
+    "standing": "Solution Architect accepted as NON-BLOCKING; existing names unchanged, no inferred or migrated Composition, contextual naming follows authored ancestry once it exists"
+  },
+  "raw_comparator": "DIFFERENCES: historical transport findings preserved; no whole-model lossless equivalence claim",
+  "human_rendering": "PENDING Solution Architect inspection",
+  "IA_ingestion_reconciliation": "NOT IMPLEMENTED; awaits architect-authored evidence",
+  "attempts": {
+    "initial_publication": "Authority-pin guard correctly rejected amended current governance; explicit preserved original/current authority amendment checks added",
+    "initial_focused_suite": "Helper shadowing and misplaced test fixture corrected; final focused suite passed 25 tests",
+    "first_full_suite": "INTERRUPTED by operator (exit 130) on observing outdated roundtrip assertions; corrected expectations, final 216-test suite passed",
+    "timeouts_or_stalls": "NONE"
+  }
+}

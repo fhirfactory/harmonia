@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "release": {
+    "version": "1.1.23",
+    "previous_version": "1.1.22"
+  },
+  "artifacts": [
+    {
+      "path": "enterprise-architecture/design/archimate/published/1.1.23/Harmonia-Architecture.xml",
+      "bytes": 48629401,
+      "sha256": "95d03fe1e5e3e9a9c3dc7af92b10277a7ac6ce44e94ad4cc63c5eabc5df06dc0"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/Harmonia-Architecture.xml",
+      "bytes": 48629401,
+      "sha256": "95d03fe1e5e3e9a9c3dc7af92b10277a7ac6ce44e94ad4cc63c5eabc5df06dc0"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/README.md",
+      "bytes": 1757226,
+      "sha256": "ed3e41590dc19c45f0a7b583e93b1c015a0b7c82af73bb32c23b0f53b8064c1a"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/continuum-catalogue.tex",
+      "bytes": 3856787,
+      "sha256": "4bce7c66f6817835fd9992723998ce265d3a5c434b940579e3e18766fdcc9c32"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/continuum.html",
+      "bytes": 32789134,
+      "sha256": "b14fa959a0d6b674b2befd0ca53db25f0d468d42484ae4c7f3a48665799614aa"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/navigation.json",
+      "bytes": 10623258,
+      "sha256": "f3fcde43ad5edfd095eff5c4039fd52e6bedb0609514e0abc5efd0f5f6a07edf"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.23/publication.json",
+      "bytes": 964,
+      "sha256": "34d54a53e5786b73a974d8559c5c84a7031aea2af8458acfb51ba9e7c755f08d"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/README.md",
+      "bytes": 562,
+      "sha256": "4f4e42f295a5af24283e30ce21e8349c216cc1e875e51b17e897a8148cc2c6d1"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/continuum-rad.tex",
+      "bytes": 9687,
+      "sha256": "72fbe046b6ca4e2e889619226261af89405accd1e154339d53c5ea4c3266d864"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/application.tex",
+      "bytes": 341559,
+      "sha256": "fbe1c5f28335a3b5fd90aa9469e28a6bcecf956c4221b2cc010061f31c243c19"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/architecture-governance.tex",
+      "bytes": 9487,
+      "sha256": "bb8b35a7b23d47c22c5d0ef8eaf7ac926f2f4f2ddc5c082cb7eaf4a350e13821"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/business.tex",
+      "bytes": 893900,
+      "sha256": "62cbda316336c00572eea6fb5ab991e859a2530b85d7af99640dc76697946033"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/cross-cutting-references.tex",
+      "bytes": 1400149,
+      "sha256": "75bf79e567c6609d96ccf3ea5965e1ee00739e4e26577e664181150142657248"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/implementation-and-migration.tex",
+      "bytes": 335,
+      "sha256": "cc088fb5e4a5189f8f669d5c30c830cc75bc53068673bde335306341efdd3353"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/motivation.tex",
+      "bytes": 2381133,
+      "sha256": "df249ba78174e2f5acb09ac6e75f109007cd880da41d6a5b2c5e0527e4692229"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/strategy.tex",
+      "bytes": 4186101,
+      "sha256": "a89d73b285afffdd69bedfc5e1039899946597311ce1d344c28add92c084c809"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/technology.tex",
+      "bytes": 257,
+      "sha256": "6f1e2c08086d8457df080a89d5b5dd6de1ca46adea91584fc9d9a864ed6a5760"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/publication.json",
+      "bytes": 2087,
+      "sha256": "4634029d0e6263db1f18c0d19102dccaeaecefe585c08e034e34ac6a59751c12"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/structure.json",
+      "bytes": 12029735,
+      "sha256": "c2e40868262e05945ac77c6271f5ddc8b8a1d6346ef474c3520f2d83079ce720"
+    }
+  ]
+}

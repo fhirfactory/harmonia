@@ -1,0 +1,9 @@
+{
+  "status": "FAIL",
+  "reason": "Relationship/View transport drift",
+  "baselineSha256": "eb4c340c25a2d8ee114053a445056b1afaf4b000e38b15c2f0259384e7f5f6a9",
+  "returnedSha256": "617f10f2fa8bcd87bfbab2a0858b60ba72a0a3ad0b07c8530f99f731bdea69cb",
+  "rawEvidence": "raw-transport-comparison.json.gz",
+  "operator": "Codex; supported installed Archi 5.10 actual import/save/export",
+  "gate": "Requires candidate-specific Solution Architect treatment before dependent finalisation; no inherited waiver applied."
+}

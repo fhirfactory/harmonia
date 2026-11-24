@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "initialFailure": "One fixture selected only unprefixed AX-* names and assumed the base Principle storage directory.",
+  "correction": "Tests recognise the explicit ArchitecturalAxiom prefix, use each resource actual native-profile path, and require all 18 governing axioms in both navigation and definition-copy checks. Production validators and comparators remain unchanged.",
+  "currentGovernanceLabelsAndTargets": [
+    {
+      "canonicalId": "5de2ae2c3b794c2d9f3a14efd51d564f",
+      "displayName": "[ArchitecturalAxiom] AX-07 Security Is Intrinsic to Managed Operations",
+      "target": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+    },
+    {
+      "canonicalId": "8882573df7ce43c6bc0f66da0a676139",
+      "displayName": "[ArchitecturalAxiom] AX-17 Architectural Authority and Explicit Uncertainty",
+      "target": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md"
+    },
+    {
+      "canonicalId": "b8cafe3cf5904d2bb9a9767260fddf78",
+      "displayName": "[ArchitecturalAxiom] AX-18 Integration and Coordination Do Not Confer Domain Authority",
+      "target": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md"
+    }
+  ]
+}

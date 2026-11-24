@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "current_document_files": 13,
+  "local_links_checked": 187,
+  "missing_current_links": [],
+  "processing_directions": [
+    "publishing",
+    "ingestion"
+  ],
+  "published_packages": "EXACTLY ONE XML EACH",
+  "old_umbrella": "ABSENT",
+  "old_synchronised_publication_container": "ABSENT",
+  "release": {
+    "version": "1.0.8",
+    "previous_version": "1.0.7"
+  },
+  "complete_independent_reproduction": "14/14 BYTE-IDENTICAL",
+  "current_verification_fingerprints": "ALL MATCH",
+  "git_diff_check": "PASS",
+  "increment_2": "NOT BEGUN"
+}

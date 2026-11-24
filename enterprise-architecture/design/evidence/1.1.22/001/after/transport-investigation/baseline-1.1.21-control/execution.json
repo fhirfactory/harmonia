@@ -1,0 +1,42 @@
+{
+  "input": "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/archimate/published/1.1.21/Harmonia-Architecture.xml",
+  "inputSha256": "6471411187a5ff72b005c9b9855c48beb3d86b7ae6c7c556a4eb58338011a739",
+  "operator": "Codex, user-authorised 1.1.22/001 transport investigation",
+  "timeoutSeconds": 120,
+  "installation": "/home/hunterm/Development/Tools/Archi",
+  "limits": "Read-only control input; isolated temporary configuration/workspace. No architectural acceptance.",
+  "command": [
+    "/home/hunterm/Development/Tools/Archi/Archi",
+    "-nosplash",
+    "-consoleLog",
+    "-configuration",
+    "/tmp/harmonia-transport-investigation-1lp78zxl/configuration",
+    "-data",
+    "/tmp/harmonia-transport-investigation-1lp78zxl/workspace",
+    "-eclipse.keyring",
+    "/tmp/harmonia-transport-investigation-1lp78zxl/secure_storage",
+    "-application",
+    "com.archimatetool.commandline.app",
+    "-a",
+    "--xmlexchange.import",
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/archimate/published/1.1.21/Harmonia-Architecture.xml",
+    "--saveModel",
+    "/tmp/harmonia-transport-investigation-1lp78zxl/native.archimate",
+    "--xmlexchange.export",
+    "/tmp/harmonia-transport-investigation-1lp78zxl/returned.xml",
+    "--xmlexchange.exportFolders",
+    "--xmlexchange.exportLang",
+    "en"
+  ],
+  "exitCode": 0,
+  "outcome": "PASS",
+  "elapsedSeconds": 12.139,
+  "native.archimate": {
+    "sha256": "3b345e5d089c1f8a78ecb1744f927a9f0dd08f48786f10c44510284615c42bb1",
+    "bytes": 46342566
+  },
+  "returned.xml": {
+    "sha256": "0c1422c1f0dc609e9c963eb7a1d66b169e758f437e859e7e1d5189060724e89f",
+    "bytes": 53785559
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "changedMarkdownFilesChecked": 15,
+  "localReferencesChecked": 5702,
+  "governedNavigationSourcesChecked": 19,
+  "issues": [],
+  "scope": "Completion register/current navigation/Task/Report and changed maintained Markdown; local targets and Markdown anchors. Canonical body links also receive the maintained separate gate. No network link availability is asserted."
+}

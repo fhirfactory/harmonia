@@ -1,0 +1,265 @@
+{
+  "standing": "Canonical working migration candidate; Solution Architect result and structural review pending",
+  "task": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+  "formalTask": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-capability-model-replacement.md",
+  "formalReport": "enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261110T062320Z-capability-model-replacement.md",
+  "hcrl": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md",
+  "acceptedInputPins": [
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+      "sha256": "83aa0a696e057a4d1cb63177269d6c613554fea86189b9c5a8578472f09272a4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Pass3_014_FR_Adjudication_Workbook.xlsx",
+      "sha256": "d99dd8d506badfcc5c8d88be28481a8c47706e0d9a43a7e060f1368edaaca8f7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/feature-reconciliation.json",
+      "sha256": "5651c07dada52be14d56c34561a27bb4d6369ed9207c3c47c41cd002dd12833a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/capability-reconciliation.json",
+      "sha256": "23963796bc65bd84ad2e36377b1d22553a73981df39449e2c7c1511ed5aea43f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/criterion-reconciliation.json",
+      "sha256": "935b54aaa3bd0cafa98bd6865775d78055d2e10094549a8a7116c5f1863d5d78"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/measurement-criteria.csv",
+      "sha256": "850e23742bdafbb4fcbb926ee075de51cf743724cb3779dcb71ed4ce52cffa0f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/definition-changes.json",
+      "sha256": "2473147fd91fbb8275028c2cd4df9653bbc0739992982a9bfcfd9d342576083c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/fr-incorporation.json",
+      "sha256": "0c1c3565a6e184e94b90bf1140f68b4a5c99e3aa528698dceb28cd4f13543601"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/fr-retirement-trace.json",
+      "sha256": "a4bf60039c2aa487895c840b40a565ff51bc04069251ce0593fc6929d2589b1a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/changes.json",
+      "sha256": "70ec2f1481f27ec51430ff9fc80e2423df335be987afc049c1767a3f398de7df"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/build_result.py",
+      "sha256": "a747d43d1e9b6fcba99598f7a825f505d27506e533653684d481184469c0330d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/verify_result.py",
+      "sha256": "0f44e8eb4dc68ab7d3aeabf49c136fcd2f3290e7271fd8f4c92d087ab4a91001"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/README.md",
+      "sha256": "a62c20f0fd154cb31490cbdf266acc55f3a17840e6c53beecd27e877ec8f2526"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_013_SR_Reconciled_Catalogue.md",
+      "sha256": "9b229610992d8aaec412e79e5012ff986c335943c59e63fc18beea4a777acf28"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/Harmonia_1.1.20_Pass3_013_SR_Adjudication_Workbook.xlsx",
+      "sha256": "b170216cab898f3071299b9f970b9fd038801820e1719182e7b3dad5ad9504b2"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/source-result-manifest.json",
+      "sha256": "f47d184f477e36f10dc48e208427aa97ae2d02dc3301af236a1e74f17e0bdc32"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/before/pass3-fr-reconciliation-input-manifest.json",
+      "sha256": "efbaaa21ef84369dff62bd1b85900c4fd52211d9a0082a1c23983e259bb81b91"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+      "sha256": "7aca973832645dfa278a858e48cfe767d8dc4f5c01119320d556c791c883d543"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+      "sha256": "0b4ecc9242ab136cec9e84ae7d91282149cad1e0661122798c38e540ed631ee1"
+    }
+  ],
+  "acceptedSourceManifest": {
+    "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/source-result-manifest.json",
+    "sha256": "feaccfb76cc298a7d212a0e7079ac3d19d6e379ff8b8d0f09f5fb34188c16c9d"
+  },
+  "release": {
+    "version": "1.1.20",
+    "previous_version": "1.1.19"
+  },
+  "finalReviewCandidate": "candidate-v2",
+  "candidateSha256": "658a9e021b298f700a3f4fbd38b6fa9119d632c7aca00975f6516c0375629456",
+  "population": {
+    "CT1": 24,
+    "CT2": 145,
+    "CT3": 585,
+    "Feature": 2935,
+    "canonicalElements": 5685,
+    "relationships": 6636,
+    "authoredViews": 1288
+  },
+  "canonicalSourceTree": {
+    "path": "enterprise-architecture/continuum",
+    "files": 5687,
+    "sha256": "05c1272f966a84b11c23af2d4931dd29cdcf6852c8e1c0b0dd075bf0d7c8cf58",
+    "algorithm": "SHA-256 of sorted repository-relative POSIX path + TAB + file SHA-256 + LF for each regular file"
+  },
+  "selectedResultPins": [
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/README.md",
+      "sha256": "7c3aa04c00d6608449c5562f556409ce33975394fec17cceee27dbd62242ef2c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/summary.json",
+      "sha256": "c003f19d889632819a2077e70140eece44ec5b086edfcc4c4b586b51ae275e9b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/semantic-correspondence.json",
+      "sha256": "4bdcf02b774bc2b0937f30787a3ccfe2ef796d44644f9ea8db0d9d3553dd643f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/relationship-reconciliation.json",
+      "sha256": "1b354d09f270464e3cf837b46e425f85398bec4970cc3e0858a794bbb3d18e10"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/hierarchy-reconciliation.json",
+      "sha256": "87b497244f3a90466cfa2631daf9edbfa0697f8bb7e12cffee9f0388300c189b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/home-naming-reconciliation.json",
+      "sha256": "32d0ac6eb742676a580f4ce50e5dc8f8d3adf928636340b44c663a644765fa27"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/source-incorporation.json",
+      "sha256": "e064974c5741fd7bdf7295605b592bd41bcac4c69d7eed9900859ea5553dac8d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/identity-allocations.jsonl",
+      "sha256": "4f043ec7a6e65ad385d6e8310b139600a004c77facacd07e23183db3f7bb2630"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/verification-summary.json",
+      "sha256": "3c6ede974bb72b6aab72680badc4d2b0a5826bca9ba489d87b42e3ab81a75ffd"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/canonical-validation.json",
+      "sha256": "2eb01eeec6f03119426f584778647b7195dea19307cc17a5a805e2c77789f760"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/preservation-validation.json",
+      "sha256": "2939eaa90da9702089daf5d9418c314227a603ce53ad1b8b66e595b1829729b5"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/projection-validation-v2.json",
+      "sha256": "84cf51d0b7ee97426d1a3c678d39270684cbb5c5ea535ee348a76439b5f8065f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/determinism-validation-v2.json",
+      "sha256": "84cf51d0b7ee97426d1a3c678d39270684cbb5c5ea535ee348a76439b5f8065f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/link-validation.json",
+      "sha256": "9da901176da3eb2f874d90619b7af5949cb40a2dfb818407dfe93f5a8121ccc4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/candidate-v2/Harmonia-Architecture-candidate.xml",
+      "sha256": "658a9e021b298f700a3f4fbd38b6fa9119d632c7aca00975f6516c0375629456"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/candidate-v2/reader/continuum.html",
+      "sha256": "076415492a35e12a9e6fe32a8c82f984cc7e070fd849189da5efba6f453fa8e9"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/candidate-v2/reader/Harmonia-Architecture.xml",
+      "sha256": "658a9e021b298f700a3f4fbd38b6fa9119d632c7aca00975f6516c0375629456"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/candidate-v2/narrative/structure.json",
+      "sha256": "63f12f777a64f59e88ec000ad4d48934972767950815fee330bc7bc244017165"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/candidate-v2/narrative/continuum-rad.tex",
+      "sha256": "f6e4a0e3278308b0e12c8d04f93bdf9cbfa8c1add4a8b5bed34a7657533cff45"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/verification/architecture-tests.log.gz",
+      "sha256": "459816f0ccd1dfe1735425890121e7e3114e07bd7dbc21f931f181c4f1e77ab7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/verification/browser-v2.json",
+      "sha256": "1618418717fa56035a1ca7b5fd6f510f9893482328d23f49beb59dfcee8905a1"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/verification/manifest-check-v2.json",
+      "sha256": "0da7b593701047e7a285ea81424cf48144ca9be03fa8613777d140e732d182a0"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/verification/narrative-check-v2.json",
+      "sha256": "7655e01069d33f1d03972882ab38b17a4a257ae401edfd0d6383e31019c81d60"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/verification/reader-check-v2.json",
+      "sha256": "237819d9e4e4c97bb7ef9938202536d01b5ced667f54bb6a4b1e55d6cae53270"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/verification/tooling-final.log.gz",
+      "sha256": "d568610e07628d1f53d5409702446a77f97b8134cb92cc37f0146bd9deb53038"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/verification/tooling-initial-timeout.log.gz",
+      "sha256": "a1403403805c7fbda6dcf70df6e8554f4ffdd4482f743f009570a84138f59fba"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261110T062320Z-capability-model-replacement.md",
+      "sha256": "8f13347fed7206acf3474a7751aa299e27e1046df9b09cdf7ef51be70df4afd5"
+    },
+    {
+      "path": "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md",
+      "sha256": "820d11dcb2aae9c36d042a88e05c8f7413e12d8966901c65fd83b12be39b9d84"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "sha256": "41c45528494ed60e701fc82579d2ef7e02dec76110aa6484322cd95f8d7110d8"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-capability-model-replacement.md",
+      "sha256": "4db34c1549070f27d9d291bc3e6f551b9f68267f84a8d70f74797ecc44600201"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/before/capability-model-replacement/input-manifest.json",
+      "sha256": "d3df5bf483a7db57cb16a8da7f147dc5c1958fbb847956f4793c5ecfd271e837"
+    },
+    {
+      "path": "architecture-release.json",
+      "sha256": "19c24ea1f65acab2fcdeff0b621e4a7aa8c7bf02cd37c7f2ee59457ec9a96eb4"
+    }
+  ],
+  "gitState": {
+    "branch": "Capability-Map-Consolidation",
+    "head": "3bbdf01ad6d185a5f810842c255e5a8503d79dde",
+    "statusCounts": {
+      " M": 1126,
+      "AM": 1,
+      "??": 3852
+    },
+    "trackedNonCanonicalPaths": [
+      "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md",
+      "enterprise-architecture/tooling/tests/continuum-browser-smoke.js",
+      "enterprise-architecture/tooling/tests/test_continuum.py",
+      "enterprise-architecture/tooling/tests/test_continuum_navigation.py"
+    ],
+    "scopeQualification": "Status includes pre-existing user work and evidence; counts do not claim authorship of every path",
+    "originalTaskState": "AM \u2014 pre-existing staged addition and unstaged supplied content preserved",
+    "stagingCommitPush": "NOT_PERFORMED"
+  },
+  "historyPreservation": {
+    "allPreExistingHcrlNonTableLinesPreservedInOrder": true,
+    "openingTableDispositionCellsUnchanged": true,
+    "existingCommentTextRetainedBeforeAddedFacts": true
+  },
+  "noSelfHashing": true
+}

@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE",
+  "hcrl": "1.1.22/001",
+  "release": "1.1.22",
+  "predecessor": "1.1.21",
+  "acceptanceTask": "20261111T040029Z-solution-architect-acceptance-and-release-closure.md",
+  "taskIssuedAt": "2026-11-11T04:00:29.612Z",
+  "completedRegister": {
+    "path": "enterprise-architecture/design/register/1.1.22/hcrl-1.1.22-001.complete.md",
+    "sha256": "251df603fd63f74b46cdf3c7fafe1a64fe15afe6923932cf65aa3b74a7bde175"
+  },
+  "retainedReview": {
+    "path": "enterprise-architecture/design/review/1.1.22/hcrl-1.1.22-001.pending.md",
+    "sha256": "a83dc68fc6ab5ebf49d3c122f9be966601fd2bb1fc0138959b321c1ade7db1bc"
+  },
+  "strictTransport": "FAIL; bounded qualification explicitly accepted for this release",
+  "additionalReleaseIncrement": false,
+  "iterationAdvanced": false,
+  "commitOrPush": false
+}

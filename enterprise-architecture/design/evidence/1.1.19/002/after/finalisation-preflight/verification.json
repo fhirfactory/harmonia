@@ -1,0 +1,131 @@
+{
+  "outcome": "BLOCKED — DR-20 release identity/publication conflict",
+  "commands": [
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.19/001/after/iteration-processing/Harmonia-Architecture-candidate.xml",
+        "--check",
+        "--report",
+        "enterprise-architecture/design/evidence/1.1.19/002/after/finalisation-preflight/candidate-verification.json"
+      ],
+      "exitCode": 0,
+      "outcome": "PASS",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/harmonia-tooling-venv/bin/python",
+        "-B",
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--publish",
+        "--check"
+      ],
+      "exitCode": 1,
+      "outcome": "FAIL",
+      "stderr": "FAIL: Projection is missing or stale: /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/archimate/published/1.1.19/Harmonia-Architecture.xml"
+    }
+  ],
+  "existingAcceptedPublication": {
+    "path": "enterprise-architecture/design/archimate/published/1.1.19/Harmonia-Architecture.xml",
+    "sha256": "9d4b6e27d69bf8999144ca474acc0e6264f0a2de9d42a8ee41f042cdf6095d09",
+    "elements": 1994,
+    "relationships": 2235,
+    "views": 1285
+  },
+  "existingAcceptedPublicationRegister": "enterprise-architecture/design/register/1.1.19/hcrl-1.1.18-001.complete.md",
+  "existingPublicationAuthority": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T025100Z-release-1-1-19-revised-disposition.md",
+  "publishedXmlCopiesMatch": true,
+  "existingManifestHashEntriesVerified": [
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/continuum.html",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/README.md",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/continuum-catalogue.tex",
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.19/navigation.json",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/README.md",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/continuum-rad.tex",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/application.tex",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/architecture-governance.tex",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/business.tex",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/cross-cutting-references.tex",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/implementation-and-migration.tex",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/motivation.tex",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/strategy.tex",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/parts/technology.tex",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.19/structure.json"
+  ],
+  "currentCandidate": {
+    "path": "enterprise-architecture/design/evidence/1.1.19/001/after/iteration-processing/Harmonia-Architecture-candidate.xml",
+    "sha256": "ca70443bf8bec1e4546b45c9fb454c9925b87325a79532b2145e14256d79bb7b",
+    "elements": 1996,
+    "relationships": 2246,
+    "views": 1288
+  },
+  "candidateMatchesGovernedSource": "PASS",
+  "canonicalValidation": "PASS",
+  "offlineXsd": "PASS",
+  "exchangeReferences": "PASS",
+  "propertyQualifications": 687,
+  "publicationCheck": "FAIL — preserved as FAIL; no replacement attempted",
+  "release": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "successorCondition": "1.1.20 may be initiated only after lawful finalisation; condition unmet",
+  "hcrlFinalised": false,
+  "release120Initiated": false,
+  "publicationGuardChanged": false,
+  "publicationWriteAttempted": false,
+  "preservation": {
+    "existingProtectedFilesUnchanged": 2690,
+    "currentHcrlChange": "Six supplied dispositions, conditional carry-forward programme and DR-20 actual preflight; original section narratives retained verbatim before additions",
+    "otherDr7Through19NarrativesAndDr7Through20TableDispositions": "Unchanged",
+    "candidateAssessmentRows": 784,
+    "candidateAssessmentHashUnchanged": true,
+    "canonicalMetamodelToolingPublicationsAndUnrelatedWork": "Unchanged",
+    "releaseAndHead": "Unchanged",
+    "successorHcrlAndEvidence": "NOT_CREATED"
+  },
+  "acceptedDecisionRealisation": {
+    "candidateUseCaseUserStoryElements": {
+      "UseCase": 0,
+      "UserStory": 0
+    },
+    "currentMetamodelSpecializationsRegistered": {
+      "UseCase": false,
+      "UserStory": false
+    },
+    "treatment": "Accepted decisions will be recorded in HCRL; no creation, per-candidate equivalence, naming-rule implementation or coverage reconciliation performed during blocked preflight",
+    "assessment": {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidates.json",
+      "sha256": "c86aafb033fd1604cedca564f9ac74446377ccd8fe64c075d531bf295174dbe7",
+      "shape": {
+        "representation": "list",
+        "rows": 784
+      },
+      "standing": "Preserved unincorporated candidate assessment; no acceptance or complete coverage inferred"
+    }
+  },
+  "remainingClosureConditions": [
+    "Explicit lawful release/state scope disposition for DR-20; no immutable 1.1.19 replacement authorised",
+    "Preserve accepted decisions versus unexecuted realisation and obtain applicable exact-HCRL/result confirmation under Review Praxis",
+    "Only after release-path authorisation and successful mandatory gates: terminal publication/registration/repository transition",
+    "Only after lawful 1.1.19 finalisation: conditional 1.1.20 initial HCRL and traceable carry-forward"
+  ],
+  "finalChecks": {
+    "new002TaskReportLayoutAndEventPrefixes": "PASS",
+    "issuedTaskVerbatim": "PASS",
+    "localHcrlTaskReportLinks": "PASS",
+    "fileScope": "PASS — only HCRL 002 and its before/after evidence",
+    "priorProtectedFilesUnchanged": 2690,
+    "releaseBranchHeadUnchanged": true,
+    "successor120Created": false,
+    "completedHcrlCreated": false,
+    "publicationModified": false,
+    "outcome": "BLOCKED at DR-20; no success inferred from record checks"
+  }
+}

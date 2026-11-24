@@ -1,0 +1,166 @@
+> **RAD-1.1.5 succession:** Current architecture is authored in the [element continuum](../../../../enterprise-architecture/README.md). This directory retains frozen captures, identity correspondence and historical generation evidence. The descriptive baseline account below records its original role; generated carriers are explicitly retired in place. Current publication does not read this directory.
+
+<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
+
+# Harmonia governed architecture — synchronised baseline
+
+This is the working baseline established by the explicitly authorised
+2026-10-17 Markdown / ArchiMate synchronisation. It incorporates the reconciled
+1.0.5A recovery alongside the current RADS architecture. Inclusion preserves
+each assertion's standing; it does not approve a proposal, resolve a conflict,
+declare a domain complete. Release 1.0.7 establishes resource-owned Canonical IDs
+and governed names under the [identity and naming contract](../canonical-identity-and-naming.md).
+
+The canonical Markdown RAD is the governed Harmonia source repository. ArchiMate
+is its governed architectural projection and human architecture workbench;
+Open Exchange XML is an interchange representation. Neither a generated diagram nor its folders
+can establish missing semantics. [AX-04, AX-14 and AX-17](../architectural-axioms.md)
+and the [metamodel](../../03-business-architecture/metamodel/business-architecture-metamodel.md)
+continue to govern. The [navigation convention](../archi-navigation-and-view-convention.md)
+defines presentation. The root [release register](../../../../architecture-release.json)
+remains the only current-release authority.
+
+## Read the architecture
+
+- [Business Capabilities](business-capabilities.md)
+- [Business Enabling Capabilities](business-enabling-capabilities.md)
+- [Enterprise Capabilities](enterprise-capabilities.md)
+- [Features](features.md)
+- [Functions](functions.md), [Services](services.md), [Processes](processes.md)
+- [Relationship assertions](relationships.md)
+- [Explicit Home strategy](../architecture-modelling-strategy.md) and fixed [Business Home migration register](business-homes.json)
+- [Motivation correspondence](motivation.md), with definitions linked to their maintained sources
+- [Coverage and representation boundaries](coverage.md)
+- [Discrepancies and human review](discrepancies.json)
+- [Current publication inspection guide](../../../archimate/processing/publishing/1.0.8/archi-inspection-1.0.8.md)
+- [Historical 1.0.6 inspection guide](../../../archimate/processing/publishing/1.0.6/archi-inspection-guide.md)
+
+Each record's concise governed definition appears first, followed by verbatim
+explanation whose continued applicability is established by reconciled source
+evidence. Historical provenance alone does not make architectural meaning historical.
+Genuinely historical or unresolved reconciliation material follows a Markdown rule
+and `## History`. A record table carries standing, currentness, placement, identity roles,
+aliases and unresolved dimensions. A Canonical responsibility can have Proposed
+placement. A Current record can be Proposed or Candidate. Historical assertions
+and Pending Adjudication records remain available without becoming current facts.
+
+The recovered catalogue supplies 946 source records: 845 current, 69 pending
+adjudication and 32 superseded. Semantic standing is independently 716 Canonical,
+227 Proposed and three Candidate. All 1,096 relationship assertions survive:
+634 native source edges and 462 metadata/findings. Release 1.0.14 adds 208
+explicit directed Association «Home» assertions from the separate fixed migration
+register; it leaves all 1,096 original assertions unchanged. Of 319 existing
+Business behaviours, 93 lack deterministic Home evidence and 18 have competing
+plausible Feature contexts; none receives a guessed Home. Framing, responsibility and enablement
+must not silently become Composition. The 214 unbound 1.0.4 objects remain a
+separate historical reference population, not a competing current catalogue.
+
+## Source correspondence and maintenance
+
+### Authorised 1.0.8 ingestion — RAD-1.0.9
+
+The [accepted ingestion capture](accepted-ingestion-1.0.8.json) extends the existing
+resource captures with the nine accepted elements, 17 explicit relationships and
+four authorised View presentations from run-001/run-002. It owns the new persisted
+Canonical IDs and derived names. [Products](products.md) retains the four native
+Products without inferring additional responsibility or hierarchy. Existing
+captures, identities and unrelated Views remain preserved. Source history and
+the [execution audit](../../../archimate/processing/ingestion/1.0.8/run-001/reconciliation/execution-001/)
+retain the original adjudicated reviews, Product naming stop and resolving decision.
+The 93 unestablished and 18 ambiguous baseline Home cases remain unresolved and
+non-blocking; Home has no inferred naming or navigation consequences.
+
+[architecture.json](architecture.json) preserves the reconciled structured
+records, definitions, assertions, status, aliases and provenance exactly. It is
+a governed capture shared by both projections, not a new metamodel or an identity
+register. [correspondence.json](correspondence.json) pins the immutable recovery
+and source boundary. [motivation.json](motivation.json) records explicit typed
+current and historical Motivation selections and exact source assertions. The
+current Motivation definitions are checked against their complete live RADS
+sections. Historical source fingerprints are checked separately.
+
+The earlier 705-record candidate capture is retained as a source-era validation
+and navigation aid. Exact capture keys establish continuity for all 705 records;
+names alone establish none. Its original unresolved assertions describe that
+earlier capture, and do not override the later reconciled record states here.
+Earlier catalogue prose and contextual views remain useful source explanations;
+where an exact record now has a changed name, tier, placement or lifecycle state,
+this baseline's explicitly qualified assertions govern its synchronised display.
+Definitions and boundaries not changed by that reconciliation continue to apply.
+The field-level [Documentation classification](documentation-classification.json)
+records exact capture keys, text hashes, disposition and applicability evidence.
+Unreplaced current explanation, exact text reused as a reviewed current definition
+or overview, and explicitly responsibility-preserving Feature relocation are
+current without changing their standing. Changed or uncertain semantic material,
+definition gaps and non-current records retain historical explanation pending
+review. These are presentation classifications, not new architectural decisions.
+The semantic capture, excluding the explicitly established resource metadata and
+historical-reference resource extension, remains identical to the adopted evidence. Its
+original source fingerprints and line locators are validated through the exact,
+hash-proved presentation notices in
+[source-presentation-overlays.json](source-presentation-overlays.json). Only those
+insertions are removed in memory for that historical check; a changed definition
+or unrecorded notice still fails. After the accepted 2026-10-19
+[CT3/Feature Composition decision](../../03-business-architecture/metamodel/business-architecture-metamodel.md#bec-composition-hierarchy),
+the frozen candidate capture's original metamodel is retained as compressed,
+hash-pinned historical evidence under `source-history/`. The
+`historical_authority_sources` entry in [correspondence.json](correspondence.json)
+selects it only when the live source matches its separate current-authority pin
+and both the archive and decompressed original hashes match. This preserves the
+original locators without removing a semantic amendment as a presentation notice,
+refreshing the capture or treating old metamodel text as current authority.
+Unrecorded live-source or archive drift still fails. Current baseline generation
+does not use either source-era validation path.
+
+Future accepted architecture changes must deliberately update the relevant
+canonical assertions, reviewed correspondence and both projections. Do not refresh
+the frozen LaTeX snapshot or its transcriber from current sources. Do not use
+heading nesting, names or folders to fill missing relationships. A discrepancy
+without deterministic source authority requires human adjudication.
+
+An Archi export supplies change input for reconciliation into Markdown RAD and
+subordinate governed projection metadata; it does not replace this repository.
+Accepted layouts, coordinates, bendpoints and navigation may remain projection
+metadata where Markdown has no appropriate representation. LaTeX publication is
+strictly `Markdown RAD -> LaTeX RAD -> publication output`, with no normal
+reverse-authoring path from LaTeX/PDF. Historical LaTeX recovery is bounded
+migration work. The [collaboration lifecycle](../../../archimate/README.md)
+documents the full review, reconciliation, validation and next-release sequence.
+
+From the repository root:
+
+```bash
+python3 docs/archimate/framework/tools/synchronise_baseline.py
+python3 docs/archimate/framework/tools/synchronise_baseline.py --check
+make -C docs/archimate/framework all
+```
+
+Generation reads the current release and never increments it. The separate
+historical recovery generator reads its explicit 1.0.5 release fixture. Its
+historical report retains the verification of the earlier repository state;
+that report is not a claim about current-source fingerprint equality.
+
+Canonical identity and the three governed names are literal fields of each resource
+in the existing JSON captures, including 214 explicitly historical-reference
+resources. Complete source snapshots preserve establishment and prior-release
+evidence. Ordinary generation validates these fields and never allocates IDs.
+The separate one-time `tools/governed_metadata.py bootstrap --establish-for 1.0.7`
+operation has already executed; reruns refuse reallocation. The accepted 1.0.6 XML
+and reports remain historical artefacts. The current publication is
+`docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml`.
+The immutable 1.0.7 publication remains alongside it, with empirically accepted
+Canonical Identity/Governed Naming transport through Archi 5.10. See the
+[acceptance evidence](../../../../.junie/reports/2026-10-18-archimate-canonical-identity-establishment.md).
+Release 1.0.8 changes workspace structure, tooling paths and release metadata only;
+its semantic and presentation architecture must remain identical to 1.0.7.
+The [workspace boundaries](../../../archimate/README.md) separate reusable framework, publishing/ingestion processing,
+published representations and incoming change inputs. Frozen locators remain
+verbatim and are resolved by an explicit historical-location map. Increment 2
+comparison/reconciliation is future work and is not implemented by this migration.
+
+The accepted [explicit Home decision](../architecture-modelling-strategy.md) is
+maintained separately from the frozen source-era capture. `business-homes.json`
+is the reviewed one-time migration result and its exact evidence, not an
+inference engine or a new naming/navigation rule. Source-era unresolved Feature
+association fields remain historical capture evidence; Home does not assert
+Realization, ownership or containment.

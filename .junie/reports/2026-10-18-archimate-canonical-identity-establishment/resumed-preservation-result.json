@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "unchanged_pinned_inputs": 217,
+  "expected_implementation_changes": [
+    "docs/archimate/capability-architecture/tests/test_baseline.py",
+    "docs/archimate/capability-architecture/tools/synchronise_baseline.py"
+  ],
+  "source_captures_changed": false,
+  "accepted_publication_changed": false,
+  "release_changed": false,
+  "canonical_ids_allocated": 0,
+  "accepted_publication_sha256": "d57a5adeeef6b0906b30a02c3ea80cc6ff6308988775e7e3a619db01564ca52a"
+}

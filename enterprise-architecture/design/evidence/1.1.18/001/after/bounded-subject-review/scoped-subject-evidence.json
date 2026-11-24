@@ -1,0 +1,2001 @@
+{
+  "schemaVersion": 1,
+  "scope": "G14-G18 folders and proposed Subjects, their necessary identity/typing/naming context and direct incident relationships only",
+  "authority": {
+    "path": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md",
+    "sha256": "8b68c5549974d99cfcf3a7048106c355b174453e9ee01030b888c77a482260bc",
+    "bytes": 2090
+  },
+  "inputs": {
+    "baseline": {
+      "path": "enterprise-architecture/design/archimate/published/1.1.18/Harmonia-Architecture.xml",
+      "sha256": "7df92528a09f9a765ddebec105643bae08ac92583cad4e8901b3135d49db2c2e",
+      "bytes": 27091699
+    },
+    "submission": {
+      "path": "enterprise-architecture/design/evidence/1.1.18/001/before/Harmonia-Continuum-1.1.18-001-004.xml",
+      "sha256": "4ddfaa9045d8d0196f1003c9344d85eb2f121398a79a579fbb6c18545470c0de",
+      "bytes": 29121058
+    },
+    "mapping": {
+      "path": "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-OpenSpec-Expanded-Subject-Capability-Mapping.md",
+      "sha256": "b6f59ce36ad4b7719fd0e954e4c4b0e86a874fe5cab2459c1804019e43944094",
+      "bytes": 414779
+    }
+  },
+  "limitBytes": 128000,
+  "fullDelta": "Retained unchanged and excluded from interpretation; remains above limit",
+  "folders": [
+    {
+      "code": "G14",
+      "role": "group",
+      "mappingName": "Patient Identity and Demographics",
+      "mappingConcern": "Business-functional motivation grouping for patient identity and demographics.",
+      "mappingSelector": "Proposed Subject extensions / G14",
+      "folderLabel": "14. Patient-Identity-and-Demographics",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "14. Patient-Identity-and-Demographics"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[15]",
+      "sourceLine": 215396,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Patient Identity and Demographics",
+      "proposedFriendlyName": "PatientIdentityAndDemographics",
+      "proposedParentCode": null,
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Patient Identity and Demographics"
+      ]
+    },
+    {
+      "code": "G14.01",
+      "role": "subgroup",
+      "mappingName": "Identity Registration and Verification",
+      "mappingConcern": "Establishing and validating patient identity and supporting evidence.",
+      "mappingSelector": "Proposed Subject extensions / G14.01",
+      "folderLabel": "01. Identity-Registration-and-Verification",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "14. Patient-Identity-and-Demographics",
+        "01. Identity-Registration-and-Verification"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[15]/*[2]",
+      "sourceLine": 215398,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Identity Registration and Verification",
+      "proposedFriendlyName": "IdentityRegistrationAndVerification",
+      "proposedParentCode": "G14",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Patient Identity and Demographics",
+        "Identity Registration and Verification"
+      ]
+    },
+    {
+      "code": "G14.02",
+      "role": "subgroup",
+      "mappingName": "Identity Matching and Reconciliation",
+      "mappingConcern": "Matching, linking, separating, merging and resolving patient identities.",
+      "mappingSelector": "Proposed Subject extensions / G14.02",
+      "folderLabel": "02. Identity-Matching-and-Reconciliation",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "14. Patient-Identity-and-Demographics",
+        "02. Identity-Matching-and-Reconciliation"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[15]/*[3]",
+      "sourceLine": 215401,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Identity Matching and Reconciliation",
+      "proposedFriendlyName": "IdentityMatchingAndReconciliation",
+      "proposedParentCode": "G14",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Patient Identity and Demographics",
+        "Identity Matching and Reconciliation"
+      ]
+    },
+    {
+      "code": "G14.03",
+      "role": "subgroup",
+      "mappingName": "Identity Maintenance and Status",
+      "mappingConcern": "Updating identity records, statuses and lifecycle.",
+      "mappingSelector": "Proposed Subject extensions / G14.03",
+      "folderLabel": "03. Identity-Maintenance-and-Status",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "14. Patient-Identity-and-Demographics",
+        "03. Identity-Maintenance-and-Status"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[15]/*[4]",
+      "sourceLine": 215404,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Identity Maintenance and Status",
+      "proposedFriendlyName": "IdentityMaintenanceAndStatus",
+      "proposedParentCode": "G14",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Patient Identity and Demographics",
+        "Identity Maintenance and Status"
+      ]
+    },
+    {
+      "code": "G14.04",
+      "role": "subgroup",
+      "mappingName": "Demographic and Contact Management",
+      "mappingConcern": "Maintaining patient demographic, contact and communication information.",
+      "mappingSelector": "Proposed Subject extensions / G14.04",
+      "folderLabel": "04. Demographic-and-Contact-Management",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "14. Patient-Identity-and-Demographics",
+        "04. Demographic-and-Contact-Management"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[15]/*[5]",
+      "sourceLine": 215407,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Demographic and Contact Management",
+      "proposedFriendlyName": "DemographicAndContactManagement",
+      "proposedParentCode": "G14",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Patient Identity and Demographics",
+        "Demographic and Contact Management"
+      ]
+    },
+    {
+      "code": "G14.05",
+      "role": "subgroup",
+      "mappingName": "Identity Access and Disclosure",
+      "mappingConcern": "Patient identity lookup, controlled disclosure and external identity enquiries.",
+      "mappingSelector": "Proposed Subject extensions / G14.05",
+      "folderLabel": "05. Identity-Access-and-Disclosure",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "14. Patient-Identity-and-Demographics",
+        "05. Identity-Access-and-Disclosure"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[15]/*[6]",
+      "sourceLine": 215410,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Identity Access and Disclosure",
+      "proposedFriendlyName": "IdentityAccessAndDisclosure",
+      "proposedParentCode": "G14",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Patient Identity and Demographics",
+        "Identity Access and Disclosure"
+      ]
+    },
+    {
+      "code": "G14.06",
+      "role": "subgroup",
+      "mappingName": "Identity Quality and Oversight",
+      "mappingConcern": "Identity exceptions, risk, quality review and oversight.",
+      "mappingSelector": "Proposed Subject extensions / G14.06",
+      "folderLabel": "06. Identity-Quality-and-Oversight",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "14. Patient-Identity-and-Demographics",
+        "06. Identity-Quality-and-Oversight"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[15]/*[7]",
+      "sourceLine": 215413,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Identity Quality and Oversight",
+      "proposedFriendlyName": "IdentityQualityAndOversight",
+      "proposedParentCode": "G14",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Patient Identity and Demographics",
+        "Identity Quality and Oversight"
+      ]
+    },
+    {
+      "code": "G15",
+      "role": "group",
+      "mappingName": "Provider and Workforce Management",
+      "mappingConcern": "Business-functional motivation grouping for provider and workforce management.",
+      "mappingSelector": "Proposed Subject extensions / G15",
+      "folderLabel": "15. Provider-and-Workforce-Management",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "15. Provider-and-Workforce-Management"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[16]",
+      "sourceLine": 215417,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Provider and Workforce Management",
+      "proposedFriendlyName": "ProviderAndWorkforceManagement",
+      "proposedParentCode": null,
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Provider and Workforce Management"
+      ]
+    },
+    {
+      "code": "G15.01",
+      "role": "subgroup",
+      "mappingName": "Provider Identity and Registration",
+      "mappingConcern": "Registering and maintaining provider and practitioner identity.",
+      "mappingSelector": "Proposed Subject extensions / G15.01",
+      "folderLabel": "01. Provider-Identity-and-Registration",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "15. Provider-and-Workforce-Management",
+        "01. Provider-Identity-and-Registration"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[16]/*[2]",
+      "sourceLine": 215419,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Provider Identity and Registration",
+      "proposedFriendlyName": "ProviderIdentityAndRegistration",
+      "proposedParentCode": "G15",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Provider and Workforce Management",
+        "Provider Identity and Registration"
+      ]
+    },
+    {
+      "code": "G15.02",
+      "role": "subgroup",
+      "mappingName": "Credentials and Professional Standing",
+      "mappingConcern": "Qualifications, registration, credential verification and professional standing.",
+      "mappingSelector": "Proposed Subject extensions / G15.02",
+      "folderLabel": "02. Credentials-and-Professional-Standing",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "15. Provider-and-Workforce-Management",
+        "02. Credentials-and-Professional-Standing"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[16]/*[3]",
+      "sourceLine": 215422,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Credentials and Professional Standing",
+      "proposedFriendlyName": "CredentialsAndProfessionalStanding",
+      "proposedParentCode": "G15",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Provider and Workforce Management",
+        "Credentials and Professional Standing"
+      ]
+    },
+    {
+      "code": "G15.03",
+      "role": "subgroup",
+      "mappingName": "Affiliations, Roles and Practice Locations",
+      "mappingConcern": "Provider organisational relationships, roles, locations and service affiliations.",
+      "mappingSelector": "Proposed Subject extensions / G15.03",
+      "folderLabel": "03. Affiliations-Roles-and-Practice-Locations",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "15. Provider-and-Workforce-Management",
+        "03. Affiliations-Roles-and-Practice-Locations"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[16]/*[4]",
+      "sourceLine": 215425,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Affiliations, Roles and Practice Locations",
+      "proposedFriendlyName": "AffiliationsRolesAndPracticeLocations",
+      "proposedParentCode": "G15",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Provider and Workforce Management",
+        "Affiliations, Roles and Practice Locations"
+      ]
+    },
+    {
+      "code": "G15.04",
+      "role": "subgroup",
+      "mappingName": "Provider Profile Maintenance",
+      "mappingConcern": "Maintaining professional profiles and provider contact details.",
+      "mappingSelector": "Proposed Subject extensions / G15.04",
+      "folderLabel": "04. Provider-Profile-Maintenance",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "15. Provider-and-Workforce-Management",
+        "04. Provider-Profile-Maintenance"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[16]/*[5]",
+      "sourceLine": 215428,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Provider Profile Maintenance",
+      "proposedFriendlyName": "ProviderProfileMaintenance",
+      "proposedParentCode": "G15",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Provider and Workforce Management",
+        "Provider Profile Maintenance"
+      ]
+    },
+    {
+      "code": "G15.05",
+      "role": "subgroup",
+      "mappingName": "Provider Lifecycle and Administration",
+      "mappingConcern": "Provider onboarding, change, suspension and lifecycle administration.",
+      "mappingSelector": "Proposed Subject extensions / G15.05",
+      "folderLabel": "05. Provider-Lifecycle-and-Administration",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "15. Provider-and-Workforce-Management",
+        "05. Provider-Lifecycle-and-Administration"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[16]/*[6]",
+      "sourceLine": 215431,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Provider Lifecycle and Administration",
+      "proposedFriendlyName": "ProviderLifecycleAndAdministration",
+      "proposedParentCode": "G15",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Provider and Workforce Management",
+        "Provider Lifecycle and Administration"
+      ]
+    },
+    {
+      "code": "G16",
+      "role": "group",
+      "mappingName": "Consent and Information Sharing",
+      "mappingConcern": "Business-functional motivation grouping for consent and information sharing.",
+      "mappingSelector": "Proposed Subject extensions / G16",
+      "folderLabel": "16. Consent-and-Information-Sharing",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "16. Consent-and-Information-Sharing"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[17]",
+      "sourceLine": 215435,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Consent and Information Sharing",
+      "proposedFriendlyName": "ConsentAndInformationSharing",
+      "proposedParentCode": null,
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Consent and Information Sharing"
+      ]
+    },
+    {
+      "code": "G16.01",
+      "role": "subgroup",
+      "mappingName": "Consent Capture and Maintenance",
+      "mappingConcern": "Obtaining, recording, changing, renewing and withdrawing consent.",
+      "mappingSelector": "Proposed Subject extensions / G16.01",
+      "folderLabel": "01. Consent-Capture-and-Maintenance",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "16. Consent-and-Information-Sharing",
+        "01. Consent-Capture-and-Maintenance"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[17]/*[2]",
+      "sourceLine": 215437,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Consent Capture and Maintenance",
+      "proposedFriendlyName": "ConsentCaptureAndMaintenance",
+      "proposedParentCode": "G16",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Consent and Information Sharing",
+        "Consent Capture and Maintenance"
+      ]
+    },
+    {
+      "code": "G16.02",
+      "role": "subgroup",
+      "mappingName": "Consent Scope and Preferences",
+      "mappingConcern": "Managing consent purpose, duration, restrictions and sharing preferences.",
+      "mappingSelector": "Proposed Subject extensions / G16.02",
+      "folderLabel": "02. Consent-Scope-and-Preferences",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "16. Consent-and-Information-Sharing",
+        "02. Consent-Scope-and-Preferences"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[17]/*[3]",
+      "sourceLine": 215440,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Consent Scope and Preferences",
+      "proposedFriendlyName": "ConsentScopeAndPreferences",
+      "proposedParentCode": "G16",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Consent and Information Sharing",
+        "Consent Scope and Preferences"
+      ]
+    },
+    {
+      "code": "G16.03",
+      "role": "subgroup",
+      "mappingName": "Consent Verification and Decisions",
+      "mappingConcern": "Determining whether consent and relevant authority apply to an activity.",
+      "mappingSelector": "Proposed Subject extensions / G16.03",
+      "folderLabel": "03. Consent-Verification-and-Decisions",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "16. Consent-and-Information-Sharing",
+        "03. Consent-Verification-and-Decisions"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[17]/*[4]",
+      "sourceLine": 215443,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Consent Verification and Decisions",
+      "proposedFriendlyName": "ConsentVerificationAndDecisions",
+      "proposedParentCode": "G16",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Consent and Information Sharing",
+        "Consent Verification and Decisions"
+      ]
+    },
+    {
+      "code": "G16.04",
+      "role": "subgroup",
+      "mappingName": "Representatives and Delegated Consent",
+      "mappingConcern": "Consent by representatives and verification of delegated authority.",
+      "mappingSelector": "Proposed Subject extensions / G16.04",
+      "folderLabel": "04. Representatives-and-Delegated-Consent",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "16. Consent-and-Information-Sharing",
+        "04. Representatives-and-Delegated-Consent"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[17]/*[5]",
+      "sourceLine": 215446,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Representatives and Delegated Consent",
+      "proposedFriendlyName": "RepresentativesAndDelegatedConsent",
+      "proposedParentCode": "G16",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Consent and Information Sharing",
+        "Representatives and Delegated Consent"
+      ]
+    },
+    {
+      "code": "G16.05",
+      "role": "subgroup",
+      "mappingName": "Consent Communication and History",
+      "mappingConcern": "Presenting consent history, notices, discussions and change notifications.",
+      "mappingSelector": "Proposed Subject extensions / G16.05",
+      "folderLabel": "05. Consent-Communication-and-History",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "16. Consent-and-Information-Sharing",
+        "05. Consent-Communication-and-History"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[17]/*[6]",
+      "sourceLine": 215449,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Consent Communication and History",
+      "proposedFriendlyName": "ConsentCommunicationAndHistory",
+      "proposedParentCode": "G16",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Consent and Information Sharing",
+        "Consent Communication and History"
+      ]
+    },
+    {
+      "code": "G16.06",
+      "role": "subgroup",
+      "mappingName": "Exceptional and Emergency Consent",
+      "mappingConcern": "Consent handling for emergency access and exceptional situations.",
+      "mappingSelector": "Proposed Subject extensions / G16.06",
+      "folderLabel": "06. Exceptional-and-Emergency-Consent",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "16. Consent-and-Information-Sharing",
+        "06. Exceptional-and-Emergency-Consent"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[17]/*[7]",
+      "sourceLine": 215452,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Exceptional and Emergency Consent",
+      "proposedFriendlyName": "ExceptionalAndEmergencyConsent",
+      "proposedParentCode": "G16",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Consent and Information Sharing",
+        "Exceptional and Emergency Consent"
+      ]
+    },
+    {
+      "code": "G17",
+      "role": "group",
+      "mappingName": "Terminology and Reference Data",
+      "mappingConcern": "Business-functional motivation grouping for terminology and reference data.",
+      "mappingSelector": "Proposed Subject extensions / G17",
+      "folderLabel": "17. Terminology-and-Reference-Data",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "17. Terminology-and-Reference-Data"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[18]",
+      "sourceLine": 215456,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Terminology and Reference Data",
+      "proposedFriendlyName": "TerminologyAndReferenceData",
+      "proposedParentCode": null,
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Terminology and Reference Data"
+      ]
+    },
+    {
+      "code": "G17.01",
+      "role": "subgroup",
+      "mappingName": "Terminology Definition and Maintenance",
+      "mappingConcern": "Maintaining code systems, concepts, ValueSets and terminology definitions.",
+      "mappingSelector": "Proposed Subject extensions / G17.01",
+      "folderLabel": "01. Terminology-Definition-and-Maintenance",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "17. Terminology-and-Reference-Data",
+        "01. Terminology-Definition-and-Maintenance"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[18]/*[2]",
+      "sourceLine": 215458,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Terminology Definition and Maintenance",
+      "proposedFriendlyName": "TerminologyDefinitionAndMaintenance",
+      "proposedParentCode": "G17",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Terminology and Reference Data",
+        "Terminology Definition and Maintenance"
+      ]
+    },
+    {
+      "code": "G17.02",
+      "role": "subgroup",
+      "mappingName": "Terminology Mapping and Validation",
+      "mappingConcern": "Validating, comparing and mapping terminology and concepts.",
+      "mappingSelector": "Proposed Subject extensions / G17.02",
+      "folderLabel": "02. Terminology-Mapping-and-Validation",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "17. Terminology-and-Reference-Data",
+        "02. Terminology-Mapping-and-Validation"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[18]/*[3]",
+      "sourceLine": 215461,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Terminology Mapping and Validation",
+      "proposedFriendlyName": "TerminologyMappingAndValidation",
+      "proposedParentCode": "G17",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Terminology and Reference Data",
+        "Terminology Mapping and Validation"
+      ]
+    },
+    {
+      "code": "G17.03",
+      "role": "subgroup",
+      "mappingName": "Terminology Release and Versioning",
+      "mappingConcern": "Governed terminology publication, versioning and release lifecycle.",
+      "mappingSelector": "Proposed Subject extensions / G17.03",
+      "folderLabel": "03. Terminology-Release-and-Versioning",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "17. Terminology-and-Reference-Data",
+        "03. Terminology-Release-and-Versioning"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[18]/*[4]",
+      "sourceLine": 215464,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Terminology Release and Versioning",
+      "proposedFriendlyName": "TerminologyReleaseAndVersioning",
+      "proposedParentCode": "G17",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Terminology and Reference Data",
+        "Terminology Release and Versioning"
+      ]
+    },
+    {
+      "code": "G17.04",
+      "role": "subgroup",
+      "mappingName": "Reference Data Management",
+      "mappingConcern": "Maintaining governed reference values and reference datasets.",
+      "mappingSelector": "Proposed Subject extensions / G17.04",
+      "folderLabel": "04. Reference-Data-Management",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "17. Terminology-and-Reference-Data",
+        "04. Reference-Data-Management"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[18]/*[5]",
+      "sourceLine": 215467,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Reference Data Management",
+      "proposedFriendlyName": "ReferenceDataManagement",
+      "proposedParentCode": "G17",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Terminology and Reference Data",
+        "Reference Data Management"
+      ]
+    },
+    {
+      "code": "G17.05",
+      "role": "subgroup",
+      "mappingName": "Reference Data Quality and Governance",
+      "mappingConcern": "Reference data ownership, verification, quality and stewardship.",
+      "mappingSelector": "Proposed Subject extensions / G17.05",
+      "folderLabel": "05. Reference-Data-Quality-and-Governance",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "17. Terminology-and-Reference-Data",
+        "05. Reference-Data-Quality-and-Governance"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[18]/*[6]",
+      "sourceLine": 215470,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Reference Data Quality and Governance",
+      "proposedFriendlyName": "ReferenceDataQualityAndGovernance",
+      "proposedParentCode": "G17",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Terminology and Reference Data",
+        "Reference Data Quality and Governance"
+      ]
+    },
+    {
+      "code": "G18",
+      "role": "group",
+      "mappingName": "Provider Directory",
+      "mappingConcern": "Business-functional motivation grouping for provider directory.",
+      "mappingSelector": "Proposed Subject extensions / G18",
+      "folderLabel": "18. Provider Directory",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "18. Provider Directory"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[19]",
+      "sourceLine": 215474,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "EXACT_LABEL_TEXT",
+      "proposedDisplayName": "Provider Directory",
+      "proposedFriendlyName": "ProviderDirectory",
+      "proposedParentCode": null,
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Provider Directory"
+      ]
+    },
+    {
+      "code": "G18.01",
+      "role": "subgroup",
+      "mappingName": "Provider Directory Discovery",
+      "mappingConcern": "Searching and discovering providers, services and locations.",
+      "mappingSelector": "Proposed Subject extensions / G18.01",
+      "folderLabel": "01. Provider-Directory-Discovery",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "18. Provider Directory",
+        "01. Provider-Directory-Discovery"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[19]/*[2]",
+      "sourceLine": 215476,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Provider Directory Discovery",
+      "proposedFriendlyName": "ProviderDirectoryDiscovery",
+      "proposedParentCode": "G18",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Provider Directory",
+        "Provider Directory Discovery"
+      ]
+    },
+    {
+      "code": "G18.02",
+      "role": "subgroup",
+      "mappingName": "Directory Publication and Visibility",
+      "mappingConcern": "Publishing and controlling provider directory visibility.",
+      "mappingSelector": "Proposed Subject extensions / G18.02",
+      "folderLabel": "02. Directory-Publication-and-Visibility",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "18. Provider Directory",
+        "02. Directory-Publication-and-Visibility"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[19]/*[3]",
+      "sourceLine": 215479,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Directory Publication and Visibility",
+      "proposedFriendlyName": "DirectoryPublicationAndVisibility",
+      "proposedParentCode": "G18",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Provider Directory",
+        "Directory Publication and Visibility"
+      ]
+    },
+    {
+      "code": "G18.03",
+      "role": "subgroup",
+      "mappingName": "Directory Information Maintenance",
+      "mappingConcern": "Updating and managing directory entries.",
+      "mappingSelector": "Proposed Subject extensions / G18.03",
+      "folderLabel": "03. Directory-Informaton-Maintenance",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "18. Provider Directory",
+        "03. Directory-Informaton-Maintenance"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[19]/*[4]",
+      "sourceLine": 215482,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "TYPO_INFORMATION_OMITS_I",
+      "proposedDisplayName": "Directory Information Maintenance",
+      "proposedFriendlyName": "DirectoryInformationMaintenance",
+      "proposedParentCode": "G18",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Provider Directory",
+        "Directory Information Maintenance"
+      ]
+    },
+    {
+      "code": "G18.04",
+      "role": "subgroup",
+      "mappingName": "Directory Verification and Quality",
+      "mappingConcern": "Verifying and assessing directory information and changes.",
+      "mappingSelector": "Proposed Subject extensions / G18.04",
+      "folderLabel": "04. Directory-Verification-and-Quality",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "18. Provider Directory",
+        "04. Directory-Verification-and-Quality"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[19]/*[5]",
+      "sourceLine": 215485,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Directory Verification and Quality",
+      "proposedFriendlyName": "DirectoryVerificationAndQuality",
+      "proposedParentCode": "G18",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Provider Directory",
+        "Directory Verification and Quality"
+      ]
+    },
+    {
+      "code": "G18.05",
+      "role": "subgroup",
+      "mappingName": "Directory Synchronisation",
+      "mappingConcern": "Synchronising provider directory information with participating systems.",
+      "mappingSelector": "Proposed Subject extensions / G18.05",
+      "folderLabel": "05. Directory-Synchronisation",
+      "folderPath": [
+        "Views",
+        "1. Subject-Based-Views",
+        "18. Provider Directory",
+        "05. Directory-Synchronisation"
+      ],
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[19]/*[6]",
+      "sourceLine": 215488,
+      "folderAttributes": {},
+      "nativeElementReviewLeads": [],
+      "existingGovernedCodeBinding": null,
+      "existingScopedSourceBindings": [],
+      "existingGroupingLexicalLeads": [],
+      "nameFinding": "LEXICALLY_EQUIVALENT_LABEL_FORMAT",
+      "proposedDisplayName": "Directory Synchronisation",
+      "proposedFriendlyName": "DirectorySynchronisation",
+      "proposedParentCode": "G18",
+      "prospectiveNavigation": [
+        "Cross-Cutting References",
+        "Architectural Subjects",
+        "Provider Directory",
+        "Directory Synchronisation"
+      ]
+    }
+  ],
+  "derivedSourceFragments": [
+    {
+      "group": "G14",
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[15]",
+      "sourceLine": 215396,
+      "serialization": "Derived secure-parser fragment; exact source remains pinned input, not byte-identical standalone XML",
+      "xml": "<item xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n          <label xml:lang=\"en\">14. Patient-Identity-and-Demographics</label>\n          <item>\n            <label xml:lang=\"en\">01. Identity-Registration-and-Verification</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">02. Identity-Matching-and-Reconciliation</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">03. Identity-Maintenance-and-Status</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">04. Demographic-and-Contact-Management</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">05. Identity-Access-and-Disclosure</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">06. Identity-Quality-and-Oversight</label>\n          </item>\n        </item>"
+    },
+    {
+      "group": "G15",
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[16]",
+      "sourceLine": 215417,
+      "serialization": "Derived secure-parser fragment; exact source remains pinned input, not byte-identical standalone XML",
+      "xml": "<item xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n          <label xml:lang=\"en\">15. Provider-and-Workforce-Management</label>\n          <item>\n            <label xml:lang=\"en\">01. Provider-Identity-and-Registration</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">02. Credentials-and-Professional-Standing</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">03. Affiliations-Roles-and-Practice-Locations</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">04. Provider-Profile-Maintenance</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">05. Provider-Lifecycle-and-Administration</label>\n          </item>\n        </item>"
+    },
+    {
+      "group": "G16",
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[17]",
+      "sourceLine": 215435,
+      "serialization": "Derived secure-parser fragment; exact source remains pinned input, not byte-identical standalone XML",
+      "xml": "<item xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n          <label xml:lang=\"en\">16. Consent-and-Information-Sharing</label>\n          <item>\n            <label xml:lang=\"en\">01. Consent-Capture-and-Maintenance</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">02. Consent-Scope-and-Preferences</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">03. Consent-Verification-and-Decisions</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">04. Representatives-and-Delegated-Consent</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">05. Consent-Communication-and-History</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">06. Exceptional-and-Emergency-Consent</label>\n          </item>\n        </item>"
+    },
+    {
+      "group": "G17",
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[18]",
+      "sourceLine": 215456,
+      "serialization": "Derived secure-parser fragment; exact source remains pinned input, not byte-identical standalone XML",
+      "xml": "<item xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n          <label xml:lang=\"en\">17. Terminology-and-Reference-Data</label>\n          <item>\n            <label xml:lang=\"en\">01. Terminology-Definition-and-Maintenance</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">02. Terminology-Mapping-and-Validation</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">03. Terminology-Release-and-Versioning</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">04. Reference-Data-Management</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">05. Reference-Data-Quality-and-Governance</label>\n          </item>\n        </item>"
+    },
+    {
+      "group": "G18",
+      "sourceXPath": "/*/*[6]/*[9]/*[2]/*[19]",
+      "sourceLine": 215474,
+      "serialization": "Derived secure-parser fragment; exact source remains pinned input, not byte-identical standalone XML",
+      "xml": "<item xmlns=\"http://www.opengroup.org/xsd/archimate/3.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n          <label xml:lang=\"en\">18. Provider Directory</label>\n          <item>\n            <label xml:lang=\"en\">01. Provider-Directory-Discovery</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">02. Directory-Publication-and-Visibility</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">03. Directory-Informaton-Maintenance</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">04. Directory-Verification-and-Quality</label>\n          </item>\n          <item>\n            <label xml:lang=\"en\">05. Directory-Synchronisation</label>\n          </item>\n        </item>"
+    }
+  ],
+  "governedSubjectContext": [
+    {
+      "code": "G01",
+      "canonicalId": "03cfbc2cac494fb9a15106c2c571d384",
+      "exchangeId": "id-c5f499e1694c552bae7311911aea1399",
+      "displayName": "Architectural Governance",
+      "source": "enterprise-architecture/continuum/grouping/03cfbc2cac494fb9a15106c2c571d384.md"
+    },
+    {
+      "code": "G01.01",
+      "canonicalId": "2ee0a6e46b47413d91cfb71ee3100e4b",
+      "exchangeId": "id-f126e3a6ab6950ca9e3e61b02e83ba21",
+      "displayName": "Architecture Process",
+      "source": "enterprise-architecture/continuum/grouping/2ee0a6e46b47413d91cfb71ee3100e4b.md"
+    },
+    {
+      "code": "G01.02",
+      "canonicalId": "6d6086134162468cac129040a139d8d9",
+      "exchangeId": "id-fe0074888e97530c825d400d27e90ad5",
+      "displayName": "Architecture Vision",
+      "source": "enterprise-architecture/continuum/grouping/6d6086134162468cac129040a139d8d9.md"
+    },
+    {
+      "code": "G01.03",
+      "canonicalId": "8bf2a60efafc4caf89ed9744adfb628d",
+      "exchangeId": "id-658cd4a224585dc5b4e55f85f43fb58e",
+      "displayName": "Implementation Strategy",
+      "source": "enterprise-architecture/continuum/grouping/8bf2a60efafc4caf89ed9744adfb628d.md"
+    },
+    {
+      "code": "G01.04",
+      "canonicalId": "5989495f1e224d5797054a8b6c0364a1",
+      "exchangeId": "id-6256b2f5dd035708ae1e55f0fbcc1276",
+      "displayName": "Architecture Conformance",
+      "source": "enterprise-architecture/continuum/grouping/5989495f1e224d5797054a8b6c0364a1.md"
+    },
+    {
+      "code": "G02",
+      "canonicalId": "ef296738e68e4206a507dc3c811b3fe1",
+      "exchangeId": "id-3ff156cfaab8575facfa6961f68119f5",
+      "displayName": "Information Management",
+      "source": "enterprise-architecture/continuum/grouping/ef296738e68e4206a507dc3c811b3fe1.md"
+    },
+    {
+      "code": "G02.01",
+      "canonicalId": "819aeed91d0544c3b7cc52e69aa46d72",
+      "exchangeId": "id-4009d96f39d456838b149621d4ed88a4",
+      "displayName": "Information Identity",
+      "source": "enterprise-architecture/continuum/grouping/819aeed91d0544c3b7cc52e69aa46d72.md"
+    },
+    {
+      "code": "G02.02",
+      "canonicalId": "eb1b0526b898448688a322cce7ea6e74",
+      "exchangeId": "id-f3a5bb10a924502881fe4e27cbcc799e",
+      "displayName": "Information Integrity",
+      "source": "enterprise-architecture/continuum/grouping/eb1b0526b898448688a322cce7ea6e74.md"
+    },
+    {
+      "code": "G02.03",
+      "canonicalId": "b23f7fa8cb1b46569f63bde1aa5fbf1f",
+      "exchangeId": "id-889cae531e4c51e0a50d441425553606",
+      "displayName": "Information Lifecycle",
+      "source": "enterprise-architecture/continuum/grouping/b23f7fa8cb1b46569f63bde1aa5fbf1f.md"
+    },
+    {
+      "code": "G02.04",
+      "canonicalId": "8b7fd22a55434e5ca3e7ba87afb020d6",
+      "exchangeId": "id-f2cab006808558c48632928a2ef00f86",
+      "displayName": "Information Persistence",
+      "source": "enterprise-architecture/continuum/grouping/8b7fd22a55434e5ca3e7ba87afb020d6.md"
+    },
+    {
+      "code": "G02.05",
+      "canonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+      "exchangeId": "id-d1e317a30a9d53359c25a86673df3e56",
+      "displayName": "Information Sovereignty and Residency",
+      "source": "enterprise-architecture/continuum/grouping/f4af2b5206264a6fa4c5040324ad272c.md"
+    },
+    {
+      "code": "G03",
+      "canonicalId": "a762424d13254eaa9467946d9d7355f8",
+      "exchangeId": "id-5f6b4e6f00e755788e198632589ce6ce",
+      "displayName": "Security and Authorisation",
+      "source": "enterprise-architecture/continuum/grouping/a762424d13254eaa9467946d9d7355f8.md"
+    },
+    {
+      "code": "G03.01",
+      "canonicalId": "f29ffa95c89d470b8a32e1369696327f",
+      "exchangeId": "id-96ed88d244ed57e98031966d70a03051",
+      "displayName": "Authentication",
+      "source": "enterprise-architecture/continuum/grouping/f29ffa95c89d470b8a32e1369696327f.md"
+    },
+    {
+      "code": "G03.02",
+      "canonicalId": "4648cf5a1f8e4333978c13efae10eaa5",
+      "exchangeId": "id-cbc07a038364504d90e78a5104ec9fd7",
+      "displayName": "Authorisation",
+      "source": "enterprise-architecture/continuum/grouping/4648cf5a1f8e4333978c13efae10eaa5.md"
+    },
+    {
+      "code": "G03.03",
+      "canonicalId": "fe8916b03b084e82af587ac5a900349b",
+      "exchangeId": "id-af15e7209c6e5720a7a0ff8767f968f1",
+      "displayName": "Authorisation Enforcement",
+      "source": "enterprise-architecture/continuum/grouping/fe8916b03b084e82af587ac5a900349b.md"
+    },
+    {
+      "code": "G03.04",
+      "canonicalId": "d2f8fcaac9984a12beab502d1944ea25",
+      "exchangeId": "id-ee17a4ffd28254539defe217e77f3b75",
+      "displayName": "Information Protection",
+      "source": "enterprise-architecture/continuum/grouping/d2f8fcaac9984a12beab502d1944ea25.md"
+    },
+    {
+      "code": "G03.05",
+      "canonicalId": "84693ef7bb4a4ced9634737c6bd5a36d",
+      "exchangeId": "id-0a13457eeb645fb784d0af3e36b38e43",
+      "displayName": "Security Administration",
+      "source": "enterprise-architecture/continuum/grouping/84693ef7bb4a4ced9634737c6bd5a36d.md"
+    },
+    {
+      "code": "G03.06",
+      "canonicalId": "bb3adbc3c2fb43e6a18a876c4e897c9c",
+      "exchangeId": "id-38d9b8fa1f13586da103fb1bef655591",
+      "displayName": "Security Monitoring",
+      "source": "enterprise-architecture/continuum/grouping/bb3adbc3c2fb43e6a18a876c4e897c9c.md"
+    },
+    {
+      "code": "G04",
+      "canonicalId": "abc27ddff6d644d9945db0cfd7488f07",
+      "exchangeId": "id-ff3a2d67c241526199031d3dc1b50e0a",
+      "displayName": "Audit and Accountability",
+      "source": "enterprise-architecture/continuum/grouping/abc27ddff6d644d9945db0cfd7488f07.md"
+    },
+    {
+      "code": "G04.01",
+      "canonicalId": "40416671099a46678ac5dfc3d0d615cf",
+      "exchangeId": "id-7cdc16c98037500d9eb63dfc591b5ca5",
+      "displayName": "Audit Generation",
+      "source": "enterprise-architecture/continuum/grouping/40416671099a46678ac5dfc3d0d615cf.md"
+    },
+    {
+      "code": "G04.02",
+      "canonicalId": "c102ede2b9e249b2a2ddc9f19e0cbd7f",
+      "exchangeId": "id-ec71ca548f145eeaad3c575fcf93d474",
+      "displayName": "Audit Integrity",
+      "source": "enterprise-architecture/continuum/grouping/c102ede2b9e249b2a2ddc9f19e0cbd7f.md"
+    },
+    {
+      "code": "G04.03",
+      "canonicalId": "de791c4976f84676bf8545b1cfb8bf41",
+      "exchangeId": "id-4e16166c3bc65d5198b9210c17b04ae1",
+      "displayName": "Audit Management",
+      "source": "enterprise-architecture/continuum/grouping/de791c4976f84676bf8545b1cfb8bf41.md"
+    },
+    {
+      "code": "G04.04",
+      "canonicalId": "38d3dfcd23894f43b59d00c782170e63",
+      "exchangeId": "id-76b5dcf51d53581b915783b544348df1",
+      "displayName": "Accountability and Traceability",
+      "source": "enterprise-architecture/continuum/grouping/38d3dfcd23894f43b59d00c782170e63.md"
+    },
+    {
+      "code": "G05",
+      "canonicalId": "098d2e468cd14029b43ec6dbd07374fd",
+      "exchangeId": "id-d17720b347085fb9bd409d2c5fbaf3b2",
+      "displayName": "Interoperability and Integration",
+      "source": "enterprise-architecture/continuum/grouping/098d2e468cd14029b43ec6dbd07374fd.md"
+    },
+    {
+      "code": "G05.01",
+      "canonicalId": "0b9e18356e9e4dcca51007f03f7b81b4",
+      "exchangeId": "id-d9aee9f851385a009c8068965d39b9a0",
+      "displayName": "External Connectivity",
+      "source": "enterprise-architecture/continuum/grouping/0b9e18356e9e4dcca51007f03f7b81b4.md"
+    },
+    {
+      "code": "G05.02",
+      "canonicalId": "a44091225174403ebd2c5b75ba690a09",
+      "exchangeId": "id-293efc8ee1975418b66cafda5d535b65",
+      "displayName": "Interoperability Standards",
+      "source": "enterprise-architecture/continuum/grouping/a44091225174403ebd2c5b75ba690a09.md"
+    },
+    {
+      "code": "G05.03",
+      "canonicalId": "bda335658c29473d9ba20352242c83f8",
+      "exchangeId": "id-df63fe8269255c72a26b3ceb863f9eea",
+      "displayName": "Information Exchange",
+      "source": "enterprise-architecture/continuum/grouping/bda335658c29473d9ba20352242c83f8.md"
+    },
+    {
+      "code": "G05.04",
+      "canonicalId": "b3c19413e4b447adb5f1d86912db4052",
+      "exchangeId": "id-bb32b6788247543195d0fe2fc9a40424",
+      "displayName": "Interaction Contracts",
+      "source": "enterprise-architecture/continuum/grouping/b3c19413e4b447adb5f1d86912db4052.md"
+    },
+    {
+      "code": "G05.05",
+      "canonicalId": "1d7c50343cca49eeaeccf7c49c3c008b",
+      "exchangeId": "id-83f12e6b714050f5a6648b03707484e0",
+      "displayName": "Interaction Reliability",
+      "source": "enterprise-architecture/continuum/grouping/1d7c50343cca49eeaeccf7c49c3c008b.md"
+    },
+    {
+      "code": "G06",
+      "canonicalId": "afb9686c9f1c48159d92a518a7d17452",
+      "exchangeId": "id-458b576c4b745e94b610666bd4a94df4",
+      "displayName": "Processing and Workflow",
+      "source": "enterprise-architecture/continuum/grouping/afb9686c9f1c48159d92a518a7d17452.md"
+    },
+    {
+      "code": "G06.01",
+      "canonicalId": "0b6d5f58354040189b3a9a30a9b913d9",
+      "exchangeId": "id-3672f9bc122356c89cdecc2065e7fc04",
+      "displayName": "Task Management",
+      "source": "enterprise-architecture/continuum/grouping/0b6d5f58354040189b3a9a30a9b913d9.md"
+    },
+    {
+      "code": "G06.02",
+      "canonicalId": "2d89b3a1e74e42d28a9f0a3dfb2c4ecb",
+      "exchangeId": "id-bccdbd54801e509884908ef301281703",
+      "displayName": "Task Completion",
+      "source": "enterprise-architecture/continuum/grouping/2d89b3a1e74e42d28a9f0a3dfb2c4ecb.md"
+    },
+    {
+      "code": "G06.03",
+      "canonicalId": "9536aaf4114b4c35b8a795383d442f64",
+      "exchangeId": "id-28635ed61fe958ba9651723a71807aed",
+      "displayName": "Concurrency Management",
+      "source": "enterprise-architecture/continuum/grouping/9536aaf4114b4c35b8a795383d442f64.md"
+    },
+    {
+      "code": "G06.04",
+      "canonicalId": "5dde6ebecd094084b325ba59603bb919",
+      "exchangeId": "id-ebf1a94aa10e5922b7934e68b6dd80f8",
+      "displayName": "Message Processing",
+      "source": "enterprise-architecture/continuum/grouping/5dde6ebecd094084b325ba59603bb919.md"
+    },
+    {
+      "code": "G06.05",
+      "canonicalId": "5e8ddc78f9554243aeb051f77595cc88",
+      "exchangeId": "id-1cb5708c91f15e688913612219947f83",
+      "displayName": "Processing State Management",
+      "source": "enterprise-architecture/continuum/grouping/5e8ddc78f9554243aeb051f77595cc88.md"
+    },
+    {
+      "code": "G06.06",
+      "canonicalId": "f40da9359c7545d2ad0eef6c3a5bf645",
+      "exchangeId": "id-44afd245a0da5fbb9d9e87f24bf8379f",
+      "displayName": "Processing Outcomes",
+      "source": "enterprise-architecture/continuum/grouping/f40da9359c7545d2ad0eef6c3a5bf645.md"
+    },
+    {
+      "code": "G07",
+      "canonicalId": "914b8be39ecc4fb599e6bc0004c355c0",
+      "exchangeId": "id-bdeb1d9a401b551bbe6c2f9899ae157e",
+      "displayName": "Resilience and Recovery",
+      "source": "enterprise-architecture/continuum/grouping/914b8be39ecc4fb599e6bc0004c355c0.md"
+    },
+    {
+      "code": "G07.01",
+      "canonicalId": "0a59e0ebb33c494e939148d30e42f49c",
+      "exchangeId": "id-c3b22effdb8555edbd8565ae22edbf78",
+      "displayName": "Fault Tolerance",
+      "source": "enterprise-architecture/continuum/grouping/0a59e0ebb33c494e939148d30e42f49c.md"
+    },
+    {
+      "code": "G07.02",
+      "canonicalId": "e9804b6dea5c4e1db80be1925463786f",
+      "exchangeId": "id-c104c6bf7a585269a977e2d2de66ffb3",
+      "displayName": "Failure Detection and Handling",
+      "source": "enterprise-architecture/continuum/grouping/e9804b6dea5c4e1db80be1925463786f.md"
+    },
+    {
+      "code": "G07.03",
+      "canonicalId": "8609b046777c4a8ab4d5cafb30e34d04",
+      "exchangeId": "id-b291bf631b955bed9ca4f61b5e6471e6",
+      "displayName": "Operational Recovery",
+      "source": "enterprise-architecture/continuum/grouping/8609b046777c4a8ab4d5cafb30e34d04.md"
+    },
+    {
+      "code": "G07.04",
+      "canonicalId": "49966f8f01e244b4926ce4dc4c41fb47",
+      "exchangeId": "id-5b985aab93395905ab9b470ba452efda",
+      "displayName": "Disaster Recovery",
+      "source": "enterprise-architecture/continuum/grouping/49966f8f01e244b4926ce4dc4c41fb47.md"
+    },
+    {
+      "code": "G07.05",
+      "canonicalId": "41900f15d1d2431295a4b9dc1aa752c0",
+      "exchangeId": "id-703c2155d88d53aaa3d6a6e4911661bd",
+      "displayName": "Continuity of Operations",
+      "source": "enterprise-architecture/continuum/grouping/41900f15d1d2431295a4b9dc1aa752c0.md"
+    },
+    {
+      "code": "G08",
+      "canonicalId": "8034148e63e6457f90e8cae1d4eb4453",
+      "exchangeId": "id-bfe091f4713151fa803407c75d41bff2",
+      "displayName": "Performance and Capacity",
+      "source": "enterprise-architecture/continuum/grouping/8034148e63e6457f90e8cae1d4eb4453.md"
+    },
+    {
+      "code": "G08.01",
+      "canonicalId": "cdcfbe8d106844109bb8ded51dea7a8a",
+      "exchangeId": "id-8f402ce69bf853e08149cd834bf0ca4b",
+      "displayName": "Throughput",
+      "source": "enterprise-architecture/continuum/grouping/cdcfbe8d106844109bb8ded51dea7a8a.md"
+    },
+    {
+      "code": "G08.02",
+      "canonicalId": "47d8e097526248349dd6dbbd318b1ef4",
+      "exchangeId": "id-37411a09e3d35e92935715a26b2f340e",
+      "displayName": "Responsiveness",
+      "source": "enterprise-architecture/continuum/grouping/47d8e097526248349dd6dbbd318b1ef4.md"
+    },
+    {
+      "code": "G08.03",
+      "canonicalId": "9cf94c0ac09141a3b909a6a1051bff97",
+      "exchangeId": "id-d7f24eed298d559baa21cc10fa3fbb87",
+      "displayName": "Scalability",
+      "source": "enterprise-architecture/continuum/grouping/9cf94c0ac09141a3b909a6a1051bff97.md"
+    },
+    {
+      "code": "G08.04",
+      "canonicalId": "0e5030d90c134f1ea445257f0b6e788e",
+      "exchangeId": "id-eb46d3660484543cb3f107a963619568",
+      "displayName": "Resource Management",
+      "source": "enterprise-architecture/continuum/grouping/0e5030d90c134f1ea445257f0b6e788e.md"
+    },
+    {
+      "code": "G08.05",
+      "canonicalId": "f5df30b02e8a4d60bf44e8af2da4d5ab",
+      "exchangeId": "id-161e6e33f93e533582880e544b22ac3c",
+      "displayName": "Capacity Planning",
+      "source": "enterprise-architecture/continuum/grouping/f5df30b02e8a4d60bf44e8af2da4d5ab.md"
+    },
+    {
+      "code": "G09",
+      "canonicalId": "16ebd2840f2246a4a9ec9991947f5db2",
+      "exchangeId": "id-784af4f480a051f99d91b26f22922d0a",
+      "displayName": "Operations and Assurance",
+      "source": "enterprise-architecture/continuum/grouping/16ebd2840f2246a4a9ec9991947f5db2.md"
+    },
+    {
+      "code": "G09.01",
+      "canonicalId": "cc0a0cc2678c4c7db20ad015a75cc1de",
+      "exchangeId": "id-ffe599aaa17b5c249f754796a6ad6c3c",
+      "displayName": "Operational Monitoring",
+      "source": "enterprise-architecture/continuum/grouping/cc0a0cc2678c4c7db20ad015a75cc1de.md"
+    },
+    {
+      "code": "G09.02",
+      "canonicalId": "45cb08d300b74853b456f333572a2bf6",
+      "exchangeId": "id-771158ad93925187bc9351f47437a191",
+      "displayName": "Operational Diagnostics",
+      "source": "enterprise-architecture/continuum/grouping/45cb08d300b74853b456f333572a2bf6.md"
+    },
+    {
+      "code": "G09.03",
+      "canonicalId": "f0402eea7b5a49f9b61fbd90e336b2de",
+      "exchangeId": "id-fbb84d2f17e45158b7930a6c9376d32a",
+      "displayName": "Operational Control",
+      "source": "enterprise-architecture/continuum/grouping/f0402eea7b5a49f9b61fbd90e336b2de.md"
+    },
+    {
+      "code": "G09.04",
+      "canonicalId": "b92ea843bd6342879b6a3be255743e31",
+      "exchangeId": "id-a36aa11a96b450a7bcf85c6f66750c4e",
+      "displayName": "Operational Reporting",
+      "source": "enterprise-architecture/continuum/grouping/b92ea843bd6342879b6a3be255743e31.md"
+    },
+    {
+      "code": "G09.05",
+      "canonicalId": "da5b4238bd6945cf9b467ff3feb9d76b",
+      "exchangeId": "id-0005aa8e85815cd2b64a9556cad0ea2f",
+      "displayName": "Operational Information Management",
+      "source": "enterprise-architecture/continuum/grouping/da5b4238bd6945cf9b467ff3feb9d76b.md"
+    },
+    {
+      "code": "G09.06",
+      "canonicalId": "315ba7bbe4624223a97a7e7e6d9cc252",
+      "exchangeId": "id-20903ed0e53c5bc7b98ceafa42e03453",
+      "displayName": "Operational Assurance",
+      "source": "enterprise-architecture/continuum/grouping/315ba7bbe4624223a97a7e7e6d9cc252.md"
+    },
+    {
+      "code": "G10",
+      "canonicalId": "4e5f729c97394b898918591f4d81a69a",
+      "exchangeId": "id-9bdc892bfc1b564c97f85b758ed6a275",
+      "displayName": "Deployment and Release Management",
+      "source": "enterprise-architecture/continuum/grouping/4e5f729c97394b898918591f4d81a69a.md"
+    },
+    {
+      "code": "G10.01",
+      "canonicalId": "3b56e60b042f429b8bf0efdb477c637e",
+      "exchangeId": "id-1caa66e6e4c3546e8218bf7d95e5b3c2",
+      "displayName": "Build Management",
+      "source": "enterprise-architecture/continuum/grouping/3b56e60b042f429b8bf0efdb477c637e.md"
+    },
+    {
+      "code": "G10.02",
+      "canonicalId": "36264352a7f745109deaac2025877690",
+      "exchangeId": "id-6bbc1810b125511ea2022493a0957543",
+      "displayName": "Deployment Management",
+      "source": "enterprise-architecture/continuum/grouping/36264352a7f745109deaac2025877690.md"
+    },
+    {
+      "code": "G10.03",
+      "canonicalId": "ef476f07cd9e4ba6bdac99dc6e940baa",
+      "exchangeId": "id-6868d76816f853a3876146eb6a80d6fd",
+      "displayName": "Configuration Management",
+      "source": "enterprise-architecture/continuum/grouping/ef476f07cd9e4ba6bdac99dc6e940baa.md"
+    },
+    {
+      "code": "G10.04",
+      "canonicalId": "6b4df7dee51344b3b8c4c6eaace50d72",
+      "exchangeId": "id-f061383fe2095bb7b37281d891fb6208",
+      "displayName": "Release Management",
+      "source": "enterprise-architecture/continuum/grouping/6b4df7dee51344b3b8c4c6eaace50d72.md"
+    },
+    {
+      "code": "G10.05",
+      "canonicalId": "7f9cadb36d764b22840748a9608f9a37",
+      "exchangeId": "id-d0cf1ab882f250e1afb54168fbadd35e",
+      "displayName": "Release Compatibility",
+      "source": "enterprise-architecture/continuum/grouping/7f9cadb36d764b22840748a9608f9a37.md"
+    },
+    {
+      "code": "G10.06",
+      "canonicalId": "1b4044525d474363bafb462e575582b9",
+      "exchangeId": "id-21b115ebf16552f08e76874c3c53e446",
+      "displayName": "Deployment Environments",
+      "source": "enterprise-architecture/continuum/grouping/1b4044525d474363bafb462e575582b9.md"
+    },
+    {
+      "code": "G11",
+      "canonicalId": "d0fa8cfaf5044359a5f6a1e91375429e",
+      "exchangeId": "id-e7d793503ad9510ea344a71220307695",
+      "displayName": "Verification and Testing",
+      "source": "enterprise-architecture/continuum/grouping/d0fa8cfaf5044359a5f6a1e91375429e.md"
+    },
+    {
+      "code": "G11.01",
+      "canonicalId": "ab65501a8e3542839707ae31cd0b8efd",
+      "exchangeId": "id-d67a5527c17256f6a4faa2c50398f4a4",
+      "displayName": "Functional Verification",
+      "source": "enterprise-architecture/continuum/grouping/ab65501a8e3542839707ae31cd0b8efd.md"
+    },
+    {
+      "code": "G11.02",
+      "canonicalId": "e8c7f8a36ff248cd9115d7a382324808",
+      "exchangeId": "id-9392ac3126fc59028371a42bb421edc0",
+      "displayName": "Integration Verification",
+      "source": "enterprise-architecture/continuum/grouping/e8c7f8a36ff248cd9115d7a382324808.md"
+    },
+    {
+      "code": "G11.03",
+      "canonicalId": "35df8a5d8b1e495ba4cf79a5d4a47863",
+      "exchangeId": "id-c9fa49d57999510a8190be3f28523bf0",
+      "displayName": "Regression Testing",
+      "source": "enterprise-architecture/continuum/grouping/35df8a5d8b1e495ba4cf79a5d4a47863.md"
+    },
+    {
+      "code": "G11.04",
+      "canonicalId": "cd453ee30502406db647a0c5b4011739",
+      "exchangeId": "id-0d75f3bac3445bdca1481093e12d46a6",
+      "displayName": "Performance and Capacity Testing",
+      "source": "enterprise-architecture/continuum/grouping/cd453ee30502406db647a0c5b4011739.md"
+    },
+    {
+      "code": "G11.05",
+      "canonicalId": "d3fb5abc58af4347ab52cdc26e9b14f1",
+      "exchangeId": "id-13828cc9cbcc590f818caaa4db7d5256",
+      "displayName": "Resilience Testing",
+      "source": "enterprise-architecture/continuum/grouping/d3fb5abc58af4347ab52cdc26e9b14f1.md"
+    },
+    {
+      "code": "G11.06",
+      "canonicalId": "7eceab6d8a9741708d438a7760103c69",
+      "exchangeId": "id-c5697d102b0c588da0523966f7f5297f",
+      "displayName": "Test Governance",
+      "source": "enterprise-architecture/continuum/grouping/7eceab6d8a9741708d438a7760103c69.md"
+    },
+    {
+      "code": "G12",
+      "canonicalId": "1c57a3d9080443178f6e9159d0591c77",
+      "exchangeId": "id-2748e964f03157d19464eedcadd333a7",
+      "displayName": "User Experience",
+      "source": "enterprise-architecture/continuum/grouping/1c57a3d9080443178f6e9159d0591c77.md"
+    },
+    {
+      "code": "G12.01",
+      "canonicalId": "58c3577b30fd4748836a1d52e07c8a98",
+      "exchangeId": "id-35ac52a85cf75ae0883eb2d8710c1f3c",
+      "displayName": "Usability",
+      "source": "enterprise-architecture/continuum/grouping/58c3577b30fd4748836a1d52e07c8a98.md"
+    },
+    {
+      "code": "G12.02",
+      "canonicalId": "f814f4598722425cb3e7f45c32c11c90",
+      "exchangeId": "id-7367ff599bf853ec864a8891c0f154b6",
+      "displayName": "Accessibility",
+      "source": "enterprise-architecture/continuum/grouping/f814f4598722425cb3e7f45c32c11c90.md"
+    },
+    {
+      "code": "G12.03",
+      "canonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+      "exchangeId": "id-f8b45a0c16475d67938f268ef94adf62",
+      "displayName": "User Interface Responsiveness",
+      "source": "enterprise-architecture/continuum/grouping/1f441cdb8fa342cca0afe5b3b65b368d.md"
+    },
+    {
+      "code": "G12.04",
+      "canonicalId": "9f192036bee542ad883b89729a35bbfb",
+      "exchangeId": "id-4b02ff8e872250dc97aadd84282cede4",
+      "displayName": "Navigation and Interaction",
+      "source": "enterprise-architecture/continuum/grouping/9f192036bee542ad883b89729a35bbfb.md"
+    },
+    {
+      "code": "G12.05",
+      "canonicalId": "77cd076a5bdf463a93fe330698d9be19",
+      "exchangeId": "id-741c11216ebb5673bf6200a2ba6fc5f6",
+      "displayName": "Localisation and Internationalisation",
+      "source": "enterprise-architecture/continuum/grouping/77cd076a5bdf463a93fe330698d9be19.md"
+    },
+    {
+      "code": "G13",
+      "canonicalId": "c77bba93c0c843959b30d9e1195fb68e",
+      "exchangeId": "id-b26c1fb55b9e539cb50ea5452bd5e13a",
+      "displayName": "Distributed Systems and Temporal Management",
+      "source": "enterprise-architecture/continuum/grouping/c77bba93c0c843959b30d9e1195fb68e.md"
+    },
+    {
+      "code": "G13.01",
+      "canonicalId": "114a3866dffc4a4cb6aabef39b48fadf",
+      "exchangeId": "id-58b147d652e05ac884c2a0f7eea3e2ff",
+      "displayName": "Distributed Coordination",
+      "source": "enterprise-architecture/continuum/grouping/114a3866dffc4a4cb6aabef39b48fadf.md"
+    },
+    {
+      "code": "G13.02",
+      "canonicalId": "0f1014c80b0a473abf8c37845e0ed2fa",
+      "exchangeId": "id-9155cfde11615fce9d6ec68e0efcdab6",
+      "displayName": "Temporal Consistency",
+      "source": "enterprise-architecture/continuum/grouping/0f1014c80b0a473abf8c37845e0ed2fa.md"
+    },
+    {
+      "code": "G13.03",
+      "canonicalId": "432d52cc3de5443896a4559f215ece9f",
+      "exchangeId": "id-48129c55f6e55c6f81dd738b9c136010",
+      "displayName": "Event Ordering and Causality",
+      "source": "enterprise-architecture/continuum/grouping/432d52cc3de5443896a4559f215ece9f.md"
+    },
+    {
+      "code": "G13.04",
+      "canonicalId": "22fce0d656ef4df89d2a35a85fa92aa1",
+      "exchangeId": "id-e2f7246fed7a51a5ac3ab7eabb4ca7e1",
+      "displayName": "Event Horizon Management",
+      "source": "enterprise-architecture/continuum/grouping/22fce0d656ef4df89d2a35a85fa92aa1.md"
+    },
+    {
+      "code": "G13.05",
+      "canonicalId": "71b9830ce1a543548334647cbbaec7f1",
+      "exchangeId": "id-a6b18bfedd3551b3a3319edd74491ec4",
+      "displayName": "Distributed State Consistency",
+      "source": "enterprise-architecture/continuum/grouping/71b9830ce1a543548334647cbbaec7f1.md"
+    },
+    {
+      "code": "G13.06",
+      "canonicalId": "0528b2ac76c548ae861ebcb1ef9cf3d9",
+      "exchangeId": "id-cd642a833033571d8178726a01617641",
+      "displayName": "Task Ordering",
+      "source": "enterprise-architecture/continuum/grouping/0528b2ac76c548ae861ebcb1ef9cf3d9.md"
+    }
+  ],
+  "scopedNativeElementIds": [],
+  "submittedDirectIncidentRelationships": [],
+  "proposedSubjectContainment": [
+    {
+      "parentCode": "G14",
+      "childCode": "G14.01",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G14",
+      "childCode": "G14.02",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G14",
+      "childCode": "G14.03",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G14",
+      "childCode": "G14.04",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G14",
+      "childCode": "G14.05",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G14",
+      "childCode": "G14.06",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G15",
+      "childCode": "G15.01",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G15",
+      "childCode": "G15.02",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G15",
+      "childCode": "G15.03",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G15",
+      "childCode": "G15.04",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G15",
+      "childCode": "G15.05",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G16",
+      "childCode": "G16.01",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G16",
+      "childCode": "G16.02",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G16",
+      "childCode": "G16.03",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G16",
+      "childCode": "G16.04",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G16",
+      "childCode": "G16.05",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G16",
+      "childCode": "G16.06",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G17",
+      "childCode": "G17.01",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G17",
+      "childCode": "G17.02",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G17",
+      "childCode": "G17.03",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G17",
+      "childCode": "G17.04",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G17",
+      "childCode": "G17.05",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G18",
+      "childCode": "G18.01",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G18",
+      "childCode": "G18.02",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G18",
+      "childCode": "G18.03",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G18",
+      "childCode": "G18.04",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    },
+    {
+      "parentCode": "G18",
+      "childCode": "G18.05",
+      "nativeType": "Composition",
+      "direction": "parent to child",
+      "meaning": "Proposed Subject subgroup classification containment only; not Home, capability decomposition, implementation or authority assignment",
+      "incomingRelationship": null,
+      "proposedRelationshipIdentifier": null,
+      "sourceCanonicalId": null,
+      "targetCanonicalId": null,
+      "standing": "Proposal for Solution Architect adjudication; not asserted",
+      "basis": "Explicit proposed hierarchy in candidate mapping and user extension intent, applying governed Subject classification pattern; NOT inferred from XML folder nesting"
+    }
+  ],
+  "unrelatedChangeInterpretation": "NOT AUTHORISED / NOT PERFORMED",
+  "canonicalSourcesChanged": 0,
+  "canonicalIdsAllocated": 0,
+  "uniformFolderAndProposalPolicy": {
+    "folderCanonicalId": null,
+    "folderIdentifier": null,
+    "folderIdentifierRef": null,
+    "viewReferences": 0,
+    "identityFinding": "NO_ARCHITECTURAL_INSTANCE_IDENTITY_IN_EXPORT; proposed Subject requires separately authorised creation after duplicate/meaning adjudication",
+    "proposedCanonicalName": null,
+    "canonicalNameReason": "Native Grouping has no established formal naming qualifier; preserve existing unresolved vocabulary; no Subject/GRP token or ancestor qualification invented",
+    "submittedNativeType": null,
+    "submittedSpecialization": null,
+    "proposedNativeType": "Grouping",
+    "proposedSpecialization": null,
+    "typeAuthority": "continuum-representation.md / Iteration 001 subject groups/subgroups; this is a proposed extension, not an imported native assertion",
+    "navigationQualification": "Candidate context only; storage remains native grouping/<allocated UUID>.md; subject folder/ordinal does not become identity or naming ancestry",
+    "incorporation": "NOT AUTHORISED",
+    "canonicalIdAllocated": null
+  },
+  "governedSubjectContextQualification": "All 82 are governed Grouping resources; their independent standing is preserved at the pinned canonical sources and existing governed-subjects.json. No state or meaning from other export changes is interpreted."
+}

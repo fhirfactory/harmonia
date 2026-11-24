@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "tests": 65,
+  "seconds": 210.511,
+  "failures": 0,
+  "errors": 0,
+  "command": "timeout --signal=TERM --kill-after=5s 420s python3 -B -m unittest discover -s enterprise-architecture/tooling/tests -v"
+}

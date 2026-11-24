@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "classification": "namespace-correction-audit",
+  "authority": "Solution Architect namespace correction, 2026-10-19",
+  "historical_internal_identifier": "1.0.14",
+  "current_rad_release": {
+    "version": "1.0.9",
+    "previous_version": "1.0.8"
+  },
+  "relocation_manifest": "docs/archimate/governance-tooling/1.0.14/manifest.json",
+  "relocation_manifest_sha256": "68b9a3d587bf27ef1002d405f4a498c1bb8b5ef9f58ee52b5a7fff9fa325da63",
+  "original_files_preserved": 10,
+  "protected_rad_and_ingestion_files_unchanged": 171,
+  "rad_1_0_9_model_sha256": "9f120d6fc36d7e659f3799b0af5f7c1d4544b6591abd31e45ccb7393fb0162af",
+  "original_namespace_directories_absent": true,
+  "compatibility_directories_or_symlinks_created": false,
+  "historical_locator_hash_claims_verified": 16,
+  "historical_local_links_resolved": 131,
+  "current_generated_outputs_independently_reproduced": 15,
+  "historical_normalisation_xml_independently_reproduced": true,
+  "historical_full_report_attestations": "Original bytes preserved; stale live dependencies already existed before this correction; no refresh or attribution to RAD-1.0.9.",
+  "checks": {
+    "archimate_tests": {
+      "status": "PASS",
+      "exit_code": 0,
+      "command": "timeout --signal=TERM --kill-after=5s 300s python3 -B -m unittest discover -s docs/archimate/framework/tests -v",
+      "log": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/archimate-tests.log.gz",
+      "log_sha256": "d7e8363bcd103cc3791e0e456fbe13a79633ccee588c9ed7e6fbf066eca4ff2d",
+      "tests": 181
+    },
+    "governance_tests": {
+      "status": "PASS",
+      "exit_code": 0,
+      "command": "timeout --signal=TERM --kill-after=5s 120s python3 -B -m unittest discover -s scripts/tests -v",
+      "log": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/governance-tests.log.gz",
+      "log_sha256": "ca379b3ec5764276aeed456bfb6a4adfb67c674b935e865d71f99a2815d877a3",
+      "tests": 72
+    },
+    "architecture_tests": {
+      "status": "PASS",
+      "exit_code": 0,
+      "command": "timeout --signal=TERM --kill-after=5s 180s env JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+      "log": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/architecture-tests.log.gz",
+      "log_sha256": "7a34ee62760ae099d3f0af65bbb758c51137597e7c6ce9da6ab686d492421d37",
+      "tests": 90
+    },
+    "publication_and_independent_reproduction": {
+      "status": "PASS",
+      "exit_code": 0,
+      "command": "timeout --signal=TERM --kill-after=5s 180s env PYTHONDONTWRITEBYTECODE=1 make -C docs/archimate/framework baseline-check baseline-report baseline-independent",
+      "log": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/publication-reproduction.log.gz",
+      "log_sha256": "3861dc556f83adb39a94104b370309ec591610630e89903ab7a2f9eeed18515a"
+    },
+    "namespace_regressions": {
+      "status": "PASS",
+      "exit_code": 0,
+      "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B -m unittest discover -s docs/archimate/framework/tests -p test_governance_namespace.py -v",
+      "log": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/namespace-tests.log.gz",
+      "log_sha256": "8d4999024c3e524c9f615865d924b9cf9c94b6afb1d19d753260c7e4eb5837c7",
+      "tests": 4
+    },
+    "preservation_and_historical_audit": {
+      "status": "PASS",
+      "exit_code": 0,
+      "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B docs/archimate/framework/tools/verify_governance_evidence.py",
+      "log": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/preservation-final.log.gz",
+      "log_sha256": "209ff29bfe0ed4f34862842815bd5853497d03c21194512b5a00f62f293a09b5"
+    },
+    "normalisation_model_reproduction": {
+      "status": "PASS",
+      "exit_code": 0,
+      "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/reproduce-normalisation.py",
+      "log": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/normalisation-reproduction.log.gz",
+      "log_sha256": "1b2db85323909f883b8013c702311cf588c959367706a1b35f6648d0682d436b"
+    },
+    "identity": {
+      "status": "PASS",
+      "exit_code": 0,
+      "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B docs/archimate/framework/tools/governed_metadata.py validate",
+      "log": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/identity.log.gz",
+      "log_sha256": "ba96bb1651d8249a6f934956752980005099de7415352a659fcdc6cb1428fc4c"
+    },
+    "release_authority": {
+      "status": "PASS",
+      "exit_code": 0,
+      "command": "timeout --signal=TERM --kill-after=5s 30s python3 -B scripts/architecture_release.py check",
+      "log": "docs/archimate/governance-tooling/migrations/2026-10-19-reclassify-1.0.14/validation/release.log.gz",
+      "log_sha256": "f0f76d34ea472bd903f47125e734e31f4635f9f6a666d96aa9e564da74073ca3"
+    }
+  }
+}

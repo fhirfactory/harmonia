@@ -1,0 +1,553 @@
+{
+  "counts": {
+    "Motivation": 7,
+    "Strategy": 0,
+    "Business": 69,
+    "Application": 0,
+    "Technology": 0,
+    "Implementation & Migration": 0
+  },
+  "elements": {
+    "Motivation": [
+      {
+        "canonicalId": "11001a6ea3df45689a27216df641dac2",
+        "displayName": "Governed Asynchronous Change Management for Directory Entities",
+        "archimateType": "Principle",
+        "afterNumber": "I.8.3",
+        "classificationIssue": "Existing native Principle is not one of the canonical AX axioms. The target taxonomy has no agreed location for this broader or historical Principle; no axiom status is inferred."
+      },
+      {
+        "canonicalId": "5ae28648334e4f6184044af0462eb9a8",
+        "displayName": "Separation of Transport from Business Logic",
+        "archimateType": "Principle",
+        "afterNumber": "I.8.6",
+        "classificationIssue": "Existing native Principle is not one of the canonical AX axioms. The target taxonomy has no agreed location for this broader or historical Principle; no axiom status is inferred."
+      },
+      {
+        "canonicalId": "5d97974406c546078b1d64e5ff85bb13",
+        "displayName": "Canonical Modeling with Standardized FHIR R5 Boundaries",
+        "archimateType": "Principle",
+        "afterNumber": "I.8.2",
+        "classificationIssue": "Existing native Principle is not one of the canonical AX axioms. The target taxonomy has no agreed location for this broader or historical Principle; no axiom status is inferred."
+      },
+      {
+        "canonicalId": "638c501ba4df4c67aee92d1f328aad84",
+        "displayName": "Provenance and Information Authority",
+        "archimateType": "Principle",
+        "afterNumber": "I.8.5",
+        "classificationIssue": "Existing native Principle is not one of the canonical AX axioms. The target taxonomy has no agreed location for this broader or historical Principle; no axiom status is inferred."
+      },
+      {
+        "canonicalId": "96ed278624c34ba4bfade0df08d45d74",
+        "displayName": "Governed PHI Logging & Dual-Logger Privacy Controls",
+        "archimateType": "Principle",
+        "afterNumber": "I.8.4",
+        "classificationIssue": "Existing native Principle is not one of the canonical AX axioms. The target taxonomy has no agreed location for this broader or historical Principle; no axiom status is inferred."
+      },
+      {
+        "canonicalId": "a5dffc0325d44915971eea600bba48f1",
+        "displayName": "Write-Behind",
+        "archimateType": "Principle",
+        "afterNumber": "I.8.7",
+        "classificationIssue": "Existing native Principle is not one of the canonical AX axioms. The target taxonomy has no agreed location for this broader or historical Principle; no axiom status is inferred."
+      },
+      {
+        "canonicalId": "bd4c8726125648e68d5746bab3c765cd",
+        "displayName": "At-Least-Once",
+        "archimateType": "Principle",
+        "afterNumber": "I.8.1",
+        "classificationIssue": "Existing native Principle is not one of the canonical AX axioms. The target taxonomy has no agreed location for this broader or historical Principle; no axiom status is inferred."
+      }
+    ],
+    "Strategy": [],
+    "Business": [
+      {
+        "canonicalId": "05bf8e557ce14f0eb1c869d07c5a93ca",
+        "displayName": "Resource Reporting",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.46",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "06dbfdb6b8a84bd29f67ca955ba23006",
+        "displayName": "Clinical Information Review",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.9",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "126276873bde4105a08e21bb3187f5b3",
+        "displayName": "Incident Registration",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.20",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "1508d1e33b264534bbcde367eb3dc6a3",
+        "displayName": "ServiceEligibility Assessment Request",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.62",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "1a56f778873a4094b5a0f84cae842d35",
+        "displayName": "Identity Verification",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.19",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "1ce0ba25408c47f9bd82953fba605c40",
+        "displayName": "Participation Query",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.34",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "29f2a74c8234411c9ac15458e66ca4bc",
+        "displayName": "Complaint",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.11",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "2c7ca48559fb4a72b4d9c250df4015ce",
+        "displayName": "FOI Request",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.13",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "31e03beac32946a09985ad52e0f9cce4",
+        "displayName": "Clinical Information Notification",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.6",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "332cdc30ae0346c6b86233db71caf683",
+        "displayName": "Identity Reconciliation",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.18",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "3697066c0d634076be5a8d745e3fdd91",
+        "displayName": "Operational Alert",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.30",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "397a4200bb894479a54a03dc84451efb",
+        "displayName": "ServiceCatalogue Publish",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.58",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "3d3459edfa884ef0abdcfd3772b538e4",
+        "displayName": "Identity Establishment",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.16",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "3f1db661c97b4fa692e3d70278a40226",
+        "displayName": "Information Correction",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.25",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "40105b22c930413692cc64826d3ad32f",
+        "displayName": "ServiceOffering Query",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.63",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "44d71c390a8f435cbb596601e627bdfa",
+        "displayName": "Information Challenge",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.23",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "45bf28eb44e64554b568db48a30ac43c",
+        "displayName": "Review Outcome",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.47",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "47536a5d81aa4d8eb2d13054b864d1bf",
+        "displayName": "Information Disclosure",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.26",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "47b9abea0964451eb0fa419b464b4505",
+        "displayName": "Identity Assertion",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.15",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "480556d544ad4dc18f6945f213044e9b",
+        "displayName": "Review Request",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.48",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "4d34b3705cb0405a910ddcacfdd6b6d3",
+        "displayName": "Clinical Information Provision",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.7",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "64d7dfac2f5f4b61998df127b44c0521",
+        "displayName": "Work Acceptance",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.66",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "6b606df4675f48b3baba03f4b2ca7602",
+        "displayName": "Information Qualification",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.28",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "6bad04918445465cb350c3252af73377",
+        "displayName": "Service Assurance Status",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.52",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "6bc0e6df5ba3405a9037e34f9810aefc",
+        "displayName": "Service Response",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.57",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "6fb6f66531874c2d983071a04b5934c2",
+        "displayName": "Information Publishing",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.27",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "73b6d1ab8ecc48c4bdea98f013288c9c",
+        "displayName": "Service Assurance Outcome Communication",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.50",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "773133f23f7540eb9b90d39ca872aebd",
+        "displayName": "Information Control",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.24",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "7a2b6e8802e24e018af89f265271f5ca",
+        "displayName": "Operational Event Notification",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.33",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "7cb1eb055be44eefb7092356510acc77",
+        "displayName": "Incident Report",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.21",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "8479c1d4b2304d9dabc3716c6cb20e83",
+        "displayName": "Resource Allocation",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.45",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "8666d4168fe545fd9ce222217887bd61",
+        "displayName": "Clinical Alert",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.3",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "8aabfdf9c83c4de486cf5f50c41c0d5e",
+        "displayName": "Clinical Information Query",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.8",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "8bb02a34807f4bb183bb42a722f4509b",
+        "displayName": "Transfer of Care",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.65",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "8c8a371f6a324d908656c3c935c7656f",
+        "displayName": "Authorisation — Consent",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.1",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "906c61eb392f4b538f6d0a79917d21cc",
+        "displayName": "Participation Registration",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.35",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "909faede10b5452cbee2d7d052635f47",
+        "displayName": "FOI Response",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.14",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "9a53f10eac7748a2b4a9d88da75f8814",
+        "displayName": "Relationship Assertion",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.40",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "a1a6a8eeb4d54fa9ac184198a506d318",
+        "displayName": "Authorisation — Governance",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.2",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "a687efed1f7e456bba53e356b157f0d8",
+        "displayName": "Work Progress",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.69",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "a6e2525ea3294ee3ab9a4ec3dd4dfe9f",
+        "displayName": "Clinical Information Supply",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.10",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "a950de4051d04cfa8bb180f8193f7495",
+        "displayName": "Work Outcome",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.68",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "abb4947b64944790b20fd52524f0babc",
+        "displayName": "Coordination Outcome",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.12",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "b2624626d06044fb9767a96045cd0302",
+        "displayName": "Information Access",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.22",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "b2c573b855ad4c7abc4f02b2ae484a65",
+        "displayName": "Policy Direction",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.37",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "b30441d9b44a4bc29771e8f6e94f6b5a",
+        "displayName": "Relationship Query",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.42",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "b7ea2864b6c044c1a9b7763ee6428d7c",
+        "displayName": "Service Referral",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.55",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "baf4be48ac11472aa130c71e6474d9a4",
+        "displayName": "Regulatory Direction",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.39",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "be3915edc56d4020969b7e1f4837f112",
+        "displayName": "Service Request",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.56",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "c00bba65740947fea75542c13563553c",
+        "displayName": "Service Coordination",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.53",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "c15051a06c1a46b1acb75d18a5e728dd",
+        "displayName": "ServiceCatalogue Update",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.60",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "c5611769a52d44aebeef55bd48e1f433",
+        "displayName": "Work Assignment",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.67",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "c71453e1b0ff46a7b91e27a1745d842b",
+        "displayName": "Relationship Verification",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.44",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "cdb5d645d3984eaa8ad5e56a81023c59",
+        "displayName": "Operational Coordination",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.31",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "ce1901f036364b7291451bfbd4f25c00",
+        "displayName": "Participation Withdrawal",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.36",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "d119aa62e95f4d7aa01822401ca4203c",
+        "displayName": "Identity Query",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.17",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "d2153d1057d740fea1665d71ff66dd1c",
+        "displayName": "Clinical Event Notification",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.5",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "d3186ad3c8a74e92a80cb4c1f8f32fb6",
+        "displayName": "Information Submission",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.29",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "d40c5ee0dbaa450dab073103f25ded6d",
+        "displayName": "Operational Coordination Outcome",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.32",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "d4fb961b6148436686632668c98a6139",
+        "displayName": "Reassignment",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.38",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "d6c56d2bb1274fc68cb0ed6c3b8a84b9",
+        "displayName": "ServiceCatalogue Request",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.59",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "db44999c87d545618969319d3f63725a",
+        "displayName": "ServiceEligibility Assessment Report",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.61",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "dbb4668e39994da6bd7ec0251210d4bc",
+        "displayName": "ServiceOffering Selection",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.64",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "dd80af764f88480ea8b8b5898bb15ce7",
+        "displayName": "Service Assurance Request",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.51",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "e52b7159e28441769fcf3214cc6be6a6",
+        "displayName": "Service Outcome",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.54",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "e536ab3a1bbe4a36a99635458ba208f6",
+        "displayName": "Relationship Termination",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.43",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "f451d56104944498909549ab7f864003",
+        "displayName": "Relationship Establishment",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.41",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "f4dc8ed1c034473784a5c8ec4227c7d6",
+        "displayName": "Sanction",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.49",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      },
+      {
+        "canonicalId": "f54492b30639431e80cd0723217d6be8",
+        "displayName": "Clinical Collaboration",
+        "archimateType": "BusinessInteraction",
+        "afterNumber": "III.5.4",
+        "classificationIssue": "Native BusinessInteraction definition is determinate, but no governed capability context is represented for this interaction. No Application Interaction, integration flow or capability allocation is inferred."
+      }
+    ],
+    "Application": [],
+    "Technology": [],
+    "Implementation & Migration": []
+  },
+  "treatment": "Context classification remains for Solution Architect review. No semantic/native-type resolution or change of standing is asserted."
+}

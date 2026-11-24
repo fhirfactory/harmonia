@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "elements": 1994,
+  "relationships": 2235,
+  "qualifiedSourcePredicates": 462,
+  "canonicalIdentities": 1994,
+  "representationIdentities": 1994,
+  "provenanceCoverage": 1994,
+  "sourceBindings": 3850,
+  "supportedNativeTypes": 60,
+  "navigation": "PASS",
+  "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance",
+  "containment": "PASS",
+  "offlineXsd": "PASS",
+  "exchangeReferences": "PASS",
+  "outputSha256": "8c54e0dbd0b86c8780d063caf0aa2650a24a41cf0e693fccb2c0e2c5609c4688",
+  "publicationAllocatedIdentities": 0,
+  "unresolvedPropertyCount": 673,
+  "pinChanges": {
+    "canonical": [],
+    "protectedEvidence": [],
+    "protectedPublication": []
+  },
+  "exactAcceptedCandidateReproduction": true,
+  "candidateSha256": "8c54e0dbd0b86c8780d063caf0aa2650a24a41cf0e693fccb2c0e2c5609c4688",
+  "canonicalFullValidationResultSha256": "237b84ebef98ec479408711a69c96afaf79cd6eba66b4647d211eb9e76820988",
+  "closureArchitectureMutations": 0,
+  "releaseAuthority": {
+    "version": "1.1.18",
+    "previous_version": "1.1.17"
+  },
+  "projectorActualArchiTransport": "NOT_PERFORMED",
+  "actualArchiImportExport": "PERFORMED; exit 0; see archi-execution.log and separate raw/classified comparison"
+}

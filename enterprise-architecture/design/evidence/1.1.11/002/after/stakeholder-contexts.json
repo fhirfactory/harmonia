@@ -1,0 +1,36 @@
+{
+  "associations": [
+    [
+      "782f53e2190f4a8a8d0dc0a33cd6fbb3",
+      "2018200a493d458096b72031cc2ae779",
+      "id-78a34270ced656e7901d367bfd405999"
+    ],
+    [
+      "499313a0a5d84520a3061120ae9b6dac",
+      "5f6d333e94634420b8a8bbf8b9cb6e2a",
+      "id-daee593684c55e55bf1ce04c223cf585"
+    ],
+    [
+      "babb9f5d63d8435890c1db3579ec78d9",
+      "55e57c01dfe146a2a225228b31196862",
+      "id-d5fa8c64975852f88132df579c806836"
+    ],
+    [
+      "babb9f5d63d8435890c1db3579ec78d9",
+      "6f5a203d81e24a81b384a80781987daa",
+      "id-457a3dd70bb358ff8989bc3c9c725c70"
+    ]
+  ],
+  "indexCanonicalIds": [
+    "1c8e2c898a28436693cf2ae69776e125",
+    "2018200a493d458096b72031cc2ae779",
+    "31a8e1054c02483a9d5e314a91a91364",
+    "37264af5adb64b37b7537e3d48b6747b",
+    "55e57c01dfe146a2a225228b31196862",
+    "5f6d333e94634420b8a8bbf8b9cb6e2a",
+    "6f5a203d81e24a81b384a80781987daa",
+    "c20aa17ce4aa4a58be5eb3cff2ecdd1d",
+    "e76216c494fa4500bb80eda6f83513c1",
+    "ea5a315450ce4cfb87417263560c2b6d"
+  ]
+}

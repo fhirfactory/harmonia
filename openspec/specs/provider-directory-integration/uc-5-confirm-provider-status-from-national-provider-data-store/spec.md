@@ -1,8 +1,19 @@
 # Confirm Provider Status from National Provider Data Store
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/97d1d0ff44db46879cf57ff55caee9d6.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 Enable the Provider Directory to verify a provider's current status against an authoritative national source. This supports the target-state objective that uc-5 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider status used by the Provider Directory is supported by current authoritative evidence.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ Enable the Provider Directory to verify a provider's current status against an a
 - **Source Scope:** Additional Source Use Cases and System Requirements
 - **Primary Actor:** National Provider Data Store
 - **Supporting Actors:** Compliance Officer; Provider Directory; Integration Service; Data Steward
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/b84675324c7b427daa60f328078db37a.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As the Provider Directory, I need to verify a provider's current status against an authoritative national source, so that provider status used by the Provider Directory is supported by current authoritative evidence.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-30 – Match Provider Records: supports reliable identity matching where provider information is received or reconciled.; UC-Integration-ProviderDirectory-32 – Validate Provider Data Quality: supports validation and data-quality controls.; UC-Integration-ProviderDirectory-34 – Audit Provider Information Exchange: supports traceability and audit of information exchange.; UC-Integration-ProviderDirectory-35 – Monitor Provider Integration Interfaces: supports operational monitoring of automated interfaces.; UC-Integration-ProviderDirectory-36 – Reconcile Provider Synchronisation Failures: supports remediation of failed or ambiguous synchronisation.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/97d1d0ff44db46879cf57ff55caee9d6.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Confirm Provider Status from National Provider Da
 Harmonia SHALL support **Confirm Provider Status from National Provider Data Store** so that Enable the Provider Directory to verify a provider's current status against an authoritative national source. This supports the target-state objective that uc-5 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that provider status used by the Provider Directory is supported by current authoritative evidence.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Confirm Provider Status from National Provider Data Store - successful outcome
 - **GIVEN** The actor is appropriately authenticated and authorised to perform the activity.

@@ -1,0 +1,38 @@
+{
+  "status": "PUSH_HANDOFF_PENDING",
+  "branch": "Mneme-and-Mnemosyne-Build",
+  "remote": "origin",
+  "release": "1.1.24",
+  "previousRelease": "1.1.23",
+  "baselineCommit": "8204fd49a4d380c068a03acdf30c17bb06e5d953",
+  "releaseCommit": "88fc1a4208a61a93dfe513c0a3c9bd0ec6d495da",
+  "releaseCommitSubject": "Publish accepted Mneme interaction and cache architecture as RAD 1.1.24",
+  "workingTreeCleanAtReleaseCommit": true,
+  "remoteBranchObservedAtEntry": "8204fd49a4d380c068a03acdf30c17bb06e5d953",
+  "entryRemoteVerification": "Actual git ls-remote; unrestricted-network execution after sandbox DNS failure; matched entry local HEAD",
+  "pushAttempt": {
+    "command": "GIT_TERMINAL_PROMPT=0 timeout --signal=TERM --kill-after=5s 240s git push origin HEAD:refs/heads/Mneme-and-Mnemosyne-Build",
+    "exitCode": 128,
+    "result": "Authentication failure; no remote ref update by this command",
+    "diagnostic": "fatal: could not read Username for 'https://github.com': terminal prompts disabled",
+    "automaticApprovalRejected": false
+  },
+  "authenticationChecks": {
+    "credentialHelperConfigured": false,
+    "ghCliAvailable": false,
+    "githubEnvironmentTokenPresent": false,
+    "askpassConfigured": false,
+    "sshAgentHasIdentities": false,
+    "defaultSshIdentityPresent": false
+  },
+  "userHandoff": {
+    "instruction": "I\u2019ll push locally",
+    "instructionEntryAt": "2026-11-14T09:47:25.265Z",
+    "source": "before/release-closure/push-handoff.md",
+    "scope": "User performs terminal push; agent completes local provenance receipt and verifies after actual push"
+  },
+  "strictTransport": "FAIL accepted with exact CR-001 qualification",
+  "taskTime": "Original ADD Task time/prefix UNRESOLVED, explicitly accepted DR-5",
+  "pushVerified": false,
+  "limits": "Accepted architecture, publications and completed HCRL are locally committed. Overall release closure remains incomplete until the release and provenance receipt commits are pushed and remote equality/root release/clean working tree are verified. No remote success or self-referential receipt-commit SHA is asserted."
+}

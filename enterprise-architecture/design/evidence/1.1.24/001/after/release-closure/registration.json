@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETE",
+  "hcrl": "1.1.24/001",
+  "release": {
+    "version": "1.1.24",
+    "previous_version": "1.1.23"
+  },
+  "acceptanceTask": "20261114T093810Z-final-acceptance-and-release-closure.md",
+  "taskIssuedAt": "2026-11-14T09:38:10.697Z",
+  "completedRegister": {
+    "path": "enterprise-architecture/design/register/1.1.24/hcrl-1.1.24-001.complete.md",
+    "sha256": "4e8cb609cf581f9a649550d825ff0db1a61a18b65f6cd260d929570a6fed8832"
+  },
+  "retainedReview": {
+    "path": "enterprise-architecture/design/review/1.1.24/hcrl-1.1.24-001.pending.md",
+    "sha256": "2618e69550a47d0974c079b560db5ebc672624a188f16b6375e2de272ec90d7b"
+  },
+  "strictTransport": "FAIL accepted with candidate-specific qualification",
+  "temporalProvenance": "Original ADD Task time/prefix UNRESOLVED, explicitly accepted DR-5",
+  "iterationAdvanced": false,
+  "gitTransition": "Authorised, pending actual commit/push/remote/clean-tree verification"
+}

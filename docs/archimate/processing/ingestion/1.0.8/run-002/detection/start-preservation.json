@@ -1,0 +1,11 @@
+{
+  "git_head": "b8defdb45f3ed50ce1c5f867fd65f88eb7cc3695",
+  "files": {
+    "architecture-release.json": "98e9862d8b67890564e8cfed9e0e954dfa8dbde2b924f5ed567a0fb5772a7996",
+    "docs/markdown/governance/baseline/architecture.json": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+    "docs/markdown/governance/baseline/motivation.json": "a6278adf4979b88d43e664a72833b96d3632dfb7f87d40e0e0a4b60833f1d56f",
+    "docs/archimate/exchange/ingest/1.0.8/HarmoniaArchitecture-1.0.8.xml": "366bbcf305575b831ea7e8e72e1c2b19f9631518fda8f297a4f7c51a959a5556",
+    "docs/archimate/exchange/ingest/1.0.8/HarmoniaArchictecture-1.0.8.archimate": "f6d8c13f31c2a6620f790f758afc627276ff638bc25e85822e626110cf36b632",
+    "docs/archimate/exchange/publish/1.0.8/Harmonia-Architecture-1.0.8.xml": "504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a"
+  }
+}

@@ -1,0 +1,3 @@
+# Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+# Completed task evidence is intentionally retained despite the root log rule.
+!*.log

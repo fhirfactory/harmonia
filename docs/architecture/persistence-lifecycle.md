@@ -25,7 +25,7 @@ graph TD
 | :--- | :--- | :--- | :--- | :--- |
 | **Tier 1: Messaging Journal** | Apache ActiveMQ Artemis 2.33.0 | Persistent file journal (`./data/journal`) on dedicated PVC | Transient in-flight transport durability for Petasos queues | Deleted upon consumer ACK or DLQ move |
 | **Tier 2: In-Memory Data Grid** | Infinispan 15.0.3 (`mneme-cluster`) | Memory / JGroups replicated cache with NonBlockingStore SPI | High-speed cache for active FHIR resources, task states & sequences | In-memory with write-behind persistence |
-| **Tier 3: Relational Persistence** | PostgreSQL 16 & Spring Boot JPA | Relational tables (`hie_fhir_resources`, `hie_operations_resources`) on dedicated PVC | Authoritative clinical records, workflow task histories, and audit logs | Permanent clinical repository (Full retention) |
+| **Tier 3: Relational Persistence** | PostgreSQL 16 & Spring Boot JPA | Relational tables (`hie_fhir_resources`, `hie_operations_resources`) on dedicated PVC | Authoritative clinical records, workflow task histories, and audit logs | Permanent clinical repository (Full retention; physical DELETE not supported per ADR-020) |
 | **Tier 4: Synthetic Simulation** | Paradeigma In-Memory / Fixtures | Deterministic scenario generator models | Simulated personas, synthetic clinical encounters, test data | Ephemeral / Test execution only |
 
 ---
@@ -105,3 +105,9 @@ CREATE TABLE hie_operations_resources (
 
 CREATE INDEX idx_ops_res_lookup ON hie_operations_resources (resource_type, resource_id);
 ```
+
+### 4.3 Governed Information Lifecycle Principles (ADR-020)
+
+- **No Physical Governed Deletion**: Governed persisted information in `hie_fhir_resources` is never physically deleted. Logical retirement is a domain-appropriate lifecycle transition executed as an authoritative `UPDATE`.
+- **Infrastructure Message Compaction**: Deletion of messages from the Tier 1 Artemis file journal upon consumer acknowledgment represents transport queue compaction, distinct from governed application data persistence.
+- **Archival and Disposal Out of Scope**: Long-term cold-storage archival and physical retention purging are outside the scope of the current Harmonia framework.

@@ -1,0 +1,49 @@
+{
+  "outcome": "PASS_WITH_RECORDED_DEFERRALS_AND_TRANSPORT_QUALIFICATIONS",
+  "release": {
+    "version": "1.1.17",
+    "previous_version": "1.1.16"
+  },
+  "hcrls": [
+    {
+      "path": "enterprise-architecture/design/register/1.1.17/hcrl-1.1.17-002.complete.md",
+      "links": "PASS"
+    },
+    {
+      "path": "enterprise-architecture/design/register/1.1.17/hcrl-1.1.17-001.complete.md",
+      "links": "PASS"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.17/002/after/ai-agent-reports/20261101T001827Z-acceptance-and-release-closure-checkpoint.md",
+      "links": "PASS"
+    }
+  ],
+  "changedClosureEntryFiles": [
+    "enterprise-architecture/README.md",
+    "enterprise-architecture/design/archimate/README.md",
+    "enterprise-architecture/design/review/1.1.17/hcrl-1.1.17-001.pending.md",
+    "enterprise-architecture/design/review/1.1.17/hcrl-1.1.17-002.pending.md",
+    "enterprise-architecture/documentation/continuum-manifest/README.md",
+    "enterprise-architecture/documentation/continuum-rad/README.md"
+  ],
+  "allOtherClosureEntryFilesUnchanged": true,
+  "originalExecutionEvidenceUnchanged": true,
+  "humanDisposition": "ArchiMate and both iteration results accepted; both reader-facing scopes expressly deferred",
+  "readerReviewPerformed": false,
+  "unadjudicatedReviewObligations": [],
+  "deferredObligations": [
+    "Iteration 001 NFR subject hierarchy, allocations, native-layer separation and qualified reused contributions",
+    "Iteration 002 reader-facing navigation and XML-folder correspondence changes"
+  ],
+  "retainedQualifications": [
+    "Raw Archi folder identifier/reference label omissions, anonymous ordering and XML language differences",
+    "117 unresolved new formal names, source-defined open parameters and qualified historical contributions",
+    "No PDF compilation claimed"
+  ],
+  "publicationSha256": "b3c1bd71497497eb64e39e754dc69443d8012c762ffa00b9221116f12f3578a1",
+  "retainedRegressionResults": {
+    "toolingTests": 85,
+    "javaArchitectureTests": 90,
+    "isolatedDerivedArtifacts": 20
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "command": "timeout --signal=TERM --kill-after=5s 120s python3 -B docs/archimate/framework/tools/verify_baseline_outputs.py",
+  "exit_code": 0,
+  "generated_outputs": 14,
+  "files_sha256": {
+    "docs/archimate/exchange/publish/1.0.14/Harmonia-Architecture-1.0.14.xml": "8be6fd16e617d96f7054572dbf896b2384647f16cc0c11b3039137610b9712be",
+    "docs/markdown/governance/baseline/business-capabilities.md": "2138e8c9e2dbe51c24efc486818c1ffda31f788e4aa4a1a33bd0133eb8bde144",
+    "docs/markdown/governance/baseline/business-enabling-capabilities.md": "6fd534ce5e80a2833e59c09b0d626f2437f0cc618d139b6bf068cc83ad3965a1",
+    "docs/markdown/governance/baseline/features.md": "5b04105715110d0d533fc62fd91b4e01d95925ffc0e72cce18644faa69f48dfa",
+    "docs/markdown/governance/baseline/functions.md": "050d9e43504357ff9f16c8c59ceca8014bd91f8e5037a5d9cac30982c219353e",
+    "docs/markdown/governance/baseline/services.md": "456c1415c7774896510084bc74bd8ee43ca3aed0b0fa2f8c0abc192a38e4fb59",
+    "docs/markdown/governance/baseline/processes.md": "9c00a738fb7cf2ff9258c45744b7609342f84e1954d928afd6d58aca45677bef",
+    "docs/markdown/governance/baseline/enterprise-capabilities.md": "3dc4c8bb2635a93f309833c553e233b21e839352a39236efa4988c604c65330d",
+    "docs/markdown/governance/baseline/relationships.md": "c855f307f742c05c268f0f8e233c5b51f09702382b5aa6cce4d2ed58e53706ac",
+    "docs/markdown/governance/baseline/motivation.md": "32ea35fa97479685147271535405a972f6d78b3cddf2b6ea012e0f28aa87fa76",
+    "docs/markdown/governance/baseline/discrepancies.json": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa",
+    "docs/archimate/processing/publishing/1.0.14/publication-validation-1.0.14.json": "6a35b98c4d3faf13f4e6bf30404d1177a129f0de2a7814649683df50405c4645",
+    "docs/archimate/processing/publishing/1.0.14/home-normalisation.md": "ebb05cbc28787fa7f77a310bb0fdb79bde7964192161ca1b980e7c5aa3034340",
+    "docs/archimate/processing/publishing/1.0.14/archi-inspection-guide.md": "3b6000344e9d4994278f6782d5df0633a6654ec523a9f74ef51df0bf82ad2af7"
+  },
+  "release_unchanged": true,
+  "local_link_targets_checked": 181,
+  "missing_local_link_targets": []
+}

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "comparison_status": "EQUIVALENT",
+  "classifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 0,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 0,
+    "SEMANTIC DIFFERENCE": 0,
+    "UNEXPLAINED DIFFERENCE": 0
+  }
+}

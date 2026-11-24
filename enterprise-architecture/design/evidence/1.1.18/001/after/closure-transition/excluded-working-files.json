@@ -1,0 +1,18 @@
+{
+  "purpose": "Verify untouched excluded local publication edit/by-products and original authored workbench files; these are not staged by closure",
+  "files": {
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.18/parts/motivation.tex": "a96fbe72ab45ad62efd5b4e66f88c46e45e7c3d927dd1402204228721a629e8d",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-OpenSpec-Expanded-Subject-Capability-Mapping.md": "b6f59ce36ad4b7719fd0e954e4c4b0e86a874fe5cab2459c1804019e43944094",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Motivation-View-Reconciliation-1.1.18-001-003.csv": "17212965ae2c798179a2c60f75d15e0e58617fe9534a42e1a540ea045f0615ff",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Enterprise-Continuum-1.1.18-001-001.xml": "851a1e523f5a55778e27711834868deda8146d31ad1bcfeaf2965caad3d0d06c",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Motivation-View-Reconciliation-1.1.18-001-002.csv": "2d7da8f3d1bbc5b1bb78510a847faae8aaa0d1eec6af14e7bf7b1f0742834bdb",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Motivation-View-Reconciliation-1.1.18-001-002.md": "c16206d4fd080241de2ed897636635041bca91ddd511ceb6369621fb2bd73ffa",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Enterprise-Continuum-1.1.18-001-003.xml": "1b2532b20a6c62ea10ab2d5f70543ec10e17387259d29d36e9de457812333e2f",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Continuum-1.1.18-001.archimate": "bc1d1f53cfe956663ee726d969ba8bb412d816257a2ad0727c55c1110b0bea05",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Motivation-View-Reconciliation-1.1.18-001-003.md": "77e36ab548dc64dc4e776cf13e1b530a3d2307a77abdca0126e16fad9b13d7bf",
+    "enterprise-architecture/design/archimate/working/1.1.18/Harmonia-Enterprise-Continuum-1.1.18-001-002.xml": "8b425547a430399e0aebafb4fea6f8659654ff40e44cdfd04e996e95de196a83",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.18/continuum-rad.aux": "561c0c9dc9bfba5a8dcf01e5c255322e62acc6ea66e61c65c6cfc67e27ccb355",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.18/continuum-rad.idx": "b1e688a587a8251b535a9fa5c61c38505b1fd3b2fed2fdcf2ba36185a5c6deab",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.18/continuum-rad.pdf": "18a2dd084e8b3869458be0933451a600f19ea238b3fbbe0c77943af13a36a294"
+  }
+}

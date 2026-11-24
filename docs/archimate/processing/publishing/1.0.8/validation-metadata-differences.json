@@ -1,0 +1,20 @@
+{
+  "classification": "release metadata only",
+  "differences": [
+    {
+      "path": "/architecture_release/version",
+      "before": "1.0.7",
+      "after": "1.0.8"
+    },
+    {
+      "path": "/architecture_release/previous_version",
+      "before": "1.0.6",
+      "after": "1.0.7"
+    },
+    {
+      "path": "/output_sha256",
+      "before": "def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb",
+      "after": "504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a"
+    }
+  ]
+}

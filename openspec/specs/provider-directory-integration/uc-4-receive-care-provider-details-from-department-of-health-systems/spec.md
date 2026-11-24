@@ -1,8 +1,19 @@
 # Receive Care Provider Details from Department of Health Systems
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/0abd34d6d86f4488b51537da20927eb4.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 Enable the Provider Directory to receive provider information from internal Department of Health systems. This supports the target-state objective that uc-4 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the directory of internal providers is kept current using controlled system integration.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ Enable the Provider Directory to receive provider information from internal Depa
 - **Source Scope:** Additional Source Use Cases and System Requirements
 - **Primary Actor:** Department of Health Source System
 - **Supporting Actors:** Integration Administrator; Provider Directory; Provider Identity / Matching Service
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/e982ab89dee34e7b92b68b876c81b4d9.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As the Provider Directory, I need to receive provider information from internal Department of Health systems, so that the directory of internal providers is kept current using controlled system integration.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-30 – Match Provider Records: supports reliable identity matching where provider information is received or reconciled.; UC-Integration-ProviderDirectory-32 – Validate Provider Data Quality: supports validation and data-quality controls.; UC-Integration-ProviderDirectory-34 – Audit Provider Information Exchange: supports traceability and audit of information exchange.; UC-Integration-ProviderDirectory-35 – Monitor Provider Integration Interfaces: supports operational monitoring of automated interfaces.; UC-Integration-ProviderDirectory-36 – Reconcile Provider Synchronisation Failures: supports remediation of failed or ambiguous synchronisation.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/0abd34d6d86f4488b51537da20927eb4.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Receive Care Provider Details from Department of
 Harmonia SHALL support **Receive Care Provider Details from Department of Health Systems** so that Enable the Provider Directory to receive provider information from internal Department of Health systems. This supports the target-state objective that uc-4 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that the directory of internal providers is kept current using controlled system integration.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Receive Care Provider Details from Department of Health Systems - successful outcome
 - **GIVEN** The actor is appropriately authenticated and authorised to perform the activity.

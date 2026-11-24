@@ -1,0 +1,128 @@
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -655,7 +655,6 @@
+     3.  No production class may include simulation flags
+         (e.g. `paradeigmaMode`, `simulationMode`, `syntheticRequest`,
+         `isParadeigmaGenerated`).
+-    4.  Verified continuously by `ParadeigmaIsolationArchitectureTest`.
+ 
+ ### Invariant 2: Petasos API Abstraction & Encapsulation
+ 
+@@ -668,7 +667,6 @@
+     2.  Message payloads in Petasos are treated as opaque binary/text
+         streams (`byte[]` / `String`). Petasos never parses HL7 or FHIR
+         business content.
+-    3.  Verified continuously by `PetasosApiIsolationArchitectureTest`.
+ 
+ ### Invariant 3: Iris Presentation Decoupling
+ 
+@@ -684,8 +682,6 @@
+         state machines, or referential integrity rules.
+     3.  Server-side Provider Registry governance is owned exclusively by
+         `mnemosyne-clinical`, `energeia-erga`, and `themis-core`.
+-    4.  Verified continuously by `IrisDecouplingArchitectureTest` and
+-        `ProviderRegistryArchitectureTest`.
+ 
+ ### Invariant 4: Ingress Dual-Write Safety (REC-001)
+ 
+@@ -798,30 +794,14 @@
+ 
+ ------------------------------------------------------------------------
+ 
+-## 4. Automated Architecture Test Suite
+-
+-All agents making modifications to the Harmonia repository must verify
+-changes against the ArchUnit architecture suite located in
+-`paradeigma/paradeigma-test/src/test/java/net/fhirfactory/harmonia/paradeigma/test/arch/`:
+-
+--   `ParadeigmaIsolationArchitectureTest`: Asserts zero production
+-    dependencies, imports, or simulation flags for Paradeigma across all
+-    modules (including `agora`).
+--   `AgoraIsolationArchitectureTest`: Asserts Ponos decoupling, Matrix
+-    DTO encapsulation, and Paradeigma isolation for Agora.
+--   `PetasosApiIsolationArchitectureTest`: Asserts zero JMS or ActiveMQ
+-    Artemis API leakage into `petasos-api`.
+--   `IrisDecouplingArchitectureTest`: Asserts zero direct JPA,
+-    Hibernate, or PostgreSQL database dependencies in Iris.
+--   `ProviderRegistryArchitectureTest`: Asserts `iris-administration`
+-    separation from server-side Provider Registry governance.
+--   `PackageLayeringArchitectureTest`: Asserts strict unidirectional
+-    dependency layering across all subproject packages.
+--   `SecurityEnforcementArchitectureTest`: Asserts Themis policy
+-    contracts and security context structures.
+--   `PylaiPublicationBoundaryArchitectureTest`: Asserts Pylai external
+-    publication encapsulation, non-destructive projection, and AX-13
+-    egress publication boundary rules.
++## 4. Architecture Verification
++
++Apply the [Architecture Review Praxis](enterprise-architecture/governance/architecture-review-praxis.md)
++and the applicable [Software Development Praxis](enterprise-architecture/governance/software-development-praxis.md).
++Use verification appropriate to the change and its governing contracts. Record
++missing required verification for Solution Architect disposition. Establish new
++structural tests through authorised backlog items.
++
+ -   Architecture and integration tests SHOULD enforce Mneme/Mnemosyne
+     separation and the Pylai external-publication boundary as concrete
+     testable consequences of AX-05 and AX-13. New test classes should be
+@@ -831,12 +811,6 @@
+ ------------------------------------------------------------------------
+ 
+ ## 5. Execution & Build Commands
+-
+--   **Run Architecture Tests**:
+-
+-    ``` bash
+-    mvn test -pl paradeigma/paradeigma-test -am -Dtest="*ArchitectureTest" -Dsurefire.failIfNoSpecifiedTests=false
+-    ```
+ 
+ -   **Run Agora Subsystem Tests**:
+ 
+--- a/enterprise-architecture/governance/README.md
++++ b/enterprise-architecture/governance/README.md
+@@ -83,7 +83,6 @@
+ ```bash
+ make -C enterprise-architecture/tooling all
+ make -C enterprise-architecture/tooling verify-independent
+-timeout --signal=TERM --kill-after=5s 240s mvn test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false
+ ```
+ 
+ Governance machinery, rules and context belong here. They do not acquire
+--- a/README.md
++++ b/README.md
+@@ -263,6 +263,10 @@
+ ```
+ 
+ ### Architecture Tests
++
++> Historical verification for the exploratory implementation at
++> `718fc278be5b89b6138d4341feddefce1269eaa6`. The foundation's current
++> verification is governed by the Architecture Review Praxis.
+ Verify that all architectural boundaries and module invariants are strictly maintained:
+ 
+ ```bash
+--- a/docs/getting-started/build.md
++++ b/docs/getting-started/build.md
+@@ -105,6 +105,10 @@
+ 
+ ## 4. Architecture Verification Tests `[IMPLEMENTED]`
+ 
++> Historical verification for the exploratory implementation at
++> `718fc278be5b89b6138d4341feddefce1269eaa6`. The foundation's current
++> verification is governed by the Architecture Review Praxis.
++
+ Harmonia uses ArchUnit to enforce architectural invariants across all modules at compile time.
+ 
+ To run the full architecture validation suite:
+--- a/docs/operations/verification-runbook.md
++++ b/docs/operations/verification-runbook.md
+@@ -5,6 +5,10 @@
+ ---
+ 
+ ## 1. Automated Architecture Guardrail Verification
++
++> Historical verification for the exploratory implementation at
++> `718fc278be5b89b6138d4341feddefce1269eaa6`. The foundation's current
++> verification is governed by the Architecture Review Praxis.
+ 
+ Execute the ArchUnit and static architectural enforcement rules:
+ 

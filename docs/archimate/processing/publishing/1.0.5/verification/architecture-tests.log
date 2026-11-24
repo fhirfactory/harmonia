@@ -1,0 +1,677 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Harmonia Platform Parent                                           [pom]
+[INFO] Harmonia :: Themis (Policy & Authorisation Subsystem)              [pom]
+[INFO] Harmonia :: Themis API (Contracts & Domain Model)                  [jar]
+[INFO] Harmonia :: Calliope (Canonical Model & Schema Library)            [jar]
+[INFO] Harmonia :: Themis Core (Policy Evaluator & Engine)                [jar]
+[INFO] Harmonia :: Hestia :: Data Services (Mnemosyne & Mneme)            [pom]
+[INFO] Harmonia :: Hestia :: Mnemosyne API (Authoritative Persistence Port & Models) [jar]
+[INFO] Harmonia :: Mnemosyne :: Clinical JPA Server (FHIR R5)             [jar]
+[INFO] Harmonia :: Mneme :: Persistence (Store SPI)                       [jar]
+[INFO] Harmonia :: Mneme :: Cluster (In-Memory Data Grid)                 [jar]
+[INFO] Harmonia :: Kleio (Audit & Provenance Subsystem)                   [pom]
+[INFO] Harmonia :: Kleio Core (Audit & Provenance Foundation)             [jar]
+[INFO] Harmonia :: Kleio (FHIR Mapper)                                    [jar]
+[INFO] Harmonia :: Kleio (Durable Persistence)                            [jar]
+[INFO] Harmonia :: Pylai (Interface / Gateway Services)                   [pom]
+[INFO] Harmonia :: Pylai :: MLLP Gateway Base                             [jar]
+[INFO] Harmonia :: Energeia (Workflow Services)                           [pom]
+[INFO] Harmonia :: Energeia :: Erga (Task Processing Activities)          [jar]
+[INFO] Harmonia :: Energeia :: Praxis (Task Sequence Definitions & Structure) [jar]
+[INFO] Harmonia :: Petasos (Messaging & Event Transport)                  [pom]
+[INFO] Harmonia :: Petasos :: API                                         [jar]
+[INFO] Harmonia :: Petasos :: Core                                        [jar]
+[INFO] Harmonia :: Pylai :: FHIR Provider Registry Gateway                [jar]
+[INFO] Harmonia :: Agora (Matrix & Synapse Collaboration Gateway)         [pom]
+[INFO] Harmonia :: Agora :: API                                           [jar]
+[INFO] Harmonia :: Agora :: Matrix                                        [jar]
+[INFO] Harmonia :: Agora :: Core                                          [jar]
+[INFO] Harmonia :: Agora :: Service                                       [jar]
+[INFO] Harmonia :: Paradeigma (HL7 v2 Reference Exemplar)                 [pom]
+[INFO] Harmonia :: Paradeigma :: Common                                   [jar]
+[INFO] Harmonia :: Paradeigma :: PAS Simulator                            [jar]
+[INFO] Harmonia :: Paradeigma :: EMR Simulator                            [jar]
+[INFO] Harmonia :: Paradeigma :: LMS Simulator                            [jar]
+[INFO] Harmonia :: Paradeigma :: RIS-PAC Simulator                        [jar]
+[INFO] Harmonia :: Paradeigma :: Scenario Engine                          [jar]
+[INFO] Harmonia :: Paradeigma :: Test Suite                               [jar]
+[INFO] 
+[INFO] --------------< net.fhirfactory.harmonia:harmonia-parent >--------------
+[INFO] Building Harmonia Platform Parent 1.0.0-SNAPSHOT                  [1/36]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] ------------------< net.fhirfactory.harmonia:themis >-------------------
+[INFO] Building Harmonia :: Themis (Policy & Authorisation Subsystem) 1.0.0-SNAPSHOT [2/36]
+[INFO]   from themis/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] ----------------< net.fhirfactory.harmonia:themis-api >-----------------
+[INFO] Building Harmonia :: Themis API (Contracts & Domain Model) 1.0.0-SNAPSHOT [3/36]
+[INFO]   from themis/themis-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ themis-api ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/themis/themis-api/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ themis-api ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ themis-api ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/themis/themis-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ themis-api ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ themis-api ---
+[INFO] 
+[INFO] -----------------< net.fhirfactory.harmonia:calliope >------------------
+[INFO] Building Harmonia :: Calliope (Canonical Model & Schema Library) 1.0.0-SNAPSHOT [4/36]
+[INFO]   from calliope/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ calliope ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/calliope/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ calliope ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ calliope ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ calliope ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ calliope ---
+[INFO] 
+[INFO] ----------------< net.fhirfactory.harmonia:themis-core >----------------
+[INFO] Building Harmonia :: Themis Core (Policy Evaluator & Engine) 1.0.0-SNAPSHOT [5/36]
+[INFO]   from themis/themis-core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ themis-core ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/themis/themis-core/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ themis-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ themis-core ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/themis/themis-core/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ themis-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ themis-core ---
+[INFO] 
+[INFO] ------------------< net.fhirfactory.harmonia:hestia >-------------------
+[INFO] Building Harmonia :: Hestia :: Data Services (Mnemosyne & Mneme) 1.0.0-SNAPSHOT [6/36]
+[INFO]   from hestia/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] ---------------< net.fhirfactory.harmonia:mnemosyne-api >---------------
+[INFO] Building Harmonia :: Hestia :: Mnemosyne API (Authoritative Persistence Port & Models) 1.0.0-SNAPSHOT [7/36]
+[INFO]   from hestia/mnemosyne-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ mnemosyne-api ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/hestia/mnemosyne-api/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ mnemosyne-api ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ mnemosyne-api ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/hestia/mnemosyne-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ mnemosyne-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ mnemosyne-api ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ------------< net.fhirfactory.harmonia:mnemosyne-clinical >-------------
+[INFO] Building Harmonia :: Mnemosyne :: Clinical JPA Server (FHIR R5) 1.0.0-SNAPSHOT [8/36]
+[INFO]   from hestia/mnemosyne-clinical/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ mnemosyne-clinical ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ mnemosyne-clinical ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ mnemosyne-clinical ---
+[INFO] Copying 33 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ mnemosyne-clinical ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ mnemosyne-clinical ---
+[INFO] 
+[INFO] -------------< net.fhirfactory.harmonia:mneme-persistence >-------------
+[INFO] Building Harmonia :: Mneme :: Persistence (Store SPI) 1.0.0-SNAPSHOT [9/36]
+[INFO]   from hestia/mneme-persistence/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ mneme-persistence ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/hestia/mneme-persistence/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ mneme-persistence ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ mneme-persistence ---
+[INFO] Copying 32 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ mneme-persistence ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ mneme-persistence ---
+[INFO] 
+[INFO] ---------------< net.fhirfactory.harmonia:mneme-cluster >---------------
+[INFO] Building Harmonia :: Mneme :: Cluster (In-Memory Data Grid) 1.0.0-SNAPSHOT [10/36]
+[INFO]   from hestia/mneme-cluster/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ mneme-cluster ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ mneme-cluster ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ mneme-cluster ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/hestia/mneme-cluster/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ mneme-cluster ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ mneme-cluster ---
+[INFO] 
+[INFO] -------------------< net.fhirfactory.harmonia:kleio >-------------------
+[INFO] Building Harmonia :: Kleio (Audit & Provenance Subsystem) 1.0.0-SNAPSHOT [11/36]
+[INFO]   from kleio/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] ----------------< net.fhirfactory.harmonia:kleio-core >-----------------
+[INFO] Building Harmonia :: Kleio Core (Audit & Provenance Foundation) 1.0.0-SNAPSHOT [12/36]
+[INFO]   from kleio/kleio-core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ kleio-core ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/kleio/kleio-core/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ kleio-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ kleio-core ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/kleio/kleio-core/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ kleio-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ kleio-core ---
+[INFO] 
+[INFO] ----------------< net.fhirfactory.harmonia:kleio-fhir >-----------------
+[INFO] Building Harmonia :: Kleio (FHIR Mapper) 1.0.0-SNAPSHOT          [13/36]
+[INFO]   from kleio/kleio-fhir/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ kleio-fhir ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/kleio/kleio-fhir/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ kleio-fhir ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ kleio-fhir ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/kleio/kleio-fhir/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ kleio-fhir ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ kleio-fhir ---
+[INFO] 
+[INFO] -------------< net.fhirfactory.harmonia:kleio-persistence >-------------
+[INFO] Building Harmonia :: Kleio (Durable Persistence) 1.0.0-SNAPSHOT  [14/36]
+[INFO]   from kleio/kleio-persistence/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ kleio-persistence ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ kleio-persistence ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ kleio-persistence ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ kleio-persistence ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ kleio-persistence ---
+[INFO] 
+[INFO] -------------------< net.fhirfactory.harmonia:pylai >-------------------
+[INFO] Building Harmonia :: Pylai (Interface / Gateway Services) 1.0.0-SNAPSHOT [15/36]
+[INFO]   from pylai/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --------------< net.fhirfactory.harmonia:pylai-mllp-base >--------------
+[INFO] Building Harmonia :: Pylai :: MLLP Gateway Base 1.0.0-SNAPSHOT   [16/36]
+[INFO]   from pylai/pylai-mllp-base/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pylai-mllp-base ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ pylai-mllp-base ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pylai-mllp-base ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/pylai/pylai-mllp-base/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ pylai-mllp-base ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ pylai-mllp-base ---
+[INFO] 
+[INFO] -----------------< net.fhirfactory.harmonia:energeia >------------------
+[INFO] Building Harmonia :: Energeia (Workflow Services) 1.0.0-SNAPSHOT [17/36]
+[INFO]   from energeia/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] -------------------< net.fhirfactory.harmonia:erga >--------------------
+[INFO] Building Harmonia :: Energeia :: Erga (Task Processing Activities) 1.0.0-SNAPSHOT [18/36]
+[INFO]   from energeia/erga/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ erga ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/energeia/erga/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ erga ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ erga ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/energeia/erga/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ erga ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ erga ---
+[INFO] 
+[INFO] ------------------< net.fhirfactory.harmonia:praxis >-------------------
+[INFO] Building Harmonia :: Energeia :: Praxis (Task Sequence Definitions & Structure) 1.0.0-SNAPSHOT [19/36]
+[INFO]   from energeia/praxis/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ praxis ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/energeia/praxis/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ praxis ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ praxis ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/energeia/praxis/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ praxis ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ praxis ---
+[INFO] 
+[INFO] ------------------< net.fhirfactory.harmonia:petasos >------------------
+[INFO] Building Harmonia :: Petasos (Messaging & Event Transport) 1.0.0-SNAPSHOT [20/36]
+[INFO]   from petasos/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] ----------------< net.fhirfactory.harmonia:petasos-api >----------------
+[INFO] Building Harmonia :: Petasos :: API 1.0.0-SNAPSHOT               [21/36]
+[INFO]   from petasos/petasos-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ petasos-api ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/petasos/petasos-api/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ petasos-api ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ petasos-api ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/petasos/petasos-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ petasos-api ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ petasos-api ---
+[INFO] 
+[INFO] ---------------< net.fhirfactory.harmonia:petasos-core >----------------
+[INFO] Building Harmonia :: Petasos :: Core 1.0.0-SNAPSHOT              [22/36]
+[INFO]   from petasos/petasos-core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ petasos-core ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/petasos/petasos-core/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ petasos-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ petasos-core ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/petasos/petasos-core/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ petasos-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ petasos-core ---
+[INFO] 
+[INFO] ------------< net.fhirfactory.harmonia:pylai-fhir-registry >------------
+[INFO] Building Harmonia :: Pylai :: FHIR Provider Registry Gateway 1.0.0-SNAPSHOT [23/36]
+[INFO]   from pylai/pylai-fhir-registry/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pylai-fhir-registry ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/pylai/pylai-fhir-registry/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ pylai-fhir-registry ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pylai-fhir-registry ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/pylai/pylai-fhir-registry/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ pylai-fhir-registry ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ pylai-fhir-registry ---
+[INFO] 
+[INFO] -------------------< net.fhirfactory.harmonia:agora >-------------------
+[INFO] Building Harmonia :: Agora (Matrix & Synapse Collaboration Gateway) 1.0.0-SNAPSHOT [24/36]
+[INFO]   from agora/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] -----------------< net.fhirfactory.harmonia:agora-api >-----------------
+[INFO] Building Harmonia :: Agora :: API 1.0.0-SNAPSHOT                 [25/36]
+[INFO]   from agora/agora-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ agora-api ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/agora/agora-api/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ agora-api ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ agora-api ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/agora/agora-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ agora-api ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ agora-api ---
+[INFO] 
+[INFO] ---------------< net.fhirfactory.harmonia:agora-matrix >----------------
+[INFO] Building Harmonia :: Agora :: Matrix 1.0.0-SNAPSHOT              [26/36]
+[INFO]   from agora/agora-matrix/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ agora-matrix ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/agora/agora-matrix/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ agora-matrix ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ agora-matrix ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/agora/agora-matrix/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ agora-matrix ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ agora-matrix ---
+[INFO] 
+[INFO] ----------------< net.fhirfactory.harmonia:agora-core >-----------------
+[INFO] Building Harmonia :: Agora :: Core 1.0.0-SNAPSHOT                [27/36]
+[INFO]   from agora/agora-core/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ agora-core ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/agora/agora-core/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ agora-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ agora-core ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ agora-core ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ agora-core ---
+[INFO] 
+[INFO] ---------------< net.fhirfactory.harmonia:agora-service >---------------
+[INFO] Building Harmonia :: Agora :: Service 1.0.0-SNAPSHOT             [28/36]
+[INFO]   from agora/agora-service/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ agora-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ agora-service ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ agora-service ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ agora-service ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ agora-service ---
+[INFO] 
+[INFO] ----------------< net.fhirfactory.harmonia:paradeigma >-----------------
+[INFO] Building Harmonia :: Paradeigma (HL7 v2 Reference Exemplar) 1.0.0-SNAPSHOT [29/36]
+[INFO]   from paradeigma/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] -------------< net.fhirfactory.harmonia:paradeigma-common >-------------
+[INFO] Building Harmonia :: Paradeigma :: Common 1.0.0-SNAPSHOT         [30/36]
+[INFO]   from paradeigma/paradeigma-common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ paradeigma-common ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/paradeigma/paradeigma-common/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ paradeigma-common ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ paradeigma-common ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/paradeigma/paradeigma-common/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ paradeigma-common ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ paradeigma-common ---
+[INFO] 
+[INFO] --------------< net.fhirfactory.harmonia:paradeigma-pas >---------------
+[INFO] Building Harmonia :: Paradeigma :: PAS Simulator 1.0.0-SNAPSHOT  [31/36]
+[INFO]   from paradeigma/paradeigma-pas/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ paradeigma-pas ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ paradeigma-pas ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ paradeigma-pas ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/paradeigma/paradeigma-pas/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ paradeigma-pas ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ paradeigma-pas ---
+[INFO] 
+[INFO] --------------< net.fhirfactory.harmonia:paradeigma-emr >---------------
+[INFO] Building Harmonia :: Paradeigma :: EMR Simulator 1.0.0-SNAPSHOT  [32/36]
+[INFO]   from paradeigma/paradeigma-emr/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ paradeigma-emr ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ paradeigma-emr ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ paradeigma-emr ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/paradeigma/paradeigma-emr/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ paradeigma-emr ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ paradeigma-emr ---
+[INFO] 
+[INFO] --------------< net.fhirfactory.harmonia:paradeigma-lms >---------------
+[INFO] Building Harmonia :: Paradeigma :: LMS Simulator 1.0.0-SNAPSHOT  [33/36]
+[INFO]   from paradeigma/paradeigma-lms/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ paradeigma-lms ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ paradeigma-lms ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ paradeigma-lms ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/paradeigma/paradeigma-lms/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ paradeigma-lms ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ paradeigma-lms ---
+[INFO] 
+[INFO] -------------< net.fhirfactory.harmonia:paradeigma-rispac >-------------
+[INFO] Building Harmonia :: Paradeigma :: RIS-PAC Simulator 1.0.0-SNAPSHOT [34/36]
+[INFO]   from paradeigma/paradeigma-rispac/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ paradeigma-rispac ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ paradeigma-rispac ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ paradeigma-rispac ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/paradeigma/paradeigma-rispac/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ paradeigma-rispac ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ paradeigma-rispac ---
+[INFO] 
+[INFO] -----------< net.fhirfactory.harmonia:paradeigma-scenarios >------------
+[INFO] Building Harmonia :: Paradeigma :: Scenario Engine 1.0.0-SNAPSHOT [35/36]
+[INFO]   from paradeigma/paradeigma-scenarios/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ paradeigma-scenarios ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ paradeigma-scenarios ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ paradeigma-scenarios ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/paradeigma/paradeigma-scenarios/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ paradeigma-scenarios ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ paradeigma-scenarios ---
+[INFO] 
+[INFO] --------------< net.fhirfactory.harmonia:paradeigma-test >--------------
+[INFO] Building Harmonia :: Paradeigma :: Test Suite 1.0.0-SNAPSHOT     [36/36]
+[INFO]   from paradeigma/paradeigma-test/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ paradeigma-test ---
+[INFO] skip non existing resourceDirectory /usr/vm/devel/code/projects/github/harmonia/paradeigma/paradeigma-test/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ paradeigma-test ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ paradeigma-test ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ paradeigma-test ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ paradeigma-test ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running net.fhirfactory.harmonia.paradeigma.test.arch.PylaiPublicationBoundaryArchitectureTest
+10:26:50.675 [main] INFO  c.tngtech.archunit.core.PluginLoader - Detected Java version 21.0.12.1
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.557 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.PylaiPublicationBoundaryArchitectureTest
+[INFO] Running net.fhirfactory.harmonia.paradeigma.test.arch.ProviderRegistryArchitectureTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.ProviderRegistryArchitectureTest
+[INFO] Running net.fhirfactory.harmonia.paradeigma.test.arch.SecurityEnforcementArchitectureTest
+[INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.049 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.SecurityEnforcementArchitectureTest
+[INFO] Running net.fhirfactory.harmonia.paradeigma.test.arch.PetasosApiIsolationArchitectureTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.PetasosApiIsolationArchitectureTest
+[INFO] Running net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteCompositionArchitectureTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.799 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteCompositionArchitectureTest
+[INFO] Running net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteContractArchitectureTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.713 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteContractArchitectureTest
+[INFO] Running net.fhirfactory.harmonia.paradeigma.test.arch.AgoraIsolationArchitectureTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.827 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.AgoraIsolationArchitectureTest
+[INFO] Running net.fhirfactory.harmonia.paradeigma.test.arch.ParadeigmaIsolationArchitectureTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.528 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.ParadeigmaIsolationArchitectureTest
+[INFO] Running net.fhirfactory.harmonia.paradeigma.test.arch.PackageLayeringArchitectureTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.640 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.PackageLayeringArchitectureTest
+[INFO] Running net.fhirfactory.harmonia.paradeigma.test.arch.IrisDecouplingArchitectureTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.368 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.IrisDecouplingArchitectureTest
+[INFO] Running net.fhirfactory.harmonia.paradeigma.test.arch.MnemosyneAuthoritativePersistenceArchitectureTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.764 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.MnemosyneAuthoritativePersistenceArchitectureTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 90, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Harmonia Platform Parent 1.0.0-SNAPSHOT:
+[INFO] 
+[INFO] Harmonia Platform Parent ........................... SUCCESS [  0.002 s]
+[INFO] Harmonia :: Themis (Policy & Authorisation Subsystem) SUCCESS [  0.000 s]
+[INFO] Harmonia :: Themis API (Contracts & Domain Model) .. SUCCESS [  0.540 s]
+[INFO] Harmonia :: Calliope (Canonical Model & Schema Library) SUCCESS [  0.170 s]
+[INFO] Harmonia :: Themis Core (Policy Evaluator & Engine)  SUCCESS [  0.051 s]
+[INFO] Harmonia :: Hestia :: Data Services (Mnemosyne & Mneme) SUCCESS [  0.001 s]
+[INFO] Harmonia :: Hestia :: Mnemosyne API (Authoritative Persistence Port & Models) SUCCESS [  0.036 s]
+[INFO] Harmonia :: Mnemosyne :: Clinical JPA Server (FHIR R5) SUCCESS [  0.571 s]
+[INFO] Harmonia :: Mneme :: Persistence (Store SPI) ....... SUCCESS [  0.066 s]
+[INFO] Harmonia :: Mneme :: Cluster (In-Memory Data Grid) . SUCCESS [  0.197 s]
+[INFO] Harmonia :: Kleio (Audit & Provenance Subsystem) ... SUCCESS [  0.000 s]
+[INFO] Harmonia :: Kleio Core (Audit & Provenance Foundation) SUCCESS [  0.021 s]
+[INFO] Harmonia :: Kleio (FHIR Mapper) .................... SUCCESS [  0.031 s]
+[INFO] Harmonia :: Kleio (Durable Persistence) ............ SUCCESS [  0.065 s]
+[INFO] Harmonia :: Pylai (Interface / Gateway Services) ... SUCCESS [  0.000 s]
+[INFO] Harmonia :: Pylai :: MLLP Gateway Base ............. SUCCESS [  0.080 s]
+[INFO] Harmonia :: Energeia (Workflow Services) ........... SUCCESS [  0.001 s]
+[INFO] Harmonia :: Energeia :: Erga (Task Processing Activities) SUCCESS [  0.211 s]
+[INFO] Harmonia :: Energeia :: Praxis (Task Sequence Definitions & Structure) SUCCESS [  0.088 s]
+[INFO] Harmonia :: Petasos (Messaging & Event Transport) .. SUCCESS [  0.000 s]
+[INFO] Harmonia :: Petasos :: API ......................... SUCCESS [  0.017 s]
+[INFO] Harmonia :: Petasos :: Core ........................ SUCCESS [  0.020 s]
+[INFO] Harmonia :: Pylai :: FHIR Provider Registry Gateway  SUCCESS [  0.098 s]
+[INFO] Harmonia :: Agora (Matrix & Synapse Collaboration Gateway) SUCCESS [  0.001 s]
+[INFO] Harmonia :: Agora :: API ........................... SUCCESS [  0.021 s]
+[INFO] Harmonia :: Agora :: Matrix ........................ SUCCESS [  0.027 s]
+[INFO] Harmonia :: Agora :: Core .......................... SUCCESS [  0.037 s]
+[INFO] Harmonia :: Agora :: Service ....................... SUCCESS [  0.041 s]
+[INFO] Harmonia :: Paradeigma (HL7 v2 Reference Exemplar) . SUCCESS [  0.000 s]
+[INFO] Harmonia :: Paradeigma :: Common ................... SUCCESS [  0.030 s]
+[INFO] Harmonia :: Paradeigma :: PAS Simulator ............ SUCCESS [  0.031 s]
+[INFO] Harmonia :: Paradeigma :: EMR Simulator ............ SUCCESS [  0.030 s]
+[INFO] Harmonia :: Paradeigma :: LMS Simulator ............ SUCCESS [  0.029 s]
+[INFO] Harmonia :: Paradeigma :: RIS-PAC Simulator ........ SUCCESS [  0.030 s]
+[INFO] Harmonia :: Paradeigma :: Scenario Engine .......... SUCCESS [  0.038 s]
+[INFO] Harmonia :: Paradeigma :: Test Suite ............... SUCCESS [ 23.916 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  27.022 s
+[INFO] Finished at: 2026-10-17T10:27:13+11:00
+[INFO] ------------------------------------------------------------------------

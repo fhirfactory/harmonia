@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "before_sha256": "def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb",
+  "after_sha256": "504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a",
+  "counts": {
+    "semantic_elements": 1299,
+    "relationships": 852,
+    "views": 1196,
+    "visual_objects": 3915,
+    "visual_connections": 1449,
+    "bendpoints": 2922
+  },
+  "exact_architecture_and_presentation_sha256": "61ad99a550253e3833018c1f94228232c1f385004f68f816c8bb38e7e883e2c1",
+  "architecture_semantic_delta": "NONE",
+  "architecture_identity_delta": "NONE",
+  "architecture_relationship_delta": "NONE",
+  "architecture_presentation_delta": "NONE",
+  "only_xml_difference": "One model-level baseline-architecture-release value: 1.0.7 \u2192 1.0.8"
+}

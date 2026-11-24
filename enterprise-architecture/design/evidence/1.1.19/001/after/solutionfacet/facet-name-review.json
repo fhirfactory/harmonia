@@ -1,0 +1,2063 @@
+[
+  {
+    "identifier": "id-0005aa8e85815cd2b64a9556cad0ea2f",
+    "canonicalId": "da5b4238bd6945cf9b467ff3feb9d76b",
+    "oldName": "Operational Information Management",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalInformationManagement",
+    "oldFriendly": "OperationalInformationManagement",
+    "friendly": "OperationsAndAssurance.OperationalInformationManagement",
+    "displayProperty": "Operational Information Management"
+  },
+  {
+    "identifier": "id-00f9c244941c4c36ae47791075061c5a",
+    "canonicalId": "0085c4fe23cf4b76829fae3369c9fbb1",
+    "oldName": "Interoperability-and-Integration.Information-Exchange.Assessments",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InformationExchange.Assessments",
+    "oldFriendly": "InteroperabilityAndIntegrationInformationExchangeAssessments",
+    "friendly": "InteroperabilityAndIntegration.InformationExchange.Assessments",
+    "displayProperty": "Information Exchange - Assessments"
+  },
+  {
+    "identifier": "id-02fb026d5d5d4a2aaaf22f3c6db5781f",
+    "canonicalId": "f6985401675b47c0a1c480aa156aaa0c",
+    "oldName": "Deployment-and-Release-Management.Configuration-Management.Principles",
+    "name": "[SolutionFacet] DeploymentAndReleaseManagement.ConfigurationManagement.Principles",
+    "oldFriendly": "DeploymentAndReleaseManagementConfigurationManagementPrinciples",
+    "friendly": "DeploymentAndReleaseManagement.ConfigurationManagement.Principles",
+    "displayProperty": "Configuration Management - Principles"
+  },
+  {
+    "identifier": "id-0336eab69f074587b7d11c5919c1d137",
+    "canonicalId": "5f25a2e8082d486d8f2b87aec6667e33",
+    "oldName": "Deployment-and-Release-Management.Configuration-Management.Constraints",
+    "name": "[SolutionFacet] DeploymentAndReleaseManagement.ConfigurationManagement.Constraints",
+    "oldFriendly": "DeploymentAndReleaseManagementConfigurationManagementConstraints",
+    "friendly": "DeploymentAndReleaseManagement.ConfigurationManagement.Constraints",
+    "displayProperty": "Configuration Management - Constraints"
+  },
+  {
+    "identifier": "id-0474279e12225651bc637436e2cbaf58",
+    "canonicalId": "58c5443983854dd98cd72f2dd795c063",
+    "oldName": "Demographic and Contact Management",
+    "name": "[SolutionFacet] PatientIdentityAndDemographics.DemographicAndContactManagement",
+    "oldFriendly": "DemographicAndContactManagement",
+    "friendly": "PatientIdentityAndDemographics.DemographicAndContactManagement",
+    "displayProperty": "Demographic and Contact Management"
+  },
+  {
+    "identifier": "id-09ed20f8eaa94c59af0a24a1e69cdf6d",
+    "canonicalId": "5e7bdebc353e49259113adf2a5b93aad",
+    "oldName": "Distributed-Systems-and-Temporal-Management.Task-Ordering.Requirements",
+    "name": "[SolutionFacet] DistributedSystemsAndTemporalManagement.TaskOrdering.Requirements",
+    "oldFriendly": "DistributedSystemsAndTemporalManagementTaskOrderingRequirements",
+    "friendly": "DistributedSystemsAndTemporalManagement.TaskOrdering.Requirements",
+    "displayProperty": "Task Ordering - Requirements"
+  },
+  {
+    "identifier": "id-0a13457eeb645fb784d0af3e36b38e43",
+    "canonicalId": "84693ef7bb4a4ced9634737c6bd5a36d",
+    "oldName": "Security Administration",
+    "name": "[SolutionFacet] SecurityAndManagement.SecurityAdministration",
+    "oldFriendly": "SecurityAdministration",
+    "friendly": "SecurityAndManagement.SecurityAdministration",
+    "displayProperty": "Security Administration"
+  },
+  {
+    "identifier": "id-0a17b369762e45d0bc20fd3bdf155783",
+    "canonicalId": "1cdc1ee62ec548998a8db6ee23b59ca1",
+    "oldName": "Security-and-Authorisation.Information-Protection.Principles",
+    "name": "[SolutionFacet] SecurityAndManagement.InformationProtection.Principles",
+    "oldFriendly": "SecurityAndAuthorisationInformationProtectionPrinciples",
+    "friendly": "SecurityAndManagement.InformationProtection.Principles",
+    "displayProperty": "Information Protection - Principles"
+  },
+  {
+    "identifier": "id-0d75f3bac3445bdca1481093e12d46a6",
+    "canonicalId": "cd453ee30502406db647a0c5b4011739",
+    "oldName": "Performance and Capacity Testing",
+    "name": "[SolutionFacet] VerificationAndTesting.PerformanceAndCapacityTesting",
+    "oldFriendly": "PerformanceAndCapacityTesting",
+    "friendly": "VerificationAndTesting.PerformanceAndCapacityTesting",
+    "displayProperty": "Performance and Capacity Testing"
+  },
+  {
+    "identifier": "id-0dc1356ee8915311a15faafe58d5d6de",
+    "canonicalId": "52508b8b7aec4b1cbaa570576442d4c9",
+    "oldName": "Consent Communication and History",
+    "name": "[SolutionFacet] ConsentAndInformationSharing.ConsentCommunicationAndHistory",
+    "oldFriendly": "ConsentCommunicationAndHistory",
+    "friendly": "ConsentAndInformationSharing.ConsentCommunicationAndHistory",
+    "displayProperty": "Consent Communication and History"
+  },
+  {
+    "identifier": "id-0dfc3ee08d0557d5bb5212b6eb8a5c52",
+    "canonicalId": "ad16265c76114f4eaddf75b0be2d4755",
+    "oldName": "Provider Lifecycle and Administration",
+    "name": "[SolutionFacet] ProviderAndWorkforceManagement.ProviderLifecycleAndAdministration",
+    "oldFriendly": "ProviderLifecycleAndAdministration",
+    "friendly": "ProviderAndWorkforceManagement.ProviderLifecycleAndAdministration",
+    "displayProperty": "Provider Lifecycle and Administration"
+  },
+  {
+    "identifier": "id-13828cc9cbcc590f818caaa4db7d5256",
+    "canonicalId": "d3fb5abc58af4347ab52cdc26e9b14f1",
+    "oldName": "Resilience Testing",
+    "name": "[SolutionFacet] VerificationAndTesting.ResilienceTesting",
+    "oldFriendly": "ResilienceTesting",
+    "friendly": "VerificationAndTesting.ResilienceTesting",
+    "displayProperty": "Resilience Testing"
+  },
+  {
+    "identifier": "id-14d1047ee6204bf4be1398c68e17228e",
+    "canonicalId": "31812051912e4dd99b07125d86ca2c11",
+    "oldName": "Deployment-and-Release-Management.Release-Compatibility.Principles",
+    "name": "[SolutionFacet] DeploymentAndReleaseManagement.ReleaseCompatibility.Principles",
+    "oldFriendly": "DeploymentAndReleaseManagementReleaseCompatibilityPrinciples",
+    "friendly": "DeploymentAndReleaseManagement.ReleaseCompatibility.Principles",
+    "displayProperty": "Release Compatibility - Principles"
+  },
+  {
+    "identifier": "id-14ed160c646f481e8c8527552fb50744",
+    "canonicalId": "5280c9c5e5ac43fe8fd314fd74bb6e69",
+    "oldName": "Processing-and-Workflow.Task-Completion.Requirements",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.TaskCompletion.Requirements",
+    "oldFriendly": "ProcessingAndWorkflowTaskCompletionRequirements",
+    "friendly": "ProcessingAndWorkflow.TaskCompletion.Requirements",
+    "displayProperty": "Task Completion - Requirements"
+  },
+  {
+    "identifier": "id-161e6e33f93e533582880e544b22ac3c",
+    "canonicalId": "f5df30b02e8a4d60bf44e8af2da4d5ab",
+    "oldName": "Capacity Planning",
+    "name": "[SolutionFacet] PerformanceAndCapacity.CapacityPlanning",
+    "oldFriendly": "CapacityPlanning",
+    "friendly": "PerformancAndCapacity.CapacityPlanning",
+    "displayProperty": "Capacity Planning"
+  },
+  {
+    "identifier": "id-16b80b1feedd4b48a3745fad1c504ba9",
+    "canonicalId": "d733a698d2c4477db4a4289144417e3f",
+    "oldName": "Information-Management.Information-Persistence.Assessments",
+    "name": "[SolutionFacet] InformationManagement.InformationPersistence.Assessments",
+    "oldFriendly": "InformationManagementInformationPersistenceAssessments",
+    "friendly": "InformationManagement.InformationPersistence.Assessments",
+    "displayProperty": "Information Persistence - Assessments"
+  },
+  {
+    "identifier": "id-16faf14a6ee0563f923252aaa81a7c69",
+    "canonicalId": "392c07b6a5ba4fc7bd5c19910437da98",
+    "oldName": "Representatives and Delegated Consent",
+    "name": "[SolutionFacet] ConsentAndInformationSharing.RepresentativesAndDelegatedConsent",
+    "oldFriendly": "RepresentativesAndDelegatedConsent",
+    "friendly": "ConsentAndInformationSharing.RepresentativesAndDelegatedConsent",
+    "displayProperty": "Representatives and Delegated Consent"
+  },
+  {
+    "identifier": "id-17f11576f4364c8081b2db73b5a6393e",
+    "canonicalId": "9020808d1ff9466db08ad2f8c9a97542",
+    "oldName": "Interoperability-and-Integration.Interoperability-Standards.Assessments",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InteroperabilityStandards.Assessments",
+    "oldFriendly": "InteroperabilityAndIntegrationInteroperabilityStandardsAssessments",
+    "friendly": "InteroperabilityAndIntegration.InteroperabilityStandards.Assessments",
+    "displayProperty": "Interoperability Standards - Assessments"
+  },
+  {
+    "identifier": "id-1a06db77cfd943b980a2f1a1e1d7ae29",
+    "canonicalId": "9fec9301e759460880557df71baa19c0",
+    "oldName": "Audit-and-Accountability.Audit-Generation.Requirements",
+    "name": "[SolutionFacet] AuditAndAccountability.AuditGeneration.Requirements",
+    "oldFriendly": "AuditAndAccountabilityAuditGenerationRequirements",
+    "friendly": "AuditAndAccountability.AuditGeneration.Requirements",
+    "displayProperty": "Audit Generation - Requirements"
+  },
+  {
+    "identifier": "id-1c4b14c56ac54e1ea69e840581d90372",
+    "canonicalId": "8d58b9333a374b9cbe936f34919fc122",
+    "oldName": "Performance-and-Capacity.Resource-Management.Principles",
+    "name": "[SolutionFacet] PerformanceAndCapacity.ResourceManagement.Principles",
+    "oldFriendly": "PerformanceAndCapacityResourceManagementPrinciples",
+    "friendly": "PerformanceAndCapacity.ResourceManagement.Principles",
+    "displayProperty": "Resource Management - Principles"
+  },
+  {
+    "identifier": "id-1caa66e6e4c3546e8218bf7d95e5b3c2",
+    "canonicalId": "3b56e60b042f429b8bf0efdb477c637e",
+    "oldName": "Build Management",
+    "name": "[SolutionFacet] DeploymentAndReleaseManagement.BuildManagement",
+    "oldFriendly": "BuildManagement",
+    "friendly": "DeploymentAndReleaseManagement.BuildManagement",
+    "displayProperty": "Build Management"
+  },
+  {
+    "identifier": "id-1cb5708c91f15e688913612219947f83",
+    "canonicalId": "5e8ddc78f9554243aeb051f77595cc88",
+    "oldName": "Processing State Management",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.ProcessingStateManagement",
+    "oldFriendly": "ProcessingStateManagement",
+    "friendly": "ProcessingAndWorkflow.ProcessingStateManagement",
+    "displayProperty": "Processing State Management"
+  },
+  {
+    "identifier": "id-1cdf16e8bcb64210b7311e5dde86441f",
+    "canonicalId": "3189d80ed4c24efe9bfc6b28ab263b51",
+    "oldName": "Operations-and-Assurance.Operational-Assurance.Requirements",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalAssurance.Requirements",
+    "oldFriendly": "OperationsAndAssuranceOperationalAssuranceRequirements",
+    "friendly": "OperationsAndAssurance.OperationalAssurance.Requirements",
+    "displayProperty": "Operational Assurance - Requirements"
+  },
+  {
+    "identifier": "id-1d3b4ccc970043d19d9ba1fc203ee092",
+    "canonicalId": "a5228e483703437ba7617034e4ea207f",
+    "oldName": "Information-Management.Information-Persistence.Principles",
+    "name": "[SolutionFacet] InformationManagement.InformationPersistence.Principles",
+    "oldFriendly": "InformationManagementInformationPersistencePrinciples",
+    "friendly": "InformationManagement.InformationPersistence.Principles",
+    "displayProperty": "Information Persistence - Principles"
+  },
+  {
+    "identifier": "id-1db025dd539640bcb935e922ead3d6e7",
+    "canonicalId": "ee9bc6c96d944f2ea8bbaaeffb31db28",
+    "oldName": "Resilience-and-Recovery.Failure-Detection-and-Handling.Constraints",
+    "name": "[SolutionFacet] ResilienceAndRecovery.FailureDetectionAndHandling.Constraints",
+    "oldFriendly": "ResilienceAndRecoveryFailureDetectionAndHandlingConstraints",
+    "friendly": "ResilienceAndRecovery.FailureDetectionAndHandling.Constraints",
+    "displayProperty": "Failure Detection And Handling - Constraints"
+  },
+  {
+    "identifier": "id-1fba1f2d08c445df823f325bea397992",
+    "canonicalId": "80aa94b4210047a0a14563f408da1694",
+    "oldName": "Information-Management.Information-Integrity.Constraints",
+    "name": "[SolutionFacet] InformationManagement.InformationIntegrity.Constraints",
+    "oldFriendly": "InformationManagementInformationIntegrityConstraints",
+    "friendly": "InformationManagement.InformationIntegrity.Constraints",
+    "displayProperty": "Information Integrity - Constraints"
+  },
+  {
+    "identifier": "id-1fbd77614a2843a4ba118d3f983d5335",
+    "canonicalId": "202ebe880cc8456bb5e9f1389cc26fe8",
+    "oldName": "Security-and-Authorisation.Authorisation-Enforcement.Constraints",
+    "name": "[SolutionFacet] SecurityAndManagement.AuthorisationEnforcement.Constraints",
+    "oldFriendly": "SecurityAndAuthorisationAuthorisationEnforcementConstraints",
+    "friendly": "SecurityAndManagement.AuthorisationEnforcement.Constraints",
+    "displayProperty": "Authorisation Enforcement - Constraints"
+  },
+  {
+    "identifier": "id-1fff2defea734ee686227be7c905e5ff",
+    "canonicalId": "b47210a43fe147d4a3f2fbc081321063",
+    "oldName": "Architectural-Governance.Architecture-Conformance.Goals",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureConformance.Goals",
+    "oldFriendly": "ArchitecturalGovernanceArchitectureConformanceGoals",
+    "friendly": "ArchitecturalGovernance.ArchitectureConformance.Goals",
+    "displayProperty": "Architecture Conformance - Goals"
+  },
+  {
+    "identifier": "id-2019e329346e41988959b8e279fbfbae",
+    "canonicalId": "e321b3c9558745fcaf58fe96ec8eca05",
+    "oldName": "Operations-and-Assurance.Operational-Monitoring.Goals",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalMonitoring.Goals",
+    "oldFriendly": "OperationsAndAssuranceOperationalMonitoringGoals",
+    "friendly": "OperationsAndAssurance.OperationalMonitoring.Goals",
+    "displayProperty": "Operational Monitoring - Goals"
+  },
+  {
+    "identifier": "id-20903ed0e53c5bc7b98ceafa42e03453",
+    "canonicalId": "315ba7bbe4624223a97a7e7e6d9cc252",
+    "oldName": "Operational Assurance",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalAssurance",
+    "oldFriendly": "OperationalAssurance",
+    "friendly": "OperationsAndAssurance.OperationalAssurance",
+    "displayProperty": "Operational Assurance"
+  },
+  {
+    "identifier": "id-21b115ebf16552f08e76874c3c53e446",
+    "canonicalId": "1b4044525d474363bafb462e575582b9",
+    "oldName": "Deployment Environments",
+    "name": "[SolutionFacet] DeploymentAndReleaseManagement.DeploymentEnvironments",
+    "oldFriendly": "DeploymentEnvironments",
+    "friendly": "DeploymentAndReleaseManagement.DeploymentEnvironments",
+    "displayProperty": "Deployment Environments"
+  },
+  {
+    "identifier": "id-24cd2a16a67a42f689729f08898f6808",
+    "canonicalId": "73a9255ce3cd4be89c2f5f65868c5f79",
+    "oldName": "Operations-and-Assurance.Operational-Monitoring.Principles",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalMonitoring.Principles",
+    "oldFriendly": "OperationsAndAssuranceOperationalMonitoringPrinciples",
+    "friendly": "OperationsAndAssurance.OperationalMonitoring.Principles",
+    "displayProperty": "Operational Monitoring - Principles"
+  },
+  {
+    "identifier": "id-24e1752fecef5a519c3bf723657386c4",
+    "canonicalId": "5fcada54e6df40a8983335a90e4a9f02",
+    "oldName": "Identity Registration and Verification",
+    "name": "[SolutionFacet] PatientIdentityAndDemographcis.IdentityRegistrationAndVerification",
+    "oldFriendly": "IdentityRegistrationAndVerification",
+    "friendly": "PatientIdentityAndDemographcis.IdentityRegistrationAndVerification",
+    "displayProperty": "Identity Registration and Verification"
+  },
+  {
+    "identifier": "id-2748e964f03157d19464eedcadd333a7",
+    "canonicalId": "1c57a3d9080443178f6e9159d0591c77",
+    "oldName": "User Experience",
+    "name": "[solutionFacet] UserExperience",
+    "oldFriendly": "UserExperience",
+    "friendly": "UserExperience",
+    "displayProperty": "User Experience"
+  },
+  {
+    "identifier": "id-28635ed61fe958ba9651723a71807aed",
+    "canonicalId": "9536aaf4114b4c35b8a795383d442f64",
+    "oldName": "Concurrency Management",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.ConcurrencyManagement",
+    "oldFriendly": "ConcurrencyManagement",
+    "friendly": "ProcessingAndWorkflow.ConcurrencyManagement",
+    "displayProperty": "Concurrency Management"
+  },
+  {
+    "identifier": "id-286c75221c2644769337f2d76d1679e5",
+    "canonicalId": "a4fbf334ea6e48028e39eb7f74ced2bb",
+    "oldName": "Resilience-and-Recovery.Continuity-of-Operations.Goals",
+    "name": "[SolutionFacet] ResilienceAndRecovery.ContinuityOfOperations.Goals",
+    "oldFriendly": "ResilienceAndRecoveryContinuityOfOperationsGoals",
+    "friendly": "ResilienceAndRecovery.ContinuityOfOperations.Goals",
+    "displayProperty": "Continuity of Operations - Goals"
+  },
+  {
+    "identifier": "id-293efc8ee1975418b66cafda5d535b65",
+    "canonicalId": "a44091225174403ebd2c5b75ba690a09",
+    "oldName": "Interoperability Standards",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InteroperabilityStandards",
+    "oldFriendly": "InteroperabilityStandards",
+    "friendly": "InteroperabilityAndIntegration.InteroperabilityStandards",
+    "displayProperty": "Interoperability Standards"
+  },
+  {
+    "identifier": "id-29f1a0f04d185eca9ad90b307f1a6ba0",
+    "canonicalId": "2f97190ae5734e8caee48d581e1a6ab2",
+    "oldName": "Identity Access and Disclosure",
+    "name": "[SolutionFacet] PatientIdentityAndDemographics.IdentityAccessAndDisclosure",
+    "oldFriendly": "IdentityAccessAndDisclosure",
+    "friendly": "PatientIdentityAndDemographics.IdentityAccessAndDisclosure",
+    "displayProperty": "Identity Access and Disclosure"
+  },
+  {
+    "identifier": "id-2deaf1241aec45edb8a0f540356ec0a6",
+    "canonicalId": "af4f93db10cb47c282600babe51048e1",
+    "oldName": "Deployment-and-Release-Management.Deployment-Management.Constraints",
+    "name": "[SolutionFacet] DeploymentAndReleaseManagement.DeploymentManagement.Constraints",
+    "oldFriendly": "DeploymentAndReleaseManagementDeploymentManagementConstraints",
+    "friendly": "DeploymentAndReleaseManagement.DeploymentManagement.Constraints",
+    "displayProperty": "Deployment Management - Constraints"
+  },
+  {
+    "identifier": "id-30499e8088fe55caa7925192adf06241",
+    "canonicalId": "ba2e95cc11374757bd0945148da43b07",
+    "oldName": "Identity Quality and Oversight",
+    "name": "[SolutionFacet] PatientIdentityAndDemographcis.IdentityQualityAndOversight",
+    "oldFriendly": "IdentityQualityAndOversight",
+    "friendly": "PatientIdentityAndDemographcis.IdentityQualityAndOversight",
+    "displayProperty": "Identity Quality and Oversight"
+  },
+  {
+    "identifier": "id-35ac52a85cf75ae0883eb2d8710c1f3c",
+    "canonicalId": "58c3577b30fd4748836a1d52e07c8a98",
+    "oldName": "Usability",
+    "name": "[SolutionFacet] UserExperience.Usability",
+    "oldFriendly": "Usability",
+    "friendly": "UserExperience.Usability",
+    "displayProperty": "Usability"
+  },
+  {
+    "identifier": "id-35d31191f04d573bb1a2b41862b4ee93",
+    "canonicalId": "ba0e7f67e2e7496d9df8f6617ee39ec3",
+    "oldName": "Reference Data Management",
+    "name": "[SolutionFacet] TerminologyAndReferenceData.ReferenceDataManagement",
+    "oldFriendly": "ReferenceDataManagement",
+    "friendly": "TerminologyAndReferenceData.ReferenceDataManagement",
+    "displayProperty": "Reference Data Management"
+  },
+  {
+    "identifier": "id-366f55d9d47a43ffb548c0f1de0045a8",
+    "canonicalId": "88d1c3fd640448c2b35933d2b03b8151",
+    "oldName": "Information-Management.Information-Integrity.Principles",
+    "name": "[SolutionFacet] InformationManagement.InformationIntegrity.Principles",
+    "oldFriendly": "InformationManagementInformationIntegrityPrinciples",
+    "friendly": "InformationManagement.InformationIntegrity.Principles",
+    "displayProperty": "Information Integrity - Principles"
+  },
+  {
+    "identifier": "id-3672f9bc122356c89cdecc2065e7fc04",
+    "canonicalId": "0b6d5f58354040189b3a9a30a9b913d9",
+    "oldName": "Task Management",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.TaskManagement",
+    "oldFriendly": "TaskManagement",
+    "friendly": "ProcessingAndWorkflow.TaskManagement",
+    "displayProperty": "Task Management"
+  },
+  {
+    "identifier": "id-37411a09e3d35e92935715a26b2f340e",
+    "canonicalId": "47d8e097526248349dd6dbbd318b1ef4",
+    "oldName": "Responsiveness",
+    "name": "[SolutionFacet] PerformanceAndCapacity.Responsiveness",
+    "oldFriendly": "Responsiveness",
+    "friendly": "PerformanceAndCapacity.Responsiveness",
+    "displayProperty": "Responsiveness"
+  },
+  {
+    "identifier": "id-386f5250a923447988f8acdfaf63dee8",
+    "canonicalId": "55441c2677144a9da1c6348e633eaac8",
+    "oldName": "Interoperability-and-Integration.Interaction-Contracts.Requirements",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InteractionContracts.Requirements",
+    "oldFriendly": "InteroperabilityAndIntegrationInteractionContractsRequirements",
+    "friendly": "InteroperabilityAndIntegration.InteractionContracts.Requirements",
+    "displayProperty": "Interaction Contracts - Requirements"
+  },
+  {
+    "identifier": "id-38d9b8fa1f13586da103fb1bef655591",
+    "canonicalId": "bb3adbc3c2fb43e6a18a876c4e897c9c",
+    "oldName": "Security Monitoring",
+    "name": "[SolutionFacet] SecurityAndManagement.SecurityMonitoring",
+    "oldFriendly": "SecurityMonitoring",
+    "friendly": "SecurityAndManagement.SecurityMonitoring",
+    "displayProperty": "Security Monitoring"
+  },
+  {
+    "identifier": "id-38e906fd2a26475889065f9ccfb23380",
+    "canonicalId": "793ed649804a4bf19b5fa92bac3e4c29",
+    "oldName": "Operations-and-Assurance.Operational-Assurance.Constraints",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalAssurance.Constraints",
+    "oldFriendly": "OperationsAndAssuranceOperationalAssuranceConstraints",
+    "friendly": "OperationsAndAssurance.OperationalAssurance.Constraints",
+    "displayProperty": "Operational Assurance - Constraints"
+  },
+  {
+    "identifier": "id-3920961155a24818a5b661f3cb1da510",
+    "canonicalId": "582e15cf43f94ce6b1c128361ec31780",
+    "oldName": "Verification-and-Testing.Performance-and-Capacity-Testing.Principles",
+    "name": "[SolutionFacet] VerificationAndTesting.PerformanceAndCapacityTesting.Principles",
+    "oldFriendly": "VerificationAndTestingPerformanceAndCapacityTestingPrinciples",
+    "friendly": "VerificationAndTesting.PerformanceAndCapacityTesting.Principles",
+    "displayProperty": "Performance and Capacity Testing - Principles"
+  },
+  {
+    "identifier": "id-395153d54ba54992b830cb5ad3947b17",
+    "canonicalId": "50a4cb6b01c94904a0991175ab09004c",
+    "oldName": "Deployment-and-Release-Management.Deployment-Management.Principles",
+    "name": "[SolutionFacet] DeploymentAndReleaseManagement.DeploymentManagement.Principles",
+    "oldFriendly": "DeploymentAndReleaseManagementDeploymentManagementPrinciples",
+    "friendly": "DeploymentAndReleaseManagement.DeploymentManagement.Principles",
+    "displayProperty": "Deployment Management - Principles"
+  },
+  {
+    "identifier": "id-39d7e8efb6f340d89c970838f45cf2cc",
+    "canonicalId": "bc45121331a04af7a54e790bd4a7ea6e",
+    "oldName": "Interoperability-and-Integration.Interoperability-Standards.Drivers",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InteroperabilityStandards.Drivers",
+    "oldFriendly": "InteroperabilityAndIntegrationInteroperabilityStandardsDrivers",
+    "friendly": "InteroperabilityAndIntegration.InteroperabilityStandards.Drivers",
+    "displayProperty": "Interoperability Standards - Drivers"
+  },
+  {
+    "identifier": "id-3cf1b2c93254461a97027fb2b6456f0b",
+    "canonicalId": "d903a1d46d6e4a3c84d247789e43aa41",
+    "oldName": "Performance-and-Capacity.Resource-Management.Constraints",
+    "name": "[SolutionFacet] PerformanceAndCapacity.ResourceManagement.Constraints",
+    "oldFriendly": "PerformanceAndCapacityResourceManagementConstraints",
+    "friendly": "PerformanceAndCapacity.ResourceManagement.Constraints",
+    "displayProperty": "Resource Management - Constraints"
+  },
+  {
+    "identifier": "id-3cfa9679ba3d497691c545243d9c3964",
+    "canonicalId": "901d49996c9545bb99cb0e0e7c043c81",
+    "oldName": "Resilience-and-Recovery.Operational-Recovery.Principles",
+    "name": "[SolutionFacet] ResilienceAndRecovery.OperationalRecovery.Principles",
+    "oldFriendly": "ResilienceAndRecoveryOperationalRecoveryPrinciples",
+    "friendly": "ResilienceAndRecovery.OperationalRecovery.Principles",
+    "displayProperty": "Operational Recovery - Principles"
+  },
+  {
+    "identifier": "id-3d83dae5d80a4ec8aee50f9ae4a140bd",
+    "canonicalId": "08ffff9f57aa412b80e36ab154136ad0",
+    "oldName": "Interoperability-and-Integration.Information-Exchange.Principles",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InformationExchange.Principles",
+    "oldFriendly": "InteroperabilityAndIntegrationInformationExchangePrinciples",
+    "friendly": "InteroperabilityAndIntegration.InformationExchange.Principles",
+    "displayProperty": "Information Exchange - Principles"
+  },
+  {
+    "identifier": "id-3e9d1122fc85401baa929e2339d030d6",
+    "canonicalId": "e576768ae5cd4522b760c36d2b364be2",
+    "oldName": "Processing-and-Workflow.Message-Processing.Requirements",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.MessageProcessing.Requirements",
+    "oldFriendly": "ProcessingAndWorkflowMessageProcessingRequirements",
+    "friendly": "ProcessingAndWorkflow.MessageProcessing.Requirements",
+    "displayProperty": "Message Processing - Requirements"
+  },
+  {
+    "identifier": "id-3ee9a01480ae5f8bb48fa6ad7148859f",
+    "canonicalId": "25a15d4bea2d418d918e3a7e01d9fcbf",
+    "oldName": "Affiliations, Roles and Practice Locations",
+    "name": "[SolutionFacet] ProviderAndWorkforceManagement.AffiliationsRolesAndPracticeLocations",
+    "oldFriendly": "AffiliationsRolesAndPracticeLocations",
+    "friendly": "ProviderAndWorkforceManagement.AffiliationsRolesAndPracticeLocations",
+    "displayProperty": "Affiliations, Roles and Practice Locations"
+  },
+  {
+    "identifier": "id-3ff156cfaab8575facfa6961f68119f5",
+    "canonicalId": "ef296738e68e4206a507dc3c811b3fe1",
+    "oldName": "Information Management",
+    "name": "[SolutionFacet] InformationManagement",
+    "oldFriendly": "InformationManagement",
+    "friendly": "InformationManagement",
+    "displayProperty": "Information Management"
+  },
+  {
+    "identifier": "id-4009d96f39d456838b149621d4ed88a4",
+    "canonicalId": "819aeed91d0544c3b7cc52e69aa46d72",
+    "oldName": "Information Identity",
+    "name": "[SolutionFacet] InformationManagement.InformationIdentity",
+    "oldFriendly": "InformationIdentity",
+    "friendly": "InformationManagement.InformationIdentity",
+    "displayProperty": "Information Identity"
+  },
+  {
+    "identifier": "id-41c22ed603a2453a8216fc23e4464e02",
+    "canonicalId": "8e39da9fc2d443efa3cc5d0311fcaf79",
+    "oldName": "Distributed-Systems-and-Temporal-Management.Temporal-Consistency.Principles",
+    "name": "[SolutionFacet] DistributedSystemsAndTemporalManagement.TemporalConsistency.Principles",
+    "oldFriendly": "DistributedSystemsAndTemporalManagementTemporalConsistencyPrinciples",
+    "friendly": "DistributedSystemsAndTemporalManagement.TemporalConsistency.Principles",
+    "displayProperty": "Temporal Consistency - Principles"
+  },
+  {
+    "identifier": "id-44afd245a0da5fbb9d9e87f24bf8379f",
+    "canonicalId": "f40da9359c7545d2ad0eef6c3a5bf645",
+    "oldName": "Processing Outcomes",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.ProcessingOutcomes",
+    "oldFriendly": "ProcessingOutcomes",
+    "friendly": "ProcessingAndWorkflow.ProcessingOutcomes",
+    "displayProperty": "Processing Outcomes"
+  },
+  {
+    "identifier": "id-456bb6d14e02597888087efdb73b2c32",
+    "canonicalId": "8b27323cbaba400698842f77e0d28c0d",
+    "oldName": "Terminology and Reference Data",
+    "name": "[SolutionFacet] TerminologyAndReferenceData",
+    "oldFriendly": "TerminologyAndReferenceData",
+    "friendly": "TerminologyAndReferenceData",
+    "displayProperty": "Terminology and Reference Data"
+  },
+  {
+    "identifier": "id-458b576c4b745e94b610666bd4a94df4",
+    "canonicalId": "afb9686c9f1c48159d92a518a7d17452",
+    "oldName": "Processing and Workflow",
+    "name": "[SolutionFacet] ProcessingAndWorkflow",
+    "oldFriendly": "ProcessingAndWorkflow",
+    "friendly": "ProcessingAndWorkflow",
+    "displayProperty": "Processing-and-Workflow"
+  },
+  {
+    "identifier": "id-48129c55f6e55c6f81dd738b9c136010",
+    "canonicalId": "432d52cc3de5443896a4559f215ece9f",
+    "oldName": "Event Ordering and Causality",
+    "name": "[SolutionFacet] DistributedSystemsAndTemporalManagement.EventOrderingAndCausality",
+    "oldFriendly": "EventOrderingAndCausality",
+    "friendly": "DistributedSystemsAndTemporalManagement.EventOrderingAndCausality",
+    "displayProperty": "Event Ordering and Causality"
+  },
+  {
+    "identifier": "id-4894c257f0bb4e0780794d0f7e6fd208",
+    "canonicalId": "1a235d13959e477ea52e0f201215fbe9",
+    "oldName": "Resilience-and-Recovery.Operational-Recovery.Requirements",
+    "name": "[SolutionFacet] ResilienceAndRecovery.OperationalRecovery.Requirements",
+    "oldFriendly": "ResilienceAndRecoveryOperationalRecoveryRequirements",
+    "friendly": "ResilienceAndRecovery.OperationalRecovery.Requirements",
+    "displayProperty": "Operational Recovery - Requirements"
+  },
+  {
+    "identifier": "id-4a595661fb6742449dfa93780dda34eb",
+    "canonicalId": "d8d1f0aeff354b2696d3d6475c44c36e",
+    "oldName": "Interoperability-and-Integration.Interaction-Contracts.Principles",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InteractionContracts.Principles",
+    "oldFriendly": "InteroperabilityAndIntegrationInteractionContractsPrinciples",
+    "friendly": "InteroperabilityAndIntegration.InteractionContracts.Principles",
+    "displayProperty": "Interaction Contracts - Principles"
+  },
+  {
+    "identifier": "id-4b02ff8e872250dc97aadd84282cede4",
+    "canonicalId": "9f192036bee542ad883b89729a35bbfb",
+    "oldName": "Navigation and Interaction",
+    "name": "[SolutionFacet] UserExperience.NavigationAndInteraction",
+    "oldFriendly": "NavigationAndInteraction",
+    "friendly": "UserExperience.NavigationAndInteraction",
+    "displayProperty": "Navigation and Interaction"
+  },
+  {
+    "identifier": "id-4e16166c3bc65d5198b9210c17b04ae1",
+    "canonicalId": "de791c4976f84676bf8545b1cfb8bf41",
+    "oldName": "Audit Management",
+    "name": "[SolutionFacet] AuditAndAccountability.AuditManagement",
+    "oldFriendly": "AuditManagement",
+    "friendly": "AuditAndAccountability.AuditManagement",
+    "displayProperty": "Audit Management"
+  },
+  {
+    "identifier": "id-4fb8edfe58864a4eba1eebb78ddf439a",
+    "canonicalId": "9c613c6963e9451e945d3934a20bdd53",
+    "oldName": "Audit-and-Accountability.Audit-Management.Principles",
+    "name": "[SolutionFacet] AuditAndAccountability.AuditManagement.Principles",
+    "oldFriendly": "AuditAndAccountabilityAuditManagementPrinciples",
+    "friendly": "AuditAndAccountability.AuditManagement.Principles",
+    "displayProperty": "Audit Management - Principles"
+  },
+  {
+    "identifier": "id-52dd6783a82c4582bc452f0a72327bf0",
+    "canonicalId": "b01782f63be44bc9ab2f6ebbf84b37f2",
+    "oldName": "Architectural-Governance.Architecture-Vision.Goals",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureVision.Goals",
+    "oldFriendly": "ArchitecturalGovernanceArchitectureVisionGoals",
+    "friendly": "ArchitecturalGovernance.ArchitectureVision.Goals",
+    "displayProperty": "Architecture Vision - Goals"
+  },
+  {
+    "identifier": "id-52e8fb7751485159b6b132af2b89fd75",
+    "canonicalId": "c445fc55a6e547ae9b1a5bb43cad1a8e",
+    "oldName": "Provider Directory Discovery",
+    "name": "[SolutionFacet] ProviderDirectory.ProviderDirectoryDiscovery",
+    "oldFriendly": "ProviderDirectoryDiscovery",
+    "friendly": "ProviderDirectory.ProviderDirectoryDiscovery",
+    "displayProperty": "Provider Directory Discovery"
+  },
+  {
+    "identifier": "id-555932c6057b4b72aefd0fe6dfc0dfee",
+    "canonicalId": "b05d68295ed141d6815aa56c8a3d3b39",
+    "oldName": "Processing-and-Workflow.Processing-Outcomes.Outcomes",
+    "name": "[SolutionFacet] Processing-AndWorkflow.ProcessingOutcomes.Outcomes",
+    "oldFriendly": "ProcessingAndWorkflowProcessingOutcomesOutcomes",
+    "friendly": "ProcessingAndWorkflow.ProcessingOutcomes.Outcomes",
+    "displayProperty": "Processing Outcomes - Outcomes"
+  },
+  {
+    "identifier": "id-581b9b60488d473bb240e080b2f71cbd",
+    "canonicalId": "43ea78d2aa5e4e0eb4e0c80a6ddb22dd",
+    "oldName": "Performance-and-Capacity.Responsiveness.Requirements",
+    "name": "[SolutionFacet] PerformanceAndCapacity.Responsiveness.Requirements",
+    "oldFriendly": "PerformanceAndCapacityResponsivenessRequirements",
+    "friendly": "PerformanceAndCapacity.Responsiveness.Requirements",
+    "displayProperty": "Responsiveness - Requirements"
+  },
+  {
+    "identifier": "id-58b147d652e05ac884c2a0f7eea3e2ff",
+    "canonicalId": "114a3866dffc4a4cb6aabef39b48fadf",
+    "oldName": "Distributed Coordination",
+    "name": "[SolutionFacet] DistributedSystemsAndTemporalManagement.DistributedCoordination",
+    "oldFriendly": "DistributedCoordination",
+    "friendly": "DistributedSystemsAndTemporalManagement.DistributedCoordination",
+    "displayProperty": "Distributed Coordination"
+  },
+  {
+    "identifier": "id-5b985aab93395905ab9b470ba452efda",
+    "canonicalId": "49966f8f01e244b4926ce4dc4c41fb47",
+    "oldName": "Disaster Recovery",
+    "name": "[SolutionFacet] ResilienceAndRecovery.DisasterRecovery",
+    "oldFriendly": "DisasterRecovery",
+    "friendly": "ResilienceAndRecovery.DisasterRecovery",
+    "displayProperty": "Disaster Recovery"
+  },
+  {
+    "identifier": "id-5f50743743e54c148240abbcc771c40c",
+    "canonicalId": "df0b38c3ba9c49ea8dfe3f032ad2a329",
+    "oldName": "Resilience-and-Recovery.Operational-Recovery.Constraints",
+    "name": "[SolutionFacet] ResilienceAndRecovery.OperationalRecovery.Constraints",
+    "oldFriendly": "ResilienceAndRecoveryOperationalRecoveryConstraints",
+    "friendly": "ResilienceAndRecovery.OperationalRecovery.Constraints",
+    "displayProperty": "Operational Recovery - Constraints"
+  },
+  {
+    "identifier": "id-5f6b4e6f00e755788e198632589ce6ce",
+    "canonicalId": "a762424d13254eaa9467946d9d7355f8",
+    "oldName": "Security and Authorisation",
+    "name": "[SolutionFacet] SecurityAndManagement",
+    "oldFriendly": "SecurityAndAuthorisation",
+    "friendly": "SecurityAndManagement",
+    "displayProperty": "Security-and-Management"
+  },
+  {
+    "identifier": "id-60284c3cdbed5a1fa2afec62c72c7932",
+    "canonicalId": "4e0bcac2a001411c8802b5df30e6bb38",
+    "oldName": "Terminology Release and Versioning",
+    "name": "[SolutionFacet] TerminologyAndReferenceData.TerminologyReleaseAndVersioning",
+    "oldFriendly": "TerminologyReleaseAndVersioning",
+    "friendly": "TerminologyAndReferenceData.TerminologyReleaseAndVersioning",
+    "displayProperty": "Terminology Release and Versioning"
+  },
+  {
+    "identifier": "id-6119d0e4ada44045a69db34cc0aa154d",
+    "canonicalId": "9c7c9de7ffc0457d87cf52548bca70ca",
+    "oldName": "Information-Management.Information-Identity.Constraints",
+    "name": "[SolutionFacet] InformationManagement.InformationIdentity.Constraints",
+    "oldFriendly": "InformationManagementInformationIdentityConstraints",
+    "friendly": "InformationManagement.InformationIdentity.Constraints",
+    "displayProperty": "Information Identity - Constraints"
+  },
+  {
+    "identifier": "id-6256b2f5dd035708ae1e55f0fbcc1276",
+    "canonicalId": "5989495f1e224d5797054a8b6c0364a1",
+    "oldName": "Architecture Conformance",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureConformance",
+    "oldFriendly": "ArchitectureConformance",
+    "friendly": "ArchitecturalGovernance.ArchitectureConformance",
+    "displayProperty": "Architecture Conformance"
+  },
+  {
+    "identifier": "id-62f66d959d71470dbfda6b337d34e773",
+    "canonicalId": "5120fbb391e24b3f941d8a5cc347a1fd",
+    "oldName": "User-Experience.Navigation-and-Interaction.Principles",
+    "name": "[SolutionFacet] UserExperience.NavigationAndInteraction.Principles",
+    "oldFriendly": "UserExperienceNavigationAndInteractionPrinciples",
+    "friendly": "UserExperience.NavigationAndInteraction.Principles",
+    "displayProperty": "Navigation and Interaction - Principles"
+  },
+  {
+    "identifier": "id-6354a0ca38e64266801a8a67cde40f58",
+    "canonicalId": "f85948e2b4e145a4b56ab369c1a70c22",
+    "oldName": "Security-and-Authorisation.Authorisation-Enforcement.Principles",
+    "name": "[SolutionFacet] SecurityAndManagement.AuthorisationEnforcement.Principles",
+    "oldFriendly": "SecurityAndAuthorisationAuthorisationEnforcementPrinciples",
+    "friendly": "SecurityAndManagement.AuthorisationEnforcement.Principles",
+    "displayProperty": "Authorisation Enforcement - Principles"
+  },
+  {
+    "identifier": "id-6484a86c45114dc19d08968d2e8fe4a6",
+    "canonicalId": "db0cac8c53b7404b8f2c17a542db7604",
+    "oldName": "Interoperability-and-Integration.Interoperability-Standards.Principles",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InteroperabilityStandards.Principles",
+    "oldFriendly": "InteroperabilityAndIntegrationInteroperabilityStandardsPrinciples",
+    "friendly": "InteroperabilityAndIntegration.InteroperabilityStandards.Principles",
+    "displayProperty": "Interoperability Standards - Principles"
+  },
+  {
+    "identifier": "id-6495a040a2684ffba50a340f7e48e9c7",
+    "canonicalId": "41040498bcaf469686edbee208b9b349",
+    "oldName": "Interoperability-and-Integration.Interaction-Reliability.Principles",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InteractionReliability.Principles",
+    "oldFriendly": "InteroperabilityAndIntegrationInteractionReliabilityPrinciples",
+    "friendly": "InteroperabilityAndIntegration.InteractionReliability.Principles",
+    "displayProperty": "Interaction Reliability - Principles"
+  },
+  {
+    "identifier": "id-658cd4a224585dc5b4e55f85f43fb58e",
+    "canonicalId": "8bf2a60efafc4caf89ed9744adfb628d",
+    "oldName": "Implementation Strategy",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ImplementationStrategy",
+    "oldFriendly": "ImplementationStrategy",
+    "friendly": "ArchitecturalGovernance.ImplementationStrategy",
+    "displayProperty": "Implementation Strategy"
+  },
+  {
+    "identifier": "id-67d9fd4e1cd747819a5974bff1f89bea",
+    "canonicalId": "f71f084dd9154318b86ca22f0fe8c36d",
+    "oldName": "User-Experience.Localisation-and-Internationalisation.Principles",
+    "name": "[SolutionFacet] UserExperience.LocalisationAndInternationalisation.Principles",
+    "oldFriendly": "UserExperienceLocalisationAndInternationalisationPrinciples",
+    "friendly": "UserExperience.LocalisationAndInternationalisation.Principles",
+    "displayProperty": "Localisation and Internationalisation - Principles"
+  },
+  {
+    "identifier": "id-6868d76816f853a3876146eb6a80d6fd",
+    "canonicalId": "ef476f07cd9e4ba6bdac99dc6e940baa",
+    "oldName": "Configuration Management",
+    "name": "[SolutionFacet] DeploymentAndReleaseManagement.ConfigurationManagement",
+    "oldFriendly": "ConfigurationManagement",
+    "friendly": "DeploymentAndReleaseManagement.ConfigurationManagement",
+    "displayProperty": "Configuration Management"
+  },
+  {
+    "identifier": "id-69d83d5d695a4f6d99e3ac7724c2f5cb",
+    "canonicalId": "d931781bb22243fdb892937b88141cf4",
+    "oldName": "Information-Management.Information-Identity.Principles",
+    "name": "[SolutionFacet] InformationManagement.InformationIdentity.Principles",
+    "oldFriendly": "InformationManagementInformationIdentityPrinciples",
+    "friendly": "InformationManagement.InformationIdentity.Principles",
+    "displayProperty": "Information Identity - Principles"
+  },
+  {
+    "identifier": "id-6a436d396d2041b39dbf44ccfbb34fdf",
+    "canonicalId": "63807867e2d147528542a914952b3e3e",
+    "oldName": "Operations-and-Assurance.Operational-Information-Management.Principles",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalInformationManagement.Principles",
+    "oldFriendly": "OperationsAndAssuranceOperationalInformationManagementPrinciples",
+    "friendly": "OperationsAndAssurance.OperationalInformationManagement.Principles",
+    "displayProperty": "Operational Information Management - Principles"
+  },
+  {
+    "identifier": "id-6bbc1810b125511ea2022493a0957543",
+    "canonicalId": "36264352a7f745109deaac2025877690",
+    "oldName": "Deployment Management",
+    "name": "[SolutionFacet] DeploymentAndReleaseManagement.DeploymentManagement",
+    "oldFriendly": "DeploymentManagement",
+    "friendly": "DeploymentAndReleaseManagement.DeploymentManagement",
+    "displayProperty": "Deployment Management"
+  },
+  {
+    "identifier": "id-6c0bdbc5f09341e097dfeb969eb06f14",
+    "canonicalId": "aba77f43a26440dfb5e7cd67934e7ebd",
+    "oldName": "Resilience-and-Recovery.Continuity-of-Operations.Principles",
+    "name": "[SolutionFacet] ResilienceAndRecovery.ContinuityOfOperations.Principles",
+    "oldFriendly": "ResilienceAndRecoveryContinuityOfOperationsPrinciples",
+    "friendly": "ResilienceAndRecovery.ContinuityOfOperations.Principles",
+    "displayProperty": "Continuity of Operations - Principles"
+  },
+  {
+    "identifier": "id-6ecb9cfd63fc4122b34338125fbc351a",
+    "canonicalId": "709d34e55e7b4c7a9e010f5465f76473",
+    "oldName": "Resilience-and-Recovery.Continuity-of-Operations.Requirements",
+    "name": "[SolutionFacet] ResilienceAndRecovery.ContinuityOfOperations.Requirements",
+    "oldFriendly": "ResilienceAndRecoveryContinuityOfOperationsRequirements",
+    "friendly": "ResilienceAndRecovery.ContinuityOfOperations.Requirements",
+    "displayProperty": "Continuity of Operations - Requirements"
+  },
+  {
+    "identifier": "id-6ed4da93b31f51138a7b1b7a7fceed41",
+    "canonicalId": "8655d81cd41647449c3b1a10ffd453b3",
+    "oldName": "Terminology Mapping and Validation",
+    "name": "[SolutionFacet] TerminologyAndReferenceData.TerminologyMappingAndValidation",
+    "oldFriendly": "TerminologyMappingAndValidation",
+    "friendly": "TerminologyAndReferenceData.TerminologyMappingAndValidation",
+    "displayProperty": "Terminology Mapping and Validation"
+  },
+  {
+    "identifier": "id-703c2155d88d53aaa3d6a6e4911661bd",
+    "canonicalId": "41900f15d1d2431295a4b9dc1aa752c0",
+    "oldName": "Continuity of Operations",
+    "name": "[SolutionFacet] ResilienceAndRecovery.ContinuityOfOperations",
+    "oldFriendly": "ContinuityOfOperations",
+    "friendly": "ResilienceAndRecovery.ContinuityOfOperations",
+    "displayProperty": "Continuity of Operations"
+  },
+  {
+    "identifier": "id-719e7bcde9c6522195aa1bde4d1105d8",
+    "canonicalId": "7b2cabb4089d414d8ad700ef5f7932b7",
+    "oldName": "Directory Verification and Quality",
+    "name": "[SolutionFacet] ProviderDirectory.DirectoryVerificationAndQuality",
+    "oldFriendly": "DirectoryVerificationAndQuality",
+    "friendly": "ProviderDirectory.DirectoryVerificationAndQuality",
+    "displayProperty": "Directory Verification and Quality"
+  },
+  {
+    "identifier": "id-7367ff599bf853ec864a8891c0f154b6",
+    "canonicalId": "f814f4598722425cb3e7f45c32c11c90",
+    "oldName": "Accessibility",
+    "name": "[SolutionFacet] UserExperience.Accessibility",
+    "oldFriendly": "Accessibility",
+    "friendly": "UserExperience.Accessibility",
+    "displayProperty": "Accessibility"
+  },
+  {
+    "identifier": "id-741c11216ebb5673bf6200a2ba6fc5f6",
+    "canonicalId": "77cd076a5bdf463a93fe330698d9be19",
+    "oldName": "Localisation and Internationalisation",
+    "name": "[SolutionFacet] UserExperience.LocalisationAndInternationalisation",
+    "oldFriendly": "LocalisationAndInternationalisation",
+    "friendly": "UserExperience.LocalisationAndInternationalisation",
+    "displayProperty": "Localisation and Internationalisation"
+  },
+  {
+    "identifier": "id-76b5dcf51d53581b915783b544348df1",
+    "canonicalId": "38d3dfcd23894f43b59d00c782170e63",
+    "oldName": "Accountability and Traceability",
+    "name": "[SolutionFacet] AuditAndAccountability.AccountabilityAndTraceability",
+    "oldFriendly": "AccountabilityAndTraceability",
+    "friendly": "AuditAndAccountability.AccountabilityAndTraceability",
+    "displayProperty": "Accountability and Traceability"
+  },
+  {
+    "identifier": "id-76d2dbcd18724197848332489f611e98",
+    "canonicalId": "3566f7776b8741699f48139e1c6b8ec8",
+    "oldName": "Resilience-and-Recovery.Fault-Tolerance.Principles",
+    "name": "[SolutionFacet] ResilienceAndRecovery.FaultTolerance.Principles",
+    "oldFriendly": "ResilienceAndRecoveryFaultTolerancePrinciples",
+    "friendly": "ResilienceAndRecovery.FaultTolerance.Principles",
+    "displayProperty": "Fault Tolerance - Principles"
+  },
+  {
+    "identifier": "id-771158ad93925187bc9351f47437a191",
+    "canonicalId": "45cb08d300b74853b456f333572a2bf6",
+    "oldName": "Operational Diagnostics",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalDiagnostics",
+    "oldFriendly": "OperationalDiagnostics",
+    "friendly": "OperationsAndAssurance.OperationalDiagnostics",
+    "displayProperty": "Operational Diagnostics"
+  },
+  {
+    "identifier": "id-77dfe914f07a4cd6bf6f7bb1c48dd20f",
+    "canonicalId": "f6b8d4c19f9649a0bdde6727182855b6",
+    "oldName": "Information-Management.Information-Sovereignty-and-Residency.Principles",
+    "name": "[SolutionFacet] InformationManagement.InformationSovereigntyAndResidency.Principles",
+    "oldFriendly": "InformationManagementInformationSovereigntyAndResidencyPrinciples",
+    "friendly": "InformationManagement.InformationSovereigntyAndResidency.Principles",
+    "displayProperty": "Information Sovereignty and Residency - Principles"
+  },
+  {
+    "identifier": "id-784af4f480a051f99d91b26f22922d0a",
+    "canonicalId": "16ebd2840f2246a4a9ec9991947f5db2",
+    "oldName": "Operations and Assurance",
+    "name": "[SolutionFacet] OperationsAndAssurance",
+    "oldFriendly": "OperationsAndAssurance",
+    "friendly": "OperationsAndAssurance",
+    "displayProperty": "Operations and Assurance"
+  },
+  {
+    "identifier": "id-7889b179a0ff4e2b99dd112f11136081",
+    "canonicalId": "f9035f49dbab4676b23ab9e4f45678f9",
+    "oldName": "Security-and-Authorisation.Security-Administration.Constraints",
+    "name": "[SolutionFacet] SecurityAndManagement.SecurityAdministration.Constraints",
+    "oldFriendly": "SecurityAndAuthorisationSecurityAdministrationConstraints",
+    "friendly": "SecurityAndManagement.SecurityAdministration.Constraints",
+    "displayProperty": "Security Administration - Constraints"
+  },
+  {
+    "identifier": "id-79f746bbd71154fc9a31955abc5622dd",
+    "canonicalId": "25bc65e773d64ecf9b71ae4f92ed57e1",
+    "oldName": "Exceptional and Emergency Consent",
+    "name": "[SolutionFacet] ConsentAndInformationSharing.ExceptionalAndEmergencyConsent",
+    "oldFriendly": "ExceptionalAndEmergencyConsent",
+    "friendly": "ConsentAndInformationSharing.ExceptionalAndEmergencyConsent",
+    "displayProperty": "Exceptional and Emergency Consent"
+  },
+  {
+    "identifier": "id-7a55306d968d4e799451c9833ac60377",
+    "canonicalId": "66ec039ab4f042a8b4817ca1dafaedfe",
+    "oldName": "Security-and-Authorisation.Information-Protection.Stakeholders",
+    "name": "[SolutionFacet] SecurityAndManagement.InformationProtection.Stakeholders",
+    "oldFriendly": "SecurityAndAuthorisationInformationProtectionStakeholders",
+    "friendly": "SecurityAndManagement.InformationProtection.Stakeholders",
+    "displayProperty": "Information Protection - Stakeholders"
+  },
+  {
+    "identifier": "id-7c52fd5b61275378b6d2751af8c212ad",
+    "canonicalId": "d2876dff4f5444e3b71bdeba487b2d6b",
+    "oldName": "Directory Information Maintenance",
+    "name": "[SolutionFacet] ProviderDirectory.DirectoryInformationMaintenance",
+    "oldFriendly": "DirectoryInformationMaintenance",
+    "friendly": "ProviderDirectory.DirectoryInformationMaintenance",
+    "displayProperty": "Directory Information Maintenance"
+  },
+  {
+    "identifier": "id-7cdc16c98037500d9eb63dfc591b5ca5",
+    "canonicalId": "40416671099a46678ac5dfc3d0d615cf",
+    "oldName": "Audit Generation",
+    "name": "[SolutionFacet] AuditAndAccountability.AuditGeneration",
+    "oldFriendly": "AuditGeneration",
+    "friendly": "AuditAndAccountability.AuditGeneration",
+    "displayProperty": "Audit Generation"
+  },
+  {
+    "identifier": "id-7dee5f64d6f1554b9902c672d7b88794",
+    "canonicalId": "b83d63bb553c4642b26bbc41f66445b3",
+    "oldName": "Terminology Definition and Maintenance",
+    "name": "[SolutionFacet] TerminologyAndReferenceData.TerminologyDefinitionAndMaintenance",
+    "oldFriendly": "TerminologyDefinitionAndMaintenance",
+    "friendly": "TerminologyAndReferenceData.TerminologyDefinitionAndMaintenance",
+    "displayProperty": "Terminology Definition and Maintenance"
+  },
+  {
+    "identifier": "id-8100e735849d4346bcc0c3146f47f5bd",
+    "canonicalId": "20326d2f4f2e44dcbe12db38deea02d0",
+    "oldName": "Performance-and-Capacity.Throughput.Requirements",
+    "name": "[SolutionFacet] PerformanceAndCapacity.Throughput.Requirements",
+    "oldFriendly": "PerformanceAndCapacityThroughputRequirements",
+    "friendly": "PerformanceAndCapacity.Throughput.Requirements",
+    "displayProperty": "Throughput - Requirements"
+  },
+  {
+    "identifier": "id-83f12e6b714050f5a6648b03707484e0",
+    "canonicalId": "1d7c50343cca49eeaeccf7c49c3c008b",
+    "oldName": "Interaction Reliability",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InteractionReliability",
+    "oldFriendly": "InteractionReliability",
+    "friendly": "InteroperabilityAndIntegration.InteractionReliability",
+    "displayProperty": "Interaction Reliability"
+  },
+  {
+    "identifier": "id-869980a1ea9a4f7ba17772184f7b2274",
+    "canonicalId": "416367b1da96412299df199827b3541f",
+    "oldName": "Processing-and-Workflow.Concurrency-Management.Principles",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.ConcurrencyManagement.Principles",
+    "oldFriendly": "ProcessingAndWorkflowConcurrencyManagementPrinciples",
+    "friendly": "ProcessingAndWorkflow.ConcurrencyManagement.Principles",
+    "displayProperty": "Concurrency Management - Principles"
+  },
+  {
+    "identifier": "id-87516cb980b5488482bab331a911b0d6",
+    "canonicalId": "011207c2c69f42d7a5c9c7504ffbc951",
+    "oldName": "Interoperability-and-Integration.External-Connectivity.Principles",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.ExternalConnectivity.Principles",
+    "oldFriendly": "InteroperabilityAndIntegrationExternalConnectivityPrinciples",
+    "friendly": "InteroperabilityAndIntegration.ExternalConnectivity.Principles",
+    "displayProperty": "External Connectivity - Principles"
+  },
+  {
+    "identifier": "id-889cae531e4c51e0a50d441425553606",
+    "canonicalId": "b23f7fa8cb1b46569f63bde1aa5fbf1f",
+    "oldName": "Information Lifecycle",
+    "name": "[SolutionFacet] InformationManagement.InformationLifecycle",
+    "oldFriendly": "InformationLifecycle",
+    "friendly": "InformationManagement.InformationLifecycle",
+    "displayProperty": "Information Lifecycle"
+  },
+  {
+    "identifier": "id-89557de9c4844948bc97deabf3b68fbc",
+    "canonicalId": "549a5d805b3f40d49437ce704f923bf0",
+    "oldName": "Architectural-Governance.Implementation-Strategy.Constraints",
+    "name": "[solutionFacet] Architectural-Governance.Implementation-Strategy.Constraints",
+    "oldFriendly": "ArchitecturalGovernanceImplementationStrategyConstraints",
+    "friendly": "ArchitecturalGovernance.ImplementationStrategy.Constraints",
+    "displayProperty": "Implementation Strategy - Constraints"
+  },
+  {
+    "identifier": "id-895be9de41a9574e8866fc73571a0cf2",
+    "canonicalId": "a58e87c95bd24c16a1006b217aeac691",
+    "oldName": "Provider Identity and Registration",
+    "name": "[SolutionFacet] ProviderAndWorkforceManagement.ProviderIdentityAndRegistration",
+    "oldFriendly": "ProviderIdentityAndRegistration",
+    "friendly": "ProviderAndWorkforceManagement.ProviderIdentityAndRegistration",
+    "displayProperty": "Provider Identity and Registration"
+  },
+  {
+    "identifier": "id-8aa2b084d62a4640998e385ae69f0918",
+    "canonicalId": "477d6408de0642fc875ce79d8e9dee86",
+    "oldName": "Processing-and-Workflow.Processing-Outcomes.Requirements",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.ProcessingOutcomes.Requirements",
+    "oldFriendly": "ProcessingAndWorkflowProcessingOutcomesRequirements",
+    "friendly": "ProcessingAndWorkflow.ProcessingOutcomes.Requirements",
+    "displayProperty": "Processing Outcomes - Requirements"
+  },
+  {
+    "identifier": "id-8b30c71c6e2e454480b5b6f00b5bb440",
+    "canonicalId": "c5f38ca4adc24f03a2b885938186e509",
+    "oldName": "Verification-and-Testing.Test-Governance.Constraints",
+    "name": "[SolutionFacet] VerificationAndTesting.TestGovernance.Constraints",
+    "oldFriendly": "VerificationAndTestingTestGovernanceConstraints",
+    "friendly": "VerificationAndTesting.TestGovernance.Constraints",
+    "displayProperty": "Test Governance - Constraints"
+  },
+  {
+    "identifier": "id-8d9389121f444438868fd7b70ddf121e",
+    "canonicalId": "4f80f28b3dad490abe942e5bb37e1a80",
+    "oldName": "Architectural-Governance.Architecture-Vision.Stakeholders",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureVision.Stakeholders",
+    "oldFriendly": "ArchitecturalGovernanceArchitectureVisionStakeholders",
+    "friendly": "ArchitecturalGovernance.ArchitectureVision.Stakeholders",
+    "displayProperty": "Architecture Vision - Stakeholders"
+  },
+  {
+    "identifier": "id-8ecdc98d1ed745bfb11b291ca59a1aa6",
+    "canonicalId": "f7d9c92661ed44af99516400635041bf",
+    "oldName": "Resilience-and-Recovery.Disaster-Recovery.Constraints",
+    "name": "[SolutionFacet] ResilienceAndRecovery.DisasterRecovery.Constraints",
+    "oldFriendly": "ResilienceAndRecoveryDisasterRecoveryConstraints",
+    "friendly": "ResilienceAndRecovery.DisasterRecovery.Constraints",
+    "displayProperty": "Disaster Recovery - Constraints"
+  },
+  {
+    "identifier": "id-8f3100f85f834a1bbcd57dc0653dc5e3",
+    "canonicalId": "f14ca9b3213d4c3db3c5d479b4cc938e",
+    "oldName": "Information-Management.Information-Lifecycle.Principles",
+    "name": "[SolutionFacet] InformationManagement.InformationLifecycle.Principles",
+    "oldFriendly": "InformationManagementInformationLifecyclePrinciples",
+    "friendly": "InformationManagement.InformationLifecycle.Principles",
+    "displayProperty": "Information Lifecycle - Principles"
+  },
+  {
+    "identifier": "id-8f402ce69bf853e08149cd834bf0ca4b",
+    "canonicalId": "cdcfbe8d106844109bb8ded51dea7a8a",
+    "oldName": "Throughput",
+    "name": "[SolutionFacet] PerformanceAndCapacity.Throughput",
+    "oldFriendly": "Throughput",
+    "friendly": "PerformanceAndCapacity.Throughput",
+    "displayProperty": "Throughput"
+  },
+  {
+    "identifier": "id-8feb3ea6eb244bc289a02ec7066a17f5",
+    "canonicalId": "5a4a41f263424c1aac14102b64f95bd0",
+    "oldName": "Processing-and-Workflow.Processing-Outcomes.Principles",
+    "name": "[solutionFacet] ProcessingAndWorkflow.ProcessingOutcomes.Principles",
+    "oldFriendly": "ProcessingAndWorkflowProcessingOutcomesPrinciples",
+    "friendly": "ProcessingAndWorkflow.ProcessingOutcomes.Principles",
+    "displayProperty": "Processing Outcomes - Principles"
+  },
+  {
+    "identifier": "id-91244c9aaabe5a34ad79277ab150659b",
+    "canonicalId": "0233415953ed487fbbe407ebb469e7bc",
+    "oldName": "Provider Directory",
+    "name": "[SolutionFacet] ProviderDirectory",
+    "oldFriendly": "ProviderDirectory",
+    "friendly": "ProviderDirectory",
+    "displayProperty": "Provider Directory"
+  },
+  {
+    "identifier": "id-9155cfde11615fce9d6ec68e0efcdab6",
+    "canonicalId": "0f1014c80b0a473abf8c37845e0ed2fa",
+    "oldName": "Temporal Consistency",
+    "name": "[SolutionFacet] DistributedSystemsAndTemporalManagement.TemporalConsistency",
+    "oldFriendly": "TemporalConsistency",
+    "friendly": "DistributedSystemsAndTemporalManagement.TemporalConsistency",
+    "displayProperty": "Temporal Consistency"
+  },
+  {
+    "identifier": "id-918400789c3f471388455b18ac722408",
+    "canonicalId": "b558d26d626b4276bd5ec38b8d42213a",
+    "oldName": "Operations-and-Assurance.Operational-Monitoring.Constraints",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalMonitoring.Constraints",
+    "oldFriendly": "OperationsAndAssuranceOperationalMonitoringConstraints",
+    "friendly": "OperationsAndAssurance.OperationalMonitoring.Constraints",
+    "displayProperty": "Operational Monitoring - Constraints"
+  },
+  {
+    "identifier": "id-9199011422af4fd4b71051dde6008dea",
+    "canonicalId": "c18ef04adb54413d89bd9434a344504f",
+    "oldName": "Audit-and-Accountability.Audit-Management.Constraints",
+    "name": "[SolutionFacet] AuditAndAccountability.AuditManagement.Constraints",
+    "oldFriendly": "AuditAndAccountabilityAuditManagementConstraints",
+    "friendly": "AuditAndAccountability.AuditManagement.Constraints",
+    "displayProperty": "Audit Management - Constraints"
+  },
+  {
+    "identifier": "id-92aa8ffe30c75de89f854b727d240004",
+    "canonicalId": "b91ec2110aaf4d44bd043bb787fbd910",
+    "oldName": "Identity Matching and Reconciliation",
+    "name": "[SolutionFacet] PatientIdentityAndDemographcis.IdentityMatchingAndReconciliation",
+    "oldFriendly": "IdentityMatchingAndReconciliation",
+    "friendly": "PatientIdentityAndDemographcis.IdentityMatchingAndReconciliation",
+    "displayProperty": "Identity Matching and Reconciliation"
+  },
+  {
+    "identifier": "id-92f2307a851a4da6a658b8c4d60bcd51",
+    "canonicalId": "2423108223e14d27a7bf59610034297a",
+    "oldName": "Security-and-Authorisation.Security-Monitoring.Principles",
+    "name": "[SolutionFacet] SecurityAndManagement.SecurityMonitoring.Principles",
+    "oldFriendly": "SecurityAndAuthorisationSecurityMonitoringPrinciples",
+    "friendly": "SecurityAndManagementSecurityMonitoringPrinciples",
+    "displayProperty": "Security Monitoring - Principles"
+  },
+  {
+    "identifier": "id-9392ac3126fc59028371a42bb421edc0",
+    "canonicalId": "e8c7f8a36ff248cd9115d7a382324808",
+    "oldName": "Integration Verification",
+    "name": "[SolutionFacet] VerificationAndTesting.IntegrationVerification",
+    "oldFriendly": "IntegrationVerification",
+    "friendly": "VerificationAndTesting.IntegrationVerification",
+    "displayProperty": "Integration Verification"
+  },
+  {
+    "identifier": "id-9429be9e3e47419ea2d38332b7ff72c1",
+    "canonicalId": "a49c1e5afd224d12bae33fac366a1d37",
+    "oldName": "Security-and-Authorisation.Information-Protection.Constraints",
+    "name": "[SolutionFacet] SecurityAndManagement.InformationProtection.Constraints",
+    "oldFriendly": "SecurityAndAuthorisationInformationProtectionConstraints",
+    "friendly": "SecurityAndManagement.InformationProtection.Constraints",
+    "displayProperty": "Information Protection - Constraints"
+  },
+  {
+    "identifier": "id-9508b495e21740989bf5e86f7acecded",
+    "canonicalId": "76b2a8e5551e4645a048f48e4820a0bc",
+    "oldName": "Information-Management.Information-Persistence.Constraints",
+    "name": "[SolutionFacet] InformationManagement.InformationPersistence.Constraints",
+    "oldFriendly": "InformationManagementInformationPersistenceConstraints",
+    "friendly": "InformationManagement.InformationPersistence.Constraints",
+    "displayProperty": "Information Persistence - Constraints"
+  },
+  {
+    "identifier": "id-95a48392b7484331bb44b2983a7c1514",
+    "canonicalId": "23408174240a47f690d23dee589e4ddc",
+    "oldName": "User-Experience.Accessibility.Requirements",
+    "name": "[SolutionFacet] UserExperience.Accessibility.Requirements",
+    "oldFriendly": "UserExperienceAccessibilityRequirements",
+    "friendly": "UserExperience.Accessibility.Requirements",
+    "displayProperty": "Accessibility - Requirements"
+  },
+  {
+    "identifier": "id-95ad291dd68351ce97207f2db51906c9",
+    "canonicalId": "3d87dbf35e0a43a3b5e12cbc6b947763",
+    "oldName": "Consent Verification and Decisions",
+    "name": "[SolutionFacet] ConsentAndInformationSharing.ConsentVerificationAndDecisions",
+    "oldFriendly": "ConsentVerificationAndDecisions",
+    "friendly": "ConsentAndInformationSharing.ConsentVerificationAndDecisions",
+    "displayProperty": "Consent Verification and Decisions"
+  },
+  {
+    "identifier": "id-95e03944d49c4cf7b29080edde0ed60d",
+    "canonicalId": "b1997b3f14724bb983c06963fa7b4ea6",
+    "oldName": "Security-and-Authorisation.Security-Administration.Assessments",
+    "name": "[SolutionFacet] SecurityAndManagement.SecurityAdministration.Assessments",
+    "oldFriendly": "SecurityAndAuthorisationSecurityAdministrationAssessments",
+    "friendly": "SecurityAndManagement.SecurityAdministration.Assessments",
+    "displayProperty": "Security Administration - Assessments"
+  },
+  {
+    "identifier": "id-96c1944cd4c0438a96e04f3a9a0d27c1",
+    "canonicalId": "e84139e878c740ab81c558cbc7ec6548",
+    "oldName": "Security-and-Authorisation.Information-Protection.Requirements",
+    "name": "[SolutionFacet] SecurityAndManagement.InformationProtection.Requirements",
+    "oldFriendly": "SecurityAndAuthorisationInformationProtectionRequirements",
+    "friendly": "SecurityAndManagement.InformationProtection.Requirements",
+    "displayProperty": "Information Protection - Requirements"
+  },
+  {
+    "identifier": "id-96de76241ecd42b2ac583eed9fb161c1",
+    "canonicalId": "b12837a817d14919b5c33b35e3bb3d5a",
+    "oldName": "Audit-and-Accountability.Accountability-and-Traceability.Requirements",
+    "name": "[SolutionFacet] AuditAndAccountability.AccountabilityAndTraceability.Requirements",
+    "oldFriendly": "AuditAndAccountabilityAccountabilityAndTraceabilityRequirements",
+    "friendly": "AuditAndAccountability.AccountabilityAndTraceability.Requirements",
+    "displayProperty": "Accountability and Traceability - Requirements"
+  },
+  {
+    "identifier": "id-96ed88d244ed57e98031966d70a03051",
+    "canonicalId": "f29ffa95c89d470b8a32e1369696327f",
+    "oldName": "Authentication",
+    "name": "[SolutionFacet] SecurityAndManagement.Authentication",
+    "oldFriendly": "Authentication",
+    "friendly": "SecurityAndManagement.Authentication",
+    "displayProperty": "Authentication"
+  },
+  {
+    "identifier": "id-9a1e2bb269b14a4daea1ec78044ed129",
+    "canonicalId": "4cc994e1de714cc8915dc965d2694808",
+    "oldName": "Interoperability-and-Integration.External-Connectivity.Assessments",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.ExternalConnectivity.Assessments",
+    "oldFriendly": "InteroperabilityAndIntegrationExternalConnectivityAssessments",
+    "friendly": "InteroperabilityAndIntegration.ExternalConnectivity.Assessments",
+    "displayProperty": "External Connectivity - Assessments"
+  },
+  {
+    "identifier": "id-9a2d0a6b44b74c3da7e329b7589ee325",
+    "canonicalId": "f5838796139b4157b91b53dfd56ea0a2",
+    "oldName": "Interoperability-and-Integration.Information-Exchange.Outcomes",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InformationExchange.Outcomes",
+    "oldFriendly": "InteroperabilityAndIntegrationInformationExchangeOutcomes",
+    "friendly": "InteroperabilityAndIntegration.InformationExchange.Outcomes",
+    "displayProperty": "Information Exchange - Outcomes"
+  },
+  {
+    "identifier": "id-9bdc892bfc1b564c97f85b758ed6a275",
+    "canonicalId": "4e5f729c97394b898918591f4d81a69a",
+    "oldName": "Deployment and Release Management",
+    "name": "[SolutionFacet] DeploymentAndReleaseManagement",
+    "oldFriendly": "DeploymentAndReleaseManagement",
+    "friendly": "DeploymentAndReleaseManagement",
+    "displayProperty": "Deployment and Release Management"
+  },
+  {
+    "identifier": "id-9e69fff940694a63b177fdb172399b26",
+    "canonicalId": "d56a556f29ff4ba78634e58d103c786e",
+    "oldName": "Audit-and-Accountability.Audit-Generation.Principles",
+    "name": "[SolutionFacet] AuditAndAccountability.AuditGeneration.Principles",
+    "oldFriendly": "AuditAndAccountabilityAuditGenerationPrinciples",
+    "friendly": "AuditAndAccountability.AuditGeneration.Principles",
+    "displayProperty": "Audit Generation - Principles"
+  },
+  {
+    "identifier": "id-9ee6053ff1eb54f78509532fda422b41",
+    "canonicalId": "801386f27cda458b8ce811f133d917e9",
+    "oldName": "Identity Maintenance and Status",
+    "name": "[SolutionFacet] PatientIdentityAndDemographcis.IdentityMaintenanceAndStatus",
+    "oldFriendly": "IdentityMaintenanceAndStatus",
+    "friendly": "PatientIdentityAndDemographcis.IdentityMaintenanceAndStatus",
+    "displayProperty": "Identity Maintenance and Status"
+  },
+  {
+    "identifier": "id-a04b838f87ac41e6a371b2940bdceca5",
+    "canonicalId": "c0ef85ab954f447fb244149dfcc44aad",
+    "oldName": "Security-and-Authorisation.Authorisation.Constraints",
+    "name": "[SolutionFacet] SecurityAndManagement.Authorisation.Constraints",
+    "oldFriendly": "SecurityAndAuthorisationAuthorisationConstraints",
+    "friendly": "SecurityAndManagement.Authorisation.Constraints",
+    "displayProperty": "Authorisation - Constraints"
+  },
+  {
+    "identifier": "id-a0ec3251d4564072a217279d4cb4a394",
+    "canonicalId": "6fceb4d8857a4601b736a33e9bec140a",
+    "oldName": "Architectural-Governance.Architecture-Process.Constraints",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureProcess.Constraints",
+    "oldFriendly": "ArchitecturalGovernanceArchitectureProcessConstraints",
+    "friendly": "ArchitecturalGovernance.ArchitectureProcess.Constraints",
+    "displayProperty": "Architecture Process - Constraints"
+  },
+  {
+    "identifier": "id-a149c282595b4434bb04588730bb88ef",
+    "canonicalId": "99436452c53a49b89fa6bc2863557572",
+    "oldName": "Operations-and-Assurance.Operational-Diagnostics.Goals",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalDiagnostics.Goals",
+    "oldFriendly": "OperationsAndAssuranceOperationalDiagnosticsGoals",
+    "friendly": "OperationsAndAssurance.OperationalDiagnostics.Goals",
+    "displayProperty": "Operational Diagnostics - Goals"
+  },
+  {
+    "identifier": "id-a1bc3da1b5f044d7b0b41b2ad8623bc8",
+    "canonicalId": "549eaf0604764c01814641872404017f",
+    "oldName": "Processing-and-Workflow.Message-Processing-View.Assessments",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.MessageProcessingView.Assessments",
+    "oldFriendly": "ProcessingAndWorkflowMessageProcessingViewAssessments",
+    "friendly": "ProcessingAndWorkflow.MessageProcessingView.Assessments",
+    "displayProperty": "Message Processing View - Assessments"
+  },
+  {
+    "identifier": "id-a2693cde7d0545689b29417eee7ef74b",
+    "canonicalId": "f812d4f33612403986c174602b358a2f",
+    "oldName": "Resilience-and-Recovery.Continuity-of-Operations.Drivers",
+    "name": "[SolutionFacet] ResilienceAndRecovery.ContinuityOfOperations.Drivers",
+    "oldFriendly": "ResilienceAndRecoveryContinuityOfOperationsDrivers",
+    "friendly": "ResilienceAndRecovery.ContinuityOfOperations.Drivers",
+    "displayProperty": "Continuity of Operations - Drivers"
+  },
+  {
+    "identifier": "id-a33614a85537406883b204719da57745",
+    "canonicalId": "b6ff7b82c59e4125868902e34d89630d",
+    "oldName": "Security-and-Authorisation.Information-Protection.Outcomes",
+    "name": "[SolutionFacet] SecurityAndManagement.InformationProtection.Outcomes",
+    "oldFriendly": "SecurityAndAuthorisationInformationProtectionOutcomes",
+    "friendly": "SecurityAndManagement.InformationProtection.Outcomes",
+    "displayProperty": "Information Protection - Outcomes"
+  },
+  {
+    "identifier": "id-a36aa11a96b450a7bcf85c6f66750c4e",
+    "canonicalId": "b92ea843bd6342879b6a3be255743e31",
+    "oldName": "Operational Reporting",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalReporting",
+    "oldFriendly": "OperationalReporting",
+    "friendly": "OperationsAndAssurance.OperationalReporting",
+    "displayProperty": "Operational Reporting"
+  },
+  {
+    "identifier": "id-a5fe9dd5dcfd502dbdfea4ab86d0e26d",
+    "canonicalId": "fd9d0fa7117a4dc3b45cfed0e7be614b",
+    "oldName": "Provider and Workforce Management",
+    "name": "[SolutionFacet] ProviderAndWorkforceManagement",
+    "oldFriendly": "ProviderAndWorkforceManagement",
+    "friendly": "ProviderAndWorkforceManagement",
+    "displayProperty": "Provider and Workforce Management"
+  },
+  {
+    "identifier": "id-a64e922707cd4bc9a375c80499367476",
+    "canonicalId": "5c36fbab326d484a9f7877b7fb6a2ff9",
+    "oldName": "Processing-and-Workflow.Task-Completion.Principles",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.TaskCompletion.Principles",
+    "oldFriendly": "ProcessingAndWorkflowTaskCompletionPrinciples",
+    "friendly": "ProcessingAndWorkflow.TaskCompletion.Principles",
+    "displayProperty": "Task Completion - Principles"
+  },
+  {
+    "identifier": "id-a6b18bfedd3551b3a3319edd74491ec4",
+    "canonicalId": "71b9830ce1a543548334647cbbaec7f1",
+    "oldName": "Distributed State Consistency",
+    "name": "[SolutionFacet] DistributedSystemsAndTemporalManagement.DistributedStateConsistency",
+    "oldFriendly": "DistributedStateConsistency",
+    "friendly": "DistributedSystemsAndTemporalManagement.DistributedStateConsistency",
+    "displayProperty": "Distributed State Consistency"
+  },
+  {
+    "identifier": "id-a774fbe862574414bdc865b7eca33894",
+    "canonicalId": "c189826cd7024780abd89fa4f067947a",
+    "oldName": "Security-and-Authorisation.Security-Administration.Principles",
+    "name": "[SolutionFacet] SecurityAndManagement.SecurityAdministration.Principles",
+    "oldFriendly": "SecurityAndAuthorisationSecurityAdministrationPrinciples",
+    "friendly": "SecurityAndManagement.SecurityAdministration.Principles",
+    "displayProperty": "Security Administration - Principles"
+  },
+  {
+    "identifier": "id-ad24be7e00bc56c3a99090b0ed5cec6d",
+    "canonicalId": "400c5c54a23a44588cc473ed10ead4a8",
+    "oldName": "Reference Data Quality and Governance",
+    "name": "[SolutionFacet] TerminologyAndReferenceData.ReferenceDataQualityAndGovernance",
+    "oldFriendly": "ReferenceDataQualityAndGovernance",
+    "friendly": "TerminologyAndReferenceData.ReferenceDataQualityAndGovernance",
+    "displayProperty": "Reference Data Quality and Governance"
+  },
+  {
+    "identifier": "id-ad5567429053481f8c7221f016e944e9",
+    "canonicalId": "e5d75469d336405a8f187368a7dc0353",
+    "oldName": "Information-Management.Information-Persistence.Goals",
+    "name": "[SolutionFacet] InformationManagement.InformationPersistence.Goals",
+    "oldFriendly": "InformationManagementInformationPersistenceGoals",
+    "friendly": "InformationManagement.InformationPersistence.Goals",
+    "displayProperty": "Information Persistence - Goals"
+  },
+  {
+    "identifier": "id-adebd5da32ca413f99024a96d351adc0",
+    "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+    "oldName": "Architectural-Governance.Architecture-Conformance.Constraints",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureConformance.Constraints",
+    "oldFriendly": "ArchitecturalGovernanceArchitectureConformanceConstraints",
+    "friendly": "ArchitecturalGovernanceArchitectureConformanceConstraints",
+    "displayProperty": "Architectural-Governance.Architecture-Conformance.Constraints"
+  },
+  {
+    "identifier": "id-af15e7209c6e5720a7a0ff8767f968f1",
+    "canonicalId": "fe8916b03b084e82af587ac5a900349b",
+    "oldName": "Authorisation Enforcement",
+    "name": "[SolutionFacet] Authorisation Enforcement",
+    "oldFriendly": "AuthorisationEnforcement",
+    "friendly": "SecurityAndManagement.AuthorisationEnforcement",
+    "displayProperty": "Authorisation Enforcement"
+  },
+  {
+    "identifier": "id-b26c1fb55b9e539cb50ea5452bd5e13a",
+    "canonicalId": "c77bba93c0c843959b30d9e1195fb68e",
+    "oldName": "Distributed Systems and Temporal Management",
+    "name": "[SolutionFacet] DistributedSystemsAndTemporalManagement",
+    "oldFriendly": "DistributedSystemsAndTemporalManagement",
+    "friendly": "DistributedSystemsAndTemporalManagement",
+    "displayProperty": "Distributed Systems and Temporal Management"
+  },
+  {
+    "identifier": "id-b291bf631b955bed9ca4f61b5e6471e6",
+    "canonicalId": "8609b046777c4a8ab4d5cafb30e34d04",
+    "oldName": "Operational Recovery",
+    "name": "[SolutionFacet] ResilienceAndRecovery.OperationalRecovery",
+    "oldFriendly": "OperationalRecovery",
+    "friendly": "ResilienceAndRecovery.OperationalRecovery",
+    "displayProperty": "Operational Recovery"
+  },
+  {
+    "identifier": "id-b3112356ac314e86bc20698a74a44421",
+    "canonicalId": "445d396942f549e5891086bd72fa5b44",
+    "oldName": "Operations-and-Assurance.Operational-Control.Constraints",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalControl.Constraints",
+    "oldFriendly": "OperationsAndAssuranceOperationalControlConstraints",
+    "friendly": "OperationsAndAssurance.OperationalControl.Constraints",
+    "displayProperty": "Operational Control - Constraints"
+  },
+  {
+    "identifier": "id-b641c890a01c4e25b217c38daf552fc2",
+    "canonicalId": "eef79a8840434bd6b6fd37ab4f8ff75d",
+    "oldName": "Performance-and-Capacity.Resource-Management.Requirements",
+    "name": "[SolutionFacet] PerformanceAndCapacity.ResourceManagement.Requirements",
+    "oldFriendly": "PerformanceAndCapacityResourceManagementRequirements",
+    "friendly": "PerformanceAndCapacity.ResourceManagement.Requirements",
+    "displayProperty": "Resource Management - Requirements"
+  },
+  {
+    "identifier": "id-b67e6a308e864c5dbe522df87125fcb6",
+    "canonicalId": "93adee1dcb7348dd8bc070e7a53264f6",
+    "oldName": "Architectural-Governance.Implementation-Strategy.Principles",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ImplementationStrategy.Principles",
+    "oldFriendly": "ArchitecturalGovernanceImplementationStrategyPrinciples",
+    "friendly": "ArchitecturalGovernance.ImplementationStrategy.Principles",
+    "displayProperty": "Implementation Strategy - Principles"
+  },
+  {
+    "identifier": "id-b78d26a55c40537dbf4d023760685ecd",
+    "canonicalId": "884f06591f6c4dcf8e7f94e4b31269c1",
+    "oldName": "Consent Capture and Maintenance",
+    "name": "[SolutionFacet] ConsentAndInformationSharing.ConsentCaptureAndMaintenance",
+    "oldFriendly": "ConsentCaptureAndMaintenance",
+    "friendly": "ConsentAndInformationSharing.ConsentCaptureAndMaintenance",
+    "displayProperty": "Consent Capture and Maintenance"
+  },
+  {
+    "identifier": "id-bb0b8df89b025d5081ea84e83bce6d83",
+    "canonicalId": "a47808600e8f4d7c83756f4ce77b498e",
+    "oldName": "Provider Profile Maintenance",
+    "name": "[SolutionFacet] ProviderAndWorkforceManagement.ProviderProfileMaintenance",
+    "oldFriendly": "ProviderProfileMaintenance",
+    "friendly": "ProviderAndWorkforceManagement.ProviderProfileMaintenance",
+    "displayProperty": "Provider Profile Maintenance"
+  },
+  {
+    "identifier": "id-bb32b6788247543195d0fe2fc9a40424",
+    "canonicalId": "b3c19413e4b447adb5f1d86912db4052",
+    "oldName": "Interaction Contracts",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InteractionContracts",
+    "oldFriendly": "InteractionContracts",
+    "friendly": "InteroperabilityAndIntegration.InteractionContracts",
+    "displayProperty": "Interaction Contracts"
+  },
+  {
+    "identifier": "id-bccdbd54801e509884908ef301281703",
+    "canonicalId": "2d89b3a1e74e42d28a9f0a3dfb2c4ecb",
+    "oldName": "Task Completion",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.TaskCompletion",
+    "oldFriendly": "TaskCompletion",
+    "friendly": "ProcessingAndWorkflow.TaskCompletion",
+    "displayProperty": "Task Completion"
+  },
+  {
+    "identifier": "id-bdeb1d9a401b551bbe6c2f9899ae157e",
+    "canonicalId": "914b8be39ecc4fb599e6bc0004c355c0",
+    "oldName": "Resilience and Recovery",
+    "name": "[SolutionFacet] ResilienceAndRecovery",
+    "oldFriendly": "ResilienceAndRecovery",
+    "friendly": "ResilienceAndRecovery",
+    "displayProperty": "Resilience and Recovery"
+  },
+  {
+    "identifier": "id-bf875446915c42ccb0bff4a538b4f41a",
+    "canonicalId": "de3ff3302e504029b5b5f3f18fe9c380",
+    "oldName": "Audit-and-Accountability.Audit-Integrity.Requirements",
+    "name": "[SolutionFacet] AuditAndAccountability.AuditIntegrity.Requirements",
+    "oldFriendly": "AuditAndAccountabilityAuditIntegrityRequirements",
+    "friendly": "AuditAndAccountability.AuditIntegrity.Requirements",
+    "displayProperty": "Audit Integrity - Requirements"
+  },
+  {
+    "identifier": "id-bfe091f4713151fa803407c75d41bff2",
+    "canonicalId": "8034148e63e6457f90e8cae1d4eb4453",
+    "oldName": "Performance and Capacity",
+    "name": "[SolutionFacet] PerformanceAndCapacity",
+    "oldFriendly": "PerformanceAndCapacity",
+    "friendly": "PerformanceAndCapacity",
+    "displayProperty": "Performance and Capacity"
+  },
+  {
+    "identifier": "id-c02e147304774275b51786a342d90f77",
+    "canonicalId": "d90a28dcf8294c89a7a06022a3617aba",
+    "oldName": "Processing-and-Workflow.Concurrency-Management.Constraints",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.ConcurrencyManagement.Constraints",
+    "oldFriendly": "ProcessingAndWorkflowConcurrencyManagementConstraints",
+    "friendly": "ProcessingAndWorkflow.ConcurrencyManagement.Constraints",
+    "displayProperty": "Concurrency Management - Constraints"
+  },
+  {
+    "identifier": "id-c104c6bf7a585269a977e2d2de66ffb3",
+    "canonicalId": "e9804b6dea5c4e1db80be1925463786f",
+    "oldName": "Failure Detection and Handling",
+    "name": "[SolutionFacet] ResilienceAndRecovery.FailureDetectionAndHandling",
+    "oldFriendly": "FailureDetectionAndHandling",
+    "friendly": "ResilienceAndRecovery.FailureDetectionAndHandling",
+    "displayProperty": "Failure Detection and Handling"
+  },
+  {
+    "identifier": "id-c3b22effdb8555edbd8565ae22edbf78",
+    "canonicalId": "0a59e0ebb33c494e939148d30e42f49c",
+    "oldName": "Fault Tolerance",
+    "name": "[SolutionFacet] ResilienceAndRecovery.FaultTolerance",
+    "oldFriendly": "FaultTolerance",
+    "friendly": "ReslienceAndRecovery.FaultTolerance",
+    "displayProperty": "Fault Tolerance"
+  },
+  {
+    "identifier": "id-c4a5a28f792e4924b681a9a253ef0a7c",
+    "canonicalId": "028a5b5f4b0e458a91489cac0513955d",
+    "oldName": "Performance-and-Capacity.Scalability.Constraints",
+    "name": "[SolutionFacet] PerformanceAndCapacity.Scalability.Constraints",
+    "oldFriendly": "PerformanceAndCapacityScalabilityConstraints",
+    "friendly": "PerformanceAndCapacity.Scalability.Constraints",
+    "displayProperty": "Scalability - Constraints"
+  },
+  {
+    "identifier": "id-c5129404bca24cb0b7ebf0326b019ef3",
+    "canonicalId": "eabbd522676448fcb075f7d4b5ef4434",
+    "oldName": "Architectural-Governance.Architecture-Vision.Requirements",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureVision.Requirements",
+    "oldFriendly": "ArchitecturalGovernanceArchitectureVisionRequirements",
+    "friendly": "ArchitecturalGovernance.ArchitectureVision.Requirements",
+    "displayProperty": "Architecture Vision - Requirements"
+  },
+  {
+    "identifier": "id-c5697d102b0c588da0523966f7f5297f",
+    "canonicalId": "7eceab6d8a9741708d438a7760103c69",
+    "oldName": "Test Governance",
+    "name": "[SolutionFacet] VerificationAndTesting.TestGovernance",
+    "oldFriendly": "TestGovernance",
+    "friendly": "VerificationAndTesting.TestGovernance",
+    "displayProperty": "Test Governance"
+  },
+  {
+    "identifier": "id-c5f499e1694c552bae7311911aea1399",
+    "canonicalId": "03cfbc2cac494fb9a15106c2c571d384",
+    "oldName": "Architectural Governance",
+    "name": "[SolutionFacet] Architectural Governance",
+    "oldFriendly": "ArchitecturalGovernance",
+    "friendly": "ArchitecturalGovernance",
+    "displayProperty": "Architectural Governance"
+  },
+  {
+    "identifier": "id-c76e998defa35740bdf92bea51aaf54d",
+    "canonicalId": "2ad6333e5858456dba8aefeec71773a5",
+    "oldName": "Credentials and Professional Standing",
+    "name": "[SolutionFacet] ProviderAndWorkforceManagement.CredentialsAndProfessionalStanding",
+    "oldFriendly": "CredentialsAndProfessionalStanding",
+    "friendly": "ProviderAndWorkforceManagement.CredentialsAndProfessionalStanding",
+    "displayProperty": "Credentials and Professional Standing"
+  },
+  {
+    "identifier": "id-c7f0ce03183c42e09ba688ecfb969c9c",
+    "canonicalId": "805280b737e14b72ba401393c1f4a271",
+    "oldName": "Operations-and-Assurance.Operational-Diagnostics.Drivers",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalDiagnostics.Drivers",
+    "oldFriendly": "OperationsAndAssuranceOperationalDiagnosticsDrivers",
+    "friendly": "OperationsAndAssuranceOperationalDiagnosticsDrivers",
+    "displayProperty": "Operational Diagnostics - Drivers"
+  },
+  {
+    "identifier": "id-c946464ac41c47ac9a8088fece31022c",
+    "canonicalId": "60fcf91dfa7445999dfa8e039d993415",
+    "oldName": "Security-and-Authorisation.Security-Monitoring.Requirements",
+    "name": "[SolutionFacet] SecurityAndManagement.SecurityMonitoring.Requirements",
+    "oldFriendly": "SecurityAndAuthorisationSecurityMonitoringRequirements",
+    "friendly": "SecurityAndManagement.SecurityMonitoring.Requirements",
+    "displayProperty": "Security Monitoring - Requirements"
+  },
+  {
+    "identifier": "id-c9fa49d57999510a8190be3f28523bf0",
+    "canonicalId": "35df8a5d8b1e495ba4cf79a5d4a47863",
+    "oldName": "Regression Testing",
+    "name": "[SolutionFacet] VerificationAndTesting.RegressionTesting",
+    "oldFriendly": "RegressionTesting",
+    "friendly": "VerificationAndTesting.RegressionTesting",
+    "displayProperty": "Regression Testing"
+  },
+  {
+    "identifier": "id-ca7d2832c33b4b4e82827df69324daba",
+    "canonicalId": "dc8500b4e7eb4923884f54db99d10a88",
+    "oldName": "Architectural-Governance.Architecture-Vision.Drivers",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureVision.Drivers",
+    "oldFriendly": "ArchitecturalGovernanceArchitectureVisionDrivers",
+    "friendly": "ArchitecturalGovernance.ArchitectureVision.Drivers",
+    "displayProperty": "Architecture Vision - Drivers"
+  },
+  {
+    "identifier": "id-cbc07a038364504d90e78a5104ec9fd7",
+    "canonicalId": "4648cf5a1f8e4333978c13efae10eaa5",
+    "oldName": "Authorisation",
+    "name": "[SolutionFacet] SecurityAndManagement.Authorisation",
+    "oldFriendly": "Authorisation",
+    "friendly": "SecurityAndManagement.Authorisation",
+    "displayProperty": "Authorisation"
+  },
+  {
+    "identifier": "id-cc919812cdd343bfb22d661209906bc7",
+    "canonicalId": "54d5ba1ccaae46c8b372f7ccfca99741",
+    "oldName": "Architectural-Governance.Architecture-Vision.Constraints",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureVision.Constraints",
+    "oldFriendly": "ArchitecturalGovernanceArchitectureVisionConstraints",
+    "friendly": "ArchitecturalGovernance.ArchitectureVision.Constraints",
+    "displayProperty": "Architecture Vision - Constraints"
+  },
+  {
+    "identifier": "id-cd642a833033571d8178726a01617641",
+    "canonicalId": "0528b2ac76c548ae861ebcb1ef9cf3d9",
+    "oldName": "Task Ordering",
+    "name": "[SolutionFacet] DistributedSystemsAndTemporalManagement.TaskOrdering",
+    "oldFriendly": "TaskOrdering",
+    "friendly": "DistributedSystemsAndTemporalManagement.TaskOrdering",
+    "displayProperty": "Task Ordering"
+  },
+  {
+    "identifier": "id-d0cf1ab882f250e1afb54168fbadd35e",
+    "canonicalId": "7f9cadb36d764b22840748a9608f9a37",
+    "oldName": "Release Compatibility",
+    "name": "[SolutionFacet] DeploymentAndReleaseManagement.ReleaseCompatibility",
+    "oldFriendly": "ReleaseCompatibility",
+    "friendly": "DeploymentAndReleaseManagement.ReleaseCompatibility",
+    "displayProperty": "Release Compatibility"
+  },
+  {
+    "identifier": "id-d17720b347085fb9bd409d2c5fbaf3b2",
+    "canonicalId": "098d2e468cd14029b43ec6dbd07374fd",
+    "oldName": "Interoperability and Integration",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration",
+    "oldFriendly": "InteroperabilityAndIntegration",
+    "friendly": "InteroperabilityAndIntegration",
+    "displayProperty": "Interoperability and Integration"
+  },
+  {
+    "identifier": "id-d1e317a30a9d53359c25a86673df3e56",
+    "canonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+    "oldName": "Information Sovereignty and Residency",
+    "name": "[SolutionFacet] InformationManagement.InformationSovereigntyAndResidency",
+    "oldFriendly": "InformationSovereigntyAndResidency",
+    "friendly": "InformationSovereigntyAndResidency",
+    "displayProperty": "Information Sovereignty and Residency"
+  },
+  {
+    "identifier": "id-d202ffb64d4d4cc4aefa0a7f2021e094",
+    "canonicalId": "67bfa710070c4618b3ba834da62cc63d",
+    "oldName": "Operations-and-Assurance.Operational-Diagnostics.Stakeholders",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalDiagnostics.Stakeholders",
+    "oldFriendly": "OperationsAndAssuranceOperationalDiagnosticsStakeholders",
+    "friendly": "OperationsAndAssurance.OperationalDiagnostics.Stakeholders",
+    "displayProperty": "Operational Diagnostics - Stakeholders"
+  },
+  {
+    "identifier": "id-d67a5527c17256f6a4faa2c50398f4a4",
+    "canonicalId": "ab65501a8e3542839707ae31cd0b8efd",
+    "oldName": "Functional Verification",
+    "name": "[SolutionFacet] VerificationAndTesting.FunctionalVerification",
+    "oldFriendly": "FunctionalVerification",
+    "friendly": "VerificationAndTesting.FunctionalVerification",
+    "displayProperty": "Functional Verification"
+  },
+  {
+    "identifier": "id-d7f24eed298d559baa21cc10fa3fbb87",
+    "canonicalId": "9cf94c0ac09141a3b909a6a1051bff97",
+    "oldName": "Scalability",
+    "name": "[SolutionFacet] PerformanceAndCapacity.Scalability",
+    "oldFriendly": "Scalability",
+    "friendly": "PerformanceAndCapacity.Scalability",
+    "displayProperty": "Scalability"
+  },
+  {
+    "identifier": "id-d941117192cb5253bf1e8753f31c3ca6",
+    "canonicalId": "a9deca9adbb443208d6f08dbe4505717",
+    "oldName": "Patient Identity and Demographics",
+    "name": "[SolutionFacet] PatientIdentityAndDemographics",
+    "oldFriendly": "PatientIdentityAndDemographics",
+    "friendly": "PatientIdentityAndDemographics",
+    "displayProperty": "Patient Identity and Demographics"
+  },
+  {
+    "identifier": "id-d9aee9f851385a009c8068965d39b9a0",
+    "canonicalId": "0b9e18356e9e4dcca51007f03f7b81b4",
+    "oldName": "External Connectivity",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.ExternalConnectivity",
+    "oldFriendly": "ExternalConnectivity",
+    "friendly": "InteroperabilityAndIntegration.ExternalConnectivity",
+    "displayProperty": "External Connectivity"
+  },
+  {
+    "identifier": "id-da0a7f200fe24edfb876caf8dc1747f5",
+    "canonicalId": "493e4a05fe76496f82caf26e68f15edd",
+    "oldName": "User-Experience.Usability.Principles",
+    "name": "[SolutionFacet] UserExperience.Usability.Principles",
+    "oldFriendly": "UserExperienceUsabilityPrinciples",
+    "friendly": "UserExperience.Usability.Principles",
+    "displayProperty": "Usability - Principles"
+  },
+  {
+    "identifier": "id-dd037a51d1654576929f4e74244bf9ca",
+    "canonicalId": "1eb3b965c7334b899133282bc0500a9d",
+    "oldName": "Operations-and-Assurance.Operational-Diagnostics.Principles",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalDiagnostics.Principles",
+    "oldFriendly": "OperationsAndAssuranceOperationalDiagnosticsPrinciples",
+    "friendly": "OperationsAndAssurance.OperationalDiagnostics.Principles",
+    "displayProperty": "Operational Diagnostics - Principles"
+  },
+  {
+    "identifier": "id-df63fe8269255c72a26b3ceb863f9eea",
+    "canonicalId": "bda335658c29473d9ba20352242c83f8",
+    "oldName": "Information Exchange",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InformationExchange",
+    "oldFriendly": "InformationExchange",
+    "friendly": "InteroperabilityAndIntegration.InformationExchange",
+    "displayProperty": "Information Exchange"
+  },
+  {
+    "identifier": "id-e0cf25ef898f4e7091e130fe935ecafd",
+    "canonicalId": "4643d0b24fe7420b8e3fd0f4a2f4b1de",
+    "oldName": "User-Experience.User-Interface-Responsiveness.Requirements",
+    "name": "[SolutionFacet] UserExperience.UserInterfaceResponsiveness.Requirements",
+    "oldFriendly": "UserExperienceUserInterfaceResponsivenessRequirements",
+    "friendly": "UserExperience.UserInterfaceResponsiveness.Requirements",
+    "displayProperty": "User Interface Responsiveness - Requirements"
+  },
+  {
+    "identifier": "id-e2f7246fed7a51a5ac3ab7eabb4ca7e1",
+    "canonicalId": "22fce0d656ef4df89d2a35a85fa92aa1",
+    "oldName": "Event Horizon Management",
+    "name": "[SolutionFacet] DistributedSystemsAndTemporalManagement.EventHorizonManagement",
+    "oldFriendly": "EventHorizonManagement",
+    "friendly": "DistributedSystemsAndTemporalManagement.EventHorizonManagement",
+    "displayProperty": "Event Horizon Management"
+  },
+  {
+    "identifier": "id-e5b7e282ab0f4f84acfebf3b13b24b98",
+    "canonicalId": "99e7cebde18640df841ac7f5c0c996be",
+    "oldName": "Processing-and-Workflow.Message-Processing.Constraints",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.MessageProcessing.Constraints",
+    "oldFriendly": "ProcessingAndWorkflowMessageProcessingConstraints",
+    "friendly": "ProcessingAndWorkflow.MessageProcessing.Constraints",
+    "displayProperty": "Message Processing - Constraints"
+  },
+  {
+    "identifier": "id-e60d5335cb1847aa92ecb909653a32c3",
+    "canonicalId": "f147597cd5e04696887257c6316eedf7",
+    "oldName": "Operations-and-Assurance.Operational-Information-Management.Assessments",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalInformationManagement.Assessments",
+    "oldFriendly": "OperationsAndAssuranceOperationalInformationManagementAssessments",
+    "friendly": "OperationsAndAssurance.OperationalInformationManagement.Assessments",
+    "displayProperty": "Operational Information Management - Assessments"
+  },
+  {
+    "identifier": "id-e62f6403b16549a3b894d8eedb87db7a",
+    "canonicalId": "9a5487f0dd7b42bca1f791aad1257849",
+    "oldName": "Security-and-Authorisation.Authorisation-Enforcement.Requirements",
+    "name": "[solutionFacet] SecurityAndManagement.AuthorisationEnforcement.Requirements",
+    "oldFriendly": "SecurityAndAuthorisationAuthorisationEnforcementRequirements",
+    "friendly": "SecurityAndManagement.AuthorisationEnforcement.Requirements",
+    "displayProperty": "Authorisation Enforcement - Requirements"
+  },
+  {
+    "identifier": "id-e7c136fd5f4c4914a037c63372abe711",
+    "canonicalId": "3b06c335246c4307adb5801e05f2cef4",
+    "oldName": "Processing-and-Workflow.Task-Completion.Stakeholders",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.TaskCompletion.Stakeholders",
+    "oldFriendly": "ProcessingAndWorkflowTaskCompletionStakeholders",
+    "friendly": "ProcessingAndWorkflow.TaskCompletion.Stakeholders",
+    "displayProperty": "Task Completion - Stakeholders"
+  },
+  {
+    "identifier": "id-e7d793503ad9510ea344a71220307695",
+    "canonicalId": "d0fa8cfaf5044359a5f6a1e91375429e",
+    "oldName": "Verification and Testing",
+    "name": "[SolutionFacet] VerificationAndTesting",
+    "oldFriendly": "VerificationAndTesting",
+    "friendly": "VerificationAndTesting",
+    "displayProperty": "Verification and Testing"
+  },
+  {
+    "identifier": "id-e92fff09a73c455a8f08214753303f03",
+    "canonicalId": "aeb3b98e54124d94b4a68ab18de60514",
+    "oldName": "Audit-and-Accountability.Audit-Generation.Constraints",
+    "name": "[SolutionFacet] AuditAndAccountability.AuditGeneration.Constraints",
+    "oldFriendly": "AuditAndAccountabilityAuditGenerationConstraints",
+    "friendly": "AuditAndAccountability.AuditGeneration.Constraints",
+    "displayProperty": "Audit Generation - Constraints"
+  },
+  {
+    "identifier": "id-e9da4d32c9f94e1d96dab142e8a0de2e",
+    "canonicalId": "3f830af6837d4f89bcd042039572bcdc",
+    "oldName": "Interoperability-and-Integration.External-Connectivity.Drivers",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.ExternalConnectivity.Drivers",
+    "oldFriendly": "InteroperabilityAndIntegrationExternalConnectivityDrivers",
+    "friendly": "InteroperabilityAndIntegration.ExternalConnectivity.Drivers",
+    "displayProperty": "External Connectivity - Drivers"
+  },
+  {
+    "identifier": "id-eb46d3660484543cb3f107a963619568",
+    "canonicalId": "0e5030d90c134f1ea445257f0b6e788e",
+    "oldName": "Resource Management",
+    "name": "[SolutionFacet] PerformanceAndCapacity.ResourceManagement",
+    "oldFriendly": "ResourceManagement",
+    "friendly": "PerformanceAndCapacity.ResourceManagement",
+    "displayProperty": "Resource Management"
+  },
+  {
+    "identifier": "id-ebf1a94aa10e5922b7934e68b6dd80f8",
+    "canonicalId": "5dde6ebecd094084b325ba59603bb919",
+    "oldName": "Message Processing",
+    "name": "[SolutionFacet] ProcessingAndWorkflow.MessageProcessing",
+    "oldFriendly": "MessageProcessing",
+    "friendly": "ProcessingAndWorkflow.MessageProcessing",
+    "displayProperty": "Message Processing"
+  },
+  {
+    "identifier": "id-ec71ca548f145eeaad3c575fcf93d474",
+    "canonicalId": "c102ede2b9e249b2a2ddc9f19e0cbd7f",
+    "oldName": "Audit Integrity",
+    "name": "[SolutionFacet] AuditAndAccountability.AuditIntegrity",
+    "oldFriendly": "AuditIntegrity",
+    "friendly": "AuditAndAccountability.AuditIntegrity",
+    "displayProperty": "Audit Integrity"
+  },
+  {
+    "identifier": "id-ee17a4ffd28254539defe217e77f3b75",
+    "canonicalId": "d2f8fcaac9984a12beab502d1944ea25",
+    "oldName": "Information Protection",
+    "name": "[SolutionFacet] SecurityAndManagement.InformationProtection",
+    "oldFriendly": "InformationProtection",
+    "friendly": "SecurityAndManagement.InformationProtection",
+    "displayProperty": "Information Protection"
+  },
+  {
+    "identifier": "id-f061383fe2095bb7b37281d891fb6208",
+    "canonicalId": "6b4df7dee51344b3b8c4c6eaace50d72",
+    "oldName": "Release Management",
+    "name": "[SolutionFacet] DeploymentAndReleaseManagement.ReleaseManagement",
+    "oldFriendly": "ReleaseManagement",
+    "friendly": "DeploymentAndReleaseManagement.ReleaseManagement",
+    "displayProperty": "Release Management"
+  },
+  {
+    "identifier": "id-f08086c42d43568fb185bf0cc206c674",
+    "canonicalId": "b6a20afe29624f73906e5e852d6f2fbf",
+    "oldName": "Directory Publication and Visibility",
+    "name": "[SolutionFacet] ProviderDirectory.DirectoryPublicationAndVisibility",
+    "oldFriendly": "DirectoryPublicationAndVisibility",
+    "friendly": "ProviderDirectory.DirectoryPublicationAndVisibility",
+    "displayProperty": "Directory Publication and Visibility"
+  },
+  {
+    "identifier": "id-f126e3a6ab6950ca9e3e61b02e83ba21",
+    "canonicalId": "2ee0a6e46b47413d91cfb71ee3100e4b",
+    "oldName": "Architecture Process",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureProcess",
+    "oldFriendly": "ArchitectureProcess",
+    "friendly": "ArchitecturalGovernance.ArchitectureProcess",
+    "displayProperty": "Architecture Process"
+  },
+  {
+    "identifier": "id-f18d9e608ed8499ab5bb52bf4b0eb1f9",
+    "canonicalId": "87694e76de1d4b93af63a16a9f5de128",
+    "oldName": "Architectural-Governance.Architecture-Vision.Principles",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureVision.Principles",
+    "oldFriendly": "ArchitecturalGovernanceArchitectureVisionPrinciples",
+    "friendly": "ArchitecturalGovernance.ArchitectureVision.Principles",
+    "displayProperty": "Architecture Vision - Principles"
+  },
+  {
+    "identifier": "id-f1c6f7c28e7b4d9d9a6f0441e9817406",
+    "canonicalId": "0caf2fb84f944a6ab3872feb92b9338d",
+    "oldName": "Security-and-Authorisation.Information-Protection.Assessments",
+    "name": "[SolutionFacet] SecurityAndManagement.InformationProtection.Assessments",
+    "oldFriendly": "SecurityAndAuthorisationInformationProtectionAssessments",
+    "friendly": "SecurityAndManagement.InformationProtection.Assessments",
+    "displayProperty": "Information Protection - Assessments"
+  },
+  {
+    "identifier": "id-f2090754e079418e954b0fc4318129c4",
+    "canonicalId": "980b414d73614bd48bc47a6aaa718a51",
+    "oldName": "Security-and-Authorisation.Security-Administration.Stakeholders",
+    "name": "[SolutionFacet] SecurityAndManagement.SecurityAdministration.Stakeholders",
+    "oldFriendly": "SecurityAndAuthorisationSecurityAdministrationStakeholders",
+    "friendly": "SecurityAndManagement.SecurityAdministration.Stakeholders",
+    "displayProperty": "Security Administration - Stakeholders"
+  },
+  {
+    "identifier": "id-f2cab006808558c48632928a2ef00f86",
+    "canonicalId": "8b7fd22a55434e5ca3e7ba87afb020d6",
+    "oldName": "Information Persistence",
+    "name": "[SolutionFacet] InformationManagement.InformationPersistence",
+    "oldFriendly": "InformationPersistence",
+    "friendly": "InformationManagement.InformationPersistence",
+    "displayProperty": "Information Persistence"
+  },
+  {
+    "identifier": "id-f336cea8d7fc42fa80047385f900db82",
+    "canonicalId": "4df45b11a8c64144acea7c240a2c93d1",
+    "oldName": "Interoperability-and-Integration.Information-Exchange.Constraints",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InformationExchange.Constraints",
+    "oldFriendly": "InteroperabilityAndIntegrationInformationExchangeConstraints",
+    "friendly": "InteroperabilityAndIntegration.InformationExchange.Constraints",
+    "displayProperty": "Information Exchange - Constraints"
+  },
+  {
+    "identifier": "id-f384269d3ad45d049394be4fda84efe3",
+    "canonicalId": "e1ed88f315a84116a77ead21d8fe1792",
+    "oldName": "Directory Synchronisation",
+    "name": "[SolutionFacet] ProviderDirectory.DirectorySynchronisation",
+    "oldFriendly": "DirectorySynchronisation",
+    "friendly": "ProviderDirectory.DirectorySynchronisation",
+    "displayProperty": "Directory Synchronisation"
+  },
+  {
+    "identifier": "id-f3a5bb10a924502881fe4e27cbcc799e",
+    "canonicalId": "eb1b0526b898448688a322cce7ea6e74",
+    "oldName": "Information Integrity",
+    "name": "[SolutionFacet] InformationManagement.InformationIntegrity",
+    "oldFriendly": "InformationIntegrity",
+    "friendly": "InformationManagement.InformationIntegrity",
+    "displayProperty": "Information Integrity"
+  },
+  {
+    "identifier": "id-f49e9dff66374a4e927e12a29ed4845f",
+    "canonicalId": "ce45a338a1fc4d11a8d64ce898119f94",
+    "oldName": "Security-and-Authorisation.Information-Protection.Drivers",
+    "name": "[SolutionFacet] SecurityAndManagement.InformationProtection.Drivers",
+    "oldFriendly": "SecurityAndAuthorisationInformationProtectionDrivers",
+    "friendly": "SecurityAndManagement.InformationProtection.Drivers",
+    "displayProperty": "Information Protection - Drivers"
+  },
+  {
+    "identifier": "id-f4cdd78991a843498f42b14643efcf0d",
+    "canonicalId": "5e78ed0ddec14bb4b081082c66c75ad2",
+    "oldName": "Resilience-and-Recovery.Continuity-of-Operations.Constraints",
+    "name": "[SolutionFacet] ResilienceAndRecovery.ContinuityOfOperations.Constraints",
+    "oldFriendly": "ResilienceAndRecoveryContinuityOfOperationsConstraints",
+    "friendly": "ResilienceAndRecovery.ContinuityOfOperations.Constraints",
+    "displayProperty": "Continuity of Operations - Constraints"
+  },
+  {
+    "identifier": "id-f55845b17ed5555aaaba3801f81c817a",
+    "canonicalId": "abca473311ea40aca58756d859077ff7",
+    "oldName": "Consent and Information Sharing",
+    "name": "[SolutionFacet] ConsentAndInformationSharing",
+    "oldFriendly": "ConsentAndInformationSharing",
+    "friendly": "ConsentAndInformationSharing",
+    "displayProperty": "Consent and Information Sharing"
+  },
+  {
+    "identifier": "id-f61ee7b315944853b370486ae7fe5a68",
+    "canonicalId": "395d77eea25d40b0b74321dc7aabd283",
+    "oldName": "Security-and-Authorisation.Authentication.Requirements",
+    "name": "[SolutionFacet] SecurityAndManagement.Authentication.Requirements",
+    "oldFriendly": "SecurityAndAuthorisationAuthenticationRequirements",
+    "friendly": "SecurityAndManagement.Authentication.Requirements",
+    "displayProperty": "Authentication - Requirements"
+  },
+  {
+    "identifier": "id-f77c66d07df146d38848a5d89832bb8b",
+    "canonicalId": "1de844b879754fd7a21a29f2df3df97b",
+    "oldName": "Interoperability-and-Integration.Information-Exchange.Requirements",
+    "name": "[SolutionFacet] InteroperabilityAndIntegration.InformationExchange.Requirements",
+    "oldFriendly": "InteroperabilityAndIntegrationInformationExchangeRequirements",
+    "friendly": "InteroperabilityAndIntegration.InformationExchange.Requirements",
+    "displayProperty": "Information Exchange - Requirements"
+  },
+  {
+    "identifier": "id-f8b45a0c16475d67938f268ef94adf62",
+    "canonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+    "oldName": "User Interface Responsiveness",
+    "name": "[SolutionFacet] UserExperience.UserInterfaceResponsiveness",
+    "oldFriendly": "UserInterfaceResponsiveness",
+    "friendly": "UserInterfaceResponsiveness",
+    "displayProperty": "User Interface Responsiveness"
+  },
+  {
+    "identifier": "id-fbb84d2f17e45158b7930a6c9376d32a",
+    "canonicalId": "f0402eea7b5a49f9b61fbd90e336b2de",
+    "oldName": "Operational Control",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalControl",
+    "oldFriendly": "OperationalControl",
+    "friendly": "OperationsAndAssurance.OperationalControl",
+    "displayProperty": "Operational Control"
+  },
+  {
+    "identifier": "id-fc23210d18b55cb8860fec99bcfb3abe",
+    "canonicalId": "e48346674b0740c19f4a13cc50a7ae66",
+    "oldName": "Consent Scope and Preferences",
+    "name": "[SolutionFacet] ConsentAndInformationSharing.ConsentScopeAndPreferences",
+    "oldFriendly": "ConsentScopeAndPreferences",
+    "friendly": "ConsentAndInformationSharing.ConsentScopeAndPreferences",
+    "displayProperty": "Consent Scope and Preferences"
+  },
+  {
+    "identifier": "id-fc3922c4f9d94972a744b6c713110f51",
+    "canonicalId": "82837737622a46059703e99a8920533e",
+    "oldName": "Verification-and-Testing.Resilience-Testing.Constraints",
+    "name": "[SolutionFacet] VerificationAndTesting.ResilienceTesting.Constraints",
+    "oldFriendly": "VerificationAndTestingResilienceTestingConstraints",
+    "friendly": "VerificationAndTesting.ResilienceTesting.Constraints",
+    "displayProperty": "Resilience Testing - Constraints"
+  },
+  {
+    "identifier": "id-fe0074888e97530c825d400d27e90ad5",
+    "canonicalId": "6d6086134162468cac129040a139d8d9",
+    "oldName": "Architecture Vision",
+    "name": "[SolutionFacet] ArchitecturalGovernance.ArchitectureVision",
+    "oldFriendly": "ArchitectureVision",
+    "friendly": "ArchitectureGovernance.ArchitectureVision",
+    "displayProperty": "Architecture Vision"
+  },
+  {
+    "identifier": "id-ff3a2d67c241526199031d3dc1b50e0a",
+    "canonicalId": "abc27ddff6d644d9945db0cfd7488f07",
+    "oldName": "Audit and Accountability",
+    "name": "[SolutionFacet] Audit and Accountability",
+    "oldFriendly": "AuditAndAccountability",
+    "friendly": "AuditAndAccountability",
+    "displayProperty": "Audit and Accountability"
+  },
+  {
+    "identifier": "id-ffe599aaa17b5c249f754796a6ad6c3c",
+    "canonicalId": "cc0a0cc2678c4c7db20ad015a75cc1de",
+    "oldName": "Operational Monitoring",
+    "name": "[SolutionFacet] OperationsAndAssurance.OperationalMonitoring",
+    "oldFriendly": "OperationalMonitoring",
+    "friendly": "OperationsAndAssurance.OperationalMonitoring",
+    "displayProperty": "Operational Monitoring"
+  }
+]

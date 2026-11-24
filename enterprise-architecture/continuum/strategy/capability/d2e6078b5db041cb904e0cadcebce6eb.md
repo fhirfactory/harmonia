@@ -1,0 +1,247 @@
+---
+{
+  "schemaVersion": 1,
+  "canonicalId": "d2e6078b5db041cb904e0cadcebce6eb",
+  "archimateType": "Capability",
+  "specialization": null,
+  "displayName": "[CT3] Client Privacy Guardrail Management",
+  "friendlyName": "EntityInformationEnablement.ClientAdministration.ClientPrivacyGuardrailManagement",
+  "canonicalName": "CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientPrivacyGuardrailManagement",
+  "standing": {
+    "semantic": "Superseded historical identity — direct correspondence",
+    "currentness": "superseded"
+  },
+  "identity": {
+    "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+    "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+    "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+    "correspondence": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "successorCanonicalId": "d65ed66aba2542da87a321e7eeb274b9",
+      "historicalIdentityReserved": true,
+      "disposition": "Primary replacement scope; partial/multiple correspondence retained separately, not complete equivalence"
+    },
+    "replacementHistory": {
+      "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "originalIdentityMetadata": {
+        "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+        "authority": "docs/markdown/governance/baseline/release-1.1.0.json",
+        "migrationAuthority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#dr-2",
+        "correspondence": {
+          "authority": "enterprise-architecture/design/review/1.1.5/hcrl-1.1.5-002.pending.md#arb-semantic-reconciliation",
+          "disposition": "direct correspondence",
+          "successorCanonicalId": "7577a6e1815243648dd5356c21cca151",
+          "previousStanding": {
+            "semantic": "Historical reference — RAD correspondence unresolved",
+            "currentness": "historical_reference"
+          },
+          "historicalIdentityReserved": true,
+          "reason": "Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter."
+        }
+      },
+      "replacementCatalogueIds": [
+        "B10.04.01",
+        "E05.02"
+      ],
+      "replacementCanonicalIds": [
+        "d65ed66aba2542da87a321e7eeb274b9",
+        "c8bd1d6e0796442a934a74cc69077543"
+      ],
+      "disposition": "historical-correspondence-carried",
+      "completeSemanticEquivalenceAsserted": false
+    }
+  },
+  "naming": {
+    "authority": "docs/markdown/governance/canonical-identity-and-naming.md",
+    "mode": "Preserved governed names; source-qualified context and unresolved ancestry retained",
+    "expected": {
+      "displayName": "[CT3] Client Privacy Guardrail Management",
+      "friendlyName": "EntityInformationEnablement.ClientAdministration.ClientPrivacyGuardrailManagement",
+      "canonicalName": "CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientPrivacyGuardrailManagement"
+    }
+  },
+  "provenance": [
+    {
+      "source": "docs/markdown/governance/baseline/architecture.json",
+      "selector": "/historical_reference_elements/57",
+      "role": "governed source resource",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+      "sourceKey": "historical-reference:id-5fead29652395512b50adf3cfddfb13f"
+    },
+    {
+      "source": "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml",
+      "selector": "element[@identifier=\"id-5fead29652395512b50adf3cfddfb13f\"]",
+      "role": "accepted representation binding and presentation; not an additional architecture source",
+      "revision": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+      "sha256": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "source": "docs/markdown/governance/baseline/architecture.json",
+      "selector": "/historical_reference_elements/57"
+    }
+  ],
+  "exchange": {
+    "identifier": "id-5fead29652395512b50adf3cfddfb13f",
+    "previousNativeName": "Client Privacy Guardrail Management",
+    "properties": [
+      {
+        "ref": "propid-23",
+        "values": [
+          {
+            "text": "Business Enabling Capability",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-24",
+        "values": [
+          {
+            "text": "CT3",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-26",
+        "values": [
+          {
+            "text": "Human-adjudicated candidate",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-42",
+        "values": [
+          {
+            "text": "R1.x / R2.x architecture",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-40",
+        "values": [
+          {
+            "text": "historical_reference",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-41",
+        "values": [
+          {
+            "text": "Unreconciled — no proven baseline crosswalk",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-18",
+        "values": [
+          {
+            "text": "d2e6078b5db041cb904e0cadcebce6eb",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-19",
+        "values": [
+          {
+            "text": "[CT3] Client Privacy Guardrail Management",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-20",
+        "values": [
+          {
+            "text": "EntityInformationEnablement.ClientAdministration.ClientPrivacyGuardrailManagement",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-21",
+        "values": [
+          {
+            "text": "CT1-BEC-EntityInformationEnablement.CT2-BEC-ClientAdministration.CT3-BEC-ClientPrivacyGuardrailManagement",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-22",
+        "values": [
+          {
+            "text": "Capability",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "superseded",
+            "attributes": {}
+          }
+        ]
+      }
+    ]
+  },
+  "relationships": [],
+  "unresolvedProperties": {
+    "definition": "Absent in the exact governed source and accepted representation."
+  },
+  "representation": {
+    "sourceLinksRebased": true,
+    "authority": "HCRL 1.1.5-002 DR-3; source meaning unchanged"
+  }
+}
+---
+
+# [CT3] Client Privacy Guardrail Management
+
+## Architectural content
+
+The governed source has no established definition. This absence is retained for Solution Architect review; no definition is inferred from the name.
+
+## ARB correspondence
+
+Same bounded capability at the same tier, BC/BEC context and complete recorded canonical hierarchy; current responsibility/provenance supplies the represented meaning. No contrary historical definition is present. Correspondence is adjudicated under the ARB semantic-continuity rule, not inferred by the application adapter.
+
+Current representation: [[CT3] Client Privacy Guardrail Management](7577a6e1815243648dd5356c21cca151.md). This resource reserves the historical identity and representation for provenance and existing Views. Its missing original definition remains missing.
+
+## Capability model replacement history
+
+The original content above remains historical and unchanged. This resource is superseded under [the replacement task](../../../design/evidence/1.1.20/001/before/CapabilityReplacementTask.md). Primary replacement catalogue identity `B10.04.01`; additional scope correspondences: `E05.02`. Original canonical/Exchange identities and source contributions remain reserved. Correspondence does not assert complete semantic equivalence, implementation satisfaction or transfer domain authority.

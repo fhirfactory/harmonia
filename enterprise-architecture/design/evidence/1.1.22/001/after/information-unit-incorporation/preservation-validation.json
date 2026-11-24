@@ -1,0 +1,19 @@
+{
+  "outcome": "PASS",
+  "baseline": "1.1.21",
+  "developmentRelease": "1.1.22",
+  "preservedExistingIdentities": 6542,
+  "unchangedCanonicalBytes": 6499,
+  "changedExistingCanonicalSources": 43,
+  "preservedExistingRelationships": 9264,
+  "newElements": 4,
+  "newRelationships": 50,
+  "authoredViewsPreserved": 1304,
+  "projectionTemplateUnchanged": true,
+  "protectedPublicationRegisterFilesUnchanged": 259,
+  "currentCapabilityHierarchyAndDefinitionsUnchanged": true,
+  "existingClassificationNamesStandingIdentityBindingsUnchanged": true,
+  "newImplementationClassesFunctionsServicesInterfaces": 0,
+  "singleRepresentationCheck": "PASS; missing and duplicate bound compositions rejected in memory",
+  "limit": "Checks this model representation and source preservation, not implementation conformance or human acceptance."
+}

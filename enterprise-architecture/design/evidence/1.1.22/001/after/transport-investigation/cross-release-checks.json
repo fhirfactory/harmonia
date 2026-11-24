@@ -1,0 +1,109 @@
+{
+  "relationships": {
+    "allExistingBeforeRecordsEqualBetweenReleases": true,
+    "allExistingAfterRecordsEqualBetweenReleases": true,
+    "changedRecordIDsIdentical": true,
+    "changedRecordCount": 6456,
+    "missingIDs": [
+      [],
+      []
+    ],
+    "additionalIDs": [
+      [],
+      []
+    ]
+  },
+  "views": {
+    "allExistingBeforeRecordsEqualBetweenReleases": true,
+    "allExistingAfterRecordsEqualBetweenReleases": true,
+    "changedRecordIDsIdentical": true,
+    "changedRecordCount": 15,
+    "missingIDs": [
+      [],
+      []
+    ],
+    "additionalIDs": [
+      [],
+      []
+    ]
+  },
+  "patternCounts": [
+    {
+      "pattern": "elements / absent-to-en-language-annotation",
+      "baseline": 99640,
+      "candidate": 99680,
+      "delta": 40
+    },
+    {
+      "pattern": "elements / unordered-keyed-collection-order",
+      "baseline": 4409,
+      "candidate": 4409,
+      "delta": 0
+    },
+    {
+      "pattern": "navigation / organization-item-identifier-omitted",
+      "baseline": 2498,
+      "candidate": 2537,
+      "delta": 39
+    },
+    {
+      "pattern": "navigation / organization-label-removal-child-list",
+      "baseline": 15806,
+      "candidate": 15860,
+      "delta": 54
+    },
+    {
+      "pattern": "navigation / organization-reference-label-omitted",
+      "baseline": 15806,
+      "candidate": 15860,
+      "delta": 54
+    },
+    {
+      "pattern": "other / property-definition-rekey",
+      "baseline": 69,
+      "candidate": 69,
+      "delta": 0
+    },
+    {
+      "pattern": "other / unordered-keyed-collection-order",
+      "baseline": 3,
+      "candidate": 3,
+      "delta": 0
+    },
+    {
+      "pattern": "relationships / absent-to-en-language-annotation",
+      "baseline": 12228,
+      "candidate": 12228,
+      "delta": 0
+    },
+    {
+      "pattern": "relationships / unordered-keyed-collection-order",
+      "baseline": 212,
+      "candidate": 212,
+      "delta": 0
+    },
+    {
+      "pattern": "views / connection-default-style-added",
+      "baseline": 238,
+      "candidate": 238,
+      "delta": 0
+    },
+    {
+      "pattern": "views / connection-style-addition-child-list",
+      "baseline": 238,
+      "candidate": 238,
+      "delta": 0
+    },
+    {
+      "pattern": "views / view-connection-sequence-changed",
+      "baseline": 15,
+      "candidate": 15,
+      "delta": 0
+    }
+  ],
+  "secondPassExchangeByteIdentical": true,
+  "secondPassXmlSha256": "d79a958a14639288c23bcf2de9653543712a23c6333c71cb1ec862ff904ead62",
+  "noInformationUnitIntroducedTransportPattern": true,
+  "strictTransport": "FAIL retained for both original inputs",
+  "limits": "Cross-release equivalence of the existing records and patterns, not architecture acceptance or cross-platform rendered-pixel proof."
+}

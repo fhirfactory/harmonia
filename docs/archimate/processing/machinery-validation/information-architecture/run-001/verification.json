@@ -1,0 +1,52 @@
+{
+  "archi_roundtrip": "NOT_PERFORMED",
+  "architect_acceptance": "NOT_RECORDED",
+  "candidate_standing": "PROPOSED_NOT_ACCEPTED",
+  "candidate_xml_sha256": "4bd981b239393c1ce09d5a831b52b1ebe82daf4807139e5414c25ec3e91a28a3",
+  "canonical_ids_allocated": 0,
+  "checks": {
+    "authored_types_specializations_composition_views_navigation_documentation": "UNCHANGED",
+    "canonical_identity_claims": "UNCHANGED",
+    "exact_allowlist_preservation": "PASS",
+    "representation_ids": "UNCHANGED",
+    "xsd": "PASS"
+  },
+  "naming": {
+    "absent_identity": 32,
+    "canonical_ids_allocated": 0,
+    "classifications": {
+      "BusinessObject": 12,
+      "Topic": 70,
+      "UNRESOLVED": 4
+    },
+    "contextual": 59,
+    "fully_derived": 82,
+    "information_elements": 86,
+    "metadata_changes": {
+      "archimateType": 38,
+      "canonicalName": 82,
+      "displayName": 80,
+      "friendlyName": 82,
+      "harmoniaType": 70
+    },
+    "native_types": {
+      "BusinessObject": 12,
+      "DataObject": 74
+    },
+    "preserved_identity": 54,
+    "unresolved": 4
+  },
+  "population": {
+    "canonical_matches": 1362,
+    "deleted": 0,
+    "evolved": 38,
+    "new": 32,
+    "representation_only_matches": 0,
+    "representation_rebindings": 38,
+    "unchanged": 1324,
+    "unresolved_baseline": 0,
+    "unresolved_incoming": 0
+  },
+  "release_created": false,
+  "status": "PASS"
+}

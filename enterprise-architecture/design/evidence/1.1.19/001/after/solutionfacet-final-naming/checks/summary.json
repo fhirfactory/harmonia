@@ -1,0 +1,23 @@
+{
+  "regressionTests": {
+    "outcome": "PASS",
+    "tests": 15,
+    "seconds": 24.186,
+    "scope": "Statement/SolutionFacet specialisations and current EA, including source/XML name-role separation and all 18 axioms"
+  },
+  "requiredJavaArchitectureTests": {
+    "outcome": "PASS",
+    "tests": 90,
+    "seconds": 28.302,
+    "java": "21"
+  },
+  "schemaIdentityAndReferences": "PASS",
+  "explicitCompositionContexts": "PASS: three",
+  "allCanonicalNameValuesPreserved": "PASS: 1994",
+  "relationshipAndViewPreservation": "PASS",
+  "reprojectionAndIndependentPreflightBytes": "PASS",
+  "readerManifestLatexAndDomChecks": "PASS",
+  "actualArchiImportSaveExport": "PASS",
+  "strictTransportVerifier": "FAIL: inherited English attribute drift retained, not normalised",
+  "gitOperations": 0
+}

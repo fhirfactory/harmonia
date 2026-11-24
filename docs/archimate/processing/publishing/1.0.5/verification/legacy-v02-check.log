@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/usr/vm/devel/code/projects/github/harmonia/docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/check.py", line 304, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/usr/vm/devel/code/projects/github/harmonia/docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/check.py", line 230, in main
+    assert digest(ROOT/source['path'])==source['sha256'],'Corpus evidence drift: '+source['path']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Corpus evidence drift: docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 238, in partial_apport_excepthook
+    return apport_excepthook(binary, exc_type, exc_obj, exc_tb)
+  File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 152, in apport_excepthook
+    os.open(pr_filename, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o640), "wb"
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 30] Read-only file system: '/var/crash/_usr_vm_devel_code_projects_github_harmonia_docs_latex-rad_Harmonia-EA-Capability-Map_v0.2-draft_tools_check.py.1000.crash'
+
+Original exception was:
+Traceback (most recent call last):
+  File "/usr/vm/devel/code/projects/github/harmonia/docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/check.py", line 304, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/usr/vm/devel/code/projects/github/harmonia/docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/check.py", line 230, in main
+    assert digest(ROOT/source['path'])==source['sha256'],'Corpus evidence drift: '+source['path']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Corpus evidence drift: docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md

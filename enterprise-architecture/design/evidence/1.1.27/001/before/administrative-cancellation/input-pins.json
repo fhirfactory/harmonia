@@ -1,0 +1,45 @@
+{
+  "capturedAt": "2026-11-16T03:32:25.907044+00:00",
+  "meaning": "Current pre-cancellation capture, not instruction-entry or historical acceptance time",
+  "head": "dc30cfbcc7ad4113b29e3710904453c023df4dc1",
+  "files": {
+    "AGENTS.md": "d002fd3aaf8ac15c530e925fe84826d771379b79cb0c2850af3b7c639ee0dc1f",
+    "docs/AGENTS.md": "7a6d89173c869a57348c1c23147e5a80e46c4e1c862fc6c528d6a42e21e105ef",
+    "docs/backlog/calliope-oo-01-topic-models.md": "dc1cef07d983b425d9314026fe8418f1e2898859d3c28052c45a9ca7fcd81df6",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/engineering-assessment.md": "b4c0539daa517a78f06b3794171f08cf040d489ace22ed690d5b532778fa7e5e",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/architecture-tests.json": "816b8daff4a1aee6779482c65690825e2dadee39735f1d33cec7b797238021a9",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/reconciliation-verification.initial.json": "56374c0939e425677a276411cf2ddb6a482baad1f95a37b27bcf1822a1e32608",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/topic-tests.json": "f4a588d23fea43c6b47834f98b6233af14fd16d9613e496ceb1993b5179884ff",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/reconciliation-verification.json": "537af380e30d33012d1c4276743e9c9e99abf6aa940ae0c56a4b215edfa5c783",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/consumer-inventory.json": "bd4fd783aa46752a1ade9392ec9836a34bc0f7c1dbbb063e8209ff36c08ff880",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/verify-preparation.py": "60eade8264fdb813037b51295ca44607db8a012085413b2b935b0c14e3e3e547",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/document-validation.json": "c89ca3f2e88e9ab8b0af04528333fcf1a36f3921100c7a9bba5ce629609c0bb0",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/duplicate-position-probe.json": "10585d09f373aa262913fc964b38b11ae6461389de52b9754c11ecb7ebde4906",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/iteration-evidence-check.json": "9c2dc936a2afaecee8389d65eaba4408af97d3960ed1e7c59ecdab16bd4fb028",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/source-state.json": "e8514f2dfc3df51de12121ce16c83eabf5831801a0337c80d83df540e44708be",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/junie-phase1-review.source.md": "da2b7fed8fc3dba5f12dea7ba07677991ac9a34de875619fb67ae0dc2efda712",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/ai-agent-reports/20261116T031417Z-calliope-oo-backlog-preparation.md": "5b18840c64edd94ecd184fff8152a741cbf9f4b28f36df83e18483e6127e1920",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md": "338591659705d36efd7e8de91aefe84477ec4c5983e20420f870a6b149c768af",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/concurrent-instruction-state.json": "573efaa9dda34c4eda0ac4ba1de3f1502ac41112c8bb9f4a853563399f97e4af",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/backlog-item.accepted-revision-1.md": "47f83182b39de96824d475a883a858427647ff59a5e9b7ccc20c9d3a5bad21f4",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/hcrl.before.md": "3ce44f0fc07b7e7198bac7faa593d8307aadf3f74e01f73320f210ec2a412bd6",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/source-pins.json": "2f7a38bbda2d48122461fdb675ae294df12a1c8ddf38313b08f1443ff7274c22"
+  },
+  "hcrlBeforeSha256": "9ec3dfe10edd838af0215a0bfa0c5c454315d38502e0d0a9b4a5b50ceaee7394",
+  "instructionScope": {
+    "AGENTS.md": {
+      "change": "Append-only Backlog preparation operating guidance",
+      "addedLines": 24,
+      "sha256": "d002fd3aaf8ac15c530e925fe84826d771379b79cb0c2850af3b7c639ee0dc1f",
+      "existingContentPreserved": true,
+      "constraints": "Retains separate implementation/Git authority and binding-governance exceptions; no general cancellation rule is introduced."
+    },
+    "docs/AGENTS.md": {
+      "change": "Append-only Backlog preparation operating guidance",
+      "addedLines": 26,
+      "sha256": "7a6d89173c869a57348c1c23147e5a80e46c4e1c862fc6c528d6a42e21e105ef",
+      "existingContentPreserved": true,
+      "constraints": "Retains separate implementation/Git authority and binding-governance exceptions; no general cancellation rule is introduced."
+    }
+  }
+}

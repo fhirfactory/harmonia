@@ -1,8 +1,19 @@
 # Broadcast Care Provider Details to Rhapsody Integration Engine
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/e2b205993c4a45949141099967e42110.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 Enable the Provider Directory to publish provider changes to the enterprise integration engine for distribution. This supports the target-state objective that uc-10 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that subscribing systems receive provider information through the established integration distribution mechanism.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ Enable the Provider Directory to publish provider changes to the enterprise inte
 - **Source Scope:** Additional Source Use Cases and System Requirements
 - **Primary Actor:** Rhapsody Integration Engine
 - **Supporting Actors:** Integration Administrator; Provider Directory
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/eb28c67d69514ce79a4d8e7aee8884d2.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As the Provider Directory, I need to publish provider changes to the enterprise integration engine for distribution, so that subscribing systems receive provider information through the established integration distribution mechanism.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-30 – Match Provider Records: supports reliable identity matching where provider information is received or reconciled.; UC-Integration-ProviderDirectory-32 – Validate Provider Data Quality: supports validation and data-quality controls.; UC-Integration-ProviderDirectory-34 – Audit Provider Information Exchange: supports traceability and audit of information exchange.; UC-Integration-ProviderDirectory-35 – Monitor Provider Integration Interfaces: supports operational monitoring of automated interfaces.; UC-Integration-ProviderDirectory-36 – Reconcile Provider Synchronisation Failures: supports remediation of failed or ambiguous synchronisation.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/e2b205993c4a45949141099967e42110.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Broadcast Care Provider Details to Rhapsody Integ
 Harmonia SHALL support **Broadcast Care Provider Details to Rhapsody Integration Engine** so that Enable the Provider Directory to publish provider changes to the enterprise integration engine for distribution. This supports the target-state objective that uc-10 is implemented as a governed business capability rather than as an isolated technical function. The intended outcome is that subscribing systems receive provider information through the established integration distribution mechanism.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Broadcast Care Provider Details to Rhapsody Integration Engine - successful outcome
 - **GIVEN** The actor is appropriately authenticated and authorised to perform the activity.

@@ -1,0 +1,122 @@
+{
+  "authority": "Accepted Final.001 §22 and operative Task",
+  "coverage": [
+    {
+      "adjudication": "IU-01",
+      "incorporatedMeaning": "Conceptual/logical representations of the same IU",
+      "canonicalReferences": [
+        "10284034c8534b639284386b064f2c54",
+        "74ec609de1ae498fbf9d13e4ef8c6cbe"
+      ],
+      "evidence": "Canonical elements above"
+    },
+    {
+      "adjudication": "IU-02",
+      "incorporatedMeaning": "Atomic governed boundary; singular representation; consumer transformation and provider physical freedom",
+      "canonicalReferences": [
+        "10284034c8534b639284386b064f2c54",
+        "74ec609de1ae498fbf9d13e4ef8c6cbe",
+        "b9891b88150840ada3daefdec6f26c35"
+      ],
+      "evidence": "Canonical elements above"
+    },
+    {
+      "adjudication": "IU-03",
+      "incorporatedMeaning": "Four metadata contexts; embedded/referenced/hybrid/transient Mneme workspace",
+      "canonicalReferences": [
+        "c05b7e37278141488ecc90b9a9ef96eb",
+        "1af8a56358f7429fabfb57be66542a99"
+      ],
+      "evidence": "Canonical elements above"
+    },
+    {
+      "adjudication": "IU-04",
+      "incorporatedMeaning": "Four distinct coordinate TopicIDs, independent of security",
+      "canonicalReferences": [
+        "c05b7e37278141488ecc90b9a9ef96eb",
+        "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+        "7985e647bf9e4ca3ba70faf9e3e4ae02"
+      ],
+      "evidence": "Canonical elements above"
+    },
+    {
+      "adjudication": "IU-05",
+      "incorporatedMeaning": "IU-required security Topics/Masks; shared element-wise regex matching",
+      "canonicalReferences": [
+        "bb489157a6bf48be926c5a601bb0a6c3",
+        "c05b7e37278141488ecc90b9a9ef96eb",
+        "899d34ec491948b68aad09e507dea6d1"
+      ],
+      "evidence": "Canonical elements above"
+    },
+    {
+      "adjudication": "IU-06",
+      "incorporatedMeaning": "Persistent UUID and derived IU Topic name distinct from referenced Topics",
+      "canonicalReferences": [
+        "74ec609de1ae498fbf9d13e4ef8c6cbe",
+        "9e2ffa9b4a1d4422a33c2a4bbcfc86ef"
+      ],
+      "evidence": "Canonical elements above"
+    },
+    {
+      "adjudication": "IU-07",
+      "incorporatedMeaning": "Optional supplied references; local acceptability versus remote preservation",
+      "canonicalReferences": [
+        "c05b7e37278141488ecc90b9a9ef96eb",
+        "1af8a56358f7429fabfb57be66542a99"
+      ],
+      "evidence": "Canonical elements above"
+    },
+    {
+      "adjudication": "IU-08",
+      "incorporatedMeaning": "Encapsulated Feature-facing characteristics; no universal operation or wrapper catalogue",
+      "canonicalReferences": [
+        "74ec609de1ae498fbf9d13e4ef8c6cbe",
+        "bb489157a6bf48be926c5a601bb0a6c3"
+      ],
+      "evidence": "Canonical elements above"
+    },
+    {
+      "adjudication": "IU-09",
+      "incorporatedMeaning": "Operational Version, per-manifestation Active Generation, structure/native versions and meaningful temporal homes",
+      "canonicalReferences": [
+        "c05b7e37278141488ecc90b9a9ef96eb",
+        "b9891b88150840ada3daefdec6f26c35"
+      ],
+      "evidence": "Canonical elements above"
+    },
+    {
+      "adjudication": "IU-10",
+      "incorporatedMeaning": "Existing accepted hierarchy/Motivation; seven historical Features and ten historical requirement assertions reconciled",
+      "canonicalReferences": [],
+      "evidence": "reconciliation.json"
+    },
+    {
+      "adjudication": "IU-11",
+      "incorporatedMeaning": "Mnemosyne boundary; meaningful persistence outcomes; acceptance versus completion",
+      "canonicalReferences": [
+        "7985e647bf9e4ca3ba70faf9e3e4ae02",
+        "c05b7e37278141488ecc90b9a9ef96eb"
+      ],
+      "evidence": "Canonical elements above"
+    },
+    {
+      "adjudication": "IU-12",
+      "incorporatedMeaning": "Kleio AuditEvents; Dokimasia Provenance/lifecycle/assurance; existing framework reused",
+      "canonicalReferences": [
+        "fefda110e2274884ad58906733606efd",
+        "d739c75dffe2453081735710b285f03b",
+        "e282811b51274649816566aac7edeb8a"
+      ],
+      "evidence": "Canonical elements above"
+    },
+    {
+      "adjudication": "IU-13",
+      "incorporatedMeaning": "Exact requested branch and accepted 1.1.21 predecessor established",
+      "canonicalReferences": [],
+      "evidence": "../../before/baseline.json"
+    }
+  ],
+  "unincorporatedAcceptedIUAssertions": [],
+  "intentionalContractDeferrals": "See HCRL DR-4; no exact implementation schema, regex dialect, provider vocabulary or universal lifecycle is invented."
+}

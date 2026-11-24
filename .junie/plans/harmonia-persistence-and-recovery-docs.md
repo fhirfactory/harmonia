@@ -5,7 +5,7 @@ sessionId: session-260916-080929-11gy
 # Requirements
 
 ### Overview & Goals
-The objective is to expand the master Harmonia Health Information Exchange (HIE) ArchiMate 3.2 Technical Architecture Specification (`docs/latex/main.tex`) by creating a comprehensive, rigorous LaTeX appendix: **Appendix D: Implementation and Deployment Guide for Praxis Workflow Sequences**.
+The objective is to expand the master Harmonia Health Information Exchange (HIE) ArchiMate 3.2 Technical Architecture Specification (`../../docs/latex-legacy`) by creating a comprehensive, rigorous LaTeX appendix: **Appendix D: Implementation and Deployment Guide for Praxis Workflow Sequences**.
 
 This appendix will provide an exhaustive, production-grade technical manual detailing the step-by-step engineering process, architectural patterns, component blueprints, configuration parameters, state persistence workflows, testing strategies, and containerized deployment considerations required to implement, orchestrate, test, and operate:
 1. **Praxis Workflow Sequence Architecture**: Decoupling declarative workflow metadata (`PraxisDefinition`) from Camel/CDI runtime execution (`PraxisImplementation` / `Praxis`), managing topic subscriptions (`TopicSubscription`, `TopicHierarchy`), configuring target gateway routing, and executing ordered activity pipelines.
@@ -19,11 +19,11 @@ The resulting documentation will strictly adhere to established ArchiMate 3.2 st
 
 ### Scope
 - **In Scope**:
-  - Authoring `docs/latex/chapters/appendix-praxis-workflow.tex` covering the complete Praxis development, orchestration, checkpointing, testing, and deployment lifecycle.
+  - Authoring `../../docs/latex-legacy` covering the complete Praxis development, orchestration, checkpointing, testing, and deployment lifecycle.
   - Creating TikZ ArchiMate diagram:
-    - `docs/latex/diagrams/fig-praxis-workflow-architecture.tex`: Detailed ArchiMate 3.2 view of Praxis workflow architecture, dynamic Camel pipeline synthesis, CDI activity discovery, checkpoint management, cache persistence, and runtime administration.
-  - Updating `docs/latex/main.tex` to include Appendix D (`\input{chapters/appendix-praxis-workflow.tex}`).
-  - Updating `docs/latex/chapters/00-frontmatter.tex` to reference the Praxis implementation guide in the Executive Summary and system outline.
+    - `../../docs/latex-legacy`: Detailed ArchiMate 3.2 view of Praxis workflow architecture, dynamic Camel pipeline synthesis, CDI activity discovery, checkpoint management, cache persistence, and runtime administration.
+  - Updating `../../docs/latex-legacy` to include Appendix D (`\input{chapters/appendix-praxis-workflow.tex}`).
+  - Updating `../../docs/latex-legacy` to reference the Praxis implementation guide in the Executive Summary and system outline.
   - Comprehensive coverage of the 7 core sections of the Praxis Implementation Guide:
     1. Architectural Principles & the Praxis Paradigm (Decoupling `PraxisDefinition` from `PraxisImplementation`, topic subscriptions, gateway targeting, lifecycle checkpoints, and dual-cache architecture in Mneme).
     2. Step-by-Step Praxis Creation Blueprint (Defining JSON/Java descriptors, configuring topic routing, activity ordering, dynamic route compilation, and exception handling).
@@ -43,12 +43,12 @@ The resulting documentation will strictly adhere to established ArchiMate 3.2 st
 - **As a Platform / DevOps Engineer**, I want clear operational instructions for querying workflow status, performing dynamic route reload via `ponos-cli`, and maintaining Infinispan cluster consistency for task sequences.
 
 ### Functional Requirements
-- **FR-1**: Author `docs/latex/chapters/appendix-praxis-workflow.tex` structured into dedicated sections covering architecture, code blueprint, reference implementation, dynamic route generation, discovery/seeding, testing, and deployment.
-- **FR-2**: Create `docs/latex/diagrams/fig-praxis-workflow-architecture.tex` using ArchiMate TikZ styling to model the Praxis definition model, dynamic Camel pipeline synthesis, CDI activity injection, checkpoint manager, and Ponos runtime management.
+- **FR-1**: Author `../../docs/latex-legacy` structured into dedicated sections covering architecture, code blueprint, reference implementation, dynamic route generation, discovery/seeding, testing, and deployment.
+- **FR-2**: Create `../../docs/latex-legacy` using ArchiMate TikZ styling to model the Praxis definition model, dynamic Camel pipeline synthesis, CDI activity injection, checkpoint manager, and Ponos runtime management.
 - **FR-3**: Provide complete, copy-paste ready Java code and JSON schema blueprints demonstrating `PraxisImplementation` configuration, topic subscription matching, and activity chaining.
 - **FR-4**: Provide concrete XML/JSON/YAML configuration examples for declarative task sequence loading, CDI wiring, and REST administration.
 - **FR-5**: Detail testing patterns using `CamelTestSupport`, synthetic `Pragma` fixtures, mock endpoints, and assertion of `PragmaCheckpoint` records.
-- **FR-6**: Integrate Appendix D into `docs/latex/main.tex` and update front matter nomenclature and summaries.
+- **FR-6**: Integrate Appendix D into `../../docs/latex-legacy` and update front matter nomenclature and summaries.
 - **FR-7**: Compile and validate `main.pdf` using multi-pass `pdflatex`, ensuring zero fatal errors, resolved cross-references, and updated TOC, LOF, and LOT.
 
 ### Non-Functional Requirements
@@ -93,11 +93,11 @@ Harmonia provides the `Energeia` workflow orchestration layer featuring:
 
 ### Component & File Structure
 - **New Files**:
-  - `docs/latex/chapters/appendix-praxis-workflow.tex`: Master Praxis workflow implementation and deployment guide.
-  - `docs/latex/diagrams/fig-praxis-workflow-architecture.tex`: ArchiMate Praxis workflow architecture diagram.
+  - `../../docs/latex-legacy`: Master Praxis workflow implementation and deployment guide.
+  - `../../docs/latex-legacy`: ArchiMate Praxis workflow architecture diagram.
 - **Modified Files**:
-  - `docs/latex/main.tex`: Add `\input{chapters/appendix-praxis-workflow.tex}` under `\appendix`.
-  - `docs/latex/chapters/00-frontmatter.tex`: Update system overview and document map.
+  - `../../docs/latex-legacy`: Add `\input{chapters/appendix-praxis-workflow.tex}` under `\appendix`.
+  - `../../docs/latex-legacy`: Update system overview and document map.
 
 ### Architecture Diagram
 
@@ -143,7 +143,7 @@ graph TD
 # Testing
 
 ### Validation Approach
-1. Compile `docs/latex/main.tex` with `pdflatex` (two passes to resolve cross-references, TOC, LOF, LOT).
+1. Compile `../../docs/latex-legacy` with `pdflatex` (two passes to resolve cross-references, TOC, LOF, LOT).
 2. Verify that `main.pdf` contains Appendix A (Paradeigma), Appendix B (MLLP Services), Appendix C (Ergon Modules), and Appendix D (Praxis Sequences) with complete formatting and diagrams.
 3. Review compilation logs to confirm zero undefined references or fatal syntax errors.
 
@@ -157,16 +157,16 @@ graph TD
 
 ### ✓ Step 1: Design ArchiMate TikZ Diagram for Praxis Workflow Architecture
 Create the dedicated ArchiMate 3.2 TikZ process and component diagram illustrating the Praxis workflow execution, dynamic route compilation, and checkpoint management model.
-- Create `docs/latex/diagrams/fig-praxis-workflow-architecture.tex` modeling `PraxisDefinition`, `TaskSequenceLoader`, CDI activity resolution, dynamic Camel route synthesis, `PraxisCheckpointManager`, and `Mneme` cache persistence.
+- Create `../../docs/latex-legacy` modeling `PraxisDefinition`, `TaskSequenceLoader`, CDI activity resolution, dynamic Camel route synthesis, `PraxisCheckpointManager`, and `Mneme` cache persistence.
 
 ### ✓ Step 2: Author Appendix D: Praxis Architecture, Creation Blueprint & Reference Implementation (Sections D.1 to D.3)
-Author the core architectural principles, creation blueprints, declarative schemas, and production reference implementation in `docs/latex/chapters/appendix-praxis-workflow.tex`.
+Author the core architectural principles, creation blueprints, declarative schemas, and production reference implementation in `../../docs/latex-legacy`.
 - Section D.1: Architectural Blueprint, the Praxis Paradigm, Topic Subscriptions, and Checkpoint Lifecycle.
 - Section D.2: Step-by-Step Praxis Creation Blueprint (Java/JSON definitions, activity ordering, dynamic compilation, error handling).
 - Section D.3: Production Reference Implementation (`PatientCareAdmissionPraxis` full Java code and declarative JSON schema).
 
 ### ✓ Step 3: Author Appendix D: Dynamic Routing, Discovery, Testing, and Deployment Guide (Sections D.4 to D.7)
-Author the dynamic Camel pipeline topology, `TaskSequenceLoader` discovery/seeding, testing patterns, and operational runbook in `docs/latex/chapters/appendix-praxis-workflow.tex`.
+Author the dynamic Camel pipeline topology, `TaskSequenceLoader` discovery/seeding, testing patterns, and operational runbook in `../../docs/latex-legacy`.
 - Section D.4: Dynamic Route Generation, Endpoints & Camel Pipeline Topology (`createSequencePipelineRoute()`, endpoint chaining).
 - Section D.5: Dynamic Discovery, Seeding & CDI Binding (`TaskSequenceLoader`, `TaskSequenceDefaultSeeder`, `PraxisService`).
 - Section D.6: Multi-Tier Testing Strategies (`CamelTestSupport`, mock endpoints, checkpoint assertions, failure snapshots).
@@ -174,6 +174,6 @@ Author the dynamic Camel pipeline topology, `TaskSequenceLoader` discovery/seedi
 
 ### ✓ Step 4: Integrate Appendix D into Master LaTeX Specification, Compile PDF, and Validate
 Integrate the new appendix into the master LaTeX build, update front matter, and verify multi-pass compilation.
-- Update `docs/latex/main.tex` to input `chapters/appendix-praxis-workflow.tex`.
-- Update `docs/latex/chapters/00-frontmatter.tex` to cross-reference Appendix D in the Executive Summary and system outline.
-- Execute multi-pass `pdflatex` compilation in `docs/latex/` and verify that `main.pdf` compiles cleanly without errors and includes all updated tables, figures, and sections.
+- Update `../../docs/latex-legacy` to input `chapters/appendix-praxis-workflow.tex`.
+- Update `../../docs/latex-legacy` to cross-reference Appendix D in the Executive Summary and system outline.
+- Execute multi-pass `pdflatex` compilation in `../../docs/latex-legacy` and verify that `main.pdf` compiles cleanly without errors and includes all updated tables, figures, and sections.

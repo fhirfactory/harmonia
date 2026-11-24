@@ -1,0 +1,43 @@
+make: Entering directory '/usr/vm/devel/code/projects/github/harmonia/docs/archimate/framework'
+timeout --signal=TERM --kill-after=5s 90s python3 tools/synchronise_baseline.py --check
+{
+  "status": "PASS",
+  "before": {
+    "elements": 1165,
+    "relationships": 823,
+    "views": 984,
+    "element_types": {
+      "Capability": 841,
+      "BusinessFunction": 160,
+      "BusinessProcess": 20,
+      "BusinessService": 139,
+      "Principle": 5
+    }
+  },
+  "after": {
+    "elements": 1299,
+    "relationships": 852,
+    "views": 1196,
+    "element_types": {
+      "Capability": 841,
+      "BusinessFunction": 160,
+      "BusinessProcess": 20,
+      "BusinessService": 139,
+      "Principle": 25,
+      "Driver": 10,
+      "Assessment": 5,
+      "Goal": 9,
+      "Outcome": 3,
+      "Requirement": 74,
+      "Constraint": 3,
+      "Stakeholder": 10
+    }
+  },
+  "deterministic_regeneration": "PASS",
+  "sha256": "504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a"
+}
+timeout --signal=TERM --kill-after=5s 30s python3 tools/report_baseline.py --check
+PASS: final baseline completion report and Archi 5.10.0 inspection guide
+timeout --signal=TERM --kill-after=5s 120s python3 tools/verify_baseline_outputs.py
+PASS: all 14 generated outputs reproduce byte-for-byte in independent processes; release unchanged
+make: Leaving directory '/usr/vm/devel/code/projects/github/harmonia/docs/archimate/framework'

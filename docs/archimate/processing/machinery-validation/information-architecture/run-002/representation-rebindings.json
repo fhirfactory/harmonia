@@ -1,0 +1,800 @@
+[
+  {
+    "baseline": {
+      "line": 20573,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-7e853ce10d0050a78fcd7b690d505c7f",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-7e853ce10d0050a78fcd7b690d505c7f",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "04adbfc449bb4b9e9ae6e7fdf8a66bf9",
+    "incoming": {
+      "line": 89830,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-312455f62266455785f3b8b033e70d1b",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-312455f62266455785f3b8b033e70d1b",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 19930,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-f8190710c306583ebf7b4f8d879483ee",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-f8190710c306583ebf7b4f8d879483ee",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "07a1f83c9b4e462eaef1595c2a50d560",
+    "incoming": {
+      "line": 90185,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-226e5dddcac040d99e482ac142e8888a",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-226e5dddcac040d99e482ac142e8888a",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20771,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-894142dc29e756d6b00b40201e324409",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-894142dc29e756d6b00b40201e324409",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "08d8ee19a30f418f9d5bc497ced0d1ef",
+    "incoming": {
+      "line": 90672,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-6b55745c9cfb4f7ebe738fd8cbcd132d",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-6b55745c9cfb4f7ebe738fd8cbcd132d",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20580,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-915f3fef43fc5aeeb89bb30650a10fba",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-915f3fef43fc5aeeb89bb30650a10fba",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "1163ffac87814f319578ef5cb95dcd4d",
+    "incoming": {
+      "line": 88745,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-55ba50d6357443f8ba4b1f7dabca86af",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-55ba50d6357443f8ba4b1f7dabca86af",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20611,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-8e3f000b84c25352869c1a2d34f5493e",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-8e3f000b84c25352869c1a2d34f5493e",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "18ad2e58913b4a938e172df7b03f366a",
+    "incoming": {
+      "line": 89233,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-91f8d90bfd7a4513ad620ff57d634b6a",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-91f8d90bfd7a4513ad620ff57d634b6a",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 19892,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-f45454d186e25fd6ac447be05b4a587e",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-f45454d186e25fd6ac447be05b4a587e",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "1d6d4c3a2df440be94262855fa6564eb",
+    "incoming": {
+      "line": 90551,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-e9fdef73242543ea8a772b75664320c6",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-e9fdef73242543ea8a772b75664320c6",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20561,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-d18afdbb120f549eb39194e960859797",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-d18afdbb120f549eb39194e960859797",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "227974cf26054bdea17038ecd6c0aa3a",
+    "incoming": {
+      "line": 89710,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-fca6a79f987a4a5283874c7f7698e67a",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-fca6a79f987a4a5283874c7f7698e67a",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 19970,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-af29f5d403b75648a991cca25b699c9c",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-af29f5d403b75648a991cca25b699c9c",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "25c1b751956446cea17065b6254419d5",
+    "incoming": {
+      "line": 89387,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-68ee1eb72f6044ed97960a0aca108823",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-68ee1eb72f6044ed97960a0aca108823",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20606,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-ec9b517a38d45cf2aa9e7539ee9b253d",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-ec9b517a38d45cf2aa9e7539ee9b253d",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "26c72794993044af98b5329b8b14ae89",
+    "incoming": {
+      "line": 89020,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-a8c22b5fdca742f2bb699e154dab57ca",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-a8c22b5fdca742f2bb699e154dab57ca",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20541,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-88dc53e48abd506d9d0433e1f46e72e2",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-88dc53e48abd506d9d0433e1f46e72e2",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "2a791e0e1f6b45c0a57fb8233f73faa5",
+    "incoming": {
+      "line": 89517,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-a025ad6103e24c79b90f39a16b8b15a2",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-a025ad6103e24c79b90f39a16b8b15a2",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 19966,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-bbe22ad139ae54b0bdd5da53720d942a",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-bbe22ad139ae54b0bdd5da53720d942a",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "2a879d06b17143be8bbfc35cdaab8bdf",
+    "incoming": {
+      "line": 89467,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-0714910831214bf18763a8f2aa9aa4b9",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-0714910831214bf18763a8f2aa9aa4b9",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20576,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-bf12d24b62bb595eaa2325a6a7bea26e",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-bf12d24b62bb595eaa2325a6a7bea26e",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "2c884cdd6a4b41a184818e3a7e540897",
+    "incoming": {
+      "line": 89670,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-0235e0eaeafd42b683a53bacd2e40939",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-0235e0eaeafd42b683a53bacd2e40939",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20593,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-cbbec381b72c5cef85d842142075b459",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-cbbec381b72c5cef85d842142075b459",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "2f2868f077fc47afbb541925a9801b2c",
+    "incoming": {
+      "line": 88939,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-4918492afd7047f9a319fc990aee8632",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-4918492afd7047f9a319fc990aee8632",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 19962,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-357c6acd043f58708e08b9a9e741814e",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-357c6acd043f58708e08b9a9e741814e",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "303f8586953d450d8d82d3d5f76e488a",
+    "incoming": {
+      "line": 89427,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-a51f6ce6955e4aa191fea853e05db14c",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-a51f6ce6955e4aa191fea853e05db14c",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20017,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-9f79c79ae085520499239a4d0d149a2f",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-9f79c79ae085520499239a4d0d149a2f",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "30f4deffcd694f07bf54b2b192695d4f",
+    "incoming": {
+      "line": 90606,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-8f4afa96ab204ee5bc50d49de65a4d66",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-8f4afa96ab204ee5bc50d49de65a4d66",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20500,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-c16743d7b1fb5172afa5130095798191",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-c16743d7b1fb5172afa5130095798191",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "3896c910c28646098f0707efe88169ee",
+    "incoming": {
+      "line": 89999,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-8178d0276d5940bd9b78bc71debdbc17",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-8178d0276d5940bd9b78bc71debdbc17",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 19996,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-76e17ba541cd5d2db988c503af32cfad",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-76e17ba541cd5d2db988c503af32cfad",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "3927d161556d48f4b2cc57bd46ab785d",
+    "incoming": {
+      "line": 89153,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-e2c9fed13a2840a3931c2990bfb76da5",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-e2c9fed13a2840a3931c2990bfb76da5",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20584,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-4d30e501991f53e1ab718ceae9cc9599",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-4d30e501991f53e1ab718ceae9cc9599",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "3b72456b5686449f95ad26bfbbae07f3",
+    "incoming": {
+      "line": 88650,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-e6876f4592f94aa28019ccccd493d31c",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-e6876f4592f94aa28019ccccd493d31c",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20536,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-d4f3a0305c8954ebbda80cef33fc4178",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-d4f3a0305c8954ebbda80cef33fc4178",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "441b0891822f4add834ea930c3fe58b7",
+    "incoming": {
+      "line": 90266,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-736c9a76f70e48439cb33cc1be79dcca",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-736c9a76f70e48439cb33cc1be79dcca",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20063,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-cf030f3db0f159888df2760c4786786c",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-cf030f3db0f159888df2760c4786786c",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "4627ee33845744f2ae2e10c84e313755",
+    "incoming": {
+      "line": 90225,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-2a4ae1ab99ca4483b2380e5da7cfb26e",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-2a4ae1ab99ca4483b2380e5da7cfb26e",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20588,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-87934f3b3f1b53c7abb886d8050defe4",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-87934f3b3f1b53c7abb886d8050defe4",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "4e8f2bd581a5418889813cf7ee414750",
+    "incoming": {
+      "line": 88805,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-95d2d62cef524640b2be13f60236e2d6",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-95d2d62cef524640b2be13f60236e2d6",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20761,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-89bfa28c8be251408ed51a17551aa6ab",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-89bfa28c8be251408ed51a17551aa6ab",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "4fb589629e7f405db44d6a87a2b5e36b",
+    "incoming": {
+      "line": 90307,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-ff42982a524f43d7b4fee1bf5bb6a8e1",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-ff42982a524f43d7b4fee1bf5bb6a8e1",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20503,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-86e72752878753f2b1ab604f303f1fc6",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-86e72752878753f2b1ab604f303f1fc6",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "5f8299e31ee5410583007473c75d578f",
+    "incoming": {
+      "line": 90038,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-67717cfea182439aabeae1bbaac29a11",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-67717cfea182439aabeae1bbaac29a11",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20603,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-9343d10e09a456508da158f89802d1c7",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-9343d10e09a456508da158f89802d1c7",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "703bb80c062743eeb7ed8dea3ffeaaa0",
+    "incoming": {
+      "line": 88981,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-fd3815b7d59a43b89055809d6f99d8a4",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-fd3815b7d59a43b89055809d6f99d8a4",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 19954,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-44f337ee36a254d6aa7f29a7341b166a",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-44f337ee36a254d6aa7f29a7341b166a",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "75e194f6168945588ed30cc6c78d04cc",
+    "incoming": {
+      "line": 88898,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-8f2fe2656ad14cf6bae74dc7b82c538a",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-8f2fe2656ad14cf6bae74dc7b82c538a",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20047,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-74957499ad6e57dd83efe1b68f7c5bce",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-74957499ad6e57dd83efe1b68f7c5bce",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "771b2e814946401bbe6dd6b4fdd3fb42",
+    "incoming": {
+      "line": 89920,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-096e8600416144af8234d11193919b5d",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-096e8600416144af8234d11193919b5d",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 19942,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-40fba4cb065f52819995aea0bed06a00",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-40fba4cb065f52819995aea0bed06a00",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "779f2295b0b648dda9dbd21c4ade3ba0",
+    "incoming": {
+      "line": 89879,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-2e0b4b866f6c45db8de068f6dffd409f",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-2e0b4b866f6c45db8de068f6dffd409f",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 19958,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-49cd5bc99ffa5fae998d0a2fa6919a50",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-49cd5bc99ffa5fae998d0a2fa6919a50",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "8d41e9fb6a164deb93afb5fc4c671e10",
+    "incoming": {
+      "line": 90353,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-45c96a7f74a5439abe63dbf78e35c9e0",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-45c96a7f74a5439abe63dbf78e35c9e0",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 19911,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-7822a5a67faa552e8ad13755e852ef15",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-7822a5a67faa552e8ad13755e852ef15",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "9badf0d360b64215bc60e74eec954018",
+    "incoming": {
+      "line": 90090,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-e45d6db0d1204eedba2ee91635fb905e",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-e45d6db0d1204eedba2ee91635fb905e",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20050,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-2b0f9a56b0d65f3fbc793090ebea0f8d",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-2b0f9a56b0d65f3fbc793090ebea0f8d",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "9ee4df4d76864bb1ac90fe1077c56c6f",
+    "incoming": {
+      "line": 89959,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-447dfe43d1ca46b19a53ab740bbb9638",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-447dfe43d1ca46b19a53ab740bbb9638",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20647,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-33ce6c9ab8dc56d4a49938ccf113346b",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-33ce6c9ab8dc56d4a49938ccf113346b",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "bc70a1055ca34eed8143856816587f67",
+    "incoming": {
+      "line": 89305,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-e2d4a8d68db8479595418454b474cd15",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-e2d4a8d68db8479595418454b474cd15",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20567,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-0e2aac3ee1785338821600bbaed24b5f",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-0e2aac3ee1785338821600bbaed24b5f",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "c240be16de76415682237a238b3d3fc8",
+    "incoming": {
+      "line": 89788,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-760c399c8f624e1cb3dcdda8ebaef492",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-760c399c8f624e1cb3dcdda8ebaef492",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 19806,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-01e5208d1d15549c812dcedd2c0644a7",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-01e5208d1d15549c812dcedd2c0644a7",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "c43139289cb649b4836521a96a51604c",
+    "incoming": {
+      "line": 90433,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-7f487e4882e64758bcb268ff474f4f33",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-7f487e4882e64758bcb268ff474f4f33",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20564,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-fa50c7b9750e5f63ac219c4904f2cc08",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-fa50c7b9750e5f63ac219c4904f2cc08",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "cad820b906fa40f28824278fb18b7497",
+    "incoming": {
+      "line": 89749,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-6e049c7915e04472a6e541023a75aad0",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-6e049c7915e04472a6e541023a75aad0",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20599,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-f30e3f1749b054f7b47be51220f516a5",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-f30e3f1749b054f7b47be51220f516a5",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "cb7ac98f62aa4599ba57263338cb8b3c",
+    "incoming": {
+      "line": 88848,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-5cd100ca4e5846df934b20e77c862c46",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-5cd100ca4e5846df934b20e77c862c46",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20054,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-3fbc97f72c185d82a3d1fef758f27eed",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-3fbc97f72c185d82a3d1fef758f27eed",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "dd3ba70128874caeb2d5da419d006c49",
+    "incoming": {
+      "line": 89630,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-da6abec4c12f4e689f8e7516dfece8f1",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-da6abec4c12f4e689f8e7516dfece8f1",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 20058,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-3676faa2f7715169839dc9ebc08b9faa",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-3676faa2f7715169839dc9ebc08b9faa",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "e92ea15616ea43c9a1d698e34ed1376b",
+    "incoming": {
+      "line": 88700,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-054fbdf6f3af4478991d93805b2ca8d5",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-054fbdf6f3af4478991d93805b2ca8d5",
+    "representation_identity": "REBOUND"
+  },
+  {
+    "baseline": {
+      "line": 19982,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml",
+      "representation_id": "id-28e7db48ce415ca2a982e0abd38e2d61",
+      "sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+      "xml_sha256": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc"
+    },
+    "baseline_id": "id-28e7db48ce415ca2a982e0abd38e2d61",
+    "basis": "CANONICAL_ID",
+    "canonicalId": "fb464349f13b41c4ae9920a743fc6c12",
+    "incoming": {
+      "line": 89073,
+      "path": "/home/hunterm/Development/Code/harmonia/docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml",
+      "representation_id": "id-bcfd7137c33f4255ad3780826a64b4c5",
+      "sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+      "xml_sha256": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed"
+    },
+    "incoming_id": "id-bcfd7137c33f4255ad3780826a64b4c5",
+    "representation_identity": "REBOUND"
+  }
+]

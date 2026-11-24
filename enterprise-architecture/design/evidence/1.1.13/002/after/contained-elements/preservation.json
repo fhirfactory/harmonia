@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "protectedFiles": 1779,
+  "unchanged": 1776,
+  "expectedChangedCandidateFiles": [
+    "enterprise-architecture/documentation/continuum-manifest/published/1.1.13/Harmonia-Architecture.xml",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.13/structure.json",
+    "enterprise-architecture/documentation/continuum-rad/published/1.1.13/publication.json"
+  ],
+  "canonicalElementsNavigationManifestHierarchyAndRadTextUnchanged": true,
+  "radStructureChanges": "Only modelSha256 changes; all headings, locators, elements and diagrams are identical. publication.json updates the structure.json hash.",
+  "acceptedEvidenceAndIteration001Unchanged": true,
+  "priorIteration002EvidenceUnchanged": true,
+  "intermediateCheck": "Initial expected-change list omitted RAD hash metadata; corrected after exact prior-byte reproduction and structural comparison. No architecture or RAD text changed."
+}

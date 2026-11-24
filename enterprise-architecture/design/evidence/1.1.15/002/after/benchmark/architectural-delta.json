@@ -1,0 +1,2431 @@
+{
+  "schemaVersion": 2,
+  "standing": "PROPOSED machinery; UNREVIEWED; no application authority",
+  "outcome": "REVIEW_READY",
+  "inputs": {
+    "baseline": {
+      "path": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/archimate/published/1.1.14/Harmonia-Architecture.xml",
+      "sha256": "ee1d7ef8d5491a4a656d8c2f07c38999b6276a130064d797a08f19501aa47161",
+      "xmlSha256": "ee1d7ef8d5491a4a656d8c2f07c38999b6276a130064d797a08f19501aa47161",
+      "bytes": 26919406
+    },
+    "submitted": {
+      "path": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.15/001/before/harmonia-continuum-1.1.15-001.xml",
+      "sha256": "a31ed511c07e0a54c503383f6e52dfdad1e5905e642c05e7dc14fb7649af2eb9",
+      "xmlSha256": "a31ed511c07e0a54c503383f6e52dfdad1e5905e642c05e7dc14fb7649af2eb9",
+      "bytes": 28590881
+    }
+  },
+  "elements": {
+    "before": 1602,
+    "submitted": 1614,
+    "retainedIds": 1602,
+    "added": [
+      {
+        "identifier": "id-1dc1ebeceba74dec8fde94f14eff5ce1",
+        "archimateType": "Requirement",
+        "attributes": {
+          "identifier": "id-1dc1ebeceba74dec8fde94f14eff5ce1",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Requirement"
+        },
+        "name": [
+          {
+            "text": "[Requirement] Information Durability During Platform Failure",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": []
+      },
+      {
+        "identifier": "id-2f1bdf2e08464b8084ead4f7ae315e4a",
+        "archimateType": "Grouping",
+        "attributes": {
+          "identifier": "id-2f1bdf2e08464b8084ead4f7ae315e4a",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Grouping"
+        },
+        "name": [
+          {
+            "text": "[RequirementGroup] Functional Requirements",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "properties": [
+          {
+            "key": "Specialization",
+            "values": [
+              {
+                "text": "RequirementGroup",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "identifier": "id-458ce11fb42643e48a71bfda600b0d08",
+        "archimateType": "Grouping",
+        "attributes": {
+          "identifier": "id-458ce11fb42643e48a71bfda600b0d08",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Grouping"
+        },
+        "name": [
+          {
+            "text": "[RequirementGroup] Information Management",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "properties": [
+          {
+            "key": "Specialization",
+            "values": [
+              {
+                "text": "RequirementGroup",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "identifier": "id-74614b2b4bdd4897852e3483d597bd01",
+        "archimateType": "Grouping",
+        "attributes": {
+          "identifier": "id-74614b2b4bdd4897852e3483d597bd01",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Grouping"
+        },
+        "name": [
+          {
+            "text": "[ClassPackage] information",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "properties": [
+          {
+            "key": "Specialization",
+            "values": [
+              {
+                "text": "ClassPackage",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "identifier": "id-7a965baa4e6d46bd92a9b41433920d21",
+        "archimateType": "Grouping",
+        "attributes": {
+          "identifier": "id-7a965baa4e6d46bd92a9b41433920d21",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Grouping"
+        },
+        "name": [
+          {
+            "text": "[RequirementGroup] Performance Requirements",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "properties": [
+          {
+            "key": "Specialization",
+            "values": [
+              {
+                "text": "RequirementGroup",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "identifier": "id-812dcde922614fde87adbccc993d0294",
+        "archimateType": "Grouping",
+        "attributes": {
+          "identifier": "id-812dcde922614fde87adbccc993d0294",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Grouping"
+        },
+        "name": [
+          {
+            "text": "[RequirementGroup] Non-Functional-Requirements",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "properties": [
+          {
+            "key": "Specialization",
+            "values": [
+              {
+                "text": "RequirementGroup",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "identifier": "id-8a0f2c41d3264f988442781309550cc0",
+        "archimateType": "Grouping",
+        "attributes": {
+          "identifier": "id-8a0f2c41d3264f988442781309550cc0",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Grouping"
+        },
+        "name": [
+          {
+            "text": "[ClassPackage] model",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "properties": [
+          {
+            "key": "Specialization",
+            "values": [
+              {
+                "text": "ClassPackage",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "identifier": "id-9384a733b3b04279ace34e4fdca25409",
+        "archimateType": "Grouping",
+        "attributes": {
+          "identifier": "id-9384a733b3b04279ace34e4fdca25409",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Grouping"
+        },
+        "name": [
+          {
+            "text": "[RequirementGroup] Disaster Recovery Requirements",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "properties": [
+          {
+            "key": "Specialization",
+            "values": [
+              {
+                "text": "RequirementGroup",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "identifier": "id-a6e03ca37cb54e69b9052cd12d6642eb",
+        "archimateType": "Grouping",
+        "attributes": {
+          "identifier": "id-a6e03ca37cb54e69b9052cd12d6642eb",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Grouping"
+        },
+        "name": [
+          {
+            "text": "[RequirementGroup] Availability",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "properties": [
+          {
+            "key": "Specialization",
+            "values": [
+              {
+                "text": "RequirementGroup",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "identifier": "id-a8f6eefb1d7a44a09acf06a41b59ffab",
+        "archimateType": "Grouping",
+        "attributes": {
+          "identifier": "id-a8f6eefb1d7a44a09acf06a41b59ffab",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Grouping"
+        },
+        "name": [
+          {
+            "text": "[ClassPackage] core",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": []
+      },
+      {
+        "identifier": "id-e373852f1b5a4d9bbe4c646b2f6615ed",
+        "archimateType": "Grouping",
+        "attributes": {
+          "identifier": "id-e373852f1b5a4d9bbe4c646b2f6615ed",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Grouping"
+        },
+        "name": [
+          {
+            "text": "[RequirementGroup] Information Availability",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "properties": [
+          {
+            "key": "Specialization",
+            "values": [
+              {
+                "text": "RequirementGroup",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "identifier": "id-f5c345ab6c47433da11ee12f5d84e557",
+        "archimateType": "DataObject",
+        "attributes": {
+          "identifier": "id-f5c345ab6c47433da11ee12f5d84e557",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "DataObject"
+        },
+        "name": [
+          {
+            "text": "InformationUnit",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "properties": [
+          {
+            "key": "Specialization",
+            "values": [
+              {
+                "text": "Class",
+                "attributes": {
+                  "{http://www.w3.org/XML/1998/namespace}lang": "en"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "removed": [],
+    "changed": []
+  },
+  "relationships": {
+    "before": 1651,
+    "submitted": 1660,
+    "retainedIds": 1651,
+    "added": [
+      {
+        "identifier": "id-11f188596d0e4bb0a669caa4cfdfd7d5",
+        "archimateType": "Composition",
+        "attributes": {
+          "identifier": "id-11f188596d0e4bb0a669caa4cfdfd7d5",
+          "source": "id-8a0f2c41d3264f988442781309550cc0",
+          "target": "id-a8f6eefb1d7a44a09acf06a41b59ffab",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+        },
+        "name": [],
+        "documentation": [],
+        "source": "id-8a0f2c41d3264f988442781309550cc0",
+        "target": "id-a8f6eefb1d7a44a09acf06a41b59ffab"
+      },
+      {
+        "identifier": "id-171c590aa9a9420eb2f4941620fa31cd",
+        "archimateType": "Composition",
+        "attributes": {
+          "identifier": "id-171c590aa9a9420eb2f4941620fa31cd",
+          "source": "id-812dcde922614fde87adbccc993d0294",
+          "target": "id-7a965baa4e6d46bd92a9b41433920d21",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+        },
+        "name": [],
+        "documentation": [],
+        "source": "id-812dcde922614fde87adbccc993d0294",
+        "target": "id-7a965baa4e6d46bd92a9b41433920d21"
+      },
+      {
+        "identifier": "id-17958c7240b44bb8b58956e80b4535ff",
+        "archimateType": "Composition",
+        "attributes": {
+          "identifier": "id-17958c7240b44bb8b58956e80b4535ff",
+          "source": "id-812dcde922614fde87adbccc993d0294",
+          "target": "id-9384a733b3b04279ace34e4fdca25409",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+        },
+        "name": [],
+        "documentation": [],
+        "source": "id-812dcde922614fde87adbccc993d0294",
+        "target": "id-9384a733b3b04279ace34e4fdca25409"
+      },
+      {
+        "identifier": "id-1bf19e908b514a7db10d38ecb022f938",
+        "archimateType": "Composition",
+        "attributes": {
+          "identifier": "id-1bf19e908b514a7db10d38ecb022f938",
+          "source": "id-a8f6eefb1d7a44a09acf06a41b59ffab",
+          "target": "id-74614b2b4bdd4897852e3483d597bd01",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+        },
+        "name": [],
+        "documentation": [],
+        "source": "id-a8f6eefb1d7a44a09acf06a41b59ffab",
+        "target": "id-74614b2b4bdd4897852e3483d597bd01"
+      },
+      {
+        "identifier": "id-3434cff3125743f491c966eb0225490a",
+        "archimateType": "Composition",
+        "attributes": {
+          "identifier": "id-3434cff3125743f491c966eb0225490a",
+          "source": "id-a6e03ca37cb54e69b9052cd12d6642eb",
+          "target": "id-e373852f1b5a4d9bbe4c646b2f6615ed",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+        },
+        "name": [],
+        "documentation": [],
+        "source": "id-a6e03ca37cb54e69b9052cd12d6642eb",
+        "target": "id-e373852f1b5a4d9bbe4c646b2f6615ed"
+      },
+      {
+        "identifier": "id-47586d7d4bf4491ab66594bb8251d3fc",
+        "archimateType": "Composition",
+        "attributes": {
+          "identifier": "id-47586d7d4bf4491ab66594bb8251d3fc",
+          "source": "id-812dcde922614fde87adbccc993d0294",
+          "target": "id-a6e03ca37cb54e69b9052cd12d6642eb",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+        },
+        "name": [],
+        "documentation": [],
+        "source": "id-812dcde922614fde87adbccc993d0294",
+        "target": "id-a6e03ca37cb54e69b9052cd12d6642eb"
+      },
+      {
+        "identifier": "id-a1b10b97b59f46e98cc0a6b0d41a2687",
+        "archimateType": "Composition",
+        "attributes": {
+          "identifier": "id-a1b10b97b59f46e98cc0a6b0d41a2687",
+          "source": "id-458ce11fb42643e48a71bfda600b0d08",
+          "target": "id-1dc1ebeceba74dec8fde94f14eff5ce1",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+        },
+        "name": [],
+        "documentation": [],
+        "source": "id-458ce11fb42643e48a71bfda600b0d08",
+        "target": "id-1dc1ebeceba74dec8fde94f14eff5ce1"
+      },
+      {
+        "identifier": "id-b63d27292ce9457b886a0b50e0534075",
+        "archimateType": "Composition",
+        "attributes": {
+          "identifier": "id-b63d27292ce9457b886a0b50e0534075",
+          "source": "id-74614b2b4bdd4897852e3483d597bd01",
+          "target": "id-f5c345ab6c47433da11ee12f5d84e557",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+        },
+        "name": [],
+        "documentation": [],
+        "source": "id-74614b2b4bdd4897852e3483d597bd01",
+        "target": "id-f5c345ab6c47433da11ee12f5d84e557"
+      },
+      {
+        "identifier": "id-c4e3157f4c5441b2b370eff5a4450e7a",
+        "archimateType": "Composition",
+        "attributes": {
+          "identifier": "id-c4e3157f4c5441b2b370eff5a4450e7a",
+          "source": "id-2f1bdf2e08464b8084ead4f7ae315e4a",
+          "target": "id-458ce11fb42643e48a71bfda600b0d08",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Composition"
+        },
+        "name": [],
+        "documentation": [],
+        "source": "id-2f1bdf2e08464b8084ead4f7ae315e4a",
+        "target": "id-458ce11fb42643e48a71bfda600b0d08"
+      }
+    ],
+    "removed": [],
+    "changed": []
+  },
+  "views": {
+    "before": 1209,
+    "submitted": 1216,
+    "retainedIds": 1209,
+    "added": [
+      {
+        "identifier": "id-0abeb9dfc5bc441299712f3ee08e49de",
+        "archimateType": "Diagram",
+        "attributes": {
+          "identifier": "id-0abeb9dfc5bc441299712f3ee08e49de",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Diagram"
+        },
+        "name": [
+          {
+            "text": "information-management-requirements-overview",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "nodes": 2,
+        "connections": 0,
+        "elementRefs": [
+          "id-1dc1ebeceba74dec8fde94f14eff5ce1",
+          "id-458ce11fb42643e48a71bfda600b0d08"
+        ],
+        "relationshipRefs": []
+      },
+      {
+        "identifier": "id-25cb1748ba154926a59a25e4539c9096",
+        "archimateType": "Diagram",
+        "attributes": {
+          "identifier": "id-25cb1748ba154926a59a25e4539c9096",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Diagram"
+        },
+        "name": [
+          {
+            "text": "information-package-overview",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "nodes": 2,
+        "connections": 0,
+        "elementRefs": [
+          "id-74614b2b4bdd4897852e3483d597bd01",
+          "id-f5c345ab6c47433da11ee12f5d84e557"
+        ],
+        "relationshipRefs": []
+      },
+      {
+        "identifier": "id-35ab31e1f4d14980b0d33929462bb7b3",
+        "archimateType": "Diagram",
+        "attributes": {
+          "identifier": "id-35ab31e1f4d14980b0d33929462bb7b3",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Diagram"
+        },
+        "name": [
+          {
+            "text": "functional-requirements-overview",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "nodes": 2,
+        "connections": 0,
+        "elementRefs": [
+          "id-2f1bdf2e08464b8084ead4f7ae315e4a",
+          "id-458ce11fb42643e48a71bfda600b0d08"
+        ],
+        "relationshipRefs": []
+      },
+      {
+        "identifier": "id-4927667988ca4a52b620d3d8436077b7",
+        "archimateType": "Diagram",
+        "attributes": {
+          "identifier": "id-4927667988ca4a52b620d3d8436077b7",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Diagram"
+        },
+        "name": [
+          {
+            "text": "class-packages-overview",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "nodes": 3,
+        "connections": 0,
+        "elementRefs": [
+          "id-74614b2b4bdd4897852e3483d597bd01",
+          "id-8a0f2c41d3264f988442781309550cc0",
+          "id-a8f6eefb1d7a44a09acf06a41b59ffab"
+        ],
+        "relationshipRefs": []
+      },
+      {
+        "identifier": "id-8009ccd75bd44bb78dfa7a7b6c6fdd80",
+        "archimateType": "Diagram",
+        "attributes": {
+          "identifier": "id-8009ccd75bd44bb78dfa7a7b6c6fdd80",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Diagram"
+        },
+        "name": [
+          {
+            "text": "non-functional-requirements-overview",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "nodes": 4,
+        "connections": 0,
+        "elementRefs": [
+          "id-7a965baa4e6d46bd92a9b41433920d21",
+          "id-812dcde922614fde87adbccc993d0294",
+          "id-9384a733b3b04279ace34e4fdca25409",
+          "id-a6e03ca37cb54e69b9052cd12d6642eb"
+        ],
+        "relationshipRefs": []
+      },
+      {
+        "identifier": "id-a313bbc71a524c139bb1018bb1960186",
+        "archimateType": "Diagram",
+        "attributes": {
+          "identifier": "id-a313bbc71a524c139bb1018bb1960186",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Diagram"
+        },
+        "name": [
+          {
+            "text": "availability-requirements-overview",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "nodes": 2,
+        "connections": 0,
+        "elementRefs": [
+          "id-a6e03ca37cb54e69b9052cd12d6642eb",
+          "id-e373852f1b5a4d9bbe4c646b2f6615ed"
+        ],
+        "relationshipRefs": []
+      },
+      {
+        "identifier": "id-e7190de0c6f64b5c99b74fa6be52eb05",
+        "archimateType": "Diagram",
+        "attributes": {
+          "identifier": "id-e7190de0c6f64b5c99b74fa6be52eb05",
+          "{http://www.w3.org/2001/XMLSchema-instance}type": "Diagram"
+        },
+        "name": [
+          {
+            "text": "information-availability-management-requirements-overview",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "documentation": [],
+        "nodes": 0,
+        "connections": 0,
+        "elementRefs": [],
+        "relationshipRefs": []
+      }
+    ],
+    "removed": [],
+    "changed": []
+  },
+  "viewNavigation": {
+    "changedViews": [
+      {
+        "identifier": "id-18e0217911394fec9c22da7620f497d2",
+        "name": [
+          {
+            "text": "[Topic] Coordination",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Coordination"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-18e0217911394fec9c22da7620f497d2"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Topics",
+              "Coordination"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-18e0217911394fec9c22da7620f497d2"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-2e771bce18cc5aca80e3c4ad72a01554",
+        "name": [
+          {
+            "text": "REQ-FND-001: Durable Ingress Acceptance Boundary — co-governance",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "0-Motivation",
+              "Requirement Co-governance"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-2e771bce18cc5aca80e3c4ad72a01554"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "0-Motivation",
+              "Requirements",
+              "Requirement Co-governance"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-2e771bce18cc5aca80e3c4ad72a01554"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-37a27c14f07d45d0bb34399fb1ddd5b8",
+        "name": [
+          {
+            "text": "[Topic] Enterprise",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Enterprise"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-37a27c14f07d45d0bb34399fb1ddd5b8"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Topics",
+              "Enterprise"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-37a27c14f07d45d0bb34399fb1ddd5b8"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-4afe4ce42e6e56b0867aca68bb355877",
+        "name": [
+          {
+            "text": "REQ-FND-002: Operational Activity Progression State — co-governance",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "0-Motivation",
+              "Requirement Co-governance"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-4afe4ce42e6e56b0867aca68bb355877"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "0-Motivation",
+              "Requirements",
+              "Requirement Co-governance"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-4afe4ce42e6e56b0867aca68bb355877"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-5a0eb09317f250eb91bdd86ae38de5e1",
+        "name": [
+          {
+            "text": "REQ-FND-005: Independent Assurance of Governed Activity — co-governance",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "0-Motivation",
+              "Requirement Co-governance"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-5a0eb09317f250eb91bdd86ae38de5e1"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "0-Motivation",
+              "Requirements",
+              "Requirement Co-governance"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-5a0eb09317f250eb91bdd86ae38de5e1"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-5ba19156cb0042078a310cbe57ead042",
+        "name": [
+          {
+            "text": "[Topic] Individual",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Individual"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-5ba19156cb0042078a310cbe57ead042"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Topics",
+              "Individual"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-5ba19156cb0042078a310cbe57ead042"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-633aecdb63ab5281af2a383a2b11800d",
+        "name": [
+          {
+            "text": "REQ-FND-003: Subject Referential Integrity — co-governance",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "0-Motivation",
+              "Requirement Co-governance"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-633aecdb63ab5281af2a383a2b11800d"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "0-Motivation",
+              "Requirements",
+              "Requirement Co-governance"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-633aecdb63ab5281af2a383a2b11800d"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-80049507c9254357acb5b3a8ad40a8dd",
+        "name": [
+          {
+            "text": "[Topic] Workforce",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Workforce"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-80049507c9254357acb5b3a8ad40a8dd"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Topics",
+              "Workforce"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-80049507c9254357acb5b3a8ad40a8dd"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-92781b38f5d946828f64a7916a7a18ad",
+        "name": [
+          {
+            "text": "[Topic] Care",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Care"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-92781b38f5d946828f64a7916a7a18ad"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Topics",
+              "Care"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-92781b38f5d946828f64a7916a7a18ad"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-a6fd22d1736d5453bec5194f87b61b80",
+        "name": [
+          {
+            "text": "REQ-FND-004: Explicit Indeterminate Outcome — co-governance",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "0-Motivation",
+              "Requirement Co-governance"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-a6fd22d1736d5453bec5194f87b61b80"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "0-Motivation",
+              "Requirements",
+              "Requirement Co-governance"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-a6fd22d1736d5453bec5194f87b61b80"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-c36226e854dd4c2192d650bb3ecef384",
+        "name": [
+          {
+            "text": "[Topic] Service",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Service"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-c36226e854dd4c2192d650bb3ecef384"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Topics",
+              "Service"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-c36226e854dd4c2192d650bb3ecef384"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-d0c8d828b67e440c88cf1fa5c0fab1dc",
+        "name": [
+          {
+            "text": "[Topic] Equipment",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Equipment"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-d0c8d828b67e440c88cf1fa5c0fab1dc"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Topics",
+              "Equipment"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-d0c8d828b67e440c88cf1fa5c0fab1dc"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-e386cab4c72748ff8b35ebb6a2e0fc02",
+        "name": [
+          {
+            "text": "[Topic] Scheduling",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Scheduling"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-e386cab4c72748ff8b35ebb6a2e0fc02"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Topics",
+              "Scheduling"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-e386cab4c72748ff8b35ebb6a2e0fc02"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-efe1fe4f30854c45909458e496aced94",
+        "name": [
+          {
+            "text": "[Topic] Place",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Place"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-efe1fe4f30854c45909458e496aced94"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Topics",
+              "Place"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-efe1fe4f30854c45909458e496aced94"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-f04466cd677051cc98098438b8a4f980",
+        "name": [
+          {
+            "text": "InformationMap — representation boundary",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-f04466cd677051cc98098438b8a4f980"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Topics"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-f04466cd677051cc98098438b8a4f980"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-f11523a5e2a449a9af538d768f977b0b",
+        "name": [
+          {
+            "text": "[Topic] TaskCompletion",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "TaskCompletion"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-f11523a5e2a449a9af538d768f977b0b"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Topics",
+              "TaskCompletion"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-f11523a5e2a449a9af538d768f977b0b"
+              },
+              "content": []
+            }
+          }
+        ]
+      },
+      {
+        "identifier": "id-f149b52ad8cd4590b0d52597460ec64d",
+        "name": [
+          {
+            "text": "[Topic] Ordering",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "before": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Ordering"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-f149b52ad8cd4590b0d52597460ec64d"
+              },
+              "content": []
+            }
+          }
+        ],
+        "submitted": [
+          {
+            "path": [
+              "Views",
+              "3-ApplicationLayer",
+              "1-InformationMap",
+              "Topics",
+              "Ordering"
+            ],
+            "metadata": {
+              "attributes": {
+                "identifierRef": "id-f149b52ad8cd4590b0d52597460ec64d"
+              },
+              "content": []
+            }
+          }
+        ]
+      }
+    ],
+    "folderChanges": [
+      {
+        "path": "[\"Views\", \"0-Motivation\", \"Requirement Co-governance\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Requirement Co-governance",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      },
+      {
+        "path": "[\"Views\", \"0-Motivation\", \"Requirements\", \"Functional Requirements\", \"Information Management\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Information Management",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"0-Motivation\", \"Requirements\", \"Functional Requirements\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Functional Requirements",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"0-Motivation\", \"Requirements\", \"Non-Functional-Requirements\", \"Availability Requirements\", \"Information Availability Management\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Information Availability Management",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"0-Motivation\", \"Requirements\", \"Non-Functional-Requirements\", \"Availability Requirements\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Availability Requirements",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"0-Motivation\", \"Requirements\", \"Non-Functional-Requirements\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Non-Functional-Requirements",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"0-Motivation\", \"Requirements\", \"Requirement Co-governance\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Requirement Co-governance",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"0-Motivation\", \"Requirements\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Requirements",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Care\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Care",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Classes\", \"model\", \"core\", \"information\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "information",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Classes\", \"model\", \"core\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "core",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Classes\", \"model\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "model",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Classes\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Classes",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Coordination\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Coordination",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Enterprise\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Enterprise",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Equipment\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Equipment",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Individual\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Individual",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Ordering\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Ordering",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Place\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Place",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Scheduling\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Scheduling",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Service\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Service",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"TaskCompletion\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "TaskCompletion",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Topics\", \"Care\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Care",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Topics\", \"Coordination\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Coordination",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Topics\", \"Enterprise\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Enterprise",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Topics\", \"Equipment\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Equipment",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Topics\", \"Individual\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Individual",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Topics\", \"Ordering\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Ordering",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Topics\", \"Place\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Place",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Topics\", \"Scheduling\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Scheduling",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Topics\", \"Service\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Service",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Topics\", \"TaskCompletion\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "TaskCompletion",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Topics\", \"Workforce\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Workforce",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Topics\"]",
+        "before": null,
+        "submitted": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Topics",
+              []
+            ]
+          ]
+        }
+      },
+      {
+        "path": "[\"Views\", \"3-ApplicationLayer\", \"1-InformationMap\", \"Workforce\"]",
+        "before": {
+          "attributes": {},
+          "content": [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}label",
+              {
+                "{http://www.w3.org/XML/1998/namespace}lang": "en"
+              },
+              "Workforce",
+              []
+            ]
+          ]
+        },
+        "submitted": null
+      }
+    ],
+    "orderChanges": [],
+    "addedViewPlacements": {
+      "id-0abeb9dfc5bc441299712f3ee08e49de": [
+        {
+          "path": [
+            "Views",
+            "0-Motivation",
+            "Requirements",
+            "Functional Requirements",
+            "Information Management"
+          ],
+          "metadata": {
+            "attributes": {
+              "identifierRef": "id-0abeb9dfc5bc441299712f3ee08e49de"
+            },
+            "content": []
+          }
+        }
+      ],
+      "id-25cb1748ba154926a59a25e4539c9096": [
+        {
+          "path": [
+            "Views",
+            "3-ApplicationLayer",
+            "1-InformationMap",
+            "Classes",
+            "model",
+            "core",
+            "information"
+          ],
+          "metadata": {
+            "attributes": {
+              "identifierRef": "id-25cb1748ba154926a59a25e4539c9096"
+            },
+            "content": []
+          }
+        }
+      ],
+      "id-35ab31e1f4d14980b0d33929462bb7b3": [
+        {
+          "path": [
+            "Views",
+            "0-Motivation",
+            "Requirements",
+            "Functional Requirements"
+          ],
+          "metadata": {
+            "attributes": {
+              "identifierRef": "id-35ab31e1f4d14980b0d33929462bb7b3"
+            },
+            "content": []
+          }
+        }
+      ],
+      "id-4927667988ca4a52b620d3d8436077b7": [
+        {
+          "path": [
+            "Views",
+            "3-ApplicationLayer",
+            "1-InformationMap",
+            "Classes"
+          ],
+          "metadata": {
+            "attributes": {
+              "identifierRef": "id-4927667988ca4a52b620d3d8436077b7"
+            },
+            "content": []
+          }
+        }
+      ],
+      "id-8009ccd75bd44bb78dfa7a7b6c6fdd80": [
+        {
+          "path": [
+            "Views",
+            "0-Motivation",
+            "Requirements",
+            "Non-Functional-Requirements"
+          ],
+          "metadata": {
+            "attributes": {
+              "identifierRef": "id-8009ccd75bd44bb78dfa7a7b6c6fdd80"
+            },
+            "content": []
+          }
+        }
+      ],
+      "id-a313bbc71a524c139bb1018bb1960186": [
+        {
+          "path": [
+            "Views",
+            "0-Motivation",
+            "Requirements",
+            "Non-Functional-Requirements",
+            "Availability Requirements"
+          ],
+          "metadata": {
+            "attributes": {
+              "identifierRef": "id-a313bbc71a524c139bb1018bb1960186"
+            },
+            "content": []
+          }
+        }
+      ],
+      "id-e7190de0c6f64b5c99b74fa6be52eb05": [
+        {
+          "path": [
+            "Views",
+            "0-Motivation",
+            "Requirements",
+            "Non-Functional-Requirements",
+            "Availability Requirements",
+            "Information Availability Management"
+          ],
+          "metadata": {
+            "attributes": {
+              "identifierRef": "id-e7190de0c6f64b5c99b74fa6be52eb05"
+            },
+            "content": []
+          }
+        }
+      ]
+    },
+    "removedViewPlacements": {}
+  },
+  "classified": {
+    "normalisations": {
+      "Generated scalar: unchanged text/attributes; absent xml:lang becomes en": 17957,
+      "Uniquely keyed unordered collection": 251,
+      "Exact unique Property key resolves both definition IDs; all other definition content and owner values compared independently": 45
+    },
+    "propertyDefinitionRebindings": [
+      {
+        "key": "Architectural Status",
+        "before": "propid-26",
+        "submitted": "propid-32"
+      },
+      {
+        "key": "Baseline / Architectural Status",
+        "before": "propid-47",
+        "submitted": "propid-52"
+      },
+      {
+        "key": "Baseline / Architecture Identity Status",
+        "before": "propid-48",
+        "submitted": "propid-53"
+      },
+      {
+        "key": "Baseline / Architecture Release",
+        "before": "propid-60",
+        "submitted": "propid-67"
+      },
+      {
+        "key": "Baseline / Canonical Textual Projection",
+        "before": "propid-61",
+        "submitted": "propid-66"
+      },
+      {
+        "key": "Baseline / Governance State",
+        "before": "propid-41",
+        "submitted": "propid-47"
+      },
+      {
+        "key": "Baseline / Native Definition ID",
+        "before": "propid-46",
+        "submitted": "propid-56"
+      },
+      {
+        "key": "Baseline / Record State",
+        "before": "propid-40",
+        "submitted": "propid-46"
+      },
+      {
+        "key": "Baseline / Review State",
+        "before": "propid-50",
+        "submitted": "propid-55"
+      },
+      {
+        "key": "Baseline / Source Assertion",
+        "before": "propid-59",
+        "submitted": "propid-61"
+      },
+      {
+        "key": "Baseline / Source Path",
+        "before": "propid-43",
+        "submitted": "propid-49"
+      },
+      {
+        "key": "Baseline / Source Predicate",
+        "before": "propid-58",
+        "submitted": "propid-60"
+      },
+      {
+        "key": "Baseline / Source Projection Key",
+        "before": "propid-49",
+        "submitted": "propid-54"
+      },
+      {
+        "key": "Baseline / Source SHA256",
+        "before": "propid-45",
+        "submitted": "propid-51"
+      },
+      {
+        "key": "Baseline / Source Section",
+        "before": "propid-44",
+        "submitted": "propid-50"
+      },
+      {
+        "key": "Capability Tier",
+        "before": "propid-24",
+        "submitted": "propid-30"
+      },
+      {
+        "key": "Continuum / Canonical Source",
+        "before": "continuum-source",
+        "submitted": "propid-23"
+      },
+      {
+        "key": "Continuum / Currentness",
+        "before": "continuum-currentness",
+        "submitted": "propid-25"
+      },
+      {
+        "key": "Continuum / Navigation Number",
+        "before": "continuum-navigation-number",
+        "submitted": "propid-26"
+      },
+      {
+        "key": "Continuum / Navigation Path",
+        "before": "continuum-navigation-path",
+        "submitted": "propid-27"
+      },
+      {
+        "key": "Continuum / Navigation References",
+        "before": "continuum-navigation-references",
+        "submitted": "propid-28"
+      },
+      {
+        "key": "Continuum / Semantic Standing",
+        "before": "continuum-standing",
+        "submitted": "propid-24"
+      },
+      {
+        "key": "Harmonia Architecture Layer",
+        "before": "propid-23",
+        "submitted": "propid-29"
+      },
+      {
+        "key": "Reference ID",
+        "before": "propid-25",
+        "submitted": "propid-31"
+      },
+      {
+        "key": "Release Scope",
+        "before": "propid-42",
+        "submitted": "propid-48"
+      },
+      {
+        "key": "harmoniaType",
+        "before": "propid-34",
+        "submitted": "propid-39"
+      },
+      {
+        "key": "v0.2 / Adjudication Note",
+        "before": "propid-32",
+        "submitted": "propid-45"
+      },
+      {
+        "key": "v0.2 / Assertion Status",
+        "before": "propid-54",
+        "submitted": "propid-63"
+      },
+      {
+        "key": "v0.2 / Canonical Architecture ID",
+        "before": "propid-29",
+        "submitted": "propid-35"
+      },
+      {
+        "key": "v0.2 / Canonical Name",
+        "before": "propid-28",
+        "submitted": "propid-34"
+      },
+      {
+        "key": "v0.2 / Historical ID Aliases",
+        "before": "propid-27",
+        "submitted": "propid-33"
+      },
+      {
+        "key": "v0.2 / Inherited Release Scope",
+        "before": "propid-37",
+        "submitted": "propid-42"
+      },
+      {
+        "key": "v0.2 / Name Aliases",
+        "before": "propid-36",
+        "submitted": "propid-41"
+      },
+      {
+        "key": "v0.2 / Native Definition ID",
+        "before": "propid-51",
+        "submitted": "propid-57"
+      },
+      {
+        "key": "v0.2 / Release Scope Source",
+        "before": "propid-38",
+        "submitted": "propid-43"
+      },
+      {
+        "key": "v0.2 / Release Scope",
+        "before": "propid-39",
+        "submitted": "propid-44"
+      },
+      {
+        "key": "v0.2 / Reviewed Name",
+        "before": "propid-35",
+        "submitted": "propid-40"
+      },
+      {
+        "key": "v0.2 / Snapshot Pointer",
+        "before": "propid-57",
+        "submitted": "propid-62"
+      },
+      {
+        "key": "v0.2 / Source Assertion JSON",
+        "before": "propid-56",
+        "submitted": "propid-65"
+      },
+      {
+        "key": "v0.2 / Source Locators",
+        "before": "propid-30",
+        "submitted": "propid-36"
+      },
+      {
+        "key": "v0.2 / Source Owner Reference",
+        "before": "propid-33",
+        "submitted": "propid-38"
+      },
+      {
+        "key": "v0.2 / Source Path",
+        "before": "propid-52",
+        "submitted": "propid-58"
+      },
+      {
+        "key": "v0.2 / Source Predicate",
+        "before": "propid-55",
+        "submitted": "propid-64"
+      },
+      {
+        "key": "v0.2 / Source SHA256",
+        "before": "propid-53",
+        "submitted": "propid-59"
+      },
+      {
+        "key": "v0.2 / Unresolved Dimensions",
+        "before": "propid-31",
+        "submitted": "propid-37"
+      }
+    ],
+    "nonViewNavigation": "DERIVED: regenerate with existing Continuum projector after governed incorporation; no architectural CR",
+    "organizationInventory": {
+      "baseline": {
+        "items": 5135,
+        "identifiers": 2894,
+        "references": 2811
+      },
+      "submitted": {
+        "items": 6838,
+        "identifiers": 0,
+        "references": 4490
+      }
+    }
+  },
+  "identity": {
+    "newWithoutCanonicalId": [
+      "id-1dc1ebeceba74dec8fde94f14eff5ce1",
+      "id-2f1bdf2e08464b8084ead4f7ae315e4a",
+      "id-458ce11fb42643e48a71bfda600b0d08",
+      "id-74614b2b4bdd4897852e3483d597bd01",
+      "id-7a965baa4e6d46bd92a9b41433920d21",
+      "id-812dcde922614fde87adbccc993d0294",
+      "id-8a0f2c41d3264f988442781309550cc0",
+      "id-9384a733b3b04279ace34e4fdca25409",
+      "id-a6e03ca37cb54e69b9052cd12d6642eb",
+      "id-a8f6eefb1d7a44a09acf06a41b59ffab",
+      "id-e373852f1b5a4d9bbe4c646b2f6615ed",
+      "id-f5c345ab6c47433da11ee12f5d84e557"
+    ],
+    "allocation": "Deferred to governed incorporation after adjudication",
+    "rebindings": []
+  },
+  "representationAnomalies": [],
+  "exceptionalConditions": [],
+  "contextPolicy": "Known concept → vicinity search → bounded Continuum artefacts → references; DRP only for a specifically relevant detected change; no corpus scan",
+  "contextSeeds": [],
+  "canonicalIdsAllocated": 0,
+  "canonicalSourcesChanged": 0,
+  "nextAction": "Targeted architectural interpretation; change-review.md; pending HCRL; STOP for Solution Architect. No autonomous investigation/reviewer loop.",
+  "canonicalValidation": {
+    "status": "PASS",
+    "elements": 1602,
+    "relationships": 1651,
+    "qualifiedSourcePredicates": 462,
+    "canonicalIdentities": 1602,
+    "representationIdentities": 1602,
+    "provenanceCoverage": 1602,
+    "sourceBindings": 3421,
+    "supportedNativeTypes": 60,
+    "navigation": "PASS",
+    "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance",
+    "containment": "PASS",
+    "offlineXsd": "PASS",
+    "exchangeReferences": "PASS",
+    "outputSha256": "ee1d7ef8d5491a4a656d8c2f07c38999b6276a130064d797a08f19501aa47161",
+    "publicationAllocatedIdentities": 0,
+    "actualArchiTransport": "NOT_PERFORMED",
+    "fullResultSha256": "7999e2dc8a9eb3204e6c0b0eaef9cd5871c30c704c098acf3687b25b9904a9c5",
+    "baselineUnresolvedProperties": 388
+  },
+  "continuumContext": [],
+  "baselineSha256": "ee1d7ef8d5491a4a656d8c2f07c38999b6276a130064d797a08f19501aa47161",
+  "submissionSha256": "a31ed511c07e0a54c503383f6e52dfdad1e5905e642c05e7dc14fb7649af2eb9",
+  "deterministicElapsedSeconds": 11.498381
+}

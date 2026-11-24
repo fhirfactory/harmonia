@@ -1,0 +1,119 @@
+{
+  "allocations": [
+    {
+      "key": "Facade",
+      "canonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "path": "enterprise-architecture/continuum/application/application-function/22bdac97fe0d48d1844f1e982d03d387.md",
+      "nativeType": "ApplicationFunction",
+      "sourceSelector": "§§2 tier 1, 3.2, 5.1, 7A.2",
+      "reason": "Independently bounded application behaviour; no implementation/deployment boundary"
+    },
+    {
+      "key": "Controller",
+      "canonicalId": "ef864d509efa44a7a4160db2ca821163",
+      "path": "enterprise-architecture/continuum/application/application-function/ef864d509efa44a7a4160db2ca821163.md",
+      "nativeType": "ApplicationFunction",
+      "sourceSelector": "§§2 tier 2, 3.2, 5.2, 9.1",
+      "reason": "Independently bounded application behaviour; no implementation/deployment boundary"
+    },
+    {
+      "key": "Constructor",
+      "canonicalId": "75349ac7a0d44dec955b77bb5ecf1151",
+      "path": "enterprise-architecture/continuum/application/application-function/75349ac7a0d44dec955b77bb5ecf1151.md",
+      "nativeType": "ApplicationFunction",
+      "sourceSelector": "§§2 tier 3, 4, 5.2",
+      "reason": "Independently bounded application behaviour; no implementation/deployment boundary"
+    },
+    {
+      "key": "GPF",
+      "canonicalId": "812fa47cef1442aeb34ec34f263616be",
+      "path": "enterprise-architecture/continuum/application/application-function/812fa47cef1442aeb34ec34f263616be.md",
+      "nativeType": "ApplicationFunction",
+      "sourceSelector": "§§2 tier 4, 3.2, 5.3, 6.5–6.6",
+      "reason": "Independently bounded application behaviour; no implementation/deployment boundary"
+    },
+    {
+      "key": "Adapter",
+      "canonicalId": "000f7241f12f411195b39fe8b8386e05",
+      "path": "enterprise-architecture/continuum/application/application-function/000f7241f12f411195b39fe8b8386e05.md",
+      "nativeType": "ApplicationFunction",
+      "sourceSelector": "§§2 tier 5, 5.3, 6.4–6.6, 7",
+      "reason": "Independently bounded application behaviour; no implementation/deployment boundary"
+    },
+    {
+      "key": "Store",
+      "canonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+      "path": "enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md",
+      "nativeType": "ApplicationFunction",
+      "sourceSelector": "§§2 tier 1 distinction, 7A",
+      "reason": "Independently bounded application behaviour; no implementation/deployment boundary"
+    },
+    {
+      "key": "PersistenceService",
+      "canonicalId": "c050edfefe8b4d2b8892bc94b2d27a5c",
+      "path": "enterprise-architecture/continuum/application/application-service/c050edfefe8b4d2b8892bc94b2d27a5c.md",
+      "nativeType": "ApplicationService",
+      "sourceSelector": "§§2 PersistenceService, 5.3, 7",
+      "reason": "Externally usable contract/capability"
+    },
+    {
+      "key": "Reader",
+      "canonicalId": "410a938f42964474b7cf5655815dc830",
+      "path": "enterprise-architecture/continuum/application/application-service/410a938f42964474b7cf5655815dc830.md",
+      "nativeType": "ApplicationService",
+      "sourceSelector": "§5.1 GovernedReader; §§3.1, 6",
+      "reason": "Externally usable contract/capability"
+    },
+    {
+      "key": "Writer",
+      "canonicalId": "105f6ebe61f74bc6b51938ba550bc1a7",
+      "path": "enterprise-architecture/continuum/application/application-service/105f6ebe61f74bc6b51938ba550bc1a7.md",
+      "nativeType": "ApplicationService",
+      "sourceSelector": "§5.1 GovernedWriter; §§3.4, 4, 6, 8",
+      "reason": "Externally usable contract/capability"
+    },
+    {
+      "key": "Search",
+      "canonicalId": "dcb31810ae134818adeeba9b27bd2f30",
+      "path": "enterprise-architecture/continuum/application/application-service/dcb31810ae134818adeeba9b27bd2f30.md",
+      "nativeType": "ApplicationService",
+      "sourceSelector": "§§3.1 authoritative search, 5.1, 7",
+      "reason": "Externally usable contract/capability"
+    },
+    {
+      "key": "Outcome",
+      "canonicalId": "6d43c35381a9438f9101cf1d8b530b19",
+      "path": "enterprise-architecture/continuum/application/data-object/6d43c35381a9438f9101cf1d8b530b19.md",
+      "nativeType": "DataObject",
+      "sourceSelector": "§6.1–6.3, 6.7–6.8; MP-04",
+      "reason": "Logical information model"
+    }
+  ],
+  "ids": {
+    "Mnemosyne": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+    "Mneme": "1af8a56358f7429fabfb57be66542a99",
+    "Calliope": "466ad8f75a954c0581b5bba090443849",
+    "CalliopeModels": "307b3440a507403f8bc214d290bffb6a",
+    "Themis": "899d34ec491948b68aad09e507dea6d1",
+    "Kleio": "fefda110e2274884ad58906733606efd",
+    "Dokimasia": "d739c75dffe2453081735710b285f03b",
+    "ProvenanceClient": "171f05d188384cedb7d5c493eeaee519",
+    "Provenance": "e282811b51274649816566aac7edeb8a",
+    "IU": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+    "Representation": "b9891b88150840ada3daefdec6f26c35",
+    "Metadata": "c05b7e37278141488ecc90b9a9ef96eb",
+    "Topic": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+    "TopicMask": "bb489157a6bf48be926c5a601bb0a6c3",
+    "Facade": "22bdac97fe0d48d1844f1e982d03d387",
+    "Controller": "ef864d509efa44a7a4160db2ca821163",
+    "Constructor": "75349ac7a0d44dec955b77bb5ecf1151",
+    "GPF": "812fa47cef1442aeb34ec34f263616be",
+    "Adapter": "000f7241f12f411195b39fe8b8386e05",
+    "Store": "9c680d56a6b943da8ff22f3264e19bc7",
+    "PersistenceService": "c050edfefe8b4d2b8892bc94b2d27a5c",
+    "Reader": "410a938f42964474b7cf5655815dc830",
+    "Writer": "105f6ebe61f74bc6b51938ba550bc1a7",
+    "Search": "dcb31810ae134818adeeba9b27bd2f30",
+    "Outcome": "6d43c35381a9438f9101cf1d8b530b19"
+  }
+}

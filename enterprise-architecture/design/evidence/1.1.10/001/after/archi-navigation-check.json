@@ -1,0 +1,150 @@
+{
+  "status": "PASS_WITH_PROJECTION_LIMITS",
+  "nativeLayerRoots": [
+    "Strategy",
+    "Business",
+    "Application",
+    "Technology & Physical",
+    "Motivation",
+    "Implementation & Migration",
+    "Other",
+    "Relations",
+    "Views"
+  ],
+  "canonicalElementCoordinatePropertiesMatched": 1602,
+  "canonicalNonElementNavigationNodes": 339,
+  "nonElementNodesWithoutExactNativeFolderLabel": [
+    {
+      "number": "G",
+      "title": "Architecture Governance"
+    },
+    {
+      "number": "G.1",
+      "title": "Governance Model"
+    },
+    {
+      "number": "G.1.1",
+      "title": "Architecture Authority"
+    },
+    {
+      "number": "G.1.2",
+      "title": "Decision Rights"
+    },
+    {
+      "number": "G.1.3",
+      "title": "Roles and Responsibilities"
+    },
+    {
+      "number": "G.2",
+      "title": "Architecture Evidence"
+    },
+    {
+      "number": "G.2.1",
+      "title": "Evidence before change"
+    },
+    {
+      "number": "G.2.2",
+      "title": "Evidence after change"
+    },
+    {
+      "number": "G.3",
+      "title": "Architecture Review"
+    },
+    {
+      "number": "G.3.1",
+      "title": "Review records"
+    },
+    {
+      "number": "G.3.2",
+      "title": "Pending architectural decisions/dispositions"
+    },
+    {
+      "number": "G.4",
+      "title": "Architecture Register"
+    },
+    {
+      "number": "G.4.1",
+      "title": "Accepted/completed governance records"
+    },
+    {
+      "number": "G.5",
+      "title": "Architecture Governance Processes"
+    },
+    {
+      "number": "G.5.1",
+      "title": "Governed architecture Praxes"
+    },
+    {
+      "number": "G.5.1.1",
+      "title": "Architecture Review Praxis"
+    },
+    {
+      "number": "G.5.1.2",
+      "title": "Architecture Authoring Praxis"
+    },
+    {
+      "number": "G.5.1.3",
+      "title": "Architectural Element Incorporation Praxis"
+    },
+    {
+      "number": "G.5.1.4",
+      "title": "ArchiMate Round-Trip Engineering Praxis"
+    },
+    {
+      "number": "G.6",
+      "title": "Architecture Principles and Compliance"
+    },
+    {
+      "number": "G.6.1",
+      "title": "Application of canonical Architecture Principles"
+    },
+    {
+      "number": "G.6.2",
+      "title": "Compliance/conformance"
+    },
+    {
+      "number": "G.7",
+      "title": "Architecture Repository and Authority"
+    },
+    {
+      "number": "G.7.1",
+      "title": "Architecture Continuum"
+    },
+    {
+      "number": "G.7.2",
+      "title": "Architecture publications and projections"
+    },
+    {
+      "number": "G.7.3",
+      "title": "Evidence"
+    },
+    {
+      "number": "G.7.4",
+      "title": "Review"
+    },
+    {
+      "number": "G.7.5",
+      "title": "Register"
+    },
+    {
+      "number": "IV.2.1",
+      "title": "System Map"
+    },
+    {
+      "number": "V",
+      "title": "Technology"
+    },
+    {
+      "number": "VI",
+      "title": "Implementation & Migration"
+    }
+  ],
+  "nativeNumberedFolderOccurrences": 588,
+  "limits": [
+    "Archi retains mandatory native layer root folders rather than the canonical root order.",
+    "The importer omits navigation branches without native element descendants, including source-only Governance and empty Technology/Implementation Parts.",
+    "Mixed-native-layer contexts may be split. Element leaf names retain architectural Names; their coordinates are available as properties.",
+    "The exact complete hierarchy is in Exchange organizations, canonical navigation, Manifest and RAD. No new semantic elements are fabricated to force unsupported folders.",
+    "Native XML folder/property inspection performed; no interactive workbench visual inspection claimed."
+  ]
+}

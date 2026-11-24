@@ -1,0 +1,1 @@
+{"status": "PASS", "manifest": "enterprise-architecture/continuum/MANIFEST.md", "check": false, "sha256": "620837c4709783b97c6b1f60d14f8882ea5b4cc9bd118c3270903b3891ff8562"}

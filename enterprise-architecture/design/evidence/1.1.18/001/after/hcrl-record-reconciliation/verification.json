@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "completedLocation": "enterprise-architecture/design/register/1.1.19/hcrl-1.1.18-001.complete.md",
+  "completedLocationAuthority": "Architecture Review Praxis §6; existing register/1.1.16/hcrl-1.1.15-001.complete.md precedent",
+  "completedRecordByteUnchanged": true,
+  "oldReviewRole": "Retired locator only; full duplicate Decision Review body removed",
+  "oldReviewContainsDecisionTable": false,
+  "fullHistoryExactPreimagePreserved": true,
+  "canonicalFilesUsingOldLocator": 221,
+  "canonicalOldLocatorOccurrences": 542,
+  "oldExplicitAnchorsPreserved": [
+    "dr-1",
+    "dr-10",
+    "dr-11",
+    "dr-12",
+    "dr-13",
+    "dr-14",
+    "dr-2",
+    "dr-3",
+    "dr-4",
+    "dr-5",
+    "dr-6",
+    "dr-7",
+    "dr-8",
+    "dr-9"
+  ],
+  "activeSuccessor": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md",
+  "successorUnresolvedEntries": 16,
+  "originalScopesAndAcceptanceRequirementsPreserved": true,
+  "subordinateDr6IdentitiesPreserved": 5,
+  "protectedFilesUnchanged": 2040,
+  "protectedChanges": [],
+  "markdownLinkErrors": {
+    "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md": [],
+    "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md": [],
+    "enterprise-architecture/design/register/1.1.19/hcrl-1.1.18-001.complete.md": [],
+    "enterprise-architecture/design/evidence/1.1.18/001/before/hcrl-record-reconciliation/hcrl-1.1.18-001.review-history.md": [],
+    "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T030353Z-hcrl-record-reconciliation.md": []
+  },
+  "architecturalRelease": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "republished": false,
+  "currentTaskGitMutations": false,
+  "entryHead": "debd131a7336257daf55b191b56088ee19c987b8",
+  "priorPush": "FAILED before this directive; HTTPS askpass authentication unavailable; no retry"
+}

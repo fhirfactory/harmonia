@@ -10,7 +10,18 @@ Enable the target-state Provider Directory to support the capability described b
 - **Source Scope:** Additional Source Requirements – SR-26 to SR-58
 - **Primary Actor:** Integration Administrator
 - **Supporting Actors:** Services Australia / HI Service; Provider Identity / Matching Service; Provider Directory
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/7dc7fc1727e848a6b1e3a81122a7ed28.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As an Integration Administrator, I want to confirm a provider’s identity using the Services Australia / HI Service, so that the correct provider details are stored in the directory.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** UC-Integration-ProviderDirectory-30 – Match Provider Records: supports provider identity resolution and duplicate avoidance.; UC-Integration-ProviderDirectory-31 – Receive Provider Identifier Cross References: supports reconciliation of identifiers across source systems.
 
 ## Requirements

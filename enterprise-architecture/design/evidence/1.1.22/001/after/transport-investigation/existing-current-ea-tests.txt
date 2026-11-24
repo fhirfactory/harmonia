@@ -1,0 +1,16 @@
+test_authority_succession_is_explicit_and_archive_presence_is_unnecessary (test_current_ea.CurrentEaTests.test_authority_succession_is_explicit_and_archive_presence_is_unnecessary) ... ok
+test_axiom_navigation_identifies_each_canonical_principle (test_current_ea.CurrentEaTests.test_axiom_navigation_identifies_each_canonical_principle) ... ok
+test_current_ea_does_not_copy_axiom_definition_paragraphs (test_current_ea.CurrentEaTests.test_current_ea_does_not_copy_axiom_definition_paragraphs) ... ok
+test_dtd_duplicate_ids_and_dangling_references_fail (test_current_ea.CurrentEaTests.test_dtd_duplicate_ids_and_dangling_references_fail) ... ok
+test_lexical_spelling_and_explicit_vocabulary_do_not_allocate_identity (test_current_ea.CurrentEaTests.test_lexical_spelling_and_explicit_vocabulary_do_not_allocate_identity) ... ok
+test_native_containment_ignores_historical_relationships_before_ancestry (test_current_ea.CurrentEaTests.test_native_containment_ignores_historical_relationships_before_ancestry) ... ok
+test_offline_schema_and_exact_explicit_gzip_input (test_current_ea.CurrentEaTests.test_offline_schema_and_exact_explicit_gzip_input) ... ok
+test_package_and_requirement_group_containment_by_composition (test_current_ea.CurrentEaTests.test_package_and_requirement_group_containment_by_composition) ... ok
+test_property_rekey_is_transport_only_but_value_drift_remains_visible (test_current_ea.CurrentEaTests.test_property_rekey_is_transport_only_but_value_drift_remains_visible) ... ok
+test_raw_comparator_preserves_owner_text_language_and_visual_changes (test_current_ea.CurrentEaTests.test_raw_comparator_preserves_owner_text_language_and_visual_changes) ... ok
+test_standing_links_require_current_targets_and_preserve_source_citations (test_current_ea.CurrentEaTests.test_standing_links_require_current_targets_and_preserve_source_citations) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 3.912s
+
+OK

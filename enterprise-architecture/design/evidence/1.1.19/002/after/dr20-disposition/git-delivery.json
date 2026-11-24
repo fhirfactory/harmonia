@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-11-03T06:37:13.175434Z",
+  "observationMeaning": "Post-commit Git state and automatic approval review result; not a new Task/Report production event",
+  "transitionCommit": "94743309f0bb2edfebf3a36657b80a539d351cc2",
+  "branch": "Data-Governence-Services",
+  "origin": "https://github.com/fhirfactory/harmonia.git",
+  "commitScopeFiles": 207,
+  "commitOutcome": "PASS \u2014 exact reviewed scope; unrelated drafts excluded",
+  "pushOutcome": "BLOCKED \u2014 automatic approval review rejected execution",
+  "pushExecuted": false,
+  "automaticApprovalReviewReason": "This pushes a large repository commit, including potentially sensitive architecture and evidence, to the unverified origin destination; the user authorized the transition but did not specifically authorize exporting this payload to that remote.",
+  "userApproval": "Requested for exact transition push; pending explicit reply",
+  "reportMaintenance": "Same originating activity; original Report timestamp retained; no new HCRL iteration or release increment"
+}

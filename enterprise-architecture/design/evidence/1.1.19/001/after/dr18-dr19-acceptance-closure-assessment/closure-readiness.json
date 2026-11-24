@@ -1,0 +1,278 @@
+{
+  "closureReadiness": "NOT READY FOR CLOSURE ON THE CURRENT RECORD",
+  "architecturalAcceptance": {
+    "DR-18": "ACCEPTED — explicit Solution Architect content acceptance",
+    "DR-19": "ACCEPTED — explicit Solution Architect content acceptance",
+    "definitions": 6,
+    "associatedAddRelationships": 10,
+    "policy": "Cache{InformationUnit}.postCreateAvailability: Immediate-And-Distributed, Immediate, OnRequest",
+    "acceptanceEventTime": "UNRESOLVED; decision explicit, event time unavailable"
+  },
+  "acceptedContentUnchanged": true,
+  "hcrlRemainsPending": true,
+  "currentDecisionReviews": [
+    {
+      "decisionReview": "DR-1",
+      "subject": "Bounded export review and remaining incoming semantic changes",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+      "comment": "Bounded G14–G18 interpretation completed; other semantic changes excluded and deferred, not accepted",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-2",
+      "subject": "G14–G18 accepted Subject hierarchy",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Inherited accepted baseline; no new action",
+      "comment": "Completed and accepted; inherited baseline only",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-3",
+      "subject": "UseCase and UserStory modelling",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+      "comment": "Deferred unresolved; no native modelling acceptance",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-4",
+      "subject": "Candidate identity and source contributions",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+      "comment": "Deferred unresolved; no canonical identity allocated",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-5",
+      "subject": "Historical Capability targets",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+      "comment": "Deferred unresolved; history retained",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-6",
+      "subject": "Capability and Feature coverage, including DR-6.01–DR-6.05",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+      "comment": "Deferred advisory assessment; no coverage or edge accepted",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-7",
+      "subject": "Primary and secondary Subject classification",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+      "comment": "Deferred unresolved; supplied assignments retained",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-8",
+      "subject": "Source provenance, delivery scope and domain authority",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+      "comment": "Deferred unresolved; original source limits retained",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-9",
+      "subject": "Historical Task times, supporting evidence and assurance limitations",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+      "comment": "Deferred provenance/assurance qualifications; earlier failures retained as history",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-10",
+      "subject": "G18.03 spelling",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Inherited accepted baseline; no new action",
+      "comment": "Completed and accepted; inherited baseline only",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-11",
+      "subject": "Previously blocked presentation reconciliation",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Inherited accepted baseline; no new action",
+      "comment": "Superseded blocking state; completed by DR-12/DR-13, history preserved",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-12",
+      "subject": "115 Groupings and distinct Composition/Home completion",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Inherited accepted baseline; no new action",
+      "comment": "Completed and accepted with preserved naming qualifications",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-13",
+      "subject": "Five approved elements and complete authored Views",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Inherited accepted baseline; no new action",
+      "comment": "Completed; exact candidate visually accepted by the Solution Architect",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-14",
+      "subject": "Inherited canonical naming, definition and standing qualifications",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+      "comment": "Deferred unresolved; no acceptance inferred from publication",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-15",
+      "subject": "Deferred reader-facing structural reviews",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+      "comment": "Existing reviews deferred; new review obligation identified for transfer",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-16",
+      "subject": "Actual no-edit Archi transport qualifications",
+      "recordedStatus": "Unresolved — carried forward",
+      "preservedOriginatingDisposition": "Transfer authorised; substantive disposition unresolved",
+      "comment": "Actual transport executed; strict verifier FAIL retained; bounded differences classified",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-17",
+      "subject": "SolutionFacet refactoring and final naming dispositions",
+      "recordedStatus": "ACCEPTED — Solution Architect visual/model acceptance",
+      "preservedOriginatingDisposition": "Explicit acceptance in the acceptance/closure-assessment Task; prior directives retained",
+      "comment": "Exact final candidate accepted: hierarchy, ArchitecturalAxioms, naming and Views satisfactory; strict transport qualification retained; DR-1–DR-16 unchanged; whole-HCRL closure not demonstrated",
+      "dispositionChangedThisTask": false
+    },
+    {
+      "decisionReview": "DR-18",
+      "subject": "Provenance Management",
+      "recordedStatus": "ACCEPTED — Solution Architect architectural content acceptance",
+      "preservedOriginatingDisposition": "Explicit formal acceptance in the acceptance/closure-preparation Task; prior review history retained",
+      "comment": "Six definitions and associated responsibilities/relationships, including Mneme policy, accepted; detailed design/verification/governance qualifications retained; HCRL open",
+      "dispositionChangedThisTask": true
+    },
+    {
+      "decisionReview": "DR-19",
+      "subject": "Provenance and Assurance",
+      "recordedStatus": "ACCEPTED — Solution Architect architectural content acceptance",
+      "preservedOriginatingDisposition": "Explicit formal acceptance in the acceptance/closure-preparation Task; prior review history retained",
+      "comment": "Foundational evidence, independent Assurance and Audit boundary accepted; inherited strict transport FAIL retained; whole-HCRL closure not yet established",
+      "dispositionChangedThisTask": true
+    }
+  ],
+  "inheritedBaselineReferences": [
+    "DR-2",
+    "DR-10",
+    "DR-11",
+    "DR-12",
+    "DR-13"
+  ],
+  "requiredClosureTreatments": [
+    {
+      "subject": "Inherited strict transport qualification",
+      "state": "FAIL retained; qualified-closure treatment needs explicit whole-HCRL Solution Architect disposition",
+      "scope": {
+        "relationshipIdentities": 575,
+        "xmlLangAttributeDifferences": 1741,
+        "otherRawQualifications": "Generated-label/organisation-ID omissions and navigation normalisation remain recorded; no raw fidelity or information-loss acceptance"
+      },
+      "governingReferences": [
+        "enterprise-architecture/governance/archimate-round-trip-engineering-praxis.md#inputs-outputs-and-governed-stages",
+        "enterprise-architecture/governance/archimate-round-trip-engineering-praxis.md#stop-recovery-and-evidence",
+        "enterprise-architecture/governance/continuum-representation.md#archi-catalogue-organisation--rad-1117-iteration-002",
+        "enterprise-architecture/governance/architecture-governance.md#completion-correction-and-pending-provenance",
+        "enterprise-architecture/governance/architecture-governance.md#governance-enforcement-and-fail-closed-authority"
+      ],
+      "assessment": "Governance allows a complete-model round trip with classified residuals and recorded deferrals/exclusions. No unconditional all-raw-XML-equal prerequisite was identified. The known strict FAIL does not by itself require redesign/remediation before architectural acceptance. Current content acceptance is not permission to waive any gate or silently treat FAIL as PASS.",
+      "requiredSolutionArchitectDisposition": "Confirm whether whole-HCRL closure may retain this exact classified transport qualification, preserved native/returned/original sources and existing guards; explicitly bound any remediation deferral. If proceeding would depart from an applicable mandatory gate, name the bounded departure, scope and conditions under fail-closed authority. Otherwise authorise separately scoped remediation, not unilateral fixes."
+    },
+    {
+      "subject": "Original Task event timestamps and filename prefixes",
+      "state": "UNRESOLVED; 8 current-iteration records plus 3 inherited DR-9 originals separately preserved",
+      "governingReferences": [
+        "enterprise-architecture/governance/architecture-change-provenance.md#ai-agent-activity-provenance",
+        "enterprise-architecture/governance/architecture-review-praxis.md#1-establish-the-task-and-originating-state",
+        "enterprise-architecture/governance/architecture-review-praxis.md#5-report-and-verify-the-incorporated-result",
+        "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-9"
+      ],
+      "currentIterationRecordIssues": [
+        "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+        "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dr17-acceptance-closure-assessment.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+        "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dr18-dr19-acceptance-closure-preparation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+        "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-mneme-post-create-availability-amendment.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+        "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-additional-authorisation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+        "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-dr17-clarification.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+        "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-final-naming-dispositions.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+        "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-refactoring.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+      ],
+      "inheritedOriginalRecords": [
+        "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md",
+        "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md",
+        "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md"
+      ],
+      "requiredSolutionArchitectDisposition": "Provide established attributable original-event evidence if available, or explicitly prescribe permitted bounded treatment of unavailable events/prefixes before closure, covering current and inherited scopes. Preserve UNRESOLVED values, original attribution, filename uncertainty and event meaning; no guessed times or retrospective compliance claims."
+    },
+    {
+      "subject": "Reader-facing structural reviews and distinct visual checkpoints",
+      "state": "DR-15 retained three-scope obligation not demonstrably satisfied or newly dispositioned",
+      "governingReferences": [
+        "enterprise-architecture/governance/architecture-review-praxis.md#5-report-and-verify-the-incorporated-result",
+        "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-15"
+      ],
+      "retainedScopes": [
+        "1.1.17/001 NFR hierarchy, allocations, native-layer separation and qualified reused contributions",
+        "1.1.17/002 reader navigation / XML catalogue-folder correspondence",
+        "Expanded Subject/SolutionFacet hierarchy and navigation reader-facing checkpoint"
+      ],
+      "assessment": "DR-13 and DR-17 exact Archi visual acceptances remain satisfied for their stated specimens. Current acceptance concludes DR-18/19 architectural-content review; it does not explicitly attest generated reader inspection. Mneme policy amendment changes no navigation or View structure; do not invent another material-structure change merely from amended prose. ADD added two entries in existing contexts; record applicable representative reader coverage with any consolidated review, not exhaustive inspection by default.",
+      "requiredSolutionArchitectDisposition": "Supply attributable representative generated-reader structural review covering the three retained DR-15 scopes (and applicable affected ADD entries), or explicitly disposition a bounded deferral/exclusion under Common Governance. Preserve the separation of architectural content acceptance, Archi visual review and generated-reader structural review."
+    },
+    {
+      "subject": "Existing bounded Minutiae group",
+      "state": "UNRESOLVED: existing control still awaits Yes/No",
+      "governingReferences": [
+        "enterprise-architecture/governance/architecture-governance.md#bounded-minutiae",
+        "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-17"
+      ],
+      "existingControl": "Minutiae-Accepted: [awaiting Solution Architect: Yes | No]",
+      "disclosedScope": "Required Task/Report retention, exact input pins, batch/source correspondence, check logs and working-tree inventory for the recorded DR-17 authorised activity",
+      "requiredSolutionArchitectDisposition": "Give an explicit Yes/No and comment for this existing disclosed group. If No, identify correction/reclassification. Six-definition/relationship acceptance supplies no implicit supporting-group approval. Do not silently enlarge or replace the control."
+    },
+    {
+      "subject": "Whole-HCRL confirmation and residual continuity",
+      "state": "NOT ESTABLISHED by scoped DR-18/19 content acceptance",
+      "governingReferences": [
+        "enterprise-architecture/governance/architecture-governance.md#completion-correction-and-pending-provenance",
+        "enterprise-architecture/governance/architecture-review-praxis.md#6-confirm-and-complete-the-transition",
+        "enterprise-architecture/governance/architecture-change-provenance.md#application-validation-and-closure"
+      ],
+      "assessment": "All 16 inherited DR rows retain formal Unresolved — carried forward status, including 5 accepted/completed baseline references and 11 deferred/unresolved subjects. They are not 16 new implementation blockers. Existing explicit deferrals/exclusions can permit closure without resolving every design/backlog matter, when their treatment is confirmed and the authorised/resulting meaning is accurately recorded.",
+      "requiredSolutionArchitectDisposition": "After treating mandatory verification/provenance/review/Minutiae obligations, confirm that the whole HCRL accurately records authorised and incorporated meaning and explicitly preserve/confirm residual deferral/exclusion or continuity without changing DR-1–DR-17 dispositions. Supply final closure authorisation only when requirements are satisfied or validly dispositioned. No new successor/release/transfer is inferred."
+    }
+  ],
+  "designQuestionsNotAcceptancePrerequisites": [
+    "Original versus linked new retry Pragma",
+    "Detailed execution-attempt representation",
+    "Synchronous versus asynchronous Provenance reporting/publication",
+    "Publication acknowledgement/recovery semantics",
+    "Detailed Provenance schemas/cardinalities/lifecycle states",
+    "Detailed client-library contracts/deployment",
+    "Policy determination: individual creation value versus governing metadata, with no selected precedence/default"
+  ],
+  "otherPreservedMatters": [
+    "Independent Assurance and distinct Praxis/Journey/observed-versus-inferred semantics",
+    "DR-9 inherited Java25/ArchUnit JDK fallback assurance limitation; no full JDK-analysis claim",
+    "Inherited canonical-name/definition/standing qualifications remain independently unresolved",
+    "No requirement to implement every deferred subject to accept these responsibilities"
+  ],
+  "authorityLimit": "Assessment not a waiver, new deferral, decision register or closure authorisation; HCRL remains semantic authority",
+  "releaseUnchanged": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "releaseAndGitBoundary": "This records acceptance within existing provenance. No independent increment for record maintenance; any later accepted repository transition uses the release policy and specific authority, without assuming a successor version. No accepted publication/commit/push/closure performed."
+}

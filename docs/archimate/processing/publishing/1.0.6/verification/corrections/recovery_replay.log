@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "counts": {
+    "elements": 1165,
+    "relationships": 823,
+    "views": 984,
+    "element_types": {
+      "Capability": 841,
+      "BusinessFunction": 160,
+      "BusinessProcess": 20,
+      "BusinessService": 139,
+      "Principle": 5
+    },
+    "relationship_types": {
+      "Composition": 670,
+      "Realization": 153
+    }
+  },
+  "output_sha256": "f85be36ff6edb3c6491dd526c42d4207db9214154da437941b709de34dc106a1"
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "view": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+    "node": "id-a5dbf59ff2964577b7f2841bdc1e3337",
+    "elementRef": "id-558a8397dafb44c0ba32b8540559ea7e",
+    "nativeType": "Principle",
+    "name": "Distributed Authorisation Enforcement"
+  },
+  {
+    "view": "id-9873a9236c5a453bb1f2426cd94ec3a1",
+    "node": "id-4d2815a144be42d8b59e9d6333b2d875",
+    "elementRef": "id-7847cbe66b524f18ba8ace06b280af4e",
+    "nativeType": "Principle",
+    "name": "Passport Propagation / Availability"
+  },
+  {
+    "view": "id-da484996370e48e5979e58f7196b0f98",
+    "node": "id-be3e1f2cb3d6419ebbfd5ab6b8f8ac97",
+    "elementRef": "id-558a8397dafb44c0ba32b8540559ea7e",
+    "nativeType": "Principle",
+    "name": "Distributed Authorisation Enforcement"
+  },
+  {
+    "view": "id-da484996370e48e5979e58f7196b0f98",
+    "node": "id-19b36c957d664499bbaac92e386d1979",
+    "elementRef": "id-7847cbe66b524f18ba8ace06b280af4e",
+    "nativeType": "Principle",
+    "name": "Passport Propagation / Availability"
+  },
+  {
+    "view": "id-68063a5cc86f4323bedeca8a5cdf492b",
+    "node": "id-94311ccdc93d49719d596273705c8c58",
+    "elementRef": "id-aeae420df3be43fdb0664f9ee75c40e8",
+    "nativeType": "Stakeholder",
+    "name": "Integration & Solution Engineers"
+  },
+  {
+    "view": "id-272651550e504f0d8c6a6b7a47e76260",
+    "node": "id-62ba07df1b9d48e49e4675cbcc221442",
+    "elementRef": "id-d4b072eb3b6949c3baf8753effc80b36",
+    "nativeType": "Constraint",
+    "name": "Exclusive PetasosParcel Routing"
+  },
+  {
+    "view": "id-2e082156d70e4af59d75cf1ba875c87f",
+    "node": "id-c9f7b8c03c5d4b7c8430d8373dc1d9e8",
+    "elementRef": "id-d4b072eb3b6949c3baf8753effc80b36",
+    "nativeType": "Constraint",
+    "name": "Exclusive PetasosParcel Routing"
+  },
+  {
+    "view": "id-1ac4ffc75b2b4a26ba8da6965fdcb861",
+    "node": "id-f4f67f071b164ff6b00ed2de7ea6fc00",
+    "elementRef": "id-bedcc73d862c424da5f94904e9a28c53",
+    "nativeType": "Stakeholder",
+    "name": "Platform Operations & OA&M Personnel"
+  },
+  {
+    "view": "id-f96eaf7c23d247bbb38f2fd4fc70dc3b",
+    "node": "id-a40f061b73994a6f8a606102e6424a74",
+    "elementRef": "id-bedcc73d862c424da5f94904e9a28c53",
+    "nativeType": "Stakeholder",
+    "name": "Platform Operations & OA&M Personnel"
+  },
+  {
+    "view": "id-fdd431a0494c49328a700e5c742cda6b",
+    "node": "id-ae5aa9c23d5a4cfaacb21e414e4b52d8",
+    "elementRef": "id-aeae420df3be43fdb0664f9ee75c40e8",
+    "nativeType": "Stakeholder",
+    "name": "Integration & Solution Engineers"
+  },
+  {
+    "view": "id-7e6e93dbe633441ca59bfa1b04137252",
+    "node": "id-1de0371d713f42c4a854f087a6f6227f",
+    "elementRef": "id-bedcc73d862c424da5f94904e9a28c53",
+    "nativeType": "Stakeholder",
+    "name": "Platform Operations & OA&M Personnel"
+  },
+  {
+    "view": "id-b23c60650f714d48b44379c86be0dc0a",
+    "node": "id-b81bf24e73134dd8b6b7361feb1eca22",
+    "elementRef": "id-aeae420df3be43fdb0664f9ee75c40e8",
+    "nativeType": "Stakeholder",
+    "name": "Integration & Solution Engineers"
+  }
+]

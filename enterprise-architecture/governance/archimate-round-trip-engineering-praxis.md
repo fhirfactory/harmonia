@@ -1,0 +1,294 @@
+> **Current EA operational succession (RAD-1.1.6):** This maintained contract
+> is promoted under the Solution Architect's instruction to sever Legacy-RAD
+> operational dependencies. Current sources and procedures are the
+> [Continuum Representation](continuum-representation.md),
+> [Incorporation Praxis](continuum-incorporation-praxis.md),
+> [Archi workbench](../design/archimate/README.md) and
+> [EA tooling](../tooling/README.md). Release-specific migration/adoption
+> accounts and links labelled “Historical source” preserve decision provenance;
+> they supply no current configuration, schema, source capture or authority.
+> The promoted rules retain their existing precedence, qualifications and
+> unresolved matters. Historical identity registers, RAD source adapters,
+> publication slices and processing layouts are not current procedures.
+
+> **RAD-1.1.5 canonical-source adapter:** The [continuum workbench procedure](../design/archimate/README.md) implements the exact-baseline, review and application gates below for individual canonical Markdown resources. Existing standing, identity and native interpretation rules remain controlling. Historical source-adapter instructions remain applicable only to their originating editions.
+
+<!-- Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later -->
+
+# Harmonia ArchiMate Round-Trip Engineering Praxis
+
+## Purpose and authority
+
+This Praxis is the reusable governed mechanism for reviewing, adjudicating,
+reconciling and publishing Solution Architect changes made in Archi. It supplies
+the context, expected results and checkpoints for authorised agents; framework
+tools execute its stages. It introduces no runtime Energeia/Ponos component.
+The [authoring lifecycle](architecture-authoring-praxis.md) still governs the
+serial baseline → authoring → submission → next-publication lineage.
+
+The Solution Architect's 2026-10-20 machinery-validation instruction establishes
+this Praxis and the containment clarification below. Repository-held authority,
+not conversation or a run report, governs subsequent sessions. AX-04 requires
+reuse of suitable machinery; AX-14 separates semantics, representation,
+projection and presentation; AX-15 preserves uncertain execution effects; AX-17
+reserves architectural adjudication to the Solution Architect. The
+[Change Review contract](archimate-ingestion-change-review.md),
+[identity/naming contract](canonical-identity-and-naming.md),
+[publication semantics](archimate-ingestion-publication-semantics.md) and
+[release policy](architecture-release-policy.md) retain their respective roles.
+
+[Architecture Change Provenance](architecture-change-provenance.md) defines
+durable transition evidence for this Praxis, as for Markdown/RADS and future
+representations. Its adoption decision supersedes the permanent retention
+interpretation of run snapshots and complete execution evidence. Detailed input
+pins, previous reviews, machinery/configuration pins and before snapshots serve
+active processing/recovery, validation and unresolved dependencies. Final closure
+preserves the authorised change and decision under that contract, without
+requiring the processing workspace to interpret them.
+
+## Common HCRL integration — RAD-1.1.2
+
+[Architecture Governance](architecture-governance.md)
+defines the release-level Decision Review Log and final semantic acceptance
+record. This Praxis retains its specialised discovery, analysis, validation,
+presentation and governed application checkpoints. Material findings requiring
+adjudication feed the applicable HCRL DR with source review/CR correspondence;
+supporting detail may be minutiae/evidence. A specialised `change-review.md` is
+not a competing final acceptance record. Existing trigger vocabulary, exact-input
+applicability, native semantics, identity, containment, navigation and View
+preservation remain binding. Current canonical-source paths are unchanged; operational tooling and new processing use the EA locations named above. Historical inputs and processing paths remain historical.
+Required transition evidence follows current provenance rather than a mandatory
+archive package. Common completion requires Solution Architect confirmation of
+the authorised and actually incorporated result.
+
+## Published projection and architect export
+
+The Architecture Continuum remains canonical architecture authority. The durable
+Open Exchange release projection is
+`enterprise-architecture/design/archimate/published/<release>/Harmonia-Architecture.xml`;
+use that file to load the corresponding accepted release into the Archi workbench.
+The [workbench documentation](../design/archimate/README.md) links the initial
+accepted 1.1.11 projection and the maintained deterministic publication command.
+
+An XML export from an architect-modified Archi model is proposed change input,
+not a published architecture release. Its existence does not modify or supersede
+the Continuum. Retain that exact input as appropriate `before` evidence of its
+subsequent round-trip review under Architecture Change Provenance. Evidence
+copies demonstrate generation, testing, transport or transition; they are not the
+normal operational location for retrieving a released projection. This clarifies
+publication location and artefact roles only; existing triggers, exact-input
+discovery, adjudication and application checkpoints remain in force. No permanent
+ingest directory, automatic ingest mechanism or new input-handling process follows.
+
+## Actors and trigger vocabulary
+
+| Actor | Authority and responsibility |
+| --- | --- |
+| Solution Architect | Authors architectural intent and Views; edits and adjudicates Change Requests and directives; supplies architectural acceptance and Archi inspection. |
+| Codex, Junie or another authorised processing agent | Discovers exact inputs and governing contracts, assembles evidence, proposes deterministic consequences, executes reviewed directives within scope, validates and prepares publication. It cannot issue an architectural disposition. |
+| Archi and repository framework | Workbench, interchange and repeatable processing machinery; successful execution establishes no architectural authority. |
+
+The following short requests activate this Praxis without a restatement of its
+mechanics. Export/review locators are optional when uniquely discoverable:
+
+> Model Updated. Please review and generate change-review.md.
+
+> change-review.md reviewed and updated. Apply directives.
+
+The first trigger stops at the **Change Review checkpoint**. The second consumes
+the reviewed document as human adjudication, checks its applicability and stops
+at any missing/contradictory directive or unmet gate. An old reviewed document,
+an On-Hold default, a generated proposal or an Outcome of Resolved is not a new
+Accept decision. A filename alone is insufficient to select among multiple runs.
+
+## Inputs, outputs and governed stages
+
+| Stage | Required inputs and reusable machinery | Result and checkpoint |
+| --- | --- | --- |
+| Discover and pin | Root release authority; applicable published-package provenance; incoming landing area; submission/run manifests and any explicit trigger locator. `exchange_compare.Exchange`, `continuum_workbench.py` and explicit input hashes under `enterprise-architecture/tooling/`. | One exact baseline and immutable architect export, byte/XML hashes, scope and processing identity. Choose neither the newest timestamp nor a `.bak` by guesswork. Missing/competing provenance returns for adjudication. |
+| Validate and observe | Secure XML parsing, bundled offline XSDs, identifier/reference checks, `exchange_compare.py`, `element_correlation.py`, `exchange_signatures.py`, `relationship_state.py`, `containment.py` under current EA tooling. A no-edit control, where available, belongs to this exact baseline. | Raw representation findings and candidate architectural interpretation kept separately; canonical continuity and Exchange rebinding evidence; current/history selection before ancestry. Invalid input is reported, never repaired in place. |
+| Prepare Change Review | Exact observations, governed contracts and [review template](templates/archimate-ingestion-change-review-template.md); `continuum_workbench.py review` supplies canonical-source intake evidence; the processing agent prepares the checkpoint brief and review. Agent decomposes independently adjudicable changes under the existing CR contract. | **`change-review.md` is the human architectural checkpoint.** Include the contents below, stable CR IDs, default On-Hold/Unresolved and Not authorised. Detection creates no acceptance or reconciliation. |
+| Read adjudication | Reviewed `change-review.md`, preserved previous review, pinned input hashes, decision-linked instructions, dependencies and target state. | **Directive/application checkpoint:** exact authorised scope and expected resulting state, or an explicit adjudication question before dependent mutation. The agent interprets the reviewed prose under the CR contract; no automatic prose-to-authority inference. |
+| Apply and derive | Only approved directives; existing governed resource/identity machinery and scope-specific reconciler adapters; shared naming, containment and workspace projectors. | Proposed reconciled architecture, derived metadata and navigation, preservation evidence and per-CR processing outcomes. No run-specific semantic walker or silent identity allocation. Unsupported adapters require implementation and regression proof within authorised scope. |
+| Validate and prove | Schema/references; independent semantic/identity/naming assertions; deterministic reprojection; `exchange_compare.py`, `verify_continuum_transport.py` and actual Archi import/export evidence. | Automated validation, preserved Views and a real complete-model Archi round trip with classified residuals. Import readiness, deterministic replay, actual transport and architectural acceptance are separate results. |
+| Accept and publish | Successful applicable gates, Solution Architect acceptance and [release policy](architecture-release-policy.md). Existing publication/resource tooling and `enterprise-architecture/tooling/architecture_release.py`. | Coherent governed RADS and exchange publication, accepted release allocation and retained evidence. Generation never increments a release. |
+
+The review states what changed **and what remained unchanged**, preserved/rebound
+identities, new/deleted/evolved architecture, relationship changes, derived
+consequences, metadata/navigation consequences, View changes/preservation,
+validation results, ambiguities and matters requiring adjudication. Propose
+directives where existing authority makes the action deterministic, while retaining
+the independent CR decisions and dependencies. Raw XML counts are not CR counts.
+Where there is no transport control, transport origin remains unknown.
+
+## Common interpretation and projection rules
+
+**Current containment clarification — 2026-10-20.** For contextual resolution,
+Home is the default. Home is the Harmonia specialisation of native ArchiMate
+Association: explicitly directed **contained element → home**, with an explicit
+`Specialization=Home` Property resolved by definition name. Ordinary Association,
+its Name, Realization, folder placement or View nesting does not assert Home.
+
+The **contained element's native type / specialisation** selects the exceptions:
+
+| Contained native type / specialisation | Governing mechanism |
+| --- | --- |
+| Capability, including Feature | Composition, parent → child |
+| BusinessObject | Composition, parent → child |
+| DataObject, including Topic and Class | Composition, parent → child |
+| Artifact | Composition, parent → child |
+| Grouping with Specialization `Package` or `RequirementGroup` | Composition, parent → child |
+| Requirement contained beneath `RequirementGroup` | Composition, parent → child |
+| Other applicable native types | Home, contained element → home |
+
+Feature inherits Capability's rule. Topic and Class are native DataObjects and inherit DataObject's rule.
+Package and RequirementGroup are native Groupings where Composition parent → child expresses containment.
+A native Requirement nested beneath a RequirementGroup via Composition is likewise governed by Composition. Derived `harmoniaType`, a
+bracketed Name or a folder cannot override native type. This clarification narrows
+the earlier cross-layer Composition wording; it does not convert, delete or
+accept any relationship instance. Previously persisted names and source-qualified
+context remain historical replay evidence, not substitute current containment.
+
+Resolve current versus historical **relationship standing before ancestry**.
+Preserved historical assertions stay in the model but cannot supply a current
+parent. Unclassified submissions may support explicitly conditional previews;
+currentness is not approval. Competing/duplicate parents, cycles, missing endpoints
+and insufficient required ancestry remain findings, with no selected winner.
+Absence of a parent proves neither completeness nor semantic root status.
+
+Element and Relationship folders are deterministic catalogue projections under
+the [Archi catalogue contract](continuum-representation.md#archi-catalogue-organisation--rad-1117-iteration-002). Rebuild elements by native
+category / Catalogue / native type and relationships by Relations / Catalogue /
+explicit source canonical identity. Incoming folder ancestry, containment, Home,
+Grouping, specialisation and navigation coordinates do not select catalogue paths.
+Every element and relationship has exactly one catalogue reference. This retires
+the former containment-folder reconstruction while preserving all semantic
+containment/naming rules above. Never strip meaningful governed name identifiers;
+native Name and element entries equal displayName with no generated coordinates.
+
+**All existing Views are preserved architect-authored presentation artefacts in
+this round-trip process.** Preserve identity, membership, connections, nested
+nodes, order, layout, geometry, style, Documentation and their navigation tree.
+They are not disposable Element/Relationship folders. Earlier generated-View
+publishers may replay frozen publications; they do not authorise regenerating an
+existing submitted View. A separately reviewed directive is required to change one.
+
+Canonical architectural identity and Exchange representation identity are distinct.
+Unique established canonical identity preserves continuity across representation
+rebinding; report old/new bindings and evidence. Allocate no identity merely to
+make correlation or a projection succeed. Projection IDs occupy a separate
+namespace. Naming derives from authored native type, Name, explicit specialisation
+and governed context using the naming contract; stale submitted derived claims
+remain evidence and do not override authored semantics. The architect is not
+required to maintain machine metadata or alter an immutable submission for tooling.
+
+## Stop, recovery and evidence
+
+Stop dependent work for uncertain baseline/export/review applicability, ambiguous
+identity, unestablished semantic interpretation, conflicting directives, unmet or
+circular dependencies, required new naming/collection rules, destructive View
+changes without authority, unresolved effects or missing proof. Record the exact
+question and unaffected results. Do not change a Solution Architect disposition.
+Use bounded commands and distinct PASS, FAIL, TIMEOUT, STALLED and UNRESOLVED
+outcomes under repository instructions.
+
+Machinery corrections belong in governed context, shared implementation and
+regression/acceptance tests. Fixtures must distinguish preserved input, authored
+semantics, generated metadata/navigation and preserved presentation. Demonstrate
+catalogue regeneration with absent and misleading input folders, explicit-source
+sensitivity and unchanged semantic/View signatures. Assert the final serialized
+XML's native-type element paths and direct source relationship paths, including
+all represented native types, specialisations, and both Home and Composition
+participants without hierarchy-driven placement; output presence
+or arbitrary generated locations alone are insufficient. Secure before bytes
+before explicitly authorised in-run correction and pin machinery/configuration
+as needed for recovery and bounded read-only validation. These safeguards do not
+require permanent machinery snapshots, logs or reproduction of every historical
+execution. Record material validation conclusions and limits in the applicable HCRL DR
+under Architecture Change Provenance. Missing originals or uncertain effects
+block closure; a successful replay does not establish architectural acceptance.
+
+## Runs and RAD releases
+
+Processing identities (`run-001`, `run-002`, …) identify attempts, not releases
+or necessarily architectural transitions. The following RAD-1.0.10/1.1.0
+conditions describe the bounded historical proving/promotion cycle; they are
+not the current release allocator or a new processing instruction.
+The [bounded RAD-1.0.10 validation decision](architecture-release-policy.md#machinery-validation-runs--2026-10-20)
+keeps baseline and architect submission immutable and the release unchanged,
+including supporting Praxis/governance corrections. An explicitly authorised
+Run-002 correction retains its before evidence; it does not start Run-003.
+RAD-1.1.0 requires faithful processing, real Archi round-trip proof and the governed
+acceptance/publication transition. Establishing this Praxis creates no release,
+final reconciliation or acceptance. General future releases follow the existing
+patch policy and explicit minor/major decisions.
+
+Current operation must become independent of historical processing under
+Architecture Change Provenance. Existing dependencies and recovery requirements
+remain until separately authorised migration and verification resolve them.
+Installing the contract neither demonstrates independence nor permits cleanup.
+
+<a id="proposed-bounded-preparation--1115-iteration-002-not-yet-operative"></a>
+## Bounded preparation — accepted in 1.1.15 iteration 002
+
+The Solution Architect's Accept dispositions in
+[HCRL 002](../design/review/1.1.15/hcrl-1.1.15-002.pending.md), DR-1–DR-4, and
+post-adjudication application instruction adopt the opt-in preparation behavior
+below. The existing stages and human checkpoints above remain in force. The
+default review and publication behavior remain unchanged as reviewed; use
+`review --normalised` for bounded preparation. Result confirmation and HCRL
+completion remain separate. The 001 architectural CRs are neither applied nor
+re-adjudicated by this machinery adoption.
+
+The `continuum_workbench.py review --normalised` path validates the
+explicit inputs and exact current projection, then produces
+`architectural-delta.json`. It discovers the entire submission even when newly
+authored elements lack canonical IDs. Ambiguous, duplicated or lost identity
+claims remain exceptions; discovery allocates no canonical identity.
+
+Only the demonstrated absent → `xml:lang="en"` difference on an unchanged,
+single projector-generated element Property value is normalised. The exact key
+allowlist is the six identity/name/type roles, `Specialization`, and the six
+`Continuum /` properties emitted by the current projector. Text, multiplicity,
+other attributes, other languages, authored properties and conflicting inherited
+language remain observable. Raw `exchange_compare.py compare` remains exact.
+
+Under the Solution Architect's remediation instruction, submitted non-View
+navigation is derived serialization and creates no architectural CR merely for
+identifiers, order or folders. Governed regeneration reuses the existing
+Continuum navigation/containment projector after incorporation; it never infers
+new containment or placement from submitted folders. The machinery separately
+compares View identities/content and their authored navigation, including folder
+metadata, empty folders, moves and common-sibling order. Its optional
+`continuum_navigation.project(..., preserve_view_hierarchy=True)` preserves the
+entire named Views branch during regeneration. DR-3 accepts this optional
+preservation behavior. The existing canonical publication default remains
+unchanged as reviewed; using the option for a material publication change still
+requires the normal publication validation and actual Archi inspection gates.
+
+The `architecture_review_evidence.py --prepare` path fills mechanical
+facts, links and Task/Report/HCRL locations using the existing evidence model. It
+does not overwrite existing reviews or human dispositions. Task events require
+attributable instruction-entry timestamps; unavailable times/prefixes remain
+UNRESOLVED. Automated Report emission captures its completed-write system event
+and synchronizes the event field/filename without recursive provenance.
+
+The generated Change Review and pending HCRL are **scaffolds requiring targeted
+architectural interpretation**, not a finished review or a decision. CR identity
+and independent decomposition are established by that interpretation under the
+existing Change Review contract. The agent receives the compact delta, bounded
+relevant Continuum sources and exceptions. Start from known concepts, vicinity
+search, bounded artefacts, then relationships/references. Consult a DRP only for
+a specifically relevant detected change. Ordinary review does not scan the DRP
+corpus or consume complete XML, raw comparisons or session histories.
+
+Unknown representation conditions, invalid inputs, ambiguous identity, stale
+baseline, conflicting output locations or a delta exceeding 128,000 encoded bytes
+stop dependent processing and produce an explicit condition for review. Do not
+start autonomous investigation or implementation/reviewer cycles. Once targeted
+interpretation completes, populate `change-review.md` and the applicable HCRL,
+then STOP for the Solution Architect. Adjudication, `decision.json`, application,
+validation, actual Archi proof, release allocation and final confirmation retain
+their existing governed roles. The five-minute routine target is an engineering
+objective, not a substitute for these controls or a guarantee for exceptional
+architectural changes.

@@ -1,0 +1,53 @@
+{
+  "operator": "Codex",
+  "archiVersion": "5.10.0",
+  "plugin": "/home/hunterm/Development/Tools/Archi/plugins/org.opengroup.archimate.xmlexchange_5.10.0.202607081558.jar",
+  "pluginSha256": "7442b0a8ee987b26ea53c98ce040890cb7c18945771a5f364f470f03de295e1a",
+  "published": "enterprise-architecture/design/archimate/published/1.1.13/Harmonia-Architecture.xml",
+  "firstPass": {
+    "exitCode": 0,
+    "log": "published.log",
+    "nativeSave": "published.archimate.gz",
+    "export": "returned.xml.gz",
+    "workspace": "/tmp/harmonia-1113-contained-elements/final-workspace",
+    "configuration": "/tmp/harmonia-1113-contained-elements/final-config"
+  },
+  "secondPass": {
+    "exitCode": 0,
+    "log": "second.log",
+    "source": "first-pass returned.xml",
+    "nativeSave": "second.archimate.gz",
+    "export": "second.xml.gz",
+    "workspace": "/tmp/harmonia-1113-contained-elements/final-second-workspace",
+    "configuration": "/tmp/harmonia-1113-contained-elements/final-second-config"
+  },
+  "initialSandboxLaunch": {
+    "exitCode": 13,
+    "reason": "GTK cannot open display",
+    "resolution": "Approved display-access execution succeeded; no candidate change needed"
+  },
+  "invocation": [
+    "timeout --signal=TERM --kill-after=5s 90s",
+    "/home/hunterm/Development/Tools/Archi/Archi",
+    "-nosplash",
+    "-consoleLog",
+    "-configuration",
+    "<isolated config>",
+    "-data",
+    "<isolated workspace>",
+    "-application",
+    "com.archimatetool.commandline.app",
+    "-a",
+    "--xmlexchange.import",
+    "<source XML>",
+    "--saveModel",
+    "<native output>",
+    "--xmlexchange.export",
+    "<returned XML>",
+    "--xmlexchange.exportFolders",
+    "--xmlexchange.exportLang",
+    "en"
+  ],
+  "standing": "Actual execution and native-model inventory; Solution Architect visual review remains pending.",
+  "coverageCompletion": "The initial 698-member verification was broadened before handoff to include 212 existing explicit Home subjects. These retained native saves and logs are the final 910-member candidate."
+}

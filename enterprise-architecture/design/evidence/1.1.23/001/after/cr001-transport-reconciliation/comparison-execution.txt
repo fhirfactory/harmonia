@@ -1,0 +1,406 @@
+Compared retained XML fields: predecessorOriginal
+Compared retained XML fields: predecessorReturned
+Compared retained XML fields: candidateOriginal
+Compared retained XML fields: candidateReturned
+{
+  "status": "PASS",
+  "scope": "Bounded retained evidence comparison; no new transport run or predecessor investigation",
+  "checkedInputIssues": "None in all four securely parsed/offline-validated Exchange inputs",
+  "oldRelationships": 9314,
+  "candidateRelationships": 9376,
+  "newRelationships": 62,
+  "missingExistingOriginalRelationships": [],
+  "missingExistingReturnedRelationships": [],
+  "existingOriginalRelationshipDifferences": [],
+  "existingReturnedRelationshipDifferences": [],
+  "newKeyResolvedFieldOrOrderDifferences": [],
+  "newRelationshipMissingAfter": [],
+  "rawFindingsWithinNewRelationshipRecords": [],
+  "newElementIDs": [
+    "id-0963cd3209e25145ac6bd2cc12d38577",
+    "id-47d58cb363a25dddafeb3f444eecfca6",
+    "id-4e98d072432d55f9accf552cec1235ad",
+    "id-548e72ab6ead52c5b4897208d62320f2",
+    "id-572429fd8c905b8cb3a73cbc58351c70",
+    "id-61834e375e4753cc9f6c95bae8b3cd1b",
+    "id-9131fe3f63be560c982d45b26e304ec4",
+    "id-9570096e088d5171866eff68d6b7afdb",
+    "id-a71c8e65e5d55b7188313d6b7b40ada5",
+    "id-e4f0c48dc7125a5a90d70c52af02ecd4",
+    "id-f55007386d9157cab9a957d8a45ada41"
+  ],
+  "languageAdditionsOnNewElements": 110,
+  "allPropertyDefinitionsCrossReleaseEqual": {
+    "Original": true,
+    "Returned": true
+  },
+  "allOriginalViewsCrossReleaseEqual": true,
+  "allReturnedViewsCrossReleaseEqual": true,
+  "originalViewDifferences": [],
+  "returnedViewDifferences": [],
+  "exactViewDiagnosticRecordsCrossReleaseEqual": {
+    "connectionDefaultStyleAdditions": true,
+    "defaultStyleExceptions": true,
+    "nativeConnectionAttributesForAddedStyles": true,
+    "connectionSequenceChanges": true,
+    "otherViewDifferences": true
+  },
+  "viewCount": 1304,
+  "visualNodes": 4599,
+  "visualConnections": 2042,
+  "newPatternClasses": [],
+  "patternCounts": [
+    {
+      "scope": "elements",
+      "pattern": "absent-to-en-language-annotation",
+      "rawClassification": "SEMANTIC DIFFERENCE",
+      "predecessor": 99680,
+      "candidate": 99790,
+      "delta": 110
+    },
+    {
+      "scope": "elements",
+      "pattern": "unordered-keyed-collection-order",
+      "rawClassification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "predecessor": 4409,
+      "candidate": 4409,
+      "delta": 0
+    },
+    {
+      "scope": "navigation",
+      "pattern": "organization-item-identifier-omitted",
+      "rawClassification": "INFORMATION LOSS",
+      "predecessor": 2537,
+      "candidate": 2553,
+      "delta": 16
+    },
+    {
+      "scope": "navigation",
+      "pattern": "organization-label-removal-child-list",
+      "rawClassification": "UNEXPLAINED DIFFERENCE",
+      "predecessor": 15860,
+      "candidate": 15933,
+      "delta": 73
+    },
+    {
+      "scope": "navigation",
+      "pattern": "organization-reference-label-omitted",
+      "rawClassification": "INFORMATION LOSS",
+      "predecessor": 15860,
+      "candidate": 15933,
+      "delta": 73
+    },
+    {
+      "scope": "other",
+      "pattern": "property-definition-rekey",
+      "rawClassification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "predecessor": 69,
+      "candidate": 69,
+      "delta": 0
+    },
+    {
+      "scope": "other",
+      "pattern": "unordered-keyed-collection-order",
+      "rawClassification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "predecessor": 3,
+      "candidate": 3,
+      "delta": 0
+    },
+    {
+      "scope": "relationships",
+      "pattern": "absent-to-en-language-annotation",
+      "rawClassification": "SEMANTIC DIFFERENCE",
+      "predecessor": 12228,
+      "candidate": 12228,
+      "delta": 0
+    },
+    {
+      "scope": "relationships",
+      "pattern": "unordered-keyed-collection-order",
+      "rawClassification": "SEMANTICALLY EQUIVALENT NORMALISATION",
+      "predecessor": 212,
+      "candidate": 212,
+      "delta": 0
+    },
+    {
+      "scope": "views",
+      "pattern": "connection-default-style-added",
+      "rawClassification": "UNEXPLAINED DIFFERENCE",
+      "predecessor": 238,
+      "candidate": 238,
+      "delta": 0
+    },
+    {
+      "scope": "views",
+      "pattern": "connection-style-addition-child-list",
+      "rawClassification": "UNEXPLAINED DIFFERENCE",
+      "predecessor": 238,
+      "candidate": 238,
+      "delta": 0
+    },
+    {
+      "scope": "views",
+      "pattern": "view-connection-sequence-changed",
+      "rawClassification": "UNEXPLAINED DIFFERENCE",
+      "predecessor": 15,
+      "candidate": 15,
+      "delta": 0
+    }
+  ],
+  "predecessorUnexplainedPatterns": 0,
+  "candidateUnexplainedPatterns": 0,
+  "rawFindingCounts": {
+    "predecessor": 151349,
+    "candidate": 151621,
+    "delta": 272
+  },
+  "rawClassifications": {
+    "predecessor": {
+      "SEMANTICALLY EQUIVALENT NORMALISATION": 4693,
+      "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+      "INFORMATION LOSS": 18397,
+      "SEMANTIC DIFFERENCE": 111908,
+      "UNEXPLAINED DIFFERENCE": 16351
+    },
+    "candidate": {
+      "SEMANTICALLY EQUIVALENT NORMALISATION": 4693,
+      "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+      "INFORMATION LOSS": 18486,
+      "SEMANTIC DIFFERENCE": 112018,
+      "UNEXPLAINED DIFFERENCE": 16424
+    }
+  },
+  "languageValuesByInput": {
+    "predecessorOriginal": [
+      "en"
+    ],
+    "predecessorReturned": [
+      "en"
+    ],
+    "candidateOriginal": [
+      "en"
+    ],
+    "candidateReturned": [
+      "en"
+    ]
+  },
+  "noGraphTextValueDifferences": true,
+  "navigationAfterSeparateOmissionAccountingEqual": true,
+  "navigationExceptions": [],
+  "generatedFolderIDsOmitted": {
+    "predecessor": 2537,
+    "candidate": 2553,
+    "omittedWithinViews": 0,
+    "missingPriorOmissions": [],
+    "changedPriorOmissionRecords": [],
+    "addedSourceCatalogueFolderRecords": [
+      {
+        "identifier": "catalogue-source-000f7241f12f411195b39fe8b8386e05",
+        "label": [
+          {
+            "text": "Persistence Adapter [000f7241f12f411195b39fe8b8386e05]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-0d13da9390a3438ca887a4293bb034b9",
+        "label": [
+          {
+            "text": "[AssuranceRequirement] Single-Machine Failure Recovery [0d13da9390a3438ca887a4293bb034b9]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-105f6ebe61f74bc6b51938ba550bc1a7",
+        "label": [
+          {
+            "text": "GovernedWriter [105f6ebe61f74bc6b51938ba550bc1a7]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-22bdac97fe0d48d1844f1e982d03d387",
+        "label": [
+          {
+            "text": "Mneme Adapter / Fa\u00e7ade [22bdac97fe0d48d1844f1e982d03d387]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-410a938f42964474b7cf5655815dc830",
+        "label": [
+          {
+            "text": "GovernedReader [410a938f42964474b7cf5655815dc830]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-4522bf0326334607a4a6177c819e61b6",
+        "label": [
+          {
+            "text": "[Mandate] Encryption at Rest [4522bf0326334607a4a6177c819e61b6]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-4b540b55db1b4c1197482d8f29d70e45",
+        "label": [
+          {
+            "text": "[Mandate] Internal Encryption in Transit [4b540b55db1b4c1197482d8f29d70e45]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-75349ac7a0d44dec955b77bb5ecf1151",
+        "label": [
+          {
+            "text": "InformationUnit Constructor / Disassembler [75349ac7a0d44dec955b77bb5ecf1151]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-7f40b2f4947845d287564b43f812b6c8",
+        "label": [
+          {
+            "text": "DATA-005 \u2014 Concurrency and Version Integrity [7f40b2f4947845d287564b43f812b6c8]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-812fa47cef1442aeb34ec34f263616be",
+        "label": [
+          {
+            "text": "GovernedPersistenceFramework [812fa47cef1442aeb34ec34f263616be]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-9c680d56a6b943da8ff22f3264e19bc7",
+        "label": [
+          {
+            "text": "Mnemosyne Adapter (Store) [9c680d56a6b943da8ff22f3264e19bc7]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-c050edfefe8b4d2b8892bc94b2d27a5c",
+        "label": [
+          {
+            "text": "PersistenceService [c050edfefe8b4d2b8892bc94b2d27a5c]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-dcb31810ae134818adeeba9b27bd2f30",
+        "label": [
+          {
+            "text": "GovernedSearch [dcb31810ae134818adeeba9b27bd2f30]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-eabd38371b6940289d9a4bf8e9773942",
+        "label": [
+          {
+            "text": "[Mandate] Accepted Work Durability [eabd38371b6940289d9a4bf8e9773942]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-ef864d509efa44a7a4160db2ca821163",
+        "label": [
+          {
+            "text": "InformationUnit Controller [ef864d509efa44a7a4160db2ca821163]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      },
+      {
+        "identifier": "catalogue-source-fc732b64fc564127b73174e28d9ccce8",
+        "label": [
+          {
+            "text": "REQ-FND-004: Explicit Indeterminate Outcome [fc732b64fc564127b73174e28d9ccce8]",
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            }
+          }
+        ],
+        "withinViews": false
+      }
+    ]
+  },
+  "reconstructedLabels": {
+    "predecessor": {
+      "elements-name": 6546,
+      "relationships-name": 1553,
+      "relationships-identifier-fallback": 7761
+    },
+    "candidate": {
+      "elements-name": 6557,
+      "relationships-name": 1615,
+      "relationships-identifier-fallback": 7761
+    }
+  },
+  "strictTransport": "FAIL retained, not replayed or reclassified",
+  "architecturalAcceptance": "CR-001 On-Hold / Unresolved; Solution Architect adjudication pending",
+  "limitations": "No rendered-pixel/cross-platform proof, no second-pass candidate stability test, no recovery of lost folder IDs, original global sequence or implicit style state."
+}

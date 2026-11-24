@@ -1,0 +1,328 @@
+{
+  "architecture_release": {
+    "previous_version": "1.0.6",
+    "version": "1.0.7"
+  },
+  "audit_status": "PASS",
+  "canonical_id": {
+    "continuity_findings": [],
+    "duplicates": {},
+    "lifetime_nonreuse": "Retained resource-owned IDs and pinned complete source history; physical source deletion is rejected",
+    "malformed": [],
+    "missing": [],
+    "multiple_claims": [],
+    "single_valid_uuid32": 1299,
+    "total_elements": 1299,
+    "unique_valid_uuid32_elements": 1299
+  },
+  "context_sha256": {
+    "docs/archimate/capability-architecture/recovery-v0.2/representation-crosswalk.json": "1875246e7bdfbfcbbf413066f408ce24c98250db8f0a298b8697cb34ed56f266",
+    "docs/markdown/governance/architecture-identity/registry.json": "aadfaa9c1c6d9d35908036683fff4837537de9fe0683c192e2fd0959fced6073",
+    "docs/markdown/governance/baseline/architecture.json": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+    "docs/markdown/governance/baseline/correspondence.json": "072f1e91dbe6329341eaa764900586a1065395c9ed40f9700e4497d80e1c3c00"
+  },
+  "future_identity_readiness": "CONFORMANT_IN_SNAPSHOT",
+  "future_naming_readiness": "CONFORMANT_WITH_GOVERNED_DERIVATION",
+  "historical_ec_aliases": {
+    "binding_conflicts": [],
+    "count": 14,
+    "duplicates": {},
+    "owners": {
+      "EC-01": [
+        "id-d53727d908365757a293b0896b2c769b"
+      ],
+      "EC-02": [
+        "id-06e038737c5355edbc0591e08c594ab0"
+      ],
+      "EC-03": [
+        "id-5891936941f65d20afad86b0697879c7"
+      ],
+      "EC-04": [
+        "id-9e79bc474aed516c8c6752ab81b63d6b"
+      ],
+      "EC-05": [
+        "id-e11f02764fe55ff29c0782db21198040"
+      ],
+      "EC-06": [
+        "id-a6f6d30d8fce5ac78f60f7aefa71b28e"
+      ],
+      "EC-07": [
+        "id-d71457435a085e749ffb1e1a3b551228"
+      ],
+      "EC-08": [
+        "id-dbd66e69788450649e184966aa724797"
+      ],
+      "EC-09": [
+        "id-770ebb3e3bdc5f2bbe77b2bfd55bd74d"
+      ],
+      "EC-10": [
+        "id-49d4f69ebeeb5ea782a52172fb3e8a7b"
+      ],
+      "EC-11": [
+        "id-82cd1f6a3e2352639e22c542f5cb3a9d"
+      ],
+      "EC-12": [
+        "id-9bbd142f818e50d39a3d0429f74b72b4"
+      ],
+      "EC-13": [
+        "id-7d6f635ffb6f5c6181bde1d07b859662"
+      ],
+      "EC-14": [
+        "id-4dbf578f52bd5b3b9301b9807ce60f30"
+      ]
+    }
+  },
+  "input_issues": [],
+  "input_sha256": "def447de2f522737c8b9c30dd9850a57bfec71eaa01f0820ff49283c40fba4bb",
+  "legacy_property_coverage": {
+    "Baseline / Native Definition ID": 93,
+    "Reference ID": 14,
+    "v0.2 / Canonical Architecture ID": 14,
+    "v0.2 / Canonical Name": 719,
+    "v0.2 / Construct Type": 946,
+    "v0.2 / Historical ID Aliases": 430,
+    "v0.2 / Name Aliases": 44,
+    "v0.2 / Native Definition ID": 5,
+    "v0.2 / Reviewed Name": 162,
+    "v0.2 / Snapshot Reference ID": 946,
+    "v0.2 / Source Capture Key": 946,
+    "v0.2 / Structural Canonical ID": 946
+  },
+  "metrics": {
+    "largest_view": {
+      "connections": 182,
+      "elements": 200,
+      "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+      "name": [
+        {
+          "attributes": {
+            "{http://www.w3.org/XML/1998/namespace}lang": "en"
+          },
+          "text": "Business Capability Model — v0.2"
+        }
+      ],
+      "visual_objects": 200
+    },
+    "relationships": 852,
+    "semantic_elements": 1299,
+    "views": 1196,
+    "visual_connections": 1449,
+    "visual_objects": 3915,
+    "xml_bytes": 20800334,
+    "xml_decimal_mb": 20.800334
+  },
+  "naming": {
+    "canonicalName_derivation": "Validated against the same components/context with formal qualifiers",
+    "conflicts": [],
+    "counts": {
+      "canonicalName_derived_match": 1299,
+      "canonicalName_property_empty_or_multiple": 0,
+      "canonicalName_property_missing": 0,
+      "canonicalName_property_single_nonempty": 1299,
+      "displayName_derived_match": 1299,
+      "displayName_property_empty_or_multiple": 0,
+      "displayName_property_missing": 0,
+      "displayName_property_single_nonempty": 1299,
+      "friendlyName_derived_match": 1299,
+      "friendlyName_property_empty_or_multiple": 0,
+      "friendlyName_property_missing": 0,
+      "friendlyName_property_single_nonempty": 1299,
+      "legacy_structural_path_available": 946,
+      "legacy_structural_path_unavailable": 353,
+      "native_display_available": 1299,
+      "native_display_missing_or_multiple": 0
+    },
+    "friendlyName_derivation": "Validated against governed PascalCase components and semantic context",
+    "legacy_short_name_collisions": {
+      "Demographic Change Distribution": [
+        "id-0672fb8a0d7a5f029d80931b0d3d2c60",
+        "id-35f2e62266245c35ae0957b13f0899d7"
+      ],
+      "Diagnostic Report Distribution": [
+        "id-6ffaf46cf2715eb28cd85d28c24c7d0a",
+        "id-d5b1d7f0358b5ce095b5a56df9c07714"
+      ],
+      "Health Information Exchange": [
+        "id-0712aaf441dc5100a5ac79c4b7848477",
+        "id-2134969d36665649a7d61fcea20bc15f"
+      ]
+    },
+    "legacy_short_name_differences": [
+      {
+        "element": "id-036bd5a9fa1b5fca9c3245abf3016f44",
+        "legacy_short_name": "Emergency Care",
+        "native_name": "Emergency Care Progression"
+      },
+      {
+        "element": "id-06e038737c5355edbc0591e08c594ab0",
+        "legacy_short_name": "Context Management",
+        "native_name": "EC-02 Context Management"
+      },
+      {
+        "element": "id-0712aaf441dc5100a5ac79c4b7848477",
+        "legacy_short_name": "Health Information Exchange",
+        "native_name": "Health Information Exchange Enablement"
+      },
+      {
+        "element": "id-12123907605b5a30a078af04daf3c730",
+        "legacy_short_name": "Client Privacy",
+        "native_name": "Client Privacy Guardrail Management"
+      },
+      {
+        "element": "id-29e0bf94882559a7b6ed9d092303a560",
+        "legacy_short_name": "Person Identity",
+        "native_name": "Person Identity Administration"
+      },
+      {
+        "element": "id-2a555773d20b5eaaac720432d7e6f4ec",
+        "legacy_short_name": "Preventive Care",
+        "native_name": "Screening and Immunisation Enablement"
+      },
+      {
+        "element": "id-2fb39d490c105c5d985595cc71f06003",
+        "legacy_short_name": "Inpatient Care",
+        "native_name": "Multidisciplinary Inpatient Care Coordination"
+      },
+      {
+        "element": "id-49d4f69ebeeb5ea782a52172fb3e8a7b",
+        "legacy_short_name": "Activity & Execution",
+        "native_name": "EC-10 Activity & Execution"
+      },
+      {
+        "element": "id-4dbf578f52bd5b3b9301b9807ce60f30",
+        "legacy_short_name": "Service Guardian",
+        "native_name": "EC-14 Service Guardian"
+      },
+      {
+        "element": "id-54b2e4d160c052c18e147e5980c3a02d",
+        "legacy_short_name": "Clinical Workforce Management",
+        "native_name": "Clinical Workforce Capability Monitoring"
+      },
+      {
+        "element": "id-5891936941f65d20afad86b0697879c7",
+        "legacy_short_name": "Managed State & Lifecycle",
+        "native_name": "EC-03 Managed State & Lifecycle"
+      },
+      {
+        "element": "id-5b9c494f5afb5f348c6e67afc7e022d5",
+        "legacy_short_name": "Assurance Criteria Management",
+        "native_name": "Assurance Criteria Administration"
+      },
+      {
+        "element": "id-770ebb3e3bdc5f2bbe77b2bfd55bd74d",
+        "legacy_short_name": "Event & Subscription",
+        "native_name": "EC-09 Event & Subscription"
+      },
+      {
+        "element": "id-7d6f635ffb6f5c6181bde1d07b859662",
+        "legacy_short_name": "Semantic Governance & Conformance",
+        "native_name": "EC-13 Semantic Governance & Conformance"
+      },
+      {
+        "element": "id-82cd1f6a3e2352639e22c542f5cb3a9d",
+        "legacy_short_name": "Interaction & Experience",
+        "native_name": "EC-11 Interaction & Experience"
+      },
+      {
+        "element": "id-8ad249d9cc7f5e85a84f1dbf5b7ccaaf",
+        "legacy_short_name": "Diagnostic Services",
+        "native_name": "Diagnostic Service Integration"
+      },
+      {
+        "element": "id-8c9e5a5c2384558db1e86af56d2c942b",
+        "legacy_short_name": "Acute Care",
+        "native_name": "Acute Care Monitoring & Event Coordination"
+      },
+      {
+        "element": "id-9bbd142f818e50d39a3d0429f74b72b4",
+        "legacy_short_name": "Operational Assurance",
+        "native_name": "EC-12 Operational Assurance"
+      },
+      {
+        "element": "id-9e79bc474aed516c8c6752ab81b63d6b",
+        "legacy_short_name": "Information Management",
+        "native_name": "EC-04 Information Management"
+      },
+      {
+        "element": "id-a6f6d30d8fce5ac78f60f7aefa71b28e",
+        "legacy_short_name": "Policy & Control",
+        "native_name": "EC-06 Policy & Control"
+      },
+      {
+        "element": "id-b9ab7bb6c4865419928c0c1f13bf45b7",
+        "legacy_short_name": "Primary Care",
+        "native_name": "Primary Care Coordination"
+      },
+      {
+        "element": "id-c1ec3269b7655d079fee5f5b92fbd5e6",
+        "legacy_short_name": "Clinical Qualification Management",
+        "native_name": "Clinical Qualification Administration"
+      },
+      {
+        "element": "id-c480beb83dfe55e599ff5dc56b4249bb",
+        "legacy_short_name": "Health Product Administration",
+        "native_name": "Health Materiel Administration"
+      },
+      {
+        "element": "id-c5461090ddce50daa204e0c031c184aa",
+        "legacy_short_name": "Outreach Care",
+        "native_name": "Outreach Care Continuity"
+      },
+      {
+        "element": "id-cb13e2de68e55d8c9204e770611aef37",
+        "legacy_short_name": "Remote & Virtual Care",
+        "native_name": "Remote Patient Monitoring"
+      },
+      {
+        "element": "id-d53727d908365757a293b0896b2c769b",
+        "legacy_short_name": "Managed Entity & Relationship",
+        "native_name": "EC-01 Managed Entity & Relationship"
+      },
+      {
+        "element": "id-d71457435a085e749ffb1e1a3b551228",
+        "legacy_short_name": "Provenance & Traceability",
+        "native_name": "EC-07 Provenance & Traceability"
+      },
+      {
+        "element": "id-d835f657a75459268088115e97986dd1",
+        "legacy_short_name": "Community Care",
+        "native_name": "Community Care Coordination"
+      },
+      {
+        "element": "id-db94873a0aac5928aed7bf23ed0bcbea",
+        "legacy_short_name": "Client Relationship",
+        "native_name": "Client Relationship Administration"
+      },
+      {
+        "element": "id-dbd66e69788450649e184966aa724797",
+        "legacy_short_name": "Interoperability & Exchange",
+        "native_name": "EC-08 Interoperability & Exchange"
+      },
+      {
+        "element": "id-e11f02764fe55ff29c0782db21198040",
+        "legacy_short_name": "Search & Discovery",
+        "native_name": "EC-05 Search & Discovery"
+      },
+      {
+        "element": "id-e4ada895b3705f13829792ac8ab2e274",
+        "legacy_short_name": "Healthcare Subject",
+        "native_name": "Healthcare Subject Profile Administration"
+      },
+      {
+        "element": "id-e9ea67f4568d5b698a547301aa89e4bd",
+        "legacy_short_name": "Clinical Competency Management",
+        "native_name": "Clinical Competency Administration"
+      },
+      {
+        "element": "id-f6b618c033b55400a9e26a6c1c5d9c16",
+        "legacy_short_name": "Medication Therapy",
+        "native_name": "Medication Therapy Provision and Monitoring"
+      }
+    ],
+    "source_path_standing": {
+      "Established": 190,
+      "Proposed": 756
+    }
+  },
+  "previous_input_issues": []
+}

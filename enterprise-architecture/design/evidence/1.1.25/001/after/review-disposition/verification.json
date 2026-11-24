@@ -1,0 +1,610 @@
+{
+  "purpose": "Provenance maintenance: record issued SA dispositions and confirm unchanged review candidate within 1.1.25/001; no new architectural activity or iteration.",
+  "verifiedAt": "2026-11-15T05:27:21.676657Z",
+  "eventMeaning": "Actual verification/recording time; not instruction-entry time, human review or final acceptance",
+  "status": "PASS",
+  "branch": "Mneme-and-Mnemosyne-Build",
+  "head": "626d72fdb2c26768114a6c7f0a2f5845875e5b2f",
+  "release": {
+    "version": "1.1.24",
+    "previous_version": "1.1.23"
+  },
+  "dirty": true,
+  "candidateExchangeUnchanged": true,
+  "readerMatchesPriorReproductionHash": true,
+  "canonicalPatchMatchesRetainedReview": true,
+  "reviewArtifacts": {
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/Harmonia-Architecture.xml": "7d1fe1f3d23aa39d87cedb0779c88772b4e04dafa5b8e32efd1c72863dae50c8",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/continuum.html": "34375a900311a30cc18fc415589fc03d2744157c155e0dc338215eeab27847b3",
+    "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport-v2/candidate.archimate": "3d201b3a5905456698863c423376f6fbf362c0d11eb7e6936317d4c35012f9cf"
+  },
+  "preservation": {
+    "previousEvidenceFilesUnchanged": 109,
+    "canonicalFilesUnchanged": 6565,
+    "protectedFilesUnchanged": 321,
+    "userFilesUnchangedDuringThisStep": 30,
+    "mismatches": {
+      "previousEvidence": [],
+      "canonical": [],
+      "protected": [],
+      "currentUserWork": [],
+      "reviewArtifacts": []
+    },
+    "limits": "Current-entry preservation of Topic.java does not reconstruct missing original pre-reconciliation hash."
+  },
+  "freshnessChecks": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "enterprise-architecture/tooling/architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/Harmonia-Architecture.xml",
+        "--check"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "elements": 6563,
+      "relationships": 9427,
+      "sourceBindings": 8459,
+      "offlineXsd": "PASS",
+      "exchangeReferences": "PASS",
+      "outputSha256": "7d1fe1f3d23aa39d87cedb0779c88772b4e04dafa5b8e32efd1c72863dae50c8",
+      "limits": "Read-only projection/canonical freshness; no new Archi transport or human review."
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "enterprise-architecture/tooling/publish_continuum.py",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader",
+        "--check"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "artifacts": 5,
+      "check": true
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "iterationEvidence": {
+    "outcome": "UNRESOLVED",
+    "exitCode": 2,
+    "errors": [],
+    "unresolved": [
+      "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+      "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-solution-architect-review-disposition.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+    ],
+    "evidence": "iteration-evidence-check.json",
+    "limits": "Both original Task and retained material disposition follow-up have unavailable original event times; no times reconstructed. No structural errors. Checker supplies no acceptance."
+  },
+  "validationOutcomesPreserved": {
+    "strictTransport": "FAIL \u2014 QUALIFIED / UNRESOLVED (CR-001)",
+    "focusedTests": "FAIL; inherited diagnostic-text expectation mismatch accepted as bounded qualification",
+    "pythonSuite": "TIMEOUT; incomplete execution accepted with separate direct checks",
+    "javaChecks": "NOT PERFORMED; explicitly deferred for architecture-only incorporation"
+  },
+  "humanReview": "PENDING explicit Solution Architect native-tree and reader structural review and final exact-result acceptance",
+  "changedPaths": [
+    {
+      "state": " M",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/topic/Topic.java"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/MANIFEST.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/application-function/22bdac97fe0d48d1844f1e982d03d387.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md"
+    },
+    {
+      "state": " M",
+      "path": "enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md"
+    },
+    {
+      "state": "??",
+      "path": ".junie/reports/2026-11-14-mneme-mnemosyne-build-v001-increment-001.md"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/ContainerMetadata.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/ContentMetadata.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationCoordinates.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationRepresentation.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationSecurityContext.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnit.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnitIdentifier.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnitMetadata.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/InformationUnitRelationship.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/LifecycleContext.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/core/information/ManagementContext.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/topic/TopicMask.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationRepresentationTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationUnitIdentifierTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationUnitMetadataTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationUnitSerializationTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationUnitSummaryTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationUnitTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/core/information/InformationUnitVersionDistinctionTest.java"
+    },
+    {
+      "state": "??",
+      "path": "calliope/src/test/java/net/fhirfactory/harmonia/model/topic/TopicMaskTest.java"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/accepted-baseline-test-control.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/ai-agent-reports/20261115T050805Z-information-unit-final002-reconciliation.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport-v2/candidate.archimate"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport-v2/execution-status.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport-v2/invocation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport-v2/returned.xml"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport/execution-status.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/archi-transport/invocation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/README.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/continuum-rad.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/application.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/architecture-governance.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/business.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/cross-cutting-references.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/implementation-and-migration.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/motivation.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/strategy.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/parts/technology.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/publication.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/narrative/structure.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/Harmonia-Architecture.xml"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/README.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/continuum-catalogue.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/continuum.html"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/navigation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate-v2/reader/publication.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/README.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/continuum-rad.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/application.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/architecture-governance.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/business.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/cross-cutting-references.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/implementation-and-migration.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/motivation.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/strategy.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/parts/technology.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/publication.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/narrative/structure.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/Harmonia-Architecture.xml"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/README.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/continuum-catalogue.tex"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/continuum.html"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/navigation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/candidate/reader/publication.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/canonical-changes.patch"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/canonical-delta.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/canonical-inventory.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/canonical-validation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/change-review.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/checks/check-preservation.py"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/checks/reproduce-candidate.py"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/final-git-state.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/final-mechanical-checks.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/iteration-evidence-check.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/no-edit-review-v2.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/no-edit-review.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/predecessor-transport-correspondence.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/preservation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/projection-validation-v2.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/projection-validation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/raw-transport-comparison.json.gz"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/reproducibility.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/review-disposition/iteration-evidence-check.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/review-disposition/review-checkpoint.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/review-guide.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/review-link-validation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/source-link-validation-v2.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/source-link-validation.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/source-reconciliation.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/strict-transport-status.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/transport-summary.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/user-work-preservation-qualification.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/verification-commands-v2.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/verification-commands.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/after/verification-summary.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-solution-architect-review-disposition.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/baseline.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/review-disposition/hcrl-1.1.25-001.reviewed.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/evidence/1.1.25/001/before/review-disposition/state-at-entry.json"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.revised.draft.002.002.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.revised.draft.002.003.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.draft.001.001.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.draft.001.002.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-PetasosParcel-and-PetasosParcelMask.Final.001.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.md"
+    },
+    {
+      "state": "??",
+      "path": "enterprise-architecture/design/review/1.1.25/hcrl-1.1.25-001.pending.md"
+    }
+  ],
+  "unexpectedChanges": [],
+  "limits": "PASS covers only current mechanical recording/preservation/freshness checks. No change to historical results, CR-001 waiver, final architectural acceptance, redesign, Java/build, release increment, publication, HCRL completion, commit or push.",
+  "localMarkdownLinks": {
+    "status": "PASS",
+    "files": [
+      "enterprise-architecture/design/review/1.1.25/hcrl-1.1.25-001.pending.md",
+      "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-solution-architect-review-disposition.md",
+      "enterprise-architecture/design/evidence/1.1.25/001/after/review-disposition/review-checkpoint.md"
+    ],
+    "errors": [],
+    "limits": "Local file targets; no external/fragment or architectural review claim."
+  }
+}

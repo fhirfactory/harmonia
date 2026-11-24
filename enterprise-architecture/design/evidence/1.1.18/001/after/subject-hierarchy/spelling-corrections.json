@@ -1,0 +1,18 @@
+[
+  {
+    "xpath": "/*/*[6]/*/*[2]/*[4]/*[4]/*",
+    "before": "03 Authorisation-Enforcement",
+    "after": "03. Authorisation-Enforcement"
+  },
+  {
+    "xpath": "/*/*[6]/*/*[4]/*[1]",
+    "before": "3. Achitecture-Based-Views",
+    "after": "3. Architecture-Based-Views"
+  },
+  {
+    "kind": "native Grouping name",
+    "canonicalId": "549eaf0604764c01814641872404017f",
+    "before": "Processing-and-Worflow.Message-Processing-View.Assessments",
+    "after": "Processing-and-Workflow.Message-Processing-View.Assessments"
+  }
+]

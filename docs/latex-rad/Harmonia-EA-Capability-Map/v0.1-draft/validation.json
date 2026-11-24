@@ -1,0 +1,51 @@
+{
+  "result": "PASS",
+  "publication": "Harmonia-EA-Capability-Map",
+  "version": "0.1",
+  "source_documents": 18,
+  "source_blocks": 1674,
+  "counts": {
+    "business_ct1": 18,
+    "business_ct2": 39,
+    "business_ct3": 133,
+    "business_enabling_ct1": 0,
+    "business_enabling_ct2": 0,
+    "business_enabling_ct3": 0,
+    "business_enabling_tier_unresolved": 76,
+    "features": 137,
+    "functions": 147,
+    "services": 133,
+    "processes": 19,
+    "enterprise_capabilities": 14,
+    "candidate_business_concerns": 3,
+    "unresolved_catalogue_description_identities": 69,
+    "publication_element_records": 719
+  },
+  "pdf_pages": 711,
+  "index_entries": 719,
+  "unique_labels": 2419,
+  "undefined_references": 0,
+  "duplicate_labels": 0,
+  "duplicate_reference_ids": 0,
+  "capability_overviews": 283,
+  "authored_feature_overviews": 137,
+  "structural_canonical_ids": 204,
+  "unallocated_structural_ids": 515,
+  "duplicate_structural_ids": 0,
+  "reference_ids_unchanged": true,
+  "existing_latex_labels_retained": 2418,
+  "materially_constrained_capability_overviews": [
+    {
+      "reference_id": "HCM-BC-health-information-sharing-programme-management",
+      "latex_label": "cap:bc-health-information-sharing-programme-management",
+      "name": "Health Information Sharing Programme Management",
+      "architectural_status": "Candidate",
+      "reason": "Only the working name/spelling is established; the overview explicitly explains the missing semantic scope."
+    }
+  ],
+  "material_description_constraints": 84,
+  "uncovered_nonblank_source_lines": 0,
+  "overfull_boxes": 0,
+  "missing_glyphs": 0,
+  "pdf_sha256": "bddb2c9b9b47d2c20a65d7a1e172e6f3cb09e1950786d30a13c2dc14f49cfb91"
+}

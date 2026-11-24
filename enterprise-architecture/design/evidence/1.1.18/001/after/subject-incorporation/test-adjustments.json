@@ -1,0 +1,36 @@
+{
+  "sourceRevision": "763f97586685d5c4b9744509b067d95b9694d0db",
+  "purpose": "Support accepted Subject delta: exact retained-provenance fixture inputs and explicit new 1874/1909 population expectation. No validator or assertion removal.",
+  "before": [
+    {
+      "path": "enterprise-architecture/tooling/tests/test_continuum.py",
+      "sha256": "6eb5fe3c0de5af65c87e013d45b8e4ab542128ba4550fab79a29debdda40646f"
+    },
+    {
+      "path": "enterprise-architecture/tooling/tests/test_continuum_navigation.py",
+      "sha256": "f6572d2be9d16894afc031b14e2b96156d9f3853e6e9804e73aac75a4a79436b"
+    },
+    {
+      "path": "enterprise-architecture/tooling/tests/test_continuum_rad.py",
+      "sha256": "cd0cbd5d4a768a7439b9266c42e11e74027b6a5f7a4b89ab6da2b940c395f4d2"
+    }
+  ],
+  "after": [
+    {
+      "path": "enterprise-architecture/tooling/tests/test_continuum.py",
+      "sha256": "ecc74ff48022e0b0dd9da86e0b79b1535dc75272c6cdf2a97aaf446f48bd9185"
+    },
+    {
+      "path": "enterprise-architecture/tooling/tests/test_continuum_navigation.py",
+      "sha256": "015b572c734d8e8686b791ca76cb2d596dc5755aeb07b019bfb5cec5216c6d92"
+    },
+    {
+      "path": "enterprise-architecture/tooling/tests/test_continuum_rad.py",
+      "sha256": "9d32f8849934d96bd9135064be791b4afee26c6f5250c0a008aeda5a69e6e0d3"
+    },
+    {
+      "path": "enterprise-architecture/tooling/tests/current_source_fixture.py",
+      "sha256": "b37d4f0b5f6517d7a0964a478afded0a8072de986bca6e7c2e6b18e3be6b8329"
+    }
+  ]
+}

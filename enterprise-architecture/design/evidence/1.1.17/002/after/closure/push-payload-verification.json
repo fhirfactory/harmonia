@@ -1,0 +1,10 @@
+{
+  "commit": "27d90d77ee0608dda61cdc64cc6b5759cb899cb0",
+  "userAuthorisation": "Operative closure Task explicitly authorises commit and push of the complete accepted 1.1.17 architectural baseline using established repository workflow; subsequent dispositions reaffirm closure/transition.",
+  "remote": "https://github.com/fhirfactory/harmonia.git",
+  "branch": "Data-Governence-Services",
+  "changedFiles": 358,
+  "scope": "All changed files are architecture-release.json or enterprise-architecture/**, matching the expressly authorised accepted baseline, governed evidence and publications.",
+  "obviousCredentialPatternFindings": [],
+  "scanLimits": "Purpose-limited credential-pattern scan, not a general assurance of all sensitive content. Payload consists of the architecture/publication/evidence explicitly authorised by the Solution Architect."
+}

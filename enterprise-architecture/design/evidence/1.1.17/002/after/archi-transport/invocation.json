@@ -1,0 +1,43 @@
+{
+  "operator": "Codex executing the Solution Architect-authorised RAD 1.1.17 / 002 task",
+  "supportedArchiVersion": "5.10.0",
+  "executable": "/home/mhunter/Development/Tools/Archi/Archi",
+  "environment": {
+    "GDK_BACKEND": "x11",
+    "DISPLAY": ":0"
+  },
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "90s",
+    "/home/mhunter/Development/Tools/Archi/Archi",
+    "-nosplash",
+    "-consoleLog",
+    "-configuration",
+    "/tmp/harmonia-1117-002-config-display",
+    "-data",
+    "/tmp/harmonia-1117-002-workspace-display",
+    "-application",
+    "com.archimatetool.commandline.app",
+    "-a",
+    "--xmlexchange.import",
+    "/tmp/iteration002.xml",
+    "--saveModel",
+    "/tmp/harmonia-1117-002.archimate",
+    "--xmlexchange.export",
+    "/tmp/harmonia-1117-002-returned.xml",
+    "--xmlexchange.exportFolders",
+    "--xmlexchange.exportLang",
+    "en"
+  ],
+  "exitCode": 0,
+  "candidateSha256": "b3c1bd71497497eb64e39e754dc69443d8012c762ffa00b9221116f12f3578a1",
+  "retainedOutputs": [
+    "imported-model.archimate.gz",
+    "returned-model.xml.gz",
+    "execution.txt"
+  ],
+  "environmentRecovery": "Initial sandboxed attempt could not open the desktop display; approved isolated desktop-display execution succeeded. User native workbench files were not modified.",
+  "scope": "Actual import/export and saved native tree checks; no Solution Architect interactive inspection or architectural acceptance."
+}

@@ -1,0 +1,7 @@
+{
+  "status": "FAIL",
+  "command": "python3 -B .../release-closure/check-publication-correspondence.py",
+  "diagnostic": "AssertionError: ('narrative', 'continuum-rad.tex', '{\\\\Large Release 1.1.23\\\\par Previous release 1.1.21\\\\par}', 0)",
+  "cause": "Adapted auxiliary checker retained incorrect OLD.previous_version=1.1.21; pinned actual entry release is version=1.1.23, previous_version=1.1.22.",
+  "correction": "Exact fixture corrected to pinned release; assert now independently binds OLD to original closure input pins. All complete artifact comparisons remain. No publication or production-tooling bytes changed."
+}

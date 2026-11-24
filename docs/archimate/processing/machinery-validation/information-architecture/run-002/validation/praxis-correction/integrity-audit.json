@@ -1,0 +1,51 @@
+{
+  "archived_originals": {
+    "pre-containment-correction": 130,
+    "pre-context-completion": 92,
+    "pre-element-projection-correction": 120,
+    "pre-view-navigation-guard": 93
+  },
+  "candidate_bytes": 22215629,
+  "candidate_xml_sha256": "a451a6358e9c28ee95a2f14e339c01024ed7ea955d978d9fedaf8619be04c73f",
+  "frozen_files": 28,
+  "frozen_sha256": {
+    ".junie/reports/2026-10-20-information-architecture-machinery-run-001-naming.md": "ceef2fe42b4446afb4f1cdb082b91bcdcb2d1dd31a077a0cfb6fdb97cb3b8a09",
+    "architecture-release.json": "3ab2fd7b2b73733e2b4149fc4c682a8f0bf110c80b3543cf51200ebce3f47214",
+    "docs/archimate/exchange/ingest/1.0.10/Harmonia Architecture-1.0.10.archimate": "7c0a833f1ab0f0e5c789bfec50908c7daabc6013777a9f7731a9f8a7e07503de",
+    "docs/archimate/exchange/ingest/1.0.10/Harmonia Architecture-1.0.10.archimate.bak": "d6debc863310e50e27332e52f9d7f964e9be81f66bb8170c01fa9392e4e4ffbf",
+    "docs/archimate/exchange/ingest/1.0.10/harmonia-architecture-1.0.10.xml": "034dd70974245523ec11b503a9cf0535827d9ff6f161cafcabf002555dbf16ed",
+    "docs/archimate/exchange/publish/1.0.10/Harmonia-Architecture-1.0.10.xml": "b1036f745e8ae3754951cd123b2b1a54a7eaa76c5fa83933abbd11ff2d4153bc",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/baseline-naming-preview.json": "136809ed8d5f259937a6c6e3bff6901a57d4a843f449356b8747b30659f4653c",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/candidate.xml": "4bd981b239393c1ce09d5a831b52b1ebe82daf4807139e5414c25ec3e91a28a3",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/candidate.xml.gz": "3a7bb8b1bf06f5432981c254f8ae73f389b913a6fa7b6de5b3b5468bb7829214",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/change-review.json.gz": "2863092fab80ec4176106f11e40fe1c54df77af0fbe9da219d044a9753505090",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/governance/archimate-ingestion-publication-semantics.md.gz": "4affced0c6b1770b93221647837b3b0dc61bbdebca3aa1dc1e215220a61e8b13",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/governance/architecture-modelling-strategy.md.gz": "19455fe1ba89146d47f641c7fe7b5a1823f6baaaab07b9e3f2a8124075c2c790",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/governance/architecture-release-policy.md.gz": "6e68c29e114c49338010f2dcb0b5e5a4c8e7f38a1c0fe39964005a47a45004f7",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/governance/canonical-identity-and-naming.md.gz": "7b3bb9fbd9fbd0b7171da7531a2f4da2042b73c6cf9de8ce3f1aac5bd45e243a",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/governance/manifest.json": "beec9f82b75ef4953b242e9e80a7b66d4bf6473ccd990211efb0c9ffbe4a1df4",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/manifest.json": "2b14bb863beb6029490863bc8a08d7fad134988bee091b93d384f8736af541c3",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/proposed-metadata.json": "4c0ee6607a7fbdc9a03df1e47adc7435947fb467a6b7cba4b7eaad34a096d311",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/representation-rebindings.json": "702912d1a51769f55004eaed127b0421b84c99ee3a8b160a86445c0de69d940d",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/validation/architecture-tests.log.gz": "59ba9dc873f0e73936e6965a1f363effb0d2cb1177c24f57d9498854613553c0",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/validation/focused-tests.log.gz": "c5b79fc99406a5f7fbbb838d0c79e9c6abbe31e72902b18a36778a05343e868c",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/validation/framework-tests.log.gz": "dc86917bbd0ccb2ec64a9f54d44a71eb23025718c67e8b992690363bfbf0fbf6",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/validation/generation.log.gz": "7814882ace00564deaa70ea9a8e45d0c2d98b3e88fa387e58eb9178d910b3ea0",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/validation/initial-focused-tests.log.gz": "bd598a099071393b214ecd0193e9528488998c81709f99c800e74a839a36e7e7",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/validation/manifest.json": "c9debdd9389a4f1be79fd3c60a7f421c8c64954dc9cb171ff8b2d3dec932f585",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/validation/release-check.json": "3ab2fd7b2b73733e2b4149fc4c682a8f0bf110c80b3543cf51200ebce3f47214",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/validation/replay-check.log.gz": "645f934c6e8673c22e7c6dcb5db2deb5661730546afbede35a68babfaf6a0d2a",
+    "docs/archimate/processing/machinery-validation/information-architecture/run-001/verification.json": "5e96945b60c70b7cb202442b599abacb79190937611e13772cad32d83b419ebb",
+    "docs/archimate/processing/machinery-validation/information-architecture/specimen.json": "a25fe78df5d40d22f4a6f4cd1df3e6ebda106ab8d1503ef51365da66951d456f"
+  },
+  "generated_outputs": 92,
+  "live_and_archived_machinery_sources": 85,
+  "no_rad110_exchange": true,
+  "no_rad110_publication": true,
+  "no_run003": true,
+  "release": {
+    "previous_version": "1.0.9",
+    "version": "1.0.10"
+  },
+  "status": "PASS"
+}

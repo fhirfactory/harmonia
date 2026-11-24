@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd" identifier="test-roundtrip-model">
+  <name xml:lang="en">NON-GOVERNED Synthetic Future Contract</name>
+  <documentation xml:lang="en">Increment 1 transport fixture only. Not Harmonia architecture. Literal qualified test names do not establish a derivation grammar. Never merge this model into the accepted architecture.</documentation>
+  <elements>
+    <element identifier="test-capability" xsi:type="Capability">
+      <name xml:lang="en">[CT3] Synthetic Transport Capability</name>
+      <documentation xml:lang="en">Entirely synthetic test responsibility, unrelated to any governed element.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">00000000000040008000000000000001</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">[CT3] Synthetic Transport Capability</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">SyntheticRoot.SyntheticContext.SyntheticTransportCapability</value>
+        </property>
+        <property propertyDefinitionRef="propid-4">
+          <value xml:lang="en">CT1-BEC-SYNTHETIC-ROOT.CT2-BEC-SYNTHETIC-CONTEXT.CT3-BEC-SYNTHETIC-TRANSPORT-CAPABILITY</value>
+        </property>
+        <property propertyDefinitionRef="propid-5">
+          <value xml:lang="en">Capability</value>
+        </property>
+      </properties>
+    </element>
+    <element identifier="test-feature" xsi:type="Capability">
+      <name xml:lang="en">[FT] Synthetic Transport Feature</name>
+      <documentation xml:lang="en">Uses the existing Feature as native Capability specialisation pattern. It asserts no new Harmonia semantic type.</documentation>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">1234567890ab4def8123456789abcde0</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">[FT] Synthetic Transport Feature</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">SyntheticRoot.SyntheticContext.SyntheticTransportCapability.SyntheticTransportFeature</value>
+        </property>
+        <property propertyDefinitionRef="propid-4">
+          <value xml:lang="en">CT1-BEC-SYNTHETIC-ROOT.CT2-BEC-SYNTHETIC-CONTEXT.CT3-BEC-SYNTHETIC-TRANSPORT-CAPABILITY.FEAT-SYNTHETIC-TRANSPORT</value>
+        </property>
+        <property propertyDefinitionRef="propid-5">
+          <value xml:lang="en">Capability</value>
+        </property>
+        <property propertyDefinitionRef="propid-6">
+          <value xml:lang="en">Feature</value>
+        </property>
+        <property propertyDefinitionRef="propid-7">
+          <value xml:lang="en">feature</value>
+        </property>
+      </properties>
+    </element>
+    <element identifier="test-function" xsi:type="BusinessFunction">
+      <name xml:lang="en">Synthetic Transport Function</name>
+      <properties>
+        <property propertyDefinitionRef="propid-1">
+          <value xml:lang="en">abcdef0123454abc8def0123456789ab</value>
+        </property>
+        <property propertyDefinitionRef="propid-2">
+          <value xml:lang="en">Synthetic Transport Function</value>
+        </property>
+        <property propertyDefinitionRef="propid-3">
+          <value xml:lang="en">SyntheticRoot.SyntheticContext.SyntheticTransportCapability.SyntheticTransportFunction</value>
+        </property>
+        <property propertyDefinitionRef="propid-4">
+          <value xml:lang="en">CT1-BEC-SYNTHETIC-ROOT.CT2-BEC-SYNTHETIC-CONTEXT.CT3-BEC-SYNTHETIC-TRANSPORT-CAPABILITY.FN-SYNTHETIC-TRANSPORT</value>
+        </property>
+        <property propertyDefinitionRef="propid-5">
+          <value xml:lang="en">BusinessFunction</value>
+        </property>
+      </properties>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="test-realization" source="test-function" target="test-feature" xsi:type="Realization">
+      <name xml:lang="en">Synthetic realization</name>
+      <documentation xml:lang="en">Relationship transport probe; no relationship canonical identity is allocated.</documentation>
+    </relationship>
+  </relationships>
+  <organizations>
+    <item>
+      <label xml:lang="en">Strategy</label>
+      <item identifierRef="test-capability" />
+      <item identifierRef="test-feature" />
+    </item>
+    <item>
+      <label xml:lang="en">Business</label>
+      <item identifierRef="test-function" />
+    </item>
+    <item>
+      <label xml:lang="en">Relations</label>
+      <item identifierRef="test-realization" />
+    </item>
+    <item>
+      <label xml:lang="en">Views</label>
+      <item identifierRef="test-view" />
+    </item>
+  </organizations>
+  <propertyDefinitions>
+    <propertyDefinition identifier="propid-5" type="string">
+      <name>archimateType</name>
+    </propertyDefinition>
+    <propertyDefinition identifier="propid-1" type="string">
+      <name>canonicalId</name>
+    </propertyDefinition>
+    <propertyDefinition identifier="propid-4" type="string">
+      <name>canonicalName</name>
+    </propertyDefinition>
+    <propertyDefinition identifier="propid-2" type="string">
+      <name>displayName</name>
+    </propertyDefinition>
+    <propertyDefinition identifier="propid-3" type="string">
+      <name>friendlyName</name>
+    </propertyDefinition>
+    <propertyDefinition identifier="propid-6" type="string">
+      <name>harmoniaType</name>
+    </propertyDefinition>
+    <propertyDefinition identifier="propid-7" type="string">
+      <name>v0.2 / Construct Type</name>
+    </propertyDefinition>
+  </propertyDefinitions>
+  <views>
+    <diagrams>
+      <view identifier="test-view" xsi:type="Diagram">
+        <name xml:lang="en">Synthetic Transport View</name>
+        <documentation xml:lang="en">Coordinates, dimensions, annotation, membership and ordered routing are transport evidence only.</documentation>
+        <node identifier="test-capability-node" elementRef="test-capability" xsi:type="Element" x="40" y="40" w="360" h="100">
+          <style>
+            <fillColor r="245" g="222" b="170" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="test-feature-node" elementRef="test-feature" xsi:type="Element" x="480" y="40" w="360" h="100">
+          <style>
+            <fillColor r="245" g="222" b="170" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="test-function-node" elementRef="test-function" xsi:type="Element" x="40" y="240" w="360" h="100">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="test-label" xsi:type="Label" x="480" y="240" w="360" h="100">
+          <label xml:lang="en">NON-GOVERNED TEST ONLY</label>
+          <style>
+            <fillColor r="255" g="255" b="255" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <connection identifier="test-connection" relationshipRef="test-realization" xsi:type="Relationship" source="test-function-node" target="test-feature-node">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Sans" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+          <bendpoint x="440" y="290" />
+          <bendpoint x="440" y="90" />
+        </connection>
+      </view>
+    </diagrams>
+  </views>
+</model>

@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "document": "docs/markdown/governance/architecture-authoring-praxis.md",
+      "before": null,
+      "after": "59176f0ded3483a150117b266977c31e243bc79e78477a7083876bde787c33ed"
+    }
+  ],
+  "scope": "New current lifecycle authority pin only; existing pins, semantic correspondence and recovery history unchanged."
+}

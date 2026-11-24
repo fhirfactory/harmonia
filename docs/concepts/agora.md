@@ -1,6 +1,23 @@
 # Concept: Agora `[IMPLEMENTED]`
 
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Agora control and Omilia operations](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+```text
+---------------------------------------------------------
+```
+
 Agora is Harmonia's first-class collaboration integration framework, establishing an authoritative, governed architectural boundary between the Harmonia Health Integration Environment (HIE) and the Matrix Synapse collaboration ecosystem.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -9,9 +26,38 @@ Agora is Harmonia's first-class collaboration integration framework, establishin
 - **Greek Term**: *Ἀγορά* (Agora)
 - **Etymology**: Ancient Greek feminine noun derived from the verb *ἀγείρω* (*ageirō* — "to gather", "to assemble", "to bring together").
 - **Historical & Cultural Context**: In the ancient Greek polis (most famously the Agora of Athens), the agora was the civic center, central open assembly, and heart of community life. It was where citizens gathered to debate political policies, conduct commercial trade, meet colleagues, hear philosophical discourses, and receive public decrees. It was flanked by civic temples, law courts, and administrative magistrates.
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Harmonia native collaboration and control](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+```text
+---------------------------------------------------------
+```
+
 - **Architectural Rationale**: Healthcare is an inherently collaborative, multidisciplinary practice: physicians, nursing staff, clinical pharmacists, laboratory scientists, and imaging specialists must converse, coordinate care handoffs, review metrics, and resolve tasks in real time. Agora serves as Harmonia's digital gathering place, projecting structured clinical events and care team relationships into secure Matrix spaces and chat rooms while maintaining strict administrative governance and zero PHI leakage.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Native collaboration ownership and conduit behaviour](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#information-ownership)
+
+```text
+---------------------------------------------------------
+```
 
 ## 2. Core Architectural Principle `[IMPLEMENTED]`
 
@@ -21,6 +67,11 @@ Agora is Harmonia's first-class collaboration integration framework, establishin
 - **Collaboration Boundary**: Matrix Synapse provides authorized collaboration, communication, and notification surfaces only.
 - **Subordinate Metadata**: Matrix room topics, aliases, and membership states are subordinate projections of Harmonia's authoritative state in Mnemosyne.
 - **Non-Authoritative Retention**: Matrix homeserver message stores are subject to ephemeral retention limits (default 90 days). Clinical decisions, notes, and task outputs must be committed back to Mnemosyne FHIR storage.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -40,11 +91,38 @@ agora/
 $$\text{agora-service} \longrightarrow \text{agora-core} \longrightarrow \text{agora-matrix}$$
 $$\text{agora-core} \longrightarrow \text{agora-api} \longleftarrow \text{calliope}, \text{themis-api}, \text{petasos-api}$$
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C18 — Agora isolation and collaboration boundaries](../markdown/05-information-systems-architecture/component-register.md#c18)
+
+```text
+---------------------------------------------------------
+```
+
 - **Zero Ponos Dependency**: Direct dependency on Ponos (`net.fhirfactory.harmonia.energeia.ponos..`) is strictly prohibited. Agora coordinates with workflows exclusively via Petasos queues (`petasos.queue.agora.*`).
 - **Matrix DTO Encapsulation**: Matrix protocol JSON structures (Client-Server and Synapse Admin DTOs) are strictly quarantined within `agora-matrix` and never leak into `agora-core` public interfaces or downstream Harmonia components.
 - **Paradeigma Isolation**: Agora production code must never declare dependencies on or import Paradeigma simulation modules.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ---
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Adjudicated responsibilities and deferred detailed decisions](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#deferred-collaboration-design)
+
+```text
+---------------------------------------------------------
+```
 
 ## 4. Key Architecture Decision Records (ADRs) `[IMPLEMENTED]`
 
@@ -61,7 +139,24 @@ The architecture of Agora is governed by eight formal platform Architecture Deci
 | **AGORA-ADR-007** | AS Transaction Idempotency | **Durable Transaction Deduplication**. Homeserver transaction IDs (`txnId`) are recorded in table `agora_as_transactions` to guarantee zero duplicate business effects in Harmonia across homeserver retries. | `[IMPLEMENTED]` |
 | **AGORA-ADR-008** | Room Archival Lifecycle | **Soft Retirement & Archival**. When an encounter concludes, Agora updates rooms to read-only (`m.room.power_levels`), kicks active participants, and marks mappings as `ARCHIVED` in Mnemosyne. | `[IMPLEMENTED]` |
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Omilia user operations and deferred API contract](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#application-services-api)
+
+```text
+---------------------------------------------------------
+```
 
 ## 5. Identity Resolution & Mapping `[IMPLEMENTED]`
 
@@ -83,7 +178,24 @@ Agora provisions deterministic, opaque Matrix identities via `AgoraIdentityServi
      - `matrix_entity_id`: `@_harmonia_p_<uuid>:synapse`
      - `status`: `ACTIVE`
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Managed Room intent and deferred taxonomy](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+```text
+---------------------------------------------------------
+```
 
 ## 6. Collaboration Projections & Room Lifecycles `[IMPLEMENTED]`
 
@@ -127,9 +239,42 @@ When a patient encounter is initiated or requested via `AgoraSpaceRequest`:
      `PUT /_matrix/client/v3/rooms/{childRoomId}/state/m.space.parent/{spaceRoomId}`
      Payload: `{"canonical": true, "via": ["synapse"]}`.
 
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C18 — Agora](../markdown/05-information-systems-architecture/component-register.md#c18)
+- [Candidate collaboration feature F22](../markdown/05-information-systems-architecture/candidate-feature-map.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### 6.2 Practitioner Spaces & Group Collaboration
 - **Practitioner Space**: Personal collaboration space for an individual practitioner, housing child rooms partitioned by `PractitionerRole`.
 - **Group Collaboration Rooms**: Ad-hoc or ward-based rooms for clinical teams, registered under `RESOURCE_TYPE_GROUP`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Deferred managed Room lifecycle and retention](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#deferred-collaboration-design)
+
+```text
+---------------------------------------------------------
+```
 
 ### 6.3 Soft Archival Lifecycle (AGORA-ADR-008)
 Upon patient discharge or encounter completion:
@@ -138,7 +283,24 @@ Upon patient discharge or encounter completion:
 3. Active participants are kicked via `MatrixClientAdapter.kickUser(...)`.
 4. The mapping record in `agora_resource_mappings` transitions from `ACTIVE` to `ARCHIVED`.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Governed collaboration and Kleio audit boundary](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#dialogue-logging-and-audit)
+
+```text
+---------------------------------------------------------
+```
 
 ## 7. Security Governance & Authorization (Themis) `[IMPLEMENTED]`
 
@@ -155,7 +317,24 @@ Collaboration actions are strictly governed by **Themis** default-deny policy ev
 - **Default-Deny Invariant**: Any request lacking explicit granted authorities evaluates to `ThemisDecision.DENY`.
 - **Zero-PHI Audit**: All authorization decisions emit structured audit events to `petasos.queue.agora.audit` without unmasked patient details.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Agora membership intent and roster SEP](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#membership-and-roster)
+
+```text
+---------------------------------------------------------
+```
 
 ## 8. Care Team Reconciliation Engine `[IMPLEMENTED]`
 
@@ -169,7 +348,24 @@ Care team membership is authoritatively governed by Harmonia's Provider Registry
    - **Unauthorized Members** (Live Members $\setminus$ Authoritative Care Team): Evaluates Themis authorization and executes `MatrixClientAdapter.kickUser(roomId, userId, "Membership reconciliation: no longer authorized")`.
 4. **Audit Reporting**: Returns an `AgoraReconciliationResult` summarizing invited, kicked, retained, and denied members.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Bidirectional Application Services API and defined capture](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#application-services-api)
+
+```text
+---------------------------------------------------------
+```
 
 ## 9. Application Service & Petasos Transport Ingestion `[IMPLEMENTED]`
 
@@ -211,3 +407,7 @@ sequenceDiagram
 - **Outbound Queue**: `petasos.queue.agora.outbound`
 - **Audit Queue**: `petasos.queue.agora.audit`
 - **Events Topic**: `petasos.topic.agora.events`
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```

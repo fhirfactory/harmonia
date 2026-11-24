@@ -1,0 +1,2430 @@
+{
+  "sourceSha256": "bf3529fd2cb322918c91100b85fc8dcb72873e6cdb42302f918faad2e99bfa61",
+  "records": [
+    {
+      "sourcePointer": "/elements/changed/99/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-771158ad93925187bc9351f47437a191",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-771158ad93925187bc9351f47437a191]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/99/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-771158ad93925187bc9351f47437a191",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-771158ad93925187bc9351f47437a191]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/99/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-771158ad93925187bc9351f47437a191",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-771158ad93925187bc9351f47437a191]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/99/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-771158ad93925187bc9351f47437a191",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-771158ad93925187bc9351f47437a191]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "OperationalDiagnostics",
+        "after": "OperationsAndAssurance.OperationalDiagnostics",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/100/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-77dfe914f07a4cd6bf6f7bb1c48dd20f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-77dfe914f07a4cd6bf6f7bb1c48dd20f]/name[1]/text()",
+        "before": "Information-Management.Information-Sovereignty-and-Residency.Principles",
+        "after": "[SolutionFacet] InformationManagement.InformationSovereigntyAndResidency.Principles",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/100/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-77dfe914f07a4cd6bf6f7bb1c48dd20f",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-77dfe914f07a4cd6bf6f7bb1c48dd20f]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/100/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-77dfe914f07a4cd6bf6f7bb1c48dd20f",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-77dfe914f07a4cd6bf6f7bb1c48dd20f]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/100/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-77dfe914f07a4cd6bf6f7bb1c48dd20f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-77dfe914f07a4cd6bf6f7bb1c48dd20f]/properties[1]/property[key=displayName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/100/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-77dfe914f07a4cd6bf6f7bb1c48dd20f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-77dfe914f07a4cd6bf6f7bb1c48dd20f]/properties[1]/property[key=displayName]/value[1]/text()",
+        "before": "Information-Management.Information-Sovereignty-and-Residency.Principles",
+        "after": "Information Sovereignty and Residency - Principles",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/100/differences/5",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-77dfe914f07a4cd6bf6f7bb1c48dd20f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-77dfe914f07a4cd6bf6f7bb1c48dd20f]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/100/differences/6",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-77dfe914f07a4cd6bf6f7bb1c48dd20f",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-77dfe914f07a4cd6bf6f7bb1c48dd20f]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "InformationManagementInformationSovereigntyAndResidencyPrinciples",
+        "after": "InformationManagement.InformationSovereigntyAndResidency.Principles",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/101/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-784af4f480a051f99d91b26f22922d0a",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-784af4f480a051f99d91b26f22922d0a]/name[1]/text()",
+        "before": "Operations and Assurance",
+        "after": "[SolutionFacet] OperationsAndAssurance",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/101/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-784af4f480a051f99d91b26f22922d0a",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-784af4f480a051f99d91b26f22922d0a]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/101/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-784af4f480a051f99d91b26f22922d0a",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-784af4f480a051f99d91b26f22922d0a]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/102/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7889b179a0ff4e2b99dd112f11136081",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7889b179a0ff4e2b99dd112f11136081]/name[1]/text()",
+        "before": "Security-and-Authorisation.Security-Administration.Constraints",
+        "after": "[SolutionFacet] SecurityAndManagement.SecurityAdministration.Constraints",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/102/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7889b179a0ff4e2b99dd112f11136081",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7889b179a0ff4e2b99dd112f11136081]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/102/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7889b179a0ff4e2b99dd112f11136081",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7889b179a0ff4e2b99dd112f11136081]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/102/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7889b179a0ff4e2b99dd112f11136081",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7889b179a0ff4e2b99dd112f11136081]/properties[1]/property[key=displayName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/102/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7889b179a0ff4e2b99dd112f11136081",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7889b179a0ff4e2b99dd112f11136081]/properties[1]/property[key=displayName]/value[1]/text()",
+        "before": "Security-and-Authorisation.Security-Administration.Constraints",
+        "after": "Security Administration - Constraints",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/102/differences/5",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7889b179a0ff4e2b99dd112f11136081",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7889b179a0ff4e2b99dd112f11136081]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/102/differences/6",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7889b179a0ff4e2b99dd112f11136081",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7889b179a0ff4e2b99dd112f11136081]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "SecurityAndAuthorisationSecurityAdministrationConstraints",
+        "after": "SecurityAndManagement.SecurityAdministration.Constraints",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/103/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-79f746bbd71154fc9a31955abc5622dd",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-79f746bbd71154fc9a31955abc5622dd]/name[1]/text()",
+        "before": "Exceptional and Emergency Consent",
+        "after": "[SolutionFacet] ConsentAndInformationSharing.ExceptionalAndEmergencyConsent",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/103/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-79f746bbd71154fc9a31955abc5622dd",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-79f746bbd71154fc9a31955abc5622dd]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/103/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-79f746bbd71154fc9a31955abc5622dd",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-79f746bbd71154fc9a31955abc5622dd]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/103/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-79f746bbd71154fc9a31955abc5622dd",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-79f746bbd71154fc9a31955abc5622dd]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/103/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-79f746bbd71154fc9a31955abc5622dd",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-79f746bbd71154fc9a31955abc5622dd]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "ExceptionalAndEmergencyConsent",
+        "after": "ConsentAndInformationSharing.ExceptionalAndEmergencyConsent",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/104/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7a55306d968d4e799451c9833ac60377",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7a55306d968d4e799451c9833ac60377]/name[1]/text()",
+        "before": "Security-and-Authorisation.Information-Protection.Stakeholders",
+        "after": "[SolutionFacet] SecurityAndManagement.InformationProtection.Stakeholders",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/104/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7a55306d968d4e799451c9833ac60377",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7a55306d968d4e799451c9833ac60377]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/104/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7a55306d968d4e799451c9833ac60377",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7a55306d968d4e799451c9833ac60377]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/104/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7a55306d968d4e799451c9833ac60377",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7a55306d968d4e799451c9833ac60377]/properties[1]/property[key=displayName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/104/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7a55306d968d4e799451c9833ac60377",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7a55306d968d4e799451c9833ac60377]/properties[1]/property[key=displayName]/value[1]/text()",
+        "before": "Security-and-Authorisation.Information-Protection.Stakeholders",
+        "after": "Information Protection - Stakeholders",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/104/differences/5",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7a55306d968d4e799451c9833ac60377",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7a55306d968d4e799451c9833ac60377]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/104/differences/6",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7a55306d968d4e799451c9833ac60377",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7a55306d968d4e799451c9833ac60377]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "SecurityAndAuthorisationInformationProtectionStakeholders",
+        "after": "SecurityAndManagement.InformationProtection.Stakeholders",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/105/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7c52fd5b61275378b6d2751af8c212ad",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7c52fd5b61275378b6d2751af8c212ad]/name[1]/text()",
+        "before": "Directory Information Maintenance",
+        "after": "[SolutionFacet] ProviderDirectory.DirectoryInformationMaintenance",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/105/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7c52fd5b61275378b6d2751af8c212ad",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7c52fd5b61275378b6d2751af8c212ad]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/105/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7c52fd5b61275378b6d2751af8c212ad",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7c52fd5b61275378b6d2751af8c212ad]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/105/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7c52fd5b61275378b6d2751af8c212ad",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7c52fd5b61275378b6d2751af8c212ad]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/105/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7c52fd5b61275378b6d2751af8c212ad",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7c52fd5b61275378b6d2751af8c212ad]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "DirectoryInformationMaintenance",
+        "after": "ProviderDirectory.DirectoryInformationMaintenance",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/106/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7cdc16c98037500d9eb63dfc591b5ca5",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7cdc16c98037500d9eb63dfc591b5ca5]/name[1]/text()",
+        "before": "Audit Generation",
+        "after": "[SolutionFacet] AuditAndAccountability.AuditGeneration",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/106/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7cdc16c98037500d9eb63dfc591b5ca5",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7cdc16c98037500d9eb63dfc591b5ca5]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/106/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7cdc16c98037500d9eb63dfc591b5ca5",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7cdc16c98037500d9eb63dfc591b5ca5]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/106/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7cdc16c98037500d9eb63dfc591b5ca5",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7cdc16c98037500d9eb63dfc591b5ca5]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/106/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7cdc16c98037500d9eb63dfc591b5ca5",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7cdc16c98037500d9eb63dfc591b5ca5]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "AuditGeneration",
+        "after": "AuditAndAccountability.AuditGeneration",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/107/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7dee5f64d6f1554b9902c672d7b88794",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7dee5f64d6f1554b9902c672d7b88794]/name[1]/text()",
+        "before": "Terminology Definition and Maintenance",
+        "after": "[SolutionFacet] TerminologyAndReferenceData.TerminologyDefinitionAndMaintenance",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/107/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7dee5f64d6f1554b9902c672d7b88794",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7dee5f64d6f1554b9902c672d7b88794]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/107/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7dee5f64d6f1554b9902c672d7b88794",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7dee5f64d6f1554b9902c672d7b88794]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/107/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7dee5f64d6f1554b9902c672d7b88794",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7dee5f64d6f1554b9902c672d7b88794]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/107/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-7dee5f64d6f1554b9902c672d7b88794",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-7dee5f64d6f1554b9902c672d7b88794]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "TerminologyDefinitionAndMaintenance",
+        "after": "TerminologyAndReferenceData.TerminologyDefinitionAndMaintenance",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/108/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-806a31e08c7c545f957bfe59c5d79de3",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-806a31e08c7c545f957bfe59c5d79de3]/name[1]/text()",
+        "before": "AX-18 Integration and Coordination Do Not Confer Domain Authority",
+        "after": "[ArchitecturalAxiom] AX-18 Integration and Coordination Do Not Confer Domain Authority",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/108/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-806a31e08c7c545f957bfe59c5d79de3",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-806a31e08c7c545f957bfe59c5d79de3]/properties[1]/child-order",
+        "before": [
+          "property[key=v0.2 / Native Definition ID]",
+          "property[key=v0.2 / Architectural Status]",
+          "property[key=v0.2 / Architecture Identity Status]",
+          "property[key=v0.2 / Source Path]",
+          "property[key=v0.2 / Source SHA256]",
+          "property[key=Baseline / Native Definition ID]",
+          "property[key=Baseline / Record State]",
+          "property[key=Baseline / Architectural Status]",
+          "property[key=Baseline / Source Path]",
+          "property[key=Baseline / Source Section]",
+          "property[key=Baseline / Source SHA256]",
+          "property[key=Baseline / Architecture Identity Status]",
+          "property[key=Baseline / Source Projection Key]",
+          "property[key=Baseline / Review State]",
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=canonicalName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=v0.2 / Native Definition ID]",
+          "property[key=v0.2 / Architectural Status]",
+          "property[key=v0.2 / Architecture Identity Status]",
+          "property[key=v0.2 / Source Path]",
+          "property[key=v0.2 / Source SHA256]",
+          "property[key=Baseline / Native Definition ID]",
+          "property[key=Baseline / Record State]",
+          "property[key=Baseline / Architectural Status]",
+          "property[key=Baseline / Source Path]",
+          "property[key=Baseline / Source Section]",
+          "property[key=Baseline / Source SHA256]",
+          "property[key=Baseline / Architecture Identity Status]",
+          "property[key=Baseline / Source Projection Key]",
+          "property[key=Baseline / Review State]",
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=canonicalName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/108/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-806a31e08c7c545f957bfe59c5d79de3",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-806a31e08c7c545f957bfe59c5d79de3]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "ArchitecturalAxiom",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/109/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8100e735849d4346bcc0c3146f47f5bd",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8100e735849d4346bcc0c3146f47f5bd]/name[1]/text()",
+        "before": "Performance-and-Capacity.Throughput.Requirements",
+        "after": "[SolutionFacet] PerformanceAndCapacity.Throughput.Requirements",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/109/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8100e735849d4346bcc0c3146f47f5bd",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8100e735849d4346bcc0c3146f47f5bd]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/109/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8100e735849d4346bcc0c3146f47f5bd",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8100e735849d4346bcc0c3146f47f5bd]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/109/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8100e735849d4346bcc0c3146f47f5bd",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8100e735849d4346bcc0c3146f47f5bd]/properties[1]/property[key=displayName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/109/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8100e735849d4346bcc0c3146f47f5bd",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8100e735849d4346bcc0c3146f47f5bd]/properties[1]/property[key=displayName]/value[1]/text()",
+        "before": "Performance-and-Capacity.Throughput.Requirements",
+        "after": "Throughput - Requirements",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/109/differences/5",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8100e735849d4346bcc0c3146f47f5bd",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8100e735849d4346bcc0c3146f47f5bd]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/109/differences/6",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8100e735849d4346bcc0c3146f47f5bd",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8100e735849d4346bcc0c3146f47f5bd]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "PerformanceAndCapacityThroughputRequirements",
+        "after": "PerformanceAndCapacity.Throughput.Requirements",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/110/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-83f12e6b714050f5a6648b03707484e0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-83f12e6b714050f5a6648b03707484e0]/name[1]/text()",
+        "before": "Interaction Reliability",
+        "after": "[SolutionFacet] InteroperabilityAndIntegration.InteractionReliability",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/110/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-83f12e6b714050f5a6648b03707484e0",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-83f12e6b714050f5a6648b03707484e0]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/110/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-83f12e6b714050f5a6648b03707484e0",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-83f12e6b714050f5a6648b03707484e0]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/110/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-83f12e6b714050f5a6648b03707484e0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-83f12e6b714050f5a6648b03707484e0]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/110/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-83f12e6b714050f5a6648b03707484e0",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-83f12e6b714050f5a6648b03707484e0]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "InteractionReliability",
+        "after": "InteroperabilityAndIntegration.InteractionReliability",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/111/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-869980a1ea9a4f7ba17772184f7b2274",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-869980a1ea9a4f7ba17772184f7b2274]/name[1]/text()",
+        "before": "Processing-and-Workflow.Concurrency-Management.Principles",
+        "after": "[SolutionFacet] ProcessingAndWorkflow.ConcurrencyManagement.Principles",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/111/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-869980a1ea9a4f7ba17772184f7b2274",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-869980a1ea9a4f7ba17772184f7b2274]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/111/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-869980a1ea9a4f7ba17772184f7b2274",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-869980a1ea9a4f7ba17772184f7b2274]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/111/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-869980a1ea9a4f7ba17772184f7b2274",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-869980a1ea9a4f7ba17772184f7b2274]/properties[1]/property[key=displayName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/111/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-869980a1ea9a4f7ba17772184f7b2274",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-869980a1ea9a4f7ba17772184f7b2274]/properties[1]/property[key=displayName]/value[1]/text()",
+        "before": "Processing-and-Workflow.Concurrency-Management.Principles",
+        "after": "Concurrency Management - Principles",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/111/differences/5",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-869980a1ea9a4f7ba17772184f7b2274",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-869980a1ea9a4f7ba17772184f7b2274]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/111/differences/6",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-869980a1ea9a4f7ba17772184f7b2274",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-869980a1ea9a4f7ba17772184f7b2274]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "ProcessingAndWorkflowConcurrencyManagementPrinciples",
+        "after": "ProcessingAndWorkflow.ConcurrencyManagement.Principles",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/112/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-87516cb980b5488482bab331a911b0d6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-87516cb980b5488482bab331a911b0d6]/name[1]/text()",
+        "before": "Interoperability-and-Integration.External-Connectivity.Principles",
+        "after": "[SolutionFacet] InteroperabilityAndIntegration.ExternalConnectivity.Principles",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/112/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-87516cb980b5488482bab331a911b0d6",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-87516cb980b5488482bab331a911b0d6]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/112/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-87516cb980b5488482bab331a911b0d6",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-87516cb980b5488482bab331a911b0d6]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/112/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-87516cb980b5488482bab331a911b0d6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-87516cb980b5488482bab331a911b0d6]/properties[1]/property[key=displayName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/112/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-87516cb980b5488482bab331a911b0d6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-87516cb980b5488482bab331a911b0d6]/properties[1]/property[key=displayName]/value[1]/text()",
+        "before": "Interoperability-and-Integration.External-Connectivity.Principles",
+        "after": "External Connectivity - Principles",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/112/differences/5",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-87516cb980b5488482bab331a911b0d6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-87516cb980b5488482bab331a911b0d6]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/112/differences/6",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-87516cb980b5488482bab331a911b0d6",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-87516cb980b5488482bab331a911b0d6]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "InteroperabilityAndIntegrationExternalConnectivityPrinciples",
+        "after": "InteroperabilityAndIntegration.ExternalConnectivity.Principles",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/113/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-889cae531e4c51e0a50d441425553606",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-889cae531e4c51e0a50d441425553606]/name[1]/text()",
+        "before": "Information Lifecycle",
+        "after": "[SolutionFacet] InformationManagement.InformationLifecycle",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/113/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-889cae531e4c51e0a50d441425553606",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-889cae531e4c51e0a50d441425553606]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/113/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-889cae531e4c51e0a50d441425553606",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-889cae531e4c51e0a50d441425553606]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/113/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-889cae531e4c51e0a50d441425553606",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-889cae531e4c51e0a50d441425553606]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/113/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-889cae531e4c51e0a50d441425553606",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-889cae531e4c51e0a50d441425553606]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "InformationLifecycle",
+        "after": "InformationManagement.InformationLifecycle",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/114/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-89557de9c4844948bc97deabf3b68fbc",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-89557de9c4844948bc97deabf3b68fbc]/name[1]/text()",
+        "before": "Architectural-Governance.Implementation-Strategy.Constraints",
+        "after": "[solutionFacet] Architectural-Governance.Implementation-Strategy.Constraints",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/114/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-89557de9c4844948bc97deabf3b68fbc",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-89557de9c4844948bc97deabf3b68fbc]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/114/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-89557de9c4844948bc97deabf3b68fbc",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-89557de9c4844948bc97deabf3b68fbc]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/114/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-89557de9c4844948bc97deabf3b68fbc",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-89557de9c4844948bc97deabf3b68fbc]/properties[1]/property[key=displayName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/114/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-89557de9c4844948bc97deabf3b68fbc",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-89557de9c4844948bc97deabf3b68fbc]/properties[1]/property[key=displayName]/value[1]/text()",
+        "before": "Architectural-Governance.Implementation-Strategy.Constraints",
+        "after": "Implementation Strategy - Constraints",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/114/differences/5",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-89557de9c4844948bc97deabf3b68fbc",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-89557de9c4844948bc97deabf3b68fbc]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/114/differences/6",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-89557de9c4844948bc97deabf3b68fbc",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-89557de9c4844948bc97deabf3b68fbc]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "ArchitecturalGovernanceImplementationStrategyConstraints",
+        "after": "ArchitecturalGovernance.ImplementationStrategy.Constraints",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/115/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-895be9de41a9574e8866fc73571a0cf2",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-895be9de41a9574e8866fc73571a0cf2]/name[1]/text()",
+        "before": "Provider Identity and Registration",
+        "after": "[SolutionFacet] ProviderAndWorkforceManagement.ProviderIdentityAndRegistration",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/115/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-895be9de41a9574e8866fc73571a0cf2",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-895be9de41a9574e8866fc73571a0cf2]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/115/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-895be9de41a9574e8866fc73571a0cf2",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-895be9de41a9574e8866fc73571a0cf2]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/115/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-895be9de41a9574e8866fc73571a0cf2",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-895be9de41a9574e8866fc73571a0cf2]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/115/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-895be9de41a9574e8866fc73571a0cf2",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-895be9de41a9574e8866fc73571a0cf2]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "ProviderIdentityAndRegistration",
+        "after": "ProviderAndWorkforceManagement.ProviderIdentityAndRegistration",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/116/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8aa2b084d62a4640998e385ae69f0918",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8aa2b084d62a4640998e385ae69f0918]/name[1]/text()",
+        "before": "Processing-and-Workflow.Processing-Outcomes.Requirements",
+        "after": "[SolutionFacet] ProcessingAndWorkflow.ProcessingOutcomes.Requirements",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/116/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8aa2b084d62a4640998e385ae69f0918",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8aa2b084d62a4640998e385ae69f0918]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/116/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8aa2b084d62a4640998e385ae69f0918",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8aa2b084d62a4640998e385ae69f0918]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/116/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8aa2b084d62a4640998e385ae69f0918",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8aa2b084d62a4640998e385ae69f0918]/properties[1]/property[key=displayName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/116/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8aa2b084d62a4640998e385ae69f0918",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8aa2b084d62a4640998e385ae69f0918]/properties[1]/property[key=displayName]/value[1]/text()",
+        "before": "Processing-and-Workflow.Processing-Outcomes.Requirements",
+        "after": "Processing Outcomes - Requirements",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/116/differences/5",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8aa2b084d62a4640998e385ae69f0918",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8aa2b084d62a4640998e385ae69f0918]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/116/differences/6",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8aa2b084d62a4640998e385ae69f0918",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8aa2b084d62a4640998e385ae69f0918]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "ProcessingAndWorkflowProcessingOutcomesRequirements",
+        "after": "ProcessingAndWorkflow.ProcessingOutcomes.Requirements",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/117/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8b30c71c6e2e454480b5b6f00b5bb440",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8b30c71c6e2e454480b5b6f00b5bb440]/name[1]/text()",
+        "before": "Verification-and-Testing.Test-Governance.Constraints",
+        "after": "[SolutionFacet] VerificationAndTesting.TestGovernance.Constraints",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/117/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8b30c71c6e2e454480b5b6f00b5bb440",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8b30c71c6e2e454480b5b6f00b5bb440]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/117/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8b30c71c6e2e454480b5b6f00b5bb440",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8b30c71c6e2e454480b5b6f00b5bb440]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/117/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8b30c71c6e2e454480b5b6f00b5bb440",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8b30c71c6e2e454480b5b6f00b5bb440]/properties[1]/property[key=displayName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/117/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8b30c71c6e2e454480b5b6f00b5bb440",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8b30c71c6e2e454480b5b6f00b5bb440]/properties[1]/property[key=displayName]/value[1]/text()",
+        "before": "Verification-and-Testing.Test-Governance.Constraints",
+        "after": "Test Governance - Constraints",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/117/differences/5",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8b30c71c6e2e454480b5b6f00b5bb440",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8b30c71c6e2e454480b5b6f00b5bb440]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/117/differences/6",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8b30c71c6e2e454480b5b6f00b5bb440",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8b30c71c6e2e454480b5b6f00b5bb440]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "VerificationAndTestingTestGovernanceConstraints",
+        "after": "VerificationAndTesting.TestGovernance.Constraints",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/118/differences/0",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8d9389121f444438868fd7b70ddf121e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8d9389121f444438868fd7b70ddf121e]/name[1]/text()",
+        "before": "Architectural-Governance.Architecture-Vision.Stakeholders",
+        "after": "[SolutionFacet] ArchitecturalGovernance.ArchitectureVision.Stakeholders",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/118/differences/1",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8d9389121f444438868fd7b70ddf121e",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8d9389121f444438868fd7b70ddf121e]/properties[1]/child-order",
+        "before": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]"
+        ],
+        "after": [
+          "property[key=canonicalId]",
+          "property[key=displayName]",
+          "property[key=friendlyName]",
+          "property[key=archimateType]",
+          "property[key=Continuum / Canonical Source]",
+          "property[key=Continuum / Semantic Standing]",
+          "property[key=Continuum / Currentness]",
+          "property[key=Continuum / Navigation Number]",
+          "property[key=Continuum / Navigation Path]",
+          "property[key=Continuum / Navigation References]",
+          "property[key=Specialization]"
+        ],
+        "reason": "Order retained as evidence: may affect stacking, routing, languages or anonymous navigation"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/118/differences/2",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8d9389121f444438868fd7b70ddf121e",
+      "difference": {
+        "classification": "UNEXPLAINED DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8d9389121f444438868fd7b70ddf121e]/properties[1]/property[key=Specialization]",
+        "before": null,
+        "after": [
+          "{http://www.opengroup.org/xsd/archimate/3.0/}property",
+          [
+            [
+              "propertyDefinitionRef",
+              "specialization"
+            ]
+          ],
+          null,
+          [
+            [
+              "{http://www.opengroup.org/xsd/archimate/3.0/}value",
+              [
+                [
+                  "{http://www.w3.org/XML/1998/namespace}lang",
+                  "en"
+                ]
+              ],
+              "SolutionFacet",
+              []
+            ]
+          ]
+        ],
+        "reason": "Additional subtree with no established equivalence"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/118/differences/3",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8d9389121f444438868fd7b70ddf121e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8d9389121f444438868fd7b70ddf121e]/properties[1]/property[key=displayName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/118/differences/4",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8d9389121f444438868fd7b70ddf121e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8d9389121f444438868fd7b70ddf121e]/properties[1]/property[key=displayName]/value[1]/text()",
+        "before": "Architectural-Governance.Architecture-Vision.Stakeholders",
+        "after": "Architecture Vision - Stakeholders",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/118/differences/5",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8d9389121f444438868fd7b70ddf121e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8d9389121f444438868fd7b70ddf121e]/properties[1]/property[key=friendlyName]/value[1]/@{http://www.w3.org/XML/1998/namespace}lang",
+        "before": null,
+        "after": "en",
+        "reason": "Semantic record attribute changed"
+      }
+    },
+    {
+      "sourcePointer": "/elements/changed/118/differences/6",
+      "category": "elements",
+      "action": "changed",
+      "identifier": "id-8d9389121f444438868fd7b70ddf121e",
+      "difference": {
+        "classification": "SEMANTIC DIFFERENCE",
+        "path": "/model/elements[1]/element[id=id-8d9389121f444438868fd7b70ddf121e]/properties[1]/property[key=friendlyName]/value[1]/text()",
+        "before": "ArchitecturalGovernanceArchitectureVisionStakeholders",
+        "after": "ArchitecturalGovernance.ArchitectureVision.Stakeholders",
+        "reason": "Exact text compared; whitespace/language selection is not normalised"
+      }
+    }
+  ]
+}

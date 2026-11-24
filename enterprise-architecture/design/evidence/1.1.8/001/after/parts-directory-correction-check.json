@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "release": {
+    "version": "1.1.8",
+    "previous_version": "1.1.7"
+  },
+  "scope": "Only the domain-source directory rename and resulting publication paths/hashes; no architecture/content change.",
+  "renamedParts": [
+    {
+      "before": "chapters/application.tex",
+      "after": "parts/application.tex",
+      "sha256": "15ade6736d00de04175ed18ee6f4daab18af188498bbcc26de3b74f539c7da93",
+      "bytesUnchanged": true
+    },
+    {
+      "before": "chapters/business.tex",
+      "after": "parts/business.tex",
+      "sha256": "5cb14a8e606937973232105c214d0fe35ca31da2df93eb946f30e5cf71d77bc1",
+      "bytesUnchanged": true
+    },
+    {
+      "before": "chapters/motivation.tex",
+      "after": "parts/motivation.tex",
+      "sha256": "a5d1c86db142b2a8cfb35fbf2517f645e49e71aa68b7c327f561b86f18936fd8",
+      "bytesUnchanged": true
+    },
+    {
+      "before": "chapters/strategy.tex",
+      "after": "parts/strategy.tex",
+      "sha256": "24ad79db01ff08ee20823419040129a165d84e757ae4ce713282fa32186d79df",
+      "bytesUnchanged": true
+    }
+  ],
+  "masterChange": "Only four input paths changed from chapters/ to parts/.",
+  "structureJsonUnchanged": true,
+  "otherPublicationMetadataUnchanged": true,
+  "canonicalMarkdownUnchanged": 1602,
+  "projectionTemplateUnchanged": true,
+  "continuumManifestUnchanged": true,
+  "isolatedReproducibility": {
+    "status": "PASS",
+    "identicalArtifacts": {
+      "enterprise-architecture/documentation/continuum-rad/published/1.1.8/parts/motivation.tex": "a5d1c86db142b2a8cfb35fbf2517f645e49e71aa68b7c327f561b86f18936fd8",
+      "enterprise-architecture/documentation/continuum-rad/published/1.1.8/parts/strategy.tex": "24ad79db01ff08ee20823419040129a165d84e757ae4ce713282fa32186d79df",
+      "enterprise-architecture/documentation/continuum-rad/published/1.1.8/parts/business.tex": "5cb14a8e606937973232105c214d0fe35ca31da2df93eb946f30e5cf71d77bc1",
+      "enterprise-architecture/documentation/continuum-rad/published/1.1.8/parts/application.tex": "15ade6736d00de04175ed18ee6f4daab18af188498bbcc26de3b74f539c7da93",
+      "enterprise-architecture/documentation/continuum-rad/published/1.1.8/continuum-rad.tex": "c889d00635dbecd462685ee04061723cf8b73898959802c89a5c5fcd8a0991cd",
+      "enterprise-architecture/documentation/continuum-rad/published/1.1.8/structure.json": "96bf9aa593d9fc256ccf06b59e8fb8d46884cadd37ab058b8e5f16ecec45d025",
+      "enterprise-architecture/documentation/continuum-rad/published/1.1.8/README.md": "835fc92a71226826867399a10df88abfece5975ab6c3889ef139be643847ed10",
+      "enterprise-architecture/documentation/continuum-rad/published/1.1.8/publication.json": "d3d893d6c122806d39d7acaefaa0ab9cf2e5e946b1f339a0389f7aa5189bd01a"
+    },
+    "legacyRadPresent": false,
+    "scriptsPresent": false,
+    "gitPresent": false,
+    "canonicalBytesUnchanged": true
+  },
+  "previousFullReproducibilityEvidence": "reproducibility-check.json (before this path-only correction; no unrelated full-suite repeat)",
+  "pdf": {
+    "status": "PASS",
+    "pages": 532,
+    "pageTextIdenticalToBeforeCorrection": true,
+    "outlineTitlesOrderDepthAndDestinationsIdentical": true,
+    "outlineEntries": 2972,
+    "beforeSha256": "3dd21d32b3fcf6dac10bfcbab59e6a785c70bd7d0fde212bb9b74a4711ee5470",
+    "afterSha256": "3dd21d32b3fcf6dac10bfcbab59e6a785c70bd7d0fde212bb9b74a4711ee5470",
+    "finalTexLog": "No overfull boxes, missing characters, undefined/duplicate references or pending rerun.",
+    "bytesIdenticalToBeforeCorrection": true
+  },
+  "focusedTests": {
+    "status": "PASS",
+    "tests": 5,
+    "command": "PYTHONPATH=/tmp/harmonia-ea-deps timeout --signal=TERM --kill-after=5s 120s python3 -B -m unittest discover -s enterprise-architecture/tooling/tests -p test_continuum_rad.py -v"
+  },
+  "publicationBuild": {
+    "status": "PASS",
+    "command": "PYTHONPATH=/tmp/harmonia-ea-deps make -C enterprise-architecture/tooling rad-pdf",
+    "sourceDateEpoch": 1792627200
+  },
+  "limits": "Targeted path-correction verification. Prior full EA/Maven/browser/Manifest checks were not repeated; their unchanged inputs remain covered by prior evidence. No architectural acceptance asserted.",
+  "sourceStaleness": {
+    "status": "PASS",
+    "artifacts": 8,
+    "command": "PYTHONPATH=/tmp/harmonia-ea-deps timeout --signal=TERM --kill-after=5s 90s python3 -B enterprise-architecture/tooling/publish_continuum_rad.py --output enterprise-architecture/documentation/continuum-rad/published/1.1.8 --check"
+  },
+  "iterationEvidenceCheck": {
+    "outcome": "UNRESOLVED",
+    "errors": [],
+    "unresolved": "Unavailable Task instruction-entry times and filename prefix; same retained Task/Report pair. See iteration-evidence-check.json."
+  },
+  "whitespaceCheck": "PASS: git diff --check"
+}

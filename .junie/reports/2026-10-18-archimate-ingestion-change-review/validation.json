@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "architecture_release": {
+    "version": "1.0.9",
+    "previous_version": "1.0.8"
+  },
+  "architecture_tests": {
+    "status": "PASS",
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "maven_seconds": 30.798,
+    "timeout_seconds": 180
+  },
+  "release_tests": {
+    "status": "PASS",
+    "tests": 3
+  },
+  "rads_validation": {
+    "status": "PASS",
+    "invalid": 0,
+    "existing_unresolved": 2467
+  },
+  "canonical_metadata": {
+    "status": "PASS",
+    "valid_ids": 1299,
+    "ids_allocated": 0
+  },
+  "documentation": {
+    "status": "PASS",
+    "local_links_and_anchors": 82
+  },
+  "preservation": {
+    "protected_files_checked": 457,
+    "protected_files_unchanged": 452,
+    "expected_existing_file_changes": [
+      "architecture-release.json",
+      "docs/archimate/README.md",
+      "docs/archimate/framework/README.md",
+      "docs/archimate/processing/ingestion/README.md",
+      "docs/markdown/governance/README.md"
+    ],
+    "unexpected_changes": [],
+    "input_xml_and_all_semantic_models_and_blind_reports_unchanged": true
+  },
+  "independent_generation_comparison": {
+    "status": "PASS",
+    "only_difference": "One model-level release value: 1.0.8 -> 1.0.9",
+    "published_baseline_sha256": "504703cd1c4a91efe0f598db6a974ffea1a08541ebe81372130f1d647d71d69a",
+    "independent_reproduction_sha256": "491040db77f1ed1219f50e0bbfc57fb2826c447809731772e05ad0bb506bc3a5",
+    "new_exchange_package_written_to_repository": false
+  },
+  "generated_rads_outputs_unchanged": 10,
+  "limitations": [
+    "Whole-worktree whitespace check: 306 pre-existing input XML findings; task-focused check passes.",
+    "Local reference checking covers task documents, not all frozen historical reports.",
+    "No GUI inspection or repository exchange publication; independent generation under /tmp only.",
+    "Existing unresolved architecture and absent historical second XML remain unresolved."
+  ],
+  "reconciliation_executed": false,
+  "blind_test_proposals_adjudicated": false,
+  "evidence_files_sha256": {
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/architecture-tests.log.gz": "e91ed58cd7f35eff87989b739522970302fc8a4b15e42a17069368253212b6a1",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/documentation-preservation-validation.json": "ece72e9b420554d1cc7e9d4b2a48df4a86a64c2698983930ccee72324add132b",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/documentation-validation-initial.json": "46d03bd65c60164db83bf35e7211696f0c91ec96d18bd225e1f48e7772345f2a",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/independent-generation-initial.log.gz": "1ae5f00cf63d7698ef43e730be808ae3fd580a6aeb1577bfa87c726728918257",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/independent-generation-validation.json": "d7c638af12f3f1c1b3c0705af5a4c74ce6be86a315694ad526a3cb78f47e5ca6",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/independent-generation.log.gz": "037e2688ac6f89446890c24398ee566f2838a888cb52c65abd6eba765f3487da",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/independent-markdown-comparison.json": "509552df727adfefba9b7cfc3c3bb63d0f85c9856b4212d9f5bbb0ec151b7a7c",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/metadata-validation.log.gz": "94bc6a9ced6bdd3b872ec367dd67c486301b024059122acf063f6c3cc767e657",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/rads-validation.log.gz": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/release-check.log.gz": "f0f76d34ea472bd903f47125e734e31f4635f9f6a666d96aa9e564da74073ca3",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/release-tests.log.gz": "77ddb3d035390c9defa2572f065e4e92058b7911fea633f626be903e25680640",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/start-preservation.json": "27d10238fde18f663051387f50c2822836e9f822247d4b50d87d84fe33093e3b",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/task-whitespace.log.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/validate-documents.py": "ff6e04d0925bd6825252b00afaf78be33ab541b0311f72c00da4a2d29c390c70",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/whitespace-checks.json": "31bb2e08ad4bf5c45ebec6dab57fa195a750d564cc85cd6dacf11a341d6be8c7",
+    ".junie/reports/2026-10-18-archimate-ingestion-change-review/whole-worktree-whitespace.log.gz": "b9babd0499bb0447f3df2d286774e165abe72ce699cf952bd9e24a6203c7a851"
+  }
+}

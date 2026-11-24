@@ -6,7 +6,7 @@ sessionId: session-260916-090505-7sgs
 
 ### Overview & Goals
 
-The objective of this initiative is to update the master LaTeX ArchiMate 3.2 architecture specification (`docs/latex/`) for the **Harmonia Health Information Exchange (HIE)** platform to comprehensively document all new modules, components, services, and functions introduced across the system—specifically the **FHIR R5 Provider Registry Core Services** suite—and to create a dedicated, publication-grade technical **Appendix** detailing its full functionality.
+The objective of this initiative is to update the master LaTeX ArchiMate 3.2 architecture specification (`../../docs/latex-legacy`) for the **Harmonia Health Information Exchange (HIE)** platform to comprehensively document all new modules, components, services, and functions introduced across the system—specifically the **FHIR R5 Provider Registry Core Services** suite—and to create a dedicated, publication-grade technical **Appendix** detailing its full functionality.
 
 The documentation updates will reflect all newly established platform elements across the platform's 5-tier architecture:
 1. **Gateway Tier (`Pylai`)**: The new `pylai-fhir-registry` module exposing synchronous FHIR R5 read/search REST endpoints, asynchronous governed write APIs (`POST`/`PUT` returning `HTTP 202 Accepted` with `Location: /Task/{id}`), dynamic `CapabilityStatement` (`GET /metadata`), FHIR `Task` status polling (`GET /Task/{id}`), and fine-grained RBAC security interceptors.
@@ -26,9 +26,9 @@ The documentation updates will reflect all newly established platform elements a
   - `04-data-architecture.tex`: Add `Endpoint` and full Provider Registry resource schemas to Table 4.2 (15 FHIR R5 resources), document `ProviderRegistryChangePragma`, validation error codes (`PR-VAL-001` to `PR-VAL-010`), and hybrid relational-document database schema (`hie_fhir_resources`).
   - `05-technology-layer.tex`: Update technology nodes and master platform port allocation matrix (Table 5.1).
   - `06-deployment-ha.tex`: Document deployment topology, high-availability replication, and failover pathways for Provider Registry services.
-- **Dedicated Appendix E (`docs/latex/chapters/appendix-provider-registry.tex`)**:
+- **Dedicated Appendix E (`../../docs/latex-legacy`)**:
   - Author a comprehensive, publication-grade technical guide covering architectural topology, resource relationship model, REST API contracts, asynchronous change processing lifecycle, Ergon validation activities, referential integrity engine, optimistic locking, security rules, and Paradeigma test suites.
-- **Master Document Registration (`docs/latex/main.tex`)**:
+- **Master Document Registration (`../../docs/latex-legacy`)**:
   - Register `\input{chapters/appendix-provider-registry.tex}` under the appendices section.
 
 #### Out of Scope
@@ -71,7 +71,7 @@ The documentation updates will reflect all newly established platform elements a
 
 ### Current Implementation
 
-- **LaTeX Master Document (`docs/latex/main.tex`)**: Defines document structure, includes custom packages `styles/harmonia-doc` and `styles/harmonia-archimate`, sets up frontmatter, chapters 01--06, and appendices A--D (`appendix-paradeigma.tex`, `appendix-mllp-services.tex`, `appendix-ergon-module.tex`, `appendix-praxis-workflow.tex`).
+- **LaTeX Master Document (`../../docs/latex-legacy`)**: Defines document structure, includes custom packages `styles/harmonia-doc` and `styles/harmonia-archimate`, sets up frontmatter, chapters 01--06, and appendices A--D (`appendix-paradeigma.tex`, `appendix-mllp-services.tex`, `appendix-ergon-module.tex`, `appendix-praxis-workflow.tex`).
 - **Existing Chapters**:
   - `00-frontmatter.tex`: Executive summary, ArchiMate foundation, and system terminology table.
   - `01-motivation-strategy.tex`: Stakeholders, drivers, principles, and strategic goals.
@@ -93,32 +93,32 @@ The documentation updates will reflect all newly established platform elements a
 ### Proposed Changes
 
 #### 1. Frontmatter & Master Document Updates
-- `docs/latex/main.tex`:
+- `../../docs/latex-legacy`:
   - Add `\input{chapters/appendix-provider-registry.tex}` to the `\appendix` block.
-- `docs/latex/chapters/00-frontmatter.tex`:
+- `../../docs/latex-legacy`:
   - Update Executive Summary to introduce the FHIR R5 Provider Registry capability and reference Appendix E.
   - Update Table 0.1 (*Harmonia Classical Architectural Nomenclature and System Meaning Matrix*) to include `pylai-fhir-registry`, Provider Registry Erga, and canonical directory services.
 
 #### 2. Core Chapter Enhancements (Chapters 01--06)
-- `docs/latex/chapters/01-motivation-strategy.tex`:
+- `../../docs/latex-legacy`:
   - Add Provider Directory interoperability drivers, FHIR R5 conformance goals, and directory stewardship principles.
-- `docs/latex/chapters/02-business-layer.tex`:
+- `../../docs/latex-legacy`:
   - Add Provider Registry business actors (Directory Stewards, Credentialing Authorities) and business processes for governed directory change ingestion and referential verification.
-- `docs/latex/chapters/03-application-layer.tex`:
+- `../../docs/latex-legacy`:
   - Add `pylai-fhir-registry` under Section 3.2 (*Interface \& Gateway Tier*), documenting `FhirRestGatewayController`, `CapabilityStatementProvider`, `ProviderRegistryTaskResourceProvider`, `FhirSecurityInterceptor`, and `ChangeRequestSubmissionService`.
   - Update Section 3.4 (*Energeia*) to document the 7 per-resource Ergon activities (`PractitionerChangeErgon`, etc.) and the `seq-provider-registry-change-pipeline` Praxis sequence.
   - Update Section 3.5 (*Hestia*) to document `EndpointResourceProvider`, `FhirStorageService` multi-parameter search filtering, `ProviderRegistryReferenceValidator`, and optimistic locking.
-- `docs/latex/chapters/04-data-architecture.tex`:
+- `../../docs/latex-legacy`:
   - Add `ProviderRegistryChangePragma` model listing and metadata specification.
   - Add canonical validation error codes (`PR-VAL-001` through `PR-VAL-010`) table.
   - Update Table 4.2 (*Supported FHIR R5 Resource Schemas*) to include `Endpoint` (15 total resources).
   - Document the hybrid relational-document schema in `hie_fhir_resources` with versioning and soft-delete columns.
-- `docs/latex/chapters/05-technology-layer.tex`:
+- `../../docs/latex-legacy`:
   - Update Table 5.1 (*Master Platform Port Allocation Matrix*) with `pylai-fhir-registry` and directory service ports.
-- `docs/latex/chapters/06-deployment-ha.tex`:
+- `../../docs/latex-legacy`:
   - Document deployment and high-availability configuration for `pylai-fhir-registry` and Artemis change queues.
 
-#### 3. New Appendix E: `docs/latex/chapters/appendix-provider-registry.tex`
+#### 3. New Appendix E: `../../docs/latex-legacy`
 - Create a complete ~500+ line LaTeX chapter titled:
   `\chapter{Implementation and Functional Specification for FHIR R5 Provider Registry Core Services}`
   `\label{app:provider_registry}`

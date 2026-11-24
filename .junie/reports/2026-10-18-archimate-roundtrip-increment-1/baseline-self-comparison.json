@@ -1,0 +1,138 @@
+{
+  "classifications": {
+    "INFORMATION LOSS": 0,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "SEMANTIC DIFFERENCE": 0,
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 0,
+    "UNEXPLAINED DIFFERENCE": 0
+  },
+  "comparison_status": "EQUIVALENT",
+  "contract_properties": {
+    "archimateType": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 0,
+      "published_owners": 0
+    },
+    "canonicalId": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 0,
+      "published_owners": 0
+    },
+    "canonicalName": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 0,
+      "published_owners": 0
+    },
+    "displayName": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 0,
+      "published_owners": 0
+    },
+    "friendlyName": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 0,
+      "published_owners": 0
+    },
+    "harmoniaType": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 0,
+      "published_owners": 0
+    }
+  },
+  "elements": {
+    "additional_ids": [],
+    "after": 1299,
+    "before": 1299,
+    "changed_records": [],
+    "missing_ids": [],
+    "retained_ids": 1299
+  },
+  "empirical_archi_fidelity": "UNRESOLVED: comparator alone does not authenticate an Archi execution; use the hash-pinned evidence procedure",
+  "findings": [],
+  "incoming_sha256": "d57a5adeeef6b0906b30a02c3ea80cc6ff6308988775e7e3a619db01564ca52a",
+  "input_issues": {
+    "incoming": [],
+    "published": []
+  },
+  "metrics": {
+    "incoming": {
+      "largest_view": {
+        "connections": 182,
+        "elements": 200,
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            },
+            "text": "Business Capability Model — v0.2"
+          }
+        ],
+        "visual_objects": 200
+      },
+      "relationships": 852,
+      "semantic_elements": 1299,
+      "views": 1196,
+      "visual_connections": 1449,
+      "visual_objects": 3915,
+      "xml_bytes": 19806014,
+      "xml_decimal_mb": 19.806014
+    },
+    "published": {
+      "largest_view": {
+        "connections": 182,
+        "elements": 200,
+        "identifier": "id-9ac38e89ff405925aaa995f4f9ae79e8",
+        "name": [
+          {
+            "attributes": {
+              "{http://www.w3.org/XML/1998/namespace}lang": "en"
+            },
+            "text": "Business Capability Model — v0.2"
+          }
+        ],
+        "visual_objects": 200
+      },
+      "relationships": 852,
+      "semantic_elements": 1299,
+      "views": 1196,
+      "visual_connections": 1449,
+      "visual_objects": 3915,
+      "xml_bytes": 19806014,
+      "xml_decimal_mb": 19.806014
+    }
+  },
+  "presentation": {
+    "additional_ids": [],
+    "after": 1196,
+    "before": 1196,
+    "changed_records": [],
+    "connection_identity": {
+      "additional": [],
+      "after": 1449,
+      "before": 1449,
+      "missing": [],
+      "retained": 1449
+    },
+    "coverage": "View-local visual IDs, parent/nesting, membership, coordinates, dimensions, ordered bendpoints, child order, style, labels and residual XML; no presentation replay or speculative equivalence rules",
+    "missing_ids": [],
+    "node_identity": {
+      "additional": [],
+      "after": 3915,
+      "before": 3915,
+      "missing": [],
+      "retained": 3915
+    },
+    "retained_ids": 1196
+  },
+  "published_sha256": "d57a5adeeef6b0906b30a02c3ea80cc6ff6308988775e7e3a619db01564ca52a",
+  "purpose": "No-edit transport probe; not an architectural change set or architecture acceptance",
+  "relationships": {
+    "additional_ids": [],
+    "after": 852,
+    "before": 852,
+    "changed_records": [],
+    "missing_ids": [],
+    "retained_ids": 852
+  }
+}

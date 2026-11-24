@@ -1,0 +1,15 @@
+{
+  "outcome": "PASS",
+  "checks": [
+    "DR-1\u2013DR-6 exact disposition states",
+    "human structural review scope and accepted result",
+    "Minutiae-Accepted: Yes",
+    "completed and closed standing",
+    "preserved exclusions/non-blocking naming observations",
+    "unchanged release authority",
+    "closure Markdown links, anchors and whitespace",
+    "git diff --check"
+  ],
+  "localLinksChecked": 30,
+  "errors": []
+}

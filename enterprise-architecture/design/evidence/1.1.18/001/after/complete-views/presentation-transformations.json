@@ -1,0 +1,36 @@
+{
+  "propertyDefinitionMappings": {
+    "propid-58": "propid-52",
+    "propid-59": "propid-53",
+    "propid-49": "propid-43",
+    "propid-51": "propid-45"
+  },
+  "reboundPropertyOccurrences": 68,
+  "spelling": [
+    {
+      "before": "03. Directory-Informaton-Maintenance",
+      "after": "03. Directory-Information-Maintenance"
+    },
+    {
+      "before": "3. Achitecture-Based-Views",
+      "after": "3. Architecture-Based-Views"
+    }
+  ],
+  "folderDispositions": [
+    {
+      "group": "07. Resilience-and-Recovery",
+      "before": "04. Continuity-of-Operations",
+      "after": "04. Disaster-Recovery",
+      "authority": "Explicit Solution Architect folder disposition"
+    },
+    {
+      "group": "11. Verification-and-Testing",
+      "before": "04. Performance-and-Capability-Testing",
+      "after": "04. Performance-and-Capacity-Testing",
+      "authority": "Explicit Solution Architect folder disposition"
+    }
+  ],
+  "G03": "Authored Security-and-Management retained; canonical Subject unchanged",
+  "numericPrefix": "Original authored 03 Authorisation-Enforcement retained; optional punctuation normalisation withdrawn to preserve distinct folder paths",
+  "architecturalReferenceRebindings": 0
+}

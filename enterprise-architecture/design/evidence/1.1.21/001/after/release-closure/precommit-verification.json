@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "phase": "Terminal precommit provenance verification",
+  "localRecordLinks": {
+    "enterprise-architecture/design/register/1.1.21/hcrl-1.1.21-001.complete.md": [],
+    "enterprise-architecture/design/review/1.1.21/hcrl-1.1.21-001.pending.md": [],
+    "enterprise-architecture/design/archimate/README.md": [],
+    "enterprise-architecture/design/evidence/1.1.21/001/after/ai-agent-reports/20261110T230433Z-final-accepted-release-closure.md": []
+  },
+  "iterationEvidenceLayout": "PASS",
+  "immutableRegisterSha256": "4d5b94a34fe1474fae539469f6e65b0c4eab719f73ec80d09e1dfa41cbc6f3d1",
+  "publishedArtifacts": 19,
+  "immutableArtifactHashes": "PASS",
+  "rootReleaseUnchanged": true,
+  "gitDiffWhitespace": "PASS for then-tracked working diffs only",
+  "limit": "Post-emission mechanical verification supplies no new architectural acceptance.",
+  "subsequentStagedFormattingObservation": "FAIL: 215 non-blocking generated TeX/log trailing-whitespace observations; raw result and bounded treatment retained in staged-formatting-observation.json"
+}

@@ -1,0 +1,61 @@
+{
+  "standing": "Applied bounded candidate; actual-result confirmation pending",
+  "newElements": 0,
+  "newRelationships": 0,
+  "changes": [
+    {
+      "canonicalId": "10284034c8534b639284386b064f2c54",
+      "path": "enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md",
+      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+      "selector": "§§1–7,10; Appendix A — same conceptual IU, current concern boundaries"
+    },
+    {
+      "canonicalId": "74ec609de1ae498fbf9d13e4ef8c6cbe",
+      "path": "enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md",
+      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+      "selector": "§§0–4,7,10; Appendices A–B — existing logical Class and projection compatibility"
+    },
+    {
+      "canonicalId": "c05b7e37278141488ecc90b9a9ef96eb",
+      "path": "enterprise-architecture/continuum/application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md",
+      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+      "selector": "§§2–4,6–8; OM-R01–OM-R16; IU-IT01 — information/peer operational allocation and selectors"
+    },
+    {
+      "canonicalId": "b9891b88150840ada3daefdec6f26c35",
+      "path": "enterprise-architecture/continuum/application/data-object/b9891b88150840ada3daefdec6f26c35.md",
+      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+      "selector": "§§2.2–2.3,4.2 OM-R13–OM-R15,5,7 — portable singular representation"
+    },
+    {
+      "canonicalId": "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "path": "enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md",
+      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.md",
+      "selector": "§§1–2,4–6 — immutable Topic model; explicit sequencing and distinct name roles"
+    },
+    {
+      "canonicalId": "bb489157a6bf48be926c5a601bb0a6c3",
+      "path": "enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md",
+      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.md",
+      "selector": "§§3–6 — immutable selector identity; name/canonical basis; Exact/Inclusive and neutral composition"
+    },
+    {
+      "canonicalId": "22bdac97fe0d48d1844f1e982d03d387",
+      "path": "enterprise-architecture/continuum/application/application-function/22bdac97fe0d48d1844f1e982d03d387.md",
+      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+      "selector": "§§4.1–4.3,7; Appendix A IU-03/09/11 — Mnemosyne-side Façade operational projections and guarantees"
+    },
+    {
+      "canonicalId": "9c680d56a6b943da8ff22f3264e19bc7",
+      "path": "enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md",
+      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+      "selector": "§§4.1–4.3,7; Appendix A IU-03/09/11 — Mneme-side Store operational projections and guarantees"
+    },
+    {
+      "canonicalId": "cfe4e0dbe6894a14841452b731ab9cb8",
+      "path": "enterprise-architecture/continuum/application/application-function/cfe4e0dbe6894a14841452b731ab9cb8.md",
+      "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+      "selector": "§§4.1–4.3,7; OM-R04–OM-R09 — Standard-Cache manifestation and compatible Summary projection"
+    }
+  ]
+}

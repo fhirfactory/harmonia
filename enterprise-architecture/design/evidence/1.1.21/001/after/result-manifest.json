@@ -1,0 +1,149 @@
+{
+  "standing": "Initialised 1.1.21 pending development, no substantive modelling or accepted publication",
+  "developmentRelease": "1.1.21",
+  "acceptedPredecessor": "1.1.20",
+  "predecessorRemoteHead": "1862b21372bfc7a1eba117d53b2bdd4c2cf24cc5",
+  "formalTask": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T093540Z-verify-predecessor-and-initialise-journey-stakeholder-requirements.md",
+  "formalReport": "enterprise-architecture/design/evidence/1.1.21/001/after/ai-agent-reports/20261110T094627Z-initialise-journey-stakeholder-requirements.md",
+  "hcrl": "enterprise-architecture/design/review/1.1.21/hcrl-1.1.21-001.pending.md",
+  "candidate": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/Harmonia-Architecture-candidate.xml",
+  "candidateSha256": "f5bc8f127bd109457265dbd2b661671379dd6cfe7a8a8e65079ba1b9e2b380ee",
+  "selectedResultPins": [
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/before/initial-baseline.json",
+      "sha256": "de9d950406091bb5bd4abd888c5bf3843e64aec1eb2d70537659536f4132dd82"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T093540Z-verify-predecessor-and-initialise-journey-stakeholder-requirements.md",
+      "sha256": "da2490ae2b70abb4546975e868bcb28b092d2b99f3bada8d384d918c439e54f9"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/ai-agent-reports/20261110T094627Z-initialise-journey-stakeholder-requirements.md",
+      "sha256": "4f967bc3b60431d8162e6721930b0d438fe31d7caa5e4b0c00f851253924a286"
+    },
+    {
+      "path": "enterprise-architecture/design/review/1.1.21/hcrl-1.1.21-001.pending.md",
+      "sha256": "4d2a3c97513db4cf92a63e781cd0179cbbdf775a8d339ab02dc26fd17a5df7a7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/README.md",
+      "sha256": "09f15a46c1c189b8981fdbffacff28748801ebf2c3e704b18b92dd8e15d86b5d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initialisation.json",
+      "sha256": "84bdd5b60876ede8d2ecb317a842376ef56e48200f5c8c2ce2c70a9ad8678152"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/predecessor-candidate-delta.json",
+      "sha256": "d29ef863b2d96acb682c393b50e57778aae05da290b44f2b00a43e3b12e77a57"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initialisation-commands.json",
+      "sha256": "8942962efe619d1dc57a52d576076745868baf1a0eadd1aa87ae4232d5ba8831"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/verification-commands.json",
+      "sha256": "f9c9475b8de422a4165dd80c77b8e7e3dd3e06aa70b1c9942c880985662a55dd"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/repository-transition-preflight.json",
+      "sha256": "13a9386b3f77ab970ea13e7f7fc71b0da452cc4b09003b70bd3fd5b0ad0c9e20"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/iteration-evidence-check.json",
+      "sha256": "b750a5c5f55c2324bab7a0053d814b1b8b32c600b42753cef6dc6ee222fe4bf9"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/architecture-tests.txt",
+      "sha256": "5b875c0cfd3215bfbd0a575d68427f825fa31a88ff0af3d243064a5a19ad225f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/Harmonia-Architecture-candidate.xml",
+      "sha256": "f5bc8f127bd109457265dbd2b661671379dd6cfe7a8a8e65079ba1b9e2b380ee"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative/README.md",
+      "sha256": "9a0504ddd578fb757841e8a429b3f6fad95284b3f7c48f7fecb6fe1908d5abe5"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative/continuum-rad.tex",
+      "sha256": "2c560e87caf950f8ee74d6ddd86d13ab98e96d2fb0af1b493e0a8da27d915a75"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative/parts/application.tex",
+      "sha256": "5d8aaff7fac21ac3f80ceeb18cf384453e09e06d7e336d907ca85d7d521ec867"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative/parts/architecture-governance.tex",
+      "sha256": "6c99de0c4aff3ba3d47d8042062f91d40834509abe3fc2d9478bea812704bb71"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative/parts/business.tex",
+      "sha256": "be57573c2c7f8d6f3886a6823eae9e7f15c837b74ad8aa9c8ae68c508d7c562b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative/parts/cross-cutting-references.tex",
+      "sha256": "1a407b159f94cbf1bfa9bd5e47f0e9b97c501b163d0de78fe9ec741b220bcd63"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative/parts/implementation-and-migration.tex",
+      "sha256": "cc088fb5e4a5189f8f669d5c30c830cc75bc53068673bde335306341efdd3353"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative/parts/motivation.tex",
+      "sha256": "668ea9c89d7a4bbb8f0f643f138973cb19050eed4992db0d957c9243306dc5eb"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative/parts/strategy.tex",
+      "sha256": "b27fb62cfdeb666d1a937f4b87e281a104a54e53bc158bd23fd8afa043e7249e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative/parts/technology.tex",
+      "sha256": "6f1e2c08086d8457df080a89d5b5dd6de1ca46adea91584fc9d9a864ed6a5760"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative/publication.json",
+      "sha256": "824d243d4f827df4ce078a61addf559c31f77c7e389d2de052078d3695d137f4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative/structure.json",
+      "sha256": "8b920b116fdff4ce2be0b4537783db4ae52416129e61268b6844c2ef71c7ca5c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/reader/Harmonia-Architecture.xml",
+      "sha256": "f5bc8f127bd109457265dbd2b661671379dd6cfe7a8a8e65079ba1b9e2b380ee"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/reader/README.md",
+      "sha256": "9fa4c4a69fb48858bf3a63379a9aeea0e38af3bd055e16410578632ef41dd6d3"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/reader/continuum-catalogue.tex",
+      "sha256": "ce0d162e1f381dc59c82b13b8b3f4623839944924a975c8f0fa3791664b99202"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/reader/continuum.html",
+      "sha256": "3f8a3e33abbbd51c1dcb439569d9d7d327f592036b6699926123478d64011e70"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/reader/navigation.json",
+      "sha256": "9ad4fdfeb9b19952cadf9590f308c2e5f561ab4da698df87d290d24855afe926"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/reader/publication.json",
+      "sha256": "177af0bff10f8831203bb55e888f48484b9a5a4cd918feeae5794c1de34cf2ea"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.21/001/after/repository-verification.json",
+      "sha256": "33e5ea94b628a038c8eeffe0cb6199a9fa3a6ff240783c766b33f9d26d07efbc"
+    }
+  ],
+  "gitState": {
+    "branch": "Capability-Map-Consolidation",
+    "parentAtEmission": "1862b21372bfc7a1eba117d53b2bdd4c2cf24cc5",
+    "commit": "Pending terminal Git operation at emission; resulting commit contains this manifest",
+    "push": "NOT_PERFORMED — shell credentials unavailable",
+    "predecessorPush": "PASS — actual remote head verified after IDE push"
+  },
+  "noSelfHashing": "Manifest/current commit are not recursively self-pinned; Git and terminal outputs establish final state."
+}

@@ -580,7 +580,7 @@ Where existing `iris-befe` backend APIs do not supply the complete desired opera
    - Document middleware subordination rules (Artemis under Petasos, Infinispan under Mneme, PostgreSQL under Mnemosyne, Synapse under Agora).
    - Maintain the `IRIS-API-GAP` register.
 3. **Formal LaTeX Reference Manual**:
-   - Update `docs/latex/chapters/07-presentation-iris.tex` and `docs/latex/chapters/appendix-iris-user-interfaces.tex` reflecting the design system architecture, light theme baseline, and component contracts.
+   - Update `../../docs/latex-legacy` and `../../docs/latex-legacy` reflecting the design system architecture, light theme baseline, and component contracts.
    - Verify error-free compilation of the complete publication-grade PDF using `make -C docs/latex pdf`.
 
 ---
@@ -667,6 +667,6 @@ Frontend architecture boundaries are verified, comprehensive Markdown and LaTeX 
 - Verify architectural invariants and package layering using ArchUnit tests (`ParadeigmaIsolationArchitectureTest`, `IrisDecouplingArchitectureTest`, `PackageLayeringArchitectureTest`) ensuring zero JPA/DB imports and zero production Paradeigma dependencies.
 - Enforce strict unidirectional frontend dependency (`iris-monitor -> iris-befe`, `iris-clinical -> iris-befe`, `iris-administration -> iris-befe`) and assert zero reverse dependencies from `iris-befe` into application SPAs.
 - Author comprehensive documentation for `iris-befe` as the shared Iris Presentation & Design System foundation in `docs/architecture/iris-design-system.md` and update `docs/architecture/iris-operations-console.md` and `docs/concepts/iris.md`.
-- Update formal LaTeX technical reference chapters (`docs/latex/chapters/07-presentation-iris.tex`, `docs/latex/chapters/appendix-iris-user-interfaces.tex`) and compile the LaTeX manual (`make -C docs/latex pdf`).
+- Update formal LaTeX technical reference chapters (`../../docs/latex-legacy`, `../../docs/latex-legacy`) and compile the LaTeX manual (`make -C docs/latex pdf`).
 - Produce a detailed future migration assessment for `iris-clinical` and `iris-administration` detailing reusable components, page shell migration paths, and anticipated effort.
 - Execute full Maven build across Iris modules (`mvn clean test -pl iris/iris-befe,iris/iris-console`).

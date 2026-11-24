@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "entryRevision": "798344f80eb7fd3998e17f4f040cf7dabe260388",
+  "preservedElementIds": 1559,
+  "newElementIds": 43,
+  "modifiedExistingElements": 691,
+  "preservedRepresentationIds": 1559,
+  "originalNativeRelationshipsPreserved": 1137,
+  "newNativeRelationships": 514,
+  "capabilityCorrespondences": {
+    "direct correspondence": 209,
+    "evolved correspondence": 5
+  },
+  "originalPredicatesUnchanged": 462,
+  "nativePredicateMappings": {
+    "Association": 175,
+    "explicitly unestablished": 22,
+    "Serving": 264,
+    "Composition": 1
+  },
+  "reusedNativeRelationships": 1,
+  "unchangedDesignNotes": 18,
+  "sourceBlocksWithExplicitDispositions": 2198,
+  "presentationTemplateUnchanged": true,
+  "retryAllocatedIds": 0,
+  "retryCanonicalChanges": 0,
+  "limit": "Source-block accounting and exact contribution preservation verify coverage/correspondence; they do not prove exhaustive semantic correctness or confer architectural acceptance."
+}

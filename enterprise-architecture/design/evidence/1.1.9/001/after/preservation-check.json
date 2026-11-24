@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "originatingHead": "73e5c4f529743ca66d5e3044ebe7a5f743701659",
+  "canonicalElementFilesByteIdentical": 1602,
+  "allContinuumTrackedFilesIncludingManifestByteIdentical": 1603,
+  "canonicalMeaningWordingIdentityStandingRelationshipsChanged": false,
+  "historicalAndCanonicalProtectedPaths": [
+    "docs",
+    "enterprise-architecture/continuum",
+    "enterprise-architecture/documentation/continuum-manifest/published",
+    "enterprise-architecture/documentation/continuum-rad/published",
+    "enterprise-architecture/design/register",
+    "enterprise-architecture/design/review",
+    "enterprise-architecture/design/evidence"
+  ],
+  "changedProtectedFiles": [],
+  "rootRelease": {
+    "version": "1.1.9",
+    "previous_version": "1.1.8"
+  },
+  "limit": "All tracked protected paths compared against originating Git state; new 1.1.9 review/evidence files are separate prospective records. No architectural acceptance supplied."
+}

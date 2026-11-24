@@ -1,0 +1,351 @@
+{
+  "standing": "Factual evidence only; no Solution Architect acceptance or release allocation.",
+  "phase": "Final installed-state verification",
+  "baseline_head": "41047e1dc5c7d1ca4769dc7479bb50cae60989a7",
+  "branch": "ArchitecturalGovernance",
+  "release": {
+    "version": "1.1.3",
+    "previous_version": "1.1.2"
+  },
+  "file_inventory": [
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.4/001/after/ai-agent-reports/20261021T055042Z-migration-candidate-preparation.md",
+      "operation": "Create",
+      "bytes": 2710,
+      "sha256": "0b880e79c80115ba844df2cc20ec55418c8c1aa53ee1d84850dfec220033d9a7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.4/001/before/ai-agent-tasks/20261021T054402Z-migration-candidate-preparation.md",
+      "operation": "Create",
+      "bytes": 3630,
+      "sha256": "21281403658ae2a5c7c9f33f260c2eed9594f7b2f7adfc85e9fcc6b1bb25690f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.4/002/after/ai-agent-reports/20261021T061342Z-migration-analysis.md",
+      "operation": "Create",
+      "bytes": 3885,
+      "sha256": "e0c917ad1959ce56e2e709efc92ef402d63aef11d8e20773d94f0d64b04e9375"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.checks.json",
+      "operation": "Move",
+      "source": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.checks.json",
+      "bytes": 3665,
+      "sha256": "0e36cd56fb8cf61a89ee1bf9b9a8233bc9be641e0cc3b189cc6c40d55ff41ce3"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.mapping.csv",
+      "operation": "Move",
+      "source": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.mapping.csv",
+      "bytes": 4138585,
+      "sha256": "552fa43c2a651ee327425de55ab6b02f507784cda23d9b86c7c2d9b87982d1f5"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.references.csv.gz",
+      "operation": "Move",
+      "source": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.references.csv.gz",
+      "bytes": 437163,
+      "sha256": "36e7a5c03c03a67688e81d606670b038c146541f05b29b361771640124176562"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.4/002/before/ai-agent-tasks/20261021T055929Z-migration-analysis.md",
+      "operation": "Create",
+      "bytes": 5892,
+      "sha256": "6de2563ed834fff2f92a45d94c0a11fc94c0e5e2d4ff2684a3c52168fa50dfa9"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.4/003/after/ai-agent-reports/20261021T064017Z-evidence-refactoring.md",
+      "operation": "Create",
+      "bytes": 15891,
+      "sha256": "ef4015a1f26128425f944bb8dbdc58fd7348b283afb24e33042a87b7d4e0f4c5"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.4/003/after/refactoring-checks.json",
+      "operation": "Create",
+      "self_hash": "Omitted to avoid a circular self-fingerprint."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.4/003/before/ai-agent-tasks/20261021T063419Z-evidence-refactoring.md",
+      "operation": "Create",
+      "bytes": 8462,
+      "sha256": "c2e7f93b1499029d0ae675712701477e364a9f6b73ce47e19cb4bd099efd8347"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.4/003/before/entry-state.json",
+      "operation": "Create",
+      "bytes": 1847,
+      "sha256": "721c86d67c7935ac3e1ab269352a462e0bb2ab6e7c4748c07129b92c2da70f12"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.4/003/before/review-inputs/hcrl-1.1.4-002.pending.md",
+      "operation": "Create",
+      "bytes": 72727,
+      "sha256": "298534c9ca078ae40e9edabc16e47830639f8937a87bcb32370a8e9814bd669b"
+    },
+    {
+      "path": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-001.pending.md",
+      "operation": "Unchanged",
+      "bytes": 61235,
+      "sha256": "6019d3793dc148e0a99db84374f1fb0f98440d17ce6e1e4b62144eb1ea369909"
+    },
+    {
+      "path": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.pending.md",
+      "operation": "Modify references only",
+      "bytes": 72820,
+      "sha256": "3a41bad3516a2bf35ebfd42f9cc5fc35057498956f362adc69649a3584a63341"
+    },
+    {
+      "path": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-003.pending.md",
+      "operation": "Create",
+      "bytes": 80379,
+      "sha256": "9c88a7e52e2b24a23f5498a626e35fcdfa183ae639f391d85b5a2e81ae8a5252"
+    }
+  ],
+  "created_directories": [
+    "enterprise-architecture/design/evidence/1.1.4",
+    "enterprise-architecture/design/evidence/1.1.4/001",
+    "enterprise-architecture/design/evidence/1.1.4/001/after",
+    "enterprise-architecture/design/evidence/1.1.4/001/after/ai-agent-reports",
+    "enterprise-architecture/design/evidence/1.1.4/001/before",
+    "enterprise-architecture/design/evidence/1.1.4/001/before/ai-agent-tasks",
+    "enterprise-architecture/design/evidence/1.1.4/002",
+    "enterprise-architecture/design/evidence/1.1.4/002/after",
+    "enterprise-architecture/design/evidence/1.1.4/002/after/ai-agent-reports",
+    "enterprise-architecture/design/evidence/1.1.4/002/before",
+    "enterprise-architecture/design/evidence/1.1.4/002/before/ai-agent-tasks",
+    "enterprise-architecture/design/evidence/1.1.4/003",
+    "enterprise-architecture/design/evidence/1.1.4/003/after",
+    "enterprise-architecture/design/evidence/1.1.4/003/after/ai-agent-reports",
+    "enterprise-architecture/design/evidence/1.1.4/003/before",
+    "enterprise-architecture/design/evidence/1.1.4/003/before/ai-agent-tasks",
+    "enterprise-architecture/design/evidence/1.1.4/003/before/review-inputs"
+  ],
+  "relocations": [
+    {
+      "source": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.mapping.csv",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.mapping.csv",
+      "sha256": "552fa43c2a651ee327425de55ab6b02f507784cda23d9b86c7c2d9b87982d1f5",
+      "bytes": 4138585
+    },
+    {
+      "source": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.references.csv.gz",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.references.csv.gz",
+      "sha256": "36e7a5c03c03a67688e81d606670b038c146541f05b29b361771640124176562",
+      "bytes": 437163
+    },
+    {
+      "source": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.checks.json",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.checks.json",
+      "sha256": "0e36cd56fb8cf61a89ee1bf9b9a8233bc9be641e0cc3b189cc6c40d55ff41ce3",
+      "bytes": 3665
+    }
+  ],
+  "same_path_reference_changes": [
+    {
+      "file": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.pending.md",
+      "old": "[ledger]: hcrl-1.1.4-002.mapping.csv",
+      "new": "[ledger]: ../../evidence/1.1.4/002/after/hcrl-1.1.4-002.mapping.csv"
+    },
+    {
+      "file": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.pending.md",
+      "old": "[references]: hcrl-1.1.4-002.references.csv.gz",
+      "new": "[references]: ../../evidence/1.1.4/002/after/hcrl-1.1.4-002.references.csv.gz"
+    },
+    {
+      "file": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.pending.md",
+      "old": "[checks]: hcrl-1.1.4-002.checks.json",
+      "new": "[checks]: ../../evidence/1.1.4/002/after/hcrl-1.1.4-002.checks.json"
+    }
+  ],
+  "recovered_messages": [
+    {
+      "iteration": "001",
+      "role": "Task",
+      "event": "2026-10-21T05:44:02.581Z",
+      "source_session": "/home/hunterm/.codex/sessions/2026/10/21/rollout-2026-10-21T16-44-00-01a15cfc-e6fd-72d3-9d9d-a6cd986f91a8.jsonl",
+      "source_line": 9,
+      "message_sha256": "e6fb9d23a2e81f8adbd92011e39ce77bdf9de0c03743313020668ba1125d222a",
+      "retained_path": "enterprise-architecture/design/evidence/1.1.4/001/before/ai-agent-tasks/20261021T054402Z-migration-candidate-preparation.md",
+      "original_text_recovered": true,
+      "original_event_time_recovered": true
+    },
+    {
+      "iteration": "001",
+      "role": "Report",
+      "event": "2026-10-21T05:50:42.820Z",
+      "source_session": "/home/hunterm/.codex/sessions/2026/10/21/rollout-2026-10-21T16-44-00-01a15cfc-e6fd-72d3-9d9d-a6cd986f91a8.jsonl",
+      "source_line": 249,
+      "message_sha256": "f865141db47129266cd54991a52f67af6e628192bcb47d31b18707f94df6ae58",
+      "retained_path": "enterprise-architecture/design/evidence/1.1.4/001/after/ai-agent-reports/20261021T055042Z-migration-candidate-preparation.md",
+      "original_text_recovered": true,
+      "original_event_time_recovered": true
+    },
+    {
+      "iteration": "002",
+      "role": "Task",
+      "event": "2026-10-21T05:59:29.421Z",
+      "source_session": "/home/hunterm/.codex/sessions/2026/10/21/rollout-2026-10-21T16-44-00-01a15cfc-e6fd-72d3-9d9d-a6cd986f91a8.jsonl",
+      "source_line": 257,
+      "message_sha256": "03f2c9380b823354b5807eff5e1318326480f9872e1fba33b6b28bcebc270721",
+      "retained_path": "enterprise-architecture/design/evidence/1.1.4/002/before/ai-agent-tasks/20261021T055929Z-migration-analysis.md",
+      "original_text_recovered": true,
+      "original_event_time_recovered": true
+    },
+    {
+      "iteration": "002",
+      "role": "Report",
+      "event": "2026-10-21T06:13:42.094Z",
+      "source_session": "/home/hunterm/.codex/sessions/2026/10/21/rollout-2026-10-21T16-44-00-01a15cfc-e6fd-72d3-9d9d-a6cd986f91a8.jsonl",
+      "source_line": 655,
+      "message_sha256": "d6088d765d5e422e962e2e5b2e160fd793746a4d99817eadf532f60adde704ec",
+      "retained_path": "enterprise-architecture/design/evidence/1.1.4/002/after/ai-agent-reports/20261021T061342Z-migration-analysis.md",
+      "original_text_recovered": true,
+      "original_event_time_recovered": true
+    },
+    {
+      "iteration": "003",
+      "role": "Task",
+      "event": "2026-10-21T06:34:19.881Z",
+      "source_session": "/home/hunterm/.codex/sessions/2026/10/21/rollout-2026-10-21T17-34-16-01a15d2a-eb4c-7f13-9fba-561a55ea356d.jsonl",
+      "source_line": 9,
+      "message_sha256": "89adc243c453824f0a0198b49cebd056b5ac9ee9f709ee57a9b8110c727159f5",
+      "retained_path": "enterprise-architecture/design/evidence/1.1.4/003/before/ai-agent-tasks/20261021T063419Z-evidence-refactoring.md",
+      "original_text_recovered": true,
+      "original_event_time_recovered": true
+    }
+  ],
+  "new_report_event": {
+    "retained_path": "enterprise-architecture/design/evidence/1.1.4/003/after/ai-agent-reports/20261021T064017Z-evidence-refactoring.md",
+    "event": "2026-10-21T06:40:17.422Z",
+    "source_session": "/home/hunterm/.codex/sessions/2026/10/21/rollout-2026-10-21T17-34-16-01a15d2a-eb4c-7f13-9fba-561a55ea356d.jsonl",
+    "source_line": 208,
+    "event_type": "response_item/custom_tool_call",
+    "event_name": "exec",
+    "emitted_body_sha256": "2e1e383be6f3794fa71f386be30604e2688ef905c4d6e2699049fbc3ab2cfa45"
+  },
+  "classification": [
+    {
+      "material": "001/002 pending HCRLs",
+      "treatment": "Retained review/semantic records at existing paths; 001 unchanged; 002 only three relocation links corrected. Not moved into evidence or treated as temporary analysis workspace."
+    },
+    {
+      "material": "002 mapping CSV, gzip reference CSV, checks JSON",
+      "treatment": "Durable output evidence belonging to activity 002; moved byte-for-byte to 002/after/."
+    },
+    {
+      "material": "Actual 001/002 user instructions and final assistant Reports",
+      "treatment": "Faithfully recovered formal evidence at activity before/after, with original event timestamps; later retention annotated; no invented original evidence files."
+    },
+    {
+      "material": "003 Task, original untracked 002 pre-image, entry-state account, this check record and new Report",
+      "treatment": "Purpose-selected 003 input/output evidence; original 002 pre-image needed to establish unchanged body despite three link edits."
+    },
+    {
+      "material": "/tmp/build_harmonia_rad114_002.py; /tmp/harmonia-migration-tracked.txt; /tmp/harmonia-rad114-entry.json; /tmp/harmonia-rad114-md-digest.txt; /tmp/harmonia-rad114-root-instructions.txt; /tmp/harmonia-rad114-002-build.json; /tmp/harmonia-rad114-002-mapping-whitespace.txt; /tmp/harmonia-rad-1.1.4-architecture-tests.log; /tmp/harmonia-rad114-002-architecture-tests.log",
+      "treatment": "Temporary analysis builder, enumeration, copied/digested sources, intermediate check summaries, empty whitespace diagnostic and raw test logs. Material conclusions already retained in the HCRLs/ledger/checks; not promoted into durable evidence merely for completeness; not deleted."
+    },
+    {
+      "material": "Full local interaction logs, compaction summaries, 003 temporary construction/verification scripts and raw logs",
+      "treatment": "Recovery/working material, not copied wholesale or made continuing runtime dependencies; selected authentic original messages and event metadata retained instead."
+    }
+  ],
+  "checks": {
+    "relocated_supporting_outputs": "PASS: all three exact entry SHA-256 values and sizes preserved",
+    "original_001": "PASS: unchanged entry SHA-256",
+    "original_002": "PASS: exact pre-image retained; current file differs only in three reference-definition targets",
+    "carried_substantive_analysis": "PASS: DR-2 through DR-11 verbatim; DR-1 inventory/mapping text unchanged except explicit historical provenance correction; all twelve original table dispositions retained",
+    "ledger": {
+      "byte_preservation_result": "PASS",
+      "exact_path_reconciliation_result": "FAIL (pre-existing 002 ledger locator discrepancy; preserved, not corrected)",
+      "rows": 3321,
+      "unique_ledger_source_strings": 3321,
+      "exact_source_path_hash_and_size_matches": 3320,
+      "tracked_baseline_sources": 3320,
+      "unchanged_prior_candidate": 1,
+      "additional_hash_and_size_match_at_explicit_git_path": 1,
+      "pre_existing_path_discrepancies": [
+        {
+          "ledger_source": ".junie/reports/Harmonia - M1 - Stable Docker Runtime Baseline.md",
+          "ledger_destination": ".junie/reports/Harmonia - M1 - Stable Docker Runtime Baseline.md",
+          "tracked_path": ".junie/reports/Harmonia - M1 - Stable Docker Runtime Baseline.md ",
+          "tracked_path_explicit_ending": "Baseline.md\\u0020",
+          "source_sha256": "4738327d32e278c67df41585c94bd96b83d36b9ff56f37d62ab7fbac4c633617",
+          "source_bytes": 95200,
+          "finding": "Pre-existing 002 ledger source/destination omit the actual tracked filename final U+0020. Exact Git pathname and matching hash/size establish the observation; the ledger is not repaired or silently reinterpreted.",
+          "treatment": "UNRESOLVED exact-path mapping; Solution Architect adjudication before any dependent migration (reserved 005). No file renamed or ledger cell changed."
+        }
+      ],
+      "primary_moves": 2143,
+      "primary_remain": 1178,
+      "tracked_primary_remain": 1177,
+      "additional_fixtures_proposed_only": 3,
+      "destination_string_collisions": 0
+    },
+    "reference_evidence": {
+      "result": "PASS",
+      "rows": 24428,
+      "occurrences": 69210,
+      "consumers": 774,
+      "source_and_destination_correspondence": "All exact consumer/source pairs reconcile to original mapping"
+    },
+    "original_002_check_fingerprints": "PASS: original pending-HCRL fingerprint matches retained pre-image; mapping and reference fingerprints match relocated files",
+    "recovery": "PASS: five original messages and event times exactly match attributable source events, original UTF-8 message digests and UTC filename prefixes",
+    "new_003_report": "PASS: completed emitted body, original production event, retained text and UTC filename prefix exactly match the attributable source emission",
+    "hcrl_structure": "PASS: one contiguous four-column opening table; fourteen consecutive matching DR sections/anchors; one bounded Minutiae control; twelve original dispositions unchanged",
+    "links": {
+      "result": "PASS",
+      "resolved_current_links": 135,
+      "historical_snapshot_link_correspondence": [
+        {
+          "file": "enterprise-architecture/design/evidence/1.1.4/003/before/review-inputs/hcrl-1.1.4-002.pending.md",
+          "target": "hcrl-1.1.4-002.mapping.csv",
+          "original_link_base": "enterprise-architecture/design/review/1.1.4",
+          "relocated_target": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.mapping.csv"
+        },
+        {
+          "file": "enterprise-architecture/design/evidence/1.1.4/003/before/review-inputs/hcrl-1.1.4-002.pending.md",
+          "target": "hcrl-1.1.4-002.references.csv.gz",
+          "original_link_base": "enterprise-architecture/design/review/1.1.4",
+          "relocated_target": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.references.csv.gz"
+        },
+        {
+          "file": "enterprise-architecture/design/evidence/1.1.4/003/before/review-inputs/hcrl-1.1.4-002.pending.md",
+          "target": "hcrl-1.1.4-002.checks.json",
+          "original_link_base": "enterprise-architecture/design/review/1.1.4",
+          "relocated_target": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.checks.json"
+        }
+      ],
+      "pending_finalisation": [],
+      "historical_message_policy": "Original source links inside unchanged message blocks are not rewritten; wrapper navigation supplies current targets."
+    },
+    "architecture_suite": {
+      "result": "PASS",
+      "command": "timeout --signal=TERM --kill-after=5s 240s mvn test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+      "exit_code": 0,
+      "tests": 90,
+      "classes": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "maven_total_time": "17.796 s",
+      "raw_log_sha256": "1f5af4ae24d9358f05cc03b5d3520d6625b75576fd674f3dea32724d62425670",
+      "limit": "Verifies unchanged implementation guardrails; not migration, new Praxis or clean-clone operational-baseline validation."
+    },
+    "tracked_repository_preservation": "PASS: git diff --exit-code; all tracked governance, Praxis, instructions, architecture, model, publication, machinery and production files unchanged",
+    "release": "PASS: architecture_release.py check; 1.1.3, predecessor 1.1.2; no increment",
+    "reserved_work": "PASS: no 004/005 file or 1.1.4 completed/register record; no substantive migration or Praxis implementation"
+  },
+  "removals": "Only former locations of the three moved supporting outputs; no evidence content, other file or pre-existing directory deleted.",
+  "historical_provenance_unrecovered": "None of the four requested original 001/002 Task/Report texts or event times. No contemporaneous formal repository evidence files were found, and none are claimed to have existed.",
+  "adjudication_required": "All previously unrecorded 002 proposals retain their standing; review the new bounded representation and supporting Minutiae; common-rule implementation reserved for 004 and migration adjudication for 005. One pre-existing exact-path discrepancy (trailing U+0020 omitted in 002 ledger) requires adjudication before dependent migration; no ledger correction or mapping decision performed. No additional missing historical event is concealed.",
+  "scope_exclusions": [
+    "Architecture Review Praxis/governance/AGENTS implementation",
+    "Substantive corpus migration",
+    "Migration mapping/classification changes",
+    "Current-authority pin reconciliation or validator redesign",
+    "Fixture copies, model/publication regeneration",
+    "Historical-pilot investigation or processing cleanup",
+    "Solution Architect confirmation or completion"
+  ],
+  "verification_limits": "Hash and structural checks establish evidence preservation and carried analysis, not renewed independent validation of every historical architectural statement or prior command result. Local logs are attributable recovery sources, not architectural authority."
+}

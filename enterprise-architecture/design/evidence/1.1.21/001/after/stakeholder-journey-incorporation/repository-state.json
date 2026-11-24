@@ -1,0 +1,22 @@
+{
+  "HEAD": "c08a02a5569ead5805a46048da486db5365adc7c",
+  "branch": "Capability-Map-Consolidation",
+  "workingTree": "Uncommitted authorised candidate changes",
+  "changedFileCategories": {
+    "canonical elements/navigation/Manifest": 903,
+    "candidate presentation and pending HCRL": 3,
+    "governance representation support": 4,
+    "tooling and tests": 6,
+    "bounded source-section supersession": 421,
+    "governed Task and supporting evidence": 49
+  },
+  "commitPerformed": false,
+  "pushPerformed": false,
+  "releaseAuthority": {
+    "version": "1.1.21",
+    "previous_version": "1.1.20"
+  },
+  "pendingHcrl": "enterprise-architecture/design/review/1.1.21/hcrl-1.1.21-001.pending.md",
+  "acceptedPublicationMutation": false,
+  "qualification": "Observed before final Report emission; subsequent Report/HCRL link/evidence maintenance remains within this same iteration boundary."
+}

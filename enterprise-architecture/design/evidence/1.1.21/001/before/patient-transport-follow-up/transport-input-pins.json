@@ -1,0 +1,9 @@
+{
+  "enterprise-architecture/design/evidence/1.1.21/001/after/stakeholder-journey-incorporation/candidate/Harmonia-Architecture.xml": "4d1e924f521d801c8ff544aca38e1fcada611c7cbda5cc61b4c6825c77199457",
+  "enterprise-architecture/design/evidence/1.1.21/001/after/stakeholder-journey-incorporation/archi-transport/returned-model.xml.gz": "ebdd72ee76b7175cb48784e501e610a041f2f9496f243a11f172fb5e653dd527",
+  "enterprise-architecture/design/evidence/1.1.21/001/after/stakeholder-journey-incorporation/archi-transport/raw-comparison.json.gz": "b4befc1ecfa04fe5f798aafdc1f218ef2578bd51c071a383c75006c0ddb55f2c",
+  "enterprise-architecture/design/evidence/1.1.21/001/after/stakeholder-journey-incorporation/archi-transport/native-model.archimate.gz": "f30c2856f5dc04ed9a0ddfaa5660a91e625e3b7e4ab85f08bc6a388441348c7f",
+  "enterprise-architecture/design/evidence/1.1.21/001/after/stakeholder-journey-incorporation/transport-assurance.json": "2861c8bdf9b6677505f7b9bd483fb48e2a4604920bb399b5619909b9d1682de8",
+  "/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/exchange_compare.py": "3d1f8a4906080ed585676623ca5c3da05fd30860eb5015a72aa616d94b9fd58e",
+  "/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/verify_continuum_transport.py": "98540176ec4726722093e6880c7cfee3cf8f198a9bff667c6f9cc0820a186cb9"
+}

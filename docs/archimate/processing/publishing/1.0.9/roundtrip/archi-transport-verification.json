@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "scope": "Actual Archi 5.10 no-edit CLI transport of identities, native types, relationships, all Home semantics and accepted authored presentation; raw comparator remains DIFFERENCES.",
+  "operator": "Codex, executing the installed Archi command-line application; no human rendering attestation",
+  "published_sha256": "9f120d6fc36d7e659f3799b0af5f7c1d4544b6591abd31e45ccb7393fb0162af",
+  "exported_sha256": "a44e2033c34798a1cd17001497c5a5902de87584319cf42b5e25ddb1b9eb87a4",
+  "elements": 1308,
+  "relationships": 1077,
+  "views": 1198,
+  "exact_contract_properties": {
+    "archimateType": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 1308,
+      "published_owners": 1308
+    },
+    "canonicalId": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 1308,
+      "published_owners": 1308
+    },
+    "canonicalName": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 1308,
+      "published_owners": 1308
+    },
+    "displayName": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 1308,
+      "published_owners": 1308
+    },
+    "friendlyName": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 1308,
+      "published_owners": 1308
+    },
+    "harmoniaType": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 179,
+      "published_owners": 179
+    }
+  },
+  "existing_and_new_identity_values_and_owner_bindings": "PASS",
+  "semantic_non_property_content": "EXACT",
+  "home_semantic_assertions_exact": 212,
+  "new_authored_home_semantic_assertions_exact": 4,
+  "all_four_authored_views": "EXACT",
+  "view_membership_node_geometry_nesting_and_visual_connection_content": "EXACT",
+  "visual_objects": 3923,
+  "visual_connections": 1473,
+  "navigation_homes": "EXACT",
+  "semantic_transport_findings": {
+    "count": 1669,
+    "identical_to_established_1_0_7_evidence": true
+  },
+  "raw_comparator_status": "DIFFERENCES",
+  "raw_classifications": {
+    "INFORMATION LOSS": 4299,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "SEMANTIC DIFFERENCE": 1669,
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 65,
+    "UNEXPLAINED DIFFERENCE": 4693
+  },
+  "comparator_normalisation_changed": false,
+  "human_rendering_acceptance": "PENDING",
+  "execution_environment": "Initial sandboxed GTK initialization failed; the authorised isolated /tmp CLI run outside the sandbox imported, exported and validated successfully."
+}

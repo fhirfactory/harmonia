@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "baselineGitHead": "32014bb5843ad7dffdda9ccc404173b758cec690",
+  "baselineProjectionSha256": "27ef3c237ef7dca9cc7577d8ebbde2ff47930ea6a33249468b36969293c7b5af",
+  "candidateProjectionSha256": "13b0c5cf52d092e70a9f57e6d95a8ebc1d3fd712dfb7c60dfb92b6c38d7ecebf",
+  "existingCanonicalIdsNamesTypesSpecialisationsStandingAndBindingsPreserved": 1994,
+  "unchangedCanonicalElementFiles": 1990,
+  "existingNativeRelationshipsPreservedExactly": 2236,
+  "existingProjectedRelationshipsPreservedExactly": 2236,
+  "existingViewsPreservedExactly": 1288,
+  "priorNavigationEntriesPathsAndOrderPreserved": true,
+  "protectedGovernanceToolingInputsEarlierEvidenceAndPublicationFilesUnchanged": 1379,
+  "protectedPublishedFilesUnchanged": 204,
+  "hcrlPriorRowsAndDR1ThroughDR17TextUnchanged": true,
+  "releaseUnchanged": {
+    "version": "1.1.19",
+    "previous_version": "1.1.18"
+  },
+  "existingChangedElements": [
+    {
+      "canonicalId": "1af8a56358f7429fabfb57be66542a99",
+      "path": "enterprise-architecture/continuum/application/application-component/1af8a56358f7429fabfb57be66542a99.md",
+      "baselineSha256": "bda2ac62eac36d59dd58f60da7b0704d22d69cf69ccf87f6e1b9640fbb8dffc8",
+      "candidateSha256": "76adc714515db925e7cfed1a27d92ce387dcde0629c9a337ab30e9d9714b774f",
+      "originalBodyPreservedAsPrefix": true,
+      "existingMetadataPreservedExceptAppendOnlyProvenanceAndRelationships": true
+    },
+    {
+      "canonicalId": "7985e647bf9e4ca3ba70faf9e3e4ae02",
+      "path": "enterprise-architecture/continuum/application/application-component/7985e647bf9e4ca3ba70faf9e3e4ae02.md",
+      "baselineSha256": "69947dcc6d5f3583b1414474526a181ad6284731d1653f7cd8879a837f2e268b",
+      "candidateSha256": "10579cbb345b7f619b55ee08abf45e581dcc3b48d728dbd30f5719b8239c36ef",
+      "originalBodyPreservedAsPrefix": true,
+      "existingMetadataPreservedExceptAppendOnlyProvenanceAndRelationships": true
+    },
+    {
+      "canonicalId": "d739c75dffe2453081735710b285f03b",
+      "path": "enterprise-architecture/continuum/application/application-component/d739c75dffe2453081735710b285f03b.md",
+      "baselineSha256": "57cbd0a7f6cc9a49765e22f1d030e569af3248899bba92aca51e180b63dcd575",
+      "candidateSha256": "7cf396a3042088939414fe6119e9d8acad90ea47a5e4ca83fa51ad352df60d57",
+      "originalBodyPreservedAsPrefix": true,
+      "existingMetadataPreservedExceptAppendOnlyProvenanceAndRelationships": true
+    },
+    {
+      "canonicalId": "fefda110e2274884ad58906733606efd",
+      "path": "enterprise-architecture/continuum/application/application-component/fefda110e2274884ad58906733606efd.md",
+      "baselineSha256": "b0cc900980120fbba225ba3b205e9543b851f2987aae1b39c3c2a614ba3e50c1",
+      "candidateSha256": "cfb8e5eb3b3479e6081dd5c3c9e912b43680c415ee2077e6209fa70e051ce18c",
+      "originalBodyPreservedAsPrefix": true,
+      "existingMetadataPreservedExceptAppendOnlyProvenanceAndRelationships": true
+    }
+  ],
+  "addedCanonicalIds": [
+    "171f05d188384cedb7d5c493eeaee519",
+    "e282811b51274649816566aac7edeb8a"
+  ],
+  "addedNativeRelationships": 10,
+  "noDeletedOrRetypedElements": true,
+  "unresolvedQuestionsRetained": 6,
+  "candidateNotAccepted": true,
+  "limitations": [
+    "Checks prove exact preservation and declared graph/schema constraints, not human acceptance or execution contracts.",
+    "No implementation or new reliability, performance, lifecycle or transport requirement is tested or invented."
+  ]
+}

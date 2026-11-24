@@ -1,0 +1,628 @@
+{
+  "standing": "Applied authorised correction candidate; no acceptance",
+  "canonical": [
+    {
+      "canonicalId": "899d34ec491948b68aad09e507dea6d1",
+      "beforePath": "enterprise-architecture/continuum/application/application-component/899d34ec491948b68aad09e507dea6d1.md",
+      "afterPath": "enterprise-architecture/continuum/application/application-component/899d34ec491948b68aad09e507dea6d1.md",
+      "beforeSha256": "07832fdf5c84be962904107ca14e4534cc5dc9a00f07be9684d295a39ac18842",
+      "afterSha256": "bc06caed3088dd599ada7abf61f8202a3a3eeb647f8c8cce54936381ecdaae41",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../../motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../../motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "08d8ee19a30f418f9d5bc497ced0d1ef",
+      "beforePath": "enterprise-architecture/continuum/application/data-object/topic/08d8ee19a30f418f9d5bc497ced0d1ef.md",
+      "afterPath": "enterprise-architecture/continuum/application/data-object/topic/08d8ee19a30f418f9d5bc497ced0d1ef.md",
+      "beforeSha256": "7d1e32f0de38944e5d6dd2a5a919b64015b5597d2dbe853df587b4fecdeffe52",
+      "afterSha256": "a03bcbe014818e7bd9d4dfe1cb3a1ea0b9c727bdd520a0e288ff4a2016acc8d8",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../../../motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "after": "../../../motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "2a791e0e1f6b45c0a57fb8233f73faa5",
+      "beforePath": "enterprise-architecture/continuum/application/data-object/topic/2a791e0e1f6b45c0a57fb8233f73faa5.md",
+      "afterPath": "enterprise-architecture/continuum/application/data-object/topic/2a791e0e1f6b45c0a57fb8233f73faa5.md",
+      "beforeSha256": "4122c412840ceae2762403caf5aa8a63d91a01a729873e04406bd5251f32f306",
+      "afterSha256": "a6fc84f10848a1b866ace8cd8fea30dd6d7a9d814f591f39154ce27bda0b0667",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../../../motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "after": "../../../motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "9badf0d360b64215bc60e74eec954018",
+      "beforePath": "enterprise-architecture/continuum/application/data-object/topic/9badf0d360b64215bc60e74eec954018.md",
+      "afterPath": "enterprise-architecture/continuum/application/data-object/topic/9badf0d360b64215bc60e74eec954018.md",
+      "beforeSha256": "b9d59031862041184f81d87ce42cb0826582fd8bdd14bafee2e60231e5525f1e",
+      "afterSha256": "6af8ef3e2904eaa2dce8acc9163a1fa0c50f2a21e5e754d2a4a4b2b11ef867e7",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../../../motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "after": "../../../motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "fb464349f13b41c4ae9920a743fc6c12",
+      "beforePath": "enterprise-architecture/continuum/application/data-object/topic/fb464349f13b41c4ae9920a743fc6c12.md",
+      "afterPath": "enterprise-architecture/continuum/application/data-object/topic/fb464349f13b41c4ae9920a743fc6c12.md",
+      "beforeSha256": "d8517ee4d0944949b29c6ced9abfe20f8c016bf51dc1a2f84ca19f5afead74e6",
+      "afterSha256": "a1e9a32ec4579d7fba018d322f737ca371f22757992e7a1b46bef86e2d546466",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../../../motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "after": "../../../motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "10284034c8534b639284386b064f2c54",
+      "beforePath": "enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md",
+      "afterPath": "enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md",
+      "beforeSha256": "7bfb85b5c2262057a618d16c4ab9812aa4d2dd59cbaed5bee48d0cae9d350d9d",
+      "afterSha256": "53f0b9fd1aaaf0bc35471fe0e71957ab5cd03404a52a6742250750f054651087",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../../motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../../motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        },
+        {
+          "before": "../../motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "after": "../../motivation/principle/architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md"
+        },
+        {
+          "before": "../../motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../../motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        },
+        {
+          "before": "../../motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "after": "../../motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md"
+        },
+        {
+          "before": "../../motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../../motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        },
+        {
+          "before": "../../motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "after": "../../motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md"
+        },
+        {
+          "before": "../../motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "after": "../../motivation/principle/architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "b683ae87c72a4c16aba948a4b8cb0998",
+      "beforePath": "enterprise-architecture/continuum/business/business-object/b683ae87c72a4c16aba948a4b8cb0998.md",
+      "afterPath": "enterprise-architecture/continuum/business/business-object/b683ae87c72a4c16aba948a4b8cb0998.md",
+      "beforeSha256": "d2b5296bc33e237dd9bc88335c2aa6cfbad036ae1de02a2269746f3f4e470434",
+      "afterSha256": "496a64b4e96e823b4c7389abc43b6cc7d8cdc453c3f6abf07b77eef3984bd64e",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../../motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "after": "../../motivation/principle/architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md"
+        },
+        {
+          "before": "../../motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../../motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        },
+        {
+          "before": "../../motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "after": "../../motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "0a59e0ebb33c494e939148d30e42f49c",
+      "beforePath": "enterprise-architecture/continuum/grouping/0a59e0ebb33c494e939148d30e42f49c.md",
+      "afterPath": "enterprise-architecture/continuum/grouping/0a59e0ebb33c494e939148d30e42f49c.md",
+      "beforeSha256": "566f92120285b9c4bc2189e2b178eae7082a49340b349c1c14cda92cf0791050",
+      "afterSha256": "20d488926a3a044df95ea5494cbf181a3e021dd46b72b2e5d3b0607eb931763b",
+      "fields": {
+        "friendlyName": {
+          "before": "ReslienceAndRecovery.FaultTolerance",
+          "after": "ResilienceAndRecovery.FaultTolerance"
+        }
+      },
+      "linkEdits": [],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "2423108223e14d27a7bf59610034297a",
+      "beforePath": "enterprise-architecture/continuum/grouping/2423108223e14d27a7bf59610034297a.md",
+      "afterPath": "enterprise-architecture/continuum/grouping/2423108223e14d27a7bf59610034297a.md",
+      "beforeSha256": "4888edc44286ce943cc9b03e6f96291047b5b2d2fc04985cb9e0803776576fad",
+      "afterSha256": "4ff2856d5034d9cb4d82416f733f47211aa8a45e192af40dd709b35ffdfa9cce",
+      "fields": {
+        "friendlyName": {
+          "before": "SecurityAndManagementSecurityMonitoringPrinciples",
+          "after": "SecurityAndManagement.SecurityMonitoring.Principles"
+        }
+      },
+      "linkEdits": [],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+      "beforePath": "enterprise-architecture/continuum/grouping/46dd1f4490ae47cc854ce70ff600cb47.md",
+      "afterPath": "enterprise-architecture/continuum/grouping/46dd1f4490ae47cc854ce70ff600cb47.md",
+      "beforeSha256": "3b691defa91149612f18fd59d23af9e789e8f56f146bee698f6262bfd3af6dc6",
+      "afterSha256": "b2aceeed466971aba0bd90255c471702f0ee58c7b533ccb5d879d521e71070db",
+      "fields": {
+        "friendlyName": {
+          "before": "ArchitecturalGovernanceArchitectureConformanceConstraints",
+          "after": "ArchitecturalGovernance.ArchitectureConformance.Constraints"
+        }
+      },
+      "linkEdits": [],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "6d6086134162468cac129040a139d8d9",
+      "beforePath": "enterprise-architecture/continuum/grouping/6d6086134162468cac129040a139d8d9.md",
+      "afterPath": "enterprise-architecture/continuum/grouping/6d6086134162468cac129040a139d8d9.md",
+      "beforeSha256": "50bdf36ff63e07a05a6144cb39d70987aecea119f45c45c99ebf069bb2eaf842",
+      "afterSha256": "95af1f446cc3dba8bedc8636b32cda695b2f0298624bb50fd26e55a26365379e",
+      "fields": {
+        "friendlyName": {
+          "before": "ArchitectureGovernance.ArchitectureVision",
+          "after": "ArchitecturalGovernance.ArchitectureVision"
+        }
+      },
+      "linkEdits": [],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "805280b737e14b72ba401393c1f4a271",
+      "beforePath": "enterprise-architecture/continuum/grouping/805280b737e14b72ba401393c1f4a271.md",
+      "afterPath": "enterprise-architecture/continuum/grouping/805280b737e14b72ba401393c1f4a271.md",
+      "beforeSha256": "72b1a1f44fae689e6422ef9b48a812c17a6b829d267c53c14f826f918600abf1",
+      "afterSha256": "eb73422f1f1547369aa6fb4f4a9367a4675e4278688b2da023662e8a6b3e23dd",
+      "fields": {
+        "friendlyName": {
+          "before": "OperationsAndAssuranceOperationalDiagnosticsDrivers",
+          "after": "OperationsAndAssurance.OperationalDiagnostics.Drivers"
+        }
+      },
+      "linkEdits": [],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "f5df30b02e8a4d60bf44e8af2da4d5ab",
+      "beforePath": "enterprise-architecture/continuum/grouping/f5df30b02e8a4d60bf44e8af2da4d5ab.md",
+      "afterPath": "enterprise-architecture/continuum/grouping/f5df30b02e8a4d60bf44e8af2da4d5ab.md",
+      "beforeSha256": "fc0cbbd6e2b28008633f2caa1a12cb4cda2e41c4fd7036901244602a32c240c2",
+      "afterSha256": "7dac56f587f49708225004864cdefc0fadabde85dc928cb8fd5df4154c07582d",
+      "fields": {
+        "friendlyName": {
+          "before": "PerformancAndCapacity.CapacityPlanning",
+          "after": "PerformanceAndCapacity.CapacityPlanning"
+        }
+      },
+      "linkEdits": [],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "6d8848b700df4f6eacc0347993ac541a",
+      "beforePath": "enterprise-architecture/continuum/motivation/assessment/6d8848b700df4f6eacc0347993ac541a.md",
+      "afterPath": "enterprise-architecture/continuum/motivation/assessment/6d8848b700df4f6eacc0347993ac541a.md",
+      "beforeSha256": "7791b452452e96350346755e6a9f25ea06ff31cb43c4d348735f4c6374113ce6",
+      "afterSha256": "6bee410bccc293c4ee07bbf203c2074c852ab69865337cfab9cc06e5df64cda4",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "f1b3b73329ae46b9b5105fb8ff236be5",
+      "beforePath": "enterprise-architecture/continuum/motivation/assessment/f1b3b73329ae46b9b5105fb8ff236be5.md",
+      "afterPath": "enterprise-architecture/continuum/motivation/assessment/f1b3b73329ae46b9b5105fb8ff236be5.md",
+      "beforeSha256": "815ebfb9f353a0ff7d4b67b3223ffb9b9ba273e2acf4c45c3302899d55c90d9c",
+      "afterSha256": "8069692f47831b1370c5299ea1f8c215a5d7aa2a3b197fa7daa44e00b29a150e",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "1dbf34b452b6497f914c704e037aec24",
+      "beforePath": "enterprise-architecture/continuum/motivation/driver/1dbf34b452b6497f914c704e037aec24.md",
+      "afterPath": "enterprise-architecture/continuum/motivation/driver/1dbf34b452b6497f914c704e037aec24.md",
+      "beforeSha256": "1624b8e3fbbba49b79ecad10834e44c558f4dfe7600e0a951842d2f20519f04c",
+      "afterSha256": "12c446c4858c7d252c823b9c0cab886147dbb0069f53f80e88dd74a7a08fc279",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "75519ed8f7de4a619cc9065f525d703a",
+      "beforePath": "enterprise-architecture/continuum/motivation/outcome/75519ed8f7de4a619cc9065f525d703a.md",
+      "afterPath": "enterprise-architecture/continuum/motivation/outcome/75519ed8f7de4a619cc9065f525d703a.md",
+      "beforeSha256": "7e15b32309e34a8f6945fc61bab76a6c614bb9e4971c49e2f9a1911ea0d61116",
+      "afterSha256": "b7247bfff874ff83536f6498da0dc8afc4247ea66c900bd54791b13f96c4b6b7",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "5de2ae2c3b794c2d9f3a14efd51d564f",
+      "beforePath": "enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+      "afterPath": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+      "beforeSha256": "ca3dc94fd68bd8d23a4b4604b307fd557a8fe2cf2dc904f8b55850fea98e33a1",
+      "afterSha256": "fa5b3e42197eba43545466833532ce5471a1e28d20bfb51bc14f6ad589bc89be",
+      "fields": {
+        "specialization": {
+          "before": null,
+          "after": "ArchitecturalAxiom"
+        },
+        "displayName": {
+          "before": "AX-07 Security Is Intrinsic to Managed Operations",
+          "after": "[ArchitecturalAxiom] AX-07 Security Is Intrinsic to Managed Operations"
+        }
+      },
+      "linkEdits": [],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "8882573df7ce43c6bc0f66da0a676139",
+      "beforePath": "enterprise-architecture/continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+      "afterPath": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md",
+      "beforeSha256": "225ba1da833ae29889383badfb856db0819a9bb4a76f8da99a92e9310ad69aa9",
+      "afterSha256": "ed0894a8157742b46eeb0f9565255f952744304b82384821fea7aa96cfaf4347",
+      "fields": {
+        "specialization": {
+          "before": null,
+          "after": "ArchitecturalAxiom"
+        },
+        "displayName": {
+          "before": "AX-17 Architectural Authority and Explicit Uncertainty",
+          "after": "[ArchitecturalAxiom] AX-17 Architectural Authority and Explicit Uncertainty"
+        }
+      },
+      "linkEdits": [
+        {
+          "before": "../../../../docs/markdown/governance/architectural-axioms.md#1-purpose",
+          "after": "../../../../../docs/markdown/governance/architectural-axioms.md#1-purpose",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/architectural-axioms.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/architectural-axioms.md"
+        },
+        {
+          "before": "../../../../docs/markdown/governance/architectural-axioms.md#6-relationship-to-architecture-decisions",
+          "after": "../../../../../docs/markdown/governance/architectural-axioms.md#6-relationship-to-architecture-decisions",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/architectural-axioms.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/architectural-axioms.md"
+        },
+        {
+          "before": "../../../../docs/markdown/governance/architectural-axioms.md#7-architectural-review-rule",
+          "after": "../../../../../docs/markdown/governance/architectural-axioms.md#7-architectural-review-rule",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/architectural-axioms.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/governance/architectural-axioms.md"
+        },
+        {
+          "before": "d3fc6025dc7646d1b2020b51f7a44bfa.md",
+          "after": "../d3fc6025dc7646d1b2020b51f7a44bfa.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/d3fc6025dc7646d1b2020b51f7a44bfa.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/d3fc6025dc7646d1b2020b51f7a44bfa.md"
+        },
+        {
+          "before": "ef8abbaec37e4890ad78b9f263e67906.md",
+          "after": "../ef8abbaec37e4890ad78b9f263e67906.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/ef8abbaec37e4890ad78b9f263e67906.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/ef8abbaec37e4890ad78b9f263e67906.md"
+        },
+        {
+          "before": "eee8c3783d964d18a7f9dcea85fcd4cf.md",
+          "after": "../eee8c3783d964d18a7f9dcea85fcd4cf.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/eee8c3783d964d18a7f9dcea85fcd4cf.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/eee8c3783d964d18a7f9dcea85fcd4cf.md"
+        },
+        {
+          "before": "54508cda80484a6caf95b901780eaf7d.md",
+          "after": "../54508cda80484a6caf95b901780eaf7d.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/54508cda80484a6caf95b901780eaf7d.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/54508cda80484a6caf95b901780eaf7d.md"
+        },
+        {
+          "before": "952c3b6148ce4fce94b69f99a0c2fec7.md",
+          "after": "../952c3b6148ce4fce94b69f99a0c2fec7.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/952c3b6148ce4fce94b69f99a0c2fec7.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/952c3b6148ce4fce94b69f99a0c2fec7.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "b8cafe3cf5904d2bb9a9767260fddf78",
+      "beforePath": "enterprise-architecture/continuum/motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md",
+      "afterPath": "enterprise-architecture/continuum/motivation/principle/architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md",
+      "beforeSha256": "f825e5809876787906117135affdef51b77840ff25ac78d07305157e8f810a17",
+      "afterSha256": "84b60a7c0846e2c951f6a6d511e2122ceff4e293454e5370c75eea6de0474458",
+      "fields": {
+        "specialization": {
+          "before": null,
+          "after": "ArchitecturalAxiom"
+        },
+        "displayName": {
+          "before": "AX-18 Integration and Coordination Do Not Confer Domain Authority",
+          "after": "[ArchitecturalAxiom] AX-18 Integration and Coordination Do Not Confer Domain Authority"
+        }
+      },
+      "linkEdits": [
+        {
+          "before": "../../../../docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#37-clinical-work-integration-boundary",
+          "after": "../../../../../docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md#37-clinical-work-integration-boundary",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/03-business-architecture/metamodel/business-architecture-metamodel.md"
+        },
+        {
+          "before": "../../../../docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md#entity-specific-operational-coordination",
+          "after": "../../../../../docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md#entity-specific-operational-coordination",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md"
+        },
+        {
+          "before": "../../../../docs/markdown/03-business-architecture/behaviours/04-health-service-operations.md#capacity-management-responsibility-boundary",
+          "after": "../../../../../docs/markdown/03-business-architecture/behaviours/04-health-service-operations.md#capacity-management-responsibility-boundary",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/03-business-architecture/behaviours/04-health-service-operations.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/03-business-architecture/behaviours/04-health-service-operations.md"
+        },
+        {
+          "before": "../requirement/bbb7438e78604308abba93afc14f4e2e.md",
+          "after": "../../requirement/bbb7438e78604308abba93afc14f4e2e.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/requirement/bbb7438e78604308abba93afc14f4e2e.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/requirement/bbb7438e78604308abba93afc14f4e2e.md"
+        },
+        {
+          "before": "../../../../docs/markdown/02-strategy/capability-maps/health-service-assurance-derivation.md",
+          "after": "../../../../../docs/markdown/02-strategy/capability-maps/health-service-assurance-derivation.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/02-strategy/capability-maps/health-service-assurance-derivation.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/02-strategy/capability-maps/health-service-assurance-derivation.md"
+        },
+        {
+          "before": "../../../../docs/markdown/03-business-architecture/behaviours/health-service-assurance.md",
+          "after": "../../../../../docs/markdown/03-business-architecture/behaviours/health-service-assurance.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/03-business-architecture/behaviours/health-service-assurance.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/03-business-architecture/behaviours/health-service-assurance.md"
+        },
+        {
+          "before": "../../../../docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md#component-6-iris-contextual-human-interaction",
+          "after": "../../../../../docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md#component-6-iris-contextual-human-interaction",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/docs/markdown/02-strategy/strategic-views/logical-component-responsibilities.md"
+        },
+        {
+          "before": "952c3b6148ce4fce94b69f99a0c2fec7.md",
+          "after": "../952c3b6148ce4fce94b69f99a0c2fec7.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/952c3b6148ce4fce94b69f99a0c2fec7.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/952c3b6148ce4fce94b69f99a0c2fec7.md"
+        },
+        {
+          "before": "b6a55decfeec4f1bb3d7f18534a2ffea.md",
+          "after": "../b6a55decfeec4f1bb3d7f18534a2ffea.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/b6a55decfeec4f1bb3d7f18534a2ffea.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/b6a55decfeec4f1bb3d7f18534a2ffea.md"
+        },
+        {
+          "before": "d3fc6025dc7646d1b2020b51f7a44bfa.md",
+          "after": "../d3fc6025dc7646d1b2020b51f7a44bfa.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/d3fc6025dc7646d1b2020b51f7a44bfa.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/d3fc6025dc7646d1b2020b51f7a44bfa.md"
+        },
+        {
+          "before": "de7e90f46127455a9ec9ad3b9b48ba54.md",
+          "after": "../de7e90f46127455a9ec9ad3b9b48ba54.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/de7e90f46127455a9ec9ad3b9b48ba54.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/de7e90f46127455a9ec9ad3b9b48ba54.md"
+        },
+        {
+          "before": "8882573df7ce43c6bc0f66da0a676139.md",
+          "after": "8882573df7ce43c6bc0f66da0a676139.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "de7e90f46127455a9ec9ad3b9b48ba54",
+      "beforePath": "enterprise-architecture/continuum/motivation/principle/de7e90f46127455a9ec9ad3b9b48ba54.md",
+      "afterPath": "enterprise-architecture/continuum/motivation/principle/de7e90f46127455a9ec9ad3b9b48ba54.md",
+      "beforeSha256": "e870d90a34ffcced30b69714c9717f90fd4394ff8775bb011842cda8840416ae",
+      "afterSha256": "c2f155abc162b4a9e213be50df2b05bc0d09eba931e74e48d3b2508791888f66",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "after": "architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "bbb7438e78604308abba93afc14f4e2e",
+      "beforePath": "enterprise-architecture/continuum/motivation/requirement/bbb7438e78604308abba93afc14f4e2e.md",
+      "afterPath": "enterprise-architecture/continuum/motivation/requirement/bbb7438e78604308abba93afc14f4e2e.md",
+      "beforeSha256": "be161be368de7777baa318dd38f34ad148c5e3bdff9460cd3457dc4e860ab373",
+      "afterSha256": "3082712960212e4b788edfc58dc37c3cbd8e57977800a1d4f21f3b8b38ab0ba6",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        },
+        {
+          "before": "../principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "after": "../principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "02e036f18bab400bac261007e39457ee",
+      "beforePath": "enterprise-architecture/continuum/strategy/value-stream/02e036f18bab400bac261007e39457ee.md",
+      "afterPath": "enterprise-architecture/continuum/strategy/value-stream/02e036f18bab400bac261007e39457ee.md",
+      "beforeSha256": "a54f8575c47ee1b032d57ad1d0cdd92c694f85faaece49779f0431858bf633f6",
+      "afterSha256": "b6c885b641ae3920ef16292d1e8a6402ada1d3e43f073334e138fe021b95b294",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../../motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../../motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    },
+    {
+      "canonicalId": "3ba98c0c1170458f8c02fa76694fee67",
+      "beforePath": "enterprise-architecture/continuum/strategy/value-stream/3ba98c0c1170458f8c02fa76694fee67.md",
+      "afterPath": "enterprise-architecture/continuum/strategy/value-stream/3ba98c0c1170458f8c02fa76694fee67.md",
+      "beforeSha256": "8925e6624f357c2bb993601c15ef8c6eb3aecace87d0d5102a3ae8ebd56ecd04",
+      "afterSha256": "3903027b42ddcb0265a379b0f44d1599fb6c8bf45a2f24beecce3ce959c33607",
+      "fields": {},
+      "linkEdits": [
+        {
+          "before": "../../motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../../motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        }
+      ],
+      "identityAndRelationshipsPreserved": true
+    }
+  ],
+  "governance": [
+    {
+      "path": "enterprise-architecture/governance/architectural-axioms.md",
+      "beforeSha256": "79b03bb9ab59ca7c2080244727994662a67beca2efc6dbd2b2d0bd70073925cf",
+      "linkEdits": [
+        {
+          "before": "../continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "after": "../continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/5de2ae2c3b794c2d9f3a14efd51d564f.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md"
+        },
+        {
+          "before": "../continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "after": "../continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/8882573df7ce43c6bc0f66da0a676139.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/8882573df7ce43c6bc0f66da0a676139.md"
+        },
+        {
+          "before": "../continuum/motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "after": "../continuum/motivation/principle/architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "targetBefore": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/b8cafe3cf5904d2bb9a9767260fddf78.md",
+          "targetAfter": "/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/continuum/motivation/principle/architectural-axiom/b8cafe3cf5904d2bb9a9767260fddf78.md"
+        }
+      ]
+    }
+  ],
+  "remainingNamingQualifications": [
+    {
+      "canonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+      "property": "friendlyName",
+      "reason": "Explicit local friendlyName conflicts with an authored qualified native Name. Adding ancestry changes qualification rather than fixing punctuation; retain for SA review."
+    },
+    {
+      "canonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+      "property": "friendlyName",
+      "reason": "Explicit local friendlyName conflicts with an authored qualified native Name. No new ancestor qualification inferred."
+    },
+    {
+      "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+      "property": "displayName",
+      "reason": "The explicit dotted/hyphenated full-context displayName may reflect a naming convention. Replacing it with a shorter leaf-style label exceeds unambiguous spelling/punctuation correction."
+    }
+  ],
+  "preservedHistoricalMetadata": "authoredNativeName, previousNativeName, prior provenance and identity remain unchanged",
+  "templateUnchanged": true
+}

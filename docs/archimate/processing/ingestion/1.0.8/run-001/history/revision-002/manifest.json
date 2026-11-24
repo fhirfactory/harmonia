@@ -1,0 +1,19 @@
+{
+  "review_revision": 2,
+  "original_path": "docs/archimate/processing/ingestion/1.0.8/run-001/change-review.md",
+  "sha256": "1bfe21ca76c2363a8ba4a7e3de21f683b143e8aa6ca7741e26983817c1442b7d",
+  "retained_on": "2026-10-19 Australia/Sydney",
+  "reason": "Preserve complete revision 2 before Disposition/Outcome governance amendment. Relative links resolve from original_path parent; historical overlay and validation remain unchanged in original locations.",
+  "governance_snapshots": {
+    "archimate-ingestion-change-review.md": {
+      "original_path": "docs/markdown/governance/archimate-ingestion-change-review.md",
+      "sha256": "7d36d9f076489c25e8c0002dd75178932c9569767452998e48eac1deeddce018",
+      "role": "Exact authority/template representation before Disposition/Outcome amendment; historical evidence only. Relative links resolve from original_path parent."
+    },
+    "archimate-ingestion-change-review-template.md": {
+      "original_path": "docs/markdown/governance/templates/archimate-ingestion-change-review-template.md",
+      "sha256": "baf1ec1ef0e2cf40c67b6f8fce4d63b7c1192addc1d4e20553befdeb1f2155d3",
+      "role": "Exact authority/template representation before Disposition/Outcome amendment; historical evidence only. Relative links resolve from original_path parent."
+    }
+  }
+}

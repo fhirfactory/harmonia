@@ -24,12 +24,12 @@
     <parent>
         <groupId>net.fhirfactory.harmonia</groupId>
         <artifactId>harmonia-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>energeia</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Harmonia :: Energeia (Workflow Services)</name>
     <description>Energeia (Workflow Services) — Workflow orchestration services aggregating Erga (Task Processing Activities), Praxis (Task Sequence Definitions &amp; Structure), Ponos (WorkEngine Execution Framework), and Ponos CLI</description>

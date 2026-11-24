@@ -1,0 +1,26 @@
+Persisted create allocations 250 / 3689
+Persisted create allocations 500 / 3689
+Persisted create allocations 750 / 3689
+Persisted create allocations 1000 / 3689
+Persisted create allocations 1250 / 3689
+Persisted create allocations 1500 / 3689
+Persisted create allocations 1750 / 3689
+Persisted create allocations 2000 / 3689
+Persisted create allocations 2250 / 3689
+Persisted create allocations 2500 / 3689
+Persisted create allocations 2750 / 3689
+Persisted create allocations 3000 / 3689
+Persisted create allocations 3250 / 3689
+Persisted create allocations 3500 / 3689
+Staged 5685 elements at /tmp/harmonia-capability-replacement-fue3f9au
+Traceback (most recent call last):
+  File "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/authoring/migrate.py", line 375, in <module>
+    
+  File "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.20/001/after/capability-model-replacement/authoring/migrate.py", line 348, in run
+    print('Staged', len(result), 'elements at', stage, flush=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/architecture_continuum.py", line 203, in validate
+    require((root / source['retainedAt']).exists(), 'Missing retained evidence: ' + source['retainedAt'])
+  File "/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/architecture_continuum.py", line 51, in require
+    raise ContinuumError(message)
+architecture_continuum.ContinuumError: Missing retained evidence: enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md

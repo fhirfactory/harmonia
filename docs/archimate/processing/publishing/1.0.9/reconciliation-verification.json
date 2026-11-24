@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "architecture_release": {
+    "version": "1.0.9",
+    "previous_version": "1.0.8"
+  },
+  "scope": "Authorised 1.0.8 resulting-state reconciliation and governed RAD-1.0.9 publication; human rendering acceptance remains separate.",
+  "test_counts": {
+    "archimate": 177,
+    "governance": 72,
+    "architecture": 90
+  },
+  "checks": {
+    "archimate_tests": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/rad109-archimate-tests-final.log.gz",
+      "log_sha256": "072d8a0de0b3cfd7b505ecc3dbe52b32a932a20bac1fb5db86be1116b51a29fe"
+    },
+    "governance_tests": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/rad109-governance-tests.log.gz",
+      "log_sha256": "b09890b5381250ee1d283adf1f153e20219c969d436254e1245226fafc965ae6"
+    },
+    "architecture_tests": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/architecture-tests-java21.log.gz",
+      "log_sha256": "bb59331e6cb28bc511de7cb1922f2cf19ecfa4eb3877d331341735646e4d5f07"
+    },
+    "publication": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/rad109-publication-check.log.gz",
+      "log_sha256": "6552b647efbf590c02bb56d66b385409124da1e644c01c3418c72b8a32f0209c"
+    },
+    "identity": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/rad109-identity.log.gz",
+      "log_sha256": "ba96bb1651d8249a6f934956752980005099de7415352a659fcdc6cb1428fc4c"
+    },
+    "identity_registry": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/rad109-identity-registry.log.gz",
+      "log_sha256": "f094f2c6abd3d17fead043cf536f7e46320f79c5c8fbf2d3be96dec16346074b"
+    },
+    "rads": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/rad109-rads.log.gz",
+      "log_sha256": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c"
+    },
+    "release": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/rad109-release.log.gz",
+      "log_sha256": "f0f76d34ea472bd903f47125e734e31f4635f9f6a666d96aa9e564da74073ca3"
+    },
+    "preservation": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/rad109-preservation-final.json.gz",
+      "log_sha256": "3b368cae670eb746ce37af35509ccd14bfd38cc29095ac17d39be16f9e38e373"
+    },
+    "serialization_roundtrip": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/serialization-diagnostic.json.gz",
+      "log_sha256": "074ec8ef6ae0783b9e417486a514541f7129c1c9f4dd2d8d7cda8b83eeb88e19"
+    },
+    "archi_transport_probe": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.9/validation/archi-transport-probe.log.gz",
+      "log_sha256": "9caced670a484153bf14e88f20afb91fc4e0d5e34f5d2396eb3d436b5dcb07ff"
+    },
+    "archi_transport": {
+      "status": "PASS",
+      "log": "docs/archimate/processing/publishing/1.0.9/roundtrip/archi-transport-verification.json",
+      "log_sha256": "c9a64466b2b7ac3194181035136e6f3ed0cec3c76a5a34e1f52764c5958fda6d"
+    }
+  },
+  "roundtrip": {
+    "serialization": "EQUIVALENT",
+    "actual_archi_cli_transport": "PASS within recorded scope",
+    "raw_comparator": "DIFFERENCES",
+    "unchanged_historical_semantic_text_findings": 1669,
+    "human_rendering_acceptance": "PENDING INSPECTION"
+  },
+  "historical_failures_preserved": [
+    "validation/rad109-archimate-tests.log.gz",
+    "../../ingestion/1.0.8/run-001/reconciliation/execution-001/reproduction.log.gz"
+  ],
+  "nonblocking_home_debt": {
+    "unestablished": 93,
+    "ambiguous": 18,
+    "assigned_by_this_execution": 0
+  },
+  "supplemental_checks": "validation/final-checks.json"
+}

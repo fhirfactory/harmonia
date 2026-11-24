@@ -1,8 +1,24 @@
 # Petasos Architecture
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Petasos durable purpose-defined queue management](markdown/05-information-systems-architecture/component-register.md#c10)
+- [Common by-value PetasosParcel](markdown/05-information-systems-architecture/component-register.md#petasos-parcel)
+
+```text
+---------------------------------------------------------
+```
+
 Petasos is the reliable, high-availability asynchronous messaging and event distribution framework for the **Harmonia** Health Integration Environment (HIE).
 
 Its primary mandate is to decouple Harmonia microservices, gateways (Pylai), and workflow processors (Ponos/Erga) through resilient, durable message transport powered by **Apache ActiveMQ Artemis**, while completely encapsulating and hiding Artemis-specific connection APIs and JMS boilerplate behind clean, healthcare-ready domain abstractions.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
@@ -70,6 +86,18 @@ Petasos cleanly distinguishes between **Server-Side Clustering** and **HA Replic
 
 ---
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Petasos durable purpose-defined queue management](markdown/05-information-systems-architecture/component-register.md#c10)
+- [Common by-value PetasosParcel](markdown/05-information-systems-architecture/component-register.md#petasos-parcel)
+
+```text
+---------------------------------------------------------
+```
+
 ### Standard Message Envelope
 
 Petasos provides an immutable, strongly-typed envelope (`PetasosMessage`) designed for healthcare interoperability:
@@ -90,6 +118,10 @@ Petasos provides an immutable, strongly-typed envelope (`PetasosMessage`) design
 | `metadata` | `Map<String, Object>` | Custom transport headers, tracing tokens, and tenancy metadata. |
 | `durable` | `boolean` | Indicates whether persistent file journal storage is required before acknowledgment. |
 | `duplicateDetectionId`| `String` | Stable identifier used by Artemis and Petasos for idempotent deduplication. |
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 

@@ -1,0 +1,25 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "enterprise-architecture/tooling/architecture_review_evidence.py",
+    "--version",
+    "1.1.27",
+    "--iteration",
+    "001"
+  ],
+  "exitCode": 2,
+  "outcome": "UNRESOLVED",
+  "version": "1.1.27",
+  "iteration": "001",
+  "records": [
+    "evidence/1.1.27/001/after/ai-agent-reports/20261116T031417Z-calliope-oo-backlog-preparation.md",
+    "evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md"
+  ],
+  "errors": [],
+  "unresolved": [
+    "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+  ],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim",
+  "treatment": "New preparation Task/follow-up instruction-entry times and filename correspondence remain UNRESOLVED. Solution Architect disposition required before closure; 1.1.26 exceptions are not extended. No validation rule weakened."
+}

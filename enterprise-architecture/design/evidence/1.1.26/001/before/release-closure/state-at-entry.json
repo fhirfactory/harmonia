@@ -1,0 +1,369 @@
+{
+  "capturedAt": "2026-11-16T02:35:04.199817Z",
+  "meaning": "Closure-entry state capture, not Task issuance or acceptance timestamp",
+  "boundary": "1.1.26/001",
+  "head": "441ec989a3853db4ea4dad253e14b8464181f293",
+  "branch": "Mneme-and-Mnemosyne-Build",
+  "status": [
+    "M AGENTS.md",
+    " M architecture-release.json",
+    " M docs/AGENTS.md",
+    " M enterprise-architecture/governance/architecture-change-provenance.md",
+    " M enterprise-architecture/governance/architecture-governance.md",
+    " M enterprise-architecture/governance/architecture-release-policy.md",
+    " M enterprise-architecture/governance/architecture-review-praxis.md",
+    " M enterprise-architecture/governance/templates/hcrl-template.pending.md",
+    " M enterprise-architecture/tooling/README.md",
+    " M enterprise-architecture/tooling/architecture_review_evidence.py",
+    " M enterprise-architecture/tooling/tests/test_architecture_review_evidence.py",
+    "?? docs/backlog/README.md",
+    "?? docs/backlog/backlog-item-template.md",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261116T011524Z-software-development-praxis-application.md",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/after/final-backlog-refinements/verification.json",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-amendments.proposed.patch",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-application/continuum-links.json",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-application/tooling-and-release.applied.patch",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-application/verification.json",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-assessment.md",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/after/iteration-evidence-check.json",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/after/review-correction/verification.json",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/after/supporting-amendments.proposed.md",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/after/verification.json",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-application.md",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/20261115T233608Z-software-development-praxis-proposal.md.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/backlog-item-template.proposed.md.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/backlog-readme.proposed.md.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/governance-amendments.proposed.patch.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/hcrl-1.1.26-001.pending.md.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/software-development-praxis.proposed.md.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/source-correspondence.json",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/supporting-amendments.proposed.md.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/unresolved-software-development-praxis-proposal.md.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/governance-application/accepted-review-hcrl.md.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/governance-application/application-plan.json",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/release-closure/confirmed-hcrl.md.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/release-closure/solution-architect-confirmation.md",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/repository-state.json",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/20261115T233608Z-software-development-praxis-proposal.md.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/governance-amendments.proposed.patch.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/governance-assessment.md.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/hcrl-1.1.26-001.pending.md.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/software-development-praxis.proposed.md.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/source-correspondence.json",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/supporting-amendments.proposed.md.reviewed.gz",
+    "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/unresolved-software-development-praxis-proposal.md.reviewed.gz",
+    "?? enterprise-architecture/design/review/1.1.26/backlog-item-template.proposed.md",
+    "?? enterprise-architecture/design/review/1.1.26/backlog-readme.proposed.md",
+    "?? enterprise-architecture/design/review/1.1.26/hcrl-1.1.26-001.pending.md",
+    "?? enterprise-architecture/design/review/1.1.26/software-development-praxis.proposed.md",
+    "?? enterprise-architecture/governance/software-development-praxis.md"
+  ],
+  "stagedDiff": "",
+  "confirmedHcrl": {
+    "path": "enterprise-architecture/design/review/1.1.26/hcrl-1.1.26-001.pending.md",
+    "snapshot": "confirmed-hcrl.md.gz",
+    "sha256": "219693f097eab66b8c1f94f576a301a6bd9ae136fbe465292045d4550966872c"
+  },
+  "maintainedCandidateFiles": [
+    {
+      "path": "enterprise-architecture/governance/architecture-governance.md",
+      "sha256": "61b73a1c854d2cf49798e602aca0e5706d8a30f88be3bc1d089ffeba9e57006c"
+    },
+    {
+      "path": "enterprise-architecture/governance/architecture-review-praxis.md",
+      "sha256": "11190b37f1e26e815bc13bc9c3fcfabb3f77156187ab772ad8fb32a10a99a59b"
+    },
+    {
+      "path": "enterprise-architecture/governance/architecture-change-provenance.md",
+      "sha256": "e0b4292279bb026566b5f61fbf3b60b333087cea72b39895868b13abb4cb6b5a"
+    },
+    {
+      "path": "enterprise-architecture/governance/architecture-release-policy.md",
+      "sha256": "ec7809b450a50216c4cb15da5737fef080aa5acffe861511f6495f07d7922096"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "10f04260a0e9abccd719fa75a7031f1b99b82ffcef2ddd2031c6ab7ec1772e76"
+    },
+    {
+      "path": "docs/AGENTS.md",
+      "sha256": "fbd01b92ef302677b57a8d22cd323c6b8405d0c5369227abf02f849ce476c19c"
+    },
+    {
+      "path": "enterprise-architecture/governance/templates/hcrl-template.pending.md",
+      "sha256": "97bceb07222fb785a94ed908dd4ccc92f28c6be930d8fe5c8c5ccdec128e6443"
+    },
+    {
+      "path": "enterprise-architecture/governance/software-development-praxis.md",
+      "sha256": "694c867e0efa58d6b6c557e6be4c7c94bf5d67dd5ff33043e3d9d71348f77bf3"
+    },
+    {
+      "path": "docs/backlog/backlog-item-template.md",
+      "sha256": "b968c33dc54e12434b85081fe386ef0016498c963770c6fd444654055a76e5d9"
+    },
+    {
+      "path": "docs/backlog/README.md",
+      "sha256": "6ee7a5dbc8a0769c864e3d7f48be67ddd550e146618069199900977306268f05"
+    },
+    {
+      "path": "enterprise-architecture/tooling/architecture_review_evidence.py",
+      "sha256": "ef062f719615f3b9b4472e8f67ecbec441db032f66ebef00ad79f57c34d307eb"
+    },
+    {
+      "path": "enterprise-architecture/tooling/tests/test_architecture_review_evidence.py",
+      "sha256": "7d0a103787b8ca3e4733bf71c4b5debedc4af1d89f5a7c8328cbda692600c3e7"
+    },
+    {
+      "path": "enterprise-architecture/tooling/README.md",
+      "sha256": "62a61ed58c1f8bcc0c296a58b911c249b44bef8d9c0c72914a1218d68d1ef61e"
+    },
+    {
+      "path": "architecture-release.json",
+      "sha256": "2d8fe3d62e328efa18284fd0261ba50c2f635e10fd739c5714e476bb42735d53"
+    }
+  ],
+  "preservedPriorEvidenceAndProposals": [
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+      "sha256": "a6cabb8b4cb756445c06f504f23215fc2a694eaf341cea78dfd4da838b1748a6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261116T011524Z-software-development-praxis-application.md",
+      "sha256": "c06ac445798b6d0fd2cc741ae326b8ca6602c1b4b451b240c175a2830257490b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/after/final-backlog-refinements/verification.json",
+      "sha256": "0a7f7437d447452b62a5f710dc945f6d75606fde2cfedde09b21cf121242bc73"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-amendments.proposed.patch",
+      "sha256": "c8ead9603dec26ec53b82f2522c7dcd66c27a91c7f8d2c22e7aee3728993b3bb"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-application/continuum-links.json",
+      "sha256": "04a0733eea0c5582aa23946f563088d4a9065b6c1b87efdcb0a1fe5fef8c2658"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-application/tooling-and-release.applied.patch",
+      "sha256": "80087ce87f93e227f6e345303285c6f84fadf01aaf04a997b4aa392d79b53f4f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-application/verification.json",
+      "sha256": "204b6271b18919e4da26bf507736b50039c937e0616150aff027818830c51c62"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/after/governance-assessment.md",
+      "sha256": "1bc664ede535ccf55fa44fe948a2a4ec88dee40ede8d694eb87b3811c6c1cd19"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/after/iteration-evidence-check.json",
+      "sha256": "dc1cea3df73ef69eb0503f1ec3ba1192f0bfcf1cde28ac8106a44d3f5eb8cae4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/after/review-correction/verification.json",
+      "sha256": "be2868e238ef5449953710670a5391f9d91d24eff849d682823ac49178af5e43"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/after/supporting-amendments.proposed.md",
+      "sha256": "ef4807863a4b746725e182ef60cfa9853aa090ddf20b09221e14d7fa4e41e77e"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/after/verification.json",
+      "sha256": "8d8630e88810009598bf9480ac00e4ab6ceb5d06ebc2d9e2c0f5f1873694f3bc"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-application.md",
+      "sha256": "7da7c0e177ba408760750977894f06efbc057d59a8f76872ce99063bff5549f9"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md",
+      "sha256": "78e0187c03551ed57660e0c4829ca5168076fec6f459775bc771421ab8f24016"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/20261115T233608Z-software-development-praxis-proposal.md.reviewed.gz",
+      "sha256": "175c93075d40804b6e83f152106e87691c9618d4fcf6195134f12fb7dd589b7b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/backlog-item-template.proposed.md.reviewed.gz",
+      "sha256": "67cf7fba089e8c5e8741014419f617909ac428374858d79d259ded38aafaf170"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/backlog-readme.proposed.md.reviewed.gz",
+      "sha256": "89a05d7e334dab48291e28814ab25c9550752f470f680374d310e66a0b70a6b2"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/governance-amendments.proposed.patch.reviewed.gz",
+      "sha256": "4defdfe19b82425a15c897768b96e509b8e790bcda0a27a7b0e50752eeb61091"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/hcrl-1.1.26-001.pending.md.reviewed.gz",
+      "sha256": "883fa308e72efe95cfbe0eb4b659432ff441640c8469231c3a97f1b2e08f1ff9"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/software-development-praxis.proposed.md.reviewed.gz",
+      "sha256": "7a1a69c0046fd86cfb4f86650284c312cf9f26d304be87c27020e9dac1265f18"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/source-correspondence.json",
+      "sha256": "4fa3480aea4dcf904a4f00258fa65aae5f98814d3753682ff8413b1c965091ea"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/supporting-amendments.proposed.md.reviewed.gz",
+      "sha256": "82125f83696e943c9e4715e68d0ee208c92096516571cf7a17a3aab8c8848b8b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/unresolved-software-development-praxis-proposal.md.reviewed.gz",
+      "sha256": "61109f5fd7bb3349c2751a7fb34244e7831990c04ab7fbd06b3e5794f7343a6b"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/governance-application/accepted-review-hcrl.md.gz",
+      "sha256": "0a80cbf37e9edbc439fe0c01739bf965fd16949fb99f24158a5e16010cde0c61"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/governance-application/application-plan.json",
+      "sha256": "855684cc6b3b22acb0c6bcfe7e9f6ba8ddf911e769c356264684e0076a07b7f6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/repository-state.json",
+      "sha256": "6b379c35d38bf5600e7ad08584b7619644101a7716b24416fd1203f2aca32e4c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/20261115T233608Z-software-development-praxis-proposal.md.reviewed.gz",
+      "sha256": "b7c3272464d9315c690337fc569aab1d50e0f7e7662a75a116ba2a7080912ca2"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/governance-amendments.proposed.patch.reviewed.gz",
+      "sha256": "6e4823ba3cf8d5e4bb0e61189a4bafefa7170ac282e43a010a6432a2224bb5a6"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/governance-assessment.md.reviewed.gz",
+      "sha256": "98e41ee6d849a3a343888409c3f1cca44a4d3e0bf869753e9195f279b71c8c66"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/hcrl-1.1.26-001.pending.md.reviewed.gz",
+      "sha256": "18e39907e623cf85ceeb4c38baf2b7235a8c60c3ddd0e2a34fdd49f727679cea"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/software-development-praxis.proposed.md.reviewed.gz",
+      "sha256": "286f490c1d540767f4fef3faac2b58d816b58129ed5bc33679a43b1afda54953"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/source-correspondence.json",
+      "sha256": "c4cba5068549227ebba62cd878bdd6cd834fd48bcd5d3875a29bdc4447cf4acd"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/supporting-amendments.proposed.md.reviewed.gz",
+      "sha256": "6694910add7397a6e5a72070b1a6694a1fc2c6d04f72f1b4c9cbacc1d0915349"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/unresolved-software-development-praxis-proposal.md.reviewed.gz",
+      "sha256": "0556a14d86d838280ade515f88100e030ceae2fc989b635bd9f73b8ce5ad91e1"
+    },
+    {
+      "path": "enterprise-architecture/design/review/1.1.26/backlog-item-template.proposed.md",
+      "sha256": "01fb63f9fc66de98747ffa407fe7ccdde960ce794ef77b2a792c6310e089abc4"
+    },
+    {
+      "path": "enterprise-architecture/design/review/1.1.26/backlog-readme.proposed.md",
+      "sha256": "a4b4f3dab24f18949573d1cc21478b642df600b64d19a6344ae94e866a469517"
+    },
+    {
+      "path": "enterprise-architecture/design/review/1.1.26/software-development-praxis.proposed.md",
+      "sha256": "a930169cf601792b47c23ad1dc4c341acaf92e1a565ada52255230c671692c71"
+    }
+  ],
+  "preservedPredecessorPublications": [
+    {
+      "path": "enterprise-architecture/design/archimate/published/1.1.25/Harmonia-Architecture.xml",
+      "sha256": "cb04e5d14392641e2368c6e4b9d3493b5d5d2e655b9fa9a3d1420031dcf05ab7"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.25/Harmonia-Architecture.xml",
+      "sha256": "cb04e5d14392641e2368c6e4b9d3493b5d5d2e655b9fa9a3d1420031dcf05ab7"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.25/README.md",
+      "sha256": "ffcf36858f8b1a467324d1b575c193e68e2ee17ca203ec4e7f832bfc65a78b6f"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.25/continuum-catalogue.tex",
+      "sha256": "237caf411737c15f80ac0542d1c140e48a81924c24c901d618a223e7e2249d0b"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.25/continuum.html",
+      "sha256": "28deff22ea33e5ee8601b99a96b098726bb12cf32bf0d2eb3a3f72cb62b8690f"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.25/navigation.json",
+      "sha256": "15466f65a59552cefc3926bca452d9e3641404f44e1c68a8ef6042bbf3741c19"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-manifest/published/1.1.25/publication.json",
+      "sha256": "8b301a2c4ae121375f70399f481d79a05b5d453210cca48f580f04c4f460f6ff"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.25/README.md",
+      "sha256": "8dd3c367b54cc4941eaa5eeb26bea9b2c46ea9956fc39f465aa8d092246ae93e"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.25/continuum-rad.tex",
+      "sha256": "09e58da57be093ca79a5c1c4d7bcaeec0c861f13ef2962e72e1f38d9ba61012c"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/application.tex",
+      "sha256": "15585667e02e1847704e8bd109fa43ee7f482876279b0e33d64b709b91cabc82"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/architecture-governance.tex",
+      "sha256": "bb8b35a7b23d47c22c5d0ef8eaf7ac926f2f4f2ddc5c082cb7eaf4a350e13821"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/business.tex",
+      "sha256": "2f2e702b39d69d35168077b344e22525f7d1a20fe325e409d60270450fd47635"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/cross-cutting-references.tex",
+      "sha256": "75bf79e567c6609d96ccf3ea5965e1ee00739e4e26577e664181150142657248"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/implementation-and-migration.tex",
+      "sha256": "cc088fb5e4a5189f8f669d5c30c830cc75bc53068673bde335306341efdd3353"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/motivation.tex",
+      "sha256": "df249ba78174e2f5acb09ac6e75f109007cd880da41d6a5b2c5e0527e4692229"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/strategy.tex",
+      "sha256": "a89d73b285afffdd69bedfc5e1039899946597311ce1d344c28add92c084c809"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.25/parts/technology.tex",
+      "sha256": "a87c87047219e0a44ad3f04382c5ad534ae99da21a5bfd37595dc3bf0c09869d"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.25/publication.json",
+      "sha256": "b1e6cd37eca5f37c28acbf2b89153596ea453e11b57a11e6ac3f97e0f5441bc7"
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.25/structure.json",
+      "sha256": "bd5690abba4decb68da059d70b70c78890360c3ed694a7c009111f38a8fe33d0"
+    }
+  ],
+  "release": {
+    "version": "1.1.26",
+    "previous_version": "1.1.25"
+  },
+  "releasePlan": {
+    "acceptedPredecessor": "1.1.25",
+    "resultingVersion": "1.1.26",
+    "existingAllocationsForChangeSet": 1,
+    "additionalAllocationsRequired": 0,
+    "publicationInScope": false,
+    "publicationReason": "Confirmed governance-only adoption; unchanged canonical Continuum and accepted publications. Release Policy permits no regeneration of frozen architecture publications.",
+    "registerDestination": "enterprise-architecture/design/register/1.1.26/hcrl-1.1.26-001.complete.md",
+    "gitAuthority": "No commit/push authority established; final confirmation expressly supplies none. Register confirmed HCRL and report remaining Git transition."
+  }
+}

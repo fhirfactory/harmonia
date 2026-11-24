@@ -1,8 +1,19 @@
 # Receive External Provider Details from Tasmanian Provider Data Store
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/5ebbd5844cc84555a9c445ffd45c6be5.md) — Purpose.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ## Purpose
 
 Enable provider information maintained within the Tasmanian Provider Data Store to be received and incorporated into the Provider Directory through controlled system integration. This supports the establishment of a consolidated view of providers without requiring provider information originating from an external authoritative or reference source to be manually re-entered. The capability should support both the creation of previously unknown providers and the update of provider information already represented within the Provider Directory.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 ## Source Traceability
 
@@ -10,13 +21,35 @@ Enable provider information maintained within the Tasmanian Provider Data Store 
 - **Source Scope:** Scope - Governance, Quality and Audit
 - **Primary Actor:** Tasmanian Provider Data Store
 - **Supporting Actors:** Provider Directory; Integration Service; Provider Identity / Matching Service; Data Steward
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UserStory canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/user-story/ebd6c8a0f6cb424389b6a89711bf1937.md) — Source Traceability / User Story.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 - **User Story:** As the Provider Directory, I need to receive provider details from the Tasmanian Provider Data Store, so that externally sourced provider information can be incorporated into the enterprise Provider Directory and made available to authorised downstream consumers.
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
+
 - **Related Use Cases:** This use case has relationships with several of the existing Provider Directory integration use cases:; UC-Integration-ProviderDirectory-1 – Receive New Clinician Registration: Applies where the incoming provider is not already represented in the Provider Directory.; UC-Integration-ProviderDirectory-5 – Receive Clinician Profile Updates: Applies to subsequent changes to externally sourced provider profile information.; UC-Integration-ProviderDirectory-30 – Match Provider Records: Supports identification of the Provider Directory record corresponding to the incoming provider.; UC-Integration-ProviderDirectory-31 – Receive Provider Identifier Cross References: Supports reconciliation of identifiers used by the external source and the Provider Directory.; UC-Integration-ProviderDirectory-32 – Validate Provider Data Quality: Supports validation of incoming provider information before it is accepted.; UC-Integration-ProviderDirectory-35 – Monitor Provider Integration Interfaces: Provides operational monitoring of the integration.; UC-Integration-ProviderDirectory-36 – Reconcile Provider Synchronisation Failures: Handles transactions that cannot be successfully processed automatically.; Appendix A – Source Use Case Coverage; The source workbook contains 350 use cases/user stories across 57 groupings. All source rows were carried forward into this document in their original order and with their original identifiers.; Appendix B – Interpretation Notes; The source workbook contains several domains that extend beyond the Provider Directory-specific use cases, including participant identity, consent, demographics, terminology, reference data and enterprise identity capabilities. These have been retained rather than removed.; Where a source user story is abbreviated or grammatically incomplete, the substantive wording has been preserved and the derived workflow language has been kept technology-neutral.; The expanded scenarios intentionally avoid prescribing a particular product, database, FHIR implementation, application or integration technology.; The document can be used as the functional baseline for mapping the use cases to business capabilities, information requirements, application services and technology options.
 
 ## Requirements
 
+<!-- harmonia-1.1.21-section-supersession:start -->
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+- [UseCase canonical definition](../../../../enterprise-architecture/continuum/motivation/requirement/use-case/5ebbd5844cc84555a9c445ffd45c6be5.md) — Requirements / primary interaction statement.
+Only the incorporated architectural meaning is superseded; source-specific scenarios and remaining sections retain their qualifications. Incorporated result remains pending 1.1.21 review.
+---------------------------------------------------------
+
 ### Requirement: Receive External Provider Details from Tasmanian
 Harmonia SHALL support **Receive External Provider Details from Tasmanian Provider Data Store** so that Enable provider information maintained within the Tasmanian Provider Data Store to be received and incorporated into the Provider Directory through controlled system integration. This supports the establishment of a consolidated view of providers without requiring provider information originating from an external authoritative or reference source to be manually re-entered. The capability should support both the creation of previously unknown providers and the update of provider information already represented within the Provider Directory.
+
+
+------- Legacy Content - Superseded ------- Finish ----
+<!-- harmonia-1.1.21-section-supersession:end -->
 
 #### Scenario: Receive External Provider Details from Tasmanian Provider Data Store - successful outcome
 - **GIVEN** An approved integration exists between the Tasmanian Provider Data Store and the Provider Directory.

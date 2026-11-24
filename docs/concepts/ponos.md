@@ -1,6 +1,23 @@
 # Concept: Ponos `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C04 — reusable Ponos execution framework/component pattern](../markdown/05-information-systems-architecture/component-register.md#c04)
+- [Domain05 — specialisation and reuse](../markdown/05-information-systems-architecture/candidate-system-map.md#specialisation-and-reuse)
+
+```text
+---------------------------------------------------------
+```
+
 Ponos is the high-concurrency background task execution worker daemon of the Energeia subsystem, responsible for consuming tasks from Petasos queues, evaluating Themis authorization, managing execution thread pools, and driving activity lifecycles.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -58,6 +75,18 @@ Ponos operates as an autonomous worker service (packaged as a Spring Boot micros
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C04 — Ponos](../markdown/05-information-systems-architecture/component-register.md#c04)
+- [Candidate features F04–F06/F28](../markdown/05-information-systems-architecture/candidate-feature-map.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Ponos Owns
 - The queue consumer worker loop on `petasos.queue.task.inbound`.
 - Worker thread pool sizing, thread lifecycle management, and concurrency limits (`PONOS_CONCURRENCY`).
@@ -65,6 +94,10 @@ Ponos operates as an autonomous worker service (packaged as a Spring Boot micros
 - Security gate invocation delegating to Themis prior to task execution.
 - Checkpoint commit coordination with the Mneme distributed cache grid.
 - Administrative inspection, pause/resume, and queue flush operations via `ponos-cli`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Ponos Explicitly Does NOT Own (Anti-Responsibilities)
 - Workflow sequence blueprint definitions (owned by Praxis).

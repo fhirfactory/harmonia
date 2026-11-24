@@ -1,0 +1,54 @@
+{
+  "inputs": {
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/Harmonia_1.1.20_Candidate_017_Pass3_012_XD_Consolidated_Catalogue.md": "54f7b6de1a78cb28a4db41dcc19dc30ee3e80aee88ea14ded7d3714aa9a0e5d0",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/Harmonia_1.1.20_Pass3_012_XD_Adjudication_Workbook.xlsx": "0500831703b2d5a3b7698caaddc7efebb8482c4934f228a9a3868b239a50cb75",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/README.md": "3aff716872d750e6eab2a23ce3869aced2b48aee6573829c8ea2407c563329b9",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/authoring/README.md": "a40dcf89d6a5217d1fc36f9a2b701b925cb847713b9d03329305c5b8188facde",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/authoring/build_catalogue.py": "4accd2b880b4389b33337e04ac0b782174df94abbea8b5ba7d30c955dfb20931",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/authoring/build_workbook.py": "d44a6062fcfd6de60a7894d156202d0fda9b6e593b906cc268af6d01204bb2d7",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/authoring/explicit_outcomes.py": "b9bd3112855a582ef1751ba416f5922e7c650236f6de5fa7f3915efec769ca64",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/authoring/nominal_predicates.py": "8b0f48125eaebe419260c8878f4e887537046a429e18c83c217200ddf1531b5e",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/authoring/normalise_definitions.py": "75d0ca5a531b3b0f3dbe94d790345a13f107482689307a28d8b4e2cc0035e62f",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/authoring/phrase_outcomes.py": "2b3d91597fc96ca104c705ea8b475a6d5a5fd66a37cf74d5532085b7d04bee97",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/authoring/verify_result.py": "f1181a2368b7b0ed06f01972ef1ee22fb7b115bb9840a02559a4e1b4a7b41e83",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/authoring/xd_outcomes.py": "f46bf5651a3ac8a66bf64883640be08a1425a6032287a040d0df30f6d17ae762",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/capability-reconciliation.json": "af4f92dee996b87de5452d87917571d87748e281f91b8993c7f8052c9bfd5c85",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/evidence-layout.json": "68ad7b66ec08e5e34b669a1f78350825f41802f92a0df45f28dd61d31a009ce3",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/feature-reconciliation.json": "aa3941836b2f2a7d2d0492cc0c631d0cb6097ce8cb913e6651723957d48eddb1",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/measurement-criteria.csv": "547c9387034c166b76f698b2f1acfd0f1a6b159e8a732e81e87ab028e25b4b91",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/reconciliation-report.md": "a608276ed81d320c7c93880a5d19789142ada51f4bdd1b4cd56fdfa1bfc30296",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/retirement-trace.json": "3d0be36bbe866ac64a999cf1c22ca40c894ba25bd2e827abc841065226548ba8",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/source-editorial-notes.json": "8a7dd1c14f53a8f222528a0bb071eed3ad4980be4a248393b2d9a767a25adb70",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/source-result-manifest.json": "57632e8ff58a8be684f894c33136505a6eb9c3578d438b610a5eb1cfa1ee2348",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/spreadsheet-application-check.json": "ff9d61c0d088cadacd97c6345250cbda62c04739417ec219856b30d30c2c5fe9",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/sr-correspondence-qualifications.json": "83b12422aaef8fc09d022571b1807b735c9fea1d0a15f7203881aac0e55856e1",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/validation.json": "1f7f2833f563b6759174f3318b2f3950e5a55b097ca7000f242a4cb7e51f3ef7",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/xd-incorporation.json": "63ce69bc33f4fbebc52cad10771d57685536fec048b524772bccdb3a3e34a033"
+  },
+  "baseline_manifest_correspondence": "PASS",
+  "baseline_populations": {
+    "ct1": 24,
+    "ct2": 145,
+    "ct3": 586,
+    "features": 2941
+  },
+  "protected_trees": {
+    "enterprise-architecture/continuum": {
+      "files": 1998,
+      "sha256": "dfef2cf8d328d1d74d1e16ba606676a5abc13e76034b699413f10981699f0a4b"
+    },
+    "enterprise-architecture/design/register": {
+      "files": 17,
+      "sha256": "c7df254505759917b605f6972bc4f1380be3284558afbab2e128d15e68e62dd9"
+    },
+    "enterprise-architecture/publications": {
+      "files": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "release_authority_sha256": "19c24ea1f65acab2fcdeff0b621e4a7aa8c7bf02cd37c7f2ee59457ec9a96eb4",
+  "hcrl_before_sha256": "36490003049c90ba68457e941db360cb28c11eb727013e9d9494450cd3feafc3",
+  "git_head": "3bbdf01ad6d185a5f810842c255e5a8503d79dde",
+  "initial_git_status": " M enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md\n?? enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261109T092021Z-pass3-xd-incorporation-baseline-blocker.md\n?? enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261109T094506Z-pass3-xd-incorporation-and-semantic-normalisation.md\n?? enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/\n?? enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_011_XD009_Working_Overlay.md\n?? enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Pass3_011_NR001_Adjudication_Workbook.xlsx\n?? enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-sr-reconciliation.md\n?? enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-xd-incorporation-baseline.md\n?? enterprise-architecture/design/evidence/1.1.20/001/before/pass3-sr-reconciliation-issued-directions.md\n?? enterprise-architecture/design/evidence/1.1.20/001/before/pass3-xd-incorporation-issued-directions.md\n",
+  "task_issued_at": "UNRESOLVED; original interaction event time unavailable"
+}

@@ -1,0 +1,100 @@
+\part*{Part V — Technology}
+\label{navigation:V}
+\addcontentsline{toc}{part}{Part V — Technology}
+Selected Infinispan Server/Hot Rod and embedded LOCAL cache machinery for 1.1.24; topology and deployment qualifications remain explicit. Runtime instances do not allocate architectural identities.\par
+\chapter*{V.1 Infinispan Server — Standard Cache}
+\phantomsection
+\label{navigation:V.1}
+\addcontentsline{toc}{chapter}{V.1 Infinispan Server — Standard Cache}
+
+\label{element:c2b216d461b24d659c202268f0ec7fb7}
+\index{Infinispan Server — Standard Cache (V.1)}
+{\small SystemSoftware · Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation · current}\par
+
+Selected remote Infinispan Server machinery supporting Mneme-Standard-Cache through Hot Rod clients. The logical technology selection is explicit; it allocates no cluster, site, node count, process boundary, container layout, new durable store or coordination protocol. Multiple runtime instances share this architectural definition.
+
+
+
+Synchronous distribution stores entries on configured owners, not automatically on every node/site. It does not establish linearizable reads, state-machine serialisation or safe same-key concurrent cross-site writes in independent active clusters. Single spanning cluster versus site-local clusters/cross-site backups, ownership/site placement, partition/failover and N+1 bounded degradation remain MC-01/02 technical/deployment verification. No cache acknowledgment proves authoritative write Success.
+
+
+
+\par\medskip\textbf{Retained MC-01–MC-07 qualifications}\par
+
+
+\begin{itemize}
+
+
+\item \textbf{MC-01:} Standard-Cache multi-site topology and active/active consistency need evidence; synchronous distribution/cross-site backup is not native linearizability or safe independent-cluster same-key concurrency.
+
+\item \textbf{MC-02:} Owner count/site placement, majority/partition/failover and continued governed work after one site loss remain unproved; Mneme retains state-transition concurrency obligations beyond cache operations.
+
+\item \textbf{MC-03:} Per-JVM memory bounds, safe eviction/lifetime relative to context load/unload/checkpoint and security isolation remain solution/deployment policy under existing Ergon semantics.
+
+\item \textbf{MC-04:} Durable propagation does not prove immediate replica read visibility. Exact-version/currentness, read-after-write and wait/fail/Indeterminate behaviour use Mneme–Mnemosyne and PersistenceService contracts; no cache affinity mechanism is invented.
+
+\item \textbf{MC-05:} Active/active N+1 (N > 0) is an architectural target, not a verified product guarantee. With only two physical sites, loss of one prevents \textbf{new multi-site durable write Success} without another eligible durable site or explicit owning NFR/persistence disposition. Never weaken Success or claim unqualified N+1 write continuity. Three-plus sites alone do not prove quorum/failover correctness.
+
+\item \textbf{MC-06:} Five-service reconciliation is deterministically incorporated: historical GovernedSearch identity is reused as sole GovernedSummarySearch, Summary Reader/Writer added, full Reader/Writer retained; no independent Summary IU or sixth method.
+
+\item \textbf{MC-07:} Existing capability/Feature contributions are reused. Physical remote-client/embedded ownership, observation, deployment and as-built integration remain downstream; no new module or implementation framework is selected.
+
+\end{itemize}
+
+
+\par\medskip\textbf{Incorporation standing}\par
+
+
+Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation. Authority: operative Solution Architect Task and HCRL 1.1.24/001; input approval is distinct from result acceptance.
+
+
+{\small Recorded unresolved matters: canonicalName; exact scope remains in the canonical record.}\par
+{\footnotesize \href{../../../../continuum/technology/system-software/c2b216d461b24d659c202268f0ec7fb7.md}{Canonical record: c2b216d461b24d659c202268f0ec7fb7}; full qualifications and provenance.}\par
+\chapter*{V.2 Embedded Infinispan LOCAL — Workflow Cache}
+\phantomsection
+\label{navigation:V.2}
+\addcontentsline{toc}{chapter}{V.2 Embedded Infinispan LOCAL — Workflow Cache}
+
+\label{element:4048a6c775c542b6a29610d9e248a4d8}
+\index{Embedded Infinispan LOCAL — Workflow Cache (V.2)}
+{\small SystemSoftware · Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation · current}\par
+
+Selected embedded Infinispan LOCAL machinery resident \textbf{inside each applicable Ponos, DigitalTwin and Dokimasia execution JVM}, supporting Mneme-Workflow-Cache and common Ergon context use. Local instances have no inter-JVM replication, distributed owner lookup, Hot Rod round trip, global key affinity or cross-site L1 coherence.
+
+
+
+Serving relationships record this local machinery/use allocation; they do not imply Ponos structurally contains DigitalTwin/Dokimasia, shared physical cache instances or an independent deployment unit. No new JVM Node is needed to duplicate the existing executor identities. Exact memory/lifecycle/security configuration and library-versus-WildFly-subsystem packaging remain MC-03/07; the LOCAL/residency commitment is fixed.
+
+
+
+\par\medskip\textbf{Retained MC-01–MC-07 qualifications}\par
+
+
+\begin{itemize}
+
+
+\item \textbf{MC-01:} Standard-Cache multi-site topology and active/active consistency need evidence; synchronous distribution/cross-site backup is not native linearizability or safe independent-cluster same-key concurrency.
+
+\item \textbf{MC-02:} Owner count/site placement, majority/partition/failover and continued governed work after one site loss remain unproved; Mneme retains state-transition concurrency obligations beyond cache operations.
+
+\item \textbf{MC-03:} Per-JVM memory bounds, safe eviction/lifetime relative to context load/unload/checkpoint and security isolation remain solution/deployment policy under existing Ergon semantics.
+
+\item \textbf{MC-04:} Durable propagation does not prove immediate replica read visibility. Exact-version/currentness, read-after-write and wait/fail/Indeterminate behaviour use Mneme–Mnemosyne and PersistenceService contracts; no cache affinity mechanism is invented.
+
+\item \textbf{MC-05:} Active/active N+1 (N > 0) is an architectural target, not a verified product guarantee. With only two physical sites, loss of one prevents \textbf{new multi-site durable write Success} without another eligible durable site or explicit owning NFR/persistence disposition. Never weaken Success or claim unqualified N+1 write continuity. Three-plus sites alone do not prove quorum/failover correctness.
+
+\item \textbf{MC-06:} Five-service reconciliation is deterministically incorporated: historical GovernedSearch identity is reused as sole GovernedSummarySearch, Summary Reader/Writer added, full Reader/Writer retained; no independent Summary IU or sixth method.
+
+\item \textbf{MC-07:} Existing capability/Feature contributions are reused. Physical remote-client/embedded ownership, observation, deployment and as-built integration remain downstream; no new module or implementation framework is selected.
+
+\end{itemize}
+
+
+\par\medskip\textbf{Incorporation standing}\par
+
+
+Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation. Authority: operative Solution Architect Task and HCRL 1.1.24/001; input approval is distinct from result acceptance.
+
+
+{\small Recorded unresolved matters: canonicalName; exact scope remains in the canonical record.}\par
+{\footnotesize \href{../../../../continuum/technology/system-software/4048a6c775c542b6a29610d9e248a4d8.md}{Canonical record: 4048a6c775c542b6a29610d9e248a4d8}; full qualifications and provenance.}\par

@@ -1,0 +1,14 @@
+{
+  "status": "FAIL",
+  "command": [
+    "python3",
+    "-B",
+    "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/verify.py",
+    "transport"
+  ],
+  "timeout_seconds": 90.0,
+  "elapsed_seconds": 8.584,
+  "exit_code": 1,
+  "log": "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/archi-transport.log",
+  "log_sha256": "5288cad6ce16c487746b31f6d21f18d92c7c795ffb7b9ce540bb1c996ab4f0f2"
+}

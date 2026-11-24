@@ -1,0 +1,265 @@
+%% =============================================================================
+%% appendices/appendix-requirements.tex
+%% Harmonia Architecture Requirements Catalogue
+%% =============================================================================
+
+\chapter{Architecture Requirements}
+\label{app:requirements}
+
+This appendix records the enduring architecture requirements for Harmonia. It intentionally describes \emph{what the architecture must achieve}, not the implementation tasks currently required to achieve it.
+
+Implementation defects, architecture-conformance findings, remediation activities, and delivery tasks are maintained separately in the Architecture Backlog. Architectural choices that constrain how these requirements are realised are maintained separately as Architecture Decisions.
+
+\section{Requirement Conventions}
+
+Requirements use a stable domain identifier:
+
+\begin{itemize}
+    \item \texttt{CORE-nnn} --- cross-cutting platform requirements;
+    \item \texttt{SEC-nnn} --- security requirements;
+    \item \texttt{PROV-nnn} --- provenance and audit requirements;
+    \item \texttt{DATA-nnn} --- persistence, consistency, and recovery requirements;
+    \item \texttt{INT-nnn} --- integration, messaging, and interoperability requirements;
+    \item \texttt{DIR-nnn} --- Provider Registry requirements;
+    \item \texttt{CLIN-nnn} --- clinical information and longitudinal-record requirements;
+    \item \texttt{UX-nnn} --- human-facing presentation requirements;
+    \item \texttt{OPS-nnn} --- operational and resilience requirements.
+\end{itemize}
+
+The intended traceability model is:
+
+\begin{equation*}
+\text{Driver} \rightarrow
+\text{Goal} \rightarrow
+\text{Principle} \rightarrow
+\text{Requirement} \rightarrow
+\text{Decision} \rightarrow
+\text{Architecture} \rightarrow
+\text{Backlog} \rightarrow
+\text{Verification}
+\end{equation*}
+
+\section{Core Platform Requirements}
+
+\subsection{CORE-001 --- Information Authority Classification}
+Harmonia shall support classification of information sources, ingress packets, and individual assertions as \texttt{AUTHORITATIVE}, \texttt{INFORMATIONAL}, or \texttt{ANECDOTAL}. Authority shall be contextual and independent of provenance, security classification, and access control. An authoritative classification shall express how Harmonia may treat an assertion within a defined information context and shall not independently assert clinical truth.
+
+\subsection{CORE-002 --- Separation of Architectural Concerns}
+Harmonia shall maintain clear separation between interface/protocol handling, messaging, workflow orchestration, domain processing, canonical modelling, persistence, security, collaboration, and presentation so that each capability can evolve without assuming ownership of another capability's internal runtime.
+
+\subsection{CORE-003 --- Governed Canonical Semantics}
+Information used for internal processing shall be represented using governed canonical semantics. Transformation between external formats and internal representations shall preserve clinically and operationally material meaning and shall be traceable.
+
+\subsection{CORE-004 --- Correlation and Causation}
+Harmonia shall retain sufficient correlation and causation information to relate an originating interaction to subsequent messages, tasks, workflow activities, persistence operations, and egress interactions.
+
+\section{Security Requirements}
+
+\subsection{SEC-001 --- Trusted Authentication}
+Protected Harmonia services shall establish caller identity through a trusted authentication boundary using recognised authentication standards. Application components shall not trust caller-supplied identity claims that have not been authenticated by that boundary.
+
+\subsection{SEC-002 --- Default-Deny Authorisation}
+Protected operations shall be denied unless an authenticated principal is explicitly authorised to perform the requested action in the applicable security domain.
+
+\subsection{SEC-003 --- Authentication and Authorisation Separation}
+Authentication and authorisation shall remain distinct concerns. Authentication establishes identity; authorisation determines whether that identity may perform an action against a resource.
+
+\subsection{SEC-004 --- Contextual Resource Authorisation}
+Authorisation decisions shall be capable of considering the principal, security domain, requested action, resource type, resource identity where applicable, effective authorities, and other governed security attributes.
+
+\subsection{SEC-005 --- End-to-End Security Context}
+Security context established at ingress shall remain available across synchronous calls, asynchronous processing, persistence, retry, replay, and recovery where required to preserve accountability and authorisation semantics.
+
+\subsection{SEC-006 --- Initiating and Executing Identity}
+Harmonia shall distinguish the principal that initiated an operation from the service or process currently executing it. Automated processing shall not erase or replace the initiating identity.
+
+\subsection{SEC-007 --- Anti-Spoofing}
+External callers shall not be able to establish or elevate identity, roles, authorities, security domains, or internal trust by supplying untrusted headers or payload fields.
+
+\subsection{SEC-008 --- Security Metadata Preservation}
+Security-domain and resource-security metadata required for access-control decisions shall survive transformation, messaging, caching, persistence, replay, and recovery.
+
+\subsection{SEC-009 --- Least Privilege}
+Human users, services, processes, and infrastructure identities shall receive only the permissions required for their defined responsibilities.
+
+\subsection{SEC-010 --- PHI-Safe Operational Logging}
+Routine operational logging shall not expose PHI, credentials, authentication tokens, or sensitive clinical payloads. Diagnostic logging capable of containing PHI shall be explicitly governed, access-controlled, and isolated.
+
+\section{Provenance and Audit Requirements}
+
+\subsection{PROV-001 --- End-to-End Provenance}
+Harmonia shall retain sufficient provenance to determine the origin, actors, transformations, processing history, and resulting artefacts associated with clinically or operationally material information.
+
+\subsection{PROV-002 --- Source Context}
+Where applicable, persisted information shall retain its source system, source organisation, source identifier, effective date or period, recorded/authored date, Harmonia receipt time, and relevant transformation history.
+
+\subsection{PROV-003 --- Dual-Actor Provenance}
+Where automated processing occurs on behalf of a human or originating system, provenance shall be capable of representing both the initiating actor and the executing service/process.
+
+\subsection{PROV-004 --- Provenance and Authority Independence}
+Provenance shall describe origin and processing history; Information Authority shall describe how Harmonia may treat an assertion. Neither shall substitute for the other.
+
+\subsection{PROV-005 --- Immutable Audit}
+Security and operational audit records required for accountability shall be system-generated, durable, and immutable under ordinary application operations.
+
+\subsection{PROV-006 --- Audit Discoverability}
+Authorised users and services shall be able to locate relevant audit and provenance records using governed search criteria including resource, actor, correlation, and time where applicable.
+
+\section{Data, Persistence and Recovery Requirements}
+
+\subsection{DATA-001 --- Durable Governed State}
+Information intended to survive as Harmonia state shall be stored in an explicitly designated durable persistence service. Volatile process memory shall not become the authoritative store for governed clinical, directory, security, provenance, or workflow state.
+
+\subsection{DATA-002 --- Authoritative Read Semantics}
+Read and search operations shall operate over the authoritative persisted information set irrespective of cache population, cache eviction, process restart, or node replacement.
+
+\subsection{DATA-003 --- Cache Transparency}
+Caching shall improve performance or availability without changing the semantic existence, correctness, or discoverability of persisted information.
+
+\subsection{DATA-004 --- Search Scalability}
+Search and collection retrieval shall support bounded server-side filtering and paging appropriate to the information domain and shall not require consumers to retrieve or scan entire datasets.
+
+\subsection{DATA-005 --- Concurrency and Version Integrity}
+Governed mutable information shall support appropriate versioning and concurrency controls to prevent silent overwriting of newer state.
+
+\subsection{DATA-006 --- Referential Integrity}
+Where resources contain governed references to other resources, Harmonia shall validate required referential integrity before committing changes that would create invalid or unsafe state.
+
+\subsection{DATA-007 --- Persistence Failure Safety}
+Acknowledged governed state shall not be silently lost because of asynchronous persistence, cache failure, process restart, or infrastructure failover. Persistence failure and recovery semantics shall be explicit and observable.
+
+\subsection{DATA-008 --- Recovery Fidelity}
+Recovery and replay shall preserve the contextual metadata necessary to maintain the original security, provenance, authority, correlation, causation, and processing semantics.
+
+\section{Integration and Interoperability Requirements}
+
+\subsection{INT-001 --- Standards-Based Healthcare Interoperability}
+Harmonia shall support healthcare interoperability through standards-based interfaces including HL7 v2 and HL7 FHIR R5, while permitting governed adapters for proprietary source-system interfaces where required.
+
+\subsection{INT-002 --- Reliable Messaging}
+Asynchronous messaging used for governed processing shall provide durable at-least-once delivery. Consumers shall be designed to tolerate duplicate delivery safely.
+
+\subsection{INT-003 --- Messaging Recovery}
+Acknowledged in-flight work shall survive broker restart, network interruption, process failure, and supported failover scenarios without silent loss.
+
+\subsection{INT-004 --- FHIR R5 Boundary}
+FHIR-facing APIs shall use HL7 FHIR Release 5 resource structures, search semantics, metadata, and error representations except where a documented constraint requires otherwise.
+
+\subsection{INT-005 --- Opaque Resource Identity}
+FHIR logical resource identifiers shall be treated as opaque identifiers and shall not expose or assume business identifiers such as MRNs as resource identity.
+
+\subsection{INT-006 --- Governed Validation}
+Information entering governed Harmonia state shall be validated against applicable structural, semantic, profile, referential, and business rules before authoritative state is changed.
+
+\subsection{INT-007 --- Terminology Abstraction}
+Terminology-dependent clinical capabilities shall consume governed terminology services through a Harmonia abstraction rather than coupling presentation components directly to a particular terminology-server product.
+
+\section{Provider Registry Requirements}
+
+\subsection{DIR-001 --- Standards-Based Provider Directory}
+Harmonia shall provide a standards-based FHIR R5 representation of practitioners, practitioner roles, organisations, locations, healthcare services, endpoints, groups, and their governed relationships.
+
+\subsection{DIR-002 --- Provider Directory Discovery}
+Authorised consumers shall be able to read and search approved provider-directory information through standards-based interfaces.
+
+\subsection{DIR-003 --- Governed Directory Change}
+Changes to authoritative Provider Registry state shall pass through governed validation and approval/stewarding processes rather than uncontrolled direct mutation.
+
+\subsection{DIR-004 --- Directory Referential Integrity}
+Provider-directory changes shall preserve valid relationships between practitioners, roles, organisations, locations, services, endpoints, and groups.
+
+\subsection{DIR-005 --- Healthcare Identifier Governance}
+The Provider Registry shall support governance of applicable national and organisational healthcare identifiers and prevent invalid or conflicting authoritative identifier state.
+
+\subsection{DIR-006 --- Provider Self-Service Governance}
+Where providers or departmental administrators can request directory changes, self-service shall initiate governed change processing rather than bypass authoritative stewardship.
+
+\section{Clinical Information and Longitudinal Record Requirements}
+
+\subsection{CLIN-001 --- Vendor-Neutral Clinical Information Layer}
+Harmonia shall maintain a durable, vendor-neutral representation of clinically relevant information independently of proprietary source-system interfaces while preserving the identity, provenance, and authority of source information.
+
+\subsection{CLIN-002 --- FHIR-Based Longitudinal Clinical Representation}
+The externally consumable longitudinal clinical information model shall use FHIR R5 and support the resources required to represent patient identity, flags, allergies/intolerances, episodes, encounters, problems, observations, diagnostic requests/results, referrals, medications, and necessary supporting entities.
+
+\subsection{CLIN-003 --- Medication as a First-Class Clinical Domain}
+The longitudinal record shall distinguish medication definition, prescribing/ordering, dispensing, administration, and reported medication use rather than collapsing them into a single undifferentiated medication list.
+
+\subsection{CLIN-004 --- Source-System Independence}
+Downstream consumers shall be able to consume Harmonia's governed clinical representation without requiring direct knowledge of, or dependency upon, proprietary EMR, PAS, LIS, RIS/PACS, or departmental data models.
+
+\subsection{CLIN-005 --- Source Authority Preservation}
+A source system may remain authoritative for the clinical or administrative activity it manages while Harmonia maintains the governed interoperability representation of that information.
+
+\subsection{CLIN-006 --- Authority-Aware Clinical Reconciliation}
+Harmonia shall be capable of applying governed reconciliation behaviour based on source, Information Authority, provenance, resource type, existing state, and processing context. Authority classifications shall not imply fixed reconciliation outcomes.
+
+\subsection{CLIN-007 --- Preservation of Conflicting Assertions}
+Where clinically appropriate, Harmonia shall be capable of retaining multiple differing assertions with their provenance, authority, and verification state rather than forcing an unjustified single truth.
+
+\subsection{CLIN-008 --- Clinical Source Context}
+Authorised consumers shall be able to determine, where relevant, what an item represents, when it was clinically effective, who or what recorded it, where it originated, when Harmonia received it, its authority classification, and its verification/reconciliation state.
+
+\subsection{CLIN-009 --- Governed Patient Identity}
+Clinical information shall be associated with patients through governed identity matching and reconciliation that preserves source identifiers and avoids unsafe silent duplication or merging.
+
+\subsection{CLIN-010 --- Read-Oriented Initial LHR}
+The initial longitudinal-record capability shall prioritise reliable read and search access while preserving an architecture that can support selectively governed clinical authoring later.
+
+\subsection{CLIN-011 --- Selective Clinical Authoring}
+Clinical create/update capability shall be enabled by information domain only where the required terminology, ontology, validation, security, governance, reconciliation, and workflow controls are available.
+
+\section{Human-Facing Presentation Requirements}
+
+\subsection{UX-001 --- Consistent Iris Experience}
+Harmonia's Iris applications shall use a common design system and consistent interaction patterns while allowing Clinical, Monitoring, and Administration applications to retain domain-appropriate information architecture.
+
+\subsection{UX-002 --- Information-Dense Operational Design}
+Iris shall favour readable, information-dense, action-oriented presentation with restrained visual decoration and clear navigation.
+
+\subsection{UX-003 --- Honest System State}
+User interfaces shall distinguish observed runtime information from configured/static information and shall not fabricate plausible runtime state when data is unavailable.
+
+\subsection{UX-004 --- Explicit Availability States}
+Material user-interface views shall distinguish loading, loaded, empty, unavailable, partial, and error states so infrastructure failure is not misrepresented as an empty healthy dataset.
+
+\subsection{UX-005 --- Patient Search and Workspace}
+Iris-Clinical shall provide patient search/selection and shall open selected patients in clearly identified patient workspaces. Multiple patient workspaces may be open concurrently.
+
+\subsection{UX-006 --- Longitudinal Clinical Navigation}
+The initial Iris-Clinical patient workspace shall provide access to Demographics, Flags, Allergies/Intolerances, Episodes/Encounters, Problems, Medications, Observations, Diagnostics, and Referrals.
+
+\subsection{UX-007 --- Persistent Patient Context}
+Iris-Clinical shall maintain clear patient identity context while a patient workspace is active and shall support prominent display of clinically important active warnings such as flags and allergies/intolerances.
+
+\subsection{UX-008 --- Provenance-Aware Clinical Presentation}
+Clinical views shall expose relevant source, effective/recorded/received dates, authority, provenance, and verification/reconciliation context without independently asserting clinical truth.
+
+\subsection{UX-009 --- Initial Clinical Scope}
+Appointment management, general tasking, and comprehensive dynamic-EMR workflow are not required for the initial Iris-Clinical longitudinal-record capability.
+
+\section{Operational and Resilience Requirements}
+
+\subsection{OPS-001 --- Reproducible Deployment}
+Harmonia shall support repeatable deployment in development and target runtime environments using externalised configuration and automated deployment mechanisms.
+
+\subsection{OPS-002 --- Durable Infrastructure State}
+Stateful platform services shall use explicit durable storage appropriate to their recovery requirements.
+
+\subsection{OPS-003 --- Meaningful Health and Readiness}
+Services shall expose health and readiness information that reflects material dependencies rather than merely indicating that a process or network port exists.
+
+\subsection{OPS-004 --- Operational Observability}
+Harmonia shall expose sufficient operational telemetry to diagnose subsystem, interface, queue, workflow, persistence, event, and task health without requiring direct inspection of implementation internals.
+
+\subsection{OPS-005 --- Production Resilience}
+The target architecture shall support appropriate high availability, recovery, and horizontal or vertical scaling for messaging, persistence, caching, and stateless services. Development simplifications shall not prevent deployment of the production resilience model.
+
+\subsection{OPS-006 --- Architecture Conformance}
+Critical architectural boundaries and invariants shall be verifiable through automated tests or equivalent repeatable controls where practical.
+
+\section{Requirement Evolution}
+
+Requirements in this appendix are deliberately implementation-neutral. When implementation analysis identifies a defect or missing capability, that observation shall be recorded as an architecture finding and/or backlog item and linked to the relevant requirement rather than rewriting the requirement around the current codebase.
+
+New requirements shall be added when Harmonia acquires a new enduring architectural obligation. Backlog work may be added, completed, replaced, or abandoned without changing the requirement unless the architectural obligation itself changes.

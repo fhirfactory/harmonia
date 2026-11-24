@@ -1,0 +1,10 @@
+{
+  "currentCandidateSha256": "eb4c340c25a2d8ee114053a445056b1afaf4b000e38b15c2f0259384e7f5f6a9",
+  "predecessorEvidence": "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/transport-summary.json",
+  "sameChangedRecordIdSets": {
+    "relationships": true,
+    "views": true
+  },
+  "status": "PASS",
+  "limits": "Only changed-record ID-set correspondence is checked. This does not establish identical raw transformations, semantic harmlessness, pixel equivalence, a new full investigation or candidate acceptance. Strict transport remains FAIL."
+}

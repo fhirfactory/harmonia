@@ -1,0 +1,48 @@
+{
+  "outcome": "BOUNDED_INTERPRETATION_READY_FOR_REVIEW",
+  "scopedPayloadBytes": 90051,
+  "limitBytes": 128000,
+  "viewFolderCount": 32,
+  "groups": 5,
+  "subgroups": 27,
+  "submittedScopedNativeElements": 0,
+  "submittedScopedCanonicalIds": 0,
+  "submittedIncidentSemanticRelationships": 0,
+  "submittedViewReferences": 0,
+  "existingGovernedSubjects": 82,
+  "existingCodeOrScopedBindingMatches": 0,
+  "exactGroupingLexicalLeads": 0,
+  "proposedNativeGroupingSubjects": 32,
+  "proposedSubgroupCompositionRelationships": 27,
+  "spellingDiscrepancies": [
+    {
+      "code": "G18.03",
+      "submitted": "03. Directory-Informaton-Maintenance",
+      "candidate": "Directory Information Maintenance"
+    }
+  ],
+  "nativeTypeOrSpecializationImport": "None: input contains presentation folders only",
+  "identityAllocation": "None; all prospective canonical IDs and relationship IDs unset",
+  "architecturalAcceptance": "Not recorded",
+  "fullDeltaLimit": "Still applicable; full delta not interpreted",
+  "canonicalValidation": {
+    "status": "PASS",
+    "elements": 1842,
+    "relationships": 1882,
+    "qualifiedSourcePredicates": 462,
+    "canonicalIdentities": 1842,
+    "representationIdentities": 1842,
+    "provenanceCoverage": 1842,
+    "sourceBindings": 3666,
+    "supportedNativeTypes": 60,
+    "navigation": "PASS",
+    "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance",
+    "containment": "PASS",
+    "offlineXsd": "PASS",
+    "exchangeReferences": "PASS",
+    "outputSha256": "7df92528a09f9a765ddebec105643bae08ac92583cad4e8901b3135d49db2c2e",
+    "publicationAllocatedIdentities": 0,
+    "actualArchiTransport": "NOT_PERFORMED"
+  },
+  "folderLabelInterpretation": "32 candidate-code/ordinal/context correspondences, NOT canonical identity correlations"
+}

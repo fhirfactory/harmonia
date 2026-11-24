@@ -1,0 +1,66 @@
+{
+  "outcome": "PASS",
+  "developmentRelease": "1.1.21",
+  "acceptedPredecessor": "1.1.20",
+  "predecessorRemoteHead": "1862b21372bfc7a1eba117d53b2bdd4c2cf24cc5",
+  "predecessorXml": {
+    "path": "enterprise-architecture/design/archimate/published/1.1.20/Harmonia-Architecture.xml",
+    "sha256": "1954006168f3a993de9b31be4f7f81599f39f7ba55b4c32b85ff7aca0b151512"
+  },
+  "initialCandidate": {
+    "path": "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/Harmonia-Architecture-candidate.xml",
+    "sha256": "f5bc8f127bd109457265dbd2b661671379dd6cfe7a8a8e65079ba1b9e2b380ee",
+    "standing": "Qualified development candidate; not an accepted reference publication"
+  },
+  "population": {
+    "CT1": 24,
+    "CT2": 145,
+    "CT3": 585,
+    "Features": 2935,
+    "elements": 5685,
+    "relationships": 6636,
+    "authoredViews": 1288
+  },
+  "exactCanonicalSourcePreservation": {
+    "outcome": "PASS",
+    "files": 5686,
+    "sha256": "9754790e7ad24d41e4c31d34bf00f48786337ec1772796ac797f3e614fd62678",
+    "excludes": "Derived MANIFEST.md; its only change is the release header"
+  },
+  "rawComparison": {
+    "status": "DIFFERENCES",
+    "findingCount": 1,
+    "soleDifference": {
+      "classification": "UNEXPLAINED DIFFERENCE",
+      "path": "/model/properties[1]/property[key=Baseline / Architecture Release]/value[1]/text()",
+      "before": "1.1.20",
+      "after": "1.1.21",
+      "reason": "Exact text compared; whitespace/language selection is not normalised"
+    },
+    "architecturalContent": "PASS — exact preservation of all elements, relationships, authored Views and representation organisation"
+  },
+  "immutablePublicationRegisterPreservation": {
+    "outcome": "PASS",
+    "files": 239
+  },
+  "preExistingUserFiles": "PASS — both unchanged",
+  "schemaReferencesIdentityContainmentNavigation": "PASS",
+  "deterministicProjectionAndReaderNarrativeManifestChecks": "PASS",
+  "canonicalLinks": "PASS — 2245 links",
+  "browserSmoke": "PASS — 5685 elements",
+  "architectureTests": {
+    "outcome": "PASS",
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsedSeconds": 18.266
+  },
+  "humanReview": "NOT_PERFORMED — initialisation introduces no material architecture/navigation change; inherited exact-candidate review deferral remains scoped to 1.1.20",
+  "actualArchiTransport": "NOT_PERFORMED for 1.1.21; prior actual 1.1.20 CLI/native PASS and strict FAIL remain historical evidence",
+  "PDFs": "NOT_COMPILED",
+  "substantiveModelling": "NOT_STARTED",
+  "newAcceptedPublication": "NOT_CREATED",
+  "hcrl": "PENDING 001",
+  "currentTaskTimestamp": "ESTABLISHED — 2026-11-10T09:35:40.440Z; no historical exemption used"
+}

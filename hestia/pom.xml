@@ -24,20 +24,21 @@
     <parent>
         <groupId>net.fhirfactory.harmonia</groupId>
         <artifactId>harmonia-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>hestia</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Harmonia :: Hestia :: Data Services (Mnemosyne &amp; Mneme)</name>
     <description>Harmonia Hestia (Data Services) — Mnemosyne (Relational Disk Persistence: Clinical FHIR &amp; Operations JPA) and Mneme (In-Memory Clustered Cache &amp; Persistence SPI)</description>
 
     <modules>
+        <module>mnemosyne-api</module>
         <module>mnemosyne-clinical</module>
         <module>mnemosyne-operations</module>
-        <module>hie-operations-cli</module>
+        <module>mnemosyne-operations-cli</module>
         <module>mneme-persistence</module>
         <module>mneme-cluster</module>
     </modules>

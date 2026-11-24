@@ -1,0 +1,26 @@
+{
+  "accepted_relationships": 60,
+  "accepted_view_changes": 12,
+  "checks": {
+    "actual_source_navigation": "PASS",
+    "composition_navigation": "PASS",
+    "exact_regeneration": "PASS",
+    "protected_content": "PASS",
+    "unique_navigation_references": "PASS",
+    "views_and_view_navigation": "UNCHANGED"
+  },
+  "deterministic_projection": "PASS",
+  "elements_reconciled": 82,
+  "held_unchanged": 4,
+  "identities": 1394,
+  "identities_allocated_by_replay": 0,
+  "model_sha256": "c7840ed0a41c66feb4730a9f66fab120b321f759bf8780d005cdcd82bff72d02",
+  "new_persisted_identities": 32,
+  "relationships_preserved": 1137,
+  "release_created": false,
+  "semantic_and_view_preservation": "PASS",
+  "standing": "ACCEPTED_RECONCILIATION_UNPUBLISHED",
+  "status": "PASS",
+  "view_navigation": "EXACT_SERIALIZED_MATCH",
+  "views_preserved": 1209
+}

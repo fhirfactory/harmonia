@@ -1,0 +1,18 @@
+{
+  "outcome": "PASS",
+  "meaning": "preservation and blocker assertions passed; reconciliation task remains UNRESOLVED",
+  "protectedFilesUnchanged": 1946,
+  "canonicalElementFilesUnchanged": 1874,
+  "acceptedSubjectsVerified": 32,
+  "acceptedCompositionsVerified": 27,
+  "originalRelationshipsVerified": 1882,
+  "maintainedTemplateUnchanged": true,
+  "incomingUnchanged": true,
+  "publishedUnchanged": true,
+  "releaseUnchanged": true,
+  "existing784CandidateAssessmentUnchanged": true,
+  "noAdditionalCanonicalElements": true,
+  "noSemanticIncorporation": true,
+  "newImportableXml": "NOT_GENERATED: native reference/XSD gates fail",
+  "actualArchiTransport": "NOT_PERFORMED"
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "purpose": "Disposition-only provenance maintenance; no architecture/transport rerun or release transition",
+  "candidateSha256": "6f6432a979a92a3adbf0261ba4bc761d092f87eb55fd4e5d7968f597e4d64d3a",
+  "preservedPinnedFiles": 6604,
+  "changedPinnedFiles": [],
+  "strictResult": "FAIL \u2014 unchanged",
+  "crDisposition": "Accept",
+  "crOutcome": "Resolved",
+  "solutionArchitectDecision": "ACCEPTED WITH QUALIFICATION (1.1.24 only)",
+  "humanStructuralReview": "PENDING",
+  "wholeResultAcceptance": "PENDING",
+  "taskTimeTreatment": "UNRESOLVED \u2014 unchanged",
+  "originalReportProducedAtPreserved": true,
+  "release": {
+    "version": "1.1.23",
+    "previous_version": "1.1.22"
+  },
+  "hcrlPending": true,
+  "iterationAdvanced": false,
+  "gitDiffCheck": "PASS",
+  "branch": "Mneme-and-Mnemosyne-Build",
+  "head": "8204fd49a4d380c068a03acdf30c17bb06e5d953",
+  "limits": "Preservation/status/correspondence checks only; no new transport guarantee, structural review, architectural remediation or closure asserted."
+}

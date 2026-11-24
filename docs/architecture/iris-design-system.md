@@ -208,7 +208,26 @@ The primary proving ground for the Iris Design System is the redesigned **Subsys
    - ActiveMQ Artemis is subordinated under **Petasos**.
    - Infinispan Cache Grid is subordinated under **Mneme**.
    - PostgreSQL Authoritative DBs are subordinated under **Mnemosyne**.
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Agora control versus Omilia operational ownership](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+This supersedes only the architectural ownership implication; Iris layout/integration remains deferred.
+
+```text
+---------------------------------------------------------
+```
+
    - Synapse Matrix Homeserver is subordinated under **Agora**.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 3. **English Alongside Greek**: Every component, tree node, and view header displays an explanatory English description alongside its Greek mythological name.
 
 ---

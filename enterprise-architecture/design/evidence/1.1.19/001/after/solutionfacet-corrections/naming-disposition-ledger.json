@@ -1,0 +1,168 @@
+{
+  "standing": "Bounded correspondence with the 16 prior name-role mismatches; historical source values preserved",
+  "entries": [
+    {
+      "canonicalId": "f5df30b02e8a4d60bf44e8af2da4d5ab",
+      "displayName": "Capacity Planning",
+      "friendlyName": "PerformanceAndCapacity.CapacityPlanning",
+      "currentFriendlyNameCorrection": true,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Corrected current spelling/punctuation only; retain source-native Name as historical provenance"
+    },
+    {
+      "canonicalId": "1c57a3d9080443178f6e9159d0591c77",
+      "displayName": "User Experience",
+      "friendlyName": "UserExperience",
+      "currentFriendlyNameCorrection": false,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Source-only typography or distinct governed name roles; no current naming error to correct"
+    },
+    {
+      "canonicalId": "b05d68295ed141d6815aa56c8a3d3b39",
+      "displayName": "Processing Outcomes - Outcomes",
+      "friendlyName": "ProcessingAndWorkflow.ProcessingOutcomes.Outcomes",
+      "currentFriendlyNameCorrection": false,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Source-only typography or distinct governed name roles; no current naming error to correct"
+    },
+    {
+      "canonicalId": "549a5d805b3f40d49437ce704f923bf0",
+      "displayName": "Implementation Strategy - Constraints",
+      "friendlyName": "ArchitecturalGovernance.ImplementationStrategy.Constraints",
+      "currentFriendlyNameCorrection": false,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Source-only typography or distinct governed name roles; no current naming error to correct"
+    },
+    {
+      "canonicalId": "5a4a41f263424c1aac14102b64f95bd0",
+      "displayName": "Processing Outcomes - Principles",
+      "friendlyName": "ProcessingAndWorkflow.ProcessingOutcomes.Principles",
+      "currentFriendlyNameCorrection": false,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Source-only typography or distinct governed name roles; no current naming error to correct"
+    },
+    {
+      "canonicalId": "2423108223e14d27a7bf59610034297a",
+      "displayName": "Security Monitoring - Principles",
+      "friendlyName": "SecurityAndManagement.SecurityMonitoring.Principles",
+      "currentFriendlyNameCorrection": true,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Corrected current spelling/punctuation only; retain source-native Name as historical provenance"
+    },
+    {
+      "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+      "displayName": "Architectural-Governance.Architecture-Conformance.Constraints",
+      "friendlyName": "ArchitecturalGovernance.ArchitectureConformance.Constraints",
+      "currentFriendlyNameCorrection": true,
+      "remainingQualifications": [
+        {
+          "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+          "property": "displayName",
+          "reason": "The explicit dotted/hyphenated full-context displayName may reflect a naming convention. Replacing it with a shorter leaf-style label exceeds unambiguous spelling/punctuation correction."
+        }
+      ],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Corrected current spelling/punctuation only; retain source-native Name as historical provenance"
+    },
+    {
+      "canonicalId": "fe8916b03b084e82af587ac5a900349b",
+      "displayName": "Authorisation Enforcement",
+      "friendlyName": "SecurityAndManagement.AuthorisationEnforcement",
+      "currentFriendlyNameCorrection": false,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Source-only typography or distinct governed name roles; no current naming error to correct"
+    },
+    {
+      "canonicalId": "0a59e0ebb33c494e939148d30e42f49c",
+      "displayName": "Fault Tolerance",
+      "friendlyName": "ResilienceAndRecovery.FaultTolerance",
+      "currentFriendlyNameCorrection": true,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Corrected current spelling/punctuation only; retain source-native Name as historical provenance"
+    },
+    {
+      "canonicalId": "03cfbc2cac494fb9a15106c2c571d384",
+      "displayName": "Architectural Governance",
+      "friendlyName": "ArchitecturalGovernance",
+      "currentFriendlyNameCorrection": false,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Source-only typography or distinct governed name roles; no current naming error to correct"
+    },
+    {
+      "canonicalId": "805280b737e14b72ba401393c1f4a271",
+      "displayName": "Operational Diagnostics - Drivers",
+      "friendlyName": "OperationsAndAssurance.OperationalDiagnostics.Drivers",
+      "currentFriendlyNameCorrection": true,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Corrected current spelling/punctuation only; retain source-native Name as historical provenance"
+    },
+    {
+      "canonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+      "displayName": "Information Sovereignty and Residency",
+      "friendlyName": "InformationSovereigntyAndResidency",
+      "currentFriendlyNameCorrection": false,
+      "remainingQualifications": [
+        {
+          "canonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+          "property": "friendlyName",
+          "reason": "Explicit local friendlyName conflicts with an authored qualified native Name. Adding ancestry changes qualification rather than fixing punctuation; retain for SA review."
+        }
+      ],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Unresolved qualification retained"
+    },
+    {
+      "canonicalId": "9a5487f0dd7b42bca1f791aad1257849",
+      "displayName": "Authorisation Enforcement - Requirements",
+      "friendlyName": "SecurityAndManagement.AuthorisationEnforcement.Requirements",
+      "currentFriendlyNameCorrection": false,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Source-only typography or distinct governed name roles; no current naming error to correct"
+    },
+    {
+      "canonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+      "displayName": "User Interface Responsiveness",
+      "friendlyName": "UserInterfaceResponsiveness",
+      "currentFriendlyNameCorrection": false,
+      "remainingQualifications": [
+        {
+          "canonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+          "property": "friendlyName",
+          "reason": "Explicit local friendlyName conflicts with an authored qualified native Name. No new ancestor qualification inferred."
+        }
+      ],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Unresolved qualification retained"
+    },
+    {
+      "canonicalId": "6d6086134162468cac129040a139d8d9",
+      "displayName": "Architecture Vision",
+      "friendlyName": "ArchitecturalGovernance.ArchitectureVision",
+      "currentFriendlyNameCorrection": true,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Corrected current spelling/punctuation only; retain source-native Name as historical provenance"
+    },
+    {
+      "canonicalId": "abc27ddff6d644d9945db0cfd7488f07",
+      "displayName": "Audit and Accountability",
+      "friendlyName": "AuditAndAccountability",
+      "currentFriendlyNameCorrection": false,
+      "remainingQualifications": [],
+      "historicalAuthoredNativeNamePreserved": true,
+      "treatment": "Source-only typography or distinct governed name roles; no current naming error to correct"
+    }
+  ],
+  "remainingQualificationCount": 3
+}

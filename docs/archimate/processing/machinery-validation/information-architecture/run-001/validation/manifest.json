@@ -1,0 +1,99 @@
+{
+  "additional_source_sha256": {
+    ".junie/reports/2026-10-20-information-architecture-machinery-run-001-naming.md": "ceef2fe42b4446afb4f1cdb082b91bcdcb2d1dd31a077a0cfb6fdb97cb3b8a09",
+    "docs/archimate/framework/README.md": "86d3294c124afdac7be8eb8c59a9e39667a59443f29a5f23dd526f1035ed3785",
+    "docs/archimate/framework/tests/test_governed_metadata.py": "74665173f7cba4720d4a0085287501933ed69a2c56c8e7e59dcc3ed5ed6cfccd",
+    "docs/archimate/framework/tests/test_information_naming.py": "780e99a12633105d33b7ef7f3caff85b84011574dc4ca6f88214c5f6edbc30ac"
+  },
+  "checks": [
+    {
+      "command": "timeout --signal=TERM --kill-after=5s 120s python3 -m unittest discover -s docs/archimate/framework/tests -p test_information_naming.py -v",
+      "detail": "test helper/harness",
+      "log": "initial-focused-tests.log.gz",
+      "name": "initial-focused-tests",
+      "sha256": "bd598a099071393b214ecd0193e9528488998c81709f99c800e74a839a36e7e7",
+      "status": "FAIL",
+      "timeout_seconds": 120
+    },
+    {
+      "command": "timeout --signal=TERM --kill-after=5s 120s python3 -m unittest discover -s docs/archimate/framework/tests -p test_information_naming.py -v",
+      "detail": "22 tests in 6.791 seconds",
+      "log": "focused-tests.log.gz",
+      "name": "focused-tests",
+      "sha256": "c5b79fc99406a5f7fbbb838d0c79e9c6abbe31e72902b18a36778a05343e868c",
+      "status": "PASS",
+      "timeout_seconds": 120
+    },
+    {
+      "command": "timeout --signal=TERM --kill-after=5s 420s python3 -m unittest discover -s docs/archimate/framework/tests -v",
+      "detail": "260 tests in 302.675 seconds",
+      "log": "framework-tests.log.gz",
+      "name": "framework-tests",
+      "sha256": "dc86917bbd0ccb2ec64a9f54d44a71eb23025718c67e8b992690363bfbf0fbf6",
+      "status": "PASS",
+      "timeout_seconds": 420
+    },
+    {
+      "command": "timeout --signal=TERM --kill-after=5s 300s mvn test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+      "detail": "90 tests; zero failures/errors/skips; Maven 18.829 seconds",
+      "log": "architecture-tests.log.gz",
+      "name": "architecture-tests",
+      "sha256": "59ba9dc873f0e73936e6965a1f363effb0d2cb1177c24f57d9498854613553c0",
+      "status": "PASS",
+      "timeout_seconds": 300
+    },
+    {
+      "command": "timeout --signal=TERM --kill-after=5s 120s python3 docs/archimate/framework/tools/information_naming_run.py --run run-001",
+      "detail": "Proposed candidate generated; no release allocated",
+      "log": "generation.log.gz",
+      "name": "generation",
+      "sha256": "7814882ace00564deaa70ea9a8e45d0c2d98b3e88fa387e58eb9178d910b3ea0",
+      "status": "PASS",
+      "timeout_seconds": 120
+    },
+    {
+      "command": "timeout --signal=TERM --kill-after=5s 120s python3 docs/archimate/framework/tools/information_naming_run.py --run run-001 --check",
+      "detail": "Exact regeneration; no evidence written by --check",
+      "log": "replay-check.log.gz",
+      "name": "replay-check",
+      "sha256": "645f934c6e8673c22e7c6dcb5db2deb5661730546afbede35a68babfaf6a0d2a",
+      "status": "PASS",
+      "timeout_seconds": 120
+    }
+  ],
+  "files_sha256": {
+    "baseline-naming-preview.json": "136809ed8d5f259937a6c6e3bff6901a57d4a843f449356b8747b30659f4653c",
+    "candidate.xml.gz": "3a7bb8b1bf06f5432981c254f8ae73f389b913a6fa7b6de5b3b5468bb7829214",
+    "change-review.json.gz": "2863092fab80ec4176106f11e40fe1c54df77af0fbe9da219d044a9753505090",
+    "governance/archimate-ingestion-publication-semantics.md.gz": "4affced0c6b1770b93221647837b3b0dc61bbdebca3aa1dc1e215220a61e8b13",
+    "governance/architecture-modelling-strategy.md.gz": "19455fe1ba89146d47f641c7fe7b5a1823f6baaaab07b9e3f2a8124075c2c790",
+    "governance/architecture-release-policy.md.gz": "6e68c29e114c49338010f2dcb0b5e5a4c8e7f38a1c0fe39964005a47a45004f7",
+    "governance/canonical-identity-and-naming.md.gz": "7b3bb9fbd9fbd0b7171da7531a2f4da2042b73c6cf9de8ce3f1aac5bd45e243a",
+    "governance/manifest.json": "beec9f82b75ef4953b242e9e80a7b66d4bf6473ccd990211efb0c9ffbe4a1df4",
+    "manifest.json": "2b14bb863beb6029490863bc8a08d7fad134988bee091b93d384f8736af541c3",
+    "proposed-metadata.json": "4c0ee6607a7fbdc9a03df1e47adc7435947fb467a6b7cba4b7eaad34a096d311",
+    "representation-rebindings.json": "702912d1a51769f55004eaed127b0421b84c99ee3a8b160a86445c0de69d940d",
+    "validation/architecture-tests.log.gz": "59ba9dc873f0e73936e6965a1f363effb0d2cb1177c24f57d9498854613553c0",
+    "validation/focused-tests.log.gz": "c5b79fc99406a5f7fbbb838d0c79e9c6abbe31e72902b18a36778a05343e868c",
+    "validation/framework-tests.log.gz": "dc86917bbd0ccb2ec64a9f54d44a71eb23025718c67e8b992690363bfbf0fbf6",
+    "validation/generation.log.gz": "7814882ace00564deaa70ea9a8e45d0c2d98b3e88fa387e58eb9178d910b3ea0",
+    "validation/initial-focused-tests.log.gz": "bd598a099071393b214ecd0193e9528488998c81709f99c800e74a839a36e7e7",
+    "validation/release-check.json": "3ab2fd7b2b73733e2b4149fc4c682a8f0bf110c80b3543cf51200ebce3f47214",
+    "validation/replay-check.log.gz": "645f934c6e8673c22e7c6dcb5db2deb5661730546afbede35a68babfaf6a0d2a",
+    "verification.json": "5e96945b60c70b7cb202442b599abacb79190937611e13772cad32d83b419ebb"
+  },
+  "integrity": {
+    "archi_roundtrip": "NOT_PERFORMED",
+    "architect_acceptance": "NOT_RECORDED",
+    "artifact_hashes": "PASS",
+    "diff_whitespace": "PASS",
+    "frozen_inputs": "PASS",
+    "governance_before_after_hashes": "PASS",
+    "release_check": "PASS",
+    "release_created": false,
+    "source_fingerprints": "PASS"
+  },
+  "run": "run-001",
+  "standing": "MACHINERY_VALIDATED_WITH_EXPLICIT_UNRESOLVED_ARCHITECTURE",
+  "status": "PASS"
+}

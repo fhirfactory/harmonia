@@ -1,0 +1,16 @@
+{
+  "purpose": "Explicit promotion of current governance authority. Legacy locators in unchanged canonical sources preserve original provenance; current rendering/checks use these successors. No identity or semantic correspondence is inferred from paths.",
+  "successors": {
+    "docs/markdown/governance/architecture-release-policy.md": "enterprise-architecture/governance/architecture-release-policy.md",
+    "docs/markdown/governance/canonical-identity-and-naming.md": "enterprise-architecture/governance/canonical-identity-and-naming.md",
+    "docs/markdown/governance/architecture-modelling-strategy.md": "enterprise-architecture/governance/architecture-modelling-strategy.md",
+    "docs/markdown/governance/architecture-authoring-praxis.md": "enterprise-architecture/governance/architecture-authoring-praxis.md",
+    "docs/markdown/governance/archimate-round-trip-engineering-praxis.md": "enterprise-architecture/governance/archimate-round-trip-engineering-praxis.md",
+    "docs/markdown/governance/archimate-ingestion-change-review.md": "enterprise-architecture/governance/archimate-ingestion-change-review.md",
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md": "enterprise-architecture/governance/archimate-ingestion-publication-semantics.md",
+    "docs/markdown/governance/archi-navigation-and-view-convention.md": "enterprise-architecture/governance/archi-navigation-and-view-convention.md",
+    "docs/markdown/governance/architectural-axioms.md": "enterprise-architecture/governance/architectural-axioms.md",
+    "docs/markdown/governance/architecture-change-provenance.md": "enterprise-architecture/governance/architecture-change-provenance.md",
+    "docs/markdown/governance/rad-archimate-model-mapping.md": "enterprise-architecture/governance/archimate-model-mapping.md"
+  }
+}

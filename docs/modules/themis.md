@@ -1,6 +1,23 @@
 # Themis Subproject Reference: Policy & Authorization Governance `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Themis Authorisation Model and distributed enforcement](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [PEP-Context availability and delegation](../markdown/05-information-systems-architecture/component-register.md#themis-availability-and-delegation)
+- [Kleio authoritative Audit Capture](../markdown/05-information-systems-architecture/component-register.md#c03)
+
+```text
+---------------------------------------------------------
+```
+
 Themis is Harmonia's centralized default-deny authorization engine, policy evaluation framework, and non-PHI security auditing subsystem.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ---
 
@@ -49,6 +66,18 @@ themis/
 - **Key Classes & Policies**:
   - `DeterministicPolicyEvaluator`: Primary evaluation engine implementing the default-deny algorithm.
   - `HarmoniaServiceIdentities`: Managed service account catalogue for platform daemons (Pylai, Ponos, Mnemosyne, Agora).
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Governed permitted combinations; no blanket bypass](../markdown/05-information-systems-architecture/component-register.md#authorisation-criteria)
+- [AuthorisationRole and governed assignments](../markdown/05-information-systems-architecture/component-register.md#criteria-collections-and-authorisationroles)
+
+```text
+---------------------------------------------------------
+```
+
   - Built-in Policy Portfolio:
     - `ProviderRegistryReadPolicy`: Authorizes read/search operations for callers with `PRV_READ` or `PRV_SEARCH`.
     - `ProviderRegistrySubmitPolicy`: Authorizes submissions for callers with `PRV_SUBMIT`.
@@ -56,6 +85,11 @@ themis/
     - `ProviderRegistryPersistPolicy`: Authorizes relational persistence for services with `PRV_WRITE` or `SYS_ADMIN`.
     - `AuditReadPolicy`: Restricts access to security audit streams to auditors with `AUDIT_READ`.
     - `SystemAdminPolicy`: Blanket administrative bypass for principals holding `SYS_ADMIN`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 - **Runtime Dependencies**: `themis-api`, `calliope`, Slf4j.
 
 ### 2.3 `themis-audit` `[IMPLEMENTED]`
@@ -74,12 +108,29 @@ themis/
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Themis Authorisation Model and distributed enforcement](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [PEP-Context availability and delegation](../markdown/05-information-systems-architecture/component-register.md#themis-availability-and-delegation)
+- [Kleio authoritative Audit Capture](../markdown/05-information-systems-architecture/component-register.md#c03)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Themis Owns
 - The definition and evaluation of security policies, principals, roles, and authorities.
 - The default-deny policy evaluation engine (`DeterministicPolicyEvaluator`).
 - Built-in domain security policies for Provider Registry and platform services.
 - Controlled platform service identities (`HarmoniaServiceIdentities`).
 - Non-PHI security audit logging stream (`ThemisAuditService`).
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Themis Explicitly Does NOT Own (Anti-Responsibilities)
 - Network socket listening or TLS handshake termination (owned by Pylai / Ingress).

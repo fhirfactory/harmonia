@@ -1,6 +1,23 @@
 # Concept: Praxis `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C06 — Praxis retained uncertainty](../markdown/05-information-systems-architecture/component-register.md#c06)
+- [Pathway model and Praxis Pathway cardinality](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#pathway-model)
+
+```text
+---------------------------------------------------------
+```
+
 Praxis is Harmonia's workflow orchestration and blueprint definition component within the Energeia subsystem, responsible for defining declarative execution DAGs, stage transitions, and pipeline dependencies for multi-step clinical processes.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -12,13 +29,47 @@ Praxis is Harmonia's workflow orchestration and blueprint definition component w
   1. *Theoria* (θεωρία) — theoretical contemplation aimed at discovering truth.
   2. *Poiesis* (ποίησις) — production or fabrication aimed at creating an external artifact.
   3. *Praxis* (πρᾶξις) — practical, purposeful action guided by rational decision-making, where the action itself is directed toward a good or ethical end.
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Praxis envelope, ownership and management services](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#praxis-operational-context)
+- [Detailed Praxis contracts remain unresolved](../markdown/05-information-systems-architecture/gaps.md)
+
+```text
+---------------------------------------------------------
+```
+
 - **Architectural Rationale**: Healthcare integration is fundamentally *praxis*: it is not passive contemplation, nor is it the isolated production of widgets. It is deliberate, coordinated, and morally significant clinical action. Praxis defines how multiple discrete activities (*erga*) are composed into an orderly, coherent medical workflow that safely delivers patient information to clinicians.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
 ## 2. Architectural Definition `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C06 — Praxis retained uncertainty](../markdown/05-information-systems-architecture/component-register.md#c06)
+- [Pathway model and Praxis Pathway cardinality](../markdown/05-information-systems-architecture/pathways-journeys-and-handoff.md#pathway-model)
+
+```text
+---------------------------------------------------------
+```
+
 Praxis specifies the structural blueprint of a clinical workflow as a Directed Acyclic Graph (DAG) of activities:
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ```
 +---------------------------------------------------------------------------------------+
@@ -55,12 +106,28 @@ Praxis specifies the structural blueprint of a clinical workflow as a Directed A
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C06 — Praxis](../markdown/05-information-systems-architecture/component-register.md#c06)
+- [Candidate features F11–F12](../markdown/05-information-systems-architecture/candidate-feature-map.md)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Praxis Owns
 - TaskSequence blueprint definitions, schemas, and step declarations.
 - Dynamic blueprint loader service (`TaskSequenceLoader`).
 - Startup cache seeding and validation (`TaskSequenceDefaultSeeder`).
 - Dependency ordering, condition evaluation, and execution step transition rules.
 - JSON/YAML schema definitions for clinical workflow blueprints.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Praxis Explicitly Does NOT Own (Anti-Responsibilities)
 - Worker thread management or execution concurrency (owned by Ponos).

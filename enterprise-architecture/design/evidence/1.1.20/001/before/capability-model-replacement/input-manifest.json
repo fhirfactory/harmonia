@@ -1,0 +1,92 @@
+{
+  "git_head": "3bbdf01ad6d185a5f810842c255e5a8503d79dde",
+  "initial_git_status": "AM enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md\n M enterprise-architecture/design/review/1.1.20/hcrl-1.1.20-001.pending.md\n?? .junie/reports/2026-11-10-pass3-fr-reconciliation.md\n?? enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261109T092021Z-pass3-xd-incorporation-baseline-blocker.md\n?? enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261109T094506Z-pass3-xd-incorporation-and-semantic-normalisation.md\n?? enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261109T101507Z-pass3-sr-reconciliation.md\n?? enterprise-architecture/design/evidence/1.1.20/001/after/ai-agent-reports/20261110T052641Z-pass3-fr-reconciliation.md\n?? enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/\n?? enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/\n?? enterprise-architecture/design/evidence/1.1.20/001/after/pass3-xd-consolidation/\n?? enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Candidate_017_Pass3_011_XD009_Working_Overlay.md\n?? enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md\n?? enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_Pass3_011_NR001_Adjudication_Workbook.xlsx\n?? enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md\n?? enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-sr-reconciliation.md\n?? enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-xd-incorporation-baseline.md\n?? enterprise-architecture/design/evidence/1.1.20/001/before/capability-model-replacement/\n?? enterprise-architecture/design/evidence/1.1.20/001/before/pass3-fr-reconciliation-input-manifest.json\n?? enterprise-architecture/design/evidence/1.1.20/001/before/pass3-sr-reconciliation-input-manifest.json\n?? enterprise-architecture/design/evidence/1.1.20/001/before/pass3-sr-reconciliation-issued-directions.md\n?? enterprise-architecture/design/evidence/1.1.20/001/before/pass3-xd-incorporation-issued-directions.md\n?? enterprise-architecture/design/offline-design/DRP-Agora-Omilia-DigitalTwin-Agentic-Interaction.md\n",
+  "release": {
+    "version": "1.1.20",
+    "previous_version": "1.1.19"
+  },
+  "verified_sources": [
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+      "sha256": "83aa0a696e057a4d1cb63177269d6c613554fea86189b9c5a8578472f09272a4"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Pass3_014_FR_Adjudication_Workbook.xlsx",
+      "sha256": "d99dd8d506badfcc5c8d88be28481a8c47706e0d9a43a7e060f1368edaaca8f7"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/feature-reconciliation.json",
+      "sha256": "5651c07dada52be14d56c34561a27bb4d6369ed9207c3c47c41cd002dd12833a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/capability-reconciliation.json",
+      "sha256": "23963796bc65bd84ad2e36377b1d22553a73981df39449e2c7c1511ed5aea43f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/criterion-reconciliation.json",
+      "sha256": "935b54aaa3bd0cafa98bd6865775d78055d2e10094549a8a7116c5f1863d5d78"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/measurement-criteria.csv",
+      "sha256": "850e23742bdafbb4fcbb926ee075de51cf743724cb3779dcb71ed4ce52cffa0f"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/definition-changes.json",
+      "sha256": "2473147fd91fbb8275028c2cd4df9653bbc0739992982a9bfcfd9d342576083c"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/fr-incorporation.json",
+      "sha256": "0c1c3565a6e184e94b90bf1140f68b4a5c99e3aa528698dceb28cd4f13543601"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/fr-retirement-trace.json",
+      "sha256": "a4bf60039c2aa487895c840b40a565ff51bc04069251ce0593fc6929d2589b1a"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/changes.json",
+      "sha256": "70ec2f1481f27ec51430ff9fc80e2423df335be987afc049c1767a3f398de7df"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/build_result.py",
+      "sha256": "a747d43d1e9b6fcba99598f7a825f505d27506e533653684d481184469c0330d"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/verify_result.py",
+      "sha256": "0f44e8eb4dc68ab7d3aeabf49c136fcd2f3290e7271fd8f4c92d087ab4a91001"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/authoring/README.md",
+      "sha256": "a62c20f0fd154cb31490cbdf266acc55f3a17840e6c53beecd27e877ec8f2526"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_013_SR_Reconciled_Catalogue.md",
+      "sha256": "9b229610992d8aaec412e79e5012ff986c335943c59e63fc18beea4a777acf28"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/Harmonia_1.1.20_Pass3_013_SR_Adjudication_Workbook.xlsx",
+      "sha256": "b170216cab898f3071299b9f970b9fd038801820e1719182e7b3dad5ad9504b2"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/source-result-manifest.json",
+      "sha256": "f47d184f477e36f10dc48e208427aa97ae2d02dc3301af236a1e74f17e0bdc32"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/before/pass3-fr-reconciliation-input-manifest.json",
+      "sha256": "efbaaa21ef84369dff62bd1b85900c4fd52211d9a0082a1c23983e259bb81b91"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+      "sha256": "7aca973832645dfa278a858e48cfe767d8dc4f5c01119320d556c791c883d543"
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+      "sha256": "0b4ecc9242ab136cec9e84ae7d91282149cad1e0661122798c38e540ed631ee1"
+    }
+  ],
+  "source_manifest_sha256": "feaccfb76cc298a7d212a0e7079ac3d19d6e379ff8b8d0f09f5fb34188c16c9d",
+  "task_sha256": "41c45528494ed60e701fc82579d2ef7e02dec76110aa6484322cd95f8d7110d8",
+  "baseline_elements": 1996,
+  "baseline_relationships": 2246,
+  "protected_file_count": 219,
+  "task_issued_at": "UNRESOLVED — instruction-entry timestamp unavailable; no clock or filesystem substitution"
+}

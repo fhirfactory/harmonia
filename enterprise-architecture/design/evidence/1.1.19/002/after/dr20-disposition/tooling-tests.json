@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/tmp/harmonia-tooling-venv/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "enterprise-architecture/tooling/tests",
+    "-v"
+  ],
+  "exitCode": 0,
+  "outcome": "PASS"
+}

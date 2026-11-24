@@ -1,0 +1,12 @@
+{
+  "outcome": "PASS",
+  "version": "1.1.17",
+  "iteration": "002",
+  "records": [
+    "evidence/1.1.17/002/after/ai-agent-reports/20261101T000528Z-archi-catalogue-and-display-names-execution.md",
+    "evidence/1.1.17/002/before/ai-agent-tasks/20261031T234829Z-archi-catalogue-and-display-names.md"
+  ],
+  "errors": [],
+  "unresolved": [],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}

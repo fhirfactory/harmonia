@@ -33,7 +33,7 @@ The runtime separation between the messaging broker (**Petasos**, Apache ActiveM
 ### Scope & Guardrails
 - **In Scope**: Final non-invasive verification across dependencies, packaging, live container state, network port bindings, authentication controls, MLLP end-to-end data flow, durable persistence, and client failover recovery.
 - **Out of Scope**: Source code modifications or architectural alterations (implementation complete and verified).
-- **Architectural Guardrails (`AGENTS.md`)**:
+- **Architectural Guardrails (`../../AGENTS-old.md`)**:
   - *Invariant 1*: Zero production dependencies or imports of Paradeigma.
   - *Invariant 2*: `petasos-api` contains pure abstractions without JMS or ActiveMQ imports.
   - *Invariant 3*: Iris presentation decoupling maintained without JPA or database dependencies.

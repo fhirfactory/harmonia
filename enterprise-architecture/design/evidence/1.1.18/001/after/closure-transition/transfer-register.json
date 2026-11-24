@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "standing": "Transferred into 1.1.19/001 under explicit Solution Architect disposition; originating 1.1.18/001 closed with recorded deferrals",
+  "authority": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T020822Z-closure-and-successor-transition.md",
+  "predecessor": "1.1.18/001",
+  "successor": "1.1.19/001",
+  "releaseDisposition": "APPROVED: publish 1.1.19; originating 1.1.18/001 evidence/identifiers retained; former 1.1.18/002 proposal withdrawn",
+  "originalDecisionIdsPreserved": true,
+  "architecturalChangesPerformed": false,
+  "candidateSha256": "8c54e0dbd0b86c8780d063caf0aa2650a24a41cf0e693fccb2c0e2c5609c4688",
+  "records": [
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-1"
+      ],
+      "title": "Bounded export review and remaining incoming semantic changes",
+      "conclusion001": "Bounded G14–G18 interpretation completed; other semantic changes excluded and deferred, not accepted",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-1",
+      "remainingScope": "Preserve the original full 3,824,520-byte delta and its 128,000-byte stop gate. The original raw observation was 120 added/23 changed elements, 2 added/222 changed relationships and 69 added/1 changed Views. Later authorised work incorporated all 120 added elements (115 Groupings and five other native elements), plus 32 folder-derived Subjects and the complete presentation. The remaining incoming semantic differences are not adjudicated by that acceptance. No claim that every original raw changed record remains semantically outstanding is made without a separately bounded review.",
+      "outstandingAcceptance": "Obtain explicit bounded interpretation scope before interpreting the oversized residual delta; adjudicate each independent architectural change before incorporation.",
+      "dependencies": [],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-1",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/bounded-subject-review/scoped-subject-evidence.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/summary.json"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-1",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-2"
+      ],
+      "title": "G14–G18 accepted Subject hierarchy",
+      "conclusion001": "Completed and accepted; inherited baseline only",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-2",
+      "remainingScope": "Preserve the 32 Subjects, 27 accepted Composition relationships, original CR-001–CR-059 decisions and identities. No repeat incorporation.",
+      "outstandingAcceptance": "None for this accepted bounded result; unresolved formal naming is tracked separately in DR-14.",
+      "dependencies": [],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-2",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/subject-incorporation/incorporation-results.json"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-2",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-3"
+      ],
+      "title": "UseCase and UserStory modelling",
+      "conclusion001": "Deferred unresolved; no native modelling acceptance",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-3",
+      "remainingScope": "All 363 UseCase and 421 UserStory candidates remain candidates. Native constructs/specialisations, definitions, storage, naming, projection and validation treatment remain undecided. Do not substitute FunctionalRequirement or allocate paired identities by source format.",
+      "outstandingAcceptance": "Solution Architect metamodel/native-treatment decision and governed mechanism readiness before creation.",
+      "dependencies": [
+        "DR-4",
+        "DR-8"
+      ],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-3",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidates.json"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-3",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-4"
+      ],
+      "title": "Candidate identity and source contributions",
+      "conclusion001": "Deferred unresolved; no canonical identity allocated",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-4",
+      "remainingScope": "Preserve 784 rows from 421 sources, source-plus-kind keys, exact source text, 27 absent primary-actor fields and the irregular source identifier. Eighteen identical-wording groups affect 38 rows; neither novelty nor duplicate identity is established. Reconcile semantic overlap and paired UC/story contributions.",
+      "outstandingAcceptance": "Explicit identity/contribution dispositions before UUID allocation, merging or relationship creation.",
+      "dependencies": [
+        "DR-3",
+        "DR-8"
+      ],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-4",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/duplicate-review.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidates.json"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-4",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-5"
+      ],
+      "title": "Historical Capability targets",
+      "conclusion001": "Deferred unresolved; history retained",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-5",
+      "remainingScope": "Four superseded targets affect 208 rows. Preserve the two recorded explicit successor correspondences without inferring association validity. Provider Relationship (3bb8a3d5b62a4b779442290fe8d5106c; 18 rows) and Provider Engagement (a0777dbd9b0c4528817e99a7f34aa444; 32 rows) lack direct successor fields; do not invent them or retarget history.",
+      "outstandingAcceptance": "Architectural target/currentness and association-meaning adjudication, separately from lexical correspondence.",
+      "dependencies": [
+        "DR-4",
+        "DR-6"
+      ],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-5",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/mapping-targets.json"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-5",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-6",
+        "1.1.18/001 DR-6.01",
+        "1.1.18/001 DR-6.02",
+        "1.1.18/001 DR-6.03",
+        "1.1.18/001 DR-6.04",
+        "1.1.18/001 DR-6.05"
+      ],
+      "title": "Capability and Feature coverage, including DR-6.01–DR-6.05",
+      "conclusion001": "Deferred advisory assessment; no coverage or edge accepted",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-6",
+      "remainingScope": "Retain all five subordinate decisions and the 784-row/421-source assessment: 244 fits, 248 partial fits, 292 CT3-only/gap/unresolved-scope rows; residuals affect 528 rows/289 sources and 226 rows have multiple potentially relevant targets. DR-6.01 consent/emergency; .02 person/related persons; .03 practitioner/organisation/directory; .04 terminology/reference content; .05 operational/cross-cutting. Their domain-authority exclusions and residual gaps remain binding.",
+      "outstandingAcceptance": "Decide each proposed coverage claim and any future relationship native type, direction, endpoints, meaning, provenance and standing. No inferred Realization, CT3 ancestry, ownership or implementation.",
+      "dependencies": [
+        "DR-3",
+        "DR-4",
+        "DR-5",
+        "DR-8"
+      ],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-6",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidate-assessment.csv",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/source-alignment-review.json"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-6",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-7"
+      ],
+      "title": "Primary and secondary Subject classification",
+      "conclusion001": "Deferred unresolved; supplied assignments retained",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-7",
+      "remainingScope": "Retain 426 rows flagged for changed/unresolved primary classification, all supplied assignments and the distinction between classification and coverage. G14–G18 existence does not accept the 780 proposed primary assignments. Four primary assignments use G04.04. Secondary relationship semantics and general client/related-person classification remain undecided.",
+      "outstandingAcceptance": "Explicit classification and relationship-semantics dispositions; do not create multiple primary containment/Home assignments from secondary labels or Views.",
+      "dependencies": [
+        "DR-3",
+        "DR-4",
+        "DR-6"
+      ],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-7",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/candidate-assessment.csv"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-7",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-8"
+      ],
+      "title": "Source provenance, delivery scope and domain authority",
+      "conclusion001": "Deferred unresolved; original source limits retained",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-8",
+      "remainingScope": "Repository OpenSpec correspondence does not prove fidelity to unavailable upstream ZIP/Word originals. Preserve source revisions/hashes/selectors and R1/R2/current/future allocation uncertainty. Target-state SHALL wording and engine names do not assign delivery ownership or expand domain authority; Person Identity Administration retains upstream PAS/MPI reliance qualifications.",
+      "outstandingAcceptance": "Source verification or explicit qualified acceptance, and separate scope/domain-authority decisions before candidate incorporation. This is distinct from the closure publication release number.",
+      "dependencies": [],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-8",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/reconciliation/verification.json"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-8",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-9"
+      ],
+      "title": "Historical Task times, supporting evidence and assurance limitations",
+      "conclusion001": "Deferred provenance/assurance qualifications; earlier failures retained as history",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-9",
+      "remainingScope": "Three original Task instruction-entry times and filename prefixes remain UNRESOLVED in unresolved-openspec-subject-capability-reconciliation.md, unresolved-bounded-subject-interpretation.md and unresolved-accepted-subject-incorporation.md. Do not guess from capture/mtime/commit/current clock. Earlier Maven cache resolution failure was superseded by 90 executed passing Java tests; earlier tooling fixture failures were superseded by 85 passing tooling tests, without rewriting original results. The 3,077 JDK jrt: classes using the Java 25/ArchUnit simple-import fallback remain an assurance limitation; no non-JDK fallbacks were reported.",
+      "outstandingAcceptance": "Preserve unresolved temporal provenance for explicit Solution Architect treatment; separately scope any further assurance. Transfer does not claim full temporal conformance or full JDK analysis.",
+      "dependencies": [
+        "DR-1"
+      ],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-9",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/verification.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-openspec-subject-capability-reconciliation.md",
+        "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-bounded-subject-interpretation.md",
+        "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-9",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-10"
+      ],
+      "title": "G18.03 spelling",
+      "conclusion001": "Completed and accepted; inherited baseline only",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-10",
+      "remainingScope": "Retain Directory-Information-Maintenance in the authored presentation and the unchanged canonical Subject identity. Original misspelling remains in immutable source evidence.",
+      "outstandingAcceptance": "None; no new architectural rename or UUID.",
+      "dependencies": [],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-10",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/presentation-transformations.json"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-10",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-11"
+      ],
+      "title": "Previously blocked presentation reconciliation",
+      "conclusion001": "Superseded blocking state; completed by DR-12/DR-13, history preserved",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-11",
+      "remainingScope": "The 120 missing native records were later correctly classified as 115 Groupings, two Principles, two Stakeholders and one Constraint. The original staging/failure Report remains unchanged. All 127 formerly missing node references now resolve.",
+      "outstandingAcceptance": "None for the resolved reference gate; transport qualifications remain in DR-16.",
+      "dependencies": [],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-11",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/views-reconciliation/comparison.md",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/verification.json"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-11",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-12"
+      ],
+      "title": "115 Groupings and distinct Composition/Home completion",
+      "conclusion001": "Completed and accepted with preserved naming qualifications",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-12",
+      "remainingScope": "Retain 115 incorporated Groupings, 114 existing Subject identities for 115 folder occurrences, and 211 matching Composition/Home pairs (115 Composition created, 96 reused, 211 Home created). Both Authorisation Enforcement folder occurrences refer to one concept. Prior five-element and three-folder blockers were explicitly resolved under DR-13. Preserve original numeric prefix 03 Authorisation-Enforcement; punctuation normalisation was rolled back after the duplicate-path check.",
+      "outstandingAcceptance": "No repeat incorporation or Home creation. Formal Grouping naming vocabulary remains explicitly unresolved under DR-14.",
+      "dependencies": [],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-12",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/subject-hierarchy/verification.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/verification.json"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-12",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 DR-13"
+      ],
+      "title": "Five approved elements and complete authored Views",
+      "conclusion001": "Completed; exact candidate visually accepted by the Solution Architect",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-13",
+      "remainingScope": "Retain five governed identities/types/specialisations and the combined Stakeholder as superseded history, including its original UUID, definition, references and explicit one-to-many provenance. Relationships were neither duplicated nor retargeted. Preserve all 1,285 Views, 1,183 folders/42 empty folders, geometry/styling/connections, four Property-definition rebindings (68 occurrences), explicit G03/G07.04/G11.04 dispositions and spelling corrections. Successor relationships remain outside accepted scope; future semantic reassessment requires its own bounded authority.",
+      "outstandingAcceptance": "No further visual acceptance of this exact candidate is outstanding. Do not extend that acceptance to OpenSpec candidates, incoming semantic residuals, transport loss or reader-facing publications.",
+      "dependencies": [],
+      "evidence": [
+        "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-13",
+        "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T020822Z-closure-and-successor-transition.md",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/five-element-results.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/complete-views/verification.json"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-13",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "Canonical validation at 1.1.18/001 closure",
+        "1.1.18/001 DR-2, DR-12, DR-13 qualifications",
+        "Inherited 1.1.7 baseline qualifications"
+      ],
+      "title": "Inherited canonical naming, definition and standing qualifications",
+      "conclusion001": "Deferred unresolved; no acceptance inferred from publication",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-14",
+      "remainingScope": "Retain the complete 673-row canonical unresolved-property inventory, canonical IDs, field paths, reasons and standing. This includes the unestablished unqualified Grouping formal naming vocabulary, absent definitions, thresholds and other inherited qualifications. Currentness population remains 1,596 current, 69 pending_adjudication, 82 historical_reference and 247 superseded. An accepted overall baseline does not promote each assertion or candidate to accepted/current.",
+      "outstandingAcceptance": "Separate architectural adjudication per material qualification before changing canonical meaning, identity, naming rules or standing.",
+      "dependencies": [],
+      "evidence": [
+        "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/inherited-canonical-qualifications.json"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-14",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.17/001 reader-facing review deferral",
+        "1.1.17/002 DR-2 reader-facing review deferral",
+        "1.1.18/001 changed Subject navigation reader-facing checkpoint"
+      ],
+      "title": "Deferred reader-facing structural reviews",
+      "conclusion001": "Existing reviews deferred; new review obligation identified for transfer",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-15",
+      "remainingScope": "Preserve the two explicit 1.1.17 deferrals: iteration 001 NFR hierarchy, allocations, native-layer separation and qualified reused contributions; iteration 002 reader navigation/XML catalogue-folder correspondence. The newly expanded Subject hierarchy/navigation also requires representative reader-facing structural review under Review Praxis §5. No reader-facing inspection is asserted; candidate Archi visual acceptance is a separate checkpoint.",
+      "outstandingAcceptance": "Solution Architect structural review of these three scopes, or explicit bounded deferral under Common Governance. Closure Task authorises transfer of outstanding review obligations; no technical gate is waived.",
+      "dependencies": [],
+      "evidence": [
+        "enterprise-architecture/design/register/1.1.17/hcrl-1.1.17-002.complete.md#dr-2",
+        "enterprise-architecture/governance/architecture-review-praxis.md"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-15",
+      "transferDoesNotResolveOrAccept": true
+    },
+    {
+      "sourceIdentifiers": [
+        "1.1.18/001 closure actual no-edit control",
+        "Inherited 1.1.17/002 DR-2 transport qualifications"
+      ],
+      "title": "Actual no-edit Archi transport qualifications",
+      "conclusion001": "Actual transport executed; strict verifier FAIL retained; bounded differences classified",
+      "successorRecord": "enterprise-architecture/design/review/1.1.19/hcrl-1.1.19-001.pending.md#dr-16",
+      "remainingScope": "Archi 5.10 imported the exact accepted candidate, saved a native model and exported schema-valid XML, exit 0. All canonical model fields/Property values, relationship identities/types/endpoints/text/values and View content/tree are preserved. Raw comparator classifications remain unchanged: English language additions, unordered Property reordering, 4,229 omitted redundant catalogue reference labels and 882 omitted generated organisation identifiers. The strict verifier reports Relationship/View transport drift because 575 relationships gain language attributes. Neither a raw-equivalence PASS nor acceptance of information loss is asserted; maintained regeneration restores the candidate labels/IDs.",
+      "outstandingAcceptance": "Retain exact candidate/native model/returned XML/log and classifications; separately adjudicate any desired machinery or transport-loss remediation. Do not change comparators or canonical/template sources to make this return pass.",
+      "dependencies": [],
+      "evidence": [
+        "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/archi-comparison-summary.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/archi-transport-classification.json",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/transport-verification.log",
+        "enterprise-architecture/design/evidence/1.1.18/001/after/closure-transition/archi-execution.log"
+      ],
+      "successorIdentifier": "1.1.19/001 DR-16",
+      "transferDoesNotResolveOrAccept": true
+    }
+  ],
+  "revisedAuthority": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T025100Z-release-1-1-19-revised-disposition.md",
+  "recordsFieldMeaning": "All 16 prepared DR entries carried with original dispositions; unresolved obligations stay unresolved and completed baseline entries are not reopened.",
+  "closedOriginatingRecord": "enterprise-architecture/design/register/1.1.19/hcrl-1.1.18-001.complete.md"
+}

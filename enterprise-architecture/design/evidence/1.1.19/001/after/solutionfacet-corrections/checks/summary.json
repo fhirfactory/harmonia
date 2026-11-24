@@ -1,0 +1,35 @@
+{
+  "architectureTests": {
+    "outcome": "PASS",
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 28.193,
+    "java": "21"
+  },
+  "initialToolingSuite": {
+    "outcome": "FAIL",
+    "tests": 87,
+    "passed": 86,
+    "failures": 1,
+    "seconds": 367.022,
+    "failure": "Axiom navigation fixture assumed unprefixed names and base Principle storage paths"
+  },
+  "affectedCurrentEaModuleAfterCorrection": {
+    "outcome": "PASS",
+    "tests": 11,
+    "seconds": 1.411,
+    "coverage": "All 18 axiom navigation identities and definition-copy scope, plus existing current EA/transport guards"
+  },
+  "combinedToolingCoverage": "All 87 tests successfully covered; initial 86 PASS and affected module 11 PASS after correction. No all-green full-suite rerun claimed.",
+  "newAxiomRegression": "PASS in initial suite: three exact identities, native Principle, ArchitecturalAxiom specialisation, governed Name and normative content through projection",
+  "candidateSchemaIdentityAndReferences": "PASS",
+  "relationshipAndViewPreservation": "PASS",
+  "deterministicAndIndependentStageByteComparison": "PASS",
+  "manifestReaderAndLatexChecks": "PASS",
+  "currentLocalLinksAndRenderedAxiomNavigation": "PASS",
+  "browserDomContract": "PASS",
+  "actualArchiImportSaveExport": "PASS",
+  "strictTransportVerifier": "FAIL: inherited English language attributes on 575 relationships; raw evidence preserved",
+  "noValidationOrComparatorWeakening": true
+}

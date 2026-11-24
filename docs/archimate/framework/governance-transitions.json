@@ -1,0 +1,16 @@
+{
+  "transitions": [
+    {
+      "manifest": "docs/archimate/processing/machinery-validation/information-architecture/run-001/governance/manifest.json",
+      "sha256": "beec9f82b75ef4953b242e9e80a7b66d4bf6473ccd990211efb0c9ffbe4a1df4"
+    },
+    {
+      "manifest": "docs/archimate/processing/machinery-validation/information-architecture/run-002/governance/manifest.json",
+      "sha256": "e8451e0c70cea076de949e7a4d81a19fc32b41d23a42b03e3cc371bf27579a7d"
+    },
+    {
+      "manifest": "docs/archimate/processing/machinery-validation/information-architecture/run-002/governance/contained-leaf-correction/manifest.json",
+      "sha256": "e09f1a9aed433f8aeefba56be9d4b04b0713d58b695143fbe2c0e244cbcc6476"
+    }
+  ]
+}

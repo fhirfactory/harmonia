@@ -1,0 +1,525 @@
+{
+  "files": {
+    ".junie/reports/2026-10-20-information-architecture-machinery-run-002-workspace-organisation.md": {
+      "sha256": "cf46cf57fc96e9e55271d3f85ae8ec3c23c1805de1a393e5c45c17e2d05ce3c0",
+      "snapshot": ".junie/reports/2026-10-20-information-architecture-machinery-run-002-workspace-organisation.md.gz"
+    },
+    "docs/archimate/framework/README.md": {
+      "sha256": "577b7531bb648521c531566d1fd72f24f3d1a6bebd992786feeabd20b315326b",
+      "snapshot": "docs/archimate/framework/README.md.gz"
+    },
+    "docs/archimate/framework/schemas/LICENSE.txt": {
+      "sha256": "1a97d3aa0651437d1383c76504b8a192d1f7178fd30d231af752e570f501cc2f",
+      "snapshot": "docs/archimate/framework/schemas/LICENSE.txt.gz"
+    },
+    "docs/archimate/framework/schemas/archimate3_Diagram.xsd": {
+      "sha256": "6419080f4c4bc43b4a7b8acf870146a7bae6c3487a3ce08d3c521c028ea6056e",
+      "snapshot": "docs/archimate/framework/schemas/archimate3_Diagram.xsd.gz"
+    },
+    "docs/archimate/framework/schemas/archimate3_Model.xsd": {
+      "sha256": "dd451abe3e3193f91dd9544b279af9bbbf17e75ff1ef86f65ad52b3f8cd29794",
+      "snapshot": "docs/archimate/framework/schemas/archimate3_Model.xsd.gz"
+    },
+    "docs/archimate/framework/schemas/archimate3_View.xsd": {
+      "sha256": "d708ce176403034b1229b892712cfd69660aefe17da4cc54acea1ac35e4a9854",
+      "snapshot": "docs/archimate/framework/schemas/archimate3_View.xsd.gz"
+    },
+    "docs/archimate/framework/schemas/dc.xsd": {
+      "sha256": "9285c1b57d8920b72101b4ba93416f32aa376087481f2b5b0c5d6c95f8def7cf",
+      "snapshot": "docs/archimate/framework/schemas/dc.xsd.gz"
+    },
+    "docs/archimate/framework/schemas/provenance.json": {
+      "sha256": "a7c6dd56c408aebf6b764095933ca3c56b7f893d7f56843a2538437bef2d3a33",
+      "snapshot": "docs/archimate/framework/schemas/provenance.json.gz"
+    },
+    "docs/archimate/framework/schemas/xml.xsd": {
+      "sha256": "f0fa306f2951fb1a477220eb7bdeaa35959c8d0224258f2104d3c4724ba746f7",
+      "snapshot": "docs/archimate/framework/schemas/xml.xsd.gz"
+    },
+    "docs/archimate/framework/tests/test_information_naming.py": {
+      "sha256": "780e99a12633105d33b7ef7f3caff85b84011574dc4ca6f88214c5f6edbc30ac",
+      "snapshot": "docs/archimate/framework/tests/test_information_naming.py.gz"
+    },
+    "docs/archimate/framework/tests/test_workspace_navigation.py": {
+      "sha256": "79fe63b604c0d0976e4772313a1c14279bf0fd2c34b44a220c245a29efeeab74",
+      "snapshot": "docs/archimate/framework/tests/test_workspace_navigation.py.gz"
+    },
+    "docs/archimate/framework/tools/analyse_home_submission.py": {
+      "sha256": "da3b9bdb0d78c3646204cd17fcb855cbc74862373e0b258acdfa8ac2ecd0f3f9",
+      "snapshot": "docs/archimate/framework/tools/analyse_home_submission.py.gz"
+    },
+    "docs/archimate/framework/tools/assess_rad.py": {
+      "sha256": "c92b3d896f8912570514b9a0692f154917fd03573db24162a4a7a0f6ce83f513",
+      "snapshot": "docs/archimate/framework/tools/assess_rad.py.gz"
+    },
+    "docs/archimate/framework/tools/change_review.py": {
+      "sha256": "46bc2dab8ab2be9495a246a0565b4929d78756103009e14f45eacc37bb44ff4e",
+      "snapshot": "docs/archimate/framework/tools/change_review.py.gz"
+    },
+    "docs/archimate/framework/tools/diagnose_roundtrip.py": {
+      "sha256": "d2cf24b222b3489ec13bbdaf4eb21e12039a7d4eb566573558cb089332a4f0a6",
+      "snapshot": "docs/archimate/framework/tools/diagnose_roundtrip.py.gz"
+    },
+    "docs/archimate/framework/tools/element_correlation.py": {
+      "sha256": "66b27882a66ab6f31b285c789729f5695856c08bd0affc5252a2b5e29f26040b",
+      "snapshot": "docs/archimate/framework/tools/element_correlation.py.gz"
+    },
+    "docs/archimate/framework/tools/feature_projection.py": {
+      "sha256": "062dd6dd5e9677f7811edb4ca834514e576c25cfa0175f8477ebbea36b0844d7",
+      "snapshot": "docs/archimate/framework/tools/feature_projection.py.gz"
+    },
+    "docs/archimate/framework/tools/generate_views.py": {
+      "sha256": "78980c637e1b1cfa991bc545865eda7a832eb9e3d40d76e62ca1d7e32865e3bc",
+      "snapshot": "docs/archimate/framework/tools/generate_views.py.gz"
+    },
+    "docs/archimate/framework/tools/governed_metadata.py": {
+      "sha256": "a6c72e70be9499b31c4925382951ac1e2e7a44aa16804802bcf75e268f17e0cd",
+      "snapshot": "docs/archimate/framework/tools/governed_metadata.py.gz"
+    },
+    "docs/archimate/framework/tools/home_context.py": {
+      "sha256": "2f306d8a963e6776c5a8ece63d14fca34fd8ac4281601a5405ca38373547fe7e",
+      "snapshot": "docs/archimate/framework/tools/home_context.py.gz"
+    },
+    "docs/archimate/framework/tools/home_relationships.py": {
+      "sha256": "ca7656ea78865400b471cfdf2671be3c83bf95a2ba22a4f9b5cda7ea0b7d54d5",
+      "snapshot": "docs/archimate/framework/tools/home_relationships.py.gz"
+    },
+    "docs/archimate/framework/tools/information_naming.py": {
+      "sha256": "8543025f20ac7e89a6e9eab3b5715d8c7ae1b8fc077705e24bd38efaecaf1751",
+      "snapshot": "docs/archimate/framework/tools/information_naming.py.gz"
+    },
+    "docs/archimate/framework/tools/information_naming_run.py": {
+      "sha256": "a9e0fc4a60bfe31c369661e004eeb0046b9b04a4fb0476557cc5636c96528f55",
+      "snapshot": "docs/archimate/framework/tools/information_naming_run.py.gz"
+    },
+    "docs/archimate/framework/tools/information_population.py": {
+      "sha256": "9f08e29c5ac193bec01c82499bd43a08babcf036c2855fc7e366ed5f29b880ce",
+      "snapshot": "docs/archimate/framework/tools/information_population.py.gz"
+    },
+    "docs/archimate/framework/tools/information_workspace_run.py": {
+      "sha256": "b8043d0c7b617c46ce2e301c52f7b086372bca19a221186cbfcdf25955368a98",
+      "snapshot": "docs/archimate/framework/tools/information_workspace_run.py.gz"
+    },
+    "docs/archimate/framework/tools/publish_documentation.py": {
+      "sha256": "0e64d776c2ab359419b057e61a7ba3623b8546318225f9871fa503d9e3c6247c",
+      "snapshot": "docs/archimate/framework/tools/publish_documentation.py.gz"
+    },
+    "docs/archimate/framework/tools/publish_navigation.py": {
+      "sha256": "5d6e616639b0e68edea7b9c375ad882ddba57e9d042b5bdc063a18d24a32c8fa",
+      "snapshot": "docs/archimate/framework/tools/publish_navigation.py.gz"
+    },
+    "docs/archimate/framework/tools/reconcile_108.py": {
+      "sha256": "d131c99f54475e48d17c180ad10ac3edb83fc6201f27b148bc33ee6162e9f477",
+      "snapshot": "docs/archimate/framework/tools/reconcile_108.py.gz"
+    },
+    "docs/archimate/framework/tools/recover_v02.py": {
+      "sha256": "e4e44ec36d9751804f29a97db5b21ada8151c2af8a721762bf24393bc7909c1b",
+      "snapshot": "docs/archimate/framework/tools/recover_v02.py.gz"
+    },
+    "docs/archimate/framework/tools/report_baseline.py": {
+      "sha256": "b6b86d1f531e9b7f26353aee7d773d713e2f12d4458cf833348a36a5287fb895",
+      "snapshot": "docs/archimate/framework/tools/report_baseline.py.gz"
+    },
+    "docs/archimate/framework/tools/report_home.py": {
+      "sha256": "5dfc02bf3487049b6bc482200a034164af1b7246a50f2ce983c748ced0e0bad2",
+      "snapshot": "docs/archimate/framework/tools/report_home.py.gz"
+    },
+    "docs/archimate/framework/tools/report_navigation.py": {
+      "sha256": "32acba602d208f6ccad2a375fb0e9eebfde2c26086a7dd732e6a62b3400c9030",
+      "snapshot": "docs/archimate/framework/tools/report_navigation.py.gz"
+    },
+    "docs/archimate/framework/tools/report_publication.py": {
+      "sha256": "0eb85717d4f424ef315d500193f93f0a189865423764155ba360c760c8c6af1d",
+      "snapshot": "docs/archimate/framework/tools/report_publication.py.gz"
+    },
+    "docs/archimate/framework/tools/report_reconciliation.py": {
+      "sha256": "2c55700cdb56a35331b2cdc31ab05158179ef91289f19cc37727d307a37f2849",
+      "snapshot": "docs/archimate/framework/tools/report_reconciliation.py.gz"
+    },
+    "docs/archimate/framework/tools/report_recovery.py": {
+      "sha256": "d1e66bd8dd761e2ab87739607dc061765288ffc9e4e53bf078302c2645ffd6c1",
+      "snapshot": "docs/archimate/framework/tools/report_recovery.py.gz"
+    },
+    "docs/archimate/framework/tools/report_workspace.py": {
+      "sha256": "f5545c55d2e600ef893ce0b800e1c2dd2a9b0c66b6bab70f20c027b66d48713c",
+      "snapshot": "docs/archimate/framework/tools/report_workspace.py.gz"
+    },
+    "docs/archimate/framework/tools/synchronise_baseline.py": {
+      "sha256": "8be555ddfa23165b5d4c4172abbad6ca60b597708423694c818ecdfa812c622d",
+      "snapshot": "docs/archimate/framework/tools/synchronise_baseline.py.gz"
+    },
+    "docs/archimate/framework/tools/verify_baseline_outputs.py": {
+      "sha256": "b4129417627c27044c5139c002c333a03f9f2f348af41f81b75f6beabdee3d98",
+      "snapshot": "docs/archimate/framework/tools/verify_baseline_outputs.py.gz"
+    },
+    "docs/archimate/framework/tools/verify_governance_evidence.py": {
+      "sha256": "d6012b861327c4920edbb0dfcee6128e9eebe8ce02cacee6257504801746a92e",
+      "snapshot": "docs/archimate/framework/tools/verify_governance_evidence.py.gz"
+    },
+    "docs/archimate/framework/tools/verify_workspace.py": {
+      "sha256": "20f876f44a679bc73a99b97276bc2a1c0570359bb5334e49cfb81c853f35eecb",
+      "snapshot": "docs/archimate/framework/tools/verify_workspace.py.gz"
+    },
+    "docs/archimate/framework/tools/view_presentation.py": {
+      "sha256": "daa8b8814d60bed64ed35c85840cb73ba54e0887043cf9ecc1fed94cbb61e159",
+      "snapshot": "docs/archimate/framework/tools/view_presentation.py.gz"
+    },
+    "docs/archimate/framework/tools/workspace_navigation.py": {
+      "sha256": "969ea341c740752a2627c9c2447f6091e0fea9bd4a46f2c465a367936099ce93",
+      "snapshot": "docs/archimate/framework/tools/workspace_navigation.py.gz"
+    },
+    "docs/archimate/framework/tools/workspace_paths.py": {
+      "sha256": "ce47340713536fbdf0e6dca2fb0762be64eae80ccb4bd17b919fa9eef22a7010",
+      "snapshot": "docs/archimate/framework/tools/workspace_paths.py.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/candidate.xml": {
+      "sha256": "589759a0dbca2fb19f5a263a65309cc94fa10260797299d6c7e245061a828599",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/candidate.xml.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/README.md.gz": {
+      "sha256": "5d0342ad09bf93ff8b9c492b6a6558534fd33857fee86acdb33605380aed8ff6",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/README.md.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/LICENSE.txt.gz": {
+      "sha256": "f5872ed58832c3826844398c1f2e300ba3b28403006847da35f3cd04345bacf4",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/LICENSE.txt.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/archimate3_Diagram.xsd.gz": {
+      "sha256": "6bf8913bddaa1ec3345c87d660570ea978baf57a094382dd4312695197fafae4",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/archimate3_Diagram.xsd.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/archimate3_Model.xsd.gz": {
+      "sha256": "e8f7a4b9269583decea04723e259af0c22e1b4d753c597bba1cb779ff0079fcd",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/archimate3_Model.xsd.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/archimate3_View.xsd.gz": {
+      "sha256": "94b5248f69c794e19b9d2fdef70c3a62179a822de56b08eb13dc8f2dbf49bf74",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/archimate3_View.xsd.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/dc.xsd.gz": {
+      "sha256": "80f8e37744172b7d0243e2a38e8b3cc3224c92a844d8f7ce155eba0856e6d151",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/dc.xsd.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/provenance.json.gz": {
+      "sha256": "f3ddf30295f3d009e529168b12d360a57b0132f9af57641aec249e8e84246667",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/provenance.json.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/xml.xsd.gz": {
+      "sha256": "a05c75b57daa8c9d6f4baeb018e07a44eaeb045dc668f2fef8f30a8779100d46",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/schemas/xml.xsd.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tests/test_information_naming.py.gz": {
+      "sha256": "1dc08de68fd48112ff70a3a56d33dd0643f9302523701c221e02fec697f23a66",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tests/test_information_naming.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tests/test_workspace_navigation.py.gz": {
+      "sha256": "494c9f39f7bcab86bb5509a5fe49b1c2e200824443c544729040108059f108c3",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tests/test_workspace_navigation.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/analyse_home_submission.py.gz": {
+      "sha256": "36bf877a02132a01037f82fd899e9d8ac54eab7ad250774bbd7b40e8d3529ea3",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/analyse_home_submission.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/assess_rad.py.gz": {
+      "sha256": "a53d79814b34cb4b24a52cdee95fcaa0f3ec494865ffbdf20a0835adf32a84b9",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/assess_rad.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/change_review.py.gz": {
+      "sha256": "205c488d00b856fb712005422373e05e3bd9e177200e37cdd6bcdcbb521ce161",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/change_review.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/diagnose_roundtrip.py.gz": {
+      "sha256": "15153c171e902f51b1a9d132ad7f50b0127e38dec7fed1b99624e7b70f7496de",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/diagnose_roundtrip.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/element_correlation.py.gz": {
+      "sha256": "072c61c4cd0f11017f3561d7512c423b4e130276cdd0dcb219ae85f82f58f00e",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/element_correlation.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/feature_projection.py.gz": {
+      "sha256": "6885da1b553f6208d381684386d9eb355c7549e6c13777eb4c9aa69f85f13a77",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/feature_projection.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/generate_views.py.gz": {
+      "sha256": "8d368e80e7722684dc4c0c128455509d2762106ffbeaa1dd109ec2c4fb63c9fd",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/generate_views.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/governed_metadata.py.gz": {
+      "sha256": "9186babe02f3d881bb5a23b223b1e98be188b3ef9f93974f255d573584405f96",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/governed_metadata.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/home_context.py.gz": {
+      "sha256": "195d62b12c277b84c40641be09e1375e1f57d588340082859e6a49b6f96382b6",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/home_context.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/home_relationships.py.gz": {
+      "sha256": "6e0e0504a2451d48f5f278a151633127d609a1581bbc6708030bd2c3e519d48a",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/home_relationships.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/information_naming.py.gz": {
+      "sha256": "f4ba23df495ce45b3101d67544884ed94c7d381fe0c0e8d274b24beb5f65d871",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/information_naming.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/information_naming_run.py.gz": {
+      "sha256": "dc480103ae22ac5d2c234185fcd41aad55a71597f2372eaa44551d9d688d7293",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/information_naming_run.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/information_population.py.gz": {
+      "sha256": "487b0cd6b0e29dd99b98d0475ae3017f35668289c1e0761479c2b633eb5434ff",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/information_population.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/information_workspace_run.py.gz": {
+      "sha256": "f56e3aeeabc81283177a505ff280ac439db7c94534b2a22e82b6e2422686e06a",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/information_workspace_run.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/publish_documentation.py.gz": {
+      "sha256": "99761b1ca5b1f2b8c4f005dcf7037061fd213c2e7d3d9d50eab6c792c0c6bd8c",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/publish_documentation.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/publish_navigation.py.gz": {
+      "sha256": "8a26234003edb3c3b4f11c7e0a7647f190146ef49af359fc0fcd197114c9a9e3",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/publish_navigation.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/reconcile_108.py.gz": {
+      "sha256": "11fd8d65b5104796ee96df64b9f979d378a89a476a2922bafa5d63b5f937531d",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/reconcile_108.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/recover_v02.py.gz": {
+      "sha256": "902c80f5bb0120c39a61abb014bc48a1b5de0fa057430d6b8e8a72d1f60fbd2a",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/recover_v02.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_baseline.py.gz": {
+      "sha256": "d357cb4a9fc2d02d22e3717804e71fa164ae9933decd9f17a890af95e4d69d9d",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_baseline.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_home.py.gz": {
+      "sha256": "c40b898983c55ad37ae7e3f43e50a8e72977f067dfaa58d16220ade120b5f864",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_home.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_navigation.py.gz": {
+      "sha256": "dc8a4ba68ce19b5e4fb72b8034e09a83ae81e2baa0b6815297a8f6969a231e84",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_navigation.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_publication.py.gz": {
+      "sha256": "817f57d5ba2f8bde38e2141e170685cf0b4c3b548ec6cc8512b01818cb281e34",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_publication.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_reconciliation.py.gz": {
+      "sha256": "41bdab89cbed2bb95c53e533b220096d5b2a27b99b2438a1a28224e8aeb929fd",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_reconciliation.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_recovery.py.gz": {
+      "sha256": "d70a7e129057bc18faa4fb8fcb6bd5e37b0b226d91b493efa3853752ad8f1464",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_recovery.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_workspace.py.gz": {
+      "sha256": "8ece36ea66f27b9df43fa4d184ede4a4074a4f61b27ec0a6df48f86a351d5592",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/report_workspace.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/synchronise_baseline.py.gz": {
+      "sha256": "1141f01d3d402a82706c66e34bdd37f7c4a3070f34d8caa109f8782bc444c38d",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/synchronise_baseline.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/verify_baseline_outputs.py.gz": {
+      "sha256": "90d34717e5fd570881ffffaa3c2da65b17e961fb4f6932cf38094b52ebe6ff5a",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/verify_baseline_outputs.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/verify_governance_evidence.py.gz": {
+      "sha256": "98ef9cd95e4286fa83dcfb7fd7bcf72ebbf93b314ccfcc4fd4d5bc9ca02f431c",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/verify_governance_evidence.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/verify_workspace.py.gz": {
+      "sha256": "646c62ed7e974789cacc20b350ad118bb976d768cdc4397f3cc7a12ee080fcc3",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/verify_workspace.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/view_presentation.py.gz": {
+      "sha256": "cb792e0e4accafb9f6134ee45318d764b892183669493c099542953fc3c0cabd",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/view_presentation.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/workspace_navigation.py.gz": {
+      "sha256": "74eed6b9c862699bf0d8e2a70a09f82267ef46169daad68e0c53fe69c5204db0",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/workspace_navigation.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/workspace_paths.py.gz": {
+      "sha256": "727125bc04cbee96cbdfece4d7261a65f7ceeeef83112f42aec399a0cec3b824",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/archimate/framework/tools/workspace_paths.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/markdown/governance/archi-navigation-and-view-convention.md.gz": {
+      "sha256": "219fdab8a8a7f8623561bd55f8c727cced6fc6101319b911a09cab8db1c4d7bf",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/markdown/governance/archi-navigation-and-view-convention.md.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/markdown/governance/archimate-ingestion-publication-semantics.md.gz": {
+      "sha256": "26d14e482575bca0a57fc2c014b196c6f8aba32e9afade7f34daf1c076bd8f10",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/markdown/governance/archimate-ingestion-publication-semantics.md.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/markdown/governance/architectural-axioms.md.gz": {
+      "sha256": "bf6b2938662c211329fca7ad4d698f59d97c6429e7a7a61794d28251590a7b3f",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/markdown/governance/architectural-axioms.md.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/markdown/governance/architecture-modelling-strategy.md.gz": {
+      "sha256": "a4d300c8c29b03ebb8c20e42c8f0c678cd4120e5a33db4b09b780fb0715893fb",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/markdown/governance/architecture-modelling-strategy.md.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/markdown/governance/architecture-release-policy.md.gz": {
+      "sha256": "1f98a26e86a9a3a97899bb40eb94d24296ca523534d6c9a46c620ae3e22d0797",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/markdown/governance/architecture-release-policy.md.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/markdown/governance/canonical-identity-and-naming.md.gz": {
+      "sha256": "f920b7ec1e57c80957b99358eb4a458fec6e8c2edd9ffba917bcb728ffe5b561",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/docs/markdown/governance/canonical-identity-and-naming.md.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/scripts/architecture_release.py.gz": {
+      "sha256": "753b25081a171aaf3da7398ec266813a4cbeb50a86d64f0cb233dbdcde64efcd",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/machinery/scripts/architecture_release.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/manifest.json": {
+      "sha256": "3ea2bab69e20f97cae0ac92364095b50c4dfe730fdc95e23788355e5c7991167",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/manifest.json.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/proposed-metadata.json": {
+      "sha256": "4c0ee6607a7fbdc9a03df1e47adc7435947fb467a6b7cba4b7eaad34a096d311",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/proposed-metadata.json.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/representation-rebindings.json": {
+      "sha256": "702912d1a51769f55004eaed127b0421b84c99ee3a8b160a86445c0de69d940d",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/representation-rebindings.json.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/architecture-tests.log.gz": {
+      "sha256": "60dcbb09710e94a601a6aaeb239c73ddc1c9b1399821bcf2917aad5878eae4c6",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/architecture-tests.log.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/dependencies/docs/archimate/framework/historical-locations.json.gz": {
+      "sha256": "8e903a51e418d55982b5b1285742f74663a5cd34a1d9883d7d8d5471ea8163c9",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/dependencies/docs/archimate/framework/historical-locations.json.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/dependencies/docs/archimate/framework/requirements.txt.gz": {
+      "sha256": "d30bfb8f411dda4ba5dbc302b2e6b5857b234cc32628b0127077fe648901b39a",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/dependencies/docs/archimate/framework/requirements.txt.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/dependencies/docs/markdown/governance/baseline/architecture.json.gz": {
+      "sha256": "f54e0a23f1a2854690fed48b7e2b36ff4a1ffeed4d511c6008e216041e9af622",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/dependencies/docs/markdown/governance/baseline/architecture.json.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/dependencies/docs/markdown/governance/baseline/correspondence.json.gz": {
+      "sha256": "8837ee29b069b8c2639ab37059f2f485ba754d154b2752556d5a33e4d6617987",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/dependencies/docs/markdown/governance/baseline/correspondence.json.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/development-001/machinery/docs/archimate/framework/README.md.gz": {
+      "sha256": "d1ab8cd746b7dac632d0ef3a05b139275b1e891c1f185271dbb709493a4749ed",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/development-001/machinery/docs/archimate/framework/README.md.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/development-001/machinery/docs/archimate/framework/tests/test_workspace_navigation.py.gz": {
+      "sha256": "d8fab2ff786b65fe0e7776ec8569c6158aefa1041d6bf4456741fffaa6651317",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/development-001/machinery/docs/archimate/framework/tests/test_workspace_navigation.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/development-001/machinery/docs/archimate/framework/tools/workspace_navigation.py.gz": {
+      "sha256": "3fb9c496768fd903e169f6fcee854def8f2a29ed0081be68b4b6473509c22a9b",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/development-001/machinery/docs/archimate/framework/tools/workspace_navigation.py.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/development-001/manifest.json": {
+      "sha256": "6542be6041e027d2c72dce41a01486334e638c673f4cc41356dec1245db72196",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/development-001/manifest.json.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/development-001/transition.json": {
+      "sha256": "2ad7d730885aa1712eec734c436b2b5c9ed4ab97369c01d893153db95e42bdb0",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/development-001/transition.json.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/focused-tests-expanded.log.gz": {
+      "sha256": "12fb4f1b64a365e8e23de1ddeb81a2fe7e044b79f45de7a51b90e084e2cb84f0",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/focused-tests-expanded.log.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/focused-tests-final.log.gz": {
+      "sha256": "a621b3564166e46f7da3da96266caae25e7fbc2f58c31948a426f3141d2d1d94",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/focused-tests-final.log.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/focused-tests-initial.log.gz": {
+      "sha256": "442c1bb97097713336c1be07f8c3041ce47e167620c8d37a45be61b4875c35c5",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/focused-tests-initial.log.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/framework-tests.log.gz": {
+      "sha256": "5524f254f9894b680bef0c1eefb4d454c908644da59197823dc5b693458d2020",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/framework-tests.log.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/frozen-preservation.json": {
+      "sha256": "e7052df48441f595c597e196797e3ea99fe2b0e41d069fc0bf2a4a1a25509fe9",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/frozen-preservation.json.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/generation.log.gz": {
+      "sha256": "442f13fd6df8fadca221da6256400e839a31686a5dd761e44807c20466381e63",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/generation.log.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/isolated-replay-final.log.gz": {
+      "sha256": "e5a40ddac6f089b28eaa86ce6a190644e72a2bc9169526581d4535469824ddb0",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/isolated-replay-final.log.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/isolated-replay-initial.log.gz": {
+      "sha256": "e5a40ddac6f089b28eaa86ce6a190644e72a2bc9169526581d4535469824ddb0",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/isolated-replay-initial.log.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/manifest.json": {
+      "sha256": "768a2357f7824faac4f4f87550fe8cc6652d12549b75590033be69804d973817",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/manifest.json.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/release-check.json": {
+      "sha256": "3ab2fd7b2b73733e2b4149fc4c682a8f0bf110c80b3543cf51200ebce3f47214",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/release-check.json.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/replay-check-final.log.gz": {
+      "sha256": "8f9edda2cd98311918bedaaca9f48db5fd4c428f9a039a3ad068d2f9e1f80f3c",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/replay-check-final.log.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/replay-check-initial.log.gz": {
+      "sha256": "8f9edda2cd98311918bedaaca9f48db5fd4c428f9a039a3ad068d2f9e1f80f3c",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/replay-check-initial.log.gz.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/replay-dependencies.json": {
+      "sha256": "2f9f975fdc15b3083dce421716c2810cd205da2c3741bf8153e0cc751479c2e5",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/replay-dependencies.json.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/reproduce_candidate.py": {
+      "sha256": "52c672620dcde23238eeab1cefa26cab8954e3ecf46760a837b83f3ba32c1768",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/reproduce_candidate.py.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/whitespace-check.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/validation/whitespace-check.log.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/verification.json": {
+      "sha256": "573443a258d58f162a1b7c14ac1756145a6e9c97ac95fbeab8974a6b0dcde1fe",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/verification.json.gz"
+    },
+    "docs/archimate/processing/machinery-validation/information-architecture/run-002/workspace-projection.json": {
+      "sha256": "ba6735f0c5dba124e0629759124d43649fab6febfac7541c1089dba853821772",
+      "snapshot": "docs/archimate/processing/machinery-validation/information-architecture/run-002/workspace-projection.json.gz"
+    },
+    "docs/markdown/governance/archi-navigation-and-view-convention.md": {
+      "sha256": "740d433146bca5ee06e066f07b8649e7ca49c42490583b0017293b9a8e1280d8",
+      "snapshot": "docs/markdown/governance/archi-navigation-and-view-convention.md.gz"
+    },
+    "docs/markdown/governance/archimate-ingestion-publication-semantics.md": {
+      "sha256": "40ec4e821ba82cba4d661876cf7278544ebba5c094a0db289582e75f74a934e5",
+      "snapshot": "docs/markdown/governance/archimate-ingestion-publication-semantics.md.gz"
+    },
+    "docs/markdown/governance/architectural-axioms.md": {
+      "sha256": "d0544fcb437b1ae43ed5fda6318ab4ab69a2e4ec614f73b34e8227b659b040c2",
+      "snapshot": "docs/markdown/governance/architectural-axioms.md.gz"
+    },
+    "docs/markdown/governance/architecture-modelling-strategy.md": {
+      "sha256": "d64db47bd2e7063c773846b481dd643b1519fd175710afd6c16472e5b05eaa97",
+      "snapshot": "docs/markdown/governance/architecture-modelling-strategy.md.gz"
+    },
+    "docs/markdown/governance/architecture-release-policy.md": {
+      "sha256": "2a06d4f59c274512fd6eb77ec6fc60dc7fbe2a02b0c221ed8e9a38b2800451d2",
+      "snapshot": "docs/markdown/governance/architecture-release-policy.md.gz"
+    },
+    "docs/markdown/governance/canonical-identity-and-naming.md": {
+      "sha256": "b502e294dfbfdca629d5e0ba4ebeb658dc545f7467b199292b277f3129d326c5",
+      "snapshot": "docs/markdown/governance/canonical-identity-and-naming.md.gz"
+    },
+    "scripts/architecture_release.py": {
+      "sha256": "c3537adbbde52382e3b6ed680b94f697cd54890a3bae2d5fe313f394616a9aec",
+      "snapshot": "scripts/architecture_release.py.gz"
+    }
+  },
+  "standing": "Pre-correction Run-002; historical evidence, not architectural authority"
+}

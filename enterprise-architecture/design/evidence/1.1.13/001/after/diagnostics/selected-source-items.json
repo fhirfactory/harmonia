@@ -1,0 +1,155 @@
+[
+  {
+    "selector": "navigation-II-1-2-1",
+    "attributes": {
+      "identifier": "navigation-II-1-2-1",
+      "identifierRef": "id-e978dad02c4156938c03ac4b2d34e0c0"
+    },
+    "label": "II.1.2.1 [CT1] Care Access & Coordination",
+    "documentation": "Continuum navigation coordinate: II.1.2.1. Navigation asserts no semantic containment.\n\nOccurrence: architectural; no additional architectural instance or semantic relationship.\n\nHistorical predecessor: R.2.1 [CT1] Care Access & Coordination; canonicalId=0dec07b6ddbe48bda93a2295dd3e2d7d; Exchange identifier=id-f78a7520ea80532b8423fc652b12ff6a",
+    "immediateChildCount": 5,
+    "firstTwoChildren": [
+      {
+        "attributes": {
+          "identifier": "navigation-II-1-2-1-1",
+          "identifierRef": "id-3ffe8db4705855b587349b8bf949f469"
+        },
+        "label": "II.1.2.1.1 [CT2] Care Access Management"
+      },
+      {
+        "attributes": {
+          "identifier": "navigation-II-1-2-1-2",
+          "identifierRef": "id-76f2314e316c589083817b8d38b9f3ea"
+        },
+        "label": "II.1.2.1.2 [CT2] Care Coordination & Transition"
+      }
+    ]
+  },
+  {
+    "selector": "navigation-II-1-1-1-1",
+    "attributes": {
+      "identifier": "navigation-II-1-1-1-1",
+      "identifierRef": "id-49d4f69ebeeb5ea782a52172fb3e8a7b"
+    },
+    "label": "II.1.1.1.1 [CT2] Activity & Execution",
+    "documentation": "Continuum navigation coordinate: II.1.1.1.1. Navigation asserts no semantic containment.\n\nOccurrence: architectural; no additional architectural instance or semantic relationship.",
+    "immediateChildCount": 3,
+    "firstTwoChildren": [
+      {
+        "attributes": {
+          "identifier": "navigation-II-1-1-1-1-1",
+          "identifierRef": "id-873bd8a6758955b996c204275d26ed4f"
+        },
+        "label": "II.1.1.1.1.1 [CT3] Entity-Relative Operational Progression"
+      },
+      {
+        "attributes": {
+          "identifier": "navigation-II-1-1-1-1-2",
+          "identifierRef": "id-dfb644fa99745553bf0ff980faf30c6d"
+        },
+        "label": "II.1.1.1.1.2 [CT3] Governed Activity Execution Control"
+      }
+    ]
+  },
+  {
+    "selector": "navigation-III-4-1",
+    "attributes": {
+      "identifier": "navigation-III-4-1"
+    },
+    "label": "III.4.1 [CT1] Care Administration Enablement — Capability context",
+    "documentation": "Continuum navigation coordinate: III.4.1. Navigation asserts no semantic containment.\n\nOccurrence: contextual; no additional architectural instance or semantic relationship.\n\nCanonical Strategy Capability: II.1.3.1 [CT1] Care Administration Enablement; canonicalId=28df27d55c514a37995145ab46945f78; Exchange identifier=id-fe7b5e3e02bb53f59ab89c27a81e9e18",
+    "immediateChildCount": 11,
+    "firstTwoChildren": [
+      {
+        "attributes": {
+          "identifier": "navigation-III-4-1-1"
+        },
+        "label": "III.4.1.1 [CT2] Care Plan Administration — Capability context"
+      },
+      {
+        "attributes": {
+          "identifier": "navigation-III-4-1-2"
+        },
+        "label": "III.4.1.2 [CT2] Client-Centred Administration — Capability context"
+      }
+    ]
+  },
+  {
+    "selector": "navigation-III-4-1-1",
+    "attributes": {
+      "identifier": "navigation-III-4-1-1"
+    },
+    "label": "III.4.1.1 [CT2] Care Plan Administration — Capability context",
+    "documentation": "Continuum navigation coordinate: III.4.1.1. Navigation asserts no semantic containment.\n\nOccurrence: contextual; no additional architectural instance or semantic relationship.\n\nCanonical Strategy Capability: II.1.3.1.5 [CT2] Care Plan Administration; canonicalId=cf06eec5699f406fa30a00d2f76e3098; Exchange identifier=id-8c082e2d6c605903834291c424722f75",
+    "immediateChildCount": 4,
+    "firstTwoChildren": [
+      {
+        "attributes": {
+          "identifier": "navigation-III-4-1-1-1"
+        },
+        "label": "III.4.1.1.1 [CT3] Community Care Coordination — Capability context"
+      },
+      {
+        "attributes": {
+          "identifier": "navigation-III-4-1-1-2"
+        },
+        "label": "III.4.1.1.2 [CT3] Outreach Care Continuity — Capability context"
+      }
+    ]
+  },
+  {
+    "selector": "navigation-IV-1-1-1",
+    "attributes": {
+      "identifier": "navigation-IV-1-1-1",
+      "identifierRef": "id-395f82a0d8664955b6f542d80de3f5b5"
+    },
+    "label": "IV.1.1.1 [Topic] Care",
+    "documentation": "Continuum navigation coordinate: IV.1.1.1. Navigation asserts no semantic containment.\n\nOccurrence: architectural; no additional architectural instance or semantic relationship.",
+    "immediateChildCount": 5,
+    "firstTwoChildren": [
+      {
+        "attributes": {
+          "identifier": "navigation-IV-1-1-1-1",
+          "identifierRef": "id-02f975c032b549d4b7e951d0a427533a"
+        },
+        "label": "IV.1.1.1.1 [Topic] CareLocation"
+      },
+      {
+        "attributes": {
+          "identifier": "navigation-IV-1-1-1-2",
+          "identifierRef": "id-bcfd7137c33f4255ad3780826a64b4c5"
+        },
+        "label": "IV.1.1.1.2 [Topic] Encounter"
+      }
+    ]
+  },
+  {
+    "selector": "navigation-I-1-1",
+    "attributes": {
+      "identifier": "navigation-I-1-1",
+      "identifierRef": "id-b415475f474d5b3785b517c5935e72d6"
+    },
+    "label": "I.1.1 24/7 Availability",
+    "documentation": "Continuum navigation coordinate: I.1.1. Navigation asserts no semantic containment.\n\nOccurrence: architectural; no additional architectural instance or semantic relationship.",
+    "immediateChildCount": 1,
+    "firstTwoChildren": [
+      {
+        "attributes": {
+          "identifier": "navigation-I-1-1-1"
+        },
+        "label": "I.1.1.1 Stakeholder references — Reference navigation"
+      }
+    ]
+  },
+  {
+    "selector": "navigation-R-2-1",
+    "attributes": {
+      "identifier": "navigation-R-2-1",
+      "identifierRef": "id-f78a7520ea80532b8423fc652b12ff6a"
+    },
+    "label": "R.2.1 [CT1] Care Access & Coordination — Historical identity [superseded]",
+    "documentation": "Continuum navigation coordinate: R.2.1. Navigation asserts no semantic containment.\n\nOccurrence: historical; no additional architectural instance or semantic relationship.\n\nGoverned successor (direct correspondence): II.1.2.1 [CT1] Care Access & Coordination; canonicalId=ed342cb8656b4f80b55ad519ecbd2d3a; Exchange identifier=id-e978dad02c4156938c03ac4b2d34e0c0",
+    "immediateChildCount": 0,
+    "firstTwoChildren": []
+  }
+]

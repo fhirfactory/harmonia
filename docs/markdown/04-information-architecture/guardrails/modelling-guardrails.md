@@ -1,0 +1,140 @@
+# Canonical Information Architecture Modelling Guardrails
+
+This document codifies the sixteen core, repository-wide modelling guardrails for **Domain 04 — Information Architecture**. All domain models, information concepts, relationship structures, and subsequent technical designs must conform strictly to these rules. The additional [Information Unit guardrails G1–G8](../metamodel/information-architecture-metamodel.md#10-information-unit-guardrails) apply to the governed Unit boundary; those identifiers are local to that model and do not renumber the core guardrails.
+
+---
+
+### Guardrail 1: Business Meaning Precedes Representation
+> **Business meaning and responsibility define the Information Concept; downstream syntax, wire payloads, or storage structures do not.**
+>
+> The conceptual model captures authentic healthcare and operational semantics. It must never be bent or compromised to accommodate the quirks, convenience, or limitations of a downstream serialization format or database engine.
+
+---
+
+### Guardrail 2: FHIR Independence
+> **FHIR resources, profiles, and extensions DO NOT define or constrain Harmonia Information Architecture.**
+>
+> While Harmonia supports HL7® FHIR® R4/R5 as a primary external interoperability standard at its gateways (Pylai), internal Information Concepts are independent of FHIR. A FHIR resource model must never be used as a substitute for domain analysis, nor should FHIR resource boundaries dictate conceptual information boundaries.
+
+---
+
+### Guardrail 3: No Implementation Class or Schema Conflation
+> **Information Concepts DO NOT imply Java classes, Spring beans, JPA entities, database tables, or DDL schemas.**
+>
+> Domain 04 defines pure semantic models. An Information Concept must not include programming language annotations (`@Entity`, `@Table`), data-type specificities (`VARCHAR(255)`, `BIGINT`), or implementation-level getters/setters.
+
+---
+
+### Guardrail 4: Shared Physical Mapping
+> **Distinct Information Concepts MAY map to shared physical storage downstream without forfeiting their conceptual distinction.**
+>
+> Work arising from Domain03's distinct Business classifications (`Work Order`, `To Do`, `Synthetic Task`) may downstream share physical storage or runtime machinery. Such consolidation is an Application/Technology Architecture decision (Domains 05/07); it does not erase the Business distinctions or turn them into Information Architecture subclasses. The [generic Task information model](../information-families/task-work.md#4-relationship-to-domain03-business-work-classifications) must remain capable of representing work arising from each classification.
+
+---
+
+### Guardrail 5: Structural Similarity ≠ Semantic Identity
+> **Two Information Concepts with identical or overlapping attributes remain semantically distinct if their business meanings, lifecycles, or responsibilities differ.**
+>
+> For example, a `Practitioner` and a `Person` share demographic traits (names, addresses, dates of birth), but represent fundamentally distinct concepts: `Person` represents physical human identity, while `Practitioner` represents registered professional accreditation and clinical authority. They must not be conflated into a single compromised entity.
+
+---
+
+### Guardrail 6: Responsibility Derivation & Bounded Ownership
+> **Information Concepts for which Harmonia claims architectural responsibility SHALL trace to an owning Domain 03 Information Responsibility and the Functions/Processes through which it is discharged.**
+>
+> Referenced, consumed, externally authoritative or contextual Information Concepts may be represented where required to discharge a traced Harmonia responsibility, but SHALL NOT thereby acquire Harmonia ownership or authority. Architectural information responsibility is a capability property and is distinct from the governance role of `Information Steward`.
+
+---
+
+### Guardrail 7: Non-Transfer of Responsibility
+> **Accessing, querying, transporting, caching, indexing, coordinating, transforming, presenting, or persisting information NEVER transfers architectural ownership or authority.**
+>
+> Subsystems that intermediate data (such as Petasos messaging, Pylai gateways, Hestia active caches, or Iris dashboards) act as custodians, routers, or presenters. Semantic responsibility remains permanently with the originating capability.
+
+---
+
+### Guardrail 8: Role Boundary (Relationship Role ≠ Business Role)
+> **A `Relationship Role` SHALL NOT create or imply a Domain 03 `Business Role`. A `Business Role` SHALL NOT be inferred merely because an entity occupies a similarly named `Relationship Role`.**
+>
+> Roles like *Parent*, *Child*, *Spouse*, *Emergency Contact*, or *Supervising Clinician* are local semantic roles within specific relationships. They do not represent enterprise functional business roles in Harmonia's Business Architecture.
+
+---
+
+### Guardrail 9: Containment vs. Membership Semantics
+> **`Containment` (`Object.contains(Object)`) and `Collection Membership` are distinct relationship semantics represented through the common Information Relationship pattern. Collection Membership does not imply containment, hierarchy, composition, or ownership.**
+>
+> A patient belonging to a *Diabetic Cohort Collection* is not "contained" by the cohort; removing the member does not alter the patient's identity or existence. Conversely, a physical bed is structurally contained within a ward. Furthermore, Person-oriented concepts SHALL NOT use recursive containment merely to represent familial, social, care, representation or authority relationships. Those semantics SHALL use appropriate Information Relationships or Collections.
+
+The [Task / Work model](../information-families/task-work.md#24-taskoutcome--governed-actionabletask-resolution)
+excludes recursive TaskOutcome containment. Its single governed resolution
+references participating FulfillmentTask undertakings and contains Task
+Completion Metadata and contains / represents Task.Output(s). General
+containment guidance SHALL NOT reintroduce outcome aggregation hierarchies or
+infer detailed metadata/output structures from these conceptual relationships.
+
+---
+
+### Guardrail 10: Forward Authoritative Semantics
+> **Relationships SHALL be authored and validated in the natural forward direction (`Source.action(Target)`); inverse navigation is a derived downstream query concern.**
+>
+> Relationships must not define redundant, competing reverse links that risk dual-source divergence. Forward semantic direction does not establish the asserting authority. Authority and provenance remain attributable to the established governing responsibility/source, including an external authority where applicable; representation or coordination does not confer authority ([AX-06](../../governance/architectural-axioms.md#ax-06), [AX-18](../../governance/architectural-axioms.md#ax-18)).
+
+---
+
+### Guardrail 11: Semantic Stages ≠ Lifecycle States
+> **`Definition`, `Contextualisation`, `Fulfilment`, `Outcome`, and `Accountability` are distinct semantic concepts with independent identities, authorities, and lifecycles—NOT state transitions of a single record.**
+>
+> An `OfferedHealthcareService` (catalogue definition) is not the same entity as a `HealthcareServiceDelivery` (fulfilment) or an `AssuredHealthcareService` (accountability audit). They must not be collapsed into status enum values on one table.
+
+For Task / Work, preserve archetype, work instance, undertaking and outcome
+information as distinct meanings. Stage separation does not adjudicate
+reserved TaskOutcome identity/lifecycle/cardinality or require a ReportedTask
+Accountability concept; those matters remain
+[explicitly unresolved](../information-families/task-work.md#5-explicitly-unresolved-architecture).
+
+ActionableTask's ExecutionConcurrency, OutcomeConcurrency.Mode and
+Outcome.OutputRules.Mode SHALL remain orthogonal: permitted concurrent
+execution, participation in outcome resolution and output handling are
+separate concerns. They SHALL NOT be collapsed into one lifecycle, state or
+concurrency mechanism.
+
+---
+
+### Guardrail 12: Granular Assertion-Level and Relationship-Level Authority
+> **Information Authority applies to individual assertions and relationships, enabling multi-author composite health records.**
+>
+> Clinical records in an HIE aggregate statements from multiple independent healthcare providers, laboratories, and systems. Authority must not be restricted to whole composite documents.
+
+---
+
+### Guardrail 13: Concept-Specific Lifecycles
+> **Harmonia SHALL NOT impose a universal lifecycle across heterogeneous Information Concepts.**
+>
+> Concept lifecycles must reflect their authentic business and clinical progression. Definitions version; undertakings execute; documents amend; assertions verify. A FulfillmentTask's execution state does not inherently determine satisfaction or completion of its ActionableTask.
+
+---
+
+### Guardrail 14: Authority Preservation in Assemblies
+> **Assemblies and Views SHALL NOT acquire originating authority over their constituent information merely through composition, aggregation, or presentation.**
+>
+> An assembly owns only the rules and metadata of the composition itself; constituent facts retain their originating author, authority, and provenance bindings.
+
+---
+
+### Guardrail 15: No Forced Binary Simplification
+> **Inherently contextual, multi-party, or N-ary relationships SHALL NOT be artificially collapsed into lossy binary links.**
+>
+> Complex associations involving multiple participants, specific roles, effective periods, and governing evidence must be reified as explicit association concepts rather than disconnected foreign key pairs.
+
+---
+
+### Guardrail 16: No Speculative Concepts
+> **An Information Concept SHALL NOT be introduced merely because an external technology, standard, or database schema provides an equivalent structure.**
+>
+> Every concept in Domain 04 must be justified by an authentic requirement, capability, function, or information responsibility established in the authoritative baselines (Domains 01–03).
+
+The [observable-information and domain-meaning boundary](observable-information-and-domain-meaning.md)
+applies across these guardrails: Harmonia governs its own semantic constructs
+without intrinsically inferring the meaning of all encapsulated domain
+content. Optional AI invoked by developer-defined Ergo logic does not change
+that boundary or supply missing architectural authority.

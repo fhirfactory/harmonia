@@ -1,0 +1,514 @@
+{
+  "purpose": "Review preparation only: current-state reconciliation of inherited 1.1.4 migration inputs for 1.1.5-001; no migration or architectural acceptance.",
+  "head": "aadcd55252fa7965be8a4321832ecc6d5b97c6e0",
+  "branch": "ArchitecturalGovernance",
+  "entry_git_status": "clean",
+  "release": {
+    "version": "1.1.4",
+    "previous_version": "1.1.3"
+  },
+  "source_ledger": {
+    "path": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.mapping.csv",
+    "bytes": 4138585,
+    "sha256": "552fa43c2a651ee327425de55ab6b02f507784cda23d9b86c7c2d9b87982d1f5"
+  },
+  "attached_pending": {
+    "path": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-004.pending.md",
+    "bytes": 93482,
+    "sha256": "ecb9f5ee91476e9c907a957834f16e14097b6e8e1479e365b3a58ea6b105f31d"
+  },
+  "completed_transition": {
+    "path": "enterprise-architecture/design/register/1.1.4/hcrl-1.1.4-004.complete.md",
+    "bytes": 96570,
+    "sha256": "b59004cd5e5ed85f6d266501820535e6f42813b9570dffe8e6942d8aa658441e"
+  },
+  "historical_analysis_head": "41047e1dc5c7d1ca4769dc7479bb50cae60989a7",
+  "original_ledger_records": 3321,
+  "unchanged_content_records": 3311,
+  "changed_content_records": [
+    {
+      "source": "AGENTS.md",
+      "actual_source": "AGENTS.md",
+      "original_sha256": "0722ca73e3d44fa404869c83d3a30da253204f1afe91d0147db6f903602bb98c",
+      "original_bytes": 41589,
+      "current": {
+        "bytes": 42455,
+        "sha256": "f914514979a4700dd42ccbeac931f7c92fe61e0d8be9afbb0f832ce558fa0768"
+      },
+      "decision_review": "DR-12"
+    },
+    {
+      "source": "architecture-release.json",
+      "actual_source": "architecture-release.json",
+      "original_sha256": "435927f0c71e3b7641adc14c10e6de8a56e9e0a9cf6b0a40dee9d2253ff82ef8",
+      "original_bytes": 56,
+      "current": {
+        "bytes": 56,
+        "sha256": "40e7d3c5c06ccadf2810a6da146765efb5e3e6380b86f65d3efeeae0a8747166"
+      },
+      "decision_review": "DR-12"
+    },
+    {
+      "source": "docs/AGENTS.md",
+      "actual_source": "docs/AGENTS.md",
+      "original_sha256": "1aaeb8ec4b202e687af2124812fc6724e250dcede859b17b2a42fd1a9899418a",
+      "original_bytes": 3958,
+      "current": {
+        "bytes": 4532,
+        "sha256": "39f31a06a380fdc51d66b915c12f3232df4ad6c79b1afbd4a515affa3b5380fd"
+      },
+      "decision_review": "DR-12"
+    },
+    {
+      "source": "docs/markdown/governance/README.md",
+      "actual_source": "docs/markdown/governance/README.md",
+      "original_sha256": "f5df391acf9432c18aebdad4116e536efa3fc22501eaba48e3b982ad8aff74a7",
+      "original_bytes": 10138,
+      "current": {
+        "bytes": 11649,
+        "sha256": "639bd1cb14e1617ab6caf12de334c8356ab269912954184f034d602d186c35af"
+      },
+      "decision_review": "DR-12"
+    },
+    {
+      "source": "docs/markdown/governance/architecture-release-policy.md",
+      "actual_source": "docs/markdown/governance/architecture-release-policy.md",
+      "original_sha256": "0628a95f8ac379ac8e16caffb7bbf7f8cf41bc077274e612ee7dd159517c00d3",
+      "original_bytes": 14447,
+      "current": {
+        "bytes": 17153,
+        "sha256": "88d6239a2fa70ec5b32ef7f4bd8289c6b015468ee7d62d0ba8f734ae0662312e"
+      },
+      "decision_review": "DR-12"
+    },
+    {
+      "source": "enterprise-architecture/governance/README.md",
+      "actual_source": "enterprise-architecture/governance/README.md",
+      "original_sha256": "63b85fe897b7644cec4a268578c40df4db6b57647573bdb82595c04699986585",
+      "original_bytes": 3783,
+      "current": {
+        "bytes": 6109,
+        "sha256": "528236bcee330584e68b60abf1556c83e59150a8383910f13141c2ff50c18e3c"
+      },
+      "decision_review": "DR-12"
+    },
+    {
+      "source": "enterprise-architecture/governance/architecture-change-provenance.md",
+      "actual_source": "enterprise-architecture/governance/architecture-change-provenance.md",
+      "original_sha256": "01c7e77f490c6c73717a8b086eb7dca1f13db1db6de4f6879d7cfd3fbdc7d178",
+      "original_bytes": 17105,
+      "current": {
+        "bytes": 20150,
+        "sha256": "e89a030445e3552dc1badcb9fdf1ba5a739d47b43334d06ec83c8baa28115bc1"
+      },
+      "decision_review": "DR-12"
+    },
+    {
+      "source": "enterprise-architecture/governance/architecture-governance.md",
+      "actual_source": "enterprise-architecture/governance/architecture-governance.md",
+      "original_sha256": "45bc50b9934b3f04b7eb43815eeaf96a1d3caf2284d1940b087534864520ad25",
+      "original_bytes": 17154,
+      "current": {
+        "bytes": 19159,
+        "sha256": "f57a8e869b67657a96ea48715fc3d5607baebe80f09ff93bdb9f090c0f64840b"
+      },
+      "decision_review": "DR-12"
+    },
+    {
+      "source": "enterprise-architecture/governance/architecture-review-praxis.md",
+      "actual_source": "enterprise-architecture/governance/architecture-review-praxis.md",
+      "original_sha256": "30155e69672753b4c9cc503ce16e4d37b64ec7c40824a9f6464d7dc24dd5cf39",
+      "original_bytes": 13649,
+      "current": {
+        "bytes": 17221,
+        "sha256": "1a03e3c4c5cea9f13e43e47612eae63380b884a659483a391d9f852f8784d654"
+      },
+      "decision_review": "DR-12"
+    },
+    {
+      "source": "enterprise-architecture/governance/templates/hcrl-template.pending.md",
+      "actual_source": "enterprise-architecture/governance/templates/hcrl-template.pending.md",
+      "original_sha256": "aabb1f0ecb313bc7ed28962297fda530023c5c23eef26690411a332a77392100",
+      "original_bytes": 5731,
+      "current": {
+        "bytes": 6482,
+        "sha256": "b79e558e2013ffb28af35da69ada8f3e138ac390f1848af94c9378e0424146cb"
+      },
+      "decision_review": "DR-12"
+    }
+  ],
+  "missing_after_explicit_known_locator_correspondence": [],
+  "known_locator_discrepancy": {
+    "original": ".junie/reports/Harmonia - M1 - Stable Docker Runtime Baseline.md",
+    "actual": ".junie/reports/Harmonia - M1 - Stable Docker Runtime Baseline.md ",
+    "treatment": "Observed correspondence only. DR-12 proposes the two exact path-cell corrections; originals remain unchanged; no source rename."
+  },
+  "proposed_mapping_amendments": 59,
+  "version_rebased_destinations": 57,
+  "primary_destinations": 3321,
+  "additional_destinations": 3,
+  "primary_destination_collisions": [],
+  "additional_destination_collisions": [],
+  "additions_since_analysis": [
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/001/after/ai-agent-reports/20261021T055042Z-migration-candidate-preparation.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/001/after/ai-agent-reports/20261021T055042Z-migration-candidate-preparation.md",
+      "bytes": 2710,
+      "sha256": "0b880e79c80115ba844df2cc20ec55418c8c1aa53ee1d84850dfec220033d9a7"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/001/before/ai-agent-tasks/20261021T054402Z-migration-candidate-preparation.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/001/before/ai-agent-tasks/20261021T054402Z-migration-candidate-preparation.md",
+      "bytes": 3630,
+      "sha256": "21281403658ae2a5c7c9f33f260c2eed9594f7b2f7adfc85e9fcc6b1bb25690f"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/002/after/ai-agent-reports/20261021T061342Z-migration-analysis.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/002/after/ai-agent-reports/20261021T061342Z-migration-analysis.md",
+      "bytes": 3885,
+      "sha256": "e0c917ad1959ce56e2e709efc92ef402d63aef11d8e20773d94f0d64b04e9375"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.checks.json",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.checks.json",
+      "bytes": 3665,
+      "sha256": "0e36cd56fb8cf61a89ee1bf9b9a8233bc9be641e0cc3b189cc6c40d55ff41ce3"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.mapping.csv",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.mapping.csv",
+      "bytes": 4138585,
+      "sha256": "552fa43c2a651ee327425de55ab6b02f507784cda23d9b86c7c2d9b87982d1f5"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.references.csv.gz",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.references.csv.gz",
+      "bytes": 437163,
+      "sha256": "36e7a5c03c03a67688e81d606670b038c146541f05b29b361771640124176562"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/002/before/ai-agent-tasks/20261021T055929Z-migration-analysis.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/002/before/ai-agent-tasks/20261021T055929Z-migration-analysis.md",
+      "bytes": 5892,
+      "sha256": "6de2563ed834fff2f92a45d94c0a11fc94c0e5e2d4ff2684a3c52168fa50dfa9"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/003/after/ai-agent-reports/20261021T064017Z-evidence-refactoring.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/003/after/ai-agent-reports/20261021T064017Z-evidence-refactoring.md",
+      "bytes": 15891,
+      "sha256": "ef4015a1f26128425f944bb8dbdc58fd7348b283afb24e33042a87b7d4e0f4c5"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/003/after/refactoring-checks.json",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/003/after/refactoring-checks.json",
+      "bytes": 20083,
+      "sha256": "1d17a9b2aabc7f13d08670b53e40acc1492a9ba3295816c2856ab8a418459ce9"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/003/before/ai-agent-tasks/20261021T063419Z-evidence-refactoring.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/003/before/ai-agent-tasks/20261021T063419Z-evidence-refactoring.md",
+      "bytes": 8462,
+      "sha256": "c2e7f93b1499029d0ae675712701477e364a9f6b73ce47e19cb4bd099efd8347"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/003/before/entry-state.json",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/003/before/entry-state.json",
+      "bytes": 1847,
+      "sha256": "721c86d67c7935ac3e1ab269352a462e0bb2ab6e7c4748c07129b92c2da70f12"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/003/before/review-inputs/hcrl-1.1.4-002.pending.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/003/before/review-inputs/hcrl-1.1.4-002.pending.md",
+      "bytes": 72727,
+      "sha256": "298534c9ca078ae40e9edabc16e47830639f8937a87bcb32370a8e9814bd669b"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/004/after/ai-agent-reports/20261021T065158Z-praxis-implementation.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/004/after/ai-agent-reports/20261021T065158Z-praxis-implementation.md",
+      "bytes": 14584,
+      "sha256": "6c45de492012380bb9dd622225564e0b9e7f7fb8a0e660a897f640485a83db02"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/004/after/ai-agent-reports/20261021T065538Z-result-confirmation-and-completion.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/004/after/ai-agent-reports/20261021T065538Z-result-confirmation-and-completion.md",
+      "bytes": 6226,
+      "sha256": "39d4dbf1eb4e4aa5da014b57a02de0ffc0d693dab5fe8253312b711f67bd9cb6"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/004/after/completion-checks.json",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/004/after/completion-checks.json",
+      "bytes": 15502,
+      "sha256": "38eca286e07d856dc9250a46fd64570db9e87601ff8f790ac10d90ae11d77b88"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/004/after/entry-baseline-comparison.log.gz",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/004/after/entry-baseline-comparison.log.gz",
+      "bytes": 1604,
+      "sha256": "ed6633880f5a862f243ce34d3a63605ed091aee38ab3d5b5b3db9459d71e1f1b"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/004/after/governance-suite.log.gz",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/004/after/governance-suite.log.gz",
+      "bytes": 8742,
+      "sha256": "34164fcc1221ca245a8d550e3879ac3f066dce3eaf64b7da0d21f821be2787ae"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/004/after/validation.json",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/004/after/validation.json",
+      "bytes": 16215,
+      "sha256": "4d2985d7649b36bea219b460276bc8551e3092d097522ecf9510e974f064ed13"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/004/before/ai-agent-tasks/20261021T064322Z-praxis-implementation.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/004/before/ai-agent-tasks/20261021T064322Z-praxis-implementation.md",
+      "bytes": 9285,
+      "sha256": "f94c7215e561271a427d7f78430b3e6e4840c9dec92e962df0f13a044d8f1446"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/004/before/ai-agent-tasks/20261021T065354Z-result-confirmation-and-completion.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/004/before/ai-agent-tasks/20261021T065354Z-result-confirmation-and-completion.md",
+      "bytes": 1621,
+      "sha256": "c7faf60facf20ad3ca6778db3fa1fdfd12f45aa4b88ded61d48cb0d1a11c981a"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.4/004/before/entry-state.json",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/evidence/1.1.4/004/before/entry-state.json",
+      "bytes": 3743,
+      "sha256": "8618baf9435838c7e37341b346e299bb3e7625daa0d6dafef50f74cc84cf613e"
+    },
+    {
+      "source": "enterprise-architecture/design/register/1.1.4/hcrl-1.1.4-004.complete.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/register/1.1.4/hcrl-1.1.4-004.complete.md",
+      "bytes": 96570,
+      "sha256": "b59004cd5e5ed85f6d266501820535e6f42813b9570dffe8e6942d8aa658441e"
+    },
+    {
+      "source": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.pending.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.pending.md",
+      "bytes": 72820,
+      "sha256": "3a41bad3516a2bf35ebfd42f9cc5fc35057498956f362adc69649a3584a63341"
+    },
+    {
+      "source": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-003.pending.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-003.pending.md",
+      "bytes": 80379,
+      "sha256": "9c88a7e52e2b24a23f5498a626e35fcdfa183ae639f391d85b5a2e81ae8a5252"
+    },
+    {
+      "source": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-004.pending.md",
+      "proposed_disposition": "Remain",
+      "destination": "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-004.pending.md",
+      "bytes": 93482,
+      "sha256": "ecb9f5ee91476e9c907a957834f16e14097b6e8e1479e365b3a58ea6b105f31d"
+    },
+    {
+      "source": "scripts/architecture_review_evidence.py",
+      "proposed_disposition": "Remain",
+      "destination": "scripts/architecture_review_evidence.py",
+      "bytes": 5190,
+      "sha256": "613b9f901e7425b5b2d55ba1e580694bda12607581737c982d2507e3d402f30a"
+    },
+    {
+      "source": "scripts/tests/test_architecture_review_evidence.py",
+      "proposed_disposition": "Remain",
+      "destination": "scripts/tests/test_architecture_review_evidence.py",
+      "bytes": 5604,
+      "sha256": "4238c1b54582d0f1ffed67872382097a0af0e643a08512f313d6b715e49dcb74"
+    }
+  ],
+  "preserved_earlier_lifecycle": {
+    "enterprise-architecture/design/evidence/1.1.3/after/ai-agent-reports/20261021T050213Z-directive-application.md": {
+      "bytes": 12327,
+      "sha256": "5f53cb8fade30ce804ebb11ac1fa11217e4b0d00dca071eaee4d5e0baeac4c77"
+    },
+    "enterprise-architecture/design/evidence/1.1.3/after/ai-agent-reports/20261021T052642Z-corrective-directive-application.md": {
+      "bytes": 11726,
+      "sha256": "3e9fc4ec0f9c2b64a3db24815502e6c53abff5cc56205acc17ceda90a8c418f1"
+    },
+    "enterprise-architecture/design/evidence/1.1.3/after/ai-agent-reports/20261021T053344Z-temporal-directive-application.md": {
+      "bytes": 20752,
+      "sha256": "149cb86e61fd8e5def1a94515e2fce3dd3f957fd4b0c82fa662430a5bff92b9d"
+    },
+    "enterprise-architecture/design/evidence/1.1.3/before/ai-agent-tasks/20261021T045806Z-directive-application.md": {
+      "bytes": 4986,
+      "sha256": "808d07c34eb762e100fd5dd50aa340a9b63536bff2610fadf7a6a432cc9f4881"
+    },
+    "enterprise-architecture/design/evidence/1.1.3/before/ai-agent-tasks/20261021T052150Z-corrective-directive-application.md": {
+      "bytes": 4653,
+      "sha256": "f6fe683b144f5d665bdb7f7f33a084e72f01c5aa86317d882bce8dea700ec24c"
+    },
+    "enterprise-architecture/design/evidence/1.1.3/before/ai-agent-tasks/20261021T053007Z-temporal-directive-application.md": {
+      "bytes": 6807,
+      "sha256": "dbf60c032b171292e3d2bec2e8ef43ce0b72a9e3569a820193e1c4eb4407a84d"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/001/after/ai-agent-reports/20261021T055042Z-migration-candidate-preparation.md": {
+      "bytes": 2710,
+      "sha256": "0b880e79c80115ba844df2cc20ec55418c8c1aa53ee1d84850dfec220033d9a7"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/001/before/ai-agent-tasks/20261021T054402Z-migration-candidate-preparation.md": {
+      "bytes": 3630,
+      "sha256": "21281403658ae2a5c7c9f33f260c2eed9594f7b2f7adfc85e9fcc6b1bb25690f"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/002/after/ai-agent-reports/20261021T061342Z-migration-analysis.md": {
+      "bytes": 3885,
+      "sha256": "e0c917ad1959ce56e2e709efc92ef402d63aef11d8e20773d94f0d64b04e9375"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.checks.json": {
+      "bytes": 3665,
+      "sha256": "0e36cd56fb8cf61a89ee1bf9b9a8233bc9be641e0cc3b189cc6c40d55ff41ce3"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.mapping.csv": {
+      "bytes": 4138585,
+      "sha256": "552fa43c2a651ee327425de55ab6b02f507784cda23d9b86c7c2d9b87982d1f5"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/002/after/hcrl-1.1.4-002.references.csv.gz": {
+      "bytes": 437163,
+      "sha256": "36e7a5c03c03a67688e81d606670b038c146541f05b29b361771640124176562"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/002/before/ai-agent-tasks/20261021T055929Z-migration-analysis.md": {
+      "bytes": 5892,
+      "sha256": "6de2563ed834fff2f92a45d94c0a11fc94c0e5e2d4ff2684a3c52168fa50dfa9"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/003/after/ai-agent-reports/20261021T064017Z-evidence-refactoring.md": {
+      "bytes": 15891,
+      "sha256": "ef4015a1f26128425f944bb8dbdc58fd7348b283afb24e33042a87b7d4e0f4c5"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/003/after/refactoring-checks.json": {
+      "bytes": 20083,
+      "sha256": "1d17a9b2aabc7f13d08670b53e40acc1492a9ba3295816c2856ab8a418459ce9"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/003/before/ai-agent-tasks/20261021T063419Z-evidence-refactoring.md": {
+      "bytes": 8462,
+      "sha256": "c2e7f93b1499029d0ae675712701477e364a9f6b73ce47e19cb4bd099efd8347"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/003/before/entry-state.json": {
+      "bytes": 1847,
+      "sha256": "721c86d67c7935ac3e1ab269352a462e0bb2ab6e7c4748c07129b92c2da70f12"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/003/before/review-inputs/hcrl-1.1.4-002.pending.md": {
+      "bytes": 72727,
+      "sha256": "298534c9ca078ae40e9edabc16e47830639f8937a87bcb32370a8e9814bd669b"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/004/after/ai-agent-reports/20261021T065158Z-praxis-implementation.md": {
+      "bytes": 14584,
+      "sha256": "6c45de492012380bb9dd622225564e0b9e7f7fb8a0e660a897f640485a83db02"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/004/after/ai-agent-reports/20261021T065538Z-result-confirmation-and-completion.md": {
+      "bytes": 6226,
+      "sha256": "39d4dbf1eb4e4aa5da014b57a02de0ffc0d693dab5fe8253312b711f67bd9cb6"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/004/after/completion-checks.json": {
+      "bytes": 15502,
+      "sha256": "38eca286e07d856dc9250a46fd64570db9e87601ff8f790ac10d90ae11d77b88"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/004/after/entry-baseline-comparison.log.gz": {
+      "bytes": 1604,
+      "sha256": "ed6633880f5a862f243ce34d3a63605ed091aee38ab3d5b5b3db9459d71e1f1b"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/004/after/governance-suite.log.gz": {
+      "bytes": 8742,
+      "sha256": "34164fcc1221ca245a8d550e3879ac3f066dce3eaf64b7da0d21f821be2787ae"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/004/after/validation.json": {
+      "bytes": 16215,
+      "sha256": "4d2985d7649b36bea219b460276bc8551e3092d097522ecf9510e974f064ed13"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/004/before/ai-agent-tasks/20261021T064322Z-praxis-implementation.md": {
+      "bytes": 9285,
+      "sha256": "f94c7215e561271a427d7f78430b3e6e4840c9dec92e962df0f13a044d8f1446"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/004/before/ai-agent-tasks/20261021T065354Z-result-confirmation-and-completion.md": {
+      "bytes": 1621,
+      "sha256": "c7faf60facf20ad3ca6778db3fa1fdfd12f45aa4b88ded61d48cb0d1a11c981a"
+    },
+    "enterprise-architecture/design/evidence/1.1.4/004/before/entry-state.json": {
+      "bytes": 3743,
+      "sha256": "8618baf9435838c7e37341b346e299bb3e7625daa0d6dafef50f74cc84cf613e"
+    },
+    "enterprise-architecture/design/register/1.1.2/hcrl-1.1.2-003.complete.md": {
+      "bytes": 29769,
+      "sha256": "bc2a05b9c7c7aa75ecbd55426644aef7ba0f342e40c654cdf40c05240ff76ff6"
+    },
+    "enterprise-architecture/design/register/1.1.3/hcrl-1.1.3-005.complete.md": {
+      "bytes": 32620,
+      "sha256": "f0a9e65d7f275efaa95528dc3fa335cafe0e8b3118f38c9a54dff70f7bcb4e4c"
+    },
+    "enterprise-architecture/design/register/1.1.4/hcrl-1.1.4-004.complete.md": {
+      "bytes": 96570,
+      "sha256": "b59004cd5e5ed85f6d266501820535e6f42813b9570dffe8e6942d8aa658441e"
+    },
+    "enterprise-architecture/design/review/1.1.2/hcrl-1.1.2-001.pending.md": {
+      "bytes": 50278,
+      "sha256": "fd68c5bb4d0a622dae995a60891c2dd14b3a8d1f80dfd2b4fb00e7e7eaa43d4e"
+    },
+    "enterprise-architecture/design/review/1.1.2/hcrl-1.1.2-002.pending.md": {
+      "bytes": 36981,
+      "sha256": "d578a1e28fa0f89e10585664b7fc33d248718bc00151c00a6685aa082be0320d"
+    },
+    "enterprise-architecture/design/review/1.1.2/hcrl-1.1.2-003.pending.md": {
+      "bytes": 26734,
+      "sha256": "911990473678d2e8903b5ca7cb46878e6b0de30c4eaec31b3a80e9078f73cf6d"
+    },
+    "enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-001.pending.md": {
+      "bytes": 27184,
+      "sha256": "01ed25d70c4445f10e1edd0640fd384ccee7397058b98a3d5ef45e230a89adea"
+    },
+    "enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-002.pending.md": {
+      "bytes": 18932,
+      "sha256": "6a35d346a613409dafe13e7e961b1d4bb0e8f91d2871260541f78ae9857b7f11"
+    },
+    "enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-003.pending.md": {
+      "bytes": 38132,
+      "sha256": "81e4c8a07777d7d3b652297a1e246ca1fa3bc6ecb93f4c441d2914b41de1384b"
+    },
+    "enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-004.pending.md": {
+      "bytes": 27520,
+      "sha256": "1de0929fa26265f0f3b980c5ea3204b91df78ecbb52bcea7068ac5dc4492bc66"
+    },
+    "enterprise-architecture/design/review/1.1.3/hcrl-1.1.3-005.pending.md": {
+      "bytes": 27036,
+      "sha256": "c5137089fe5bd45944ddce69f9d2cad743f41ac7f845802a578c1c231b6e93e9"
+    },
+    "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-001.pending.md": {
+      "bytes": 61235,
+      "sha256": "6019d3793dc148e0a99db84374f1fb0f98440d17ce6e1e4b62144eb1ea369909"
+    },
+    "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-002.pending.md": {
+      "bytes": 72820,
+      "sha256": "3a41bad3516a2bf35ebfd42f9cc5fc35057498956f362adc69649a3584a63341"
+    },
+    "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-003.pending.md": {
+      "bytes": 80379,
+      "sha256": "9c88a7e52e2b24a23f5498a626e35fcdfa183ae639f391d85b5a2e81ae8a5252"
+    },
+    "enterprise-architecture/design/review/1.1.4/hcrl-1.1.4-004.pending.md": {
+      "bytes": 93482,
+      "sha256": "ecb9f5ee91476e9c907a957834f16e14097b6e8e1479e365b3a58ea6b105f31d"
+    }
+  },
+  "limits": "Historical content classifications and lexical reference inventory are carried as proposals/evidence, not repeated or accepted. Current hash checks are integrity observations, not semantic review of every source or migrated-state verification. New preparation outputs are not migration sources."
+}

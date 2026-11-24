@@ -1,0 +1,151 @@
+---
+{
+  "schemaVersion": 1,
+  "canonicalId": "a98ac999bcde4d35b54cbc3f97bf4aaf",
+  "archimateType": "Capability",
+  "specialization": "Feature",
+  "displayName": "[Feature] PartnerProfileVersionExplicit",
+  "friendlyName": "DigitalInteroperabilityAndServiceInteraction.ServiceContractExposureAndConsumption.PartnerExchangeContractResolution.PartnerProfileVersionExplicit",
+  "canonicalName": "CT1-EC-DigitalInteroperabilityAndServiceInteraction.CT2-EC-ServiceContractExposureAndConsumption.CT3-EC-PartnerExchangeContractResolution.FEAT-PartnerProfileVersionExplicit",
+  "standing": {
+    "semantic": "Accepted replacement model — Pass3/014; implementation unverified",
+    "currentness": "current",
+    "incorporationReview": "Accepted by Solution Architect — 1.1.20 closure disposition"
+  },
+  "identity": {
+    "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+    "sourceIdentity": "E03.02.06.F01",
+    "allocation": "UUIDv4 allocated once by explicit create"
+  },
+  "naming": {
+    "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md",
+    "inputs": [
+      {
+        "key": "E03",
+        "type": "capability",
+        "name": "Digital Interoperability & Service Interaction",
+        "tier": "CT1",
+        "category": "enterprise"
+      },
+      {
+        "key": "E03.02",
+        "type": "capability",
+        "name": "Service Contract Exposure & Consumption",
+        "tier": "CT2",
+        "category": "enterprise"
+      },
+      {
+        "key": "E03.02.06",
+        "type": "capability",
+        "name": "Partner Exchange Contract Resolution",
+        "tier": "CT3",
+        "category": "enterprise"
+      },
+      {
+        "key": "E03.02.06.F01",
+        "type": "feature",
+        "name": "PartnerProfileVersionExplicit",
+        "tier": "FT",
+        "category": "enterprise"
+      }
+    ],
+    "categoryInterpretation": "Accepted combined Business/Business Enabling hierarchy uses existing business CTn vocabulary; Enterprise uses CTn-EC. No artificial BEC split."
+  },
+  "catalogue": {
+    "id": "E03.02.06.F01",
+    "parent": "E03.02.06",
+    "tier": "Feature",
+    "sourceName": "PartnerProfileVersionExplicit",
+    "hierarchy": "Enterprise"
+  },
+  "provenance": [
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+      "selector": "E03.02.06.F01",
+      "role": "Accepted Pass3/014 source definition, now incorporated into this canonical resource",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+      "sha256": "83aa0a696e057a4d1cb63177269d6c613554fea86189b9c5a8578472f09272a4"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/feature-reconciliation.json",
+      "selector": "/1833",
+      "role": "Exact source contributions, original wording/criteria/status and accepted adjudication correspondence; historical assurance evidence",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/feature-reconciliation.json"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "selector": "Authorised Activity / Scope / B",
+      "role": "Explicit canonical incorporation and UUID allocation authority",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+      "selector": "E03.02.06.F01"
+    }
+  ],
+  "relationships": [],
+  "unresolvedProperties": {},
+  "exchange": {
+    "identifier": "id-e10737c903c55ba5a8067882a7e24211",
+    "properties": [
+      {
+        "ref": "propid-25",
+        "values": [
+          {
+            "text": "E03.02.06.F01",
+            "attributes": {}
+          }
+        ]
+      },
+      {
+        "ref": "propid-24",
+        "values": [
+          {
+            "text": "Feature",
+            "attributes": {}
+          }
+        ]
+      },
+      {
+        "ref": "propid-5",
+        "values": [
+          {
+            "text": "FT",
+            "attributes": {}
+          }
+        ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "current",
+            "attributes": {}
+          }
+        ]
+      },
+      {
+        "ref": "propid-6",
+        "values": [
+          {
+            "text": "Accepted",
+            "attributes": {}
+          }
+        ]
+      }
+    ]
+  }
+}
+---
+
+# [Feature] PartnerProfileVersionExplicit
+
+## Architectural content
+
+The selected external profile and version are identifiable at the exchange boundary.
+
+### Incorporation standing
+
+Catalogue identity `E03.02.06.F01`. The accepted definition is preserved above. Migration verification and source measurements do not establish implementation satisfaction. Existing source qualifications remain in force.

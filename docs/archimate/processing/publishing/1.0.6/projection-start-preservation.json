@@ -1,0 +1,1429 @@
+{
+  "authority": "Bounded projection/navigation completion of the current uncommitted 1.0.6 candidate; no semantic, Documentation, View-content or release change.",
+  "starting_model_sha256": "6152ac25113c24c4d95eb892b53c8fbcfb212ff5172630425fba789035a938a6",
+  "checks": {
+    "elements": {
+      "count": 1299,
+      "sha256": "cdab7df1285972c0ba0c48f1bd5e557e15b8cc4442ef353a301441ece2e7af4b"
+    },
+    "relationships": {
+      "count": 852,
+      "sha256": "2deca4b5ff8c89691101aa2f1a6f3df32a6fc343ebfddb39d7c606de1097d8ef"
+    },
+    "views": {
+      "count": 1012,
+      "sha256": "028d40b9da16cdec5f088a9f0492095c9fd6e54665c22f28929cbcd76b807a15"
+    },
+    "property_definitions": {
+      "count": 55,
+      "sha256": "dad488fb08835fd4e059cfe1c7d4148f30096a492e4ed49cac9939d9fa9bbfc0"
+    }
+  },
+  "protected_files": {
+    "docs/archimate/capability-architecture/recovery-v0.2/recovery-findings.json": "408b6bbf6ebb733bce3f9873e8bcb5f117e54699eaecf02945c1df5081eb1c73",
+    "docs/archimate/capability-architecture/recovery-v0.2/architecture-release.json": "cf29dece460ae5353a53c56990e719f2cec6dcdc7f5ef13754442fa9cdfb3222",
+    "docs/archimate/capability-architecture/recovery-v0.2/1.0.5A-recovery-report.md": "61ec9349d290b3b15415600e126af17f2d10ff0c23e59ab7034b3960638da210",
+    "docs/archimate/capability-architecture/recovery-v0.2/validation.json": "e96640f7b2d9ebdbff7c4e4dc8d06ae34ef2d581f558b9241216dedb40101a6f",
+    "docs/archimate/capability-architecture/recovery-v0.2/representation-crosswalk.json": "1875246e7bdfbfcbbf413066f408ce24c98250db8f0a298b8697cb34ed56f266",
+    "docs/archimate/capability-architecture/recovery-v0.2/Harmonia-Architecture-1.0.5A.xml": "f85be36ff6edb3c6491dd526c42d4207db9214154da437941b709de34dc106a1",
+    "docs/archimate/capability-architecture/recovery-v0.2/source-manifest.json": "5d61ff920d12617d8fe994a0f052b431def5e5819439f573c92b48543bd006a9",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification.json": "748049f5da544af6d7336e0b88bae9968d3287379c224acf96d56c6e74dd56ab",
+    "docs/archimate/capability-architecture/recovery-v0.2/corpus-drift.json": "5edc8f65383381d8c35b12934526c2c9772666e7ffbcb34d1459e8ef2b08b58e",
+    "docs/archimate/capability-architecture/recovery-v0.2/archi-inspection-guide.md": "cdc2d6a9be60f563321306d7023e3f3a16e17fc3b33dd271d1ebc87c532635db",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/legacy-v02-check.log": "ff22c6319e5271c39d6ed802f892173f058ccfb68f7cb265b4a42c17c1b225eb",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/snapshot-validation.log": "4e2832ad352fbc0fa3c046aacee88c61412184c7b887b7e648e4798269e218e7",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/snapshot-tests.log": "bb3f9b4784e0ce6356e39b2b70e01a4975ee52eb35e1c3b65af6a895c1cce36d",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/release.log": "cf29dece460ae5353a53c56990e719f2cec6dcdc7f5ef13754442fa9cdfb3222",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/architecture-tests.log": "e0370bd75d46af9c5f8ea70ba2da4781666501a4ceeb1e39293797b1e7c81915",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/jdk25-diagnostic.txt": "7b7e4159f7fca015e1463a577b167f7cf2ac04aa6e48fa606a72ffdba98796d1",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/script-tests.log": "9250af2694563055ea8679ad3ef35432464de884b5aa98d185fb07dfda310d81",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/rad-validation.log": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/.gitignore": "ce2da3813dec0794abe45d66ce62c33f3f3d4ae9856b71e0be6e49ce5bda37ad",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/regeneration.log": "648e71e7f84616aab210f320ca5eb28ee8bb119fcf5223a5000164d68629aedc",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/definition-concordance.log": "4c25d0a6243765c7b709d2d2a8b44b0175ca6a3bc7d5894523c6b5db0341cf10",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/diff.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/publication-tests.log": "82da7f0bb62a92fac38ae7ba6d7434c910259aae0dc3742dfb84bfc9a3ea74ad",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/initial-maven.log": "75b786fe605b7b3d35eccb8e9d44340ce68b5aec8dcd7cada9e598b571281f4c",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/identity-validation.log": "cb91c62e91ac9f7d264c8b86f1e464015766132b8a97a55965e8085e577d1733",
+    "docs/archimate/capability-architecture/recovery-v0.2/verification/make-all.log": "55412ba1e877338055013f22b0c7a55a32122b21513057cb41ef49ca72ecf99f",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/harmonia-ea-capability-map.kilepr": "d03a514d3817ac8f3c75031004448a296c6ef9d42eec59cce8494e16a6514590",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/.latexmkrc": "86bc04f60f9024aedd998863166af23c32a66d9ac60c016aecb90851a998930a",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/Makefile": "68b22e16c477cb509b663e9bc95fa6a1250de6b9d9bb468ab3191a3fe9a93bdf",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/validator-probes.json": "8faf73f616be101a650079433b479a9dc8415f0f8643235c29072f78a54c2b2b",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/bec-reconciliation-ledger.json": "fd710b8c5b306ae75832e6666c44cdddb8cc2be5325bda5dfa0e4ba881e2ea56",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/Harmonia-EA-Capability-Map.pdf": "9cadf2c7091e2330dd88a72c4ae54508cd8c80f19f1fe26b25a4661209a27245",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/README.md": "5038c3d01298ceca6a475e356360a83a437401ec67847bb044989a501a871f30",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/standalone-validation.json": "ffc26c695620b5af6dc47f5cc2b82cdeced6975a720bd8a010ff8b180289710e",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/validation.json": "166a8df4ea7c27f7e5cfe68ae85471991d0cd04b73c294bc5f4fa6b40304400b",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/pre-review-publication-evidence.json": "67abfd4dfcf3f248a3e5d5393c5219cbae2e20972569ba3ea388e6b80a229eb9",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reconciliation-tests.json": "e45e0900e3a0d00f44c2ae39dc57f3cec0b744fe2ed0e2260d4141e04e850c07",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/corpus-register.json": "d8ce86e115f71c37e591eb4a7a52e1caf028673d32d2f7cabcd6faa957de24d6",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/v0.3-reconciliation.json": "b15892ec9b9c930c92c20ec78cc655f09c42a712ed8560f96690c9e05eb396ab",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/v0.1-fingerprints.json": "2b3dc10bb58b4bcd94af384d8c52992cbb297e07c6e333964f316d7c2e6622c9",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/model.json": "dfbc80ff24341ef025d73bd7c6d09f335ae2258e6dada9c21767fc2732afe23e",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/derivation-provenance.json": "c21a42ffbb96d06c2d6574abffb3aea27872bb347afd54750adf205fb5a1c139",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/publication-navigation-report.md": "ba876e963d28a3bacf81ba9a2e510557d625e4c2c2fd1441f3f4c051c9355155",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/.gitignore": "68018eb61eabce20fc5e4e0031077efdec493e7959aba610cb4c6b087550a422",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/semantic-baseline.json": "d9a0c95832fda9e254b5152ad2df81e0e85207cd73ecd3426d125b6056df9a23",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/pre-review-publication-labels.json": "a9ab93295564232ae5cc0402feec202e8e608b69420b51093c874e2ffab565a2",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/model-validation.json": "83e1c8fd56d61512f4d66ddd601ec803c2a8d1e9688e62ef27427265f85b4908",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/publication-preservation.json": "b0da788293f0116f88087b89060ffb980f6ab5fb19b72234027f62290f9a4574",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/standalone-publication-report.md": "707f1745abec4430c06fa35d46e3bed3605b043eccbaafcdc56a4bbf61240e30",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/change-ledger.json": "49024316140e9897f0488e5fd0e9b40ddac585f53cd15f57b67b0b0054cd859d",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/pre-review-v0.3-reconciliation.json": "495411ab4b56ce08b2f86d1fbc07c15213720031de8bd81ec0b33e63068ee21a",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-identity-history.json": "bf4e1e6b49f2fe02deabe5a59d4dadd639fb46c06be28870bd99535715596635",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/pre-review-identity-lock.json": "50c2b8388dfdb8a1a237ed1fa8e9365e0d6b35ba9ed0e34b78e46e04454a2046",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/Harmonia-EA-Capability-Map.tex": "bd3216a7f881c24a36a9a7ea61c8174194c4392369cdcfd9932fcbad4bcee74c",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-bec-hierarchy.json": "208c6cbae846386e664067f1ac4798bd194209eb2098d54af98ed88dd294cc94",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/identity-lock.json": "519f1e748aac1223e8120cbfb80ece439188d88596081e736cd6d716596526a4",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/architecture-tests.json": "c427007f3aa49451137536a176bc9663851f1a388bb1a1d5def3bc9c9aae1f73",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/source-coverage.json": "9ae28e1fe3d5ce20ecdd055f51957c7570eb0b65f932e0f098c80035083d9bb6",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/navigation.py": "68b8f1bb988d88a3d64796d7557c247572708c10040801522309de4eb14e77a5",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/probes.py": "5e455c909f324599b4fd00305f143e6dab5daeb61d29203f66ded65e89154fae",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/compose.py": "52583566fe5b3f259f76c727c82a49ae7156a26a51b97645658d2de911fc9f2d",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/render.py": "3b523121aaee55c729e09378df1ec5eb195f4cf27aab923c17dd451221dac349",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/reviewed_bec.py": "2285438ae8cfdbc71407d0faebe41d6ddeb19195a14feb67355bac41e6d1218d",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/reconcile.py": "62bfb38654b120180ed35dd50b45dab1187f8f92137ab32fbe11115d89f30c29",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/baseline.py": "c09e74ddbda8bb8f1168a70aa822a05b5f7baca98a9e7e9fe4e92cfb7d24484b",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/test_reviewed_bec.py": "dfb3460f5423dc69b77f8defcaffd2fc4c105a68b2baa048c9f7eb1be8153fdc",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/check.py": "c681808b8459f6818de1dfadce95fe209d8391f9a9244eb640f24bcca4f9cf5b",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools/report.py": "6fb3034aac25abacd27eaca5d1d8d39575b1c9aec6fdef65deabbf1c75e35ffb",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/catalogue/proposals.md": "733a4edb61297ccdd2e2f169109c719de6f64b2ff234a5ff85772acf2c51a521",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/catalogue/review-focus.md": "3a59de9924413d02565b7fc95277c20e920b6b5556c57ac9a3ddbc3f96bc8643",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/.kile/harmonia-ea-capability-map.kilepr.gui": "022c199ae67256f5bfc751bdebf9ae7eaacb6233c390154f25429e2bb9cff477",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/templates/latexmkrc": "86bc04f60f9024aedd998863166af23c32a66d9ac60c016aecb90851a998930a",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/templates/publication.tex": "74c5e9c4410ededf02009fea7198d3906424b1ab56cf5443ee7e219f5fed8a3a",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-em.tex": "fff3ff612e48cea8c2c656fd846afacaaaca0455ff2eae8414a4e00faa64ddb7",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/reading-guide.tex": "a48492cf303d099d40579565cd12339df1ac2282a8b702988cfce7f430c10823",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/catalogue-contexts.tex": "f1b06276619091b5fe084a2d98db4bd20e1b6499411044f599c8ac77293f7f1c",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-enterprise.tex": "2bf4d9dd9bc2970384f2901f9a9d2d5818b62e053a0f0c1e3c5aff91fc70cac1",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-sa.tex": "b7f111f07dd99a9ba36a4c4bb72f7f9b1b0404b7ab7e60cd3f45ec67430962ed",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-processes.tex": "6b6b9c176ecab2b11d954f3752a2c91184aaee0df9fca4bfbddf6294462241f3",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-assurance.tex": "d9fabc44dade694ab4b42341e2d19e63524e27435dd16a070bb619c6fd51602a",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-detail.tex": "d42f0366a56ea3e97b0c20c1bf56fdb3b2cecd66571f71330766594e5131ea86",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-business.tex": "191e2655044924c452edfb16b5f8e4d3f1f8c5db51c00dadd58d8576cea40e92",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/sources.tex": "f0e4cf5b1e9e83e9716dc5d0d98a1cc0a259cfa29e10a67a2fc49a1abd492319",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/preserved-responsibilities.tex": "f13c981e10adcfa71af307e83b51d68ef07af3fa9e70922bfd55f5338b1cabf6",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-sd.tex": "9c69bd922619e3c0e5bef75d2c75ffe1b2be9dc562a1ea5df09476b209b7d9cd",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/bec-review.tex": "847583d7e0a628e555b44e67fa3416fd2ddae37ceba03fa44c639610d1e48faf",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/business-enabling-capabilities.tex": "0b40236ec0b46f6f6f5c80fd17c78ed8d4bb921362b90e1d107d25a94658000a",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-hso.tex": "f025defbd23a55fc985568fb09be8b13f384059b61146a9a7886a9bbbdf0a262",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/reconciliation.tex": "112fdf384e1506c6721439ffd1c5d454cb6a324b7213776ff4bd032914467298",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-metamodel.tex": "1e53b70ce93fdaf3655cbdfeba92271b9bab65cafdf95ce6afd18941e3765471",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-axioms.tex": "96c3fe0b75c41cd309e109da3f767a2625fdc2f46409c0bb21ce5d11119ab59a",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/identifiers.tex": "3ef4ca10ba977a966821ff0828e1ce2a8806c5bf0d4b131d8d1035c055b900ee",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/relationships.tex": "41989793078a5fe18ea9e76643a9dcef0985f38b6b68bfe745923ca777c9ebca",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/enterprise-capabilities.tex": "54d70681a0d70c92f3c42e5524ede9bb15c75a89cdb89635f2bc9b9998fa0859",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/business-capabilities.tex": "793669630875e4d101f4f23ec3b375e2081463b8a511f1a1f53d8dfa3f450ed7",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-enabling.tex": "5ef8d563c41798f0b62c34d36f6f42410eadf80e6dc0aba6f369f90d7856ec92",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-assurance-strategy.tex": "62780999832352f97278aa4b8d8baa514bda61e1b655dc35420dfd60a93d4753",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-ise.tex": "c227e1835a98deeb55b2bf6d619e220d72fa0d7799d1c29faf905c2343ae5825",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-dependencies.tex": "56f170a392e26cbd81be4bc06062b16ba98860d35faa8ae2632dd592133b7da5",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-traceability.tex": "0bed4f923d6e109c1f5d293bea86f37781b308c5826d6b40f232420dcdde02f5",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-k9.tex": "dc3704757f1d5d66c1293c778e37a05d995ffe642e763b99a2218e73c8ba599c",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-b2-1.tex": "fe714504735eccf4a2922681e1d142d3aa5a5767996a94a5a46bee8ec8ec795c",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/sections/rad-tier-model.tex": "f49bf5d838a6bf2eda2e7dd2c58d598c8710b94f53ebd0b217a7da31bea83fe8",
+    "docs/markdown/governance/architecture-identity/registry.json": "aadfaa9c1c6d9d35908036683fff4837537de9fe0683c192e2fd0959fced6073",
+    "docs/markdown/governance/architecture-identity/adoption-1.0.3.md": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+    "docs/markdown/governance/architecture-identity/registry.schema.json": "10fb9bb0068b9008f428611c7179bfdea3ced0b419403e19a498afe7560d0b6a",
+    "docs/markdown/governance/architecture-identity/inventory.md": "c010871a4074d949e938335faf1ff2c6d82da5028885392593b4420d86720e2b",
+    "docs/markdown/governance/architecture-identity/adoption-baseline-1.0.2.json": "7a9a8b247d54f5a30304b763a60e3622e8197adf85a1bf53678b9af72f43c7b4",
+    "docs/markdown/governance/architecture-identity/model.md": "f88b2cc94251d197c448c4dd2c74f558bb113cae5fae6623ab644124f0a32a82",
+    "docs/markdown/governance/architecture-identity/inventory.json": "7cca236765398700bb77710b253667d764cf0f9a7dd24bf8de2a340adc1d550f",
+    "docs/markdown/governance/architecture-identity/verification.json": "55a686e6414ebc0b1183a96d11035a2c29c3122ebfaeb5e165a36230e7b0d9f0",
+    "docs/markdown/governance/architecture-identity/adoption-validation.json": "237c7fcc0ffdd109b85bb976a256b1c6f6a75bf1b5f4323e7a8f0670d94499c8",
+    "docs/markdown/governance/architecture-identity/release-report.md": "086593d3c91404e02999e28ae2c8a21a47276d823a1578423fe06979b34036d3",
+    "docs/markdown/governance/architecture-identity/bindings-validation.json": "330d7267e048e61ce8e664d4a105ed1923551a387d7ef8dca941db931dc13ba0",
+    "architecture-release.json": "074adcdd9654c45fc2bafaa570ba10c66ea26053753274f3589b9d42b1a30fa4",
+    "docs/markdown/governance/baseline/architecture.json": "dfbc80ff24341ef025d73bd7c6d09f335ae2258e6dada9c21767fc2732afe23e",
+    "docs/markdown/governance/baseline/motivation.json": "15bff3d8feeefad7523de12228f46aee1d289b32c12bded490a15d0c836ced8b",
+    "docs/archimate/capability-architecture/schemas/archimate3_Diagram.xsd": "6419080f4c4bc43b4a7b8acf870146a7bae6c3487a3ce08d3c521c028ea6056e",
+    "docs/archimate/capability-architecture/schemas/LICENSE.txt": "1a97d3aa0651437d1383c76504b8a192d1f7178fd30d231af752e570f501cc2f",
+    "docs/archimate/capability-architecture/schemas/dc.xsd": "9285c1b57d8920b72101b4ba93416f32aa376087481f2b5b0c5d6c95f8def7cf",
+    "docs/archimate/capability-architecture/schemas/xml.xsd": "f0fa306f2951fb1a477220eb7bdeaa35959c8d0224258f2104d3c4724ba746f7",
+    "docs/archimate/capability-architecture/schemas/archimate3_View.xsd": "d708ce176403034b1229b892712cfd69660aefe17da4cc54acea1ac35e4a9854",
+    "docs/archimate/capability-architecture/schemas/provenance.json": "a7c6dd56c408aebf6b764095933ca3c56b7f893d7f56843a2538437bef2d3a33",
+    "docs/archimate/capability-architecture/schemas/archimate3_Model.xsd": "dd451abe3e3193f91dd9544b279af9bbbf17e75ff1ef86f65ad52b3f8cd29794"
+  },
+  "documentation_classification": {
+    "entries_reclassified": 396,
+    "explanatory_fields_reclassified": 675,
+    "historical_fields_retained": 212,
+    "historical_entries_retained": 98,
+    "retained_historical_material": [
+      {
+        "key": "business-capability:health-service-operational-readiness",
+        "name": "Health Service Operational Readiness",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "business-capability:health-service-operational-readiness",
+        "name": "Health Service Operational Readiness",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "business-capability:clinical-device-maintenance-management",
+        "name": "Clinical Device Maintenance Management",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "business-capability:clinical-device-maintenance-management",
+        "name": "Clinical Device Maintenance Management",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "business-capability:health-information-sharing-programme-management",
+        "name": "Health Information Sharing Programme Management",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "business-capability:health-information-sharing-programme-management",
+        "name": "Health Information Sharing Programme Management",
+        "field": "Additional Notes / Unresolved Matters",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:client-administration",
+        "name": "Client Administration",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-administration",
+        "name": "Client Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:provider-administration",
+        "name": "Provider Administration",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:provider-administration",
+        "name": "Provider Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:organisation-administration",
+        "name": "Organisation Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:location-administration",
+        "name": "Location Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-service-administration",
+        "name": "Health Service Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-product-administration",
+        "name": "Health Materiel Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-device-administration",
+        "name": "Clinical Device Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:person-identity",
+        "name": "Person Identity Administration",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:person-identity",
+        "name": "Person Identity Administration",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:person-identity",
+        "name": "Person Identity Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:person-identity",
+        "name": "Person Identity Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:healthcare-subject",
+        "name": "Healthcare Subject Profile Administration",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:healthcare-subject",
+        "name": "Healthcare Subject Profile Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:healthcare-subject",
+        "name": "Healthcare Subject Profile Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-relationship",
+        "name": "Client Relationship Administration",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-relationship",
+        "name": "Client Relationship Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-relationship",
+        "name": "Client Relationship Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-privacy",
+        "name": "Client Privacy Guardrail Management",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-privacy",
+        "name": "Client Privacy Guardrail Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-privacy",
+        "name": "Client Privacy Guardrail Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-centred-administration",
+        "name": "Client-Centred Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:client-centred-administration",
+        "name": "Client-Centred Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:referral-administration",
+        "name": "Referral Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:referral-administration",
+        "name": "Referral Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:scheduling-administration",
+        "name": "Scheduling Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:scheduling-administration",
+        "name": "Scheduling Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:episode--encounter-administration",
+        "name": "Episode & Encounter Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:episode--encounter-administration",
+        "name": "Episode & Encounter Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:order-administration",
+        "name": "Order Administration",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:order-administration",
+        "name": "Order Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:order-administration",
+        "name": "Order Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:diagnostic-administration",
+        "name": "Diagnostic Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:diagnostic-administration",
+        "name": "Diagnostic Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:medication-administration",
+        "name": "Medication Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:medication-administration",
+        "name": "Medication Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:procedure-administration",
+        "name": "Procedure Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:procedure-administration",
+        "name": "Procedure Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-record-administration",
+        "name": "Clinical Record Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-record-administration",
+        "name": "Clinical Record Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:care-plan-administration",
+        "name": "Care Plan Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:care-plan-administration",
+        "name": "Care Plan Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-communication-administration",
+        "name": "Clinical Communication Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-communication-administration",
+        "name": "Clinical Communication Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:funding--coverage-administration",
+        "name": "Funding & Coverage Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:funding--coverage-administration",
+        "name": "Funding & Coverage Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-charging--claims-administration",
+        "name": "Clinical Charging & Claims Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-charging--claims-administration",
+        "name": "Clinical Charging & Claims Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-assessment",
+        "name": "Clinical Assessment",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-assessment",
+        "name": "Clinical Assessment",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-assessment",
+        "name": "Clinical Assessment",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:primary-care",
+        "name": "Primary Care Coordination",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:primary-care",
+        "name": "Primary Care Coordination",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:primary-care",
+        "name": "Primary Care Coordination",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:acute-care",
+        "name": "Acute Care Monitoring & Event Coordination",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:acute-care",
+        "name": "Acute Care Monitoring & Event Coordination",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:acute-care",
+        "name": "Acute Care Monitoring & Event Coordination",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:emergency-care",
+        "name": "Emergency Care Progression",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:emergency-care",
+        "name": "Emergency Care Progression",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:emergency-care",
+        "name": "Emergency Care Progression",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:inpatient-care",
+        "name": "Multidisciplinary Inpatient Care Coordination",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:inpatient-care",
+        "name": "Multidisciplinary Inpatient Care Coordination",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:inpatient-care",
+        "name": "Multidisciplinary Inpatient Care Coordination",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:ambulatory-care",
+        "name": "Ambulatory Care",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:ambulatory-care",
+        "name": "Ambulatory Care",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:ambulatory-care",
+        "name": "Ambulatory Care",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:surgical--procedural-care",
+        "name": "Surgical & Procedural Care",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:surgical--procedural-care",
+        "name": "Surgical & Procedural Care",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:surgical--procedural-care",
+        "name": "Surgical & Procedural Care",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:diagnostic-services",
+        "name": "Diagnostic Service Integration",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:diagnostic-services",
+        "name": "Diagnostic Service Integration",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:diagnostic-services",
+        "name": "Diagnostic Service Integration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:therapeutic-services",
+        "name": "Therapeutic Services",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:therapeutic-services",
+        "name": "Therapeutic Services",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:therapeutic-services",
+        "name": "Therapeutic Services",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:medication-therapy",
+        "name": "Medication Therapy Provision and Monitoring",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:medication-therapy",
+        "name": "Medication Therapy Provision and Monitoring",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:medication-therapy",
+        "name": "Medication Therapy Provision and Monitoring",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:allied-health",
+        "name": "Allied Health",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:allied-health",
+        "name": "Allied Health",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:allied-health",
+        "name": "Allied Health",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:preventive-care",
+        "name": "Screening and Immunisation Enablement",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:preventive-care",
+        "name": "Screening and Immunisation Enablement",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:preventive-care",
+        "name": "Screening and Immunisation Enablement",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:rehabilitation",
+        "name": "Rehabilitation",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:rehabilitation",
+        "name": "Rehabilitation",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:rehabilitation",
+        "name": "Rehabilitation",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:community-care",
+        "name": "Community Care Coordination",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:community-care",
+        "name": "Community Care Coordination",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:community-care",
+        "name": "Community Care Coordination",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:outreach-care",
+        "name": "Outreach Care Continuity",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:outreach-care",
+        "name": "Outreach Care Continuity",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:outreach-care",
+        "name": "Outreach Care Continuity",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:remote--virtual-care",
+        "name": "Remote Patient Monitoring",
+        "field": "Capability Overview",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:remote--virtual-care",
+        "name": "Remote Patient Monitoring",
+        "field": "Boundary",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:remote--virtual-care",
+        "name": "Remote Patient Monitoring",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "unresolved_applicability"
+      },
+      {
+        "key": "capability:clinic--practice-operations",
+        "name": "Clinic & Practice Operations",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinic--practice-operations",
+        "name": "Clinic & Practice Operations",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:ward-operations",
+        "name": "Ward Operations",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:ward-operations",
+        "name": "Ward Operations",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:theatre-operations",
+        "name": "Theatre Operations",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:theatre-operations",
+        "name": "Theatre Operations",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:emergency-department-operations",
+        "name": "Emergency Department Operations",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:emergency-department-operations",
+        "name": "Emergency Department Operations",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:outpatient-operations",
+        "name": "Outpatient Operations",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:outpatient-operations",
+        "name": "Outpatient Operations",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:bed--care-place-management",
+        "name": "Bed & Care-Place Management",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:bed--care-place-management",
+        "name": "Bed & Care-Place Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:bed--care-place-management",
+        "name": "Bed & Care-Place Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-resource-management",
+        "name": "Clinical Resource Management",
+        "field": "Capability Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:clinical-resource-management",
+        "name": "Clinical Resource Management",
+        "field": "Boundary",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:clinical-resource-management",
+        "name": "Clinical Resource Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:service-capacity-management",
+        "name": "Service Capacity Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:service-capacity-management",
+        "name": "Service Capacity Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-workforce-management",
+        "name": "Clinical Workforce Capability Monitoring",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-workforce-management",
+        "name": "Clinical Workforce Capability Monitoring",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-workforce-management",
+        "name": "Clinical Workforce Capability Monitoring",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-rostering",
+        "name": "Clinical Rostering",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-rostering",
+        "name": "Clinical Rostering",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:mobile-staff-management",
+        "name": "Mobile Staff Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:mobile-staff-management",
+        "name": "Mobile Staff Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:on-call-management",
+        "name": "On-Call Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:on-call-management",
+        "name": "On-Call Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:work-allocation--dispatch",
+        "name": "Work Allocation & Dispatch",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:work-allocation--dispatch",
+        "name": "Work Allocation & Dispatch",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:work-allocation--dispatch",
+        "name": "Work Allocation & Dispatch",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-training--education",
+        "name": "Clinical Training & Education",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-training--education",
+        "name": "Clinical Training & Education",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-competency-management",
+        "name": "Clinical Competency Administration",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-competency-management",
+        "name": "Clinical Competency Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-competency-management",
+        "name": "Clinical Competency Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-qualification-management",
+        "name": "Clinical Qualification Administration",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-qualification-management",
+        "name": "Clinical Qualification Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-qualification-management",
+        "name": "Clinical Qualification Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-supervision",
+        "name": "Clinical Supervision",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-supervision",
+        "name": "Clinical Supervision",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-supervision",
+        "name": "Clinical Supervision",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:patient-transport",
+        "name": "Patient Transport",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:patient-transport",
+        "name": "Patient Transport",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-logistics-coordination",
+        "name": "Clinical Logistics Coordination",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-logistics-coordination",
+        "name": "Clinical Logistics Coordination",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-logistics-coordination",
+        "name": "Clinical Logistics Coordination",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:discharge-management",
+        "name": "Discharge Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:discharge-management",
+        "name": "Discharge Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:patient-clinical-record",
+        "name": "Patient Clinical Record",
+        "field": "Intent",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:patient-clinical-record",
+        "name": "Patient Clinical Record",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:patient-clinical-record",
+        "name": "Patient Clinical Record",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-exchange",
+        "name": "Health Information Exchange Enablement",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-exchange",
+        "name": "Health Information Exchange Enablement",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-access",
+        "name": "Health Information Access",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-access",
+        "name": "Health Information Access",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-communication",
+        "name": "Health Information Communication",
+        "field": "Capability Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:health-information-communication",
+        "name": "Health Information Communication",
+        "field": "Boundary",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:health-information-communication",
+        "name": "Health Information Communication",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:health-information-control",
+        "name": "Health Information Control",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-control",
+        "name": "Health Information Control",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:health-information-control",
+        "name": "Health Information Control",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-knowledge-services",
+        "name": "Clinical Knowledge Services",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-knowledge-services",
+        "name": "Clinical Knowledge Services",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-knowledge-services",
+        "name": "Clinical Knowledge Services",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-collaboration",
+        "name": "Clinical Collaboration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:clinical-collaboration",
+        "name": "Clinical Collaboration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:general-collaboration",
+        "name": "General Collaboration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:general-collaboration",
+        "name": "General Collaboration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:workflow--activity-coordination",
+        "name": "Workflow & Activity Coordination",
+        "field": "Capability Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:workflow--activity-coordination",
+        "name": "Workflow & Activity Coordination",
+        "field": "Intent",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:workflow--activity-coordination",
+        "name": "Workflow & Activity Coordination",
+        "field": "Boundary",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:workflow--activity-coordination",
+        "name": "Workflow & Activity Coordination",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:calendar-management",
+        "name": "Calendar Management",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:calendar-management",
+        "name": "Calendar Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:presentation-services",
+        "name": "Presentation Services",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:presentation-services",
+        "name": "Presentation Services",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:information-design-governance",
+        "name": "Information Design Governance",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:information-design-governance",
+        "name": "Information Design Governance",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "feature:standards-based-boundary-exchange",
+        "name": "Standards-Based Boundary Exchange",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "feature:security-context-propagation",
+        "name": "Security Context Propagation",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "feature:non-phi-compliance-auditing",
+        "name": "Non-PHI Compliance Auditing",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "feature:work-order-progression",
+        "name": "Work Order Progression",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "feature:to-do-decision--approval-coordination",
+        "name": "To Do Decision & Approval Coordination",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "feature:synthetic-task-orchestration",
+        "name": "Synthetic Task Orchestration",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "feature:workflow-timeout--escalation-oversight",
+        "name": "Workflow Timeout & Escalation Oversight",
+        "field": "Feature Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:assurance-design",
+        "name": "Assurance Design",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:assurance-design",
+        "name": "Assurance Design",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:assurance-design",
+        "name": "Assurance Design",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:assurance-criteria-management",
+        "name": "Assurance Criteria Administration",
+        "field": "Capability Overview",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:assurance-criteria-management",
+        "name": "Assurance Criteria Administration",
+        "field": "Boundary",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:assurance-criteria-management",
+        "name": "Assurance Criteria Administration",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "reconciled_meaning_requires_review"
+      },
+      {
+        "key": "capability:governed-assurance",
+        "name": "Governed Assurance",
+        "field": "Capability Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:governed-assurance",
+        "name": "Governed Assurance",
+        "field": "Boundary",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:governed-assurance",
+        "name": "Governed Assurance",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:credential-management",
+        "name": "Credential Management",
+        "field": "Capability Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:credential-management",
+        "name": "Credential Management",
+        "field": "Boundary",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "capability:credential-management",
+        "name": "Credential Management",
+        "field": "Harmonia Architectural Relevance",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "function:establish-assurance-context",
+        "name": "Establish Assurance Context",
+        "field": "Function Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "function:assess-assurance-evidence",
+        "name": "Assess Assurance Evidence",
+        "field": "Function Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "function:adjudicate-assurance-assessment",
+        "name": "Adjudicate Assurance Assessment",
+        "field": "Function Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "service:request-service-assurance",
+        "name": "Request Service Assurance",
+        "field": "Service Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "service:request-service-assurance-status",
+        "name": "Request Service Assurance Status",
+        "field": "Service Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "service:communicate-service-assurance-outcome",
+        "name": "Communicate Service Assurance Outcome",
+        "field": "Service Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "process:specimen-transport-process",
+        "name": "Specimen Transport Process",
+        "field": "Process Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "process:work-order-progression-process",
+        "name": "Work Order Progression Process",
+        "field": "Process Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "process:to-do-progression-process",
+        "name": "To Do Progression Process",
+        "field": "Process Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "process:synthetic-task-progression-process",
+        "name": "Synthetic Task Progression Process",
+        "field": "Process Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "process:assurance-process-execution",
+        "name": "Assurance Process Execution",
+        "field": "Process Overview",
+        "reason": "non_current_record"
+      },
+      {
+        "key": "process:assurance-process-reporting--communication",
+        "name": "Assurance Process Reporting / Communication",
+        "field": "Process Overview",
+        "reason": "non_current_record"
+      }
+    ],
+    "manifest": "docs/markdown/governance/baseline/documentation-classification.json"
+  }
+}

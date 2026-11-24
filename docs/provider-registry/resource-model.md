@@ -40,7 +40,23 @@ The Provider Registry maintains relational links between core directory entities
                      Registry Entities
 ```
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Candidate directory data D08](../markdown/05-information-systems-architecture/data-and-persistence.md)
+- [C13 — Provider Registry](../markdown/05-information-systems-architecture/component-register.md#c13)
+
+```text
+---------------------------------------------------------
+```
+
 ### 3. First-Class Resource Status for Endpoint and Group
 
 - **`Endpoint` as an Independent Resource**: Electronic service addresses are persisted and managed as distinct FHIR `Endpoint` resources rather than flattened strings. Resources such as `Organization`, `Location`, `HealthcareService`, and `PractitionerRole` reference `Endpoint` instances to express secure electronic communication channels.
 - **`Group` as an Independent Entity**: `Group` represents clinical or operational groupings of directory resources. It is independent of system IAM or security group constructs, supporting both enumerated rosters (`Group.member.entity`) and definitional criteria.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```

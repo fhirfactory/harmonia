@@ -1,8 +1,37 @@
 # Themis Policy Governance & Security Architecture
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Themis Authorisation Model and distributed enforcement](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [PEP-Context availability and delegation](../markdown/05-information-systems-architecture/component-register.md#themis-availability-and-delegation)
+- [Kleio authoritative Audit Capture](../markdown/05-information-systems-architecture/component-register.md#c03)
+
+```text
+---------------------------------------------------------
+```
+
 Themis is Harmonia's centralized security policy, authorization, and audit subsystem.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Themis Authorisation Model and distributed enforcement](../markdown/05-information-systems-architecture/component-register.md#c02)
+- [PEP-Context availability and delegation](../markdown/05-information-systems-architecture/component-register.md#themis-availability-and-delegation)
+
+```text
+---------------------------------------------------------
+```
 
 ## 1. Defence-in-Depth & Default-Deny Invariant
 
@@ -21,14 +50,35 @@ graph LR
 3. **Gate 3: Activity Execution**: Evaluates domain-specific permissions for individual Ergon actions.
 4. **Gate 4: Relational Persistence**: Independent authorization gate at storage tier preventing repository bypass.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Calliope controlled nomenclature](../markdown/05-information-systems-architecture/component-register.md#authorisation-nomenclature)
+- [AuthorisationRole and Identity assignments](../markdown/05-information-systems-architecture/component-register.md#criteria-collections-and-authorisationroles)
+
+```text
+---------------------------------------------------------
+```
 
 ## 2. Role and Authority Decoupling
 
 Themis cleanly decouples human/service mnemonic roles from granular machine authorities:
 
 | Mnemonic Role (`HarmoniaRoleEnum`) | Role Name | Associated Granular Authorities (`HarmoniaAuthorityEnum`) |
-| :--- | :--- | :--- |
+| :
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+--- | :--- | :--- |
 | `PRV_RDR` | Provider Reader | `PRV_READ`, `PRV_SEARCH` |
 | `PRV_SUB` | Provider Submitter | `PRV_READ`, `PRV_SUBMIT` |
 | `PRV_PROC` | Provider Processor | `PRV_READ`, `PRV_PROCESS`, `PRV_TRANSFORM` |
@@ -39,6 +89,17 @@ Themis cleanly decouples human/service mnemonic roles from granular machine auth
 | `SYS_ADM` | Platform Admin | Full platform privileges (`*`) |
 
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Operational PEP-Context and precomputed PEP-Criteria](../markdown/05-information-systems-architecture/component-register.md#pep-context)
+
+```text
+---------------------------------------------------------
+```
 
 ## 3. Pragma Security Context Propagation
 
@@ -57,10 +118,31 @@ public class PragmaSecurityContext {
 
 This context is serialized into FHIR R5 `Task.extension` structures, allowing asynchronous workers to reconstruct and verify caller authorization without shared session state.
 
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Kleio authoritative Audit Capture](../markdown/05-information-systems-architecture/component-register.md#c03)
+- [Meaningful evidence distinction](../markdown/05-information-systems-architecture/gaps.md#kleio-detailed-contracts)
+
+```text
+---------------------------------------------------------
+```
 
 ## 4. Zero-PHI Decision Auditing (`ThemisAuditService`)
 
 - Every authorization evaluation produces a structured `ThemisAuditEvent`.
 - **Zero-PHI Guarantee**: Audit logs record timestamps, principal IDs, requested actions, resource types, decision outcomes (`PERMIT`/`DENY`), and reason codes (`ThemisDecisionReason`).
 - Message payloads, patient medical history, clinical observations, and passwords/tokens are strictly excluded.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```

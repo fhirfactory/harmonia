@@ -1,0 +1,1 @@
+PASS: all 12 generated XML/validation/Markdown/ledger files reproduce byte-for-byte in an independent output tree

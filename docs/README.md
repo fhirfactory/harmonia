@@ -1,6 +1,20 @@
 # Harmonia Engineering Documentation & Architecture Reference `[IMPLEMENTED]`
 
-Welcome to the authoritative engineering documentation for the **Harmonia Health Integration Environment (HIE)**.
+Welcome to the engineering documentation index for the **Harmonia Health Integration Environment (HIE)**.
+
+`/docs/markdown` is the **Reference Architecture Documentation Set (RADS)**,
+authoritative for the current Harmonia architecture. Documentation elsewhere
+in the repository is **legacy-doco**, governed by the standing
+[RADS and legacy documentation rules](../AGENTS.md#12-rads-and-legacy-documentation-governance).
+Architectural information requires review, reconciliation and any necessary
+adjudication before incorporation into RADS; affected legacy sections are
+preserved unchanged within supersession wrappers referencing their RADS
+replacements. Implementation-status labels in this index do not confer
+architectural authority.
+
+[Canonical Architectural Axioms](markdown/governance/architectural-axioms.md) — the single maintained axiom register in [cross-domain governance](markdown/governance/README.md).
+
+[Harmonia R1.x/R2.x Architecture Completion Plan](markdown/architecture-completion-plan.md)
 
 Harmonia is a modular, high-performance, healthcare-grade integration and interoperability platform uniting presentation services (**Iris**), perimeter protocol gateways (**Pylai**), workflow and task processing (**Energeia**: Ponos/Erga/Praxis), resilient messaging (**Petasos**), in-memory caching (**Mneme**), durable relational persistence (**Mnemosyne**), core data foundation (**Hestia**), security policy governance (**Themis**), canonical schemas (**Calliope**), collaboration bridging (**Agora**), and synthetic clinical simulation (**Paradeigma**).
 
@@ -8,10 +22,18 @@ Harmonia is a modular, high-performance, healthcare-grade integration and intero
 
 ## 1. Documentation Information Architecture `[IMPLEMENTED]`
 
+The [Harmonia Candidate Information Systems Architecture](markdown/05-information-systems-architecture/README.md)
+is the initial Domain05 solution reconstruction, with component, feature, data,
+middleware, persistence and documentation-gap views. It remains candidate;
+upstream coverage, MVP determination and implementation planning are future work.
+The legacy source sections incorporated by that task are individually wrapped;
+other material below retains its historical/supporting standing under repository governance.
+
 ```
 docs/
 ├── README.md                                 # Master documentation index & navigation (this file)
 ├── AGENTS.md                                 # Authoritative architectural rules for autonomous agents
+├── deferred-document-register.md             # Register of deferred architectural documentation items
 │
 ├── getting-started/                          # Introductory guides & first deployment
 │   ├── introduction.md                       # Overview of Harmonia, healthcare context & 5 tiers
@@ -19,6 +41,9 @@ docs/
 │   ├── terminology.md                        # Greek metaphor register, etymology & healthcare glossary
 │   ├── build.md                              # Prerequisites, Maven commands & compilation guide
 │   └── first-deployment.md                   # Docker Compose local deployment & MLLP verification runbook
+│
+├── implementation /                          # Implementation Philosophies and Principles
+│   ├── Harmonia-Implementation-Guide-Philosophy.md # Engineering Philosophy, Defensive Programming and Educational Documentation
 │
 ├── concepts/                                 # The 16 Core Architectural Concepts
 │   ├── harmonia.md                           # Platform cohesion, architecture invariants & lifecycle
@@ -38,7 +63,7 @@ docs/
 │   ├── agora.md                              # Matrix Synapse collaboration gateway & Patient Spaces
 │   └── paradeigma.md                         # Synthetic clinical simulation & production isolation
 │
-├── modules/                                  # Deep-dive specifications for all 9 subprojects & 37 leaf modules
+├── modules/                                  # Subproject specifications and framework orientation
 │   ├── calliope.md                           # Canonical models, schemas & converters (1 leaf module)
 │   ├── themis.md                             # Themis API, Core policy engine & Audit stream (3 leaf modules)
 │   ├── hestia.md                             # Mneme caching grid & Mnemosyne JPA servers (5 leaf modules)
@@ -47,7 +72,8 @@ docs/
 │   ├── pylai.md                              # MLLP Inbound/Outbound & FHIR REST gateways (5 leaf modules)
 │   ├── iris.md                               # Iris BEFE WildFly gateway & Vue 3 SPAs (4 leaf modules)
 │   ├── agora.md                              # Matrix AS transaction endpoint & client adapters (4 leaf modules)
-│   └── paradeigma.md                         # Synthetic hospital simulators & ArchUnit suites (7 leaf modules)
+│   ├── paradeigma.md                         # Synthetic hospital simulators & ArchUnit suites (7 leaf modules)
+│   └── dokimasia.md                          # Assurance framework orientation; solution allocation unresolved
 │
 ├── architecture/                             # Core platform architectural specifications
 │   ├── overview.md                           # 5-tier architecture, system layers & domain decomposition
@@ -58,6 +84,9 @@ docs/
 │   ├── failure-recovery.md                   # Failure matrix, ACK semantics & recovery runbooks
 │   ├── persistence-lifecycle.md              # 4-tier storage architecture & transaction boundaries
 │   └── convergence-report.md                 # Authoritative 25-point final convergence baseline report
+│
+├── design/                                   # Platform engineering & concurrency design contracts
+│   └── governed-write-concurrency-contract.md # Authoritative Strong Hybrid write & concurrency contract
 │
 ├── middleware/                               # Granular middleware capability profiling
 │   ├── overview.md                           # Middleware stack inventory & used vs avoided matrix
@@ -151,7 +180,9 @@ docs/
 | **Energeia** | `energeia/` | 4 modules | Ponos WorkEngine, Erga task activities, Praxis task sequences | WildFly 31 (Jakarta EE 10), Apache Camel 4.4 | `[IMPLEMENTED]` |
 | **Pylai** | `pylai/` | 5 modules | External protocol gateways (Inbound/Outbound MLLP, FHIR REST) | Netty, Apache Camel 4.4, Jakarta EE 10 / Spring Boot | `[IMPLEMENTED]` |
 | **Iris** | `iris/` | 4 modules | Presentation tier (BEFE gateway, Clinical, Console, Admin SPAs) | WildFly 31, Vue 3, Vite, TypeScript, Pinia, Nginx | `[IMPLEMENTED]` |
+| **------- Legacy Content - Superseded ------- Start ------** | **Superseded by:** [Agora and Omilia architectural identity](markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations).  |  |  |  |  |
 | **Agora** | `agora/` | 4 modules | Matrix Synapse collaboration gateway & Patient Spaces | Spring Boot 3.2.5, Matrix CS/AS REST, PostgreSQL 16 | `[IMPLEMENTED]` |
+| **------- Legacy Content - Superseded ------- Finish ----** |  |  |  |  |  |
 | **Paradeigma**| `paradeigma/`| 7 modules | Synthetic clinical simulation (EMR, LMS, PAS, RIS-PAC) | Java 21, Camel, Netty, HAPI HL7v2 / FHIR R5, ArchUnit | `[IMPLEMENTED]` |
 
 **Total**: 9 subprojects, 37 leaf modules.
@@ -165,3 +196,7 @@ All architectural descriptions, parameters, and capabilities in this documentati
 - `[CONFIGURED]`: Declared and wired in deployment descriptors, Kustomize manifests, Docker Compose, or configuration files.
 - `[DESIGNED/PLANNED]`: Architectural intent or roadmap capabilities intended for future implementation, never conflated with existing code.
 - `[EXAMPLE/REFERENCE]`: Illustrative sample data, tutorial payloads, or testing fixtures.
+
+## Assurance Framework Orientation
+
+[Dokimasia](modules/dokimasia.md) provides navigation to the approved Health Service Assurance architecture and its unresolved downstream allocation. The [runtime-AI execution position](architecture/execution-model.md#6-runtime-ai-as-adjunct-ergo-execution-capability) records AI as adjunct Ergo capability.

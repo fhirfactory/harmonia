@@ -1,0 +1,44 @@
+[
+  {
+    "input": "candidate-v2",
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/verify_continuum_transport.py",
+      "--baseline",
+      "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/candidate-v2/reader/Harmonia-Architecture.xml",
+      "--returned",
+      "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/archi-transport/returned-model.xml.gz",
+      "--execution-log",
+      "enterprise-architecture/design/evidence/1.1.22/001/after/information-unit-incorporation/archi-transport/successful-import-export.txt",
+      "--operator",
+      "Codex authorised transport investigation",
+      "--report",
+      "enterprise-architecture/design/evidence/1.1.22/001/after/transport-investigation/candidate-v2-strict-report.json"
+    ],
+    "exitCode": 1,
+    "outcome": "FAIL",
+    "reason": "Relationship/View transport drift"
+  },
+  {
+    "input": "baseline-1.1.21",
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/verify_continuum_transport.py",
+      "--baseline",
+      "enterprise-architecture/design/archimate/published/1.1.21/Harmonia-Architecture.xml",
+      "--returned",
+      "enterprise-architecture/design/evidence/1.1.22/001/after/transport-investigation/baseline-1.1.21-control/returned.xml.gz",
+      "--execution-log",
+      "enterprise-architecture/design/evidence/1.1.22/001/after/transport-investigation/baseline-1.1.21-control/execution.txt",
+      "--operator",
+      "Codex authorised transport investigation",
+      "--report",
+      "enterprise-architecture/design/evidence/1.1.22/001/after/transport-investigation/baseline-1.1.21-strict-report.json"
+    ],
+    "exitCode": 1,
+    "outcome": "FAIL",
+    "reason": "Relationship/View transport drift"
+  }
+]

@@ -1,0 +1,151 @@
+---
+{
+  "schemaVersion": 1,
+  "canonicalId": "21ed1ee2a67f4d1182dfaa4cfebc9fd7",
+  "archimateType": "Capability",
+  "specialization": "Feature",
+  "displayName": "[Feature] Value Set Membership Integrity",
+  "friendlyName": "SemanticMeaningAndModelGovernance.TerminologyAndValueSetManagement.VersionedValueSetAccess.ValueSetMembershipIntegrity",
+  "canonicalName": "CT1-EC-SemanticMeaningAndModelGovernance.CT2-EC-TerminologyAndValueSetManagement.CT3-EC-VersionedValueSetAccess.FEAT-ValueSetMembershipIntegrity",
+  "standing": {
+    "semantic": "Accepted replacement model — Pass3/014; implementation unverified",
+    "currentness": "current",
+    "incorporationReview": "Accepted by Solution Architect — 1.1.20 closure disposition"
+  },
+  "identity": {
+    "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+    "sourceIdentity": "E04.02.02.F03",
+    "allocation": "UUIDv4 allocated once by explicit create"
+  },
+  "naming": {
+    "authority": "enterprise-architecture/governance/canonical-identity-and-naming.md",
+    "inputs": [
+      {
+        "key": "E04",
+        "type": "capability",
+        "name": "Semantic Meaning & Model Governance",
+        "tier": "CT1",
+        "category": "enterprise"
+      },
+      {
+        "key": "E04.02",
+        "type": "capability",
+        "name": "Terminology & Value Set Management",
+        "tier": "CT2",
+        "category": "enterprise"
+      },
+      {
+        "key": "E04.02.02",
+        "type": "capability",
+        "name": "Versioned Value Set Access",
+        "tier": "CT3",
+        "category": "enterprise"
+      },
+      {
+        "key": "E04.02.02.F03",
+        "type": "feature",
+        "name": "Value Set Membership Integrity",
+        "tier": "FT",
+        "category": "enterprise"
+      }
+    ],
+    "categoryInterpretation": "Accepted combined Business/Business Enabling hierarchy uses existing business CTn vocabulary; Enterprise uses CTn-EC. No artificial BEC split."
+  },
+  "catalogue": {
+    "id": "E04.02.02.F03",
+    "parent": "E04.02.02",
+    "tier": "Feature",
+    "sourceName": "Value Set Membership Integrity",
+    "hierarchy": "Enterprise"
+  },
+  "provenance": [
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+      "selector": "E04.02.02.F03",
+      "role": "Accepted Pass3/014 source definition, now incorporated into this canonical resource",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+      "sha256": "83aa0a696e057a4d1cb63177269d6c613554fea86189b9c5a8578472f09272a4"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/feature-reconciliation.json",
+      "selector": "/2029",
+      "role": "Exact source contributions, original wording/criteria/status and accepted adjudication correspondence; historical assurance evidence",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/feature-reconciliation.json"
+    },
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+      "selector": "Authorised Activity / Scope / B",
+      "role": "Explicit canonical incorporation and UUID allocation authority",
+      "retainedAt": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "source": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+      "selector": "E04.02.02.F03"
+    }
+  ],
+  "relationships": [],
+  "unresolvedProperties": {},
+  "exchange": {
+    "identifier": "id-256eebc871385c5d9de7590d484f664f",
+    "properties": [
+      {
+        "ref": "propid-25",
+        "values": [
+          {
+            "text": "E04.02.02.F03",
+            "attributes": {}
+          }
+        ]
+      },
+      {
+        "ref": "propid-24",
+        "values": [
+          {
+            "text": "Feature",
+            "attributes": {}
+          }
+        ]
+      },
+      {
+        "ref": "propid-5",
+        "values": [
+          {
+            "text": "FT",
+            "attributes": {}
+          }
+        ]
+      },
+      {
+        "ref": "propid-7",
+        "values": [
+          {
+            "text": "current",
+            "attributes": {}
+          }
+        ]
+      },
+      {
+        "ref": "propid-6",
+        "values": [
+          {
+            "text": "Accepted",
+            "attributes": {}
+          }
+        ]
+      }
+    ]
+  }
+}
+---
+
+# [Feature] Value Set Membership Integrity
+
+## Architectural content
+
+Value set membership retains its integrity.
+
+### Incorporation standing
+
+Catalogue identity `E04.02.02.F03`. The accepted definition is preserved above. Migration verification and source measurements do not establish implementation satisfaction. Existing source qualifications remain in force.

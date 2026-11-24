@@ -1,0 +1,16 @@
+Command: timeout 180 env JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 PATH=<Java 21/bin and system paths> mvn -o test -pl paradeigma/paradeigma-test -am -Dtest=*ArchitectureTest -Dsurefire.failIfNoSpecifiedTests=false
+Exit: 0
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.510 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.ParadeigmaIsolationArchitectureTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.110 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.PetasosApiIsolationArchitectureTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.680 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.PackageLayeringArchitectureTest
+[INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.732 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.SecurityEnforcementArchitectureTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.172 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteCompositionArchitectureTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.490 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.MnemosyneAuthoritativePersistenceArchitectureTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.043 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.AgoraIsolationArchitectureTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.ProviderRegistryArchitectureTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.IrisDecouplingArchitectureTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.964 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.PylaiPublicationBoundaryArchitectureTest
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.177 s -- in net.fhirfactory.harmonia.paradeigma.test.arch.GovernedWriteContractArchitectureTest
+[INFO] Tests run: 90, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+[INFO] Total time:  20.775 s

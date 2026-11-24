@@ -1,0 +1,335 @@
+{
+  "result": "FAIL: trailing-whitespace diagnostics",
+  "exitCode": 2,
+  "diagnostics": [
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/archi-transport/sandbox-display-failure.txt",
+      "line": 34,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/application.tex",
+      "line": 344,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/application.tex",
+      "line": 810,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/application.tex",
+      "line": 815,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/application.tex",
+      "line": 1486,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/motivation.tex",
+      "line": 1907,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/motivation.tex",
+      "line": 1914,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/motivation.tex",
+      "line": 1969,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/motivation.tex",
+      "line": 1976,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/motivation.tex",
+      "line": 2033,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/motivation.tex",
+      "line": 2040,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/motivation.tex",
+      "line": 2097,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/candidate/narrative/parts/motivation.tex",
+      "line": 2104,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/change-review.md",
+      "line": 46,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/change-review.md",
+      "line": 47,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/change-review.md",
+      "line": 48,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/change-review.md",
+      "line": 53,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/change-review.md",
+      "line": 56,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/change-review.md",
+      "line": 145,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/change-review.md",
+      "line": 146,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/after/mnemosyne-incorporation/change-review.md",
+      "line": 149,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 3,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 4,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 5,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 6,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 7,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 8,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 9,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 646,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 647,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 648,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 649,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 650,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/cr001-transport-reconciliation/change-review.before.md",
+      "line": 41,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/cr001-transport-reconciliation/change-review.before.md",
+      "line": 42,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/cr001-transport-reconciliation/change-review.before.md",
+      "line": 45,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/cr001-transport-reconciliation/change-review.before.md",
+      "line": 46,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/release-closure/change-review.reviewed.md",
+      "line": 41,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/release-closure/change-review.reviewed.md",
+      "line": 42,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/release-closure/change-review.reviewed.md",
+      "line": 45,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/evidence/1.1.23/001/before/release-closure/change-review.reviewed.md",
+      "line": 47,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 3,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 4,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 5,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 6,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 7,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 8,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 9,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 646,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 647,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 648,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 649,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/design/offline-design/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+      "line": 650,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/application.tex",
+      "line": 344,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/application.tex",
+      "line": 810,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/application.tex",
+      "line": 815,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/application.tex",
+      "line": 1486,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/motivation.tex",
+      "line": 1907,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/motivation.tex",
+      "line": 1914,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/motivation.tex",
+      "line": 1969,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/motivation.tex",
+      "line": 1976,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/motivation.tex",
+      "line": 2033,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/motivation.tex",
+      "line": 2040,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/motivation.tex",
+      "line": 2097,
+      "diagnostic": "trailing whitespace."
+    },
+    {
+      "path": "enterprise-architecture/documentation/continuum-rad/published/1.1.23/parts/motivation.tex",
+      "line": 2104,
+      "diagnostic": "trailing whitespace."
+    }
+  ],
+  "qualification": "Supplementary Git formatting scan, not a governed release-integrity or strict-transport gate. Findings are Markdown hard breaks and exact retained source/log/generated LaTeX whitespace. No conflict markers or architecture/application-source findings. Preserve byte-identical accepted input, historical evidence and fresh generated publication; do not strip bytes or weaken the check.",
+  "governedReleaseAndPublicationControls": "PASS; unchanged",
+  "rawDiagnosticLog": "staged-whitespace-check.txt.gz",
+  "rawDiagnosticSha256": "f9b6e13db88d9b75e38cf20d57d51b0f6814cfff418a3364036c228174591ceb"
+}

@@ -6,12 +6,14 @@ The Provider Registry exposes standard FHIR Release 5 REST endpoints:
 
 | Endpoint | Method | FHIR Interaction | Processing Mode | Response Code | Headers / Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `/{resourceType}/{id}` | `GET` | `read` | Synchronous | `200 OK` | Returns full resource with `ETag: W/"{version}"`. `404 Not Found` if missing, `410 Gone` if deleted. |
+| `/{resourceType}/{id}` | `GET` | `read` | Synchronous | `200 OK` | Returns full resource with `ETag: W/"{version}"`. `404 Not Found` if missing, `410 Gone` if retired/inactive (ADR-020). |
 | `/{resourceType}` | `GET` | `search-type` | Synchronous | `200 OK` | Returns FHIR `Bundle` (`type=searchset`, `total=N`). Multi-parameter filtering supported. |
 | `/{resourceType}` | `POST` | `create` | Asynchronous Governed | `202 Accepted` | `Location: /Task/{pragmaId}`, `X-Correlation-Id: {id}`, `Retry-After: 1`. Returns created `Task` payload. |
 | `/{resourceType}/{id}` | `PUT` | `update` | Asynchronous Governed | `202 Accepted` | Supports `If-Match: W/"{version}"`. Returns `Location: /Task/{pragmaId}`. |
 | `/Task/{id}` | `GET` | `read` | Synchronous | `200 OK` | Polls change execution state. Returns `Task` reflecting `PragmaStatus` and `OperationOutcome` on failure. |
 | `/metadata` | `GET` | `capabilities` | Synchronous | `200 OK` | Returns FHIR R5 `CapabilityStatement` listing supported resources, search params, and security requirements. |
+
+*Note: In accordance with ADR-020, physical DELETE endpoints are not exposed. Deactivation or retirement of directory entries is executed as an authoritative UPDATE via `PUT`, modifying the resource's lifecycle status (e.g., `active=false`).*
 
 ### 2. Supported Resources
 

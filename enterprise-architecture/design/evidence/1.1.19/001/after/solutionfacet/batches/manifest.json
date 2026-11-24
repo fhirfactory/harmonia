@@ -1,0 +1,220 @@
+{
+  "sourceSha256": "bf3529fd2cb322918c91100b85fc8dcb72873e6cdb42302f918faad2e99bfa61",
+  "limitBytes": 128000,
+  "batches": [
+    {
+      "file": "batch-001.json",
+      "bytes": 99872,
+      "sha256": "869cec0d0b405ec849dfb91b0feb38c10713181a1231135656c920568b0ae796",
+      "records": 116,
+      "categories": [
+        "elements"
+      ]
+    },
+    {
+      "file": "batch-002.json",
+      "bytes": 99670,
+      "sha256": "94a5a646862316515c4a988ea23e9859b08cff12238322b2ad97ee1709f7808f",
+      "records": 118,
+      "categories": [
+        "elements"
+      ]
+    },
+    {
+      "file": "batch-003.json",
+      "bytes": 99860,
+      "sha256": "33a773323ea0f61c3ec7af03bb1a5f9527371577a296637252a2c0602030d105",
+      "records": 119,
+      "categories": [
+        "elements"
+      ]
+    },
+    {
+      "file": "batch-004.json",
+      "bytes": 99188,
+      "sha256": "c1cb3cbbebc9df75fe998e7e8546d984100401e0e667b44d68d803d761a58553",
+      "records": 118,
+      "categories": [
+        "elements"
+      ]
+    },
+    {
+      "file": "batch-005.json",
+      "bytes": 99369,
+      "sha256": "e1700f35e608cf9ff19ef864a4194e338bc0600e69cbf5f4a73c93672da8c4f5",
+      "records": 119,
+      "categories": [
+        "elements"
+      ]
+    },
+    {
+      "file": "batch-006.json",
+      "bytes": 99748,
+      "sha256": "ba71efe65e5e199feeea95d5ba6b9d8fd016ed369608dc0172cfbf1dda2dcd33",
+      "records": 115,
+      "categories": [
+        "elements"
+      ]
+    },
+    {
+      "file": "batch-007.json",
+      "bytes": 99947,
+      "sha256": "74977137c28df1d8a6a107b6aa15831f6be3f40b99fa994fd0688bb97b254ffb",
+      "records": 119,
+      "categories": [
+        "elements"
+      ]
+    },
+    {
+      "file": "batch-008.json",
+      "bytes": 99827,
+      "sha256": "f003edf379bc05278786934b8a998b1f522c17eadce5c0704ee9cc811394b309",
+      "records": 118,
+      "categories": [
+        "elements"
+      ]
+    },
+    {
+      "file": "batch-009.json",
+      "bytes": 99378,
+      "sha256": "bb67e0bffcb01a588ed1a33fe2ec8a8d5feed6831c47a2becb30529fcc1c5365",
+      "records": 112,
+      "categories": [
+        "elements"
+      ]
+    },
+    {
+      "file": "batch-010.json",
+      "bytes": 99619,
+      "sha256": "2b300ebc9dd8d585aa0a91dc1c2a11aba5d61b0f9eb252ccfff9073cb205a4d8",
+      "records": 116,
+      "categories": [
+        "elements"
+      ]
+    },
+    {
+      "file": "batch-011.json",
+      "bytes": 99586,
+      "sha256": "2e8babdde86be771dacb5a03f1a8831637492d79d69cbf1232e219c6a1ee6656",
+      "records": 118,
+      "categories": [
+        "elements"
+      ]
+    },
+    {
+      "file": "batch-012.json",
+      "bytes": 99624,
+      "sha256": "0236f7494f2179c9608f2f89718c6b89dec2693adb150f9acf392c307c785310",
+      "records": 147,
+      "categories": [
+        "elements",
+        "relationships"
+      ]
+    },
+    {
+      "file": "batch-013.json",
+      "bytes": 99585,
+      "sha256": "5f6a6aeab8e8cdd332c7245c9d880494250050103752f3d74a5a14dbcaaaff8f",
+      "records": 182,
+      "categories": [
+        "relationships"
+      ]
+    },
+    {
+      "file": "batch-014.json",
+      "bytes": 99511,
+      "sha256": "c299187fd77b3304adb26fff533abab612fc8071a1127ef77ef8bb696e0d3648",
+      "records": 181,
+      "categories": [
+        "relationships"
+      ]
+    },
+    {
+      "file": "batch-015.json",
+      "bytes": 99923,
+      "sha256": "282e8433dcbe02f54f490deec046aec2314743f5d33701a17c89ce6dffef484f",
+      "records": 182,
+      "categories": [
+        "relationships"
+      ]
+    },
+    {
+      "file": "batch-016.json",
+      "bytes": 99981,
+      "sha256": "24e565bdf7ca8c5459c2e4bd23478c1cd21c75bdbe282282ae17fa1ce2b5ed9a",
+      "records": 182,
+      "categories": [
+        "relationships"
+      ]
+    },
+    {
+      "file": "batch-017.json",
+      "bytes": 99817,
+      "sha256": "6feed7ac31e820998b989ffea68b9e24ae0e5d8fc3a7ba84883aa1336497fd3f",
+      "records": 181,
+      "categories": [
+        "relationships"
+      ]
+    },
+    {
+      "file": "batch-018.json",
+      "bytes": 99689,
+      "sha256": "6014e26bb1618fe88d915701a6241aaf50913a64e4334821494f2f35bbc337c2",
+      "records": 182,
+      "categories": [
+        "relationships"
+      ]
+    },
+    {
+      "file": "batch-019.json",
+      "bytes": 99853,
+      "sha256": "188acd2a10ef44c2fd80391907368df2662d598c01f655a4289b59144d763604",
+      "records": 182,
+      "categories": [
+        "relationships"
+      ]
+    },
+    {
+      "file": "batch-020.json",
+      "bytes": 99547,
+      "sha256": "72c02f847715cc47944783f4a494f7e3c0acc2871596a22d12678867f28538fa",
+      "records": 181,
+      "categories": [
+        "relationships"
+      ]
+    },
+    {
+      "file": "batch-021.json",
+      "bytes": 99949,
+      "sha256": "e3f03cb6939f99a37a73339f9c5277c8c8c674486ca246dbd7e28de822fb88d2",
+      "records": 182,
+      "categories": [
+        "relationships"
+      ]
+    },
+    {
+      "file": "batch-022.json",
+      "bytes": 99715,
+      "sha256": "b428a63fc8b6429bf9f7d8c05f230244764ed882b17d1375b2fab1626f2cb29f",
+      "records": 179,
+      "categories": [
+        "classified",
+        "relationships",
+        "viewNavigation",
+        "views"
+      ]
+    },
+    {
+      "file": "batch-023.json",
+      "bytes": 8152,
+      "sha256": "2ce62ec817056e10f9664708bcb437f731314777c5628333f100e1f178351169",
+      "records": 27,
+      "categories": [
+        "classified"
+      ]
+    }
+  ],
+  "recordCount": 3276,
+  "exactPointerCoverage": "PASS",
+  "outcome": "PASS: independently hash/pointer-verifiable batches; no record discarded"
+}

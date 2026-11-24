@@ -1,0 +1,22 @@
+test_bec_exchange_homonym_is_explicit_without_bc_redesign (test_reviewed_bec.ReviewedBecTests.test_bec_exchange_homonym_is_explicit_without_bc_redesign) ... ok
+test_complete_model_and_semantic_preservation (test_reviewed_bec.ReviewedBecTests.test_complete_model_and_semantic_preservation) ... ok
+test_consent_owner_preserved_and_consumers_reference_it (test_reviewed_bec.ReviewedBecTests.test_consent_owner_preserved_and_consumers_reference_it) ... ok
+test_device_association_distributes_semantics (test_reviewed_bec.ReviewedBecTests.test_device_association_distributes_semantics) ... ok
+test_empty_scoped_and_informatics_branches_stay_empty (test_reviewed_bec.ReviewedBecTests.test_empty_scoped_and_informatics_branches_stay_empty) ... ok
+test_internal_execution_and_external_work_not_equated (test_reviewed_bec.ReviewedBecTests.test_internal_execution_and_external_work_not_equated) ... ok
+test_mixed_canonical_specimen_materiel_semantics_are_preserved_unresolved (test_reviewed_bec.ReviewedBecTests.test_mixed_canonical_specimen_materiel_semantics_are_preserved_unresolved) ... ok
+test_no_supply_movement_or_real_world_authority_inferred (test_reviewed_bec.ReviewedBecTests.test_no_supply_movement_or_real_world_authority_inferred) ... ok
+test_organisation_consolidation_preserves_each_predecessor (test_reviewed_bec.ReviewedBecTests.test_organisation_consolidation_preserves_each_predecessor) ... ok
+test_rejects_alias_loss_duplicate_reference_and_ct4 (test_reviewed_bec.ReviewedBecTests.test_rejects_alias_loss_duplicate_reference_and_ct4) ... ok
+test_rejects_artificial_scoped_decomposition (test_reviewed_bec.ReviewedBecTests.test_rejects_artificial_scoped_decomposition) ... ok
+test_rejects_in_scope_feature_directly_under_ct2 (test_reviewed_bec.ReviewedBecTests.test_rejects_in_scope_feature_directly_under_ct2) ... ok
+test_rejects_lost_scope_annotation_without_demoting_canonical (test_reviewed_bec.ReviewedBecTests.test_rejects_lost_scope_annotation_without_demoting_canonical) ... ok
+test_rejects_moving_care_progression_into_dependency_context (test_reviewed_bec.ReviewedBecTests.test_rejects_moving_care_progression_into_dependency_context) ... ok
+test_reviewed_seven_roots_and_business_boundary (test_reviewed_bec.ReviewedBecTests.test_reviewed_seven_roots_and_business_boundary) ... ok
+test_service_contexts_relocated_with_stable_identities_and_labels (test_reviewed_bec.ReviewedBecTests.test_service_contexts_relocated_with_stable_identities_and_labels) ... ok
+test_subject_assurance_not_hidden_under_service_review (test_reviewed_bec.ReviewedBecTests.test_subject_assurance_not_hidden_under_service_review) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.072s
+
+OK

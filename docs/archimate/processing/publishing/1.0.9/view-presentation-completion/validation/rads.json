@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "command": [
+    "python3",
+    "-B",
+    "scripts/rads_business_architecture.py",
+    "validate"
+  ],
+  "timeout_seconds": 30.0,
+  "elapsed_seconds": 1.418,
+  "exit_code": 0,
+  "log": "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/rads.log",
+  "log_sha256": "95b5599d5a4e84eba42260299b702bd1a8ea565e7b1c9ede8e2566793867b07e"
+}

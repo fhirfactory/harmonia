@@ -1,0 +1,92 @@
+{
+  "status": "PASS_WITH_EXPLICIT_PROPERTY_STOP",
+  "architecture_release": {
+    "version": "1.0.10",
+    "previous_version": "1.0.9"
+  },
+  "published_sha256": "73a5f4d5356595cfc7dc78926d446923541fe9da36577285f634dcb00ba73094",
+  "checks": {
+    "archimate_tests": {
+      "status": "PASS",
+      "command": "timeout 420s python3 -B -m unittest discover -s docs/archimate/framework/tests -v",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/archimate-tests.log.gz",
+      "log_sha256": "ef576bbe11c3d46128fc2eaffed1e995076763f11140f975ced4b4a0b2ecd8e1"
+    },
+    "governance_tests": {
+      "status": "PASS",
+      "command": "timeout 120s python3 -B -m unittest discover -s scripts/tests -v",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/governance-tests.log.gz",
+      "log_sha256": "76c72264996d0e623b9a2f7f05967d9f34d381b38b740b067745dfd949325cd6"
+    },
+    "architecture_tests": {
+      "status": "PASS",
+      "command": "timeout 180s env JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 mvn -o test -pl paradeigma/paradeigma-test -am '-Dtest=*ArchitectureTest' -Dsurefire.failIfNoSpecifiedTests=false",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/architecture-tests.log.gz",
+      "log_sha256": "401a1d4ad7049336e5950f329510a4f4652a2b492e70b5e8e7044954df202b4f"
+    },
+    "publication": {
+      "status": "PASS",
+      "command": "timeout 90s python3 -B docs/archimate/framework/tools/synchronise_baseline.py",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/publication.log.gz",
+      "log_sha256": "1f259083e113ec8050cab83c71ce5d15b93adfb77f1f154fb6257a9093caa3e3"
+    },
+    "preservation": {
+      "status": "PASS",
+      "command": "timeout 40s python3 -B docs/archimate/processing/publishing/1.0.10/information-population/verify-preservation.py",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/preservation.json",
+      "log_sha256": "4c943681112d9dc28262ea406cbe6206dc21c61550d1ebddfd4f61935bd18e75"
+    },
+    "identity": {
+      "status": "PASS",
+      "command": "timeout 60s python3 -B docs/archimate/framework/tools/governed_metadata.py validate",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/identity.log.gz",
+      "log_sha256": "1f065a04f8ff5ddfa3c684b9d405ba04b15d21272559008af6ed282ebb7b6576"
+    },
+    "rads": {
+      "status": "PASS",
+      "command": "timeout 30s python3 -B scripts/rads_business_architecture.py validate",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/rads.log.gz",
+      "log_sha256": "a5936918d887311c04999ee3e63708d54ca22945481b353d80b8180c3e09114c"
+    },
+    "history": {
+      "status": "PASS",
+      "command": "timeout 60s python3 -B docs/archimate/framework/tools/verify_governance_evidence.py",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/history.log.gz",
+      "log_sha256": "9480979b72c1bb133c8ce37a384dd2a7a4f37e7c7edcdd4e5fcde10ae6a3a8fd"
+    },
+    "serialization_roundtrip": {
+      "status": "PASS",
+      "command": "Read/serialize/parse published Open Exchange; existing Increment 1 comparator",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/validation/serialization.json",
+      "log_sha256": "cfa8b926506c13b4246a2b2b87fdcebff4c876b36cef6c112728786837bc022c"
+    },
+    "archi_transport": {
+      "status": "PASS",
+      "command": "timeout 45s python3 -B docs/archimate/processing/publishing/1.0.10/information-population/roundtrip/verify-transport.py",
+      "log": "docs/archimate/processing/publishing/1.0.10/information-population/roundtrip/archi-transport-verification.json",
+      "log_sha256": "2d498d7b971582cce099922013e7eb250c0928cae2fc8813bcb906418cd7ac3b"
+    }
+  },
+  "tests": {
+    "archimate": 214,
+    "governance": 72,
+    "java_architecture": 90
+  },
+  "semantic_relationships_created": 0,
+  "Artifacts_created": 0,
+  "canonicalName": {
+    "status": "STOPPED",
+    "resources": 54,
+    "reason": "Governed native type qualifier/context not established; no inferred IA naming rule"
+  },
+  "future_naming_conformance": "NONCONFORMANT due to the explicit canonicalName stop; not silently waived",
+  "human_rendering": "PENDING Solution Architect inspection",
+  "IA_ingestion_reconciliation": "NOT IMPLEMENTED; awaits architect-authored evidence",
+  "attempts": {
+    "initial_archimate_suite": "Executed 214 tests; 3 historical Home-audit evidence-path errors. Corrected the release locator and final full run passed.",
+    "initial_preservation_probe": "Harness namespace-prefix error corrected; no architecture change.",
+    "initial_Archi_environment": "Sandbox default configuration unwritable, then isolated configuration lacked display access; isolated display-enabled execution succeeded.",
+    "initial_Archi_navigation": "Empty Technology/DataMap omitted because category label was not Archi native Technology & Physical. New root label corrected; final no-edit transport preserves every folder.",
+    "timeouts_or_stalls": "NONE"
+  }
+}

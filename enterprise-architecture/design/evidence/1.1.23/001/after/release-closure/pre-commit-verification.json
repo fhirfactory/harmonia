@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "reviewRecordLinks": 7,
+  "completedRegisterHash": "4f1c9acca7408fe7ccbb84721ef698881a12d119397aa2147da18fd9b8fbc361",
+  "decisionRows": [
+    "DR-1",
+    "DR-2",
+    "DR-3",
+    "DR-4",
+    "DR-5"
+  ],
+  "gitDiffCheck": "Tracked edits before staging: PASS; did not include new untracked evidence/publications",
+  "noPreExistingStagedChanges": true,
+  "allChangedFilesWithinAcceptedScope": 149,
+  "temporalOutcome": "UNRESOLVED: three accepted unavailable Task events/prefixes; all Report event/prefix checks pass",
+  "strictTransport": "FAIL accepted with release-specific qualification",
+  "remainingArchitectureAdjudication": null,
+  "originalRegisterImmutable": true,
+  "fullStagedWhitespaceCheck": "FAIL: expected preserved-input/Markdown-hard-break/generated-LaTeX trailing whitespace; see staged-whitespace-check.json"
+}

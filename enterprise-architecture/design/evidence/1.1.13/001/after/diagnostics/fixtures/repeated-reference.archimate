@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Diagnostic only — repeated-reference" id="diagnostic-repeated-reference" version="5.0.0">
+  <folder name="Strategy" id="id-be0c3507beea46faa878d477614d28f1" type="strategy">
+    <folder name="First location" id="id-55ad376b91e048f98982e19736082f6f"/>
+    <folder name="Second location" id="id-d134c4180c454578a54a2143f12f62dc">
+      <element xsi:type="archimate:Capability" name="One Capability referenced twice" id="repeated"/>
+    </folder>
+  </folder>
+  <folder name="Business" id="id-231737b511604aedba1f784124fbd7e0" type="business"/>
+  <folder name="Application" id="id-2d06b5ab35cb45dcbf5631508e903645" type="application"/>
+  <folder name="Technology &amp; Physical" id="id-2542982019424191a99ede9aa090f21e" type="technology"/>
+  <folder name="Motivation" id="id-461f4dbb077f4606ba2b6f4b1e123bcc" type="motivation"/>
+  <folder name="Implementation &amp; Migration" id="id-4882444309584331ad4e7c3747d95532" type="implementation_migration"/>
+  <folder name="Other" id="id-40b77ca11c014896b809e6f9022aa54a" type="other"/>
+  <folder name="Relations" id="id-c1e014f640124ee08edbcdcd6fb5a731" type="relations"/>
+  <folder name="Views" id="id-5ab24cd7c63b4c6f8687536a3bc38f8f" type="diagrams"/>
+</archimate:model>

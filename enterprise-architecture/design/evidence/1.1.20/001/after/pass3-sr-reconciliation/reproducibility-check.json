@@ -1,0 +1,13 @@
+{
+  "outcome": "PASS",
+  "purpose": "Independent repeated build comparison of catalogue and workbook bytes from the same pinned source and explicit change map",
+  "before": {
+    "Harmonia_1.1.20_Candidate_017_Pass3_013_SR_Reconciled_Catalogue.md": "9b229610992d8aaec412e79e5012ff986c335943c59e63fc18beea4a777acf28",
+    "Harmonia_1.1.20_Pass3_013_SR_Adjudication_Workbook.xlsx": "b170216cab898f3071299b9f970b9fd038801820e1719182e7b3dad5ad9504b2"
+  },
+  "after": {
+    "Harmonia_1.1.20_Candidate_017_Pass3_013_SR_Reconciled_Catalogue.md": "9b229610992d8aaec412e79e5012ff986c335943c59e63fc18beea4a777acf28",
+    "Harmonia_1.1.20_Pass3_013_SR_Adjudication_Workbook.xlsx": "b170216cab898f3071299b9f970b9fd038801820e1719182e7b3dad5ad9504b2"
+  },
+  "builder_exit_code": 0
+}

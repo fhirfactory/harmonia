@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "unchanged": {
+    "canonical": 6548,
+    "existingEvidence": 121,
+    "existingPublicationsAndRegisters": 259
+  },
+  "mismatches": [],
+  "publishedFiles": 19,
+  "release": {
+    "version": "1.1.22",
+    "previous_version": "1.1.21"
+  }
+}

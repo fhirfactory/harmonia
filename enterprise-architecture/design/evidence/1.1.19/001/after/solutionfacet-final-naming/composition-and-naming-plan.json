@@ -1,0 +1,250 @@
+{
+  "authority": "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-final-naming-dispositions.md",
+  "nameRoles": {
+    "canonicalId": "Immutable identity, not derived from names or containment",
+    "friendlyName": "Programmatic containment-qualified path confirmed by Composition",
+    "displayName": "Local human-readable presentation, with immediate parent for a generic leaf",
+    "canonicalName": "Independent governed meaning and value retained; no automatic equivalence or allocation"
+  },
+  "elements": [
+    {
+      "canonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+      "disposition": "A",
+      "canonicalIdPathRootToLeaf": [
+        "ef296738e68e4206a507dc3c811b3fe1",
+        "f4af2b5206264a6fa4c5040324ad272c"
+      ],
+      "sourceQualifiedRoot": "G02",
+      "compositionRelationshipsRootToLeaf": [
+        {
+          "identifier": "id-f7b9b09420e54612a76df709f95c8b47",
+          "archimateType": "Composition",
+          "source": "id-3ff156cfaab8575facfa6961f68119f5",
+          "target": "id-d1e317a30a9d53359c25a86673df3e56",
+          "standing": {
+            "semantic": "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending",
+            "currentness": "current"
+          },
+          "provenance": {
+            "source": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md",
+            "revision": "d5fdddb31e9bff39ae6c08b2e0f2c71d309ab5f5",
+            "selector": "Subject groups and containment hierarchy / G02.05",
+            "meaning": "Subject subgroup containment"
+          },
+          "properties": [],
+          "name": [
+            {
+              "text": "Subject subgroup containment"
+            }
+          ],
+          "documentation": [
+            {
+              "text": "Source Subject groups and containment hierarchy / G02.05. Subject subgroup containment. No component ownership, implementation containment, Home, dependency or realisation is implied."
+            }
+          ]
+        }
+      ],
+      "contextNames": [
+        {
+          "canonicalId": "ef296738e68e4206a507dc3c811b3fe1",
+          "displayName": "Information Management",
+          "friendlyName": "InformationManagement"
+        },
+        {
+          "canonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+          "displayName": "Information Sovereignty and Residency",
+          "friendlyName": "InformationSovereigntyAndResidency"
+        }
+      ],
+      "before": {
+        "canonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+        "friendlyName": "InformationSovereigntyAndResidency",
+        "displayName": "Information Sovereignty and Residency",
+        "canonicalName": null
+      },
+      "after": {
+        "canonicalId": "f4af2b5206264a6fa4c5040324ad272c",
+        "friendlyName": "InformationManagement.InformationSovereigntyAndResidency",
+        "displayName": "Information Sovereignty and Residency",
+        "canonicalName": null
+      },
+      "authority": "Only explicit current Composition selected; no Home, folder, Grouping membership or lexical inference",
+      "status": "CONFIRMED"
+    },
+    {
+      "canonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+      "disposition": "B",
+      "canonicalIdPathRootToLeaf": [
+        "1c57a3d9080443178f6e9159d0591c77",
+        "1f441cdb8fa342cca0afe5b3b65b368d"
+      ],
+      "sourceQualifiedRoot": "G12",
+      "compositionRelationshipsRootToLeaf": [
+        {
+          "identifier": "id-7efca5f6e366405da59a54e0bc8f8957",
+          "archimateType": "Composition",
+          "source": "id-2748e964f03157d19464eedcadd333a7",
+          "target": "id-f8b45a0c16475d67938f268ef94adf62",
+          "standing": {
+            "semantic": "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending",
+            "currentness": "current"
+          },
+          "provenance": {
+            "source": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md",
+            "revision": "d5fdddb31e9bff39ae6c08b2e0f2c71d309ab5f5",
+            "selector": "Subject groups and containment hierarchy / G12.03",
+            "meaning": "Subject subgroup containment"
+          },
+          "properties": [],
+          "name": [
+            {
+              "text": "Subject subgroup containment"
+            }
+          ],
+          "documentation": [
+            {
+              "text": "Source Subject groups and containment hierarchy / G12.03. Subject subgroup containment. No component ownership, implementation containment, Home, dependency or realisation is implied."
+            }
+          ]
+        }
+      ],
+      "contextNames": [
+        {
+          "canonicalId": "1c57a3d9080443178f6e9159d0591c77",
+          "displayName": "User Experience",
+          "friendlyName": "UserExperience"
+        },
+        {
+          "canonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+          "displayName": "User Interface Responsiveness",
+          "friendlyName": "UserInterfaceResponsiveness"
+        }
+      ],
+      "before": {
+        "canonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+        "friendlyName": "UserInterfaceResponsiveness",
+        "displayName": "User Interface Responsiveness",
+        "canonicalName": null
+      },
+      "after": {
+        "canonicalId": "1f441cdb8fa342cca0afe5b3b65b368d",
+        "friendlyName": "UserExperience.UserInterfaceResponsiveness",
+        "displayName": "User Interface Responsiveness",
+        "canonicalName": null
+      },
+      "authority": "Only explicit current Composition selected; no Home, folder, Grouping membership or lexical inference",
+      "status": "CONFIRMED"
+    },
+    {
+      "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+      "disposition": "C",
+      "canonicalIdPathRootToLeaf": [
+        "03cfbc2cac494fb9a15106c2c571d384",
+        "5989495f1e224d5797054a8b6c0364a1",
+        "46dd1f4490ae47cc854ce70ff600cb47"
+      ],
+      "sourceQualifiedRoot": "G01",
+      "compositionRelationshipsRootToLeaf": [
+        {
+          "identifier": "id-e220cdea698e402a9880f5e4a4654a26",
+          "archimateType": "Composition",
+          "source": "id-c5f499e1694c552bae7311911aea1399",
+          "target": "id-6256b2f5dd035708ae1e55f0fbcc1276",
+          "standing": {
+            "semantic": "Solution Architect-reviewed Iteration 001; authorised ADD; resulting increment review pending",
+            "currentness": "current"
+          },
+          "provenance": {
+            "source": "enterprise-architecture/design/offline-design/Harmoni-NFR-Derived Architetural Elements - Iteration 001.md",
+            "revision": "d5fdddb31e9bff39ae6c08b2e0f2c71d309ab5f5",
+            "selector": "Subject groups and containment hierarchy / G01.04",
+            "meaning": "Subject subgroup containment"
+          },
+          "properties": [],
+          "name": [
+            {
+              "text": "Subject subgroup containment"
+            }
+          ],
+          "documentation": [
+            {
+              "text": "Source Subject groups and containment hierarchy / G01.04. Subject subgroup containment. No component ownership, implementation containment, Home, dependency or realisation is implied."
+            }
+          ]
+        },
+        {
+          "identifier": "id-a4f2193d6de14992919faa71370b6552",
+          "source": "id-6256b2f5dd035708ae1e55f0fbcc1276",
+          "target": "id-adebd5da32ca413f99024a96d351adc0",
+          "archimateType": "Composition",
+          "attributes": {},
+          "standing": {
+            "semantic": "Solution Architect authorised Subject hierarchy and Home completion; result review pending",
+            "currentness": "current"
+          },
+          "provenance": {
+            "source": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+            "retainedAt": "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+            "selector": "Consolidated scope / Composition containment and distinct authoritative Home; Authored Grouping id-adebd5da32ca413f99024a96d351adc0",
+            "sha256": "3ba6a88a66c3c4956e80e6676a9b60ceb04454b59d510643ace7ba1b7dd8fc5d",
+            "authority": "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md#dr-12",
+            "meaning": "Subject Grouping containment"
+          },
+          "name": [
+            {
+              "text": "Subject Grouping containment"
+            }
+          ],
+          "documentation": [
+            {
+              "text": "Authored Grouping id-adebd5da32ca413f99024a96d351adc0. Composition defines containment; the separate directed child-to-parent Home Association identifies authoritative architectural location. No new statement allocation or component responsibility is asserted."
+            }
+          ],
+          "properties": [
+            {
+              "ref": "propid-40",
+              "values": [
+                {
+                  "text": "current",
+                  "attributes": {}
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "contextNames": [
+        {
+          "canonicalId": "03cfbc2cac494fb9a15106c2c571d384",
+          "displayName": "Architectural Governance",
+          "friendlyName": "ArchitecturalGovernance"
+        },
+        {
+          "canonicalId": "5989495f1e224d5797054a8b6c0364a1",
+          "displayName": "Architecture Conformance",
+          "friendlyName": "ArchitecturalGovernance.ArchitectureConformance"
+        },
+        {
+          "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+          "displayName": "Architectural-Governance.Architecture-Conformance.Constraints",
+          "friendlyName": "ArchitecturalGovernance.ArchitectureConformance.Constraints"
+        }
+      ],
+      "before": {
+        "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+        "friendlyName": "ArchitecturalGovernance.ArchitectureConformance.Constraints",
+        "displayName": "Architectural-Governance.Architecture-Conformance.Constraints",
+        "canonicalName": null
+      },
+      "after": {
+        "canonicalId": "46dd1f4490ae47cc854ce70ff600cb47",
+        "friendlyName": "ArchitecturalGovernance.ArchitectureConformance.Constraints",
+        "displayName": "ArchitectureConformance - Constraints",
+        "canonicalName": null
+      },
+      "authority": "Only explicit current Composition selected; no Home, folder, Grouping membership or lexical inference",
+      "status": "CONFIRMED"
+    }
+  ],
+  "unresolvedAncestryOrNaming": []
+}

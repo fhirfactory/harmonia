@@ -1,0 +1,32 @@
+[
+  {
+    "source": "B11.05.01.F02",
+    "targets": [
+      "B11.05.01.F01"
+    ],
+    "primary_criterion_target": "B11.05.01.F01",
+    "decision": "FR-002",
+    "status": "Accepted and incorporated offline",
+    "source_record": {
+      "id": "B11.05.01.F02",
+      "parent": "B11.05.01",
+      "parent_name": "Regulatory Obligation Interpretation",
+      "original_name": "Applicable Obligation Identification",
+      "name": "Applicable Obligation Identification",
+      "original_description": "proportion of independently checked regulatory obligation interpretation instances satisfying the specified applicable obligation identification quality condition. *PROPOSED*.",
+      "description": "Applicable obligation is identified.",
+      "source_line": 2232,
+      "normalisation": "contextual-responsibility-3",
+      "original_status": "PROPOSED",
+      "source_criterion": "proportion of independently checked regulatory obligation interpretation instances satisfying the specified applicable obligation identification quality condition.",
+      "measurement_criterion": "proportion of independently checked regulatory obligation interpretation instances satisfying the specified applicable obligation identification quality condition.",
+      "implementation_verification": "Not established by this activity",
+      "technical_correspondence": "",
+      "criterion_treatment": "Retained associated measurement criterion",
+      "current_assurance_condition": "proportion of independently checked regulatory obligation interpretation instances satisfying the specified applicable obligation identification quality condition."
+    },
+    "source_catalogue": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-sr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_013_SR_Reconciled_Catalogue.md",
+    "target_definition": "Applicable statutory, regulatory, contractual and other authoritative obligations are identified for a governed service or enterprise context and mapped to their authoritative sources, relevant jurisdictions, effective scope and versions, and the contexts to which they apply, with accountable interpretation where required.",
+    "criterion_treatment": "Original source criterion retained as historical assessment evidence; does not override the accepted FR definition or alone assure all refined scope. No implementation verification, new KPI or threshold is asserted."
+  }
+]

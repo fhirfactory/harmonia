@@ -1,0 +1,177 @@
+[
+  {
+    "id": "FR-001",
+    "subject": "Native representation conformance versus native content fidelity",
+    "identifiers": [
+      "E03.03.03.F01",
+      "E03.03.03.F02"
+    ],
+    "disposition": "**KEEP BOTH — REFINE**.",
+    "preserved_adjacent_boundary": "E03.03.04.F01",
+    "changed_features": [
+      "E03.03.03.F01",
+      "E03.03.03.F02"
+    ],
+    "changed_capabilities": [],
+    "retired": [],
+    "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+    "authority_selector": "§3 / FR-001",
+    "scope_disposition": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+    "state": "Accepted decision incorporated offline; resulting candidate review pending"
+  },
+  {
+    "id": "FR-002",
+    "subject": "Applicable obligation identification and mapping",
+    "identifiers": [
+      "B11.05.01.F01",
+      "B11.05.01.F02"
+    ],
+    "disposition": "**CONSOLIDATE**.",
+    "changed_features": [
+      "B11.05.01.F01"
+    ],
+    "changed_capabilities": [],
+    "retired": [
+      "B11.05.01.F02"
+    ],
+    "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+    "authority_selector": "§3 / FR-002",
+    "scope_disposition": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+    "state": "Accepted decision incorporated offline; resulting candidate review pending"
+  },
+  {
+    "id": "FR-003",
+    "subject": "Programmatic versus human action confirmation",
+    "identifiers": [
+      "E07.02.02.F01",
+      "E07.02.02.F03"
+    ],
+    "disposition": "**KEEP BOTH — REFINE BOTH AND PARENT CT3**.",
+    "changed_features": [
+      "E07.02.02.F01",
+      "E07.02.02.F03"
+    ],
+    "changed_capabilities": [
+      "E07.02.02"
+    ],
+    "retired": [],
+    "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+    "authority_selector": "§3 / FR-003",
+    "scope_disposition": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+    "state": "Accepted decision incorporated offline; resulting candidate review pending"
+  },
+  {
+    "id": "FR-004",
+    "subject": "Appropriate versus timely needs reassessment",
+    "identifiers": [
+      "B02.02.03.F01",
+      "B02.02.03.F05"
+    ],
+    "disposition": "**KEEP BOTH — REFINE**.",
+    "changed_features": [
+      "B02.02.03.F01",
+      "B02.02.03.F05"
+    ],
+    "changed_capabilities": [],
+    "retired": [],
+    "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+    "authority_selector": "§3 / FR-004",
+    "scope_disposition": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+    "state": "Accepted decision incorporated offline; resulting candidate review pending"
+  },
+  {
+    "id": "FR-005",
+    "subject": "Checkpoint integrity versus continuation position",
+    "identifiers": [
+      "E06.06.02.F01",
+      "E06.06.02.F03"
+    ],
+    "disposition": "**KEEP BOTH — REFINE**.",
+    "changed_features": [
+      "E06.06.02.F01",
+      "E06.06.02.F03"
+    ],
+    "changed_capabilities": [],
+    "retired": [],
+    "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+    "authority_selector": "§3 / FR-005",
+    "scope_disposition": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+    "state": "Accepted decision incorporated offline; resulting candidate review pending"
+  },
+  {
+    "id": "FR-006",
+    "subject": "Restored working context versus participant work position",
+    "identifiers": [
+      "E07.04.01.F01",
+      "E07.04.01.F02"
+    ],
+    "disposition": "**KEEP BOTH — REFINE**.",
+    "changed_features": [
+      "E07.04.01.F01",
+      "E07.04.01.F02"
+    ],
+    "changed_capabilities": [],
+    "retired": [],
+    "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+    "authority_selector": "§3 / FR-006",
+    "scope_disposition": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+    "state": "Accepted decision incorporated offline; resulting candidate review pending"
+  },
+  {
+    "id": "FR-007",
+    "subject": "Comparable evidence versus comparable investment options",
+    "identifiers": [
+      "B12.01.02.F01",
+      "B12.01.02.F02"
+    ],
+    "disposition": "**KEEP BOTH — REFINE**.",
+    "changed_features": [
+      "B12.01.02.F01",
+      "B12.01.02.F02"
+    ],
+    "changed_capabilities": [],
+    "retired": [],
+    "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+    "authority_selector": "§3 / FR-007",
+    "scope_disposition": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+    "state": "Accepted decision incorporated offline; resulting candidate review pending"
+  },
+  {
+    "id": "FR-008",
+    "subject": "Workforce readiness determination versus assessment currency",
+    "identifiers": [
+      "B08.06.02.F01",
+      "B08.06.02.F03"
+    ],
+    "disposition": "**KEEP BOTH — REFINE**.",
+    "changed_features": [
+      "B08.06.02.F01",
+      "B08.06.02.F03"
+    ],
+    "changed_capabilities": [],
+    "retired": [],
+    "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+    "authority_selector": "§3 / FR-008",
+    "scope_disposition": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+    "state": "Accepted decision incorporated offline; resulting candidate review pending"
+  },
+  {
+    "id": "FR-009",
+    "subject": "Routine restoration versus interruption recovery",
+    "identifiers": [
+      "E07.04.01.F01",
+      "E07.04.01.F05"
+    ],
+    "disposition": "**KEEP BOTH — REFINE F05 ONLY**.",
+    "changed_features": [
+      "E07.04.01.F01",
+      "E07.04.01.F05"
+    ],
+    "changed_capabilities": [],
+    "retired": [],
+    "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/Harmonia_1.1.20_FR001-FR009_Accepted_Adjudication_Package.md",
+    "authority_selector": "§3 / FR-009",
+    "scope_disposition": "enterprise-architecture/design/evidence/1.1.20/001/before/ai-agent-tasks/unresolved-pass3-fr-reconciliation.md",
+    "state": "Accepted decision incorporated offline; resulting candidate review pending"
+  }
+]

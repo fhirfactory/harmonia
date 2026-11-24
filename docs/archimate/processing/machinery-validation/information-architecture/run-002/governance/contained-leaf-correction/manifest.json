@@ -1,0 +1,15 @@
+{
+  "files": {
+    "docs/markdown/governance/archi-navigation-and-view-convention.md": {
+      "after_sha256": "cb6de48276ad13af986ebf01708e5ac1f24d00dc0a44c2a254db816954d7733a",
+      "before_sha256": "203123a56d95173a87db59f49552cb9fce08b5648fe51ab3d0a61c54d26af0e2",
+      "snapshot": "archi-navigation-and-view-convention.md.gz"
+    },
+    "docs/markdown/governance/archimate-round-trip-engineering-praxis.md": {
+      "after_sha256": "38e18f440e35c40c221124937fa99b0dfed4b25c2482188769eae8d408117f44",
+      "before_sha256": "88d0795168e27ee6ff7dbdcc0813a3462b752e419d252dc1063a66337ed96e9f",
+      "snapshot": "archimate-round-trip-engineering-praxis.md.gz"
+    }
+  },
+  "standing": "Authorised Run-002 folder-per-containment-participant correction; no containment, View, acceptance or release change"
+}

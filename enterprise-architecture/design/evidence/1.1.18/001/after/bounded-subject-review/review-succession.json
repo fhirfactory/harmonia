@@ -1,0 +1,28 @@
+{
+  "snapshots": [
+    {
+      "sourcePath": "enterprise-architecture/design/review/1.1.18/change-review.md",
+      "beforeSnapshot": "enterprise-architecture/design/evidence/1.1.18/001/before/bounded-subject-review/change-review.md",
+      "beforeSha256": "51c7a3b99c1167ec60b2460247aaeb93cba155ba5ac86df525a3c5c72d854e15",
+      "currentSha256": "33a183eb2d12c3f653db60e4c88a034198cc20eeca80817638a6ec7d8d91edb0",
+      "qualification": "Exact previous bytes; relative links retain their original sourcePath base. Current document follows the explicit bounded Task; no prior semantic disposition was accepted."
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/review/1.1.18/hcrl-1.1.18-001.pending.md",
+      "beforeSnapshot": "enterprise-architecture/design/evidence/1.1.18/001/before/bounded-subject-review/hcrl-1.1.18-001.pending.md",
+      "beforeSha256": "dde39053a21ae68148dccbfcfede53351811b89f89d095f950f3026af17a0ebf",
+      "currentSha256": "3f546837ea79bf16e208172616a509c3d3650c2c973c716c5c25e7f51dec2028",
+      "qualification": "Exact previous bytes; relative links retain their original sourcePath base. Current document follows the explicit bounded Task; no prior semantic disposition was accepted."
+    },
+    {
+      "sourcePath": "enterprise-architecture/design/evidence/1.1.18/001/after/report-index.md",
+      "beforeSnapshot": "enterprise-architecture/design/evidence/1.1.18/001/before/bounded-subject-review/report-index.md",
+      "beforeSha256": "a4651c7b4b8e2d2495e957948cdda60a938057c193ec403787e0d9d1e8d47fda",
+      "currentSha256": "d937b18fdb435a2eb0e981af89c61cc9f8948fd7cecf68307bdbeab70dca5344",
+      "qualification": "Exact previous bytes; relative links retain their original sourcePath base. Current document follows the explicit bounded Task; no prior semantic disposition was accepted."
+    }
+  ],
+  "original784Assessment": "Unchanged",
+  "priorReportProductionEvents": "Preserved",
+  "interpretationOnly": true
+}

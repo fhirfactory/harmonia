@@ -1,0 +1,676 @@
+% Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later
+% Generated from fingerprinted RAD Markdown and frozen publication identities.
+\chapter{Health Service Assurance — Bounded Business Architecture Derivation}\label{rad:assurance}
+\noindent\textbf{RAD source:} \texttt{\seqsplit{docs/markdown/03-business-architecture/behaviours/health-service-assurance.md}}
+
+The following is a presentation transcription of the governed source. Source catalogue layout and retained illustrations do not allocate tiers or establish additional identities. Equations wrap as text; diagram notation is textual.
+
+\phantomsection\label{rad:assurance:1}
+\section*{Health Service Assurance — Bounded Business Architecture Derivation}
+\phantomsection\label{rad:assurance:3}
+\subsection*{1. Authority and Derivation Scope}
+\phantomsection\label{rad:assurance:5}
+
+This view carries the \hyperref[rad:assurance-strategy]{approved Domain02 Health Service Assurance derivation} into Domain03. Its upstream responsibility chain is \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/01-motivation/requirements-constraints/foundational-requirements.md\#req-fnd-005-independent-assurance-of-governed-activity}{REQ-FND-005 — Independent Assurance of Governed Activity} → \hyperref[rad:business:1033]{BC-18 Health Service Assurance} → \textbf{Assurance Design}, \textbf{Assurance Criteria Management} and \textbf{Governed Assurance}, with the approved collaborative Enterprise Capability contributions including \textbf{EC-14 Service Guardian}.
+
+\phantomsection\label{rad:assurance:7}
+
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-14}{AX-14} requires the responsibility distinctions below to remain explicit. \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/governance/architectural-axioms.md\#ax-17}{AX-17} and the \hyperref[rad:metamodel]{Domain03 metamodel} require established responsibility to be distinguished from unestablished naming, decomposition, exposure, progression and authority relationships. AX-06, AX-07, AX-08 and AX-09 continue to govern information authority, governed access, meaningful evidence and contextual evidence selection. AX-15 governs operational uncertainty without making it equivalent to insufficient assurance evidence.
+
+\phantomsection\label{rad:assurance:9}
+
+The approved human review decisions on 2026-10-08 extend the previous bounded derivation with \textbf{\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/actors-roles/roles.md\#service-assurance-modeller}{Service Assurance Modeller}} and \textbf{\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/actors-roles/roles.md\#service-guardian}{Service Guardian}} Business Roles and exactly five Business Functions: \textbf{Design Service Assurance}, \textbf{Manage Assurance Criteria}, \textbf{Establish Assurance Context}, \textbf{Assess Assurance Evidence} and \textbf{Adjudicate Assurance Assessment}. Their capability ownership and Role performance are documented in §3. The assurance Role previously named Guardian is now Service Guardian; legal/\allowbreak{}personal-welfare Guardian remains unchanged. These naming and Function-decomposition decisions are resolved; further decomposition is not approved.
+
+\phantomsection\label{rad:assurance:11}
+
+The next approved human review decisions on 2026-10-08 establish exactly three \hyperref[rad:processes:349]{Business Processes}, three \hyperref[rad:assurance:156]{Business Services} and three \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/collaborations-interactions/interactions.md\#5-approved-service-assurance-interactions}{Business Interactions}, with the approved consumer/\allowbreak{}participant relationships. They also establish the \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/behaviours/health-service-assurance.md\#financial-governance-exclusion}{Financial Governance deliberate exclusion} and \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/behaviours/health-service-assurance.md\#assurance-non-recursion-boundary}{assurance non-recursion boundary}. The five approved Functions are preserved without reinterpretation or further decomposition.
+
+\phantomsection\label{rad:assurance:13}
+
+The three assurance capabilities remain established responsibility contexts with unresolved contextual-view placement, Capability Tier, complete ancestry, Feature decomposition and structural Canonical IDs. This document is a capability-scoped view, not a sixth contextual view or an identifier ancestor. Specific Actors and Collaborations remain unallocated; detailed Process states/\allowbreak{}transitions, information models and implementation remain unresolved.
+
+\phantomsection\label{rad:assurance:15}
+
+\textbf{EC-14 Service Guardian is an Enterprise Capability. Service Guardian is also the intentional canonical name of a distinct Business Role.} Shared terminology does not equate their architectural types or make either a software component. The approved human review decisions supply the Business Architecture relationships; they are not inferred from the EC contribution model or its explanatory sequence. Previous completion reports supply execution context only and are not architectural authority.
+
+\phantomsection\label{rad:assurance:17}
+\subsection*{2. Governance, Management, Guardianship and Clinical Authority}
+\phantomsection\label{rad:assurance:19}
+
+\textit{RAD source listing (presentation only; no inferred ancestry).}
+\begin{quote}
+Governance defines
+
+↓
+
+Management performs
+
+↓
+
+Guardianship assures
+\end{quote}
+\phantomsection\label{rad:assurance:27}
+
+This expresses semantic responsibilities, not organisational structure, a compulsory execution sequence or technical topology.
+
+\phantomsection\label{rad:assurance:29}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.24\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|>{\raggedright\arraybackslash}p{0.43\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Responsibility} & \textbf{Business meaning} & \textbf{Preserved boundary}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Responsibility} & \textbf{Business meaning} & \textbf{Preserved boundary}\\\hline\endhead
+\hline\endfoot
+\textbf{Governance} & Defines applicable requirements, obligations, authority, constraints, controls, reporting requirements and checkpoints. & Establishes the normative envelope without taking over the operational means or progression of the governed activity. Subject-specific governance remains intrinsic to its established subject capability.\\\hline
+\textbf{Operational management} & Performs or manages the subject activity within its constraints, including monitoring for progression, assignment, delegation, operational escalation, response, remediation and expected failure/\allowbreak{}recovery. & Monitoring for operational completion or deciding what happens next does not establish independent assurance.\\\hline
+\textbf{Service Assurance modelling} & Service Assurance Modeller determines and models how satisfaction of governed requirements, constraints and expected behaviours is to be assured within Assurance Design and Assurance Criteria Management. & Modelling does not inherently approve the governing requirement, Assurance Definition or Assurance Criteria, perform independent assurance, or manage the subject.\\\hline
+\textbf{Guardianship /\allowbreak{} governed assurance} & Service Guardian independently evaluates governed activity, information, state or outcomes against applicable criteria and establishes findings and conclusions from sufficient trustworthy evidence. & Service Guardian may manage its own assurance activity; it does not thereby perform or manage the subject, direct its operational response or confer clinical authority.\\\hline
+\textbf{Clinical review /\allowbreak{} clinical assurance} & Exercises the applicable clinical process and authority's responsibility for clinical evaluation and professional judgement. & Neither assurance Role establishes clinical adequacy, clinical correctness or professional clinical judgement. Clinical quality, safety and improvement retain their existing responsibilities.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:assurance:37}
+
+\textbf{Governance Authority establishes what is authoritative. Service Assurance Modeller models how satisfaction will be assured. Service Guardian independently establishes what the applicable evidence demonstrates.} Governance Authority references the \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/actors-roles/roles.md\#37-governance-authority-and-assurance-modelling}{existing mandated authority Roles}, including Policy Authority for policy and Regulator for statutory authority, with existing steward mandates preserved. No new Governance Authority Role or extension of those mandates is established. Modelling does not grant approval authority for the governing requirement, Assurance Definition or Assurance Criteria; exact approval allocation/\allowbreak{}workflows remain unresolved.
+
+\phantomsection\label{rad:assurance:39}
+
+\textit{RAD diagram: textual source notation.}
+\begin{Verbatim}[breaklines,fontsize=\footnotesize]
+graph TD
+    GOV["Governance Authority<br/>Existing mandated authority Roles"] -->|Establishes authoritative basis| MOD["Business Role<br/>Service Assurance Modeller"]
+    MOD -->|Performs| DESIGN["Function: Design Service Assurance<br/>Owner: Assurance Design"]
+    MOD -->|Performs| CRITERIA["Function: Manage Assurance Criteria<br/>Owner: Assurance Criteria Management"]
+    MOD -->|Models| DEF["Assurance Definition<br/>Conceptual modelling output"]
+    DEF -->|Modelling boundary for assurance| GUARD["Business Role<br/>Service Guardian"]
+    GUARD -->|Performs| CONTEXT["Function: Establish Assurance Context<br/>Owner: Governed Assurance"]
+    GUARD -->|Performs| ASSESS["Function: Assess Assurance Evidence<br/>Owner: Governed Assurance"]
+    GUARD -->|Performs| ADJ["Function: Adjudicate Assurance Assessment<br/>Owner: Governed Assurance"]
+    ADJ -->|Establishes| FINDING["Assurance Finding / Conclusion"]
+\end{Verbatim}
+\phantomsection\label{rad:assurance:52}
+
+This is a responsibility/\allowbreak{}semantic model, not mandatory execution topology, organisational or application structure, deployment topology or a complete Business Process. The output labels do not introduce Information Objects or a formal information model. The diagram distinguishes performance through a Role from Function ownership by a Capability and does not define process ordering or an assurance initiation/\allowbreak{}approval exchange.
+
+\phantomsection\label{rad:assurance:54}
+
+A real-world Actor may fulfil different Roles in different contexts where governance permits. That possibility does not relax REQ-FND-005: assurance progression and conclusion must remain independently governed rather than controlled by the performer or manager of the subject. The subject may contribute evidence but must not solely determine, suppress, manufacture or retrospectively alter its assurance conclusion. Evidence dependency and control dependency remain distinct.
+
+\phantomsection\label{rad:assurance:56}
+
+Neither Service Assurance Modeller nor Service Guardian inherently possesses clinical authority or replaces professional clinical judgement, clinical peer review or clinical governance. Information and behaviour concerning clinical activity may be subject to governed assurance where an explicit applicable requirement establishes that concern. This does not constitute \textbf{Clinical Services Delivery Assurance} or transfer clinical-care responsibility to Guardianship or Harmonia. The \hyperref[rad:enabling:763]{approved clinical boundary}, \hyperref[rad:sd:9]{Service Delivery care-enablement principle}, and existing clinical review responsibilities remain controlling. No generic clinical-assurance authority Role is derived.
+
+\phantomsection\label{rad:assurance:58}
+
+Neither assurance Role manages the subject merely because it designs or performs assurance. Service Guardian may manage progression of its own assurance activity without assuming progression of its subject. Findings may cause another responsible party to initiate management, escalation, remediation or other operational action; no such response responsibility is allocated to Service Guardian.
+
+\phantomsection\label{rad:assurance:60}
+\subsection*{3. Direct Capability-Scoped Responsibility Consequences}
+\phantomsection\label{rad:assurance:62}
+
+The following five Functions are approved Business Architecture. Each is behaviour within its established owning Capability, performed through the stated Business Role. \textbf{Element Type: Business Function (FN)} applies to each. \textbf{Canonical IDs remain unresolved} because Capability Tier, complete ancestry and local identifier allocation are unestablished. \textbf{Feature association is not established} for any of these Functions; no Feature or structural ID is invented to anchor them. Function ownership does not transfer source-information ownership to an assurance Role or Capability.
+
+\phantomsection\label{rad:assurance:64}
+\subsubsection*{3.1 Assurance Design — Service Assurance Modeller}
+\phantomsection\label{rad:assurance:66}
+
+\begin{itemize}
+
+\item 
+\textbf{Owning Capability}: \hyperref[rad:enabling:680]{Assurance Design}.
+
+
+
+\item 
+\textbf{Performing Business Role}: \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/actors-roles/roles.md\#service-assurance-modeller}{Service Assurance Modeller}.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance:69}
+
+
+
+\phantomsection\label{rad:assurance:71}
+\subsubsection*{Design Service Assurance}
+\phantomsection\label{rad:assurance:73}
+
+\begin{itemize}
+
+\item 
+\textbf{Canonical Name}: \texttt{\seqsplit{Design Service Assurance}}.
+
+
+
+\item 
+\textbf{Definition}: Defines how satisfaction of a governed requirement, constraint or expected behaviour is to be independently established, including the applicable assurance disposition, assurance criteria, required evidence and evaluation expectations.
+
+
+
+\item 
+\textbf{Boundary}: Concerns assurance design. It does not establish the underlying governance requirement, grant authority to it, perform the resulting assurance, manage the subject activity or prescribe application or implementation mechanisms. Modelling the resulting Assurance Definition does not grant approval authority. The Strategy peer relationship to behaviour design and failure/\allowbreak{}recovery design creates no additional Capability or Function.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance:77}
+\subsubsection*{3.2 Assurance Criteria Management — Service Assurance Modeller}
+\phantomsection\label{rad:assurance:79}
+
+\begin{itemize}
+
+\item 
+\textbf{Owning Capability}: \hyperref[rad:enabling:686]{Assurance Criteria Management}.
+
+
+
+\item 
+\textbf{Performing Business Role}: \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/actors-roles/roles.md\#service-assurance-modeller}{Service Assurance Modeller}.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance:82}
+
+
+
+\phantomsection\label{rad:assurance:84}
+\subsubsection*{Manage Assurance Criteria}
+\phantomsection\label{rad:assurance:86}
+
+\begin{itemize}
+
+\item 
+\textbf{Canonical Name}: \texttt{\seqsplit{Manage Assurance Criteria}}.
+
+
+
+\item 
+\textbf{Definition}: Establishes and manages reusable, governed and temporally identifiable assurance criteria through which governed subjects may be evaluated.
+
+
+
+\item 
+\textbf{Scope}: Criteria may express governance rule boundaries, quality constraints, performance expectations, compliance criteria, temporal criteria, evidence requirements or completeness expectations. These examples are not an exhaustive taxonomy. Criteria may have lifecycle, version and temporal applicability.
+
+
+
+\item 
+\textbf{Boundary}: Managing a criterion does not transfer authority for the governing requirement from which it may derive. Criteria may operationalise a requirement without silently altering, weakening, strengthening or replacing it; not every criterion must derive from formal Governance. Modelling/\allowbreak{}managing criteria does not inherently confer approval authority. Detailed criterion lifecycle states and approval workflows remain unresolved.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance:91}
+\subsubsection*{3.3 Governed Assurance — Service Guardian}
+\phantomsection\label{rad:assurance:93}
+
+\begin{itemize}
+
+\item 
+\textbf{Owning Capability}: \hyperref[rad:enabling:694]{Governed Assurance}.
+
+
+
+\item 
+\textbf{Performing Business Role}: \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/actors-roles/roles.md\#service-guardian}{Service Guardian}.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance:96}
+
+
+
+\phantomsection\label{rad:assurance:98}
+\subsubsection*{Establish Assurance Context}
+\phantomsection\label{rad:assurance:100}
+
+\begin{itemize}
+
+\item 
+\textbf{Canonical Name}: \texttt{\seqsplit{Establish Assurance Context}}.
+
+
+
+\item 
+\textbf{Definition}: Establishes the governed subject, applicable assurance purpose and criteria, relevant temporal context, and contextual association of sufficient trustworthy source information as evidence required for an assurance activity.
+
+
+
+\item 
+\textbf{Scope}: Includes the evidence-assembly responsibility previously described as Assurance Evidence Assembly; no separate evidence-assembly Function is established. Sufficiency is required for conclusion, not assumed merely because context is established; unavailable or insufficient evidence remains explicit.
+
+
+
+\item 
+\textbf{Information Boundary}: Source information remains owned by its responsible source Capability. Its use as evidence does not transfer ownership or originating authority. Governed Assurance owns the contextual association that particular information constitutes evidence for a particular assurance purpose. Evidence association and applicable criteria may each be temporal and version-specific; association distinguishes the information state relevant to assurance from its current state.
+
+
+
+\item 
+\textbf{Realisation Boundary}: Uses generic EC-02 context-management capability together with EC-14 assurance-specific semantics as documented in \hyperref[rad:assurance:138]{§4.1}. Establishment of Assurance Context prescribes no copying, persistence, aggregation, caching or other technical mechanism.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance:106}
+
+
+
+\phantomsection\label{rad:assurance:108}
+\subsubsection*{Assess Assurance Evidence}
+\phantomsection\label{rad:assurance:110}
+
+\begin{itemize}
+
+\item 
+\textbf{Canonical Name}: \texttt{\seqsplit{Assess Assurance Evidence}}.
+
+
+
+\item 
+\textbf{Definition}: Evaluates the available trustworthy evidence against the applicable assurance criteria and establishes what that evidence demonstrates for each relevant criterion or assessment concern.
+
+
+
+\item 
+\textbf{Boundary}: Assessment remains distinct from adjudication. It may identify satisfaction, exception, insufficiency or other criterion-level results where applicable; no universal result taxonomy is established. Quantitative, qualitative, compound, temporal and confidence-bearing assessment remain possible. \textbf{Insufficient evidence is not equivalent to either satisfaction or non-satisfaction.}
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance:114}
+
+
+
+\phantomsection\label{rad:assurance:116}
+\subsubsection*{Adjudicate Assurance Assessment}
+\phantomsection\label{rad:assurance:118}
+
+\begin{itemize}
+
+\item 
+\textbf{Canonical Name}: \texttt{\seqsplit{Adjudicate Assurance Assessment}}.
+
+
+
+\item 
+\textbf{Definition}: Determines the assurance finding or conclusion that follows from the assessed evidence and applicable assurance criteria.
+
+
+
+\item 
+\textbf{Boundary}: Establishment of the finding/\allowbreak{}conclusion is part of adjudication. It remains distinct from evidence assessment, operational response, remediation, escalation, workflow progression and clinical judgement. No separate conclusion-establishment or reporting Function is introduced merely because a conclusion is established or may be communicated.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance:122}
+\subsubsection*{3.4 Preserved Assurance Obligations}
+\phantomsection\label{rad:assurance:124}
+
+The approved \hyperref[rad:enabling:701]{assurance dispositions} remain explicit governed decisions. \textbf{Not Assurable} does not remove the requirement; \textbf{Not Worth Assuring} does not make it optional. Disposition does not require specific assurance of every individual activity, information item or outcome.
+
+\phantomsection\label{rad:assurance:126}
+
+The approved \hyperref[rad:enabling:716]{generic processing assurance obligation} constrains Harmonia-managed workflow behaviour. Evaluating business progression, completion, timeliness, pathways, failure/\allowbreak{}recovery and outcomes for assurance is distinct from monitoring to progress that work. The existing operational Processes and Functions retain their owners; neither successful completion nor an operationally healthy environment establishes an assurance conclusion. No final criterion catalogue or applicability model is supplied by these examples.
+
+\phantomsection\label{rad:assurance:128}
+
+Assessment asks what the evidence demonstrates against applicable criteria; adjudication establishes what finding or conclusion follows. The approved decisions now establish these as distinct Functions performed through Service Guardian; they do not require separate Roles or process stages. Assurance is not universally reducible to PASS /\allowbreak{} FAIL /\allowbreak{} UNKNOWN. An assurance activity may execute correctly while lacking enough evidence to conclude. That insufficiency is distinct from its own execution failure or indeterminate execution outcome and must not imply satisfaction or non-satisfaction.
+
+\phantomsection\label{rad:assurance:130}
+\subsection*{4. Information and Dependency Consequences}
+\phantomsection\label{rad:assurance:132}
+
+The \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/information-responsibility/information-responsibility.md\#4-assurance-related-business-information-responsibilities}{Business Information Responsibility material} records the directly supported demarcations: Assurance Design defines how satisfaction will be assured; Assurance Criteria Management manages criteria; Governed Assurance owns contextual evidentiary association and its findings/\allowbreak{}conclusions. Underlying source information remains owned and managed by its established capability. Evaluating it does not acquire its originating authority.
+
+\phantomsection\label{rad:assurance:134}
+
+Evidence association must distinguish the relevant information state from its current state where temporal/\allowbreak{}version-specific inclusion matters. Evaluation must use temporally appropriate evidence and criteria. Evidence collection, provenance, audit information and operational completion are not themselves assurance conclusions. No assurance Information Object, outcome taxonomy, representation, custody, retention rule or persistence structure is defined here.
+
+\phantomsection\label{rad:assurance:136}
+
+An evidence need does not identify a Business Service/\allowbreak{}provider or authorise a new consumption edge. The \hyperref[rad:dependencies:93]{dependency assessment} preserves that distinction, including the prohibition on subject control of assurance progression or conclusion. The approved Enterprise Capability contribution matrix remains a Strategy contribution model, not a Business Service consumption matrix.
+
+\phantomsection\label{rad:assurance:138}
+\subsubsection*{4.1 Context Management Contribution}
+\phantomsection\label{rad:assurance:140}
+
+\hyperref[rad:enterprise:112]{EC-02 Context Management} supplies generic establishment, validation, propagation and preservation of meaningful context. \hyperref[rad:enterprise:224]{EC-14 Service Guardian} supplies assurance-specific subject/\allowbreak{}purpose, criterion applicability and contextual evidentiary-association semantics. Their contributions together support \textbf{Establish Assurance Context}, owned by Governed Assurance and performed through the Service Guardian Business Role.
+
+\phantomsection\label{rad:assurance:142}
+
+\textit{RAD diagram: textual source notation.}
+\begin{Verbatim}[breaklines,fontsize=\footnotesize]
+graph TD
+    CONTEXT["Enterprise Capability<br/>EC-02 Context Management"] -->|Generic context semantics| FN["Business Function<br/>Establish Assurance Context<br/>Owner: Governed Assurance"]
+    ASSURANCE["Enterprise Capability<br/>EC-14 Service Guardian"] -->|Assurance-specific semantics| FN
+\end{Verbatim}
+\phantomsection\label{rad:assurance:148}
+
+This documents the approved semantic contribution relationship. In the \hyperref[rad:assurance-strategy:54]{Domain02 collaborative contribution matrix}, EC-02 and EC-14 each contribute directly to Governed Assurance. Neither is a sole realiser or Function owner; the other approved capability contributions remain intact. This view is not an exhaustive Function-to-EC allocation matrix, a new Business Service consumption edge or an application/\allowbreak{}runtime allocation. How context establishment is realised belongs to later architecture; no loader/\allowbreak{}unloader mechanism or implementation pattern is derived.
+
+\phantomsection\label{rad:assurance:150}
+\subsubsection*{4.2 Assurance Definition — Conceptual Modelling Output}
+\phantomsection\label{rad:assurance:152}
+
+\textbf{Assurance Definition} describes the conceptual output/\allowbreak{}boundary between Service Assurance modelling and governed assurance: how satisfaction is to be assured, including assurance disposition, applicable criteria, required evidence and evaluation expectations. This output description follows directly from \textbf{Design Service Assurance} within \textbf{Assurance Design}, performed through \textbf{Service Assurance Modeller}; governed assurance uses that modelling boundary without transferring governance authority or establishing an exposed Service or approval exchange.
+
+\phantomsection\label{rad:assurance:154}
+
+The existing Domain03 rules permit documenting this business output and its responsibility context. They do not establish its formal information structure, identity, lifecycle, representation or approval model. The term therefore remains a conceptual responsibility/\allowbreak{}output description, not a newly allocated formal Business Information element, Information Object or Data Object. Formal information modelling is deferred. Modelling an Assurance Definition does not make it authoritative or grant its modeller approval authority; applicable governance authority must establish that standing.
+
+\phantomsection\label{rad:assurance:156}
+\subsection*{5. Approved Governed Assurance Business Services}
+\phantomsection\label{rad:assurance:158}
+
+Exactly three assurance Services are established below. \textbf{Element Type: Business Service (SV)} applies to each; each is owned/\allowbreak{}exposed by \textbf{\hyperref[rad:enabling:694]{Governed Assurance}} with Service Guardian participating through its associated Business Interaction. Identifiable consumers/\allowbreak{}recipients outside that responsibility boundary justify the exposure under the metamodel. \textbf{Feature association is not established} and \textbf{Canonical IDs remain unresolved}; no Capability Tier, ancestry or local code is invented.
+
+\phantomsection\label{rad:assurance:160}
+
+The Services expose approved request, activity-progression observation and established-outcome communication behaviour. They do not mechanically correspond one-to-one with the five Functions, nor introduce new request, status or reporting Functions. Detailed internal Service-to-Function mappings and contracts beyond the approved behaviour remain unestablished. Status observation concerns assurance's own permitted activity progression, not assessment of the subject or a new status Process.
+
+\phantomsection\label{rad:assurance:162}
+
+
+
+\phantomsection\label{rad:assurance:164}
+\subsubsection*{5.1 Request Service Assurance}
+\phantomsection\label{rad:assurance:166}
+
+\begin{itemize}
+
+\item 
+\textbf{Canonical Name}: \texttt{\seqsplit{Request Service Assurance}}.
+
+
+
+\item 
+\textbf{Definition}: Enables an authorised consumer to request that Service Assurance be performed for an applicable governed subject in accordance with an established Assurance Definition.
+
+
+
+\item 
+\textbf{Approved Consumers}: \texttt{\seqsplit{Care Coordinator}}, \texttt{\seqsplit{Service Coordinator}}, \texttt{\seqsplit{Regulator}}, \texttt{\seqsplit{Policy Authority}}, \texttt{\seqsplit{System Steward}}.
+
+
+
+\item 
+\textbf{Associated Interaction}: \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/collaborations-interactions/interactions.md\#service-assurance-request}{Service Assurance Request}, with Service Guardian and one authorised requesting Role.
+
+
+
+\item 
+\textbf{Process Relationship}: Requests \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/processes/business-processes.md\#assurance-process-execution}{Assurance Process Execution} under an applicable established Assurance Definition. It does not require a new Assurance Process Design instance for each request.
+
+
+
+\item 
+\textbf{Independence Boundary}: The requesting Role identifies the assurance need within its responsibility and authority. Requesting does not grant authority to define or alter the Assurance Definition, alter Assurance Criteria, direct evidence assessment, determine adjudication or control the resulting Assurance Finding /\allowbreak{} Conclusion. REQ-FND-005 control independence remains applicable, including where a requester performs or manages the subject. Detailed payloads, contracts, initiation mechanics and states remain unresolved.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance:173}
+
+
+
+\phantomsection\label{rad:assurance:175}
+\subsubsection*{5.2 Request Service Assurance Status}
+\phantomsection\label{rad:assurance:177}
+
+\begin{itemize}
+
+\item 
+\textbf{Canonical Name}: \texttt{\seqsplit{Request Service Assurance Status}}.
+
+
+
+\item 
+\textbf{Definition}: Enables the System Steward to obtain the current business progression state of an identifiable Service Assurance activity for stewardship purposes.
+
+
+
+\item 
+\textbf{Only Approved Consumer}: \texttt{\seqsplit{System Steward}}.
+
+
+
+\item 
+\textbf{Associated Interaction}: \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/collaborations-interactions/interactions.md\#service-assurance-status}{Service Assurance Status}, between System Steward and Service Guardian.
+
+
+
+\item 
+\textbf{Status Boundary}: Concerns \textbf{activity progression state}. It does not communicate provisional findings, incomplete assessment results as conclusions, predicted outcomes or unadjudicated conclusions. Other requesting Roles do not gain status access merely because they requested assurance. No detailed activity-status taxonomy is established.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance:183}
+
+\textbf{Service Assurance Status answers "where is the assurance activity in its progression?" It does not answer "what has the assurance established?"} The latter requires an adjudicated Assurance Finding /\allowbreak{} Conclusion and subsequent outcome communication; neither status nor execution completion establishes that conclusion.
+
+\phantomsection\label{rad:assurance:185}
+
+\textbf{Management Monitoring evaluates activity state in order to progress or manage activity. Assurance evaluates activity against governing criteria in order to establish an assurance conclusion.} System Steward's use of this Service is stewardship /\allowbreak{} management observation of assurance progression, not itself assurance or recursive assurance. The non-recursion boundary in §7.2 applies.
+
+\phantomsection\label{rad:assurance:187}
+
+
+
+\phantomsection\label{rad:assurance:189}
+\subsubsection*{5.3 Communicate Service Assurance Outcome}
+\phantomsection\label{rad:assurance:191}
+
+\begin{itemize}
+
+\item 
+\textbf{Canonical Name}: \texttt{\seqsplit{Communicate Service Assurance Outcome}}.
+
+
+
+\item 
+\textbf{Definition}: Communicates applicable established Assurance Findings and Conclusions to authorised recipients according to their responsibilities, authority and information requirements.
+
+
+
+\item 
+\textbf{Approved Potential Recipients}: \texttt{\seqsplit{Care Coordinator}}, \texttt{\seqsplit{Service Coordinator}}, \texttt{\seqsplit{Regulator}}, \texttt{\seqsplit{Policy Authority}}, \texttt{\seqsplit{System Steward}}.
+
+
+
+\item 
+\textbf{Associated Interaction}: \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/collaborations-interactions/interactions.md\#service-assurance-outcome-communication}{Service Assurance Outcome Communication}, with Service Guardian and one or more authorised recipient Roles.
+
+
+
+\item 
+\textbf{Process Relationship}: Exposes the communication behaviour of \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/processes/business-processes.md\#assurance-process-reporting-communication}{Assurance Process Reporting /\allowbreak{} Communication}, beginning from an already established finding/\allowbreak{}conclusion. It does not perform assessment or adjudication or alter/\allowbreak{}reinterpret the established outcome. A documentary report is not required.
+
+
+
+\item 
+\textbf{Recipient Boundary}: No mandatory broadcast is established. A particular outcome may be communicated to one, some or all legitimate recipients according to applicability, authority, responsibility and information requirements. Requester, status consumer and outcome recipient need not be the same Role. Communication does not transfer responsibility for recipients' interpretation within their authority, operational/\allowbreak{}clinical management, remediation, escalation, policy/\allowbreak{}compliance response, process improvement or other subsequent action to Service Guardian.
+
+
+
+\end{itemize}
+\phantomsection\label{rad:assurance:198}
+\subsubsection*{5.4 Approved Consumer and Recipient Concerns}
+\phantomsection\label{rad:assurance:200}
+
+The \href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/actors-roles/roles.md}{existing Role definitions and mandates} remain controlling. These are approved consumer/\allowbreak{}recipient concerns, not exhaustive Role responsibilities or new Roles. Each use requires applicable authority; Role eligibility alone does not grant unrestricted information access.
+
+\phantomsection\label{rad:assurance:202}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-10\tabcolsep-6\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.2\TableWidth}|>{\raggedright\arraybackslash}p{0.2\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Business Role} & \textbf{Request Service Assurance} & \textbf{Request Service Assurance Status} & \textbf{Potential recipient of Communicate Service Assurance Outcome} & \textbf{Principal assurance concern}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Business Role} & \textbf{Request Service Assurance} & \textbf{Request Service Assurance Status} & \textbf{Potential recipient of Communicate Service Assurance Outcome} & \textbf{Principal assurance concern}\\\hline\endhead
+\hline\endfoot
+\textbf{Care Coordinator} & Approved within authority & Not approved & Approved where applicable/\allowbreak{}authorised & Clinical management\\\hline
+\textbf{Service Coordinator} & Approved within authority & Not approved & Approved where applicable/\allowbreak{}authorised & Operational management and potentially task /\allowbreak{} people process improvement\\\hline
+\textbf{Regulator} & Approved within authority & Not approved & Approved where applicable/\allowbreak{}authorised & Service governance /\allowbreak{} compliance\\\hline
+\textbf{Policy Authority} & Approved within authority & Not approved & Approved where applicable/\allowbreak{}authorised & Service governance /\allowbreak{} compliance and policy effectiveness /\allowbreak{} improvement\\\hline
+\textbf{System Steward} & Approved within authority & Only approved consumer & Approved where applicable/\allowbreak{}authorised & ICT process improvement and stewardship of assurance activity progression\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:assurance:210}
+
+Care Coordinator's request or receipt may inform Clinical Management; clinical interpretation, judgement and action remain with the applicable clinical authority. Service Coordinator retains operational management/\allowbreak{}improvement responsibilities; System Steward's status access does not make Service Guardian responsible for task progression, assignment, delegation, operational escalation, remediation or process improvement. Regulator and Policy Authority retain their established governance/\allowbreak{}compliance mandates. None of these consumer relationships transfers source-information ownership, governance authority or control of assurance assessment/\allowbreak{}adjudication.
+
+\phantomsection\label{rad:assurance:212}
+
+
+
+\phantomsection\label{rad:assurance:214}
+\subsection*{6. Additional Business Elements Not Yet Established}
+\phantomsection\label{rad:assurance:216}
+
+The two assurance Roles, five Functions, three Processes, three Services, three Interactions and approved Role relationships are established. The following further concerns remain explicitly \textbf{unresolved and non-authoritative}; their inclusion does not add them to a catalogue. Financial Governance's scope exclusion and assurance non-recursion are settled boundaries, not gaps.
+
+\phantomsection\label{rad:assurance:218}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.24\TableWidth}|>{\raggedright\arraybackslash}p{0.33\TableWidth}|>{\raggedright\arraybackslash}p{0.43\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Candidate concern assessed} & \textbf{What approved architecture establishes} & \textbf{Architectural decision required before adding an element}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Candidate concern assessed} & \textbf{What approved architecture establishes} & \textbf{Architectural decision required before adding an element}\\\hline\endhead
+\hline\endfoot
+\textbf{Further Function decomposition /\allowbreak{} Feature association} & Exactly the five approved Functions in §3, including evidence assembly within context establishment and conclusion establishment within adjudication. & Additional Functions and Feature associations require a further decision. No separate applicability/\allowbreak{}criteria-resolution, evidence-assembly, conclusion-establishment, reporting, remediation or escalation Function is approved.\\\hline
+\textbf{Further Business Services /\allowbreak{} contracts} & Exactly the three Services in §5 with their approved consumers/\allowbreak{}recipients, owner and behaviour. & Additional criteria/\allowbreak{}evidence Services, exact evidence/\allowbreak{}criteria providers, detailed Service contracts and internal Service-to-Function mappings are unestablished. No extra Service is inferred from reportability, reuse or evidence need.\\\hline
+\textbf{Detailed Process progression} & Assurance Process Design, Execution and Reporting /\allowbreak{} Communication have established purposes, participating Functions where approved, conceptual boundaries and ownership. & Detailed lifecycle states/\allowbreak{}transitions, initiation mechanics, completion/\allowbreak{}disposition semantics, criteria lifecycle and approval/\allowbreak{}publication workflows remain unresolved. Function completion, EC-14's sequence and existing coordination lifecycles do not supply assurance states.\\\hline
+\textbf{Further Business Interactions} & Service Assurance Request, Status and Outcome Communication with approved Role participants and associated Services. & Evidence acquisition/\allowbreak{}exchange Interactions remain unresolved; source-owned information may be available through existing governed information access. No Evidence Contribution or Modeller-to-Guardian Interaction is created from evidence association or use of an Assurance Definition. Further exchange commitments require separate approval.\\\hline
+\textbf{Assurance Role collaborations} & Roles participate in the three approved Interactions; capability realisation is collaborative. & Establish an enduring, structured Actor/\allowbreak{}Role association with a defined purpose and permitted control relationships. Interaction does not mechanically imply Collaboration; no existing membership or new assurance collective is established.\\\hline
+\textbf{Further responsibility relationships /\allowbreak{} dependencies} & Approved request/\allowbreak{}status/\allowbreak{}outcome Role relationships, governance mandates and independence; source ownership, operational management and clinical authority remain separate. & Detailed Actor eligibility/\allowbreak{}mandates beyond approved Roles, coverage/\allowbreak{}applicability, initiation mechanics, exact approval allocation, evidence/\allowbreak{}criteria providers, findings-to-operational-response mechanisms and exact authorised external financial-governance recipients remain unresolved. Financial governance responsibility itself is deliberately excluded.\\\hline
+\textbf{Further Business Information responsibilities} & Responsibility demarcations and contextual/\allowbreak{}temporal evidence obligations in §4; conceptual Assurance Definition; progression status distinct from established findings/\allowbreak{}conclusions and their communication. & Detailed request/\allowbreak{}status/\allowbreak{}outcome information semantics, formal Assurance Definition modelling, further information concepts/\allowbreak{}asset identity, custody/\allowbreak{}lifecycle, criterion catalogues, outcome taxonomies, confidence models and retention remain unresolved. No formal information element or source-information reassignment is inferred.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:assurance:228}
+
+
+
+\phantomsection\label{rad:assurance:230}
+\subsubsection*{6.1 Previous Questions Resolved by Approved Human Review}
+\phantomsection\label{rad:assurance:232}
+\begingroup\small\setlength{\TableWidth}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth\relax}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.35\TableWidth}|>{\raggedright\arraybackslash}p{0.65\TableWidth}|}
+\hline\rowcolor{TableHead}\textbf{Previous question} & \textbf{Approved resolution}\\\hline\endfirsthead
+\hline\rowcolor{TableHead}\textbf{Previous question} & \textbf{Approved resolution}\\\hline\endhead
+\hline\endfoot
+Legal Guardian /\allowbreak{} assurance Guardian naming collision & \textbf{Resolved:} legal/\allowbreak{}personal-welfare Guardian remains intact; governed assurance uses the unambiguous \textbf{Service Guardian} Business Role. EC-14 retains the intentional shared name as a distinct Enterprise Capability.\\\hline
+Who models how satisfaction will be assured? & \textbf{Resolved:} \textbf{Service Assurance Modeller} performs Design Service Assurance within Assurance Design and Manage Assurance Criteria within Assurance Criteria Management, without inherent governance/\allowbreak{}approval authority.\\\hline
+Function names and bounded decomposition & \textbf{Resolved for this stage:} exactly five Functions are established in §3. Evidence assembly is included in Establish Assurance Context; finding/\allowbreak{}conclusion establishment is included in Adjudicate Assurance Assessment. No separate reporting Function is established.\\\hline
+Generic context management /\allowbreak{} assurance-specific context relationship & \textbf{Resolved to the approved extent:} EC-02 and EC-14 contribute together to Establish Assurance Context; sole realisation, Service exposure and implementation allocation are not implied.\\\hline
+Assurance Process names and purposes & \textbf{Resolved:} exactly Assurance Process Design, Assurance Process Execution and Assurance Process Reporting /\allowbreak{} Communication; detailed states/\allowbreak{}transitions remain unresolved.\\\hline
+Assurance Business Services and consumers & \textbf{Resolved:} Request Service Assurance for the five approved Roles; Request Service Assurance Status exclusively for System Steward; Communicate Service Assurance Outcome for applicable authorised recipients from the five Roles.\\\hline
+Assurance Business Interactions and participants & \textbf{Resolved:} Service Assurance Request, Service Assurance Status and Service Assurance Outcome Communication, with Service Guardian and the approved requesting/\allowbreak{}status/\allowbreak{}recipient Roles.\\\hline
+Assurance status versus outcome & \textbf{Resolved:} status concerns business progression only and exposes no unadjudicated finding/\allowbreak{}conclusion. Established-outcome communication remains separate and is not mandatory broadcast or responsibility for recipient action.\\\hline
+Financial Governance scope & \textbf{Deliberately excluded:} no distinct Harmonia financial-governance Role, Function, Capability, Service, Process or Collaboration. Financial relevance may justify authorised external receipt without responsibility transfer; exact external recipients remain unresolved.\\\hline
+Assurance recursion & \textbf{Resolved boundary:} Governed Assurance does not recursively assure its own execution; execution integrity belongs to the established activity execution framework without solution allocation.\\\hline
+\end{longtable}\endgroup
+\phantomsection\label{rad:assurance:245}
+
+Capability Tier, complete ancestry, contextual-view placement, Feature placement and structural Canonical IDs remain unresolved. Assurance Definition's formal information modelling remains deferred; documenting its conceptual output does not resolve those decisions. These bounded approvals do not complete Business Architecture or freeze/\allowbreak{}refreeze Domain03.
+
+\phantomsection\label{rad:assurance:247}
+\subsection*{7. Deliberate Scope Boundaries}
+\phantomsection\label{rad:assurance:249}
+
+
+
+\phantomsection\label{rad:assurance:251}
+\subsubsection*{7.1 Financial Governance Exclusion}
+\phantomsection\label{rad:assurance:253}
+
+\begin{quote}
+
+\textbf{Financial Governance Exclusion} — Service Assurance findings may contain information that has financial relevance or may be consumed by external financial-governance activities. Harmonia does not establish a distinct Service Governance (Financials) Role, Function, Process or responsibility because financial governance is outside the presently established Harmonia business scope. Where financially relevant assurance outcomes are produced, they may be communicated to an appropriately authorised external recipient without Harmonia assuming financial-governance responsibility.
+
+
+\end{quote}
+\phantomsection\label{rad:assurance:255}
+
+This is a deliberate scope exclusion, not an unresolved architectural gap. No Financial Governance Role, Function, Capability, Service, Process or Collaboration is created for symmetry. The allowance for authorised external receipt establishes no additional consumer Role or allocation in the approved Service/\allowbreak{}Interaction catalogues; exact external recipients and their mandates remain unresolved. Existing business responsibilities are preserved.
+
+\phantomsection\label{rad:assurance:257}
+
+
+
+\phantomsection\label{rad:assurance:259}
+\subsubsection*{7.2 Assurance Non-Recursion Boundary}
+\phantomsection\label{rad:assurance:261}
+
+\begin{quote}
+
+\textbf{Governed Assurance does not recursively assure its own execution. Assurance activity execution integrity is provided by the established activity execution framework.}
+
+
+\end{quote}
+\phantomsection\label{rad:assurance:263}
+
+This approved boundary distinguishes assurance execution integrity from independent evaluation of a governed subject. Managed execution/\allowbreak{}progression of an assurance activity does not make that execution another Service Assurance subject. No Assurance of Assurance, Guardian-of-Guardian, recursive Process, Function, Service or conclusion is introduced. System Steward's progression observation through Service Assurance Status is stewardship /\allowbreak{} management monitoring, not recursive assurance. The activity execution framework reference is solely a Business Architecture boundary and establishes no application/\allowbreak{}runtime responsibility allocation or implementation pattern.
+
+\phantomsection\label{rad:assurance:265}
+
+
+
+\phantomsection\label{rad:assurance:267}
+\subsection*{8. Bounded Outcome and Navigation}
+\phantomsection\label{rad:assurance:269}
+
+The two assurance Roles and exactly five Functions, three Processes, three Services and three Interactions are established with approved Role relationships and capability, authority, clinical, operational and information boundaries. Further Business elements and detail remain unresolved as recorded above; Financial Governance is deliberately excluded and assurance non-recursion is established. Existing metamodel abbreviations \textbf{CT1 /\allowbreak{} CT2 /\allowbreak{} CT3 /\allowbreak{} FT} and \textbf{FN /\allowbreak{} SV /\allowbreak{} PR}, established Feature identifiers and the Qualified Architectural Reference Grammar remain unchanged. No unresolved tier, ancestry, Feature placement or structural identifier is filled to accommodate assurance.
+
+\phantomsection\label{rad:assurance:271}
+
+This derivation stops in Business Architecture. Information Architecture and all application, runtime, execution, representation, persistence and deployment allocation remain downstream. The completion report is execution evidence and confers no architectural authority.
+
+\phantomsection\label{rad:assurance:273}
+
+\begin{itemize}
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/README.md}{Domain03 orientation}
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/behaviours/index.md}{Capability-scoped behaviour index}
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/actors-roles/roles.md\#service-assurance-modeller}{Service Assurance Modeller Role}
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/actors-roles/roles.md\#service-guardian}{Service Guardian Role and boundaries}
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/collaborations-interactions/collaborations.md\#44-assurance-role-collaboration-derivation-boundary}{Collaboration derivation boundary}
+
+
+
+\item 
+\hyperref[rad:assurance:156]{Approved assurance Services and consumer concerns}
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/collaborations-interactions/interactions.md\#5-approved-service-assurance-interactions}{Approved assurance Interactions}
+
+
+
+\item 
+\hyperref[rad:processes:349]{Approved assurance Processes}
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/behaviours/health-service-assurance.md\#financial-governance-exclusion}{Financial Governance scope exclusion}
+
+
+
+\item 
+\href{https://github.com/fhirfactory/harmonia/blob/98410db60155198a75f74c79d98060070209faa1/docs/markdown/03-business-architecture/behaviours/health-service-assurance.md\#assurance-non-recursion-boundary}{Assurance non-recursion boundary}
+
+
+
+\end{itemize}

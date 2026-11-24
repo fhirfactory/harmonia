@@ -1,0 +1,170 @@
+{
+  "recordedAt": "2026-11-16T02:37:12.968510Z",
+  "meaning": "Actual registration and repository-state verification capture; not Task issuance or acceptance timestamp",
+  "hcrl": "enterprise-architecture/design/register/1.1.26/hcrl-1.1.26-001.complete.md",
+  "hcrlStatus": "COMPLETE: exact incorporated result confirmed and registered with accepted qualifications",
+  "registeredHcrlSha256": "967bbedeadb97ce9dbc06a3c22e89b951b40b9106822ce391799ccc6fcbf0fe6",
+  "reviewCopy": "enterprise-architecture/design/review/1.1.26/hcrl-1.1.26-001.pending.md",
+  "reviewCopySha256": "bae8cb007f707f423664294910e493ff7036e0176e4fce551ba66cc6dc8e3156",
+  "confirmedInputHcrlSha256": "219693f097eab66b8c1f94f576a301a6bd9ae136fbe465292045d4550966872c",
+  "release": {
+    "version": "1.1.26",
+    "previous_version": "1.1.25"
+  },
+  "totalPatchAllocationsForChangeSet": 1,
+  "additionalPatchAllocations": 0,
+  "exactCandidate": {
+    "outcome": "PASS",
+    "maintainedFiles": 14,
+    "source": "before/release-closure/state-at-entry.json",
+    "correspondence": "All confirmed document/tooling/release bytes are unchanged. Only HCRL completion and new closure evidence were produced."
+  },
+  "technicalClosureChecks": "PASS: exact source/evidence/publication preservation, fresh canonical validation, release, actual rendered local links/anchors, HCRL table/DR correspondence and whitespace",
+  "finalLinks": {
+    "outcome": "PASS",
+    "markdownFiles": 18,
+    "renderedLocalLinks": 247,
+    "missingFiles": [],
+    "unresolvedAnchors": [],
+    "scope": "Rendered local file and heading/explicit-anchor links in the applied documents, current review/register HCRLs and iteration formal records; external sites/code examples not dereferenced."
+  },
+  "iterationEvidence": {
+    "command": [
+      "timeout",
+      "30s",
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/architecture_review_evidence.py",
+      "--version",
+      "1.1.26",
+      "--iteration",
+      "001"
+    ],
+    "exitCode": 2,
+    "stderr": "",
+    "result": {
+      "outcome": "UNRESOLVED",
+      "version": "1.1.26",
+      "iteration": "001",
+      "records": [
+        "evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+        "evidence/1.1.26/001/after/ai-agent-reports/20261116T011524Z-software-development-praxis-application.md",
+        "evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-application.md",
+        "evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md"
+      ],
+      "errors": [],
+      "unresolved": [
+        "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-application.md: original Task-Issued-At and filename prefix require Solution Architect treatment",
+        "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+      ],
+      "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+    },
+    "qualification": "Both original and application Task event/prefix uncertainties explicitly accepted with qualification by the Solution Architect; factual UNRESOLVED remains. No rules weakened."
+  },
+  "whitespace": {
+    "command": [
+      "timeout",
+      "30s",
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "preservedPriorEvidenceAndProposals": 37,
+  "preservedPredecessorPublicationFiles": 19,
+  "publication": {
+    "status": "NOT REQUIRED / NOT PERFORMED",
+    "reason": "Governance-only release; unchanged frozen model/navigation publications retained under accepted plan and Release Policy.",
+    "retainedRelease": "1.1.25",
+    "newPublication": false
+  },
+  "softwareReleaseEstablished": false,
+  "firstSoftwareBaseline": "Deferred to first appropriately authorised software-development assignment (accepted DR-5)",
+  "qualifications": [
+    "Original Task instruction-entry timestamp and filename prefix remain UNRESOLVED under the original accepted DR-6 qualification.",
+    "Application Task instruction-entry timestamp and filename prefix remain UNRESOLVED under the explicit final additional DR-6 disposition.",
+    "No historical timestamp, missing prefix or full temporal-conformance PASS fabricated; checker remains UNRESOLVED with no errors.",
+    "Inherited architectural qualifications retain their existing scope; no software-readiness acceptance or automatic test waiver.",
+    "Existing Implementation Guide Draft/Pending wording and AGENTS.md compliance obligation remain unchanged."
+  ],
+  "git": {
+    "branch": "Mneme-and-Mnemosyne-Build",
+    "head": "441ec989a3853db4ea4dad253e14b8464181f293",
+    "status": [
+      "M AGENTS.md",
+      " M architecture-release.json",
+      " M docs/AGENTS.md",
+      " M enterprise-architecture/governance/architecture-change-provenance.md",
+      " M enterprise-architecture/governance/architecture-governance.md",
+      " M enterprise-architecture/governance/architecture-release-policy.md",
+      " M enterprise-architecture/governance/architecture-review-praxis.md",
+      " M enterprise-architecture/governance/templates/hcrl-template.pending.md",
+      " M enterprise-architecture/tooling/README.md",
+      " M enterprise-architecture/tooling/architecture_review_evidence.py",
+      " M enterprise-architecture/tooling/tests/test_architecture_review_evidence.py",
+      "?? docs/backlog/README.md",
+      "?? docs/backlog/backlog-item-template.md",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261115T233608Z-software-development-praxis-proposal.md",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/ai-agent-reports/20261116T011524Z-software-development-praxis-application.md",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/final-backlog-refinements/verification.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-amendments.proposed.patch",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-application/continuum-links.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-application/tooling-and-release.applied.patch",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-application/verification.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/governance-assessment.md",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/iteration-evidence-check.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/release-closure/closure-receipt.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/release-closure/registration-checks.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/review-correction/verification.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/supporting-amendments.proposed.md",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/after/verification.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-application.md",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/ai-agent-tasks/unresolved-software-development-praxis-proposal.md",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/20261115T233608Z-software-development-praxis-proposal.md.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/backlog-item-template.proposed.md.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/backlog-readme.proposed.md.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/governance-amendments.proposed.patch.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/hcrl-1.1.26-001.pending.md.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/software-development-praxis.proposed.md.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/source-correspondence.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/supporting-amendments.proposed.md.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/final-backlog-refinements/unresolved-software-development-praxis-proposal.md.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/governance-application/accepted-review-hcrl.md.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/governance-application/application-plan.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/release-closure/confirmed-hcrl.md.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/release-closure/solution-architect-confirmation.md",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/release-closure/state-at-entry.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/repository-state.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/20261115T233608Z-software-development-praxis-proposal.md.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/governance-amendments.proposed.patch.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/governance-assessment.md.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/hcrl-1.1.26-001.pending.md.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/software-development-praxis.proposed.md.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/source-correspondence.json",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/supporting-amendments.proposed.md.reviewed.gz",
+      "?? enterprise-architecture/design/evidence/1.1.26/001/before/solution-architect-review/unresolved-software-development-praxis-proposal.md.reviewed.gz",
+      "?? enterprise-architecture/design/register/1.1.26/hcrl-1.1.26-001.complete.md",
+      "?? enterprise-architecture/design/review/1.1.26/backlog-item-template.proposed.md",
+      "?? enterprise-architecture/design/review/1.1.26/backlog-readme.proposed.md",
+      "?? enterprise-architecture/design/review/1.1.26/hcrl-1.1.26-001.pending.md",
+      "?? enterprise-architecture/design/review/1.1.26/software-development-praxis.proposed.md",
+      "?? enterprise-architecture/governance/software-development-praxis.md"
+    ],
+    "staged": false,
+    "committed": false,
+    "pushed": false,
+    "tagged": false,
+    "merged": false,
+    "remoteVerification": "NOT PERFORMED: no remote operation authorised"
+  },
+  "gitTransition": "PENDING: no applicable commit/push authority established; final confirmation expressly supplies none.",
+  "remainingObligations": [
+    "Obtain applicable Git authorisation before commit/push; commit the accepted change set and existing Architecture release increment together.",
+    "Recheck exact accepted-source correspondence, resulting commit/index/worktree state and remote correspondence for any subsequently authorised Git transition."
+  ],
+  "terminalState": "HCRL registration and governance-release acceptance complete; terminal repository transition remains outstanding.",
+  "provenanceBoundary": "Mechanical completion under Review Praxis §6 and Change Provenance; original Tasks/Reports retained unchanged; no recursive Task, Report, HCRL iteration or release."
+}

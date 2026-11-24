@@ -1,0 +1,25 @@
+{
+  "outcome": "PASS",
+  "acceptedRelease": "1.1.17",
+  "acceptedCommit": "27d90d77ee0608dda61cdc64cc6b5759cb899cb0",
+  "developmentRelease": {
+    "version": "1.1.18",
+    "previous_version": "1.1.17"
+  },
+  "preservedPinnedFiles": 1865,
+  "changedPinnedFiles": [],
+  "canonicalElements": 1842,
+  "relationships": 1882,
+  "views": 1216,
+  "entireExchangeIdenticalExceptModelArchitectureReleaseProperty": true,
+  "canonicalNavigationAndTemplateByteIdentical": true,
+  "acceptedHcrlsAndPublicationsByteIdentical": true,
+  "sourceSha256": "b3c1bd71497497eb64e39e754dc69443d8012c762ffa00b9221116f12f3578a1",
+  "developmentProjectionSha256": "7df92528a09f9a765ddebec105643bae08ac92583cad4e8901b3135d49db2c2e",
+  "standing": "Unchanged architectural development baseline, not a separately accepted architectural transition",
+  "activitiesCommenced": [],
+  "plannedSequence": {
+    "1.1.18": "One-off AI-assisted ArchiMate View organisation/development, awaiting separate instructions",
+    "1.1.19": "Resume substantive architectural design"
+  }
+}

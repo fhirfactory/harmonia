@@ -1,0 +1,20 @@
+{
+  "outcome": "PASS",
+  "version": "1.1.21",
+  "iteration": "001",
+  "records": [
+    "evidence/1.1.21/001/after/ai-agent-reports/20261110T094627Z-initialise-journey-stakeholder-requirements.md",
+    "evidence/1.1.21/001/after/ai-agent-reports/20261110T111620Z-stakeholder-journey-usecase-userstory-add.md",
+    "evidence/1.1.21/001/after/ai-agent-reports/20261110T220857Z-bounded-patient-and-transport-follow-up.md",
+    "evidence/1.1.21/001/after/ai-agent-reports/20261110T222344Z-solution-architect-dispositions-and-closure-verification.md",
+    "evidence/1.1.21/001/after/ai-agent-reports/20261110T230433Z-final-accepted-release-closure.md",
+    "evidence/1.1.21/001/before/ai-agent-tasks/20261110T093540Z-verify-predecessor-and-initialise-journey-stakeholder-requirements.md",
+    "evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md",
+    "evidence/1.1.21/001/before/ai-agent-tasks/20261110T215321Z-bounded-patient-and-transport-follow-up.md",
+    "evidence/1.1.21/001/before/ai-agent-tasks/20261110T221757Z-solution-architect-dispositions-and-closure-verification.md",
+    "evidence/1.1.21/001/before/ai-agent-tasks/20261110T225233Z-final-acceptance-and-release-closure.md"
+  ],
+  "errors": [],
+  "unresolved": [],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}

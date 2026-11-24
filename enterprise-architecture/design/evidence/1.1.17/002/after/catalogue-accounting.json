@@ -1,0 +1,143 @@
+{
+  "elements": 1842,
+  "relationships": 1882,
+  "sourceDirectories": 681,
+  "elementTypes": 27,
+  "byNativeType": [
+    {
+      "category": "Application",
+      "nativeType": "ApplicationCollaboration",
+      "count": 1
+    },
+    {
+      "category": "Application",
+      "nativeType": "ApplicationComponent",
+      "count": 24
+    },
+    {
+      "category": "Application",
+      "nativeType": "ApplicationFunction",
+      "count": 2
+    },
+    {
+      "category": "Application",
+      "nativeType": "ApplicationInterface",
+      "count": 2
+    },
+    {
+      "category": "Application",
+      "nativeType": "ApplicationService",
+      "count": 5
+    },
+    {
+      "category": "Application",
+      "nativeType": "DataObject",
+      "count": 82
+    },
+    {
+      "category": "Business",
+      "nativeType": "BusinessCollaboration",
+      "count": 7
+    },
+    {
+      "category": "Business",
+      "nativeType": "BusinessFunction",
+      "count": 160
+    },
+    {
+      "category": "Business",
+      "nativeType": "BusinessInteraction",
+      "count": 69
+    },
+    {
+      "category": "Business",
+      "nativeType": "BusinessObject",
+      "count": 13
+    },
+    {
+      "category": "Business",
+      "nativeType": "BusinessProcess",
+      "count": 21
+    },
+    {
+      "category": "Business",
+      "nativeType": "BusinessRole",
+      "count": 34
+    },
+    {
+      "category": "Business",
+      "nativeType": "BusinessService",
+      "count": 142
+    },
+    {
+      "category": "Business",
+      "nativeType": "Product",
+      "count": 4
+    },
+    {
+      "category": "Motivation",
+      "nativeType": "Assessment",
+      "count": 5
+    },
+    {
+      "category": "Motivation",
+      "nativeType": "Constraint",
+      "count": 70
+    },
+    {
+      "category": "Motivation",
+      "nativeType": "Driver",
+      "count": 10
+    },
+    {
+      "category": "Motivation",
+      "nativeType": "Goal",
+      "count": 11
+    },
+    {
+      "category": "Motivation",
+      "nativeType": "Outcome",
+      "count": 3
+    },
+    {
+      "category": "Motivation",
+      "nativeType": "Principle",
+      "count": 79
+    },
+    {
+      "category": "Motivation",
+      "nativeType": "Requirement",
+      "count": 105
+    },
+    {
+      "category": "Motivation",
+      "nativeType": "Stakeholder",
+      "count": 10
+    },
+    {
+      "category": "Other",
+      "nativeType": "Grouping",
+      "count": 92
+    },
+    {
+      "category": "Strategy",
+      "nativeType": "Capability",
+      "count": 842
+    },
+    {
+      "category": "Strategy",
+      "nativeType": "CourseOfAction",
+      "count": 42
+    },
+    {
+      "category": "Strategy",
+      "nativeType": "Resource",
+      "count": 3
+    },
+    {
+      "category": "Strategy",
+      "nativeType": "ValueStream",
+      "count": 4
+    }
+  ]
+}

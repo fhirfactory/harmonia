@@ -1,0 +1,206 @@
+{
+  "checkedAt": "2026-11-16T03:35:36.076097+00:00",
+  "meaning": "Current bounded verification, not historical instruction-entry or acceptance time",
+  "outcome": "PASS",
+  "errors": [],
+  "head": "dc30cfbcc7ad4113b29e3710904453c023df4dc1",
+  "branch": "Mneme-and-Mnemosyne-Build",
+  "hcrlStanding": "CANCELLED \u2014 NON-RELEASE",
+  "dispositions": {
+    "DR-1": "Accepted",
+    "DR-2": "Deferred",
+    "DR-3": "Deferred",
+    "DR-4": "Accepted with qualification"
+  },
+  "backlogSpecificationAndOriginalEvidencePreservation": {
+    "AGENTS.md": true,
+    "docs/AGENTS.md": true,
+    "docs/backlog/calliope-oo-01-topic-models.md": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/after/engineering-assessment.md": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/after/architecture-tests.json": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/after/reconciliation-verification.initial.json": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/after/topic-tests.json": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/after/reconciliation-verification.json": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/after/consumer-inventory.json": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/after/verify-preparation.py": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/after/document-validation.json": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/after/duplicate-position-probe.json": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/after/iteration-evidence-check.json": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/before/source-state.json": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/before/junie-phase1-review.source.md": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/after/ai-agent-reports/20261116T031417Z-calliope-oo-backlog-preparation.md": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/concurrent-instruction-state.json": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/backlog-item.accepted-revision-1.md": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/hcrl.before.md": true,
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/source-pins.json": true
+  },
+  "localLinksAndAnchorsChecked": 79,
+  "productionFilesUnchanged": 69,
+  "architectureReleaseUnchanged": {
+    "version": "1.1.26",
+    "previous_version": "1.1.25"
+  },
+  "instructionChanges": {
+    "AGENTS.md": {
+      "change": "Append-only Backlog preparation operating guidance",
+      "addedLines": 24,
+      "sha256": "d002fd3aaf8ac15c530e925fe84826d771379b79cb0c2850af3b7c639ee0dc1f",
+      "existingContentPreserved": true,
+      "constraints": "Retains separate implementation/Git authority and binding-governance exceptions; no general cancellation rule is introduced."
+    },
+    "docs/AGENTS.md": {
+      "change": "Append-only Backlog preparation operating guidance",
+      "addedLines": 26,
+      "sha256": "7a6d89173c869a57348c1c23147e5a80e46c4e1c862fc6c528d6a42e21e105ef",
+      "existingContentPreserved": true,
+      "constraints": "Retains separate implementation/Git authority and binding-governance exceptions; no general cancellation rule is introduced."
+    }
+  },
+  "candidateFiles": [
+    "AGENTS.md",
+    "docs/AGENTS.md",
+    "docs/backlog/calliope-oo-01-topic-models.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/administrative-cancellation/architecture-tests.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/administrative-cancellation/verification.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/ai-agent-reports/20261116T031417Z-calliope-oo-backlog-preparation.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/architecture-tests.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/consumer-inventory.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/document-validation.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/duplicate-position-probe.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/engineering-assessment.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/iteration-evidence-check.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/reconciliation-verification.initial.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/reconciliation-verification.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/topic-tests.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/verify-preparation.py",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/administrative-cancellation/hcrl.before.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/administrative-cancellation/input-pins.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/junie-phase1-review.source.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/backlog-item.accepted-revision-1.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/concurrent-instruction-state.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/hcrl.before.md",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/source-pins.json",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/source-state.json",
+    "enterprise-architecture/design/review/1.1.27/hcrl-1.1.27-001.pending.md"
+  ],
+  "candidateSha256": {
+    "AGENTS.md": "d002fd3aaf8ac15c530e925fe84826d771379b79cb0c2850af3b7c639ee0dc1f",
+    "docs/AGENTS.md": "7a6d89173c869a57348c1c23147e5a80e46c4e1c862fc6c528d6a42e21e105ef",
+    "docs/backlog/calliope-oo-01-topic-models.md": "56ce6e2acaa10e74c5673ca7a3898db9009811c0dbcc574266285741428c1ed7",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/administrative-cancellation/architecture-tests.json": "84c49f09f7661dba46ebb0b1cc7c2cae3f70aa13094656a1475f25300e5c897c",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/ai-agent-reports/20261116T031417Z-calliope-oo-backlog-preparation.md": "e46fe8b8902002664fcd6b948ef19f770d474e8384a14652d0788b5e12bbce61",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/architecture-tests.json": "816b8daff4a1aee6779482c65690825e2dadee39735f1d33cec7b797238021a9",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/consumer-inventory.json": "bd4fd783aa46752a1ade9392ec9836a34bc0f7c1dbbb063e8209ff36c08ff880",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/document-validation.json": "c89ca3f2e88e9ab8b0af04528333fcf1a36f3921100c7a9bba5ce629609c0bb0",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/duplicate-position-probe.json": "10585d09f373aa262913fc964b38b11ae6461389de52b9754c11ecb7ebde4906",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/engineering-assessment.md": "b4c0539daa517a78f06b3794171f08cf040d489ace22ed690d5b532778fa7e5e",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/iteration-evidence-check.json": "9c2dc936a2afaecee8389d65eaba4408af97d3960ed1e7c59ecdab16bd4fb028",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/reconciliation-verification.initial.json": "56374c0939e425677a276411cf2ddb6a482baad1f95a37b27bcf1822a1e32608",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/reconciliation-verification.json": "537af380e30d33012d1c4276743e9c9e99abf6aa940ae0c56a4b215edfa5c783",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/topic-tests.json": "f4a588d23fea43c6b47834f98b6233af14fd16d9613e496ceb1993b5179884ff",
+    "enterprise-architecture/design/evidence/1.1.27/001/after/verify-preparation.py": "60eade8264fdb813037b51295ca44607db8a012085413b2b935b0c14e3e3e547",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/administrative-cancellation/hcrl.before.md": "9ec3dfe10edd838af0215a0bfa0c5c454315d38502e0d0a9b4a5b50ceaee7394",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/administrative-cancellation/input-pins.json": "8930a7f50804a520a29bbc08bb946af40e40c9e91e2a1b0c2fb5274ca18aa535",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md": "31990d170c876a89cadaef7da9b9c821686a8c38f314622fdc3e9d1f29aedc27",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/junie-phase1-review.source.md": "da2b7fed8fc3dba5f12dea7ba07677991ac9a34de875619fb67ae0dc2efda712",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/backlog-item.accepted-revision-1.md": "47f83182b39de96824d475a883a858427647ff59a5e9b7ccc20c9d3a5bad21f4",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/concurrent-instruction-state.json": "573efaa9dda34c4eda0ac4ba1de3f1502ac41112c8bb9f4a853563399f97e4af",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/hcrl.before.md": "3ce44f0fc07b7e7198bac7faa593d8307aadf3f74e01f73320f210ec2a412bd6",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/solution-architect-disposition/source-pins.json": "2f7a38bbda2d48122461fdb675ae294df12a1c8ddf38313b08f1443ff7274c22",
+    "enterprise-architecture/design/evidence/1.1.27/001/before/source-state.json": "e8514f2dfc3df51de12121ce16c83eabf5831801a0337c80d83df540e44708be",
+    "enterprise-architecture/design/review/1.1.27/hcrl-1.1.27-001.pending.md": "217878bbbaa4efd2494b6ed6b31eb1b84083ae06bf71f693315490b4843c631a"
+  },
+  "verificationRecordSelfHash": "Excluded to avoid self-reference; its actual staged/committed bytes are verified mechanically",
+  "tagRefsBefore": "",
+  "remotePreflight": {
+    "command": "timeout --signal=TERM --kill-after=5s 45s git ls-remote --exit-code origin refs/heads/Mneme-and-Mnemosyne-Build",
+    "observedHead": "dc30cfbcc7ad4113b29e3710904453c023df4dc1",
+    "outcome": "PASS"
+  },
+  "architectureTests": {
+    "outcome": "PASS",
+    "tests": 90,
+    "source": "architecture-tests.json"
+  },
+  "temporalCheck": {
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/architecture_review_evidence.py",
+      "--version",
+      "1.1.27",
+      "--iteration",
+      "001"
+    ],
+    "exitCode": 2,
+    "result": {
+      "outcome": "UNRESOLVED",
+      "version": "1.1.27",
+      "iteration": "001",
+      "records": [
+        "evidence/1.1.27/001/after/ai-agent-reports/20261116T031417Z-calliope-oo-backlog-preparation.md",
+        "evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md"
+      ],
+      "errors": [],
+      "unresolved": [
+        "/home/hunterm/Development/Code/harmonia/enterprise-architecture/design/evidence/1.1.27/001/before/ai-agent-tasks/unresolved-calliope-oo-backlog-preparation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+      ],
+      "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+    },
+    "treatment": "SA DR-4 qualification and explicit cancellation preserve UNRESOLVED original times/prefixes; no rule weakened."
+  },
+  "repositoryTransition": "Current user expressly authorises this bounded commit/push after checks pass, including the two verified instruction additions; no force push, release tag or version change. Actual final Git state is verified after commit/push without a recursive record commit.",
+  "initialCheck": {
+    "outcome": "FAIL",
+    "errors": [
+      {
+        "whitespace": "AGENTS.md",
+        "lines": [
+          570,
+          571,
+          572,
+          587
+        ]
+      }
+    ]
+  },
+  "whitespaceCorrection": "Initial full-file scan flagged four existing trailing-whitespace lines in AGENTS.md. They are byte-identical to HEAD in its preserved prefix and outside the appended change. The bounded git diff --check passes with no output. No instruction-file formatting was altered.",
+  "boundedDiffWhitespace": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "outcome": "PASS",
+    "exitCode": 0,
+    "diagnostics": ""
+  },
+  "stagedWhitespace": {
+    "rawCommand": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "rawExitCode": 2,
+    "rawDiagnostics": "enterprise-architecture/design/evidence/1.1.27/001/before/junie-phase1-review.source.md:5: trailing whitespace.\n+In accordance with the Harmonia Implementation Guide (`docs/implementation/Harmonia-Implementation-Guide-Philosophy.md`), repository `AGENTS.md`, and the accepted Architecture Continuum (Baseline 1.1.25/1.1.24), this review presents an evidence-based assessment of the `Calliope` production Java codebase. \n",
+    "boundedMaintainedContentCommand": [
+      "git",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      ".",
+      ":(exclude)enterprise-architecture/design/evidence/1.1.27/001/before/junie-phase1-review.source.md"
+    ],
+    "boundedOutcome": "PASS",
+    "unchangedFrozenInput": {
+      "path": "enterprise-architecture/design/evidence/1.1.27/001/before/junie-phase1-review.source.md",
+      "sha256": "da2b7fed8fc3dba5f12dea7ba07677991ac9a34de875619fb67ae0dc2efda712",
+      "standing": "Unaltered recovered input; trailing space already present in the original captured source. Retain bytes under preservation instructions, not normalise history."
+    },
+    "meaning": "Only diagnostic is preserved input formatting; staged maintained content has no whitespace defects."
+  }
+}

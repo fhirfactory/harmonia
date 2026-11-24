@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "command": [
+    "python3",
+    "-B",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/verify.py",
+    "serialization"
+  ],
+  "timeout_seconds": 60.0,
+  "elapsed_seconds": 4.477,
+  "exit_code": 0,
+  "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/serialization.log",
+  "log_sha256": "cfa8b926506c13b4246a2b2b87fdcebff4c876b36cef6c112728786837bc022c"
+}

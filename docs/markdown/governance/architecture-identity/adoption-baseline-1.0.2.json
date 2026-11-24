@@ -1,0 +1,28 @@
+{
+  "architecture_release": {
+    "version": "1.0.2",
+    "previous_version": "1.0.1"
+  },
+  "repository_commit": "a3bc5aa7f38beacf66bb161f7164273cad91b8c4",
+  "previous_registry": {
+    "schema_version": 1,
+    "semantic_namespace": "07cc7d21-18f0-5bd4-82ff-8c9143d41d2a",
+    "records": [],
+    "events": []
+  },
+  "files_sha256": {
+    "docs/archimate/capability-architecture/Harmonia-Capability-Architecture.xml": "91af69c7d3f02ffadbe3b4f027421297b6f99e550b22582b72f71a4b3a56e43a",
+    "docs/archimate/capability-architecture/baseline/Harmonia-Capability-Architecture-v2.1a.xml": "dbcf7b41ad7909fe27c9babaefa6e7c07810f8518558c672732f394f910efa80",
+    "docs/archimate/capability-architecture/baseline/semantic-lock.json": "c7224c04bd8b8f136ffbbfac79e13fca8df109677c33bba442d0c260788d824a",
+    "docs/archimate/capability-architecture/documentation-map.json": "8c51fe5492460f993fb8f06c0d5c7775eba696a0d0a1b2b3c5f38c49a7304cf3",
+    "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+    "docs/markdown/03-business-architecture/reference-model/business-architecture.json": "ed876954fb05cba520e160c5dfe3a0b22e45b88d08453ab937ee48a2e6d64dcd",
+    "docs/markdown/04-information-architecture/traceability/domain03-traceability.md": "221fa30288570fa58c554c40236a91be92d07aaf1348ecd123e3e0bbe649af08",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/identity-lock.json": "519f1e748aac1223e8120cbfb80ece439188d88596081e736cd6d716596526a4",
+    "docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/reviewed-identity-history.json": "bf4e1e6b49f2fe02deabe5a59d4dadd639fb46c06be28870bd99535715596635"
+  },
+  "semantic_content_sha256": "e6633b73fadb42573731f3c1cef65551cb3dfef6ddacac9f4e2d0e75f5cc7fcd",
+  "visual_content_sha256": "f2f67c5b4e7cc80e555b50a43e06d32ba24294cdb806bff69a7b544c92ea4507",
+  "rad_assertions_sha256": "7653404bd59f01c22ef8f56b97622a50e7c611f89c72fe191eb59cec23f47811",
+  "identity_collisions_sha256": "76b2b9d63e4ebc11e43afbe9d13012916090138632bc68707bffc423e5089bc5"
+}

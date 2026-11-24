@@ -1,0 +1,39 @@
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+!SESSION 2026-10-17 22:18:08.112 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en
+Framework arguments:  -cleanConfig -eclipse.keyring @user.home/.archi/secure_storage -application com.archimatetool.commandline.app --xmlexchange.import /home/mhunter/Development/code/projects/github/harmonia/docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-Baseline.xml --saveModel /tmp/harmonia-106-archi-510/imported.archimate
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -cleanConfig -eclipse.keyring @user.home/.archi/secure_storage -consoleLog -application com.archimatetool.commandline.app -data /tmp/harmonia-106-archi-510/workspace --xmlexchange.import /home/mhunter/Development/code/projects/github/harmonia/docs/archimate/capability-architecture/synchronised-baseline/Harmonia-Architecture-Baseline.xml --saveModel /tmp/harmonia-106-archi-510/imported.archimate
+
+!ENTRY org.eclipse.osgi 4 0 2026-10-17 22:18:10.037
+!MESSAGE Application error
+!STACK 1
+org.eclipse.swt.SWTError: No more handles [gtk_init_check() failed]
+	at org.eclipse.swt.SWT.error(SWT.java:4964)
+	at org.eclipse.swt.widgets.Display.createDisplay(Display.java:1205)
+	at org.eclipse.swt.widgets.Display.create(Display.java:1129)
+	at org.eclipse.swt.graphics.Device.<init>(Device.java:188)
+	at org.eclipse.swt.widgets.Display.<init>(Display.java:635)
+	at org.eclipse.swt.widgets.Display.<init>(Display.java:626)
+	at org.eclipse.swt.widgets.Display.getDefault(Display.java:2422)
+	at com.archimatetool.commandline.CentralScrutinizer.runProviders(CentralScrutinizer.java:153)
+	at com.archimatetool.commandline.CentralScrutinizer.start(CentralScrutinizer.java:70)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:615)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:563)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1415)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1387)
+Archi: Cannot open display: 
+Archi:
+An error has occurred. See the log file
+/tmp/harmonia-106-archi-510/workspace/.metadata/.log.

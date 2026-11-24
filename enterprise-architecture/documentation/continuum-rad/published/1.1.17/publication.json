@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "release": {
+    "version": "1.1.17",
+    "previous_version": "1.1.16"
+  },
+  "canonicalSources": 1842,
+  "narrativeDescriptions": 1514,
+  "historicalReferencesInModelHierarchy": 328,
+  "architectureHeadings": 2212,
+  "architectureHeadingOrigins": {
+    "canonical Continuum navigation": 2212
+  },
+  "aiAssistance": "Retained source-cited reader notes and deterministic presentation. Canonical descriptions are rendered without semantic rewriting. Diagrams select existing native assertions with direction/state/standing.",
+  "sourceInputs": [
+    "canonical Continuum Markdown",
+    "enterprise-architecture/continuum/navigation.json",
+    "enterprise-architecture/design/archimate/projection-template.xml",
+    "enterprise-architecture/documentation/continuum-rad/reader-notes.json",
+    "enterprise-architecture/documentation/continuum-rad/templates/publication.tex",
+    "architecture-release.json"
+  ],
+  "allocatedIdentities": 0,
+  "legacyRadIngested": false,
+  "sha256": {
+    "README.md": "5a307d95de4798f3b44e38280ef503e00b3b0b0153217b688950d64926c7da87",
+    "continuum-rad.tex": "f1df29011229eaa010caaa3b6add2656d30a8c579703ac0783ed3b66f5e06df8",
+    "parts/application.tex": "695880e714a77cec15ca4f51a07a19623c31c66a4a84372d3bd20e51079529c2",
+    "parts/architecture-governance.tex": "bb8b35a7b23d47c22c5d0ef8eaf7ac926f2f4f2ddc5c082cb7eaf4a350e13821",
+    "parts/business.tex": "667a6cec51c85355f810e46feb09bfebd675009852f5d5dc1ed596afa7fe24f7",
+    "parts/cross-cutting-references.tex": "83cc8432f567e47d07a4a6faff7997d369259bb362cff9fdb4aa9337298f31d7",
+    "parts/implementation-and-migration.tex": "cc088fb5e4a5189f8f669d5c30c830cc75bc53068673bde335306341efdd3353",
+    "parts/motivation.tex": "8e4ceaf8d278a101e1d1d2b16a09ab5fadbc2d6274521fc4cc85ddb6fb682f8f",
+    "parts/strategy.tex": "cf203067efe32941e79925d000471d50a98247d3c569af1cb48e36dea7a61bce",
+    "parts/technology.tex": "6f1e2c08086d8457df080a89d5b5dd6de1ca46adea91584fc9d9a864ed6a5760",
+    "structure.json": "3ca117640c046cf3dc90b094ffe4ec43b8d565272957fa007f720d033f51adbb"
+  }
+}

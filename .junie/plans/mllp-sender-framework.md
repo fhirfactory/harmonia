@@ -313,4 +313,4 @@ The complete MLLP sender framework is verified through end-to-end integration te
 - Write end-to-end integration tests (`OutboundMllpIntegrationTest`, `PetasosToMllpOutboundIntegrationTest`, `MultiInstanceQueueIsolationTest`) covering full dispatch -> remote MLLP -> ACK receive -> cache update flow, verifying independent queue isolation across multiple target endpoints.
 - Add outbound dispatch commands to `pylai-mllp-cli` to enable operational testing of remote MLLP endpoints via CLI.
 - Create `Dockerfile` for `pylai-mllp-out` with WildFly 31+ bootable JAR or WAR deployment configuration.
-- Update root `pom.xml`, `docker-compose.yml` (demonstrating multiple egress instances such as `pylai-mllp-out-his` and `pylai-mllp-out-lis`), and architectural documentation in `docs/latex/` to include the new outbound gateway component.
+- Update root `pom.xml`, `docker-compose.yml` (demonstrating multiple egress instances such as `pylai-mllp-out-his` and `pylai-mllp-out-lis`), and architectural documentation in `../../docs/latex-legacy` to include the new outbound gateway component.

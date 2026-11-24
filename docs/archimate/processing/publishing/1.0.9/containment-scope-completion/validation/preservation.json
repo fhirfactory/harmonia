@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "command": [
+    "python3",
+    "-B",
+    "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/verify.py",
+    "preservation"
+  ],
+  "timeout_seconds": 120.0,
+  "elapsed_seconds": 25.131,
+  "exit_code": 0,
+  "log": "docs/archimate/processing/publishing/1.0.9/containment-scope-completion/validation/preservation.log",
+  "log_sha256": "398e5c9777a3ea9e9c609f0862490227f9e70654d0fc0e67993758b1ae3c97bb"
+}

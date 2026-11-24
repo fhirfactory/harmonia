@@ -1,0 +1,21 @@
+{
+  "outcome": "PASS",
+  "repeated_build": "Exact identical catalogue, workbook, registers, authoring and manifest bytes across repeated build",
+  "compared_files": 13,
+  "manifest_identical": true,
+  "compared_sha256": {
+    "Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md": "83aa0a696e057a4d1cb63177269d6c613554fea86189b9c5a8578472f09272a4",
+    "Harmonia_1.1.20_Pass3_014_FR_Adjudication_Workbook.xlsx": "d99dd8d506badfcc5c8d88be28481a8c47706e0d9a43a7e060f1368edaaca8f7",
+    "feature-reconciliation.json": "5651c07dada52be14d56c34561a27bb4d6369ed9207c3c47c41cd002dd12833a",
+    "capability-reconciliation.json": "23963796bc65bd84ad2e36377b1d22553a73981df39449e2c7c1511ed5aea43f",
+    "criterion-reconciliation.json": "935b54aaa3bd0cafa98bd6865775d78055d2e10094549a8a7116c5f1863d5d78",
+    "measurement-criteria.csv": "850e23742bdafbb4fcbb926ee075de51cf743724cb3779dcb71ed4ce52cffa0f",
+    "definition-changes.json": "2473147fd91fbb8275028c2cd4df9653bbc0739992982a9bfcfd9d342576083c",
+    "fr-incorporation.json": "0c1c3565a6e184e94b90bf1140f68b4a5c99e3aa528698dceb28cd4f13543601",
+    "fr-retirement-trace.json": "a4bf60039c2aa487895c840b40a565ff51bc04069251ce0593fc6929d2589b1a",
+    "authoring/changes.json": "70ec2f1481f27ec51430ff9fc80e2423df335be987afc049c1767a3f398de7df",
+    "authoring/build_result.py": "a747d43d1e9b6fcba99598f7a825f505d27506e533653684d481184469c0330d",
+    "authoring/verify_result.py": "0f44e8eb4dc68ab7d3aeabf49c136fcd2f3290e7271fd8f4c92d087ab4a91001",
+    "authoring/README.md": "a62c20f0fd154cb31490cbdf266acc55f3a17840e6c53beecd27e877ec8f2526"
+  }
+}

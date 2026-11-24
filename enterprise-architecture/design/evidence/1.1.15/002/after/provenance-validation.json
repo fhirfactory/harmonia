@@ -1,0 +1,15 @@
+{
+  "outcome": "UNRESOLVED",
+  "version": "1.1.15",
+  "iteration": "002",
+  "records": [
+    "evidence/1.1.15/002/after/ai-agent-reports/20261025T204108Z-round-trip-remediation.md",
+    "evidence/1.1.15/002/before/ai-agent-tasks/unresolved-round-trip-remediation.md"
+  ],
+  "errors": [],
+  "unresolved": [
+    "enterprise-architecture/design/evidence/1.1.15/002/before/ai-agent-tasks/unresolved-round-trip-remediation.md: original Task-Issued-At and filename prefix require Solution Architect treatment"
+  ],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim",
+  "localLinkErrors": []
+}

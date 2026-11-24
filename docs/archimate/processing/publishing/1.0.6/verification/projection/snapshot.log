@@ -1,0 +1,31 @@
+Command: timeout --signal=TERM --kill-after=5s 60s python3 /tmp/harmonia-106-projection-snapshot-check.py
+PASS: read-only frozen snapshot capability structure, identities, aliases, reviewed ancestry and source navigation contracts
+{
+  "numbered_architectural_entries": 946,
+  "numbered_catalogue_fields": 4101,
+  "current_architectural_entries": 845,
+  "historical_or_pending_records": 101,
+  "catalogue_fields_by_heading_level": {
+    "section": 187,
+    "subsection": 1464,
+    "subsubsection": 1625,
+    "paragraph": 825
+  }
+}
+
+Exit status: 0
+
+Read-only verification procedure used:
+
+import sys,json
+from pathlib import Path
+p=Path('docs/latex-rad/Harmonia-EA-Capability-Map/v0.2-draft/tools');sys.path.insert(0,str(p.resolve()))
+import check,navigation
+model=check.read('model.json');elements,aliases,baseline=check.validate_model(model)
+check.validate_review(model,elements)
+master=p.parent/'Harmonia-EA-Capability-Map.tex'
+if not master.exists():
+ print('Master candidates:',[x.name for x in p.parent.glob('*.tex')]);raise ValueError('Use actual pinned snapshot master')
+result=navigation.validate_source(elements,check.included_tex(master))
+print('PASS: read-only frozen snapshot capability structure, identities, aliases, reviewed ancestry and source navigation contracts')
+print(json.dumps(result,indent=2))

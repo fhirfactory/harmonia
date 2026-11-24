@@ -1,0 +1,25 @@
+{
+  "outcome": "PASS",
+  "isolatedBaselineRelease": "1.1.14",
+  "liveRelease": {
+    "version": "1.1.15",
+    "previous_version": "1.1.14"
+  },
+  "comparisonSeconds": 11.554961,
+  "fixtureAndComparisonSeconds": 11.885649,
+  "byteCount": 68799,
+  "matchesRetainedBenchmarkExceptMachineryStandingAndElapsed": true,
+  "added": {
+    "elements": 12,
+    "relationships": 9,
+    "views": 7
+  },
+  "viewMoves": 17,
+  "inputHashes": {
+    "baseline": "ee1d7ef8d5491a4a656d8c2f07c38999b6276a130064d797a08f19501aa47161",
+    "submitted": "a31ed511c07e0a54c503383f6e52dfdad1e5905e642c05e7dc14fb7649af2eb9"
+  },
+  "exceptionalConditions": [],
+  "applied001Crs": false,
+  "modifiedOrDuplicated001Files": false
+}

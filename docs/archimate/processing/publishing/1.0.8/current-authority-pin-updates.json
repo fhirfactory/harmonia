@@ -1,0 +1,20 @@
+[
+  {
+    "path": "docs/markdown/governance/rad-archimate-mapping-catalogue.md",
+    "before": "eac88ed8eaec0a589659f509e6124d12b6c5c270e28d12f860f830dc5555d467",
+    "after": "779a9f069961c5f46d644603f243f895519ef71e84b4234539b1dee7719b4ad4",
+    "reason": "Only current operational navigation/documentation links changed; recorded historical input hashes and source-history pins remain unchanged."
+  },
+  {
+    "path": "docs/markdown/governance/archi-navigation-and-view-convention.md",
+    "before": "5e940ee1b601cd62653a2790d7f5ecc99fa4ae61a01acec4136c4b6b19206c81",
+    "after": "e4e2d832a7416a2dc3481dece5e599785160be9bc0c739207688a8970748a558",
+    "reason": "Only current operational navigation/documentation links changed; recorded historical input hashes and source-history pins remain unchanged."
+  },
+  {
+    "path": "docs/markdown/governance/baseline/README.md",
+    "before": "19ab657b5cf2f136807c6aa6e3ca1058778994d6ed5a825d56dafe621c2864d7",
+    "after": "c2f62542ca3b0cdad8bb2991343dfe744e6f6ee083ef72d2b47864aafda203b6",
+    "reason": "Only current operational navigation/documentation links changed; recorded historical input hashes and source-history pins remain unchanged."
+  }
+]

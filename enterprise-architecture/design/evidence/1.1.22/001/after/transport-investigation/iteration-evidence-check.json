@@ -1,0 +1,14 @@
+{
+  "outcome": "PASS",
+  "version": "1.1.22",
+  "iteration": "001",
+  "records": [
+    "evidence/1.1.22/001/after/ai-agent-reports/20261111T031941Z-information-unit-framework-incorporation.md",
+    "evidence/1.1.22/001/after/ai-agent-reports/20261111T034947Z-archi-transport-failure-investigation.md",
+    "evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md",
+    "evidence/1.1.22/001/before/ai-agent-tasks/20261111T033823Z-archi-transport-failure-investigation.md"
+  ],
+  "errors": [],
+  "unresolved": [],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}

@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "task": "Human-reviewed BEC reconciliation; publication is intentionally changed.",
+  "original_verification_evidence": "pre-review-publication-evidence.json",
+  "baseline_elements_retained": 719,
+  "pre_review_elements_retained": 862,
+  "pre_review_labels_retained": 2681,
+  "reference_ids_and_labels_unchanged": true,
+  "canonical_definitions_and_baseline_statuses_preserved": true,
+  "baseline_source_files_byte_unchanged": true,
+  "structural_id_changes": 416,
+  "direct_aliases": 432,
+  "bc_ec_full_record_preservation": {
+    "elements": 228,
+    "exact_element_records_unchanged": true,
+    "sha256": "58d8f3ad9edc95e739962bd2ee8ca79ed4f7ec209838f7fbf9c487d015cdd2fd"
+  },
+  "current_architecture_entries": 845,
+  "historical_and_pending_records": 101,
+  "pdf_outline_entries": 1007,
+  "pdf_pages": 1531,
+  "pdf_sha256": "9cadf2c7091e2330dd88a72c4ae54508cd8c80f19f1fe26b25a4661209a27245"
+}

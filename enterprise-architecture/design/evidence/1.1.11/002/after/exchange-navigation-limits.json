@@ -1,0 +1,18 @@
+{
+  "sourceNavigationNodes": 1968,
+  "sourceContextualOccurrences": 93,
+  "returnedOrganizationItems": 6045,
+  "exactNumberedSourceLabelsPresentInReturn": 543,
+  "exactContextualLabelsPresentInReturn": 89,
+  "derivedElementNavigationPropertiesPreserved": 1602,
+  "meaning": "Archi restructures native folders and organization references. The current Exchange projection encodes the complete canonical tree; all native elements additionally carry explicit navigation-reference metadata, which the actual transport preserves. Contexts create no semantic edge or additional canonical identity. The returned model does not replace the canonical navigation or presentation template.",
+  "capabilityContextLabelsInReturn": {
+    "represented": 89,
+    "preserved": 89
+  },
+  "stakeholderContextLabelsInReturn": {
+    "represented": 4,
+    "preserved": 0
+  },
+  "limits": "All 89 Capability contextual folder labels survive, while the four leaf Stakeholder contextual items do not survive as organization labels. All four remain in actual Association relationships and transported navigation properties on the associated Motivation elements and Stakeholders. Archi retains 543 exact numbered labels overall; native element properties retain all 1,602 canonical locations and navigation-reference payloads. The return is not a faithful replacement navigation source."
+}

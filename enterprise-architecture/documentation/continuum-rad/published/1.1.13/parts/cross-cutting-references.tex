@@ -1,0 +1,2488 @@
+\part*{Reference navigation — R Cross-Cutting References}
+\label{navigation:R}
+\addcontentsline{toc}{part}{Reference navigation — R Cross-Cutting References}
+Navigation and discovery only, outside the architectural decomposition of Parts I–VI. Canonical relationships establish associations; index placement does not.\par
+\chapter*{R.1 Stakeholder Index — Reference navigation}
+\phantomsection
+\label{navigation:R.1}
+\addcontentsline{toc}{chapter}{R.1 Stakeholder Index — Reference navigation}
+
+All canonical Stakeholders, including those without represented Motivation associations. This index is cross-cutting reference material, not a Motivation architectural subject.\par
+\section*{R.1.1 Care Team — Stakeholder index entry [historical\_reference]}
+\phantomsection
+\label{navigation:R.1.1}
+\addcontentsline{toc}{section}{R.1.1 Care Team — Stakeholder index entry [historical\_reference]}
+
+\label{element:6f5a203d81e24a81b384a80781987daa}
+\index{Care Team (R.1.1)}
+{\small Stakeholder · Historical — current applicability unresolved · historical\_reference}\par
+{\small Existing associated Motivation material: \hyperref[element:babb9f5d63d8435890c1db3579ec78d9]{Clinical Interoperability} (I.1.3); canonical associations: id-457a3dd70bb358ff8989bc3c9c725c70.}\par
+\href{../../../../continuum/motivation/stakeholder/6f5a203d81e24a81b384a80781987daa.md}{Historical canonical definition and provenance}.\par
+\section*{R.1.2 Clinicians \& Care Teams — Stakeholder index entry}
+\phantomsection
+\label{navigation:R.1.2}
+\addcontentsline{toc}{section}{R.1.2 Clinicians \& Care Teams — Stakeholder index entry}
+
+\label{element:37264af5adb64b37b7537e3d48b6747b}
+\index{Clinicians \& Care Teams (R.1.2)}
+{\small Stakeholder · Agreed · current}\par
+No canonical Motivation association is represented. Index placement asserts none.\par
+
+\par\medskip\textbf{Profile \& Role}\par
+
+
+Clinicians and Care Teams represent the front-line healthcare workforce: medical practitioners, nurses, clinical specialists, allied health professionals, pharmacists, and multi-disciplinary care coordinators operating at the direct point of care.
+
+
+
+\par\medskip\textbf{Core Responsibilities}\par
+
+
+\begin{itemize}
+
+
+\item Diagnosing clinical conditions, formulating treatment plans, and administering patient care.
+
+\item Ordering diagnostic investigations, prescribing medications, and documenting clinical findings.
+
+\item Reviewing historical health records, previous test results, and discharge summaries to inform clinical decision-making.
+
+\end{itemize}
+
+
+\par\medskip\textbf{Principal Architectural Concerns}\par
+
+
+\begin{itemize}
+
+
+\item \textbf{Timely Information Availability}: Point-of-care access to complete, up-to-date clinical information without lag or missing historical encounters.
+
+\item \textbf{Semantic Fidelity \& Clinical Context}: Clinical observations, units of measure, reference ranges, and diagnostic notes must be preserved without lossy truncation, confusion of normal/abnormal flags, or distortion of clinical nuance.
+
+\item \textbf{Elimination of Data Fragmentation}: Synthesized, longitudinal patient views that reduce duplicate diagnostic testing and eliminate dangerous blind spots.
+
+\item \textbf{Explicit Information Authority}: Clear visual and semantic distinction between authoritative hospital-validated records and preliminary, informational, or anecdotal patient-reported data.
+
+\end{itemize}
+
+{\footnotesize \href{../../../../continuum/motivation/stakeholder/37264af5adb64b37b7537e3d48b6747b.md}{Canonical record: 37264af5adb64b37b7537e3d48b6747b}; full qualifications and provenance.}\par
+\section*{R.1.3 Health Network — Stakeholder index entry [historical\_reference]}
+\phantomsection
+\label{navigation:R.1.3}
+\addcontentsline{toc}{section}{R.1.3 Health Network — Stakeholder index entry [historical\_reference]}
+
+\label{element:55e57c01dfe146a2a225228b31196862}
+\index{Health Network (R.1.3)}
+{\small Stakeholder · Historical — current applicability unresolved · historical\_reference}\par
+{\small Existing associated Motivation material: \hyperref[element:babb9f5d63d8435890c1db3579ec78d9]{Clinical Interoperability} (I.1.3); canonical associations: id-d5fa8c64975852f88132df579c806836.}\par
+\href{../../../../continuum/motivation/stakeholder/55e57c01dfe146a2a225228b31196862.md}{Historical canonical definition and provenance}.\par
+\section*{R.1.4 Healthcare Delivery Organizations — Stakeholder index entry}
+\phantomsection
+\label{navigation:R.1.4}
+\addcontentsline{toc}{section}{R.1.4 Healthcare Delivery Organizations — Stakeholder index entry}
+
+\label{element:31a8e1054c02483a9d5e314a91a91364}
+\index{Healthcare Delivery Organizations (R.1.4)}
+{\small Stakeholder · Agreed · current}\par
+No canonical Motivation association is represented. Index placement asserts none.\par
+
+\par\medskip\textbf{Profile \& Role}\par
+
+
+Healthcare Delivery Organizations (HDOs) encompass the institutional entities providing clinical care across the region: acute public hospitals, private hospital networks, primary health clinics, specialist outpatient centers, and diagnostic pathology and medical imaging facilities.
+
+
+
+\par\medskip\textbf{Core Responsibilities}\par
+
+
+\begin{itemize}
+
+
+\item Providing direct patient care across emergency, inpatient, ambulatory, and diagnostic settings.
+
+\item Generating, maintaining, and ingesting operational clinical transactions (admissions, transfers, discharges, orders, results, clinical notes) through local hospital information systems (HIS), patient administration systems (PAS), and laboratory information systems (LIS).
+
+\item Maintaining local boundary integration gateways and adhering to regional messaging protocols.
+
+\end{itemize}
+
+
+\par\medskip\textbf{Principal Architectural Concerns}\par
+
+
+\begin{itemize}
+
+
+\item \textbf{Reliable Ingress \& Egress Integration}: Guaranteeing that clinical messages dispatched to Harmonia are reliably accepted and preserved without silent loss or unhandled dropouts.
+
+\item \textbf{Low Latency \& High Throughput}: Fast turnaround times for critical pathology results, radiology reports, and patient admission feeds without queuing delays.
+
+\item \textbf{Standards-Compliant Boundary Interoperability}: Seamless support for legacy messaging standards (HL7 v2.x via MLLP) alongside modern FHIR RESTful interactions, avoiding disruptive upgrades to legacy hospital software.
+
+\item \textbf{Clear Demarcation of Responsibility}: Explicit integration boundaries defining where the delivery organization's operational responsibility ends and Harmonia's management begins.
+
+\end{itemize}
+
+{\footnotesize \href{../../../../continuum/motivation/stakeholder/31a8e1054c02483a9d5e314a91a91364.md}{Canonical record: 31a8e1054c02483a9d5e314a91a91364}; full qualifications and provenance.}\par
+\section*{R.1.5 Healthcare Directory Stewards \& Registrars — Stakeholder index entry}
+\phantomsection
+\label{navigation:R.1.5}
+\addcontentsline{toc}{section}{R.1.5 Healthcare Directory Stewards \& Registrars — Stakeholder index entry}
+
+\label{element:1c8e2c898a28436693cf2ae69776e125}
+\index{Healthcare Directory Stewards \& Registrars (R.1.5)}
+{\small Stakeholder · Agreed · current}\par
+No canonical Motivation association is represented. Index placement asserts none.\par
+
+\par\medskip\textbf{Profile \& Role}\par
+
+
+Healthcare Directory Stewards and Registrars are the specialized operational custodians responsible for maintaining authoritative regional registries of healthcare providers, individual clinicians, clinical organizations, and electronic service delivery endpoints.
+
+
+
+\par\medskip\textbf{Core Responsibilities}\par
+
+
+\begin{itemize}
+
+
+\item Curating authoritative master directories of healthcare practitioners, qualifications, active credentials, and organizational affiliations.
+
+\item Verifying and maintaining electronic service delivery endpoints (secure messaging addresses, FHIR endpoints, MLLP port mappings).
+
+\item Managing provider registry updates, deprecations, practitioner relocations, and retirement events.
+
+\end{itemize}
+
+
+\par\medskip\textbf{Principal Architectural Concerns}\par
+
+
+\begin{itemize}
+
+
+\item \textbf{Secure Endpoint Governance}: Ensuring clinical messages and notifications are routed exclusively to authenticated, currently authorized practitioner endpoints.
+
+\item \textbf{Accurate Practitioner Role Representation}: Distinguishing between an individual clinician, their legal practitioner role, their accredited specialty, and their specific institutional practice location.
+
+\item \textbf{Reliable Directory Change Propagation}: Ensuring directory updates (e.g., changes in clinic address or revocation of practitioner credentials) propagate through integration workflows rapidly and deterministically.
+
+\end{itemize}
+
+{\footnotesize \href{../../../../continuum/motivation/stakeholder/1c8e2c898a28436693cf2ae69776e125.md}{Canonical record: 1c8e2c898a28436693cf2ae69776e125}; full qualifications and provenance.}\par
+\section*{R.1.6 Healthcare Provider — Stakeholder index entry [historical\_reference]}
+\phantomsection
+\label{navigation:R.1.6}
+\addcontentsline{toc}{section}{R.1.6 Healthcare Provider — Stakeholder index entry [historical\_reference]}
+
+\label{element:2018200a493d458096b72031cc2ae779}
+\index{Healthcare Provider (R.1.6)}
+{\small Stakeholder · Historical — current applicability unresolved · historical\_reference}\par
+{\small Existing associated Motivation material: \hyperref[element:782f53e2190f4a8a8d0dc0a33cd6fbb3]{24/7 Availability} (I.1.1); canonical associations: id-78a34270ced656e7901d367bfd405999.}\par
+\href{../../../../continuum/motivation/stakeholder/2018200a493d458096b72031cc2ae779.md}{Historical canonical definition and provenance}.\par
+\section*{R.1.7 Patient — Stakeholder index entry [historical\_reference]}
+\phantomsection
+\label{navigation:R.1.7}
+\addcontentsline{toc}{section}{R.1.7 Patient — Stakeholder index entry [historical\_reference]}
+
+\label{element:5f6d333e94634420b8a8bbf8b9cb6e2a}
+\index{Patient (R.1.7)}
+{\small Stakeholder · Historical — current applicability unresolved · historical\_reference}\par
+{\small Existing associated Motivation material: \hyperref[element:499313a0a5d84520a3061120ae9b6dac]{Audit \& PHI Privacy} (I.1.2); canonical associations: id-daee593684c55e55bf1ce04c223cf585.}\par
+\href{../../../../continuum/motivation/stakeholder/5f6d333e94634420b8a8bbf8b9cb6e2a.md}{Historical canonical definition and provenance}.\par
+\section*{R.1.8 Patients \& Care Recipients — Stakeholder index entry}
+\phantomsection
+\label{navigation:R.1.8}
+\addcontentsline{toc}{section}{R.1.8 Patients \& Care Recipients — Stakeholder index entry}
+
+\label{element:ea5a315450ce4cfb87417263560c2b6d}
+\index{Patients \& Care Recipients (R.1.8)}
+{\small Stakeholder · Agreed · current}\par
+No canonical Motivation association is represented. Index placement asserts none.\par
+
+\par\medskip\textbf{Profile \& Role}\par
+
+
+Patients and Care Recipients are the individual citizens, families, and communities receiving healthcare services across the regional network. They are the ultimate beneficiaries and primary subjects of all health data managed by Harmonia.
+
+
+
+\par\medskip\textbf{Core Responsibilities}\par
+
+
+\begin{itemize}
+
+
+\item Engaging with clinicians and healthcare providers throughout episodes of care.
+
+\item Providing accurate demographic, personal, and medical history.
+
+\item Exercising personal privacy choices and statutory rights regarding information sharing where applicable.
+
+\end{itemize}
+
+
+\par\medskip\textbf{Principal Architectural Concerns}\par
+
+
+\begin{itemize}
+
+
+\item \textbf{Patient Safety \& Identity Protection}: Guaranteeing that personal clinical events are never cross-associated with another individual, preventing severe medication errors, misdiagnoses, and incorrect surgical interventions.
+
+\item \textbf{Confidentiality \& Privacy}: Ensuring sensitive health records (mental health, sexual health, genetic testing) are strictly protected against unauthorized access, eavesdropping, and inadvertent leakage into operational log streams.
+
+\item \textbf{Continuity of Care}: Seamless information transfer between disparate healthcare facilities so that clinical history follows the patient across the continuum of care.
+
+\end{itemize}
+
+{\footnotesize \href{../../../../continuum/motivation/stakeholder/ea5a315450ce4cfb87417263560c2b6d.md}{Canonical record: ea5a315450ce4cfb87417263560c2b6d}; full qualifications and provenance.}\par
+\section*{R.1.9 Platform Operations \& Integration Engineers — Stakeholder index entry}
+\phantomsection
+\label{navigation:R.1.9}
+\addcontentsline{toc}{section}{R.1.9 Platform Operations \& Integration Engineers — Stakeholder index entry}
+
+\label{element:c20aa17ce4aa4a58be5eb3cff2ecdd1d}
+\index{Platform Operations \& Integration Engineers (R.1.9)}
+{\small Stakeholder · Agreed · current}\par
+No canonical Motivation association is represented. Index placement asserts none.\par
+
+\par\medskip\textbf{Profile \& Role}\par
+
+
+Platform Operations and Integration Engineers are the systems reliability engineers (SREs), DevOps professionals, integration middleware developers, and technical support teams tasked with running, monitoring, and maintaining the Harmonia platform.
+
+
+
+\par\medskip\textbf{Core Responsibilities}\par
+
+
+\begin{itemize}
+
+
+\item Deploying, scaling, and configuring Harmonia runtime services across regional data centers and cloud infrastructure.
+
+\item Monitoring system health, message queues, throughput, network latency, and integration error rates.
+
+\item Diagnosing integration failures, investigating communication anomalies, and conducting incident retrospectives.
+
+\end{itemize}
+
+
+\par\medskip\textbf{Principal Architectural Concerns}\par
+
+
+\begin{itemize}
+
+
+\item \textbf{Deep Diagnosability Without PHI Leakage}: Rich operational metrics, traces, and diagnostic logs that provide full visibility into message processing without emitting Protected Health Information (PHI) into non-clinical tooling.
+
+\item \textbf{Zero Unmonitored Message Loss}: Deterministic verification regarding the progression state of incoming events, ensuring that failed downstream deliveries are immediately flagged rather than lost in silent dead-letter sinks.
+
+\item \textbf{Observable Multi-Stage Activity State}: Transparent visibility into complex, distributed workflows (such as fan-out distributions) where tasks progress across multiple hops and destination endpoints.
+
+\item \textbf{Deterministic Failure Semantics}: Clean separation of active operational coordination from authoritative durable state, preventing data corruption during unexpected node crashes or network partitions.
+
+\end{itemize}
+
+{\footnotesize \href{../../../../continuum/motivation/stakeholder/c20aa17ce4aa4a58be5eb3cff2ecdd1d.md}{Canonical record: c20aa17ce4aa4a58be5eb3cff2ecdd1d}; full qualifications and provenance.}\par
+\section*{R.1.10 Regional Health Network Operator — Stakeholder index entry}
+\phantomsection
+\label{navigation:R.1.10}
+\addcontentsline{toc}{section}{R.1.10 Regional Health Network Operator — Stakeholder index entry}
+
+\label{element:e76216c494fa4500bb80eda6f83513c1}
+\index{Regional Health Network Operator (R.1.10)}
+{\small Stakeholder · Agreed · current}\par
+No canonical Motivation association is represented. Index placement asserts none.\par
+
+\par\medskip\textbf{Profile \& Role}\par
+
+
+The Regional Health Network Operator is the statutory or corporate governing body responsible for orchestrating, funding, and overseeing healthcare delivery across a defined regional jurisdiction (e.g., a state health department, local hospital network, or integrated care board).
+
+
+
+\par\medskip\textbf{Core Responsibilities}\par
+
+
+\begin{itemize}
+
+
+\item Strategic governance and regional healthcare delivery policy.
+
+\item Establishing and monitoring cross-facility service level agreements (SLAs) and clinical performance indicators.
+
+\item Ensuring statutory compliance with jurisdictional health privacy, clinical governance, and data protection legislation.
+
+\item Funding, procuring, and overseeing regional digital health infrastructure and integration platforms.
+
+\end{itemize}
+
+
+\par\medskip\textbf{Principal Architectural Concerns}\par
+
+
+\begin{itemize}
+
+
+\item \textbf{Network-Wide Availability \& Resilience}: The platform must operate continuously without single points of failure across regional public and private hospital networks.
+
+\item \textbf{Vendor-Independent Longevity}: Avoiding commercial lock-in to proprietary Electronic Medical Record (EMR) vendors, ensuring regional health data remains an enduring asset under public governance.
+
+\item \textbf{Auditability \& Clinical Governance}: Comprehensive, tamper-evident audit trails that prove compliance with regulatory directives and enable forensic review of clinical incidents.
+
+\item \textbf{Systemic Risk Mitigation}: Minimizing the probability of severe systemic failures, data corruption, or unrecoverable message loss during regional health emergencies.
+
+\end{itemize}
+
+{\footnotesize \href{../../../../continuum/motivation/stakeholder/e76216c494fa4500bb80eda6f83513c1.md}{Canonical record: e76216c494fa4500bb80eda6f83513c1}; full qualifications and provenance.}\par
+\chapter*{R.2 Historical Capability Identities — Reference navigation}
+\phantomsection
+\label{navigation:R.2}
+\addcontentsline{toc}{chapter}{R.2 Historical Capability Identities — Reference navigation}
+
+Reserved historical identities with governed successor correspondence. These are architectural history and provenance, not additional current Capability subjects. Definitions, standing, relationships and authored Views remain preserved.\par
+\section*{R.2.1 [CT1] Care Access \& Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.1}
+\addcontentsline{toc}{section}{R.2.1 [CT1] Care Access \& Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.1 \hyperref[element:ed342cb8656b4f80b55ad519ecbd2d3a]{[CT1] Care Access \& Coordination}; Canonical ID: \texttt{\seqsplit{ed342cb8656b4f80b55ad519ecbd2d3a}}. Canonical · current.}\par
+\label{element:0dec07b6ddbe48bda93a2295dd3e2d7d}
+\index{[CT1] Care Access \& Coordination (R.2.1)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/0dec07b6ddbe48bda93a2295dd3e2d7d.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.2 [CT3] Clinical Quality Criteria Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.2}
+\addcontentsline{toc}{section}{R.2.2 [CT3] Clinical Quality Criteria Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.2.1.1 \hyperref[element:1f48527a9a7c4382a7f8a660ccb9f29f]{[CT3] Clinical Quality Criteria Management}; Canonical ID: \texttt{\seqsplit{1f48527a9a7c4382a7f8a660ccb9f29f}}. Canonical · current.}\par
+\label{element:7a51321b00464016920976b269981edd}
+\index{[CT3] Clinical Quality Criteria Management (R.2.2)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/7a51321b00464016920976b269981edd.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.3 [CT3] Clinical Quality Evidence Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.3}
+\addcontentsline{toc}{section}{R.2.3 [CT3] Clinical Quality Evidence Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.2.1.2 \hyperref[element:1b0a1c6945ed4fadba045ff4753c104c]{[CT3] Clinical Quality Evidence Management}; Canonical ID: \texttt{\seqsplit{1b0a1c6945ed4fadba045ff4753c104c}}. Canonical · current.}\par
+\label{element:f31902d474894670aeef3e0abbedccf0}
+\index{[CT3] Clinical Quality Evidence Management (R.2.3)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/f31902d474894670aeef3e0abbedccf0.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.4 [CT3] Clinical Quality Reporting — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.4}
+\addcontentsline{toc}{section}{R.2.4 [CT3] Clinical Quality Reporting — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.2.1.3 \hyperref[element:70f34839c23042d59469e6ef96944057]{[CT3] Clinical Quality Reporting}; Canonical ID: \texttt{\seqsplit{70f34839c23042d59469e6ef96944057}}. Canonical · current.}\par
+\label{element:e5812fcdf3f5465b9b1d8ba536075c5f}
+\index{[CT3] Clinical Quality Reporting (R.2.4)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e5812fcdf3f5465b9b1d8ba536075c5f.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.5 [CT3] Clinical Quality Review \& Assessment Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.5}
+\addcontentsline{toc}{section}{R.2.5 [CT3] Clinical Quality Review \& Assessment Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.2.1.4 \hyperref[element:8318c35b302b4dcaa0e795fbfdc93e3b]{[CT3] Clinical Quality Review \& Assessment Management}; Canonical ID: \texttt{\seqsplit{8318c35b302b4dcaa0e795fbfdc93e3b}}. Canonical · current.}\par
+\label{element:4b17ec92f0af4c4b9556912dbdd0f29f}
+\index{[CT3] Clinical Quality Review \& Assessment Management (R.2.5)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/4b17ec92f0af4c4b9556912dbdd0f29f.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.6 [CT2] Clinical Quality Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.6}
+\addcontentsline{toc}{section}{R.2.6 [CT2] Clinical Quality Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.2.1 \hyperref[element:89761f2d38f846c39df1df0975964288]{[CT2] Clinical Quality Management}; Canonical ID: \texttt{\seqsplit{89761f2d38f846c39df1df0975964288}}. Canonical · current.}\par
+\label{element:dc1bece79eb7452e951d03a2ee6dfaa6}
+\index{[CT2] Clinical Quality Management (R.2.6)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/dc1bece79eb7452e951d03a2ee6dfaa6.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.7 [CT3] Clinical Risk Identification — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.7}
+\addcontentsline{toc}{section}{R.2.7 [CT3] Clinical Risk Identification — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.2.2.1 \hyperref[element:d54c19c6efaf42af82ad71a4142149d4]{[CT3] Clinical Risk Identification}; Canonical ID: \texttt{\seqsplit{d54c19c6efaf42af82ad71a4142149d4}}. Canonical · current.}\par
+\label{element:690da55f1f5b4c44ba58cf67a717a564}
+\index{[CT3] Clinical Risk Identification (R.2.7)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/690da55f1f5b4c44ba58cf67a717a564.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.8 [CT3] Clinical Risk Mitigation Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.8}
+\addcontentsline{toc}{section}{R.2.8 [CT3] Clinical Risk Mitigation Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.2.2.2 \hyperref[element:2c232ade21ec45619c3ee4e928bd97ee]{[CT3] Clinical Risk Mitigation Management}; Canonical ID: \texttt{\seqsplit{2c232ade21ec45619c3ee4e928bd97ee}}. Canonical · current.}\par
+\label{element:0bd3311d89af45bb935fde20e719369c}
+\index{[CT3] Clinical Risk Mitigation Management (R.2.8)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/0bd3311d89af45bb935fde20e719369c.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.9 [CT3] Clinical Risk Response Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.9}
+\addcontentsline{toc}{section}{R.2.9 [CT3] Clinical Risk Response Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.2.2.3 \hyperref[element:5e36cb137e4e4782b2ddbf78cdf0da7b]{[CT3] Clinical Risk Response Management}; Canonical ID: \texttt{\seqsplit{5e36cb137e4e4782b2ddbf78cdf0da7b}}. Canonical · current.}\par
+\label{element:20f719ab4b6741b393ef570b4d1b05df}
+\index{[CT3] Clinical Risk Response Management (R.2.9)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/20f719ab4b6741b393ef570b4d1b05df.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.10 [CT2] Clinical Safety Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.10}
+\addcontentsline{toc}{section}{R.2.10 [CT2] Clinical Safety Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.2.2 \hyperref[element:28d1bf3e514e4c29837ebedaf9e4917b]{[CT2] Clinical Safety Management}; Canonical ID: \texttt{\seqsplit{28d1bf3e514e4c29837ebedaf9e4917b}}. Canonical · current.}\par
+\label{element:650ccec030fa46cc8c9d6b508a841778}
+\index{[CT2] Clinical Safety Management (R.2.10)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/650ccec030fa46cc8c9d6b508a841778.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.11 [CT1] Clinical Quality, Safety \& Improvement — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.11}
+\addcontentsline{toc}{section}{R.2.11 [CT1] Clinical Quality, Safety \& Improvement — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.2 \hyperref[element:63837bf848774572a06b935af95581a2]{[CT1] Clinical Quality, Safety \& Improvement}; Canonical ID: \texttt{\seqsplit{63837bf848774572a06b935af95581a2}}. Canonical · current.}\par
+\label{element:b967c383dbcd4c24abe6a83ea5e79e00}
+\index{[CT1] Clinical Quality, Safety \& Improvement (R.2.11)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/b967c383dbcd4c24abe6a83ea5e79e00.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.12 [CT3] Preventative Health Cohort Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.12}
+\addcontentsline{toc}{section}{R.2.12 [CT3] Preventative Health Cohort Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.3.1.1 \hyperref[element:97625bb28e5745d5994e1bffd4037188]{[CT3] Preventative Health Cohort Management}; Canonical ID: \texttt{\seqsplit{97625bb28e5745d5994e1bffd4037188}}. Canonical · current.}\par
+\label{element:fef479f0fd5048b19b2aec770f0233fe}
+\index{[CT3] Preventative Health Cohort Management (R.2.12)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/fef479f0fd5048b19b2aec770f0233fe.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.13 [CT3] Preventative Health Education Services — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.13}
+\addcontentsline{toc}{section}{R.2.13 [CT3] Preventative Health Education Services — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.3.1.2 \hyperref[element:7541d9b3b65d47d286dabdc093cb0eed]{[CT3] Preventative Health Education Services}; Canonical ID: \texttt{\seqsplit{7541d9b3b65d47d286dabdc093cb0eed}}. Canonical · current.}\par
+\label{element:dbe10959237f405caeadef2a5748303a}
+\index{[CT3] Preventative Health Education Services (R.2.13)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/dbe10959237f405caeadef2a5748303a.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.14 [CT3] Preventative Health Problem Identification — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.14}
+\addcontentsline{toc}{section}{R.2.14 [CT3] Preventative Health Problem Identification — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.3.1.3 \hyperref[element:c1567022671f433fa1eeb37a9d156d92]{[CT3] Preventative Health Problem Identification}; Canonical ID: \texttt{\seqsplit{c1567022671f433fa1eeb37a9d156d92}}. Canonical · current.}\par
+\label{element:b35d3521141c419fb676a79b2ede40bd}
+\index{[CT3] Preventative Health Problem Identification (R.2.14)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/b35d3521141c419fb676a79b2ede40bd.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.15 [CT3] Preventative Health Programme Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.15}
+\addcontentsline{toc}{section}{R.2.15 [CT3] Preventative Health Programme Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.3.1.4 \hyperref[element:563d36b179d34cb6913253d06e8d77f6]{[CT3] Preventative Health Programme Management}; Canonical ID: \texttt{\seqsplit{563d36b179d34cb6913253d06e8d77f6}}. Canonical · current.}\par
+\label{element:d71def9e76a544ff9761c672bb24f3be}
+\index{[CT3] Preventative Health Programme Management (R.2.15)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/d71def9e76a544ff9761c672bb24f3be.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.16 [CT3] Preventative Health Programme Monitoring — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.16}
+\addcontentsline{toc}{section}{R.2.16 [CT3] Preventative Health Programme Monitoring — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.3.1.5 \hyperref[element:945b40ced8004e1cbf7c98c731d17daf]{[CT3] Preventative Health Programme Monitoring}; Canonical ID: \texttt{\seqsplit{945b40ced8004e1cbf7c98c731d17daf}}. Canonical · current.}\par
+\label{element:e05f6310f6d544efaca5568604f27dd8}
+\index{[CT3] Preventative Health Programme Monitoring (R.2.16)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e05f6310f6d544efaca5568604f27dd8.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.17 [CT3] Preventative Health Reporting — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.17}
+\addcontentsline{toc}{section}{R.2.17 [CT3] Preventative Health Reporting — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.3.1.6 \hyperref[element:d2ef01c4cab348df822e802ab084faae]{[CT3] Preventative Health Reporting}; Canonical ID: \texttt{\seqsplit{d2ef01c4cab348df822e802ab084faae}}. Canonical · current.}\par
+\label{element:4faef45b4ebe4fa69e57c3d81bfea05f}
+\index{[CT3] Preventative Health Reporting (R.2.17)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/4faef45b4ebe4fa69e57c3d81bfea05f.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.18 [CT2] Preventative Health — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.18}
+\addcontentsline{toc}{section}{R.2.18 [CT2] Preventative Health — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.3.1 \hyperref[element:81be04a2d58548a4aea94f9aae90feb6]{[CT2] Preventative Health}; Canonical ID: \texttt{\seqsplit{81be04a2d58548a4aea94f9aae90feb6}}. Canonical · current.}\par
+\label{element:80affa7bcd284ecbbcbc5092f8497ddf}
+\index{[CT2] Preventative Health (R.2.18)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/80affa7bcd284ecbbcbc5092f8497ddf.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.19 [CT1] Community Health \& Wellbeing — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.19}
+\addcontentsline{toc}{section}{R.2.19 [CT1] Community Health \& Wellbeing — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.3 \hyperref[element:b326b4aaf02a41a986ed22d184cbc152]{[CT1] Community Health \& Wellbeing}; Canonical ID: \texttt{\seqsplit{b326b4aaf02a41a986ed22d184cbc152}}. Canonical · current.}\par
+\label{element:175174c5cce549d2b154a4f6704721dc}
+\index{[CT1] Community Health \& Wellbeing (R.2.19)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/175174c5cce549d2b154a4f6704721dc.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.20 [CT1] Connected Health Services — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.20}
+\addcontentsline{toc}{section}{R.2.20 [CT1] Connected Health Services — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.4 \hyperref[element:3ef397463e584737b367e93f0bf1d85d]{[CT1] Connected Health Services}; Canonical ID: \texttt{\seqsplit{3ef397463e584737b367e93f0bf1d85d}}. Canonical · current.}\par
+\label{element:48f01ef8b0e6431c85cf4f40cf8f94c3}
+\index{[CT1] Connected Health Services (R.2.20)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/48f01ef8b0e6431c85cf4f40cf8f94c3.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.21 [CT1] Corporate Resources \& Enterprise Services — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.21}
+\addcontentsline{toc}{section}{R.2.21 [CT1] Corporate Resources \& Enterprise Services — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.5 \hyperref[element:b79628f156e14a8cbb82a0dea2fc57ff]{[CT1] Corporate Resources \& Enterprise Services}; Canonical ID: \texttt{\seqsplit{b79628f156e14a8cbb82a0dea2fc57ff}}. Canonical · current.}\par
+\label{element:a2dbd74847a44f4c879983229f5c9d08}
+\index{[CT1] Corporate Resources \& Enterprise Services (R.2.21)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a2dbd74847a44f4c879983229f5c9d08.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.22 [CT1] Diagnostic, Therapeutic \& Clinical Support Services — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.22}
+\addcontentsline{toc}{section}{R.2.22 [CT1] Diagnostic, Therapeutic \& Clinical Support Services — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.6 \hyperref[element:4d98c3503a9f4890a677f09b0c3b6f82]{[CT1] Diagnostic, Therapeutic \& Clinical Support Services}; Canonical ID: \texttt{\seqsplit{4d98c3503a9f4890a677f09b0c3b6f82}}. Canonical · current.}\par
+\label{element:e003b9cd0730459a84775d2837d1d173}
+\index{[CT1] Diagnostic, Therapeutic \& Clinical Support Services (R.2.22)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e003b9cd0730459a84775d2837d1d173.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.23 [CT1] Health Information \& Knowledge Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.23}
+\addcontentsline{toc}{section}{R.2.23 [CT1] Health Information \& Knowledge Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.7 \hyperref[element:cca5d5abec204b339eb5b9bd924ed64e]{[CT1] Health Information \& Knowledge Management}; Canonical ID: \texttt{\seqsplit{cca5d5abec204b339eb5b9bd924ed64e}}. Canonical · current.}\par
+\label{element:a1c557bd263047d0b3ff566cf50b98c1}
+\index{[CT1] Health Information \& Knowledge Management (R.2.23)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a1c557bd263047d0b3ff566cf50b98c1.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.24 [CT1] Health Products \& Clinical Technology — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.24}
+\addcontentsline{toc}{section}{R.2.24 [CT1] Health Products \& Clinical Technology — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.8 \hyperref[element:54388e3202c2403089b5c476c78c4567]{[CT1] Health Products \& Clinical Technology}; Canonical ID: \texttt{\seqsplit{54388e3202c2403089b5c476c78c4567}}. Canonical · current.}\par
+\label{element:a631a8600b8b49df9ef452c48c91349a}
+\index{[CT1] Health Products \& Clinical Technology (R.2.24)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a631a8600b8b49df9ef452c48c91349a.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.25 [CT1] Health Research \& Innovation — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.25}
+\addcontentsline{toc}{section}{R.2.25 [CT1] Health Research \& Innovation — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.9 \hyperref[element:582bf62145fd42118e5d57bb714841e8]{[CT1] Health Research \& Innovation}; Canonical ID: \texttt{\seqsplit{582bf62145fd42118e5d57bb714841e8}}. Canonical · current.}\par
+\label{element:2cc31384c8864c73989025cbe96dcfa7}
+\index{[CT1] Health Research \& Innovation (R.2.25)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/2cc31384c8864c73989025cbe96dcfa7.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.26 [CT1] Health Rights, Advocacy \& Participation — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.26}
+\addcontentsline{toc}{section}{R.2.26 [CT1] Health Rights, Advocacy \& Participation — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.10 \hyperref[element:7ab5c82a500b45f39267883a6e78c482]{[CT1] Health Rights, Advocacy \& Participation}; Canonical ID: \texttt{\seqsplit{7ab5c82a500b45f39267883a6e78c482}}. Canonical · current.}\par
+\label{element:58376e5c53bf4af0a54f99f21ac52666}
+\index{[CT1] Health Rights, Advocacy \& Participation (R.2.26)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/58376e5c53bf4af0a54f99f21ac52666.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.27 [CT1] Health Service Assurance — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.27}
+\addcontentsline{toc}{section}{R.2.27 [CT1] Health Service Assurance — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.11 \hyperref[element:14860102964c441681d41ec3da423fe0]{[CT1] Health Service Assurance}; Canonical ID: \texttt{\seqsplit{14860102964c441681d41ec3da423fe0}}. Canonical · current.}\par
+\label{element:6a82dc1423374e809dbf542eeaa69482}
+\index{[CT1] Health Service Assurance (R.2.27)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/6a82dc1423374e809dbf542eeaa69482.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.28 [CT1] Health Service Direction \& Stewardship — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.28}
+\addcontentsline{toc}{section}{R.2.28 [CT1] Health Service Direction \& Stewardship — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.12 \hyperref[element:d51e7125bf9c4d2c9c59b60346b4d86f]{[CT1] Health Service Direction \& Stewardship}; Canonical ID: \texttt{\seqsplit{d51e7125bf9c4d2c9c59b60346b4d86f}}. Canonical · current.}\par
+\label{element:360bf50f92484448a01cc57f2dbce23c}
+\index{[CT1] Health Service Direction \& Stewardship (R.2.28)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/360bf50f92484448a01cc57f2dbce23c.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.29 [CT1] Health Service Governance — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.29}
+\addcontentsline{toc}{section}{R.2.29 [CT1] Health Service Governance — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.13 \hyperref[element:209aada781e844e28202a2535a264c21]{[CT1] Health Service Governance}; Canonical ID: \texttt{\seqsplit{209aada781e844e28202a2535a264c21}}. Canonical · current.}\par
+\label{element:24f3dd30223142efa35a5826552d53ab}
+\index{[CT1] Health Service Governance (R.2.29)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/24f3dd30223142efa35a5826552d53ab.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.30 [CT3] Clinical Finding Interpretation — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.30}
+\addcontentsline{toc}{section}{R.2.30 [CT3] Clinical Finding Interpretation — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.1.1 \hyperref[element:deb78ba3b1514074a8ca5bc5da0673f5]{[CT3] Clinical Finding Interpretation}; Canonical ID: \texttt{\seqsplit{deb78ba3b1514074a8ca5bc5da0673f5}}. Proposed · current.}\par
+\label{element:cf8ddfca7a8e4ed893ec39b795200d77}
+\index{[CT3] Clinical Finding Interpretation (R.2.30)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/cf8ddfca7a8e4ed893ec39b795200d77.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.31 [CT3] Diagnosis \& Problem Determination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.31}
+\addcontentsline{toc}{section}{R.2.31 [CT3] Diagnosis \& Problem Determination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.1.2 \hyperref[element:d965032637e64275b7a61c0413834590]{[CT3] Diagnosis \& Problem Determination}; Canonical ID: \texttt{\seqsplit{d965032637e64275b7a61c0413834590}}. Proposed · current.}\par
+\label{element:e575c583783546ef85cf898523d18797}
+\index{[CT3] Diagnosis \& Problem Determination (R.2.31)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e575c583783546ef85cf898523d18797.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.32 [CT3] Health Risk \& Prognostic Determination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.32}
+\addcontentsline{toc}{section}{R.2.32 [CT3] Health Risk \& Prognostic Determination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.1.3 \hyperref[element:5bba0ea969814b5fa7ad11b67ab40a0c]{[CT3] Health Risk \& Prognostic Determination}; Canonical ID: \texttt{\seqsplit{5bba0ea969814b5fa7ad11b67ab40a0c}}. Proposed · current.}\par
+\label{element:3215f0b0e1ce45e8ab16dae272ea6fe7}
+\index{[CT3] Health Risk \& Prognostic Determination (R.2.32)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/3215f0b0e1ce45e8ab16dae272ea6fe7.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.33 [CT2] Clinical Determination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.33}
+\addcontentsline{toc}{section}{R.2.33 [CT2] Clinical Determination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.1 \hyperref[element:39219464b6304b59bd7c3de4e237066e]{[CT2] Clinical Determination}; Canonical ID: \texttt{\seqsplit{39219464b6304b59bd7c3de4e237066e}}. Canonical · current.}\par
+\label{element:018ccd818ec142fba1ffb086d900acc6}
+\index{[CT2] Clinical Determination (R.2.33)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/018ccd818ec142fba1ffb086d900acc6.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.34 [CT2] Clinical Intervention — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.34}
+\addcontentsline{toc}{section}{R.2.34 [CT2] Clinical Intervention — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.2 \hyperref[element:5359d1b0ff814a0e871384469f5ebcd7]{[CT2] Clinical Intervention}; Canonical ID: \texttt{\seqsplit{5359d1b0ff814a0e871384469f5ebcd7}}. Canonical · current.}\par
+\label{element:958345ee65f446d3b1259b8895ab100f}
+\index{[CT2] Clinical Intervention (R.2.34)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/958345ee65f446d3b1259b8895ab100f.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.35 [CT3] Care Goal Definition — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.35}
+\addcontentsline{toc}{section}{R.2.35 [CT3] Care Goal Definition — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.3.1 \hyperref[element:609e1bef516b44bb976b5dbebe7f684b]{[CT3] Care Goal Definition}; Canonical ID: \texttt{\seqsplit{609e1bef516b44bb976b5dbebe7f684b}}. Proposed · current.}\par
+\label{element:8bfbcc0a455d423c90ae2f1cfb732ca8}
+\index{[CT3] Care Goal Definition (R.2.35)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/8bfbcc0a455d423c90ae2f1cfb732ca8.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.36 [CT3] Care Response Planning — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.36}
+\addcontentsline{toc}{section}{R.2.36 [CT3] Care Response Planning — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.3.2 \hyperref[element:2636e43903e44a97ad5b8db32692ce8b]{[CT3] Care Response Planning}; Canonical ID: \texttt{\seqsplit{2636e43903e44a97ad5b8db32692ce8b}}. Proposed · current.}\par
+\label{element:d64569acaf2c44f3b2a5332f74fff7c7}
+\index{[CT3] Care Response Planning (R.2.36)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/d64569acaf2c44f3b2a5332f74fff7c7.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.37 [CT2] Individual Care Planning — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.37}
+\addcontentsline{toc}{section}{R.2.37 [CT2] Individual Care Planning — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.3 \hyperref[element:f036a9866459429a8fb5f5e10727b5e8]{[CT2] Individual Care Planning}; Canonical ID: \texttt{\seqsplit{f036a9866459429a8fb5f5e10727b5e8}}. Canonical · current.}\par
+\label{element:574e61e230e643f78c58649adb4db313}
+\index{[CT2] Individual Care Planning (R.2.37)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/574e61e230e643f78c58649adb4db313.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.38 [CT3] Care Effectiveness Review — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.38}
+\addcontentsline{toc}{section}{R.2.38 [CT3] Care Effectiveness Review — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.4.2 \hyperref[element:79cfeaefeb174a54ba43343d37f035c1]{[CT3] Care Effectiveness Review}; Canonical ID: \texttt{\seqsplit{79cfeaefeb174a54ba43343d37f035c1}}. Canonical · current.}\par
+\label{element:31f49cdea9f44f188459503580c2b86e}
+\index{[CT3] Care Effectiveness Review (R.2.38)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/31f49cdea9f44f188459503580c2b86e.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.39 [CT3] Care Intent Appropriateness Review — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.39}
+\addcontentsline{toc}{section}{R.2.39 [CT3] Care Intent Appropriateness Review — Historical identity [superseded]}
+
+{\small Governed successor (evolved correspondence): II.1.2.14.4.1 \hyperref[element:5eac5fb73e31416288d8c992805b33cb]{[CT3] Care Appropriateness Review}; Canonical ID: \texttt{\seqsplit{5eac5fb73e31416288d8c992805b33cb}}. Canonical · current.}\par
+\label{element:905eb2de1ac341ac96331e3d7f76079b}
+\index{[CT3] Care Intent Appropriateness Review (R.2.39)}
+{\small Capability · Superseded historical identity — evolved correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/905eb2de1ac341ac96331e3d7f76079b.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.40 [CT2] Individual Care Review — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.40}
+\addcontentsline{toc}{section}{R.2.40 [CT2] Individual Care Review — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.4 \hyperref[element:625a93f132f242f5a8e2ae1dc19979fb]{[CT2] Individual Care Review}; Canonical ID: \texttt{\seqsplit{625a93f132f242f5a8e2ae1dc19979fb}}. Canonical · current.}\par
+\label{element:e1048f6c635d4e16b5384cc2cb45a71b}
+\index{[CT2] Individual Care Review (R.2.40)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e1048f6c635d4e16b5384cc2cb45a71b.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.41 [CT3] Clinical Examination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.41}
+\addcontentsline{toc}{section}{R.2.41 [CT3] Clinical Examination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.5.1 \hyperref[element:8855d4d9e2954e0ab66ab65a556fc61a]{[CT3] Clinical Examination}; Canonical ID: \texttt{\seqsplit{8855d4d9e2954e0ab66ab65a556fc61a}}. Canonical · current.}\par
+\label{element:8bc15e2b8f114deebcbbe3f2013a8147}
+\index{[CT3] Clinical Examination (R.2.41)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/8bc15e2b8f114deebcbbe3f2013a8147.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.42 [CT3] Health History Assessment — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.42}
+\addcontentsline{toc}{section}{R.2.42 [CT3] Health History Assessment — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.5.2 \hyperref[element:7ea7e3f74e2940a7934b588a1a038834]{[CT3] Health History Assessment}; Canonical ID: \texttt{\seqsplit{7ea7e3f74e2940a7934b588a1a038834}}. Canonical · current.}\par
+\label{element:bcaacf446f45443eafd8e21a1fd74ee1}
+\index{[CT3] Health History Assessment (R.2.42)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/bcaacf446f45443eafd8e21a1fd74ee1.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.43 [CT3] Health Status Measurement — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.43}
+\addcontentsline{toc}{section}{R.2.43 [CT3] Health Status Measurement — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.5.3 \hyperref[element:a796bfb3335d44f6aeb9970628ed8554]{[CT3] Health Status Measurement}; Canonical ID: \texttt{\seqsplit{a796bfb3335d44f6aeb9970628ed8554}}. Canonical · current.}\par
+\label{element:3717906f7f8840d3a8a3e3877543dd18}
+\index{[CT3] Health Status Measurement (R.2.43)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/3717906f7f8840d3a8a3e3877543dd18.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.44 [CT2] Individual Health Assessment — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.44}
+\addcontentsline{toc}{section}{R.2.44 [CT2] Individual Health Assessment — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.5 \hyperref[element:045f819bb3694d3c9db7f20886e2993f]{[CT2] Individual Health Assessment}; Canonical ID: \texttt{\seqsplit{045f819bb3694d3c9db7f20886e2993f}}. Canonical · current.}\par
+\label{element:9111446aa2d045bd9acd98542b0eef1f}
+\index{[CT2] Individual Health Assessment (R.2.44)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/9111446aa2d045bd9acd98542b0eef1f.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.45 [CT3] Care Response Monitoring — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.45}
+\addcontentsline{toc}{section}{R.2.45 [CT3] Care Response Monitoring — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.6.1 \hyperref[element:d6951c9357fa40a4943cde581d95d5b1]{[CT3] Care Response Monitoring}; Canonical ID: \texttt{\seqsplit{d6951c9357fa40a4943cde581d95d5b1}}. Canonical · current.}\par
+\label{element:615f93d05fbb4a8481f07778bd4f4803}
+\index{[CT3] Care Response Monitoring (R.2.45)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/615f93d05fbb4a8481f07778bd4f4803.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.46 [CT3] Health State Monitoring — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.46}
+\addcontentsline{toc}{section}{R.2.46 [CT3] Health State Monitoring — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.6.2 \hyperref[element:d77f22909f8b47dba4cbd95982e576df]{[CT3] Health State Monitoring}; Canonical ID: \texttt{\seqsplit{d77f22909f8b47dba4cbd95982e576df}}. Canonical · current.}\par
+\label{element:346f024f74b447a8b6056b9d521837ff}
+\index{[CT3] Health State Monitoring (R.2.46)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/346f024f74b447a8b6056b9d521837ff.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.47 [CT2] Individual Health Monitoring — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.47}
+\addcontentsline{toc}{section}{R.2.47 [CT2] Individual Health Monitoring — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14.6 \hyperref[element:c7d0e498e1ad44138df940af2f91cd2d]{[CT2] Individual Health Monitoring}; Canonical ID: \texttt{\seqsplit{c7d0e498e1ad44138df940af2f91cd2d}}. Canonical · current.}\par
+\label{element:31e7c27556314cafb74d040441d2dac6}
+\index{[CT2] Individual Health Monitoring (R.2.47)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/31e7c27556314cafb74d040441d2dac6.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.48 [CT1] Individual Care Delivery — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.48}
+\addcontentsline{toc}{section}{R.2.48 [CT1] Individual Care Delivery — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.14 \hyperref[element:b964a11cde594318aa14ff935414158a]{[CT1] Individual Care Delivery}; Canonical ID: \texttt{\seqsplit{b964a11cde594318aa14ff935414158a}}. Canonical · current.}\par
+\label{element:162deb7e292042f78f677a14476a3a1d}
+\index{[CT1] Individual Care Delivery (R.2.48)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/162deb7e292042f78f677a14476a3a1d.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.49 [CT1] Population Health \& Health-System Planning — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.49}
+\addcontentsline{toc}{section}{R.2.49 [CT1] Population Health \& Health-System Planning — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.15 \hyperref[element:c63b38b37e9b4e9b97dc87ed54604def]{[CT1] Population Health \& Health-System Planning}; Canonical ID: \texttt{\seqsplit{c63b38b37e9b4e9b97dc87ed54604def}}. Canonical · current.}\par
+\label{element:a5003436a7f348b1bff60ba593adfa27}
+\index{[CT1] Population Health \& Health-System Planning (R.2.49)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a5003436a7f348b1bff60ba593adfa27.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.50 [CT1] Security, Privacy \& Digital Trust — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.50}
+\addcontentsline{toc}{section}{R.2.50 [CT1] Security, Privacy \& Digital Trust — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.16 \hyperref[element:71f0431fdfcd4f779e16d9e5ea609833]{[CT1] Security, Privacy \& Digital Trust}; Canonical ID: \texttt{\seqsplit{71f0431fdfcd4f779e16d9e5ea609833}}. Canonical · current.}\par
+\label{element:b01441b2f5584fc2b9c3988643a7c93b}
+\index{[CT1] Security, Privacy \& Digital Trust (R.2.50)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/b01441b2f5584fc2b9c3988643a7c93b.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.51 [CT1] Standards, Semantics \& Reference Governance — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.51}
+\addcontentsline{toc}{section}{R.2.51 [CT1] Standards, Semantics \& Reference Governance — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.17 \hyperref[element:5ffeb7401d314f06b05d79c3aff98242]{[CT1] Standards, Semantics \& Reference Governance}; Canonical ID: \texttt{\seqsplit{5ffeb7401d314f06b05d79c3aff98242}}. Canonical · current.}\par
+\label{element:3b65a3d007f54aa9b875e655475e1786}
+\index{[CT1] Standards, Semantics \& Reference Governance (R.2.51)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/3b65a3d007f54aa9b875e655475e1786.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.52 [CT1] Workforce \& Organisational Capability — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.52}
+\addcontentsline{toc}{section}{R.2.52 [CT1] Workforce \& Organisational Capability — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.2.18 \hyperref[element:631b43664bfb4c50ac8cf4958b2c347d]{[CT1] Workforce \& Organisational Capability}; Canonical ID: \texttt{\seqsplit{631b43664bfb4c50ac8cf4958b2c347d}}. Canonical · current.}\par
+\label{element:b1161fe1a315420fbc7d048a1ea58126}
+\index{[CT1] Workforce \& Organisational Capability (R.2.52)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/b1161fe1a315420fbc7d048a1ea58126.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.53 [CT3] Care Plan Lifecycle \& Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.53}
+\addcontentsline{toc}{section}{R.2.53 [CT3] Care Plan Lifecycle \& Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.5.1 \hyperref[element:4cb7db65392f4fab801d7794af4d4b29]{[CT3] Care Plan Lifecycle \& Coordination}; Canonical ID: \texttt{\seqsplit{4cb7db65392f4fab801d7794af4d4b29}}. Proposed · current.}\par
+\label{element:689bb3f8a24249b79f787e1f48eb268d}
+\index{[CT3] Care Plan Lifecycle \& Coordination (R.2.53)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/689bb3f8a24249b79f787e1f48eb268d.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.54 [CT2] Care Plan Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.54}
+\addcontentsline{toc}{section}{R.2.54 [CT2] Care Plan Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.5 \hyperref[element:cf06eec5699f406fa30a00d2f76e3098]{[CT2] Care Plan Administration}; Canonical ID: \texttt{\seqsplit{cf06eec5699f406fa30a00d2f76e3098}}. Canonical · current.}\par
+\label{element:e31407cea7624632a8ed2dc53b09d726}
+\index{[CT2] Care Plan Administration (R.2.54)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e31407cea7624632a8ed2dc53b09d726.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.55 [CT2] Client-Centred Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.55}
+\addcontentsline{toc}{section}{R.2.55 [CT2] Client-Centred Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.6 \hyperref[element:8752b7a937754b2faa296300c6a48911]{[CT2] Client-Centred Administration}; Canonical ID: \texttt{\seqsplit{8752b7a937754b2faa296300c6a48911}}. Canonical · current.}\par
+\label{element:232b3fb2ff204c9b9ff7a60ff6a7a32d}
+\index{[CT2] Client-Centred Administration (R.2.55)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/232b3fb2ff204c9b9ff7a60ff6a7a32d.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.56 [CT2] Clinical Charging \& Claims Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.56}
+\addcontentsline{toc}{section}{R.2.56 [CT2] Clinical Charging \& Claims Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.7 \hyperref[element:af78ab7c89454a608cd4d34ec7703331]{[CT2] Clinical Charging \& Claims Administration}; Canonical ID: \texttt{\seqsplit{af78ab7c89454a608cd4d34ec7703331}}. Canonical · current.}\par
+\label{element:44433108cc8f4f5f9d7581f9e5b29eb5}
+\index{[CT2] Clinical Charging \& Claims Administration (R.2.56)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/44433108cc8f4f5f9d7581f9e5b29eb5.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.57 [CT2] Clinical Communication Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.57}
+\addcontentsline{toc}{section}{R.2.57 [CT2] Clinical Communication Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.8 \hyperref[element:b38f2c2811724734b5887b6dbaaabbfc]{[CT2] Clinical Communication Administration}; Canonical ID: \texttt{\seqsplit{b38f2c2811724734b5887b6dbaaabbfc}}. Canonical · current.}\par
+\label{element:bd4d6f4a7f03402ba7857383c7be7a4c}
+\index{[CT2] Clinical Communication Administration (R.2.57)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/bd4d6f4a7f03402ba7857383c7be7a4c.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.58 [CT3] Clinical Documentation Lifecycle Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.58}
+\addcontentsline{toc}{section}{R.2.58 [CT3] Clinical Documentation Lifecycle Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.9.1 \hyperref[element:df683100067b47e785037c27cfd17a3c]{[CT3] Clinical Documentation Lifecycle Administration}; Canonical ID: \texttt{\seqsplit{df683100067b47e785037c27cfd17a3c}}. Proposed · current.}\par
+\label{element:5b1636373a8d4e788b3ddbc1659a47ef}
+\index{[CT3] Clinical Documentation Lifecycle Administration (R.2.58)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/5b1636373a8d4e788b3ddbc1659a47ef.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.59 [CT2] Clinical Record Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.59}
+\addcontentsline{toc}{section}{R.2.59 [CT2] Clinical Record Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.9 \hyperref[element:ce9e7e7b22054cefb707a650d5be7219]{[CT2] Clinical Record Administration}; Canonical ID: \texttt{\seqsplit{ce9e7e7b22054cefb707a650d5be7219}}. Canonical · current.}\par
+\label{element:be3f2e695eda403fbce8118daf83d386}
+\index{[CT2] Clinical Record Administration (R.2.59)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/be3f2e695eda403fbce8118daf83d386.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.60 [CT2] Diagnostic Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.60}
+\addcontentsline{toc}{section}{R.2.60 [CT2] Diagnostic Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.10 \hyperref[element:3cc720ba2e8b4d7a94bb349391d61895]{[CT2] Diagnostic Administration}; Canonical ID: \texttt{\seqsplit{3cc720ba2e8b4d7a94bb349391d61895}}. Canonical · current.}\par
+\label{element:2b1a27d5d9944e05b4cf0fcaad4ca433}
+\index{[CT2] Diagnostic Administration (R.2.60)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/2b1a27d5d9944e05b4cf0fcaad4ca433.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.61 [CT2] Episode \& Encounter Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.61}
+\addcontentsline{toc}{section}{R.2.61 [CT2] Episode \& Encounter Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.11 \hyperref[element:61d7067aee0540259b3daca4287d66d2]{[CT2] Episode \& Encounter Administration}; Canonical ID: \texttt{\seqsplit{61d7067aee0540259b3daca4287d66d2}}. Canonical · current.}\par
+\label{element:2778f988e8d44e3091749542c39d38a4}
+\index{[CT2] Episode \& Encounter Administration (R.2.61)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/2778f988e8d44e3091749542c39d38a4.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.62 [CT2] Funding \& Coverage Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.62}
+\addcontentsline{toc}{section}{R.2.62 [CT2] Funding \& Coverage Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.12 \hyperref[element:640432d413cf47928ea2b3d221f92313]{[CT2] Funding \& Coverage Administration}; Canonical ID: \texttt{\seqsplit{640432d413cf47928ea2b3d221f92313}}. Canonical · current.}\par
+\label{element:58beafcbcd084331be710eb00d27f6cf}
+\index{[CT2] Funding \& Coverage Administration (R.2.62)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/58beafcbcd084331be710eb00d27f6cf.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.63 [CT2] Medication Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.63}
+\addcontentsline{toc}{section}{R.2.63 [CT2] Medication Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.13 \hyperref[element:c907e2a95629435b9951941ad4e2ebe9]{[CT2] Medication Administration}; Canonical ID: \texttt{\seqsplit{c907e2a95629435b9951941ad4e2ebe9}}. Canonical · current.}\par
+\label{element:5a38bf2527a8404bac714121f2dc76a9}
+\index{[CT2] Medication Administration (R.2.63)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/5a38bf2527a8404bac714121f2dc76a9.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.64 [CT3] Closed-Loop Order Progression — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.64}
+\addcontentsline{toc}{section}{R.2.64 [CT3] Closed-Loop Order Progression — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.14.1 \hyperref[element:2f79ebd7392c46ef92def6f25bc9c7ce]{[CT3] Closed-Loop Order Progression}; Canonical ID: \texttt{\seqsplit{2f79ebd7392c46ef92def6f25bc9c7ce}}. Proposed · current.}\par
+\label{element:2ad29cebc1e94053a300d869e7797232}
+\index{[CT3] Closed-Loop Order Progression (R.2.64)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/2ad29cebc1e94053a300d869e7797232.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.65 [CT2] Order Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.65}
+\addcontentsline{toc}{section}{R.2.65 [CT2] Order Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.14 \hyperref[element:c3c5abd7987f4433a46cbfed8167914c]{[CT2] Order Administration}; Canonical ID: \texttt{\seqsplit{c3c5abd7987f4433a46cbfed8167914c}}. Canonical · current.}\par
+\label{element:ebb735a2915744819d4001d9b8425cc6}
+\index{[CT2] Order Administration (R.2.65)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/ebb735a2915744819d4001d9b8425cc6.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.66 [CT2] Procedure Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.66}
+\addcontentsline{toc}{section}{R.2.66 [CT2] Procedure Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.15 \hyperref[element:649dd7cc26094e539386a050086dfb91]{[CT2] Procedure Administration}; Canonical ID: \texttt{\seqsplit{649dd7cc26094e539386a050086dfb91}}. Canonical · current.}\par
+\label{element:466a4057001846bb8ae0481453d3e410}
+\index{[CT2] Procedure Administration (R.2.66)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/466a4057001846bb8ae0481453d3e410.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.67 [CT3] Referral Intake \& Progression — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.67}
+\addcontentsline{toc}{section}{R.2.67 [CT3] Referral Intake \& Progression — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.16.1 \hyperref[element:d11bdb9464b2476894aa372ab9b929a7]{[CT3] Referral Intake \& Progression}; Canonical ID: \texttt{\seqsplit{d11bdb9464b2476894aa372ab9b929a7}}. Proposed · current.}\par
+\label{element:7180f6265d5c4687a001220c6126e301}
+\index{[CT3] Referral Intake \& Progression (R.2.67)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/7180f6265d5c4687a001220c6126e301.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.68 [CT2] Referral Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.68}
+\addcontentsline{toc}{section}{R.2.68 [CT2] Referral Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.16 \hyperref[element:ae0de25600ee416aa24d2a167b64f230]{[CT2] Referral Administration}; Canonical ID: \texttt{\seqsplit{ae0de25600ee416aa24d2a167b64f230}}. Canonical · current.}\par
+\label{element:5b0ccf4b30054145952c298b348ed266}
+\index{[CT2] Referral Administration (R.2.68)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/5b0ccf4b30054145952c298b348ed266.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.69 [CT3] Appointment \& Booking Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.69}
+\addcontentsline{toc}{section}{R.2.69 [CT3] Appointment \& Booking Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.17.1 \hyperref[element:7b3ba9bcac564dd4a7a08631581db2ca]{[CT3] Appointment \& Booking Administration}; Canonical ID: \texttt{\seqsplit{7b3ba9bcac564dd4a7a08631581db2ca}}. Proposed · current.}\par
+\label{element:cdc16dd0f84049f8af3f1ec76f1e1428}
+\index{[CT3] Appointment \& Booking Administration (R.2.69)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/cdc16dd0f84049f8af3f1ec76f1e1428.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.70 [CT2] Scheduling Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.70}
+\addcontentsline{toc}{section}{R.2.70 [CT2] Scheduling Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1.17 \hyperref[element:35fb3744c900470f9895056246a13fb1]{[CT2] Scheduling Administration}; Canonical ID: \texttt{\seqsplit{35fb3744c900470f9895056246a13fb1}}. Canonical · current.}\par
+\label{element:1a6630940ffb44fcad4543b93a367b67}
+\index{[CT2] Scheduling Administration (R.2.70)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/1a6630940ffb44fcad4543b93a367b67.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.71 [CT1] Care Administration Enablement — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.71}
+\addcontentsline{toc}{section}{R.2.71 [CT1] Care Administration Enablement — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.1 \hyperref[element:28df27d55c514a37995145ab46945f78]{[CT1] Care Administration Enablement}; Canonical ID: \texttt{\seqsplit{28df27d55c514a37995145ab46945f78}}. Proposed · current.}\par
+\label{element:b611a1fcfadb4b30af9ba74a4c993d8a}
+\index{[CT1] Care Administration Enablement (R.2.71)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/b611a1fcfadb4b30af9ba74a4c993d8a.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.72 [CT2] Acute Care — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.72}
+\addcontentsline{toc}{section}{R.2.72 [CT2] Acute Care — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.1 \hyperref[element:9bb988c526404522b83aeed5069e0eb5]{[CT2] Acute Care}; Canonical ID: \texttt{\seqsplit{9bb988c526404522b83aeed5069e0eb5}}. Proposed · current.}\par
+\label{element:7b591957f7424424abc80f699e9f1960}
+\index{[CT2] Acute Care (R.2.72)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/7b591957f7424424abc80f699e9f1960.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.73 [CT2] Allied Health — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.73}
+\addcontentsline{toc}{section}{R.2.73 [CT2] Allied Health — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.2 \hyperref[element:63cd714a3e2a4354aa5383b189fea566]{[CT2] Allied Health}; Canonical ID: \texttt{\seqsplit{63cd714a3e2a4354aa5383b189fea566}}. Canonical · current.}\par
+\label{element:6cd45c27d0c344b9807174dbd812d572}
+\index{[CT2] Allied Health (R.2.73)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/6cd45c27d0c344b9807174dbd812d572.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.74 [CT2] Ambulatory Care — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.74}
+\addcontentsline{toc}{section}{R.2.74 [CT2] Ambulatory Care — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.3 \hyperref[element:f74d7c3a39c540c4b462576e8f09fc58]{[CT2] Ambulatory Care}; Canonical ID: \texttt{\seqsplit{f74d7c3a39c540c4b462576e8f09fc58}}. Canonical · current.}\par
+\label{element:e996b61b6e7b4619913f427aed2b55b1}
+\index{[CT2] Ambulatory Care (R.2.74)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e996b61b6e7b4619913f427aed2b55b1.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.75 [CT2] Clinical Assessment — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.75}
+\addcontentsline{toc}{section}{R.2.75 [CT2] Clinical Assessment — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.4 \hyperref[element:a7d84c95e48c453797419813ca80a66c]{[CT2] Clinical Assessment}; Canonical ID: \texttt{\seqsplit{a7d84c95e48c453797419813ca80a66c}}. Canonical · current.}\par
+\label{element:1c3b553c87704e27ba211fbbd02d95cb}
+\index{[CT2] Clinical Assessment (R.2.75)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/1c3b553c87704e27ba211fbbd02d95cb.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.76 [CT2] Community Care — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.76}
+\addcontentsline{toc}{section}{R.2.76 [CT2] Community Care — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.5 \hyperref[element:942aa78cad004ef99de6b3aae8ddd014]{[CT2] Community Care}; Canonical ID: \texttt{\seqsplit{942aa78cad004ef99de6b3aae8ddd014}}. Proposed · current.}\par
+\label{element:4b7177f3f40449518fba381acae6ba1e}
+\index{[CT2] Community Care (R.2.76)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/4b7177f3f40449518fba381acae6ba1e.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.77 [CT2] Diagnostic Services — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.77}
+\addcontentsline{toc}{section}{R.2.77 [CT2] Diagnostic Services — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.6 \hyperref[element:b825ebab42f444d8b738b4c1f489f785]{[CT2] Diagnostic Services}; Canonical ID: \texttt{\seqsplit{b825ebab42f444d8b738b4c1f489f785}}. Proposed · current.}\par
+\label{element:03a57e0c9ea34f7fb7b78e5f5c85379f}
+\index{[CT2] Diagnostic Services (R.2.77)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/03a57e0c9ea34f7fb7b78e5f5c85379f.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.78 [CT2] Emergency Care — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.78}
+\addcontentsline{toc}{section}{R.2.78 [CT2] Emergency Care — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.7 \hyperref[element:aa088f0647ad4b78966fe28fa80af674]{[CT2] Emergency Care}; Canonical ID: \texttt{\seqsplit{aa088f0647ad4b78966fe28fa80af674}}. Proposed · current.}\par
+\label{element:e5edbb54258c490aaba0816d980dc624}
+\index{[CT2] Emergency Care (R.2.78)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e5edbb54258c490aaba0816d980dc624.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.79 [CT2] Inpatient Care — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.79}
+\addcontentsline{toc}{section}{R.2.79 [CT2] Inpatient Care — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.8 \hyperref[element:b39fb49c01b545a5b51d3313531efb1b]{[CT2] Inpatient Care}; Canonical ID: \texttt{\seqsplit{b39fb49c01b545a5b51d3313531efb1b}}. Proposed · current.}\par
+\label{element:bcc40a14465e48aca42c9505a6853081}
+\index{[CT2] Inpatient Care (R.2.79)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/bcc40a14465e48aca42c9505a6853081.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.80 [CT2] Medication Therapy — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.80}
+\addcontentsline{toc}{section}{R.2.80 [CT2] Medication Therapy — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.9 \hyperref[element:bb04996164c94e0c827a020432f4e498]{[CT2] Medication Therapy}; Canonical ID: \texttt{\seqsplit{bb04996164c94e0c827a020432f4e498}}. Proposed · current.}\par
+\label{element:db064e0cd4794479be1374e97a3d7e63}
+\index{[CT2] Medication Therapy (R.2.80)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/db064e0cd4794479be1374e97a3d7e63.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.81 [CT2] Outreach Care — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.81}
+\addcontentsline{toc}{section}{R.2.81 [CT2] Outreach Care — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.10 \hyperref[element:b9ddbe2dd6a7485ba9cd3482215ea09e]{[CT2] Outreach Care}; Canonical ID: \texttt{\seqsplit{b9ddbe2dd6a7485ba9cd3482215ea09e}}. Proposed · current.}\par
+\label{element:75f8b32a3d5048ccbdfb30d61ae73dad}
+\index{[CT2] Outreach Care (R.2.81)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/75f8b32a3d5048ccbdfb30d61ae73dad.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.82 [CT2] Preventive Care — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.82}
+\addcontentsline{toc}{section}{R.2.82 [CT2] Preventive Care — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.11 \hyperref[element:dfdc4f0273ba4910848b3b65c9ef6ab2]{[CT2] Preventive Care}; Canonical ID: \texttt{\seqsplit{dfdc4f0273ba4910848b3b65c9ef6ab2}}. Proposed · current.}\par
+\label{element:97f0d1acc37b4ca994c6c1ca006f2daa}
+\index{[CT2] Preventive Care (R.2.82)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/97f0d1acc37b4ca994c6c1ca006f2daa.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.83 [CT2] Primary Care — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.83}
+\addcontentsline{toc}{section}{R.2.83 [CT2] Primary Care — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.12 \hyperref[element:d118673d77d74c8cb8cec24f03adddd8]{[CT2] Primary Care}; Canonical ID: \texttt{\seqsplit{d118673d77d74c8cb8cec24f03adddd8}}. Proposed · current.}\par
+\label{element:fe9d58b5cfe14e8cb7a83a1ac6686d65}
+\index{[CT2] Primary Care (R.2.83)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/fe9d58b5cfe14e8cb7a83a1ac6686d65.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.84 [CT2] Rehabilitation — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.84}
+\addcontentsline{toc}{section}{R.2.84 [CT2] Rehabilitation — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.13 \hyperref[element:99ed51abcc5e4e8ba3b3d0161b17544a]{[CT2] Rehabilitation}; Canonical ID: \texttt{\seqsplit{99ed51abcc5e4e8ba3b3d0161b17544a}}. Canonical · current.}\par
+\label{element:28ec21d5918a49aaac12740c69f42d77}
+\index{[CT2] Rehabilitation (R.2.84)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/28ec21d5918a49aaac12740c69f42d77.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.85 [CT2] Remote \& Virtual Care — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.85}
+\addcontentsline{toc}{section}{R.2.85 [CT2] Remote \& Virtual Care — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.14 \hyperref[element:30dff22d40b64da29ede7c41673db085]{[CT2] Remote \& Virtual Care}; Canonical ID: \texttt{\seqsplit{30dff22d40b64da29ede7c41673db085}}. Proposed · current.}\par
+\label{element:75e2b447659c4fdf94107d94758337ed}
+\index{[CT2] Remote \& Virtual Care (R.2.85)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/75e2b447659c4fdf94107d94758337ed.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.86 [CT2] Surgical \& Procedural Care — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.86}
+\addcontentsline{toc}{section}{R.2.86 [CT2] Surgical \& Procedural Care — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.15 \hyperref[element:c9a26d1aa1014545b9ae759b663c807b]{[CT2] Surgical \& Procedural Care}; Canonical ID: \texttt{\seqsplit{c9a26d1aa1014545b9ae759b663c807b}}. Canonical · current.}\par
+\label{element:8bc2a106165a4702b5f72fe46a206b69}
+\index{[CT2] Surgical \& Procedural Care (R.2.86)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/8bc2a106165a4702b5f72fe46a206b69.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.87 [CT2] Therapeutic Services — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.87}
+\addcontentsline{toc}{section}{R.2.87 [CT2] Therapeutic Services — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3.16 \hyperref[element:b512b6d326004cb7b91a627fe6dbd8be]{[CT2] Therapeutic Services}; Canonical ID: \texttt{\seqsplit{b512b6d326004cb7b91a627fe6dbd8be}}. Canonical · current.}\par
+\label{element:54032b52ee444bfe8b611fb9e8e2ba10}
+\index{[CT2] Therapeutic Services (R.2.87)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/54032b52ee444bfe8b611fb9e8e2ba10.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.88 [CT1] Clinical Service Dependency Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.88}
+\addcontentsline{toc}{section}{R.2.88 [CT1] Clinical Service Dependency Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.3 \hyperref[element:232db9b8b47c450cb0aa9acaf539c09d]{[CT1] Clinical Service Dependency Management}; Canonical ID: \texttt{\seqsplit{232db9b8b47c450cb0aa9acaf539c09d}}. Proposed · current.}\par
+\label{element:984ee17123eb4f92b3e55e55d24459b8}
+\index{[CT1] Clinical Service Dependency Management (R.2.88)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/984ee17123eb4f92b3e55e55d24459b8.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.89 [CT3] Client Privacy Guardrail Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.89}
+\addcontentsline{toc}{section}{R.2.89 [CT3] Client Privacy Guardrail Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.1.1 \hyperref[element:7577a6e1815243648dd5356c21cca151]{[CT3] Client Privacy Guardrail Management}; Canonical ID: \texttt{\seqsplit{7577a6e1815243648dd5356c21cca151}}. Canonical · current.}\par
+\label{element:d2e6078b5db041cb904e0cadcebce6eb}
+\index{[CT3] Client Privacy Guardrail Management (R.2.89)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/d2e6078b5db041cb904e0cadcebce6eb.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.90 [CT3] Client Relationship Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.90}
+\addcontentsline{toc}{section}{R.2.90 [CT3] Client Relationship Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.1.2 \hyperref[element:d682c11d3eb04770b1f20be478fd475e]{[CT3] Client Relationship Administration}; Canonical ID: \texttt{\seqsplit{d682c11d3eb04770b1f20be478fd475e}}. Canonical · current.}\par
+\label{element:2c799ec0c4c74c97a75c12e949887b95}
+\index{[CT3] Client Relationship Administration (R.2.90)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/2c799ec0c4c74c97a75c12e949887b95.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.91 [CT3] Healthcare Subject Profile Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.91}
+\addcontentsline{toc}{section}{R.2.91 [CT3] Healthcare Subject Profile Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.1.3 \hyperref[element:df214b5499694b768eb4a7a175a9d471]{[CT3] Healthcare Subject Profile Administration}; Canonical ID: \texttt{\seqsplit{df214b5499694b768eb4a7a175a9d471}}. Canonical · current.}\par
+\label{element:d653c3247ddd49479f985f6b435933a0}
+\index{[CT3] Healthcare Subject Profile Administration (R.2.91)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/d653c3247ddd49479f985f6b435933a0.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.92 [CT3] Person Identity Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.92}
+\addcontentsline{toc}{section}{R.2.92 [CT3] Person Identity Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.1.4 \hyperref[element:6c3de7750ef1436cad6a9533731782b6]{[CT3] Person Identity Administration}; Canonical ID: \texttt{\seqsplit{6c3de7750ef1436cad6a9533731782b6}}. Canonical · current.}\par
+\label{element:7550fd5b17e643118fa76d2616e1ba20}
+\index{[CT3] Person Identity Administration (R.2.92)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/7550fd5b17e643118fa76d2616e1ba20.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.93 [CT2] Client Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.93}
+\addcontentsline{toc}{section}{R.2.93 [CT2] Client Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.1 \hyperref[element:f0885472cced4bccbcce1568bf0360dc]{[CT2] Client Administration}; Canonical ID: \texttt{\seqsplit{f0885472cced4bccbcce1568bf0360dc}}. Canonical · current.}\par
+\label{element:70d2a44a0442441f8b306b82b297bb8a}
+\index{[CT2] Client Administration (R.2.93)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/70d2a44a0442441f8b306b82b297bb8a.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.94 [CT3] Clinical Device Profile Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.94}
+\addcontentsline{toc}{section}{R.2.94 [CT3] Clinical Device Profile Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.2.1 \hyperref[element:d0a1ba80c790476ea6042290eb7ea09e]{[CT3] Clinical Device Profile Administration}; Canonical ID: \texttt{\seqsplit{d0a1ba80c790476ea6042290eb7ea09e}}. Proposed · current.}\par
+\label{element:e8c72952da144d6883caba7fd2afb88d}
+\index{[CT3] Clinical Device Profile Administration (R.2.94)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e8c72952da144d6883caba7fd2afb88d.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.95 [CT3] Device Connectivity Compliance Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.95}
+\addcontentsline{toc}{section}{R.2.95 [CT3] Device Connectivity Compliance Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.2.4 \hyperref[element:b16ab359030a4583868f3aac2221074e]{[CT3] Device Connectivity Compliance Management}; Canonical ID: \texttt{\seqsplit{b16ab359030a4583868f3aac2221074e}}. Proposed · current.}\par
+\label{element:9225f083d3474715a75af2a827a4016d}
+\index{[CT3] Device Connectivity Compliance Management (R.2.95)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/9225f083d3474715a75af2a827a4016d.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.96 [CT3] Device OA\&M Metadata Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.96}
+\addcontentsline{toc}{section}{R.2.96 [CT3] Device OA\&M Metadata Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.2.6 \hyperref[element:659bb194a7ef42ab9ba8a938adb5c179]{[CT3] Device OA\&M Metadata Management}; Canonical ID: \texttt{\seqsplit{659bb194a7ef42ab9ba8a938adb5c179}}. Proposed · current.}\par
+\label{element:a398c72bef094dee96c96d97994449fb}
+\index{[CT3] Device OA\&M Metadata Management (R.2.96)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a398c72bef094dee96c96d97994449fb.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.97 [CT3] Device Utilisation Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.97}
+\addcontentsline{toc}{section}{R.2.97 [CT3] Device Utilisation Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.2.7 \hyperref[element:1a3732b5911c45b3aece38b2db2d0f15]{[CT3] Device Utilisation Administration}; Canonical ID: \texttt{\seqsplit{1a3732b5911c45b3aece38b2db2d0f15}}. Proposed · current.}\par
+\label{element:a0af0a86667d48f4ab95ed2920e878cb}
+\index{[CT3] Device Utilisation Administration (R.2.97)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a0af0a86667d48f4ab95ed2920e878cb.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.98 [CT2] Clinical Device Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.98}
+\addcontentsline{toc}{section}{R.2.98 [CT2] Clinical Device Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.2 \hyperref[element:31bcd6fda0d14cc8b992cdca39a3cbed]{[CT2] Clinical Device Administration}; Canonical ID: \texttt{\seqsplit{31bcd6fda0d14cc8b992cdca39a3cbed}}. Canonical · current.}\par
+\label{element:3792be10541e4d68b3f740b1ba964966}
+\index{[CT2] Clinical Device Administration (R.2.98)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/3792be10541e4d68b3f740b1ba964966.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.99 [CT3] Health Materiel Catalogue \& Formulary Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.99}
+\addcontentsline{toc}{section}{R.2.99 [CT3] Health Materiel Catalogue \& Formulary Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.3.1 \hyperref[element:28b327760af94b8b986357469524d793]{[CT3] Health Materiel Catalogue \& Formulary Administration}; Canonical ID: \texttt{\seqsplit{28b327760af94b8b986357469524d793}}. Proposed · current.}\par
+\label{element:5c691959e2cc4a289fc25b9f3497eed9}
+\index{[CT3] Health Materiel Catalogue \& Formulary Administration (R.2.99)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/5c691959e2cc4a289fc25b9f3497eed9.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.100 [CT3] Health Materiel Profile Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.100}
+\addcontentsline{toc}{section}{R.2.100 [CT3] Health Materiel Profile Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.3.2 \hyperref[element:9626edae517d40d2bfae619860f18e20]{[CT3] Health Materiel Profile Administration}; Canonical ID: \texttt{\seqsplit{9626edae517d40d2bfae619860f18e20}}. Proposed · current.}\par
+\label{element:9216f9cc905e4526b1d98cd4ab382cbf}
+\index{[CT3] Health Materiel Profile Administration (R.2.100)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/9216f9cc905e4526b1d98cd4ab382cbf.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.101 [CT3] Health Materiel Traceability Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.101}
+\addcontentsline{toc}{section}{R.2.101 [CT3] Health Materiel Traceability Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.3.3 \hyperref[element:2d41ed0f00a94a4b90ffe87d6fd4e9fe]{[CT3] Health Materiel Traceability Administration}; Canonical ID: \texttt{\seqsplit{2d41ed0f00a94a4b90ffe87d6fd4e9fe}}. Proposed · current.}\par
+\label{element:f1b888e8d50c4019ac1afe162d6223f3}
+\index{[CT3] Health Materiel Traceability Administration (R.2.101)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/f1b888e8d50c4019ac1afe162d6223f3.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.102 [CT2] Health Materiel Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.102}
+\addcontentsline{toc}{section}{R.2.102 [CT2] Health Materiel Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.3 \hyperref[element:e7081070a9f8444f81c1d8fce37ef664]{[CT2] Health Materiel Administration}; Canonical ID: \texttt{\seqsplit{e7081070a9f8444f81c1d8fce37ef664}}. Canonical · current.}\par
+\label{element:4952f86078c54a8d898ac992e6f4f577}
+\index{[CT2] Health Materiel Administration (R.2.102)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/4952f86078c54a8d898ac992e6f4f577.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.103 [CT3] Healthcare Service Profile Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.103}
+\addcontentsline{toc}{section}{R.2.103 [CT3] Healthcare Service Profile Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.4.1 \hyperref[element:e75d5eb30936476ea7a9cbadfa43d5ef]{[CT3] Healthcare Service Profile Administration}; Canonical ID: \texttt{\seqsplit{e75d5eb30936476ea7a9cbadfa43d5ef}}. Proposed · current.}\par
+\label{element:7780ca2fed2346439d5f559d00cc4ee4}
+\index{[CT3] Healthcare Service Profile Administration (R.2.103)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/7780ca2fed2346439d5f559d00cc4ee4.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.104 [CT2] Health Service Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.104}
+\addcontentsline{toc}{section}{R.2.104 [CT2] Health Service Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.4 \hyperref[element:ba68a52913a0499d8377553bddfa74a4]{[CT2] Health Service Administration}; Canonical ID: \texttt{\seqsplit{ba68a52913a0499d8377553bddfa74a4}}. Canonical · current.}\par
+\label{element:f1ab1258cf2944efb50105e7885f8027}
+\index{[CT2] Health Service Administration (R.2.104)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/f1ab1258cf2944efb50105e7885f8027.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.105 [CT3] Care-Place Definition Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.105}
+\addcontentsline{toc}{section}{R.2.105 [CT3] Care-Place Definition Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.5.1 \hyperref[element:629b493c7d9844baa25c029a87ed04f6]{[CT3] Care-Place Definition Administration}; Canonical ID: \texttt{\seqsplit{629b493c7d9844baa25c029a87ed04f6}}. Proposed · current.}\par
+\label{element:a3464bd9c0dc4a01b50803acc7705b4e}
+\index{[CT3] Care-Place Definition Administration (R.2.105)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a3464bd9c0dc4a01b50803acc7705b4e.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.106 [CT3] Healthcare Location Profile Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.106}
+\addcontentsline{toc}{section}{R.2.106 [CT3] Healthcare Location Profile Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.5.2 \hyperref[element:e579e54a08bb4f899a504aa998ba246b]{[CT3] Healthcare Location Profile Administration}; Canonical ID: \texttt{\seqsplit{e579e54a08bb4f899a504aa998ba246b}}. Proposed · current.}\par
+\label{element:8a04d1f16d0849e786d2aaec33e0ba87}
+\index{[CT3] Healthcare Location Profile Administration (R.2.106)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/8a04d1f16d0849e786d2aaec33e0ba87.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.107 [CT2] Location Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.107}
+\addcontentsline{toc}{section}{R.2.107 [CT2] Location Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.5 \hyperref[element:c410005667444f99a221483bf577fad2]{[CT2] Location Administration}; Canonical ID: \texttt{\seqsplit{c410005667444f99a221483bf577fad2}}. Canonical · current.}\par
+\label{element:d412aff3a5c64e6aaba910d4c2c9356d}
+\index{[CT2] Location Administration (R.2.107)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/d412aff3a5c64e6aaba910d4c2c9356d.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.108 [CT3] Healthcare Organisation Profile Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.108}
+\addcontentsline{toc}{section}{R.2.108 [CT3] Healthcare Organisation Profile Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.6.1 \hyperref[element:f2de9e9394b849f2943355c7a2882a15]{[CT3] Healthcare Organisation Profile Administration}; Canonical ID: \texttt{\seqsplit{f2de9e9394b849f2943355c7a2882a15}}. Proposed · current.}\par
+\label{element:e485424b799c42aca7399d341ca02d0b}
+\index{[CT3] Healthcare Organisation Profile Administration (R.2.108)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e485424b799c42aca7399d341ca02d0b.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.109 [CT2] Organisation Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.109}
+\addcontentsline{toc}{section}{R.2.109 [CT2] Organisation Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.6 \hyperref[element:14fbdc5ce3dd4c2092c5397dab3ed743]{[CT2] Organisation Administration}; Canonical ID: \texttt{\seqsplit{14fbdc5ce3dd4c2092c5397dab3ed743}}. Canonical · current.}\par
+\label{element:1b0eacfbb27d4631a24f9279dab6681d}
+\index{[CT2] Organisation Administration (R.2.109)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/1b0eacfbb27d4631a24f9279dab6681d.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.110 [CT3] Practitioner Profile Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.110}
+\addcontentsline{toc}{section}{R.2.110 [CT3] Practitioner Profile Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.7.1 \hyperref[element:40759a835f7b456e9257c38b67b0a380]{[CT3] Practitioner Profile Administration}; Canonical ID: \texttt{\seqsplit{40759a835f7b456e9257c38b67b0a380}}. Proposed · current.}\par
+\label{element:2415ddcbc73c47e1a63be310bd4342ee}
+\index{[CT3] Practitioner Profile Administration (R.2.110)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/2415ddcbc73c47e1a63be310bd4342ee.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.111 [CT3] Practitioner Role Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.111}
+\addcontentsline{toc}{section}{R.2.111 [CT3] Practitioner Role Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.7.2 \hyperref[element:6651471e67ae46fb8d1c1241c8590be9]{[CT3] Practitioner Role Administration}; Canonical ID: \texttt{\seqsplit{6651471e67ae46fb8d1c1241c8590be9}}. Proposed · current.}\par
+\label{element:6b777f1201db474eb22dd89f2b1f68c6}
+\index{[CT3] Practitioner Role Administration (R.2.111)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/6b777f1201db474eb22dd89f2b1f68c6.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.112 [CT3] Vendor Liaison — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.112}
+\addcontentsline{toc}{section}{R.2.112 [CT3] Vendor Liaison — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.7.5 \hyperref[element:66358bd6698e4050b12342522fbbb923]{[CT3] Vendor Liaison}; Canonical ID: \texttt{\seqsplit{66358bd6698e4050b12342522fbbb923}}. Proposed · current.}\par
+\label{element:29076cbb9fc5442fb25faf43947574f7}
+\index{[CT3] Vendor Liaison (R.2.112)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/29076cbb9fc5442fb25faf43947574f7.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.113 [CT2] Provider Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.113}
+\addcontentsline{toc}{section}{R.2.113 [CT2] Provider Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4.7 \hyperref[element:d6312f85968a4209bafff5ed009297a6]{[CT2] Provider Administration}; Canonical ID: \texttt{\seqsplit{d6312f85968a4209bafff5ed009297a6}}. Canonical · current.}\par
+\label{element:a352fd50419d451887c85fcb98566cd5}
+\index{[CT2] Provider Administration (R.2.113)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a352fd50419d451887c85fcb98566cd5.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.114 [CT1] Entity Information Enablement — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.114}
+\addcontentsline{toc}{section}{R.2.114 [CT1] Entity Information Enablement — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.4 \hyperref[element:b5a92874f8ac4509a30af5253590edc1]{[CT1] Entity Information Enablement}; Canonical ID: \texttt{\seqsplit{b5a92874f8ac4509a30af5253590edc1}}. Proposed · current.}\par
+\label{element:e4d959d6c71d498c9ce00d2be4c048e3}
+\index{[CT1] Entity Information Enablement (R.2.114)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e4d959d6c71d498c9ce00d2be4c048e3.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.115 [CT2] Population Health Information Reporting — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.115}
+\addcontentsline{toc}{section}{R.2.115 [CT2] Population Health Information Reporting — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.5.1 \hyperref[element:2135b45eab034370b0063b20e821985d]{[CT2] Population Health Information Reporting}; Canonical ID: \texttt{\seqsplit{2135b45eab034370b0063b20e821985d}}. Proposed · current.}\par
+\label{element:ced472b2d1a54016878ee541de969d9b}
+\index{[CT2] Population Health Information Reporting (R.2.115)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/ced472b2d1a54016878ee541de969d9b.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.116 [CT2] Research Information Curation — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.116}
+\addcontentsline{toc}{section}{R.2.116 [CT2] Research Information Curation — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.5.2 \hyperref[element:4f5b8cec90324c2989cdc30e80bc8cb9]{[CT2] Research Information Curation}; Canonical ID: \texttt{\seqsplit{4f5b8cec90324c2989cdc30e80bc8cb9}}. Proposed · current.}\par
+\label{element:11203b9c80964a9b96883eeab07f41d5}
+\index{[CT2] Research Information Curation (R.2.116)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/11203b9c80964a9b96883eeab07f41d5.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.117 [CT2] Service Planning Data Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.117}
+\addcontentsline{toc}{section}{R.2.117 [CT2] Service Planning Data Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.5.3 \hyperref[element:4873cd4b960d45d8b93560d5c8b98500]{[CT2] Service Planning Data Management}; Canonical ID: \texttt{\seqsplit{4873cd4b960d45d8b93560d5c8b98500}}. Proposed · current.}\par
+\label{element:19263e0802cc4b88af7a345f1410cffd}
+\index{[CT2] Service Planning Data Management (R.2.117)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/19263e0802cc4b88af7a345f1410cffd.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.118 [CT1] Health Informatics Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.118}
+\addcontentsline{toc}{section}{R.2.118 [CT1] Health Informatics Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.5 \hyperref[element:a790b5f2c5a1497fa6ec09d7824da32e]{[CT1] Health Informatics Management}; Canonical ID: \texttt{\seqsplit{a790b5f2c5a1497fa6ec09d7824da32e}}. Proposed · current.}\par
+\label{element:50c56bac0dc540a2b392fc2376efc129}
+\index{[CT1] Health Informatics Management (R.2.118)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/50c56bac0dc540a2b392fc2376efc129.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.119 [CT3] Bed \& Care-Place State Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.119}
+\addcontentsline{toc}{section}{R.2.119 [CT3] Bed \& Care-Place State Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.1.1 \hyperref[element:26a9383d7bb146a19141558d232843de]{[CT3] Bed \& Care-Place State Administration}; Canonical ID: \texttt{\seqsplit{26a9383d7bb146a19141558d232843de}}. Proposed · current.}\par
+\label{element:dd2e2ee1a68845c087ba93610752181b}
+\index{[CT3] Bed \& Care-Place State Administration (R.2.119)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/dd2e2ee1a68845c087ba93610752181b.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.120 [CT3] Bed \& Care-Place Turnover Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.120}
+\addcontentsline{toc}{section}{R.2.120 [CT3] Bed \& Care-Place Turnover Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.1.2 \hyperref[element:3c9464f9eae1415d8fa041bd1f3da4f2]{[CT3] Bed \& Care-Place Turnover Coordination}; Canonical ID: \texttt{\seqsplit{3c9464f9eae1415d8fa041bd1f3da4f2}}. Proposed · current.}\par
+\label{element:a50662edda954bc58c44184d84591d5b}
+\index{[CT3] Bed \& Care-Place Turnover Coordination (R.2.120)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a50662edda954bc58c44184d84591d5b.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.121 [CT2] Bed \& Care-Place Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.121}
+\addcontentsline{toc}{section}{R.2.121 [CT2] Bed \& Care-Place Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.1 \hyperref[element:f117ccec0bfa4f738e6ddb646b3534a2]{[CT2] Bed \& Care-Place Management}; Canonical ID: \texttt{\seqsplit{f117ccec0bfa4f738e6ddb646b3534a2}}. Canonical · current.}\par
+\label{element:c94d29b7d1c045dabc7814ceea795484}
+\index{[CT2] Bed \& Care-Place Management (R.2.121)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/c94d29b7d1c045dabc7814ceea795484.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.122 [CT3] Session \& Queue Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.122}
+\addcontentsline{toc}{section}{R.2.122 [CT3] Session \& Queue Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.5.1 \hyperref[element:22981a95ca6e466582363706fde8fceb]{[CT3] Session \& Queue Coordination}; Canonical ID: \texttt{\seqsplit{22981a95ca6e466582363706fde8fceb}}. Proposed · current.}\par
+\label{element:5298c6170cef4f05a6d956da716071bd}
+\index{[CT3] Session \& Queue Coordination (R.2.122)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/5298c6170cef4f05a6d956da716071bd.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.123 [CT2] Clinic \& Practice Operations — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.123}
+\addcontentsline{toc}{section}{R.2.123 [CT2] Clinic \& Practice Operations — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.5 \hyperref[element:3dffe63e03124efab255204ee4e9a5d9]{[CT2] Clinic \& Practice Operations}; Canonical ID: \texttt{\seqsplit{3dffe63e03124efab255204ee4e9a5d9}}. Canonical · current.}\par
+\label{element:0856d2daf2ba4b92b5390b38b98efb54}
+\index{[CT2] Clinic \& Practice Operations (R.2.123)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/0856d2daf2ba4b92b5390b38b98efb54.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.124 [CT2] Clinical Competency Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.124}
+\addcontentsline{toc}{section}{R.2.124 [CT2] Clinical Competency Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.6 \hyperref[element:8a99f4a6e5054d6c997bacec04805c01]{[CT2] Clinical Competency Administration}; Canonical ID: \texttt{\seqsplit{8a99f4a6e5054d6c997bacec04805c01}}. Canonical · current.}\par
+\label{element:8a4b918e1c9d47bb99daf2b42008ab39}
+\index{[CT2] Clinical Competency Administration (R.2.124)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/8a4b918e1c9d47bb99daf2b42008ab39.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.125 [CT3] Specimen Metadata Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.125}
+\addcontentsline{toc}{section}{R.2.125 [CT3] Specimen Metadata Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.7.1 \hyperref[element:738736425b7446fdae47b06c91c4f69c]{[CT3] Specimen Metadata Management}; Canonical ID: \texttt{\seqsplit{738736425b7446fdae47b06c91c4f69c}}. Proposed · current.}\par
+\label{element:3b000d3712534d16a48470f79df8e33a}
+\index{[CT3] Specimen Metadata Management (R.2.125)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/3b000d3712534d16a48470f79df8e33a.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.126 [CT3] Specimen Movement Traceability — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.126}
+\addcontentsline{toc}{section}{R.2.126 [CT3] Specimen Movement Traceability — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.7.2 \hyperref[element:bfa2e9a84ddd4287897573dc0d917a00]{[CT3] Specimen Movement Traceability}; Canonical ID: \texttt{\seqsplit{bfa2e9a84ddd4287897573dc0d917a00}}. Proposed · current.}\par
+\label{element:129119d7b2744ffd805c58f25557fa27}
+\index{[CT3] Specimen Movement Traceability (R.2.126)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/129119d7b2744ffd805c58f25557fa27.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.127 [CT2] Clinical Logistics Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.127}
+\addcontentsline{toc}{section}{R.2.127 [CT2] Clinical Logistics Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.7 \hyperref[element:0c27be11b4a44cb19e992309b8146a17]{[CT2] Clinical Logistics Coordination}; Canonical ID: \texttt{\seqsplit{0c27be11b4a44cb19e992309b8146a17}}. Canonical · current.}\par
+\label{element:90a782ff2d004fa984ae0465528b2253}
+\index{[CT2] Clinical Logistics Coordination (R.2.127)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/90a782ff2d004fa984ae0465528b2253.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.128 [CT3] Organisation Clinical Certification \& Compliance Support — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.128}
+\addcontentsline{toc}{section}{R.2.128 [CT3] Organisation Clinical Certification \& Compliance Support — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.8.1 \hyperref[element:4de624e7bf49472f91e3e5c734ee8725]{[CT3] Organisation Clinical Certification \& Compliance Support}; Canonical ID: \texttt{\seqsplit{4de624e7bf49472f91e3e5c734ee8725}}. Proposed · current.}\par
+\label{element:cee76a930a4e4e7d9c49357ba290c8bf}
+\index{[CT3] Organisation Clinical Certification \& Compliance Support (R.2.128)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/cee76a930a4e4e7d9c49357ba290c8bf.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.129 [CT3] Provider Clinical Qualification Tracking — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.129}
+\addcontentsline{toc}{section}{R.2.129 [CT3] Provider Clinical Qualification Tracking — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.8.2 \hyperref[element:8fd5c78eba3046fa9153fb4efb44e9c8]{[CT3] Provider Clinical Qualification Tracking}; Canonical ID: \texttt{\seqsplit{8fd5c78eba3046fa9153fb4efb44e9c8}}. Proposed · current.}\par
+\label{element:ab0415e2ea0a4da4ad3dc46997d48bc3}
+\index{[CT3] Provider Clinical Qualification Tracking (R.2.129)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/ab0415e2ea0a4da4ad3dc46997d48bc3.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.130 [CT2] Clinical Qualification Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.130}
+\addcontentsline{toc}{section}{R.2.130 [CT2] Clinical Qualification Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.8 \hyperref[element:0511a705d74a4f48a0ce92590ae764fa]{[CT2] Clinical Qualification Administration}; Canonical ID: \texttt{\seqsplit{0511a705d74a4f48a0ce92590ae764fa}}. Canonical · current.}\par
+\label{element:5fea7aaac4384245b1f08a3d8a076bd9}
+\index{[CT2] Clinical Qualification Administration (R.2.130)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/5fea7aaac4384245b1f08a3d8a076bd9.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.131 [CT3] Clinical Roster Capture \& Communication — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.131}
+\addcontentsline{toc}{section}{R.2.131 [CT3] Clinical Roster Capture \& Communication — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.9.1 \hyperref[element:8243cba81fb6449781d10823ae194237]{[CT3] Clinical Roster Capture \& Communication}; Canonical ID: \texttt{\seqsplit{8243cba81fb6449781d10823ae194237}}. Proposed · current.}\par
+\label{element:2054d57bb33a4361b3ef0824545a1784}
+\index{[CT3] Clinical Roster Capture \& Communication (R.2.131)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/2054d57bb33a4361b3ef0824545a1784.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.132 [CT2] Clinical Rostering — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.132}
+\addcontentsline{toc}{section}{R.2.132 [CT2] Clinical Rostering — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.9 \hyperref[element:192ca88a289544dcbf6adaf643f39969]{[CT2] Clinical Rostering}; Canonical ID: \texttt{\seqsplit{192ca88a289544dcbf6adaf643f39969}}. Canonical · current.}\par
+\label{element:b6527516a69c499d8cc9c8fe881169fe}
+\index{[CT2] Clinical Rostering (R.2.132)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/b6527516a69c499d8cc9c8fe881169fe.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.133 [CT3] Clinical Escalation Path Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.133}
+\addcontentsline{toc}{section}{R.2.133 [CT3] Clinical Escalation Path Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.10.1 \hyperref[element:cca86a32ba8c4dda84caeaa248e9f444]{[CT3] Clinical Escalation Path Management}; Canonical ID: \texttt{\seqsplit{cca86a32ba8c4dda84caeaa248e9f444}}. Proposed · current.}\par
+\label{element:759a2e52172345e8ad1bc96d7e5ddad3}
+\index{[CT3] Clinical Escalation Path Management (R.2.133)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/759a2e52172345e8ad1bc96d7e5ddad3.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.134 [CT2] Clinical Supervision — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.134}
+\addcontentsline{toc}{section}{R.2.134 [CT2] Clinical Supervision — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.10 \hyperref[element:f697b1ac79b544749315f31819b17969]{[CT2] Clinical Supervision}; Canonical ID: \texttt{\seqsplit{f697b1ac79b544749315f31819b17969}}. Canonical · current.}\par
+\label{element:50c838981f3946d78e8f78d18e31c70c}
+\index{[CT2] Clinical Supervision (R.2.134)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/50c838981f3946d78e8f78d18e31c70c.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.135 [CT2] Clinical Training \& Education — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.135}
+\addcontentsline{toc}{section}{R.2.135 [CT2] Clinical Training \& Education — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.11 \hyperref[element:d016f35ffbc345d99d7281e968c14ddb]{[CT2] Clinical Training \& Education}; Canonical ID: \texttt{\seqsplit{d016f35ffbc345d99d7281e968c14ddb}}. Canonical · current.}\par
+\label{element:df8bff7df9c1469da16cac6a5eb2bf76}
+\index{[CT2] Clinical Training \& Education (R.2.135)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/df8bff7df9c1469da16cac6a5eb2bf76.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.136 [CT2] Clinical Workforce Capability Monitoring — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.136}
+\addcontentsline{toc}{section}{R.2.136 [CT2] Clinical Workforce Capability Monitoring — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.12 \hyperref[element:367b3e5643f44fa785f093db8bb9a6e8]{[CT2] Clinical Workforce Capability Monitoring}; Canonical ID: \texttt{\seqsplit{367b3e5643f44fa785f093db8bb9a6e8}}. Canonical · current.}\par
+\label{element:24c015676c254e2e82e8e4287c295179}
+\index{[CT2] Clinical Workforce Capability Monitoring (R.2.136)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/24c015676c254e2e82e8e4287c295179.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.137 [CT3] Clinical Service Credential Definition Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.137}
+\addcontentsline{toc}{section}{R.2.137 [CT3] Clinical Service Credential Definition Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.13.1 \hyperref[element:2e5c97f51e7e48d1b865ac416dd8099d]{[CT3] Clinical Service Credential Definition Management}; Canonical ID: \texttt{\seqsplit{2e5c97f51e7e48d1b865ac416dd8099d}}. Proposed · current.}\par
+\label{element:0115ed50867d468a95c0fafa1c5d79e2}
+\index{[CT3] Clinical Service Credential Definition Management (R.2.137)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/0115ed50867d468a95c0fafa1c5d79e2.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.138 [CT2] Credential Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.138}
+\addcontentsline{toc}{section}{R.2.138 [CT2] Credential Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.13 \hyperref[element:21eed4fc8c924496b16c6ddaa32f3d01]{[CT2] Credential Management}; Canonical ID: \texttt{\seqsplit{21eed4fc8c924496b16c6ddaa32f3d01}}. Proposed · current.}\par
+\label{element:bab3d0ab6eb748978b962ea20fb31640}
+\index{[CT2] Credential Management (R.2.138)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/bab3d0ab6eb748978b962ea20fb31640.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.139 [CT3] Discharge Progression \& Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.139}
+\addcontentsline{toc}{section}{R.2.139 [CT3] Discharge Progression \& Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.14.1 \hyperref[element:d6048993146b45639bab27860f94f34f]{[CT3] Discharge Progression \& Coordination}; Canonical ID: \texttt{\seqsplit{d6048993146b45639bab27860f94f34f}}. Proposed · current.}\par
+\label{element:68344272ca6049648a3ddae20c150f37}
+\index{[CT3] Discharge Progression \& Coordination (R.2.139)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/68344272ca6049648a3ddae20c150f37.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.140 [CT2] Discharge Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.140}
+\addcontentsline{toc}{section}{R.2.140 [CT2] Discharge Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.14 \hyperref[element:ec5e8d6732764aa489c2dd7630fc8fef]{[CT2] Discharge Management}; Canonical ID: \texttt{\seqsplit{ec5e8d6732764aa489c2dd7630fc8fef}}. Canonical · current.}\par
+\label{element:c57c0721ab0040ccb24e88e5e92e8cf8}
+\index{[CT2] Discharge Management (R.2.140)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/c57c0721ab0040ccb24e88e5e92e8cf8.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.141 [CT3] Emergency Department Operational Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.141}
+\addcontentsline{toc}{section}{R.2.141 [CT3] Emergency Department Operational Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.15.2 \hyperref[element:8f0b0f3d9e8d44a7827b0835870b4a4f]{[CT3] Emergency Department Operational Coordination}; Canonical ID: \texttt{\seqsplit{8f0b0f3d9e8d44a7827b0835870b4a4f}}. Proposed · current.}\par
+\label{element:15b6d2518e60444098b7c546ca31c49b}
+\index{[CT3] Emergency Department Operational Coordination (R.2.141)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/15b6d2518e60444098b7c546ca31c49b.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.142 [CT2] Emergency Department Operations — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.142}
+\addcontentsline{toc}{section}{R.2.142 [CT2] Emergency Department Operations — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.15 \hyperref[element:24a4b5815faa4d369bc756a6e97d3e9e]{[CT2] Emergency Department Operations}; Canonical ID: \texttt{\seqsplit{24a4b5815faa4d369bc756a6e97d3e9e}}. Canonical · current.}\par
+\label{element:8963b571e9cc40e49c5d738e31d2f97e}
+\index{[CT2] Emergency Department Operations (R.2.142)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/8963b571e9cc40e49c5d738e31d2f97e.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.143 [CT3] Mobile Worker Dispatch \& Safety Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.143}
+\addcontentsline{toc}{section}{R.2.143 [CT3] Mobile Worker Dispatch \& Safety Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.16.1 \hyperref[element:d72164668dfe448bbebe74e9e1a75233]{[CT3] Mobile Worker Dispatch \& Safety Coordination}; Canonical ID: \texttt{\seqsplit{d72164668dfe448bbebe74e9e1a75233}}. Proposed · current.}\par
+\label{element:5aafd1f4bff046b2b532c20dfb191473}
+\index{[CT3] Mobile Worker Dispatch \& Safety Coordination (R.2.143)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/5aafd1f4bff046b2b532c20dfb191473.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.144 [CT2] Mobile Staff Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.144}
+\addcontentsline{toc}{section}{R.2.144 [CT2] Mobile Staff Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.16 \hyperref[element:79a4a48fddf74c69acf7e16404d06ea5]{[CT2] Mobile Staff Management}; Canonical ID: \texttt{\seqsplit{79a4a48fddf74c69acf7e16404d06ea5}}. Canonical · current.}\par
+\label{element:32118856636f400a95fc28daacea61c8}
+\index{[CT2] Mobile Staff Management (R.2.144)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/32118856636f400a95fc28daacea61c8.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.145 [CT3] On-Call Availability \& Contact Resolution — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.145}
+\addcontentsline{toc}{section}{R.2.145 [CT3] On-Call Availability \& Contact Resolution — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.17.1 \hyperref[element:677a816c42414ea694791b4ee5a14285]{[CT3] On-Call Availability \& Contact Resolution}; Canonical ID: \texttt{\seqsplit{677a816c42414ea694791b4ee5a14285}}. Proposed · current.}\par
+\label{element:a03075a46f75497f8c6ba95d9c9e27c4}
+\index{[CT3] On-Call Availability \& Contact Resolution (R.2.145)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a03075a46f75497f8c6ba95d9c9e27c4.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.146 [CT2] On-Call Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.146}
+\addcontentsline{toc}{section}{R.2.146 [CT2] On-Call Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.17 \hyperref[element:b16cef8f2bfd4b92948ec75cbcfa7b9a]{[CT2] On-Call Management}; Canonical ID: \texttt{\seqsplit{b16cef8f2bfd4b92948ec75cbcfa7b9a}}. Canonical · current.}\par
+\label{element:c8e6e66e8718493c9093f37d129f9ff2}
+\index{[CT2] On-Call Management (R.2.146)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/c8e6e66e8718493c9093f37d129f9ff2.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.147 [CT3] Outpatient Flow Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.147}
+\addcontentsline{toc}{section}{R.2.147 [CT3] Outpatient Flow Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.19.1 \hyperref[element:799ea278af014168b9b534e5fdadc6d1]{[CT3] Outpatient Flow Coordination}; Canonical ID: \texttt{\seqsplit{799ea278af014168b9b534e5fdadc6d1}}. Proposed · current.}\par
+\label{element:e6c59c7b72fe44169a5fdfd08a5e91c4}
+\index{[CT3] Outpatient Flow Coordination (R.2.147)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e6c59c7b72fe44169a5fdfd08a5e91c4.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.148 [CT2] Outpatient Operations — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.148}
+\addcontentsline{toc}{section}{R.2.148 [CT2] Outpatient Operations — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.19 \hyperref[element:21399d52b9624ddfbeb786f1d72e40c3]{[CT2] Outpatient Operations}; Canonical ID: \texttt{\seqsplit{21399d52b9624ddfbeb786f1d72e40c3}}. Canonical · current.}\par
+\label{element:3db41bc06ade4f9088eec7b8aedd7448}
+\index{[CT2] Outpatient Operations (R.2.148)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/3db41bc06ade4f9088eec7b8aedd7448.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.149 [CT3] Patient Transfer Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.149}
+\addcontentsline{toc}{section}{R.2.149 [CT3] Patient Transfer Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.20.1 \hyperref[element:c7c7aa8e34df4568ae4b91cdde380a11]{[CT3] Patient Transfer Coordination}; Canonical ID: \texttt{\seqsplit{c7c7aa8e34df4568ae4b91cdde380a11}}. Proposed · current.}\par
+\label{element:b5a76d4877424b2ea9b01fb5fa22772c}
+\index{[CT3] Patient Transfer Coordination (R.2.149)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/b5a76d4877424b2ea9b01fb5fa22772c.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.150 [CT2] Patient Transport — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.150}
+\addcontentsline{toc}{section}{R.2.150 [CT2] Patient Transport — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.20 \hyperref[element:6041d7c0cc5d4519aaea584bb4e6d365]{[CT2] Patient Transport}; Canonical ID: \texttt{\seqsplit{6041d7c0cc5d4519aaea584bb4e6d365}}. Canonical · current.}\par
+\label{element:e9c1a897884f4d758f5654b824364030}
+\index{[CT2] Patient Transport (R.2.150)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e9c1a897884f4d758f5654b824364030.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.151 [CT3] Service Demand \& Capacity Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.151}
+\addcontentsline{toc}{section}{R.2.151 [CT3] Service Demand \& Capacity Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.21.1 \hyperref[element:93b5548ce8d04fcd999b97536c1eebf9]{[CT3] Service Demand \& Capacity Coordination}; Canonical ID: \texttt{\seqsplit{93b5548ce8d04fcd999b97536c1eebf9}}. Proposed · current.}\par
+\label{element:b57081e650f74ad488549fdaa5305bcb}
+\index{[CT3] Service Demand \& Capacity Coordination (R.2.151)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/b57081e650f74ad488549fdaa5305bcb.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.152 [CT2] Service Capacity Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.152}
+\addcontentsline{toc}{section}{R.2.152 [CT2] Service Capacity Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.21 \hyperref[element:d86105bf9c86445394088f65c895d37f]{[CT2] Service Capacity Management}; Canonical ID: \texttt{\seqsplit{d86105bf9c86445394088f65c895d37f}}. Canonical · current.}\par
+\label{element:ac205f374c9d41c3b6d18a6b7c356152}
+\index{[CT2] Service Capacity Management (R.2.152)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/ac205f374c9d41c3b6d18a6b7c356152.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.153 [CT2] Service Establishment Support — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.153}
+\addcontentsline{toc}{section}{R.2.153 [CT2] Service Establishment Support — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.22 \hyperref[element:20e67a41e7f44398b0f0cf3d379d8b9c]{[CT2] Service Establishment Support}; Canonical ID: \texttt{\seqsplit{20e67a41e7f44398b0f0cf3d379d8b9c}}. Proposed · current.}\par
+\label{element:8a63b08f34fa42c5bda2a3e12b9ecd55}
+\index{[CT2] Service Establishment Support (R.2.153)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/8a63b08f34fa42c5bda2a3e12b9ecd55.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.154 [CT3] Perioperative Logistics Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.154}
+\addcontentsline{toc}{section}{R.2.154 [CT3] Perioperative Logistics Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.23.1 \hyperref[element:6b7c08b60b5b48519bfe4b6f993dd6fb]{[CT3] Perioperative Logistics Coordination}; Canonical ID: \texttt{\seqsplit{6b7c08b60b5b48519bfe4b6f993dd6fb}}. Proposed · current.}\par
+\label{element:e7813a06b9df462fa135c299261f192e}
+\index{[CT3] Perioperative Logistics Coordination (R.2.154)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e7813a06b9df462fa135c299261f192e.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.155 [CT2] Theatre Operations — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.155}
+\addcontentsline{toc}{section}{R.2.155 [CT2] Theatre Operations — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.23 \hyperref[element:4bf7a8260e1444fdac44e97c3557b533]{[CT2] Theatre Operations}; Canonical ID: \texttt{\seqsplit{4bf7a8260e1444fdac44e97c3557b533}}. Canonical · current.}\par
+\label{element:9ac72fea821c45e2b18632ae9a9867dd}
+\index{[CT2] Theatre Operations (R.2.155)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/9ac72fea821c45e2b18632ae9a9867dd.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.156 [CT3] Ward Logistics Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.156}
+\addcontentsline{toc}{section}{R.2.156 [CT3] Ward Logistics Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.24.2 \hyperref[element:3249647f7b9846c899f982ab339c81f9]{[CT3] Ward Logistics Coordination}; Canonical ID: \texttt{\seqsplit{3249647f7b9846c899f982ab339c81f9}}. Proposed · current.}\par
+\label{element:8a9dcc3b5f0143458ec71bc188a56020}
+\index{[CT3] Ward Logistics Coordination (R.2.156)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/8a9dcc3b5f0143458ec71bc188a56020.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.157 [CT2] Ward Operations — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.157}
+\addcontentsline{toc}{section}{R.2.157 [CT2] Ward Operations — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.24 \hyperref[element:f996ecca728f4942a88b034aca818a99]{[CT2] Ward Operations}; Canonical ID: \texttt{\seqsplit{f996ecca728f4942a88b034aca818a99}}. Canonical · current.}\par
+\label{element:bf3d2e3581f24beda20a6a3a3348460e}
+\index{[CT2] Ward Operations (R.2.157)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/bf3d2e3581f24beda20a6a3a3348460e.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.158 [CT3] Operational Work Assignment \& Dispatch Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.158}
+\addcontentsline{toc}{section}{R.2.158 [CT3] Operational Work Assignment \& Dispatch Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.25.1 \hyperref[element:3b58935cfa974176989c3c75d76a00fe]{[CT3] Operational Work Assignment \& Dispatch Coordination}; Canonical ID: \texttt{\seqsplit{3b58935cfa974176989c3c75d76a00fe}}. Proposed · current.}\par
+\label{element:b42afda9e876463ba56fa8f73fe7a32a}
+\index{[CT3] Operational Work Assignment \& Dispatch Coordination (R.2.158)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/b42afda9e876463ba56fa8f73fe7a32a.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.159 [CT2] Work Allocation \& Dispatch — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.159}
+\addcontentsline{toc}{section}{R.2.159 [CT2] Work Allocation \& Dispatch — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6.25 \hyperref[element:152a5252952c405994e9b171234efcb0]{[CT2] Work Allocation \& Dispatch}; Canonical ID: \texttt{\seqsplit{152a5252952c405994e9b171234efcb0}}. Canonical · current.}\par
+\label{element:f8c13b6f74b840cc96fbeada5865455a}
+\index{[CT2] Work Allocation \& Dispatch (R.2.159)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/f8c13b6f74b840cc96fbeada5865455a.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.160 [CT1] Health Service Operations Enablement — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.160}
+\addcontentsline{toc}{section}{R.2.160 [CT1] Health Service Operations Enablement — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.6 \hyperref[element:b13ee2c5a4ef4fd6be8a44795696dfc2]{[CT1] Health Service Operations Enablement}; Canonical ID: \texttt{\seqsplit{b13ee2c5a4ef4fd6be8a44795696dfc2}}. Proposed · current.}\par
+\label{element:a98424298dac46d8b2ddd109d928270a}
+\index{[CT1] Health Service Operations Enablement (R.2.160)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a98424298dac46d8b2ddd109d928270a.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.161 [CT3] Assurance Service Evaluation — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.161}
+\addcontentsline{toc}{section}{R.2.161 [CT3] Assurance Service Evaluation — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.8.1.1 \hyperref[element:039343518db542d48cde6afab84a3e1e]{[CT3] Assurance Service Evaluation}; Canonical ID: \texttt{\seqsplit{039343518db542d48cde6afab84a3e1e}}. Proposed · current.}\par
+\label{element:be34b54314c6444f8418d645f6c83b6d}
+\index{[CT3] Assurance Service Evaluation (R.2.161)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/be34b54314c6444f8418d645f6c83b6d.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.162 [CT2] Assurance Service Review — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.162}
+\addcontentsline{toc}{section}{R.2.162 [CT2] Assurance Service Review — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.8.1 \hyperref[element:b1a791458d644d4794895e4fa42ec83c]{[CT2] Assurance Service Review}; Canonical ID: \texttt{\seqsplit{b1a791458d644d4794895e4fa42ec83c}}. Proposed · current.}\par
+\label{element:b345cb12b45746409302899514126170}
+\index{[CT2] Assurance Service Review (R.2.162)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/b345cb12b45746409302899514126170.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.163 [CT3] Assurance Criteria Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.163}
+\addcontentsline{toc}{section}{R.2.163 [CT3] Assurance Criteria Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.8.2.1 \hyperref[element:1bfd71f24321428c8871b587d413f47e]{[CT3] Assurance Criteria Administration}; Canonical ID: \texttt{\seqsplit{1bfd71f24321428c8871b587d413f47e}}. Canonical · current.}\par
+\label{element:6dab08ab1e3249d7b314843ca9ed0149}
+\index{[CT3] Assurance Criteria Administration (R.2.163)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/6dab08ab1e3249d7b314843ca9ed0149.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.164 [CT3] Assurance Design — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.164}
+\addcontentsline{toc}{section}{R.2.164 [CT3] Assurance Design — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.8.2.2 \hyperref[element:71c8a612b88f4ecba049e94d506bd0c2]{[CT3] Assurance Design}; Canonical ID: \texttt{\seqsplit{71c8a612b88f4ecba049e94d506bd0c2}}. Canonical · current.}\par
+\label{element:e1b8db7c95fa4e7ea296351a03532e24}
+\index{[CT3] Assurance Design (R.2.164)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e1b8db7c95fa4e7ea296351a03532e24.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.165 [CT2] Assurance Specification — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.165}
+\addcontentsline{toc}{section}{R.2.165 [CT2] Assurance Specification — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.8.2 \hyperref[element:b81775d89d774cf8ba61731d13c67a54]{[CT2] Assurance Specification}; Canonical ID: \texttt{\seqsplit{b81775d89d774cf8ba61731d13c67a54}}. Proposed · current.}\par
+\label{element:8006ee0dd95f4d7fb1f408fa09b6ce19}
+\index{[CT2] Assurance Specification (R.2.165)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/8006ee0dd95f4d7fb1f408fa09b6ce19.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.166 [CT1] Independent Assurance Enablement — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.166}
+\addcontentsline{toc}{section}{R.2.166 [CT1] Independent Assurance Enablement — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.8 \hyperref[element:616682b612d244429e656b040e002d56]{[CT1] Independent Assurance Enablement}; Canonical ID: \texttt{\seqsplit{616682b612d244429e656b040e002d56}}. Proposed · current.}\par
+\label{element:88bf57b7a92c4c1da1b5f0a67d3ebd82}
+\index{[CT1] Independent Assurance Enablement (R.2.166)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/88bf57b7a92c4c1da1b5f0a67d3ebd82.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.167 [CT3] Operational \& Clinical Calendar Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.167}
+\addcontentsline{toc}{section}{R.2.167 [CT3] Operational \& Clinical Calendar Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.1.1 \hyperref[element:f6d8f1310ba543f69e8b57bf05603db3]{[CT3] Operational \& Clinical Calendar Coordination}; Canonical ID: \texttt{\seqsplit{f6d8f1310ba543f69e8b57bf05603db3}}. Proposed · current.}\par
+\label{element:c0f6e5f7f5a94d1580fa6e0e8b82c93a}
+\index{[CT3] Operational \& Clinical Calendar Coordination (R.2.167)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/c0f6e5f7f5a94d1580fa6e0e8b82c93a.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.168 [CT2] Calendar Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.168}
+\addcontentsline{toc}{section}{R.2.168 [CT2] Calendar Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.1 \hyperref[element:7669036f7e6749219412fc64df5f7064]{[CT2] Calendar Management}; Canonical ID: \texttt{\seqsplit{7669036f7e6749219412fc64df5f7064}}. Canonical · current.}\par
+\label{element:8b42aac6083441caa78b59f5e62eebd9}
+\index{[CT2] Calendar Management (R.2.168)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/8b42aac6083441caa78b59f5e62eebd9.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.169 [CT3] Clinical Context Collaboration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.169}
+\addcontentsline{toc}{section}{R.2.169 [CT3] Clinical Context Collaboration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.2.1 \hyperref[element:f11617eed6ff4d6fa237644ec95b28b2]{[CT3] Clinical Context Collaboration}; Canonical ID: \texttt{\seqsplit{f11617eed6ff4d6fa237644ec95b28b2}}. Proposed · current.}\par
+\label{element:750ef0d8e1504a8e9a1fde9bf13a6d0c}
+\index{[CT3] Clinical Context Collaboration (R.2.169)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/750ef0d8e1504a8e9a1fde9bf13a6d0c.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.170 [CT2] Clinical Collaboration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.170}
+\addcontentsline{toc}{section}{R.2.170 [CT2] Clinical Collaboration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.2 \hyperref[element:e6429225463a44d39f82e490e254e5d4]{[CT2] Clinical Collaboration}; Canonical ID: \texttt{\seqsplit{e6429225463a44d39f82e490e254e5d4}}. Canonical · current.}\par
+\label{element:c5adc1955b6046d8b920b0176cebc9de}
+\index{[CT2] Clinical Collaboration (R.2.170)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/c5adc1955b6046d8b920b0176cebc9de.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.171 [CT3] Clinical Knowledge Artefact Distribution Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.171}
+\addcontentsline{toc}{section}{R.2.171 [CT3] Clinical Knowledge Artefact Distribution Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.4.1 \hyperref[element:cd29a9eb798949bc8bc81bb5d434cabf]{[CT3] Clinical Knowledge Artefact Distribution Management}; Canonical ID: \texttt{\seqsplit{cd29a9eb798949bc8bc81bb5d434cabf}}. Proposed · current.}\par
+\label{element:d81e0d6d76014066a682e3d9e03e5f8a}
+\index{[CT3] Clinical Knowledge Artefact Distribution Management (R.2.171)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/d81e0d6d76014066a682e3d9e03e5f8a.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.172 [CT3] Clinical Knowledge Request Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.172}
+\addcontentsline{toc}{section}{R.2.172 [CT3] Clinical Knowledge Request Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.4.2 \hyperref[element:543c53483a2249d78044c6635b7b7c48]{[CT3] Clinical Knowledge Request Administration}; Canonical ID: \texttt{\seqsplit{543c53483a2249d78044c6635b7b7c48}}. Proposed · current.}\par
+\label{element:eb370c01fbdb4d22956d97e9ecd74b57}
+\index{[CT3] Clinical Knowledge Request Administration (R.2.172)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/eb370c01fbdb4d22956d97e9ecd74b57.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.173 [CT3] Governed Reference Dataset Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.173}
+\addcontentsline{toc}{section}{R.2.173 [CT3] Governed Reference Dataset Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.4.3 \hyperref[element:682b8684ad9e49d5a5c348a148081607]{[CT3] Governed Reference Dataset Administration}; Canonical ID: \texttt{\seqsplit{682b8684ad9e49d5a5c348a148081607}}. Proposed · current.}\par
+\label{element:15d972931ed6447797c30a5ddb71737e}
+\index{[CT3] Governed Reference Dataset Administration (R.2.173)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/15d972931ed6447797c30a5ddb71737e.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.174 [CT2] Clinical Knowledge Services — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.174}
+\addcontentsline{toc}{section}{R.2.174 [CT2] Clinical Knowledge Services — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.4 \hyperref[element:bbd2bd21859f40e39963bdbe7a851686]{[CT2] Clinical Knowledge Services}; Canonical ID: \texttt{\seqsplit{bbd2bd21859f40e39963bdbe7a851686}}. Canonical · current.}\par
+\label{element:5b8478b08c3f42c0a3480edb8f0b9ea7}
+\index{[CT2] Clinical Knowledge Services (R.2.174)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/5b8478b08c3f42c0a3480edb8f0b9ea7.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.175 [CT3] Operational Collaboration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.175}
+\addcontentsline{toc}{section}{R.2.175 [CT3] Operational Collaboration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.5.1 \hyperref[element:631fdb8b47084008ac9b5de28b26972b]{[CT3] Operational Collaboration}; Canonical ID: \texttt{\seqsplit{631fdb8b47084008ac9b5de28b26972b}}. Proposed · current.}\par
+\label{element:99e9d9763ec94140b7d7642f4b5966f6}
+\index{[CT3] Operational Collaboration (R.2.175)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/99e9d9763ec94140b7d7642f4b5966f6.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.176 [CT2] General Collaboration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.176}
+\addcontentsline{toc}{section}{R.2.176 [CT2] General Collaboration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.5 \hyperref[element:3bb740e6db284112b054905c0c6c80be]{[CT2] General Collaboration}; Canonical ID: \texttt{\seqsplit{3bb740e6db284112b054905c0c6c80be}}. Canonical · current.}\par
+\label{element:4f58c82aca7a4b54aeb6e2920ce5c12a}
+\index{[CT2] General Collaboration (R.2.176)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/4f58c82aca7a4b54aeb6e2920ce5c12a.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.177 [CT3] Governed Health Information Retrieval — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.177}
+\addcontentsline{toc}{section}{R.2.177 [CT3] Governed Health Information Retrieval — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.6.1 \hyperref[element:76e74e46ca4d44a1a7bb116b358f231c]{[CT3] Governed Health Information Retrieval}; Canonical ID: \texttt{\seqsplit{76e74e46ca4d44a1a7bb116b358f231c}}. Proposed · current.}\par
+\label{element:90b838d703dd472b8b6d74961f3a748c}
+\index{[CT3] Governed Health Information Retrieval (R.2.177)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/90b838d703dd472b8b6d74961f3a748c.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.178 [CT2] Health Information Access — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.178}
+\addcontentsline{toc}{section}{R.2.178 [CT2] Health Information Access — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.6 \hyperref[element:cc253aea3c5f489da0502df74dde1669]{[CT2] Health Information Access}; Canonical ID: \texttt{\seqsplit{cc253aea3c5f489da0502df74dde1669}}. Canonical · current.}\par
+\label{element:5019ae9f2cdc45a1b2de97bc0f5a313d}
+\index{[CT2] Health Information Access (R.2.178)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/5019ae9f2cdc45a1b2de97bc0f5a313d.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.179 [CT3] Patient Health Library Access — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.179}
+\addcontentsline{toc}{section}{R.2.179 [CT3] Patient Health Library Access — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.7.1 \hyperref[element:808e5a3c3f6b496fa329962088f0bee0]{[CT3] Patient Health Library Access}; Canonical ID: \texttt{\seqsplit{808e5a3c3f6b496fa329962088f0bee0}}. Proposed · current.}\par
+\label{element:b132224cfa6f435f8f2a66a3878d6df6}
+\index{[CT3] Patient Health Library Access (R.2.179)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/b132224cfa6f435f8f2a66a3878d6df6.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.180 [CT3] Patient Notification Services — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.180}
+\addcontentsline{toc}{section}{R.2.180 [CT3] Patient Notification Services — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.7.2 \hyperref[element:9d172cd511b742499c4e7c23f6630a35]{[CT3] Patient Notification Services}; Canonical ID: \texttt{\seqsplit{9d172cd511b742499c4e7c23f6630a35}}. Proposed · current.}\par
+\label{element:35c5be472bf2433fbbde9646d87aefb3}
+\index{[CT3] Patient Notification Services (R.2.180)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/35c5be472bf2433fbbde9646d87aefb3.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.181 [CT3] Patient Self-Service — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.181}
+\addcontentsline{toc}{section}{R.2.181 [CT3] Patient Self-Service — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.7.3 \hyperref[element:d4956cab8b2b46c396899949c9486a1c]{[CT3] Patient Self-Service}; Canonical ID: \texttt{\seqsplit{d4956cab8b2b46c396899949c9486a1c}}. Proposed · current.}\par
+\label{element:60f427e6b5764757b909624085a2af89}
+\index{[CT3] Patient Self-Service (R.2.181)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/60f427e6b5764757b909624085a2af89.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.182 [CT3] Patient Task Communication Services — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.182}
+\addcontentsline{toc}{section}{R.2.182 [CT3] Patient Task Communication Services — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.7.4 \hyperref[element:ba8ce1d54ace4bc9aa3521dd954f36cb]{[CT3] Patient Task Communication Services}; Canonical ID: \texttt{\seqsplit{ba8ce1d54ace4bc9aa3521dd954f36cb}}. Proposed · current.}\par
+\label{element:0914f2bb267449e282e9ae0f7407d9fe}
+\index{[CT3] Patient Task Communication Services (R.2.182)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/0914f2bb267449e282e9ae0f7407d9fe.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.183 [CT2] Health Information Communication — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.183}
+\addcontentsline{toc}{section}{R.2.183 [CT2] Health Information Communication — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.7 \hyperref[element:7925605bf60f4b288e826020409a09d9]{[CT2] Health Information Communication}; Canonical ID: \texttt{\seqsplit{7925605bf60f4b288e826020409a09d9}}. Proposed · current.}\par
+\label{element:bcefb378424842fcb6d703208c3f8773}
+\index{[CT2] Health Information Communication (R.2.183)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/bcefb378424842fcb6d703208c3f8773.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.184 [CT3] Patient Health Information Disclosure Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.184}
+\addcontentsline{toc}{section}{R.2.184 [CT3] Patient Health Information Disclosure Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.9.1 \hyperref[element:7f918639e23842e78fa92f1bf47c5a7b]{[CT3] Patient Health Information Disclosure Management}; Canonical ID: \texttt{\seqsplit{7f918639e23842e78fa92f1bf47c5a7b}}. Proposed · current.}\par
+\label{element:07cf507f183d4905a7ad2adbb8555df5}
+\index{[CT3] Patient Health Information Disclosure Management (R.2.184)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/07cf507f183d4905a7ad2adbb8555df5.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.185 [CT3] Patient Health Information Filter Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.185}
+\addcontentsline{toc}{section}{R.2.185 [CT3] Patient Health Information Filter Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.9.2 \hyperref[element:62f673613c76494eba972cad3e4e8d0b]{[CT3] Patient Health Information Filter Management}; Canonical ID: \texttt{\seqsplit{62f673613c76494eba972cad3e4e8d0b}}. Proposed · current.}\par
+\label{element:589f192797454d9e8960fb63774e5e9c}
+\index{[CT3] Patient Health Information Filter Management (R.2.185)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/589f192797454d9e8960fb63774e5e9c.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.186 [CT3] Patient Health Information Restriction Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.186}
+\addcontentsline{toc}{section}{R.2.186 [CT3] Patient Health Information Restriction Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.9.3 \hyperref[element:262366990bda4ac4ace5429269cf6a98]{[CT3] Patient Health Information Restriction Management}; Canonical ID: \texttt{\seqsplit{262366990bda4ac4ace5429269cf6a98}}. Proposed · current.}\par
+\label{element:5ad91d045474435a96b560e66ff7de05}
+\index{[CT3] Patient Health Information Restriction Management (R.2.186)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/5ad91d045474435a96b560e66ff7de05.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.187 [CT2] Health Information Control — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.187}
+\addcontentsline{toc}{section}{R.2.187 [CT2] Health Information Control — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.9 \hyperref[element:44cc0e17ad534675bf26dce6e46a68ff]{[CT2] Health Information Control}; Canonical ID: \texttt{\seqsplit{44cc0e17ad534675bf26dce6e46a68ff}}. Canonical · current.}\par
+\label{element:a3196aef21d443519de874c24f64a185}
+\index{[CT2] Health Information Control (R.2.187)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a3196aef21d443519de874c24f64a185.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.188 [CT3] HIE Endpoint State Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.188}
+\addcontentsline{toc}{section}{R.2.188 [CT3] HIE Endpoint State Management — Historical identity [superseded]}
+
+{\small Governed successor (evolved correspondence): II.1.3.9.10.1 \hyperref[element:1bec951a1c98450b8d4672c5c424f9bd]{[CT3] HIE Endpoint State Management}; Canonical ID: \texttt{\seqsplit{1bec951a1c98450b8d4672c5c424f9bd}}. Proposed · current.}\par
+\label{element:697de08ac49a4b7f8df7a1ed6f04210e}
+\index{[CT3] HIE Endpoint State Management (R.2.188)}
+{\small Capability · Superseded historical identity — evolved correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/697de08ac49a4b7f8df7a1ed6f04210e.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.189 [CT3] HIE Implementation Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.189}
+\addcontentsline{toc}{section}{R.2.189 [CT3] HIE Implementation Management — Historical identity [superseded]}
+
+{\small Governed successor (evolved correspondence): II.1.3.9.10.2 \hyperref[element:8ce29be373e04252b7aa881b6a72f375]{[CT3] HIE Implementation Management}; Canonical ID: \texttt{\seqsplit{8ce29be373e04252b7aa881b6a72f375}}. Proposed · current.}\par
+\label{element:a99b4119339545a89dc54ebb216ddb85}
+\index{[CT3] HIE Implementation Management (R.2.189)}
+{\small Capability · Superseded historical identity — evolved correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a99b4119339545a89dc54ebb216ddb85.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.190 [CT3] HIE Requirement Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.190}
+\addcontentsline{toc}{section}{R.2.190 [CT3] HIE Requirement Management — Historical identity [superseded]}
+
+{\small Governed successor (evolved correspondence): II.1.3.9.10.3 \hyperref[element:1c852a1799984feba50011172983c865]{[CT3] HIE Requirement Management}; Canonical ID: \texttt{\seqsplit{1c852a1799984feba50011172983c865}}. Proposed · current.}\par
+\label{element:a32c8bff0c284f5c9d6ab1f46991c232}
+\index{[CT3] HIE Requirement Management (R.2.190)}
+{\small Capability · Superseded historical identity — evolved correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/a32c8bff0c284f5c9d6ab1f46991c232.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.191 [CT2] Health Information Exchange — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.191}
+\addcontentsline{toc}{section}{R.2.191 [CT2] Health Information Exchange — Historical identity [superseded]}
+
+{\small Governed successor (evolved correspondence): II.1.3.9.10 \hyperref[element:a61a15908ed544e6acf3e9cab63a0267]{[CT2] Health Information Exchange Enablement}; Canonical ID: \texttt{\seqsplit{a61a15908ed544e6acf3e9cab63a0267}}. Canonical · current.}\par
+\label{element:330d1c43856a4322a2e9f331b1a5ed20}
+\index{[CT2] Health Information Exchange (R.2.191)}
+{\small Capability · Superseded historical identity — evolved correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/330d1c43856a4322a2e9f331b1a5ed20.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.192 [CT3] Information Asset Definition — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.192}
+\addcontentsline{toc}{section}{R.2.192 [CT3] Information Asset Definition — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.11.1 \hyperref[element:05c58b2ccfcc45e9a6c70d9a569c4f61]{[CT3] Information Asset Definition}; Canonical ID: \texttt{\seqsplit{05c58b2ccfcc45e9a6c70d9a569c4f61}}. Proposed · current.}\par
+\label{element:166a22463d2c4534bda7ae31273398b6}
+\index{[CT3] Information Asset Definition (R.2.192)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/166a22463d2c4534bda7ae31273398b6.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.193 [CT3] Information Asset Tag Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.193}
+\addcontentsline{toc}{section}{R.2.193 [CT3] Information Asset Tag Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.11.2 \hyperref[element:df27c3ba6e164e56af7bff4e1eb1954a]{[CT3] Information Asset Tag Management}; Canonical ID: \texttt{\seqsplit{df27c3ba6e164e56af7bff4e1eb1954a}}. Proposed · current.}\par
+\label{element:ae44a4ee78414d1098814315793bd751}
+\index{[CT3] Information Asset Tag Management (R.2.193)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/ae44a4ee78414d1098814315793bd751.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.194 [CT2] Information Asset Stewardship Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.194}
+\addcontentsline{toc}{section}{R.2.194 [CT2] Information Asset Stewardship Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.11 \hyperref[element:5bac15316d8d4f4db6e7a253f1acfbe3]{[CT2] Information Asset Stewardship Management}; Canonical ID: \texttt{\seqsplit{5bac15316d8d4f4db6e7a253f1acfbe3}}. Proposed · current.}\par
+\label{element:cee085c690314802851de71f4741d8db}
+\index{[CT2] Information Asset Stewardship Management (R.2.194)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/cee085c690314802851de71f4741d8db.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.195 [CT3] Data Provenance Capture — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.195}
+\addcontentsline{toc}{section}{R.2.195 [CT3] Data Provenance Capture — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.12.1 \hyperref[element:44a7937520a54945b06b5fd4a2bbd870]{[CT3] Data Provenance Capture}; Canonical ID: \texttt{\seqsplit{44a7937520a54945b06b5fd4a2bbd870}}. Proposed · current.}\par
+\label{element:61258c7fe41f4541871a67ec9d7185cf}
+\index{[CT3] Data Provenance Capture (R.2.195)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/61258c7fe41f4541871a67ec9d7185cf.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.196 [CT3] Data Scientist Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.196}
+\addcontentsline{toc}{section}{R.2.196 [CT3] Data Scientist Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.12.2 \hyperref[element:3bb1a11fba234717bf40c9e6452f401a]{[CT3] Data Scientist Administration}; Canonical ID: \texttt{\seqsplit{3bb1a11fba234717bf40c9e6452f401a}}. Proposed · current.}\par
+\label{element:1cb497aec93c4b82ba7f5b622813e54e}
+\index{[CT3] Data Scientist Administration (R.2.196)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/1cb497aec93c4b82ba7f5b622813e54e.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.197 [CT3] Information Product Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.197}
+\addcontentsline{toc}{section}{R.2.197 [CT3] Information Product Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.12.3 \hyperref[element:b5a6a31855834ea58870ebb6c51ed4b0]{[CT3] Information Product Administration}; Canonical ID: \texttt{\seqsplit{b5a6a31855834ea58870ebb6c51ed4b0}}. Proposed · current.}\par
+\label{element:5d9b7f8d2d7b41759b6d4931c1d2aaa2}
+\index{[CT3] Information Product Administration (R.2.197)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/5d9b7f8d2d7b41759b6d4931c1d2aaa2.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.198 [CT2] Information Content Maintainer Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.198}
+\addcontentsline{toc}{section}{R.2.198 [CT2] Information Content Maintainer Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.12 \hyperref[element:b81a1ab42af24c2e9896b8f3f78d291a]{[CT2] Information Content Maintainer Management}; Canonical ID: \texttt{\seqsplit{b81a1ab42af24c2e9896b8f3f78d291a}}. Proposed · current.}\par
+\label{element:acb977e879204f1491293e5452e0ddf0}
+\index{[CT2] Information Content Maintainer Management (R.2.198)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/acb977e879204f1491293e5452e0ddf0.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.199 [CT3] Enterprise Canonical/Reusable Model Design — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.199}
+\addcontentsline{toc}{section}{R.2.199 [CT3] Enterprise Canonical/Reusable Model Design — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.13.1 \hyperref[element:90e9cd401ddf4c7690c978d8dd131413]{[CT3] Enterprise Canonical/Reusable Model Design}; Canonical ID: \texttt{\seqsplit{90e9cd401ddf4c7690c978d8dd131413}}. Proposed · current.}\par
+\label{element:dbc37445ad944a85a7c4f26f410967b2}
+\index{[CT3] Enterprise Canonical/Reusable Model Design (R.2.199)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/dbc37445ad944a85a7c4f26f410967b2.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.200 [CT3] Enterprise Canonical/Reusable Model Library Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.200}
+\addcontentsline{toc}{section}{R.2.200 [CT3] Enterprise Canonical/Reusable Model Library Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.13.2 \hyperref[element:76943b4b68644c4dac1368fce8bb20d9]{[CT3] Enterprise Canonical/Reusable Model Library Management}; Canonical ID: \texttt{\seqsplit{76943b4b68644c4dac1368fce8bb20d9}}. Proposed · current.}\par
+\label{element:f5eccd4f65df49bba98104e5abfa5e19}
+\index{[CT3] Enterprise Canonical/Reusable Model Library Management (R.2.200)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/f5eccd4f65df49bba98104e5abfa5e19.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.201 [CT3] Enterprise Canonical/Reusable Model Utilisation Support — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.201}
+\addcontentsline{toc}{section}{R.2.201 [CT3] Enterprise Canonical/Reusable Model Utilisation Support — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.13.3 \hyperref[element:5744cb9d86494064af87afb3cbf2cf97]{[CT3] Enterprise Canonical/Reusable Model Utilisation Support}; Canonical ID: \texttt{\seqsplit{5744cb9d86494064af87afb3cbf2cf97}}. Proposed · current.}\par
+\label{element:7ae95677a00346f18a0ba01522a20153}
+\index{[CT3] Enterprise Canonical/Reusable Model Utilisation Support (R.2.201)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/7ae95677a00346f18a0ba01522a20153.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.202 [CT3] Enterprise Reference Data Stewardship — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.202}
+\addcontentsline{toc}{section}{R.2.202 [CT3] Enterprise Reference Data Stewardship — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.13.4 \hyperref[element:971d4b079ad24e89b70a8ed8dec0c8bf]{[CT3] Enterprise Reference Data Stewardship}; Canonical ID: \texttt{\seqsplit{971d4b079ad24e89b70a8ed8dec0c8bf}}. Proposed · current.}\par
+\label{element:fd9f3239fdb64ea687825b66bb4d1f17}
+\index{[CT3] Enterprise Reference Data Stewardship (R.2.202)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/fd9f3239fdb64ea687825b66bb4d1f17.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.203 [CT2] Information Design Governance — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.203}
+\addcontentsline{toc}{section}{R.2.203 [CT2] Information Design Governance — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.13 \hyperref[element:f39ed9ebcc724857a4bf7a2b8e045c7a]{[CT2] Information Design Governance}; Canonical ID: \texttt{\seqsplit{f39ed9ebcc724857a4bf7a2b8e045c7a}}. Canonical · current.}\par
+\label{element:0bdd7f8c0cd74d9fabc49801af037fc2}
+\index{[CT2] Information Design Governance (R.2.203)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/0bdd7f8c0cd74d9fabc49801af037fc2.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.204 [CT3] Linked Information Curation — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.204}
+\addcontentsline{toc}{section}{R.2.204 [CT3] Linked Information Curation — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.15.1 \hyperref[element:5edb2a8b5ee54ddda8104d1fab323a94]{[CT3] Linked Information Curation}; Canonical ID: \texttt{\seqsplit{5edb2a8b5ee54ddda8104d1fab323a94}}. Proposed · current.}\par
+\label{element:9d0925bb39664a5985cacf3cea7442d1}
+\index{[CT3] Linked Information Curation (R.2.204)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/9d0925bb39664a5985cacf3cea7442d1.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.205 [CT3] Longitudinal Clinical Record Administration — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.205}
+\addcontentsline{toc}{section}{R.2.205 [CT3] Longitudinal Clinical Record Administration — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.15.2 \hyperref[element:14748dc6117f4b6ba7c0fc554b76bd89]{[CT3] Longitudinal Clinical Record Administration}; Canonical ID: \texttt{\seqsplit{14748dc6117f4b6ba7c0fc554b76bd89}}. Proposed · current.}\par
+\label{element:bd91d848cf424c42bec7c80cd32edd28}
+\index{[CT3] Longitudinal Clinical Record Administration (R.2.205)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/bd91d848cf424c42bec7c80cd32edd28.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.206 [CT2] Patient Clinical Record — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.206}
+\addcontentsline{toc}{section}{R.2.206 [CT2] Patient Clinical Record — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.15 \hyperref[element:5478878e0e6e4d34a8d5023ac6ac2d54]{[CT2] Patient Clinical Record}; Canonical ID: \texttt{\seqsplit{5478878e0e6e4d34a8d5023ac6ac2d54}}. Canonical · current.}\par
+\label{element:2e4de521bda24ad7b0ea64ae535b7f84}
+\index{[CT2] Patient Clinical Record (R.2.206)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/2e4de521bda24ad7b0ea64ae535b7f84.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.207 [CT3] Contextual Information Presentation — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.207}
+\addcontentsline{toc}{section}{R.2.207 [CT3] Contextual Information Presentation — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.16.1 \hyperref[element:9f900c53ae56488cad69e53c2205e898]{[CT3] Contextual Information Presentation}; Canonical ID: \texttt{\seqsplit{9f900c53ae56488cad69e53c2205e898}}. Proposed · current.}\par
+\label{element:e349d5f6a8774bbe8d150f9c51af770c}
+\index{[CT3] Contextual Information Presentation (R.2.207)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/e349d5f6a8774bbe8d150f9c51af770c.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.208 [CT2] Presentation Services — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.208}
+\addcontentsline{toc}{section}{R.2.208 [CT2] Presentation Services — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.16 \hyperref[element:e9b6ba1917ba44cca7466444d0836c98]{[CT2] Presentation Services}; Canonical ID: \texttt{\seqsplit{e9b6ba1917ba44cca7466444d0836c98}}. Canonical · current.}\par
+\label{element:c89e7c8b277247d9965fdb534aad2d1f}
+\index{[CT2] Presentation Services (R.2.208)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/c89e7c8b277247d9965fdb534aad2d1f.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.209 [CT3] Activity Routing Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.209}
+\addcontentsline{toc}{section}{R.2.209 [CT3] Activity Routing Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.18.1 \hyperref[element:27411c143e6e41ffba1af139fbbcd7e2]{[CT3] Activity Routing Management}; Canonical ID: \texttt{\seqsplit{27411c143e6e41ffba1af139fbbcd7e2}}. Proposed · current.}\par
+\label{element:243ea93e7b7448fe97dc74f90bfc8946}
+\index{[CT3] Activity Routing Management (R.2.209)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/243ea93e7b7448fe97dc74f90bfc8946.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.210 [CT3] External Task Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.210}
+\addcontentsline{toc}{section}{R.2.210 [CT3] External Task Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.18.2 \hyperref[element:ff3447c929724245a13ee864874b5561]{[CT3] External Task Coordination}; Canonical ID: \texttt{\seqsplit{ff3447c929724245a13ee864874b5561}}. Proposed · current.}\par
+\label{element:32be309d65594592bac4d7b068def0d2}
+\index{[CT3] External Task Coordination (R.2.210)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/32be309d65594592bac4d7b068def0d2.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.211 [CT3] External Task Status \& Traceability Management — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.211}
+\addcontentsline{toc}{section}{R.2.211 [CT3] External Task Status \& Traceability Management — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.18.3 \hyperref[element:b25bb04a8aa94dcfac105a646878ccfc]{[CT3] External Task Status \& Traceability Management}; Canonical ID: \texttt{\seqsplit{b25bb04a8aa94dcfac105a646878ccfc}}. Proposed · current.}\par
+\label{element:95985d244a234571892a9e9b4024f594}
+\index{[CT3] External Task Status \& Traceability Management (R.2.211)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/95985d244a234571892a9e9b4024f594.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.212 [CT3] Work Boundary Governance — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.212}
+\addcontentsline{toc}{section}{R.2.212 [CT3] Work Boundary Governance — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.18.4 \hyperref[element:35b66a0b38db4568849ecb842ffdcbf3]{[CT3] Work Boundary Governance}; Canonical ID: \texttt{\seqsplit{35b66a0b38db4568849ecb842ffdcbf3}}. Proposed · current.}\par
+\label{element:b4d14abf930a4230a7f5b93e9ce3df91}
+\index{[CT3] Work Boundary Governance (R.2.212)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/b4d14abf930a4230a7f5b93e9ce3df91.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.213 [CT2] Workflow \& Activity Coordination — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.213}
+\addcontentsline{toc}{section}{R.2.213 [CT2] Workflow \& Activity Coordination — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9.18 \hyperref[element:c724f3d38bfa4567983a11ad22095d61]{[CT2] Workflow \& Activity Coordination}; Canonical ID: \texttt{\seqsplit{c724f3d38bfa4567983a11ad22095d61}}. Proposed · current.}\par
+\label{element:4422d865978c4353ad575759c6026d27}
+\index{[CT2] Workflow \& Activity Coordination (R.2.213)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/4422d865978c4353ad575759c6026d27.md}{Historical canonical definition and provenance}.\par
+\section*{R.2.214 [CT1] Shared Information \& Coordination Enablement — Historical identity [superseded]}
+\phantomsection
+\label{navigation:R.2.214}
+\addcontentsline{toc}{section}{R.2.214 [CT1] Shared Information \& Coordination Enablement — Historical identity [superseded]}
+
+{\small Governed successor (direct correspondence): II.1.3.9 \hyperref[element:0062fcacae1740988b6be2bda2aa1674]{[CT1] Shared Information \& Coordination Enablement}; Canonical ID: \texttt{\seqsplit{0062fcacae1740988b6be2bda2aa1674}}. Proposed · current.}\par
+\label{element:eeabb9c3c526404cbe4302906560fa7e}
+\index{[CT1] Shared Information \& Coordination Enablement (R.2.214)}
+{\small Capability · Superseded historical identity — direct correspondence · superseded}\par
+\href{../../../../continuum/strategy/capability/eeabb9c3c526404cbe4302906560fa7e.md}{Historical canonical definition and provenance}.\par

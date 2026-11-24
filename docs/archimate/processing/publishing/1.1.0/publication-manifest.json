@@ -1,0 +1,105 @@
+{
+  "architecture_release": {
+    "previous_version": "1.0.10",
+    "version": "1.1.0"
+  },
+  "authority": {
+    "path": "docs/markdown/governance/baseline/release-1.1.0.json",
+    "sha256": "23372aa9ab6f2e8494371493a48619f1324d9d327befca6bccc672a636162ac8"
+  },
+  "classification_sources": {
+    "docs/markdown/governance/baseline/accepted-ingestion-1.0.8.json": "4f1a5b08882193e8c66d7e0ac815f4c23a6afb2b11ea420bae37f4b1b1dc4b37",
+    "docs/markdown/governance/baseline/architecture.json": "0f7dc7b43da74dddffcb41b169031f0bd771c51509002851bb07c1f1a7eeee0b",
+    "docs/markdown/governance/baseline/motivation.json": "a6278adf4979b88d43e664a72833b96d3632dfb7f87d40e0e0a4b60833f1d56f"
+  },
+  "inputs": {
+    "accepted_source": {
+      "path": "docs/markdown/governance/baseline/accepted-ingestion-1.0.10.json",
+      "sha256": "f87692bf30ea2fb7d5ea743920f68ea62c5c99ff3517f2b90bb37783d927cf16"
+    },
+    "architect_export": {
+      "path": "docs/archimate/processing/ingestion/1.0.10/run-002/ArchiMate-Architecture.xml",
+      "sha256": "f18a4d143e683c3a24970978f3f8b8576f996fc12d770789fb723073510fc2d4"
+    },
+    "candidate": {
+      "path": "docs/archimate/processing/machinery-validation/information-architecture/run-002/candidate.xml",
+      "sha256": "541219c023d2cd507d591e81df9a0a82fbf1c8f4d324448a02bc476e00c3e59a"
+    },
+    "current_review": {
+      "path": "docs/archimate/processing/ingestion/1.0.10/run-002/change-review.md",
+      "sha256": "478770553f18d3a2ee557f37743c14eb5a5ec500dc7e9080a96eca7916b43ffe"
+    },
+    "establishment": {
+      "path": "docs/archimate/processing/ingestion/1.0.10/run-002/reconciliation/execution-001/artifacts/source-manifest.json",
+      "sha256": "62c1b448f0ea6e912a7181bb02608f57b02de0cd4d9a1ba6c6bf4618c965e58d"
+    },
+    "plan": {
+      "path": "docs/archimate/processing/ingestion/1.0.10/run-002/reconciliation/execution-001/plan.json",
+      "sha256": "ea7924cd27c0331617af744691ec0e4f90ed690d6b032de1037674c63cbf2ef7"
+    },
+    "rebindings": {
+      "path": "docs/archimate/processing/machinery-validation/information-architecture/run-002/representation-rebindings.json",
+      "sha256": "702912d1a51769f55004eaed127b0421b84c99ee3a8b160a86445c0de69d940d"
+    },
+    "reconciled": {
+      "path": "docs/archimate/processing/ingestion/1.0.10/run-002/reconciliation/execution-001/artifacts/reconciled.xml",
+      "sha256": "c7840ed0a41c66feb4730a9f66fab120b321f759bf8780d005cdcd82bff72d02"
+    }
+  },
+  "machinery_sha256": {
+    "docs/archimate/framework/schemas/archimate3_Diagram.xsd": "6419080f4c4bc43b4a7b8acf870146a7bae6c3487a3ce08d3c521c028ea6056e",
+    "docs/archimate/framework/schemas/archimate3_Model.xsd": "dd451abe3e3193f91dd9544b279af9bbbf17e75ff1ef86f65ad52b3f8cd29794",
+    "docs/archimate/framework/schemas/archimate3_View.xsd": "d708ce176403034b1229b892712cfd69660aefe17da4cc54acea1ac35e4a9854",
+    "docs/archimate/framework/schemas/dc.xsd": "9285c1b57d8920b72101b4ba93416f32aa376087481f2b5b0c5d6c95f8def7cf",
+    "docs/archimate/framework/schemas/xml.xsd": "f0fa306f2951fb1a477220eb7bdeaa35959c8d0224258f2104d3c4724ba746f7",
+    "docs/archimate/framework/tools/analyse_home_submission.py": "da3b9bdb0d78c3646204cd17fcb855cbc74862373e0b258acdfa8ac2ecd0f3f9",
+    "docs/archimate/framework/tools/assess_rad.py": "c92b3d896f8912570514b9a0692f154917fd03573db24162a4a7a0f6ce83f513",
+    "docs/archimate/framework/tools/change_review.py": "46bc2dab8ab2be9495a246a0565b4929d78756103009e14f45eacc37bb44ff4e",
+    "docs/archimate/framework/tools/containment.py": "f60aa9237da97a98d2c6e8c2c258aa87996b893a1bd2ae36f585cc5d9c9d9bed",
+    "docs/archimate/framework/tools/diagnose_roundtrip.py": "bceeda224c6fe165c204d5a3858b5c8c280c285b06e1df22dca13063bb0b5d03",
+    "docs/archimate/framework/tools/element_correlation.py": "66b27882a66ab6f31b285c789729f5695856c08bd0affc5252a2b5e29f26040b",
+    "docs/archimate/framework/tools/feature_projection.py": "062dd6dd5e9677f7811edb4ca834514e576c25cfa0175f8477ebbea36b0844d7",
+    "docs/archimate/framework/tools/generate_views.py": "5b4d2c2c49b631f03752e3bf1e43e36a869b1be0bf0b23ede171b94bf5a65460",
+    "docs/archimate/framework/tools/governance_history.py": "130afde01ac9d5c6ac5f105ada53b1cdf7d78947fa0a7a372e9274586c199f9e",
+    "docs/archimate/framework/tools/governed_metadata.py": "96f3fd9a8821ee7be6e8d9187f2d4880384d012a255cb4fb4c23a4713d52567d",
+    "docs/archimate/framework/tools/home_context.py": "7a885eb4047e2a5d109f63b7af44a0467ae0dc9c14618065a2e5069a5a6257de",
+    "docs/archimate/framework/tools/home_relationships.py": "ca7656ea78865400b471cfdf2671be3c83bf95a2ba22a4f9b5cda7ea0b7d54d5",
+    "docs/archimate/framework/tools/information_naming.py": "c7074d62fab7e08f895f920f67a5202753d079400527bf59b8f6404665cdaa1c",
+    "docs/archimate/framework/tools/information_naming_run.py": "a9e0fc4a60bfe31c369661e004eeb0046b9b04a4fb0476557cc5636c96528f55",
+    "docs/archimate/framework/tools/information_population.py": "98a8acb2888b602f2bb91eb545b82abbd42d830fb3bc8f7dc9d5737c0bbecb50",
+    "docs/archimate/framework/tools/information_workspace_run.py": "3b0fdad394131f5d0a402e0290ca35d754d586ed0a1e72f01b8a01c9865edc22",
+    "docs/archimate/framework/tools/publish_documentation.py": "0e64d776c2ab359419b057e61a7ba3623b8546318225f9871fa503d9e3c6247c",
+    "docs/archimate/framework/tools/publish_information_release.py": "641df354849ffdb13d76a3a3ed7e091774f3d2b6a5b3b7695ae5c4db5f5616b3",
+    "docs/archimate/framework/tools/publish_navigation.py": "d3e32836d969c9b19e644df9f032b99fe65755655f5832ad64aa78a093563623",
+    "docs/archimate/framework/tools/reconcile_108.py": "d131c99f54475e48d17c180ad10ac3edb83fc6201f27b148bc33ee6162e9f477",
+    "docs/archimate/framework/tools/reconciliation/information.py": "e6d83a581e46c9928108a3a402d285e6437960616d896ee9c9d5977218423e2f",
+    "docs/archimate/framework/tools/recover_v02.py": "ed30b6632e42d7fde1a114f3ab6afe2b61cd97ce9d728816f0323e1c571ff925",
+    "docs/archimate/framework/tools/relationship_state.py": "7acba65aea12a1264fbd7e4d2467a378a5c9a86fcf974491fc8efe18d7de45a4",
+    "docs/archimate/framework/tools/report_baseline.py": "75eedc3d42ddecab6eac0b84495b9a29abce87c948c3d0a96c71c1b75e420b54",
+    "docs/archimate/framework/tools/report_home.py": "5dfc02bf3487049b6bc482200a034164af1b7246a50f2ce983c748ced0e0bad2",
+    "docs/archimate/framework/tools/report_navigation.py": "32acba602d208f6ccad2a375fb0e9eebfde2c26086a7dd732e6a62b3400c9030",
+    "docs/archimate/framework/tools/report_publication.py": "0eb85717d4f424ef315d500193f93f0a189865423764155ba360c760c8c6af1d",
+    "docs/archimate/framework/tools/report_reconciliation.py": "2c55700cdb56a35331b2cdc31ab05158179ef91289f19cc37727d307a37f2849",
+    "docs/archimate/framework/tools/report_recovery.py": "d1e66bd8dd761e2ab87739607dc061765288ffc9e4e53bf078302c2645ffd6c1",
+    "docs/archimate/framework/tools/report_workspace.py": "f5545c55d2e600ef893ce0b800e1c2dd2a9b0c66b6bab70f20c027b66d48713c",
+    "docs/archimate/framework/tools/roundtrip_praxis.py": "17fefdfc697bfb09b07a3df06b0739f76f13e6216862cea17b6a8f842b8cb707",
+    "docs/archimate/framework/tools/run_evidence.py": "5dcc30bbaca3b0ac519263d75d0a1af108ab31b40d7609c0e7a43d7bdc5f3dab",
+    "docs/archimate/framework/tools/synchronise_baseline.py": "b985ea901ef26ac7672adb5ad7182af65b9564049122e1e5dd10fbc17ede1319",
+    "docs/archimate/framework/tools/verify_baseline_outputs.py": "e9dce48093c64ef1f95f10c5ec1a3a4f7009b199b63690c8a2c1fd5f22f92c2e",
+    "docs/archimate/framework/tools/verify_governance_evidence.py": "d6012b861327c4920edbb0dfcee6128e9eebe8ce02cacee6257504801746a92e",
+    "docs/archimate/framework/tools/verify_workspace.py": "20f876f44a679bc73a99b97276bc2a1c0570359bb5334e49cfb81c853f35eecb",
+    "docs/archimate/framework/tools/view_presentation.py": "fd8e7c7cb47acba063f343de35e99b257f5a210306cad28687c44629732b0fc2",
+    "docs/archimate/framework/tools/workspace_navigation.py": "479ece8c10d29c15f1f91baae58f725aaee73c633fd05498dfef672531a78c50",
+    "docs/archimate/framework/tools/workspace_paths.py": "ce47340713536fbdf0e6dca2fb0762be64eae80ccb4bd17b919fa9eef22a7010",
+    "docs/archimate/framework/tools/workspace_policy.py": "0beab8e116b46368d8edfa293e7bedf0fedcf2b3c4edd2530162e335242ff537",
+    "scripts/architecture_release.py": "c3537adbbde52382e3b6ed680b94f697cd54890a3bae2d5fe313f394616a9aec"
+  },
+  "outputs": {
+    "docs/archimate/exchange/publish/1.1.0/Harmonia-Architecture-1.1.0.xml": "4bd64067f4f62abdf58c348db6269ebc7c2edb31a85f069819ea717b982f01a1",
+    "docs/archimate/processing/publishing/1.1.0/element-generation-proof.json": "a42ebd10dcacdc034afe9fbf918c0ba3f5fef6f3a017920a4143dfef180d9ce1",
+    "docs/archimate/processing/publishing/1.1.0/identity-provenance.json": "c97cca1e53d6d90b946dff25f5029814557fe85e4d644d7ee784934937578bb2",
+    "docs/archimate/processing/publishing/1.1.0/publication-validation-1.1.0.json": "05b93c8a67d10b5bdea2c27f5786637ffee99ff6883a8c3ee8c63c68f3d3a0cf",
+    "docs/archimate/processing/publishing/1.1.0/resolved-containment.json": "e84e3ffed89ad831baf4435887888a5be863fd121cd94c5a5516aa8ee5f6ed8b",
+    "docs/archimate/processing/publishing/1.1.0/workspace-projection.json": "c3c1bd6bcb5d85ea7d0b99bafd5f1f161914e46d7856774012ebcf0e129db1a1"
+  }
+}

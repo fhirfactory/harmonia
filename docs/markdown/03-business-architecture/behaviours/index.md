@@ -1,0 +1,50 @@
+# Capability-Scoped Business Behaviour Overview
+
+## 1. Structuring Principles
+
+Harmonia structures business behaviour within established Capability or Feature responsibility contexts from **[Domain 02 (Strategy)](../../02-strategy/capabilities/business-enabling-capabilities.md)**. Unresolved Capability Tier, complete ancestry or structural Canonical ID does not prevent derivation from established responsibility and SHALL NOT be completed through inference. The five contextual views are organisational views, not identifier ancestors.
+
+### 1.1 No Disconnected Global Catalogues
+Business Functions and exposed Business Services are **never** defined in isolated, flat catalogues. Every function and service exists solely within the responsibility boundary of an owning Capability or Feature.
+
+### 1.2 The Five Healthcare Contextual Views
+To provide clear architectural alignment with authentic healthcare operations, business behaviour is organised across five contextual views:
+
+```text
+docs/markdown/03-business-architecture/behaviours/
+├── index.md                             # This structuring overview
+├── 01-entity-management.md              # Core master entities (Person, Provider, Org, Location, Service, Device)
+├── 02-service-administration.md         # Clinical administrative lifecycles (Referrals, Encounters, Orders, Docs)
+├── 03-service-delivery.md               # Clinical care enablement contexts (Acute, Primary, Inpatient, Virtual)
+├── 04-health-service-operations.md      # Facility logistics & operations (Wards, Beds, Dispatch, Logistics)
+└── 05-intrinsic-enablement.md           # Horizontal platform services (LHR, HIE, Control, Workflow, Collab)
+```
+
+The [bounded Health Service Assurance derivation](health-service-assurance.md) preserves **Service Assurance Modeller**, **Service Guardian** and exactly five [Business Functions](health-service-assurance.md#3-direct-capability-scoped-responsibility-consequences) within Assurance Design, Assurance Criteria Management and Governed Assurance. It additionally establishes exactly three [Business Processes](../processes/business-processes.md#6-health-service-assurance-processes), three capability-owned [Business Services](health-service-assurance.md#5-approved-governed-assurance-business-services) and three [Business Interactions](../collaborations-interactions/interactions.md#5-approved-service-assurance-interactions), with approved Role relationships. The [responsibility model](health-service-assurance.md#2-governance-management-guardianship-and-clinical-authority) and [EC-02 / EC-14 contribution](health-service-assurance.md#41-context-management-contribution) retain their boundaries; [Financial Governance exclusion](health-service-assurance.md#financial-governance-exclusion) and [non-recursion](health-service-assurance.md#assurance-non-recursion-boundary) are explicit. The view remains outside the five-view placement model: no sixth view or contextual placement is assigned. Detailed lifecycle states, further decomposition/Services/Interactions, evidence exchange, Collaborations, formal information modelling and downstream allocation remain unresolved.
+
+---
+
+## 2. Derivation Conventions
+
+For documented capability/Feature behaviour, record the following where architecturally significant; this is not a mandatory decomposition checklist:
+1. **Owning Capability / Feature**: Identified by the established architectural element; an unavailable full Canonical ID or unestablished Feature association remains explicit.
+2. **Business Function**: A defined information/capability state transition within the owning responsibility.
+3. **Exposed Business Service**: The client interface governed by a Service Contract, fulfilled using Functions and/or Processes.
+4. **Governed Process (Where Justified)**: Ordered Function decomposition of complex change, with accountability for progression/coordination.
+
+This is a reading order, not a mandatory hierarchy. Functions may require
+Processes recursively; Services may use Functions directly. The
+[canonical Harmonia definitions](../metamodel/business-architecture-metamodel.md#3-function-and-service-semantics)
+govern independently of modelling-framework semantics.
+5. **Information Responsibility**: The conceptual information assets owned and maintained by the capability.
+
+Relationships explain material responsibility, participation, exposure, collaboration and Business progression; absent exhaustive matrices do not establish missing architecture. Feature association requires material semantic realisation of Strategy responsibility. A Function does not mechanically require a Service or performing-Role row. See the [metamodel](../metamodel/business-architecture-metamodel.md#34-significance-driven-relationships-and-typed-dependencies).
+
+Behaviour and Process descriptions are complementary. A scoped Process may elaborate checkpoints without reproducing the Behaviour stage list or redefining responsibility. Omission of a Process checkpoint from a Behaviour summary does not invalidate it; omission of Behaviour responsibility from a Process does not remove it. Scoped applicability, compound checkpoints and alternative dispositions remain explicit. See the [metamodel](../metamodel/business-architecture-metamodel.md#43-behaviour-and-process-consistency) and approved G1 K10/K11.
+
+---
+
+## 3. Preservation of Ownership and Boundary Rules
+
+- **Exposing Capability Retains Ownership**: Consuming a Business Service does not transfer ownership of the underlying function or data to the consumer.
+- **Cross-Cutting Guardrail**: Shared capabilities (such as Security Control, Presentation, or Workflow Coordination) do not acquire ownership of the business payloads, activities, or entities they govern, render, or coordinate.

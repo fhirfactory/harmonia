@@ -1,0 +1,167 @@
+{
+  "status": "PASS",
+  "architecture_release": {
+    "version": "1.0.8",
+    "previous_version": "1.0.7"
+  },
+  "retained_identities": 14,
+  "registry_sha256": "aadfaa9c1c6d9d35908036683fff4837537de9fe0683c192e2fd0959fced6073",
+  "architecture_content_sha256": "b71284a557278201f2301d464da92bcc322d0ed8553aa387d9f61842205072b6",
+  "identity_chain": [
+    {
+      "canonical_architecture_id": "EC-01",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-01: Managed Entity & Relationship",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-d53727d908365757a293b0896b2c769b",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "e532daaba81a66f9c68840bcf6ae5911dbdb3c0badfc59bafd489d057ca28c70"
+    },
+    {
+      "canonical_architecture_id": "EC-02",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-02: Context Management",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-06e038737c5355edbc0591e08c594ab0",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "d18d8c00466cfa13b96e0529088c1d82bc0981e6ca59ca62ada961475e874138"
+    },
+    {
+      "canonical_architecture_id": "EC-03",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-03: Managed State & Lifecycle",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-5891936941f65d20afad86b0697879c7",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "c4d2d330aec4c7961be2798501e9b1d712014a4222f14dfe8ca1c29b7db3970f"
+    },
+    {
+      "canonical_architecture_id": "EC-04",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-04: Information Management",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-9e79bc474aed516c8c6752ab81b63d6b",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "5495eedd83771c79f0589d326f37ee568bb63d8b5f7b9db1de5b2615b10ce21b"
+    },
+    {
+      "canonical_architecture_id": "EC-05",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-05: Search & Discovery",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-e11f02764fe55ff29c0782db21198040",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "dfc8214a256cbabc10e86b1a9344ca785b9ba1af2c4c2800387faa43799fc1e5"
+    },
+    {
+      "canonical_architecture_id": "EC-06",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-06: Policy & Control",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-a6f6d30d8fce5ac78f60f7aefa71b28e",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "017903e08b68afe4ec460c81b2d40e5d37b830b1aed7af6d8dab6acc06adc39f"
+    },
+    {
+      "canonical_architecture_id": "EC-07",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-07: Provenance & Traceability",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-d71457435a085e749ffb1e1a3b551228",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "1965533351937ef83910e4804717c3f5182d1431eacce6a565f59525329cf3fb"
+    },
+    {
+      "canonical_architecture_id": "EC-08",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-08: Interoperability & Exchange",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-dbd66e69788450649e184966aa724797",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "36d61ff22672540acd78e2dd4ff273290a5a8429b6071b1565dd91eca5dbb194"
+    },
+    {
+      "canonical_architecture_id": "EC-09",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-09: Event & Subscription",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-770ebb3e3bdc5f2bbe77b2bfd55bd74d",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "4d7f192df28010c206d845e1b058b4323610b74d4f9a96517d78f7a095958033"
+    },
+    {
+      "canonical_architecture_id": "EC-10",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-10: Activity & Execution",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-49d4f69ebeeb5ea782a52172fb3e8a7b",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "655b8477581c8f2b6b82b1d3ec1734df1fe04d3734d7da933948a8dce080e6e7"
+    },
+    {
+      "canonical_architecture_id": "EC-11",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-11: Interaction & Experience",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-82cd1f6a3e2352639e22c542f5cb3a9d",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "73f6ed7415396f89906f7de262a4f417b36338c7c6b7b029c15d519c7fdd8954"
+    },
+    {
+      "canonical_architecture_id": "EC-12",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-12: Operational Assurance",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-9bbd142f818e50d39a3d0429f74b72b4",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "1e79e6cf1adfc0103527a1f7a0c108393fe2962b324911b9ea921e68466e5c6d"
+    },
+    {
+      "canonical_architecture_id": "EC-13",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-13: Semantic Governance & Conformance",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-7d6f635ffb6f5c6181bde1d07b859662",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "2b8f973c0dd62e5f1d35654742cf8d425064cf507129aefc4f997b656b0273fb"
+    },
+    {
+      "canonical_architecture_id": "EC-14",
+      "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+      "source_section": "### EC-14: Service Guardian",
+      "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+      "release": "1.0.3",
+      "semantic_id": "id-4dbf578f52bd5b3b9301b9807ce60f30",
+      "binding_mode": "locked",
+      "status": "active",
+      "documentation_sha256": "5f00ef8a5fd23b0234d61cf3f3c057bea4be7c0bdcbf714f33a156e41be5004d"
+    }
+  ],
+  "note": "Current semantic binding validation; navigation/Views are validated separately; no adoption or allocation performed"
+}

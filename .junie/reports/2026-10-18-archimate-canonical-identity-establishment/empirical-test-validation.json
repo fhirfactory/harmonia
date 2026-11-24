@@ -1,0 +1,100 @@
+{
+  "roundtrip-tests": {
+    "status": "PASS",
+    "tests": 27,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "reported_elapsed": "7.071",
+    "log": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/empirical-roundtrip-tests.log.gz",
+    "exit_code": 0,
+    "timeout_seconds": 90,
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "docs/archimate/capability-architecture/tests",
+      "-p",
+      "test_roundtrip.py",
+      "-v"
+    ],
+    "log_sha256": "c35bc8a10a40e3ddc04b5510b111e776b3151137b3ec1c6a90e269c34119a0f6"
+  },
+  "metadata-tests": {
+    "status": "PASS",
+    "tests": 22,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "reported_elapsed": "41.595",
+    "log": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/empirical-metadata-tests.log.gz",
+    "exit_code": 0,
+    "timeout_seconds": 120,
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "docs/archimate/capability-architecture/tests",
+      "-p",
+      "test_governed_metadata.py",
+      "-v"
+    ],
+    "log_sha256": "c84fc105ab6b5a439ec86738c406c6a182f400dc4942c5a539f19df058f312d7"
+  },
+  "identity-release-tests": {
+    "status": "PASS",
+    "tests": 25,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "reported_elapsed": "30.458",
+    "log": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/empirical-identity-release-tests.log.gz",
+    "exit_code": 0,
+    "timeout_seconds": 120,
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts/tests",
+      "-p",
+      "test_architecture_*.py",
+      "-v"
+    ],
+    "log_sha256": "f4ccb078b376afa33adf8acbcedd86ae39298d4b44dbec9a79ed622990106eea"
+  },
+  "architecture-tests": {
+    "status": "PASS",
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "reported_elapsed": "28.749 s",
+    "log": ".junie/reports/2026-10-18-archimate-canonical-identity-establishment/empirical-architecture-tests.log.gz",
+    "exit_code": 0,
+    "timeout_seconds": 180,
+    "command": [
+      "env",
+      "JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64",
+      "PATH=/usr/lib/jvm/java-21-openjdk-amd64/bin:$PATH",
+      "mvn",
+      "-o",
+      "test",
+      "-pl",
+      "paradeigma/paradeigma-test",
+      "-am",
+      "-Dtest=*ArchitectureTest",
+      "-Dsurefire.failIfNoSpecifiedTests=false"
+    ],
+    "log_sha256": "5c5ff3f64f93584bed633ad1385201d226898a4f2eba1737c29e2b0025cb5016",
+    "environment": "JDK 21, offline Maven"
+  }
+}

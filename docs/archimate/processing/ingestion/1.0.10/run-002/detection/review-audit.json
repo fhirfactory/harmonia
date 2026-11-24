@@ -1,0 +1,145 @@
+{
+  "accepted_changes": 0,
+  "all_navigation_reference_paths": "EXACT_MATCH",
+  "authenticated_archi_execution": "UNRESOLVED_NO_VERSION_OPERATOR_OR_EXPORT_PROFILE_ATTESTATION",
+  "candidate_sha256": "541219c023d2cd507d591e81df9a0a82fbf1c8f4d324448a02bc476e00c3e59a",
+  "candidate_to_export_population": {
+    "canonical_matches": 1362,
+    "deleted": 0,
+    "evolved": 0,
+    "new": 0,
+    "representation_only_matches": 32,
+    "representation_rebindings": 0,
+    "unchanged": 1394,
+    "unresolved_baseline": 0,
+    "unresolved_incoming": 0
+  },
+  "containment": {
+    "care_encounter": "PASS",
+    "conditional": 503,
+    "excluded": 121,
+    "findings": [],
+    "mechanisms": {
+      "Composition": 632,
+      "Home": 212
+    },
+    "participants_with_own_context": 993,
+    "selected": 844
+  },
+  "exact_properties": {
+    "archimateType": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 1394,
+      "published_owners": 1394
+    },
+    "canonicalId": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 1362,
+      "published_owners": 1362
+    },
+    "canonicalName": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 1394,
+      "published_owners": 1394
+    },
+    "displayName": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 1394,
+      "published_owners": 1394
+    },
+    "friendlyName": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 1394,
+      "published_owners": 1394
+    },
+    "harmoniaType": {
+      "changes": [],
+      "exact_value_language_multiplicity_owner_preserved": 249,
+      "published_owners": 249
+    }
+  },
+  "folder_path_multiset": "EXACT_MATCH",
+  "historical_run_integrity": {
+    "frozen": 28,
+    "outputs": 95,
+    "sources": 88
+  },
+  "identities_allocated": 0,
+  "incoming_sha256": "f18a4d143e683c3a24970978f3f8b8576f996fc12d770789fb723073510fc2d4",
+  "information_naming": {
+    "absent_identity": 32,
+    "canonical_ids_allocated": 0,
+    "classifications": {
+      "BusinessObject": 12,
+      "Topic": 70,
+      "UNRESOLVED": 4
+    },
+    "contextual": 59,
+    "fully_derived": 82,
+    "information_elements": 86,
+    "metadata_changes": {},
+    "native_types": {
+      "BusinessObject": 12,
+      "DataObject": 74
+    },
+    "preserved_identity": 54,
+    "unresolved": 4
+  },
+  "inherited_proposal_counts": {
+    "changed_retained_relationships_after_control": 0,
+    "changed_retained_views_after_control": 1,
+    "evolved_elements": 38,
+    "new_elements": 32,
+    "new_relationships": 60,
+    "new_views": 11,
+    "representation_rebindings": 38,
+    "retained_element_name_migrations": 12,
+    "unchanged_unclassified_dataobjects": 4
+  },
+  "input_issues": {
+    "candidate": [],
+    "control": [],
+    "incoming": [],
+    "original": [],
+    "published": []
+  },
+  "navigation_folder_count": 3598,
+  "navigation_item_attributes": {
+    "after": {
+      "identifierRef": 3740
+    },
+    "before": {
+      "identifier": 4717,
+      "identifierRef": 3740
+    }
+  },
+  "navigation_label_attributes": {
+    "after": {
+      "{http://www.w3.org/XML/1998/namespace}lang": 3598
+    },
+    "before": {
+      "{http://www.w3.org/XML/1998/namespace}lang": 3598
+    }
+  },
+  "navigation_reference_count": 3740,
+  "navigation_sibling_order_changes": 215,
+  "relationships_preserved": 1137,
+  "release_created": false,
+  "residual_classifications": {
+    "INFORMATION LOSS": 4917,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "SEMANTIC DIFFERENCE": 0,
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 120,
+    "UNEXPLAINED DIFFERENCE": 2257
+  },
+  "residual_property_definition_language_loss": {
+    "after": null,
+    "before": "en",
+    "key": "Machinery validation / Candidate standing"
+  },
+  "status": "PASS_FOR_OBSERVED_SEMANTIC_AND_VIEW_CONTENT",
+  "views_comparison": "EXACT_CONTENT_WITH_PROPERTY_REFERENCES_RESOLVED_BY_DEFINITION_KEY",
+  "views_content_sha256": "05f3442fe3677e163ee8fc1c9d1c27c55b144d62fe583faa11c640aacbcb2193",
+  "views_preserved": 1209,
+  "whole_xml_equivalence": "NOT_ESTABLISHED"
+}

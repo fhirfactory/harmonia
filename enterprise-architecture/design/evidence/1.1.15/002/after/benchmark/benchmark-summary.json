@@ -1,0 +1,60 @@
+{
+  "outcome": "PASS",
+  "purpose": "001 regression; proposed review preparation only",
+  "deterministicElapsedSeconds": 11.666647,
+  "comparisonAndCanonicalValidationSeconds": 11.498381,
+  "evidencePreparationSeconds": 0.040084,
+  "normalisedDeltaBytes": 68819,
+  "compactDeltaBytes": 40683,
+  "originalRawComparisonBytes": 22012817,
+  "inputXmlBytes": 55510287,
+  "originalRawFindings": 21087,
+  "originalRawClassifications": {
+    "SEMANTICALLY EQUIVALENT NORMALISATION": 296,
+    "PRESENTATION-PRESERVING TRANSFORMATION": 0,
+    "INFORMATION LOSS": 540,
+    "SEMANTIC DIFFERENCE": 17957,
+    "UNEXPLAINED DIFFERENCE": 2294
+  },
+  "suppressedLanguageFindings": 17957,
+  "replacedPositionalOrganizationFindings": 2803,
+  "retainedViewMoves": 17,
+  "retainedViewFolderChanges": 35,
+  "classificationCounts": {
+    "Generated scalar: unchanged text/attributes; absent xml:lang becomes en": 17957,
+    "Uniquely keyed unordered collection": 251,
+    "Exact unique Property key resolves both definition IDs; all other definition content and owner values compared independently": 45
+  },
+  "populations": {
+    "elements": {
+      "retainedIds": 1602,
+      "added": 12,
+      "removed": 0,
+      "changed": 0
+    },
+    "relationships": {
+      "retainedIds": 1651,
+      "added": 9,
+      "removed": 0,
+      "changed": 0
+    },
+    "views": {
+      "retainedIds": 1209,
+      "added": 7,
+      "removed": 0,
+      "changed": 0
+    }
+  },
+  "newElementsAwaitingCanonicalAllocation": 12,
+  "representationAnomalies": [],
+  "exceptionalConditions": [],
+  "aiCalls": 0,
+  "corpusDrpReads": 0,
+  "actualArchiTransport": "NOT_PERFORMED",
+  "subsequentWork": "Targeted architectural interpretation, independent CR decomposition, pending HCRL, STOP for Solution Architect; not benchmarked by an autonomous AI run",
+  "limits": [
+    "No claim of measured total AI interpretation time or token cost",
+    "Original export provenance/no-edit control and temporal attribution uncertainty remain in 001",
+    "Scaffolds are incomplete review examples; the actual 001 artefacts remain unchanged"
+  ]
+}

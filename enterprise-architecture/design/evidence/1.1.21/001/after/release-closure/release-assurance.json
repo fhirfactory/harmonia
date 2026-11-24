@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "finalAcceptanceTaskIssuedAt": "2026-11-10T22:52:33.672Z",
+  "humanCheckpoints": {
+    "DR-22": "ACCEPTED; disclosed bounded group only",
+    "Review Praxis section 5": "ACCEPTED; native workbench tree and generated HTML reader/navigation inspected, no exceptions",
+    "Review Praxis section 6": "ACCEPTED; exact whole-HCRL authorised/incorporated result and retained qualifications confirmed"
+  },
+  "executionChecks": [
+    {
+      "check": "make continuum continuum-rad",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "log": "validation/publication.txt"
+    },
+    {
+      "check": "make check browser-test",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "log": "validation/publication-check.txt"
+    },
+    {
+      "check": "Published correspondence to reviewed candidate and URL targets",
+      "outcome": "PASS",
+      "exitCode": 0,
+      "log": "validation/publication-correspondence.txt"
+    }
+  ],
+  "publishedArtifacts": 19,
+  "unchangedAcceptedInputs": 6620,
+  "protectedHistoricalPathsUnchanged": 240,
+  "rootRelease": "1.1.21",
+  "acceptedPredecessor": "1.1.20",
+  "additionalReleaseAllocation": false,
+  "transport": "Strict FAIL accepted with exact qualifications; no new run, reclassification or lossless claim.",
+  "testEvidence": "Earlier 95 individually passing tooling tests / 90 passing Maven architecture tests, plus 22 passing focused Patient-follow-up tests; current maintained source/test hashes unchanged. Original aggregate TIMEOUT and corrected fixture/preflight failures retain original scope/evidence. No unnecessary broad rerun.",
+  "reproducibility": "The pre-acceptance isolated check reproduces 18 reviewed candidate outputs plus root Manifest with docs/scripts/Git absent. All input hashes remain unchanged; destination-relative published links are independently checked against the reviewed content.",
+  "pdf": "Optional PDF not compiled; HTML/Exchange/LaTeX source publications complete.",
+  "repositoryNetworkPreflight": "Sandbox DNS failed; automatically approved network retry succeeded and remote branch matched c08a02a5569ead5805a46048da486db5365adc7c.",
+  "remainingArchitecturalExceptions": [],
+  "terminalActions": "Register completion and authorised commit/push follow as terminal provenance maintenance; actual status is recorded separately."
+}

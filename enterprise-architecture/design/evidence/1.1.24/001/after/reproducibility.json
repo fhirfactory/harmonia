@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "canonicalSources": 6563,
+  "steps": [
+    {
+      "command": [
+        "architecture_continuum.py",
+        "validate"
+      ],
+      "exitCode": 0,
+      "output": "{\"status\": \"PASS\", \"elements\": 6563, \"relationships\": 9427, \"qualifiedSourcePredicates\": 462, \"canonicalIdentities\": 6563, \"representationIdentities\": 6563, \"provenanceCoverage\": 6563, \"sourceBindings\": 8446, \"supportedNativeTypes\": 60, \"navigation\": \"PASS\", \"architecturalAcceptance\": \"See governed HCRLs; validation supplies no acceptance\"}\n"
+    },
+    {
+      "command": [
+        "continuum_manifest.py"
+      ],
+      "exitCode": 0,
+      "output": "{\"status\": \"PASS\", \"manifest\": \"enterprise-architecture/continuum/MANIFEST.md\", \"check\": false, \"sha256\": \"88c5b2e0766ce79cc638f695207c5355feb6554966c9026ec5b715887c2c6da3\"}\n"
+    },
+    {
+      "command": [
+        "architecture_continuum.py",
+        "project",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/Harmonia-Architecture.xml"
+      ],
+      "exitCode": 0,
+      "output": "{\"status\": \"PASS\", \"elements\": 6563, \"relationships\": 9427, \"qualifiedSourcePredicates\": 462, \"canonicalIdentities\": 6563, \"representationIdentities\": 6563, \"provenanceCoverage\": 6563, \"sourceBindings\": 8446, \"supportedNativeTypes\": 60, \"navigation\": \"PASS\", \"architecturalAcceptance\": \"See governed HCRLs; validation supplies no acceptance\", \"archiCatalogue\": {\"elementEntries\": 6563, \"nativeTypeDirectories\": 28, \"relationshipEntries\": 9427, \"sourceDirectories\": 2518}, \"containment\": \"PASS\", \"informationNaming\": {\"information_elements\": 101, \"native_types\": {\"DataObject\": 88, \"BusinessObject\": 13}, \"classifications\": {\"Topic\": 70, \"BusinessObject\": 13, \"UNRESOLVED\": 17, \"Class\": 1}, \"fully_derived\": 84, \"unresolved\": 17, \"contextual\": 60, \"preserved_identity\": 101, \"absent_identity\": 0, \"canonical_ids_allocated\": 0, \"metadata_changes\": {}}, \"offlineXsd\": \"PASS\", \"exchangeReferences\": \"PASS\", \"outputSha256\": \"6f6432a979a92a3adbf0261ba4bc761d092f87eb55fd4e5d7968f597e4d64d3a\", \"publicationAllocatedIdentities\": 0, \"actualArchiTransport\": \"NOT_PERFORMED\"}\n"
+    },
+    {
+      "command": [
+        "publish_continuum.py",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader"
+      ],
+      "exitCode": 0,
+      "output": "{\"status\": \"PASS\", \"artifacts\": 5, \"check\": false}\n"
+    },
+    {
+      "command": [
+        "publish_continuum_rad.py",
+        "--output",
+        "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative"
+      ],
+      "exitCode": 0,
+      "output": "{\"status\": \"PASS\", \"artifacts\": 12, \"check\": false}\n"
+    }
+  ],
+  "identicalArtifacts": {
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/README.md": "4f4e42f295a5af24283e30ce21e8349c216cc1e875e51b17e897a8148cc2c6d1",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/continuum-rad.tex": "72fbe046b6ca4e2e889619226261af89405accd1e154339d53c5ea4c3266d864",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/application.tex": "e5c34c442772be9a30f4a51ea5141ed75d879e30f2863062ff4bd741383dbdb9",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/architecture-governance.tex": "6c99de0c4aff3ba3d47d8042062f91d40834509abe3fc2d9478bea812704bb71",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/business.tex": "b5080007973c89891d4c803cc3c983961f25490fdd591d8531687fbaa1057051",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/cross-cutting-references.tex": "0393467a7c585dd30151f5453d7275ecf703b492cf512031b682f8e46bd520d7",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/implementation-and-migration.tex": "cc088fb5e4a5189f8f669d5c30c830cc75bc53068673bde335306341efdd3353",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/motivation.tex": "a71118b8e79e2c916dce5273bc2f4d53458c779edcac08802cd011a6fa9446cf",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/strategy.tex": "9dc7b154c075e736b2125e9ad51ce383ce43489d3d7c785ce43c320d145918d0",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/parts/technology.tex": "bb164d238ba4190e2504db197585fb27d88e8edc110e464407b565d51d90acb0",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/publication.json": "880c0b155002dbb05c1f9577fb029eaf0ccd508fabbbad5650543d14953bdf0d",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/narrative/structure.json": "bdd4bf084b6599b0c2568d0f9111d8d4bd7d7c03ee7aab4ff12976124d0aba29",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/Harmonia-Architecture.xml": "6f6432a979a92a3adbf0261ba4bc761d092f87eb55fd4e5d7968f597e4d64d3a",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/README.md": "3a047d4bc15b2ba591b79753666fd8648c3cd19bfc54c071e110acd36080bb64",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/continuum-catalogue.tex": "f26496cb4b5bf77bdfeba5f595a8231152d9dec64bb851c7c23610622840b2f5",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/continuum.html": "8277c45253081bbcbcb94f35302a01e7a563f69cd93c302b46e0c93e1c965c52",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/navigation.json": "15466f65a59552cefc3926bca452d9e3641404f44e1c68a8ef6042bbf3741c19",
+    "enterprise-architecture/design/evidence/1.1.24/001/after/candidate/reader/publication.json": "afff695b5f2b0df084be2313cc24b47bb421291f83e1f2708d3d045dbc993b44",
+    "enterprise-architecture/continuum/MANIFEST.md": "88c5b2e0766ce79cc638f695207c5355feb6554966c9026ec5b715887c2c6da3"
+  },
+  "canonicalSourcesUnmodified": true,
+  "rootRelease": "1.1.23 — pending candidate, no allocation",
+  "inputs": "Maintained canonical Markdown/navigation, EA governance/tooling, Archi projection configuration, narrative configuration, explicitly declared retained provenance and root release; installed Python dependencies.",
+  "declaredRetainedProvenance": [
+    "enterprise-architecture/design/evidence/1.1.18/001/before/Harmonia-Continuum-1.1.18-001-004.xml",
+    "enterprise-architecture/design/evidence/1.1.18/001/before/Harmonia-OpenSpec-Expanded-Subject-Capability-Mapping.md",
+    "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T002914Z-subject-grouping-hierarchy.md",
+    "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/20261102T011114Z-complete-subject-views.md",
+    "enterprise-architecture/design/evidence/1.1.18/001/before/ai-agent-tasks/unresolved-accepted-subject-incorporation.md",
+    "enterprise-architecture/design/evidence/1.1.19/001/before/Harmonia-Continuum-1.1.19-001.xml",
+    "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-dokimasia-provenance-add.md",
+    "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-mneme-post-create-availability-amendment.md",
+    "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-additional-authorisation.md",
+    "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-dr17-clarification.md",
+    "enterprise-architecture/design/evidence/1.1.19/001/before/ai-agent-tasks/unresolved-solutionfacet-final-naming-dispositions.md",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/capability-reconciliation.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/feature-reconciliation.json",
+    "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+    "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T104352Z-stakeholder-journey-usecase-userstory-add.md",
+    "enterprise-architecture/design/evidence/1.1.21/001/before/ai-agent-tasks/20261110T215321Z-bounded-patient-and-transport-follow-up.md",
+    "enterprise-architecture/design/evidence/1.1.22/001/before/accepted-input/DRP-Information-Unit-Framework.Final.001.md",
+    "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md"
+  ],
+  "excludedInputs": [
+    "docs",
+    "scripts",
+    ".git",
+    ".junie",
+    "historical publications",
+    "undeclared historical processing"
+  ],
+  "limits": "Reproduction of candidate XML/reader/narrative/Manifest; transport, PDF compilation and human acceptance are separate."
+}

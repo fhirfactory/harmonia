@@ -1,0 +1,50 @@
+{
+  "status": "CLASSIFIED WITH RAW STRICT-VERIFIER FAILURE RETAINED",
+  "classifications": {
+    "maintained comparator equivalent": 464,
+    "absent scalar xml:lang becomes en": 24022,
+    "organisation folder representation identifier omitted": 882,
+    "catalogue reference child order reflects omitted sole label": 4229,
+    "redundant catalogue reference label omitted": 4229
+  },
+  "unclassifiedCount": 0,
+  "unclassified": [],
+  "boundedIndependentSignatureCheck": {
+    "element": {
+      "before": 1994,
+      "after": 1994,
+      "sameIds": true,
+      "equalAfterOnlyAbsentEnglishLanguage": 1598,
+      "equalAlsoAllowingUniquelyKeyedUnorderedProperties": 1994
+    },
+    "relationship": {
+      "before": 2235,
+      "after": 2235,
+      "sameIds": true,
+      "equalAfterOnlyAbsentEnglishLanguage": 2235,
+      "equalAlsoAllowingUniquelyKeyedUnorderedProperties": 2235
+    },
+    "view": {
+      "before": 1285,
+      "after": 1285,
+      "sameIds": true,
+      "equalAfterOnlyAbsentEnglishLanguage": 1285,
+      "equalAlsoAllowingUniquelyKeyedUnorderedProperties": 1285
+    }
+  },
+  "viewNavigationDeltaCounts": {
+    "changedViews": 0,
+    "folderChanges": 0,
+    "orderChanges": 0,
+    "addedViewPlacements": 0,
+    "removedViewPlacements": 0,
+    "issues": 0
+  },
+  "limits": [
+    "Not raw XML equivalence; the strict maintained transport verifier failed and remains unchanged.",
+    "The additional evidence signatures separately account for absent/en scalar-language additions and uniquely keyed unordered Property order, retaining identity, types, endpoints, text, value multiplicity, other attributes and ordered View content. No production validator is changed.",
+    "Archi omits redundant element/relationship catalogue reference labels and generated organisation identifiers. The maintained canonical projection regenerates them; exact input and output are retained.",
+    "The no-edit return is evidence only; it does not replace canonical resources, maintained presentation or the accepted candidate.",
+    "Visual acceptance of the candidate is separately attributed to the Solution Architect closure Task; no acceptance of transport loss or unrelated semantics is inferred."
+  ]
+}

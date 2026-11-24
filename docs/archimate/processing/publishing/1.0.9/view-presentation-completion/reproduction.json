@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "architecture_release": {
+    "version": "1.0.9",
+    "previous_version": "1.0.8"
+  },
+  "generated_outputs": 15,
+  "command": [
+    "python3",
+    "-B",
+    "docs/archimate/framework/tools/verify_baseline_outputs.py"
+  ],
+  "timeout_seconds": 180.0,
+  "elapsed_seconds": 96.829,
+  "log": "docs/archimate/processing/publishing/1.0.9/view-presentation-completion/validation/reproduction.log",
+  "log_sha256": "73f5284e9e7ae8ce7602b306590e74c9dc03c15ecc0fa6551af95eb8e53deb95",
+  "outputs_sha256": {
+    "docs/archimate/exchange/publish/1.0.9/Harmonia-Architecture-1.0.9.xml": "b9c63aef051f5424b937c7b01951cabd38389c4352610a8331a0d40e449dbf24",
+    "docs/archimate/processing/publishing/1.0.9/archi-inspection-guide.md": "6b747e9b07ce403d301b0f61e32658e2d6673eb6e2fbaebbbe3ebbcc33c00b1c",
+    "docs/archimate/processing/publishing/1.0.9/publication-validation-1.0.9.json": "3bf17c33cf3673ac73109c8b77631ecdb9b5df3d36ececb689e67181dbd81010",
+    "docs/archimate/processing/publishing/1.0.9/reconciliation-publication.md": "43eeadf4afde8de479f723443c70b7f467083ab5ab68a3ca8ee74b1fb2ffea69",
+    "docs/markdown/governance/baseline/business-capabilities.md": "2138e8c9e2dbe51c24efc486818c1ffda31f788e4aa4a1a33bd0133eb8bde144",
+    "docs/markdown/governance/baseline/business-enabling-capabilities.md": "6fd534ce5e80a2833e59c09b0d626f2437f0cc618d139b6bf068cc83ad3965a1",
+    "docs/markdown/governance/baseline/discrepancies.json": "c3bd91fad319803720d790f6cf66cdbce28d11db61ae2e1a6cc6a8b4696e03fa",
+    "docs/markdown/governance/baseline/enterprise-capabilities.md": "3dc4c8bb2635a93f309833c553e233b21e839352a39236efa4988c604c65330d",
+    "docs/markdown/governance/baseline/features.md": "9a845e3ded68fe4b2628c9c41ac53810ba36ef6cda213c39c5719763f16fe318",
+    "docs/markdown/governance/baseline/functions.md": "4c5771a615d5d54a48ee330cbfd0c1ba65e99b6238fc1a011569da0257dd09d4",
+    "docs/markdown/governance/baseline/motivation.md": "32ea35fa97479685147271535405a972f6d78b3cddf2b6ea012e0f28aa87fa76",
+    "docs/markdown/governance/baseline/processes.md": "c38c2c9f621a82590295a3d5ffb75bd92e63ae1b7b9687731475de8b4eb0e1d3",
+    "docs/markdown/governance/baseline/products.md": "d7d057220cd60d212885fa068c3e3497646a1464dcbe8832b08f9b2e9a012c2e",
+    "docs/markdown/governance/baseline/relationships.md": "91086a171b30590f0ff38ab25964b2dce39a7ab5e04ba8fbddfde0cefc07c0b4",
+    "docs/markdown/governance/baseline/services.md": "6f0d9740079b1983b880f894e8c48c3b47931af4e6510d46f1916b316430d0a7"
+  }
+}

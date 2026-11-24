@@ -1,0 +1,32 @@
+[
+  [
+    "SR-001",
+    "Accepted register says consolidate B05.03.04 into B05.03.01; both remain active in supplied Pass3/011.",
+    "Existing baseline discrepancy; no unreviewed Feature retirement or automatic merge. Accepted decision preserved verbatim; separate SR follow-up excluded by Revision 2 §6."
+  ],
+  [
+    "SR-004",
+    "Accepted register says rename E06.03.01 to Governed Parcel Handoff & Accountability; baseline still says Governed Parcel Routing.",
+    "Identity and original baseline retained; accepted rename not silently represented as performed. Separate SR follow-up; no reopening of decision."
+  ],
+  [
+    "SR-015",
+    "Accepted register describes E06.08.07 as Ergon output processing; baseline names it Published Work Recovery & Reconciliation. E06.09.07 remains Deferred Work Recovery & Reconciliation.",
+    "Semantic correspondence unestablished; preserve both active definitions and accepted register. Do not repurpose either under XD."
+  ],
+  [
+    "SR-016",
+    "Accepted register frames B13.04.02 as research de-identification/minimisation; baseline is Research Participant Safeguarding, whose F01 concerns consent/safeguarding.",
+    "Preserve research/participant protection distinction and accepted register; no replacement of baseline obligations by narrower inferred correspondence."
+  ],
+  [
+    "SR-017",
+    "Register narrative associates the first and second IDs with client/server opposite to baseline titles: E03.06.04 Server; E03.06.05 Client.",
+    "Both retained unchanged as accepted; narrative correspondence qualification only, no client/server responsibility swap."
+  ],
+  [
+    "Temporal provenance",
+    "Original Task and follow-up instruction-entry timestamps are unavailable in this interaction.",
+    "Explicitly unresolved for SA treatment before HCRL closure; no fabricated timestamp or filename prefix."
+  ]
+]

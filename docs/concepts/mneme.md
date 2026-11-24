@@ -1,6 +1,24 @@
 # Concept: Mneme `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Mneme Context and Pragma Management / four services](../markdown/05-information-systems-architecture/context-and-persistence-management.md#mneme-responsibility)
+- [Context values and lifecycle](../markdown/05-information-systems-architecture/context-and-persistence-management.md#context-values)
+- [Internal Resource Harmonisation Manager](../markdown/05-information-systems-architecture/context-and-persistence-management.md#resource-harmonisation)
+
+```text
+---------------------------------------------------------
+```
+
 Mneme is Harmonia's high-speed, distributed in-memory data grid within the Hestia subsystem, providing sub-millisecond ephemeral state management, cache clustering, and asynchronous write-behind staging for active clinical integration tasks.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -15,7 +33,25 @@ Mneme is Harmonia's high-speed, distributed in-memory data grid within the Hesti
 
 ## 2. Architectural Definition `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Mneme Context and Pragma Management / four services](../markdown/05-information-systems-architecture/context-and-persistence-management.md#mneme-responsibility)
+- [Context values and lifecycle](../markdown/05-information-systems-architecture/context-and-persistence-management.md#context-values)
+- [Internal Resource Harmonisation Manager](../markdown/05-information-systems-architecture/context-and-persistence-management.md#resource-harmonisation)
+
+```text
+---------------------------------------------------------
+```
+
 Mneme is powered by **Infinispan 15.0.3.Final**, deployed in a clustered, fault-tolerant topology communicating via JGroups and the Hot Rod binary protocol:
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ```
 +---------------------------------------------------------------------------------------+
@@ -55,12 +91,31 @@ Mneme is powered by **Infinispan 15.0.3.Final**, deployed in a clustered, fault-
 
 ## 3. Ownership Boundaries `[IMPLEMENTED]`
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Mneme Context and Pragma Management / four services](../markdown/05-information-systems-architecture/context-and-persistence-management.md#mneme-responsibility)
+- [Context values and lifecycle](../markdown/05-information-systems-architecture/context-and-persistence-management.md#context-values)
+- [Internal Resource Harmonisation Manager](../markdown/05-information-systems-architecture/context-and-persistence-management.md#resource-harmonisation)
+- [C09 — Mneme](../markdown/05-information-systems-architecture/component-register.md#c09)
+
+```text
+---------------------------------------------------------
+```
+
 ### What Mneme Owns
 - Infinispan 15.0.3 clustered data grid configuration (`infinispan.xml`).
 - JGroups network discovery and inter-node replication protocols (`port 7800`).
 - Hot Rod binary RPC server endpoints (`port 11222`, `11223`).
 - Custom Infinispan `NonBlockingStore` SPI implementations for asynchronous write-behind staging (`mneme-persistence`).
 - Ephemeral in-flight task caching and sliding window deduplication buffers.
+
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
 
 ### What Mneme Explicitly Does NOT Own (Anti-Responsibilities)
 - Permanent historical record archiving (owned by Mnemosyne).

@@ -1,0 +1,67 @@
+[
+  {
+    "name": "manifest-generation",
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/continuum_manifest.py"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 6.034,
+    "outcome": "PASS"
+  },
+  {
+    "name": "initial-projection",
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/architecture_continuum.py",
+      "project",
+      "--output",
+      "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/Harmonia-Architecture-candidate.xml"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 10.834,
+    "outcome": "PASS"
+  },
+  {
+    "name": "reader-generation",
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/publish_continuum.py",
+      "--output",
+      "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/reader"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 8.79,
+    "outcome": "PASS"
+  },
+  {
+    "name": "narrative-generation",
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/publish_continuum_rad.py",
+      "--output",
+      "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/narrative"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 15.183,
+    "outcome": "PASS"
+  },
+  {
+    "name": "reader-exchange-generation",
+    "command": [
+      "python3",
+      "-B",
+      "enterprise-architecture/tooling/architecture_continuum.py",
+      "project",
+      "--output",
+      "enterprise-architecture/design/evidence/1.1.21/001/after/initial-candidate/reader/Harmonia-Architecture.xml"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 10.071,
+    "outcome": "PASS"
+  }
+]

@@ -1,6 +1,23 @@
 # Matrix Synapse Homeserver Middleware Topology `[CONFIGURED]`
 
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Omilia identity and Synapse provenance](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#control-and-operations)
+
+```text
+---------------------------------------------------------
+```
+
 Matrix Synapse (`matrixdotorg/synapse:v1.120.0`) serves as Harmonia's collaboration middleware, providing private chat, clinical task notification threads, and multidisciplinary coordination surfaces for **Agora**.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 
@@ -10,6 +27,18 @@ Matrix Synapse (`matrixdotorg/synapse:v1.120.0`) serves as Harmonia's collaborat
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | `synapse` | `matrixdotorg/synapse:v1.120.0` | `8008` (HTTP) | `synapse_db` on `postgres-synapse:5436` | `synapse_user` | StatefulSet PVC (`synapse-data`, 5Gi) | Matrix Collaboration Homeserver |
 | `postgres-synapse` | `postgres:16-alpine` | `5436` (Service), `5432` (Native) | `synapse_db` | `synapse_user` | StatefulSet PVC (`postgres-synapse-data`, 2Gi) | Synapse Relational Storage |
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Control versus operations and bidirectional API](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#application-services-api)
+
+```text
+---------------------------------------------------------
+```
 
 ```mermaid
 graph LR
@@ -33,7 +62,24 @@ graph LR
     ROOM_MGR --> PG_SYN
 ```
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Deferred storage retention and detailed platform design](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#deferred-collaboration-design)
+
+```text
+---------------------------------------------------------
+```
 
 ## 2. Homeserver Configuration & Architectural Boundary `[CONFIGURED]`
 
@@ -63,6 +109,11 @@ app_service_config_files:
   - /etc/matrix-synapse/conf.d/appservice-agora.yaml
 ```
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
 
 ## 3. Application Service Registration (`appservice-agora.yaml`) `[CONFIGURED]`
@@ -79,6 +130,18 @@ Agora registers with Synapse as a privileged Application Service (`synapse-appse
 
 ---
 
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Native collaboration custody and deferred platform mechanisms](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#information-ownership)
+
+```text
+---------------------------------------------------------
+```
+
 ## 4. Deep Capability Exploitation: Used vs. Avoided `[IMPLEMENTED]`
 
 | Capability Dimension | Used / Relied Upon in Harmonia | Avoided / Excluded in Harmonia | Architectural Rationale |
@@ -91,7 +154,24 @@ Agora registers with Synapse as a privileged Application Service (`synapse-appse
 | **Transaction Processing** | Durable AS transaction deduplication in PostgreSQL (`agora_as_transactions`) | Stateless transaction ingestion | Guarantees idempotent event processing without duplicate Petasos messaging dispatches (AGORA-ADR-007). |
 | **Room Retirement** | Soft archival (`m.room.power_levels` read-only, kick members, status `ARCHIVED`) | Destructive room purge | Preserves historical traceability while revoking active interaction permissions (AGORA-ADR-008). |
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
+
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Omilia Application Services API boundary](../markdown/05-information-systems-architecture/agora-omilia-collaboration.md#application-services-api)
+
+```text
+---------------------------------------------------------
+```
 
 ## 5. Matrix Synapse & Admin REST API Interaction Catalogue `[IMPLEMENTED]`
 
@@ -117,6 +197,11 @@ Executed via `MatrixClientAdapter` on behalf of the AS bot (`@_harmonia_bot:syna
 ### 5.3 Matrix Application Service Ingress (Port 8092)
 Invoked by Synapse pushing event transactions to `ApplicationServiceTransactionEndpoint`:
 - `PUT /_matrix/app/v1/transactions/{txnId}`: Receives batches of room events, validates Bearer `hs_token`, performs durable deduplication against `agora_as_transactions`, authorizes events via Themis, and dispatches them to Petasos queue `petasos.queue.agora.inbound`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 
 ---
 

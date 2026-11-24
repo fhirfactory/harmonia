@@ -1,0 +1,38 @@
+{
+  "kind": "APPROVED_COMBINED_POPULATION_SEPARATION",
+  "predecessorCanonicalId": "c20aa17ce4aa4a58be5eb3cff2ecdd1d",
+  "predecessorExchangeId": "id-8ed63bcc47df52468863f98debd03060",
+  "currentness": "superseded",
+  "successors": [
+    {
+      "authoredName": "Integration & Solution Engineers",
+      "displayName": "Integration & Solution Engineers",
+      "nativeType": "Stakeholder",
+      "specialization": null,
+      "canonicalId": "1dc29678ec4a4a498620c84ffa03c2bb",
+      "exchangeId": "id-aeae420df3be43fdb0664f9ee75c40e8",
+      "source": "enterprise-architecture/continuum/motivation/stakeholder/1dc29678ec4a4a498620c84ffa03c2bb.md",
+      "operation": "SPLIT_SUCCESSOR_CREATED",
+      "predecessorCanonicalId": "c20aa17ce4aa4a58be5eb3cff2ecdd1d",
+      "identityBasis": "Distinct approved population after explicit composite separation",
+      "initialCreateRepresentationId": "id-d997a35a8e305294b9a145f281715ca4"
+    },
+    {
+      "authoredName": "Platform Operations & OA&M Personnel",
+      "displayName": "Platform Operations & OA&M Personnel",
+      "nativeType": "Stakeholder",
+      "specialization": null,
+      "canonicalId": "ec45ffa1b7d841cf920aa467d4d2b1f4",
+      "exchangeId": "id-bedcc73d862c424da5f94904e9a28c53",
+      "source": "enterprise-architecture/continuum/motivation/stakeholder/ec45ffa1b7d841cf920aa467d4d2b1f4.md",
+      "operation": "SPLIT_SUCCESSOR_CREATED",
+      "predecessorCanonicalId": "c20aa17ce4aa4a58be5eb3cff2ecdd1d",
+      "identityBasis": "Distinct approved population after explicit composite separation",
+      "initialCreateRepresentationId": "id-3579a1cbeb1e5cb390198cb188140282"
+    }
+  ],
+  "originalDefinitionRetainedUnchanged": true,
+  "predecessorRelationshipsUnchanged": true,
+  "relationshipRetargeting": false,
+  "singularCorrespondenceInvented": false
+}

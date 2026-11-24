@@ -1,0 +1,14 @@
+{
+  "outcome": "PASS",
+  "version": "1.1.19",
+  "iteration": "002",
+  "records": [
+    "evidence/1.1.19/002/after/ai-agent-reports/20261103T055622Z-finalisation-and-successor-governed-stop.md",
+    "evidence/1.1.19/002/after/ai-agent-reports/20261103T063308Z-dr20-baseline-preserving-finalisation.md",
+    "evidence/1.1.19/002/before/ai-agent-tasks/20261103T054949Z-finalisation-and-successor-preflight.md",
+    "evidence/1.1.19/002/before/ai-agent-tasks/20261103T061713Z-dr20-baseline-preserving-finalisation.md"
+  ],
+  "errors": [],
+  "unresolved": [],
+  "limits": "Layout and recorded event/prefix correspondence only; no semantic coverage, authenticity or acceptance claim"
+}

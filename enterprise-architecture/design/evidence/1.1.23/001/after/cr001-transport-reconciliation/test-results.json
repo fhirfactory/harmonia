@@ -1,0 +1,15 @@
+{
+  "requiredArchitectureSuite": "PASS",
+  "tests": 90,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 26.064,
+  "log": "architecture-tests.txt.gz",
+  "uncompressedLogSha256": "e19027b426b38479f2c2eae13486c29c172f30920bc7baa73419792de18cb214",
+  "diagnosticBoundaryTests": "PASS",
+  "diagnosticTests": 5,
+  "diagnosticSeconds": 0.023,
+  "diagnosticLog": "diagnostic-boundaries.txt",
+  "limits": "Architecture and established diagnostic-boundary tests only; no human acceptance, strict transport waiver or pixel-equivalence claim."
+}

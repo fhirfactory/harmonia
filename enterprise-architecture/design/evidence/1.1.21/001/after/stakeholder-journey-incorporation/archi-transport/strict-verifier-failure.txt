@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/verify_continuum_transport.py", line 39, in <module>
+    print(verify(a.baseline,a.returned,a.execution_log,a.operator,a.report,a.environment_resolution)['actualArchiImportExport'])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/verify_continuum_transport.py", line 22, in verify
+    c.require(not any(raw[kind][k] for k in ('missing_ids','additional_ids','changed_records')),'Relationship/View transport drift')
+  File "/home/hunterm/Development/Code/harmonia/enterprise-architecture/tooling/architecture_continuum.py", line 51, in require
+    raise ContinuumError(message)
+architecture_continuum.ContinuumError: Relationship/View transport drift

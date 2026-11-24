@@ -1,0 +1,177 @@
+[
+  {
+    "id": "id-d0a0a07824235e10a4e1bca6812a22c7",
+    "name": "Source evidence — bec-review",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-8bc8a07409fe561eb7713afcf1205985",
+    "name": "Source evidence — business-capabilities",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-1aa3966292ff5cd298837a0048177137",
+    "name": "Source evidence — business-enabling-capabilities",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-9d83dbaf639c54208a407714f1d240f3",
+    "name": "Source evidence — catalogue-contexts",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-681d87471de25ac8a7930e1cc00bf1d8",
+    "name": "Source evidence — enterprise-capabilities",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-2056f95fa9245931882067c126cb83c1",
+    "name": "Source evidence — identifiers",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-c0c10cf8a936583cbee4ed93f4ef30b1",
+    "name": "Source evidence — preserved-responsibilities",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-ef86a373353956389692ae57ec4dc4e4",
+    "name": "Source evidence — rad-assurance",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-a1450ea2d7b657d7afea3d4c5ba918ee",
+    "name": "Source evidence — rad-assurance-strategy",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-c7c88f2cd3165ece95ca3111f5dfaf3c",
+    "name": "Source evidence — rad-axioms",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-a27c3798e5f95d609a3fb4b070554a50",
+    "name": "Source evidence — rad-b2-1",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-661aaecfa2fe5dc8a61f4aef64d3f23f",
+    "name": "Source evidence — rad-business",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-8a9f9981dec0545780db6ea6e59b8f3f",
+    "name": "Source evidence — rad-dependencies",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-6b5917b8195759a3b2a919019f0c60fe",
+    "name": "Source evidence — rad-detail",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-70f42f4ec1fe50fc9b53930508510625",
+    "name": "Source evidence — rad-em",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-6abe502c604c5f5193d6d05a32ba8a5d",
+    "name": "Source evidence — rad-enabling",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-168c83c5b1205395886fcd07a7e20ef8",
+    "name": "Source evidence — rad-enterprise",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-73369d62b05856958a615a81858961e2",
+    "name": "Source evidence — rad-hso",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-151468dabca35e30846cff199a211008",
+    "name": "Source evidence — rad-ise",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-f4455095a2705628a3971c9c254f2e2b",
+    "name": "Source evidence — rad-k9",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-8235739b70385a098eecc54bbf2e031e",
+    "name": "Source evidence — rad-metamodel",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-01966458f4eb5322a76b5dc81c4d7d21",
+    "name": "Source evidence — rad-processes",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-2c50fe83ac0d52d39712d404571c364d",
+    "name": "Source evidence — rad-sa",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-cb6aa01af51e5505991e2b31587f5f82",
+    "name": "Source evidence — rad-sd",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-7876add337795e32aad89fe7b98453e5",
+    "name": "Source evidence — rad-tier-model",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-c82f1dedfa6f5fe68720871d07d13278",
+    "name": "Source evidence — rad-traceability",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-4f547f2f949953d788d166e97ec2c9c7",
+    "name": "Source evidence — reading-guide",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-12808a930fe65a2dae51b632a10dce9c",
+    "name": "Source evidence — reconciliation",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-adb87863e646512993b2f972331e7fdf",
+    "name": "Source evidence — relationships",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-02dc2c6e50c95f938493028d2c6ed9cf",
+    "name": "Source evidence — sources",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-834614032ae156ff8c6b6ccaae61d4aa",
+    "name": "Source evidence — 01-motivation-strategy",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-61a84b3979135950999d7a0ecb0e2d3e",
+    "name": "Source evidence — 01-motivation-strategy-old",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-a0f5c59bc3925a33b4f6b0599384f1d9",
+    "name": "Source evidence — appendix-requirements",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-50fe76d4160d525181784de74a41cd93",
+    "name": "Source evidence — fig-motivation-map",
+    "onlyPropertyDefinitionOrEnglishLanguage": true
+  },
+  {
+    "id": "id-7d0bc19870225280ac6b0a268ce8a92b",
+    "name": "Assessments",
+    "onlyPropertyDefinitionOrEnglishLanguage": false
+  }
+]

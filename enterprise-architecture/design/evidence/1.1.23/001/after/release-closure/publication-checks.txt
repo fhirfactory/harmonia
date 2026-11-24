@@ -1,0 +1,19 @@
+make: Entering directory '/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/tooling'
+timeout --signal=TERM --kill-after=5s 90s python3 -B /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/tooling/architecture_release.py check
+{
+  "version": "1.1.23",
+  "previous_version": "1.1.22"
+}
+timeout --signal=TERM --kill-after=5s 90s python3 -B /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/tooling/continuum_manifest.py --check
+{"status": "PASS", "manifest": "enterprise-architecture/continuum/MANIFEST.md", "check": true, "sha256": "212b61214be70f0d7ce82450c465fe11a69d0e0e16d5595d8392e243cddba2c2"}
+timeout --signal=TERM --kill-after=5s 90s python3 -B /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/tooling/architecture_continuum.py project --output /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-manifest/published/1.1.23/Harmonia-Architecture.xml --publish --check
+{"status": "PASS", "elements": 6557, "relationships": 9376, "qualifiedSourcePredicates": 462, "canonicalIdentities": 6557, "representationIdentities": 6557, "provenanceCoverage": 6557, "sourceBindings": 8429, "supportedNativeTypes": 60, "navigation": "PASS", "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance", "archiCatalogue": {"elementEntries": 6557, "nativeTypeDirectories": 27, "relationshipEntries": 9376, "sourceDirectories": 2510}, "containment": "PASS", "informationNaming": {"information_elements": 101, "native_types": {"DataObject": 88, "BusinessObject": 13}, "classifications": {"Topic": 70, "BusinessObject": 13, "UNRESOLVED": 17, "Class": 1}, "fully_derived": 84, "unresolved": 17, "contextual": 60, "preserved_identity": 101, "absent_identity": 0, "canonical_ids_allocated": 0, "metadata_changes": {}}, "offlineXsd": "PASS", "exchangeReferences": "PASS", "outputSha256": "95d03fe1e5e3e9a9c3dc7af92b10277a7ac6ce44e94ad4cc63c5eabc5df06dc0", "publicationAllocatedIdentities": 0, "actualArchiTransport": "NOT_PERFORMED", "publishedProjection": "enterprise-architecture/design/archimate/published/1.1.23/Harmonia-Architecture.xml"}
+timeout --signal=TERM --kill-after=5s 90s python3 -B /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/tooling/publish_continuum.py --output /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-manifest/published/1.1.23 --check
+{"status": "PASS", "artifacts": 5, "check": true}
+timeout --signal=TERM --kill-after=5s 90s python3 -B /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/tooling/publish_continuum_rad.py --output /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-rad/published/1.1.23 --check
+{"status": "PASS", "artifacts": 12, "check": true}
+timeout --signal=TERM --kill-after=5s 90s python3 -B /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/tooling/verify_continuum_links.py --report /tmp/harmonia-current-ea-links.json
+PASS
+timeout --signal=TERM --kill-after=5s 30s node /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/tooling/tests/continuum-browser-smoke.js /usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/documentation/continuum-manifest/published/1.1.23/continuum.html
+{"status":"PASS","elements":6557,"checks":["initial population","identity search","selection","Feature filter","combined currentness filter"],"limits":"DOM-contract smoke test; no pixel/visual browser claim"}
+make: Leaving directory '/usr/vm/devel/code/projects/github/harmonia/enterprise-architecture/tooling'

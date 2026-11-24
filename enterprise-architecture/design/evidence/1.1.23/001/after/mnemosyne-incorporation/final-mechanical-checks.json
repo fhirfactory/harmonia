@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "baselineHead": "fde98cde3c44b4f4b89e7f3a29765e1a44fca515",
+  "branch": "Mneme-and-Mnemosyne-Build",
+  "protectedAcceptedFilesUnchanged": 311,
+  "releaseAuthorityUnchanged": {
+    "version": "1.1.22",
+    "previous_version": "1.1.21"
+  },
+  "acceptedInputAndRetainedCopyHash": "16317e70ff491ffe501eaae3e2cd64a293f4c42871302951b28c1ceac4e36d2a",
+  "candidateXmlSha256": "eb4c340c25a2d8ee114053a445056b1afaf4b000e38b15c2f0259384e7f5f6a9",
+  "authoredReviewLinks": "PASS",
+  "gitDiffCheck": "PASS",
+  "trackedChangesWithinAuthorisedScope": "PASS",
+  "iterationEvidenceIgnoredByGit": [],
+  "noApplicationCodeOrAcceptedPublicationChanges": true,
+  "limits": "Mechanical preservation, paths and Git scope; no human structural review, transport waiver or architectural acceptance."
+}

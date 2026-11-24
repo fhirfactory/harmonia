@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "newAndUpdatedMarkdownLinksChecked": 92,
+  "missingTargets": [],
+  "authoredViewsOrganisationXmlCanonicalBytesExactToAccepted1111": true,
+  "note": "The pre-existing projector omits empty/template-only View folders. Compare the accepted 1.1.11 projection for exact existing organisation; object paths also match the template as established by workbench/verification.json. No new View filtering change was made.",
+  "protectedFilesRechecked": 1973,
+  "onlyProtectedDifference": [
+    "enterprise-architecture/continuum/MANIFEST.md"
+  ],
+  "publicationHash": "26bf7c8c926089e64c89f155b35b5882cc199517ffeb4abba76480f0f4dfc314"
+}

@@ -1,0 +1,135 @@
+Command: timeout --signal=TERM --kill-after=5s 90s python3 /tmp/harmonia-106-projection-structural-audit.py
+PASS: current XML matches regenerated output and validates against bundled XSD
+PASS: exact-key capability ancestry, classifications, Feature reachability independently by BC/BEC and resource/View numbering separation
+{
+  "business": {
+    "capability_tiers": {
+      "CT1": 18,
+      "CT2": 40,
+      "CT3": 142
+    },
+    "current_features": 0,
+    "established_ct3_ancestry": 0,
+    "complete_ancestry_reachable": 0,
+    "unresolved_ancestry": [],
+    "projections_checked": [
+      [
+        "Strategy",
+        "Business Layer",
+        "Business Capabilities"
+      ],
+      [
+        "Business",
+        "Business Capabilities"
+      ],
+      [
+        "Views",
+        "1-Strategy",
+        "Capabilities",
+        "1-Business Capabilities"
+      ],
+      [
+        "Views",
+        "2-BusinessLayer",
+        "1-Business Capabilities"
+      ]
+    ]
+  },
+  "business_enabling": {
+    "capability_tiers": {
+      "CT2": 76,
+      "CT3": 95,
+      "CT1": 7
+    },
+    "current_features": 157,
+    "established_ct3_ancestry": 157,
+    "complete_ancestry_reachable": 157,
+    "unresolved_ancestry": [],
+    "projections_checked": [
+      [
+        "Strategy",
+        "Business Layer",
+        "Business Enabling Capabilities"
+      ],
+      [
+        "Business",
+        "Business Enabling Capabilities"
+      ],
+      [
+        "Views",
+        "1-Strategy",
+        "Capabilities",
+        "2-Business Enabling Capabilities"
+      ],
+      [
+        "Views",
+        "2-BusinessLayer",
+        "2-Business Enabling Capabilities"
+      ]
+    ]
+  }
+}
+PASS: full starting candidate semantic/Documentation/View/property-definition signatures and protected source/recovery/identity/release hashes {'elements': 1299, 'relationships': 852, 'views': 1012, 'property_definitions': 55}
+PASS: model-level attributes, namespace/schemaLocation, name, Documentation and Properties unchanged; Documentation classification exactly preserved
+PASS: generated Markdown baseline words and structured architecture unchanged
+Navigation-only folder identity audit: {"starting_folders": 2833, "resulting_folders": 3460, "retained_folder_ids": 2681, "removed_folder_ids": 152, "added_folder_ids": 779}
+Current capability tiers business {'CT1': 18, 'CT2': 40, 'CT3': 142}
+Current capability tiers business_enabling {'CT2': 76, 'CT3': 95, 'CT1': 7}
+Current capability tiers enterprise {'CT2': 15, 'CT1': 3, 'CT3': 10}
+PASS: Archi 5.10.0 installed schema byte-identical: archimate3_Diagram.xsd 6419080f4c4bc43b4a7b8acf870146a7bae6c3487a3ce08d3c521c028ea6056e
+PASS: Archi 5.10.0 installed schema byte-identical: archimate3_Model.xsd dd451abe3e3193f91dd9544b279af9bbbf17e75ff1ef86f65ad52b3f8cd29794
+PASS: Archi 5.10.0 installed schema byte-identical: archimate3_View.xsd d708ce176403034b1229b892712cfd69660aefe17da4cc54acea1ac35e4a9854
+PASS: Archi 5.10.0 installed schema byte-identical: dc.xsd 9285c1b57d8920b72101b4ba93416f32aa376087481f2b5b0c5d6c95f8def7cf
+PASS: Archi 5.10.0 installed schema byte-identical: xml.xsd f0fa306f2951fb1a477220eb7bdeaa35959c8d0224258f2104d3c4724ba746f7
+PASS: existing Exchange schemas are exactly those supplied by installed Archi 5.10.0; namespace/schemaLocation unchanged
+PASS: Markdown/ArchiMate/LaTeX authority and publication lifecycle intact; supported workbench 5.10.0
+PASS: release unchanged at {'version': '1.0.6', 'previous_version': '1.0.5'}
+
+Exit status: 0
+
+Read-only verification procedure used:
+
+import sys,json,hashlib,collections,copy
+from pathlib import Path
+from zipfile import ZipFile
+sys.path.insert(0,'docs/archimate/capability-architecture/tools')
+import synchronise_baseline as s
+outputs,b,report=s.publish()
+root=s.g.parse(s.DEST/'Harmonia-Architecture-Baseline.xml')
+print('PASS: current XML matches regenerated output and validates against bundled XSD')
+assert (s.DEST/'Harmonia-Architecture-Baseline.xml').read_bytes()==outputs[s.DEST/'Harmonia-Architecture-Baseline.xml']
+coverage=s.validate_capability_navigation(b,root)
+print('PASS: exact-key capability ancestry, classifications, Feature reachability independently by BC/BEC and resource/View numbering separation')
+print(json.dumps(coverage,indent=2))
+print('PASS: full starting candidate semantic/Documentation/View/property-definition signatures and protected source/recovery/identity/release hashes',s.validate_projection_preservation(root))
+start=Path('/tmp/harmonia-106-projection-start/synchronised-baseline/Harmonia-Architecture-Baseline.xml')
+old=s.g.parse(start)
+assert root.attrib==old.attrib and root.nsmap==old.nsmap
+assert s.prop_values(root)==s.prop_values(old)
+assert root.findtext('a:documentation',namespaces=s.g.N)==old.findtext('a:documentation',namespaces=s.g.N)
+assert root.findtext('a:name',namespaces=s.g.N)==old.findtext('a:name',namespaces=s.g.N)
+proof=s.read(s.DEST/'projection-start-preservation.json')
+assert report['documentation_classification']==proof['documentation_classification']
+print('PASS: model-level attributes, namespace/schemaLocation, name, Documentation and Properties unchanged; Documentation classification exactly preserved')
+for p,data in outputs.items():
+ assert p.read_bytes()==data or p.name=='validation.json' # CLI adds deterministic-regeneration result to validation.json
+print('PASS: generated Markdown baseline words and structured architecture unchanged')
+a=lambda r:{e.get('identifier'):e for e in r.findall('.//a:organizations//a:item',s.g.N) if not e.get('identifierRef')}
+o,n=a(old),a(root)
+nav={'starting_folders':len(o),'resulting_folders':len(n),'retained_folder_ids':len(o.keys() & n.keys()),'removed_folder_ids':len(o.keys()-n.keys()),'added_folder_ids':len(n.keys()-o.keys())}
+print('Navigation-only folder identity audit:',json.dumps(nav))
+for cat in ['business','business_enabling','enterprise']:
+ print('Current capability tiers',cat,dict(collections.Counter(e.get('tier') for e in b.records.values() if e.get('category')==cat and e['record_state']=='current')))
+jar=Path('/usr/vm/devel/Tools/Archi/plugins/org.opengroup.archimate.xmlexchange_5.10.0.202607081558.jar')
+with ZipFile(jar) as z:
+ for p in sorted((s.BASE/'schemas').glob('*.xsd')):
+  assert z.read('xsd/'+p.name)==p.read_bytes()
+  print('PASS: Archi 5.10.0 installed schema byte-identical:',p.name,hashlib.sha256(p.read_bytes()).hexdigest())
+print('PASS: existing Exchange schemas are exactly those supplied by installed Archi 5.10.0; namespace/schemaLocation unchanged')
+readme=(s.BASE/'README.md').read_text();convention=(s.ROOT/'docs/markdown/governance/archi-navigation-and-view-convention.md').read_text()
+for text in (readme,convention):
+ assert '5.10.0' in text and 'Markdown RAD' in text and 'LaTeX RAD' in text
+ assert 'Markdown RAD -> LaTeX RAD -> publication output' in text
+print('PASS: Markdown/ArchiMate/LaTeX authority and publication lifecycle intact; supported workbench 5.10.0')
+print('PASS: release unchanged at',s.load_release())
+Path('/tmp/harmonia-106-projection-navigation-delta.json').write_text(json.dumps(nav,indent=2)+'\n')

@@ -1,8 +1,37 @@
 # Calliope Canonical Models and Schemas Architecture
 
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Calliope Models / DataSets](../markdown/05-information-systems-architecture/calliope-models-and-datasets.md#calliope-responsibility)
+- [Deferred contracts and repository-rule reconciliation](../markdown/05-information-systems-architecture/gaps.md#calliope-contracts)
+
+```text
+---------------------------------------------------------
+```
+
 Calliope is Harmonia's foundation library for shared information models, canonical schemas, data type converters, and topic definitions.
 
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [Calliope Models / DataSets](../markdown/05-information-systems-architecture/calliope-models-and-datasets.md#calliope-responsibility)
+- [Deferred contracts and repository-rule reconciliation](../markdown/05-information-systems-architecture/gaps.md#calliope-contracts)
+
+```text
+---------------------------------------------------------
+```
 
 ## 1. Architectural Role & Boundary Constraints
 
@@ -22,7 +51,24 @@ Calliope sits at the foundation layer of Harmonia's module hierarchy:
 - **Zero Inward Coupling**: Calliope must NEVER depend on higher-tier modules (Themis, Hestia, Petasos, Energeia, Pylai, Iris, or Paradeigma).
 - **Format Agnostic**: Provides domain DTOs and canonical mappings between HL7 v2 and FHIR R5 structures without embedding network transport logic.
 
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```
+
+
 ---
+
+```text
+------- Legacy Content - Superseded ------- Start ------
+Superseded by:
+```
+
+- [C01 — Calliope](../markdown/05-information-systems-architecture/component-register.md#c01)
+- [Candidate data D01–D02/D08](../markdown/05-information-systems-architecture/data-and-persistence.md)
+
+```text
+---------------------------------------------------------
+```
 
 ## 2. Core Information Models & Schemas
 
@@ -36,3 +82,7 @@ Calliope sits at the foundation layer of Harmonia's module hierarchy:
 - **`Mfn2FhirBundle`**: Maps Master File Notification (MFN) messages to FHIR R5 `Practitioner`, `PractitionerRole`, and `Organization` bundles.
 - **`Orm2FhirMapper`**: Maps Order Management (ORM) messages to FHIR R5 `ServiceRequest`.
 - **`Oru2FhirMapper`**: Maps Observation Result (ORU) messages to FHIR R5 `Observation` and `DiagnosticReport`.
+
+```text
+------- Legacy Content - Superseded ------- Finish ----
+```

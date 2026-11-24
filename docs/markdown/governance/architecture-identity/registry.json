@@ -1,0 +1,523 @@
+{
+  "schema_version": 1,
+  "semantic_namespace": "07cc7d21-18f0-5bd4-82ff-8c9143d41d2a",
+  "records": [
+    {
+      "canonical_architecture_id": "EC-01",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Managed Entity & Relationship",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-01",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-01: Managed Entity & Relationship",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-d53727d908365757a293b0896b2c769b"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-02",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Context Management",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-02",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-02: Context Management",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-06e038737c5355edbc0591e08c594ab0"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-03",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Managed State & Lifecycle",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-03",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-03: Managed State & Lifecycle",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-5891936941f65d20afad86b0697879c7"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-04",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Information Management",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-04",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-04: Information Management",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-9e79bc474aed516c8c6752ab81b63d6b"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-05",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Search & Discovery",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-05",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-05: Search & Discovery",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-e11f02764fe55ff29c0782db21198040"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-06",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Policy & Control",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-06",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-06: Policy & Control",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-a6f6d30d8fce5ac78f60f7aefa71b28e"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-07",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Provenance & Traceability",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-07",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-07: Provenance & Traceability",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-d71457435a085e749ffb1e1a3b551228"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-08",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Interoperability & Exchange",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-08",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-08: Interoperability & Exchange",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-dbd66e69788450649e184966aa724797"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-09",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Event & Subscription",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-09",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-09: Event & Subscription",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-770ebb3e3bdc5f2bbe77b2bfd55bd74d"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-10",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Activity & Execution",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-10",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-10: Activity & Execution",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-49d4f69ebeeb5ea782a52172fb3e8a7b"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-11",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Interaction & Experience",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-11",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-11: Interaction & Experience",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-82cd1f6a3e2352639e22c542f5cb3a9d"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-12",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Operational Assurance",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-12",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-12: Operational Assurance",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-9bbd142f818e50d39a3d0429f74b72b4"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-13",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Semantic Governance & Conformance",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-13",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-13: Semantic Governance & Conformance",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-7d6f635ffb6f5c6181bde1d07b859662"
+      }
+    },
+    {
+      "canonical_architecture_id": "EC-14",
+      "origin": "retained",
+      "construct_type": "Capability",
+      "name": "Service Guardian",
+      "status": "active",
+      "aliases": [],
+      "source_identifiers": [
+        {
+          "kind": "source/capture",
+          "scope": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "value": "EC-14",
+          "facet": ""
+        }
+      ],
+      "provenance": [
+        {
+          "source_document": "docs/markdown/02-strategy/capabilities/enterprise-capabilities.md",
+          "source_section": "### EC-14: Service Guardian",
+          "source_sha256": "4b887f8486827d26649b76d5d8ce3ef37ab9d11e861dbc6915ceb6202d92b2fb",
+          "release": "1.0.3"
+        }
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      },
+      "successors": [],
+      "archimate": {
+        "mode": "locked",
+        "semantic_id": "id-4dbf578f52bd5b3b9301b9807ce60f30"
+      }
+    }
+  ],
+  "events": [
+    {
+      "kind": "adopt",
+      "identities": [
+        "EC-01",
+        "EC-02",
+        "EC-03",
+        "EC-04",
+        "EC-05",
+        "EC-06",
+        "EC-07",
+        "EC-08",
+        "EC-09",
+        "EC-10",
+        "EC-11",
+        "EC-12",
+        "EC-13",
+        "EC-14"
+      ],
+      "authority": {
+        "source_document": "docs/markdown/governance/architecture-identity/adoption-1.0.3.md",
+        "source_section": "## Adoption decision",
+        "source_sha256": "91fc1d31a9343a109615bd30e1a5ff102889ece07a140096b3f28e3fa12c0041",
+        "release": "1.0.3"
+      }
+    }
+  ]
+}

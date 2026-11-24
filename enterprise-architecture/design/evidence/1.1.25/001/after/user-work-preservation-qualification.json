@@ -1,0 +1,13 @@
+{
+  "standing": "Preservation-evidence limitation discovered during final mechanical scope check; no new architectural semantics or Java edit",
+  "path": "calliope/src/main/java/net/fhirfactory/harmonia/model/topic/Topic.java",
+  "originalStatusEvidence": "../before/baseline.json / statusBeforeCanonicalMutation[0]",
+  "originalStatus": "M calliope/src/main/java/net/fhirfactory/harmonia/model/topic/Topic.java",
+  "beforeHash": "UNAVAILABLE",
+  "currentHash": "4d7e9ca758dc9db1edf81766f6924d4d277b9d46bd567892ff50f3c1a0eda42a",
+  "cause": "Original baseline helper stripped the leading space from complete git porcelain text; first-row slicing then dropped the initial c from calliope and omitted that path from userFiles hashes.",
+  "actualTreatment": "Do not modify before-state evidence or manufacture a before hash. Classify this path as recorded pre-existing dirty work for scope comparison. No Java edit was performed during this activity; independent byte-for-byte before/after proof is unavailable for this one path.",
+  "pinnedUserFilesUnchanged": 29,
+  "firstScopeCheck": "FAIL: scope check used hashed user-file subset and therefore classified the already-recorded Topic.java modification as unexpected; corrected comparison uses recorded initial dirty inventory.",
+  "closure": "Disclosed to Solution Architect under HCRL DR-6; pending actual-result acceptance does not erase the limitation."
+}

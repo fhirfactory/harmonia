@@ -1,0 +1,5 @@
+Isolated maintained sources and declared evidence prepared; no docs/scripts/Git.
+PASS isolated full XML projection
+PASS isolated reader 5 artifacts
+PASS isolated narrative 12 artifacts
+PASS independent reproduction
