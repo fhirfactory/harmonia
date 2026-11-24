@@ -24,12 +24,12 @@
     <parent>
         <groupId>net.fhirfactory.harmonia</groupId>
         <artifactId>harmonia-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>petasos</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Harmonia :: Petasos (Messaging &amp; Event Transport)</name>
     <description>Petasos — High-availability messaging subsystem for the Harmonia platform powered by Apache ActiveMQ Artemis</description>
@@ -40,17 +40,4 @@
         <module>petasos-artemis</module>
         <module>petasos-test</module>
     </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.apache.activemq</groupId>
-                <artifactId>artemis-bom</artifactId>
-                <version>${artemis.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
 </project>

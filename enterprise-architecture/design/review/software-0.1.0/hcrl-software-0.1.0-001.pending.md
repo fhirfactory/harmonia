@@ -14,6 +14,14 @@
 
 # HCRL software-0.1.0 / 001 — Calliope Model Restructure Candidate Review
 
+**Current implementation disposition · Superseded by the clean-slate reset.**
+Under the Solution Architect's [reset assignment][reset-assignment], the Calliope
+implementation candidate recorded here is closed without implementation acceptance.
+The original DRs and evidence below preserve the candidate's review history.
+The [reset HCRL][foundation-reset] records the exact checkpoint and supersession.
+
+The original review record follows.
+
 **Iteration status: ACTIVE — PENDING REVIEW.**
 
 The original submission by Implementation Agent **Junie** on `2026-11-16T08:30:00Z` and amendment at `2026-11-17T07:45:00Z` are retained as history. This pending candidate review is supported by the current [Implementation Report](../../evidence/software-0.1.0/001/after/ai-agent-reports/UNRESOLVED-calliope-model-engineering-report.md) under the [Software Development Praxis](../../../governance/software-development-praxis.md); it requests Solution Architect review and does not claim acceptance.
@@ -94,3 +102,6 @@ The original submission by Implementation Agent **Junie** on `2026-11-16T08:30:0
 - **Context:** The corrected IU model emits one InformationMetadata and an optional root ManagementContext instead of the previous InformationUnitMetadata wrapper. Repository search found no production-module consumer or retained accepted snapshot contract for the old wrapper; current candidate JSON round-trips are tested.
 - **Implemented Scope:** No legacy JSON migration adapter or old serialized snapshot replay was added. The candidate preserves the Continuum's information/operational distinction and exposes the new shape; this limitation is stated in the Implementation Report.
 - **Disposition Requested:** Confirm that no legacy snapshot migration evidence/adapter is required for acceptance, or specify the authoritative compatibility contract and required remediation.
+
+[foundation-reset]: hcrl-software-0.1.0-009.pending.md
+[reset-assignment]: ../../evidence/software-0.1.0/009/before/ai-agent-tasks/unresolved-software-foundation-reset.md#issued-instruction

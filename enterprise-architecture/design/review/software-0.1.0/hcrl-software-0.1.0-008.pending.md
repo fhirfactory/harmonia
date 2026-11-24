@@ -13,6 +13,15 @@
 
 # HCRL software-0.1.0 / 008 — Calliope Topic/TopicMask Implementation
 
+**Current candidate disposition · Superseded by the clean-slate reset.**
+The Solution Architect's [reset assignment][reset-assignment] closes this Naming
+implementation candidate without implementation acceptance. Retain the qualified
+Backlog disposition in DR-3, the accepted offline design recorded in 004/007, and
+all historical findings. The [reset HCRL][foundation-reset] identifies the
+recoverable source and the boundaries of this supersession.
+
+The original review record follows.
+
 **Iteration status · PENDING SOLUTION ARCHITECT REVIEW.** This HCRL records implementation activity under the Solution Architect's [Iteration 008 Task][task]. It is a candidate review request only; it supplies no implementation acceptance, first-software-baseline decision, release allocation, commit, tag, push, deployment, or Architecture change.
 
 - **Target software candidate** · `0.1.0`; no accepted software predecessor or first-release decision is inferred.
@@ -158,3 +167,6 @@ The Task requests independent Codex implementation review followed by Solution A
 [architecture-release]: ../../../../architecture-release.json
 [corrective-task]: ../../evidence/software-0.1.0/008/before/ai-agent-tasks/unresolved-calliope-topic-topicmask-corrective-task.md
 [corrective-report]: ../../evidence/software-0.1.0/008/after/ai-agent-reports/20261124T031123Z-calliope-topic-topicmask-corrective-implementation.md
+
+[foundation-reset]: hcrl-software-0.1.0-009.pending.md
+[reset-assignment]: ../../evidence/software-0.1.0/009/before/ai-agent-tasks/unresolved-software-foundation-reset.md#issued-instruction

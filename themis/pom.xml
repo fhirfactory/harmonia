@@ -24,12 +24,12 @@
     <parent>
         <groupId>net.fhirfactory.harmonia</groupId>
         <artifactId>harmonia-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>themis</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Harmonia :: Themis (Policy &amp; Authorisation Subsystem)</name>
     <description>Themis — Harmonia Policy and Authorisation Service delivering defence-in-depth security governance and deterministic default-deny policy evaluation</description>
@@ -38,5 +38,4 @@
         <module>themis-api</module>
         <module>themis-core</module>
     </modules>
-
 </project>

@@ -17,6 +17,16 @@
 
 # HCRL software-0.1.0 / 004 — Calliope Candidate Carry-Forward and Topic/TopicMask Design Review
 
+**Current implementation disposition · Superseded by the clean-slate reset.**
+The [reset assignment][reset-assignment] closes the source candidate represented
+by DR-1–DR-6 without implementation acceptance. DR-7–DR-9 retain their historical
+findings and unresolved architectural questions. The qualified offline design
+acceptance in DR-10, provenance matters in DR-11 and design review in DR-12 retain
+their recorded standing and qualifications. The [reset HCRL][foundation-reset]
+records the bounded supersession.
+
+The original review record follows.
+
 **Iteration status · PENDING SOLUTION ARCHITECT REVIEW.**
 
 [HCRL software-0.1.0/001][predecessor] is the sole preceding software HCRL found in the review/register tree and local Git history. Its record remains pending as issued, including the original Junie submission on `2026-11-16T08:30:00Z` and amendment at `2026-11-17T07:45:00Z`. Iterations 002 and 003 supplied F-01 design evidence with no corresponding software HCRLs. Iteration 004 is the expressly assigned review-preparation target. The preserved review state and intervening qualifications are in the [carry-forward reconciliation][carry].
@@ -445,3 +455,6 @@ Comment: [awaiting Solution Architect / ARB comment]
 [g03-routing-final-qualifications]: ../../offline-design/DRP-Petasos-Routing-and-Reconciliation.Final.001.md#7-architecture-correspondence-and-open-decisions
 [g03-routing-final-conformance]: ../../offline-design/DRP-Petasos-Routing-and-Reconciliation.Final.001.md#8-conformance-expectations
 [g03-routing-final-report]: ../../evidence/software-0.1.0/005/after/ai-agent-reports/20261123T040158Z-g03-petasos-routing-and-reconciliation-final-001-report.md
+
+[foundation-reset]: hcrl-software-0.1.0-009.pending.md
+[reset-assignment]: ../../evidence/software-0.1.0/009/before/ai-agent-tasks/unresolved-software-foundation-reset.md#issued-instruction

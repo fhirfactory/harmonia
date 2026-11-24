@@ -23,6 +23,15 @@
 
 # HCRL software-0.1.0 / 006 — Mneme–Mnemosyne Governed Persistence V001
 
+**Current candidate disposition · Superseded by the clean-slate reset.**
+The Solution Architect's [reset assignment][reset-assignment] closes the V001
+implementation candidate without implementation acceptance. Preserve the original
+DRs, implementation evidence and source correspondence below. Inherited matters
+retain their recorded standing at their originating review. The [reset HCRL][foundation-reset]
+records the checkpoint from which the removed source can be recovered.
+
+The original review record follows.
+
 **Iteration status · PENDING SOLUTION ARCHITECT REVIEW.**
 
 The Solution Architect's task-specific [iteration disposition](../../evidence/software-0.1.0/006/before/ai-agent-tasks/UNRESOLVED-mneme-mnemosyne-governed-persistence-v001-task.md) expressly establishes iteration `006` for the V001 implementation and authorizes creation of this pending HCRL. HCRL `004` is preserved unchanged; this iteration does not accept the implementation, allocate a software release, or confer commit/tag/push authority.
@@ -162,3 +171,5 @@ The [Implementation Report](../../evidence/software-0.1.0/006/after/ai-agent-rep
 **Architecture status** · No Architecture release increment, Continuum change, offline-design acceptance, publication or architecture decision is requested by this software-only implementation. Existing accepted authority and qualifications remain in force.
 
 **Software status** · Pending implementation, exact-candidate verification and Solution Architect review. No accepted software predecessor, baseline or `software/v0.1.0` tag is asserted.
+[foundation-reset]: hcrl-software-0.1.0-009.pending.md
+[reset-assignment]: ../../evidence/software-0.1.0/009/before/ai-agent-tasks/unresolved-software-foundation-reset.md#issued-instruction
