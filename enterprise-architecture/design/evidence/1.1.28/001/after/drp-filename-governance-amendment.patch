@@ -1,0 +1,43 @@
+diff --git a/enterprise-architecture/governance/architecture-governance.md b/enterprise-architecture/governance/architecture-governance.md
+--- a/enterprise-architecture/governance/architecture-governance.md
++++ b/enterprise-architecture/governance/architecture-governance.md
+@@ -341,6 +341,39 @@
+ references in place; it does not move the existing corpus or certify it as a
+ completed continuum.
+ 
++### Offline design review package filenames
++
++An offline Design Review Package (DRP) uses one package stem across its
++drafts and accepted Final documents. A package is design material for the
++Architecture Review lifecycle. The HCRL records standing and disposition.
++Filename versions belong to the DRP and are independent of Architecture,
++software and HCRL versions.
++
++- `DRP-<package>.Draft.NNN.III.md` identifies a draft. `NNN` is the immediately
++  preceding accepted Final version for that package, or `000` before its first
++  accepted Final. `III` is the positive draft iteration, beginning at `001`
++  for each baseline.
++- `DRP-<package>.Final.NNN.md` identifies a resulting accepted DRP version.
++  Use three decimal digits, with the first Final numbered `001` and each
++  subsequent Final numbered one above the preceding Final. Use the
++  case-sensitive spellings `Draft` and `Final`.
++- On attributable Solution Architect acceptance of the exact design, preserve
++  the reviewed draft, its disposition, qualifications and provenance. Use the
++  resulting Final number alone in the Final filename. For example,
++  `Draft.000.002` can lead to `Final.001`, after which drafting begins at
++  `Draft.001.001`. Acceptance of `Draft.001.002` can lead to `Final.002`;
++  its first successor draft is `Draft.002.001`.
++- Reconcile historical filenames through a bounded reviewed mapping.
++  Record old and corrected locators, accepted standing and exact source
++  correspondence. Preserve historical evidence and its references. Where
++  historical references need the old path, retain an explicitly documented
++  compatibility locator that preserves the required bytes or sections. Use
++  the corrected locator for new primary references after authorised
++  application. Historical reconciliation creates no new acceptance event.
++- Check names on submitted DRP candidates and report historical exceptions
++  for separate disposition. Validate baseline, sequence and Final standing
++  against attributable review records as part of Architecture Review.
++
+ ## Governance and architectural knowledge
+ 
+ ### RAD-1.1.5 authorised application

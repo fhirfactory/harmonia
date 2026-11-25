@@ -1,0 +1,1439 @@
+diff --git a/enterprise-architecture/continuum/application/application-component/307b3440a507403f8bc214d290bffb6a.md b/enterprise-architecture/continuum/application/application-component/307b3440a507403f8bc214d290bffb6a.md
+--- a/enterprise-architecture/continuum/application/application-component/307b3440a507403f8bc214d290bffb6a.md
++++ b/enterprise-architecture/continuum/application/application-component/307b3440a507403f8bc214d290bffb6a.md
+@@ -64,6 +64,14 @@
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.23/001/before/accepted-input/DRP-Mnemosyne-Authoritative-Persistence-Service-Model.Final.001.md",
+       "sha256": "16317e70ff491ffe501eaae3e2cd64a293f4c42871302951b28c1ceac4e36d2a",
+       "authority": "enterprise-architecture/design/evidence/1.1.23/001/before/ai-agent-tasks/unresolved-mnemosyne-authoritative-persistence-incorporation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§6–8 — Calliope Naming library surface, diagnostics and coherence of affected consumers",
++      "role": "Accepted Final.003 design source for the Naming correspondence",
++      "retainedAt": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "sha256": "3902908dbffec9b35c15f3d31bf05b9b3a3e885dabecc71780c51fe4d9886043",
++      "authority": "enterprise-architecture/design/evidence/1.1.28/001/before/ai-agent-tasks/20261124T222614Z-topic-drp-final-003-acceptance.md"
+     }
+   ],
+   "sourceBindings": [
+@@ -82,6 +90,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.001.md",
+       "selector": "§§10–12,21,23.4 — shared Calliope IU/Topic/Mask model"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§6–8 — Calliope Naming library surface, diagnostics and coherence of affected consumers"
+     }
+   ],
+   "exchange": {
+@@ -263,6 +275,17 @@
+ not establish current membership. Models' pure-library dependency semantics remain.
+ Definition ownership is not runtime operational ownership. [U13 lifecycle and authority](307b3440a507403f8bc214d290bffb6a.md).
+ 
++### R1/R2 Naming correspondence
++
++Calliope-Models supplies the common Naming model under
++[Final.003](../../../design/offline-design/DRP-Topic-and-TopicMask.Final.003.md).
++The supported Java value and builder surface, strict XML conversion and
++typed safe validation are library contracts. Parsers, evaluation and
++invocation-local diagnostics remain internal. The model has no regex engine
++or logging infrastructure dependency. Affected consumers use the accepted
++contract. Policy, mandatory audit, persistence and runtime selection retain
++their established owners.
++
+ ## Source-qualified contribution
+ 
+ Source: `docs/markdown/05-information-systems-architecture/calliope-models-and-datasets.md` — ## Calliope-Models. Standing: Candidate — adjudicated Domain05 Step-B baseline; final Solution Architecture unapproved.
+diff --git a/enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md b/enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md
+--- a/enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md
++++ b/enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md
+@@ -8,10 +8,10 @@
+   "friendlyName": "Mneme.MnemosyneAdapterStore",
+   "canonicalName": null,
+   "standing": {
+-    "semantic": "Accepted Mnemosyne Final.001 semantics; authorised incorporation; exact resulting candidate awaiting Solution Architect confirmation",
++    "semantic": "Accepted Store scope from Architecture 1.1.23/001 and 1.1.24/001, with Final.003 Naming correspondence",
+     "currentness": "current",
+-    "incorporation124": "Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation",
+-    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
++    "incorporation124": "Architecture 1.1.24/001 exact Store contribution confirmed with its recorded qualifications",
++    "reconciliation": "Architecture 1.1.25/001 incorporated allocation confirmed; Final.003 Naming correspondence"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.23/001/before/ai-agent-tasks/unresolved-mnemosyne-authoritative-persistence-incorporation.md",
+@@ -57,6 +57,14 @@
+       "role": "OM-06–OM-10 explicitly approved by operative Solution Architect instruction; retained internal pending-review wording records source-stage history, not actual-result acceptance",
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
+       "sha256": "0d9e1fc3ef4102d2c093dcb75eb0cfc2c53d7d62df18d2cfb83d2fc4888c6ac3"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§4, 7 — shared TopicMask semantics at the Store discovery boundary",
++      "role": "Accepted Final.003 design source for the Naming correspondence",
++      "retainedAt": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "sha256": "3902908dbffec9b35c15f3d31bf05b9b3a3e885dabecc71780c51fe4d9886043",
++      "authority": "enterprise-architecture/design/evidence/1.1.28/001/before/ai-agent-tasks/20261124T222614Z-topic-drp-final-003-acceptance.md"
+     }
+   ],
+   "sourceBindings": [
+@@ -75,6 +83,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
+       "selector": "§§3.2–3.5,4; OM-06–OM-10 — bounded IU operational remapping and preservation safeguards — Mneme-side Store compatibility"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§4, 7 — shared TopicMask semantics at the Store discovery boundary"
+     }
+   ],
+   "relationships": [
+@@ -242,7 +254,7 @@
+ 
+ ## Architectural content
+ 
+-### Approved 1.1.24 incorporation — resulting candidate pending
++### Established five-contract interaction and selection
+ 
+ RequiredIU-Criterion and SupportedIU-Criterion are collections of shared TopicMasks describing required and supported IU types, independent of Themis criteria. **Every required IU type must be covered by the union of eligible available instances' supported criteria**; mere overlap is insufficient. Verify configured coverage at startup and during operation; missing expected instances/capabilities alarm. Enumerating current Topics alone does not prove an open-ended mask's complete coverage. Proof/validation algorithms remain solution detail; uncertain coverage cannot be declared complete (MI-05).
+ 
+@@ -253,7 +265,7 @@
+ Expose exactly SummaryReader, SummaryWriter(CREATE, RETIRE), SummarySearch, full Reader and full Writer through the established participants. Origin-instance SummarySearch continuation cannot migrate. Reconcile uncertain potentially higher-version writes through authoritative GovernedReader(version=*) plus sufficient correspondence/durability evidence; preserve Indeterminate when insufficient. Mneme retains per-IU concurrency and consumer disposition; no new TopicMask language, transaction identifier, registry or selection protocol is introduced.
+ 
+ 
+-Mneme's persistence-facing adapter discovers IU-type capabilities registered by Mnemosyne-side Mneme Adapters / Façades, using the existing shared TopicMask primitive: element-wise regex matching against dot-separated canonical-name elements. It establishes eligible instances and selects among them for the request.
++Mneme's persistence-facing adapter discovers IU-type capabilities registered by Mnemosyne-side Mneme Adapters / Façades. It uses the shared [TopicMask](../data-object/bb489157a6bf48be926c5a601bb0a6c3.md) contract against structured Topics under Final.003. It establishes eligible instances and selects among them for the request. Refactor affected discovery consumers to the current selector contract and verify coverage and instance selection at the existing interface boundary.
+ 
+ The distributed architecture must support (1) high availability and changeover when an instance becomes unavailable, (2) concurrent processing of distinct IU instances of the same registered IU type across multiple Mnemosyne instances, and (3) load balancing across eligible instances. Capability support and current availability are different facts. Identical, overlapping and disjoint registrations are supported; no one-to-one Store/instance mapping is imposed.
+ 
+@@ -263,9 +275,11 @@
+ 
+ ### Incorporation standing
+ 
+-Accepted parent DRP semantics, incorporated under the operative Task for 1.1.23/001. Actual resulting candidate confirmation remains pending. Earlier component/source qualifications remain independently in force.
+-
+-### Final.002 operational allocation and compatibility
++[Architecture 1.1.23/001](../../../design/register/1.1.23/hcrl-1.1.23-001.complete.md#dr-1)
++and [1.1.24/001](../../../design/register/1.1.24/hcrl-1.1.24-001.complete.md#dr-1)
++confirmed the Store responsibilities and retain their recorded qualifications.
++
++### Final.002 operational allocation and established contracts
+ 
+ Mneme operational revision, Active Generation/cache-working facts and Mneme–Mnemosyne
+ handshake observations are associated **peer OperationalMetadata**, scoped to the
+diff --git a/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md b/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md
+--- a/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md
++++ b/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md
+@@ -8,9 +8,9 @@
+   "friendlyName": "model.core.information.Topic",
+   "canonicalName": null,
+   "standing": {
+-    "semantic": "Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation",
++    "semantic": "Accepted Final.003 design semantics",
+     "currentness": "current",
+-    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
++    "reconciliation": "Predecessor Architecture 1.1.22 and 1.1.25 incorporated contracts and qualifications remain in history"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md",
+@@ -40,6 +40,14 @@
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.md",
+       "sha256": "1690ca87200db65d2254acfb5af68b7b960fb044934682b6ed89eb77ce9c5e40",
+       "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§1–3, 5, 7–8 — Topic identity, construction, opaque versions, names and supported contracts",
++      "role": "Accepted Final.003 design source for the Naming correspondence",
++      "retainedAt": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "sha256": "3902908dbffec9b35c15f3d31bf05b9b3a3e885dabecc71780c51fe4d9886043",
++      "authority": "enterprise-architecture/design/evidence/1.1.28/001/before/ai-agent-tasks/20261124T222614Z-topic-drp-final-003-acceptance.md"
+     }
+   ],
+   "sourceBindings": [
+@@ -50,6 +58,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.000.md",
+       "selector": "§§1–2,4–6 — immutable Topic model; explicit sequencing and distinct name roles"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§1–3, 5, 7–8 — Topic identity, construction, opaque versions, names and supported contracts"
+     }
+   ],
+   "relationships": [],
+@@ -67,69 +79,101 @@
+ 
+ ## Architectural content
+ 
+-The common logical Topic model describes Harmonia's governed, hierarchically named
+-identification/classification construct. A Topic has its own canonical identity
+-and a canonical name made of ordered dot-separated elements under its governed
+-naming/containment hierarchy. A TopicID identifies that Topic. It may name a gateway,
+-endpoint, location, owner, content structure, compartment, action or other concept;
+-it is neither its referent's implementation/configuration nor a broker destination.
++A Topic identifies or classifies a named concept by an immutable, ordered,
++root-to-leaf path of one or more typed TopicEntries. It can name a gateway,
++endpoint, location, owner, content structure, compartment, action or other
++concept. The Topic describes the named concept. Implementation, configuration
++and broker destination remain governed by their respective contracts.
+ 
+-This DataObject represents the **common logical model of Topics**, not a new named
+-Topic instance or an implementation Class. Existing specialised Topic elements,
+-their canonical IDs, classifications, names, containment and established scope
+-remain unchanged. No wildcard IU Topic instance or runtime UUID is allocated here.
++### Runtime identity and entry structure
+ 
+-An IU UUID identifies the IU; its own Topic provides the hierarchical canonical
+-name `harmonia.mneme.iu.<hex-string-of-compressed-uuid>`. Compression is deterministic
+-and reversible; exact encoding is deferred to the appropriate logical/implementation
+-contract. The namespace confers no IU ownership on Mneme. This IU designation is
+-distinct from coordinate, Content Structure and SecurityContext Topic references,
+-native Content/represented-entity identity, provider IDs, transport and correlation
+-identifiers. The earlier TopicID id example does not replace UUID-plus-Topic identity.
+-Referenced TopicIDs do not turn every metadata attribute into an independently
+-governed IU.
++The complete ordered qualifier/value path supplies runtime identity, equality
++and hashing. Entry versions are independent of identity. Distinct qualified
++paths can share the same unqualified value path. Changing a qualifier, value
++or position so that the path differs establishes a different runtime identity
++and can affect matching. The applicable naming and consumer contracts govern
++the change. Versions can change between immutable snapshots of the same identity. Runtime
++Topics carry no UUID or architecture `canonicalId`. Existing specialised architectural
++Topic elements retain their governed identifiers, names, classification and
++relationships. Correspondence between an architectural element and a runtime
++Topic requires an explicit mapping.
+ 
+-------- Legacy Content - Superseded ------- Start ------
+-Superseded by: immutable Topic contract below; substantive replacement receives a different UUID.
+-Only the enclosed concern allocation or model wording is superseded;
+-original text is unchanged. Other predecessor obligations remain effective.
+----------------------------------------------------------
++Each completed entry has a qualifier, a nonempty value and an optional
++opaque version string. Qualifiers may repeat at different positions. Qualifiers and present
++versions are nonblank printable ASCII with no boundary whitespace. Values
++permit Unicode letters, numbers, punctuation, symbols and marks, plus internal
++U+0020 space. Reject malformed Unicode and other categories, including controls,
++format, private-use, unassigned and surrogate code points. Preserve allowed
++text with its original case and code points. Enforce the release-defined depth
++and decoded field limits, counting code points before escaping. Apply any
++UTF-8 byte limits independently.
+ 
+-Renaming a Topic can alter mask matching despite stable TopicID and
+-requires governance; name/identity/containment remain distinct semantic roles.
+-------- Legacy Content - Superseded ------- Finish ----
++### Construction and hierarchy
+ 
+-Calliope-Models defines shared semantics; runtime use belongs to consuming Features
+-and components. No registry service, registration mechanism, physical topology,
+-runtime model instance or new implementation dependency is prescribed.
++Sequential and explicitly indexed assembly are equivalent for the same
++completed ordered records. The first successful add fixes the mode. Indexed
++assembly accepts nonnegative positions in any order and requires a contiguous
++zero-based path at build. A valid add to an occupied index replaces that input
++without growing the path. Validate additions before changing any assembly state.
++At assembly only, a null or empty qualifier becomes `N<position>` using the final
++zero-based position. The corresponding explicit qualifier has identical
++identity, matching, ordering and interchange semantics. A null or empty entry
++version means absence. Failed adds and builds preserve builder state and
++previous snapshots. Builders remain reusable. Completed Topics and their
++entries are immutable.
+ 
+-### Approved foundational Topic reconciliation — actual result pending review
++Literal ancestry compares whole qualifier/value entries in order. A strict
++ancestor is a proper prefix, independently of versions. Depth counts entries.
++A root has depth one and no parent. Parent and ancestor projections preserve
++versions for retained entries. Valid ancestor depths range from one through
++the full depth. Reject invalid depths. A null candidate has no ancestry.
++Natural order compares qualifier and then value at each
++position, using case-sensitive locale-independent lexical order and putting
++the shorter path first when it is a proper prefix. Comparison returns zero
++exactly for equal Topics.
+ 
+-A Topic is **immutable**, independently identifiable, typed and hierarchically
+-contained. Its full TopicID is a UUID, distinct from an IU UUID and from this common
+-model DataObject's canonical identity. Identity, canonical entries, qualifiers,
+-containment and names cannot be mutated. A substantive replacement is a different
+-Topic with a different UUID; historic references retain their original meaning.
+-No current Topic instance, canonical ID, name or relationship is renamed here.
++### Representation and interchange
+ 
+-The logical canonicalName is an **explicitly sequenced root-to-leaf mapping** of
+-SequenceNumber to Entry(qualifier, name). Preserve sequence numbers in storage and
+-exchange; list/array/map iteration alone is insufficient. Reject gaps, duplicate
+-positions and ambiguous order rather than repairing them silently. An absent qualifier
+-normalises to N0, N1, … by absolute position; qualifiers are typed discriminators.
+-Precise interchange encoding remains detailed design with deterministic reconstruction.
++The canonical name joins qualified entries `qualifier=value` with unescaped
++periods. The versioned canonical name uses `qualifier:version=value` when a
++version is present and omits the version segment when absent. Both forms
++escape literal periods, equals signs, colons and backslashes in fields with a
++backslash. Canonical parsers require valid explicit qualifiers and values.
++They reject malformed separators and escapes and explicit empty version
++segments. The unversioned parser rejects version-bearing syntax. Parsing
++reproduces the identity projection or all ordered field data, respectively.
+ 
+-Derived name joins unqualified names in sequence; friendlyName is the leaf name;
+-relativeName is its qualified leaf. For Country=Australia / StateTerritory=ACT /
+-City=Canberra these are Australia.ACT.Canberra, Canberra and City=Canberra.
+-Topic.name is globally unique within its applicable registry; registry-scope changes
+-need separate authority. A short displayed UUID prefix is never full identity.
+-Useful safe display helpers confer no replacement identity or prescribed Java API.
++The unqualified name joins raw values with periods. The friendly name is the
++raw leaf value. The display name is the leaf value at depth one and the last
++two raw values joined by a hyphen at greater depths. The relative name is the
++escaped last qualified entry without version. The unqualified, friendly and
++display projections are for their defined non-identity uses and can be
++ambiguous. Logical interchange preserves ordered completed entries and
++optional versions, reconstructs validated immutable values, and preserves that
++order independently of the encoding. Assembly indices supply ordering and
++have no independent identity or mandatory interchange field. Field validation
++and meaning are independent of the selected serializer.
++[NFR-099](../../motivation/principle/6973441f2d62448188af9bfce5ad9d9f.md)
++continues to prefer XML where practical for structured encapsulation.
+ 
+-**No Topic.Version.** IU authoritative revision, Mneme operational revision, Content
+-Structure Version and optional native Content version belong to their own contracts.
+-The common model's id/canonicalName/name/friendlyName/relativeName vocabulary is not
+-a wholesale rename of Continuum metadata canonicalId/displayName or existing Topic
+-Names. Their distinct representation roles are preserved; exact runtime interchange/
+-registry mapping remains bounded detailed design. Earlier version-bearing candidate
+-Topic prose is reconciled as source history, not promoted as a current contract.
++### Governed references and registry scope
++
++Calliope-Models defines the shared model. Apply registry rules with current
++architectural authority at their governed boundaries. Refactor affected
++reference consumers and persisted representations to the accepted design
++under Final.003 §7. Registry service, new instance allocation and exact
++downstream IU mappings retain their separate authority.
++
++The accepted [Naming API](../../../design/offline-design/DRP-Topic-and-TopicMask.Final.003.md#8-supported-java-api)
++provides strict completed-record reconstruction, Topic builder operations
++and read-only entry access. The XML codec preserves ordered fields and
++opaque optional versions. Numeric version interpretation belongs to TopicMask
++evaluation.
++
++The IU UUID identifies the IU. Its own Topic's unqualified name is
++`harmonia.mneme.iu.<hex-string-of-compressed-uuid>`. Compression is deterministic
++and reversible. Qualified IU vocabulary, exact encoding and boundary
++mappings remain separate decisions. Coordinate, Content Structure and
++SecurityContext Topic references retain their own meanings. IU authoritative
++revision, Mneme operational revision and active generation, Content Structure
++Version and content-native versions remain independent of TopicEntry version.
+diff --git a/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md b/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md
+--- a/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md
++++ b/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md
+@@ -8,9 +8,9 @@
+   "friendlyName": "model.core.information.TopicMask",
+   "canonicalName": null,
+   "standing": {
+-    "semantic": "Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation",
++    "semantic": "Accepted Final.003 design semantics",
+     "currentness": "current",
+-    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
++    "reconciliation": "Predecessor Architecture 1.1.22 and 1.1.25 incorporated contracts and qualifications remain in history"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md",
+@@ -40,6 +40,14 @@
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.md",
+       "sha256": "1690ca87200db65d2254acfb5af68b7b960fb044934682b6ed89eb77ce9c5e40",
+       "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§4–8 — TopicMask kinds, bounded matching, strict interchange, supported surface and consumer boundary",
++      "role": "Accepted Final.003 design source for the Naming correspondence",
++      "retainedAt": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "sha256": "3902908dbffec9b35c15f3d31bf05b9b3a3e885dabecc71780c51fe4d9886043",
++      "authority": "enterprise-architecture/design/evidence/1.1.28/001/before/ai-agent-tasks/20261124T222614Z-topic-drp-final-003-acceptance.md"
+     }
+   ],
+   "sourceBindings": [
+@@ -50,6 +58,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.000.md",
+       "selector": "§§3–6 — immutable selector identity; name/canonical basis; Exact/Inclusive and neutral composition"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§4–8 — TopicMask kinds, bounded matching, strict interchange, supported surface and consumer boundary"
+     }
+   ],
+   "relationships": [
+@@ -60,7 +72,7 @@
+       "target": "id-7b1ba31cbae65d08ab37f788cbbd4812",
+       "name": [
+         {
+-          "text": "Discriminates corresponding individual canonical-name elements using regex patterns",
++          "text": "Matches ordered Topic entry fields or applies explicit universality",
+           "attributes": {
+             "{http://www.w3.org/XML/1998/namespace}lang": "en"
+           }
+@@ -68,14 +80,14 @@
+       ],
+       "documentation": [
+         {
+-          "text": "Accepted IU DRP IU-05; §12; incorporation is authorised by enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md. Discriminates corresponding individual canonical-name elements using regex patterns",
++          "text": "Accepted IU DRP IU-05; §12; incorporation is authorised by enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md. Final.003 defines neutral matching over structured Topics. An ordinary mask applies ordered qualifier and value patterns and optional version constraints under its depth rule. Explicit universality matches every non-null Topic.",
+           "attributes": {
+             "{http://www.w3.org/XML/1998/namespace}lang": "en"
+           }
+         }
+       ],
+       "standing": {
+-        "semantic": "Accepted Information Unit Framework semantics; resulting increment confirmation pending",
++        "semantic": "Accepted IU Framework association semantics with the Final.003 Naming correspondence",
+         "currentness": "current"
+       },
+       "provenance": {
+@@ -104,81 +116,100 @@
+ 
+ ## Architectural content
+ 
+-------- Legacy Content - Superseded ------- Start ------
+-Superseded by: approved naming-basis and immutable matching contract below; element-wise discrimination retained.
+-Only the enclosed concern allocation or model wording is superseded;
+-original text is unchanged. Other predecessor obligations remain effective.
+----------------------------------------------------------
+-
+-TopicMask is Harmonia's shared logical discrimination structure, comprising
+-regular-expression patterns applied **separately to corresponding individual
+-canonical-name elements** of a Topic. Applicable element expressions must match
+-under governed syntax/anchoring rules. It is neither one whole-name regex nor a
+-precomputed enumeration/set of TopicIDs. An element wildcard cannot silently span
+-adjacent dot-separated name elements. Matching can include subsequently introduced
+-Topics whose canonical-name elements satisfy the pattern without editing a list.
+-------- Legacy Content - Superseded ------- Finish ----
+-
+-For example, `<BusinessDomain>.<StandardsBodyName>.InformationCompartment.<CompartmentName>`
+-illustrates a Topic hierarchy. `*.*.InformationCompartment.PersonalInformation*`
+-is illustrative shorthand only: an unconstrained element might use `.*` in actual
+-element-wise regex. Precise anchoring, escaping, missing/excess elements, variable
+-depth and serialised syntax remain with the applicable common match contract.
+-The example is not an implemented parser or prescribed regex dialect.
+-
+-Publication/subscription, routing, discovery, security and other Topic-discriminating
+-Features reuse the same semantics. A match is a discrimination result; consuming
+-Features determine its consequence. Matching alone grants no access, publishes
+-nothing, schedules no delivery and selects no persistence provider. IU SecurityContext
+-is one consumer and does not own this common model.
+-
+-------- Legacy Content - Superseded ------- Start ------
+-Superseded by: immutable Topic contract; replacements use a new Topic UUID.
+-Only the enclosed concern allocation or model wording is superseded;
+-original text is unchanged. Other predecessor obligations remain effective.
+----------------------------------------------------------
+-
+-Canonical Topic renaming may
+-change matching consequences without changing TopicID and requires governance.
+-------- Legacy Content - Superseded ------- Finish ----
+-
+-This is a logical DataObject, not an inferred Class, SecurityMask subtype,
+-Feature-specific wrapper, new named Topic, executable Function or universal IU
+-get()/test() catalogue. Existing accepted action/compartment criteria retain scope;
+-the IU model creates no parallel taxonomy or general-purpose policy interpreter.
+-
+-### Approved immutable TopicMask contract — actual result pending review
+-
+-A TopicMask has its own stable UUID and an immutable definition. Its UUID does not
+-influence matching. Changing type, containment behaviour or patterns creates a new
+-mask with a new UUID; old references retain meaning. It has **exactly one** basis:
+-
+-| type | Explicitly sequenced pattern entries and matching subject |
+-| --- | --- |
+-| TopicNameBased | SequenceNumber → NameRegex; corresponding individual unqualified Topic names. |
+-| TopicCanonicalNameBased | SequenceNumber → EntryPattern(qualifierRegex, nameRegex); corresponding qualifier and name independently. |
+-
+-One mask does not combine these two bases with AND/OR. Every regex applies to one
+-element; it cannot span adjacent path elements. There is no Topic/versionRegex axis.
+-
+-| maskType | Containment meaning |
+-| --- | --- |
+-| Exact | Every specified level matches and candidate depth is exactly the mask depth. |
+-| Inclusive | Every specified level matches; further descendant levels are included. |
+-
+-Thus a name-based inclusive Australia.ACT mask includes Australia.ACT.Canberra;
+-its exact counterpart includes only the two-level Topic. Typed qualifiers remain
+-first-class independently matchable discriminators in canonical-name mode.
+-An unrestricted mask is conceptually inclusive with unrestricted regex (.*);
+-standalone * is human shorthand, not valid Java regex. The expected default is
+-unrestricted, without accidental null-as-wildcard semantics. Exact root/unrestricted
+-wire encoding, cross-language regex dialect, escaping, anchoring and invalid-regex
+-handling remain bounded contracts requiring repeatable evaluation evidence.
+-
+-InformationUnitMask, OperationalMetadataMask and PetasosParcelMask may contain or
+-reference TopicMasks for governed Topic-valued properties. SubscriptionStatement,
+-PublicationStatement and FilterStatement compose higher masks; they do not inherit
+-from TopicMask. Matching is neutral and confers no disclosure, publication, execution,
+-persistence or routing authority. Themis policy/actions/Passport remain distinct;
+-Passport is not an InformationUnitMask subclass. No higher-mask field catalogue,
+-absence semantics or Petasos framework design is supplied by this common primitive.
++TopicMask is the immutable neutral selector for a [Topic](9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md).
++Feature owners govern selection use, disclosure, routing, publication,
++execution and persistence. Themis separately evaluates authorisation.
++A TopicMask has no runtime UUID or natural ordering.
++[Accepted design §§4–8](../../../design/offline-design/DRP-Topic-and-TopicMask.Final.003.md#4-topicmask-kinds-and-matching).
++
++### Kinds, structural equality and construction
++
++An ordinary mask contains at least one ordered criterion and an
++`includeContainedElements` flag, false by default. Each criterion holds
++independent qualifier and value patterns and an optional raw version
++constraint. Ordinary equality and hashing use the original texts in order,
++constraint presence and the containment flag.
++
++The explicit universal kind matches every non-null Topic. Universal masks
++compare equal and carry neither criteria, containment nor an ordinary
++canonical expression. An ordinary mask remains ordinary when its patterns
++cover every valid field. Reject empty, invalid and ambiguous ordinary input
++without inferring universality. Ordinary-only accessors reject a universal
++mask.
++
++Validate immutable entries before adding them. Failed additions and builds
++preserve builder state and prior snapshots. Builders are reusable and
++successful builds publish independent immutable snapshots. Qualifier and
++value patterns must be supplied. An empty pattern cannot match a valid
++nonempty field. Literal helpers validate completed field text before
++escaping it. Mask construction generates no qualifier default.
++
++### Positional evaluation and version constraints
++
++Check depth first. Exact depth requires equal entry counts and inclusive
++containment allows additional trailing entries. At each position, check
++qualifier, value and any version constraint in that order. Stop on the first
++mismatch. A null Topic or unexpected evaluation failure returns false.
++
++Qualifier and value evaluation is case-sensitive on the whole decoded field.
++The six forms are exact, prefix, suffix, contains, non-overlapping prefix
++and suffix, and any valid field. Only an unescaped asterisk is a wildcard.
++Two wildcard operators are valid only around a nonempty contains literal.
++A backslash escapes an asterisk or another backslash in a raw pattern and
++is otherwise literal. Preserve original text and code points. Bounded string
++operations supply the matcher. The accepted contract excludes regex engines.
++
++A missing version constraint is unrestricted and a present-empty one never
++matches. Any explicit constraint fails on an absent candidate version.
++Unmarked text compares literally and case-sensitively. A leading numeric
++operator selects numeric matching and a leading exact-text escape can quote
++a reserved operator or backslash. Literal commas remain exact text.
++Numeric comparisons use nonnegative ASCII dot-separated integer components,
++ignore leading zeroes and compare missing trailing components as zero.
++Compare digit spans without numeric conversion. Nonnumeric candidates fail
++numeric constraints. Runtime Topic identity excludes the opaque version.
++
++Single numeric constraints use equality or inclusive or exclusive comparison.
++Ranges have one lower then one upper comparison, separated by a comma. They
++require valid endpoints in increasing order, or equal endpoints with both
++bounds inclusive. Construction checks endpoint syntax, direction and ordering.
++Matching tests the actual version against both bounds. Reject malformed
++operator-led input before mutation and preserve the raw spelling, including
++any escape, for structural identity and reconstruction.
++
++### Canonical expression and logical interchange
++
++Ordinary masks use `qualifierPattern[:versionConstraint]=valuePattern` in
++ordered dot-separated entries, with a separate containment flag. Escape
++literal period, equals, colon and backslash in the outer layer. Decode that
++layer before interpreting either raw matching grammar. Preserve absence by
++omitting the colon segment and present-empty by emitting a colon with an
++empty field. Strict reconstruction preserves original text and rejects
++malformed delimiters, escapes or constraints.
++
++Logical interchange preserves kind, ordered criteria, containment and version
++presence. Universal records omit criteria and containment. The XML codec uses
++strict UTF-8 and Base64 for the original `qualifierPattern`, `valuePattern`
++and optional `versionConstraint` texts. An absent constraint element and an
++empty decoded element remain distinct. XML decodes raw text directly before
++field validation. Reject unknown structure, encoding conflicts, non-XML
++structural whitespace, DTDs and external resolution. Reconstruct validated
++completed records deterministically.
++
++### Interfaces, limits and governed reuse
++
++The supported Naming surface and strict XML operations are specified in
++[Final.003 §8](../../../design/offline-design/DRP-Topic-and-TopicMask.Final.003.md#8-supported-java-api).
++Parsers, evaluators and optional invocation-local diagnostics are internal.
++Use bounded, safe metadata. Disabled evaluation diagnostics construct and
++dispatch no record. Handler failure preserves the established matching result.
++Application logging and mandatory security audit retain their distinct owners.
++
++Apply the depth, decoded field, pattern, numeric operand, canonical and XML
++bounds of [Final.003 §6](../../../design/offline-design/DRP-Topic-and-TopicMask.Final.003.md#6-resource-limits-concurrency-and-diagnostics).
++Preserve strict validation and fail-closed behaviour. Reconcile affected
++consumers and interchange to this contract under Final.003 §7. A legacy
++engine, selector dialect, parser or dual-format codec is outside this design.
++InformationUnitMask, OperationalMetadataMask, PetasosParcelMask, discovery,
++subscription and other consumers retain their feature-owned criteria and
++governed responsibilities.
+diff --git a/enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md b/enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md
+--- a/enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md
++++ b/enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md
+@@ -10,7 +10,7 @@
+   "standing": {
+     "semantic": "Accepted bounded architecture — HCRL 1.1.15-001 DR-1",
+     "currentness": "current",
+-    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
++    "reconciliation": "Architecture 1.1.25/001 incorporated allocation confirmed; Final.003 Naming correspondence"
+   },
+   "identity": {
+     "allocation": "UUIDv4 allocated once under explicit HCRL 1.1.15-001 application",
+@@ -47,6 +47,14 @@
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md",
+       "sha256": "3735ec2968ffced91119b00ca623f66edce1b9d0364b1d3870401c3dc7ac5097",
+       "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§1, 7 — logical InformationUnit designation and relationship to its Topic",
++      "role": "Accepted Final.003 design source for the Naming correspondence",
++      "retainedAt": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "sha256": "3902908dbffec9b35c15f3d31bf05b9b3a3e885dabecc71780c51fe4d9886043",
++      "authority": "enterprise-architecture/design/evidence/1.1.28/001/before/ai-agent-tasks/20261124T222614Z-topic-drp-final-003-acceptance.md"
+     }
+   ],
+   "sourceBindings": [
+@@ -65,6 +73,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+       "selector": "§§0–4,7,10; Appendices A–B — existing logical Class and projection compatibility"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§1, 7 — logical InformationUnit designation and relationship to its Topic"
+     }
+   ],
+   "exchange": {
+@@ -178,7 +190,7 @@
+       "target": "id-7b1ba31cbae65d08ab37f788cbbd4812",
+       "name": [
+         {
+-          "text": "IU UUID identifies the unit; its own Topic provides its canonical name",
++          "text": "Distinguishes the IU UUID from the Topic's unqualified IU designation",
+           "attributes": {
+             "{http://www.w3.org/XML/1998/namespace}lang": "en"
+           }
+@@ -186,14 +198,14 @@
+       ],
+       "documentation": [
+         {
+-          "text": "Accepted IU DRP IU-06; §§3–4; incorporation is authorised by enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md. IU UUID identifies the unit; its own Topic provides its canonical name",
++          "text": "Accepted IU DRP IU-06; §§3–4; incorporation is authorised by enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md. The IU UUID identifies the unit. Final.003 uses the unqualified name of its own Topic as the established IU designation. Qualified vocabulary and governed mappings remain open.",
+           "attributes": {
+             "{http://www.w3.org/XML/1998/namespace}lang": "en"
+           }
+         }
+       ],
+       "standing": {
+-        "semantic": "Accepted Information Unit Framework semantics; resulting increment confirmation pending",
++        "semantic": "Accepted IU Framework association semantics with the Final.003 Naming correspondence",
+         "currentness": "current"
+       },
+       "provenance": {
+@@ -216,21 +228,24 @@
+ 
+ ## Architectural content
+ 
+-### Final.002 conceptual allocation — incorporated result pending review
+-
+-InformationUnit remains definitive. There is one governed UUID, an IU Topic with
+-its own distinct Topic UUID, and one InformationRepresentation. Conceptual notation:
++### Confirmed Information Unit allocation
++
++InformationUnit remains definitive. There is one governed IU UUID, the IU's own
++Topic, and one InformationRepresentation. The Topic supplies the established
++unqualified IU designation `harmonia.mneme.iu.<hex-string-of-compressed-uuid>`.
++Its fully qualified form and applicable reference mappings remain separately
++governed. Conceptual notation:
+ 
+ ```text
+ InformationUnit
+-├── Identity: IU UUID; IU Topic (distinct Topic UUID)
++├── Identity: IU UUID and its own designation Topic
+ ├── authoritative persisted revision: Mnemosyne-established/returned
+ ├── information-related Metadata
+ │   ├── InformationCoordinates: PersistenceGateway; GatewayEndpoint;
+ │   │                         InformationLocation; InformationOwner
+ │   ├── InformationItinerary: distinct conceptual information path/participation
+ │   ├── information origin / provenance association (detailed allocation open)
+-│   ├── IU-required SecurityContext
++│   ├── IU-required SecurityContext: Topics / TopicMasks
+ │   ├── governed information lifecycle / disposition
+ │   └── Relationships [0..*]: creator/updater-supplied
+ └── InformationRepresentation [1..1]
+@@ -263,36 +278,13 @@
+ Package Composition and names are preserved. No additional implementation Class
+ is inferred from the semantic decomposition below.
+ 
+-------- Legacy Content - Superseded ------- Start ------
+-Superseded by: Final.002 conceptual allocation above; existing four-context API projections remain supported.
+-Only the enclosed concern allocation or model wording is superseded;
+-original text is unchanged. Other predecessor obligations remain effective.
+----------------------------------------------------------
+-
+-```text
+-InformationUnit
+-├── Identity: persistent UUID and its own Topic
+-│   └── harmonia.mneme.iu.<hex-string-of-compressed-uuid>
+-├── Metadata
+-│   ├── ManagementContext: operational Version; Active Generation
+-│   ├── InformationCoordinates: PersistenceGateway; GatewayEndpoint;
+-│   │                         InformationLocation; InformationOwner (TopicIDs)
+-│   ├── SecurityContext: IU-required Topics / TopicMasks
+-│   ├── LifecycleContext: Mneme–Mnemosyne operational handshaking
+-│   └── Relationships [0..*]: optional creator/updater-supplied references
+-└── InformationRepresentation [1..1]
+-    ├── ContainerMetadata
+-    ├── ContentMetadata: Content Structure Topic; Content Structure Version
+-    └── Content: native information; native instance version only if supported
+-```
+-------- Legacy Content - Superseded ------- Finish ----
+ 
+ [Information Unit Metadata](../c05b7e37278141488ecc90b9a9ef96eb.md) and [InformationRepresentation](../b9891b88150840ada3daefdec6f26c35.md)
+ define the two logical structures; their native Composition represents IU
+ constituency, not separate governed nested IUs or a physical schema. Their internal
+ concerns are documented in those structures rather than allocated a Class or Topic
+ per property. [Topic](../9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md) and [TopicMask](../bb489157a6bf48be926c5a601bb0a6c3.md) supply
+-the common Topic/Mask semantics; existing named Topic instances retain identity.
++the common Topic/Mask semantics. Existing specialised architectural Topic elements retain their governed identity.
+ 
+ The IU is **atomic as governed information**: one identity, exactly one governed
+ representation and accepted-state consistency. Physical decomposition/references,
+diff --git a/enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md b/enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md
+--- a/enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md
++++ b/enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md
+@@ -11,7 +11,7 @@
+     "semantic": "Established conceptual governed management boundary; no downstream schema or representation mapping.",
+     "currentness": "current",
+     "representationDecision": "Accepted RAD-1.1.0 CR CR-079",
+-    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
++    "reconciliation": "Architecture 1.1.25/001 incorporated allocation confirmed; Final.003 Naming correspondence"
+   },
+   "identity": {
+     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+@@ -193,6 +193,14 @@
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md",
+       "sha256": "3735ec2968ffced91119b00ca623f66edce1b9d0364b1d3870401c3dc7ac5097",
+       "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§1, 7 — conceptual Information Unit identity and Topic designation",
++      "role": "Accepted Final.003 design source for the Naming correspondence",
++      "retainedAt": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "sha256": "3902908dbffec9b35c15f3d31bf05b9b3a3e885dabecc71780c51fe4d9886043",
++      "authority": "enterprise-architecture/design/evidence/1.1.28/001/before/ai-agent-tasks/20261124T222614Z-topic-drp-final-003-acceptance.md"
+     }
+   ],
+   "sourceBindings": [
+@@ -271,6 +279,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+       "selector": "§§1–7,10; Appendix A — same conceptual IU, current concern boundaries"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§1, 7 — conceptual Information Unit identity and Topic designation"
+     }
+   ],
+   "exchange": {
+@@ -388,16 +400,19 @@
+ write, row, Java object, cache instance, file or transport operation.
+ 
+ The conceptual and [logical Calliope Class](../../application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md) describe the same
+-IU, not independently governed entities. IU identity consists of its persistent
+-UUID and its own Topic name `harmonia.mneme.iu.<hex-string-of-compressed-uuid>`.
+-The UUID encoding is deterministic/reversible; its exact algorithm is not chosen.
++IU, not independently governed entities. The IU retains its persistent UUID and
++its own Topic. The UUID identifies the IU and the Topic's unqualified name
++`harmonia.mneme.iu.<hex-string-of-compressed-uuid>` supplies its established
++designation. The UUID encoding is deterministic/reversible; its exact algorithm,
++the qualified Topic vocabulary and applicable boundary mappings remain open.
+ IU identity is distinct from represented-information/entity identity, native Content
+ versions, coordinate/security/content-structure Topics and provider/transport IDs.
+ 
+ The current conceptual allocation preserves **Identity / Metadata /
+ InformationRepresentation** and one governed IU. Its authoritative persisted revision
+-is established/returned by Mnemosyne and belongs to the IU. Its own Topic has a UUID
+-distinct from the IU UUID. Information-related metadata retains the four unchanged
++is established/returned by Mnemosyne and belongs to the IU. The IU's independent
++UUID and its Topic's qualified path serve distinct identity roles. Information-related
++metadata retains the four unchanged
+ InformationCoordinates, IU-required security, governed information disposition and
+ optional creator/updater-supplied relationships. **InformationItinerary** is a distinct
+ conceptual information concern, separate from coordinates, provenance and business
+@@ -419,27 +434,10 @@
+ or Content.Id, ManagedIU wrapper or alternate governed representation is introduced.
+ Unit Structure, Content Structure and Content Format remain distinct.
+ 
+-Input authority is accepted IU Final.002 §§1–7 and Appendix A, supplementing IU-01–IU-13;
+-the actual reconciliation remains subject to HCRL 1.1.25/001 result review.
+-
+-### Predecessor metadata partition
+-
+-------- Legacy Content - Superseded ------- Start ------
+-Superseded by: the current allocation above and Information Unit Metadata, Final.002 reconciliation.
+-Only the enclosed concern allocation or model wording is superseded;
+-original text is unchanged. Other predecessor obligations remain effective.
+----------------------------------------------------------
+-
+-The accepted conceptual form is **Identity / Metadata / InformationRepresentation**.
+-Metadata distinguishes ManagementContext, InformationCoordinates, SecurityContext
+-and LifecycleContext, with optional supplied relationships [0..*]. The singular
+-representation distinguishes ContainerMetadata, ContentMetadata (including Content
+-Structure Topic and Content Structure Version) and Content (native instance version
+-only where supported). [Information Unit Metadata](../../application/data-object/c05b7e37278141488ecc90b9a9ef96eb.md) and
+-[InformationRepresentation](../../application/data-object/b9891b88150840ada3daefdec6f26c35.md) detail the logical allocation without requiring
+-one implementation Class per concern or creating nested independently governed IUs.
+-Unit Structure, Content Structure and Content Format remain distinct.
+-------- Legacy Content - Superseded ------- Finish ----
++[Architecture 1.1.25/001](../../../design/register/1.1.25/hcrl-1.1.25-001.complete.md#dr-2)
++confirmed the IU allocation from accepted IU Final.002 §§1–7 and Appendix A,
++supplementing IU-01–IU-13. Final.003 supplies the Topic designation and runtime
++identity correspondence.
+ 
+ Mneme manages active access and operational Version/individual Active Generation;
+ Mnemosyne establishes authoritative durable state/version. These remain different
+@@ -464,167 +462,12 @@
+ standards semantics, originating authority and existing security/preservation
+ obligations remain intact. The IU implements no audit or lifecycle orchestration.
+ 
+-### Bounded supersession of the prior conceptual partition
+-
+-------- Legacy Content - Superseded ------- Start ------
+-Superseded by: accepted Information Unit DRP §§2–9,13–19 and the current definition
+-above; logical [InformationUnit](../../application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md).
+-Only the old definition, partition and concern allocation enclosed here are
+-superseded. Original content follows unchanged. Established generation/failure
+-guardrails and other source contributions retain their applicable standing.
+----------------------------------------------------------
+-
+-
+-> **An Information Unit is the governed boundary within which Harmonia associates a Governed Representation with its Management Context.**
+-
+-An Information Unit is bounded, governed and a unit of Harmonia-managed
+-information. It is **not necessarily atomic**: boundedness does not imply
+-indivisibility. An Information Unit MAY contain structured, composite or related
+-information according to its defined Information Unit structure.
+-
+-**Information Unit** is the canonical term for this concept. **Information
+-Container** is retired as its proposed name; legitimate technology or application
+-uses of container and the existing containment pattern retain their meaning.
+-No architectural mapping to `PetasosParcel` is established. Any future
+-implementation mapping must be derived downstream.
+-
+-### 6.1 Conceptual Partition
+-
+-```text
+-Information Unit
+-│
+-├── Identity
+-│
+-├── Metadata
+-│
+-├── Content
+-│
+-└── Context
+-```
+-
+-| Conceptual partition | Meaning |
+-| :--- | :--- |
+-| **Identity** | Identifies the Information Unit. |
+-| **Metadata** | Describes how Harmonia recognises and manages the Information Unit. |
+-| **Content** | Contains the represented information and its representation characteristics. |
+-| **Context** | Contains the management context governing the information over time. |
+-
+-These are conceptual partitions, **not a final schema**. They SHALL NOT be
+-interpreted as requiring four implementation objects, database structures,
+-Java classes or serialised elements. The partition does not prescribe a physical
+-separation or a complete allocation of management concerns to implementation
+-representations.
+-
+-All dotted notation below is illustrative conceptual notation only. It SHALL
+-NOT establish final attribute names, datatypes, identifier schemes, cardinalities
+-or implementation representations, and does not enumerate complete structures.
+-
+-### 6.2 Identity
+-
+-> **Identity identifies the Information Unit itself.**
+-
+-Illustrative notation: `InformationUnit.Identity.InstanceId`.
+-
+-Information Unit identity, the identity of the represented information, and the
+-identity of a real-world entity represented by that information are potentially
+-distinct architectural concerns. None SHALL be inferred to be another merely
+-because an implementation or external representation uses a common identifier.
+-The Information Concept's [Identity & Reference characteristics](../../../../docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md#31-identity--reference)
+-remain distinct from this Information Unit identity. The complete Identity
+-structure is not established here.
+-
+-### 6.3 Metadata
+-
+-> **Metadata describes the Information Unit and the characteristics required for Harmonia to recognise and manage that Information Unit.**
+-
+-Illustrative notation: `InformationUnit.Metadata.StructureId`. This MAY
+-conceptually identify the defined Information Unit structure/type to which the
+-Information Unit conforms. It concerns the **Unit structure**, not the semantic
+-structure/model of the information represented within it. The complete Metadata
+-attribute set, naming, cardinality and representation are not established here.
+-
+-### 6.4 Content
+-
+-> **Content contains the information represented by the Information Unit together with the representation characteristics necessary to interpret that content.**
+-
+-Illustrative notation:
+-
+-```text
+-InformationUnit.Content.Data
+-InformationUnit.Content.StructureId
+-InformationUnit.Content.Format
+-```
+-
+-**Content Structure** conceptually identifies the semantic/structural definition
+-to which the represented content conforms. **Content Format** conceptually
+-identifies the concrete representation or encoding of that content.
+-
+-Downstream architecture might, for example, distinguish a semantic structure,
+-profile or model from JSON, XML, a binary representation or a media type. These
+-examples are non-normative: no supported model, format, mapping or mandatory
+-attribute is established by them. Concrete encoding/format SHALL NOT be treated
+-as equivalent to semantic information structure.
+-
+-| Illustrative notation | Distinct architectural concern |
+-| :--- | :--- |
+-| `InformationUnit.Metadata.StructureId` | The structure/type of the Information Unit. |
+-| `InformationUnit.Content.StructureId` | The semantic structure/model of the represented information within Content. |
+-| `InformationUnit.Content.Format` | The concrete representation or encoding of that Content. |
+-
+-Unit Structure, Content Structure and Content Format SHALL remain distinct.
+-Sharing a notation suffix or a downstream representation does not collapse
+-these concerns.
+-
+-### 6.5 Context
+-
+-> **Context contains the management context through which Harmonia governs, understands and safely manages the represented information over time.**
+-
+-The complementary [Metabolē pattern](../../../../docs/markdown/04-information-architecture/patterns/metabole.md) defines bounded
+-progression of one or more Information Units, with applicable Context,
+-provenance/derivation and accumulated outputs. Its conceptual
+-[ActivityContext](c34b4929f71946708d37dbe6c1da920a.md)
+-classifies the broad activity; it neither replaces this Unit Management Context
+-nor equates it with Mneme's loaded-value Context or Themis PEP-Context.
+-
+-The following are currently identified **conceptual management concerns**. They
+-are not a final attribute list or schema, nor a mandatory populated field bundle.
+-
+-| Concern | Conceptual meaning and boundary |
+-| :--- | :--- |
+-| **Provenance** | Where/how information arose or was established. |
+-| **Authority** | Whose assertion, relationship or determination is authoritative within the applicable context. |
+-| **Version** | Identifies a governed progression of an Information Unit's representation. |
+-| **Lifecycle** | The applicable information lifecycle and its governance; no universal lifecycle or new state set is defined. |
+-| **Temporal Context** | The temporal context needed to understand and manage the represented information; no new temporal model is defined. |
+-| **Relationships** | Applicable relationships relevant to management and interpretation; no new relationship taxonomy is defined. |
+-| **Active Generation** | Identifies a particular valid manifestation of an Information Unit established for active management or use. |
+-
+-**Provenance and Authority SHALL NOT be collapsed.** The source supplying
+-information is not necessarily the originating authority for every assertion or
+-relationship represented by it. The existing granular assertion/relationship
+-authority and provenance distinctions remain applicable; this model does not
+-complete the wider authority/credibility vocabulary or evidence/retention model.
+-
+-**Version and Active Generation SHALL NOT be collapsed.** Under
+-[AX-05](../../motivation/principle/0412a2084f0145babc4f022c71fea65f.md), authoritative durable
+-progression and valid active managed-state generation remain distinct concurrency
+-domains. Mnemosyne establishes authoritative durable state/version; Mneme manages
+-active representation and coordination. Failed or degraded convergence SHALL NOT
+-establish or advance a valid active-state generation; untrusted active
+-coordination requires reconciliation with authoritative state. Neither domain
+-may substitute for the other or promote cached/process-local state to durable
+-authority. This preserves the established boundary without completing the
+-managed-state model or prescribing concurrency mechanisms.
+-
+-Management Context does not imply that every management concern is durable
+-resource content. [AX-07](../../motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md) preserves
+-security context as operational context without automatic persistence as
+-information content; [AX-08](../../motivation/principle/21d6864657964ba5b03e3f6b5eb29cd5.md) and
+-[AX-09](../../motivation/principle/9a5cb9e8876844e58e660f909f7df9fc.md) distinguish meaningful
+-durable evidence from transient operational state. No retention or security
+-representation mechanism is inferred here.
+-
+-------- Legacy Content - Superseded ------- Finish ----
++[Metabolē](c34b4929f71946708d37dbe6c1da920a.md) describes bounded progression
++involving IUs. Its ActivityContext classifies the activity while IU
++management, Mneme loaded-value context and Themis PEP-Context keep their
++own roles. Originating assertion and relationship authority remains distinct
++from provenance. Operational security context and transient observations
++remain distinct from durable resource content and evidence under AX-06–AX-09.
+ 
+ ### Retained governed progression and generation semantics
+ 
+@@ -919,414 +762,6 @@
+ 
+ ## Source-qualified contribution
+ 
+-Source: `docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md` — ## 6. Information Unit. Standing: Established Information Unit boundary; unresolved downstream realisation preserved.
+-
+-> **An Information Unit is the governed boundary within which Harmonia associates a Governed Representation with its Management Context.**
+-
+-An Information Unit is bounded, governed and a unit of Harmonia-managed
+-information. It is **not necessarily atomic**: boundedness does not imply
+-indivisibility. An Information Unit MAY contain structured, composite or related
+-information according to its defined Information Unit structure.
+-
+-**Information Unit** is the canonical term for this concept. **Information
+-Container** is retired as its proposed name; legitimate technology or application
+-uses of container and the existing containment pattern retain their meaning.
+-No architectural mapping to `PetasosParcel` is established. Any future
+-implementation mapping must be derived downstream.
+-
+-### 6.1 Conceptual Partition
+-
+-```text
+-Information Unit
+-│
+-├── Identity
+-│
+-├── Metadata
+-│
+-├── Content
+-│
+-└── Context
+-```
+-
+-| Conceptual partition | Meaning |
+-| :--- | :--- |
+-| **Identity** | Identifies the Information Unit. |
+-| **Metadata** | Describes how Harmonia recognises and manages the Information Unit. |
+-| **Content** | Contains the represented information and its representation characteristics. |
+-| **Context** | Contains the management context governing the information over time. |
+-
+-These are conceptual partitions, **not a final schema**. They SHALL NOT be
+-interpreted as requiring four implementation objects, database structures,
+-Java classes or serialised elements. The partition does not prescribe a physical
+-separation or a complete allocation of management concerns to implementation
+-representations.
+-
+-All dotted notation below is illustrative conceptual notation only. It SHALL
+-NOT establish final attribute names, datatypes, identifier schemes, cardinalities
+-or implementation representations, and does not enumerate complete structures.
+-
+-### 6.2 Identity
+-
+-> **Identity identifies the Information Unit itself.**
+-
+-Illustrative notation: `InformationUnit.Identity.InstanceId`.
+-
+-Information Unit identity, the identity of the represented information, and the
+-identity of a real-world entity represented by that information are potentially
+-distinct architectural concerns. None SHALL be inferred to be another merely
+-because an implementation or external representation uses a common identifier.
+-The Information Concept's [Identity & Reference characteristics](../../../../docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md#31-identity--reference)
+-remain distinct from this Information Unit identity. The complete Identity
+-structure is not established here.
+-
+-### 6.3 Metadata
+-
+-> **Metadata describes the Information Unit and the characteristics required for Harmonia to recognise and manage that Information Unit.**
+-
+-Illustrative notation: `InformationUnit.Metadata.StructureId`. This MAY
+-conceptually identify the defined Information Unit structure/type to which the
+-Information Unit conforms. It concerns the **Unit structure**, not the semantic
+-structure/model of the information represented within it. The complete Metadata
+-attribute set, naming, cardinality and representation are not established here.
+-
+-### 6.4 Content
+-
+-> **Content contains the information represented by the Information Unit together with the representation characteristics necessary to interpret that content.**
+-
+-Illustrative notation:
+-
+-```text
+-InformationUnit.Content.Data
+-InformationUnit.Content.StructureId
+-InformationUnit.Content.Format
+-```
+-
+-**Content Structure** conceptually identifies the semantic/structural definition
+-to which the represented content conforms. **Content Format** conceptually
+-identifies the concrete representation or encoding of that content.
+-
+-Downstream architecture might, for example, distinguish a semantic structure,
+-profile or model from JSON, XML, a binary representation or a media type. These
+-examples are non-normative: no supported model, format, mapping or mandatory
+-attribute is established by them. Concrete encoding/format SHALL NOT be treated
+-as equivalent to semantic information structure.
+-
+-| Illustrative notation | Distinct architectural concern |
+-| :--- | :--- |
+-| `InformationUnit.Metadata.StructureId` | The structure/type of the Information Unit. |
+-| `InformationUnit.Content.StructureId` | The semantic structure/model of the represented information within Content. |
+-| `InformationUnit.Content.Format` | The concrete representation or encoding of that Content. |
+-
+-Unit Structure, Content Structure and Content Format SHALL remain distinct.
+-Sharing a notation suffix or a downstream representation does not collapse
+-these concerns.
+-
+-### 6.5 Context
+-
+-> **Context contains the management context through which Harmonia governs, understands and safely manages the represented information over time.**
+-
+-The complementary [Metabolē pattern](../../../../docs/markdown/04-information-architecture/patterns/metabole.md) defines bounded
+-progression of one or more Information Units, with applicable Context,
+-provenance/derivation and accumulated outputs. Its conceptual
+-[ActivityContext](c34b4929f71946708d37dbe6c1da920a.md)
+-classifies the broad activity; it neither replaces this Unit Management Context
+-nor equates it with Mneme's loaded-value Context or Themis PEP-Context.
+-
+-The following are currently identified **conceptual management concerns**. They
+-are not a final attribute list or schema, nor a mandatory populated field bundle.
+-
+-| Concern | Conceptual meaning and boundary |
+-| :--- | :--- |
+-| **Provenance** | Where/how information arose or was established. |
+-| **Authority** | Whose assertion, relationship or determination is authoritative within the applicable context. |
+-| **Version** | Identifies a governed progression of an Information Unit's representation. |
+-| **Lifecycle** | The applicable information lifecycle and its governance; no universal lifecycle or new state set is defined. |
+-| **Temporal Context** | The temporal context needed to understand and manage the represented information; no new temporal model is defined. |
+-| **Relationships** | Applicable relationships relevant to management and interpretation; no new relationship taxonomy is defined. |
+-| **Active Generation** | Identifies a particular valid manifestation of an Information Unit established for active management or use. |
+-
+-**Provenance and Authority SHALL NOT be collapsed.** The source supplying
+-information is not necessarily the originating authority for every assertion or
+-relationship represented by it. The existing granular assertion/relationship
+-authority and provenance distinctions remain applicable; this model does not
+-complete the wider authority/credibility vocabulary or evidence/retention model.
+-
+-**Version and Active Generation SHALL NOT be collapsed.** Under
+-[AX-05](../../motivation/principle/0412a2084f0145babc4f022c71fea65f.md), authoritative durable
+-progression and valid active managed-state generation remain distinct concurrency
+-domains. Mnemosyne establishes authoritative durable state/version; Mneme manages
+-active representation and coordination. Failed or degraded convergence SHALL NOT
+-establish or advance a valid active-state generation; untrusted active
+-coordination requires reconciliation with authoritative state. Neither domain
+-may substitute for the other or promote cached/process-local state to durable
+-authority. This preserves the established boundary without completing the
+-managed-state model or prescribing concurrency mechanisms.
+-
+-Management Context does not imply that every management concern is durable
+-resource content. [AX-07](../../motivation/principle/architectural-axiom/5de2ae2c3b794c2d9f3a14efd51d564f.md) preserves
+-security context as operational context without automatic persistence as
+-information content; [AX-08](../../motivation/principle/21d6864657964ba5b03e3f6b5eb29cd5.md) and
+-[AX-09](../../motivation/principle/9a5cb9e8876844e58e660f909f7df9fc.md) distinguish meaningful
+-durable evidence from transient operational state. No retention or security
+-representation mechanism is inferred here.
+-
+-#### 6.5.1 Version and Active Generation
+-
+-> **Version identifies a governed progression of an Information Unit's representation.**
+-
+-> **Active Generation identifies a particular valid manifestation of an Information Unit established for active management or use.**
+-
+-These definitions are complementary and identify different semantic dimensions:
+-**Version concerns governed information progression. Active Generation concerns
+-active manifestation.**
+-
+-**Multiple Active Generations MAY derive from the same Version. A change of
+-Active Generation does not, by itself, indicate a change of Version.**
+-
+-```text
+-Information Unit
+-      │
+-      ├── Version V7
+-      │      ├── Active Generation G21
+-      │      ├── Active Generation G22
+-      │      └── Active Generation G23
+-      │
+-      └── Version V8
+-             └── Active Generation G24
+-```
+-
+-The labels are illustrative only; they establish no identifier syntax, sequence
+-mechanism or numbering scheme. The model also permits a Version with no current
+-Active Generation. It establishes no maximum number of Generations.
+-
+-Version and Active Generation remain conceptual concerns within Information Unit
+-Context. Their inclusion in Context does not require simple scalar fields and
+-defines no canonical Version or Generation attributes. The architecture
+-establishes semantics, not schema.
+-
+-#### 6.5.2 Observability and Manifestation
+-
+-Independent processes/functions may act upon manifestations of the same
+-Information Unit Version established at different observable points. For
+-example, Process A may act upon G21, Process B upon G22 and Process C upon G23,
+-with all three manifestations derived from V7:
+-
+-```text
+-                Information Unit
+-                   Version V7
+-                       │
+-          ┌────────────┼────────────┐
+-          │            │            │
+-          ▼            ▼            ▼
+-      Process A    Process B    Process C
+-          │            │            │
+-          ▼            ▼            ▼
+-         G21          G22          G23
+-```
+-
+-The arrows illustrate which manifestations the processes act upon; they do not
+-define Generation creation, assignment or ownership. The processes can therefore
+-share governed information progression while acting against different active
+-manifestations. Version alone cannot express that distinction.
+-
+-**Active Generation identifies the manifestation, not the process acting upon
+-it.** Multiple processes/functions MAY legitimately act upon the same Active
+-Generation. The example requires neither a separate Generation for each process
+-nor any process-to-Generation cardinality or affinity.
+-
+-#### 6.5.3 Generation and Temporal Context
+-
+-> **Active Generation is not a timestamp or measure of time.**
+-
+-Temporal Context may help explain when a manifestation was established,
+-applicable or observed, but Temporal Context and Active Generation are distinct
+-Information Architecture concerns. A single Active Generation may remain valid
+-across an interval. Different Active Generations need not be distinguished by
+-wall-clock time. No timestamp, clock, sequence counter or temporal implementation
+-mechanism is established.
+-
+-```text
+-Version change           = governed information progression
+-Active Generation change = different valid active manifestation
+-                         ≠ necessarily information progression
+-```
+-
+-Active Generation SHALL NOT be treated as another form of Version. A difference
+-in active manifestation does not, by itself, establish authoritative information
+-progression.
+-
+-#### 6.5.4 Durable Authority and Unresolved Realisation
+-
+-> **An Active Generation SHALL NOT be treated as an authoritative durable Version merely because Harmonia has manifested or acted upon it.**
+-
+-Active manifestation does not manufacture durable authoritative progression.
+-The [AX-05 boundary](../../motivation/principle/0412a2084f0145babc4f022c71fea65f.md) preserved above
+-continues to govern: authoritative durable Version and valid Active Generation
+-remain distinct, and failed or degraded convergence following authoritative state
+-progression SHALL NOT establish or advance a valid active-state generation.
+-Active use does not establish durable authoritative progression.
+-
+-This distinction does not imply that every Active Generation must be persisted,
+-becomes or produces a Version, is durable, constitutes historical truth or
+-constitutes evidence. Applicable existing evidence and lifecycle obligations
+-retain their scope; those relationships are not established by manifestation
+-alone.
+-
+-These information semantics may later inform Mneme active managed information,
+-cache-instance management, concurrent active manifestations, Mnemosyne
+-authoritative durable representation, convergence, conflict handling and
+-reconstruction of active state. **Domain04 SHALL establish the information
+-semantics before downstream architecture determines their realisation.** This
+-distinction prescribes no cache, persistence, concurrency or coordination
+-mechanism and SHALL NOT be retrofitted to existing implementation behaviour.
+-
+-The remaining managed-state questions are deliberately unresolved here; the
+-[establishment and failure boundary](../../../../docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md#656-establishment-and-semantic-indivisibility)
+-below does not determine their realisation:
+-
+-- how manifestation begins or is realised, a Generation's lifetime or retirement,
+-  and when it ceases to be active;
+-- its ownership, visibility, or process, cache, node or cluster affinity;
+-- how concurrent Generations reconcile, how active state converges, or what
+-  follows uncertain effect;
+-- persistence or retention, association with historical truth or evidence,
+-  and relationships to snapshots, lifecycle state, Praxis progression or
+-  entity state.
+-
+-The distinction does not determine whether retrieval manifests a Generation
+-or how returned Units or result sets are manifested. The separately adjudicated
+-[search semantics](../../../../docs/markdown/04-information-architecture/patterns/search-results.md) establish a managed metadata
+-Search Result Set referencing the Information Unit Versions comprising a
+-managed search result; search alone creates neither copies nor new Versions
+-of those returned Units. External search acquisition belongs to the governed
+-Ergo activity that intentionally performs it. These decisions do not change
+-Version / Active Generation semantics. The separately established
+-[bounded Task / Work model](../../../../docs/markdown/04-information-architecture/information-families/task-work.md) and its
+-retained questions also remain unchanged, as do Assurance and capacity
+-information questions.
+-
+-#### 6.5.5 Version / Active Generation Guardrails
+-
+-These VG-01–VG-08 identifiers are local to this semantic distinction.
+-
+-| Guardrail | Required semantic boundary |
+-| :--- | :--- |
+-| **VG-01 — Different Dimensions** | Version and Active Generation identify different semantic dimensions. |
+-| **VG-02 — Version Progression** | Version identifies governed progression of an Information Unit's representation. |
+-| **VG-03 — Active Manifestation** | Active Generation identifies a particular valid manifestation established for active management or use. |
+-| **VG-04 — Multiple Generations per Version** | Multiple Active Generations MAY derive from the same Version. |
+-| **VG-05 — Generation Change != Version Change** | A change in Active Generation does not by itself establish information progression or a new Version. |
+-| **VG-06 — Manifestation, Not Process** | Active Generation identifies the manifestation, not the process/function using it. |
+-| **VG-07 — Generation != Time** | Active Generation is not a timestamp or measure of time. |
+-| **VG-08 — No Durable Authority by Manifestation** | An Active Generation SHALL NOT become an authoritative durable Version merely because Harmonia manifested or acted upon it. |
+-
+-#### 6.5.6 Establishment and Semantic Indivisibility
+-
+-> **Active Generation is a successful-state concept. An unsuccessful attempt to manifest an Information Unit does not create an invalid Active Generation; it fails to establish an Active Generation.**
+-
+-> **Active Generation establishment is semantically indivisible. Partial, degraded or incomplete manifestation SHALL NOT constitute an Active Generation.**
+-
+-The manifestation must be successfully established in full according to the
+-applicable governed architecture; otherwise no Active Generation is established
+-by that attempt.
+-
+-```text
+-Manifestation Attempt
+-      │
+-      ├── successfully established in full
+-      │           └── Active Generation established
+-      │
+-      └── otherwise
+-                  └── No Active Generation established by this attempt
+-```
+-
+-There is no partially valid, degraded, incomplete or half-established Active
+-Generation. Runtime work may pass through partial, intermediate, degraded or
+-failed conditions while attempting manifestation. Those belong to the
+-manifestation activity or its mechanics and SHALL NOT acquire the semantic
+-standing of an Active Generation. These examples define no implementation state
+-names, attributes or schema. This rule establishes no universal structural,
+-semantic, temporal, authority, security, provenance, relationship or cache
+-validation checklist.
+-
+-**Semantic indivisibility is not transactional atomicity.** Either an Active
+-Generation has been successfully established or it has not. This semantic outcome
+-SHALL NOT imply database or distributed transactions, atomic cache operations,
+-distributed locks, mutexes, optimistic locking, MVCC, compare-and-swap,
+-synchronised execution, or single-thread, single-node execution. How downstream
+-architecture guarantees or implements the outcome remains to be derived.
+-
+-#### 6.5.7 Operational Failure and Information State
+-
+-> **Failure to establish an Active Generation is an operational failure within Harmonia. It describes the unsuccessful manifestation activity and SHALL NOT, by itself, alter the Version or state of the Information Unit from which manifestation was attempted.**
+-
+-> **Operational knowledge that Harmonia failed to manifest information is not, by itself, a change to that information.**
+-
+-The attempt and its outcome belong to Harmonia's operational activity. The
+-Information Unit and its Version remain governed by their own information
+-semantics. Manifestation failure does not, merely by occurring, establish that
+-the source Version is invalid or changed, that a new Version exists, that the
+-Information Unit lifecycle has changed, that the represented information is
+-defective or no longer authoritative, or that historical truth has changed.
+-Any such consequence requires separate established architecture.
+-
+-Manifestation failure SHALL NOT be modelled as Information Unit state merely
+-because downstream realisation may need to record, audit, monitor or respond to
+-that failure. No failure-state attribute or lifecycle transition is defined here.
+-Active manifestation and its failure do not manufacture authoritative durable
+-progression; the existing AX-05 boundary remains applicable.
+-
+-#### 6.5.8 Existing Active Generation Preservation
+-
+-> **Failure to establish a subsequent Active Generation SHALL NOT, by itself, invalidate an already established Active Generation.**
+-
+-For example, successful manifestation of Version V7 establishes G31. A later
+-manifestation attempt from V7 fails:
+-
+-```text
+-Information Unit Version V7
+-      │
+-      ├── manifestation succeeds ──> G31 established
+-      │
+-      └── later manifestation fails ──> Operational Failure
+-                                       does not, by itself, invalidate G31
+-```
+-
+-The later failure does not retroactively alter G31's successful establishment.
+-The labels are illustrative and define no identifier or sequence mechanism.
+-The rule establishes only that another manifestation attempt's failure is not,
+-by itself, an invalidating event. It defines no indefinite lifetime, expiry,
+-lease, freshness, automatic fallback, selection, replacement, invalidation
+-trigger, precedence or current-generation semantics. AX-05's existing
+-failed/degraded-convergence and untrusted-coordination requirements remain
+-applicable; this narrow preservation rule does not settle their realisation.
+-
+-**Domain04 deliberately stops at these establishment and failure semantics.**
+-Manifestation initiation, component responsibility, data loading, Context
+-assembly, completeness/coherence checks, success commit, failure detection and
+-operational representation, logging, audit, alerts, retry and recovery remain
+-downstream architecture and engineering. Generation caching, distribution,
+-replication, expiry, replacement, invalidation and concurrent interaction are
+-also undetermined. No broader managed-state reconciliation follows from this
+-semantic boundary.
+-
+-#### 6.5.9 Active Generation Establishment / Failure Guardrails
+-
+-These AG-01–AG-07 identifiers are local to establishment and failure semantics
+-and supplement VG-01–VG-08 without replacing them.
+-
+-| Guardrail | Required semantic boundary |
+-| :--- | :--- |
+-| **AG-01 — Successful-State Concept** | An Active Generation exists only when manifestation has been successfully established. |
+-| **AG-02 — Semantic Indivisibility** | Active Generation establishment is semantically indivisible. Partial, degraded or incomplete manifestation SHALL NOT constitute an Active Generation. |
+-| **AG-03 — Failure Establishes No Generation** | An unsuccessful manifestation attempt fails to establish an Active Generation; it does not establish an invalid or degraded Active Generation. |
+-| **AG-04 — Operational Failure Boundary** | Failure to establish an Active Generation is an operational failure within Harmonia and SHALL NOT, by itself, alter the Version or state of the Information Unit from which manifestation was attempted. |
+-| **AG-05 — Information / Operational Separation** | Operational knowledge of manifestation failure SHALL NOT, by itself, be treated as a change to the information being manifested. |
+-| **AG-06 — Existing Generation Preservation** | Failure to establish a subsequent Active Generation SHALL NOT, by itself, invalidate an already established Active Generation. |
+-| **AG-07 — No Transactional Inference** | Semantic indivisibility SHALL NOT imply any particular transactional, concurrency, persistence or cache mechanism. |
+-
+-## Source-qualified contribution
+-
+ Source: `docs/markdown/04-information-architecture/metamodel/information-architecture-metamodel.md` — ## 7. Release-Bound Information Unit Model. Standing: Established Information Unit boundary; unresolved downstream realisation preserved.
+ 
+ > **Harmonia SHALL support a bound set of Information Unit structures for each architectural release. The composition and semantics of that set MAY evolve between releases, but SHALL be explicitly defined and governed within a release. Information Unit structures SHALL NOT arise implicitly through implementation convenience or runtime behaviour.**
+@@ -1428,7 +863,6 @@
+ | :--- | :--- |
+ | **G1 — Managed Does Not Mean Originated** | Harmonia management responsibility does not establish originating information authority. |
+ | **G2 — Managed Does Not Mean Domain Authority** | Managing information concerning an activity does not confer authority to determine or manage the underlying domain activity; AX-18 applies. |
+-| **G3 — Information Unit Is Not Necessarily Atomic** | Boundedness does not imply indivisibility. |
+ | **G4 — Unit Structure and Content Structure Are Distinct** | The structure/type of an Information Unit and the semantic structure of its Content are different architectural concerns. |
+ | **G5 — Format and Semantic Structure Are Distinct** | Concrete encoding/format SHALL NOT be treated as equivalent to semantic information structure. |
+ | **G6 — Release Models Are Bound** | Within a release, supported Information Unit structures and semantics SHALL be explicitly governed. |
+diff --git a/enterprise-architecture/continuum/strategy/capability/feature/9210349f026b4ff1aca1092c309b4139.md b/enterprise-architecture/continuum/strategy/capability/feature/9210349f026b4ff1aca1092c309b4139.md
+--- a/enterprise-architecture/continuum/strategy/capability/feature/9210349f026b4ff1aca1092c309b4139.md
++++ b/enterprise-architecture/continuum/strategy/capability/feature/9210349f026b4ff1aca1092c309b4139.md
+@@ -77,12 +77,24 @@
+       "selector": "Authorised Activity / Scope / B",
+       "role": "Explicit canonical incorporation and UUID allocation authority",
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§1, 7 — identity continuity of governed Topic elements and runtime path identity",
++      "role": "Accepted Final.003 design source for the Naming correspondence",
++      "retainedAt": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "sha256": "3902908dbffec9b35c15f3d31bf05b9b3a3e885dabecc71780c51fe4d9886043",
++      "authority": "enterprise-architecture/design/evidence/1.1.28/001/before/ai-agent-tasks/20261124T222614Z-topic-drp-final-003-acceptance.md"
+     }
+   ],
+   "sourceBindings": [
+     {
+       "source": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+       "selector": "E04.01.04.F01"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.003.md",
++      "selector": "§§1, 7 — identity continuity of governed Topic elements and runtime path identity"
+     }
+   ],
+   "relationships": [
+@@ -178,8 +190,12 @@
+ 
+ ## Architectural content
+ 
+-Accepted Topic identities survive rename and reclassification.
+-
+-### Incorporation standing
+-
+-Catalogue identity `E04.01.04.F01`. The accepted definition is preserved above. Migration verification and source measurements do not establish implementation satisfaction. Existing source qualifications remain in force.
++A governed architectural Topic element retains its identifiers through rename
++or reclassification where the same architectural element persists. An immutable
++runtime Topic is identified by its ordered non-versioned qualified path.
++A change to that path establishes a different runtime Topic identity.
++Governed reference rules continue at their applicable boundaries. Refactor
++affected runtime consumers under the accepted Final.003 contract.
++
++Catalogue identity `E04.01.04.F01`. Verify affected consumer behaviour for
++software acceptance. Existing source qualifications remain in force.

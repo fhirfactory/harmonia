@@ -1,0 +1,100 @@
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingSerialization.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingSerialization.java
+index c315e413..234b4158 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingSerialization.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingSerialization.java
+@@ -48 +48 @@ final class NamingSerialization {
+-    /**what
++    /**
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/CanonicalPathSyntax.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/CanonicalPathSyntax.java
+index eba128c4..321cf6e8 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/CanonicalPathSyntax.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/CanonicalPathSyntax.java
+@@ -79 +79 @@ public final class CanonicalPathSyntax {
+-    /** Finds the single outer equals and optional preceding version separator. */
++    /** Finds outer separators while preserving empty raw fields for semantic validation. */
+@@ -83 +82,0 @@ public final class CanonicalPathSyntax {
+-            boolean allowEmptyFields,
+@@ -106,2 +105 @@ public final class CanonicalPathSyntax {
+-        if (equals < 0 || (!allowEmptyFields && (equals == 0 || equals == text.length() - 1))
+-                || (!allowEmptyFields && colon == 0)) {
++        if (equals < 0) {
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/MaskExpressionParser.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/MaskExpressionParser.java
+index 7ede44ee..ab9d4e3a 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/MaskExpressionParser.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/MaskExpressionParser.java
+@@ -44 +44 @@ public final class MaskExpressionParser {
+-                    segments.get(index), true, true, operation, index);
++                    segments.get(index), true, operation, index);
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/TopicCanonicalParser.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/TopicCanonicalParser.java
+index 1c1554af..71f233f7 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/TopicCanonicalParser.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/TopicCanonicalParser.java
+@@ -46 +46 @@ public final class TopicCanonicalParser {
+-                    segments.get(index), withVersion, false, operation, index);
++                    segments.get(index), withVersion, operation, index);
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java
+index f244c10d..2fe9880a 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java
+@@ -55,0 +56,16 @@ class TopicCanonicalParserTest {
++    @Test
++    void emptyCanonicalFieldsReportTheirFieldAndKnownEntry() {
++        assertTopicFieldFailure("=LAB", NamingFieldKind.QUALIFIER, 0);
++        assertTopicFieldFailure("Role=", NamingFieldKind.VALUE, 0);
++        assertTopicFieldFailure("Role:1=", NamingFieldKind.VALUE, 0);
++        assertTopicFieldFailure("Role=LAB.Child=", NamingFieldKind.VALUE, 1);
++        assertTopicFieldFailure(":1=LAB", NamingFieldKind.QUALIFIER, 0);
++        assertTopicFieldFailure("Role:=LAB", NamingFieldKind.VERSION, 0);
++    }
++
++    @Test
++    void maskCanonicalParsingContinuesToAllowEmptyFields() {
++        assertEquals("=", TopicMask.fromCanonicalExpression("=", false).getCanonicalExpression());
++        assertEquals("Role=", TopicMask.fromCanonicalExpression("Role=", false).getCanonicalExpression());
++    }
++
+@@ -93,0 +110,10 @@ class TopicCanonicalParserTest {
++
++    private static void assertTopicFieldFailure(
++            String text, NamingFieldKind fieldKind, int index) {
++        NamingValidationException failure = assertThrows(NamingValidationException.class,
++                () -> Topic.fromCanonicalNameWithVersion(text), text);
++        assertEquals(NamingFailureCategory.MALFORMED_TEXT, failure.getCategory());
++        assertEquals(NamingOperation.TOPIC_PARSE, failure.getOperation());
++        assertEquals(fieldKind, failure.getFieldKind());
++        assertEquals(index, failure.getEntryIndex().orElseThrow());
++    }
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/canonical/CanonicalParserTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/canonical/CanonicalParserTest.java
+index 4854af4e..6700dd66 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/canonical/CanonicalParserTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/canonical/CanonicalParserTest.java
+@@ -33,0 +34,4 @@ class CanonicalParserTest {
++        assertEquals(List.of(new CanonicalEntryFields("", null, "")),
++                MaskExpressionParser.parse("="));
++        assertEquals(List.of(new CanonicalEntryFields("Role", null, "")),
++                MaskExpressionParser.parse("Role="));
+@@ -54,2 +58,22 @@ class CanonicalParserTest {
+     }
++
++    @Test
++    void emptyTopicFieldsRetainTheirFieldSpecificClassification() {
++        assertTopicFieldFailure("=LAB", NamingFieldKind.QUALIFIER, 0);
++        assertTopicFieldFailure("Role=", NamingFieldKind.VALUE, 0);
++        assertTopicFieldFailure("Role:1=", NamingFieldKind.VALUE, 0);
++        assertTopicFieldFailure("Role=LAB.Child=", NamingFieldKind.VALUE, 1);
++        assertTopicFieldFailure(":1=LAB", NamingFieldKind.QUALIFIER, 0);
++        assertTopicFieldFailure("Role:=LAB", NamingFieldKind.VERSION, 0);
++    }
++
++    private static void assertTopicFieldFailure(
++            String text, NamingFieldKind fieldKind, int index) {
++        NamingRuleViolation failure = assertThrows(NamingRuleViolation.class,
++                () -> TopicCanonicalParser.parse(text, true), text);
++        assertEquals(NamingFailureCategory.MALFORMED_TEXT, failure.getCategory());
++        assertEquals(NamingOperation.TOPIC_PARSE, failure.getOperation());
++        assertEquals(fieldKind, failure.getFieldKind());
++        assertEquals(index, failure.getEntryIndex());
++    }
+ }
+--
+Junie evidence patch

@@ -6,6 +6,71 @@
 
 ------------------------------------------------------------------------
 
+## Software 0.1.0 Core Model Foundation
+
+**Current milestone** · Proposed first accepted canonical core model foundation.
+The starting point is the accepted empty development checkpoint
+`7d5c195ad7782ab0b39032308a2eb8f72c678da5`, with Architecture 1.1.26 and Maven
+`0.1.0-SNAPSHOT`. The runtime milestone results below describe the earlier
+convergence programme. Use them as historical evidence when establishing the
+starting point of a future runtime assignment. [Completed Software HCRL 009][software-foundation]
+
+| Sequence | Model area | Scope |
+| --- | --- | --- |
+| 1 | Naming | Topic, TopicEntry, TopicMask and TopicMaskEntry, builders, matching, validation and serialization. The next activity is Solution Architect review of [Backlog Item 0003, revision 000.003][naming-item], followed by a bounded implementation assignment to Junie once its prerequisites are dispositioned. |
+| 2 | InformationUnit / Subscription | Canonical InformationUnit and governed information-selection structures used by subscriptions. Preserve the independent IU identity and revision domains. Define criteria over information. [InformationUnit selection and composition][iu-selection] |
+| 3 | Pragma / Subscription | Canonical Pragma, Pragmatosis and Pragma-based subscription semantics. Preserve the distinction between the subscription and the information criteria it uses, with subscription representation in Pragma. Confirm the exact accepted scope and carry forward the outstanding G03 decisions before dependent work. [Pragma review][pragma-review] |
+| 4 | PetasosParcel | Canonical work-distribution representation. For the qualified subscription-work pattern, convey the parcel by value with the established Pragmatosis identity and permitted handoff metadata. The receiving Ergon resolves the undertaking through Mneme. Preserve separate treatment of direct Praxis references. Stage 4 depends on Solution Architect disposition of the existing PetasosParcel/Framework deferral and outstanding canonical correspondence. [By-value constraint][parcel-constraint] · [Routing design][routing] · [Architecture 1.1.25/001, DR-6][parcel-deferral] |
+| 5 | LoggingEvent | Canonical operational logging event model. Define the event contract and preserve the established operational diagnostics boundary. [Logging design][logging] |
+| 6 | AuditEvent | Canonical audit event model. Preserve Kleio's audit authority and the immutable authoritative audit evidence contract. [AuditEvent immutability constraint][audit] |
+
+The milestone covers information models and their contracts. Functional
+Mnemosyne and PersistenceService, Mneme, Petasos, Ponos and Ergon processing,
+operational logging collection, and audit collection and persistence require
+later assignments. The InformationUnit work supplies selection structures.
+Subscription semantics belong to the Pragma work. Subscription execution
+belongs to the governed functional programme.
+
+The accepted PetasosParcel/Framework deferral depends on operational
+Mneme/Mnemosyne build quality. To keep a model-only PetasosParcel step ahead of
+that runtime work, the Solution Architect must confirm that the exact model
+scope is already covered by accepted authority or explicitly approve a bounded
+change to the deferral. Preserve the separate detailed framework and direct
+Praxis reference decisions. [Architecture 1.1.25/001, DR-6][parcel-deferral] · [Routing correspondence][routing-correspondence]
+
+Each backlog item receives a bounded assignment, item-specific tests,
+independent review and attributable Solution Architect acceptance of its exact
+increment. Use one feature branch per item. Each acceptance submission includes
+applicable component tests, solution-wide regression and integration checks,
+and conformance evidence against the exact integrated candidate. Missing
+required verification needs explicit disposition. The first software release
+requires integration and verification of all six model areas as a single
+Harmonia candidate, followed by governed first-release acceptance and closure.
+Software Release 0.1.0 remains unaccepted. [Software Development Praxis][software-praxis]
+
+The anticipated functional development sequence after the model foundation is:
+
+1. Mnemosyne and PersistenceService.
+2. Mneme.
+3. Petasos.
+4. Ponos and Ergon.
+
+Later assignments establish their own baselines, scope and release identities.
+
+[software-foundation]: ../../enterprise-architecture/design/register/software-0.1.0/hcrl-software-0.1.0-009.complete.md
+[naming-item]: ../backlog/BacklogItem-0003-Calliope-Topic-and-TopicMask.v000.003.md
+[iu-selection]: ../../enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md#6-selection-and-shared-mask-composition
+[pragma-review]: ../../enterprise-architecture/design/review/software-0.1.0/hcrl-software-0.1.0-004.pending.md#dr-12
+[parcel-constraint]: ../../enterprise-architecture/continuum/motivation/constraint/b599ebffaf2f4e9e8deaec2ed98f2cd7.md#architectural-content
+[routing]: ../../enterprise-architecture/design/offline-design/DRP-Petasos-Routing-and-Reconciliation.Final.001.md#3-petasossubscription-router
+[routing-correspondence]: ../../enterprise-architecture/design/offline-design/DRP-Petasos-Routing-and-Reconciliation.Final.001.md#7-architecture-correspondence-and-open-decisions
+[parcel-deferral]: ../../enterprise-architecture/design/register/1.1.25/hcrl-1.1.25-001.complete.md#dr-6
+[logging]: ../../enterprise-architecture/design/offline-design/DRP-Harmonia-Logging-Middleware-Strategy-rsyslog.md#2-architectural-decisions-and-constraints
+[audit]: ../../enterprise-architecture/continuum/motivation/constraint/21eb20cdc600411cb71fbfe2abce4dbe.md#architectural-content
+[software-praxis]: ../../enterprise-architecture/governance/software-development-praxis.md
+
+------------------------------------------------------------------------
+
 ## 1. Purpose
 
 This document is the master implementation plan for the Harmonia

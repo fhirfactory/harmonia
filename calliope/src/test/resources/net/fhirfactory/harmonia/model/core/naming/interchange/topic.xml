@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic>
+  <entry>
+    <qualifier>System</qualifier>
+    <value>Harmonia</value>
+  </entry>
+  <entry>
+    <qualifier>Component</qualifier>
+    <value>Petasos.Receiver</value>
+    <version>2.4</version>
+  </entry>
+</topic>

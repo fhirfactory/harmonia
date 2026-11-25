@@ -1,0 +1,930 @@
+diff --git a/calliope/README.md b/calliope/README.md
+index 81f1b7fda1dd2e1d10721bdf7334ac4a238012d1..15ddf7eea070d4004198dabcecc35f8182ce5eb8 100644
+--- a/calliope/README.md
++++ b/calliope/README.md
+@@ -8,6 +8,23 @@ and [Final.003 design](../enterprise-architecture/design/offline-design/DRP-Topi
+ Those governed sources remain authoritative; this README is implementation
+ documentation, not an independent design decision.
+ 
++## Package organization
++
++The `net.fhirfactory.harmonia.model.core.naming` package contains the principal
++`Topic` and `TopicMask` models, their lifecycle-owned entry values, builders,
++the XML codec, and package-private parsing, validation, version, matching, and
++diagnostic machinery. The three public validation vocabularies are grouped in
++`net.fhirfactory.harmonia.model.core.naming.valuesets`:
++`NamingFailureCategory`, `NamingOperation`, and `NamingFieldKind`.
++
++The accepted contract requires internal constructors, reconstruction hooks,
++and matching machinery to remain package-private while exposing the supported
++models from `naming`. Java subpackages are distinct access-control packages, so
++moving those internals into function-named child packages would require public
++bridges or a wider API than the accepted contract permits. The implementation
++therefore keeps that machinery co-located and uses a separate package only for
++the public validation vocabulary, which has no dependency on the domain model.
++
+ Calliope's `Topic` is an immutable ordered path of completed
+ `TopicEntry(qualifier, value, optional version)` values. A Topic's identity,
+ hash code and natural order use only the case-sensitive ordered qualifier/value
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/CanonicalPathSyntax.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/CanonicalPathSyntax.java
+index c47abe6d4729136511b9bcf7c47483a8b8d659ca..116ac28834f980e84568b188001a929f378ebde4 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/CanonicalPathSyntax.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/CanonicalPathSyntax.java
+@@ -3,6 +3,9 @@ package net.fhirfactory.harmonia.model.core.naming;
+ 
+ import java.util.ArrayList;
+ import java.util.List;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ 
+ /**
+  * Scans and emits the shared outer escaping used by Topic and TopicMask text.
+@@ -24,11 +27,11 @@ final class CanonicalPathSyntax {
+             int maximumBytes,
+             NamingOperation operation) {
+         if (text == null) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
+                     operation, NamingFieldKind.CANONICAL_TEXT, null);
+         }
+         if (utf8Length(text, operation) > maximumBytes) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
+                     operation, NamingFieldKind.CANONICAL_TEXT, null);
+         }
+         if (text.isEmpty()) {
+@@ -48,7 +51,7 @@ final class CanonicalPathSyntax {
+                     throw malformed(operation, entries.size());
+                 }
+                 if (entries.size() >= NamingLimits.MAX_DEPTH) {
+-                    throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
+                             operation, NamingFieldKind.DEPTH, null);
+                 }
+                 entries.add(text.substring(start, offset));
+@@ -59,7 +62,7 @@ final class CanonicalPathSyntax {
+             throw malformed(operation, entries.size());
+         }
+         if (entries.size() >= NamingLimits.MAX_DEPTH) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
+                     operation, NamingFieldKind.DEPTH, null);
+         }
+         entries.add(text.substring(start));
+@@ -153,13 +156,13 @@ final class CanonicalPathSyntax {
+             int addition;
+             if (Character.isHighSurrogate(current)) {
+                 if (offset + 1 >= text.length() || !Character.isLowSurrogate(text.charAt(offset + 1))) {
+-                    throw TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
++                    throw NamingValidationException.of(NamingFailureCategory.MALFORMED_TEXT,
+                             operation, NamingFieldKind.CANONICAL_TEXT, null);
+                 }
+                 offset += 2;
+                 addition = 4;
+             } else if (Character.isLowSurrogate(current)) {
+-                throw TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
++                throw NamingValidationException.of(NamingFailureCategory.MALFORMED_TEXT,
+                         operation, NamingFieldKind.CANONICAL_TEXT, null);
+             } else {
+                 offset++;
+@@ -172,7 +175,7 @@ final class CanonicalPathSyntax {
+ 
+     /** Builds a payload-free canonical syntax failure for the current entry. */
+     private static NamingValidationException malformed(NamingOperation operation, Integer index) {
+-        return TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
++        return NamingValidationException.of(NamingFailureCategory.MALFORMED_TEXT,
+                 operation, NamingFieldKind.CANONICAL_TEXT, index);
+     }
+ 
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/FieldPattern.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/FieldPattern.java
+index e326615e3b74f0afab8d44e8a7474a6290a41408..113fef8017a4a0124832570eb7d2e3accc4de55d 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/FieldPattern.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/FieldPattern.java
+@@ -1,6 +1,10 @@
+ /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
+ package net.fhirfactory.harmonia.model.core.naming;
+ 
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
+ /**
+  * Immutable description of one accepted, bounded whole-field wildcard pattern.
+  *
+@@ -28,7 +32,7 @@ final class FieldPattern {
+             NamingOperation operation,
+             Integer index) {
+         if (pattern == null) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
+                     operation, field, index);
+         }
+         int length = TopicFieldRules.codePointCount(pattern, operation, field, index,
+@@ -109,7 +113,7 @@ final class FieldPattern {
+             NamingOperation operation,
+             NamingFieldKind field,
+             Integer index) {
+-        return TopicFieldRules.failure(NamingFailureCategory.PATTERN_REJECTED,
++        return NamingValidationException.of(NamingFailureCategory.PATTERN_REJECTED,
+                 operation, field, index);
+     }
+ }
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskEvaluator.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskEvaluator.java
+index a40a7b932dfc7d88ff64296feff2ab0b7f2811fe..528b52104f86e831e288434f97e1360205754516 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskEvaluator.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskEvaluator.java
+@@ -1,6 +1,8 @@
+ /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
+ package net.fhirfactory.harmonia.model.core.naming;
+ 
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++
+ /**
+  * Evaluates immutable TopicMask criteria in positional, fail-closed order.
+  *
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskExpressionParser.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskExpressionParser.java
+index 404d0318857580b908c63e80ccbade1a4cca7300..0fbce47e1286f9917f14b708d49d705fe971653c 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskExpressionParser.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskExpressionParser.java
+@@ -3,6 +3,9 @@ package net.fhirfactory.harmonia.model.core.naming;
+ 
+ import java.util.ArrayList;
+ import java.util.List;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ 
+ /**
+  * Strictly reconstructs the outer canonical syntax of an ordinary TopicMask.
+@@ -23,7 +26,7 @@ final class MaskExpressionParser {
+         List<String> segments = CanonicalPathSyntax.splitEntries(expression,
+                 NamingLimits.MAX_MASK_CANONICAL_UTF8_BYTES, operation);
+         if (segments.size() > NamingLimits.MAX_DEPTH) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
+                     operation, NamingFieldKind.DEPTH, null);
+         }
+         List<TopicMaskEntry> entries = new ArrayList<>(segments.size());
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingDiagnostic.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingDiagnostic.java
+index 0085ea2d4302dac08cb279db9ee4b4481b0e4996..cbac8b1644ae3a3e011460375d7c785268c822ac 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingDiagnostic.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingDiagnostic.java
+@@ -1,6 +1,8 @@
+ /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
+ package net.fhirfactory.harmonia.model.core.naming;
+ 
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++
+ /**
+  * Safe metadata for one synchronous TopicMask evaluation exit.
+  *
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingValidationException.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingValidationException.java
+index 7d0bacb9ca9252d45eada097e5b6b8017d70857a..605e0e30888d76b29ec01d4fcd606898b0c493d0 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingValidationException.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingValidationException.java
+@@ -2,6 +2,9 @@
+ package net.fhirfactory.harmonia.model.core.naming;
+ 
+ import java.util.OptionalInt;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ 
+ /**
+  * A safe, categorized rejection raised while validating Naming input.
+@@ -20,6 +23,15 @@ public final class NamingValidationException extends IllegalArgumentException {
+     /** Valid zero-based entry position when it was known at failure time. */
+     private final OptionalInt entryIndex;
+ 
++    /** Creates a safe validation failure for use by package-local Naming operations. */
++    static NamingValidationException of(
++            NamingFailureCategory category,
++            NamingOperation operation,
++            NamingFieldKind fieldKind,
++            Integer entryIndex) {
++        return new NamingValidationException(category, operation, fieldKind, entryIndex);
++    }
++
+     /**
+      * Creates a categorized validation exception for internal Naming use.
+      *
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodec.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodec.java
+index 49926794b02851fb3da3f6cf094164fc440c37b2..c949de6aad880e1ce04dc33c1c24f6b33c503bc9 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodec.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodec.java
+@@ -5,6 +5,9 @@ import java.nio.charset.StandardCharsets;
+ import java.util.ArrayList;
+ import java.util.Base64;
+ import java.util.List;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ import org.w3c.dom.Document;
+ import org.w3c.dom.Element;
+ 
+@@ -32,7 +35,7 @@ public final class NamingXmlCodec {
+      */
+     public static byte[] writeTopic(Topic topic) {
+         if (topic == null) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
+                     NamingOperation.TOPIC_XML_WRITE, NamingFieldKind.NONE, null);
+         }
+         StringBuilder xml = new StringBuilder(XML_HEADER).append("<topic>\n");
+@@ -111,7 +114,7 @@ public final class NamingXmlCodec {
+      */
+     public static byte[] writeTopicMask(TopicMask mask) {
+         if (mask == null) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
+                     NamingOperation.MASK_XML_WRITE, NamingFieldKind.NONE, null);
+         }
+         StringBuilder xml = new StringBuilder(XML_HEADER);
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/Topic.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/Topic.java
+index 692b463f99a28b242060b0b13ebce6d9a83bb969..9276e3b000783ae33dcfe612d4fe31414ef310fb 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/Topic.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/Topic.java
+@@ -4,6 +4,9 @@ package net.fhirfactory.harmonia.model.core.naming;
+ import java.util.ArrayList;
+ import java.util.List;
+ import java.util.Objects;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ 
+ /**
+  * Immutable ordered root-to-leaf identity for a named Harmonia concept.
+@@ -21,7 +24,7 @@ public final class Topic implements Comparable<Topic> {
+     /** Copies a completed ordered path after checking its nonempty bounded depth. */
+     private Topic(List<TopicEntry> entries) {
+         if (entries.isEmpty() || entries.size() > NamingLimits.MAX_DEPTH) {
+-            throw TopicFieldRules.failure(entries.isEmpty() ? NamingFailureCategory.MISSING_INPUT
++            throw NamingValidationException.of(entries.isEmpty() ? NamingFailureCategory.MISSING_INPUT
+                             : NamingFailureCategory.LIMIT_EXCEEDED,
+                     NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
+         }
+@@ -165,7 +168,7 @@ public final class Topic implements Comparable<Topic> {
+      */
+     public Topic getAncestor(int depth) {
+         if (depth < 1 || depth > entries.size()) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.INVALID_ARGUMENT,
++            throw NamingValidationException.of(NamingFailureCategory.INVALID_ARGUMENT,
+                     NamingOperation.TOPIC_NAVIGATE, NamingFieldKind.INDEX, null);
+         }
+         return depth == entries.size() ? this : fromEntries(entries.subList(0, depth));
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilder.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilder.java
+index b06f9bbcb2089b63602c74e2e1c618e2b86b18b5..78f76ed2deb8eb3b698ca85dfc787cb05ba7847f 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilder.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilder.java
+@@ -5,6 +5,9 @@ import java.util.ArrayList;
+ import java.util.List;
+ import java.util.Map;
+ import java.util.TreeMap;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ 
+ /**
+  * Reusable, caller-confined builder for sequential or explicitly indexed paths.
+@@ -49,7 +52,7 @@ public final class TopicBuilder {
+     public TopicBuilder addEntry(String qualifier, String value, String version) {
+         requireMode(Mode.SEQUENTIAL);
+         if (sequential.size() >= NamingLimits.MAX_DEPTH) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
+                     NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
+         }
+         int index = sequential.size();
+@@ -90,11 +93,11 @@ public final class TopicBuilder {
+      */
+     public TopicBuilder addEntry(int index, String qualifier, String value, String version) {
+         if (index < 0) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.INVALID_ARGUMENT,
++            throw NamingValidationException.of(NamingFailureCategory.INVALID_ARGUMENT,
+                     NamingOperation.TOPIC_BUILD, NamingFieldKind.INDEX, null);
+         }
+         if (index >= NamingLimits.MAX_DEPTH) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
+                     NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, index);
+         }
+         requireMode(Mode.INDEXED);
+@@ -112,12 +115,12 @@ public final class TopicBuilder {
+      */
+     public Topic build() {
+         if (mode == null) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
+                     NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
+         }
+         List<Input> inputs = mode == Mode.SEQUENTIAL ? List.copyOf(sequential) : contiguousInputs();
+         if (inputs.isEmpty()) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
+                     NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
+         }
+         List<TopicEntry> entries = new ArrayList<>(inputs.size());
+@@ -143,7 +146,7 @@ public final class TopicBuilder {
+     /** Rejects a mode change without altering the previously selected mode. */
+     private void requireMode(Mode requested) {
+         if (mode != null && mode != requested) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.INVALID_STATE,
++            throw NamingValidationException.of(NamingFailureCategory.INVALID_STATE,
+                     NamingOperation.TOPIC_BUILD, NamingFieldKind.NONE, null);
+         }
+     }
+@@ -154,14 +157,14 @@ public final class TopicBuilder {
+             return List.of();
+         }
+         if (indexed.size() > NamingLimits.MAX_DEPTH) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
+                     NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
+         }
+         List<Input> inputs = new ArrayList<>(indexed.size());
+         for (int expected = 0; expected < indexed.size(); expected++) {
+             Input input = indexed.get(expected);
+             if (input == null) {
+-                throw TopicFieldRules.failure(NamingFailureCategory.INVALID_FIELD,
++                throw NamingValidationException.of(NamingFailureCategory.INVALID_FIELD,
+                         NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, expected);
+             }
+             inputs.add(input);
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParser.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParser.java
+index 91d801df8f9a40d06f0be99d84a86a6473376e22..84e3c3a8393dc2aa281ae75ccc521fe020529375 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParser.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParser.java
+@@ -3,6 +3,9 @@ package net.fhirfactory.harmonia.model.core.naming;
+ 
+ import java.util.ArrayList;
+ import java.util.List;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ 
+ /**
+  * Implements strict reconstruction from the two accepted Topic canonical forms.
+@@ -22,7 +25,7 @@ final class TopicCanonicalParser {
+         List<String> segments = CanonicalPathSyntax.splitEntries(text,
+                 NamingLimits.MAX_TOPIC_CANONICAL_UTF8_BYTES, operation);
+         if (segments.size() > NamingLimits.MAX_DEPTH) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
+                     operation, NamingFieldKind.DEPTH, null);
+         }
+         List<TopicEntry> entries = new ArrayList<>(segments.size());
+@@ -38,12 +41,12 @@ final class TopicCanonicalParser {
+                 version = CanonicalPathSyntax.decode(raw.middle(), operation,
+                         NamingFieldKind.VERSION, index);
+                 if (version.isEmpty()) {
+-                    throw TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
++                    throw NamingValidationException.of(NamingFailureCategory.MALFORMED_TEXT,
+                             operation, NamingFieldKind.VERSION, index);
+                 }
+             }
+             if (qualifier.isEmpty() || value.isEmpty()) {
+-                throw TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
++                throw NamingValidationException.of(NamingFailureCategory.MALFORMED_TEXT,
+                         operation, qualifier.isEmpty() ? NamingFieldKind.QUALIFIER : NamingFieldKind.VALUE,
+                         index);
+             }
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicEntry.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicEntry.java
+index 82d263ee35d284dc83d8da095ca9c4d2269d317c..c1b501d18be51d580d749ee45ec2308c11430ce3 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicEntry.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicEntry.java
+@@ -3,6 +3,7 @@ package net.fhirfactory.harmonia.model.core.naming;
+ 
+ import java.util.Objects;
+ import java.util.Optional;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ 
+ /**
+  * One immutable, typed segment of an ordered Topic path.
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicFieldRules.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicFieldRules.java
+index b3f6a4cd518cdabce930adf430b7bf6c37315d9e..0f85105ad818da5665f787e3b212ddfe11eb55dc 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicFieldRules.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicFieldRules.java
+@@ -1,6 +1,9 @@
+ /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
+ package net.fhirfactory.harmonia.model.core.naming;
+ 
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ 
+ /**
+  * Shared Unicode and completed-field validation for the Naming boundary.
+@@ -24,18 +27,18 @@ final class TopicFieldRules {
+             Integer index,
+             NamingFailureCategory nullCategory) {
+         if (value == null) {
+-            throw failure(nullCategory, operation, field, index);
++            throw NamingValidationException.of(nullCategory, operation, field, index);
+         }
+         int count = 0;
+         for (int offset = 0; offset < value.length();) {
+             char current = value.charAt(offset);
+             if (Character.isHighSurrogate(current)) {
+                 if (offset + 1 >= value.length() || !Character.isLowSurrogate(value.charAt(offset + 1))) {
+-                    throw failure(NamingFailureCategory.INVALID_FIELD, operation, field, index);
++                    throw NamingValidationException.of(NamingFailureCategory.INVALID_FIELD, operation, field, index);
+                 }
+                 offset += 2;
+             } else if (Character.isLowSurrogate(current)) {
+-                throw failure(NamingFailureCategory.INVALID_FIELD, operation, field, index);
++                throw NamingValidationException.of(NamingFailureCategory.INVALID_FIELD, operation, field, index);
+             } else {
+                 offset++;
+             }
+@@ -54,7 +57,7 @@ final class TopicFieldRules {
+             if (allowGenerated) {
+                 return;
+             }
+-            throw failure(qualifier == null ? NamingFailureCategory.MISSING_INPUT
++            throw NamingValidationException.of(qualifier == null ? NamingFailureCategory.MISSING_INPUT
+                     : NamingFailureCategory.INVALID_FIELD, operation, NamingFieldKind.QUALIFIER, index);
+         }
+         validateAsciiField(qualifier, NamingFieldKind.QUALIFIER,
+@@ -66,12 +69,12 @@ final class TopicFieldRules {
+         int count = codePointCount(value, operation, NamingFieldKind.VALUE, index,
+                 NamingFailureCategory.MISSING_INPUT);
+         if (count == 0) {
+-            throw failure(NamingFailureCategory.INVALID_FIELD, operation, NamingFieldKind.VALUE, index);
++            throw NamingValidationException.of(NamingFailureCategory.INVALID_FIELD, operation, NamingFieldKind.VALUE, index);
+         }
+         checkLimit(count, NamingLimits.MAX_VALUE_CODE_POINTS, operation, NamingFieldKind.VALUE, index);
+         if (Character.isWhitespace(value.codePointAt(0))
+                 || Character.isWhitespace(value.codePointBefore(value.length()))) {
+-            throw failure(NamingFailureCategory.INVALID_FIELD, operation, NamingFieldKind.VALUE, index);
++            throw NamingValidationException.of(NamingFailureCategory.INVALID_FIELD, operation, NamingFieldKind.VALUE, index);
+         }
+         for (int offset = 0; offset < value.length();) {
+             int codePoint = value.codePointAt(offset);
+@@ -102,7 +105,7 @@ final class TopicFieldRules {
+                     && type != Character.NON_SPACING_MARK
+                     && type != Character.COMBINING_SPACING_MARK
+                     && type != Character.ENCLOSING_MARK) {
+-                throw failure(NamingFailureCategory.INVALID_FIELD, operation, NamingFieldKind.VALUE, index);
++                throw NamingValidationException.of(NamingFailureCategory.INVALID_FIELD, operation, NamingFieldKind.VALUE, index);
+             }
+         }
+     }
+@@ -117,7 +120,6 @@ final class TopicFieldRules {
+         return version;
+     }
+ 
+-
+     /** Validates a fully assembled TopicEntry without generating or normalizing fields. */
+     static void validateTopicCompletedFields(
+             String qualifier,
+@@ -150,19 +152,10 @@ final class TopicFieldRules {
+             NamingFieldKind field,
+             Integer index) {
+         if (count > maximum) {
+-            throw failure(NamingFailureCategory.LIMIT_EXCEEDED, operation, field, index);
++            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED, operation, field, index);
+         }
+     }
+ 
+-    /** Constructs a validation exception containing only stable structural metadata. */
+-    static NamingValidationException failure(
+-            NamingFailureCategory category,
+-            NamingOperation operation,
+-            NamingFieldKind field,
+-            Integer index) {
+-        return new NamingValidationException(category, operation, field, index);
+-    }
+-
+     /** Validates nonempty printable ASCII and rejects leading or trailing spaces. */
+     static void validateAsciiField(
+             String value,
+@@ -173,16 +166,16 @@ final class TopicFieldRules {
+         int count = codePointCount(value, operation, field, index,
+                 NamingFailureCategory.MISSING_INPUT);
+         if (count == 0) {
+-            throw failure(NamingFailureCategory.INVALID_FIELD, operation, field, index);
++            throw NamingValidationException.of(NamingFailureCategory.INVALID_FIELD, operation, field, index);
+         }
+         checkLimit(count, maximum, operation, field, index);
+         if (value.charAt(0) == ' ' || value.charAt(value.length() - 1) == ' ') {
+-            throw failure(NamingFailureCategory.INVALID_FIELD, operation, field, index);
++            throw NamingValidationException.of(NamingFailureCategory.INVALID_FIELD, operation, field, index);
+         }
+         for (int offset = 0; offset < value.length(); offset++) {
+             char current = value.charAt(offset);
+             if (current < 0x20 || current > 0x7e) {
+-                throw failure(NamingFailureCategory.INVALID_FIELD, operation, field, index);
++                throw NamingValidationException.of(NamingFailureCategory.INVALID_FIELD, operation, field, index);
+             }
+         }
+     }
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMask.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMask.java
+index edf072112c00c939e19cc979ceb36d9eca0f77eb..312b865cfba41a6eb088f6c598e9f861693dbe2e 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMask.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMask.java
+@@ -3,6 +3,9 @@ package net.fhirfactory.harmonia.model.core.naming;
+ 
+ import java.util.List;
+ import java.util.Objects;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ 
+ /**
+  * Immutable structural selector over ordered Topic entries.
+@@ -61,7 +64,7 @@ public final class TopicMask {
+     /** Creates an ordinary immutable mask from a nonempty validated criterion snapshot. */
+     static TopicMask fromEntries(List<TopicMaskEntry> entries, boolean includeContainedElements) {
+         if (entries.isEmpty()) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
+                     NamingOperation.MASK_BUILD, NamingFieldKind.DEPTH, null);
+         }
+         return new TopicMask(false, entries, includeContainedElements);
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskBuilder.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskBuilder.java
+index 0ff0c5244a462e66efc5246356a960007c6fbe1c..88f181e85757d3cf7a2bca4f502bf57c945235cd 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskBuilder.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskBuilder.java
+@@ -3,6 +3,9 @@ package net.fhirfactory.harmonia.model.core.naming;
+ 
+ import java.util.ArrayList;
+ import java.util.List;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ 
+ /**
+  * Reusable, caller-confined builder for immutable ordinary TopicMasks.
+@@ -29,7 +32,7 @@ public final class TopicMaskBuilder {
+     public TopicMaskBuilder add(TopicMaskEntry entry) {
+         ensureCapacity();
+         if (entry == null) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
+                     NamingOperation.MASK_BUILD, NamingFieldKind.NONE, entries.size());
+         }
+         entries.add(entry);
+@@ -196,7 +199,7 @@ public final class TopicMaskBuilder {
+      */
+     public TopicMask build() {
+         if (entries.isEmpty()) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
+                     NamingOperation.MASK_BUILD, NamingFieldKind.DEPTH, null);
+         }
+         return TopicMask.fromEntries(List.copyOf(entries), includeContainedElements);
+@@ -205,7 +208,7 @@ public final class TopicMaskBuilder {
+     /** Rejects a seventeenth criterion before construction or compilation work begins. */
+     private void ensureCapacity() {
+         if (entries.size() >= NamingLimits.MAX_DEPTH) {
+-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
+                     NamingOperation.MASK_BUILD, NamingFieldKind.DEPTH, null);
+         }
+     }
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskEntry.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskEntry.java
+index 9c2f072f6c22447b177bb69dc075d16ed7a96be6..4dde74c8bcbb98bf5ffb08e31c32cf3951226ca7 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskEntry.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskEntry.java
+@@ -3,6 +3,9 @@ package net.fhirfactory.harmonia.model.core.naming;
+ 
+ import java.util.Objects;
+ import java.util.Optional;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ 
+ /**
+  * One immutable positional criterion over a Topic qualifier, value and optional version.
+@@ -242,7 +245,7 @@ public final class TopicMaskEntry {
+             Integer index) {
+         TopicFieldRules.validateTopicCompletedFields(qualifier, value, version, operation, index);
+         if (requireVersion && (version == null || version.isEmpty())) {
+-            throw TopicFieldRules.failure(version == null ? NamingFailureCategory.MISSING_INPUT
++            throw NamingValidationException.of(version == null ? NamingFailureCategory.MISSING_INPUT
+                             : NamingFailureCategory.INVALID_FIELD,
+                     operation, NamingFieldKind.VERSION, index);
+         }
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/VersionConstraint.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/VersionConstraint.java
+index 4f5bf2198fa7de2aae32d3e466df2c18478b3736..53583522d445413a4cee0b0b8f0fd8f345aeb89a 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/VersionConstraint.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/VersionConstraint.java
+@@ -1,6 +1,10 @@
+ /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
+ package net.fhirfactory.harmonia.model.core.naming;
+ 
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
+ /**
+  * Immutable, construction-validated interpretation of one raw version constraint.
+  *
+@@ -201,13 +205,13 @@ final class VersionConstraint {
+ 
+     /** Creates payload-free malformed constraint metadata. */
+     private static NamingValidationException rejected(NamingOperation operation, Integer index) {
+-        return TopicFieldRules.failure(NamingFailureCategory.INVALID_FIELD,
++        return NamingValidationException.of(NamingFailureCategory.INVALID_FIELD,
+                 operation, NamingFieldKind.VERSION_CONSTRAINT, index);
+     }
+ 
+     /** Creates payload-free constraint-limit metadata. */
+     private static NamingValidationException limit(NamingOperation operation, Integer index) {
+-        return TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++        return NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
+                 operation, NamingFieldKind.VERSION_CONSTRAINT, index);
+     }
+ 
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/XmlRecordParser.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/XmlRecordParser.java
+index bc637aa5d474ac9c35e823356a47a54ad88ef7c8..145ce36055cde7ad48f4c4b14518aa0eafcb63cf 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/XmlRecordParser.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/XmlRecordParser.java
+@@ -13,6 +13,9 @@ import java.util.List;
+ import javax.xml.XMLConstants;
+ import javax.xml.parsers.DocumentBuilderFactory;
+ import javax.xml.parsers.ParserConfigurationException;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ import org.w3c.dom.Document;
+ import org.w3c.dom.Element;
+ import org.w3c.dom.NamedNodeMap;
+@@ -236,7 +239,7 @@ final class XmlRecordParser {
+             NamingOperation operation,
+             NamingFieldKind field,
+             Integer index) {
+-        return TopicFieldRules.failure(category, operation, field, index);
++        return NamingValidationException.of(category, operation, field, index);
+     }
+ 
+     /** Decodes bytes only after the record bound and rejects malformed UTF-8. */
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/package-info.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/package-info.java
+new file mode 100644
+index 0000000000000000000000000000000000000000..14bf236eb25f1a4c483c6bf7c3ac610743930df2
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/package-info.java
+@@ -0,0 +1,15 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++/**
++ * Immutable Topic and TopicMask domain models and their supported construction
++ * and interchange boundaries.
++ *
++ * <p>Entries are lifecycle-owned value types and builders create immutable
++ * snapshots. Parsing, validation, version evaluation, matching, resource
++ * limits, and optional diagnostics remain package-private implementation
++ * machinery. Keeping them here preserves the accepted package-private API
++ * boundary; Java subpackages do not share package access.</p>
++ *
++ * @see Topic
++ * @see TopicMask
++ */
++package net.fhirfactory.harmonia.model.core.naming;
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingFailureCategory.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingFailureCategory.java
+similarity index 93%
+rename from calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingFailureCategory.java
+rename to calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingFailureCategory.java
+index 104fa71183b6a5bdd80d71d5bbcb2c0e86e49699..ef5da0dc524d8e24c80a93ebde2a152cda2dea82 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingFailureCategory.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingFailureCategory.java
+@@ -1,5 +1,5 @@
+ /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
+-package net.fhirfactory.harmonia.model.core.naming;
++package net.fhirfactory.harmonia.model.core.naming.valuesets;
+ 
+ /** Stable, payload-free categories for rejected Naming operations. */
+ public enum NamingFailureCategory {
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingFieldKind.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingFieldKind.java
+similarity index 93%
+rename from calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingFieldKind.java
+rename to calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingFieldKind.java
+index 1a28017477a09d276d1879c2a04bb19511116b29..abb94544b045970b170e83b7ff0786d20ea6533d 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingFieldKind.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingFieldKind.java
+@@ -1,5 +1,5 @@
+ /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
+-package net.fhirfactory.harmonia.model.core.naming;
++package net.fhirfactory.harmonia.model.core.naming.valuesets;
+ 
+ /** Identifies a Naming field without retaining or exposing its value. */
+ public enum NamingFieldKind {
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingOperation.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingOperation.java
+similarity index 93%
+rename from calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingOperation.java
+rename to calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingOperation.java
+index 887759bfc7f3f70c656a8348e26330fcebea6f00..a53568e7e48e0c25949266bfff20201c0c594f50 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingOperation.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingOperation.java
+@@ -1,5 +1,5 @@
+ /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
+-package net.fhirfactory.harmonia.model.core.naming;
++package net.fhirfactory.harmonia.model.core.naming.valuesets;
+ 
+ /** Identifies the bounded public operation associated with safe validation metadata. */
+ public enum NamingOperation {
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/package-info.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/package-info.java
+new file mode 100644
+index 0000000000000000000000000000000000000000..6f4002ced05c59d46ede4d38d058521e0ceb24ce
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/package-info.java
+@@ -0,0 +1,8 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++/**
++ * Public validation vocabulary shared by the Naming models and their callers.
++ *
++ * <p>This package contains only stable failure categories, operation names,
++ * and field kinds; it does not depend on Naming implementation or model types.</p>
++ */
++package net.fhirfactory.harmonia.model.core.naming.valuesets;
+\ No newline at end of file
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/FieldPatternTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/FieldPatternTest.java
+index 95e2d509a36540808fea0a7db67bb797ba8f39a3..7ace9ba6e308d7b8075937ea2f59cd2ea7552780 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/FieldPatternTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/FieldPatternTest.java
+@@ -6,6 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
+ import static org.junit.jupiter.api.Assertions.assertThrows;
+ import static org.junit.jupiter.api.Assertions.assertTrue;
+ 
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ import org.junit.jupiter.api.Test;
+ 
+ /** Verifies wildcard classification, escape decoding, and bounded literal matching. */
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/MatchDiagnosticsTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/MatchDiagnosticsTest.java
+index 5efb02de9e5b986e5aee5b78d7f36a1ae5b9be81..dec2b74513fdf601e4f0793da447c5b7378cd1b3 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/MatchDiagnosticsTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/MatchDiagnosticsTest.java
+@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
+ import java.util.ArrayList;
+ import java.util.List;
+ import java.util.concurrent.atomic.AtomicInteger;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+ import org.junit.jupiter.api.Test;
+ 
+ /** Verifies ordered matching, single safe diagnostics, and fail-closed evaluator behavior. */
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingStructureTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingStructureTest.java
+index ce9f80a5a9b167fe05a092a077928528ecb0bc55..31a7660c5d00ccebe000520f837e20f0737a9d67 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingStructureTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingStructureTest.java
+@@ -15,6 +15,9 @@ import java.util.Arrays;
+ import java.util.Set;
+ import java.util.stream.Collectors;
+ import java.util.stream.Stream;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ import org.junit.jupiter.api.Test;
+ 
+ /** Enforces the supported public API, package boundary, source size, and dependency surface. */
+@@ -25,6 +28,7 @@ class NamingStructureTest {
+     @Test
+     void onlyTheApprovedModelsAndValidationVocabularyArePublic() throws IOException {
+         Set<String> publicTypes = new java.util.HashSet<>();
++        Set<String> publicValueSets = new java.util.HashSet<>();
+         try (Stream<Path> sources = Files.walk(SOURCE_ROOT)) {
+             for (Path source : sources.filter(path -> path.toString().endsWith(".java")).toList()) {
+                 String contents = Files.readString(source);
+@@ -32,14 +36,16 @@ class NamingStructureTest {
+                     String declaration = line.trim();
+                     if (declaration.startsWith("public ")
+                             && (declaration.contains(" class ") || declaration.contains(" enum "))) {
+-                        publicTypes.add(source.getFileName().toString().replace(".java", ""));
++                        Set<String> packageTypes = source.getParent().equals(SOURCE_ROOT.resolve("valuesets"))
++                                ? publicValueSets : publicTypes;
++                        packageTypes.add(source.getFileName().toString().replace(".java", ""));
+                     }
+                 }
+             }
+         }
+         assertEquals(Set.of("Topic", "TopicEntry", "TopicBuilder", "TopicMask", "TopicMaskEntry",
+-                "TopicMaskBuilder", "NamingXmlCodec", "NamingValidationException",
+-                "NamingFailureCategory", "NamingOperation", "NamingFieldKind"), publicTypes);
++                "TopicMaskBuilder", "NamingXmlCodec", "NamingValidationException"), publicTypes);
++        assertEquals(Set.of("NamingFailureCategory", "NamingOperation", "NamingFieldKind"), publicValueSets);
+ 
+         assertSignatures(Topic.class, Set.of("builder()", "fromCanonicalName(String)",
+                 "fromCanonicalNameWithVersion(String)", "getEntries()", "getCanonicalName()",
+@@ -81,19 +87,27 @@ class NamingStructureTest {
+     }
+ 
+     @Test
+-    void productionFilesStayCohesiveAndUseOnlyTheSingleNamingPackage() throws IOException {
++    void productionFilesStayCohesiveAndUseOnlyTheApprovedNamingPackages() throws IOException {
+         Set<String> publicDeclarations = new java.util.HashSet<>();
++        Set<String> sourcePackages = new java.util.HashSet<>();
+         try (Stream<Path> sources = Files.walk(SOURCE_ROOT)) {
+             for (Path source : sources.filter(path -> path.toString().endsWith(".java")).toList()) {
+                 String contents = Files.readString(source);
+                 assertTrue(Files.readAllLines(source).size() < 500, source.toString());
+                 assertTrue(contents.startsWith("/* Copyright"), source.toString());
+-                assertTrue(contents.contains("package net.fhirfactory.harmonia.model.core.naming;"),
+-                        source.toString());
++                String packageName = contents.lines()
++                        .filter(line -> line.startsWith("package "))
++                        .map(line -> line.substring("package ".length(), line.length() - 1))
++                        .findFirst()
++                        .orElseThrow();
++                sourcePackages.add(packageName);
+                 assertFalse(contents.contains("java.util.regex"), source.toString());
+                 assertFalse(contents.contains("com.google.re2j"), source.toString());
+                 assertFalse(contents.contains("org.apache.logging"), source.toString());
+-                assertFalse(contents.contains("import net.fhirfactory.harmonia."), source.toString());
++                if (packageName.endsWith(".valuesets")) {
++                    assertFalse(contents.contains("import net.fhirfactory.harmonia.model.core.naming."),
++                            source.toString());
++                }
+                 for (String line : contents.lines().toList()) {
+                     String declaration = line.trim();
+                     if (declaration.startsWith("public ")
+@@ -104,6 +118,8 @@ class NamingStructureTest {
+             }
+         }
+         assertEquals(11, publicDeclarations.size());
++        assertEquals(Set.of("net.fhirfactory.harmonia.model.core.naming",
++                "net.fhirfactory.harmonia.model.core.naming.valuesets"), sourcePackages);
+         assertFalse(Files.exists(SOURCE_ROOT.resolve("interchange/NamingXmlCodec.java")));
+         assertFalse(Files.exists(SOURCE_ROOT.resolve("valuesets/NamingLimits.java")));
+ 
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodecTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodecTest.java
+index c8568baa8ef1f64fac66c88bc76ceb4e084d9e70..cb6363bdff10113ea3f19ab36364c1ae40bed07d 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodecTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodecTest.java
+@@ -10,6 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
+ import java.io.IOException;
+ import java.io.InputStream;
+ import java.nio.charset.StandardCharsets;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ import org.junit.jupiter.api.Test;
+ 
+ /** Checks independently authored XML fixtures, deterministic bytes, and strict reconstruction. */
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/ResourceBoundsTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/ResourceBoundsTest.java
+index c3f21804f1ee2576817b9202d4d7d7342eabdb67..00a7099625ee421fb9c20a6b65882dde86c5f440 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/ResourceBoundsTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/ResourceBoundsTest.java
+@@ -12,6 +12,9 @@ import java.nio.charset.StandardCharsets;
+ import java.util.Arrays;
+ import java.util.Base64;
+ import java.util.concurrent.atomic.AtomicInteger;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ import org.junit.jupiter.api.Test;
+ 
+ /** Exercises depth, encoded-size, metadata, and maximum-work limits. */
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilderTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilderTest.java
+index c6580720f4a85af9f3dc662d80bd23e0087e107e..ac61f3cae424de414cd270dad5a52f23baae6974 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilderTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilderTest.java
+@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
+ 
+ import java.util.ArrayList;
+ import java.util.List;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+ import org.junit.jupiter.api.Test;
+ 
+ /** Exercises TopicBuilder modes, recoverability, snapshots, and field limits. */
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java
+index 7fe20ec1251d641f8aeef9bc8a4784e8e4da4143..d13c70cbc4da515b72f7a905d4ff33c525344c81 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java
+@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
+ import static org.junit.jupiter.api.Assertions.assertFalse;
+ import static org.junit.jupiter.api.Assertions.assertThrows;
+ 
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ import org.junit.jupiter.api.Test;
+ 
+ /** Validates the strict Topic canonical grammar and escaped field reconstruction. */
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskTest.java
+index e7b90a510a559fdb94a131c7c253408e0cd82fc9..f14cd5c3308b84460a2c9da35225ae1889dbb432 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskTest.java
+@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
+ import static org.junit.jupiter.api.Assertions.assertTrue;
+ 
+ import java.util.List;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ import org.junit.jupiter.api.Test;
+ 
+ /** Verifies ordinary and universal mask semantics, ordering, helpers, and immutability. */
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/VersionConstraintTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/VersionConstraintTest.java
+index 8286c8687db65726c645e603258cbe2203d2da2c..7dce9ca3a8a27ac5b988fbd7e35778071eacbb55 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/VersionConstraintTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/VersionConstraintTest.java
+@@ -7,6 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
+ import static org.junit.jupiter.api.Assertions.assertThrows;
+ import static org.junit.jupiter.api.Assertions.assertTrue;
+ 
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ import org.junit.jupiter.api.Test;
+ 
+ /** Covers exact, operator-led, ranged and absent version-constraint semantics. */

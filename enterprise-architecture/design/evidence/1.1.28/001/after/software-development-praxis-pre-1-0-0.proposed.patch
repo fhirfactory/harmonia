@@ -1,0 +1,58 @@
+diff --git a/enterprise-architecture/governance/software-development-praxis.md b/enterprise-architecture/governance/software-development-praxis.md
+--- a/enterprise-architecture/governance/software-development-praxis.md
++++ b/enterprise-architecture/governance/software-development-praxis.md
+@@ -59,6 +59,26 @@
+ establish the first baseline or accept a first release with no asserted predecessor.
+ There is no retrospective acceptance of current source through adoption of this Praxis.
+ 
++### Pre-1.0.0 implementation coherence
++
++Before Harmonia Software `1.0.0`, the solution evolves as one implementation
++of the accepted architecture. When an accepted architectural or software
++contract changes, refactor the affected implementation to conform to the new
++contract. Superseded APIs, implementations and intermediate designs carry no
++backward-compatibility obligation in this period. Affected consumers must
++operate correctly against the accepted current contract.
++
++Use dependency analysis to establish the actual scope. Include the changed
++component, direct and indirect consumers, interfaces and adapters, persistence
++and interchange representations, configuration, integrations, tests and
++fixtures, documentation, and build dependencies where affected. A change is
++complete only when these dependencies have been reconciled and applicable
++regression and integration verification succeeds.
++
++Apply the existing release classification and acceptance rules. At and after
++Harmonia Software `1.0.0`, any compatibility requirements follow the applicable
++release and interface contracts.
++
+ ## 3. Backlog Items, assignments and traceability
+ 
+ `docs/backlog/` SHALL be the single authoritative location for Harmonia Backlog
+@@ -70,6 +90,14 @@
+ corrections, refactoring, remediation and testing. Resulting architectural change
+ remains subject to established governance, ADD and HCRL controls. A Backlog Item
+ itself neither authorises implementation nor authorises or enacts architecture.
++
++Before Harmonia Software `1.0.0`, a Backlog Item changing an existing
++contract SHALL identify the affected consumers and other dependencies
++through dependency analysis, and include their necessary refactoring and
++verification within the authorised implementation scope. Express the required
++behaviour and applicable regression and integration checks in the item's
++acceptance criteria. If analysis discovers a material scope change during
++implementation, apply the existing escalation rules in §5.
+ 
+ Every Backlog Item SHALL contain, at minimum:
+ 
+@@ -182,6 +210,12 @@
+ Architect disposition in the candidate HCRL before treating the prerequisite as
+ satisfied. Submission of an exception for adjudication is not a readiness claim;
+ pending disposition and failed/unexecuted/uncertain results remain visible.
++
++For a pre-1.0.0 contract change, the candidate SHALL demonstrate conformance
++across the affected dependencies identified by the Backlog Item and assignment.
++Use the existing Implementation Report and HCRL to record reconciled consumers
++and the applicable regression and integration results for the exact candidate.
++Recompilation alone does not establish behavioural coherence.
+ 
+ Use the common `design/` structure with a qualified software target key:
+ 
