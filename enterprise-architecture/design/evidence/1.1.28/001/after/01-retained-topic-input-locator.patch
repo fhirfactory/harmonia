@@ -1,0 +1,24 @@
+diff --git a/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md b/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md
+--- a/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md
++++ b/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md
+@@ -37,7 +37,7 @@
+       "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.000.md",
+       "selector": "§§1–2,4–6 — immutable Topic model; explicit sequencing and distinct name roles",
+       "role": "Solution Architect-approved conceptual input; bounded ADD authorised by operative Task; actual incorporated result awaiting review",
+-      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.000.md",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.md",
+       "sha256": "1690ca87200db65d2254acfb5af68b7b960fb044934682b6ed89eb77ce9c5e40",
+       "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
+     }
+diff --git a/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md b/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md
+--- a/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md
++++ b/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md
+@@ -37,7 +37,7 @@
+       "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.000.md",
+       "selector": "§§3–6 — immutable selector identity; name/canonical basis; Exact/Inclusive and neutral composition",
+       "role": "Solution Architect-approved conceptual input; bounded ADD authorised by operative Task; actual incorporated result awaiting review",
+-      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.000.md",
++      "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.md",
+       "sha256": "1690ca87200db65d2254acfb5af68b7b960fb044934682b6ed89eb77ce9c5e40",
+       "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
+     }

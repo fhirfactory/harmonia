@@ -1,0 +1,176 @@
+{
+  "status": "PASS",
+  "origin": {
+    "branch": "feature/BL-0003-Calliope-Topic-and-TopicMask",
+    "commit": "f1d3c4a896731e05c40b1f21e4bf1b96bdcf3adb",
+    "tree": "1846199b36bbfb07c87746c1367c059698b7120d",
+    "architecture": "1.1.26",
+    "developmentTarget": "0.1.0-SNAPSHOT"
+  },
+  "untreatedBaseline": {
+    "status": "FAIL",
+    "preExisting": true,
+    "diagnostic": "Missing retained evidence: enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.000.md"
+  },
+  "locatorOnly": {
+    "status": "PASS",
+    "elements": 6563,
+    "relationships": 9427,
+    "qualifiedSourcePredicates": 462,
+    "canonicalIdentities": 6563,
+    "representationIdentities": 6563,
+    "provenanceCoverage": 6563,
+    "sourceBindings": 8459,
+    "supportedNativeTypes": 60,
+    "navigation": "PASS",
+    "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance"
+  },
+  "retainedInput": {
+    "path": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.md",
+    "sha256": "1690ca87200db65d2254acfb5af68b7b960fb044934682b6ed89eb77ce9c5e40",
+    "affectedElements": [
+      "9e2ffa9b4a1d4422a33c2a4bbcfc86ef",
+      "bb489157a6bf48be926c5a601bb0a6c3"
+    ]
+  },
+  "fullCandidate": {
+    "status": "PASS",
+    "elements": 6563,
+    "relationships": 9427,
+    "qualifiedSourcePredicates": 462,
+    "canonicalIdentities": 6563,
+    "representationIdentities": 6563,
+    "provenanceCoverage": 6563,
+    "sourceBindings": 8465,
+    "supportedNativeTypes": 60,
+    "navigation": "PASS",
+    "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance"
+  },
+  "changedElements": {
+    "10284034c8534b639284386b064f2c54": {
+      "name": "Conceptual InformationUnit",
+      "path": "enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md"
+    },
+    "74ec609de1ae498fbf9d13e4ef8c6cbe": {
+      "name": "Logical InformationUnit",
+      "path": "enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md"
+    },
+    "9210349f026b4ff1aca1092c309b4139": {
+      "name": "TopicIdentityStable",
+      "path": "enterprise-architecture/continuum/strategy/capability/feature/9210349f026b4ff1aca1092c309b4139.md"
+    },
+    "9c680d56a6b943da8ff22f3264e19bc7": {
+      "name": "Mnemosyne Adapter (Store)",
+      "path": "enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md"
+    },
+    "9e2ffa9b4a1d4422a33c2a4bbcfc86ef": {
+      "name": "Common Topic",
+      "path": "enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md"
+    },
+    "bb489157a6bf48be926c5a601bb0a6c3": {
+      "name": "Common TopicMask",
+      "path": "enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md"
+    }
+  },
+  "relationshipDescriptionsOnly": {
+    "id-14ff6e983e1e45ac81f7f181b5339c8c": {
+      "type": "Association",
+      "source": "id-f5c345ab6c47433da11ee12f5d84e557",
+      "target": "id-7b1ba31cbae65d08ab37f788cbbd4812"
+    },
+    "id-1adf053e54b74ba8a15db8eec3760f06": {
+      "type": "Association",
+      "source": "id-49fc826a0708501cb147919c386e464f",
+      "target": "id-7b1ba31cbae65d08ab37f788cbbd4812"
+    }
+  },
+  "projection": {
+    "canonicalIdsStable": true,
+    "exchangeIdsStable": true,
+    "relationshipIdsStable": true,
+    "authoredViewsUnchanged": 1304,
+    "publishedViewBaseline": "enterprise-architecture/design/archimate/published/1.1.25/Harmonia-Architecture.xml",
+    "deterministic": true,
+    "sha256": "95a8b4393293452d9c7b2e36bab9cf9a34a8a9ba15c441b37ec408cb569834a3",
+    "checks": {
+      "status": "PASS",
+      "elements": 6563,
+      "relationships": 9427,
+      "qualifiedSourcePredicates": 462,
+      "canonicalIdentities": 6563,
+      "representationIdentities": 6563,
+      "provenanceCoverage": 6563,
+      "sourceBindings": 8465,
+      "supportedNativeTypes": 60,
+      "navigation": "PASS",
+      "architecturalAcceptance": "See governed HCRLs; validation supplies no acceptance",
+      "archiCatalogue": {
+        "elementEntries": 6563,
+        "nativeTypeDirectories": 28,
+        "relationshipEntries": 9427,
+        "sourceDirectories": 2518
+      },
+      "containment": "PASS",
+      "informationNaming": {
+        "information_elements": 101,
+        "native_types": {
+          "DataObject": 88,
+          "BusinessObject": 13
+        },
+        "classifications": {
+          "Topic": 70,
+          "BusinessObject": 13,
+          "UNRESOLVED": 17,
+          "Class": 1
+        },
+        "fully_derived": 84,
+        "unresolved": 17,
+        "contextual": 60,
+        "preserved_identity": 101,
+        "absent_identity": 0,
+        "canonical_ids_allocated": 0,
+        "metadata_changes": {}
+      },
+      "offlineXsd": "PASS",
+      "exchangeReferences": "PASS",
+      "outputSha256": "95a8b4393293452d9c7b2e36bab9cf9a34a8a9ba15c441b37ec408cb569834a3",
+      "publicationAllocatedIdentities": 0,
+      "actualArchiTransport": "NOT_PERFORMED"
+    }
+  },
+  "preservedDraftGitBlobHashes": {
+    "docs/implementation/harmonia-convergence-runtime-integration-plan.md": "589c1518bca712c7412e24c61581054379564b61",
+    "docs/backlog/BacklogItem-0003-Calliope-Topic-and-TopicMask.v000.003.md": "2a3ada58aa762158e5a7df53a2731bd718cdcdf7"
+  },
+  "candidatePatchSha256": {
+    "01-retained-topic-input-locator.patch": "f29779bd8b8b0000442d5413293b157c84de4446239b5031980364f534a49418",
+    "02-topic-topicmask-continuum.patch": "765f4b40eac71a6c81216dc8f36fb576073ad8a4963f5d1e7b820116a33b1bda"
+  },
+  "archUnit": {
+    "commandExit": 0,
+    "testCount": 0,
+    "requiredCoverage": "UNRESOLVED"
+  },
+  "scope": "Proposed canonical changes only. Review and release authority are pending.",
+  "patchReplay": {
+    "status": "PASS",
+    "identicalContinuum": true
+  },
+  "mutationTests": {
+    "missingAssociationEndpoint": {
+      "status": "PASS",
+      "expectedRejection": "Unresolved relationship endpoint: id-1adf053e54b74ba8a15db8eec3760f06"
+    },
+    "duplicateSourceBinding": {
+      "status": "PASS",
+      "expectedRejection": "Source binding maps to multiple identities: ('enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md', '§§1–3, 5–7 — Topic structure, identity, names, construction, hierarchy and interchange')"
+    }
+  },
+  "environment": {
+    "python": "3.14.4",
+    "jsonschema": "4.26.0",
+    "lxml": "6.1.3",
+    "archUnitJdk": "21",
+    "mavenOffline": true
+  }
+}
