@@ -4,7 +4,7 @@
 
 **Standing** · Issued to Junie under the Software Development Praxis.
 
-**Task-Issued-At** · `2026-11-24T08:23:29.194Z`.
+Task-Issued-At: 2026-11-24T08:23:29.194Z
 
 **Issuance event** · The attributable system instruction-entry event is
 `UserPromptEvent` timestamp `1795508609194`, prompt

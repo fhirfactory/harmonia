@@ -595,6 +595,63 @@ obligations into the next separately authorised implementation assignment.
   Verify a separately authorised successor against Final.003 and the
   applicable accepted Backlog Item revision.
 
+## Implementation reconciliation addendum
+
+**Standing** · Accepted implementation reconciliation under the Solution
+Architect dispositions recorded for Software HCRL 010. This addendum records
+implementation-specific decisions and clarifies how they relate to the accepted
+contract; it does not revise §§1–10 or rewrite the historical independent
+findings. Standalone Naming acceptance and its qualifications are recorded in
+Software HCRL 010; this addendum does not incorporate the design into the
+Architecture Continuum or establish an Architecture release.
+
+### XML version boundary
+
+Naming XML input is limited to XML 1.0. An XML declaration is optional; when
+present, it must declare XML 1.0 and an encoding consistent with the UTF-8 byte
+envelope. Writers emit an XML 1.0 declaration with UTF-8 and no byte-order mark.
+This makes explicit the version boundary already implemented by the XML reader
+and writer; it does not relax the structure, character, encoding, DTD or external
+resolution checks in §5.
+
+### Supported API and implementation packages
+
+The six supported model and builder types remain in the root `naming` package.
+`NamingXmlCodec` is the supported facade in that package and delegates the
+format-specific work to the `naming.interchange` package. Canonical parsing,
+matching, validation, value-set and interchange packages are implementation
+organisation; helper types that require Java `public` visibility across package
+boundaries do not thereby become supported Naming API. The Calliope module has no
+`module-info.java`; this package arrangement does not assert JPMS exports or
+module-level encapsulation. The implementation decision to retain this facade
+and package boundary is a bounded realisation of the supported codec operations,
+not an additional consumer contract.
+
+### Construction and serialization
+
+Completed model objects use validating serialization proxies. Deserialization
+rechecks the stored fields and rejects streams that bypass the proxy; builders
+remain non-serializable construction helpers. The private `TopicMask` construction
+path enforces the accepted depth limit before copying entries or deriving
+criteria. These implementation details preserve the completed-object, depth and
+failure guarantees in §§1, 2, 5 and 6; they do not add serialization or builder
+APIs.
+
+### Canonical failure metadata
+
+Canonical scanning owns delimiter and escape structure. Once the outer separators
+are structurally valid, empty decoded Topic qualifiers, values and explicit
+versions are rejected as `MALFORMED_TEXT` with the corresponding `QUALIFIER`,
+`VALUE` or `VERSION` field, the parse operation and the known zero-based entry
+index. Structural errors such as a missing or duplicate equals sign and a
+misplaced colon remain `CANONICAL_TEXT` failures. Empty mask patterns remain
+valid under §5. This preserves rejection while making the diagnostic distinction
+required by §§3 and 8 observable.
+
+The accepted independent-review Findings 2 and 3 remain unchanged in their
+original review record. This addendum neither rewrites those historical findings
+nor treats their prior-candidate conclusions as findings about the successor.
+
 [accepted-draft]: DRP-Topic-and-TopicMask.Draft.002.004.md
 [acceptance-instruction]: ../evidence/1.1.28/001/before/ai-agent-tasks/20261124T222614Z-topic-drp-final-003-acceptance.md
 [incorporation]: ../evidence/1.1.28/001/after/final-003-incorporation-proposal.md

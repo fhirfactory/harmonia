@@ -41,7 +41,7 @@ public final class MaskExpressionParser {
         List<CanonicalEntryFields> entries = new ArrayList<>(segments.size());
         for (int index = 0; index < segments.size(); index++) {
             CanonicalPathSyntax.RawEntry raw = CanonicalPathSyntax.splitFields(
-                    segments.get(index), true, true, operation, index);
+                    segments.get(index), true, operation, index);
             String qualifier = CanonicalPathSyntax.decode(raw.left(), operation,
                     NamingFieldKind.QUALIFIER_PATTERN, index);
             String value = CanonicalPathSyntax.decode(raw.right(), operation,

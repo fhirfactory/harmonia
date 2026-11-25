@@ -2,7 +2,7 @@
 
 # Junie Implementation Report — Calliope Naming Function-Package Redesign
 
-**Report-Produced-At** · UNRESOLVED. The interface exposes no attributable
+Report-Produced-At: UNRESOLVED. The interface exposes no attributable
 timestamp for completed report emission. No command-completion time,
 filesystem metadata or unrelated event time has been substituted. The
 filename prefix remains unresolved for Solution Architect treatment.

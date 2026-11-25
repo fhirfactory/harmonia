@@ -2,8 +2,8 @@
 
 # Calliope Naming Implementation Report — Backlog Item 0003 v000.004
 
-**Report-Produced-At** · 2026-11-25T03:13:23Z  
-**Task-Issued-At** · 2026-11-25T01:43:36.190Z  
+Report-Produced-At: 2026-11-25T03:13:23Z
+Task-Issued-At: 2026-11-25T01:43:36.190Z
 **Agent / role** · Junie · Software implementation and verification  
 **Software target** · `0.1.0-SNAPSHOT` · review target `software-0.1.0-010`  
 **Branch** · `feature/BL-0003-Calliope-Topic-and-TopicMask`

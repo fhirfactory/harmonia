@@ -4,7 +4,7 @@
 
 **Standing** · Implementation candidate completed; not submitted for acceptance.
 
-**Report-Produced-At** · **UNRESOLVED**. The connected file-emission interface
+Report-Produced-At: UNRESOLVED. The connected file-emission interface
 did not expose an attributable system timestamp for this completed Report. No
 terminal clock value, filesystem timestamp, commit time or inferred time has
 been substituted. The filename prefix is correspondingly unresolved for

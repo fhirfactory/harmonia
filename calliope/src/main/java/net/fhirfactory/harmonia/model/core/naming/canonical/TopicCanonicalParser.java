@@ -43,7 +43,7 @@ public final class TopicCanonicalParser {
         List<CanonicalEntryFields> entries = new ArrayList<>(segments.size());
         for (int index = 0; index < segments.size(); index++) {
             CanonicalPathSyntax.RawEntry raw = CanonicalPathSyntax.splitFields(
-                    segments.get(index), withVersion, false, operation, index);
+                    segments.get(index), withVersion, operation, index);
             String qualifier = CanonicalPathSyntax.decode(raw.left(), operation,
                     NamingFieldKind.QUALIFIER, index);
             String value = CanonicalPathSyntax.decode(raw.right(), operation,

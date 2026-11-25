@@ -2,7 +2,7 @@
 
 # Junie Task — Calliope Naming Object Model and Function-Package Redesign
 
-**Task-Issued-At** · 2026-11-25T04:35:58.919Z
+Task-Issued-At: 2026-11-25T04:35:58.919Z
 
 **Timestamp source** · `startedAtMs` 1795581358919 of request
 `prompt-261125-153558-9ua2` in the Junie session task log

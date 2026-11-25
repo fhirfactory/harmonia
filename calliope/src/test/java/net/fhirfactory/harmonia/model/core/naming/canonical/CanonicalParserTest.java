@@ -31,6 +31,10 @@ class CanonicalParserTest {
                         new CanonicalEntryFields("", "", ""),
                         new CanonicalEntryFields("*", ">=1.2,<2", "\\*")),
                 MaskExpressionParser.parse("Role=LAB*.:=.*:>\\=1\\.2,<2=\\\\*"));
+        assertEquals(List.of(new CanonicalEntryFields("", null, "")),
+                MaskExpressionParser.parse("="));
+        assertEquals(List.of(new CanonicalEntryFields("Role", null, "")),
+                MaskExpressionParser.parse("Role="));
     }
 
     @Test
@@ -51,5 +55,25 @@ class CanonicalParserTest {
                 () -> MaskExpressionParser.parse("*=*.".repeat(16) + "*=*"));
         assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, depth.getCategory());
         assertEquals(NamingFieldKind.DEPTH, depth.getFieldKind());
+    }
+
+    @Test
+    void emptyTopicFieldsRetainTheirFieldSpecificClassification() {
+        assertTopicFieldFailure("=LAB", NamingFieldKind.QUALIFIER, 0);
+        assertTopicFieldFailure("Role=", NamingFieldKind.VALUE, 0);
+        assertTopicFieldFailure("Role:1=", NamingFieldKind.VALUE, 0);
+        assertTopicFieldFailure("Role=LAB.Child=", NamingFieldKind.VALUE, 1);
+        assertTopicFieldFailure(":1=LAB", NamingFieldKind.QUALIFIER, 0);
+        assertTopicFieldFailure("Role:=LAB", NamingFieldKind.VERSION, 0);
+    }
+
+    private static void assertTopicFieldFailure(
+            String text, NamingFieldKind fieldKind, int index) {
+        NamingRuleViolation failure = assertThrows(NamingRuleViolation.class,
+                () -> TopicCanonicalParser.parse(text, true), text);
+        assertEquals(NamingFailureCategory.MALFORMED_TEXT, failure.getCategory());
+        assertEquals(NamingOperation.TOPIC_PARSE, failure.getOperation());
+        assertEquals(fieldKind, failure.getFieldKind());
+        assertEquals(index, failure.getEntryIndex());
     }
 }

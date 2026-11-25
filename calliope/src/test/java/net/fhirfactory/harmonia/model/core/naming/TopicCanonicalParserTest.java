@@ -54,6 +54,22 @@ class TopicCanonicalParserTest {
     }
 
     @Test
+    void emptyCanonicalFieldsReportTheirFieldAndKnownEntry() {
+        assertTopicFieldFailure("=LAB", NamingFieldKind.QUALIFIER, 0);
+        assertTopicFieldFailure("Role=", NamingFieldKind.VALUE, 0);
+        assertTopicFieldFailure("Role:1=", NamingFieldKind.VALUE, 0);
+        assertTopicFieldFailure("Role=LAB.Child=", NamingFieldKind.VALUE, 1);
+        assertTopicFieldFailure(":1=LAB", NamingFieldKind.QUALIFIER, 0);
+        assertTopicFieldFailure("Role:=LAB", NamingFieldKind.VERSION, 0);
+    }
+
+    @Test
+    void maskCanonicalParsingContinuesToAllowEmptyFields() {
+        assertEquals("=", TopicMask.fromCanonicalExpression("=", false).getCanonicalExpression());
+        assertEquals("Role=", TopicMask.fromCanonicalExpression("Role=", false).getCanonicalExpression());
+    }
+
+    @Test
     void allStructuralCharactersRoundTripAcrossCanonicalAndDisplayProjections() {
         String originalValue = "A.B=C:D\\E";
         Topic topic = Topic.builder().addEntry("Role:Name", originalValue, "2.4\\x").build();
@@ -90,5 +106,15 @@ class TopicCanonicalParserTest {
                         () -> Topic.fromCanonicalName("Q=x.".repeat(NamingLimits.MAX_DEPTH) + "Q=x"))
                         .getCategory());
         assertThrows(NamingValidationException.class, () -> TopicMask.fromCanonicalExpression("@all", false));
+    }
+
+    private static void assertTopicFieldFailure(
+            String text, NamingFieldKind fieldKind, int index) {
+        NamingValidationException failure = assertThrows(NamingValidationException.class,
+                () -> Topic.fromCanonicalNameWithVersion(text), text);
+        assertEquals(NamingFailureCategory.MALFORMED_TEXT, failure.getCategory());
+        assertEquals(NamingOperation.TOPIC_PARSE, failure.getOperation());
+        assertEquals(fieldKind, failure.getFieldKind());
+        assertEquals(index, failure.getEntryIndex().orElseThrow());
     }
 }

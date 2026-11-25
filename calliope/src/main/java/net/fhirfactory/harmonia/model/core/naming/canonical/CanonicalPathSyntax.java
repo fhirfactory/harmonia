@@ -76,11 +76,10 @@ public final class CanonicalPathSyntax {
         return List.copyOf(entries);
     }
 
-    /** Finds the single outer equals and optional preceding version separator. */
+    /** Finds outer separators while preserving empty raw fields for semantic validation. */
     static RawEntry splitFields(
             String text,
             boolean allowVersion,
-            boolean allowEmptyFields,
             NamingOperation operation,
             int index) {
         int equals = -1;
@@ -103,8 +102,7 @@ public final class CanonicalPathSyntax {
                 colon = offset;
             }
         }
-        if (equals < 0 || (!allowEmptyFields && (equals == 0 || equals == text.length() - 1))
-                || (!allowEmptyFields && colon == 0)) {
+        if (equals < 0) {
             throw malformed(operation, index);
         }
         if (colon >= 0 && colon > equals) {

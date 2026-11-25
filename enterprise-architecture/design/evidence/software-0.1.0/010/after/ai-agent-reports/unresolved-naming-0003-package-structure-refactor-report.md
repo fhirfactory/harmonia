@@ -2,7 +2,7 @@
 
 # Junie Implementation Review Report — Calliope Naming Package Structure
 
-**Report-Produced-At** · UNRESOLVED. The connected interface does not expose an
+Report-Produced-At: UNRESOLVED. The connected interface does not expose an
 attributable timestamp for completed report emission. No command-completion time,
 filesystem metadata, or unrelated event time has been substituted; the filename
 prefix remains explicitly unresolved for Solution Architect treatment.
@@ -172,4 +172,4 @@ separate Maven runs. Full-reactor unique test totals were not calculated.
 - The report-emission timestamp remains unresolved for Solution Architect
   treatment under the provenance contract.
 
-[task]: ../before/ai-agent-tasks/20261125T033725Z-naming-0003-package-structure-refactor-task.md
+[task]: ../../before/ai-agent-tasks/20261125T033725Z-naming-0003-package-structure-refactor-task.md

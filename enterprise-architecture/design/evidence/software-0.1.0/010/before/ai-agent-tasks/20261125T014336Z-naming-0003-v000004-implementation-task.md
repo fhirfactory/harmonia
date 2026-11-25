@@ -2,7 +2,7 @@
 
 # Junie Implementation Task — Backlog Item 0003
 
-**Task-Issued-At** · 2026-11-25T01:43:36.190Z
+Task-Issued-At: 2026-11-25T01:43:36.190Z
 
 **Issuing authority** · Mark Hunter, Solution Architect, through the operative
 implementation assignment in the Junie interaction. The event timestamp is the

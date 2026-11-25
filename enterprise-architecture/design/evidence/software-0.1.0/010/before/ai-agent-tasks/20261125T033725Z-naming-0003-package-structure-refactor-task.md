@@ -2,7 +2,7 @@
 
 # Junie Task — Calliope Naming Package-Structure Review
 
-**Task-Issued-At** · 2026-11-25T03:37:25.465Z
+Task-Issued-At: 2026-11-25T03:37:25.465Z
 
 **Issuing authority** · The operative user instruction in the Junie interaction.
 This task authorises the bounded software package-structure refactor and review;
