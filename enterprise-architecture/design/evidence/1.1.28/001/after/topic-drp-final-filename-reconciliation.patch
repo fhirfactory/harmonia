@@ -1,0 +1,24 @@
+diff --git a/enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.000.md b/enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.md
+similarity index 100%
+copy from enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.000.md
+copy to enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.md
+diff --git a/enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md b/enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.002.md
+copy from enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md
+copy to enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.002.md
+--- a/enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md
++++ b/enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.002.md
+@@ -2,12 +2,12 @@
+ 
+ # Design Review Package — Topic and TopicMask
+ 
+-- **Standing** · Final.001.001 — Accepted with qualifications
++- **Standing** · Final.002 — Accepted with qualifications
+ - **Solution Architect** · Mark Hunter accepted exact [Draft.001.003][accepted-draft] for the runtime model, matching semantics, construction, canonical representations and Java API. [Acceptance instruction][acceptance-task]
+ - **Original review** · [HCRL.004 / DR-10][review]
+ - **Acceptance provenance** · [software-0.1.0 / 007][acceptance-boundary]. The acceptance followed the establishment of Iteration 006.
+ - **Scope** · Common Topic and TopicMask model, matching and diagnostics
+-- **Design lineage** · [Accepted Final.001.000](DRP-Topic-and-TopicMask.Final.001.000.md), [Draft.001.001](DRP-Topic-and-TopicMask.draft.001.001.md), [Draft.001.002](DRP-Topic-and-TopicMask.draft.001.002.md), [Accepted source Draft.001.003][accepted-draft]
++- **Design lineage** · [Accepted Final.001](DRP-Topic-and-TopicMask.Final.001.md), [Draft.001.001](DRP-Topic-and-TopicMask.draft.001.001.md), [Draft.001.002](DRP-Topic-and-TopicMask.draft.001.002.md), [Accepted source Draft.001.003][accepted-draft]
+ 
+ This design consolidates F-01.1–F-01.81 with their explicit supersessions. The accepted Architecture Continuum remains authoritative for existing contracts. Architectural differences and implementation obligations remain visible in the [reconciliation][reconciliation] and [DR-10][review]. The [decision delta][delta] records incorporation in the reviewed draft. [F-01.1–F-01.44][initial] · [F-01.45–F-01.74][continuation] · [F-01.75–F-01.81][latest]
+ 

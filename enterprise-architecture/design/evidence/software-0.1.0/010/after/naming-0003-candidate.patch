@@ -1,0 +1,3710 @@
+diff --git a/calliope/pom.xml b/calliope/pom.xml
+index a8ac7514..216bc420 100644
+--- a/calliope/pom.xml
++++ b/calliope/pom.xml
+@@ -33,4 +33,18 @@
+     <packaging>jar</packaging>
+     <name>Harmonia :: Calliope (Canonical Model &amp; Schema Library)</name>
+     <description>Calliope — Canonical Model &amp; Schema Library. The authoritative repository and management service for the shared information models, schemas and structural definitions used throughout Harmonia.</description>
++
++    <dependencies>
++        <dependency>
++            <groupId>com.google.re2j</groupId>
++            <artifactId>re2j</artifactId>
++            <version>1.8</version>
++        </dependency>
++        <dependency>
++            <groupId>org.junit.jupiter</groupId>
++            <artifactId>junit-jupiter</artifactId>
++            <version>5.10.2</version>
++            <scope>test</scope>
++        </dependency>
++    </dependencies>
+ </project>
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/CanonicalPathSyntax.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/CanonicalPathSyntax.java
+new file mode 100644
+index 00000000..5c9c4aea
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/CanonicalPathSyntax.java
+@@ -0,0 +1,180 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import java.util.ArrayList;
++import java.util.List;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * Scans and emits the shared outer escaping used by Topic and TopicMask text.
++ *
++ * <p>This scanner recognizes only the four accepted structural escapes. It
++ * does not interpret regular-expression syntax, so decoded mask expressions
++ * remain the responsibility of RE2/J.</p>
++ */
++final class CanonicalPathSyntax {
++
++    /** Prevents construction of the stateless syntax scanner. */
++    private CanonicalPathSyntax() {
++        throw new AssertionError("No instances");
++    }
++
++    /** Checks bounded UTF-8 input and splits only on unescaped entry periods. */
++    static List<String> splitEntries(
++            String text,
++            int maximumBytes,
++            NamingOperation operation) {
++        if (text == null) {
++            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++                    operation, NamingFieldKind.CANONICAL_TEXT, null);
++        }
++        if (text.length() > maximumBytes || utf8Length(text, maximumBytes, operation) > maximumBytes) {
++            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    operation, NamingFieldKind.CANONICAL_TEXT, null);
++        }
++        if (text.isEmpty()) {
++            throw malformed(operation, null);
++        }
++        List<String> entries = new ArrayList<>();
++        int start = 0;
++        for (int offset = 0; offset < text.length(); offset++) {
++            char current = text.charAt(offset);
++            if (current == '\\') {
++                if (offset + 1 >= text.length() || !isEscapable(text.charAt(offset + 1))) {
++                    throw malformed(operation, entries.size());
++                }
++                offset++;
++            } else if (current == '.') {
++                if (offset == start) {
++                    throw malformed(operation, entries.size());
++                }
++                entries.add(text.substring(start, offset));
++                start = offset + 1;
++            }
++        }
++        if (start == text.length()) {
++            throw malformed(operation, entries.size());
++        }
++        entries.add(text.substring(start));
++        return List.copyOf(entries);
++    }
++
++    /** Finds the single outer equals and optional preceding version separator. */
++    static RawEntry splitFields(
++            String text,
++            boolean allowVersion,
++            boolean allowEmptyFields,
++            NamingOperation operation,
++            int index) {
++        int equals = -1;
++        int colon = -1;
++        for (int offset = 0; offset < text.length(); offset++) {
++            char current = text.charAt(offset);
++            if (current == '\\') {
++                if (offset + 1 >= text.length() || !isEscapable(text.charAt(offset + 1))) {
++                    throw malformed(operation, index);
++                }
++                offset++;
++            } else if (current == '=') {
++                if (equals >= 0) {
++                    throw malformed(operation, index);
++                }
++                equals = offset;
++            } else if (current == ':') {
++                if (equals >= 0 || colon >= 0 || !allowVersion) {
++                    throw malformed(operation, index);
++                }
++                colon = offset;
++            }
++        }
++        if (equals < 0 || (!allowEmptyFields && (equals == 0 || equals == text.length() - 1))
++                || (!allowEmptyFields && colon == 0)) {
++            throw malformed(operation, index);
++        }
++        if (colon >= 0 && colon > equals) {
++            throw malformed(operation, index);
++        }
++        if (colon >= 0) {
++            return new RawEntry(text.substring(0, colon), text.substring(colon + 1, equals),
++                    text.substring(equals + 1), true);
++        }
++        return new RawEntry(text.substring(0, equals), null, text.substring(equals + 1), false);
++    }
++
++    /** Removes exactly one outer escape layer from a single field. */
++    static String decode(String raw, NamingOperation operation, NamingFieldKind field, int index) {
++        StringBuilder decoded = new StringBuilder(raw.length());
++        for (int offset = 0; offset < raw.length(); offset++) {
++            char current = raw.charAt(offset);
++            if (current != '\\') {
++                decoded.append(current);
++                continue;
++            }
++            if (offset + 1 >= raw.length() || !isEscapable(raw.charAt(offset + 1))) {
++                throw malformed(operation, index);
++            }
++            decoded.append(raw.charAt(++offset));
++        }
++        TopicFieldRules.codePointCount(decoded.toString(), operation, field, index,
++                NamingFailureCategory.MALFORMED_TEXT);
++        return decoded.toString();
++    }
++
++    /** Adds one outer escape layer without interpreting the field's semantics. */
++    static String encode(String raw) {
++        StringBuilder encoded = new StringBuilder(raw.length());
++        for (int offset = 0; offset < raw.length(); offset++) {
++            char current = raw.charAt(offset);
++            if (isEscapable(current)) {
++                encoded.append('\\');
++            }
++            encoded.append(current);
++        }
++        return encoded.toString();
++    }
++
++    /** Returns whether one code unit is among the four structural escape targets. */
++    private static boolean isEscapable(char value) {
++        return value == '.' || value == '=' || value == ':' || value == '\\';
++    }
++
++    /** Measures UTF-8 bytes with early limit exit and strict surrogate validation. */
++    private static int utf8Length(String text, int maximumBytes, NamingOperation operation) {
++        int bytes = 0;
++        for (int offset = 0; offset < text.length();) {
++            char current = text.charAt(offset);
++            int addition;
++            if (Character.isHighSurrogate(current)) {
++                if (offset + 1 >= text.length() || !Character.isLowSurrogate(text.charAt(offset + 1))) {
++                    throw TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
++                            operation, NamingFieldKind.CANONICAL_TEXT, null);
++                }
++                offset += 2;
++                addition = 4;
++            } else if (Character.isLowSurrogate(current)) {
++                throw TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
++                        operation, NamingFieldKind.CANONICAL_TEXT, null);
++            } else {
++                offset++;
++                addition = current <= 0x7f ? 1 : current <= 0x7ff ? 2 : 3;
++            }
++            if (bytes > maximumBytes - addition) {
++                return maximumBytes + 1;
++            }
++            bytes += addition;
++        }
++        return bytes;
++    }
++
++    /** Builds a payload-free canonical syntax failure for the current entry. */
++    private static NamingValidationException malformed(NamingOperation operation, Integer index) {
++        return TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
++                operation, NamingFieldKind.CANONICAL_TEXT, index);
++    }
++
++    /** Raw outer-field slices; {@code hasMiddle} preserves present-empty versions. */
++    record RawEntry(String left, String middle, String right, boolean hasMiddle) {
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/ExpressionSafeguard.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/ExpressionSafeguard.java
+new file mode 100644
+index 00000000..4659839d
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/ExpressionSafeguard.java
+@@ -0,0 +1,192 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import com.google.re2j.Pattern;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * Applies simple lexical safeguards before RE2/J compilation and then checks
++ * the engine's native program-size measurement.
++ *
++ * <p>The scanner skips escaped, character-class, and {@code \Q...\E} literal
++ * text. It is not a second regular-expression parser and makes no complexity
++ * claim beyond the approved group, counted-bound, and expansion limits.</p>
++ */
++final class ExpressionSafeguard {
++
++    private ExpressionSafeguard() {
++        throw new AssertionError("No instances");
++    }
++
++    /** Validates and compiles one expression without retaining engine messages or causes. */
++    static Pattern compile(
++            String expression,
++            NamingFieldKind field,
++            NamingOperation operation,
++            Integer index) {
++        TopicFieldRules.validateExpression(expression, field, true, operation, index);
++        guardComplexity(expression, field, operation, index);
++        Pattern compiled;
++        try {
++            compiled = Pattern.compile(expression);
++        } catch (RuntimeException exception) {
++            throw TopicFieldRules.failure(NamingFailureCategory.EXPRESSION_REJECTED,
++                    operation, field, index);
++        }
++        if (compiled.programSize() > NamingLimits.MAX_REGEX_PROGRAM_SIZE) {
++            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    operation, field, index);
++        }
++        return compiled;
++    }
++
++    /** Rejects active excessive groups and explicit counted repetitions before compilation. */
++    private static void guardComplexity(
++            String expression,
++            NamingFieldKind field,
++            NamingOperation operation,
++            Integer index) {
++        int groupDepth = 0;
++        int classDepth = 0;
++        boolean classFirst = false;
++        boolean quoted = false;
++        long estimatedUnits = Math.max(1, expression.codePointCount(0, expression.length()));
++        for (int offset = 0; offset < expression.length(); offset++) {
++            char current = expression.charAt(offset);
++            if (current == '\\' && offset + 1 < expression.length()) {
++                char escaped = expression.charAt(offset + 1);
++                if (quoted) {
++                    if (escaped == 'E') {
++                        quoted = false;
++                    }
++                    offset++;
++                    continue;
++                }
++                if (classDepth > 0) {
++                    classFirst = false;
++                    offset++;
++                    continue;
++                }
++                if (escaped == 'Q') {
++                    quoted = true;
++                }
++                offset++;
++                continue;
++            }
++            if (quoted) {
++                continue;
++            }
++            if (classDepth > 0) {
++                if (current == '[') {
++                    classDepth++;
++                    classFirst = true;
++                } else if (current == ']') {
++                    if (classFirst) {
++                        classFirst = false;
++                    } else {
++                        classDepth--;
++                    }
++                } else if (current != '^' || !classFirst) {
++                    classFirst = false;
++                }
++                continue;
++            }
++            if (current == '[') {
++                classDepth = 1;
++                classFirst = true;
++            } else if (current == '(') {
++                groupDepth++;
++                if (groupDepth > NamingLimits.MAX_REGEX_GROUP_DEPTH) {
++                    rejectLimit(operation, field, index);
++                }
++            } else if (current == ')') {
++                groupDepth = Math.max(0, groupDepth - 1);
++            } else if (current == '{') {
++                Repetition repetition = parseRepetition(expression, offset);
++                if (repetition != null) {
++                    if (repetition.maximum() > NamingLimits.MAX_REGEX_REPEAT_BOUND) {
++                        rejectLimit(operation, field, index);
++                    }
++                    estimatedUnits = saturatedMultiply(estimatedUnits,
++                            Math.max(1, repetition.maximum()));
++                    if (estimatedUnits > NamingLimits.MAX_REGEX_EXPANSION_UNITS) {
++                        rejectLimit(operation, field, index);
++                    }
++                    offset = repetition.endIndex();
++                }
++            }
++        }
++    }
++
++    /** Recognizes only a complete simple numeric repetition at the current brace. */
++    private static Repetition parseRepetition(String expression, int start) {
++        NumberPart lower = readNumber(expression, start + 1);
++        if (lower == null) {
++            return null;
++        }
++        int offset = lower.nextIndex();
++        int upper = lower.value();
++        if (offset < expression.length() && expression.charAt(offset) == ',') {
++            NumberPart upperPart = readNumber(expression, offset + 1);
++            if (upperPart == null) {
++                if (offset + 1 >= expression.length() || expression.charAt(offset + 1) != '}') {
++                    return null;
++                }
++                offset++;
++            } else {
++                upper = upperPart.value();
++                offset = upperPart.nextIndex();
++            }
++        }
++        if (offset >= expression.length() || expression.charAt(offset) != '}') {
++            return null;
++        }
++        return new Repetition(offset, Math.max(lower.value(), upper));
++    }
++
++    /** Reads ASCII digits with saturation so huge source integers cannot overflow. */
++    private static NumberPart readNumber(String expression, int start) {
++        if (start >= expression.length() || !isAsciiDigit(expression.charAt(start))) {
++            return null;
++        }
++        int value = 0;
++        int offset = start;
++        while (offset < expression.length() && isAsciiDigit(expression.charAt(offset))) {
++            value = Math.min(NamingLimits.MAX_REGEX_REPEAT_BOUND + 1,
++                    value * 10 + expression.charAt(offset) - '0');
++            offset++;
++        }
++        return new NumberPart(value, offset);
++    }
++
++    /** Tests the ASCII-only digit syntax accepted for counted repetitions. */
++    private static boolean isAsciiDigit(char value) {
++        return value >= '0' && value <= '9';
++    }
++
++    /** Multiplies the estimate while saturating immediately above its fixed ceiling. */
++    private static long saturatedMultiply(long value, int multiplier) {
++        if (value > NamingLimits.MAX_REGEX_EXPANSION_UNITS / (long) multiplier) {
++            return NamingLimits.MAX_REGEX_EXPANSION_UNITS + 1L;
++        }
++        return value * multiplier;
++    }
++
++    /** Raises the common safe limit category without exposing expression text. */
++    private static void rejectLimit(
++            NamingOperation operation,
++            NamingFieldKind field,
++            Integer index) {
++        throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                operation, field, index);
++    }
++
++    private record NumberPart(int value, int nextIndex) {
++    }
++
++    private record Repetition(int endIndex, int maximum) {
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/FieldEvaluator.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/FieldEvaluator.java
+new file mode 100644
+index 00000000..7d7dfe76
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/FieldEvaluator.java
+@@ -0,0 +1,13 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import com.google.re2j.Pattern;
++
++/** Local test seam for invoking a full-field RE2/J evaluation. */
++@FunctionalInterface
++interface FieldEvaluator {
++    FieldEvaluator RE2J = (pattern, value) -> pattern.matcher(value).matches();
++
++    /** Evaluates one complete field using the supplied compiled immutable pattern. */
++    boolean matches(Pattern pattern, String value);
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskEvaluator.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskEvaluator.java
+new file mode 100644
+index 00000000..669390af
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskEvaluator.java
+@@ -0,0 +1,133 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import net.fhirfactory.harmonia.model.core.naming.datatypes.NamingDiagnostic;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.DiagnosticSeverity;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.MatchExitCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * Performs the accepted short-circuit positional evaluation for ordinary and
++ * universal masks.
++ *
++ * <p>Each ordinary entry invokes at most three full-field checks, so the
++ * accepted depth bound limits one comparison to 48 checks. Unexpected matcher
++ * failures return false; diagnostic delivery is isolated from that result.</p>
++ */
++final class MaskEvaluator {
++
++    private MaskEvaluator() {
++        throw new AssertionError("No instances");
++    }
++
++    /** Evaluates a candidate once and reports a safe final exit record to its local sink. */
++    static boolean evaluate(
++            TopicMask mask,
++            Topic candidate,
++            MatchDiagnosticSink sink,
++            FieldEvaluator evaluator) {
++        int depth = candidate == null ? 0 : candidate.getDepth();
++        if (candidate == null) {
++            emit(sink, DiagnosticSeverity.TRACE, MatchExitCategory.NULL_CANDIDATE,
++                    depth, null, NamingFieldKind.NONE);
++            return false;
++        }
++        if (mask == null) {
++            emit(sink, DiagnosticSeverity.ERROR, MatchExitCategory.EVALUATION_ERROR,
++                    depth, null, NamingFieldKind.NONE);
++            return false;
++        }
++        if (!mask.isOrdinary()) {
++            emit(sink, DiagnosticSeverity.TRACE, MatchExitCategory.UNIVERSAL_MATCH,
++                    depth, null, NamingFieldKind.NONE);
++            return true;
++        }
++        int requiredDepth = mask.getEntries().size();
++        if (depth < requiredDepth || (!mask.getContainmentFlag() && depth != requiredDepth)) {
++            emit(sink, DiagnosticSeverity.TRACE, MatchExitCategory.DEPTH_MISMATCH,
++                    depth, null, NamingFieldKind.DEPTH);
++            return false;
++        }
++        for (int index = 0; index < requiredDepth; index++) {
++            TopicEntry candidateEntry = candidate.getEntries().get(index);
++            TopicMaskEntry criterion = mask.getEntries().get(index);
++            if (!evaluateField(criterion, candidateEntry.getQualifier(), evaluator,
++                    MatchExitCategory.QUALIFIER_MISMATCH, NamingFieldKind.QUALIFIER_REGEX,
++                    depth, index, sink)) {
++                return false;
++            }
++            if (!evaluateField(criterion, candidateEntry.getValue(), evaluator,
++                    MatchExitCategory.VALUE_MISMATCH, NamingFieldKind.VALUE_REGEX,
++                    depth, index, sink)) {
++                return false;
++            }
++            if (criterion.hasVersionConstraint()) {
++                String version = candidateEntry.getVersion().orElse(null);
++                if (version == null) {
++                    emit(sink, DiagnosticSeverity.TRACE, MatchExitCategory.REQUIRED_VERSION_ABSENT,
++                            depth, index, NamingFieldKind.VERSION_REGEX);
++                    return false;
++                }
++                if (!evaluateField(criterion, version, evaluator,
++                        MatchExitCategory.VERSION_MISMATCH, NamingFieldKind.VERSION_REGEX,
++                        depth, index, sink)) {
++                    return false;
++                }
++            }
++        }
++        int lastIndex = requiredDepth - 1;
++        NamingFieldKind lastField = mask.getEntries().get(lastIndex).hasVersionConstraint()
++                ? NamingFieldKind.VERSION_REGEX : NamingFieldKind.VALUE_REGEX;
++        emit(sink, DiagnosticSeverity.TRACE, MatchExitCategory.MATCH,
++                depth, lastIndex, lastField);
++        return true;
++    }
++
++    /** Runs one field check and converts runtime failures into a fail-closed exit. */
++    private static boolean evaluateField(
++            TopicMaskEntry criterion,
++            String value,
++            FieldEvaluator evaluator,
++            MatchExitCategory mismatch,
++            NamingFieldKind field,
++            int depth,
++            int index,
++            MatchDiagnosticSink sink) {
++        try {
++            boolean matches = switch (field) {
++                case QUALIFIER_REGEX -> criterion.matchesQualifier(value, evaluator);
++                case VALUE_REGEX -> criterion.matchesValue(value, evaluator);
++                case VERSION_REGEX -> criterion.matchesVersion(value, evaluator);
++                default -> false;
++            };
++            if (!matches) {
++                emit(sink, DiagnosticSeverity.TRACE, mismatch, depth, index, field);
++            }
++            return matches;
++        } catch (RuntimeException exception) {
++            emit(sink, DiagnosticSeverity.ERROR, MatchExitCategory.EVALUATION_ERROR,
++                    depth, index, field);
++            return false;
++        }
++    }
++
++    /** Delivers bounded metadata while containing failures from the diagnostic consumer. */
++    private static void emit(
++            MatchDiagnosticSink sink,
++            DiagnosticSeverity severity,
++            MatchExitCategory category,
++            int depth,
++            Integer index,
++            NamingFieldKind field) {
++        if (sink == null) {
++            return;
++        }
++        try {
++            sink.accept(new NamingDiagnostic(severity, category,
++                    NamingOperation.MASK_MATCH, depth, index, field));
++        } catch (RuntimeException ignored) {
++            // A diagnostic failure cannot change the comparison outcome.
++        }
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskExpressionParser.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskExpressionParser.java
+new file mode 100644
+index 00000000..2858d4f0
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MaskExpressionParser.java
+@@ -0,0 +1,49 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import java.util.ArrayList;
++import java.util.List;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * Strictly reconstructs the outer canonical syntax of an ordinary TopicMask.
++ *
++ * <p>Only delimiters and the four outer escapes are interpreted here. The
++ * decoded expressions are then independently validated and compiled by
++ * {@link TopicMaskEntry}.</p>
++ */
++final class MaskExpressionParser {
++
++    private MaskExpressionParser() {
++        throw new AssertionError("No instances");
++    }
++
++    /** Parses a bounded expression path and preserves the separate containment flag. */
++    static TopicMask parse(String expression, boolean includeContainedElements) {
++        NamingOperation operation = NamingOperation.MASK_PARSE;
++        List<String> segments = CanonicalPathSyntax.splitEntries(expression,
++                NamingLimits.MAX_MASK_CANONICAL_UTF8_BYTES, operation);
++        if (segments.size() > NamingLimits.MAX_DEPTH) {
++            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    operation, NamingFieldKind.DEPTH, null);
++        }
++        List<TopicMaskEntry> entries = new ArrayList<>(segments.size());
++        for (int index = 0; index < segments.size(); index++) {
++            CanonicalPathSyntax.RawEntry raw = CanonicalPathSyntax.splitFields(
++                    segments.get(index), true, true, operation, index);
++            String qualifier = CanonicalPathSyntax.decode(raw.left(), operation,
++                    NamingFieldKind.QUALIFIER_REGEX, index);
++            String value = CanonicalPathSyntax.decode(raw.right(), operation,
++                    NamingFieldKind.VALUE_REGEX, index);
++            String version = raw.hasMiddle()
++                    ? CanonicalPathSyntax.decode(raw.middle(), operation,
++                            NamingFieldKind.VERSION_REGEX, index)
++                    : null;
++            entries.add(TopicMaskEntry.create(qualifier, value, version, operation, index));
++        }
++        return TopicMask.fromEntries(entries, includeContainedElements);
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MatchDiagnosticSink.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MatchDiagnosticSink.java
+new file mode 100644
+index 00000000..4f52fd0d
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/MatchDiagnosticSink.java
+@@ -0,0 +1,13 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import net.fhirfactory.harmonia.model.core.naming.datatypes.NamingDiagnostic;
++
++/** Synchronous, invocation-local destination for safe comparison metadata. */
++@FunctionalInterface
++interface MatchDiagnosticSink {
++    MatchDiagnosticSink NOOP = diagnostic -> { };
++
++    /** Receives one safe exit record synchronously within the current match call. */
++    void accept(NamingDiagnostic diagnostic);
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingValidationException.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingValidationException.java
+new file mode 100644
+index 00000000..f6de700a
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingValidationException.java
+@@ -0,0 +1,99 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * A safe, categorized rejection raised while validating Naming input.
++ *
++ * <p>The exception exposes only stable categories and bounded structural
++ * context. It intentionally retains neither a cause nor raw input, which could
++ * contain protected data or attacker-controlled expression text.</p>
++ */
++public final class NamingValidationException extends IllegalArgumentException {
++    private final NamingFailureCategory category;
++    private final NamingOperation operation;
++    private final NamingFieldKind fieldKind;
++    private final Integer entryIndex;
++
++    /**
++     * Creates a categorized validation exception for internal Naming use.
++     *
++     * @param category stable failure category
++     * @param operation operation being performed
++     * @param fieldKind field category, or {@code NONE}
++     * @param entryIndex zero-based entry index when available
++     */
++    NamingValidationException(
++            NamingFailureCategory category,
++            NamingOperation operation,
++            NamingFieldKind fieldKind,
++            Integer entryIndex) {
++        super(safeMessage(category, operation, fieldKind, entryIndex));
++        this.category = category;
++        this.operation = operation;
++        this.fieldKind = fieldKind;
++        this.entryIndex = entryIndex;
++    }
++
++    /**
++     * Creates a safe categorized exception for an adapter in a Naming subpackage.
++     *
++     * @param category stable failure category
++     * @param operation operation being performed
++     * @param fieldKind field category, or {@code NONE}
++     * @param entryIndex zero-based entry index when available
++     * @return an exception containing only the supplied bounded metadata
++     */
++    public static NamingValidationException create(
++            NamingFailureCategory category,
++            NamingOperation operation,
++            NamingFieldKind fieldKind,
++            Integer entryIndex) {
++        return new NamingValidationException(category, operation, fieldKind, entryIndex);
++    }
++
++    /** Returns the stable category of the rejected operation. */
++    public NamingFailureCategory getCategory() {
++        return category;
++    }
++
++    /** Returns the bounded operation that rejected the input. */
++    public NamingOperation getOperation() {
++        return operation;
++    }
++
++    /** Returns the field category without exposing its contents. */
++    public NamingFieldKind getFieldKind() {
++        return fieldKind;
++    }
++
++    /** Returns the zero-based entry index, or {@code null} when unavailable. */
++    public Integer getEntryIndex() {
++        return entryIndex;
++    }
++
++    /** Formats a category-only message and deliberately omits input and engine diagnostics. */
++    private static String safeMessage(
++            NamingFailureCategory category,
++            NamingOperation operation,
++            NamingFieldKind fieldKind,
++            Integer entryIndex) {
++        StringBuilder message = new StringBuilder("Naming input rejected");
++        if (category != null) {
++            message.append(" [").append(category).append(']');
++        }
++        if (operation != null) {
++            message.append(" during ").append(operation);
++        }
++        if (fieldKind != null && fieldKind != NamingFieldKind.NONE) {
++            message.append(" for ").append(fieldKind);
++        }
++        if (entryIndex != null) {
++            message.append(" at entry ").append(entryIndex);
++        }
++        return message.toString();
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/Topic.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/Topic.java
+new file mode 100644
+index 00000000..17d08dd9
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/Topic.java
+@@ -0,0 +1,222 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Objects;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * Immutable ordered root-to-leaf identity for a named Harmonia concept.
++ *
++ * <p>Identity is the case-sensitive path of qualifier/value pairs. Optional
++ * entry versions remain available as data but do not change equality, hashing,
++ * or natural ordering.</p>
++ */
++public final class Topic implements Comparable<Topic> {
++    private final List<TopicEntry> entries;
++
++    /** Copies a completed ordered path after checking its nonempty bounded depth. */
++    private Topic(List<TopicEntry> entries) {
++        if (entries.isEmpty() || entries.size() > NamingLimits.MAX_DEPTH) {
++            throw TopicFieldRules.failure(entries.isEmpty() ? NamingFailureCategory.MISSING_INPUT
++                            : NamingFailureCategory.LIMIT_EXCEEDED,
++                    NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
++        }
++        this.entries = List.copyOf(entries);
++    }
++
++    /** Returns a new sequential or indexed builder for a completed Topic. */
++    public static TopicBuilder builder() {
++        return new TopicBuilder();
++    }
++
++    /** Parses the strict non-versioned canonical form; parsed versions are absent. */
++    public static Topic fromCanonicalName(String text) {
++        return TopicCanonicalParser.parse(text, false);
++    }
++
++    /** Parses the strict version-capable canonical form. */
++    public static Topic fromCanonicalNameWithVersion(String text) {
++        return TopicCanonicalParser.parse(text, true);
++    }
++
++    /** Creates a defensive snapshot from already completed immutable entries. */
++    static Topic fromEntries(List<TopicEntry> entries) {
++        return new Topic(entries);
++    }
++
++    /** Returns the immutable ordered entry snapshot. */
++    public List<TopicEntry> getEntries() {
++        return entries;
++    }
++
++    /** Returns the escaped canonical path that establishes Topic identity. */
++    public String getCanonicalName() {
++        return canonicalName(false);
++    }
++
++    /** Returns the escaped canonical path including each present entry version. */
++    public String getCanonicalNameWithVersion() {
++        return canonicalName(true);
++    }
++
++    /** Returns the raw value projection joined with periods. */
++    public String getName() {
++        return joinValues(0, entries.size());
++    }
++
++    /** Returns the escaped qualified representation of the final entry. */
++    public String getRelativeName() {
++        TopicEntry last = entries.get(entries.size() - 1);
++        return CanonicalPathSyntax.encode(last.getQualifier()) + "="
++                + CanonicalPathSyntax.encode(last.getValue());
++    }
++
++    /** Returns the raw value of the final entry. */
++    public String getFriendlyName() {
++        return entries.get(entries.size() - 1).getValue();
++    }
++
++    /** Returns the final value, or the final two values joined with a hyphen. */
++    public String getDisplayName() {
++        if (entries.size() == 1) {
++            return getFriendlyName();
++        }
++        return entries.get(entries.size() - 2).getValue() + "-" + getFriendlyName();
++    }
++
++    /** Returns the number of ordered path entries. */
++    public int getDepth() {
++        return entries.size();
++    }
++
++    /** Returns the strict parent path, or {@code null} for a root Topic. */
++    public Topic getParent() {
++        return entries.size() == 1 ? null : fromEntries(entries.subList(0, entries.size() - 1));
++    }
++
++    /**
++     * Returns the path prefix at the requested depth, retaining entry versions.
++     *
++     * @param depth requested prefix depth, from one through the current depth
++     * @return the immutable Topic prefix
++     * @throws IllegalArgumentException if depth is outside the accepted range
++     */
++    public Topic getAncestor(int depth) {
++        if (depth < 1 || depth > entries.size()) {
++            throw TopicFieldRules.failure(NamingFailureCategory.INVALID_FIELD,
++                    NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
++        }
++        return depth == entries.size() ? this : fromEntries(entries.subList(0, depth));
++    }
++
++    /**
++     * Returns whether this path is a strict, version-independent ancestor of candidate.
++     *
++     * @param candidate path to compare; null never matches
++     * @return true only for a matching strict prefix
++     */
++    public boolean isAncestorOf(Topic candidate) {
++        if (candidate == null || entries.size() >= candidate.entries.size()) {
++            return false;
++        }
++        for (int index = 0; index < entries.size(); index++) {
++            TopicEntry left = entries.get(index);
++            TopicEntry right = candidate.entries.get(index);
++            if (!left.getQualifier().equals(right.getQualifier())
++                    || !left.getValue().equals(right.getValue())) {
++                return false;
++            }
++        }
++        return true;
++    }
++
++    /**
++     * Orders paths by each case-sensitive qualifier/value pair, then proper prefix.
++     *
++     * @param other path to compare
++     * @return negative, zero, or positive according to lexicographic path order
++     * @throws NullPointerException when other is null
++     */
++    @Override
++    public int compareTo(Topic other) {
++        Objects.requireNonNull(other, "other");
++        int common = Math.min(entries.size(), other.entries.size());
++        for (int index = 0; index < common; index++) {
++            TopicEntry left = entries.get(index);
++            TopicEntry right = other.entries.get(index);
++            int qualifierOrder = left.getQualifier().compareTo(right.getQualifier());
++            if (qualifierOrder != 0) {
++                return qualifierOrder;
++            }
++            int valueOrder = left.getValue().compareTo(right.getValue());
++            if (valueOrder != 0) {
++                return valueOrder;
++            }
++        }
++        return Integer.compare(entries.size(), other.entries.size());
++    }
++
++    /** Compares ordered qualifier/value identity and deliberately ignores versions. */
++    @Override
++    public boolean equals(Object other) {
++        if (this == other) {
++            return true;
++        }
++        if (!(other instanceof Topic topic) || entries.size() != topic.entries.size()) {
++            return false;
++        }
++        for (int index = 0; index < entries.size(); index++) {
++            TopicEntry left = entries.get(index);
++            TopicEntry right = topic.entries.get(index);
++            if (!left.getQualifier().equals(right.getQualifier())
++                    || !left.getValue().equals(right.getValue())) {
++                return false;
++            }
++        }
++        return true;
++    }
++
++    /** Hashes the same ordered qualifier/value identity used by {@link #equals(Object)}. */
++    @Override
++    public int hashCode() {
++        int result = 1;
++        for (TopicEntry entry : entries) {
++            result = 31 * result + Objects.hash(entry.getQualifier(), entry.getValue());
++        }
++        return result;
++    }
++
++    /** Returns the complete version-capable canonical path for diagnostic display. */
++    @Override
++    public String toString() {
++        return getCanonicalNameWithVersion();
++    }
++
++    /** Emits one of the two strict canonical projections with the shared escaping rules. */
++    private String canonicalName(boolean withVersion) {
++        List<String> segments = new ArrayList<>(entries.size());
++        for (TopicEntry entry : entries) {
++            StringBuilder segment = new StringBuilder(CanonicalPathSyntax.encode(entry.getQualifier()));
++            if (withVersion && entry.versionOrNull() != null) {
++                segment.append(':').append(CanonicalPathSyntax.encode(entry.versionOrNull()));
++            }
++            segment.append('=').append(CanonicalPathSyntax.encode(entry.getValue()));
++            segments.add(segment.toString());
++        }
++        return String.join(".", segments);
++    }
++
++    /** Joins the selected raw values without claiming canonical identity syntax. */
++    private String joinValues(int start, int end) {
++        List<String> values = new ArrayList<>(end - start);
++        for (int index = start; index < end; index++) {
++            values.add(entries.get(index).getValue());
++        }
++        return String.join(".", values);
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilder.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilder.java
+new file mode 100644
+index 00000000..0e1d019b
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilder.java
+@@ -0,0 +1,173 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Map;
++import java.util.TreeMap;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * Reusable, caller-confined builder for sequential or explicitly indexed paths.
++ *
++ * <p>The first successful addition selects one mode. Failed additions and
++ * failed builds leave all accumulated inputs unchanged, allowing callers to
++ * correct a gap or invalid replacement and retry.</p>
++ */
++public final class TopicBuilder {
++    /** Construction mode is selected only by the first successful addition. */
++    private enum Mode { SEQUENTIAL, INDEXED }
++
++    private Mode mode;
++    private final List<Input> sequential = new ArrayList<>();
++    private final Map<Integer, Input> indexed = new TreeMap<>();
++
++    /** Creates an empty builder whose construction mode is not yet selected. */
++    public TopicBuilder() {
++    }
++
++    /**
++     * Appends one entry and generates {@code N<position>} for a null or empty qualifier.
++     *
++     * @param qualifier supplied printable-ASCII qualifier, or null/empty for generation
++     * @param value required Topic value
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when input is invalid, mode is indexed, or depth is full
++     */
++    public TopicBuilder addEntry(String qualifier, String value) {
++        return addEntry(qualifier, value, null);
++    }
++
++    /**
++     * Appends one entry; null and empty version values both mean absence.
++     *
++     * @param qualifier supplied printable-ASCII qualifier, or null/empty for generation
++     * @param value required Topic value
++     * @param version optional printable-ASCII version
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when input is invalid, mode is indexed, or depth is full
++     */
++    public TopicBuilder addEntry(String qualifier, String value, String version) {
++        requireMode(Mode.SEQUENTIAL);
++        if (sequential.size() >= NamingLimits.MAX_DEPTH) {
++            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
++        }
++        int index = sequential.size();
++        Input input = validateInput(qualifier, value, version, index);
++        sequential.add(input);
++        mode = Mode.SEQUENTIAL;
++        return this;
++    }
++
++    /**
++     * Adds or replaces an entry at a zero-based index without changing path depth.
++     *
++     * @param index zero-based final position
++     * @param qualifier supplied qualifier, or null/empty for generation at this position
++     * @param value required Topic value
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when input, index, mode, or depth is invalid
++     */
++    public TopicBuilder addEntry(int index, String qualifier, String value) {
++        return addEntry(index, qualifier, value, null);
++    }
++
++    /**
++     * Adds or replaces an indexed entry; null and empty versions mean absence.
++     *
++     * @param index zero-based final position
++     * @param qualifier supplied qualifier, or null/empty for generation at this position
++     * @param value required Topic value
++     * @param version optional printable-ASCII version
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when input, index, mode, or depth is invalid
++     */
++    public TopicBuilder addEntry(int index, String qualifier, String value, String version) {
++        requireMode(Mode.INDEXED);
++        if (index < 0) {
++            throw TopicFieldRules.failure(NamingFailureCategory.INVALID_FIELD,
++                    NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, index);
++        }
++        if (index >= NamingLimits.MAX_DEPTH) {
++            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, index);
++        }
++        Input input = validateInput(qualifier, value, version, index);
++        indexed.put(index, input);
++        mode = Mode.INDEXED;
++        return this;
++    }
++
++    /**
++     * Builds an independent immutable snapshot without consuming or repairing stored inputs.
++     *
++     * @return a completed immutable Topic
++     * @throws NamingValidationException when no entry exists or indexed positions contain a gap
++     */
++    public Topic build() {
++        if (mode == null) {
++            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++                    NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
++        }
++        List<Input> inputs = mode == Mode.SEQUENTIAL ? List.copyOf(sequential) : contiguousInputs();
++        if (inputs.isEmpty()) {
++            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++                    NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
++        }
++        List<TopicEntry> entries = new ArrayList<>(inputs.size());
++        for (int index = 0; index < inputs.size(); index++) {
++            Input input = inputs.get(index);
++            String qualifier = input.qualifier == null || input.qualifier.isEmpty()
++                    ? "N" + index : input.qualifier;
++            entries.add(TopicEntry.create(qualifier, input.value, input.version,
++                    NamingOperation.TOPIC_BUILD, index));
++        }
++        return Topic.fromEntries(entries);
++    }
++
++    /** Validates a proposed entry completely before any list or map mutation. */
++    private Input validateInput(String qualifier, String value, String version, int index) {
++        TopicFieldRules.validateQualifierInput(qualifier, true, NamingOperation.TOPIC_BUILD, index);
++        TopicFieldRules.validateValue(value, NamingOperation.TOPIC_BUILD, index);
++        String normalizedVersion = TopicFieldRules.normalizeVersion(
++                version, NamingOperation.TOPIC_BUILD, index);
++        return new Input(qualifier, value, normalizedVersion);
++    }
++
++    /** Rejects a mode change without altering the previously selected mode. */
++    private void requireMode(Mode requested) {
++        if (mode != null && mode != requested) {
++            throw TopicFieldRules.failure(NamingFailureCategory.INVALID_STATE,
++                    NamingOperation.TOPIC_BUILD, NamingFieldKind.NONE, null);
++        }
++    }
++
++    /** Builds a temporary ordered view only when indexed positions are contiguous. */
++    private List<Input> contiguousInputs() {
++        if (indexed.isEmpty()) {
++            return List.of();
++        }
++        if (indexed.size() > NamingLimits.MAX_DEPTH) {
++            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
++        }
++        List<Input> inputs = new ArrayList<>(indexed.size());
++        for (int expected = 0; expected < indexed.size(); expected++) {
++            Input input = indexed.get(expected);
++            if (input == null) {
++                throw TopicFieldRules.failure(NamingFailureCategory.INVALID_FIELD,
++                        NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, expected);
++            }
++            inputs.add(input);
++        }
++        return inputs;
++    }
++
++    /** Stores a validated proposal until the builder can assemble a complete path. */
++    private record Input(String qualifier, String value, String version) {
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParser.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParser.java
+new file mode 100644
+index 00000000..c08ba27f
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParser.java
+@@ -0,0 +1,58 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import java.util.ArrayList;
++import java.util.List;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * Implements strict reconstruction from the two accepted Topic canonical forms.
++ *
++ * <p>Literal completed-field validation remains in {@link TopicEntry}; this
++ * parser never applies builder-generated qualifier defaults.</p>
++ */
++final class TopicCanonicalParser {
++
++    private TopicCanonicalParser() {
++        throw new AssertionError("No instances");
++    }
++
++    /** Parses one bounded path using the selected strict version grammar. */
++    static Topic parse(String text, boolean withVersion) {
++        NamingOperation operation = NamingOperation.TOPIC_PARSE;
++        List<String> segments = CanonicalPathSyntax.splitEntries(text,
++                NamingLimits.MAX_TOPIC_CANONICAL_UTF8_BYTES, operation);
++        if (segments.size() > NamingLimits.MAX_DEPTH) {
++            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    operation, NamingFieldKind.DEPTH, null);
++        }
++        List<TopicEntry> entries = new ArrayList<>(segments.size());
++        for (int index = 0; index < segments.size(); index++) {
++            CanonicalPathSyntax.RawEntry raw = CanonicalPathSyntax.splitFields(
++                    segments.get(index), withVersion, false, operation, index);
++            String qualifier = CanonicalPathSyntax.decode(raw.left(), operation,
++                    NamingFieldKind.QUALIFIER, index);
++            String value = CanonicalPathSyntax.decode(raw.right(), operation,
++                    NamingFieldKind.VALUE, index);
++            String version = null;
++            if (raw.hasMiddle()) {
++                version = CanonicalPathSyntax.decode(raw.middle(), operation,
++                        NamingFieldKind.VERSION, index);
++                if (version.isEmpty()) {
++                    throw TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
++                            operation, NamingFieldKind.VERSION, index);
++                }
++            }
++            if (qualifier.isEmpty() || value.isEmpty()) {
++                throw TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
++                        operation, qualifier.isEmpty() ? NamingFieldKind.QUALIFIER : NamingFieldKind.VALUE,
++                        index);
++            }
++            entries.add(TopicEntry.create(qualifier, value, version, operation, index));
++        }
++        return Topic.fromEntries(entries);
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicEntry.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicEntry.java
+new file mode 100644
+index 00000000..6b3a590a
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicEntry.java
+@@ -0,0 +1,75 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import java.util.Objects;
++import java.util.Optional;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * One immutable, typed segment of an ordered Topic path.
++ *
++ * <p>The qualifier describes the role of the value at its path position. A
++ * version is optional data for that entry and is not part of Topic identity.</p>
++ */
++public final class TopicEntry {
++    private final String qualifier;
++    private final String value;
++    private final String version;
++
++    private TopicEntry(String qualifier, String value, String version) {
++        this.qualifier = qualifier;
++        this.value = value;
++        this.version = version;
++    }
++
++    /** Validates and constructs one completed immutable entry without applying defaults. */
++    static TopicEntry create(
++            String qualifier,
++            String value,
++            String version,
++            NamingOperation operation,
++            Integer index) {
++        TopicFieldRules.validateTopicCompletedFields(qualifier, value, version, operation, index);
++        return new TopicEntry(qualifier, value, version);
++    }
++
++    /** Returns the completed qualifier for this path entry. */
++    public String getQualifier() {
++        return qualifier;
++    }
++
++    /** Returns the validated value for this path entry. */
++    public String getValue() {
++        return value;
++    }
++
++    /** Returns the optional entry version, preserving absence explicitly. */
++    public Optional<String> getVersion() {
++        return Optional.ofNullable(version);
++    }
++
++    /** Returns the nullable internal representation used for canonical omission. */
++    String versionOrNull() {
++        return version;
++    }
++
++    /** Compares complete entry data, including optional version presence and value. */
++    @Override
++    public boolean equals(Object other) {
++        if (this == other) {
++            return true;
++        }
++        if (!(other instanceof TopicEntry entry)) {
++            return false;
++        }
++        return qualifier.equals(entry.qualifier)
++                && value.equals(entry.value)
++                && Objects.equals(version, entry.version);
++    }
++
++    /** Hashes the same complete entry data used by {@link #equals(Object)}. */
++    @Override
++    public int hashCode() {
++        return Objects.hash(qualifier, value, version);
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicFieldRules.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicFieldRules.java
+new file mode 100644
+index 00000000..d3ca1507
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicFieldRules.java
+@@ -0,0 +1,208 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * Shared Unicode and completed-field validation for the Naming boundary.
++ *
++ * <p>These checks are intentionally centralized so builders, canonical
++ * parsers, and interchange adapters enforce identical field semantics while
++ * exposing only safe failure categories.</p>
++ */
++final class TopicFieldRules {
++
++    /** Prevents construction of this package-scoped validation utility. */
++    private TopicFieldRules() {
++        throw new AssertionError("No instances");
++    }
++
++    /** Counts well-formed Unicode code points and rejects malformed surrogate sequences. */
++    static int codePointCount(
++            String value,
++            NamingOperation operation,
++            NamingFieldKind field,
++            Integer index,
++            NamingFailureCategory nullCategory) {
++        if (value == null) {
++            throw failure(nullCategory, operation, field, index);
++        }
++        int count = 0;
++        for (int offset = 0; offset < value.length();) {
++            char current = value.charAt(offset);
++            if (Character.isHighSurrogate(current)) {
++                if (offset + 1 >= value.length() || !Character.isLowSurrogate(value.charAt(offset + 1))) {
++                    throw failure(NamingFailureCategory.INVALID_FIELD, operation, field, index);
++                }
++                offset += 2;
++            } else if (Character.isLowSurrogate(current)) {
++                throw failure(NamingFailureCategory.INVALID_FIELD, operation, field, index);
++            } else {
++                offset++;
++            }
++            count++;
++        }
++        return count;
++    }
++
++    /** Validates a supplied printable-ASCII qualifier or permits assembly-time generation. */
++    static void validateQualifierInput(
++            String qualifier,
++            boolean allowGenerated,
++            NamingOperation operation,
++            Integer index) {
++        if (qualifier == null || qualifier.isEmpty()) {
++            if (allowGenerated) {
++                return;
++            }
++            throw failure(qualifier == null ? NamingFailureCategory.MISSING_INPUT
++                    : NamingFailureCategory.INVALID_FIELD, operation, NamingFieldKind.QUALIFIER, index);
++        }
++        validateAsciiField(qualifier, NamingFieldKind.QUALIFIER,
++                NamingLimits.MAX_QUALIFIER_CODE_POINTS, operation, index);
++    }
++
++    /** Enforces the accepted Unicode categories, boundary-space rule, and value length. */
++    static void validateValue(String value, NamingOperation operation, Integer index) {
++        if (value != null && value.length() > NamingLimits.MAX_VALUE_CODE_POINTS * 2) {
++            throw failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    operation, NamingFieldKind.VALUE, index);
++        }
++        int count = codePointCount(value, operation, NamingFieldKind.VALUE, index,
++                NamingFailureCategory.MISSING_INPUT);
++        if (count == 0) {
++            throw failure(NamingFailureCategory.INVALID_FIELD, operation, NamingFieldKind.VALUE, index);
++        }
++        checkLimit(count, NamingLimits.MAX_VALUE_CODE_POINTS, operation, NamingFieldKind.VALUE, index);
++        if (Character.isWhitespace(value.codePointAt(0))
++                || Character.isWhitespace(value.codePointBefore(value.length()))) {
++            throw failure(NamingFailureCategory.INVALID_FIELD, operation, NamingFieldKind.VALUE, index);
++        }
++        for (int offset = 0; offset < value.length();) {
++            int codePoint = value.codePointAt(offset);
++            offset += Character.charCount(codePoint);
++            if (codePoint == ' ') {
++                continue;
++            }
++            int type = Character.getType(codePoint);
++            if (type != Character.UPPERCASE_LETTER
++                    && type != Character.LOWERCASE_LETTER
++                    && type != Character.TITLECASE_LETTER
++                    && type != Character.MODIFIER_LETTER
++                    && type != Character.OTHER_LETTER
++                    && type != Character.DECIMAL_DIGIT_NUMBER
++                    && type != Character.LETTER_NUMBER
++                    && type != Character.OTHER_NUMBER
++                    && type != Character.CONNECTOR_PUNCTUATION
++                    && type != Character.DASH_PUNCTUATION
++                    && type != Character.START_PUNCTUATION
++                    && type != Character.END_PUNCTUATION
++                    && type != Character.INITIAL_QUOTE_PUNCTUATION
++                    && type != Character.FINAL_QUOTE_PUNCTUATION
++                    && type != Character.OTHER_PUNCTUATION
++                    && type != Character.MATH_SYMBOL
++                    && type != Character.CURRENCY_SYMBOL
++                    && type != Character.MODIFIER_SYMBOL
++                    && type != Character.OTHER_SYMBOL
++                    && type != Character.NON_SPACING_MARK
++                    && type != Character.COMBINING_SPACING_MARK
++                    && type != Character.ENCLOSING_MARK) {
++                throw failure(NamingFailureCategory.INVALID_FIELD, operation, NamingFieldKind.VALUE, index);
++            }
++        }
++    }
++
++    /** Normalizes API null/empty version input to absence and validates present values. */
++    static String normalizeVersion(String version, NamingOperation operation, Integer index) {
++        if (version == null || version.isEmpty()) {
++            return null;
++        }
++        validateAsciiField(version, NamingFieldKind.VERSION,
++                NamingLimits.MAX_VERSION_CODE_POINTS, operation, index);
++        return version;
++    }
++
++    /** Validates one original RE2/J expression before any outer canonical escaping. */
++    static void validateExpression(
++            String expression,
++            NamingFieldKind field,
++            boolean allowEmpty,
++            NamingOperation operation,
++            Integer index) {
++        if (expression != null && expression.length() > NamingLimits.MAX_EXPRESSION_CODE_POINTS * 2) {
++            throw failure(NamingFailureCategory.LIMIT_EXCEEDED, operation, field, index);
++        }
++        int count = codePointCount(expression, operation, field, index,
++                NamingFailureCategory.MISSING_INPUT);
++        if (!allowEmpty && count == 0) {
++            throw failure(NamingFailureCategory.INVALID_FIELD, operation, field, index);
++        }
++        checkLimit(count, NamingLimits.MAX_EXPRESSION_CODE_POINTS, operation, field, index);
++    }
++
++    /** Validates a fully assembled TopicEntry without generating or normalizing fields. */
++    static void validateTopicCompletedFields(
++            String qualifier,
++            String value,
++            String version,
++            NamingOperation operation,
++            Integer index) {
++        validateQualifierInput(qualifier, false, operation, index);
++        validateValue(value, operation, index);
++        if (version != null) {
++            validateAsciiField(version, NamingFieldKind.VERSION,
++                    NamingLimits.MAX_VERSION_CODE_POINTS, operation, index);
++        }
++    }
++
++    /** Raises a safe category when a measured quantity exceeds its accepted bound. */
++    static void checkLimit(
++            int count,
++            int maximum,
++            NamingOperation operation,
++            NamingFieldKind field,
++            Integer index) {
++        if (count > maximum) {
++            throw failure(NamingFailureCategory.LIMIT_EXCEEDED, operation, field, index);
++        }
++    }
++
++    /** Constructs a validation exception containing only stable structural metadata. */
++    static NamingValidationException failure(
++            NamingFailureCategory category,
++            NamingOperation operation,
++            NamingFieldKind field,
++            Integer index) {
++        return new NamingValidationException(category, operation, field, index);
++    }
++
++    /** Validates nonempty printable ASCII and rejects leading or trailing spaces. */
++    private static void validateAsciiField(
++            String value,
++            NamingFieldKind field,
++            int maximum,
++            NamingOperation operation,
++            Integer index) {
++        if (value != null && value.length() > maximum) {
++            throw failure(NamingFailureCategory.LIMIT_EXCEEDED, operation, field, index);
++        }
++        int count = codePointCount(value, operation, field, index,
++                NamingFailureCategory.MISSING_INPUT);
++        if (count == 0) {
++            throw failure(NamingFailureCategory.INVALID_FIELD, operation, field, index);
++        }
++        checkLimit(count, maximum, operation, field, index);
++        if (value.charAt(0) == ' ' || value.charAt(value.length() - 1) == ' ') {
++            throw failure(NamingFailureCategory.INVALID_FIELD, operation, field, index);
++        }
++        for (int offset = 0; offset < value.length(); offset++) {
++            char current = value.charAt(offset);
++            if (current < 0x20 || current > 0x7e) {
++                throw failure(NamingFailureCategory.INVALID_FIELD, operation, field, index);
++            }
++        }
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMask.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMask.java
+new file mode 100644
+index 00000000..8a674996
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMask.java
+@@ -0,0 +1,163 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import java.util.List;
++import java.util.Objects;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * Immutable structural selector over ordered Topic entries.
++ *
++ * <p>Ordinary masks check each qualifier, value, and optional version at the
++ * corresponding position. An explicit universal mask is a separate logical
++ * kind and is not inferred from a broad expression.</p>
++ */
++public final class TopicMask {
++    private static final TopicMask UNIVERSAL = new TopicMask(true, List.of(), false);
++
++    private final boolean universal;
++    private final List<TopicMaskEntry> entries;
++    private final boolean includeContainedElements;
++
++    /** Copies immutable criteria and records the explicit universal/containment kind. */
++    private TopicMask(boolean universal, List<TopicMaskEntry> entries, boolean includeContainedElements) {
++        this.universal = universal;
++        this.entries = List.copyOf(entries);
++        this.includeContainedElements = includeContainedElements;
++    }
++
++    /** Returns a new builder for an ordinary structural mask. */
++    public static TopicMaskBuilder builder() {
++        return new TopicMaskBuilder();
++    }
++
++    /** Returns the explicit immutable universal mask. */
++    public static TopicMask all() {
++        return UNIVERSAL;
++    }
++
++    /**
++     * Reconstructs an ordinary mask from its outer canonical expression.
++     *
++     * @param expression bounded escaped path of qualifier, value, and optional version expressions
++     * @param includeContainedElements whether extra trailing Topic entries may match
++     * @return an immutable ordinary mask
++     * @throws NamingValidationException when syntax, expressions, or limits are rejected
++     */
++    public static TopicMask fromCanonicalExpression(String expression, boolean includeContainedElements) {
++        return MaskExpressionParser.parse(expression, includeContainedElements);
++    }
++
++    /** Creates an ordinary immutable mask from a nonempty validated criterion snapshot. */
++    static TopicMask fromEntries(List<TopicMaskEntry> entries, boolean includeContainedElements) {
++        if (entries.isEmpty()) {
++            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++                    NamingOperation.MASK_BUILD, NamingFieldKind.DEPTH, null);
++        }
++        return new TopicMask(false, entries, includeContainedElements);
++    }
++
++    /** Returns whether this is the explicit universal logical kind. */
++    public boolean isUniversal() {
++        return universal;
++    }
++
++    /** Returns the immutable ordered criteria; empty for the universal kind. */
++    public List<TopicMaskEntry> getEntries() {
++        return entries;
++    }
++
++    /** Returns whether ordinary matching includes extra trailing Topic entries. */
++    public boolean isIncludeContainedElements() {
++        requireOrdinary();
++        return includeContainedElements;
++    }
++
++    /**
++     * Returns the canonical escaped expression path for an ordinary mask.
++     *
++     * @return escaped expression path with version presence preserved
++     * @throws IllegalStateException when this is the explicit universal kind
++     */
++    public String getCanonicalExpression() {
++        requireOrdinary();
++        StringBuilder canonical = new StringBuilder();
++        for (int index = 0; index < entries.size(); index++) {
++            if (index > 0) {
++                canonical.append('.');
++            }
++            TopicMaskEntry entry = entries.get(index);
++            canonical.append(CanonicalPathSyntax.encode(entry.getQualifierRegex()));
++            entry.getVersionRegex().ifPresent(version -> canonical.append(':')
++                    .append(CanonicalPathSyntax.encode(version)));
++            canonical.append('=').append(CanonicalPathSyntax.encode(entry.getValueRegex()));
++        }
++        return canonical.toString();
++    }
++
++    /**
++     * Returns whether this mask matches the complete candidate Topic.
++     *
++     * @param candidate candidate Topic; null is always rejected with false
++     * @return true only when the explicit kind and all positional constraints match
++     */
++    public boolean matches(Topic candidate) {
++        return matches(candidate, MatchDiagnosticSink.NOOP, FieldEvaluator.RE2J);
++    }
++
++    /** Runs the matcher with a local safe-metadata sink and the production RE2/J evaluator. */
++    boolean matches(Topic candidate, MatchDiagnosticSink sink) {
++        return matches(candidate, sink, FieldEvaluator.RE2J);
++    }
++
++    /** Exposes the package-private evaluation seam used to test contained failures. */
++    boolean matches(Topic candidate, MatchDiagnosticSink sink, FieldEvaluator evaluator) {
++        return MaskEvaluator.evaluate(this, candidate,
++                sink == null ? MatchDiagnosticSink.NOOP : sink,
++                evaluator == null ? FieldEvaluator.RE2J : evaluator);
++    }
++
++    /** Indicates the criterion-bearing kind without exposing its internal enum representation. */
++    boolean isOrdinary() {
++        return !universal;
++    }
++
++    /** Returns the construction flag to the package-scoped evaluator. */
++    boolean getContainmentFlag() {
++        return includeContainedElements;
++    }
++
++    /** Prevents expression-only accessors from pretending a universal mask has criteria. */
++    private void requireOrdinary() {
++        if (universal) {
++            throw new IllegalStateException("This accessor applies only to ordinary TopicMasks");
++        }
++    }
++
++    /** Compares universal kind or, for ordinary masks, ordered criteria and containment. */
++    @Override
++    public boolean equals(Object other) {
++        if (this == other) {
++            return true;
++        }
++        if (!(other instanceof TopicMask mask) || universal != mask.universal) {
++            return false;
++        }
++        return universal || (includeContainedElements == mask.includeContainedElements
++                && entries.equals(mask.entries));
++    }
++
++    /** Hashes the same logical fields used by {@link #equals(Object)}. */
++    @Override
++    public int hashCode() {
++        return universal ? 1 : Objects.hash(entries, includeContainedElements);
++    }
++
++    /** Returns a descriptive universal label or the ordinary canonical expression. */
++    @Override
++    public String toString() {
++        return universal ? "TopicMask.all()" : getCanonicalExpression();
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskBuilder.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskBuilder.java
+new file mode 100644
+index 00000000..11b18249
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskBuilder.java
+@@ -0,0 +1,203 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import java.util.ArrayList;
++import java.util.List;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * Reusable, caller-confined builder for immutable ordinary TopicMasks.
++ *
++ * <p>Every addition validates and compiles its criterion before mutating this
++ * builder. A rejected addition leaves the accumulated criteria and containment
++ * flag available for correction and retry.</p>
++ */
++public final class TopicMaskBuilder {
++    private final List<TopicMaskEntry> entries = new ArrayList<>();
++    private boolean includeContainedElements;
++
++    /** Creates an empty builder with exact-depth matching as the default. */
++    public TopicMaskBuilder() {
++    }
++
++    /**
++     * Adds a previously validated immutable criterion.
++     *
++     * @param entry non-null immutable mask entry
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when entry is absent or maximum depth is reached
++     */
++    public TopicMaskBuilder add(TopicMaskEntry entry) {
++        ensureCapacity();
++        if (entry == null) {
++            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++                    NamingOperation.MASK_BUILD, NamingFieldKind.NONE, null);
++        }
++        entries.add(entry);
++        return this;
++    }
++
++    /**
++     * Adds a full-field RegEx criterion with no version constraint.
++     *
++     * @param qualifierRegex expression applied to the complete qualifier
++     * @param valueRegex expression applied to the complete value
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when expressions or depth are rejected
++     */
++    public TopicMaskBuilder addRegex(String qualifierRegex, String valueRegex) {
++        ensureCapacity();
++        TopicMaskEntry entry = TopicMaskEntry.of(qualifierRegex, valueRegex);
++        entries.add(entry);
++        return this;
++    }
++
++    /**
++     * Adds a full-field RegEx criterion with a present version expression, including empty.
++     *
++     * @param qualifierRegex expression applied to the complete qualifier
++     * @param valueRegex expression applied to the complete value
++     * @param versionRegex expression required for a present candidate version
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when expressions or depth are rejected
++     */
++    public TopicMaskBuilder addRegex(
++            String qualifierRegex,
++            String valueRegex,
++            String versionRegex) {
++        ensureCapacity();
++        TopicMaskEntry entry = TopicMaskEntry.of(qualifierRegex, valueRegex, versionRegex);
++        entries.add(entry);
++        return this;
++    }
++
++    /**
++     * Adds an expression criterion for any qualifier; validates before appending.
++     *
++     * @param valueRegex expression applied to the complete value
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when the expression or capacity is rejected
++     */
++    public TopicMaskBuilder addForValue(String valueRegex) {
++        ensureCapacity();
++        TopicMaskEntry entry = TopicMaskEntry.forValue(valueRegex);
++        entries.add(entry);
++        return this;
++    }
++
++    /**
++     * Adds an expression criterion for any value; validates before appending.
++     *
++     * @param qualifierRegex expression applied to the complete qualifier
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when the expression or capacity is rejected
++     */
++    public TopicMaskBuilder addForQualifier(String qualifierRegex) {
++        ensureCapacity();
++        TopicMaskEntry entry = TopicMaskEntry.forQualifier(qualifierRegex);
++        entries.add(entry);
++        return this;
++    }
++
++    /** Adds a criterion matching any qualifier and value; validates capacity first. */
++    public TopicMaskBuilder addAny() {
++        ensureCapacity();
++        entries.add(TopicMaskEntry.any());
++        return this;
++    }
++
++    /**
++     * Adds a criterion for validated literal qualifier and value fields.
++     *
++     * @param qualifier nonempty valid Topic qualifier literal
++     * @param value nonempty valid Topic value literal
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when a literal or depth is rejected
++     */
++    public TopicMaskBuilder addLiterals(String qualifier, String value) {
++        ensureCapacity();
++        TopicMaskEntry entry = TopicMaskEntry.ofLiterals(qualifier, value);
++        entries.add(entry);
++        return this;
++    }
++
++    /**
++     * Adds a criterion for validated literal fields including a required version.
++     *
++     * @param qualifier nonempty valid Topic qualifier literal
++     * @param value nonempty valid Topic value literal
++     * @param version nonempty valid Topic version literal
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when a literal or depth is rejected
++     */
++    public TopicMaskBuilder addLiterals(String qualifier, String value, String version) {
++        ensureCapacity();
++        TopicMaskEntry entry = TopicMaskEntry.ofLiterals(qualifier, value, version);
++        entries.add(entry);
++        return this;
++    }
++
++    /**
++     * Adds a literal value criterion with unrestricted qualifier.
++     *
++     * @param value valid nonempty Topic value literal
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when the literal or capacity is rejected
++     */
++    public TopicMaskBuilder addForLiteralValue(String value) {
++        ensureCapacity();
++        TopicMaskEntry entry = TopicMaskEntry.forLiteralValue(value);
++        entries.add(entry);
++        return this;
++    }
++
++    /**
++     * Adds a literal qualifier criterion with unrestricted value.
++     *
++     * @param qualifier valid nonempty printable-ASCII Topic qualifier literal
++     * @return this builder for fluent construction
++     * @throws NamingValidationException when the literal or capacity is rejected
++     */
++    public TopicMaskBuilder addForLiteralQualifier(String qualifier) {
++        ensureCapacity();
++        TopicMaskEntry entry = TopicMaskEntry.forLiteralQualifier(qualifier);
++        entries.add(entry);
++        return this;
++    }
++
++    /**
++     * Sets whether ordinary matching accepts trailing entries beyond this mask's depth.
++     *
++     * @param include true to allow trailing candidate entries; false requires exact depth
++     * @return this builder for fluent construction
++     */
++    public TopicMaskBuilder includeContainedElements(boolean include) {
++        includeContainedElements = include;
++        return this;
++    }
++
++    /**
++     * Builds a defensive immutable ordinary-mask snapshot without consuming the builder.
++     *
++     * @return an immutable ordinary mask
++     * @throws NamingValidationException when the builder contains no criteria
++     */
++    public TopicMask build() {
++        if (entries.isEmpty()) {
++            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++                    NamingOperation.MASK_BUILD, NamingFieldKind.DEPTH, null);
++        }
++        return TopicMask.fromEntries(List.copyOf(entries), includeContainedElements);
++    }
++
++    /** Rejects a seventeenth criterion before construction or compilation work begins. */
++    private void ensureCapacity() {
++        if (entries.size() >= NamingLimits.MAX_DEPTH) {
++            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    NamingOperation.MASK_BUILD, NamingFieldKind.DEPTH, null);
++        }
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskEntry.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskEntry.java
+new file mode 100644
+index 00000000..96edec87
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskEntry.java
+@@ -0,0 +1,241 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import com.google.re2j.Pattern;
++import java.util.Objects;
++import java.util.Optional;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * One immutable positional criterion with construction-time compiled RE2/J patterns.
++ *
++ * <p>Expressions use the pinned RE2/J dialect, including supported inline
++ * flags, and are evaluated as full-field matches. Backreferences and
++ * look-around are not supported, and Java RegEx fallback is not used. Original
++ * expressions remain the logical data for equality and interchange. Compiled
++ * Patterns are immutable and shared; each match call creates its own mutable
++ * matcher state.</p>
++ */
++public final class TopicMaskEntry {
++    private final String qualifierRegex;
++    private final String valueRegex;
++    private final String versionRegex;
++    private final Pattern qualifierPattern;
++    private final Pattern valuePattern;
++    private final Pattern versionPattern;
++
++    private TopicMaskEntry(
++            String qualifierRegex,
++            String valueRegex,
++            String versionRegex,
++            Pattern qualifierPattern,
++            Pattern valuePattern,
++            Pattern versionPattern) {
++        this.qualifierRegex = qualifierRegex;
++        this.valueRegex = valueRegex;
++        this.versionRegex = versionRegex;
++        this.qualifierPattern = qualifierPattern;
++        this.valuePattern = valuePattern;
++        this.versionPattern = versionPattern;
++    }
++
++    /** Validates original expressions and compiles each present field exactly once. */
++    static TopicMaskEntry create(
++            String qualifierRegex,
++            String valueRegex,
++            String versionRegex,
++            NamingOperation operation,
++            Integer index) {
++        if (qualifierRegex == null || valueRegex == null) {
++            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
++                    operation, qualifierRegex == null ? NamingFieldKind.QUALIFIER_REGEX
++                            : NamingFieldKind.VALUE_REGEX, index);
++        }
++        Pattern qualifierPattern = ExpressionSafeguard.compile(qualifierRegex,
++                NamingFieldKind.QUALIFIER_REGEX, operation, index);
++        Pattern valuePattern = ExpressionSafeguard.compile(valueRegex,
++                NamingFieldKind.VALUE_REGEX, operation, index);
++        Pattern versionPattern = versionRegex == null ? null : ExpressionSafeguard.compile(
++                versionRegex, NamingFieldKind.VERSION_REGEX, operation, index);
++        return new TopicMaskEntry(qualifierRegex, valueRegex, versionRegex,
++                qualifierPattern, valuePattern, versionPattern);
++    }
++
++    /**
++     * Creates a criterion whose version is unconstrained.
++     *
++     * @param qualifierRegex expression applied to the complete qualifier
++     * @param valueRegex expression applied to the complete value
++     * @return an immutable criterion with compiled RE2/J patterns
++     * @throws NamingValidationException when an expression is invalid or exceeds a bound
++     */
++    public static TopicMaskEntry of(String qualifierRegex, String valueRegex) {
++        return create(qualifierRegex, valueRegex, null, NamingOperation.MASK_BUILD, null);
++    }
++
++    /**
++     * Creates a criterion with a present version expression, including empty.
++     *
++     * @param qualifierRegex expression applied to the complete qualifier
++     * @param valueRegex expression applied to the complete value
++     * @param versionRegex expression applied when the candidate version is present
++     * @return an immutable criterion with compiled RE2/J patterns
++     * @throws NamingValidationException when an expression is invalid or exceeds a bound
++     */
++    public static TopicMaskEntry of(
++            String qualifierRegex,
++            String valueRegex,
++            String versionRegex) {
++        return create(qualifierRegex, valueRegex, versionRegex, NamingOperation.MASK_BUILD, null);
++    }
++
++    /**
++     * Creates a criterion matching any qualifier and the supplied value expression.
++     *
++     * @param valueRegex expression applied to the complete value
++     * @return an immutable criterion with a {@code .*} qualifier expression
++     * @throws NamingValidationException when the expression is invalid or exceeds a bound
++     */
++    public static TopicMaskEntry forValue(String valueRegex) {
++        return of(".*", valueRegex);
++    }
++
++    /**
++     * Creates a criterion matching the supplied qualifier expression and any value.
++     *
++     * @param qualifierRegex expression applied to the complete qualifier
++     * @return an immutable criterion with a {@code .*} value expression
++     * @throws NamingValidationException when the expression is invalid or exceeds a bound
++     */
++    public static TopicMaskEntry forQualifier(String qualifierRegex) {
++        return of(qualifierRegex, ".*");
++    }
++
++    /** Creates an immutable criterion whose qualifier and value each match any complete field. */
++    public static TopicMaskEntry any() {
++        return of(".*", ".*");
++    }
++
++    /**
++     * Creates a criterion matching validated literal qualifier and value fields.
++     *
++     * @param qualifier nonempty valid Topic qualifier literal
++     * @param value nonempty valid Topic value literal
++     * @return an immutable criterion whose literals are quoted for RE2/J
++     * @throws NamingValidationException when either literal or its quoted expression is rejected
++     */
++    public static TopicMaskEntry ofLiterals(String qualifier, String value) {
++        validateLiterals(qualifier, value, null, false);
++        return of(Pattern.quote(qualifier), Pattern.quote(value));
++    }
++
++    /**
++     * Creates a criterion matching validated literal fields including a required version.
++     *
++     * @param qualifier nonempty valid Topic qualifier literal
++     * @param value nonempty valid Topic value literal
++     * @param version nonempty valid Topic version literal
++     * @return an immutable criterion whose literals are quoted for RE2/J
++     * @throws NamingValidationException when a literal or its quoted expression is rejected
++     */
++    public static TopicMaskEntry ofLiterals(String qualifier, String value, String version) {
++        validateLiterals(qualifier, value, version, true);
++        return of(Pattern.quote(qualifier), Pattern.quote(value), Pattern.quote(version));
++    }
++
++    /**
++     * Creates a criterion matching a literal value while leaving qualifier unrestricted.
++     *
++     * @param value nonempty valid Topic value literal
++     * @return an immutable criterion with a quoted value expression
++     * @throws NamingValidationException when the literal or quoted expression is rejected
++     */
++    public static TopicMaskEntry forLiteralValue(String value) {
++        TopicFieldRules.validateValue(value, NamingOperation.MASK_BUILD, null);
++        return of(".*", Pattern.quote(value));
++    }
++
++    /**
++     * Creates a criterion matching a literal qualifier while leaving value unrestricted.
++     *
++     * @param qualifier nonempty valid Topic qualifier literal
++     * @return an immutable criterion with a quoted qualifier expression
++     * @throws NamingValidationException when the literal or quoted expression is rejected
++     */
++    public static TopicMaskEntry forLiteralQualifier(String qualifier) {
++        TopicFieldRules.validateQualifierInput(qualifier, false, NamingOperation.MASK_BUILD, null);
++        return of(Pattern.quote(qualifier), ".*");
++    }
++
++    /** Returns the original qualifier expression, not a normalized or compiled rendering. */
++    public String getQualifierRegex() {
++        return qualifierRegex;
++    }
++
++    /** Returns the original value expression, not a normalized or compiled rendering. */
++    public String getValueRegex() {
++        return valueRegex;
++    }
++
++    /** Returns the original optional version expression, preserving present-empty. */
++    public Optional<String> getVersionRegex() {
++        return Optional.ofNullable(versionRegex);
++    }
++
++    /** Performs a full-field qualifier check through the supplied local evaluator seam. */
++    boolean matchesQualifier(String value, FieldEvaluator evaluator) {
++        return evaluator.matches(qualifierPattern, value);
++    }
++
++    /** Performs a full-field value check through the supplied local evaluator seam. */
++    boolean matchesValue(String value, FieldEvaluator evaluator) {
++        return evaluator.matches(valuePattern, value);
++    }
++
++    /** Performs a full-field version check through the supplied local evaluator seam. */
++    boolean matchesVersion(String value, FieldEvaluator evaluator) {
++        return evaluator.matches(versionPattern, value);
++    }
++
++    /** Distinguishes absent version criteria from a present-empty expression. */
++    boolean hasVersionConstraint() {
++        return versionRegex != null;
++    }
++
++    /** Validates source literals before quoting so invalid field data cannot enter an expression. */
++    private static void validateLiterals(
++            String qualifier,
++            String value,
++            String version,
++            boolean requireVersion) {
++        TopicFieldRules.validateTopicCompletedFields(qualifier, value, version,
++                NamingOperation.MASK_BUILD, null);
++        if (requireVersion && (version == null || version.isEmpty())) {
++            throw TopicFieldRules.failure(version == null ? NamingFailureCategory.MISSING_INPUT
++                            : NamingFailureCategory.INVALID_FIELD,
++                    NamingOperation.MASK_BUILD, NamingFieldKind.VERSION, null);
++        }
++    }
++
++    /** Compares original expressions and optional version presence, not compiled Pattern identity. */
++    @Override
++    public boolean equals(Object other) {
++        if (this == other) {
++            return true;
++        }
++        if (!(other instanceof TopicMaskEntry entry)) {
++            return false;
++        }
++        return qualifierRegex.equals(entry.qualifierRegex)
++                && valueRegex.equals(entry.valueRegex)
++                && Objects.equals(versionRegex, entry.versionRegex);
++    }
++
++    /** Hashes the original expressions and optional version presence used by {@link #equals(Object)}. */
++    @Override
++    public int hashCode() {
++        return Objects.hash(qualifierRegex, valueRegex, versionRegex);
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/datatypes/NamingDiagnostic.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/datatypes/NamingDiagnostic.java
+new file mode 100644
+index 00000000..370d77df
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/datatypes/NamingDiagnostic.java
+@@ -0,0 +1,42 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming.datatypes;
++
++import net.fhirfactory.harmonia.model.core.naming.valuesets.DiagnosticSeverity;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.MatchExitCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++
++/**
++ * Safe metadata describing the exit of one synchronous TopicMask comparison.
++ *
++ * <p>The record deliberately has no field for candidate text, Topic paths,
++ * expressions, exception messages, or causes. A {@code null} entry index means
++ * no field had been evaluated when the comparison exited.</p>
++ *
++ * @param severity conditional TRACE or handling-boundary ERROR intent
++ * @param category the stable comparison exit category
++ * @param operation the bounded operation that produced the diagnostic
++ * @param depth the candidate depth, or zero when no candidate exists
++ * @param entryIndex zero-based last checked entry, or {@code null}
++ * @param fieldKind field category last checked, or {@link NamingFieldKind#NONE}
++ */
++public record NamingDiagnostic(
++        DiagnosticSeverity severity,
++        MatchExitCategory category,
++        NamingOperation operation,
++        int depth,
++        Integer entryIndex,
++        NamingFieldKind fieldKind) {
++
++    /** Validates that diagnostic metadata is bounded and internally coherent. */
++    public NamingDiagnostic {
++        if (severity == null || category == null || operation == null || fieldKind == null) {
++            throw new IllegalArgumentException("Diagnostic metadata is required");
++        }
++        if (depth < 0 || (entryIndex != null
++                && (entryIndex < 0 || entryIndex >= NamingLimits.MAX_DEPTH))) {
++            throw new IllegalArgumentException("Diagnostic metadata is out of range");
++        }
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/interchange/NamingXmlCodec.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/interchange/NamingXmlCodec.java
+new file mode 100644
+index 00000000..1bbac94c
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/interchange/NamingXmlCodec.java
+@@ -0,0 +1,466 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming.interchange;
++
++import java.io.IOException;
++import java.io.StringReader;
++import java.nio.ByteBuffer;
++import java.nio.charset.CharacterCodingException;
++import java.nio.charset.CodingErrorAction;
++import java.nio.charset.StandardCharsets;
++import java.util.ArrayList;
++import java.util.Base64;
++import java.util.List;
++import javax.xml.XMLConstants;
++import javax.xml.parsers.DocumentBuilder;
++import javax.xml.parsers.DocumentBuilderFactory;
++import javax.xml.parsers.ParserConfigurationException;
++import net.fhirfactory.harmonia.model.core.naming.NamingValidationException;
++import net.fhirfactory.harmonia.model.core.naming.Topic;
++import net.fhirfactory.harmonia.model.core.naming.TopicEntry;
++import net.fhirfactory.harmonia.model.core.naming.TopicMask;
++import net.fhirfactory.harmonia.model.core.naming.TopicMaskEntry;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
++import org.w3c.dom.Document;
++import org.w3c.dom.Element;
++import org.w3c.dom.NamedNodeMap;
++import org.w3c.dom.Node;
++import org.w3c.dom.NodeList;
++import org.xml.sax.ErrorHandler;
++import org.xml.sax.InputSource;
++import org.xml.sax.SAXException;
++import org.xml.sax.SAXParseException;
++
++/**
++ * Deterministic UTF-8 XML interchange for complete Topics and TopicMasks.
++ *
++ * <p>Topic entries are emitted in path order. Mask kind and containment are
++ * explicit, and regex fields use reversible Base64 so expression whitespace
++ * and line endings are not normalized by XML. Input size is checked before
++ * decoding, DTDs and external entities are disabled, and unknown structure is
++ * rejected.</p>
++ */
++public final class NamingXmlCodec {
++    private static final String XML_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
++    private static final int MAX_ENTRY_FIELDS = 3;
++    private static final int MAX_EXPRESSION_BASE64_CHARS = 4 * ((
++            NamingLimits.MAX_EXPRESSION_CODE_POINTS * 4 + 2) / 3);
++
++    /** Prevents construction; callers use the stateless public conversion operations. */
++    private NamingXmlCodec() {
++        throw new AssertionError("No instances");
++    }
++
++    /**
++     * Encodes a complete Topic as deterministic UTF-8 XML.
++     *
++     * @param topic immutable Topic to encode
++     * @return bounded UTF-8 XML bytes
++     * @throws NamingValidationException when input is absent or output exceeds the record limit
++     */
++    public static byte[] writeTopic(Topic topic) {
++        if (topic == null) {
++            throw failure(NamingFailureCategory.MISSING_INPUT,
++                    NamingOperation.TOPIC_XML_WRITE, NamingFieldKind.NONE, null);
++        }
++        StringBuilder xml = new StringBuilder(XML_HEADER).append("<topic>\n");
++        for (TopicEntry entry : topic.getEntries()) {
++            xml.append("  <entry>\n")
++                    .append("    <qualifier>").append(escapeText(entry.getQualifier()))
++                    .append("</qualifier>\n")
++                    .append("    <value>").append(escapeText(entry.getValue()))
++                    .append("</value>\n");
++            entry.getVersion().ifPresent(version -> xml.append("    <version>")
++                    .append(escapeText(version)).append("</version>\n"));
++            xml.append("  </entry>\n");
++        }
++        xml.append("</topic>");
++        return boundedBytes(xml.toString(), NamingOperation.TOPIC_XML_WRITE);
++    }
++
++    /**
++     * Decodes a complete Topic record, rejecting malformed or unsafe XML.
++     *
++     * @param record bounded UTF-8 record bytes
++     * @return reconstructed immutable Topic
++     * @throws NamingValidationException when bytes, XML structure, or Topic fields are rejected
++     */
++    public static Topic readTopic(byte[] record) {
++        NamingOperation operation = NamingOperation.TOPIC_XML_READ;
++        Document document = parse(record, operation);
++        Element root = document.getDocumentElement();
++        requireName(root, "topic", operation);
++        requireAttributes(root, List.of(), operation);
++        List<Element> entryElements = childElements(root, operation, NamingLimits.MAX_DEPTH);
++        if (entryElements.isEmpty() || entryElements.size() > NamingLimits.MAX_DEPTH) {
++            throw failure(entryElements.isEmpty() ? NamingFailureCategory.MALFORMED_RECORD
++                            : NamingFailureCategory.LIMIT_EXCEEDED,
++                    operation, NamingFieldKind.DEPTH, null);
++        }
++        net.fhirfactory.harmonia.model.core.naming.TopicBuilder builder = Topic.builder();
++        for (int index = 0; index < entryElements.size(); index++) {
++            Element entry = entryElements.get(index);
++            requireName(entry, "entry", operation);
++            requireAttributes(entry, List.of(), operation);
++            List<Element> fields = childElements(entry, operation, MAX_ENTRY_FIELDS);
++            if (fields.size() < 2 || fields.size() > 3) {
++                throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                        operation, NamingFieldKind.NONE, index);
++            }
++            requireName(fields.get(0), "qualifier", operation);
++            requireName(fields.get(1), "value", operation);
++            requireAttributes(fields.get(0), List.of(), operation);
++            requireAttributes(fields.get(1), List.of(), operation);
++            String qualifier = simpleText(fields.get(0), operation, index);
++            String value = simpleText(fields.get(1), operation, index);
++            String version = null;
++            if (fields.size() == 3) {
++                requireName(fields.get(2), "version", operation);
++                requireAttributes(fields.get(2), List.of(), operation);
++                version = simpleText(fields.get(2), operation, index);
++                if (version.isEmpty()) {
++                    throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                            operation, NamingFieldKind.VERSION, index);
++                }
++            }
++            builder.addEntry(qualifier, value, version);
++        }
++        return builder.build();
++    }
++
++    /**
++     * Encodes an ordinary or explicit universal TopicMask as deterministic XML.
++     *
++     * @param mask immutable mask to encode
++     * @return bounded UTF-8 XML bytes
++     * @throws NamingValidationException when input is absent or output exceeds the record limit
++     */
++    public static byte[] writeTopicMask(TopicMask mask) {
++        if (mask == null) {
++            throw failure(NamingFailureCategory.MISSING_INPUT,
++                    NamingOperation.MASK_XML_WRITE, NamingFieldKind.NONE, null);
++        }
++        StringBuilder xml = new StringBuilder(XML_HEADER);
++        if (mask.isUniversal()) {
++            xml.append("<topicMask kind=\"universal\"></topicMask>");
++            return boundedBytes(xml.toString(), NamingOperation.MASK_XML_WRITE);
++        }
++        xml.append("<topicMask kind=\"ordinary\" includeContainedElements=\"")
++                .append(mask.isIncludeContainedElements()).append("\">\n");
++        for (TopicMaskEntry entry : mask.getEntries()) {
++            xml.append("  <entry>\n")
++                    .append("    <qualifierRegex encoding=\"base64\">")
++                    .append(encodeBase64(entry.getQualifierRegex())).append("</qualifierRegex>\n")
++                    .append("    <valueRegex encoding=\"base64\">")
++                    .append(encodeBase64(entry.getValueRegex())).append("</valueRegex>\n");
++            entry.getVersionRegex().ifPresent(version -> xml.append(
++                    "    <versionRegex encoding=\"base64\">")
++                    .append(encodeBase64(version)).append("</versionRegex>\n"));
++            xml.append("  </entry>\n");
++        }
++        xml.append("</topicMask>");
++        return boundedBytes(xml.toString(), NamingOperation.MASK_XML_WRITE);
++    }
++
++    /**
++     * Decodes an ordinary or universal TopicMask and recompiles its expressions.
++     *
++     * @param record bounded UTF-8 record bytes
++     * @return reconstructed immutable mask
++     * @throws NamingValidationException when bytes, XML structure, or expressions are rejected
++     */
++    public static TopicMask readTopicMask(byte[] record) {
++        NamingOperation operation = NamingOperation.MASK_XML_READ;
++        Document document = parse(record, operation);
++        Element root = document.getDocumentElement();
++        requireName(root, "topicMask", operation);
++        String kind = requiredAttribute(root, "kind", operation);
++        if (kind.equals("universal")) {
++            requireAttributes(root, List.of("kind"), operation);
++            if (!childElements(root, operation, 0).isEmpty()) {
++                throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                        operation, NamingFieldKind.XML_RECORD, null);
++            }
++            return TopicMask.all();
++        }
++        if (!kind.equals("ordinary")) {
++            throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                    operation, NamingFieldKind.XML_RECORD, null);
++        }
++        requireAttributes(root, List.of("kind", "includeContainedElements"), operation);
++        boolean include = parseBoolean(requiredAttribute(root, "includeContainedElements", operation), operation);
++        List<Element> entryElements = childElements(root, operation, NamingLimits.MAX_DEPTH);
++        if (entryElements.isEmpty() || entryElements.size() > NamingLimits.MAX_DEPTH) {
++            throw failure(entryElements.isEmpty() ? NamingFailureCategory.MALFORMED_RECORD
++                            : NamingFailureCategory.LIMIT_EXCEEDED,
++                    operation, NamingFieldKind.DEPTH, null);
++        }
++        net.fhirfactory.harmonia.model.core.naming.TopicMaskBuilder builder = TopicMask.builder();
++        for (int index = 0; index < entryElements.size(); index++) {
++            Element entry = entryElements.get(index);
++            requireName(entry, "entry", operation);
++            requireAttributes(entry, List.of(), operation);
++            List<Element> fields = childElements(entry, operation, MAX_ENTRY_FIELDS);
++            if (fields.size() < 2 || fields.size() > 3) {
++                throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                        operation, NamingFieldKind.NONE, index);
++            }
++            requireName(fields.get(0), "qualifierRegex", operation);
++            requireName(fields.get(1), "valueRegex", operation);
++            String qualifier = decodeBase64Element(fields.get(0), operation, index);
++            String value = decodeBase64Element(fields.get(1), operation, index);
++            if (fields.size() == 3) {
++                requireName(fields.get(2), "versionRegex", operation);
++                builder.addRegex(qualifier, value,
++                        decodeBase64Element(fields.get(2), operation, index));
++            } else {
++                builder.addRegex(qualifier, value);
++            }
++        }
++        return builder.includeContainedElements(include).build();
++    }
++
++    /** Builds a hardened parser for a size-checked record and maps parser details to safe failures. */
++    private static Document parse(byte[] record, NamingOperation operation) {
++        String xml = decodeRecord(record, operation);
++        try {
++            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
++            factory.setNamespaceAware(false);
++            factory.setXIncludeAware(false);
++            factory.setExpandEntityReferences(false);
++            factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
++            factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
++            factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
++            factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
++            factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
++            factory.setAttribute("http://www.oracle.com/xml/jaxp/properties/maxElementDepth", "4");
++            factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
++            factory.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
++            DocumentBuilder builder = factory.newDocumentBuilder();
++            builder.setEntityResolver((publicId, systemId) -> {
++                throw new SAXException("External entities are disabled");
++            });
++            builder.setErrorHandler(new StrictErrorHandler());
++            Document document = builder.parse(new InputSource(new StringReader(xml)));
++            validateDocumentChildren(document, operation);
++            return document;
++        } catch (ParserConfigurationException | SAXException | IOException | IllegalArgumentException exception) {
++            throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                    operation, NamingFieldKind.XML_RECORD, null);
++        }
++    }
++
++    /** Decodes strict UTF-8 only after enforcing the complete record byte limit. */
++    private static String decodeRecord(byte[] record, NamingOperation operation) {
++        if (record == null) {
++            throw failure(NamingFailureCategory.MISSING_INPUT,
++                    operation, NamingFieldKind.XML_RECORD, null);
++        }
++        if (record.length > NamingLimits.MAX_XML_RECORD_UTF8_BYTES) {
++            throw failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    operation, NamingFieldKind.XML_RECORD, null);
++        }
++        try {
++            return StandardCharsets.UTF_8.newDecoder()
++                    .onMalformedInput(CodingErrorAction.REPORT)
++                    .onUnmappableCharacter(CodingErrorAction.REPORT)
++                    .decode(ByteBuffer.wrap(record)).toString();
++        } catch (CharacterCodingException exception) {
++            throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                    operation, NamingFieldKind.XML_RECORD, null);
++        }
++    }
++
++    /** Collects only element children and enforces the local structure count before list growth. */
++    private static List<Element> childElements(
++            Element parent,
++            NamingOperation operation,
++            int maximumChildren) {
++        NodeList children = parent.getChildNodes();
++        List<Element> elements = new ArrayList<>();
++        for (int index = 0; index < children.getLength(); index++) {
++            Node child = children.item(index);
++            if (child.getNodeType() == Node.ELEMENT_NODE) {
++                if (elements.size() >= maximumChildren) {
++                    NamingFailureCategory category = maximumChildren == NamingLimits.MAX_DEPTH
++                            ? NamingFailureCategory.LIMIT_EXCEEDED : NamingFailureCategory.MALFORMED_RECORD;
++                    throw failure(category, operation, NamingFieldKind.XML_RECORD, null);
++                }
++                elements.add((Element) child);
++            } else if (child.getNodeType() == Node.TEXT_NODE && child.getNodeValue().isBlank()) {
++                continue;
++            } else {
++                throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                        operation, NamingFieldKind.XML_RECORD, null);
++            }
++        }
++        return elements;
++    }
++
++    /** Reads a text-only field without normalizing its content or accepting nested elements. */
++    private static String simpleText(Element element, NamingOperation operation, int index) {
++        NodeList children = element.getChildNodes();
++        StringBuilder text = new StringBuilder();
++        for (int childIndex = 0; childIndex < children.getLength(); childIndex++) {
++            Node child = children.item(childIndex);
++            if (child.getNodeType() != Node.TEXT_NODE && child.getNodeType() != Node.CDATA_SECTION_NODE) {
++                throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                        operation, NamingFieldKind.XML_RECORD, index);
++            }
++            text.append(child.getNodeValue());
++        }
++        return text.toString();
++    }
++
++    /** Validates canonical Base64 and strict UTF-8 before returning one bounded expression. */
++    private static String decodeBase64Element(Element element, NamingOperation operation, int index) {
++        requireAttributes(element, List.of("encoding"), operation);
++        if (!requiredAttribute(element, "encoding", operation).equals("base64")) {
++            throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                    operation, NamingFieldKind.XML_RECORD, index);
++        }
++        String encoded = simpleText(element, operation, index);
++        if (encoded.length() > MAX_EXPRESSION_BASE64_CHARS) {
++            throw failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    operation, NamingFieldKind.XML_RECORD, index);
++        }
++        try {
++            byte[] decoded = Base64.getDecoder().decode(encoded);
++            if (!Base64.getEncoder().encodeToString(decoded).equals(encoded)) {
++                throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                        operation, NamingFieldKind.XML_RECORD, index);
++            }
++            return StandardCharsets.UTF_8.newDecoder()
++                    .onMalformedInput(CodingErrorAction.REPORT)
++                    .onUnmappableCharacter(CodingErrorAction.REPORT)
++                    .decode(ByteBuffer.wrap(decoded)).toString();
++        } catch (IllegalArgumentException | CharacterCodingException exception) {
++            throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                    operation, NamingFieldKind.XML_RECORD, index);
++        }
++    }
++
++    /** Reads a mandatory attribute without exposing record contents in a failure. */
++    private static String requiredAttribute(Element element, String name, NamingOperation operation) {
++        if (!element.hasAttribute(name)) {
++            throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                    operation, NamingFieldKind.XML_RECORD, null);
++        }
++        return element.getAttribute(name);
++    }
++
++    /** Rejects every attribute not explicitly part of the interchange contract. */
++    private static void requireAttributes(Element element, List<String> allowed, NamingOperation operation) {
++        NamedNodeMap attributes = element.getAttributes();
++        for (int index = 0; index < attributes.getLength(); index++) {
++            Node attribute = attributes.item(index);
++            if (!allowed.contains(attribute.getNodeName())) {
++                throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                        operation, NamingFieldKind.XML_RECORD, null);
++            }
++        }
++    }
++
++    /** Enforces exact unqualified element names rather than accepting aliases or namespaces. */
++    private static void requireName(Element element, String expected, NamingOperation operation) {
++        if (!element.getTagName().equals(expected)) {
++            throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                    operation, NamingFieldKind.XML_RECORD, null);
++        }
++    }
++
++    /** Accepts only canonical lowercase boolean literals for the containment flag. */
++    private static boolean parseBoolean(String value, NamingOperation operation) {
++        if (value.equals("true")) {
++            return true;
++        }
++        if (value.equals("false")) {
++            return false;
++        }
++        throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                operation, NamingFieldKind.XML_RECORD, null);
++    }
++
++    /** Requires exactly one document root and rejects comments or other document-level content. */
++    private static void validateDocumentChildren(Document document, NamingOperation operation) {
++        NodeList children = document.getChildNodes();
++        int roots = 0;
++        for (int index = 0; index < children.getLength(); index++) {
++            Node child = children.item(index);
++            if (child.getNodeType() == Node.ELEMENT_NODE) {
++                roots++;
++            } else if (child.getNodeType() == Node.TEXT_NODE && child.getNodeValue().isBlank()) {
++                continue;
++            } else {
++                throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                        operation, NamingFieldKind.XML_RECORD, null);
++            }
++        }
++        if (roots != 1) {
++            throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                    operation, NamingFieldKind.XML_RECORD, null);
++        }
++    }
++
++    /** Encodes deterministic UTF-8 output and checks the complete serialized record size. */
++    private static byte[] boundedBytes(String xml, NamingOperation operation) {
++        byte[] bytes = xml.getBytes(StandardCharsets.UTF_8);
++        if (bytes.length > NamingLimits.MAX_XML_RECORD_UTF8_BYTES) {
++            throw failure(NamingFailureCategory.LIMIT_EXCEEDED,
++                    operation, NamingFieldKind.XML_RECORD, null);
++        }
++        return bytes;
++    }
++
++    /** Encodes expression bytes so XML parsing cannot normalize regex characters. */
++    private static String encodeBase64(String expression) {
++        return Base64.getEncoder().encodeToString(expression.getBytes(StandardCharsets.UTF_8));
++    }
++
++    /** Escapes Topic field text for XML without changing the reconstructed value. */
++    private static String escapeText(String text) {
++        StringBuilder escaped = new StringBuilder(text.length());
++        for (int index = 0; index < text.length(); index++) {
++            char current = text.charAt(index);
++            switch (current) {
++                case '&' -> escaped.append("&amp;");
++                case '<' -> escaped.append("&lt;");
++                case '>' -> escaped.append("&gt;");
++                default -> escaped.append(current);
++            }
++        }
++        return escaped.toString();
++    }
++
++    /** Creates a safe record-level validation result with no parser cause or payload. */
++    private static NamingValidationException failure(
++            NamingFailureCategory category,
++            NamingOperation operation,
++            NamingFieldKind field,
++            Integer index) {
++        return NamingValidationException.create(category, operation, field, index);
++    }
++
++    /** Prevents XML parser diagnostics from echoing untrusted record text. */
++    private static final class StrictErrorHandler implements ErrorHandler {
++        /** Rejects warnings to keep accepted XML structure unambiguous. */
++        @Override
++        public void warning(SAXParseException exception) throws SAXException {
++            throw new SAXException("Malformed XML");
++        }
++
++        /** Converts recoverable parser errors to a fixed, payload-free failure. */
++        @Override
++        public void error(SAXParseException exception) throws SAXException {
++            throw new SAXException("Malformed XML");
++        }
++
++        /** Stops parsing on fatal XML syntax or security errors. */
++        @Override
++        public void fatalError(SAXParseException exception) throws SAXException {
++            throw new SAXException("Malformed XML");
++        }
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/DiagnosticSeverity.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/DiagnosticSeverity.java
+new file mode 100644
+index 00000000..875670b6
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/DiagnosticSeverity.java
+@@ -0,0 +1,10 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming.valuesets;
++
++/** Safe handling-boundary intent for a local Naming comparison diagnostic. */
++public enum DiagnosticSeverity {
++    /** A normal comparison outcome eligible for conditional tracing. */
++    TRACE,
++    /** An unexpected evaluation error requiring error handling. */
++    ERROR
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/MatchExitCategory.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/MatchExitCategory.java
+new file mode 100644
+index 00000000..1fa0af0c
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/MatchExitCategory.java
+@@ -0,0 +1,24 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming.valuesets;
++
++/** Describes the point at which one TopicMask comparison completed. */
++public enum MatchExitCategory {
++    /** The candidate was null. */
++    NULL_CANDIDATE,
++    /** Candidate depth did not satisfy the mask's depth rule. */
++    DEPTH_MISMATCH,
++    /** The qualifier expression failed at the recorded position. */
++    QUALIFIER_MISMATCH,
++    /** The value expression failed at the recorded position. */
++    VALUE_MISMATCH,
++    /** A constrained version was absent. */
++    REQUIRED_VERSION_ABSENT,
++    /** A present candidate version failed its expression. */
++    VERSION_MISMATCH,
++    /** Every required field matched. */
++    MATCH,
++    /** An unexpected expression evaluation failure was contained. */
++    EVALUATION_ERROR,
++    /** The explicit universal mask matched a non-null candidate. */
++    UNIVERSAL_MATCH
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingFailureCategory.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingFailureCategory.java
+new file mode 100644
+index 00000000..6bd39c3b
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingFailureCategory.java
+@@ -0,0 +1,20 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming.valuesets;
++
++/** Stable, payload-free categories for rejected Naming operations. */
++public enum NamingFailureCategory {
++    /** Required input was absent. */
++    MISSING_INPUT,
++    /** A supplied field violated its accepted value rules. */
++    INVALID_FIELD,
++    /** Canonical text was structurally malformed. */
++    MALFORMED_TEXT,
++    /** An interchange record was malformed or ambiguous. */
++    MALFORMED_RECORD,
++    /** A regular expression is unsupported or invalid for RE2/J. */
++    EXPRESSION_REJECTED,
++    /** An approved size or complexity limit was exceeded. */
++    LIMIT_EXCEEDED,
++    /** An operation conflicts with the builder's established mode. */
++    INVALID_STATE
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingFieldKind.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingFieldKind.java
+new file mode 100644
+index 00000000..b4d9da76
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingFieldKind.java
+@@ -0,0 +1,26 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming.valuesets;
++
++/** Identifies a Naming field without retaining or exposing its value. */
++public enum NamingFieldKind {
++    /** Topic qualifier field. */
++    QUALIFIER,
++    /** Topic value field. */
++    VALUE,
++    /** Topic version field. */
++    VERSION,
++    /** TopicMask qualifier expression. */
++    QUALIFIER_REGEX,
++    /** TopicMask value expression. */
++    VALUE_REGEX,
++    /** TopicMask version expression. */
++    VERSION_REGEX,
++    /** Canonical text as a whole. */
++    CANONICAL_TEXT,
++    /** XML record as a whole. */
++    XML_RECORD,
++    /** Entry depth or index. */
++    DEPTH,
++    /** No particular field applies. */
++    NONE
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingLimits.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingLimits.java
+new file mode 100644
+index 00000000..34dc7253
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingLimits.java
+@@ -0,0 +1,44 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming.valuesets;
++
++/**
++ * Defines the release-approved resource limits for the standalone Naming model.
++ *
++ * <p>These bounds protect construction, parsing, matching, and interchange from
++ * inputs whose cost is disproportionate to their logical content. The limits
++ * are deliberately part of the shared Naming contract rather than hidden in a
++ * parser or a particular serialization adapter.</p>
++ */
++public final class NamingLimits {
++
++    /** Maximum number of entries in a Topic or ordinary TopicMask. */
++    public static final int MAX_DEPTH = 16;
++    /** Maximum decoded qualifier length in Unicode code points. */
++    public static final int MAX_QUALIFIER_CODE_POINTS = 64;
++    /** Maximum decoded value length in Unicode code points. */
++    public static final int MAX_VALUE_CODE_POINTS = 256;
++    /** Maximum decoded version length in Unicode code points. */
++    public static final int MAX_VERSION_CODE_POINTS = 64;
++    /** Maximum length of one decoded regular-expression field. */
++    public static final int MAX_EXPRESSION_CODE_POINTS = 512;
++    /** Maximum UTF-8 size of either Topic canonical representation. */
++    public static final int MAX_TOPIC_CANONICAL_UTF8_BYTES = 32 * 1024;
++    /** Maximum UTF-8 size of an ordinary mask canonical expression. */
++    public static final int MAX_MASK_CANONICAL_UTF8_BYTES = 128 * 1024;
++    /** Maximum UTF-8 size of one complete XML record. */
++    public static final int MAX_XML_RECORD_UTF8_BYTES = 256 * 1024;
++    /** Maximum active nested regular-expression group depth. */
++    public static final int MAX_REGEX_GROUP_DEPTH = 16;
++    /** Maximum explicit numeric repetition bound in a regular expression. */
++    public static final int MAX_REGEX_REPEAT_BOUND = 256;
++    /** Maximum conservative expansion estimate for a regular expression. */
++    public static final int MAX_REGEX_EXPANSION_UNITS = 4_096;
++    /** Maximum compiled RE2/J program instruction count. */
++    public static final int MAX_REGEX_PROGRAM_SIZE = 1_024;
++    /** Maximum full-field checks in one ordinary mask evaluation. */
++    public static final int MAX_FIELD_EVALUATIONS = 48;
++
++    private NamingLimits() {
++        throw new AssertionError("No instances");
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingOperation.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingOperation.java
+new file mode 100644
+index 00000000..a706653e
+--- /dev/null
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/valuesets/NamingOperation.java
+@@ -0,0 +1,24 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming.valuesets;
++
++/** Identifies the bounded Naming operation associated with safe diagnostics. */
++public enum NamingOperation {
++    /** Topic construction through a builder. */
++    TOPIC_BUILD,
++    /** Strict Topic canonical parsing. */
++    TOPIC_PARSE,
++    /** TopicMask construction through a builder. */
++    MASK_BUILD,
++    /** Strict TopicMask canonical parsing. */
++    MASK_PARSE,
++    /** Topic XML encoding. */
++    TOPIC_XML_WRITE,
++    /** Topic XML decoding. */
++    TOPIC_XML_READ,
++    /** TopicMask XML encoding. */
++    MASK_XML_WRITE,
++    /** TopicMask XML decoding. */
++    MASK_XML_READ,
++    /** A TopicMask comparison. */
++    MASK_MATCH
++}
+\ No newline at end of file
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/ExpressionSafeguardTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/ExpressionSafeguardTest.java
+new file mode 100644
+index 00000000..f4dcd406
+--- /dev/null
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/ExpressionSafeguardTest.java
+@@ -0,0 +1,55 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertThrows;
++import static org.junit.jupiter.api.Assertions.assertTrue;
++
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import org.junit.jupiter.api.Test;
++
++/** Covers the qualified lexical guards and bounded RE2/J expression contract. */
++class ExpressionSafeguardTest {
++
++    @Test
++    void activeGroupDepthAndCountedBoundsAreGuarded() {
++        String sixteenGroups = "(".repeat(NamingLimits.MAX_REGEX_GROUP_DEPTH)
++                + "a" + ")".repeat(NamingLimits.MAX_REGEX_GROUP_DEPTH);
++        assertEquals(sixteenGroups, TopicMaskEntry.of(sixteenGroups, ".*").getQualifierRegex());
++
++        String seventeenGroups = "(".repeat(NamingLimits.MAX_REGEX_GROUP_DEPTH + 1)
++                + "a" + ")".repeat(NamingLimits.MAX_REGEX_GROUP_DEPTH + 1);
++        assertLimit(() -> TopicMaskEntry.of(seventeenGroups, ".*"));
++        assertEquals("a{256}", TopicMaskEntry.of("a{256}", ".*").getQualifierRegex());
++        assertLimit(() -> TopicMaskEntry.of("a{257}", ".*"));
++        assertLimit(() -> TopicMaskEntry.of("a{256}b{256}", ".*"));
++        assertLimit(() -> TopicMaskEntry.of("(abcd|efgh){256}", ".*"));
++    }
++
++    @Test
++    void escapedQuotedAndCharacterClassTextIsNotTreatedAsActiveSyntax() {
++        assertEquals("[{}]", TopicMaskEntry.of("[{}]", ".*").getQualifierRegex());
++        assertEquals("\\Q(a{999})\\E",
++                TopicMaskEntry.of("\\Q(a{999})\\E", ".*").getQualifierRegex());
++        assertEquals("\\(a\\)", TopicMaskEntry.of("\\(a\\)", ".*").getQualifierRegex());
++    }
++
++    @Test
++    void unsupportedEngineSyntaxAndOverlongExpressionsFailSafely() {
++        NamingValidationException unsupported = assertThrows(NamingValidationException.class,
++                () -> TopicMaskEntry.of("(?=A)A", ".*"));
++        assertEquals(NamingFailureCategory.EXPRESSION_REJECTED, unsupported.getCategory());
++        assertTrue(unsupported.getCause() == null);
++        assertTrue(!unsupported.getMessage().contains("(?=A)"));
++        assertLimit(() -> TopicMaskEntry.of("a".repeat(NamingLimits.MAX_EXPRESSION_CODE_POINTS + 1), ".*"));
++        assertEquals(NamingLimits.MAX_EXPRESSION_CODE_POINTS,
++                TopicMaskEntry.of("a".repeat(NamingLimits.MAX_EXPRESSION_CODE_POINTS), ".*")
++                        .getQualifierRegex().length());
++    }
++
++    private static void assertLimit(Runnable operation) {
++        NamingValidationException exception = assertThrows(NamingValidationException.class, operation::run);
++        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, exception.getCategory());
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingStructureTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingStructureTest.java
+new file mode 100644
+index 00000000..cfff83c3
+--- /dev/null
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingStructureTest.java
+@@ -0,0 +1,35 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import static org.junit.jupiter.api.Assertions.assertFalse;
++import static org.junit.jupiter.api.Assertions.assertTrue;
++
++import java.io.IOException;
++import java.nio.file.Files;
++import java.nio.file.Path;
++import java.util.stream.Stream;
++import org.junit.jupiter.api.Test;
++
++/** Enforces the bounded source-file size and standalone Naming ownership boundary. */
++class NamingStructureTest {
++    private static final Path SOURCE_ROOT = Path.of(
++            "src/main/java/net/fhirfactory/harmonia/model/core/naming");
++
++    @Test
++    void productionFilesStayBoundedAndDoNotDependOnHigherGovernanceLayers() throws IOException {
++        try (Stream<Path> sources = Files.walk(SOURCE_ROOT)) {
++            for (Path source : sources.filter(path -> path.toString().endsWith(".java")).toList()) {
++                assertTrue(Files.readAllLines(source).size() <= 500, source.toString());
++                String contents = Files.readString(source);
++                assertFalse(contents.contains("net.fhirfactory.harmonia.themis"), source.toString());
++                assertFalse(contents.contains("org.apache.logging"), source.toString());
++                assertFalse(contents.contains("java.util.regex"), source.toString());
++            }
++        }
++        String pom = Files.readString(Path.of("pom.xml"));
++        assertTrue(pom.contains("<artifactId>re2j</artifactId>"));
++        assertTrue(pom.contains("<version>1.8</version>"));
++        assertTrue(pom.contains("<artifactId>junit-jupiter</artifactId>"));
++        assertTrue(pom.contains("<version>5.10.2</version>"));
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodecTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodecTest.java
+new file mode 100644
+index 00000000..e9c086ca
+--- /dev/null
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodecTest.java
+@@ -0,0 +1,114 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import static org.junit.jupiter.api.Assertions.assertArrayEquals;
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertThrows;
++import static org.junit.jupiter.api.Assertions.assertTrue;
++
++import java.io.IOException;
++import java.io.InputStream;
++import java.nio.charset.StandardCharsets;
++import java.util.Arrays;
++import net.fhirfactory.harmonia.model.core.naming.interchange.NamingXmlCodec;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import org.junit.jupiter.api.Test;
++
++/** Checks deterministic XML fixtures, lossless masks, and fail-closed parsing. */
++class NamingXmlCodecTest {
++
++    @Test
++    void topicFixtureRoundTripsOrderedVersionsAndDeterministicBytes() throws IOException {
++        byte[] fixture = resource("topic.xml");
++        Topic topic = NamingXmlCodec.readTopic(fixture);
++        Topic expected = Topic.builder().addEntry("System", "Harmonia")
++                .addEntry("Component", "Petasos.Receiver", "2.4").build();
++
++        assertEquals(expected.getCanonicalNameWithVersion(), topic.getCanonicalNameWithVersion());
++        assertArrayEquals(fixture, NamingXmlCodec.writeTopic(topic));
++    }
++
++    @Test
++    void maskFixturePreservesPresentEmptyVersionExpression() throws IOException {
++        byte[] fixture = resource("mask-present-empty-version.xml");
++        TopicMask mask = NamingXmlCodec.readTopicMask(fixture);
++        TopicMask expected = TopicMask.builder().addRegex("Role", ".*", "")
++                .includeContainedElements(true).build();
++
++        assertEquals(expected, mask);
++        assertArrayEquals(fixture, NamingXmlCodec.writeTopicMask(mask));
++        assertArrayEquals(NamingXmlCodec.writeTopicMask(TopicMask.all()),
++                NamingXmlCodec.writeTopicMask(NamingXmlCodec.readTopicMask(
++                        NamingXmlCodec.writeTopicMask(TopicMask.all()))));
++    }
++
++    @Test
++    void regexEncodingPreservesLineEndingsAndLogicalKind() {
++        TopicMask mask = TopicMask.builder().addRegex("Role\r\n", "(?s:.*)").build();
++        byte[] encoded = NamingXmlCodec.writeTopicMask(mask);
++        TopicMask decoded = NamingXmlCodec.readTopicMask(encoded);
++
++        assertEquals(mask, decoded);
++        assertTrue(new String(encoded, StandardCharsets.UTF_8).contains("encoding=\"base64\""));
++    }
++
++    @Test
++    void dtdUnknownStructureAndOversizedRecordsAreRejected() {
++        byte[] externalEntity = ("<!DOCTYPE topic [<!ENTITY xxe SYSTEM \"file:///etc/passwd\">]>"
++                + "<topic><entry><qualifier>System</qualifier><value>&xxe;</value></entry></topic>")
++                .getBytes(StandardCharsets.UTF_8);
++        byte[] unknownElement = "<topic><entry><qualifier>System</qualifier><value>x</value><extra/></entry></topic>"
++                .getBytes(StandardCharsets.UTF_8);
++        byte[] deeplyNested = ("<topic><entry><qualifier><a><b><c><d><e>System</e></d></c></b></a></qualifier>"
++                + "<value>x</value></entry></topic>").getBytes(StandardCharsets.UTF_8);
++        byte[] oversized = new byte[NamingLimits.MAX_XML_RECORD_UTF8_BYTES + 1];
++
++        NamingValidationException dtd = assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopic(externalEntity));
++        assertEquals(NamingFailureCategory.MALFORMED_RECORD, dtd.getCategory());
++        assertThrows(NamingValidationException.class, () -> NamingXmlCodec.readTopic(unknownElement));
++        assertThrows(NamingValidationException.class, () -> NamingXmlCodec.readTopic(deeplyNested));
++        NamingValidationException tooLarge = assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopic(oversized));
++        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, tooLarge.getCategory());
++    }
++
++    @Test
++    void xmlRecordAtTheByteLimitIsAccepted() throws IOException {
++        byte[] fixture = resource("topic.xml");
++        byte[] exactLimit = Arrays.copyOf(fixture, NamingLimits.MAX_XML_RECORD_UTF8_BYTES);
++        Arrays.fill(exactLimit, fixture.length, exactLimit.length, (byte) ' ');
++
++        assertEquals(2, NamingXmlCodec.readTopic(exactLimit).getDepth());
++    }
++
++    @Test
++    void ambiguousUniversalAndMalformedBase64PayloadsAreRejected() {
++        byte[] universalWithData = "<topicMask kind=\"universal\"><entry/></topicMask>"
++                .getBytes(StandardCharsets.UTF_8);
++        byte[] invalidBase64 = ("<topicMask kind=\"ordinary\" includeContainedElements=\"false\">"
++                + "<entry><qualifierRegex encoding=\"base64\">@@</qualifierRegex>"
++                + "<valueRegex encoding=\"base64\">Lio=</valueRegex></entry></topicMask>")
++                .getBytes(StandardCharsets.UTF_8);
++        byte[] emptyTopicVersion = ("<topic><entry><qualifier>Role</qualifier><value>LAB</value>"
++                + "<version></version></entry></topic>").getBytes(StandardCharsets.UTF_8);
++
++        assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopicMask(universalWithData));
++        assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopicMask(invalidBase64));
++        assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopic(emptyTopicVersion));
++    }
++
++    private byte[] resource(String name) throws IOException {
++        String path = "/net/fhirfactory/harmonia/model/core/naming/interchange/" + name;
++        try (InputStream input = getClass().getResourceAsStream(path)) {
++            if (input == null) {
++                throw new IOException("Missing Naming fixture");
++            }
++            return input.readAllBytes();
++        }
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilderTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilderTest.java
+new file mode 100644
+index 00000000..23ff2662
+--- /dev/null
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicBuilderTest.java
+@@ -0,0 +1,118 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertThrows;
++import static org.junit.jupiter.api.Assertions.assertTrue;
++
++import java.util.ArrayList;
++import java.util.List;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import org.junit.jupiter.api.Test;
++
++/** Exercises TopicBuilder modes, recoverability, snapshots, and field limits. */
++class TopicBuilderTest {
++
++    @Test
++    void failedFirstAddDoesNotSelectModeAndIndexedGapsCanBeRepaired() {
++        TopicBuilder builder = Topic.builder();
++        assertThrows(NamingValidationException.class, () -> builder.addEntry("System", ""));
++
++        builder.addEntry(2, "Layer", "leaf");
++        assertThrows(NamingValidationException.class, builder::build);
++        builder.addEntry(0, "System", "Harmonia");
++        builder.addEntry(1, "", "Component");
++
++        Topic built = builder.build();
++        assertEquals("System=Harmonia.N1=Component.Layer=leaf", built.getCanonicalName());
++    }
++
++    @Test
++    void invalidReplacementAndMixedModeLeaveBuilderAndPublishedTopicUnchanged() {
++        TopicBuilder builder = Topic.builder();
++        builder.addEntry(0, "System", "Harmonia");
++        Topic snapshot = builder.build();
++        assertThrows(NamingValidationException.class, () -> builder.addEntry(0, "System", ""));
++        assertThrows(NamingValidationException.class, () -> builder.addEntry("Component", "Calliope"));
++
++        assertEquals("System=Harmonia", snapshot.getCanonicalName());
++        assertEquals(snapshot, builder.build());
++        assertThrows(UnsupportedOperationException.class,
++                () -> snapshot.getEntries().add(snapshot.getEntries().get(0)));
++    }
++
++    @Test
++    void fieldsAreValidatedWithoutTrimmingAndCodePointLimitsAreApplied() {
++        NamingValidationException blank = assertThrows(NamingValidationException.class,
++                () -> Topic.builder().addEntry("System", "   "));
++        assertEquals(NamingFailureCategory.INVALID_FIELD, blank.getCategory());
++        assertTrue(blank.getMessage().contains("VALUE"));
++        assertThrows(NamingValidationException.class, () -> Topic.builder().addEntry(" System", "x"));
++        assertThrows(NamingValidationException.class, () -> Topic.builder().addEntry("System", "x\u00a0y"));
++
++        String exactValue = "😀".repeat(NamingLimits.MAX_VALUE_CODE_POINTS);
++        assertEquals(exactValue, Topic.builder().addEntry("Symbol", exactValue).build()
++                .getEntries().get(0).getValue());
++        NamingValidationException tooLong = assertThrows(NamingValidationException.class,
++                () -> Topic.builder().addEntry("Symbol", exactValue + "😀"));
++        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, tooLong.getCategory());
++        assertThrows(NamingValidationException.class,
++                () -> Topic.builder().addEntry("System", "bad\uD800"));
++        for (String rejected : new String[]{"a\u0000b", "a\u200Db", "a\u2028b", "a\uE000b", "a\u0378b"}) {
++            assertThrows(NamingValidationException.class,
++                    () -> Topic.builder().addEntry("System", rejected), rejected);
++        }
++    }
++
++    @Test
++    void qualifierAndVersionLimitsAndPrintableAsciiRulesAreEnforced() {
++        String qualifier = "Q".repeat(NamingLimits.MAX_QUALIFIER_CODE_POINTS);
++        String version = "V".repeat(NamingLimits.MAX_VERSION_CODE_POINTS);
++        Topic accepted = Topic.builder().addEntry(qualifier, "Value", version).build();
++        assertEquals(qualifier, accepted.getEntries().get(0).getQualifier());
++        assertEquals(version, accepted.getEntries().get(0).getVersion().orElseThrow());
++
++        assertThrows(NamingValidationException.class,
++                () -> Topic.builder().addEntry(qualifier + "Q", "Value"));
++        assertThrows(NamingValidationException.class,
++                () -> Topic.builder().addEntry("Role", "Value", version + "V"));
++        assertThrows(NamingValidationException.class, () -> Topic.builder().addEntry("Role\u007f", "Value"));
++        assertThrows(NamingValidationException.class, () -> Topic.builder().addEntry("Role", "Value", "V\u00e9"));
++    }
++
++    @Test
++    void indexedAndSequentialDepthAreBoundedBeforeStorageGrowth() {
++        TopicBuilder indexed = Topic.builder();
++        NamingValidationException sparse = assertThrows(NamingValidationException.class,
++                () -> indexed.addEntry(NamingLimits.MAX_DEPTH, "System", "Harmonia"));
++        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, sparse.getCategory());
++        for (int index = 0; index < NamingLimits.MAX_DEPTH; index++) {
++            indexed.addEntry(index, "N" + index, "value" + index);
++        }
++        assertEquals(NamingLimits.MAX_DEPTH, indexed.build().getDepth());
++        assertThrows(NamingValidationException.class,
++                () -> indexed.addEntry(NamingLimits.MAX_DEPTH, "N", "overflow"));
++
++        TopicBuilder sequential = Topic.builder();
++        for (int index = 0; index < NamingLimits.MAX_DEPTH; index++) {
++            sequential.addEntry("N" + index, "value" + index);
++        }
++        assertThrows(NamingValidationException.class,
++                () -> sequential.addEntry("overflow", "too many"));
++    }
++
++    @Test
++    void successfulBuildsAreIndependentReusableSnapshots() {
++        TopicBuilder builder = Topic.builder().addEntry("System", "Harmonia");
++        Topic first = builder.build();
++        builder.addEntry("Component", "Calliope");
++        Topic second = builder.build();
++        List<String> firstValues = new ArrayList<>();
++        first.getEntries().forEach(entry -> firstValues.add(entry.getValue()));
++
++        assertEquals(List.of("Harmonia"), firstValues);
++        assertEquals(1, first.getDepth());
++        assertEquals(2, second.getDepth());
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java
+new file mode 100644
+index 00000000..514b0bfe
+--- /dev/null
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java
+@@ -0,0 +1,65 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertThrows;
++
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import org.junit.jupiter.api.Test;
++
++/** Validates the strict Topic canonical grammar and escaped field reconstruction. */
++class TopicCanonicalParserTest {
++
++    @Test
++    void canonicalParserRejectsMissingFieldsMalformedSeparatorsAndUnsupportedEscapes() {
++        for (String text : new String[]{"", "=value", "N1=", "System=value.", ".System=value",
++                "System=value=extra", "System:value=Harmonia", "System=bad\\q"}) {
++            assertThrows(NamingValidationException.class, () -> Topic.fromCanonicalName(text), text);
++        }
++        NamingValidationException emptyVersion = assertThrows(NamingValidationException.class,
++                () -> Topic.fromCanonicalNameWithVersion("Role:=LAB"));
++        assertEquals(NamingFailureCategory.MALFORMED_TEXT, emptyVersion.getCategory());
++        assertThrows(NamingValidationException.class,
++                () -> Topic.fromCanonicalNameWithVersion("Role:2=LAB:extra"));
++    }
++
++    @Test
++    void allStructuralCharactersRoundTripAcrossCanonicalAndDisplayProjections() {
++        String originalValue = "A.B=C:D\\E";
++        Topic topic = Topic.builder().addEntry("Role:Name", originalValue, "2.4\\x").build();
++
++        Topic parsed = Topic.fromCanonicalNameWithVersion(topic.getCanonicalNameWithVersion());
++
++        assertEquals(originalValue, parsed.getEntries().get(0).getValue());
++        assertEquals("Role:Name", parsed.getEntries().get(0).getQualifier());
++        assertEquals("2.4\\x", parsed.getEntries().get(0).getVersion().orElseThrow());
++        assertEquals(topic.getCanonicalNameWithVersion(), parsed.getCanonicalNameWithVersion());
++        assertEquals("Role\\:Name=A\\.B\\=C\\:D\\\\E", topic.getCanonicalName());
++        assertEquals(originalValue, topic.getDisplayName());
++    }
++
++    @Test
++    void canonicalByteLimitsAreCheckedBeforeStructuralParsing() {
++        NamingValidationException topicLimit = assertThrows(NamingValidationException.class,
++                () -> Topic.fromCanonicalName("x".repeat(NamingLimits.MAX_TOPIC_CANONICAL_UTF8_BYTES + 1)));
++        NamingValidationException maskLimit = assertThrows(NamingValidationException.class,
++                () -> TopicMask.fromCanonicalExpression("x".repeat(
++                        NamingLimits.MAX_MASK_CANONICAL_UTF8_BYTES + 1), false));
++
++        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, topicLimit.getCategory());
++        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, maskLimit.getCategory());
++        NamingValidationException topicAtLimit = assertThrows(NamingValidationException.class,
++                () -> Topic.fromCanonicalName("x".repeat(NamingLimits.MAX_TOPIC_CANONICAL_UTF8_BYTES)));
++        NamingValidationException maskAtLimit = assertThrows(NamingValidationException.class,
++                () -> TopicMask.fromCanonicalExpression(
++                        "x".repeat(NamingLimits.MAX_MASK_CANONICAL_UTF8_BYTES), false));
++        assertEquals(NamingFailureCategory.MALFORMED_TEXT, topicAtLimit.getCategory());
++        assertEquals(NamingFailureCategory.MALFORMED_TEXT, maskAtLimit.getCategory());
++        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED,
++                assertThrows(NamingValidationException.class,
++                        () -> Topic.fromCanonicalName("Q=x.".repeat(NamingLimits.MAX_DEPTH) + "Q=x"))
++                        .getCategory());
++        assertThrows(NamingValidationException.class, () -> TopicMask.fromCanonicalExpression("@all", false));
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskTest.java
+new file mode 100644
+index 00000000..73dd8279
+--- /dev/null
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicMaskTest.java
+@@ -0,0 +1,258 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertFalse;
++import static org.junit.jupiter.api.Assertions.assertNotEquals;
++import static org.junit.jupiter.api.Assertions.assertThrows;
++import static org.junit.jupiter.api.Assertions.assertTrue;
++
++import java.util.ArrayList;
++import java.util.List;
++import java.util.concurrent.Callable;
++import java.util.concurrent.ExecutorService;
++import java.util.concurrent.Executors;
++import java.util.concurrent.Future;
++import java.util.concurrent.TimeUnit;
++import java.util.concurrent.atomic.AtomicInteger;
++import net.fhirfactory.harmonia.model.core.naming.datatypes.NamingDiagnostic;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.DiagnosticSeverity;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.MatchExitCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingLimits;
++import org.junit.jupiter.api.Test;
++
++/** Verifies TopicMask kinds, structural expressions, evaluation, and local diagnostics. */
++class TopicMaskTest {
++
++    @Test
++    void ordinaryMaskUsesPositionFullFieldAndTrailingContainmentRules() {
++        Topic topic = Topic.builder().addEntry("System", "Harmonia")
++                .addEntry("Component", "Petasos.Receiver")
++                .addEntry("Action", "Delivered").build();
++        TopicMask exact = TopicMask.builder().addRegex("System", "Harmonia")
++                .addRegex("Component", "Petasos\\.Receiver").build();
++        TopicMask inclusive = TopicMask.builder().addRegex("System", "Harmonia")
++                .addRegex("Component", "Petasos\\.Receiver")
++                .includeContainedElements(true).build();
++
++        assertFalse(exact.matches(topic));
++        assertTrue(inclusive.matches(topic));
++        assertFalse(TopicMask.builder().addRegex("System", "Harmonia")
++                .addRegex("Component", "Receiver").includeContainedElements(true).build().matches(topic));
++        assertTrue(TopicMask.builder().addRegex("(?i:system)", "Harmonia")
++                .includeContainedElements(true).build().matches(topic));
++        assertFalse(TopicMask.builder().addRegex("system", "Harmonia")
++                .includeContainedElements(true).build().matches(topic));
++        assertFalse(exact.matches(null));
++        assertThrows(NamingValidationException.class, () -> TopicMask.builder().build());
++    }
++
++    @Test
++    void versionConstraintDistinguishesAbsentPresentEmptyAndWildcard() {
++        Topic absent = Topic.builder().addEntry("Role", "LAB").build();
++        Topic present = Topic.builder().addEntry("Role", "LAB", "v1").build();
++        TopicMask unconstrained = TopicMask.builder().add(TopicMaskEntry.of("Role", "LAB")).build();
++        TopicMask presentEmpty = TopicMask.builder().addRegex("Role", "LAB", "").build();
++        TopicMask wildcard = TopicMask.builder().addRegex("Role", "LAB", ".*").build();
++        List<NamingDiagnostic> events = new ArrayList<>();
++
++        assertEquals(absent, present);
++        assertTrue(unconstrained.matches(absent));
++        assertTrue(unconstrained.matches(present));
++        assertFalse(presentEmpty.matches(absent, events::add));
++        assertEquals(MatchExitCategory.REQUIRED_VERSION_ABSENT, events.get(0).category());
++        events.clear();
++        assertFalse(presentEmpty.matches(present, events::add));
++        assertEquals(MatchExitCategory.VERSION_MISMATCH, events.get(0).category());
++        assertTrue(wildcard.matches(present));
++        assertFalse(wildcard.matches(absent));
++        assertTrue(TopicMask.builder().addRegex("Role", "LAB", "v1").build().matches(present));
++        assertFalse(TopicMask.builder().addRegex("Role", "LAB", "v1").build().matches(absent));
++        assertNotEquals(TopicMaskEntry.of("Role", "LAB"), TopicMaskEntry.of("Role", "LAB", ""));
++    }
++
++    @Test
++    void canonicalMaskRoundTripPreservesOuterEscapesAndEmptyExpressions() {
++        TopicMask original = TopicMask.builder()
++                .addRegex("(?i:Zone)", "A.B", "2\\.4")
++                .addRegex("", "")
++                .includeContainedElements(true)
++                .build();
++
++        TopicMask decoded = TopicMask.fromCanonicalExpression(
++                original.getCanonicalExpression(), original.isIncludeContainedElements());
++        TopicMask presentEmptyVersion = TopicMask.fromCanonicalExpression("Role:=LAB", false);
++        TopicMask emptyExpressions = TopicMask.fromCanonicalExpression("=", false);
++
++        assertEquals(original, decoded);
++        assertEquals(original.hashCode(), decoded.hashCode());
++        assertEquals(original.getCanonicalExpression(), decoded.getCanonicalExpression());
++        assertEquals("", presentEmptyVersion.getEntries().get(0).getVersionRegex().orElseThrow());
++        assertEquals("=", emptyExpressions.getCanonicalExpression());
++        assertFalse(emptyExpressions.matches(Topic.builder().addEntry("Role", "LAB").build()));
++        assertThrows(NamingValidationException.class,
++                () -> TopicMask.fromCanonicalExpression("Role=LAB\\q", false));
++    }
++
++    @Test
++    void universalMaskIsDistinctAndOrdinaryAccessorsRejectIt() {
++        TopicMask universal = TopicMask.all();
++        TopicMask broadOrdinary = TopicMask.builder().addRegex("(?s:.*)", "(?s:.*)")
++                .includeContainedElements(true).build();
++        Topic topic = Topic.builder().addEntry("Role", "LAB").build();
++
++        assertTrue(universal.isUniversal());
++        assertEquals(List.of(), universal.getEntries());
++        assertTrue(universal.matches(topic));
++        assertFalse(universal.matches(null));
++        assertNotEquals(universal, broadOrdinary);
++        assertTrue(broadOrdinary.matches(topic));
++        assertThrows(IllegalStateException.class, universal::getCanonicalExpression);
++        assertThrows(IllegalStateException.class, universal::isIncludeContainedElements);
++    }
++
++    @Test
++    void literalHelpersQuoteMetacharactersWithoutChangingTheSelectorBasis() {
++        TopicMask literal = TopicMask.builder().addLiterals("Role", "A.B")
++                .includeContainedElements(false).build();
++        Topic dotted = Topic.builder().addEntry("Role", "A.B").build();
++        Topic wildcardMatch = Topic.builder().addEntry("Role", "AxB").build();
++
++        assertTrue(literal.matches(dotted));
++        assertFalse(literal.matches(wildcardMatch));
++        assertTrue(TopicMask.builder().addForLiteralValue("A.B").build().matches(dotted));
++        assertTrue(TopicMask.builder().addForLiteralQualifier("Role").build().matches(dotted));
++        assertEquals(literal, TopicMask.builder().addRegex(
++                TopicMaskEntry.ofLiterals("Role", "A.B").getQualifierRegex(),
++                TopicMaskEntry.ofLiterals("Role", "A.B").getValueRegex()).build());
++    }
++
++    @Test
++    void matchDiagnosticsAreSafeFailClosedAndCannotChangeTheOutcome() {
++        Topic topic = Topic.builder().addEntry("System", "Harmonia").build();
++        TopicMask mask = TopicMask.builder().addRegex("System", "Harmonia").build();
++        List<NamingDiagnostic> events = new ArrayList<>();
++
++        assertFalse(mask.matches(topic, events::add, (pattern, value) -> {
++            throw new IllegalStateException("secret " + value);
++        }));
++        NamingDiagnostic failure = events.get(0);
++        assertEquals(DiagnosticSeverity.ERROR, failure.severity());
++        assertEquals(MatchExitCategory.EVALUATION_ERROR, failure.category());
++        assertEquals(0, failure.entryIndex());
++        assertFalse(failure.toString().contains("Harmonia"));
++        assertTrue(mask.matches(topic, diagnostic -> {
++            throw new IllegalStateException("diagnostic failure");
++        }));
++    }
++
++    @Test
++    void diagnosticsRecordDepthFieldAndSuccessfulExitMetadata() {
++        Topic candidate = Topic.builder().addEntry("System", "Harmonia").build();
++        List<NamingDiagnostic> events = new ArrayList<>();
++
++        assertFalse(TopicMask.builder().addAny().addAny().build().matches(candidate, events::add));
++        assertEquals(MatchExitCategory.DEPTH_MISMATCH, events.get(0).category());
++        assertEquals(null, events.get(0).entryIndex());
++        events.clear();
++
++        assertFalse(TopicMask.builder().addRegex("Elsewhere", ".*").build()
++                .matches(candidate, events::add));
++        assertEquals(MatchExitCategory.QUALIFIER_MISMATCH, events.get(0).category());
++        assertEquals(0, events.get(0).entryIndex());
++        events.clear();
++
++        assertFalse(TopicMask.builder().addRegex("System", "Other").build()
++                .matches(candidate, events::add));
++        assertEquals(MatchExitCategory.VALUE_MISMATCH, events.get(0).category());
++        assertEquals(0, events.get(0).entryIndex());
++        events.clear();
++
++        assertTrue(TopicMask.builder().addRegex("System", "Harmonia").build()
++                .matches(candidate, events::add));
++        assertEquals(MatchExitCategory.MATCH, events.get(0).category());
++        assertEquals(0, events.get(0).entryIndex());
++    }
++
++    @Test
++    void maskBuilderFailureAndLaterSuccessPreserveEarlierSnapshots() {
++        TopicMaskBuilder builder = TopicMask.builder().addAny();
++        TopicMask first = builder.build();
++        assertThrows(NamingValidationException.class, () -> builder.addRegex("(?=A)", ".*"));
++        assertEquals(first, builder.build());
++
++        builder.addForLiteralValue("A.B");
++        TopicMask second = builder.build();
++        assertEquals(1, first.getEntries().size());
++        assertEquals(2, second.getEntries().size());
++        assertThrows(UnsupportedOperationException.class,
++                () -> first.getEntries().add(first.getEntries().get(0)));
++    }
++
++    @Test
++    void checksDepthBeforeExpressionsAndNeverExceedsFortyEightFieldEvaluations() {
++        TopicMask twoEntries = TopicMask.builder().addAny().addAny().build();
++        Topic oneEntry = Topic.builder().addEntry("Role", "LAB").build();
++        AtomicInteger evaluations = new AtomicInteger();
++        assertFalse(twoEntries.matches(oneEntry, diagnostic -> { }, (pattern, value) -> {
++            evaluations.incrementAndGet();
++            return true;
++        }));
++        assertEquals(0, evaluations.get());
++
++        TopicMaskBuilder builder = TopicMask.builder();
++        TopicBuilder topicBuilder = Topic.builder();
++        for (int index = 0; index < NamingLimits.MAX_DEPTH; index++) {
++            builder.addRegex(".*", ".*", ".*");
++            topicBuilder.addEntry("N" + index, "v" + index, "v" + index);
++        }
++        assertTrue(builder.build().matches(topicBuilder.build(), diagnostic -> { }, (pattern, value) -> {
++            evaluations.incrementAndGet();
++            return true;
++        }));
++        assertEquals(3 * NamingLimits.MAX_DEPTH, evaluations.get());
++    }
++
++    @Test
++    void deterministicMaximumDepthWorkloadRecordsElapsedTime() {
++        TopicMaskBuilder maskBuilder = TopicMask.builder();
++        TopicBuilder topicBuilder = Topic.builder();
++        for (int index = 0; index < NamingLimits.MAX_DEPTH; index++) {
++            maskBuilder.addRegex(".*", ".*", ".*");
++            topicBuilder.addEntry("N" + index, "value" + index, "v" + index);
++        }
++        TopicMask mask = maskBuilder.build();
++        Topic topic = topicBuilder.build();
++        for (int index = 0; index < 50; index++) {
++            assertTrue(mask.matches(topic));
++        }
++
++        long start = System.nanoTime();
++        for (int index = 0; index < 1_000; index++) {
++            assertTrue(mask.matches(topic));
++        }
++        long elapsedNanos = System.nanoTime() - start;
++        System.out.printf("Naming max-depth workload: iterations=1000, depth=%d, fieldChecks=48, elapsedNs=%d%n",
++                NamingLimits.MAX_DEPTH, elapsedNanos);
++    }
++
++    @Test
++    void oneImmutableMaskCanBeReusedConcurrently() throws Exception {
++        TopicMask shared = TopicMask.builder().addRegex("System", "Harmonia", "v[0-9]+").build();
++        ExecutorService executor = Executors.newFixedThreadPool(8);
++        try {
++            List<Callable<Boolean>> checks = new ArrayList<>();
++            for (int index = 0; index < 160; index++) {
++                int candidateIndex = index;
++                checks.add(() -> shared.matches(Topic.builder()
++                        .addEntry("System", "Harmonia", "v" + candidateIndex).build()));
++            }
++            List<Future<Boolean>> results = executor.invokeAll(checks);
++            for (Future<Boolean> result : results) {
++                assertTrue(result.get(5, TimeUnit.SECONDS));
++            }
++        } finally {
++            executor.shutdownNow();
++        }
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicTest.java
+new file mode 100644
+index 00000000..68d57f46
+--- /dev/null
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicTest.java
+@@ -0,0 +1,120 @@
++/* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
++package net.fhirfactory.harmonia.model.core.naming;
++
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertFalse;
++import static org.junit.jupiter.api.Assertions.assertNotEquals;
++import static org.junit.jupiter.api.Assertions.assertNull;
++import static org.junit.jupiter.api.Assertions.assertThrows;
++import static org.junit.jupiter.api.Assertions.assertTrue;
++
++import java.util.TreeSet;
++import org.junit.jupiter.api.Test;
++
++/** Behavioural coverage for Topic identity, ordering, hierarchy, and canonical forms. */
++class TopicTest {
++
++    @Test
++    void identityIgnoresVersionsAndPreservesOrderedQualifiedPath() {
++        Topic first = Topic.builder()
++                .addEntry("System", "Harmonia", "1")
++                .addEntry(null, "Petasos.Receiver", "2.4")
++                .build();
++        Topic sameIdentity = Topic.builder()
++                .addEntry("System", "Harmonia", "9")
++                .addEntry("N1", "Petasos.Receiver")
++                .build();
++
++        assertEquals(first, sameIdentity);
++        assertEquals(first.hashCode(), sameIdentity.hashCode());
++        assertEquals(0, first.compareTo(sameIdentity));
++        assertEquals("System=Harmonia.N1=Petasos\\.Receiver", first.getCanonicalName());
++        assertEquals("System:1=Harmonia.N1:2\\.4=Petasos\\.Receiver",
++                first.getCanonicalNameWithVersion());
++        assertEquals("System:1=Harmonia.N1:2\\.4=Petasos\\.Receiver", first.toString());
++        assertEquals("Harmonia.Petasos.Receiver", first.getName());
++        assertEquals("Petasos.Receiver", first.getFriendlyName());
++        assertEquals("Harmonia-Petasos.Receiver", first.getDisplayName());
++        assertEquals("N1=Petasos\\.Receiver", first.getRelativeName());
++        assertNotEquals(first, Topic.builder().addEntry("System", "Harmonia")
++                .addEntry("Component", "Petasos.Receiver").build());
++    }
++
++    @Test
++    void canonicalFormsRoundTripIdentityAndAllVersionData() {
++        Topic original = Topic.builder()
++                .addEntry("System", "Harmonia", "1")
++                .addEntry("Component", "Petasos.Receiver", "2.4")
++                .build();
++
++        Topic identityRoundTrip = Topic.fromCanonicalName(original.getCanonicalName());
++        Topic completeRoundTrip = Topic.fromCanonicalNameWithVersion(original.getCanonicalNameWithVersion());
++
++        assertEquals(original, identityRoundTrip);
++        assertTrue(identityRoundTrip.getEntries().stream().allMatch(entry -> entry.getVersion().isEmpty()));
++        assertEquals(original.getCanonicalNameWithVersion(), completeRoundTrip.getCanonicalNameWithVersion());
++        assertEquals(original.getEntries(), completeRoundTrip.getEntries());
++    }
++
++    @Test
++    void parentAncestorAndStrictAncestryPreserveVersions() {
++        Topic root = Topic.builder().addEntry("System", "Harmonia", "root-v").build();
++        Topic child = Topic.builder().addEntry("System", "Harmonia", "child-v")
++                .addEntry("Component", "Petasos").build();
++
++        assertNull(root.getParent());
++        assertEquals(root, child.getParent());
++        assertEquals("child-v", child.getAncestor(1).getEntries().get(0).getVersion().orElseThrow());
++        assertTrue(root.isAncestorOf(child));
++        assertFalse(child.isAncestorOf(root));
++        assertFalse(root.isAncestorOf(root));
++        assertFalse(root.isAncestorOf(null));
++        assertThrows(IllegalArgumentException.class, () -> child.getAncestor(0));
++        assertThrows(IllegalArgumentException.class, () -> child.getAncestor(3));
++    }
++
++    @Test
++    void naturalOrderingUsesPairwiseFieldsAndProperPrefix() {
++        Topic root = Topic.builder().addEntry("System", "Harmonia").build();
++        Topic child = Topic.builder().addEntry("System", "Harmonia")
++                .addEntry("Component", "Calliope").build();
++        Topic caseVariant = Topic.builder().addEntry("system", "Harmonia").build();
++        TreeSet<Topic> topics = new TreeSet<>();
++        topics.add(child);
++        topics.add(root);
++        topics.add(caseVariant);
++
++        assertTrue(root.compareTo(child) < 0);
++        assertTrue(root.compareTo(caseVariant) < 0);
++        assertEquals(3, topics.size());
++        assertEquals(root, topics.first());
++    }
++
++    @Test
++    void repeatedQualifiersAndDisplayDepthDoNotCollapseTypedPathData() {
++        Topic repeated = Topic.builder().addEntry("Layer", "Surgical Ward")
++                .addEntry("Layer", "Clinical Services")
++                .addEntry("Layer", "Canberra").build();
++        Topic differentQualifier = Topic.builder().addEntry("Location", "Surgical Ward")
++                .addEntry("Service", "Clinical Services").addEntry("City", "Canberra").build();
++        Topic root = Topic.builder().addEntry("Layer", "Surgical Ward").build();
++
++        assertNotEquals(repeated, differentQualifier);
++        assertEquals("Surgical Ward.Clinical Services.Canberra", repeated.getName());
++        assertEquals("Clinical Services-Canberra", repeated.getDisplayName());
++        assertEquals("Surgical Ward", root.getDisplayName());
++        assertEquals("Layer=Canberra", repeated.getRelativeName());
++    }
++
++    @Test
++    void allowedComposedAndDecomposedTextIsPreservedWithoutNormalization() {
++        String composed = "é";
++        String decomposed = "e\u0301";
++        Topic composedTopic = Topic.builder().addEntry("Name", composed).build();
++        Topic decomposedTopic = Topic.builder().addEntry("Name", decomposed).build();
++
++        assertNotEquals(composedTopic, decomposedTopic);
++        assertEquals(composed, composedTopic.getFriendlyName());
++        assertEquals(decomposed, decomposedTopic.getFriendlyName());
++    }
++}
+\ No newline at end of file
+diff --git a/calliope/src/test/resources/net/fhirfactory/harmonia/model/core/naming/interchange/mask-present-empty-version.xml b/calliope/src/test/resources/net/fhirfactory/harmonia/model/core/naming/interchange/mask-present-empty-version.xml
+new file mode 100644
+index 00000000..f6c28b5f
+--- /dev/null
++++ b/calliope/src/test/resources/net/fhirfactory/harmonia/model/core/naming/interchange/mask-present-empty-version.xml
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<topicMask kind="ordinary" includeContainedElements="true">
++  <entry>
++    <qualifierRegex encoding="base64">Um9sZQ==</qualifierRegex>
++    <valueRegex encoding="base64">Lio=</valueRegex>
++    <versionRegex encoding="base64"></versionRegex>
++  </entry>
++</topicMask>
+\ No newline at end of file
+diff --git a/calliope/src/test/resources/net/fhirfactory/harmonia/model/core/naming/interchange/topic.xml b/calliope/src/test/resources/net/fhirfactory/harmonia/model/core/naming/interchange/topic.xml
+new file mode 100644
+index 00000000..9f2ee7c2
+--- /dev/null
++++ b/calliope/src/test/resources/net/fhirfactory/harmonia/model/core/naming/interchange/topic.xml
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<topic>
++  <entry>
++    <qualifier>System</qualifier>
++    <value>Harmonia</value>
++  </entry>
++  <entry>
++    <qualifier>Component</qualifier>
++    <value>Petasos.Receiver</value>
++    <version>2.4</version>
++  </entry>
++</topic>
+\ No newline at end of file

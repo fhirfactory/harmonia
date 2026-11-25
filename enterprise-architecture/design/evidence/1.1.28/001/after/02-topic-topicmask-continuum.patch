@@ -1,0 +1,708 @@
+diff --git a/enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md b/enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md
+--- a/enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md
++++ b/enterprise-architecture/continuum/application/application-function/9c680d56a6b943da8ff22f3264e19bc7.md
+@@ -11,7 +11,8 @@
+     "semantic": "Accepted Mnemosyne Final.001 semantics; authorised incorporation; exact resulting candidate awaiting Solution Architect confirmation",
+     "currentness": "current",
+     "incorporation124": "Accepted complete Final.001 DRP semantics; authorised 1.1.24 ADD; actual incorporated candidate awaiting Solution Architect confirmation",
+-    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
++    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained",
++    "namingReconciliation": "Proposed Final.001.001 correspondence awaiting Architecture Review"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.23/001/before/ai-agent-tasks/unresolved-mnemosyne-authoritative-persistence-incorporation.md",
+@@ -57,6 +58,14 @@
+       "role": "OM-06–OM-10 explicitly approved by operative Solution Architect instruction; retained internal pending-review wording records source-stage history, not actual-result acceptance",
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
+       "sha256": "0d9e1fc3ef4102d2c093dcb75eb0cfc2c53d7d62df18d2cfb83d2fc4888c6ac3"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md",
++      "revision": "f1d3c4a896731e05c40b1f21e4bf1b96bdcf3adb",
++      "selector": "§§4, 7 — shared TopicMask semantics at the Mnemosyne Adapter discovery boundary",
++      "role": "Qualified accepted runtime design for prospective Continuum reconciliation",
++      "sha256": "e6136e3fb25c1a120b36d79f6f49ffa50b3b1c388f59f0408fa9afcf4667ed73",
++      "authority": "enterprise-architecture/design/review/software-0.1.0/hcrl-software-0.1.0-004.pending.md#dr-10"
+     }
+   ],
+   "sourceBindings": [
+@@ -75,6 +84,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-OperationalMetadata-and-OperationalMetadataMask.Final.001.md",
+       "selector": "§§3.2–3.5,4; OM-06–OM-10 — bounded IU operational remapping and preservation safeguards — Mneme-side Store compatibility"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md",
++      "selector": "§§4, 7 — shared TopicMask semantics at the Mnemosyne Adapter discovery boundary"
+     }
+   ],
+   "relationships": [
+@@ -253,7 +266,7 @@
+ Expose exactly SummaryReader, SummaryWriter(CREATE, RETIRE), SummarySearch, full Reader and full Writer through the established participants. Origin-instance SummarySearch continuation cannot migrate. Reconcile uncertain potentially higher-version writes through authoritative GovernedReader(version=*) plus sufficient correspondence/durability evidence; preserve Indeterminate when insufficient. Mneme retains per-IU concurrency and consumer disposition; no new TopicMask language, transaction identifier, registry or selection protocol is introduced.
+ 
+ 
+-Mneme's persistence-facing adapter discovers IU-type capabilities registered by Mnemosyne-side Mneme Adapters / Façades, using the existing shared TopicMask primitive: element-wise regex matching against dot-separated canonical-name elements. It establishes eligible instances and selects among them for the request.
++Mneme's persistence-facing adapter discovers IU-type capabilities registered by Mnemosyne-side Mneme Adapters / Façades. It uses the shared [TopicMask](../data-object/bb489157a6bf48be926c5a601bb0a6c3.md) contract against structured Topics. It establishes eligible instances and selects among them for the request.
+ 
+ The distributed architecture must support (1) high availability and changeover when an instance becomes unavailable, (2) concurrent processing of distinct IU instances of the same registered IU type across multiple Mnemosyne instances, and (3) load balancing across eligible instances. Capability support and current availability are different facts. Identical, overlapping and disjoint registrations are supported; no one-to-one Store/instance mapping is imposed.
+ 
+diff --git a/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md b/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md
+--- a/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md
++++ b/enterprise-architecture/continuum/application/data-object/9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md
+@@ -8,9 +8,10 @@
+   "friendlyName": "model.core.information.Topic",
+   "canonicalName": null,
+   "standing": {
+-    "semantic": "Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation",
++    "semantic": "Final.001.001 runtime contract accepted with qualifications. Candidate Continuum result pending.",
+     "currentness": "current",
+-    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
++    "reconciliation": "Predecessor Architecture 1.1.22 and 1.1.25 incorporated contracts and qualifications remain in history",
++    "namingReconciliation": "Proposed Final.001.001 correspondence awaiting Architecture Review"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md",
+@@ -40,6 +41,14 @@
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.md",
+       "sha256": "1690ca87200db65d2254acfb5af68b7b960fb044934682b6ed89eb77ce9c5e40",
+       "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md",
++      "revision": "f1d3c4a896731e05c40b1f21e4bf1b96bdcf3adb",
++      "selector": "§§1–3, 5–7 — Topic structure, identity, names, construction, hierarchy and interchange",
++      "role": "Qualified accepted runtime design for prospective Continuum reconciliation",
++      "sha256": "e6136e3fb25c1a120b36d79f6f49ffa50b3b1c388f59f0408fa9afcf4667ed73",
++      "authority": "enterprise-architecture/design/review/software-0.1.0/hcrl-software-0.1.0-004.pending.md#dr-10"
+     }
+   ],
+   "sourceBindings": [
+@@ -50,6 +59,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.000.md",
+       "selector": "§§1–2,4–6 — immutable Topic model; explicit sequencing and distinct name roles"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md",
++      "selector": "§§1–3, 5–7 — Topic structure, identity, names, construction, hierarchy and interchange"
+     }
+   ],
+   "relationships": [],
+@@ -67,30 +80,101 @@
+ 
+ ## Architectural content
+ 
+-The common logical Topic model describes Harmonia's governed, hierarchically named
+-identification/classification construct. A Topic has its own canonical identity
+-and a canonical name made of ordered dot-separated elements under its governed
+-naming/containment hierarchy. A TopicID identifies that Topic. It may name a gateway,
+-endpoint, location, owner, content structure, compartment, action or other concept;
+-it is neither its referent's implementation/configuration nor a broker destination.
++A Topic identifies or classifies a named concept by an immutable, ordered,
++root-to-leaf path of one or more typed TopicEntries. It can name a gateway,
++endpoint, location, owner, content structure, compartment, action or other
++concept. The Topic describes the named concept. Implementation, configuration
++and broker destination remain governed by their respective contracts.
+ 
+-This DataObject represents the **common logical model of Topics**, not a new named
+-Topic instance or an implementation Class. Existing specialised Topic elements,
+-their canonical IDs, classifications, names, containment and established scope
+-remain unchanged. No wildcard IU Topic instance or runtime UUID is allocated here.
++### Runtime identity and entry structure
+ 
+-An IU UUID identifies the IU; its own Topic provides the hierarchical canonical
+-name `harmonia.mneme.iu.<hex-string-of-compressed-uuid>`. Compression is deterministic
+-and reversible; exact encoding is deferred to the appropriate logical/implementation
+-contract. The namespace confers no IU ownership on Mneme. This IU designation is
+-distinct from coordinate, Content Structure and SecurityContext Topic references,
+-native Content/represented-entity identity, provider IDs, transport and correlation
+-identifiers. The earlier TopicID id example does not replace UUID-plus-Topic identity.
+-Referenced TopicIDs do not turn every metadata attribute into an independently
+-governed IU.
++The complete ordered qualifier/value path supplies runtime identity, equality
++and hashing. Entry versions are independent of identity. Distinct qualified
++paths can share the same unqualified value path. Changing a qualifier, value
++or position so that the path differs establishes a different runtime identity.
++Versions can change between immutable snapshots of the same identity. Runtime
++Topics carry no UUID or architecture `canonicalId`. Existing specialised architectural
++Topic elements retain their governed identifiers, names, classification and
++relationships. Correspondence between an architectural element and a runtime
++Topic requires an explicit mapping.
++
++Each completed entry has a qualifier, a nonempty value and an optional
++version. Qualifiers may repeat at different positions. Qualifiers and present
++versions are nonblank printable ASCII with no boundary whitespace. Values
++permit Unicode letters, numbers, punctuation, symbols and marks, plus internal
++U+0020 space. Reject malformed Unicode and other categories, including controls,
++format, private-use, unassigned and surrogate code points. Preserve allowed
++text with its original case and code points. Enforce the release-defined depth
++and decoded field limits, counting code points before escaping. Apply any
++UTF-8 byte limits independently.
++
++### Construction and hierarchy
++
++Sequential and explicitly indexed assembly are equivalent for the same
++completed ordered records. The first successful add fixes the mode. Indexed
++assembly accepts nonnegative positions in any order and requires a contiguous
++zero-based path at build. A valid add to an occupied index replaces that input
++without growing the path. Validate additions before changing any assembly state.
++At assembly only, a null or empty qualifier becomes `N<position>` using the final
++zero-based position. The corresponding explicit qualifier has identical
++identity, matching, ordering and interchange semantics. A null or empty entry
++version means absence. Failed adds and builds preserve builder state and
++previous snapshots. Builders remain reusable. Completed Topics and their
++entries are immutable.
++
++Literal ancestry compares whole qualifier/value entries in order. A strict
++ancestor is a proper prefix, independently of versions. Depth counts entries.
++A root has depth one and no parent. Parent and ancestor projections preserve
++versions for retained entries. Valid ancestor depths range from one through
++the full depth. Reject invalid depths. A null candidate has no ancestry.
++Natural order compares qualifier and then value at each
++position, using case-sensitive locale-independent lexical order and putting
++the shorter path first when it is a proper prefix. Comparison returns zero
++exactly for equal Topics.
++
++### Representation and interchange
++
++The canonical name joins qualified entries `qualifier=value` with unescaped
++periods. The versioned canonical name uses `qualifier:version=value` when a
++version is present and omits the version segment when absent. Both forms
++escape literal periods, equals signs, colons and backslashes in fields with a
++backslash. Canonical parsers require valid explicit qualifiers and values.
++They reject malformed separators and escapes and explicit empty version
++segments. The unversioned parser rejects version-bearing syntax. Parsing
++reproduces the identity projection or all ordered field data, respectively.
++
++The unqualified name joins raw values with periods. The friendly name is the
++raw leaf value. The display name is the leaf value at depth one and the last
++two raw values joined by a hyphen at greater depths. The relative name is the
++escaped last qualified entry without version. The unqualified, friendly and
++display projections are for their defined non-identity uses and can be
++ambiguous. Logical interchange preserves ordered completed entries and
++optional versions, reconstructs validated immutable values, and preserves that
++order independently of the encoding. Assembly indices supply ordering and
++have no independent identity or mandatory interchange field. Field validation
++and meaning are independent of the selected serializer.
++[NFR-099](../../motivation/principle/6973441f2d62448188af9bfce5ad9d9f.md)
++continues to prefer XML where practical for structured encapsulation.
++
++### Governed references and registry scope
++
++Calliope-Models defines the shared model. Existing registry-scoped uniqueness
++and alias constraints apply at their governed boundaries until explicitly
++dispositioned. Keep historical UUID-backed references and distinctions used
++by governed data, or explicitly migrate them at their boundaries with evidence.
++An ambiguous reference requires disposition. Registry service, allocation
++mechanisms, mappings and consumer migration remain separately governed.
++
++The IU UUID identifies the IU. Its own Topic's unqualified name is
++`harmonia.mneme.iu.<hex-string-of-compressed-uuid>`. Compression is deterministic
++and reversible. Qualified IU vocabulary, exact encoding and boundary
++mappings remain separate decisions. Coordinate, Content Structure and
++SecurityContext Topic references retain their own meanings. IU authoritative
++revision, Mneme operational revision and active generation, Content Structure
++Version and content-native versions remain independent of TopicEntry version.
+ 
+ ------- Legacy Content - Superseded ------- Start ------
+-Superseded by: immutable Topic contract below; substantive replacement receives a different UUID.
++Superseded by: Runtime identity and entry structure above.
+ Only the enclosed concern allocation or model wording is superseded;
+ original text is unchanged. Other predecessor obligations remain effective.
+ ---------------------------------------------------------
+@@ -98,38 +182,3 @@
+ Renaming a Topic can alter mask matching despite stable TopicID and
+ requires governance; name/identity/containment remain distinct semantic roles.
+ ------- Legacy Content - Superseded ------- Finish ----
+-
+-Calliope-Models defines shared semantics; runtime use belongs to consuming Features
+-and components. No registry service, registration mechanism, physical topology,
+-runtime model instance or new implementation dependency is prescribed.
+-
+-### Approved foundational Topic reconciliation — actual result pending review
+-
+-A Topic is **immutable**, independently identifiable, typed and hierarchically
+-contained. Its full TopicID is a UUID, distinct from an IU UUID and from this common
+-model DataObject's canonical identity. Identity, canonical entries, qualifiers,
+-containment and names cannot be mutated. A substantive replacement is a different
+-Topic with a different UUID; historic references retain their original meaning.
+-No current Topic instance, canonical ID, name or relationship is renamed here.
+-
+-The logical canonicalName is an **explicitly sequenced root-to-leaf mapping** of
+-SequenceNumber to Entry(qualifier, name). Preserve sequence numbers in storage and
+-exchange; list/array/map iteration alone is insufficient. Reject gaps, duplicate
+-positions and ambiguous order rather than repairing them silently. An absent qualifier
+-normalises to N0, N1, … by absolute position; qualifiers are typed discriminators.
+-Precise interchange encoding remains detailed design with deterministic reconstruction.
+-
+-Derived name joins unqualified names in sequence; friendlyName is the leaf name;
+-relativeName is its qualified leaf. For Country=Australia / StateTerritory=ACT /
+-City=Canberra these are Australia.ACT.Canberra, Canberra and City=Canberra.
+-Topic.name is globally unique within its applicable registry; registry-scope changes
+-need separate authority. A short displayed UUID prefix is never full identity.
+-Useful safe display helpers confer no replacement identity or prescribed Java API.
+-
+-**No Topic.Version.** IU authoritative revision, Mneme operational revision, Content
+-Structure Version and optional native Content version belong to their own contracts.
+-The common model's id/canonicalName/name/friendlyName/relativeName vocabulary is not
+-a wholesale rename of Continuum metadata canonicalId/displayName or existing Topic
+-Names. Their distinct representation roles are preserved; exact runtime interchange/
+-registry mapping remains bounded detailed design. Earlier version-bearing candidate
+-Topic prose is reconciled as source history, not promoted as a current contract.
+diff --git a/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md b/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md
+--- a/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md
++++ b/enterprise-architecture/continuum/application/data-object/bb489157a6bf48be926c5a601bb0a6c3.md
+@@ -8,9 +8,10 @@
+   "friendlyName": "model.core.information.TopicMask",
+   "canonicalName": null,
+   "standing": {
+-    "semantic": "Accepted DRP semantics; authorised incorporation; resulting 1.1.22 increment awaiting Solution Architect confirmation",
++    "semantic": "Final.001.001 runtime contract accepted with qualifications. Candidate Continuum result pending.",
+     "currentness": "current",
+-    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
++    "reconciliation": "Predecessor Architecture 1.1.22 and 1.1.25 incorporated contracts and qualifications remain in history",
++    "namingReconciliation": "Proposed Final.001.001 correspondence awaiting Architecture Review"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md",
+@@ -40,6 +41,14 @@
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Topic-and-TopicMask.Final.001.md",
+       "sha256": "1690ca87200db65d2254acfb5af68b7b960fb044934682b6ed89eb77ce9c5e40",
+       "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md",
++      "revision": "f1d3c4a896731e05c40b1f21e4bf1b96bdcf3adb",
++      "selector": "§§4–7 — TopicMask kinds, structure, evaluation, interchange and consumer boundary",
++      "role": "Qualified accepted runtime design for prospective Continuum reconciliation",
++      "sha256": "e6136e3fb25c1a120b36d79f6f49ffa50b3b1c388f59f0408fa9afcf4667ed73",
++      "authority": "enterprise-architecture/design/review/software-0.1.0/hcrl-software-0.1.0-004.pending.md#dr-10"
+     }
+   ],
+   "sourceBindings": [
+@@ -50,6 +59,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.000.md",
+       "selector": "§§3–6 — immutable selector identity; name/canonical basis; Exact/Inclusive and neutral composition"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md",
++      "selector": "§§4–7 — TopicMask kinds, structure, evaluation, interchange and consumer boundary"
+     }
+   ],
+   "relationships": [
+@@ -60,7 +73,7 @@
+       "target": "id-7b1ba31cbae65d08ab37f788cbbd4812",
+       "name": [
+         {
+-          "text": "Discriminates corresponding individual canonical-name elements using regex patterns",
++          "text": "Matches ordered Topic entry fields or applies explicit universality",
+           "attributes": {
+             "{http://www.w3.org/XML/1998/namespace}lang": "en"
+           }
+@@ -68,7 +81,7 @@
+       ],
+       "documentation": [
+         {
+-          "text": "Accepted IU DRP IU-05; §12; incorporation is authorised by enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md. Discriminates corresponding individual canonical-name elements using regex patterns",
++          "text": "Accepted IU DRP IU-05; §12; incorporation is authorised by enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md. The proposed Final.001.001 description preserves neutral matching. An ordinary mask applies ordered qualifier, value and optional version criteria under its depth rule. The explicit universal kind matches every non-null Topic.",
+           "attributes": {
+             "{http://www.w3.org/XML/1998/namespace}lang": "en"
+           }
+@@ -76,7 +89,8 @@
+       ],
+       "standing": {
+         "semantic": "Accepted Information Unit Framework semantics; resulting increment confirmation pending",
+-        "currentness": "current"
++        "currentness": "current",
++        "namingReconciliation": "Proposed description of existing association"
+       },
+       "provenance": {
+         "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.001.md",
+@@ -104,8 +118,106 @@
+ 
+ ## Architectural content
+ 
++TopicMask is the immutable, neutral matching specification for a [Topic](9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md).
++Feature-level selection, disclosure, publication, execution, persistence and
++routing decisions remain with their governed owners. Themis separately
++evaluates authorisation. A TopicMask has no runtime UUID and defines no
++natural order.
++
++### Kinds, structural equality and construction
++
++An ordinary mask contains one or more ordered TopicMaskEntry criteria and
++an `includeContainedElements` flag, false by default. Each criterion holds
++independent qualifier and value regular expressions and an optional version
++expression. Ordinary equality and hashing use the original expression strings
++in order, version-constraint presence and the containment flag.
++
++The universal kind explicitly matches every non-null Topic. All universal
++masks compare equal and hash consistently. Universal masks have no criteria,
++containment flag or ordinary canonical expression. Create one with
++`TopicMask.all()` or reconstruct it from its explicit logical kind. An ordinary
++mask remains ordinary even if it covers every valid Topic. An empty, invalid
++or ambiguous ordinary input never establishes universality. Ordinary-only
++accessors reject a universal mask.
++
++Build ordinary masks by appending validated immutable entries and setting
++containment. Successful builds return independent immutable snapshots.
++A failed addition or build preserves prior state. Builders remain reusable.
++Qualifier and value regex
++inputs must be supplied. Empty expressions are valid and cannot match the
++corresponding nonempty field. Validate literal helpers against completed
++TopicEntry field rules before quoting for RE2/J. A literal version, if supplied
++to a literal helper, must be valid and nonempty. Mask construction generates
++no default qualifier. It validates and compiles the original expressions
++within the release limits, including expressions produced by literal quoting.
++
++### Positional evaluation and version constraints
++
++`matches(Topic)` is a synchronous Boolean operation. A null candidate returns
++false for either kind. Check ordinary mask depth before evaluating any
++expression. Exact depth requires the same number of entries. Inclusive
++containment permits additional trailing entries. Match qualifier, value and
++any required version at each corresponding position, stopping on the first
++mismatch. Field evaluation uses full-field RE2/J matching on decoded text,
++case-sensitive by default and subject to supported expression flags. An
++expression cannot consume a different field or path position.
++
++| Version expression | Meaning |
++| --- | --- |
++| Absent | Accept either version state for this field. |
++| Present but empty | Require a version; the empty expression fails against every valid present nonempty version. |
++| Present wildcard or other expression | Require a version and apply the supplied full-field expression to it. |
++
++Those states remain structurally distinct across comparison and serialization.
++Compile once at construction and share immutable patterns with per-call
++matching state. Enforce the release-defined depth, field and expression bounds
++and feasible complexity safeguards. Java regex fallback and a shared global
++match-result cache are excluded. Unexpected evaluation errors return false
++with safe ERROR diagnostics through the governed logger. Diagnostic failure
++cannot turn a mismatch or an evaluation error into a match. Invalid construction
++fails exceptionally and is logged at its handling boundary. Conditional TRACE
++and the error path use safe exit metadata. Buffering, backpressure, delivery
++and recovery belong to the logging framework. Its availability, bounded
++latency and reliability remain implementation evidence obligations.
++
++### Canonical expression and logical interchange
++
++An ordinary expression path uses `qualifierRegex[:versionRegex]=valueRegex`
++criteria separated by unescaped periods. Escape literal periods, equals
++signs, colons and backslashes in the original expression strings at the
++outer encoding layer. Decode exactly that layer before RE2/J validation.
++Preserve original expressions, including an explicit empty version constraint
++rendered with a colon immediately before the equals sign. Strict parsing
++rejects empty paths or segments, invalid escapes, extra or misplaced
++delimiters and invalid expressions. Round-trip an ordinary mask with its
++expression and separately supplied containment flag.
++
++Logical interchange carries the explicit mask kind. Ordinary records carry
++ordered criteria and containment and preserve absence versus a present
++empty expression. Universal records carry neither criteria nor containment
++and have no ordinary expression token. Reject ambiguous records, rebuild
++validated immutable masks and compile from the preserved expression text.
++Transport encoding is separate from the logical contract.
++
++### Governed reuse and historical references
++
++InformationUnitMask, OperationalMetadataMask and PetasosParcelMask compose
++or reference TopicMasks for governed Topic-valued criteria. Subscription,
++publication and filter statements compose their own criteria. Capability
++discovery, policy, routing and the other consumers retain their separate
++eligibility and selection rules. This primitive establishes no higher-mask
++catalogue, interpreter or consumer execution mechanism.
++
++Any governed persisted mask and historical identifier requires preservation
++or explicit migration under its boundary contract. Show criterion-basis and
++selection-scope equivalence before mapping Exact or Inclusive legacy selectors
++to depth flags or name-only selectors to positional criteria. Establish
++unrestricted intent before any conversion to the universal kind, validate the
++supported regex dialect, and fail closed on ambiguity. These are qualifications
++for governed data and boundaries.
++
+ ------- Legacy Content - Superseded ------- Start ------
+-Superseded by: approved naming-basis and immutable matching contract below; element-wise discrimination retained.
++Superseded by: Kinds, structural equality and construction and Positional evaluation and version constraints above.
+ Only the enclosed concern allocation or model wording is superseded;
+ original text is unchanged. Other predecessor obligations remain effective.
+ ---------------------------------------------------------
+@@ -119,21 +231,8 @@
+ Topics whose canonical-name elements satisfy the pattern without editing a list.
+ ------- Legacy Content - Superseded ------- Finish ----
+ 
+-For example, `<BusinessDomain>.<StandardsBodyName>.InformationCompartment.<CompartmentName>`
+-illustrates a Topic hierarchy. `*.*.InformationCompartment.PersonalInformation*`
+-is illustrative shorthand only: an unconstrained element might use `.*` in actual
+-element-wise regex. Precise anchoring, escaping, missing/excess elements, variable
+-depth and serialised syntax remain with the applicable common match contract.
+-The example is not an implemented parser or prescribed regex dialect.
+-
+-Publication/subscription, routing, discovery, security and other Topic-discriminating
+-Features reuse the same semantics. A match is a discrimination result; consuming
+-Features determine its consequence. Matching alone grants no access, publishes
+-nothing, schedules no delivery and selects no persistence provider. IU SecurityContext
+-is one consumer and does not own this common model.
+-
+ ------- Legacy Content - Superseded ------- Start ------
+-Superseded by: immutable Topic contract; replacements use a new Topic UUID.
++Superseded by: Topic runtime identity and entry structure in the linked Topic model.
+ Only the enclosed concern allocation or model wording is superseded;
+ original text is unchanged. Other predecessor obligations remain effective.
+ ---------------------------------------------------------
+@@ -141,44 +240,3 @@
+ Canonical Topic renaming may
+ change matching consequences without changing TopicID and requires governance.
+ ------- Legacy Content - Superseded ------- Finish ----
+-
+-This is a logical DataObject, not an inferred Class, SecurityMask subtype,
+-Feature-specific wrapper, new named Topic, executable Function or universal IU
+-get()/test() catalogue. Existing accepted action/compartment criteria retain scope;
+-the IU model creates no parallel taxonomy or general-purpose policy interpreter.
+-
+-### Approved immutable TopicMask contract — actual result pending review
+-
+-A TopicMask has its own stable UUID and an immutable definition. Its UUID does not
+-influence matching. Changing type, containment behaviour or patterns creates a new
+-mask with a new UUID; old references retain meaning. It has **exactly one** basis:
+-
+-| type | Explicitly sequenced pattern entries and matching subject |
+-| --- | --- |
+-| TopicNameBased | SequenceNumber → NameRegex; corresponding individual unqualified Topic names. |
+-| TopicCanonicalNameBased | SequenceNumber → EntryPattern(qualifierRegex, nameRegex); corresponding qualifier and name independently. |
+-
+-One mask does not combine these two bases with AND/OR. Every regex applies to one
+-element; it cannot span adjacent path elements. There is no Topic/versionRegex axis.
+-
+-| maskType | Containment meaning |
+-| --- | --- |
+-| Exact | Every specified level matches and candidate depth is exactly the mask depth. |
+-| Inclusive | Every specified level matches; further descendant levels are included. |
+-
+-Thus a name-based inclusive Australia.ACT mask includes Australia.ACT.Canberra;
+-its exact counterpart includes only the two-level Topic. Typed qualifiers remain
+-first-class independently matchable discriminators in canonical-name mode.
+-An unrestricted mask is conceptually inclusive with unrestricted regex (.*);
+-standalone * is human shorthand, not valid Java regex. The expected default is
+-unrestricted, without accidental null-as-wildcard semantics. Exact root/unrestricted
+-wire encoding, cross-language regex dialect, escaping, anchoring and invalid-regex
+-handling remain bounded contracts requiring repeatable evaluation evidence.
+-
+-InformationUnitMask, OperationalMetadataMask and PetasosParcelMask may contain or
+-reference TopicMasks for governed Topic-valued properties. SubscriptionStatement,
+-PublicationStatement and FilterStatement compose higher masks; they do not inherit
+-from TopicMask. Matching is neutral and confers no disclosure, publication, execution,
+-persistence or routing authority. Themis policy/actions/Passport remain distinct;
+-Passport is not an InformationUnitMask subclass. No higher-mask field catalogue,
+-absence semantics or Petasos framework design is supplied by this common primitive.
+diff --git a/enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md b/enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md
+--- a/enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md
++++ b/enterprise-architecture/continuum/application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md
+@@ -10,7 +10,8 @@
+   "standing": {
+     "semantic": "Accepted bounded architecture — HCRL 1.1.15-001 DR-1",
+     "currentness": "current",
+-    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
++    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained",
++    "namingReconciliation": "Proposed Final.001.001 correspondence awaiting Architecture Review"
+   },
+   "identity": {
+     "allocation": "UUIDv4 allocated once under explicit HCRL 1.1.15-001 application",
+@@ -47,6 +48,14 @@
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md",
+       "sha256": "3735ec2968ffced91119b00ca623f66edce1b9d0364b1d3870401c3dc7ac5097",
+       "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md",
++      "revision": "f1d3c4a896731e05c40b1f21e4bf1b96bdcf3adb",
++      "selector": "§7 — Information Unit Topic designation in the logical IU Class",
++      "role": "Qualified accepted runtime design for prospective Continuum reconciliation",
++      "sha256": "e6136e3fb25c1a120b36d79f6f49ffa50b3b1c388f59f0408fa9afcf4667ed73",
++      "authority": "enterprise-architecture/design/review/software-0.1.0/hcrl-software-0.1.0-004.pending.md#dr-10"
+     }
+   ],
+   "sourceBindings": [
+@@ -65,6 +74,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+       "selector": "§§0–4,7,10; Appendices A–B — existing logical Class and projection compatibility"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md",
++      "selector": "§7 — Information Unit Topic designation in the logical IU Class"
+     }
+   ],
+   "exchange": {
+@@ -178,7 +191,7 @@
+       "target": "id-7b1ba31cbae65d08ab37f788cbbd4812",
+       "name": [
+         {
+-          "text": "IU UUID identifies the unit; its own Topic provides its canonical name",
++          "text": "Distinguishes the IU UUID from the Topic's unqualified IU designation",
+           "attributes": {
+             "{http://www.w3.org/XML/1998/namespace}lang": "en"
+           }
+@@ -186,7 +199,7 @@
+       ],
+       "documentation": [
+         {
+-          "text": "Accepted IU DRP IU-06; §§3–4; incorporation is authorised by enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md. IU UUID identifies the unit; its own Topic provides its canonical name",
++          "text": "Accepted IU DRP IU-06; §§3–4; incorporation is authorised by enterprise-architecture/design/evidence/1.1.22/001/before/ai-agent-tasks/20261111T025829Z-information-unit-framework-incorporation.md. The IU UUID identifies the unit. The proposed Final.001.001 correspondence uses the unqualified name of its own Topic as the established IU designation. Qualified vocabulary and governed mappings remain open.",
+           "attributes": {
+             "{http://www.w3.org/XML/1998/namespace}lang": "en"
+           }
+@@ -194,7 +207,8 @@
+       ],
+       "standing": {
+         "semantic": "Accepted Information Unit Framework semantics; resulting increment confirmation pending",
+-        "currentness": "current"
++        "currentness": "current",
++        "namingReconciliation": "Proposed description of existing association"
+       },
+       "provenance": {
+         "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.001.md",
+@@ -218,12 +232,14 @@
+ 
+ ### Final.002 conceptual allocation — incorporated result pending review
+ 
+-InformationUnit remains definitive. There is one governed UUID, an IU Topic with
+-its own distinct Topic UUID, and one InformationRepresentation. Conceptual notation:
++InformationUnit remains definitive. There is one governed IU UUID, the IU's own
++Topic, and one InformationRepresentation. The Topic supplies the established
++unqualified IU designation. Its fully qualified form and applicable reference
++mappings remain separately governed. Conceptual notation:
+ 
+ ```text
+ InformationUnit
+-├── Identity: IU UUID; IU Topic (distinct Topic UUID)
++├── Identity: IU UUID and its own designation Topic
+ ├── authoritative persisted revision: Mnemosyne-established/returned
+ ├── information-related Metadata
+ │   ├── InformationCoordinates: PersistenceGateway; GatewayEndpoint;
+@@ -292,7 +308,7 @@
+ constituency, not separate governed nested IUs or a physical schema. Their internal
+ concerns are documented in those structures rather than allocated a Class or Topic
+ per property. [Topic](../9e2ffa9b4a1d4422a33c2a4bbcfc86ef.md) and [TopicMask](../bb489157a6bf48be926c5a601bb0a6c3.md) supply
+-the common Topic/Mask semantics; existing named Topic instances retain identity.
++the common Topic/Mask semantics. Existing specialised architectural Topic elements retain their governed identity.
+ 
+ The IU is **atomic as governed information**: one identity, exactly one governed
+ representation and accepted-state consistency. Physical decomposition/references,
+diff --git a/enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md b/enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md
+--- a/enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md
++++ b/enterprise-architecture/continuum/business/business-object/10284034c8534b639284386b064f2c54.md
+@@ -11,7 +11,8 @@
+     "semantic": "Established conceptual governed management boundary; no downstream schema or representation mapping.",
+     "currentness": "current",
+     "representationDecision": "Accepted RAD-1.1.0 CR CR-079",
+-    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained"
++    "reconciliation": "Final.002/Topic conceptual reconciliation authorised; 1.1.25/001 actual-result confirmation pending; predecessor standing and qualifications retained",
++    "namingReconciliation": "Proposed Final.001.001 correspondence awaiting Architecture Review"
+   },
+   "identity": {
+     "allocation": "Preserved existing resource-owned UUID32; no allocation in migration",
+@@ -193,6 +194,14 @@
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.25/001/before/accepted-input/DRP-Information-Unit-Framework.Final.002.md",
+       "sha256": "3735ec2968ffced91119b00ca623f66edce1b9d0364b1d3870401c3dc7ac5097",
+       "authority": "enterprise-architecture/design/evidence/1.1.25/001/before/ai-agent-tasks/unresolved-information-unit-final002-reconciliation.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md",
++      "revision": "f1d3c4a896731e05c40b1f21e4bf1b96bdcf3adb",
++      "selector": "§7 — Information Unit Topic designation in the conceptual IU BusinessObject",
++      "role": "Qualified accepted runtime design for prospective Continuum reconciliation",
++      "sha256": "e6136e3fb25c1a120b36d79f6f49ffa50b3b1c388f59f0408fa9afcf4667ed73",
++      "authority": "enterprise-architecture/design/review/software-0.1.0/hcrl-software-0.1.0-004.pending.md#dr-10"
+     }
+   ],
+   "sourceBindings": [
+@@ -271,6 +280,10 @@
+     {
+       "source": "enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Final.002.md",
+       "selector": "§§1–7,10; Appendix A — same conceptual IU, current concern boundaries"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md",
++      "selector": "§7 — Information Unit Topic designation in the conceptual IU BusinessObject"
+     }
+   ],
+   "exchange": {
+@@ -388,16 +401,19 @@
+ write, row, Java object, cache instance, file or transport operation.
+ 
+ The conceptual and [logical Calliope Class](../../application/data-object/class/74ec609de1ae498fbf9d13e4ef8c6cbe.md) describe the same
+-IU, not independently governed entities. IU identity consists of its persistent
+-UUID and its own Topic name `harmonia.mneme.iu.<hex-string-of-compressed-uuid>`.
+-The UUID encoding is deterministic/reversible; its exact algorithm is not chosen.
++IU, not independently governed entities. The IU retains its persistent UUID and
++its own Topic. The UUID identifies the IU and the Topic's unqualified name
++`harmonia.mneme.iu.<hex-string-of-compressed-uuid>` supplies its established
++designation. The UUID encoding is deterministic/reversible; its exact algorithm,
++the qualified Topic vocabulary and applicable boundary mappings remain open.
+ IU identity is distinct from represented-information/entity identity, native Content
+ versions, coordinate/security/content-structure Topics and provider/transport IDs.
+ 
+ The current conceptual allocation preserves **Identity / Metadata /
+ InformationRepresentation** and one governed IU. Its authoritative persisted revision
+-is established/returned by Mnemosyne and belongs to the IU. Its own Topic has a UUID
+-distinct from the IU UUID. Information-related metadata retains the four unchanged
++is established/returned by Mnemosyne and belongs to the IU. The IU's independent
++UUID and its Topic's qualified path serve distinct identity roles. Information-related
++metadata retains the four unchanged
+ InformationCoordinates, IU-required security, governed information disposition and
+ optional creator/updater-supplied relationships. **InformationItinerary** is a distinct
+ conceptual information concern, separate from coordinates, provenance and business
+diff --git a/enterprise-architecture/continuum/strategy/capability/feature/9210349f026b4ff1aca1092c309b4139.md b/enterprise-architecture/continuum/strategy/capability/feature/9210349f026b4ff1aca1092c309b4139.md
+--- a/enterprise-architecture/continuum/strategy/capability/feature/9210349f026b4ff1aca1092c309b4139.md
++++ b/enterprise-architecture/continuum/strategy/capability/feature/9210349f026b4ff1aca1092c309b4139.md
+@@ -10,7 +10,8 @@
+   "standing": {
+     "semantic": "Accepted replacement model — Pass3/014; implementation unverified",
+     "currentness": "current",
+-    "incorporationReview": "Accepted by Solution Architect — 1.1.20 closure disposition"
++    "incorporationReview": "Accepted by Solution Architect — 1.1.20 closure disposition",
++    "namingReconciliation": "Proposed Final.001.001 correspondence awaiting Architecture Review"
+   },
+   "identity": {
+     "authority": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md",
+@@ -77,12 +78,24 @@
+       "selector": "Authorised Activity / Scope / B",
+       "role": "Explicit canonical incorporation and UUID allocation authority",
+       "retainedAt": "enterprise-architecture/design/evidence/1.1.20/001/before/CapabilityReplacementTask.md"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md",
++      "revision": "f1d3c4a896731e05c40b1f21e4bf1b96bdcf3adb",
++      "selector": "§1 — runtime identity and architectural identity correspondence for E04.01.04.F01",
++      "role": "Qualified accepted runtime design for prospective Continuum reconciliation",
++      "sha256": "e6136e3fb25c1a120b36d79f6f49ffa50b3b1c388f59f0408fa9afcf4667ed73",
++      "authority": "enterprise-architecture/design/review/software-0.1.0/hcrl-software-0.1.0-004.pending.md#dr-10"
+     }
+   ],
+   "sourceBindings": [
+     {
+       "source": "enterprise-architecture/design/evidence/1.1.20/001/after/pass3-fr-reconciliation/Harmonia_1.1.20_Candidate_017_Pass3_014_FR_Reconciled_Catalogue.md",
+       "selector": "E04.01.04.F01"
++    },
++    {
++      "source": "enterprise-architecture/design/offline-design/DRP-Topic-and-TopicMask.Final.001.001.md",
++      "selector": "§1 — runtime identity and architectural identity correspondence for E04.01.04.F01"
+     }
+   ],
+   "relationships": [
+@@ -178,8 +191,12 @@
+ 
+ ## Architectural content
+ 
+-Accepted Topic identities survive rename and reclassification.
++A governed architectural Topic element retains its identifiers through rename
++or reclassification where the same architectural element persists. An immutable
++runtime Topic is identified by its ordered non-versioned qualified path.
++A change to that path establishes a different runtime Topic identity. Preserve
++or explicitly migrate governed historical references at the relevant boundary.
+ 
+ ### Incorporation standing
+ 
+-Catalogue identity `E04.01.04.F01`. The accepted definition is preserved above. Migration verification and source measurements do not establish implementation satisfaction. Existing source qualifications remain in force.
++Catalogue identity `E04.01.04.F01`. The naming correspondence above is proposed for Architecture Review. Migration verification and source measurements do not establish implementation satisfaction. Existing source qualifications remain in force.

@@ -33,4 +33,13 @@
     <packaging>jar</packaging>
     <name>Harmonia :: Calliope (Canonical Model &amp; Schema Library)</name>
     <description>Calliope — Canonical Model &amp; Schema Library. The authoritative repository and management service for the shared information models, schemas and structural definitions used throughout Harmonia.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
