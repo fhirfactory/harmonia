@@ -50,10 +50,9 @@ public final class CanonicalPathSyntax {
         for (int offset = 0; offset < text.length(); offset++) {
             char current = text.charAt(offset);
             if (current == '\\') {
-                if (offset + 1 >= text.length() || !isEscapable(text.charAt(offset + 1))) {
-                    throw malformed(operation, entries.size());
+                if (offset + 1 < text.length() && isEscapable(text.charAt(offset + 1))) {
+                    offset++;
                 }
-                offset++;
             } else if (current == '.') {
                 if (offset == start) {
                     throw malformed(operation, entries.size());
@@ -89,10 +88,9 @@ public final class CanonicalPathSyntax {
         for (int offset = 0; offset < text.length(); offset++) {
             char current = text.charAt(offset);
             if (current == '\\') {
-                if (offset + 1 >= text.length() || !isEscapable(text.charAt(offset + 1))) {
-                    throw malformed(operation, index);
+                if (offset + 1 < text.length() && isEscapable(text.charAt(offset + 1))) {
+                    offset++;
                 }
-                offset++;
             } else if (current == '=') {
                 if (equals >= 0) {
                     throw malformed(operation, index);
@@ -129,7 +127,8 @@ public final class CanonicalPathSyntax {
                 continue;
             }
             if (offset + 1 >= raw.length() || !isEscapable(raw.charAt(offset + 1))) {
-                throw malformed(operation, index);
+                throw new NamingRuleViolation(NamingFailureCategory.MALFORMED_TEXT,
+                        operation, field, index);
             }
             decoded.append(raw.charAt(++offset));
         }

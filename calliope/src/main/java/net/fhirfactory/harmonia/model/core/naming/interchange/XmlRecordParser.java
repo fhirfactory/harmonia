@@ -44,7 +44,7 @@ final class XmlRecordParser {
     /** Enforces the record bound and parses strict UTF-8 with secure JDK XML settings. */
     static Document parse(byte[] record, NamingOperation operation) {
         String xml = decodeRecord(record, operation);
-        validateEncodingDeclaration(xml, operation);
+        validateXmlDeclaration(xml, operation);
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             factory.setNamespaceAware(false);
@@ -102,14 +102,18 @@ final class XmlRecordParser {
     }
 
     /** Reads text-only XML content without trimming or accepting nested content. */
-    static String simpleText(Element element, NamingOperation operation, int index) {
+    static String simpleText(
+            Element element,
+            NamingOperation operation,
+            int index,
+            NamingFieldKind fieldKind) {
         NodeList children = element.getChildNodes();
         StringBuilder text = new StringBuilder();
         for (int childIndex = 0; childIndex < children.getLength(); childIndex++) {
             Node child = children.item(childIndex);
             if (child.getNodeType() != Node.TEXT_NODE) {
                 throw failure(NamingFailureCategory.MALFORMED_RECORD,
-                        operation, NamingFieldKind.XML_RECORD, index);
+                        operation, fieldKind, index);
             }
             text.append(child.getNodeValue());
         }
@@ -121,32 +125,33 @@ final class XmlRecordParser {
             Element element,
             NamingOperation operation,
             int index,
-            int maximumBytes) {
-        requireAttributes(element, List.of("encoding"), operation, index);
-        if (!requiredAttribute(element, "encoding", operation, index).equals("base64")) {
+            int maximumBytes,
+            NamingFieldKind fieldKind) {
+        requireAttributes(element, List.of("encoding"), operation, index, fieldKind);
+        if (!requiredAttribute(element, "encoding", operation, index, fieldKind).equals("base64")) {
             throw failure(NamingFailureCategory.MALFORMED_RECORD,
-                    operation, NamingFieldKind.XML_RECORD, index);
+                    operation, fieldKind, index);
         }
-        String encoded = simpleText(element, operation, index);
+        String encoded = simpleText(element, operation, index, fieldKind);
         int maximumEncodedChars = 4 * ((maximumBytes + 2) / 3);
         if (encoded.length() > maximumEncodedChars) {
             throw failure(NamingFailureCategory.LIMIT_EXCEEDED,
-                    operation, NamingFieldKind.XML_RECORD, index);
+                    operation, fieldKind, index);
         }
         byte[] decoded;
         try {
             decoded = Base64.getDecoder().decode(encoded);
         } catch (IllegalArgumentException exception) {
             throw failure(NamingFailureCategory.MALFORMED_RECORD,
-                    operation, NamingFieldKind.XML_RECORD, index);
+                    operation, fieldKind, index);
         }
         if (decoded.length > maximumBytes) {
             throw failure(NamingFailureCategory.LIMIT_EXCEEDED,
-                    operation, NamingFieldKind.XML_RECORD, index);
+                    operation, fieldKind, index);
         }
         if (!Base64.getEncoder().encodeToString(decoded).equals(encoded)) {
             throw failure(NamingFailureCategory.MALFORMED_RECORD,
-                    operation, NamingFieldKind.XML_RECORD, index);
+                    operation, fieldKind, index);
         }
         try {
             return StandardCharsets.UTF_8.newDecoder()
@@ -155,7 +160,7 @@ final class XmlRecordParser {
                     .decode(ByteBuffer.wrap(decoded)).toString();
         } catch (CharacterCodingException exception) {
             throw failure(NamingFailureCategory.MALFORMED_RECORD,
-                    operation, NamingFieldKind.XML_RECORD, index);
+                    operation, fieldKind, index);
         }
     }
 
@@ -170,9 +175,19 @@ final class XmlRecordParser {
             String name,
             NamingOperation operation,
             Integer entryIndex) {
+        return requiredAttribute(element, name, operation, entryIndex, NamingFieldKind.XML_RECORD);
+    }
+
+    /** Reads a mandatory attribute while retaining its containing field kind. */
+    static String requiredAttribute(
+            Element element,
+            String name,
+            NamingOperation operation,
+            Integer entryIndex,
+            NamingFieldKind fieldKind) {
         if (!element.hasAttribute(name)) {
             throw failure(NamingFailureCategory.MALFORMED_RECORD,
-                    operation, NamingFieldKind.XML_RECORD, entryIndex);
+                    operation, fieldKind, entryIndex);
         }
         return element.getAttribute(name);
     }
@@ -188,11 +203,21 @@ final class XmlRecordParser {
             List<String> allowed,
             NamingOperation operation,
             Integer entryIndex) {
+        requireAttributes(element, allowed, operation, entryIndex, NamingFieldKind.XML_RECORD);
+    }
+
+    /** Rejects unexpected attributes while preserving the field identified by its element name. */
+    static void requireAttributes(
+            Element element,
+            List<String> allowed,
+            NamingOperation operation,
+            Integer entryIndex,
+            NamingFieldKind fieldKind) {
         NamedNodeMap attributes = element.getAttributes();
         for (int index = 0; index < attributes.getLength(); index++) {
             if (!allowed.contains(attributes.item(index).getNodeName())) {
                 throw failure(NamingFailureCategory.MALFORMED_RECORD,
-                        operation, NamingFieldKind.XML_RECORD, entryIndex);
+                        operation, fieldKind, entryIndex);
             }
         }
     }
@@ -267,8 +292,8 @@ final class XmlRecordParser {
         }
     }
 
-    /** Rejects an XML declaration that contradicts the already decoded UTF-8 bytes. */
-    private static void validateEncodingDeclaration(String xml, NamingOperation operation) {
+    /** Validates the declared XML 1.0 version and UTF-8 encoding, when present. */
+    private static void validateXmlDeclaration(String xml, NamingOperation operation) {
         if (!xml.startsWith("<?xml") || xml.length() <= 5 || !isXmlWhitespace(xml.charAt(5))) {
             return;
         }
@@ -277,6 +302,7 @@ final class XmlRecordParser {
             throw failure(NamingFailureCategory.MALFORMED_RECORD,
                     operation, NamingFieldKind.XML_RECORD, null);
         }
+        validateDeclaredVersion(xml, end, operation);
         for (int offset = 5; offset + 8 <= end; offset++) {
             if ((offset == 5 || isXmlWhitespace(xml.charAt(offset - 1)))
                     && xml.regionMatches(offset, "encoding", 0, 8)) {
@@ -292,6 +318,37 @@ final class XmlRecordParser {
                 int close = xml.indexOf(quote, cursor);
                 if (close < 0 || close > end
                         || !xml.substring(cursor, close).equalsIgnoreCase("UTF-8")) {
+                    throw failure(NamingFailureCategory.MALFORMED_RECORD,
+                            operation, NamingFieldKind.XML_RECORD, null);
+                }
+                return;
+            }
+        }
+    }
+
+    /** Rejects a declared XML version other than the supported XML 1.0 version. */
+    private static void validateDeclaredVersion(String xml, int end, NamingOperation operation) {
+        for (int offset = 5; offset + 7 <= end; offset++) {
+            if ((offset == 5 || isXmlWhitespace(xml.charAt(offset - 1)))
+                    && xml.regionMatches(offset, "version", 0, 7)) {
+                int cursor = offset + 7;
+                if (cursor < end && !isXmlWhitespace(xml.charAt(cursor)) && xml.charAt(cursor) != '=') {
+                    continue;
+                }
+                cursor = skipXmlWhitespace(xml, cursor, end);
+                if (cursor >= end || xml.charAt(cursor++) != '=') {
+                    continue;
+                }
+                cursor = skipXmlWhitespace(xml, cursor, end);
+                if (cursor >= end || (xml.charAt(cursor) != '\'' && xml.charAt(cursor) != '"')) {
+                    continue;
+                }
+                char quote = xml.charAt(cursor++);
+                int close = xml.indexOf(quote, cursor);
+                if (close < 0 || close > end) {
+                    continue;
+                }
+                if (!xml.substring(cursor, close).equals("1.0")) {
                     throw failure(NamingFailureCategory.MALFORMED_RECORD,
                             operation, NamingFieldKind.XML_RECORD, null);
                 }

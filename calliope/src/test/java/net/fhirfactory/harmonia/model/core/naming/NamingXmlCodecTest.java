@@ -12,6 +12,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
 import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
 import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 import org.junit.jupiter.api.Test;
 
@@ -143,6 +144,72 @@ class NamingXmlCodecTest {
     }
 
     @Test
+    void xmlInterchangeAcceptsOnlyXmlVersion10() {
+        String topicBody = "<topic><entry><qualifier>Role</qualifier><value>LAB</value></entry></topic>";
+        String maskBody = "<topicMask kind=\"universal\"></topicMask>";
+
+        assertEquals(1, NamingXmlCodec.readTopic(("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + topicBody).getBytes(StandardCharsets.UTF_8)).getDepth());
+        assertEquals(1, NamingXmlCodec.readTopic(topicBody.getBytes(StandardCharsets.UTF_8)).getDepth());
+        assertTrue(NamingXmlCodec.readTopicMask(("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                + maskBody).getBytes(StandardCharsets.UTF_8)).isUniversal());
+        assertTrue(NamingXmlCodec.readTopicMask(maskBody.getBytes(StandardCharsets.UTF_8)).isUniversal());
+
+        String topic11 = "<?xml version=\"1.1\"?><topic>"
+                + "<entry><qualifier>Role</qualifier><value>LAB</value></entry></topic>";
+        NamingValidationException topicFailure = assertThrows(NamingValidationException.class,
+                () -> NamingXmlCodec.readTopic(topic11.getBytes(StandardCharsets.UTF_8)));
+        assertEquals(NamingFailureCategory.MALFORMED_RECORD, topicFailure.getCategory());
+        assertEquals(NamingFieldKind.XML_RECORD, topicFailure.getFieldKind());
+
+        String topic11RestrictedCharacter = "<?xml version=\"1.1\"?><topic>"
+                + "<entry><qualifier>Role</qualifier><value>&#x1;</value></entry></topic>";
+        NamingValidationException restrictedCharacterFailure = assertThrows(NamingValidationException.class,
+                () -> NamingXmlCodec.readTopic(topic11RestrictedCharacter.getBytes(StandardCharsets.UTF_8)));
+        assertEquals(NamingFailureCategory.MALFORMED_RECORD, restrictedCharacterFailure.getCategory());
+        assertEquals(NamingFieldKind.XML_RECORD, restrictedCharacterFailure.getFieldKind());
+
+        String mask11 = "<?xml version='1.1'?><topicMask kind='universal'></topicMask>";
+        NamingValidationException maskFailure = assertThrows(NamingValidationException.class,
+                () -> NamingXmlCodec.readTopicMask(mask11.getBytes(StandardCharsets.UTF_8)));
+        assertEquals(NamingFailureCategory.MALFORMED_RECORD, maskFailure.getCategory());
+        assertEquals(NamingFieldKind.XML_RECORD, maskFailure.getFieldKind());
+    }
+
+    @Test
+    void xmlFieldFailuresReportTheUnambiguouslyIdentifiedField() {
+        assertXmlField("<topic><entry><qualifier><nested/></qualifier><value>LAB</value></entry></topic>",
+                NamingFieldKind.QUALIFIER);
+        assertXmlField("<topic><entry><qualifier>Role</qualifier><value><nested/></value></entry></topic>",
+                NamingFieldKind.VALUE);
+        assertXmlField("<topic><entry><qualifier>Role</qualifier><value>LAB</value>"
+                + "<version><nested/></version></entry></topic>", NamingFieldKind.VERSION);
+
+        String badQualifierEncoding = "<topicMask kind=\"ordinary\" includeContainedElements=\"false\"><entry>"
+                + "<qualifierPattern encoding=\"base64\">bad!</qualifierPattern>"
+                + "<valuePattern encoding=\"base64\">TEFC</valuePattern></entry></topicMask>";
+        NamingValidationException qualifierFailure = assertThrows(NamingValidationException.class,
+                () -> NamingXmlCodec.readTopicMask(badQualifierEncoding.getBytes(StandardCharsets.UTF_8)));
+        assertEquals(NamingFieldKind.QUALIFIER_PATTERN, qualifierFailure.getFieldKind());
+
+        String badValueUtf8 = "<topicMask kind=\"ordinary\" includeContainedElements=\"false\"><entry>"
+                + "<qualifierPattern encoding=\"base64\">Um9sZQ==</qualifierPattern>"
+                + "<valuePattern encoding=\"base64\">wyg=</valuePattern></entry></topicMask>";
+        NamingValidationException valueFailure = assertThrows(NamingValidationException.class,
+                () -> NamingXmlCodec.readTopicMask(badValueUtf8.getBytes(StandardCharsets.UTF_8)));
+        assertEquals(NamingFieldKind.VALUE_PATTERN, valueFailure.getFieldKind());
+
+        String badVersionEncoding = "<topicMask kind=\"ordinary\" includeContainedElements=\"false\"><entry>"
+                + "<qualifierPattern encoding=\"base64\">Um9sZQ==</qualifierPattern>"
+                + "<valuePattern encoding=\"base64\">TEFC</valuePattern>"
+                + "<versionConstraint encoding=\"hex\">XD0x</versionConstraint></entry></topicMask>";
+        NamingValidationException versionFailure = assertThrows(NamingValidationException.class,
+                () -> NamingXmlCodec.readTopicMask(badVersionEncoding.getBytes(StandardCharsets.UTF_8)));
+        assertEquals(NamingFieldKind.VERSION_CONSTRAINT, versionFailure.getFieldKind());
+        assertEquals(0, versionFailure.getEntryIndex().orElseThrow());
+    }
+
+    @Test
     void base64MaskFieldsPreserveLineBreaksAndRejectInvalidUtf8() {
         String xml = "<topicMask kind=\"ordinary\" includeContainedElements=\"false\"><entry>"
                 + "<qualifierPattern encoding=\"base64\">Um9sZQ0K</qualifierPattern>"
@@ -178,5 +245,12 @@ class NamingXmlCodecTest {
     private static void rejectMask(String xml) {
         assertThrows(NamingValidationException.class,
                 () -> NamingXmlCodec.readTopicMask(xml.getBytes(StandardCharsets.UTF_8)), xml);
+    }
+
+    private static void assertXmlField(String xml, NamingFieldKind expectedField) {
+        NamingValidationException failure = assertThrows(NamingValidationException.class,
+                () -> NamingXmlCodec.readTopic(xml.getBytes(StandardCharsets.UTF_8)), xml);
+        assertEquals(expectedField, failure.getFieldKind(), xml);
+        assertEquals(0, failure.getEntryIndex().orElseThrow(), xml);
     }
 }

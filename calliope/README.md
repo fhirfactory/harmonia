@@ -130,7 +130,12 @@ containment. Raw qualifier/value patterns and optional version constraints use
 canonical padded UTF-8 Base64; omitted and present-empty constraints remain
 distinct. Output is deterministic UTF-8. Input is strict UTF-8, structurally
 ordered and bounded; DTDs, external entities, duplicate/unexpected content,
-unsupported encodings and malformed Base64 are rejected.
+unsupported encodings and malformed Base64 are rejected. This candidate also
+accepts XML 1.0 only: an input declaration may be absent or declare version
+`1.0`, while version `1.1` is rejected before XML parsing. This restriction is
+not stated in accepted Final.003 or Backlog Item 0003 v000.004 and remains
+subject to their governed reconciliation; this note does not amend either
+authority.
 
 Validation failures use `NamingValidationException` with the public
 `NamingFailureCategory`, `NamingOperation`, `NamingFieldKind` and an

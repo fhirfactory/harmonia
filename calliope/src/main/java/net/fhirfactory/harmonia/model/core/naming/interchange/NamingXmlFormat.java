@@ -19,7 +19,8 @@ import org.w3c.dom.Element;
  * <p>This class owns every XML concern of Naming interchange: the element
  * vocabulary and order, deterministic output, padded UTF-8 Base64 for raw
  * mask fields, hardened parsing, structural validation and the 256 KiB record
- * bound. It works only on neutral {@link XmlEntryFields} and
+ * bound. Input is restricted to XML 1.0, with an optional declaration. It
+ * works only on neutral {@link XmlEntryFields} and
  * {@link XmlMaskRecord} values. The supported {@code NamingXmlCodec} facade
  * maps those values to and from the models, which perform strict
  * completed-entry validation with the actual operation and entry index.</p>
@@ -87,15 +88,21 @@ public final class NamingXmlFormat {
             List<Element> fields = entryFields(entryElements.get(index), operation, index);
             XmlRecordParser.requireName(fields.get(0), "qualifier", operation, index);
             XmlRecordParser.requireName(fields.get(1), "value", operation, index);
-            XmlRecordParser.requireAttributes(fields.get(0), List.of(), operation, index);
-            XmlRecordParser.requireAttributes(fields.get(1), List.of(), operation, index);
-            String qualifier = XmlRecordParser.simpleText(fields.get(0), operation, index);
-            String value = XmlRecordParser.simpleText(fields.get(1), operation, index);
+            XmlRecordParser.requireAttributes(fields.get(0), List.of(), operation, index,
+                    NamingFieldKind.QUALIFIER);
+            XmlRecordParser.requireAttributes(fields.get(1), List.of(), operation, index,
+                    NamingFieldKind.VALUE);
+            String qualifier = XmlRecordParser.simpleText(fields.get(0), operation, index,
+                    NamingFieldKind.QUALIFIER);
+            String value = XmlRecordParser.simpleText(fields.get(1), operation, index,
+                    NamingFieldKind.VALUE);
             String version = null;
             if (fields.size() == 3) {
                 XmlRecordParser.requireName(fields.get(2), "version", operation, index);
-                XmlRecordParser.requireAttributes(fields.get(2), List.of(), operation, index);
-                version = XmlRecordParser.simpleText(fields.get(2), operation, index);
+                XmlRecordParser.requireAttributes(fields.get(2), List.of(), operation, index,
+                        NamingFieldKind.VERSION);
+                version = XmlRecordParser.simpleText(fields.get(2), operation, index,
+                        NamingFieldKind.VERSION);
                 if (version.isEmpty()) {
                     throw XmlRecordParser.failure(NamingFailureCategory.MALFORMED_RECORD,
                             operation, NamingFieldKind.VERSION, index);
@@ -178,14 +185,14 @@ public final class NamingXmlFormat {
             XmlRecordParser.requireName(fields.get(0), "qualifierPattern", operation, index);
             XmlRecordParser.requireName(fields.get(1), "valuePattern", operation, index);
             String qualifier = XmlRecordParser.decodeBase64Element(fields.get(0), operation, index,
-                    NamingLimits.MAX_PATTERN_UTF8_BYTES);
+                    NamingLimits.MAX_PATTERN_UTF8_BYTES, NamingFieldKind.QUALIFIER_PATTERN);
             String value = XmlRecordParser.decodeBase64Element(fields.get(1), operation, index,
-                    NamingLimits.MAX_PATTERN_UTF8_BYTES);
+                    NamingLimits.MAX_PATTERN_UTF8_BYTES, NamingFieldKind.VALUE_PATTERN);
             String version = null;
             if (fields.size() == 3) {
                 XmlRecordParser.requireName(fields.get(2), "versionConstraint", operation, index);
                 version = XmlRecordParser.decodeBase64Element(fields.get(2), operation, index,
-                        NamingLimits.MAX_VERSION_CONSTRAINT_UTF8_BYTES);
+                        NamingLimits.MAX_VERSION_CONSTRAINT_UTF8_BYTES, NamingFieldKind.VERSION_CONSTRAINT);
             }
             entries.add(new XmlEntryFields(qualifier, value, version));
         }

@@ -17,6 +17,7 @@ import net.fhirfactory.harmonia.model.core.naming.matching.MaskEvaluator;
 import net.fhirfactory.harmonia.model.core.naming.matching.MatchCandidate;
 import net.fhirfactory.harmonia.model.core.naming.matching.MatchDiagnosticSink;
 import net.fhirfactory.harmonia.model.core.naming.matching.MatchProbe;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
 import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
 import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
 import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
@@ -60,6 +61,10 @@ public final class TopicMask implements Serializable {
 
     /** Copies immutable criteria and records the explicit universal/containment kind. */
     private TopicMask(boolean universal, List<TopicMaskEntry> entries, boolean includeContainedElements) {
+        if (!universal && entries.size() > NamingLimits.MAX_DEPTH) {
+            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
+                    NamingOperation.MASK_BUILD, NamingFieldKind.DEPTH, null);
+        }
         this.universal = universal;
         this.entries = List.copyOf(entries);
         this.criteria = this.entries.stream().map(TopicMaskEntry::criterion).toList();

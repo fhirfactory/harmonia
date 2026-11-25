@@ -32,7 +32,7 @@ class TopicCanonicalParserTest {
         NamingValidationException topicFailure = assertThrows(NamingValidationException.class,
                 () -> Topic.fromCanonicalName("Role=LAB.Component=bad\\q"));
         assertEquals(NamingOperation.TOPIC_PARSE, topicFailure.getOperation());
-        assertEquals(NamingFieldKind.CANONICAL_TEXT, topicFailure.getFieldKind());
+        assertEquals(NamingFieldKind.VALUE, topicFailure.getFieldKind());
         assertEquals(1, topicFailure.getEntryIndex().orElseThrow());
         assertEquals(NamingFailureCategory.MALFORMED_TEXT, topicFailure.getCategory());
         assertFalse(topicFailure.getMessage().contains("bad"));
@@ -40,10 +40,17 @@ class TopicCanonicalParserTest {
         NamingValidationException maskFailure = assertThrows(NamingValidationException.class,
                 () -> TopicMask.fromCanonicalExpression("Role=LAB.Component=bad\\q", false));
         assertEquals(NamingOperation.MASK_PARSE, maskFailure.getOperation());
-        assertEquals(NamingFieldKind.CANONICAL_TEXT, maskFailure.getFieldKind());
+        assertEquals(NamingFieldKind.VALUE_PATTERN, maskFailure.getFieldKind());
         assertEquals(1, maskFailure.getEntryIndex().orElseThrow());
         assertEquals(NamingFailureCategory.MALFORMED_TEXT, maskFailure.getCategory());
         assertFalse(maskFailure.getMessage().contains("bad"));
+
+        NamingValidationException qualifierFailure = assertThrows(NamingValidationException.class,
+                () -> Topic.fromCanonicalName("Role\\q=LAB"));
+        assertEquals(NamingFieldKind.QUALIFIER, qualifierFailure.getFieldKind());
+        NamingValidationException versionFailure = assertThrows(NamingValidationException.class,
+                () -> Topic.fromCanonicalNameWithVersion("Role:1\\q=LAB"));
+        assertEquals(NamingFieldKind.VERSION, versionFailure.getFieldKind());
     }
 
     @Test

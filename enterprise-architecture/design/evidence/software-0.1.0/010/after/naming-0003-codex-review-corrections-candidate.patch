@@ -1,0 +1,584 @@
+diff --git a/calliope/README.md b/calliope/README.md
+index 5b5f5c12d6a6132a142599cc3252228b428f8250..e13ca600ee59381c33c46cba85ddf9dd150231c9 100644
+--- a/calliope/README.md
++++ b/calliope/README.md
+@@ -130,7 +130,12 @@ containment. Raw qualifier/value patterns and optional version constraints use
+ canonical padded UTF-8 Base64; omitted and present-empty constraints remain
+ distinct. Output is deterministic UTF-8. Input is strict UTF-8, structurally
+ ordered and bounded; DTDs, external entities, duplicate/unexpected content,
+-unsupported encodings and malformed Base64 are rejected.
++unsupported encodings and malformed Base64 are rejected. This candidate also
++accepts XML 1.0 only: an input declaration may be absent or declare version
++`1.0`, while version `1.1` is rejected before XML parsing. This restriction is
++not stated in accepted Final.003 or Backlog Item 0003 v000.004 and remains
++subject to their governed reconciliation; this note does not amend either
++authority.
+ 
+ Validation failures use `NamingValidationException` with the public
+ `NamingFailureCategory`, `NamingOperation`, `NamingFieldKind` and an
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodec.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodec.java
+index 2ee2e1ba8623cd63fc12c0323cba1c0aba037255..576a30f436d05ca968561e187e310e38302f2375 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodec.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodec.java
+@@ -16,7 +16,9 @@ import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+  * <p>Topic entries retain order and optional versions. Mask records explicitly
+  * distinguish universal from ordinary masks, preserve containment and
+  * criterion order, and use padded UTF-8 Base64 for raw pattern and constraint
+- * text. Input parsing is hardened and bounded before model construction.</p>
++ * text. Input parsing is hardened and bounded before model construction. Input
++ * accepts XML 1.0 with an optional declaration; a declaration of XML 1.1 is
++ * rejected before the parser processes the record.</p>
+  *
+  * <p>The codec is the supported facade over the interchange package. The
+  * record format, hardened parsing, encodings and bounds belong to
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMask.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMask.java
+index 9c7905c836f7e7becef7ba5ac167acee208c6bab..914eac071e7cf63b697e278b8ea5e1597d4aa915 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMask.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/TopicMask.java
+@@ -17,6 +17,7 @@ import net.fhirfactory.harmonia.model.core.naming.matching.MaskEvaluator;
+ import net.fhirfactory.harmonia.model.core.naming.matching.MatchCandidate;
+ import net.fhirfactory.harmonia.model.core.naming.matching.MatchDiagnosticSink;
+ import net.fhirfactory.harmonia.model.core.naming.matching.MatchProbe;
++import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+ import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+ import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+ import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+@@ -60,6 +61,10 @@ public final class TopicMask implements Serializable {
+ 
+     /** Copies immutable criteria and records the explicit universal/containment kind. */
+     private TopicMask(boolean universal, List<TopicMaskEntry> entries, boolean includeContainedElements) {
++        if (!universal && entries.size() > NamingLimits.MAX_DEPTH) {
++            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
++                    NamingOperation.MASK_BUILD, NamingFieldKind.DEPTH, null);
++        }
+         this.universal = universal;
+         this.entries = List.copyOf(entries);
+         this.criteria = this.entries.stream().map(TopicMaskEntry::criterion).toList();
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/CanonicalPathSyntax.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/CanonicalPathSyntax.java
+index 9682cd36b2f9dada71847b46792483d1550d33f1..eba128c4458a81eecc42ca740aa384a4b3803fc5 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/CanonicalPathSyntax.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/canonical/CanonicalPathSyntax.java
+@@ -50,10 +50,9 @@ public final class CanonicalPathSyntax {
+         for (int offset = 0; offset < text.length(); offset++) {
+             char current = text.charAt(offset);
+             if (current == '\\') {
+-                if (offset + 1 >= text.length() || !isEscapable(text.charAt(offset + 1))) {
+-                    throw malformed(operation, entries.size());
++                if (offset + 1 < text.length() && isEscapable(text.charAt(offset + 1))) {
++                    offset++;
+                 }
+-                offset++;
+             } else if (current == '.') {
+                 if (offset == start) {
+                     throw malformed(operation, entries.size());
+@@ -89,10 +88,9 @@ public final class CanonicalPathSyntax {
+         for (int offset = 0; offset < text.length(); offset++) {
+             char current = text.charAt(offset);
+             if (current == '\\') {
+-                if (offset + 1 >= text.length() || !isEscapable(text.charAt(offset + 1))) {
+-                    throw malformed(operation, index);
++                if (offset + 1 < text.length() && isEscapable(text.charAt(offset + 1))) {
++                    offset++;
+                 }
+-                offset++;
+             } else if (current == '=') {
+                 if (equals >= 0) {
+                     throw malformed(operation, index);
+@@ -129,7 +127,8 @@ public final class CanonicalPathSyntax {
+                 continue;
+             }
+             if (offset + 1 >= raw.length() || !isEscapable(raw.charAt(offset + 1))) {
+-                throw malformed(operation, index);
++                throw new NamingRuleViolation(NamingFailureCategory.MALFORMED_TEXT,
++                        operation, field, index);
+             }
+             decoded.append(raw.charAt(++offset));
+         }
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/interchange/NamingXmlFormat.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/interchange/NamingXmlFormat.java
+index a28a714c299a0b0260229b8005bb6a766fcaf29d..fce35132b4f395ec82a255cb619e418c7b8c3304 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/interchange/NamingXmlFormat.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/interchange/NamingXmlFormat.java
+@@ -19,7 +19,8 @@ import org.w3c.dom.Element;
+  * <p>This class owns every XML concern of Naming interchange: the element
+  * vocabulary and order, deterministic output, padded UTF-8 Base64 for raw
+  * mask fields, hardened parsing, structural validation and the 256 KiB record
+- * bound. It works only on neutral {@link XmlEntryFields} and
++ * bound. Input is restricted to XML 1.0, with an optional declaration. It
++ * works only on neutral {@link XmlEntryFields} and
+  * {@link XmlMaskRecord} values. The supported {@code NamingXmlCodec} facade
+  * maps those values to and from the models, which perform strict
+  * completed-entry validation with the actual operation and entry index.</p>
+@@ -87,15 +88,21 @@ public final class NamingXmlFormat {
+             List<Element> fields = entryFields(entryElements.get(index), operation, index);
+             XmlRecordParser.requireName(fields.get(0), "qualifier", operation, index);
+             XmlRecordParser.requireName(fields.get(1), "value", operation, index);
+-            XmlRecordParser.requireAttributes(fields.get(0), List.of(), operation, index);
+-            XmlRecordParser.requireAttributes(fields.get(1), List.of(), operation, index);
+-            String qualifier = XmlRecordParser.simpleText(fields.get(0), operation, index);
+-            String value = XmlRecordParser.simpleText(fields.get(1), operation, index);
++            XmlRecordParser.requireAttributes(fields.get(0), List.of(), operation, index,
++                    NamingFieldKind.QUALIFIER);
++            XmlRecordParser.requireAttributes(fields.get(1), List.of(), operation, index,
++                    NamingFieldKind.VALUE);
++            String qualifier = XmlRecordParser.simpleText(fields.get(0), operation, index,
++                    NamingFieldKind.QUALIFIER);
++            String value = XmlRecordParser.simpleText(fields.get(1), operation, index,
++                    NamingFieldKind.VALUE);
+             String version = null;
+             if (fields.size() == 3) {
+                 XmlRecordParser.requireName(fields.get(2), "version", operation, index);
+-                XmlRecordParser.requireAttributes(fields.get(2), List.of(), operation, index);
+-                version = XmlRecordParser.simpleText(fields.get(2), operation, index);
++                XmlRecordParser.requireAttributes(fields.get(2), List.of(), operation, index,
++                        NamingFieldKind.VERSION);
++                version = XmlRecordParser.simpleText(fields.get(2), operation, index,
++                        NamingFieldKind.VERSION);
+                 if (version.isEmpty()) {
+                     throw XmlRecordParser.failure(NamingFailureCategory.MALFORMED_RECORD,
+                             operation, NamingFieldKind.VERSION, index);
+@@ -178,14 +185,14 @@ public final class NamingXmlFormat {
+             XmlRecordParser.requireName(fields.get(0), "qualifierPattern", operation, index);
+             XmlRecordParser.requireName(fields.get(1), "valuePattern", operation, index);
+             String qualifier = XmlRecordParser.decodeBase64Element(fields.get(0), operation, index,
+-                    NamingLimits.MAX_PATTERN_UTF8_BYTES);
++                    NamingLimits.MAX_PATTERN_UTF8_BYTES, NamingFieldKind.QUALIFIER_PATTERN);
+             String value = XmlRecordParser.decodeBase64Element(fields.get(1), operation, index,
+-                    NamingLimits.MAX_PATTERN_UTF8_BYTES);
++                    NamingLimits.MAX_PATTERN_UTF8_BYTES, NamingFieldKind.VALUE_PATTERN);
+             String version = null;
+             if (fields.size() == 3) {
+                 XmlRecordParser.requireName(fields.get(2), "versionConstraint", operation, index);
+                 version = XmlRecordParser.decodeBase64Element(fields.get(2), operation, index,
+-                        NamingLimits.MAX_VERSION_CONSTRAINT_UTF8_BYTES);
++                        NamingLimits.MAX_VERSION_CONSTRAINT_UTF8_BYTES, NamingFieldKind.VERSION_CONSTRAINT);
+             }
+             entries.add(new XmlEntryFields(qualifier, value, version));
+         }
+diff --git a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/interchange/XmlRecordParser.java b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/interchange/XmlRecordParser.java
+index 36deef8d48f0cf264abd0aa0fd9c48fa1d40ad76..b48166ba9533df5fb7550de898d2bc72435b32cd 100644
+--- a/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/interchange/XmlRecordParser.java
++++ b/calliope/src/main/java/net/fhirfactory/harmonia/model/core/naming/interchange/XmlRecordParser.java
+@@ -44,7 +44,7 @@ final class XmlRecordParser {
+     /** Enforces the record bound and parses strict UTF-8 with secure JDK XML settings. */
+     static Document parse(byte[] record, NamingOperation operation) {
+         String xml = decodeRecord(record, operation);
+-        validateEncodingDeclaration(xml, operation);
++        validateXmlDeclaration(xml, operation);
+         try {
+             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+             factory.setNamespaceAware(false);
+@@ -102,14 +102,18 @@ final class XmlRecordParser {
+     }
+ 
+     /** Reads text-only XML content without trimming or accepting nested content. */
+-    static String simpleText(Element element, NamingOperation operation, int index) {
++    static String simpleText(
++            Element element,
++            NamingOperation operation,
++            int index,
++            NamingFieldKind fieldKind) {
+         NodeList children = element.getChildNodes();
+         StringBuilder text = new StringBuilder();
+         for (int childIndex = 0; childIndex < children.getLength(); childIndex++) {
+             Node child = children.item(childIndex);
+             if (child.getNodeType() != Node.TEXT_NODE) {
+                 throw failure(NamingFailureCategory.MALFORMED_RECORD,
+-                        operation, NamingFieldKind.XML_RECORD, index);
++                        operation, fieldKind, index);
+             }
+             text.append(child.getNodeValue());
+         }
+@@ -121,32 +125,33 @@ final class XmlRecordParser {
+             Element element,
+             NamingOperation operation,
+             int index,
+-            int maximumBytes) {
+-        requireAttributes(element, List.of("encoding"), operation, index);
+-        if (!requiredAttribute(element, "encoding", operation, index).equals("base64")) {
++            int maximumBytes,
++            NamingFieldKind fieldKind) {
++        requireAttributes(element, List.of("encoding"), operation, index, fieldKind);
++        if (!requiredAttribute(element, "encoding", operation, index, fieldKind).equals("base64")) {
+             throw failure(NamingFailureCategory.MALFORMED_RECORD,
+-                    operation, NamingFieldKind.XML_RECORD, index);
++                    operation, fieldKind, index);
+         }
+-        String encoded = simpleText(element, operation, index);
++        String encoded = simpleText(element, operation, index, fieldKind);
+         int maximumEncodedChars = 4 * ((maximumBytes + 2) / 3);
+         if (encoded.length() > maximumEncodedChars) {
+             throw failure(NamingFailureCategory.LIMIT_EXCEEDED,
+-                    operation, NamingFieldKind.XML_RECORD, index);
++                    operation, fieldKind, index);
+         }
+         byte[] decoded;
+         try {
+             decoded = Base64.getDecoder().decode(encoded);
+         } catch (IllegalArgumentException exception) {
+             throw failure(NamingFailureCategory.MALFORMED_RECORD,
+-                    operation, NamingFieldKind.XML_RECORD, index);
++                    operation, fieldKind, index);
+         }
+         if (decoded.length > maximumBytes) {
+             throw failure(NamingFailureCategory.LIMIT_EXCEEDED,
+-                    operation, NamingFieldKind.XML_RECORD, index);
++                    operation, fieldKind, index);
+         }
+         if (!Base64.getEncoder().encodeToString(decoded).equals(encoded)) {
+             throw failure(NamingFailureCategory.MALFORMED_RECORD,
+-                    operation, NamingFieldKind.XML_RECORD, index);
++                    operation, fieldKind, index);
+         }
+         try {
+             return StandardCharsets.UTF_8.newDecoder()
+@@ -155,7 +160,7 @@ final class XmlRecordParser {
+                     .decode(ByteBuffer.wrap(decoded)).toString();
+         } catch (CharacterCodingException exception) {
+             throw failure(NamingFailureCategory.MALFORMED_RECORD,
+-                    operation, NamingFieldKind.XML_RECORD, index);
++                    operation, fieldKind, index);
+         }
+     }
+ 
+@@ -170,9 +175,19 @@ final class XmlRecordParser {
+             String name,
+             NamingOperation operation,
+             Integer entryIndex) {
++        return requiredAttribute(element, name, operation, entryIndex, NamingFieldKind.XML_RECORD);
++    }
++
++    /** Reads a mandatory attribute while retaining its containing field kind. */
++    static String requiredAttribute(
++            Element element,
++            String name,
++            NamingOperation operation,
++            Integer entryIndex,
++            NamingFieldKind fieldKind) {
+         if (!element.hasAttribute(name)) {
+             throw failure(NamingFailureCategory.MALFORMED_RECORD,
+-                    operation, NamingFieldKind.XML_RECORD, entryIndex);
++                    operation, fieldKind, entryIndex);
+         }
+         return element.getAttribute(name);
+     }
+@@ -188,11 +203,21 @@ final class XmlRecordParser {
+             List<String> allowed,
+             NamingOperation operation,
+             Integer entryIndex) {
++        requireAttributes(element, allowed, operation, entryIndex, NamingFieldKind.XML_RECORD);
++    }
++
++    /** Rejects unexpected attributes while preserving the field identified by its element name. */
++    static void requireAttributes(
++            Element element,
++            List<String> allowed,
++            NamingOperation operation,
++            Integer entryIndex,
++            NamingFieldKind fieldKind) {
+         NamedNodeMap attributes = element.getAttributes();
+         for (int index = 0; index < attributes.getLength(); index++) {
+             if (!allowed.contains(attributes.item(index).getNodeName())) {
+                 throw failure(NamingFailureCategory.MALFORMED_RECORD,
+-                        operation, NamingFieldKind.XML_RECORD, entryIndex);
++                        operation, fieldKind, entryIndex);
+             }
+         }
+     }
+@@ -267,8 +292,8 @@ final class XmlRecordParser {
+         }
+     }
+ 
+-    /** Rejects an XML declaration that contradicts the already decoded UTF-8 bytes. */
+-    private static void validateEncodingDeclaration(String xml, NamingOperation operation) {
++    /** Validates the declared XML 1.0 version and UTF-8 encoding, when present. */
++    private static void validateXmlDeclaration(String xml, NamingOperation operation) {
+         if (!xml.startsWith("<?xml") || xml.length() <= 5 || !isXmlWhitespace(xml.charAt(5))) {
+             return;
+         }
+@@ -277,6 +302,7 @@ final class XmlRecordParser {
+             throw failure(NamingFailureCategory.MALFORMED_RECORD,
+                     operation, NamingFieldKind.XML_RECORD, null);
+         }
++        validateDeclaredVersion(xml, end, operation);
+         for (int offset = 5; offset + 8 <= end; offset++) {
+             if ((offset == 5 || isXmlWhitespace(xml.charAt(offset - 1)))
+                     && xml.regionMatches(offset, "encoding", 0, 8)) {
+@@ -300,6 +326,37 @@ final class XmlRecordParser {
+         }
+     }
+ 
++    /** Rejects a declared XML version other than the supported XML 1.0 version. */
++    private static void validateDeclaredVersion(String xml, int end, NamingOperation operation) {
++        for (int offset = 5; offset + 7 <= end; offset++) {
++            if ((offset == 5 || isXmlWhitespace(xml.charAt(offset - 1)))
++                    && xml.regionMatches(offset, "version", 0, 7)) {
++                int cursor = offset + 7;
++                if (cursor < end && !isXmlWhitespace(xml.charAt(cursor)) && xml.charAt(cursor) != '=') {
++                    continue;
++                }
++                cursor = skipXmlWhitespace(xml, cursor, end);
++                if (cursor >= end || xml.charAt(cursor++) != '=') {
++                    continue;
++                }
++                cursor = skipXmlWhitespace(xml, cursor, end);
++                if (cursor >= end || (xml.charAt(cursor) != '\'' && xml.charAt(cursor) != '"')) {
++                    continue;
++                }
++                char quote = xml.charAt(cursor++);
++                int close = xml.indexOf(quote, cursor);
++                if (close < 0 || close > end) {
++                    continue;
++                }
++                if (!xml.substring(cursor, close).equals("1.0")) {
++                    throw failure(NamingFailureCategory.MALFORMED_RECORD,
++                            operation, NamingFieldKind.XML_RECORD, null);
++                }
++                return;
++            }
++        }
++    }
++
+     /** Skips only XML's four structural whitespace characters. */
+     private static int skipXmlWhitespace(String text, int offset, int end) {
+         while (offset < end && isXmlWhitespace(text.charAt(offset))) {
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodecTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodecTest.java
+index 59d6747a18c68b2434849b1a3cb2100f52f6aa67..550adcbd9e8c8a7d5c32d02755d02fda06f50ca1 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodecTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/NamingXmlCodecTest.java
+@@ -12,6 +12,7 @@ import java.io.InputStream;
+ import java.nio.charset.StandardCharsets;
+ import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+ import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
++import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+ import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
+ import org.junit.jupiter.api.Test;
+ 
+@@ -142,6 +143,72 @@ class NamingXmlCodecTest {
+                 () -> NamingXmlCodec.readTopic(nonXmlWhitespace.getBytes(StandardCharsets.UTF_8)));
+     }
+ 
++    @Test
++    void xmlInterchangeAcceptsOnlyXmlVersion10() {
++        String topicBody = "<topic><entry><qualifier>Role</qualifier><value>LAB</value></entry></topic>";
++        String maskBody = "<topicMask kind=\"universal\"></topicMask>";
++
++        assertEquals(1, NamingXmlCodec.readTopic(("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
++                + topicBody).getBytes(StandardCharsets.UTF_8)).getDepth());
++        assertEquals(1, NamingXmlCodec.readTopic(topicBody.getBytes(StandardCharsets.UTF_8)).getDepth());
++        assertTrue(NamingXmlCodec.readTopicMask(("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
++                + maskBody).getBytes(StandardCharsets.UTF_8)).isUniversal());
++        assertTrue(NamingXmlCodec.readTopicMask(maskBody.getBytes(StandardCharsets.UTF_8)).isUniversal());
++
++        String topic11 = "<?xml version=\"1.1\"?><topic>"
++                + "<entry><qualifier>Role</qualifier><value>LAB</value></entry></topic>";
++        NamingValidationException topicFailure = assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopic(topic11.getBytes(StandardCharsets.UTF_8)));
++        assertEquals(NamingFailureCategory.MALFORMED_RECORD, topicFailure.getCategory());
++        assertEquals(NamingFieldKind.XML_RECORD, topicFailure.getFieldKind());
++
++        String topic11RestrictedCharacter = "<?xml version=\"1.1\"?><topic>"
++                + "<entry><qualifier>Role</qualifier><value>&#x1;</value></entry></topic>";
++        NamingValidationException restrictedCharacterFailure = assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopic(topic11RestrictedCharacter.getBytes(StandardCharsets.UTF_8)));
++        assertEquals(NamingFailureCategory.MALFORMED_RECORD, restrictedCharacterFailure.getCategory());
++        assertEquals(NamingFieldKind.XML_RECORD, restrictedCharacterFailure.getFieldKind());
++
++        String mask11 = "<?xml version='1.1'?><topicMask kind='universal'></topicMask>";
++        NamingValidationException maskFailure = assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopicMask(mask11.getBytes(StandardCharsets.UTF_8)));
++        assertEquals(NamingFailureCategory.MALFORMED_RECORD, maskFailure.getCategory());
++        assertEquals(NamingFieldKind.XML_RECORD, maskFailure.getFieldKind());
++    }
++
++    @Test
++    void xmlFieldFailuresReportTheUnambiguouslyIdentifiedField() {
++        assertXmlField("<topic><entry><qualifier><nested/></qualifier><value>LAB</value></entry></topic>",
++                NamingFieldKind.QUALIFIER);
++        assertXmlField("<topic><entry><qualifier>Role</qualifier><value><nested/></value></entry></topic>",
++                NamingFieldKind.VALUE);
++        assertXmlField("<topic><entry><qualifier>Role</qualifier><value>LAB</value>"
++                + "<version><nested/></version></entry></topic>", NamingFieldKind.VERSION);
++
++        String badQualifierEncoding = "<topicMask kind=\"ordinary\" includeContainedElements=\"false\"><entry>"
++                + "<qualifierPattern encoding=\"base64\">bad!</qualifierPattern>"
++                + "<valuePattern encoding=\"base64\">TEFC</valuePattern></entry></topicMask>";
++        NamingValidationException qualifierFailure = assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopicMask(badQualifierEncoding.getBytes(StandardCharsets.UTF_8)));
++        assertEquals(NamingFieldKind.QUALIFIER_PATTERN, qualifierFailure.getFieldKind());
++
++        String badValueUtf8 = "<topicMask kind=\"ordinary\" includeContainedElements=\"false\"><entry>"
++                + "<qualifierPattern encoding=\"base64\">Um9sZQ==</qualifierPattern>"
++                + "<valuePattern encoding=\"base64\">wyg=</valuePattern></entry></topicMask>";
++        NamingValidationException valueFailure = assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopicMask(badValueUtf8.getBytes(StandardCharsets.UTF_8)));
++        assertEquals(NamingFieldKind.VALUE_PATTERN, valueFailure.getFieldKind());
++
++        String badVersionEncoding = "<topicMask kind=\"ordinary\" includeContainedElements=\"false\"><entry>"
++                + "<qualifierPattern encoding=\"base64\">Um9sZQ==</qualifierPattern>"
++                + "<valuePattern encoding=\"base64\">TEFC</valuePattern>"
++                + "<versionConstraint encoding=\"hex\">XD0x</versionConstraint></entry></topicMask>";
++        NamingValidationException versionFailure = assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopicMask(badVersionEncoding.getBytes(StandardCharsets.UTF_8)));
++        assertEquals(NamingFieldKind.VERSION_CONSTRAINT, versionFailure.getFieldKind());
++        assertEquals(0, versionFailure.getEntryIndex().orElseThrow());
++    }
++
+     @Test
+     void base64MaskFieldsPreserveLineBreaksAndRejectInvalidUtf8() {
+         String xml = "<topicMask kind=\"ordinary\" includeContainedElements=\"false\"><entry>"
+@@ -179,4 +246,11 @@ class NamingXmlCodecTest {
+         assertThrows(NamingValidationException.class,
+                 () -> NamingXmlCodec.readTopicMask(xml.getBytes(StandardCharsets.UTF_8)), xml);
+     }
++
++    private static void assertXmlField(String xml, NamingFieldKind expectedField) {
++        NamingValidationException failure = assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopic(xml.getBytes(StandardCharsets.UTF_8)), xml);
++        assertEquals(expectedField, failure.getFieldKind(), xml);
++        assertEquals(0, failure.getEntryIndex().orElseThrow(), xml);
++    }
+ }
+\ No newline at end of file
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/ResourceBoundsTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/ResourceBoundsTest.java
+index 4224852770af5ab3d9ea8b244e43055f384d3eb2..a9754ed7ceb291e9c0813fd12219aad4181ae3e5 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/ResourceBoundsTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/ResourceBoundsTest.java
+@@ -11,6 +11,7 @@ import java.io.InputStream;
+ import java.nio.charset.StandardCharsets;
+ import java.util.Arrays;
+ import java.util.Base64;
++import java.util.Collections;
+ import java.util.concurrent.atomic.AtomicInteger;
+ import net.fhirfactory.harmonia.model.core.naming.matching.EntryCriterion;
+ import net.fhirfactory.harmonia.model.core.naming.matching.MatchProbe;
+@@ -57,6 +58,18 @@ class ResourceBoundsTest {
+         assertTrue(xmlOverflow.getEntryIndex().isEmpty());
+     }
+ 
++    @Test
++    void maskConstructionRejectsMoreThanSixteenCompletedEntries() {
++        TopicMaskEntry entry = TopicMaskEntry.any();
++        NamingValidationException failure = assertThrows(NamingValidationException.class,
++                () -> TopicMask.fromEntries(Collections.nCopies(NamingLimits.MAX_DEPTH + 1, entry), false));
++
++        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, failure.getCategory());
++        assertEquals(NamingOperation.MASK_BUILD, failure.getOperation());
++        assertEquals(NamingFieldKind.DEPTH, failure.getFieldKind());
++        assertTrue(failure.getEntryIndex().isEmpty());
++    }
++
+     @Test
+     void canonicalLimitsUseUtf8BytesRatherThanUtf16Length() {
+         String exactTopicBytes = "😀".repeat(8_192);
+@@ -90,6 +103,63 @@ class ResourceBoundsTest {
+         NamingValidationException failure = assertThrows(NamingValidationException.class,
+                 () -> NamingXmlCodec.readTopic(oversized));
+         assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, failure.getCategory());
++
++        byte[] universal = "<topicMask kind=\"universal\"></topicMask>".getBytes(StandardCharsets.UTF_8);
++        byte[] exactMask = Arrays.copyOf(universal, NamingLimits.MAX_XML_RECORD_UTF8_BYTES);
++        Arrays.fill(exactMask, universal.length, exactMask.length, (byte) ' ');
++        assertTrue(NamingXmlCodec.readTopicMask(exactMask).isUniversal());
++        NamingValidationException oversizedMask = assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopicMask(Arrays.copyOf(exactMask, exactMask.length + 1)));
++        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, oversizedMask.getCategory());
++    }
++
++    @Test
++    void xmlDepthAndMalformedContentRemainBoundedAtTheDocumentSizeLimit() {
++        String topicEntry = "<entry><qualifier>Role</qualifier><value>LAB</value></entry>";
++        String maskEntry = "<entry><qualifierPattern encoding=\"base64\">Kg==</qualifierPattern>"
++                + "<valuePattern encoding=\"base64\">Kg==</valuePattern></entry>";
++        String topicAtDepth = "<topic>" + topicEntry.repeat(NamingLimits.MAX_DEPTH) + "</topic>";
++        String maskAtDepth = "<topicMask kind=\"ordinary\" includeContainedElements=\"false\">"
++                + maskEntry.repeat(NamingLimits.MAX_DEPTH) + "</topicMask>";
++        assertEquals(NamingLimits.MAX_DEPTH, NamingXmlCodec.readTopic(
++                topicAtDepth.getBytes(StandardCharsets.UTF_8)).getDepth());
++        assertEquals(NamingLimits.MAX_DEPTH, NamingXmlCodec.readTopicMask(
++                maskAtDepth.getBytes(StandardCharsets.UTF_8)).getEntries().size());
++
++        String excessiveTopic = "<topic>" + topicEntry.repeat(NamingLimits.MAX_DEPTH + 1) + "</topic>";
++        String excessiveMask = "<topicMask kind=\"ordinary\" includeContainedElements=\"false\">"
++                + maskEntry.repeat(NamingLimits.MAX_DEPTH + 1) + "</topicMask>";
++        assertXmlDepthFailure(excessiveTopic.getBytes(StandardCharsets.UTF_8));
++        assertXmlDepthFailure(excessiveMask.getBytes(StandardCharsets.UTF_8));
++
++        String malformed = "<topic><entry><qualifier>Role</qualifier><value>LAB</value></entry></topic><";
++        byte[] malformedAtLimit = Arrays.copyOf(malformed.getBytes(StandardCharsets.UTF_8),
++                NamingLimits.MAX_XML_RECORD_UTF8_BYTES);
++        Arrays.fill(malformedAtLimit, malformed.getBytes(StandardCharsets.UTF_8).length,
++                malformedAtLimit.length, (byte) ' ');
++        NamingValidationException malformedFailure = assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopic(malformedAtLimit));
++        assertEquals(NamingFailureCategory.MALFORMED_RECORD, malformedFailure.getCategory());
++        assertEquals(NamingFieldKind.XML_RECORD, malformedFailure.getFieldKind());
++
++        byte[] malformedOversized = Arrays.copyOf(malformedAtLimit, malformedAtLimit.length + 1);
++        NamingValidationException sizeFailure = assertThrows(NamingValidationException.class,
++                () -> NamingXmlCodec.readTopic(malformedOversized));
++        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, sizeFailure.getCategory());
++    }
++
++    private static void assertXmlDepthFailure(byte[] xml) {
++        NamingValidationException failure = assertThrows(NamingValidationException.class,
++                () -> {
++                    if (new String(xml, StandardCharsets.UTF_8).startsWith("<topicMask")) {
++                        NamingXmlCodec.readTopicMask(xml);
++                    } else {
++                        NamingXmlCodec.readTopic(xml);
++                    }
++                });
++        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, failure.getCategory());
++        assertEquals(NamingFieldKind.DEPTH, failure.getFieldKind());
++        assertTrue(failure.getEntryIndex().isEmpty());
+     }
+ 
+     @Test
+@@ -102,6 +172,7 @@ class ResourceBoundsTest {
+         NamingValidationException patternFailure = assertThrows(NamingValidationException.class,
+                 () -> NamingXmlCodec.readTopicMask(patternXml.getBytes(StandardCharsets.UTF_8)));
+         assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, patternFailure.getCategory());
++        assertEquals(NamingFieldKind.QUALIFIER_PATTERN, patternFailure.getFieldKind());
+         assertEquals(0, patternFailure.getEntryIndex().orElseThrow());
+ 
+         String oversizedConstraint = Base64.getEncoder().encodeToString(
+@@ -114,6 +185,7 @@ class ResourceBoundsTest {
+         NamingValidationException constraintFailure = assertThrows(NamingValidationException.class,
+                 () -> NamingXmlCodec.readTopicMask(constraintXml.getBytes(StandardCharsets.UTF_8)));
+         assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, constraintFailure.getCategory());
++        assertEquals(NamingFieldKind.VERSION_CONSTRAINT, constraintFailure.getFieldKind());
+         assertEquals(0, constraintFailure.getEntryIndex().orElseThrow());
+     }
+ 
+diff --git a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java
+index fa399611284e207e28d8a9db4d85f2afa1933ee9..f244c10d5b71b56fb0cf3a54b5ba0bdfe5b18d02 100644
+--- a/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java
++++ b/calliope/src/test/java/net/fhirfactory/harmonia/model/core/naming/TopicCanonicalParserTest.java
+@@ -32,7 +32,7 @@ class TopicCanonicalParserTest {
+         NamingValidationException topicFailure = assertThrows(NamingValidationException.class,
+                 () -> Topic.fromCanonicalName("Role=LAB.Component=bad\\q"));
+         assertEquals(NamingOperation.TOPIC_PARSE, topicFailure.getOperation());
+-        assertEquals(NamingFieldKind.CANONICAL_TEXT, topicFailure.getFieldKind());
++        assertEquals(NamingFieldKind.VALUE, topicFailure.getFieldKind());
+         assertEquals(1, topicFailure.getEntryIndex().orElseThrow());
+         assertEquals(NamingFailureCategory.MALFORMED_TEXT, topicFailure.getCategory());
+         assertFalse(topicFailure.getMessage().contains("bad"));
+@@ -40,10 +40,17 @@ class TopicCanonicalParserTest {
+         NamingValidationException maskFailure = assertThrows(NamingValidationException.class,
+                 () -> TopicMask.fromCanonicalExpression("Role=LAB.Component=bad\\q", false));
+         assertEquals(NamingOperation.MASK_PARSE, maskFailure.getOperation());
+-        assertEquals(NamingFieldKind.CANONICAL_TEXT, maskFailure.getFieldKind());
++        assertEquals(NamingFieldKind.VALUE_PATTERN, maskFailure.getFieldKind());
+         assertEquals(1, maskFailure.getEntryIndex().orElseThrow());
+         assertEquals(NamingFailureCategory.MALFORMED_TEXT, maskFailure.getCategory());
+         assertFalse(maskFailure.getMessage().contains("bad"));
++
++        NamingValidationException qualifierFailure = assertThrows(NamingValidationException.class,
++                () -> Topic.fromCanonicalName("Role\\q=LAB"));
++        assertEquals(NamingFieldKind.QUALIFIER, qualifierFailure.getFieldKind());
++        NamingValidationException versionFailure = assertThrows(NamingValidationException.class,
++                () -> Topic.fromCanonicalNameWithVersion("Role:1\\q=LAB"));
++        assertEquals(NamingFieldKind.VERSION, versionFailure.getFieldKind());
+     }
+ 
+     @Test

@@ -16,7 +16,9 @@ import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
  * <p>Topic entries retain order and optional versions. Mask records explicitly
  * distinguish universal from ordinary masks, preserve containment and
  * criterion order, and use padded UTF-8 Base64 for raw pattern and constraint
- * text. Input parsing is hardened and bounded before model construction.</p>
+ * text. Input parsing is hardened and bounded before model construction. Input
+ * accepts XML 1.0 with an optional declaration; a declaration of XML 1.1 is
+ * rejected before the parser processes the record.</p>
  *
  * <p>The codec is the supported facade over the interchange package. The
  * record format, hardened parsing, encodings and bounds belong to

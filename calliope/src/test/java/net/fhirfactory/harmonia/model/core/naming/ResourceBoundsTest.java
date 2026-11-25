@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Collections;
 import java.util.concurrent.atomic.AtomicInteger;
 import net.fhirfactory.harmonia.model.core.naming.matching.EntryCriterion;
 import net.fhirfactory.harmonia.model.core.naming.matching.MatchProbe;
@@ -58,6 +59,18 @@ class ResourceBoundsTest {
     }
 
     @Test
+    void maskConstructionRejectsMoreThanSixteenCompletedEntries() {
+        TopicMaskEntry entry = TopicMaskEntry.any();
+        NamingValidationException failure = assertThrows(NamingValidationException.class,
+                () -> TopicMask.fromEntries(Collections.nCopies(NamingLimits.MAX_DEPTH + 1, entry), false));
+
+        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, failure.getCategory());
+        assertEquals(NamingOperation.MASK_BUILD, failure.getOperation());
+        assertEquals(NamingFieldKind.DEPTH, failure.getFieldKind());
+        assertTrue(failure.getEntryIndex().isEmpty());
+    }
+
+    @Test
     void canonicalLimitsUseUtf8BytesRatherThanUtf16Length() {
         String exactTopicBytes = "😀".repeat(8_192);
         NamingValidationException atLimit = assertThrows(NamingValidationException.class,
@@ -90,6 +103,63 @@ class ResourceBoundsTest {
         NamingValidationException failure = assertThrows(NamingValidationException.class,
                 () -> NamingXmlCodec.readTopic(oversized));
         assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, failure.getCategory());
+
+        byte[] universal = "<topicMask kind=\"universal\"></topicMask>".getBytes(StandardCharsets.UTF_8);
+        byte[] exactMask = Arrays.copyOf(universal, NamingLimits.MAX_XML_RECORD_UTF8_BYTES);
+        Arrays.fill(exactMask, universal.length, exactMask.length, (byte) ' ');
+        assertTrue(NamingXmlCodec.readTopicMask(exactMask).isUniversal());
+        NamingValidationException oversizedMask = assertThrows(NamingValidationException.class,
+                () -> NamingXmlCodec.readTopicMask(Arrays.copyOf(exactMask, exactMask.length + 1)));
+        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, oversizedMask.getCategory());
+    }
+
+    @Test
+    void xmlDepthAndMalformedContentRemainBoundedAtTheDocumentSizeLimit() {
+        String topicEntry = "<entry><qualifier>Role</qualifier><value>LAB</value></entry>";
+        String maskEntry = "<entry><qualifierPattern encoding=\"base64\">Kg==</qualifierPattern>"
+                + "<valuePattern encoding=\"base64\">Kg==</valuePattern></entry>";
+        String topicAtDepth = "<topic>" + topicEntry.repeat(NamingLimits.MAX_DEPTH) + "</topic>";
+        String maskAtDepth = "<topicMask kind=\"ordinary\" includeContainedElements=\"false\">"
+                + maskEntry.repeat(NamingLimits.MAX_DEPTH) + "</topicMask>";
+        assertEquals(NamingLimits.MAX_DEPTH, NamingXmlCodec.readTopic(
+                topicAtDepth.getBytes(StandardCharsets.UTF_8)).getDepth());
+        assertEquals(NamingLimits.MAX_DEPTH, NamingXmlCodec.readTopicMask(
+                maskAtDepth.getBytes(StandardCharsets.UTF_8)).getEntries().size());
+
+        String excessiveTopic = "<topic>" + topicEntry.repeat(NamingLimits.MAX_DEPTH + 1) + "</topic>";
+        String excessiveMask = "<topicMask kind=\"ordinary\" includeContainedElements=\"false\">"
+                + maskEntry.repeat(NamingLimits.MAX_DEPTH + 1) + "</topicMask>";
+        assertXmlDepthFailure(excessiveTopic.getBytes(StandardCharsets.UTF_8));
+        assertXmlDepthFailure(excessiveMask.getBytes(StandardCharsets.UTF_8));
+
+        String malformed = "<topic><entry><qualifier>Role</qualifier><value>LAB</value></entry></topic><";
+        byte[] malformedAtLimit = Arrays.copyOf(malformed.getBytes(StandardCharsets.UTF_8),
+                NamingLimits.MAX_XML_RECORD_UTF8_BYTES);
+        Arrays.fill(malformedAtLimit, malformed.getBytes(StandardCharsets.UTF_8).length,
+                malformedAtLimit.length, (byte) ' ');
+        NamingValidationException malformedFailure = assertThrows(NamingValidationException.class,
+                () -> NamingXmlCodec.readTopic(malformedAtLimit));
+        assertEquals(NamingFailureCategory.MALFORMED_RECORD, malformedFailure.getCategory());
+        assertEquals(NamingFieldKind.XML_RECORD, malformedFailure.getFieldKind());
+
+        byte[] malformedOversized = Arrays.copyOf(malformedAtLimit, malformedAtLimit.length + 1);
+        NamingValidationException sizeFailure = assertThrows(NamingValidationException.class,
+                () -> NamingXmlCodec.readTopic(malformedOversized));
+        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, sizeFailure.getCategory());
+    }
+
+    private static void assertXmlDepthFailure(byte[] xml) {
+        NamingValidationException failure = assertThrows(NamingValidationException.class,
+                () -> {
+                    if (new String(xml, StandardCharsets.UTF_8).startsWith("<topicMask")) {
+                        NamingXmlCodec.readTopicMask(xml);
+                    } else {
+                        NamingXmlCodec.readTopic(xml);
+                    }
+                });
+        assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, failure.getCategory());
+        assertEquals(NamingFieldKind.DEPTH, failure.getFieldKind());
+        assertTrue(failure.getEntryIndex().isEmpty());
     }
 
     @Test
@@ -102,6 +172,7 @@ class ResourceBoundsTest {
         NamingValidationException patternFailure = assertThrows(NamingValidationException.class,
                 () -> NamingXmlCodec.readTopicMask(patternXml.getBytes(StandardCharsets.UTF_8)));
         assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, patternFailure.getCategory());
+        assertEquals(NamingFieldKind.QUALIFIER_PATTERN, patternFailure.getFieldKind());
         assertEquals(0, patternFailure.getEntryIndex().orElseThrow());
 
         String oversizedConstraint = Base64.getEncoder().encodeToString(
@@ -114,6 +185,7 @@ class ResourceBoundsTest {
         NamingValidationException constraintFailure = assertThrows(NamingValidationException.class,
                 () -> NamingXmlCodec.readTopicMask(constraintXml.getBytes(StandardCharsets.UTF_8)));
         assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, constraintFailure.getCategory());
+        assertEquals(NamingFieldKind.VERSION_CONSTRAINT, constraintFailure.getFieldKind());
         assertEquals(0, constraintFailure.getEntryIndex().orElseThrow());
     }
 
