@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
 import org.junit.jupiter.api.Test;
 
 /** Exercises TopicBuilder modes, recoverability, snapshots, and field limits. */

@@ -1,14 +1,19 @@
 /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
-package net.fhirfactory.harmonia.model.core.naming;
+package net.fhirfactory.harmonia.model.core.naming.matching;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingRuleViolation;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 import org.junit.jupiter.api.Test;
 
-/** Verifies wildcard classification, escape decoding, and bounded literal matching. */
+/** Verifies wildcard classification, escape decoding, and bounded pattern matching. */
 class FieldPatternTest {
 
     @Test
@@ -43,18 +48,20 @@ class FieldPatternTest {
 
     @Test
     void unsupportedArrangementsAndMalformedUnicodeAreRejectedWithoutPayloads() {
-        NamingValidationException absent = assertThrows(NamingValidationException.class,
+        NamingRuleViolation absent = assertThrows(NamingRuleViolation.class,
                 () -> FieldPattern.parse(null, NamingFieldKind.VALUE_PATTERN,
                         NamingOperation.MASK_ENTRY_BUILD, null));
         assertEquals(NamingFailureCategory.MISSING_INPUT, absent.getCategory());
         for (String pattern : new String[]{"**", "Pa*ti*ent", "*Patient*Record", "Patient*Record*"}) {
-            NamingValidationException failure = assertThrows(NamingValidationException.class,
+            NamingRuleViolation failure = assertThrows(NamingRuleViolation.class,
                     () -> FieldPattern.parse(pattern, NamingFieldKind.VALUE_PATTERN,
                             NamingOperation.MASK_ENTRY_BUILD, 0));
             assertEquals(NamingFailureCategory.PATTERN_REJECTED, failure.getCategory());
+            assertEquals(0, failure.getEntryIndex());
             assertFalse(failure.getMessage().contains(pattern));
+            assertEquals(0, failure.getStackTrace().length);
         }
-        NamingValidationException malformed = assertThrows(NamingValidationException.class,
+        NamingRuleViolation malformed = assertThrows(NamingRuleViolation.class,
                 () -> FieldPattern.parse("bad\uD800", NamingFieldKind.VALUE_PATTERN,
                         NamingOperation.MASK_ENTRY_BUILD, 0));
         assertEquals(NamingFailureCategory.INVALID_FIELD, malformed.getCategory());
@@ -66,21 +73,29 @@ class FieldPatternTest {
         String exact = "😀".repeat(NamingLimits.MAX_PATTERN_CODE_POINTS);
         assertTrue(FieldPattern.parse(exact, NamingFieldKind.VALUE_PATTERN,
                 NamingOperation.MASK_ENTRY_BUILD, null).matches(exact));
-        NamingValidationException oversized = assertThrows(NamingValidationException.class,
+        NamingRuleViolation oversized = assertThrows(NamingRuleViolation.class,
                 () -> FieldPattern.parse(exact + "😀", NamingFieldKind.VALUE_PATTERN,
                         NamingOperation.MASK_ENTRY_BUILD, null));
         assertEquals(NamingFailureCategory.LIMIT_EXCEEDED, oversized.getCategory());
     }
 
     @Test
-    void literalHelpersMayExpandToTheAcceptedRawPatternLimit() {
-        String literal = "*".repeat(NamingLimits.MAX_VALUE_CODE_POINTS);
-        TopicMaskEntry entry = TopicMaskEntry.ofLiterals("Role", literal);
+    void compiledCriterionValidatesFieldsInOrderAndDistinguishesConstraintPresence() {
+        NamingRuleViolation qualifierFirst = assertThrows(NamingRuleViolation.class,
+                () -> EntryCriterion.compile("**", "**", ">=x", NamingOperation.MASK_BUILD, 3));
+        assertEquals(NamingFieldKind.QUALIFIER_PATTERN, qualifierFirst.getFieldKind());
+        assertEquals(3, qualifierFirst.getEntryIndex());
+        NamingRuleViolation constraintLast = assertThrows(NamingRuleViolation.class,
+                () -> EntryCriterion.compile("Role", "LAB", ">=x", NamingOperation.MASK_BUILD, 3));
+        assertEquals(NamingFieldKind.VERSION_CONSTRAINT, constraintLast.getFieldKind());
 
-        assertEquals(NamingLimits.MAX_PATTERN_CODE_POINTS,
-                entry.getValuePattern().codePointCount(0, entry.getValuePattern().length()));
-        assertTrue(entry.matchesValue(literal));
-        assertFalse(entry.matchesValue(literal + "*"));
+        EntryCriterion omitted = EntryCriterion.compile("Role", "LAB", null, NamingOperation.MASK_BUILD, 0);
+        EntryCriterion presentEmpty = EntryCriterion.compile("Role", "LAB", "", NamingOperation.MASK_BUILD, 0);
+        assertFalse(omitted.hasVersionConstraint());
+        assertTrue(omitted.matchesVersion(null));
+        assertTrue(presentEmpty.hasVersionConstraint());
+        assertFalse(presentEmpty.matchesVersion("1"));
+        assertFalse(presentEmpty.matchesVersion(null));
     }
 
     private static void assertPattern(String pattern, String candidate, boolean expected) {

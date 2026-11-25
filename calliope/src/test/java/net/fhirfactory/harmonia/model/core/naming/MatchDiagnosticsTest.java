@@ -10,6 +10,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import net.fhirfactory.harmonia.model.core.naming.matching.DiagnosticSeverity;
+import net.fhirfactory.harmonia.model.core.naming.matching.EntryCriterion;
+import net.fhirfactory.harmonia.model.core.naming.matching.MatchDiagnosticSink;
+import net.fhirfactory.harmonia.model.core.naming.matching.MatchExitCategory;
+import net.fhirfactory.harmonia.model.core.naming.matching.MatchProbe;
+import net.fhirfactory.harmonia.model.core.naming.matching.NamingDiagnostic;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
 import org.junit.jupiter.api.Test;
 
 /** Verifies ordered matching, single safe diagnostics, and fail-closed evaluator behavior. */
@@ -84,18 +91,18 @@ class MatchDiagnosticsTest {
         AtomicInteger probeCalls = new AtomicInteger();
         MatchProbe failing = new MatchProbe() {
             @Override
-            public boolean matchesQualifier(TopicMaskEntry entry, String value) {
+            public boolean matchesQualifier(EntryCriterion entry, String value) {
                 probeCalls.incrementAndGet();
                 throw new IllegalStateException("private payload");
             }
 
             @Override
-            public boolean matchesValue(TopicMaskEntry entry, String value) {
+            public boolean matchesValue(EntryCriterion entry, String value) {
                 throw new AssertionError("must short circuit");
             }
 
             @Override
-            public boolean matchesVersion(TopicMaskEntry entry, String value) {
+            public boolean matchesVersion(EntryCriterion entry, String value) {
                 throw new AssertionError("must short circuit");
             }
         };
@@ -120,12 +127,28 @@ class MatchDiagnosticsTest {
     }
 
     @Test
-    void publicMatchSurfaceUsesNoHandlerAndDiagnosticTypesRemainInternal() throws Exception {
+    void publicMatchSurfaceAcceptsNoDiagnosticSinkOrProbe() throws Exception {
         assertEquals(1, TopicMask.class.getMethod("matches", Topic.class).getParameterCount());
         assertThrows(NoSuchMethodException.class,
                 () -> TopicMask.class.getMethod("matches", Topic.class, MatchDiagnosticSink.class));
-        assertFalse(java.lang.reflect.Modifier.isPublic(NamingDiagnostic.class.getModifiers()));
-        assertFalse(java.lang.reflect.Modifier.isPublic(MatchDiagnosticSink.class.getModifiers()));
+        for (java.lang.reflect.Method method : TopicMask.class.getDeclaredMethods()) {
+            if (method.getName().equals("matches") && method.getParameterCount() > 1) {
+                assertFalse(java.lang.reflect.Modifier.isPublic(method.getModifiers()));
+                assertFalse(java.lang.reflect.Modifier.isProtected(method.getModifiers()));
+            }
+        }
+    }
+
+    @Test
+    void universalDiagnosticsReportTheExplicitKindWithoutAnEntryPosition() {
+        List<NamingDiagnostic> events = new ArrayList<>();
+        assertTrue(TopicMask.all().matches(topic("Role", "LAB", null), events::add));
+        assertEquals(MatchExitCategory.UNIVERSAL_MATCH, events.get(0).category());
+        assertEquals(1, events.get(0).depth());
+        assertNull(events.get(0).entryIndex());
+        events.clear();
+        assertFalse(TopicMask.all().matches(null, events::add));
+        assertEquals(MatchExitCategory.NULL_CANDIDATE, events.get(0).category());
     }
 
     private static MatchProbe counterProbe(
@@ -134,19 +157,19 @@ class MatchDiagnosticsTest {
             AtomicInteger versions) {
         return new MatchProbe() {
             @Override
-            public boolean matchesQualifier(TopicMaskEntry entry, String value) {
+            public boolean matchesQualifier(EntryCriterion entry, String value) {
                 qualifiers.incrementAndGet();
                 return entry.matchesQualifier(value);
             }
 
             @Override
-            public boolean matchesValue(TopicMaskEntry entry, String value) {
+            public boolean matchesValue(EntryCriterion entry, String value) {
                 values.incrementAndGet();
                 return entry.matchesValue(value);
             }
 
             @Override
-            public boolean matchesVersion(TopicMaskEntry entry, String value) {
+            public boolean matchesVersion(EntryCriterion entry, String value) {
                 versions.incrementAndGet();
                 return entry.matchesVersion(value);
             }

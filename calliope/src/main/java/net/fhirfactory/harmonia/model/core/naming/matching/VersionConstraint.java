@@ -1,14 +1,26 @@
 /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
-package net.fhirfactory.harmonia.model.core.naming;
+package net.fhirfactory.harmonia.model.core.naming.matching;
+
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingRuleViolation;
+import net.fhirfactory.harmonia.model.core.naming.validation.TopicFieldRules;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 
 /**
  * Immutable, construction-validated interpretation of one raw version constraint.
  *
  * <p>Exact text and numeric comparisons remain distinct. Numeric operands are
  * component spans, so even long decimal components never pass through a
- * machine numeric type.</p>
+ * machine numeric type. A raw constraint of {@code null} (omitted) has no
+ * description at all, while {@code ""} (present-empty) is a description that
+ * never matches.</p>
+ *
+ * <p>This type is implementation machinery of the Naming component and is not
+ * part of the supported Naming API.</p>
  */
-final class VersionConstraint {
+public final class VersionConstraint {
     private enum Kind { EMPTY, EXACT, COMPARISON, RANGE }
     private enum Operator { EQUAL, LESS, LESS_OR_EQUAL, GREATER, GREATER_OR_EQUAL }
 
@@ -34,8 +46,16 @@ final class VersionConstraint {
         this.secondOperand = secondOperand;
     }
 
-    /** Parses a present raw constraint; null is represented by the absence of this description. */
-    static VersionConstraint parse(String raw, NamingOperation operation, Integer index) {
+    /**
+     * Parses a raw constraint; an omitted constraint is represented by the absence of a description.
+     *
+     * @param raw raw constraint text, {@code null} when omitted and {@code ""} when present-empty
+     * @param operation operation used for failure metadata
+     * @param index entry position used for failure metadata, or {@code null}
+     * @return the immutable description, or {@code null} for an omitted constraint
+     * @throws NamingRuleViolation when operator-led syntax, exact text, range ordering or bounds are invalid
+     */
+    public static VersionConstraint parse(String raw, NamingOperation operation, Integer index) {
         if (raw == null) {
             return null;
         }
@@ -65,8 +85,23 @@ final class VersionConstraint {
         return new VersionConstraint(Kind.EXACT, raw, null, null, null, null);
     }
 
-    /** Checks whether one candidate version satisfies this already classified constraint. */
-    boolean matches(String candidate) {
+    /**
+     * Escapes an exact version whose first character would otherwise be read as constraint syntax.
+     *
+     * @param version nonempty, already validated exact version
+     * @return the version, prefixed with one backslash when it begins with an operator or backslash
+     */
+    public static String escapeExactText(String version) {
+        return startsWithOperatorOrBackslash(version.charAt(0)) ? "\\" + version : version;
+    }
+
+    /**
+     * Checks whether one candidate version satisfies this already classified constraint.
+     *
+     * @param candidate opaque candidate version, or {@code null} when the Topic entry has none
+     * @return true only when a present candidate satisfies the exact or numeric constraint
+     */
+    public boolean matches(String candidate) {
         if (candidate == null || kind == Kind.EMPTY) {
             return false;
         }
@@ -200,14 +235,14 @@ final class VersionConstraint {
     }
 
     /** Creates payload-free malformed constraint metadata. */
-    private static NamingValidationException rejected(NamingOperation operation, Integer index) {
-        return TopicFieldRules.failure(NamingFailureCategory.INVALID_FIELD,
+    private static NamingRuleViolation rejected(NamingOperation operation, Integer index) {
+        return new NamingRuleViolation(NamingFailureCategory.INVALID_FIELD,
                 operation, NamingFieldKind.VERSION_CONSTRAINT, index);
     }
 
     /** Creates payload-free constraint-limit metadata. */
-    private static NamingValidationException limit(NamingOperation operation, Integer index) {
-        return TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
+    private static NamingRuleViolation limit(NamingOperation operation, Integer index) {
+        return new NamingRuleViolation(NamingFailureCategory.LIMIT_EXCEEDED,
                 operation, NamingFieldKind.VERSION_CONSTRAINT, index);
     }
 

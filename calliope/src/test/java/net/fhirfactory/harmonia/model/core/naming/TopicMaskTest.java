@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 import org.junit.jupiter.api.Test;
 
 /** Verifies ordinary and universal mask semantics, ordering, helpers, and immutability. */
@@ -45,11 +47,11 @@ class TopicMaskTest {
         assertTrue(escaped.matches(candidate));
         assertTrue(literals.matches(candidate));
         assertEquals(escaped, literals);
-        assertTrue(TopicMaskEntry.forLiteralValue("A.B\\C").matchesValue("A.B\\C"));
-        assertTrue(TopicMaskEntry.forLiteralQualifier("Role*").matchesQualifier("Role*"));
-        assertTrue(TopicMaskEntry.forValue("A.B*").matchesValue("A.BC"));
-        assertTrue(TopicMaskEntry.forQualifier("Role*").matchesQualifier("RoleX"));
-        assertTrue(TopicMaskEntry.any().matchesValue("anything"));
+        assertTrue(TopicMaskEntry.forLiteralValue("A.B\\C").criterion().matchesValue("A.B\\C"));
+        assertTrue(TopicMaskEntry.forLiteralQualifier("Role*").criterion().matchesQualifier("Role*"));
+        assertTrue(TopicMaskEntry.forValue("A.B*").criterion().matchesValue("A.BC"));
+        assertTrue(TopicMaskEntry.forQualifier("Role*").criterion().matchesQualifier("RoleX"));
+        assertTrue(TopicMaskEntry.any().criterion().matchesValue("anything"));
     }
 
     @Test
@@ -128,6 +130,17 @@ class TopicMaskTest {
         assertEquals("=01.002", numericA.getVersionConstraint().orElseThrow());
         assertNotEquals(TopicMask.builder().add(numericA).build(),
                 TopicMask.builder().add(numericB).build());
+    }
+
+    @Test
+    void literalHelpersMayExpandToTheAcceptedRawPatternLimit() {
+        String literal = "*".repeat(NamingLimits.MAX_VALUE_CODE_POINTS);
+        TopicMaskEntry entry = TopicMaskEntry.ofLiterals("Role", literal);
+
+        assertEquals(NamingLimits.MAX_PATTERN_CODE_POINTS,
+                entry.getValuePattern().codePointCount(0, entry.getValuePattern().length()));
+        assertTrue(entry.criterion().matchesValue(literal));
+        assertFalse(entry.criterion().matchesValue(literal + "*"));
     }
 
     private static Topic topic(String qualifier, String value, String version) {

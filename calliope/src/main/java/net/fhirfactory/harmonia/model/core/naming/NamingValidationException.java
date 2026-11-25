@@ -2,6 +2,10 @@
 package net.fhirfactory.harmonia.model.core.naming;
 
 import java.util.OptionalInt;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 
 /**
  * A safe, categorized rejection raised while validating Naming input.
@@ -9,16 +13,33 @@ import java.util.OptionalInt;
  * <p>The exception exposes only stable categories and bounded structural
  * context. It intentionally retains neither a cause nor raw input, which could
  * contain protected data or attacker-controlled expression text.</p>
+ *
+ * <p>The exception is serializable. Its state is the stable metadata above;
+ * the entry index is stored as a primitive and range-checked again whenever it
+ * is read, so a deserialized instance cannot report an invalid position.</p>
  */
 public final class NamingValidationException extends IllegalArgumentException {
+    @java.io.Serial
+    private static final long serialVersionUID = 1L;
+    /** Stored marker for an unknown or invalid entry position. */
+    private static final int NO_INDEX = -1;
     /** Safe category for the rejected input or operation. */
     private final NamingFailureCategory category;
     /** Bounded public operation that performed the failed validation. */
     private final NamingOperation operation;
     /** Structural field kind without its corresponding value. */
     private final NamingFieldKind fieldKind;
-    /** Valid zero-based entry position when it was known at failure time. */
-    private final OptionalInt entryIndex;
+    /** Valid zero-based entry position when it was known at failure time, otherwise {@link #NO_INDEX}. */
+    private final int entryIndex;
+
+    /** Creates a safe validation failure; reachable only from the Naming model package. */
+    static NamingValidationException of(
+            NamingFailureCategory category,
+            NamingOperation operation,
+            NamingFieldKind fieldKind,
+            Integer entryIndex) {
+        return new NamingValidationException(category, operation, fieldKind, entryIndex);
+    }
 
     /**
      * Creates a categorized validation exception for internal Naming use.
@@ -38,7 +59,7 @@ public final class NamingValidationException extends IllegalArgumentException {
         this.operation = operation;
         this.fieldKind = fieldKind;
         Integer safeIndex = safeIndex(entryIndex);
-        this.entryIndex = safeIndex == null ? OptionalInt.empty() : OptionalInt.of(safeIndex);
+        this.entryIndex = safeIndex == null ? NO_INDEX : safeIndex;
     }
 
     /**
@@ -74,7 +95,8 @@ public final class NamingValidationException extends IllegalArgumentException {
      * @return an empty OptionalInt for an unknown or invalid position
      */
     public OptionalInt getEntryIndex() {
-        return entryIndex;
+        Integer safeIndex = safeIndex(entryIndex);
+        return safeIndex == null ? OptionalInt.empty() : OptionalInt.of(safeIndex);
     }
 
     /** Omits indexes outside the completed model's valid zero-based depth range. */

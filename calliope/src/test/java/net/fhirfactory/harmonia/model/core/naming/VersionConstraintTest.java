@@ -7,6 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 import org.junit.jupiter.api.Test;
 
 /** Covers exact, operator-led, ranged and absent version-constraint semantics. */
@@ -60,7 +64,7 @@ class VersionConstraintTest {
         assertFalse(matches("*", "anything"));
         TopicMaskEntry literal = TopicMaskEntry.ofLiterals("Role", "LAB", "=1.2");
         assertEquals("\\=1.2", literal.getVersionConstraint().orElseThrow());
-        assertTrue(literal.matchesVersion("=1.2"));
+        assertTrue(literal.criterion().matchesVersion("=1.2"));
         assertTrue(matches("1.2-beta", "1.2-beta"));
         assertFalse(matches(">=1.2", "1.2-beta"));
 

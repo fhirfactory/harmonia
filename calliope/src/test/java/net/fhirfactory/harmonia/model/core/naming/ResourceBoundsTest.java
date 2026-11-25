@@ -12,6 +12,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.concurrent.atomic.AtomicInteger;
+import net.fhirfactory.harmonia.model.core.naming.matching.EntryCriterion;
+import net.fhirfactory.harmonia.model.core.naming.matching.MatchProbe;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 import org.junit.jupiter.api.Test;
 
 /** Exercises depth, encoded-size, metadata, and maximum-work limits. */
@@ -139,19 +145,19 @@ class ResourceBoundsTest {
         AtomicInteger checks = new AtomicInteger();
         MatchProbe counting = new MatchProbe() {
             @Override
-            public boolean matchesQualifier(TopicMaskEntry entry, String candidate) {
+            public boolean matchesQualifier(EntryCriterion entry, String candidate) {
                 checks.incrementAndGet();
                 return entry.matchesQualifier(candidate);
             }
 
             @Override
-            public boolean matchesValue(TopicMaskEntry entry, String candidate) {
+            public boolean matchesValue(EntryCriterion entry, String candidate) {
                 checks.incrementAndGet();
                 return entry.matchesValue(candidate);
             }
 
             @Override
-            public boolean matchesVersion(TopicMaskEntry entry, String candidate) {
+            public boolean matchesVersion(EntryCriterion entry, String candidate) {
                 checks.incrementAndGet();
                 return entry.matchesVersion(candidate);
             }

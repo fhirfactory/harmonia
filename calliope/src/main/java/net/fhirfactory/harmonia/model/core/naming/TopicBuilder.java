@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.validation.TopicFieldRules;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 
 /**
  * Reusable, caller-confined builder for sequential or explicitly indexed paths.
@@ -49,7 +54,7 @@ public final class TopicBuilder {
     public TopicBuilder addEntry(String qualifier, String value, String version) {
         requireMode(Mode.SEQUENTIAL);
         if (sequential.size() >= NamingLimits.MAX_DEPTH) {
-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
+            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
                     NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
         }
         int index = sequential.size();
@@ -90,11 +95,11 @@ public final class TopicBuilder {
      */
     public TopicBuilder addEntry(int index, String qualifier, String value, String version) {
         if (index < 0) {
-            throw TopicFieldRules.failure(NamingFailureCategory.INVALID_ARGUMENT,
+            throw NamingValidationException.of(NamingFailureCategory.INVALID_ARGUMENT,
                     NamingOperation.TOPIC_BUILD, NamingFieldKind.INDEX, null);
         }
         if (index >= NamingLimits.MAX_DEPTH) {
-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
+            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
                     NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, index);
         }
         requireMode(Mode.INDEXED);
@@ -112,12 +117,12 @@ public final class TopicBuilder {
      */
     public Topic build() {
         if (mode == null) {
-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
+            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
                     NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
         }
         List<Input> inputs = mode == Mode.SEQUENTIAL ? List.copyOf(sequential) : contiguousInputs();
         if (inputs.isEmpty()) {
-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
+            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
                     NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
         }
         List<TopicEntry> entries = new ArrayList<>(inputs.size());
@@ -133,17 +138,19 @@ public final class TopicBuilder {
 
     /** Validates a proposed entry completely before any list or map mutation. */
     private Input validateInput(String qualifier, String value, String version, int index) {
-        TopicFieldRules.validateQualifierInput(qualifier, true, NamingOperation.TOPIC_BUILD, index);
-        TopicFieldRules.validateValue(value, NamingOperation.TOPIC_BUILD, index);
-        String normalizedVersion = TopicFieldRules.normalizeVersion(
-                version, NamingOperation.TOPIC_BUILD, index);
-        return new Input(qualifier, value, normalizedVersion);
+        return NamingBoundary.guard(() -> {
+            TopicFieldRules.validateQualifierInput(qualifier, true, NamingOperation.TOPIC_BUILD, index);
+            TopicFieldRules.validateValue(value, NamingOperation.TOPIC_BUILD, index);
+            String normalizedVersion = TopicFieldRules.normalizeVersion(
+                    version, NamingOperation.TOPIC_BUILD, index);
+            return new Input(qualifier, value, normalizedVersion);
+        });
     }
 
     /** Rejects a mode change without altering the previously selected mode. */
     private void requireMode(Mode requested) {
         if (mode != null && mode != requested) {
-            throw TopicFieldRules.failure(NamingFailureCategory.INVALID_STATE,
+            throw NamingValidationException.of(NamingFailureCategory.INVALID_STATE,
                     NamingOperation.TOPIC_BUILD, NamingFieldKind.NONE, null);
         }
     }
@@ -154,14 +161,14 @@ public final class TopicBuilder {
             return List.of();
         }
         if (indexed.size() > NamingLimits.MAX_DEPTH) {
-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
+            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
                     NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
         }
         List<Input> inputs = new ArrayList<>(indexed.size());
         for (int expected = 0; expected < indexed.size(); expected++) {
             Input input = indexed.get(expected);
             if (input == null) {
-                throw TopicFieldRules.failure(NamingFailureCategory.INVALID_FIELD,
+                throw NamingValidationException.of(NamingFailureCategory.INVALID_FIELD,
                         NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, expected);
             }
             inputs.add(input);

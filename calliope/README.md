@@ -8,6 +8,37 @@ and [Final.003 design](../enterprise-architecture/design/offline-design/DRP-Topi
 Those governed sources remain authoritative; this README is implementation
 documentation, not an independent design decision.
 
+## Package organization
+
+Naming is organised by function under `net.fhirfactory.harmonia.model.core.naming`.
+Only the first two packages form the supported API:
+
+| Package | Responsibility | Types |
+| --- | --- | --- |
+| `naming` | Supported models and boundaries | Principal values `Topic` and `TopicMask`; dependent values `TopicEntry` and `TopicMaskEntry`; builders `TopicBuilder` and `TopicMaskBuilder`; the `NamingXmlCodec` facade; `NamingValidationException`; package-private `NamingBoundary` |
+| `naming.valuesets` | Supported validation vocabulary | `NamingFailureCategory`, `NamingOperation`, `NamingFieldKind` |
+| `naming.validation` | Field rules and bounds | `TopicFieldRules`, `NamingLimits`, `NamingRuleViolation` |
+| `naming.canonical` | Canonical-text scanning and decoding | `CanonicalPathSyntax`, `TopicCanonicalParser`, `MaskExpressionParser`, `CanonicalEntryFields` |
+| `naming.matching` | Pattern/version descriptions, evaluation, diagnostics | `FieldPattern`, `VersionConstraint`, `EntryCriterion`, `MatchCandidate`, `MaskEvaluator`, `MatchProbe`, `MatchDiagnosticSink`, `NamingDiagnostic`, `DiagnosticSeverity`, `MatchExitCategory`; package-private `NumericVersion` |
+| `naming.interchange` | XML record format | `NamingXmlFormat`, `XmlEntryFields`, `XmlMaskRecord`; package-private `XmlRecordParser` |
+
+Dependencies point one way. The four implementation packages depend only on
+`validation` and `valuesets`, never on the models: parsers return decoded
+fields, the XML format works on neutral records and the evaluator reads a
+read-only candidate view. The models alone assemble completed entries, so
+builders, canonical text and XML reconstruction all apply the same strict
+validation with the actual operation and entry index. Implementation code
+reports rejections as `NamingRuleViolation`; the package-private
+`NamingBoundary` translates each one into `NamingValidationException`, so
+callers only ever see the supported exception.
+
+Java requires types used across packages to be public. The implementation
+packages therefore contain public types that are **not** supported API: each
+is documented as such, and `NamingStructureTest` enforces the per-package type
+lists, the dependency direction and that no supported signature exposes an
+implementation type. No JPMS module descriptor is used. Callers must depend
+only on `naming` and `naming.valuesets`.
+
 Calliope's `Topic` is an immutable ordered path of completed
 `TopicEntry(qualifier, value, optional version)` values. A Topic's identity,
 hash code and natural order use only the case-sensitive ordered qualifier/value
@@ -113,11 +144,32 @@ version 256 and 64 code points respectively; each qualifier/value pattern 512
 code points; Topic and ordinary-mask canonical text 32 KiB and 128 KiB UTF-8;
 XML records 256 KiB UTF-8; numeric operands 64 ASCII characters and 32
 components; and raw numeric ranges 133 ASCII characters. Completed models and
-their parsed mask descriptions are immutable and safe for concurrent reuse.
+their compiled mask criteria are immutable and safe for concurrent reuse.
+
+## Java serialization
+
+`Topic`, `TopicEntry`, `TopicMask`, `TopicMaskEntry` and
+`NamingValidationException` implement `java.io.Serializable`. The four models
+use the serialization-proxy pattern: each writes a private proxy holding only
+its raw text fields (and, for masks, the explicit kind and containment flag).
+On deserialization the proxy rebuilds the model through the same strict
+construction path as the builders and the canonical and XML readers, so a
+crafted stream cannot produce an invalid model, compiled matching criteria are
+recomputed rather than trusted, and `TopicMask.all()` deserializes to the
+shared universal instance. A stream that bypasses a proxy, or a proxy with
+invalid content, is rejected with an `InvalidObjectException` that names only
+the type. Builders are caller-confined mutable helpers and are not
+serializable. Java serialization does not replace the canonical text or XML
+interchange contracts; callers that deserialize untrusted input remain
+responsible for applying JDK deserialization filters.
+
+## Diagnostics
 
 Public `TopicMask.matches(Topic)` has no diagnostic-handler parameter. The
-optional synchronous diagnostic sink and its bounded records are package
-private, invocation local, and absent on the public matching path. A match
+optional synchronous diagnostic sink and its bounded records belong to the
+unsupported `naming.matching` package, are reachable only through
+`TopicMask`'s package-private overloads, are invocation local, and are absent
+on the public matching path. A match
 returns only a Boolean and does not perform authorization, routing, persistence,
 audit capture or logging; those responsibilities remain with their owning
 Harmonia components.

@@ -1,9 +1,21 @@
 /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
 package net.fhirfactory.harmonia.model.core.naming;
 
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
+import java.io.ObjectStreamException;
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import net.fhirfactory.harmonia.model.core.naming.canonical.CanonicalEntryFields;
+import net.fhirfactory.harmonia.model.core.naming.canonical.CanonicalPathSyntax;
+import net.fhirfactory.harmonia.model.core.naming.canonical.TopicCanonicalParser;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 
 /**
  * Immutable ordered root-to-leaf identity for a named Harmonia concept.
@@ -12,16 +24,31 @@ import java.util.Objects;
  * entry versions remain available as data but do not change equality, hashing,
  * or natural ordering.</p>
  *
- * <p>Names and renderings may contain sensitive input and are not sanitized for
+ * <p>Topic is the principal Naming value: it owns its ordered entries and the
+ * only assembly path for them. Canonical parsing and field validation are
+ * delegated to the canonical and validation packages; the Topic receives
+ * decoded fields from them and assembles completed entries itself, so no
+ * parser or adapter can construct a Topic by another route.</p>
+ *
+ * <p>Instances are immutable and safe for concurrent use. Names and
+ * renderings may contain sensitive input and are not sanitized for
  * operational diagnostics or logging.</p>
+ *
+ * <p>Topics are serializable through a private proxy carrying the ordered
+ * qualifier, value and optional version text. Deserialization reassembles
+ * the entries through strict completed-entry validation and rejects any
+ * stream that bypasses the proxy, so an invalid Topic cannot be produced.</p>
  */
-public final class Topic implements Comparable<Topic> {
-    private final List<TopicEntry> entries;
+public final class Topic implements Comparable<Topic>, Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+    /** Ordered completed entries; serialized only through {@link SerialForm}. */
+    private final transient List<TopicEntry> entries;
 
     /** Copies a completed ordered path after checking its nonempty bounded depth. */
     private Topic(List<TopicEntry> entries) {
         if (entries.isEmpty() || entries.size() > NamingLimits.MAX_DEPTH) {
-            throw TopicFieldRules.failure(entries.isEmpty() ? NamingFailureCategory.MISSING_INPUT
+            throw NamingValidationException.of(entries.isEmpty() ? NamingFailureCategory.MISSING_INPUT
                             : NamingFailureCategory.LIMIT_EXCEEDED,
                     NamingOperation.TOPIC_BUILD, NamingFieldKind.DEPTH, null);
         }
@@ -45,7 +72,7 @@ public final class Topic implements Comparable<Topic> {
      * @throws NamingValidationException when input is absent, malformed or above the UTF-8 byte limit
      */
     public static Topic fromCanonicalName(String text) {
-        return TopicCanonicalParser.parse(text, false);
+        return fromCanonicalFields(NamingBoundary.guard(() -> TopicCanonicalParser.parse(text, false)));
     }
 
     /**
@@ -56,12 +83,23 @@ public final class Topic implements Comparable<Topic> {
      * @throws NamingValidationException when input is absent, malformed or above the UTF-8 byte limit
      */
     public static Topic fromCanonicalNameWithVersion(String text) {
-        return TopicCanonicalParser.parse(text, true);
+        return fromCanonicalFields(NamingBoundary.guard(() -> TopicCanonicalParser.parse(text, true)));
     }
 
     /** Creates a defensive snapshot from already completed immutable entries. */
     static Topic fromEntries(List<TopicEntry> entries) {
         return new Topic(entries);
+    }
+
+    /** Strictly assembles decoded canonical fields, reporting the parse operation and entry index. */
+    private static Topic fromCanonicalFields(List<CanonicalEntryFields> fields) {
+        List<TopicEntry> entries = new ArrayList<>(fields.size());
+        for (int index = 0; index < fields.size(); index++) {
+            CanonicalEntryFields field = fields.get(index);
+            entries.add(TopicEntry.create(field.qualifierField(), field.valueField(), field.versionField(),
+                    NamingOperation.TOPIC_PARSE, index));
+        }
+        return fromEntries(entries);
     }
 
     /**
@@ -165,7 +203,7 @@ public final class Topic implements Comparable<Topic> {
      */
     public Topic getAncestor(int depth) {
         if (depth < 1 || depth > entries.size()) {
-            throw TopicFieldRules.failure(NamingFailureCategory.INVALID_ARGUMENT,
+            throw NamingValidationException.of(NamingFailureCategory.INVALID_ARGUMENT,
                     NamingOperation.TOPIC_NAVIGATE, NamingFieldKind.INDEX, null);
         }
         return depth == entries.size() ? this : fromEntries(entries.subList(0, depth));
@@ -272,6 +310,80 @@ public final class Topic implements Comparable<Topic> {
             segments.add(segment.toString());
         }
         return String.join(".", segments);
+    }
+
+    /**
+     * Serializes through {@link SerialForm} so deserialization re-runs strict validation.
+     *
+     * @return the validating serialization proxy
+     */
+    @Serial
+    private Object writeReplace() {
+        return new SerialForm(this);
+    }
+
+    /**
+     * Rejects any stream that tries to restore a Topic without its validating proxy.
+     *
+     * @param stream the object stream, which is never read
+     * @throws InvalidObjectException always, because only the proxy may be deserialized
+     */
+    @Serial
+    private void readObject(ObjectInputStream stream) throws InvalidObjectException {
+        throw NamingSerialization.invalid(Topic.class);
+    }
+
+    /**
+     * Serialized form of a Topic: parallel ordered field arrays.
+     *
+     * <p>A {@code null} version element records an absent version. On
+     * deserialization the arrays are checked for presence, equal length and
+     * depth, and each entry is recreated through strict completed-entry
+     * validation; any violation yields {@link InvalidObjectException}.</p>
+     */
+    static final class SerialForm implements Serializable {
+        @Serial
+        private static final long serialVersionUID = 1L;
+        private final String[] qualifiers;
+        private final String[] values;
+        private final String[] versions;
+
+        /** Captures the ordered fields of a completed Topic. */
+        private SerialForm(Topic topic) {
+            int depth = topic.entries.size();
+            this.qualifiers = new String[depth];
+            this.values = new String[depth];
+            this.versions = new String[depth];
+            for (int index = 0; index < depth; index++) {
+                TopicEntry entry = topic.entries.get(index);
+                qualifiers[index] = entry.getQualifier();
+                values[index] = entry.getValue();
+                versions[index] = entry.versionOrNull();
+            }
+        }
+
+        /** Creates an arbitrary form; used by tests to exercise rejection of crafted streams. */
+        SerialForm(String[] qualifiers, String[] values, String[] versions) {
+            this.qualifiers = qualifiers;
+            this.values = values;
+            this.versions = versions;
+        }
+
+        /** Rebuilds the Topic through strict validation instead of trusting stream content. */
+        @Serial
+        private Object readResolve() throws ObjectStreamException {
+            int depth = NamingSerialization.requireParallel(Topic.class, qualifiers, values, versions);
+            try {
+                List<TopicEntry> entries = new ArrayList<>(depth);
+                for (int index = 0; index < depth; index++) {
+                    entries.add(TopicEntry.create(qualifiers[index], values[index], versions[index],
+                            NamingOperation.TOPIC_BUILD, index));
+                }
+                return fromEntries(entries);
+            } catch (NamingValidationException rejected) {
+                throw NamingSerialization.invalid(Topic.class);
+            }
+        }
     }
 
     /** Joins the selected raw values without claiming canonical identity syntax. */

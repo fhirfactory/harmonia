@@ -1,8 +1,20 @@
 /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
 package net.fhirfactory.harmonia.model.core.naming;
 
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
+import java.io.ObjectStreamException;
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Optional;
+import net.fhirfactory.harmonia.model.core.naming.matching.EntryCriterion;
+import net.fhirfactory.harmonia.model.core.naming.matching.FieldPattern;
+import net.fhirfactory.harmonia.model.core.naming.matching.VersionConstraint;
+import net.fhirfactory.harmonia.model.core.naming.validation.TopicFieldRules;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 
 /**
  * One immutable positional criterion over a Topic qualifier, value and optional version.
@@ -11,44 +23,50 @@ import java.util.Optional;
  * bounded whole-field operations. A version constraint preserves its raw
  * spelling and distinguishes omission from a present-empty nonmatching
  * constraint. Entries are reusable concurrently after construction.</p>
+ *
+ * <p>The entry is a dependent value of its TopicMask. It keeps the original
+ * raw text as its identity and owns one compiled {@link EntryCriterion} from
+ * the matching package, which the mask evaluates; the compiled form is never
+ * exposed through the supported API.</p>
+ *
+ * <p>Entries are serializable through a private proxy carrying only the raw
+ * patterns and optional raw constraint. Deserialization recompiles the
+ * criterion through the same validation and rejects streams that bypass the
+ * proxy; the compiled form is never written.</p>
  */
-public final class TopicMaskEntry {
-    private final String qualifierPattern;
-    private final String valuePattern;
-    private final String versionConstraint;
-    private final FieldPattern parsedQualifier;
-    private final FieldPattern parsedValue;
-    private final VersionConstraint parsedVersion;
+public final class TopicMaskEntry implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+    /** Raw qualifier pattern; serialized only through {@link SerialForm}. */
+    private final transient String qualifierPattern;
+    /** Raw value pattern; serialized only through {@link SerialForm}. */
+    private final transient String valuePattern;
+    /** Raw constraint, {@code null} when omitted; serialized only through {@link SerialForm}. */
+    private final transient String versionConstraint;
+    /** Compiled description; derived from the raw fields and never serialized. */
+    private final transient EntryCriterion criterion;
 
     private TopicMaskEntry(
             String qualifierPattern,
             String valuePattern,
             String versionConstraint,
-            FieldPattern parsedQualifier,
-            FieldPattern parsedValue,
-            VersionConstraint parsedVersion) {
+            EntryCriterion criterion) {
         this.qualifierPattern = qualifierPattern;
         this.valuePattern = valuePattern;
         this.versionConstraint = versionConstraint;
-        this.parsedQualifier = parsedQualifier;
-        this.parsedValue = parsedValue;
-        this.parsedVersion = parsedVersion;
+        this.criterion = criterion;
     }
 
-    /** Validates original fields and creates immutable parsed descriptions. */
+    /** Validates and compiles original fields, reporting the caller's operation and index. */
     static TopicMaskEntry create(
             String qualifierPattern,
             String valuePattern,
             String versionConstraint,
             NamingOperation operation,
             Integer index) {
-        FieldPattern qualifier = FieldPattern.parse(qualifierPattern,
-                NamingFieldKind.QUALIFIER_PATTERN, operation, index);
-        FieldPattern value = FieldPattern.parse(valuePattern,
-                NamingFieldKind.VALUE_PATTERN, operation, index);
-        VersionConstraint version = VersionConstraint.parse(versionConstraint, operation, index);
-        return new TopicMaskEntry(qualifierPattern, valuePattern, versionConstraint,
-                qualifier, value, version);
+        EntryCriterion criterion = NamingBoundary.guard(() -> EntryCriterion.compile(
+                qualifierPattern, valuePattern, versionConstraint, operation, index));
+        return new TopicMaskEntry(qualifierPattern, valuePattern, versionConstraint, criterion);
     }
 
     /**
@@ -185,24 +203,9 @@ public final class TopicMaskEntry {
         return Optional.ofNullable(versionConstraint);
     }
 
-    /** Applies the prevalidated qualifier pattern to one complete candidate field. */
-    boolean matchesQualifier(String candidate) {
-        return parsedQualifier.matches(candidate);
-    }
-
-    /** Applies the prevalidated value pattern to one complete candidate field. */
-    boolean matchesValue(String candidate) {
-        return parsedValue.matches(candidate);
-    }
-
-    /** Applies the optional prevalidated version constraint to an opaque candidate version. */
-    boolean matchesVersion(String candidate) {
-        return parsedVersion == null || parsedVersion.matches(candidate);
-    }
-
-    /** Indicates whether a version constraint was present, including present-empty. */
-    boolean hasVersionConstraint() {
-        return versionConstraint != null;
+    /** Returns the compiled matching description owned by this entry. */
+    EntryCriterion criterion() {
+        return criterion;
     }
 
     /** Creates literal criteria while preserving the caller's construction operation and index. */
@@ -214,21 +217,20 @@ public final class TopicMaskEntry {
             NamingOperation operation,
             Integer index) {
         validateLiteralFields(qualifier, value, version, requireVersion, operation, index);
-        String exactVersion = version != null && startsWithReservedVersionCharacter(version)
-                ? "\\" + version : version;
+        String exactVersion = version == null ? null : VersionConstraint.escapeExactText(version);
         return create(FieldPattern.escapeLiteral(qualifier), FieldPattern.escapeLiteral(value),
                 exactVersion, operation, index);
     }
 
     /** Creates a validated literal value criterion for a factory or builder. */
     static TopicMaskEntry literalValue(String value, NamingOperation operation, Integer index) {
-        TopicFieldRules.validateValue(value, operation, index);
+        NamingBoundary.check(() -> TopicFieldRules.validateValue(value, operation, index));
         return create("*", FieldPattern.escapeLiteral(value), null, operation, index);
     }
 
     /** Creates a validated literal qualifier criterion for a factory or builder. */
     static TopicMaskEntry literalQualifier(String qualifier, NamingOperation operation, Integer index) {
-        TopicFieldRules.validateQualifierInput(qualifier, false, operation, index);
+        NamingBoundary.check(() -> TopicFieldRules.validateQualifierInput(qualifier, false, operation, index));
         return create(FieldPattern.escapeLiteral(qualifier), "*", null, operation, index);
     }
 
@@ -240,18 +242,61 @@ public final class TopicMaskEntry {
             boolean requireVersion,
             NamingOperation operation,
             Integer index) {
-        TopicFieldRules.validateTopicCompletedFields(qualifier, value, version, operation, index);
+        NamingBoundary.check(() -> TopicFieldRules.validateTopicCompletedFields(
+                qualifier, value, version, operation, index));
         if (requireVersion && (version == null || version.isEmpty())) {
-            throw TopicFieldRules.failure(version == null ? NamingFailureCategory.MISSING_INPUT
+            throw NamingValidationException.of(version == null ? NamingFailureCategory.MISSING_INPUT
                             : NamingFailureCategory.INVALID_FIELD,
                     operation, NamingFieldKind.VERSION, index);
         }
     }
 
-    /** Identifies an exact version that requires the reserved leading escape. */
-    private static boolean startsWithReservedVersionCharacter(String version) {
-        char first = version.charAt(0);
-        return first == '=' || first == '<' || first == '>' || first == '\\';
+    /**
+     * Serializes through {@link SerialForm} so deserialization recompiles and re-validates.
+     *
+     * @return the validating serialization proxy
+     */
+    @Serial
+    private Object writeReplace() {
+        return new SerialForm(qualifierPattern, valuePattern, versionConstraint);
+    }
+
+    /**
+     * Rejects any stream that tries to restore an entry without its validating proxy.
+     *
+     * @param stream the object stream, which is never read
+     * @throws InvalidObjectException always, because only the proxy may be deserialized
+     */
+    @Serial
+    private void readObject(ObjectInputStream stream) throws InvalidObjectException {
+        throw NamingSerialization.invalid(TopicMaskEntry.class);
+    }
+
+    /** Serialized form of one criterion; a {@code null} constraint records omission. */
+    static final class SerialForm implements Serializable {
+        @Serial
+        private static final long serialVersionUID = 1L;
+        private final String qualifierPattern;
+        private final String valuePattern;
+        private final String versionConstraint;
+
+        /** Captures raw fields; also used by tests to exercise rejection of crafted streams. */
+        SerialForm(String qualifierPattern, String valuePattern, String versionConstraint) {
+            this.qualifierPattern = qualifierPattern;
+            this.valuePattern = valuePattern;
+            this.versionConstraint = versionConstraint;
+        }
+
+        /** Recompiles the criterion through strict pattern and constraint validation. */
+        @Serial
+        private Object readResolve() throws ObjectStreamException {
+            try {
+                return create(qualifierPattern, valuePattern, versionConstraint,
+                        NamingOperation.MASK_ENTRY_BUILD, null);
+            } catch (NamingValidationException rejected) {
+                throw NamingSerialization.invalid(TopicMaskEntry.class);
+            }
+        }
     }
 
     /** Compares the complete original logical record, not its derived matching descriptions. */

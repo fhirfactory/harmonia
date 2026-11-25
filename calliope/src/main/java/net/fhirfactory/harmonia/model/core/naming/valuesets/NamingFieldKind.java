@@ -1,5 +1,5 @@
 /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
-package net.fhirfactory.harmonia.model.core.naming;
+package net.fhirfactory.harmonia.model.core.naming.valuesets;
 
 /** Identifies a Naming field without retaining or exposing its value. */
 public enum NamingFieldKind {

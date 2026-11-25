@@ -1,5 +1,5 @@
 /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
-package net.fhirfactory.harmonia.model.core.naming;
+package net.fhirfactory.harmonia.model.core.naming.interchange;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -13,6 +13,11 @@ import java.util.List;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingRuleViolation;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -24,11 +29,12 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 /**
- * Package-private hardened XML parsing and bounded field helpers for Naming interchange.
+ * Hardened XML parsing and bounded field helpers for Naming interchange.
  *
  * <p>All parser/provider details are mapped to payload-free validation metadata.
  * Only XML whitespace is accepted between structural elements, and external
- * resource access is disabled.</p>
+ * resource access is disabled. The type is package-private: only
+ * {@link NamingXmlFormat} reads records through it.</p>
  */
 final class XmlRecordParser {
     private XmlRecordParser() {
@@ -231,12 +237,12 @@ final class XmlRecordParser {
     }
 
     /** Creates a safe record-level validation result. */
-    static NamingValidationException failure(
+    static NamingRuleViolation failure(
             NamingFailureCategory category,
             NamingOperation operation,
             NamingFieldKind field,
             Integer index) {
-        return TopicFieldRules.failure(category, operation, field, index);
+        return new NamingRuleViolation(category, operation, field, index);
     }
 
     /** Decodes bytes only after the record bound and rejects malformed UTF-8. */

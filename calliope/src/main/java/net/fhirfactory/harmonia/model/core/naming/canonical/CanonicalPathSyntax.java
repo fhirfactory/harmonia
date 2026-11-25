@@ -1,17 +1,28 @@
 /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
-package net.fhirfactory.harmonia.model.core.naming;
+package net.fhirfactory.harmonia.model.core.naming.canonical;
 
 import java.util.ArrayList;
 import java.util.List;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingRuleViolation;
+import net.fhirfactory.harmonia.model.core.naming.validation.TopicFieldRules;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 
 /**
  * Scans and emits the shared outer escaping used by Topic and TopicMask text.
  *
  * <p>This scanner recognizes only the four accepted structural escapes. It
  * does not interpret wildcard or version-constraint semantics, which are
- * validated by their respective internal descriptions.</p>
+ * validated by their respective matching descriptions. Only {@link #encode}
+ * is used outside this package, by the models when rendering canonical text;
+ * scanning and decoding remain package-private to the canonical parsers.</p>
+ *
+ * <p>This type is implementation machinery of the Naming component and is not
+ * part of the supported Naming API.</p>
  */
-final class CanonicalPathSyntax {
+public final class CanonicalPathSyntax {
 
     /** Prevents construction of the stateless syntax scanner. */
     private CanonicalPathSyntax() {
@@ -24,11 +35,11 @@ final class CanonicalPathSyntax {
             int maximumBytes,
             NamingOperation operation) {
         if (text == null) {
-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
+            throw new NamingRuleViolation(NamingFailureCategory.MISSING_INPUT,
                     operation, NamingFieldKind.CANONICAL_TEXT, null);
         }
         if (utf8Length(text, operation) > maximumBytes) {
-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
+            throw new NamingRuleViolation(NamingFailureCategory.LIMIT_EXCEEDED,
                     operation, NamingFieldKind.CANONICAL_TEXT, null);
         }
         if (text.isEmpty()) {
@@ -48,7 +59,7 @@ final class CanonicalPathSyntax {
                     throw malformed(operation, entries.size());
                 }
                 if (entries.size() >= NamingLimits.MAX_DEPTH) {
-                    throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
+                    throw new NamingRuleViolation(NamingFailureCategory.LIMIT_EXCEEDED,
                             operation, NamingFieldKind.DEPTH, null);
                 }
                 entries.add(text.substring(start, offset));
@@ -59,7 +70,7 @@ final class CanonicalPathSyntax {
             throw malformed(operation, entries.size());
         }
         if (entries.size() >= NamingLimits.MAX_DEPTH) {
-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
+            throw new NamingRuleViolation(NamingFailureCategory.LIMIT_EXCEEDED,
                     operation, NamingFieldKind.DEPTH, null);
         }
         entries.add(text.substring(start));
@@ -127,8 +138,13 @@ final class CanonicalPathSyntax {
         return decoded.toString();
     }
 
-    /** Adds one outer escape layer without interpreting the field's semantics. */
-    static String encode(String raw) {
+    /**
+     * Adds one outer escape layer without interpreting the field's semantics.
+     *
+     * @param raw unescaped field text
+     * @return the text with each structural delimiter and backslash escaped
+     */
+    public static String encode(String raw) {
         StringBuilder encoded = new StringBuilder(raw.length());
         for (int offset = 0; offset < raw.length(); offset++) {
             char current = raw.charAt(offset);
@@ -153,13 +169,13 @@ final class CanonicalPathSyntax {
             int addition;
             if (Character.isHighSurrogate(current)) {
                 if (offset + 1 >= text.length() || !Character.isLowSurrogate(text.charAt(offset + 1))) {
-                    throw TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
+                    throw new NamingRuleViolation(NamingFailureCategory.MALFORMED_TEXT,
                             operation, NamingFieldKind.CANONICAL_TEXT, null);
                 }
                 offset += 2;
                 addition = 4;
             } else if (Character.isLowSurrogate(current)) {
-                throw TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
+                throw new NamingRuleViolation(NamingFailureCategory.MALFORMED_TEXT,
                         operation, NamingFieldKind.CANONICAL_TEXT, null);
             } else {
                 offset++;
@@ -171,8 +187,8 @@ final class CanonicalPathSyntax {
     }
 
     /** Builds a payload-free canonical syntax failure for the current entry. */
-    private static NamingValidationException malformed(NamingOperation operation, Integer index) {
-        return TopicFieldRules.failure(NamingFailureCategory.MALFORMED_TEXT,
+    private static NamingRuleViolation malformed(NamingOperation operation, Integer index) {
+        return new NamingRuleViolation(NamingFailureCategory.MALFORMED_TEXT,
                 operation, NamingFieldKind.CANONICAL_TEXT, index);
     }
 

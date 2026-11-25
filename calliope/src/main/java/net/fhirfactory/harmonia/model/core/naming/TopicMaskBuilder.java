@@ -3,6 +3,10 @@ package net.fhirfactory.harmonia.model.core.naming;
 
 import java.util.ArrayList;
 import java.util.List;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 
 /**
  * Reusable, caller-confined builder for immutable ordinary TopicMasks.
@@ -29,7 +33,7 @@ public final class TopicMaskBuilder {
     public TopicMaskBuilder add(TopicMaskEntry entry) {
         ensureCapacity();
         if (entry == null) {
-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
+            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
                     NamingOperation.MASK_BUILD, NamingFieldKind.NONE, entries.size());
         }
         entries.add(entry);
@@ -196,7 +200,7 @@ public final class TopicMaskBuilder {
      */
     public TopicMask build() {
         if (entries.isEmpty()) {
-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
+            throw NamingValidationException.of(NamingFailureCategory.MISSING_INPUT,
                     NamingOperation.MASK_BUILD, NamingFieldKind.DEPTH, null);
         }
         return TopicMask.fromEntries(List.copyOf(entries), includeContainedElements);
@@ -205,7 +209,7 @@ public final class TopicMaskBuilder {
     /** Rejects a seventeenth criterion before construction or compilation work begins. */
     private void ensureCapacity() {
         if (entries.size() >= NamingLimits.MAX_DEPTH) {
-            throw TopicFieldRules.failure(NamingFailureCategory.LIMIT_EXCEEDED,
+            throw NamingValidationException.of(NamingFailureCategory.LIMIT_EXCEEDED,
                     NamingOperation.MASK_BUILD, NamingFieldKind.DEPTH, null);
         }
     }

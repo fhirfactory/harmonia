@@ -1,11 +1,15 @@
 /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
-package net.fhirfactory.harmonia.model.core.naming;
+package net.fhirfactory.harmonia.model.core.naming.matching;
+
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
 
 /**
  * Bounded component spans for a numeric version, compared without numeric conversion.
  *
  * <p>Leading zeroes are ignored for comparison and absent trailing components
- * are equivalent to zero. The original string remains untouched for callers.</p>
+ * are equivalent to zero. The original string remains untouched for callers.
+ * The type stays package-private: numeric comparison is reachable only through
+ * {@link VersionConstraint}.</p>
  */
 final class NumericVersion {
     private final String text;

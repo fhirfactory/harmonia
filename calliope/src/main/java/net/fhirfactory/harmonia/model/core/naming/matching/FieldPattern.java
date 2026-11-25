@@ -1,5 +1,12 @@
 /* Copyright (c) 2026 Mark Hunter. SPDX-License-Identifier: GPL-3.0-or-later */
-package net.fhirfactory.harmonia.model.core.naming;
+package net.fhirfactory.harmonia.model.core.naming.matching;
+
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingLimits;
+import net.fhirfactory.harmonia.model.core.naming.validation.NamingRuleViolation;
+import net.fhirfactory.harmonia.model.core.naming.validation.TopicFieldRules;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFailureCategory;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingFieldKind;
+import net.fhirfactory.harmonia.model.core.naming.valuesets.NamingOperation;
 
 /**
  * Immutable description of one accepted, bounded whole-field wildcard pattern.
@@ -7,8 +14,11 @@ package net.fhirfactory.harmonia.model.core.naming;
  * <p>The parser decodes only escaped asterisks and backslashes. It classifies
  * the supported shape once, then matching uses equality, prefix/suffix tests,
  * or a bounded substring search without interpreting other syntax.</p>
+ *
+ * <p>This type is implementation machinery of the Naming component and is not
+ * part of the supported Naming API.</p>
  */
-final class FieldPattern {
+public final class FieldPattern {
     private enum Shape { EXACT, PREFIX, SUFFIX, CONTAINS, PREFIX_SUFFIX, ANY }
 
     private final Shape shape;
@@ -21,14 +31,23 @@ final class FieldPattern {
         this.second = second;
     }
 
-    /** Validates and classifies a raw field pattern without changing its spelling. */
-    static FieldPattern parse(
+    /**
+     * Validates and classifies a raw field pattern without changing its spelling.
+     *
+     * @param pattern raw pattern in the accepted six-form wildcard grammar
+     * @param field pattern field kind used for failure metadata
+     * @param operation operation used for failure metadata
+     * @param index entry position used for failure metadata, or {@code null}
+     * @return an immutable classified description
+     * @throws NamingRuleViolation when the pattern is missing, malformed, unsupported or oversized
+     */
+    public static FieldPattern parse(
             String pattern,
             NamingFieldKind field,
             NamingOperation operation,
             Integer index) {
         if (pattern == null) {
-            throw TopicFieldRules.failure(NamingFailureCategory.MISSING_INPUT,
+            throw new NamingRuleViolation(NamingFailureCategory.MISSING_INPUT,
                     operation, field, index);
         }
         int length = TopicFieldRules.codePointCount(pattern, operation, field, index,
@@ -78,8 +97,13 @@ final class FieldPattern {
         throw rejected(operation, field, index);
     }
 
-    /** Matches one complete decoded field using only the classified bounded operation. */
-    boolean matches(String candidate) {
+    /**
+     * Matches one complete decoded field using only the classified bounded operation.
+     *
+     * @param candidate complete, non-null candidate field
+     * @return true when the field satisfies the classified shape
+     */
+    public boolean matches(String candidate) {
         return switch (shape) {
             case EXACT -> first.equals(candidate);
             case PREFIX -> candidate.startsWith(first);
@@ -91,8 +115,13 @@ final class FieldPattern {
         };
     }
 
-    /** Escapes only pattern metacharacters required by a literal-field helper. */
-    static String escapeLiteral(String literal) {
+    /**
+     * Escapes only the pattern metacharacters required by a literal-field helper.
+     *
+     * @param literal validated literal field text
+     * @return pattern text that matches exactly the literal
+     */
+    public static String escapeLiteral(String literal) {
         StringBuilder escaped = new StringBuilder(literal.length());
         for (int offset = 0; offset < literal.length(); offset++) {
             char current = literal.charAt(offset);
@@ -105,11 +134,11 @@ final class FieldPattern {
     }
 
     /** Returns a payload-free rejection for unsupported wildcard placement. */
-    private static NamingValidationException rejected(
+    private static NamingRuleViolation rejected(
             NamingOperation operation,
             NamingFieldKind field,
             Integer index) {
-        return TopicFieldRules.failure(NamingFailureCategory.PATTERN_REJECTED,
+        return new NamingRuleViolation(NamingFailureCategory.PATTERN_REJECTED,
                 operation, field, index);
     }
 }
