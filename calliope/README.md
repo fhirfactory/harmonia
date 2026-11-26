@@ -178,3 +178,142 @@ on the public matching path. A match
 returns only a Boolean and does not perform authorization, routing, persistence,
 audit capture or logging; those responsibilities remain with their owning
 Harmonia components.
+
+# Calliope InformationUnit
+
+This section describes the InformationUnit (IU) development candidate that
+implements [Backlog Item 0005 revision 000.004](../docs/backlog/BacklogItem-0005-Calliope-InformationUnit.v000.004.md)
+and the reconciled model in [Draft 002.007 §1](../enterprise-architecture/design/offline-design/DRP-Information-Unit-Framework.Draft.002.007.md).
+The Solution Architect dispositions it applies are recorded in
+[software HCRL 0.1.0/011](../enterprise-architecture/design/review/software-0.1.0/hcrl-software-0.1.0-011.pending.md).
+Those sources are authoritative; this README is implementation documentation.
+
+## Packages
+
+| Package | Responsibility | Principal types |
+| --- | --- | --- |
+| `information.entity` | The IU and its builders | `InformationUnit`, `InformationUnitBuilder`, `MinimumMetadataSuccessorBuilder` |
+| `information.entity.datatypes` | Immutable constituents | `InformationQuality`; `InformationMetadata` with `PersistenceLifecycleMetadata`, `CacheLifecycleMetadata`, `OriginMetadata`, `InformationCoordinates`, `SecurityMetadata`, `Relationships`, `InformationUnitRelationship`; `InformationRepresentation` with `ContainerMetadata`, `ContentMetadata`, `ContentDetail`(`Builder`) and `Content`; `InformationModelException`; helper `ModelChecks` |
+| `information.entity.valuesets` | Closed value sets | `RelationshipType`, `RelationshipRole`, `QualityGrade`, `InformationFailureCategory`, `FhirR4ResourceType`, `MediaTopLevelType` |
+| `information.entity.factory` | Governed vocabulary builders | `InformationVocabulary` |
+
+Dependencies point one way (`valuesets` <- `datatypes` <- `factory` <- root)
+and use only the JDK and Calliope Naming. `InformationStructureTest` enforces
+this, together with file size, licence headers, the absence of logging,
+simulation, persistence and `Serializable` model types.
+
+## Identity, name and classification
+
+`id : UUID` is the sole instance identifier. `informationConcept : Topic`
+replaces `ConceptFDN`/`informationProfile` and is the qualified value a Store
+matches against its TopicMasks (MI-05). `getName()` is exactly
+`informationConcept.getName() + id` with no separator, so qualifiers and entry
+versions never appear in it. The name is a designation, never a relationship
+target.
+
+## Snapshots and controlled change
+
+An `InformationUnit` object is an immutable snapshot of one governed revision.
+Every change returns a new snapshot; the original is untouched.
+
+- `reviseCoordinates` is an authorised relocation or ownership change: same
+  UUID, new coordinates and a preserved earlier snapshot. The originating
+  Managed Revision remains the expected revision for the next governed write;
+  Mnemosyne establishes the successor after persistence succeeds. Disposition,
+  legal hold and every other constituent carry forward.
+- `reviseInformationAuthority` creates a governed revision under the same UUID
+  while preserving the previous authority and snapshot. It retains the
+  originating Managed Revision as the expected revision for the next write.
+  Calliope carries the proposed authority; applicable governance authorizes it.
+- `withPersistenceLifecycle` rejects a Managed Revision that regresses or
+  disappears. `withCacheLifecycle` records Mneme's cache state and opaque
+  Active Generation, which are independent of the Managed Revision.
+- `withOrigin` and the `OriginMetadata.establish...` methods allow each unknown
+  origin fact to be set once. A re-statement is idempotent only when it is
+  identical, with Topics compared by their versioned canonical form.
+- `withSecurity` accepts a proposed immutable value. Themis-Krites adjudicates
+  every proposed security change, including strengthening, weakening and
+  replacement. Calliope makes no security-policy decision and does not
+  implement the Krites service.
+- `withRelationships` and `withDescription` replace caller-supplied values.
+- `deriveSuccessorAsClone(newId, role)` creates a complete new IU with a
+  different UUID. It copies concept, description, quality, representation,
+  authority, coordinates, origin, security and existing relationships, then
+  appends an `INTERNAL_IU` provenance link to the source. Persistence and cache
+  lifecycle facts are reinitialised for the new IU; all earlier snapshots stay
+  unchanged. An inherited internal relationship may not target the new UUID.
+- `deriveSuccessorWithMinimumMetadata(newId, role)` returns a
+  `MinimumMetadataSuccessorBuilder` for a new IU. It inherits only origin and
+  security, adds only the source-provenance relationship, and reinitialises
+  persistence/cache lifecycle facts. The caller supplies concept, description,
+  quality, authority and representation; coordinates default to unplaced and
+  can be supplied. The builder does not expose setters for inherited origin,
+  security or provenance, and a failed `build()` can be corrected and retried.
+
+No operation replaces an IU's UUID, concept, quality or representation.
+
+## Metadata, authority and quality
+
+`InformationMetadata.initial(authority)` initialises every container.
+`informationAuthority : Topic` is the explicit AX-06 authority reference and
+is required. It is deliberately separate from `InformationQuality`, whose
+`owner`, `grade` (`ANECDOTAL`, `INFORMATIONAL`, `CANONICAL`) and
+`certifications` are immutable for the IU's lifetime. A `CANONICAL` grade is
+not authoritative standing.
+
+## Representation and Content
+
+Each IU has exactly one `InformationRepresentation`. `ContentMetadata` keeps
+three things apart. `contentConcept` says what the Content is. `contentSchema`
+gives its structure, with versions carried as Topic entry versions.
+`containerMediaType` and `contentMediaType` are required IANA media type
+identifiers, stored separately from concepts and schemas. They do not create a
+schema or content-concept Topic. `Content` is created with `inline`,
+`inlineText` or `reference`, so both-carrier and neither-carrier states cannot
+exist. Byte arrays are copied in and out. `ContentDetail` carries provider-supplied size,
+language, dimensions, frames, duration, pages and a checksum. A checksum
+always travels with its algorithm; `DEFAULT_CHECKSUM_ALGORITHM` is
+`SHA-256`. Calliope never computes, verifies or fetches Content.
+
+## Vocabulary
+
+`InformationVocabulary` builds standard-defined qualified Topic paths. The
+shared hierarchy is `Domain → Owner → Standard`; each standard defines its own
+subordinate containment and versioning levels. Containment is represented by
+the path itself, not a separate relationship model.
+
+| Purpose | Path (unescaped) |
+| --- | --- |
+| Container schema when Calliope imposes no additional structure | `Domain=ICT.Owner=fhirfactory.Standard=harmonia.Concept=InformationUnit.InformationContainer=RAW` |
+| Content schema when no distinct schema is asserted | `Domain=ICT.Owner=fhirfactory.Standard=harmonia.Concept=InformationUnit.ContentSchema=RAW` |
+| FHIR R4 resource schema | `Domain=Health.Owner=HealthLevelSevenInternational.Standard=FHIR.Release:4.0.1=R4.Resource=<type>` for the 146 `FhirR4ResourceType` values |
+| Generic profile schema | The caller's `Domain → Owner → Standard` path, any standard-defined intermediate entries, then `Profile[:version]=<name>` |
+
+`R4` is the recognized FHIR release designation and `4.0.1` its specific
+version; resource definitions have no independent versions. Media types are
+stored only in their dedicated fields, never as content concepts or schemas.
+`InformationVocabulary.governingStandard(domain, owner, standard, version)`
+builds the common prefix, and `profileSchema(standardTopic, name, version)`
+appends a generic profile. The governing owner and standard are supplied by the
+profile's authority; profiles do not use the obsolete Harmonia data-schema path
+or require a FHIR-specific owner. A standard may add its own intermediate
+containment entries before the profile. The `Domain → Owner → Standard` prefix
+and the rejection of `Resource` or `Profile` entries are restrictions of the
+`InformationVocabulary.profileSchema` helper only; they do not constrain the
+generic Topic model or other valid standard-defined hierarchies. A profile
+Topic is independent of any underlying resource and carries no implicit
+relationship to one. Versions remain on the entry whose semantics they
+describe; Topic equality ignores versions while the canonical versioned form
+preserves them.
+
+## Failures and diagnostics
+
+Rejections throw `InformationModelException`, which carries a
+`InformationFailureCategory` and a structural field label, never the rejected
+value. Each rejection happens before any state changes, and a failed
+`InformationUnitBuilder.build()` keeps every input so the call can be retried.
+`toString()` methods expose only the IU UUID, container and content
+classification/schema Topics, enum values, counts or presence flags.
+Payloads, locators, relationship targets, descriptions, owners, certifiers
+and security labels never appear. The model does no logging, persistence,
+caching, authorisation, reference resolution or serialisation.
